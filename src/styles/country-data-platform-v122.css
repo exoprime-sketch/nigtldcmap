@@ -408,10 +408,19 @@
 .cdp-map-canvas {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
   z-index: 2;
   background: transparent;
   opacity: 1;
   transition: opacity 160ms ease;
+}
+
+.cdp-map-canvas.maplibregl-map {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .cdp-map-canvas.is-suspended {
@@ -517,8 +526,8 @@
 .cdp-map-renderer-badge {
   position: absolute;
   z-index: 5;
-  top: 14px;
-  right: 14px;
+  left: 14px;
+  bottom: 14px;
   border: 1px solid rgba(181, 205, 195, 0.95);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.94);
@@ -1091,6 +1100,13 @@
 .cdp-chart-stage {
   position: relative;
   min-width: 720px;
+}
+
+.cdp-chart-limit-note {
+  margin: 8px 0 10px;
+  color: var(--cdp-muted);
+  font-size: 0.8rem;
+  line-height: 1.5;
 }
 
 .cdp-chart {
