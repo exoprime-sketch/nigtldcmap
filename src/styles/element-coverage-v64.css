@@ -1,0 +1,166 @@
+.v64-partial-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #fff1cf;
+  color: #735500;
+  font-size: 11px;
+  font-weight: 850;
+}
+
+.v64-coverage-panel {
+  margin: 18px 22px 0;
+  overflow: hidden;
+  border: 1px solid #dce6ec;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.v64-coverage-panel > header {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+  padding: 14px 16px;
+  background: #f7fafb;
+}
+
+.v64-coverage-panel > header > div {
+  display: grid;
+  gap: 3px;
+}
+
+.v64-coverage-panel > header span {
+  color: #6d8190;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.v64-coverage-panel > header h2 {
+  margin: 0;
+  color: #1c3c52;
+  font-size: 16px;
+}
+
+.v64-coverage-panel > header > b {
+  padding: 5px 9px;
+  border-radius: 999px;
+  font-size: 11px;
+}
+
+.v64-coverage-panel > header > b.status-full {
+  background: #e8f5ee;
+  color: #17694f;
+}
+
+.v64-coverage-panel > header > b.status-partial {
+  background: #fff1cf;
+  color: #735500;
+}
+
+.v64-coverage-panel > header > b.status-pending {
+  background: #f0f3f5;
+  color: #667985;
+}
+
+.v64-coverage-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.v64-coverage-grid article {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  min-height: 58px;
+  padding: 11px 14px;
+  border-top: 1px solid #e8eef2;
+}
+
+.v64-coverage-grid article:nth-child(odd) {
+  border-right: 1px solid #e8eef2;
+}
+
+.v64-coverage-grid article > div {
+  display: grid;
+  gap: 3px;
+}
+
+.v64-coverage-grid article b {
+  color: #24445a;
+  font-size: 12px;
+}
+
+.v64-coverage-grid article small {
+  color: #7a8c98;
+  font-size: 10px;
+}
+
+.v64-item-status {
+  flex: 0 0 auto;
+  padding: 4px 7px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 850;
+}
+
+.v64-item-status.status-provided {
+  background: #e8f5ee;
+  color: #17694f;
+}
+
+.v64-item-status.status-derived {
+  background: #e9f2fb;
+  color: #2a6590;
+}
+
+.v64-item-status.status-pending {
+  background: #f1f3f5;
+  color: #6a7a85;
+}
+
+.v64-coverage-panel > p {
+  margin: 0;
+  padding: 10px 14px;
+  border-top: 1px solid #e8eef2;
+  background: #fffaf0;
+  color: #725d27;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.v64-single-child {
+  display: flex;
+  align-items: center;
+  min-height: 38px;
+  min-width: 300px;
+  padding: 0 11px;
+  border: 1px solid #d3dfe6;
+  border-radius: 9px;
+  background: #fff;
+  color: #26475d;
+  font-size: 12px;
+}
+
+@media (max-width: 720px) {
+  .v64-coverage-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .v64-coverage-grid article:nth-child(odd) {
+    border-right: 0;
+  }
+
+  .v64-coverage-panel {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .v64-single-child {
+    min-width: 0;
+    width: 100%;
+  }
+}

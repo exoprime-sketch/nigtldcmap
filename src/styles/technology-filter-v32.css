@@ -1,0 +1,169 @@
+/* v32 · 38대 기후기술 탐색축 */
+
+.technology-filter-group small {
+  display: block;
+  margin-top: 7px;
+  color: #6d7e8e;
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.technology-filter-group optgroup {
+  color: #52677a;
+  font-weight: 800;
+}
+
+.technology-filter-explainer {
+  margin: 0 0 12px;
+  padding: 11px 13px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border: 1px solid #d6e7ef;
+  border-radius: 9px;
+  background: #f7fbfd;
+}
+
+.technology-filter-explainer strong {
+  flex: 0 0 auto;
+  color: #075985;
+  font-size: 12px;
+}
+
+.technology-filter-explainer span {
+  color: #5d7182;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.dataset-technology-links {
+  margin: 13px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.technology-link-chip,
+.technology-link-more {
+  min-height: 28px;
+  padding: 5px 9px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.technology-link-chip {
+  border: 1px solid #d5e5ec;
+  color: #264f66;
+  background: #f4fafc;
+}
+
+.technology-link-chip small {
+  padding-left: 7px;
+  border-left: 1px solid #c8dce5;
+  color: #678193;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.technology-link-chip.relation-direct {
+  border-color: #b8d9e8;
+  color: #075985;
+  background: #edf8fc;
+}
+
+.technology-link-chip.relation-supporting {
+  border-color: #d9e1e7;
+  color: #475f70;
+  background: #f7f9fa;
+}
+
+.technology-link-more {
+  color: #66798a;
+  background: #f0f3f5;
+}
+
+.dataset-meta-user-v32 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.dataset-card-footer-user-v32 {
+  align-items: center;
+}
+
+.dataset-card-user-v32 .user-card-cues {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.dataset-card-user-v32 .user-card-cues span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  color: #536779;
+  background: #f0f4f7;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.technology-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.technology-guide-grid article {
+  padding: 18px;
+  border: 1px solid #dbe5eb;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.technology-guide-grid strong {
+  display: block;
+  margin-bottom: 7px;
+  color: #0c566f;
+  font-size: 14px;
+}
+
+.technology-guide-grid p,
+.technology-guide-note {
+  margin: 0;
+  color: #5f7281;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.technology-guide-note {
+  margin-top: 12px;
+  padding: 11px 13px;
+  border-radius: 9px;
+  background: #f3f7f9;
+}
+
+@media (max-width: 900px) {
+  .technology-guide-grid,
+  .dataset-meta-user-v32 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .technology-filter-explainer {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .technology-link-chip,
+  .technology-link-more {
+    width: 100%;
+    justify-content: space-between;
+    border-radius: 8px;
+  }
+}

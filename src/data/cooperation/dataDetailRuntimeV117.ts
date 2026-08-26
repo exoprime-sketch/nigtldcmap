@@ -1,0 +1,16 @@
+export const DATA_DETAIL_RUNTIME_POLICY_V117 = {
+  syntheticDownloadAllowed: false,
+  actualSyntheticMixed: false,
+  queryYearCanMasqueradeAsActual: false,
+  latestComparisonPreservesActualYear: true,
+  nationalToRegionalFabrication: false,
+  regionalActualPreferredWhenAvailable: true,
+  financeConceptAggregation: false,
+  commitmentDisbursementCombined: false,
+  cooperationScoreGenerated: false,
+  internalRoleCodesPublic: false,
+  internalQaTermsPublic: false,
+  mapDeepLinkEnabled: true,
+  mapDetailRoundTripEnabled: true,
+  relatedEvidenceUsesExistingElementRoute: true,
+} as const;

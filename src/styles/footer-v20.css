@@ -1,0 +1,17 @@
+.footer-bottom a {
+  color: #bdd0df;
+  font-size: 10px;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover,
+.footer-bottom a:focus-visible {
+  color: var(--white);
+}
+
+.footer-bottom button:focus-visible,
+.footer-grid nav button:focus-visible,
+.footer-bottom a:focus-visible {
+  outline: 2px solid #77e4df;
+  outline-offset: 4px;
+}

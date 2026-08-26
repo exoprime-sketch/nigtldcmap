@@ -1,0 +1,68 @@
+.planning-v43-actions {
+  max-width: 560px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.planning-v43-actions .secondary-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.dataset-usebar-v43-actions {
+  flex-wrap: wrap;
+}
+
+.dataset-usebar-v43-actions > button {
+  white-space: nowrap;
+}
+
+.user-guide-reuse-v43 .user-guide-purpose-grid article {
+  min-height: 128px;
+  padding: 20px;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  background: var(--white);
+}
+
+.user-guide-reuse-v43 .user-guide-purpose-grid article strong,
+.user-guide-reuse-v43 .user-guide-purpose-grid article span {
+  display: block;
+}
+
+.user-guide-reuse-v43 .user-guide-purpose-grid article span {
+  margin-top: 8px;
+  color: var(--slate-600);
+  line-height: 1.65;
+}
+
+@media (max-width: 760px) {
+  .planning-v43-actions {
+    width: 100%;
+    max-width: none;
+    justify-content: stretch;
+  }
+
+  .planning-v43-actions .secondary-button {
+    flex: 1 1 calc(50% - 4px);
+  }
+
+  .dataset-usebar-v43-actions > button {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .planning-v43-actions .secondary-button {
+    flex-basis: 100%;
+  }
+}
+
+@media print {
+  .planning-v43-actions,
+  .dataset-usebar-v43-actions {
+    display: none !important;
+  }
+}

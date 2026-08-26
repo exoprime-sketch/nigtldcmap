@@ -1,0 +1,259 @@
+/* Solar potential v26 */
+
+.technology-layer-group .real-map-layer-icon.technology {
+  background: radial-gradient(circle at 35% 35%, #fff7bc 0 24%, transparent 25%),
+    linear-gradient(135deg, #f59e0b, #0f766e);
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.12);
+}
+
+.selected-solar-evidence {
+  margin-top: 16px;
+  padding: 16px;
+  border: 1px solid #d7e4df;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #fffdf4, #f4fbf8);
+}
+
+.selected-solar-evidence > span {
+  display: block;
+  margin-bottom: 10px;
+  color: #315b51;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.selected-solar-evidence dl {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.selected-solar-evidence dl > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.selected-solar-evidence dt {
+  color: #526761;
+  font-size: 0.83rem;
+}
+
+.selected-solar-evidence dd {
+  margin: 0;
+  color: #163e35;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-align: right;
+}
+
+.selected-solar-evidence small {
+  display: block;
+  margin-top: 10px;
+  color: #667a74;
+  font-size: 0.76rem;
+  line-height: 1.55;
+}
+
+.country-v16-indicator-grid
+  .country-v16-indicator:has(header span:first-child) {
+  min-width: 0;
+}
+
+@media (max-width: 640px) {
+  .selected-solar-evidence dl > div {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .selected-solar-evidence dd {
+    text-align: left;
+  }
+}
+
+.solar-preview-v26 {
+  display: grid;
+  gap: 20px;
+}
+
+.solar-preview-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: end;
+}
+
+.solar-preview-heading > div > span {
+  display: block;
+  margin-bottom: 4px;
+  color: #7b5b13;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.solar-preview-heading h2 {
+  margin: 0;
+  color: #173d34;
+  font-size: clamp(1.35rem, 2vw, 1.9rem);
+}
+
+.solar-preview-heading p {
+  margin: 6px 0 0;
+  color: #63746f;
+}
+
+.solar-preview-heading label {
+  display: grid;
+  gap: 6px;
+  min-width: min(320px, 100%);
+}
+
+.solar-preview-heading label span {
+  color: #50625d;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.solar-preview-heading select {
+  min-height: 42px;
+  padding: 0 12px;
+  border: 1px solid #cbd9d4;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.solar-preview-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.solar-preview-summary article {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid #dbe6e2;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+.solar-preview-summary span,
+.solar-preview-summary small {
+  display: block;
+  color: #66766f;
+}
+
+.solar-preview-summary strong {
+  display: block;
+  margin: 8px 0 5px;
+  color: #173d34;
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
+.solar-monthly-section,
+.solar-top-countries {
+  padding: 18px;
+  border: 1px solid #dbe6e2;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.solar-monthly-section h3,
+.solar-top-countries h3 {
+  margin: 0;
+  color: #173d34;
+}
+
+.solar-monthly-section p,
+.solar-top-countries p {
+  margin: 4px 0 0;
+  color: #697a74;
+  font-size: 0.84rem;
+}
+
+.solar-monthly-chart {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(34px, 1fr));
+  gap: 8px;
+  align-items: end;
+  min-height: 220px;
+  margin-top: 18px;
+  padding: 14px 8px 0;
+  overflow-x: auto;
+  border-top: 1px solid #edf2ef;
+}
+
+.solar-monthly-column {
+  display: grid;
+  grid-template-rows: 28px 150px 24px;
+  gap: 5px;
+  align-items: end;
+  justify-items: center;
+  min-width: 38px;
+}
+
+.solar-monthly-column > span {
+  color: #526861;
+  font-size: 0.7rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.solar-monthly-column > i {
+  width: min(28px, 72%);
+  min-height: 4px;
+  border-radius: 7px 7px 2px 2px;
+  background: linear-gradient(180deg, #f5b942, #0f766e);
+}
+
+.solar-monthly-column > small {
+  color: #697a74;
+  font-size: 0.7rem;
+}
+
+.solar-top-countries .resource-table-wrapper {
+  margin-top: 14px;
+}
+
+.solar-preview-note {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 13px 15px;
+  border-left: 4px solid #d99a16;
+  border-radius: 10px;
+  background: #fff9e8;
+  color: #5c5542;
+}
+
+.solar-preview-note strong {
+  flex: 0 0 auto;
+  color: #6f4d08;
+}
+
+@media (max-width: 980px) {
+  .solar-preview-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .solar-preview-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .solar-preview-heading label {
+    min-width: 0;
+  }
+
+  .solar-preview-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .solar-preview-note {
+    display: grid;
+  }
+}

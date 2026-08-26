@@ -1,0 +1,415 @@
+{
+  "metadata": {
+    "datasetId": "NDC-TECHNOLOGY-PRIORITIES",
+    "titleKo": "국가별 NDC 기후기술 우선분야",
+    "sourceOrganization": "UNFCCC NDC Registry / official national NDC documents",
+    "referenceDate": "2026-08-11",
+    "fetchedAt": "2026-08-11",
+    "reviewedAt": "2026-08-11",
+    "reviewedBy": "UNFCCC NDC Registry metadata verified · technology evidence retained from prior source review",
+    "limitations": [
+      "10개 우선국 최신 활성 NDC의 제목·제출일·공식 문서 메타데이터 확인",
+      "기술별 원문 근거 판정은 현재 베트남·인도네시아·필리핀 3개국만 완료",
+      "나머지 7개국은 메타데이터 확보 상태이며 기술별 명시·관련·미확인 판정 전",
+      "기술별 원문 검토 대기를 'NDC에 기술이 없음'으로 해석하지 않음",
+      "한국어 문장은 이해 지원용 참고 번역"
+    ],
+    "technologyLabels": {
+      "renewable-energy": "재생에너지",
+      "power-grid": "전력망",
+      "energy-efficiency": "에너지효율",
+      "clean-cooking": "청정조리",
+      "water": "수자원",
+      "agriculture": "농업",
+      "coastal-adaptation": "해안 적응",
+      "early-warning": "조기경보",
+      "industrial-decarbonization": "산업 탈탄소",
+      "mrv-carbon-market": "MRV·탄소시장"
+    }
+  },
+  "data": [
+    {
+      "iso3": "VNM",
+      "countryNameKo": "베트남",
+      "ndcTitle": "Viet Nam NDC 2022 Update",
+      "submissionDate": "2022-11-08",
+      "officialUrl": "https://unfccc.int/sites/default/files/NDC/2022-11/Viet%20Nam%20NDC%202022%20Update.pdf",
+      "priorities": [
+        {
+          "technologyId": "renewable-energy",
+          "status": "explicit",
+          "evidenceOriginal": "Development of renewable energy such as small hydroelectricity, wind energy, solar energy",
+          "translationKo": "소수력·풍력·태양광 등 재생에너지 개발 명시",
+          "documentPage": "PDF p. 12",
+          "documentSection": "2.3.1 Energy",
+          "reviewStatus": "source-verified"
+        },
+        {
+          "technologyId": "power-grid",
+          "status": "explicit",
+          "evidenceOriginal": "modernize and expand the power transmission network (including smart grids)",
+          "translationKo": "송전망 현대화·확대와 스마트그리드 지원 수요 명시",
+          "documentPage": "PDF p. 41",
+          "documentSection": "6.2.2 Support in GHG emission reduction",
+          "reviewStatus": "source-verified"
+        },
+        {
+          "technologyId": "energy-efficiency",
+          "status": "explicit",
+          "evidenceOriginal": "use of measures to improve energy efficiency in industries",
+          "translationKo": "산업 등 부문의 에너지효율 개선 수단 명시",
+          "documentPage": "PDF p. 12",
+          "documentSection": "2.3.1 Energy",
+          "reviewStatus": "source-verified"
+        },
+        {
+          "technologyId": "clean-cooking",
+          "status": "explicit",
+          "evidenceOriginal": "use of biogas and cleaner fuel instead of coal for household cooking in rural areas",
+          "translationKo": "농촌 가정 조리에서 석탄 대신 바이오가스·청정연료 사용 명시",
+          "documentPage": "PDF p. 12",
+          "documentSection": "2.3.1 Energy",
+          "reviewStatus": "source-verified"
+        },
+        {
+          "technologyId": "water",
+          "status": "explicit",
+          "evidenceOriginal": "solutions to ensure water security in the context of climate change",
+          "translationKo": "기후변화 맥락의 물 안보 확보와 효율적 물 이용 명시",
+          "documentPage": "PDF p. 24",
+          "documentSection": "3.2.2 Adaptation efforts",
+          "reviewStatus": "source-verified"
+        },
+        {
+          "technologyId": "agriculture",
+          "status": "explicit",
+          "evidenceOriginal": "implementing climate-smart agricultural solutions",
+          "translationKo": "기후스마트농업 해법과 적응형 품종·생산체계 명시",
+          "documentPage": "PDF p. 28",
+          "documentSection": "3.4.1 Enhancing resilience",
+          "reviewStatus": "source-verified"
+        },
+        {
+          "technologyId": "coastal-adaptation",
+          "status": "explicit",
+          "evidenceOriginal": "reinforcing and ensuring safety of the system of river dykes, sea dykes",
+          "translationKo": "해안·하천 제방 안전 강화와 해안침식 대응 명시",
+          "documentPage": "PDF p. 29",
+          "documentSection": "3.4.2 Reducing disaster risk",
+          "reviewStatus": "source-verified"
+        },
+        {
+          "technologyId": "early-warning",
+          "status": "explicit",
+          "evidenceOriginal": "developing quantitative precipitation forecasting technology, flash floods and landslides warning",
+          "translationKo": "정량강수예보·돌발홍수·산사태 경보 기술 명시",
+          "documentPage": "PDF p. 29",
+          "documentSection": "3.4.2 Reducing disaster risk",
+          "reviewStatus": "source-verified"
+        },
+        {
+          "technologyId": "industrial-decarbonization",
+          "status": "explicit",
+          "evidenceOriginal": "Use of natural mineral additives to replace clinker",
+          "translationKo": "클링커 대체·철강·화학 산업 저감기술 명시",
+          "documentPage": "PDF p. 13",
+          "documentSection": "2.3.5 Industrial processes",
+          "reviewStatus": "source-verified"
+        },
+        {
+          "technologyId": "mrv-carbon-market",
+          "status": "explicit",
+          "evidenceOriginal": "adopt carbon pricing tools, including an emission trading scheme",
+          "translationKo": "배출권거래·탄소가격·MRV 제도 구축 명시",
+          "documentPage": "PDF p. 32",
+          "documentSection": "5.1.1 Institution and policy",
+          "reviewStatus": "source-verified"
+        }
+      ],
+      "registryStatus": "Active",
+      "language": "English",
+      "priorityReviewStatus": "reviewed"
+    },
+    {
+      "iso3": "BGD",
+      "countryNameKo": "방글라데시",
+      "ndcTitle": "Bangladesh NDC 3.0",
+      "submissionDate": "2025-09-29",
+      "officialUrl": "https://unfccc.int/sites/default/files/2025-09/Bangladesh%20Third%20Nationally%20Determined%20Contribution%20%28NDC%203.0%29.pdf",
+      "registryStatus": "Active",
+      "language": "English",
+      "priorityReviewStatus": "metadata-only",
+      "priorities": []
+    },
+    {
+      "iso3": "PHL",
+      "countryNameKo": "필리핀",
+      "ndcTitle": "Philippines First NDC",
+      "submissionDate": "2021-04-15",
+      "officialUrl": "https://unfccc.int/sites/default/files/NDC/2022-06/Philippines%20-%20NDC.pdf",
+      "priorities": [
+        {
+          "technologyId": "renewable-energy",
+          "status": "related",
+          "evidenceOriginal": "sustainable energy",
+          "translationKo": "국가 기후행동 7대 분야 중 지속가능에너지 확인",
+          "documentPage": "PDF p. 5",
+          "documentSection": "Climate Change Adaptation",
+          "reviewStatus": "source-verified"
+        },
+        {
+          "technologyId": "power-grid",
+          "status": "not-confirmed",
+          "evidenceOriginal": "",
+          "translationKo": "최신 NDC 검토 범위에서 전력망 직접 명시 미확인",
+          "documentPage": "",
+          "documentSection": "",
+          "reviewStatus": "source-verified"
+        },
+        {
+          "technologyId": "energy-efficiency",
+          "status": "not-confirmed",
+          "evidenceOriginal": "",
+          "translationKo": "최신 NDC 검토 범위에서 에너지효율 직접 명시 미확인",
+          "documentPage": "",
+          "documentSection": "",
+          "reviewStatus": "source-verified"
+        },
+        {
+          "technologyId": "clean-cooking",
+          "status": "not-confirmed",
+          "evidenceOriginal": "",
+          "translationKo": "최신 NDC 검토 범위에서 청정조리 직접 명시 미확인",
+          "documentPage": "",
+          "documentSection": "",
+          "reviewStatus": "source-verified"
+        },
+        {
+          "technologyId": "water",
+          "status": "explicit",
+          "evidenceOriginal": "water sufficiency",
+          "translationKo": "국가 기후행동 7대 분야 중 물 충분성 명시",
+          "documentPage": "PDF p. 5",
+          "documentSection": "Climate Change Adaptation",
+          "reviewStatus": "source-verified"
+        },
+        {
+          "technologyId": "agriculture",
+          "status": "explicit",
+          "evidenceOriginal": "adaptation measures across ... agriculture",
+          "translationKo": "농업 부문 적응조치 추진 명시",
+          "documentPage": "PDF p. 5",
+          "documentSection": "Climate Change Adaptation",
+          "reviewStatus": "source-verified"
+        },
+        {
+          "technologyId": "coastal-adaptation",
+          "status": "explicit",
+          "evidenceOriginal": "coastal and marine ecosystems and biodiversity",
+          "translationKo": "연안·해양 생태계·생물다양성 적응조치 명시",
+          "documentPage": "PDF p. 5",
+          "documentSection": "Climate Change Adaptation",
+          "reviewStatus": "source-verified"
+        },
+        {
+          "technologyId": "early-warning",
+          "status": "not-confirmed",
+          "evidenceOriginal": "",
+          "translationKo": "최신 NDC 검토 범위에서 조기경보 직접 명시 미확인",
+          "documentPage": "",
+          "documentSection": "",
+          "reviewStatus": "source-verified"
+        },
+        {
+          "technologyId": "industrial-decarbonization",
+          "status": "related",
+          "evidenceOriginal": "sustainable industrial development",
+          "translationKo": "지속가능한 산업발전·산업부문 감축·기후스마트 산업 방향 확인",
+          "documentPage": "PDF p. 1",
+          "documentSection": "Introduction",
+          "reviewStatus": "source-verified"
+        },
+        {
+          "technologyId": "mrv-carbon-market",
+          "status": "related",
+          "evidenceOriginal": "market and non-market mechanisms under Article 6",
+          "translationKo": "파리협정 제6조 시장·비시장 메커니즘 활용 방향 확인",
+          "documentPage": "PDF p. 4",
+          "documentSection": "Climate Change Mitigation",
+          "reviewStatus": "source-verified"
+        }
+      ],
+      "registryStatus": "Active",
+      "language": "English",
+      "priorityReviewStatus": "reviewed"
+    },
+    {
+      "iso3": "KHM",
+      "countryNameKo": "캄보디아",
+      "ndcTitle": "Cambodia’s NDC 3.0",
+      "submissionDate": "2025-08-08",
+      "officialUrl": "https://unfccc.int/sites/default/files/2025-08/Cambodia-NDC%203.0_0.pdf",
+      "registryStatus": "Active",
+      "language": "English",
+      "priorityReviewStatus": "metadata-only",
+      "priorities": []
+    },
+    {
+      "iso3": "IDN",
+      "countryNameKo": "인도네시아",
+      "ndcTitle": "Republic Of Indonesia Second NDC",
+      "submissionDate": "2025-10-27",
+      "officialUrl": "https://unfccc.int/sites/default/files/2025-10/Indonesia_Second%20NDC_2025.10.24.pdf",
+      "priorities": [
+        {
+          "technologyId": "renewable-energy",
+          "status": "explicit",
+          "evidenceOriginal": "Renewable energy: Geothermal, Hydro, Solar, Wind, Bioenergy-Biomass",
+          "translationKo": "지열·수력·태양광·풍력·바이오에너지 개발 명시",
+          "documentPage": "PDF p. 43",
+          "documentSection": "Annex 1. Mitigation - Energy",
+          "reviewStatus": "source-verified"
+        },
+        {
+          "technologyId": "power-grid",
+          "status": "related",
+          "evidenceOriginal": "including the transition in power sector",
+          "translationKo": "재생에너지 전력공급 확대와 전력부문 전환 수단 확인",
+          "documentPage": "PDF p. 16",
+          "documentSection": "II. Mitigation",
+          "reviewStatus": "source-verified"
+        },
+        {
+          "technologyId": "energy-efficiency",
+          "status": "explicit",
+          "evidenceOriginal": "Energy efficiency: energy management and energy-efficient technology",
+          "translationKo": "에너지관리·고효율 기술·효율기기 명시",
+          "documentPage": "PDF p. 43",
+          "documentSection": "Annex 1. Mitigation - Energy",
+          "reviewStatus": "source-verified"
+        },
+        {
+          "technologyId": "clean-cooking",
+          "status": "not-confirmed",
+          "evidenceOriginal": "",
+          "translationKo": "최신 NDC 검토 범위에서 청정조리 직접 명시 미확인",
+          "documentPage": "",
+          "documentSection": "",
+          "reviewStatus": "source-verified"
+        },
+        {
+          "technologyId": "water",
+          "status": "explicit",
+          "evidenceOriginal": "Integrated watershed management",
+          "translationKo": "통합 유역관리·물관리·물 안보 적응 프로그램 명시",
+          "documentPage": "PDF p. 47",
+          "documentSection": "Annex 2. Adaptation",
+          "reviewStatus": "source-verified"
+        },
+        {
+          "technologyId": "agriculture",
+          "status": "explicit",
+          "evidenceOriginal": "Development and implementation of climate adaptive technologies for sustainable production",
+          "translationKo": "기후적응형 농업기술·관개·기후정보서비스 명시",
+          "documentPage": "PDF p. 46",
+          "documentSection": "Annex 2. Adaptation",
+          "reviewStatus": "source-verified"
+        },
+        {
+          "technologyId": "coastal-adaptation",
+          "status": "explicit",
+          "evidenceOriginal": "Ocean and Coastal zone protection",
+          "translationKo": "해양·연안 보호와 연안·해양 생태계 적응 명시",
+          "documentPage": "PDF p. 53",
+          "documentSection": "Annex 2. Adaptation",
+          "reviewStatus": "source-verified"
+        },
+        {
+          "technologyId": "early-warning",
+          "status": "explicit",
+          "evidenceOriginal": "Indonesia has developed multi hazard early warning systems",
+          "translationKo": "다중재해 조기경보체계와 농업 조기경보 명시",
+          "documentPage": "PDF p. 20",
+          "documentSection": "III. Adaptation",
+          "reviewStatus": "source-verified"
+        },
+        {
+          "technologyId": "industrial-decarbonization",
+          "status": "explicit",
+          "evidenceOriginal": "Increase blended cement by increasing the portion of alternative material",
+          "translationKo": "혼합시멘트·암모니아 설비 효율·철강 스크랩 활용 등 명시",
+          "documentPage": "PDF p. 44",
+          "documentSection": "Annex 1. Mitigation - IPPU",
+          "reviewStatus": "source-verified"
+        },
+        {
+          "technologyId": "mrv-carbon-market",
+          "status": "explicit",
+          "evidenceOriginal": "carbon pricing, including arrangements for carbon trading",
+          "translationKo": "탄소가격·탄소거래·국가등록부·MRV 체계 명시",
+          "documentPage": "PDF p. 10",
+          "documentSection": "I. National Context",
+          "reviewStatus": "source-verified"
+        }
+      ],
+      "registryStatus": "Active",
+      "language": "English",
+      "priorityReviewStatus": "reviewed"
+    },
+    {
+      "iso3": "LAO",
+      "countryNameKo": "라오스",
+      "ndcTitle": "Lao People's Democratic Republic First NDC (Updated submission)",
+      "submissionDate": "2021-05-11",
+      "officialUrl": "https://unfccc.int/sites/default/files/NDC/2022-06/NDC%202020%20of%20Lao%20PDR%20%28English%29%2C%2009%20April%202021%20%281%29.pdf",
+      "registryStatus": "Active",
+      "language": "English",
+      "priorityReviewStatus": "metadata-only",
+      "priorities": []
+    },
+    {
+      "iso3": "LKA",
+      "countryNameKo": "스리랑카",
+      "ndcTitle": "Sri Lanka NDC 3.0",
+      "submissionDate": "2025-09-25",
+      "officialUrl": "https://unfccc.int/sites/default/files/2025-09/Sri%20Lankas%20Nationally%20Determined%20Contributions%203.0%20%282026-2035%29%20submitted%2022.09.2025%20%281%29.pdf",
+      "registryStatus": "Active",
+      "language": "English",
+      "priorityReviewStatus": "metadata-only",
+      "priorities": []
+    },
+    {
+      "iso3": "IND",
+      "countryNameKo": "인도",
+      "ndcTitle": "India NDC (2031 - 2035)",
+      "submissionDate": "2026-04-24",
+      "officialUrl": "https://unfccc.int/sites/default/files/2026-04/INDIA%20NDC%202031-35.pdf",
+      "registryStatus": "Active",
+      "language": "English",
+      "priorityReviewStatus": "metadata-only",
+      "priorities": []
+    },
+    {
+      "iso3": "MYS",
+      "countryNameKo": "말레이시아",
+      "ndcTitle": "Malaysia NDC 3.0 2025",
+      "submissionDate": "2025-10-24",
+      "officialUrl": "https://unfccc.int/sites/default/files/2025-10/Malaysia%20NDC%203.0%20to%20UNFCCC%202025%20final.pdf",
+      "registryStatus": "Active",
+      "language": "English",
+      "priorityReviewStatus": "metadata-only",
+      "priorities": []
+    },
+    {
+      "iso3": "EGY",
+      "countryNameKo": "이집트",
+      "ndcTitle": "Egypt’s Updated First Nationally Determined Contribution 2030 (Second Update)",
+      "submissionDate": "2023-06-26",
+      "officialUrl": "https://unfccc.int/sites/default/files/NDC/2023-06/Egypts%20Updated%20First%20Nationally%20Determined%20Contribution%202030%20%28Second%20Update%29.pdf",
+      "registryStatus": "Active",
+      "language": "English",
+      "priorityReviewStatus": "metadata-only",
+      "priorities": []
+    }
+  ]
+}

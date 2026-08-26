@@ -1,0 +1,52 @@
+.v60-country-selector {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+  padding: 18px 24px 4px;
+}
+
+.v60-country-selector label {
+  display: grid;
+  gap: 7px;
+  width: min(720px, 100%);
+}
+
+.v60-country-selector label > span {
+  color: #556f82;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.v60-country-selector select {
+  width: 100%;
+  height: 44px;
+  border: 1px solid #cbd9e3;
+  border-radius: 10px;
+  padding: 0 12px;
+  background: #fff;
+  color: #17344b;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.v60-country-selector select:focus {
+  outline: 3px solid rgba(36, 132, 214, 0.2);
+  border-color: #6aa9d8;
+}
+
+/* v69
+     Country filter is always part of the dataset card's context-control band.
+     It must never float between breadcrumb and the data card. */
+.v69-embedded-country-selector {
+  background: #fff;
+}
+
+@media (max-width: 680px) {
+  .v60-country-selector {
+    padding: 16px 16px 4px;
+  }
+
+  .v60-country-selector label {
+    width: 100%;
+  }
+}

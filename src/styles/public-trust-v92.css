@@ -1,0 +1,193 @@
+.v92-pending-state {
+  overflow: hidden;
+  border: 1px solid #d7e2ea;
+  border-radius: 18px;
+  background: #fff;
+}
+.v92-pending-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 22px;
+  border-bottom: 1px solid #e3eaee;
+  background: linear-gradient(135deg, #fff, #f6fafb);
+}
+.v92-pending-eyebrow {
+  display: block;
+  color: #08756d;
+  font-size: 12px;
+  font-weight: 850;
+}
+.v92-pending-header h1 {
+  margin: 6px 0 5px;
+  color: #102f47;
+  font-size: 28px;
+  line-height: 1.35;
+}
+.v92-pending-header p {
+  margin: 0;
+  color: #34576c;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+.v92-pending-status {
+  flex: 0 0 auto;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: #fff3d4;
+  color: #7a5a08;
+  font-size: 11px;
+  font-weight: 850;
+}
+.v92-pending-notice {
+  margin: 18px 22px 0;
+  padding: 15px 17px;
+  border: 1px solid #e9d390;
+  border-radius: 14px;
+  background: #fff9e9;
+  color: #604a12;
+}
+.v92-pending-notice strong {
+  display: block;
+  line-height: 1.5;
+}
+.v92-pending-notice p {
+  margin: 6px 0 0;
+  max-width: 920px;
+  color: #756126;
+  font-size: 13px;
+  line-height: 1.65;
+}
+.v104-source-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  margin: 0 22px;
+  padding: 15px 0 18px;
+}
+.v104-source-copy {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+.v104-source-copy span {
+  color: #718493;
+  font-size: 11px;
+  font-weight: 800;
+}
+.v104-source-copy b {
+  color: #29465a;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.v104-source-button {
+  flex: 0 0 auto;
+}
+
+.v107-pending-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+.v107-pending-download:disabled {
+  cursor: not-allowed;
+  border-color: #d8e0e6;
+  background: #f4f6f8;
+  color: #7b8b97;
+  opacity: 1;
+}
+
+/* DataTypeRenderer의 metadata-only fallback은 Dataset 상세에서 계속 사용 */
+.v92-metadata-fallback {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid #dbe5eb;
+  border-radius: 14px;
+  background: #f8fafb;
+}
+.v92-metadata-fallback h3 {
+  margin: 0;
+  color: #17384f;
+  font-size: 18px;
+}
+.v92-metadata-fallback p {
+  margin: 0;
+  color: #5e7485;
+  line-height: 1.65;
+}
+.v92-metadata-fallback dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+}
+.v92-metadata-fallback dl > div {
+  padding: 11px 12px;
+  border: 1px solid #dce6ec;
+  border-radius: 10px;
+  background: #fff;
+}
+.v92-metadata-fallback dt {
+  color: #728594;
+  font-size: 11px;
+  font-weight: 800;
+}
+.v92-metadata-fallback dd {
+  margin: 5px 0 0;
+  color: #29465a;
+  font-size: 13px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+.v92-metadata-fallback .v92-fallback-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* v102 예시 영역: 내부 설계 설명을 제거하고 실제 화면 자체를 바로 제시 */
+.v102-example-preview-section {
+  margin: 16px 22px 22px;
+}
+
+@media (max-width: 800px) {
+  .v92-pending-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .v104-source-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .v104-source-button {
+    width: 100%;
+  }
+  .v107-pending-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .v107-pending-actions button {
+    width: 100%;
+  }
+}
+@media (max-width: 520px) {
+  .v92-metadata-fallback dl {
+    grid-template-columns: 1fr;
+  }
+  .v92-pending-header h1 {
+    font-size: 23px;
+  }
+  .v92-pending-notice,
+  .v104-source-row,
+  .v102-example-preview-section {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}

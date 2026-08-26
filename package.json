@@ -1,0 +1,64 @@
+{
+  "name": "react-typescript",
+  "version": "1.0.0",
+  "description": "React and TypeScript example starter project",
+  "keywords": [
+    "typescript",
+    "react",
+    "starter"
+  ],
+  "main": "src/index.tsx",
+  "dependencies": {
+    "flag-icons": "7.5.0",
+    "loader-utils": "3.2.1",
+    "maplibre-gl": "5.24.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-scripts": "5.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "18.2.38",
+    "@types/react-dom": "18.2.15",
+    "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "quarantine:legacy": "node scripts/quarantine-legacy-v44.mjs",
+    "audit:release": "node scripts/final-release-audit-v44.mjs",
+    "finalize:v44": "npm run quarantine:legacy && npm run audit:release",
+    "audit:v101": "node scripts/final-release-audit-v101.mjs",
+    "finalize:v101": "npm run quarantine:legacy && npm run audit:v101",
+    "audit:v102": "node scripts/final-release-audit-v102.mjs",
+    "finalize:v102": "npm run quarantine:legacy && npm run audit:v102",
+    "audit:v105": "node scripts/data-hierarchy-audit-v105.mjs",
+    "finalize:v105": "npm run finalize:v102 && npm run audit:v105",
+    "audit:v106": "node scripts/public-hierarchy-ux-audit-v106.mjs",
+    "finalize:v106": "npm run finalize:v105 && npm run audit:v106",
+    "audit:v107": "node scripts/country-download-audit-v107.mjs",
+    "finalize:v107": "npm run finalize:v106 && npm run audit:v107",
+    "audit:v108": "node scripts/cooperation-data-readiness-audit-v108.mjs",
+    "finalize:v108": "npm run finalize:v107 && npm run audit:v108",
+    "audit:v109": "node scripts/policy-evidence-audit-v109.mjs",
+    "finalize:v109": "npm run finalize:v108 && npm run audit:v109",
+    "refresh:worldbank:v110": "node scripts/refresh-worldbank-snapshots-v110.mjs",
+    "audit:v110": "node scripts/tna-snapshot-audit-v110.mjs",
+    "finalize:v110": "npm run refresh:worldbank:v110 && npm run finalize:v109 && npm run audit:v110",
+    "audit:v111": "node scripts/tna-currentness-gcf-audit-v111.mjs",
+    "finalize:v111": "npm run finalize:v109 && npm run audit:v110 && npm run audit:v111",
+    "audit:v112": "node scripts/international-support-audit-v112.mjs",
+    "finalize:v112": "npm run finalize:v111 && npm run audit:v112",
+    "audit:v121": "node scripts/final-release-audit-v121.mjs",
+    "finalize:v121": "npm run audit:v121",
+    "audit:v122": "node scripts/final-release-audit-v122.mjs",
+    "finalize:v122": "npm run audit:v122"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

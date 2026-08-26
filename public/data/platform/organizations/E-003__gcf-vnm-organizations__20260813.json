@@ -1,0 +1,53 @@
+{
+  "type": "organization",
+  "elementId": "E-003",
+  "datasetId": "LDC-PILOT-E-003-GCF-ORGS",
+  "title": "베트남 GCF 국가 지정기관·직접접근기관",
+  "referencePeriod": "2026-08-13 공식 GCF 국가/Entities DB 재검증",
+  "status": "verified-2026-08-13",
+  "accessLevel": "public",
+  "source": {
+    "organization": "Green Climate Fund",
+    "url": "https://www.greenclimate.fund/countries/viet-nam"
+  },
+  "organizations": [
+    {
+      "id": "ORG-VNM-GCF-NDA-MOF",
+      "iso3": "VNM",
+      "name": "Ministry of Finance (Viet Nam)",
+      "organizationType": "GCF 국가 지정기관(NDA)",
+      "regionName": "베트남",
+      "confirmedRole": "GCF 국가 페이지에서 베트남의 National Designated Authority로 확인",
+      "technologyIds": ["all"],
+      "verificationStatus": "confirmed",
+      "sourceUrl": "https://www.greenclimate.fund/countries/viet-nam"
+    },
+    {
+      "id": "ORG-VNM-GCF-DAE-VDB",
+      "iso3": "VNM",
+      "name": "Vietnam Development Bank",
+      "organizationType": "GCF 직접접근기관",
+      "regionName": "베트남",
+      "confirmedRole": "GCF 국가 페이지에서 베트남의 Direct Access Entity로 확인",
+      "technologyIds": ["all"],
+      "verificationStatus": "confirmed",
+      "sourceUrl": "https://www.greenclimate.fund/countries/viet-nam"
+    },
+    {
+      "id": "ORG-VNM-GCF-DAE-BIDV",
+      "iso3": "VNM",
+      "name": "Joint Stock Commercial Bank for Investment and Development of Vietnam",
+      "organizationType": "GCF 직접접근기관",
+      "regionName": "베트남",
+      "confirmedRole": "GCF 국가 페이지에서 베트남의 Direct Access Entity로 확인",
+      "technologyIds": ["all"],
+      "verificationStatus": "confirmed",
+      "sourceUrl": "https://www.greenclimate.fund/countries/viet-nam"
+    }
+  ],
+  "limitations": [
+    "기관 단위 공개정보만 수록하고 개인 담당자·이메일·전화번호는 포함하지 않음",
+    "기관의 실제 협력 의향·사업 참여 가능 여부를 의미하지 않음",
+    "기관 역할과 연락체계는 이용 시점에 공식 원문에서 재확인 필요"
+  ]
+}

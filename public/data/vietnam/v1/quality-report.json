@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "v121",
+  "summary": {
+    "originalDataRows": 45582,
+    "processedRows": 45582,
+    "rowBalanceMatches": true,
+    "publishedRows": 43910,
+    "publishedWithWarningRows": 913,
+    "metadataOnlyRows": 731,
+    "quarantinedRows": 28,
+    "nullToZeroConversions": 0,
+    "provenanceMissing": 0,
+    "duplicateRecordIds": 0,
+    "logicalDuplicateRecords": 878,
+    "mapFeatures": 1917,
+    "mapLayers": 5,
+    "fakeCoordinates": 0,
+    "unexplainedElements": 0,
+    "rightsMetadataRows": 7390,
+    "restrictedRawFieldsInPublicPayload": 0
+  },
+  "checks": {
+    "workbookFiles149": true,
+    "frameworkElements152": true,
+    "accountedElements152": true,
+    "rowBalance": true,
+    "nullToZeroConversions0": true,
+    "provenanceMissing0": true,
+    "duplicateRecordIds0": true,
+    "unexplainedElements0": true,
+    "rightsMetadataRows7390": true,
+    "publicAssetsRightsGated": true,
+    "mapUsesValidatedCoordinatesOnly": true,
+    "a024NoSyntheticLine": true,
+    "b012RestrictedNotInMapPayload": true,
+    "restrictedRawFieldsOmitted": true
+  },
+  "warningsByCode": {
+    "logical-duplicate-row": 878,
+    "nonstandard-auxiliary-table": 28,
+    "source-url-stored-as-note": 10,
+    "repeated-coordinate:9": 9,
+    "repeated-coordinate:8": 8,
+    "vietnam-coordinate-selected-from-source-multipoint": 4,
+    "excel-error-value:#VALUE!": 3,
+    "coordinate-outside-vietnam-map-scope": 2,
+    "duplicate-indicator-id": 1,
+    "metadata-field-order-normalized": 1
+  },
+  "commonSchemaConflicts": 0,
+  "quarantineCount": 28,
+  "quarantineReason": "정규 스키마 아래 중복·보조표 데이터행 28건을 원문·행번호와 함께 내부 원장에 보존하고 공개 데이터와 혼합하지 않음",
+  "rightsSanitization": {
+    "limitedObservationRawValuesOmitted": 2824,
+    "limitedEntityRawAttributesOmitted": 3046,
+    "internalLedgerPreserved": true
+  }
+}

@@ -1,0 +1,72 @@
+.map-v80-project-records {
+  display: grid;
+  gap: 8px;
+  margin: 10px 0 12px;
+  padding: 11px 12px;
+  border: 1px solid #ddd0ee;
+  border-radius: 10px;
+  background: #fbf9fd;
+}
+
+.map-v80-project-records header {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.map-v80-project-records header > div {
+  display: grid;
+  gap: 2px;
+}
+
+.map-v80-project-records header span,
+.map-v80-project-records header small,
+.map-v80-project-records p {
+  color: #786d88;
+  font-size: 9px;
+}
+
+.map-v80-project-records header strong {
+  color: #56327d;
+  font-size: 12px;
+}
+
+.map-v80-project-records > div {
+  display: grid;
+  gap: 5px;
+}
+
+.map-v80-project-records article {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 3px 7px;
+  padding: 6px 8px;
+  border-radius: 7px;
+  background: #fff;
+}
+
+.map-v80-project-records article > span {
+  color: #6f49a0;
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.map-v80-project-records article > b {
+  overflow: hidden;
+  color: #3d3150;
+  font-size: 9px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.map-v80-project-records article > small {
+  grid-column: 2;
+  color: #81778d;
+  font-size: 8px;
+}
+
+.map-v80-project-records p {
+  margin: 0;
+  line-height: 1.45;
+}

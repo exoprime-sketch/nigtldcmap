@@ -1,0 +1,573 @@
+/*
+ * Download page — user-facing layout
+ * 사용자에게 내부 구현정보를 노출하지 않고 데이터·범위·기준·파일 형식만 선택하도록 구성
+ */
+
+.download-page-v8 {
+  padding-top: 48px;
+  padding-bottom: 84px;
+}
+
+.download-header {
+  max-width: 760px;
+}
+
+.download-header h1 {
+  margin: 14px 0 0;
+  color: var(--navy-900);
+  font-size: clamp(30px, 3.2vw, 42px);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.download-header p {
+  margin: 16px 0 0;
+  color: var(--slate-600);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.download-layout {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+}
+
+.download-side-panel,
+.download-main-panel,
+.download-section,
+.download-source-only-card,
+.download-empty-state {
+  border: 1px solid var(--slate-200);
+  border-radius: 16px;
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.download-side-panel {
+  position: sticky;
+  top: 92px;
+  padding: 22px;
+}
+
+.download-panel-kicker,
+.download-step-label {
+  color: var(--teal-700);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.download-field {
+  display: grid;
+  gap: 7px;
+}
+
+.download-panel-kicker + .download-field {
+  margin-top: 14px;
+}
+
+.download-field > span {
+  color: var(--slate-600);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.download-field select,
+.download-country-search {
+  width: 100%;
+  min-height: 44px;
+  padding: 9px 11px;
+  border: 1px solid var(--slate-300);
+  border-radius: 9px;
+  color: var(--slate-800);
+  background: var(--white);
+  font: inherit;
+  font-size: 12px;
+  outline: none;
+}
+
+.download-field select:focus,
+.download-country-search:focus {
+  border-color: var(--blue-600);
+  box-shadow: 0 0 0 3px rgba(18, 111, 196, 0.12);
+}
+
+.download-dataset-summary {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--slate-100);
+}
+
+.download-dataset-summary > strong {
+  display: block;
+  color: var(--navy-900);
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+.download-dataset-summary > p {
+  margin: 9px 0 0;
+  color: var(--slate-600);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.download-metadata-list {
+  margin: 18px 0 0;
+  display: grid;
+  gap: 0;
+}
+
+.download-metadata-list > * {
+  padding: 10px 0;
+  border-top: 1px solid var(--slate-100);
+}
+
+.download-detail-button {
+  width: 100%;
+  margin-top: 18px;
+}
+
+.download-main-panel {
+  min-width: 0;
+  padding: 22px;
+  display: grid;
+  gap: 16px;
+}
+
+.download-section {
+  padding: 22px;
+  box-shadow: none;
+}
+
+.download-section-heading,
+.download-country-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.download-section-heading h2,
+.download-country-heading h2 {
+  margin: 7px 0 0;
+  color: var(--navy-900);
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.download-section-heading p,
+.download-country-heading p {
+  margin: 7px 0 0;
+  color: var(--slate-500);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.download-option-grid {
+  margin-top: 17px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.download-option-grid > label {
+  position: relative;
+  min-height: 104px;
+  padding: 17px 42px 17px 17px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border: 1px solid var(--slate-200);
+  border-radius: 12px;
+  background: var(--white);
+  cursor: pointer;
+  transition: border-color 150ms ease, background 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.download-option-grid > label:hover {
+  border-color: #b8d7f4;
+  background: #f9fcff;
+}
+
+.download-option-grid > label.active {
+  border-color: var(--blue-600);
+  background: #f2f8ff;
+  box-shadow: inset 0 0 0 1px rgba(18, 111, 196, 0.08);
+}
+
+.download-option-grid input {
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--blue-700);
+}
+
+.download-option-grid label > span {
+  min-width: 0;
+  display: grid;
+  gap: 7px;
+}
+
+.download-option-grid strong {
+  color: var(--navy-900);
+  font-size: 13px;
+}
+
+.download-option-grid small {
+  color: var(--slate-500);
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.download-control-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.download-section-heading + .download-control-grid {
+  margin-top: 17px;
+}
+
+.download-country-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 7px;
+}
+
+.download-country-actions button {
+  min-height: 34px;
+  padding: 7px 10px;
+  border: 1px solid var(--slate-300);
+  border-radius: 8px;
+  color: var(--slate-700);
+  background: var(--white);
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.download-country-actions button:hover {
+  border-color: var(--blue-500);
+  color: var(--blue-700);
+}
+
+.download-country-search-wrap {
+  margin-top: 16px;
+  display: block;
+}
+
+.download-country-list {
+  max-height: 330px;
+  margin-top: 10px;
+  padding: 7px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px;
+  overflow-y: auto;
+  border: 1px solid var(--slate-200);
+  border-radius: 11px;
+  background: var(--slate-50);
+  scrollbar-gutter: stable;
+}
+
+.download-country-list > label {
+  min-width: 0;
+  padding: 10px 11px;
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: var(--white);
+  cursor: pointer;
+}
+
+.download-country-list > label:hover {
+  border-color: var(--slate-200);
+}
+
+.download-country-list input {
+  width: 15px;
+  height: 15px;
+  margin-top: 2px;
+  accent-color: var(--blue-700);
+}
+
+.download-country-list span {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+}
+
+.download-country-list strong {
+  overflow: hidden;
+  color: var(--slate-800);
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.download-country-list small {
+  color: var(--slate-500);
+  font-size: 9px;
+}
+
+.download-country-empty {
+  margin-top: 10px;
+  padding: 20px;
+  border: 1px dashed var(--slate-300);
+  border-radius: 10px;
+  color: var(--slate-500);
+  background: var(--slate-50);
+  font-size: 11px;
+  text-align: center;
+}
+
+.download-final-section {
+  padding: 19px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-color: #bfd8ef;
+  background: #f5faff;
+}
+
+.download-final-summary {
+  min-width: 0;
+  display: grid;
+  gap: 5px;
+}
+
+.download-final-summary > strong {
+  color: var(--navy-900);
+  font-size: 15px;
+}
+
+.download-final-summary > small {
+  color: var(--slate-600);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.download-create-button {
+  flex: 0 0 auto;
+  min-width: 128px;
+}
+
+.download-create-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
+.download-source-only-card {
+  min-height: 250px;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  align-items: start;
+  gap: 18px;
+  box-shadow: none;
+}
+
+.download-source-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: var(--blue-700);
+  background: var(--blue-100);
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.download-status-label {
+  color: var(--teal-700);
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.download-source-only-card h2 {
+  margin: 7px 0 0;
+  color: var(--navy-900);
+  font-size: 22px;
+}
+
+.download-source-only-card p {
+  max-width: 620px;
+  margin: 10px 0 18px;
+  color: var(--slate-600);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.download-unavailable-note {
+  color: var(--slate-500);
+  font-size: 11px;
+}
+
+.download-warning,
+.download-notice {
+  padding: 12px 14px;
+  border-radius: 9px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.download-warning,
+.download-notice.warning {
+  border: 1px solid #edc78c;
+  color: #74470a;
+  background: #fff7e8;
+}
+
+.download-notice.success {
+  border: 1px solid #a7d9c1;
+  color: #0b6342;
+  background: #edf9f3;
+}
+
+.download-empty-state {
+  margin-top: 26px;
+  padding: 36px;
+  text-align: center;
+}
+
+.download-empty-state h1 {
+  margin: 0;
+  color: var(--navy-900);
+  font-size: 26px;
+}
+
+.download-empty-state p {
+  margin: 9px 0 0;
+  color: var(--slate-500);
+  font-size: 12px;
+}
+
+@media (max-width: 980px) {
+  .download-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .download-side-panel {
+    position: static;
+  }
+
+  .download-dataset-summary {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 0.7fr);
+    gap: 14px 22px;
+  }
+
+  .download-dataset-summary > p {
+    margin-top: 0;
+  }
+
+  .download-metadata-list {
+    grid-column: 1 / -1;
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 18px;
+  }
+}
+
+@media (max-width: 720px) {
+  .download-page-v8 {
+    padding-top: 32px;
+    padding-bottom: 64px;
+  }
+
+  .download-main-panel,
+  .download-side-panel {
+    padding: 16px;
+    border-radius: 13px;
+  }
+
+  .download-section {
+    padding: 17px;
+    border-radius: 12px;
+  }
+
+  .download-option-grid,
+  .download-control-grid,
+  .download-country-list {
+    grid-template-columns: 1fr;
+  }
+
+  .download-country-heading,
+  .download-final-section {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .download-country-actions {
+    justify-content: flex-start;
+  }
+
+  .download-create-button {
+    width: 100%;
+  }
+
+  .download-dataset-summary {
+    display: block;
+  }
+
+  .download-metadata-list {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .download-source-only-card {
+    padding: 22px;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .download-header h1 {
+    font-size: 30px;
+  }
+
+  .download-country-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .download-country-actions button {
+    width: 100%;
+  }
+}
+
+/* v107 · 상세화면 국가 문맥을 다운로드 범위에 이어서 표시 */
+.v107-download-context {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  border: 1px solid #b9ddd8;
+  border-radius: 12px;
+  background: #f0faf8;
+  color: #24564f;
+}
+.v107-download-context strong {
+  color: #0b6f66;
+  font-size: 13px;
+}
+.v107-download-context span {
+  font-size: 12px;
+  line-height: 1.55;
+}

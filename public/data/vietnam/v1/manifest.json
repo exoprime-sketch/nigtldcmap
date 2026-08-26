@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "v121",
+  "generatedAt": "2026-08-21T01:57:24.323541+00:00",
+  "country": {
+    "iso3": "VNM",
+    "nameKo": "베트남",
+    "nameEn": "Viet Nam"
+  },
+  "sourcePackage": "vietnam-data.zip",
+  "workbookFiles": 149,
+  "frameworkElements": 152,
+  "accountedElements": 152,
+  "unexplainedElements": 0,
+  "rawRows": {
+    "observations": 32465,
+    "entities": 5727,
+    "metadata": 7390,
+    "total": 45582,
+    "normalizedCoreRows": 45453,
+    "nonstandardRows": 129
+  },
+  "rowKinds": {
+    "auxiliary-data": 28,
+    "auxiliary-schema": 10,
+    "explicit-placeholder": 78,
+    "schema-descriptor": 13
+  },
+  "loadStatusCounts": {
+    "metadata-only": 731,
+    "published": 43910,
+    "published-with-warning": 913,
+    "quarantined": 28
+  },
+  "publicStatusCounts": {
+    "actual": 126,
+    "partial": 3,
+    "not-in-package": 3,
+    "metadata-only": 20
+  },
+  "packageStatusCounts": {
+    "provided": 149,
+    "not-collected": 3
+  },
+  "mapLayerCount": 5,
+  "mapFeatureCount": 1917,
+  "downloadableElementCount": 94,
+  "rightsMetadataRows": 7390,
+  "rowBalance": {
+    "originalRows": 45582,
+    "processedRows": 45582,
+    "matches": true
+  },
+  "assets": {
+    "catalog": "/data/vietnam/v1/catalog.json",
+    "sourceRegistry": "/data/vietnam/v1/packs-r2/source-registry-v121r2-99c74ede.json",
+    "rightsMatrix": "/data/vietnam/v1/rights-matrix.json",
+    "searchIndex": [
+      "/data/vietnam/v1/packs-r2/search-index-v121r2-001-7d5a0652.json",
+      "/data/vietnam/v1/packs-r2/search-index-v121r2-002-09bc57cc.json"
+    ],
+    "mapIndex": "/data/vietnam/v1/map-index.json",
+    "qualityReport": "/data/vietnam/v1/quality-report.json",
+    "frameworkCoverage": "/data/vietnam/v1/framework-coverage.json",
+    "bundleIndex": "/data/vietnam/v1/packs-r2/bundle-index-v121r2.json"
+  },
+  "assetLayoutVersion": "gzip-base64-json-envelope-v2",
+  "bundleIndexElements": 152,
+  "shardCount": 19,
+  "runtimeVersion": "v121r2-json-envelope",
+  "packCount": 19,
+  "assetTransport": {
+    "encoding": "gzip-base64-chunks-v2",
+    "fileExtension": ".json",
+    "packCount": 19,
+    "searchIndexPackCount": 2,
+    "sourceRegistryPackCount": 1,
+    "largestEnvelopeByteSize": 366863,
+    "largestCompressedByteSize": 274515,
+    "largestContentByteSize": 5041011
+  },
+  "platformRelease": "v122",
+  "dataSchemaVersion": "v121",
+  "countryRuntimeVersion": "country-data-runtime-v1"
+}

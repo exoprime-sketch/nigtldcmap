@@ -1,0 +1,35 @@
+.v55-actual-actions {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+  align-items: center;
+}
+.v55-actual-actions button.primary {
+  border-color: #0a74c9;
+  background: #0a74c9;
+  color: #fff;
+}
+.v55-country-no-value {
+  display: grid;
+  gap: 3px;
+  padding: 10px 11px;
+  border: 1px solid #e2d5a7;
+  border-radius: 9px;
+  background: #fff9e9;
+}
+.v55-country-no-value strong {
+  color: #715814;
+  font-size: 9px;
+}
+.v55-country-no-value span {
+  color: #7a6a43;
+  font-size: 8px;
+  line-height: 1.45;
+}
+@media (max-width: 560px) {
+  .v55-actual-actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}

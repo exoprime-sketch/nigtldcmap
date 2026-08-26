@@ -1,0 +1,114 @@
+.map-primary-information-v120 {
+  display: grid;
+  gap: 10px;
+}
+.map-primary-information-v120 h2 {
+  margin: 0;
+  font-size: 14px;
+}
+.map-primary-information-v120__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+}
+.map-primary-information-v120__grid button {
+  min-height: 38px;
+  padding: 8px 10px;
+  border: 1px solid #cbd9dc;
+  border-radius: 9px;
+  background: #fff;
+  color: #203d47;
+  text-align: left;
+  cursor: pointer;
+}
+.map-primary-information-v120__grid button.is-active {
+  border-color: #087d6d;
+  background: #eaf7f3;
+  color: #056758;
+  font-weight: 700;
+}
+.map-primary-information-v120__summary {
+  padding: 10px;
+  border-radius: 10px;
+  background: #f6f9fa;
+}
+.map-primary-information-v120__summary p {
+  margin: 5px 0 0;
+  color: #557078;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.map-primary-information-v120__sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 8px;
+}
+.map-primary-information-v120__sources span {
+  padding: 3px 6px;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 11px;
+}
+.map-dynamic-legend-v120 {
+  padding: 10px 12px;
+  border: 1px solid #d9e3e5;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.95);
+}
+.map-dynamic-legend-v120__unit {
+  margin-left: 6px;
+  color: #6d8087;
+  font-size: 11px;
+}
+.map-dynamic-legend-v120 ul {
+  display: grid;
+  gap: 5px;
+  padding: 0;
+  margin: 8px 0 0;
+  list-style: none;
+}
+.map-dynamic-legend-v120 li {
+  display: grid;
+  grid-template-columns: 20px 1fr auto;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+}
+.map-dynamic-legend-v120 li.is-no-data {
+  color: #73868c;
+}
+.map-evidence-summary-v120 {
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 8px 25px rgba(13, 43, 52, 0.12);
+}
+.map-evidence-summary-v120 h3 {
+  margin: 0 0 8px;
+}
+.map-evidence-summary-v120 > div {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+}
+.map-evidence-summary-v120 article {
+  display: grid;
+  gap: 2px;
+  padding: 8px;
+  border-radius: 8px;
+  background: #f4f8f8;
+}
+.map-evidence-summary-v120 span,
+.map-evidence-summary-v120 small {
+  color: #60777e;
+  font-size: 11px;
+}
+@media (max-width: 720px) {
+  .map-primary-information-v120__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .map-evidence-summary-v120 > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

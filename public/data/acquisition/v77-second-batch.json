@@ -1,0 +1,137 @@
+{
+  "version": "v77",
+  "batch": "02-gcf-country-portfolio",
+  "snapshotDate": "2026-07-31",
+  "sourceOrganization": "Green Climate Fund",
+  "sourceDatabase": "GCF Open Data Library – Countries",
+  "sourceUrl": "https://data.greenclimate.fund/public/data/countries",
+  "authoritativeElement": "D-023",
+  "datasetId": "LDC-DS-E-002",
+  "priorityCountries": [
+    {
+      "iso3": "BGD",
+      "countryName": "Bangladesh",
+      "region": "Asia and the Pacific",
+      "sids": false,
+      "ldc": true,
+      "readinessProjectCount": 8,
+      "fundedActivityCount": 10,
+      "readinessFinancingUsd": 6120068.78,
+      "fundedActivityFinancingUsd": 463955030.0
+    },
+    {
+      "iso3": "KHM",
+      "countryName": "Cambodia",
+      "region": "Asia and the Pacific",
+      "sids": false,
+      "ldc": true,
+      "readinessProjectCount": 14,
+      "fundedActivityCount": 12,
+      "readinessFinancingUsd": 5633291.76,
+      "fundedActivityFinancingUsd": 357454221.66
+    },
+    {
+      "iso3": "EGY",
+      "countryName": "Egypt",
+      "region": "Africa",
+      "sids": false,
+      "ldc": false,
+      "readinessProjectCount": 3,
+      "fundedActivityCount": 9,
+      "readinessFinancingUsd": 4188953.0,
+      "fundedActivityFinancingUsd": 367927608.0
+    },
+    {
+      "iso3": "IND",
+      "countryName": "India",
+      "region": "Asia and the Pacific",
+      "sids": false,
+      "ldc": false,
+      "readinessProjectCount": 5,
+      "fundedActivityCount": 15,
+      "readinessFinancingUsd": 5600000.0,
+      "fundedActivityFinancingUsd": 1031094344.22
+    },
+    {
+      "iso3": "IDN",
+      "countryName": "Indonesia",
+      "region": "Asia and the Pacific",
+      "sids": false,
+      "ldc": false,
+      "readinessProjectCount": 5,
+      "fundedActivityCount": 22,
+      "readinessFinancingUsd": 7555002.0,
+      "fundedActivityFinancingUsd": 612310680.9
+    },
+    {
+      "iso3": "LAO",
+      "countryName": "Lao People's Democratic Republic (the)",
+      "region": "Asia and the Pacific",
+      "sids": false,
+      "ldc": true,
+      "readinessProjectCount": 17,
+      "fundedActivityCount": 11,
+      "readinessFinancingUsd": 9092428.75,
+      "fundedActivityFinancingUsd": 273791799.08
+    },
+    {
+      "iso3": "MYS",
+      "countryName": "Malaysia",
+      "region": "Asia and the Pacific",
+      "sids": false,
+      "ldc": false,
+      "readinessProjectCount": 5,
+      "fundedActivityCount": 3,
+      "readinessFinancingUsd": 4548328.0,
+      "fundedActivityFinancingUsd": 84400875.0
+    },
+    {
+      "iso3": "PHL",
+      "countryName": "Philippines (the)",
+      "region": "Asia and the Pacific",
+      "sids": false,
+      "ldc": false,
+      "readinessProjectCount": 6,
+      "fundedActivityCount": 12,
+      "readinessFinancingUsd": 2362943.0,
+      "fundedActivityFinancingUsd": 199130410.16
+    },
+    {
+      "iso3": "LKA",
+      "countryName": "Sri Lanka",
+      "region": "Asia and the Pacific",
+      "sids": false,
+      "ldc": false,
+      "readinessProjectCount": 6,
+      "fundedActivityCount": 5,
+      "readinessFinancingUsd": 7467632.0,
+      "fundedActivityFinancingUsd": 106013513.75
+    },
+    {
+      "iso3": "VNM",
+      "countryName": "Viet Nam",
+      "region": "Asia and the Pacific",
+      "sids": false,
+      "ldc": false,
+      "readinessProjectCount": 5,
+      "fundedActivityCount": 8,
+      "readinessFinancingUsd": 3688660.0,
+      "fundedActivityFinancingUsd": 325027567.0
+    }
+  ],
+  "crossViews": {
+    "detail": [
+      "Funded Activity 수",
+      "Funded Activity 승인재원",
+      "Readiness 지원 수",
+      "Readiness 승인재원"
+    ],
+    "map": "기본 레이어 위 GCF 국가 버블 overlay",
+    "compare": "사업·재원 탭에서 국가별 4개 GCF 지표 비교",
+    "insight": "기존 사업·재원 근거로 사용"
+  },
+  "rights": {
+    "publicDownload": "source_link",
+    "reason": "GCF 웹사이트 이용조건 적용 · 재배포 조건 검토 필요"
+  }
+}

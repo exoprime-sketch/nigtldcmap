@@ -1,0 +1,25 @@
+.finance-layer-group .real-map-layer-icon {
+  background: #f5e9ff;
+  border-color: #d8b4fe;
+}
+
+.finance-layer-group .real-map-layer-icon::after {
+  content: "$";
+  color: #7e22ce;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.finance-layer-group > button.active {
+  border-color: #a855f7;
+  background: #faf5ff;
+}
+
+.finance-layer-group > button.active .real-map-layer-icon {
+  background: #7e22ce;
+  border-color: #7e22ce;
+}
+
+.finance-layer-group > button.active .real-map-layer-icon::after {
+  color: #ffffff;
+}

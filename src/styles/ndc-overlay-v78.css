@@ -1,0 +1,74 @@
+.map-v78-policy-overlay-group {
+  border-top: 1px solid #dbe6ec;
+  padding-top: 14px;
+}
+
+.map-v78-policy-legend {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin: 9px 0;
+}
+
+.map-v78-policy-legend span {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  color: #607688;
+  font-size: 10px;
+}
+
+.map-v78-policy-legend i {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(20, 52, 72, 0.16);
+}
+
+.map-v78-policy-legend .year-old {
+  background: #d97706;
+}
+.map-v78-policy-legend .year-mid {
+  background: #ca8a04;
+}
+.map-v78-policy-legend .year-new {
+  background: #16a34a;
+}
+.map-v78-policy-legend .year-latest {
+  background: #047857;
+}
+
+.map-v78-selected-policy {
+  display: grid;
+  gap: 4px;
+  margin: 10px 0 12px;
+  padding: 11px 12px;
+  border: 1px solid #cde5d7;
+  border-radius: 10px;
+  background: #f3fbf6;
+}
+
+.map-v78-selected-policy span,
+.map-v78-selected-policy small {
+  color: #5d7b69;
+  font-size: 10px;
+}
+
+.map-v78-selected-policy strong {
+  color: #185c3b;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.v78-ndc-review-state,
+.ndc-meta-status-v78 {
+  color: #557364;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.v78-metadata-only {
+  display: grid;
+  gap: 4px;
+}

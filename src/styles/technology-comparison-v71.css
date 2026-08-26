@@ -1,0 +1,376 @@
+.v71-comparison-controls {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.4fr)
+    minmax(190px, 0.7fr)
+    minmax(150px, 0.45fr);
+  gap: 12px;
+  padding: 18px 24px 4px;
+}
+
+.v71-comparison-controls label {
+  display: grid;
+  gap: 6px;
+}
+
+.v71-comparison-controls label > span {
+  color: #5d7587;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.v71-comparison-controls select {
+  height: 42px;
+  border: 1px solid #cbd9e3;
+  border-radius: 9px;
+  background: #fff;
+  padding: 0 10px;
+  color: #17344b;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.v71-comparison-view,
+.v71-detail {
+  display: grid;
+  gap: 14px;
+  padding: 20px 24px;
+}
+
+.v71-context-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  overflow: hidden;
+  border: 1px solid #dce6ec;
+  border-radius: 10px;
+}
+
+.v71-context-strip > div {
+  display: grid;
+  gap: 4px;
+  padding: 11px 13px;
+  border-right: 1px solid #e7edf1;
+}
+
+.v71-context-strip > div:last-child {
+  border-right: 0;
+}
+
+.v71-context-strip span {
+  color: #718493;
+  font-size: 10px;
+}
+
+.v71-context-strip b {
+  color: #27485e;
+  font-size: 12px;
+}
+
+.v71-comparison-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.v71-comparison-kpis article {
+  min-height: 100px;
+  padding: 14px;
+  border: 1px solid #dce6ec;
+  border-radius: 11px;
+  background: #fbfcfd;
+}
+
+.v71-comparison-kpis article.selected {
+  border-color: #bfe1d7;
+  background: #eef8f5;
+}
+
+.v71-comparison-kpis span,
+.v71-comparison-kpis small {
+  display: block;
+  color: #708392;
+  font-size: 11px;
+}
+
+.v71-comparison-kpis strong {
+  display: block;
+  margin: 7px 0 4px;
+  color: #143149;
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.v71-technology-summary,
+.v71-axis-matrix,
+.v71-detail {
+  border: 1px solid #dce6ec;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.v71-technology-summary,
+.v71-axis-matrix {
+  overflow: hidden;
+}
+
+.v71-technology-summary > header,
+.v71-axis-matrix > header,
+.v71-detail > header {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 13px 15px;
+  border-bottom: 1px solid #e7edf1;
+  background: #f7fafb;
+}
+
+.v71-technology-summary h4,
+.v71-axis-matrix h4,
+.v71-detail h4 {
+  margin: 0;
+  color: #193a51;
+  font-size: 15px;
+}
+
+.v71-technology-summary p,
+.v71-axis-matrix p {
+  margin: 4px 0 0;
+  color: #718493;
+  font-size: 10px;
+}
+
+.v71-axis-matrix > header small,
+.v71-detail > header small {
+  color: #7b8d99;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.v71-tech-head,
+.v71-tech-row {
+  display: grid;
+  grid-template-columns:
+    minmax(190px, 0.8fr)
+    90px
+    minmax(0, 1.5fr);
+  gap: 12px;
+  align-items: center;
+  padding: 11px 14px;
+}
+
+.v71-tech-head {
+  background: #fbfcfd;
+  color: #607587;
+  font-size: 10px;
+  font-weight: 850;
+}
+
+.v71-tech-row {
+  border-top: 1px solid #e7edf1;
+}
+
+.v71-tech-row b {
+  color: #28495f;
+  font-size: 12px;
+}
+
+.v71-tech-row > span:last-child {
+  color: #5d7586;
+  font-size: 11px;
+}
+
+.v71-axis-head,
+.v71-axis-row {
+  display: grid;
+  grid-template-columns:
+    minmax(145px, 0.65fr)
+    80px
+    minmax(220px, 1.15fr)
+    minmax(260px, 1.35fr);
+  gap: 12px;
+  align-items: center;
+  min-width: 830px;
+  padding: 11px 14px;
+}
+
+.v71-axis-head {
+  background: #fbfcfd;
+  color: #607587;
+  font-size: 10px;
+  font-weight: 850;
+}
+
+.v71-axis-row {
+  border-top: 1px solid #e7edf1;
+}
+
+.v71-axis-row b {
+  color: #29495f;
+  font-size: 12px;
+}
+
+.v71-axis-row > span:not(.v71-position) {
+  color: #536f82;
+  font-size: 11px;
+}
+
+.v71-axis-row small {
+  color: #748795;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.v71-position {
+  display: inline-flex;
+  justify-content: center;
+  min-width: 58px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 850;
+}
+
+.v71-position.position-우위 {
+  background: #e7f5ee;
+  color: #17694f;
+}
+
+.v71-position.position-동등 {
+  background: #edf3f7;
+  color: #506c80;
+}
+
+.v71-position.position-열위 {
+  background: #fff0e6;
+  color: #a85d20;
+}
+
+.v71-summary-note {
+  padding: 11px 13px;
+  border-radius: 9px;
+  background: #f4f8fa;
+  color: #5e7485;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.v71-detail {
+  overflow: hidden;
+  padding: 0;
+}
+
+.v71-detail > header > div {
+  display: grid;
+  gap: 3px;
+}
+
+.v71-detail > header span {
+  color: #08756d;
+  font-size: 10px;
+  font-weight: 850;
+}
+
+.v71-detail-table {
+  overflow-x: auto;
+}
+
+.v71-detail-head,
+.v71-detail-row {
+  display: grid;
+  grid-template-columns:
+    minmax(145px, 0.65fr)
+    minmax(230px, 1.25fr)
+    minmax(230px, 1.25fr)
+    80px
+    minmax(160px, 0.8fr);
+  gap: 12px;
+  align-items: center;
+  min-width: 960px;
+  padding: 11px 14px;
+}
+
+.v71-detail-head.all-tech,
+.v71-detail-row.all-tech {
+  grid-template-columns:
+    minmax(180px, 0.9fr)
+    minmax(160px, 0.8fr)
+    minmax(160px, 0.8fr)
+    minmax(150px, 0.7fr)
+    90px;
+}
+
+.v71-detail-head {
+  background: #fbfcfd;
+  color: #607587;
+  font-size: 10px;
+  font-weight: 850;
+}
+
+.v71-detail-row {
+  border-top: 1px solid #e7edf1;
+}
+
+.v71-detail-row b {
+  color: #29495f;
+  font-size: 11px;
+}
+
+.v71-detail-row > span:not(.v71-position),
+.v71-detail-row small {
+  color: #607687;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+@media (max-width: 900px) {
+  .v71-comparison-controls {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .v71-comparison-controls label:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .v71-context-strip,
+  .v71-comparison-kpis {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .v71-comparison-controls {
+    grid-template-columns: 1fr;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .v71-comparison-controls label:first-child {
+    grid-column: auto;
+  }
+
+  .v71-comparison-view,
+  .v71-detail {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .v71-comparison-view {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .v71-context-strip,
+  .v71-comparison-kpis {
+    grid-template-columns: 1fr;
+  }
+
+  .v71-context-strip > div {
+    border-right: 0;
+    border-bottom: 1px solid #e7edf1;
+  }
+
+  .v71-context-strip > div:last-child {
+    border-bottom: 0;
+  }
+}

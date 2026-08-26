@@ -1,0 +1,43 @@
+.v63-toolbar {
+  align-items: center;
+}
+
+.v63-tabs.tabs-2 {
+  grid-template-columns: repeat(2, minmax(0, auto));
+}
+
+.v63-tabs.tabs-3 {
+  grid-template-columns: repeat(3, minmax(0, auto));
+}
+
+.v63-tabs button {
+  white-space: nowrap;
+}
+
+/* 차트/표는 같은 데이터의 주요 정보이므로 콘텐츠 안의 toggle로 유지 */
+.v57-view-toggle,
+.v54-view-toggle {
+  display: flex;
+}
+
+/* 2탭 모델에서는 불필요한 "요약/상세" 인상을 없애고
+     데이터와 검증정보만 명확하게 구분 */
+.v63-tabs.tabs-2 button:first-child {
+  min-width: 96px;
+}
+
+@media (max-width: 560px) {
+  .v63-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .v63-tabs {
+    width: 100%;
+  }
+
+  .v63-tabs.tabs-2,
+  .v63-tabs.tabs-3 {
+    grid-template-columns: 1fr;
+  }
+}

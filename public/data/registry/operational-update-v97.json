@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "97.0",
+  "batchId": "OPS-V97",
+  "purpose": "post-RC operational data maintenance",
+  "rules": {
+    "actualDataPriority": true,
+    "exampleFallbackPreserved": true,
+    "exampleEvidenceEligible": false,
+    "verifiedCoordinatesOnly": true,
+    "technologyMappingRequiresEvidence": true,
+    "openP0P1BlocksRelease": true
+  },
+  "counts": {
+    "datasets": 23,
+    "sourceRefreshRules": 20,
+    "technologyLinks": 68,
+    "searchAliasRules": 56,
+    "verifiedLocations": 0,
+    "openBugs": 0
+  },
+  "sourceNotes": {
+    "WorldBank": "Indicators API is queried from official source; verify latest availability/metadata before release.",
+    "GCF": "ODL source should be snapshotted and reference date stored together with values.",
+    "UNFCCC": "NDC Active document/version/submission date must be rechecked in official registry before release."
+  }
+}

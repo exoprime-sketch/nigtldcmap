@@ -1,0 +1,92 @@
+.insight-v80-country-projects {
+  display: grid;
+  gap: 9px;
+  margin-top: 12px;
+  padding: 13px;
+  border: 1px solid #ddd0ee;
+  border-radius: 11px;
+  background: #fbf9fd;
+}
+
+.insight-v80-country-projects > header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.insight-v80-country-projects > header > div {
+  display: grid;
+  gap: 2px;
+}
+
+.insight-v80-country-projects > header span,
+.insight-v80-country-projects > header small,
+.insight-v80-country-projects > p {
+  color: #776b88;
+  font-size: 10px;
+}
+
+.insight-v80-country-projects > header strong {
+  color: #56327d;
+  font-size: 15px;
+}
+
+.insight-v80-country-projects > div {
+  display: grid;
+  gap: 7px;
+}
+
+.insight-v80-country-projects article {
+  display: grid;
+  grid-template-columns: 54px 1fr auto;
+  gap: 4px 9px;
+  align-items: center;
+  padding: 9px 10px;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.insight-v80-country-projects article > span {
+  color: #6f49a0;
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.insight-v80-country-projects article > b {
+  color: #3f3650;
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+.insight-v80-country-projects article > small {
+  grid-column: 2;
+  color: #83778d;
+  font-size: 9px;
+}
+
+.insight-v80-country-projects article > a {
+  grid-column: 3;
+  grid-row: 1 / 3;
+  color: #6f49a0;
+  font-size: 9px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.insight-v80-country-projects > p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 620px) {
+  .insight-v80-country-projects article {
+    grid-template-columns: 48px 1fr;
+  }
+
+  .insight-v80-country-projects article > a {
+    grid-column: 2;
+    grid-row: auto;
+    justify-self: start;
+  }
+}

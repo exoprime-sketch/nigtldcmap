@@ -1,0 +1,31 @@
+.v61-preview-context {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.v61-preview-context > span {
+  color: #007b74;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.v61-preview-context > b {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #fff2d5;
+  color: #765700;
+  font-size: 11px;
+  font-weight: 850;
+}
+
+@media (max-width: 560px) {
+  .v61-preview-context {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,273 @@
+/* v39 benchmark-driven public UX */
+
+.planning-quick-v39 {
+  padding: 20px;
+  display: grid;
+  gap: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  background: rgba(5, 31, 54, 0.48);
+}
+
+.planning-quick-v39-heading {
+  display: grid;
+  gap: 4px;
+}
+
+.planning-quick-v39-heading > span {
+  color: #83ddd8;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.planning-quick-v39-heading > strong {
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+
+.planning-quick-v39-heading > p,
+.planning-quick-v39 > small {
+  margin: 0;
+  color: #a9bfd2;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.planning-quick-v39-controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.planning-quick-v39-controls label {
+  min-width: 0;
+  display: grid;
+  gap: 5px;
+}
+
+.planning-quick-v39-controls label > span {
+  color: #c7d8e6;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.planning-quick-v39-controls select {
+  width: 100%;
+  min-width: 0;
+  height: 40px;
+  padding: 0 34px 0 11px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 9px;
+  color: #15324a;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.planning-quick-v39-submit {
+  min-height: 42px;
+  border: 0;
+  border-radius: 9px;
+  color: #072943;
+  background: #83ddd8;
+  font-size: 12px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.planning-quick-v39-submit:disabled {
+  color: #8499aa;
+  background: #dbe4ea;
+  cursor: not-allowed;
+}
+
+.home-v39-featured-divider {
+  height: 1px;
+  margin: 18px 0 4px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.page-jump-v39 {
+  position: sticky;
+  top: 74px;
+  z-index: 14;
+  margin: 0 0 18px;
+  padding: 9px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #d8e3eb;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 5px 18px rgba(16, 45, 70, 0.06);
+  backdrop-filter: blur(12px);
+}
+
+.page-jump-v39 > span {
+  flex: 0 0 auto;
+  color: #52697d;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.page-jump-v39 > div {
+  min-width: 0;
+  display: flex;
+  gap: 5px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.page-jump-v39 a {
+  flex: 0 0 auto;
+  padding: 6px 9px;
+  border-radius: 8px;
+  color: #34536d;
+  background: #f3f7fa;
+  font-size: 11px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.page-jump-v39 a:hover,
+.page-jump-v39 a:focus-visible {
+  color: #087f7b;
+  background: #e7f5f3;
+  outline: none;
+}
+
+.dataset-usebar-v39 {
+  margin: 14px 0 20px;
+  padding: 15px 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  border: 1px solid #dbe5ec;
+  border-radius: 14px;
+  background: #f7fafc;
+}
+
+.dataset-usebar-v39-copy {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 9px;
+  row-gap: 3px;
+  align-items: baseline;
+}
+
+.dataset-usebar-v39-copy > span {
+  color: #087f7b;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.dataset-usebar-v39-copy > strong {
+  overflow: hidden;
+  color: #1b3c56;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dataset-usebar-v39-copy > p {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: #617689;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.dataset-usebar-v39-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 7px;
+}
+
+.dataset-usebar-v39-actions button {
+  min-height: 36px;
+  padding: 0 11px;
+  border: 1px solid #cad8e2;
+  border-radius: 8px;
+  color: #2f536d;
+  background: #fff;
+  font-size: 10px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.dataset-usebar-v39-actions button.primary {
+  border-color: #087f7b;
+  color: #fff;
+  background: #087f7b;
+}
+
+.insight-v39-share {
+  white-space: nowrap;
+}
+
+@media (max-width: 980px) {
+  .page-jump-v39 {
+    top: 66px;
+  }
+
+  .dataset-usebar-v39 {
+    grid-template-columns: 1fr;
+  }
+
+  .dataset-usebar-v39-actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 680px) {
+  .planning-quick-v39-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .page-jump-v39 {
+    top: 62px;
+    align-items: flex-start;
+  }
+
+  .page-jump-v39 > span {
+    padding-top: 6px;
+  }
+
+  .dataset-usebar-v39-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .dataset-usebar-v39-actions button {
+    width: 100%;
+  }
+}
+
+@media print {
+  .page-jump-v39,
+  .planning-quick-v39-submit,
+  .dataset-usebar-v39-actions {
+    display: none !important;
+  }
+}
+
+#country-technology-evidence,
+#country-energy-section,
+#country-climate-section,
+#country-finance,
+#country-policy,
+#country-datasets,
+#insight-demand,
+#insight-conditions,
+#insight-policy,
+#insight-projects,
+#insight-implementation,
+#insight-gaps,
+#insight-evidence {
+  scroll-margin-top: 142px;
+}

@@ -1,0 +1,34 @@
+{
+  "version": "v80",
+  "batch": "04-gcf-funded-activity-country-project-relations",
+  "referenceDate": "2026-08-11",
+  "sourceOrganization": "Green Climate Fund",
+  "sourceDatabase": "GCF All Projects / country portfolio pages",
+  "datasetId": "LDC-PILOT-D-020-GCF-PROJECTS",
+  "elementId": "D-020",
+  "priorityCountryCount": 10,
+  "countryProjectRelationCount": 109,
+  "currentPortfolioRelationCount": 107,
+  "scope": {
+    "fields": [
+      "country",
+      "projectId",
+      "title",
+      "Accredited Entity",
+      "status",
+      "single/multi-country",
+      "official project URL"
+    ],
+    "excludedUntilVerified": [
+      "country-allocated financing for multi-country projects",
+      "project coordinates",
+      "38-tech mapping"
+    ]
+  },
+  "crossViews": {
+    "detail": "D-020 portfolio overview + filterable actual project record list",
+    "map": "existing country GCF bubble + selected-country actual project list; no fabricated project points",
+    "compare": "GCF tab adds aggregate/project-status mode",
+    "insight": "country-wide GCF project records displayed separately from selected-technology evidence"
+  }
+}

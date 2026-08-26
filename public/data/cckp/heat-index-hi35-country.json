@@ -1,0 +1,1759 @@
+{
+  "metadata": {
+    "datasetId": "CCKP-HI35-SSP370-2040-2059",
+    "indicatorId": "heat-index-hi35",
+    "titleKo": "고온체감 35°C 이상 일수",
+    "titleEn": "Number of Days with Heat Index >= 35°C",
+    "variableCode": "hi35",
+    "sourceOrganization": "World Bank Climate Change Knowledge Portal",
+    "sourceUrl": "https://cckpapi.worldbank.org/api/v1/cmip6-x0.25_climatology_hi35_climatology_annual_2040-2059_median_ssp370_ensemble_all_mean/global_countries?_format=json",
+    "apiUrl": "https://cckpapi.worldbank.org/api/v1/cmip6-x0.25_climatology_hi35_climatology_annual_2040-2059_median_ssp370_ensemble_all_mean/global_countries?_format=json",
+    "collection": "CMIP6 0.25-degree",
+    "product": "Climatology",
+    "aggregation": "Annual",
+    "scenario": "SSP3-7.0",
+    "projectionPeriod": "2040-2059",
+    "ensembleStatistic": "Multi-Model Ensemble Median",
+    "spatialStatistic": "Country Area Mean",
+    "unit": "일",
+    "representativeYear": 2050,
+    "snapshotSourceFile": "CCKP_hi35_SSP370_2040-2059_global.xlsx",
+    "snapshotDate": "2026-08-03",
+    "rowCount": 246,
+    "validValueCount": 200,
+    "missingValueCount": 46,
+    "minimum": 0.01,
+    "maximum": 166.24,
+    "limitations": [
+      "국가 단위 공간평균",
+      "CMIP6 다중모형 앙상블 중앙값",
+      "SSP3-7.0 시나리오 기반 2040–2059 전망",
+      "단일 고온 노출지표이며 종합 기후위험 점수가 아님",
+      "국가 내부 도시·농촌·고도·연안 차이를 직접 반영하지 않음"
+    ]
+  },
+  "observations": [
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "ABW",
+      "name": "Aruba (Neth.)",
+      "year": 2050,
+      "value": 66.4
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "AFG",
+      "name": "Afghanistan",
+      "year": 2050,
+      "value": 6.63
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "AGO",
+      "name": "Angola",
+      "year": 2050,
+      "value": 1.05
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "AIA",
+      "name": "Anguilla (U.K.)",
+      "year": 2050,
+      "value": 16.26
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "ALA",
+      "name": "ALA",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "ALB",
+      "name": "Albania",
+      "year": 2050,
+      "value": 0.5
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "AND",
+      "name": "Andorra",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "ARE",
+      "name": "United Arab Emirates",
+      "year": 2050,
+      "value": 135.48
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "ARG",
+      "name": "Argentina",
+      "year": 2050,
+      "value": 6.69
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "ARM",
+      "name": "Armenia",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "ASM",
+      "name": "American Samoa (U.S.)",
+      "year": 2050,
+      "value": 14.89
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "ATF",
+      "name": "French Southern and Antarctic Lands (Fr.)",
+      "year": 2050,
+      "value": 0.07
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "ATG",
+      "name": "Antigua and Barbuda",
+      "year": 2050,
+      "value": 13.32
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "AUS",
+      "name": "Australia",
+      "year": 2050,
+      "value": 26.82
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "AUT",
+      "name": "Austria",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "AZE",
+      "name": "Azerbaijan",
+      "year": 2050,
+      "value": 3.64
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "BDI",
+      "name": "Burundi",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "BEL",
+      "name": "Belgium",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "BEN",
+      "name": "Benin",
+      "year": 2050,
+      "value": 80.96
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "BES",
+      "name": "Bonaire, Sint Eustatius and Saba",
+      "year": 2050,
+      "value": 47.8
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "BFA",
+      "name": "Burkina Faso",
+      "year": 2050,
+      "value": 104.24
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "BGD",
+      "name": "Bangladesh",
+      "year": 2050,
+      "value": 133.47
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "BGR",
+      "name": "Bulgaria",
+      "year": 2050,
+      "value": 0.23
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "BHR",
+      "name": "Bahrain",
+      "year": 2050,
+      "value": 166.24
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "BHS",
+      "name": "The Bahamas",
+      "year": 2050,
+      "value": 57.51
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "BIH",
+      "name": "Bosnia and Herzegovina",
+      "year": 2050,
+      "value": 0.04
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "BLM",
+      "name": "Saint-Barthélemy (Fr.)",
+      "year": 2050,
+      "value": 16.59
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "BLR",
+      "name": "Belarus",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "BLZ",
+      "name": "Belize",
+      "year": 2050,
+      "value": 69.95
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "BMU",
+      "name": "Bermuda (U.K.)",
+      "year": 2050,
+      "value": 0.6
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "BOL",
+      "name": "Bolivia",
+      "year": 2050,
+      "value": 45.84
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "BRA",
+      "name": "Brazil",
+      "year": 2050,
+      "value": 48.17
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "BRB",
+      "name": "Barbados",
+      "year": 2050,
+      "value": 9.28
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "BRN",
+      "name": "Brunei Darussalam",
+      "year": 2050,
+      "value": 52.28
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "BTN",
+      "name": "Bhutan",
+      "year": 2050,
+      "value": 0.56
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "BVT",
+      "name": "Bouvet Island (Nor.)",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "BWA",
+      "name": "Botswana",
+      "year": 2050,
+      "value": 0.21
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "CAF",
+      "name": "Central African Republic",
+      "year": 2050,
+      "value": 21.31
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "CAN",
+      "name": "Canada",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "CCK",
+      "name": "Cocos (Keeling) Islands (Aus.)",
+      "year": 2050,
+      "value": 3.72
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "CHE",
+      "name": "Switzerland",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "CHL",
+      "name": "Chile",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "CHN",
+      "name": "China",
+      "year": 2050,
+      "value": 10.21
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "CIV",
+      "name": "Côte d'Ivoire",
+      "year": 2050,
+      "value": 55.18
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "CMR",
+      "name": "Cameroon",
+      "year": 2050,
+      "value": 14.23
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "COD",
+      "name": "Democratic Republic of Congo",
+      "year": 2050,
+      "value": 7.35
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "COG",
+      "name": "Congo",
+      "year": 2050,
+      "value": 10.83
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "COK",
+      "name": "Cook Islands (N.Z.)",
+      "year": 2050,
+      "value": 3.5
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "COL",
+      "name": "Colombia",
+      "year": 2050,
+      "value": 41.99
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "COM",
+      "name": "Comoros",
+      "year": 2050,
+      "value": 5.03
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "CPV",
+      "name": "Cabo Verde",
+      "year": 2050,
+      "value": 0.64
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "CRI",
+      "name": "Costa Rica",
+      "year": 2050,
+      "value": 7.35
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "CUB",
+      "name": "Cuba",
+      "year": 2050,
+      "value": 64.1
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "CUW",
+      "name": "Curaçao (Neth.)",
+      "year": 2050,
+      "value": 53.33
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "CXR",
+      "name": "Christmas Island (Aus.)",
+      "year": 2050,
+      "value": 14.24
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "CYM",
+      "name": "Cayman Islands (U.K.)",
+      "year": 2050,
+      "value": 94.03
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "CYP",
+      "name": "Cyprus",
+      "year": 2050,
+      "value": 8.17
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "CZE",
+      "name": "Czech Republic",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "DEU",
+      "name": "Germany",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "DJI",
+      "name": "Djibouti",
+      "year": 2050,
+      "value": 132.45
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "DMA",
+      "name": "Dominica",
+      "year": 2050,
+      "value": 1.7
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "DNK",
+      "name": "Denmark",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "DOM",
+      "name": "Dominican Republic",
+      "year": 2050,
+      "value": 15.14
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "DZA",
+      "name": "Algeria",
+      "year": 2050,
+      "value": 38.4
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "ECU",
+      "name": "Ecuador",
+      "year": 2050,
+      "value": 6.14
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "EGY",
+      "name": "Arab Republic of Egypt",
+      "year": 2050,
+      "value": 12.34
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "ERI",
+      "name": "Eritrea",
+      "year": 2050,
+      "value": 73.66
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "ESP",
+      "name": "Spain",
+      "year": 2050,
+      "value": 0.08
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "EST",
+      "name": "Estonia",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "ETH",
+      "name": "Ethiopia",
+      "year": 2050,
+      "value": 12.69
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "FIN",
+      "name": "Finland",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "FJI",
+      "name": "Fiji",
+      "year": 2050,
+      "value": 2.14
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "FRA",
+      "name": "France",
+      "year": 2050,
+      "value": 0.02
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "FRO",
+      "name": "Faroe Islands (Den.)",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "FSM",
+      "name": "Federated States of Micronesia",
+      "year": 2050,
+      "value": 20.65
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "GAB",
+      "name": "Gabon",
+      "year": 2050,
+      "value": 10.2
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "GBR",
+      "name": "United Kingdom",
+      "year": 2050,
+      "value": 0.02
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "GEO",
+      "name": "Georgia",
+      "year": 2050,
+      "value": 0.38
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "GGY",
+      "name": "Guernsey (U.K.)",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "GHA",
+      "name": "Ghana",
+      "year": 2050,
+      "value": 92.28
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "GIB",
+      "name": "Gibraltar (U.K.)",
+      "year": 2050,
+      "value": 0.05
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "GIN",
+      "name": "Guinea",
+      "year": 2050,
+      "value": 27.34
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "GLP",
+      "name": "GLP",
+      "year": 2050,
+      "value": 4.57
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "GMB",
+      "name": "The Gambia",
+      "year": 2050,
+      "value": 110.26
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "GNB",
+      "name": "Guinea-Bissau",
+      "year": 2050,
+      "value": 92.92
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "GNQ",
+      "name": "Equatorial Guinea",
+      "year": 2050,
+      "value": 3.5
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "GRC",
+      "name": "Greece",
+      "year": 2050,
+      "value": 0.74
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "GRD",
+      "name": "Grenada",
+      "year": 2050,
+      "value": 11.6
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "GRL",
+      "name": "Greenland (Den.)",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "GTM",
+      "name": "Guatemala",
+      "year": 2050,
+      "value": 35.5
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "GUF",
+      "name": "GUF",
+      "year": 2050,
+      "value": 15.26
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "GUM",
+      "name": "Guam (U.S.)",
+      "year": 2050,
+      "value": 35.41
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "GUY",
+      "name": "Guyana",
+      "year": 2050,
+      "value": 20.35
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "HKG",
+      "name": "HKG",
+      "year": 2050,
+      "value": 99.47
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "HMD",
+      "name": "Heard Island and McDonald Islands (Aus.)",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "HND",
+      "name": "Honduras",
+      "year": 2050,
+      "value": 13.33
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "HRV",
+      "name": "Croatia",
+      "year": 2050,
+      "value": 0.26
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "HTI",
+      "name": "Haiti",
+      "year": 2050,
+      "value": 16.5
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "HUN",
+      "name": "Hungary",
+      "year": 2050,
+      "value": 0.11
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "IDN",
+      "name": "Indonesia",
+      "year": 2050,
+      "value": 31.46
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "IMN",
+      "name": "Isle of Man (U.K.)",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "IND",
+      "name": "India",
+      "year": 2050,
+      "value": 81.77
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "IOT",
+      "name": "British Indian Ocean Territory (U.K.)",
+      "year": 2050,
+      "value": 9.67
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "IRL",
+      "name": "Ireland",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "IRN",
+      "name": "Islamic Republic of Iran",
+      "year": 2050,
+      "value": 21.55
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "IRQ",
+      "name": "Iraq",
+      "year": 2050,
+      "value": 57.76
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "ISL",
+      "name": "Iceland",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "ISR",
+      "name": "Israel",
+      "year": 2050,
+      "value": 6.71
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "ITA",
+      "name": "Italy",
+      "year": 2050,
+      "value": 0.36
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "JAM",
+      "name": "Jamaica",
+      "year": 2050,
+      "value": 18.93
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "JEY",
+      "name": "Jersey (U.K.)",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "JOR",
+      "name": "Jordan",
+      "year": 2050,
+      "value": 1.87
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "JPN",
+      "name": "Japan",
+      "year": 2050,
+      "value": 6.16
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "KAZ",
+      "name": "Kazakhstan",
+      "year": 2050,
+      "value": 0.45
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "KEN",
+      "name": "Kenya",
+      "year": 2050,
+      "value": 21.43
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "KGZ",
+      "name": "Kyrgyz Republic",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "KHM",
+      "name": "Cambodia",
+      "year": 2050,
+      "value": 150.19
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "KIR",
+      "name": "Kiribati",
+      "year": 2050,
+      "value": 37.56
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "KNA",
+      "name": "Saint Kitts and Nevis",
+      "year": 2050,
+      "value": 13.0
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "KOR",
+      "name": "Republic of Korea",
+      "year": 2050,
+      "value": 6.8
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "KSV",
+      "name": "Kosovo",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "KWT",
+      "name": "Kuwait",
+      "year": 2050,
+      "value": 104.06
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "LAO",
+      "name": "Lao People's Democratic Republic",
+      "year": 2050,
+      "value": 27.58
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "LBN",
+      "name": "Lebanon",
+      "year": 2050,
+      "value": 0.48
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "LBR",
+      "name": "Liberia",
+      "year": 2050,
+      "value": 10.02
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "LBY",
+      "name": "Libya",
+      "year": 2050,
+      "value": 5.54
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "LCA",
+      "name": "Saint Lucia",
+      "year": 2050,
+      "value": 19.06
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "LIE",
+      "name": "Liechtenstein",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "LKA",
+      "name": "Sri Lanka",
+      "year": 2050,
+      "value": 94.9
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "LSO",
+      "name": "Lesotho",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "LTU",
+      "name": "Lithuania",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "LUX",
+      "name": "Luxembourg",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "LVA",
+      "name": "Latvia",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "MAC",
+      "name": "MAC",
+      "year": 2050,
+      "value": 107.99
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "MAF",
+      "name": "Saint-Martin (Fr.)",
+      "year": 2050,
+      "value": 16.34
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "MAR",
+      "name": "Morocco",
+      "year": 2050,
+      "value": 4.07
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "MCO",
+      "name": "Monaco",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "MDA",
+      "name": "Moldova",
+      "year": 2050,
+      "value": 0.14
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "MDG",
+      "name": "Madagascar",
+      "year": 2050,
+      "value": 9.02
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "MDV",
+      "name": "Maldives",
+      "year": 2050,
+      "value": 45.93
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "MEX",
+      "name": "Mexico",
+      "year": 2050,
+      "value": 27.09
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "MHL",
+      "name": "Marshall Islands",
+      "year": 2050,
+      "value": 15.37
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "MKD",
+      "name": "North Macedonia",
+      "year": 2050,
+      "value": 0.02
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "MLI",
+      "name": "Mali",
+      "year": 2050,
+      "value": 108.91
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "MLT",
+      "name": "Malta",
+      "year": 2050,
+      "value": 4.88
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "MMR",
+      "name": "Myanmar",
+      "year": 2050,
+      "value": 51.33
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "MNE",
+      "name": "Montenegro",
+      "year": 2050,
+      "value": 0.64
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "MNG",
+      "name": "Mongolia",
+      "year": 2050,
+      "value": 0.01
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "MNP",
+      "name": "Northern Mariana Islands (U.S.)",
+      "year": 2050,
+      "value": 56.46
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "MOZ",
+      "name": "Mozambique",
+      "year": 2050,
+      "value": 14.81
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "MRT",
+      "name": "Mauritania",
+      "year": 2050,
+      "value": 84.0
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "MSR",
+      "name": "Montserrat (U.K.)",
+      "year": 2050,
+      "value": 12.85
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "MTQ",
+      "name": "MTQ",
+      "year": 2050,
+      "value": 5.93
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "MUS",
+      "name": "Mauritius",
+      "year": 2050,
+      "value": 0.33
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "MWI",
+      "name": "Malawi",
+      "year": 2050,
+      "value": 2.71
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "MYS",
+      "name": "Malaysia",
+      "year": 2050,
+      "value": 35.77
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "MYT",
+      "name": "MYT",
+      "year": 2050,
+      "value": 13.75
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "NAM",
+      "name": "Namibia",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "NCL",
+      "name": "New Caledonia (Fr.)",
+      "year": 2050,
+      "value": 0.45
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "NER",
+      "name": "Niger",
+      "year": 2050,
+      "value": 64.28
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "NFK",
+      "name": "Norfolk Island (Aus.)",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "NGA",
+      "name": "Nigeria",
+      "year": 2050,
+      "value": 66.05
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "NIC",
+      "name": "Nicaragua",
+      "year": 2050,
+      "value": 26.7
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "NIU",
+      "name": "Niue (N.Z.)",
+      "year": 2050,
+      "value": 2.72
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "NLD",
+      "name": "Netherlands",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "NOR",
+      "name": "Norway",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "NPL",
+      "name": "Nepal",
+      "year": 2050,
+      "value": 16.97
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "NRU",
+      "name": "Nauru",
+      "year": 2050,
+      "value": 59.2
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "NZL",
+      "name": "New Zealand",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "OMN",
+      "name": "Oman",
+      "year": 2050,
+      "value": 107.34
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "PAK",
+      "name": "Pakistan",
+      "year": 2050,
+      "value": 82.47
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "PAN",
+      "name": "Panama",
+      "year": 2050,
+      "value": 13.75
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "PCN",
+      "name": "Pitcairn Islands (U.K.)",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "PER",
+      "name": "Peru",
+      "year": 2050,
+      "value": 25.4
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "PHL",
+      "name": "Philippines",
+      "year": 2050,
+      "value": 49.58
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "PLW",
+      "name": "Palau",
+      "year": 2050,
+      "value": 23.57
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "PNG",
+      "name": "Papua New Guinea",
+      "year": 2050,
+      "value": 17.98
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "POL",
+      "name": "Poland",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "PRI",
+      "name": "Puerto Rico (U.S.)",
+      "year": 2050,
+      "value": 10.85
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "PRK",
+      "name": "D. P. R. of Korea",
+      "year": 2050,
+      "value": 0.92
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "PRT",
+      "name": "Portugal",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "PRY",
+      "name": "Paraguay",
+      "year": 2050,
+      "value": 59.3
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "PSE",
+      "name": "West Bank and Gaza",
+      "year": 2050,
+      "value": 9.73
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "PYF",
+      "name": "French Polynesia (Fr.)",
+      "year": 2050,
+      "value": 1.76
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "QAT",
+      "name": "Qatar",
+      "year": 2050,
+      "value": 149.99
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "REU",
+      "name": "REU",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "ROU",
+      "name": "Romania",
+      "year": 2050,
+      "value": 0.27
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "RUS",
+      "name": "Russian Federation",
+      "year": 2050,
+      "value": 0.04
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "RWA",
+      "name": "Rwanda",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "SAU",
+      "name": "Saudi Arabia",
+      "year": 2050,
+      "value": 50.48
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "SDN",
+      "name": "Sudan",
+      "year": 2050,
+      "value": 48.16
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "SEN",
+      "name": "Senegal",
+      "year": 2050,
+      "value": 119.92
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "SGP",
+      "name": "Singapore",
+      "year": 2050,
+      "value": 64.73
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "SHN",
+      "name": "Saint Helena, Ascension and Tristan da Cunha (U.K.)",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "SJM",
+      "name": "Svalbard and Jan Mayen (Nor.)",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "SLB",
+      "name": "Solomon Islands",
+      "year": 2050,
+      "value": 8.81
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "SLE",
+      "name": "Sierra Leone",
+      "year": 2050,
+      "value": 35.55
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "SLV",
+      "name": "El Salvador",
+      "year": 2050,
+      "value": 28.69
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "SMR",
+      "name": "San Marino",
+      "year": 2050,
+      "value": 0.15
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "SOM",
+      "name": "Somalia",
+      "year": 2050,
+      "value": 37.9
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "SPM",
+      "name": "Saint-Pierre-et-Miquelon (Fr.)",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "SRB",
+      "name": "Serbia",
+      "year": 2050,
+      "value": 0.26
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "SSD",
+      "name": "South Sudan",
+      "year": 2050,
+      "value": 45.92
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "STP",
+      "name": "São Tomé and Príncipe",
+      "year": 2050,
+      "value": 12.04
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "SUR",
+      "name": "Suriname",
+      "year": 2050,
+      "value": 29.49
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "SVK",
+      "name": "Slovak Republic",
+      "year": 2050,
+      "value": 0.01
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "SVN",
+      "name": "Slovenia",
+      "year": 2050,
+      "value": 0.01
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "SWE",
+      "name": "Sweden",
+      "year": 2050,
+      "value": null
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "SWZ",
+      "name": "Eswatini",
+      "year": 2050,
+      "value": 1.87
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "SXM",
+      "name": "Sint Maarten (Neth.)",
+      "year": 2050,
+      "value": 16.2
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "SYC",
+      "name": "Seychelles",
+      "year": 2050,
+      "value": 18.02
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "SYR",
+      "name": "Syrian Arab Republic",
+      "year": 2050,
+      "value": 12.36
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "TCA",
+      "name": "Turks and Caicos Islands (U.K.)",
+      "year": 2050,
+      "value": 46.85
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "TCD",
+      "name": "Chad",
+      "year": 2050,
+      "value": 52.96
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "TGO",
+      "name": "Togo",
+      "year": 2050,
+      "value": 71.55
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "THA",
+      "name": "Thailand",
+      "year": 2050,
+      "value": 109.58
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "TJK",
+      "name": "Tajikistan",
+      "year": 2050,
+      "value": 0.58
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "TKL",
+      "name": "Tokelau (N.Z.)",
+      "year": 2050,
+      "value": 41.88
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "TKM",
+      "name": "Turkmenistan",
+      "year": 2050,
+      "value": 11.63
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "TLS",
+      "name": "Timor-Leste",
+      "year": 2050,
+      "value": 2.98
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "TON",
+      "name": "Tonga",
+      "year": 2050,
+      "value": 2.66
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "TTO",
+      "name": "Trinidad and Tobago",
+      "year": 2050,
+      "value": 18.35
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "TUN",
+      "name": "Tunisia",
+      "year": 2050,
+      "value": 19.85
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "TUR",
+      "name": "Türkiye",
+      "year": 2050,
+      "value": 1.22
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "TUV",
+      "name": "Tuvalu",
+      "year": 2050,
+      "value": 58.7
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "TWN",
+      "name": "TWN",
+      "year": 2050,
+      "value": 23.13
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "TZA",
+      "name": "Tanzania",
+      "year": 2050,
+      "value": 2.62
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "UGA",
+      "name": "Uganda",
+      "year": 2050,
+      "value": 0.33
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "UKR",
+      "name": "Ukraine",
+      "year": 2050,
+      "value": 0.1
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "UMI",
+      "name": "U.S. Minor Outlying Islands",
+      "year": 2050,
+      "value": 16.95
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "URY",
+      "name": "Uruguay",
+      "year": 2050,
+      "value": 0.65
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "USA",
+      "name": "United States of America",
+      "year": 2050,
+      "value": 6.88
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "UZB",
+      "name": "Uzbekistan",
+      "year": 2050,
+      "value": 3.92
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "VAT",
+      "name": "Vatican City",
+      "year": 2050,
+      "value": 0.15
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "VCT",
+      "name": "Saint Vincent and the Grenadines",
+      "year": 2050,
+      "value": 10.4
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "VEN",
+      "name": "R. B. de Venezuela",
+      "year": 2050,
+      "value": 58.78
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "VGB",
+      "name": "British Virgin Islands (U.K.)",
+      "year": 2050,
+      "value": 19.78
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "VIR",
+      "name": "United States Virgin Islands (U.S.)",
+      "year": 2050,
+      "value": 24.56
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "VNM",
+      "name": "Vietnam",
+      "year": 2050,
+      "value": 69.99
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "VUT",
+      "name": "Vanuatu",
+      "year": 2050,
+      "value": 3.49
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "WLF",
+      "name": "Wallis and Futuna (Fr.)",
+      "year": 2050,
+      "value": 21.7
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "WSM",
+      "name": "Samoa",
+      "year": 2050,
+      "value": 1.25
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "YEM",
+      "name": "Republic of Yemen",
+      "year": 2050,
+      "value": 39.77
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "ZAF",
+      "name": "South Africa",
+      "year": 2050,
+      "value": 0.36
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "ZMB",
+      "name": "Zambia",
+      "year": 2050,
+      "value": 0.25
+    },
+    {
+      "indicatorId": "heat-index-hi35",
+      "iso3": "ZWE",
+      "name": "Zimbabwe",
+      "year": 2050,
+      "value": 1.58
+    }
+  ]
+}

@@ -1,0 +1,372 @@
+/* Additional styles for the multi-indicator release candidate. */
+
+.multi-indicator-page {
+  --indicator-accent: #0b6b72;
+  --indicator-accent-soft: #e7f5f4;
+}
+
+/* Download */
+.indicator-context-line {
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  border: 1px solid #c9e4e3;
+  border-radius: 10px;
+  color: #36515e;
+  background: #f3fbfa;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.indicator-context-line strong {
+  color: #0a3443;
+}
+
+/* Compare */
+.country-selector-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 12px;
+}
+
+.country-selector-actions button {
+  min-height: 38px;
+  padding: 8px 12px;
+  border: 1px solid #c8d5df;
+  border-radius: 8px;
+  color: #16405a;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.country-selector-actions button:hover {
+  border-color: #168b91;
+  color: #086a70;
+  background: #eefafa;
+}
+
+/* Country profile */
+.country-indicator-grid,
+.country-catalog-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0 0 22px;
+}
+
+.country-indicator-grid article,
+.country-catalog-summary article {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid #dbe4eb;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 7px 20px rgba(18, 44, 69, 0.06);
+}
+
+.country-indicator-grid article {
+  border-top: 4px solid #0c7b83;
+}
+
+.country-indicator-grid span,
+.country-catalog-summary span {
+  display: block;
+  color: #617486;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.country-indicator-grid strong,
+.country-catalog-summary strong {
+  display: block;
+  margin-top: 8px;
+  color: #102b43;
+  font-size: clamp(22px, 2.2vw, 31px);
+  line-height: 1.15;
+  word-break: keep-all;
+}
+
+.country-indicator-grid small {
+  display: block;
+  margin-top: 9px;
+  color: #6e7e8c;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.country-catalog-summary article:last-child strong {
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+.country-diagnostic-card > header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 16px;
+}
+
+.country-diagnostic-card > header span {
+  color: #087f7b;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.country-diagnostic-card > header h2 {
+  margin: 5px 0 0;
+}
+
+.country-diagnostic-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.country-diagnostic-list > div {
+  display: grid;
+  grid-template-columns: minmax(155px, 0.9fr) minmax(0, 1.6fr) auto;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 0;
+  border-top: 1px solid #edf1f4;
+}
+
+.country-diagnostic-list dt,
+.country-diagnostic-list dd {
+  margin: 0;
+}
+
+.country-diagnostic-list dt {
+  color: #20384c;
+  font-weight: 900;
+}
+
+.country-diagnostic-list dd {
+  color: #5d6e7c;
+  font-size: 13px;
+}
+
+.country-diagnostic-list dd:last-child {
+  color: #092d43;
+  font-size: 15px;
+  font-weight: 900;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* Map */
+.map-indicator-loading {
+  position: absolute;
+  z-index: 15;
+  top: 92px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 16px;
+  border: 1px solid rgba(16, 55, 76, 0.15);
+  border-radius: 999px;
+  color: #0a3a4e;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 7px 24px rgba(14, 42, 61, 0.15);
+  font-size: 12px;
+  font-weight: 900;
+  pointer-events: none;
+}
+
+.multi-indicator-map-page .real-map-layer-section:first-of-type button {
+  min-height: 72px;
+}
+
+.multi-indicator-map-page .real-map-layer-section button.active {
+  border-color: #14858a;
+  background: #e8f7f6;
+  box-shadow: 0 0 0 1px rgba(20, 133, 138, 0.12);
+}
+
+.multi-indicator-map-page .climate-tech-decision-card strong,
+.multi-indicator-map-page .climate-tech-limitation-card strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+@media (max-width: 1100px) {
+  .country-indicator-grid,
+  .country-catalog-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .country-indicator-grid,
+  .country-catalog-summary {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .country-indicator-grid article,
+  .country-catalog-summary article {
+    padding: 15px;
+  }
+
+  .country-diagnostic-list > div {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .country-diagnostic-list dd:last-child {
+    text-align: left;
+  }
+
+  .country-selector-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .map-indicator-loading {
+    top: 146px;
+    width: calc(100% - 32px);
+    border-radius: 10px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .country-selector-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Map layer cards: v12 markup nests buttons inside .real-map-layer-section. */
+.multi-indicator-map-page .real-map-layer-section > button {
+  width: 100%;
+  min-height: 68px;
+  margin: 0 0 8px;
+  padding: 11px;
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--slate-200, #dde4eb);
+  border-radius: 10px;
+  color: var(--slate-800, #243647);
+  background: #fff;
+  text-align: left;
+  cursor: pointer;
+}
+
+.multi-indicator-map-page .real-map-layer-section > button:hover,
+.multi-indicator-map-page .real-map-layer-section > button.active {
+  border-color: #4aa9bb;
+  color: #075a76;
+  background: #eaf7f8;
+}
+
+.multi-indicator-map-page .real-map-layer-section > button > div {
+  min-width: 0;
+}
+
+.multi-indicator-map-page .real-map-layer-section > button strong,
+.multi-indicator-map-page .real-map-layer-section > button small {
+  display: block;
+  word-break: keep-all;
+}
+
+.multi-indicator-map-page .real-map-layer-section > button strong {
+  font-size: 12px;
+}
+
+.multi-indicator-map-page .real-map-layer-section > button small {
+  margin-top: 3px;
+  color: var(--slate-600, #5e6f80);
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.multi-indicator-map-page .real-map-layer-section .real-map-layer-icon {
+  width: 30px;
+  height: 30px;
+  display: block;
+  flex: none;
+}
+
+/* Ranking cards: prevent Korean country names from collapsing vertically. */
+.compare-ranking-panel li button {
+  min-width: 0;
+}
+
+.compare-ranking-panel li button strong {
+  display: block;
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
+.compare-ranking-panel li button small {
+  display: block;
+  word-break: keep-all;
+}
+
+.compare-ranking-panel li > b {
+  white-space: nowrap;
+}
+
+/* Legend readability and CodeSandbox preview-safe spacing. */
+.multi-indicator-map-page .climate-tech-legend {
+  min-width: 270px;
+  max-width: min(360px, calc(100vw - 32px));
+  bottom: 72px;
+}
+
+.multi-indicator-map-page .climate-tech-legend > strong {
+  margin-bottom: 9px;
+  color: #183348;
+  font-size: 12px;
+}
+
+.multi-indicator-map-page .climate-tech-legend-items {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 14px;
+}
+
+.multi-indicator-map-page .climate-tech-legend-items > span {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #425466;
+  font-size: 10px;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+.multi-indicator-map-page .climate-tech-legend-items > span > i {
+  width: 12px;
+  height: 12px;
+  flex: 0 0 12px;
+  display: inline-block;
+  border: 1px solid rgba(7, 37, 59, 0.18);
+  border-radius: 3px;
+}
+
+.multi-indicator-map-page .climate-tech-legend-items .legend-no-data {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 860px) {
+  .multi-indicator-map-page .climate-tech-legend {
+    min-width: 220px;
+    bottom: 66px;
+  }
+
+  .multi-indicator-map-page .climate-tech-legend-items {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .multi-indicator-map-page .climate-tech-legend-items .legend-no-data {
+    grid-column: auto;
+  }
+}

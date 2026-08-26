@@ -1,0 +1,248 @@
+.planning-v38 {
+  display: grid;
+  gap: 18px;
+  padding: 24px;
+  border: 1px solid #cfe0e8;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #ffffff 0%, #f4faf8 100%);
+}
+
+.planning-v38-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 22px;
+}
+
+.planning-v38-header > div:first-child {
+  display: grid;
+  gap: 6px;
+}
+
+.planning-v38-header span {
+  color: #087f70;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.planning-v38-header h2 {
+  margin: 0;
+  color: #102a43;
+  font-size: clamp(22px, 2.2vw, 30px);
+  letter-spacing: -0.03em;
+}
+
+.planning-v38-header p {
+  max-width: 760px;
+  margin: 0;
+  color: #617487;
+  line-height: 1.65;
+}
+
+.planning-v38-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.planning-v38-actions button {
+  min-height: 42px;
+  white-space: nowrap;
+}
+
+.planning-v38-overview {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.planning-v38-overview article {
+  display: grid;
+  gap: 5px;
+  padding: 16px 17px;
+  border: 1px solid #d8e5eb;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+.planning-v38-overview span {
+  color: #607487;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.planning-v38-overview strong {
+  color: #17354c;
+  font-size: 27px;
+}
+
+.planning-v38-overview small {
+  color: #718297;
+  line-height: 1.45;
+}
+
+.planning-v38-disclaimer {
+  margin: 0;
+  padding: 11px 13px;
+  border-radius: 11px;
+  background: #edf7f5;
+  color: #42635f;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.planning-v38-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.planning-v38-card {
+  display: grid;
+  gap: 13px;
+  padding: 17px;
+  border: 1px solid #d9e4eb;
+  border-radius: 15px;
+  background: #ffffff;
+}
+
+.planning-v38-card-top {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 9px;
+}
+
+.planning-v38-card-top > span {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: #edf6f4;
+  color: #087f70;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.planning-v38-card-top > strong {
+  color: #17354c;
+  font-size: 15px;
+}
+
+.planning-v38-status {
+  padding: 5px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.planning-v38-status.confirmed {
+  background: #e6f6ee;
+  color: #1d6a49;
+}
+
+.planning-v38-status.partial {
+  background: #fff5df;
+  color: #8b641d;
+}
+
+.planning-v38-status.needs_check {
+  background: #f1f4f7;
+  color: #607184;
+}
+
+.planning-v38-card dl {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.planning-v38-card dl > div {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 9px;
+}
+
+.planning-v38-card dt {
+  color: #6a7d8f;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.planning-v38-card dd {
+  margin: 0;
+  color: #334d63;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.planning-v38-card > a {
+  justify-self: start;
+  color: #087f70;
+  font-size: 12px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.planning-v38-card > a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .planning-v38-header {
+    display: grid;
+  }
+
+  .planning-v38-actions {
+    justify-content: flex-start;
+  }
+
+  .planning-v38-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .planning-v38 {
+    padding: 18px;
+  }
+
+  .planning-v38-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .planning-v38-card-top {
+    grid-template-columns: 30px minmax(0, 1fr);
+  }
+
+  .planning-v38-status {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .planning-v38-card dl > div {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+}
+
+@media print {
+  .planning-v38-actions,
+  .insight-v36-selector-actions,
+  .insight-v36-jump,
+  .site-header,
+  .site-footer {
+    display: none !important;
+  }
+
+  .planning-v38,
+  .insight-v36-section,
+  .insight-v36-summary {
+    break-inside: avoid;
+    box-shadow: none !important;
+  }
+}

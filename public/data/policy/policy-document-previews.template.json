@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "titleKo": "정책·법령 원문 및 번역 미리보기",
+    "reviewRule": "원문 페이지·문단과 번역 검토자를 확인한 발췌문만 공개"
+  },
+  "documents": [
+    {
+      "datasetId": "LDC-DS-C-001",
+      "documentTitle": "문서명",
+      "documentType": "NDC 또는 법령·규정",
+      "countryIso3": "VNM",
+      "countryNameKo": "베트남",
+      "documentDate": "YYYY-MM-DD",
+      "sourceOrganization": "공식 기관명",
+      "sourceUrl": "https://official-source.example/document",
+      "sections": [
+        {
+          "id": "section-001",
+          "headingKo": "재생에너지",
+          "originalLanguage": "English",
+          "originalText": "검증된 짧은 원문 발췌",
+          "translationKo": "검토 완료된 한국어 번역",
+          "sourcePage": "PDF p. 00 / section name",
+          "verificationStatus": "verified"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+/* Responsive panel access controls for the map workspace */
+
+.real-map-mobile-dock {
+  position: absolute;
+  z-index: 46;
+  right: 50%;
+  bottom: 42px;
+  transform: translateX(50%);
+  display: none;
+  align-items: center;
+  gap: 6px;
+  padding: 6px;
+  border: 1px solid rgba(7, 37, 59, 0.18);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 10px 28px rgba(15, 37, 64, 0.22);
+  backdrop-filter: blur(12px);
+}
+
+.real-map-mobile-dock button {
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid #cbd5df;
+  border-radius: 8px;
+  color: #0b2540;
+  background: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.real-map-mobile-dock button:hover,
+.real-map-mobile-dock button:focus-visible {
+  border-color: #087f7b;
+  color: #075a76;
+  background: #e8f6f8;
+}
+
+@media (max-width: 1279px) {
+  .real-map-mobile-dock {
+    display: flex;
+  }
+
+  .real-map-v3-toolbar {
+    grid-template-columns: minmax(170px, 0.8fr) minmax(0, 2.2fr);
+  }
+
+  .real-map-v3-actions {
+    min-width: 0;
+    flex-wrap: wrap;
+  }
+
+  .real-map-v3-actions label,
+  .real-map-v3-actions button {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 860px) {
+  .real-map-v3-toolbar {
+    min-height: 126px;
+    grid-template-columns: 1fr;
+  }
+
+  .real-map-v3-actions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .real-map-v3-actions label {
+    min-width: 0;
+  }
+
+  .real-map-v3-actions select,
+  .real-map-v3-actions button {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .real-map-mobile-dock {
+    bottom: 16px;
+  }
+
+  .real-map-layer-panel,
+  .real-map-info-panel {
+    z-index: 55;
+    max-height: min(72%, 620px);
+  }
+
+  .real-map-panel-scrim {
+    z-index: 50;
+  }
+}
+
+@media (max-width: 520px) {
+  .real-map-v3-toolbar {
+    min-height: 144px;
+  }
+
+  .real-map-v3-title h1 {
+    font-size: 17px;
+  }
+
+  .real-map-v3-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .real-map-v3-actions label:nth-of-type(3),
+  .real-map-v3-country-select {
+    grid-column: 1 / -1;
+  }
+
+  .real-map-mobile-dock {
+    right: 8px;
+    left: 8px;
+    bottom: 10px;
+    transform: none;
+    justify-content: stretch;
+  }
+
+  .real-map-mobile-dock button {
+    flex: 1 1 0;
+    padding-inline: 6px;
+    font-size: 11px;
+  }
+
+  .real-map-layer-panel,
+  .real-map-info-panel {
+    right: 6px;
+    bottom: 6px;
+    left: 6px;
+    max-height: 76%;
+  }
+}

@@ -1,0 +1,70 @@
+.page-jump-v39 button {
+  flex: 0 0 auto;
+  padding: 6px 9px;
+  border: 0;
+  border-radius: 8px;
+  color: #34536d;
+  background: #f3f7fa;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.page-jump-v39 button:hover,
+.page-jump-v39 button:focus-visible {
+  color: #087f7b;
+  background: #e7f5f3;
+  outline: 3px solid rgba(8, 127, 123, 0.16);
+  outline-offset: 1px;
+}
+
+.insight-v36-jump button {
+  flex: 0 0 auto;
+  padding: 9px 12px;
+  border: 1px solid #d2dee9;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #42556b;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.insight-v36-jump button:hover,
+.insight-v36-jump button:focus-visible {
+  border-color: #81b2a7;
+  background: #f1faf7;
+  color: #075a50;
+  outline: 3px solid rgba(11, 107, 94, 0.16);
+  outline-offset: 1px;
+}
+
+.planning-v40-evidence-jump {
+  justify-self: start;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #087f70;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 900;
+  text-align: left;
+  cursor: pointer;
+}
+
+.planning-v40-evidence-jump:hover {
+  text-decoration: underline;
+}
+
+.planning-v40-evidence-jump:focus-visible {
+  border-radius: 4px;
+  outline: 3px solid rgba(11, 107, 94, 0.18);
+  outline-offset: 3px;
+}
+
+[id^="insight-"],
+[id^="country-"] {
+  scroll-margin-top: 96px;
+}

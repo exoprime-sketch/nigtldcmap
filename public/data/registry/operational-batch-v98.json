@@ -1,0 +1,16 @@
+{
+  "batchId": "OP-2026-08-13-V98",
+  "status": "prepared",
+  "sourceRefreshActionCount": 19,
+  "gcfProjectRelationCount": 109,
+  "verifiedLocationCount": 0,
+  "searchAliasExpansionCount": 34,
+  "p0Open": 0,
+  "p1Open": 0,
+  "principles": [
+    "실제 payload/API를 갱신한 뒤 referencePeriod/verifiedAt를 함께 변경",
+    "검증된 정확 좌표가 없으면 지도 point를 생성하지 않음",
+    "GCF 프로젝트 38대 기술 매핑은 제목만으로 자동 확정하지 않음",
+    "예시 데이터는 운영 실제근거로 승격하지 않음"
+  ]
+}

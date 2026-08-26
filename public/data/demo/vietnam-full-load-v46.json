@@ -1,0 +1,4464 @@
+{
+  "meta": {
+    "title": "베트남 전체 데이터 탑재 시연",
+    "country": "베트남",
+    "iso3": "VNM",
+    "registryElementCount": 152,
+    "actualConnectedCount": 10,
+    "demoOnlyCount": 142,
+    "generatedFor": "플랫폼 이용자화면·데이터 탑재 구조 최종 검토",
+    "disclaimer": "‘실제 연결’은 현재 플랫폼에 공식/공공 출처 기반 데이터가 이미 연결된 항목이며, ‘시연 표시’는 화면 완성도 검토용 예시로 실제 베트남 사실값이 아닙니다.",
+    "categoryCounts": {
+      "A": 33,
+      "B": 48,
+      "C": 25,
+      "D": 26,
+      "E": 20
+    },
+    "actualCategoryCounts": {
+      "A": 4,
+      "B": 2,
+      "C": 1,
+      "D": 2,
+      "E": 1
+    }
+  },
+  "categories": [
+    {
+      "code": "A",
+      "label": "국가 기본정보",
+      "description": "경제·사회·에너지·인프라·통상",
+      "count": 33,
+      "actualCount": 4
+    },
+    {
+      "code": "B",
+      "label": "기후·환경",
+      "description": "기후현황·리스크·취약성·자원",
+      "count": 48,
+      "actualCount": 2
+    },
+    {
+      "code": "C",
+      "label": "정책·제도",
+      "description": "국제협정·국내정책·인허가·탄소시장",
+      "count": 25,
+      "actualCount": 1
+    },
+    {
+      "code": "D",
+      "label": "시장·산업·재원",
+      "description": "시장·국제협력사업·투자·기후재원",
+      "count": 26,
+      "actualCount": 2
+    },
+    {
+      "code": "E",
+      "label": "협력·실행기반",
+      "description": "파트너·역량·양국협력·한국 지원체계",
+      "count": 20,
+      "actualCount": 1
+    }
+  ],
+  "elements": [
+    {
+      "index": 1,
+      "elementId": "A-001",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.1. 사회·경제 및 SDG",
+      "dataGroup": "A.1.a.사회·경제 현황",
+      "title": "CPI(Corruption Perceptions Index, 부패인식지수)",
+      "titleShort": "CPI(Corruption Perceptions Index, 부패인식지수)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "World Bank WDI",
+      "effectiveSource": "World Bank WDI",
+      "sourceUrl": "https://databank.worldbank.org/source/world-development-indicators",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: World Bank WDI",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 2,
+      "elementId": "A-002",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.1. 사회·경제 및 SDG",
+      "dataGroup": "A.1.a.사회·경제 현황",
+      "title": "CPIA (Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표)",
+      "titleShort": "CPIA (Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "World Bank CPIA",
+      "effectiveSource": "World Bank CPIA",
+      "sourceUrl": "https://data360.worldbank.org/en/dataset/WB_CPIA",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: World Bank CPIA",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 3,
+      "elementId": "A-003",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.1. 사회·경제 및 SDG",
+      "dataGroup": "A.1.a.사회·경제 현황",
+      "title": "GDP (현재/PPP, 성장률, 1인당 GDP)",
+      "titleShort": "GDP (현재/PPP, 성장률, 1인당 GDP)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "World Bank WDI",
+      "effectiveSource": "World Bank WDI",
+      "sourceUrl": "https://databank.worldbank.org/source/world-development-indicators",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: World Bank WDI",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 4,
+      "elementId": "A-004",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.1. 사회·경제 및 SDG",
+      "dataGroup": "A.1.a.사회·경제 현황",
+      "title": "빈곤율/극빈곤율",
+      "titleShort": "빈곤율/극빈곤율",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "World Bank WDI",
+      "effectiveSource": "World Bank WDI",
+      "sourceUrl": "https://databank.worldbank.org/source/world-development-indicators",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: World Bank WDI",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 5,
+      "elementId": "A-005",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.1. 사회·경제 및 SDG",
+      "dataGroup": "A.1.a.사회·경제 현황",
+      "title": "산업구조 (농업/제조/서비스 비중)",
+      "titleShort": "산업구조 (농업/제조/서비스 비중)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "World Bank WDI",
+      "effectiveSource": "World Bank WDI",
+      "sourceUrl": "https://databank.worldbank.org/source/world-development-indicators",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: World Bank WDI",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 6,
+      "elementId": "A-006",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.1. 사회·경제 및 SDG",
+      "dataGroup": "A.1.a.사회·경제 현황",
+      "title": "실업률/청년실업률",
+      "titleShort": "실업률/청년실업률",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "World Bank WDI",
+      "effectiveSource": "World Bank WDI",
+      "sourceUrl": "https://databank.worldbank.org/source/world-development-indicators",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: World Bank WDI",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 7,
+      "elementId": "A-007",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.1. 사회·경제 및 SDG",
+      "dataGroup": "A.1.a.사회·경제 현황",
+      "title": "인구 (총인구, 도시화율)",
+      "titleShort": "인구 (총인구, 도시화율)",
+      "displayType": "numeric",
+      "status": "actual_connected",
+      "statusLabel": "실제 연결",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "World Bank WDI",
+      "effectiveSource": "World Bank WDI / Indicators API",
+      "sourceUrl": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=VN",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "api",
+        "headline": "World Bank API 연결",
+        "subheadline": "총인구·도시화율을 국가·연도별로 조회",
+        "facts": ["국가: 베트남", "공간단위: 국가", "갱신: 원천 DB 기준"]
+      }
+    },
+    {
+      "index": 8,
+      "elementId": "A-008",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.1. 사회·경제 및 SDG",
+      "dataGroup": "A.1.a.사회·경제 현황",
+      "title": "지니계수",
+      "titleShort": "지니계수",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "World Bank WDI",
+      "effectiveSource": "World Bank WDI",
+      "sourceUrl": "https://databank.worldbank.org/source/world-development-indicators",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: World Bank WDI",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 9,
+      "elementId": "A-009",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.1. 사회·경제 및 SDG",
+      "dataGroup": "A.1.b.GHG 배출 현황",
+      "title": "GHG 배출 강도 (GDP 대비, 1인당)",
+      "titleShort": "GHG 배출 강도 (GDP 대비, 1인당)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "EDGAR + World Bank WDI (가공)",
+      "effectiveSource": "EDGAR + World Bank WDI (가공)",
+      "sourceUrl": "https://edgar.jrc.ec.europa.eu/dataset_ghg2025",
+      "collectionMethod": "API (가공)",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: EDGAR + World Bank WDI (가공)",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 10,
+      "elementId": "A-010",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.1. 사회·경제 및 SDG",
+      "dataGroup": "A.1.b.GHG 배출 현황",
+      "title": "가스 유형별 GHG 배출량 (CO₂/CH₄/N₂O/F-gas)",
+      "titleShort": "가스 유형별 GHG 배출량 (CO₂/CH₄/N₂O/F-gas)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "EDGAR (JRC)",
+      "effectiveSource": "EDGAR (JRC)",
+      "sourceUrl": "https://edgar.jrc.ec.europa.eu/dataset_ghg2025",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: EDGAR (JRC)",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 11,
+      "elementId": "A-011",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.1. 사회·경제 및 SDG",
+      "dataGroup": "A.1.b.GHG 배출 현황",
+      "title": "부문별 GHG 배출량 (에너지/산업공정/농업/폐기물)",
+      "titleShort": "부문별 GHG 배출량 (에너지/산업공정/농업/폐기물)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "EDGAR (JRC)",
+      "effectiveSource": "EDGAR (JRC)",
+      "sourceUrl": "https://edgar.jrc.ec.europa.eu/dataset_ghg2025",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: EDGAR (JRC)",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 12,
+      "elementId": "A-012",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.1. 사회·경제 및 SDG",
+      "dataGroup": "A.1.b.GHG 배출 현황",
+      "title": "총 GHG 배출량 (LULUCF 제외)",
+      "titleShort": "총 GHG 배출량 (LULUCF 제외)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "EDGAR (JRC)",
+      "effectiveSource": "EDGAR (JRC)",
+      "sourceUrl": "https://edgar.jrc.ec.europa.eu/dataset_ghg2025",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: EDGAR (JRC)",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 13,
+      "elementId": "A-013",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.1. 사회·경제 및 SDG",
+      "dataGroup": "A.1.c.SDG",
+      "title": "Climate Watch NDC-SDG linkage",
+      "titleShort": "Climate Watch NDC-SDG linkage",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "UNDESA SDG Index",
+      "effectiveSource": "UNDESA SDG Index",
+      "sourceUrl": "https://dashboards.sdgindex.org/rankings",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: UNDESA SDG Index",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 14,
+      "elementId": "A-014",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.1. 사회·경제 및 SDG",
+      "dataGroup": "A.1.c.SDG",
+      "title": "UNDESA SDG Index Score",
+      "titleShort": "UNDESA SDG Index Score",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "UNDESA SDG Index",
+      "effectiveSource": "UNDESA SDG Index",
+      "sourceUrl": "https://dashboards.sdgindex.org/rankings",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: UNDESA SDG Index",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 15,
+      "elementId": "A-015",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.1. 사회·경제 및 SDG",
+      "dataGroup": "A.1.c.SDG",
+      "title": "UNDESA SDG 세부목표별 달성도",
+      "titleShort": "UNDESA SDG 세부목표별 달성도",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "UNDESA SDG Index",
+      "effectiveSource": "UNDESA SDG Index",
+      "sourceUrl": "https://dashboards.sdgindex.org/rankings",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: UNDESA SDG Index",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 16,
+      "elementId": "A-016",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.2. 에너지·전력 기초 정보",
+      "dataGroup": "A.2.a.에너지·전력 정보",
+      "title": "1차 에너지 소비 구조",
+      "titleShort": "1차 에너지 소비 구조",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "Energy Institute / IEA",
+      "effectiveSource": "Energy Institute / IEA",
+      "sourceUrl": "https://www.energyinst.org/statistical-review/resources-and-data-downloads",
+      "collectionMethod": "웹 다운로드 (유료)",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: Energy Institute / IEA",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 17,
+      "elementId": "A-017",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.2. 에너지·전력 기초 정보",
+      "dataGroup": "A.2.a.에너지·전력 정보",
+      "title": "LCOE (균등화 발전비용)",
+      "titleShort": "LCOE (균등화 발전비용)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "IRENA",
+      "effectiveSource": "IRENA",
+      "sourceUrl": "https://pxweb.irena.org/pxweb/en/IRENASTAT/",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: IRENA",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 18,
+      "elementId": "A-018",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.2. 에너지·전력 기초 정보",
+      "dataGroup": "A.2.a.에너지·전력 정보",
+      "title": "기술별 발전 설비용량",
+      "titleShort": "기술별 발전 설비용량",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "IRENA / WRI GPPD",
+      "effectiveSource": "IRENA / WRI GPPD",
+      "sourceUrl": "https://pxweb.irena.org/pxweb/en/IRENASTAT/",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: IRENA / WRI GPPD",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 19,
+      "elementId": "A-019",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.2. 에너지·전력 기초 정보",
+      "dataGroup": "A.2.a.에너지·전력 정보",
+      "title": "송배전 손실률 (T&D Loss)",
+      "titleShort": "송배전 손실률 (T&D Loss)",
+      "displayType": "numeric",
+      "status": "actual_connected",
+      "statusLabel": "실제 연결",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "World Bank WDI",
+      "effectiveSource": "World Bank WDI / Indicators API",
+      "sourceUrl": "https://data.worldbank.org/indicator/EG.ELC.LOSS.ZS?locations=VN",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "api",
+        "headline": "World Bank API 연결",
+        "subheadline": "송배전 손실률 국가·연도별 값",
+        "facts": [
+          "지표: EG.ELC.LOSS.ZS",
+          "단위: % of output",
+          "자료 없음은 0으로 처리하지 않음"
+        ]
+      }
+    },
+    {
+      "index": 20,
+      "elementId": "A-020",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.2. 에너지·전력 기초 정보",
+      "dataGroup": "A.2.a.에너지·전력 정보",
+      "title": "재생에너지 비중",
+      "titleShort": "재생에너지 비중",
+      "displayType": "numeric",
+      "status": "actual_connected",
+      "statusLabel": "실제 연결",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "IRENA / Energy Institute",
+      "effectiveSource": "World Bank WDI / IEA 기반 지표",
+      "sourceUrl": "https://data.worldbank.org/indicator/EG.ELC.RNEW.ZS?locations=VN",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "api",
+        "headline": "World Bank 연결",
+        "subheadline": "재생에너지 전력 비중 국가·연도별 값",
+        "facts": [
+          "지표: EG.ELC.RNEW.ZS",
+          "단위: %",
+          "국가 비교·추세 화면 재사용"
+        ]
+      }
+    },
+    {
+      "index": 21,
+      "elementId": "A-021",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.2. 에너지·전력 기초 정보",
+      "dataGroup": "A.2.a.에너지·전력 정보",
+      "title": "전력 접근률",
+      "titleShort": "전력 접근률",
+      "displayType": "numeric",
+      "status": "actual_connected",
+      "statusLabel": "실제 연결",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "World Bank WDI",
+      "effectiveSource": "World Bank / Tracking SDG7",
+      "sourceUrl": "https://data.worldbank.org/indicator/EG.ELC.ACCS.ZS?locations=VN",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "api",
+        "headline": "World Bank API 연결",
+        "subheadline": "전력 접근률 국가·연도별 값",
+        "facts": [
+          "지표: EG.ELC.ACCS.ZS",
+          "단위: % of population",
+          "국가 프로필·비교·지도 재사용"
+        ]
+      }
+    },
+    {
+      "index": 22,
+      "elementId": "A-022",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.2. 에너지·전력 기초 정보",
+      "dataGroup": "A.2.a.에너지·전력 정보",
+      "title": "정전빈도 (SAIDI/SAIFI)",
+      "titleShort": "정전빈도 (SAIDI/SAIFI)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "World Bank WDI",
+      "effectiveSource": "World Bank WDI",
+      "sourceUrl": "https://databank.worldbank.org/source/world-development-indicators",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: World Bank WDI",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 23,
+      "elementId": "A-023",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.2. 에너지·전력 기초 정보",
+      "dataGroup": "A.2.b.에너지·전력 GIS 공간정보",
+      "title": "발전소 위치·용량",
+      "titleShort": "발전소 위치·용량",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "WRI GPPD / Global Energy Monitor",
+      "effectiveSource": "WRI GPPD / Global Energy Monitor",
+      "sourceUrl": "https://datasets.wri.org/datasets/global-power-plant-database",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: WRI GPPD / Global Energy Monitor",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 24,
+      "elementId": "A-024",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.2. 에너지·전력 기초 정보",
+      "dataGroup": "A.2.b.에너지·전력 GIS 공간정보",
+      "title": "전력망 위치·미공급 지역",
+      "titleShort": "전력망 위치·미공급 지역",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "WRI GPPD / OpenStreetMap",
+      "effectiveSource": "WRI GPPD / OpenStreetMap",
+      "sourceUrl": "https://datasets.wri.org/datasets/global-power-plant-database",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: WRI GPPD / OpenStreetMap",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 25,
+      "elementId": "A-025",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.3. 인프라",
+      "dataGroup": "A.3.a.인프라 GIS 공간정보",
+      "title": "CCS 시설",
+      "titleShort": "CCS 시설",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "OpenStreetMap",
+      "effectiveSource": "OpenStreetMap",
+      "sourceUrl": "https://www.openstreetmap.org",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: OpenStreetMap",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 26,
+      "elementId": "A-026",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.3. 인프라",
+      "dataGroup": "A.3.a.인프라 GIS 공간정보",
+      "title": "건물 풋프린트(Footprint)",
+      "titleShort": "건물 풋프린트(Footprint)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "OpenStreetMap",
+      "effectiveSource": "OpenStreetMap",
+      "sourceUrl": "https://www.openstreetmap.org",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: OpenStreetMap",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 27,
+      "elementId": "A-027",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.3. 인프라",
+      "dataGroup": "A.3.a.인프라 GIS 공간정보",
+      "title": "교통 인프라(railway O, road)",
+      "titleShort": "교통 인프라(railway O, road)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "OpenStreetMap",
+      "effectiveSource": "OpenStreetMap",
+      "sourceUrl": "https://globalatlas.irena.org/workspace",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: OpenStreetMap",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 28,
+      "elementId": "A-028",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.3. 인프라",
+      "dataGroup": "A.3.a.인프라 GIS 공간정보",
+      "title": "해안·수자원 인프라",
+      "titleShort": "해안·수자원 인프라",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "OpenStreetMap / JRC",
+      "effectiveSource": "OpenStreetMap / JRC",
+      "sourceUrl": "https://www.openstreetmap.org",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: OpenStreetMap / JRC",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 29,
+      "elementId": "A-029",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.4. 통상·무역",
+      "dataGroup": "A.4.a.한·개도국 교역액 및 FTA 체결 현황",
+      "title": "FTA 체결 현황",
+      "titleShort": "FTA 체결 현황",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "UN Comtrade",
+      "effectiveSource": "UN Comtrade",
+      "sourceUrl": "https://comtradeplus.un.org/",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: UN Comtrade",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 30,
+      "elementId": "A-030",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.4. 통상·무역",
+      "dataGroup": "A.4.a.한·개도국 교역액 및 FTA 체결 현황",
+      "title": "한-개도국 교역액",
+      "titleShort": "한-개도국 교역액",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "UN Comtrade",
+      "effectiveSource": "UN Comtrade",
+      "sourceUrl": "https://comtradeplus.un.org/",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: UN Comtrade",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 31,
+      "elementId": "A-031",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.4. 통상·무역",
+      "dataGroup": "A.4.b.공급망",
+      "title": "물류성과지수 (LPI)",
+      "titleShort": "물류성과지수 (LPI)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "World Bank LPI",
+      "effectiveSource": "World Bank LPI",
+      "sourceUrl": "https://lpi.worldbank.org/",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: World Bank LPI",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 32,
+      "elementId": "A-032",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.4. 통상·무역",
+      "dataGroup": "A.4.b.공급망",
+      "title": "중간재 교역 규모",
+      "titleShort": "중간재 교역 규모",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "OECD TiVA / UN Comtrade",
+      "effectiveSource": "OECD TiVA / UN Comtrade",
+      "sourceUrl": "https://data360.worldbank.org/en/dataset/OECD_TIVA",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: OECD TiVA / UN Comtrade",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 33,
+      "elementId": "A-033",
+      "category": "A",
+      "categoryLabel": "국가 기본정보",
+      "section": "A.4. 통상·무역",
+      "dataGroup": "A.4.b.공급망",
+      "title": "해운 연결성 (LSCI)",
+      "titleShort": "해운 연결성 (LSCI)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "UNCTAD LSCI",
+      "effectiveSource": "UNCTAD LSCI",
+      "sourceUrl": "https://unctadstat.unctad.org/datacentre/dataviewer/US.LSCI",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: UNCTAD LSCI",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 34,
+      "elementId": "B-001",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.1. 기후 현황 및 전망",
+      "dataGroup": "B.1.a.기후 기초 정보",
+      "title": "건기/우기",
+      "titleShort": "건기/우기",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "World Bank CCKP",
+      "effectiveSource": "World Bank CCKP",
+      "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: World Bank CCKP",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 35,
+      "elementId": "B-002",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.1. 기후 현황 및 전망",
+      "dataGroup": "B.1.a.기후 기초 정보",
+      "title": "기후대(Climate zone),",
+      "titleShort": "기후대(Climate zone),",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "World Bank CCKP",
+      "effectiveSource": "World Bank CCKP",
+      "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: World Bank CCKP",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 36,
+      "elementId": "B-003",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.1. 기후 현황 및 전망",
+      "dataGroup": "B.1.a.기후 기초 정보",
+      "title": "연평균 기온·강수",
+      "titleShort": "연평균 기온·강수",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "World Bank CCKP",
+      "effectiveSource": "World Bank CCKP",
+      "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: World Bank CCKP",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 37,
+      "elementId": "B-004",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.1. 기후 현황 및 전망",
+      "dataGroup": "B.1.b.과거·미래 기후",
+      "title": "CMIP6 기반 과거/미래 기온(tas, tasmax, tasmin), 강수(pr), 풍속(sfcWind)), 일사량(rsds), 상대습도(hurs)",
+      "titleShort": "CMIP6 기반 과거/미래 기온(tas, tasmax, tasmin), 강수(pr), 풍속(sfcWind)), 일사량(rsds), 상대습도(hurs)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "World Bank CCKP",
+      "effectiveSource": "World Bank CCKP",
+      "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: World Bank CCKP",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 38,
+      "elementId": "B-005",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.1. 기후 현황 및 전망",
+      "dataGroup": "B.1.c.기후 영향 인자",
+      "title": "가뭄: 연속 건조일수(CDD), 표준강수지수(SPEI12), 토양수분",
+      "titleShort": "가뭄: 연속 건조일수(CDD), 표준강수지수(SPEI12), 토양수분",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "World Bank CCKP",
+      "effectiveSource": "World Bank CCKP",
+      "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: World Bank CCKP",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 39,
+      "elementId": "B-006",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.1. 기후 현황 및 전망",
+      "dataGroup": "B.1.c.기후 영향 인자",
+      "title": "폭염: 폭염일수(TX35, TX40), 열대야(TR20, TR25), Heat Index(HI35))",
+      "titleShort": "폭염: 폭염일수(TX35, TX40), 열대야(TR20, TR25), Heat Index(HI35))",
+      "displayType": "numeric",
+      "status": "actual_connected",
+      "statusLabel": "실제 연결",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "World Bank CCKP",
+      "effectiveSource": "World Bank Climate Change Knowledge Portal",
+      "sourceUrl": "https://climateknowledgeportal.worldbank.org/",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "metric",
+        "headline": "69.99일/년",
+        "subheadline": "Heat Index 35°C 이상 · 2050 대표시점",
+        "facts": ["시나리오: SSP3-7.0", "기간: 2040–2059", "국가 평균"]
+      }
+    },
+    {
+      "index": 40,
+      "elementId": "B-007",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.1. 기후 현황 및 전망",
+      "dataGroup": "B.1.c.기후 영향 인자",
+      "title": "홍수: 최대 1일/5일 강수(RX1day, RX5day), 호우일수(R20mm, R50mm), 연속 습윤일수(CWD))",
+      "titleShort": "홍수: 최대 1일/5일 강수(RX1day, RX5day), 호우일수(R20mm, R50mm), 연속 습윤일수(CWD))",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "World Bank CCKP",
+      "effectiveSource": "World Bank CCKP",
+      "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: World Bank CCKP",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 41,
+      "elementId": "B-008",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.1. 기후 현황 및 전망",
+      "dataGroup": "B.1.d.해수면 상승 전망",
+      "title": "NASA 해수면 상승 전망 (SSP 1~5)",
+      "titleShort": "NASA 해수면 상승 전망 (SSP 1~5)",
+      "displayType": "geospatial",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "지역(GIS)",
+      "gis": true,
+      "sourceDatabase": "NASA Sea Level Projection / IPCC AR6",
+      "effectiveSource": "NASA Sea Level Projection / IPCC AR6",
+      "sourceUrl": "https://sealevel.nasa.gov/ipcc-ar6-sea-level-projection-tool",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "geospatial",
+        "headline": "예: 공간객체 12건",
+        "subheadline": "실제 좌표·행정구역·레이어 범례·목록을 지도와 연동",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: NASA Sea Level Projection / IPCC AR6",
+          "최종 공간단위: 지역(GIS)"
+        ]
+      }
+    },
+    {
+      "index": 42,
+      "elementId": "B-009",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.2. 기후 리스크",
+      "dataGroup": "B.2.a.물리적 리스크",
+      "title": "WWF 생물다양성·기후 리스크",
+      "titleShort": "WWF 생물다양성·기후 리스크",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "ND-GAIN",
+      "effectiveSource": "ND-GAIN",
+      "sourceUrl": "https://gain.nd.edu/our-work/country-index/download-data/",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: ND-GAIN",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 43,
+      "elementId": "B-010",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.2. 기후 리스크",
+      "dataGroup": "B.2.a.물리적 리스크",
+      "title": "기후 리스크 지수 (CRI)",
+      "titleShort": "기후 리스크 지수 (CRI)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "GermanWatch CRI",
+      "effectiveSource": "GermanWatch CRI",
+      "sourceUrl": "https://www.germanwatch.org/en/cri",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: GermanWatch CRI",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 44,
+      "elementId": "B-011",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.2. 기후 리스크",
+      "dataGroup": "B.2.a.물리적 리스크",
+      "title": "기후 취약성 지수 (ND-GAIN)",
+      "titleShort": "기후 취약성 지수 (ND-GAIN)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "ND-GAIN",
+      "effectiveSource": "ND-GAIN",
+      "sourceUrl": "https://gain.nd.edu/our-work/country-index/download-data/",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: ND-GAIN",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 45,
+      "elementId": "B-012",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.2. 기후 리스크",
+      "dataGroup": "B.2.a.물리적 리스크",
+      "title": "재해·재난 이력 (EM-DAT)",
+      "titleShort": "재해·재난 이력 (EM-DAT)",
+      "displayType": "time_series",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "EM-DAT",
+      "effectiveSource": "EM-DAT",
+      "sourceUrl": "https://public.emdat.be/data",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "time_series",
+        "headline": "예: 2019–2025 추세",
+        "subheadline": "최근값·최초값·기간변화·결측구간 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: EM-DAT",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 46,
+      "elementId": "B-013",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.2. 기후 리스크",
+      "dataGroup": "B.2.b.전환 리스크",
+      "title": "World Bank CBAM 영향 지수",
+      "titleShort": "World Bank CBAM 영향 지수",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "World Bank WDI",
+      "effectiveSource": "World Bank WDI",
+      "sourceUrl": "https://databank.worldbank.org/source/world-development-indicators",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: World Bank WDI",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 47,
+      "elementId": "B-014",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.2. 기후 리스크",
+      "dataGroup": "B.2.b.전환 리스크",
+      "title": "World Bank CCDR(Country Climate and Development) 내 \"탄소세 시뮬레이션 결과(배출감소율, GDP 영향, 세수 효과)",
+      "titleShort": "World Bank CCDR(Country Climate and Development) 내 \"탄소세 시뮬레이션 결과(배출감소율, GDP 영향, 세수 효과)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "World Bank CCDR",
+      "effectiveSource": "World Bank CCDR",
+      "sourceUrl": "https://www.worldbank.org/en/publication/country-climate-development-reports",
+      "collectionMethod": "문서 추출 (text file)",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: World Bank CCDR",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 48,
+      "elementId": "B-015",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.2. 기후 리스크",
+      "dataGroup": "B.2.b.전환 리스크",
+      "title": "탄소 가격 수준 (ETS, Carbon Tax)",
+      "titleShort": "탄소 가격 수준 (ETS, Carbon Tax)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "World Bank WDI",
+      "effectiveSource": "World Bank WDI",
+      "sourceUrl": "https://databank.worldbank.org/source/world-development-indicators",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: World Bank WDI",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 49,
+      "elementId": "B-016",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.2. 기후 리스크",
+      "dataGroup": "B.2.b.전환 리스크",
+      "title": "화석연료 의존도(Fossil fuel energy consumption (% of total))",
+      "titleShort": "화석연료 의존도(Fossil fuel energy consumption (% of total))",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "World Bank WDI",
+      "effectiveSource": "World Bank WDI",
+      "sourceUrl": "https://databank.worldbank.org/source/world-development-indicators",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: World Bank WDI",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 50,
+      "elementId": "B-017",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.3. 기후 취약성",
+      "dataGroup": "B.3.a.수자원 취약성",
+      "title": "WRI Aqueduct 물 스트레스 지수",
+      "titleShort": "WRI Aqueduct 물 스트레스 지수",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "WRI AQUEDUCT",
+      "effectiveSource": "WRI AQUEDUCT",
+      "sourceUrl": "https://www.wri.org/data/aqueduct-global-maps-40-data",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: WRI AQUEDUCT",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 51,
+      "elementId": "B-018",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.3. 기후 취약성",
+      "dataGroup": "B.3.b.SSP(공유 사회 경제 경로)기반 사회경제적 리스크",
+      "title": "SSP GDP(PPP, PPP per cap) 전망 (SSP 1~5)",
+      "titleShort": "SSP GDP(PPP, PPP per cap) 전망 (SSP 1~5)",
+      "displayType": "geospatial",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "지역(GIS)",
+      "gis": true,
+      "sourceDatabase": "IIASA",
+      "effectiveSource": "IIASA",
+      "sourceUrl": "https://data.ece.iiasa.ac.at/ssp/",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "geospatial",
+        "headline": "예: 공간객체 12건",
+        "subheadline": "실제 좌표·행정구역·레이어 범례·목록을 지도와 연동",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: IIASA",
+          "최종 공간단위: 지역(GIS)"
+        ]
+      }
+    },
+    {
+      "index": 52,
+      "elementId": "B-019",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.3. 기후 취약성",
+      "dataGroup": "B.3.b.SSP(공유 사회 경제 경로)기반 사회경제적 리스크",
+      "title": "SSP 인구 전망 (SSP 1~5)",
+      "titleShort": "SSP 인구 전망 (SSP 1~5)",
+      "displayType": "geospatial",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "지역(GIS)",
+      "gis": true,
+      "sourceDatabase": "IIASA",
+      "effectiveSource": "IIASA",
+      "sourceUrl": "https://data.ece.iiasa.ac.at/ssp/",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "geospatial",
+        "headline": "예: 공간객체 12건",
+        "subheadline": "실제 좌표·행정구역·레이어 범례·목록을 지도와 연동",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: IIASA",
+          "최종 공간단위: 지역(GIS)"
+        ]
+      }
+    },
+    {
+      "index": 53,
+      "elementId": "B-020",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.3. 기후 취약성",
+      "dataGroup": "B.3.c.기타 관련 지표",
+      "title": "EU/UN INFORM Risk Index (복합 리스크 지수)",
+      "titleShort": "EU/UN INFORM Risk Index (복합 리스크 지수)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "EU INFORM",
+      "effectiveSource": "EU INFORM",
+      "sourceUrl": "https://drmkc.jrc.ec.europa.eu/inform-index/INFORM-Risk/Results-and-data",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: EU INFORM",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 54,
+      "elementId": "B-021",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.3. 기후 취약성",
+      "dataGroup": "B.3.c.기타 관련 지표",
+      "title": "Global Data Lab의 GVI, Vulnerability Index",
+      "titleShort": "Global Data Lab의 GVI, Vulnerability Index",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "Scientific Data (Huisman et al., 2025)",
+      "effectiveSource": "Scientific Data (Huisman et al., 2025)",
+      "sourceUrl": "https://globaldatalab.org/gvi/",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: Scientific Data (Huisman et al., 2025)",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 55,
+      "elementId": "B-022",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.3. 기후 취약성",
+      "dataGroup": "B.3.c.기타 관련 지표",
+      "title": "World Bank CCDR(Country Climate and Development)의 기후 피해 경제적 비용 (GDP 대비 %)",
+      "titleShort": "World Bank CCDR(Country Climate and Development)의 기후 피해 경제적 비용 (GDP 대비 %)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "World Bank CCDR",
+      "effectiveSource": "World Bank CCDR",
+      "sourceUrl": "https://www.worldbank.org/en/publication/country-climate-development-reports",
+      "collectionMethod": "문서 추출 (text file)",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: World Bank CCDR",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 56,
+      "elementId": "B-023",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.4. 자원·자연 환경",
+      "dataGroup": "B.4.a.수문학",
+      "title": "건기/우기 유량 차이",
+      "titleShort": "건기/우기 유량 차이",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "HydroSHEDS / FAO AQUASTAT",
+      "effectiveSource": "HydroSHEDS / FAO AQUASTAT",
+      "sourceUrl": "https://www.hydrosheds.org/hydrosheds-core-downloads",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: HydroSHEDS / FAO AQUASTAT",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 57,
+      "elementId": "B-024",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.4. 자원·자연 환경",
+      "dataGroup": "B.4.a.수문학",
+      "title": "농업 용수 비중(%)",
+      "titleShort": "농업 용수 비중(%)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "HydroSHEDS / FAO AQUASTAT",
+      "effectiveSource": "HydroSHEDS / FAO AQUASTAT",
+      "sourceUrl": "https://www.hydrosheds.org/hydrosheds-core-downloads",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: HydroSHEDS / FAO AQUASTAT",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 58,
+      "elementId": "B-025",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.4. 자원·자연 환경",
+      "dataGroup": "B.4.a.수문학",
+      "title": "유역 면적(km²)",
+      "titleShort": "유역 면적(km²)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "HydroSHEDS / FAO AQUASTAT",
+      "effectiveSource": "HydroSHEDS / FAO AQUASTAT",
+      "sourceUrl": "https://www.hydrosheds.org/hydrosheds-core-downloads",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: HydroSHEDS / FAO AQUASTAT",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 59,
+      "elementId": "B-026",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.4. 자원·자연 환경",
+      "dataGroup": "B.4.a.수문학",
+      "title": "유향(flow direction)",
+      "titleShort": "유향(flow direction)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "HydroSHEDS / FAO AQUASTAT",
+      "effectiveSource": "HydroSHEDS / FAO AQUASTAT",
+      "sourceUrl": "https://www.hydrosheds.org/hydrosheds-core-downloads",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: HydroSHEDS / FAO AQUASTAT",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 60,
+      "elementId": "B-027",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.4. 자원·자연 환경",
+      "dataGroup": "B.4.a.수문학",
+      "title": "지하수 잠재량(m³/yr)",
+      "titleShort": "지하수 잠재량(m³/yr)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "HydroSHEDS / FAO AQUASTAT",
+      "effectiveSource": "HydroSHEDS / FAO AQUASTAT",
+      "sourceUrl": "https://www.hydrosheds.org/hydrosheds-core-downloads",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: HydroSHEDS / FAO AQUASTAT",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 61,
+      "elementId": "B-028",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.4. 자원·자연 환경",
+      "dataGroup": "B.4.a.수문학",
+      "title": "하천 유량(m³/s)",
+      "titleShort": "하천 유량(m³/s)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "HydroSHEDS / FAO AQUASTAT",
+      "effectiveSource": "HydroSHEDS / FAO AQUASTAT",
+      "sourceUrl": "https://www.hydrosheds.org/hydrosheds-core-downloads",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: HydroSHEDS / FAO AQUASTAT",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 62,
+      "elementId": "B-029",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.4. 자원·자연 환경",
+      "dataGroup": "B.4.b.산림",
+      "title": "산림 유형별 면적(열대우림/맹그로브/이탄지 등),",
+      "titleShort": "산림 유형별 면적(열대우림/맹그로브/이탄지 등),",
+      "displayType": "geospatial",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "지역(GIS)",
+      "gis": true,
+      "sourceDatabase": "Global Forest Watch / Hansen",
+      "effectiveSource": "Global Forest Watch / Hansen",
+      "sourceUrl": "https://data-api.globalforestwatch.org/",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "geospatial",
+        "headline": "예: 공간객체 12건",
+        "subheadline": "실제 좌표·행정구역·레이어 범례·목록을 지도와 연동",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: Global Forest Watch / Hansen",
+          "최종 공간단위: 지역(GIS)"
+        ]
+      }
+    },
+    {
+      "index": 63,
+      "elementId": "B-030",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.4. 자원·자연 환경",
+      "dataGroup": "B.4.b.산림",
+      "title": "산림 이득(ha/yr)",
+      "titleShort": "산림 이득(ha/yr)",
+      "displayType": "geospatial",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "지역(GIS)",
+      "gis": true,
+      "sourceDatabase": "Global Forest Watch / Hansen",
+      "effectiveSource": "Global Forest Watch / Hansen",
+      "sourceUrl": "https://data-api.globalforestwatch.org/",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "geospatial",
+        "headline": "예: 공간객체 12건",
+        "subheadline": "실제 좌표·행정구역·레이어 범례·목록을 지도와 연동",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: Global Forest Watch / Hansen",
+          "최종 공간단위: 지역(GIS)"
+        ]
+      }
+    },
+    {
+      "index": 64,
+      "elementId": "B-031",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.4. 자원·자연 환경",
+      "dataGroup": "B.4.b.산림",
+      "title": "산림 총 면적(ha)",
+      "titleShort": "산림 총 면적(ha)",
+      "displayType": "geospatial",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "지역(GIS)",
+      "gis": true,
+      "sourceDatabase": "Global Forest Watch / Hansen",
+      "effectiveSource": "Global Forest Watch / Hansen",
+      "sourceUrl": "https://data-api.globalforestwatch.org/",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "geospatial",
+        "headline": "예: 공간객체 12건",
+        "subheadline": "실제 좌표·행정구역·레이어 범례·목록을 지도와 연동",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: Global Forest Watch / Hansen",
+          "최종 공간단위: 지역(GIS)"
+        ]
+      }
+    },
+    {
+      "index": 65,
+      "elementId": "B-032",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.4. 자원·자연 환경",
+      "dataGroup": "B.4.b.산림",
+      "title": "수관 피복률(%)",
+      "titleShort": "수관 피복률(%)",
+      "displayType": "geospatial",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "지역(GIS)",
+      "gis": true,
+      "sourceDatabase": "Global Forest Watch / Hansen",
+      "effectiveSource": "Global Forest Watch / Hansen",
+      "sourceUrl": "https://data-api.globalforestwatch.org/",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "geospatial",
+        "headline": "예: 공간객체 12건",
+        "subheadline": "실제 좌표·행정구역·레이어 범례·목록을 지도와 연동",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: Global Forest Watch / Hansen",
+          "최종 공간단위: 지역(GIS)"
+        ]
+      }
+    },
+    {
+      "index": 66,
+      "elementId": "B-033",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.4. 자원·자연 환경",
+      "dataGroup": "B.4.b.산림",
+      "title": "연간 산림 손실(ha/yr)",
+      "titleShort": "연간 산림 손실(ha/yr)",
+      "displayType": "geospatial",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "지역(GIS)",
+      "gis": true,
+      "sourceDatabase": "Global Forest Watch / Hansen",
+      "effectiveSource": "Global Forest Watch / Hansen",
+      "sourceUrl": "https://data-api.globalforestwatch.org/",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "geospatial",
+        "headline": "예: 공간객체 12건",
+        "subheadline": "실제 좌표·행정구역·레이어 범례·목록을 지도와 연동",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: Global Forest Watch / Hansen",
+          "최종 공간단위: 지역(GIS)"
+        ]
+      }
+    },
+    {
+      "index": 67,
+      "elementId": "B-034",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.4. 자원·자연 환경",
+      "dataGroup": "B.4.b.산림",
+      "title": "탄소 저장량(tC/ha)",
+      "titleShort": "탄소 저장량(tC/ha)",
+      "displayType": "geospatial",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "지역(GIS)",
+      "gis": true,
+      "sourceDatabase": "Global Forest Watch / Hansen",
+      "effectiveSource": "Global Forest Watch / Hansen",
+      "sourceUrl": "https://data-api.globalforestwatch.org/",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "geospatial",
+        "headline": "예: 공간객체 12건",
+        "subheadline": "실제 좌표·행정구역·레이어 범례·목록을 지도와 연동",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: Global Forest Watch / Hansen",
+          "최종 공간단위: 지역(GIS)"
+        ]
+      }
+    },
+    {
+      "index": 68,
+      "elementId": "B-035",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.4. 자원·자연 환경",
+      "dataGroup": "B.4.c.토지이용",
+      "title": "LULUCF 관련 면적 변화",
+      "titleShort": "LULUCF 관련 면적 변화",
+      "displayType": "geospatial",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "지역(GIS)",
+      "gis": true,
+      "sourceDatabase": "ESA WorldCover / FAOSTAT",
+      "effectiveSource": "ESA WorldCover / FAOSTAT",
+      "sourceUrl": "https://worldcover2021.esa.int/downloader",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "geospatial",
+        "headline": "예: 공간객체 12건",
+        "subheadline": "실제 좌표·행정구역·레이어 범례·목록을 지도와 연동",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: ESA WorldCover / FAOSTAT",
+          "최종 공간단위: 지역(GIS)"
+        ]
+      }
+    },
+    {
+      "index": 69,
+      "elementId": "B-036",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.4. 자원·자연 환경",
+      "dataGroup": "B.4.c.토지이용",
+      "title": "토지이용 변화율(%/yr)",
+      "titleShort": "토지이용 변화율(%/yr)",
+      "displayType": "geospatial",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "지역(GIS)",
+      "gis": true,
+      "sourceDatabase": "ESA WorldCover / FAOSTAT",
+      "effectiveSource": "ESA WorldCover / FAOSTAT",
+      "sourceUrl": "https://worldcover2021.esa.int/downloader",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "geospatial",
+        "headline": "예: 공간객체 12건",
+        "subheadline": "실제 좌표·행정구역·레이어 범례·목록을 지도와 연동",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: ESA WorldCover / FAOSTAT",
+          "최종 공간단위: 지역(GIS)"
+        ]
+      }
+    },
+    {
+      "index": 70,
+      "elementId": "B-037",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.4. 자원·자연 환경",
+      "dataGroup": "B.4.c.토지이용",
+      "title": "토지피복 분류별 면적(경작지/산림/초지/건물/수체/나지, ha)",
+      "titleShort": "토지피복 분류별 면적(경작지/산림/초지/건물/수체/나지, ha)",
+      "displayType": "geospatial",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "지역(GIS)",
+      "gis": true,
+      "sourceDatabase": "ESA WorldCover / FAOSTAT",
+      "effectiveSource": "ESA WorldCover / FAOSTAT",
+      "sourceUrl": "https://worldcover2021.esa.int/downloader",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "geospatial",
+        "headline": "예: 공간객체 12건",
+        "subheadline": "실제 좌표·행정구역·레이어 범례·목록을 지도와 연동",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: ESA WorldCover / FAOSTAT",
+          "최종 공간단위: 지역(GIS)"
+        ]
+      }
+    },
+    {
+      "index": 71,
+      "elementId": "B-038",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.4. 자원·자연 환경",
+      "dataGroup": "B.4.d.에너지 자원량",
+      "title": "바이오매스 자원 가용량 (농업잔재/임업잔재/도시폐기물/축산폐기물)",
+      "titleShort": "바이오매스 자원 가용량 (농업잔재/임업잔재/도시폐기물/축산폐기물)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "Energy Institute / IRENA Global Atlas",
+      "effectiveSource": "Energy Institute / IRENA Global Atlas",
+      "sourceUrl": null,
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: Energy Institute / IRENA Global Atlas",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 72,
+      "elementId": "B-039",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.4. 자원·자연 환경",
+      "dataGroup": "B.4.d.에너지 자원량",
+      "title": "수력 잠재량",
+      "titleShort": "수력 잠재량",
+      "displayType": "geospatial",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "지역(GIS)",
+      "gis": true,
+      "sourceDatabase": "IRENA Global Atlas",
+      "effectiveSource": "IRENA Global Atlas",
+      "sourceUrl": "https://globalatlas.irena.org/",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "geospatial",
+        "headline": "예: 공간객체 12건",
+        "subheadline": "실제 좌표·행정구역·레이어 범례·목록을 지도와 연동",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: IRENA Global Atlas",
+          "최종 공간단위: 지역(GIS)"
+        ]
+      }
+    },
+    {
+      "index": 73,
+      "elementId": "B-040",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.4. 자원·자연 환경",
+      "dataGroup": "B.4.d.에너지 자원량",
+      "title": "지열 잠재량",
+      "titleShort": "지열 잠재량",
+      "displayType": "geospatial",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "지역(GIS)",
+      "gis": true,
+      "sourceDatabase": "IRENA Global Atlas / IGA",
+      "effectiveSource": "IRENA Global Atlas / IGA",
+      "sourceUrl": "https://globalatlas.irena.org/",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "geospatial",
+        "headline": "예: 공간객체 12건",
+        "subheadline": "실제 좌표·행정구역·레이어 범례·목록을 지도와 연동",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: IRENA Global Atlas / IGA",
+          "최종 공간단위: 지역(GIS)"
+        ]
+      }
+    },
+    {
+      "index": 74,
+      "elementId": "B-041",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.4. 자원·자연 환경",
+      "dataGroup": "B.4.d.에너지 자원량",
+      "title": "태양광 관련 지표 (GHI, DNI)",
+      "titleShort": "태양광 관련 지표 (GHI, DNI)",
+      "displayType": "numeric",
+      "status": "actual_connected",
+      "statusLabel": "실제 연결",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "IRENA Global Atlas",
+      "effectiveSource": "World Bank / ESMAP / Solargis",
+      "sourceUrl": "https://globalsolaratlas.info/",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "solar",
+        "headline": "GHI 4.2521 kWh/m²/day",
+        "subheadline": "PVOUT 3.5544 kWh/kWp/day",
+        "facts": [
+          "LCOE 2018: 0.1219 USD/kWh",
+          "계절성지수: 1.7401",
+          "국가 평균 · 부지 사업성 판단과 구분"
+        ]
+      }
+    },
+    {
+      "index": 75,
+      "elementId": "B-042",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.4. 자원·자연 환경",
+      "dataGroup": "B.4.d.에너지 자원량",
+      "title": "풍력 자원 (풍속, 에너지밀도)",
+      "titleShort": "풍력 자원 (풍속, 에너지밀도)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "IRENA Global Atlas",
+      "effectiveSource": "IRENA Global Atlas",
+      "sourceUrl": "https://www.energyinst.org/statistical-review/resources-and-data-downloads",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: IRENA Global Atlas",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 76,
+      "elementId": "B-043",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.4. 자원·자연 환경",
+      "dataGroup": "B.4.d.에너지 자원량",
+      "title": "화석연료 자원량 (석탄, 석유, LNG 등)",
+      "titleShort": "화석연료 자원량 (석탄, 석유, LNG 등)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "Energy Institute",
+      "effectiveSource": "Energy Institute",
+      "sourceUrl": "https://www.energyinst.org/statistical-review/resources-and-data-downloads",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: Energy Institute",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 77,
+      "elementId": "B-044",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.4. 자원·자연 환경",
+      "dataGroup": "B.4.e.광물 자원량",
+      "title": "광물명(리튬/코발트/니켈/구리/희토류/망간)",
+      "titleShort": "광물명(리튬/코발트/니켈/구리/희토류/망간)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "USGS Mineral Commodity Summaries",
+      "effectiveSource": "USGS Mineral Commodity Summaries",
+      "sourceUrl": null,
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: USGS Mineral Commodity Summaries",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 78,
+      "elementId": "B-045",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.4. 자원·자연 환경",
+      "dataGroup": "B.4.e.광물 자원량",
+      "title": "글로벌 순위",
+      "titleShort": "글로벌 순위",
+      "displayType": "categorical",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "USGS Mineral Commodity Summaries",
+      "effectiveSource": "USGS Mineral Commodity Summaries",
+      "sourceUrl": null,
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "categorical",
+        "headline": "예: ‘중간’ 등급",
+        "subheadline": "등급 정의·판정기준·근거를 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: USGS Mineral Commodity Summaries",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 79,
+      "elementId": "B-046",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.4. 자원·자연 환경",
+      "dataGroup": "B.4.e.광물 자원량",
+      "title": "매장량(확인/추정, tonnes)",
+      "titleShort": "매장량(확인/추정, tonnes)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "USGS Mineral Commodity Summaries",
+      "effectiveSource": "USGS Mineral Commodity Summaries",
+      "sourceUrl": null,
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: USGS Mineral Commodity Summaries",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 80,
+      "elementId": "B-047",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.4. 자원·자연 환경",
+      "dataGroup": "B.4.e.광물 자원량",
+      "title": "연간 생산량(tonnes/yr)",
+      "titleShort": "연간 생산량(tonnes/yr)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "USGS Mineral Commodity Summaries",
+      "effectiveSource": "USGS Mineral Commodity Summaries",
+      "sourceUrl": null,
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: USGS Mineral Commodity Summaries",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 81,
+      "elementId": "B-048",
+      "category": "B",
+      "categoryLabel": "기후·환경",
+      "section": "B.4. 자원·자연 환경",
+      "dataGroup": "B.4.e.광물 자원량",
+      "title": "주요 광산 위치(가용 시 좌표)",
+      "titleShort": "주요 광산 위치(가용 시 좌표)",
+      "displayType": "geospatial",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "지역(GIS)",
+      "gis": true,
+      "sourceDatabase": "USGS Mineral Commodity Summaries",
+      "effectiveSource": "USGS Mineral Commodity Summaries",
+      "sourceUrl": null,
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "geospatial",
+        "headline": "예: 공간객체 12건",
+        "subheadline": "실제 좌표·행정구역·레이어 범례·목록을 지도와 연동",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: USGS Mineral Commodity Summaries",
+          "최종 공간단위: 지역(GIS)"
+        ]
+      }
+    },
+    {
+      "index": 82,
+      "elementId": "C-001",
+      "category": "C",
+      "categoryLabel": "정책·제도",
+      "section": "C.1. 국제 기후변화 협정·이행체계",
+      "dataGroup": "C.1.a.NDC (국가 온실가스 감축 목표)",
+      "title": "제출 이력(제출년도/버전)\nBAU 배출 전망(2030, MtCO₂e)\n감축 목표(무조건부/조건부, %)\n부문별 감축 전략·수단 목록\nNDC-SDG 연계 매핑, 적응 부문 목표\n이행 재원 소요(USD)\n기준연도, 대상 GHG, 대상 부문\n원본 링크(URL)",
+      "titleShort": "제출 이력(제출년도/버전)",
+      "displayType": "document",
+      "status": "actual_connected",
+      "statusLabel": "실제 연결",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "Climate Watch",
+      "effectiveSource": "UNFCCC NDC Registry",
+      "sourceUrl": "https://unfccc.int/documents/622541",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "document",
+        "headline": "Viet Nam NDC 2022 Update",
+        "subheadline": "제출일 2022-11-08 · 검토 정책항목 10개",
+        "facts": [
+          "재생에너지·전력망·에너지효율 등 원문 근거 연결",
+          "원문·한국어 의미·페이지 위치 제공"
+        ]
+      }
+    },
+    {
+      "index": 83,
+      "elementId": "C-002",
+      "category": "C",
+      "categoryLabel": "정책·제도",
+      "section": "C.1. 국제 기후변화 협정·이행체계",
+      "dataGroup": "C.1.b.BTR (격년투명성보고서, 舊 BUR)",
+      "title": "제출 이력(제출년도/문서 링크)\nGHG 총배출량(incl./excl. LULUCF, MtCO₂e, 시계열)\n부문별 배출량 (에너지/IPPU/농업/FOLU/폐기물),\nNDC 감축 달성량(부문별 ktCO₂e)\nSSP별 기온/강수 전망\n극한기후지수 변화\nGDP 손실 추정(%)\n적응 이행 프로그램 수\n재정 지원 수요/수혜(USD)\n원본 링크(URL)",
+      "titleShort": "제출 이력(제출년도/문서 링크)",
+      "displayType": "document",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "UNFCCC BTR",
+      "effectiveSource": "UNFCCC BTR",
+      "sourceUrl": "https://unfccc.int/first-biennial-transparency-reports",
+      "collectionMethod": "문서 추출 (PDF)",
+      "preview": {
+        "kind": "document",
+        "headline": "예: 공식 문서 1건",
+        "subheadline": "원문·한국어 의미·페이지·공식 링크 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: UNFCCC BTR",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 84,
+      "elementId": "C-003",
+      "category": "C",
+      "categoryLabel": "정책·제도",
+      "section": "C.1. 국제 기후변화 협정·이행체계",
+      "dataGroup": "C.1.c.NAP (국가 적응 계획)",
+      "title": "제출 이력(제출년도/문서 링크)\n부문별 취약성 평가(등급)\n적응 우선 분야\n적응 우선 조치 목록(단기/중기/장기)\n부문별 적응 투자 소요(USD)\n적응 거버넌스 체계\nM&E 지표 체계\n이해관계자·젠더 분석\n원본 링크(URL)",
+      "titleShort": "제출 이력(제출년도/문서 링크)",
+      "displayType": "verification",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "UNFCCC NAP",
+      "effectiveSource": "UNFCCC NAP",
+      "sourceUrl": "https://unfccc.int/national-adaptation-plans#reports",
+      "collectionMethod": "문서 추출 (PDF)",
+      "preview": {
+        "kind": "verification",
+        "headline": "예: 직접 근거 확인",
+        "subheadline": "확인상태와 원문 위치를 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: UNFCCC NAP",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 85,
+      "elementId": "C-004",
+      "category": "C",
+      "categoryLabel": "정책·제도",
+      "section": "C.1. 국제 기후변화 협정·이행체계",
+      "dataGroup": "C.1.d.LT-LEDS (장기 저탄소 발전 전략)",
+      "title": "장기 배출 경로(2050, BAU/감축/넷제로 시나리오별 MtCO₂e)\n넷제로 목표 연도/범위\n에너지 믹스 전망(2050, RE/화석/원자력 %)\n부문별 탈탄소 경로\n핵심 감축 기술 목록\n공정전환 전략\n탄소 흡수/제거 목표(MtCO₂e)\n장기 투자 소요(USD)\n원본 링크(URL)",
+      "titleShort": "장기 배출 경로(2050, BAU/감축/넷제로 시나리오별 MtCO₂e)",
+      "displayType": "document",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "UNFCCC Long-term strategies portal",
+      "effectiveSource": "UNFCCC Long-term strategies portal",
+      "sourceUrl": "https://unfccc.int/process/the-paris-agreement/long-term-strategies",
+      "collectionMethod": "문서 추출 (PDF)",
+      "preview": {
+        "kind": "document",
+        "headline": "예: 공식 문서 1건",
+        "subheadline": "원문·한국어 의미·페이지·공식 링크 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: UNFCCC Long-term strategies portal",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 86,
+      "elementId": "C-005",
+      "category": "C",
+      "categoryLabel": "정책·제도",
+      "section": "C.1. 국제 기후변화 협정·이행체계",
+      "dataGroup": "C.1.e.TNA (기술 수요 평가)",
+      "title": "수행 여부/수행 연도\n감축/적응 우선순위 기술 목록(기술명/부문/우선순위 순위)\n기술 이전 장벽(Barrier Analysis 결과)\nTAP(기술실행계획) 유무\n우선 섹터\n원본 링크(URL)",
+      "titleShort": "수행 여부/수행 연도",
+      "displayType": "verification",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "UNFCCC TNA",
+      "effectiveSource": "UNFCCC TNA",
+      "sourceUrl": "https://tech-action.unepccc.org/tna-database/",
+      "collectionMethod": "문서 추출 (PDF)",
+      "preview": {
+        "kind": "verification",
+        "headline": "예: 직접 근거 확인",
+        "subheadline": "확인상태와 원문 위치를 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: UNFCCC TNA",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 87,
+      "elementId": "C-006",
+      "category": "C",
+      "categoryLabel": "정책·제도",
+      "section": "C.1. 국제 기후변화 협정·이행체계",
+      "dataGroup": "C.1.e.파리협정 제6.2조/제6.4조 이행 체계·현황",
+      "title": "ITMO 양자 협정 체결국, 체결 일자, 대상 부문/기술\nITMO 양자 협정 승인 기관(Authorization Body)\nITMO 이전 실적(tCO₂e)\n상응조정(Corresponding Adjustment) 체계 구축 여부\n국가 레지스트리 존재 여부 및 UNFCCC 연동 상태",
+      "titleShort": "ITMO 양자 협정 체결국, 체결 일자, 대상 부문/기술",
+      "displayType": "verification",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "UNFCCC / Climate Watch",
+      "effectiveSource": "UNFCCC / Climate Watch",
+      "sourceUrl": "https://unfccc.int/",
+      "collectionMethod": "수동 수집",
+      "preview": {
+        "kind": "verification",
+        "headline": "예: 직접 근거 확인",
+        "subheadline": "확인상태와 원문 위치를 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: UNFCCC / Climate Watch",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 88,
+      "elementId": "C-007",
+      "category": "C",
+      "categoryLabel": "정책·제도",
+      "section": "C.1. 국제 기후변화 협정·이행체계",
+      "dataGroup": "C.1.f.파리협정 제6.8조 비시장 접근법 참여 현황",
+      "title": "참여 여부, 등록된 활동명, 대상 분야(감축/적응/재정/기술/역량), 참여 기관, 등록 일자, 원본 링크(URL)",
+      "titleShort": "참여 여부, 등록된 활동명, 대상 분야(감축/적응/재정/기술/역량), 참여 기관, 등록 일자, 원본 링크(URL)",
+      "displayType": "verification",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "UNFCCC NMA Platform",
+      "effectiveSource": "UNFCCC NMA Platform",
+      "sourceUrl": "https://unfccc.int/process/the-paris-agreement/cooperative-implementation/non-market-approaches",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "verification",
+        "headline": "예: 직접 근거 확인",
+        "subheadline": "확인상태와 원문 위치를 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: UNFCCC NMA Platform",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 89,
+      "elementId": "C-008",
+      "category": "C",
+      "categoryLabel": "정책·제도",
+      "section": "C.1. 국제 기후변화 협정·이행체계",
+      "dataGroup": "C.1.g.Cooperative Climate Initiative 참여 현황",
+      "title": "이니셔티브 명, 참여 상태(Active/Completed), 참여 연도, 기후 분야(감축/적응), 주제(에너지/산림/수송/도시 등), 참여 국가·기관 목록",
+      "titleShort": "이니셔티브 명, 참여 상태(Active/Completed), 참여 연도, 기후 분야(감축/적응), 주제(에너지/산림/수송/도시 등), 참여 국가·기관 목록",
+      "displayType": "verification",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "UNFCCC NAZCA",
+      "effectiveSource": "UNFCCC NAZCA",
+      "sourceUrl": "https://climateaction.unfccc.int/Initiatives",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "verification",
+        "headline": "예: 직접 근거 확인",
+        "subheadline": "확인상태와 원문 위치를 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: UNFCCC NAZCA",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 90,
+      "elementId": "C-009",
+      "category": "C",
+      "categoryLabel": "정책·제도",
+      "section": "C.2. 개도국 기후변화 정책·규제",
+      "dataGroup": "C.2.a.기후 법제도 현황",
+      "title": "법령명, 유형(법률/시행령/규제/인센티브), 대상 분야(감축/적응/에너지/산업), 시행 연도, 상태(시행중/폐지/계류), 주관 부처, 원본 링크(URL)",
+      "titleShort": "법령명, 유형(법률/시행령/규제/인센티브), 대상 분야(감축/적응/에너지/산업), 시행 연도, 상태(시행중/폐지/계류), 주관 부처, 원본 링크(URL)",
+      "displayType": "verification",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "NewClimate / OECD PINE / BTR(Mitigation Policy Implementation / 현지조사",
+      "effectiveSource": "NewClimate / OECD PINE / BTR(Mitigation Policy Implementation / 현지조사",
+      "sourceUrl": "https://climatepolicydatabase.org/policies",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "verification",
+        "headline": "예: 직접 근거 확인",
+        "subheadline": "확인상태와 원문 위치를 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: NewClimate / OECD PINE / BTR(Mitigation Policy Implementation / 현지조사",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 91,
+      "elementId": "C-010",
+      "category": "C",
+      "categoryLabel": "정책·제도",
+      "section": "C.2. 개도국 기후변화 정책·규제",
+      "dataGroup": "C.2.b.기타 환경 관련 법제도 현황",
+      "title": "법령명, 유형(EIA법/대기질/수질/폐기물/생물다양성), 시행 연도, 상태, 주관 부처, 원본 링크(URL)",
+      "titleShort": "법령명, 유형(EIA법/대기질/수질/폐기물/생물다양성), 시행 연도, 상태, 주관 부처, 원본 링크(URL)",
+      "displayType": "verification",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "NewClimate / OECD PINE / 현지 정부",
+      "effectiveSource": "NewClimate / OECD PINE / 현지 정부",
+      "sourceUrl": "https://climatepolicydatabase.org/policies",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "verification",
+        "headline": "예: 직접 근거 확인",
+        "subheadline": "확인상태와 원문 위치를 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: NewClimate / OECD PINE / 현지 정부",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 92,
+      "elementId": "C-011",
+      "category": "C",
+      "categoryLabel": "정책·제도",
+      "section": "C.2. 개도국 기후변화 정책·규제",
+      "dataGroup": "C.2.c.치안·안전 정보",
+      "title": "치안·안전 정보(경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지), 현지 치안 상황, 범죄 통계)",
+      "titleShort": "치안·안전 정보(경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지), 현지 치안 상황, 범죄 통계)",
+      "displayType": "document",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "외교부 / 현지 자료",
+      "effectiveSource": "외교부 / 현지 자료",
+      "sourceUrl": null,
+      "collectionMethod": "미정",
+      "preview": {
+        "kind": "document",
+        "headline": "예: 공식 문서 1건",
+        "subheadline": "원문·한국어 의미·페이지·공식 링크 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: 외교부 / 현지 자료",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 93,
+      "elementId": "C-012",
+      "category": "C",
+      "categoryLabel": "정책·제도",
+      "section": "C.3. 개도국 사업 이행 정책·규제",
+      "dataGroup": "C.3.a.PPP 법제도·조달 체계",
+      "title": "PPP 법률 유무/명칭\nPPP 전담 기관\n조달 방식(경쟁입찰/협상/비공개)\n계약 유형(BOT/BOO/Concession\nVfM 평가 의무 여부\nPPP 프로젝트 이력(건수)",
+      "titleShort": "PPP 법률 유무/명칭",
+      "displayType": "verification",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "WB PPP Resource Center",
+      "effectiveSource": "WB PPP Resource Center",
+      "sourceUrl": "https://ppp.worldbank.org/",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "verification",
+        "headline": "예: 직접 근거 확인",
+        "subheadline": "확인상태와 원문 위치를 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: WB PPP Resource Center",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 94,
+      "elementId": "C-013",
+      "category": "C",
+      "categoryLabel": "정책·제도",
+      "section": "C.3. 개도국 사업 이행 정책·규제",
+      "dataGroup": "C.3.b.외국인 투자 규정",
+      "title": "외국인 지분 제한\n투자 인센티브(세제 혜택/경제특구)\n투자 보호 협정(BIT)\n수익 송금 규정",
+      "titleShort": "외국인 지분 제한",
+      "displayType": "verification",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "World Bank Doing Business / 현지",
+      "effectiveSource": "World Bank Doing Business / 현지",
+      "sourceUrl": "https://archive.doingbusiness.org/en/doingbusiness",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "verification",
+        "headline": "예: 직접 근거 확인",
+        "subheadline": "확인상태와 원문 위치를 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: World Bank Doing Business / 현지",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 95,
+      "elementId": "C-014",
+      "category": "C",
+      "categoryLabel": "정책·제도",
+      "section": "C.3. 개도국 사업 이행 정책·규제",
+      "dataGroup": "C.3.c.인허가 프로세스",
+      "title": "환경영향평가(EIA) 절차\n건축 허가 절차, 소요 기간(일수), 비용(USD)\n전력 사업 허가 절차, 소요 기간(일수), 비용(USD)\n토지 취득 절차, 소요 기간(일수), 비용(USD)",
+      "titleShort": "환경영향평가(EIA) 절차",
+      "displayType": "permitting",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "현지 정부 자료",
+      "effectiveSource": "현지 정부 자료",
+      "sourceUrl": null,
+      "collectionMethod": "수동 수집",
+      "preview": {
+        "kind": "permitting",
+        "headline": "예: 6단계 절차",
+        "subheadline": "필수·조건부·담당기관·기간·비용·법적근거를 순서대로 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: 현지 정부 자료",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 96,
+      "elementId": "C-015",
+      "category": "C",
+      "categoryLabel": "정책·제도",
+      "section": "C.3. 개도국 사업 이행 정책·규제",
+      "dataGroup": "C.3.d.재생에너지 관련 법제도",
+      "title": "상기 문서들의 원본 링크(URL)",
+      "titleShort": "상기 문서들의 원본 링크(URL)",
+      "displayType": "document",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "현지 에너지부·전력청 / IRENA",
+      "effectiveSource": "현지 에너지부·전력청 / IRENA",
+      "sourceUrl": "https://pxweb.irena.org/pxweb/en/IRENASTAT/",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "document",
+        "headline": "예: 공식 문서 1건",
+        "subheadline": "원문·한국어 의미·페이지·공식 링크 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: 현지 에너지부·전력청 / IRENA",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 97,
+      "elementId": "C-016",
+      "category": "C",
+      "categoryLabel": "정책·제도",
+      "section": "C.3. 개도국 사업 이행 정책·규제",
+      "dataGroup": "C.3.d.재생에너지 관련 법제도",
+      "title": "재생에너지 발주 및 확대 계획: 국가 RE 용량 목표(MW, 연도별), 입찰 일정(예정/진행/완료), 대상 기술, 사업자 선정 방식(경쟁입찰/FIT), 발주 기관",
+      "titleShort": "재생에너지 발주 및 확대 계획: 국가 RE 용량 목표(MW, 연도별), 입찰 일정(예정/진행/완료), 대상 기술, 사업자 선정 방식(경쟁입찰/FIT), 발주 기관",
+      "displayType": "document",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "현지 에너지부·전력청 / IRENA",
+      "effectiveSource": "현지 에너지부·전력청 / IRENA",
+      "sourceUrl": "https://pxweb.irena.org/pxweb/en/IRENASTAT/",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "document",
+        "headline": "예: 공식 문서 1건",
+        "subheadline": "원문·한국어 의미·페이지·공식 링크 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: 현지 에너지부·전력청 / IRENA",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 98,
+      "elementId": "C-017",
+      "category": "C",
+      "categoryLabel": "정책·제도",
+      "section": "C.3. 개도국 사업 이행 정책·규제",
+      "dataGroup": "C.3.d.재생에너지 관련 법제도",
+      "title": "재생에너지 투자 인센티브: 인센티브 유형(FIT/FIP/RPS/세제/보조금/넷미터링), 대상 기술(태양광/풍력/수력/바이오), 인센티브 조건(가격/기간/용량), 시행 기관, 시행 연도, 상태",
+      "titleShort": "재생에너지 투자 인센티브: 인센티브 유형(FIT/FIP/RPS/세제/보조금/넷미터링), 대상 기술(태양광/풍력/수력/바이오), 인센티브 조건(가격/기간/용량), 시행 기관, 시행 연도, 상태",
+      "displayType": "verification",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "현지 에너지부·전력청 / IRENA",
+      "effectiveSource": "현지 에너지부·전력청 / IRENA",
+      "sourceUrl": "https://pxweb.irena.org/pxweb/en/IRENASTAT/",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "verification",
+        "headline": "예: 직접 근거 확인",
+        "subheadline": "확인상태와 원문 위치를 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: 현지 에너지부·전력청 / IRENA",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 99,
+      "elementId": "C-018",
+      "category": "C",
+      "categoryLabel": "정책·제도",
+      "section": "C.3. 개도국 사업 이행 정책·규제",
+      "dataGroup": "C.3.d.재생에너지 관련 법제도",
+      "title": "중장기 에너지 전망: 전망 기관(IEA/현지 정부), 전망 시나리오명, 에너지원별 수요 전망(TWh/Mtoe, 연도별), 발전 설비 확충 계획(기술별 MW), RE 비중 목표(%), 전력 수요 성장률(%)",
+      "titleShort": "중장기 에너지 전망: 전망 기관(IEA/현지 정부), 전망 시나리오명, 에너지원별 수요 전망(TWh/Mtoe, 연도별), 발전 설비 확충 계획(기술별 MW), RE 비중 목표(%), 전력 수요 성장률(%)",
+      "displayType": "document",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "현지 에너지부·전력청 / IRENA",
+      "effectiveSource": "현지 에너지부·전력청 / IRENA",
+      "sourceUrl": "https://pxweb.irena.org/pxweb/en/IRENASTAT/",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "document",
+        "headline": "예: 공식 문서 1건",
+        "subheadline": "원문·한국어 의미·페이지·공식 링크 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: 현지 에너지부·전력청 / IRENA",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 100,
+      "elementId": "C-019",
+      "category": "C",
+      "categoryLabel": "정책·제도",
+      "section": "C.4. 탄소 시장",
+      "dataGroup": "C.4.a.탄소 시장 관련 법률·예산",
+      "title": "탄소세 도입 여부 및 세율(USD/tCO₂)\nETS 도입 여부, 대상 부문, 가격\nFIT/FIP/RPS 도입 여부\n탄소시장 관련 예산 규모",
+      "titleShort": "탄소세 도입 여부 및 세율(USD/tCO₂)",
+      "displayType": "categorical",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "WB Carbon Pricing / OECD PINE / 현지조사",
+      "effectiveSource": "WB Carbon Pricing / OECD PINE / 현지조사",
+      "sourceUrl": "https://carbonpricingdashboard.worldbank.org/",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "categorical",
+        "headline": "예: ‘중간’ 등급",
+        "subheadline": "등급 정의·판정기준·근거를 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: WB Carbon Pricing / OECD PINE / 현지조사",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 101,
+      "elementId": "C-020",
+      "category": "C",
+      "categoryLabel": "정책·제도",
+      "section": "C.4. 탄소 시장",
+      "dataGroup": "C.4.b.GHG 감축 사업 타당성 검증 기초 정보",
+      "title": "GHG 감축 사업 타당성 기초 정보",
+      "titleShort": "GHG 감축 사업 타당성 기초 정보",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "미정",
+      "effectiveSource": "미정",
+      "sourceUrl": null,
+      "collectionMethod": "미정",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: 미정",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 102,
+      "elementId": "C-021",
+      "category": "C",
+      "categoryLabel": "정책·제도",
+      "section": "C.4. 탄소 시장",
+      "dataGroup": "C.4.b.GHG 감축 사업 타당성 검증 기초 정보",
+      "title": "VCM 프로젝트 파이프라인",
+      "titleShort": "VCM 프로젝트 파이프라인",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "미정",
+      "effectiveSource": "미정",
+      "sourceUrl": null,
+      "collectionMethod": "미정",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: 미정",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 103,
+      "elementId": "C-022",
+      "category": "C",
+      "categoryLabel": "정책·제도",
+      "section": "C.4. 탄소 시장",
+      "dataGroup": "C.4.b.GHG 감축 사업 타당성 검증 기초 정보",
+      "title": "탄소시장 준비도",
+      "titleShort": "탄소시장 준비도",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "미정",
+      "effectiveSource": "미정",
+      "sourceUrl": null,
+      "collectionMethod": "미정",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: 미정",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 104,
+      "elementId": "C-023",
+      "category": "C",
+      "categoryLabel": "정책·제도",
+      "section": "C.4. 탄소 시장",
+      "dataGroup": "C.4.b.GHG 감축 사업 타당성 검증 기초 정보",
+      "title": "한계저감비용 (MAC)",
+      "titleShort": "한계저감비용 (MAC)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "미정",
+      "effectiveSource": "미정",
+      "sourceUrl": null,
+      "collectionMethod": "미정",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: 미정",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 105,
+      "elementId": "C-024",
+      "category": "C",
+      "categoryLabel": "정책·제도",
+      "section": "C.4. 탄소 시장",
+      "dataGroup": "C.4.c.탄소크레딧 관련 프로젝트·실적",
+      "title": "REDD+ 현황: REDD+ 전략 수립 여부, FREL 제출 여부/제출년, 결과기반지불(RBP) 수혜 실적(tCO₂e/USD), 세이프가드 정보 시스템 구축 여부, 참여 기금(GCF/FCPF/BioCF)",
+      "titleShort": "REDD+ 현황: REDD+ 전략 수립 여부, FREL 제출 여부/제출년, 결과기반지불(RBP) 수혜 실적(tCO₂e/USD), 세이프가드 정보 시스템 구축 여부, 참여 기금(GCF/FCPF/BioCF)",
+      "displayType": "project_finance",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "Verra / Gold Standard",
+      "effectiveSource": "Verra / Gold Standard",
+      "sourceUrl": "https://registry.verra.org/",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "project_finance",
+        "headline": "예: 관련 사업 4건",
+        "subheadline": "상태·기관·지역·재원·기간을 필터 가능한 목록으로 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: Verra / Gold Standard",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 106,
+      "elementId": "C-025",
+      "category": "C",
+      "categoryLabel": "정책·제도",
+      "section": "C.4. 탄소 시장",
+      "dataGroup": "C.4.c.탄소크레딧 관련 프로젝트·실적",
+      "title": "탄소크레딧 발행·소각 실적: 프로젝트명, 등록 표준(VCS/GS), 국가, 기술 분야, 발행량(tCO₂e), 소각량(tCO₂e), 빈티지(연도), 발행일",
+      "titleShort": "탄소크레딧 발행·소각 실적: 프로젝트명, 등록 표준(VCS/GS), 국가, 기술 분야, 발행량(tCO₂e), 소각량(tCO₂e), 빈티지(연도), 발행일",
+      "displayType": "project_finance",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "Verra / Gold Standard",
+      "effectiveSource": "Verra / Gold Standard",
+      "sourceUrl": "https://registry.verra.org/",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "project_finance",
+        "headline": "예: 관련 사업 4건",
+        "subheadline": "상태·기관·지역·재원·기간을 필터 가능한 목록으로 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: Verra / Gold Standard",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 107,
+      "elementId": "D-001",
+      "category": "D",
+      "categoryLabel": "시장·산업·재원",
+      "section": "D.1. 기후기술 시장",
+      "dataGroup": "D.1.a.기후기술 분야별 수익성 평가 기초 정보",
+      "title": "단위 사업당 CAPEX",
+      "titleShort": "단위 사업당 CAPEX",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "미정",
+      "effectiveSource": "미정",
+      "sourceUrl": null,
+      "collectionMethod": "(제안) 상용DB, 현지조사",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: 미정",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 108,
+      "elementId": "D-002",
+      "category": "D",
+      "categoryLabel": "시장·산업·재원",
+      "section": "D.1. 기후기술 시장",
+      "dataGroup": "D.1.a.기후기술 분야별 수익성 평가 기초 정보",
+      "title": "시장 성장률",
+      "titleShort": "시장 성장률",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "미정",
+      "effectiveSource": "미정",
+      "sourceUrl": null,
+      "collectionMethod": "(제안) 상용DB, 현지조사",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: 미정",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 109,
+      "elementId": "D-003",
+      "category": "D",
+      "categoryLabel": "시장·산업·재원",
+      "section": "D.1. 기후기술 시장",
+      "dataGroup": "D.1.a.기후기술 분야별 수익성 평가 기초 정보",
+      "title": "예상 감축량",
+      "titleShort": "예상 감축량",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "미정",
+      "effectiveSource": "미정",
+      "sourceUrl": null,
+      "collectionMethod": "(제안) NDC:OpenDB수집, 사업단위:웹수집,현지조사",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: 미정",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 110,
+      "elementId": "D-004",
+      "category": "D",
+      "categoryLabel": "시장·산업·재원",
+      "section": "D.1. 기후기술 시장",
+      "dataGroup": "D.1.a.기후기술 분야별 수익성 평가 기초 정보",
+      "title": "크레딧 가격 연동 수익성",
+      "titleShort": "크레딧 가격 연동 수익성",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "미정",
+      "effectiveSource": "미정",
+      "sourceUrl": null,
+      "collectionMethod": "(제안)웹수집,간접추정",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: 미정",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 111,
+      "elementId": "D-005",
+      "category": "D",
+      "categoryLabel": "시장·산업·재원",
+      "section": "D.1. 기후기술 시장",
+      "dataGroup": "D.1.b.기후대응·기후기술 관련 정부 예산",
+      "title": "감축/적응 구분별 예산 배분 비율",
+      "titleShort": "감축/적응 구분별 예산 배분 비율",
+      "displayType": "text",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "Climate Watch / 현지 정부",
+      "effectiveSource": "Climate Watch / 현지 정부",
+      "sourceUrl": "https://www.climatewatchdata.org/",
+      "collectionMethod": "(제안)OpenDB수집",
+      "preview": {
+        "kind": "text",
+        "headline": "예: 핵심 확인사항 3건",
+        "subheadline": "구조화된 조사결과와 추가 확인사항 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: Climate Watch / 현지 정부",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 112,
+      "elementId": "D-006",
+      "category": "D",
+      "categoryLabel": "시장·산업·재원",
+      "section": "D.1. 기후기술 시장",
+      "dataGroup": "D.1.b.기후대응·기후기술 관련 정부 예산",
+      "title": "기후 관련 조세 수입",
+      "titleShort": "기후 관련 조세 수입",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "Climate Watch / 현지 정부",
+      "effectiveSource": "Climate Watch / 현지 정부",
+      "sourceUrl": "https://www.climatewatchdata.org/",
+      "collectionMethod": "(제안)OpenDB수집, 현지자료수동수집",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: Climate Watch / 현지 정부",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 113,
+      "elementId": "D-007",
+      "category": "D",
+      "categoryLabel": "시장·산업·재원",
+      "section": "D.1. 기후기술 시장",
+      "dataGroup": "D.1.b.기후대응·기후기술 관련 정부 예산",
+      "title": "기후예산태깅(CBT, Climate Budget Tagging) 도입 여부 및 수준",
+      "titleShort": "기후예산태깅(CBT, Climate Budget Tagging) 도입 여부 및 수준",
+      "displayType": "categorical",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "Climate Watch / 현지 정부",
+      "effectiveSource": "Climate Watch / 현지 정부",
+      "sourceUrl": "https://www.climatewatchdata.org/",
+      "collectionMethod": "(제안)OpenDB수집",
+      "preview": {
+        "kind": "categorical",
+        "headline": "예: ‘중간’ 등급",
+        "subheadline": "등급 정의·판정기준·근거를 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: Climate Watch / 현지 정부",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 114,
+      "elementId": "D-008",
+      "category": "D",
+      "categoryLabel": "시장·산업·재원",
+      "section": "D.1. 기후기술 시장",
+      "dataGroup": "D.1.b.기후대응·기후기술 관련 정부 예산",
+      "title": "주관 부처별 기후 예산 규모",
+      "titleShort": "주관 부처별 기후 예산 규모",
+      "displayType": "text",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "Climate Watch / 현지 정부",
+      "effectiveSource": "Climate Watch / 현지 정부",
+      "sourceUrl": "https://www.climatewatchdata.org/",
+      "collectionMethod": "(제안)현지자료수동수집, 현지조사",
+      "preview": {
+        "kind": "text",
+        "headline": "예: 핵심 확인사항 3건",
+        "subheadline": "구조화된 조사결과와 추가 확인사항 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: Climate Watch / 현지 정부",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 115,
+      "elementId": "D-009",
+      "category": "D",
+      "categoryLabel": "시장·산업·재원",
+      "section": "D.1. 기후기술 시장",
+      "dataGroup": "D.1.b.기후대응·기후기술 관련 정부 예산",
+      "title": "총 지출 규모, 연도별 추이",
+      "titleShort": "총 지출 규모, 연도별 추이",
+      "displayType": "time_series",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "Climate Watch / 현지 정부",
+      "effectiveSource": "Climate Watch / 현지 정부",
+      "sourceUrl": "https://www.climatewatchdata.org/",
+      "collectionMethod": "(제안)OpenDB수집",
+      "preview": {
+        "kind": "time_series",
+        "headline": "예: 2019–2025 추세",
+        "subheadline": "최근값·최초값·기간변화·결측구간 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: Climate Watch / 현지 정부",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 116,
+      "elementId": "D-010",
+      "category": "D",
+      "categoryLabel": "시장·산업·재원",
+      "section": "D.1. 기후기술 시장",
+      "dataGroup": "D.1.b.기후대응·기후기술 관련 정부 예산",
+      "title": "화석연료 보조금 규모",
+      "titleShort": "화석연료 보조금 규모",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "Climate Watch / 현지 정부",
+      "effectiveSource": "Climate Watch / 현지 정부",
+      "sourceUrl": "https://www.climatewatchdata.org/",
+      "collectionMethod": "(제안)OpenDB수집",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: Climate Watch / 현지 정부",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 117,
+      "elementId": "D-011",
+      "category": "D",
+      "categoryLabel": "시장·산업·재원",
+      "section": "D.1. 기후기술 시장",
+      "dataGroup": "D.1.c.해외 경쟁 정보",
+      "title": "개도국 내 각국별 ODA 규모",
+      "titleShort": "개도국 내 각국별 ODA 규모",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "OECD CRS",
+      "effectiveSource": "OECD CRS",
+      "sourceUrl": "https://data-explorer.oecd.org/",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: OECD CRS",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 118,
+      "elementId": "D-012",
+      "category": "D",
+      "categoryLabel": "시장·산업·재원",
+      "section": "D.1. 기후기술 시장",
+      "dataGroup": "D.1.c.해외 경쟁 정보",
+      "title": "경쟁국 민간기업의 개도국 진출 현황: 기업명, 국적, 진출 대상국, 기술 분야(RE/효율/폐기물), 프로젝트명, 용량(MW), 투자액(USD), 진출 형태(EPC/투자/라이선스)",
+      "titleShort": "경쟁국 민간기업의 개도국 진출 현황: 기업명, 국적, 진출 대상국, 기술 분야(RE/효율/폐기물), 프로젝트명, 용량(MW), 투자액(USD), 진출 형태(EPC/투자/라이선스)",
+      "displayType": "text",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "OECD CRS / 현지 조사",
+      "effectiveSource": "OECD CRS / 현지 조사",
+      "sourceUrl": "https://data-explorer.oecd.org/",
+      "collectionMethod": "(제안)상용DB, 현지조사",
+      "preview": {
+        "kind": "text",
+        "headline": "예: 핵심 확인사항 3건",
+        "subheadline": "구조화된 조사결과와 추가 확인사항 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: OECD CRS / 현지 조사",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 119,
+      "elementId": "D-013",
+      "category": "D",
+      "categoryLabel": "시장·산업·재원",
+      "section": "D.1. 기후기술 시장",
+      "dataGroup": "D.1.d.기타 관련 지수",
+      "title": "GGGI Green Growth Index(녹색성장지수)",
+      "titleShort": "GGGI Green Growth Index(녹색성장지수)",
+      "displayType": "numeric",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "GGGI Green Growth Index",
+      "effectiveSource": "GGGI Green Growth Index",
+      "sourceUrl": "https://greengrowthindex.gggi.org/",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "numeric",
+        "headline": "예: 핵심값 72.4",
+        "subheadline": "단위·기준연도·출처를 값과 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: GGGI Green Growth Index",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 120,
+      "elementId": "D-014",
+      "category": "D",
+      "categoryLabel": "시장·산업·재원",
+      "section": "D.2. 국제협력 사업 추진 현황",
+      "dataGroup": "D.2.a.한국 국제협력 사업 추진 현황",
+      "title": "EDCF 프로젝트: 프로젝트명, 수원국, 섹터, 승인 금액(USD), 금리(%), 상환 기간(년), 거치 기간(년), 사업 기간, 시행기관, 상태(승인/집행/완료)",
+      "titleShort": "EDCF 프로젝트: 프로젝트명, 수원국, 섹터, 승인 금액(USD), 금리(%), 상환 기간(년), 거치 기간(년), 사업 기간, 시행기관, 상태(승인/집행/완료)",
+      "displayType": "project_finance",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "(예상) ODA Korea / KOICA / EDCF",
+      "effectiveSource": "(예상) ODA Korea / KOICA / EDCF",
+      "sourceUrl": "https://www.koica.go.kr/",
+      "collectionMethod": "웹 크롤링",
+      "preview": {
+        "kind": "project_finance",
+        "headline": "예: 관련 사업 4건",
+        "subheadline": "상태·기관·지역·재원·기간을 필터 가능한 목록으로 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: (예상) ODA Korea / KOICA / EDCF",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 121,
+      "elementId": "D-015",
+      "category": "D",
+      "categoryLabel": "시장·산업·재원",
+      "section": "D.2. 국제협력 사업 추진 현황",
+      "dataGroup": "D.2.a.한국 국제협력 사업 추진 현황",
+      "title": "ODA Korea 프로젝트: 사업명, 수원국, 시행기관(KOICA/EDCF/부처), 사업 유형(프로젝트/기술협력/연수), 사업 기간, 사업비(USD/KRW), 분야(DAC 섹터코드), 상태",
+      "titleShort": "ODA Korea 프로젝트: 사업명, 수원국, 시행기관(KOICA/EDCF/부처), 사업 유형(프로젝트/기술협력/연수), 사업 기간, 사업비(USD/KRW), 분야(DAC 섹터코드), 상태",
+      "displayType": "project_finance",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "(예상) ODA Korea / KOICA / EDCF",
+      "effectiveSource": "(예상) ODA Korea / KOICA / EDCF",
+      "sourceUrl": "https://www.koica.go.kr/",
+      "collectionMethod": "웹 크롤링",
+      "preview": {
+        "kind": "project_finance",
+        "headline": "예: 관련 사업 4건",
+        "subheadline": "상태·기관·지역·재원·기간을 필터 가능한 목록으로 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: (예상) ODA Korea / KOICA / EDCF",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 122,
+      "elementId": "D-016",
+      "category": "D",
+      "categoryLabel": "시장·산업·재원",
+      "section": "D.2. 국제협력 사업 추진 현황",
+      "dataGroup": "D.2.a.한국 국제협력 사업 추진 현황",
+      "title": "지자체·정부부처 프로젝트: 사업명, 수원국, 시행기관(부처/지자체명), 사업 유형, 사업 기간, 사업비, 분야",
+      "titleShort": "지자체·정부부처 프로젝트: 사업명, 수원국, 시행기관(부처/지자체명), 사업 유형, 사업 기간, 사업비, 분야",
+      "displayType": "project_finance",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "(예상) ODA Korea / KOICA / EDCF",
+      "effectiveSource": "(예상) ODA Korea / KOICA / EDCF",
+      "sourceUrl": "https://www.koica.go.kr/",
+      "collectionMethod": "웹 크롤링",
+      "preview": {
+        "kind": "project_finance",
+        "headline": "예: 관련 사업 4건",
+        "subheadline": "상태·기관·지역·재원·기간을 필터 가능한 목록으로 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: (예상) ODA Korea / KOICA / EDCF",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 123,
+      "elementId": "D-017",
+      "category": "D",
+      "categoryLabel": "시장·산업·재원",
+      "section": "D.2. 국제협력 사업 추진 현황",
+      "dataGroup": "D.2.a.한국 국제협력 사업 추진 현황",
+      "title": "한국 ODA 기관 PCP/입찰 현황: 사업명, 대상국, 발주기관(KOICA/EDCF/부처), 분야, 예산 규모(USD), 입찰 유형(PCP/RFP/경쟁), 입찰 일정(공고일/마감일), 수행기관 자격 요건",
+      "titleShort": "한국 ODA 기관 PCP/입찰 현황: 사업명, 대상국, 발주기관(KOICA/EDCF/부처), 분야, 예산 규모(USD), 입찰 유형(PCP/RFP/경쟁), 입찰 일정(공고일/마감일), 수행기관 자격 요건",
+      "displayType": "project_finance",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "(예상) ODA Korea / KOICA / EDCF",
+      "effectiveSource": "(예상) ODA Korea / KOICA / EDCF",
+      "sourceUrl": "https://www.koica.go.kr/",
+      "collectionMethod": "웹 크롤링",
+      "preview": {
+        "kind": "project_finance",
+        "headline": "예: 관련 사업 4건",
+        "subheadline": "상태·기관·지역·재원·기간을 필터 가능한 목록으로 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: (예상) ODA Korea / KOICA / EDCF",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 124,
+      "elementId": "D-018",
+      "category": "D",
+      "categoryLabel": "시장·산업·재원",
+      "section": "D.2. 국제협력 사업 추진 현황",
+      "dataGroup": "D.2.b.주요 국제기구 사업 추진 현황",
+      "title": "Adaptation Fund 프로젝트: 프로젝트명, 국가, 실행기관(NIE/MIE 구분, 기관명), 승인 금액(USD), 분야(수자원/농업/재난관리/해안/생태계), 상태(Under Implementation/Completed), 기간, 수혜자 수",
+      "titleShort": "Adaptation Fund 프로젝트: 프로젝트명, 국가, 실행기관(NIE/MIE 구분, 기관명), 승인 금액(USD), 분야(수자원/농업/재난관리/해안/생태계), 상태(Under Implementation/Completed), 기간, 수혜자 수",
+      "displayType": "project_finance",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "Adaptation Fund",
+      "effectiveSource": "Adaptation Fund",
+      "sourceUrl": "https://www.adaptation-fund.org/projects-programmes/",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "project_finance",
+        "headline": "예: 관련 사업 4건",
+        "subheadline": "상태·기관·지역·재원·기간을 필터 가능한 목록으로 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: Adaptation Fund",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 125,
+      "elementId": "D-019",
+      "category": "D",
+      "categoryLabel": "시장·산업·재원",
+      "section": "D.2. 국제협력 사업 추진 현황",
+      "dataGroup": "D.2.b.주요 국제기구 사업 추진 현황",
+      "title": "CTCN 기술지원 요청: 요청 국가, NDE 기관명, 기술 분야(Sectors), 지원 단계(Phase: Scoping/TA Delivery/Completed), 예산(USD), 기술 유형(Technologies), 기간, TA 결과 요약",
+      "titleShort": "CTCN 기술지원 요청: 요청 국가, NDE 기관명, 기술 분야(Sectors), 지원 단계(Phase: Scoping/TA Delivery/Completed), 예산(USD), 기술 유형(Technologies), 기간, TA 결과 요약",
+      "displayType": "project_finance",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "CTCN Open Data",
+      "effectiveSource": "CTCN Open Data",
+      "sourceUrl": "https://www.ctc-n.org/open-data",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "project_finance",
+        "headline": "예: 관련 사업 4건",
+        "subheadline": "상태·기관·지역·재원·기간을 필터 가능한 목록으로 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: CTCN Open Data",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 126,
+      "elementId": "D-020",
+      "category": "D",
+      "categoryLabel": "시장·산업·재원",
+      "section": "D.2. 국제협력 사업 추진 현황",
+      "dataGroup": "D.2.b.주요 국제기구 사업 추진 현황",
+      "title": "GCF 프로젝트: 프로젝트명(Ref No.), 국가, 인가기관(AE), GCF 승인 금액(USD), 공동재원(USD), 분야(mitigation/adaptation/cross-cutting), 결과영역(Result Area), 상태(Approved/Under Implementation/Completed), 이사회 승인일, 예상 수혜자 수, 예상 감축량(tCO₂e)",
+      "titleShort": "GCF 프로젝트: 프로젝트명(Ref No.), 국가, 인가기관(AE), GCF 승인 금액(USD), 공동재원(USD), 분야(mitigation/adaptation/cross-cutting), 결과영역(Result Area), 상태(Approved/Under Implementation/Completed), 이사회 승인일, 예상 수혜자 수, 예상 감축량(tCO₂e)",
+      "displayType": "project_finance",
+      "status": "actual_connected",
+      "statusLabel": "실제 연결",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "CTCN Open Data",
+      "effectiveSource": "Green Climate Fund",
+      "sourceUrl": "https://data.greenclimate.fund/public/data/projects",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "projects",
+        "headline": "관련 GCF 사업 8건",
+        "subheadline": "FP013 · FP071 · FP125 · SAP040 · FP240 · FP250 · FP294 · FP307",
+        "facts": [
+          "FP071 산업효율 사업 포함",
+          "사업별 상태·기관·지역·기간·재원 연결",
+          "다국가 사업 재원은 국가배분액과 구분"
+        ]
+      }
+    },
+    {
+      "index": 127,
+      "elementId": "D-021",
+      "category": "D",
+      "categoryLabel": "시장·산업·재원",
+      "section": "D.2. 국제협력 사업 추진 현황",
+      "dataGroup": "D.2.b.주요 국제기구 사업 추진 현황",
+      "title": "주요 국제기구·MDB 프로젝트: 프로젝트명, 수원국, 공여기관(WB/ADB/UNDP/FAO/UNCCD 등), 섹터(DAC 코드), 금액(commitment/disbursement, USD), 기간, 상태, 실행기관, Rio Marker",
+      "titleShort": "주요 국제기구·MDB 프로젝트: 프로젝트명, 수원국, 공여기관(WB/ADB/UNDP/FAO/UNCCD 등), 섹터(DAC 코드), 금액(commitment/disbursement, USD), 기간, 상태, 실행기관, Rio Marker",
+      "displayType": "project_finance",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "CTCN Open Data",
+      "effectiveSource": "CTCN Open Data",
+      "sourceUrl": "https://www.ctc-n.org/open-data",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "project_finance",
+        "headline": "예: 관련 사업 4건",
+        "subheadline": "상태·기관·지역·재원·기간을 필터 가능한 목록으로 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: CTCN Open Data",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 128,
+      "elementId": "D-022",
+      "category": "D",
+      "categoryLabel": "시장·산업·재원",
+      "section": "D.3. 기후 재원·투자",
+      "dataGroup": "D.3.a.기후기술 분야 투자 정보",
+      "title": "MDB/DFI/PPP 투자 프로젝트: 프로젝트명, 수원국, 공여기관(WB/ADB/IFC 등), 섹터(DAC 5자리 코드), 투자액(commitment/disbursement, USD), 프로젝트 상태, 기간(시작/종료), 실행기관, Rio Marker(기후 태깅), 투자 유형(grant/loan/equity), 공동투자 참여 가능 여부 및 형태",
+      "titleShort": "MDB/DFI/PPP 투자 프로젝트: 프로젝트명, 수원국, 공여기관(WB/ADB/IFC 등), 섹터(DAC 5자리 코드), 투자액(commitment/disbursement, USD), 프로젝트 상태, 기간(시작/종료), 실행기관, Rio Marker(기후 태깅), 투자 유형(grant/loan/equity), 공동투자 참여 가능 여부 및 형태",
+      "displayType": "project_finance",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "IATI / OECD CRS / 현지조사",
+      "effectiveSource": "IATI / OECD CRS / 현지조사",
+      "sourceUrl": "https://d-portal.iatistandard.org/ctrack.html#view=search",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "project_finance",
+        "headline": "예: 관련 사업 4건",
+        "subheadline": "상태·기관·지역·재원·기간을 필터 가능한 목록으로 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: IATI / OECD CRS / 현지조사",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 129,
+      "elementId": "D-023",
+      "category": "D",
+      "categoryLabel": "시장·산업·재원",
+      "section": "D.3. 기후 재원·투자",
+      "dataGroup": "D.3.a.기후기술 분야 투자 정보",
+      "title": "ODA 및 기후기금(GCF, GEF, AF) 재원: 프로젝트명, 수원국, 기금명(GCF/GEF/AF/CIF), 승인 금액(USD), 공동재원(co-financing, USD), 분야(mitigation/adaptation/cross-cutting), 결과영역(Result Area), 인가기관(AE/Agency), 상태(Approved/Implementing/Completed), Readiness 구분, 공동투자 참여 가능 여부 및 형태",
+      "titleShort": "ODA 및 기후기금(GCF, GEF, AF) 재원: 프로젝트명, 수원국, 기금명(GCF/GEF/AF/CIF), 승인 금액(USD), 공동재원(co-financing, USD), 분야(mitigation/adaptation/cross-cutting), 결과영역(Result Area), 인가기관(AE/Agency), 상태(Approved/Implementing/Completed), Readiness 구분, 공동투자 참여 가능 여부 및 형태",
+      "displayType": "project_finance",
+      "status": "actual_connected",
+      "statusLabel": "실제 연결",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "GCF Open Data / OECD CRS",
+      "effectiveSource": "GCF Open Data Library",
+      "sourceUrl": "https://data.greenclimate.fund/public/data/countries",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "finance",
+        "headline": "Funded Activities 8건",
+        "subheadline": "국가 포트폴리오 승인재원 USD 325.03M",
+        "facts": [
+          "Readiness 5건",
+          "Readiness 재원 USD 3.69M",
+          "선택 기술에 사용 가능한 재원으로 자동 해석하지 않음"
+        ]
+      }
+    },
+    {
+      "index": 130,
+      "elementId": "D-024",
+      "category": "D",
+      "categoryLabel": "시장·산업·재원",
+      "section": "D.3. 기후 재원·투자",
+      "dataGroup": "D.3.a.기후기술 분야 투자 정보",
+      "title": "VC·임팩트 투자 현황: 투자 라운드(Seed/Series A-C), 투자자명, 투자 금액(USD), 대상 기업/기술, 국가, 투자 연도, 기후 분야(RE/효율/모빌리티/AgTech), 공동투자 참여 가능 여부 및 형태",
+      "titleShort": "VC·임팩트 투자 현황: 투자 라운드(Seed/Series A-C), 투자자명, 투자 금액(USD), 대상 기업/기술, 국가, 투자 연도, 기후 분야(RE/효율/모빌리티/AgTech), 공동투자 참여 가능 여부 및 형태",
+      "displayType": "project_finance",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "IATI / OECD CRS / 현지조사",
+      "effectiveSource": "IATI / OECD CRS / 현지조사",
+      "sourceUrl": "https://d-portal.iatistandard.org/ctrack.html#view=search",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "project_finance",
+        "headline": "예: 관련 사업 4건",
+        "subheadline": "상태·기관·지역·재원·기간을 필터 가능한 목록으로 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: IATI / OECD CRS / 현지조사",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 131,
+      "elementId": "D-025",
+      "category": "D",
+      "categoryLabel": "시장·산업·재원",
+      "section": "D.3. 기후 재원·투자",
+      "dataGroup": "D.3.a.기후기술 분야 투자 정보",
+      "title": "민간 인프라 투자 (PPI): 프로젝트명, 국가, 섹터(전력/수도/교통/통신), 투자 유형(Greenfield/Concession/Divestiture), 총 투자액(USD), 민간 투자액(USD), 계약 기간(년), 상태(Active/Cancelled/Distressed), Financial Close 연도, 스폰서/개발사, IDA 지위, 공동투자 참여 가능 여부 및 형태",
+      "titleShort": "민간 인프라 투자 (PPI): 프로젝트명, 국가, 섹터(전력/수도/교통/통신), 투자 유형(Greenfield/Concession/Divestiture), 총 투자액(USD), 민간 투자액(USD), 계약 기간(년), 상태(Active/Cancelled/Distressed), Financial Close 연도, 스폰서/개발사, IDA 지위, 공동투자 참여 가능 여부 및 형태",
+      "displayType": "project_finance",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "IATI / OECD CRS",
+      "effectiveSource": "IATI / OECD CRS",
+      "sourceUrl": "https://d-portal.iatistandard.org/ctrack.html#view=search",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "project_finance",
+        "headline": "예: 관련 사업 4건",
+        "subheadline": "상태·기관·지역·재원·기간을 필터 가능한 목록으로 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: IATI / OECD CRS",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 132,
+      "elementId": "D-026",
+      "category": "D",
+      "categoryLabel": "시장·산업·재원",
+      "section": "D.3. 기후 재원·투자",
+      "dataGroup": "D.3.b.MIGA 정치적 리스크 보증 정보",
+      "title": "프로젝트명, 국가, 섹터, 보증 금액(USD), 보증 유형(수용/이전제한/계약위반/전쟁내란), 보증 기간, 투자자, 상태",
+      "titleShort": "프로젝트명, 국가, 섹터, 보증 금액(USD), 보증 유형(수용/이전제한/계약위반/전쟁내란), 보증 기간, 투자자, 상태",
+      "displayType": "project_finance",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "World Bank MIGA",
+      "effectiveSource": "World Bank MIGA",
+      "sourceUrl": "https://www.miga.org/projects",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "project_finance",
+        "headline": "예: 관련 사업 4건",
+        "subheadline": "상태·기관·지역·재원·기간을 필터 가능한 목록으로 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: World Bank MIGA",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 133,
+      "elementId": "E-001",
+      "category": "E",
+      "categoryLabel": "협력·실행기반",
+      "section": "E.1. 현지 협력기관·파트너",
+      "dataGroup": "E.1.a.공공 파트너",
+      "title": "CTCN NDE (국가지정기구): 국가, 기관명, 소속 부처, 담당자(Focal Point)명, 직함, 이메일, 전화번호",
+      "titleShort": "CTCN NDE (국가지정기구): 국가, 기관명, 소속 부처, 담당자(Focal Point)명, 직함, 이메일, 전화번호",
+      "displayType": "organization",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "CTCN",
+      "effectiveSource": "CTCN",
+      "sourceUrl": "https://www.ctc-n.org/open-data",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "organization",
+        "headline": "예: 관련 기관 5개",
+        "subheadline": "기관 유형·공식 역할·연락경로를 역할별로 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: CTCN",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 134,
+      "elementId": "E-002",
+      "category": "E",
+      "categoryLabel": "협력·실행기반",
+      "section": "E.1. 현지 협력기관·파트너",
+      "dataGroup": "E.1.a.공공 파트너",
+      "title": "DNA (국가지정기관): 국가, 기관명, 소속 부처, 담당자명, 직함, 이메일, 승인 절차 개요, 제6.4조 전환 상태",
+      "titleShort": "DNA (국가지정기관): 국가, 기관명, 소속 부처, 담당자명, 직함, 이메일, 승인 절차 개요, 제6.4조 전환 상태",
+      "displayType": "organization",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "CTCN",
+      "effectiveSource": "CTCN",
+      "sourceUrl": "https://www.ctc-n.org/open-data",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "organization",
+        "headline": "예: 관련 기관 5개",
+        "subheadline": "기관 유형·공식 역할·연락경로를 역할별로 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: CTCN",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 135,
+      "elementId": "E-003",
+      "category": "E",
+      "categoryLabel": "협력·실행기반",
+      "section": "E.1. 현지 협력기관·파트너",
+      "dataGroup": "E.1.a.공공 파트너",
+      "title": "GCF NDA (국가지정기관): 국가, 기관명, 소속 부처, 담당자명, 직함, 이메일, 전화번호",
+      "titleShort": "GCF NDA (국가지정기관): 국가, 기관명, 소속 부처, 담당자명, 직함, 이메일, 전화번호",
+      "displayType": "organization",
+      "status": "actual_connected",
+      "statusLabel": "실제 연결",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "CTCN",
+      "effectiveSource": "Green Climate Fund",
+      "sourceUrl": "https://www.greenclimate.fund/countries/viet-nam",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "organizations",
+        "headline": "공식 역할 확인 기관 3개",
+        "subheadline": "Ministry of Finance · Vietnam Development Bank · BIDV",
+        "facts": [
+          "NDA 1개",
+          "직접접근기관 2개",
+          "추천 파트너가 아니라 공식 역할 확인 기관"
+        ]
+      }
+    },
+    {
+      "index": 136,
+      "elementId": "E-004",
+      "category": "E",
+      "categoryLabel": "협력·실행기반",
+      "section": "E.1. 현지 협력기관·파트너",
+      "dataGroup": "E.1.b.민간 파트너",
+      "title": "국제기구 현지사무소 담당자: 기관명(UNDP/UNEP/UNIDO/FAO/WB/ADB/GIZ/JICA/KOICA 등), 소재국, 도시, 사무소 주소, 기후·에너지 담당자 명, 직함, 이메일",
+      "titleShort": "국제기구 현지사무소 담당자: 기관명(UNDP/UNEP/UNIDO/FAO/WB/ADB/GIZ/JICA/KOICA 등), 소재국, 도시, 사무소 주소, 기후·에너지 담당자 명, 직함, 이메일",
+      "displayType": "organization",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "UNDP/UNEP/UNIDO/FAO/WB/ADB/GIZ/JICA/KOICA 각 기구 웹사이트",
+      "effectiveSource": "UNDP/UNEP/UNIDO/FAO/WB/ADB/GIZ/JICA/KOICA 각 기구 웹사이트",
+      "sourceUrl": "https://cdmpipeline.org",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "organization",
+        "headline": "예: 관련 기관 5개",
+        "subheadline": "기관 유형·공식 역할·연락경로를 역할별로 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: UNDP/UNEP/UNIDO/FAO/WB/ADB/GIZ/JICA/KOICA 각 기구 웹사이트",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 137,
+      "elementId": "E-005",
+      "category": "E",
+      "categoryLabel": "협력·실행기반",
+      "section": "E.1. 현지 협력기관·파트너",
+      "dataGroup": "E.1.b.민간 파트너",
+      "title": "대학·연구기관·NGO: 기관명, 기관 유형(대학/연구소/싱크탱크/NGO), 소재국/도시, 전문 분야(기후/에너지/환경/농업), 주요 연구역량 또는 활동 범위, 국제 협력 실적 유무, 연락처",
+      "titleShort": "대학·연구기관·NGO: 기관명, 기관 유형(대학/연구소/싱크탱크/NGO), 소재국/도시, 전문 분야(기후/에너지/환경/농업), 주요 연구역량 또는 활동 범위, 국제 협력 실적 유무, 연락처",
+      "displayType": "organization",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "UNDP/UNEP/UNIDO/FAO/WB/ADB/GIZ/JICA/KOICA 각 기구 웹사이트 / 현지 조사",
+      "effectiveSource": "UNDP/UNEP/UNIDO/FAO/WB/ADB/GIZ/JICA/KOICA 각 기구 웹사이트 / 현지 조사",
+      "sourceUrl": "https://cdmpipeline.org",
+      "collectionMethod": "수동 수집",
+      "preview": {
+        "kind": "organization",
+        "headline": "예: 관련 기관 5개",
+        "subheadline": "기관 유형·공식 역할·연락경로를 역할별로 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: UNDP/UNEP/UNIDO/FAO/WB/ADB/GIZ/JICA/KOICA 각 기구 웹사이트 / 현지 조사",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 138,
+      "elementId": "E-006",
+      "category": "E",
+      "categoryLabel": "협력·실행기반",
+      "section": "E.1. 현지 협력기관·파트너",
+      "dataGroup": "E.1.b.민간 파트너",
+      "title": "현지 투자자 네트워크: 기관명, 기관 유형(VC/PE/DFI/상업은행/임팩트투자/AC), 투자 분야(기후/에너지/인프라/AgTech), 투자 규모(AUM, USD), 소재국/도시, 연락처, 기후기술 투자 실적 유무",
+      "titleShort": "현지 투자자 네트워크: 기관명, 기관 유형(VC/PE/DFI/상업은행/임팩트투자/AC), 투자 분야(기후/에너지/인프라/AgTech), 투자 규모(AUM, USD), 소재국/도시, 연락처, 기후기술 투자 실적 유무",
+      "displayType": "organization",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "UNDP/UNEP/UNIDO/FAO/WB/ADB/GIZ/JICA/KOICA 각 기구 웹사이트 / 현지조사",
+      "effectiveSource": "UNDP/UNEP/UNIDO/FAO/WB/ADB/GIZ/JICA/KOICA 각 기구 웹사이트 / 현지조사",
+      "sourceUrl": "https://cdmpipeline.org",
+      "collectionMethod": "수동 수집",
+      "preview": {
+        "kind": "organization",
+        "headline": "예: 관련 기관 5개",
+        "subheadline": "기관 유형·공식 역할·연락경로를 역할별로 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: UNDP/UNEP/UNIDO/FAO/WB/ADB/GIZ/JICA/KOICA 각 기구 웹사이트 / 현지조사",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 139,
+      "elementId": "E-007",
+      "category": "E",
+      "categoryLabel": "협력·실행기반",
+      "section": "E.2. 개도국 기술 역량",
+      "dataGroup": "E.2.a.온실가스 산정 MRV 체계",
+      "title": "GHG 인벤토리 작성 역량(Tier 1/2/3)\n국가 레지스트리 유무 제3자 검증 체계 유무\nBTR 제출 이력(제출/미제출)\nCBIT 지원 수혜 여부",
+      "titleShort": "GHG 인벤토리 작성 역량(Tier 1/2/3)",
+      "displayType": "verification",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "미정",
+      "effectiveSource": "미정",
+      "sourceUrl": null,
+      "collectionMethod": "미정",
+      "preview": {
+        "kind": "verification",
+        "headline": "예: 직접 근거 확인",
+        "subheadline": "확인상태와 원문 위치를 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: 미정",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 140,
+      "elementId": "E-008",
+      "category": "E",
+      "categoryLabel": "협력·실행기반",
+      "section": "E.2. 개도국 기술 역량",
+      "dataGroup": "E.2.b.논문·특허",
+      "title": "논문·특허 명, 기후기술 분야, 특허 출원인 국적, 특허 출원 연구기관·대학 명, 논문 국제 공저 비율, 한국과의 공동 출원·공저 여부",
+      "titleShort": "논문·특허 명, 기후기술 분야, 특허 출원인 국적, 특허 출원 연구기관·대학 명, 논문 국제 공저 비율, 한국과의 공동 출원·공저 여부",
+      "displayType": "text",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "WIPO WIPSON / UNESCO/현지 기반 저널",
+      "effectiveSource": "WIPO WIPSON / UNESCO/현지 기반 저널",
+      "sourceUrl": "https://patentscope.wipo.int/",
+      "collectionMethod": "API",
+      "preview": {
+        "kind": "text",
+        "headline": "예: 핵심 확인사항 3건",
+        "subheadline": "구조화된 조사결과와 추가 확인사항 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: WIPO WIPSON / UNESCO/현지 기반 저널",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 141,
+      "elementId": "E-009",
+      "category": "E",
+      "categoryLabel": "협력·실행기반",
+      "section": "E.2. 개도국 기술 역량",
+      "dataGroup": "E.2.c.개도국 기술 역량 평가 지표",
+      "title": "STEM 졸업자·연구자 수",
+      "titleShort": "STEM 졸업자·연구자 수",
+      "displayType": "categorical",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "UNESCO",
+      "effectiveSource": "UNESCO",
+      "sourceUrl": "https://databrowser.uis.unesco.org/",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "categorical",
+        "headline": "예: ‘중간’ 등급",
+        "subheadline": "등급 정의·판정기준·근거를 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: UNESCO",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 142,
+      "elementId": "E-010",
+      "category": "E",
+      "categoryLabel": "협력·실행기반",
+      "section": "E.2. 개도국 기술 역량",
+      "dataGroup": "E.2.c.개도국 기술 역량 평가 지표",
+      "title": "UNESCO UIS의 R&D 지출(GRED), WIPO 혁신지수(GII)",
+      "titleShort": "UNESCO UIS의 R&D 지출(GRED), WIPO 혁신지수(GII)",
+      "displayType": "categorical",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "미정",
+      "effectiveSource": "미정",
+      "sourceUrl": null,
+      "collectionMethod": "미정",
+      "preview": {
+        "kind": "categorical",
+        "headline": "예: ‘중간’ 등급",
+        "subheadline": "등급 정의·판정기준·근거를 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: 미정",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 143,
+      "elementId": "E-011",
+      "category": "E",
+      "categoryLabel": "협력·실행기반",
+      "section": "E.2. 개도국 기술 역량",
+      "dataGroup": "E.2.c.개도국 기술 역량 평가 지표",
+      "title": "기술준비수준 (TRL)",
+      "titleShort": "기술준비수준 (TRL)",
+      "displayType": "categorical",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "미정",
+      "effectiveSource": "미정",
+      "sourceUrl": null,
+      "collectionMethod": "미정",
+      "preview": {
+        "kind": "categorical",
+        "headline": "예: ‘중간’ 등급",
+        "subheadline": "등급 정의·판정기준·근거를 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: 미정",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 144,
+      "elementId": "E-012",
+      "category": "E",
+      "categoryLabel": "협력·실행기반",
+      "section": "E.2. 개도국 기술 역량",
+      "dataGroup": "E.2.c.개도국 기술 역량 평가 지표",
+      "title": "직군별 종사자 수·임금",
+      "titleShort": "직군별 종사자 수·임금",
+      "displayType": "categorical",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "ILO",
+      "effectiveSource": "ILO",
+      "sourceUrl": "https://ilostat.ilo.org/data/",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "categorical",
+        "headline": "예: ‘중간’ 등급",
+        "subheadline": "등급 정의·판정기준·근거를 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: ILO",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 145,
+      "elementId": "E-013",
+      "category": "E",
+      "categoryLabel": "협력·실행기반",
+      "section": "E.2. 개도국 기술 역량",
+      "dataGroup": "E.2.d.운영·유지보수 역량",
+      "title": "숙련 기술인력 가용성(등급)\n부품 조달 가능성(국내생산/수입의존)\n예방정비 체계 수준(등급)\nA/S 인프라(서비스센터/원격모니터링 유무)\n과거 유사시설 O&M 실적",
+      "titleShort": "숙련 기술인력 가용성(등급)",
+      "displayType": "categorical",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "미정",
+      "effectiveSource": "미정",
+      "sourceUrl": null,
+      "collectionMethod": "미정",
+      "preview": {
+        "kind": "categorical",
+        "headline": "예: ‘중간’ 등급",
+        "subheadline": "등급 정의·판정기준·근거를 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: 미정",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 146,
+      "elementId": "E-014",
+      "category": "E",
+      "categoryLabel": "협력·실행기반",
+      "section": "E.3. 양국 기후협력 체계",
+      "dataGroup": "E.3.a.양자협정 현황",
+      "title": "협정 유형(제6.2조 양자/기후변화 공동위/녹색성장 MOU), 체결국, 체결 일자, 대상 분야, 이행 상태(발효/만료/갱신), 원본 링크(URL)",
+      "titleShort": "협정 유형(제6.2조 양자/기후변화 공동위/녹색성장 MOU), 체결국, 체결 일자, 대상 분야, 이행 상태(발효/만료/갱신), 원본 링크(URL)",
+      "displayType": "verification",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "외교부 / NIGT",
+      "effectiveSource": "외교부 / NIGT",
+      "sourceUrl": "https://www.0404.go.kr/dev/country.mofa",
+      "collectionMethod": "수동 수집",
+      "preview": {
+        "kind": "verification",
+        "headline": "예: 직접 근거 확인",
+        "subheadline": "확인상태와 원문 위치를 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: 외교부 / NIGT",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 147,
+      "elementId": "E-015",
+      "category": "E",
+      "categoryLabel": "협력·실행기반",
+      "section": "E.3. 양국 기후협력 체계",
+      "dataGroup": "E.3.b.기타 협력 체계",
+      "title": "NDC partnership의 참여 여부(Y/N) 및 Country Page 링크(URL)",
+      "titleShort": "NDC partnership의 참여 여부(Y/N) 및 Country Page 링크(URL)",
+      "displayType": "verification",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "NDC Partnership",
+      "effectiveSource": "NDC Partnership",
+      "sourceUrl": "https://ndcpartnership.org/countries-map",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "verification",
+        "headline": "예: 직접 근거 확인",
+        "subheadline": "확인상태와 원문 위치를 함께 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: NDC Partnership",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 148,
+      "elementId": "E-016",
+      "category": "E",
+      "categoryLabel": "협력·실행기반",
+      "section": "E.4. 한국 기술·네트워크 역량",
+      "dataGroup": "E.4.a.한국 기후기술 역량",
+      "title": "한국 기후기술 TRL",
+      "titleShort": "한국 기후기술 TRL",
+      "displayType": "text",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "미정",
+      "effectiveSource": "미정",
+      "sourceUrl": null,
+      "collectionMethod": "미정",
+      "preview": {
+        "kind": "text",
+        "headline": "예: 핵심 확인사항 3건",
+        "subheadline": "구조화된 조사결과와 추가 확인사항 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: 미정",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 149,
+      "elementId": "E-017",
+      "category": "E",
+      "categoryLabel": "협력·실행기반",
+      "section": "E.4. 한국 기술·네트워크 역량",
+      "dataGroup": "E.4.a.한국 기후기술 역량",
+      "title": "한국-경쟁국 기후기술 비교우위",
+      "titleShort": "한국-경쟁국 기후기술 비교우위",
+      "displayType": "text",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "미정",
+      "effectiveSource": "미정",
+      "sourceUrl": null,
+      "collectionMethod": "미정",
+      "preview": {
+        "kind": "text",
+        "headline": "예: 핵심 확인사항 3건",
+        "subheadline": "구조화된 조사결과와 추가 확인사항 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: 미정",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 150,
+      "elementId": "E-018",
+      "category": "E",
+      "categoryLabel": "협력·실행기반",
+      "section": "E.4. 한국 기술·네트워크 역량",
+      "dataGroup": "E.4.b.국내 기업 개도국 진출 현황",
+      "title": "기업명, 진출국, 업종(RE/에너지효율/폐기물/수처리), 진출 형태(법인/지사/프로젝트), 설립연도, 연락처, 38대 기후기술 매칭",
+      "titleShort": "기업명, 진출국, 업종(RE/에너지효율/폐기물/수처리), 진출 형태(법인/지사/프로젝트), 설립연도, 연락처, 38대 기후기술 매칭",
+      "displayType": "organization",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "KOTRA",
+      "effectiveSource": "KOTRA",
+      "sourceUrl": "https://www.kotra.or.kr/",
+      "collectionMethod": "수동 수집",
+      "preview": {
+        "kind": "organization",
+        "headline": "예: 관련 기관 5개",
+        "subheadline": "기관 유형·공식 역할·연락경로를 역할별로 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: KOTRA",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 151,
+      "elementId": "E-019",
+      "category": "E",
+      "categoryLabel": "협력·실행기반",
+      "section": "E.4. 한국 기술·네트워크 역량",
+      "dataGroup": "E.4.c.개도국 내 한국 기관 사무소",
+      "title": "기관명(KOTRA무역관/KOICA사무소/에너지공단/KEPCO/한수원 등), 소재국, 도시, 주소, 기후·에너지 담당자 유무, 연락처, 담당 업무 범위",
+      "titleShort": "기관명(KOTRA무역관/KOICA사무소/에너지공단/KEPCO/한수원 등), 소재국, 도시, 주소, 기후·에너지 담당자 유무, 연락처, 담당 업무 범위",
+      "displayType": "organization",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "KOTRA / KOICA",
+      "effectiveSource": "KOTRA / KOICA",
+      "sourceUrl": "https://www.kotra.or.kr/",
+      "collectionMethod": "웹 다운로드",
+      "preview": {
+        "kind": "organization",
+        "headline": "예: 관련 기관 5개",
+        "subheadline": "기관 유형·공식 역할·연락경로를 역할별로 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: KOTRA / KOICA",
+          "최종 공간단위: 국가"
+        ]
+      }
+    },
+    {
+      "index": 152,
+      "elementId": "E-020",
+      "category": "E",
+      "categoryLabel": "협력·실행기반",
+      "section": "E.4. 한국 기술·네트워크 역량",
+      "dataGroup": "E.4.d.한국 공공·민간 지원체계",
+      "title": "지원기관 명(NIGT/GTC/KOTRA/KIAT/에너지공단 등), 지원 프로그램 명, 지원 유형(실증/FS/기술이전/금융), 지원 대상(기업/연구기관), 예산 규모, 신청 시기, 원본 링크(URL)",
+      "titleShort": "지원기관 명(NIGT/GTC/KOTRA/KIAT/에너지공단 등), 지원 프로그램 명, 지원 유형(실증/FS/기술이전/금융), 지원 대상(기업/연구기관), 예산 규모, 신청 시기, 원본 링크(URL)",
+      "displayType": "text",
+      "status": "demo_only",
+      "statusLabel": "시연 표시",
+      "spatialLevel": "국가",
+      "gis": false,
+      "sourceDatabase": "미정",
+      "effectiveSource": "미정",
+      "sourceUrl": null,
+      "collectionMethod": "미정",
+      "preview": {
+        "kind": "text",
+        "headline": "예: 핵심 확인사항 3건",
+        "subheadline": "구조화된 조사결과와 추가 확인사항 표시",
+        "facts": [
+          "시연값 · 실제 베트남 운영자료 아님",
+          "후보 출처: 미정",
+          "최종 공간단위: 국가"
+        ]
+      }
+    }
+  ]
+}

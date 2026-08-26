@@ -1,0 +1,144 @@
+/* v84 · 지도 선택 데이터를 상세·국가비교·협력인사이트로 이어주는 횡단 UX */
+
+.map-v84-crossview-context {
+  display: grid;
+  gap: 3px;
+  margin: 0 14px 14px;
+  padding: 11px 12px;
+  border: 1px solid #cddfea;
+  border-radius: 11px;
+  background: #f5fafc;
+}
+
+.map-v84-crossview-context > span {
+  color: #6d8192;
+  font-size: 9.5px;
+  font-weight: 850;
+}
+
+.map-v84-crossview-context > strong {
+  color: #15334d;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.map-v84-crossview-context > small {
+  color: #718493;
+  font-size: 9.5px;
+  line-height: 1.45;
+}
+
+.map-v84-layer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 9px;
+}
+
+.map-v84-layer-actions button {
+  min-height: 30px;
+  border: 1px solid #c4d4df;
+  border-radius: 8px;
+  background: #fff;
+  color: #2e536e;
+  padding: 0 9px;
+  font-size: 9.5px;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+.map-v84-layer-actions button:hover {
+  border-color: #82abc3;
+  background: #f2f8fb;
+}
+
+.map-v84-layer-actions button.primary {
+  border-color: #1473e6;
+  background: #1473e6;
+  color: #fff;
+}
+
+.map-v84-layer-actions button:focus-visible,
+.map-v84-table-actions button:focus-visible {
+  outline: 3px solid rgba(20, 115, 230, 0.22);
+  outline-offset: 2px;
+}
+
+.map-v84-country-empty {
+  margin: 14px;
+  padding: 18px 15px;
+  border: 1px dashed #b9cbd8;
+  border-radius: 12px;
+  background: #f8fbfd;
+  color: #65798a;
+}
+
+.map-v84-country-empty strong {
+  display: block;
+  color: #24445d;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.map-v84-country-empty p {
+  margin: 6px 0 0;
+  font-size: 10.5px;
+  line-height: 1.55;
+}
+
+.map-v84-combined-table .real-map-v3-table-heading {
+  align-items: center;
+}
+
+.map-v84-table-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.map-v84-table-actions .secondary-button {
+  min-height: 36px;
+  white-space: nowrap;
+}
+
+.map-v84-table-note {
+  margin: 0;
+  padding: 10px 18px;
+  border-top: 1px solid #e5edf3;
+  border-bottom: 1px solid #e5edf3;
+  background: #f7fafc;
+  color: #667b8d;
+  font-size: 10.5px;
+  line-height: 1.5;
+}
+
+.map-v84-combined-table th {
+  min-width: 130px;
+}
+
+.map-v84-combined-table th:first-child {
+  min-width: 150px;
+}
+
+.map-v84-combined-table td {
+  vertical-align: top;
+}
+
+@media (max-width: 760px) {
+  .map-v84-layer-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .map-v84-layer-actions button {
+    width: 100%;
+  }
+
+  .map-v84-table-actions {
+    align-items: stretch;
+  }
+
+  .map-v84-table-actions .secondary-button {
+    min-height: 34px;
+  }
+}

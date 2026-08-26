@@ -1,0 +1,406 @@
+.ndc-policy-panel,
+.ndc-dataset-preview {
+  margin-top: 24px;
+  padding: 24px;
+  border: 1px solid #d8e3ec;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 12px 28px rgba(15, 37, 61, 0.06);
+}
+
+.ndc-panel-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.ndc-panel-heading span,
+.ndc-compact-heading span {
+  display: block;
+  margin-bottom: 4px;
+  color: #087c78;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.ndc-panel-heading h2 {
+  margin: 0;
+  color: #102b46;
+  font-size: 24px;
+}
+
+.ndc-panel-heading p {
+  margin: 8px 0 0;
+  color: #65768a;
+}
+
+.ndc-panel-heading a,
+.ndc-policy-compact a,
+.ndc-country-overview-grid a {
+  color: #096bc5;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.ndc-summary-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.ndc-summary-strip span {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #eef5fa;
+  color: #29425d;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.ndc-evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.ndc-evidence-card {
+  padding: 16px;
+  border: 1px solid #dce6ee;
+  border-radius: 14px;
+  background: #fbfdff;
+}
+
+.ndc-evidence-card header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.ndc-evidence-card header strong {
+  color: #122f4b;
+}
+
+.ndc-status {
+  flex: 0 0 auto;
+  padding: 5px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.ndc-status-explicit {
+  background: #dff6e8;
+  color: #087a3c;
+}
+
+.ndc-status-related {
+  background: #fff0d5;
+  color: #a45700;
+}
+
+.ndc-status-not-confirmed {
+  background: #edf1f5;
+  color: #607084;
+}
+
+.ndc-evidence-text {
+  margin-top: 10px;
+}
+
+.ndc-evidence-text span {
+  display: block;
+  margin-bottom: 5px;
+  color: #65768a;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.ndc-evidence-text p {
+  margin: 0;
+  color: #2a3d52;
+  line-height: 1.55;
+}
+
+.ndc-evidence-text.translation p {
+  color: #143f63;
+}
+
+.ndc-evidence-card small {
+  display: block;
+  margin-top: 12px;
+  color: #7a8998;
+}
+
+.ndc-evidence-empty,
+.ndc-panel-state {
+  padding: 18px;
+  border-radius: 12px;
+  background: #f3f6f9;
+  color: #65768a;
+}
+
+.ndc-panel-state.warning {
+  background: #fff4e8;
+  color: #995400;
+}
+
+.ndc-translation-note {
+  margin: 16px 0 0;
+  color: #6d7b8b;
+  font-size: 13px;
+}
+
+.ndc-policy-compact {
+  margin-top: 14px;
+  padding: 14px;
+  border: 1px solid #cfe0ec;
+  border-radius: 14px;
+  background: #f7fbfe;
+}
+
+.ndc-compact-heading strong {
+  display: block;
+  color: #153650;
+}
+
+.ndc-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0;
+}
+
+.ndc-tag-list span {
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: #e8f1f7;
+  color: #23445d;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.ndc-tag-list .status-explicit {
+  background: #dff6e8;
+  color: #087a3c;
+}
+
+.ndc-tag-list .status-related {
+  background: #fff0d5;
+  color: #a45700;
+}
+
+.ndc-country-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.ndc-country-overview-grid article {
+  padding: 18px;
+  border: 1px solid #dce6ee;
+  border-radius: 14px;
+  background: #fbfdff;
+}
+
+.ndc-country-overview-grid article > span {
+  color: #087c78;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.ndc-country-overview-grid h3 {
+  margin: 7px 0;
+  color: #102b46;
+}
+
+.ndc-country-overview-grid p {
+  min-height: 42px;
+  color: #65768a;
+}
+
+.ndc-country-overview-grid small,
+.ndc-country-overview-grid a {
+  display: block;
+  margin-top: 10px;
+}
+
+@media (max-width: 900px) {
+  .ndc-evidence-grid,
+  .ndc-country-overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ndc-panel-heading {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 520px) {
+  .ndc-policy-panel,
+  .ndc-dataset-preview {
+    padding: 16px;
+    border-radius: 14px;
+  }
+}
+
+.real-map-layer-icon.policy {
+  background: #f0a33a;
+  box-shadow: 0 0 0 5px rgba(240, 163, 58, 0.14);
+}
+
+.real-map-policy-source {
+  display: inline-flex;
+  margin-top: 12px;
+  color: #096bc5;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+/* NDC evidence clarity for map and profile views */
+
+.ndc-status-description {
+  margin: 0 0 12px;
+  color: #53677b;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.ndc-evidence-text.original {
+  padding-top: 10px;
+  border-top: 1px solid #e0e8ef;
+}
+
+.ndc-primary-value strong {
+  font-size: clamp(22px, 2.2vw, 34px);
+  line-height: 1.08;
+  word-break: keep-all;
+}
+
+.ndc-primary-value span {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-top: 8px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.ndc-map-status-card,
+.ndc-map-evidence-card,
+.ndc-map-location-card {
+  margin-top: 12px;
+  padding: 13px;
+  border: 1px solid #d8e3ec;
+  border-radius: 12px;
+  background: #f8fbfd;
+}
+
+.ndc-map-status-card > span,
+.ndc-map-evidence-card > span,
+.ndc-map-location-card > span {
+  display: block;
+  margin-bottom: 6px;
+  color: #5d7083;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+}
+
+.ndc-map-status-card strong {
+  display: block;
+  color: #173650;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.ndc-map-status-card p,
+.ndc-map-evidence-card p,
+.ndc-map-location-card p {
+  margin: 7px 0 0;
+  color: #2a4056;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.ndc-map-status-card.status-explicit {
+  border-color: #9fd8b7;
+  background: #eefaf3;
+}
+
+.ndc-map-status-card.status-explicit strong {
+  color: #08733a;
+}
+
+.ndc-map-status-card.status-related {
+  border-color: #f0c986;
+  background: #fff8eb;
+}
+
+.ndc-map-status-card.status-related strong {
+  color: #995000;
+}
+
+.ndc-map-status-card.status-not-confirmed,
+.ndc-map-status-card.status-none {
+  border-color: #d3dce5;
+  background: #f3f6f8;
+}
+
+.ndc-map-evidence-card.translation {
+  border-color: #b8d5ee;
+  background: #f2f8fd;
+}
+
+.ndc-map-evidence-card.original p {
+  color: #40556a;
+  font-style: italic;
+}
+
+.ndc-map-evidence-card.empty {
+  border-style: dashed;
+  background: #f6f8fa;
+}
+
+.ndc-map-location-card {
+  background: #ffffff;
+}
+
+.ndc-map-legend-note {
+  display: block;
+  margin-top: 8px;
+  color: #61758a;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.real-map-policy-source {
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid #a9ccec;
+  border-radius: 10px;
+  background: #eef7ff;
+}
+
+@media (max-width: 860px) {
+  .ndc-primary-value strong {
+    font-size: 24px;
+  }
+
+  .ndc-map-status-card,
+  .ndc-map-evidence-card,
+  .ndc-map-location-card {
+    padding: 12px;
+  }
+}

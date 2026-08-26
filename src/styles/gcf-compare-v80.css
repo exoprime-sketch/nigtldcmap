@@ -1,0 +1,33 @@
+.gcf-v80-compare-mode {
+  display: inline-flex;
+  gap: 4px;
+  margin-bottom: 14px;
+  padding: 4px;
+  border-radius: 10px;
+  background: #edf3f6;
+}
+
+.gcf-v80-compare-mode button {
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  padding: 8px 12px;
+  color: #607688;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.gcf-v80-compare-mode button.active {
+  background: #fff;
+  color: #08756d;
+  box-shadow: 0 1px 4px rgba(24, 56, 78, 0.12);
+}
+
+.gcf-v80-project-table {
+  min-width: 900px;
+}
+
+.gcf-v80-project-compare .compare-v35-table td {
+  white-space: normal;
+}

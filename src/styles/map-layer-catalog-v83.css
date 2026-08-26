@@ -1,0 +1,405 @@
+/* v83 · 동일 리스트에서 클릭해 즉시 지도에 표시하는 단일 레이어 카탈로그 */
+
+.map-v83-layer-search {
+  display: grid;
+  gap: 7px;
+  margin: 14px 14px 10px;
+}
+
+.map-v83-layer-search > span {
+  color: #607386;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.map-v83-layer-search input {
+  width: 100%;
+  height: 42px;
+  border: 1px solid #cbd9e4;
+  border-radius: 10px;
+  background: #fff;
+  color: #10243a;
+  padding: 0 12px;
+  outline: none;
+}
+
+.map-v83-layer-search input:focus-visible,
+.map-v83-catalog-main:focus-visible,
+.map-v83-inline-controls input:focus-visible,
+.map-v83-reset:focus-visible {
+  outline: 3px solid rgba(20, 115, 230, 0.22);
+  outline-offset: 2px;
+}
+
+.map-v83-catalog-toolbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 14px 8px;
+  padding: 12px 13px;
+  border: 1px solid #d6e2ec;
+  border-radius: 12px;
+  background: #f8fbfd;
+}
+
+.map-v83-catalog-toolbar > div {
+  min-width: 0;
+}
+
+.map-v83-catalog-toolbar strong {
+  display: block;
+  color: #10243a;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.map-v83-catalog-toolbar span {
+  display: block;
+  margin-top: 3px;
+  color: #66788b;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.map-v83-reset {
+  flex: 0 0 auto;
+  min-height: 34px;
+  border: 1px solid #c9d8e3;
+  border-radius: 9px;
+  background: #fff;
+  color: #35536d;
+  padding: 0 10px;
+  font-size: 11px;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+.map-v83-reset:hover {
+  border-color: #8aadc6;
+  background: #f1f7fb;
+}
+
+.map-v83-layer-rule {
+  margin: 0 14px 14px;
+  color: #6b7d8d;
+  font-size: 10.5px;
+  line-height: 1.55;
+}
+
+.map-v83-catalog-group {
+  margin: 0 10px 14px;
+  border-top: 1px solid #e3ebf1;
+  padding-top: 11px;
+}
+
+.map-v83-catalog-group-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 5px 8px;
+}
+
+.map-v83-catalog-group-heading h3 {
+  margin: 0;
+  color: #19354d;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.map-v83-catalog-group-heading p {
+  margin: 3px 0 0;
+  color: #7a8b99;
+  font-size: 10.5px;
+  line-height: 1.4;
+}
+
+.map-v83-catalog-group-heading > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 24px;
+  border-radius: 99px;
+  background: #eef4f8;
+  color: #5c7386;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.map-v83-catalog-list {
+  display: grid;
+  gap: 7px;
+}
+
+.map-v83-catalog-item {
+  overflow: hidden;
+  border: 1px solid #dce6ee;
+  border-radius: 12px;
+  background: #fff;
+  transition: border-color 140ms ease, box-shadow 140ms ease,
+    background 140ms ease;
+}
+
+.map-v83-catalog-item:hover {
+  border-color: #a8bfd1;
+}
+
+.map-v83-catalog-item.is-active {
+  border-color: #62a7c9;
+  background: #f7fcff;
+  box-shadow: 0 4px 14px rgba(37, 98, 132, 0.08);
+}
+
+.map-v83-catalog-item.is-active.render-bubble {
+  border-color: #aa8dcc;
+  background: #fbf8ff;
+}
+
+.map-v83-catalog-item.is-active.render-point {
+  border-color: #7dbda9;
+  background: #f6fcf9;
+}
+
+.map-v83-catalog-main {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 9px;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 11px;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.map-v83-layer-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  margin-top: 1px;
+  border: 1px solid #bacbd8;
+  border-radius: 8px;
+  background: #fff;
+  color: #597184;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.map-v83-layer-toggle.is-on {
+  border-color: #207eb5;
+  background: #207eb5;
+  color: #fff;
+}
+
+.render-bubble .map-v83-layer-toggle.is-on {
+  border-color: #7b2cbf;
+  background: #7b2cbf;
+}
+
+.render-point .map-v83-layer-toggle.is-on {
+  border-color: #23886d;
+  background: #23886d;
+}
+
+.map-v83-catalog-copy {
+  min-width: 0;
+}
+
+.map-v83-catalog-title-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+
+.map-v83-catalog-title-row strong {
+  min-width: 0;
+  color: #17324a;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+.map-v83-catalog-title-row em {
+  flex: 0 0 auto;
+  border-radius: 99px;
+  background: #eef4f8;
+  color: #60778a;
+  padding: 3px 6px;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.render-bubble .map-v83-catalog-title-row em {
+  background: #f0e7fa;
+  color: #6f279f;
+}
+
+.render-point .map-v83-catalog-title-row em {
+  background: #e6f5ef;
+  color: #23745f;
+}
+
+.map-v83-catalog-copy > small {
+  display: block;
+  margin-top: 5px;
+  color: #66798a;
+  font-size: 10.5px;
+  line-height: 1.45;
+}
+
+.map-v83-catalog-source {
+  display: block;
+  margin-top: 6px;
+  color: #8493a0;
+  font-size: 9.5px;
+  line-height: 1.35;
+}
+
+.map-v83-catalog-action {
+  grid-column: 2;
+  display: inline-flex;
+  justify-self: start;
+  margin-top: 7px;
+  color: #116a9b;
+  font-size: 9.5px;
+  font-weight: 900;
+}
+
+.render-bubble .map-v83-catalog-action {
+  color: #762da1;
+}
+
+.render-point .map-v83-catalog-action {
+  color: #23745f;
+}
+
+.map-v83-inline-controls {
+  border-top: 1px solid #e4edf3;
+  padding: 9px 11px 10px 48px;
+}
+
+.map-v83-inline-controls label {
+  display: grid;
+  grid-template-columns: auto minmax(80px, 1fr) 36px;
+  align-items: center;
+  gap: 8px;
+}
+
+.map-v83-inline-controls label > span {
+  color: #607486;
+  font-size: 9.5px;
+  font-weight: 850;
+}
+
+.map-v83-inline-controls input[type="range"] {
+  width: 100%;
+  accent-color: #207eb5;
+}
+
+.render-bubble .map-v83-inline-controls input[type="range"] {
+  accent-color: #7b2cbf;
+}
+
+.render-point .map-v83-inline-controls input[type="range"] {
+  accent-color: #23886d;
+}
+
+.map-v83-inline-controls output {
+  color: #466075;
+  font-size: 9.5px;
+  font-weight: 900;
+  text-align: right;
+}
+
+.map-v83-inline-meta {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 7px;
+}
+
+.map-v83-inline-meta span {
+  border-radius: 99px;
+  background: #f0f4f7;
+  color: #6f8292;
+  padding: 3px 6px;
+  font-size: 9px;
+  line-height: 1.2;
+}
+
+.map-v83-empty-search {
+  margin: 12px 14px;
+  border: 1px dashed #b8cad7;
+  border-radius: 11px;
+  padding: 18px 12px;
+  color: #758795;
+  font-size: 11px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* v81에서 분리되어 있던 "현재 지도 구성" / "추가 레이어" UI는 v83에서 사용하지 않음 */
+.map-v81-stack-summary,
+.map-v81-layer-stack {
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  .map-v83-catalog-toolbar {
+    align-items: stretch;
+  }
+
+  .map-v83-reset {
+    align-self: center;
+  }
+
+  .map-v83-catalog-action {
+    line-height: 1.35;
+  }
+}
+
+@media (max-width: 430px) {
+  .map-v83-catalog-toolbar {
+    flex-direction: column;
+  }
+
+  .map-v83-reset {
+    width: 100%;
+  }
+
+  .map-v83-catalog-main {
+    grid-template-columns: 28px minmax(0, 1fr);
+    padding: 10px;
+  }
+
+  .map-v83-inline-controls {
+    padding-left: 47px;
+  }
+
+  .map-v83-inline-controls label {
+    grid-template-columns: auto minmax(60px, 1fr) 34px;
+  }
+}
+
+/* v102 · 빈 선택 상태에서는 모두 지우기 비활성화 */
+.map-v83-reset:disabled,
+.map-v83-reset[aria-disabled="true"] {
+  cursor: default;
+  opacity: 0.45;
+  background: #f6f8fa;
+  border-color: #d9e2e8;
+  color: #81909b;
+}
+.map-v83-reset:disabled:hover,
+.map-v83-reset[aria-disabled="true"]:hover {
+  background: #f6f8fa;
+  border-color: #d9e2e8;
+}

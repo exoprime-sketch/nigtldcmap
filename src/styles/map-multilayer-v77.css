@@ -1,0 +1,81 @@
+.map-v77-overlay-group {
+  border-top: 1px solid #dbe6ec;
+  padding-top: 14px;
+}
+
+.map-v77-overlay-control {
+  display: grid;
+  gap: 6px;
+  margin: 8px 0;
+}
+
+.map-v77-overlay-control > span {
+  color: #5f7788;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.map-v77-overlay-control select {
+  width: 100%;
+  min-height: 40px;
+  border: 1px solid #cad9e2;
+  border-radius: 9px;
+  background: #fff;
+  padding: 0 10px;
+  color: #17364c;
+  font-size: 12px;
+}
+
+.map-v77-overlay-help {
+  margin: 0;
+  color: #758894;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.map-v77-overlay-meta {
+  display: grid;
+  gap: 4px;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 9px;
+  background: #f6f2fb;
+}
+
+.map-v77-overlay-meta strong {
+  color: #553080;
+  font-size: 11px;
+}
+
+.map-v77-overlay-meta span {
+  color: #75698a;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.map-v77-selected-overlay {
+  display: grid;
+  gap: 4px;
+  margin: 10px 0 12px;
+  padding: 11px 12px;
+  border: 1px solid #ddd0ee;
+  border-radius: 10px;
+  background: #faf7fd;
+}
+
+.map-v77-selected-overlay span,
+.map-v77-selected-overlay small {
+  color: #76688b;
+  font-size: 10px;
+}
+
+.map-v77-selected-overlay strong {
+  color: #56327d;
+  font-size: 18px;
+}
+
+@media (max-width: 720px) {
+  .map-v77-overlay-control select {
+    min-height: 44px;
+  }
+}

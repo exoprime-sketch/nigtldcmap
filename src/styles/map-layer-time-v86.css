@@ -1,0 +1,68 @@
+/* v86 · 누적 지도 레이어별 기준시점
+ * 하나의 전역 기준연도로 모든 레이어를 강제하지 않고,
+ * 각 시계열 레이어가 자신의 기준연도를 독립적으로 유지한다.
+ */
+
+.map-v86-inline-meta {
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+
+.map-v86-year-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+
+.map-v86-year-control > span {
+  color: #5f7183;
+  font-size: 11px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.map-v86-year-control select {
+  min-width: 96px;
+  height: 30px;
+  padding: 0 28px 0 9px;
+  border: 1px solid #c9d7e3;
+  border-radius: 8px;
+  background: #fff;
+  color: #17324d;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.map-v86-year-control select:focus-visible {
+  outline: 2px solid #2389c9;
+  outline-offset: 2px;
+}
+
+.map-v86-reference-period {
+  color: #566b7d;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.map-v84-combined-table th small {
+  display: block;
+  margin-top: 3px;
+  color: #718296;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.25;
+  white-space: normal;
+}
+
+@media (max-width: 720px) {
+  .map-v86-year-control {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .map-v86-year-control select {
+    flex: 0 0 112px;
+  }
+}

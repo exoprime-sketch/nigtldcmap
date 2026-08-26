@@ -1,0 +1,709 @@
+.v56-element-page {
+  max-width: 1240px;
+}
+.v56-public-breadcrumb {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  margin: 10px 0 16px;
+  color: #667d8f;
+  font-size: 12px;
+}
+.v56-public-breadcrumb span {
+  color: #a0afba;
+}
+.v56-actual-element-detail {
+  border: 1px solid #d6e2ea;
+  border-radius: 18px;
+  background: #fff;
+  overflow: hidden;
+}
+.v56-element-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px;
+  border-bottom: 1px solid #e0e8ed;
+  background: linear-gradient(135deg, #fff, #f5fafb);
+}
+.v56-element-header h1 {
+  margin: 8px 0 5px;
+  color: #102d44;
+  font-size: 28px;
+  line-height: 1.35;
+}
+.v56-element-question {
+  margin: 0;
+  color: #274c64;
+  font-size: 15px;
+  font-weight: 750;
+}
+.v56-element-header small {
+  display: block;
+  margin-top: 7px;
+  color: #6d8191;
+  line-height: 1.5;
+}
+.v56-live-badge {
+  display: inline-flex;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: #e8f6ef;
+  color: #17694f;
+  font-size: 11px;
+  font-weight: 850;
+}
+.v56-header-actions {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  flex: 0 0 auto;
+}
+.v56-dataset-selector {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  padding: 14px 22px;
+  background: #f7fafb;
+  border-bottom: 1px solid #e4ebef;
+}
+.v56-dataset-selector > div {
+  display: grid;
+  gap: 2px;
+}
+.v56-dataset-selector span {
+  color: #6d8191;
+  font-size: 11px;
+}
+.v56-dataset-selector b {
+  font-size: 13px;
+}
+.v56-dataset-selector select {
+  min-width: 320px;
+  height: 38px;
+  border: 1px solid #cad8e2;
+  border-radius: 9px;
+  background: #fff;
+  padding: 0 10px;
+}
+.v56-key-facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  margin: 18px 22px 0;
+  border: 1px solid #dce6ec;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.v56-key-facts > * {
+  padding: 13px;
+  border-right: 1px solid #e5ecf0;
+}
+.v56-key-facts > *:last-child {
+  border-right: 0;
+}
+.v56-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 20px 22px 0;
+  border-bottom: 1px solid #dbe5eb;
+}
+.v56-tabs button {
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  padding: 13px 10px;
+  color: #536d80;
+  font-weight: 800;
+  cursor: pointer;
+}
+.v56-tabs button.active {
+  color: #0a6f69;
+  border-bottom-color: #0a7f79;
+}
+.v56-tab-panel {
+  padding: 18px 22px 24px;
+}
+.v56-access-panel {
+  display: grid;
+  gap: 18px;
+}
+.v56-access-panel h2 {
+  margin: 0 0 5px;
+}
+.v56-access-panel p {
+  margin: 0;
+  color: #6c8191;
+}
+.v56-access-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.v56-source-panel {
+  display: grid;
+  gap: 8px;
+}
+.v56-source-panel > div {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 9px;
+  background: #f7f9fa;
+}
+.v56-source-panel span {
+  color: #6c8191;
+  font-weight: 750;
+}
+.v56-source-panel b,
+.v56-source-panel ul {
+  margin: 0;
+}
+.v56-preparing-download-note {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 14px 16px;
+  border: 1px solid #ead59c;
+  border-radius: 12px;
+  background: #fff9eb;
+  color: #705817;
+}
+.v56-warning,
+.v56-loading {
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 10px;
+  background: #fff5e8;
+  color: #7a5b13;
+}
+@media (max-width: 900px) {
+  .v56-element-header {
+    flex-direction: column;
+  }
+  .v56-header-actions {
+    flex-wrap: wrap;
+  }
+  .v56-key-facts {
+    grid-template-columns: 1fr 1fr;
+  }
+  .v56-dataset-selector {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .v56-dataset-selector select {
+    min-width: 0;
+    width: 100%;
+  }
+}
+@media (max-width: 560px) {
+  .v56-key-facts,
+  .v56-tabs {
+    grid-template-columns: 1fr;
+  }
+  .v56-key-facts > * {
+    border-right: 0;
+    border-bottom: 1px solid #e5ecf0;
+  }
+  .v56-source-panel > div,
+  .v56-preparing-download-note {
+    grid-template-columns: 1fr;
+  }
+  .v56-header-actions,
+  .v56-access-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+/* v56.1 · 준비 중 데이터 다운로드 UX */
+.v561-pending-download {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  margin-top: 16px;
+  padding: 18px 20px;
+  border: 1px solid #e5ca82;
+  border-radius: 14px;
+  background: #fff9e9;
+}
+
+.v561-pending-download > div {
+  min-width: 0;
+}
+
+.v561-pending-download > div > span {
+  display: block;
+  color: #8a6810;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.v561-pending-download h2 {
+  margin: 4px 0 5px;
+  color: #5e4710;
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.v561-pending-download p {
+  margin: 0;
+  color: #755f27;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.v561-pending-download > button {
+  flex: 0 0 auto;
+  min-width: 150px;
+}
+
+.v561-download-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 160;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(9, 28, 43, 0.56);
+}
+
+.v561-download-dialog {
+  width: min(560px, 100%);
+  overflow: hidden;
+  border: 1px solid #d9e3ea;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 28px 90px rgba(8, 29, 46, 0.28);
+}
+
+.v561-download-dialog > header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px 22px 16px;
+  border-bottom: 1px solid #e2e9ed;
+  background: #fbfcfd;
+}
+
+.v561-download-dialog > header span {
+  display: block;
+  color: #08756d;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.v561-download-dialog > header h2 {
+  margin: 4px 0 0;
+  color: #102f47;
+  font-size: 22px;
+}
+
+.v561-download-dialog > header > button {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #d1dde5;
+  border-radius: 10px;
+  background: #fff;
+  color: #405d70;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.v561-download-dialog-body {
+  padding: 20px 22px 22px;
+}
+
+.v561-download-dialog-body > p {
+  margin: 0 0 16px;
+  color: #536d80;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.v561-download-dialog-body dl {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid #dce6ec;
+  border-radius: 12px;
+}
+
+.v561-download-dialog-body dl > div {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 12px;
+  padding: 11px 13px;
+  border-bottom: 1px solid #e7edf1;
+}
+
+.v561-download-dialog-body dl > div:last-child {
+  border-bottom: 0;
+}
+
+.v561-download-dialog-body dt {
+  color: #738695;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.v561-download-dialog-body dd {
+  margin: 0;
+  color: #243f54;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.v561-download-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+@media (max-width: 640px) {
+  .v561-pending-download {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .v561-pending-download > button {
+    width: 100%;
+  }
+
+  .v561-download-dialog-body dl > div {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .v561-download-dialog-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+     v56.2 DETAIL PAGE LAYOUT / TYPOGRAPHY OVERRIDE
+     ========================================================= */
+
+.v56-element-page {
+  max-width: 1280px;
+  padding-bottom: 48px;
+}
+
+.v56-element-page > .back-button {
+  min-height: 40px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.v56-public-breadcrumb {
+  gap: 8px;
+  margin: 12px 0 20px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.v56-element-header {
+  gap: 24px;
+  padding: 26px 28px;
+}
+
+.v56-element-header h1 {
+  margin: 10px 0 7px;
+  font-size: clamp(27px, 2.5vw, 34px);
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+}
+
+.v56-element-question {
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.v56-element-header small {
+  margin-top: 9px;
+  max-width: 820px;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.v56-live-badge,
+.v56-element-header .user-topic-badge {
+  font-size: 12px;
+}
+
+.v56-header-actions button {
+  min-height: 42px;
+  padding-left: 14px;
+  padding-right: 14px;
+  font-size: 13px;
+}
+
+.v56-dataset-selector {
+  gap: 18px;
+  padding: 16px 28px;
+}
+
+.v56-dataset-selector span {
+  font-size: 12px;
+}
+
+.v56-dataset-selector b {
+  font-size: 15px;
+}
+
+.v56-dataset-selector select {
+  min-width: 340px;
+  height: 42px;
+  font-size: 13px;
+}
+
+.v56-key-facts {
+  margin: 22px 28px 0;
+  border-radius: 14px;
+}
+
+.v56-key-facts > * {
+  min-height: 86px;
+  padding: 16px;
+}
+
+.v56-key-facts dt {
+  margin-bottom: 7px;
+  color: #6e8190;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.v56-key-facts dd {
+  margin: 0;
+  color: #17344a;
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+.v56-tabs {
+  margin: 24px 28px 0;
+}
+
+.v56-tabs button {
+  min-height: 48px;
+  padding: 14px 12px;
+  font-size: 14px;
+}
+
+.v56-tab-panel {
+  padding: 22px 28px 30px;
+}
+
+.v56-access-panel {
+  gap: 22px;
+}
+
+.v56-access-panel h2 {
+  font-size: 23px;
+}
+
+.v56-access-panel p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.v56-access-actions button {
+  min-height: 42px;
+  font-size: 13px;
+}
+
+.v56-source-panel {
+  gap: 10px;
+}
+
+.v56-source-panel > div {
+  grid-template-columns: 170px 1fr;
+  gap: 16px;
+  padding: 14px 16px;
+}
+
+.v56-source-panel span {
+  font-size: 12px;
+}
+
+.v56-source-panel b,
+.v56-source-panel li {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.v561-pending-download {
+  gap: 24px;
+  margin-top: 18px;
+  padding: 20px 22px;
+}
+
+.v561-pending-download > div > span {
+  font-size: 12px;
+}
+
+.v561-pending-download h2 {
+  font-size: 20px;
+}
+
+.v561-pending-download p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.v561-pending-download > button {
+  min-width: 164px;
+  min-height: 44px;
+  font-size: 13px;
+}
+
+.v561-download-dialog > header {
+  padding: 22px 24px 18px;
+}
+
+.v561-download-dialog > header span {
+  font-size: 12px;
+}
+
+.v561-download-dialog > header h2 {
+  font-size: 24px;
+}
+
+.v561-download-dialog-body {
+  padding: 22px 24px 24px;
+}
+
+.v561-download-dialog-body > p {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.v561-download-dialog-body dl > div {
+  grid-template-columns: 130px minmax(0, 1fr);
+  padding: 13px 14px;
+}
+
+.v561-download-dialog-body dt {
+  font-size: 12px;
+}
+
+.v561-download-dialog-body dd {
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.v561-download-dialog-actions button {
+  min-height: 42px;
+  font-size: 13px;
+}
+
+/* 실제 DatasetDetailPage도 동일 가독성 기준 */
+.detail-page.detail-user-v33 {
+  max-width: 1280px;
+}
+
+.detail-page.detail-user-v33 .breadcrumb {
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.detail-page.detail-user-v33 .detail-header h1 {
+  font-size: clamp(28px, 2.6vw, 36px);
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+}
+
+.detail-page.detail-user-v33 .detail-title-en {
+  font-size: 13px;
+}
+
+.detail-page.detail-user-v33 .detail-summary {
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.detail-page.detail-user-v33 .detail-actions button {
+  min-height: 42px;
+  font-size: 13px;
+}
+
+.detail-page.detail-user-v33 .detail-key-facts dt {
+  font-size: 11px;
+}
+
+.detail-page.detail-user-v33 .detail-key-facts dd {
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.detail-page.detail-user-v33 .dataset-detail-tabs button {
+  min-height: 48px;
+  font-size: 14px;
+}
+
+.detail-page.detail-user-v33 .dataset-detail-tab-panel {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .v56-element-header {
+    padding: 22px 20px;
+  }
+
+  .v56-key-facts,
+  .v56-tabs {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .v56-tab-panel {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .v56-key-facts {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .v56-element-header h1 {
+    font-size: 26px;
+  }
+
+  .v56-element-question {
+    font-size: 16px;
+  }
+
+  .v56-key-facts,
+  .v56-tabs {
+    margin-left: 14px;
+    margin-right: 14px;
+  }
+
+  .v56-tab-panel {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .v56-key-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .v56-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .v561-pending-download {
+    padding: 18px;
+  }
+}

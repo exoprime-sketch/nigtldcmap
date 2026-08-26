@@ -1,0 +1,102 @@
+/* v33 · NDC 데이터 상세 사용자 화면 */
+.mode-dataset-v33 {
+  display: grid;
+  gap: 16px;
+}
+
+.v33-ndc-heading {
+  padding: 16px;
+  border: 1px solid #dce6ee;
+  border-radius: 14px;
+  background: #fbfdfe;
+}
+
+.v33-ndc-heading > div > span {
+  color: #087367;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.v33-ndc-heading h2 {
+  margin: 5px 0;
+  color: #17324a;
+}
+
+.v33-ndc-heading p {
+  margin: 0;
+  color: #6b7f90;
+}
+
+.v33-ndc-controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 320px));
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #dce6ee;
+  border-radius: 13px;
+  background: #f8fbfd;
+}
+
+.v33-ndc-controls label {
+  display: grid;
+  gap: 6px;
+}
+
+.v33-ndc-controls label > span {
+  color: #536c7f;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.v33-ndc-controls select {
+  min-height: 42px;
+  padding: 0 12px;
+  border: 1px solid #c7d6e2;
+  border-radius: 10px;
+  background: #fff;
+  color: #17324a;
+  font: inherit;
+}
+
+.v33-ndc-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+  padding: 0;
+  background: transparent;
+}
+
+.v33-ndc-summary span {
+  display: grid;
+  gap: 3px;
+  padding: 13px;
+  border: 1px solid #dce6ee;
+  border-radius: 12px;
+  background: #fff;
+  color: #62778a;
+  font-size: 11px;
+}
+
+.v33-ndc-summary strong {
+  color: #17324a;
+  font-size: 20px;
+}
+
+.v33-ndc-card {
+  min-width: 0;
+}
+
+.v33-ndc-card .ndc-evidence-text p {
+  white-space: pre-wrap;
+}
+
+@media (max-width: 760px) {
+  .v33-ndc-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .v33-ndc-controls,
+  .v33-ndc-summary {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "version": "v99",
+  "referenceDate": "2026-08-13",
+  "status": "operational_finalized",
+  "expected": {
+    "authoritativeElements": 152,
+    "datasets": 31,
+    "directActualElements": 15,
+    "mapLayers": 30,
+    "gcfProjectRelations": 109,
+    "gcfVerifiedTechnologyMappingRows": 28,
+    "gcfUniqueMappedCountryProjectRelations": 18,
+    "reviewedLocationCandidates": 5,
+    "verifiedExactProjectPoints": 0
+  },
+  "changes": [
+    "8 official World Bank/ILO/PIP indicators connected to A-004/A-005/A-006/A-008",
+    "GCF 10 priority country portfolio current-page verification",
+    "GCF 109 relation snapshot reverified and dated 2026-08-13",
+    "28 verified project-technology mapping rows across 18 country-project relations",
+    "5 GCF location candidates reviewed; 0 exact official points published",
+    "A-001 CPI source metadata corrected",
+    "search aliases expanded"
+  ],
+  "p0p1": [
+    {
+      "id": "P1-SOURCE-CPI-001",
+      "severity": "P1",
+      "status": "fixed",
+      "area": "검색·출처",
+      "summary": "A-001 CPI 예정출처가 World Bank WDI로 잘못 표기",
+      "fix": "Transparency International · Corruption Perceptions Index (CPI)로 정정",
+      "verifiedAt": "2026-08-13"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "version": "v76",
+  "batch": "01-world-bank-country-baseline",
+  "strategy": "live_api_then_snapshot",
+  "priorityCountries": [
+    "VNM",
+    "BGD",
+    "PHL",
+    "KHM",
+    "IDN",
+    "LAO",
+    "LKA",
+    "IND",
+    "MYS",
+    "EGY"
+  ],
+  "datasets": [
+    {
+      "datasetId": "LDC-DS-A-001",
+      "elementId": "A-007",
+      "indicatorId": "population-total",
+      "sourceCode": "SP.POP.TOTL",
+      "map": "base_choropleth",
+      "compare": "latest+trend",
+      "insight": "country_context"
+    },
+    {
+      "datasetId": "LDC-DS-A-007-URBAN",
+      "elementId": "A-007",
+      "indicatorId": "urbanization-share",
+      "sourceCode": "SP.URB.TOTL.IN.ZS",
+      "map": "base_choropleth",
+      "compare": "latest+trend",
+      "insight": "country_context"
+    },
+    {
+      "datasetId": "LDC-DS-A-007-GROWTH",
+      "elementId": "A-007",
+      "indicatorId": "population-growth",
+      "sourceCode": "SP.POP.GROW",
+      "map": "base_choropleth",
+      "compare": "latest+trend",
+      "insight": "country_context"
+    },
+    {
+      "datasetId": "LDC-DS-A-003-GDP",
+      "elementId": "A-003",
+      "indicatorId": "gdp-current",
+      "sourceCode": "NY.GDP.MKTP.CD",
+      "map": "base_choropleth",
+      "compare": "latest+trend",
+      "insight": "country_context"
+    },
+    {
+      "datasetId": "LDC-DS-A-003-GROWTH",
+      "elementId": "A-003",
+      "indicatorId": "gdp-growth",
+      "sourceCode": "NY.GDP.MKTP.KD.ZG",
+      "map": "base_choropleth",
+      "compare": "latest+trend",
+      "insight": "country_context"
+    },
+    {
+      "datasetId": "LDC-DS-A-003-PC",
+      "elementId": "A-003",
+      "indicatorId": "gdp-per-capita",
+      "sourceCode": "NY.GDP.PCAP.CD",
+      "map": "base_choropleth",
+      "compare": "latest+trend",
+      "insight": "country_context"
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+.comparison-workspace-v120 {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid #d7e2e4;
+  border-radius: 14px;
+  background: #fff;
+}
+.comparison-workspace-v120 > header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+}
+.comparison-workspace-v120 header span {
+  color: #087d6d;
+  font-size: 12px;
+  font-weight: 700;
+}
+.comparison-workspace-v120 header h3 {
+  margin: 4px 0;
+  font-size: 20px;
+}
+.comparison-workspace-v120 header p {
+  margin: 0;
+  color: #587179;
+  line-height: 1.5;
+}
+.comparison-workspace-v120__actions {
+  display: flex;
+  gap: 7px;
+  flex-shrink: 0;
+}
+.comparison-workspace-v120 button,
+.comparison-workspace-v120 select {
+  border: 1px solid #cfdcdf;
+  border-radius: 8px;
+  background: #fff;
+  color: #173c46;
+}
+.comparison-workspace-v120 button {
+  padding: 8px 11px;
+  cursor: pointer;
+}
+.comparison-workspace-v120 button.is-active {
+  border-color: #087d6d;
+  background: #eaf7f3;
+  color: #056758;
+  font-weight: 700;
+}
+.comparison-workspace-v120__controls {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) 1fr;
+  gap: 12px;
+}
+.comparison-workspace-v120__controls label {
+  display: grid;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.comparison-workspace-v120__controls select {
+  min-height: 40px;
+  padding: 0 10px;
+}
+.comparison-workspace-v120__controls fieldset {
+  display: flex;
+  gap: 7px;
+  padding: 0;
+  border: 0;
+}
+.comparison-workspace-v120__controls legend {
+  width: 100%;
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.comparison-workspace-v120__countries {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+.comparison-workspace-v120__countries button {
+  padding: 6px 9px;
+}
+.comparison-workspace-v120__countries small {
+  color: #70858b;
+}
+.comparison-workspace-v120__views {
+  display: flex;
+  gap: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  background: #f2f6f7;
+}
+.comparison-workspace-v120__views button {
+  border-color: transparent;
+  background: transparent;
+}
+.comparison-template-panel-v120 {
+  display: grid;
+  grid-template-columns: 1fr minmax(220px, 0.55fr);
+  gap: 12px;
+}
+.comparison-template-panel-v120 > div,
+.comparison-template-panel-v120 > p {
+  margin: 0;
+  padding: 12px;
+  border-radius: 10px;
+  background: #f6f9fa;
+}
+.comparison-template-panel-v120 ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 0;
+  margin: 8px 0 0;
+  list-style: none;
+}
+.comparison-template-panel-v120 li {
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 11px;
+}
+.comparison-template-panel-v120 > p {
+  color: #715921;
+  background: #fff8e8;
+  line-height: 1.5;
+}
+.comparison-workspace-v120.is-pending {
+  background: #f7f9fa;
+}
+.adaptation-fund-portfolio-v120 {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding: 14px;
+  border: 1px solid #d9e3e5;
+  border-radius: 12px;
+  background: #fff;
+}
+.adaptation-fund-portfolio-v120 header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.adaptation-fund-portfolio-v120 header h3 {
+  margin: 0;
+}
+.adaptation-fund-portfolio-v120 header span {
+  color: #087d6d;
+  font-size: 12px;
+}
+.adaptation-fund-portfolio-v120__kpis {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+.adaptation-fund-portfolio-v120__kpis article {
+  display: grid;
+  gap: 4px;
+  padding: 10px;
+  border-radius: 9px;
+  background: #f4f8f8;
+}
+.adaptation-fund-portfolio-v120__kpis span {
+  color: #657c83;
+  font-size: 11px;
+}
+.adaptation-fund-portfolio-v120 > p {
+  margin: 0;
+  color: #6e5c2d;
+  font-size: 12px;
+}
+@media (max-width: 720px) {
+  .comparison-workspace-v120 > header {
+    display: grid;
+  }
+  .comparison-workspace-v120__controls,
+  .comparison-template-panel-v120 {
+    grid-template-columns: 1fr;
+  }
+  .adaptation-fund-portfolio-v120__kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

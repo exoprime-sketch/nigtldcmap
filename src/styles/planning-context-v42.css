@@ -1,0 +1,143 @@
+.planning-context-v42 {
+  border-bottom: 1px solid #d9e4ec;
+  background: #f7fbfc;
+}
+
+.planning-context-v42-inner {
+  width: min(var(--page-width), calc(100% - 40px));
+  min-height: 66px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 10px 0;
+}
+
+.planning-context-v42-copy {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: auto minmax(0, auto);
+  align-items: baseline;
+  gap: 3px 12px;
+}
+
+.planning-context-v42-kicker {
+  grid-row: 1 / span 2;
+  align-self: center;
+  padding: 5px 8px;
+  border-radius: 999px;
+  color: #006d68;
+  background: #e5f7f4;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.planning-context-v42-copy strong {
+  min-width: 0;
+  overflow: hidden;
+  color: #0b2239;
+  font-size: 15px;
+  font-weight: 900;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.planning-context-v42-copy small {
+  color: #60758a;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.planning-context-v42-actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 8px;
+}
+
+.planning-context-v42-actions button {
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid #c9d8e3;
+  border-radius: 9px;
+  color: #17324d;
+  background: #fff;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.planning-context-v42-actions button:hover,
+.planning-context-v42-actions button:focus-visible {
+  border-color: #0d7b76;
+  outline: none;
+  color: #006d68;
+  box-shadow: 0 0 0 3px rgba(13, 123, 118, 0.12);
+}
+
+.planning-context-v42-actions .planning-context-v42-primary {
+  border-color: #0b746f;
+  color: #fff;
+  background: #0b746f;
+}
+
+.planning-context-v42-actions .planning-context-v42-primary:hover,
+.planning-context-v42-actions .planning-context-v42-primary:focus-visible {
+  border-color: #075f5b;
+  color: #fff;
+  background: #075f5b;
+}
+
+@media (max-width: 820px) {
+  .planning-context-v42-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 0;
+  }
+
+  .planning-context-v42-actions {
+    width: 100%;
+  }
+
+  .planning-context-v42-actions button {
+    flex: 1 1 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .planning-context-v42-inner {
+    width: min(var(--page-width), calc(100% - 28px));
+  }
+
+  .planning-context-v42-copy {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .planning-context-v42-kicker {
+    grid-row: auto;
+    justify-self: start;
+  }
+
+  .planning-context-v42-copy strong {
+    white-space: normal;
+  }
+
+  .planning-context-v42-copy small {
+    font-size: 10px;
+  }
+
+  .planning-context-v42-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .planning-context-v42-actions button {
+    width: 100%;
+  }
+}
