@@ -20,6 +20,8 @@ import type {
   CountryEntityV122,
   CountryMapLayerV122,
 } from "../data/countries/countryDataTypesV122";
+import { loadWorldCountryBoundaries } from "../data/map/worldCountryBoundaries";
+import type { WorldCountryBoundaryGeometry } from "../data/map/worldCountryBoundaries";
 import { PRIORITY_COUNTRIES } from "../data/priorityCountries";
 import type { MapViewState } from "../types/map";
 import {
@@ -46,15 +48,10 @@ type LoadStatus = "idle" | "loading" | "ready" | "error";
 const MAP_STYLE: any = {
   version: 8,
   sources: {
-    "osm-raster": {
-      type: "raster",
-      tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
-      tileSize: 256,
-      attribution: "© OpenStreetMap contributors",
-    },
     "country-boundaries": {
       type: "geojson",
       data: "/data/world-countries.geojson",
+      attribution: "Natural Earth · 로컬 국가 경계",
     },
   },
   layers: [
@@ -64,18 +61,12 @@ const MAP_STYLE: any = {
       paint: { "background-color": "#e7efeb" },
     },
     {
-      id: "cdp-osm-raster",
-      type: "raster",
-      source: "osm-raster",
-      paint: { "raster-opacity": 0.88 },
-    },
-    {
       id: "cdp-country-fill",
       type: "fill",
       source: "country-boundaries",
       paint: {
         "fill-color": "#ffffff",
-        "fill-opacity": 0.04,
+        "fill-opacity": 0.9,
       },
     },
     {
@@ -84,8 +75,8 @@ const MAP_STYLE: any = {
       source: "country-boundaries",
       paint: {
         "line-color": "#587168",
-        "line-width": 0.8,
-        "line-opacity": 0.55,
+        "line-width": 1.1,
+        "line-opacity": 0.82,
       },
     },
   ],
@@ -98,6 +89,69 @@ const LAYER_COLORS: Record<string, string> = {
   "D-018": "#226f96",
   "D-023": "#b05e2e",
 };
+
+const FALLBACK_VIEWBOX_WIDTH = 1000;
+const FALLBACK_VIEWBOX_HEIGHT = 700;
+
+type FallbackBounds = readonly [
+  readonly [number, number],
+  readonly [number, number]
+];
+
+function isLngLatCoordinate(value: unknown): value is [number, number] {
+  return (
+    Array.isArray(value) &&
+    value.length >= 2 &&
+    typeof value[0] === "number" &&
+    Number.isFinite(value[0]) &&
+    typeof value[1] === "number" &&
+    Number.isFinite(value[1])
+  );
+}
+
+function projectFallbackCoordinate(
+  coordinate: readonly [number, number],
+  bounds: FallbackBounds
+): { x: number; y: number } {
+  const [[west, south], [east, north]] = bounds;
+  const width = Math.max(east - west, Number.EPSILON);
+  const height = Math.max(north - south, Number.EPSILON);
+  return {
+    x: ((coordinate[0] - west) / width) * FALLBACK_VIEWBOX_WIDTH,
+    y: ((north - coordinate[1]) / height) * FALLBACK_VIEWBOX_HEIGHT,
+  };
+}
+
+function fallbackRingToPath(
+  ring: unknown,
+  bounds: FallbackBounds
+): string {
+  if (!Array.isArray(ring)) return "";
+  const coordinates = ring.filter(isLngLatCoordinate);
+  if (coordinates.length < 3) return "";
+  return `${coordinates
+    .map((coordinate, index) => {
+      const { x, y } = projectFallbackCoordinate(coordinate, bounds);
+      return `${index === 0 ? "M" : "L"}${x.toFixed(2)},${y.toFixed(2)}`;
+    })
+    .join(" ")} Z`;
+}
+
+function geometryToFallbackPath(
+  geometry: WorldCountryBoundaryGeometry,
+  bounds: FallbackBounds
+): string {
+  if (!Array.isArray(geometry.coordinates)) return "";
+  const polygons: unknown[] =
+    geometry.type === "Polygon"
+      ? [geometry.coordinates]
+      : geometry.coordinates;
+  return polygons
+    .flatMap((polygon) => (Array.isArray(polygon) ? polygon : []))
+    .map((ring) => fallbackRingToPath(ring, bounds))
+    .filter(Boolean)
+    .join(" ");
+}
 
 /**
  * Legacy QA modules v115/v116 still import these named exports. The current
@@ -201,7 +255,6 @@ function layerRuntimeIds(countryIso3: string, elementId: string) {
     source: `v122-source-${suffix}`,
     point: `v122-point-${suffix}`,
     cluster: `v122-cluster-${suffix}`,
-    clusterCount: `v122-cluster-count-${suffix}`,
   };
 }
 
@@ -296,6 +349,9 @@ export default function RealMapExplorerPage({
     resolveInitialCountry(initialState.countryIso3)
   );
   const [baseMapStatus, setBaseMapStatus] = useState<LoadStatus>("loading");
+  const [fallbackBoundaryStatus, setFallbackBoundaryStatus] =
+    useState<LoadStatus>("loading");
+  const [fallbackBoundaryPath, setFallbackBoundaryPath] = useState("");
   const [mapIndexStatus, setMapIndexStatus] = useState<LoadStatus>("idle");
   const [mapIndexError, setMapIndexError] = useState("");
   const [mapIndexReloadNonce, setMapIndexReloadNonce] = useState(0);
@@ -311,12 +367,85 @@ export default function RealMapExplorerPage({
   const [selected, setSelected] = useState<CountryEntityV122 | null>(null);
 
   const provider = getCountryDataProviderV122(countryIso3);
+  const fallbackBounds: FallbackBounds = provider?.mapView.bounds || [
+    [-180, -85],
+    [180, 85],
+  ];
+
+  const fallbackPoints = useMemo(() => {
+    const points: Array<{
+      color: string;
+      elementId: string;
+      record: CountryEntityV122;
+      x: number;
+      y: number;
+    }> = [];
+    activeIds.forEach((elementId) => {
+      (recordsByElement[elementId] || []).forEach((record) => {
+        if (
+          !record.mapEligible ||
+          typeof record.longitude !== "number" ||
+          typeof record.latitude !== "number"
+        ) {
+          return;
+        }
+        const position = projectFallbackCoordinate(
+          [record.longitude, record.latitude],
+          fallbackBounds
+        );
+        points.push({
+          color: LAYER_COLORS[elementId] || "#176a4b",
+          elementId,
+          record,
+          ...position,
+        });
+      });
+    });
+    return points;
+  }, [activeIds, fallbackBounds, recordsByElement]);
 
   useEffect(() => {
     const requested = initialState.countryIso3?.toUpperCase() || "";
     if (!requested) return;
     setCountryIso3((current) => (current === requested ? current : requested));
   }, [initialState.countryIso3]);
+
+  useEffect(() => {
+    let cancelled = false;
+    const current = getCountryDataProviderV122(countryIso3);
+    setFallbackBoundaryStatus("loading");
+    setFallbackBoundaryPath("");
+
+    if (!current?.mapView.bounds) {
+      setFallbackBoundaryStatus("error");
+      return () => {
+        cancelled = true;
+      };
+    }
+
+    void loadWorldCountryBoundaries()
+      .then((collection) => {
+        if (cancelled) return;
+        const feature = collection.features.find(
+          (candidate) => candidate.properties.iso3 === countryIso3
+        );
+        const path = feature
+          ? geometryToFallbackPath(feature.geometry, current.mapView.bounds!)
+          : "";
+        if (!path) throw new Error(`로컬 국가 경계 누락: ${countryIso3}`);
+        setFallbackBoundaryPath(path);
+        setFallbackBoundaryStatus("ready");
+      })
+      .catch((reason: unknown) => {
+        if (cancelled) return;
+        console.warn("Local map fallback boundary unavailable", reason);
+        setFallbackBoundaryStatus("error");
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [countryIso3]);
 
   useEffect(() => {
     let cancelled = false;
@@ -393,18 +522,34 @@ export default function RealMapExplorerPage({
 
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return;
-    const map = new maplibregl.Map({
-      container: containerRef.current,
-      style: MAP_STYLE,
-      center: provider?.mapView.center || [20, 15],
-      zoom: provider?.mapView.zoom || 1.5,
-    });
+    setBaseMapStatus("loading");
+    let pendingMap: MapLibreMap | null = null;
+    try {
+      pendingMap = new maplibregl.Map({
+        container: containerRef.current,
+        style: MAP_STYLE,
+        center: provider?.mapView.center || [20, 15],
+        zoom: provider?.mapView.zoom || 1.5,
+      });
+      pendingMap.addControl(new maplibregl.NavigationControl(), "top-right");
+      pendingMap.addControl(
+        new maplibregl.ScaleControl({ unit: "metric" }),
+        "bottom-right"
+      );
+    } catch (reason) {
+      console.error("MapLibre initialization failed", reason);
+      try {
+        pendingMap?.remove();
+      } catch {
+        // The partially initialized renderer has no remaining user state.
+      }
+      setBaseMapStatus("error");
+      mapRef.current = null;
+      return;
+    }
+    if (!pendingMap) return;
+    const map = pendingMap;
     mapRef.current = map;
-    map.addControl(new maplibregl.NavigationControl(), "top-right");
-    map.addControl(
-      new maplibregl.ScaleControl({ unit: "metric" }),
-      "bottom-right"
-    );
 
     let ready = false;
     const markReady = () => {
@@ -412,7 +557,10 @@ export default function RealMapExplorerPage({
       setBaseMapStatus("ready");
       const current = getCountryDataProviderV122(countryIso3);
       if (current?.mapView.bounds) {
-        map.fitBounds(current.mapView.bounds, { padding: 44, duration: 0 });
+        map.fitBounds(current.mapView.bounds, {
+          padding: 44,
+          duration: 0,
+        });
       }
       window.setTimeout(() => map.resize(), 0);
     };
@@ -574,17 +722,6 @@ export default function RealMapExplorerPage({
             "circle-stroke-color": "#ffffff",
             "circle-stroke-width": 2,
           },
-        });
-        map.addLayer({
-          id: ids.clusterCount,
-          type: "symbol",
-          source: ids.source,
-          filter: ["has", "point_count"],
-          layout: {
-            "text-field": ["get", "point_count_abbreviated"],
-            "text-size": 12,
-          },
-          paint: { "text-color": "#ffffff" },
         });
       }
       map.addLayer({
@@ -898,7 +1035,90 @@ export default function RealMapExplorerPage({
         </aside>
 
         <main className="cdp-map-canvas-wrap" aria-label="데이터 지도">
-          <div ref={containerRef} className="cdp-map-canvas" />
+          <div
+            className="cdp-map-fallback"
+            data-status={fallbackBoundaryStatus}
+          >
+            <svg
+              className="cdp-map-fallback__svg"
+              viewBox={`0 0 ${FALLBACK_VIEWBOX_WIDTH} ${FALLBACK_VIEWBOX_HEIGHT}`}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              aria-label="베트남 로컬 경계 대체 지도"
+            >
+              <g className="cdp-map-fallback__grid" aria-hidden="true">
+                {[100, 200, 300, 400, 500, 600, 700, 800, 900].map(
+                  (value) => (
+                    <line
+                      key={`vertical-${value}`}
+                      x1={value}
+                      y1="0"
+                      x2={value}
+                      y2={FALLBACK_VIEWBOX_HEIGHT}
+                    />
+                  )
+                )}
+                {[100, 200, 300, 400, 500, 600].map((value) => (
+                  <line
+                    key={`horizontal-${value}`}
+                    x1="0"
+                    y1={value}
+                    x2={FALLBACK_VIEWBOX_WIDTH}
+                    y2={value}
+                  />
+                ))}
+              </g>
+              {fallbackBoundaryPath ? (
+                <path
+                  className="cdp-map-fallback__country"
+                  d={fallbackBoundaryPath}
+                  fillRule="evenodd"
+                />
+              ) : (
+                <path
+                  className="cdp-map-fallback__country-placeholder"
+                  d="M365 80 L640 110 L720 260 L650 555 L470 625 L300 470 L285 225 Z"
+                />
+              )}
+              {fallbackPoints.map((point) => (
+                <circle
+                  key={`${point.elementId}:${point.record.recordId}`}
+                  className={`cdp-map-fallback__point ${
+                    selected?.recordId === point.record.recordId
+                      ? "is-selected"
+                      : ""
+                  }`}
+                  cx={point.x}
+                  cy={point.y}
+                  r={selected?.recordId === point.record.recordId ? 6 : 4}
+                  fill={point.color}
+                  opacity="0.82"
+                  onClick={() => {
+                    setSelected(point.record);
+                    setFocusId(point.elementId);
+                  }}
+                >
+                  <title>{entityDisplayNameV121(point.record)}</title>
+                </circle>
+              ))}
+            </svg>
+            <span className="cdp-map-fallback__attribution">
+              로컬 경계 데이터 · 네트워크 없이 표시
+            </span>
+          </div>
+          <div
+            ref={containerRef}
+            className={`cdp-map-canvas ${
+              baseMapStatus === "ready" ? "is-visible" : "is-suspended"
+            }`}
+          />
+          <div className="cdp-map-renderer-badge">
+            {baseMapStatus === "ready"
+              ? "MapLibre · 로컬 벡터 배경지도"
+              : fallbackBoundaryStatus === "ready"
+              ? "SVG 대체 지도"
+              : "지도 준비 중"}
+          </div>
           <div className="cdp-map-overlay-card">
             <strong>
               {focusedLayer
@@ -1061,7 +1281,7 @@ function removeLayerFromMap(
     }
     delete handlers[key];
   }
-  [ids.point, ids.clusterCount, ids.cluster].forEach((id) => {
+  [ids.point, ids.cluster].forEach((id) => {
     if (map.getLayer(id)) map.removeLayer(id);
   });
   if (map.getSource(ids.source)) map.removeSource(ids.source);
