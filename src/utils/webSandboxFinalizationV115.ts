@@ -17,7 +17,7 @@ import {
   MAP_LAYER_IDS_RUNTIME_V115,
   MAP_SOURCE_IDS_RUNTIME_V115,
   MAP_RUNTIME_POLICY_V115,
-} from "../pages/RealMapExplorerPage";
+} from "../data/map/mapRuntimeContractsV116";
 import {
   runWebSandboxFinalizationV114,
 } from "./webSandboxFinalizationV114";

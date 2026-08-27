@@ -30,9 +30,16 @@ import type {
 import type {
   VietnamSpatialLayerAssetV124,
 } from "../data/vietnam/vietnamTypesV124";
-import { parseDataFinderSelectorStateV125 } from "../types/dataFinderV125";
 import type { DataFinderSelectorStateV125 } from "../types/dataFinderV125";
-import { resolveMapSelectorBindingV125 } from "../data/visualization/mapSelectorBindingsV125";
+import {
+  dataFinderSelectorFromMapV125,
+  mapPeriodSelectorLabelV125,
+  mapVariableSelectorLabelV125,
+  resolveMapSelectorBindingV125,
+  resolveMapSemanticPresentationV125,
+  semanticDimensionValueLabelV125,
+} from "../data/visualization/mapSelectorBindingsV125";
+import { getElementVisualizationSummaryV125 } from "../data/visualization/elementVisualizationRegistryV125";
 import { loadWorldCountryBoundaries } from "../data/map/worldCountryBoundaries";
 import type { WorldCountryBoundaryGeometry } from "../data/map/worldCountryBoundaries";
 import { PRIORITY_COUNTRIES } from "../data/priorityCountries";
@@ -46,7 +53,11 @@ import {
 import "../styles/country-data-platform-v122.css";
 
 interface RealMapExplorerPageProps {
-  onOpenElement: (elementId: string, countryIso3: string) => void;
+  onOpenElement: (
+    elementId: string,
+    countryIso3: string,
+    selectorState?: DataFinderSelectorStateV125
+  ) => void;
   onOpenCountry: (iso3: string) => void;
   onOpenDownload: (
     elementId: string | null,
@@ -54,6 +65,8 @@ interface RealMapExplorerPageProps {
   ) => void;
   initialState: MapViewState;
   onStateChange: (state: MapViewState) => void;
+  selectorState: DataFinderSelectorStateV125;
+  onSelectorStateChange: (state: DataFinderSelectorStateV125) => void;
 }
 
 type LoadStatus = "idle" | "loading" | "ready" | "error";
@@ -113,6 +126,10 @@ const LAYER_COLORS: Record<string, string> = {
 
 const FALLBACK_VIEWBOX_WIDTH = 1000;
 const FALLBACK_VIEWBOX_HEIGHT = 700;
+const SPATIAL_VALUE_SERIES_CACHE_V125 = new WeakMap<
+  VietnamSpatialLayerAssetV124,
+  Map<string, VietnamSpatialLayerAssetV124["values"]>
+>();
 
 type FallbackBounds = readonly [
   readonly [number, number],
@@ -222,86 +239,16 @@ function colorForValue(value: number, minimum: number, maximum: number): string 
   return `rgb(${channels.join(",")})`;
 }
 
-/**
- * Legacy QA modules v115/v116 still import these named exports. The current
- * runtime keeps them only as audit contracts and never mounts synthetic data.
- */
-export const MAP_LAYER_IDS_RUNTIME_V115 = [
-  "v115-country-fill",
-  "v115-country-outline",
-  "v115-country-selected",
-  "v115-focus-fill",
-  "v115-focus-bubble",
-  "v115-focus-line",
-  "v115-focus-raster",
-  "v115-focus-outline",
-  "v115-point-clusters",
-  "v115-point-cluster-count",
-  "v115-point-unclustered",
-  "v115-tna-bubbles",
-  "v115-ctcn-bubbles",
-  "v115-gcf-bubbles",
-  "v115-af-bubbles",
-  "v115-climate-fund-bubbles",
-  "v115-mdb-bubbles",
-] as const;
-
-export const MAP_SOURCE_IDS_RUNTIME_V115 = [
-  "v115-country-source",
-  "v115-aggregate-source",
-  "v115-focus-source",
-  "v115-point-source",
-] as const;
-
-export const MAP_RUNTIME_POLICY_V115 = {
-  mapInstance: "single-instance",
-  syntheticDefaultVisible: false,
-  syntheticCatalogAvailableByDefault: false,
-  syntheticActivation: "disabled-on-vietnam-actual-route",
-  syntheticQueryRequired: false,
-  inventedActualCoordinates: false,
-  actualAndSyntheticMixing: false,
-  basePolygonMaxActive: 1,
-  rasterMaxActive: 1,
-  nullToZero: false,
-  multiCountryEqualAllocation: false,
-  financeConceptAggregation: false,
-  automaticTechnologyInference: false,
-} as const;
-
-export const MAP_LAYER_IDS_RUNTIME_V116 = [
-  ...MAP_LAYER_IDS_RUNTIME_V115,
-  "v116-demand-bubble",
-  "v116-demand-label",
-  "v116-oda-halo",
-  "v116-regional-fill",
-  "v116-regional-outline",
-  "v116-regional-selected",
-] as const;
-
-export const MAP_SOURCE_IDS_RUNTIME_V116 = [
-  ...MAP_SOURCE_IDS_RUNTIME_V115,
-  "v116-regional-source",
-] as const;
-
-export const MAP_RUNTIME_POLICY_V116 = {
-  mapInstance: "single-instance",
-  visualEncodingSingleMeaning: true,
-  bubbleAreaProportional: true,
-  syntheticRegionalValuesNeverActual: true,
-  nationalToRegionalFabrication: false,
-  subnationalBoundaryProvider: "actual-source-only",
-  basePolygonMaxActive: 1,
-  rasterMaxActive: 1,
-  regionalActualOverridesCountry: true,
-  zoomDependentAutomaticDrilldown: "actual-only",
-  nullToZero: false,
-  multiCountryEqualAllocation: false,
-  financeConceptAggregation: false,
-  automaticTechnologyInference: false,
-  inventedActualCoordinates: false,
-  actualAndSyntheticMixing: false,
-} as const;
+// Compatibility re-exports for legacy consumers. Release QA imports the
+// dependency-free module directly so MapLibre remains outside the entry chunk.
+export {
+  MAP_LAYER_IDS_RUNTIME_V115,
+  MAP_LAYER_IDS_RUNTIME_V116,
+  MAP_RUNTIME_POLICY_V115,
+  MAP_RUNTIME_POLICY_V116,
+  MAP_SOURCE_IDS_RUNTIME_V115,
+  MAP_SOURCE_IDS_RUNTIME_V116,
+} from "../data/map/mapRuntimeContractsV116";
 
 interface LayerHandlers {
   interactiveLayerId: string;
@@ -413,9 +360,9 @@ function choroplethFeatureCollection(
   minimum: number;
   maximum: number;
 } {
-  const values = (asset.data?.values || []).filter(
-    (row) => row.variable === selector.variable && row.period === selector.period
-  );
+  const values = asset.data
+    ? spatialValuesForSelectorV125(asset.data, selector)
+    : [];
   const valueByCode = new Map(values.map((row) => [row.adm1Code, row]));
   const numericValues = values.map((row) => row.value).filter(Number.isFinite);
   const minimum = numericValues.length ? Math.min(...numericValues) : 0;
@@ -454,18 +401,47 @@ function choroplethFeatureCollection(
   };
 }
 
-function lineFeatureCollection(
-  asset: SpatialRuntimeAsset,
+function spatialValuesForSelectorV125(
+  data: VietnamSpatialLayerAssetV124,
   selector: LayerSelectorState
+): VietnamSpatialLayerAssetV124["values"] {
+  let index = SPATIAL_VALUE_SERIES_CACHE_V125.get(data);
+  if (!index) {
+    index = new Map();
+    data.values.forEach((row) => {
+      const key = `${row.variable}\u0000${row.period}`;
+      const records = index!.get(key);
+      if (records) records.push(row);
+      else index!.set(key, [row]);
+    });
+    SPATIAL_VALUE_SERIES_CACHE_V125.set(data, index);
+  }
+  return index.get(`${selector.variable}\u0000${selector.period}`) || [];
+}
+
+function lineFeatureCollection(
+  layer: CountryMapLayerV122,
+  asset: SpatialRuntimeAsset,
+  selector: LayerSelectorState,
+  filters: Record<string, string>
 ): GeoJSON.FeatureCollection<GeoJSON.Geometry> {
-  const features =
-    selector.variable === "all"
-      ? asset.geometry.features
-      : asset.geometry.features.filter(
-          (feature) =>
-            String(feature.properties?.voltageKv || feature.properties?.voltage) ===
-            selector.variable
-        );
+  const features = asset.geometry.features.filter((feature) => {
+    if (
+      selector.variable !== "all" &&
+      String(feature.properties?.voltageKv || feature.properties?.voltage) !==
+        selector.variable
+    ) {
+      return false;
+    }
+    return layer.filters.every((filter) => {
+      if (filter.field === "voltageKv") return true;
+      const selected = filters[`${layer.elementId}:${filter.field}`] || "all";
+      return (
+        selected === "all" ||
+        String(feature.properties?.[filter.field] ?? "") === selected
+      );
+    });
+  });
   return {
     type: "FeatureCollection",
     features: features.map((feature, index) => ({
@@ -541,6 +517,19 @@ function filterRecords(
   );
 }
 
+function selectedFilterDimensionsV125(
+  layer: CountryMapLayerV122,
+  filters: Record<string, string>
+): Record<string, string> {
+  return Object.fromEntries(
+    layer.filters.flatMap((filter) => {
+      if (filter.field === "voltageKv") return [];
+      const selected = filters[`${layer.elementId}:${filter.field}`] || "all";
+      return selected === "all" ? [] : [[filter.field, selected]];
+    })
+  );
+}
+
 function resolveInitialCountry(initialCountryIso3: string | null): string {
   const requested = initialCountryIso3?.toUpperCase() || "";
   if (requested) return requested;
@@ -557,17 +546,18 @@ export default function RealMapExplorerPage({
   onOpenDownload,
   initialState,
   onStateChange,
+  selectorState: sharedSelectorState,
+  onSelectorStateChange,
 }: RealMapExplorerPageProps) {
-  const sharedSelectorState = parseDataFinderSelectorStateV125(
-    new URLSearchParams(window.location.search)
-  );
   const sharedSelectorKey = sharedSelectorKeyV125(sharedSelectorState);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
   const popupRef = useRef<MapLibrePopup | null>(null);
   const handlersRef = useRef<Record<string, LayerHandlers>>({});
   const mountedKeysRef = useRef<Set<string>>(new Set());
+  const renderSignaturesRef = useRef<Record<string, string>>({});
   const recordIndexRef = useRef<Map<string, CountryEntityV122>>(new Map());
+  const loadControllersRef = useRef<Map<string, AbortController>>(new Map());
   const [countryIso3, setCountryIso3] = useState(() =>
     resolveInitialCountry(initialState.countryIso3)
   );
@@ -612,6 +602,7 @@ export default function RealMapExplorerPage({
   ];
 
   const fallbackPoints = useMemo(() => {
+    if (baseMapStatus === "ready") return [];
     const points: Array<{
       color: string;
       elementId: string;
@@ -641,7 +632,7 @@ export default function RealMapExplorerPage({
       });
     });
     return points;
-  }, [activeIds, fallbackBounds, recordsByElement]);
+  }, [activeIds, baseMapStatus, fallbackBounds, recordsByElement]);
 
   const fallbackSpatial = useMemo(() => {
     const fills: Array<{
@@ -653,14 +644,22 @@ export default function RealMapExplorerPage({
       value: number | null;
       unit: string;
     }> = [];
-    const lines: Array<{ color: string; elementId: string; path: string }> = [];
+    const lines: Array<{
+      color: string;
+      elementId: string;
+      featureCount: number;
+      path: string;
+      period: string;
+      variable: string;
+    }> = [];
+    if (baseMapStatus === "ready") return { fills, lines };
     activeIds.forEach((elementId) => {
       const layer = layers.find((item) => item.elementId === elementId);
       const asset = spatialByElement[elementId];
       if (!layer || !asset) return;
       const selector = selectorForLayer(layer, selectorByElement[elementId]);
       if (rendererOf(layer) === "line") {
-        const collection = lineFeatureCollection(asset, selector);
+        const collection = lineFeatureCollection(layer, asset, selector, filters);
         const path = collection.features
           .map((feature) =>
             geometryToFallbackLinePath(
@@ -674,7 +673,10 @@ export default function RealMapExplorerPage({
           lines.push({
             color: LAYER_COLORS[elementId] || "#b64d36",
             elementId,
+            featureCount: collection.features.length,
             path,
+            period: selector.period,
+            variable: selector.variable,
           });
         }
         return;
@@ -694,7 +696,7 @@ export default function RealMapExplorerPage({
           elementId,
           fill:
             value === null
-              ? "rgba(210, 218, 214, 0.42)"
+              ? "rgba(0, 0, 0, 0)"
               : colorForValue(value, result.minimum, result.maximum),
           name: String(properties.adm1Name || properties.name || ""),
           path,
@@ -706,7 +708,9 @@ export default function RealMapExplorerPage({
     return { fills, lines };
   }, [
     activeIds,
+    baseMapStatus,
     fallbackBounds,
+    filters,
     layers,
     selectorByElement,
     spatialByElement,
@@ -805,18 +809,27 @@ export default function RealMapExplorerPage({
 
   useEffect(() => {
     if (mapIndexStatus !== "ready") return;
-    const currentSharedSelector = parseDataFinderSelectorStateV125(
-      new URLSearchParams(window.location.search)
-    );
     setSelectorByElement(
       Object.fromEntries(
         layers.map((layer) => [
           layer.elementId,
           selectorForLayerFromSharedSelectionV125(
             layer,
-            currentSharedSelector
+            sharedSelectorState
           ),
         ])
+      )
+    );
+    setFilters(
+      Object.fromEntries(
+        layers.flatMap((layer) =>
+          layer.filters.flatMap((filter) => {
+            const selected = sharedSelectorState.dimensions[filter.field];
+            return selected && filter.values.includes(selected)
+              ? [[`${layer.elementId}:${filter.field}`, selected]]
+              : [];
+          })
+        )
       )
     );
   }, [layers, mapIndexStatus, sharedSelectorKey]);
@@ -942,6 +955,15 @@ export default function RealMapExplorerPage({
   }, [baseMapStatus, provider]);
 
   useEffect(() => {
+    const activeRuntimeKeys = new Set(
+      activeIds.map((elementId) => runtimeKey(countryIso3, elementId))
+    );
+    loadControllersRef.current.forEach((controller, key) => {
+      if (activeRuntimeKeys.has(key)) return;
+      controller.abort();
+      loadControllersRef.current.delete(key);
+    });
+
     activeIds.forEach((elementId) => {
       const layer = layers.find((item) => item.elementId === elementId);
       if (!layer || layer.enabled === false || loadingIds.includes(elementId)) {
@@ -960,14 +982,26 @@ export default function RealMapExplorerPage({
         delete next[elementId];
         return next;
       });
+      const requestKey = runtimeKey(countryIso3, elementId);
+      const controller = new AbortController();
+      loadControllersRef.current.get(requestKey)?.abort();
+      loadControllersRef.current.set(requestKey, controller);
       const request = externalSpatial
         ? countryIso3 === "VNM" && layer.geometryUrl
           ? Promise.all([
-              loadVietnamSpatialGeoJsonV124(layer.geometryUrl),
+              // All Admin-1 layers share the loader's resolved JSON cache.
+              // The unique A-024 transmission geometry remains abortable.
+              loadVietnamSpatialGeoJsonV124(
+                layer.geometryUrl,
+                layer.geometryUrl.endsWith("vnm-adm1-63.geojson")
+                  ? undefined
+                  : controller.signal
+              ),
               layer.dataUrl
-                ? loadVietnamSpatialLayerV124(layer.dataUrl)
+                ? loadVietnamSpatialLayerV124(layer.dataUrl, controller.signal)
                 : Promise.resolve(undefined),
             ]).then(([geometry, data]) => {
+              if (controller.signal.aborted) return;
               setSpatialByElement((current) => ({
                 ...current,
                 [elementId]: { geometry, data },
@@ -980,6 +1014,7 @@ export default function RealMapExplorerPage({
             )
         : loadCountryElementEntitiesV122(countryIso3, elementId).then(
             (payload) => {
+              if (controller.signal.aborted) return;
               setRecordsByElement((current) => ({
                 ...current,
                 [elementId]: payload.records,
@@ -988,6 +1023,12 @@ export default function RealMapExplorerPage({
           );
       void request
         .catch((reason: unknown) => {
+          if (
+            controller.signal.aborted ||
+            (reason instanceof DOMException && reason.name === "AbortError")
+          ) {
+            return;
+          }
           console.error("Country map layer load failed", reason);
           setLayerErrors((current) => ({
             ...current,
@@ -998,6 +1039,9 @@ export default function RealMapExplorerPage({
           }));
         })
         .finally(() => {
+          if (loadControllersRef.current.get(requestKey) === controller) {
+            loadControllersRef.current.delete(requestKey);
+          }
           setLoadingIds((current) => current.filter((id) => id !== elementId));
         });
     });
@@ -1009,6 +1053,14 @@ export default function RealMapExplorerPage({
     recordsByElement,
     spatialByElement,
   ]);
+
+  useEffect(
+    () => () => {
+      loadControllersRef.current.forEach((controller) => controller.abort());
+      loadControllersRef.current.clear();
+    },
+    []
+  );
 
   useEffect(() => {
     const index = new Map<string, CountryEntityV122>();
@@ -1061,6 +1113,7 @@ export default function RealMapExplorerPage({
         return;
       removeLayerFromMap(map, mountedCountry, elementId, handlersRef.current);
       mountedKeysRef.current.delete(key);
+      delete renderSignaturesRef.current[key];
     });
 
     activeIds.forEach((elementId) => {
@@ -1084,14 +1137,21 @@ export default function RealMapExplorerPage({
             : choroplethFeatureCollection(layer, asset, selector);
         const data =
           renderer === "line"
-            ? lineFeatureCollection(asset, selector)
+            ? lineFeatureCollection(layer, asset, selector, filters)
             : choropleth!.collection;
+        const renderKey = runtimeKey(countryIso3, elementId);
+        const renderSignature = JSON.stringify({
+          renderer,
+          selector,
+          filters: selectedFilterDimensionsV125(layer, filters),
+          featureCount: data.features.length,
+        });
         const existing = map.getSource(ids.source) as GeoJSONSource | undefined;
         const fillColor = choropleth
           ? ([
               "case",
               ["==", ["get", "hasValue"], false],
-              "rgba(174, 186, 180, 0.38)",
+              "rgba(0, 0, 0, 0)",
               [
                 "interpolate",
                 ["linear"],
@@ -1104,10 +1164,12 @@ export default function RealMapExplorerPage({
             ] as any)
           : color;
         if (existing) {
+          if (renderSignaturesRef.current[renderKey] === renderSignature) return;
           existing.setData(data);
           if (choropleth && map.getLayer(ids.fill)) {
             map.setPaintProperty(ids.fill, "fill-color", fillColor);
           }
+          renderSignaturesRef.current[renderKey] = renderSignature;
           return;
         }
 
@@ -1170,8 +1232,13 @@ export default function RealMapExplorerPage({
             string,
             unknown
           >;
+          const lineLength = Number(properties.lengthKm || properties.length);
           const value =
-            typeof properties.value === "number" ? properties.value : null;
+            renderer === "line" && Number.isFinite(lineLength)
+              ? lineLength
+              : typeof properties.value === "number"
+              ? properties.value
+              : null;
           setSelected(null);
           setSelectedSpatial({
             elementId,
@@ -1181,11 +1248,12 @@ export default function RealMapExplorerPage({
                 ? `${properties.voltageKv || properties.voltage || ""} kV 송전선`
                 : String(properties.adm1Name || properties.name || "성·시"),
             value,
-            unit: String(properties.unit || (renderer === "line" ? "kV" : "")),
+            unit: String(properties.unit || (renderer === "line" ? "km" : "")),
             period: String(properties.period || layer.sourceYear || ""),
-            variableLabel: String(
-              properties.variableLabel || layer.publicShortTitle
-            ),
+            variableLabel:
+              renderer === "line"
+                ? "송전망 선로 목록"
+                : String(properties.variableLabel || layer.publicShortTitle),
             properties,
           });
           setFocusId(elementId);
@@ -1229,6 +1297,7 @@ export default function RealMapExplorerPage({
           onEnter,
           onPointLeave,
         };
+        renderSignaturesRef.current[key] = renderSignature;
         mountedKeysRef.current.add(key);
         return;
       }
@@ -1237,9 +1306,16 @@ export default function RealMapExplorerPage({
       if (!records) return;
       const filteredRecords = filterRecords(records, layer, filters);
       const data = featureCollection(filteredRecords, layer);
+      const renderKey = runtimeKey(countryIso3, elementId);
+      const renderSignature = JSON.stringify({
+        filters: selectedFilterDimensionsV125(layer, filters),
+        recordCount: filteredRecords.length,
+      });
       const existing = map.getSource(ids.source) as GeoJSONSource | undefined;
       if (existing) {
+        if (renderSignaturesRef.current[renderKey] === renderSignature) return;
         existing.setData(data);
+        renderSignaturesRef.current[renderKey] = renderSignature;
         return;
       }
 
@@ -1344,6 +1420,7 @@ export default function RealMapExplorerPage({
         onPointLeave,
         onClusterClick,
       };
+      renderSignaturesRef.current[key] = renderSignature;
       mountedKeysRef.current.add(key);
     });
   }, [
@@ -1383,9 +1460,76 @@ export default function RealMapExplorerPage({
         focusedLayer.selectors
       )
     : null;
+  const focusedFilterDimensions = focusedLayer
+    ? selectedFilterDimensionsV125(focusedLayer, filters)
+    : {};
+  const focusedSemanticSummary = focusedLayer
+    ? getElementVisualizationSummaryV125(focusedLayer.elementId)
+    : null;
+  const focusedSemantic =
+    focusedLayer && focusedSelector
+      ? resolveMapSemanticPresentationV125(
+          focusedLayer.elementId,
+          focusedSelector,
+          focusedLayer.selectors,
+          focusedFilterDimensions,
+          focusedSemanticSummary?.measureLabels[0] || focusedLayer.publicShortTitle
+        )
+      : null;
+  const focusedSeriesCoverage =
+    focusedLayer && focusedSelector
+      ? spatialByElement[focusedLayer.elementId]?.data?.seriesCoverage.find(
+          (row) =>
+            row.variable === focusedSelector.variable &&
+            row.period === focusedSelector.period
+        ) || null
+      : null;
+  const focusedCoverage = focusedLayer
+    ? focusedLayer.elementId === "A-024"
+      ? "606개 MultiLineString · 베트남 송전선 원천 geometry"
+      : focusedSeriesCoverage
+      ? `${focusedSeriesCoverage.matchedCount}/63개 성·시 값 보유`
+      : focusedLayer.spatialCoverage
+    : "";
+  const focusedMissingReason = focusedLayer
+    ? focusedSeriesCoverage && focusedSeriesCoverage.missingCount > 0
+      ? `${focusedSeriesCoverage.missingCount}개 성·시 원천 미제공 · 0으로 대체하지 않음`
+      : focusedLayer.missingRegions.length
+      ? focusedLayer.missingRegions.join(" · ")
+      : "없음"
+    : "";
   const selectedLayer = selected
     ? layers.find((layer) => layer.elementId === selected.elementId) || null
-    : null;
+      : null;
+
+  function semanticStateForLayerV125(
+    layer: CountryMapLayerV122
+  ): DataFinderSelectorStateV125 {
+    const selector = selectorForLayer(layer, selectorByElement[layer.elementId]);
+    return dataFinderSelectorFromMapV125(
+      layer.elementId,
+      selector,
+      selectedFilterDimensionsV125(layer, filters)
+    );
+  }
+
+  function openLayerDetailV125(layer: CountryMapLayerV122): void {
+    onOpenElement(layer.elementId, countryIso3, semanticStateForLayerV125(layer));
+  }
+
+  function publishMapSelectorStateV125(
+    layer: CountryMapLayerV122,
+    selector: LayerSelectorState,
+    nextFilters: Record<string, string> = filters
+  ): void {
+    onSelectorStateChange(
+      dataFinderSelectorFromMapV125(
+        layer.elementId,
+        selector,
+        selectedFilterDimensionsV125(layer, nextFilters)
+      )
+    );
+  }
 
   function changeCountry(nextCountryIso3: string) {
     if (nextCountryIso3 === countryIso3) return;
@@ -1399,15 +1543,20 @@ export default function RealMapExplorerPage({
   function toggleLayer(elementId: string) {
     const layer = layers.find((item) => item.elementId === elementId);
     if (!layer || layer.enabled === false) return;
-    setActiveIds((current) => {
-      if (current.includes(elementId)) {
-        const next = current.filter((id) => id !== elementId);
-        if (focusId === elementId) setFocusId(next[next.length - 1] || null);
-        return next;
+    if (activeIds.includes(elementId)) {
+      const next = activeIds.filter((id) => id !== elementId);
+      setActiveIds(next);
+      if (focusId === elementId) {
+        const nextFocusId = next[next.length - 1] || null;
+        setFocusId(nextFocusId);
+        const nextLayer = layers.find((item) => item.elementId === nextFocusId);
+        if (nextLayer) onSelectorStateChange(semanticStateForLayerV125(nextLayer));
       }
+    } else {
+      setActiveIds((current) => [...current, elementId]);
       setFocusId(elementId);
-      return [...current, elementId];
-    });
+      onSelectorStateChange(semanticStateForLayerV125(layer));
+    }
     setSelected(null);
     setSelectedSpatial(null);
   }
@@ -1430,25 +1579,47 @@ export default function RealMapExplorerPage({
   function changeLayerVariable(layer: CountryMapLayerV122, variable: string) {
     const option = layer.selectors.variables.find((row) => row.key === variable);
     const periods = option?.periods || layer.selectors.periods;
+    const nextSelector = {
+      variable,
+      period:
+        periods.includes(layer.selectors.defaultPeriod)
+          ? layer.selectors.defaultPeriod
+          : periods[periods.length - 1] || "미표기",
+    };
     setSelectorByElement((current) => ({
       ...current,
-      [layer.elementId]: {
-        variable,
-        period:
-          periods.includes(layer.selectors.defaultPeriod)
-            ? layer.selectors.defaultPeriod
-            : periods[periods.length - 1] || "미표기",
-      },
+      [layer.elementId]: nextSelector,
     }));
+    publishMapSelectorStateV125(layer, nextSelector);
     setSelectedSpatial(null);
   }
 
   function changeLayerPeriod(layer: CountryMapLayerV122, period: string) {
     const current = selectorForLayer(layer, selectorByElement[layer.elementId]);
+    const nextSelector = { ...current, period };
     setSelectorByElement((selectors) => ({
       ...selectors,
-      [layer.elementId]: { ...current, period },
+      [layer.elementId]: nextSelector,
     }));
+    publishMapSelectorStateV125(layer, nextSelector);
+    setSelectedSpatial(null);
+  }
+
+  function changeLayerFilterV125(
+    layer: CountryMapLayerV122,
+    field: string,
+    value: string
+  ): void {
+    const nextFilters = {
+      ...filters,
+      [`${layer.elementId}:${field}`]: value,
+    };
+    setFilters(nextFilters);
+    publishMapSelectorStateV125(
+      layer,
+      selectorForLayer(layer, selectorByElement[layer.elementId]),
+      nextFilters
+    );
     setSelectedSpatial(null);
   }
 
@@ -1577,8 +1748,11 @@ export default function RealMapExplorerPage({
                       event.preventDefault();
                       event.stopPropagation();
                       setFocusId(layer.elementId);
-                      if (!activeIds.includes(layer.elementId))
+                      if (!activeIds.includes(layer.elementId)) {
                         toggleLayer(layer.elementId);
+                      } else {
+                        onSelectorStateChange(semanticStateForLayerV125(layer));
+                      }
                     }}
                     disabled={layer.enabled === false}
                   >
@@ -1602,7 +1776,11 @@ export default function RealMapExplorerPage({
           ))}
 
           {focusedLayer && focusedSelector && (
-            <section className="cdp-map-layer-group cdp-map-selector-panel">
+            <section
+              className="cdp-map-layer-group cdp-map-selector-panel"
+              data-testid="map-semantic-contract"
+              data-semantic-measure={focusedSemantic?.measureKey || "element-only"}
+            >
               <h2>{focusedLayer.publicShortTitle} 표시 설정</h2>
               {focusedHandoff?.reason && (
                 <p
@@ -1613,8 +1791,17 @@ export default function RealMapExplorerPage({
                   {focusedHandoff.reason}
                 </p>
               )}
+              {focusedSemantic && (
+                <p className="cdp-map-selector-notice" role="note">
+                  <strong>{focusedSemantic.measureLabel}</strong>
+                  {" · "}
+                  {focusedSemantic.indicatorLabel}
+                </p>
+              )}
               <label className="cdp-field" style={{ marginBottom: 9 }}>
-                <span className="cdp-field__label">변수</span>
+                <span className="cdp-field__label">
+                  {mapVariableSelectorLabelV125(focusedLayer.elementId)}
+                </span>
                 <select
                   className="cdp-select"
                   data-testid="map-layer-variable-select"
@@ -1631,7 +1818,9 @@ export default function RealMapExplorerPage({
                 </select>
               </label>
               <label className="cdp-field" style={{ marginBottom: 9 }}>
-                <span className="cdp-field__label">연도/기간</span>
+                <span className="cdp-field__label">
+                  {mapPeriodSelectorLabelV125(focusedLayer.elementId)}
+                </span>
                 <select
                   className="cdp-select"
                   data-testid="map-layer-period-select"
@@ -1651,33 +1840,59 @@ export default function RealMapExplorerPage({
               </label>
               <dl className="cdp-map-layer-meta">
                 <div>
+                  <dt>측정항목</dt>
+                  <dd>{focusedSemantic?.measureLabel || focusedLayer.legend.title}</dd>
+                </div>
+                <div>
                   <dt>단위</dt>
-                  <dd>{focusedVariable?.unit || focusedLayer.unit}</dd>
+                  <dd>{focusedSemantic?.unit || focusedVariable?.unit || focusedLayer.unit}</dd>
                 </div>
                 <div>
                   <dt>공간 커버리지</dt>
-                  <dd>{focusedLayer.spatialCoverage}</dd>
+                  <dd data-testid="map-semantic-coverage">{focusedCoverage}</dd>
                 </div>
                 <div>
                   <dt>결측지역</dt>
-                  <dd>
-                    {focusedLayer.missingRegions.length
-                      ? focusedLayer.missingRegions.join(" · ")
-                      : "없음"}
+                  <dd data-testid="map-semantic-missing-reason">
+                    {focusedMissingReason}
                   </dd>
+                </div>
+                <div>
+                  <dt>출처</dt>
+                  <dd>{focusedLayer.source}</dd>
                 </div>
                 <div>
                   <dt>정확도 한계</dt>
                   <dd>{focusedLayer.accuracyNotice}</dd>
                 </div>
               </dl>
+              {focusedLayer.elementId === "D-008" && (
+                <p data-testid="d008-coverage-warning" role="note">
+                  값 보유 3/63개 성·시 · 미자료 60개 성·시는
+                  투명하게 표시하며 0으로 대체하지 않습니다.
+                </p>
+              )}
+              {focusedLayer.elementId === "A-024" && (
+                <p data-testid="a024-geometry-accuracy" role="note">
+                  606개 MultiLineString · 원천 위치 오차 약 2~10km ·
+                  공학·경로 설계용으로 사용하지 마세요.
+                </p>
+              )}
             </section>
           )}
 
           {focusedLayer && focusedLayer.filters.length > 0 && (
             <section className="cdp-map-layer-group">
               <h2>{focusedLayer.publicShortTitle} 필터</h2>
-              {focusedLayer.filters.map((filter) => (
+              {focusedLayer.filters
+                .filter(
+                  (filter) =>
+                    !(
+                      rendererOf(focusedLayer) === "line" &&
+                      filter.field === "voltageKv"
+                    )
+                )
+                .map((filter) => (
                 <label
                   key={filter.field}
                   className="cdp-field"
@@ -1686,22 +1901,23 @@ export default function RealMapExplorerPage({
                   <span className="cdp-field__label">{filter.label}</span>
                   <select
                     className="cdp-select"
+                    data-testid={`map-layer-filter-${filter.field}`}
                     value={
                       filters[`${focusedLayer.elementId}:${filter.field}`] ||
                       "all"
                     }
                     onChange={(event) =>
-                      setFilters((current) => ({
-                        ...current,
-                        [`${focusedLayer.elementId}:${filter.field}`]:
-                          event.target.value,
-                      }))
+                      changeLayerFilterV125(
+                        focusedLayer,
+                        filter.field,
+                        event.target.value
+                      )
                     }
                   >
                     <option value="all">전체</option>
                     {filter.values.map((value) => (
                       <option key={value} value={value}>
-                        {value}
+                        {semanticDimensionValueLabelV125(filter.field, value)}
                       </option>
                     ))}
                   </select>
@@ -1807,9 +2023,15 @@ export default function RealMapExplorerPage({
                     setSelectedSpatial({
                       elementId: line.elementId,
                       adm1Name: "실제 송전망",
-                      period: "2016",
-                      variableLabel: "송전 전압",
-                      properties: {},
+                      value: line.featureCount,
+                      unit: "개 MultiLineString",
+                      period: line.period,
+                      variableLabel: "송전망 선로 목록",
+                      properties: {
+                        voltageKv: line.variable,
+                        status:
+                          filters[`${line.elementId}:status`] || "all",
+                      },
                     });
                     setFocusId(line.elementId);
                   }}
@@ -1874,11 +2096,19 @@ export default function RealMapExplorerPage({
           {focusedLayer && (
             <div className="cdp-map-legend">
               <strong>{focusedLayer.publicShortTitle}</strong>
-              <span>{focusedVariable?.label || focusedLayer.legend.title}</span>
+              <span>
+                {focusedSemantic?.measureLabel || focusedLayer.legend.title}
+                {focusedSemantic?.indicatorLabel &&
+                focusedSemantic.indicatorLabel !== focusedSemantic.measureLabel
+                  ? ` · ${focusedSemantic.indicatorLabel}`
+                  : ""}
+              </span>
               <span>
                 기준연도/기간 {focusedSelector?.period || focusedLayer.sourceYear || "미표기"}
               </span>
-              <span>단위 {focusedVariable?.unit || focusedLayer.unit}</span>
+              <span>
+                단위 {focusedSemantic?.unit || focusedVariable?.unit || focusedLayer.unit}
+              </span>
               {(rendererOf(focusedLayer) === "admin1-choropleth" ||
                 rendererOf(focusedLayer) === "partial-choropleth") && (
                 <span className="cdp-map-legend__gradient" aria-label="낮음에서 높음">
@@ -1891,26 +2121,48 @@ export default function RealMapExplorerPage({
 
         <aside className="cdp-map-evidence">
           {selectedSpatial && focusedLayer ? (
-            <>
+            <div data-testid="map-feature-detail">
               <h2>{selectedSpatial.adm1Name}</h2>
               <div className="cdp-evidence-grid">
+                <Evidence label="데이터명" value={focusedLayer.publicTitle} />
                 <Evidence
-                  label="변수"
+                  label="지표명"
                   value={
                     selectedSpatial.variableLabel ||
-                    focusedVariable?.label ||
+                    focusedSemantic?.indicatorLabel ||
                     focusedLayer.publicShortTitle
                   }
                 />
+                <Evidence
+                  label="측정항목"
+                  value={focusedSemantic?.measureLabel || focusedLayer.legend.title}
+                />
+                {focusedSemantic?.dimensions.map((dimension) => (
+                  <Evidence
+                    key={dimension.key}
+                    label={dimension.label}
+                    value={dimension.value}
+                  />
+                ))}
+                {selectedSpatial.adm1Code && (
+                  <Evidence label="지역" value={selectedSpatial.adm1Name} />
+                )}
                 <Evidence
                   label="값"
                   value={
                     selectedSpatial.value === null ||
                     selectedSpatial.value === undefined
-                      ? "결측"
-                      : `${selectedSpatial.value.toLocaleString()} ${
-                          selectedSpatial.unit || focusedVariable?.unit || ""
-                        }`
+                      ? "원천 미제공"
+                      : selectedSpatial.value.toLocaleString()
+                  }
+                />
+                <Evidence
+                  label="단위"
+                  value={
+                    selectedSpatial.unit ||
+                    focusedSemantic?.unit ||
+                    focusedVariable?.unit ||
+                    focusedLayer.unit
                   }
                 />
                 <Evidence
@@ -1936,20 +2188,37 @@ export default function RealMapExplorerPage({
                 <Evidence label="출처" value={focusedLayer.source} />
                 <Evidence
                   label="공간 커버리지"
-                  value={focusedLayer.spatialCoverage}
+                  value={focusedCoverage}
+                />
+                <Evidence
+                  label="결측 여부"
+                  value={
+                    selectedSpatial.value === null ||
+                    selectedSpatial.value === undefined
+                      ? `결측 · ${focusedMissingReason}`
+                      : "값 보유"
+                  }
                 />
                 <Evidence
                   label="정확도 한계"
                   value={focusedLayer.accuracyNotice}
+                />
+                <Evidence
+                  label="다운로드 상태"
+                  value={
+                    focusedLayer.downloadStatus === "available"
+                      ? "가능"
+                      : focusedLayer.downloadStatus === "source-restricted"
+                      ? "원천 제약"
+                      : "미제공"
+                  }
                 />
               </div>
               <div className="cdp-action-row" style={{ marginTop: 14 }}>
                 <button
                   type="button"
                   className="cdp-button cdp-button--primary"
-                  onClick={() =>
-                    onOpenElement(focusedLayer.elementId, countryIso3)
-                  }
+                  onClick={() => openLayerDetailV125(focusedLayer)}
                 >
                   데이터 상세
                 </button>
@@ -1976,11 +2245,27 @@ export default function RealMapExplorerPage({
                     </a>
                   )}
               </div>
-            </>
+            </div>
           ) : selected ? (
-            <>
+            <div data-testid="map-feature-detail">
               <h2>{entityDisplayNameV121(selected)}</h2>
               <div className="cdp-evidence-grid">
+                {selectedLayer && (
+                  <>
+                    <Evidence label="데이터명" value={selectedLayer.publicTitle} />
+                    <Evidence
+                      label="측정항목"
+                      value={
+                        focusedSemantic?.measureLabel || selectedLayer.legend.title
+                      }
+                    />
+                    <Evidence
+                      label="값"
+                      value={entityDisplayNameV121(selected)}
+                    />
+                    <Evidence label="단위" value="공간 레코드 1건" />
+                  </>
+                )}
                 <Evidence
                   label="자료연도"
                   value={selected.provenance.referenceYear || "미표기"}
@@ -2002,12 +2287,40 @@ export default function RealMapExplorerPage({
                   label="자료 제공기관"
                   value={selected.provenance.sourceOrg || "미표기"}
                 />
+                {selectedLayer && (
+                  <>
+                    <Evidence
+                      label="공간 커버리지"
+                      value={selectedLayer.spatialCoverage}
+                    />
+                    <Evidence label="결측 여부" value="좌표 값 보유" />
+                    <Evidence
+                      label="정확도 한계"
+                      value={selectedLayer.accuracyNotice}
+                    />
+                    <Evidence
+                      label="다운로드 상태"
+                      value={
+                        selectedLayer.downloadStatus === "available"
+                          ? "가능"
+                          : selectedLayer.downloadStatus === "source-restricted"
+                          ? "원천 제약"
+                          : "미제공"
+                      }
+                    />
+                  </>
+                )}
               </div>
               <div className="cdp-action-row" style={{ marginTop: 14 }}>
                 <button
                   type="button"
                   className="cdp-button cdp-button--primary"
-                  onClick={() => onOpenElement(selected.elementId, countryIso3)}
+                  onClick={() => {
+                    const layer =
+                      selectedLayer ||
+                      layers.find((item) => item.elementId === selected.elementId);
+                    if (layer) openLayerDetailV125(layer);
+                  }}
                 >
                   데이터 상세
                 </button>
@@ -2035,11 +2348,15 @@ export default function RealMapExplorerPage({
                     </a>
                   )}
               </div>
-            </>
+            </div>
           ) : focusedLayer ? (
             <>
               <h2>{focusedLayer.publicTitle}</h2>
               <div className="cdp-evidence-grid">
+                <Evidence
+                  label="측정항목"
+                  value={focusedSemantic?.measureLabel || focusedLayer.legend.title}
+                />
                 <Evidence
                   label="기준연도/기간"
                   value={
@@ -2048,27 +2365,32 @@ export default function RealMapExplorerPage({
                   }
                 />
                 <Evidence
-                  label="변수"
-                  value={focusedVariable?.label || focusedLayer.legend.title}
+                  label="지표명"
+                  value={focusedSemantic?.indicatorLabel || focusedLayer.legend.title}
                 />
                 <Evidence
                   label="단위"
-                  value={focusedVariable?.unit || focusedLayer.unit}
+                  value={focusedSemantic?.unit || focusedVariable?.unit || focusedLayer.unit}
                 />
+                {focusedSemantic?.dimensions.map((dimension) => (
+                  <Evidence
+                    key={dimension.key}
+                    label={dimension.label}
+                    value={dimension.value}
+                  />
+                ))}
                 <Evidence
                   label="자료 제공기관"
                   value={focusedLayer.sourceOrganizations.join(" · ")}
                 />
                 <Evidence
                   label="공간 커버리지"
-                  value={focusedLayer.spatialCoverage}
+                  value={focusedCoverage}
                 />
                 <Evidence
                   label="결측지역"
                   value={
-                    focusedLayer.missingRegions.length
-                      ? focusedLayer.missingRegions.join(" · ")
-                      : "없음"
+                    focusedMissingReason
                   }
                 />
                 <Evidence
@@ -2081,9 +2403,7 @@ export default function RealMapExplorerPage({
                 <button
                   type="button"
                   className="cdp-button cdp-button--primary"
-                  onClick={() =>
-                    onOpenElement(focusedLayer.elementId, countryIso3)
-                  }
+                  onClick={() => openLayerDetailV125(focusedLayer)}
                 >
                   데이터 상세
                 </button>

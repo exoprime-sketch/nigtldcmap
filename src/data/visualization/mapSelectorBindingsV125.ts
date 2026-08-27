@@ -16,8 +16,24 @@ export type MapSelectorResolutionV125 = {
 export type MapSelectorAvailabilityV125 = {
   variables: ReadonlyArray<{
     key: string;
+    label?: string;
+    unit?: string;
     periods: readonly string[];
   }>;
+};
+
+export type MapSelectorStateV125 = {
+  variable: string;
+  period: string;
+};
+
+export type MapSemanticPresentationV125 = {
+  measureKey: string | null;
+  measureLabel: string;
+  indicatorLabel: string;
+  unit: string;
+  period: string;
+  dimensions: Array<{ key: string; label: string; value: string }>;
 };
 
 type MapSelectorBindingV125 = {
@@ -29,6 +45,55 @@ type MapSelectorBindingV125 = {
   yearToPeriod?: Record<string, string>;
   allowedPeriods?: readonly string[];
   elementOnly?: boolean;
+};
+
+const A024_LINE_MEASURE_V125 = "measure-d30e19e20b62";
+
+/**
+ * This is the checked, map-facing projection of the generated V125 semantic
+ * contract. Keys are the immutable semantic measure keys used by Data Finder;
+ * values are the same Korean labels published in that contract. The map never
+ * derives a second label by trimming an indicator or note string.
+ */
+const SEMANTIC_MEASURE_LABELS_V125: Record<string, string> = {
+  "measure-e5647010075d": "발전소 목록",
+  "measure-d30e19e20b62": "송전망 선로 목록",
+  "measure-ab1a3ae58df4": "GVI 취약성 지수",
+  "measure-f43b900eeeb1": "구성지표",
+  "measure-86da1cb1a3cb": "구성지표",
+  "measure-6c98c31d75ee": "구성지표",
+  "measure-41d1c0b7c82f": "구성지표",
+  "measure-4dd1d8339506": "구성지표",
+  "measure-8dab1a416248": "성(省)별 분석대상 면적",
+  "measure-f359324070f1": "성(省)별 수관 면적(2000)",
+  "measure-88bc7742d358": "성(省)별 수관 면적(2010)",
+  "measure-15d5f8e7a89f": "성(省)별 수관 피복률",
+  "measure-2d920961b8a8": "연간 수관 손실",
+  "measure-7b34d12b5808": "산림탄소 순플럭스",
+  "measure-cfc89d19fbf4": "성(省)별 산림탄소 순플럭스(연평균)",
+  "measure-673b73a1af2c": "성(省)별 산림탄소 총배출(연평균)",
+  "measure-a8111991c8e6": "성(省)별 산림탄소 총흡수(연평균)",
+  "measure-8e10584d8321": "성(省)별 지상부 탄소밀도",
+  "measure-20939584a8d3": "성(省)별 지상부 탄소저장량",
+  "measure-d2cff1d4fccb": "지상부 탄소저장량",
+  "measure-05aa50767eb1": "개정 PDP8 부록II 지역별 재생에너지 배분",
+  "measure-9de10ab2d1fb": "주관 부처별 기후 예산 규모",
+};
+
+const ELEMENT_ONLY_MEASURES_V125: Record<string, string> = {
+  "A-024": A024_LINE_MEASURE_V125,
+};
+
+const DIMENSION_LABELS_V125: Record<string, string> = {
+  category: "기술",
+  detail: "세부 분류",
+  detail_2: "지역",
+  region: "지역",
+  scenario: "시나리오",
+  sex: "성별",
+  status: "상태",
+  technology: "기술",
+  voltageKv: "전압",
 };
 
 const NON_SEMANTIC_DIMENSION_KEYS_V125 = new Set(["year", "period"]);
@@ -281,13 +346,60 @@ export function resolveMapSelectorBindingV125(
     };
   }
 
+  if (elementId === "A-024") {
+    const voltage = selection.dimensions.voltageKv;
+    const status = selection.dimensions.status;
+    const requestsLineSelector = Boolean(
+      selection.measure === A024_LINE_MEASURE_V125 || voltage || status
+    );
+    if (requestsLineSelector) {
+      if (selection.measure && selection.measure !== A024_LINE_MEASURE_V125) {
+        return unsupportedResolutionV125(
+          "선택한 측정항목은 송전망 선 geometry와 연결되지 않습니다."
+        );
+      }
+      if (voltage && !["all", "110", "220", "500"].includes(voltage)) {
+        return unsupportedResolutionV125(
+          `${voltage} kV는 검증된 송전망 전압 selector가 아닙니다.`
+        );
+      }
+      if (status && !["all", "existing"].includes(status)) {
+        return unsupportedResolutionV125(
+          `${status} 상태는 현재 공간 원천에 존재하지 않습니다.`
+        );
+      }
+      if (
+        (selection.year !== null && selection.year !== 2016) ||
+        (selection.period && selection.period !== "2016")
+      ) {
+        return unsupportedResolutionV125(
+          "A-024 실제 송전망 geometry의 기준연도는 2016년입니다."
+        );
+      }
+      const variable = voltage && voltage !== "all" ? voltage : "all";
+      const availabilityReason = availabilityMismatchReasonV125(
+        { elementId, mapVariable: variable, fixedPeriod: "2016" },
+        "2016",
+        availability
+      );
+      if (availabilityReason) return unsupportedResolutionV125(availabilityReason);
+      return {
+        variable,
+        period: "2016",
+        status: "matched",
+        reason: null,
+      };
+    }
+  }
+
   const elementOnly = bindings.find((binding) => binding.elementOnly);
   if (elementOnly) {
     const hasUnsupportedFilter = Boolean(
       selection.measure ||
         selection.sex ||
-        selection.year !== null ||
-        selection.period ||
+        (selection.year !== null &&
+          String(selection.year) !== elementOnly.fixedPeriod) ||
+        (selection.period && selection.period !== elementOnly.fixedPeriod) ||
         selectedDimensionEntriesV125(selection).length
     );
     return {
@@ -338,6 +450,117 @@ export function resolveMapSelectorBindingV125(
     status: hasSelection ? "unsupported-selector" : "default",
     reason: hasSelection ? unmatchedBindingReasonV125(bindings, selection) : null,
   };
+}
+
+/** Convert the current map selector into the exact Data Finder semantic state. */
+export function dataFinderSelectorFromMapV125(
+  elementId: string,
+  mapSelector: MapSelectorStateV125,
+  filterDimensions: Record<string, string> = {}
+): DataFinderSelectorStateV125 {
+  if (elementId === "A-024") {
+    const dimensions: Record<string, string> = {};
+    if (mapSelector.variable !== "all") {
+      dimensions.voltageKv = mapSelector.variable;
+    }
+    Object.entries(filterDimensions).forEach(([key, value]) => {
+      if (value && value !== "all") dimensions[key] = value;
+    });
+    return {
+      measure: A024_LINE_MEASURE_V125,
+      sex: null,
+      year: 2016,
+      period: "2016",
+      dimensions,
+    };
+  }
+
+  const candidates = MAP_SELECTOR_BINDINGS_V125.filter(
+    (binding) =>
+      binding.elementId === elementId && binding.mapVariable === mapSelector.variable
+  );
+  const binding =
+    candidates.find((candidate) =>
+      bindingSupportsPeriodV125(candidate, mapSelector.period)
+    ) || candidates[0];
+  const dimensions: Record<string, string> = {
+    ...(binding?.dimensions || {}),
+  };
+  Object.entries(filterDimensions).forEach(([key, value]) => {
+    if (value && value !== "all") dimensions[key] = value;
+  });
+  const year = semanticYearForPeriodV125(binding, mapSelector.period);
+  const period = mapSelector.period && mapSelector.period !== "미표기"
+    ? mapSelector.period
+    : null;
+  return {
+    measure:
+      binding?.semanticMeasure || ELEMENT_ONLY_MEASURES_V125[elementId] || null,
+    sex: null,
+    year,
+    period,
+    dimensions,
+  };
+}
+
+/**
+ * Build the shared semantic text shown by both map controls and feature detail.
+ * The semantic measure key/label comes from the V125 projection above; the
+ * indicator label and unit come from the verified V124 spatial selector tuple.
+ */
+export function resolveMapSemanticPresentationV125(
+  elementId: string,
+  selector: MapSelectorStateV125,
+  availability: MapSelectorAvailabilityV125,
+  filterDimensions: Record<string, string> = {},
+  fallbackMeasureLabel = "지도 공간 레코드"
+): MapSemanticPresentationV125 {
+  const state = dataFinderSelectorFromMapV125(
+    elementId,
+    selector,
+    filterDimensions
+  );
+  const option = availability.variables.find(
+    (candidate) => candidate.key === selector.variable
+  );
+  return {
+    measureKey: state.measure,
+    measureLabel:
+      (state.measure && SEMANTIC_MEASURE_LABELS_V125[state.measure]) ||
+      fallbackMeasureLabel,
+    indicatorLabel: option?.label || fallbackMeasureLabel,
+    unit: option?.unit || "미표기",
+    period: selector.period,
+    dimensions: Object.entries(state.dimensions)
+      .filter(([, value]) => Boolean(value))
+      .sort(([left], [right]) => left.localeCompare(right))
+      .map(([key, value]) => ({
+        key,
+        label: DIMENSION_LABELS_V125[key] || key,
+        value: semanticDimensionValueLabelV125(key, value),
+      })),
+  };
+}
+
+export function mapVariableSelectorLabelV125(elementId: string): string {
+  if (elementId === "A-024") return "전압";
+  if (elementId === "B-034") return "탄소지표";
+  if (elementId === "C-016") return "기술";
+  return "측정항목";
+}
+
+export function mapPeriodSelectorLabelV125(elementId: string): string {
+  if (elementId === "C-016" || elementId === "D-008") return "기간";
+  return "기준연도";
+}
+
+export function semanticDimensionValueLabelV125(
+  key: string,
+  value: string
+): string {
+  if (key === "status" && value === "existing") return "기존·운영 중";
+  if (key === "voltageKv" && value !== "all") return `${value} kV`;
+  return value;
 }
 
 function bindingMatchesV125(
@@ -458,6 +681,35 @@ function unsupportedResolutionV125(reason: string): MapSelectorResolutionV125 {
     status: "unsupported-selector",
     reason,
   };
+}
+
+function bindingSupportsPeriodV125(
+  binding: MapSelectorBindingV125,
+  period: string
+): boolean {
+  if (binding.fixedPeriod) return binding.fixedPeriod === period;
+  const periods = new Set([
+    ...(binding.allowedPeriods || []),
+    ...Object.values(binding.yearToPeriod || {}),
+  ]);
+  return periods.size === 0 || periods.has(period);
+}
+
+function semanticYearForPeriodV125(
+  binding: MapSelectorBindingV125 | undefined,
+  period: string
+): number | null {
+  if (binding?.yearToPeriod) {
+    const exact = Object.entries(binding.yearToPeriod).find(
+      ([, mappedPeriod]) => mappedPeriod === period
+    )?.[0];
+    if (exact && /^\d{4}$/.test(exact)) return Number(exact);
+  }
+  if (/^\d{4}$/.test(period)) return Number(period);
+  if (period === "2010-2013") return 2013;
+  if (period === "2025-2030") return 2025;
+  if (period === "2031-2035") return 2031;
+  return null;
 }
 
 function yearPeriodV125(year: number | null): string | null {

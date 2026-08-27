@@ -91,12 +91,14 @@ function startsWithHtml(value: string): boolean {
 
 async function fetchTextChecked(
   url: string,
-  cacheMode: RequestCache = "default"
+  cacheMode: RequestCache = "default",
+  signal?: AbortSignal
 ): Promise<{ text: string; contentType: string; responseUrl: string }> {
   let response: Response;
   try {
-    response = await fetch(url, { cache: cacheMode });
+    response = await fetch(url, { cache: cacheMode, signal });
   } catch (error) {
+    if (signal?.aborted) throw error;
     throw new VietnamAssetErrorV124(
       "ASSET_HTTP_ERROR",
       `정적 자산 요청 실패: ${url}`,
@@ -134,10 +136,11 @@ async function fetchTextChecked(
 
 async function fetchJson<T>(
   url: string,
-  cacheMode: RequestCache = "default"
+  cacheMode: RequestCache = "default",
+  signal?: AbortSignal
 ): Promise<T> {
-  return cachePromise(jsonCache, `${cacheMode}:${url}`, async () => {
-    const result = await fetchTextChecked(url, cacheMode);
+  const read = async () => {
+    const result = await fetchTextChecked(url, cacheMode, signal);
     try {
       return JSON.parse(result.text) as T;
     } catch (error) {
@@ -153,7 +156,10 @@ async function fetchJson<T>(
         }
       );
     }
-  });
+  };
+  // Abortable layer requests must not share an underlying fetch owned by a
+  // different layer. Successful non-abortable reads retain the existing cache.
+  return signal ? read() : cachePromise(jsonCache, `${cacheMode}:${url}`, read);
 }
 
 function assertElementId(elementId: string): void {
@@ -591,10 +597,15 @@ function assertVietnamV124MapAssetUrl(url: string): void {
 }
 
 export async function loadVietnamSpatialLayerV124(
-  dataUrl: string
+  dataUrl: string,
+  signal?: AbortSignal
 ): Promise<VietnamSpatialLayerAssetV124> {
   assertVietnamV124MapAssetUrl(dataUrl);
-  const payload = await fetchJson<VietnamSpatialLayerAssetV124>(dataUrl);
+  const payload = await fetchJson<VietnamSpatialLayerAssetV124>(
+    dataUrl,
+    "default",
+    signal
+  );
   if (
     payload.schemaVersion !== "v124" ||
     payload.assetSchemaVersion !== "v124-spatial-layer-1" ||
@@ -610,10 +621,15 @@ export async function loadVietnamSpatialLayerV124(
 }
 
 export async function loadVietnamSpatialGeoJsonV124(
-  geometryUrl: string
+  geometryUrl: string,
+  signal?: AbortSignal
 ): Promise<VietnamMapGeoJsonV124> {
   assertVietnamV124MapAssetUrl(geometryUrl);
-  const payload = await fetchJson<VietnamMapGeoJsonV124>(geometryUrl);
+  const payload = await fetchJson<VietnamMapGeoJsonV124>(
+    geometryUrl,
+    "default",
+    signal
+  );
   if (payload.type !== "FeatureCollection" || !Array.isArray(payload.features)) {
     throw new VietnamAssetErrorV124(
       "ASSET_SCHEMA_INVALID",
