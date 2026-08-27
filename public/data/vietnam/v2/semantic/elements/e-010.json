@@ -1,0 +1,814 @@
+{
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 24,
+      "values": [
+        "GDP 대비 R&D 총지출 비율",
+        "Innovation Input Sub-Index 순위",
+        "Innovation Input Sub-Index 점수",
+        "Innovation Output Sub-Index 순위",
+        "Innovation Output Sub-Index 점수",
+        "Pillar 1 Institutions 순위",
+        "Pillar 1 Institutions 점수",
+        "Pillar 2 Human capital & research 순위",
+        "Pillar 2 Human capital & research 점수",
+        "Pillar 3 Infrastructure 순위",
+        "Pillar 3 Infrastructure 점수",
+        "Pillar 4 Market sophistication 순위",
+        "Pillar 4 Market sophistication 점수",
+        "Pillar 5 Business sophistication 순위",
+        "Pillar 5 Business sophistication 점수",
+        "Pillar 6 Knowledge & technology outputs 순위",
+        "Pillar 6 Knowledge & technology outputs 점수",
+        "Pillar 7 Creative outputs 순위",
+        "Pillar 7 Creative outputs 점수",
+        "R&D 총지출 절대액",
+        "소득그룹(저중소득국) 내 순위",
+        "종합 순위",
+        "종합 점수",
+        "지역(동남아·동아시아·오세아니아) 내 순위"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 8,
+      "values": [
+        "2011",
+        "2013",
+        "2015",
+        "2017",
+        "2019",
+        "2021",
+        "2023",
+        "2025"
+      ]
+    }
+  ],
+  "elementId": "E-010",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 24,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-8118ac1e0789|USD",
+      "dimensionLabels": {
+        "detail": "R&D 총지출 절대액"
+      },
+      "dimensions": {
+        "detail": "R&D 총지출 절대액"
+      },
+      "displayLabel": "GERD — R&D 총지출 절대액",
+      "indicatorId": "E-010_gerd_absolute",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8118ac1e0789",
+        "labelKo": "GERD",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-8118ac1e0789|USD|detail=R&D 총지출 절대액|E-010_gerd_absolute",
+      "sourceCaveat": null,
+      "sourceLabel": "GERD — R&D 총지출 절대액",
+      "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-010",
+        "indicatorId": "E-010_gerd_absolute",
+        "sourceFileDecoded": "E-010_UNESCO UIS의 R&D 지출(GRED), WIPO 혁신지수(GII).xlsx",
+        "sourceRow": 28,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6f94f67e75e4|%",
+      "dimensionLabels": {
+        "detail": "GDP 대비 R&D 총지출 비율"
+      },
+      "dimensions": {
+        "detail": "GDP 대비 R&D 총지출 비율"
+      },
+      "displayLabel": "GERD — GDP 대비 R&D 총지출 비율",
+      "indicatorId": "E-010_gerd_pct_gdp",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6f94f67e75e4",
+        "labelKo": "GERD",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-6f94f67e75e4|%|detail=GDP 대비 R&D 총지출 비율|E-010_gerd_pct_gdp",
+      "sourceCaveat": null,
+      "sourceLabel": "GERD — GDP 대비 R&D 총지출 비율",
+      "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-010",
+        "indicatorId": "E-010_gerd_pct_gdp",
+        "sourceFileDecoded": "E-010_UNESCO UIS의 R&D 지출(GRED), WIPO 혁신지수(GII).xlsx",
+        "sourceRow": 27,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-48c6fb7ad3c4|순위",
+      "dimensionLabels": {
+        "detail": "소득그룹(저중소득국) 내 순위"
+      },
+      "dimensions": {
+        "detail": "소득그룹(저중소득국) 내 순위"
+      },
+      "displayLabel": "GII 2025 — 소득그룹(저중소득국) 내 순위",
+      "indicatorId": "E-010_gii_income_group_rank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-48c6fb7ad3c4",
+        "labelKo": "GII 2025",
+        "unit": "순위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-48c6fb7ad3c4|순위|detail=소득그룹(저중소득국) 내 순위|E-010_gii_income_group_rank",
+      "sourceCaveat": null,
+      "sourceLabel": "GII 2025 — 소득그룹(저중소득국) 내 순위",
+      "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-010",
+        "indicatorId": "E-010_gii_income_group_rank",
+        "sourceFileDecoded": "E-010_UNESCO UIS의 R&D 지출(GRED), WIPO 혁신지수(GII).xlsx",
+        "sourceRow": 25,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-48c6fb7ad3c4|순위",
+      "dimensionLabels": {
+        "detail": "Innovation Input Sub-Index 순위"
+      },
+      "dimensions": {
+        "detail": "Innovation Input Sub-Index 순위"
+      },
+      "displayLabel": "GII 2025 — Innovation Input Sub-Index 순위",
+      "indicatorId": "E-010_gii_input_subindex_rank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-48c6fb7ad3c4",
+        "labelKo": "GII 2025",
+        "unit": "순위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-48c6fb7ad3c4|순위|detail=Innovation Input Sub-Index 순위|E-010_gii_input_subindex_rank",
+      "sourceCaveat": null,
+      "sourceLabel": "GII 2025 — Innovation Input Sub-Index 순위",
+      "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-010",
+        "indicatorId": "E-010_gii_input_subindex_rank",
+        "sourceFileDecoded": "E-010_UNESCO UIS의 R&D 지출(GRED), WIPO 혁신지수(GII).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5480f474cca7|점수",
+      "dimensionLabels": {
+        "detail": "Innovation Input Sub-Index 점수"
+      },
+      "dimensions": {
+        "detail": "Innovation Input Sub-Index 점수"
+      },
+      "displayLabel": "GII 2025 — Innovation Input Sub-Index 점수",
+      "indicatorId": "E-010_gii_input_subindex_score",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5480f474cca7",
+        "labelKo": "GII 2025",
+        "unit": "점수",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-5480f474cca7|점수|detail=Innovation Input Sub-Index 점수|E-010_gii_input_subindex_score",
+      "sourceCaveat": null,
+      "sourceLabel": "GII 2025 — Innovation Input Sub-Index 점수",
+      "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-010",
+        "indicatorId": "E-010_gii_input_subindex_score",
+        "sourceFileDecoded": "E-010_UNESCO UIS의 R&D 지출(GRED), WIPO 혁신지수(GII).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-48c6fb7ad3c4|순위",
+      "dimensionLabels": {
+        "detail": "Innovation Output Sub-Index 순위"
+      },
+      "dimensions": {
+        "detail": "Innovation Output Sub-Index 순위"
+      },
+      "displayLabel": "GII 2025 — Innovation Output Sub-Index 순위",
+      "indicatorId": "E-010_gii_output_subindex_rank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-48c6fb7ad3c4",
+        "labelKo": "GII 2025",
+        "unit": "순위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-48c6fb7ad3c4|순위|detail=Innovation Output Sub-Index 순위|E-010_gii_output_subindex_rank",
+      "sourceCaveat": null,
+      "sourceLabel": "GII 2025 — Innovation Output Sub-Index 순위",
+      "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-010",
+        "indicatorId": "E-010_gii_output_subindex_rank",
+        "sourceFileDecoded": "E-010_UNESCO UIS의 R&D 지출(GRED), WIPO 혁신지수(GII).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5480f474cca7|점수",
+      "dimensionLabels": {
+        "detail": "Innovation Output Sub-Index 점수"
+      },
+      "dimensions": {
+        "detail": "Innovation Output Sub-Index 점수"
+      },
+      "displayLabel": "GII 2025 — Innovation Output Sub-Index 점수",
+      "indicatorId": "E-010_gii_output_subindex_score",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5480f474cca7",
+        "labelKo": "GII 2025",
+        "unit": "점수",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-5480f474cca7|점수|detail=Innovation Output Sub-Index 점수|E-010_gii_output_subindex_score",
+      "sourceCaveat": null,
+      "sourceLabel": "GII 2025 — Innovation Output Sub-Index 점수",
+      "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-010",
+        "indicatorId": "E-010_gii_output_subindex_score",
+        "sourceFileDecoded": "E-010_UNESCO UIS의 R&D 지출(GRED), WIPO 혁신지수(GII).xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-48c6fb7ad3c4|순위",
+      "dimensionLabels": {
+        "detail": "종합 순위"
+      },
+      "dimensions": {
+        "detail": "종합 순위"
+      },
+      "displayLabel": "GII 2025 — 종합 순위",
+      "indicatorId": "E-010_gii_overall_rank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-48c6fb7ad3c4",
+        "labelKo": "GII 2025",
+        "unit": "순위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-48c6fb7ad3c4|순위|detail=종합 순위|E-010_gii_overall_rank",
+      "sourceCaveat": "★GII 2024는 133개국, GII 2025는 139개국 기준이므로 연도 간 순위 단순비교 불가. 베트남은 양년 모두 44위이나 모집단 확대로 실질 상대위치는 개선. 순위 지표는 값이 작을수록 우수 — 방향 주의.",
+      "sourceLabel": "GII 2025 — 종합 순위",
+      "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
+      "sourceNote": "★GII 2024는 133개국, GII 2025는 139개국 기준이므로 연도 간 순위 단순비교 불가. 베트남은 양년 모두 44위이나 모집단 확대로 실질 상대위치는 개선. 순위 지표는 값이 작을수록 우수 — 방향 주의.",
+      "sourceProvenance": {
+        "elementId": "E-010",
+        "indicatorId": "E-010_gii_overall_rank",
+        "sourceFileDecoded": "E-010_UNESCO UIS의 R&D 지출(GRED), WIPO 혁신지수(GII).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5480f474cca7|점수",
+      "dimensionLabels": {
+        "detail": "종합 점수"
+      },
+      "dimensions": {
+        "detail": "종합 점수"
+      },
+      "displayLabel": "GII 2025 — 종합 점수",
+      "indicatorId": "E-010_gii_overall_score",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5480f474cca7",
+        "labelKo": "GII 2025",
+        "unit": "점수",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-5480f474cca7|점수|detail=종합 점수|E-010_gii_overall_score",
+      "sourceCaveat": null,
+      "sourceLabel": "GII 2025 — 종합 점수",
+      "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-010",
+        "indicatorId": "E-010_gii_overall_score",
+        "sourceFileDecoded": "E-010_UNESCO UIS의 R&D 지출(GRED), WIPO 혁신지수(GII).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-48c6fb7ad3c4|순위",
+      "dimensionLabels": {
+        "detail": "Pillar 1 Institutions 순위"
+      },
+      "dimensions": {
+        "detail": "Pillar 1 Institutions 순위"
+      },
+      "displayLabel": "GII 2025 — Pillar 1 Institutions 순위",
+      "indicatorId": "E-010_gii_p1_institutions_rank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-48c6fb7ad3c4",
+        "labelKo": "GII 2025",
+        "unit": "순위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-48c6fb7ad3c4|순위|detail=Pillar 1 Institutions 순위|E-010_gii_p1_institutions_rank",
+      "sourceCaveat": null,
+      "sourceLabel": "GII 2025 — Pillar 1 Institutions 순위",
+      "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-010",
+        "indicatorId": "E-010_gii_p1_institutions_rank",
+        "sourceFileDecoded": "E-010_UNESCO UIS의 R&D 지출(GRED), WIPO 혁신지수(GII).xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5480f474cca7|점수",
+      "dimensionLabels": {
+        "detail": "Pillar 1 Institutions 점수"
+      },
+      "dimensions": {
+        "detail": "Pillar 1 Institutions 점수"
+      },
+      "displayLabel": "GII 2025 — Pillar 1 Institutions 점수",
+      "indicatorId": "E-010_gii_p1_institutions_score",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5480f474cca7",
+        "labelKo": "GII 2025",
+        "unit": "점수",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-5480f474cca7|점수|detail=Pillar 1 Institutions 점수|E-010_gii_p1_institutions_score",
+      "sourceCaveat": null,
+      "sourceLabel": "GII 2025 — Pillar 1 Institutions 점수",
+      "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-010",
+        "indicatorId": "E-010_gii_p1_institutions_score",
+        "sourceFileDecoded": "E-010_UNESCO UIS의 R&D 지출(GRED), WIPO 혁신지수(GII).xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-48c6fb7ad3c4|순위",
+      "dimensionLabels": {
+        "detail": "Pillar 2 Human capital & research 순위"
+      },
+      "dimensions": {
+        "detail": "Pillar 2 Human capital & research 순위"
+      },
+      "displayLabel": "GII 2025 — Pillar 2 Human capital & research 순위",
+      "indicatorId": "E-010_gii_p2_human_capital_research_rank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-48c6fb7ad3c4",
+        "labelKo": "GII 2025",
+        "unit": "순위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-48c6fb7ad3c4|순위|detail=Pillar 2 Human capital & research 순위|E-010_gii_p2_human_capital_research_rank",
+      "sourceCaveat": null,
+      "sourceLabel": "GII 2025 — Pillar 2 Human capital & research 순위",
+      "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-010",
+        "indicatorId": "E-010_gii_p2_human_capital_research_rank",
+        "sourceFileDecoded": "E-010_UNESCO UIS의 R&D 지출(GRED), WIPO 혁신지수(GII).xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5480f474cca7|점수",
+      "dimensionLabels": {
+        "detail": "Pillar 2 Human capital & research 점수"
+      },
+      "dimensions": {
+        "detail": "Pillar 2 Human capital & research 점수"
+      },
+      "displayLabel": "GII 2025 — Pillar 2 Human capital & research 점수",
+      "indicatorId": "E-010_gii_p2_human_capital_research_score",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5480f474cca7",
+        "labelKo": "GII 2025",
+        "unit": "점수",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-5480f474cca7|점수|detail=Pillar 2 Human capital & research 점수|E-010_gii_p2_human_capital_research_score",
+      "sourceCaveat": null,
+      "sourceLabel": "GII 2025 — Pillar 2 Human capital & research 점수",
+      "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-010",
+        "indicatorId": "E-010_gii_p2_human_capital_research_score",
+        "sourceFileDecoded": "E-010_UNESCO UIS의 R&D 지출(GRED), WIPO 혁신지수(GII).xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-48c6fb7ad3c4|순위",
+      "dimensionLabels": {
+        "detail": "Pillar 3 Infrastructure 순위"
+      },
+      "dimensions": {
+        "detail": "Pillar 3 Infrastructure 순위"
+      },
+      "displayLabel": "GII 2025 — Pillar 3 Infrastructure 순위",
+      "indicatorId": "E-010_gii_p3_infrastructure_rank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-48c6fb7ad3c4",
+        "labelKo": "GII 2025",
+        "unit": "순위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-48c6fb7ad3c4|순위|detail=Pillar 3 Infrastructure 순위|E-010_gii_p3_infrastructure_rank",
+      "sourceCaveat": null,
+      "sourceLabel": "GII 2025 — Pillar 3 Infrastructure 순위",
+      "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-010",
+        "indicatorId": "E-010_gii_p3_infrastructure_rank",
+        "sourceFileDecoded": "E-010_UNESCO UIS의 R&D 지출(GRED), WIPO 혁신지수(GII).xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5480f474cca7|점수",
+      "dimensionLabels": {
+        "detail": "Pillar 3 Infrastructure 점수"
+      },
+      "dimensions": {
+        "detail": "Pillar 3 Infrastructure 점수"
+      },
+      "displayLabel": "GII 2025 — Pillar 3 Infrastructure 점수",
+      "indicatorId": "E-010_gii_p3_infrastructure_score",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5480f474cca7",
+        "labelKo": "GII 2025",
+        "unit": "점수",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-5480f474cca7|점수|detail=Pillar 3 Infrastructure 점수|E-010_gii_p3_infrastructure_score",
+      "sourceCaveat": null,
+      "sourceLabel": "GII 2025 — Pillar 3 Infrastructure 점수",
+      "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-010",
+        "indicatorId": "E-010_gii_p3_infrastructure_score",
+        "sourceFileDecoded": "E-010_UNESCO UIS의 R&D 지출(GRED), WIPO 혁신지수(GII).xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-48c6fb7ad3c4|순위",
+      "dimensionLabels": {
+        "detail": "Pillar 4 Market sophistication 순위"
+      },
+      "dimensions": {
+        "detail": "Pillar 4 Market sophistication 순위"
+      },
+      "displayLabel": "GII 2025 — Pillar 4 Market sophistication 순위",
+      "indicatorId": "E-010_gii_p4_market_sophistication_rank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-48c6fb7ad3c4",
+        "labelKo": "GII 2025",
+        "unit": "순위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-48c6fb7ad3c4|순위|detail=Pillar 4 Market sophistication 순위|E-010_gii_p4_market_sophistication_rank",
+      "sourceCaveat": null,
+      "sourceLabel": "GII 2025 — Pillar 4 Market sophistication 순위",
+      "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-010",
+        "indicatorId": "E-010_gii_p4_market_sophistication_rank",
+        "sourceFileDecoded": "E-010_UNESCO UIS의 R&D 지출(GRED), WIPO 혁신지수(GII).xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5480f474cca7|점수",
+      "dimensionLabels": {
+        "detail": "Pillar 4 Market sophistication 점수"
+      },
+      "dimensions": {
+        "detail": "Pillar 4 Market sophistication 점수"
+      },
+      "displayLabel": "GII 2025 — Pillar 4 Market sophistication 점수",
+      "indicatorId": "E-010_gii_p4_market_sophistication_score",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5480f474cca7",
+        "labelKo": "GII 2025",
+        "unit": "점수",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-5480f474cca7|점수|detail=Pillar 4 Market sophistication 점수|E-010_gii_p4_market_sophistication_score",
+      "sourceCaveat": null,
+      "sourceLabel": "GII 2025 — Pillar 4 Market sophistication 점수",
+      "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-010",
+        "indicatorId": "E-010_gii_p4_market_sophistication_score",
+        "sourceFileDecoded": "E-010_UNESCO UIS의 R&D 지출(GRED), WIPO 혁신지수(GII).xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-48c6fb7ad3c4|순위",
+      "dimensionLabels": {
+        "detail": "Pillar 5 Business sophistication 순위"
+      },
+      "dimensions": {
+        "detail": "Pillar 5 Business sophistication 순위"
+      },
+      "displayLabel": "GII 2025 — Pillar 5 Business sophistication 순위",
+      "indicatorId": "E-010_gii_p5_business_sophistication_rank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-48c6fb7ad3c4",
+        "labelKo": "GII 2025",
+        "unit": "순위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-48c6fb7ad3c4|순위|detail=Pillar 5 Business sophistication 순위|E-010_gii_p5_business_sophistication_rank",
+      "sourceCaveat": null,
+      "sourceLabel": "GII 2025 — Pillar 5 Business sophistication 순위",
+      "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-010",
+        "indicatorId": "E-010_gii_p5_business_sophistication_rank",
+        "sourceFileDecoded": "E-010_UNESCO UIS의 R&D 지출(GRED), WIPO 혁신지수(GII).xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5480f474cca7|점수",
+      "dimensionLabels": {
+        "detail": "Pillar 5 Business sophistication 점수"
+      },
+      "dimensions": {
+        "detail": "Pillar 5 Business sophistication 점수"
+      },
+      "displayLabel": "GII 2025 — Pillar 5 Business sophistication 점수",
+      "indicatorId": "E-010_gii_p5_business_sophistication_score",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5480f474cca7",
+        "labelKo": "GII 2025",
+        "unit": "점수",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-5480f474cca7|점수|detail=Pillar 5 Business sophistication 점수|E-010_gii_p5_business_sophistication_score",
+      "sourceCaveat": null,
+      "sourceLabel": "GII 2025 — Pillar 5 Business sophistication 점수",
+      "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-010",
+        "indicatorId": "E-010_gii_p5_business_sophistication_score",
+        "sourceFileDecoded": "E-010_UNESCO UIS의 R&D 지출(GRED), WIPO 혁신지수(GII).xlsx",
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-48c6fb7ad3c4|순위",
+      "dimensionLabels": {
+        "detail": "Pillar 6 Knowledge & technology outputs 순위"
+      },
+      "dimensions": {
+        "detail": "Pillar 6 Knowledge & technology outputs 순위"
+      },
+      "displayLabel": "GII 2025 — Pillar 6 Knowledge & technology outputs 순위",
+      "indicatorId": "E-010_gii_p6_knowledge_tech_outputs_rank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-48c6fb7ad3c4",
+        "labelKo": "GII 2025",
+        "unit": "순위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-48c6fb7ad3c4|순위|detail=Pillar 6 Knowledge & technology outputs 순위|E-010_gii_p6_knowledge_tech_outputs_rank",
+      "sourceCaveat": null,
+      "sourceLabel": "GII 2025 — Pillar 6 Knowledge & technology outputs 순위",
+      "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-010",
+        "indicatorId": "E-010_gii_p6_knowledge_tech_outputs_rank",
+        "sourceFileDecoded": "E-010_UNESCO UIS의 R&D 지출(GRED), WIPO 혁신지수(GII).xlsx",
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5480f474cca7|점수",
+      "dimensionLabels": {
+        "detail": "Pillar 6 Knowledge & technology outputs 점수"
+      },
+      "dimensions": {
+        "detail": "Pillar 6 Knowledge & technology outputs 점수"
+      },
+      "displayLabel": "GII 2025 — Pillar 6 Knowledge & technology outputs 점수",
+      "indicatorId": "E-010_gii_p6_knowledge_tech_outputs_score",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5480f474cca7",
+        "labelKo": "GII 2025",
+        "unit": "점수",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-5480f474cca7|점수|detail=Pillar 6 Knowledge & technology outputs 점수|E-010_gii_p6_knowledge_tech_outputs_score",
+      "sourceCaveat": null,
+      "sourceLabel": "GII 2025 — Pillar 6 Knowledge & technology outputs 점수",
+      "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-010",
+        "indicatorId": "E-010_gii_p6_knowledge_tech_outputs_score",
+        "sourceFileDecoded": "E-010_UNESCO UIS의 R&D 지출(GRED), WIPO 혁신지수(GII).xlsx",
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-48c6fb7ad3c4|순위",
+      "dimensionLabels": {
+        "detail": "Pillar 7 Creative outputs 순위"
+      },
+      "dimensions": {
+        "detail": "Pillar 7 Creative outputs 순위"
+      },
+      "displayLabel": "GII 2025 — Pillar 7 Creative outputs 순위",
+      "indicatorId": "E-010_gii_p7_creative_outputs_rank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-48c6fb7ad3c4",
+        "labelKo": "GII 2025",
+        "unit": "순위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-48c6fb7ad3c4|순위|detail=Pillar 7 Creative outputs 순위|E-010_gii_p7_creative_outputs_rank",
+      "sourceCaveat": null,
+      "sourceLabel": "GII 2025 — Pillar 7 Creative outputs 순위",
+      "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-010",
+        "indicatorId": "E-010_gii_p7_creative_outputs_rank",
+        "sourceFileDecoded": "E-010_UNESCO UIS의 R&D 지출(GRED), WIPO 혁신지수(GII).xlsx",
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5480f474cca7|점수",
+      "dimensionLabels": {
+        "detail": "Pillar 7 Creative outputs 점수"
+      },
+      "dimensions": {
+        "detail": "Pillar 7 Creative outputs 점수"
+      },
+      "displayLabel": "GII 2025 — Pillar 7 Creative outputs 점수",
+      "indicatorId": "E-010_gii_p7_creative_outputs_score",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5480f474cca7",
+        "labelKo": "GII 2025",
+        "unit": "점수",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-5480f474cca7|점수|detail=Pillar 7 Creative outputs 점수|E-010_gii_p7_creative_outputs_score",
+      "sourceCaveat": null,
+      "sourceLabel": "GII 2025 — Pillar 7 Creative outputs 점수",
+      "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-010",
+        "indicatorId": "E-010_gii_p7_creative_outputs_score",
+        "sourceFileDecoded": "E-010_UNESCO UIS의 R&D 지출(GRED), WIPO 혁신지수(GII).xlsx",
+        "sourceRow": 24,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-48c6fb7ad3c4|순위",
+      "dimensionLabels": {
+        "detail": "지역(동남아·동아시아·오세아니아) 내 순위"
+      },
+      "dimensions": {
+        "detail": "지역(동남아·동아시아·오세아니아) 내 순위"
+      },
+      "displayLabel": "GII 2025 — 지역(동남아·동아시아·오세아니아) 내 순위",
+      "indicatorId": "E-010_gii_region_rank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-48c6fb7ad3c4",
+        "labelKo": "GII 2025",
+        "unit": "순위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-48c6fb7ad3c4|순위|detail=지역(동남아·동아시아·오세아니아) 내 순위|E-010_gii_region_rank",
+      "sourceCaveat": null,
+      "sourceLabel": "GII 2025 — 지역(동남아·동아시아·오세아니아) 내 순위",
+      "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-010",
+        "indicatorId": "E-010_gii_region_rank",
+        "sourceFileDecoded": "E-010_UNESCO UIS의 R&D 지출(GRED), WIPO 혁신지수(GII).xlsx",
+        "sourceRow": 26,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-6f94f67e75e4",
+      "labelKo": "GERD",
+      "recordCount": 7,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-8118ac1e0789",
+      "labelKo": "GERD",
+      "recordCount": 1,
+      "unit": "USD",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 12,
+      "key": "measure-48c6fb7ad3c4",
+      "labelKo": "GII 2025",
+      "recordCount": 12,
+      "unit": "순위",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 10,
+      "key": "measure-5480f474cca7",
+      "labelKo": "GII 2025",
+      "recordCount": 10,
+      "unit": "점수",
+      "unitFamily": "score"
+    }
+  ],
+  "observationCount": 30,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

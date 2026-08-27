@@ -1,0 +1,951 @@
+{
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "groups": [
+    {
+      "elementId": "B-010",
+      "indicatorIds": [
+        "B-010_cri_event_2024_01",
+        "B-010_cri_event_2024_02"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "2024년 최대 피해 극한기상 사건 — CRI 2026 본문 · CRI 2026 full report · cri_event_2024_01",
+        "2024년 최대 피해 극한기상 사건 — CRI 2026 본문 · CRI 2026 full report · cri_event_2024_02"
+      ],
+      "sourceLabel": "2024년 최대 피해 극한기상 사건 — CRI 2026 본문",
+      "units": [
+        "사건"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_cc_inf_com_elaccs",
+        "B-020_trend_eg_elc_accs_zs"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Access to electricity · INFORM 추세 [점]",
+        "INFORM 추세 — Access to electricity · INFORM 추세 [원값]"
+      ],
+      "sourceLabel": "INFORM 추세 — Access to electricity",
+      "units": [
+        "원값",
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_hiv",
+        "B-020_trend_vu_vgr_og_he_hiv_prv"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Adult prevalence of HIV-AIDS · INFORM 추세 [원값]",
+        "INFORM 추세 — Adult prevalence of HIV-AIDS · INFORM 추세 [점]"
+      ],
+      "sourceLabel": "INFORM 추세 — Adult prevalence of HIV-AIDS",
+      "units": [
+        "원값",
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_ha_nat_dr_asi",
+        "B-020_trend_ha_nat_dr_asi_temp"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Agriculture Drought Probability · IndicatorId=HA.NAT.DR.ASI, Type=INFORM Index · trend_ha_nat_dr_asi",
+        "INFORM 추세 — Agriculture Drought Probability · IndicatorId=HA.NAT.DR.ASI_temp, Type=INFORM Index · trend_ha_nat_dr_asi_temp"
+      ],
+      "sourceLabel": "INFORM 추세 — Agriculture Drought Probability",
+      "units": [
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_cc_ins_gov_cpi",
+        "B-020_trend_cpi"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Corruption Perception Index · INFORM 추세 [점]",
+        "INFORM 추세 — Corruption Perception Index · INFORM 추세 [원값]"
+      ],
+      "sourceLabel": "INFORM 추세 — Corruption Perception Index",
+      "units": [
+        "원값",
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_gii",
+        "B-020_trend_vu_sev_inq_gii"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Gender Inequality Index · INFORM 추세 [원값]",
+        "INFORM 추세 — Gender Inequality Index · INFORM 추세 [점]"
+      ],
+      "sourceLabel": "INFORM 추세 — Gender Inequality Index",
+      "units": [
+        "원값",
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_cc_ins_gov_ge",
+        "B-020_trend_governmenteffectiveness"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Government Effectiveness · INFORM 추세 [점]",
+        "INFORM 추세 — Government Effectiveness · INFORM 추세 [원값]"
+      ],
+      "sourceLabel": "INFORM 추세 — Government Effectiveness",
+      "units": [
+        "원값",
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_cc_inf_ahc_health_exp",
+        "B-020_trend_health_exp"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Health expenditure per capita · INFORM 추세 [점]",
+        "INFORM 추세 — Health expenditure per capita · INFORM 추세 [원값]"
+      ],
+      "sourceLabel": "INFORM 추세 — Health expenditure per capita",
+      "units": [
+        "원값",
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_ha_fwb_pop_hous",
+        "B-020_trend_ha_p2p_pop_hous",
+        "B-020_trend_sp_dem_hous_av_fwb",
+        "B-020_trend_sp_dem_hous_av_p2p"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Household size · IndicatorId=HA.FWB.POP.HOUS, Type=INFORM Index · trend_ha_fwb_pop_hous",
+        "INFORM 추세 — Household size · IndicatorId=HA.P2P.POP.HOUS, Type=INFORM Index · trend_ha_p2p_pop_hous",
+        "INFORM 추세 — Household size · IndicatorId=SP.DEM.HOUS.AV-FWB, Type=Core Indicators · trend_sp_dem_hous_av_fwb",
+        "INFORM 추세 — Household size · IndicatorId=SP.DEM.HOUS.AV-P2P, Type=Core Indicators · trend_sp_dem_hous_av_p2p"
+      ],
+      "sourceLabel": "INFORM 추세 — Household size",
+      "units": [
+        "원값",
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_gini",
+        "B-020_trend_vu_sev_inq_gini"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Income Gini coefficient · INFORM 추세 [원값]",
+        "INFORM 추세 — Income Gini coefficient · INFORM 추세 [점]"
+      ],
+      "sourceLabel": "INFORM 추세 — Income Gini coefficient",
+      "units": [
+        "원값",
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_cc_inf_com_netus",
+        "B-020_trend_it_net_user_p2"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Internet users · INFORM 추세 [점]",
+        "INFORM 추세 — Internet users · INFORM 추세 [원값]"
+      ],
+      "sourceLabel": "INFORM 추세 — Internet users",
+      "units": [
+        "원값",
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_cc_inf_ahc_mmr",
+        "B-020_trend_mmr"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Maternal Mortality Ratio · INFORM 추세 [점]",
+        "INFORM 추세 — Maternal Mortality Ratio · INFORM 추세 [원값]"
+      ],
+      "sourceLabel": "INFORM 추세 — Maternal Mortality Ratio",
+      "units": [
+        "원값",
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_cc_inf_com_cel",
+        "B-020_trend_it_cel_sets_p2"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Mobile cellular subscriptions · INFORM 추세 [점]",
+        "INFORM 추세 — Mobile cellular subscriptions · INFORM 추세 [원값]"
+      ],
+      "sourceLabel": "INFORM 추세 — Mobile cellular subscriptions",
+      "units": [
+        "원값",
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_mpi",
+        "B-020_trend_vu_sev_pd_mpi"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Multidimensional Poverty Index · INFORM 추세 [원값]",
+        "INFORM 추세 — Multidimensional Poverty Index · INFORM 추세 [점]"
+      ],
+      "sourceLabel": "INFORM 추세 — Multidimensional Poverty Index",
+      "units": [
+        "원값",
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_bx_trf_pwkr_dt_gd_zs_inst_norm",
+        "B-020_trend_eco_dt_oda_odat_gn_zs_inst_norm",
+        "B-020_trend_vu_sev_ad_oda_gni_norm"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — ODA % GNI Normalized · IndicatorId=BX.TRF.PWKR.DT.GD.ZS.INST.NORM, Type=INFORM Index · trend_bx_trf_pwkr_dt_gd_zs_inst_norm",
+        "INFORM 추세 — ODA % GNI Normalized · IndicatorId=ECO.DT.ODA.ODAT.GN.ZS.INST.NORM, Type=INFORM Index · trend_eco_dt_oda_odat_gn_zs_inst_norm",
+        "INFORM 추세 — ODA % GNI Normalized · IndicatorId=VU.SEV.AD.ODA-GNI.NORM, Type=INFORM Index · trend_vu_sev_ad_oda_gni_norm"
+      ],
+      "sourceLabel": "INFORM 추세 — ODA % GNI Normalized",
+      "units": [
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_ha_fwb_wash_h2o_basw",
+        "B-020_trend_ha_p2p_wash_h2o_basw"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — People using at least basic drinking water services · IndicatorId=HA.FWB.WASH.H2O.BASW, Type=INFORM Index · trend_ha_fwb_wash_h2o_basw",
+        "INFORM 추세 — People using at least basic drinking water services · IndicatorId=HA.P2P.WASH.H2O.BASW, Type=INFORM Index · trend_ha_p2p_wash_h2o_basw"
+      ],
+      "sourceLabel": "INFORM 추세 — People using at least basic drinking water services",
+      "units": [
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_ha_fwb_wash_sta_bass",
+        "B-020_trend_ha_p2p_wash_sta_bass"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — People using at least basic sanitation services · IndicatorId=HA.FWB.WASH.STA.BASS, Type=INFORM Index · trend_ha_fwb_wash_sta_bass",
+        "INFORM 추세 — People using at least basic sanitation services · IndicatorId=HA.P2P.WASH.STA.BASS, Type=INFORM Index · trend_ha_p2p_wash_sta_bass"
+      ],
+      "sourceLabel": "INFORM 추세 — People using at least basic sanitation services",
+      "units": [
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_pop_exp_zoon_cchf_rel_01",
+        "B-020_trend_pop_exp_zoon_cchf_rel_02"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2016 · IndicatorId=POP.EXP.ZOON.CCHF-REL, Type=INFORM Index · trend_pop_exp_zoon_cchf_rel_01",
+        "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2016 · IndicatorId=POP.EXP.ZOON.CCHF-REL, Type=INFORM Index · trend_pop_exp_zoon_cchf_rel_02"
+      ],
+      "sourceLabel": "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2016",
+      "units": [
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_pop_exp_zoon_cchf_rel_03",
+        "B-020_trend_pop_exp_zoon_cchf_rel_04"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2017 · IndicatorId=POP.EXP.ZOON.CCHF-REL, Type=INFORM Index · trend_pop_exp_zoon_cchf_rel_03",
+        "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2017 · IndicatorId=POP.EXP.ZOON.CCHF-REL, Type=INFORM Index · trend_pop_exp_zoon_cchf_rel_04"
+      ],
+      "sourceLabel": "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2017",
+      "units": [
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_pop_exp_zoon_cchf_rel_05",
+        "B-020_trend_pop_exp_zoon_cchf_rel_06"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2018 · IndicatorId=POP.EXP.ZOON.CCHF-REL, Type=INFORM Index · trend_pop_exp_zoon_cchf_rel_05",
+        "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2018 · IndicatorId=POP.EXP.ZOON.CCHF-REL, Type=INFORM Index · trend_pop_exp_zoon_cchf_rel_06"
+      ],
+      "sourceLabel": "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2018",
+      "units": [
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_pop_exp_zoon_cchf_rel_07",
+        "B-020_trend_pop_exp_zoon_cchf_rel_08"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2019 · IndicatorId=POP.EXP.ZOON.CCHF-REL, Type=INFORM Index · trend_pop_exp_zoon_cchf_rel_07",
+        "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2019 · IndicatorId=POP.EXP.ZOON.CCHF-REL, Type=INFORM Index · trend_pop_exp_zoon_cchf_rel_08"
+      ],
+      "sourceLabel": "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2019",
+      "units": [
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_pop_exp_zoon_cchf_rel_09",
+        "B-020_trend_pop_exp_zoon_cchf_rel_10"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2020 · IndicatorId=POP.EXP.ZOON.CCHF-REL, Type=INFORM Index · trend_pop_exp_zoon_cchf_rel_09",
+        "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2020 · IndicatorId=POP.EXP.ZOON.CCHF-REL, Type=INFORM Index · trend_pop_exp_zoon_cchf_rel_10"
+      ],
+      "sourceLabel": "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2020",
+      "units": [
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_pop_exp_zoon_cchf_rel_11",
+        "B-020_trend_pop_exp_zoon_cchf_rel_12"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2021 · IndicatorId=POP.EXP.ZOON.CCHF-REL, Type=INFORM Index · trend_pop_exp_zoon_cchf_rel_11",
+        "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2021 · IndicatorId=POP.EXP.ZOON.CCHF-REL, Type=INFORM Index · trend_pop_exp_zoon_cchf_rel_12"
+      ],
+      "sourceLabel": "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2021",
+      "units": [
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_pop_exp_zoon_cchf_rel_13",
+        "B-020_trend_pop_exp_zoon_cchf_rel_14"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2022 · IndicatorId=POP.EXP.ZOON.CCHF-REL, Type=INFORM Index · trend_pop_exp_zoon_cchf_rel_13",
+        "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2022 · IndicatorId=POP.EXP.ZOON.CCHF-REL, Type=INFORM Index · trend_pop_exp_zoon_cchf_rel_14"
+      ],
+      "sourceLabel": "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2022",
+      "units": [
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_pop_exp_zoon_cchf_rel_15",
+        "B-020_trend_pop_exp_zoon_cchf_rel_16"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2023 · IndicatorId=POP.EXP.ZOON.CCHF-REL, Type=INFORM Index · trend_pop_exp_zoon_cchf_rel_15",
+        "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2023 · IndicatorId=POP.EXP.ZOON.CCHF-REL, Type=INFORM Index · trend_pop_exp_zoon_cchf_rel_16"
+      ],
+      "sourceLabel": "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2023",
+      "units": [
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_pop_exp_zoon_cchf_rel_17",
+        "B-020_trend_pop_exp_zoon_cchf_rel_18"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2024 · IndicatorId=POP.EXP.ZOON.CCHF-REL, Type=INFORM Index · trend_pop_exp_zoon_cchf_rel_17",
+        "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2024 · IndicatorId=POP.EXP.ZOON.CCHF-REL, Type=INFORM Index · trend_pop_exp_zoon_cchf_rel_18"
+      ],
+      "sourceLabel": "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2024",
+      "units": [
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_pop_exp_zoon_cchf_rel_19",
+        "B-020_trend_pop_exp_zoon_cchf_rel_20"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2025 · IndicatorId=POP.EXP.ZOON.CCHF-REL, Type=INFORM Index · trend_pop_exp_zoon_cchf_rel_19",
+        "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2025 · IndicatorId=POP.EXP.ZOON.CCHF-REL, Type=INFORM Index · trend_pop_exp_zoon_cchf_rel_20"
+      ],
+      "sourceLabel": "INFORM 추세 — Physical exposure to CCHF (relative) - raw — 자료 기준연도 2025",
+      "units": [
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_ha_nat_eq_mmi6_abs",
+        "B-020_trend_ha_nat_eq_mmi6_abs_temp"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Physical exposure to earthquake MMI VI (absolute) · IndicatorId=HA.NAT.EQ.MMI6-ABS, Type=INFORM Index · trend_ha_nat_eq_mmi6_abs",
+        "INFORM 추세 — Physical exposure to earthquake MMI VI (absolute) · IndicatorId=HA.NAT.EQ.MMI6-ABS-TEMP, Type=INFORM Index · trend_ha_nat_eq_mmi6_abs_temp"
+      ],
+      "sourceLabel": "INFORM 추세 — Physical exposure to earthquake MMI VI (absolute)",
+      "units": [
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_ha_nat_eq_mmi8_abs",
+        "B-020_trend_ha_nat_eq_mmi8_abs_temp"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Physical exposure to earthquake MMI VIII (absolute) · IndicatorId=HA.NAT.EQ.MMI8-ABS, Type=INFORM Index · trend_ha_nat_eq_mmi8_abs",
+        "INFORM 추세 — Physical exposure to earthquake MMI VIII (absolute) · IndicatorId=HA.NAT.EQ.MMI8-ABS-TEMP, Type=INFORM Index · trend_ha_nat_eq_mmi8_abs_temp"
+      ],
+      "sourceLabel": "INFORM 추세 — Physical exposure to earthquake MMI VIII (absolute)",
+      "units": [
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_cc_inf_ahc_phys",
+        "B-020_trend_phis"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Physicians density · INFORM 추세 [점]",
+        "INFORM 추세 — Physicians density · INFORM 추세 [원값]"
+      ],
+      "sourceLabel": "INFORM 추세 — Physicians density",
+      "units": [
+        "원값",
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_pop_den",
+        "B-020_trend_pop_den_1",
+        "B-020_trend_pop_den_2"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Population (total) · IndicatorId=POP_DEN, Type=Core Indicators · trend_pop_den",
+        "INFORM 추세 — Population (total) · IndicatorId=POP_DEN-1, Type=Core Indicators · trend_pop_den_1",
+        "INFORM 추세 — Population (total) · IndicatorId=POP_DEN-2, Type=Core Indicators · trend_pop_den_2"
+      ],
+      "sourceLabel": "INFORM 추세 — Population (total)",
+      "units": [
+        "원값"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_ha_fwb_pop_pop_dnst",
+        "B-020_trend_ha_p2p_pop_pop_dnst"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Population density · IndicatorId=HA.FWB.POP.POP.DNST, Type=INFORM Index · trend_ha_fwb_pop_pop_dnst",
+        "INFORM 추세 — Population density · IndicatorId=HA.P2P.POP.POP.DNST, Type=INFORM Index · trend_ha_p2p_pop_pop_dnst"
+      ],
+      "sourceLabel": "INFORM 추세 — Population density",
+      "units": [
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_en_pop_dnst_fwb",
+        "B-020_trend_en_pop_dnst_p2p"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Population density (people per sq. km of land area) · IndicatorId=EN.POP.DNST-FWB, Type=Core Indicators · trend_en_pop_dnst_fwb",
+        "INFORM 추세 — Population density (people per sq. km of land area) · IndicatorId=EN.POP.DNST-P2P, Type=Core Indicators · trend_en_pop_dnst_p2p"
+      ],
+      "sourceLabel": "INFORM 추세 — Population density (people per sq. km of land area)",
+      "units": [
+        "원값"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_ha_fwb_pop_urb_totl",
+        "B-020_trend_ha_p2p_pop_urb_totl"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Population living in urban areas · IndicatorId=HA.FWB.POP.URB.TOTL, Type=INFORM Index · trend_ha_fwb_pop_urb_totl",
+        "INFORM 추세 — Population living in urban areas · IndicatorId=HA.P2P.POP.URB.TOTL, Type=INFORM Index · trend_ha_p2p_pop_urb_totl"
+      ],
+      "sourceLabel": "INFORM 추세 — Population living in urban areas",
+      "units": [
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_sp_urb_totl_in_zs_fwb",
+        "B-020_trend_sp_urb_totl_in_zs_p2p"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Population living in urban areas (%) · IndicatorId=SP.URB.TOTL.IN.ZS-FWB, Type=Core Indicators · trend_sp_urb_totl_in_zs_fwb",
+        "INFORM 추세 — Population living in urban areas (%) · IndicatorId=SP.URB.TOTL.IN.ZS-P2P, Type=Core Indicators · trend_sp_urb_totl_in_zs_p2p"
+      ],
+      "sourceLabel": "INFORM 추세 — Population living in urban areas (%)",
+      "units": [
+        "원값"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_ha_fwb_wash_sta_hndwsh",
+        "B-020_trend_ha_p2p_wash_sta_hndwsh"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Proportion of population with basic handwashing facilities on premises · IndicatorId=HA.FWB.WASH.STA.HNDWSH, Type=INFORM Index · trend_ha_fwb_wash_sta_hndwsh",
+        "INFORM 추세 — Proportion of population with basic handwashing facilities on premises · IndicatorId=HA.P2P.WASH.STA.HNDWSH, Type=INFORM Index · trend_ha_p2p_wash_sta_hndwsh"
+      ],
+      "sourceLabel": "INFORM 추세 — Proportion of population with basic handwashing facilities on premises",
+      "units": [
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_sh_san_hndwsh_zs_fwb",
+        "B-020_trend_sh_san_hndwsh_zs_p2p"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Proportion of population with basic handwashing facilities on premises (% of population) · IndicatorId=SH.SAN.HNDWSH.ZS-FWB, Type=Core Indicators · trend_sh_san_hndwsh_zs_fwb",
+        "INFORM 추세 — Proportion of population with basic handwashing facilities on premises (% of population) · IndicatorId=SH.SAN.HNDWSH.ZS-P2P, Type=Core Indicators · trend_sh_san_hndwsh_zs_p2p"
+      ],
+      "sourceLabel": "INFORM 추세 — Proportion of population with basic handwashing facilities on premises (% of population)",
+      "units": [
+        "원값"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_cc_inf_phy_rod",
+        "B-020_trend_is_rod_dnst_k2"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Road density · IndicatorId=CC.INF.PHY.ROD, Type=INFORM Index · trend_cc_inf_phy_rod",
+        "INFORM 추세 — Road density · IndicatorId=IS.ROD.DNST.K2, Type=INFORM Index · trend_is_rod_dnst_k2"
+      ],
+      "sourceLabel": "INFORM 추세 — Road density",
+      "units": [
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_tb",
+        "B-020_trend_vu_vgr_og_he_tbc"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Tuberculosis Prevalence · INFORM 추세 [원값]",
+        "INFORM 추세 — Tuberculosis Prevalence · INFORM 추세 [점]"
+      ],
+      "sourceLabel": "INFORM 추세 — Tuberculosis Prevalence",
+      "units": [
+        "원값",
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_ha_fwb_pop_urb_grow",
+        "B-020_trend_ha_p2p_pop_urb_grow"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Urban population growth · IndicatorId=HA.FWB.POP.URB.GROW, Type=INFORM Index · trend_ha_fwb_pop_urb_grow",
+        "INFORM 추세 — Urban population growth · IndicatorId=HA.P2P.POP.URB.GROW, Type=INFORM Index · trend_ha_p2p_pop_urb_grow"
+      ],
+      "sourceLabel": "INFORM 추세 — Urban population growth",
+      "units": [
+        "점"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "indicatorIds": [
+        "B-020_trend_sp_urb_grow_fwb",
+        "B-020_trend_sp_urb_grow_p2p"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "INFORM 추세 — Urban population growth (annual %) · IndicatorId=SP.URB.GROW-FWB, Type=Core Indicators · trend_sp_urb_grow_fwb",
+        "INFORM 추세 — Urban population growth (annual %) · IndicatorId=SP.URB.GROW-P2P, Type=Core Indicators · trend_sp_urb_grow_p2p"
+      ],
+      "sourceLabel": "INFORM 추세 — Urban population growth (annual %)",
+      "units": [
+        "원값"
+      ]
+    },
+    {
+      "elementId": "C-002",
+      "indicatorIds": [
+        "C-002_climate_scenario_projection_2059",
+        "C-002_climate_scenario_projection_4"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "기후 시나리오 전망 (SSP) — 보완출처: WB CCKP CMIP6 · SSP1-2.6 (저배출) — 2040~2059 기간평균 변화 · 기후 시나리오 전망 (SSP) [°C]",
+        "기후 시나리오 전망 (SSP) — 보완출처: WB CCKP CMIP6 · SSP1-2.6 (저배출) — 2040~2059 기간평균 변화 · 기후 시나리오 전망 (SSP) [%]"
+      ],
+      "sourceLabel": "기후 시나리오 전망 (SSP) — 보완출처: WB CCKP CMIP6 · SSP1-2.6 (저배출) — 2040~2059 기간평균 변화",
+      "units": [
+        "%",
+        "°C"
+      ]
+    },
+    {
+      "elementId": "C-002",
+      "indicatorIds": [
+        "C-002_climate_scenario_projection_2",
+        "C-002_climate_scenario_projection_5"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "기후 시나리오 전망 (SSP) — 보완출처: WB CCKP CMIP6 · SSP2-4.5 (중배출) — 2040~2059 기간평균 변화 · 기후 시나리오 전망 (SSP) [°C]",
+        "기후 시나리오 전망 (SSP) — 보완출처: WB CCKP CMIP6 · SSP2-4.5 (중배출) — 2040~2059 기간평균 변화 · 기후 시나리오 전망 (SSP) [%]"
+      ],
+      "sourceLabel": "기후 시나리오 전망 (SSP) — 보완출처: WB CCKP CMIP6 · SSP2-4.5 (중배출) — 2040~2059 기간평균 변화",
+      "units": [
+        "%",
+        "°C"
+      ]
+    },
+    {
+      "elementId": "C-002",
+      "indicatorIds": [
+        "C-002_climate_scenario_projection_3",
+        "C-002_climate_scenario_projection_6"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "기후 시나리오 전망 (SSP) — 보완출처: WB CCKP CMIP6 · SSP5-8.5 (고배출) — 2040~2059 기간평균 변화 · 기후 시나리오 전망 (SSP) [°C]",
+        "기후 시나리오 전망 (SSP) — 보완출처: WB CCKP CMIP6 · SSP5-8.5 (고배출) — 2040~2059 기간평균 변화 · 기후 시나리오 전망 (SSP) [%]"
+      ],
+      "sourceLabel": "기후 시나리오 전망 (SSP) — 보완출처: WB CCKP CMIP6 · SSP5-8.5 (고배출) — 2040~2059 기간평균 변화",
+      "units": [
+        "%",
+        "°C"
+      ]
+    },
+    {
+      "elementId": "C-008",
+      "indicatorIds": [
+        "C-008_initiative_name_nazca_listed_participation",
+        "C-008_initiative_name_nazca_listed_participation_10",
+        "C-008_initiative_name_nazca_listed_participation_11",
+        "C-008_initiative_name_nazca_listed_participation_2",
+        "C-008_initiative_name_nazca_listed_participation_2026",
+        "C-008_initiative_name_nazca_listed_participation_3",
+        "C-008_initiative_name_nazca_listed_participation_4",
+        "C-008_initiative_name_nazca_listed_participation_5",
+        "C-008_initiative_name_nazca_listed_participation_6",
+        "C-008_initiative_name_nazca_listed_participation_7",
+        "C-008_initiative_name_nazca_listed_participation_8",
+        "C-008_initiative_name_nazca_listed_participation_9"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "이니셔티브 명 · NAZCA 등재 참여(Engaged) — 협력 이니셔티브 · initiative_name_nazca_listed_participation",
+        "이니셔티브 명 · NAZCA 등재 참여(Engaged) — 협력 이니셔티브 · initiative_name_nazca_listed_participation_10",
+        "이니셔티브 명 · NAZCA 등재 참여(Engaged) — 협력 이니셔티브 · initiative_name_nazca_listed_participation_11",
+        "이니셔티브 명 · NAZCA 등재 참여(Engaged) — 협력 이니셔티브 · initiative_name_nazca_listed_participation_2",
+        "이니셔티브 명 · NAZCA 등재 참여(Engaged) — 협력 이니셔티브 · initiative_name_nazca_listed_participation_2026",
+        "이니셔티브 명 · NAZCA 등재 참여(Engaged) — 협력 이니셔티브 · initiative_name_nazca_listed_participation_3",
+        "이니셔티브 명 · NAZCA 등재 참여(Engaged) — 협력 이니셔티브 · initiative_name_nazca_listed_participation_4",
+        "이니셔티브 명 · NAZCA 등재 참여(Engaged) — 협력 이니셔티브 · initiative_name_nazca_listed_participation_5",
+        "이니셔티브 명 · NAZCA 등재 참여(Engaged) — 협력 이니셔티브 · initiative_name_nazca_listed_participation_6",
+        "이니셔티브 명 · NAZCA 등재 참여(Engaged) — 협력 이니셔티브 · initiative_name_nazca_listed_participation_7",
+        "이니셔티브 명 · NAZCA 등재 참여(Engaged) — 협력 이니셔티브 · initiative_name_nazca_listed_participation_8",
+        "이니셔티브 명 · NAZCA 등재 참여(Engaged) — 협력 이니셔티브 · initiative_name_nazca_listed_participation_9"
+      ],
+      "sourceLabel": "이니셔티브 명 · NAZCA 등재 참여(Engaged) — 협력 이니셔티브",
+      "units": [
+        "—"
+      ]
+    },
+    {
+      "elementId": "C-022",
+      "indicatorIds": [
+        "C-022_source_link_gold_standard_registry",
+        "C-022_source_link_gold_standard_registry_2026"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "원본 링크 (URL) · Gold Standard Registry — VCM 프로젝트 파이프라인 원자료 · source_link_gold_standard_registry",
+        "원본 링크 (URL) · Gold Standard Registry — VCM 프로젝트 파이프라인 원자료 · source_link_gold_standard_registry_2026"
+      ],
+      "sourceLabel": "원본 링크 (URL) · Gold Standard Registry — VCM 프로젝트 파이프라인 원자료",
+      "units": [
+        "URL"
+      ]
+    },
+    {
+      "elementId": "C-022",
+      "indicatorIds": [
+        "C-022_source_link_icap_vietnam_ets_factsheet",
+        "C-022_source_link_icap_vietnam_ets_factsheet_2026"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "원본 링크 (URL) · ICAP Vietnam ETS 팩트시트 — ETS 개요·로드맵·MRV·시장설계 등 · source_link_icap_vietnam_ets_factsheet",
+        "원본 링크 (URL) · ICAP Vietnam ETS 팩트시트 — ETS 개요·로드맵·MRV·시장설계 등 · source_link_icap_vietnam_ets_factsheet_2026"
+      ],
+      "sourceLabel": "원본 링크 (URL) · ICAP Vietnam ETS 팩트시트 — ETS 개요·로드맵·MRV·시장설계 등",
+      "units": [
+        "URL"
+      ]
+    },
+    {
+      "elementId": "C-022",
+      "indicatorIds": [
+        "C-022_source_link_verra_registry",
+        "C-022_source_link_verra_registry_2026"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "원본 링크 (URL) · Verra Registry — VCM 프로젝트 파이프라인 원자료 · source_link_verra_registry",
+        "원본 링크 (URL) · Verra Registry — VCM 프로젝트 파이프라인 원자료 · source_link_verra_registry_2026"
+      ],
+      "sourceLabel": "원본 링크 (URL) · Verra Registry — VCM 프로젝트 파이프라인 원자료",
+      "units": [
+        "URL"
+      ]
+    },
+    {
+      "elementId": "C-022",
+      "indicatorIds": [
+        "C-022_source_link_world_bank_pmi_vietnam",
+        "C-022_source_link_world_bank_pmi_vietnam_2026"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "원본 링크 (URL) · World Bank PMI Vietnam — 탄소시장 준비도 보조자료 · source_link_world_bank_pmi_vietnam",
+        "원본 링크 (URL) · World Bank PMI Vietnam — 탄소시장 준비도 보조자료 · source_link_world_bank_pmi_vietnam_2026"
+      ],
+      "sourceLabel": "원본 링크 (URL) · World Bank PMI Vietnam — 탄소시장 준비도 보조자료",
+      "units": [
+        "URL"
+      ]
+    },
+    {
+      "elementId": "E-001",
+      "indicatorIds": [
+        "E-001_ctcn_nde",
+        "E-001_ctcn_network_member",
+        "E-001_ctcn_ta_proponent"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "CTCN NDE(국가지정기구) · CTCN NDE – Viet Nam · ctcn_nde",
+        "CTCN NDE(국가지정기구) · CTCN Network Members – Viet Nam · ctcn_network_member",
+        "CTCN NDE(국가지정기구) · CTCN TA Proponents – Viet Nam · ctcn_ta_proponent"
+      ],
+      "sourceLabel": "CTCN NDE(국가지정기구)",
+      "units": [
+        "해당없음"
+      ]
+    },
+    {
+      "elementId": "E-003",
+      "indicatorIds": [
+        "E-003_gcf_dae",
+        "E-003_gcf_nda"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "GCF NDA(국가지정기관) · GCF Country page – Viet Nam (Direct Access Entities) · gcf_dae",
+        "GCF NDA(국가지정기관) · GCF Country page – Viet Nam (NDA) · gcf_nda"
+      ],
+      "sourceLabel": "GCF NDA(국가지정기관)",
+      "units": [
+        "해당없음"
+      ]
+    },
+    {
+      "elementId": "E-004",
+      "indicatorIds": [
+        "E-004_adb",
+        "E-004_afd",
+        "E-004_denmark",
+        "E-004_eu",
+        "E-004_fao",
+        "E-004_gggi",
+        "E-004_giz",
+        "E-004_ifc",
+        "E-004_irena",
+        "E-004_jica",
+        "E-004_kfw",
+        "E-004_netherlands",
+        "E-004_undp",
+        "E-004_unep",
+        "E-004_unesco",
+        "E-004_unido",
+        "E-004_usaid",
+        "E-004_worldbank"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "국제기구 현지사무소 담당자 · ADB — Viet Nam 사무소 안내 · adb",
+        "국제기구 현지사무소 담당자 · AFD (Agence Française de Développement) — Viet Nam 사무소 안내 · afd",
+        "국제기구 현지사무소 담당자 · Embassy of Denmark — Viet Nam 사무소 안내 · denmark",
+        "국제기구 현지사무소 담당자 · European Union — Viet Nam 사무소 안내 · eu",
+        "국제기구 현지사무소 담당자 · FAO — Viet Nam 사무소 안내 · fao",
+        "국제기구 현지사무소 담당자 · GGGI — Viet Nam 사무소 안내 · gggi",
+        "국제기구 현지사무소 담당자 · GIZ — Viet Nam 사무소 안내 · giz",
+        "국제기구 현지사무소 담당자 · IFC (International Finance Corporation) — Viet Nam 사무소 안내 · ifc",
+        "국제기구 현지사무소 담당자 · IRENA — Viet Nam 사무소 안내 · irena",
+        "국제기구 현지사무소 담당자 · JICA — Viet Nam 사무소 안내 · jica",
+        "국제기구 현지사무소 담당자 · KfW Development Bank — Viet Nam 사무소 안내 · kfw",
+        "국제기구 현지사무소 담당자 · Embassy of the Kingdom of the Netherlands — Viet Nam 사무소 안내 · netherlands",
+        "국제기구 현지사무소 담당자 · UNDP — Viet Nam 사무소 안내 · undp",
+        "국제기구 현지사무소 담당자 · UNEP — Viet Nam 사무소 안내 · unep",
+        "국제기구 현지사무소 담당자 · UNESCO — Viet Nam 사무소 안내 · unesco",
+        "국제기구 현지사무소 담당자 · UNIDO — Viet Nam 사무소 안내 · unido",
+        "국제기구 현지사무소 담당자 · USAID — Viet Nam 사무소 안내 · usaid",
+        "국제기구 현지사무소 담당자 · World Bank — Viet Nam 사무소 안내 · worldbank"
+      ],
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "units": [
+        "해당없음"
+      ]
+    },
+    {
+      "elementId": "E-006",
+      "indicatorIds": [
+        "E-006_dfi",
+        "E-006_private_investor"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "현지 투자자 네트워크 · 베트남 기후금융 관련 개발금융기관 4곳 · dfi",
+        "현지 투자자 네트워크 · 베트남 기후금융 민간 투자자 10곳 · private_investor"
+      ],
+      "sourceLabel": "현지 투자자 네트워크",
+      "units": [
+        "USD(백만)"
+      ]
+    },
+    {
+      "elementId": "E-008",
+      "indicatorIds": [
+        "E-008_paper",
+        "E-008_patent"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "논문·특허 · 베트남 기후기술 논문 8편(선별 표본) · paper",
+        "논문·특허 · 베트남 기후기술 특허 5건(선별 표본) · patent"
+      ],
+      "sourceLabel": "논문·특허",
+      "units": [
+        "건"
+      ]
+    }
+  ],
+  "schemaVersion": "v125",
+  "sourceDuplicateGroupCount": 54,
+  "unresolvedDuplicateCount": 0
+}

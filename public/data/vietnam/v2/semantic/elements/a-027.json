@@ -1,0 +1,1342 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 32,
+      "values": [
+        "교량(bridge) 결측률",
+        "노면(surface) 결측률",
+        "노선번호(ref) 결측률",
+        "레이어(layer) 결측률",
+        "명칭 결측률",
+        "명칭(name) 결측률",
+        "분류별 피처 수(construction)",
+        "분류별 피처 수(footway)",
+        "분류별 피처 수(funicular)",
+        "분류별 피처 수(light_rail)",
+        "분류별 피처 수(miniature_railway)",
+        "분류별 피처 수(monorail)",
+        "분류별 피처 수(motorway)",
+        "분류별 피처 수(narrow_gauge)",
+        "분류별 피처 수(path)",
+        "분류별 피처 수(primary)",
+        "분류별 피처 수(rail)",
+        "분류별 피처 수(residential)",
+        "분류별 피처 수(secondary)",
+        "분류별 피처 수(service)",
+        "분류별 피처 수(subway)",
+        "분류별 피처 수(tertiary)",
+        "분류별 피처 수(track)",
+        "분류별 피처 수(trunk)",
+        "분류별 피처 수(unclassified)",
+        "속성 필드 수",
+        "일방통행(oneway) 결측률",
+        "제한속도(maxspeed) 결측률",
+        "좌표계",
+        "차로수(lanes) 결측률",
+        "터널(tunnel) 결측률",
+        "피처 수"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 10,
+      "values": [
+        ".dbf 속성 테이블의 필드 개수",
+        "fclass 분류값별 지물 건수",
+        "highway 분류값별 지물 건수",
+        "name 필드 공란 비율",
+        "OSM 도로 레이어의 좌표참조체계",
+        "OSM 도로 레이어의 지물 건수",
+        "OSM 철도 레이어의 좌표참조체계",
+        "OSM 철도 레이어의 지물 건수",
+        "결측률을 측정한 속성 필드 개수",
+        "속성 태그 미보유 비율"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "18"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2026"
+      ]
+    }
+  ],
+  "elementId": "A-027",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 35,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-22c73ee94b33|EPSG 코드",
+      "dimensionLabels": {
+        "category": "좌표계",
+        "detail": "OSM 철도 레이어의 좌표참조체계",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "좌표계",
+        "detail": "OSM 철도 레이어의 좌표참조체계",
+        "technology": "18"
+      },
+      "displayLabel": "철도 레이어 · 좌표계 — OSM 철도 레이어의 좌표참조체계",
+      "indicatorId": "A-027_railways_crs",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-22c73ee94b33",
+        "labelKo": "철도 레이어",
+        "unit": "EPSG 코드",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-22c73ee94b33|EPSG 코드|category=좌표계|detail=OSM 철도 레이어의 좌표참조체계|technology=18|A-027_railways_crs",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "철도 레이어 · 좌표계 — OSM 철도 레이어의 좌표참조체계",
+      "sourceLabelEn": "CRS of the OSM railways layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_railways_crs",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-277ea4d09a7b|건",
+      "dimensionLabels": {
+        "category": "분류별 피처 수(funicular)",
+        "detail": "fclass 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "분류별 피처 수(funicular)",
+        "detail": "fclass 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "displayLabel": "철도 레이어 · 분류별 피처 수(funicular) — fclass 분류값별 지물 건수",
+      "indicatorId": "A-027_railways_fclass_funicular_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-277ea4d09a7b",
+        "labelKo": "철도 레이어",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-277ea4d09a7b|건|category=분류별 피처 수(funicular)|detail=fclass 분류값별 지물 건수|technology=18|A-027_railways_fclass_funicular_count",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "철도 레이어 · 분류별 피처 수(funicular) — fclass 분류값별 지물 건수",
+      "sourceLabelEn": "Feature count by fclass \"funicular\", OSM railways layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_railways_fclass_funicular_count",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-277ea4d09a7b|건",
+      "dimensionLabels": {
+        "category": "분류별 피처 수(light_rail)",
+        "detail": "fclass 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "분류별 피처 수(light_rail)",
+        "detail": "fclass 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "displayLabel": "철도 레이어 · 분류별 피처 수(light_rail) — fclass 분류값별 지물 건수",
+      "indicatorId": "A-027_railways_fclass_light_rail_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-277ea4d09a7b",
+        "labelKo": "철도 레이어",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-277ea4d09a7b|건|category=분류별 피처 수(light_rail)|detail=fclass 분류값별 지물 건수|technology=18|A-027_railways_fclass_light_rail_count",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "철도 레이어 · 분류별 피처 수(light_rail) — fclass 분류값별 지물 건수",
+      "sourceLabelEn": "Feature count by fclass \"light_rail\", OSM railways layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_railways_fclass_light_rail_count",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-277ea4d09a7b|건",
+      "dimensionLabels": {
+        "category": "분류별 피처 수(miniature_railway)",
+        "detail": "fclass 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "분류별 피처 수(miniature_railway)",
+        "detail": "fclass 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "displayLabel": "철도 레이어 · 분류별 피처 수(miniature_railway) — fclass 분류값별 지물 건수",
+      "indicatorId": "A-027_railways_fclass_miniature_railway_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-277ea4d09a7b",
+        "labelKo": "철도 레이어",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-277ea4d09a7b|건|category=분류별 피처 수(miniature_railway)|detail=fclass 분류값별 지물 건수|technology=18|A-027_railways_fclass_miniature_railway_count",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "철도 레이어 · 분류별 피처 수(miniature_railway) — fclass 분류값별 지물 건수",
+      "sourceLabelEn": "Feature count by fclass \"miniature_railway\", OSM railways layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_railways_fclass_miniature_railway_count",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-277ea4d09a7b|건",
+      "dimensionLabels": {
+        "category": "분류별 피처 수(monorail)",
+        "detail": "fclass 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "분류별 피처 수(monorail)",
+        "detail": "fclass 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "displayLabel": "철도 레이어 · 분류별 피처 수(monorail) — fclass 분류값별 지물 건수",
+      "indicatorId": "A-027_railways_fclass_monorail_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-277ea4d09a7b",
+        "labelKo": "철도 레이어",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-277ea4d09a7b|건|category=분류별 피처 수(monorail)|detail=fclass 분류값별 지물 건수|technology=18|A-027_railways_fclass_monorail_count",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "철도 레이어 · 분류별 피처 수(monorail) — fclass 분류값별 지물 건수",
+      "sourceLabelEn": "Feature count by fclass \"monorail\", OSM railways layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_railways_fclass_monorail_count",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-277ea4d09a7b|건",
+      "dimensionLabels": {
+        "category": "분류별 피처 수(narrow_gauge)",
+        "detail": "fclass 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "분류별 피처 수(narrow_gauge)",
+        "detail": "fclass 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "displayLabel": "철도 레이어 · 분류별 피처 수(narrow_gauge) — fclass 분류값별 지물 건수",
+      "indicatorId": "A-027_railways_fclass_narrow_gauge_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-277ea4d09a7b",
+        "labelKo": "철도 레이어",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-277ea4d09a7b|건|category=분류별 피처 수(narrow_gauge)|detail=fclass 분류값별 지물 건수|technology=18|A-027_railways_fclass_narrow_gauge_count",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "철도 레이어 · 분류별 피처 수(narrow_gauge) — fclass 분류값별 지물 건수",
+      "sourceLabelEn": "Feature count by fclass \"narrow_gauge\", OSM railways layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_railways_fclass_narrow_gauge_count",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-277ea4d09a7b|건",
+      "dimensionLabels": {
+        "category": "분류별 피처 수(rail)",
+        "detail": "fclass 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "분류별 피처 수(rail)",
+        "detail": "fclass 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "displayLabel": "철도 레이어 · 분류별 피처 수(rail) — fclass 분류값별 지물 건수",
+      "indicatorId": "A-027_railways_fclass_rail_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-277ea4d09a7b",
+        "labelKo": "철도 레이어",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-277ea4d09a7b|건|category=분류별 피처 수(rail)|detail=fclass 분류값별 지물 건수|technology=18|A-027_railways_fclass_rail_count",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "철도 레이어 · 분류별 피처 수(rail) — fclass 분류값별 지물 건수",
+      "sourceLabelEn": "Feature count by fclass \"rail\", OSM railways layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_railways_fclass_rail_count",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-277ea4d09a7b|건",
+      "dimensionLabels": {
+        "category": "분류별 피처 수(subway)",
+        "detail": "fclass 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "분류별 피처 수(subway)",
+        "detail": "fclass 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "displayLabel": "철도 레이어 · 분류별 피처 수(subway) — fclass 분류값별 지물 건수",
+      "indicatorId": "A-027_railways_fclass_subway_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-277ea4d09a7b",
+        "labelKo": "철도 레이어",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-277ea4d09a7b|건|category=분류별 피처 수(subway)|detail=fclass 분류값별 지물 건수|technology=18|A-027_railways_fclass_subway_count",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "철도 레이어 · 분류별 피처 수(subway) — fclass 분류값별 지물 건수",
+      "sourceLabelEn": "Feature count by fclass \"subway\", OSM railways layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_railways_fclass_subway_count",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-277ea4d09a7b|건",
+      "dimensionLabels": {
+        "category": "피처 수",
+        "detail": "OSM 철도 레이어의 지물 건수",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "피처 수",
+        "detail": "OSM 철도 레이어의 지물 건수",
+        "technology": "18"
+      },
+      "displayLabel": "철도 레이어 · 피처 수 — OSM 철도 레이어의 지물 건수",
+      "indicatorId": "A-027_railways_feature_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-277ea4d09a7b",
+        "labelKo": "철도 레이어",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-277ea4d09a7b|건|category=피처 수|detail=OSM 철도 레이어의 지물 건수|technology=18|A-027_railways_feature_count",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "철도 레이어 · 피처 수 — OSM 철도 레이어의 지물 건수",
+      "sourceLabelEn": "Feature count of the OSM railways layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_railways_feature_count",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9f2522bf8637|개",
+      "dimensionLabels": {
+        "category": "속성 필드 수",
+        "detail": ".dbf 속성 테이블의 필드 개수",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "속성 필드 수",
+        "detail": ".dbf 속성 테이블의 필드 개수",
+        "technology": "18"
+      },
+      "displayLabel": "철도 레이어 · 속성 필드 수 — .dbf 속성 테이블의 필드 개수",
+      "indicatorId": "A-027_railways_field_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9f2522bf8637",
+        "labelKo": "철도 레이어",
+        "unit": "개",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-9f2522bf8637|개|category=속성 필드 수|detail=.dbf 속성 테이블의 필드 개수|technology=18|A-027_railways_field_count",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "철도 레이어 · 속성 필드 수 — .dbf 속성 테이블의 필드 개수",
+      "sourceLabelEn": "Attribute field count, OSM railways layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_railways_field_count",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0ff4ec179e3f|%",
+      "dimensionLabels": {
+        "category": "명칭 결측률",
+        "detail": "name 필드 공란 비율",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "명칭 결측률",
+        "detail": "name 필드 공란 비율",
+        "technology": "18"
+      },
+      "displayLabel": "철도 레이어 · 명칭 결측률 — name 필드 공란 비율",
+      "indicatorId": "A-027_railways_null_rate_name",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0ff4ec179e3f",
+        "labelKo": "철도 레이어",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-0ff4ec179e3f|%|category=명칭 결측률|detail=name 필드 공란 비율|technology=18|A-027_railways_null_rate_name",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "철도 레이어 · 명칭 결측률 — name 필드 공란 비율",
+      "sourceLabelEn": "Null rate of the name field, OSM railways layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_railways_null_rate_name",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-3ddde7efded5|EPSG 코드",
+      "dimensionLabels": {
+        "category": "좌표계",
+        "detail": "OSM 도로 레이어의 좌표참조체계",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "좌표계",
+        "detail": "OSM 도로 레이어의 좌표참조체계",
+        "technology": "18"
+      },
+      "displayLabel": "도로 레이어 · 좌표계 — OSM 도로 레이어의 좌표참조체계",
+      "indicatorId": "A-027_roads_crs",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3ddde7efded5",
+        "labelKo": "도로 레이어",
+        "unit": "EPSG 코드",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-3ddde7efded5|EPSG 코드|category=좌표계|detail=OSM 도로 레이어의 좌표참조체계|technology=18|A-027_roads_crs",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "도로 레이어 · 좌표계 — OSM 도로 레이어의 좌표참조체계",
+      "sourceLabelEn": "CRS of the OSM roads layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_roads_crs",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7d9609ecb1c8|건",
+      "dimensionLabels": {
+        "category": "분류별 피처 수(construction)",
+        "detail": "highway 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "분류별 피처 수(construction)",
+        "detail": "highway 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "displayLabel": "도로 레이어 · 분류별 피처 수(construction) — highway 분류값별 지물 건수",
+      "indicatorId": "A-027_roads_fclass_construction_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7d9609ecb1c8",
+        "labelKo": "도로 레이어",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-7d9609ecb1c8|건|category=분류별 피처 수(construction)|detail=highway 분류값별 지물 건수|technology=18|A-027_roads_fclass_construction_count",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "도로 레이어 · 분류별 피처 수(construction) — highway 분류값별 지물 건수",
+      "sourceLabelEn": "Feature count by highway class \"construction\", OSM roads layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_roads_fclass_construction_count",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 38,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7d9609ecb1c8|건",
+      "dimensionLabels": {
+        "category": "분류별 피처 수(footway)",
+        "detail": "highway 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "분류별 피처 수(footway)",
+        "detail": "highway 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "displayLabel": "도로 레이어 · 분류별 피처 수(footway) — highway 분류값별 지물 건수",
+      "indicatorId": "A-027_roads_fclass_footway_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7d9609ecb1c8",
+        "labelKo": "도로 레이어",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-7d9609ecb1c8|건|category=분류별 피처 수(footway)|detail=highway 분류값별 지물 건수|technology=18|A-027_roads_fclass_footway_count",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "도로 레이어 · 분류별 피처 수(footway) — highway 분류값별 지물 건수",
+      "sourceLabelEn": "Feature count by highway class \"footway\", OSM roads layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_roads_fclass_footway_count",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 31,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7d9609ecb1c8|건",
+      "dimensionLabels": {
+        "category": "분류별 피처 수(motorway)",
+        "detail": "highway 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "분류별 피처 수(motorway)",
+        "detail": "highway 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "displayLabel": "도로 레이어 · 분류별 피처 수(motorway) — highway 분류값별 지물 건수",
+      "indicatorId": "A-027_roads_fclass_motorway_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7d9609ecb1c8",
+        "labelKo": "도로 레이어",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-7d9609ecb1c8|건|category=분류별 피처 수(motorway)|detail=highway 분류값별 지물 건수|technology=18|A-027_roads_fclass_motorway_count",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "도로 레이어 · 분류별 피처 수(motorway) — highway 분류값별 지물 건수",
+      "sourceLabelEn": "Feature count by highway class \"motorway\", OSM roads layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_roads_fclass_motorway_count",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 39,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7d9609ecb1c8|건",
+      "dimensionLabels": {
+        "category": "분류별 피처 수(path)",
+        "detail": "highway 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "분류별 피처 수(path)",
+        "detail": "highway 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "displayLabel": "도로 레이어 · 분류별 피처 수(path) — highway 분류값별 지물 건수",
+      "indicatorId": "A-027_roads_fclass_path_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7d9609ecb1c8",
+        "labelKo": "도로 레이어",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-7d9609ecb1c8|건|category=분류별 피처 수(path)|detail=highway 분류값별 지물 건수|technology=18|A-027_roads_fclass_path_count",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "도로 레이어 · 분류별 피처 수(path) — highway 분류값별 지물 건수",
+      "sourceLabelEn": "Feature count by highway class \"path\", OSM roads layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_roads_fclass_path_count",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 33,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7d9609ecb1c8|건",
+      "dimensionLabels": {
+        "category": "분류별 피처 수(primary)",
+        "detail": "highway 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "분류별 피처 수(primary)",
+        "detail": "highway 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "displayLabel": "도로 레이어 · 분류별 피처 수(primary) — highway 분류값별 지물 건수",
+      "indicatorId": "A-027_roads_fclass_primary_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7d9609ecb1c8",
+        "labelKo": "도로 레이어",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-7d9609ecb1c8|건|category=분류별 피처 수(primary)|detail=highway 분류값별 지물 건수|technology=18|A-027_roads_fclass_primary_count",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "도로 레이어 · 분류별 피처 수(primary) — highway 분류값별 지물 건수",
+      "sourceLabelEn": "Feature count by highway class \"primary\", OSM roads layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_roads_fclass_primary_count",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 37,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7d9609ecb1c8|건",
+      "dimensionLabels": {
+        "category": "분류별 피처 수(residential)",
+        "detail": "highway 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "분류별 피처 수(residential)",
+        "detail": "highway 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "displayLabel": "도로 레이어 · 분류별 피처 수(residential) — highway 분류값별 지물 건수",
+      "indicatorId": "A-027_roads_fclass_residential_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7d9609ecb1c8",
+        "labelKo": "도로 레이어",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-7d9609ecb1c8|건|category=분류별 피처 수(residential)|detail=highway 분류값별 지물 건수|technology=18|A-027_roads_fclass_residential_count",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "도로 레이어 · 분류별 피처 수(residential) — highway 분류값별 지물 건수",
+      "sourceLabelEn": "Feature count by highway class \"residential\", OSM roads layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_roads_fclass_residential_count",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 28,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7d9609ecb1c8|건",
+      "dimensionLabels": {
+        "category": "분류별 피처 수(secondary)",
+        "detail": "highway 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "분류별 피처 수(secondary)",
+        "detail": "highway 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "displayLabel": "도로 레이어 · 분류별 피처 수(secondary) — highway 분류값별 지물 건수",
+      "indicatorId": "A-027_roads_fclass_secondary_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7d9609ecb1c8",
+        "labelKo": "도로 레이어",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-7d9609ecb1c8|건|category=분류별 피처 수(secondary)|detail=highway 분류값별 지물 건수|technology=18|A-027_roads_fclass_secondary_count",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "도로 레이어 · 분류별 피처 수(secondary) — highway 분류값별 지물 건수",
+      "sourceLabelEn": "Feature count by highway class \"secondary\", OSM roads layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_roads_fclass_secondary_count",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 35,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7d9609ecb1c8|건",
+      "dimensionLabels": {
+        "category": "분류별 피처 수(service)",
+        "detail": "highway 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "분류별 피처 수(service)",
+        "detail": "highway 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "displayLabel": "도로 레이어 · 분류별 피처 수(service) — highway 분류값별 지물 건수",
+      "indicatorId": "A-027_roads_fclass_service_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7d9609ecb1c8",
+        "labelKo": "도로 레이어",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-7d9609ecb1c8|건|category=분류별 피처 수(service)|detail=highway 분류값별 지물 건수|technology=18|A-027_roads_fclass_service_count",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "도로 레이어 · 분류별 피처 수(service) — highway 분류값별 지물 건수",
+      "sourceLabelEn": "Feature count by highway class \"service\", OSM roads layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_roads_fclass_service_count",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 29,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7d9609ecb1c8|건",
+      "dimensionLabels": {
+        "category": "분류별 피처 수(tertiary)",
+        "detail": "highway 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "분류별 피처 수(tertiary)",
+        "detail": "highway 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "displayLabel": "도로 레이어 · 분류별 피처 수(tertiary) — highway 분류값별 지물 건수",
+      "indicatorId": "A-027_roads_fclass_tertiary_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7d9609ecb1c8",
+        "labelKo": "도로 레이어",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-7d9609ecb1c8|건|category=분류별 피처 수(tertiary)|detail=highway 분류값별 지물 건수|technology=18|A-027_roads_fclass_tertiary_count",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "도로 레이어 · 분류별 피처 수(tertiary) — highway 분류값별 지물 건수",
+      "sourceLabelEn": "Feature count by highway class \"tertiary\", OSM roads layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_roads_fclass_tertiary_count",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 34,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7d9609ecb1c8|건",
+      "dimensionLabels": {
+        "category": "분류별 피처 수(track)",
+        "detail": "highway 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "분류별 피처 수(track)",
+        "detail": "highway 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "displayLabel": "도로 레이어 · 분류별 피처 수(track) — highway 분류값별 지물 건수",
+      "indicatorId": "A-027_roads_fclass_track_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7d9609ecb1c8",
+        "labelKo": "도로 레이어",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-7d9609ecb1c8|건|category=분류별 피처 수(track)|detail=highway 분류값별 지물 건수|technology=18|A-027_roads_fclass_track_count",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "도로 레이어 · 분류별 피처 수(track) — highway 분류값별 지물 건수",
+      "sourceLabelEn": "Feature count by highway class \"track\", OSM roads layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_roads_fclass_track_count",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 30,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7d9609ecb1c8|건",
+      "dimensionLabels": {
+        "category": "분류별 피처 수(trunk)",
+        "detail": "highway 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "분류별 피처 수(trunk)",
+        "detail": "highway 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "displayLabel": "도로 레이어 · 분류별 피처 수(trunk) — highway 분류값별 지물 건수",
+      "indicatorId": "A-027_roads_fclass_trunk_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7d9609ecb1c8",
+        "labelKo": "도로 레이어",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-7d9609ecb1c8|건|category=분류별 피처 수(trunk)|detail=highway 분류값별 지물 건수|technology=18|A-027_roads_fclass_trunk_count",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "도로 레이어 · 분류별 피처 수(trunk) — highway 분류값별 지물 건수",
+      "sourceLabelEn": "Feature count by highway class \"trunk\", OSM roads layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_roads_fclass_trunk_count",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 36,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7d9609ecb1c8|건",
+      "dimensionLabels": {
+        "category": "분류별 피처 수(unclassified)",
+        "detail": "highway 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "분류별 피처 수(unclassified)",
+        "detail": "highway 분류값별 지물 건수",
+        "technology": "18"
+      },
+      "displayLabel": "도로 레이어 · 분류별 피처 수(unclassified) — highway 분류값별 지물 건수",
+      "indicatorId": "A-027_roads_fclass_unclassified_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7d9609ecb1c8",
+        "labelKo": "도로 레이어",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-7d9609ecb1c8|건|category=분류별 피처 수(unclassified)|detail=highway 분류값별 지물 건수|technology=18|A-027_roads_fclass_unclassified_count",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "도로 레이어 · 분류별 피처 수(unclassified) — highway 분류값별 지물 건수",
+      "sourceLabelEn": "Feature count by highway class \"unclassified\", OSM roads layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_roads_fclass_unclassified_count",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 32,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7d9609ecb1c8|건",
+      "dimensionLabels": {
+        "category": "피처 수",
+        "detail": "OSM 도로 레이어의 지물 건수",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "피처 수",
+        "detail": "OSM 도로 레이어의 지물 건수",
+        "technology": "18"
+      },
+      "displayLabel": "도로 레이어 · 피처 수 — OSM 도로 레이어의 지물 건수",
+      "indicatorId": "A-027_roads_feature_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7d9609ecb1c8",
+        "labelKo": "도로 레이어",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-7d9609ecb1c8|건|category=피처 수|detail=OSM 도로 레이어의 지물 건수|technology=18|A-027_roads_feature_count",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "도로 레이어 · 피처 수 — OSM 도로 레이어의 지물 건수",
+      "sourceLabelEn": "Feature count of the OSM roads layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_roads_feature_count",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bd9e985f5e92|개",
+      "dimensionLabels": {
+        "category": "속성 필드 수",
+        "detail": "결측률을 측정한 속성 필드 개수",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "속성 필드 수",
+        "detail": "결측률을 측정한 속성 필드 개수",
+        "technology": "18"
+      },
+      "displayLabel": "도로 레이어 · 속성 필드 수 — 결측률을 측정한 속성 필드 개수",
+      "indicatorId": "A-027_roads_field_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bd9e985f5e92",
+        "labelKo": "도로 레이어",
+        "unit": "개",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-bd9e985f5e92|개|category=속성 필드 수|detail=결측률을 측정한 속성 필드 개수|technology=18|A-027_roads_field_count",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "도로 레이어 · 속성 필드 수 — 결측률을 측정한 속성 필드 개수",
+      "sourceLabelEn": "Attribute field count measured, OSM roads layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_roads_field_count",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 27,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8f35104be85d|%",
+      "dimensionLabels": {
+        "category": "교량(bridge) 결측률",
+        "detail": "속성 태그 미보유 비율",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "교량(bridge) 결측률",
+        "detail": "속성 태그 미보유 비율",
+        "technology": "18"
+      },
+      "displayLabel": "도로 레이어 · 교량(bridge) 결측률 — 속성 태그 미보유 비율",
+      "indicatorId": "A-027_roads_null_rate_bridge",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8f35104be85d",
+        "labelKo": "도로 레이어",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-8f35104be85d|%|category=교량(bridge) 결측률|detail=속성 태그 미보유 비율|technology=18|A-027_roads_null_rate_bridge",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "도로 레이어 · 교량(bridge) 결측률 — 속성 태그 미보유 비율",
+      "sourceLabelEn": "Null rate of the bridge attribute, OSM roads layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_roads_null_rate_bridge",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8f35104be85d|%",
+      "dimensionLabels": {
+        "category": "차로수(lanes) 결측률",
+        "detail": "속성 태그 미보유 비율",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "차로수(lanes) 결측률",
+        "detail": "속성 태그 미보유 비율",
+        "technology": "18"
+      },
+      "displayLabel": "도로 레이어 · 차로수(lanes) 결측률 — 속성 태그 미보유 비율",
+      "indicatorId": "A-027_roads_null_rate_lanes",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8f35104be85d",
+        "labelKo": "도로 레이어",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-8f35104be85d|%|category=차로수(lanes) 결측률|detail=속성 태그 미보유 비율|technology=18|A-027_roads_null_rate_lanes",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "도로 레이어 · 차로수(lanes) 결측률 — 속성 태그 미보유 비율",
+      "sourceLabelEn": "Null rate of the lanes attribute, OSM roads layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_roads_null_rate_lanes",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 26,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8f35104be85d|%",
+      "dimensionLabels": {
+        "category": "레이어(layer) 결측률",
+        "detail": "속성 태그 미보유 비율",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "레이어(layer) 결측률",
+        "detail": "속성 태그 미보유 비율",
+        "technology": "18"
+      },
+      "displayLabel": "도로 레이어 · 레이어(layer) 결측률 — 속성 태그 미보유 비율",
+      "indicatorId": "A-027_roads_null_rate_layer",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8f35104be85d",
+        "labelKo": "도로 레이어",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-8f35104be85d|%|category=레이어(layer) 결측률|detail=속성 태그 미보유 비율|technology=18|A-027_roads_null_rate_layer",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "도로 레이어 · 레이어(layer) 결측률 — 속성 태그 미보유 비율",
+      "sourceLabelEn": "Null rate of the layer attribute, OSM roads layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_roads_null_rate_layer",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8f35104be85d|%",
+      "dimensionLabels": {
+        "category": "제한속도(maxspeed) 결측률",
+        "detail": "속성 태그 미보유 비율",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "제한속도(maxspeed) 결측률",
+        "detail": "속성 태그 미보유 비율",
+        "technology": "18"
+      },
+      "displayLabel": "도로 레이어 · 제한속도(maxspeed) 결측률 — 속성 태그 미보유 비율",
+      "indicatorId": "A-027_roads_null_rate_maxspeed",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8f35104be85d",
+        "labelKo": "도로 레이어",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-8f35104be85d|%|category=제한속도(maxspeed) 결측률|detail=속성 태그 미보유 비율|technology=18|A-027_roads_null_rate_maxspeed",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "도로 레이어 · 제한속도(maxspeed) 결측률 — 속성 태그 미보유 비율",
+      "sourceLabelEn": "Null rate of the maxspeed attribute, OSM roads layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_roads_null_rate_maxspeed",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8f35104be85d|%",
+      "dimensionLabels": {
+        "category": "명칭(name) 결측률",
+        "detail": "속성 태그 미보유 비율",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "명칭(name) 결측률",
+        "detail": "속성 태그 미보유 비율",
+        "technology": "18"
+      },
+      "displayLabel": "도로 레이어 · 명칭(name) 결측률 — 속성 태그 미보유 비율",
+      "indicatorId": "A-027_roads_null_rate_name",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8f35104be85d",
+        "labelKo": "도로 레이어",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-8f35104be85d|%|category=명칭(name) 결측률|detail=속성 태그 미보유 비율|technology=18|A-027_roads_null_rate_name",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "도로 레이어 · 명칭(name) 결측률 — 속성 태그 미보유 비율",
+      "sourceLabelEn": "Null rate of the name attribute, OSM roads layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_roads_null_rate_name",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8f35104be85d|%",
+      "dimensionLabels": {
+        "category": "일방통행(oneway) 결측률",
+        "detail": "속성 태그 미보유 비율",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "일방통행(oneway) 결측률",
+        "detail": "속성 태그 미보유 비율",
+        "technology": "18"
+      },
+      "displayLabel": "도로 레이어 · 일방통행(oneway) 결측률 — 속성 태그 미보유 비율",
+      "indicatorId": "A-027_roads_null_rate_oneway",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8f35104be85d",
+        "labelKo": "도로 레이어",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-8f35104be85d|%|category=일방통행(oneway) 결측률|detail=속성 태그 미보유 비율|technology=18|A-027_roads_null_rate_oneway",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "도로 레이어 · 일방통행(oneway) 결측률 — 속성 태그 미보유 비율",
+      "sourceLabelEn": "Null rate of the oneway attribute, OSM roads layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_roads_null_rate_oneway",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8f35104be85d|%",
+      "dimensionLabels": {
+        "category": "노선번호(ref) 결측률",
+        "detail": "속성 태그 미보유 비율",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "노선번호(ref) 결측률",
+        "detail": "속성 태그 미보유 비율",
+        "technology": "18"
+      },
+      "displayLabel": "도로 레이어 · 노선번호(ref) 결측률 — 속성 태그 미보유 비율",
+      "indicatorId": "A-027_roads_null_rate_ref",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8f35104be85d",
+        "labelKo": "도로 레이어",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-8f35104be85d|%|category=노선번호(ref) 결측률|detail=속성 태그 미보유 비율|technology=18|A-027_roads_null_rate_ref",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "도로 레이어 · 노선번호(ref) 결측률 — 속성 태그 미보유 비율",
+      "sourceLabelEn": "Null rate of the ref attribute, OSM roads layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_roads_null_rate_ref",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8f35104be85d|%",
+      "dimensionLabels": {
+        "category": "노면(surface) 결측률",
+        "detail": "속성 태그 미보유 비율",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "노면(surface) 결측률",
+        "detail": "속성 태그 미보유 비율",
+        "technology": "18"
+      },
+      "displayLabel": "도로 레이어 · 노면(surface) 결측률 — 속성 태그 미보유 비율",
+      "indicatorId": "A-027_roads_null_rate_surface",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8f35104be85d",
+        "labelKo": "도로 레이어",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-8f35104be85d|%|category=노면(surface) 결측률|detail=속성 태그 미보유 비율|technology=18|A-027_roads_null_rate_surface",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "도로 레이어 · 노면(surface) 결측률 — 속성 태그 미보유 비율",
+      "sourceLabelEn": "Null rate of the surface attribute, OSM roads layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_roads_null_rate_surface",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 25,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8f35104be85d|%",
+      "dimensionLabels": {
+        "category": "터널(tunnel) 결측률",
+        "detail": "속성 태그 미보유 비율",
+        "technology": "18"
+      },
+      "dimensions": {
+        "category": "터널(tunnel) 결측률",
+        "detail": "속성 태그 미보유 비율",
+        "technology": "18"
+      },
+      "displayLabel": "도로 레이어 · 터널(tunnel) 결측률 — 속성 태그 미보유 비율",
+      "indicatorId": "A-027_roads_null_rate_tunnel",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8f35104be85d",
+        "labelKo": "도로 레이어",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-8f35104be85d|%|category=터널(tunnel) 결측률|detail=속성 태그 미보유 비율|technology=18|A-027_roads_null_rate_tunnel",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "도로 레이어 · 터널(tunnel) 결측률 — 속성 태그 미보유 비율",
+      "sourceLabelEn": "Null rate of the tunnel attribute, OSM roads layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-027",
+        "indicatorId": "A-027_roads_null_rate_tunnel",
+        "sourceFileDecoded": "A-027_교통 인프라[railway, road].xlsx",
+        "sourceRow": 24,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 9,
+      "key": "measure-8f35104be85d",
+      "labelKo": "도로 레이어",
+      "recordCount": 9,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-3ddde7efded5",
+      "labelKo": "도로 레이어",
+      "recordCount": 1,
+      "unit": "EPSG 코드",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-bd9e985f5e92",
+      "labelKo": "도로 레이어",
+      "recordCount": 1,
+      "unit": "개",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 13,
+      "key": "measure-7d9609ecb1c8",
+      "labelKo": "도로 레이어",
+      "recordCount": 13,
+      "unit": "건",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-0ff4ec179e3f",
+      "labelKo": "철도 레이어",
+      "recordCount": 1,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-22c73ee94b33",
+      "labelKo": "철도 레이어",
+      "recordCount": 1,
+      "unit": "EPSG 코드",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-9f2522bf8637",
+      "labelKo": "철도 레이어",
+      "recordCount": 1,
+      "unit": "개",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 8,
+      "key": "measure-277ea4d09a7b",
+      "labelKo": "철도 레이어",
+      "recordCount": 8,
+      "unit": "건",
+      "unitFamily": "count"
+    }
+  ],
+  "observationCount": 35,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

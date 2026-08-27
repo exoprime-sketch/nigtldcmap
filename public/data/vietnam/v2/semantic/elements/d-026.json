@@ -1,0 +1,220 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 1,
+      "values": [
+        "보증금액 합계"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 3,
+      "values": [
+        "상태 제안",
+        "상태 종료·비활성",
+        "상태 진행중"
+      ]
+    },
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "사업·재원"
+      ]
+    },
+    {
+      "key": "status",
+      "labelKo": "status",
+      "valueCount": 3,
+      "values": [
+        "제안(Proposed)",
+        "종료/비활성(Not Active)",
+        "진행중(Active)"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2018"
+      ]
+    }
+  ],
+  "elementId": "D-026",
+  "entityCount": 14,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 4,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-1f378f456269|USD",
+      "dimensionLabels": {
+        "category": "보증금액 합계",
+        "detail": "상태 진행중",
+        "technology": "1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10 · 11 · 12 · 13 · 14 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 22 · 23 · 24 · 25 · 26 · 27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "보증금액 합계",
+        "detail": "상태 진행중",
+        "technology": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "MIGA 정치적 리스크 보증 · 보증금액 합계 — 상태 진행중",
+      "indicatorId": "D-026_guarantee_amount_total_active",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1f378f456269",
+        "labelKo": "MIGA 정치적 리스크 보증",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-1f378f456269|USD|category=보증금액 합계|detail=상태 진행중|technology=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38|D-026_guarantee_amount_total_active",
+      "sourceCaveat": "[검토지적 반영 ①] MIGA 공식 보증유형 체계는 4대 정치적 리스크(수용 Expropriation / 이전제한 Transfer Restriction / 계약위반 Breach of Contract / 전쟁·내란 War and Civil Disturbance)와 별도의 신용보강형 상품인 비이행보증(Non-Honoring of Sovereign Financial Obligations, NHSFO)으로 구성됨. NHSFO는 4대 PRI가 아니라 별도 상품이므로 note에 \"해당없음(신용보강형)\"으로 구분 표기함. [검토지적 반영 ②] 총 보증 규모를 산정할 때 상태별 구분이 필요하므로 진행중(Active) / 제안(Proposed) / 종료·비활성(Not Active)을 레코드별로 명시하고, 1.1 시트에 상태별 합계를 별도 지표로 제공함. 제안(Proposed) 금액은 신청 최대금액이며 실제 발급액이 아님. [원본 버전] World Bank Group Guarantees—MIGA 프로젝트 DB 내려받기본(베트남 13행 → 9개 고유 프로젝트). [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "MIGA 정치적 리스크 보증 · 보증금액 합계 — 상태 진행중",
+      "sourceLabelEn": "Total MIGA guarantee amount — Active",
+      "sourceNote": "[검토지적 반영 ①] MIGA 공식 보증유형 체계는 4대 정치적 리스크(수용 Expropriation / 이전제한 Transfer Restriction / 계약위반 Breach of Contract / 전쟁·내란 War and Civil Disturbance)와 별도의 신용보강형 상품인 비이행보증(Non-Honoring of Sovereign Financial Obligations, NHSFO)으로 구성됨. NHSFO는 4대 PRI가 아니라 별도 상품이므로 note에 \"해당없음(신용보강형)\"으로 구분 표기함. [검토지적 반영 ②] 총 보증 규모를 산정할 때 상태별 구분이 필요하므로 진행중(Active) / 제안(Proposed) / 종료·비활성(Not Active)을 레코드별로 명시하고, 1.1 시트에 상태별 합계를 별도 지표로 제공함. 제안(Proposed) 금액은 신청 최대금액이며 실제 발급액이 아님. [원본 버전] World Bank Group Guarantees—MIGA 프로젝트 DB 내려받기본(베트남 13행 → 9개 고유 프로젝트). [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-026",
+        "indicatorId": "D-026_guarantee_amount_total_active",
+        "sourceFileDecoded": "D-026_MIGA 정치적 리스크 보증.xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1f378f456269|USD",
+      "dimensionLabels": {
+        "category": "보증금액 합계",
+        "detail": "상태 종료·비활성",
+        "technology": "1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10 · 11 · 12 · 13 · 14 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 22 · 23 · 24 · 25 · 26 · 27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "보증금액 합계",
+        "detail": "상태 종료·비활성",
+        "technology": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "MIGA 정치적 리스크 보증 · 보증금액 합계 — 상태 종료·비활성",
+      "indicatorId": "D-026_guarantee_amount_total_not_active",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1f378f456269",
+        "labelKo": "MIGA 정치적 리스크 보증",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-1f378f456269|USD|category=보증금액 합계|detail=상태 종료·비활성|technology=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38|D-026_guarantee_amount_total_not_active",
+      "sourceCaveat": "[검토지적 반영 ①] MIGA 공식 보증유형 체계는 4대 정치적 리스크(수용 Expropriation / 이전제한 Transfer Restriction / 계약위반 Breach of Contract / 전쟁·내란 War and Civil Disturbance)와 별도의 신용보강형 상품인 비이행보증(Non-Honoring of Sovereign Financial Obligations, NHSFO)으로 구성됨. NHSFO는 4대 PRI가 아니라 별도 상품이므로 note에 \"해당없음(신용보강형)\"으로 구분 표기함. [검토지적 반영 ②] 총 보증 규모를 산정할 때 상태별 구분이 필요하므로 진행중(Active) / 제안(Proposed) / 종료·비활성(Not Active)을 레코드별로 명시하고, 1.1 시트에 상태별 합계를 별도 지표로 제공함. 제안(Proposed) 금액은 신청 최대금액이며 실제 발급액이 아님. [원본 버전] World Bank Group Guarantees—MIGA 프로젝트 DB 내려받기본(베트남 13행 → 9개 고유 프로젝트). [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "MIGA 정치적 리스크 보증 · 보증금액 합계 — 상태 종료·비활성",
+      "sourceLabelEn": "Total MIGA guarantee amount — Not Active",
+      "sourceNote": "[검토지적 반영 ①] MIGA 공식 보증유형 체계는 4대 정치적 리스크(수용 Expropriation / 이전제한 Transfer Restriction / 계약위반 Breach of Contract / 전쟁·내란 War and Civil Disturbance)와 별도의 신용보강형 상품인 비이행보증(Non-Honoring of Sovereign Financial Obligations, NHSFO)으로 구성됨. NHSFO는 4대 PRI가 아니라 별도 상품이므로 note에 \"해당없음(신용보강형)\"으로 구분 표기함. [검토지적 반영 ②] 총 보증 규모를 산정할 때 상태별 구분이 필요하므로 진행중(Active) / 제안(Proposed) / 종료·비활성(Not Active)을 레코드별로 명시하고, 1.1 시트에 상태별 합계를 별도 지표로 제공함. 제안(Proposed) 금액은 신청 최대금액이며 실제 발급액이 아님. [원본 버전] World Bank Group Guarantees—MIGA 프로젝트 DB 내려받기본(베트남 13행 → 9개 고유 프로젝트). [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-026",
+        "indicatorId": "D-026_guarantee_amount_total_not_active",
+        "sourceFileDecoded": "D-026_MIGA 정치적 리스크 보증.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1f378f456269|USD",
+      "dimensionLabels": {
+        "category": "보증금액 합계",
+        "detail": "상태 제안",
+        "technology": "1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10 · 11 · 12 · 13 · 14 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 22 · 23 · 24 · 25 · 26 · 27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "보증금액 합계",
+        "detail": "상태 제안",
+        "technology": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "MIGA 정치적 리스크 보증 · 보증금액 합계 — 상태 제안",
+      "indicatorId": "D-026_guarantee_amount_total_proposed",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1f378f456269",
+        "labelKo": "MIGA 정치적 리스크 보증",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-1f378f456269|USD|category=보증금액 합계|detail=상태 제안|technology=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38|D-026_guarantee_amount_total_proposed",
+      "sourceCaveat": "[검토지적 반영 ①] MIGA 공식 보증유형 체계는 4대 정치적 리스크(수용 Expropriation / 이전제한 Transfer Restriction / 계약위반 Breach of Contract / 전쟁·내란 War and Civil Disturbance)와 별도의 신용보강형 상품인 비이행보증(Non-Honoring of Sovereign Financial Obligations, NHSFO)으로 구성됨. NHSFO는 4대 PRI가 아니라 별도 상품이므로 note에 \"해당없음(신용보강형)\"으로 구분 표기함. [검토지적 반영 ②] 총 보증 규모를 산정할 때 상태별 구분이 필요하므로 진행중(Active) / 제안(Proposed) / 종료·비활성(Not Active)을 레코드별로 명시하고, 1.1 시트에 상태별 합계를 별도 지표로 제공함. 제안(Proposed) 금액은 신청 최대금액이며 실제 발급액이 아님. [원본 버전] World Bank Group Guarantees—MIGA 프로젝트 DB 내려받기본(베트남 13행 → 9개 고유 프로젝트). [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "MIGA 정치적 리스크 보증 · 보증금액 합계 — 상태 제안",
+      "sourceLabelEn": "Total MIGA guarantee amount — Proposed",
+      "sourceNote": "[검토지적 반영 ①] MIGA 공식 보증유형 체계는 4대 정치적 리스크(수용 Expropriation / 이전제한 Transfer Restriction / 계약위반 Breach of Contract / 전쟁·내란 War and Civil Disturbance)와 별도의 신용보강형 상품인 비이행보증(Non-Honoring of Sovereign Financial Obligations, NHSFO)으로 구성됨. NHSFO는 4대 PRI가 아니라 별도 상품이므로 note에 \"해당없음(신용보강형)\"으로 구분 표기함. [검토지적 반영 ②] 총 보증 규모를 산정할 때 상태별 구분이 필요하므로 진행중(Active) / 제안(Proposed) / 종료·비활성(Not Active)을 레코드별로 명시하고, 1.1 시트에 상태별 합계를 별도 지표로 제공함. 제안(Proposed) 금액은 신청 최대금액이며 실제 발급액이 아님. [원본 버전] World Bank Group Guarantees—MIGA 프로젝트 DB 내려받기본(베트남 13행 → 9개 고유 프로젝트). [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-026",
+        "indicatorId": "D-026_guarantee_amount_total_proposed",
+        "sourceFileDecoded": "D-026_MIGA 정치적 리스크 보증.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7f0cd709cfc5|건",
+      "dimensionLabels": {
+        "category": "베트남 보증사업 레지스트리",
+        "detail": "레코드 1건 = 1행(1.2 레코드형 시트)",
+        "technology": "1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10 · 11 · 12 · 13 · 14 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 22 · 23 · 24 · 25 · 26 · 27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "베트남 보증사업 레지스트리",
+        "detail": "레코드 1건 = 1행(1.2 레코드형 시트)",
+        "technology": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "MIGA 정치적 리스크 보증 · 베트남 보증사업 레지스트리 — 레코드 1건 = 1행(1.2 레코드형 시트)",
+      "indicatorId": "D-026_miga_guarantee_registry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7f0cd709cfc5",
+        "labelKo": "MIGA 정치적 리스크 보증",
+        "unit": "건",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-7f0cd709cfc5|건|category=베트남 보증사업 레지스트리|detail=레코드 1건 = 1행(1.2 레코드형 시트)|technology=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38|D-026_miga_guarantee_registry",
+      "sourceCaveat": "[검토지적 반영 ①] MIGA 공식 보증유형 체계는 4대 정치적 리스크(수용 Expropriation / 이전제한 Transfer Restriction / 계약위반 Breach of Contract / 전쟁·내란 War and Civil Disturbance)와 별도의 신용보강형 상품인 비이행보증(Non-Honoring of Sovereign Financial Obligations, NHSFO)으로 구성됨. NHSFO는 4대 PRI가 아니라 별도 상품이므로 note에 \"해당없음(신용보강형)\"으로 구분 표기함. [검토지적 반영 ②] 총 보증 규모를 산정할 때 상태별 구분이 필요하므로 진행중(Active) / 제안(Proposed) / 종료·비활성(Not Active)을 레코드별로 명시하고, 1.1 시트에 상태별 합계를 별도 지표로 제공함. 제안(Proposed) 금액은 신청 최대금액이며 실제 발급액이 아님. [원본 버전] World Bank Group Guarantees—MIGA 프로젝트 DB 내려받기본(베트남 13행 → 9개 고유 프로젝트). [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "MIGA 정치적 리스크 보증 · 베트남 보증사업 레지스트리 — 레코드 1건 = 1행(1.2 레코드형 시트)",
+      "sourceLabelEn": "Registry of MIGA political risk guarantees in Viet Nam",
+      "sourceNote": "일부 사업의 투자자·보증 보유자 정보가 MIGA 비공개 정책에 따라 미게재임.",
+      "sourceProvenance": {
+        "elementId": "D-026",
+        "indicatorId": "D-026_miga_guarantee_registry",
+        "sourceFileDecoded": "D-026_MIGA 정치적 리스크 보증.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 3,
+      "key": "measure-1f378f456269",
+      "labelKo": "MIGA 정치적 리스크 보증",
+      "recordCount": 3,
+      "unit": "USD",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-7f0cd709cfc5",
+      "labelKo": "MIGA 정치적 리스크 보증",
+      "recordCount": 0,
+      "unit": "건",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 3,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

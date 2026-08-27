@@ -1,0 +1,402 @@
+{
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 11,
+      "values": [
+        "남(S)",
+        "남동(SE)",
+        "남서(SW)",
+        "동(E)",
+        "메콩·중부고원",
+        "북(N)",
+        "북동(NE)",
+        "북서(NW)",
+        "서(W)",
+        "중부 하천",
+        "홍강(북부)"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "5,32"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2022"
+      ]
+    }
+  ],
+  "elementId": "B-026",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 11,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-eec8d0d27c64|%",
+      "dimensionLabels": {
+        "detail": "동(E)"
+      },
+      "dimensions": {
+        "detail": "동(E)"
+      },
+      "displayLabel": "D8 유향 분포(격자 비율) — 동(E)",
+      "indicatorId": "B-026_flow_dir_d8_dir_e",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-eec8d0d27c64",
+        "labelKo": "D8 유향 분포(격자 비율)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-eec8d0d27c64|%|detail=동(E)|B-026_flow_dir_d8_dir_e",
+      "sourceCaveat": "[재현 검증 완료] 보유 클립본(VNM_flow_direction_15s.tif · 1,920×3,840 · 셀 0.0041667°)에서 D8 코드별 셀 수를 다시 집계하여 수록값과 대조했으며 8개 방위 전부 일치했습니다(유효셀 5,006,158개 · NoData 255 제외). [GIS 처리] 원본은 GIS 래스터(GeoTIFF, 15 arc-sec, EPSG:4326)이며 엑셀 변환 대상이 아님. 클립본 VNM_flow_direction_15s.tif를 Raw data로 관리. 사방위 우세는 D8 알고리즘의 격자 특성. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] HydroSHEDS v1 (2022 릴리스)",
+      "sourceLabel": "D8 유향 분포(격자 비율) — 동(E)",
+      "sourceLabelEn": "D8 flow direction distribution",
+      "sourceNote": "[재현 검증 완료] 보유 클립본(VNM_flow_direction_15s.tif · 1,920×3,840 · 셀 0.0041667°)에서 D8 코드별 셀 수를 다시 집계하여 수록값과 대조했으며 8개 방위 전부 일치했습니다(유효셀 5,006,158개 · NoData 255 제외). [GIS 처리] 원본은 GIS 래스터(GeoTIFF, 15 arc-sec, EPSG:4326)이며 엑셀 변환 대상이 아님. 클립본 VNM_flow_direction_15s.tif를 Raw data로 관리. 사방위 우세는 D8 알고리즘의 격자 특성. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] HydroSHEDS v1 (2022 릴리스)",
+      "sourceProvenance": {
+        "elementId": "B-026",
+        "indicatorId": "B-026_flow_dir_d8_dir_e",
+        "sourceFileDecoded": "B-026_유향(flow direction).xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-eec8d0d27c64|%",
+      "dimensionLabels": {
+        "detail": "북(N)"
+      },
+      "dimensions": {
+        "detail": "북(N)"
+      },
+      "displayLabel": "D8 유향 분포(격자 비율) — 북(N)",
+      "indicatorId": "B-026_flow_dir_d8_dir_n",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-eec8d0d27c64",
+        "labelKo": "D8 유향 분포(격자 비율)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-eec8d0d27c64|%|detail=북(N)|B-026_flow_dir_d8_dir_n",
+      "sourceCaveat": "[재현 검증 완료] 보유 클립본(VNM_flow_direction_15s.tif · 1,920×3,840 · 셀 0.0041667°)에서 D8 코드별 셀 수를 다시 집계하여 수록값과 대조했으며 8개 방위 전부 일치했습니다(유효셀 5,006,158개 · NoData 255 제외). [GIS 처리] 원본은 GIS 래스터(GeoTIFF, 15 arc-sec, EPSG:4326)이며 엑셀 변환 대상이 아님. 클립본 VNM_flow_direction_15s.tif를 Raw data로 관리. 사방위 우세는 D8 알고리즘의 격자 특성. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] HydroSHEDS v1 (2022 릴리스)",
+      "sourceLabel": "D8 유향 분포(격자 비율) — 북(N)",
+      "sourceLabelEn": "D8 flow direction distribution",
+      "sourceNote": "[재현 검증 완료] 보유 클립본(VNM_flow_direction_15s.tif · 1,920×3,840 · 셀 0.0041667°)에서 D8 코드별 셀 수를 다시 집계하여 수록값과 대조했으며 8개 방위 전부 일치했습니다(유효셀 5,006,158개 · NoData 255 제외). [GIS 처리] 원본은 GIS 래스터(GeoTIFF, 15 arc-sec, EPSG:4326)이며 엑셀 변환 대상이 아님. 클립본 VNM_flow_direction_15s.tif를 Raw data로 관리. 사방위 우세는 D8 알고리즘의 격자 특성. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] HydroSHEDS v1 (2022 릴리스)",
+      "sourceProvenance": {
+        "elementId": "B-026",
+        "indicatorId": "B-026_flow_dir_d8_dir_n",
+        "sourceFileDecoded": "B-026_유향(flow direction).xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-eec8d0d27c64|%",
+      "dimensionLabels": {
+        "detail": "북동(NE)"
+      },
+      "dimensions": {
+        "detail": "북동(NE)"
+      },
+      "displayLabel": "D8 유향 분포(격자 비율) — 북동(NE)",
+      "indicatorId": "B-026_flow_dir_d8_dir_ne",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-eec8d0d27c64",
+        "labelKo": "D8 유향 분포(격자 비율)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-eec8d0d27c64|%|detail=북동(NE)|B-026_flow_dir_d8_dir_ne",
+      "sourceCaveat": "[재현 검증 완료] 보유 클립본(VNM_flow_direction_15s.tif · 1,920×3,840 · 셀 0.0041667°)에서 D8 코드별 셀 수를 다시 집계하여 수록값과 대조했으며 8개 방위 전부 일치했습니다(유효셀 5,006,158개 · NoData 255 제외). [GIS 처리] 원본은 GIS 래스터(GeoTIFF, 15 arc-sec, EPSG:4326)이며 엑셀 변환 대상이 아님. 클립본 VNM_flow_direction_15s.tif를 Raw data로 관리. 사방위 우세는 D8 알고리즘의 격자 특성. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] HydroSHEDS v1 (2022 릴리스)",
+      "sourceLabel": "D8 유향 분포(격자 비율) — 북동(NE)",
+      "sourceLabelEn": "D8 flow direction distribution",
+      "sourceNote": "[재현 검증 완료] 보유 클립본(VNM_flow_direction_15s.tif · 1,920×3,840 · 셀 0.0041667°)에서 D8 코드별 셀 수를 다시 집계하여 수록값과 대조했으며 8개 방위 전부 일치했습니다(유효셀 5,006,158개 · NoData 255 제외). [GIS 처리] 원본은 GIS 래스터(GeoTIFF, 15 arc-sec, EPSG:4326)이며 엑셀 변환 대상이 아님. 클립본 VNM_flow_direction_15s.tif를 Raw data로 관리. 사방위 우세는 D8 알고리즘의 격자 특성. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] HydroSHEDS v1 (2022 릴리스)",
+      "sourceProvenance": {
+        "elementId": "B-026",
+        "indicatorId": "B-026_flow_dir_d8_dir_ne",
+        "sourceFileDecoded": "B-026_유향(flow direction).xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-eec8d0d27c64|%",
+      "dimensionLabels": {
+        "detail": "북서(NW)"
+      },
+      "dimensions": {
+        "detail": "북서(NW)"
+      },
+      "displayLabel": "D8 유향 분포(격자 비율) — 북서(NW)",
+      "indicatorId": "B-026_flow_dir_d8_dir_nw",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-eec8d0d27c64",
+        "labelKo": "D8 유향 분포(격자 비율)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-eec8d0d27c64|%|detail=북서(NW)|B-026_flow_dir_d8_dir_nw",
+      "sourceCaveat": "[재현 검증 완료] 보유 클립본(VNM_flow_direction_15s.tif · 1,920×3,840 · 셀 0.0041667°)에서 D8 코드별 셀 수를 다시 집계하여 수록값과 대조했으며 8개 방위 전부 일치했습니다(유효셀 5,006,158개 · NoData 255 제외). [GIS 처리] 원본은 GIS 래스터(GeoTIFF, 15 arc-sec, EPSG:4326)이며 엑셀 변환 대상이 아님. 클립본 VNM_flow_direction_15s.tif를 Raw data로 관리. 사방위 우세는 D8 알고리즘의 격자 특성. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] HydroSHEDS v1 (2022 릴리스)",
+      "sourceLabel": "D8 유향 분포(격자 비율) — 북서(NW)",
+      "sourceLabelEn": "D8 flow direction distribution",
+      "sourceNote": "[재현 검증 완료] 보유 클립본(VNM_flow_direction_15s.tif · 1,920×3,840 · 셀 0.0041667°)에서 D8 코드별 셀 수를 다시 집계하여 수록값과 대조했으며 8개 방위 전부 일치했습니다(유효셀 5,006,158개 · NoData 255 제외). [GIS 처리] 원본은 GIS 래스터(GeoTIFF, 15 arc-sec, EPSG:4326)이며 엑셀 변환 대상이 아님. 클립본 VNM_flow_direction_15s.tif를 Raw data로 관리. 사방위 우세는 D8 알고리즘의 격자 특성. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] HydroSHEDS v1 (2022 릴리스)",
+      "sourceProvenance": {
+        "elementId": "B-026",
+        "indicatorId": "B-026_flow_dir_d8_dir_nw",
+        "sourceFileDecoded": "B-026_유향(flow direction).xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-eec8d0d27c64|%",
+      "dimensionLabels": {
+        "detail": "남(S)"
+      },
+      "dimensions": {
+        "detail": "남(S)"
+      },
+      "displayLabel": "D8 유향 분포(격자 비율) — 남(S)",
+      "indicatorId": "B-026_flow_dir_d8_dir_s",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-eec8d0d27c64",
+        "labelKo": "D8 유향 분포(격자 비율)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-eec8d0d27c64|%|detail=남(S)|B-026_flow_dir_d8_dir_s",
+      "sourceCaveat": "[재현 검증 완료] 보유 클립본(VNM_flow_direction_15s.tif · 1,920×3,840 · 셀 0.0041667°)에서 D8 코드별 셀 수를 다시 집계하여 수록값과 대조했으며 8개 방위 전부 일치했습니다(유효셀 5,006,158개 · NoData 255 제외). [GIS 처리] 원본은 GIS 래스터(GeoTIFF, 15 arc-sec, EPSG:4326)이며 엑셀 변환 대상이 아님. 클립본 VNM_flow_direction_15s.tif를 Raw data로 관리. 사방위 우세는 D8 알고리즘의 격자 특성. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] HydroSHEDS v1 (2022 릴리스)",
+      "sourceLabel": "D8 유향 분포(격자 비율) — 남(S)",
+      "sourceLabelEn": "D8 flow direction distribution",
+      "sourceNote": "[재현 검증 완료] 보유 클립본(VNM_flow_direction_15s.tif · 1,920×3,840 · 셀 0.0041667°)에서 D8 코드별 셀 수를 다시 집계하여 수록값과 대조했으며 8개 방위 전부 일치했습니다(유효셀 5,006,158개 · NoData 255 제외). [GIS 처리] 원본은 GIS 래스터(GeoTIFF, 15 arc-sec, EPSG:4326)이며 엑셀 변환 대상이 아님. 클립본 VNM_flow_direction_15s.tif를 Raw data로 관리. 사방위 우세는 D8 알고리즘의 격자 특성. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] HydroSHEDS v1 (2022 릴리스)",
+      "sourceProvenance": {
+        "elementId": "B-026",
+        "indicatorId": "B-026_flow_dir_d8_dir_s",
+        "sourceFileDecoded": "B-026_유향(flow direction).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-eec8d0d27c64|%",
+      "dimensionLabels": {
+        "detail": "남동(SE)"
+      },
+      "dimensions": {
+        "detail": "남동(SE)"
+      },
+      "displayLabel": "D8 유향 분포(격자 비율) — 남동(SE)",
+      "indicatorId": "B-026_flow_dir_d8_dir_se",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-eec8d0d27c64",
+        "labelKo": "D8 유향 분포(격자 비율)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-eec8d0d27c64|%|detail=남동(SE)|B-026_flow_dir_d8_dir_se",
+      "sourceCaveat": "[재현 검증 완료] 보유 클립본(VNM_flow_direction_15s.tif · 1,920×3,840 · 셀 0.0041667°)에서 D8 코드별 셀 수를 다시 집계하여 수록값과 대조했으며 8개 방위 전부 일치했습니다(유효셀 5,006,158개 · NoData 255 제외). [GIS 처리] 원본은 GIS 래스터(GeoTIFF, 15 arc-sec, EPSG:4326)이며 엑셀 변환 대상이 아님. 클립본 VNM_flow_direction_15s.tif를 Raw data로 관리. 사방위 우세는 D8 알고리즘의 격자 특성. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] HydroSHEDS v1 (2022 릴리스)",
+      "sourceLabel": "D8 유향 분포(격자 비율) — 남동(SE)",
+      "sourceLabelEn": "D8 flow direction distribution",
+      "sourceNote": "[재현 검증 완료] 보유 클립본(VNM_flow_direction_15s.tif · 1,920×3,840 · 셀 0.0041667°)에서 D8 코드별 셀 수를 다시 집계하여 수록값과 대조했으며 8개 방위 전부 일치했습니다(유효셀 5,006,158개 · NoData 255 제외). [GIS 처리] 원본은 GIS 래스터(GeoTIFF, 15 arc-sec, EPSG:4326)이며 엑셀 변환 대상이 아님. 클립본 VNM_flow_direction_15s.tif를 Raw data로 관리. 사방위 우세는 D8 알고리즘의 격자 특성. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] HydroSHEDS v1 (2022 릴리스)",
+      "sourceProvenance": {
+        "elementId": "B-026",
+        "indicatorId": "B-026_flow_dir_d8_dir_se",
+        "sourceFileDecoded": "B-026_유향(flow direction).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-eec8d0d27c64|%",
+      "dimensionLabels": {
+        "detail": "남서(SW)"
+      },
+      "dimensions": {
+        "detail": "남서(SW)"
+      },
+      "displayLabel": "D8 유향 분포(격자 비율) — 남서(SW)",
+      "indicatorId": "B-026_flow_dir_d8_dir_sw",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-eec8d0d27c64",
+        "labelKo": "D8 유향 분포(격자 비율)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-eec8d0d27c64|%|detail=남서(SW)|B-026_flow_dir_d8_dir_sw",
+      "sourceCaveat": "[재현 검증 완료] 보유 클립본(VNM_flow_direction_15s.tif · 1,920×3,840 · 셀 0.0041667°)에서 D8 코드별 셀 수를 다시 집계하여 수록값과 대조했으며 8개 방위 전부 일치했습니다(유효셀 5,006,158개 · NoData 255 제외). [GIS 처리] 원본은 GIS 래스터(GeoTIFF, 15 arc-sec, EPSG:4326)이며 엑셀 변환 대상이 아님. 클립본 VNM_flow_direction_15s.tif를 Raw data로 관리. 사방위 우세는 D8 알고리즘의 격자 특성. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] HydroSHEDS v1 (2022 릴리스)",
+      "sourceLabel": "D8 유향 분포(격자 비율) — 남서(SW)",
+      "sourceLabelEn": "D8 flow direction distribution",
+      "sourceNote": "[재현 검증 완료] 보유 클립본(VNM_flow_direction_15s.tif · 1,920×3,840 · 셀 0.0041667°)에서 D8 코드별 셀 수를 다시 집계하여 수록값과 대조했으며 8개 방위 전부 일치했습니다(유효셀 5,006,158개 · NoData 255 제외). [GIS 처리] 원본은 GIS 래스터(GeoTIFF, 15 arc-sec, EPSG:4326)이며 엑셀 변환 대상이 아님. 클립본 VNM_flow_direction_15s.tif를 Raw data로 관리. 사방위 우세는 D8 알고리즘의 격자 특성. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] HydroSHEDS v1 (2022 릴리스)",
+      "sourceProvenance": {
+        "elementId": "B-026",
+        "indicatorId": "B-026_flow_dir_d8_dir_sw",
+        "sourceFileDecoded": "B-026_유향(flow direction).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-eec8d0d27c64|%",
+      "dimensionLabels": {
+        "detail": "서(W)"
+      },
+      "dimensions": {
+        "detail": "서(W)"
+      },
+      "displayLabel": "D8 유향 분포(격자 비율) — 서(W)",
+      "indicatorId": "B-026_flow_dir_d8_dir_w",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-eec8d0d27c64",
+        "labelKo": "D8 유향 분포(격자 비율)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-eec8d0d27c64|%|detail=서(W)|B-026_flow_dir_d8_dir_w",
+      "sourceCaveat": "[재현 검증 완료] 보유 클립본(VNM_flow_direction_15s.tif · 1,920×3,840 · 셀 0.0041667°)에서 D8 코드별 셀 수를 다시 집계하여 수록값과 대조했으며 8개 방위 전부 일치했습니다(유효셀 5,006,158개 · NoData 255 제외). [GIS 처리] 원본은 GIS 래스터(GeoTIFF, 15 arc-sec, EPSG:4326)이며 엑셀 변환 대상이 아님. 클립본 VNM_flow_direction_15s.tif를 Raw data로 관리. 사방위 우세는 D8 알고리즘의 격자 특성. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] HydroSHEDS v1 (2022 릴리스)",
+      "sourceLabel": "D8 유향 분포(격자 비율) — 서(W)",
+      "sourceLabelEn": "D8 flow direction distribution",
+      "sourceNote": "[재현 검증 완료] 보유 클립본(VNM_flow_direction_15s.tif · 1,920×3,840 · 셀 0.0041667°)에서 D8 코드별 셀 수를 다시 집계하여 수록값과 대조했으며 8개 방위 전부 일치했습니다(유효셀 5,006,158개 · NoData 255 제외). [GIS 처리] 원본은 GIS 래스터(GeoTIFF, 15 arc-sec, EPSG:4326)이며 엑셀 변환 대상이 아님. 클립본 VNM_flow_direction_15s.tif를 Raw data로 관리. 사방위 우세는 D8 알고리즘의 격자 특성. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] HydroSHEDS v1 (2022 릴리스)",
+      "sourceProvenance": {
+        "elementId": "B-026",
+        "indicatorId": "B-026_flow_dir_d8_dir_w",
+        "sourceFileDecoded": "B-026_유향(flow direction).xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-ea7536562a69|방위",
+      "dimensionLabels": {
+        "detail": "중부 하천",
+        "technology": "5 · 32"
+      },
+      "dimensions": {
+        "detail": "중부 하천",
+        "technology": "5,32"
+      },
+      "displayLabel": "대권역 우세 유향 — 중부 하천",
+      "indicatorId": "B-026_flow_dir_dominant_central_rivers",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ea7536562a69",
+        "labelKo": "대권역 우세 유향",
+        "unit": "방위",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-ea7536562a69|방위|detail=중부 하천|technology=5,32|B-026_flow_dir_dominant_central_rivers",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] HydroSHEDS v1 (2022 릴리스)",
+      "sourceLabel": "대권역 우세 유향 — 중부 하천",
+      "sourceLabelEn": "Dominant flow direction by region",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] HydroSHEDS v1 (2022 릴리스)",
+      "sourceProvenance": {
+        "elementId": "B-026",
+        "indicatorId": "B-026_flow_dir_dominant_central_rivers",
+        "sourceFileDecoded": "B-026_유향(flow direction).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-ea7536562a69|방위",
+      "dimensionLabels": {
+        "detail": "메콩·중부고원",
+        "technology": "5 · 32"
+      },
+      "dimensions": {
+        "detail": "메콩·중부고원",
+        "technology": "5,32"
+      },
+      "displayLabel": "대권역 우세 유향 — 메콩·중부고원",
+      "indicatorId": "B-026_flow_dir_dominant_mekong_highlands",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ea7536562a69",
+        "labelKo": "대권역 우세 유향",
+        "unit": "방위",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-ea7536562a69|방위|detail=메콩·중부고원|technology=5,32|B-026_flow_dir_dominant_mekong_highlands",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] HydroSHEDS v1 (2022 릴리스)",
+      "sourceLabel": "대권역 우세 유향 — 메콩·중부고원",
+      "sourceLabelEn": "Dominant flow direction by region",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] HydroSHEDS v1 (2022 릴리스)",
+      "sourceProvenance": {
+        "elementId": "B-026",
+        "indicatorId": "B-026_flow_dir_dominant_mekong_highlands",
+        "sourceFileDecoded": "B-026_유향(flow direction).xlsx",
+        "sourceRow": 4,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-ea7536562a69|방위",
+      "dimensionLabels": {
+        "detail": "홍강(북부)",
+        "technology": "5 · 32"
+      },
+      "dimensions": {
+        "detail": "홍강(북부)",
+        "technology": "5,32"
+      },
+      "displayLabel": "대권역 우세 유향 — 홍강(북부)",
+      "indicatorId": "B-026_flow_dir_dominant_red_river_north",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ea7536562a69",
+        "labelKo": "대권역 우세 유향",
+        "unit": "방위",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-ea7536562a69|방위|detail=홍강(북부)|technology=5,32|B-026_flow_dir_dominant_red_river_north",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] HydroSHEDS v1 (2022 릴리스)",
+      "sourceLabel": "대권역 우세 유향 — 홍강(북부)",
+      "sourceLabelEn": "Dominant flow direction by region",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] HydroSHEDS v1 (2022 릴리스)",
+      "sourceProvenance": {
+        "elementId": "B-026",
+        "indicatorId": "B-026_flow_dir_dominant_red_river_north",
+        "sourceFileDecoded": "B-026_유향(flow direction).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 8,
+      "key": "measure-eec8d0d27c64",
+      "labelKo": "D8 유향 분포(격자 비율)",
+      "recordCount": 8,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 3,
+      "key": "measure-ea7536562a69",
+      "labelKo": "대권역 우세 유향",
+      "recordCount": 3,
+      "unit": "방위",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 11,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

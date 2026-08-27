@@ -1,0 +1,551 @@
+{
+  "dimensions": [
+    {
+      "key": "city",
+      "labelKo": "city",
+      "valueCount": 2,
+      "values": [
+        "Hanoi",
+        "Hanoi; Ho Chi Minh City"
+      ]
+    },
+    {
+      "key": "collectionStatus",
+      "labelKo": "collectionStatus",
+      "valueCount": 2,
+      "values": [
+        "보완(2026-08-14)",
+        "수집현황"
+      ]
+    },
+    {
+      "key": "contactType",
+      "labelKo": "contactType",
+      "valueCount": 4,
+      "values": [
+        "기관장·대표",
+        "기타 부서 담당",
+        "기후·에너지 담당 부서·프로그램 대표",
+        "대표 창구(일반)"
+      ]
+    },
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    },
+    {
+      "key": "orgType",
+      "labelKo": "orgType",
+      "valueCount": 5,
+      "values": [
+        "국제기구(기타)",
+        "다자개발은행",
+        "양자개발협력기관",
+        "외교공관",
+        "유엔기구"
+      ]
+    },
+    {
+      "key": "recordStatus",
+      "labelKo": "recordStatus",
+      "valueCount": 3,
+      "values": [
+        "미설치",
+        "종료(2025-07-01 업무 종료, 잔여 대외원조 기능 미 국무부 이관)",
+        "현행"
+      ]
+    }
+  ],
+  "elementId": "E-004",
+  "entityCount": 18,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 18,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "국제기구 현지사무소 담당자 · ADB — Viet Nam 사무소 안내 · adb",
+      "indicatorId": "E-004_adb",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음||E-004_adb",
+      "sourceCaveat": "레코드별 출처는 1.2_entity attr_14 참조.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "기후·에너지 담당자 미확보. 대표 연락처만 확보.",
+      "sourceProvenance": {
+        "elementId": "E-004",
+        "indicatorId": "E-004_adb",
+        "sourceFileDecoded": "E-004_국제기구 현지사무소 담당자.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "국제기구 현지사무소 담당자 · AFD (Agence Française de Développement) — Viet Nam 사무소 안내 · afd",
+      "indicatorId": "E-004_afd",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음||E-004_afd",
+      "sourceCaveat": "레코드별 출처는 1.2_entity attr_14 참조.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "대표 전화·주소만 확보.",
+      "sourceProvenance": {
+        "elementId": "E-004",
+        "indicatorId": "E-004_afd",
+        "sourceFileDecoded": "E-004_국제기구 현지사무소 담당자.xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "국제기구 현지사무소 담당자 · Embassy of Denmark — Viet Nam 사무소 안내 · denmark",
+      "indicatorId": "E-004_denmark",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음||E-004_denmark",
+      "sourceCaveat": "레코드별 출처는 1.2_entity attr_14 참조.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "대사(기관장) 정보 확보. DEPP 실무 담당자 미확보.",
+      "sourceProvenance": {
+        "elementId": "E-004",
+        "indicatorId": "E-004_denmark",
+        "sourceFileDecoded": "E-004_국제기구 현지사무소 담당자.xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "국제기구 현지사무소 담당자 · European Union — Viet Nam 사무소 안내 · eu",
+      "indicatorId": "E-004_eu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음||E-004_eu",
+      "sourceCaveat": "레코드별 출처는 1.2_entity attr_14 참조.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "대사(기관장) 정보 확보. 기후·에너지 실무 담당자 미확보.",
+      "sourceProvenance": {
+        "elementId": "E-004",
+        "indicatorId": "E-004_eu",
+        "sourceFileDecoded": "E-004_국제기구 현지사무소 담당자.xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "국제기구 현지사무소 담당자 · FAO — Viet Nam 사무소 안내 · fao",
+      "indicatorId": "E-004_fao",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음||E-004_fao",
+      "sourceCaveat": "레코드별 출처는 1.2_entity attr_14 참조.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "대표 이메일만 확보. 기후·에너지 실무 담당자 미확보.",
+      "sourceProvenance": {
+        "elementId": "E-004",
+        "indicatorId": "E-004_fao",
+        "sourceFileDecoded": "E-004_국제기구 현지사무소 담당자.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "국제기구 현지사무소 담당자 · GGGI — Viet Nam 사무소 안내 · gggi",
+      "indicatorId": "E-004_gggi",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음||E-004_gggi",
+      "sourceCaveat": "레코드별 출처는 1.2_entity attr_14 참조.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "본부 공통 이메일만 확보. 현지 담당자·전화 미확보.",
+      "sourceProvenance": {
+        "elementId": "E-004",
+        "indicatorId": "E-004_gggi",
+        "sourceFileDecoded": "E-004_국제기구 현지사무소 담당자.xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "국제기구 현지사무소 담당자 · GIZ — Viet Nam 사무소 안내 · giz",
+      "indicatorId": "E-004_giz",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음||E-004_giz",
+      "sourceCaveat": "레코드별 출처는 1.2_entity attr_14 참조.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "에너지 프로그램 부서 대표메일 확보. 담당자 개인 정보 미확보.",
+      "sourceProvenance": {
+        "elementId": "E-004",
+        "indicatorId": "E-004_giz",
+        "sourceFileDecoded": "E-004_국제기구 현지사무소 담당자.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "국제기구 현지사무소 담당자 · IFC (International Finance Corporation) — Viet Nam 사무소 안내 · ifc",
+      "indicatorId": "E-004_ifc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음||E-004_ifc",
+      "sourceCaveat": "레코드별 출처는 1.2_entity attr_14 참조.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "사무소 주소, 담당자 직함, Country Manager 재직 여부 미확보. 출처가 보도자료로 연락처 공식 페이지 아님.",
+      "sourceProvenance": {
+        "elementId": "E-004",
+        "indicatorId": "E-004_ifc",
+        "sourceFileDecoded": "E-004_국제기구 현지사무소 담당자.xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "국제기구 현지사무소 담당자 · IRENA — Viet Nam 사무소 안내 · irena",
+      "indicatorId": "E-004_irena",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음||E-004_irena",
+      "sourceCaveat": "본 레코드는 구조적 부존(M03). 기관 유형: 국제기구(기타). 담당자 성격: 해당없음. 레코드별 출처는 1.2_entity attr_14 참조.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "베트남 국가사무소 미운영(M03, 대상외).",
+      "sourceProvenance": {
+        "elementId": "E-004",
+        "indicatorId": "E-004_irena",
+        "sourceFileDecoded": "E-004_국제기구 현지사무소 담당자.xlsx",
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "국제기구 현지사무소 담당자 · JICA — Viet Nam 사무소 안내 · jica",
+      "indicatorId": "E-004_jica",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음||E-004_jica",
+      "sourceCaveat": "레코드별 출처는 1.2_entity attr_14 참조.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "대표 전화만 확보.",
+      "sourceProvenance": {
+        "elementId": "E-004",
+        "indicatorId": "E-004_jica",
+        "sourceFileDecoded": "E-004_국제기구 현지사무소 담당자.xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "국제기구 현지사무소 담당자 · KfW Development Bank — Viet Nam 사무소 안내 · kfw",
+      "indicatorId": "E-004_kfw",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음||E-004_kfw",
+      "sourceCaveat": "레코드별 출처는 1.2_entity attr_14 참조.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "사무소장 정보 확보. 이메일 및 기후·에너지 실무 담당자 미확보.",
+      "sourceProvenance": {
+        "elementId": "E-004",
+        "indicatorId": "E-004_kfw",
+        "sourceFileDecoded": "E-004_국제기구 현지사무소 담당자.xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "국제기구 현지사무소 담당자 · Embassy of the Kingdom of the Netherlands — Viet Nam 사무소 안내 · netherlands",
+      "indicatorId": "E-004_netherlands",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음||E-004_netherlands",
+      "sourceCaveat": "레코드별 출처는 1.2_entity attr_14 참조.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "대표 이메일만 확보. 담당자 미확보.",
+      "sourceProvenance": {
+        "elementId": "E-004",
+        "indicatorId": "E-004_netherlands",
+        "sourceFileDecoded": "E-004_국제기구 현지사무소 담당자.xlsx",
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "국제기구 현지사무소 담당자 · UNDP — Viet Nam 사무소 안내 · undp",
+      "indicatorId": "E-004_undp",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음||E-004_undp",
+      "sourceCaveat": "레코드별 출처는 1.2_entity attr_14 참조.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "대표 접수 이메일만 확보. 기후·에너지 담당자 미확보.",
+      "sourceProvenance": {
+        "elementId": "E-004",
+        "indicatorId": "E-004_undp",
+        "sourceFileDecoded": "E-004_국제기구 현지사무소 담당자.xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "국제기구 현지사무소 담당자 · UNEP — Viet Nam 사무소 안내 · unep",
+      "indicatorId": "E-004_unep",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음||E-004_unep",
+      "sourceCaveat": "본 레코드는 구조적 부존(M03). 기관 유형: 유엔기구. 담당자 성격: 해당없음. 레코드별 출처는 1.2_entity attr_14 참조.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "베트남 국가사무소 미설치(M03, 대상외). 지역사무소(방콕) 관할.",
+      "sourceProvenance": {
+        "elementId": "E-004",
+        "indicatorId": "E-004_unep",
+        "sourceFileDecoded": "E-004_국제기구 현지사무소 담당자.xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "국제기구 현지사무소 담당자 · UNESCO — Viet Nam 사무소 안내 · unesco",
+      "indicatorId": "E-004_unesco",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음||E-004_unesco",
+      "sourceCaveat": "레코드별 출처는 1.2_entity attr_14 참조.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "기관장 정보만 확보. 기후·에너지 실무 담당자 미확보.",
+      "sourceProvenance": {
+        "elementId": "E-004",
+        "indicatorId": "E-004_unesco",
+        "sourceFileDecoded": "E-004_국제기구 현지사무소 담당자.xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "국제기구 현지사무소 담당자 · UNIDO — Viet Nam 사무소 안내 · unido",
+      "indicatorId": "E-004_unido",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음||E-004_unido",
+      "sourceCaveat": "레코드별 출처는 1.2_entity attr_14 참조.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "기관장 정보만 확보. 기후·에너지 실무 담당자 미확보.",
+      "sourceProvenance": {
+        "elementId": "E-004",
+        "indicatorId": "E-004_unido",
+        "sourceFileDecoded": "E-004_국제기구 현지사무소 담당자.xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "국제기구 현지사무소 담당자 · USAID — Viet Nam 사무소 안내 · usaid",
+      "indicatorId": "E-004_usaid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음||E-004_usaid",
+      "sourceCaveat": "본 레코드는 구조적 부존(M03. 기관 유형: 양자개발협력기관. 담당자 성격: 해당없음. 레코드별 출처는 1.2_entity attr_14 참조.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "기관 운영 종료(M03, 대상외). 공식 출처 및 후속 조직 정보 미확보.",
+      "sourceProvenance": {
+        "elementId": "E-004",
+        "indicatorId": "E-004_usaid",
+        "sourceFileDecoded": "E-004_국제기구 현지사무소 담당자.xlsx",
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "국제기구 현지사무소 담당자 · World Bank — Viet Nam 사무소 안내 · worldbank",
+      "indicatorId": "E-004_worldbank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음||E-004_worldbank",
+      "sourceCaveat": "레코드별 출처는 1.2_entity attr_14 참조.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "사무소 주소 및 기후·에너지 실무 담당자 미확보.",
+      "sourceProvenance": {
+        "elementId": "E-004",
+        "indicatorId": "E-004_worldbank",
+        "sourceFileDecoded": "E-004_국제기구 현지사무소 담당자.xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 18,
+      "key": "measure-211b3fff8c20",
+      "labelKo": "국제기구 현지사무소 담당자",
+      "recordCount": 0,
+      "unit": "해당없음",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

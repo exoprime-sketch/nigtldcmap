@@ -1,0 +1,1168 @@
+{
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 8,
+      "values": [
+        "CBAM 합계",
+        "EU 최고 탄소집약 3개국 평균 기준",
+        "GDP 대비 비중",
+        "비료",
+        "산출액 대비 비중",
+        "시멘트",
+        "알루미늄",
+        "철강"
+      ]
+    },
+    {
+      "key": "detail_2",
+      "labelKo": "detail_2",
+      "valueCount": 4,
+      "values": [
+        "비료",
+        "시멘트",
+        "알루미늄",
+        "철강"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2022"
+      ]
+    }
+  ],
+  "elementId": "B-013",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 35,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-aeaf311afb3c|%",
+      "dimensionLabels": {
+        "detail": "알루미늄"
+      },
+      "dimensions": {
+        "detail": "알루미늄"
+      },
+      "displayLabel": "탄소지불액 — 알루미늄",
+      "indicatorId": "B-013_carbon_payment_aluminium",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-aeaf311afb3c",
+        "labelKo": "탄소지불액",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-aeaf311afb3c|%|detail=알루미늄|B-013_carbon_payment_aluminium",
+      "sourceCaveat": "[단위 정정] 종전 파일 상단 설명의 \"USD/톤\"은 오기이며, 원천 정의는 \"Carbon payment (% of dollar of EU imports)\"로 **퍼센트(%)**가 정확함. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceLabel": "탄소지불액 — 알루미늄",
+      "sourceLabelEn": "Carbon payment",
+      "sourceNote": "[단위 정정] 종전 파일 상단 설명의 \"USD/톤\"은 오기이며, 원천 정의는 \"Carbon payment (% of dollar of EU imports)\"로 **퍼센트(%)**가 정확함. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_carbon_payment_aluminium",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-aeaf311afb3c|%",
+      "dimensionLabels": {
+        "detail": "시멘트"
+      },
+      "dimensions": {
+        "detail": "시멘트"
+      },
+      "displayLabel": "탄소지불액 — 시멘트",
+      "indicatorId": "B-013_carbon_payment_cement",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-aeaf311afb3c",
+        "labelKo": "탄소지불액",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-aeaf311afb3c|%|detail=시멘트|B-013_carbon_payment_cement",
+      "sourceCaveat": "[단위 정정] 종전 파일 상단 설명의 \"USD/톤\"은 오기이며, 원천 정의는 \"Carbon payment (% of dollar of EU imports)\"로 **퍼센트(%)**가 정확함. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceLabel": "탄소지불액 — 시멘트",
+      "sourceLabelEn": "Carbon payment",
+      "sourceNote": "[단위 정정] 종전 파일 상단 설명의 \"USD/톤\"은 오기이며, 원천 정의는 \"Carbon payment (% of dollar of EU imports)\"로 **퍼센트(%)**가 정확함. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_carbon_payment_cement",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-aeaf311afb3c|%",
+      "dimensionLabels": {
+        "detail": "비료"
+      },
+      "dimensions": {
+        "detail": "비료"
+      },
+      "displayLabel": "탄소지불액 — 비료",
+      "indicatorId": "B-013_carbon_payment_fertilizers",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-aeaf311afb3c",
+        "labelKo": "탄소지불액",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-aeaf311afb3c|%|detail=비료|B-013_carbon_payment_fertilizers",
+      "sourceCaveat": "[단위 정정] 종전 파일 상단 설명의 \"USD/톤\"은 오기이며, 원천 정의는 \"Carbon payment (% of dollar of EU imports)\"로 **퍼센트(%)**가 정확함. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceLabel": "탄소지불액 — 비료",
+      "sourceLabelEn": "Carbon payment",
+      "sourceNote": "[단위 정정] 종전 파일 상단 설명의 \"USD/톤\"은 오기이며, 원천 정의는 \"Carbon payment (% of dollar of EU imports)\"로 **퍼센트(%)**가 정확함. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_carbon_payment_fertilizers",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-aeaf311afb3c|%",
+      "dimensionLabels": {
+        "detail": "철강"
+      },
+      "dimensions": {
+        "detail": "철강"
+      },
+      "displayLabel": "탄소지불액 — 철강",
+      "indicatorId": "B-013_carbon_payment_iron_steel",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-aeaf311afb3c",
+        "labelKo": "탄소지불액",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-aeaf311afb3c|%|detail=철강|B-013_carbon_payment_iron_steel",
+      "sourceCaveat": "[단위 정정] 종전 파일 상단 설명의 \"USD/톤\"은 오기이며, 원천 정의는 \"Carbon payment (% of dollar of EU imports)\"로 **퍼센트(%)**가 정확함. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceLabel": "탄소지불액 — 철강",
+      "sourceLabelEn": "Carbon payment",
+      "sourceNote": "[단위 정정] 종전 파일 상단 설명의 \"USD/톤\"은 오기이며, 원천 정의는 \"Carbon payment (% of dollar of EU imports)\"로 **퍼센트(%)**가 정확함. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_carbon_payment_iron_steel",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 24,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-aeaf311afb3c|%",
+      "dimensionLabels": {
+        "detail": "EU 최고 탄소집약 3개국 평균 기준",
+        "detail_2": "알루미늄"
+      },
+      "dimensions": {
+        "detail": "EU 최고 탄소집약 3개국 평균 기준",
+        "detail_2": "알루미늄"
+      },
+      "displayLabel": "탄소지불액 — EU 최고 탄소집약 3개국 평균 기준 — 알루미늄",
+      "indicatorId": "B-013_carbon_payment_top3_aluminium",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-aeaf311afb3c",
+        "labelKo": "탄소지불액",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-aeaf311afb3c|%|detail=EU 최고 탄소집약 3개국 평균 기준|detail_2=알루미늄|B-013_carbon_payment_top3_aluminium",
+      "sourceCaveat": "[신규 수록] 보유 워크북 미수록 열. 기수록 \"EU 평균\" 기준선과 함께 보면 CBAM 부담의 **범위(하한~상한)**를 제시할 수 있음 — 예: 비료는 EU 평균 기준 52.28% vs 최고집약 3개국 기준 108.59%로 두 배 이상 벌어짐. 벤치마크 선택에 따라 부담 추정이 크게 달라지므로 두 기준을 병기하는 것이 안전함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "탄소지불액 — EU 최고 탄소집약 3개국 평균 기준 — 알루미늄",
+      "sourceLabelEn": "3 most carbon intensive EU countries average carbon payment",
+      "sourceNote": "[신규 수록] 보유 워크북 미수록 열. 기수록 \"EU 평균\" 기준선과 함께 보면 CBAM 부담의 **범위(하한~상한)**를 제시할 수 있음 — 예: 비료는 EU 평균 기준 52.28% vs 최고집약 3개국 기준 108.59%로 두 배 이상 벌어짐. 벤치마크 선택에 따라 부담 추정이 크게 달라지므로 두 기준을 병기하는 것이 안전함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_carbon_payment_top3_aluminium",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 37,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-aeaf311afb3c|%",
+      "dimensionLabels": {
+        "detail": "EU 최고 탄소집약 3개국 평균 기준",
+        "detail_2": "시멘트"
+      },
+      "dimensions": {
+        "detail": "EU 최고 탄소집약 3개국 평균 기준",
+        "detail_2": "시멘트"
+      },
+      "displayLabel": "탄소지불액 — EU 최고 탄소집약 3개국 평균 기준 — 시멘트",
+      "indicatorId": "B-013_carbon_payment_top3_cement",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-aeaf311afb3c",
+        "labelKo": "탄소지불액",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-aeaf311afb3c|%|detail=EU 최고 탄소집약 3개국 평균 기준|detail_2=시멘트|B-013_carbon_payment_top3_cement",
+      "sourceCaveat": "[신규 수록] 보유 워크북 미수록 열. 기수록 \"EU 평균\" 기준선과 함께 보면 CBAM 부담의 **범위(하한~상한)**를 제시할 수 있음 — 예: 비료는 EU 평균 기준 52.28% vs 최고집약 3개국 기준 108.59%로 두 배 이상 벌어짐. 벤치마크 선택에 따라 부담 추정이 크게 달라지므로 두 기준을 병기하는 것이 안전함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "탄소지불액 — EU 최고 탄소집약 3개국 평균 기준 — 시멘트",
+      "sourceLabelEn": "3 most carbon intensive EU countries average carbon payment",
+      "sourceNote": "[신규 수록] 보유 워크북 미수록 열. 기수록 \"EU 평균\" 기준선과 함께 보면 CBAM 부담의 **범위(하한~상한)**를 제시할 수 있음 — 예: 비료는 EU 평균 기준 52.28% vs 최고집약 3개국 기준 108.59%로 두 배 이상 벌어짐. 벤치마크 선택에 따라 부담 추정이 크게 달라지므로 두 기준을 병기하는 것이 안전함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_carbon_payment_top3_cement",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 36,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-aeaf311afb3c|%",
+      "dimensionLabels": {
+        "detail": "EU 최고 탄소집약 3개국 평균 기준",
+        "detail_2": "비료"
+      },
+      "dimensions": {
+        "detail": "EU 최고 탄소집약 3개국 평균 기준",
+        "detail_2": "비료"
+      },
+      "displayLabel": "탄소지불액 — EU 최고 탄소집약 3개국 평균 기준 — 비료",
+      "indicatorId": "B-013_carbon_payment_top3_fertilizers",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-aeaf311afb3c",
+        "labelKo": "탄소지불액",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-aeaf311afb3c|%|detail=EU 최고 탄소집약 3개국 평균 기준|detail_2=비료|B-013_carbon_payment_top3_fertilizers",
+      "sourceCaveat": "[신규 수록] 보유 워크북 미수록 열. 기수록 \"EU 평균\" 기준선과 함께 보면 CBAM 부담의 **범위(하한~상한)**를 제시할 수 있음 — 예: 비료는 EU 평균 기준 52.28% vs 최고집약 3개국 기준 108.59%로 두 배 이상 벌어짐. 벤치마크 선택에 따라 부담 추정이 크게 달라지므로 두 기준을 병기하는 것이 안전함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "탄소지불액 — EU 최고 탄소집약 3개국 평균 기준 — 비료",
+      "sourceLabelEn": "3 most carbon intensive EU countries average carbon payment",
+      "sourceNote": "[신규 수록] 보유 워크북 미수록 열. 기수록 \"EU 평균\" 기준선과 함께 보면 CBAM 부담의 **범위(하한~상한)**를 제시할 수 있음 — 예: 비료는 EU 평균 기준 52.28% vs 최고집약 3개국 기준 108.59%로 두 배 이상 벌어짐. 벤치마크 선택에 따라 부담 추정이 크게 달라지므로 두 기준을 병기하는 것이 안전함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_carbon_payment_top3_fertilizers",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 35,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-aeaf311afb3c|%",
+      "dimensionLabels": {
+        "detail": "EU 최고 탄소집약 3개국 평균 기준",
+        "detail_2": "철강"
+      },
+      "dimensions": {
+        "detail": "EU 최고 탄소집약 3개국 평균 기준",
+        "detail_2": "철강"
+      },
+      "displayLabel": "탄소지불액 — EU 최고 탄소집약 3개국 평균 기준 — 철강",
+      "indicatorId": "B-013_carbon_payment_top3_iron_steel",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-aeaf311afb3c",
+        "labelKo": "탄소지불액",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-aeaf311afb3c|%|detail=EU 최고 탄소집약 3개국 평균 기준|detail_2=철강|B-013_carbon_payment_top3_iron_steel",
+      "sourceCaveat": "[신규 수록] 보유 워크북 미수록 열. 기수록 \"EU 평균\" 기준선과 함께 보면 CBAM 부담의 **범위(하한~상한)**를 제시할 수 있음 — 예: 비료는 EU 평균 기준 52.28% vs 최고집약 3개국 기준 108.59%로 두 배 이상 벌어짐. 벤치마크 선택에 따라 부담 추정이 크게 달라지므로 두 기준을 병기하는 것이 안전함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "탄소지불액 — EU 최고 탄소집약 3개국 평균 기준 — 철강",
+      "sourceLabelEn": "3 most carbon intensive EU countries average carbon payment",
+      "sourceNote": "[신규 수록] 보유 워크북 미수록 열. 기수록 \"EU 평균\" 기준선과 함께 보면 CBAM 부담의 **범위(하한~상한)**를 제시할 수 있음 — 예: 비료는 EU 평균 기준 52.28% vs 최고집약 3개국 기준 108.59%로 두 배 이상 벌어짐. 벤치마크 선택에 따라 부담 추정이 크게 달라지므로 두 기준을 병기하는 것이 안전함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_carbon_payment_top3_iron_steel",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 38,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-aeaf311afb3c|%",
+      "dimensionLabels": {
+        "detail": "CBAM 합계"
+      },
+      "dimensions": {
+        "detail": "CBAM 합계"
+      },
+      "displayLabel": "탄소지불액 — CBAM 합계",
+      "indicatorId": "B-013_carbon_payment_total_cbam",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-aeaf311afb3c",
+        "labelKo": "탄소지불액",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-aeaf311afb3c|%|detail=CBAM 합계|B-013_carbon_payment_total_cbam",
+      "sourceCaveat": "[단위 정정] 종전 파일 상단 설명의 \"USD/톤\"은 오기이며, 원천 정의는 \"Carbon payment (% of dollar of EU imports)\"로 **퍼센트(%)**가 정확함. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceLabel": "탄소지불액 — CBAM 합계",
+      "sourceLabelEn": "Carbon payment",
+      "sourceNote": "[단위 정정] 종전 파일 상단 설명의 \"USD/톤\"은 오기이며, 원천 정의는 \"Carbon payment (% of dollar of EU imports)\"로 **퍼센트(%)**가 정확함. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_carbon_payment_total_cbam",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-ac76474890c1|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "경제 노출지수(Economic Exposure Index)",
+      "indicatorId": "B-013_economic_exposure",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ac76474890c1",
+        "labelKo": "경제 노출지수(Economic Exposure Index)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-ac76474890c1|%||B-013_economic_exposure",
+      "sourceCaveat": "기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceLabel": "경제 노출지수(Economic Exposure Index)",
+      "sourceLabelEn": "Economic exposure index",
+      "sourceNote": "기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_economic_exposure",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-b7e803503605|%",
+      "dimensionLabels": {
+        "detail": "알루미늄"
+      },
+      "dimensions": {
+        "detail": "알루미늄"
+      },
+      "displayLabel": "EU 평균 탄소지불액 — 알루미늄",
+      "indicatorId": "B-013_eu_avg_carbon_payment_aluminium",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b7e803503605",
+        "labelKo": "EU 평균 탄소지불액",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-b7e803503605|%|detail=알루미늄|B-013_eu_avg_carbon_payment_aluminium",
+      "sourceCaveat": "[결측 사유] TotalCBAM 행은 품목별 EU 생산 기준 평균값을 합산 정의할 수 없어 원천이 산출하지 않음 → NA. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceLabel": "EU 평균 탄소지불액 — 알루미늄",
+      "sourceLabelEn": "EU average carbon payment",
+      "sourceNote": "[결측 사유] TotalCBAM 행은 품목별 EU 생산 기준 평균값을 합산 정의할 수 없어 원천이 산출하지 않음 → NA. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_eu_avg_carbon_payment_aluminium",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 28,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-b7e803503605|%",
+      "dimensionLabels": {
+        "detail": "시멘트"
+      },
+      "dimensions": {
+        "detail": "시멘트"
+      },
+      "displayLabel": "EU 평균 탄소지불액 — 시멘트",
+      "indicatorId": "B-013_eu_avg_carbon_payment_cement",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b7e803503605",
+        "labelKo": "EU 평균 탄소지불액",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-b7e803503605|%|detail=시멘트|B-013_eu_avg_carbon_payment_cement",
+      "sourceCaveat": "[결측 사유] TotalCBAM 행은 품목별 EU 생산 기준 평균값을 합산 정의할 수 없어 원천이 산출하지 않음 → NA. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceLabel": "EU 평균 탄소지불액 — 시멘트",
+      "sourceLabelEn": "EU average carbon payment",
+      "sourceNote": "[결측 사유] TotalCBAM 행은 품목별 EU 생산 기준 평균값을 합산 정의할 수 없어 원천이 산출하지 않음 → NA. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_eu_avg_carbon_payment_cement",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 27,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-b7e803503605|%",
+      "dimensionLabels": {
+        "detail": "비료"
+      },
+      "dimensions": {
+        "detail": "비료"
+      },
+      "displayLabel": "EU 평균 탄소지불액 — 비료",
+      "indicatorId": "B-013_eu_avg_carbon_payment_fertilizers",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b7e803503605",
+        "labelKo": "EU 평균 탄소지불액",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-b7e803503605|%|detail=비료|B-013_eu_avg_carbon_payment_fertilizers",
+      "sourceCaveat": "[결측 사유] TotalCBAM 행은 품목별 EU 생산 기준 평균값을 합산 정의할 수 없어 원천이 산출하지 않음 → NA. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceLabel": "EU 평균 탄소지불액 — 비료",
+      "sourceLabelEn": "EU average carbon payment",
+      "sourceNote": "[결측 사유] TotalCBAM 행은 품목별 EU 생산 기준 평균값을 합산 정의할 수 없어 원천이 산출하지 않음 → NA. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_eu_avg_carbon_payment_fertilizers",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 26,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-b7e803503605|%",
+      "dimensionLabels": {
+        "detail": "철강"
+      },
+      "dimensions": {
+        "detail": "철강"
+      },
+      "displayLabel": "EU 평균 탄소지불액 — 철강",
+      "indicatorId": "B-013_eu_avg_carbon_payment_iron_steel",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b7e803503605",
+        "labelKo": "EU 평균 탄소지불액",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-b7e803503605|%|detail=철강|B-013_eu_avg_carbon_payment_iron_steel",
+      "sourceCaveat": "[결측 사유] TotalCBAM 행은 품목별 EU 생산 기준 평균값을 합산 정의할 수 없어 원천이 산출하지 않음 → NA. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceLabel": "EU 평균 탄소지불액 — 철강",
+      "sourceLabelEn": "EU average carbon payment",
+      "sourceNote": "[결측 사유] TotalCBAM 행은 품목별 EU 생산 기준 평균값을 합산 정의할 수 없어 원천이 산출하지 않음 → NA. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_eu_avg_carbon_payment_iron_steel",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 29,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-b7e803503605|%",
+      "dimensionLabels": {
+        "detail": "CBAM 합계"
+      },
+      "dimensions": {
+        "detail": "CBAM 합계"
+      },
+      "displayLabel": "EU 평균 탄소지불액 — CBAM 합계",
+      "indicatorId": "B-013_eu_avg_carbon_payment_total_cbam",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b7e803503605",
+        "labelKo": "EU 평균 탄소지불액",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-b7e803503605|%|detail=CBAM 합계|B-013_eu_avg_carbon_payment_total_cbam",
+      "sourceCaveat": "[결측 사유] TotalCBAM 행은 품목별 EU 생산 기준 평균값을 합산 정의할 수 없어 원천이 산출하지 않음 → NA. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceLabel": "EU 평균 탄소지불액 — CBAM 합계",
+      "sourceLabelEn": "EU average carbon payment",
+      "sourceNote": "2022년: 원천 미산출 — 집계행(TotalCBAM)에는 정의상 산정되지 않는 지표",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_eu_avg_carbon_payment_total_cbam",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 25,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-063d6ac24b89|%",
+      "dimensionLabels": {
+        "detail": "GDP 대비 비중"
+      },
+      "dimensions": {
+        "detail": "GDP 대비 비중"
+      },
+      "displayLabel": "대EU 수출액 — GDP 대비 비중",
+      "indicatorId": "B-013_export_eu_gdp",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-063d6ac24b89",
+        "labelKo": "대EU 수출액",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-063d6ac24b89|%|detail=GDP 대비 비중|B-013_export_eu_gdp",
+      "sourceCaveat": "[신규 수록 — 집계행 결측 대응] 원자료에서 TotalCBAM 행은 무역·생산 노출지수가 공란이지만 **\"Export to EU (% of GDP)\" 열은 TotalCBAM 행에만 값이 있음**(품목별 행은 공란). 집계 수준의 노출 규모를 나타내는 대체 지표로 활용 가능 — 0.7592%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "대EU 수출액 — GDP 대비 비중",
+      "sourceLabelEn": "Export to EU (% of GDP)",
+      "sourceNote": "[신규 수록 — 집계행 결측 대응] 원자료에서 TotalCBAM 행은 무역·생산 노출지수가 공란이지만 **\"Export to EU (% of GDP)\" 열은 TotalCBAM 행에만 값이 있음**(품목별 행은 공란). 집계 수준의 노출 규모를 나타내는 대체 지표로 활용 가능 — 0.7592%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_export_eu_gdp",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 34,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-063d6ac24b89|%",
+      "dimensionLabels": {
+        "detail": "산출액 대비 비중",
+        "detail_2": "알루미늄"
+      },
+      "dimensions": {
+        "detail": "산출액 대비 비중",
+        "detail_2": "알루미늄"
+      },
+      "displayLabel": "대EU 수출액 — 산출액 대비 비중 — 알루미늄",
+      "indicatorId": "B-013_export_eu_output_aluminium",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-063d6ac24b89",
+        "labelKo": "대EU 수출액",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-063d6ac24b89|%|detail=산출액 대비 비중|detail_2=알루미늄|B-013_export_eu_output_aluminium",
+      "sourceCaveat": "[신규 수록] 보유 [raw] 워크북 data 시트에 있으나 미수록이던 열. 대EU 수출비중(수출액 대비, 기수록)과 달리 **국내 산출액 대비 비중**이라 CBAM이 산업 전체에 미치는 충격 크기를 가늠하는 데 적합함 — 철강 7.40% · 알루미늄 5.53%로 노출이 큼. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "대EU 수출액 — 산출액 대비 비중 — 알루미늄",
+      "sourceLabelEn": "Export to EU (% of output)",
+      "sourceNote": "[신규 수록] 보유 [raw] 워크북 data 시트에 있으나 미수록이던 열. 대EU 수출비중(수출액 대비, 기수록)과 달리 **국내 산출액 대비 비중**이라 CBAM이 산업 전체에 미치는 충격 크기를 가늠하는 데 적합함 — 철강 7.40% · 알루미늄 5.53%로 노출이 큼. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_export_eu_output_aluminium",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 32,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-063d6ac24b89|%",
+      "dimensionLabels": {
+        "detail": "산출액 대비 비중",
+        "detail_2": "시멘트"
+      },
+      "dimensions": {
+        "detail": "산출액 대비 비중",
+        "detail_2": "시멘트"
+      },
+      "displayLabel": "대EU 수출액 — 산출액 대비 비중 — 시멘트",
+      "indicatorId": "B-013_export_eu_output_cement",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-063d6ac24b89",
+        "labelKo": "대EU 수출액",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-063d6ac24b89|%|detail=산출액 대비 비중|detail_2=시멘트|B-013_export_eu_output_cement",
+      "sourceCaveat": "[신규 수록] 보유 [raw] 워크북 data 시트에 있으나 미수록이던 열. 대EU 수출비중(수출액 대비, 기수록)과 달리 **국내 산출액 대비 비중**이라 CBAM이 산업 전체에 미치는 충격 크기를 가늠하는 데 적합함 — 철강 7.40% · 알루미늄 5.53%로 노출이 큼. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "대EU 수출액 — 산출액 대비 비중 — 시멘트",
+      "sourceLabelEn": "Export to EU (% of output)",
+      "sourceNote": "[신규 수록] 보유 [raw] 워크북 data 시트에 있으나 미수록이던 열. 대EU 수출비중(수출액 대비, 기수록)과 달리 **국내 산출액 대비 비중**이라 CBAM이 산업 전체에 미치는 충격 크기를 가늠하는 데 적합함 — 철강 7.40% · 알루미늄 5.53%로 노출이 큼. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_export_eu_output_cement",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 31,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-063d6ac24b89|%",
+      "dimensionLabels": {
+        "detail": "산출액 대비 비중",
+        "detail_2": "비료"
+      },
+      "dimensions": {
+        "detail": "산출액 대비 비중",
+        "detail_2": "비료"
+      },
+      "displayLabel": "대EU 수출액 — 산출액 대비 비중 — 비료",
+      "indicatorId": "B-013_export_eu_output_fertilizers",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-063d6ac24b89",
+        "labelKo": "대EU 수출액",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-063d6ac24b89|%|detail=산출액 대비 비중|detail_2=비료|B-013_export_eu_output_fertilizers",
+      "sourceCaveat": "[신규 수록] 보유 [raw] 워크북 data 시트에 있으나 미수록이던 열. 대EU 수출비중(수출액 대비, 기수록)과 달리 **국내 산출액 대비 비중**이라 CBAM이 산업 전체에 미치는 충격 크기를 가늠하는 데 적합함 — 철강 7.40% · 알루미늄 5.53%로 노출이 큼. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "대EU 수출액 — 산출액 대비 비중 — 비료",
+      "sourceLabelEn": "Export to EU (% of output)",
+      "sourceNote": "[신규 수록] 보유 [raw] 워크북 data 시트에 있으나 미수록이던 열. 대EU 수출비중(수출액 대비, 기수록)과 달리 **국내 산출액 대비 비중**이라 CBAM이 산업 전체에 미치는 충격 크기를 가늠하는 데 적합함 — 철강 7.40% · 알루미늄 5.53%로 노출이 큼. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_export_eu_output_fertilizers",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 30,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-063d6ac24b89|%",
+      "dimensionLabels": {
+        "detail": "산출액 대비 비중",
+        "detail_2": "철강"
+      },
+      "dimensions": {
+        "detail": "산출액 대비 비중",
+        "detail_2": "철강"
+      },
+      "displayLabel": "대EU 수출액 — 산출액 대비 비중 — 철강",
+      "indicatorId": "B-013_export_eu_output_iron_steel",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-063d6ac24b89",
+        "labelKo": "대EU 수출액",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-063d6ac24b89|%|detail=산출액 대비 비중|detail_2=철강|B-013_export_eu_output_iron_steel",
+      "sourceCaveat": "[신규 수록] 보유 [raw] 워크북 data 시트에 있으나 미수록이던 열. 대EU 수출비중(수출액 대비, 기수록)과 달리 **국내 산출액 대비 비중**이라 CBAM이 산업 전체에 미치는 충격 크기를 가늠하는 데 적합함 — 철강 7.40% · 알루미늄 5.53%로 노출이 큼. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "대EU 수출액 — 산출액 대비 비중 — 철강",
+      "sourceLabelEn": "Export to EU (% of output)",
+      "sourceNote": "[신규 수록] 보유 [raw] 워크북 data 시트에 있으나 미수록이던 열. 대EU 수출비중(수출액 대비, 기수록)과 달리 **국내 산출액 대비 비중**이라 CBAM이 산업 전체에 미치는 충격 크기를 가늠하는 데 적합함 — 철강 7.40% · 알루미늄 5.53%로 노출이 큼. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_export_eu_output_iron_steel",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 33,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e668ecca4da4|%",
+      "dimensionLabels": {
+        "detail": "알루미늄"
+      },
+      "dimensions": {
+        "detail": "알루미늄"
+      },
+      "displayLabel": "대EU 수출비중 — 알루미늄",
+      "indicatorId": "B-013_export_eu_share_aluminium",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e668ecca4da4",
+        "labelKo": "대EU 수출비중",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-e668ecca4da4|%|detail=알루미늄|B-013_export_eu_share_aluminium",
+      "sourceCaveat": "기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceLabel": "대EU 수출비중 — 알루미늄",
+      "sourceLabelEn": "Export to EU (% of export to world)",
+      "sourceNote": "기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_export_eu_share_aluminium",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e668ecca4da4|%",
+      "dimensionLabels": {
+        "detail": "시멘트"
+      },
+      "dimensions": {
+        "detail": "시멘트"
+      },
+      "displayLabel": "대EU 수출비중 — 시멘트",
+      "indicatorId": "B-013_export_eu_share_cement",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e668ecca4da4",
+        "labelKo": "대EU 수출비중",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-e668ecca4da4|%|detail=시멘트|B-013_export_eu_share_cement",
+      "sourceCaveat": "기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceLabel": "대EU 수출비중 — 시멘트",
+      "sourceLabelEn": "Export to EU (% of export to world)",
+      "sourceNote": "기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_export_eu_share_cement",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e668ecca4da4|%",
+      "dimensionLabels": {
+        "detail": "비료"
+      },
+      "dimensions": {
+        "detail": "비료"
+      },
+      "displayLabel": "대EU 수출비중 — 비료",
+      "indicatorId": "B-013_export_eu_share_fertilizers",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e668ecca4da4",
+        "labelKo": "대EU 수출비중",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-e668ecca4da4|%|detail=비료|B-013_export_eu_share_fertilizers",
+      "sourceCaveat": "기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceLabel": "대EU 수출비중 — 비료",
+      "sourceLabelEn": "Export to EU (% of export to world)",
+      "sourceNote": "기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_export_eu_share_fertilizers",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e668ecca4da4|%",
+      "dimensionLabels": {
+        "detail": "철강"
+      },
+      "dimensions": {
+        "detail": "철강"
+      },
+      "displayLabel": "대EU 수출비중 — 철강",
+      "indicatorId": "B-013_export_eu_share_iron_steel",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e668ecca4da4",
+        "labelKo": "대EU 수출비중",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-e668ecca4da4|%|detail=철강|B-013_export_eu_share_iron_steel",
+      "sourceCaveat": "기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceLabel": "대EU 수출비중 — 철강",
+      "sourceLabelEn": "Export to EU (% of export to world)",
+      "sourceNote": "기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_export_eu_share_iron_steel",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e668ecca4da4|%",
+      "dimensionLabels": {
+        "detail": "CBAM 합계"
+      },
+      "dimensions": {
+        "detail": "CBAM 합계"
+      },
+      "displayLabel": "대EU 수출비중 — CBAM 합계",
+      "indicatorId": "B-013_export_eu_share_total_cbam",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e668ecca4da4",
+        "labelKo": "대EU 수출비중",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-e668ecca4da4|%|detail=CBAM 합계|B-013_export_eu_share_total_cbam",
+      "sourceCaveat": "기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceLabel": "대EU 수출비중 — CBAM 합계",
+      "sourceLabelEn": "Export to EU (% of export to world)",
+      "sourceNote": "기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_export_eu_share_total_cbam",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1f6cecd0e5f6|%",
+      "dimensionLabels": {
+        "detail": "알루미늄"
+      },
+      "dimensions": {
+        "detail": "알루미늄"
+      },
+      "displayLabel": "생산 노출지수(Output Exposure Index) — 알루미늄",
+      "indicatorId": "B-013_output_exposure_aluminium",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1f6cecd0e5f6",
+        "labelKo": "생산 노출지수(Output Exposure Index)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-1f6cecd0e5f6|%|detail=알루미늄|B-013_output_exposure_aluminium",
+      "sourceCaveat": "[결측 사유] TotalCBAM(합계) 행은 부문 산출액 기준의 생산노출지수를 정의상 산정하지 않으며, 대신 경제노출지수(Economic Exposure Index, GDP 대비 %)를 제공함 → 결측코드 NA. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceLabel": "생산 노출지수(Output Exposure Index) — 알루미늄",
+      "sourceLabelEn": "Output exposure index",
+      "sourceNote": "[결측 사유] TotalCBAM(합계) 행은 부문 산출액 기준의 생산노출지수를 정의상 산정하지 않으며, 대신 경제노출지수(Economic Exposure Index, GDP 대비 %)를 제공함 → 결측코드 NA. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_output_exposure_aluminium",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1f6cecd0e5f6|%",
+      "dimensionLabels": {
+        "detail": "시멘트"
+      },
+      "dimensions": {
+        "detail": "시멘트"
+      },
+      "displayLabel": "생산 노출지수(Output Exposure Index) — 시멘트",
+      "indicatorId": "B-013_output_exposure_cement",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1f6cecd0e5f6",
+        "labelKo": "생산 노출지수(Output Exposure Index)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-1f6cecd0e5f6|%|detail=시멘트|B-013_output_exposure_cement",
+      "sourceCaveat": "[결측 사유] TotalCBAM(합계) 행은 부문 산출액 기준의 생산노출지수를 정의상 산정하지 않으며, 대신 경제노출지수(Economic Exposure Index, GDP 대비 %)를 제공함 → 결측코드 NA. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceLabel": "생산 노출지수(Output Exposure Index) — 시멘트",
+      "sourceLabelEn": "Output exposure index",
+      "sourceNote": "[결측 사유] TotalCBAM(합계) 행은 부문 산출액 기준의 생산노출지수를 정의상 산정하지 않으며, 대신 경제노출지수(Economic Exposure Index, GDP 대비 %)를 제공함 → 결측코드 NA. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_output_exposure_cement",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1f6cecd0e5f6|%",
+      "dimensionLabels": {
+        "detail": "비료"
+      },
+      "dimensions": {
+        "detail": "비료"
+      },
+      "displayLabel": "생산 노출지수(Output Exposure Index) — 비료",
+      "indicatorId": "B-013_output_exposure_fertilizers",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1f6cecd0e5f6",
+        "labelKo": "생산 노출지수(Output Exposure Index)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-1f6cecd0e5f6|%|detail=비료|B-013_output_exposure_fertilizers",
+      "sourceCaveat": "[결측 사유] TotalCBAM(합계) 행은 부문 산출액 기준의 생산노출지수를 정의상 산정하지 않으며, 대신 경제노출지수(Economic Exposure Index, GDP 대비 %)를 제공함 → 결측코드 NA. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceLabel": "생산 노출지수(Output Exposure Index) — 비료",
+      "sourceLabelEn": "Output exposure index",
+      "sourceNote": "[결측 사유] TotalCBAM(합계) 행은 부문 산출액 기준의 생산노출지수를 정의상 산정하지 않으며, 대신 경제노출지수(Economic Exposure Index, GDP 대비 %)를 제공함 → 결측코드 NA. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_output_exposure_fertilizers",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1f6cecd0e5f6|%",
+      "dimensionLabels": {
+        "detail": "철강"
+      },
+      "dimensions": {
+        "detail": "철강"
+      },
+      "displayLabel": "생산 노출지수(Output Exposure Index) — 철강",
+      "indicatorId": "B-013_output_exposure_iron_steel",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1f6cecd0e5f6",
+        "labelKo": "생산 노출지수(Output Exposure Index)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-1f6cecd0e5f6|%|detail=철강|B-013_output_exposure_iron_steel",
+      "sourceCaveat": "[결측 사유] TotalCBAM(합계) 행은 부문 산출액 기준의 생산노출지수를 정의상 산정하지 않으며, 대신 경제노출지수(Economic Exposure Index, GDP 대비 %)를 제공함 → 결측코드 NA. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceLabel": "생산 노출지수(Output Exposure Index) — 철강",
+      "sourceLabelEn": "Output exposure index",
+      "sourceNote": "[결측 사유] TotalCBAM(합계) 행은 부문 산출액 기준의 생산노출지수를 정의상 산정하지 않으며, 대신 경제노출지수(Economic Exposure Index, GDP 대비 %)를 제공함 → 결측코드 NA. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_output_exposure_iron_steel",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1f6cecd0e5f6|%",
+      "dimensionLabels": {
+        "detail": "CBAM 합계"
+      },
+      "dimensions": {
+        "detail": "CBAM 합계"
+      },
+      "displayLabel": "생산 노출지수(Output Exposure Index) — CBAM 합계",
+      "indicatorId": "B-013_output_exposure_total_cbam",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1f6cecd0e5f6",
+        "labelKo": "생산 노출지수(Output Exposure Index)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-1f6cecd0e5f6|%|detail=CBAM 합계|B-013_output_exposure_total_cbam",
+      "sourceCaveat": "[결측 사유] TotalCBAM(합계) 행은 부문 산출액 기준의 생산노출지수를 정의상 산정하지 않으며, 대신 경제노출지수(Economic Exposure Index, GDP 대비 %)를 제공함 → 결측코드 NA. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceLabel": "생산 노출지수(Output Exposure Index) — CBAM 합계",
+      "sourceLabelEn": "Output exposure index",
+      "sourceNote": "2022년: 원천 미산출 — 집계행(TotalCBAM)에는 정의상 산정되지 않는 지표",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_output_exposure_total_cbam",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0acf85d72cc7|%",
+      "dimensionLabels": {
+        "detail": "알루미늄"
+      },
+      "dimensions": {
+        "detail": "알루미늄"
+      },
+      "displayLabel": "무역 노출지수(Trade Exposure Index) — 알루미늄",
+      "indicatorId": "B-013_trade_exposure_aluminium",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0acf85d72cc7",
+        "labelKo": "무역 노출지수(Trade Exposure Index)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-0acf85d72cc7|%|detail=알루미늄|B-013_trade_exposure_aluminium",
+      "sourceCaveat": "[단위 정정] 원천 정의는 \"Excess carbon payments (% of sectoral exports to world)\"로 **단위는 %가 맞음**. 값의 절대크기가 작을 뿐이며 무차원 상대지수가 아님. 음수(알루미늄 −0.0791%)는 베트남 배출집약도가 EU 평균보다 낮아 초과 탄소지불액이 음(−)임을 의미. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceLabel": "무역 노출지수(Trade Exposure Index) — 알루미늄",
+      "sourceLabelEn": "Trade exposure index",
+      "sourceNote": "[단위 정정] 원천 정의는 \"Excess carbon payments (% of sectoral exports to world)\"로 **단위는 %가 맞음**. 값의 절대크기가 작을 뿐이며 무차원 상대지수가 아님. 음수(알루미늄 −0.0791%)는 베트남 배출집약도가 EU 평균보다 낮아 초과 탄소지불액이 음(−)임을 의미. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_trade_exposure_aluminium",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0acf85d72cc7|%",
+      "dimensionLabels": {
+        "detail": "시멘트"
+      },
+      "dimensions": {
+        "detail": "시멘트"
+      },
+      "displayLabel": "무역 노출지수(Trade Exposure Index) — 시멘트",
+      "indicatorId": "B-013_trade_exposure_cement",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0acf85d72cc7",
+        "labelKo": "무역 노출지수(Trade Exposure Index)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-0acf85d72cc7|%|detail=시멘트|B-013_trade_exposure_cement",
+      "sourceCaveat": "[단위 정정] 원천 정의는 \"Excess carbon payments (% of sectoral exports to world)\"로 **단위는 %가 맞음**. 값의 절대크기가 작을 뿐이며 무차원 상대지수가 아님. 음수(알루미늄 −0.0791%)는 베트남 배출집약도가 EU 평균보다 낮아 초과 탄소지불액이 음(−)임을 의미. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceLabel": "무역 노출지수(Trade Exposure Index) — 시멘트",
+      "sourceLabelEn": "Trade exposure index",
+      "sourceNote": "[단위 정정] 원천 정의는 \"Excess carbon payments (% of sectoral exports to world)\"로 **단위는 %가 맞음**. 값의 절대크기가 작을 뿐이며 무차원 상대지수가 아님. 음수(알루미늄 −0.0791%)는 베트남 배출집약도가 EU 평균보다 낮아 초과 탄소지불액이 음(−)임을 의미. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_trade_exposure_cement",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0acf85d72cc7|%",
+      "dimensionLabels": {
+        "detail": "비료"
+      },
+      "dimensions": {
+        "detail": "비료"
+      },
+      "displayLabel": "무역 노출지수(Trade Exposure Index) — 비료",
+      "indicatorId": "B-013_trade_exposure_fertilizers",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0acf85d72cc7",
+        "labelKo": "무역 노출지수(Trade Exposure Index)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-0acf85d72cc7|%|detail=비료|B-013_trade_exposure_fertilizers",
+      "sourceCaveat": "[단위 정정] 원천 정의는 \"Excess carbon payments (% of sectoral exports to world)\"로 **단위는 %가 맞음**. 값의 절대크기가 작을 뿐이며 무차원 상대지수가 아님. 음수(알루미늄 −0.0791%)는 베트남 배출집약도가 EU 평균보다 낮아 초과 탄소지불액이 음(−)임을 의미. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceLabel": "무역 노출지수(Trade Exposure Index) — 비료",
+      "sourceLabelEn": "Trade exposure index",
+      "sourceNote": "[단위 정정] 원천 정의는 \"Excess carbon payments (% of sectoral exports to world)\"로 **단위는 %가 맞음**. 값의 절대크기가 작을 뿐이며 무차원 상대지수가 아님. 음수(알루미늄 −0.0791%)는 베트남 배출집약도가 EU 평균보다 낮아 초과 탄소지불액이 음(−)임을 의미. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_trade_exposure_fertilizers",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0acf85d72cc7|%",
+      "dimensionLabels": {
+        "detail": "철강"
+      },
+      "dimensions": {
+        "detail": "철강"
+      },
+      "displayLabel": "무역 노출지수(Trade Exposure Index) — 철강",
+      "indicatorId": "B-013_trade_exposure_iron_steel",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0acf85d72cc7",
+        "labelKo": "무역 노출지수(Trade Exposure Index)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-0acf85d72cc7|%|detail=철강|B-013_trade_exposure_iron_steel",
+      "sourceCaveat": "[단위 정정] 원천 정의는 \"Excess carbon payments (% of sectoral exports to world)\"로 **단위는 %가 맞음**. 값의 절대크기가 작을 뿐이며 무차원 상대지수가 아님. 음수(알루미늄 −0.0791%)는 베트남 배출집약도가 EU 평균보다 낮아 초과 탄소지불액이 음(−)임을 의미. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceLabel": "무역 노출지수(Trade Exposure Index) — 철강",
+      "sourceLabelEn": "Trade exposure index",
+      "sourceNote": "[단위 정정] 원천 정의는 \"Excess carbon payments (% of sectoral exports to world)\"로 **단위는 %가 맞음**. 값의 절대크기가 작을 뿐이며 무차원 상대지수가 아님. 음수(알루미늄 −0.0791%)는 베트남 배출집약도가 EU 평균보다 낮아 초과 탄소지불액이 음(−)임을 의미. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_trade_exposure_iron_steel",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0acf85d72cc7|%",
+      "dimensionLabels": {
+        "detail": "CBAM 합계"
+      },
+      "dimensions": {
+        "detail": "CBAM 합계"
+      },
+      "displayLabel": "무역 노출지수(Trade Exposure Index) — CBAM 합계",
+      "indicatorId": "B-013_trade_exposure_total_cbam",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0acf85d72cc7",
+        "labelKo": "무역 노출지수(Trade Exposure Index)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-0acf85d72cc7|%|detail=CBAM 합계|B-013_trade_exposure_total_cbam",
+      "sourceCaveat": "[단위 정정] 원천 정의는 \"Excess carbon payments (% of sectoral exports to world)\"로 **단위는 %가 맞음**. 값의 절대크기가 작을 뿐이며 무차원 상대지수가 아님. 음수(알루미늄 −0.0791%)는 베트남 배출집약도가 EU 평균보다 낮아 초과 탄소지불액이 음(−)임을 의미. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceLabel": "무역 노출지수(Trade Exposure Index) — CBAM 합계",
+      "sourceLabelEn": "Trade exposure index",
+      "sourceNote": "[단위 정정] 원천 정의는 \"Excess carbon payments (% of sectoral exports to world)\"로 **단위는 %가 맞음**. 값의 절대크기가 작을 뿐이며 무차원 상대지수가 아님. 음수(알루미늄 −0.0791%)는 베트남 배출집약도가 EU 평균보다 낮아 초과 탄소지불액이 음(−)임을 의미. 기준시점: 무역 2022년(World Bank WITS mirror data), 배출집약도·산출 2017년(GTAP11-CE), GDP 2022년(WDI·IMF WEO). 단일 스냅샷이며 시계열 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+      "sourceProvenance": {
+        "elementId": "B-013",
+        "indicatorId": "B-013_trade_exposure_total_cbam",
+        "sourceFileDecoded": "B-013_World Bank CBAM 영향 지수.xlsx",
+        "sourceRow": 4,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 5,
+      "key": "measure-b7e803503605",
+      "labelKo": "EU 평균 탄소지불액",
+      "recordCount": 5,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-ac76474890c1",
+      "labelKo": "경제 노출지수(Economic Exposure Index)",
+      "recordCount": 1,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 5,
+      "key": "measure-e668ecca4da4",
+      "labelKo": "대EU 수출비중",
+      "recordCount": 5,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 5,
+      "key": "measure-063d6ac24b89",
+      "labelKo": "대EU 수출액",
+      "recordCount": 5,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 5,
+      "key": "measure-0acf85d72cc7",
+      "labelKo": "무역 노출지수(Trade Exposure Index)",
+      "recordCount": 5,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 5,
+      "key": "measure-1f6cecd0e5f6",
+      "labelKo": "생산 노출지수(Output Exposure Index)",
+      "recordCount": 5,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 9,
+      "key": "measure-aeaf311afb3c",
+      "labelKo": "탄소지불액",
+      "recordCount": 9,
+      "unit": "%",
+      "unitFamily": "percent"
+    }
+  ],
+  "observationCount": 35,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

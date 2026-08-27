@@ -1,0 +1,127 @@
+{
+  "dimensions": [
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 36,
+      "values": [
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ]
+    }
+  ],
+  "elementId": "B-016",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 2,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-877ad0f1aa8d|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "화석연료 소비 비중",
+      "indicatorId": "B-016_fossil_share",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-877ad0f1aa8d",
+        "labelKo": "화석연료 소비 비중",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-877ad0f1aa8d|%||B-016_fossil_share",
+      "sourceCaveat": "[결측 확인] WDI API(lastupdated 2026-07-13) 원본 확인 결과 1990–2015는 정상값, **2016–2023은 값이 0으로 반환되나 베트남의 실제 화석연료 비중이 0%일 수 없으므로 실질 결측(NP)**으로 처리. 2024–2025는 null. Q-008 판별기준(\"0이라고 적었을 때 사실인 경우에만 0\")에 따라 0을 값으로 쓰지 않고 결측사유 NP를 기입함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] WDI API 응답 lastupdated",
+      "sourceLabel": "화석연료 소비 비중",
+      "sourceLabelEn": "Fossil fuel energy consumption (% of total)",
+      "sourceNote": "2016년: WDI가 0 값을 반환하나 실질 결측 — IEA 원자료 미갱신 구간(실제 0%가 아님) / 2017년: WDI가 0 값을 반환하나 실질 결측 — IEA 원자료 미갱신 구간(실제 0%가 아님) / 2018년: WDI가 0 값을 반환하나 실질 결측 — IEA 원자료 미갱신 구간(실제 0%가 아님) / 2019년: WDI가 0 값을 반환하나 실질 결측 — IEA 원자료 미갱신 구간(실제 0%가 아님) / 2020년: WDI가 0 값을 반환하나 실질 결측 — IEA 원자료 미갱신 구간(실제 0%가 아님) / 2021년: WDI가 0 값을 반환하나 실질 결측 — IEA 원자료 미갱신 구간(실제 0%가 아님) / 2022년: WDI가 0 값을 반환하나 실질 결측 — IEA 원자료 미갱신 구간(실제 0%가 아님) / 2023년: WDI가 0 값을 반환하나 실질 결측 — IEA 원자료 미갱신 구간(실제 0%가 아님) / 2024년: 원천 null — IEA 원자료 미제공 / 2025년: 원천 null — IEA 원자료 미제공",
+      "sourceProvenance": {
+        "elementId": "B-016",
+        "indicatorId": "B-016_fossil_share",
+        "sourceFileDecoded": "B-016_화석연료 의존도(Fossil fuel energy consumption (% of total)).xlsx",
+        "sourceRow": 4,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-98a19c41d3d6|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "화석연료 소비 비중(EI 기반 보완 산출)",
+      "indicatorId": "B-016_fossil_share_ei",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-98a19c41d3d6",
+        "labelKo": "화석연료 소비 비중(EI 기반 보완 산출)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-98a19c41d3d6|%||B-016_fossil_share_ei",
+      "sourceCaveat": "[분리 사유] 종전 파일 부제에 \"EI 통계로 보완\"이라 적었으나 실제 보완값이 없었음. EI는 1차에너지 기준, WDI(IEA)는 최종에너지 기준으로 정의가 달라 동일 계열로 접속하면 Q-004(소스 혼재 금지) 위반 → 별도 지표코드로 분리 신설. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EI Statistical Review 연 1회 6월 발간",
+      "sourceLabel": "화석연료 소비 비중(EI 기반 보완 산출)",
+      "sourceLabelEn": "Fossil share (EI Statistical Review based)",
+      "sourceNote": "[분리 사유] 종전 파일 부제에 \"EI 통계로 보완\"이라 적었으나 실제 보완값이 없었음. EI는 1차에너지 기준, WDI(IEA)는 최종에너지 기준으로 정의가 달라 동일 계열로 접속하면 Q-004(소스 혼재 금지) 위반 → 별도 지표코드로 분리 신설. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EI Statistical Review 연 1회 6월 발간",
+      "sourceProvenance": {
+        "elementId": "B-016",
+        "indicatorId": "B-016_fossil_share_ei",
+        "sourceFileDecoded": "B-016_화석연료 의존도(Fossil fuel energy consumption (% of total)).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-877ad0f1aa8d",
+      "labelKo": "화석연료 소비 비중",
+      "recordCount": 36,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-98a19c41d3d6",
+      "labelKo": "화석연료 소비 비중(EI 기반 보완 산출)",
+      "recordCount": 9,
+      "unit": "%",
+      "unitFamily": "percent"
+    }
+  ],
+  "observationCount": 45,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

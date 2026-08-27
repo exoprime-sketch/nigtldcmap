@@ -1,0 +1,393 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 7,
+      "values": [
+        "MDB 프로젝트 · DAC 5자리 섹터코드 보유 활동 건수",
+        "MDB 프로젝트 · IATI 상세정보 확보 활동 건수",
+        "MDB 프로젝트 · 기관유형별 약정액 합계",
+        "MDB 프로젝트 · 기후 정책마커(Rio Marker) 부여 활동 건수",
+        "MDB 프로젝트 · 약정액 합계",
+        "MDB 프로젝트 · 집행액 합계",
+        "MDB 프로젝트 · 활동 건수"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 5,
+      "values": [
+        "MDB(World Bank·ADB·IFC)",
+        "UN 계열 기구",
+        "수록 기준 충족 활동 총 건수",
+        "수록 활동 약정액 단순합",
+        "수록 활동 집행액 단순합"
+      ]
+    },
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "국제기구·MDB 사업"
+      ]
+    },
+    {
+      "key": "status",
+      "labelKo": "status",
+      "valueCount": 4,
+      "values": [
+        "Closed",
+        "Finalisation",
+        "Implementation",
+        "Pipeline/Identification"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2026"
+      ]
+    }
+  ],
+  "elementId": "D-021",
+  "entityCount": 640,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 9,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-6567f7354984|건",
+      "dimensionLabels": {
+        "category": "MDB 프로젝트 · 활동 건수",
+        "detail": "수록 기준 충족 활동 총 건수",
+        "technology": "1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10 · 11 · 12 · 13 · 14 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 22 · 23 · 24 · 25 · 26 · 27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "MDB 프로젝트 · 활동 건수",
+        "detail": "수록 기준 충족 활동 총 건수",
+        "technology": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "주요 국제기구·MDB 프로젝트 · 활동 건수 — 수록 기준 충족 활동 총 건수",
+      "indicatorId": "D-021_activity_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6567f7354984",
+        "labelKo": "주요 국제기구",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-6567f7354984|건|category=MDB 프로젝트 · 활동 건수|detail=수록 기준 충족 활동 총 건수|technology=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38|D-021_activity_count",
+      "sourceCaveat": "[검토지적 반영] 종전 자료에 포함되어 있던 Adaptation Fund 사업 4건은 별도 요소인 D-018에서 수집하므로 본 요소에서 제외함 (중복 수록 해소). 본 요소는 World Bank·ADB·IFC·UNDP·FAO·UNESCO·UNICEF·UN-Habitat·UNEP·IFAD·UNIDO·WHO·ILO 등 국제기구·MDB가 IATI에 보고한 대베트남 활동만 수록함. [원본 버전] d-portal(IATI) 베트남 활동 목록 내려받기본(전체 10,133건). 그중 국제기구·MDB 보고분이면서 총 약정액 1,000,000 USD 이상인 건을 수록함 — 소액 활동까지 전수 수록하면 1,501건이 되어 전략지도 활용도가 낮아짐. 수록 기준을 명시하며, 절단된 861건은 소액(<1M USD) 활동임. [보완] d-portal 목록에 없던 섹터(DAC 5자리)·사업기간·실행기관·Rio Marker는 IATI Datastore Activity API에서 보고기관 14곳의 베트남 활동 1,375건을 내려받아 IATI 식별자로 조인해 채움(2026-08-18). 수록 640건 중 588건이 조인됨. [미조인 52건의 원인 확인] 나머지 52건은 모두 World Bank(reporting_org_ref 44000) 보고분으로, IATI Datastore를 transaction_recipient_country_code=VN 조건과 프로젝트번호(P-number) 조건으로 각각 재조회한 결과 현재 World Bank의 IATI 게시분에 해당 활동이 존재하지 않음을 확인함(종료사업 게시 중단). 제3자 재게시본(AidData)에는 섹터·기간·정책마커 필드가 비어 있어 활용 불가함도 함께 확인함. 이 중 19건은 동일 프로젝트번호를 World Bank Trust Funds가 보고한 활동에서 DAC 섹터코드만 참고로 확보하여 [참고·프로젝트번호 대응]으로 명시함. [Rio Marker 실태] 조인된 활동 대부분이 OECD DAC 정책마커를 IATI에 보고하지 않음 — 기관 자체 분류(vocabulary 99)만 보고하는 경우가 많아 Rio Marker는 확보 건수가 적음. 이는 우리 수집 누락이 아니라 원천의 미보고임. [코드 해석] 정책마커 vocabulary 1(OECD DAC) 기준 6=기후변화 완화, 7=기후변화 적응, 5=생물다양성, 8=사막화 방지. GCF 사업(SAP040=7, FP250·FP071=6)으로 코드 의미를 교차 검증함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "주요 국제기구·MDB 프로젝트 · 활동 건수 — 수록 기준 충족 활동 총 건수",
+      "sourceLabelEn": "Number of international organisation and MDB activities",
+      "sourceNote": "[검토지적 반영] 종전 자료에 포함되어 있던 Adaptation Fund 사업 4건은 별도 요소인 D-018에서 수집하므로 본 요소에서 제외함 (중복 수록 해소). 본 요소는 World Bank·ADB·IFC·UNDP·FAO·UNESCO·UNICEF·UN-Habitat·UNEP·IFAD·UNIDO·WHO·ILO 등 국제기구·MDB가 IATI에 보고한 대베트남 활동만 수록함. [원본 버전] d-portal(IATI) 베트남 활동 목록 내려받기본(전체 10,133건). 그중 국제기구·MDB 보고분이면서 총 약정액 1,000,000 USD 이상인 건을 수록함 — 소액 활동까지 전수 수록하면 1,501건이 되어 전략지도 활용도가 낮아짐. 수록 기준을 명시하며, 절단된 861건은 소액(<1M USD) 활동임. [보완] d-portal 목록에 없던 섹터(DAC 5자리)·사업기간·실행기관·Rio Marker는 IATI Datastore Activity API에서 보고기관 14곳의 베트남 활동 1,375건을 내려받아 IATI 식별자로 조인해 채움(2026-08-18). 수록 640건 중 588건이 조인됨. [미조인 52건의 원인 확인] 나머지 52건은 모두 World Bank(reporting_org_ref 44000) 보고분으로, IATI Datastore를 transaction_recipient_country_code=VN 조건과 프로젝트번호(P-number) 조건으로 각각 재조회한 결과 현재 World Bank의 IATI 게시분에 해당 활동이 존재하지 않음을 확인함(종료사업 게시 중단). 제3자 재게시본(AidData)에는 섹터·기간·정책마커 필드가 비어 있어 활용 불가함도 함께 확인함. 이 중 19건은 동일 프로젝트번호를 World Bank Trust Funds가 보고한 활동에서 DAC 섹터코드만 참고로 확보하여 [참고·프로젝트번호 대응]으로 명시함. [Rio Marker 실태] 조인된 활동 대부분이 OECD DAC 정책마커를 IATI에 보고하지 않음 — 기관 자체 분류(vocabulary 99)만 보고하는 경우가 많아 Rio Marker는 확보 건수가 적음. 이는 우리 수집 누락이 아니라 원천의 미보고임. [코드 해석] 정책마커 vocabulary 1(OECD DAC) 기준 6=기후변화 완화, 7=기후변화 적응, 5=생물다양성, 8=사막화 방지. GCF 사업(SAP040=7, FP250·FP071=6)으로 코드 의미를 교차 검증함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-021",
+        "indicatorId": "D-021_activity_count",
+        "sourceFileDecoded": "D-021_주요 국제기구·MDB 프로젝트.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6567f7354984|건",
+      "dimensionLabels": {
+        "category": "MDB 프로젝트 · 기후 정책마커(Rio Marker) 부여 활동 건수",
+        "technology": "1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10 · 11 · 12 · 13 · 14 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 22 · 23 · 24 · 25 · 26 · 27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "MDB 프로젝트 · 기후 정책마커(Rio Marker) 부여 활동 건수",
+        "technology": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "주요 국제기구·MDB 프로젝트 · 기후 정책마커(Rio Marker) 부여 활동 건수",
+      "indicatorId": "D-021_activity_count_climate_marked",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6567f7354984",
+        "labelKo": "주요 국제기구",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-6567f7354984|건|category=MDB 프로젝트 · 기후 정책마커(Rio Marker) 부여 활동 건수|technology=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38|D-021_activity_count_climate_marked",
+      "sourceCaveat": "[검토지적 반영] 종전 자료에 포함되어 있던 Adaptation Fund 사업 4건은 별도 요소인 D-018에서 수집하므로 본 요소에서 제외함 (중복 수록 해소). 본 요소는 World Bank·ADB·IFC·UNDP·FAO·UNESCO·UNICEF·UN-Habitat·UNEP·IFAD·UNIDO·WHO·ILO 등 국제기구·MDB가 IATI에 보고한 대베트남 활동만 수록함. [원본 버전] d-portal(IATI) 베트남 활동 목록 내려받기본(전체 10,133건). 그중 국제기구·MDB 보고분이면서 총 약정액 1,000,000 USD 이상인 건을 수록함 — 소액 활동까지 전수 수록하면 1,501건이 되어 전략지도 활용도가 낮아짐. 수록 기준을 명시하며, 절단된 861건은 소액(<1M USD) 활동임. [보완] d-portal 목록에 없던 섹터(DAC 5자리)·사업기간·실행기관·Rio Marker는 IATI Datastore Activity API에서 보고기관 14곳의 베트남 활동 1,375건을 내려받아 IATI 식별자로 조인해 채움(2026-08-18). 수록 640건 중 588건이 조인됨. [미조인 52건의 원인 확인] 나머지 52건은 모두 World Bank(reporting_org_ref 44000) 보고분으로, IATI Datastore를 transaction_recipient_country_code=VN 조건과 프로젝트번호(P-number) 조건으로 각각 재조회한 결과 현재 World Bank의 IATI 게시분에 해당 활동이 존재하지 않음을 확인함(종료사업 게시 중단). 제3자 재게시본(AidData)에는 섹터·기간·정책마커 필드가 비어 있어 활용 불가함도 함께 확인함. 이 중 19건은 동일 프로젝트번호를 World Bank Trust Funds가 보고한 활동에서 DAC 섹터코드만 참고로 확보하여 [참고·프로젝트번호 대응]으로 명시함. [Rio Marker 실태] 조인된 활동 대부분이 OECD DAC 정책마커를 IATI에 보고하지 않음 — 기관 자체 분류(vocabulary 99)만 보고하는 경우가 많아 Rio Marker는 확보 건수가 적음. 이는 우리 수집 누락이 아니라 원천의 미보고임. [코드 해석] 정책마커 vocabulary 1(OECD DAC) 기준 6=기후변화 완화, 7=기후변화 적응, 5=생물다양성, 8=사막화 방지. GCF 사업(SAP040=7, FP250·FP071=6)으로 코드 의미를 교차 검증함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "주요 국제기구·MDB 프로젝트 · 기후 정책마커(Rio Marker) 부여 활동 건수",
+      "sourceLabelEn": "Number of activities with an OECD DAC climate policy marker",
+      "sourceNote": "[검토지적 반영] 종전 자료에 포함되어 있던 Adaptation Fund 사업 4건은 별도 요소인 D-018에서 수집하므로 본 요소에서 제외함 (중복 수록 해소). 본 요소는 World Bank·ADB·IFC·UNDP·FAO·UNESCO·UNICEF·UN-Habitat·UNEP·IFAD·UNIDO·WHO·ILO 등 국제기구·MDB가 IATI에 보고한 대베트남 활동만 수록함. [원본 버전] d-portal(IATI) 베트남 활동 목록 내려받기본(전체 10,133건). 그중 국제기구·MDB 보고분이면서 총 약정액 1,000,000 USD 이상인 건을 수록함 — 소액 활동까지 전수 수록하면 1,501건이 되어 전략지도 활용도가 낮아짐. 수록 기준을 명시하며, 절단된 861건은 소액(<1M USD) 활동임. [보완] d-portal 목록에 없던 섹터(DAC 5자리)·사업기간·실행기관·Rio Marker는 IATI Datastore Activity API에서 보고기관 14곳의 베트남 활동 1,375건을 내려받아 IATI 식별자로 조인해 채움(2026-08-18). 수록 640건 중 588건이 조인됨. [미조인 52건의 원인 확인] 나머지 52건은 모두 World Bank(reporting_org_ref 44000) 보고분으로, IATI Datastore를 transaction_recipient_country_code=VN 조건과 프로젝트번호(P-number) 조건으로 각각 재조회한 결과 현재 World Bank의 IATI 게시분에 해당 활동이 존재하지 않음을 확인함(종료사업 게시 중단). 제3자 재게시본(AidData)에는 섹터·기간·정책마커 필드가 비어 있어 활용 불가함도 함께 확인함. 이 중 19건은 동일 프로젝트번호를 World Bank Trust Funds가 보고한 활동에서 DAC 섹터코드만 참고로 확보하여 [참고·프로젝트번호 대응]으로 명시함. [Rio Marker 실태] 조인된 활동 대부분이 OECD DAC 정책마커를 IATI에 보고하지 않음 — 기관 자체 분류(vocabulary 99)만 보고하는 경우가 많아 Rio Marker는 확보 건수가 적음. 이는 우리 수집 누락이 아니라 원천의 미보고임. [코드 해석] 정책마커 vocabulary 1(OECD DAC) 기준 6=기후변화 완화, 7=기후변화 적응, 5=생물다양성, 8=사막화 방지. GCF 사업(SAP040=7, FP250·FP071=6)으로 코드 의미를 교차 검증함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-021",
+        "indicatorId": "D-021_activity_count_climate_marked",
+        "sourceFileDecoded": "D-021_주요 국제기구·MDB 프로젝트.xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6567f7354984|건",
+      "dimensionLabels": {
+        "category": "MDB 프로젝트 · DAC 5자리 섹터코드 보유 활동 건수",
+        "technology": "1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10 · 11 · 12 · 13 · 14 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 22 · 23 · 24 · 25 · 26 · 27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "MDB 프로젝트 · DAC 5자리 섹터코드 보유 활동 건수",
+        "technology": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "주요 국제기구·MDB 프로젝트 · DAC 5자리 섹터코드 보유 활동 건수",
+      "indicatorId": "D-021_activity_count_with_dac_sector",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6567f7354984",
+        "labelKo": "주요 국제기구",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-6567f7354984|건|category=MDB 프로젝트 · DAC 5자리 섹터코드 보유 활동 건수|technology=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38|D-021_activity_count_with_dac_sector",
+      "sourceCaveat": "[검토지적 반영] 종전 자료에 포함되어 있던 Adaptation Fund 사업 4건은 별도 요소인 D-018에서 수집하므로 본 요소에서 제외함 (중복 수록 해소). 본 요소는 World Bank·ADB·IFC·UNDP·FAO·UNESCO·UNICEF·UN-Habitat·UNEP·IFAD·UNIDO·WHO·ILO 등 국제기구·MDB가 IATI에 보고한 대베트남 활동만 수록함. [원본 버전] d-portal(IATI) 베트남 활동 목록 내려받기본(전체 10,133건). 그중 국제기구·MDB 보고분이면서 총 약정액 1,000,000 USD 이상인 건을 수록함 — 소액 활동까지 전수 수록하면 1,501건이 되어 전략지도 활용도가 낮아짐. 수록 기준을 명시하며, 절단된 861건은 소액(<1M USD) 활동임. [보완] d-portal 목록에 없던 섹터(DAC 5자리)·사업기간·실행기관·Rio Marker는 IATI Datastore Activity API에서 보고기관 14곳의 베트남 활동 1,375건을 내려받아 IATI 식별자로 조인해 채움(2026-08-18). 수록 640건 중 588건이 조인됨. [미조인 52건의 원인 확인] 나머지 52건은 모두 World Bank(reporting_org_ref 44000) 보고분으로, IATI Datastore를 transaction_recipient_country_code=VN 조건과 프로젝트번호(P-number) 조건으로 각각 재조회한 결과 현재 World Bank의 IATI 게시분에 해당 활동이 존재하지 않음을 확인함(종료사업 게시 중단). 제3자 재게시본(AidData)에는 섹터·기간·정책마커 필드가 비어 있어 활용 불가함도 함께 확인함. 이 중 19건은 동일 프로젝트번호를 World Bank Trust Funds가 보고한 활동에서 DAC 섹터코드만 참고로 확보하여 [참고·프로젝트번호 대응]으로 명시함. [Rio Marker 실태] 조인된 활동 대부분이 OECD DAC 정책마커를 IATI에 보고하지 않음 — 기관 자체 분류(vocabulary 99)만 보고하는 경우가 많아 Rio Marker는 확보 건수가 적음. 이는 우리 수집 누락이 아니라 원천의 미보고임. [코드 해석] 정책마커 vocabulary 1(OECD DAC) 기준 6=기후변화 완화, 7=기후변화 적응, 5=생물다양성, 8=사막화 방지. GCF 사업(SAP040=7, FP250·FP071=6)으로 코드 의미를 교차 검증함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "주요 국제기구·MDB 프로젝트 · DAC 5자리 섹터코드 보유 활동 건수",
+      "sourceLabelEn": "Number of activities reporting an OECD DAC 5-digit sector code",
+      "sourceNote": "[검토지적 반영] 종전 자료에 포함되어 있던 Adaptation Fund 사업 4건은 별도 요소인 D-018에서 수집하므로 본 요소에서 제외함 (중복 수록 해소). 본 요소는 World Bank·ADB·IFC·UNDP·FAO·UNESCO·UNICEF·UN-Habitat·UNEP·IFAD·UNIDO·WHO·ILO 등 국제기구·MDB가 IATI에 보고한 대베트남 활동만 수록함. [원본 버전] d-portal(IATI) 베트남 활동 목록 내려받기본(전체 10,133건). 그중 국제기구·MDB 보고분이면서 총 약정액 1,000,000 USD 이상인 건을 수록함 — 소액 활동까지 전수 수록하면 1,501건이 되어 전략지도 활용도가 낮아짐. 수록 기준을 명시하며, 절단된 861건은 소액(<1M USD) 활동임. [보완] d-portal 목록에 없던 섹터(DAC 5자리)·사업기간·실행기관·Rio Marker는 IATI Datastore Activity API에서 보고기관 14곳의 베트남 활동 1,375건을 내려받아 IATI 식별자로 조인해 채움(2026-08-18). 수록 640건 중 588건이 조인됨. [미조인 52건의 원인 확인] 나머지 52건은 모두 World Bank(reporting_org_ref 44000) 보고분으로, IATI Datastore를 transaction_recipient_country_code=VN 조건과 프로젝트번호(P-number) 조건으로 각각 재조회한 결과 현재 World Bank의 IATI 게시분에 해당 활동이 존재하지 않음을 확인함(종료사업 게시 중단). 제3자 재게시본(AidData)에는 섹터·기간·정책마커 필드가 비어 있어 활용 불가함도 함께 확인함. 이 중 19건은 동일 프로젝트번호를 World Bank Trust Funds가 보고한 활동에서 DAC 섹터코드만 참고로 확보하여 [참고·프로젝트번호 대응]으로 명시함. [Rio Marker 실태] 조인된 활동 대부분이 OECD DAC 정책마커를 IATI에 보고하지 않음 — 기관 자체 분류(vocabulary 99)만 보고하는 경우가 많아 Rio Marker는 확보 건수가 적음. 이는 우리 수집 누락이 아니라 원천의 미보고임. [코드 해석] 정책마커 vocabulary 1(OECD DAC) 기준 6=기후변화 완화, 7=기후변화 적응, 5=생물다양성, 8=사막화 방지. GCF 사업(SAP040=7, FP250·FP071=6)으로 코드 의미를 교차 검증함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-021",
+        "indicatorId": "D-021_activity_count_with_dac_sector",
+        "sourceFileDecoded": "D-021_주요 국제기구·MDB 프로젝트.xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6567f7354984|건",
+      "dimensionLabels": {
+        "category": "MDB 프로젝트 · IATI 상세정보 확보 활동 건수",
+        "technology": "1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10 · 11 · 12 · 13 · 14 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 22 · 23 · 24 · 25 · 26 · 27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "MDB 프로젝트 · IATI 상세정보 확보 활동 건수",
+        "technology": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "주요 국제기구·MDB 프로젝트 · IATI 상세정보 확보 활동 건수",
+      "indicatorId": "D-021_activity_count_with_iati_detail",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6567f7354984",
+        "labelKo": "주요 국제기구",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-6567f7354984|건|category=MDB 프로젝트 · IATI 상세정보 확보 활동 건수|technology=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38|D-021_activity_count_with_iati_detail",
+      "sourceCaveat": "[검토지적 반영] 종전 자료에 포함되어 있던 Adaptation Fund 사업 4건은 별도 요소인 D-018에서 수집하므로 본 요소에서 제외함 (중복 수록 해소). 본 요소는 World Bank·ADB·IFC·UNDP·FAO·UNESCO·UNICEF·UN-Habitat·UNEP·IFAD·UNIDO·WHO·ILO 등 국제기구·MDB가 IATI에 보고한 대베트남 활동만 수록함. [원본 버전] d-portal(IATI) 베트남 활동 목록 내려받기본(전체 10,133건). 그중 국제기구·MDB 보고분이면서 총 약정액 1,000,000 USD 이상인 건을 수록함 — 소액 활동까지 전수 수록하면 1,501건이 되어 전략지도 활용도가 낮아짐. 수록 기준을 명시하며, 절단된 861건은 소액(<1M USD) 활동임. [보완] d-portal 목록에 없던 섹터(DAC 5자리)·사업기간·실행기관·Rio Marker는 IATI Datastore Activity API에서 보고기관 14곳의 베트남 활동 1,375건을 내려받아 IATI 식별자로 조인해 채움(2026-08-18). 수록 640건 중 588건이 조인됨. [미조인 52건의 원인 확인] 나머지 52건은 모두 World Bank(reporting_org_ref 44000) 보고분으로, IATI Datastore를 transaction_recipient_country_code=VN 조건과 프로젝트번호(P-number) 조건으로 각각 재조회한 결과 현재 World Bank의 IATI 게시분에 해당 활동이 존재하지 않음을 확인함(종료사업 게시 중단). 제3자 재게시본(AidData)에는 섹터·기간·정책마커 필드가 비어 있어 활용 불가함도 함께 확인함. 이 중 19건은 동일 프로젝트번호를 World Bank Trust Funds가 보고한 활동에서 DAC 섹터코드만 참고로 확보하여 [참고·프로젝트번호 대응]으로 명시함. [Rio Marker 실태] 조인된 활동 대부분이 OECD DAC 정책마커를 IATI에 보고하지 않음 — 기관 자체 분류(vocabulary 99)만 보고하는 경우가 많아 Rio Marker는 확보 건수가 적음. 이는 우리 수집 누락이 아니라 원천의 미보고임. [코드 해석] 정책마커 vocabulary 1(OECD DAC) 기준 6=기후변화 완화, 7=기후변화 적응, 5=생물다양성, 8=사막화 방지. GCF 사업(SAP040=7, FP250·FP071=6)으로 코드 의미를 교차 검증함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "주요 국제기구·MDB 프로젝트 · IATI 상세정보 확보 활동 건수",
+      "sourceLabelEn": "Number of activities enriched with IATI Datastore detail",
+      "sourceNote": "[검토지적 반영] 종전 자료에 포함되어 있던 Adaptation Fund 사업 4건은 별도 요소인 D-018에서 수집하므로 본 요소에서 제외함 (중복 수록 해소). 본 요소는 World Bank·ADB·IFC·UNDP·FAO·UNESCO·UNICEF·UN-Habitat·UNEP·IFAD·UNIDO·WHO·ILO 등 국제기구·MDB가 IATI에 보고한 대베트남 활동만 수록함. [원본 버전] d-portal(IATI) 베트남 활동 목록 내려받기본(전체 10,133건). 그중 국제기구·MDB 보고분이면서 총 약정액 1,000,000 USD 이상인 건을 수록함 — 소액 활동까지 전수 수록하면 1,501건이 되어 전략지도 활용도가 낮아짐. 수록 기준을 명시하며, 절단된 861건은 소액(<1M USD) 활동임. [보완] d-portal 목록에 없던 섹터(DAC 5자리)·사업기간·실행기관·Rio Marker는 IATI Datastore Activity API에서 보고기관 14곳의 베트남 활동 1,375건을 내려받아 IATI 식별자로 조인해 채움(2026-08-18). 수록 640건 중 588건이 조인됨. [미조인 52건의 원인 확인] 나머지 52건은 모두 World Bank(reporting_org_ref 44000) 보고분으로, IATI Datastore를 transaction_recipient_country_code=VN 조건과 프로젝트번호(P-number) 조건으로 각각 재조회한 결과 현재 World Bank의 IATI 게시분에 해당 활동이 존재하지 않음을 확인함(종료사업 게시 중단). 제3자 재게시본(AidData)에는 섹터·기간·정책마커 필드가 비어 있어 활용 불가함도 함께 확인함. 이 중 19건은 동일 프로젝트번호를 World Bank Trust Funds가 보고한 활동에서 DAC 섹터코드만 참고로 확보하여 [참고·프로젝트번호 대응]으로 명시함. [Rio Marker 실태] 조인된 활동 대부분이 OECD DAC 정책마커를 IATI에 보고하지 않음 — 기관 자체 분류(vocabulary 99)만 보고하는 경우가 많아 Rio Marker는 확보 건수가 적음. 이는 우리 수집 누락이 아니라 원천의 미보고임. [코드 해석] 정책마커 vocabulary 1(OECD DAC) 기준 6=기후변화 완화, 7=기후변화 적응, 5=생물다양성, 8=사막화 방지. GCF 사업(SAP040=7, FP250·FP071=6)으로 코드 의미를 교차 검증함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-021",
+        "indicatorId": "D-021_activity_count_with_iati_detail",
+        "sourceFileDecoded": "D-021_주요 국제기구·MDB 프로젝트.xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-877800bb9c2d|USD",
+      "dimensionLabels": {
+        "category": "MDB 프로젝트 · 약정액 합계",
+        "detail": "수록 활동 약정액 단순합",
+        "technology": "1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10 · 11 · 12 · 13 · 14 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 22 · 23 · 24 · 25 · 26 · 27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "MDB 프로젝트 · 약정액 합계",
+        "detail": "수록 활동 약정액 단순합",
+        "technology": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "주요 국제기구·MDB 프로젝트 · 약정액 합계 — 수록 활동 약정액 단순합",
+      "indicatorId": "D-021_commitment_sum",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-877800bb9c2d",
+        "labelKo": "주요 국제기구",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-877800bb9c2d|USD|category=MDB 프로젝트 · 약정액 합계|detail=수록 활동 약정액 단순합|technology=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38|D-021_commitment_sum",
+      "sourceCaveat": "[검토지적 반영] 종전 자료에 포함되어 있던 Adaptation Fund 사업 4건은 별도 요소인 D-018에서 수집하므로 본 요소에서 제외함 (중복 수록 해소). 본 요소는 World Bank·ADB·IFC·UNDP·FAO·UNESCO·UNICEF·UN-Habitat·UNEP·IFAD·UNIDO·WHO·ILO 등 국제기구·MDB가 IATI에 보고한 대베트남 활동만 수록함. [원본 버전] d-portal(IATI) 베트남 활동 목록 내려받기본(전체 10,133건). 그중 국제기구·MDB 보고분이면서 총 약정액 1,000,000 USD 이상인 건을 수록함 — 소액 활동까지 전수 수록하면 1,501건이 되어 전략지도 활용도가 낮아짐. 수록 기준을 명시하며, 절단된 861건은 소액(<1M USD) 활동임. [보완] d-portal 목록에 없던 섹터(DAC 5자리)·사업기간·실행기관·Rio Marker는 IATI Datastore Activity API에서 보고기관 14곳의 베트남 활동 1,375건을 내려받아 IATI 식별자로 조인해 채움(2026-08-18). 수록 640건 중 588건이 조인됨. [미조인 52건의 원인 확인] 나머지 52건은 모두 World Bank(reporting_org_ref 44000) 보고분으로, IATI Datastore를 transaction_recipient_country_code=VN 조건과 프로젝트번호(P-number) 조건으로 각각 재조회한 결과 현재 World Bank의 IATI 게시분에 해당 활동이 존재하지 않음을 확인함(종료사업 게시 중단). 제3자 재게시본(AidData)에는 섹터·기간·정책마커 필드가 비어 있어 활용 불가함도 함께 확인함. 이 중 19건은 동일 프로젝트번호를 World Bank Trust Funds가 보고한 활동에서 DAC 섹터코드만 참고로 확보하여 [참고·프로젝트번호 대응]으로 명시함. [Rio Marker 실태] 조인된 활동 대부분이 OECD DAC 정책마커를 IATI에 보고하지 않음 — 기관 자체 분류(vocabulary 99)만 보고하는 경우가 많아 Rio Marker는 확보 건수가 적음. 이는 우리 수집 누락이 아니라 원천의 미보고임. [코드 해석] 정책마커 vocabulary 1(OECD DAC) 기준 6=기후변화 완화, 7=기후변화 적응, 5=생물다양성, 8=사막화 방지. GCF 사업(SAP040=7, FP250·FP071=6)으로 코드 의미를 교차 검증함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "주요 국제기구·MDB 프로젝트 · 약정액 합계 — 수록 활동 약정액 단순합",
+      "sourceLabelEn": "Total commitments of international organisation and MDB activities",
+      "sourceNote": "[검토지적 반영] 종전 자료에 포함되어 있던 Adaptation Fund 사업 4건은 별도 요소인 D-018에서 수집하므로 본 요소에서 제외함 (중복 수록 해소). 본 요소는 World Bank·ADB·IFC·UNDP·FAO·UNESCO·UNICEF·UN-Habitat·UNEP·IFAD·UNIDO·WHO·ILO 등 국제기구·MDB가 IATI에 보고한 대베트남 활동만 수록함. [원본 버전] d-portal(IATI) 베트남 활동 목록 내려받기본(전체 10,133건). 그중 국제기구·MDB 보고분이면서 총 약정액 1,000,000 USD 이상인 건을 수록함 — 소액 활동까지 전수 수록하면 1,501건이 되어 전략지도 활용도가 낮아짐. 수록 기준을 명시하며, 절단된 861건은 소액(<1M USD) 활동임. [보완] d-portal 목록에 없던 섹터(DAC 5자리)·사업기간·실행기관·Rio Marker는 IATI Datastore Activity API에서 보고기관 14곳의 베트남 활동 1,375건을 내려받아 IATI 식별자로 조인해 채움(2026-08-18). 수록 640건 중 588건이 조인됨. [미조인 52건의 원인 확인] 나머지 52건은 모두 World Bank(reporting_org_ref 44000) 보고분으로, IATI Datastore를 transaction_recipient_country_code=VN 조건과 프로젝트번호(P-number) 조건으로 각각 재조회한 결과 현재 World Bank의 IATI 게시분에 해당 활동이 존재하지 않음을 확인함(종료사업 게시 중단). 제3자 재게시본(AidData)에는 섹터·기간·정책마커 필드가 비어 있어 활용 불가함도 함께 확인함. 이 중 19건은 동일 프로젝트번호를 World Bank Trust Funds가 보고한 활동에서 DAC 섹터코드만 참고로 확보하여 [참고·프로젝트번호 대응]으로 명시함. [Rio Marker 실태] 조인된 활동 대부분이 OECD DAC 정책마커를 IATI에 보고하지 않음 — 기관 자체 분류(vocabulary 99)만 보고하는 경우가 많아 Rio Marker는 확보 건수가 적음. 이는 우리 수집 누락이 아니라 원천의 미보고임. [코드 해석] 정책마커 vocabulary 1(OECD DAC) 기준 6=기후변화 완화, 7=기후변화 적응, 5=생물다양성, 8=사막화 방지. GCF 사업(SAP040=7, FP250·FP071=6)으로 코드 의미를 교차 검증함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-021",
+        "indicatorId": "D-021_commitment_sum",
+        "sourceFileDecoded": "D-021_주요 국제기구·MDB 프로젝트.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-877800bb9c2d|USD",
+      "dimensionLabels": {
+        "category": "MDB 프로젝트 · 기관유형별 약정액 합계",
+        "detail": "MDB(World Bank·ADB·IFC)",
+        "technology": "1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10 · 11 · 12 · 13 · 14 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 22 · 23 · 24 · 25 · 26 · 27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "MDB 프로젝트 · 기관유형별 약정액 합계",
+        "detail": "MDB(World Bank·ADB·IFC)",
+        "technology": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "주요 국제기구·MDB 프로젝트 · 기관유형별 약정액 합계 — MDB(World Bank·ADB·IFC)",
+      "indicatorId": "D-021_commitment_sum_mdb",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-877800bb9c2d",
+        "labelKo": "주요 국제기구",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-877800bb9c2d|USD|category=MDB 프로젝트 · 기관유형별 약정액 합계|detail=MDB(World Bank·ADB·IFC)|technology=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38|D-021_commitment_sum_mdb",
+      "sourceCaveat": "[검토지적 반영] 종전 자료에 포함되어 있던 Adaptation Fund 사업 4건은 별도 요소인 D-018에서 수집하므로 본 요소에서 제외함 (중복 수록 해소). 본 요소는 World Bank·ADB·IFC·UNDP·FAO·UNESCO·UNICEF·UN-Habitat·UNEP·IFAD·UNIDO·WHO·ILO 등 국제기구·MDB가 IATI에 보고한 대베트남 활동만 수록함. [원본 버전] d-portal(IATI) 베트남 활동 목록 내려받기본(전체 10,133건). 그중 국제기구·MDB 보고분이면서 총 약정액 1,000,000 USD 이상인 건을 수록함 — 소액 활동까지 전수 수록하면 1,501건이 되어 전략지도 활용도가 낮아짐. 수록 기준을 명시하며, 절단된 861건은 소액(<1M USD) 활동임. [보완] d-portal 목록에 없던 섹터(DAC 5자리)·사업기간·실행기관·Rio Marker는 IATI Datastore Activity API에서 보고기관 14곳의 베트남 활동 1,375건을 내려받아 IATI 식별자로 조인해 채움(2026-08-18). 수록 640건 중 588건이 조인됨. [미조인 52건의 원인 확인] 나머지 52건은 모두 World Bank(reporting_org_ref 44000) 보고분으로, IATI Datastore를 transaction_recipient_country_code=VN 조건과 프로젝트번호(P-number) 조건으로 각각 재조회한 결과 현재 World Bank의 IATI 게시분에 해당 활동이 존재하지 않음을 확인함(종료사업 게시 중단). 제3자 재게시본(AidData)에는 섹터·기간·정책마커 필드가 비어 있어 활용 불가함도 함께 확인함. 이 중 19건은 동일 프로젝트번호를 World Bank Trust Funds가 보고한 활동에서 DAC 섹터코드만 참고로 확보하여 [참고·프로젝트번호 대응]으로 명시함. [Rio Marker 실태] 조인된 활동 대부분이 OECD DAC 정책마커를 IATI에 보고하지 않음 — 기관 자체 분류(vocabulary 99)만 보고하는 경우가 많아 Rio Marker는 확보 건수가 적음. 이는 우리 수집 누락이 아니라 원천의 미보고임. [코드 해석] 정책마커 vocabulary 1(OECD DAC) 기준 6=기후변화 완화, 7=기후변화 적응, 5=생물다양성, 8=사막화 방지. GCF 사업(SAP040=7, FP250·FP071=6)으로 코드 의미를 교차 검증함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "주요 국제기구·MDB 프로젝트 · 기관유형별 약정액 합계 — MDB(World Bank·ADB·IFC)",
+      "sourceLabelEn": "Total commitments by institution type — MDB(World Bank·ADB·IFC)",
+      "sourceNote": "[검토지적 반영] 종전 자료에 포함되어 있던 Adaptation Fund 사업 4건은 별도 요소인 D-018에서 수집하므로 본 요소에서 제외함 (중복 수록 해소). 본 요소는 World Bank·ADB·IFC·UNDP·FAO·UNESCO·UNICEF·UN-Habitat·UNEP·IFAD·UNIDO·WHO·ILO 등 국제기구·MDB가 IATI에 보고한 대베트남 활동만 수록함. [원본 버전] d-portal(IATI) 베트남 활동 목록 내려받기본(전체 10,133건). 그중 국제기구·MDB 보고분이면서 총 약정액 1,000,000 USD 이상인 건을 수록함 — 소액 활동까지 전수 수록하면 1,501건이 되어 전략지도 활용도가 낮아짐. 수록 기준을 명시하며, 절단된 861건은 소액(<1M USD) 활동임. [보완] d-portal 목록에 없던 섹터(DAC 5자리)·사업기간·실행기관·Rio Marker는 IATI Datastore Activity API에서 보고기관 14곳의 베트남 활동 1,375건을 내려받아 IATI 식별자로 조인해 채움(2026-08-18). 수록 640건 중 588건이 조인됨. [미조인 52건의 원인 확인] 나머지 52건은 모두 World Bank(reporting_org_ref 44000) 보고분으로, IATI Datastore를 transaction_recipient_country_code=VN 조건과 프로젝트번호(P-number) 조건으로 각각 재조회한 결과 현재 World Bank의 IATI 게시분에 해당 활동이 존재하지 않음을 확인함(종료사업 게시 중단). 제3자 재게시본(AidData)에는 섹터·기간·정책마커 필드가 비어 있어 활용 불가함도 함께 확인함. 이 중 19건은 동일 프로젝트번호를 World Bank Trust Funds가 보고한 활동에서 DAC 섹터코드만 참고로 확보하여 [참고·프로젝트번호 대응]으로 명시함. [Rio Marker 실태] 조인된 활동 대부분이 OECD DAC 정책마커를 IATI에 보고하지 않음 — 기관 자체 분류(vocabulary 99)만 보고하는 경우가 많아 Rio Marker는 확보 건수가 적음. 이는 우리 수집 누락이 아니라 원천의 미보고임. [코드 해석] 정책마커 vocabulary 1(OECD DAC) 기준 6=기후변화 완화, 7=기후변화 적응, 5=생물다양성, 8=사막화 방지. GCF 사업(SAP040=7, FP250·FP071=6)으로 코드 의미를 교차 검증함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-021",
+        "indicatorId": "D-021_commitment_sum_mdb",
+        "sourceFileDecoded": "D-021_주요 국제기구·MDB 프로젝트.xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-877800bb9c2d|USD",
+      "dimensionLabels": {
+        "category": "MDB 프로젝트 · 기관유형별 약정액 합계",
+        "detail": "UN 계열 기구",
+        "technology": "1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10 · 11 · 12 · 13 · 14 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 22 · 23 · 24 · 25 · 26 · 27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "MDB 프로젝트 · 기관유형별 약정액 합계",
+        "detail": "UN 계열 기구",
+        "technology": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "주요 국제기구·MDB 프로젝트 · 기관유형별 약정액 합계 — UN 계열 기구",
+      "indicatorId": "D-021_commitment_sum_un_agency",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-877800bb9c2d",
+        "labelKo": "주요 국제기구",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-877800bb9c2d|USD|category=MDB 프로젝트 · 기관유형별 약정액 합계|detail=UN 계열 기구|technology=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38|D-021_commitment_sum_un_agency",
+      "sourceCaveat": "[검토지적 반영] 종전 자료에 포함되어 있던 Adaptation Fund 사업 4건은 별도 요소인 D-018에서 수집하므로 본 요소에서 제외함 (중복 수록 해소). 본 요소는 World Bank·ADB·IFC·UNDP·FAO·UNESCO·UNICEF·UN-Habitat·UNEP·IFAD·UNIDO·WHO·ILO 등 국제기구·MDB가 IATI에 보고한 대베트남 활동만 수록함. [원본 버전] d-portal(IATI) 베트남 활동 목록 내려받기본(전체 10,133건). 그중 국제기구·MDB 보고분이면서 총 약정액 1,000,000 USD 이상인 건을 수록함 — 소액 활동까지 전수 수록하면 1,501건이 되어 전략지도 활용도가 낮아짐. 수록 기준을 명시하며, 절단된 861건은 소액(<1M USD) 활동임. [보완] d-portal 목록에 없던 섹터(DAC 5자리)·사업기간·실행기관·Rio Marker는 IATI Datastore Activity API에서 보고기관 14곳의 베트남 활동 1,375건을 내려받아 IATI 식별자로 조인해 채움(2026-08-18). 수록 640건 중 588건이 조인됨. [미조인 52건의 원인 확인] 나머지 52건은 모두 World Bank(reporting_org_ref 44000) 보고분으로, IATI Datastore를 transaction_recipient_country_code=VN 조건과 프로젝트번호(P-number) 조건으로 각각 재조회한 결과 현재 World Bank의 IATI 게시분에 해당 활동이 존재하지 않음을 확인함(종료사업 게시 중단). 제3자 재게시본(AidData)에는 섹터·기간·정책마커 필드가 비어 있어 활용 불가함도 함께 확인함. 이 중 19건은 동일 프로젝트번호를 World Bank Trust Funds가 보고한 활동에서 DAC 섹터코드만 참고로 확보하여 [참고·프로젝트번호 대응]으로 명시함. [Rio Marker 실태] 조인된 활동 대부분이 OECD DAC 정책마커를 IATI에 보고하지 않음 — 기관 자체 분류(vocabulary 99)만 보고하는 경우가 많아 Rio Marker는 확보 건수가 적음. 이는 우리 수집 누락이 아니라 원천의 미보고임. [코드 해석] 정책마커 vocabulary 1(OECD DAC) 기준 6=기후변화 완화, 7=기후변화 적응, 5=생물다양성, 8=사막화 방지. GCF 사업(SAP040=7, FP250·FP071=6)으로 코드 의미를 교차 검증함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "주요 국제기구·MDB 프로젝트 · 기관유형별 약정액 합계 — UN 계열 기구",
+      "sourceLabelEn": "Total commitments by institution type — UN 계열 기구",
+      "sourceNote": "[검토지적 반영] 종전 자료에 포함되어 있던 Adaptation Fund 사업 4건은 별도 요소인 D-018에서 수집하므로 본 요소에서 제외함 (중복 수록 해소). 본 요소는 World Bank·ADB·IFC·UNDP·FAO·UNESCO·UNICEF·UN-Habitat·UNEP·IFAD·UNIDO·WHO·ILO 등 국제기구·MDB가 IATI에 보고한 대베트남 활동만 수록함. [원본 버전] d-portal(IATI) 베트남 활동 목록 내려받기본(전체 10,133건). 그중 국제기구·MDB 보고분이면서 총 약정액 1,000,000 USD 이상인 건을 수록함 — 소액 활동까지 전수 수록하면 1,501건이 되어 전략지도 활용도가 낮아짐. 수록 기준을 명시하며, 절단된 861건은 소액(<1M USD) 활동임. [보완] d-portal 목록에 없던 섹터(DAC 5자리)·사업기간·실행기관·Rio Marker는 IATI Datastore Activity API에서 보고기관 14곳의 베트남 활동 1,375건을 내려받아 IATI 식별자로 조인해 채움(2026-08-18). 수록 640건 중 588건이 조인됨. [미조인 52건의 원인 확인] 나머지 52건은 모두 World Bank(reporting_org_ref 44000) 보고분으로, IATI Datastore를 transaction_recipient_country_code=VN 조건과 프로젝트번호(P-number) 조건으로 각각 재조회한 결과 현재 World Bank의 IATI 게시분에 해당 활동이 존재하지 않음을 확인함(종료사업 게시 중단). 제3자 재게시본(AidData)에는 섹터·기간·정책마커 필드가 비어 있어 활용 불가함도 함께 확인함. 이 중 19건은 동일 프로젝트번호를 World Bank Trust Funds가 보고한 활동에서 DAC 섹터코드만 참고로 확보하여 [참고·프로젝트번호 대응]으로 명시함. [Rio Marker 실태] 조인된 활동 대부분이 OECD DAC 정책마커를 IATI에 보고하지 않음 — 기관 자체 분류(vocabulary 99)만 보고하는 경우가 많아 Rio Marker는 확보 건수가 적음. 이는 우리 수집 누락이 아니라 원천의 미보고임. [코드 해석] 정책마커 vocabulary 1(OECD DAC) 기준 6=기후변화 완화, 7=기후변화 적응, 5=생물다양성, 8=사막화 방지. GCF 사업(SAP040=7, FP250·FP071=6)으로 코드 의미를 교차 검증함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-021",
+        "indicatorId": "D-021_commitment_sum_un_agency",
+        "sourceFileDecoded": "D-021_주요 국제기구·MDB 프로젝트.xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6567f7354984|건",
+      "dimensionLabels": {
+        "category": "MDB 프로젝트 · 대베트남 활동 레지스트리",
+        "detail": "레코드 1건 = 1행(1.2 레코드형 시트)",
+        "technology": "1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10 · 11 · 12 · 13 · 14 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 22 · 23 · 24 · 25 · 26 · 27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "MDB 프로젝트 · 대베트남 활동 레지스트리",
+        "detail": "레코드 1건 = 1행(1.2 레코드형 시트)",
+        "technology": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "주요 국제기구·MDB 프로젝트 · 대베트남 활동 레지스트리 — 레코드 1건 = 1행(1.2 레코드형 시트)",
+      "indicatorId": "D-021_international_org_mdb_project_registry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6567f7354984",
+        "labelKo": "주요 국제기구",
+        "unit": "건",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-6567f7354984|건|category=MDB 프로젝트 · 대베트남 활동 레지스트리|detail=레코드 1건 = 1행(1.2 레코드형 시트)|technology=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38|D-021_international_org_mdb_project_registry",
+      "sourceCaveat": "[검토지적 반영] 종전 자료에 포함되어 있던 Adaptation Fund 사업 4건은 별도 요소인 D-018에서 수집하므로 본 요소에서 제외함 (중복 수록 해소). 본 요소는 World Bank·ADB·IFC·UNDP·FAO·UNESCO·UNICEF·UN-Habitat·UNEP·IFAD·UNIDO·WHO·ILO 등 국제기구·MDB가 IATI에 보고한 대베트남 활동만 수록함. [원본 버전] d-portal(IATI) 베트남 활동 목록 내려받기본(전체 10,133건). 그중 국제기구·MDB 보고분이면서 총 약정액 1,000,000 USD 이상인 건을 수록함 — 소액 활동까지 전수 수록하면 1,501건이 되어 전략지도 활용도가 낮아짐. 수록 기준을 명시하며, 절단된 861건은 소액(<1M USD) 활동임. [보완] d-portal 목록에 없던 섹터(DAC 5자리)·사업기간·실행기관·Rio Marker는 IATI Datastore Activity API에서 보고기관 14곳의 베트남 활동 1,375건을 내려받아 IATI 식별자로 조인해 채움(2026-08-18). 수록 640건 중 588건이 조인됨. [미조인 52건의 원인 확인] 나머지 52건은 모두 World Bank(reporting_org_ref 44000) 보고분으로, IATI Datastore를 transaction_recipient_country_code=VN 조건과 프로젝트번호(P-number) 조건으로 각각 재조회한 결과 현재 World Bank의 IATI 게시분에 해당 활동이 존재하지 않음을 확인함(종료사업 게시 중단). 제3자 재게시본(AidData)에는 섹터·기간·정책마커 필드가 비어 있어 활용 불가함도 함께 확인함. 이 중 19건은 동일 프로젝트번호를 World Bank Trust Funds가 보고한 활동에서 DAC 섹터코드만 참고로 확보하여 [참고·프로젝트번호 대응]으로 명시함. [Rio Marker 실태] 조인된 활동 대부분이 OECD DAC 정책마커를 IATI에 보고하지 않음 — 기관 자체 분류(vocabulary 99)만 보고하는 경우가 많아 Rio Marker는 확보 건수가 적음. 이는 우리 수집 누락이 아니라 원천의 미보고임. [코드 해석] 정책마커 vocabulary 1(OECD DAC) 기준 6=기후변화 완화, 7=기후변화 적응, 5=생물다양성, 8=사막화 방지. GCF 사업(SAP040=7, FP250·FP071=6)으로 코드 의미를 교차 검증함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "주요 국제기구·MDB 프로젝트 · 대베트남 활동 레지스트리 — 레코드 1건 = 1행(1.2 레코드형 시트)",
+      "sourceLabelEn": "Registry of international organisation and MDB activities in Viet Nam",
+      "sourceNote": "IATI Datastore Activity API로 섹터·사업기간·실행기관·Rio Marker를 확보하여 수록 640건 중 588건(91.9%)을 채웠고, 추가로 19건은 동일 프로젝트번호(World Bank Trust Funds 보고분)에서 DAC 섹터코드를 참고 확보하여 섹터 기준 확보율은 607건(94.8%)임. 미확보 33건은 모두 World Bank(44000) 보고분으로, transaction_recipient_country_code=VN 재조회와 프로젝트번호 조회 모두에서 회수되지 않았으며 현재 World Bank IATI 게시분에 해당 활동이 없음을 확인함. 재확보 대상 1차 출처: World Bank Projects & Operations API(P-number별 sector·theme·기간) https://search.worldbank.org/api/v3/projects — IATI 경로로는 회수 불가함이 확인됨",
+      "sourceProvenance": {
+        "elementId": "D-021",
+        "indicatorId": "D-021_international_org_mdb_project_registry",
+        "sourceFileDecoded": "D-021_주요 국제기구·MDB 프로젝트.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-877800bb9c2d|USD",
+      "dimensionLabels": {
+        "category": "MDB 프로젝트 · 집행액 합계",
+        "detail": "수록 활동 집행액 단순합",
+        "technology": "1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10 · 11 · 12 · 13 · 14 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 22 · 23 · 24 · 25 · 26 · 27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "MDB 프로젝트 · 집행액 합계",
+        "detail": "수록 활동 집행액 단순합",
+        "technology": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "주요 국제기구·MDB 프로젝트 · 집행액 합계 — 수록 활동 집행액 단순합",
+      "indicatorId": "D-021_spend_sum",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-877800bb9c2d",
+        "labelKo": "주요 국제기구",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-877800bb9c2d|USD|category=MDB 프로젝트 · 집행액 합계|detail=수록 활동 집행액 단순합|technology=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38|D-021_spend_sum",
+      "sourceCaveat": "[검토지적 반영] 종전 자료에 포함되어 있던 Adaptation Fund 사업 4건은 별도 요소인 D-018에서 수집하므로 본 요소에서 제외함 (중복 수록 해소). 본 요소는 World Bank·ADB·IFC·UNDP·FAO·UNESCO·UNICEF·UN-Habitat·UNEP·IFAD·UNIDO·WHO·ILO 등 국제기구·MDB가 IATI에 보고한 대베트남 활동만 수록함. [원본 버전] d-portal(IATI) 베트남 활동 목록 내려받기본(전체 10,133건). 그중 국제기구·MDB 보고분이면서 총 약정액 1,000,000 USD 이상인 건을 수록함 — 소액 활동까지 전수 수록하면 1,501건이 되어 전략지도 활용도가 낮아짐. 수록 기준을 명시하며, 절단된 861건은 소액(<1M USD) 활동임. [보완] d-portal 목록에 없던 섹터(DAC 5자리)·사업기간·실행기관·Rio Marker는 IATI Datastore Activity API에서 보고기관 14곳의 베트남 활동 1,375건을 내려받아 IATI 식별자로 조인해 채움(2026-08-18). 수록 640건 중 588건이 조인됨. [미조인 52건의 원인 확인] 나머지 52건은 모두 World Bank(reporting_org_ref 44000) 보고분으로, IATI Datastore를 transaction_recipient_country_code=VN 조건과 프로젝트번호(P-number) 조건으로 각각 재조회한 결과 현재 World Bank의 IATI 게시분에 해당 활동이 존재하지 않음을 확인함(종료사업 게시 중단). 제3자 재게시본(AidData)에는 섹터·기간·정책마커 필드가 비어 있어 활용 불가함도 함께 확인함. 이 중 19건은 동일 프로젝트번호를 World Bank Trust Funds가 보고한 활동에서 DAC 섹터코드만 참고로 확보하여 [참고·프로젝트번호 대응]으로 명시함. [Rio Marker 실태] 조인된 활동 대부분이 OECD DAC 정책마커를 IATI에 보고하지 않음 — 기관 자체 분류(vocabulary 99)만 보고하는 경우가 많아 Rio Marker는 확보 건수가 적음. 이는 우리 수집 누락이 아니라 원천의 미보고임. [코드 해석] 정책마커 vocabulary 1(OECD DAC) 기준 6=기후변화 완화, 7=기후변화 적응, 5=생물다양성, 8=사막화 방지. GCF 사업(SAP040=7, FP250·FP071=6)으로 코드 의미를 교차 검증함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "주요 국제기구·MDB 프로젝트 · 집행액 합계 — 수록 활동 집행액 단순합",
+      "sourceLabelEn": "Total spend of international organisation and MDB activities",
+      "sourceNote": "[검토지적 반영] 종전 자료에 포함되어 있던 Adaptation Fund 사업 4건은 별도 요소인 D-018에서 수집하므로 본 요소에서 제외함 (중복 수록 해소). 본 요소는 World Bank·ADB·IFC·UNDP·FAO·UNESCO·UNICEF·UN-Habitat·UNEP·IFAD·UNIDO·WHO·ILO 등 국제기구·MDB가 IATI에 보고한 대베트남 활동만 수록함. [원본 버전] d-portal(IATI) 베트남 활동 목록 내려받기본(전체 10,133건). 그중 국제기구·MDB 보고분이면서 총 약정액 1,000,000 USD 이상인 건을 수록함 — 소액 활동까지 전수 수록하면 1,501건이 되어 전략지도 활용도가 낮아짐. 수록 기준을 명시하며, 절단된 861건은 소액(<1M USD) 활동임. [보완] d-portal 목록에 없던 섹터(DAC 5자리)·사업기간·실행기관·Rio Marker는 IATI Datastore Activity API에서 보고기관 14곳의 베트남 활동 1,375건을 내려받아 IATI 식별자로 조인해 채움(2026-08-18). 수록 640건 중 588건이 조인됨. [미조인 52건의 원인 확인] 나머지 52건은 모두 World Bank(reporting_org_ref 44000) 보고분으로, IATI Datastore를 transaction_recipient_country_code=VN 조건과 프로젝트번호(P-number) 조건으로 각각 재조회한 결과 현재 World Bank의 IATI 게시분에 해당 활동이 존재하지 않음을 확인함(종료사업 게시 중단). 제3자 재게시본(AidData)에는 섹터·기간·정책마커 필드가 비어 있어 활용 불가함도 함께 확인함. 이 중 19건은 동일 프로젝트번호를 World Bank Trust Funds가 보고한 활동에서 DAC 섹터코드만 참고로 확보하여 [참고·프로젝트번호 대응]으로 명시함. [Rio Marker 실태] 조인된 활동 대부분이 OECD DAC 정책마커를 IATI에 보고하지 않음 — 기관 자체 분류(vocabulary 99)만 보고하는 경우가 많아 Rio Marker는 확보 건수가 적음. 이는 우리 수집 누락이 아니라 원천의 미보고임. [코드 해석] 정책마커 vocabulary 1(OECD DAC) 기준 6=기후변화 완화, 7=기후변화 적응, 5=생물다양성, 8=사막화 방지. GCF 사업(SAP040=7, FP250·FP071=6)으로 코드 의미를 교차 검증함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-021",
+        "indicatorId": "D-021_spend_sum",
+        "sourceFileDecoded": "D-021_주요 국제기구·MDB 프로젝트.xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 4,
+      "key": "measure-877800bb9c2d",
+      "labelKo": "주요 국제기구",
+      "recordCount": 4,
+      "unit": "USD",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 5,
+      "key": "measure-6567f7354984",
+      "labelKo": "주요 국제기구",
+      "recordCount": 4,
+      "unit": "건",
+      "unitFamily": "count"
+    }
+  ],
+  "observationCount": 8,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

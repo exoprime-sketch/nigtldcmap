@@ -1,0 +1,127 @@
+{
+  "dimensions": [
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    },
+    {
+      "key": "orgCategory",
+      "labelKo": "orgCategory",
+      "valueCount": 10,
+      "values": [
+        "NDE(국가지정기구)",
+        "TA 제안기관(대학)",
+        "TA 제안기관(회원 아님)",
+        "네트워크 회원(NGO)",
+        "네트워크 회원(VUSTA 산하 비영리)",
+        "네트워크 회원(공공서비스, HUST 소재)",
+        "네트워크 회원(대학)",
+        "네트워크 회원(민간기업)",
+        "네트워크 회원(연구기관)",
+        "네트워크 회원(정부·공공기관)"
+      ]
+    }
+  ],
+  "elementId": "E-001",
+  "entityCount": 15,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 3,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-58f937f5dfae|해당없음",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "CTCN NDE(국가지정기구) · CTCN NDE – Viet Nam · ctcn_nde",
+      "indicatorId": "E-001_ctcn_nde",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-58f937f5dfae",
+        "labelKo": "CTCN NDE(국가지정기구)",
+        "unit": "해당없음",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-58f937f5dfae|해당없음||E-001_ctcn_nde",
+      "sourceCaveat": "2025년 베트남 환경기능이 농업환경부로 개편됨. CTCN 사이트의 NDE 기관명·부처 정보가 개편 전 기준일 수 있어 재확인 필요.",
+      "sourceLabel": "CTCN NDE(국가지정기구)",
+      "sourceLabelEn": "CTCN National Designated Entity (NDE)",
+      "sourceNote": "MONRE Focal Point 이메일 미확보(웹 공개 정보 없음). 담당자 직통 이메일은 현지조사 또는 CTCN 사무국 문의 필요.",
+      "sourceProvenance": {
+        "elementId": "E-001",
+        "indicatorId": "E-001_ctcn_nde",
+        "sourceFileDecoded": "E-001_CTCN NDE(국가지정기관).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-58f937f5dfae|해당없음",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "CTCN NDE(국가지정기구) · CTCN Network Members – Viet Nam · ctcn_network_member",
+      "indicatorId": "E-001_ctcn_network_member",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-58f937f5dfae",
+        "labelKo": "CTCN NDE(국가지정기구)",
+        "unit": "해당없음",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-58f937f5dfae|해당없음||E-001_ctcn_network_member",
+      "sourceCaveat": "원본에서 VIGMR(N0327)·ENERTEAM(N0163)이 각 2회 중복 등록되어 1건으로 통합(원본 17건 → 15건). 기관 유형 분류는 CTCN 프로필 기재 기준.",
+      "sourceLabel": "CTCN NDE(국가지정기구)",
+      "sourceLabelEn": "CTCN National Designated Entity (NDE)",
+      "sourceNote": "12개 회원기관 전건에서 담당자명·직함·이메일·전화번호 미제공(CTCN 공개 프로필에 연락처 필드 없음). CCS는 웹사이트도 미제공.",
+      "sourceProvenance": {
+        "elementId": "E-001",
+        "indicatorId": "E-001_ctcn_network_member",
+        "sourceFileDecoded": "E-001_CTCN NDE(국가지정기관).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-58f937f5dfae|해당없음",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "CTCN NDE(국가지정기구) · CTCN TA Proponents – Viet Nam · ctcn_ta_proponent",
+      "indicatorId": "E-001_ctcn_ta_proponent",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-58f937f5dfae",
+        "labelKo": "CTCN NDE(국가지정기구)",
+        "unit": "해당없음",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-58f937f5dfae|해당없음||E-001_ctcn_ta_proponent",
+      "sourceCaveat": "TA proponent는 CTCN 정식 네트워크 회원이 아님. 요소 정의(NDE)와 구분이 필요하면 E-004/E-005로의 재배치를 발주처와 협의 권고.",
+      "sourceLabel": "CTCN NDE(국가지정기구)",
+      "sourceLabelEn": "CTCN National Designated Entity (NDE)",
+      "sourceNote": "TA 제안기관 2건 모두 담당자 연락처 미제공. HCMC 도시홍수통제센터는 웹사이트도 미확보.",
+      "sourceProvenance": {
+        "elementId": "E-001",
+        "indicatorId": "E-001_ctcn_ta_proponent",
+        "sourceFileDecoded": "E-001_CTCN NDE(국가지정기관).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 3,
+      "key": "measure-58f937f5dfae",
+      "labelKo": "CTCN NDE(국가지정기구)",
+      "recordCount": 0,
+      "unit": "해당없음",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

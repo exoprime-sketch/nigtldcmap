@@ -1,0 +1,415 @@
+{
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 8,
+      "values": [
+        "Ban Phuc",
+        "Sin Quyen",
+        "구리",
+        "니켈",
+        "보크사이트/알루미나",
+        "텅스텐",
+        "티타늄",
+        "희토류"
+      ]
+    },
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "광산"
+      ]
+    },
+    {
+      "key": "regionName",
+      "labelKo": "regionName",
+      "valueCount": 8,
+      "values": [
+        "Binh Thuan",
+        "Dak Nong",
+        "Lai Chau",
+        "Lam Dong",
+        "Lao Cai",
+        "Son La",
+        "Thai Nguyen",
+        "Yen Bai"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "1,3,18,24"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 2,
+      "values": [
+        "2016",
+        "2022"
+      ]
+    }
+  ],
+  "elementId": "B-048",
+  "entityCount": 8,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 10,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-75c152288655|도(decimal degrees)",
+      "dimensionLabels": {
+        "detail": "Ban Phuc",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "Ban Phuc",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "광산 위도 — Ban Phuc",
+      "indicatorId": "B-048_coord_lat_ban_phuc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-75c152288655",
+        "labelKo": "광산 위도",
+        "unit": "도(decimal degrees)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-75c152288655|도(decimal degrees)|detail=Ban Phuc|technology=1,3,18,24|B-048_coord_lat_ban_phuc",
+      "sourceCaveat": "[매칭 완료·부분] MRDS 전세계 원본에서 country=Vietnam 33개 지점을 추출하여 1.2_entity의 8개 광산과 명칭·광종·성(省) 경계 3중 대조로 매칭한 결과 2개(Sin Quyen·Ban Phuc)만 일치. 나머지 6개(Tan Rai·Nhan Co·Nui Phao·Dong Pao·Yen Phu·Binh Thuan 해안사광)는 MRDS에 수록이 없어 결측 유지. 유사 지명(Tan Mai·Nui Vong 등)이 검색되었으나 광종·성이 모두 불일치하여 임의 매칭하지 않음. ⚠ MRDS 판본이 Edition 20160315이고 USGS가 미국 외 수록을 \"불완전\"으로 명시하고 있어, 좌표 정밀도는 성(省) 단위까지만 신뢰 가능. 정밀 좌표는 베트남 DGMV 광업권 대장 등으로 검증 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(point) — 1.2_entity 시트 lat 열과 동일 값 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "광산 위도 — Ban Phuc",
+      "sourceLabelEn": "Mine latitude",
+      "sourceNote": "[매칭 완료·부분] MRDS 전세계 원본에서 country=Vietnam 33개 지점을 추출하여 1.2_entity의 8개 광산과 명칭·광종·성(省) 경계 3중 대조로 매칭한 결과 2개(Sin Quyen·Ban Phuc)만 일치. 나머지 6개(Tan Rai·Nhan Co·Nui Phao·Dong Pao·Yen Phu·Binh Thuan 해안사광)는 MRDS에 수록이 없어 결측 유지. 유사 지명(Tan Mai·Nui Vong 등)이 검색되었으나 광종·성이 모두 불일치하여 임의 매칭하지 않음. ⚠ MRDS 판본이 Edition 20160315이고 USGS가 미국 외 수록을 \"불완전\"으로 명시하고 있어, 좌표 정밀도는 성(省) 단위까지만 신뢰 가능. 정밀 좌표는 베트남 DGMV 광업권 대장 등으로 검증 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(point) — 1.2_entity 시트 lat 열과 동일 값 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-048",
+        "indicatorId": "B-048_coord_lat_ban_phuc",
+        "sourceFileDecoded": "B-048_주요 광산 위치(가용 시 좌표).xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-75c152288655|도(decimal degrees)",
+      "dimensionLabels": {
+        "detail": "Sin Quyen",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "Sin Quyen",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "광산 위도 — Sin Quyen",
+      "indicatorId": "B-048_coord_lat_sin_quyen",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-75c152288655",
+        "labelKo": "광산 위도",
+        "unit": "도(decimal degrees)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-75c152288655|도(decimal degrees)|detail=Sin Quyen|technology=1,3,18,24|B-048_coord_lat_sin_quyen",
+      "sourceCaveat": "[매칭 완료·부분] MRDS 전세계 원본에서 country=Vietnam 33개 지점을 추출하여 1.2_entity의 8개 광산과 명칭·광종·성(省) 경계 3중 대조로 매칭한 결과 2개(Sin Quyen·Ban Phuc)만 일치. 나머지 6개(Tan Rai·Nhan Co·Nui Phao·Dong Pao·Yen Phu·Binh Thuan 해안사광)는 MRDS에 수록이 없어 결측 유지. 유사 지명(Tan Mai·Nui Vong 등)이 검색되었으나 광종·성이 모두 불일치하여 임의 매칭하지 않음. ⚠ MRDS 판본이 Edition 20160315이고 USGS가 미국 외 수록을 \"불완전\"으로 명시하고 있어, 좌표 정밀도는 성(省) 단위까지만 신뢰 가능. 정밀 좌표는 베트남 DGMV 광업권 대장 등으로 검증 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(point) — 1.2_entity 시트 lat 열과 동일 값 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "광산 위도 — Sin Quyen",
+      "sourceLabelEn": "Mine latitude",
+      "sourceNote": "[매칭 완료·부분] MRDS 전세계 원본에서 country=Vietnam 33개 지점을 추출하여 1.2_entity의 8개 광산과 명칭·광종·성(省) 경계 3중 대조로 매칭한 결과 2개(Sin Quyen·Ban Phuc)만 일치. 나머지 6개(Tan Rai·Nhan Co·Nui Phao·Dong Pao·Yen Phu·Binh Thuan 해안사광)는 MRDS에 수록이 없어 결측 유지. 유사 지명(Tan Mai·Nui Vong 등)이 검색되었으나 광종·성이 모두 불일치하여 임의 매칭하지 않음. ⚠ MRDS 판본이 Edition 20160315이고 USGS가 미국 외 수록을 \"불완전\"으로 명시하고 있어, 좌표 정밀도는 성(省) 단위까지만 신뢰 가능. 정밀 좌표는 베트남 DGMV 광업권 대장 등으로 검증 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(point) — 1.2_entity 시트 lat 열과 동일 값 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-048",
+        "indicatorId": "B-048_coord_lat_sin_quyen",
+        "sourceFileDecoded": "B-048_주요 광산 위치(가용 시 좌표).xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1e1281d8c1da|도(decimal degrees)",
+      "dimensionLabels": {
+        "detail": "Ban Phuc",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "Ban Phuc",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "광산 경도 — Ban Phuc",
+      "indicatorId": "B-048_coord_lon_ban_phuc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1e1281d8c1da",
+        "labelKo": "광산 경도",
+        "unit": "도(decimal degrees)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-1e1281d8c1da|도(decimal degrees)|detail=Ban Phuc|technology=1,3,18,24|B-048_coord_lon_ban_phuc",
+      "sourceCaveat": "[매칭 완료·부분] 위도 지표와 동일 절차·동일 원천. 좌표계는 EPSG:4326 십진도. MRDS에는 이 밖에 베트남 지점 31개(과거 생산지·부존지·제련소 포함)가 더 있으나 본 요소의 정의(\"주요 광산\")와 성격이 달라 수록하지 않았으며, 발주처가 광범위 지점 레이어를 원하면 33개 지점 전체를 참고자료로 분리 제출 가능. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(point) — 1.2_entity 시트 lon 열과 동일 값 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "광산 경도 — Ban Phuc",
+      "sourceLabelEn": "Mine longitude",
+      "sourceNote": "[매칭 완료·부분] 위도 지표와 동일 절차·동일 원천. 좌표계는 EPSG:4326 십진도. MRDS에는 이 밖에 베트남 지점 31개(과거 생산지·부존지·제련소 포함)가 더 있으나 본 요소의 정의(\"주요 광산\")와 성격이 달라 수록하지 않았으며, 발주처가 광범위 지점 레이어를 원하면 33개 지점 전체를 참고자료로 분리 제출 가능. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(point) — 1.2_entity 시트 lon 열과 동일 값 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-048",
+        "indicatorId": "B-048_coord_lon_ban_phuc",
+        "sourceFileDecoded": "B-048_주요 광산 위치(가용 시 좌표).xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1e1281d8c1da|도(decimal degrees)",
+      "dimensionLabels": {
+        "detail": "Sin Quyen",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "Sin Quyen",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "광산 경도 — Sin Quyen",
+      "indicatorId": "B-048_coord_lon_sin_quyen",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1e1281d8c1da",
+        "labelKo": "광산 경도",
+        "unit": "도(decimal degrees)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-1e1281d8c1da|도(decimal degrees)|detail=Sin Quyen|technology=1,3,18,24|B-048_coord_lon_sin_quyen",
+      "sourceCaveat": "[매칭 완료·부분] 위도 지표와 동일 절차·동일 원천. 좌표계는 EPSG:4326 십진도. MRDS에는 이 밖에 베트남 지점 31개(과거 생산지·부존지·제련소 포함)가 더 있으나 본 요소의 정의(\"주요 광산\")와 성격이 달라 수록하지 않았으며, 발주처가 광범위 지점 레이어를 원하면 33개 지점 전체를 참고자료로 분리 제출 가능. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(point) — 1.2_entity 시트 lon 열과 동일 값 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "광산 경도 — Sin Quyen",
+      "sourceLabelEn": "Mine longitude",
+      "sourceNote": "[매칭 완료·부분] 위도 지표와 동일 절차·동일 원천. 좌표계는 EPSG:4326 십진도. MRDS에는 이 밖에 베트남 지점 31개(과거 생산지·부존지·제련소 포함)가 더 있으나 본 요소의 정의(\"주요 광산\")와 성격이 달라 수록하지 않았으며, 발주처가 광범위 지점 레이어를 원하면 33개 지점 전체를 참고자료로 분리 제출 가능. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(point) — 1.2_entity 시트 lon 열과 동일 값 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-048",
+        "indicatorId": "B-048_coord_lon_sin_quyen",
+        "sourceFileDecoded": "B-048_주요 광산 위치(가용 시 좌표).xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9553d9fda232|개소",
+      "dimensionLabels": {
+        "detail": "보크사이트/알루미나",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "보크사이트/알루미나",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "광종별 주요 광산 수 — 보크사이트/알루미나",
+      "indicatorId": "B-048_mine_count_bauxite_alumina",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9553d9fda232",
+        "labelKo": "광종별 주요 광산 수",
+        "unit": "개소",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-9553d9fda232|개소|detail=보크사이트/알루미나|technology=1,3,18,24|B-048_mine_count_bauxite_alumina",
+      "sourceCaveat": "[누락 보완] 종전 4개 광종에서 구리(Sin Quyen)·니켈(Ban Phuc)을 추가하여 6개 광종으로 확대. 주석·안티모니·형석·흑연·인광석 5종은 USGS MYB Table 2에 개별 광산명이 특정되지 않아 미수록(NE) — DGMV 광업권 대장 또는 S&P Global로 보완 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(point) — 개체 목록은 1.2_entity 시트 참조 / [원천 갱신일 근거] MYB Vietnam 2022 volume 공개 시점",
+      "sourceLabel": "광종별 주요 광산 수 — 보크사이트/알루미나",
+      "sourceLabelEn": "Number of major mines by commodity",
+      "sourceNote": "[누락 보완] 종전 4개 광종에서 구리(Sin Quyen)·니켈(Ban Phuc)을 추가하여 6개 광종으로 확대. 주석·안티모니·형석·흑연·인광석 5종은 USGS MYB Table 2에 개별 광산명이 특정되지 않아 미수록(NE) — DGMV 광업권 대장 또는 S&P Global로 보완 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(point) — 개체 목록은 1.2_entity 시트 참조 / [원천 갱신일 근거] MYB Vietnam 2022 volume 공개 시점",
+      "sourceProvenance": {
+        "elementId": "B-048",
+        "indicatorId": "B-048_mine_count_bauxite_alumina",
+        "sourceFileDecoded": "B-048_주요 광산 위치(가용 시 좌표).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9553d9fda232|개소",
+      "dimensionLabels": {
+        "detail": "구리",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "구리",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "광종별 주요 광산 수 — 구리",
+      "indicatorId": "B-048_mine_count_copper",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9553d9fda232",
+        "labelKo": "광종별 주요 광산 수",
+        "unit": "개소",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-9553d9fda232|개소|detail=구리|technology=1,3,18,24|B-048_mine_count_copper",
+      "sourceCaveat": "[누락 보완] 종전 4개 광종에서 구리(Sin Quyen)·니켈(Ban Phuc)을 추가하여 6개 광종으로 확대. 주석·안티모니·형석·흑연·인광석 5종은 USGS MYB Table 2에 개별 광산명이 특정되지 않아 미수록(NE) — DGMV 광업권 대장 또는 S&P Global로 보완 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(point) — 개체 목록은 1.2_entity 시트 참조 / [원천 갱신일 근거] MYB Vietnam 2022 volume 공개 시점",
+      "sourceLabel": "광종별 주요 광산 수 — 구리",
+      "sourceLabelEn": "Number of major mines by commodity",
+      "sourceNote": "[누락 보완] 종전 4개 광종에서 구리(Sin Quyen)·니켈(Ban Phuc)을 추가하여 6개 광종으로 확대. 주석·안티모니·형석·흑연·인광석 5종은 USGS MYB Table 2에 개별 광산명이 특정되지 않아 미수록(NE) — DGMV 광업권 대장 또는 S&P Global로 보완 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(point) — 개체 목록은 1.2_entity 시트 참조 / [원천 갱신일 근거] MYB Vietnam 2022 volume 공개 시점",
+      "sourceProvenance": {
+        "elementId": "B-048",
+        "indicatorId": "B-048_mine_count_copper",
+        "sourceFileDecoded": "B-048_주요 광산 위치(가용 시 좌표).xlsx",
+        "sourceRow": 4,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9553d9fda232|개소",
+      "dimensionLabels": {
+        "detail": "니켈",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "니켈",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "광종별 주요 광산 수 — 니켈",
+      "indicatorId": "B-048_mine_count_nickel",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9553d9fda232",
+        "labelKo": "광종별 주요 광산 수",
+        "unit": "개소",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-9553d9fda232|개소|detail=니켈|technology=1,3,18,24|B-048_mine_count_nickel",
+      "sourceCaveat": "[누락 보완] 종전 4개 광종에서 구리(Sin Quyen)·니켈(Ban Phuc)을 추가하여 6개 광종으로 확대. 주석·안티모니·형석·흑연·인광석 5종은 USGS MYB Table 2에 개별 광산명이 특정되지 않아 미수록(NE) — DGMV 광업권 대장 또는 S&P Global로 보완 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(point) — 개체 목록은 1.2_entity 시트 참조 / [원천 갱신일 근거] MYB Vietnam 2022 volume 공개 시점",
+      "sourceLabel": "광종별 주요 광산 수 — 니켈",
+      "sourceLabelEn": "Number of major mines by commodity",
+      "sourceNote": "[누락 보완] 종전 4개 광종에서 구리(Sin Quyen)·니켈(Ban Phuc)을 추가하여 6개 광종으로 확대. 주석·안티모니·형석·흑연·인광석 5종은 USGS MYB Table 2에 개별 광산명이 특정되지 않아 미수록(NE) — DGMV 광업권 대장 또는 S&P Global로 보완 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(point) — 개체 목록은 1.2_entity 시트 참조 / [원천 갱신일 근거] MYB Vietnam 2022 volume 공개 시점",
+      "sourceProvenance": {
+        "elementId": "B-048",
+        "indicatorId": "B-048_mine_count_nickel",
+        "sourceFileDecoded": "B-048_주요 광산 위치(가용 시 좌표).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9553d9fda232|개소",
+      "dimensionLabels": {
+        "detail": "희토류",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "희토류",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "광종별 주요 광산 수 — 희토류",
+      "indicatorId": "B-048_mine_count_rare_earths",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9553d9fda232",
+        "labelKo": "광종별 주요 광산 수",
+        "unit": "개소",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-9553d9fda232|개소|detail=희토류|technology=1,3,18,24|B-048_mine_count_rare_earths",
+      "sourceCaveat": "[누락 보완] 종전 4개 광종에서 구리(Sin Quyen)·니켈(Ban Phuc)을 추가하여 6개 광종으로 확대. 주석·안티모니·형석·흑연·인광석 5종은 USGS MYB Table 2에 개별 광산명이 특정되지 않아 미수록(NE) — DGMV 광업권 대장 또는 S&P Global로 보완 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(point) — 개체 목록은 1.2_entity 시트 참조 / [원천 갱신일 근거] MYB Vietnam 2022 volume 공개 시점",
+      "sourceLabel": "광종별 주요 광산 수 — 희토류",
+      "sourceLabelEn": "Number of major mines by commodity",
+      "sourceNote": "[누락 보완] 종전 4개 광종에서 구리(Sin Quyen)·니켈(Ban Phuc)을 추가하여 6개 광종으로 확대. 주석·안티모니·형석·흑연·인광석 5종은 USGS MYB Table 2에 개별 광산명이 특정되지 않아 미수록(NE) — DGMV 광업권 대장 또는 S&P Global로 보완 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(point) — 개체 목록은 1.2_entity 시트 참조 / [원천 갱신일 근거] MYB Vietnam 2022 volume 공개 시점",
+      "sourceProvenance": {
+        "elementId": "B-048",
+        "indicatorId": "B-048_mine_count_rare_earths",
+        "sourceFileDecoded": "B-048_주요 광산 위치(가용 시 좌표).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9553d9fda232|개소",
+      "dimensionLabels": {
+        "detail": "티타늄",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "티타늄",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "광종별 주요 광산 수 — 티타늄",
+      "indicatorId": "B-048_mine_count_titanium",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9553d9fda232",
+        "labelKo": "광종별 주요 광산 수",
+        "unit": "개소",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-9553d9fda232|개소|detail=티타늄|technology=1,3,18,24|B-048_mine_count_titanium",
+      "sourceCaveat": "[누락 보완] 종전 4개 광종에서 구리(Sin Quyen)·니켈(Ban Phuc)을 추가하여 6개 광종으로 확대. 주석·안티모니·형석·흑연·인광석 5종은 USGS MYB Table 2에 개별 광산명이 특정되지 않아 미수록(NE) — DGMV 광업권 대장 또는 S&P Global로 보완 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(point) — 개체 목록은 1.2_entity 시트 참조 / [원천 갱신일 근거] MYB Vietnam 2022 volume 공개 시점",
+      "sourceLabel": "광종별 주요 광산 수 — 티타늄",
+      "sourceLabelEn": "Number of major mines by commodity",
+      "sourceNote": "[누락 보완] 종전 4개 광종에서 구리(Sin Quyen)·니켈(Ban Phuc)을 추가하여 6개 광종으로 확대. 주석·안티모니·형석·흑연·인광석 5종은 USGS MYB Table 2에 개별 광산명이 특정되지 않아 미수록(NE) — DGMV 광업권 대장 또는 S&P Global로 보완 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(point) — 개체 목록은 1.2_entity 시트 참조 / [원천 갱신일 근거] MYB Vietnam 2022 volume 공개 시점",
+      "sourceProvenance": {
+        "elementId": "B-048",
+        "indicatorId": "B-048_mine_count_titanium",
+        "sourceFileDecoded": "B-048_주요 광산 위치(가용 시 좌표).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9553d9fda232|개소",
+      "dimensionLabels": {
+        "detail": "텅스텐",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "텅스텐",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "광종별 주요 광산 수 — 텅스텐",
+      "indicatorId": "B-048_mine_count_tungsten",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9553d9fda232",
+        "labelKo": "광종별 주요 광산 수",
+        "unit": "개소",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-9553d9fda232|개소|detail=텅스텐|technology=1,3,18,24|B-048_mine_count_tungsten",
+      "sourceCaveat": "[누락 보완] 종전 4개 광종에서 구리(Sin Quyen)·니켈(Ban Phuc)을 추가하여 6개 광종으로 확대. 주석·안티모니·형석·흑연·인광석 5종은 USGS MYB Table 2에 개별 광산명이 특정되지 않아 미수록(NE) — DGMV 광업권 대장 또는 S&P Global로 보완 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(point) — 개체 목록은 1.2_entity 시트 참조 / [원천 갱신일 근거] MYB Vietnam 2022 volume 공개 시점",
+      "sourceLabel": "광종별 주요 광산 수 — 텅스텐",
+      "sourceLabelEn": "Number of major mines by commodity",
+      "sourceNote": "[누락 보완] 종전 4개 광종에서 구리(Sin Quyen)·니켈(Ban Phuc)을 추가하여 6개 광종으로 확대. 주석·안티모니·형석·흑연·인광석 5종은 USGS MYB Table 2에 개별 광산명이 특정되지 않아 미수록(NE) — DGMV 광업권 대장 또는 S&P Global로 보완 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(point) — 개체 목록은 1.2_entity 시트 참조 / [원천 갱신일 근거] MYB Vietnam 2022 volume 공개 시점",
+      "sourceProvenance": {
+        "elementId": "B-048",
+        "indicatorId": "B-048_mine_count_tungsten",
+        "sourceFileDecoded": "B-048_주요 광산 위치(가용 시 좌표).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 2,
+      "key": "measure-1e1281d8c1da",
+      "labelKo": "광산 경도",
+      "recordCount": 2,
+      "unit": "도(decimal degrees)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-75c152288655",
+      "labelKo": "광산 위도",
+      "recordCount": 2,
+      "unit": "도(decimal degrees)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 6,
+      "key": "measure-9553d9fda232",
+      "labelKo": "광종별 주요 광산 수",
+      "recordCount": 6,
+      "unit": "개소",
+      "unitFamily": "count"
+    }
+  ],
+  "observationCount": 10,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

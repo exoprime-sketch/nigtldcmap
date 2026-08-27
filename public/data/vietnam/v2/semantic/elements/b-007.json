@@ -1,0 +1,674 @@
+{
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 3,
+      "values": [
+        "historical",
+        "SSP2-4.5",
+        "SSP5-8.5"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 151,
+      "values": [
+        "1950",
+        "1951",
+        "1952",
+        "1953",
+        "1954",
+        "1955",
+        "1956",
+        "1957",
+        "1958",
+        "1959",
+        "1960",
+        "1961",
+        "1962",
+        "1963",
+        "1964",
+        "1965",
+        "1966",
+        "1967",
+        "1968",
+        "1969",
+        "1970",
+        "1971",
+        "1972",
+        "1973",
+        "1974",
+        "1975",
+        "1976",
+        "1977",
+        "1978",
+        "1979",
+        "1980",
+        "1981",
+        "1982",
+        "1983",
+        "1984",
+        "1985",
+        "1986",
+        "1987",
+        "1988",
+        "1989",
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026",
+        "2027",
+        "2028",
+        "2029",
+        "2030",
+        "2031",
+        "2032",
+        "2033",
+        "2034",
+        "2035",
+        "2036",
+        "2037",
+        "2038",
+        "2039",
+        "2040",
+        "2041",
+        "2042",
+        "2043",
+        "2044",
+        "2045",
+        "2046",
+        "2047",
+        "2048",
+        "2049",
+        "2050",
+        "2051",
+        "2052",
+        "2053",
+        "2054",
+        "2055",
+        "2056",
+        "2057",
+        "2058",
+        "2059",
+        "2060",
+        "2061",
+        "2062",
+        "2063",
+        "2064",
+        "2065",
+        "2066",
+        "2067",
+        "2068",
+        "2069",
+        "2070",
+        "2071",
+        "2072",
+        "2073",
+        "2074",
+        "2075",
+        "2076",
+        "2077",
+        "2078",
+        "2079",
+        "2080",
+        "2081",
+        "2082",
+        "2083",
+        "2084",
+        "2085",
+        "2086",
+        "2087",
+        "2088",
+        "2089",
+        "2090",
+        "2091",
+        "2092",
+        "2093",
+        "2094",
+        "2095",
+        "2096",
+        "2097",
+        "2098",
+        "2099",
+        "2100"
+      ]
+    }
+  ],
+  "elementId": "B-007",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 15,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-994edfa97087|일",
+      "dimensionLabels": {
+        "detail": "historical"
+      },
+      "dimensions": {
+        "detail": "historical"
+      },
+      "displayLabel": "연속 습윤일수 CWD — historical",
+      "indicatorId": "B-007_cwd_historical",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-994edfa97087",
+        "labelKo": "연속 습윤일수 CWD",
+        "unit": "일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-994edfa97087|일|detail=historical|B-007_cwd_historical",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "연속 습윤일수 CWD — historical",
+      "sourceLabelEn": "연속 습윤일수 CWD historical",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-007",
+        "indicatorId": "B-007_cwd_historical",
+        "sourceFileDecoded": "B-007_홍수： 최대 1일／5일 강수(RX1day, RX5day), 호우일수(R20mm, R50mm), 연속 습윤일수(CWD)).xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-994edfa97087|일",
+      "dimensionLabels": {
+        "detail": "SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "SSP2-4.5"
+      },
+      "displayLabel": "연속 습윤일수 CWD — SSP2-4.5",
+      "indicatorId": "B-007_cwd_ssp245",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-994edfa97087",
+        "labelKo": "연속 습윤일수 CWD",
+        "unit": "일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-994edfa97087|일|detail=SSP2-4.5|B-007_cwd_ssp245",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "연속 습윤일수 CWD — SSP2-4.5",
+      "sourceLabelEn": "연속 습윤일수 CWD SSP2-4.5",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-007",
+        "indicatorId": "B-007_cwd_ssp245",
+        "sourceFileDecoded": "B-007_홍수： 최대 1일／5일 강수(RX1day, RX5day), 호우일수(R20mm, R50mm), 연속 습윤일수(CWD)).xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-994edfa97087|일",
+      "dimensionLabels": {
+        "detail": "SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "SSP5-8.5"
+      },
+      "displayLabel": "연속 습윤일수 CWD — SSP5-8.5",
+      "indicatorId": "B-007_cwd_ssp585",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-994edfa97087",
+        "labelKo": "연속 습윤일수 CWD",
+        "unit": "일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-994edfa97087|일|detail=SSP5-8.5|B-007_cwd_ssp585",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "연속 습윤일수 CWD — SSP5-8.5",
+      "sourceLabelEn": "연속 습윤일수 CWD SSP5-8.5",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-007",
+        "indicatorId": "B-007_cwd_ssp585",
+        "sourceFileDecoded": "B-007_홍수： 최대 1일／5일 강수(RX1day, RX5day), 호우일수(R20mm, R50mm), 연속 습윤일수(CWD)).xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d5098b8ed853|일",
+      "dimensionLabels": {
+        "detail": "historical"
+      },
+      "dimensions": {
+        "detail": "historical"
+      },
+      "displayLabel": "호우일수 R20mm — historical",
+      "indicatorId": "B-007_r20mm_historical",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d5098b8ed853",
+        "labelKo": "호우일수 R20mm",
+        "unit": "일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-d5098b8ed853|일|detail=historical|B-007_r20mm_historical",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "호우일수 R20mm — historical",
+      "sourceLabelEn": "호우일수 R20mm historical",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-007",
+        "indicatorId": "B-007_r20mm_historical",
+        "sourceFileDecoded": "B-007_홍수： 최대 1일／5일 강수(RX1day, RX5day), 호우일수(R20mm, R50mm), 연속 습윤일수(CWD)).xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d5098b8ed853|일",
+      "dimensionLabels": {
+        "detail": "SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "SSP2-4.5"
+      },
+      "displayLabel": "호우일수 R20mm — SSP2-4.5",
+      "indicatorId": "B-007_r20mm_ssp245",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d5098b8ed853",
+        "labelKo": "호우일수 R20mm",
+        "unit": "일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-d5098b8ed853|일|detail=SSP2-4.5|B-007_r20mm_ssp245",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "호우일수 R20mm — SSP2-4.5",
+      "sourceLabelEn": "호우일수 R20mm SSP2-4.5",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-007",
+        "indicatorId": "B-007_r20mm_ssp245",
+        "sourceFileDecoded": "B-007_홍수： 최대 1일／5일 강수(RX1day, RX5day), 호우일수(R20mm, R50mm), 연속 습윤일수(CWD)).xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d5098b8ed853|일",
+      "dimensionLabels": {
+        "detail": "SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "SSP5-8.5"
+      },
+      "displayLabel": "호우일수 R20mm — SSP5-8.5",
+      "indicatorId": "B-007_r20mm_ssp585",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d5098b8ed853",
+        "labelKo": "호우일수 R20mm",
+        "unit": "일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-d5098b8ed853|일|detail=SSP5-8.5|B-007_r20mm_ssp585",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "호우일수 R20mm — SSP5-8.5",
+      "sourceLabelEn": "호우일수 R20mm SSP5-8.5",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-007",
+        "indicatorId": "B-007_r20mm_ssp585",
+        "sourceFileDecoded": "B-007_홍수： 최대 1일／5일 강수(RX1day, RX5day), 호우일수(R20mm, R50mm), 연속 습윤일수(CWD)).xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a059eb96e9f9|일",
+      "dimensionLabels": {
+        "detail": "historical"
+      },
+      "dimensions": {
+        "detail": "historical"
+      },
+      "displayLabel": "호우일수 R50mm — historical",
+      "indicatorId": "B-007_r50mm_historical",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a059eb96e9f9",
+        "labelKo": "호우일수 R50mm",
+        "unit": "일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a059eb96e9f9|일|detail=historical|B-007_r50mm_historical",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "호우일수 R50mm — historical",
+      "sourceLabelEn": "호우일수 R50mm historical",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-007",
+        "indicatorId": "B-007_r50mm_historical",
+        "sourceFileDecoded": "B-007_홍수： 최대 1일／5일 강수(RX1day, RX5day), 호우일수(R20mm, R50mm), 연속 습윤일수(CWD)).xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a059eb96e9f9|일",
+      "dimensionLabels": {
+        "detail": "SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "SSP2-4.5"
+      },
+      "displayLabel": "호우일수 R50mm — SSP2-4.5",
+      "indicatorId": "B-007_r50mm_ssp245",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a059eb96e9f9",
+        "labelKo": "호우일수 R50mm",
+        "unit": "일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a059eb96e9f9|일|detail=SSP2-4.5|B-007_r50mm_ssp245",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "호우일수 R50mm — SSP2-4.5",
+      "sourceLabelEn": "호우일수 R50mm SSP2-4.5",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-007",
+        "indicatorId": "B-007_r50mm_ssp245",
+        "sourceFileDecoded": "B-007_홍수： 최대 1일／5일 강수(RX1day, RX5day), 호우일수(R20mm, R50mm), 연속 습윤일수(CWD)).xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a059eb96e9f9|일",
+      "dimensionLabels": {
+        "detail": "SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "SSP5-8.5"
+      },
+      "displayLabel": "호우일수 R50mm — SSP5-8.5",
+      "indicatorId": "B-007_r50mm_ssp585",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a059eb96e9f9",
+        "labelKo": "호우일수 R50mm",
+        "unit": "일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a059eb96e9f9|일|detail=SSP5-8.5|B-007_r50mm_ssp585",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "호우일수 R50mm — SSP5-8.5",
+      "sourceLabelEn": "호우일수 R50mm SSP5-8.5",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-007",
+        "indicatorId": "B-007_r50mm_ssp585",
+        "sourceFileDecoded": "B-007_홍수： 최대 1일／5일 강수(RX1day, RX5day), 호우일수(R20mm, R50mm), 연속 습윤일수(CWD)).xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-58e81eff1661|mm",
+      "dimensionLabels": {
+        "detail": "historical"
+      },
+      "dimensions": {
+        "detail": "historical"
+      },
+      "displayLabel": "최대 1일강수 RX1day — historical",
+      "indicatorId": "B-007_rx1day_historical",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-58e81eff1661",
+        "labelKo": "최대 1일강수 RX1day",
+        "unit": "mm",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-58e81eff1661|mm|detail=historical|B-007_rx1day_historical",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "최대 1일강수 RX1day — historical",
+      "sourceLabelEn": "최대 1일강수 RX1day historical",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-007",
+        "indicatorId": "B-007_rx1day_historical",
+        "sourceFileDecoded": "B-007_홍수： 최대 1일／5일 강수(RX1day, RX5day), 호우일수(R20mm, R50mm), 연속 습윤일수(CWD)).xlsx",
+        "sourceRow": 4,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-58e81eff1661|mm",
+      "dimensionLabels": {
+        "detail": "SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "SSP2-4.5"
+      },
+      "displayLabel": "최대 1일강수 RX1day — SSP2-4.5",
+      "indicatorId": "B-007_rx1day_ssp245",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-58e81eff1661",
+        "labelKo": "최대 1일강수 RX1day",
+        "unit": "mm",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-58e81eff1661|mm|detail=SSP2-4.5|B-007_rx1day_ssp245",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "최대 1일강수 RX1day — SSP2-4.5",
+      "sourceLabelEn": "최대 1일강수 RX1day SSP2-4.5",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-007",
+        "indicatorId": "B-007_rx1day_ssp245",
+        "sourceFileDecoded": "B-007_홍수： 최대 1일／5일 강수(RX1day, RX5day), 호우일수(R20mm, R50mm), 연속 습윤일수(CWD)).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-58e81eff1661|mm",
+      "dimensionLabels": {
+        "detail": "SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "SSP5-8.5"
+      },
+      "displayLabel": "최대 1일강수 RX1day — SSP5-8.5",
+      "indicatorId": "B-007_rx1day_ssp585",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-58e81eff1661",
+        "labelKo": "최대 1일강수 RX1day",
+        "unit": "mm",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-58e81eff1661|mm|detail=SSP5-8.5|B-007_rx1day_ssp585",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "최대 1일강수 RX1day — SSP5-8.5",
+      "sourceLabelEn": "최대 1일강수 RX1day SSP5-8.5",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-007",
+        "indicatorId": "B-007_rx1day_ssp585",
+        "sourceFileDecoded": "B-007_홍수： 최대 1일／5일 강수(RX1day, RX5day), 호우일수(R20mm, R50mm), 연속 습윤일수(CWD)).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-378781f42b1c|mm",
+      "dimensionLabels": {
+        "detail": "historical"
+      },
+      "dimensions": {
+        "detail": "historical"
+      },
+      "displayLabel": "최대 5일강수 RX5day — historical",
+      "indicatorId": "B-007_rx5day_historical",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-378781f42b1c",
+        "labelKo": "최대 5일강수 RX5day",
+        "unit": "mm",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-378781f42b1c|mm|detail=historical|B-007_rx5day_historical",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "최대 5일강수 RX5day — historical",
+      "sourceLabelEn": "최대 5일강수 RX5day historical",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-007",
+        "indicatorId": "B-007_rx5day_historical",
+        "sourceFileDecoded": "B-007_홍수： 최대 1일／5일 강수(RX1day, RX5day), 호우일수(R20mm, R50mm), 연속 습윤일수(CWD)).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-378781f42b1c|mm",
+      "dimensionLabels": {
+        "detail": "SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "SSP2-4.5"
+      },
+      "displayLabel": "최대 5일강수 RX5day — SSP2-4.5",
+      "indicatorId": "B-007_rx5day_ssp245",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-378781f42b1c",
+        "labelKo": "최대 5일강수 RX5day",
+        "unit": "mm",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-378781f42b1c|mm|detail=SSP2-4.5|B-007_rx5day_ssp245",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "최대 5일강수 RX5day — SSP2-4.5",
+      "sourceLabelEn": "최대 5일강수 RX5day SSP2-4.5",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-007",
+        "indicatorId": "B-007_rx5day_ssp245",
+        "sourceFileDecoded": "B-007_홍수： 최대 1일／5일 강수(RX1day, RX5day), 호우일수(R20mm, R50mm), 연속 습윤일수(CWD)).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-378781f42b1c|mm",
+      "dimensionLabels": {
+        "detail": "SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "SSP5-8.5"
+      },
+      "displayLabel": "최대 5일강수 RX5day — SSP5-8.5",
+      "indicatorId": "B-007_rx5day_ssp585",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-378781f42b1c",
+        "labelKo": "최대 5일강수 RX5day",
+        "unit": "mm",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-378781f42b1c|mm|detail=SSP5-8.5|B-007_rx5day_ssp585",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "최대 5일강수 RX5day — SSP5-8.5",
+      "sourceLabelEn": "최대 5일강수 RX5day SSP5-8.5",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-007",
+        "indicatorId": "B-007_rx5day_ssp585",
+        "sourceFileDecoded": "B-007_홍수： 최대 1일／5일 강수(RX1day, RX5day), 호우일수(R20mm, R50mm), 연속 습윤일수(CWD)).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 3,
+      "key": "measure-994edfa97087",
+      "labelKo": "연속 습윤일수 CWD",
+      "recordCount": 237,
+      "unit": "일",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 3,
+      "key": "measure-58e81eff1661",
+      "labelKo": "최대 1일강수 RX1day",
+      "recordCount": 237,
+      "unit": "mm",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 3,
+      "key": "measure-378781f42b1c",
+      "labelKo": "최대 5일강수 RX5day",
+      "recordCount": 237,
+      "unit": "mm",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 3,
+      "key": "measure-d5098b8ed853",
+      "labelKo": "호우일수 R20mm",
+      "recordCount": 237,
+      "unit": "일",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 3,
+      "key": "measure-a059eb96e9f9",
+      "labelKo": "호우일수 R50mm",
+      "recordCount": 237,
+      "unit": "일",
+      "unitFamily": "other"
+    }
+  ],
+  "observationCount": 1185,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

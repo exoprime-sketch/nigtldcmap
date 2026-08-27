@@ -1,0 +1,340 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 8,
+      "values": [
+        "바이오에너지 기술",
+        "수력 기술",
+        "전력 통합 기술(BESS)",
+        "전력 통합 기술(양수)",
+        "태양광 기술",
+        "폐자원 기술",
+        "풍력 기술(육상 · 근해)",
+        "풍력 기술(해상)"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 1,
+      "values": [
+        "2023→2030 설비용량 연평균성장률(CAGR)"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 6,
+      "values": [
+        "1",
+        "3",
+        "5",
+        "8",
+        "15",
+        "24"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2030"
+      ]
+    }
+  ],
+  "elementId": "D-002",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 8,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-62de91e6eba5|%",
+      "dimensionLabels": {
+        "category": "전력 통합 기술(BESS)",
+        "detail": "2023→2030 설비용량 연평균성장률(CAGR)",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "전력 통합 기술(BESS)",
+        "detail": "2023→2030 설비용량 연평균성장률(CAGR)",
+        "technology": "24"
+      },
+      "displayLabel": "시장 성장률 · 전력 통합 기술(BESS) — 2023→2030 설비용량 연평균성장률(CAGR)",
+      "indicatorId": "D-002_market_cagr_bess",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-62de91e6eba5",
+        "labelKo": "시장 성장률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-62de91e6eba5|%|category=전력 통합 기술(BESS)|detail=2023→2030 설비용량 연평균성장률(CAGR)|technology=24|D-002_market_cagr_bess",
+      "sourceCaveat": "[원본 버전] 개정 PDP8(총리결정 768/QĐ-TTg, 2025-04-15)의 2030·2050 설비목표를 정리한 업계 전문지 해설본. 1차 출처인 결정문 원문은 미확보 상태이며, 수록값은 해설본에 게재된 목표 설비용량과 2023 실적치임. [정의·범위] CAGR은 2030 목표 범위값의 중앙값을 사용하여 2023 실적 대비 7년 연평균성장률로 산출한 자체 산출값. [원문 불일치] 2023 수력 설비용량이 본 출처는 22,500 MW, 베트남전력공사(EVN) 2023 결산은 22,872 MW로 상이함. 보정하지 않음. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "시장 성장률 · 전력 통합 기술(BESS) — 2023→2030 설비용량 연평균성장률(CAGR)",
+      "sourceLabelEn": "Market growth rate (CAGR 2023-2030), battery energy storage (BESS)",
+      "sourceNote": "2023년 실적 설비용량 미게재로 산출 불가. 재확보 대상 1차 출처: 총리결정 768/QĐ-TTg 부속 설비계획표",
+      "sourceProvenance": {
+        "elementId": "D-002",
+        "indicatorId": "D-002_market_cagr_bess",
+        "sourceFileDecoded": "D-002_시장 성장률.xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-62de91e6eba5|%",
+      "dimensionLabels": {
+        "category": "바이오에너지 기술",
+        "detail": "2023→2030 설비용량 연평균성장률(CAGR)",
+        "technology": "8"
+      },
+      "dimensions": {
+        "category": "바이오에너지 기술",
+        "detail": "2023→2030 설비용량 연평균성장률(CAGR)",
+        "technology": "8"
+      },
+      "displayLabel": "시장 성장률 · 바이오에너지 기술 — 2023→2030 설비용량 연평균성장률(CAGR)",
+      "indicatorId": "D-002_market_cagr_biomass",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-62de91e6eba5",
+        "labelKo": "시장 성장률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-62de91e6eba5|%|category=바이오에너지 기술|detail=2023→2030 설비용량 연평균성장률(CAGR)|technology=8|D-002_market_cagr_biomass",
+      "sourceCaveat": "[원본 버전] 개정 PDP8(총리결정 768/QĐ-TTg, 2025-04-15)의 2030·2050 설비목표를 정리한 업계 전문지 해설본. 1차 출처인 결정문 원문은 미확보 상태이며, 수록값은 해설본에 게재된 목표 설비용량과 2023 실적치임. [정의·범위] CAGR은 2030 목표 범위값의 중앙값을 사용하여 2023 실적 대비 7년 연평균성장률로 산출한 자체 산출값. [원문 불일치] 2023 수력 설비용량이 본 출처는 22,500 MW, 베트남전력공사(EVN) 2023 결산은 22,872 MW로 상이함. 보정하지 않음. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "시장 성장률 · 바이오에너지 기술 — 2023→2030 설비용량 연평균성장률(CAGR)",
+      "sourceLabelEn": "Market growth rate (CAGR 2023-2030), bioenergy",
+      "sourceNote": "[원본 버전] 개정 PDP8(총리결정 768/QĐ-TTg, 2025-04-15)의 2030·2050 설비목표를 정리한 업계 전문지 해설본. 1차 출처인 결정문 원문은 미확보 상태이며, 수록값은 해설본에 게재된 목표 설비용량과 2023 실적치임. [정의·범위] CAGR은 2030 목표 범위값의 중앙값을 사용하여 2023 실적 대비 7년 연평균성장률로 산출한 자체 산출값. [원문 불일치] 2023 수력 설비용량이 본 출처는 22,500 MW, 베트남전력공사(EVN) 2023 결산은 22,872 MW로 상이함. 보정하지 않음. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-002",
+        "indicatorId": "D-002_market_cagr_biomass",
+        "sourceFileDecoded": "D-002_시장 성장률.xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-62de91e6eba5|%",
+      "dimensionLabels": {
+        "category": "수력 기술",
+        "detail": "2023→2030 설비용량 연평균성장률(CAGR)",
+        "technology": "5"
+      },
+      "dimensions": {
+        "category": "수력 기술",
+        "detail": "2023→2030 설비용량 연평균성장률(CAGR)",
+        "technology": "5"
+      },
+      "displayLabel": "시장 성장률 · 수력 기술 — 2023→2030 설비용량 연평균성장률(CAGR)",
+      "indicatorId": "D-002_market_cagr_hydro",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-62de91e6eba5",
+        "labelKo": "시장 성장률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-62de91e6eba5|%|category=수력 기술|detail=2023→2030 설비용량 연평균성장률(CAGR)|technology=5|D-002_market_cagr_hydro",
+      "sourceCaveat": "[원본 버전] 개정 PDP8(총리결정 768/QĐ-TTg, 2025-04-15)의 2030·2050 설비목표를 정리한 업계 전문지 해설본. 1차 출처인 결정문 원문은 미확보 상태이며, 수록값은 해설본에 게재된 목표 설비용량과 2023 실적치임. [정의·범위] CAGR은 2030 목표 범위값의 중앙값을 사용하여 2023 실적 대비 7년 연평균성장률로 산출한 자체 산출값. [원문 불일치] 2023 수력 설비용량이 본 출처는 22,500 MW, 베트남전력공사(EVN) 2023 결산은 22,872 MW로 상이함. 보정하지 않음. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "시장 성장률 · 수력 기술 — 2023→2030 설비용량 연평균성장률(CAGR)",
+      "sourceLabelEn": "Market growth rate (CAGR 2023-2030), hydropower",
+      "sourceNote": "[원본 버전] 개정 PDP8(총리결정 768/QĐ-TTg, 2025-04-15)의 2030·2050 설비목표를 정리한 업계 전문지 해설본. 1차 출처인 결정문 원문은 미확보 상태이며, 수록값은 해설본에 게재된 목표 설비용량과 2023 실적치임. [정의·범위] CAGR은 2030 목표 범위값의 중앙값을 사용하여 2023 실적 대비 7년 연평균성장률로 산출한 자체 산출값. [원문 불일치] 2023 수력 설비용량이 본 출처는 22,500 MW, 베트남전력공사(EVN) 2023 결산은 22,872 MW로 상이함. 보정하지 않음. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-002",
+        "indicatorId": "D-002_market_cagr_hydro",
+        "sourceFileDecoded": "D-002_시장 성장률.xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-62de91e6eba5|%",
+      "dimensionLabels": {
+        "category": "전력 통합 기술(양수)",
+        "detail": "2023→2030 설비용량 연평균성장률(CAGR)",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "전력 통합 기술(양수)",
+        "detail": "2023→2030 설비용량 연평균성장률(CAGR)",
+        "technology": "24"
+      },
+      "displayLabel": "시장 성장률 · 전력 통합 기술(양수) — 2023→2030 설비용량 연평균성장률(CAGR)",
+      "indicatorId": "D-002_market_cagr_pumped_storage",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-62de91e6eba5",
+        "labelKo": "시장 성장률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-62de91e6eba5|%|category=전력 통합 기술(양수)|detail=2023→2030 설비용량 연평균성장률(CAGR)|technology=24|D-002_market_cagr_pumped_storage",
+      "sourceCaveat": "[원본 버전] 개정 PDP8(총리결정 768/QĐ-TTg, 2025-04-15)의 2030·2050 설비목표를 정리한 업계 전문지 해설본. 1차 출처인 결정문 원문은 미확보 상태이며, 수록값은 해설본에 게재된 목표 설비용량과 2023 실적치임. [정의·범위] CAGR은 2030 목표 범위값의 중앙값을 사용하여 2023 실적 대비 7년 연평균성장률로 산출한 자체 산출값. [원문 불일치] 2023 수력 설비용량이 본 출처는 22,500 MW, 베트남전력공사(EVN) 2023 결산은 22,872 MW로 상이함. 보정하지 않음. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "시장 성장률 · 전력 통합 기술(양수) — 2023→2030 설비용량 연평균성장률(CAGR)",
+      "sourceLabelEn": "Market growth rate (CAGR 2023-2030), pumped-storage hydropower",
+      "sourceNote": "[원본 버전] 개정 PDP8(총리결정 768/QĐ-TTg, 2025-04-15)의 2030·2050 설비목표를 정리한 업계 전문지 해설본. 1차 출처인 결정문 원문은 미확보 상태이며, 수록값은 해설본에 게재된 목표 설비용량과 2023 실적치임. [정의·범위] CAGR은 2030 목표 범위값의 중앙값을 사용하여 2023 실적 대비 7년 연평균성장률로 산출한 자체 산출값. [원문 불일치] 2023 수력 설비용량이 본 출처는 22,500 MW, 베트남전력공사(EVN) 2023 결산은 22,872 MW로 상이함. 보정하지 않음. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-002",
+        "indicatorId": "D-002_market_cagr_pumped_storage",
+        "sourceFileDecoded": "D-002_시장 성장률.xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-62de91e6eba5|%",
+      "dimensionLabels": {
+        "category": "태양광 기술",
+        "detail": "2023→2030 설비용량 연평균성장률(CAGR)",
+        "technology": "1"
+      },
+      "dimensions": {
+        "category": "태양광 기술",
+        "detail": "2023→2030 설비용량 연평균성장률(CAGR)",
+        "technology": "1"
+      },
+      "displayLabel": "시장 성장률 · 태양광 기술 — 2023→2030 설비용량 연평균성장률(CAGR)",
+      "indicatorId": "D-002_market_cagr_solar_pv",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-62de91e6eba5",
+        "labelKo": "시장 성장률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-62de91e6eba5|%|category=태양광 기술|detail=2023→2030 설비용량 연평균성장률(CAGR)|technology=1|D-002_market_cagr_solar_pv",
+      "sourceCaveat": "[원본 버전] 개정 PDP8(총리결정 768/QĐ-TTg, 2025-04-15)의 2030·2050 설비목표를 정리한 업계 전문지 해설본. 1차 출처인 결정문 원문은 미확보 상태이며, 수록값은 해설본에 게재된 목표 설비용량과 2023 실적치임. [정의·범위] CAGR은 2030 목표 범위값의 중앙값을 사용하여 2023 실적 대비 7년 연평균성장률로 산출한 자체 산출값. [원문 불일치] 2023 수력 설비용량이 본 출처는 22,500 MW, 베트남전력공사(EVN) 2023 결산은 22,872 MW로 상이함. 보정하지 않음. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "시장 성장률 · 태양광 기술 — 2023→2030 설비용량 연평균성장률(CAGR)",
+      "sourceLabelEn": "Market growth rate (CAGR 2023-2030), solar PV",
+      "sourceNote": "[원본 버전] 개정 PDP8(총리결정 768/QĐ-TTg, 2025-04-15)의 2030·2050 설비목표를 정리한 업계 전문지 해설본. 1차 출처인 결정문 원문은 미확보 상태이며, 수록값은 해설본에 게재된 목표 설비용량과 2023 실적치임. [정의·범위] CAGR은 2030 목표 범위값의 중앙값을 사용하여 2023 실적 대비 7년 연평균성장률로 산출한 자체 산출값. [원문 불일치] 2023 수력 설비용량이 본 출처는 22,500 MW, 베트남전력공사(EVN) 2023 결산은 22,872 MW로 상이함. 보정하지 않음. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-002",
+        "indicatorId": "D-002_market_cagr_solar_pv",
+        "sourceFileDecoded": "D-002_시장 성장률.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-62de91e6eba5|%",
+      "dimensionLabels": {
+        "category": "폐자원 기술",
+        "detail": "2023→2030 설비용량 연평균성장률(CAGR)",
+        "technology": "15"
+      },
+      "dimensions": {
+        "category": "폐자원 기술",
+        "detail": "2023→2030 설비용량 연평균성장률(CAGR)",
+        "technology": "15"
+      },
+      "displayLabel": "시장 성장률 · 폐자원 기술 — 2023→2030 설비용량 연평균성장률(CAGR)",
+      "indicatorId": "D-002_market_cagr_waste_to_energy",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-62de91e6eba5",
+        "labelKo": "시장 성장률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-62de91e6eba5|%|category=폐자원 기술|detail=2023→2030 설비용량 연평균성장률(CAGR)|technology=15|D-002_market_cagr_waste_to_energy",
+      "sourceCaveat": "[원본 버전] 개정 PDP8(총리결정 768/QĐ-TTg, 2025-04-15)의 2030·2050 설비목표를 정리한 업계 전문지 해설본. 1차 출처인 결정문 원문은 미확보 상태이며, 수록값은 해설본에 게재된 목표 설비용량과 2023 실적치임. [정의·범위] CAGR은 2030 목표 범위값의 중앙값을 사용하여 2023 실적 대비 7년 연평균성장률로 산출한 자체 산출값. [원문 불일치] 2023 수력 설비용량이 본 출처는 22,500 MW, 베트남전력공사(EVN) 2023 결산은 22,872 MW로 상이함. 보정하지 않음. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "시장 성장률 · 폐자원 기술 — 2023→2030 설비용량 연평균성장률(CAGR)",
+      "sourceLabelEn": "Market growth rate (CAGR 2023-2030), waste-to-energy",
+      "sourceNote": "[원본 버전] 개정 PDP8(총리결정 768/QĐ-TTg, 2025-04-15)의 2030·2050 설비목표를 정리한 업계 전문지 해설본. 1차 출처인 결정문 원문은 미확보 상태이며, 수록값은 해설본에 게재된 목표 설비용량과 2023 실적치임. [정의·범위] CAGR은 2030 목표 범위값의 중앙값을 사용하여 2023 실적 대비 7년 연평균성장률로 산출한 자체 산출값. [원문 불일치] 2023 수력 설비용량이 본 출처는 22,500 MW, 베트남전력공사(EVN) 2023 결산은 22,872 MW로 상이함. 보정하지 않음. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-002",
+        "indicatorId": "D-002_market_cagr_waste_to_energy",
+        "sourceFileDecoded": "D-002_시장 성장률.xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-62de91e6eba5|%",
+      "dimensionLabels": {
+        "category": "풍력 기술(해상)",
+        "detail": "2023→2030 설비용량 연평균성장률(CAGR)",
+        "technology": "3"
+      },
+      "dimensions": {
+        "category": "풍력 기술(해상)",
+        "detail": "2023→2030 설비용량 연평균성장률(CAGR)",
+        "technology": "3"
+      },
+      "displayLabel": "시장 성장률 · 풍력 기술(해상) — 2023→2030 설비용량 연평균성장률(CAGR)",
+      "indicatorId": "D-002_market_cagr_wind_offshore",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-62de91e6eba5",
+        "labelKo": "시장 성장률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-62de91e6eba5|%|category=풍력 기술(해상)|detail=2023→2030 설비용량 연평균성장률(CAGR)|technology=3|D-002_market_cagr_wind_offshore",
+      "sourceCaveat": "[원본 버전] 개정 PDP8(총리결정 768/QĐ-TTg, 2025-04-15)의 2030·2050 설비목표를 정리한 업계 전문지 해설본. 1차 출처인 결정문 원문은 미확보 상태이며, 수록값은 해설본에 게재된 목표 설비용량과 2023 실적치임. [정의·범위] CAGR은 2030 목표 범위값의 중앙값을 사용하여 2023 실적 대비 7년 연평균성장률로 산출한 자체 산출값. [원문 불일치] 2023 수력 설비용량이 본 출처는 22,500 MW, 베트남전력공사(EVN) 2023 결산은 22,872 MW로 상이함. 보정하지 않음. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "시장 성장률 · 풍력 기술(해상) — 2023→2030 설비용량 연평균성장률(CAGR)",
+      "sourceLabelEn": "Market growth rate (CAGR 2023-2030), offshore wind",
+      "sourceNote": "2023년 실적 설비용량 미게재로 산출 불가. 재확보 대상 1차 출처: 총리결정 768/QĐ-TTg 부속 설비계획표",
+      "sourceProvenance": {
+        "elementId": "D-002",
+        "indicatorId": "D-002_market_cagr_wind_offshore",
+        "sourceFileDecoded": "D-002_시장 성장률.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-62de91e6eba5|%",
+      "dimensionLabels": {
+        "category": "풍력 기술(육상 · 근해)",
+        "detail": "2023→2030 설비용량 연평균성장률(CAGR)",
+        "technology": "3"
+      },
+      "dimensions": {
+        "category": "풍력 기술(육상 · 근해)",
+        "detail": "2023→2030 설비용량 연평균성장률(CAGR)",
+        "technology": "3"
+      },
+      "displayLabel": "시장 성장률 · 풍력 기술(육상·근해) — 2023→2030 설비용량 연평균성장률(CAGR)",
+      "indicatorId": "D-002_market_cagr_wind_onshore",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-62de91e6eba5",
+        "labelKo": "시장 성장률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-62de91e6eba5|%|category=풍력 기술(육상 · 근해)|detail=2023→2030 설비용량 연평균성장률(CAGR)|technology=3|D-002_market_cagr_wind_onshore",
+      "sourceCaveat": "[원본 버전] 개정 PDP8(총리결정 768/QĐ-TTg, 2025-04-15)의 2030·2050 설비목표를 정리한 업계 전문지 해설본. 1차 출처인 결정문 원문은 미확보 상태이며, 수록값은 해설본에 게재된 목표 설비용량과 2023 실적치임. [정의·범위] CAGR은 2030 목표 범위값의 중앙값을 사용하여 2023 실적 대비 7년 연평균성장률로 산출한 자체 산출값. [원문 불일치] 2023 수력 설비용량이 본 출처는 22,500 MW, 베트남전력공사(EVN) 2023 결산은 22,872 MW로 상이함. 보정하지 않음. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "시장 성장률 · 풍력 기술(육상·근해) — 2023→2030 설비용량 연평균성장률(CAGR)",
+      "sourceLabelEn": "Market growth rate (CAGR 2023-2030), onshore wind",
+      "sourceNote": "[원본 버전] 개정 PDP8(총리결정 768/QĐ-TTg, 2025-04-15)의 2030·2050 설비목표를 정리한 업계 전문지 해설본. 1차 출처인 결정문 원문은 미확보 상태이며, 수록값은 해설본에 게재된 목표 설비용량과 2023 실적치임. [정의·범위] CAGR은 2030 목표 범위값의 중앙값을 사용하여 2023 실적 대비 7년 연평균성장률로 산출한 자체 산출값. [원문 불일치] 2023 수력 설비용량이 본 출처는 22,500 MW, 베트남전력공사(EVN) 2023 결산은 22,872 MW로 상이함. 보정하지 않음. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-002",
+        "indicatorId": "D-002_market_cagr_wind_onshore",
+        "sourceFileDecoded": "D-002_시장 성장률.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 8,
+      "key": "measure-62de91e6eba5",
+      "labelKo": "시장 성장률",
+      "recordCount": 8,
+      "unit": "%",
+      "unitFamily": "percent"
+    }
+  ],
+  "observationCount": 8,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

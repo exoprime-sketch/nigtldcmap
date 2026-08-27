@@ -1,0 +1,681 @@
+{
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 10,
+      "values": [
+        "8대 유역 합계",
+        "Bằng Giang",
+        "Cả",
+        "Cửu Long(메콩델타)",
+        "Hồng",
+        "Mã",
+        "Srêpốk",
+        "Sê San",
+        "Đồng Nai",
+        "전국 유역면적"
+      ]
+    },
+    {
+      "key": "detail_2",
+      "labelKo": "detail_2",
+      "valueCount": 2,
+      "values": [
+        "Kỳ Cùng",
+        "Thái Bình(홍강)"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "5,32"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 2,
+      "values": [
+        "2024",
+        "2026"
+      ]
+    }
+  ],
+  "elementId": "B-025",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 19,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-46c98029faf3|km²",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "유역 면적(HydroBASINS 기반 산출)",
+      "indicatorId": "B-025_basin_area_gis",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-46c98029faf3",
+        "labelKo": "유역 면적(HydroBASINS 기반 산출)",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-46c98029faf3|km²||B-025_basin_area_gis",
+      "sourceCaveat": "[GIS 처리] 원본은 GIS 폴리곤(Shapefile)이며 A-026과 동일하게 Raw data 관리 + 메타 3종 기재. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] HydroSHEDS v1 (2022 릴리스)",
+      "sourceLabel": "유역 면적(HydroBASINS 기반 산출)",
+      "sourceLabelEn": "Basin area from HydroBASINS",
+      "sourceNote": "2026년: HydroBASINS 폴리곤 기반 면적 산출 미수행 — GIS 처리 후 회신 예정",
+      "sourceProvenance": {
+        "elementId": "B-025",
+        "indicatorId": "B-025_basin_area_gis",
+        "sourceFileDecoded": "B-025_유역 면적(km²).xlsx",
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e6ec7a61b431|km²",
+      "dimensionLabels": {
+        "detail": "8대 유역 합계"
+      },
+      "dimensions": {
+        "detail": "8대 유역 합계"
+      },
+      "displayLabel": "전국 유역면적 집계 — 8대 유역 합계",
+      "indicatorId": "B-025_basin_area_national_8",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e6ec7a61b431",
+        "labelKo": "전국 유역면적 집계",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-e6ec7a61b431|km²|detail=8대 유역 합계|B-025_basin_area_national_8",
+      "sourceCaveat": "[미수집 raw 반영] raw CSV 하단 주석에만 있던 전국 집계값(8대 유역 ~270,000 km² · 전국 ~337,000 km² · 하천 3,450개)을 지표로 승격. 개별 유역 합계와는 국경 밖 면적 포함 여부가 달라 단순 합산과 일치하지 않음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "전국 유역면적 집계 — 8대 유역 합계",
+      "sourceLabelEn": "National aggregate basin area",
+      "sourceNote": "[미수집 raw 반영] raw CSV 하단 주석에만 있던 전국 집계값(8대 유역 ~270,000 km² · 전국 ~337,000 km² · 하천 3,450개)을 지표로 승격. 개별 유역 합계와는 국경 밖 면적 포함 여부가 달라 단순 합산과 일치하지 않음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-025",
+        "indicatorId": "B-025_basin_area_national_8",
+        "sourceFileDecoded": "B-025_유역 면적(km²).xlsx",
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e6ec7a61b431|km²",
+      "dimensionLabels": {
+        "detail": "전국 유역면적"
+      },
+      "dimensions": {
+        "detail": "전국 유역면적"
+      },
+      "displayLabel": "전국 유역면적 집계 — 전국 유역면적",
+      "indicatorId": "B-025_basin_area_national_g02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e6ec7a61b431",
+        "labelKo": "전국 유역면적 집계",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-e6ec7a61b431|km²|detail=전국 유역면적|B-025_basin_area_national_g02",
+      "sourceCaveat": "[미수집 raw 반영] raw CSV 하단 주석에만 있던 전국 집계값(8대 유역 ~270,000 km² · 전국 ~337,000 km² · 하천 3,450개)을 지표로 승격. 개별 유역 합계와는 국경 밖 면적 포함 여부가 달라 단순 합산과 일치하지 않음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "전국 유역면적 집계 — 전국 유역면적",
+      "sourceLabelEn": "National aggregate basin area",
+      "sourceNote": "[미수집 raw 반영] raw CSV 하단 주석에만 있던 전국 집계값(8대 유역 ~270,000 km² · 전국 ~337,000 km² · 하천 3,450개)을 지표로 승격. 개별 유역 합계와는 국경 밖 면적 포함 여부가 달라 단순 합산과 일치하지 않음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-025",
+        "indicatorId": "B-025_basin_area_national_g02",
+        "sourceFileDecoded": "B-025_유역 면적(km²).xlsx",
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d4d13686f27c|km²",
+      "dimensionLabels": {
+        "detail": "Bằng Giang",
+        "detail_2": "Kỳ Cùng",
+        "technology": "5 · 32"
+      },
+      "dimensions": {
+        "detail": "Bằng Giang",
+        "detail_2": "Kỳ Cùng",
+        "technology": "5,32"
+      },
+      "displayLabel": "유역 총면적(국경 포함) — Bằng Giang–Kỳ Cùng",
+      "indicatorId": "B-025_basin_area_total_bang_giang_ky_cung",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d4d13686f27c",
+        "labelKo": "유역 총면적(국경 포함)",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-d4d13686f27c|km²|detail=Bằng Giang|detail_2=Kỳ Cùng|technology=5,32|B-025_basin_area_total_bang_giang_ky_cung",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 유역(basin) 단위 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "유역 총면적(국경 포함) — Bằng Giang–Kỳ Cùng",
+      "sourceLabelEn": "River basin total area",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 유역(basin) 단위 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-025",
+        "indicatorId": "B-025_basin_area_total_bang_giang_ky_cung",
+        "sourceFileDecoded": "B-025_유역 면적(km²).xlsx",
+        "sourceRow": 4,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d4d13686f27c|km²",
+      "dimensionLabels": {
+        "detail": "Cả",
+        "technology": "5 · 32"
+      },
+      "dimensions": {
+        "detail": "Cả",
+        "technology": "5,32"
+      },
+      "displayLabel": "유역 총면적(국경 포함) — Cả",
+      "indicatorId": "B-025_basin_area_total_ca",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d4d13686f27c",
+        "labelKo": "유역 총면적(국경 포함)",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-d4d13686f27c|km²|detail=Cả|technology=5,32|B-025_basin_area_total_ca",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 유역(basin) 단위 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "유역 총면적(국경 포함) — Cả",
+      "sourceLabelEn": "River basin total area",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 유역(basin) 단위 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-025",
+        "indicatorId": "B-025_basin_area_total_ca",
+        "sourceFileDecoded": "B-025_유역 면적(km²).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d4d13686f27c|km²",
+      "dimensionLabels": {
+        "detail": "Cửu Long(메콩델타)",
+        "technology": "5 · 32"
+      },
+      "dimensions": {
+        "detail": "Cửu Long(메콩델타)",
+        "technology": "5,32"
+      },
+      "displayLabel": "유역 총면적(국경 포함) — Cửu Long(메콩델타)",
+      "indicatorId": "B-025_basin_area_total_cuu_long",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d4d13686f27c",
+        "labelKo": "유역 총면적(국경 포함)",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-d4d13686f27c|km²|detail=Cửu Long(메콩델타)|technology=5,32|B-025_basin_area_total_cuu_long",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 유역(basin) 단위 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "유역 총면적(국경 포함) — Cửu Long(메콩델타)",
+      "sourceLabelEn": "River basin total area",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 유역(basin) 단위 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-025",
+        "indicatorId": "B-025_basin_area_total_cuu_long",
+        "sourceFileDecoded": "B-025_유역 면적(km²).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d4d13686f27c|km²",
+      "dimensionLabels": {
+        "detail": "Đồng Nai",
+        "technology": "5 · 32"
+      },
+      "dimensions": {
+        "detail": "Đồng Nai",
+        "technology": "5,32"
+      },
+      "displayLabel": "유역 총면적(국경 포함) — Đồng Nai",
+      "indicatorId": "B-025_basin_area_total_dong_nai",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d4d13686f27c",
+        "labelKo": "유역 총면적(국경 포함)",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-d4d13686f27c|km²|detail=Đồng Nai|technology=5,32|B-025_basin_area_total_dong_nai",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 유역(basin) 단위 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "유역 총면적(국경 포함) — Đồng Nai",
+      "sourceLabelEn": "River basin total area",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 유역(basin) 단위 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-025",
+        "indicatorId": "B-025_basin_area_total_dong_nai",
+        "sourceFileDecoded": "B-025_유역 면적(km²).xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d4d13686f27c|km²",
+      "dimensionLabels": {
+        "detail": "Hồng",
+        "detail_2": "Thái Bình(홍강)",
+        "technology": "5 · 32"
+      },
+      "dimensions": {
+        "detail": "Hồng",
+        "detail_2": "Thái Bình(홍강)",
+        "technology": "5,32"
+      },
+      "displayLabel": "유역 총면적(국경 포함) — Hồng–Thái Bình(홍강)",
+      "indicatorId": "B-025_basin_area_total_hong_thai_binh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d4d13686f27c",
+        "labelKo": "유역 총면적(국경 포함)",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-d4d13686f27c|km²|detail=Hồng|detail_2=Thái Bình(홍강)|technology=5,32|B-025_basin_area_total_hong_thai_binh",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 유역(basin) 단위 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "유역 총면적(국경 포함) — Hồng–Thái Bình(홍강)",
+      "sourceLabelEn": "River basin total area",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 유역(basin) 단위 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-025",
+        "indicatorId": "B-025_basin_area_total_hong_thai_binh",
+        "sourceFileDecoded": "B-025_유역 면적(km²).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d4d13686f27c|km²",
+      "dimensionLabels": {
+        "detail": "Mã",
+        "technology": "5 · 32"
+      },
+      "dimensions": {
+        "detail": "Mã",
+        "technology": "5,32"
+      },
+      "displayLabel": "유역 총면적(국경 포함) — Mã",
+      "indicatorId": "B-025_basin_area_total_ma",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d4d13686f27c",
+        "labelKo": "유역 총면적(국경 포함)",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-d4d13686f27c|km²|detail=Mã|technology=5,32|B-025_basin_area_total_ma",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 유역(basin) 단위 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "유역 총면적(국경 포함) — Mã",
+      "sourceLabelEn": "River basin total area",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 유역(basin) 단위 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-025",
+        "indicatorId": "B-025_basin_area_total_ma",
+        "sourceFileDecoded": "B-025_유역 면적(km²).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d4d13686f27c|km²",
+      "dimensionLabels": {
+        "detail": "Sê San",
+        "technology": "5 · 32"
+      },
+      "dimensions": {
+        "detail": "Sê San",
+        "technology": "5,32"
+      },
+      "displayLabel": "유역 총면적(국경 포함) — Sê San",
+      "indicatorId": "B-025_basin_area_total_se_san",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d4d13686f27c",
+        "labelKo": "유역 총면적(국경 포함)",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-d4d13686f27c|km²|detail=Sê San|technology=5,32|B-025_basin_area_total_se_san",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 유역(basin) 단위 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "유역 총면적(국경 포함) — Sê San",
+      "sourceLabelEn": "River basin total area",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 유역(basin) 단위 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-025",
+        "indicatorId": "B-025_basin_area_total_se_san",
+        "sourceFileDecoded": "B-025_유역 면적(km²).xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d4d13686f27c|km²",
+      "dimensionLabels": {
+        "detail": "Srêpốk",
+        "technology": "5 · 32"
+      },
+      "dimensions": {
+        "detail": "Srêpốk",
+        "technology": "5,32"
+      },
+      "displayLabel": "유역 총면적(국경 포함) — Srêpốk",
+      "indicatorId": "B-025_basin_area_total_srepok",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d4d13686f27c",
+        "labelKo": "유역 총면적(국경 포함)",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-d4d13686f27c|km²|detail=Srêpốk|technology=5,32|B-025_basin_area_total_srepok",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 유역(basin) 단위 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "유역 총면적(국경 포함) — Srêpốk",
+      "sourceLabelEn": "River basin total area",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 유역(basin) 단위 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-025",
+        "indicatorId": "B-025_basin_area_total_srepok",
+        "sourceFileDecoded": "B-025_유역 면적(km²).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1494e5d64f51|km²",
+      "dimensionLabels": {
+        "detail": "Bằng Giang",
+        "detail_2": "Kỳ Cùng"
+      },
+      "dimensions": {
+        "detail": "Bằng Giang",
+        "detail_2": "Kỳ Cùng"
+      },
+      "displayLabel": "유역 면적(베트남 국내분) — Bằng Giang–Kỳ Cùng",
+      "indicatorId": "B-025_basin_area_vn_bang_giang_ky_cung",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1494e5d64f51",
+        "labelKo": "유역 면적(베트남 국내분)",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-1494e5d64f51|km²|detail=Bằng Giang|detail_2=Kỳ Cùng|B-025_basin_area_vn_bang_giang_ky_cung",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "유역 면적(베트남 국내분) — Bằng Giang–Kỳ Cùng",
+      "sourceLabelEn": "River basin area within Vietnam",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-025",
+        "indicatorId": "B-025_basin_area_vn_bang_giang_ky_cung",
+        "sourceFileDecoded": "B-025_유역 면적(km²).xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1494e5d64f51|km²",
+      "dimensionLabels": {
+        "detail": "Cả"
+      },
+      "dimensions": {
+        "detail": "Cả"
+      },
+      "displayLabel": "유역 면적(베트남 국내분) — Cả",
+      "indicatorId": "B-025_basin_area_vn_ca",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1494e5d64f51",
+        "labelKo": "유역 면적(베트남 국내분)",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-1494e5d64f51|km²|detail=Cả|B-025_basin_area_vn_ca",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "유역 면적(베트남 국내분) — Cả",
+      "sourceLabelEn": "River basin area within Vietnam",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-025",
+        "indicatorId": "B-025_basin_area_vn_ca",
+        "sourceFileDecoded": "B-025_유역 면적(km²).xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1494e5d64f51|km²",
+      "dimensionLabels": {
+        "detail": "Cửu Long(메콩델타)"
+      },
+      "dimensions": {
+        "detail": "Cửu Long(메콩델타)"
+      },
+      "displayLabel": "유역 면적(베트남 국내분) — Cửu Long(메콩델타)",
+      "indicatorId": "B-025_basin_area_vn_cuu_long",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1494e5d64f51",
+        "labelKo": "유역 면적(베트남 국내분)",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-1494e5d64f51|km²|detail=Cửu Long(메콩델타)|B-025_basin_area_vn_cuu_long",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "유역 면적(베트남 국내분) — Cửu Long(메콩델타)",
+      "sourceLabelEn": "River basin area within Vietnam",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-025",
+        "indicatorId": "B-025_basin_area_vn_cuu_long",
+        "sourceFileDecoded": "B-025_유역 면적(km²).xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1494e5d64f51|km²",
+      "dimensionLabels": {
+        "detail": "Đồng Nai"
+      },
+      "dimensions": {
+        "detail": "Đồng Nai"
+      },
+      "displayLabel": "유역 면적(베트남 국내분) — Đồng Nai",
+      "indicatorId": "B-025_basin_area_vn_dong_nai",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1494e5d64f51",
+        "labelKo": "유역 면적(베트남 국내분)",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-1494e5d64f51|km²|detail=Đồng Nai|B-025_basin_area_vn_dong_nai",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "유역 면적(베트남 국내분) — Đồng Nai",
+      "sourceLabelEn": "River basin area within Vietnam",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-025",
+        "indicatorId": "B-025_basin_area_vn_dong_nai",
+        "sourceFileDecoded": "B-025_유역 면적(km²).xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1494e5d64f51|km²",
+      "dimensionLabels": {
+        "detail": "Hồng",
+        "detail_2": "Thái Bình(홍강)"
+      },
+      "dimensions": {
+        "detail": "Hồng",
+        "detail_2": "Thái Bình(홍강)"
+      },
+      "displayLabel": "유역 면적(베트남 국내분) — Hồng–Thái Bình(홍강)",
+      "indicatorId": "B-025_basin_area_vn_hong_thai_binh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1494e5d64f51",
+        "labelKo": "유역 면적(베트남 국내분)",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-1494e5d64f51|km²|detail=Hồng|detail_2=Thái Bình(홍강)|B-025_basin_area_vn_hong_thai_binh",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "유역 면적(베트남 국내분) — Hồng–Thái Bình(홍강)",
+      "sourceLabelEn": "River basin area within Vietnam",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-025",
+        "indicatorId": "B-025_basin_area_vn_hong_thai_binh",
+        "sourceFileDecoded": "B-025_유역 면적(km²).xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1494e5d64f51|km²",
+      "dimensionLabels": {
+        "detail": "Mã"
+      },
+      "dimensions": {
+        "detail": "Mã"
+      },
+      "displayLabel": "유역 면적(베트남 국내분) — Mã",
+      "indicatorId": "B-025_basin_area_vn_ma",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1494e5d64f51",
+        "labelKo": "유역 면적(베트남 국내분)",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-1494e5d64f51|km²|detail=Mã|B-025_basin_area_vn_ma",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "유역 면적(베트남 국내분) — Mã",
+      "sourceLabelEn": "River basin area within Vietnam",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-025",
+        "indicatorId": "B-025_basin_area_vn_ma",
+        "sourceFileDecoded": "B-025_유역 면적(km²).xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1494e5d64f51|km²",
+      "dimensionLabels": {
+        "detail": "Sê San"
+      },
+      "dimensions": {
+        "detail": "Sê San"
+      },
+      "displayLabel": "유역 면적(베트남 국내분) — Sê San",
+      "indicatorId": "B-025_basin_area_vn_se_san",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1494e5d64f51",
+        "labelKo": "유역 면적(베트남 국내분)",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-1494e5d64f51|km²|detail=Sê San|B-025_basin_area_vn_se_san",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "유역 면적(베트남 국내분) — Sê San",
+      "sourceLabelEn": "River basin area within Vietnam",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-025",
+        "indicatorId": "B-025_basin_area_vn_se_san",
+        "sourceFileDecoded": "B-025_유역 면적(km²).xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1494e5d64f51|km²",
+      "dimensionLabels": {
+        "detail": "Srêpốk"
+      },
+      "dimensions": {
+        "detail": "Srêpốk"
+      },
+      "displayLabel": "유역 면적(베트남 국내분) — Srêpốk",
+      "indicatorId": "B-025_basin_area_vn_srepok",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1494e5d64f51",
+        "labelKo": "유역 면적(베트남 국내분)",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-1494e5d64f51|km²|detail=Srêpốk|B-025_basin_area_vn_srepok",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "유역 면적(베트남 국내분) — Srêpốk",
+      "sourceLabelEn": "River basin area within Vietnam",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-025",
+        "indicatorId": "B-025_basin_area_vn_srepok",
+        "sourceFileDecoded": "B-025_유역 면적(km²).xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-46c98029faf3",
+      "labelKo": "유역 면적(HydroBASINS 기반 산출)",
+      "recordCount": 1,
+      "unit": "km²",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 8,
+      "key": "measure-1494e5d64f51",
+      "labelKo": "유역 면적(베트남 국내분)",
+      "recordCount": 8,
+      "unit": "km²",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 8,
+      "key": "measure-d4d13686f27c",
+      "labelKo": "유역 총면적(국경 포함)",
+      "recordCount": 8,
+      "unit": "km²",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-e6ec7a61b431",
+      "labelKo": "전국 유역면적 집계",
+      "recordCount": 2,
+      "unit": "km²",
+      "unitFamily": "area"
+    }
+  ],
+  "observationCount": 19,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

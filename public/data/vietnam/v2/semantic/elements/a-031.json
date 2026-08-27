@@ -1,0 +1,290 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 7,
+      "values": [
+        "국제운송",
+        "물류서비스 역량",
+        "인프라",
+        "정시성",
+        "종합",
+        "추적가능성",
+        "통관"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 7,
+      "values": [
+        "국제운송 부문 점수(1=낮음 ~ 5=높음)",
+        "물류서비스 역량 부문 점수(1=낮음 ~ 5=높음)",
+        "인프라 부문 점수(1=낮음 ~ 5=높음)",
+        "정시성 부문 점수(1=낮음 ~ 5=높음)",
+        "종합 부문 점수(1=낮음 ~ 5=높음)",
+        "추적가능성 부문 점수(1=낮음 ~ 5=높음)",
+        "통관 부문 점수(1=낮음 ~ 5=높음)"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 7,
+      "values": [
+        "2007",
+        "2010",
+        "2012",
+        "2014",
+        "2016",
+        "2018",
+        "2022"
+      ]
+    }
+  ],
+  "elementId": "A-031",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 7,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-9ee6e8638d12|점",
+      "dimensionLabels": {
+        "category": "통관",
+        "detail": "통관 부문 점수(1=낮음 ~ 5=높음)"
+      },
+      "dimensions": {
+        "category": "통관",
+        "detail": "통관 부문 점수(1=낮음 ~ 5=높음)"
+      },
+      "displayLabel": "물류성과지수(LPI) · 통관 — 통관 부문 점수(1=낮음 ~ 5=높음)",
+      "indicatorId": "A-031_lpi_customs",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9ee6e8638d12",
+        "labelKo": "물류성과지수(LPI)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-9ee6e8638d12|점|category=통관|detail=통관 부문 점수(1=낮음 ~ 5=높음)|A-031_lpi_customs",
+      "sourceCaveat": "[원본 버전] 세계은행 Logistics Performance Index. raw로 받은 API 일괄 다운로드 파일에는 6개 세부지수 중 \"Ease of arranging competitively priced shipments\"(LP.LPI.ITRN.XQ) 1개만 들어 있어, 종합지수(LP.LPI.OVRL.XQ)와 나머지 5개 세부지수를 세계은행 API에서 추가 수집하여 총 7개 지표로 보완함. [출처·링크] 검토의견 2번에 따라 지표별 딥링크와 재현 가능한 API 쿼리를 전건 기재함. [시계열 단절] 검토의견 3번에 대응 — LPI는 매년 조사되지 않고 2007·2010·2012·2014·2016·2018·2022년에만 시행됨(2020년은 코로나19로 미시행). 조사 미시행 연도는 값 자체가 존재하지 않으므로 행을 만들지 않고 time_interval을 irregular로 표기함. 또한 2023년 발표분이 원천 데이터에서는 2022년으로 표기되어 있음(조사 기간 2022-09-06~11-05). [구조] 검토의견 1번(최고·최저 요약 줄, 값 열 분산)은 종전 산출물의 문제이며 본 데이터셋 구조에서 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "물류성과지수(LPI) · 통관 — 통관 부문 점수(1=낮음 ~ 5=높음)",
+      "sourceLabelEn": "Logistics Performance Index: Customs",
+      "sourceNote": "[원본 버전] 세계은행 Logistics Performance Index. raw로 받은 API 일괄 다운로드 파일에는 6개 세부지수 중 \"Ease of arranging competitively priced shipments\"(LP.LPI.ITRN.XQ) 1개만 들어 있어, 종합지수(LP.LPI.OVRL.XQ)와 나머지 5개 세부지수를 세계은행 API에서 추가 수집하여 총 7개 지표로 보완함. [출처·링크] 검토의견 2번에 따라 지표별 딥링크와 재현 가능한 API 쿼리를 전건 기재함. [시계열 단절] 검토의견 3번에 대응 — LPI는 매년 조사되지 않고 2007·2010·2012·2014·2016·2018·2022년에만 시행됨(2020년은 코로나19로 미시행). 조사 미시행 연도는 값 자체가 존재하지 않으므로 행을 만들지 않고 time_interval을 irregular로 표기함. 또한 2023년 발표분이 원천 데이터에서는 2022년으로 표기되어 있음(조사 기간 2022-09-06~11-05). [구조] 검토의견 1번(최고·최저 요약 줄, 값 열 분산)은 종전 산출물의 문제이며 본 데이터셋 구조에서 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-031",
+        "indicatorId": "A-031_lpi_customs",
+        "sourceFileDecoded": "A-031_물류성과지수(LPI).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9ee6e8638d12|점",
+      "dimensionLabels": {
+        "category": "인프라",
+        "detail": "인프라 부문 점수(1=낮음 ~ 5=높음)"
+      },
+      "dimensions": {
+        "category": "인프라",
+        "detail": "인프라 부문 점수(1=낮음 ~ 5=높음)"
+      },
+      "displayLabel": "물류성과지수(LPI) · 인프라 — 인프라 부문 점수(1=낮음 ~ 5=높음)",
+      "indicatorId": "A-031_lpi_infrastructure",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9ee6e8638d12",
+        "labelKo": "물류성과지수(LPI)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-9ee6e8638d12|점|category=인프라|detail=인프라 부문 점수(1=낮음 ~ 5=높음)|A-031_lpi_infrastructure",
+      "sourceCaveat": "[원본 버전] 세계은행 Logistics Performance Index. raw로 받은 API 일괄 다운로드 파일에는 6개 세부지수 중 \"Ease of arranging competitively priced shipments\"(LP.LPI.ITRN.XQ) 1개만 들어 있어, 종합지수(LP.LPI.OVRL.XQ)와 나머지 5개 세부지수를 세계은행 API에서 추가 수집하여 총 7개 지표로 보완함. [출처·링크] 검토의견 2번에 따라 지표별 딥링크와 재현 가능한 API 쿼리를 전건 기재함. [시계열 단절] 검토의견 3번에 대응 — LPI는 매년 조사되지 않고 2007·2010·2012·2014·2016·2018·2022년에만 시행됨(2020년은 코로나19로 미시행). 조사 미시행 연도는 값 자체가 존재하지 않으므로 행을 만들지 않고 time_interval을 irregular로 표기함. 또한 2023년 발표분이 원천 데이터에서는 2022년으로 표기되어 있음(조사 기간 2022-09-06~11-05). [구조] 검토의견 1번(최고·최저 요약 줄, 값 열 분산)은 종전 산출물의 문제이며 본 데이터셋 구조에서 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "물류성과지수(LPI) · 인프라 — 인프라 부문 점수(1=낮음 ~ 5=높음)",
+      "sourceLabelEn": "Logistics Performance Index: Infrastructure",
+      "sourceNote": "[원본 버전] 세계은행 Logistics Performance Index. raw로 받은 API 일괄 다운로드 파일에는 6개 세부지수 중 \"Ease of arranging competitively priced shipments\"(LP.LPI.ITRN.XQ) 1개만 들어 있어, 종합지수(LP.LPI.OVRL.XQ)와 나머지 5개 세부지수를 세계은행 API에서 추가 수집하여 총 7개 지표로 보완함. [출처·링크] 검토의견 2번에 따라 지표별 딥링크와 재현 가능한 API 쿼리를 전건 기재함. [시계열 단절] 검토의견 3번에 대응 — LPI는 매년 조사되지 않고 2007·2010·2012·2014·2016·2018·2022년에만 시행됨(2020년은 코로나19로 미시행). 조사 미시행 연도는 값 자체가 존재하지 않으므로 행을 만들지 않고 time_interval을 irregular로 표기함. 또한 2023년 발표분이 원천 데이터에서는 2022년으로 표기되어 있음(조사 기간 2022-09-06~11-05). [구조] 검토의견 1번(최고·최저 요약 줄, 값 열 분산)은 종전 산출물의 문제이며 본 데이터셋 구조에서 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-031",
+        "indicatorId": "A-031_lpi_infrastructure",
+        "sourceFileDecoded": "A-031_물류성과지수(LPI).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9ee6e8638d12|점",
+      "dimensionLabels": {
+        "category": "국제운송",
+        "detail": "국제운송 부문 점수(1=낮음 ~ 5=높음)"
+      },
+      "dimensions": {
+        "category": "국제운송",
+        "detail": "국제운송 부문 점수(1=낮음 ~ 5=높음)"
+      },
+      "displayLabel": "물류성과지수(LPI) · 국제운송 — 국제운송 부문 점수(1=낮음 ~ 5=높음)",
+      "indicatorId": "A-031_lpi_international_shipments",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9ee6e8638d12",
+        "labelKo": "물류성과지수(LPI)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-9ee6e8638d12|점|category=국제운송|detail=국제운송 부문 점수(1=낮음 ~ 5=높음)|A-031_lpi_international_shipments",
+      "sourceCaveat": "[원본 버전] 세계은행 Logistics Performance Index. raw로 받은 API 일괄 다운로드 파일에는 6개 세부지수 중 \"Ease of arranging competitively priced shipments\"(LP.LPI.ITRN.XQ) 1개만 들어 있어, 종합지수(LP.LPI.OVRL.XQ)와 나머지 5개 세부지수를 세계은행 API에서 추가 수집하여 총 7개 지표로 보완함. [출처·링크] 검토의견 2번에 따라 지표별 딥링크와 재현 가능한 API 쿼리를 전건 기재함. [시계열 단절] 검토의견 3번에 대응 — LPI는 매년 조사되지 않고 2007·2010·2012·2014·2016·2018·2022년에만 시행됨(2020년은 코로나19로 미시행). 조사 미시행 연도는 값 자체가 존재하지 않으므로 행을 만들지 않고 time_interval을 irregular로 표기함. 또한 2023년 발표분이 원천 데이터에서는 2022년으로 표기되어 있음(조사 기간 2022-09-06~11-05). [구조] 검토의견 1번(최고·최저 요약 줄, 값 열 분산)은 종전 산출물의 문제이며 본 데이터셋 구조에서 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "물류성과지수(LPI) · 국제운송 — 국제운송 부문 점수(1=낮음 ~ 5=높음)",
+      "sourceLabelEn": "Logistics Performance Index: International shipments",
+      "sourceNote": "[원본 버전] 세계은행 Logistics Performance Index. raw로 받은 API 일괄 다운로드 파일에는 6개 세부지수 중 \"Ease of arranging competitively priced shipments\"(LP.LPI.ITRN.XQ) 1개만 들어 있어, 종합지수(LP.LPI.OVRL.XQ)와 나머지 5개 세부지수를 세계은행 API에서 추가 수집하여 총 7개 지표로 보완함. [출처·링크] 검토의견 2번에 따라 지표별 딥링크와 재현 가능한 API 쿼리를 전건 기재함. [시계열 단절] 검토의견 3번에 대응 — LPI는 매년 조사되지 않고 2007·2010·2012·2014·2016·2018·2022년에만 시행됨(2020년은 코로나19로 미시행). 조사 미시행 연도는 값 자체가 존재하지 않으므로 행을 만들지 않고 time_interval을 irregular로 표기함. 또한 2023년 발표분이 원천 데이터에서는 2022년으로 표기되어 있음(조사 기간 2022-09-06~11-05). [구조] 검토의견 1번(최고·최저 요약 줄, 값 열 분산)은 종전 산출물의 문제이며 본 데이터셋 구조에서 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-031",
+        "indicatorId": "A-031_lpi_international_shipments",
+        "sourceFileDecoded": "A-031_물류성과지수(LPI).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9ee6e8638d12|점",
+      "dimensionLabels": {
+        "category": "물류서비스 역량",
+        "detail": "물류서비스 역량 부문 점수(1=낮음 ~ 5=높음)"
+      },
+      "dimensions": {
+        "category": "물류서비스 역량",
+        "detail": "물류서비스 역량 부문 점수(1=낮음 ~ 5=높음)"
+      },
+      "displayLabel": "물류성과지수(LPI) · 물류서비스 역량 — 물류서비스 역량 부문 점수(1=낮음 ~ 5=높음)",
+      "indicatorId": "A-031_lpi_logistics_competence",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9ee6e8638d12",
+        "labelKo": "물류성과지수(LPI)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-9ee6e8638d12|점|category=물류서비스 역량|detail=물류서비스 역량 부문 점수(1=낮음 ~ 5=높음)|A-031_lpi_logistics_competence",
+      "sourceCaveat": "[원본 버전] 세계은행 Logistics Performance Index. raw로 받은 API 일괄 다운로드 파일에는 6개 세부지수 중 \"Ease of arranging competitively priced shipments\"(LP.LPI.ITRN.XQ) 1개만 들어 있어, 종합지수(LP.LPI.OVRL.XQ)와 나머지 5개 세부지수를 세계은행 API에서 추가 수집하여 총 7개 지표로 보완함. [출처·링크] 검토의견 2번에 따라 지표별 딥링크와 재현 가능한 API 쿼리를 전건 기재함. [시계열 단절] 검토의견 3번에 대응 — LPI는 매년 조사되지 않고 2007·2010·2012·2014·2016·2018·2022년에만 시행됨(2020년은 코로나19로 미시행). 조사 미시행 연도는 값 자체가 존재하지 않으므로 행을 만들지 않고 time_interval을 irregular로 표기함. 또한 2023년 발표분이 원천 데이터에서는 2022년으로 표기되어 있음(조사 기간 2022-09-06~11-05). [구조] 검토의견 1번(최고·최저 요약 줄, 값 열 분산)은 종전 산출물의 문제이며 본 데이터셋 구조에서 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "물류성과지수(LPI) · 물류서비스 역량 — 물류서비스 역량 부문 점수(1=낮음 ~ 5=높음)",
+      "sourceLabelEn": "Logistics Performance Index: Logistics competence",
+      "sourceNote": "[원본 버전] 세계은행 Logistics Performance Index. raw로 받은 API 일괄 다운로드 파일에는 6개 세부지수 중 \"Ease of arranging competitively priced shipments\"(LP.LPI.ITRN.XQ) 1개만 들어 있어, 종합지수(LP.LPI.OVRL.XQ)와 나머지 5개 세부지수를 세계은행 API에서 추가 수집하여 총 7개 지표로 보완함. [출처·링크] 검토의견 2번에 따라 지표별 딥링크와 재현 가능한 API 쿼리를 전건 기재함. [시계열 단절] 검토의견 3번에 대응 — LPI는 매년 조사되지 않고 2007·2010·2012·2014·2016·2018·2022년에만 시행됨(2020년은 코로나19로 미시행). 조사 미시행 연도는 값 자체가 존재하지 않으므로 행을 만들지 않고 time_interval을 irregular로 표기함. 또한 2023년 발표분이 원천 데이터에서는 2022년으로 표기되어 있음(조사 기간 2022-09-06~11-05). [구조] 검토의견 1번(최고·최저 요약 줄, 값 열 분산)은 종전 산출물의 문제이며 본 데이터셋 구조에서 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-031",
+        "indicatorId": "A-031_lpi_logistics_competence",
+        "sourceFileDecoded": "A-031_물류성과지수(LPI).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9ee6e8638d12|점",
+      "dimensionLabels": {
+        "category": "종합",
+        "detail": "종합 부문 점수(1=낮음 ~ 5=높음)"
+      },
+      "dimensions": {
+        "category": "종합",
+        "detail": "종합 부문 점수(1=낮음 ~ 5=높음)"
+      },
+      "displayLabel": "물류성과지수(LPI) · 종합 — 종합 부문 점수(1=낮음 ~ 5=높음)",
+      "indicatorId": "A-031_lpi_overall",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9ee6e8638d12",
+        "labelKo": "물류성과지수(LPI)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-9ee6e8638d12|점|category=종합|detail=종합 부문 점수(1=낮음 ~ 5=높음)|A-031_lpi_overall",
+      "sourceCaveat": "[원본 버전] 세계은행 Logistics Performance Index. raw로 받은 API 일괄 다운로드 파일에는 6개 세부지수 중 \"Ease of arranging competitively priced shipments\"(LP.LPI.ITRN.XQ) 1개만 들어 있어, 종합지수(LP.LPI.OVRL.XQ)와 나머지 5개 세부지수를 세계은행 API에서 추가 수집하여 총 7개 지표로 보완함. [출처·링크] 검토의견 2번에 따라 지표별 딥링크와 재현 가능한 API 쿼리를 전건 기재함. [시계열 단절] 검토의견 3번에 대응 — LPI는 매년 조사되지 않고 2007·2010·2012·2014·2016·2018·2022년에만 시행됨(2020년은 코로나19로 미시행). 조사 미시행 연도는 값 자체가 존재하지 않으므로 행을 만들지 않고 time_interval을 irregular로 표기함. 또한 2023년 발표분이 원천 데이터에서는 2022년으로 표기되어 있음(조사 기간 2022-09-06~11-05). [구조] 검토의견 1번(최고·최저 요약 줄, 값 열 분산)은 종전 산출물의 문제이며 본 데이터셋 구조에서 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "물류성과지수(LPI) · 종합 — 종합 부문 점수(1=낮음 ~ 5=높음)",
+      "sourceLabelEn": "Logistics Performance Index: Overall",
+      "sourceNote": "[원본 버전] 세계은행 Logistics Performance Index. raw로 받은 API 일괄 다운로드 파일에는 6개 세부지수 중 \"Ease of arranging competitively priced shipments\"(LP.LPI.ITRN.XQ) 1개만 들어 있어, 종합지수(LP.LPI.OVRL.XQ)와 나머지 5개 세부지수를 세계은행 API에서 추가 수집하여 총 7개 지표로 보완함. [출처·링크] 검토의견 2번에 따라 지표별 딥링크와 재현 가능한 API 쿼리를 전건 기재함. [시계열 단절] 검토의견 3번에 대응 — LPI는 매년 조사되지 않고 2007·2010·2012·2014·2016·2018·2022년에만 시행됨(2020년은 코로나19로 미시행). 조사 미시행 연도는 값 자체가 존재하지 않으므로 행을 만들지 않고 time_interval을 irregular로 표기함. 또한 2023년 발표분이 원천 데이터에서는 2022년으로 표기되어 있음(조사 기간 2022-09-06~11-05). [구조] 검토의견 1번(최고·최저 요약 줄, 값 열 분산)은 종전 산출물의 문제이며 본 데이터셋 구조에서 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-031",
+        "indicatorId": "A-031_lpi_overall",
+        "sourceFileDecoded": "A-031_물류성과지수(LPI).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9ee6e8638d12|점",
+      "dimensionLabels": {
+        "category": "정시성",
+        "detail": "정시성 부문 점수(1=낮음 ~ 5=높음)"
+      },
+      "dimensions": {
+        "category": "정시성",
+        "detail": "정시성 부문 점수(1=낮음 ~ 5=높음)"
+      },
+      "displayLabel": "물류성과지수(LPI) · 정시성 — 정시성 부문 점수(1=낮음 ~ 5=높음)",
+      "indicatorId": "A-031_lpi_timeliness",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9ee6e8638d12",
+        "labelKo": "물류성과지수(LPI)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-9ee6e8638d12|점|category=정시성|detail=정시성 부문 점수(1=낮음 ~ 5=높음)|A-031_lpi_timeliness",
+      "sourceCaveat": "[원본 버전] 세계은행 Logistics Performance Index. raw로 받은 API 일괄 다운로드 파일에는 6개 세부지수 중 \"Ease of arranging competitively priced shipments\"(LP.LPI.ITRN.XQ) 1개만 들어 있어, 종합지수(LP.LPI.OVRL.XQ)와 나머지 5개 세부지수를 세계은행 API에서 추가 수집하여 총 7개 지표로 보완함. [출처·링크] 검토의견 2번에 따라 지표별 딥링크와 재현 가능한 API 쿼리를 전건 기재함. [시계열 단절] 검토의견 3번에 대응 — LPI는 매년 조사되지 않고 2007·2010·2012·2014·2016·2018·2022년에만 시행됨(2020년은 코로나19로 미시행). 조사 미시행 연도는 값 자체가 존재하지 않으므로 행을 만들지 않고 time_interval을 irregular로 표기함. 또한 2023년 발표분이 원천 데이터에서는 2022년으로 표기되어 있음(조사 기간 2022-09-06~11-05). [구조] 검토의견 1번(최고·최저 요약 줄, 값 열 분산)은 종전 산출물의 문제이며 본 데이터셋 구조에서 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "물류성과지수(LPI) · 정시성 — 정시성 부문 점수(1=낮음 ~ 5=높음)",
+      "sourceLabelEn": "Logistics Performance Index: Timeliness",
+      "sourceNote": "[원본 버전] 세계은행 Logistics Performance Index. raw로 받은 API 일괄 다운로드 파일에는 6개 세부지수 중 \"Ease of arranging competitively priced shipments\"(LP.LPI.ITRN.XQ) 1개만 들어 있어, 종합지수(LP.LPI.OVRL.XQ)와 나머지 5개 세부지수를 세계은행 API에서 추가 수집하여 총 7개 지표로 보완함. [출처·링크] 검토의견 2번에 따라 지표별 딥링크와 재현 가능한 API 쿼리를 전건 기재함. [시계열 단절] 검토의견 3번에 대응 — LPI는 매년 조사되지 않고 2007·2010·2012·2014·2016·2018·2022년에만 시행됨(2020년은 코로나19로 미시행). 조사 미시행 연도는 값 자체가 존재하지 않으므로 행을 만들지 않고 time_interval을 irregular로 표기함. 또한 2023년 발표분이 원천 데이터에서는 2022년으로 표기되어 있음(조사 기간 2022-09-06~11-05). [구조] 검토의견 1번(최고·최저 요약 줄, 값 열 분산)은 종전 산출물의 문제이며 본 데이터셋 구조에서 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-031",
+        "indicatorId": "A-031_lpi_timeliness",
+        "sourceFileDecoded": "A-031_물류성과지수(LPI).xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9ee6e8638d12|점",
+      "dimensionLabels": {
+        "category": "추적가능성",
+        "detail": "추적가능성 부문 점수(1=낮음 ~ 5=높음)"
+      },
+      "dimensions": {
+        "category": "추적가능성",
+        "detail": "추적가능성 부문 점수(1=낮음 ~ 5=높음)"
+      },
+      "displayLabel": "물류성과지수(LPI) · 추적가능성 — 추적가능성 부문 점수(1=낮음 ~ 5=높음)",
+      "indicatorId": "A-031_lpi_tracking_and_tracing",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9ee6e8638d12",
+        "labelKo": "물류성과지수(LPI)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-9ee6e8638d12|점|category=추적가능성|detail=추적가능성 부문 점수(1=낮음 ~ 5=높음)|A-031_lpi_tracking_and_tracing",
+      "sourceCaveat": "[원본 버전] 세계은행 Logistics Performance Index. raw로 받은 API 일괄 다운로드 파일에는 6개 세부지수 중 \"Ease of arranging competitively priced shipments\"(LP.LPI.ITRN.XQ) 1개만 들어 있어, 종합지수(LP.LPI.OVRL.XQ)와 나머지 5개 세부지수를 세계은행 API에서 추가 수집하여 총 7개 지표로 보완함. [출처·링크] 검토의견 2번에 따라 지표별 딥링크와 재현 가능한 API 쿼리를 전건 기재함. [시계열 단절] 검토의견 3번에 대응 — LPI는 매년 조사되지 않고 2007·2010·2012·2014·2016·2018·2022년에만 시행됨(2020년은 코로나19로 미시행). 조사 미시행 연도는 값 자체가 존재하지 않으므로 행을 만들지 않고 time_interval을 irregular로 표기함. 또한 2023년 발표분이 원천 데이터에서는 2022년으로 표기되어 있음(조사 기간 2022-09-06~11-05). [구조] 검토의견 1번(최고·최저 요약 줄, 값 열 분산)은 종전 산출물의 문제이며 본 데이터셋 구조에서 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "물류성과지수(LPI) · 추적가능성 — 추적가능성 부문 점수(1=낮음 ~ 5=높음)",
+      "sourceLabelEn": "Logistics Performance Index: Tracking and tracing",
+      "sourceNote": "[원본 버전] 세계은행 Logistics Performance Index. raw로 받은 API 일괄 다운로드 파일에는 6개 세부지수 중 \"Ease of arranging competitively priced shipments\"(LP.LPI.ITRN.XQ) 1개만 들어 있어, 종합지수(LP.LPI.OVRL.XQ)와 나머지 5개 세부지수를 세계은행 API에서 추가 수집하여 총 7개 지표로 보완함. [출처·링크] 검토의견 2번에 따라 지표별 딥링크와 재현 가능한 API 쿼리를 전건 기재함. [시계열 단절] 검토의견 3번에 대응 — LPI는 매년 조사되지 않고 2007·2010·2012·2014·2016·2018·2022년에만 시행됨(2020년은 코로나19로 미시행). 조사 미시행 연도는 값 자체가 존재하지 않으므로 행을 만들지 않고 time_interval을 irregular로 표기함. 또한 2023년 발표분이 원천 데이터에서는 2022년으로 표기되어 있음(조사 기간 2022-09-06~11-05). [구조] 검토의견 1번(최고·최저 요약 줄, 값 열 분산)은 종전 산출물의 문제이며 본 데이터셋 구조에서 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-031",
+        "indicatorId": "A-031_lpi_tracking_and_tracing",
+        "sourceFileDecoded": "A-031_물류성과지수(LPI).xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 7,
+      "key": "measure-9ee6e8638d12",
+      "labelKo": "물류성과지수(LPI)",
+      "recordCount": 49,
+      "unit": "점",
+      "unitFamily": "score"
+    }
+  ],
+  "observationCount": 49,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

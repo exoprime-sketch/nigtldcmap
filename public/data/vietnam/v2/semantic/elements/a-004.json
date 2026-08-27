@@ -1,0 +1,152 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 2,
+      "values": [
+        "국가빈곤선",
+        "국제빈곤선"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 2,
+      "values": [
+        "1일 3.00달러(2021 PPP) 미만 인구 비율",
+        "국가 빈곤선 이하 인구 비율"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 31,
+      "values": [
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022"
+      ]
+    }
+  ],
+  "elementId": "A-004",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 2,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-c6654ac430ab|%",
+      "dimensionLabels": {
+        "category": "국제빈곤선",
+        "detail": "1일 3.00달러(2021 PPP) 미만 인구 비율"
+      },
+      "dimensions": {
+        "category": "국제빈곤선",
+        "detail": "1일 3.00달러(2021 PPP) 미만 인구 비율"
+      },
+      "displayLabel": "극빈곤율 · 국제빈곤선 — 1일 3.00달러(2021 PPP) 미만 인구 비율",
+      "indicatorId": "A-004_poverty_rate_extreme_intl",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-c6654ac430ab",
+        "labelKo": "극빈곤율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-c6654ac430ab|%|category=국제빈곤선|detail=1일 3.00달러(2021 PPP) 미만 인구 비율|A-004_poverty_rate_extreme_intl",
+      "sourceCaveat": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-004 폴더 빈곤율극빈곤율.xlsx). [시계열 단절] 검토의견 1번 확인 — 2008→2010에 국제빈곤선 기준 극빈곤율은 17.6%→5.2%로 하락하는 반면 국가빈곤선 기준 빈곤율은 14.5%→20.7%로 상승함. 두 계열은 서로 다른 기준선이며, 국가빈곤선은 2011~2015년 계획기에 상향 개정되었고 국제선은 2021년 PPP로 재기준화되어 있음. 방향이 반대인 것은 오류가 아니라 기준선 개정 시점 차이임. 두 계열을 하나의 추세로 읽지 말 것. [정의 명확화] 검토의견 2번 확인 — SI.POV.NAHC는 국가 「소득/지출」 빈곤선 기준 빈곤율이며 다차원 빈곤지수(MPI)가 아님. 종전 제출본의 \"다차원 국가빈곤선\" 비고는 오기이므로 본 데이터셋에서는 사용하지 않음. [결측] 검토의견 3번 확인 — 조사 미시행 연도는 값을 비우고 M01로 표기함. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "극빈곤율 · 국제빈곤선 — 1일 3.00달러(2021 PPP) 미만 인구 비율",
+      "sourceLabelEn": "Poverty headcount ratio at $3.00 a day (2021 PPP) (% of population)",
+      "sourceNote": "1992-2022 중 18개년(1993, 1994, 1995, 1996, 1998, 1999, 2000, 2001, 2003, 2005, 2007, 2009, 2011, 2013, 2015, 2017, 2019, 2021)이 원천에 없음. 베트남 가계생활수준조사(VHLSS)가 격년 시행이기 때문임. 재확보 대상 1차 출처: 베트남 통계총국(GSO) VHLSS 결과보고서.",
+      "sourceProvenance": {
+        "elementId": "A-004",
+        "indicatorId": "A-004_poverty_rate_extreme_intl",
+        "sourceFileDecoded": "A-004_빈곤율; 극빈곤율.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-33137a759a42|%",
+      "dimensionLabels": {
+        "category": "국가빈곤선",
+        "detail": "국가 빈곤선 이하 인구 비율"
+      },
+      "dimensions": {
+        "category": "국가빈곤선",
+        "detail": "국가 빈곤선 이하 인구 비율"
+      },
+      "displayLabel": "빈곤율 · 국가빈곤선 — 국가 빈곤선 이하 인구 비율",
+      "indicatorId": "A-004_poverty_rate_national",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-33137a759a42",
+        "labelKo": "빈곤율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-33137a759a42|%|category=국가빈곤선|detail=국가 빈곤선 이하 인구 비율|A-004_poverty_rate_national",
+      "sourceCaveat": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-004 폴더 빈곤율극빈곤율.xlsx). [시계열 단절] 검토의견 1번 확인 — 2008→2010에 국제빈곤선 기준 극빈곤율은 17.6%→5.2%로 하락하는 반면 국가빈곤선 기준 빈곤율은 14.5%→20.7%로 상승함. 두 계열은 서로 다른 기준선이며, 국가빈곤선은 2011~2015년 계획기에 상향 개정되었고 국제선은 2021년 PPP로 재기준화되어 있음. 방향이 반대인 것은 오류가 아니라 기준선 개정 시점 차이임. 두 계열을 하나의 추세로 읽지 말 것. [정의 명확화] 검토의견 2번 확인 — SI.POV.NAHC는 국가 「소득/지출」 빈곤선 기준 빈곤율이며 다차원 빈곤지수(MPI)가 아님. 종전 제출본의 \"다차원 국가빈곤선\" 비고는 오기이므로 본 데이터셋에서는 사용하지 않음. [결측] 검토의견 3번 확인 — 조사 미시행 연도는 값을 비우고 M01로 표기함. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "빈곤율 · 국가빈곤선 — 국가 빈곤선 이하 인구 비율",
+      "sourceLabelEn": "Poverty headcount ratio at national poverty lines (% of population)",
+      "sourceNote": "1992-2022 중 15개년(1993, 1994, 1995, 1996, 1998, 1999, 2000, 2001, 2003, 2005, 2007, 2009, 2011, 2013, 2015)이 원천에 없음. 베트남 가계생활수준조사(VHLSS)가 격년 시행이기 때문임. 재확보 대상 1차 출처: 베트남 통계총국(GSO) VHLSS 결과보고서.",
+      "sourceProvenance": {
+        "elementId": "A-004",
+        "indicatorId": "A-004_poverty_rate_national",
+        "sourceFileDecoded": "A-004_빈곤율; 극빈곤율.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-c6654ac430ab",
+      "labelKo": "극빈곤율",
+      "recordCount": 31,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-33137a759a42",
+      "labelKo": "빈곤율",
+      "recordCount": 31,
+      "unit": "%",
+      "unitFamily": "percent"
+    }
+  ],
+  "observationCount": 62,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

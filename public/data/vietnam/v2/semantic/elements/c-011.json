@@ -1,0 +1,1660 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 39,
+      "values": [
+        "1단계",
+        "1심 형사재판 지표",
+        "2단계",
+        "3단계",
+        "4단계",
+        "OSAC Vietnam Country Security Report",
+        "UNODC 고의살인율 데이터포털",
+        "고의살인율(Intentional Homicide Rate)",
+        "공공데이터포털 여행경보 오픈API",
+        "공안부 공표 최소 공간단위",
+        "교통사고 지표",
+        "납치 위험",
+        "다발 범죄 유형",
+        "도시별 위협도",
+        "미 국무부 베트남 여행경보",
+        "미국 국무부 여행경보",
+        "발령 개시",
+        "범죄신고",
+        "베트남 푸꾸옥 해상 관광시 안전 유의 안내",
+        "실행 가능한 수집 경로",
+        "외교부 여행경보 4단계 정의 페이지",
+        "외교부 해외안전여행 베트남 국가페이지",
+        "응급환자(앰뷸런스)",
+        "인접국 캄보디아 여행경보 조정내용",
+        "전반 위협도",
+        "종합 범죄지수",
+        "종합 판정",
+        "주다낭 대한민국총영사관",
+        "주베트남 대한민국대사관(하노이)",
+        "주점 요금 시비 관련 안전공지",
+        "주호치민 대한민국총영사관",
+        "지역별 차등",
+        "최근 조정 관련 공지",
+        "치안 구조적 이슈",
+        "테러 위협",
+        "특별경보",
+        "폭력범죄",
+        "현재 등급",
+        "화재신고"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 26,
+      "values": [
+        "Country Security Report 종합평가",
+        "Intentional Homicide",
+        "Travel Advisory",
+        "Travel Advisory Level",
+        "全 국가·지역 여행경보 1단계 발령 공지",
+        "각국 안전여행 위험도에 따른 여행경보 단계 조정",
+        "경찰 예산 부족·부패 문제",
+        "긴급연락처(사건사고 등, 24시간)",
+        "대표번호(근무시간 중)",
+        "등급 체계",
+        "발생 통계 기반 범죄지수",
+        "베트남 내 지역별 경보 차등 여부",
+        "안전공지",
+        "여행경보·현지연락처",
+        "여행금지(흑색경보)",
+        "여행유의(남색경보)",
+        "여행자제(황색경보)",
+        "외교부_여행경보제도",
+        "음료 변조·마약담배·간헐적 무장강도",
+        "인구 10만명당 발생건수",
+        "전 지역",
+        "출국권고(적색경보)",
+        "특별여행주의보·특별여행경보(비정기 발령)",
+        "하노이·호치민",
+        "현지 치안 상황",
+        "휴대폰 절도·오토바이 날치기(2인조)·소매치기·주거침입(교민지역)·카드 스키밍"
+      ]
+    },
+    {
+      "key": "detail_2",
+      "labelKo": "detail_2",
+      "valueCount": 2,
+      "values": [
+        "상한(max)",
+        "하한(min)"
+      ]
+    },
+    {
+      "key": "period",
+      "labelKo": "기간",
+      "valueCount": 6,
+      "values": [
+        "2020-03",
+        "2023-11",
+        "2026-07",
+        "2026-07(조회시점)",
+        "2026-07-13",
+        "—"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 4,
+      "values": [
+        "2011",
+        "2020",
+        "2023",
+        "2026"
+      ]
+    }
+  ],
+  "elementId": "C-011",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 44,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-0b829adb9c34|지수",
+      "dimensionLabels": {
+        "category": "종합 범죄지수",
+        "detail": "발생 통계 기반 범죄지수"
+      },
+      "dimensions": {
+        "category": "종합 범죄지수",
+        "detail": "발생 통계 기반 범죄지수"
+      },
+      "displayLabel": "범죄 통계 (정량지표) · 종합 범죄지수 — 발생 통계 기반 범죄지수",
+      "indicatorId": "C-011_crime_index",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0b829adb9c34",
+        "labelKo": "범죄 통계 (정량지표)",
+        "unit": "지수",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-0b829adb9c34|지수|category=종합 범죄지수|detail=발생 통계 기반 범죄지수|C-011_crime_index",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. ‖ [Numbeo 수록 철회 2026-08-18] 종전에는 Numbeo 범죄지수 14개 세부지표와 원본링크·유효도시수 등 16행을 수록했으나, 해당 값이 정부 통계가 아닌 크라우드소싱 인식조사 결과여서 데이터셋에서 전량 제거하고 본 행에 사유만 남김. 제거된 지표: Crime Index, Safety Index, Level of crime, Property crimes, Violent crimes, Drug problems, Corruption/bribery, Home break-ins/theft worry, Mugging/robbery worry, Car theft worry, Vehicle items theft worry, Physical attack worry, Safety walking alone(daytime), Safety walking alone(nighttime). ‖ 이 제거로 C 카테고리의 재배포 「제한」 건수도 16건 감소함(Numbeo 약관상 공개 데이터피드 재게시 제한).",
+      "sourceLabel": "범죄 통계 (정량지표) · 종합 범죄지수 — 발생 통계 기반 범죄지수",
+      "sourceLabelEn": "Composite Crime Index (Incidence-Based)",
+      "sourceNote": "발생 통계 기반 범죄지수를 공표하는 공식 출처가 없음. 유일한 공개 대체원(Numbeo)은 크라우드소싱 인식조사로 지표 정의와 불일치. 재확보 대상 1차 출처: 베트남 공안부 연간 치안보고(비공개 추정) 또는 성별 통계연감(Niên giám thống kê).",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_crime_index",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 24,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-296f3bc77dbf|OSAC 대미기준 등급",
+      "dimensionLabels": {
+        "category": "도시별 위협도",
+        "detail": "하노이·호치민"
+      },
+      "dimensions": {
+        "category": "도시별 위협도",
+        "detail": "하노이·호치민"
+      },
+      "displayLabel": "현지 치안 상황 서술 (OSAC/미 국무부) · 도시별 위협도 — 하노이·호치민",
+      "indicatorId": "C-011_local_security_status_by_city_threat_level",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-296f3bc77dbf",
+        "labelKo": "현지 치안 상황 서술 (OSAC/미 국무부)",
+        "unit": "OSAC 대미기준 등급",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-296f3bc77dbf|OSAC 대미기준 등급|category=도시별 위협도|detail=하노이·호치민|C-011_local_security_status_by_city_threat_level",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [라이선스 검증 2026-08-15] 미국 연방정부 저작물은 17 U.S.C. §105에 따라 퍼블릭 도메인. 대한민국 정부 공공저작물은 공공누리 기준 출처표시 조건 이용 허용. → 재배포 「가능」. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ 미국 정부 활동 기준 상대평가로, 베트남 절대적 위험도와는 다름",
+      "sourceLabel": "현지 치안 상황 서술 (OSAC/미 국무부) · 도시별 위협도 — 하노이·호치민",
+      "sourceLabelEn": "Local Security Status By City Threat Level",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [라이선스 검증 2026-08-15] 미국 연방정부 저작물은 17 U.S.C. §105에 따라 퍼블릭 도메인. 대한민국 정부 공공저작물은 공공누리 기준 출처표시 조건 이용 허용. → 재배포 「가능」. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ 미국 정부 활동 기준 상대평가로, 베트남 절대적 위험도와는 다름",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_local_security_status_by_city_threat_level",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-798dc5a7591c|—",
+      "dimensionLabels": {
+        "category": "다발 범죄 유형",
+        "detail": "휴대폰 절도·오토바이 날치기(2인조)·소매치기·주거침입(교민지역)·카드 스키밍"
+      },
+      "dimensions": {
+        "category": "다발 범죄 유형",
+        "detail": "휴대폰 절도·오토바이 날치기(2인조)·소매치기·주거침입(교민지역)·카드 스키밍"
+      },
+      "displayLabel": "현지 치안 상황 서술 (OSAC/미 국무부) · 다발 범죄 유형 — 휴대폰 절도·오토바이 날치기(2인조)·소매치기·주거침입(교민지역)·카드 스키밍",
+      "indicatorId": "C-011_local_security_status_multiple_crime_type",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-798dc5a7591c",
+        "labelKo": "현지 치안 상황 서술 (OSAC/미 국무부)",
+        "unit": "—",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-798dc5a7591c|—|category=다발 범죄 유형|detail=휴대폰 절도·오토바이 날치기(2인조)·소매치기·주거침입(교민지역)·카드 스키밍|C-011_local_security_status_multiple_crime_type",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [라이선스 검증 2026-08-15] 미국 연방정부 저작물은 17 U.S.C. §105에 따라 퍼블릭 도메인. 대한민국 정부 공공저작물은 공공누리 기준 출처표시 조건 이용 허용. → 재배포 「가능」. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ 성추행 사례 2019년 이후 증가 추세로 별도 언급",
+      "sourceLabel": "현지 치안 상황 서술 (OSAC/미 국무부) · 다발 범죄 유형 — 휴대폰 절도·오토바이 날치기(2인조)·소매치기·주거침입(교민지역)·카드 스키밍",
+      "sourceLabelEn": "Local Security Status Multiple Crime Type",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [라이선스 검증 2026-08-15] 미국 연방정부 저작물은 17 U.S.C. §105에 따라 퍼블릭 도메인. 대한민국 정부 공공저작물은 공공누리 기준 출처표시 조건 이용 허용. → 재배포 「가능」. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ 성추행 사례 2019년 이후 증가 추세로 별도 언급",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_local_security_status_multiple_crime_type",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-798dc5a7591c|—",
+      "dimensionLabels": {
+        "category": "납치 위험"
+      },
+      "dimensions": {
+        "category": "납치 위험"
+      },
+      "displayLabel": "현지 치안 상황 서술 (OSAC/미 국무부) · 납치 위험 — —",
+      "indicatorId": "C-011_local_security_status_napchi_risk",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-798dc5a7591c",
+        "labelKo": "현지 치안 상황 서술 (OSAC/미 국무부)",
+        "unit": "—",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-798dc5a7591c|—|category=납치 위험|C-011_local_security_status_napchi_risk",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [라이선스 검증 2026-08-15] 미국 연방정부 저작물은 17 U.S.C. §105에 따라 퍼블릭 도메인. 대한민국 정부 공공저작물은 공공누리 기준 출처표시 조건 이용 허용. → 재배포 「가능」. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ 주로 가족관계 사건에 국한, 대상 무작위성 낮음",
+      "sourceLabel": "현지 치안 상황 서술 (OSAC/미 국무부) · 납치 위험 — —",
+      "sourceLabelEn": "Local Security Status Napchi Risk",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [라이선스 검증 2026-08-15] 미국 연방정부 저작물은 17 U.S.C. §105에 따라 퍼블릭 도메인. 대한민국 정부 공공저작물은 공공누리 기준 출처표시 조건 이용 허용. → 재배포 「가능」. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ 주로 가족관계 사건에 국한, 대상 무작위성 낮음",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_local_security_status_napchi_risk",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bf5054fe17d3|위협등급",
+      "dimensionLabels": {
+        "category": "전반 위협도",
+        "detail": "Country Security Report 종합평가"
+      },
+      "dimensions": {
+        "category": "전반 위협도",
+        "detail": "Country Security Report 종합평가"
+      },
+      "displayLabel": "현지 치안 상황 서술 (OSAC/미 국무부) · 전반 위협도 — Country Security Report 종합평가",
+      "indicatorId": "C-011_local_security_status_overall_threat_level",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bf5054fe17d3",
+        "labelKo": "현지 치안 상황 서술 (OSAC/미 국무부)",
+        "unit": "위협등급",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-bf5054fe17d3|위협등급|category=전반 위협도|detail=Country Security Report 종합평가|C-011_local_security_status_overall_threat_level",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [라이선스 검증 2026-08-15] 미국 연방정부 저작물은 17 U.S.C. §105에 따라 퍼블릭 도메인. 대한민국 정부 공공저작물은 공공누리 기준 출처표시 조건 이용 허용. → 재배포 「가능」. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ 비폭력 범죄(절도·소매치기) 중심, 전반적으로 안정적",
+      "sourceLabel": "현지 치안 상황 서술 (OSAC/미 국무부) · 전반 위협도 — Country Security Report 종합평가",
+      "sourceLabelEn": "Local Security Status Overall Threat Level",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [라이선스 검증 2026-08-15] 미국 연방정부 저작물은 17 U.S.C. §105에 따라 퍼블릭 도메인. 대한민국 정부 공공저작물은 공공누리 기준 출처표시 조건 이용 허용. → 재배포 「가능」. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ 비폭력 범죄(절도·소매치기) 중심, 전반적으로 안정적",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_local_security_status_overall_threat_level",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-798dc5a7591c|—",
+      "dimensionLabels": {
+        "category": "치안 구조적 이슈",
+        "detail": "경찰 예산 부족·부패 문제"
+      },
+      "dimensions": {
+        "category": "치안 구조적 이슈",
+        "detail": "경찰 예산 부족·부패 문제"
+      },
+      "displayLabel": "현지 치안 상황 서술 (OSAC/미 국무부) · 치안 구조적 이슈 — 경찰 예산 부족·부패 문제",
+      "indicatorId": "C-011_local_security_status_security_structural_issue",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-798dc5a7591c",
+        "labelKo": "현지 치안 상황 서술 (OSAC/미 국무부)",
+        "unit": "—",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-798dc5a7591c|—|category=치안 구조적 이슈|detail=경찰 예산 부족·부패 문제|C-011_local_security_status_security_structural_issue",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [라이선스 검증 2026-08-15] 미국 연방정부 저작물은 17 U.S.C. §105에 따라 퍼블릭 도메인. 대한민국 정부 공공저작물은 공공누리 기준 출처표시 조건 이용 허용. → 재배포 「가능」. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ Numbeo 부패 우려 지수 72.92(높음)와 정합",
+      "sourceLabel": "현지 치안 상황 서술 (OSAC/미 국무부) · 치안 구조적 이슈 — 경찰 예산 부족·부패 문제",
+      "sourceLabelEn": "Local Security Status Security Structural Issue",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [라이선스 검증 2026-08-15] 미국 연방정부 저작물은 17 U.S.C. §105에 따라 퍼블릭 도메인. 대한민국 정부 공공저작물은 공공누리 기준 출처표시 조건 이용 허용. → 재배포 「가능」. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ Numbeo 부패 우려 지수 72.92(높음)와 정합",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_local_security_status_security_structural_issue",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-798dc5a7591c|—",
+      "dimensionLabels": {
+        "category": "테러 위협"
+      },
+      "dimensions": {
+        "category": "테러 위협"
+      },
+      "displayLabel": "현지 치안 상황 서술 (OSAC/미 국무부) · 테러 위협 — —",
+      "indicatorId": "C-011_local_security_status_terrorism_threat",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-798dc5a7591c",
+        "labelKo": "현지 치안 상황 서술 (OSAC/미 국무부)",
+        "unit": "—",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-798dc5a7591c|—|category=테러 위협|C-011_local_security_status_terrorism_threat",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [라이선스 검증 2026-08-15] 미국 연방정부 저작물은 17 U.S.C. §105에 따라 퍼블릭 도메인. 대한민국 정부 공공저작물은 공공누리 기준 출처표시 조건 이용 허용. → 재배포 「가능」. ‖ —",
+      "sourceLabel": "현지 치안 상황 서술 (OSAC/미 국무부) · 테러 위협 — —",
+      "sourceLabelEn": "Local Security Status Terrorism Threat",
+      "sourceNote": "해당 국가에 그 현상·제도 자체가 존재하지 않음",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_local_security_status_terrorism_threat",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-798dc5a7591c|—",
+      "dimensionLabels": {
+        "category": "폭력범죄",
+        "detail": "음료 변조·마약담배·간헐적 무장강도"
+      },
+      "dimensions": {
+        "category": "폭력범죄",
+        "detail": "음료 변조·마약담배·간헐적 무장강도"
+      },
+      "displayLabel": "현지 치안 상황 서술 (OSAC/미 국무부) · 폭력범죄 — 음료 변조·마약담배·간헐적 무장강도",
+      "indicatorId": "C-011_local_security_status_violent_crime",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-798dc5a7591c",
+        "labelKo": "현지 치안 상황 서술 (OSAC/미 국무부)",
+        "unit": "—",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-798dc5a7591c|—|category=폭력범죄|detail=음료 변조·마약담배·간헐적 무장강도|C-011_local_security_status_violent_crime",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [라이선스 검증 2026-08-15] 미국 연방정부 저작물은 17 U.S.C. §105에 따라 퍼블릭 도메인. 대한민국 정부 공공저작물은 공공누리 기준 출처표시 조건 이용 허용. → 재배포 「가능」. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ —",
+      "sourceLabel": "현지 치안 상황 서술 (OSAC/미 국무부) · 폭력범죄 — 음료 변조·마약담배·간헐적 무장강도",
+      "sourceLabelEn": "Local Security Status Violent Crime",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [라이선스 검증 2026-08-15] 미국 연방정부 저작물은 17 U.S.C. §105에 따라 퍼블릭 도메인. 대한민국 정부 공공저작물은 공공누리 기준 출처표시 조건 이용 허용. → 재배포 「가능」. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ —",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_local_security_status_violent_crime",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5eb9e4cf6c29|전화",
+      "dimensionLabels": {
+        "category": "주다낭 대한민국총영사관",
+        "detail": "대표번호(근무시간 중)"
+      },
+      "dimensions": {
+        "category": "주다낭 대한민국총영사관",
+        "detail": "대표번호(근무시간 중)"
+      },
+      "displayLabel": "재외공관 연락처 · 주다낭 대한민국총영사관 — 대표번호(근무시간 중)",
+      "indicatorId": "C-011_overseas_mission_contact_in_danang_consulate",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5eb9e4cf6c29",
+        "labelKo": "재외공관 연락처",
+        "unit": "전화",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-5eb9e4cf6c29|전화|category=주다낭 대한민국총영사관|detail=대표번호(근무시간 중)|C-011_overseas_mission_contact_in_danang_consulate",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 주소: Tang 3-4, Lo A1-2 Chuong Duong, P.Khue My, Q.Ngu Hanh Son, T.P Da Nang, Vietnam",
+      "sourceLabel": "재외공관 연락처 · 주다낭 대한민국총영사관 — 대표번호(근무시간 중)",
+      "sourceLabelEn": "Overseas Mission Contact In Danang Consulate",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 주소: Tang 3-4, Lo A1-2 Chuong Duong, P.Khue My, Q.Ngu Hanh Son, T.P Da Nang, Vietnam",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_overseas_mission_contact_in_danang_consulate",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 30,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5eb9e4cf6c29|전화",
+      "dimensionLabels": {
+        "category": "주다낭 대한민국총영사관",
+        "detail": "긴급연락처(사건사고 등, 24시간)"
+      },
+      "dimensions": {
+        "category": "주다낭 대한민국총영사관",
+        "detail": "긴급연락처(사건사고 등, 24시간)"
+      },
+      "displayLabel": "재외공관 연락처 · 주다낭 대한민국총영사관 — 긴급연락처(사건사고 등, 24시간)",
+      "indicatorId": "C-011_overseas_mission_contact_in_danang_consulate_2026",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5eb9e4cf6c29",
+        "labelKo": "재외공관 연락처",
+        "unit": "전화",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-5eb9e4cf6c29|전화|category=주다낭 대한민국총영사관|detail=긴급연락처(사건사고 등, 24시간)|C-011_overseas_mission_contact_in_danang_consulate_2026",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ E-mail: danang@mofa.go.kr",
+      "sourceLabel": "재외공관 연락처 · 주다낭 대한민국총영사관 — 긴급연락처(사건사고 등, 24시간)",
+      "sourceLabelEn": "Overseas Mission Contact In Danang Consulate 2026",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ E-mail: danang@mofa.go.kr",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_overseas_mission_contact_in_danang_consulate_2026",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 31,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5eb9e4cf6c29|전화",
+      "dimensionLabels": {
+        "category": "주호치민 대한민국총영사관",
+        "detail": "대표번호(근무시간 중)"
+      },
+      "dimensions": {
+        "category": "주호치민 대한민국총영사관",
+        "detail": "대표번호(근무시간 중)"
+      },
+      "displayLabel": "재외공관 연락처 · 주호치민 대한민국총영사관 — 대표번호(근무시간 중)",
+      "indicatorId": "C-011_overseas_mission_contact_in_hcmc_consulate",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5eb9e4cf6c29",
+        "labelKo": "재외공관 연락처",
+        "unit": "전화",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-5eb9e4cf6c29|전화|category=주호치민 대한민국총영사관|detail=대표번호(근무시간 중)|C-011_overseas_mission_contact_in_hcmc_consulate",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 주소: 107 Nguyen Du St., Dist 1, Ho Chi Minh city, Vietnam",
+      "sourceLabel": "재외공관 연락처 · 주호치민 대한민국총영사관 — 대표번호(근무시간 중)",
+      "sourceLabelEn": "Overseas Mission Contact In Hcmc Consulate",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 주소: 107 Nguyen Du St., Dist 1, Ho Chi Minh city, Vietnam",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_overseas_mission_contact_in_hcmc_consulate",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 28,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5eb9e4cf6c29|전화",
+      "dimensionLabels": {
+        "category": "주호치민 대한민국총영사관",
+        "detail": "긴급연락처(사건사고 등, 24시간)"
+      },
+      "dimensions": {
+        "category": "주호치민 대한민국총영사관",
+        "detail": "긴급연락처(사건사고 등, 24시간)"
+      },
+      "displayLabel": "재외공관 연락처 · 주호치민 대한민국총영사관 — 긴급연락처(사건사고 등, 24시간)",
+      "indicatorId": "C-011_overseas_mission_contact_in_hcmc_consulate_2026",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5eb9e4cf6c29",
+        "labelKo": "재외공관 연락처",
+        "unit": "전화",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-5eb9e4cf6c29|전화|category=주호치민 대한민국총영사관|detail=긴급연락처(사건사고 등, 24시간)|C-011_overseas_mission_contact_in_hcmc_consulate_2026",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ E-mail: hcm02@mofa.go.kr",
+      "sourceLabel": "재외공관 연락처 · 주호치민 대한민국총영사관 — 긴급연락처(사건사고 등, 24시간)",
+      "sourceLabelEn": "Overseas Mission Contact In Hcmc Consulate 2026",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ E-mail: hcm02@mofa.go.kr",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_overseas_mission_contact_in_hcmc_consulate_2026",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 29,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5eb9e4cf6c29|전화",
+      "dimensionLabels": {
+        "category": "주베트남 대한민국대사관(하노이)",
+        "detail": "대표번호(근무시간 중)"
+      },
+      "dimensions": {
+        "category": "주베트남 대한민국대사관(하노이)",
+        "detail": "대표번호(근무시간 중)"
+      },
+      "displayLabel": "재외공관 연락처 · 주베트남 대한민국대사관(하노이) — 대표번호(근무시간 중)",
+      "indicatorId": "C-011_overseas_mission_contact_in_vietnam_embassy",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5eb9e4cf6c29",
+        "labelKo": "재외공관 연락처",
+        "unit": "전화",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-5eb9e4cf6c29|전화|category=주베트남 대한민국대사관(하노이)|detail=대표번호(근무시간 중)|C-011_overseas_mission_contact_in_vietnam_embassy",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 주소: SQ4, Do Nhuan, Khu Ngoai Giao Doan, Xuan Tao, Bac Tu Liem, Hanoi, Vietnam",
+      "sourceLabel": "재외공관 연락처 · 주베트남 대한민국대사관(하노이) — 대표번호(근무시간 중)",
+      "sourceLabelEn": "Overseas Mission Contact In Vietnam Embassy",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 주소: SQ4, Do Nhuan, Khu Ngoai Giao Doan, Xuan Tao, Bac Tu Liem, Hanoi, Vietnam",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_overseas_mission_contact_in_vietnam_embassy",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 26,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5eb9e4cf6c29|전화",
+      "dimensionLabels": {
+        "category": "주베트남 대한민국대사관(하노이)",
+        "detail": "긴급연락처(사건사고 등, 24시간)"
+      },
+      "dimensions": {
+        "category": "주베트남 대한민국대사관(하노이)",
+        "detail": "긴급연락처(사건사고 등, 24시간)"
+      },
+      "displayLabel": "재외공관 연락처 · 주베트남 대한민국대사관(하노이) — 긴급연락처(사건사고 등, 24시간)",
+      "indicatorId": "C-011_overseas_mission_contact_in_vietnam_embassy_2026",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5eb9e4cf6c29",
+        "labelKo": "재외공관 연락처",
+        "unit": "전화",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-5eb9e4cf6c29|전화|category=주베트남 대한민국대사관(하노이)|detail=긴급연락처(사건사고 등, 24시간)|C-011_overseas_mission_contact_in_vietnam_embassy_2026",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ E-mail: korembviet@mofa.go.kr",
+      "sourceLabel": "재외공관 연락처 · 주베트남 대한민국대사관(하노이) — 긴급연락처(사건사고 등, 24시간)",
+      "sourceLabelEn": "Overseas Mission Contact In Vietnam Embassy 2026",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ E-mail: korembviet@mofa.go.kr",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_overseas_mission_contact_in_vietnam_embassy_2026",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 27,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-88bd77245715|—",
+      "dimensionLabels": {
+        "category": "종합 판정"
+      },
+      "dimensions": {
+        "category": "종합 판정"
+      },
+      "displayLabel": "성 단위 치안지표 공표 여부 · 종합 판정",
+      "indicatorId": "C-011_province_unit_security_comprehensive_determination",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-88bd77245715",
+        "labelKo": "성 단위 치안지표 공표 여부",
+        "unit": "—",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-88bd77245715|—|category=종합 판정|C-011_province_unit_security_comprehensive_determination",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ ★검토의견 「성별 정량지수 존재 여부」 대응 결과: 성급 통계지표체계(HTCTTK cấp Tỉnh)에 교통사고·1심 형사재판 지표가 성 단위로 정의되어 있으나, 전국 63(→34)개 성을 한 표에서 비교할 수 있는 공개 데이터셋은 확인되지 않음. 공안부(Bộ Công an)는 월간 전국 집계만 공표함. 결론: 부분공표 — 성별 전수 수집은 성별 통계연감 개별 수집 방식이어야 함",
+      "sourceLabel": "성 단위 치안지표 공표 여부 · 종합 판정",
+      "sourceLabelEn": "Province Unit Security Comprehensive Determination",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ ★검토의견 「성별 정량지수 존재 여부」 대응 결과: 성급 통계지표체계(HTCTTK cấp Tỉnh)에 교통사고·1심 형사재판 지표가 성 단위로 정의되어 있으나, 전국 63(→34)개 성을 한 표에서 비교할 수 있는 공개 데이터셋은 확인되지 않음. 공안부(Bộ Công an)는 월간 전국 집계만 공표함. 결론: 부분공표 — 성별 전수 수집은 성별 통계연감 개별 수집 방식이어야 함",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_province_unit_security_comprehensive_determination",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 44,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-b42a728448e2|—",
+      "dimensionLabels": {
+        "category": "실행 가능한 수집 경로"
+      },
+      "dimensions": {
+        "category": "실행 가능한 수집 경로"
+      },
+      "displayLabel": "성 단위 치안지표 · 실행 가능한 수집 경로",
+      "indicatorId": "C-011_province_unit_security_conduct_available_count_intensive",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b42a728448e2",
+        "labelKo": "성 단위 치안지표",
+        "unit": "—",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-b42a728448e2|—|category=실행 가능한 수집 경로|C-011_province_unit_security_conduct_available_count_intensive",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [라이선스 검증 2026-08-15] 베트남 지식재산법 제15조는 법률규범문서(văn bản quy phạm pháp luật) 및 그 공식 번역문을 저작권 보호 대상에서 제외함. 정부 공보·부처 공식 게재문의 법령 본문·수치는 저작권 보호 대상이 아니므로 재배포 「가능」으로 판정. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ ★검토의견 「성별 정량지수 존재 여부」 대응 결과: 성급 통계지표체계(HTCTTK cấp Tỉnh)에 교통사고·1심 형사재판 지표가 성 단위로 정의되어 있으나, 전국 63(→34)개 성을 한 표에서 비교할 수 있는 공개 데이터셋은 확인되지 않음. 공안부(Bộ Công an)는 월간 전국 집계만 공표함. 결론: 부분공표 — 성별 전수 수집은 성별 통계연감 개별 수집 방식이어야 함",
+      "sourceLabel": "성 단위 치안지표 · 실행 가능한 수집 경로",
+      "sourceLabelEn": "Province Unit Security Conduct Available Count Intensive",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [라이선스 검증 2026-08-15] 베트남 지식재산법 제15조는 법률규범문서(văn bản quy phạm pháp luật) 및 그 공식 번역문을 저작권 보호 대상에서 제외함. 정부 공보·부처 공식 게재문의 법령 본문·수치는 저작권 보호 대상이 아니므로 재배포 「가능」으로 판정. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ ★검토의견 「성별 정량지수 존재 여부」 대응 결과: 성급 통계지표체계(HTCTTK cấp Tỉnh)에 교통사고·1심 형사재판 지표가 성 단위로 정의되어 있으나, 전국 63(→34)개 성을 한 표에서 비교할 수 있는 공개 데이터셋은 확인되지 않음. 공안부(Bộ Công an)는 월간 전국 집계만 공표함. 결론: 부분공표 — 성별 전수 수집은 성별 통계연감 개별 수집 방식이어야 함",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_province_unit_security_conduct_available_count_intensive",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 48,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-b42a728448e2|—",
+      "dimensionLabels": {
+        "category": "공안부 공표 최소 공간단위"
+      },
+      "dimensions": {
+        "category": "공안부 공표 최소 공간단위"
+      },
+      "displayLabel": "성 단위 치안지표 · 공안부 공표 최소 공간단위",
+      "indicatorId": "C-011_province_unit_security_gotan_ministry_publication_min",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b42a728448e2",
+        "labelKo": "성 단위 치안지표",
+        "unit": "—",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-b42a728448e2|—|category=공안부 공표 최소 공간단위|C-011_province_unit_security_gotan_ministry_publication_min",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [라이선스 검증 2026-08-15] 베트남 지식재산법 제15조는 법률규범문서(văn bản quy phạm pháp luật) 및 그 공식 번역문을 저작권 보호 대상에서 제외함. 정부 공보·부처 공식 게재문의 법령 본문·수치는 저작권 보호 대상이 아니므로 재배포 「가능」으로 판정. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ ★검토의견 「성별 정량지수 존재 여부」 대응 결과: 성급 통계지표체계(HTCTTK cấp Tỉnh)에 교통사고·1심 형사재판 지표가 성 단위로 정의되어 있으나, 전국 63(→34)개 성을 한 표에서 비교할 수 있는 공개 데이터셋은 확인되지 않음. 공안부(Bộ Công an)는 월간 전국 집계만 공표함. 결론: 부분공표 — 성별 전수 수집은 성별 통계연감 개별 수집 방식이어야 함",
+      "sourceLabel": "성 단위 치안지표 · 공안부 공표 최소 공간단위",
+      "sourceLabelEn": "Province Unit Security Gotan Ministry Publication Min",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [라이선스 검증 2026-08-15] 베트남 지식재산법 제15조는 법률규범문서(văn bản quy phạm pháp luật) 및 그 공식 번역문을 저작권 보호 대상에서 제외함. 정부 공보·부처 공식 게재문의 법령 본문·수치는 저작권 보호 대상이 아니므로 재배포 「가능」으로 판정. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ ★검토의견 「성별 정량지수 존재 여부」 대응 결과: 성급 통계지표체계(HTCTTK cấp Tỉnh)에 교통사고·1심 형사재판 지표가 성 단위로 정의되어 있으나, 전국 63(→34)개 성을 한 표에서 비교할 수 있는 공개 데이터셋은 확인되지 않음. 공안부(Bộ Công an)는 월간 전국 집계만 공표함. 결론: 부분공표 — 성별 전수 수집은 성별 통계연감 개별 수집 방식이어야 함",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_province_unit_security_gotan_ministry_publication_min",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 47,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-b42a728448e2|—",
+      "dimensionLabels": {
+        "category": "1심 형사재판 지표"
+      },
+      "dimensions": {
+        "category": "1심 형사재판 지표"
+      },
+      "displayLabel": "성 단위 치안지표 · 1심 형사재판 지표",
+      "indicatorId": "C-011_province_unit_security_primary_field_survey_edition",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b42a728448e2",
+        "labelKo": "성 단위 치안지표",
+        "unit": "—",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-b42a728448e2|—|category=1심 형사재판 지표|C-011_province_unit_security_primary_field_survey_edition",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ ★검토의견 「성별 정량지수 존재 여부」 대응 결과: 성급 통계지표체계(HTCTTK cấp Tỉnh)에 교통사고·1심 형사재판 지표가 성 단위로 정의되어 있으나, 전국 63(→34)개 성을 한 표에서 비교할 수 있는 공개 데이터셋은 확인되지 않음. 공안부(Bộ Công an)는 월간 전국 집계만 공표함. 결론: 부분공표 — 성별 전수 수집은 성별 통계연감 개별 수집 방식이어야 함",
+      "sourceLabel": "성 단위 치안지표 · 1심 형사재판 지표",
+      "sourceLabelEn": "Province Unit Security Primary Field Survey Edition",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ ★검토의견 「성별 정량지수 존재 여부」 대응 결과: 성급 통계지표체계(HTCTTK cấp Tỉnh)에 교통사고·1심 형사재판 지표가 성 단위로 정의되어 있으나, 전국 63(→34)개 성을 한 표에서 비교할 수 있는 공개 데이터셋은 확인되지 않음. 공안부(Bộ Công an)는 월간 전국 집계만 공표함. 결론: 부분공표 — 성별 전수 수집은 성별 통계연감 개별 수집 방식이어야 함",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_province_unit_security_primary_field_survey_edition",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 46,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-b42a728448e2|—",
+      "dimensionLabels": {
+        "category": "교통사고 지표"
+      },
+      "dimensions": {
+        "category": "교통사고 지표"
+      },
+      "displayLabel": "성 단위 치안지표 · 교통사고 지표",
+      "indicatorId": "C-011_province_unit_security_traffic_accident_indicator",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b42a728448e2",
+        "labelKo": "성 단위 치안지표",
+        "unit": "—",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-b42a728448e2|—|category=교통사고 지표|C-011_province_unit_security_traffic_accident_indicator",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ ★검토의견 「성별 정량지수 존재 여부」 대응 결과: 성급 통계지표체계(HTCTTK cấp Tỉnh)에 교통사고·1심 형사재판 지표가 성 단위로 정의되어 있으나, 전국 63(→34)개 성을 한 표에서 비교할 수 있는 공개 데이터셋은 확인되지 않음. 공안부(Bộ Công an)는 월간 전국 집계만 공표함. 결론: 부분공표 — 성별 전수 수집은 성별 통계연감 개별 수집 방식이어야 함",
+      "sourceLabel": "성 단위 치안지표 · 교통사고 지표",
+      "sourceLabelEn": "Province Unit Security Traffic Accident Indicator",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ ★검토의견 「성별 정량지수 존재 여부」 대응 결과: 성급 통계지표체계(HTCTTK cấp Tỉnh)에 교통사고·1심 형사재판 지표가 성 단위로 정의되어 있으나, 전국 63(→34)개 성을 한 표에서 비교할 수 있는 공개 데이터셋은 확인되지 않음. 공안부(Bộ Công an)는 월간 전국 집계만 공표함. 결론: 부분공표 — 성별 전수 수집은 성별 통계연감 개별 수집 방식이어야 함",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_province_unit_security_traffic_accident_indicator",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 45,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-10857c0c1446|공지일",
+      "dimensionLabels": {
+        "category": "주점 요금 시비 관련 안전공지",
+        "detail": "안전공지"
+      },
+      "dimensions": {
+        "category": "주점 요금 시비 관련 안전공지",
+        "detail": "안전공지"
+      },
+      "displayLabel": "최근 안전공지 (2026-07 기준) · 주점 요금 시비 관련 안전공지 — 안전공지",
+      "indicatorId": "C-011_recent_safety_notice_bar_fee_dispute_related_safety",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-10857c0c1446",
+        "labelKo": "최근 안전공지 (2026-07 기준)",
+        "unit": "공지일",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-10857c0c1446|공지일|category=주점 요금 시비 관련 안전공지|detail=안전공지|C-011_recent_safety_notice_bar_fee_dispute_related_safety",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 공지 제목만 확보, 본문 미열람",
+      "sourceLabel": "최근 안전공지 (2026-07 기준) · 주점 요금 시비 관련 안전공지 — 안전공지",
+      "sourceLabelEn": "Recent Safety Notice Bar Fee Dispute Related Safety",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 공지 제목만 확보, 본문 미열람",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_recent_safety_notice_bar_fee_dispute_related_safety",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 37,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-10857c0c1446|공지일",
+      "dimensionLabels": {
+        "category": "인접국 캄보디아 여행경보 조정내용",
+        "detail": "안전공지"
+      },
+      "dimensions": {
+        "category": "인접국 캄보디아 여행경보 조정내용",
+        "detail": "안전공지"
+      },
+      "displayLabel": "최근 안전공지 (2026-07 기준) · 인접국 캄보디아 여행경보 조정내용 — 안전공지",
+      "indicatorId": "C-011_recent_safety_notice_neighboring_country_cambodia_travel",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-10857c0c1446",
+        "labelKo": "최근 안전공지 (2026-07 기준)",
+        "unit": "공지일",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-10857c0c1446|공지일|category=인접국 캄보디아 여행경보 조정내용|detail=안전공지|C-011_recent_safety_notice_neighboring_country_cambodia_travel",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 공지 제목만 확보, 본문 미열람",
+      "sourceLabel": "최근 안전공지 (2026-07 기준) · 인접국 캄보디아 여행경보 조정내용 — 안전공지",
+      "sourceLabelEn": "Recent Safety Notice Neighboring Country Cambodia Travel",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 공지 제목만 확보, 본문 미열람",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_recent_safety_notice_neighboring_country_cambodia_travel",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 35,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-10857c0c1446|공지일",
+      "dimensionLabels": {
+        "category": "베트남 푸꾸옥 해상 관광시 안전 유의 안내",
+        "detail": "안전공지"
+      },
+      "dimensions": {
+        "category": "베트남 푸꾸옥 해상 관광시 안전 유의 안내",
+        "detail": "안전공지"
+      },
+      "displayLabel": "최근 안전공지 (2026-07 기준) · 베트남 푸꾸옥 해상 관광시 안전 유의 안내 — 안전공지",
+      "indicatorId": "C-011_recent_safety_notice_vietnam_phu_quoc_offshore",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-10857c0c1446",
+        "labelKo": "최근 안전공지 (2026-07 기준)",
+        "unit": "공지일",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-10857c0c1446|공지일|category=베트남 푸꾸옥 해상 관광시 안전 유의 안내|detail=안전공지|C-011_recent_safety_notice_vietnam_phu_quoc_offshore",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 공지 제목만 확보, 본문 미열람",
+      "sourceLabel": "최근 안전공지 (2026-07 기준) · 베트남 푸꾸옥 해상 관광시 안전 유의 안내 — 안전공지",
+      "sourceLabelEn": "Recent Safety Notice Vietnam Phu Quoc Offshore",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 공지 제목만 확보, 본문 미열람",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_recent_safety_notice_vietnam_phu_quoc_offshore",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 36,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a2c3c0328922|URL",
+      "dimensionLabels": {
+        "category": "외교부 해외안전여행 베트남 국가페이지",
+        "detail": "여행경보·현지연락처"
+      },
+      "dimensions": {
+        "category": "외교부 해외안전여행 베트남 국가페이지",
+        "detail": "여행경보·현지연락처"
+      },
+      "displayLabel": "원본 링크 (URL) · 외교부 해외안전여행 베트남 국가페이지 — 여행경보·현지연락처",
+      "indicatorId": "C-011_source_link_foreign_affairs_ministry_overseas_safety",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a2c3c0328922",
+        "labelKo": "원본 링크 (URL)",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-a2c3c0328922|URL|category=외교부 해외안전여행 베트남 국가페이지|detail=여행경보·현지연락처|C-011_source_link_foreign_affairs_ministry_overseas_safety",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ PDF 캡처 2026-07-22",
+      "sourceLabel": "원본 링크 (URL) · 외교부 해외안전여행 베트남 국가페이지 — 여행경보·현지연락처",
+      "sourceLabelEn": "Source Link Foreign Affairs Ministry Overseas Safety",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ PDF 캡처 2026-07-22",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_source_link_foreign_affairs_ministry_overseas_safety",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 38,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a2c3c0328922|URL",
+      "dimensionLabels": {
+        "category": "외교부 여행경보 4단계 정의 페이지",
+        "detail": "등급 체계"
+      },
+      "dimensions": {
+        "category": "외교부 여행경보 4단계 정의 페이지",
+        "detail": "등급 체계"
+      },
+      "displayLabel": "원본 링크 (URL) · 외교부 여행경보 4단계 정의 페이지 — 등급 체계",
+      "indicatorId": "C-011_source_link_foreign_affairs_ministry_travel_alert_4",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a2c3c0328922",
+        "labelKo": "원본 링크 (URL)",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-a2c3c0328922|URL|category=외교부 여행경보 4단계 정의 페이지|detail=등급 체계|C-011_source_link_foreign_affairs_ministry_travel_alert_4",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ —",
+      "sourceLabel": "원본 링크 (URL) · 외교부 여행경보 4단계 정의 페이지 — 등급 체계",
+      "sourceLabelEn": "Source Link Foreign Affairs Ministry Travel Alert 4",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ —",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_source_link_foreign_affairs_ministry_travel_alert_4",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 39,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a2c3c0328922|URL",
+      "dimensionLabels": {
+        "category": "미 국무부 베트남 여행경보",
+        "detail": "Travel Advisory"
+      },
+      "dimensions": {
+        "category": "미 국무부 베트남 여행경보",
+        "detail": "Travel Advisory"
+      },
+      "displayLabel": "원본 링크 (URL) · 미 국무부 베트남 여행경보 — Travel Advisory",
+      "indicatorId": "C-011_source_link_non_gukmu_ministry_vietnam",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a2c3c0328922",
+        "labelKo": "원본 링크 (URL)",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-a2c3c0328922|URL|category=미 국무부 베트남 여행경보|detail=Travel Advisory|C-011_source_link_non_gukmu_ministry_vietnam",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [라이선스 검증 2026-08-15] 미국 연방정부 저작물은 17 U.S.C. §105에 따라 퍼블릭 도메인. 대한민국 정부 공공저작물은 공공누리 기준 출처표시 조건 이용 허용. → 재배포 「가능」. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ —",
+      "sourceLabel": "원본 링크 (URL) · 미 국무부 베트남 여행경보 — Travel Advisory",
+      "sourceLabelEn": "Source Link Non Gukmu Ministry Vietnam",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [라이선스 검증 2026-08-15] 미국 연방정부 저작물은 17 U.S.C. §105에 따라 퍼블릭 도메인. 대한민국 정부 공공저작물은 공공누리 기준 출처표시 조건 이용 허용. → 재배포 「가능」. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ —",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_source_link_non_gukmu_ministry_vietnam",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 42,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a2c3c0328922|URL",
+      "dimensionLabels": {
+        "category": "OSAC Vietnam Country Security Report",
+        "detail": "현지 치안 상황"
+      },
+      "dimensions": {
+        "category": "OSAC Vietnam Country Security Report",
+        "detail": "현지 치안 상황"
+      },
+      "displayLabel": "원본 링크 (URL) · OSAC Vietnam Country Security Report — 현지 치안 상황",
+      "indicatorId": "C-011_source_link_osac_vietnam_country_security",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a2c3c0328922",
+        "labelKo": "원본 링크 (URL)",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-a2c3c0328922|URL|category=OSAC Vietnam Country Security Report|detail=현지 치안 상황|C-011_source_link_osac_vietnam_country_security",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [라이선스 검증 2026-08-15] 미국 연방정부 저작물은 17 U.S.C. §105에 따라 퍼블릭 도메인. 대한민국 정부 공공저작물은 공공누리 기준 출처표시 조건 이용 허용. → 재배포 「가능」. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ —",
+      "sourceLabel": "원본 링크 (URL) · OSAC Vietnam Country Security Report — 현지 치안 상황",
+      "sourceLabelEn": "Source Link Osac Vietnam Country Security",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [라이선스 검증 2026-08-15] 미국 연방정부 저작물은 17 U.S.C. §105에 따라 퍼블릭 도메인. 대한민국 정부 공공저작물은 공공누리 기준 출처표시 조건 이용 허용. → 재배포 「가능」. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ —",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_source_link_osac_vietnam_country_security",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 41,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a2c3c0328922|URL",
+      "dimensionLabels": {
+        "category": "공공데이터포털 여행경보 오픈API",
+        "detail": "외교부_여행경보제도"
+      },
+      "dimensions": {
+        "category": "공공데이터포털 여행경보 오픈API",
+        "detail": "외교부_여행경보제도"
+      },
+      "displayLabel": "원본 링크 (URL) · 공공데이터포털 여행경보 오픈API — 외교부_여행경보제도",
+      "indicatorId": "C-011_source_link_public_data_portal_travel",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a2c3c0328922",
+        "labelKo": "원본 링크 (URL)",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-a2c3c0328922|URL|category=공공데이터포털 여행경보 오픈API|detail=외교부_여행경보제도|C-011_source_link_public_data_portal_travel",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ 국가필터 JSON/XML 제공",
+      "sourceLabel": "원본 링크 (URL) · 공공데이터포털 여행경보 오픈API — 외교부_여행경보제도",
+      "sourceLabelEn": "Source Link Public Data Portal Travel",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ 국가필터 JSON/XML 제공",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_source_link_public_data_portal_travel",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 40,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a2c3c0328922|URL",
+      "dimensionLabels": {
+        "category": "UNODC 고의살인율 데이터포털",
+        "detail": "Intentional Homicide"
+      },
+      "dimensions": {
+        "category": "UNODC 고의살인율 데이터포털",
+        "detail": "Intentional Homicide"
+      },
+      "displayLabel": "원본 링크 (URL) · UNODC 고의살인율 데이터포털 — Intentional Homicide",
+      "indicatorId": "C-011_source_link_unodc_homicide_rate",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a2c3c0328922",
+        "labelKo": "원본 링크 (URL)",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-a2c3c0328922|URL|category=UNODC 고의살인율 데이터포털|detail=Intentional Homicide|C-011_source_link_unodc_homicide_rate",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ Country=Viet Nam 필터, CSV/Excel 다운로드",
+      "sourceLabel": "원본 링크 (URL) · UNODC 고의살인율 데이터포털 — Intentional Homicide",
+      "sourceLabelEn": "Source Link Unodc Homicide Rate",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ Country=Viet Nam 필터, CSV/Excel 다운로드",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_source_link_unodc_homicide_rate",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 43,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d9959d757656|경보색상",
+      "dimensionLabels": {
+        "category": "1단계",
+        "detail": "여행유의(남색경보)"
+      },
+      "dimensions": {
+        "category": "1단계",
+        "detail": "여행유의(남색경보)"
+      },
+      "displayLabel": "여행경보 등급 체계 (외교부 4단계 정의) · 1단계 — 여행유의(남색경보)",
+      "indicatorId": "C-011_travel_alert_level_system_1_phase",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d9959d757656",
+        "labelKo": "여행경보 등급 체계 (외교부 4단계 정의)",
+        "unit": "경보색상",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-d9959d757656|경보색상|category=1단계|detail=여행유의(남색경보)|C-011_travel_alert_level_system_1_phase",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 가급적 신변안전 유의",
+      "sourceLabel": "여행경보 등급 체계 (외교부 4단계 정의) · 1단계 — 여행유의(남색경보)",
+      "sourceLabelEn": "Travel Alert Level System 1 Phase",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 가급적 신변안전 유의",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_travel_alert_level_system_1_phase",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d9959d757656|경보색상",
+      "dimensionLabels": {
+        "category": "2단계",
+        "detail": "여행자제(황색경보)"
+      },
+      "dimensions": {
+        "category": "2단계",
+        "detail": "여행자제(황색경보)"
+      },
+      "displayLabel": "여행경보 등급 체계 (외교부 4단계 정의) · 2단계 — 여행자제(황색경보)",
+      "indicatorId": "C-011_travel_alert_level_system_2_phase",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d9959d757656",
+        "labelKo": "여행경보 등급 체계 (외교부 4단계 정의)",
+        "unit": "경보색상",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-d9959d757656|경보색상|category=2단계|detail=여행자제(황색경보)|C-011_travel_alert_level_system_2_phase",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 불필요한 여행 자제",
+      "sourceLabel": "여행경보 등급 체계 (외교부 4단계 정의) · 2단계 — 여행자제(황색경보)",
+      "sourceLabelEn": "Travel Alert Level System 2 Phase",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 불필요한 여행 자제",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_travel_alert_level_system_2_phase",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d9959d757656|경보색상",
+      "dimensionLabels": {
+        "category": "3단계",
+        "detail": "출국권고(적색경보)"
+      },
+      "dimensions": {
+        "category": "3단계",
+        "detail": "출국권고(적색경보)"
+      },
+      "displayLabel": "여행경보 등급 체계 (외교부 4단계 정의) · 3단계 — 출국권고(적색경보)",
+      "indicatorId": "C-011_travel_alert_level_system_3_phase",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d9959d757656",
+        "labelKo": "여행경보 등급 체계 (외교부 4단계 정의)",
+        "unit": "경보색상",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-d9959d757656|경보색상|category=3단계|detail=출국권고(적색경보)|C-011_travel_alert_level_system_3_phase",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 구 명칭 '철수권고' → 현재 공식 명칭 '출국권고'",
+      "sourceLabel": "여행경보 등급 체계 (외교부 4단계 정의) · 3단계 — 출국권고(적색경보)",
+      "sourceLabelEn": "Travel Alert Level System 3 Phase",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 구 명칭 '철수권고' → 현재 공식 명칭 '출국권고'",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_travel_alert_level_system_3_phase",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d9959d757656|경보색상",
+      "dimensionLabels": {
+        "category": "4단계",
+        "detail": "여행금지(흑색경보)"
+      },
+      "dimensions": {
+        "category": "4단계",
+        "detail": "여행금지(흑색경보)"
+      },
+      "displayLabel": "여행경보 등급 체계 (외교부 4단계 정의) · 4단계 — 여행금지(흑색경보)",
+      "indicatorId": "C-011_travel_alert_level_system_4_phase",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d9959d757656",
+        "labelKo": "여행경보 등급 체계 (외교부 4단계 정의)",
+        "unit": "경보색상",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-d9959d757656|경보색상|category=4단계|detail=여행금지(흑색경보)|C-011_travel_alert_level_system_4_phase",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 법적으로 여행 금지",
+      "sourceLabel": "여행경보 등급 체계 (외교부 4단계 정의) · 4단계 — 여행금지(흑색경보)",
+      "sourceLabelEn": "Travel Alert Level System 4 Phase",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 법적으로 여행 금지",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_travel_alert_level_system_4_phase",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bbe0dbc094d4|—",
+      "dimensionLabels": {
+        "category": "특별경보",
+        "detail": "특별여행주의보·특별여행경보(비정기 발령)"
+      },
+      "dimensions": {
+        "category": "특별경보",
+        "detail": "특별여행주의보·특별여행경보(비정기 발령)"
+      },
+      "displayLabel": "여행경보 등급 체계 (외교부 4단계 정의) · 특별경보 — 특별여행주의보·특별여행경보(비정기 발령)",
+      "indicatorId": "C-011_travel_alert_level_system_special_alert",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bbe0dbc094d4",
+        "labelKo": "여행경보 등급 체계 (외교부 4단계 정의)",
+        "unit": "—",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-bbe0dbc094d4|—|category=특별경보|detail=특별여행주의보·특별여행경보(비정기 발령)|C-011_travel_alert_level_system_special_alert",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 4단계 정기등급 체계와 별도로 운용되는 임시 경보",
+      "sourceLabel": "여행경보 등급 체계 (외교부 4단계 정의) · 특별경보 — 특별여행주의보·특별여행경보(비정기 발령)",
+      "sourceLabelEn": "Travel Alert Level System Special Alert",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 4단계 정기등급 체계와 별도로 운용되는 임시 경보",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_travel_alert_level_system_special_alert",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-23da34bf5a89|전화번호",
+      "dimensionLabels": {
+        "category": "응급환자(앰뷸런스)"
+      },
+      "dimensions": {
+        "category": "응급환자(앰뷸런스)"
+      },
+      "displayLabel": "베트남 현지 긴급신고 번호 · 응급환자(앰뷸런스) — —",
+      "indicatorId": "C-011_vietnam_local_emergency_ambulance",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-23da34bf5a89",
+        "labelKo": "베트남 현지 긴급신고 번호",
+        "unit": "전화번호",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-23da34bf5a89|전화번호|category=응급환자(앰뷸런스)|C-011_vietnam_local_emergency_ambulance",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 대부분 베트남어로만 응대 가능. 구급차 이용 요금 별도 지불 필요할 수 있음",
+      "sourceLabel": "베트남 현지 긴급신고 번호 · 응급환자(앰뷸런스) — —",
+      "sourceLabelEn": "Vietnam Local Emergency Ambulance",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 대부분 베트남어로만 응대 가능. 구급차 이용 요금 별도 지불 필요할 수 있음",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_vietnam_local_emergency_ambulance",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 34,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-23da34bf5a89|전화번호",
+      "dimensionLabels": {
+        "category": "범죄신고"
+      },
+      "dimensions": {
+        "category": "범죄신고"
+      },
+      "displayLabel": "베트남 현지 긴급신고 번호 · 범죄신고 — —",
+      "indicatorId": "C-011_vietnam_local_emergency_crime_notification",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-23da34bf5a89",
+        "labelKo": "베트남 현지 긴급신고 번호",
+        "unit": "전화번호",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-23da34bf5a89|전화번호|category=범죄신고|C-011_vietnam_local_emergency_crime_notification",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 대부분 베트남어로만 응대 가능",
+      "sourceLabel": "베트남 현지 긴급신고 번호 · 범죄신고 — —",
+      "sourceLabelEn": "Vietnam Local Emergency Crime Notification",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 대부분 베트남어로만 응대 가능",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_vietnam_local_emergency_crime_notification",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 32,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-23da34bf5a89|전화번호",
+      "dimensionLabels": {
+        "category": "화재신고"
+      },
+      "dimensions": {
+        "category": "화재신고"
+      },
+      "displayLabel": "베트남 현지 긴급신고 번호 · 화재신고 — —",
+      "indicatorId": "C-011_vietnam_local_emergency_fire_report",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-23da34bf5a89",
+        "labelKo": "베트남 현지 긴급신고 번호",
+        "unit": "전화번호",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-23da34bf5a89|전화번호|category=화재신고|C-011_vietnam_local_emergency_fire_report",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 대부분 베트남어로만 응대 가능",
+      "sourceLabel": "베트남 현지 긴급신고 번호 · 화재신고 — —",
+      "sourceLabelEn": "Vietnam Local Emergency Fire Report",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 대부분 베트남어로만 응대 가능",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_vietnam_local_emergency_fire_report",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 33,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d3d49ef728fb|—",
+      "dimensionLabels": {
+        "category": "지역별 차등",
+        "detail": "베트남 내 지역별 경보 차등 여부"
+      },
+      "dimensions": {
+        "category": "지역별 차등",
+        "detail": "베트남 내 지역별 경보 차등 여부"
+      },
+      "displayLabel": "베트남 여행경보 현황 및 해외 비교 · 지역별 차등 — 베트남 내 지역별 경보 차등 여부",
+      "indicatorId": "C-011_vietnam_travel_alert_status_by_region_differential",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d3d49ef728fb",
+        "labelKo": "베트남 여행경보 현황 및 해외 비교",
+        "unit": "—",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-d3d49ef728fb|—|category=지역별 차등|detail=베트남 내 지역별 경보 차등 여부|C-011_vietnam_travel_alert_status_by_region_differential",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 원문 페이지상 '전 지역' 단일등급으로 표시. 세부 지역별 조정 이력은 원문 직접 확인 필요 ‖ [직접 확인 2026-08-18] 기존 결측 사유였던 \"세부 지역별 조정 이력 원문 직접 확인 필요\"를 브라우저로 원문 페이지를 열어 해소함. ★M06 해소. raw: C-011_외교부_여행경보_직접확인_2026-08-18.md",
+      "sourceLabel": "베트남 여행경보 현황 및 해외 비교 · 지역별 차등 — 베트남 내 지역별 경보 차등 여부",
+      "sourceLabelEn": "Vietnam Travel Alert Status By Region Differential",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 원문 페이지상 '전 지역' 단일등급으로 표시. 세부 지역별 조정 이력은 원문 직접 확인 필요 ‖ [직접 확인 2026-08-18] 기존 결측 사유였던 \"세부 지역별 조정 이력 원문 직접 확인 필요\"를 브라우저로 원문 페이지를 열어 해소함. ★M06 해소. raw: C-011_외교부_여행경보_직접확인_2026-08-18.md",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_vietnam_travel_alert_status_by_region_differential",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-b4d78579f827|등급",
+      "dimensionLabels": {
+        "category": "현재 등급",
+        "detail": "전 지역"
+      },
+      "dimensions": {
+        "category": "현재 등급",
+        "detail": "전 지역"
+      },
+      "displayLabel": "베트남 여행경보 현황 및 해외 비교 · 현재 등급 — 전 지역",
+      "indicatorId": "C-011_vietnam_travel_alert_status_current_grade",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b4d78579f827",
+        "labelKo": "베트남 여행경보 현황 및 해외 비교",
+        "unit": "등급",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-b4d78579f827|등급|category=현재 등급|detail=전 지역|C-011_vietnam_travel_alert_status_current_grade",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 2020-03 全지역 1단계 발령 이후 등급 유지",
+      "sourceLabel": "베트남 여행경보 현황 및 해외 비교 · 현재 등급 — 전 지역",
+      "sourceLabelEn": "Vietnam Travel Alert Status Current Grade",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 2020-03 全지역 1단계 발령 이후 등급 유지",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_vietnam_travel_alert_status_current_grade",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-eaac28c27d4f|년월",
+      "dimensionLabels": {
+        "category": "발령 개시",
+        "detail": "全 국가·지역 여행경보 1단계 발령 공지",
+        "detail_2": "상한(max)"
+      },
+      "dimensions": {
+        "category": "발령 개시",
+        "detail": "全 국가·지역 여행경보 1단계 발령 공지",
+        "detail_2": "상한(max)"
+      },
+      "displayLabel": "베트남 여행경보 현황 및 해외 비교 · 발령 개시 — 全 국가·지역 여행경보 1단계 발령 공지 — 상한(max)",
+      "indicatorId": "C-011_vietnam_travel_alert_status_issuance_start_max",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-eaac28c27d4f",
+        "labelKo": "베트남 여행경보 현황 및 해외 비교",
+        "unit": "년월",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-eaac28c27d4f|년월|category=발령 개시|detail=全 국가·지역 여행경보 1단계 발령 공지|detail_2=상한(max)|C-011_vietnam_travel_alert_status_issuance_start_max",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 원문이 범위값으로 제시되어 _min/_max 2개 지표로 분리 수록함(쌍 지표). 원문 공지 제목 기준(본문 미열람)",
+      "sourceLabel": "베트남 여행경보 현황 및 해외 비교 · 발령 개시 — 全 국가·지역 여행경보 1단계 발령 공지 — 상한(max)",
+      "sourceLabelEn": "Vietnam Travel Alert Status Issuance Start Max",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 원문이 범위값으로 제시되어 _min/_max 2개 지표로 분리 수록함(쌍 지표). 원문 공지 제목 기준(본문 미열람)",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_vietnam_travel_alert_status_issuance_start_max",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-eaac28c27d4f|년월",
+      "dimensionLabels": {
+        "category": "발령 개시",
+        "detail": "全 국가·지역 여행경보 1단계 발령 공지",
+        "detail_2": "하한(min)"
+      },
+      "dimensions": {
+        "category": "발령 개시",
+        "detail": "全 국가·지역 여행경보 1단계 발령 공지",
+        "detail_2": "하한(min)"
+      },
+      "displayLabel": "베트남 여행경보 현황 및 해외 비교 · 발령 개시 — 全 국가·지역 여행경보 1단계 발령 공지 — 하한(min)",
+      "indicatorId": "C-011_vietnam_travel_alert_status_issuance_start_min",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-eaac28c27d4f",
+        "labelKo": "베트남 여행경보 현황 및 해외 비교",
+        "unit": "년월",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-eaac28c27d4f|년월|category=발령 개시|detail=全 국가·지역 여행경보 1단계 발령 공지|detail_2=하한(min)|C-011_vietnam_travel_alert_status_issuance_start_min",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 원문이 범위값으로 제시되어 _min/_max 2개 지표로 분리 수록함(쌍 지표). 원문 공지 제목 기준(본문 미열람)",
+      "sourceLabel": "베트남 여행경보 현황 및 해외 비교 · 발령 개시 — 全 국가·지역 여행경보 1단계 발령 공지 — 하한(min)",
+      "sourceLabelEn": "Vietnam Travel Alert Status Issuance Start Min",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 원문이 범위값으로 제시되어 _min/_max 2개 지표로 분리 수록함(쌍 지표). 원문 공지 제목 기준(본문 미열람)",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_vietnam_travel_alert_status_issuance_start_min",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-10725a77f90a|등급(1~4)",
+      "dimensionLabels": {
+        "category": "미국 국무부 여행경보",
+        "detail": "Travel Advisory Level"
+      },
+      "dimensions": {
+        "category": "미국 국무부 여행경보",
+        "detail": "Travel Advisory Level"
+      },
+      "displayLabel": "베트남 여행경보 현황 및 해외 비교 · 미국 국무부 여행경보 — Travel Advisory Level",
+      "indicatorId": "C-011_vietnam_travel_alert_status_miguk_gukmu_ministry_travel",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-10725a77f90a",
+        "labelKo": "베트남 여행경보 현황 및 해외 비교",
+        "unit": "등급(1~4)",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-10725a77f90a|등급(1~4)|category=미국 국무부 여행경보|detail=Travel Advisory Level|C-011_vietnam_travel_alert_status_miguk_gukmu_ministry_travel",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [라이선스 검증 2026-08-15] 미국 연방정부 저작물은 17 U.S.C. §105에 따라 퍼블릭 도메인. 대한민국 정부 공공저작물은 공공누리 기준 출처표시 조건 이용 허용. → 재배포 「가능」. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ Exercise Normal Precautions",
+      "sourceLabel": "베트남 여행경보 현황 및 해외 비교 · 미국 국무부 여행경보 — Travel Advisory Level",
+      "sourceLabelEn": "Vietnam Travel Alert Status Miguk Gukmu Ministry Travel",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ [라이선스 검증 2026-08-15] 미국 연방정부 저작물은 17 U.S.C. §105에 따라 퍼블릭 도메인. 대한민국 정부 공공저작물은 공공누리 기준 출처표시 조건 이용 허용. → 재배포 「가능」. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ Exercise Normal Precautions",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_vietnam_travel_alert_status_miguk_gukmu_ministry_travel",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-eaac28c27d4f|년월",
+      "dimensionLabels": {
+        "category": "최근 조정 관련 공지",
+        "detail": "각국 안전여행 위험도에 따른 여행경보 단계 조정",
+        "detail_2": "하한(min)"
+      },
+      "dimensions": {
+        "category": "최근 조정 관련 공지",
+        "detail": "각국 안전여행 위험도에 따른 여행경보 단계 조정",
+        "detail_2": "하한(min)"
+      },
+      "displayLabel": "베트남 여행경보 현황 및 해외 비교 · 최근 조정 관련 공지 — 각국 안전여행 위험도에 따른 여행경보 단계 조정 — 하한(min)",
+      "indicatorId": "C-011_vietnam_travel_alert_status_recent_adjustment_related_notice",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-eaac28c27d4f",
+        "labelKo": "베트남 여행경보 현황 및 해외 비교",
+        "unit": "년월",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-eaac28c27d4f|년월|category=최근 조정 관련 공지|detail=각국 안전여행 위험도에 따른 여행경보 단계 조정|detail_2=하한(min)|C-011_vietnam_travel_alert_status_recent_adjustment_related_notice",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 원문이 범위값으로 제시되어 _min/_max 2개 지표로 분리 수록함(쌍 지표). 확인 필요 — 공지 본문 미열람으로 베트남 자체 등급 변경 여부 불명확(현재 등급은 1단계로 표시)",
+      "sourceLabel": "베트남 여행경보 현황 및 해외 비교 · 최근 조정 관련 공지 — 각국 안전여행 위험도에 따른 여행경보 단계 조정 — 하한(min)",
+      "sourceLabelEn": "Vietnam Travel Alert Status Recent Adjustment Related Notice",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 원문이 범위값으로 제시되어 _min/_max 2개 지표로 분리 수록함(쌍 지표). 확인 필요 — 공지 본문 미열람으로 베트남 자체 등급 변경 여부 불명확(현재 등급은 1단계로 표시)",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_vietnam_travel_alert_status_recent_adjustment_related_notice",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-eaac28c27d4f|년월",
+      "dimensionLabels": {
+        "category": "최근 조정 관련 공지",
+        "detail": "각국 안전여행 위험도에 따른 여행경보 단계 조정",
+        "detail_2": "상한(max)"
+      },
+      "dimensions": {
+        "category": "최근 조정 관련 공지",
+        "detail": "각국 안전여행 위험도에 따른 여행경보 단계 조정",
+        "detail_2": "상한(max)"
+      },
+      "displayLabel": "베트남 여행경보 현황 및 해외 비교 · 최근 조정 관련 공지 — 각국 안전여행 위험도에 따른 여행경보 단계 조정 — 상한(max)",
+      "indicatorId": "C-011_vietnam_travel_alert_status_recent_adjustment_related_notice_2",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-eaac28c27d4f",
+        "labelKo": "베트남 여행경보 현황 및 해외 비교",
+        "unit": "년월",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-eaac28c27d4f|년월|category=최근 조정 관련 공지|detail=각국 안전여행 위험도에 따른 여행경보 단계 조정|detail_2=상한(max)|C-011_vietnam_travel_alert_status_recent_adjustment_related_notice_2",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 원문이 범위값으로 제시되어 _min/_max 2개 지표로 분리 수록함(쌍 지표). 확인 필요 — 공지 본문 미열람으로 베트남 자체 등급 변경 여부 불명확(현재 등급은 1단계로 표시)",
+      "sourceLabel": "베트남 여행경보 현황 및 해외 비교 · 최근 조정 관련 공지 — 각국 안전여행 위험도에 따른 여행경보 단계 조정 — 상한(max)",
+      "sourceLabelEn": "Vietnam Travel Alert Status Recent Adjustment Related Notice 2",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. 수집현황에 지정 URL이 비어 있고 출처가 「외교부 / 현지 자료」로만 기재됨. 대한민국 외교부 해외안전여행 국가정보 PDF와 Numbeo 범죄지수 csv를 확보하여 raw에 보관. Numbeo는 공식 통계가 아닌 크라우드소싱 인식조사이므로 출처등급을 현지조사로 표기함. ‖ 원문이 범위값으로 제시되어 _min/_max 2개 지표로 분리 수록함(쌍 지표). 확인 필요 — 공지 본문 미열람으로 베트남 자체 등급 변경 여부 불명확(현재 등급은 1단계로 표시)",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_vietnam_travel_alert_status_recent_adjustment_related_notice_2",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-fdace1319db9|건/10만명",
+      "dimensionLabels": {
+        "category": "고의살인율(Intentional Homicide Rate)",
+        "detail": "인구 10만명당 발생건수"
+      },
+      "dimensions": {
+        "category": "고의살인율(Intentional Homicide Rate)",
+        "detail": "인구 10만명당 발생건수"
+      },
+      "displayLabel": "범죄 통계 (정량지표) · 고의살인율(Intentional Homicide Rate) — 인구 10만명당 발생건수",
+      "indicatorId": "C-011_violent_crime_statistics",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-fdace1319db9",
+        "labelKo": "범죄 통계 (정량지표)",
+        "unit": "건/10만명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-fdace1319db9|건/10만명|category=고의살인율(Intentional Homicide Rate)|detail=인구 10만명당 발생건수|C-011_violent_crime_statistics",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. ‖ [정정 2026-08-18] 종전 값 「~1.5」(물결표 근사치, 기준연도 2011, note에 「확인 필요」 표기)를 원자료 직접 조회로 확정값 1.54로 교체함. World Bank Open Data API로 전 연도 시계열을 확인한 결과 2001~2011년만 값이 존재하고 2012년 이후는 null임. 베트남이 UNODC에 미보고한 것이므로 최신치가 아니라 시계열 종료값이라는 점을 note에 명시함. ‖ [라이선스 검증 2026-08-18] World Bank Open Data는 CC BY 4.0 → 재배포 「가능」.",
+      "sourceLabel": "범죄 통계 (정량지표) · 고의살인율(Intentional Homicide Rate) — 인구 10만명당 발생건수",
+      "sourceLabelEn": "Violent Crime Statistics",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 외교부 / 현지 자료 / 지정 URL: (지정 URL 없음) / 지정 수집방법: - → 판정: 지정 없음. ‖ [정정 2026-08-18] 종전 값 「~1.5」(물결표 근사치, 기준연도 2011, note에 「확인 필요」 표기)를 원자료 직접 조회로 확정값 1.54로 교체함. World Bank Open Data API로 전 연도 시계열을 확인한 결과 2001~2011년만 값이 존재하고 2012년 이후는 null임. 베트남이 UNODC에 미보고한 것이므로 최신치가 아니라 시계열 종료값이라는 점을 note에 명시함. ‖ [라이선스 검증 2026-08-18] World Bank Open Data는 CC BY 4.0 → 재배포 「가능」.",
+      "sourceProvenance": {
+        "elementId": "C-011",
+        "indicatorId": "C-011_violent_crime_statistics",
+        "sourceFileDecoded": "C-011_치안·안전 정보.xlsx",
+        "sourceRow": 25,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-fdace1319db9",
+      "labelKo": "범죄 통계 (정량지표)",
+      "recordCount": 1,
+      "unit": "건/10만명",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-0b829adb9c34",
+      "labelKo": "범죄 통계 (정량지표)",
+      "recordCount": 1,
+      "unit": "지수",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-d3d49ef728fb",
+      "labelKo": "베트남 여행경보 현황 및 해외 비교",
+      "recordCount": 1,
+      "unit": "—",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 4,
+      "key": "measure-eaac28c27d4f",
+      "labelKo": "베트남 여행경보 현황 및 해외 비교",
+      "recordCount": 4,
+      "unit": "년월",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-b4d78579f827",
+      "labelKo": "베트남 여행경보 현황 및 해외 비교",
+      "recordCount": 1,
+      "unit": "등급",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-10725a77f90a",
+      "labelKo": "베트남 여행경보 현황 및 해외 비교",
+      "recordCount": 1,
+      "unit": "등급(1~4)",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 3,
+      "key": "measure-23da34bf5a89",
+      "labelKo": "베트남 현지 긴급신고 번호",
+      "recordCount": 3,
+      "unit": "전화번호",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 4,
+      "key": "measure-b42a728448e2",
+      "labelKo": "성 단위 치안지표",
+      "recordCount": 4,
+      "unit": "—",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-88bd77245715",
+      "labelKo": "성 단위 치안지표 공표 여부",
+      "recordCount": 1,
+      "unit": "—",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-bbe0dbc094d4",
+      "labelKo": "여행경보 등급 체계 (외교부 4단계 정의)",
+      "recordCount": 1,
+      "unit": "—",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 4,
+      "key": "measure-d9959d757656",
+      "labelKo": "여행경보 등급 체계 (외교부 4단계 정의)",
+      "recordCount": 4,
+      "unit": "경보색상",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 6,
+      "key": "measure-a2c3c0328922",
+      "labelKo": "원본 링크 (URL)",
+      "recordCount": 6,
+      "unit": "URL",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 6,
+      "key": "measure-5eb9e4cf6c29",
+      "labelKo": "재외공관 연락처",
+      "recordCount": 6,
+      "unit": "전화",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 3,
+      "key": "measure-10857c0c1446",
+      "labelKo": "최근 안전공지 (2026-07 기준)",
+      "recordCount": 3,
+      "unit": "공지일",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-296f3bc77dbf",
+      "labelKo": "현지 치안 상황 서술 (OSAC/미 국무부)",
+      "recordCount": 1,
+      "unit": "OSAC 대미기준 등급",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 5,
+      "key": "measure-798dc5a7591c",
+      "labelKo": "현지 치안 상황 서술 (OSAC/미 국무부)",
+      "recordCount": 5,
+      "unit": "—",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-bf5054fe17d3",
+      "labelKo": "현지 치안 상황 서술 (OSAC/미 국무부)",
+      "recordCount": 1,
+      "unit": "위협등급",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 44,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

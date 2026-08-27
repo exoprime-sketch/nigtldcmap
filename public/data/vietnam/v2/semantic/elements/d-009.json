@@ -1,0 +1,233 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 5,
+      "values": [
+        "GDP 대비 기후지출 비중",
+        "성 단위 기후예산(USD 기준)",
+        "성 단위 기후예산(VND 기준)",
+        "중앙부처 기후지출 총액(2010~2013 누계)",
+        "총 지출 규모"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 4,
+      "values": [
+        "5개 부처 기후지출의 GDP 대비 비중",
+        "5개 부처+NTP 4년 누계",
+        "2016~2020 누계",
+        "연도별"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 3,
+      "values": [
+        "2013",
+        "2016",
+        "2020"
+      ]
+    }
+  ],
+  "elementId": "D-009",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 5,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-ec76b1280745|%",
+      "dimensionLabels": {
+        "category": "GDP 대비 기후지출 비중",
+        "detail": "5개 부처 기후지출의 GDP 대비 비중"
+      },
+      "dimensions": {
+        "category": "GDP 대비 기후지출 비중",
+        "detail": "5개 부처 기후지출의 GDP 대비 비중"
+      },
+      "displayLabel": "기후대응 정부 예산 · GDP 대비 기후지출 비중 — 5개 부처 기후지출의 GDP 대비 비중",
+      "indicatorId": "D-009_climate_expenditure_gdp_share",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ec76b1280745",
+        "labelKo": "기후대응 정부 예산",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-ec76b1280745|%|category=GDP 대비 기후지출 비중|detail=5개 부처 기후지출의 GDP 대비 비중|D-009_climate_expenditure_gdp_share",
+      "sourceCaveat": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [raw 원문 검증] 보유 중인 CPEIR 2015 보고서 원본 PDF에서 본 요소의 전 수치를 재대조하여 본문 문장·그림 제목과 일치함을 확인함(2026-08-17). 인용위치는 확인된 쪽·그림 번호로 기재함. [검토지적 반영] 종전 자료에 누계액·특정연도액·USD/VND 환산값·GDP 대비 비중이 한 블록에 혼재되어 있어 지표를 통화·분모·집계단위별로 분리하고 각 지표의 연도를 명시함. [시계열] CPEIR 2022는 2016~2020 5년 누계와 시작·종료연도 값만 공표하고 2017~2019 중간연도 값을 공표하지 않음(M01). [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "기후대응 정부 예산 · GDP 대비 기후지출 비중 — 5개 부처 기후지출의 GDP 대비 비중",
+      "sourceLabelEn": "Climate public expenditure as share of GDP",
+      "sourceNote": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [raw 원문 검증] 보유 중인 CPEIR 2015 보고서 원본 PDF에서 본 요소의 전 수치를 재대조하여 본문 문장·그림 제목과 일치함을 확인함(2026-08-17). 인용위치는 확인된 쪽·그림 번호로 기재함. [검토지적 반영] 종전 자료에 누계액·특정연도액·USD/VND 환산값·GDP 대비 비중이 한 블록에 혼재되어 있어 지표를 통화·분모·집계단위별로 분리하고 각 지표의 연도를 명시함. [시계열] CPEIR 2022는 2016~2020 5년 누계와 시작·종료연도 값만 공표하고 2017~2019 중간연도 값을 공표하지 않음(M01). [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-009",
+        "indicatorId": "D-009_climate_expenditure_gdp_share",
+        "sourceFileDecoded": "D-009_총 지출 규모, 연도별 추이.xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2ad1ffad839d|VND",
+      "dimensionLabels": {
+        "category": "중앙부처 기후지출 총액(2010~2013 누계)",
+        "detail": "5개 부처+NTP 4년 누계"
+      },
+      "dimensions": {
+        "category": "중앙부처 기후지출 총액(2010~2013 누계)",
+        "detail": "5개 부처+NTP 4년 누계"
+      },
+      "displayLabel": "기후대응 정부 예산 · 중앙부처 기후지출 총액(2010~2013 누계) — 5개 부처+NTP 4년 누계",
+      "indicatorId": "D-009_ministry_climate_expenditure_total_vnd",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2ad1ffad839d",
+        "labelKo": "기후대응 정부 예산",
+        "unit": "VND",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-2ad1ffad839d|VND|category=중앙부처 기후지출 총액(2010~2013 누계)|detail=5개 부처+NTP 4년 누계|D-009_ministry_climate_expenditure_total_vnd",
+      "sourceCaveat": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [raw 원문 검증] 보유 중인 CPEIR 2015 보고서 원본 PDF에서 본 요소의 전 수치를 재대조하여 본문 문장·그림 제목과 일치함을 확인함(2026-08-17). 인용위치는 확인된 쪽·그림 번호로 기재함. [검토지적 반영] 종전 자료에 누계액·특정연도액·USD/VND 환산값·GDP 대비 비중이 한 블록에 혼재되어 있어 지표를 통화·분모·집계단위별로 분리하고 각 지표의 연도를 명시함. [시계열] CPEIR 2022는 2016~2020 5년 누계와 시작·종료연도 값만 공표하고 2017~2019 중간연도 값을 공표하지 않음(M01). [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "기후대응 정부 예산 · 중앙부처 기후지출 총액(2010~2013 누계) — 5개 부처+NTP 4년 누계",
+      "sourceLabelEn": "Total ministerial climate expenditure, 2010-2013 cumulative",
+      "sourceNote": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [raw 원문 검증] 보유 중인 CPEIR 2015 보고서 원본 PDF에서 본 요소의 전 수치를 재대조하여 본문 문장·그림 제목과 일치함을 확인함(2026-08-17). 인용위치는 확인된 쪽·그림 번호로 기재함. [검토지적 반영] 종전 자료에 누계액·특정연도액·USD/VND 환산값·GDP 대비 비중이 한 블록에 혼재되어 있어 지표를 통화·분모·집계단위별로 분리하고 각 지표의 연도를 명시함. [시계열] CPEIR 2022는 2016~2020 5년 누계와 시작·종료연도 값만 공표하고 2017~2019 중간연도 값을 공표하지 않음(M01). [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-009",
+        "indicatorId": "D-009_ministry_climate_expenditure_total_vnd",
+        "sourceFileDecoded": "D-009_총 지출 규모, 연도별 추이.xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f45c91e9977d|USD",
+      "dimensionLabels": {
+        "category": "성 단위 기후예산(USD 기준)",
+        "detail": "연도별"
+      },
+      "dimensions": {
+        "category": "성 단위 기후예산(USD 기준)",
+        "detail": "연도별"
+      },
+      "displayLabel": "기후대응 정부 예산 · 성 단위 기후예산(USD 기준) — 연도별",
+      "indicatorId": "D-009_province_climate_budget_usd",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f45c91e9977d",
+        "labelKo": "기후대응 정부 예산",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-f45c91e9977d|USD|category=성 단위 기후예산(USD 기준)|detail=연도별|D-009_province_climate_budget_usd",
+      "sourceCaveat": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [raw 원문 검증] 보유 중인 CPEIR 2015 보고서 원본 PDF에서 본 요소의 전 수치를 재대조하여 본문 문장·그림 제목과 일치함을 확인함(2026-08-17). 인용위치는 확인된 쪽·그림 번호로 기재함. [검토지적 반영] 종전 자료에 누계액·특정연도액·USD/VND 환산값·GDP 대비 비중이 한 블록에 혼재되어 있어 지표를 통화·분모·집계단위별로 분리하고 각 지표의 연도를 명시함. [시계열] CPEIR 2022는 2016~2020 5년 누계와 시작·종료연도 값만 공표하고 2017~2019 중간연도 값을 공표하지 않음(M01). [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "기후대응 정부 예산 · 성 단위 기후예산(USD 기준) — 연도별",
+      "sourceLabelEn": "Provincial climate budget (USD)",
+      "sourceNote": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [raw 원문 검증] 보유 중인 CPEIR 2015 보고서 원본 PDF에서 본 요소의 전 수치를 재대조하여 본문 문장·그림 제목과 일치함을 확인함(2026-08-17). 인용위치는 확인된 쪽·그림 번호로 기재함. [검토지적 반영] 종전 자료에 누계액·특정연도액·USD/VND 환산값·GDP 대비 비중이 한 블록에 혼재되어 있어 지표를 통화·분모·집계단위별로 분리하고 각 지표의 연도를 명시함. [시계열] CPEIR 2022는 2016~2020 5년 누계와 시작·종료연도 값만 공표하고 2017~2019 중간연도 값을 공표하지 않음(M01). [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-009",
+        "indicatorId": "D-009_province_climate_budget_usd",
+        "sourceFileDecoded": "D-009_총 지출 규모, 연도별 추이.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2ad1ffad839d|VND",
+      "dimensionLabels": {
+        "category": "성 단위 기후예산(VND 기준)",
+        "detail": "연도별"
+      },
+      "dimensions": {
+        "category": "성 단위 기후예산(VND 기준)",
+        "detail": "연도별"
+      },
+      "displayLabel": "기후대응 정부 예산 · 성 단위 기후예산(VND 기준) — 연도별",
+      "indicatorId": "D-009_province_climate_budget_vnd",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2ad1ffad839d",
+        "labelKo": "기후대응 정부 예산",
+        "unit": "VND",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-2ad1ffad839d|VND|category=성 단위 기후예산(VND 기준)|detail=연도별|D-009_province_climate_budget_vnd",
+      "sourceCaveat": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [raw 원문 검증] 보유 중인 CPEIR 2015 보고서 원본 PDF에서 본 요소의 전 수치를 재대조하여 본문 문장·그림 제목과 일치함을 확인함(2026-08-17). 인용위치는 확인된 쪽·그림 번호로 기재함. [검토지적 반영] 종전 자료에 누계액·특정연도액·USD/VND 환산값·GDP 대비 비중이 한 블록에 혼재되어 있어 지표를 통화·분모·집계단위별로 분리하고 각 지표의 연도를 명시함. [시계열] CPEIR 2022는 2016~2020 5년 누계와 시작·종료연도 값만 공표하고 2017~2019 중간연도 값을 공표하지 않음(M01). [통화 병기] USD 기준 지표(D-009_province_climate_budget_usd)와 대상 성(省) 수가 28개+껀터시 대 29개로 표기가 달라 직접 환산 관계가 아님. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "기후대응 정부 예산 · 성 단위 기후예산(VND 기준) — 연도별",
+      "sourceLabelEn": "Provincial climate budget (VND)",
+      "sourceNote": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [raw 원문 검증] 보유 중인 CPEIR 2015 보고서 원본 PDF에서 본 요소의 전 수치를 재대조하여 본문 문장·그림 제목과 일치함을 확인함(2026-08-17). 인용위치는 확인된 쪽·그림 번호로 기재함. [검토지적 반영] 종전 자료에 누계액·특정연도액·USD/VND 환산값·GDP 대비 비중이 한 블록에 혼재되어 있어 지표를 통화·분모·집계단위별로 분리하고 각 지표의 연도를 명시함. [시계열] CPEIR 2022는 2016~2020 5년 누계와 시작·종료연도 값만 공표하고 2017~2019 중간연도 값을 공표하지 않음(M01). [통화 병기] USD 기준 지표(D-009_province_climate_budget_usd)와 대상 성(省) 수가 28개+껀터시 대 29개로 표기가 달라 직접 환산 관계가 아님. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-009",
+        "indicatorId": "D-009_province_climate_budget_vnd",
+        "sourceFileDecoded": "D-009_총 지출 규모, 연도별 추이.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f45c91e9977d|USD",
+      "dimensionLabels": {
+        "category": "총 지출 규모",
+        "detail": "2016~2020 누계"
+      },
+      "dimensions": {
+        "category": "총 지출 규모",
+        "detail": "2016~2020 누계"
+      },
+      "displayLabel": "기후대응 정부 예산 · 총 지출 규모 — 2016~2020 누계",
+      "indicatorId": "D-009_total_climate_expenditure_usd",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f45c91e9977d",
+        "labelKo": "기후대응 정부 예산",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-f45c91e9977d|USD|category=총 지출 규모|detail=2016~2020 누계|D-009_total_climate_expenditure_usd",
+      "sourceCaveat": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [raw 원문 검증] 보유 중인 CPEIR 2015 보고서 원본 PDF에서 본 요소의 전 수치를 재대조하여 본문 문장·그림 제목과 일치함을 확인함(2026-08-17). 인용위치는 확인된 쪽·그림 번호로 기재함. [검토지적 반영] 종전 자료에 누계액·특정연도액·USD/VND 환산값·GDP 대비 비중이 한 블록에 혼재되어 있어 지표를 통화·분모·집계단위별로 분리하고 각 지표의 연도를 명시함. [시계열] CPEIR 2022는 2016~2020 5년 누계와 시작·종료연도 값만 공표하고 2017~2019 중간연도 값을 공표하지 않음(M01). [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "기후대응 정부 예산 · 총 지출 규모 — 2016~2020 누계",
+      "sourceLabelEn": "Total climate public expenditure, 2016-2020 cumulative",
+      "sourceNote": "2017~2019년 중간연도 값은 CPEIR 2022가 공표하지 않음(5년 누계 및 시작·종료연도만 공표).",
+      "sourceProvenance": {
+        "elementId": "D-009",
+        "indicatorId": "D-009_total_climate_expenditure_usd",
+        "sourceFileDecoded": "D-009_총 지출 규모, 연도별 추이.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-ec76b1280745",
+      "labelKo": "기후대응 정부 예산",
+      "recordCount": 1,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-f45c91e9977d",
+      "labelKo": "기후대응 정부 예산",
+      "recordCount": 3,
+      "unit": "USD",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-2ad1ffad839d",
+      "labelKo": "기후대응 정부 예산",
+      "recordCount": 3,
+      "unit": "VND",
+      "unitFamily": "currency"
+    }
+  ],
+  "observationCount": 7,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

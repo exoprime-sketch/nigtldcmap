@@ -1,0 +1,1800 @@
+{
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 14,
+      "values": [
+        "25분위(면적 상위 25%)",
+        "natl-max",
+        "natl-mean",
+        "natl-min",
+        "국가 평균(이론잠재량) · 세계 158위",
+        "보유 래스터 격자통계",
+        "연적산(DNI)",
+        "연적산(GHI)",
+        "연적산(PVOUT)",
+        "최대",
+        "최소",
+        "최소값",
+        "평균",
+        "표준편차"
+      ]
+    },
+    {
+      "key": "detail_2",
+      "labelKo": "detail_2",
+      "valueCount": 4,
+      "values": [
+        "최대",
+        "최소",
+        "평균",
+        "표준편차"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 3,
+      "values": [
+        "1",
+        "1,2",
+        "2"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2018"
+      ]
+    }
+  ],
+  "elementId": "B-041",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 50,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-d4ea24d651b9|kWh/m²/day",
+      "dimensionLabels": {
+        "detail": "최대",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "최대",
+        "technology": "1"
+      },
+      "displayLabel": "산란 일사량(DIF) — 최대",
+      "indicatorId": "B-041_dif_g01",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d4ea24d651b9",
+        "labelKo": "산란 일사량(DIF)",
+        "unit": "kWh/m²/day",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-d4ea24d651b9|kWh/m²/day|detail=최대|technology=1|B-041_dif_g01",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. GSA GIS 패키지에 7개 레이어(GHI·DNI·DIF·GTI·PVOUT·TEMP·OPTA)가 모두 포함되어 있으나 종전에는 GHI·DNI·PVOUT만 수록되어 있었음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "산란 일사량(DIF) — 최대",
+      "sourceLabelEn": "Diffuse horizontal irradiation",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. GSA GIS 패키지에 7개 레이어(GHI·DNI·DIF·GTI·PVOUT·TEMP·OPTA)가 모두 포함되어 있으나 종전에는 GHI·DNI·PVOUT만 수록되어 있었음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_dif_g01",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d4ea24d651b9|kWh/m²/day",
+      "dimensionLabels": {
+        "detail": "최소",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "최소",
+        "technology": "1"
+      },
+      "displayLabel": "산란 일사량(DIF) — 최소",
+      "indicatorId": "B-041_dif_g02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d4ea24d651b9",
+        "labelKo": "산란 일사량(DIF)",
+        "unit": "kWh/m²/day",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-d4ea24d651b9|kWh/m²/day|detail=최소|technology=1|B-041_dif_g02",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. GSA GIS 패키지에 7개 레이어(GHI·DNI·DIF·GTI·PVOUT·TEMP·OPTA)가 모두 포함되어 있으나 종전에는 GHI·DNI·PVOUT만 수록되어 있었음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "산란 일사량(DIF) — 최소",
+      "sourceLabelEn": "Diffuse horizontal irradiation",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. GSA GIS 패키지에 7개 레이어(GHI·DNI·DIF·GTI·PVOUT·TEMP·OPTA)가 모두 포함되어 있으나 종전에는 GHI·DNI·PVOUT만 수록되어 있었음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_dif_g02",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d4ea24d651b9|kWh/m²/day",
+      "dimensionLabels": {
+        "detail": "평균",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "평균",
+        "technology": "1"
+      },
+      "displayLabel": "산란 일사량(DIF) — 평균",
+      "indicatorId": "B-041_dif_g03",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d4ea24d651b9",
+        "labelKo": "산란 일사량(DIF)",
+        "unit": "kWh/m²/day",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-d4ea24d651b9|kWh/m²/day|detail=평균|technology=1|B-041_dif_g03",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. GSA GIS 패키지에 7개 레이어(GHI·DNI·DIF·GTI·PVOUT·TEMP·OPTA)가 모두 포함되어 있으나 종전에는 GHI·DNI·PVOUT만 수록되어 있었음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "산란 일사량(DIF) — 평균",
+      "sourceLabelEn": "Diffuse horizontal irradiation",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. GSA GIS 패키지에 7개 레이어(GHI·DNI·DIF·GTI·PVOUT·TEMP·OPTA)가 모두 포함되어 있으나 종전에는 GHI·DNI·PVOUT만 수록되어 있었음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_dif_g03",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d4ea24d651b9|kWh/m²/day",
+      "dimensionLabels": {
+        "detail": "표준편차",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "표준편차",
+        "technology": "1"
+      },
+      "displayLabel": "산란 일사량(DIF) — 표준편차",
+      "indicatorId": "B-041_dif_g04",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d4ea24d651b9",
+        "labelKo": "산란 일사량(DIF)",
+        "unit": "kWh/m²/day",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-d4ea24d651b9|kWh/m²/day|detail=표준편차|technology=1|B-041_dif_g04",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. GSA GIS 패키지에 7개 레이어(GHI·DNI·DIF·GTI·PVOUT·TEMP·OPTA)가 모두 포함되어 있으나 종전에는 GHI·DNI·PVOUT만 수록되어 있었음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "산란 일사량(DIF) — 표준편차",
+      "sourceLabelEn": "Diffuse horizontal irradiation",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. GSA GIS 패키지에 7개 레이어(GHI·DNI·DIF·GTI·PVOUT·TEMP·OPTA)가 모두 포함되어 있으나 종전에는 GHI·DNI·PVOUT만 수록되어 있었음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_dif_g04",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4999244c44da|kWh/m²/day",
+      "dimensionLabels": {
+        "detail": "natl-max"
+      },
+      "dimensions": {
+        "detail": "natl-max"
+      },
+      "displayLabel": "직달 일사량(DNI) — natl-max",
+      "indicatorId": "B-041_dni_natl_max",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4999244c44da",
+        "labelKo": "직달 일사량(DNI)",
+        "unit": "kWh/m²/day",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-4999244c44da|kWh/m²/day|detail=natl-max|B-041_dni_natl_max",
+      "sourceCaveat": "[산출 완료] GSA 국가 팩트시트 요약표에는 DNI 수치가 없어 GeoTIFF 원본에서 직접 집계함. 분포: 중앙값 2.547 · 10분위 1.641 · 90분위 3.724 kWh/m²/day. 검증 — 동일 절차로 GHI를 재산출하면 4.2584가 나와 팩트시트 수록값 4.252와 일치(차 0.006)하므로 산출 절차가 타당함. DNI(2.685) < GHI(4.258) 관계도 습윤 열대 기후에서 기대되는 방향과 부합. ⚠ 위 값은 GSA 자체 통계와 동일한 단순 화소 평균이며, 위도별 화소 면적차를 보정한 면적가중 평균은 2.7027로 약 0.6% 높음. 10개국 비교 시 어느 쪽 정의를 쓸지 통일 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "직달 일사량(DNI) — natl-max",
+      "sourceLabelEn": "Direct normal irradiation",
+      "sourceNote": "[산출 완료] GSA 국가 팩트시트 요약표에는 DNI 수치가 없어 GeoTIFF 원본에서 직접 집계함. 분포: 중앙값 2.547 · 10분위 1.641 · 90분위 3.724 kWh/m²/day. 검증 — 동일 절차로 GHI를 재산출하면 4.2584가 나와 팩트시트 수록값 4.252와 일치(차 0.006)하므로 산출 절차가 타당함. DNI(2.685) < GHI(4.258) 관계도 습윤 열대 기후에서 기대되는 방향과 부합. ⚠ 위 값은 GSA 자체 통계와 동일한 단순 화소 평균이며, 위도별 화소 면적차를 보정한 면적가중 평균은 2.7027로 약 0.6% 높음. 10개국 비교 시 어느 쪽 정의를 쓸지 통일 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_dni_natl_max",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 39,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4999244c44da|kWh/m²/day",
+      "dimensionLabels": {
+        "detail": "natl-mean"
+      },
+      "dimensions": {
+        "detail": "natl-mean"
+      },
+      "displayLabel": "직달 일사량(DNI) — natl-mean",
+      "indicatorId": "B-041_dni_natl_mean",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4999244c44da",
+        "labelKo": "직달 일사량(DNI)",
+        "unit": "kWh/m²/day",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-4999244c44da|kWh/m²/day|detail=natl-mean|B-041_dni_natl_mean",
+      "sourceCaveat": "[산출 완료] GSA 국가 팩트시트 요약표에는 DNI 수치가 없어 GeoTIFF 원본에서 직접 집계함. 분포: 중앙값 2.547 · 10분위 1.641 · 90분위 3.724 kWh/m²/day. 검증 — 동일 절차로 GHI를 재산출하면 4.2584가 나와 팩트시트 수록값 4.252와 일치(차 0.006)하므로 산출 절차가 타당함. DNI(2.685) < GHI(4.258) 관계도 습윤 열대 기후에서 기대되는 방향과 부합. ⚠ 위 값은 GSA 자체 통계와 동일한 단순 화소 평균이며, 위도별 화소 면적차를 보정한 면적가중 평균은 2.7027로 약 0.6% 높음. 10개국 비교 시 어느 쪽 정의를 쓸지 통일 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "직달 일사량(DNI) — natl-mean",
+      "sourceLabelEn": "Direct normal irradiation",
+      "sourceNote": "[산출 완료] GSA 국가 팩트시트 요약표에는 DNI 수치가 없어 GeoTIFF 원본에서 직접 집계함. 분포: 중앙값 2.547 · 10분위 1.641 · 90분위 3.724 kWh/m²/day. 검증 — 동일 절차로 GHI를 재산출하면 4.2584가 나와 팩트시트 수록값 4.252와 일치(차 0.006)하므로 산출 절차가 타당함. DNI(2.685) < GHI(4.258) 관계도 습윤 열대 기후에서 기대되는 방향과 부합. ⚠ 위 값은 GSA 자체 통계와 동일한 단순 화소 평균이며, 위도별 화소 면적차를 보정한 면적가중 평균은 2.7027로 약 0.6% 높음. 10개국 비교 시 어느 쪽 정의를 쓸지 통일 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_dni_natl_mean",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 40,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4999244c44da|kWh/m²/day",
+      "dimensionLabels": {
+        "detail": "natl-min"
+      },
+      "dimensions": {
+        "detail": "natl-min"
+      },
+      "displayLabel": "직달 일사량(DNI) — natl-min",
+      "indicatorId": "B-041_dni_natl_min",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4999244c44da",
+        "labelKo": "직달 일사량(DNI)",
+        "unit": "kWh/m²/day",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-4999244c44da|kWh/m²/day|detail=natl-min|B-041_dni_natl_min",
+      "sourceCaveat": "[산출 완료] GSA 국가 팩트시트 요약표에는 DNI 수치가 없어 GeoTIFF 원본에서 직접 집계함. 분포: 중앙값 2.547 · 10분위 1.641 · 90분위 3.724 kWh/m²/day. 검증 — 동일 절차로 GHI를 재산출하면 4.2584가 나와 팩트시트 수록값 4.252와 일치(차 0.006)하므로 산출 절차가 타당함. DNI(2.685) < GHI(4.258) 관계도 습윤 열대 기후에서 기대되는 방향과 부합. ⚠ 위 값은 GSA 자체 통계와 동일한 단순 화소 평균이며, 위도별 화소 면적차를 보정한 면적가중 평균은 2.7027로 약 0.6% 높음. 10개국 비교 시 어느 쪽 정의를 쓸지 통일 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "직달 일사량(DNI) — natl-min",
+      "sourceLabelEn": "Direct normal irradiation",
+      "sourceNote": "[산출 완료] GSA 국가 팩트시트 요약표에는 DNI 수치가 없어 GeoTIFF 원본에서 직접 집계함. 분포: 중앙값 2.547 · 10분위 1.641 · 90분위 3.724 kWh/m²/day. 검증 — 동일 절차로 GHI를 재산출하면 4.2584가 나와 팩트시트 수록값 4.252와 일치(차 0.006)하므로 산출 절차가 타당함. DNI(2.685) < GHI(4.258) 관계도 습윤 열대 기후에서 기대되는 방향과 부합. ⚠ 위 값은 GSA 자체 통계와 동일한 단순 화소 평균이며, 위도별 화소 면적차를 보정한 면적가중 평균은 2.7027로 약 0.6% 높음. 10개국 비교 시 어느 쪽 정의를 쓸지 통일 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_dni_natl_min",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 41,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-cc8dbc8ab0b7|kWh/m²/yr",
+      "dimensionLabels": {
+        "detail": "연적산(DNI)",
+        "detail_2": "최대",
+        "technology": "2"
+      },
+      "dimensions": {
+        "detail": "연적산(DNI)",
+        "detail_2": "최대",
+        "technology": "2"
+      },
+      "displayLabel": "직달 일사량 — 연적산(DNI) — 최대",
+      "indicatorId": "B-041_dni_yearly_g01",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-cc8dbc8ab0b7",
+        "labelKo": "직달 일사량",
+        "unit": "kWh/m²/yr",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-cc8dbc8ab0b7|kWh/m²/yr|detail=연적산(DNI)|detail_2=최대|technology=2|B-041_dni_yearly_g01",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "직달 일사량 — 연적산(DNI) — 최대",
+      "sourceLabelEn": "Direct normal irradiation, yearly total",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_dni_yearly_g01",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 31,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-cc8dbc8ab0b7|kWh/m²/yr",
+      "dimensionLabels": {
+        "detail": "연적산(DNI)",
+        "detail_2": "최소",
+        "technology": "2"
+      },
+      "dimensions": {
+        "detail": "연적산(DNI)",
+        "detail_2": "최소",
+        "technology": "2"
+      },
+      "displayLabel": "직달 일사량 — 연적산(DNI) — 최소",
+      "indicatorId": "B-041_dni_yearly_g02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-cc8dbc8ab0b7",
+        "labelKo": "직달 일사량",
+        "unit": "kWh/m²/yr",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-cc8dbc8ab0b7|kWh/m²/yr|detail=연적산(DNI)|detail_2=최소|technology=2|B-041_dni_yearly_g02",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "직달 일사량 — 연적산(DNI) — 최소",
+      "sourceLabelEn": "Direct normal irradiation, yearly total",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_dni_yearly_g02",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 32,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-cc8dbc8ab0b7|kWh/m²/yr",
+      "dimensionLabels": {
+        "detail": "연적산(DNI)",
+        "detail_2": "평균",
+        "technology": "2"
+      },
+      "dimensions": {
+        "detail": "연적산(DNI)",
+        "detail_2": "평균",
+        "technology": "2"
+      },
+      "displayLabel": "직달 일사량 — 연적산(DNI) — 평균",
+      "indicatorId": "B-041_dni_yearly_g03",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-cc8dbc8ab0b7",
+        "labelKo": "직달 일사량",
+        "unit": "kWh/m²/yr",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-cc8dbc8ab0b7|kWh/m²/yr|detail=연적산(DNI)|detail_2=평균|technology=2|B-041_dni_yearly_g03",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "직달 일사량 — 연적산(DNI) — 평균",
+      "sourceLabelEn": "Direct normal irradiation, yearly total",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_dni_yearly_g03",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 33,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-cc8dbc8ab0b7|kWh/m²/yr",
+      "dimensionLabels": {
+        "detail": "연적산(DNI)",
+        "detail_2": "표준편차",
+        "technology": "2"
+      },
+      "dimensions": {
+        "detail": "연적산(DNI)",
+        "detail_2": "표준편차",
+        "technology": "2"
+      },
+      "displayLabel": "직달 일사량 — 연적산(DNI) — 표준편차",
+      "indicatorId": "B-041_dni_yearly_g04",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-cc8dbc8ab0b7",
+        "labelKo": "직달 일사량",
+        "unit": "kWh/m²/yr",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-cc8dbc8ab0b7|kWh/m²/yr|detail=연적산(DNI)|detail_2=표준편차|technology=2|B-041_dni_yearly_g04",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "직달 일사량 — 연적산(DNI) — 표준편차",
+      "sourceLabelEn": "Direct normal irradiation, yearly total",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_dni_yearly_g04",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 34,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d23cf640a954|kWh/m²/day",
+      "dimensionLabels": {
+        "detail": "국가 평균(이론잠재량) · 세계 158위",
+        "technology": "1 · 2"
+      },
+      "dimensions": {
+        "detail": "국가 평균(이론잠재량) · 세계 158위",
+        "technology": "1,2"
+      },
+      "displayLabel": "수평면 전일사량(GHI) — 국가 평균(이론잠재량) · 세계 158위",
+      "indicatorId": "B-041_ghi_01",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d23cf640a954",
+        "labelKo": "수평면 전일사량(GHI)",
+        "unit": "kWh/m²/day",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-d23cf640a954|kWh/m²/day|detail=국가 평균(이론잠재량) · 세계 158위|technology=1,2|B-041_ghi_01",
+      "sourceCaveat": "[GIS 처리] 원본은 GeoTIFF 250m 격자(EPSG:4326). 본 표 값은 GSA 국가 팩트시트의 격자 통계 요약. 래스터 원본은 Raw data 관리 + A-026과 동일하게 메타 3종 기재. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 250m 격자를 성 단위 집계 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "수평면 전일사량(GHI) — 국가 평균(이론잠재량) · 세계 158위",
+      "sourceLabelEn": "Global horizontal irradiation",
+      "sourceNote": "[GIS 처리] 원본은 GeoTIFF 250m 격자(EPSG:4326). 본 표 값은 GSA 국가 팩트시트의 격자 통계 요약. 래스터 원본은 Raw data 관리 + A-026과 동일하게 메타 3종 기재. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 250m 격자를 성 단위 집계 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_ghi_01",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 4,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d23cf640a954|kWh/m²/day",
+      "dimensionLabels": {
+        "detail": "25분위(면적 상위 25%)",
+        "technology": "1 · 2"
+      },
+      "dimensions": {
+        "detail": "25분위(면적 상위 25%)",
+        "technology": "1,2"
+      },
+      "displayLabel": "수평면 전일사량(GHI) — 25분위(면적 상위 25%)",
+      "indicatorId": "B-041_ghi_02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d23cf640a954",
+        "labelKo": "수평면 전일사량(GHI)",
+        "unit": "kWh/m²/day",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-d23cf640a954|kWh/m²/day|detail=25분위(면적 상위 25%)|technology=1,2|B-041_ghi_02",
+      "sourceCaveat": "[GIS 처리] 원본은 GeoTIFF 250m 격자(EPSG:4326). 본 표 값은 GSA 국가 팩트시트의 격자 통계 요약. 래스터 원본은 Raw data 관리 + A-026과 동일하게 메타 3종 기재. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 250m 격자를 성 단위 집계 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "수평면 전일사량(GHI) — 25분위(면적 상위 25%)",
+      "sourceLabelEn": "Global horizontal irradiation",
+      "sourceNote": "[GIS 처리] 원본은 GeoTIFF 250m 격자(EPSG:4326). 본 표 값은 GSA 국가 팩트시트의 격자 통계 요약. 래스터 원본은 Raw data 관리 + A-026과 동일하게 메타 3종 기재. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 250m 격자를 성 단위 집계 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_ghi_02",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d23cf640a954|kWh/m²/day",
+      "dimensionLabels": {
+        "detail": "최소값",
+        "technology": "1 · 2"
+      },
+      "dimensions": {
+        "detail": "최소값",
+        "technology": "1,2"
+      },
+      "displayLabel": "수평면 전일사량(GHI) — 최소값",
+      "indicatorId": "B-041_ghi_03",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d23cf640a954",
+        "labelKo": "수평면 전일사량(GHI)",
+        "unit": "kWh/m²/day",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-d23cf640a954|kWh/m²/day|detail=최소값|technology=1,2|B-041_ghi_03",
+      "sourceCaveat": "[GIS 처리] 원본은 GeoTIFF 250m 격자(EPSG:4326). 본 표 값은 GSA 국가 팩트시트의 격자 통계 요약. 래스터 원본은 Raw data 관리 + A-026과 동일하게 메타 3종 기재. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 250m 격자를 성 단위 집계 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "수평면 전일사량(GHI) — 최소값",
+      "sourceLabelEn": "Global horizontal irradiation",
+      "sourceNote": "[GIS 처리] 원본은 GeoTIFF 250m 격자(EPSG:4326). 본 표 값은 GSA 국가 팩트시트의 격자 통계 요약. 래스터 원본은 Raw data 관리 + A-026과 동일하게 메타 3종 기재. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 250m 격자를 성 단위 집계 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_ghi_03",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-efa0e046cbd2|kWh/m²/yr",
+      "dimensionLabels": {
+        "detail": "연적산(GHI)",
+        "detail_2": "최대",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "연적산(GHI)",
+        "detail_2": "최대",
+        "technology": "1"
+      },
+      "displayLabel": "수평면 전일사량 — 연적산(GHI) — 최대",
+      "indicatorId": "B-041_ghi_yearly_g01",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-efa0e046cbd2",
+        "labelKo": "수평면 전일사량",
+        "unit": "kWh/m²/yr",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-efa0e046cbd2|kWh/m²/yr|detail=연적산(GHI)|detail_2=최대|technology=1|B-041_ghi_yearly_g01",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 일평균(kWh/m²/day)과 연적산(kWh/m²/yr) 두 패키지가 모두 [raw]에 있으나 종전에는 일평균만 사용. 연적산은 발전량 산정에 바로 쓰인다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "수평면 전일사량 — 연적산(GHI) — 최대",
+      "sourceLabelEn": "Global horizontal irradiation, yearly total",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 일평균(kWh/m²/day)과 연적산(kWh/m²/yr) 두 패키지가 모두 [raw]에 있으나 종전에는 일평균만 사용. 연적산은 발전량 산정에 바로 쓰인다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_ghi_yearly_g01",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 27,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-efa0e046cbd2|kWh/m²/yr",
+      "dimensionLabels": {
+        "detail": "연적산(GHI)",
+        "detail_2": "최소",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "연적산(GHI)",
+        "detail_2": "최소",
+        "technology": "1"
+      },
+      "displayLabel": "수평면 전일사량 — 연적산(GHI) — 최소",
+      "indicatorId": "B-041_ghi_yearly_g02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-efa0e046cbd2",
+        "labelKo": "수평면 전일사량",
+        "unit": "kWh/m²/yr",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-efa0e046cbd2|kWh/m²/yr|detail=연적산(GHI)|detail_2=최소|technology=1|B-041_ghi_yearly_g02",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 일평균(kWh/m²/day)과 연적산(kWh/m²/yr) 두 패키지가 모두 [raw]에 있으나 종전에는 일평균만 사용. 연적산은 발전량 산정에 바로 쓰인다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "수평면 전일사량 — 연적산(GHI) — 최소",
+      "sourceLabelEn": "Global horizontal irradiation, yearly total",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 일평균(kWh/m²/day)과 연적산(kWh/m²/yr) 두 패키지가 모두 [raw]에 있으나 종전에는 일평균만 사용. 연적산은 발전량 산정에 바로 쓰인다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_ghi_yearly_g02",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 28,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-efa0e046cbd2|kWh/m²/yr",
+      "dimensionLabels": {
+        "detail": "연적산(GHI)",
+        "detail_2": "평균",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "연적산(GHI)",
+        "detail_2": "평균",
+        "technology": "1"
+      },
+      "displayLabel": "수평면 전일사량 — 연적산(GHI) — 평균",
+      "indicatorId": "B-041_ghi_yearly_g03",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-efa0e046cbd2",
+        "labelKo": "수평면 전일사량",
+        "unit": "kWh/m²/yr",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-efa0e046cbd2|kWh/m²/yr|detail=연적산(GHI)|detail_2=평균|technology=1|B-041_ghi_yearly_g03",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 일평균(kWh/m²/day)과 연적산(kWh/m²/yr) 두 패키지가 모두 [raw]에 있으나 종전에는 일평균만 사용. 연적산은 발전량 산정에 바로 쓰인다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "수평면 전일사량 — 연적산(GHI) — 평균",
+      "sourceLabelEn": "Global horizontal irradiation, yearly total",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 일평균(kWh/m²/day)과 연적산(kWh/m²/yr) 두 패키지가 모두 [raw]에 있으나 종전에는 일평균만 사용. 연적산은 발전량 산정에 바로 쓰인다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_ghi_yearly_g03",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 29,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-efa0e046cbd2|kWh/m²/yr",
+      "dimensionLabels": {
+        "detail": "연적산(GHI)",
+        "detail_2": "표준편차",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "연적산(GHI)",
+        "detail_2": "표준편차",
+        "technology": "1"
+      },
+      "displayLabel": "수평면 전일사량 — 연적산(GHI) — 표준편차",
+      "indicatorId": "B-041_ghi_yearly_g04",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-efa0e046cbd2",
+        "labelKo": "수평면 전일사량",
+        "unit": "kWh/m²/yr",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-efa0e046cbd2|kWh/m²/yr|detail=연적산(GHI)|detail_2=표준편차|technology=1|B-041_ghi_yearly_g04",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 일평균(kWh/m²/day)과 연적산(kWh/m²/yr) 두 패키지가 모두 [raw]에 있으나 종전에는 일평균만 사용. 연적산은 발전량 산정에 바로 쓰인다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "수평면 전일사량 — 연적산(GHI) — 표준편차",
+      "sourceLabelEn": "Global horizontal irradiation, yearly total",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 일평균(kWh/m²/day)과 연적산(kWh/m²/yr) 두 패키지가 모두 [raw]에 있으나 종전에는 일평균만 사용. 연적산은 발전량 산정에 바로 쓰인다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_ghi_yearly_g04",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 30,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-fb19d27802f3|kWh/m²/day",
+      "dimensionLabels": {
+        "detail": "최대",
+        "technology": "1 · 2"
+      },
+      "dimensions": {
+        "detail": "최대",
+        "technology": "1,2"
+      },
+      "displayLabel": "최적경사면 일사량(GTI) — 최대",
+      "indicatorId": "B-041_gti_g01",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-fb19d27802f3",
+        "labelKo": "최적경사면 일사량(GTI)",
+        "unit": "kWh/m²/day",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-fb19d27802f3|kWh/m²/day|detail=최대|technology=1,2|B-041_gti_g01",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 고정형 PV 설계에 직접 쓰이는 경사면 일사량. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "최적경사면 일사량(GTI) — 최대",
+      "sourceLabelEn": "Global tilted irradiation at optimum angle",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 고정형 PV 설계에 직접 쓰이는 경사면 일사량. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_gti_g01",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-fb19d27802f3|kWh/m²/day",
+      "dimensionLabels": {
+        "detail": "최소",
+        "technology": "1 · 2"
+      },
+      "dimensions": {
+        "detail": "최소",
+        "technology": "1,2"
+      },
+      "displayLabel": "최적경사면 일사량(GTI) — 최소",
+      "indicatorId": "B-041_gti_g02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-fb19d27802f3",
+        "labelKo": "최적경사면 일사량(GTI)",
+        "unit": "kWh/m²/day",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-fb19d27802f3|kWh/m²/day|detail=최소|technology=1,2|B-041_gti_g02",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 고정형 PV 설계에 직접 쓰이는 경사면 일사량. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "최적경사면 일사량(GTI) — 최소",
+      "sourceLabelEn": "Global tilted irradiation at optimum angle",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 고정형 PV 설계에 직접 쓰이는 경사면 일사량. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_gti_g02",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-fb19d27802f3|kWh/m²/day",
+      "dimensionLabels": {
+        "detail": "평균",
+        "technology": "1 · 2"
+      },
+      "dimensions": {
+        "detail": "평균",
+        "technology": "1,2"
+      },
+      "displayLabel": "최적경사면 일사량(GTI) — 평균",
+      "indicatorId": "B-041_gti_g03",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-fb19d27802f3",
+        "labelKo": "최적경사면 일사량(GTI)",
+        "unit": "kWh/m²/day",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-fb19d27802f3|kWh/m²/day|detail=평균|technology=1,2|B-041_gti_g03",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 고정형 PV 설계에 직접 쓰이는 경사면 일사량. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "최적경사면 일사량(GTI) — 평균",
+      "sourceLabelEn": "Global tilted irradiation at optimum angle",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 고정형 PV 설계에 직접 쓰이는 경사면 일사량. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_gti_g03",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-fb19d27802f3|kWh/m²/day",
+      "dimensionLabels": {
+        "detail": "표준편차",
+        "technology": "1 · 2"
+      },
+      "dimensions": {
+        "detail": "표준편차",
+        "technology": "1,2"
+      },
+      "displayLabel": "최적경사면 일사량(GTI) — 표준편차",
+      "indicatorId": "B-041_gti_g04",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-fb19d27802f3",
+        "labelKo": "최적경사면 일사량(GTI)",
+        "unit": "kWh/m²/day",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-fb19d27802f3|kWh/m²/day|detail=표준편차|technology=1,2|B-041_gti_g04",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 고정형 PV 설계에 직접 쓰이는 경사면 일사량. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "최적경사면 일사량(GTI) — 표준편차",
+      "sourceLabelEn": "Global tilted irradiation at optimum angle",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 고정형 PV 설계에 직접 쓰이는 경사면 일사량. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_gti_g04",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e8dfe93e4f75|°",
+      "dimensionLabels": {
+        "detail": "최대",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "최대",
+        "technology": "1"
+      },
+      "displayLabel": "최적 경사각(OPTA) — 최대",
+      "indicatorId": "B-041_opta_g01",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e8dfe93e4f75",
+        "labelKo": "최적 경사각(OPTA)",
+        "unit": "°",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-e8dfe93e4f75|°|detail=최대|technology=1|B-041_opta_g01",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "최적 경사각(OPTA) — 최대",
+      "sourceLabelEn": "Optimum tilt angle of PV modules",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_opta_g01",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e8dfe93e4f75|°",
+      "dimensionLabels": {
+        "detail": "최소",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "최소",
+        "technology": "1"
+      },
+      "displayLabel": "최적 경사각(OPTA) — 최소",
+      "indicatorId": "B-041_opta_g02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e8dfe93e4f75",
+        "labelKo": "최적 경사각(OPTA)",
+        "unit": "°",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-e8dfe93e4f75|°|detail=최소|technology=1|B-041_opta_g02",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "최적 경사각(OPTA) — 최소",
+      "sourceLabelEn": "Optimum tilt angle of PV modules",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_opta_g02",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e8dfe93e4f75|°",
+      "dimensionLabels": {
+        "detail": "평균",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "평균",
+        "technology": "1"
+      },
+      "displayLabel": "최적 경사각(OPTA) — 평균",
+      "indicatorId": "B-041_opta_g03",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e8dfe93e4f75",
+        "labelKo": "최적 경사각(OPTA)",
+        "unit": "°",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-e8dfe93e4f75|°|detail=평균|technology=1|B-041_opta_g03",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "최적 경사각(OPTA) — 평균",
+      "sourceLabelEn": "Optimum tilt angle of PV modules",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_opta_g03",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e8dfe93e4f75|°",
+      "dimensionLabels": {
+        "detail": "표준편차",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "표준편차",
+        "technology": "1"
+      },
+      "displayLabel": "최적 경사각(OPTA) — 표준편차",
+      "indicatorId": "B-041_opta_g04",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e8dfe93e4f75",
+        "labelKo": "최적 경사각(OPTA)",
+        "unit": "°",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-e8dfe93e4f75|°|detail=표준편차|technology=1|B-041_opta_g04",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "최적 경사각(OPTA) — 표준편차",
+      "sourceLabelEn": "Optimum tilt angle of PV modules",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_opta_g04",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-78ef267f1177|kWh/kWp/day",
+      "dimensionLabels": {
+        "technology": "1"
+      },
+      "dimensions": {
+        "technology": "1"
+      },
+      "displayLabel": "실용 발전량 잠재(PVOUT Level 1)",
+      "indicatorId": "B-041_pvout",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-78ef267f1177",
+        "labelKo": "실용 발전량 잠재(PVOUT Level 1)",
+        "unit": "kWh/kWp/day",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-78ef267f1177|kWh/kWp/day|technology=1|B-041_pvout",
+      "sourceCaveat": "[해상도 정정] 종전 \"격자 250m\" 표기는 GHI·DNI 기준이며 PVOUT에는 맞지 않음 — 보유 GeoTIFF 실측 결과 PVOUT은 30 arc-sec(≈927 m) 격자임을 확인하여 표기를 수정함. 팩트시트 값과 래스터 평균의 2.9% 차이도 해상도·집계 마스크 차이로 설명됨. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "실용 발전량 잠재(PVOUT Level 1)",
+      "sourceLabelEn": "Photovoltaic power potential",
+      "sourceNote": "[해상도 정정] 종전 \"격자 250m\" 표기는 GHI·DNI 기준이며 PVOUT에는 맞지 않음 — 보유 GeoTIFF 실측 결과 PVOUT은 30 arc-sec(≈927 m) 격자임을 확인하여 표기를 수정함. 팩트시트 값과 래스터 평균의 2.9% 차이도 해상도·집계 마스크 차이로 설명됨. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_pvout",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-857c20302f57|지수",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "PVOUT 계절변동지수",
+      "indicatorId": "B-041_pvout_seasonality",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-857c20302f57",
+        "labelKo": "PVOUT 계절변동지수",
+        "unit": "지수",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-857c20302f57|지수||B-041_pvout_seasonality",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "PVOUT 계절변동지수",
+      "sourceLabelEn": "PVOUT seasonality index",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_pvout_seasonality",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a778c1e01284|지수",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "PVOUT 계절변동지수 (범위 상한)",
+      "indicatorId": "B-041_pvout_seasonality_max",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a778c1e01284",
+        "labelKo": "PVOUT 계절변동지수 (범위 상한)",
+        "unit": "지수",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a778c1e01284|지수||B-041_pvout_seasonality_max",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "PVOUT 계절변동지수 (범위 상한)",
+      "sourceLabelEn": "PVOUT seasonality index",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_pvout_seasonality_max",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e558fa7ccd51|지수",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "PVOUT 계절변동지수 (범위 하한)",
+      "indicatorId": "B-041_pvout_seasonality_min",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e558fa7ccd51",
+        "labelKo": "PVOUT 계절변동지수 (범위 하한)",
+        "unit": "지수",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-e558fa7ccd51|지수||B-041_pvout_seasonality_min",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "PVOUT 계절변동지수 (범위 하한)",
+      "sourceLabelEn": "PVOUT seasonality index",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_pvout_seasonality_min",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4df8dbb65822|kWh/kWp/yr",
+      "dimensionLabels": {
+        "detail": "연적산(PVOUT)",
+        "detail_2": "최대",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "연적산(PVOUT)",
+        "detail_2": "최대",
+        "technology": "1"
+      },
+      "displayLabel": "실용 발전량 잠재 — 연적산(PVOUT) — 최대",
+      "indicatorId": "B-041_pvout_yearly_g01",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4df8dbb65822",
+        "labelKo": "실용 발전량 잠재",
+        "unit": "kWh/kWp/yr",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-4df8dbb65822|kWh/kWp/yr|detail=연적산(PVOUT)|detail_2=최대|technology=1|B-041_pvout_yearly_g01",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "실용 발전량 잠재 — 연적산(PVOUT) — 최대",
+      "sourceLabelEn": "Photovoltaic power potential, yearly total",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_pvout_yearly_g01",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 35,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4df8dbb65822|kWh/kWp/yr",
+      "dimensionLabels": {
+        "detail": "연적산(PVOUT)",
+        "detail_2": "최소",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "연적산(PVOUT)",
+        "detail_2": "최소",
+        "technology": "1"
+      },
+      "displayLabel": "실용 발전량 잠재 — 연적산(PVOUT) — 최소",
+      "indicatorId": "B-041_pvout_yearly_g02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4df8dbb65822",
+        "labelKo": "실용 발전량 잠재",
+        "unit": "kWh/kWp/yr",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-4df8dbb65822|kWh/kWp/yr|detail=연적산(PVOUT)|detail_2=최소|technology=1|B-041_pvout_yearly_g02",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "실용 발전량 잠재 — 연적산(PVOUT) — 최소",
+      "sourceLabelEn": "Photovoltaic power potential, yearly total",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_pvout_yearly_g02",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 36,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4df8dbb65822|kWh/kWp/yr",
+      "dimensionLabels": {
+        "detail": "연적산(PVOUT)",
+        "detail_2": "평균",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "연적산(PVOUT)",
+        "detail_2": "평균",
+        "technology": "1"
+      },
+      "displayLabel": "실용 발전량 잠재 — 연적산(PVOUT) — 평균",
+      "indicatorId": "B-041_pvout_yearly_g03",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4df8dbb65822",
+        "labelKo": "실용 발전량 잠재",
+        "unit": "kWh/kWp/yr",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-4df8dbb65822|kWh/kWp/yr|detail=연적산(PVOUT)|detail_2=평균|technology=1|B-041_pvout_yearly_g03",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "실용 발전량 잠재 — 연적산(PVOUT) — 평균",
+      "sourceLabelEn": "Photovoltaic power potential, yearly total",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_pvout_yearly_g03",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 37,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4df8dbb65822|kWh/kWp/yr",
+      "dimensionLabels": {
+        "detail": "연적산(PVOUT)",
+        "detail_2": "표준편차",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "연적산(PVOUT)",
+        "detail_2": "표준편차",
+        "technology": "1"
+      },
+      "displayLabel": "실용 발전량 잠재 — 연적산(PVOUT) — 표준편차",
+      "indicatorId": "B-041_pvout_yearly_g04",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4df8dbb65822",
+        "labelKo": "실용 발전량 잠재",
+        "unit": "kWh/kWp/yr",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-4df8dbb65822|kWh/kWp/yr|detail=연적산(PVOUT)|detail_2=표준편차|technology=1|B-041_pvout_yearly_g04",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "실용 발전량 잠재 — 연적산(PVOUT) — 표준편차",
+      "sourceLabelEn": "Photovoltaic power potential, yearly total",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_pvout_yearly_g04",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 38,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4999244c44da|kWh/m²/day",
+      "dimensionLabels": {
+        "detail": "보유 래스터 격자통계",
+        "detail_2": "최대",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "보유 래스터 격자통계",
+        "detail_2": "최대",
+        "technology": "1"
+      },
+      "displayLabel": "직달 일사량(DNI) — 보유 래스터 격자통계 — 최대",
+      "indicatorId": "B-041_raster_stats_dni_g01",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4999244c44da",
+        "labelKo": "직달 일사량(DNI)",
+        "unit": "kWh/m²/day",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-4999244c44da|kWh/m²/day|detail=보유 래스터 격자통계|detail_2=최대|technology=1|B-041_raster_stats_dni_g01",
+      "sourceCaveat": "[GIS 원본 대조 — 신규 수록] 종전 수록값은 GSA 국가 팩트시트의 요약 통계였고, 보유 GeoTIFF 자체의 격자 통계는 반영되어 있지 않았음. 두 값이 완전히 같지는 않으므로 별도 지표로 병기함 — 예: PVOUT은 팩트시트 3.554 vs 보유 래스터 평균 3.4503 kWh/kWp/day(2.9% 차)이며, 이는 팩트시트가 다른 해상도·마스크로 집계했기 때문으로 보임. **최소·최대·표준편차는 팩트시트에 없고 래스터에만 있는 값**이라 이번에 처음 수록됨. 주의: GHI·DNI는 0.0025°(≈278 m) 격자이나 PVOUT은 0.008333°(≈927 m, 30 arc-sec) 격자로 해상도가 다름. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 보유 래스터로 성(省) 단위 집계 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "직달 일사량(DNI) — 보유 래스터 격자통계 — 최대",
+      "sourceLabelEn": "DNI raster grid statistics (held GeoTIFF)",
+      "sourceNote": "[GIS 원본 대조 — 신규 수록] 종전 수록값은 GSA 국가 팩트시트의 요약 통계였고, 보유 GeoTIFF 자체의 격자 통계는 반영되어 있지 않았음. 두 값이 완전히 같지는 않으므로 별도 지표로 병기함 — 예: PVOUT은 팩트시트 3.554 vs 보유 래스터 평균 3.4503 kWh/kWp/day(2.9% 차)이며, 이는 팩트시트가 다른 해상도·마스크로 집계했기 때문으로 보임. **최소·최대·표준편차는 팩트시트에 없고 래스터에만 있는 값**이라 이번에 처음 수록됨. 주의: GHI·DNI는 0.0025°(≈278 m) 격자이나 PVOUT은 0.008333°(≈927 m, 30 arc-sec) 격자로 해상도가 다름. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 보유 래스터로 성(省) 단위 집계 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_raster_stats_dni_g01",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 46,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4999244c44da|kWh/m²/day",
+      "dimensionLabels": {
+        "detail": "보유 래스터 격자통계",
+        "detail_2": "최소",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "보유 래스터 격자통계",
+        "detail_2": "최소",
+        "technology": "1"
+      },
+      "displayLabel": "직달 일사량(DNI) — 보유 래스터 격자통계 — 최소",
+      "indicatorId": "B-041_raster_stats_dni_g02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4999244c44da",
+        "labelKo": "직달 일사량(DNI)",
+        "unit": "kWh/m²/day",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-4999244c44da|kWh/m²/day|detail=보유 래스터 격자통계|detail_2=최소|technology=1|B-041_raster_stats_dni_g02",
+      "sourceCaveat": "[GIS 원본 대조 — 신규 수록] 종전 수록값은 GSA 국가 팩트시트의 요약 통계였고, 보유 GeoTIFF 자체의 격자 통계는 반영되어 있지 않았음. 두 값이 완전히 같지는 않으므로 별도 지표로 병기함 — 예: PVOUT은 팩트시트 3.554 vs 보유 래스터 평균 3.4503 kWh/kWp/day(2.9% 차)이며, 이는 팩트시트가 다른 해상도·마스크로 집계했기 때문으로 보임. **최소·최대·표준편차는 팩트시트에 없고 래스터에만 있는 값**이라 이번에 처음 수록됨. 주의: GHI·DNI는 0.0025°(≈278 m) 격자이나 PVOUT은 0.008333°(≈927 m, 30 arc-sec) 격자로 해상도가 다름. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 보유 래스터로 성(省) 단위 집계 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "직달 일사량(DNI) — 보유 래스터 격자통계 — 최소",
+      "sourceLabelEn": "DNI raster grid statistics (held GeoTIFF)",
+      "sourceNote": "[GIS 원본 대조 — 신규 수록] 종전 수록값은 GSA 국가 팩트시트의 요약 통계였고, 보유 GeoTIFF 자체의 격자 통계는 반영되어 있지 않았음. 두 값이 완전히 같지는 않으므로 별도 지표로 병기함 — 예: PVOUT은 팩트시트 3.554 vs 보유 래스터 평균 3.4503 kWh/kWp/day(2.9% 차)이며, 이는 팩트시트가 다른 해상도·마스크로 집계했기 때문으로 보임. **최소·최대·표준편차는 팩트시트에 없고 래스터에만 있는 값**이라 이번에 처음 수록됨. 주의: GHI·DNI는 0.0025°(≈278 m) 격자이나 PVOUT은 0.008333°(≈927 m, 30 arc-sec) 격자로 해상도가 다름. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 보유 래스터로 성(省) 단위 집계 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_raster_stats_dni_g02",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 47,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4999244c44da|kWh/m²/day",
+      "dimensionLabels": {
+        "detail": "보유 래스터 격자통계",
+        "detail_2": "평균",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "보유 래스터 격자통계",
+        "detail_2": "평균",
+        "technology": "1"
+      },
+      "displayLabel": "직달 일사량(DNI) — 보유 래스터 격자통계 — 평균",
+      "indicatorId": "B-041_raster_stats_dni_g03",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4999244c44da",
+        "labelKo": "직달 일사량(DNI)",
+        "unit": "kWh/m²/day",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-4999244c44da|kWh/m²/day|detail=보유 래스터 격자통계|detail_2=평균|technology=1|B-041_raster_stats_dni_g03",
+      "sourceCaveat": "[GIS 원본 대조 — 신규 수록] 종전 수록값은 GSA 국가 팩트시트의 요약 통계였고, 보유 GeoTIFF 자체의 격자 통계는 반영되어 있지 않았음. 두 값이 완전히 같지는 않으므로 별도 지표로 병기함 — 예: PVOUT은 팩트시트 3.554 vs 보유 래스터 평균 3.4503 kWh/kWp/day(2.9% 차)이며, 이는 팩트시트가 다른 해상도·마스크로 집계했기 때문으로 보임. **최소·최대·표준편차는 팩트시트에 없고 래스터에만 있는 값**이라 이번에 처음 수록됨. 주의: GHI·DNI는 0.0025°(≈278 m) 격자이나 PVOUT은 0.008333°(≈927 m, 30 arc-sec) 격자로 해상도가 다름. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 보유 래스터로 성(省) 단위 집계 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "직달 일사량(DNI) — 보유 래스터 격자통계 — 평균",
+      "sourceLabelEn": "DNI raster grid statistics (held GeoTIFF)",
+      "sourceNote": "[GIS 원본 대조 — 신규 수록] 종전 수록값은 GSA 국가 팩트시트의 요약 통계였고, 보유 GeoTIFF 자체의 격자 통계는 반영되어 있지 않았음. 두 값이 완전히 같지는 않으므로 별도 지표로 병기함 — 예: PVOUT은 팩트시트 3.554 vs 보유 래스터 평균 3.4503 kWh/kWp/day(2.9% 차)이며, 이는 팩트시트가 다른 해상도·마스크로 집계했기 때문으로 보임. **최소·최대·표준편차는 팩트시트에 없고 래스터에만 있는 값**이라 이번에 처음 수록됨. 주의: GHI·DNI는 0.0025°(≈278 m) 격자이나 PVOUT은 0.008333°(≈927 m, 30 arc-sec) 격자로 해상도가 다름. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 보유 래스터로 성(省) 단위 집계 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_raster_stats_dni_g03",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 48,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4999244c44da|kWh/m²/day",
+      "dimensionLabels": {
+        "detail": "보유 래스터 격자통계",
+        "detail_2": "표준편차",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "보유 래스터 격자통계",
+        "detail_2": "표준편차",
+        "technology": "1"
+      },
+      "displayLabel": "직달 일사량(DNI) — 보유 래스터 격자통계 — 표준편차",
+      "indicatorId": "B-041_raster_stats_dni_g04",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4999244c44da",
+        "labelKo": "직달 일사량(DNI)",
+        "unit": "kWh/m²/day",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-4999244c44da|kWh/m²/day|detail=보유 래스터 격자통계|detail_2=표준편차|technology=1|B-041_raster_stats_dni_g04",
+      "sourceCaveat": "[GIS 원본 대조 — 신규 수록] 종전 수록값은 GSA 국가 팩트시트의 요약 통계였고, 보유 GeoTIFF 자체의 격자 통계는 반영되어 있지 않았음. 두 값이 완전히 같지는 않으므로 별도 지표로 병기함 — 예: PVOUT은 팩트시트 3.554 vs 보유 래스터 평균 3.4503 kWh/kWp/day(2.9% 차)이며, 이는 팩트시트가 다른 해상도·마스크로 집계했기 때문으로 보임. **최소·최대·표준편차는 팩트시트에 없고 래스터에만 있는 값**이라 이번에 처음 수록됨. 주의: GHI·DNI는 0.0025°(≈278 m) 격자이나 PVOUT은 0.008333°(≈927 m, 30 arc-sec) 격자로 해상도가 다름. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 보유 래스터로 성(省) 단위 집계 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "직달 일사량(DNI) — 보유 래스터 격자통계 — 표준편차",
+      "sourceLabelEn": "DNI raster grid statistics (held GeoTIFF)",
+      "sourceNote": "[GIS 원본 대조 — 신규 수록] 종전 수록값은 GSA 국가 팩트시트의 요약 통계였고, 보유 GeoTIFF 자체의 격자 통계는 반영되어 있지 않았음. 두 값이 완전히 같지는 않으므로 별도 지표로 병기함 — 예: PVOUT은 팩트시트 3.554 vs 보유 래스터 평균 3.4503 kWh/kWp/day(2.9% 차)이며, 이는 팩트시트가 다른 해상도·마스크로 집계했기 때문으로 보임. **최소·최대·표준편차는 팩트시트에 없고 래스터에만 있는 값**이라 이번에 처음 수록됨. 주의: GHI·DNI는 0.0025°(≈278 m) 격자이나 PVOUT은 0.008333°(≈927 m, 30 arc-sec) 격자로 해상도가 다름. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 보유 래스터로 성(省) 단위 집계 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_raster_stats_dni_g04",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 49,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d23cf640a954|kWh/m²/day",
+      "dimensionLabels": {
+        "detail": "보유 래스터 격자통계",
+        "detail_2": "최대",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "보유 래스터 격자통계",
+        "detail_2": "최대",
+        "technology": "1"
+      },
+      "displayLabel": "수평면 전일사량(GHI) — 보유 래스터 격자통계 — 최대",
+      "indicatorId": "B-041_raster_stats_ghi_g01",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d23cf640a954",
+        "labelKo": "수평면 전일사량(GHI)",
+        "unit": "kWh/m²/day",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-d23cf640a954|kWh/m²/day|detail=보유 래스터 격자통계|detail_2=최대|technology=1|B-041_raster_stats_ghi_g01",
+      "sourceCaveat": "[GIS 원본 대조 — 신규 수록] 종전 수록값은 GSA 국가 팩트시트의 요약 통계였고, 보유 GeoTIFF 자체의 격자 통계는 반영되어 있지 않았음. 두 값이 완전히 같지는 않으므로 별도 지표로 병기함 — 예: PVOUT은 팩트시트 3.554 vs 보유 래스터 평균 3.4503 kWh/kWp/day(2.9% 차)이며, 이는 팩트시트가 다른 해상도·마스크로 집계했기 때문으로 보임. **최소·최대·표준편차는 팩트시트에 없고 래스터에만 있는 값**이라 이번에 처음 수록됨. 주의: GHI·DNI는 0.0025°(≈278 m) 격자이나 PVOUT은 0.008333°(≈927 m, 30 arc-sec) 격자로 해상도가 다름. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 보유 래스터로 성(省) 단위 집계 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "수평면 전일사량(GHI) — 보유 래스터 격자통계 — 최대",
+      "sourceLabelEn": "GHI raster grid statistics (held GeoTIFF)",
+      "sourceNote": "[GIS 원본 대조 — 신규 수록] 종전 수록값은 GSA 국가 팩트시트의 요약 통계였고, 보유 GeoTIFF 자체의 격자 통계는 반영되어 있지 않았음. 두 값이 완전히 같지는 않으므로 별도 지표로 병기함 — 예: PVOUT은 팩트시트 3.554 vs 보유 래스터 평균 3.4503 kWh/kWp/day(2.9% 차)이며, 이는 팩트시트가 다른 해상도·마스크로 집계했기 때문으로 보임. **최소·최대·표준편차는 팩트시트에 없고 래스터에만 있는 값**이라 이번에 처음 수록됨. 주의: GHI·DNI는 0.0025°(≈278 m) 격자이나 PVOUT은 0.008333°(≈927 m, 30 arc-sec) 격자로 해상도가 다름. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 보유 래스터로 성(省) 단위 집계 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_raster_stats_ghi_g01",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 42,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d23cf640a954|kWh/m²/day",
+      "dimensionLabels": {
+        "detail": "보유 래스터 격자통계",
+        "detail_2": "최소",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "보유 래스터 격자통계",
+        "detail_2": "최소",
+        "technology": "1"
+      },
+      "displayLabel": "수평면 전일사량(GHI) — 보유 래스터 격자통계 — 최소",
+      "indicatorId": "B-041_raster_stats_ghi_g02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d23cf640a954",
+        "labelKo": "수평면 전일사량(GHI)",
+        "unit": "kWh/m²/day",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-d23cf640a954|kWh/m²/day|detail=보유 래스터 격자통계|detail_2=최소|technology=1|B-041_raster_stats_ghi_g02",
+      "sourceCaveat": "[GIS 원본 대조 — 신규 수록] 종전 수록값은 GSA 국가 팩트시트의 요약 통계였고, 보유 GeoTIFF 자체의 격자 통계는 반영되어 있지 않았음. 두 값이 완전히 같지는 않으므로 별도 지표로 병기함 — 예: PVOUT은 팩트시트 3.554 vs 보유 래스터 평균 3.4503 kWh/kWp/day(2.9% 차)이며, 이는 팩트시트가 다른 해상도·마스크로 집계했기 때문으로 보임. **최소·최대·표준편차는 팩트시트에 없고 래스터에만 있는 값**이라 이번에 처음 수록됨. 주의: GHI·DNI는 0.0025°(≈278 m) 격자이나 PVOUT은 0.008333°(≈927 m, 30 arc-sec) 격자로 해상도가 다름. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 보유 래스터로 성(省) 단위 집계 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "수평면 전일사량(GHI) — 보유 래스터 격자통계 — 최소",
+      "sourceLabelEn": "GHI raster grid statistics (held GeoTIFF)",
+      "sourceNote": "[GIS 원본 대조 — 신규 수록] 종전 수록값은 GSA 국가 팩트시트의 요약 통계였고, 보유 GeoTIFF 자체의 격자 통계는 반영되어 있지 않았음. 두 값이 완전히 같지는 않으므로 별도 지표로 병기함 — 예: PVOUT은 팩트시트 3.554 vs 보유 래스터 평균 3.4503 kWh/kWp/day(2.9% 차)이며, 이는 팩트시트가 다른 해상도·마스크로 집계했기 때문으로 보임. **최소·최대·표준편차는 팩트시트에 없고 래스터에만 있는 값**이라 이번에 처음 수록됨. 주의: GHI·DNI는 0.0025°(≈278 m) 격자이나 PVOUT은 0.008333°(≈927 m, 30 arc-sec) 격자로 해상도가 다름. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 보유 래스터로 성(省) 단위 집계 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_raster_stats_ghi_g02",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 43,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d23cf640a954|kWh/m²/day",
+      "dimensionLabels": {
+        "detail": "보유 래스터 격자통계",
+        "detail_2": "평균",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "보유 래스터 격자통계",
+        "detail_2": "평균",
+        "technology": "1"
+      },
+      "displayLabel": "수평면 전일사량(GHI) — 보유 래스터 격자통계 — 평균",
+      "indicatorId": "B-041_raster_stats_ghi_g03",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d23cf640a954",
+        "labelKo": "수평면 전일사량(GHI)",
+        "unit": "kWh/m²/day",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-d23cf640a954|kWh/m²/day|detail=보유 래스터 격자통계|detail_2=평균|technology=1|B-041_raster_stats_ghi_g03",
+      "sourceCaveat": "[GIS 원본 대조 — 신규 수록] 종전 수록값은 GSA 국가 팩트시트의 요약 통계였고, 보유 GeoTIFF 자체의 격자 통계는 반영되어 있지 않았음. 두 값이 완전히 같지는 않으므로 별도 지표로 병기함 — 예: PVOUT은 팩트시트 3.554 vs 보유 래스터 평균 3.4503 kWh/kWp/day(2.9% 차)이며, 이는 팩트시트가 다른 해상도·마스크로 집계했기 때문으로 보임. **최소·최대·표준편차는 팩트시트에 없고 래스터에만 있는 값**이라 이번에 처음 수록됨. 주의: GHI·DNI는 0.0025°(≈278 m) 격자이나 PVOUT은 0.008333°(≈927 m, 30 arc-sec) 격자로 해상도가 다름. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 보유 래스터로 성(省) 단위 집계 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "수평면 전일사량(GHI) — 보유 래스터 격자통계 — 평균",
+      "sourceLabelEn": "GHI raster grid statistics (held GeoTIFF)",
+      "sourceNote": "[GIS 원본 대조 — 신규 수록] 종전 수록값은 GSA 국가 팩트시트의 요약 통계였고, 보유 GeoTIFF 자체의 격자 통계는 반영되어 있지 않았음. 두 값이 완전히 같지는 않으므로 별도 지표로 병기함 — 예: PVOUT은 팩트시트 3.554 vs 보유 래스터 평균 3.4503 kWh/kWp/day(2.9% 차)이며, 이는 팩트시트가 다른 해상도·마스크로 집계했기 때문으로 보임. **최소·최대·표준편차는 팩트시트에 없고 래스터에만 있는 값**이라 이번에 처음 수록됨. 주의: GHI·DNI는 0.0025°(≈278 m) 격자이나 PVOUT은 0.008333°(≈927 m, 30 arc-sec) 격자로 해상도가 다름. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 보유 래스터로 성(省) 단위 집계 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_raster_stats_ghi_g03",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 44,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d23cf640a954|kWh/m²/day",
+      "dimensionLabels": {
+        "detail": "보유 래스터 격자통계",
+        "detail_2": "표준편차",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "보유 래스터 격자통계",
+        "detail_2": "표준편차",
+        "technology": "1"
+      },
+      "displayLabel": "수평면 전일사량(GHI) — 보유 래스터 격자통계 — 표준편차",
+      "indicatorId": "B-041_raster_stats_ghi_g04",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d23cf640a954",
+        "labelKo": "수평면 전일사량(GHI)",
+        "unit": "kWh/m²/day",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-d23cf640a954|kWh/m²/day|detail=보유 래스터 격자통계|detail_2=표준편차|technology=1|B-041_raster_stats_ghi_g04",
+      "sourceCaveat": "[GIS 원본 대조 — 신규 수록] 종전 수록값은 GSA 국가 팩트시트의 요약 통계였고, 보유 GeoTIFF 자체의 격자 통계는 반영되어 있지 않았음. 두 값이 완전히 같지는 않으므로 별도 지표로 병기함 — 예: PVOUT은 팩트시트 3.554 vs 보유 래스터 평균 3.4503 kWh/kWp/day(2.9% 차)이며, 이는 팩트시트가 다른 해상도·마스크로 집계했기 때문으로 보임. **최소·최대·표준편차는 팩트시트에 없고 래스터에만 있는 값**이라 이번에 처음 수록됨. 주의: GHI·DNI는 0.0025°(≈278 m) 격자이나 PVOUT은 0.008333°(≈927 m, 30 arc-sec) 격자로 해상도가 다름. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 보유 래스터로 성(省) 단위 집계 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "수평면 전일사량(GHI) — 보유 래스터 격자통계 — 표준편차",
+      "sourceLabelEn": "GHI raster grid statistics (held GeoTIFF)",
+      "sourceNote": "[GIS 원본 대조 — 신규 수록] 종전 수록값은 GSA 국가 팩트시트의 요약 통계였고, 보유 GeoTIFF 자체의 격자 통계는 반영되어 있지 않았음. 두 값이 완전히 같지는 않으므로 별도 지표로 병기함 — 예: PVOUT은 팩트시트 3.554 vs 보유 래스터 평균 3.4503 kWh/kWp/day(2.9% 차)이며, 이는 팩트시트가 다른 해상도·마스크로 집계했기 때문으로 보임. **최소·최대·표준편차는 팩트시트에 없고 래스터에만 있는 값**이라 이번에 처음 수록됨. 주의: GHI·DNI는 0.0025°(≈278 m) 격자이나 PVOUT은 0.008333°(≈927 m, 30 arc-sec) 격자로 해상도가 다름. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 보유 래스터로 성(省) 단위 집계 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_raster_stats_ghi_g04",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 45,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1977a09c59df|kWh/kWp/day",
+      "dimensionLabels": {
+        "detail": "보유 래스터 격자통계",
+        "detail_2": "최대",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "보유 래스터 격자통계",
+        "detail_2": "최대",
+        "technology": "1"
+      },
+      "displayLabel": "실용 발전량 잠재(PVOUT) — 보유 래스터 격자통계 — 최대",
+      "indicatorId": "B-041_raster_stats_pvout_g01",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1977a09c59df",
+        "labelKo": "실용 발전량 잠재(PVOUT)",
+        "unit": "kWh/kWp/day",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-1977a09c59df|kWh/kWp/day|detail=보유 래스터 격자통계|detail_2=최대|technology=1|B-041_raster_stats_pvout_g01",
+      "sourceCaveat": "[GIS 원본 대조 — 신규 수록] 종전 수록값은 GSA 국가 팩트시트의 요약 통계였고, 보유 GeoTIFF 자체의 격자 통계는 반영되어 있지 않았음. 두 값이 완전히 같지는 않으므로 별도 지표로 병기함 — 예: PVOUT은 팩트시트 3.554 vs 보유 래스터 평균 3.4503 kWh/kWp/day(2.9% 차)이며, 이는 팩트시트가 다른 해상도·마스크로 집계했기 때문으로 보임. **최소·최대·표준편차는 팩트시트에 없고 래스터에만 있는 값**이라 이번에 처음 수록됨. 주의: GHI·DNI는 0.0025°(≈278 m) 격자이나 PVOUT은 0.008333°(≈927 m, 30 arc-sec) 격자로 해상도가 다름. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 보유 래스터로 성(省) 단위 집계 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "실용 발전량 잠재(PVOUT) — 보유 래스터 격자통계 — 최대",
+      "sourceLabelEn": "PVOUT raster grid statistics (held GeoTIFF)",
+      "sourceNote": "[GIS 원본 대조 — 신규 수록] 종전 수록값은 GSA 국가 팩트시트의 요약 통계였고, 보유 GeoTIFF 자체의 격자 통계는 반영되어 있지 않았음. 두 값이 완전히 같지는 않으므로 별도 지표로 병기함 — 예: PVOUT은 팩트시트 3.554 vs 보유 래스터 평균 3.4503 kWh/kWp/day(2.9% 차)이며, 이는 팩트시트가 다른 해상도·마스크로 집계했기 때문으로 보임. **최소·최대·표준편차는 팩트시트에 없고 래스터에만 있는 값**이라 이번에 처음 수록됨. 주의: GHI·DNI는 0.0025°(≈278 m) 격자이나 PVOUT은 0.008333°(≈927 m, 30 arc-sec) 격자로 해상도가 다름. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 보유 래스터로 성(省) 단위 집계 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_raster_stats_pvout_g01",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 50,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1977a09c59df|kWh/kWp/day",
+      "dimensionLabels": {
+        "detail": "보유 래스터 격자통계",
+        "detail_2": "최소",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "보유 래스터 격자통계",
+        "detail_2": "최소",
+        "technology": "1"
+      },
+      "displayLabel": "실용 발전량 잠재(PVOUT) — 보유 래스터 격자통계 — 최소",
+      "indicatorId": "B-041_raster_stats_pvout_g02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1977a09c59df",
+        "labelKo": "실용 발전량 잠재(PVOUT)",
+        "unit": "kWh/kWp/day",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-1977a09c59df|kWh/kWp/day|detail=보유 래스터 격자통계|detail_2=최소|technology=1|B-041_raster_stats_pvout_g02",
+      "sourceCaveat": "[GIS 원본 대조 — 신규 수록] 종전 수록값은 GSA 국가 팩트시트의 요약 통계였고, 보유 GeoTIFF 자체의 격자 통계는 반영되어 있지 않았음. 두 값이 완전히 같지는 않으므로 별도 지표로 병기함 — 예: PVOUT은 팩트시트 3.554 vs 보유 래스터 평균 3.4503 kWh/kWp/day(2.9% 차)이며, 이는 팩트시트가 다른 해상도·마스크로 집계했기 때문으로 보임. **최소·최대·표준편차는 팩트시트에 없고 래스터에만 있는 값**이라 이번에 처음 수록됨. 주의: GHI·DNI는 0.0025°(≈278 m) 격자이나 PVOUT은 0.008333°(≈927 m, 30 arc-sec) 격자로 해상도가 다름. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 보유 래스터로 성(省) 단위 집계 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "실용 발전량 잠재(PVOUT) — 보유 래스터 격자통계 — 최소",
+      "sourceLabelEn": "PVOUT raster grid statistics (held GeoTIFF)",
+      "sourceNote": "[GIS 원본 대조 — 신규 수록] 종전 수록값은 GSA 국가 팩트시트의 요약 통계였고, 보유 GeoTIFF 자체의 격자 통계는 반영되어 있지 않았음. 두 값이 완전히 같지는 않으므로 별도 지표로 병기함 — 예: PVOUT은 팩트시트 3.554 vs 보유 래스터 평균 3.4503 kWh/kWp/day(2.9% 차)이며, 이는 팩트시트가 다른 해상도·마스크로 집계했기 때문으로 보임. **최소·최대·표준편차는 팩트시트에 없고 래스터에만 있는 값**이라 이번에 처음 수록됨. 주의: GHI·DNI는 0.0025°(≈278 m) 격자이나 PVOUT은 0.008333°(≈927 m, 30 arc-sec) 격자로 해상도가 다름. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 보유 래스터로 성(省) 단위 집계 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_raster_stats_pvout_g02",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 51,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1977a09c59df|kWh/kWp/day",
+      "dimensionLabels": {
+        "detail": "보유 래스터 격자통계",
+        "detail_2": "평균",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "보유 래스터 격자통계",
+        "detail_2": "평균",
+        "technology": "1"
+      },
+      "displayLabel": "실용 발전량 잠재(PVOUT) — 보유 래스터 격자통계 — 평균",
+      "indicatorId": "B-041_raster_stats_pvout_g03",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1977a09c59df",
+        "labelKo": "실용 발전량 잠재(PVOUT)",
+        "unit": "kWh/kWp/day",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-1977a09c59df|kWh/kWp/day|detail=보유 래스터 격자통계|detail_2=평균|technology=1|B-041_raster_stats_pvout_g03",
+      "sourceCaveat": "[GIS 원본 대조 — 신규 수록] 종전 수록값은 GSA 국가 팩트시트의 요약 통계였고, 보유 GeoTIFF 자체의 격자 통계는 반영되어 있지 않았음. 두 값이 완전히 같지는 않으므로 별도 지표로 병기함 — 예: PVOUT은 팩트시트 3.554 vs 보유 래스터 평균 3.4503 kWh/kWp/day(2.9% 차)이며, 이는 팩트시트가 다른 해상도·마스크로 집계했기 때문으로 보임. **최소·최대·표준편차는 팩트시트에 없고 래스터에만 있는 값**이라 이번에 처음 수록됨. 주의: GHI·DNI는 0.0025°(≈278 m) 격자이나 PVOUT은 0.008333°(≈927 m, 30 arc-sec) 격자로 해상도가 다름. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 보유 래스터로 성(省) 단위 집계 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "실용 발전량 잠재(PVOUT) — 보유 래스터 격자통계 — 평균",
+      "sourceLabelEn": "PVOUT raster grid statistics (held GeoTIFF)",
+      "sourceNote": "[GIS 원본 대조 — 신규 수록] 종전 수록값은 GSA 국가 팩트시트의 요약 통계였고, 보유 GeoTIFF 자체의 격자 통계는 반영되어 있지 않았음. 두 값이 완전히 같지는 않으므로 별도 지표로 병기함 — 예: PVOUT은 팩트시트 3.554 vs 보유 래스터 평균 3.4503 kWh/kWp/day(2.9% 차)이며, 이는 팩트시트가 다른 해상도·마스크로 집계했기 때문으로 보임. **최소·최대·표준편차는 팩트시트에 없고 래스터에만 있는 값**이라 이번에 처음 수록됨. 주의: GHI·DNI는 0.0025°(≈278 m) 격자이나 PVOUT은 0.008333°(≈927 m, 30 arc-sec) 격자로 해상도가 다름. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 보유 래스터로 성(省) 단위 집계 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_raster_stats_pvout_g03",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 52,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1977a09c59df|kWh/kWp/day",
+      "dimensionLabels": {
+        "detail": "보유 래스터 격자통계",
+        "detail_2": "표준편차",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "보유 래스터 격자통계",
+        "detail_2": "표준편차",
+        "technology": "1"
+      },
+      "displayLabel": "실용 발전량 잠재(PVOUT) — 보유 래스터 격자통계 — 표준편차",
+      "indicatorId": "B-041_raster_stats_pvout_g04",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1977a09c59df",
+        "labelKo": "실용 발전량 잠재(PVOUT)",
+        "unit": "kWh/kWp/day",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-1977a09c59df|kWh/kWp/day|detail=보유 래스터 격자통계|detail_2=표준편차|technology=1|B-041_raster_stats_pvout_g04",
+      "sourceCaveat": "[GIS 원본 대조 — 신규 수록] 종전 수록값은 GSA 국가 팩트시트의 요약 통계였고, 보유 GeoTIFF 자체의 격자 통계는 반영되어 있지 않았음. 두 값이 완전히 같지는 않으므로 별도 지표로 병기함 — 예: PVOUT은 팩트시트 3.554 vs 보유 래스터 평균 3.4503 kWh/kWp/day(2.9% 차)이며, 이는 팩트시트가 다른 해상도·마스크로 집계했기 때문으로 보임. **최소·최대·표준편차는 팩트시트에 없고 래스터에만 있는 값**이라 이번에 처음 수록됨. 주의: GHI·DNI는 0.0025°(≈278 m) 격자이나 PVOUT은 0.008333°(≈927 m, 30 arc-sec) 격자로 해상도가 다름. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 보유 래스터로 성(省) 단위 집계 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "실용 발전량 잠재(PVOUT) — 보유 래스터 격자통계 — 표준편차",
+      "sourceLabelEn": "PVOUT raster grid statistics (held GeoTIFF)",
+      "sourceNote": "[GIS 원본 대조 — 신규 수록] 종전 수록값은 GSA 국가 팩트시트의 요약 통계였고, 보유 GeoTIFF 자체의 격자 통계는 반영되어 있지 않았음. 두 값이 완전히 같지는 않으므로 별도 지표로 병기함 — 예: PVOUT은 팩트시트 3.554 vs 보유 래스터 평균 3.4503 kWh/kWp/day(2.9% 차)이며, 이는 팩트시트가 다른 해상도·마스크로 집계했기 때문으로 보임. **최소·최대·표준편차는 팩트시트에 없고 래스터에만 있는 값**이라 이번에 처음 수록됨. 주의: GHI·DNI는 0.0025°(≈278 m) 격자이나 PVOUT은 0.008333°(≈927 m, 30 arc-sec) 격자로 해상도가 다름. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 보유 래스터로 성(省) 단위 집계 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_raster_stats_pvout_g04",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 53,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8d929bb092ab|℃",
+      "dimensionLabels": {
+        "detail": "최대",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "최대",
+        "technology": "1"
+      },
+      "displayLabel": "기온(TEMP, PV 성능 보정용) — 최대",
+      "indicatorId": "B-041_temp_air_g01",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8d929bb092ab",
+        "labelKo": "기온(TEMP, PV 성능 보정용)",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-8d929bb092ab|℃|detail=최대|technology=1|B-041_temp_air_g01",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. PV 모듈 효율 온도보정에 사용되는 레이어. B-003 기온과 원천·기간이 달라 접속하지 않고 분리 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "기온(TEMP, PV 성능 보정용) — 최대",
+      "sourceLabelEn": "Air temperature for PV performance",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. PV 모듈 효율 온도보정에 사용되는 레이어. B-003 기온과 원천·기간이 달라 접속하지 않고 분리 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_temp_air_g01",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8d929bb092ab|℃",
+      "dimensionLabels": {
+        "detail": "최소",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "최소",
+        "technology": "1"
+      },
+      "displayLabel": "기온(TEMP, PV 성능 보정용) — 최소",
+      "indicatorId": "B-041_temp_air_g02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8d929bb092ab",
+        "labelKo": "기온(TEMP, PV 성능 보정용)",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-8d929bb092ab|℃|detail=최소|technology=1|B-041_temp_air_g02",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. PV 모듈 효율 온도보정에 사용되는 레이어. B-003 기온과 원천·기간이 달라 접속하지 않고 분리 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "기온(TEMP, PV 성능 보정용) — 최소",
+      "sourceLabelEn": "Air temperature for PV performance",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. PV 모듈 효율 온도보정에 사용되는 레이어. B-003 기온과 원천·기간이 달라 접속하지 않고 분리 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_temp_air_g02",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 24,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8d929bb092ab|℃",
+      "dimensionLabels": {
+        "detail": "평균",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "평균",
+        "technology": "1"
+      },
+      "displayLabel": "기온(TEMP, PV 성능 보정용) — 평균",
+      "indicatorId": "B-041_temp_air_g03",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8d929bb092ab",
+        "labelKo": "기온(TEMP, PV 성능 보정용)",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-8d929bb092ab|℃|detail=평균|technology=1|B-041_temp_air_g03",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. PV 모듈 효율 온도보정에 사용되는 레이어. B-003 기온과 원천·기간이 달라 접속하지 않고 분리 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "기온(TEMP, PV 성능 보정용) — 평균",
+      "sourceLabelEn": "Air temperature for PV performance",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. PV 모듈 효율 온도보정에 사용되는 레이어. B-003 기온과 원천·기간이 달라 접속하지 않고 분리 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_temp_air_g03",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 25,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8d929bb092ab|℃",
+      "dimensionLabels": {
+        "detail": "표준편차",
+        "technology": "1"
+      },
+      "dimensions": {
+        "detail": "표준편차",
+        "technology": "1"
+      },
+      "displayLabel": "기온(TEMP, PV 성능 보정용) — 표준편차",
+      "indicatorId": "B-041_temp_air_g04",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8d929bb092ab",
+        "labelKo": "기온(TEMP, PV 성능 보정용)",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-8d929bb092ab|℃|detail=표준편차|technology=1|B-041_temp_air_g04",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. PV 모듈 효율 온도보정에 사용되는 레이어. B-003 기온과 원천·기간이 달라 접속하지 않고 분리 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "기온(TEMP, PV 성능 보정용) — 표준편차",
+      "sourceLabelEn": "Air temperature for PV performance",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. PV 모듈 효율 온도보정에 사용되는 레이어. B-003 기온과 원천·기간이 달라 접속하지 않고 분리 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-041",
+        "indicatorId": "B-041_temp_air_g04",
+        "sourceFileDecoded": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+        "sourceRow": 26,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-857c20302f57",
+      "labelKo": "PVOUT 계절변동지수",
+      "recordCount": 1,
+      "unit": "지수",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-a778c1e01284",
+      "labelKo": "PVOUT 계절변동지수 (범위 상한)",
+      "recordCount": 1,
+      "unit": "지수",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-e558fa7ccd51",
+      "labelKo": "PVOUT 계절변동지수 (범위 하한)",
+      "recordCount": 1,
+      "unit": "지수",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 4,
+      "key": "measure-8d929bb092ab",
+      "labelKo": "기온(TEMP, PV 성능 보정용)",
+      "recordCount": 4,
+      "unit": "℃",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 4,
+      "key": "measure-d4ea24d651b9",
+      "labelKo": "산란 일사량(DIF)",
+      "recordCount": 4,
+      "unit": "kWh/m²/day",
+      "unitFamily": "energy"
+    },
+    {
+      "indicatorCount": 4,
+      "key": "measure-efa0e046cbd2",
+      "labelKo": "수평면 전일사량",
+      "recordCount": 4,
+      "unit": "kWh/m²/yr",
+      "unitFamily": "energy"
+    },
+    {
+      "indicatorCount": 7,
+      "key": "measure-d23cf640a954",
+      "labelKo": "수평면 전일사량(GHI)",
+      "recordCount": 7,
+      "unit": "kWh/m²/day",
+      "unitFamily": "energy"
+    },
+    {
+      "indicatorCount": 4,
+      "key": "measure-4df8dbb65822",
+      "labelKo": "실용 발전량 잠재",
+      "recordCount": 4,
+      "unit": "kWh/kWp/yr",
+      "unitFamily": "energy"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-78ef267f1177",
+      "labelKo": "실용 발전량 잠재(PVOUT Level 1)",
+      "recordCount": 1,
+      "unit": "kWh/kWp/day",
+      "unitFamily": "energy"
+    },
+    {
+      "indicatorCount": 4,
+      "key": "measure-1977a09c59df",
+      "labelKo": "실용 발전량 잠재(PVOUT)",
+      "recordCount": 4,
+      "unit": "kWh/kWp/day",
+      "unitFamily": "energy"
+    },
+    {
+      "indicatorCount": 4,
+      "key": "measure-cc8dbc8ab0b7",
+      "labelKo": "직달 일사량",
+      "recordCount": 4,
+      "unit": "kWh/m²/yr",
+      "unitFamily": "energy"
+    },
+    {
+      "indicatorCount": 7,
+      "key": "measure-4999244c44da",
+      "labelKo": "직달 일사량(DNI)",
+      "recordCount": 7,
+      "unit": "kWh/m²/day",
+      "unitFamily": "energy"
+    },
+    {
+      "indicatorCount": 4,
+      "key": "measure-e8dfe93e4f75",
+      "labelKo": "최적 경사각(OPTA)",
+      "recordCount": 4,
+      "unit": "°",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 4,
+      "key": "measure-fb19d27802f3",
+      "labelKo": "최적경사면 일사량(GTI)",
+      "recordCount": 4,
+      "unit": "kWh/m²/day",
+      "unitFamily": "energy"
+    }
+  ],
+  "observationCount": 50,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

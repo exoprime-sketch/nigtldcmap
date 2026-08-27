@@ -1,0 +1,252 @@
+{
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 4,
+      "values": [
+        "도시인구 연간 증가율",
+        "도시지역 거주 인구",
+        "연중 거주 인구",
+        "총인구 대비 도시인구 비율"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 66,
+      "values": [
+        "1960",
+        "1961",
+        "1962",
+        "1963",
+        "1964",
+        "1965",
+        "1966",
+        "1967",
+        "1968",
+        "1969",
+        "1970",
+        "1971",
+        "1972",
+        "1973",
+        "1974",
+        "1975",
+        "1976",
+        "1977",
+        "1978",
+        "1979",
+        "1980",
+        "1981",
+        "1982",
+        "1983",
+        "1984",
+        "1985",
+        "1986",
+        "1987",
+        "1988",
+        "1989",
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ]
+    }
+  ],
+  "elementId": "A-007",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 4,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-be793786b249|명",
+      "dimensionLabels": {
+        "detail": "연중 거주 인구"
+      },
+      "dimensions": {
+        "detail": "연중 거주 인구"
+      },
+      "displayLabel": "총인구 — 연중 거주 인구",
+      "indicatorId": "A-007_population_total",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-be793786b249",
+        "labelKo": "총인구",
+        "unit": "명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-be793786b249|명|detail=연중 거주 인구|A-007_population_total",
+      "sourceCaveat": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-007 폴더 인구 (총인구, 도시화율).xlsx). [보완] 검토의견 1번에 따라 도시화율을 자체 계산값이 아닌 세계은행 공식 지표 SP.URB.TOTL.IN.ZS로 교체하여 WDI API에서 수집함. [추정 여부] 검토의견 3번 확인 — 2025년 값은 실측 인구조사 결과가 아니라 세계은행 인구추계(UN WPP 기반 추정치)임. 베트남의 직전 전수조사는 2019년(Population and Housing Census)이며 2025년은 중간연도 추계임. [산출유형] 총인구·도시인구·도시화율·도시인구 증가율 모두 원천 발표값이며 자체 산출이 아님. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "총인구 — 연중 거주 인구",
+      "sourceLabelEn": "Population, total",
+      "sourceNote": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-007 폴더 인구 (총인구, 도시화율).xlsx). [보완] 검토의견 1번에 따라 도시화율을 자체 계산값이 아닌 세계은행 공식 지표 SP.URB.TOTL.IN.ZS로 교체하여 WDI API에서 수집함. [추정 여부] 검토의견 3번 확인 — 2025년 값은 실측 인구조사 결과가 아니라 세계은행 인구추계(UN WPP 기반 추정치)임. 베트남의 직전 전수조사는 2019년(Population and Housing Census)이며 2025년은 중간연도 추계임. [산출유형] 총인구·도시인구·도시화율·도시인구 증가율 모두 원천 발표값이며 자체 산출이 아님. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-007",
+        "indicatorId": "A-007_population_total",
+        "sourceFileDecoded": "A-007_인구[총인구, 도시화율].xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-14243a7a036f|명",
+      "dimensionLabels": {
+        "detail": "도시지역 거주 인구"
+      },
+      "dimensions": {
+        "detail": "도시지역 거주 인구"
+      },
+      "displayLabel": "도시인구 — 도시지역 거주 인구",
+      "indicatorId": "A-007_urban_population",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-14243a7a036f",
+        "labelKo": "도시인구",
+        "unit": "명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-14243a7a036f|명|detail=도시지역 거주 인구|A-007_urban_population",
+      "sourceCaveat": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-007 폴더 인구 (총인구, 도시화율).xlsx). [보완] 검토의견 1번에 따라 도시화율을 자체 계산값이 아닌 세계은행 공식 지표 SP.URB.TOTL.IN.ZS로 교체하여 WDI API에서 수집함. [추정 여부] 검토의견 3번 확인 — 2025년 값은 실측 인구조사 결과가 아니라 세계은행 인구추계(UN WPP 기반 추정치)임. 베트남의 직전 전수조사는 2019년(Population and Housing Census)이며 2025년은 중간연도 추계임. [산출유형] 총인구·도시인구·도시화율·도시인구 증가율 모두 원천 발표값이며 자체 산출이 아님. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "도시인구 — 도시지역 거주 인구",
+      "sourceLabelEn": "Urban population",
+      "sourceNote": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-007 폴더 인구 (총인구, 도시화율).xlsx). [보완] 검토의견 1번에 따라 도시화율을 자체 계산값이 아닌 세계은행 공식 지표 SP.URB.TOTL.IN.ZS로 교체하여 WDI API에서 수집함. [추정 여부] 검토의견 3번 확인 — 2025년 값은 실측 인구조사 결과가 아니라 세계은행 인구추계(UN WPP 기반 추정치)임. 베트남의 직전 전수조사는 2019년(Population and Housing Census)이며 2025년은 중간연도 추계임. [산출유형] 총인구·도시인구·도시화율·도시인구 증가율 모두 원천 발표값이며 자체 산출이 아님. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-007",
+        "indicatorId": "A-007_urban_population",
+        "sourceFileDecoded": "A-007_인구[총인구, 도시화율].xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-25b4f08199a4|%",
+      "dimensionLabels": {
+        "detail": "도시인구 연간 증가율"
+      },
+      "dimensions": {
+        "detail": "도시인구 연간 증가율"
+      },
+      "displayLabel": "도시인구 증가율 — 도시인구 연간 증가율",
+      "indicatorId": "A-007_urban_population_growth",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-25b4f08199a4",
+        "labelKo": "도시인구 증가율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-25b4f08199a4|%|detail=도시인구 연간 증가율|A-007_urban_population_growth",
+      "sourceCaveat": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-007 폴더 인구 (총인구, 도시화율).xlsx). [보완] 검토의견 1번에 따라 도시화율을 자체 계산값이 아닌 세계은행 공식 지표 SP.URB.TOTL.IN.ZS로 교체하여 WDI API에서 수집함. [추정 여부] 검토의견 3번 확인 — 2025년 값은 실측 인구조사 결과가 아니라 세계은행 인구추계(UN WPP 기반 추정치)임. 베트남의 직전 전수조사는 2019년(Population and Housing Census)이며 2025년은 중간연도 추계임. [산출유형] 총인구·도시인구·도시화율·도시인구 증가율 모두 원천 발표값이며 자체 산출이 아님. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "도시인구 증가율 — 도시인구 연간 증가율",
+      "sourceLabelEn": "Urban population growth (annual %)",
+      "sourceNote": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-007 폴더 인구 (총인구, 도시화율).xlsx). [보완] 검토의견 1번에 따라 도시화율을 자체 계산값이 아닌 세계은행 공식 지표 SP.URB.TOTL.IN.ZS로 교체하여 WDI API에서 수집함. [추정 여부] 검토의견 3번 확인 — 2025년 값은 실측 인구조사 결과가 아니라 세계은행 인구추계(UN WPP 기반 추정치)임. 베트남의 직전 전수조사는 2019년(Population and Housing Census)이며 2025년은 중간연도 추계임. [산출유형] 총인구·도시인구·도시화율·도시인구 증가율 모두 원천 발표값이며 자체 산출이 아님. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-007",
+        "indicatorId": "A-007_urban_population_growth",
+        "sourceFileDecoded": "A-007_인구[총인구, 도시화율].xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-3d6a488a45a1|%",
+      "dimensionLabels": {
+        "detail": "총인구 대비 도시인구 비율"
+      },
+      "dimensions": {
+        "detail": "총인구 대비 도시인구 비율"
+      },
+      "displayLabel": "도시화율 — 총인구 대비 도시인구 비율",
+      "indicatorId": "A-007_urbanization_rate",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3d6a488a45a1",
+        "labelKo": "도시화율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-3d6a488a45a1|%|detail=총인구 대비 도시인구 비율|A-007_urbanization_rate",
+      "sourceCaveat": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-007 폴더 인구 (총인구, 도시화율).xlsx). [보완] 검토의견 1번에 따라 도시화율을 자체 계산값이 아닌 세계은행 공식 지표 SP.URB.TOTL.IN.ZS로 교체하여 WDI API에서 수집함. [추정 여부] 검토의견 3번 확인 — 2025년 값은 실측 인구조사 결과가 아니라 세계은행 인구추계(UN WPP 기반 추정치)임. 베트남의 직전 전수조사는 2019년(Population and Housing Census)이며 2025년은 중간연도 추계임. [산출유형] 총인구·도시인구·도시화율·도시인구 증가율 모두 원천 발표값이며 자체 산출이 아님. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "도시화율 — 총인구 대비 도시인구 비율",
+      "sourceLabelEn": "Urban population (% of total population)",
+      "sourceNote": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-007 폴더 인구 (총인구, 도시화율).xlsx). [보완] 검토의견 1번에 따라 도시화율을 자체 계산값이 아닌 세계은행 공식 지표 SP.URB.TOTL.IN.ZS로 교체하여 WDI API에서 수집함. [추정 여부] 검토의견 3번 확인 — 2025년 값은 실측 인구조사 결과가 아니라 세계은행 인구추계(UN WPP 기반 추정치)임. 베트남의 직전 전수조사는 2019년(Population and Housing Census)이며 2025년은 중간연도 추계임. [산출유형] 총인구·도시인구·도시화율·도시인구 증가율 모두 원천 발표값이며 자체 산출이 아님. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-007",
+        "indicatorId": "A-007_urbanization_rate",
+        "sourceFileDecoded": "A-007_인구[총인구, 도시화율].xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-14243a7a036f",
+      "labelKo": "도시인구",
+      "recordCount": 66,
+      "unit": "명",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-25b4f08199a4",
+      "labelKo": "도시인구 증가율",
+      "recordCount": 65,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-3d6a488a45a1",
+      "labelKo": "도시화율",
+      "recordCount": 66,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-be793786b249",
+      "labelKo": "총인구",
+      "recordCount": 66,
+      "unit": "명",
+      "unitFamily": "count"
+    }
+  ],
+  "observationCount": 263,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

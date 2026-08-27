@@ -1,0 +1,266 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 4,
+      "values": [
+        "사업 건수",
+        "승인액 합계",
+        "승인액 합계(베트남 단독사업)",
+        "집행액 합계"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 4,
+      "values": [
+        "귀속액이 명확한 사업만",
+        "베트남 관련 승인사업 총 건수",
+        "전 사업 승인액 단순합",
+        "전 사업 집행액 단순합"
+      ]
+    },
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "Adaptation Fund 사업"
+      ]
+    },
+    {
+      "key": "sector",
+      "labelKo": "부문",
+      "valueCount": 3,
+      "values": [
+        "Multi-sector",
+        "Transboundary Water Management",
+        "Urban development"
+      ]
+    },
+    {
+      "key": "status",
+      "labelKo": "status",
+      "valueCount": 1,
+      "values": [
+        "Project Under Implementation"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "27,28,29,30,31,32,33,34,35,36,37,38"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2026"
+      ]
+    }
+  ],
+  "elementId": "D-018",
+  "entityCount": 4,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 5,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-a07cad4bafe6|건",
+      "dimensionLabels": {
+        "category": "베트남 관련 승인사업 레지스트리",
+        "detail": "레코드 1건 = 1행(1.2 레코드형 시트)",
+        "technology": "27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "베트남 관련 승인사업 레지스트리",
+        "detail": "레코드 1건 = 1행(1.2 레코드형 시트)",
+        "technology": "27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "Adaptation Fund 프로젝트 · 베트남 관련 승인사업 레지스트리 — 레코드 1건 = 1행(1.2 레코드형 시트)",
+      "indicatorId": "D-018_adaptation_fund_project_registry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a07cad4bafe6",
+        "labelKo": "Adaptation Fund 프로젝트",
+        "unit": "건",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-a07cad4bafe6|건|category=베트남 관련 승인사업 레지스트리|detail=레코드 1건 = 1행(1.2 레코드형 시트)|technology=27,28,29,30,31,32,33,34,35,36,37,38|D-018_adaptation_fund_project_registry",
+      "sourceCaveat": "[원본 버전] Adaptation Fund 프로젝트 DB 내려받기본(2026-07-15 기준, 전체 267건 중 베트남 관련 4건). [검토지적 반영 ①] 수혜자 수는 AF 프로젝트 DB 내려받기 파일에 열 자체가 없어 전 사업 결측(M06)이며, 재확보 경로를 missing_note에 명시함. [검토지적 반영 ②] 다국가(Regional) 사업 2건(Mekong EbA South, Greater Mekong 지하수)의 승인금액은 전체 사업금액이며 베트남 귀속금액은 AF가 분리 게재하지 않음 — 레코드별 note에 명시함. [지역정보] 원자료에 위경도(latlon)가 제공되는 사업은 1.2 시트의 lat/lon/geometry_type/crs 열에 첫 지점을 수록하고 나머지 지점은 note에 병기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "Adaptation Fund 프로젝트 · 베트남 관련 승인사업 레지스트리 — 레코드 1건 = 1행(1.2 레코드형 시트)",
+      "sourceLabelEn": "Registry of Adaptation Fund projects involving Viet Nam",
+      "sourceNote": "수혜자 수(direct/indirect beneficiaries)가 AF 프로젝트 DB 내려받기 파일의 열로 제공되지 않으며, 각 프로젝트 상세페이지에도 게재되어 있지 않음을 확인함(2026-08-17). 재확보 대상 1차 출처: Adaptation Fund 각 사업의 승인 제안서(Project Proposal) PDF 내 결과체계표(Results Framework)",
+      "sourceProvenance": {
+        "elementId": "D-018",
+        "indicatorId": "D-018_adaptation_fund_project_registry",
+        "sourceFileDecoded": "D-018_Adaptation Fund 프로젝트.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2aa34c218045|USD",
+      "dimensionLabels": {
+        "category": "승인액 합계",
+        "detail": "전 사업 승인액 단순합",
+        "technology": "27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "승인액 합계",
+        "detail": "전 사업 승인액 단순합",
+        "technology": "27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "Adaptation Fund 프로젝트 · 승인액 합계 — 전 사업 승인액 단순합",
+      "indicatorId": "D-018_approved_amount_sum",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2aa34c218045",
+        "labelKo": "Adaptation Fund 프로젝트",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-2aa34c218045|USD|category=승인액 합계|detail=전 사업 승인액 단순합|technology=27,28,29,30,31,32,33,34,35,36,37,38|D-018_approved_amount_sum",
+      "sourceCaveat": "[원본 버전] Adaptation Fund 프로젝트 DB 내려받기본(2026-07-15 기준, 전체 267건 중 베트남 관련 4건). [검토지적 반영 ①] 수혜자 수는 AF 프로젝트 DB 내려받기 파일에 열 자체가 없어 전 사업 결측(M06)이며, 재확보 경로를 missing_note에 명시함. [검토지적 반영 ②] 다국가(Regional) 사업 2건(Mekong EbA South, Greater Mekong 지하수)의 승인금액은 전체 사업금액이며 베트남 귀속금액은 AF가 분리 게재하지 않음 — 레코드별 note에 명시함. [지역정보] 원자료에 위경도(latlon)가 제공되는 사업은 1.2 시트의 lat/lon/geometry_type/crs 열에 첫 지점을 수록하고 나머지 지점은 note에 병기함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "Adaptation Fund 프로젝트 · 승인액 합계 — 전 사업 승인액 단순합",
+      "sourceLabelEn": "Total Adaptation Fund approved amount",
+      "sourceNote": "[원본 버전] Adaptation Fund 프로젝트 DB 내려받기본(2026-07-15 기준, 전체 267건 중 베트남 관련 4건). [검토지적 반영 ①] 수혜자 수는 AF 프로젝트 DB 내려받기 파일에 열 자체가 없어 전 사업 결측(M06)이며, 재확보 경로를 missing_note에 명시함. [검토지적 반영 ②] 다국가(Regional) 사업 2건(Mekong EbA South, Greater Mekong 지하수)의 승인금액은 전체 사업금액이며 베트남 귀속금액은 AF가 분리 게재하지 않음 — 레코드별 note에 명시함. [지역정보] 원자료에 위경도(latlon)가 제공되는 사업은 1.2 시트의 lat/lon/geometry_type/crs 열에 첫 지점을 수록하고 나머지 지점은 note에 병기함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-018",
+        "indicatorId": "D-018_approved_amount_sum",
+        "sourceFileDecoded": "D-018_Adaptation Fund 프로젝트.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2aa34c218045|USD",
+      "dimensionLabels": {
+        "category": "승인액 합계(베트남 단독사업)",
+        "detail": "귀속액이 명확한 사업만",
+        "technology": "27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "승인액 합계(베트남 단독사업)",
+        "detail": "귀속액이 명확한 사업만",
+        "technology": "27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "Adaptation Fund 프로젝트 · 승인액 합계(베트남 단독사업) — 귀속액이 명확한 사업만",
+      "indicatorId": "D-018_approved_amount_sum_single_country",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2aa34c218045",
+        "labelKo": "Adaptation Fund 프로젝트",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-2aa34c218045|USD|category=승인액 합계(베트남 단독사업)|detail=귀속액이 명확한 사업만|technology=27,28,29,30,31,32,33,34,35,36,37,38|D-018_approved_amount_sum_single_country",
+      "sourceCaveat": "[원본 버전] Adaptation Fund 프로젝트 DB 내려받기본(2026-07-15 기준, 전체 267건 중 베트남 관련 4건). [검토지적 반영 ①] 수혜자 수는 AF 프로젝트 DB 내려받기 파일에 열 자체가 없어 전 사업 결측(M06)이며, 재확보 경로를 missing_note에 명시함. [검토지적 반영 ②] 다국가(Regional) 사업 2건(Mekong EbA South, Greater Mekong 지하수)의 승인금액은 전체 사업금액이며 베트남 귀속금액은 AF가 분리 게재하지 않음 — 레코드별 note에 명시함. [지역정보] 원자료에 위경도(latlon)가 제공되는 사업은 1.2 시트의 lat/lon/geometry_type/crs 열에 첫 지점을 수록하고 나머지 지점은 note에 병기함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "Adaptation Fund 프로젝트 · 승인액 합계(베트남 단독사업) — 귀속액이 명확한 사업만",
+      "sourceLabelEn": "Adaptation Fund approved amount, Viet Nam single-country projects",
+      "sourceNote": "[원본 버전] Adaptation Fund 프로젝트 DB 내려받기본(2026-07-15 기준, 전체 267건 중 베트남 관련 4건). [검토지적 반영 ①] 수혜자 수는 AF 프로젝트 DB 내려받기 파일에 열 자체가 없어 전 사업 결측(M06)이며, 재확보 경로를 missing_note에 명시함. [검토지적 반영 ②] 다국가(Regional) 사업 2건(Mekong EbA South, Greater Mekong 지하수)의 승인금액은 전체 사업금액이며 베트남 귀속금액은 AF가 분리 게재하지 않음 — 레코드별 note에 명시함. [지역정보] 원자료에 위경도(latlon)가 제공되는 사업은 1.2 시트의 lat/lon/geometry_type/crs 열에 첫 지점을 수록하고 나머지 지점은 note에 병기함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-018",
+        "indicatorId": "D-018_approved_amount_sum_single_country",
+        "sourceFileDecoded": "D-018_Adaptation Fund 프로젝트.xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2aa34c218045|USD",
+      "dimensionLabels": {
+        "category": "집행액 합계",
+        "detail": "전 사업 집행액 단순합",
+        "technology": "27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "집행액 합계",
+        "detail": "전 사업 집행액 단순합",
+        "technology": "27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "Adaptation Fund 프로젝트 · 집행액 합계 — 전 사업 집행액 단순합",
+      "indicatorId": "D-018_disbursed_amount_sum",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2aa34c218045",
+        "labelKo": "Adaptation Fund 프로젝트",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-2aa34c218045|USD|category=집행액 합계|detail=전 사업 집행액 단순합|technology=27,28,29,30,31,32,33,34,35,36,37,38|D-018_disbursed_amount_sum",
+      "sourceCaveat": "[원본 버전] Adaptation Fund 프로젝트 DB 내려받기본(2026-07-15 기준, 전체 267건 중 베트남 관련 4건). [검토지적 반영 ①] 수혜자 수는 AF 프로젝트 DB 내려받기 파일에 열 자체가 없어 전 사업 결측(M06)이며, 재확보 경로를 missing_note에 명시함. [검토지적 반영 ②] 다국가(Regional) 사업 2건(Mekong EbA South, Greater Mekong 지하수)의 승인금액은 전체 사업금액이며 베트남 귀속금액은 AF가 분리 게재하지 않음 — 레코드별 note에 명시함. [지역정보] 원자료에 위경도(latlon)가 제공되는 사업은 1.2 시트의 lat/lon/geometry_type/crs 열에 첫 지점을 수록하고 나머지 지점은 note에 병기함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "Adaptation Fund 프로젝트 · 집행액 합계 — 전 사업 집행액 단순합",
+      "sourceLabelEn": "Total Adaptation Fund disbursed amount",
+      "sourceNote": "[원본 버전] Adaptation Fund 프로젝트 DB 내려받기본(2026-07-15 기준, 전체 267건 중 베트남 관련 4건). [검토지적 반영 ①] 수혜자 수는 AF 프로젝트 DB 내려받기 파일에 열 자체가 없어 전 사업 결측(M06)이며, 재확보 경로를 missing_note에 명시함. [검토지적 반영 ②] 다국가(Regional) 사업 2건(Mekong EbA South, Greater Mekong 지하수)의 승인금액은 전체 사업금액이며 베트남 귀속금액은 AF가 분리 게재하지 않음 — 레코드별 note에 명시함. [지역정보] 원자료에 위경도(latlon)가 제공되는 사업은 1.2 시트의 lat/lon/geometry_type/crs 열에 첫 지점을 수록하고 나머지 지점은 note에 병기함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-018",
+        "indicatorId": "D-018_disbursed_amount_sum",
+        "sourceFileDecoded": "D-018_Adaptation Fund 프로젝트.xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a07cad4bafe6|건",
+      "dimensionLabels": {
+        "category": "사업 건수",
+        "detail": "베트남 관련 승인사업 총 건수",
+        "technology": "27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "사업 건수",
+        "detail": "베트남 관련 승인사업 총 건수",
+        "technology": "27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "Adaptation Fund 프로젝트 · 사업 건수 — 베트남 관련 승인사업 총 건수",
+      "indicatorId": "D-018_project_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a07cad4bafe6",
+        "labelKo": "Adaptation Fund 프로젝트",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-a07cad4bafe6|건|category=사업 건수|detail=베트남 관련 승인사업 총 건수|technology=27,28,29,30,31,32,33,34,35,36,37,38|D-018_project_count",
+      "sourceCaveat": "[원본 버전] Adaptation Fund 프로젝트 DB 내려받기본(2026-07-15 기준, 전체 267건 중 베트남 관련 4건). [검토지적 반영 ①] 수혜자 수는 AF 프로젝트 DB 내려받기 파일에 열 자체가 없어 전 사업 결측(M06)이며, 재확보 경로를 missing_note에 명시함. [검토지적 반영 ②] 다국가(Regional) 사업 2건(Mekong EbA South, Greater Mekong 지하수)의 승인금액은 전체 사업금액이며 베트남 귀속금액은 AF가 분리 게재하지 않음 — 레코드별 note에 명시함. [지역정보] 원자료에 위경도(latlon)가 제공되는 사업은 1.2 시트의 lat/lon/geometry_type/crs 열에 첫 지점을 수록하고 나머지 지점은 note에 병기함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "Adaptation Fund 프로젝트 · 사업 건수 — 베트남 관련 승인사업 총 건수",
+      "sourceLabelEn": "Number of Adaptation Fund projects involving Viet Nam",
+      "sourceNote": "[원본 버전] Adaptation Fund 프로젝트 DB 내려받기본(2026-07-15 기준, 전체 267건 중 베트남 관련 4건). [검토지적 반영 ①] 수혜자 수는 AF 프로젝트 DB 내려받기 파일에 열 자체가 없어 전 사업 결측(M06)이며, 재확보 경로를 missing_note에 명시함. [검토지적 반영 ②] 다국가(Regional) 사업 2건(Mekong EbA South, Greater Mekong 지하수)의 승인금액은 전체 사업금액이며 베트남 귀속금액은 AF가 분리 게재하지 않음 — 레코드별 note에 명시함. [지역정보] 원자료에 위경도(latlon)가 제공되는 사업은 1.2 시트의 lat/lon/geometry_type/crs 열에 첫 지점을 수록하고 나머지 지점은 note에 병기함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-018",
+        "indicatorId": "D-018_project_count",
+        "sourceFileDecoded": "D-018_Adaptation Fund 프로젝트.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 3,
+      "key": "measure-2aa34c218045",
+      "labelKo": "Adaptation Fund 프로젝트",
+      "recordCount": 3,
+      "unit": "USD",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-a07cad4bafe6",
+      "labelKo": "Adaptation Fund 프로젝트",
+      "recordCount": 1,
+      "unit": "건",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 4,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

@@ -1,0 +1,70 @@
+{
+  "dimensions": [
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "확인필요"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2026"
+      ]
+    }
+  ],
+  "elementId": "E-011",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 1,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-5715377ec022|등급",
+      "dimensionLabels": {
+        "technology": "확인필요"
+      },
+      "dimensions": {
+        "technology": "확인필요"
+      },
+      "displayLabel": "기술준비수준(TRL)",
+      "indicatorId": "E-011_trl",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5715377ec022",
+        "labelKo": "기술준비수준(TRL)",
+        "unit": "등급",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-5715377ec022|등급|technology=확인필요|E-011_trl",
+      "sourceCaveat": null,
+      "sourceLabel": "기술준비수준(TRL)",
+      "sourceLabelEn": "Technology Readiness Level (TRL)",
+      "sourceNote": "베트남 TRL 값 전량 미확보. 원본 기재: '미확보(공개 데이터 없음)', '공개 국제 DB 부재",
+      "sourceProvenance": {
+        "elementId": "E-011",
+        "indicatorId": "E-011_trl",
+        "sourceFileDecoded": "E-011_기술준비수준 (TRL).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-5715377ec022",
+      "labelKo": "기술준비수준(TRL)",
+      "recordCount": 1,
+      "unit": "등급",
+      "unitFamily": "other"
+    }
+  ],
+  "observationCount": 1,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

@@ -1,0 +1,373 @@
+{
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 1,
+      "values": [
+        "CRI 2026 본문"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 2,
+      "values": [
+        "2023",
+        "2024"
+      ]
+    }
+  ],
+  "elementId": "B-010",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 10,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-e19a3da06ed0|사건",
+      "dimensionLabels": {
+        "detail": "CRI 2026 본문"
+      },
+      "dimensions": {
+        "detail": "CRI 2026 본문"
+      },
+      "displayLabel": "2024년 최대 피해 극한기상 사건 — CRI 2026 본문 · CRI 2026 full report · cri_event_2024_01",
+      "indicatorId": "B-010_cri_event_2024_01",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e19a3da06ed0",
+        "labelKo": "2024년 최대 피해 극한기상 사건",
+        "unit": "사건",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-e19a3da06ed0|사건|detail=CRI 2026 본문|B-010_cri_event_2024_01",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간",
+      "sourceLabel": "2024년 최대 피해 극한기상 사건 — CRI 2026 본문",
+      "sourceLabelEn": "Major extreme weather event 2024",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간",
+      "sourceProvenance": {
+        "elementId": "B-010",
+        "indicatorId": "B-010_cri_event_2024_01",
+        "sourceFileDecoded": "B-010_기후 리스크 지수 (CRI).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e19a3da06ed0|사건",
+      "dimensionLabels": {
+        "detail": "CRI 2026 본문"
+      },
+      "dimensions": {
+        "detail": "CRI 2026 본문"
+      },
+      "displayLabel": "2024년 최대 피해 극한기상 사건 — CRI 2026 본문 · CRI 2026 full report · cri_event_2024_02",
+      "indicatorId": "B-010_cri_event_2024_02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e19a3da06ed0",
+        "labelKo": "2024년 최대 피해 극한기상 사건",
+        "unit": "사건",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-e19a3da06ed0|사건|detail=CRI 2026 본문|B-010_cri_event_2024_02",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간",
+      "sourceLabel": "2024년 최대 피해 극한기상 사건 — CRI 2026 본문",
+      "sourceLabelEn": "Major extreme weather event 2024",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간",
+      "sourceProvenance": {
+        "elementId": "B-010",
+        "indicatorId": "B-010_cri_event_2024_02",
+        "sourceFileDecoded": "B-010_기후 리스크 지수 (CRI).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9eab64683e5b|—",
+      "dimensionLabels": {
+        "detail": "2024-10-20~23 홍수"
+      },
+      "dimensions": {
+        "detail": "2024-10-20~23 홍수"
+      },
+      "displayLabel": "CRI 본문 수록 피해통계(2024년) — 2024-10-20~23 홍수",
+      "indicatorId": "B-010_cri_event_damage_2024_10_20_23",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9eab64683e5b",
+        "labelKo": "CRI 본문 수록 피해통계(2024년)",
+        "unit": "—",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-9eab64683e5b|—|detail=2024-10-20~23 홍수|B-010_cri_event_damage_2024_10_20_23",
+      "sourceCaveat": "[신규 수록 — 발주처 지적 대응] 검토의견의 「실제 피해통계(사망자수·경제손실액)」에 대한 조치. CRI 부속표(Annex)는 국가별로 순위 4종만 제공하고 피해통계를 수록하지 않지만, **보고서 본문 2.2절의 베트남 문단에 정량 피해 서술이 있어** 이를 지표화함. 숫자형 피해통계 계열은 원천이 EM-DAT이므로 B-012에 수록되어 있으며(Q-004 소스 혼재 방지), 본 지표는 CRI가 자체 보고서에서 인용·서술한 내용을 텍스트로 보존하는 성격임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간",
+      "sourceLabel": "CRI 본문 수록 피해통계(2024년) — 2024-10-20~23 홍수",
+      "sourceLabelEn": "Damage statistics cited in CRI 2026 text",
+      "sourceNote": "[신규 수록 — 발주처 지적 대응] 검토의견의 「실제 피해통계(사망자수·경제손실액)」에 대한 조치. CRI 부속표(Annex)는 국가별로 순위 4종만 제공하고 피해통계를 수록하지 않지만, **보고서 본문 2.2절의 베트남 문단에 정량 피해 서술이 있어** 이를 지표화함. 숫자형 피해통계 계열은 원천이 EM-DAT이므로 B-012에 수록되어 있으며(Q-004 소스 혼재 방지), 본 지표는 CRI가 자체 보고서에서 인용·서술한 내용을 텍스트로 보존하는 성격임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간",
+      "sourceProvenance": {
+        "elementId": "B-010",
+        "indicatorId": "B-010_cri_event_damage_2024_10_20_23",
+        "sourceFileDecoded": "B-010_기후 리스크 지수 (CRI).xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9eab64683e5b|—",
+      "dimensionLabels": {
+        "detail": "2024년 3월말~5월 폭염"
+      },
+      "dimensions": {
+        "detail": "2024년 3월말~5월 폭염"
+      },
+      "displayLabel": "CRI 본문 수록 피해통계(2024년) — 2024년 3월말~5월 폭염",
+      "indicatorId": "B-010_cri_event_damage_2024_3_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9eab64683e5b",
+        "labelKo": "CRI 본문 수록 피해통계(2024년)",
+        "unit": "—",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-9eab64683e5b|—|detail=2024년 3월말~5월 폭염|B-010_cri_event_damage_2024_3_5",
+      "sourceCaveat": "[신규 수록 — 발주처 지적 대응] 검토의견의 「실제 피해통계(사망자수·경제손실액)」에 대한 조치. CRI 부속표(Annex)는 국가별로 순위 4종만 제공하고 피해통계를 수록하지 않지만, **보고서 본문 2.2절의 베트남 문단에 정량 피해 서술이 있어** 이를 지표화함. 숫자형 피해통계 계열은 원천이 EM-DAT이므로 B-012에 수록되어 있으며(Q-004 소스 혼재 방지), 본 지표는 CRI가 자체 보고서에서 인용·서술한 내용을 텍스트로 보존하는 성격임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간",
+      "sourceLabel": "CRI 본문 수록 피해통계(2024년) — 2024년 3월말~5월 폭염",
+      "sourceLabelEn": "Damage statistics cited in CRI 2026 text",
+      "sourceNote": "[신규 수록 — 발주처 지적 대응] 검토의견의 「실제 피해통계(사망자수·경제손실액)」에 대한 조치. CRI 부속표(Annex)는 국가별로 순위 4종만 제공하고 피해통계를 수록하지 않지만, **보고서 본문 2.2절의 베트남 문단에 정량 피해 서술이 있어** 이를 지표화함. 숫자형 피해통계 계열은 원천이 EM-DAT이므로 B-012에 수록되어 있으며(Q-004 소스 혼재 방지), 본 지표는 CRI가 자체 보고서에서 인용·서술한 내용을 텍스트로 보존하는 성격임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간",
+      "sourceProvenance": {
+        "elementId": "B-010",
+        "indicatorId": "B-010_cri_event_damage_2024_3_5",
+        "sourceFileDecoded": "B-010_기후 리스크 지수 (CRI).xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9eab64683e5b|—",
+      "dimensionLabels": {
+        "detail": "태풍 Yagi",
+        "detail_2": "북부 피해"
+      },
+      "dimensions": {
+        "detail": "태풍 Yagi",
+        "detail_2": "북부 피해"
+      },
+      "displayLabel": "CRI 본문 수록 피해통계(2024년) — 태풍 Yagi — 북부 피해",
+      "indicatorId": "B-010_cri_event_damage_yagi",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9eab64683e5b",
+        "labelKo": "CRI 본문 수록 피해통계(2024년)",
+        "unit": "—",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-9eab64683e5b|—|detail=태풍 Yagi|detail_2=북부 피해|B-010_cri_event_damage_yagi",
+      "sourceCaveat": "[신규 수록 — 발주처 지적 대응] 검토의견의 「실제 피해통계(사망자수·경제손실액)」에 대한 조치. CRI 부속표(Annex)는 국가별로 순위 4종만 제공하고 피해통계를 수록하지 않지만, **보고서 본문 2.2절의 베트남 문단에 정량 피해 서술이 있어** 이를 지표화함. 숫자형 피해통계 계열은 원천이 EM-DAT이므로 B-012에 수록되어 있으며(Q-004 소스 혼재 방지), 본 지표는 CRI가 자체 보고서에서 인용·서술한 내용을 텍스트로 보존하는 성격임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간",
+      "sourceLabel": "CRI 본문 수록 피해통계(2024년) — 태풍 Yagi — 북부 피해",
+      "sourceLabelEn": "Damage statistics cited in CRI 2026 text",
+      "sourceNote": "[신규 수록 — 발주처 지적 대응] 검토의견의 「실제 피해통계(사망자수·경제손실액)」에 대한 조치. CRI 부속표(Annex)는 국가별로 순위 4종만 제공하고 피해통계를 수록하지 않지만, **보고서 본문 2.2절의 베트남 문단에 정량 피해 서술이 있어** 이를 지표화함. 숫자형 피해통계 계열은 원천이 EM-DAT이므로 B-012에 수록되어 있으며(Q-004 소스 혼재 방지), 본 지표는 CRI가 자체 보고서에서 인용·서술한 내용을 텍스트로 보존하는 성격임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간",
+      "sourceProvenance": {
+        "elementId": "B-010",
+        "indicatorId": "B-010_cri_event_damage_yagi",
+        "sourceFileDecoded": "B-010_기후 리스크 지수 (CRI).xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9eab64683e5b|—",
+      "dimensionLabels": {
+        "detail": "태풍 Yagi(2024-09-07 상륙)"
+      },
+      "dimensions": {
+        "detail": "태풍 Yagi(2024-09-07 상륙)"
+      },
+      "displayLabel": "CRI 본문 수록 피해통계(2024년) — 태풍 Yagi(2024-09-07 상륙)",
+      "indicatorId": "B-010_cri_event_damage_yagi_2024_09_07",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9eab64683e5b",
+        "labelKo": "CRI 본문 수록 피해통계(2024년)",
+        "unit": "—",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-9eab64683e5b|—|detail=태풍 Yagi(2024-09-07 상륙)|B-010_cri_event_damage_yagi_2024_09_07",
+      "sourceCaveat": "[신규 수록 — 발주처 지적 대응] 검토의견의 「실제 피해통계(사망자수·경제손실액)」에 대한 조치. CRI 부속표(Annex)는 국가별로 순위 4종만 제공하고 피해통계를 수록하지 않지만, **보고서 본문 2.2절의 베트남 문단에 정량 피해 서술이 있어** 이를 지표화함. 숫자형 피해통계 계열은 원천이 EM-DAT이므로 B-012에 수록되어 있으며(Q-004 소스 혼재 방지), 본 지표는 CRI가 자체 보고서에서 인용·서술한 내용을 텍스트로 보존하는 성격임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간",
+      "sourceLabel": "CRI 본문 수록 피해통계(2024년) — 태풍 Yagi(2024-09-07 상륙)",
+      "sourceLabelEn": "Damage statistics cited in CRI 2026 text",
+      "sourceNote": "[신규 수록 — 발주처 지적 대응] 검토의견의 「실제 피해통계(사망자수·경제손실액)」에 대한 조치. CRI 부속표(Annex)는 국가별로 순위 4종만 제공하고 피해통계를 수록하지 않지만, **보고서 본문 2.2절의 베트남 문단에 정량 피해 서술이 있어** 이를 지표화함. 숫자형 피해통계 계열은 원천이 EM-DAT이므로 B-012에 수록되어 있으며(Q-004 소스 혼재 방지), 본 지표는 CRI가 자체 보고서에서 인용·서술한 내용을 텍스트로 보존하는 성격임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간",
+      "sourceProvenance": {
+        "elementId": "B-010",
+        "indicatorId": "B-010_cri_event_damage_yagi_2024_09_07",
+        "sourceFileDecoded": "B-010_기후 리스크 지수 (CRI).xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f20de2f62bc7|순위",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "CRI 종합 순위",
+      "indicatorId": "B-010_cri_rank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f20de2f62bc7",
+        "labelKo": "CRI 종합 순위",
+        "unit": "순위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-f20de2f62bc7|순위||B-010_cri_rank",
+      "sourceCaveat": "[추출 완료] Germanwatch CRI 2026 full report 부속표에서 베트남 단년 순위를 추출함. 동 부속표는 국가별로 4개 순위(Rank 2024 · Rank 1995–2024 · Rank 2023 · Rank 1994–2023)만 제공하며 CRI 지수값과 피해통계(사망자수·경제손실액)는 국가별로 수록하지 않음 — 해당 항목은 별도 원천 필요. ND-GAIN(B-011)과 달리 순위가 낮을수록 피해가 크다는 점에 유의. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간",
+      "sourceLabel": "CRI 종합 순위",
+      "sourceLabelEn": "Climate Risk Index rank",
+      "sourceNote": "[추출 완료] Germanwatch CRI 2026 full report 부속표에서 베트남 단년 순위를 추출함. 동 부속표는 국가별로 4개 순위(Rank 2024 · Rank 1995–2024 · Rank 2023 · Rank 1994–2023)만 제공하며 CRI 지수값과 피해통계(사망자수·경제손실액)는 국가별로 수록하지 않음 — 해당 항목은 별도 원천 필요. ND-GAIN(B-011)과 달리 순위가 낮을수록 피해가 크다는 점에 유의. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간",
+      "sourceProvenance": {
+        "elementId": "B-010",
+        "indicatorId": "B-010_cri_rank",
+        "sourceFileDecoded": "B-010_기후 리스크 지수 (CRI).xlsx",
+        "sourceRow": 4,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-c58378d6d03f|순위",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "CRI 30년 누적 순위",
+      "indicatorId": "B-010_cri_rank_30y",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-c58378d6d03f",
+        "labelKo": "CRI 30년 누적 순위",
+        "unit": "순위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-c58378d6d03f|순위||B-010_cri_rank_30y",
+      "sourceCaveat": "[신설] 단년 순위와 30년 누적 순위는 대상기간이 달라 별도 지표로 분리함. 베트남은 단년 순위(2024년 10위)와 누적 순위(14위)가 모두 상위권으로 만성적 고위험국에 해당. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간",
+      "sourceLabel": "CRI 30년 누적 순위",
+      "sourceLabelEn": "Climate Risk Index 30-year rank",
+      "sourceNote": "[신설] 단년 순위와 30년 누적 순위는 대상기간이 달라 별도 지표로 분리함. 베트남은 단년 순위(2024년 10위)와 누적 순위(14위)가 모두 상위권으로 만성적 고위험국에 해당. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간",
+      "sourceProvenance": {
+        "elementId": "B-010",
+        "indicatorId": "B-010_cri_rank_30y",
+        "sourceFileDecoded": "B-010_기후 리스크 지수 (CRI).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-292f961bb3ac|순위",
+      "dimensionLabels": {
+        "detail": "HDI 보정",
+        "detail_2": "1995",
+        "detail_3": "2024년 누적"
+      },
+      "dimensions": {
+        "detail": "HDI 보정",
+        "detail_2": "1995",
+        "detail_3": "2024년 누적"
+      },
+      "displayLabel": "CRI 순위 — HDI 보정 — 1995–2024년 누적",
+      "indicatorId": "B-010_cri_rank_hdi_1995_2024",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-292f961bb3ac",
+        "labelKo": "CRI 순위",
+        "unit": "순위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-292f961bb3ac|순위|detail=HDI 보정|detail_2=1995|detail_3=2024년 누적|B-010_cri_rank_hdi_1995_2024",
+      "sourceCaveat": "[신규 수록] 보유 [raw] CRI 2026 보고서 본문 Figure 11·12에 있으나 미수록이던 값. 보정 전 순위와 함께 보면 베트남의 피해가 절대 규모로는 상위권이나 개발 수준을 감안한 상대 피해는 다소 완화된다는 해석이 가능함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간",
+      "sourceLabel": "CRI 순위 — HDI 보정 — 1995–2024년 누적",
+      "sourceLabelEn": "Climate Risk Index rank (HDI-corrected)",
+      "sourceNote": "[신규 수록] 보유 [raw] CRI 2026 보고서 본문 Figure 11·12에 있으나 미수록이던 값. 보정 전 순위와 함께 보면 베트남의 피해가 절대 규모로는 상위권이나 개발 수준을 감안한 상대 피해는 다소 완화된다는 해석이 가능함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간",
+      "sourceProvenance": {
+        "elementId": "B-010",
+        "indicatorId": "B-010_cri_rank_hdi_1995_2024",
+        "sourceFileDecoded": "B-010_기후 리스크 지수 (CRI).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-292f961bb3ac|순위",
+      "dimensionLabels": {
+        "detail": "HDI 보정",
+        "detail_2": "2024년 단년"
+      },
+      "dimensions": {
+        "detail": "HDI 보정",
+        "detail_2": "2024년 단년"
+      },
+      "displayLabel": "CRI 순위 — HDI 보정 — 2024년 단년",
+      "indicatorId": "B-010_cri_rank_hdi_2024",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-292f961bb3ac",
+        "labelKo": "CRI 순위",
+        "unit": "순위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-292f961bb3ac|순위|detail=HDI 보정|detail_2=2024년 단년|B-010_cri_rank_hdi_2024",
+      "sourceCaveat": "[신규 수록] 보유 [raw] CRI 2026 보고서 본문 Figure 11·12에 있으나 미수록이던 값. 보정 전 순위와 함께 보면 베트남의 피해가 절대 규모로는 상위권이나 개발 수준을 감안한 상대 피해는 다소 완화된다는 해석이 가능함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간",
+      "sourceLabel": "CRI 순위 — HDI 보정 — 2024년 단년",
+      "sourceLabelEn": "Climate Risk Index rank (HDI-corrected)",
+      "sourceNote": "[신규 수록] 보유 [raw] CRI 2026 보고서 본문 Figure 11·12에 있으나 미수록이던 값. 보정 전 순위와 함께 보면 베트남의 피해가 절대 규모로는 상위권이나 개발 수준을 감안한 상대 피해는 다소 완화된다는 해석이 가능함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간",
+      "sourceProvenance": {
+        "elementId": "B-010",
+        "indicatorId": "B-010_cri_rank_hdi_2024",
+        "sourceFileDecoded": "B-010_기후 리스크 지수 (CRI).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 2,
+      "key": "measure-e19a3da06ed0",
+      "labelKo": "2024년 최대 피해 극한기상 사건",
+      "recordCount": 2,
+      "unit": "사건",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-c58378d6d03f",
+      "labelKo": "CRI 30년 누적 순위",
+      "recordCount": 2,
+      "unit": "순위",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 4,
+      "key": "measure-9eab64683e5b",
+      "labelKo": "CRI 본문 수록 피해통계(2024년)",
+      "recordCount": 0,
+      "unit": "—",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-292f961bb3ac",
+      "labelKo": "CRI 순위",
+      "recordCount": 0,
+      "unit": "순위",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-f20de2f62bc7",
+      "labelKo": "CRI 종합 순위",
+      "recordCount": 2,
+      "unit": "순위",
+      "unitFamily": "other"
+    }
+  ],
+  "observationCount": 6,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

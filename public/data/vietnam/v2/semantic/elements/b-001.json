@@ -1,0 +1,1215 @@
+{
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 12,
+      "values": [
+        "1월",
+        "2월",
+        "3월",
+        "4월",
+        "5월",
+        "6월",
+        "7월",
+        "8월",
+        "9월",
+        "10월",
+        "11월",
+        "12월"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "1991"
+      ]
+    }
+  ],
+  "elementId": "B-001",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 38,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-007153a24949|mm",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "연 평년강수",
+      "indicatorId": "B-001_pr_annual_norm",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-007153a24949",
+        "labelKo": "연 평년강수",
+        "unit": "mm",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-007153a24949|mm||B-001_pr_annual_norm",
+      "sourceCaveat": "[미수집 raw 반영] B-001 raw CSV(annual 행)의 연강수 값을 지표로 승격. B-003(연평균 기온·강수, CRU 연시계열 1901–2024)과는 산출 기준이 다름 — 본 값은 1991–2020 30년 평년값. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "연 평년강수",
+      "sourceLabelEn": "Annual normal precipitation",
+      "sourceNote": "[미수집 raw 반영] B-001 raw CSV(annual 행)의 연강수 값을 지표로 승격. B-003(연평균 기온·강수, CRU 연시계열 1901–2024)과는 산출 기준이 다름 — 본 값은 1991–2020 30년 평년값. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_pr_annual_norm",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 40,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-706a7683fa04|mm",
+      "dimensionLabels": {
+        "detail": "4월"
+      },
+      "dimensions": {
+        "detail": "4월"
+      },
+      "displayLabel": "월 평년강수 — 4월",
+      "indicatorId": "B-001_pr_month_norm_apr",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-706a7683fa04",
+        "labelKo": "월 평년강수",
+        "unit": "mm",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-706a7683fa04|mm|detail=4월|B-001_pr_month_norm_apr",
+      "sourceCaveat": "건기/우기 판정의 근거값. 12개월 합 = 연강수 1,773.9mm / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월 평년강수 — 4월",
+      "sourceLabelEn": "Monthly normal precipitation",
+      "sourceNote": "건기/우기 판정의 근거값. 12개월 합 = 연강수 1,773.9mm / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_pr_month_norm_apr",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-706a7683fa04|mm",
+      "dimensionLabels": {
+        "detail": "8월"
+      },
+      "dimensions": {
+        "detail": "8월"
+      },
+      "displayLabel": "월 평년강수 — 8월",
+      "indicatorId": "B-001_pr_month_norm_aug",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-706a7683fa04",
+        "labelKo": "월 평년강수",
+        "unit": "mm",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-706a7683fa04|mm|detail=8월|B-001_pr_month_norm_aug",
+      "sourceCaveat": "건기/우기 판정의 근거값. 12개월 합 = 연강수 1,773.9mm / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월 평년강수 — 8월",
+      "sourceLabelEn": "Monthly normal precipitation",
+      "sourceNote": "건기/우기 판정의 근거값. 12개월 합 = 연강수 1,773.9mm / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_pr_month_norm_aug",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-706a7683fa04|mm",
+      "dimensionLabels": {
+        "detail": "12월"
+      },
+      "dimensions": {
+        "detail": "12월"
+      },
+      "displayLabel": "월 평년강수 — 12월",
+      "indicatorId": "B-001_pr_month_norm_dec",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-706a7683fa04",
+        "labelKo": "월 평년강수",
+        "unit": "mm",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-706a7683fa04|mm|detail=12월|B-001_pr_month_norm_dec",
+      "sourceCaveat": "건기/우기 판정의 근거값. 12개월 합 = 연강수 1,773.9mm / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월 평년강수 — 12월",
+      "sourceLabelEn": "Monthly normal precipitation",
+      "sourceNote": "건기/우기 판정의 근거값. 12개월 합 = 연강수 1,773.9mm / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_pr_month_norm_dec",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 27,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-706a7683fa04|mm",
+      "dimensionLabels": {
+        "detail": "2월"
+      },
+      "dimensions": {
+        "detail": "2월"
+      },
+      "displayLabel": "월 평년강수 — 2월",
+      "indicatorId": "B-001_pr_month_norm_feb",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-706a7683fa04",
+        "labelKo": "월 평년강수",
+        "unit": "mm",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-706a7683fa04|mm|detail=2월|B-001_pr_month_norm_feb",
+      "sourceCaveat": "건기/우기 판정의 근거값. 12개월 합 = 연강수 1,773.9mm / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월 평년강수 — 2월",
+      "sourceLabelEn": "Monthly normal precipitation",
+      "sourceNote": "건기/우기 판정의 근거값. 12개월 합 = 연강수 1,773.9mm / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_pr_month_norm_feb",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-706a7683fa04|mm",
+      "dimensionLabels": {
+        "detail": "1월"
+      },
+      "dimensions": {
+        "detail": "1월"
+      },
+      "displayLabel": "월 평년강수 — 1월",
+      "indicatorId": "B-001_pr_month_norm_jan",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-706a7683fa04",
+        "labelKo": "월 평년강수",
+        "unit": "mm",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-706a7683fa04|mm|detail=1월|B-001_pr_month_norm_jan",
+      "sourceCaveat": "건기/우기 판정의 근거값. 12개월 합 = 연강수 1,773.9mm / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월 평년강수 — 1월",
+      "sourceLabelEn": "Monthly normal precipitation",
+      "sourceNote": "건기/우기 판정의 근거값. 12개월 합 = 연강수 1,773.9mm / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_pr_month_norm_jan",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-706a7683fa04|mm",
+      "dimensionLabels": {
+        "detail": "7월"
+      },
+      "dimensions": {
+        "detail": "7월"
+      },
+      "displayLabel": "월 평년강수 — 7월",
+      "indicatorId": "B-001_pr_month_norm_jul",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-706a7683fa04",
+        "labelKo": "월 평년강수",
+        "unit": "mm",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-706a7683fa04|mm|detail=7월|B-001_pr_month_norm_jul",
+      "sourceCaveat": "건기/우기 판정의 근거값. 12개월 합 = 연강수 1,773.9mm / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월 평년강수 — 7월",
+      "sourceLabelEn": "Monthly normal precipitation",
+      "sourceNote": "건기/우기 판정의 근거값. 12개월 합 = 연강수 1,773.9mm / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_pr_month_norm_jul",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-706a7683fa04|mm",
+      "dimensionLabels": {
+        "detail": "6월"
+      },
+      "dimensions": {
+        "detail": "6월"
+      },
+      "displayLabel": "월 평년강수 — 6월",
+      "indicatorId": "B-001_pr_month_norm_jun",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-706a7683fa04",
+        "labelKo": "월 평년강수",
+        "unit": "mm",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-706a7683fa04|mm|detail=6월|B-001_pr_month_norm_jun",
+      "sourceCaveat": "건기/우기 판정의 근거값. 12개월 합 = 연강수 1,773.9mm / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월 평년강수 — 6월",
+      "sourceLabelEn": "Monthly normal precipitation",
+      "sourceNote": "건기/우기 판정의 근거값. 12개월 합 = 연강수 1,773.9mm / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_pr_month_norm_jun",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-706a7683fa04|mm",
+      "dimensionLabels": {
+        "detail": "3월"
+      },
+      "dimensions": {
+        "detail": "3월"
+      },
+      "displayLabel": "월 평년강수 — 3월",
+      "indicatorId": "B-001_pr_month_norm_mar",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-706a7683fa04",
+        "labelKo": "월 평년강수",
+        "unit": "mm",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-706a7683fa04|mm|detail=3월|B-001_pr_month_norm_mar",
+      "sourceCaveat": "건기/우기 판정의 근거값. 12개월 합 = 연강수 1,773.9mm / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월 평년강수 — 3월",
+      "sourceLabelEn": "Monthly normal precipitation",
+      "sourceNote": "건기/우기 판정의 근거값. 12개월 합 = 연강수 1,773.9mm / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_pr_month_norm_mar",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-706a7683fa04|mm",
+      "dimensionLabels": {
+        "detail": "5월"
+      },
+      "dimensions": {
+        "detail": "5월"
+      },
+      "displayLabel": "월 평년강수 — 5월",
+      "indicatorId": "B-001_pr_month_norm_may",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-706a7683fa04",
+        "labelKo": "월 평년강수",
+        "unit": "mm",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-706a7683fa04|mm|detail=5월|B-001_pr_month_norm_may",
+      "sourceCaveat": "건기/우기 판정의 근거값. 12개월 합 = 연강수 1,773.9mm / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월 평년강수 — 5월",
+      "sourceLabelEn": "Monthly normal precipitation",
+      "sourceNote": "건기/우기 판정의 근거값. 12개월 합 = 연강수 1,773.9mm / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_pr_month_norm_may",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-706a7683fa04|mm",
+      "dimensionLabels": {
+        "detail": "11월"
+      },
+      "dimensions": {
+        "detail": "11월"
+      },
+      "displayLabel": "월 평년강수 — 11월",
+      "indicatorId": "B-001_pr_month_norm_nov",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-706a7683fa04",
+        "labelKo": "월 평년강수",
+        "unit": "mm",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-706a7683fa04|mm|detail=11월|B-001_pr_month_norm_nov",
+      "sourceCaveat": "건기/우기 판정의 근거값. 12개월 합 = 연강수 1,773.9mm / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월 평년강수 — 11월",
+      "sourceLabelEn": "Monthly normal precipitation",
+      "sourceNote": "건기/우기 판정의 근거값. 12개월 합 = 연강수 1,773.9mm / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_pr_month_norm_nov",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 26,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-706a7683fa04|mm",
+      "dimensionLabels": {
+        "detail": "10월"
+      },
+      "dimensions": {
+        "detail": "10월"
+      },
+      "displayLabel": "월 평년강수 — 10월",
+      "indicatorId": "B-001_pr_month_norm_oct",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-706a7683fa04",
+        "labelKo": "월 평년강수",
+        "unit": "mm",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-706a7683fa04|mm|detail=10월|B-001_pr_month_norm_oct",
+      "sourceCaveat": "건기/우기 판정의 근거값. 12개월 합 = 연강수 1,773.9mm / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월 평년강수 — 10월",
+      "sourceLabelEn": "Monthly normal precipitation",
+      "sourceNote": "건기/우기 판정의 근거값. 12개월 합 = 연강수 1,773.9mm / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_pr_month_norm_oct",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 25,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-706a7683fa04|mm",
+      "dimensionLabels": {
+        "detail": "9월"
+      },
+      "dimensions": {
+        "detail": "9월"
+      },
+      "displayLabel": "월 평년강수 — 9월",
+      "indicatorId": "B-001_pr_month_norm_sep",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-706a7683fa04",
+        "labelKo": "월 평년강수",
+        "unit": "mm",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-706a7683fa04|mm|detail=9월|B-001_pr_month_norm_sep",
+      "sourceCaveat": "건기/우기 판정의 근거값. 12개월 합 = 연강수 1,773.9mm / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월 평년강수 — 9월",
+      "sourceLabelEn": "Monthly normal precipitation",
+      "sourceNote": "건기/우기 판정의 근거값. 12개월 합 = 연강수 1,773.9mm / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_pr_month_norm_sep",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 24,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7659cb58032f|구분",
+      "dimensionLabels": {
+        "detail": "4월"
+      },
+      "dimensions": {
+        "detail": "4월"
+      },
+      "displayLabel": "월별 건기/우기 구분(전국) — 4월",
+      "indicatorId": "B-001_season_class_national_apr",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7659cb58032f",
+        "labelKo": "월별 건기/우기 구분(전국)",
+        "unit": "구분",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-7659cb58032f|구분|detail=4월|B-001_season_class_national_apr",
+      "sourceCaveat": "[정의] 종전 파일의 \"일반 기후 구분\"(북·중·남부 서술)은 산출규칙이 없어 재현·확장이 불가하여 폐기하고, 재현 가능한 강수 임계 규칙으로 전면 대체함. [검증] 12개월 전부가 건기 또는 우기 중 하나로 분류되어 종전 중부 2월 누락 문제 해소. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월별 건기/우기 구분(전국) — 4월",
+      "sourceLabelEn": "Monthly dry/wet season classification (national)",
+      "sourceNote": "[정의] 종전 파일의 \"일반 기후 구분\"(북·중·남부 서술)은 산출규칙이 없어 재현·확장이 불가하여 폐기하고, 재현 가능한 강수 임계 규칙으로 전면 대체함. [검증] 12개월 전부가 건기 또는 우기 중 하나로 분류되어 종전 중부 2월 누락 문제 해소. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_season_class_national_apr",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7659cb58032f|구분",
+      "dimensionLabels": {
+        "detail": "8월"
+      },
+      "dimensions": {
+        "detail": "8월"
+      },
+      "displayLabel": "월별 건기/우기 구분(전국) — 8월",
+      "indicatorId": "B-001_season_class_national_aug",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7659cb58032f",
+        "labelKo": "월별 건기/우기 구분(전국)",
+        "unit": "구분",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-7659cb58032f|구분|detail=8월|B-001_season_class_national_aug",
+      "sourceCaveat": "[정의] 종전 파일의 \"일반 기후 구분\"(북·중·남부 서술)은 산출규칙이 없어 재현·확장이 불가하여 폐기하고, 재현 가능한 강수 임계 규칙으로 전면 대체함. [검증] 12개월 전부가 건기 또는 우기 중 하나로 분류되어 종전 중부 2월 누락 문제 해소. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월별 건기/우기 구분(전국) — 8월",
+      "sourceLabelEn": "Monthly dry/wet season classification (national)",
+      "sourceNote": "[정의] 종전 파일의 \"일반 기후 구분\"(북·중·남부 서술)은 산출규칙이 없어 재현·확장이 불가하여 폐기하고, 재현 가능한 강수 임계 규칙으로 전면 대체함. [검증] 12개월 전부가 건기 또는 우기 중 하나로 분류되어 종전 중부 2월 누락 문제 해소. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_season_class_national_aug",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7659cb58032f|구분",
+      "dimensionLabels": {
+        "detail": "12월"
+      },
+      "dimensions": {
+        "detail": "12월"
+      },
+      "displayLabel": "월별 건기/우기 구분(전국) — 12월",
+      "indicatorId": "B-001_season_class_national_dec",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7659cb58032f",
+        "labelKo": "월별 건기/우기 구분(전국)",
+        "unit": "구분",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-7659cb58032f|구분|detail=12월|B-001_season_class_national_dec",
+      "sourceCaveat": "[정의] 종전 파일의 \"일반 기후 구분\"(북·중·남부 서술)은 산출규칙이 없어 재현·확장이 불가하여 폐기하고, 재현 가능한 강수 임계 규칙으로 전면 대체함. [검증] 12개월 전부가 건기 또는 우기 중 하나로 분류되어 종전 중부 2월 누락 문제 해소. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월별 건기/우기 구분(전국) — 12월",
+      "sourceLabelEn": "Monthly dry/wet season classification (national)",
+      "sourceNote": "[정의] 종전 파일의 \"일반 기후 구분\"(북·중·남부 서술)은 산출규칙이 없어 재현·확장이 불가하여 폐기하고, 재현 가능한 강수 임계 규칙으로 전면 대체함. [검증] 12개월 전부가 건기 또는 우기 중 하나로 분류되어 종전 중부 2월 누락 문제 해소. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_season_class_national_dec",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7659cb58032f|구분",
+      "dimensionLabels": {
+        "detail": "2월"
+      },
+      "dimensions": {
+        "detail": "2월"
+      },
+      "displayLabel": "월별 건기/우기 구분(전국) — 2월",
+      "indicatorId": "B-001_season_class_national_feb",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7659cb58032f",
+        "labelKo": "월별 건기/우기 구분(전국)",
+        "unit": "구분",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-7659cb58032f|구분|detail=2월|B-001_season_class_national_feb",
+      "sourceCaveat": "[정의] 종전 파일의 \"일반 기후 구분\"(북·중·남부 서술)은 산출규칙이 없어 재현·확장이 불가하여 폐기하고, 재현 가능한 강수 임계 규칙으로 전면 대체함. [검증] 12개월 전부가 건기 또는 우기 중 하나로 분류되어 종전 중부 2월 누락 문제 해소. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월별 건기/우기 구분(전국) — 2월",
+      "sourceLabelEn": "Monthly dry/wet season classification (national)",
+      "sourceNote": "[정의] 종전 파일의 \"일반 기후 구분\"(북·중·남부 서술)은 산출규칙이 없어 재현·확장이 불가하여 폐기하고, 재현 가능한 강수 임계 규칙으로 전면 대체함. [검증] 12개월 전부가 건기 또는 우기 중 하나로 분류되어 종전 중부 2월 누락 문제 해소. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_season_class_national_feb",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7659cb58032f|구분",
+      "dimensionLabels": {
+        "detail": "1월"
+      },
+      "dimensions": {
+        "detail": "1월"
+      },
+      "displayLabel": "월별 건기/우기 구분(전국) — 1월",
+      "indicatorId": "B-001_season_class_national_jan",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7659cb58032f",
+        "labelKo": "월별 건기/우기 구분(전국)",
+        "unit": "구분",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-7659cb58032f|구분|detail=1월|B-001_season_class_national_jan",
+      "sourceCaveat": "[정의] 종전 파일의 \"일반 기후 구분\"(북·중·남부 서술)은 산출규칙이 없어 재현·확장이 불가하여 폐기하고, 재현 가능한 강수 임계 규칙으로 전면 대체함. [검증] 12개월 전부가 건기 또는 우기 중 하나로 분류되어 종전 중부 2월 누락 문제 해소. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월별 건기/우기 구분(전국) — 1월",
+      "sourceLabelEn": "Monthly dry/wet season classification (national)",
+      "sourceNote": "[정의] 종전 파일의 \"일반 기후 구분\"(북·중·남부 서술)은 산출규칙이 없어 재현·확장이 불가하여 폐기하고, 재현 가능한 강수 임계 규칙으로 전면 대체함. [검증] 12개월 전부가 건기 또는 우기 중 하나로 분류되어 종전 중부 2월 누락 문제 해소. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_season_class_national_jan",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 4,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7659cb58032f|구분",
+      "dimensionLabels": {
+        "detail": "7월"
+      },
+      "dimensions": {
+        "detail": "7월"
+      },
+      "displayLabel": "월별 건기/우기 구분(전국) — 7월",
+      "indicatorId": "B-001_season_class_national_jul",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7659cb58032f",
+        "labelKo": "월별 건기/우기 구분(전국)",
+        "unit": "구분",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-7659cb58032f|구분|detail=7월|B-001_season_class_national_jul",
+      "sourceCaveat": "[정의] 종전 파일의 \"일반 기후 구분\"(북·중·남부 서술)은 산출규칙이 없어 재현·확장이 불가하여 폐기하고, 재현 가능한 강수 임계 규칙으로 전면 대체함. [검증] 12개월 전부가 건기 또는 우기 중 하나로 분류되어 종전 중부 2월 누락 문제 해소. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월별 건기/우기 구분(전국) — 7월",
+      "sourceLabelEn": "Monthly dry/wet season classification (national)",
+      "sourceNote": "[정의] 종전 파일의 \"일반 기후 구분\"(북·중·남부 서술)은 산출규칙이 없어 재현·확장이 불가하여 폐기하고, 재현 가능한 강수 임계 규칙으로 전면 대체함. [검증] 12개월 전부가 건기 또는 우기 중 하나로 분류되어 종전 중부 2월 누락 문제 해소. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_season_class_national_jul",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7659cb58032f|구분",
+      "dimensionLabels": {
+        "detail": "6월"
+      },
+      "dimensions": {
+        "detail": "6월"
+      },
+      "displayLabel": "월별 건기/우기 구분(전국) — 6월",
+      "indicatorId": "B-001_season_class_national_jun",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7659cb58032f",
+        "labelKo": "월별 건기/우기 구분(전국)",
+        "unit": "구분",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-7659cb58032f|구분|detail=6월|B-001_season_class_national_jun",
+      "sourceCaveat": "[정의] 종전 파일의 \"일반 기후 구분\"(북·중·남부 서술)은 산출규칙이 없어 재현·확장이 불가하여 폐기하고, 재현 가능한 강수 임계 규칙으로 전면 대체함. [검증] 12개월 전부가 건기 또는 우기 중 하나로 분류되어 종전 중부 2월 누락 문제 해소. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월별 건기/우기 구분(전국) — 6월",
+      "sourceLabelEn": "Monthly dry/wet season classification (national)",
+      "sourceNote": "[정의] 종전 파일의 \"일반 기후 구분\"(북·중·남부 서술)은 산출규칙이 없어 재현·확장이 불가하여 폐기하고, 재현 가능한 강수 임계 규칙으로 전면 대체함. [검증] 12개월 전부가 건기 또는 우기 중 하나로 분류되어 종전 중부 2월 누락 문제 해소. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_season_class_national_jun",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7659cb58032f|구분",
+      "dimensionLabels": {
+        "detail": "3월"
+      },
+      "dimensions": {
+        "detail": "3월"
+      },
+      "displayLabel": "월별 건기/우기 구분(전국) — 3월",
+      "indicatorId": "B-001_season_class_national_mar",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7659cb58032f",
+        "labelKo": "월별 건기/우기 구분(전국)",
+        "unit": "구분",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-7659cb58032f|구분|detail=3월|B-001_season_class_national_mar",
+      "sourceCaveat": "[정의] 종전 파일의 \"일반 기후 구분\"(북·중·남부 서술)은 산출규칙이 없어 재현·확장이 불가하여 폐기하고, 재현 가능한 강수 임계 규칙으로 전면 대체함. [검증] 12개월 전부가 건기 또는 우기 중 하나로 분류되어 종전 중부 2월 누락 문제 해소. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월별 건기/우기 구분(전국) — 3월",
+      "sourceLabelEn": "Monthly dry/wet season classification (national)",
+      "sourceNote": "[정의] 종전 파일의 \"일반 기후 구분\"(북·중·남부 서술)은 산출규칙이 없어 재현·확장이 불가하여 폐기하고, 재현 가능한 강수 임계 규칙으로 전면 대체함. [검증] 12개월 전부가 건기 또는 우기 중 하나로 분류되어 종전 중부 2월 누락 문제 해소. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_season_class_national_mar",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7659cb58032f|구분",
+      "dimensionLabels": {
+        "detail": "5월"
+      },
+      "dimensions": {
+        "detail": "5월"
+      },
+      "displayLabel": "월별 건기/우기 구분(전국) — 5월",
+      "indicatorId": "B-001_season_class_national_may",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7659cb58032f",
+        "labelKo": "월별 건기/우기 구분(전국)",
+        "unit": "구분",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-7659cb58032f|구분|detail=5월|B-001_season_class_national_may",
+      "sourceCaveat": "[정의] 종전 파일의 \"일반 기후 구분\"(북·중·남부 서술)은 산출규칙이 없어 재현·확장이 불가하여 폐기하고, 재현 가능한 강수 임계 규칙으로 전면 대체함. [검증] 12개월 전부가 건기 또는 우기 중 하나로 분류되어 종전 중부 2월 누락 문제 해소. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월별 건기/우기 구분(전국) — 5월",
+      "sourceLabelEn": "Monthly dry/wet season classification (national)",
+      "sourceNote": "[정의] 종전 파일의 \"일반 기후 구분\"(북·중·남부 서술)은 산출규칙이 없어 재현·확장이 불가하여 폐기하고, 재현 가능한 강수 임계 규칙으로 전면 대체함. [검증] 12개월 전부가 건기 또는 우기 중 하나로 분류되어 종전 중부 2월 누락 문제 해소. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_season_class_national_may",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7659cb58032f|구분",
+      "dimensionLabels": {
+        "detail": "11월"
+      },
+      "dimensions": {
+        "detail": "11월"
+      },
+      "displayLabel": "월별 건기/우기 구분(전국) — 11월",
+      "indicatorId": "B-001_season_class_national_nov",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7659cb58032f",
+        "labelKo": "월별 건기/우기 구분(전국)",
+        "unit": "구분",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-7659cb58032f|구분|detail=11월|B-001_season_class_national_nov",
+      "sourceCaveat": "[정의] 종전 파일의 \"일반 기후 구분\"(북·중·남부 서술)은 산출규칙이 없어 재현·확장이 불가하여 폐기하고, 재현 가능한 강수 임계 규칙으로 전면 대체함. [검증] 12개월 전부가 건기 또는 우기 중 하나로 분류되어 종전 중부 2월 누락 문제 해소. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월별 건기/우기 구분(전국) — 11월",
+      "sourceLabelEn": "Monthly dry/wet season classification (national)",
+      "sourceNote": "[정의] 종전 파일의 \"일반 기후 구분\"(북·중·남부 서술)은 산출규칙이 없어 재현·확장이 불가하여 폐기하고, 재현 가능한 강수 임계 규칙으로 전면 대체함. [검증] 12개월 전부가 건기 또는 우기 중 하나로 분류되어 종전 중부 2월 누락 문제 해소. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_season_class_national_nov",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7659cb58032f|구분",
+      "dimensionLabels": {
+        "detail": "10월"
+      },
+      "dimensions": {
+        "detail": "10월"
+      },
+      "displayLabel": "월별 건기/우기 구분(전국) — 10월",
+      "indicatorId": "B-001_season_class_national_oct",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7659cb58032f",
+        "labelKo": "월별 건기/우기 구분(전국)",
+        "unit": "구분",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-7659cb58032f|구분|detail=10월|B-001_season_class_national_oct",
+      "sourceCaveat": "[정의] 종전 파일의 \"일반 기후 구분\"(북·중·남부 서술)은 산출규칙이 없어 재현·확장이 불가하여 폐기하고, 재현 가능한 강수 임계 규칙으로 전면 대체함. [검증] 12개월 전부가 건기 또는 우기 중 하나로 분류되어 종전 중부 2월 누락 문제 해소. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월별 건기/우기 구분(전국) — 10월",
+      "sourceLabelEn": "Monthly dry/wet season classification (national)",
+      "sourceNote": "[정의] 종전 파일의 \"일반 기후 구분\"(북·중·남부 서술)은 산출규칙이 없어 재현·확장이 불가하여 폐기하고, 재현 가능한 강수 임계 규칙으로 전면 대체함. [검증] 12개월 전부가 건기 또는 우기 중 하나로 분류되어 종전 중부 2월 누락 문제 해소. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_season_class_national_oct",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7659cb58032f|구분",
+      "dimensionLabels": {
+        "detail": "9월"
+      },
+      "dimensions": {
+        "detail": "9월"
+      },
+      "displayLabel": "월별 건기/우기 구분(전국) — 9월",
+      "indicatorId": "B-001_season_class_national_sep",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7659cb58032f",
+        "labelKo": "월별 건기/우기 구분(전국)",
+        "unit": "구분",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-7659cb58032f|구분|detail=9월|B-001_season_class_national_sep",
+      "sourceCaveat": "[정의] 종전 파일의 \"일반 기후 구분\"(북·중·남부 서술)은 산출규칙이 없어 재현·확장이 불가하여 폐기하고, 재현 가능한 강수 임계 규칙으로 전면 대체함. [검증] 12개월 전부가 건기 또는 우기 중 하나로 분류되어 종전 중부 2월 누락 문제 해소. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월별 건기/우기 구분(전국) — 9월",
+      "sourceLabelEn": "Monthly dry/wet season classification (national)",
+      "sourceNote": "[정의] 종전 파일의 \"일반 기후 구분\"(북·중·남부 서술)은 산출규칙이 없어 재현·확장이 불가하여 폐기하고, 재현 가능한 강수 임계 규칙으로 전면 대체함. [검증] 12개월 전부가 건기 또는 우기 중 하나로 분류되어 종전 중부 2월 누락 문제 해소. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_season_class_national_sep",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-38d1f991bf44|℃",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "연 평년기온",
+      "indicatorId": "B-001_tas_annual_norm",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-38d1f991bf44",
+        "labelKo": "연 평년기온",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-38d1f991bf44|℃||B-001_tas_annual_norm",
+      "sourceCaveat": "[미수집 raw 반영] B-001 raw CSV(annual 행)의 연평균기온 값을 지표로 승격. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "연 평년기온",
+      "sourceLabelEn": "Annual normal temperature",
+      "sourceNote": "[미수집 raw 반영] B-001 raw CSV(annual 행)의 연평균기온 값을 지표로 승격. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_tas_annual_norm",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 41,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-765f6791d931|℃",
+      "dimensionLabels": {
+        "detail": "4월"
+      },
+      "dimensions": {
+        "detail": "4월"
+      },
+      "displayLabel": "월 평년기온 — 4월",
+      "indicatorId": "B-001_tas_month_norm_apr",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-765f6791d931",
+        "labelKo": "월 평년기온",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-765f6791d931|℃|detail=4월|B-001_tas_month_norm_apr",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월 평년기온 — 4월",
+      "sourceLabelEn": "Monthly normal temperature",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_tas_month_norm_apr",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 31,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-765f6791d931|℃",
+      "dimensionLabels": {
+        "detail": "8월"
+      },
+      "dimensions": {
+        "detail": "8월"
+      },
+      "displayLabel": "월 평년기온 — 8월",
+      "indicatorId": "B-001_tas_month_norm_aug",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-765f6791d931",
+        "labelKo": "월 평년기온",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-765f6791d931|℃|detail=8월|B-001_tas_month_norm_aug",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월 평년기온 — 8월",
+      "sourceLabelEn": "Monthly normal temperature",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_tas_month_norm_aug",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 35,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-765f6791d931|℃",
+      "dimensionLabels": {
+        "detail": "12월"
+      },
+      "dimensions": {
+        "detail": "12월"
+      },
+      "displayLabel": "월 평년기온 — 12월",
+      "indicatorId": "B-001_tas_month_norm_dec",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-765f6791d931",
+        "labelKo": "월 평년기온",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-765f6791d931|℃|detail=12월|B-001_tas_month_norm_dec",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월 평년기온 — 12월",
+      "sourceLabelEn": "Monthly normal temperature",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_tas_month_norm_dec",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 39,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-765f6791d931|℃",
+      "dimensionLabels": {
+        "detail": "2월"
+      },
+      "dimensions": {
+        "detail": "2월"
+      },
+      "displayLabel": "월 평년기온 — 2월",
+      "indicatorId": "B-001_tas_month_norm_feb",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-765f6791d931",
+        "labelKo": "월 평년기온",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-765f6791d931|℃|detail=2월|B-001_tas_month_norm_feb",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월 평년기온 — 2월",
+      "sourceLabelEn": "Monthly normal temperature",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_tas_month_norm_feb",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 29,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-765f6791d931|℃",
+      "dimensionLabels": {
+        "detail": "1월"
+      },
+      "dimensions": {
+        "detail": "1월"
+      },
+      "displayLabel": "월 평년기온 — 1월",
+      "indicatorId": "B-001_tas_month_norm_jan",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-765f6791d931",
+        "labelKo": "월 평년기온",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-765f6791d931|℃|detail=1월|B-001_tas_month_norm_jan",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월 평년기온 — 1월",
+      "sourceLabelEn": "Monthly normal temperature",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_tas_month_norm_jan",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 28,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-765f6791d931|℃",
+      "dimensionLabels": {
+        "detail": "7월"
+      },
+      "dimensions": {
+        "detail": "7월"
+      },
+      "displayLabel": "월 평년기온 — 7월",
+      "indicatorId": "B-001_tas_month_norm_jul",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-765f6791d931",
+        "labelKo": "월 평년기온",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-765f6791d931|℃|detail=7월|B-001_tas_month_norm_jul",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월 평년기온 — 7월",
+      "sourceLabelEn": "Monthly normal temperature",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_tas_month_norm_jul",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 34,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-765f6791d931|℃",
+      "dimensionLabels": {
+        "detail": "6월"
+      },
+      "dimensions": {
+        "detail": "6월"
+      },
+      "displayLabel": "월 평년기온 — 6월",
+      "indicatorId": "B-001_tas_month_norm_jun",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-765f6791d931",
+        "labelKo": "월 평년기온",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-765f6791d931|℃|detail=6월|B-001_tas_month_norm_jun",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월 평년기온 — 6월",
+      "sourceLabelEn": "Monthly normal temperature",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_tas_month_norm_jun",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 33,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-765f6791d931|℃",
+      "dimensionLabels": {
+        "detail": "3월"
+      },
+      "dimensions": {
+        "detail": "3월"
+      },
+      "displayLabel": "월 평년기온 — 3월",
+      "indicatorId": "B-001_tas_month_norm_mar",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-765f6791d931",
+        "labelKo": "월 평년기온",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-765f6791d931|℃|detail=3월|B-001_tas_month_norm_mar",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월 평년기온 — 3월",
+      "sourceLabelEn": "Monthly normal temperature",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_tas_month_norm_mar",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 30,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-765f6791d931|℃",
+      "dimensionLabels": {
+        "detail": "5월"
+      },
+      "dimensions": {
+        "detail": "5월"
+      },
+      "displayLabel": "월 평년기온 — 5월",
+      "indicatorId": "B-001_tas_month_norm_may",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-765f6791d931",
+        "labelKo": "월 평년기온",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-765f6791d931|℃|detail=5월|B-001_tas_month_norm_may",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월 평년기온 — 5월",
+      "sourceLabelEn": "Monthly normal temperature",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_tas_month_norm_may",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 32,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-765f6791d931|℃",
+      "dimensionLabels": {
+        "detail": "11월"
+      },
+      "dimensions": {
+        "detail": "11월"
+      },
+      "displayLabel": "월 평년기온 — 11월",
+      "indicatorId": "B-001_tas_month_norm_nov",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-765f6791d931",
+        "labelKo": "월 평년기온",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-765f6791d931|℃|detail=11월|B-001_tas_month_norm_nov",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월 평년기온 — 11월",
+      "sourceLabelEn": "Monthly normal temperature",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_tas_month_norm_nov",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 38,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-765f6791d931|℃",
+      "dimensionLabels": {
+        "detail": "10월"
+      },
+      "dimensions": {
+        "detail": "10월"
+      },
+      "displayLabel": "월 평년기온 — 10월",
+      "indicatorId": "B-001_tas_month_norm_oct",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-765f6791d931",
+        "labelKo": "월 평년기온",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-765f6791d931|℃|detail=10월|B-001_tas_month_norm_oct",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월 평년기온 — 10월",
+      "sourceLabelEn": "Monthly normal temperature",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_tas_month_norm_oct",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 37,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-765f6791d931|℃",
+      "dimensionLabels": {
+        "detail": "9월"
+      },
+      "dimensions": {
+        "detail": "9월"
+      },
+      "displayLabel": "월 평년기온 — 9월",
+      "indicatorId": "B-001_tas_month_norm_sep",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-765f6791d931",
+        "labelKo": "월 평년기온",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-765f6791d931|℃|detail=9월|B-001_tas_month_norm_sep",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "월 평년기온 — 9월",
+      "sourceLabelEn": "Monthly normal temperature",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-001",
+        "indicatorId": "B-001_tas_month_norm_sep",
+        "sourceFileDecoded": "B-001_건기／우기.xlsx",
+        "sourceRow": 36,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-007153a24949",
+      "labelKo": "연 평년강수",
+      "recordCount": 1,
+      "unit": "mm",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-38d1f991bf44",
+      "labelKo": "연 평년기온",
+      "recordCount": 1,
+      "unit": "℃",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 12,
+      "key": "measure-706a7683fa04",
+      "labelKo": "월 평년강수",
+      "recordCount": 12,
+      "unit": "mm",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 12,
+      "key": "measure-765f6791d931",
+      "labelKo": "월 평년기온",
+      "recordCount": 12,
+      "unit": "℃",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 12,
+      "key": "measure-7659cb58032f",
+      "labelKo": "월별 건기/우기 구분(전국)",
+      "recordCount": 12,
+      "unit": "구분",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 38,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

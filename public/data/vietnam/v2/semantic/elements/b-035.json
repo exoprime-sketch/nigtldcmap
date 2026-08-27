@@ -1,0 +1,1512 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 5,
+      "values": [
+        "목초지",
+        "목초지 비율(농지 대비)",
+        "목초지 비율(육지면적 대비)",
+        "수산 이용 내수면 면적",
+        "인증 농지"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 15,
+      "values": [
+        "가경지",
+        "경작지",
+        "관개 정비 면적",
+        "국토면적",
+        "기타 토지",
+        "내수면",
+        "농지",
+        "산림지",
+        "영구 초지·목초지",
+        "영년생 작물",
+        "원시림",
+        "육지면적",
+        "자연재생림",
+        "정주지(Settlements)",
+        "조림지"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "23,35"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 65,
+      "values": [
+        "1961",
+        "1962",
+        "1963",
+        "1964",
+        "1965",
+        "1966",
+        "1967",
+        "1968",
+        "1969",
+        "1970",
+        "1971",
+        "1972",
+        "1973",
+        "1974",
+        "1975",
+        "1976",
+        "1977",
+        "1978",
+        "1979",
+        "1980",
+        "1981",
+        "1982",
+        "1983",
+        "1984",
+        "1985",
+        "1986",
+        "1987",
+        "1988",
+        "1989",
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ]
+    }
+  ],
+  "elementId": "B-035",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 41,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-6cc58a4ad1bf|1000 ha",
+      "dimensionLabels": {
+        "detail": "농지"
+      },
+      "dimensions": {
+        "detail": "농지"
+      },
+      "displayLabel": "토지이용 면적 — 농지",
+      "indicatorId": "B-035_lu_agricultural_land",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6cc58a4ad1bf",
+        "labelKo": "토지이용 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-6cc58a4ad1bf|1000 ha|detail=농지|B-035_lu_agricultural_land",
+      "sourceCaveat": "FAO Land Use domain(국가보고 기반 토지이용 통계). 위성 토지피복(B-037)과 정의·산출방식이 다르므로 접속 불가. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지이용 면적 — 농지",
+      "sourceLabelEn": "Land use area: Agricultural land",
+      "sourceNote": "FAO Land Use domain(국가보고 기반 토지이용 통계). 위성 토지피복(B-037)과 정의·산출방식이 다르므로 접속 불가. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_agricultural_land",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 4,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-df239d17fd03|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "농지 비율(육지면적 대비)",
+      "indicatorId": "B-035_lu_agricultural_land_share_in_land_area",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-df239d17fd03",
+        "labelKo": "농지 비율(육지면적 대비)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-df239d17fd03|%||B-035_lu_agricultural_land_share_in_land_area",
+      "sourceCaveat": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "농지 비율(육지면적 대비)",
+      "sourceLabelEn": "Agricultural land share of land area",
+      "sourceNote": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_agricultural_land_share_in_land_area",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 27,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-c1b2a46c5be3|USD_PPP/ha",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "농지 단위면적당 농업생산액",
+      "indicatorId": "B-035_lu_agricultural_land_value_of_agricultural_prod",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-c1b2a46c5be3",
+        "labelKo": "농지 단위면적당 농업생산액",
+        "unit": "USD_PPP/ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-c1b2a46c5be3|USD_PPP/ha||B-035_lu_agricultural_land_value_of_agricultural_prod",
+      "sourceCaveat": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "농지 단위면적당 농업생산액",
+      "sourceLabelEn": "Value of agricultural production per area",
+      "sourceNote": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_agricultural_land_value_of_agricultural_prod",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 28,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-eafd5c26ff28|1000 ha",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "농업 총면적(Agriculture)",
+      "indicatorId": "B-035_lu_agriculture",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-eafd5c26ff28",
+        "labelKo": "농업 총면적(Agriculture)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-eafd5c26ff28|1000 ha||B-035_lu_agriculture",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. FAOSTAT Land Use 원본에는 베트남 40개 품목×요소 조합이 있으나 종전에는 14개만 수록. \"Agricultural land\"와 별개로 원천이 제공하는 집계 항목 / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "농업 총면적(Agriculture)",
+      "sourceLabelEn": "Agriculture",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. FAOSTAT Land Use 원본에는 베트남 40개 품목×요소 조합이 있으나 종전에는 14개만 수록. \"Agricultural land\"와 별개로 원천이 제공하는 집계 항목 / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_agriculture",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-35a897bf926d|1000 ha",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "유기농 인증 완료 농지",
+      "indicatorId": "B-035_lu_agriculture_area_certified_organic",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-35a897bf926d",
+        "labelKo": "유기농 인증 완료 농지",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-35a897bf926d|1000 ha||B-035_lu_agriculture_area_certified_organic",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. FAOSTAT Land Use 원본에는 베트남 40개 품목×요소 조합이 있으나 종전에는 14개만 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "유기농 인증 완료 농지",
+      "sourceLabelEn": "Agriculture area certified organic",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. FAOSTAT Land Use 원본에는 베트남 40개 품목×요소 조합이 있으나 종전에는 14개만 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_agriculture_area_certified_organic",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 24,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-dc32b56e29b0|1000 ha",
+      "dimensionLabels": {
+        "category": "인증 농지"
+      },
+      "dimensions": {
+        "category": "인증 농지"
+      },
+      "displayLabel": "유기농 전환·인증 농지",
+      "indicatorId": "B-035_lu_agriculture_area_under_organic_agr",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-dc32b56e29b0",
+        "labelKo": "유기농 전환",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-dc32b56e29b0|1000 ha|category=인증 농지|B-035_lu_agriculture_area_under_organic_agr",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. FAOSTAT Land Use 원본에는 베트남 40개 품목×요소 조합이 있으나 종전에는 14개만 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "유기농 전환·인증 농지",
+      "sourceLabelEn": "Agriculture area under organic agric.",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. FAOSTAT Land Use 원본에는 베트남 40개 품목×요소 조합이 있으나 종전에는 14개만 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_agriculture_area_under_organic_agr",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-42fcaa1c42d0|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "유기농 농지 비율(농지 대비)",
+      "indicatorId": "B-035_lu_agriculture_area_under_organic_agric_share_i",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-42fcaa1c42d0",
+        "labelKo": "유기농 농지 비율(농지 대비)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-42fcaa1c42d0|%||B-035_lu_agriculture_area_under_organic_agric_share_i",
+      "sourceCaveat": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "유기농 농지 비율(농지 대비)",
+      "sourceLabelEn": "Organic agriculture share",
+      "sourceNote": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_agriculture_area_under_organic_agric_share_i",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 40,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6cc58a4ad1bf|1000 ha",
+      "dimensionLabels": {
+        "detail": "가경지"
+      },
+      "dimensions": {
+        "detail": "가경지"
+      },
+      "displayLabel": "토지이용 면적 — 가경지",
+      "indicatorId": "B-035_lu_arable_land",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6cc58a4ad1bf",
+        "labelKo": "토지이용 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-6cc58a4ad1bf|1000 ha|detail=가경지|B-035_lu_arable_land",
+      "sourceCaveat": "FAO Land Use domain(국가보고 기반 토지이용 통계). 위성 토지피복(B-037)과 정의·산출방식이 다르므로 접속 불가. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지이용 면적 — 가경지",
+      "sourceLabelEn": "Land use area: Arable land",
+      "sourceNote": "FAO Land Use domain(국가보고 기반 토지이용 통계). 위성 토지피복(B-037)과 정의·산출방식이 다르므로 접속 불가. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_arable_land",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9139f0cab73e|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "가경지 비율(농지 대비)",
+      "indicatorId": "B-035_lu_arable_land_share_in_agricultural_land",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9139f0cab73e",
+        "labelKo": "가경지 비율(농지 대비)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-9139f0cab73e|%||B-035_lu_arable_land_share_in_agricultural_land",
+      "sourceCaveat": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "가경지 비율(농지 대비)",
+      "sourceLabelEn": "Arable land share of agricultural land",
+      "sourceNote": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_arable_land_share_in_agricultural_land",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 32,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6cc58a4ad1bf|1000 ha",
+      "dimensionLabels": {
+        "detail": "국토면적"
+      },
+      "dimensions": {
+        "detail": "국토면적"
+      },
+      "displayLabel": "토지이용 면적 — 국토면적",
+      "indicatorId": "B-035_lu_country_area",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6cc58a4ad1bf",
+        "labelKo": "토지이용 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-6cc58a4ad1bf|1000 ha|detail=국토면적|B-035_lu_country_area",
+      "sourceCaveat": "FAO Land Use domain(국가보고 기반 토지이용 통계). 위성 토지피복(B-037)과 정의·산출방식이 다르므로 접속 불가. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지이용 면적 — 국토면적",
+      "sourceLabelEn": "Land use area: Country area",
+      "sourceNote": "FAO Land Use domain(국가보고 기반 토지이용 통계). 위성 토지피복(B-037)과 정의·산출방식이 다르므로 접속 불가. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_country_area",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6cc58a4ad1bf|1000 ha",
+      "dimensionLabels": {
+        "detail": "경작지"
+      },
+      "dimensions": {
+        "detail": "경작지"
+      },
+      "displayLabel": "토지이용 면적 — 경작지",
+      "indicatorId": "B-035_lu_cropland",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6cc58a4ad1bf",
+        "labelKo": "토지이용 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-6cc58a4ad1bf|1000 ha|detail=경작지|B-035_lu_cropland",
+      "sourceCaveat": "FAO Land Use domain(국가보고 기반 토지이용 통계). 위성 토지피복(B-037)과 정의·산출방식이 다르므로 접속 불가. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지이용 면적 — 경작지",
+      "sourceLabelEn": "Land use area: Cropland",
+      "sourceNote": "FAO Land Use domain(국가보고 기반 토지이용 통계). 위성 토지피복(B-037)과 정의·산출방식이 다르므로 접속 불가. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_cropland",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a07e6988294f|1000 ha",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "유기농 인증 완료 경작지",
+      "indicatorId": "B-035_lu_cropland_area_certified_organic_area",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a07e6988294f",
+        "labelKo": "유기농 인증 완료 경작지",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-a07e6988294f|1000 ha||B-035_lu_cropland_area_certified_organic_area",
+      "sourceCaveat": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "유기농 인증 완료 경작지",
+      "sourceLabelEn": "Cropland area certified organic",
+      "sourceNote": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_cropland_area_certified_organic_area",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 42,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a6dff20f1447|ha/cap",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "1인당 경작지 면적",
+      "indicatorId": "B-035_lu_cropland_area_per_capita",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a6dff20f1447",
+        "labelKo": "1인당 경작지 면적",
+        "unit": "ha/cap",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-a6dff20f1447|ha/cap||B-035_lu_cropland_area_per_capita",
+      "sourceCaveat": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "1인당 경작지 면적",
+      "sourceLabelEn": "Cropland area per capita",
+      "sourceNote": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_cropland_area_per_capita",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 31,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-34937bef6cba|1000 ha",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "유기농 경작지",
+      "indicatorId": "B-035_lu_cropland_area_under_organic_agric",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-34937bef6cba",
+        "labelKo": "유기농 경작지",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-34937bef6cba|1000 ha||B-035_lu_cropland_area_under_organic_agric",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. FAOSTAT Land Use 원본에는 베트남 40개 품목×요소 조합이 있으나 종전에는 14개만 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "유기농 경작지",
+      "sourceLabelEn": "Cropland area under organic agric.",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. FAOSTAT Land Use 원본에는 베트남 40개 품목×요소 조합이 있으나 종전에는 14개만 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_cropland_area_under_organic_agric",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 25,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-899e90e642b5|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "경작지 비율(농지 대비)",
+      "indicatorId": "B-035_lu_cropland_share_in_agricultural_land",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-899e90e642b5",
+        "labelKo": "경작지 비율(농지 대비)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-899e90e642b5|%||B-035_lu_cropland_share_in_agricultural_land",
+      "sourceCaveat": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "경작지 비율(농지 대비)",
+      "sourceLabelEn": "Cropland share of agricultural land",
+      "sourceNote": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_cropland_share_in_agricultural_land",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 30,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-348afe547071|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "경작지 비율(육지면적 대비)",
+      "indicatorId": "B-035_lu_cropland_share_in_land_area",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-348afe547071",
+        "labelKo": "경작지 비율(육지면적 대비)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-348afe547071|%||B-035_lu_cropland_share_in_land_area",
+      "sourceCaveat": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "경작지 비율(육지면적 대비)",
+      "sourceLabelEn": "Cropland share of land area",
+      "sourceNote": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_cropland_share_in_land_area",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 29,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-84f0524edc52|백만 톤 C",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "산림 탄소저장량(FAO)",
+      "indicatorId": "B-035_lu_forest_carbon_stock",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-84f0524edc52",
+        "labelKo": "산림 탄소저장량(FAO)",
+        "unit": "백만 톤 C",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-84f0524edc52|백만 톤 C||B-035_lu_forest_carbon_stock",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. B-034(GFW 탄소저장량)와 원천·정의가 달라 접속하지 않고 별도 수록. FAO는 국가보고 기반, GFW는 위성 기반. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "산림 탄소저장량(FAO)",
+      "sourceLabelEn": "Carbon stock in forest land",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. B-034(GFW 탄소저장량)와 원천·정의가 달라 접속하지 않고 별도 수록. FAO는 국가보고 기반, GFW는 위성 기반. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_forest_carbon_stock",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 26,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6cc58a4ad1bf|1000 ha",
+      "dimensionLabels": {
+        "detail": "산림지",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "산림지",
+        "technology": "23,35"
+      },
+      "displayLabel": "토지이용 면적 — 산림지",
+      "indicatorId": "B-035_lu_forest_land",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6cc58a4ad1bf",
+        "labelKo": "토지이용 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-6cc58a4ad1bf|1000 ha|detail=산림지|technology=23,35|B-035_lu_forest_land",
+      "sourceCaveat": "FAO Land Use domain(국가보고 기반 토지이용 통계). 위성 토지피복(B-037)과 정의·산출방식이 다르므로 접속 불가. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지이용 면적 — 산림지",
+      "sourceLabelEn": "Land use area: Forest land",
+      "sourceNote": "FAO Land Use domain(국가보고 기반 토지이용 통계). 위성 토지피복(B-037)과 정의·산출방식이 다르므로 접속 불가. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_forest_land",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e3b498437c70|%",
+      "dimensionLabels": {
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "technology": "23,35"
+      },
+      "displayLabel": "산림 비율(육지면적 대비)",
+      "indicatorId": "B-035_lu_forest_land_share_in_land_area",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e3b498437c70",
+        "labelKo": "산림 비율(육지면적 대비)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-e3b498437c70|%|technology=23,35|B-035_lu_forest_land_share_in_land_area",
+      "sourceCaveat": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "산림 비율(육지면적 대비)",
+      "sourceLabelEn": "Forest land share of land area",
+      "sourceNote": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_forest_land_share_in_land_area",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 36,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6cc58a4ad1bf|1000 ha",
+      "dimensionLabels": {
+        "detail": "내수면"
+      },
+      "dimensions": {
+        "detail": "내수면"
+      },
+      "displayLabel": "토지이용 면적 — 내수면",
+      "indicatorId": "B-035_lu_inland_waters",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6cc58a4ad1bf",
+        "labelKo": "토지이용 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-6cc58a4ad1bf|1000 ha|detail=내수면|B-035_lu_inland_waters",
+      "sourceCaveat": "FAO Land Use domain(국가보고 기반 토지이용 통계). 위성 토지피복(B-037)과 정의·산출방식이 다르므로 접속 불가. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일 / [계열 단절] 1999→2000년 562→1,818천ha 급증(육지면적 동반 감소 — Country area=Land area+Inland waters 항등식 유지): FAO 내수면 산정 범위 변경에 따른 계열 단절로 전후 직접 비교 불가. 해당 구간 원천 flag I(보간·추정). FAO 방법론 문서 근거는 확인 중",
+      "sourceLabel": "토지이용 면적 — 내수면",
+      "sourceLabelEn": "Land use area: Inland waters",
+      "sourceNote": "FAO Land Use domain(국가보고 기반 토지이용 통계). 위성 토지피복(B-037)과 정의·산출방식이 다르므로 접속 불가. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일 / [계열 단절] 1999→2000년 562→1,818천ha 급증(육지면적 동반 감소 — Country area=Land area+Inland waters 항등식 유지): FAO 내수면 산정 범위 변경에 따른 계열 단절로 전후 직접 비교 불가. 해당 구간 원천 flag I(보간·추정). FAO 방법론 문서 근거는 확인 중",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_inland_waters",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9128b876c656|1000 ha",
+      "dimensionLabels": {
+        "category": "수산 이용 내수면 면적"
+      },
+      "dimensions": {
+        "category": "수산 이용 내수면 면적"
+      },
+      "displayLabel": "양식·수산 이용 내수면 면적",
+      "indicatorId": "B-035_lu_inland_waters_used_for_aquac_or_holding_faci",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9128b876c656",
+        "labelKo": "양식",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-9128b876c656|1000 ha|category=수산 이용 내수면 면적|B-035_lu_inland_waters_used_for_aquac_or_holding_faci",
+      "sourceCaveat": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "양식·수산 이용 내수면 면적",
+      "sourceLabelEn": "Inland waters used for aquaculture",
+      "sourceNote": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_inland_waters_used_for_aquac_or_holding_faci",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 41,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6cc58a4ad1bf|1000 ha",
+      "dimensionLabels": {
+        "detail": "육지면적"
+      },
+      "dimensions": {
+        "detail": "육지면적"
+      },
+      "displayLabel": "토지이용 면적 — 육지면적",
+      "indicatorId": "B-035_lu_land_area",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6cc58a4ad1bf",
+        "labelKo": "토지이용 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-6cc58a4ad1bf|1000 ha|detail=육지면적|B-035_lu_land_area",
+      "sourceCaveat": "FAO Land Use domain(국가보고 기반 토지이용 통계). 위성 토지피복(B-037)과 정의·산출방식이 다르므로 접속 불가. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지이용 면적 — 육지면적",
+      "sourceLabelEn": "Land use area: Land area",
+      "sourceNote": "FAO Land Use domain(국가보고 기반 토지이용 통계). 위성 토지피복(B-037)과 정의·산출방식이 다르므로 접속 불가. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_land_area",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6cc58a4ad1bf|1000 ha",
+      "dimensionLabels": {
+        "detail": "관개 정비 면적"
+      },
+      "dimensions": {
+        "detail": "관개 정비 면적"
+      },
+      "displayLabel": "토지이용 면적 — 관개 정비 면적",
+      "indicatorId": "B-035_lu_land_area_equipped_for_irrigation",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6cc58a4ad1bf",
+        "labelKo": "토지이용 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-6cc58a4ad1bf|1000 ha|detail=관개 정비 면적|B-035_lu_land_area_equipped_for_irrigation",
+      "sourceCaveat": "FAO Land Use domain(국가보고 기반 토지이용 통계). 위성 토지피복(B-037)과 정의·산출방식이 다르므로 접속 불가. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지이용 면적 — 관개 정비 면적",
+      "sourceLabelEn": "Land use area: Land area equipped for irrigation",
+      "sourceNote": "FAO Land Use domain(국가보고 기반 토지이용 통계). 위성 토지피복(B-037)과 정의·산출방식이 다르므로 접속 불가. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_land_area_equipped_for_irrigation",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a739c3d98df3|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "관개 정비면적 비율(경작지 대비)",
+      "indicatorId": "B-035_lu_land_area_equipped_for_irrigation_share_in_c",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a739c3d98df3",
+        "labelKo": "관개 정비면적 비율(경작지 대비)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-a739c3d98df3|%||B-035_lu_land_area_equipped_for_irrigation_share_in_c",
+      "sourceCaveat": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "관개 정비면적 비율(경작지 대비)",
+      "sourceLabelEn": "Irrigation-equipped share of cropland",
+      "sourceNote": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_land_area_equipped_for_irrigation_share_in_c",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 39,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6cc58a4ad1bf|1000 ha",
+      "dimensionLabels": {
+        "detail": "자연재생림",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "자연재생림",
+        "technology": "23,35"
+      },
+      "displayLabel": "토지이용 면적 — 자연재생림",
+      "indicatorId": "B-035_lu_naturally_regenerating_forest",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6cc58a4ad1bf",
+        "labelKo": "토지이용 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-6cc58a4ad1bf|1000 ha|detail=자연재생림|technology=23,35|B-035_lu_naturally_regenerating_forest",
+      "sourceCaveat": "FAO Land Use domain(국가보고 기반 토지이용 통계). 위성 토지피복(B-037)과 정의·산출방식이 다르므로 접속 불가. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지이용 면적 — 자연재생림",
+      "sourceLabelEn": "Land use area: Naturally regenerating forest",
+      "sourceNote": "FAO Land Use domain(국가보고 기반 토지이용 통계). 위성 토지피복(B-037)과 정의·산출방식이 다르므로 접속 불가. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_naturally_regenerating_forest",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5df309b3dea3|%",
+      "dimensionLabels": {
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "technology": "23,35"
+      },
+      "displayLabel": "자연재생림 비율(산림 대비)",
+      "indicatorId": "B-035_lu_naturally_regenerating_forest_share_in_fores",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5df309b3dea3",
+        "labelKo": "자연재생림 비율(산림 대비)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-5df309b3dea3|%|technology=23,35|B-035_lu_naturally_regenerating_forest_share_in_fores",
+      "sourceCaveat": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "자연재생림 비율(산림 대비)",
+      "sourceLabelEn": "Naturally regenerating forest share",
+      "sourceNote": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_naturally_regenerating_forest_share_in_fores",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 37,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6cc58a4ad1bf|1000 ha",
+      "dimensionLabels": {
+        "detail": "기타 토지"
+      },
+      "dimensions": {
+        "detail": "기타 토지"
+      },
+      "displayLabel": "토지이용 면적 — 기타 토지",
+      "indicatorId": "B-035_lu_other_land",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6cc58a4ad1bf",
+        "labelKo": "토지이용 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-6cc58a4ad1bf|1000 ha|detail=기타 토지|B-035_lu_other_land",
+      "sourceCaveat": "FAO Land Use domain(국가보고 기반 토지이용 통계). 위성 토지피복(B-037)과 정의·산출방식이 다르므로 접속 불가. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지이용 면적 — 기타 토지",
+      "sourceLabelEn": "Land use area: Other land",
+      "sourceNote": "FAO Land Use domain(국가보고 기반 토지이용 통계). 위성 토지피복(B-037)과 정의·산출방식이 다르므로 접속 불가. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_other_land",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-35b25cbbef34|1000 ha",
+      "dimensionLabels": {
+        "category": "목초지"
+      },
+      "dimensions": {
+        "category": "목초지"
+      },
+      "displayLabel": "유기농 인증 완료 영구 초지·목초지",
+      "indicatorId": "B-035_lu_perm_meadows_pastures_area_certified_organic",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-35b25cbbef34",
+        "labelKo": "유기농 인증 완료 영구 초지",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-35b25cbbef34|1000 ha|category=목초지|B-035_lu_perm_meadows_pastures_area_certified_organic",
+      "sourceCaveat": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "유기농 인증 완료 영구 초지·목초지",
+      "sourceLabelEn": "Permanent meadows certified organic",
+      "sourceNote": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_perm_meadows_pastures_area_certified_organic",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 44,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8953c3193a3d|1000 ha",
+      "dimensionLabels": {
+        "category": "목초지"
+      },
+      "dimensions": {
+        "category": "목초지"
+      },
+      "displayLabel": "유기농 전환 영구 초지·목초지",
+      "indicatorId": "B-035_lu_perm_meadows_pastures_area_under_organic_agr",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8953c3193a3d",
+        "labelKo": "유기농 전환 영구 초지",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-8953c3193a3d|1000 ha|category=목초지|B-035_lu_perm_meadows_pastures_area_under_organic_agr",
+      "sourceCaveat": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "유기농 전환 영구 초지·목초지",
+      "sourceLabelEn": "Permanent meadows under organic agriculture",
+      "sourceNote": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_perm_meadows_pastures_area_under_organic_agr",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 43,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6cc58a4ad1bf|1000 ha",
+      "dimensionLabels": {
+        "detail": "영년생 작물"
+      },
+      "dimensions": {
+        "detail": "영년생 작물"
+      },
+      "displayLabel": "토지이용 면적 — 영년생 작물",
+      "indicatorId": "B-035_lu_permanent_crops",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6cc58a4ad1bf",
+        "labelKo": "토지이용 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-6cc58a4ad1bf|1000 ha|detail=영년생 작물|B-035_lu_permanent_crops",
+      "sourceCaveat": "FAO Land Use domain(국가보고 기반 토지이용 통계). 위성 토지피복(B-037)과 정의·산출방식이 다르므로 접속 불가. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지이용 면적 — 영년생 작물",
+      "sourceLabelEn": "Land use area: Permanent crops",
+      "sourceNote": "FAO Land Use domain(국가보고 기반 토지이용 통계). 위성 토지피복(B-037)과 정의·산출방식이 다르므로 접속 불가. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_permanent_crops",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bf751bc8d2fb|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "영년생 작물 비율(농지 대비)",
+      "indicatorId": "B-035_lu_permanent_crops_share_in_agricultural_land",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bf751bc8d2fb",
+        "labelKo": "영년생 작물 비율(농지 대비)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-bf751bc8d2fb|%||B-035_lu_permanent_crops_share_in_agricultural_land",
+      "sourceCaveat": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "영년생 작물 비율(농지 대비)",
+      "sourceLabelEn": "Permanent crops share of agricultural land",
+      "sourceNote": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_permanent_crops_share_in_agricultural_land",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 33,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6cc58a4ad1bf|1000 ha",
+      "dimensionLabels": {
+        "detail": "영구 초지·목초지"
+      },
+      "dimensions": {
+        "detail": "영구 초지·목초지"
+      },
+      "displayLabel": "토지이용 면적 — 영구 초지·목초지",
+      "indicatorId": "B-035_lu_permanent_meadows_and_pastures",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6cc58a4ad1bf",
+        "labelKo": "토지이용 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-6cc58a4ad1bf|1000 ha|detail=영구 초지·목초지|B-035_lu_permanent_meadows_and_pastures",
+      "sourceCaveat": "FAO Land Use domain(국가보고 기반 토지이용 통계). 위성 토지피복(B-037)과 정의·산출방식이 다르므로 접속 불가. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일 / [고정값 주석] 2000~2024년 642천ha 동일 — FAO가 국가보고 미갱신 구간의 직전값을 이월(carry-forward)한 것으로 원천 flag I. 실측 갱신값이 아님에 유의",
+      "sourceLabel": "토지이용 면적 — 영구 초지·목초지",
+      "sourceLabelEn": "Land use area: Permanent meadows and pastures",
+      "sourceNote": "FAO Land Use domain(국가보고 기반 토지이용 통계). 위성 토지피복(B-037)과 정의·산출방식이 다르므로 접속 불가. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일 / [고정값 주석] 2000~2024년 642천ha 동일 — FAO가 국가보고 미갱신 구간의 직전값을 이월(carry-forward)한 것으로 원천 flag I. 실측 갱신값이 아님에 유의",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_permanent_meadows_and_pastures",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-56417bcafa62|%",
+      "dimensionLabels": {
+        "category": "목초지 비율(농지 대비)"
+      },
+      "dimensions": {
+        "category": "목초지 비율(농지 대비)"
+      },
+      "displayLabel": "영구 초지·목초지 비율(농지 대비)",
+      "indicatorId": "B-035_lu_permanent_meadows_and_pastures_share_in_agri",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-56417bcafa62",
+        "labelKo": "영구 초지",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-56417bcafa62|%|category=목초지 비율(농지 대비)|B-035_lu_permanent_meadows_and_pastures_share_in_agri",
+      "sourceCaveat": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "영구 초지·목초지 비율(농지 대비)",
+      "sourceLabelEn": "Permanent meadows share of agricultural land",
+      "sourceNote": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_permanent_meadows_and_pastures_share_in_agri",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 34,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-56417bcafa62|%",
+      "dimensionLabels": {
+        "category": "목초지 비율(육지면적 대비)"
+      },
+      "dimensions": {
+        "category": "목초지 비율(육지면적 대비)"
+      },
+      "displayLabel": "영구 초지·목초지 비율(육지면적 대비)",
+      "indicatorId": "B-035_lu_permanent_meadows_and_pastures_share_in_land",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-56417bcafa62",
+        "labelKo": "영구 초지",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-56417bcafa62|%|category=목초지 비율(육지면적 대비)|B-035_lu_permanent_meadows_and_pastures_share_in_land",
+      "sourceCaveat": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "영구 초지·목초지 비율(육지면적 대비)",
+      "sourceLabelEn": "Permanent meadows share of land area",
+      "sourceNote": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_permanent_meadows_and_pastures_share_in_land",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 35,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6cc58a4ad1bf|1000 ha",
+      "dimensionLabels": {
+        "detail": "조림지",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "조림지",
+        "technology": "23,35"
+      },
+      "displayLabel": "토지이용 면적 — 조림지",
+      "indicatorId": "B-035_lu_planted_forest",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6cc58a4ad1bf",
+        "labelKo": "토지이용 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-6cc58a4ad1bf|1000 ha|detail=조림지|technology=23,35|B-035_lu_planted_forest",
+      "sourceCaveat": "FAO Land Use domain(국가보고 기반 토지이용 통계). 위성 토지피복(B-037)과 정의·산출방식이 다르므로 접속 불가. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지이용 면적 — 조림지",
+      "sourceLabelEn": "Land use area: Planted Forest",
+      "sourceNote": "FAO Land Use domain(국가보고 기반 토지이용 통계). 위성 토지피복(B-037)과 정의·산출방식이 다르므로 접속 불가. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_planted_forest",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d7653481c93d|%",
+      "dimensionLabels": {
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "technology": "23,35"
+      },
+      "displayLabel": "조림지 비율(산림 대비)",
+      "indicatorId": "B-035_lu_planted_forest_share_in_forest_land",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d7653481c93d",
+        "labelKo": "조림지 비율(산림 대비)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-d7653481c93d|%|technology=23,35|B-035_lu_planted_forest_share_in_forest_land",
+      "sourceCaveat": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "조림지 비율(산림 대비)",
+      "sourceLabelEn": "Planted forest share",
+      "sourceNote": "[보유 raw 전수 반영] FAOSTAT Land Use 원본의 베트남 (품목 × 요소) 조합 40종 중 종전 미수록분. 면적(Area) 계열과 달리 비율·원단위 계열이어서 별도 지표로 분리 수록. 분모는 FAO가 동일 원천 내에서 계산한 값이므로 자체 산출이 아니라 원본값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_planted_forest_share_in_forest_land",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 38,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6cc58a4ad1bf|1000 ha",
+      "dimensionLabels": {
+        "detail": "원시림",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "원시림",
+        "technology": "23,35"
+      },
+      "displayLabel": "토지이용 면적 — 원시림",
+      "indicatorId": "B-035_lu_primary_forest",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6cc58a4ad1bf",
+        "labelKo": "토지이용 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-6cc58a4ad1bf|1000 ha|detail=원시림|technology=23,35|B-035_lu_primary_forest",
+      "sourceCaveat": "FAO Land Use domain(국가보고 기반 토지이용 통계). 위성 토지피복(B-037)과 정의·산출방식이 다르므로 접속 불가. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지이용 면적 — 원시림",
+      "sourceLabelEn": "Land use area: Primary Forest",
+      "sourceNote": "FAO Land Use domain(국가보고 기반 토지이용 통계). 위성 토지피복(B-037)과 정의·산출방식이 다르므로 접속 불가. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_primary_forest",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6cc58a4ad1bf|1000 ha",
+      "dimensionLabels": {
+        "detail": "정주지(Settlements)"
+      },
+      "dimensions": {
+        "detail": "정주지(Settlements)"
+      },
+      "displayLabel": "토지이용 면적 — 정주지(Settlements)",
+      "indicatorId": "B-035_lu_settlements",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6cc58a4ad1bf",
+        "labelKo": "토지이용 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-6cc58a4ad1bf|1000 ha|detail=정주지(Settlements)|B-035_lu_settlements",
+      "sourceCaveat": "[결측] IPCC 토지분류 6개 지목(Forest land·Cropland·Grassland·Wetlands·Settlements·Other land) 중 Settlements는 FAOSTAT Land Use domain이 제공하지 않음(NP). 대리지표로 FAOSTAT Land Cover \"Artificial surfaces(시가화지역, CCI_LC)\" 계열 사용 가능하나 원천·정의가 달라 B-037의 별도 지표로 관리. 국가 인벤토리(NIR) 기준 정주지 면적이 필요하면 베트남 BUR/BTR에서 별도 수집 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지이용 면적 — 정주지(Settlements)",
+      "sourceLabelEn": "Land use area: Settlements",
+      "sourceNote": "2025년: FAO Land Use domain 분류체계에 Settlements 항목이 존재하지 않음",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_settlements",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6d5f4f832ce1|1000 ha",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "일년생 작물 재배면적",
+      "indicatorId": "B-035_lu_temporary_crops",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6d5f4f832ce1",
+        "labelKo": "일년생 작물 재배면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-6d5f4f832ce1|1000 ha||B-035_lu_temporary_crops",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. FAOSTAT Land Use 원본에는 베트남 40개 품목×요소 조합이 있으나 종전에는 14개만 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "일년생 작물 재배면적",
+      "sourceLabelEn": "Temporary crops",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. FAOSTAT Land Use 원본에는 베트남 40개 품목×요소 조합이 있으나 종전에는 14개만 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_temporary_crops",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e11419f2bbf2|1000 ha",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "일년생 휴경지",
+      "indicatorId": "B-035_lu_temporary_fallow",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e11419f2bbf2",
+        "labelKo": "일년생 휴경지",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-e11419f2bbf2|1000 ha||B-035_lu_temporary_fallow",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. FAOSTAT Land Use 원본에는 베트남 40개 품목×요소 조합이 있으나 종전에는 14개만 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "일년생 휴경지",
+      "sourceLabelEn": "Temporary fallow",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. FAOSTAT Land Use 원본에는 베트남 40개 품목×요소 조합이 있으나 종전에는 14개만 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_temporary_fallow",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-b1491740e170|1000 ha",
+      "dimensionLabels": {
+        "category": "목초지"
+      },
+      "dimensions": {
+        "category": "목초지"
+      },
+      "displayLabel": "일년생 초지·목초지",
+      "indicatorId": "B-035_lu_temporary_meadows_and_pastures",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b1491740e170",
+        "labelKo": "일년생 초지",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-b1491740e170|1000 ha|category=목초지|B-035_lu_temporary_meadows_and_pastures",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. FAOSTAT Land Use 원본에는 베트남 40개 품목×요소 조합이 있으나 종전에는 14개만 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "일년생 초지·목초지",
+      "sourceLabelEn": "Temporary meadows and pastures",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. FAOSTAT Land Use 원본에는 베트남 40개 품목×요소 조합이 있으나 종전에는 14개만 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-035",
+        "indicatorId": "B-035_lu_temporary_meadows_and_pastures",
+        "sourceFileDecoded": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-a6dff20f1447",
+      "labelKo": "1인당 경작지 면적",
+      "recordCount": 64,
+      "unit": "ha/cap",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-9139f0cab73e",
+      "labelKo": "가경지 비율(농지 대비)",
+      "recordCount": 64,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-899e90e642b5",
+      "labelKo": "경작지 비율(농지 대비)",
+      "recordCount": 64,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-348afe547071",
+      "labelKo": "경작지 비율(육지면적 대비)",
+      "recordCount": 64,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-a739c3d98df3",
+      "labelKo": "관개 정비면적 비율(경작지 대비)",
+      "recordCount": 64,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-eafd5c26ff28",
+      "labelKo": "농업 총면적(Agriculture)",
+      "recordCount": 64,
+      "unit": "1000 ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-c1b2a46c5be3",
+      "labelKo": "농지 단위면적당 농업생산액",
+      "recordCount": 64,
+      "unit": "USD_PPP/ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-df239d17fd03",
+      "labelKo": "농지 비율(육지면적 대비)",
+      "recordCount": 64,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-e3b498437c70",
+      "labelKo": "산림 비율(육지면적 대비)",
+      "recordCount": 35,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-84f0524edc52",
+      "labelKo": "산림 탄소저장량(FAO)",
+      "recordCount": 36,
+      "unit": "백만 톤 C",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-9128b876c656",
+      "labelKo": "양식",
+      "recordCount": 12,
+      "unit": "1000 ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-56417bcafa62",
+      "labelKo": "영구 초지",
+      "recordCount": 128,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-bf751bc8d2fb",
+      "labelKo": "영년생 작물 비율(농지 대비)",
+      "recordCount": 64,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-34937bef6cba",
+      "labelKo": "유기농 경작지",
+      "recordCount": 6,
+      "unit": "1000 ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-42fcaa1c42d0",
+      "labelKo": "유기농 농지 비율(농지 대비)",
+      "recordCount": 20,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-a07e6988294f",
+      "labelKo": "유기농 인증 완료 경작지",
+      "recordCount": 6,
+      "unit": "1000 ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-35a897bf926d",
+      "labelKo": "유기농 인증 완료 농지",
+      "recordCount": 13,
+      "unit": "1000 ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-35b25cbbef34",
+      "labelKo": "유기농 인증 완료 영구 초지",
+      "recordCount": 6,
+      "unit": "1000 ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-dc32b56e29b0",
+      "labelKo": "유기농 전환",
+      "recordCount": 20,
+      "unit": "1000 ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-8953c3193a3d",
+      "labelKo": "유기농 전환 영구 초지",
+      "recordCount": 6,
+      "unit": "1000 ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-6d5f4f832ce1",
+      "labelKo": "일년생 작물 재배면적",
+      "recordCount": 24,
+      "unit": "1000 ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-b1491740e170",
+      "labelKo": "일년생 초지",
+      "recordCount": 24,
+      "unit": "1000 ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-e11419f2bbf2",
+      "labelKo": "일년생 휴경지",
+      "recordCount": 24,
+      "unit": "1000 ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-5df309b3dea3",
+      "labelKo": "자연재생림 비율(산림 대비)",
+      "recordCount": 36,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-d7653481c93d",
+      "labelKo": "조림지 비율(산림 대비)",
+      "recordCount": 36,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 15,
+      "key": "measure-6cc58a4ad1bf",
+      "labelKo": "토지이용 면적",
+      "recordCount": 756,
+      "unit": "1000 ha",
+      "unitFamily": "area"
+    }
+  ],
+  "observationCount": 1764,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

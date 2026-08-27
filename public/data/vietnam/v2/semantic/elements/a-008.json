@@ -1,0 +1,100 @@
+{
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 1,
+      "values": [
+        "소비지출 기준 소득분배 불평등도"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 31,
+      "values": [
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022"
+      ]
+    }
+  ],
+  "elementId": "A-008",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 1,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-a6e5b6b4f25f|지수",
+      "dimensionLabels": {
+        "detail": "소비지출 기준 소득분배 불평등도"
+      },
+      "dimensions": {
+        "detail": "소비지출 기준 소득분배 불평등도"
+      },
+      "displayLabel": "지니계수 — 소비지출 기준 소득분배 불평등도",
+      "indicatorId": "A-008_gini_index",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a6e5b6b4f25f",
+        "labelKo": "지니계수",
+        "unit": "지수",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a6e5b6b4f25f|지수|detail=소비지출 기준 소득분배 불평등도|A-008_gini_index",
+      "sourceCaveat": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-008 폴더 Gini index.xlsx). [척도] 검토의견 2번에 따라 단위를 명시함 — 세계은행 SI.POV.GINI는 0(완전평등)~100(완전불평등) 척도의 지수이며 0~1 척도가 아님. [이상치] 검토의견 1번 확인 — 2010년 39.3은 2008년 35.6, 2012년 35.6 대비 3.7포인트 높음. raw 원문 그대로이며 보정하지 않음. 2010년은 VHLSS 표본설계와 소비지출 산정방식이 개편된 해로, 세계은행 PIP도 2010년을 방법론 변경 시점으로 표시함. 단일 연도 비교보다 3개 조사연도 이동 추세로 해석할 것. [결측] 조사 미시행 연도는 값을 비우고 M01로 표기함(VHLSS 격년 시행). [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "지니계수 — 소비지출 기준 소득분배 불평등도",
+      "sourceLabelEn": "Gini index",
+      "sourceNote": "1992-2022 중 18개년(1993, 1994, 1995, 1996, 1998, 1999, 2000, 2001, 2003, 2005, 2007, 2009, 2011, 2013, 2015, 2017, 2019, 2021)이 원천에 없음. VHLSS가 격년 시행이기 때문임. 재확보 대상 1차 출처: 베트남 통계총국(GSO) VHLSS 결과보고서.",
+      "sourceProvenance": {
+        "elementId": "A-008",
+        "indicatorId": "A-008_gini_index",
+        "sourceFileDecoded": "A-008_지니계수.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-a6e5b6b4f25f",
+      "labelKo": "지니계수",
+      "recordCount": 31,
+      "unit": "지수",
+      "unitFamily": "other"
+    }
+  ],
+  "observationCount": 31,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

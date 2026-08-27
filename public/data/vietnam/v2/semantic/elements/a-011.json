@@ -1,0 +1,406 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 9,
+      "values": [
+        "건물",
+        "기타(간접 N2O)",
+        "농업",
+        "발전",
+        "산업공정(IPPU)",
+        "산업연소",
+        "수송",
+        "연료 채굴 · 수송 누출",
+        "폐기물"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 9,
+      "values": [
+        "건물 부문 온실가스 배출량(LULUCF 제외)",
+        "기타(간접 N2O) 부문 온실가스 배출량(LULUCF 제외)",
+        "농업 부문 온실가스 배출량(CO2+CH4+N2O, LULUCF 제외)",
+        "발전 부문 온실가스 배출량(CO2+CH4+N2O, LULUCF 제외)",
+        "산업공정(IPPU) 부문 온실가스 배출량(LULUCF 제외)",
+        "산업연소 부문 온실가스 배출량(CO2+CH4+N2O, LULUCF 제외)",
+        "수송 부문 온실가스 배출량(LULUCF 제외)",
+        "연료 채굴·수송 누출 부문 온실가스 배출량(LULUCF 제외)",
+        "폐기물 부문 온실가스 배출량(CO2+CH4+N2O, LULUCF 제외)"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 55,
+      "values": [
+        "1970",
+        "1971",
+        "1972",
+        "1973",
+        "1974",
+        "1975",
+        "1976",
+        "1977",
+        "1978",
+        "1979",
+        "1980",
+        "1981",
+        "1982",
+        "1983",
+        "1984",
+        "1985",
+        "1986",
+        "1987",
+        "1988",
+        "1989",
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ]
+    }
+  ],
+  "elementId": "A-011",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 9,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-8f3f26173c00|Mt CO2eq",
+      "dimensionLabels": {
+        "category": "농업",
+        "detail": "농업 부문 온실가스 배출량(CO2+CH4+N2O, LULUCF 제외)"
+      },
+      "dimensions": {
+        "category": "농업",
+        "detail": "농업 부문 온실가스 배출량(CO2+CH4+N2O, LULUCF 제외)"
+      },
+      "displayLabel": "부문별 배출량 · 농업 — 농업 부문 온실가스 배출량(CO2+CH4+N2O, LULUCF 제외)",
+      "indicatorId": "A-011_emissions_sector_agriculture",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8f3f26173c00",
+        "labelKo": "부문별 배출량",
+        "unit": "Mt CO2eq",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-8f3f26173c00|Mt CO2eq|category=농업|detail=농업 부문 온실가스 배출량(CO2+CH4+N2O, LULUCF 제외)|A-011_emissions_sector_agriculture",
+      "sourceCaveat": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [커버리지 보완] 검토의견 1번·2번·3번에 대응하여 부문 구성을 전면 재구성함. raw로 받은 4개 파일(Power Industry, Industrial Combustion, Agriculture, Waste)에는 산업공정(IPPU)·수송·건물·연료 채굴이 아예 존재하지 않으며, 4개 부문 합계는 2024년 425.211 Mt로 A-012 국가 총량 584.258 Mt의 72.8%에 그침(159.047 Mt 미계상). 누락 부문은 동일 원천인 EDGAR AR5 GHG의 IPCC 2006 상세 시트에서 IPCC 코드 기준으로 집계하여 5개 부문(수송·산업공정·연료 채굴·건물·기타)을 추가함. 집계 결과는 raw로 받은 Power Industry(202.2437)·Industrial Combustion(112.7988)·Waste(19.0564) 2024년 값을 소수점까지 재현하며, 9개 부문 합계는 A-012 총량과 정확히 일치함. [원문 모순] 다만 Agriculture만 집계값 91.0770 Mt과 raw 파일값 91.1117 Mt이 0.0347 Mt 어긋남. 원천 자체의 불일치이므로 보정하지 않고 raw 파일값을 원본 지표로, 집계값은 별도 산출 지표로 두지 않고 raw 값을 채택함. [이상치] 검토의견 4번 확인 — 산업연소는 1979년 0.2009 Mt에서 1980년 5.5111 Mt로 급증함(CO2 기준 0.0145→5.2899). raw 원문 그대로이며 원천에 이를 설명하는 주석은 없음. 1980년은 통일 이후 국영 중공업 가동이 EDGAR 활동자료에 반영되기 시작한 시점으로 보이나 원문에 근거가 없으므로 단정하지 않고 사실만 기록함. [부문 정의] 검토의견 5번에 따라 각 부문의 IPCC 2006 코드 범위를 산출방식·유의사항에 명시함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "부문별 배출량 · 농업 — 농업 부문 온실가스 배출량(CO2+CH4+N2O, LULUCF 제외)",
+      "sourceLabelEn": "GHG emissions from Agriculture (CO2+CH4+N2O, excluding LULUCF)",
+      "sourceNote": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [커버리지 보완] 검토의견 1번·2번·3번에 대응하여 부문 구성을 전면 재구성함. raw로 받은 4개 파일(Power Industry, Industrial Combustion, Agriculture, Waste)에는 산업공정(IPPU)·수송·건물·연료 채굴이 아예 존재하지 않으며, 4개 부문 합계는 2024년 425.211 Mt로 A-012 국가 총량 584.258 Mt의 72.8%에 그침(159.047 Mt 미계상). 누락 부문은 동일 원천인 EDGAR AR5 GHG의 IPCC 2006 상세 시트에서 IPCC 코드 기준으로 집계하여 5개 부문(수송·산업공정·연료 채굴·건물·기타)을 추가함. 집계 결과는 raw로 받은 Power Industry(202.2437)·Industrial Combustion(112.7988)·Waste(19.0564) 2024년 값을 소수점까지 재현하며, 9개 부문 합계는 A-012 총량과 정확히 일치함. [원문 모순] 다만 Agriculture만 집계값 91.0770 Mt과 raw 파일값 91.1117 Mt이 0.0347 Mt 어긋남. 원천 자체의 불일치이므로 보정하지 않고 raw 파일값을 원본 지표로, 집계값은 별도 산출 지표로 두지 않고 raw 값을 채택함. [이상치] 검토의견 4번 확인 — 산업연소는 1979년 0.2009 Mt에서 1980년 5.5111 Mt로 급증함(CO2 기준 0.0145→5.2899). raw 원문 그대로이며 원천에 이를 설명하는 주석은 없음. 1980년은 통일 이후 국영 중공업 가동이 EDGAR 활동자료에 반영되기 시작한 시점으로 보이나 원문에 근거가 없으므로 단정하지 않고 사실만 기록함. [부문 정의] 검토의견 5번에 따라 각 부문의 IPCC 2006 코드 범위를 산출방식·유의사항에 명시함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-011",
+        "indicatorId": "A-011_emissions_sector_agriculture",
+        "sourceFileDecoded": "A-011_GHG 배출량[에너지, 산업공정, 농업, 폐기물].xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8f3f26173c00|Mt CO2eq",
+      "dimensionLabels": {
+        "category": "건물",
+        "detail": "건물 부문 온실가스 배출량(LULUCF 제외)"
+      },
+      "dimensions": {
+        "category": "건물",
+        "detail": "건물 부문 온실가스 배출량(LULUCF 제외)"
+      },
+      "displayLabel": "부문별 배출량 · 건물 — 건물 부문 온실가스 배출량(LULUCF 제외)",
+      "indicatorId": "A-011_emissions_sector_buildings",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8f3f26173c00",
+        "labelKo": "부문별 배출량",
+        "unit": "Mt CO2eq",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-8f3f26173c00|Mt CO2eq|category=건물|detail=건물 부문 온실가스 배출량(LULUCF 제외)|A-011_emissions_sector_buildings",
+      "sourceCaveat": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [커버리지 보완] 검토의견 1번·2번·3번에 대응하여 부문 구성을 전면 재구성함. raw로 받은 4개 파일(Power Industry, Industrial Combustion, Agriculture, Waste)에는 산업공정(IPPU)·수송·건물·연료 채굴이 아예 존재하지 않으며, 4개 부문 합계는 2024년 425.211 Mt로 A-012 국가 총량 584.258 Mt의 72.8%에 그침(159.047 Mt 미계상). 누락 부문은 동일 원천인 EDGAR AR5 GHG의 IPCC 2006 상세 시트에서 IPCC 코드 기준으로 집계하여 5개 부문(수송·산업공정·연료 채굴·건물·기타)을 추가함. 집계 결과는 raw로 받은 Power Industry(202.2437)·Industrial Combustion(112.7988)·Waste(19.0564) 2024년 값을 소수점까지 재현하며, 9개 부문 합계는 A-012 총량과 정확히 일치함. [원문 모순] 다만 Agriculture만 집계값 91.0770 Mt과 raw 파일값 91.1117 Mt이 0.0347 Mt 어긋남. 원천 자체의 불일치이므로 보정하지 않고 raw 파일값을 원본 지표로, 집계값은 별도 산출 지표로 두지 않고 raw 값을 채택함. [이상치] 검토의견 4번 확인 — 산업연소는 1979년 0.2009 Mt에서 1980년 5.5111 Mt로 급증함(CO2 기준 0.0145→5.2899). raw 원문 그대로이며 원천에 이를 설명하는 주석은 없음. 1980년은 통일 이후 국영 중공업 가동이 EDGAR 활동자료에 반영되기 시작한 시점으로 보이나 원문에 근거가 없으므로 단정하지 않고 사실만 기록함. [부문 정의] 검토의견 5번에 따라 각 부문의 IPCC 2006 코드 범위를 산출방식·유의사항에 명시함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "부문별 배출량 · 건물 — 건물 부문 온실가스 배출량(LULUCF 제외)",
+      "sourceLabelEn": "GHG emissions from Buildings (excluding LULUCF)",
+      "sourceNote": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [커버리지 보완] 검토의견 1번·2번·3번에 대응하여 부문 구성을 전면 재구성함. raw로 받은 4개 파일(Power Industry, Industrial Combustion, Agriculture, Waste)에는 산업공정(IPPU)·수송·건물·연료 채굴이 아예 존재하지 않으며, 4개 부문 합계는 2024년 425.211 Mt로 A-012 국가 총량 584.258 Mt의 72.8%에 그침(159.047 Mt 미계상). 누락 부문은 동일 원천인 EDGAR AR5 GHG의 IPCC 2006 상세 시트에서 IPCC 코드 기준으로 집계하여 5개 부문(수송·산업공정·연료 채굴·건물·기타)을 추가함. 집계 결과는 raw로 받은 Power Industry(202.2437)·Industrial Combustion(112.7988)·Waste(19.0564) 2024년 값을 소수점까지 재현하며, 9개 부문 합계는 A-012 총량과 정확히 일치함. [원문 모순] 다만 Agriculture만 집계값 91.0770 Mt과 raw 파일값 91.1117 Mt이 0.0347 Mt 어긋남. 원천 자체의 불일치이므로 보정하지 않고 raw 파일값을 원본 지표로, 집계값은 별도 산출 지표로 두지 않고 raw 값을 채택함. [이상치] 검토의견 4번 확인 — 산업연소는 1979년 0.2009 Mt에서 1980년 5.5111 Mt로 급증함(CO2 기준 0.0145→5.2899). raw 원문 그대로이며 원천에 이를 설명하는 주석은 없음. 1980년은 통일 이후 국영 중공업 가동이 EDGAR 활동자료에 반영되기 시작한 시점으로 보이나 원문에 근거가 없으므로 단정하지 않고 사실만 기록함. [부문 정의] 검토의견 5번에 따라 각 부문의 IPCC 2006 코드 범위를 산출방식·유의사항에 명시함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-011",
+        "indicatorId": "A-011_emissions_sector_buildings",
+        "sourceFileDecoded": "A-011_GHG 배출량[에너지, 산업공정, 농업, 폐기물].xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8f3f26173c00|Mt CO2eq",
+      "dimensionLabels": {
+        "category": "연료 채굴 · 수송 누출",
+        "detail": "연료 채굴·수송 누출 부문 온실가스 배출량(LULUCF 제외)"
+      },
+      "dimensions": {
+        "category": "연료 채굴 · 수송 누출",
+        "detail": "연료 채굴·수송 누출 부문 온실가스 배출량(LULUCF 제외)"
+      },
+      "displayLabel": "부문별 배출량 · 연료 채굴·수송 누출 — 연료 채굴·수송 누출 부문 온실가스 배출량(LULUCF 제외)",
+      "indicatorId": "A-011_emissions_sector_fuel_exploitation",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8f3f26173c00",
+        "labelKo": "부문별 배출량",
+        "unit": "Mt CO2eq",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-8f3f26173c00|Mt CO2eq|category=연료 채굴 · 수송 누출|detail=연료 채굴·수송 누출 부문 온실가스 배출량(LULUCF 제외)|A-011_emissions_sector_fuel_exploitation",
+      "sourceCaveat": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [커버리지 보완] 검토의견 1번·2번·3번에 대응하여 부문 구성을 전면 재구성함. raw로 받은 4개 파일(Power Industry, Industrial Combustion, Agriculture, Waste)에는 산업공정(IPPU)·수송·건물·연료 채굴이 아예 존재하지 않으며, 4개 부문 합계는 2024년 425.211 Mt로 A-012 국가 총량 584.258 Mt의 72.8%에 그침(159.047 Mt 미계상). 누락 부문은 동일 원천인 EDGAR AR5 GHG의 IPCC 2006 상세 시트에서 IPCC 코드 기준으로 집계하여 5개 부문(수송·산업공정·연료 채굴·건물·기타)을 추가함. 집계 결과는 raw로 받은 Power Industry(202.2437)·Industrial Combustion(112.7988)·Waste(19.0564) 2024년 값을 소수점까지 재현하며, 9개 부문 합계는 A-012 총량과 정확히 일치함. [원문 모순] 다만 Agriculture만 집계값 91.0770 Mt과 raw 파일값 91.1117 Mt이 0.0347 Mt 어긋남. 원천 자체의 불일치이므로 보정하지 않고 raw 파일값을 원본 지표로, 집계값은 별도 산출 지표로 두지 않고 raw 값을 채택함. [이상치] 검토의견 4번 확인 — 산업연소는 1979년 0.2009 Mt에서 1980년 5.5111 Mt로 급증함(CO2 기준 0.0145→5.2899). raw 원문 그대로이며 원천에 이를 설명하는 주석은 없음. 1980년은 통일 이후 국영 중공업 가동이 EDGAR 활동자료에 반영되기 시작한 시점으로 보이나 원문에 근거가 없으므로 단정하지 않고 사실만 기록함. [부문 정의] 검토의견 5번에 따라 각 부문의 IPCC 2006 코드 범위를 산출방식·유의사항에 명시함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "부문별 배출량 · 연료 채굴·수송 누출 — 연료 채굴·수송 누출 부문 온실가스 배출량(LULUCF 제외)",
+      "sourceLabelEn": "GHG emissions from Fuel Exploitation (excluding LULUCF)",
+      "sourceNote": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [커버리지 보완] 검토의견 1번·2번·3번에 대응하여 부문 구성을 전면 재구성함. raw로 받은 4개 파일(Power Industry, Industrial Combustion, Agriculture, Waste)에는 산업공정(IPPU)·수송·건물·연료 채굴이 아예 존재하지 않으며, 4개 부문 합계는 2024년 425.211 Mt로 A-012 국가 총량 584.258 Mt의 72.8%에 그침(159.047 Mt 미계상). 누락 부문은 동일 원천인 EDGAR AR5 GHG의 IPCC 2006 상세 시트에서 IPCC 코드 기준으로 집계하여 5개 부문(수송·산업공정·연료 채굴·건물·기타)을 추가함. 집계 결과는 raw로 받은 Power Industry(202.2437)·Industrial Combustion(112.7988)·Waste(19.0564) 2024년 값을 소수점까지 재현하며, 9개 부문 합계는 A-012 총량과 정확히 일치함. [원문 모순] 다만 Agriculture만 집계값 91.0770 Mt과 raw 파일값 91.1117 Mt이 0.0347 Mt 어긋남. 원천 자체의 불일치이므로 보정하지 않고 raw 파일값을 원본 지표로, 집계값은 별도 산출 지표로 두지 않고 raw 값을 채택함. [이상치] 검토의견 4번 확인 — 산업연소는 1979년 0.2009 Mt에서 1980년 5.5111 Mt로 급증함(CO2 기준 0.0145→5.2899). raw 원문 그대로이며 원천에 이를 설명하는 주석은 없음. 1980년은 통일 이후 국영 중공업 가동이 EDGAR 활동자료에 반영되기 시작한 시점으로 보이나 원문에 근거가 없으므로 단정하지 않고 사실만 기록함. [부문 정의] 검토의견 5번에 따라 각 부문의 IPCC 2006 코드 범위를 산출방식·유의사항에 명시함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-011",
+        "indicatorId": "A-011_emissions_sector_fuel_exploitation",
+        "sourceFileDecoded": "A-011_GHG 배출량[에너지, 산업공정, 농업, 폐기물].xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8f3f26173c00|Mt CO2eq",
+      "dimensionLabels": {
+        "category": "산업연소",
+        "detail": "산업연소 부문 온실가스 배출량(CO2+CH4+N2O, LULUCF 제외)"
+      },
+      "dimensions": {
+        "category": "산업연소",
+        "detail": "산업연소 부문 온실가스 배출량(CO2+CH4+N2O, LULUCF 제외)"
+      },
+      "displayLabel": "부문별 배출량 · 산업연소 — 산업연소 부문 온실가스 배출량(CO2+CH4+N2O, LULUCF 제외)",
+      "indicatorId": "A-011_emissions_sector_industrial_combustion",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8f3f26173c00",
+        "labelKo": "부문별 배출량",
+        "unit": "Mt CO2eq",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-8f3f26173c00|Mt CO2eq|category=산업연소|detail=산업연소 부문 온실가스 배출량(CO2+CH4+N2O, LULUCF 제외)|A-011_emissions_sector_industrial_combustion",
+      "sourceCaveat": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [커버리지 보완] 검토의견 1번·2번·3번에 대응하여 부문 구성을 전면 재구성함. raw로 받은 4개 파일(Power Industry, Industrial Combustion, Agriculture, Waste)에는 산업공정(IPPU)·수송·건물·연료 채굴이 아예 존재하지 않으며, 4개 부문 합계는 2024년 425.211 Mt로 A-012 국가 총량 584.258 Mt의 72.8%에 그침(159.047 Mt 미계상). 누락 부문은 동일 원천인 EDGAR AR5 GHG의 IPCC 2006 상세 시트에서 IPCC 코드 기준으로 집계하여 5개 부문(수송·산업공정·연료 채굴·건물·기타)을 추가함. 집계 결과는 raw로 받은 Power Industry(202.2437)·Industrial Combustion(112.7988)·Waste(19.0564) 2024년 값을 소수점까지 재현하며, 9개 부문 합계는 A-012 총량과 정확히 일치함. [원문 모순] 다만 Agriculture만 집계값 91.0770 Mt과 raw 파일값 91.1117 Mt이 0.0347 Mt 어긋남. 원천 자체의 불일치이므로 보정하지 않고 raw 파일값을 원본 지표로, 집계값은 별도 산출 지표로 두지 않고 raw 값을 채택함. [이상치] 검토의견 4번 확인 — 산업연소는 1979년 0.2009 Mt에서 1980년 5.5111 Mt로 급증함(CO2 기준 0.0145→5.2899). raw 원문 그대로이며 원천에 이를 설명하는 주석은 없음. 1980년은 통일 이후 국영 중공업 가동이 EDGAR 활동자료에 반영되기 시작한 시점으로 보이나 원문에 근거가 없으므로 단정하지 않고 사실만 기록함. [부문 정의] 검토의견 5번에 따라 각 부문의 IPCC 2006 코드 범위를 산출방식·유의사항에 명시함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "부문별 배출량 · 산업연소 — 산업연소 부문 온실가스 배출량(CO2+CH4+N2O, LULUCF 제외)",
+      "sourceLabelEn": "GHG emissions from Industrial Combustion (CO2+CH4+N2O, excluding LULUCF)",
+      "sourceNote": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [커버리지 보완] 검토의견 1번·2번·3번에 대응하여 부문 구성을 전면 재구성함. raw로 받은 4개 파일(Power Industry, Industrial Combustion, Agriculture, Waste)에는 산업공정(IPPU)·수송·건물·연료 채굴이 아예 존재하지 않으며, 4개 부문 합계는 2024년 425.211 Mt로 A-012 국가 총량 584.258 Mt의 72.8%에 그침(159.047 Mt 미계상). 누락 부문은 동일 원천인 EDGAR AR5 GHG의 IPCC 2006 상세 시트에서 IPCC 코드 기준으로 집계하여 5개 부문(수송·산업공정·연료 채굴·건물·기타)을 추가함. 집계 결과는 raw로 받은 Power Industry(202.2437)·Industrial Combustion(112.7988)·Waste(19.0564) 2024년 값을 소수점까지 재현하며, 9개 부문 합계는 A-012 총량과 정확히 일치함. [원문 모순] 다만 Agriculture만 집계값 91.0770 Mt과 raw 파일값 91.1117 Mt이 0.0347 Mt 어긋남. 원천 자체의 불일치이므로 보정하지 않고 raw 파일값을 원본 지표로, 집계값은 별도 산출 지표로 두지 않고 raw 값을 채택함. [이상치] 검토의견 4번 확인 — 산업연소는 1979년 0.2009 Mt에서 1980년 5.5111 Mt로 급증함(CO2 기준 0.0145→5.2899). raw 원문 그대로이며 원천에 이를 설명하는 주석은 없음. 1980년은 통일 이후 국영 중공업 가동이 EDGAR 활동자료에 반영되기 시작한 시점으로 보이나 원문에 근거가 없으므로 단정하지 않고 사실만 기록함. [부문 정의] 검토의견 5번에 따라 각 부문의 IPCC 2006 코드 범위를 산출방식·유의사항에 명시함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-011",
+        "indicatorId": "A-011_emissions_sector_industrial_combustion",
+        "sourceFileDecoded": "A-011_GHG 배출량[에너지, 산업공정, 농업, 폐기물].xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8f3f26173c00|Mt CO2eq",
+      "dimensionLabels": {
+        "category": "산업공정(IPPU)",
+        "detail": "산업공정(IPPU) 부문 온실가스 배출량(LULUCF 제외)"
+      },
+      "dimensions": {
+        "category": "산업공정(IPPU)",
+        "detail": "산업공정(IPPU) 부문 온실가스 배출량(LULUCF 제외)"
+      },
+      "displayLabel": "부문별 배출량 · 산업공정(IPPU) — 산업공정(IPPU) 부문 온실가스 배출량(LULUCF 제외)",
+      "indicatorId": "A-011_emissions_sector_industrial_processes",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8f3f26173c00",
+        "labelKo": "부문별 배출량",
+        "unit": "Mt CO2eq",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-8f3f26173c00|Mt CO2eq|category=산업공정(IPPU)|detail=산업공정(IPPU) 부문 온실가스 배출량(LULUCF 제외)|A-011_emissions_sector_industrial_processes",
+      "sourceCaveat": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [커버리지 보완] 검토의견 1번·2번·3번에 대응하여 부문 구성을 전면 재구성함. raw로 받은 4개 파일(Power Industry, Industrial Combustion, Agriculture, Waste)에는 산업공정(IPPU)·수송·건물·연료 채굴이 아예 존재하지 않으며, 4개 부문 합계는 2024년 425.211 Mt로 A-012 국가 총량 584.258 Mt의 72.8%에 그침(159.047 Mt 미계상). 누락 부문은 동일 원천인 EDGAR AR5 GHG의 IPCC 2006 상세 시트에서 IPCC 코드 기준으로 집계하여 5개 부문(수송·산업공정·연료 채굴·건물·기타)을 추가함. 집계 결과는 raw로 받은 Power Industry(202.2437)·Industrial Combustion(112.7988)·Waste(19.0564) 2024년 값을 소수점까지 재현하며, 9개 부문 합계는 A-012 총량과 정확히 일치함. [원문 모순] 다만 Agriculture만 집계값 91.0770 Mt과 raw 파일값 91.1117 Mt이 0.0347 Mt 어긋남. 원천 자체의 불일치이므로 보정하지 않고 raw 파일값을 원본 지표로, 집계값은 별도 산출 지표로 두지 않고 raw 값을 채택함. [이상치] 검토의견 4번 확인 — 산업연소는 1979년 0.2009 Mt에서 1980년 5.5111 Mt로 급증함(CO2 기준 0.0145→5.2899). raw 원문 그대로이며 원천에 이를 설명하는 주석은 없음. 1980년은 통일 이후 국영 중공업 가동이 EDGAR 활동자료에 반영되기 시작한 시점으로 보이나 원문에 근거가 없으므로 단정하지 않고 사실만 기록함. [부문 정의] 검토의견 5번에 따라 각 부문의 IPCC 2006 코드 범위를 산출방식·유의사항에 명시함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "부문별 배출량 · 산업공정(IPPU) — 산업공정(IPPU) 부문 온실가스 배출량(LULUCF 제외)",
+      "sourceLabelEn": "GHG emissions from Processes (excluding LULUCF)",
+      "sourceNote": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [커버리지 보완] 검토의견 1번·2번·3번에 대응하여 부문 구성을 전면 재구성함. raw로 받은 4개 파일(Power Industry, Industrial Combustion, Agriculture, Waste)에는 산업공정(IPPU)·수송·건물·연료 채굴이 아예 존재하지 않으며, 4개 부문 합계는 2024년 425.211 Mt로 A-012 국가 총량 584.258 Mt의 72.8%에 그침(159.047 Mt 미계상). 누락 부문은 동일 원천인 EDGAR AR5 GHG의 IPCC 2006 상세 시트에서 IPCC 코드 기준으로 집계하여 5개 부문(수송·산업공정·연료 채굴·건물·기타)을 추가함. 집계 결과는 raw로 받은 Power Industry(202.2437)·Industrial Combustion(112.7988)·Waste(19.0564) 2024년 값을 소수점까지 재현하며, 9개 부문 합계는 A-012 총량과 정확히 일치함. [원문 모순] 다만 Agriculture만 집계값 91.0770 Mt과 raw 파일값 91.1117 Mt이 0.0347 Mt 어긋남. 원천 자체의 불일치이므로 보정하지 않고 raw 파일값을 원본 지표로, 집계값은 별도 산출 지표로 두지 않고 raw 값을 채택함. [이상치] 검토의견 4번 확인 — 산업연소는 1979년 0.2009 Mt에서 1980년 5.5111 Mt로 급증함(CO2 기준 0.0145→5.2899). raw 원문 그대로이며 원천에 이를 설명하는 주석은 없음. 1980년은 통일 이후 국영 중공업 가동이 EDGAR 활동자료에 반영되기 시작한 시점으로 보이나 원문에 근거가 없으므로 단정하지 않고 사실만 기록함. [부문 정의] 검토의견 5번에 따라 각 부문의 IPCC 2006 코드 범위를 산출방식·유의사항에 명시함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-011",
+        "indicatorId": "A-011_emissions_sector_industrial_processes",
+        "sourceFileDecoded": "A-011_GHG 배출량[에너지, 산업공정, 농업, 폐기물].xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8f3f26173c00|Mt CO2eq",
+      "dimensionLabels": {
+        "category": "기타(간접 N2O)",
+        "detail": "기타(간접 N2O) 부문 온실가스 배출량(LULUCF 제외)"
+      },
+      "dimensions": {
+        "category": "기타(간접 N2O)",
+        "detail": "기타(간접 N2O) 부문 온실가스 배출량(LULUCF 제외)"
+      },
+      "displayLabel": "부문별 배출량 · 기타(간접 N2O) — 기타(간접 N2O) 부문 온실가스 배출량(LULUCF 제외)",
+      "indicatorId": "A-011_emissions_sector_other_indirect_n2o",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8f3f26173c00",
+        "labelKo": "부문별 배출량",
+        "unit": "Mt CO2eq",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-8f3f26173c00|Mt CO2eq|category=기타(간접 N2O)|detail=기타(간접 N2O) 부문 온실가스 배출량(LULUCF 제외)|A-011_emissions_sector_other_indirect_n2o",
+      "sourceCaveat": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [커버리지 보완] 검토의견 1번·2번·3번에 대응하여 부문 구성을 전면 재구성함. raw로 받은 4개 파일(Power Industry, Industrial Combustion, Agriculture, Waste)에는 산업공정(IPPU)·수송·건물·연료 채굴이 아예 존재하지 않으며, 4개 부문 합계는 2024년 425.211 Mt로 A-012 국가 총량 584.258 Mt의 72.8%에 그침(159.047 Mt 미계상). 누락 부문은 동일 원천인 EDGAR AR5 GHG의 IPCC 2006 상세 시트에서 IPCC 코드 기준으로 집계하여 5개 부문(수송·산업공정·연료 채굴·건물·기타)을 추가함. 집계 결과는 raw로 받은 Power Industry(202.2437)·Industrial Combustion(112.7988)·Waste(19.0564) 2024년 값을 소수점까지 재현하며, 9개 부문 합계는 A-012 총량과 정확히 일치함. [원문 모순] 다만 Agriculture만 집계값 91.0770 Mt과 raw 파일값 91.1117 Mt이 0.0347 Mt 어긋남. 원천 자체의 불일치이므로 보정하지 않고 raw 파일값을 원본 지표로, 집계값은 별도 산출 지표로 두지 않고 raw 값을 채택함. [이상치] 검토의견 4번 확인 — 산업연소는 1979년 0.2009 Mt에서 1980년 5.5111 Mt로 급증함(CO2 기준 0.0145→5.2899). raw 원문 그대로이며 원천에 이를 설명하는 주석은 없음. 1980년은 통일 이후 국영 중공업 가동이 EDGAR 활동자료에 반영되기 시작한 시점으로 보이나 원문에 근거가 없으므로 단정하지 않고 사실만 기록함. [부문 정의] 검토의견 5번에 따라 각 부문의 IPCC 2006 코드 범위를 산출방식·유의사항에 명시함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "부문별 배출량 · 기타(간접 N2O) — 기타(간접 N2O) 부문 온실가스 배출량(LULUCF 제외)",
+      "sourceLabelEn": "GHG emissions from Other (5.A indirect N2O) (excluding LULUCF)",
+      "sourceNote": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [커버리지 보완] 검토의견 1번·2번·3번에 대응하여 부문 구성을 전면 재구성함. raw로 받은 4개 파일(Power Industry, Industrial Combustion, Agriculture, Waste)에는 산업공정(IPPU)·수송·건물·연료 채굴이 아예 존재하지 않으며, 4개 부문 합계는 2024년 425.211 Mt로 A-012 국가 총량 584.258 Mt의 72.8%에 그침(159.047 Mt 미계상). 누락 부문은 동일 원천인 EDGAR AR5 GHG의 IPCC 2006 상세 시트에서 IPCC 코드 기준으로 집계하여 5개 부문(수송·산업공정·연료 채굴·건물·기타)을 추가함. 집계 결과는 raw로 받은 Power Industry(202.2437)·Industrial Combustion(112.7988)·Waste(19.0564) 2024년 값을 소수점까지 재현하며, 9개 부문 합계는 A-012 총량과 정확히 일치함. [원문 모순] 다만 Agriculture만 집계값 91.0770 Mt과 raw 파일값 91.1117 Mt이 0.0347 Mt 어긋남. 원천 자체의 불일치이므로 보정하지 않고 raw 파일값을 원본 지표로, 집계값은 별도 산출 지표로 두지 않고 raw 값을 채택함. [이상치] 검토의견 4번 확인 — 산업연소는 1979년 0.2009 Mt에서 1980년 5.5111 Mt로 급증함(CO2 기준 0.0145→5.2899). raw 원문 그대로이며 원천에 이를 설명하는 주석은 없음. 1980년은 통일 이후 국영 중공업 가동이 EDGAR 활동자료에 반영되기 시작한 시점으로 보이나 원문에 근거가 없으므로 단정하지 않고 사실만 기록함. [부문 정의] 검토의견 5번에 따라 각 부문의 IPCC 2006 코드 범위를 산출방식·유의사항에 명시함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-011",
+        "indicatorId": "A-011_emissions_sector_other_indirect_n2o",
+        "sourceFileDecoded": "A-011_GHG 배출량[에너지, 산업공정, 농업, 폐기물].xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8f3f26173c00|Mt CO2eq",
+      "dimensionLabels": {
+        "category": "발전",
+        "detail": "발전 부문 온실가스 배출량(CO2+CH4+N2O, LULUCF 제외)"
+      },
+      "dimensions": {
+        "category": "발전",
+        "detail": "발전 부문 온실가스 배출량(CO2+CH4+N2O, LULUCF 제외)"
+      },
+      "displayLabel": "부문별 배출량 · 발전 — 발전 부문 온실가스 배출량(CO2+CH4+N2O, LULUCF 제외)",
+      "indicatorId": "A-011_emissions_sector_power_industry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8f3f26173c00",
+        "labelKo": "부문별 배출량",
+        "unit": "Mt CO2eq",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-8f3f26173c00|Mt CO2eq|category=발전|detail=발전 부문 온실가스 배출량(CO2+CH4+N2O, LULUCF 제외)|A-011_emissions_sector_power_industry",
+      "sourceCaveat": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [커버리지 보완] 검토의견 1번·2번·3번에 대응하여 부문 구성을 전면 재구성함. raw로 받은 4개 파일(Power Industry, Industrial Combustion, Agriculture, Waste)에는 산업공정(IPPU)·수송·건물·연료 채굴이 아예 존재하지 않으며, 4개 부문 합계는 2024년 425.211 Mt로 A-012 국가 총량 584.258 Mt의 72.8%에 그침(159.047 Mt 미계상). 누락 부문은 동일 원천인 EDGAR AR5 GHG의 IPCC 2006 상세 시트에서 IPCC 코드 기준으로 집계하여 5개 부문(수송·산업공정·연료 채굴·건물·기타)을 추가함. 집계 결과는 raw로 받은 Power Industry(202.2437)·Industrial Combustion(112.7988)·Waste(19.0564) 2024년 값을 소수점까지 재현하며, 9개 부문 합계는 A-012 총량과 정확히 일치함. [원문 모순] 다만 Agriculture만 집계값 91.0770 Mt과 raw 파일값 91.1117 Mt이 0.0347 Mt 어긋남. 원천 자체의 불일치이므로 보정하지 않고 raw 파일값을 원본 지표로, 집계값은 별도 산출 지표로 두지 않고 raw 값을 채택함. [이상치] 검토의견 4번 확인 — 산업연소는 1979년 0.2009 Mt에서 1980년 5.5111 Mt로 급증함(CO2 기준 0.0145→5.2899). raw 원문 그대로이며 원천에 이를 설명하는 주석은 없음. 1980년은 통일 이후 국영 중공업 가동이 EDGAR 활동자료에 반영되기 시작한 시점으로 보이나 원문에 근거가 없으므로 단정하지 않고 사실만 기록함. [부문 정의] 검토의견 5번에 따라 각 부문의 IPCC 2006 코드 범위를 산출방식·유의사항에 명시함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "부문별 배출량 · 발전 — 발전 부문 온실가스 배출량(CO2+CH4+N2O, LULUCF 제외)",
+      "sourceLabelEn": "GHG emissions from Power Industry (CO2+CH4+N2O, excluding LULUCF)",
+      "sourceNote": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [커버리지 보완] 검토의견 1번·2번·3번에 대응하여 부문 구성을 전면 재구성함. raw로 받은 4개 파일(Power Industry, Industrial Combustion, Agriculture, Waste)에는 산업공정(IPPU)·수송·건물·연료 채굴이 아예 존재하지 않으며, 4개 부문 합계는 2024년 425.211 Mt로 A-012 국가 총량 584.258 Mt의 72.8%에 그침(159.047 Mt 미계상). 누락 부문은 동일 원천인 EDGAR AR5 GHG의 IPCC 2006 상세 시트에서 IPCC 코드 기준으로 집계하여 5개 부문(수송·산업공정·연료 채굴·건물·기타)을 추가함. 집계 결과는 raw로 받은 Power Industry(202.2437)·Industrial Combustion(112.7988)·Waste(19.0564) 2024년 값을 소수점까지 재현하며, 9개 부문 합계는 A-012 총량과 정확히 일치함. [원문 모순] 다만 Agriculture만 집계값 91.0770 Mt과 raw 파일값 91.1117 Mt이 0.0347 Mt 어긋남. 원천 자체의 불일치이므로 보정하지 않고 raw 파일값을 원본 지표로, 집계값은 별도 산출 지표로 두지 않고 raw 값을 채택함. [이상치] 검토의견 4번 확인 — 산업연소는 1979년 0.2009 Mt에서 1980년 5.5111 Mt로 급증함(CO2 기준 0.0145→5.2899). raw 원문 그대로이며 원천에 이를 설명하는 주석은 없음. 1980년은 통일 이후 국영 중공업 가동이 EDGAR 활동자료에 반영되기 시작한 시점으로 보이나 원문에 근거가 없으므로 단정하지 않고 사실만 기록함. [부문 정의] 검토의견 5번에 따라 각 부문의 IPCC 2006 코드 범위를 산출방식·유의사항에 명시함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-011",
+        "indicatorId": "A-011_emissions_sector_power_industry",
+        "sourceFileDecoded": "A-011_GHG 배출량[에너지, 산업공정, 농업, 폐기물].xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8f3f26173c00|Mt CO2eq",
+      "dimensionLabels": {
+        "category": "수송",
+        "detail": "수송 부문 온실가스 배출량(LULUCF 제외)"
+      },
+      "dimensions": {
+        "category": "수송",
+        "detail": "수송 부문 온실가스 배출량(LULUCF 제외)"
+      },
+      "displayLabel": "부문별 배출량 · 수송 — 수송 부문 온실가스 배출량(LULUCF 제외)",
+      "indicatorId": "A-011_emissions_sector_transport",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8f3f26173c00",
+        "labelKo": "부문별 배출량",
+        "unit": "Mt CO2eq",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-8f3f26173c00|Mt CO2eq|category=수송|detail=수송 부문 온실가스 배출량(LULUCF 제외)|A-011_emissions_sector_transport",
+      "sourceCaveat": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [커버리지 보완] 검토의견 1번·2번·3번에 대응하여 부문 구성을 전면 재구성함. raw로 받은 4개 파일(Power Industry, Industrial Combustion, Agriculture, Waste)에는 산업공정(IPPU)·수송·건물·연료 채굴이 아예 존재하지 않으며, 4개 부문 합계는 2024년 425.211 Mt로 A-012 국가 총량 584.258 Mt의 72.8%에 그침(159.047 Mt 미계상). 누락 부문은 동일 원천인 EDGAR AR5 GHG의 IPCC 2006 상세 시트에서 IPCC 코드 기준으로 집계하여 5개 부문(수송·산업공정·연료 채굴·건물·기타)을 추가함. 집계 결과는 raw로 받은 Power Industry(202.2437)·Industrial Combustion(112.7988)·Waste(19.0564) 2024년 값을 소수점까지 재현하며, 9개 부문 합계는 A-012 총량과 정확히 일치함. [원문 모순] 다만 Agriculture만 집계값 91.0770 Mt과 raw 파일값 91.1117 Mt이 0.0347 Mt 어긋남. 원천 자체의 불일치이므로 보정하지 않고 raw 파일값을 원본 지표로, 집계값은 별도 산출 지표로 두지 않고 raw 값을 채택함. [이상치] 검토의견 4번 확인 — 산업연소는 1979년 0.2009 Mt에서 1980년 5.5111 Mt로 급증함(CO2 기준 0.0145→5.2899). raw 원문 그대로이며 원천에 이를 설명하는 주석은 없음. 1980년은 통일 이후 국영 중공업 가동이 EDGAR 활동자료에 반영되기 시작한 시점으로 보이나 원문에 근거가 없으므로 단정하지 않고 사실만 기록함. [부문 정의] 검토의견 5번에 따라 각 부문의 IPCC 2006 코드 범위를 산출방식·유의사항에 명시함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "부문별 배출량 · 수송 — 수송 부문 온실가스 배출량(LULUCF 제외)",
+      "sourceLabelEn": "GHG emissions from Transport (excluding LULUCF)",
+      "sourceNote": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [커버리지 보완] 검토의견 1번·2번·3번에 대응하여 부문 구성을 전면 재구성함. raw로 받은 4개 파일(Power Industry, Industrial Combustion, Agriculture, Waste)에는 산업공정(IPPU)·수송·건물·연료 채굴이 아예 존재하지 않으며, 4개 부문 합계는 2024년 425.211 Mt로 A-012 국가 총량 584.258 Mt의 72.8%에 그침(159.047 Mt 미계상). 누락 부문은 동일 원천인 EDGAR AR5 GHG의 IPCC 2006 상세 시트에서 IPCC 코드 기준으로 집계하여 5개 부문(수송·산업공정·연료 채굴·건물·기타)을 추가함. 집계 결과는 raw로 받은 Power Industry(202.2437)·Industrial Combustion(112.7988)·Waste(19.0564) 2024년 값을 소수점까지 재현하며, 9개 부문 합계는 A-012 총량과 정확히 일치함. [원문 모순] 다만 Agriculture만 집계값 91.0770 Mt과 raw 파일값 91.1117 Mt이 0.0347 Mt 어긋남. 원천 자체의 불일치이므로 보정하지 않고 raw 파일값을 원본 지표로, 집계값은 별도 산출 지표로 두지 않고 raw 값을 채택함. [이상치] 검토의견 4번 확인 — 산업연소는 1979년 0.2009 Mt에서 1980년 5.5111 Mt로 급증함(CO2 기준 0.0145→5.2899). raw 원문 그대로이며 원천에 이를 설명하는 주석은 없음. 1980년은 통일 이후 국영 중공업 가동이 EDGAR 활동자료에 반영되기 시작한 시점으로 보이나 원문에 근거가 없으므로 단정하지 않고 사실만 기록함. [부문 정의] 검토의견 5번에 따라 각 부문의 IPCC 2006 코드 범위를 산출방식·유의사항에 명시함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-011",
+        "indicatorId": "A-011_emissions_sector_transport",
+        "sourceFileDecoded": "A-011_GHG 배출량[에너지, 산업공정, 농업, 폐기물].xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8f3f26173c00|Mt CO2eq",
+      "dimensionLabels": {
+        "category": "폐기물",
+        "detail": "폐기물 부문 온실가스 배출량(CO2+CH4+N2O, LULUCF 제외)"
+      },
+      "dimensions": {
+        "category": "폐기물",
+        "detail": "폐기물 부문 온실가스 배출량(CO2+CH4+N2O, LULUCF 제외)"
+      },
+      "displayLabel": "부문별 배출량 · 폐기물 — 폐기물 부문 온실가스 배출량(CO2+CH4+N2O, LULUCF 제외)",
+      "indicatorId": "A-011_emissions_sector_waste",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8f3f26173c00",
+        "labelKo": "부문별 배출량",
+        "unit": "Mt CO2eq",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-8f3f26173c00|Mt CO2eq|category=폐기물|detail=폐기물 부문 온실가스 배출량(CO2+CH4+N2O, LULUCF 제외)|A-011_emissions_sector_waste",
+      "sourceCaveat": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [커버리지 보완] 검토의견 1번·2번·3번에 대응하여 부문 구성을 전면 재구성함. raw로 받은 4개 파일(Power Industry, Industrial Combustion, Agriculture, Waste)에는 산업공정(IPPU)·수송·건물·연료 채굴이 아예 존재하지 않으며, 4개 부문 합계는 2024년 425.211 Mt로 A-012 국가 총량 584.258 Mt의 72.8%에 그침(159.047 Mt 미계상). 누락 부문은 동일 원천인 EDGAR AR5 GHG의 IPCC 2006 상세 시트에서 IPCC 코드 기준으로 집계하여 5개 부문(수송·산업공정·연료 채굴·건물·기타)을 추가함. 집계 결과는 raw로 받은 Power Industry(202.2437)·Industrial Combustion(112.7988)·Waste(19.0564) 2024년 값을 소수점까지 재현하며, 9개 부문 합계는 A-012 총량과 정확히 일치함. [원문 모순] 다만 Agriculture만 집계값 91.0770 Mt과 raw 파일값 91.1117 Mt이 0.0347 Mt 어긋남. 원천 자체의 불일치이므로 보정하지 않고 raw 파일값을 원본 지표로, 집계값은 별도 산출 지표로 두지 않고 raw 값을 채택함. [이상치] 검토의견 4번 확인 — 산업연소는 1979년 0.2009 Mt에서 1980년 5.5111 Mt로 급증함(CO2 기준 0.0145→5.2899). raw 원문 그대로이며 원천에 이를 설명하는 주석은 없음. 1980년은 통일 이후 국영 중공업 가동이 EDGAR 활동자료에 반영되기 시작한 시점으로 보이나 원문에 근거가 없으므로 단정하지 않고 사실만 기록함. [부문 정의] 검토의견 5번에 따라 각 부문의 IPCC 2006 코드 범위를 산출방식·유의사항에 명시함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "부문별 배출량 · 폐기물 — 폐기물 부문 온실가스 배출량(CO2+CH4+N2O, LULUCF 제외)",
+      "sourceLabelEn": "GHG emissions from Waste (CO2+CH4+N2O, excluding LULUCF)",
+      "sourceNote": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [커버리지 보완] 검토의견 1번·2번·3번에 대응하여 부문 구성을 전면 재구성함. raw로 받은 4개 파일(Power Industry, Industrial Combustion, Agriculture, Waste)에는 산업공정(IPPU)·수송·건물·연료 채굴이 아예 존재하지 않으며, 4개 부문 합계는 2024년 425.211 Mt로 A-012 국가 총량 584.258 Mt의 72.8%에 그침(159.047 Mt 미계상). 누락 부문은 동일 원천인 EDGAR AR5 GHG의 IPCC 2006 상세 시트에서 IPCC 코드 기준으로 집계하여 5개 부문(수송·산업공정·연료 채굴·건물·기타)을 추가함. 집계 결과는 raw로 받은 Power Industry(202.2437)·Industrial Combustion(112.7988)·Waste(19.0564) 2024년 값을 소수점까지 재현하며, 9개 부문 합계는 A-012 총량과 정확히 일치함. [원문 모순] 다만 Agriculture만 집계값 91.0770 Mt과 raw 파일값 91.1117 Mt이 0.0347 Mt 어긋남. 원천 자체의 불일치이므로 보정하지 않고 raw 파일값을 원본 지표로, 집계값은 별도 산출 지표로 두지 않고 raw 값을 채택함. [이상치] 검토의견 4번 확인 — 산업연소는 1979년 0.2009 Mt에서 1980년 5.5111 Mt로 급증함(CO2 기준 0.0145→5.2899). raw 원문 그대로이며 원천에 이를 설명하는 주석은 없음. 1980년은 통일 이후 국영 중공업 가동이 EDGAR 활동자료에 반영되기 시작한 시점으로 보이나 원문에 근거가 없으므로 단정하지 않고 사실만 기록함. [부문 정의] 검토의견 5번에 따라 각 부문의 IPCC 2006 코드 범위를 산출방식·유의사항에 명시함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-011",
+        "indicatorId": "A-011_emissions_sector_waste",
+        "sourceFileDecoded": "A-011_GHG 배출량[에너지, 산업공정, 농업, 폐기물].xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 9,
+      "key": "measure-8f3f26173c00",
+      "labelKo": "부문별 배출량",
+      "recordCount": 495,
+      "unit": "Mt CO2eq",
+      "unitFamily": "emissions"
+    }
+  ],
+  "observationCount": 495,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

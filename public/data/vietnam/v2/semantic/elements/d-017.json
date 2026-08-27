@@ -1,0 +1,207 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 2,
+      "values": [
+        "공개 예산 합계",
+        "공고 건수"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 2,
+      "values": [
+        "수집된 발주 공고 총 건수",
+        "예산이 공개된 공고의 단순합"
+      ]
+    },
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "사업·재원"
+      ]
+    },
+    {
+      "key": "sector",
+      "labelKo": "부문",
+      "valueCount": 10,
+      "values": [
+        "공공행정·디지털",
+        "과학기술",
+        "교육·디지털",
+        "도로교통·평가",
+        "스마트시티",
+        "스마트시티·기자재",
+        "에너지·농촌개발",
+        "전 분야",
+        "직업교육훈련",
+        "환경·수처리"
+      ]
+    },
+    {
+      "key": "status",
+      "labelKo": "status",
+      "valueCount": 7,
+      "values": [
+        "RD 체결(2026-02-04)",
+        "공고완료",
+        "낙찰(퓨쳐누리, 2024-12-02)",
+        "선발완료",
+        "완료",
+        "운영중(매일 1회 갱신)",
+        "재공고"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2026"
+      ]
+    }
+  ],
+  "elementId": "D-017",
+  "entityCount": 10,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 3,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-494508ded3a0|USD",
+      "dimensionLabels": {
+        "category": "공개 예산 합계",
+        "detail": "예산이 공개된 공고의 단순합",
+        "technology": "1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10 · 11 · 12 · 13 · 14 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 22 · 23 · 24 · 25 · 26 · 27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "공개 예산 합계",
+        "detail": "예산이 공개된 공고의 단순합",
+        "technology": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "한국 ODA 기관 PCP/입찰 현황 · 공개 예산 합계 — 예산이 공개된 공고의 단순합",
+      "indicatorId": "D-017_budget_sum_disclosed",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-494508ded3a0",
+        "labelKo": "한국 ODA 기관 PCP/입찰 현황",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-494508ded3a0|USD|category=공개 예산 합계|detail=예산이 공개된 공고의 단순합|technology=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38|D-017_budget_sum_disclosed",
+      "sourceCaveat": "[검토지적 반영] 종전 자료의 \"예산 규모\"에 해당 입찰 건의 발주예산이 아닌 사업 총예산이 섞여 있어, 예산유형(사업 총예산 / 용역 발주예산 / 기자재 구매 / 전문가 파견)을 레코드별로 명시하고 실제 발주예산이 공고문에만 있는 건은 결측(M06)으로 표기함. [정의·범위] 입찰 정보는 공고 종료 후 원문이 내려가는 경우가 많아 시점 의존적이며, 수집 기준일은 2026-08-17임. [출처 성격] KOICA 전자조달(nebid)·나라장터(g2b)·ODA Korea 통합공고는 정부·공공기관 공표자료임. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함.",
+      "sourceLabel": "한국 ODA 기관 PCP/입찰 현황 · 공개 예산 합계 — 예산이 공개된 공고의 단순합",
+      "sourceLabelEn": "Sum of disclosed tender budgets",
+      "sourceNote": "실제 용역 발주예산이 공고문 첨부 예산내역서에만 기재된 건이 있어 총합의 정의가 혼재됨.",
+      "sourceProvenance": {
+        "elementId": "D-017",
+        "indicatorId": "D-017_budget_sum_disclosed",
+        "sourceFileDecoded": "D-017_한국 ODA 기관 PCP입찰 현황.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-3bd280373b9a|건",
+      "dimensionLabels": {
+        "category": "대베트남 발주 레지스트리",
+        "detail": "레코드 1건 = 1행(1.2 레코드형 시트)",
+        "technology": "1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10 · 11 · 12 · 13 · 14 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 22 · 23 · 24 · 25 · 26 · 27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "대베트남 발주 레지스트리",
+        "detail": "레코드 1건 = 1행(1.2 레코드형 시트)",
+        "technology": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "한국 ODA 기관 PCP/입찰 현황 · 대베트남 발주 레지스트리 — 레코드 1건 = 1행(1.2 레코드형 시트)",
+      "indicatorId": "D-017_pcp_tender_registry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3bd280373b9a",
+        "labelKo": "한국 ODA 기관 PCP/입찰 현황",
+        "unit": "건",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-3bd280373b9a|건|category=대베트남 발주 레지스트리|detail=레코드 1건 = 1행(1.2 레코드형 시트)|technology=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38|D-017_pcp_tender_registry",
+      "sourceCaveat": "[검토지적 반영] 종전 자료의 \"예산 규모\"에 해당 입찰 건의 발주예산이 아닌 사업 총예산이 섞여 있어, 예산유형(사업 총예산 / 용역 발주예산 / 기자재 구매 / 전문가 파견)을 레코드별로 명시하고 실제 발주예산이 공고문에만 있는 건은 결측(M06)으로 표기함. [정의·범위] 입찰 정보는 공고 종료 후 원문이 내려가는 경우가 많아 시점 의존적이며, 수집 기준일은 2026-08-17임. [출처 성격] KOICA 전자조달(nebid)·나라장터(g2b)·ODA Korea 통합공고는 정부·공공기관 공표자료임.",
+      "sourceLabel": "한국 ODA 기관 PCP/입찰 현황 · 대베트남 발주 레지스트리 — 레코드 1건 = 1행(1.2 레코드형 시트)",
+      "sourceLabelEn": "Registry of Korean ODA agency tenders and PCP calls for Viet Nam",
+      "sourceNote": "실제 용역 발주예산이 공고문 첨부 예산내역에만 기재된 건이 있음. 재확보 대상 1차 출처: KOICA 전자조달(nebid.koica.go.kr) 각 공고 첨부 과업지시서·예산내역서",
+      "sourceProvenance": {
+        "elementId": "D-017",
+        "indicatorId": "D-017_pcp_tender_registry",
+        "sourceFileDecoded": "D-017_한국 ODA 기관 PCP입찰 현황.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-3bd280373b9a|건",
+      "dimensionLabels": {
+        "category": "공고 건수",
+        "detail": "수집된 발주 공고 총 건수",
+        "technology": "1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10 · 11 · 12 · 13 · 14 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 22 · 23 · 24 · 25 · 26 · 27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "공고 건수",
+        "detail": "수집된 발주 공고 총 건수",
+        "technology": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "한국 ODA 기관 PCP/입찰 현황 · 공고 건수 — 수집된 발주 공고 총 건수",
+      "indicatorId": "D-017_tender_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3bd280373b9a",
+        "labelKo": "한국 ODA 기관 PCP/입찰 현황",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-3bd280373b9a|건|category=공고 건수|detail=수집된 발주 공고 총 건수|technology=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38|D-017_tender_count",
+      "sourceCaveat": "[검토지적 반영] 종전 자료의 \"예산 규모\"에 해당 입찰 건의 발주예산이 아닌 사업 총예산이 섞여 있어, 예산유형(사업 총예산 / 용역 발주예산 / 기자재 구매 / 전문가 파견)을 레코드별로 명시하고 실제 발주예산이 공고문에만 있는 건은 결측(M06)으로 표기함. [정의·범위] 입찰 정보는 공고 종료 후 원문이 내려가는 경우가 많아 시점 의존적이며, 수집 기준일은 2026-08-17임. [출처 성격] KOICA 전자조달(nebid)·나라장터(g2b)·ODA Korea 통합공고는 정부·공공기관 공표자료임. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함.",
+      "sourceLabel": "한국 ODA 기관 PCP/입찰 현황 · 공고 건수 — 수집된 발주 공고 총 건수",
+      "sourceLabelEn": "Number of tenders and PCP calls collected",
+      "sourceNote": "[검토지적 반영] 종전 자료의 \"예산 규모\"에 해당 입찰 건의 발주예산이 아닌 사업 총예산이 섞여 있어, 예산유형(사업 총예산 / 용역 발주예산 / 기자재 구매 / 전문가 파견)을 레코드별로 명시하고 실제 발주예산이 공고문에만 있는 건은 결측(M06)으로 표기함. [정의·범위] 입찰 정보는 공고 종료 후 원문이 내려가는 경우가 많아 시점 의존적이며, 수집 기준일은 2026-08-17임. [출처 성격] KOICA 전자조달(nebid)·나라장터(g2b)·ODA Korea 통합공고는 정부·공공기관 공표자료임. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함.",
+      "sourceProvenance": {
+        "elementId": "D-017",
+        "indicatorId": "D-017_tender_count",
+        "sourceFileDecoded": "D-017_한국 ODA 기관 PCP입찰 현황.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-494508ded3a0",
+      "labelKo": "한국 ODA 기관 PCP/입찰 현황",
+      "recordCount": 1,
+      "unit": "USD",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-3bd280373b9a",
+      "labelKo": "한국 ODA 기관 PCP/입찰 현황",
+      "recordCount": 1,
+      "unit": "건",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 2,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

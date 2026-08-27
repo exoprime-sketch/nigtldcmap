@@ -1,0 +1,187 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 3,
+      "values": [
+        "농촌",
+        "도시",
+        "전체"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 1,
+      "values": [
+        "전기를 이용할 수 있는 인구 비율"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "24"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 28,
+      "values": [
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ]
+    }
+  ],
+  "elementId": "A-021",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 3,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-b6bedc475e56|%",
+      "dimensionLabels": {
+        "category": "농촌",
+        "detail": "전기를 이용할 수 있는 인구 비율",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "농촌",
+        "detail": "전기를 이용할 수 있는 인구 비율",
+        "technology": "24"
+      },
+      "displayLabel": "전력 접근률 · 농촌 — 전기를 이용할 수 있는 인구 비율",
+      "indicatorId": "A-021_electricity_access_rural",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b6bedc475e56",
+        "labelKo": "전력 접근률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-b6bedc475e56|%|category=농촌|detail=전기를 이용할 수 있는 인구 비율|technology=24|A-021_electricity_access_rural",
+      "sourceCaveat": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-021 폴더 EG.ELC.ACCS.ZS.xlsx). 원자료는 세계은행 SDG 7.1.1 Electrification Dataset(Global Electrification Database)임. [출처·링크] 검토의견 1번에 따라 출처기관·지표 딥링크·API 쿼리·인용위치를 전건 기재함. [이상치] 검토의견 2번 확인 — 전체 접근률이 전년보다 낮아지는 해가 존재함. 세계은행 접근률은 가구조사 결과를 시계열 모형으로 보간·평활한 추정치이고, 조사 시점의 표본·정의 차이 때문에 소폭 하락이 나타날 수 있음. raw 원문 그대로이며 보정하지 않음. [자릿수] 검토의견 3번 확인 — 원문 값의 소수 자릿수가 연도별로 다름(초기 연도는 소수 넷째 자리까지). 원천이 제공한 자릿수를 그대로 보존하며 임의 반올림하지 않음. [구조] 검토의견 4번(요약통계 4줄·시트명 OnGrid)은 종전 산출물의 문제이며 본 데이터셋 구조에서 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "전력 접근률 · 농촌 — 전기를 이용할 수 있는 인구 비율",
+      "sourceLabelEn": "Access to electricity, rural (% of rural population)",
+      "sourceNote": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-021 폴더 EG.ELC.ACCS.ZS.xlsx). 원자료는 세계은행 SDG 7.1.1 Electrification Dataset(Global Electrification Database)임. [출처·링크] 검토의견 1번에 따라 출처기관·지표 딥링크·API 쿼리·인용위치를 전건 기재함. [이상치] 검토의견 2번 확인 — 전체 접근률이 전년보다 낮아지는 해가 존재함. 세계은행 접근률은 가구조사 결과를 시계열 모형으로 보간·평활한 추정치이고, 조사 시점의 표본·정의 차이 때문에 소폭 하락이 나타날 수 있음. raw 원문 그대로이며 보정하지 않음. [자릿수] 검토의견 3번 확인 — 원문 값의 소수 자릿수가 연도별로 다름(초기 연도는 소수 넷째 자리까지). 원천이 제공한 자릿수를 그대로 보존하며 임의 반올림하지 않음. [구조] 검토의견 4번(요약통계 4줄·시트명 OnGrid)은 종전 산출물의 문제이며 본 데이터셋 구조에서 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-021",
+        "indicatorId": "A-021_electricity_access_rural",
+        "sourceFileDecoded": "A-021_전력 접근률.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-b6bedc475e56|%",
+      "dimensionLabels": {
+        "category": "전체",
+        "detail": "전기를 이용할 수 있는 인구 비율",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "전체",
+        "detail": "전기를 이용할 수 있는 인구 비율",
+        "technology": "24"
+      },
+      "displayLabel": "전력 접근률 · 전체 — 전기를 이용할 수 있는 인구 비율",
+      "indicatorId": "A-021_electricity_access_total",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b6bedc475e56",
+        "labelKo": "전력 접근률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-b6bedc475e56|%|category=전체|detail=전기를 이용할 수 있는 인구 비율|technology=24|A-021_electricity_access_total",
+      "sourceCaveat": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-021 폴더 EG.ELC.ACCS.ZS.xlsx). 원자료는 세계은행 SDG 7.1.1 Electrification Dataset(Global Electrification Database)임. [출처·링크] 검토의견 1번에 따라 출처기관·지표 딥링크·API 쿼리·인용위치를 전건 기재함. [이상치] 검토의견 2번 확인 — 전체 접근률이 전년보다 낮아지는 해가 존재함. 세계은행 접근률은 가구조사 결과를 시계열 모형으로 보간·평활한 추정치이고, 조사 시점의 표본·정의 차이 때문에 소폭 하락이 나타날 수 있음. raw 원문 그대로이며 보정하지 않음. [자릿수] 검토의견 3번 확인 — 원문 값의 소수 자릿수가 연도별로 다름(초기 연도는 소수 넷째 자리까지). 원천이 제공한 자릿수를 그대로 보존하며 임의 반올림하지 않음. [구조] 검토의견 4번(요약통계 4줄·시트명 OnGrid)은 종전 산출물의 문제이며 본 데이터셋 구조에서 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "전력 접근률 · 전체 — 전기를 이용할 수 있는 인구 비율",
+      "sourceLabelEn": "Access to electricity (% of population)",
+      "sourceNote": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-021 폴더 EG.ELC.ACCS.ZS.xlsx). 원자료는 세계은행 SDG 7.1.1 Electrification Dataset(Global Electrification Database)임. [출처·링크] 검토의견 1번에 따라 출처기관·지표 딥링크·API 쿼리·인용위치를 전건 기재함. [이상치] 검토의견 2번 확인 — 전체 접근률이 전년보다 낮아지는 해가 존재함. 세계은행 접근률은 가구조사 결과를 시계열 모형으로 보간·평활한 추정치이고, 조사 시점의 표본·정의 차이 때문에 소폭 하락이 나타날 수 있음. raw 원문 그대로이며 보정하지 않음. [자릿수] 검토의견 3번 확인 — 원문 값의 소수 자릿수가 연도별로 다름(초기 연도는 소수 넷째 자리까지). 원천이 제공한 자릿수를 그대로 보존하며 임의 반올림하지 않음. [구조] 검토의견 4번(요약통계 4줄·시트명 OnGrid)은 종전 산출물의 문제이며 본 데이터셋 구조에서 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-021",
+        "indicatorId": "A-021_electricity_access_total",
+        "sourceFileDecoded": "A-021_전력 접근률.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-b6bedc475e56|%",
+      "dimensionLabels": {
+        "category": "도시",
+        "detail": "전기를 이용할 수 있는 인구 비율",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "도시",
+        "detail": "전기를 이용할 수 있는 인구 비율",
+        "technology": "24"
+      },
+      "displayLabel": "전력 접근률 · 도시 — 전기를 이용할 수 있는 인구 비율",
+      "indicatorId": "A-021_electricity_access_urban",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b6bedc475e56",
+        "labelKo": "전력 접근률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-b6bedc475e56|%|category=도시|detail=전기를 이용할 수 있는 인구 비율|technology=24|A-021_electricity_access_urban",
+      "sourceCaveat": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-021 폴더 EG.ELC.ACCS.ZS.xlsx). 원자료는 세계은행 SDG 7.1.1 Electrification Dataset(Global Electrification Database)임. [출처·링크] 검토의견 1번에 따라 출처기관·지표 딥링크·API 쿼리·인용위치를 전건 기재함. [이상치] 검토의견 2번 확인 — 전체 접근률이 전년보다 낮아지는 해가 존재함. 세계은행 접근률은 가구조사 결과를 시계열 모형으로 보간·평활한 추정치이고, 조사 시점의 표본·정의 차이 때문에 소폭 하락이 나타날 수 있음. raw 원문 그대로이며 보정하지 않음. [자릿수] 검토의견 3번 확인 — 원문 값의 소수 자릿수가 연도별로 다름(초기 연도는 소수 넷째 자리까지). 원천이 제공한 자릿수를 그대로 보존하며 임의 반올림하지 않음. [구조] 검토의견 4번(요약통계 4줄·시트명 OnGrid)은 종전 산출물의 문제이며 본 데이터셋 구조에서 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "전력 접근률 · 도시 — 전기를 이용할 수 있는 인구 비율",
+      "sourceLabelEn": "Access to electricity, urban (% of urban population)",
+      "sourceNote": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-021 폴더 EG.ELC.ACCS.ZS.xlsx). 원자료는 세계은행 SDG 7.1.1 Electrification Dataset(Global Electrification Database)임. [출처·링크] 검토의견 1번에 따라 출처기관·지표 딥링크·API 쿼리·인용위치를 전건 기재함. [이상치] 검토의견 2번 확인 — 전체 접근률이 전년보다 낮아지는 해가 존재함. 세계은행 접근률은 가구조사 결과를 시계열 모형으로 보간·평활한 추정치이고, 조사 시점의 표본·정의 차이 때문에 소폭 하락이 나타날 수 있음. raw 원문 그대로이며 보정하지 않음. [자릿수] 검토의견 3번 확인 — 원문 값의 소수 자릿수가 연도별로 다름(초기 연도는 소수 넷째 자리까지). 원천이 제공한 자릿수를 그대로 보존하며 임의 반올림하지 않음. [구조] 검토의견 4번(요약통계 4줄·시트명 OnGrid)은 종전 산출물의 문제이며 본 데이터셋 구조에서 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-021",
+        "indicatorId": "A-021_electricity_access_urban",
+        "sourceFileDecoded": "A-021_전력 접근률.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 3,
+      "key": "measure-b6bedc475e56",
+      "labelKo": "전력 접근률",
+      "recordCount": 84,
+      "unit": "%",
+      "unitFamily": "percent"
+    }
+  ],
+  "observationCount": 84,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

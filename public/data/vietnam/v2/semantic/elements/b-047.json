@@ -1,0 +1,517 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 1,
+      "values": [
+        "망간)"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 11,
+      "values": [
+        "구리",
+        "망간",
+        "보크사이트",
+        "시멘트",
+        "알루미나",
+        "인광석",
+        "주석",
+        "텅스텐",
+        "형석",
+        "흑연",
+        "희토류"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "1,3,18,24"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 2,
+      "values": [
+        "2024",
+        "2025"
+      ]
+    }
+  ],
+  "elementId": "B-047",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 12,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-018560d0bcaf|t (W 함량)",
+      "dimensionLabels": {
+        "detail": "텅스텐",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "텅스텐",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "광산 생산량 — 텅스텐",
+      "indicatorId": "B-047_production_0",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-018560d0bcaf",
+        "labelKo": "광산 생산량",
+        "unit": "t (W 함량)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-018560d0bcaf|t (W 함량)|detail=텅스텐|technology=1,3,18,24|B-047_production_0",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "광산 생산량 — 텅스텐",
+      "sourceLabelEn": "Mine production: 텅스텐",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-047",
+        "indicatorId": "B-047_production_0",
+        "sourceFileDecoded": "B-047_연간 생산량(tonnes／yr).xlsx",
+        "sourceRow": 4,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6c271f260dc0|천 t (건조)",
+      "dimensionLabels": {
+        "detail": "보크사이트",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "보크사이트",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "광산 생산량 — 보크사이트",
+      "indicatorId": "B-047_production_1",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6c271f260dc0",
+        "labelKo": "광산 생산량",
+        "unit": "천 t (건조)",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-6c271f260dc0|천 t (건조)|detail=보크사이트|technology=1,3,18,24|B-047_production_1",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "광산 생산량 — 보크사이트",
+      "sourceLabelEn": "Mine production: 보크사이트",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-047",
+        "indicatorId": "B-047_production_1",
+        "sourceFileDecoded": "B-047_연간 생산량(tonnes／yr).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-21febf21fabf|천 t (정제)",
+      "dimensionLabels": {
+        "detail": "알루미나",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "알루미나",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "광산 생산량 — 알루미나",
+      "indicatorId": "B-047_production_2",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-21febf21fabf",
+        "labelKo": "광산 생산량",
+        "unit": "천 t (정제)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-21febf21fabf|천 t (정제)|detail=알루미나|technology=1,3,18,24|B-047_production_2",
+      "sourceCaveat": "[정의] 알루미나·시멘트는 채굴 광물이 아니라 **가공품**입니다. USGS MCS가 동일 표 체계로 함께 보고하기 때문에 종전 파일에 포함되었으며, 광물 생산량과 성격이 달라 별도 참고 지표로 표기합니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "광산 생산량 — 알루미나",
+      "sourceLabelEn": "Mine production: 알루미나",
+      "sourceNote": "[정의] 알루미나·시멘트는 채굴 광물이 아니라 **가공품**입니다. USGS MCS가 동일 표 체계로 함께 보고하기 때문에 종전 파일에 포함되었으며, 광물 생산량과 성격이 달라 별도 참고 지표로 표기합니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-047",
+        "indicatorId": "B-047_production_2",
+        "sourceFileDecoded": "B-047_연간 생산량(tonnes／yr).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-3fda9946012e|t (Sn 함량)",
+      "dimensionLabels": {
+        "detail": "주석",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "주석",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "광산 생산량 — 주석",
+      "indicatorId": "B-047_production_3",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3fda9946012e",
+        "labelKo": "광산 생산량",
+        "unit": "t (Sn 함량)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-3fda9946012e|t (Sn 함량)|detail=주석|technology=1,3,18,24|B-047_production_3",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "광산 생산량 — 주석",
+      "sourceLabelEn": "Mine production: 주석",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-047",
+        "indicatorId": "B-047_production_3",
+        "sourceFileDecoded": "B-047_연간 생산량(tonnes／yr).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8379792883fd|천 t",
+      "dimensionLabels": {
+        "detail": "형석",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "형석",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "광산 생산량 — 형석",
+      "indicatorId": "B-047_production_4",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8379792883fd",
+        "labelKo": "광산 생산량",
+        "unit": "천 t",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-8379792883fd|천 t|detail=형석|technology=1,3,18,24|B-047_production_4",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "광산 생산량 — 형석",
+      "sourceLabelEn": "Mine production: 형석",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-047",
+        "indicatorId": "B-047_production_4",
+        "sourceFileDecoded": "B-047_연간 생산량(tonnes／yr).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d093490b24b3|t REO",
+      "dimensionLabels": {
+        "detail": "희토류",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "희토류",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "광산 생산량 — 희토류",
+      "indicatorId": "B-047_production_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d093490b24b3",
+        "labelKo": "광산 생산량",
+        "unit": "t REO",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-d093490b24b3|t REO|detail=희토류|technology=1,3,18,24|B-047_production_5",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "광산 생산량 — 희토류",
+      "sourceLabelEn": "Mine production: 희토류",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-047",
+        "indicatorId": "B-047_production_5",
+        "sourceFileDecoded": "B-047_연간 생산량(tonnes／yr).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a0b89d4f4c72|t (천연)",
+      "dimensionLabels": {
+        "detail": "흑연",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "흑연",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "광산 생산량 — 흑연",
+      "indicatorId": "B-047_production_6",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a0b89d4f4c72",
+        "labelKo": "광산 생산량",
+        "unit": "t (천연)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a0b89d4f4c72|t (천연)|detail=흑연|technology=1,3,18,24|B-047_production_6",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "광산 생산량 — 흑연",
+      "sourceLabelEn": "Mine production: 흑연",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-047",
+        "indicatorId": "B-047_production_6",
+        "sourceFileDecoded": "B-047_연간 생산량(tonnes／yr).xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e8c62da3f955|천 t (아파타이트)",
+      "dimensionLabels": {
+        "detail": "인광석",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "인광석",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "광산 생산량 — 인광석",
+      "indicatorId": "B-047_production_7",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e8c62da3f955",
+        "labelKo": "광산 생산량",
+        "unit": "천 t (아파타이트)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-e8c62da3f955|천 t (아파타이트)|detail=인광석|technology=1,3,18,24|B-047_production_7",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "광산 생산량 — 인광석",
+      "sourceLabelEn": "Mine production: 인광석",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-047",
+        "indicatorId": "B-047_production_7",
+        "sourceFileDecoded": "B-047_연간 생산량(tonnes／yr).xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8379792883fd|천 t",
+      "dimensionLabels": {
+        "detail": "시멘트",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "시멘트",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "광산 생산량 — 시멘트",
+      "indicatorId": "B-047_production_8",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8379792883fd",
+        "labelKo": "광산 생산량",
+        "unit": "천 t",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-8379792883fd|천 t|detail=시멘트|technology=1,3,18,24|B-047_production_8",
+      "sourceCaveat": "[정의] 알루미나·시멘트는 채굴 광물이 아니라 **가공품**입니다. USGS MCS가 동일 표 체계로 함께 보고하기 때문에 종전 파일에 포함되었으며, 광물 생산량과 성격이 달라 별도 참고 지표로 표기합니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "광산 생산량 — 시멘트",
+      "sourceLabelEn": "Mine production: 시멘트",
+      "sourceNote": "[정의] 알루미나·시멘트는 채굴 광물이 아니라 **가공품**입니다. USGS MCS가 동일 표 체계로 함께 보고하기 때문에 종전 파일에 포함되었으며, 광물 생산량과 성격이 달라 별도 참고 지표로 표기합니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-047",
+        "indicatorId": "B-047_production_8",
+        "sourceFileDecoded": "B-047_연간 생산량(tonnes／yr).xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6ed8768ea117|t",
+      "dimensionLabels": {
+        "category": "망간)",
+        "detail": "구리"
+      },
+      "dimensions": {
+        "category": "망간)",
+        "detail": "구리"
+      },
+      "displayLabel": "생산량 미수록(구리·망간) — 구리",
+      "indicatorId": "B-047_production_cu_mn_copper",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6ed8768ea117",
+        "labelKo": "생산량 미수록(구리",
+        "unit": "t",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-6ed8768ea117|t|category=망간)|detail=구리|B-047_production_cu_mn_copper",
+      "sourceCaveat": "[누락 보완] B-044에서 부존이 언급된 구리·망간의 생산량 지표행을 신설하고 결측사유 NP를 기재. 정량이 필요하면 베트남 통계청(GSO) 광업 생산통계 또는 S&P Global(유료)로 보완 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "생산량 미수록(구리·망간) — 구리",
+      "sourceLabelEn": "Production not reported: Cu, Mn",
+      "sourceNote": "2025년: USGS MCS 2026 국가별 생산량 표에 베트남 행이 없음 — 원천 미보고",
+      "sourceProvenance": {
+        "elementId": "B-047",
+        "indicatorId": "B-047_production_cu_mn_copper",
+        "sourceFileDecoded": "B-047_연간 생산량(tonnes／yr).xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6ed8768ea117|t",
+      "dimensionLabels": {
+        "category": "망간)",
+        "detail": "망간"
+      },
+      "dimensions": {
+        "category": "망간)",
+        "detail": "망간"
+      },
+      "displayLabel": "생산량 미수록(구리·망간) — 망간",
+      "indicatorId": "B-047_production_cu_mn_manganese",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6ed8768ea117",
+        "labelKo": "생산량 미수록(구리",
+        "unit": "t",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-6ed8768ea117|t|category=망간)|detail=망간|B-047_production_cu_mn_manganese",
+      "sourceCaveat": "[누락 보완] B-044에서 부존이 언급된 구리·망간의 생산량 지표행을 신설하고 결측사유 NP를 기재. 정량이 필요하면 베트남 통계청(GSO) 광업 생산통계 또는 S&P Global(유료)로 보완 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "생산량 미수록(구리·망간) — 망간",
+      "sourceLabelEn": "Production not reported: Cu, Mn",
+      "sourceNote": "2025년: USGS MCS 2026 국가별 생산량 표에 베트남 행이 없음 — 원천 미보고",
+      "sourceProvenance": {
+        "elementId": "B-047",
+        "indicatorId": "B-047_production_cu_mn_manganese",
+        "sourceFileDecoded": "B-047_연간 생산량(tonnes／yr).xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a3e629cf6486|—",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "희토류 생산 급감(2024→2025) 사유",
+      "indicatorId": "B-047_ree_production_note",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a3e629cf6486",
+        "labelKo": "희토류 생산 급감(2024→2025) 사유",
+        "unit": "—",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-a3e629cf6486|—||B-047_ree_production_note",
+      "sourceCaveat": "[이상치 각주 — 1차 출처 확인 완료] USGS MCS 2026 원문 각주에서 산출 근거를 확인하여 확정 기재. 베트남 희토류 생산량 계열 전체가 중국 수입통계 기반 추정치이므로 연도 간 변동은 교역 경로 변화에 민감함. 실제 채광량 기준의 시계열이 필요하면 베트남 지질광물국(DGMV) 또는 통계청(GSO) 광업 생산통계로 별도 계열을 구성해야 함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "희토류 생산 급감(2024→2025) 사유",
+      "sourceLabelEn": "REE production decline note",
+      "sourceNote": "[이상치 각주 — 1차 출처 확인 완료] USGS MCS 2026 원문 각주에서 산출 근거를 확인하여 확정 기재. 베트남 희토류 생산량 계열 전체가 중국 수입통계 기반 추정치이므로 연도 간 변동은 교역 경로 변화에 민감함. 실제 채광량 기준의 시계열이 필요하면 베트남 지질광물국(DGMV) 또는 통계청(GSO) 광업 생산통계로 별도 계열을 구성해야 함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-047",
+        "indicatorId": "B-047_ree_production_note",
+        "sourceFileDecoded": "B-047_연간 생산량(tonnes／yr).xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-3fda9946012e",
+      "labelKo": "광산 생산량",
+      "recordCount": 2,
+      "unit": "t (Sn 함량)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-018560d0bcaf",
+      "labelKo": "광산 생산량",
+      "recordCount": 2,
+      "unit": "t (W 함량)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-a0b89d4f4c72",
+      "labelKo": "광산 생산량",
+      "recordCount": 2,
+      "unit": "t (천연)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-d093490b24b3",
+      "labelKo": "광산 생산량",
+      "recordCount": 2,
+      "unit": "t REO",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-8379792883fd",
+      "labelKo": "광산 생산량",
+      "recordCount": 4,
+      "unit": "천 t",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-6c271f260dc0",
+      "labelKo": "광산 생산량",
+      "recordCount": 2,
+      "unit": "천 t (건조)",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-e8c62da3f955",
+      "labelKo": "광산 생산량",
+      "recordCount": 2,
+      "unit": "천 t (아파타이트)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-21febf21fabf",
+      "labelKo": "광산 생산량",
+      "recordCount": 2,
+      "unit": "천 t (정제)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-6ed8768ea117",
+      "labelKo": "생산량 미수록(구리",
+      "recordCount": 2,
+      "unit": "t",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-a3e629cf6486",
+      "labelKo": "희토류 생산 급감(2024→2025) 사유",
+      "recordCount": 1,
+      "unit": "—",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 21,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

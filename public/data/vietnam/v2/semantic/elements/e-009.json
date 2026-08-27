@@ -1,0 +1,229 @@
+{
+  "dimensions": [
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 2,
+      "values": [
+        "2016",
+        "2023"
+      ]
+    }
+  ],
+  "elementId": "E-009",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 6,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-6bee104be284|명",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "연구자 수(절대수)",
+      "indicatorId": "E-009_researcher_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6bee104be284",
+        "labelKo": "연구자 수(절대수)",
+        "unit": "명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-6bee104be284|명||E-009_researcher_count",
+      "sourceCaveat": "해소 방안: ①836.11 × 총인구(백만명) 자체 산출(산출유형을 \"자체 산출\"로 변경하고 인구 원천·기준연도 명시 필요) 또는 ②NSO 원자료 확보.",
+      "sourceLabel": "연구자 수(절대수)",
+      "sourceLabelEn": "Researchers in R&D (headcount / FTE)",
+      "sourceNote": "원천이 백만명당 환산치만 제공, 절대수 미수록(M01). 요청 정의(절대수)와 불일치(M08). 라이선스·수집일·담당자 미확인(M06).",
+      "sourceProvenance": {
+        "elementId": "E-009",
+        "indicatorId": "E-009_researcher_count",
+        "sourceFileDecoded": "E-009_STEM 졸업자·연구자 수.xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9c5bcab6c9a9|명/백만명",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "연구자 수(백만명당)",
+      "indicatorId": "E-009_researchers_per_million",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9c5bcab6c9a9",
+        "labelKo": "연구자 수(백만명당)",
+        "unit": "명/백만명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-9c5bcab6c9a9|명/백만명||E-009_researchers_per_million",
+      "sourceCaveat": null,
+      "sourceLabel": "연구자 수(백만명당)",
+      "sourceLabelEn": "Researchers in R&D (per million people)",
+      "sourceNote": "라이선스·라이선스 URL·최종갱신일·수집일·담당자·검증자 미확인(M06).",
+      "sourceProvenance": {
+        "elementId": "E-009",
+        "indicatorId": "E-009_researchers_per_million",
+        "sourceFileDecoded": "E-009_STEM 졸업자·연구자 수.xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-52b24a618d30|명",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "STEM 졸업자 수(절대수)",
+      "indicatorId": "E-009_stem_grad_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-52b24a618d30",
+        "labelKo": "STEM 졸업자 수(절대수)",
+        "unit": "명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-52b24a618d30|명||E-009_stem_grad_count",
+      "sourceCaveat": "해소 방안:①베트남 통계청(NSO) 고등교육 통계 별도 확보.",
+      "sourceLabel": "STEM 졸업자 수(절대수)",
+      "sourceLabelEn": "Graduates from STEM programmes, tertiary (headcount)",
+      "sourceNote": "원천(UIS)이 베트남에 대해 절대수 미수록(M01). 프레임워크 요청항목(절대수)과 수집값(비율) 정의 불일치(M08). 출처 URL·라이선스·담당자 미확인(M06).",
+      "sourceProvenance": {
+        "elementId": "E-009",
+        "indicatorId": "E-009_stem_grad_count",
+        "sourceFileDecoded": "E-009_STEM 졸업자·연구자 수.xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0aaf37a2b769|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "STEM 졸업 비중(전체)",
+      "indicatorId": "E-009_stem_grad_share",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0aaf37a2b769",
+        "labelKo": "STEM 졸업 비중(전체)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-0aaf37a2b769|%||E-009_stem_grad_share",
+      "sourceCaveat": "STEM 졸업 비중 2016년이 UNESCO UIS 최신치로, 이후 연도 갱신 불가 확인(원본 비고②). 시계열 단절 및 기준연도 노후(수집 시점과 10년 차이) 주의. ①원본 E-009 시트는 국가 1행에 복수 지표가 복합 문자열로 기재돼 있어 지표 단위로 분해 (값/연도/단위 분리). ②원본 비고의 미결사항 2건을 지표행으로 명시: 요청항목(절대수) vs 수집값(비율) 불일치, STEM 졸업 비중 2016년이 UIS 최신치로 갱신 불가.",
+      "sourceLabel": "STEM 졸업 비중(전체)",
+      "sourceLabelEn": "Share of graduates from STEM programmes, tertiary (total)",
+      "sourceNote": "라이선스·최종갱신일·수집일·담당자 미확인(M06).",
+      "sourceProvenance": {
+        "elementId": "E-009",
+        "indicatorId": "E-009_stem_grad_share",
+        "sourceFileDecoded": "E-009_STEM 졸업자·연구자 수.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e67e1496b556|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "STEM 졸업 비중(여성)",
+      "indicatorId": "E-009_stem_grad_share_female",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e67e1496b556",
+        "labelKo": "STEM 졸업 비중(여성)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-e67e1496b556|%||E-009_stem_grad_share_female",
+      "sourceCaveat": null,
+      "sourceLabel": "STEM 졸업 비중(여성)",
+      "sourceLabelEn": "Share of graduates from STEM programmes, tertiary, female",
+      "sourceNote": "귀속 지표 확정 미결(M10),출처 URL·시리즈ID·라이선스·담당자 미확인(M06).",
+      "sourceProvenance": {
+        "elementId": "E-009",
+        "indicatorId": "E-009_stem_grad_share_female",
+        "sourceFileDecoded": "E-009_STEM 졸업자·연구자 수.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-33733e6335a3|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "STEM 졸업 비중(남성)",
+      "indicatorId": "E-009_stem_grad_share_male",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-33733e6335a3",
+        "labelKo": "STEM 졸업 비중(남성)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-33733e6335a3|%||E-009_stem_grad_share_male",
+      "sourceCaveat": null,
+      "sourceLabel": "STEM 졸업 비중(남성)",
+      "sourceLabelEn": "Share of graduates from STEM programmes, tertiary, male",
+      "sourceNote": "귀속 지표 확정 미결(M10),출처 URL·시리즈ID·라이선스·담당자 미확인(M06).",
+      "sourceProvenance": {
+        "elementId": "E-009",
+        "indicatorId": "E-009_stem_grad_share_male",
+        "sourceFileDecoded": "E-009_STEM 졸업자·연구자 수.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-33733e6335a3",
+      "labelKo": "STEM 졸업 비중(남성)",
+      "recordCount": 1,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-e67e1496b556",
+      "labelKo": "STEM 졸업 비중(여성)",
+      "recordCount": 1,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-0aaf37a2b769",
+      "labelKo": "STEM 졸업 비중(전체)",
+      "recordCount": 1,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-52b24a618d30",
+      "labelKo": "STEM 졸업자 수(절대수)",
+      "recordCount": 1,
+      "unit": "명",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-9c5bcab6c9a9",
+      "labelKo": "연구자 수(백만명당)",
+      "recordCount": 1,
+      "unit": "명/백만명",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-6bee104be284",
+      "labelKo": "연구자 수(절대수)",
+      "recordCount": 1,
+      "unit": "명",
+      "unitFamily": "count"
+    }
+  ],
+  "observationCount": 6,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

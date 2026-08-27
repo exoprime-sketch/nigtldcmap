@@ -1,0 +1,58 @@
+{
+  "dimensions": [
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    }
+  ],
+  "elementId": "E-018",
+  "entityCount": 21,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 1,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-9c0ba3e8a503|개사(기업)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "국내 기업 개도국 진출 현황",
+      "indicatorId": "E-018_kr_company_entry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9c0ba3e8a503",
+        "labelKo": "국내 기업 개도국 진출 현황",
+        "unit": "개사(기업)",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-9c0ba3e8a503|개사(기업)||E-018_kr_company_entry",
+      "sourceCaveat": null,
+      "sourceLabel": "국내 기업 개도국 진출 현황",
+      "sourceLabelEn": "Korean companies operating in developing countries",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-018",
+        "indicatorId": "E-018_kr_company_entry",
+        "sourceFileDecoded": "E-018_국내 기업 개도국 진출 현황.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-9c0ba3e8a503",
+      "labelKo": "국내 기업 개도국 진출 현황",
+      "recordCount": 0,
+      "unit": "개사(기업)",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

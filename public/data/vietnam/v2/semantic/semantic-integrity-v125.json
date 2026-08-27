@@ -1,0 +1,205 @@
+{
+  "contractCount": 152,
+  "duplicateIndicatorDecisions": [
+    {
+      "elementId": "B-028",
+      "indicatorId": "B-028_discharge_cumecs_son_tay",
+      "recordDimensionPolicy": "explicit-pre-post-dam-phase",
+      "semanticIndicatorPolicy": "last-v124-metadata-row",
+      "sourceLabels": [
+        "하천 유량 — m³/s 기준 — 홍강(Son Tay 지점) — 댐 건설 전",
+        "하천 유량 — m³/s 기준 — 홍강(Son Tay 지점) — 댐 건설 후"
+      ],
+      "sourceRows": [
+        18,
+        19
+      ]
+    }
+  ],
+  "duplicateIndicatorMetadataCount": 1,
+  "duplicateVisibleLabelCount": 0,
+  "e012": {
+    "idNoteMismatchCount": 0,
+    "indicatorCount": 90,
+    "measureKeys": [
+      "employment_rate",
+      "employed_persons",
+      "average_monthly_wage",
+      "occupation_employment_count",
+      "occupation_employment_share",
+      "occupation_female_share",
+      "occupation_wage"
+    ],
+    "missingOtherWageCount": 3,
+    "missingOtherWageLabelled": true,
+    "observationCount": 91,
+    "occupationOptions": [
+      {
+        "labelKo": "전체 직군",
+        "sortOrder": 0,
+        "sourceCode": "all",
+        "value": "all"
+      },
+      {
+        "labelKo": "관리자",
+        "sortOrder": 1,
+        "sourceCode": "mgr",
+        "value": "manager"
+      },
+      {
+        "labelKo": "전문가",
+        "sortOrder": 2,
+        "sourceCode": "prof",
+        "value": "professional"
+      },
+      {
+        "labelKo": "기술공·준전문가",
+        "sortOrder": 3,
+        "sourceCode": "tech",
+        "value": "technician"
+      },
+      {
+        "labelKo": "사무직",
+        "sortOrder": 4,
+        "sourceCode": "clerk",
+        "value": "clerk"
+      },
+      {
+        "labelKo": "서비스·판매직",
+        "sortOrder": 5,
+        "sourceCode": "service",
+        "value": "service_sales"
+      },
+      {
+        "labelKo": "농림어업 숙련직",
+        "sortOrder": 6,
+        "sourceCode": "agri",
+        "value": "skilled_agriculture"
+      },
+      {
+        "labelKo": "기능원·관련직",
+        "sortOrder": 7,
+        "sourceCode": "craft",
+        "value": "craft"
+      },
+      {
+        "labelKo": "장치·기계 조작·조립원",
+        "sortOrder": 8,
+        "sourceCode": "operator",
+        "value": "machine_operator"
+      },
+      {
+        "labelKo": "단순노무직",
+        "sortOrder": 9,
+        "sourceCode": "elem",
+        "value": "elementary"
+      },
+      {
+        "labelKo": "기타·미정의",
+        "sortOrder": 10,
+        "sourceCode": "other",
+        "value": "other"
+      }
+    ],
+    "occupations": [
+      {
+        "labelKo": "관리자",
+        "sortOrder": 1,
+        "sourceCode": "mgr",
+        "value": "manager"
+      },
+      {
+        "labelKo": "전문가",
+        "sortOrder": 2,
+        "sourceCode": "prof",
+        "value": "professional"
+      },
+      {
+        "labelKo": "기술공·준전문가",
+        "sortOrder": 3,
+        "sourceCode": "tech",
+        "value": "technician"
+      },
+      {
+        "labelKo": "사무직",
+        "sortOrder": 4,
+        "sourceCode": "clerk",
+        "value": "clerk"
+      },
+      {
+        "labelKo": "서비스·판매직",
+        "sortOrder": 5,
+        "sourceCode": "service",
+        "value": "service_sales"
+      },
+      {
+        "labelKo": "농림어업 숙련직",
+        "sortOrder": 6,
+        "sourceCode": "agri",
+        "value": "skilled_agriculture"
+      },
+      {
+        "labelKo": "기능원·관련직",
+        "sortOrder": 7,
+        "sourceCode": "craft",
+        "value": "craft"
+      },
+      {
+        "labelKo": "장치·기계 조작·조립원",
+        "sortOrder": 8,
+        "sourceCode": "operator",
+        "value": "machine_operator"
+      },
+      {
+        "labelKo": "단순노무직",
+        "sortOrder": 9,
+        "sourceCode": "elem",
+        "value": "elementary"
+      },
+      {
+        "labelKo": "기타·미정의",
+        "sortOrder": 10,
+        "sourceCode": "other",
+        "value": "other"
+      }
+    ],
+    "sexes": [
+      {
+        "labelKo": "전체",
+        "sortOrder": 0,
+        "value": "total"
+      },
+      {
+        "labelKo": "남성",
+        "sortOrder": 1,
+        "value": "male"
+      },
+      {
+        "labelKo": "여성",
+        "sortOrder": 2,
+        "value": "female"
+      }
+    ],
+    "tableRecordReconciliation": "PASS",
+    "totalRowSeparated": true,
+    "years": [
+      2023,
+      2024
+    ]
+  },
+  "elementCount": 152,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "mixedUnitAxisCount": 0,
+  "recordReconciliation": "PASS",
+  "schemaVersion": "v125",
+  "semanticDimensionLossCount": 0,
+  "semanticIndicatorCount": 7389,
+  "semanticObservationCount": 32312,
+  "separatedMixedUnitMeasureGroupCount": 1,
+  "sourceDuplicateLabelGroupCount": 54,
+  "sourceIndicatorMetadataRowCount": 7390,
+  "sourceObservationCount": 32312,
+  "sourceUniqueIndicatorCount": 7389,
+  "unassignedContractCount": 0,
+  "zeroImputationCount": 0
+}

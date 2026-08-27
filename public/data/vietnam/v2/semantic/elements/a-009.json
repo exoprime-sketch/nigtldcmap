@@ -1,0 +1,176 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 2,
+      "values": [
+        "1인당",
+        "GDP 대비"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 2,
+      "values": [
+        "GDP(PPP, 2021년 불변 국제달러) 1,000달러당 온실가스 배출량",
+        "인구 1인당 온실가스 배출량"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 55,
+      "values": [
+        "1970",
+        "1971",
+        "1972",
+        "1973",
+        "1974",
+        "1975",
+        "1976",
+        "1977",
+        "1978",
+        "1979",
+        "1980",
+        "1981",
+        "1982",
+        "1983",
+        "1984",
+        "1985",
+        "1986",
+        "1987",
+        "1988",
+        "1989",
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ]
+    }
+  ],
+  "elementId": "A-009",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 2,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-90f520e15b99|tCO2eq/1,000 국제달러",
+      "dimensionLabels": {
+        "category": "GDP 대비",
+        "detail": "GDP(PPP, 2021년 불변 국제달러) 1,000달러당 온실가스 배출량"
+      },
+      "dimensions": {
+        "category": "GDP 대비",
+        "detail": "GDP(PPP, 2021년 불변 국제달러) 1,000달러당 온실가스 배출량"
+      },
+      "displayLabel": "GHG 배출 강도 · GDP 대비 — GDP(PPP, 2021년 불변 국제달러) 1,000달러당 온실가스 배출량",
+      "indicatorId": "A-009_ghg_intensity_gdp_ppp",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-90f520e15b99",
+        "labelKo": "GHG 배출 강도",
+        "unit": "tCO2eq/1,000 국제달러",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-90f520e15b99|tCO2eq/1,000 국제달러|category=GDP 대비|detail=GDP(PPP, 2021년 불변 국제달러) 1,000달러당 온실가스 배출량|A-009_ghg_intensity_gdp_ppp",
+      "sourceCaveat": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [산출 근거] 검토의견 1번(출처 미기재)·2번(기준연도·불변가격 미표시)·3번(산출방법 주석 누락)에 대응하여 분자·분모 원천과 불변가격 기준을 모두 명시함. 분자는 EDGAR AR5 GHG 총배출량(LULUCF 제외), 분모는 세계은행 WDI GDP PPP 불변 2021 국제달러(NY.GDP.MKTP.PP.KD) 및 총인구(SP.POP.TOTL)임. [원문 확인] EDGAR raw 파일에는 GDP·인구 열이 존재하지 않으며(전 시트 확인), 인용 시트가 GDP 출처를 참조만 하고 값은 담고 있지 않음. 따라서 분모는 외부 원천을 사용해야 하며 이를 산출방식에 기재함. [라이선스] EDGAR는 CC BY 4.0, 세계은행 WDI는 CC BY 4.0이므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "GHG 배출 강도 · GDP 대비 — GDP(PPP, 2021년 불변 국제달러) 1,000달러당 온실가스 배출량",
+      "sourceLabelEn": "GHG emissions intensity per unit of GDP (PPP, constant 2021 international $)",
+      "sourceNote": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [산출 근거] 검토의견 1번(출처 미기재)·2번(기준연도·불변가격 미표시)·3번(산출방법 주석 누락)에 대응하여 분자·분모 원천과 불변가격 기준을 모두 명시함. 분자는 EDGAR AR5 GHG 총배출량(LULUCF 제외), 분모는 세계은행 WDI GDP PPP 불변 2021 국제달러(NY.GDP.MKTP.PP.KD) 및 총인구(SP.POP.TOTL)임. [원문 확인] EDGAR raw 파일에는 GDP·인구 열이 존재하지 않으며(전 시트 확인), 인용 시트가 GDP 출처를 참조만 하고 값은 담고 있지 않음. 따라서 분모는 외부 원천을 사용해야 하며 이를 산출방식에 기재함. [라이선스] EDGAR는 CC BY 4.0, 세계은행 WDI는 CC BY 4.0이므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-009",
+        "indicatorId": "A-009_ghg_intensity_gdp_ppp",
+        "sourceFileDecoded": "A-009_GHG 배출 강도[GDP 대비, 1인당].xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d46d687b64ca|tCO2eq/인",
+      "dimensionLabels": {
+        "category": "1인당",
+        "detail": "인구 1인당 온실가스 배출량"
+      },
+      "dimensions": {
+        "category": "1인당",
+        "detail": "인구 1인당 온실가스 배출량"
+      },
+      "displayLabel": "GHG 배출 강도 · 1인당 — 인구 1인당 온실가스 배출량",
+      "indicatorId": "A-009_ghg_intensity_per_capita",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d46d687b64ca",
+        "labelKo": "GHG 배출 강도",
+        "unit": "tCO2eq/인",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-d46d687b64ca|tCO2eq/인|category=1인당|detail=인구 1인당 온실가스 배출량|A-009_ghg_intensity_per_capita",
+      "sourceCaveat": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [산출 근거] 검토의견 1번(출처 미기재)·2번(기준연도·불변가격 미표시)·3번(산출방법 주석 누락)에 대응하여 분자·분모 원천과 불변가격 기준을 모두 명시함. 분자는 EDGAR AR5 GHG 총배출량(LULUCF 제외), 분모는 세계은행 WDI GDP PPP 불변 2021 국제달러(NY.GDP.MKTP.PP.KD) 및 총인구(SP.POP.TOTL)임. [원문 확인] EDGAR raw 파일에는 GDP·인구 열이 존재하지 않으며(전 시트 확인), 인용 시트가 GDP 출처를 참조만 하고 값은 담고 있지 않음. 따라서 분모는 외부 원천을 사용해야 하며 이를 산출방식에 기재함. [라이선스] EDGAR는 CC BY 4.0, 세계은행 WDI는 CC BY 4.0이므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "GHG 배출 강도 · 1인당 — 인구 1인당 온실가스 배출량",
+      "sourceLabelEn": "GHG emissions per capita",
+      "sourceNote": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [산출 근거] 검토의견 1번(출처 미기재)·2번(기준연도·불변가격 미표시)·3번(산출방법 주석 누락)에 대응하여 분자·분모 원천과 불변가격 기준을 모두 명시함. 분자는 EDGAR AR5 GHG 총배출량(LULUCF 제외), 분모는 세계은행 WDI GDP PPP 불변 2021 국제달러(NY.GDP.MKTP.PP.KD) 및 총인구(SP.POP.TOTL)임. [원문 확인] EDGAR raw 파일에는 GDP·인구 열이 존재하지 않으며(전 시트 확인), 인용 시트가 GDP 출처를 참조만 하고 값은 담고 있지 않음. 따라서 분모는 외부 원천을 사용해야 하며 이를 산출방식에 기재함. [라이선스] EDGAR는 CC BY 4.0, 세계은행 WDI는 CC BY 4.0이므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-009",
+        "indicatorId": "A-009_ghg_intensity_per_capita",
+        "sourceFileDecoded": "A-009_GHG 배출 강도[GDP 대비, 1인당].xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-90f520e15b99",
+      "labelKo": "GHG 배출 강도",
+      "recordCount": 35,
+      "unit": "tCO2eq/1,000 국제달러",
+      "unitFamily": "emissions"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-d46d687b64ca",
+      "labelKo": "GHG 배출 강도",
+      "recordCount": 55,
+      "unit": "tCO2eq/인",
+      "unitFamily": "emissions"
+    }
+  ],
+  "observationCount": 90,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

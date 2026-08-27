@@ -1,0 +1,573 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 6,
+      "values": [
+        "FCPF 계약 물량",
+        "FCPF 계약 초과 검증량",
+        "FCPF 단가",
+        "FCPF 잉여분 추가 이전량",
+        "FCPF 지급액",
+        "GCF FP294 지급 규모"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 4,
+      "values": [
+        "BioCF",
+        "FCPF",
+        "FCPF 탄소기금(2018-02-01~2019-12-31, 북중부 6개 성)",
+        "GCF"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "CTIS-23,CTIS-35"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 6,
+      "values": [
+        "2016",
+        "2017",
+        "2019",
+        "2020",
+        "2024",
+        "2026"
+      ]
+    }
+  ],
+  "elementId": "C-024",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 14,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-d34419e26e01|tCO₂e/yr",
+      "dimensionLabels": {
+        "technology": "CTIS-23 · CTIS-35"
+      },
+      "dimensions": {
+        "technology": "CTIS-23,CTIS-35"
+      },
+      "displayLabel": "수정 FRL 값",
+      "indicatorId": "C-024_count_government_frl_gat",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d34419e26e01",
+        "labelKo": "수정 FRL 값",
+        "unit": "tCO₂e/yr",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-d34419e26e01|tCO₂e/yr|technology=CTIS-23,CTIS-35|C-024_count_government_frl_gat",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 대체. 지정 URL(Verra Registry)은 민간 크레딧 표준 레지스트리로 REDD+ 국가 이행 정보(FREL/FRL 제출·기술평가·성과기반지불)를 수록하지 않음. 해당 정보는 UNFCCC REDD+ Web Platform 소관이므로 UNFCCC 자료를 출처로 사용. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [결측처리] 부호·방법론이 FREL 대비 어떻게 다른지 출처가 설명하지 않아 확인 필요. 원문값 그대로 전사.",
+      "sourceLabel": "수정 FRL 값",
+      "sourceLabelEn": "Count Government Frl Gat",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 대체. 지정 URL(Verra Registry)은 민간 크레딧 표준 레지스트리로 REDD+ 국가 이행 정보(FREL/FRL 제출·기술평가·성과기반지불)를 수록하지 않음. 해당 정보는 UNFCCC REDD+ Web Platform 소관이므로 UNFCCC 자료를 출처로 사용. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [결측처리] 부호·방법론이 FREL 대비 어떻게 다른지 출처가 설명하지 않아 확인 필요. 원문값 그대로 전사.",
+      "sourceProvenance": {
+        "elementId": "C-024",
+        "indicatorId": "C-024_count_government_frl_gat",
+        "sourceFileDecoded": "C-024_REDD+ 현황.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-381e69461a36|—",
+      "dimensionLabels": {
+        "technology": "CTIS-23 · CTIS-35"
+      },
+      "dimensions": {
+        "technology": "CTIS-23,CTIS-35"
+      },
+      "displayLabel": "FREL/FRL 제출 여부",
+      "indicatorId": "C-024_frel_frl_submitted",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-381e69461a36",
+        "labelKo": "FREL/FRL 제출 여부",
+        "unit": "—",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-381e69461a36|—|technology=CTIS-23,CTIS-35|C-024_frel_frl_submitted",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 대체. 지정 URL(Verra Registry)은 민간 크레딧 표준 레지스트리로 REDD+ 국가 이행 정보(FREL/FRL 제출·기술평가·성과기반지불)를 수록하지 않음. 해당 정보는 UNFCCC REDD+ Web Platform 소관이므로 UNFCCC 자료를 출처로 사용. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [정의·범위] 산림기준배출량 제출 여부.",
+      "sourceLabel": "FREL/FRL 제출 여부",
+      "sourceLabelEn": "Frel Frl Submitted",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 대체. 지정 URL(Verra Registry)은 민간 크레딧 표준 레지스트리로 REDD+ 국가 이행 정보(FREL/FRL 제출·기술평가·성과기반지불)를 수록하지 않음. 해당 정보는 UNFCCC REDD+ Web Platform 소관이므로 UNFCCC 자료를 출처로 사용. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [정의·범위] 산림기준배출량 제출 여부.",
+      "sourceProvenance": {
+        "elementId": "C-024",
+        "indicatorId": "C-024_frel_frl_submitted",
+        "sourceFileDecoded": "C-024_REDD+ 현황.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-cca85d431886|—",
+      "dimensionLabels": {
+        "detail": "GCF",
+        "technology": "CTIS-23 · CTIS-35"
+      },
+      "dimensions": {
+        "detail": "GCF",
+        "technology": "CTIS-23,CTIS-35"
+      },
+      "displayLabel": "참여 기금 — GCF",
+      "indicatorId": "C-024_participation_fund",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-cca85d431886",
+        "labelKo": "참여 기금",
+        "unit": "—",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-cca85d431886|—|detail=GCF|technology=CTIS-23,CTIS-35|C-024_participation_fund",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 대체. 지정 URL(Verra Registry)은 민간 크레딧 표준 레지스트리로 REDD+ 국가 이행 정보(FREL/FRL 제출·기술평가·성과기반지불)를 수록하지 않음. 해당 정보는 UNFCCC REDD+ Web Platform 소관이므로 UNFCCC 자료를 출처로 사용. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [정의·범위] 검토의견 C-024 반영으로 기금별 지표 분리. ※원문 내 모순: 동일 출처에서 '미참여' 기재와 RBP 수령액 기재가 상충하여 확인 필요.",
+      "sourceLabel": "참여 기금 — GCF",
+      "sourceLabelEn": "Participation Fund",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 대체. 지정 URL(Verra Registry)은 민간 크레딧 표준 레지스트리로 REDD+ 국가 이행 정보(FREL/FRL 제출·기술평가·성과기반지불)를 수록하지 않음. 해당 정보는 UNFCCC REDD+ Web Platform 소관이므로 UNFCCC 자료를 출처로 사용. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [정의·범위] 검토의견 C-024 반영으로 기금별 지표 분리. ※원문 내 모순: 동일 출처에서 '미참여' 기재와 RBP 수령액 기재가 상충하여 확인 필요.",
+      "sourceProvenance": {
+        "elementId": "C-024",
+        "indicatorId": "C-024_participation_fund",
+        "sourceFileDecoded": "C-024_REDD+ 현황.xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-cca85d431886|—",
+      "dimensionLabels": {
+        "detail": "BioCF",
+        "technology": "CTIS-23 · CTIS-35"
+      },
+      "dimensions": {
+        "detail": "BioCF",
+        "technology": "CTIS-23,CTIS-35"
+      },
+      "displayLabel": "참여 기금 — BioCF",
+      "indicatorId": "C-024_participation_fund_2",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-cca85d431886",
+        "labelKo": "참여 기금",
+        "unit": "—",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-cca85d431886|—|detail=BioCF|technology=CTIS-23,CTIS-35|C-024_participation_fund_2",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 대체. 지정 URL(Verra Registry)은 민간 크레딧 표준 레지스트리로 REDD+ 국가 이행 정보(FREL/FRL 제출·기술평가·성과기반지불)를 수록하지 않음. 해당 정보는 UNFCCC REDD+ Web Platform 소관이므로 UNFCCC 자료를 출처로 사용. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [정의·범위] 기금별 지표 분리(검토의견 C-024 반영).",
+      "sourceLabel": "참여 기금 — BioCF",
+      "sourceLabelEn": "Participation Fund 2",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 대체. 지정 URL(Verra Registry)은 민간 크레딧 표준 레지스트리로 REDD+ 국가 이행 정보(FREL/FRL 제출·기술평가·성과기반지불)를 수록하지 않음. 해당 정보는 UNFCCC REDD+ Web Platform 소관이므로 UNFCCC 자료를 출처로 사용. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [정의·범위] 기금별 지표 분리(검토의견 C-024 반영).",
+      "sourceProvenance": {
+        "elementId": "C-024",
+        "indicatorId": "C-024_participation_fund_2",
+        "sourceFileDecoded": "C-024_REDD+ 현황.xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-cca85d431886|—",
+      "dimensionLabels": {
+        "detail": "FCPF",
+        "technology": "CTIS-23 · CTIS-35"
+      },
+      "dimensions": {
+        "detail": "FCPF",
+        "technology": "CTIS-23,CTIS-35"
+      },
+      "displayLabel": "참여 기금 — FCPF",
+      "indicatorId": "C-024_participation_fund_2026",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-cca85d431886",
+        "labelKo": "참여 기금",
+        "unit": "—",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-cca85d431886|—|detail=FCPF|technology=CTIS-23,CTIS-35|C-024_participation_fund_2026",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 대체. 지정 URL(Verra Registry)은 민간 크레딧 표준 레지스트리로 REDD+ 국가 이행 정보(FREL/FRL 제출·기술평가·성과기반지불)를 수록하지 않음. 해당 정보는 UNFCCC REDD+ Web Platform 소관이므로 UNFCCC 자료를 출처로 사용. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [정의·범위] 기금별 지표 분리(검토의견 C-024 반영).",
+      "sourceLabel": "참여 기금 — FCPF",
+      "sourceLabelEn": "Participation Fund 2026",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 대체. 지정 URL(Verra Registry)은 민간 크레딧 표준 레지스트리로 REDD+ 국가 이행 정보(FREL/FRL 제출·기술평가·성과기반지불)를 수록하지 않음. 해당 정보는 UNFCCC REDD+ Web Platform 소관이므로 UNFCCC 자료를 출처로 사용. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [정의·범위] 기금별 지표 분리(검토의견 C-024 반영).",
+      "sourceProvenance": {
+        "elementId": "C-024",
+        "indicatorId": "C-024_participation_fund_2026",
+        "sourceFileDecoded": "C-024_REDD+ 현황.xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-963d69cff1d4|MtCO₂e",
+      "dimensionLabels": {
+        "detail": "FCPF 탄소기금(2018-02-01~2019-12-31, 북중부 6개 성)",
+        "technology": "CTIS-23 · CTIS-35"
+      },
+      "dimensions": {
+        "detail": "FCPF 탄소기금(2018-02-01~2019-12-31, 북중부 6개 성)",
+        "technology": "CTIS-23,CTIS-35"
+      },
+      "displayLabel": "RBP 검증 배출감축량 — FCPF 탄소기금(2018-02-01~2019-12-31, 북중부 6개 성)",
+      "indicatorId": "C-024_rbp_verification_emission",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-963d69cff1d4",
+        "labelKo": "RBP 검증 배출감축량",
+        "unit": "MtCO₂e",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-963d69cff1d4|MtCO₂e|detail=FCPF 탄소기금(2018-02-01~2019-12-31, 북중부 6개 성)|technology=CTIS-23,CTIS-35|C-024_rbp_verification_emission",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 대체. 지정 URL(Verra Registry)은 민간 크레딧 표준 레지스트리로 REDD+ 국가 이행 정보(FREL/FRL 제출·기술평가·성과기반지불)를 수록하지 않음. 해당 정보는 UNFCCC REDD+ Web Platform 소관이므로 UNFCCC 자료를 출처로 사용. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [결측처리] 검증 범위·시점이 원문에 미명시(확인 필요).",
+      "sourceLabel": "RBP 검증 배출감축량 — FCPF 탄소기금(2018-02-01~2019-12-31, 북중부 6개 성)",
+      "sourceLabelEn": "Rbp Verification Emission",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 대체. 지정 URL(Verra Registry)은 민간 크레딧 표준 레지스트리로 REDD+ 국가 이행 정보(FREL/FRL 제출·기술평가·성과기반지불)를 수록하지 않음. 해당 정보는 UNFCCC REDD+ Web Platform 소관이므로 UNFCCC 자료를 출처로 사용. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [결측처리] 검증 범위·시점이 원문에 미명시(확인 필요).",
+      "sourceProvenance": {
+        "elementId": "C-024",
+        "indicatorId": "C-024_rbp_verification_emission",
+        "sourceFileDecoded": "C-024_REDD+ 현황.xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a50c7dfd9256|—",
+      "dimensionLabels": {
+        "technology": "CTIS-23 · CTIS-35"
+      },
+      "dimensions": {
+        "technology": "CTIS-23,CTIS-35"
+      },
+      "displayLabel": "REDD+ 국가전략 수립 여부",
+      "indicatorId": "C-024_redd_national_strategy",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a50c7dfd9256",
+        "labelKo": "REDD+ 국가전략 수립 여부",
+        "unit": "—",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-a50c7dfd9256|—|technology=CTIS-23,CTIS-35|C-024_redd_national_strategy",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 대체. 지정 URL(Verra Registry)은 민간 크레딧 표준 레지스트리로 REDD+ 국가 이행 정보(FREL/FRL 제출·기술평가·성과기반지불)를 수록하지 않음. 해당 정보는 UNFCCC REDD+ Web Platform 소관이므로 UNFCCC 자료를 출처로 사용. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [정의·범위] 국가 REDD+ 실행 프로그램(NRAP) 승인 여부.",
+      "sourceLabel": "REDD+ 국가전략 수립 여부",
+      "sourceLabelEn": "Redd National Strategy",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 대체. 지정 URL(Verra Registry)은 민간 크레딧 표준 레지스트리로 REDD+ 국가 이행 정보(FREL/FRL 제출·기술평가·성과기반지불)를 수록하지 않음. 해당 정보는 UNFCCC REDD+ Web Platform 소관이므로 UNFCCC 자료를 출처로 사용. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [정의·범위] 국가 REDD+ 실행 프로그램(NRAP) 승인 여부.",
+      "sourceProvenance": {
+        "elementId": "C-024",
+        "indicatorId": "C-024_redd_national_strategy",
+        "sourceFileDecoded": "C-024_REDD+ 현황.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e11e1041c3ca|MtCO₂e",
+      "dimensionLabels": {
+        "category": "FCPF 잉여분 추가 이전량",
+        "technology": "CTIS-23 · CTIS-35"
+      },
+      "dimensions": {
+        "category": "FCPF 잉여분 추가 이전량",
+        "technology": "CTIS-23,CTIS-35"
+      },
+      "displayLabel": "REDD+ 결과기반지불 · FCPF 잉여분 추가 이전량",
+      "indicatorId": "C-024_redd_rbp_fcpf_additional_transfer",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e11e1041c3ca",
+        "labelKo": "REDD+ 결과기반지불",
+        "unit": "MtCO₂e",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-e11e1041c3ca|MtCO₂e|category=FCPF 잉여분 추가 이전량|technology=CTIS-23,CTIS-35|C-024_redd_rbp_fcpf_additional_transfer",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 대체. 지정 URL(Verra Registry)은 민간 크레딧 표준 레지스트리로 REDD+ 국가 이행 정보(FREL/FRL 제출·기술평가·성과기반지불)를 수록하지 않음. 해당 정보는 UNFCCC REDD+ Web Platform 소관이므로 UNFCCC 자료를 출처로 사용. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [정의·범위] 기금별 지표 분리(검토의견 C-024 반영).",
+      "sourceLabel": "REDD+ 결과기반지불 · FCPF 잉여분 추가 이전량",
+      "sourceLabelEn": "Participation Fund 2026",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 대체. 지정 URL(Verra Registry)은 민간 크레딧 표준 레지스트리로 REDD+ 국가 이행 정보(FREL/FRL 제출·기술평가·성과기반지불)를 수록하지 않음. 해당 정보는 UNFCCC REDD+ Web Platform 소관이므로 UNFCCC 자료를 출처로 사용. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [정의·범위] 기금별 지표 분리(검토의견 C-024 반영).",
+      "sourceProvenance": {
+        "elementId": "C-024",
+        "indicatorId": "C-024_redd_rbp_fcpf_additional_transfer",
+        "sourceFileDecoded": "C-024_REDD+ 현황.xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e11e1041c3ca|MtCO₂e",
+      "dimensionLabels": {
+        "category": "FCPF 계약 물량",
+        "technology": "CTIS-23 · CTIS-35"
+      },
+      "dimensions": {
+        "category": "FCPF 계약 물량",
+        "technology": "CTIS-23,CTIS-35"
+      },
+      "displayLabel": "REDD+ 결과기반지불 · FCPF 계약 물량",
+      "indicatorId": "C-024_redd_rbp_fcpf_contracted_volume",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e11e1041c3ca",
+        "labelKo": "REDD+ 결과기반지불",
+        "unit": "MtCO₂e",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-e11e1041c3ca|MtCO₂e|category=FCPF 계약 물량|technology=CTIS-23,CTIS-35|C-024_redd_rbp_fcpf_contracted_volume",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 대체. 지정 URL(Verra Registry)은 민간 크레딧 표준 레지스트리로 REDD+ 국가 이행 정보(FREL/FRL 제출·기술평가·성과기반지불)를 수록하지 않음. 해당 정보는 UNFCCC REDD+ Web Platform 소관이므로 UNFCCC 자료를 출처로 사용. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [정의·범위] 기금별 지표 분리(검토의견 C-024 반영).",
+      "sourceLabel": "REDD+ 결과기반지불 · FCPF 계약 물량",
+      "sourceLabelEn": "Participation Fund 2026",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 대체. 지정 URL(Verra Registry)은 민간 크레딧 표준 레지스트리로 REDD+ 국가 이행 정보(FREL/FRL 제출·기술평가·성과기반지불)를 수록하지 않음. 해당 정보는 UNFCCC REDD+ Web Platform 소관이므로 UNFCCC 자료를 출처로 사용. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [정의·범위] 기금별 지표 분리(검토의견 C-024 반영).",
+      "sourceProvenance": {
+        "elementId": "C-024",
+        "indicatorId": "C-024_redd_rbp_fcpf_contracted_volume",
+        "sourceFileDecoded": "C-024_REDD+ 현황.xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8d8615a3d6dd|백만 USD",
+      "dimensionLabels": {
+        "category": "FCPF 지급액",
+        "technology": "CTIS-23 · CTIS-35"
+      },
+      "dimensions": {
+        "category": "FCPF 지급액",
+        "technology": "CTIS-23,CTIS-35"
+      },
+      "displayLabel": "REDD+ 결과기반지불 · FCPF 지급액",
+      "indicatorId": "C-024_redd_rbp_fcpf_payment_usd",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8d8615a3d6dd",
+        "labelKo": "REDD+ 결과기반지불",
+        "unit": "백만 USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-8d8615a3d6dd|백만 USD|category=FCPF 지급액|technology=CTIS-23,CTIS-35|C-024_redd_rbp_fcpf_payment_usd",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 대체. 지정 URL(Verra Registry)은 민간 크레딧 표준 레지스트리로 REDD+ 국가 이행 정보(FREL/FRL 제출·기술평가·성과기반지불)를 수록하지 않음. 해당 정보는 UNFCCC REDD+ Web Platform 소관이므로 UNFCCC 자료를 출처로 사용. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [정의·범위] 기금별 지표 분리(검토의견 C-024 반영).",
+      "sourceLabel": "REDD+ 결과기반지불 · FCPF 지급액",
+      "sourceLabelEn": "Participation Fund 2026",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 대체. 지정 URL(Verra Registry)은 민간 크레딧 표준 레지스트리로 REDD+ 국가 이행 정보(FREL/FRL 제출·기술평가·성과기반지불)를 수록하지 않음. 해당 정보는 UNFCCC REDD+ Web Platform 소관이므로 UNFCCC 자료를 출처로 사용. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [정의·범위] 기금별 지표 분리(검토의견 C-024 반영).",
+      "sourceProvenance": {
+        "elementId": "C-024",
+        "indicatorId": "C-024_redd_rbp_fcpf_payment_usd",
+        "sourceFileDecoded": "C-024_REDD+ 현황.xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e11e1041c3ca|MtCO₂e",
+      "dimensionLabels": {
+        "category": "FCPF 계약 초과 검증량",
+        "technology": "CTIS-23 · CTIS-35"
+      },
+      "dimensions": {
+        "category": "FCPF 계약 초과 검증량",
+        "technology": "CTIS-23,CTIS-35"
+      },
+      "displayLabel": "REDD+ 결과기반지불 · FCPF 계약 초과 검증량",
+      "indicatorId": "C-024_redd_rbp_fcpf_surplus_volume",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e11e1041c3ca",
+        "labelKo": "REDD+ 결과기반지불",
+        "unit": "MtCO₂e",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-e11e1041c3ca|MtCO₂e|category=FCPF 계약 초과 검증량|technology=CTIS-23,CTIS-35|C-024_redd_rbp_fcpf_surplus_volume",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 대체. 지정 URL(Verra Registry)은 민간 크레딧 표준 레지스트리로 REDD+ 국가 이행 정보(FREL/FRL 제출·기술평가·성과기반지불)를 수록하지 않음. 해당 정보는 UNFCCC REDD+ Web Platform 소관이므로 UNFCCC 자료를 출처로 사용. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [정의·범위] 기금별 지표 분리(검토의견 C-024 반영).",
+      "sourceLabel": "REDD+ 결과기반지불 · FCPF 계약 초과 검증량",
+      "sourceLabelEn": "Participation Fund 2026",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 대체. 지정 URL(Verra Registry)은 민간 크레딧 표준 레지스트리로 REDD+ 국가 이행 정보(FREL/FRL 제출·기술평가·성과기반지불)를 수록하지 않음. 해당 정보는 UNFCCC REDD+ Web Platform 소관이므로 UNFCCC 자료를 출처로 사용. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [정의·범위] 기금별 지표 분리(검토의견 C-024 반영).",
+      "sourceProvenance": {
+        "elementId": "C-024",
+        "indicatorId": "C-024_redd_rbp_fcpf_surplus_volume",
+        "sourceFileDecoded": "C-024_REDD+ 현황.xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e734e0c6ee09|USD/tCO₂e",
+      "dimensionLabels": {
+        "category": "FCPF 단가",
+        "technology": "CTIS-23 · CTIS-35"
+      },
+      "dimensions": {
+        "category": "FCPF 단가",
+        "technology": "CTIS-23,CTIS-35"
+      },
+      "displayLabel": "REDD+ 결과기반지불 · FCPF 단가",
+      "indicatorId": "C-024_redd_rbp_fcpf_unit_price",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e734e0c6ee09",
+        "labelKo": "REDD+ 결과기반지불",
+        "unit": "USD/tCO₂e",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-e734e0c6ee09|USD/tCO₂e|category=FCPF 단가|technology=CTIS-23,CTIS-35|C-024_redd_rbp_fcpf_unit_price",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 대체. 지정 URL(Verra Registry)은 민간 크레딧 표준 레지스트리로 REDD+ 국가 이행 정보(FREL/FRL 제출·기술평가·성과기반지불)를 수록하지 않음. 해당 정보는 UNFCCC REDD+ Web Platform 소관이므로 UNFCCC 자료를 출처로 사용. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [정의·범위] 기금별 지표 분리(검토의견 C-024 반영).",
+      "sourceLabel": "REDD+ 결과기반지불 · FCPF 단가",
+      "sourceLabelEn": "Participation Fund 2026",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 대체. 지정 URL(Verra Registry)은 민간 크레딧 표준 레지스트리로 REDD+ 국가 이행 정보(FREL/FRL 제출·기술평가·성과기반지불)를 수록하지 않음. 해당 정보는 UNFCCC REDD+ Web Platform 소관이므로 UNFCCC 자료를 출처로 사용. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [정의·범위] 기금별 지표 분리(검토의견 C-024 반영).",
+      "sourceProvenance": {
+        "elementId": "C-024",
+        "indicatorId": "C-024_redd_rbp_fcpf_unit_price",
+        "sourceFileDecoded": "C-024_REDD+ 현황.xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8d8615a3d6dd|백만 USD",
+      "dimensionLabels": {
+        "category": "GCF FP294 지급 규모",
+        "technology": "CTIS-23 · CTIS-35"
+      },
+      "dimensions": {
+        "category": "GCF FP294 지급 규모",
+        "technology": "CTIS-23,CTIS-35"
+      },
+      "displayLabel": "REDD+ 결과기반지불 · GCF FP294 지급 규모",
+      "indicatorId": "C-024_redd_rbp_gcf_fp294_amount",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8d8615a3d6dd",
+        "labelKo": "REDD+ 결과기반지불",
+        "unit": "백만 USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-8d8615a3d6dd|백만 USD|category=GCF FP294 지급 규모|technology=CTIS-23,CTIS-35|C-024_redd_rbp_gcf_fp294_amount",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 대체. 지정 URL(Verra Registry)은 민간 크레딧 표준 레지스트리로 REDD+ 국가 이행 정보(FREL/FRL 제출·기술평가·성과기반지불)를 수록하지 않음. 해당 정보는 UNFCCC REDD+ Web Platform 소관이므로 UNFCCC 자료를 출처로 사용. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [정의·범위] 검토의견 C-024 반영으로 기금별 지표 분리. ※원문 내 모순: 동일 출처에서 '미참여' 기재와 RBP 수령액 기재가 상충하여 확인 필요.",
+      "sourceLabel": "REDD+ 결과기반지불 · GCF FP294 지급 규모",
+      "sourceLabelEn": "Participation Fund",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 대체. 지정 URL(Verra Registry)은 민간 크레딧 표준 레지스트리로 REDD+ 국가 이행 정보(FREL/FRL 제출·기술평가·성과기반지불)를 수록하지 않음. 해당 정보는 UNFCCC REDD+ Web Platform 소관이므로 UNFCCC 자료를 출처로 사용. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [정의·범위] 검토의견 C-024 반영으로 기금별 지표 분리. ※원문 내 모순: 동일 출처에서 '미참여' 기재와 RBP 수령액 기재가 상충하여 확인 필요.",
+      "sourceProvenance": {
+        "elementId": "C-024",
+        "indicatorId": "C-024_redd_rbp_gcf_fp294_amount",
+        "sourceFileDecoded": "C-024_REDD+ 현황.xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-c09742d0f4b4|—",
+      "dimensionLabels": {
+        "technology": "CTIS-23 · CTIS-35"
+      },
+      "dimensions": {
+        "technology": "CTIS-23,CTIS-35"
+      },
+      "displayLabel": "세이프가드 정보시스템(SIS) 구축 여부",
+      "indicatorId": "C-024_safeguard_information_system",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-c09742d0f4b4",
+        "labelKo": "세이프가드 정보시스템(SIS) 구축 여부",
+        "unit": "—",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-c09742d0f4b4|—|technology=CTIS-23,CTIS-35|C-024_safeguard_information_system",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 대체. 지정 URL(Verra Registry)은 민간 크레딧 표준 레지스트리로 REDD+ 국가 이행 정보(FREL/FRL 제출·기술평가·성과기반지불)를 수록하지 않음. 해당 정보는 UNFCCC REDD+ Web Platform 소관이므로 UNFCCC 자료를 출처로 사용. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖",
+      "sourceLabel": "세이프가드 정보시스템(SIS) 구축 여부",
+      "sourceLabelEn": "Safeguard Information System",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 대체. 지정 URL(Verra Registry)은 민간 크레딧 표준 레지스트리로 REDD+ 국가 이행 정보(FREL/FRL 제출·기술평가·성과기반지불)를 수록하지 않음. 해당 정보는 UNFCCC REDD+ Web Platform 소관이므로 UNFCCC 자료를 출처로 사용. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖",
+      "sourceProvenance": {
+        "elementId": "C-024",
+        "indicatorId": "C-024_safeguard_information_system",
+        "sourceFileDecoded": "C-024_REDD+ 현황.xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-381e69461a36",
+      "labelKo": "FREL/FRL 제출 여부",
+      "recordCount": 1,
+      "unit": "—",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-963d69cff1d4",
+      "labelKo": "RBP 검증 배출감축량",
+      "recordCount": 1,
+      "unit": "MtCO₂e",
+      "unitFamily": "emissions"
+    },
+    {
+      "indicatorCount": 3,
+      "key": "measure-e11e1041c3ca",
+      "labelKo": "REDD+ 결과기반지불",
+      "recordCount": 3,
+      "unit": "MtCO₂e",
+      "unitFamily": "emissions"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-e734e0c6ee09",
+      "labelKo": "REDD+ 결과기반지불",
+      "recordCount": 1,
+      "unit": "USD/tCO₂e",
+      "unitFamily": "emissions"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-8d8615a3d6dd",
+      "labelKo": "REDD+ 결과기반지불",
+      "recordCount": 2,
+      "unit": "백만 USD",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-a50c7dfd9256",
+      "labelKo": "REDD+ 국가전략 수립 여부",
+      "recordCount": 1,
+      "unit": "—",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-c09742d0f4b4",
+      "labelKo": "세이프가드 정보시스템(SIS) 구축 여부",
+      "recordCount": 1,
+      "unit": "—",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-d34419e26e01",
+      "labelKo": "수정 FRL 값",
+      "recordCount": 1,
+      "unit": "tCO₂e/yr",
+      "unitFamily": "emissions"
+    },
+    {
+      "indicatorCount": 3,
+      "key": "measure-cca85d431886",
+      "labelKo": "참여 기금",
+      "recordCount": 3,
+      "unit": "—",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 14,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

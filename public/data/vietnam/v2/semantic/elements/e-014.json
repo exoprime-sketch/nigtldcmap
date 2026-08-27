@@ -1,0 +1,76 @@
+{
+  "dimensions": [
+    {
+      "key": "agreementType",
+      "labelKo": "agreementType",
+      "valueCount": 2,
+      "values": [
+        "기후변화 협력 공동위원회(JWG)",
+        "기후변화 협력 기본협정 (파리협정 6.2조 근거)"
+      ]
+    },
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    },
+    {
+      "key": "status",
+      "labelKo": "status",
+      "valueCount": 2,
+      "values": [
+        "발효",
+        "운영 중"
+      ]
+    }
+  ],
+  "elementId": "E-014",
+  "entityCount": 2,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 1,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-5fe34e112d41|건(협정)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "양자협정 현황",
+      "indicatorId": "E-014_bilateral_agreement",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5fe34e112d41",
+        "labelKo": "양자협정 현황",
+        "unit": "건(협정)",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-5fe34e112d41|건(협정)||E-014_bilateral_agreement",
+      "sourceCaveat": null,
+      "sourceLabel": "양자협정 현황",
+      "sourceLabelEn": "Bilateral climate cooperation agreements",
+      "sourceNote": "라이선스·라이선스 URL·최종갱신일·수집일·담당자·검증자 미확인(M06). 레코드 값 자체의 결측은 없음.",
+      "sourceProvenance": {
+        "elementId": "E-014",
+        "indicatorId": "E-014_bilateral_agreement",
+        "sourceFileDecoded": "E-014_양자협정 현황.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-5fe34e112d41",
+      "labelKo": "양자협정 현황",
+      "recordCount": 0,
+      "unit": "건(협정)",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

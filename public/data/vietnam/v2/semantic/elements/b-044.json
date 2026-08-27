@@ -1,0 +1,910 @@
+{
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 19,
+      "values": [
+        "구리",
+        "납-아연",
+        "니켈",
+        "리튬",
+        "망간",
+        "보크사이트",
+        "안티모니",
+        "인광석",
+        "인광석(아파타이트)",
+        "주석",
+        "철",
+        "코발트",
+        "크로마이트",
+        "텅스텐",
+        "티타늄광물",
+        "티타늄광물(미가공)",
+        "형석",
+        "흑연",
+        "희토류"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "1,3,18,24"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2026"
+      ]
+    }
+  ],
+  "elementId": "B-044",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 26,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-befc79f3731c|해당 여부",
+      "dimensionLabels": {
+        "detail": "납-아연",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "납-아연",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "원광 수출규제 대상 광종 — 납-아연",
+      "indicatorId": "B-044_export_ban_minerals_g01",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-befc79f3731c",
+        "labelKo": "원광 수출규제 대상 광종",
+        "unit": "해당 여부",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-befc79f3731c|해당 여부|detail=납-아연|technology=1,3,18,24|B-044_export_ban_minerals_g01",
+      "sourceCaveat": "[신규 수록 — 부존 근거 보강] USGS MCS 2026 Table 4(인쇄 쪽 16)는 베트남이 2012년부터 아파타이트·크로마이트·철·납아연·망간·희토류·미가공 티타늄 7종의 **원광 수출을 금지**하고 있음을 명시함. 이는 (가) 해당 7종이 베트남에 실제로 부존·채굴되고 있음을 USGS 1차 자료로 뒷받침하고, (나) 국가별 생산·매장 표에 베트남 행이 없는 망간·크로마이트·철·납아연의 부존 근거를 제공하며, (다) 원광 수출이 금지되어 있어 교역통계 기반 추정이 어렵다는 점에서 해당 광종의 정량 결측 사유를 설명함. 기술이전·공급망 전략 검토 시 규제 요인으로 함께 고려할 필요가 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "원광 수출규제 대상 광종 — 납-아연",
+      "sourceLabelEn": "Minerals under raw-material export ban",
+      "sourceNote": "[신규 수록 — 부존 근거 보강] USGS MCS 2026 Table 4(인쇄 쪽 16)는 베트남이 2012년부터 아파타이트·크로마이트·철·납아연·망간·희토류·미가공 티타늄 7종의 **원광 수출을 금지**하고 있음을 명시함. 이는 (가) 해당 7종이 베트남에 실제로 부존·채굴되고 있음을 USGS 1차 자료로 뒷받침하고, (나) 국가별 생산·매장 표에 베트남 행이 없는 망간·크로마이트·철·납아연의 부존 근거를 제공하며, (다) 원광 수출이 금지되어 있어 교역통계 기반 추정이 어렵다는 점에서 해당 광종의 정량 결측 사유를 설명함. 기술이전·공급망 전략 검토 시 규제 요인으로 함께 고려할 필요가 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-044",
+        "indicatorId": "B-044_export_ban_minerals_g01",
+        "sourceFileDecoded": "B-044_광물명(리튬／코발트／니켈／구리／희토류／망간).xlsx",
+        "sourceRow": 4,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-befc79f3731c|해당 여부",
+      "dimensionLabels": {
+        "detail": "인광석(아파타이트)",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "인광석(아파타이트)",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "원광 수출규제 대상 광종 — 인광석(아파타이트)",
+      "indicatorId": "B-044_export_ban_minerals_g03",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-befc79f3731c",
+        "labelKo": "원광 수출규제 대상 광종",
+        "unit": "해당 여부",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-befc79f3731c|해당 여부|detail=인광석(아파타이트)|technology=1,3,18,24|B-044_export_ban_minerals_g03",
+      "sourceCaveat": "[신규 수록 — 부존 근거 보강] USGS MCS 2026 Table 4(인쇄 쪽 16)는 베트남이 2012년부터 아파타이트·크로마이트·철·납아연·망간·희토류·미가공 티타늄 7종의 **원광 수출을 금지**하고 있음을 명시함. 이는 (가) 해당 7종이 베트남에 실제로 부존·채굴되고 있음을 USGS 1차 자료로 뒷받침하고, (나) 국가별 생산·매장 표에 베트남 행이 없는 망간·크로마이트·철·납아연의 부존 근거를 제공하며, (다) 원광 수출이 금지되어 있어 교역통계 기반 추정이 어렵다는 점에서 해당 광종의 정량 결측 사유를 설명함. 기술이전·공급망 전략 검토 시 규제 요인으로 함께 고려할 필요가 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "원광 수출규제 대상 광종 — 인광석(아파타이트)",
+      "sourceLabelEn": "Minerals under raw-material export ban",
+      "sourceNote": "[신규 수록 — 부존 근거 보강] USGS MCS 2026 Table 4(인쇄 쪽 16)는 베트남이 2012년부터 아파타이트·크로마이트·철·납아연·망간·희토류·미가공 티타늄 7종의 **원광 수출을 금지**하고 있음을 명시함. 이는 (가) 해당 7종이 베트남에 실제로 부존·채굴되고 있음을 USGS 1차 자료로 뒷받침하고, (나) 국가별 생산·매장 표에 베트남 행이 없는 망간·크로마이트·철·납아연의 부존 근거를 제공하며, (다) 원광 수출이 금지되어 있어 교역통계 기반 추정이 어렵다는 점에서 해당 광종의 정량 결측 사유를 설명함. 기술이전·공급망 전략 검토 시 규제 요인으로 함께 고려할 필요가 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-044",
+        "indicatorId": "B-044_export_ban_minerals_g03",
+        "sourceFileDecoded": "B-044_광물명(리튬／코발트／니켈／구리／희토류／망간).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-befc79f3731c|해당 여부",
+      "dimensionLabels": {
+        "detail": "철",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "철",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "원광 수출규제 대상 광종 — 철",
+      "indicatorId": "B-044_export_ban_minerals_g04",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-befc79f3731c",
+        "labelKo": "원광 수출규제 대상 광종",
+        "unit": "해당 여부",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-befc79f3731c|해당 여부|detail=철|technology=1,3,18,24|B-044_export_ban_minerals_g04",
+      "sourceCaveat": "[신규 수록 — 부존 근거 보강] USGS MCS 2026 Table 4(인쇄 쪽 16)는 베트남이 2012년부터 아파타이트·크로마이트·철·납아연·망간·희토류·미가공 티타늄 7종의 **원광 수출을 금지**하고 있음을 명시함. 이는 (가) 해당 7종이 베트남에 실제로 부존·채굴되고 있음을 USGS 1차 자료로 뒷받침하고, (나) 국가별 생산·매장 표에 베트남 행이 없는 망간·크로마이트·철·납아연의 부존 근거를 제공하며, (다) 원광 수출이 금지되어 있어 교역통계 기반 추정이 어렵다는 점에서 해당 광종의 정량 결측 사유를 설명함. 기술이전·공급망 전략 검토 시 규제 요인으로 함께 고려할 필요가 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "원광 수출규제 대상 광종 — 철",
+      "sourceLabelEn": "Minerals under raw-material export ban",
+      "sourceNote": "[신규 수록 — 부존 근거 보강] USGS MCS 2026 Table 4(인쇄 쪽 16)는 베트남이 2012년부터 아파타이트·크로마이트·철·납아연·망간·희토류·미가공 티타늄 7종의 **원광 수출을 금지**하고 있음을 명시함. 이는 (가) 해당 7종이 베트남에 실제로 부존·채굴되고 있음을 USGS 1차 자료로 뒷받침하고, (나) 국가별 생산·매장 표에 베트남 행이 없는 망간·크로마이트·철·납아연의 부존 근거를 제공하며, (다) 원광 수출이 금지되어 있어 교역통계 기반 추정이 어렵다는 점에서 해당 광종의 정량 결측 사유를 설명함. 기술이전·공급망 전략 검토 시 규제 요인으로 함께 고려할 필요가 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-044",
+        "indicatorId": "B-044_export_ban_minerals_g04",
+        "sourceFileDecoded": "B-044_광물명(리튬／코발트／니켈／구리／희토류／망간).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-befc79f3731c|해당 여부",
+      "dimensionLabels": {
+        "detail": "크로마이트",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "크로마이트",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "원광 수출규제 대상 광종 — 크로마이트",
+      "indicatorId": "B-044_export_ban_minerals_g05",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-befc79f3731c",
+        "labelKo": "원광 수출규제 대상 광종",
+        "unit": "해당 여부",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-befc79f3731c|해당 여부|detail=크로마이트|technology=1,3,18,24|B-044_export_ban_minerals_g05",
+      "sourceCaveat": "[신규 수록 — 부존 근거 보강] USGS MCS 2026 Table 4(인쇄 쪽 16)는 베트남이 2012년부터 아파타이트·크로마이트·철·납아연·망간·희토류·미가공 티타늄 7종의 **원광 수출을 금지**하고 있음을 명시함. 이는 (가) 해당 7종이 베트남에 실제로 부존·채굴되고 있음을 USGS 1차 자료로 뒷받침하고, (나) 국가별 생산·매장 표에 베트남 행이 없는 망간·크로마이트·철·납아연의 부존 근거를 제공하며, (다) 원광 수출이 금지되어 있어 교역통계 기반 추정이 어렵다는 점에서 해당 광종의 정량 결측 사유를 설명함. 기술이전·공급망 전략 검토 시 규제 요인으로 함께 고려할 필요가 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "원광 수출규제 대상 광종 — 크로마이트",
+      "sourceLabelEn": "Minerals under raw-material export ban",
+      "sourceNote": "[신규 수록 — 부존 근거 보강] USGS MCS 2026 Table 4(인쇄 쪽 16)는 베트남이 2012년부터 아파타이트·크로마이트·철·납아연·망간·희토류·미가공 티타늄 7종의 **원광 수출을 금지**하고 있음을 명시함. 이는 (가) 해당 7종이 베트남에 실제로 부존·채굴되고 있음을 USGS 1차 자료로 뒷받침하고, (나) 국가별 생산·매장 표에 베트남 행이 없는 망간·크로마이트·철·납아연의 부존 근거를 제공하며, (다) 원광 수출이 금지되어 있어 교역통계 기반 추정이 어렵다는 점에서 해당 광종의 정량 결측 사유를 설명함. 기술이전·공급망 전략 검토 시 규제 요인으로 함께 고려할 필요가 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-044",
+        "indicatorId": "B-044_export_ban_minerals_g05",
+        "sourceFileDecoded": "B-044_광물명(리튬／코발트／니켈／구리／희토류／망간).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-befc79f3731c|해당 여부",
+      "dimensionLabels": {
+        "detail": "티타늄광물(미가공)",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "티타늄광물(미가공)",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "원광 수출규제 대상 광종 — 티타늄광물(미가공)",
+      "indicatorId": "B-044_export_ban_minerals_g06",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-befc79f3731c",
+        "labelKo": "원광 수출규제 대상 광종",
+        "unit": "해당 여부",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-befc79f3731c|해당 여부|detail=티타늄광물(미가공)|technology=1,3,18,24|B-044_export_ban_minerals_g06",
+      "sourceCaveat": "[신규 수록 — 부존 근거 보강] USGS MCS 2026 Table 4(인쇄 쪽 16)는 베트남이 2012년부터 아파타이트·크로마이트·철·납아연·망간·희토류·미가공 티타늄 7종의 **원광 수출을 금지**하고 있음을 명시함. 이는 (가) 해당 7종이 베트남에 실제로 부존·채굴되고 있음을 USGS 1차 자료로 뒷받침하고, (나) 국가별 생산·매장 표에 베트남 행이 없는 망간·크로마이트·철·납아연의 부존 근거를 제공하며, (다) 원광 수출이 금지되어 있어 교역통계 기반 추정이 어렵다는 점에서 해당 광종의 정량 결측 사유를 설명함. 기술이전·공급망 전략 검토 시 규제 요인으로 함께 고려할 필요가 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "원광 수출규제 대상 광종 — 티타늄광물(미가공)",
+      "sourceLabelEn": "Minerals under raw-material export ban",
+      "sourceNote": "[신규 수록 — 부존 근거 보강] USGS MCS 2026 Table 4(인쇄 쪽 16)는 베트남이 2012년부터 아파타이트·크로마이트·철·납아연·망간·희토류·미가공 티타늄 7종의 **원광 수출을 금지**하고 있음을 명시함. 이는 (가) 해당 7종이 베트남에 실제로 부존·채굴되고 있음을 USGS 1차 자료로 뒷받침하고, (나) 국가별 생산·매장 표에 베트남 행이 없는 망간·크로마이트·철·납아연의 부존 근거를 제공하며, (다) 원광 수출이 금지되어 있어 교역통계 기반 추정이 어렵다는 점에서 해당 광종의 정량 결측 사유를 설명함. 기술이전·공급망 전략 검토 시 규제 요인으로 함께 고려할 필요가 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-044",
+        "indicatorId": "B-044_export_ban_minerals_g06",
+        "sourceFileDecoded": "B-044_광물명(리튬／코발트／니켈／구리／희토류／망간).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-befc79f3731c|해당 여부",
+      "dimensionLabels": {
+        "detail": "망간",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "망간",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "원광 수출규제 대상 광종 — 망간",
+      "indicatorId": "B-044_export_ban_minerals_manganese",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-befc79f3731c",
+        "labelKo": "원광 수출규제 대상 광종",
+        "unit": "해당 여부",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-befc79f3731c|해당 여부|detail=망간|technology=1,3,18,24|B-044_export_ban_minerals_manganese",
+      "sourceCaveat": "[신규 수록 — 부존 근거 보강] USGS MCS 2026 Table 4(인쇄 쪽 16)는 베트남이 2012년부터 아파타이트·크로마이트·철·납아연·망간·희토류·미가공 티타늄 7종의 **원광 수출을 금지**하고 있음을 명시함. 이는 (가) 해당 7종이 베트남에 실제로 부존·채굴되고 있음을 USGS 1차 자료로 뒷받침하고, (나) 국가별 생산·매장 표에 베트남 행이 없는 망간·크로마이트·철·납아연의 부존 근거를 제공하며, (다) 원광 수출이 금지되어 있어 교역통계 기반 추정이 어렵다는 점에서 해당 광종의 정량 결측 사유를 설명함. 기술이전·공급망 전략 검토 시 규제 요인으로 함께 고려할 필요가 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "원광 수출규제 대상 광종 — 망간",
+      "sourceLabelEn": "Minerals under raw-material export ban",
+      "sourceNote": "[신규 수록 — 부존 근거 보강] USGS MCS 2026 Table 4(인쇄 쪽 16)는 베트남이 2012년부터 아파타이트·크로마이트·철·납아연·망간·희토류·미가공 티타늄 7종의 **원광 수출을 금지**하고 있음을 명시함. 이는 (가) 해당 7종이 베트남에 실제로 부존·채굴되고 있음을 USGS 1차 자료로 뒷받침하고, (나) 국가별 생산·매장 표에 베트남 행이 없는 망간·크로마이트·철·납아연의 부존 근거를 제공하며, (다) 원광 수출이 금지되어 있어 교역통계 기반 추정이 어렵다는 점에서 해당 광종의 정량 결측 사유를 설명함. 기술이전·공급망 전략 검토 시 규제 요인으로 함께 고려할 필요가 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-044",
+        "indicatorId": "B-044_export_ban_minerals_manganese",
+        "sourceFileDecoded": "B-044_광물명(리튬／코발트／니켈／구리／희토류／망간).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-befc79f3731c|해당 여부",
+      "dimensionLabels": {
+        "detail": "희토류",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "희토류",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "원광 수출규제 대상 광종 — 희토류",
+      "indicatorId": "B-044_export_ban_minerals_rare_earths",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-befc79f3731c",
+        "labelKo": "원광 수출규제 대상 광종",
+        "unit": "해당 여부",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-befc79f3731c|해당 여부|detail=희토류|technology=1,3,18,24|B-044_export_ban_minerals_rare_earths",
+      "sourceCaveat": "[신규 수록 — 부존 근거 보강] USGS MCS 2026 Table 4(인쇄 쪽 16)는 베트남이 2012년부터 아파타이트·크로마이트·철·납아연·망간·희토류·미가공 티타늄 7종의 **원광 수출을 금지**하고 있음을 명시함. 이는 (가) 해당 7종이 베트남에 실제로 부존·채굴되고 있음을 USGS 1차 자료로 뒷받침하고, (나) 국가별 생산·매장 표에 베트남 행이 없는 망간·크로마이트·철·납아연의 부존 근거를 제공하며, (다) 원광 수출이 금지되어 있어 교역통계 기반 추정이 어렵다는 점에서 해당 광종의 정량 결측 사유를 설명함. 기술이전·공급망 전략 검토 시 규제 요인으로 함께 고려할 필요가 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "원광 수출규제 대상 광종 — 희토류",
+      "sourceLabelEn": "Minerals under raw-material export ban",
+      "sourceNote": "[신규 수록 — 부존 근거 보강] USGS MCS 2026 Table 4(인쇄 쪽 16)는 베트남이 2012년부터 아파타이트·크로마이트·철·납아연·망간·희토류·미가공 티타늄 7종의 **원광 수출을 금지**하고 있음을 명시함. 이는 (가) 해당 7종이 베트남에 실제로 부존·채굴되고 있음을 USGS 1차 자료로 뒷받침하고, (나) 국가별 생산·매장 표에 베트남 행이 없는 망간·크로마이트·철·납아연의 부존 근거를 제공하며, (다) 원광 수출이 금지되어 있어 교역통계 기반 추정이 어렵다는 점에서 해당 광종의 정량 결측 사유를 설명함. 기술이전·공급망 전략 검토 시 규제 요인으로 함께 고려할 필요가 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-044",
+        "indicatorId": "B-044_export_ban_minerals_rare_earths",
+        "sourceFileDecoded": "B-044_광물명(리튬／코발트／니켈／구리／희토류／망간).xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a316b3573a2e|—",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "현지조사 결과 반영",
+      "indicatorId": "B-044_field_survey",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a316b3573a2e",
+        "labelKo": "현지조사 결과 반영",
+        "unit": "—",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a316b3573a2e|—||B-044_field_survey",
+      "sourceCaveat": "[값 확인] 종전 파일에 현지조사 반영 여부가 불명확했음. 확인 결과 **현지조사 결과는 본 요소에 반영되어 있지 않음**. 현지조사 수행 시 원데이터·출처·조사방법·조사시점·응답기관을 함께 제출하겠습니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "현지조사 결과 반영",
+      "sourceLabelEn": "Field survey findings",
+      "sourceNote": "2026년: 현지조사 데이터 미반영 — 조사 방법·시점·응답기관 정보와 함께 원데이터 제출 예정(Q-028)",
+      "sourceProvenance": {
+        "elementId": "B-044",
+        "indicatorId": "B-044_field_survey",
+        "sourceFileDecoded": "B-044_광물명(리튬／코발트／니켈／구리／희토류／망간).xlsx",
+        "sourceRow": 28,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-796bc07af80c|상태",
+      "dimensionLabels": {
+        "detail": "안티모니",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "안티모니",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "핵심광물 부존 상태 — 안티모니",
+      "indicatorId": "B-044_mineral_presence_antimony",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-796bc07af80c",
+        "labelKo": "핵심광물 부존 상태",
+        "unit": "상태",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-796bc07af80c|상태|detail=안티모니|technology=1,3,18,24|B-044_mineral_presence_antimony",
+      "sourceCaveat": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "핵심광물 부존 상태 — 안티모니",
+      "sourceLabelEn": "Critical mineral occurrence status",
+      "sourceNote": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-044",
+        "indicatorId": "B-044_mineral_presence_antimony",
+        "sourceFileDecoded": "B-044_광물명(리튬／코발트／니켈／구리／희토류／망간).xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-796bc07af80c|상태",
+      "dimensionLabels": {
+        "detail": "보크사이트",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "보크사이트",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "핵심광물 부존 상태 — 보크사이트",
+      "indicatorId": "B-044_mineral_presence_bauxite",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-796bc07af80c",
+        "labelKo": "핵심광물 부존 상태",
+        "unit": "상태",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-796bc07af80c|상태|detail=보크사이트|technology=1,3,18,24|B-044_mineral_presence_bauxite",
+      "sourceCaveat": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "핵심광물 부존 상태 — 보크사이트",
+      "sourceLabelEn": "Critical mineral occurrence status",
+      "sourceNote": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-044",
+        "indicatorId": "B-044_mineral_presence_bauxite",
+        "sourceFileDecoded": "B-044_광물명(리튬／코발트／니켈／구리／희토류／망간).xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-796bc07af80c|상태",
+      "dimensionLabels": {
+        "detail": "코발트",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "코발트",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "핵심광물 부존 상태 — 코발트",
+      "indicatorId": "B-044_mineral_presence_cobalt",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-796bc07af80c",
+        "labelKo": "핵심광물 부존 상태",
+        "unit": "상태",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-796bc07af80c|상태|detail=코발트|technology=1,3,18,24|B-044_mineral_presence_cobalt",
+      "sourceCaveat": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "핵심광물 부존 상태 — 코발트",
+      "sourceLabelEn": "Critical mineral occurrence status",
+      "sourceNote": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-044",
+        "indicatorId": "B-044_mineral_presence_cobalt",
+        "sourceFileDecoded": "B-044_광물명(리튬／코발트／니켈／구리／희토류／망간).xlsx",
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-796bc07af80c|상태",
+      "dimensionLabels": {
+        "detail": "구리",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "구리",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "핵심광물 부존 상태 — 구리",
+      "indicatorId": "B-044_mineral_presence_copper",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-796bc07af80c",
+        "labelKo": "핵심광물 부존 상태",
+        "unit": "상태",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-796bc07af80c|상태|detail=구리|technology=1,3,18,24|B-044_mineral_presence_copper",
+      "sourceCaveat": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "핵심광물 부존 상태 — 구리",
+      "sourceLabelEn": "Critical mineral occurrence status",
+      "sourceNote": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-044",
+        "indicatorId": "B-044_mineral_presence_copper",
+        "sourceFileDecoded": "B-044_광물명(리튬／코발트／니켈／구리／희토류／망간).xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-796bc07af80c|상태",
+      "dimensionLabels": {
+        "detail": "형석",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "형석",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "핵심광물 부존 상태 — 형석",
+      "indicatorId": "B-044_mineral_presence_fluorspar",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-796bc07af80c",
+        "labelKo": "핵심광물 부존 상태",
+        "unit": "상태",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-796bc07af80c|상태|detail=형석|technology=1,3,18,24|B-044_mineral_presence_fluorspar",
+      "sourceCaveat": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "핵심광물 부존 상태 — 형석",
+      "sourceLabelEn": "Critical mineral occurrence status",
+      "sourceNote": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-044",
+        "indicatorId": "B-044_mineral_presence_fluorspar",
+        "sourceFileDecoded": "B-044_광물명(리튬／코발트／니켈／구리／희토류／망간).xlsx",
+        "sourceRow": 25,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-796bc07af80c|상태",
+      "dimensionLabels": {
+        "detail": "납-아연",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "납-아연",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "핵심광물 부존 상태 — 납-아연",
+      "indicatorId": "B-044_mineral_presence_g02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-796bc07af80c",
+        "labelKo": "핵심광물 부존 상태",
+        "unit": "상태",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-796bc07af80c|상태|detail=납-아연|technology=1,3,18,24|B-044_mineral_presence_g02",
+      "sourceCaveat": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "핵심광물 부존 상태 — 납-아연",
+      "sourceLabelEn": "Critical mineral occurrence status",
+      "sourceNote": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-044",
+        "indicatorId": "B-044_mineral_presence_g02",
+        "sourceFileDecoded": "B-044_광물명(리튬／코발트／니켈／구리／희토류／망간).xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-796bc07af80c|상태",
+      "dimensionLabels": {
+        "detail": "철",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "철",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "핵심광물 부존 상태 — 철",
+      "indicatorId": "B-044_mineral_presence_g10",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-796bc07af80c",
+        "labelKo": "핵심광물 부존 상태",
+        "unit": "상태",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-796bc07af80c|상태|detail=철|technology=1,3,18,24|B-044_mineral_presence_g10",
+      "sourceCaveat": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "핵심광물 부존 상태 — 철",
+      "sourceLabelEn": "Critical mineral occurrence status",
+      "sourceNote": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-044",
+        "indicatorId": "B-044_mineral_presence_g10",
+        "sourceFileDecoded": "B-044_광물명(리튬／코발트／니켈／구리／희토류／망간).xlsx",
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-796bc07af80c|상태",
+      "dimensionLabels": {
+        "detail": "크로마이트",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "크로마이트",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "핵심광물 부존 상태 — 크로마이트",
+      "indicatorId": "B-044_mineral_presence_g12",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-796bc07af80c",
+        "labelKo": "핵심광물 부존 상태",
+        "unit": "상태",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-796bc07af80c|상태|detail=크로마이트|technology=1,3,18,24|B-044_mineral_presence_g12",
+      "sourceCaveat": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "핵심광물 부존 상태 — 크로마이트",
+      "sourceLabelEn": "Critical mineral occurrence status",
+      "sourceNote": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-044",
+        "indicatorId": "B-044_mineral_presence_g12",
+        "sourceFileDecoded": "B-044_광물명(리튬／코발트／니켈／구리／희토류／망간).xlsx",
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-796bc07af80c|상태",
+      "dimensionLabels": {
+        "detail": "흑연",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "흑연",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "핵심광물 부존 상태 — 흑연",
+      "indicatorId": "B-044_mineral_presence_graphite",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-796bc07af80c",
+        "labelKo": "핵심광물 부존 상태",
+        "unit": "상태",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-796bc07af80c|상태|detail=흑연|technology=1,3,18,24|B-044_mineral_presence_graphite",
+      "sourceCaveat": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "핵심광물 부존 상태 — 흑연",
+      "sourceLabelEn": "Critical mineral occurrence status",
+      "sourceNote": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-044",
+        "indicatorId": "B-044_mineral_presence_graphite",
+        "sourceFileDecoded": "B-044_광물명(리튬／코발트／니켈／구리／희토류／망간).xlsx",
+        "sourceRow": 26,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-796bc07af80c|상태",
+      "dimensionLabels": {
+        "detail": "리튬",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "리튬",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "핵심광물 부존 상태 — 리튬",
+      "indicatorId": "B-044_mineral_presence_lithium",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-796bc07af80c",
+        "labelKo": "핵심광물 부존 상태",
+        "unit": "상태",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-796bc07af80c|상태|detail=리튬|technology=1,3,18,24|B-044_mineral_presence_lithium",
+      "sourceCaveat": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "핵심광물 부존 상태 — 리튬",
+      "sourceLabelEn": "Critical mineral occurrence status",
+      "sourceNote": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-044",
+        "indicatorId": "B-044_mineral_presence_lithium",
+        "sourceFileDecoded": "B-044_광물명(리튬／코발트／니켈／구리／희토류／망간).xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-796bc07af80c|상태",
+      "dimensionLabels": {
+        "detail": "망간",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "망간",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "핵심광물 부존 상태 — 망간",
+      "indicatorId": "B-044_mineral_presence_manganese",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-796bc07af80c",
+        "labelKo": "핵심광물 부존 상태",
+        "unit": "상태",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-796bc07af80c|상태|detail=망간|technology=1,3,18,24|B-044_mineral_presence_manganese",
+      "sourceCaveat": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "핵심광물 부존 상태 — 망간",
+      "sourceLabelEn": "Critical mineral occurrence status",
+      "sourceNote": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-044",
+        "indicatorId": "B-044_mineral_presence_manganese",
+        "sourceFileDecoded": "B-044_광물명(리튬／코발트／니켈／구리／희토류／망간).xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-796bc07af80c|상태",
+      "dimensionLabels": {
+        "detail": "니켈",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "니켈",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "핵심광물 부존 상태 — 니켈",
+      "indicatorId": "B-044_mineral_presence_nickel",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-796bc07af80c",
+        "labelKo": "핵심광물 부존 상태",
+        "unit": "상태",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-796bc07af80c|상태|detail=니켈|technology=1,3,18,24|B-044_mineral_presence_nickel",
+      "sourceCaveat": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "핵심광물 부존 상태 — 니켈",
+      "sourceLabelEn": "Critical mineral occurrence status",
+      "sourceNote": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-044",
+        "indicatorId": "B-044_mineral_presence_nickel",
+        "sourceFileDecoded": "B-044_광물명(리튬／코발트／니켈／구리／희토류／망간).xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-796bc07af80c|상태",
+      "dimensionLabels": {
+        "detail": "인광석",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "인광석",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "핵심광물 부존 상태 — 인광석",
+      "indicatorId": "B-044_mineral_presence_phosphate",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-796bc07af80c",
+        "labelKo": "핵심광물 부존 상태",
+        "unit": "상태",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-796bc07af80c|상태|detail=인광석|technology=1,3,18,24|B-044_mineral_presence_phosphate",
+      "sourceCaveat": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "핵심광물 부존 상태 — 인광석",
+      "sourceLabelEn": "Critical mineral occurrence status",
+      "sourceNote": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-044",
+        "indicatorId": "B-044_mineral_presence_phosphate",
+        "sourceFileDecoded": "B-044_광물명(리튬／코발트／니켈／구리／희토류／망간).xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-796bc07af80c|상태",
+      "dimensionLabels": {
+        "detail": "희토류",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "희토류",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "핵심광물 부존 상태 — 희토류",
+      "indicatorId": "B-044_mineral_presence_rare_earths",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-796bc07af80c",
+        "labelKo": "핵심광물 부존 상태",
+        "unit": "상태",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-796bc07af80c|상태|detail=희토류|technology=1,3,18,24|B-044_mineral_presence_rare_earths",
+      "sourceCaveat": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "핵심광물 부존 상태 — 희토류",
+      "sourceLabelEn": "Critical mineral occurrence status",
+      "sourceNote": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-044",
+        "indicatorId": "B-044_mineral_presence_rare_earths",
+        "sourceFileDecoded": "B-044_광물명(리튬／코발트／니켈／구리／희토류／망간).xlsx",
+        "sourceRow": 27,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-796bc07af80c|상태",
+      "dimensionLabels": {
+        "detail": "주석",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "주석",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "핵심광물 부존 상태 — 주석",
+      "indicatorId": "B-044_mineral_presence_tin",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-796bc07af80c",
+        "labelKo": "핵심광물 부존 상태",
+        "unit": "상태",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-796bc07af80c|상태|detail=주석|technology=1,3,18,24|B-044_mineral_presence_tin",
+      "sourceCaveat": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "핵심광물 부존 상태 — 주석",
+      "sourceLabelEn": "Critical mineral occurrence status",
+      "sourceNote": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-044",
+        "indicatorId": "B-044_mineral_presence_tin",
+        "sourceFileDecoded": "B-044_광물명(리튬／코발트／니켈／구리／희토류／망간).xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-796bc07af80c|상태",
+      "dimensionLabels": {
+        "detail": "티타늄광물",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "티타늄광물",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "핵심광물 부존 상태 — 티타늄광물",
+      "indicatorId": "B-044_mineral_presence_titanium",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-796bc07af80c",
+        "labelKo": "핵심광물 부존 상태",
+        "unit": "상태",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-796bc07af80c|상태|detail=티타늄광물|technology=1,3,18,24|B-044_mineral_presence_titanium",
+      "sourceCaveat": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "핵심광물 부존 상태 — 티타늄광물",
+      "sourceLabelEn": "Critical mineral occurrence status",
+      "sourceNote": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-044",
+        "indicatorId": "B-044_mineral_presence_titanium",
+        "sourceFileDecoded": "B-044_광물명(리튬／코발트／니켈／구리／희토류／망간).xlsx",
+        "sourceRow": 24,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-796bc07af80c|상태",
+      "dimensionLabels": {
+        "detail": "텅스텐",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "텅스텐",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "핵심광물 부존 상태 — 텅스텐",
+      "indicatorId": "B-044_mineral_presence_tungsten",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-796bc07af80c",
+        "labelKo": "핵심광물 부존 상태",
+        "unit": "상태",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-796bc07af80c|상태|detail=텅스텐|technology=1,3,18,24|B-044_mineral_presence_tungsten",
+      "sourceCaveat": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "핵심광물 부존 상태 — 텅스텐",
+      "sourceLabelEn": "Critical mineral occurrence status",
+      "sourceNote": "[정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-044",
+        "indicatorId": "B-044_mineral_presence_tungsten",
+        "sourceFileDecoded": "B-044_광물명(리튬／코발트／니켈／구리／희토류／망간).xlsx",
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4b0020774e59|—",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "10개국 기준광물 목록",
+      "indicatorId": "B-044_reference_minerals_10c",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4b0020774e59",
+        "labelKo": "10개국 기준광물 목록",
+        "unit": "—",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-4b0020774e59|—||B-044_reference_minerals_10c",
+      "sourceCaveat": "[커버리지 확대] 검토의견대로 10개국 공통 기준광물을 먼저 정하고 국가별로 값을 채우는 방식을 채택하겠습니다. 1차 제안: 에너지전환 핵심광물 중심 12종(리튬·코발트·니켈·구리·망간·흑연·희토류·백금족·티타늄·주석·텅스텐·보크사이트). 발주처 확정 후 10개국 × 12종 매트릭스로 재구성 예정. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "10개국 기준광물 목록",
+      "sourceLabelEn": "Reference critical mineral list for 10 countries",
+      "sourceNote": "2026년: 기준광물 목록 확정 전 — 발주처 협의 후 확정 예정",
+      "sourceProvenance": {
+        "elementId": "B-044",
+        "indicatorId": "B-044_reference_minerals_10c",
+        "sourceFileDecoded": "B-044_광물명(리튬／코발트／니켈／구리／희토류／망간).xlsx",
+        "sourceRow": 29,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-4b0020774e59",
+      "labelKo": "10개국 기준광물 목록",
+      "recordCount": 1,
+      "unit": "—",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 7,
+      "key": "measure-befc79f3731c",
+      "labelKo": "원광 수출규제 대상 광종",
+      "recordCount": 7,
+      "unit": "해당 여부",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 17,
+      "key": "measure-796bc07af80c",
+      "labelKo": "핵심광물 부존 상태",
+      "recordCount": 17,
+      "unit": "상태",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-a316b3573a2e",
+      "labelKo": "현지조사 결과 반영",
+      "recordCount": 1,
+      "unit": "—",
+      "unitFamily": "other"
+    }
+  ],
+  "observationCount": 26,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

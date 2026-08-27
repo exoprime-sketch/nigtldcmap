@@ -1,0 +1,2906 @@
+{
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 15,
+      "values": [
+        "Hard commodities",
+        "Logging",
+        "Other natural disturbances",
+        "Permanent agriculture",
+        "Settlements & Infrastructure",
+        "Shifting cultivation",
+        "Wildfire",
+        "성(省) 단위",
+        "임계 0%",
+        "임계 10%",
+        "임계 15%",
+        "임계 20%",
+        "임계 25%",
+        "임계 50%",
+        "임계 75%"
+      ]
+    },
+    {
+      "key": "detail_2",
+      "labelKo": "detail_2",
+      "valueCount": 63,
+      "values": [
+        "An Giang",
+        "Bà Rịa - Vũng Tàu",
+        "Bình Dương",
+        "Bình Phước",
+        "Bình Thuận",
+        "Bình Định",
+        "Bạc Liêu",
+        "Bắc Giang",
+        "Bắc Kạn",
+        "Bắc Ninh",
+        "Bến Tre",
+        "Cao Bằng",
+        "Cà Mau",
+        "Cần Thơ",
+        "Gia Lai",
+        "Hoà Bình",
+        "Hà Giang",
+        "Hà Nam",
+        "Hà Nội",
+        "Hà Tĩnh",
+        "Hưng Yên",
+        "Hải Dương",
+        "Hải Phòng",
+        "Hậu Giang",
+        "Hồ Chí Minh",
+        "Khánh Hòa",
+        "Kiên Giang",
+        "Kon Tum",
+        "Lai Châu",
+        "Long An",
+        "Lào Cai",
+        "Lâm Đồng",
+        "Lạng Sơn",
+        "Nam Định",
+        "Nghệ An",
+        "Ninh Bình",
+        "Ninh Thuận",
+        "Phú Thọ",
+        "Phú Yên",
+        "Quảng Bình",
+        "Quảng Nam",
+        "Quảng Ngãi",
+        "Quảng Ninh",
+        "Quảng Trị",
+        "Sóc Trăng",
+        "Sơn La",
+        "Thanh Hóa",
+        "Thái Bình",
+        "Thái Nguyên",
+        "Thừa Thiên Huế",
+        "Tiền Giang",
+        "Trà Vinh",
+        "Tuyên Quang",
+        "Tây Ninh",
+        "Vĩnh Long",
+        "Vĩnh Phúc",
+        "Yên Bái",
+        "Điện Biên",
+        "Đà Nẵng",
+        "Đắk Lắk",
+        "Đắk Nông",
+        "Đồng Nai",
+        "Đồng Tháp"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "23,35"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 25,
+      "values": [
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ]
+    }
+  ],
+  "elementId": "B-033",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 86,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-7a9948273e7a|ha/yr",
+      "dimensionLabels": {
+        "detail": "Hard commodities",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "Hard commodities",
+        "technology": "23,35"
+      },
+      "displayLabel": "손실 원인별 수관 손실 — Hard commodities",
+      "indicatorId": "B-033_loss_driver_hard_commodities",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7a9948273e7a",
+        "labelKo": "손실 원인별 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-7a9948273e7a|ha/yr|detail=Hard commodities|technology=23,35|B-033_loss_driver_hard_commodities",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "손실 원인별 수관 손실 — Hard commodities",
+      "sourceLabelEn": "Tree cover loss by driver: Hard commodities",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_loss_driver_hard_commodities",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7a9948273e7a|ha/yr",
+      "dimensionLabels": {
+        "detail": "Logging",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "Logging",
+        "technology": "23,35"
+      },
+      "displayLabel": "손실 원인별 수관 손실 — Logging",
+      "indicatorId": "B-033_loss_driver_logging",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7a9948273e7a",
+        "labelKo": "손실 원인별 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-7a9948273e7a|ha/yr|detail=Logging|technology=23,35|B-033_loss_driver_logging",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "손실 원인별 수관 손실 — Logging",
+      "sourceLabelEn": "Tree cover loss by driver: Logging",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_loss_driver_logging",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7a9948273e7a|ha/yr",
+      "dimensionLabels": {
+        "detail": "Other natural disturbances",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "Other natural disturbances",
+        "technology": "23,35"
+      },
+      "displayLabel": "손실 원인별 수관 손실 — Other natural disturbances",
+      "indicatorId": "B-033_loss_driver_other_natural_disturbances",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7a9948273e7a",
+        "labelKo": "손실 원인별 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-7a9948273e7a|ha/yr|detail=Other natural disturbances|technology=23,35|B-033_loss_driver_other_natural_disturbances",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "손실 원인별 수관 손실 — Other natural disturbances",
+      "sourceLabelEn": "Tree cover loss by driver: Other natural disturbances",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_loss_driver_other_natural_disturbances",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7a9948273e7a|ha/yr",
+      "dimensionLabels": {
+        "detail": "Permanent agriculture",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "Permanent agriculture",
+        "technology": "23,35"
+      },
+      "displayLabel": "손실 원인별 수관 손실 — Permanent agriculture",
+      "indicatorId": "B-033_loss_driver_permanent_agriculture",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7a9948273e7a",
+        "labelKo": "손실 원인별 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-7a9948273e7a|ha/yr|detail=Permanent agriculture|technology=23,35|B-033_loss_driver_permanent_agriculture",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "손실 원인별 수관 손실 — Permanent agriculture",
+      "sourceLabelEn": "Tree cover loss by driver: Permanent agriculture",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_loss_driver_permanent_agriculture",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7a9948273e7a|ha/yr",
+      "dimensionLabels": {
+        "detail": "Settlements & Infrastructure"
+      },
+      "dimensions": {
+        "detail": "Settlements & Infrastructure"
+      },
+      "displayLabel": "손실 원인별 수관 손실 — Settlements & Infrastructure",
+      "indicatorId": "B-033_loss_driver_settlements_and_infrastructure",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7a9948273e7a",
+        "labelKo": "손실 원인별 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-7a9948273e7a|ha/yr|detail=Settlements & Infrastructure|B-033_loss_driver_settlements_and_infrastructure",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. GFW 원본에는 손실 원인이 7종인데 종전에는 5종만 수록되어 있었음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "손실 원인별 수관 손실 — Settlements & Infrastructure",
+      "sourceLabelEn": "Tree cover loss by driver: Settlements & Infrastructure",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. GFW 원본에는 손실 원인이 7종인데 종전에는 5종만 수록되어 있었음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_loss_driver_settlements_and_infrastructure",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7a9948273e7a|ha/yr",
+      "dimensionLabels": {
+        "detail": "Shifting cultivation"
+      },
+      "dimensions": {
+        "detail": "Shifting cultivation"
+      },
+      "displayLabel": "손실 원인별 수관 손실 — Shifting cultivation",
+      "indicatorId": "B-033_loss_driver_shifting_cultivation",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7a9948273e7a",
+        "labelKo": "손실 원인별 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-7a9948273e7a|ha/yr|detail=Shifting cultivation|B-033_loss_driver_shifting_cultivation",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. GFW 원본에는 손실 원인이 7종인데 종전에는 5종만 수록되어 있었음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "손실 원인별 수관 손실 — Shifting cultivation",
+      "sourceLabelEn": "Tree cover loss by driver: Shifting cultivation",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. GFW 원본에는 손실 원인이 7종인데 종전에는 5종만 수록되어 있었음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_loss_driver_shifting_cultivation",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7a9948273e7a|ha/yr",
+      "dimensionLabels": {
+        "detail": "Wildfire",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "Wildfire",
+        "technology": "23,35"
+      },
+      "displayLabel": "손실 원인별 수관 손실 — Wildfire",
+      "indicatorId": "B-033_loss_driver_wildfire",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7a9948273e7a",
+        "labelKo": "손실 원인별 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-7a9948273e7a|ha/yr|detail=Wildfire|technology=23,35|B-033_loss_driver_wildfire",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "손실 원인별 수관 손실 — Wildfire",
+      "sourceLabelEn": "Tree cover loss by driver: Wildfire",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_loss_driver_wildfire",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d6ef7fe08b72|ha/yr",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "1차림(primary forest) 손실",
+      "indicatorId": "B-033_primary_forest_loss",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d6ef7fe08b72",
+        "labelKo": "1차림(primary forest) 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-d6ef7fe08b72|ha/yr||B-033_primary_forest_loss",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 원본 \"Country primary loss\" 시트가 전혀 반영되지 않았음. 1차림 손실은 전체 수관 손실과 달리 복원 불가능한 손실이라 별도 관리 필요. B-029의 원시림 면적(FAO 통계)과는 원천·정의가 달라 접속하지 않음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "1차림(primary forest) 손실",
+      "sourceLabelEn": "Primary forest loss",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 원본 \"Country primary loss\" 시트가 전혀 반영되지 않았음. 1차림 손실은 전체 수관 손실과 달리 복원 불가능한 손실이라 별도 관리 필요. B-029의 원시림 면적(FAO 통계)과는 원천·정의가 달라 접속하지 않음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_primary_forest_loss",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5e126fcc98f7|ha/yr",
+      "dimensionLabels": {
+        "detail": "Hard commodities",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "Hard commodities",
+        "technology": "23,35"
+      },
+      "displayLabel": "1차림 손실 원인별 — Hard commodities",
+      "indicatorId": "B-033_primary_loss_driver_hard_commodities",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5e126fcc98f7",
+        "labelKo": "1차림 손실 원인별",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-5e126fcc98f7|ha/yr|detail=Hard commodities|technology=23,35|B-033_primary_loss_driver_hard_commodities",
+      "sourceCaveat": "[신규 수록] 보유 [raw] 워크북의 \"Country primary drivers\" 시트(7개 원인 × 2002–2025년)를 반영. 전체 수관 손실의 원인 분해(loss_driver_*)와 달리 **복원 불가능한 1차림 손실만**을 원인별로 나눈 계열이라 산림전용 성격 판정에 직접 쓰인다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "1차림 손실 원인별 — Hard commodities",
+      "sourceLabelEn": "Primary forest loss by driver: Hard commodities",
+      "sourceNote": "[신규 수록] 보유 [raw] 워크북의 \"Country primary drivers\" 시트(7개 원인 × 2002–2025년)를 반영. 전체 수관 손실의 원인 분해(loss_driver_*)와 달리 **복원 불가능한 1차림 손실만**을 원인별로 나눈 계열이라 산림전용 성격 판정에 직접 쓰인다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_primary_loss_driver_hard_commodities",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 83,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5e126fcc98f7|ha/yr",
+      "dimensionLabels": {
+        "detail": "Logging",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "Logging",
+        "technology": "23,35"
+      },
+      "displayLabel": "1차림 손실 원인별 — Logging",
+      "indicatorId": "B-033_primary_loss_driver_logging",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5e126fcc98f7",
+        "labelKo": "1차림 손실 원인별",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-5e126fcc98f7|ha/yr|detail=Logging|technology=23,35|B-033_primary_loss_driver_logging",
+      "sourceCaveat": "[신규 수록] 보유 [raw] 워크북의 \"Country primary drivers\" 시트(7개 원인 × 2002–2025년)를 반영. 전체 수관 손실의 원인 분해(loss_driver_*)와 달리 **복원 불가능한 1차림 손실만**을 원인별로 나눈 계열이라 산림전용 성격 판정에 직접 쓰인다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "1차림 손실 원인별 — Logging",
+      "sourceLabelEn": "Primary forest loss by driver: Logging",
+      "sourceNote": "[신규 수록] 보유 [raw] 워크북의 \"Country primary drivers\" 시트(7개 원인 × 2002–2025년)를 반영. 전체 수관 손실의 원인 분해(loss_driver_*)와 달리 **복원 불가능한 1차림 손실만**을 원인별로 나눈 계열이라 산림전용 성격 판정에 직접 쓰인다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_primary_loss_driver_logging",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 84,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5e126fcc98f7|ha/yr",
+      "dimensionLabels": {
+        "detail": "Other natural disturbances",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "Other natural disturbances",
+        "technology": "23,35"
+      },
+      "displayLabel": "1차림 손실 원인별 — Other natural disturbances",
+      "indicatorId": "B-033_primary_loss_driver_other_natural_disturbances",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5e126fcc98f7",
+        "labelKo": "1차림 손실 원인별",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-5e126fcc98f7|ha/yr|detail=Other natural disturbances|technology=23,35|B-033_primary_loss_driver_other_natural_disturbances",
+      "sourceCaveat": "[신규 수록] 보유 [raw] 워크북의 \"Country primary drivers\" 시트(7개 원인 × 2002–2025년)를 반영. 전체 수관 손실의 원인 분해(loss_driver_*)와 달리 **복원 불가능한 1차림 손실만**을 원인별로 나눈 계열이라 산림전용 성격 판정에 직접 쓰인다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "1차림 손실 원인별 — Other natural disturbances",
+      "sourceLabelEn": "Primary forest loss by driver: Other natural disturbances",
+      "sourceNote": "[신규 수록] 보유 [raw] 워크북의 \"Country primary drivers\" 시트(7개 원인 × 2002–2025년)를 반영. 전체 수관 손실의 원인 분해(loss_driver_*)와 달리 **복원 불가능한 1차림 손실만**을 원인별로 나눈 계열이라 산림전용 성격 판정에 직접 쓰인다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_primary_loss_driver_other_natural_disturbances",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 85,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5e126fcc98f7|ha/yr",
+      "dimensionLabels": {
+        "detail": "Permanent agriculture",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "Permanent agriculture",
+        "technology": "23,35"
+      },
+      "displayLabel": "1차림 손실 원인별 — Permanent agriculture",
+      "indicatorId": "B-033_primary_loss_driver_permanent_agriculture",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5e126fcc98f7",
+        "labelKo": "1차림 손실 원인별",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-5e126fcc98f7|ha/yr|detail=Permanent agriculture|technology=23,35|B-033_primary_loss_driver_permanent_agriculture",
+      "sourceCaveat": "[신규 수록] 보유 [raw] 워크북의 \"Country primary drivers\" 시트(7개 원인 × 2002–2025년)를 반영. 전체 수관 손실의 원인 분해(loss_driver_*)와 달리 **복원 불가능한 1차림 손실만**을 원인별로 나눈 계열이라 산림전용 성격 판정에 직접 쓰인다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "1차림 손실 원인별 — Permanent agriculture",
+      "sourceLabelEn": "Primary forest loss by driver: Permanent agriculture",
+      "sourceNote": "[신규 수록] 보유 [raw] 워크북의 \"Country primary drivers\" 시트(7개 원인 × 2002–2025년)를 반영. 전체 수관 손실의 원인 분해(loss_driver_*)와 달리 **복원 불가능한 1차림 손실만**을 원인별로 나눈 계열이라 산림전용 성격 판정에 직접 쓰인다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_primary_loss_driver_permanent_agriculture",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 86,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5e126fcc98f7|ha/yr",
+      "dimensionLabels": {
+        "detail": "Settlements & Infrastructure",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "Settlements & Infrastructure",
+        "technology": "23,35"
+      },
+      "displayLabel": "1차림 손실 원인별 — Settlements & Infrastructure",
+      "indicatorId": "B-033_primary_loss_driver_settlements_and_infrastructure",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5e126fcc98f7",
+        "labelKo": "1차림 손실 원인별",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-5e126fcc98f7|ha/yr|detail=Settlements & Infrastructure|technology=23,35|B-033_primary_loss_driver_settlements_and_infrastructure",
+      "sourceCaveat": "[신규 수록] 보유 [raw] 워크북의 \"Country primary drivers\" 시트(7개 원인 × 2002–2025년)를 반영. 전체 수관 손실의 원인 분해(loss_driver_*)와 달리 **복원 불가능한 1차림 손실만**을 원인별로 나눈 계열이라 산림전용 성격 판정에 직접 쓰인다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "1차림 손실 원인별 — Settlements & Infrastructure",
+      "sourceLabelEn": "Primary forest loss by driver: Settlements & Infrastructure",
+      "sourceNote": "[신규 수록] 보유 [raw] 워크북의 \"Country primary drivers\" 시트(7개 원인 × 2002–2025년)를 반영. 전체 수관 손실의 원인 분해(loss_driver_*)와 달리 **복원 불가능한 1차림 손실만**을 원인별로 나눈 계열이라 산림전용 성격 판정에 직접 쓰인다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_primary_loss_driver_settlements_and_infrastructure",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 87,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5e126fcc98f7|ha/yr",
+      "dimensionLabels": {
+        "detail": "Shifting cultivation",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "Shifting cultivation",
+        "technology": "23,35"
+      },
+      "displayLabel": "1차림 손실 원인별 — Shifting cultivation",
+      "indicatorId": "B-033_primary_loss_driver_shifting_cultivation",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5e126fcc98f7",
+        "labelKo": "1차림 손실 원인별",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-5e126fcc98f7|ha/yr|detail=Shifting cultivation|technology=23,35|B-033_primary_loss_driver_shifting_cultivation",
+      "sourceCaveat": "[신규 수록] 보유 [raw] 워크북의 \"Country primary drivers\" 시트(7개 원인 × 2002–2025년)를 반영. 전체 수관 손실의 원인 분해(loss_driver_*)와 달리 **복원 불가능한 1차림 손실만**을 원인별로 나눈 계열이라 산림전용 성격 판정에 직접 쓰인다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "1차림 손실 원인별 — Shifting cultivation",
+      "sourceLabelEn": "Primary forest loss by driver: Shifting cultivation",
+      "sourceNote": "[신규 수록] 보유 [raw] 워크북의 \"Country primary drivers\" 시트(7개 원인 × 2002–2025년)를 반영. 전체 수관 손실의 원인 분해(loss_driver_*)와 달리 **복원 불가능한 1차림 손실만**을 원인별로 나눈 계열이라 산림전용 성격 판정에 직접 쓰인다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_primary_loss_driver_shifting_cultivation",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 88,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5e126fcc98f7|ha/yr",
+      "dimensionLabels": {
+        "detail": "Wildfire",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "Wildfire",
+        "technology": "23,35"
+      },
+      "displayLabel": "1차림 손실 원인별 — Wildfire",
+      "indicatorId": "B-033_primary_loss_driver_wildfire",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5e126fcc98f7",
+        "labelKo": "1차림 손실 원인별",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-5e126fcc98f7|ha/yr|detail=Wildfire|technology=23,35|B-033_primary_loss_driver_wildfire",
+      "sourceCaveat": "[신규 수록] 보유 [raw] 워크북의 \"Country primary drivers\" 시트(7개 원인 × 2002–2025년)를 반영. 전체 수관 손실의 원인 분해(loss_driver_*)와 달리 **복원 불가능한 1차림 손실만**을 원인별로 나눈 계열이라 산림전용 성격 판정에 직접 쓰인다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "1차림 손실 원인별 — Wildfire",
+      "sourceLabelEn": "Primary forest loss by driver: Wildfire",
+      "sourceNote": "[신규 수록] 보유 [raw] 워크북의 \"Country primary drivers\" 시트(7개 원인 × 2002–2025년)를 반영. 전체 수관 손실의 원인 분해(loss_driver_*)와 달리 **복원 불가능한 1차림 손실만**을 원인별로 나눈 계열이라 산림전용 성격 판정에 직접 쓰인다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_primary_loss_driver_wildfire",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 89,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "technology": "23,35"
+      },
+      "displayLabel": "연간 수관 손실",
+      "indicatorId": "B-033_tree_cover_loss",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|technology=23,35|B-033_tree_cover_loss",
+      "sourceCaveat": "[정의 명확화] 본 지표의 \"수관 손실(tree cover loss)\"은 **벌채·수확·산불·자연교란 등 일시적 손실을 모두 포함**하며 토지이용 전환을 뜻하는 \"산림전용(deforestation)\"과 다름. 조림지 수확 후 재조림되는 경우도 손실로 계상됨. 산림전용에 해당하는 부분은 driver 분해에서 permanent agriculture·hard commodities·settlements 항목으로 근사 가능.[GIS 처리] 원천 산출물은 30m 해상도 위성 래스터(UMD/Hansen Global Forest Change)이며, 슈타트가 보유·사용한 원자료는 GFW가 국가·성·현 경계로 집계해 배포하는 통계 워크북입니다 ([raw]\\Global Forest Watch_VNM.xlsx). 본 표의 값은 이 워크북에서 추출한 것이며 30m 래스터를 직접 처리한 값이 아닙니다. 메타 3종(레이어명·버전 / 추출일자 / 좌표계 EPSG:4326·경계기준 GADM)은 워크북 기준으로 기재했습니다. 30m 래스터 원본이 필요할 경우 GFW Data API 또는 Hansen GFC 타일에서 별도 수집이 필요하며, 집계방식(수관밀도 임계 30%)은 향후 가공 가이드라인 확정 시 재조정. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 확보됨 — 원본 다운로드에 성(63개) 및 현(710개) 단위 시트 포함. 발주처 확정 시 즉시 확장 수록 가능. / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기) / [이상치 주석] 2015→2016년 217,883→353,431ha(1.6배) 급증: 1차림 driver 분해(primary_loss_driver 계열)상 Logging 20,440→32,567ha·Permanent agriculture 13,190→25,593ha·Shifting cultivation 3,918→7,841ha로 벌채·영구 농경 전용이 급증분의 대부분을 설명. 아울러 원자료 워크북 ReadMe(Cautions)는 새 위성자료 도입과 방법론 변경(2011~2015년 구간)으로 최근 연도의 손실이 더 크게 추정될 수 있음을 명시 — 탐지 민감도 상승이 병존 요인",
+      "sourceLabel": "연간 수관 손실",
+      "sourceLabelEn": "Annual tree cover loss",
+      "sourceNote": "[정의 명확화] 본 지표의 \"수관 손실(tree cover loss)\"은 **벌채·수확·산불·자연교란 등 일시적 손실을 모두 포함**하며 토지이용 전환을 뜻하는 \"산림전용(deforestation)\"과 다름. 조림지 수확 후 재조림되는 경우도 손실로 계상됨. 산림전용에 해당하는 부분은 driver 분해에서 permanent agriculture·hard commodities·settlements 항목으로 근사 가능.[GIS 처리] 원천 산출물은 30m 해상도 위성 래스터(UMD/Hansen Global Forest Change)이며, 슈타트가 보유·사용한 원자료는 GFW가 국가·성·현 경계로 집계해 배포하는 통계 워크북입니다 ([raw]\\Global Forest Watch_VNM.xlsx). 본 표의 값은 이 워크북에서 추출한 것이며 30m 래스터를 직접 처리한 값이 아닙니다. 메타 3종(레이어명·버전 / 추출일자 / 좌표계 EPSG:4326·경계기준 GADM)은 워크북 기준으로 기재했습니다. 30m 래스터 원본이 필요할 경우 GFW Data API 또는 Hansen GFC 타일에서 별도 수집이 필요하며, 집계방식(수관밀도 임계 30%)은 향후 가공 가이드라인 확정 시 재조정. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 확보됨 — 원본 다운로드에 성(63개) 및 현(710개) 단위 시트 포함. 발주처 확정 시 즉시 확장 수록 가능. / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기) / [이상치 주석] 2015→2016년 217,883→353,431ha(1.6배) 급증: 1차림 driver 분해(primary_loss_driver 계열)상 Logging 20,440→32,567ha·Permanent agriculture 13,190→25,593ha·Shifting cultivation 3,918→7,841ha로 벌채·영구 농경 전용이 급증분의 대부분을 설명. 아울러 원자료 워크북 ReadMe(Cautions)는 새 위성자료 도입과 방법론 변경(2011~2015년 구간)으로 최근 연도의 손실이 더 크게 추정될 수 있음을 명시 — 탐지 민감도 상승이 병존 요인",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 4,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Đà Nẵng"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Đà Nẵng"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Đà Nẵng",
+      "indicatorId": "B-033_tree_cover_loss_prov_a_nang",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Đà Nẵng|B-033_tree_cover_loss_prov_a_nang",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Đà Nẵng",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_a_nang",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 78,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Đắk Lắk"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Đắk Lắk"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Đắk Lắk",
+      "indicatorId": "B-033_tree_cover_loss_prov_ak_lak",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Đắk Lắk|B-033_tree_cover_loss_prov_ak_lak",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Đắk Lắk",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_ak_lak",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 79,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Đắk Nông"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Đắk Nông"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Đắk Nông",
+      "indicatorId": "B-033_tree_cover_loss_prov_ak_nong",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Đắk Nông|B-033_tree_cover_loss_prov_ak_nong",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Đắk Nông",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_ak_nong",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 80,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "An Giang"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "An Giang"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — An Giang",
+      "indicatorId": "B-033_tree_cover_loss_prov_an_giang",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=An Giang|B-033_tree_cover_loss_prov_an_giang",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — An Giang",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_an_giang",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Bà Rịa - Vũng Tàu"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Bà Rịa - Vũng Tàu"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Bà Rịa - Vũng Tàu",
+      "indicatorId": "B-033_tree_cover_loss_prov_ba_ria_vung_tau",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Bà Rịa - Vũng Tàu|B-033_tree_cover_loss_prov_ba_ria_vung_tau",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Bà Rịa - Vũng Tàu",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_ba_ria_vung_tau",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Bắc Giang"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Bắc Giang"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Bắc Giang",
+      "indicatorId": "B-033_tree_cover_loss_prov_bac_giang",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Bắc Giang|B-033_tree_cover_loss_prov_bac_giang",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Bắc Giang",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_bac_giang",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 27,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Bắc Kạn"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Bắc Kạn"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Bắc Kạn",
+      "indicatorId": "B-033_tree_cover_loss_prov_bac_kan",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Bắc Kạn|B-033_tree_cover_loss_prov_bac_kan",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Bắc Kạn",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_bac_kan",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 28,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Bạc Liêu"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Bạc Liêu"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Bạc Liêu",
+      "indicatorId": "B-033_tree_cover_loss_prov_bac_lieu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Bạc Liêu|B-033_tree_cover_loss_prov_bac_lieu",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Bạc Liêu",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_bac_lieu",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 26,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Bắc Ninh"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Bắc Ninh"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Bắc Ninh",
+      "indicatorId": "B-033_tree_cover_loss_prov_bac_ninh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Bắc Ninh|B-033_tree_cover_loss_prov_bac_ninh",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Bắc Ninh",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_bac_ninh",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 29,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Bến Tre"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Bến Tre"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Bến Tre",
+      "indicatorId": "B-033_tree_cover_loss_prov_ben_tre",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Bến Tre|B-033_tree_cover_loss_prov_ben_tre",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Bến Tre",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_ben_tre",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 30,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Bình Dương"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Bình Dương"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Bình Dương",
+      "indicatorId": "B-033_tree_cover_loss_prov_binh_duong",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Bình Dương|B-033_tree_cover_loss_prov_binh_duong",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Bình Dương",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_binh_duong",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Bình Định"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Bình Định"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Bình Định",
+      "indicatorId": "B-033_tree_cover_loss_prov_binh_inh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Bình Định|B-033_tree_cover_loss_prov_binh_inh",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Bình Định",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_binh_inh",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 25,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Bình Phước"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Bình Phước"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Bình Phước",
+      "indicatorId": "B-033_tree_cover_loss_prov_binh_phuoc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Bình Phước|B-033_tree_cover_loss_prov_binh_phuoc",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Bình Phước",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_binh_phuoc",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Bình Thuận"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Bình Thuận"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Bình Thuận",
+      "indicatorId": "B-033_tree_cover_loss_prov_binh_thuan",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Bình Thuận|B-033_tree_cover_loss_prov_binh_thuan",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Bình Thuận",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_binh_thuan",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 24,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Cà Mau"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Cà Mau"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Cà Mau",
+      "indicatorId": "B-033_tree_cover_loss_prov_ca_mau",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Cà Mau|B-033_tree_cover_loss_prov_ca_mau",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Cà Mau",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_ca_mau",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 32,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Cần Thơ"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Cần Thơ"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Cần Thơ",
+      "indicatorId": "B-033_tree_cover_loss_prov_can_tho",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Cần Thơ|B-033_tree_cover_loss_prov_can_tho",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Cần Thơ",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_can_tho",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 33,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Cao Bằng"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Cao Bằng"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Cao Bằng",
+      "indicatorId": "B-033_tree_cover_loss_prov_cao_bang",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Cao Bằng|B-033_tree_cover_loss_prov_cao_bang",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Cao Bằng",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_cao_bang",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 31,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Đồng Nai"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Đồng Nai"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Đồng Nai",
+      "indicatorId": "B-033_tree_cover_loss_prov_dong_nai",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Đồng Nai|B-033_tree_cover_loss_prov_dong_nai",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Đồng Nai",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_dong_nai",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 81,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Gia Lai"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Gia Lai"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Gia Lai",
+      "indicatorId": "B-033_tree_cover_loss_prov_gia_lai",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Gia Lai|B-033_tree_cover_loss_prov_gia_lai",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Gia Lai",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_gia_lai",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 34,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Hà Giang"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Hà Giang"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Hà Giang",
+      "indicatorId": "B-033_tree_cover_loss_prov_ha_giang",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Hà Giang|B-033_tree_cover_loss_prov_ha_giang",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Hà Giang",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_ha_giang",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 36,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Hà Nam"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Hà Nam"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Hà Nam",
+      "indicatorId": "B-033_tree_cover_loss_prov_ha_nam",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Hà Nam|B-033_tree_cover_loss_prov_ha_nam",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Hà Nam",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_ha_nam",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 37,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Hà Nội"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Hà Nội"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Hà Nội",
+      "indicatorId": "B-033_tree_cover_loss_prov_ha_noi",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Hà Nội|B-033_tree_cover_loss_prov_ha_noi",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Hà Nội",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_ha_noi",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 38,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Hà Tĩnh"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Hà Tĩnh"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Hà Tĩnh",
+      "indicatorId": "B-033_tree_cover_loss_prov_ha_tinh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Hà Tĩnh|B-033_tree_cover_loss_prov_ha_tinh",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Hà Tĩnh",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_ha_tinh",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 39,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Hải Dương"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Hải Dương"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Hải Dương",
+      "indicatorId": "B-033_tree_cover_loss_prov_hai_duong",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Hải Dương|B-033_tree_cover_loss_prov_hai_duong",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Hải Dương",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_hai_duong",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 41,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Hải Phòng"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Hải Phòng"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Hải Phòng",
+      "indicatorId": "B-033_tree_cover_loss_prov_hai_phong",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Hải Phòng|B-033_tree_cover_loss_prov_hai_phong",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Hải Phòng",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_hai_phong",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 42,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Hậu Giang"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Hậu Giang"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Hậu Giang",
+      "indicatorId": "B-033_tree_cover_loss_prov_hau_giang",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Hậu Giang|B-033_tree_cover_loss_prov_hau_giang",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Hậu Giang",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_hau_giang",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 43,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Hồ Chí Minh"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Hồ Chí Minh"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Hồ Chí Minh",
+      "indicatorId": "B-033_tree_cover_loss_prov_ho_chi_minh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Hồ Chí Minh|B-033_tree_cover_loss_prov_ho_chi_minh",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Hồ Chí Minh",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_ho_chi_minh",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 44,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Hoà Bình"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Hoà Bình"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Hoà Bình",
+      "indicatorId": "B-033_tree_cover_loss_prov_hoa_binh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Hoà Bình|B-033_tree_cover_loss_prov_hoa_binh",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Hoà Bình",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_hoa_binh",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 35,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Hưng Yên"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Hưng Yên"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Hưng Yên",
+      "indicatorId": "B-033_tree_cover_loss_prov_hung_yen",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Hưng Yên|B-033_tree_cover_loss_prov_hung_yen",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Hưng Yên",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_hung_yen",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 40,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Điện Biên"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Điện Biên"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Điện Biên",
+      "indicatorId": "B-033_tree_cover_loss_prov_ien_bien",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Điện Biên|B-033_tree_cover_loss_prov_ien_bien",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Điện Biên",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_ien_bien",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 77,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Khánh Hòa"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Khánh Hòa"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Khánh Hòa",
+      "indicatorId": "B-033_tree_cover_loss_prov_khanh_hoa",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Khánh Hòa|B-033_tree_cover_loss_prov_khanh_hoa",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Khánh Hòa",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_khanh_hoa",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 45,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Kiên Giang"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Kiên Giang"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Kiên Giang",
+      "indicatorId": "B-033_tree_cover_loss_prov_kien_giang",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Kiên Giang|B-033_tree_cover_loss_prov_kien_giang",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Kiên Giang",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_kien_giang",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 46,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Kon Tum"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Kon Tum"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Kon Tum",
+      "indicatorId": "B-033_tree_cover_loss_prov_kon_tum",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Kon Tum|B-033_tree_cover_loss_prov_kon_tum",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Kon Tum",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_kon_tum",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 47,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Lai Châu"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Lai Châu"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Lai Châu",
+      "indicatorId": "B-033_tree_cover_loss_prov_lai_chau",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Lai Châu|B-033_tree_cover_loss_prov_lai_chau",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Lai Châu",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_lai_chau",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 48,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Lâm Đồng"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Lâm Đồng"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Lâm Đồng",
+      "indicatorId": "B-033_tree_cover_loss_prov_lam_ong",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Lâm Đồng|B-033_tree_cover_loss_prov_lam_ong",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Lâm Đồng",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_lam_ong",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 51,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Lạng Sơn"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Lạng Sơn"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Lạng Sơn",
+      "indicatorId": "B-033_tree_cover_loss_prov_lang_son",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Lạng Sơn|B-033_tree_cover_loss_prov_lang_son",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Lạng Sơn",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_lang_son",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 52,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Lào Cai"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Lào Cai"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Lào Cai",
+      "indicatorId": "B-033_tree_cover_loss_prov_lao_cai",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Lào Cai|B-033_tree_cover_loss_prov_lao_cai",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Lào Cai",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_lao_cai",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 50,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Long An"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Long An"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Long An",
+      "indicatorId": "B-033_tree_cover_loss_prov_long_an",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Long An|B-033_tree_cover_loss_prov_long_an",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Long An",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_long_an",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 49,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Nam Định"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Nam Định"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Nam Định",
+      "indicatorId": "B-033_tree_cover_loss_prov_nam_inh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Nam Định|B-033_tree_cover_loss_prov_nam_inh",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Nam Định",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_nam_inh",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 53,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Nghệ An"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Nghệ An"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Nghệ An",
+      "indicatorId": "B-033_tree_cover_loss_prov_nghe_an",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Nghệ An|B-033_tree_cover_loss_prov_nghe_an",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Nghệ An",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_nghe_an",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 54,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Ninh Bình"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Ninh Bình"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Ninh Bình",
+      "indicatorId": "B-033_tree_cover_loss_prov_ninh_binh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Ninh Bình|B-033_tree_cover_loss_prov_ninh_binh",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Ninh Bình",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_ninh_binh",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 55,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Ninh Thuận"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Ninh Thuận"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Ninh Thuận",
+      "indicatorId": "B-033_tree_cover_loss_prov_ninh_thuan",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Ninh Thuận|B-033_tree_cover_loss_prov_ninh_thuan",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Ninh Thuận",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_ninh_thuan",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 56,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Đồng Tháp"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Đồng Tháp"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Đồng Tháp",
+      "indicatorId": "B-033_tree_cover_loss_prov_ong_thap",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Đồng Tháp|B-033_tree_cover_loss_prov_ong_thap",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Đồng Tháp",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_ong_thap",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 82,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Phú Thọ"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Phú Thọ"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Phú Thọ",
+      "indicatorId": "B-033_tree_cover_loss_prov_phu_tho",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Phú Thọ|B-033_tree_cover_loss_prov_phu_tho",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Phú Thọ",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_phu_tho",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 57,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Phú Yên"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Phú Yên"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Phú Yên",
+      "indicatorId": "B-033_tree_cover_loss_prov_phu_yen",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Phú Yên|B-033_tree_cover_loss_prov_phu_yen",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Phú Yên",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_phu_yen",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 58,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Quảng Bình"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Quảng Bình"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Quảng Bình",
+      "indicatorId": "B-033_tree_cover_loss_prov_quang_binh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Quảng Bình|B-033_tree_cover_loss_prov_quang_binh",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Quảng Bình",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_quang_binh",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 59,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Quảng Nam"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Quảng Nam"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Quảng Nam",
+      "indicatorId": "B-033_tree_cover_loss_prov_quang_nam",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Quảng Nam|B-033_tree_cover_loss_prov_quang_nam",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Quảng Nam",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_quang_nam",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 60,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Quảng Ngãi"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Quảng Ngãi"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Quảng Ngãi",
+      "indicatorId": "B-033_tree_cover_loss_prov_quang_ngai",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Quảng Ngãi|B-033_tree_cover_loss_prov_quang_ngai",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Quảng Ngãi",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_quang_ngai",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 61,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Quảng Ninh"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Quảng Ninh"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Quảng Ninh",
+      "indicatorId": "B-033_tree_cover_loss_prov_quang_ninh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Quảng Ninh|B-033_tree_cover_loss_prov_quang_ninh",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Quảng Ninh",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_quang_ninh",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 62,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Quảng Trị"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Quảng Trị"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Quảng Trị",
+      "indicatorId": "B-033_tree_cover_loss_prov_quang_tri",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Quảng Trị|B-033_tree_cover_loss_prov_quang_tri",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Quảng Trị",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_quang_tri",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 63,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Sóc Trăng"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Sóc Trăng"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Sóc Trăng",
+      "indicatorId": "B-033_tree_cover_loss_prov_soc_trang",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Sóc Trăng|B-033_tree_cover_loss_prov_soc_trang",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Sóc Trăng",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_soc_trang",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 64,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Sơn La"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Sơn La"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Sơn La",
+      "indicatorId": "B-033_tree_cover_loss_prov_son_la",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Sơn La|B-033_tree_cover_loss_prov_son_la",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Sơn La",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_son_la",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 65,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Tây Ninh"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Tây Ninh"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Tây Ninh",
+      "indicatorId": "B-033_tree_cover_loss_prov_tay_ninh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Tây Ninh|B-033_tree_cover_loss_prov_tay_ninh",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Tây Ninh",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_tay_ninh",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 73,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Thái Bình"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Thái Bình"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Thái Bình",
+      "indicatorId": "B-033_tree_cover_loss_prov_thai_binh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Thái Bình|B-033_tree_cover_loss_prov_thai_binh",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Thái Bình",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_thai_binh",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 67,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Thái Nguyên"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Thái Nguyên"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Thái Nguyên",
+      "indicatorId": "B-033_tree_cover_loss_prov_thai_nguyen",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Thái Nguyên|B-033_tree_cover_loss_prov_thai_nguyen",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Thái Nguyên",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_thai_nguyen",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 68,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Thanh Hóa"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Thanh Hóa"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Thanh Hóa",
+      "indicatorId": "B-033_tree_cover_loss_prov_thanh_hoa",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Thanh Hóa|B-033_tree_cover_loss_prov_thanh_hoa",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Thanh Hóa",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_thanh_hoa",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 66,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Thừa Thiên Huế"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Thừa Thiên Huế"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Thừa Thiên Huế",
+      "indicatorId": "B-033_tree_cover_loss_prov_thua_thien_hue",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Thừa Thiên Huế|B-033_tree_cover_loss_prov_thua_thien_hue",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Thừa Thiên Huế",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_thua_thien_hue",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 69,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Tiền Giang"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Tiền Giang"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Tiền Giang",
+      "indicatorId": "B-033_tree_cover_loss_prov_tien_giang",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Tiền Giang|B-033_tree_cover_loss_prov_tien_giang",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Tiền Giang",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_tien_giang",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 70,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Trà Vinh"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Trà Vinh"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Trà Vinh",
+      "indicatorId": "B-033_tree_cover_loss_prov_tra_vinh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Trà Vinh|B-033_tree_cover_loss_prov_tra_vinh",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Trà Vinh",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_tra_vinh",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 71,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Tuyên Quang"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Tuyên Quang"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Tuyên Quang",
+      "indicatorId": "B-033_tree_cover_loss_prov_tuyen_quang",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Tuyên Quang|B-033_tree_cover_loss_prov_tuyen_quang",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Tuyên Quang",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_tuyen_quang",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 72,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Vĩnh Long"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Vĩnh Long"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Vĩnh Long",
+      "indicatorId": "B-033_tree_cover_loss_prov_vinh_long",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Vĩnh Long|B-033_tree_cover_loss_prov_vinh_long",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Vĩnh Long",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_vinh_long",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 74,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Vĩnh Phúc"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Vĩnh Phúc"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Vĩnh Phúc",
+      "indicatorId": "B-033_tree_cover_loss_prov_vinh_phuc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Vĩnh Phúc|B-033_tree_cover_loss_prov_vinh_phuc",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Vĩnh Phúc",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_vinh_phuc",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 75,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "성(省) 단위",
+        "detail_2": "Yên Bái"
+      },
+      "dimensions": {
+        "detail": "성(省) 단위",
+        "detail_2": "Yên Bái"
+      },
+      "displayLabel": "연간 수관 손실 — 성(省) 단위 — Yên Bái",
+      "indicatorId": "B-033_tree_cover_loss_prov_yen_bai",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=성(省) 단위|detail_2=Yên Bái|B-033_tree_cover_loss_prov_yen_bai",
+      "sourceCaveat": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 성(省) 단위 — Yên Bái",
+      "sourceLabelEn": "Annual tree cover loss by province",
+      "sourceNote": "[3차 검수 — 발주처 요청 대응] 원자료 GFW 워크북에 63개 성 × 25개년 손실량이 이미 수록되어 있어 반영. 군(district) 단위 686개도 원자료에 있으나 수록 시 8만 행이 추가되어 별도 데이터셋 분리를 권고드림(R-08). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 63개 성 × 25개년 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_prov_yen_bai",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 76,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "임계 0%"
+      },
+      "dimensions": {
+        "detail": "임계 0%"
+      },
+      "displayLabel": "연간 수관 손실 — 임계 0%",
+      "indicatorId": "B-033_tree_cover_loss_thr0",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=임계 0%|B-033_tree_cover_loss_thr0",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. GFW는 수관피복률 임계 8종(0·10·15·20·25·30·50·75%)의 손실 계열을 모두 제공하나 종전에는 임계 30%만 수록되어 있었음. 임계값 선택이 손실량 판정에 직접 영향을 주므로 민감도 확인이 가능하도록 전 임계값을 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 임계 0%",
+      "sourceLabelEn": "Annual tree cover loss at 0% canopy threshold",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. GFW는 수관피복률 임계 8종(0·10·15·20·25·30·50·75%)의 손실 계열을 모두 제공하나 종전에는 임계 30%만 수록되어 있었음. 임계값 선택이 손실량 판정에 직접 영향을 주므로 민감도 확인이 가능하도록 전 임계값을 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_thr0",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "임계 10%"
+      },
+      "dimensions": {
+        "detail": "임계 10%"
+      },
+      "displayLabel": "연간 수관 손실 — 임계 10%",
+      "indicatorId": "B-033_tree_cover_loss_thr10",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=임계 10%|B-033_tree_cover_loss_thr10",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. GFW는 수관피복률 임계 8종(0·10·15·20·25·30·50·75%)의 손실 계열을 모두 제공하나 종전에는 임계 30%만 수록되어 있었음. 임계값 선택이 손실량 판정에 직접 영향을 주므로 민감도 확인이 가능하도록 전 임계값을 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 임계 10%",
+      "sourceLabelEn": "Annual tree cover loss at 10% canopy threshold",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. GFW는 수관피복률 임계 8종(0·10·15·20·25·30·50·75%)의 손실 계열을 모두 제공하나 종전에는 임계 30%만 수록되어 있었음. 임계값 선택이 손실량 판정에 직접 영향을 주므로 민감도 확인이 가능하도록 전 임계값을 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_thr10",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "임계 15%"
+      },
+      "dimensions": {
+        "detail": "임계 15%"
+      },
+      "displayLabel": "연간 수관 손실 — 임계 15%",
+      "indicatorId": "B-033_tree_cover_loss_thr15",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=임계 15%|B-033_tree_cover_loss_thr15",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. GFW는 수관피복률 임계 8종(0·10·15·20·25·30·50·75%)의 손실 계열을 모두 제공하나 종전에는 임계 30%만 수록되어 있었음. 임계값 선택이 손실량 판정에 직접 영향을 주므로 민감도 확인이 가능하도록 전 임계값을 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 임계 15%",
+      "sourceLabelEn": "Annual tree cover loss at 15% canopy threshold",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. GFW는 수관피복률 임계 8종(0·10·15·20·25·30·50·75%)의 손실 계열을 모두 제공하나 종전에는 임계 30%만 수록되어 있었음. 임계값 선택이 손실량 판정에 직접 영향을 주므로 민감도 확인이 가능하도록 전 임계값을 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_thr15",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "임계 20%"
+      },
+      "dimensions": {
+        "detail": "임계 20%"
+      },
+      "displayLabel": "연간 수관 손실 — 임계 20%",
+      "indicatorId": "B-033_tree_cover_loss_thr20",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=임계 20%|B-033_tree_cover_loss_thr20",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. GFW는 수관피복률 임계 8종(0·10·15·20·25·30·50·75%)의 손실 계열을 모두 제공하나 종전에는 임계 30%만 수록되어 있었음. 임계값 선택이 손실량 판정에 직접 영향을 주므로 민감도 확인이 가능하도록 전 임계값을 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 임계 20%",
+      "sourceLabelEn": "Annual tree cover loss at 20% canopy threshold",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. GFW는 수관피복률 임계 8종(0·10·15·20·25·30·50·75%)의 손실 계열을 모두 제공하나 종전에는 임계 30%만 수록되어 있었음. 임계값 선택이 손실량 판정에 직접 영향을 주므로 민감도 확인이 가능하도록 전 임계값을 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_thr20",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "임계 25%"
+      },
+      "dimensions": {
+        "detail": "임계 25%"
+      },
+      "displayLabel": "연간 수관 손실 — 임계 25%",
+      "indicatorId": "B-033_tree_cover_loss_thr25",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=임계 25%|B-033_tree_cover_loss_thr25",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. GFW는 수관피복률 임계 8종(0·10·15·20·25·30·50·75%)의 손실 계열을 모두 제공하나 종전에는 임계 30%만 수록되어 있었음. 임계값 선택이 손실량 판정에 직접 영향을 주므로 민감도 확인이 가능하도록 전 임계값을 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 임계 25%",
+      "sourceLabelEn": "Annual tree cover loss at 25% canopy threshold",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. GFW는 수관피복률 임계 8종(0·10·15·20·25·30·50·75%)의 손실 계열을 모두 제공하나 종전에는 임계 30%만 수록되어 있었음. 임계값 선택이 손실량 판정에 직접 영향을 주므로 민감도 확인이 가능하도록 전 임계값을 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_thr25",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "임계 50%"
+      },
+      "dimensions": {
+        "detail": "임계 50%"
+      },
+      "displayLabel": "연간 수관 손실 — 임계 50%",
+      "indicatorId": "B-033_tree_cover_loss_thr50",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=임계 50%|B-033_tree_cover_loss_thr50",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. GFW는 수관피복률 임계 8종(0·10·15·20·25·30·50·75%)의 손실 계열을 모두 제공하나 종전에는 임계 30%만 수록되어 있었음. 임계값 선택이 손실량 판정에 직접 영향을 주므로 민감도 확인이 가능하도록 전 임계값을 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 임계 50%",
+      "sourceLabelEn": "Annual tree cover loss at 50% canopy threshold",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. GFW는 수관피복률 임계 8종(0·10·15·20·25·30·50·75%)의 손실 계열을 모두 제공하나 종전에는 임계 30%만 수록되어 있었음. 임계값 선택이 손실량 판정에 직접 영향을 주므로 민감도 확인이 가능하도록 전 임계값을 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_thr50",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2d920961b8a8|ha/yr",
+      "dimensionLabels": {
+        "detail": "임계 75%"
+      },
+      "dimensions": {
+        "detail": "임계 75%"
+      },
+      "displayLabel": "연간 수관 손실 — 임계 75%",
+      "indicatorId": "B-033_tree_cover_loss_thr75",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2d920961b8a8",
+        "labelKo": "연간 수관 손실",
+        "unit": "ha/yr",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-2d920961b8a8|ha/yr|detail=임계 75%|B-033_tree_cover_loss_thr75",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. GFW는 수관피복률 임계 8종(0·10·15·20·25·30·50·75%)의 손실 계열을 모두 제공하나 종전에는 임계 30%만 수록되어 있었음. 임계값 선택이 손실량 판정에 직접 영향을 주므로 민감도 확인이 가능하도록 전 임계값을 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "연간 수관 손실 — 임계 75%",
+      "sourceLabelEn": "Annual tree cover loss at 75% canopy threshold",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. GFW는 수관피복률 임계 8종(0·10·15·20·25·30·50·75%)의 손실 계열을 모두 제공하나 종전에는 임계 30%만 수록되어 있었음. 임계값 선택이 손실량 판정에 직접 영향을 주므로 민감도 확인이 가능하도록 전 임계값을 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-033",
+        "indicatorId": "B-033_tree_cover_loss_thr75",
+        "sourceFileDecoded": "B-033_연간 산림 손실(ha／yr).xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 7,
+      "key": "measure-5e126fcc98f7",
+      "labelKo": "1차림 손실 원인별",
+      "recordCount": 168,
+      "unit": "ha/yr",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-d6ef7fe08b72",
+      "labelKo": "1차림(primary forest) 손실",
+      "recordCount": 24,
+      "unit": "ha/yr",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 7,
+      "key": "measure-7a9948273e7a",
+      "labelKo": "손실 원인별 수관 손실",
+      "recordCount": 175,
+      "unit": "ha/yr",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 71,
+      "key": "measure-2d920961b8a8",
+      "labelKo": "연간 수관 손실",
+      "recordCount": 1775,
+      "unit": "ha/yr",
+      "unitFamily": "area"
+    }
+  ],
+  "observationCount": 2142,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

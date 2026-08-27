@@ -1,0 +1,289 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 4,
+      "values": [
+        "농촌",
+        "도시",
+        "미공급률",
+        "전국"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 2,
+      "values": [
+        "전력 미공급 인구 비율",
+        "전력 접근 인구 비율"
+      ]
+    },
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "전력망·전력시설"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "24"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 10,
+      "values": [
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ]
+    }
+  ],
+  "elementId": "A-024",
+  "entityCount": 722,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 6,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-3c0cd69b4d6b|%",
+      "dimensionLabels": {
+        "category": "전국",
+        "detail": "전력 접근 인구 비율",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "전국",
+        "detail": "전력 접근 인구 비율",
+        "technology": "24"
+      },
+      "displayLabel": "미공급 지역 · 전국 — 전력 접근 인구 비율",
+      "indicatorId": "A-024_access_national",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3c0cd69b4d6b",
+        "labelKo": "미공급 지역",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-3c0cd69b4d6b|%|category=전국|detail=전력 접근 인구 비율|technology=24|A-024_access_national",
+      "sourceCaveat": "[원천 구분] 본 요소에는 성격이 다른 두 개의 선로 레이어가 있어 지표를 분리함. ① World Bank ENERGYDATA.INFO 2016년 베트남 송전망(606개 구간, 총 23,607.62 km) — 검토의견 1번에 대응하여 확인한 결과 시작·끝 두 점이 아니라 구간당 2~58개 정점의 완전한 MULTILINESTRING 형상을 보유함(총 6,693개 정점). ② PDP8 계열 선로 116개 구간(총 10,977.81 km) — 이쪽이 시작·끝 좌표 위주이며 검토의견 2번대로 68개(58.6%)가 계획(Planned), 48개가 기존(Existing)임. 두 레이어를 별도 지표로 분리하고 status를 attr에 명시함. [원문 하자] ①의 Id 열은 606행 전부 0이어서 식별자로 쓸 수 없어 행 번호를 대체 식별자로 note에 기재함. ②의 원본 geojson 파일 끝에 \"System.IO.MemoryStream\" 문자열이 붙어 있어 그대로는 JSON 파싱이 되지 않음(내려받기 도구 산물). [구조] 검토의견 3번 확인 — 원문 엑셀 표 안에 합계 행(구간점수 692, 연장 10,977.81)이 섞여 있어 117번째 선로로 오독됨. 본 데이터셋은 합계 행을 데이터에서 제외하고 유의사항에만 기록함. [미공급지역] 검토의견 1번·4번 확인 — \"미공급 지역\"에는 좌표·경계면이 없고 2015~2024년 접근률 통계표만 있음. 원문이 \"베트남은 전력 접근률이 사실상 100%(2024)로 미공급 지역을 특정하는 별도 GIS 레이어가 존재하지 않으며, 미전화 지역 표준 플랫폼(GEP)에도 베트남이 포함되지 않는다\"고 명시함. 따라서 미공급지역은 공간 레이어가 아니라 연도별 통계 지표로 1.1에 수록함. 원문 표 아래에 총인구·추정 미공급 인구 등 스칼라 블록이 같은 머리글 아래 붙어 있어 접근률 열로 오독될 수 있으므로 분리 수록함. [좌표 정밀도] 원천 카탈로그가 \"isolated area에서 위치 오차가 2~10 km에 이를 수 있음\"을 명시함. [라이선스] World Bank/ENERGYDATA.INFO 계열은 CC BY 4.0이므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "미공급 지역 · 전국 — 전력 접근 인구 비율",
+      "sourceLabelEn": "Electricity access rate (national)",
+      "sourceNote": "[원천 구분] 본 요소에는 성격이 다른 두 개의 선로 레이어가 있어 지표를 분리함. ① World Bank ENERGYDATA.INFO 2016년 베트남 송전망(606개 구간, 총 23,607.62 km) — 검토의견 1번에 대응하여 확인한 결과 시작·끝 두 점이 아니라 구간당 2~58개 정점의 완전한 MULTILINESTRING 형상을 보유함(총 6,693개 정점). ② PDP8 계열 선로 116개 구간(총 10,977.81 km) — 이쪽이 시작·끝 좌표 위주이며 검토의견 2번대로 68개(58.6%)가 계획(Planned), 48개가 기존(Existing)임. 두 레이어를 별도 지표로 분리하고 status를 attr에 명시함. [원문 하자] ①의 Id 열은 606행 전부 0이어서 식별자로 쓸 수 없어 행 번호를 대체 식별자로 note에 기재함. ②의 원본 geojson 파일 끝에 \"System.IO.MemoryStream\" 문자열이 붙어 있어 그대로는 JSON 파싱이 되지 않음(내려받기 도구 산물). [구조] 검토의견 3번 확인 — 원문 엑셀 표 안에 합계 행(구간점수 692, 연장 10,977.81)이 섞여 있어 117번째 선로로 오독됨. 본 데이터셋은 합계 행을 데이터에서 제외하고 유의사항에만 기록함. [미공급지역] 검토의견 1번·4번 확인 — \"미공급 지역\"에는 좌표·경계면이 없고 2015~2024년 접근률 통계표만 있음. 원문이 \"베트남은 전력 접근률이 사실상 100%(2024)로 미공급 지역을 특정하는 별도 GIS 레이어가 존재하지 않으며, 미전화 지역 표준 플랫폼(GEP)에도 베트남이 포함되지 않는다\"고 명시함. 따라서 미공급지역은 공간 레이어가 아니라 연도별 통계 지표로 1.1에 수록함. 원문 표 아래에 총인구·추정 미공급 인구 등 스칼라 블록이 같은 머리글 아래 붙어 있어 접근률 열로 오독될 수 있으므로 분리 수록함. [좌표 정밀도] 원천 카탈로그가 \"isolated area에서 위치 오차가 2~10 km에 이를 수 있음\"을 명시함. [라이선스] World Bank/ENERGYDATA.INFO 계열은 CC BY 4.0이므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-024",
+        "indicatorId": "A-024_access_national",
+        "sourceFileDecoded": "A-024_전력망[위치, 미공급 지역].xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-3c0cd69b4d6b|%",
+      "dimensionLabels": {
+        "category": "농촌",
+        "detail": "전력 접근 인구 비율",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "농촌",
+        "detail": "전력 접근 인구 비율",
+        "technology": "24"
+      },
+      "displayLabel": "미공급 지역 · 농촌 — 전력 접근 인구 비율",
+      "indicatorId": "A-024_access_rural",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3c0cd69b4d6b",
+        "labelKo": "미공급 지역",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-3c0cd69b4d6b|%|category=농촌|detail=전력 접근 인구 비율|technology=24|A-024_access_rural",
+      "sourceCaveat": "[원천 구분] 본 요소에는 성격이 다른 두 개의 선로 레이어가 있어 지표를 분리함. ① World Bank ENERGYDATA.INFO 2016년 베트남 송전망(606개 구간, 총 23,607.62 km) — 검토의견 1번에 대응하여 확인한 결과 시작·끝 두 점이 아니라 구간당 2~58개 정점의 완전한 MULTILINESTRING 형상을 보유함(총 6,693개 정점). ② PDP8 계열 선로 116개 구간(총 10,977.81 km) — 이쪽이 시작·끝 좌표 위주이며 검토의견 2번대로 68개(58.6%)가 계획(Planned), 48개가 기존(Existing)임. 두 레이어를 별도 지표로 분리하고 status를 attr에 명시함. [원문 하자] ①의 Id 열은 606행 전부 0이어서 식별자로 쓸 수 없어 행 번호를 대체 식별자로 note에 기재함. ②의 원본 geojson 파일 끝에 \"System.IO.MemoryStream\" 문자열이 붙어 있어 그대로는 JSON 파싱이 되지 않음(내려받기 도구 산물). [구조] 검토의견 3번 확인 — 원문 엑셀 표 안에 합계 행(구간점수 692, 연장 10,977.81)이 섞여 있어 117번째 선로로 오독됨. 본 데이터셋은 합계 행을 데이터에서 제외하고 유의사항에만 기록함. [미공급지역] 검토의견 1번·4번 확인 — \"미공급 지역\"에는 좌표·경계면이 없고 2015~2024년 접근률 통계표만 있음. 원문이 \"베트남은 전력 접근률이 사실상 100%(2024)로 미공급 지역을 특정하는 별도 GIS 레이어가 존재하지 않으며, 미전화 지역 표준 플랫폼(GEP)에도 베트남이 포함되지 않는다\"고 명시함. 따라서 미공급지역은 공간 레이어가 아니라 연도별 통계 지표로 1.1에 수록함. 원문 표 아래에 총인구·추정 미공급 인구 등 스칼라 블록이 같은 머리글 아래 붙어 있어 접근률 열로 오독될 수 있으므로 분리 수록함. [좌표 정밀도] 원천 카탈로그가 \"isolated area에서 위치 오차가 2~10 km에 이를 수 있음\"을 명시함. [라이선스] World Bank/ENERGYDATA.INFO 계열은 CC BY 4.0이므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "미공급 지역 · 농촌 — 전력 접근 인구 비율",
+      "sourceLabelEn": "Electricity access rate (rural)",
+      "sourceNote": "[원천 구분] 본 요소에는 성격이 다른 두 개의 선로 레이어가 있어 지표를 분리함. ① World Bank ENERGYDATA.INFO 2016년 베트남 송전망(606개 구간, 총 23,607.62 km) — 검토의견 1번에 대응하여 확인한 결과 시작·끝 두 점이 아니라 구간당 2~58개 정점의 완전한 MULTILINESTRING 형상을 보유함(총 6,693개 정점). ② PDP8 계열 선로 116개 구간(총 10,977.81 km) — 이쪽이 시작·끝 좌표 위주이며 검토의견 2번대로 68개(58.6%)가 계획(Planned), 48개가 기존(Existing)임. 두 레이어를 별도 지표로 분리하고 status를 attr에 명시함. [원문 하자] ①의 Id 열은 606행 전부 0이어서 식별자로 쓸 수 없어 행 번호를 대체 식별자로 note에 기재함. ②의 원본 geojson 파일 끝에 \"System.IO.MemoryStream\" 문자열이 붙어 있어 그대로는 JSON 파싱이 되지 않음(내려받기 도구 산물). [구조] 검토의견 3번 확인 — 원문 엑셀 표 안에 합계 행(구간점수 692, 연장 10,977.81)이 섞여 있어 117번째 선로로 오독됨. 본 데이터셋은 합계 행을 데이터에서 제외하고 유의사항에만 기록함. [미공급지역] 검토의견 1번·4번 확인 — \"미공급 지역\"에는 좌표·경계면이 없고 2015~2024년 접근률 통계표만 있음. 원문이 \"베트남은 전력 접근률이 사실상 100%(2024)로 미공급 지역을 특정하는 별도 GIS 레이어가 존재하지 않으며, 미전화 지역 표준 플랫폼(GEP)에도 베트남이 포함되지 않는다\"고 명시함. 따라서 미공급지역은 공간 레이어가 아니라 연도별 통계 지표로 1.1에 수록함. 원문 표 아래에 총인구·추정 미공급 인구 등 스칼라 블록이 같은 머리글 아래 붙어 있어 접근률 열로 오독될 수 있으므로 분리 수록함. [좌표 정밀도] 원천 카탈로그가 \"isolated area에서 위치 오차가 2~10 km에 이를 수 있음\"을 명시함. [라이선스] World Bank/ENERGYDATA.INFO 계열은 CC BY 4.0이므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-024",
+        "indicatorId": "A-024_access_rural",
+        "sourceFileDecoded": "A-024_전력망[위치, 미공급 지역].xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-3c0cd69b4d6b|%",
+      "dimensionLabels": {
+        "category": "도시",
+        "detail": "전력 접근 인구 비율",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "도시",
+        "detail": "전력 접근 인구 비율",
+        "technology": "24"
+      },
+      "displayLabel": "미공급 지역 · 도시 — 전력 접근 인구 비율",
+      "indicatorId": "A-024_access_urban",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3c0cd69b4d6b",
+        "labelKo": "미공급 지역",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-3c0cd69b4d6b|%|category=도시|detail=전력 접근 인구 비율|technology=24|A-024_access_urban",
+      "sourceCaveat": "[원천 구분] 본 요소에는 성격이 다른 두 개의 선로 레이어가 있어 지표를 분리함. ① World Bank ENERGYDATA.INFO 2016년 베트남 송전망(606개 구간, 총 23,607.62 km) — 검토의견 1번에 대응하여 확인한 결과 시작·끝 두 점이 아니라 구간당 2~58개 정점의 완전한 MULTILINESTRING 형상을 보유함(총 6,693개 정점). ② PDP8 계열 선로 116개 구간(총 10,977.81 km) — 이쪽이 시작·끝 좌표 위주이며 검토의견 2번대로 68개(58.6%)가 계획(Planned), 48개가 기존(Existing)임. 두 레이어를 별도 지표로 분리하고 status를 attr에 명시함. [원문 하자] ①의 Id 열은 606행 전부 0이어서 식별자로 쓸 수 없어 행 번호를 대체 식별자로 note에 기재함. ②의 원본 geojson 파일 끝에 \"System.IO.MemoryStream\" 문자열이 붙어 있어 그대로는 JSON 파싱이 되지 않음(내려받기 도구 산물). [구조] 검토의견 3번 확인 — 원문 엑셀 표 안에 합계 행(구간점수 692, 연장 10,977.81)이 섞여 있어 117번째 선로로 오독됨. 본 데이터셋은 합계 행을 데이터에서 제외하고 유의사항에만 기록함. [미공급지역] 검토의견 1번·4번 확인 — \"미공급 지역\"에는 좌표·경계면이 없고 2015~2024년 접근률 통계표만 있음. 원문이 \"베트남은 전력 접근률이 사실상 100%(2024)로 미공급 지역을 특정하는 별도 GIS 레이어가 존재하지 않으며, 미전화 지역 표준 플랫폼(GEP)에도 베트남이 포함되지 않는다\"고 명시함. 따라서 미공급지역은 공간 레이어가 아니라 연도별 통계 지표로 1.1에 수록함. 원문 표 아래에 총인구·추정 미공급 인구 등 스칼라 블록이 같은 머리글 아래 붙어 있어 접근률 열로 오독될 수 있으므로 분리 수록함. [좌표 정밀도] 원천 카탈로그가 \"isolated area에서 위치 오차가 2~10 km에 이를 수 있음\"을 명시함. [라이선스] World Bank/ENERGYDATA.INFO 계열은 CC BY 4.0이므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "미공급 지역 · 도시 — 전력 접근 인구 비율",
+      "sourceLabelEn": "Electricity access rate (urban)",
+      "sourceNote": "[원천 구분] 본 요소에는 성격이 다른 두 개의 선로 레이어가 있어 지표를 분리함. ① World Bank ENERGYDATA.INFO 2016년 베트남 송전망(606개 구간, 총 23,607.62 km) — 검토의견 1번에 대응하여 확인한 결과 시작·끝 두 점이 아니라 구간당 2~58개 정점의 완전한 MULTILINESTRING 형상을 보유함(총 6,693개 정점). ② PDP8 계열 선로 116개 구간(총 10,977.81 km) — 이쪽이 시작·끝 좌표 위주이며 검토의견 2번대로 68개(58.6%)가 계획(Planned), 48개가 기존(Existing)임. 두 레이어를 별도 지표로 분리하고 status를 attr에 명시함. [원문 하자] ①의 Id 열은 606행 전부 0이어서 식별자로 쓸 수 없어 행 번호를 대체 식별자로 note에 기재함. ②의 원본 geojson 파일 끝에 \"System.IO.MemoryStream\" 문자열이 붙어 있어 그대로는 JSON 파싱이 되지 않음(내려받기 도구 산물). [구조] 검토의견 3번 확인 — 원문 엑셀 표 안에 합계 행(구간점수 692, 연장 10,977.81)이 섞여 있어 117번째 선로로 오독됨. 본 데이터셋은 합계 행을 데이터에서 제외하고 유의사항에만 기록함. [미공급지역] 검토의견 1번·4번 확인 — \"미공급 지역\"에는 좌표·경계면이 없고 2015~2024년 접근률 통계표만 있음. 원문이 \"베트남은 전력 접근률이 사실상 100%(2024)로 미공급 지역을 특정하는 별도 GIS 레이어가 존재하지 않으며, 미전화 지역 표준 플랫폼(GEP)에도 베트남이 포함되지 않는다\"고 명시함. 따라서 미공급지역은 공간 레이어가 아니라 연도별 통계 지표로 1.1에 수록함. 원문 표 아래에 총인구·추정 미공급 인구 등 스칼라 블록이 같은 머리글 아래 붙어 있어 접근률 열로 오독될 수 있으므로 분리 수록함. [좌표 정밀도] 원천 카탈로그가 \"isolated area에서 위치 오차가 2~10 km에 이를 수 있음\"을 명시함. [라이선스] World Bank/ENERGYDATA.INFO 계열은 CC BY 4.0이므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-024",
+        "indicatorId": "A-024_access_urban",
+        "sourceFileDecoded": "A-024_전력망[위치, 미공급 지역].xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d30e19e20b62|kV",
+      "dimensionLabels": {
+        "category": "기존 · 계획",
+        "detail": "베트남 송전 선로 구간 목록(전압·기존/계획 구분)",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "기존 · 계획",
+        "detail": "베트남 송전 선로 구간 목록(전압·기존/계획 구분)",
+        "technology": "24"
+      },
+      "displayLabel": "송전망 선로 목록 · 기존·계획 — 베트남 송전 선로 구간 목록(전압·기존/계획 구분)",
+      "indicatorId": "A-024_transmission_line_pdp8",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d30e19e20b62",
+        "labelKo": "송전망 선로 목록",
+        "unit": "kV",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-d30e19e20b62|kV|category=기존 · 계획|detail=베트남 송전 선로 구간 목록(전압·기존/계획 구분)|technology=24|A-024_transmission_line_pdp8",
+      "sourceCaveat": "[원천 구분] 본 요소에는 성격이 다른 두 개의 선로 레이어가 있어 지표를 분리함. ① World Bank ENERGYDATA.INFO 2016년 베트남 송전망(606개 구간, 총 23,607.62 km) — 검토의견 1번에 대응하여 확인한 결과 시작·끝 두 점이 아니라 구간당 2~58개 정점의 완전한 MULTILINESTRING 형상을 보유함(총 6,693개 정점). ② PDP8 계열 선로 116개 구간(총 10,977.81 km) — 이쪽이 시작·끝 좌표 위주이며 검토의견 2번대로 68개(58.6%)가 계획(Planned), 48개가 기존(Existing)임. 두 레이어를 별도 지표로 분리하고 status를 attr에 명시함. [원문 하자] ①의 Id 열은 606행 전부 0이어서 식별자로 쓸 수 없어 행 번호를 대체 식별자로 note에 기재함. ②의 원본 geojson 파일 끝에 \"System.IO.MemoryStream\" 문자열이 붙어 있어 그대로는 JSON 파싱이 되지 않음(내려받기 도구 산물). [구조] 검토의견 3번 확인 — 원문 엑셀 표 안에 합계 행(구간점수 692, 연장 10,977.81)이 섞여 있어 117번째 선로로 오독됨. 본 데이터셋은 합계 행을 데이터에서 제외하고 유의사항에만 기록함. [미공급지역] 검토의견 1번·4번 확인 — \"미공급 지역\"에는 좌표·경계면이 없고 2015~2024년 접근률 통계표만 있음. 원문이 \"베트남은 전력 접근률이 사실상 100%(2024)로 미공급 지역을 특정하는 별도 GIS 레이어가 존재하지 않으며, 미전화 지역 표준 플랫폼(GEP)에도 베트남이 포함되지 않는다\"고 명시함. 따라서 미공급지역은 공간 레이어가 아니라 연도별 통계 지표로 1.1에 수록함. 원문 표 아래에 총인구·추정 미공급 인구 등 스칼라 블록이 같은 머리글 아래 붙어 있어 접근률 열로 오독될 수 있으므로 분리 수록함. [좌표 정밀도] 원천 카탈로그가 \"isolated area에서 위치 오차가 2~10 km에 이를 수 있음\"을 명시함. [라이선스] World Bank/ENERGYDATA.INFO 계열은 CC BY 4.0이므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "송전망 선로 목록 · 기존·계획 — 베트남 송전 선로 구간 목록(전압·기존/계획 구분)",
+      "sourceLabelEn": "Transmission line registry (existing and planned)",
+      "sourceNote": "[원천 구분] 본 요소에는 성격이 다른 두 개의 선로 레이어가 있어 지표를 분리함. ① World Bank ENERGYDATA.INFO 2016년 베트남 송전망(606개 구간, 총 23,607.62 km) — 검토의견 1번에 대응하여 확인한 결과 시작·끝 두 점이 아니라 구간당 2~58개 정점의 완전한 MULTILINESTRING 형상을 보유함(총 6,693개 정점). ② PDP8 계열 선로 116개 구간(총 10,977.81 km) — 이쪽이 시작·끝 좌표 위주이며 검토의견 2번대로 68개(58.6%)가 계획(Planned), 48개가 기존(Existing)임. 두 레이어를 별도 지표로 분리하고 status를 attr에 명시함. [원문 하자] ①의 Id 열은 606행 전부 0이어서 식별자로 쓸 수 없어 행 번호를 대체 식별자로 note에 기재함. ②의 원본 geojson 파일 끝에 \"System.IO.MemoryStream\" 문자열이 붙어 있어 그대로는 JSON 파싱이 되지 않음(내려받기 도구 산물). [구조] 검토의견 3번 확인 — 원문 엑셀 표 안에 합계 행(구간점수 692, 연장 10,977.81)이 섞여 있어 117번째 선로로 오독됨. 본 데이터셋은 합계 행을 데이터에서 제외하고 유의사항에만 기록함. [미공급지역] 검토의견 1번·4번 확인 — \"미공급 지역\"에는 좌표·경계면이 없고 2015~2024년 접근률 통계표만 있음. 원문이 \"베트남은 전력 접근률이 사실상 100%(2024)로 미공급 지역을 특정하는 별도 GIS 레이어가 존재하지 않으며, 미전화 지역 표준 플랫폼(GEP)에도 베트남이 포함되지 않는다\"고 명시함. 따라서 미공급지역은 공간 레이어가 아니라 연도별 통계 지표로 1.1에 수록함. 원문 표 아래에 총인구·추정 미공급 인구 등 스칼라 블록이 같은 머리글 아래 붙어 있어 접근률 열로 오독될 수 있으므로 분리 수록함. [좌표 정밀도] 원천 카탈로그가 \"isolated area에서 위치 오차가 2~10 km에 이를 수 있음\"을 명시함. [라이선스] World Bank/ENERGYDATA.INFO 계열은 CC BY 4.0이므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-024",
+        "indicatorId": "A-024_transmission_line_pdp8",
+        "sourceFileDecoded": "A-024_전력망[위치, 미공급 지역].xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d30e19e20b62|kV",
+      "dimensionLabels": {
+        "category": "2016년",
+        "detail": "베트남 송전 선로 구간 목록(전압·연장·형상)",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "2016년",
+        "detail": "베트남 송전 선로 구간 목록(전압·연장·형상)",
+        "technology": "24"
+      },
+      "displayLabel": "송전망 선로 목록 · 2016년 — 베트남 송전 선로 구간 목록(전압·연장·형상)",
+      "indicatorId": "A-024_transmission_line_wb2016",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d30e19e20b62",
+        "labelKo": "송전망 선로 목록",
+        "unit": "kV",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-d30e19e20b62|kV|category=2016년|detail=베트남 송전 선로 구간 목록(전압·연장·형상)|technology=24|A-024_transmission_line_wb2016",
+      "sourceCaveat": "[원천 구분] 본 요소에는 성격이 다른 두 개의 선로 레이어가 있어 지표를 분리함. ① World Bank ENERGYDATA.INFO 2016년 베트남 송전망(606개 구간, 총 23,607.62 km) — 검토의견 1번에 대응하여 확인한 결과 시작·끝 두 점이 아니라 구간당 2~58개 정점의 완전한 MULTILINESTRING 형상을 보유함(총 6,693개 정점). ② PDP8 계열 선로 116개 구간(총 10,977.81 km) — 이쪽이 시작·끝 좌표 위주이며 검토의견 2번대로 68개(58.6%)가 계획(Planned), 48개가 기존(Existing)임. 두 레이어를 별도 지표로 분리하고 status를 attr에 명시함. [원문 하자] ①의 Id 열은 606행 전부 0이어서 식별자로 쓸 수 없어 행 번호를 대체 식별자로 note에 기재함. ②의 원본 geojson 파일 끝에 \"System.IO.MemoryStream\" 문자열이 붙어 있어 그대로는 JSON 파싱이 되지 않음(내려받기 도구 산물). [구조] 검토의견 3번 확인 — 원문 엑셀 표 안에 합계 행(구간점수 692, 연장 10,977.81)이 섞여 있어 117번째 선로로 오독됨. 본 데이터셋은 합계 행을 데이터에서 제외하고 유의사항에만 기록함. [미공급지역] 검토의견 1번·4번 확인 — \"미공급 지역\"에는 좌표·경계면이 없고 2015~2024년 접근률 통계표만 있음. 원문이 \"베트남은 전력 접근률이 사실상 100%(2024)로 미공급 지역을 특정하는 별도 GIS 레이어가 존재하지 않으며, 미전화 지역 표준 플랫폼(GEP)에도 베트남이 포함되지 않는다\"고 명시함. 따라서 미공급지역은 공간 레이어가 아니라 연도별 통계 지표로 1.1에 수록함. 원문 표 아래에 총인구·추정 미공급 인구 등 스칼라 블록이 같은 머리글 아래 붙어 있어 접근률 열로 오독될 수 있으므로 분리 수록함. [좌표 정밀도] 원천 카탈로그가 \"isolated area에서 위치 오차가 2~10 km에 이를 수 있음\"을 명시함. [라이선스] World Bank/ENERGYDATA.INFO 계열은 CC BY 4.0이므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "송전망 선로 목록 · 2016년 — 베트남 송전 선로 구간 목록(전압·연장·형상)",
+      "sourceLabelEn": "Transmission line registry (Vietnam, 2016)",
+      "sourceNote": "[원천 구분] 본 요소에는 성격이 다른 두 개의 선로 레이어가 있어 지표를 분리함. ① World Bank ENERGYDATA.INFO 2016년 베트남 송전망(606개 구간, 총 23,607.62 km) — 검토의견 1번에 대응하여 확인한 결과 시작·끝 두 점이 아니라 구간당 2~58개 정점의 완전한 MULTILINESTRING 형상을 보유함(총 6,693개 정점). ② PDP8 계열 선로 116개 구간(총 10,977.81 km) — 이쪽이 시작·끝 좌표 위주이며 검토의견 2번대로 68개(58.6%)가 계획(Planned), 48개가 기존(Existing)임. 두 레이어를 별도 지표로 분리하고 status를 attr에 명시함. [원문 하자] ①의 Id 열은 606행 전부 0이어서 식별자로 쓸 수 없어 행 번호를 대체 식별자로 note에 기재함. ②의 원본 geojson 파일 끝에 \"System.IO.MemoryStream\" 문자열이 붙어 있어 그대로는 JSON 파싱이 되지 않음(내려받기 도구 산물). [구조] 검토의견 3번 확인 — 원문 엑셀 표 안에 합계 행(구간점수 692, 연장 10,977.81)이 섞여 있어 117번째 선로로 오독됨. 본 데이터셋은 합계 행을 데이터에서 제외하고 유의사항에만 기록함. [미공급지역] 검토의견 1번·4번 확인 — \"미공급 지역\"에는 좌표·경계면이 없고 2015~2024년 접근률 통계표만 있음. 원문이 \"베트남은 전력 접근률이 사실상 100%(2024)로 미공급 지역을 특정하는 별도 GIS 레이어가 존재하지 않으며, 미전화 지역 표준 플랫폼(GEP)에도 베트남이 포함되지 않는다\"고 명시함. 따라서 미공급지역은 공간 레이어가 아니라 연도별 통계 지표로 1.1에 수록함. 원문 표 아래에 총인구·추정 미공급 인구 등 스칼라 블록이 같은 머리글 아래 붙어 있어 접근률 열로 오독될 수 있으므로 분리 수록함. [좌표 정밀도] 원천 카탈로그가 \"isolated area에서 위치 오차가 2~10 km에 이를 수 있음\"을 명시함. [라이선스] World Bank/ENERGYDATA.INFO 계열은 CC BY 4.0이므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-024",
+        "indicatorId": "A-024_transmission_line_wb2016",
+        "sourceFileDecoded": "A-024_전력망[위치, 미공급 지역].xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-3c0cd69b4d6b|%",
+      "dimensionLabels": {
+        "category": "미공급률",
+        "detail": "전력 미공급 인구 비율",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "미공급률",
+        "detail": "전력 미공급 인구 비율",
+        "technology": "24"
+      },
+      "displayLabel": "미공급 지역 · 미공급률 — 전력 미공급 인구 비율",
+      "indicatorId": "A-024_unserved_rate",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3c0cd69b4d6b",
+        "labelKo": "미공급 지역",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-3c0cd69b4d6b|%|category=미공급률|detail=전력 미공급 인구 비율|technology=24|A-024_unserved_rate",
+      "sourceCaveat": "[원천 구분] 본 요소에는 성격이 다른 두 개의 선로 레이어가 있어 지표를 분리함. ① World Bank ENERGYDATA.INFO 2016년 베트남 송전망(606개 구간, 총 23,607.62 km) — 검토의견 1번에 대응하여 확인한 결과 시작·끝 두 점이 아니라 구간당 2~58개 정점의 완전한 MULTILINESTRING 형상을 보유함(총 6,693개 정점). ② PDP8 계열 선로 116개 구간(총 10,977.81 km) — 이쪽이 시작·끝 좌표 위주이며 검토의견 2번대로 68개(58.6%)가 계획(Planned), 48개가 기존(Existing)임. 두 레이어를 별도 지표로 분리하고 status를 attr에 명시함. [원문 하자] ①의 Id 열은 606행 전부 0이어서 식별자로 쓸 수 없어 행 번호를 대체 식별자로 note에 기재함. ②의 원본 geojson 파일 끝에 \"System.IO.MemoryStream\" 문자열이 붙어 있어 그대로는 JSON 파싱이 되지 않음(내려받기 도구 산물). [구조] 검토의견 3번 확인 — 원문 엑셀 표 안에 합계 행(구간점수 692, 연장 10,977.81)이 섞여 있어 117번째 선로로 오독됨. 본 데이터셋은 합계 행을 데이터에서 제외하고 유의사항에만 기록함. [미공급지역] 검토의견 1번·4번 확인 — \"미공급 지역\"에는 좌표·경계면이 없고 2015~2024년 접근률 통계표만 있음. 원문이 \"베트남은 전력 접근률이 사실상 100%(2024)로 미공급 지역을 특정하는 별도 GIS 레이어가 존재하지 않으며, 미전화 지역 표준 플랫폼(GEP)에도 베트남이 포함되지 않는다\"고 명시함. 따라서 미공급지역은 공간 레이어가 아니라 연도별 통계 지표로 1.1에 수록함. 원문 표 아래에 총인구·추정 미공급 인구 등 스칼라 블록이 같은 머리글 아래 붙어 있어 접근률 열로 오독될 수 있으므로 분리 수록함. [좌표 정밀도] 원천 카탈로그가 \"isolated area에서 위치 오차가 2~10 km에 이를 수 있음\"을 명시함. [라이선스] World Bank/ENERGYDATA.INFO 계열은 CC BY 4.0이므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "미공급 지역 · 미공급률 — 전력 미공급 인구 비율",
+      "sourceLabelEn": "Electricity unserved rate (unserved)",
+      "sourceNote": "[원천 구분] 본 요소에는 성격이 다른 두 개의 선로 레이어가 있어 지표를 분리함. ① World Bank ENERGYDATA.INFO 2016년 베트남 송전망(606개 구간, 총 23,607.62 km) — 검토의견 1번에 대응하여 확인한 결과 시작·끝 두 점이 아니라 구간당 2~58개 정점의 완전한 MULTILINESTRING 형상을 보유함(총 6,693개 정점). ② PDP8 계열 선로 116개 구간(총 10,977.81 km) — 이쪽이 시작·끝 좌표 위주이며 검토의견 2번대로 68개(58.6%)가 계획(Planned), 48개가 기존(Existing)임. 두 레이어를 별도 지표로 분리하고 status를 attr에 명시함. [원문 하자] ①의 Id 열은 606행 전부 0이어서 식별자로 쓸 수 없어 행 번호를 대체 식별자로 note에 기재함. ②의 원본 geojson 파일 끝에 \"System.IO.MemoryStream\" 문자열이 붙어 있어 그대로는 JSON 파싱이 되지 않음(내려받기 도구 산물). [구조] 검토의견 3번 확인 — 원문 엑셀 표 안에 합계 행(구간점수 692, 연장 10,977.81)이 섞여 있어 117번째 선로로 오독됨. 본 데이터셋은 합계 행을 데이터에서 제외하고 유의사항에만 기록함. [미공급지역] 검토의견 1번·4번 확인 — \"미공급 지역\"에는 좌표·경계면이 없고 2015~2024년 접근률 통계표만 있음. 원문이 \"베트남은 전력 접근률이 사실상 100%(2024)로 미공급 지역을 특정하는 별도 GIS 레이어가 존재하지 않으며, 미전화 지역 표준 플랫폼(GEP)에도 베트남이 포함되지 않는다\"고 명시함. 따라서 미공급지역은 공간 레이어가 아니라 연도별 통계 지표로 1.1에 수록함. 원문 표 아래에 총인구·추정 미공급 인구 등 스칼라 블록이 같은 머리글 아래 붙어 있어 접근률 열로 오독될 수 있으므로 분리 수록함. [좌표 정밀도] 원천 카탈로그가 \"isolated area에서 위치 오차가 2~10 km에 이를 수 있음\"을 명시함. [라이선스] World Bank/ENERGYDATA.INFO 계열은 CC BY 4.0이므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-024",
+        "indicatorId": "A-024_unserved_rate",
+        "sourceFileDecoded": "A-024_전력망[위치, 미공급 지역].xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 4,
+      "key": "measure-3c0cd69b4d6b",
+      "labelKo": "미공급 지역",
+      "recordCount": 40,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-d30e19e20b62",
+      "labelKo": "송전망 선로 목록",
+      "recordCount": 0,
+      "unit": "kV",
+      "unitFamily": "other"
+    }
+  ],
+  "observationCount": 40,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

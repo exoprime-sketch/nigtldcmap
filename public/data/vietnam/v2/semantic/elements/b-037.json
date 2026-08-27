@@ -1,0 +1,1789 @@
+{
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 14,
+      "values": [
+        "관목지",
+        "나지",
+        "내륙 수역",
+        "다층 작물",
+        "맹그로브",
+        "목본 작물",
+        "수목 피복지(산림지)",
+        "습지 또는 정기 침수 관목/초본 식생",
+        "시가화지역(인공지표)",
+        "연안 수체 및 조간대",
+        "영구설 및 빙하",
+        "자연 식생 희소 지역",
+        "초본 작물(농경지)",
+        "초지"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 33,
+      "values": [
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ]
+    }
+  ],
+  "elementId": "B-037",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 56,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-4c0d2e8182fc|1000 ha",
+      "dimensionLabels": {
+        "detail": "시가화지역(인공지표)"
+      },
+      "dimensions": {
+        "detail": "시가화지역(인공지표)"
+      },
+      "displayLabel": "토지피복 면적 — 시가화지역(인공지표)",
+      "indicatorId": "B-037_lc_artificial_surface",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4c0d2e8182fc",
+        "labelKo": "토지피복 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-4c0d2e8182fc|1000 ha|detail=시가화지역(인공지표)|B-037_lc_artificial_surface",
+      "sourceCaveat": "단일 산출물(ESA CCI Land Cover 300m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 1992–2022. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적 — 시가화지역(인공지표)",
+      "sourceLabelEn": "Land cover area (CCI_LC): Artificial surfaces (including urban and associated areas)",
+      "sourceNote": "단일 산출물(ESA CCI Land Cover 300m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 1992–2022. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_artificial_surface",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 4,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-83654f27fc7a|1000 ha",
+      "dimensionLabels": {
+        "detail": "시가화지역(인공지표)"
+      },
+      "dimensions": {
+        "detail": "시가화지역(인공지표)"
+      },
+      "displayLabel": "토지피복 면적(CGLS) — 시가화지역(인공지표)",
+      "indicatorId": "B-037_lc_artificial_surface_cgls",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-83654f27fc7a",
+        "labelKo": "토지피복 면적(CGLS)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-83654f27fc7a|1000 ha|detail=시가화지역(인공지표)|B-037_lc_artificial_surface_cgls",
+      "sourceCaveat": "단일 산출물(Copernicus Global Land Service 100m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2015–2019. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(CGLS) — 시가화지역(인공지표)",
+      "sourceLabelEn": "Land cover area (CGLS): Artificial surfaces (including urban and associated areas)",
+      "sourceNote": "단일 산출물(Copernicus Global Land Service 100m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2015–2019. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_artificial_surface_cgls",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-08c6d6285cee|1000 ha",
+      "dimensionLabels": {
+        "detail": "시가화지역(인공지표)"
+      },
+      "dimensions": {
+        "detail": "시가화지역(인공지표)"
+      },
+      "displayLabel": "토지피복 면적(MODIS) — 시가화지역(인공지표)",
+      "indicatorId": "B-037_lc_artificial_surface_modis",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-08c6d6285cee",
+        "labelKo": "토지피복 면적(MODIS)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-08c6d6285cee|1000 ha|detail=시가화지역(인공지표)|B-037_lc_artificial_surface_modis",
+      "sourceCaveat": "단일 산출물(MODIS Land Cover (MCD12Q1) 500m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2001–2024. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(MODIS) — 시가화지역(인공지표)",
+      "sourceLabelEn": "Land cover area (MODIS): Artificial surfaces (including urban and associated areas)",
+      "sourceNote": "단일 산출물(MODIS Land Cover (MCD12Q1) 500m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2001–2024. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_artificial_surface_modis",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-baf2173085f9|1000 ha",
+      "dimensionLabels": {
+        "detail": "시가화지역(인공지표)"
+      },
+      "dimensions": {
+        "detail": "시가화지역(인공지표)"
+      },
+      "displayLabel": "토지피복 면적(WorldCover) — 시가화지역(인공지표)",
+      "indicatorId": "B-037_lc_artificial_surface_wc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-baf2173085f9",
+        "labelKo": "토지피복 면적(WorldCover)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-baf2173085f9|1000 ha|detail=시가화지역(인공지표)|B-037_lc_artificial_surface_wc",
+      "sourceCaveat": "단일 산출물(ESA WorldCover 10m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2020–2021. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(WorldCover) — 시가화지역(인공지표)",
+      "sourceLabelEn": "Land cover area (WorldCover): Artificial surfaces (including urban and associated areas)",
+      "sourceNote": "단일 산출물(ESA WorldCover 10m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2020–2021. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_artificial_surface_wc",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4c0d2e8182fc|1000 ha",
+      "dimensionLabels": {
+        "detail": "연안 수체 및 조간대"
+      },
+      "dimensions": {
+        "detail": "연안 수체 및 조간대"
+      },
+      "displayLabel": "토지피복 면적 — 연안 수체 및 조간대",
+      "indicatorId": "B-037_lc_coastal_water_bodi",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4c0d2e8182fc",
+        "labelKo": "토지피복 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-4c0d2e8182fc|1000 ha|detail=연안 수체 및 조간대|B-037_lc_coastal_water_bodi",
+      "sourceCaveat": "[결측] CCI_LC 분류체계 미포함 클래스. 동일 지표의 다른 산출물(MODIS·CGLS·WorldCover) 계열을 별도 지표코드로 병행 수록했으므로 그쪽에서 값 유무를 확인할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적 — 연안 수체 및 조간대",
+      "sourceLabelEn": "Land cover area (CCI_LC): Coastal water bodies and intertidal areas",
+      "sourceNote": "2022년: ESA CCI Land Cover 분류체계에 해당 클래스가 없어 산출물이 값을 제공하지 않음",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_coastal_water_bodi",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-83654f27fc7a|1000 ha",
+      "dimensionLabels": {
+        "detail": "연안 수체 및 조간대"
+      },
+      "dimensions": {
+        "detail": "연안 수체 및 조간대"
+      },
+      "displayLabel": "토지피복 면적(CGLS) — 연안 수체 및 조간대",
+      "indicatorId": "B-037_lc_coastal_water_bodi_cgls",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-83654f27fc7a",
+        "labelKo": "토지피복 면적(CGLS)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-83654f27fc7a|1000 ha|detail=연안 수체 및 조간대|B-037_lc_coastal_water_bodi_cgls",
+      "sourceCaveat": "단일 산출물(Copernicus Global Land Service 100m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2015–2019. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(CGLS) — 연안 수체 및 조간대",
+      "sourceLabelEn": "Land cover area (CGLS): Coastal water bodies and intertidal areas",
+      "sourceNote": "단일 산출물(Copernicus Global Land Service 100m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2015–2019. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_coastal_water_bodi_cgls",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-08c6d6285cee|1000 ha",
+      "dimensionLabels": {
+        "detail": "연안 수체 및 조간대"
+      },
+      "dimensions": {
+        "detail": "연안 수체 및 조간대"
+      },
+      "displayLabel": "토지피복 면적(MODIS) — 연안 수체 및 조간대",
+      "indicatorId": "B-037_lc_coastal_water_bodi_modis",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-08c6d6285cee",
+        "labelKo": "토지피복 면적(MODIS)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-08c6d6285cee|1000 ha|detail=연안 수체 및 조간대|B-037_lc_coastal_water_bodi_modis",
+      "sourceCaveat": "[결측] 원천이 해당 클래스 행 자체는 두고 있으나 2001–2024 전 구간 값이 비어 있음 — 분류체계에 없는 것(NA)과 구분하여 \"원천이 값을 제공하지 않음(NO)\"으로 코드화. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(MODIS) — 연안 수체 및 조간대",
+      "sourceLabelEn": "Land cover area (MODIS): Coastal water bodies and intertidal areas",
+      "sourceNote": "2024년: MODIS Land Cover (MCD12Q1) 500m 산출물에 해당 클래스 행은 존재하나 전 연도 값이 공란(원천 Flag=O, 값 미산출)",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_coastal_water_bodi_modis",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-baf2173085f9|1000 ha",
+      "dimensionLabels": {
+        "detail": "연안 수체 및 조간대"
+      },
+      "dimensions": {
+        "detail": "연안 수체 및 조간대"
+      },
+      "displayLabel": "토지피복 면적(WorldCover) — 연안 수체 및 조간대",
+      "indicatorId": "B-037_lc_coastal_water_bodi_wc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-baf2173085f9",
+        "labelKo": "토지피복 면적(WorldCover)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-baf2173085f9|1000 ha|detail=연안 수체 및 조간대|B-037_lc_coastal_water_bodi_wc",
+      "sourceCaveat": "[결측] 원천이 해당 클래스 행 자체는 두고 있으나 2020–2021 전 구간 값이 비어 있음 — 분류체계에 없는 것(NA)과 구분하여 \"원천이 값을 제공하지 않음(NO)\"으로 코드화. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(WorldCover) — 연안 수체 및 조간대",
+      "sourceLabelEn": "Land cover area (WorldCover): Coastal water bodies and intertidal areas",
+      "sourceNote": "2021년: ESA WorldCover 10m 산출물에 해당 클래스 행은 존재하나 전 연도 값이 공란(원천 Flag=O, 값 미산출)",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_coastal_water_bodi_wc",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4c0d2e8182fc|1000 ha",
+      "dimensionLabels": {
+        "detail": "초지"
+      },
+      "dimensions": {
+        "detail": "초지"
+      },
+      "displayLabel": "토지피복 면적 — 초지",
+      "indicatorId": "B-037_lc_grassland",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4c0d2e8182fc",
+        "labelKo": "토지피복 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-4c0d2e8182fc|1000 ha|detail=초지|B-037_lc_grassland",
+      "sourceCaveat": "단일 산출물(ESA CCI Land Cover 300m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 1992–2022. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적 — 초지",
+      "sourceLabelEn": "Land cover area (CCI_LC): Grassland",
+      "sourceNote": "단일 산출물(ESA CCI Land Cover 300m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 1992–2022. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_grassland",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-83654f27fc7a|1000 ha",
+      "dimensionLabels": {
+        "detail": "초지"
+      },
+      "dimensions": {
+        "detail": "초지"
+      },
+      "displayLabel": "토지피복 면적(CGLS) — 초지",
+      "indicatorId": "B-037_lc_grassland_cgls",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-83654f27fc7a",
+        "labelKo": "토지피복 면적(CGLS)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-83654f27fc7a|1000 ha|detail=초지|B-037_lc_grassland_cgls",
+      "sourceCaveat": "[결측] 원천이 해당 클래스 행 자체는 두고 있으나 2015–2019 전 구간 값이 비어 있음 — 분류체계에 없는 것(NA)과 구분하여 \"원천이 값을 제공하지 않음(NO)\"으로 코드화. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(CGLS) — 초지",
+      "sourceLabelEn": "Land cover area (CGLS): Grassland",
+      "sourceNote": "2019년: Copernicus Global Land Service 100m 산출물에 해당 클래스 행은 존재하나 전 연도 값이 공란(원천 Flag=O, 값 미산출)",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_grassland_cgls",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-08c6d6285cee|1000 ha",
+      "dimensionLabels": {
+        "detail": "초지"
+      },
+      "dimensions": {
+        "detail": "초지"
+      },
+      "displayLabel": "토지피복 면적(MODIS) — 초지",
+      "indicatorId": "B-037_lc_grassland_modis",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-08c6d6285cee",
+        "labelKo": "토지피복 면적(MODIS)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-08c6d6285cee|1000 ha|detail=초지|B-037_lc_grassland_modis",
+      "sourceCaveat": "단일 산출물(MODIS Land Cover (MCD12Q1) 500m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2001–2024. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(MODIS) — 초지",
+      "sourceLabelEn": "Land cover area (MODIS): Grassland",
+      "sourceNote": "단일 산출물(MODIS Land Cover (MCD12Q1) 500m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2001–2024. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_grassland_modis",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-baf2173085f9|1000 ha",
+      "dimensionLabels": {
+        "detail": "초지"
+      },
+      "dimensions": {
+        "detail": "초지"
+      },
+      "displayLabel": "토지피복 면적(WorldCover) — 초지",
+      "indicatorId": "B-037_lc_grassland_wc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-baf2173085f9",
+        "labelKo": "토지피복 면적(WorldCover)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-baf2173085f9|1000 ha|detail=초지|B-037_lc_grassland_wc",
+      "sourceCaveat": "단일 산출물(ESA WorldCover 10m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2020–2021. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(WorldCover) — 초지",
+      "sourceLabelEn": "Land cover area (WorldCover): Grassland",
+      "sourceNote": "단일 산출물(ESA WorldCover 10m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2020–2021. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_grassland_wc",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4c0d2e8182fc|1000 ha",
+      "dimensionLabels": {
+        "detail": "초본 작물(농경지)"
+      },
+      "dimensions": {
+        "detail": "초본 작물(농경지)"
+      },
+      "displayLabel": "토지피복 면적 — 초본 작물(농경지)",
+      "indicatorId": "B-037_lc_herbaceous_crops",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4c0d2e8182fc",
+        "labelKo": "토지피복 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-4c0d2e8182fc|1000 ha|detail=초본 작물(농경지)|B-037_lc_herbaceous_crops",
+      "sourceCaveat": "단일 산출물(ESA CCI Land Cover 300m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 1992–2022. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적 — 초본 작물(농경지)",
+      "sourceLabelEn": "Land cover area (CCI_LC): Herbaceous crops",
+      "sourceNote": "단일 산출물(ESA CCI Land Cover 300m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 1992–2022. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_herbaceous_crops",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-83654f27fc7a|1000 ha",
+      "dimensionLabels": {
+        "detail": "초본 작물(농경지)"
+      },
+      "dimensions": {
+        "detail": "초본 작물(농경지)"
+      },
+      "displayLabel": "토지피복 면적(CGLS) — 초본 작물(농경지)",
+      "indicatorId": "B-037_lc_herbaceous_crops_cgls",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-83654f27fc7a",
+        "labelKo": "토지피복 면적(CGLS)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-83654f27fc7a|1000 ha|detail=초본 작물(농경지)|B-037_lc_herbaceous_crops_cgls",
+      "sourceCaveat": "단일 산출물(Copernicus Global Land Service 100m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2015–2019. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(CGLS) — 초본 작물(농경지)",
+      "sourceLabelEn": "Land cover area (CGLS): Herbaceous crops",
+      "sourceNote": "단일 산출물(Copernicus Global Land Service 100m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2015–2019. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_herbaceous_crops_cgls",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-08c6d6285cee|1000 ha",
+      "dimensionLabels": {
+        "detail": "초본 작물(농경지)"
+      },
+      "dimensions": {
+        "detail": "초본 작물(농경지)"
+      },
+      "displayLabel": "토지피복 면적(MODIS) — 초본 작물(농경지)",
+      "indicatorId": "B-037_lc_herbaceous_crops_modis",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-08c6d6285cee",
+        "labelKo": "토지피복 면적(MODIS)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-08c6d6285cee|1000 ha|detail=초본 작물(농경지)|B-037_lc_herbaceous_crops_modis",
+      "sourceCaveat": "단일 산출물(MODIS Land Cover (MCD12Q1) 500m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2001–2024. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(MODIS) — 초본 작물(농경지)",
+      "sourceLabelEn": "Land cover area (MODIS): Herbaceous crops",
+      "sourceNote": "단일 산출물(MODIS Land Cover (MCD12Q1) 500m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2001–2024. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_herbaceous_crops_modis",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-baf2173085f9|1000 ha",
+      "dimensionLabels": {
+        "detail": "초본 작물(농경지)"
+      },
+      "dimensions": {
+        "detail": "초본 작물(농경지)"
+      },
+      "displayLabel": "토지피복 면적(WorldCover) — 초본 작물(농경지)",
+      "indicatorId": "B-037_lc_herbaceous_crops_wc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-baf2173085f9",
+        "labelKo": "토지피복 면적(WorldCover)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-baf2173085f9|1000 ha|detail=초본 작물(농경지)|B-037_lc_herbaceous_crops_wc",
+      "sourceCaveat": "단일 산출물(ESA WorldCover 10m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2020–2021. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(WorldCover) — 초본 작물(농경지)",
+      "sourceLabelEn": "Land cover area (WorldCover): Herbaceous crops",
+      "sourceNote": "단일 산출물(ESA WorldCover 10m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2020–2021. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_herbaceous_crops_wc",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4c0d2e8182fc|1000 ha",
+      "dimensionLabels": {
+        "detail": "내륙 수역"
+      },
+      "dimensions": {
+        "detail": "내륙 수역"
+      },
+      "displayLabel": "토지피복 면적 — 내륙 수역",
+      "indicatorId": "B-037_lc_inland_water_bodie",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4c0d2e8182fc",
+        "labelKo": "토지피복 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-4c0d2e8182fc|1000 ha|detail=내륙 수역|B-037_lc_inland_water_bodie",
+      "sourceCaveat": "단일 산출물(ESA CCI Land Cover 300m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 1992–2022. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적 — 내륙 수역",
+      "sourceLabelEn": "Land cover area (CCI_LC): Inland water bodies",
+      "sourceNote": "단일 산출물(ESA CCI Land Cover 300m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 1992–2022. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_inland_water_bodie",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-83654f27fc7a|1000 ha",
+      "dimensionLabels": {
+        "detail": "내륙 수역"
+      },
+      "dimensions": {
+        "detail": "내륙 수역"
+      },
+      "displayLabel": "토지피복 면적(CGLS) — 내륙 수역",
+      "indicatorId": "B-037_lc_inland_water_bodie_cgls",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-83654f27fc7a",
+        "labelKo": "토지피복 면적(CGLS)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-83654f27fc7a|1000 ha|detail=내륙 수역|B-037_lc_inland_water_bodie_cgls",
+      "sourceCaveat": "단일 산출물(Copernicus Global Land Service 100m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2015–2019. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(CGLS) — 내륙 수역",
+      "sourceLabelEn": "Land cover area (CGLS): Inland water bodies",
+      "sourceNote": "단일 산출물(Copernicus Global Land Service 100m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2015–2019. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_inland_water_bodie_cgls",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-08c6d6285cee|1000 ha",
+      "dimensionLabels": {
+        "detail": "내륙 수역"
+      },
+      "dimensions": {
+        "detail": "내륙 수역"
+      },
+      "displayLabel": "토지피복 면적(MODIS) — 내륙 수역",
+      "indicatorId": "B-037_lc_inland_water_bodie_modis",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-08c6d6285cee",
+        "labelKo": "토지피복 면적(MODIS)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-08c6d6285cee|1000 ha|detail=내륙 수역|B-037_lc_inland_water_bodie_modis",
+      "sourceCaveat": "단일 산출물(MODIS Land Cover (MCD12Q1) 500m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2001–2024. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(MODIS) — 내륙 수역",
+      "sourceLabelEn": "Land cover area (MODIS): Inland water bodies",
+      "sourceNote": "단일 산출물(MODIS Land Cover (MCD12Q1) 500m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2001–2024. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_inland_water_bodie_modis",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-baf2173085f9|1000 ha",
+      "dimensionLabels": {
+        "detail": "내륙 수역"
+      },
+      "dimensions": {
+        "detail": "내륙 수역"
+      },
+      "displayLabel": "토지피복 면적(WorldCover) — 내륙 수역",
+      "indicatorId": "B-037_lc_inland_water_bodie_wc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-baf2173085f9",
+        "labelKo": "토지피복 면적(WorldCover)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-baf2173085f9|1000 ha|detail=내륙 수역|B-037_lc_inland_water_bodie_wc",
+      "sourceCaveat": "단일 산출물(ESA WorldCover 10m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2020–2021. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(WorldCover) — 내륙 수역",
+      "sourceLabelEn": "Land cover area (WorldCover): Inland water bodies",
+      "sourceNote": "단일 산출물(ESA WorldCover 10m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2020–2021. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_inland_water_bodie_wc",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4c0d2e8182fc|1000 ha",
+      "dimensionLabels": {
+        "detail": "맹그로브"
+      },
+      "dimensions": {
+        "detail": "맹그로브"
+      },
+      "displayLabel": "토지피복 면적 — 맹그로브",
+      "indicatorId": "B-037_lc_mangroves",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4c0d2e8182fc",
+        "labelKo": "토지피복 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-4c0d2e8182fc|1000 ha|detail=맹그로브|B-037_lc_mangroves",
+      "sourceCaveat": "단일 산출물(ESA CCI Land Cover 300m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 1992–2022. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적 — 맹그로브",
+      "sourceLabelEn": "Land cover area (CCI_LC): Mangroves",
+      "sourceNote": "단일 산출물(ESA CCI Land Cover 300m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 1992–2022. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_mangroves",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 24,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-83654f27fc7a|1000 ha",
+      "dimensionLabels": {
+        "detail": "맹그로브"
+      },
+      "dimensions": {
+        "detail": "맹그로브"
+      },
+      "displayLabel": "토지피복 면적(CGLS) — 맹그로브",
+      "indicatorId": "B-037_lc_mangroves_cgls",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-83654f27fc7a",
+        "labelKo": "토지피복 면적(CGLS)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-83654f27fc7a|1000 ha|detail=맹그로브|B-037_lc_mangroves_cgls",
+      "sourceCaveat": "[결측] 원천이 해당 클래스 행 자체는 두고 있으나 2015–2019 전 구간 값이 비어 있음 — 분류체계에 없는 것(NA)과 구분하여 \"원천이 값을 제공하지 않음(NO)\"으로 코드화. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(CGLS) — 맹그로브",
+      "sourceLabelEn": "Land cover area (CGLS): Mangroves",
+      "sourceNote": "2019년: Copernicus Global Land Service 100m 산출물에 해당 클래스 행은 존재하나 전 연도 값이 공란(원천 Flag=O, 값 미산출)",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_mangroves_cgls",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 26,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-08c6d6285cee|1000 ha",
+      "dimensionLabels": {
+        "detail": "맹그로브"
+      },
+      "dimensions": {
+        "detail": "맹그로브"
+      },
+      "displayLabel": "토지피복 면적(MODIS) — 맹그로브",
+      "indicatorId": "B-037_lc_mangroves_modis",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-08c6d6285cee",
+        "labelKo": "토지피복 면적(MODIS)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-08c6d6285cee|1000 ha|detail=맹그로브|B-037_lc_mangroves_modis",
+      "sourceCaveat": "단일 산출물(MODIS Land Cover (MCD12Q1) 500m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2001–2024. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(MODIS) — 맹그로브",
+      "sourceLabelEn": "Land cover area (MODIS): Mangroves",
+      "sourceNote": "단일 산출물(MODIS Land Cover (MCD12Q1) 500m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2001–2024. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_mangroves_modis",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 25,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-baf2173085f9|1000 ha",
+      "dimensionLabels": {
+        "detail": "맹그로브"
+      },
+      "dimensions": {
+        "detail": "맹그로브"
+      },
+      "displayLabel": "토지피복 면적(WorldCover) — 맹그로브",
+      "indicatorId": "B-037_lc_mangroves_wc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-baf2173085f9",
+        "labelKo": "토지피복 면적(WorldCover)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-baf2173085f9|1000 ha|detail=맹그로브|B-037_lc_mangroves_wc",
+      "sourceCaveat": "단일 산출물(ESA WorldCover 10m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2020–2021. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(WorldCover) — 맹그로브",
+      "sourceLabelEn": "Land cover area (WorldCover): Mangroves",
+      "sourceNote": "단일 산출물(ESA WorldCover 10m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2020–2021. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_mangroves_wc",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 27,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4c0d2e8182fc|1000 ha",
+      "dimensionLabels": {
+        "detail": "다층 작물"
+      },
+      "dimensions": {
+        "detail": "다층 작물"
+      },
+      "displayLabel": "토지피복 면적 — 다층 작물",
+      "indicatorId": "B-037_lc_multiple_or_layere",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4c0d2e8182fc",
+        "labelKo": "토지피복 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-4c0d2e8182fc|1000 ha|detail=다층 작물|B-037_lc_multiple_or_layere",
+      "sourceCaveat": "[결측] CCI_LC 분류체계 미포함 클래스. 동일 지표의 다른 산출물(MODIS·CGLS·WorldCover) 계열을 별도 지표코드로 병행 수록했으므로 그쪽에서 값 유무를 확인할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적 — 다층 작물",
+      "sourceLabelEn": "Land cover area (CCI_LC): Multiple or layered crops",
+      "sourceNote": "2022년: ESA CCI Land Cover 분류체계에 해당 클래스가 없어 산출물이 값을 제공하지 않음",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_multiple_or_layere",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 28,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-83654f27fc7a|1000 ha",
+      "dimensionLabels": {
+        "detail": "다층 작물"
+      },
+      "dimensions": {
+        "detail": "다층 작물"
+      },
+      "displayLabel": "토지피복 면적(CGLS) — 다층 작물",
+      "indicatorId": "B-037_lc_multiple_or_layere_cgls",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-83654f27fc7a",
+        "labelKo": "토지피복 면적(CGLS)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-83654f27fc7a|1000 ha|detail=다층 작물|B-037_lc_multiple_or_layere_cgls",
+      "sourceCaveat": "[결측] 원천이 해당 클래스 행 자체는 두고 있으나 2015–2019 전 구간 값이 비어 있음 — 분류체계에 없는 것(NA)과 구분하여 \"원천이 값을 제공하지 않음(NO)\"으로 코드화. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(CGLS) — 다층 작물",
+      "sourceLabelEn": "Land cover area (CGLS): Multiple or layered crops",
+      "sourceNote": "2019년: Copernicus Global Land Service 100m 산출물에 해당 클래스 행은 존재하나 전 연도 값이 공란(원천 Flag=O, 값 미산출)",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_multiple_or_layere_cgls",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 30,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-08c6d6285cee|1000 ha",
+      "dimensionLabels": {
+        "detail": "다층 작물"
+      },
+      "dimensions": {
+        "detail": "다층 작물"
+      },
+      "displayLabel": "토지피복 면적(MODIS) — 다층 작물",
+      "indicatorId": "B-037_lc_multiple_or_layere_modis",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-08c6d6285cee",
+        "labelKo": "토지피복 면적(MODIS)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-08c6d6285cee|1000 ha|detail=다층 작물|B-037_lc_multiple_or_layere_modis",
+      "sourceCaveat": "[결측] 원천이 해당 클래스 행 자체는 두고 있으나 2001–2024 전 구간 값이 비어 있음 — 분류체계에 없는 것(NA)과 구분하여 \"원천이 값을 제공하지 않음(NO)\"으로 코드화. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(MODIS) — 다층 작물",
+      "sourceLabelEn": "Land cover area (MODIS): Multiple or layered crops",
+      "sourceNote": "2024년: MODIS Land Cover (MCD12Q1) 500m 산출물에 해당 클래스 행은 존재하나 전 연도 값이 공란(원천 Flag=O, 값 미산출)",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_multiple_or_layere_modis",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 29,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-baf2173085f9|1000 ha",
+      "dimensionLabels": {
+        "detail": "다층 작물"
+      },
+      "dimensions": {
+        "detail": "다층 작물"
+      },
+      "displayLabel": "토지피복 면적(WorldCover) — 다층 작물",
+      "indicatorId": "B-037_lc_multiple_or_layere_wc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-baf2173085f9",
+        "labelKo": "토지피복 면적(WorldCover)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-baf2173085f9|1000 ha|detail=다층 작물|B-037_lc_multiple_or_layere_wc",
+      "sourceCaveat": "[결측] 원천이 해당 클래스 행 자체는 두고 있으나 2020–2021 전 구간 값이 비어 있음 — 분류체계에 없는 것(NA)과 구분하여 \"원천이 값을 제공하지 않음(NO)\"으로 코드화. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(WorldCover) — 다층 작물",
+      "sourceLabelEn": "Land cover area (WorldCover): Multiple or layered crops",
+      "sourceNote": "2021년: ESA WorldCover 10m 산출물에 해당 클래스 행은 존재하나 전 연도 값이 공란(원천 Flag=O, 값 미산출)",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_multiple_or_layere_wc",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 31,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4c0d2e8182fc|1000 ha",
+      "dimensionLabels": {
+        "detail": "영구설 및 빙하"
+      },
+      "dimensions": {
+        "detail": "영구설 및 빙하"
+      },
+      "displayLabel": "토지피복 면적 — 영구설 및 빙하",
+      "indicatorId": "B-037_lc_permanent_snow_and",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4c0d2e8182fc",
+        "labelKo": "토지피복 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-4c0d2e8182fc|1000 ha|detail=영구설 및 빙하|B-037_lc_permanent_snow_and",
+      "sourceCaveat": "단일 산출물(ESA CCI Land Cover 300m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 1992–2022. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적 — 영구설 및 빙하",
+      "sourceLabelEn": "Land cover area (CCI_LC): Permanent snow and glaciers",
+      "sourceNote": "단일 산출물(ESA CCI Land Cover 300m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 1992–2022. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_permanent_snow_and",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 32,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-83654f27fc7a|1000 ha",
+      "dimensionLabels": {
+        "detail": "영구설 및 빙하"
+      },
+      "dimensions": {
+        "detail": "영구설 및 빙하"
+      },
+      "displayLabel": "토지피복 면적(CGLS) — 영구설 및 빙하",
+      "indicatorId": "B-037_lc_permanent_snow_and_cgls",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-83654f27fc7a",
+        "labelKo": "토지피복 면적(CGLS)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-83654f27fc7a|1000 ha|detail=영구설 및 빙하|B-037_lc_permanent_snow_and_cgls",
+      "sourceCaveat": "[결측] 원천이 해당 클래스 행 자체는 두고 있으나 2015–2019 전 구간 값이 비어 있음 — 분류체계에 없는 것(NA)과 구분하여 \"원천이 값을 제공하지 않음(NO)\"으로 코드화. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(CGLS) — 영구설 및 빙하",
+      "sourceLabelEn": "Land cover area (CGLS): Permanent snow and glaciers",
+      "sourceNote": "2019년: Copernicus Global Land Service 100m 산출물에 해당 클래스 행은 존재하나 전 연도 값이 공란(원천 Flag=O, 값 미산출)",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_permanent_snow_and_cgls",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 34,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-08c6d6285cee|1000 ha",
+      "dimensionLabels": {
+        "detail": "영구설 및 빙하"
+      },
+      "dimensions": {
+        "detail": "영구설 및 빙하"
+      },
+      "displayLabel": "토지피복 면적(MODIS) — 영구설 및 빙하",
+      "indicatorId": "B-037_lc_permanent_snow_and_modis",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-08c6d6285cee",
+        "labelKo": "토지피복 면적(MODIS)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-08c6d6285cee|1000 ha|detail=영구설 및 빙하|B-037_lc_permanent_snow_and_modis",
+      "sourceCaveat": "단일 산출물(MODIS Land Cover (MCD12Q1) 500m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2001–2024. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(MODIS) — 영구설 및 빙하",
+      "sourceLabelEn": "Land cover area (MODIS): Permanent snow and glaciers",
+      "sourceNote": "단일 산출물(MODIS Land Cover (MCD12Q1) 500m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2001–2024. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_permanent_snow_and_modis",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 33,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-baf2173085f9|1000 ha",
+      "dimensionLabels": {
+        "detail": "영구설 및 빙하"
+      },
+      "dimensions": {
+        "detail": "영구설 및 빙하"
+      },
+      "displayLabel": "토지피복 면적(WorldCover) — 영구설 및 빙하",
+      "indicatorId": "B-037_lc_permanent_snow_and_wc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-baf2173085f9",
+        "labelKo": "토지피복 면적(WorldCover)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-baf2173085f9|1000 ha|detail=영구설 및 빙하|B-037_lc_permanent_snow_and_wc",
+      "sourceCaveat": "단일 산출물(ESA WorldCover 10m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2020–2021. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(WorldCover) — 영구설 및 빙하",
+      "sourceLabelEn": "Land cover area (WorldCover): Permanent snow and glaciers",
+      "sourceNote": "단일 산출물(ESA WorldCover 10m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2020–2021. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_permanent_snow_and_wc",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 35,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4c0d2e8182fc|1000 ha",
+      "dimensionLabels": {
+        "detail": "관목지"
+      },
+      "dimensions": {
+        "detail": "관목지"
+      },
+      "displayLabel": "토지피복 면적 — 관목지",
+      "indicatorId": "B-037_lc_shrub-covered_area",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4c0d2e8182fc",
+        "labelKo": "토지피복 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-4c0d2e8182fc|1000 ha|detail=관목지|B-037_lc_shrub-covered_area",
+      "sourceCaveat": "단일 산출물(ESA CCI Land Cover 300m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 1992–2022. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적 — 관목지",
+      "sourceLabelEn": "Land cover area (CCI_LC): Shrub-covered areas",
+      "sourceNote": "단일 산출물(ESA CCI Land Cover 300m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 1992–2022. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_shrub-covered_area",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 36,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-83654f27fc7a|1000 ha",
+      "dimensionLabels": {
+        "detail": "관목지"
+      },
+      "dimensions": {
+        "detail": "관목지"
+      },
+      "displayLabel": "토지피복 면적(CGLS) — 관목지",
+      "indicatorId": "B-037_lc_shrub-covered_area_cgls",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-83654f27fc7a",
+        "labelKo": "토지피복 면적(CGLS)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-83654f27fc7a|1000 ha|detail=관목지|B-037_lc_shrub-covered_area_cgls",
+      "sourceCaveat": "단일 산출물(Copernicus Global Land Service 100m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2015–2019. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(CGLS) — 관목지",
+      "sourceLabelEn": "Land cover area (CGLS): Shrub-covered areas",
+      "sourceNote": "단일 산출물(Copernicus Global Land Service 100m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2015–2019. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_shrub-covered_area_cgls",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 38,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-08c6d6285cee|1000 ha",
+      "dimensionLabels": {
+        "detail": "관목지"
+      },
+      "dimensions": {
+        "detail": "관목지"
+      },
+      "displayLabel": "토지피복 면적(MODIS) — 관목지",
+      "indicatorId": "B-037_lc_shrub-covered_area_modis",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-08c6d6285cee",
+        "labelKo": "토지피복 면적(MODIS)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-08c6d6285cee|1000 ha|detail=관목지|B-037_lc_shrub-covered_area_modis",
+      "sourceCaveat": "단일 산출물(MODIS Land Cover (MCD12Q1) 500m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2001–2024. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(MODIS) — 관목지",
+      "sourceLabelEn": "Land cover area (MODIS): Shrub-covered areas",
+      "sourceNote": "단일 산출물(MODIS Land Cover (MCD12Q1) 500m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2001–2024. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_shrub-covered_area_modis",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 37,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-baf2173085f9|1000 ha",
+      "dimensionLabels": {
+        "detail": "관목지"
+      },
+      "dimensions": {
+        "detail": "관목지"
+      },
+      "displayLabel": "토지피복 면적(WorldCover) — 관목지",
+      "indicatorId": "B-037_lc_shrub-covered_area_wc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-baf2173085f9",
+        "labelKo": "토지피복 면적(WorldCover)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-baf2173085f9|1000 ha|detail=관목지|B-037_lc_shrub-covered_area_wc",
+      "sourceCaveat": "단일 산출물(ESA WorldCover 10m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2020–2021. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(WorldCover) — 관목지",
+      "sourceLabelEn": "Land cover area (WorldCover): Shrub-covered areas",
+      "sourceNote": "단일 산출물(ESA WorldCover 10m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2020–2021. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_shrub-covered_area_wc",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 39,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4c0d2e8182fc|1000 ha",
+      "dimensionLabels": {
+        "detail": "습지 또는 정기 침수 관목/초본 식생"
+      },
+      "dimensions": {
+        "detail": "습지 또는 정기 침수 관목/초본 식생"
+      },
+      "displayLabel": "토지피복 면적 — 습지 또는 정기 침수 관목/초본 식생",
+      "indicatorId": "B-037_lc_shrubs_and/or_herb",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4c0d2e8182fc",
+        "labelKo": "토지피복 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-4c0d2e8182fc|1000 ha|detail=습지 또는 정기 침수 관목/초본 식생|B-037_lc_shrubs_and/or_herb",
+      "sourceCaveat": "단일 산출물(ESA CCI Land Cover 300m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 1992–2022. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적 — 습지 또는 정기 침수 관목/초본 식생",
+      "sourceLabelEn": "Land cover area (CCI_LC): Shrubs and/or herbaceous vegetation, aquatic or regularly flooded",
+      "sourceNote": "단일 산출물(ESA CCI Land Cover 300m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 1992–2022. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_shrubs_and/or_herb",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 40,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-83654f27fc7a|1000 ha",
+      "dimensionLabels": {
+        "detail": "습지 또는 정기 침수 관목/초본 식생"
+      },
+      "dimensions": {
+        "detail": "습지 또는 정기 침수 관목/초본 식생"
+      },
+      "displayLabel": "토지피복 면적(CGLS) — 습지 또는 정기 침수 관목/초본 식생",
+      "indicatorId": "B-037_lc_shrubs_and/or_herb_cgls",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-83654f27fc7a",
+        "labelKo": "토지피복 면적(CGLS)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-83654f27fc7a|1000 ha|detail=습지 또는 정기 침수 관목/초본 식생|B-037_lc_shrubs_and/or_herb_cgls",
+      "sourceCaveat": "단일 산출물(Copernicus Global Land Service 100m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2015–2019. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(CGLS) — 습지 또는 정기 침수 관목/초본 식생",
+      "sourceLabelEn": "Land cover area (CGLS): Shrubs and/or herbaceous vegetation, aquatic or regularly flooded",
+      "sourceNote": "단일 산출물(Copernicus Global Land Service 100m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2015–2019. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_shrubs_and/or_herb_cgls",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 42,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-08c6d6285cee|1000 ha",
+      "dimensionLabels": {
+        "detail": "습지 또는 정기 침수 관목/초본 식생"
+      },
+      "dimensions": {
+        "detail": "습지 또는 정기 침수 관목/초본 식생"
+      },
+      "displayLabel": "토지피복 면적(MODIS) — 습지 또는 정기 침수 관목/초본 식생",
+      "indicatorId": "B-037_lc_shrubs_and/or_herb_modis",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-08c6d6285cee",
+        "labelKo": "토지피복 면적(MODIS)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-08c6d6285cee|1000 ha|detail=습지 또는 정기 침수 관목/초본 식생|B-037_lc_shrubs_and/or_herb_modis",
+      "sourceCaveat": "단일 산출물(MODIS Land Cover (MCD12Q1) 500m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2001–2024. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(MODIS) — 습지 또는 정기 침수 관목/초본 식생",
+      "sourceLabelEn": "Land cover area (MODIS): Shrubs and/or herbaceous vegetation, aquatic or regularly flooded",
+      "sourceNote": "단일 산출물(MODIS Land Cover (MCD12Q1) 500m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2001–2024. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_shrubs_and/or_herb_modis",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 41,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-baf2173085f9|1000 ha",
+      "dimensionLabels": {
+        "detail": "습지 또는 정기 침수 관목/초본 식생"
+      },
+      "dimensions": {
+        "detail": "습지 또는 정기 침수 관목/초본 식생"
+      },
+      "displayLabel": "토지피복 면적(WorldCover) — 습지 또는 정기 침수 관목/초본 식생",
+      "indicatorId": "B-037_lc_shrubs_and/or_herb_wc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-baf2173085f9",
+        "labelKo": "토지피복 면적(WorldCover)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-baf2173085f9|1000 ha|detail=습지 또는 정기 침수 관목/초본 식생|B-037_lc_shrubs_and/or_herb_wc",
+      "sourceCaveat": "단일 산출물(ESA WorldCover 10m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2020–2021. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(WorldCover) — 습지 또는 정기 침수 관목/초본 식생",
+      "sourceLabelEn": "Land cover area (WorldCover): Shrubs and/or herbaceous vegetation, aquatic or regularly flooded",
+      "sourceNote": "단일 산출물(ESA WorldCover 10m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2020–2021. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_shrubs_and/or_herb_wc",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 43,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4c0d2e8182fc|1000 ha",
+      "dimensionLabels": {
+        "detail": "자연 식생 희소 지역"
+      },
+      "dimensions": {
+        "detail": "자연 식생 희소 지역"
+      },
+      "displayLabel": "토지피복 면적 — 자연 식생 희소 지역",
+      "indicatorId": "B-037_lc_sparsely_natural_v",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4c0d2e8182fc",
+        "labelKo": "토지피복 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-4c0d2e8182fc|1000 ha|detail=자연 식생 희소 지역|B-037_lc_sparsely_natural_v",
+      "sourceCaveat": "단일 산출물(ESA CCI Land Cover 300m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 1992–2022. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적 — 자연 식생 희소 지역",
+      "sourceLabelEn": "Land cover area (CCI_LC): Sparsely natural vegetated areas",
+      "sourceNote": "단일 산출물(ESA CCI Land Cover 300m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 1992–2022. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_sparsely_natural_v",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 44,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-83654f27fc7a|1000 ha",
+      "dimensionLabels": {
+        "detail": "자연 식생 희소 지역"
+      },
+      "dimensions": {
+        "detail": "자연 식생 희소 지역"
+      },
+      "displayLabel": "토지피복 면적(CGLS) — 자연 식생 희소 지역",
+      "indicatorId": "B-037_lc_sparsely_natural_v_cgls",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-83654f27fc7a",
+        "labelKo": "토지피복 면적(CGLS)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-83654f27fc7a|1000 ha|detail=자연 식생 희소 지역|B-037_lc_sparsely_natural_v_cgls",
+      "sourceCaveat": "[결측] 원천이 해당 클래스 행 자체는 두고 있으나 2015–2019 전 구간 값이 비어 있음 — 분류체계에 없는 것(NA)과 구분하여 \"원천이 값을 제공하지 않음(NO)\"으로 코드화. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(CGLS) — 자연 식생 희소 지역",
+      "sourceLabelEn": "Land cover area (CGLS): Sparsely natural vegetated areas",
+      "sourceNote": "2019년: Copernicus Global Land Service 100m 산출물에 해당 클래스 행은 존재하나 전 연도 값이 공란(원천 Flag=O, 값 미산출)",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_sparsely_natural_v_cgls",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 46,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-08c6d6285cee|1000 ha",
+      "dimensionLabels": {
+        "detail": "자연 식생 희소 지역"
+      },
+      "dimensions": {
+        "detail": "자연 식생 희소 지역"
+      },
+      "displayLabel": "토지피복 면적(MODIS) — 자연 식생 희소 지역",
+      "indicatorId": "B-037_lc_sparsely_natural_v_modis",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-08c6d6285cee",
+        "labelKo": "토지피복 면적(MODIS)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-08c6d6285cee|1000 ha|detail=자연 식생 희소 지역|B-037_lc_sparsely_natural_v_modis",
+      "sourceCaveat": "[결측] 원천이 해당 클래스 행 자체는 두고 있으나 2001–2024 전 구간 값이 비어 있음 — 분류체계에 없는 것(NA)과 구분하여 \"원천이 값을 제공하지 않음(NO)\"으로 코드화. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(MODIS) — 자연 식생 희소 지역",
+      "sourceLabelEn": "Land cover area (MODIS): Sparsely natural vegetated areas",
+      "sourceNote": "2024년: MODIS Land Cover (MCD12Q1) 500m 산출물에 해당 클래스 행은 존재하나 전 연도 값이 공란(원천 Flag=O, 값 미산출)",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_sparsely_natural_v_modis",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 45,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-baf2173085f9|1000 ha",
+      "dimensionLabels": {
+        "detail": "자연 식생 희소 지역"
+      },
+      "dimensions": {
+        "detail": "자연 식생 희소 지역"
+      },
+      "displayLabel": "토지피복 면적(WorldCover) — 자연 식생 희소 지역",
+      "indicatorId": "B-037_lc_sparsely_natural_v_wc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-baf2173085f9",
+        "labelKo": "토지피복 면적(WorldCover)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-baf2173085f9|1000 ha|detail=자연 식생 희소 지역|B-037_lc_sparsely_natural_v_wc",
+      "sourceCaveat": "[결측] 원천이 해당 클래스 행 자체는 두고 있으나 2020–2021 전 구간 값이 비어 있음 — 분류체계에 없는 것(NA)과 구분하여 \"원천이 값을 제공하지 않음(NO)\"으로 코드화. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(WorldCover) — 자연 식생 희소 지역",
+      "sourceLabelEn": "Land cover area (WorldCover): Sparsely natural vegetated areas",
+      "sourceNote": "2021년: ESA WorldCover 10m 산출물에 해당 클래스 행은 존재하나 전 연도 값이 공란(원천 Flag=O, 값 미산출)",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_sparsely_natural_v_wc",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 47,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4c0d2e8182fc|1000 ha",
+      "dimensionLabels": {
+        "detail": "나지"
+      },
+      "dimensions": {
+        "detail": "나지"
+      },
+      "displayLabel": "토지피복 면적 — 나지",
+      "indicatorId": "B-037_lc_terrestrial_barren",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4c0d2e8182fc",
+        "labelKo": "토지피복 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-4c0d2e8182fc|1000 ha|detail=나지|B-037_lc_terrestrial_barren",
+      "sourceCaveat": "단일 산출물(ESA CCI Land Cover 300m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 1992–2022. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적 — 나지",
+      "sourceLabelEn": "Land cover area (CCI_LC): Terrestrial barren land",
+      "sourceNote": "단일 산출물(ESA CCI Land Cover 300m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 1992–2022. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_terrestrial_barren",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 48,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-83654f27fc7a|1000 ha",
+      "dimensionLabels": {
+        "detail": "나지"
+      },
+      "dimensions": {
+        "detail": "나지"
+      },
+      "displayLabel": "토지피복 면적(CGLS) — 나지",
+      "indicatorId": "B-037_lc_terrestrial_barren_cgls",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-83654f27fc7a",
+        "labelKo": "토지피복 면적(CGLS)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-83654f27fc7a|1000 ha|detail=나지|B-037_lc_terrestrial_barren_cgls",
+      "sourceCaveat": "단일 산출물(Copernicus Global Land Service 100m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2015–2019. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(CGLS) — 나지",
+      "sourceLabelEn": "Land cover area (CGLS): Terrestrial barren land",
+      "sourceNote": "단일 산출물(Copernicus Global Land Service 100m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2015–2019. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_terrestrial_barren_cgls",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 50,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-08c6d6285cee|1000 ha",
+      "dimensionLabels": {
+        "detail": "나지"
+      },
+      "dimensions": {
+        "detail": "나지"
+      },
+      "displayLabel": "토지피복 면적(MODIS) — 나지",
+      "indicatorId": "B-037_lc_terrestrial_barren_modis",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-08c6d6285cee",
+        "labelKo": "토지피복 면적(MODIS)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-08c6d6285cee|1000 ha|detail=나지|B-037_lc_terrestrial_barren_modis",
+      "sourceCaveat": "단일 산출물(MODIS Land Cover (MCD12Q1) 500m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2001–2024. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(MODIS) — 나지",
+      "sourceLabelEn": "Land cover area (MODIS): Terrestrial barren land",
+      "sourceNote": "단일 산출물(MODIS Land Cover (MCD12Q1) 500m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2001–2024. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_terrestrial_barren_modis",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 49,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-baf2173085f9|1000 ha",
+      "dimensionLabels": {
+        "detail": "나지"
+      },
+      "dimensions": {
+        "detail": "나지"
+      },
+      "displayLabel": "토지피복 면적(WorldCover) — 나지",
+      "indicatorId": "B-037_lc_terrestrial_barren_wc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-baf2173085f9",
+        "labelKo": "토지피복 면적(WorldCover)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-baf2173085f9|1000 ha|detail=나지|B-037_lc_terrestrial_barren_wc",
+      "sourceCaveat": "단일 산출물(ESA WorldCover 10m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2020–2021. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(WorldCover) — 나지",
+      "sourceLabelEn": "Land cover area (WorldCover): Terrestrial barren land",
+      "sourceNote": "단일 산출물(ESA WorldCover 10m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2020–2021. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_terrestrial_barren_wc",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 51,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4c0d2e8182fc|1000 ha",
+      "dimensionLabels": {
+        "detail": "수목 피복지(산림지)"
+      },
+      "dimensions": {
+        "detail": "수목 피복지(산림지)"
+      },
+      "displayLabel": "토지피복 면적 — 수목 피복지(산림지)",
+      "indicatorId": "B-037_lc_tree-covered_areas",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4c0d2e8182fc",
+        "labelKo": "토지피복 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-4c0d2e8182fc|1000 ha|detail=수목 피복지(산림지)|B-037_lc_tree-covered_areas",
+      "sourceCaveat": "단일 산출물(ESA CCI Land Cover 300m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 1992–2022. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적 — 수목 피복지(산림지)",
+      "sourceLabelEn": "Land cover area (CCI_LC): Tree-covered areas",
+      "sourceNote": "단일 산출물(ESA CCI Land Cover 300m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 1992–2022. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_tree-covered_areas",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 52,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-83654f27fc7a|1000 ha",
+      "dimensionLabels": {
+        "detail": "수목 피복지(산림지)"
+      },
+      "dimensions": {
+        "detail": "수목 피복지(산림지)"
+      },
+      "displayLabel": "토지피복 면적(CGLS) — 수목 피복지(산림지)",
+      "indicatorId": "B-037_lc_tree-covered_areas_cgls",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-83654f27fc7a",
+        "labelKo": "토지피복 면적(CGLS)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-83654f27fc7a|1000 ha|detail=수목 피복지(산림지)|B-037_lc_tree-covered_areas_cgls",
+      "sourceCaveat": "[결측] 원천이 해당 클래스 행 자체는 두고 있으나 2015–2019 전 구간 값이 비어 있음 — 분류체계에 없는 것(NA)과 구분하여 \"원천이 값을 제공하지 않음(NO)\"으로 코드화. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(CGLS) — 수목 피복지(산림지)",
+      "sourceLabelEn": "Land cover area (CGLS): Tree-covered areas",
+      "sourceNote": "2019년: Copernicus Global Land Service 100m 산출물에 해당 클래스 행은 존재하나 전 연도 값이 공란(원천 Flag=O, 값 미산출)",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_tree-covered_areas_cgls",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 54,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-08c6d6285cee|1000 ha",
+      "dimensionLabels": {
+        "detail": "수목 피복지(산림지)"
+      },
+      "dimensions": {
+        "detail": "수목 피복지(산림지)"
+      },
+      "displayLabel": "토지피복 면적(MODIS) — 수목 피복지(산림지)",
+      "indicatorId": "B-037_lc_tree-covered_areas_modis",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-08c6d6285cee",
+        "labelKo": "토지피복 면적(MODIS)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-08c6d6285cee|1000 ha|detail=수목 피복지(산림지)|B-037_lc_tree-covered_areas_modis",
+      "sourceCaveat": "단일 산출물(MODIS Land Cover (MCD12Q1) 500m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2001–2024. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(MODIS) — 수목 피복지(산림지)",
+      "sourceLabelEn": "Land cover area (MODIS): Tree-covered areas",
+      "sourceNote": "단일 산출물(MODIS Land Cover (MCD12Q1) 500m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2001–2024. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_tree-covered_areas_modis",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 53,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-baf2173085f9|1000 ha",
+      "dimensionLabels": {
+        "detail": "수목 피복지(산림지)"
+      },
+      "dimensions": {
+        "detail": "수목 피복지(산림지)"
+      },
+      "displayLabel": "토지피복 면적(WorldCover) — 수목 피복지(산림지)",
+      "indicatorId": "B-037_lc_tree-covered_areas_wc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-baf2173085f9",
+        "labelKo": "토지피복 면적(WorldCover)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-baf2173085f9|1000 ha|detail=수목 피복지(산림지)|B-037_lc_tree-covered_areas_wc",
+      "sourceCaveat": "단일 산출물(ESA WorldCover 10m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2020–2021. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(WorldCover) — 수목 피복지(산림지)",
+      "sourceLabelEn": "Land cover area (WorldCover): Tree-covered areas",
+      "sourceNote": "단일 산출물(ESA WorldCover 10m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 2020–2021. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_tree-covered_areas_wc",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 55,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4c0d2e8182fc|1000 ha",
+      "dimensionLabels": {
+        "detail": "목본 작물"
+      },
+      "dimensions": {
+        "detail": "목본 작물"
+      },
+      "displayLabel": "토지피복 면적 — 목본 작물",
+      "indicatorId": "B-037_lc_woody_crops",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4c0d2e8182fc",
+        "labelKo": "토지피복 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-4c0d2e8182fc|1000 ha|detail=목본 작물|B-037_lc_woody_crops",
+      "sourceCaveat": "단일 산출물(ESA CCI Land Cover 300m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 1992–2022. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적 — 목본 작물",
+      "sourceLabelEn": "Land cover area (CCI_LC): Woody crops",
+      "sourceNote": "단일 산출물(ESA CCI Land Cover 300m) 기준. 다른 산출물과 값을 이어 붙이지 않고 지표를 분리 관리(Q-004). 원천 제공 범위 1992–2022. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_woody_crops",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 56,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-83654f27fc7a|1000 ha",
+      "dimensionLabels": {
+        "detail": "목본 작물"
+      },
+      "dimensions": {
+        "detail": "목본 작물"
+      },
+      "displayLabel": "토지피복 면적(CGLS) — 목본 작물",
+      "indicatorId": "B-037_lc_woody_crops_cgls",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-83654f27fc7a",
+        "labelKo": "토지피복 면적(CGLS)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-83654f27fc7a|1000 ha|detail=목본 작물|B-037_lc_woody_crops_cgls",
+      "sourceCaveat": "[결측] 원천이 해당 클래스 행 자체는 두고 있으나 2015–2019 전 구간 값이 비어 있음 — 분류체계에 없는 것(NA)과 구분하여 \"원천이 값을 제공하지 않음(NO)\"으로 코드화. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(CGLS) — 목본 작물",
+      "sourceLabelEn": "Land cover area (CGLS): Woody crops",
+      "sourceNote": "2019년: Copernicus Global Land Service 100m 산출물에 해당 클래스 행은 존재하나 전 연도 값이 공란(원천 Flag=O, 값 미산출)",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_woody_crops_cgls",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 58,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-08c6d6285cee|1000 ha",
+      "dimensionLabels": {
+        "detail": "목본 작물"
+      },
+      "dimensions": {
+        "detail": "목본 작물"
+      },
+      "displayLabel": "토지피복 면적(MODIS) — 목본 작물",
+      "indicatorId": "B-037_lc_woody_crops_modis",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-08c6d6285cee",
+        "labelKo": "토지피복 면적(MODIS)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-08c6d6285cee|1000 ha|detail=목본 작물|B-037_lc_woody_crops_modis",
+      "sourceCaveat": "[결측] 원천이 해당 클래스 행 자체는 두고 있으나 2001–2024 전 구간 값이 비어 있음 — 분류체계에 없는 것(NA)과 구분하여 \"원천이 값을 제공하지 않음(NO)\"으로 코드화. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(MODIS) — 목본 작물",
+      "sourceLabelEn": "Land cover area (MODIS): Woody crops",
+      "sourceNote": "2024년: MODIS Land Cover (MCD12Q1) 500m 산출물에 해당 클래스 행은 존재하나 전 연도 값이 공란(원천 Flag=O, 값 미산출)",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_woody_crops_modis",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 57,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-baf2173085f9|1000 ha",
+      "dimensionLabels": {
+        "detail": "목본 작물"
+      },
+      "dimensions": {
+        "detail": "목본 작물"
+      },
+      "displayLabel": "토지피복 면적(WorldCover) — 목본 작물",
+      "indicatorId": "B-037_lc_woody_crops_wc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-baf2173085f9",
+        "labelKo": "토지피복 면적(WorldCover)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-baf2173085f9|1000 ha|detail=목본 작물|B-037_lc_woody_crops_wc",
+      "sourceCaveat": "[결측] 원천이 해당 클래스 행 자체는 두고 있으나 2020–2021 전 구간 값이 비어 있음 — 분류체계에 없는 것(NA)과 구분하여 \"원천이 값을 제공하지 않음(NO)\"으로 코드화. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 면적(WorldCover) — 목본 작물",
+      "sourceLabelEn": "Land cover area (WorldCover): Woody crops",
+      "sourceNote": "2021년: ESA WorldCover 10m 산출물에 해당 클래스 행은 존재하나 전 연도 값이 공란(원천 Flag=O, 값 미산출)",
+      "sourceProvenance": {
+        "elementId": "B-037",
+        "indicatorId": "B-037_lc_woody_crops_wc",
+        "sourceFileDecoded": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+        "sourceRow": 59,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 14,
+      "key": "measure-4c0d2e8182fc",
+      "labelKo": "토지피복 면적",
+      "recordCount": 374,
+      "unit": "1000 ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 14,
+      "key": "measure-83654f27fc7a",
+      "labelKo": "토지피복 면적(CGLS)",
+      "recordCount": 42,
+      "unit": "1000 ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 14,
+      "key": "measure-08c6d6285cee",
+      "labelKo": "토지피복 면적(MODIS)",
+      "recordCount": 244,
+      "unit": "1000 ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 14,
+      "key": "measure-baf2173085f9",
+      "labelKo": "토지피복 면적(WorldCover)",
+      "recordCount": 24,
+      "unit": "1000 ha",
+      "unitFamily": "area"
+    }
+  ],
+  "observationCount": 684,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

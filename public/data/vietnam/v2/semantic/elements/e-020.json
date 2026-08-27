@@ -1,0 +1,131 @@
+{
+  "dimensions": [
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    },
+    {
+      "key": "supportType",
+      "labelKo": "supportType",
+      "valueCount": 28,
+      "values": [
+        "FS/기술이전/역량강화",
+        "FS/역량강화",
+        "FS/역량강화/수출지원",
+        "국제공동R&D",
+        "국제협력 R&D·기술지원",
+        "금융·투자",
+        "기금",
+        "기술이전/역량강화/FS",
+        "기술이전/역량강화/R&D",
+        "기술이전/역량강화/금융·투자",
+        "마스터플랜",
+        "사업개발",
+        "설비투자 보조",
+        "수주지원·마케팅",
+        "수출지원/FS/실증",
+        "수출지원/역량강화/FS",
+        "실증/금융·투자",
+        "실증/수출지원",
+        "실증/역량강화/금융·투자",
+        "역량강화/금융·투자/FS",
+        "역량강화/수출지원/FS",
+        "유상원조 차관",
+        "인증비용 보조",
+        "제안서 개발",
+        "컨설팅",
+        "타당성조사",
+        "현지실증·사업화",
+        "협력센터·공동R&D"
+      ]
+    }
+  ],
+  "elementId": "E-020",
+  "entityCount": 33,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 2,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-e4b3b50682e0|건(사업)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "한국 공공 기후기술 지원사업 예산 규모",
+      "indicatorId": "E-020_support_budget",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e4b3b50682e0",
+        "labelKo": "한국 공공 기후기술 지원사업 예산 규모",
+        "unit": "건(사업)",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-e4b3b50682e0|건(사업)||E-020_support_budget",
+      "sourceCaveat": null,
+      "sourceLabel": "한국 공공 기후기술 지원사업 예산 규모",
+      "sourceLabelEn": "Budget scale of Korean public climate technology support programmes",
+      "sourceNote": "레코드 결측: 총예산·지원한도·신청시기 일부 \"NE(미수집)\"·\"미확보\"(M06). 메타 결측: 라이선스·라이선스 URL·최종갱신일·수집일·담당자·검증자 미확인(M06).",
+      "sourceProvenance": {
+        "elementId": "E-020",
+        "indicatorId": "E-020_support_budget",
+        "sourceFileDecoded": "E-020_한국 공공·민간 지원체계.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8c390968933d|건(프로그램)",
+      "dimensionLabels": {
+        "category": "민간 지원 프로그램 목록"
+      },
+      "dimensions": {
+        "category": "민간 지원 프로그램 목록"
+      },
+      "displayLabel": "한국 공공·민간 지원 프로그램 목록",
+      "indicatorId": "E-020_support_program",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8c390968933d",
+        "labelKo": "한국 공공",
+        "unit": "건(프로그램)",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-8c390968933d|건(프로그램)|category=민간 지원 프로그램 목록|E-020_support_program",
+      "sourceCaveat": null,
+      "sourceLabel": "한국 공공·민간 지원 프로그램 목록",
+      "sourceLabelEn": "Korean public support programmes for climate technology cooperation",
+      "sourceNote": "레코드 결측: 예산 규모 다수 \"NE(미수집)\"(M06). 메타 결측: 라이선스·라이선스 URL·최종갱신일·수집일·담당자·검증자 미확인(M06).",
+      "sourceProvenance": {
+        "elementId": "E-020",
+        "indicatorId": "E-020_support_program",
+        "sourceFileDecoded": "E-020_한국 공공·민간 지원체계.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-8c390968933d",
+      "labelKo": "한국 공공",
+      "recordCount": 0,
+      "unit": "건(프로그램)",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-e4b3b50682e0",
+      "labelKo": "한국 공공 기후기술 지원사업 예산 규모",
+      "recordCount": 0,
+      "unit": "건(사업)",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

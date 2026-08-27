@@ -1,0 +1,908 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 10,
+      "values": [
+        "관리 · 베트남",
+        "노동 · 베트남",
+        "법치 거버넌스 · 베트남",
+        "베트남",
+        "재정관리의 질 · 베트남",
+        "제도 · 베트남",
+        "제도 클러스터 평균 · 베트남",
+        "책임성 · 부패 · 베트남",
+        "형평 클러스터 평균 · 베트남",
+        "환율 정책 · 베트남"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 1,
+      "values": [
+        "1(낮음)~6(높음) 등급"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 20,
+      "values": [
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ]
+    }
+  ],
+  "elementId": "A-002",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 21,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-d60df4643277|점",
+      "dimensionLabels": {
+        "category": "베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "dimensions": {
+        "category": "베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "displayLabel": "CPIA 기업규제 환경 · 베트남 — 1(낮음)~6(높음) 등급",
+      "indicatorId": "A-002_cpia_breg",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d60df4643277",
+        "labelKo": "CPIA 기업규제 환경",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-d60df4643277|점|category=베트남|detail=1(낮음)~6(높음) 등급|A-002_cpia_breg",
+      "sourceCaveat": "[원본 버전] World Bank Data360 CPIA 데이터셋(CPIA_Vietnam.xlsx, DATABASE_ID=WB_CPIA) 및 WDI 추출본을 raw로 사용. [값 검증] 검토의견 1번(종합점수 IRAI가 4개 클러스터 평균과 어긋난다)은 raw 전수 재계산 결과 성립하지 않음 — 2005~2015년 11개년 모두 IRAI = (A+B+C+D)/4와 소수점까지 일치하며, 2015년은 (3.66667+3.5+4.1+3.5)/4 = 3.69167로 원문 기재값과 동일함. 지적된 4.000은 어떤 클러스터 조합으로도 산출되지 않음. [값 검증] 검토의견 2번(경제관리가 2006년 5.5에서 2007년 4.0으로 급락)도 성립하지 않음 — 경제관리 클러스터는 2006년 4.667, 2007년 4.333임. 5.5는 하위기준인 통화·환율 정책의 2006년 값이며 2007년 값은 4.0이 아니라 4.5임. [원문 모순] 2014년 D클러스터(공공부문 관리·제도) 기재값 3.5는 하위 5개 기준의 평균 3.4와 어긋남. 원천 자체의 불일치이므로 보정하지 않고 원문대로 수록함. 2008년은 원문이 소수 첫째 자리로 반올림 기재되어 있음. [요소 부합] 검토의견 4번(WGI 대체 검토)에 대해서는 요소명이 CPIA이므로 CPIA를 유지하고, WGI는 참고자료로 분리함. [라이선스] 원천이 CC BY 4.0을 명시(WB_CPIA.json license 필드)하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "CPIA 기업규제 환경 · 베트남 — 1(낮음)~6(높음) 등급",
+      "sourceLabelEn": "CPIA rating: Business Regulatory Environment",
+      "sourceNote": "2016–2024년 9개년 전 지표 결측. World Bank가 IDA 지원대상국만 CPIA를 공개 발표하며 베트남은 2017년 IDA를 졸업함. 원본 파일에 해당 연도 행은 있으나 OBS_STATUS=\"O(Missing value)\"이고, 졸업 사실 자체는 원문에 명시되어 있지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-002",
+        "indicatorId": "A-002_cpia_breg",
+        "sourceFileDecoded": "A-002_CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표).xlsx",
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4670af9300cb|점",
+      "dimensionLabels": {
+        "category": "관리 · 베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "dimensions": {
+        "category": "관리 · 베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "displayLabel": "CPIA 부채 정책·관리 · 베트남 — 1(낮음)~6(높음) 등급",
+      "indicatorId": "A-002_cpia_debt",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4670af9300cb",
+        "labelKo": "CPIA 부채 정책",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-4670af9300cb|점|category=관리 · 베트남|detail=1(낮음)~6(높음) 등급|A-002_cpia_debt",
+      "sourceCaveat": "[원본 버전] World Bank Data360 CPIA 데이터셋(CPIA_Vietnam.xlsx, DATABASE_ID=WB_CPIA) 및 WDI 추출본을 raw로 사용. [값 검증] 검토의견 1번(종합점수 IRAI가 4개 클러스터 평균과 어긋난다)은 raw 전수 재계산 결과 성립하지 않음 — 2005~2015년 11개년 모두 IRAI = (A+B+C+D)/4와 소수점까지 일치하며, 2015년은 (3.66667+3.5+4.1+3.5)/4 = 3.69167로 원문 기재값과 동일함. 지적된 4.000은 어떤 클러스터 조합으로도 산출되지 않음. [값 검증] 검토의견 2번(경제관리가 2006년 5.5에서 2007년 4.0으로 급락)도 성립하지 않음 — 경제관리 클러스터는 2006년 4.667, 2007년 4.333임. 5.5는 하위기준인 통화·환율 정책의 2006년 값이며 2007년 값은 4.0이 아니라 4.5임. [원문 모순] 2014년 D클러스터(공공부문 관리·제도) 기재값 3.5는 하위 5개 기준의 평균 3.4와 어긋남. 원천 자체의 불일치이므로 보정하지 않고 원문대로 수록함. 2008년은 원문이 소수 첫째 자리로 반올림 기재되어 있음. [요소 부합] 검토의견 4번(WGI 대체 검토)에 대해서는 요소명이 CPIA이므로 CPIA를 유지하고, WGI는 참고자료로 분리함. [라이선스] 원천이 CC BY 4.0을 명시(WB_CPIA.json license 필드)하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "CPIA 부채 정책·관리 · 베트남 — 1(낮음)~6(높음) 등급",
+      "sourceLabelEn": "CPIA rating: Debt Policy and Management",
+      "sourceNote": "2016–2024년 9개년 전 지표 결측. World Bank가 IDA 지원대상국만 CPIA를 공개 발표하며 베트남은 2017년 IDA를 졸업함. 원본 파일에 해당 연도 행은 있으나 OBS_STATUS=\"O(Missing value)\"이고, 졸업 사실 자체는 원문에 명시되어 있지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-002",
+        "indicatorId": "A-002_cpia_debt",
+        "sourceFileDecoded": "A-002_CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5dd7fe5bbc51|점",
+      "dimensionLabels": {
+        "category": "베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "dimensions": {
+        "category": "베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "displayLabel": "CPIA A. 경제관리 클러스터 평균 · 베트남 — 1(낮음)~6(높음) 등급",
+      "indicatorId": "A-002_cpia_economic_management",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5dd7fe5bbc51",
+        "labelKo": "CPIA A. 경제관리 클러스터 평균",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-5dd7fe5bbc51|점|category=베트남|detail=1(낮음)~6(높음) 등급|A-002_cpia_economic_management",
+      "sourceCaveat": "[원본 버전] World Bank Data360 CPIA 데이터셋(CPIA_Vietnam.xlsx, DATABASE_ID=WB_CPIA) 및 WDI 추출본을 raw로 사용. [값 검증] 검토의견 1번(종합점수 IRAI가 4개 클러스터 평균과 어긋난다)은 raw 전수 재계산 결과 성립하지 않음 — 2005~2015년 11개년 모두 IRAI = (A+B+C+D)/4와 소수점까지 일치하며, 2015년은 (3.66667+3.5+4.1+3.5)/4 = 3.69167로 원문 기재값과 동일함. 지적된 4.000은 어떤 클러스터 조합으로도 산출되지 않음. [값 검증] 검토의견 2번(경제관리가 2006년 5.5에서 2007년 4.0으로 급락)도 성립하지 않음 — 경제관리 클러스터는 2006년 4.667, 2007년 4.333임. 5.5는 하위기준인 통화·환율 정책의 2006년 값이며 2007년 값은 4.0이 아니라 4.5임. [원문 모순] 2014년 D클러스터(공공부문 관리·제도) 기재값 3.5는 하위 5개 기준의 평균 3.4와 어긋남. 원천 자체의 불일치이므로 보정하지 않고 원문대로 수록함. 2008년은 원문이 소수 첫째 자리로 반올림 기재되어 있음. [요소 부합] 검토의견 4번(WGI 대체 검토)에 대해서는 요소명이 CPIA이므로 CPIA를 유지하고, WGI는 참고자료로 분리함. [라이선스] 원천이 CC BY 4.0을 명시(WB_CPIA.json license 필드)하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "CPIA A. 경제관리 클러스터 평균 · 베트남 — 1(낮음)~6(높음) 등급",
+      "sourceLabelEn": "CPIA Cluster A: Economic Management",
+      "sourceNote": "2016–2024년 9개년 전 지표 결측. World Bank가 IDA 지원대상국만 CPIA를 공개 발표하며 베트남은 2017년 IDA를 졸업함. 원본 파일에 해당 연도 행은 있으나 OBS_STATUS=\"O(Missing value)\"이고, 졸업 사실 자체는 원문에 명시되어 있지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-002",
+        "indicatorId": "A-002_cpia_economic_management",
+        "sourceFileDecoded": "A-002_CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2b684737516a|점",
+      "dimensionLabels": {
+        "category": "제도 · 베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "dimensions": {
+        "category": "제도 · 베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "displayLabel": "CPIA 환경지속가능성 정책·제도 · 베트남 — 1(낮음)~6(높음) 등급",
+      "indicatorId": "A-002_cpia_envr",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2b684737516a",
+        "labelKo": "CPIA 환경지속가능성 정책",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-2b684737516a|점|category=제도 · 베트남|detail=1(낮음)~6(높음) 등급|A-002_cpia_envr",
+      "sourceCaveat": "[원본 버전] World Bank Data360 CPIA 데이터셋(CPIA_Vietnam.xlsx, DATABASE_ID=WB_CPIA) 및 WDI 추출본을 raw로 사용. [값 검증] 검토의견 1번(종합점수 IRAI가 4개 클러스터 평균과 어긋난다)은 raw 전수 재계산 결과 성립하지 않음 — 2005~2015년 11개년 모두 IRAI = (A+B+C+D)/4와 소수점까지 일치하며, 2015년은 (3.66667+3.5+4.1+3.5)/4 = 3.69167로 원문 기재값과 동일함. 지적된 4.000은 어떤 클러스터 조합으로도 산출되지 않음. [값 검증] 검토의견 2번(경제관리가 2006년 5.5에서 2007년 4.0으로 급락)도 성립하지 않음 — 경제관리 클러스터는 2006년 4.667, 2007년 4.333임. 5.5는 하위기준인 통화·환율 정책의 2006년 값이며 2007년 값은 4.0이 아니라 4.5임. [원문 모순] 2014년 D클러스터(공공부문 관리·제도) 기재값 3.5는 하위 5개 기준의 평균 3.4와 어긋남. 원천 자체의 불일치이므로 보정하지 않고 원문대로 수록함. 2008년은 원문이 소수 첫째 자리로 반올림 기재되어 있음. [요소 부합] 검토의견 4번(WGI 대체 검토)에 대해서는 요소명이 CPIA이므로 CPIA를 유지하고, WGI는 참고자료로 분리함. [라이선스] 원천이 CC BY 4.0을 명시(WB_CPIA.json license 필드)하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "CPIA 환경지속가능성 정책·제도 · 베트남 — 1(낮음)~6(높음) 등급",
+      "sourceLabelEn": "CPIA rating: Policies and Institutions for Environmental Sustainability",
+      "sourceNote": "2016–2024년 9개년 전 지표 결측. World Bank가 IDA 지원대상국만 CPIA를 공개 발표하며 베트남은 2017년 IDA를 졸업함. 원본 파일에 해당 연도 행은 있으나 OBS_STATUS=\"O(Missing value)\"이고, 졸업 사실 자체는 원문에 명시되어 있지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-002",
+        "indicatorId": "A-002_cpia_envr",
+        "sourceFileDecoded": "A-002_CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표).xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5ab2820b461e|점",
+      "dimensionLabels": {
+        "category": "재정관리의 질 · 베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "dimensions": {
+        "category": "재정관리의 질 · 베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "displayLabel": "CPIA 예산·재정관리의 질 · 베트남 — 1(낮음)~6(높음) 등급",
+      "indicatorId": "A-002_cpia_finq",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5ab2820b461e",
+        "labelKo": "CPIA 예산",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-5ab2820b461e|점|category=재정관리의 질 · 베트남|detail=1(낮음)~6(높음) 등급|A-002_cpia_finq",
+      "sourceCaveat": "[원본 버전] World Bank Data360 CPIA 데이터셋(CPIA_Vietnam.xlsx, DATABASE_ID=WB_CPIA) 및 WDI 추출본을 raw로 사용. [값 검증] 검토의견 1번(종합점수 IRAI가 4개 클러스터 평균과 어긋난다)은 raw 전수 재계산 결과 성립하지 않음 — 2005~2015년 11개년 모두 IRAI = (A+B+C+D)/4와 소수점까지 일치하며, 2015년은 (3.66667+3.5+4.1+3.5)/4 = 3.69167로 원문 기재값과 동일함. 지적된 4.000은 어떤 클러스터 조합으로도 산출되지 않음. [값 검증] 검토의견 2번(경제관리가 2006년 5.5에서 2007년 4.0으로 급락)도 성립하지 않음 — 경제관리 클러스터는 2006년 4.667, 2007년 4.333임. 5.5는 하위기준인 통화·환율 정책의 2006년 값이며 2007년 값은 4.0이 아니라 4.5임. [원문 모순] 2014년 D클러스터(공공부문 관리·제도) 기재값 3.5는 하위 5개 기준의 평균 3.4와 어긋남. 원천 자체의 불일치이므로 보정하지 않고 원문대로 수록함. 2008년은 원문이 소수 첫째 자리로 반올림 기재되어 있음. [요소 부합] 검토의견 4번(WGI 대체 검토)에 대해서는 요소명이 CPIA이므로 CPIA를 유지하고, WGI는 참고자료로 분리함. [라이선스] 원천이 CC BY 4.0을 명시(WB_CPIA.json license 필드)하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "CPIA 예산·재정관리의 질 · 베트남 — 1(낮음)~6(높음) 등급",
+      "sourceLabelEn": "CPIA rating: Quality of Budgetary and Financial Management",
+      "sourceNote": "2016–2024년 9개년 전 지표 결측. World Bank가 IDA 지원대상국만 CPIA를 공개 발표하며 베트남은 2017년 IDA를 졸업함. 원본 파일에 해당 연도 행은 있으나 OBS_STATUS=\"O(Missing value)\"이고, 졸업 사실 자체는 원문에 명시되어 있지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-002",
+        "indicatorId": "A-002_cpia_finq",
+        "sourceFileDecoded": "A-002_CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표).xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e6bb0c69250f|점",
+      "dimensionLabels": {
+        "category": "베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "dimensions": {
+        "category": "베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "displayLabel": "CPIA 금융부문 · 베트남 — 1(낮음)~6(높음) 등급",
+      "indicatorId": "A-002_cpia_fins",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e6bb0c69250f",
+        "labelKo": "CPIA 금융부문",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-e6bb0c69250f|점|category=베트남|detail=1(낮음)~6(높음) 등급|A-002_cpia_fins",
+      "sourceCaveat": "[원본 버전] World Bank Data360 CPIA 데이터셋(CPIA_Vietnam.xlsx, DATABASE_ID=WB_CPIA) 및 WDI 추출본을 raw로 사용. [값 검증] 검토의견 1번(종합점수 IRAI가 4개 클러스터 평균과 어긋난다)은 raw 전수 재계산 결과 성립하지 않음 — 2005~2015년 11개년 모두 IRAI = (A+B+C+D)/4와 소수점까지 일치하며, 2015년은 (3.66667+3.5+4.1+3.5)/4 = 3.69167로 원문 기재값과 동일함. 지적된 4.000은 어떤 클러스터 조합으로도 산출되지 않음. [값 검증] 검토의견 2번(경제관리가 2006년 5.5에서 2007년 4.0으로 급락)도 성립하지 않음 — 경제관리 클러스터는 2006년 4.667, 2007년 4.333임. 5.5는 하위기준인 통화·환율 정책의 2006년 값이며 2007년 값은 4.0이 아니라 4.5임. [원문 모순] 2014년 D클러스터(공공부문 관리·제도) 기재값 3.5는 하위 5개 기준의 평균 3.4와 어긋남. 원천 자체의 불일치이므로 보정하지 않고 원문대로 수록함. 2008년은 원문이 소수 첫째 자리로 반올림 기재되어 있음. [요소 부합] 검토의견 4번(WGI 대체 검토)에 대해서는 요소명이 CPIA이므로 CPIA를 유지하고, WGI는 참고자료로 분리함. [라이선스] 원천이 CC BY 4.0을 명시(WB_CPIA.json license 필드)하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "CPIA 금융부문 · 베트남 — 1(낮음)~6(높음) 등급",
+      "sourceLabelEn": "CPIA rating: Financial Sector",
+      "sourceNote": "2016–2024년 9개년 전 지표 결측. World Bank가 IDA 지원대상국만 CPIA를 공개 발표하며 베트남은 2017년 IDA를 졸업함. 원본 파일에 해당 연도 행은 있으나 OBS_STATUS=\"O(Missing value)\"이고, 졸업 사실 자체는 원문에 명시되어 있지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-002",
+        "indicatorId": "A-002_cpia_fins",
+        "sourceFileDecoded": "A-002_CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표).xlsx",
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0b97a8ac9dcf|점",
+      "dimensionLabels": {
+        "category": "베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "dimensions": {
+        "category": "베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "displayLabel": "CPIA 재정 정책 · 베트남 — 1(낮음)~6(높음) 등급",
+      "indicatorId": "A-002_cpia_fisp",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0b97a8ac9dcf",
+        "labelKo": "CPIA 재정 정책",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-0b97a8ac9dcf|점|category=베트남|detail=1(낮음)~6(높음) 등급|A-002_cpia_fisp",
+      "sourceCaveat": "[원본 버전] World Bank Data360 CPIA 데이터셋(CPIA_Vietnam.xlsx, DATABASE_ID=WB_CPIA) 및 WDI 추출본을 raw로 사용. [값 검증] 검토의견 1번(종합점수 IRAI가 4개 클러스터 평균과 어긋난다)은 raw 전수 재계산 결과 성립하지 않음 — 2005~2015년 11개년 모두 IRAI = (A+B+C+D)/4와 소수점까지 일치하며, 2015년은 (3.66667+3.5+4.1+3.5)/4 = 3.69167로 원문 기재값과 동일함. 지적된 4.000은 어떤 클러스터 조합으로도 산출되지 않음. [값 검증] 검토의견 2번(경제관리가 2006년 5.5에서 2007년 4.0으로 급락)도 성립하지 않음 — 경제관리 클러스터는 2006년 4.667, 2007년 4.333임. 5.5는 하위기준인 통화·환율 정책의 2006년 값이며 2007년 값은 4.0이 아니라 4.5임. [원문 모순] 2014년 D클러스터(공공부문 관리·제도) 기재값 3.5는 하위 5개 기준의 평균 3.4와 어긋남. 원천 자체의 불일치이므로 보정하지 않고 원문대로 수록함. 2008년은 원문이 소수 첫째 자리로 반올림 기재되어 있음. [요소 부합] 검토의견 4번(WGI 대체 검토)에 대해서는 요소명이 CPIA이므로 CPIA를 유지하고, WGI는 참고자료로 분리함. [라이선스] 원천이 CC BY 4.0을 명시(WB_CPIA.json license 필드)하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "CPIA 재정 정책 · 베트남 — 1(낮음)~6(높음) 등급",
+      "sourceLabelEn": "CPIA rating: Fiscal Policy",
+      "sourceNote": "2016–2024년 9개년 전 지표 결측. World Bank가 IDA 지원대상국만 CPIA를 공개 발표하며 베트남은 2017년 IDA를 졸업함. 원본 파일에 해당 연도 행은 있으나 OBS_STATUS=\"O(Missing value)\"이고, 졸업 사실 자체는 원문에 명시되어 있지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-002",
+        "indicatorId": "A-002_cpia_fisp",
+        "sourceFileDecoded": "A-002_CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-c6e4f4a8060a|점",
+      "dimensionLabels": {
+        "category": "베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "dimensions": {
+        "category": "베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "displayLabel": "CPIA 성평등 · 베트남 — 1(낮음)~6(높음) 등급",
+      "indicatorId": "A-002_cpia_gndr",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-c6e4f4a8060a",
+        "labelKo": "CPIA 성평등",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-c6e4f4a8060a|점|category=베트남|detail=1(낮음)~6(높음) 등급|A-002_cpia_gndr",
+      "sourceCaveat": "[원본 버전] World Bank Data360 CPIA 데이터셋(CPIA_Vietnam.xlsx, DATABASE_ID=WB_CPIA) 및 WDI 추출본을 raw로 사용. [값 검증] 검토의견 1번(종합점수 IRAI가 4개 클러스터 평균과 어긋난다)은 raw 전수 재계산 결과 성립하지 않음 — 2005~2015년 11개년 모두 IRAI = (A+B+C+D)/4와 소수점까지 일치하며, 2015년은 (3.66667+3.5+4.1+3.5)/4 = 3.69167로 원문 기재값과 동일함. 지적된 4.000은 어떤 클러스터 조합으로도 산출되지 않음. [값 검증] 검토의견 2번(경제관리가 2006년 5.5에서 2007년 4.0으로 급락)도 성립하지 않음 — 경제관리 클러스터는 2006년 4.667, 2007년 4.333임. 5.5는 하위기준인 통화·환율 정책의 2006년 값이며 2007년 값은 4.0이 아니라 4.5임. [원문 모순] 2014년 D클러스터(공공부문 관리·제도) 기재값 3.5는 하위 5개 기준의 평균 3.4와 어긋남. 원천 자체의 불일치이므로 보정하지 않고 원문대로 수록함. 2008년은 원문이 소수 첫째 자리로 반올림 기재되어 있음. [요소 부합] 검토의견 4번(WGI 대체 검토)에 대해서는 요소명이 CPIA이므로 CPIA를 유지하고, WGI는 참고자료로 분리함. [라이선스] 원천이 CC BY 4.0을 명시(WB_CPIA.json license 필드)하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "CPIA 성평등 · 베트남 — 1(낮음)~6(높음) 등급",
+      "sourceLabelEn": "CPIA rating: Gender Equality",
+      "sourceNote": "2016–2024년 9개년 전 지표 결측. World Bank가 IDA 지원대상국만 CPIA를 공개 발표하며 베트남은 2017년 IDA를 졸업함. 원본 파일에 해당 연도 행은 있으나 OBS_STATUS=\"O(Missing value)\"이고, 졸업 사실 자체는 원문에 명시되어 있지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-002",
+        "indicatorId": "A-002_cpia_gndr",
+        "sourceFileDecoded": "A-002_CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표).xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bf490540274c|점",
+      "dimensionLabels": {
+        "category": "베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "dimensions": {
+        "category": "베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "displayLabel": "CPIA 인적자원 형성 · 베트남 — 1(낮음)~6(높음) 등급",
+      "indicatorId": "A-002_cpia_hres",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bf490540274c",
+        "labelKo": "CPIA 인적자원 형성",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-bf490540274c|점|category=베트남|detail=1(낮음)~6(높음) 등급|A-002_cpia_hres",
+      "sourceCaveat": "[원본 버전] World Bank Data360 CPIA 데이터셋(CPIA_Vietnam.xlsx, DATABASE_ID=WB_CPIA) 및 WDI 추출본을 raw로 사용. [값 검증] 검토의견 1번(종합점수 IRAI가 4개 클러스터 평균과 어긋난다)은 raw 전수 재계산 결과 성립하지 않음 — 2005~2015년 11개년 모두 IRAI = (A+B+C+D)/4와 소수점까지 일치하며, 2015년은 (3.66667+3.5+4.1+3.5)/4 = 3.69167로 원문 기재값과 동일함. 지적된 4.000은 어떤 클러스터 조합으로도 산출되지 않음. [값 검증] 검토의견 2번(경제관리가 2006년 5.5에서 2007년 4.0으로 급락)도 성립하지 않음 — 경제관리 클러스터는 2006년 4.667, 2007년 4.333임. 5.5는 하위기준인 통화·환율 정책의 2006년 값이며 2007년 값은 4.0이 아니라 4.5임. [원문 모순] 2014년 D클러스터(공공부문 관리·제도) 기재값 3.5는 하위 5개 기준의 평균 3.4와 어긋남. 원천 자체의 불일치이므로 보정하지 않고 원문대로 수록함. 2008년은 원문이 소수 첫째 자리로 반올림 기재되어 있음. [요소 부합] 검토의견 4번(WGI 대체 검토)에 대해서는 요소명이 CPIA이므로 CPIA를 유지하고, WGI는 참고자료로 분리함. [라이선스] 원천이 CC BY 4.0을 명시(WB_CPIA.json license 필드)하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "CPIA 인적자원 형성 · 베트남 — 1(낮음)~6(높음) 등급",
+      "sourceLabelEn": "CPIA rating: Building Human Resources",
+      "sourceNote": "2016–2024년 9개년 전 지표 결측. World Bank가 IDA 지원대상국만 CPIA를 공개 발표하며 베트남은 2017년 IDA를 졸업함. 원본 파일에 해당 연도 행은 있으나 OBS_STATUS=\"O(Missing value)\"이고, 졸업 사실 자체는 원문에 명시되어 있지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-002",
+        "indicatorId": "A-002_cpia_hres",
+        "sourceFileDecoded": "A-002_CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표).xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5c4bc8f2bd62|점",
+      "dimensionLabels": {
+        "category": "베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "dimensions": {
+        "category": "베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "displayLabel": "CPIA IRAI 종합점수 · 베트남 — 1(낮음)~6(높음) 등급",
+      "indicatorId": "A-002_cpia_irai_overall",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5c4bc8f2bd62",
+        "labelKo": "CPIA IRAI 종합점수",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-5c4bc8f2bd62|점|category=베트남|detail=1(낮음)~6(높음) 등급|A-002_cpia_irai_overall",
+      "sourceCaveat": "[원본 버전] World Bank Data360 CPIA 데이터셋(CPIA_Vietnam.xlsx, DATABASE_ID=WB_CPIA) 및 WDI 추출본을 raw로 사용. [값 검증] 검토의견 1번(종합점수 IRAI가 4개 클러스터 평균과 어긋난다)은 raw 전수 재계산 결과 성립하지 않음 — 2005~2015년 11개년 모두 IRAI = (A+B+C+D)/4와 소수점까지 일치하며, 2015년은 (3.66667+3.5+4.1+3.5)/4 = 3.69167로 원문 기재값과 동일함. 지적된 4.000은 어떤 클러스터 조합으로도 산출되지 않음. [값 검증] 검토의견 2번(경제관리가 2006년 5.5에서 2007년 4.0으로 급락)도 성립하지 않음 — 경제관리 클러스터는 2006년 4.667, 2007년 4.333임. 5.5는 하위기준인 통화·환율 정책의 2006년 값이며 2007년 값은 4.0이 아니라 4.5임. [원문 모순] 2014년 D클러스터(공공부문 관리·제도) 기재값 3.5는 하위 5개 기준의 평균 3.4와 어긋남. 원천 자체의 불일치이므로 보정하지 않고 원문대로 수록함. 2008년은 원문이 소수 첫째 자리로 반올림 기재되어 있음. [요소 부합] 검토의견 4번(WGI 대체 검토)에 대해서는 요소명이 CPIA이므로 CPIA를 유지하고, WGI는 참고자료로 분리함. [라이선스] 원천이 CC BY 4.0을 명시(WB_CPIA.json license 필드)하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "CPIA IRAI 종합점수 · 베트남 — 1(낮음)~6(높음) 등급",
+      "sourceLabelEn": "CPIA IDA Resource Allocation Index (IRAI) overall rating",
+      "sourceNote": "2016–2024년 9개년 전 지표 결측. World Bank가 IDA 지원대상국만 CPIA를 공개 발표하며 베트남은 2017년 IDA를 졸업함. 원본 파일에 해당 연도 행은 있으나 OBS_STATUS=\"O(Missing value)\"이고, 졸업 사실 자체는 원문에 명시되어 있지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-002",
+        "indicatorId": "A-002_cpia_irai_overall",
+        "sourceFileDecoded": "A-002_CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e0f7ca3ec951|점",
+      "dimensionLabels": {
+        "category": "환율 정책 · 베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "dimensions": {
+        "category": "환율 정책 · 베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "displayLabel": "CPIA 통화·환율 정책 · 베트남 — 1(낮음)~6(높음) 등급",
+      "indicatorId": "A-002_cpia_macr",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e0f7ca3ec951",
+        "labelKo": "CPIA 통화",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-e0f7ca3ec951|점|category=환율 정책 · 베트남|detail=1(낮음)~6(높음) 등급|A-002_cpia_macr",
+      "sourceCaveat": "[원본 버전] World Bank Data360 CPIA 데이터셋(CPIA_Vietnam.xlsx, DATABASE_ID=WB_CPIA) 및 WDI 추출본을 raw로 사용. [값 검증] 검토의견 1번(종합점수 IRAI가 4개 클러스터 평균과 어긋난다)은 raw 전수 재계산 결과 성립하지 않음 — 2005~2015년 11개년 모두 IRAI = (A+B+C+D)/4와 소수점까지 일치하며, 2015년은 (3.66667+3.5+4.1+3.5)/4 = 3.69167로 원문 기재값과 동일함. 지적된 4.000은 어떤 클러스터 조합으로도 산출되지 않음. [값 검증] 검토의견 2번(경제관리가 2006년 5.5에서 2007년 4.0으로 급락)도 성립하지 않음 — 경제관리 클러스터는 2006년 4.667, 2007년 4.333임. 5.5는 하위기준인 통화·환율 정책의 2006년 값이며 2007년 값은 4.0이 아니라 4.5임. [원문 모순] 2014년 D클러스터(공공부문 관리·제도) 기재값 3.5는 하위 5개 기준의 평균 3.4와 어긋남. 원천 자체의 불일치이므로 보정하지 않고 원문대로 수록함. 2008년은 원문이 소수 첫째 자리로 반올림 기재되어 있음. [요소 부합] 검토의견 4번(WGI 대체 검토)에 대해서는 요소명이 CPIA이므로 CPIA를 유지하고, WGI는 참고자료로 분리함. [라이선스] 원천이 CC BY 4.0을 명시(WB_CPIA.json license 필드)하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "CPIA 통화·환율 정책 · 베트남 — 1(낮음)~6(높음) 등급",
+      "sourceLabelEn": "CPIA rating: Monetary and Exchange Rate Policies",
+      "sourceNote": "2016–2024년 9개년 전 지표 결측. World Bank가 IDA 지원대상국만 CPIA를 공개 발표하며 베트남은 2017년 IDA를 졸업함. 원본 파일에 해당 연도 행은 있으나 OBS_STATUS=\"O(Missing value)\"이고, 졸업 사실 자체는 원문에 명시되어 있지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-002",
+        "indicatorId": "A-002_cpia_macr",
+        "sourceFileDecoded": "A-002_CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-ef73a32f2796|점",
+      "dimensionLabels": {
+        "category": "베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "dimensions": {
+        "category": "베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "displayLabel": "CPIA 공공행정의 질 · 베트남 — 1(낮음)~6(높음) 등급",
+      "indicatorId": "A-002_cpia_padm",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ef73a32f2796",
+        "labelKo": "CPIA 공공행정의 질",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-ef73a32f2796|점|category=베트남|detail=1(낮음)~6(높음) 등급|A-002_cpia_padm",
+      "sourceCaveat": "[원본 버전] World Bank Data360 CPIA 데이터셋(CPIA_Vietnam.xlsx, DATABASE_ID=WB_CPIA) 및 WDI 추출본을 raw로 사용. [값 검증] 검토의견 1번(종합점수 IRAI가 4개 클러스터 평균과 어긋난다)은 raw 전수 재계산 결과 성립하지 않음 — 2005~2015년 11개년 모두 IRAI = (A+B+C+D)/4와 소수점까지 일치하며, 2015년은 (3.66667+3.5+4.1+3.5)/4 = 3.69167로 원문 기재값과 동일함. 지적된 4.000은 어떤 클러스터 조합으로도 산출되지 않음. [값 검증] 검토의견 2번(경제관리가 2006년 5.5에서 2007년 4.0으로 급락)도 성립하지 않음 — 경제관리 클러스터는 2006년 4.667, 2007년 4.333임. 5.5는 하위기준인 통화·환율 정책의 2006년 값이며 2007년 값은 4.0이 아니라 4.5임. [원문 모순] 2014년 D클러스터(공공부문 관리·제도) 기재값 3.5는 하위 5개 기준의 평균 3.4와 어긋남. 원천 자체의 불일치이므로 보정하지 않고 원문대로 수록함. 2008년은 원문이 소수 첫째 자리로 반올림 기재되어 있음. [요소 부합] 검토의견 4번(WGI 대체 검토)에 대해서는 요소명이 CPIA이므로 CPIA를 유지하고, WGI는 참고자료로 분리함. [라이선스] 원천이 CC BY 4.0을 명시(WB_CPIA.json license 필드)하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "CPIA 공공행정의 질 · 베트남 — 1(낮음)~6(높음) 등급",
+      "sourceLabelEn": "CPIA rating: Quality of Public Administration",
+      "sourceNote": "2016–2024년 9개년 전 지표 결측. World Bank가 IDA 지원대상국만 CPIA를 공개 발표하며 베트남은 2017년 IDA를 졸업함. 원본 파일에 해당 연도 행은 있으나 OBS_STATUS=\"O(Missing value)\"이고, 졸업 사실 자체는 원문에 명시되어 있지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-002",
+        "indicatorId": "A-002_cpia_padm",
+        "sourceFileDecoded": "A-002_CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표).xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d76eda4d50f1|점",
+      "dimensionLabels": {
+        "category": "베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "dimensions": {
+        "category": "베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "displayLabel": "CPIA 공공재원 배분의 형평성 · 베트남 — 1(낮음)~6(높음) 등급",
+      "indicatorId": "A-002_cpia_pres",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d76eda4d50f1",
+        "labelKo": "CPIA 공공재원 배분의 형평성",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-d76eda4d50f1|점|category=베트남|detail=1(낮음)~6(높음) 등급|A-002_cpia_pres",
+      "sourceCaveat": "[원본 버전] World Bank Data360 CPIA 데이터셋(CPIA_Vietnam.xlsx, DATABASE_ID=WB_CPIA) 및 WDI 추출본을 raw로 사용. [값 검증] 검토의견 1번(종합점수 IRAI가 4개 클러스터 평균과 어긋난다)은 raw 전수 재계산 결과 성립하지 않음 — 2005~2015년 11개년 모두 IRAI = (A+B+C+D)/4와 소수점까지 일치하며, 2015년은 (3.66667+3.5+4.1+3.5)/4 = 3.69167로 원문 기재값과 동일함. 지적된 4.000은 어떤 클러스터 조합으로도 산출되지 않음. [값 검증] 검토의견 2번(경제관리가 2006년 5.5에서 2007년 4.0으로 급락)도 성립하지 않음 — 경제관리 클러스터는 2006년 4.667, 2007년 4.333임. 5.5는 하위기준인 통화·환율 정책의 2006년 값이며 2007년 값은 4.0이 아니라 4.5임. [원문 모순] 2014년 D클러스터(공공부문 관리·제도) 기재값 3.5는 하위 5개 기준의 평균 3.4와 어긋남. 원천 자체의 불일치이므로 보정하지 않고 원문대로 수록함. 2008년은 원문이 소수 첫째 자리로 반올림 기재되어 있음. [요소 부합] 검토의견 4번(WGI 대체 검토)에 대해서는 요소명이 CPIA이므로 CPIA를 유지하고, WGI는 참고자료로 분리함. [라이선스] 원천이 CC BY 4.0을 명시(WB_CPIA.json license 필드)하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "CPIA 공공재원 배분의 형평성 · 베트남 — 1(낮음)~6(높음) 등급",
+      "sourceLabelEn": "CPIA rating: Equity of Public Resource Use",
+      "sourceNote": "2016–2024년 9개년 전 지표 결측. World Bank가 IDA 지원대상국만 CPIA를 공개 발표하며 베트남은 2017년 IDA를 졸업함. 원본 파일에 해당 연도 행은 있으나 OBS_STATUS=\"O(Missing value)\"이고, 졸업 사실 자체는 원문에 명시되어 있지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-002",
+        "indicatorId": "A-002_cpia_pres",
+        "sourceFileDecoded": "A-002_CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표).xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-22ab29bb9aa1|점",
+      "dimensionLabels": {
+        "category": "법치 거버넌스 · 베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "dimensions": {
+        "category": "법치 거버넌스 · 베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "displayLabel": "CPIA 재산권·법치 거버넌스 · 베트남 — 1(낮음)~6(높음) 등급",
+      "indicatorId": "A-002_cpia_prop",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-22ab29bb9aa1",
+        "labelKo": "CPIA 재산권",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-22ab29bb9aa1|점|category=법치 거버넌스 · 베트남|detail=1(낮음)~6(높음) 등급|A-002_cpia_prop",
+      "sourceCaveat": "[원본 버전] World Bank Data360 CPIA 데이터셋(CPIA_Vietnam.xlsx, DATABASE_ID=WB_CPIA) 및 WDI 추출본을 raw로 사용. [값 검증] 검토의견 1번(종합점수 IRAI가 4개 클러스터 평균과 어긋난다)은 raw 전수 재계산 결과 성립하지 않음 — 2005~2015년 11개년 모두 IRAI = (A+B+C+D)/4와 소수점까지 일치하며, 2015년은 (3.66667+3.5+4.1+3.5)/4 = 3.69167로 원문 기재값과 동일함. 지적된 4.000은 어떤 클러스터 조합으로도 산출되지 않음. [값 검증] 검토의견 2번(경제관리가 2006년 5.5에서 2007년 4.0으로 급락)도 성립하지 않음 — 경제관리 클러스터는 2006년 4.667, 2007년 4.333임. 5.5는 하위기준인 통화·환율 정책의 2006년 값이며 2007년 값은 4.0이 아니라 4.5임. [원문 모순] 2014년 D클러스터(공공부문 관리·제도) 기재값 3.5는 하위 5개 기준의 평균 3.4와 어긋남. 원천 자체의 불일치이므로 보정하지 않고 원문대로 수록함. 2008년은 원문이 소수 첫째 자리로 반올림 기재되어 있음. [요소 부합] 검토의견 4번(WGI 대체 검토)에 대해서는 요소명이 CPIA이므로 CPIA를 유지하고, WGI는 참고자료로 분리함. [라이선스] 원천이 CC BY 4.0을 명시(WB_CPIA.json license 필드)하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "CPIA 재산권·법치 거버넌스 · 베트남 — 1(낮음)~6(높음) 등급",
+      "sourceLabelEn": "CPIA rating: Property Rights and Rule-based Governance",
+      "sourceNote": "2016–2024년 9개년 전 지표 결측. World Bank가 IDA 지원대상국만 CPIA를 공개 발표하며 베트남은 2017년 IDA를 졸업함. 원본 파일에 해당 연도 행은 있으나 OBS_STATUS=\"O(Missing value)\"이고, 졸업 사실 자체는 원문에 명시되어 있지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-002",
+        "indicatorId": "A-002_cpia_prop",
+        "sourceFileDecoded": "A-002_CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표).xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1ade02992237|점",
+      "dimensionLabels": {
+        "category": "노동 · 베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "dimensions": {
+        "category": "노동 · 베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "displayLabel": "CPIA 사회보호·노동 · 베트남 — 1(낮음)~6(높음) 등급",
+      "indicatorId": "A-002_cpia_prot",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1ade02992237",
+        "labelKo": "CPIA 사회보호",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-1ade02992237|점|category=노동 · 베트남|detail=1(낮음)~6(높음) 등급|A-002_cpia_prot",
+      "sourceCaveat": "[원본 버전] World Bank Data360 CPIA 데이터셋(CPIA_Vietnam.xlsx, DATABASE_ID=WB_CPIA) 및 WDI 추출본을 raw로 사용. [값 검증] 검토의견 1번(종합점수 IRAI가 4개 클러스터 평균과 어긋난다)은 raw 전수 재계산 결과 성립하지 않음 — 2005~2015년 11개년 모두 IRAI = (A+B+C+D)/4와 소수점까지 일치하며, 2015년은 (3.66667+3.5+4.1+3.5)/4 = 3.69167로 원문 기재값과 동일함. 지적된 4.000은 어떤 클러스터 조합으로도 산출되지 않음. [값 검증] 검토의견 2번(경제관리가 2006년 5.5에서 2007년 4.0으로 급락)도 성립하지 않음 — 경제관리 클러스터는 2006년 4.667, 2007년 4.333임. 5.5는 하위기준인 통화·환율 정책의 2006년 값이며 2007년 값은 4.0이 아니라 4.5임. [원문 모순] 2014년 D클러스터(공공부문 관리·제도) 기재값 3.5는 하위 5개 기준의 평균 3.4와 어긋남. 원천 자체의 불일치이므로 보정하지 않고 원문대로 수록함. 2008년은 원문이 소수 첫째 자리로 반올림 기재되어 있음. [요소 부합] 검토의견 4번(WGI 대체 검토)에 대해서는 요소명이 CPIA이므로 CPIA를 유지하고, WGI는 참고자료로 분리함. [라이선스] 원천이 CC BY 4.0을 명시(WB_CPIA.json license 필드)하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "CPIA 사회보호·노동 · 베트남 — 1(낮음)~6(높음) 등급",
+      "sourceLabelEn": "CPIA rating: Social Protection and Labor",
+      "sourceNote": "2016–2024년 9개년 전 지표 결측. World Bank가 IDA 지원대상국만 CPIA를 공개 발표하며 베트남은 2017년 IDA를 졸업함. 원본 파일에 해당 연도 행은 있으나 OBS_STATUS=\"O(Missing value)\"이고, 졸업 사실 자체는 원문에 명시되어 있지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-002",
+        "indicatorId": "A-002_cpia_prot",
+        "sourceFileDecoded": "A-002_CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표).xlsx",
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bdb15fdd3c61|점",
+      "dimensionLabels": {
+        "category": "제도 클러스터 평균 · 베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "dimensions": {
+        "category": "제도 클러스터 평균 · 베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "displayLabel": "CPIA D. 공공부문 관리·제도 클러스터 평균 · 베트남 — 1(낮음)~6(높음) 등급",
+      "indicatorId": "A-002_cpia_public_sector",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bdb15fdd3c61",
+        "labelKo": "CPIA D. 공공부문 관리",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-bdb15fdd3c61|점|category=제도 클러스터 평균 · 베트남|detail=1(낮음)~6(높음) 등급|A-002_cpia_public_sector",
+      "sourceCaveat": "[원본 버전] World Bank Data360 CPIA 데이터셋(CPIA_Vietnam.xlsx, DATABASE_ID=WB_CPIA) 및 WDI 추출본을 raw로 사용. [값 검증] 검토의견 1번(종합점수 IRAI가 4개 클러스터 평균과 어긋난다)은 raw 전수 재계산 결과 성립하지 않음 — 2005~2015년 11개년 모두 IRAI = (A+B+C+D)/4와 소수점까지 일치하며, 2015년은 (3.66667+3.5+4.1+3.5)/4 = 3.69167로 원문 기재값과 동일함. 지적된 4.000은 어떤 클러스터 조합으로도 산출되지 않음. [값 검증] 검토의견 2번(경제관리가 2006년 5.5에서 2007년 4.0으로 급락)도 성립하지 않음 — 경제관리 클러스터는 2006년 4.667, 2007년 4.333임. 5.5는 하위기준인 통화·환율 정책의 2006년 값이며 2007년 값은 4.0이 아니라 4.5임. [원문 모순] 2014년 D클러스터(공공부문 관리·제도) 기재값 3.5는 하위 5개 기준의 평균 3.4와 어긋남. 원천 자체의 불일치이므로 보정하지 않고 원문대로 수록함. 2008년은 원문이 소수 첫째 자리로 반올림 기재되어 있음. [요소 부합] 검토의견 4번(WGI 대체 검토)에 대해서는 요소명이 CPIA이므로 CPIA를 유지하고, WGI는 참고자료로 분리함. [라이선스] 원천이 CC BY 4.0을 명시(WB_CPIA.json license 필드)하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "CPIA D. 공공부문 관리·제도 클러스터 평균 · 베트남 — 1(낮음)~6(높음) 등급",
+      "sourceLabelEn": "CPIA Cluster D: Public Sector Management and Institutions",
+      "sourceNote": "2016–2024년 9개년 전 지표 결측. World Bank가 IDA 지원대상국만 CPIA를 공개 발표하며 베트남은 2017년 IDA를 졸업함. 원본 파일에 해당 연도 행은 있으나 OBS_STATUS=\"O(Missing value)\"이고, 졸업 사실 자체는 원문에 명시되어 있지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-002",
+        "indicatorId": "A-002_cpia_public_sector",
+        "sourceFileDecoded": "A-002_CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표).xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bb217cc98da2|점",
+      "dimensionLabels": {
+        "category": "베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "dimensions": {
+        "category": "베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "displayLabel": "CPIA 세입동원 효율성 · 베트남 — 1(낮음)~6(높음) 등급",
+      "indicatorId": "A-002_cpia_revn",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bb217cc98da2",
+        "labelKo": "CPIA 세입동원 효율성",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-bb217cc98da2|점|category=베트남|detail=1(낮음)~6(높음) 등급|A-002_cpia_revn",
+      "sourceCaveat": "[원본 버전] World Bank Data360 CPIA 데이터셋(CPIA_Vietnam.xlsx, DATABASE_ID=WB_CPIA) 및 WDI 추출본을 raw로 사용. [값 검증] 검토의견 1번(종합점수 IRAI가 4개 클러스터 평균과 어긋난다)은 raw 전수 재계산 결과 성립하지 않음 — 2005~2015년 11개년 모두 IRAI = (A+B+C+D)/4와 소수점까지 일치하며, 2015년은 (3.66667+3.5+4.1+3.5)/4 = 3.69167로 원문 기재값과 동일함. 지적된 4.000은 어떤 클러스터 조합으로도 산출되지 않음. [값 검증] 검토의견 2번(경제관리가 2006년 5.5에서 2007년 4.0으로 급락)도 성립하지 않음 — 경제관리 클러스터는 2006년 4.667, 2007년 4.333임. 5.5는 하위기준인 통화·환율 정책의 2006년 값이며 2007년 값은 4.0이 아니라 4.5임. [원문 모순] 2014년 D클러스터(공공부문 관리·제도) 기재값 3.5는 하위 5개 기준의 평균 3.4와 어긋남. 원천 자체의 불일치이므로 보정하지 않고 원문대로 수록함. 2008년은 원문이 소수 첫째 자리로 반올림 기재되어 있음. [요소 부합] 검토의견 4번(WGI 대체 검토)에 대해서는 요소명이 CPIA이므로 CPIA를 유지하고, WGI는 참고자료로 분리함. [라이선스] 원천이 CC BY 4.0을 명시(WB_CPIA.json license 필드)하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "CPIA 세입동원 효율성 · 베트남 — 1(낮음)~6(높음) 등급",
+      "sourceLabelEn": "CPIA rating: Efficiency of Revenue Mobilization",
+      "sourceNote": "2016–2024년 9개년 전 지표 결측. World Bank가 IDA 지원대상국만 CPIA를 공개 발표하며 베트남은 2017년 IDA를 졸업함. 원본 파일에 해당 연도 행은 있으나 OBS_STATUS=\"O(Missing value)\"이고, 졸업 사실 자체는 원문에 명시되어 있지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-002",
+        "indicatorId": "A-002_cpia_revn",
+        "sourceFileDecoded": "A-002_CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표).xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7769a1c828bb|점",
+      "dimensionLabels": {
+        "category": "형평 클러스터 평균 · 베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "dimensions": {
+        "category": "형평 클러스터 평균 · 베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "displayLabel": "CPIA C. 사회적 포용·형평 클러스터 평균 · 베트남 — 1(낮음)~6(높음) 등급",
+      "indicatorId": "A-002_cpia_social_inclusion",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7769a1c828bb",
+        "labelKo": "CPIA C. 사회적 포용",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-7769a1c828bb|점|category=형평 클러스터 평균 · 베트남|detail=1(낮음)~6(높음) 등급|A-002_cpia_social_inclusion",
+      "sourceCaveat": "[원본 버전] World Bank Data360 CPIA 데이터셋(CPIA_Vietnam.xlsx, DATABASE_ID=WB_CPIA) 및 WDI 추출본을 raw로 사용. [값 검증] 검토의견 1번(종합점수 IRAI가 4개 클러스터 평균과 어긋난다)은 raw 전수 재계산 결과 성립하지 않음 — 2005~2015년 11개년 모두 IRAI = (A+B+C+D)/4와 소수점까지 일치하며, 2015년은 (3.66667+3.5+4.1+3.5)/4 = 3.69167로 원문 기재값과 동일함. 지적된 4.000은 어떤 클러스터 조합으로도 산출되지 않음. [값 검증] 검토의견 2번(경제관리가 2006년 5.5에서 2007년 4.0으로 급락)도 성립하지 않음 — 경제관리 클러스터는 2006년 4.667, 2007년 4.333임. 5.5는 하위기준인 통화·환율 정책의 2006년 값이며 2007년 값은 4.0이 아니라 4.5임. [원문 모순] 2014년 D클러스터(공공부문 관리·제도) 기재값 3.5는 하위 5개 기준의 평균 3.4와 어긋남. 원천 자체의 불일치이므로 보정하지 않고 원문대로 수록함. 2008년은 원문이 소수 첫째 자리로 반올림 기재되어 있음. [요소 부합] 검토의견 4번(WGI 대체 검토)에 대해서는 요소명이 CPIA이므로 CPIA를 유지하고, WGI는 참고자료로 분리함. [라이선스] 원천이 CC BY 4.0을 명시(WB_CPIA.json license 필드)하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "CPIA C. 사회적 포용·형평 클러스터 평균 · 베트남 — 1(낮음)~6(높음) 등급",
+      "sourceLabelEn": "CPIA Cluster C: Policies for Social Inclusion and Equity",
+      "sourceNote": "2016–2024년 9개년 전 지표 결측. World Bank가 IDA 지원대상국만 CPIA를 공개 발표하며 베트남은 2017년 IDA를 졸업함. 원본 파일에 해당 연도 행은 있으나 OBS_STATUS=\"O(Missing value)\"이고, 졸업 사실 자체는 원문에 명시되어 있지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-002",
+        "indicatorId": "A-002_cpia_social_inclusion",
+        "sourceFileDecoded": "A-002_CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표).xlsx",
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-aeafb0097967|점",
+      "dimensionLabels": {
+        "category": "베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "dimensions": {
+        "category": "베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "displayLabel": "CPIA B. 구조정책 클러스터 평균 · 베트남 — 1(낮음)~6(높음) 등급",
+      "indicatorId": "A-002_cpia_structural_policies",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-aeafb0097967",
+        "labelKo": "CPIA B. 구조정책 클러스터 평균",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-aeafb0097967|점|category=베트남|detail=1(낮음)~6(높음) 등급|A-002_cpia_structural_policies",
+      "sourceCaveat": "[원본 버전] World Bank Data360 CPIA 데이터셋(CPIA_Vietnam.xlsx, DATABASE_ID=WB_CPIA) 및 WDI 추출본을 raw로 사용. [값 검증] 검토의견 1번(종합점수 IRAI가 4개 클러스터 평균과 어긋난다)은 raw 전수 재계산 결과 성립하지 않음 — 2005~2015년 11개년 모두 IRAI = (A+B+C+D)/4와 소수점까지 일치하며, 2015년은 (3.66667+3.5+4.1+3.5)/4 = 3.69167로 원문 기재값과 동일함. 지적된 4.000은 어떤 클러스터 조합으로도 산출되지 않음. [값 검증] 검토의견 2번(경제관리가 2006년 5.5에서 2007년 4.0으로 급락)도 성립하지 않음 — 경제관리 클러스터는 2006년 4.667, 2007년 4.333임. 5.5는 하위기준인 통화·환율 정책의 2006년 값이며 2007년 값은 4.0이 아니라 4.5임. [원문 모순] 2014년 D클러스터(공공부문 관리·제도) 기재값 3.5는 하위 5개 기준의 평균 3.4와 어긋남. 원천 자체의 불일치이므로 보정하지 않고 원문대로 수록함. 2008년은 원문이 소수 첫째 자리로 반올림 기재되어 있음. [요소 부합] 검토의견 4번(WGI 대체 검토)에 대해서는 요소명이 CPIA이므로 CPIA를 유지하고, WGI는 참고자료로 분리함. [라이선스] 원천이 CC BY 4.0을 명시(WB_CPIA.json license 필드)하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "CPIA B. 구조정책 클러스터 평균 · 베트남 — 1(낮음)~6(높음) 등급",
+      "sourceLabelEn": "CPIA Cluster B: Structural Policies",
+      "sourceNote": "2016–2024년 9개년 전 지표 결측. World Bank가 IDA 지원대상국만 CPIA를 공개 발표하며 베트남은 2017년 IDA를 졸업함. 원본 파일에 해당 연도 행은 있으나 OBS_STATUS=\"O(Missing value)\"이고, 졸업 사실 자체는 원문에 명시되어 있지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-002",
+        "indicatorId": "A-002_cpia_structural_policies",
+        "sourceFileDecoded": "A-002_CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표).xlsx",
+        "sourceRow": 25,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-db7a756c9475|점",
+      "dimensionLabels": {
+        "category": "베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "dimensions": {
+        "category": "베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "displayLabel": "CPIA 무역 · 베트남 — 1(낮음)~6(높음) 등급",
+      "indicatorId": "A-002_cpia_trad",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-db7a756c9475",
+        "labelKo": "CPIA 무역",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-db7a756c9475|점|category=베트남|detail=1(낮음)~6(높음) 등급|A-002_cpia_trad",
+      "sourceCaveat": "[원본 버전] World Bank Data360 CPIA 데이터셋(CPIA_Vietnam.xlsx, DATABASE_ID=WB_CPIA) 및 WDI 추출본을 raw로 사용. [값 검증] 검토의견 1번(종합점수 IRAI가 4개 클러스터 평균과 어긋난다)은 raw 전수 재계산 결과 성립하지 않음 — 2005~2015년 11개년 모두 IRAI = (A+B+C+D)/4와 소수점까지 일치하며, 2015년은 (3.66667+3.5+4.1+3.5)/4 = 3.69167로 원문 기재값과 동일함. 지적된 4.000은 어떤 클러스터 조합으로도 산출되지 않음. [값 검증] 검토의견 2번(경제관리가 2006년 5.5에서 2007년 4.0으로 급락)도 성립하지 않음 — 경제관리 클러스터는 2006년 4.667, 2007년 4.333임. 5.5는 하위기준인 통화·환율 정책의 2006년 값이며 2007년 값은 4.0이 아니라 4.5임. [원문 모순] 2014년 D클러스터(공공부문 관리·제도) 기재값 3.5는 하위 5개 기준의 평균 3.4와 어긋남. 원천 자체의 불일치이므로 보정하지 않고 원문대로 수록함. 2008년은 원문이 소수 첫째 자리로 반올림 기재되어 있음. [요소 부합] 검토의견 4번(WGI 대체 검토)에 대해서는 요소명이 CPIA이므로 CPIA를 유지하고, WGI는 참고자료로 분리함. [라이선스] 원천이 CC BY 4.0을 명시(WB_CPIA.json license 필드)하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "CPIA 무역 · 베트남 — 1(낮음)~6(높음) 등급",
+      "sourceLabelEn": "CPIA rating: Trade",
+      "sourceNote": "2016–2024년 9개년 전 지표 결측. World Bank가 IDA 지원대상국만 CPIA를 공개 발표하며 베트남은 2017년 IDA를 졸업함. 원본 파일에 해당 연도 행은 있으나 OBS_STATUS=\"O(Missing value)\"이고, 졸업 사실 자체는 원문에 명시되어 있지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-002",
+        "indicatorId": "A-002_cpia_trad",
+        "sourceFileDecoded": "A-002_CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표).xlsx",
+        "sourceRow": 24,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f70e242d5e1a|점",
+      "dimensionLabels": {
+        "category": "책임성 · 부패 · 베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "dimensions": {
+        "category": "책임성 · 부패 · 베트남",
+        "detail": "1(낮음)~6(높음) 등급"
+      },
+      "displayLabel": "CPIA 공공부문 투명성·책임성·부패 · 베트남 — 1(낮음)~6(높음) 등급",
+      "indicatorId": "A-002_cpia_tran",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f70e242d5e1a",
+        "labelKo": "CPIA 공공부문 투명성",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-f70e242d5e1a|점|category=책임성 · 부패 · 베트남|detail=1(낮음)~6(높음) 등급|A-002_cpia_tran",
+      "sourceCaveat": "[원본 버전] World Bank Data360 CPIA 데이터셋(CPIA_Vietnam.xlsx, DATABASE_ID=WB_CPIA) 및 WDI 추출본을 raw로 사용. [값 검증] 검토의견 1번(종합점수 IRAI가 4개 클러스터 평균과 어긋난다)은 raw 전수 재계산 결과 성립하지 않음 — 2005~2015년 11개년 모두 IRAI = (A+B+C+D)/4와 소수점까지 일치하며, 2015년은 (3.66667+3.5+4.1+3.5)/4 = 3.69167로 원문 기재값과 동일함. 지적된 4.000은 어떤 클러스터 조합으로도 산출되지 않음. [값 검증] 검토의견 2번(경제관리가 2006년 5.5에서 2007년 4.0으로 급락)도 성립하지 않음 — 경제관리 클러스터는 2006년 4.667, 2007년 4.333임. 5.5는 하위기준인 통화·환율 정책의 2006년 값이며 2007년 값은 4.0이 아니라 4.5임. [원문 모순] 2014년 D클러스터(공공부문 관리·제도) 기재값 3.5는 하위 5개 기준의 평균 3.4와 어긋남. 원천 자체의 불일치이므로 보정하지 않고 원문대로 수록함. 2008년은 원문이 소수 첫째 자리로 반올림 기재되어 있음. [요소 부합] 검토의견 4번(WGI 대체 검토)에 대해서는 요소명이 CPIA이므로 CPIA를 유지하고, WGI는 참고자료로 분리함. [라이선스] 원천이 CC BY 4.0을 명시(WB_CPIA.json license 필드)하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "CPIA 공공부문 투명성·책임성·부패 · 베트남 — 1(낮음)~6(높음) 등급",
+      "sourceLabelEn": "CPIA rating: Transparency, Accountability and Corruption in the Public Sector",
+      "sourceNote": "2016–2024년 9개년 전 지표 결측. World Bank가 IDA 지원대상국만 CPIA를 공개 발표하며 베트남은 2017년 IDA를 졸업함. 원본 파일에 해당 연도 행은 있으나 OBS_STATUS=\"O(Missing value)\"이고, 졸업 사실 자체는 원문에 명시되어 있지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-002",
+        "indicatorId": "A-002_cpia_tran",
+        "sourceFileDecoded": "A-002_CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표).xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-5dd7fe5bbc51",
+      "labelKo": "CPIA A. 경제관리 클러스터 평균",
+      "recordCount": 20,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-aeafb0097967",
+      "labelKo": "CPIA B. 구조정책 클러스터 평균",
+      "recordCount": 20,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-7769a1c828bb",
+      "labelKo": "CPIA C. 사회적 포용",
+      "recordCount": 20,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-bdb15fdd3c61",
+      "labelKo": "CPIA D. 공공부문 관리",
+      "recordCount": 20,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-5c4bc8f2bd62",
+      "labelKo": "CPIA IRAI 종합점수",
+      "recordCount": 20,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-f70e242d5e1a",
+      "labelKo": "CPIA 공공부문 투명성",
+      "recordCount": 20,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-d76eda4d50f1",
+      "labelKo": "CPIA 공공재원 배분의 형평성",
+      "recordCount": 20,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-ef73a32f2796",
+      "labelKo": "CPIA 공공행정의 질",
+      "recordCount": 20,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-e6bb0c69250f",
+      "labelKo": "CPIA 금융부문",
+      "recordCount": 20,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-d60df4643277",
+      "labelKo": "CPIA 기업규제 환경",
+      "recordCount": 20,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-db7a756c9475",
+      "labelKo": "CPIA 무역",
+      "recordCount": 20,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-4670af9300cb",
+      "labelKo": "CPIA 부채 정책",
+      "recordCount": 20,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-1ade02992237",
+      "labelKo": "CPIA 사회보호",
+      "recordCount": 20,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-c6e4f4a8060a",
+      "labelKo": "CPIA 성평등",
+      "recordCount": 20,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-bb217cc98da2",
+      "labelKo": "CPIA 세입동원 효율성",
+      "recordCount": 20,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-5ab2820b461e",
+      "labelKo": "CPIA 예산",
+      "recordCount": 20,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-bf490540274c",
+      "labelKo": "CPIA 인적자원 형성",
+      "recordCount": 20,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-22ab29bb9aa1",
+      "labelKo": "CPIA 재산권",
+      "recordCount": 20,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-0b97a8ac9dcf",
+      "labelKo": "CPIA 재정 정책",
+      "recordCount": 20,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-e0f7ca3ec951",
+      "labelKo": "CPIA 통화",
+      "recordCount": 20,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-2b684737516a",
+      "labelKo": "CPIA 환경지속가능성 정책",
+      "recordCount": 20,
+      "unit": "점",
+      "unitFamily": "score"
+    }
+  ],
+  "observationCount": 420,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

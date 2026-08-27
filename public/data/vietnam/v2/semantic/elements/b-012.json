@@ -1,0 +1,1416 @@
+{
+  "dimensions": [
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2024"
+      ]
+    }
+  ],
+  "elementId": "B-012",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 44,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-1b6cee2994bc|명",
+      "dimensionLabels": {
+        "detail": "폭풍·태풍"
+      },
+      "dimensions": {
+        "detail": "폭풍·태풍"
+      },
+      "displayLabel": "재해 유형별 총피해인구 — 폭풍·태풍",
+      "indicatorId": "B-012_affected_by_type_01",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1b6cee2994bc",
+        "labelKo": "재해 유형별 총피해인구",
+        "unit": "명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-1b6cee2994bc|명|detail=폭풍·태풍|B-012_affected_by_type_01",
+      "sourceCaveat": "[미수집 raw 반영] 합계 103,033,821명(1952–2024). 종전에는 건수·사망자만 수록되어 있었고 피해인구·피해액 계열이 지표화되지 않았음 — 원본 대조 후 신설. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 총피해인구 — 폭풍·태풍",
+      "sourceLabelEn": "Total affected by disaster type",
+      "sourceNote": "[미수집 raw 반영] 합계 103,033,821명(1952–2024). 종전에는 건수·사망자만 수록되어 있었고 피해인구·피해액 계열이 지표화되지 않았음 — 원본 대조 후 신설. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_affected_by_type_01",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1b6cee2994bc|명",
+      "dimensionLabels": {
+        "detail": "홍수"
+      },
+      "dimensions": {
+        "detail": "홍수"
+      },
+      "displayLabel": "재해 유형별 총피해인구 — 홍수",
+      "indicatorId": "B-012_affected_by_type_02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1b6cee2994bc",
+        "labelKo": "재해 유형별 총피해인구",
+        "unit": "명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-1b6cee2994bc|명|detail=홍수|B-012_affected_by_type_02",
+      "sourceCaveat": "[미수집 raw 반영] 합계 103,033,821명(1952–2024). 종전에는 건수·사망자만 수록되어 있었고 피해인구·피해액 계열이 지표화되지 않았음 — 원본 대조 후 신설. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 총피해인구 — 홍수",
+      "sourceLabelEn": "Total affected by disaster type",
+      "sourceNote": "[미수집 raw 반영] 합계 103,033,821명(1952–2024). 종전에는 건수·사망자만 수록되어 있었고 피해인구·피해액 계열이 지표화되지 않았음 — 원본 대조 후 신설. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_affected_by_type_02",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1b6cee2994bc|명",
+      "dimensionLabels": {
+        "detail": "가뭄"
+      },
+      "dimensions": {
+        "detail": "가뭄"
+      },
+      "displayLabel": "재해 유형별 총피해인구 — 가뭄",
+      "indicatorId": "B-012_affected_by_type_03",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1b6cee2994bc",
+        "labelKo": "재해 유형별 총피해인구",
+        "unit": "명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-1b6cee2994bc|명|detail=가뭄|B-012_affected_by_type_03",
+      "sourceCaveat": "[미수집 raw 반영] 합계 103,033,821명(1952–2024). 종전에는 건수·사망자만 수록되어 있었고 피해인구·피해액 계열이 지표화되지 않았음 — 원본 대조 후 신설. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 총피해인구 — 가뭄",
+      "sourceLabelEn": "Total affected by disaster type",
+      "sourceNote": "[미수집 raw 반영] 합계 103,033,821명(1952–2024). 종전에는 건수·사망자만 수록되어 있었고 피해인구·피해액 계열이 지표화되지 않았음 — 원본 대조 후 신설. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_affected_by_type_03",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1b6cee2994bc|명",
+      "dimensionLabels": {
+        "detail": "전염병"
+      },
+      "dimensions": {
+        "detail": "전염병"
+      },
+      "displayLabel": "재해 유형별 총피해인구 — 전염병",
+      "indicatorId": "B-012_affected_by_type_04",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1b6cee2994bc",
+        "labelKo": "재해 유형별 총피해인구",
+        "unit": "명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-1b6cee2994bc|명|detail=전염병|B-012_affected_by_type_04",
+      "sourceCaveat": "[미수집 raw 반영] 합계 103,033,821명(1952–2024). 종전에는 건수·사망자만 수록되어 있었고 피해인구·피해액 계열이 지표화되지 않았음 — 원본 대조 후 신설. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 총피해인구 — 전염병",
+      "sourceLabelEn": "Total affected by disaster type",
+      "sourceNote": "[미수집 raw 반영] 합계 103,033,821명(1952–2024). 종전에는 건수·사망자만 수록되어 있었고 피해인구·피해액 계열이 지표화되지 않았음 — 원본 대조 후 신설. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_affected_by_type_04",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1b6cee2994bc|명",
+      "dimensionLabels": {
+        "detail": "사면이동(습윤)"
+      },
+      "dimensions": {
+        "detail": "사면이동(습윤)"
+      },
+      "displayLabel": "재해 유형별 총피해인구 — 사면이동(습윤)",
+      "indicatorId": "B-012_affected_by_type_05",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1b6cee2994bc",
+        "labelKo": "재해 유형별 총피해인구",
+        "unit": "명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-1b6cee2994bc|명|detail=사면이동(습윤)|B-012_affected_by_type_05",
+      "sourceCaveat": "[미수집 raw 반영] 합계 103,033,821명(1952–2024). 종전에는 건수·사망자만 수록되어 있었고 피해인구·피해액 계열이 지표화되지 않았음 — 원본 대조 후 신설. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 총피해인구 — 사면이동(습윤)",
+      "sourceLabelEn": "Total affected by disaster type",
+      "sourceNote": "[미수집 raw 반영] 합계 103,033,821명(1952–2024). 종전에는 건수·사망자만 수록되어 있었고 피해인구·피해액 계열이 지표화되지 않았음 — 원본 대조 후 신설. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_affected_by_type_05",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1b6cee2994bc|명",
+      "dimensionLabels": {
+        "detail": "극한기온·병해충·산불(원천 기록 0)"
+      },
+      "dimensions": {
+        "detail": "극한기온·병해충·산불(원천 기록 0)"
+      },
+      "displayLabel": "재해 유형별 총피해인구 — 극한기온·병해충·산불(원천 기록 0)",
+      "indicatorId": "B-012_affected_by_type_06",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1b6cee2994bc",
+        "labelKo": "재해 유형별 총피해인구",
+        "unit": "명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-1b6cee2994bc|명|detail=극한기온·병해충·산불(원천 기록 0)|B-012_affected_by_type_06",
+      "sourceCaveat": "[미수집 raw 반영] 합계 103,033,821명(1952–2024). 종전에는 건수·사망자만 수록되어 있었고 피해인구·피해액 계열이 지표화되지 않았음 — 원본 대조 후 신설. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 총피해인구 — 극한기온·병해충·산불(원천 기록 0)",
+      "sourceLabelEn": "Total affected by disaster type",
+      "sourceNote": "[미수집 raw 반영] 합계 103,033,821명(1952–2024). 종전에는 건수·사망자만 수록되어 있었고 피해인구·피해액 계열이 지표화되지 않았음 — 원본 대조 후 신설. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_affected_by_type_06",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1c5f75d22ab4|천 US$",
+      "dimensionLabels": {
+        "detail": "폭풍·태풍"
+      },
+      "dimensions": {
+        "detail": "폭풍·태풍"
+      },
+      "displayLabel": "재해 유형별 총피해액(물가조정) — 폭풍·태풍",
+      "indicatorId": "B-012_damage_adj_by_type_01",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1c5f75d22ab4",
+        "labelKo": "재해 유형별 총피해액(물가조정)",
+        "unit": "천 US$",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-1c5f75d22ab4|천 US$|detail=폭풍·태풍|B-012_damage_adj_by_type_01",
+      "sourceCaveat": "[미수집 raw 반영] 합계 36,427,993천 US$ ≈ 364억 US$. 명목 대비 약 1.43배. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 총피해액(물가조정) — 폭풍·태풍",
+      "sourceLabelEn": "Total damage adjusted by disaster type",
+      "sourceNote": "[미수집 raw 반영] 합계 36,427,993천 US$ ≈ 364억 US$. 명목 대비 약 1.43배. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_damage_adj_by_type_01",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 36,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1c5f75d22ab4|천 US$",
+      "dimensionLabels": {
+        "detail": "가뭄"
+      },
+      "dimensions": {
+        "detail": "가뭄"
+      },
+      "displayLabel": "재해 유형별 총피해액(물가조정) — 가뭄",
+      "indicatorId": "B-012_damage_adj_by_type_02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1c5f75d22ab4",
+        "labelKo": "재해 유형별 총피해액(물가조정)",
+        "unit": "천 US$",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-1c5f75d22ab4|천 US$|detail=가뭄|B-012_damage_adj_by_type_02",
+      "sourceCaveat": "[미수집 raw 반영] 합계 36,427,993천 US$ ≈ 364억 US$. 명목 대비 약 1.43배. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 총피해액(물가조정) — 가뭄",
+      "sourceLabelEn": "Total damage adjusted by disaster type",
+      "sourceNote": "[미수집 raw 반영] 합계 36,427,993천 US$ ≈ 364억 US$. 명목 대비 약 1.43배. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_damage_adj_by_type_02",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 37,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1c5f75d22ab4|천 US$",
+      "dimensionLabels": {
+        "detail": "홍수"
+      },
+      "dimensions": {
+        "detail": "홍수"
+      },
+      "displayLabel": "재해 유형별 총피해액(물가조정) — 홍수",
+      "indicatorId": "B-012_damage_adj_by_type_03",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1c5f75d22ab4",
+        "labelKo": "재해 유형별 총피해액(물가조정)",
+        "unit": "천 US$",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-1c5f75d22ab4|천 US$|detail=홍수|B-012_damage_adj_by_type_03",
+      "sourceCaveat": "[미수집 raw 반영] 합계 36,427,993천 US$ ≈ 364억 US$. 명목 대비 약 1.43배. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 총피해액(물가조정) — 홍수",
+      "sourceLabelEn": "Total damage adjusted by disaster type",
+      "sourceNote": "[미수집 raw 반영] 합계 36,427,993천 US$ ≈ 364억 US$. 명목 대비 약 1.43배. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_damage_adj_by_type_03",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 38,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1c5f75d22ab4|천 US$",
+      "dimensionLabels": {
+        "detail": "사면이동(습윤)"
+      },
+      "dimensions": {
+        "detail": "사면이동(습윤)"
+      },
+      "displayLabel": "재해 유형별 총피해액(물가조정) — 사면이동(습윤)",
+      "indicatorId": "B-012_damage_adj_by_type_04",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1c5f75d22ab4",
+        "labelKo": "재해 유형별 총피해액(물가조정)",
+        "unit": "천 US$",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-1c5f75d22ab4|천 US$|detail=사면이동(습윤)|B-012_damage_adj_by_type_04",
+      "sourceCaveat": "[미수집 raw 반영] 합계 36,427,993천 US$ ≈ 364억 US$. 명목 대비 약 1.43배. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 총피해액(물가조정) — 사면이동(습윤)",
+      "sourceLabelEn": "Total damage adjusted by disaster type",
+      "sourceNote": "[미수집 raw 반영] 합계 36,427,993천 US$ ≈ 364억 US$. 명목 대비 약 1.43배. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_damage_adj_by_type_04",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 39,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1c5f75d22ab4|천 US$",
+      "dimensionLabels": {
+        "detail": "전염병·극한기온·병해충·산불(원천 기록 0)"
+      },
+      "dimensions": {
+        "detail": "전염병·극한기온·병해충·산불(원천 기록 0)"
+      },
+      "displayLabel": "재해 유형별 총피해액(물가조정) — 전염병·극한기온·병해충·산불(원천 기록 0)",
+      "indicatorId": "B-012_damage_adj_by_type_05",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1c5f75d22ab4",
+        "labelKo": "재해 유형별 총피해액(물가조정)",
+        "unit": "천 US$",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-1c5f75d22ab4|천 US$|detail=전염병·극한기온·병해충·산불(원천 기록 0)|B-012_damage_adj_by_type_05",
+      "sourceCaveat": "[미수집 raw 반영] 합계 36,427,993천 US$ ≈ 364억 US$. 명목 대비 약 1.43배. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 총피해액(물가조정) — 전염병·극한기온·병해충·산불(원천 기록 0)",
+      "sourceLabelEn": "Total damage adjusted by disaster type",
+      "sourceNote": "[미수집 raw 반영] 합계 36,427,993천 US$ ≈ 364억 US$. 명목 대비 약 1.43배. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_damage_adj_by_type_05",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 40,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-cd67be594da2|천 US$",
+      "dimensionLabels": {
+        "detail": "폭풍·태풍"
+      },
+      "dimensions": {
+        "detail": "폭풍·태풍"
+      },
+      "displayLabel": "재해 유형별 총피해액 — 폭풍·태풍",
+      "indicatorId": "B-012_damage_by_type_01",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-cd67be594da2",
+        "labelKo": "재해 유형별 총피해액",
+        "unit": "천 US$",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-cd67be594da2|천 US$|detail=폭풍·태풍|B-012_damage_by_type_01",
+      "sourceCaveat": "[미수집 raw 반영] 합계 25,527,184천 US$ ≈ 255억 US$. 보험손해(45,000천 US$)·복구비용(원천 기록 0)은 별도 열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 총피해액 — 폭풍·태풍",
+      "sourceLabelEn": "Total damage by disaster type",
+      "sourceNote": "[미수집 raw 반영] 합계 25,527,184천 US$ ≈ 255억 US$. 보험손해(45,000천 US$)·복구비용(원천 기록 0)은 별도 열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_damage_by_type_01",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 31,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-cd67be594da2|천 US$",
+      "dimensionLabels": {
+        "detail": "가뭄"
+      },
+      "dimensions": {
+        "detail": "가뭄"
+      },
+      "displayLabel": "재해 유형별 총피해액 — 가뭄",
+      "indicatorId": "B-012_damage_by_type_02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-cd67be594da2",
+        "labelKo": "재해 유형별 총피해액",
+        "unit": "천 US$",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-cd67be594da2|천 US$|detail=가뭄|B-012_damage_by_type_02",
+      "sourceCaveat": "[미수집 raw 반영] 합계 25,527,184천 US$ ≈ 255억 US$. 보험손해(45,000천 US$)·복구비용(원천 기록 0)은 별도 열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 총피해액 — 가뭄",
+      "sourceLabelEn": "Total damage by disaster type",
+      "sourceNote": "[미수집 raw 반영] 합계 25,527,184천 US$ ≈ 255억 US$. 보험손해(45,000천 US$)·복구비용(원천 기록 0)은 별도 열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_damage_by_type_02",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 32,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-cd67be594da2|천 US$",
+      "dimensionLabels": {
+        "detail": "홍수"
+      },
+      "dimensions": {
+        "detail": "홍수"
+      },
+      "displayLabel": "재해 유형별 총피해액 — 홍수",
+      "indicatorId": "B-012_damage_by_type_03",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-cd67be594da2",
+        "labelKo": "재해 유형별 총피해액",
+        "unit": "천 US$",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-cd67be594da2|천 US$|detail=홍수|B-012_damage_by_type_03",
+      "sourceCaveat": "[미수집 raw 반영] 합계 25,527,184천 US$ ≈ 255억 US$. 보험손해(45,000천 US$)·복구비용(원천 기록 0)은 별도 열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 총피해액 — 홍수",
+      "sourceLabelEn": "Total damage by disaster type",
+      "sourceNote": "[미수집 raw 반영] 합계 25,527,184천 US$ ≈ 255억 US$. 보험손해(45,000천 US$)·복구비용(원천 기록 0)은 별도 열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_damage_by_type_03",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 33,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-cd67be594da2|천 US$",
+      "dimensionLabels": {
+        "detail": "사면이동(습윤)"
+      },
+      "dimensions": {
+        "detail": "사면이동(습윤)"
+      },
+      "displayLabel": "재해 유형별 총피해액 — 사면이동(습윤)",
+      "indicatorId": "B-012_damage_by_type_04",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-cd67be594da2",
+        "labelKo": "재해 유형별 총피해액",
+        "unit": "천 US$",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-cd67be594da2|천 US$|detail=사면이동(습윤)|B-012_damage_by_type_04",
+      "sourceCaveat": "[미수집 raw 반영] 합계 25,527,184천 US$ ≈ 255억 US$. 보험손해(45,000천 US$)·복구비용(원천 기록 0)은 별도 열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 총피해액 — 사면이동(습윤)",
+      "sourceLabelEn": "Total damage by disaster type",
+      "sourceNote": "[미수집 raw 반영] 합계 25,527,184천 US$ ≈ 255억 US$. 보험손해(45,000천 US$)·복구비용(원천 기록 0)은 별도 열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_damage_by_type_04",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 34,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-cd67be594da2|천 US$",
+      "dimensionLabels": {
+        "detail": "전염병·극한기온·병해충·산불(원천 기록 0)"
+      },
+      "dimensions": {
+        "detail": "전염병·극한기온·병해충·산불(원천 기록 0)"
+      },
+      "displayLabel": "재해 유형별 총피해액 — 전염병·극한기온·병해충·산불(원천 기록 0)",
+      "indicatorId": "B-012_damage_by_type_05",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-cd67be594da2",
+        "labelKo": "재해 유형별 총피해액",
+        "unit": "천 US$",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-cd67be594da2|천 US$|detail=전염병·극한기온·병해충·산불(원천 기록 0)|B-012_damage_by_type_05",
+      "sourceCaveat": "[미수집 raw 반영] 합계 25,527,184천 US$ ≈ 255억 US$. 보험손해(45,000천 US$)·복구비용(원천 기록 0)은 별도 열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 총피해액 — 전염병·극한기온·병해충·산불(원천 기록 0)",
+      "sourceLabelEn": "Total damage by disaster type",
+      "sourceNote": "[미수집 raw 반영] 합계 25,527,184천 US$ ≈ 255억 US$. 보험손해(45,000천 US$)·복구비용(원천 기록 0)은 별도 열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_damage_by_type_05",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 35,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4fc3df90bb54|명",
+      "dimensionLabels": {
+        "detail": "폭풍·태풍"
+      },
+      "dimensions": {
+        "detail": "폭풍·태풍"
+      },
+      "displayLabel": "재해 유형별 사망자 — 폭풍·태풍",
+      "indicatorId": "B-012_deaths_by_type_01",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4fc3df90bb54",
+        "labelKo": "재해 유형별 사망자",
+        "unit": "명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-4fc3df90bb54|명|detail=폭풍·태풍|B-012_deaths_by_type_01",
+      "sourceCaveat": "합계 27,724명. 가뭄·극한기온 등의 0은 실제 0(대상 없음이 아님). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 사망자 — 폭풍·태풍",
+      "sourceLabelEn": "Deaths by disaster type",
+      "sourceNote": "합계 27,724명. 가뭄·극한기온 등의 0은 실제 0(대상 없음이 아님). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_deaths_by_type_01",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4fc3df90bb54|명",
+      "dimensionLabels": {
+        "detail": "홍수"
+      },
+      "dimensions": {
+        "detail": "홍수"
+      },
+      "displayLabel": "재해 유형별 사망자 — 홍수",
+      "indicatorId": "B-012_deaths_by_type_02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4fc3df90bb54",
+        "labelKo": "재해 유형별 사망자",
+        "unit": "명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-4fc3df90bb54|명|detail=홍수|B-012_deaths_by_type_02",
+      "sourceCaveat": "합계 27,724명. 가뭄·극한기온 등의 0은 실제 0(대상 없음이 아님). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 사망자 — 홍수",
+      "sourceLabelEn": "Deaths by disaster type",
+      "sourceNote": "합계 27,724명. 가뭄·극한기온 등의 0은 실제 0(대상 없음이 아님). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_deaths_by_type_02",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4fc3df90bb54|명",
+      "dimensionLabels": {
+        "detail": "전염병"
+      },
+      "dimensions": {
+        "detail": "전염병"
+      },
+      "displayLabel": "재해 유형별 사망자 — 전염병",
+      "indicatorId": "B-012_deaths_by_type_03",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4fc3df90bb54",
+        "labelKo": "재해 유형별 사망자",
+        "unit": "명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-4fc3df90bb54|명|detail=전염병|B-012_deaths_by_type_03",
+      "sourceCaveat": "합계 27,724명. 가뭄·극한기온 등의 0은 실제 0(대상 없음이 아님). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 사망자 — 전염병",
+      "sourceLabelEn": "Deaths by disaster type",
+      "sourceNote": "합계 27,724명. 가뭄·극한기온 등의 0은 실제 0(대상 없음이 아님). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_deaths_by_type_03",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4fc3df90bb54|명",
+      "dimensionLabels": {
+        "detail": "가뭄(실제 0)"
+      },
+      "dimensions": {
+        "detail": "가뭄(실제 0)"
+      },
+      "displayLabel": "재해 유형별 사망자 — 가뭄(실제 0)",
+      "indicatorId": "B-012_deaths_by_type_04",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4fc3df90bb54",
+        "labelKo": "재해 유형별 사망자",
+        "unit": "명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-4fc3df90bb54|명|detail=가뭄(실제 0)|B-012_deaths_by_type_04",
+      "sourceCaveat": "합계 27,724명. 가뭄·극한기온 등의 0은 실제 0(대상 없음이 아님). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 사망자 — 가뭄(실제 0)",
+      "sourceLabelEn": "Deaths by disaster type",
+      "sourceNote": "합계 27,724명. 가뭄·극한기온 등의 0은 실제 0(대상 없음이 아님). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_deaths_by_type_04",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4fc3df90bb54|명",
+      "dimensionLabels": {
+        "detail": "사면이동(습윤)"
+      },
+      "dimensions": {
+        "detail": "사면이동(습윤)"
+      },
+      "displayLabel": "재해 유형별 사망자 — 사면이동(습윤)",
+      "indicatorId": "B-012_deaths_by_type_05",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4fc3df90bb54",
+        "labelKo": "재해 유형별 사망자",
+        "unit": "명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-4fc3df90bb54|명|detail=사면이동(습윤)|B-012_deaths_by_type_05",
+      "sourceCaveat": "합계 27,724명. 가뭄·극한기온 등의 0은 실제 0(대상 없음이 아님). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 사망자 — 사면이동(습윤)",
+      "sourceLabelEn": "Deaths by disaster type",
+      "sourceNote": "합계 27,724명. 가뭄·극한기온 등의 0은 실제 0(대상 없음이 아님). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_deaths_by_type_05",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4fc3df90bb54|명",
+      "dimensionLabels": {
+        "detail": "극한기온·병해충·산불(실제 0)"
+      },
+      "dimensions": {
+        "detail": "극한기온·병해충·산불(실제 0)"
+      },
+      "displayLabel": "재해 유형별 사망자 — 극한기온·병해충·산불(실제 0)",
+      "indicatorId": "B-012_deaths_by_type_06",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4fc3df90bb54",
+        "labelKo": "재해 유형별 사망자",
+        "unit": "명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-4fc3df90bb54|명|detail=극한기온·병해충·산불(실제 0)|B-012_deaths_by_type_06",
+      "sourceCaveat": "합계 27,724명. 가뭄·극한기온 등의 0은 실제 0(대상 없음이 아님). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 사망자 — 극한기온·병해충·산불(실제 0)",
+      "sourceLabelEn": "Deaths by disaster type",
+      "sourceNote": "합계 27,724명. 가뭄·극한기온 등의 0은 실제 0(대상 없음이 아님). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_deaths_by_type_06",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-743b2f540469|건",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "연도별 자연재해 발생 건수",
+      "indicatorId": "B-012_event_count_annual",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-743b2f540469",
+        "labelKo": "연도별 자연재해 발생 건수",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-743b2f540469|건||B-012_event_count_annual",
+      "sourceCaveat": "[신규 수록 — 시계열 축 보완] 종전에는 유형별 기간합계만 있고 연도 축이 없어 모든 관측행이 year=2024로 태깅되어 있었음. 원본으로 연도별 건수를 재구성하여 추세 확인이 가능하도록 함 (2018년 8건 · 2019년 8 · 2020년 12 · 2021년 8 · 2022년 11 · 2023년 7 · 2024년 13건). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "연도별 자연재해 발생 건수",
+      "sourceLabelEn": "Annual natural disaster event count",
+      "sourceNote": "[신규 수록 — 시계열 축 보완] 종전에는 유형별 기간합계만 있고 연도 축이 없어 모든 관측행이 year=2024로 태깅되어 있었음. 원본으로 연도별 건수를 재구성하여 추세 확인이 가능하도록 함 (2018년 8건 · 2019년 8 · 2020년 12 · 2021년 8 · 2022년 11 · 2023년 7 · 2024년 13건). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_event_count_annual",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 42,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-03791074601f|건",
+      "dimensionLabels": {
+        "detail": "위·경도 좌표"
+      },
+      "dimensions": {
+        "detail": "위·경도 좌표"
+      },
+      "displayLabel": "사건 단위 위치정보 확보 현황 — 위·경도 좌표",
+      "indicatorId": "B-012_event_geo_coverage_g03",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-03791074601f",
+        "labelKo": "사건 단위 위치정보 확보 현황",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-03791074601f|건|detail=위·경도 좌표|B-012_event_geo_coverage_g03",
+      "sourceCaveat": "[보유 원본 재확인] 종전에는 지점 단위 자료를 \"금회 미수집(NE)\"으로 처리했으나, 보유 EM-DAT Archive **원본 xlsx에 위치 관련 열이 이미 들어 있음**을 확인함. 종전 작업이 파생 CSV(14개 열)를 기준으로 이뤄져 Location·Admin Units·Latitude/Longitude·River Basin 열이 누락된 것이 원인. 원본 기준 채움 건수를 지표화하고, 실제 사건 목록은 1.2_entity 시트에 수록함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "사건 단위 위치정보 확보 현황 — 위·경도 좌표",
+      "sourceLabelEn": "Event-level location data coverage",
+      "sourceNote": "[보유 원본 재확인] 종전에는 지점 단위 자료를 \"금회 미수집(NE)\"으로 처리했으나, 보유 EM-DAT Archive **원본 xlsx에 위치 관련 열이 이미 들어 있음**을 확인함. 종전 작업이 파생 CSV(14개 열)를 기준으로 이뤄져 Location·Admin Units·Latitude/Longitude·River Basin 열이 누락된 것이 원인. 원본 기준 채움 건수를 지표화하고, 실제 사건 목록은 1.2_entity 시트에 수록함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_event_geo_coverage_g03",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 45,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-03791074601f|건",
+      "dimensionLabels": {
+        "detail": "GAUL/GADM 행정구역 코드"
+      },
+      "dimensions": {
+        "detail": "GAUL/GADM 행정구역 코드"
+      },
+      "displayLabel": "사건 단위 위치정보 확보 현황 — GAUL/GADM 행정구역 코드",
+      "indicatorId": "B-012_event_geo_coverage_gaul_gadm",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-03791074601f",
+        "labelKo": "사건 단위 위치정보 확보 현황",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-03791074601f|건|detail=GAUL/GADM 행정구역 코드|B-012_event_geo_coverage_gaul_gadm",
+      "sourceCaveat": "[보유 원본 재확인] 종전에는 지점 단위 자료를 \"금회 미수집(NE)\"으로 처리했으나, 보유 EM-DAT Archive **원본 xlsx에 위치 관련 열이 이미 들어 있음**을 확인함. 종전 작업이 파생 CSV(14개 열)를 기준으로 이뤄져 Location·Admin Units·Latitude/Longitude·River Basin 열이 누락된 것이 원인. 원본 기준 채움 건수를 지표화하고, 실제 사건 목록은 1.2_entity 시트에 수록함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "사건 단위 위치정보 확보 현황 — GAUL/GADM 행정구역 코드",
+      "sourceLabelEn": "Event-level location data coverage",
+      "sourceNote": "[보유 원본 재확인] 종전에는 지점 단위 자료를 \"금회 미수집(NE)\"으로 처리했으나, 보유 EM-DAT Archive **원본 xlsx에 위치 관련 열이 이미 들어 있음**을 확인함. 종전 작업이 파생 CSV(14개 열)를 기준으로 이뤄져 Location·Admin Units·Latitude/Longitude·River Basin 열이 누락된 것이 원인. 원본 기준 채움 건수를 지표화하고, 실제 사건 목록은 1.2_entity 시트에 수록함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_event_geo_coverage_gaul_gadm",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 43,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-03791074601f|건",
+      "dimensionLabels": {
+        "detail": "행정구역명(Location 문자열)"
+      },
+      "dimensions": {
+        "detail": "행정구역명(Location 문자열)"
+      },
+      "displayLabel": "사건 단위 위치정보 확보 현황 — 행정구역명(Location 문자열)",
+      "indicatorId": "B-012_event_geo_coverage_location",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-03791074601f",
+        "labelKo": "사건 단위 위치정보 확보 현황",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-03791074601f|건|detail=행정구역명(Location 문자열)|B-012_event_geo_coverage_location",
+      "sourceCaveat": "[보유 원본 재확인] 종전에는 지점 단위 자료를 \"금회 미수집(NE)\"으로 처리했으나, 보유 EM-DAT Archive **원본 xlsx에 위치 관련 열이 이미 들어 있음**을 확인함. 종전 작업이 파생 CSV(14개 열)를 기준으로 이뤄져 Location·Admin Units·Latitude/Longitude·River Basin 열이 누락된 것이 원인. 원본 기준 채움 건수를 지표화하고, 실제 사건 목록은 1.2_entity 시트에 수록함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "사건 단위 위치정보 확보 현황 — 행정구역명(Location 문자열)",
+      "sourceLabelEn": "Event-level location data coverage",
+      "sourceNote": "[보유 원본 재확인] 종전에는 지점 단위 자료를 \"금회 미수집(NE)\"으로 처리했으나, 보유 EM-DAT Archive **원본 xlsx에 위치 관련 열이 이미 들어 있음**을 확인함. 종전 작업이 파생 CSV(14개 열)를 기준으로 이뤄져 Location·Admin Units·Latitude/Longitude·River Basin 열이 누락된 것이 원인. 원본 기준 채움 건수를 지표화하고, 실제 사건 목록은 1.2_entity 시트에 수록함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_event_geo_coverage_location",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 47,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-03791074601f|건",
+      "dimensionLabels": {
+        "detail": "강도(Magnitude)"
+      },
+      "dimensions": {
+        "detail": "강도(Magnitude)"
+      },
+      "displayLabel": "사건 단위 위치정보 확보 현황 — 강도(Magnitude)",
+      "indicatorId": "B-012_event_geo_coverage_magnitude",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-03791074601f",
+        "labelKo": "사건 단위 위치정보 확보 현황",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-03791074601f|건|detail=강도(Magnitude)|B-012_event_geo_coverage_magnitude",
+      "sourceCaveat": "[보유 원본 재확인] 종전에는 지점 단위 자료를 \"금회 미수집(NE)\"으로 처리했으나, 보유 EM-DAT Archive **원본 xlsx에 위치 관련 열이 이미 들어 있음**을 확인함. 종전 작업이 파생 CSV(14개 열)를 기준으로 이뤄져 Location·Admin Units·Latitude/Longitude·River Basin 열이 누락된 것이 원인. 원본 기준 채움 건수를 지표화하고, 실제 사건 목록은 1.2_entity 시트에 수록함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "사건 단위 위치정보 확보 현황 — 강도(Magnitude)",
+      "sourceLabelEn": "Event-level location data coverage",
+      "sourceNote": "[보유 원본 재확인] 종전에는 지점 단위 자료를 \"금회 미수집(NE)\"으로 처리했으나, 보유 EM-DAT Archive **원본 xlsx에 위치 관련 열이 이미 들어 있음**을 확인함. 종전 작업이 파생 CSV(14개 열)를 기준으로 이뤄져 Location·Admin Units·Latitude/Longitude·River Basin 열이 누락된 것이 원인. 원본 기준 채움 건수를 지표화하고, 실제 사건 목록은 1.2_entity 시트에 수록함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_event_geo_coverage_magnitude",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 44,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-03791074601f|건",
+      "dimensionLabels": {
+        "detail": "유역명(River Basin)"
+      },
+      "dimensions": {
+        "detail": "유역명(River Basin)"
+      },
+      "displayLabel": "사건 단위 위치정보 확보 현황 — 유역명(River Basin)",
+      "indicatorId": "B-012_event_geo_coverage_river_basin",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-03791074601f",
+        "labelKo": "사건 단위 위치정보 확보 현황",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-03791074601f|건|detail=유역명(River Basin)|B-012_event_geo_coverage_river_basin",
+      "sourceCaveat": "[보유 원본 재확인] 종전에는 지점 단위 자료를 \"금회 미수집(NE)\"으로 처리했으나, 보유 EM-DAT Archive **원본 xlsx에 위치 관련 열이 이미 들어 있음**을 확인함. 종전 작업이 파생 CSV(14개 열)를 기준으로 이뤄져 Location·Admin Units·Latitude/Longitude·River Basin 열이 누락된 것이 원인. 원본 기준 채움 건수를 지표화하고, 실제 사건 목록은 1.2_entity 시트에 수록함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "사건 단위 위치정보 확보 현황 — 유역명(River Basin)",
+      "sourceLabelEn": "Event-level location data coverage",
+      "sourceNote": "[보유 원본 재확인] 종전에는 지점 단위 자료를 \"금회 미수집(NE)\"으로 처리했으나, 보유 EM-DAT Archive **원본 xlsx에 위치 관련 열이 이미 들어 있음**을 확인함. 종전 작업이 파생 CSV(14개 열)를 기준으로 이뤄져 Location·Admin Units·Latitude/Longitude·River Basin 열이 누락된 것이 원인. 원본 기준 채움 건수를 지표화하고, 실제 사건 목록은 1.2_entity 시트에 수록함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_event_geo_coverage_river_basin",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 46,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-06a5558ce2a6|건",
+      "dimensionLabels": {
+        "detail": "폭풍·태풍"
+      },
+      "dimensions": {
+        "detail": "폭풍·태풍"
+      },
+      "displayLabel": "재해 유형별 발생 건수 — 폭풍·태풍",
+      "indicatorId": "B-012_events_by_type_01",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-06a5558ce2a6",
+        "labelKo": "재해 유형별 발생 건수",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-06a5558ce2a6|건|detail=폭풍·태풍|B-012_events_by_type_01",
+      "sourceCaveat": "합계 275건(1952–2024). 기술재난 77건(사망 2,459)은 자연재해와 분리. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 발생 건수 — 폭풍·태풍",
+      "sourceLabelEn": "Disaster events by type",
+      "sourceNote": "합계 275건(1952–2024). 기술재난 77건(사망 2,459)은 자연재해와 분리. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_events_by_type_01",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 4,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-06a5558ce2a6|건",
+      "dimensionLabels": {
+        "detail": "홍수"
+      },
+      "dimensions": {
+        "detail": "홍수"
+      },
+      "displayLabel": "재해 유형별 발생 건수 — 홍수",
+      "indicatorId": "B-012_events_by_type_02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-06a5558ce2a6",
+        "labelKo": "재해 유형별 발생 건수",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-06a5558ce2a6|건|detail=홍수|B-012_events_by_type_02",
+      "sourceCaveat": "합계 275건(1952–2024). 기술재난 77건(사망 2,459)은 자연재해와 분리. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 발생 건수 — 홍수",
+      "sourceLabelEn": "Disaster events by type",
+      "sourceNote": "합계 275건(1952–2024). 기술재난 77건(사망 2,459)은 자연재해와 분리. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_events_by_type_02",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-06a5558ce2a6|건",
+      "dimensionLabels": {
+        "detail": "전염병"
+      },
+      "dimensions": {
+        "detail": "전염병"
+      },
+      "displayLabel": "재해 유형별 발생 건수 — 전염병",
+      "indicatorId": "B-012_events_by_type_03",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-06a5558ce2a6",
+        "labelKo": "재해 유형별 발생 건수",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-06a5558ce2a6|건|detail=전염병|B-012_events_by_type_03",
+      "sourceCaveat": "합계 275건(1952–2024). 기술재난 77건(사망 2,459)은 자연재해와 분리. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 발생 건수 — 전염병",
+      "sourceLabelEn": "Disaster events by type",
+      "sourceNote": "합계 275건(1952–2024). 기술재난 77건(사망 2,459)은 자연재해와 분리. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_events_by_type_03",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-06a5558ce2a6|건",
+      "dimensionLabels": {
+        "detail": "가뭄"
+      },
+      "dimensions": {
+        "detail": "가뭄"
+      },
+      "displayLabel": "재해 유형별 발생 건수 — 가뭄",
+      "indicatorId": "B-012_events_by_type_04",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-06a5558ce2a6",
+        "labelKo": "재해 유형별 발생 건수",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-06a5558ce2a6|건|detail=가뭄|B-012_events_by_type_04",
+      "sourceCaveat": "합계 275건(1952–2024). 기술재난 77건(사망 2,459)은 자연재해와 분리. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 발생 건수 — 가뭄",
+      "sourceLabelEn": "Disaster events by type",
+      "sourceNote": "합계 275건(1952–2024). 기술재난 77건(사망 2,459)은 자연재해와 분리. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_events_by_type_04",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-06a5558ce2a6|건",
+      "dimensionLabels": {
+        "detail": "사면이동(습윤)"
+      },
+      "dimensions": {
+        "detail": "사면이동(습윤)"
+      },
+      "displayLabel": "재해 유형별 발생 건수 — 사면이동(습윤)",
+      "indicatorId": "B-012_events_by_type_05",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-06a5558ce2a6",
+        "labelKo": "재해 유형별 발생 건수",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-06a5558ce2a6|건|detail=사면이동(습윤)|B-012_events_by_type_05",
+      "sourceCaveat": "합계 275건(1952–2024). 기술재난 77건(사망 2,459)은 자연재해와 분리. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 발생 건수 — 사면이동(습윤)",
+      "sourceLabelEn": "Disaster events by type",
+      "sourceNote": "합계 275건(1952–2024). 기술재난 77건(사망 2,459)은 자연재해와 분리. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_events_by_type_05",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-06a5558ce2a6|건",
+      "dimensionLabels": {
+        "detail": "극한기온·병해충·산불 각 1건"
+      },
+      "dimensions": {
+        "detail": "극한기온·병해충·산불 각 1건"
+      },
+      "displayLabel": "재해 유형별 발생 건수 — 극한기온·병해충·산불 각 1건",
+      "indicatorId": "B-012_events_by_type_06",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-06a5558ce2a6",
+        "labelKo": "재해 유형별 발생 건수",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-06a5558ce2a6|건|detail=극한기온·병해충·산불 각 1건|B-012_events_by_type_06",
+      "sourceCaveat": "합계 275건(1952–2024). 기술재난 77건(사망 2,459)은 자연재해와 분리. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 발생 건수 — 극한기온·병해충·산불 각 1건",
+      "sourceLabelEn": "Disaster events by type",
+      "sourceNote": "합계 275건(1952–2024). 기술재난 77건(사망 2,459)은 자연재해와 분리. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_events_by_type_06",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-06666608048c|명",
+      "dimensionLabels": {
+        "detail": "폭풍·태풍"
+      },
+      "dimensions": {
+        "detail": "폭풍·태풍"
+      },
+      "displayLabel": "재해 유형별 이재민 — 폭풍·태풍",
+      "indicatorId": "B-012_homeless_by_type_01",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-06666608048c",
+        "labelKo": "재해 유형별 이재민",
+        "unit": "명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-06666608048c|명|detail=폭풍·태풍|B-012_homeless_by_type_01",
+      "sourceCaveat": "[미수집 raw 반영] 합계 4,974,900명. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 이재민 — 폭풍·태풍",
+      "sourceLabelEn": "Homeless by disaster type",
+      "sourceNote": "[미수집 raw 반영] 합계 4,974,900명. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_homeless_by_type_01",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 27,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-06666608048c|명",
+      "dimensionLabels": {
+        "detail": "홍수"
+      },
+      "dimensions": {
+        "detail": "홍수"
+      },
+      "displayLabel": "재해 유형별 이재민 — 홍수",
+      "indicatorId": "B-012_homeless_by_type_02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-06666608048c",
+        "labelKo": "재해 유형별 이재민",
+        "unit": "명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-06666608048c|명|detail=홍수|B-012_homeless_by_type_02",
+      "sourceCaveat": "[미수집 raw 반영] 합계 4,974,900명. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 이재민 — 홍수",
+      "sourceLabelEn": "Homeless by disaster type",
+      "sourceNote": "[미수집 raw 반영] 합계 4,974,900명. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_homeless_by_type_02",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 28,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-06666608048c|명",
+      "dimensionLabels": {
+        "detail": "사면이동(습윤)"
+      },
+      "dimensions": {
+        "detail": "사면이동(습윤)"
+      },
+      "displayLabel": "재해 유형별 이재민 — 사면이동(습윤)",
+      "indicatorId": "B-012_homeless_by_type_03",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-06666608048c",
+        "labelKo": "재해 유형별 이재민",
+        "unit": "명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-06666608048c|명|detail=사면이동(습윤)|B-012_homeless_by_type_03",
+      "sourceCaveat": "[미수집 raw 반영] 합계 4,974,900명. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 이재민 — 사면이동(습윤)",
+      "sourceLabelEn": "Homeless by disaster type",
+      "sourceNote": "[미수집 raw 반영] 합계 4,974,900명. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_homeless_by_type_03",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 29,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-06666608048c|명",
+      "dimensionLabels": {
+        "detail": "가뭄·전염병·극한기온·병해충·산불(원천 기록 0"
+      },
+      "dimensions": {
+        "detail": "가뭄·전염병·극한기온·병해충·산불(원천 기록 0"
+      },
+      "displayLabel": "재해 유형별 이재민 — 가뭄·전염병·극한기온·병해충·산불(원천 기록 0",
+      "indicatorId": "B-012_homeless_by_type_04",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-06666608048c",
+        "labelKo": "재해 유형별 이재민",
+        "unit": "명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-06666608048c|명|detail=가뭄·전염병·극한기온·병해충·산불(원천 기록 0|B-012_homeless_by_type_04",
+      "sourceCaveat": "[미수집 raw 반영] 합계 4,974,900명. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 이재민 — 가뭄·전염병·극한기온·병해충·산불(원천 기록 0",
+      "sourceLabelEn": "Homeless by disaster type",
+      "sourceNote": "[미수집 raw 반영] 합계 4,974,900명. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_homeless_by_type_04",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 30,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bfaf434804f2|명",
+      "dimensionLabels": {
+        "detail": "전염병"
+      },
+      "dimensions": {
+        "detail": "전염병"
+      },
+      "displayLabel": "재해 유형별 부상자 — 전염병",
+      "indicatorId": "B-012_injured_by_type_01",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bfaf434804f2",
+        "labelKo": "재해 유형별 부상자",
+        "unit": "명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-bfaf434804f2|명|detail=전염병|B-012_injured_by_type_01",
+      "sourceCaveat": "[미수집 raw 반영] 합계 95,552명. 원본 xlsx에는 있으나 파생 CSV에는 없던 계열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 부상자 — 전염병",
+      "sourceLabelEn": "Injured by disaster type",
+      "sourceNote": "[미수집 raw 반영] 합계 95,552명. 원본 xlsx에는 있으나 파생 CSV에는 없던 계열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_injured_by_type_01",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bfaf434804f2|명",
+      "dimensionLabels": {
+        "detail": "폭풍·태풍"
+      },
+      "dimensions": {
+        "detail": "폭풍·태풍"
+      },
+      "displayLabel": "재해 유형별 부상자 — 폭풍·태풍",
+      "indicatorId": "B-012_injured_by_type_02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bfaf434804f2",
+        "labelKo": "재해 유형별 부상자",
+        "unit": "명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-bfaf434804f2|명|detail=폭풍·태풍|B-012_injured_by_type_02",
+      "sourceCaveat": "[미수집 raw 반영] 합계 95,552명. 원본 xlsx에는 있으나 파생 CSV에는 없던 계열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 부상자 — 폭풍·태풍",
+      "sourceLabelEn": "Injured by disaster type",
+      "sourceNote": "[미수집 raw 반영] 합계 95,552명. 원본 xlsx에는 있으나 파생 CSV에는 없던 계열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_injured_by_type_02",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bfaf434804f2|명",
+      "dimensionLabels": {
+        "detail": "홍수"
+      },
+      "dimensions": {
+        "detail": "홍수"
+      },
+      "displayLabel": "재해 유형별 부상자 — 홍수",
+      "indicatorId": "B-012_injured_by_type_03",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bfaf434804f2",
+        "labelKo": "재해 유형별 부상자",
+        "unit": "명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-bfaf434804f2|명|detail=홍수|B-012_injured_by_type_03",
+      "sourceCaveat": "[미수집 raw 반영] 합계 95,552명. 원본 xlsx에는 있으나 파생 CSV에는 없던 계열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 부상자 — 홍수",
+      "sourceLabelEn": "Injured by disaster type",
+      "sourceNote": "[미수집 raw 반영] 합계 95,552명. 원본 xlsx에는 있으나 파생 CSV에는 없던 계열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_injured_by_type_03",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 24,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bfaf434804f2|명",
+      "dimensionLabels": {
+        "detail": "사면이동(습윤)"
+      },
+      "dimensions": {
+        "detail": "사면이동(습윤)"
+      },
+      "displayLabel": "재해 유형별 부상자 — 사면이동(습윤)",
+      "indicatorId": "B-012_injured_by_type_04",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bfaf434804f2",
+        "labelKo": "재해 유형별 부상자",
+        "unit": "명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-bfaf434804f2|명|detail=사면이동(습윤)|B-012_injured_by_type_04",
+      "sourceCaveat": "[미수집 raw 반영] 합계 95,552명. 원본 xlsx에는 있으나 파생 CSV에는 없던 계열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 부상자 — 사면이동(습윤)",
+      "sourceLabelEn": "Injured by disaster type",
+      "sourceNote": "[미수집 raw 반영] 합계 95,552명. 원본 xlsx에는 있으나 파생 CSV에는 없던 계열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_injured_by_type_04",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 25,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bfaf434804f2|명",
+      "dimensionLabels": {
+        "detail": "가뭄·극한기온·병해충·산불(원천 기록 0)"
+      },
+      "dimensions": {
+        "detail": "가뭄·극한기온·병해충·산불(원천 기록 0)"
+      },
+      "displayLabel": "재해 유형별 부상자 — 가뭄·극한기온·병해충·산불(원천 기록 0)",
+      "indicatorId": "B-012_injured_by_type_05",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bfaf434804f2",
+        "labelKo": "재해 유형별 부상자",
+        "unit": "명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-bfaf434804f2|명|detail=가뭄·극한기온·병해충·산불(원천 기록 0)|B-012_injured_by_type_05",
+      "sourceCaveat": "[미수집 raw 반영] 합계 95,552명. 원본 xlsx에는 있으나 파생 CSV에는 없던 계열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceLabel": "재해 유형별 부상자 — 가뭄·극한기온·병해충·산불(원천 기록 0)",
+      "sourceLabelEn": "Injured by disaster type",
+      "sourceNote": "[미수집 raw 반영] 합계 95,552명. 원본 xlsx에는 있으나 파생 CSV에는 없던 계열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_injured_by_type_05",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 26,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-21e49b94531f|건",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "지점(point) 단위 재해 이력",
+      "indicatorId": "B-012_point_geocoded",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-21e49b94531f",
+        "labelKo": "지점(point) 단위 재해 이력",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-21e49b94531f|건||B-012_point_geocoded",
+      "sourceCaveat": "[보유 원본으로 부분 해소] 종전에는 GDIS 결합이 필요하다고 보아 미수집(NE)으로 두었으나, 보유 EM-DAT Archive 원본에 이미 행정구역·좌표가 들어 있어 **GDIS 없이도 행정구역 단위 지점화가 가능**함을 확인함. 다만 좌표(위·경도)가 있는 사건은 29건(2006–2020년)에 한정되고 나머지는 행정구역 단위까지만 확보되므로, 전 사건의 정밀 좌표가 필요하면 GDIS(1960–2018) 결합이 여전히 필요합니다. 결합 시 EM-DAT 라이선스(CC BY-NC-ND) 승계 여부 확인이 필요합니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(point) — 좌표·행정구역 부여 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "지점(point) 단위 재해 이력",
+      "sourceLabelEn": "Geocoded disaster events",
+      "sourceNote": "[보유 원본으로 부분 해소] 종전에는 GDIS 결합이 필요하다고 보아 미수집(NE)으로 두었으나, 보유 EM-DAT Archive 원본에 이미 행정구역·좌표가 들어 있어 **GDIS 없이도 행정구역 단위 지점화가 가능**함을 확인함. 다만 좌표(위·경도)가 있는 사건은 29건(2006–2020년)에 한정되고 나머지는 행정구역 단위까지만 확보되므로, 전 사건의 정밀 좌표가 필요하면 GDIS(1960–2018) 결합이 여전히 필요합니다. 결합 시 EM-DAT 라이선스(CC BY-NC-ND) 승계 여부 확인이 필요합니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(point) — 좌표·행정구역 부여 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-012",
+        "indicatorId": "B-012_point_geocoded",
+        "sourceFileDecoded": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+        "sourceRow": 41,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 5,
+      "key": "measure-03791074601f",
+      "labelKo": "사건 단위 위치정보 확보 현황",
+      "recordCount": 0,
+      "unit": "건",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-743b2f540469",
+      "labelKo": "연도별 자연재해 발생 건수",
+      "recordCount": 0,
+      "unit": "건",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 6,
+      "key": "measure-06a5558ce2a6",
+      "labelKo": "재해 유형별 발생 건수",
+      "recordCount": 0,
+      "unit": "건",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 5,
+      "key": "measure-bfaf434804f2",
+      "labelKo": "재해 유형별 부상자",
+      "recordCount": 0,
+      "unit": "명",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 6,
+      "key": "measure-4fc3df90bb54",
+      "labelKo": "재해 유형별 사망자",
+      "recordCount": 0,
+      "unit": "명",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 4,
+      "key": "measure-06666608048c",
+      "labelKo": "재해 유형별 이재민",
+      "recordCount": 0,
+      "unit": "명",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 5,
+      "key": "measure-cd67be594da2",
+      "labelKo": "재해 유형별 총피해액",
+      "recordCount": 0,
+      "unit": "천 US$",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 5,
+      "key": "measure-1c5f75d22ab4",
+      "labelKo": "재해 유형별 총피해액(물가조정)",
+      "recordCount": 0,
+      "unit": "천 US$",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 6,
+      "key": "measure-1b6cee2994bc",
+      "labelKo": "재해 유형별 총피해인구",
+      "recordCount": 0,
+      "unit": "명",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-21e49b94531f",
+      "labelKo": "지점(point) 단위 재해 이력",
+      "recordCount": 1,
+      "unit": "건",
+      "unitFamily": "count"
+    }
+  ],
+  "observationCount": 1,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

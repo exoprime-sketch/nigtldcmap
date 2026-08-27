@@ -1,0 +1,548 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 1,
+      "values": [
+        "코발트 · 니켈 · 구리 · 망간)"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 13,
+      "values": [
+        "구리",
+        "니켈",
+        "리튬",
+        "망간",
+        "보크사이트",
+        "안티모니",
+        "인광석",
+        "주석",
+        "코발트",
+        "텅스텐",
+        "형석",
+        "흑연",
+        "희토류"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "1,3,18,24"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2026"
+      ]
+    }
+  ],
+  "elementId": "B-046",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 13,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-0d37ac614ce3|t REO",
+      "dimensionLabels": {
+        "detail": "희토류",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "희토류",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "확인 매장량 — 희토류",
+      "indicatorId": "B-046_reserves_0",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0d37ac614ce3",
+        "labelKo": "확인 매장량",
+        "unit": "t REO",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-0d37ac614ce3|t REO|detail=희토류|technology=1,3,18,24|B-046_reserves_0",
+      "sourceCaveat": "[정의] USGS MCS의 \"Reserves\"는 **현재 기술·경제 조건에서 채굴 가능한 확인 매장량(proved/probable)**이며 추정 자원량(resources)이 아님. [원문 위치] USGS MCS 2026 인쇄 쪽 153 (PDF 쪽 157) — 희토류 챕터의 국가별 생산·매장 표, Vietnam 행 Reserves 열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "확인 매장량 — 희토류",
+      "sourceLabelEn": "Proved reserves: 희토류",
+      "sourceNote": "[정의] USGS MCS의 \"Reserves\"는 **현재 기술·경제 조건에서 채굴 가능한 확인 매장량(proved/probable)**이며 추정 자원량(resources)이 아님. [원문 위치] USGS MCS 2026 인쇄 쪽 153 (PDF 쪽 157) — 희토류 챕터의 국가별 생산·매장 표, Vietnam 행 Reserves 열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-046",
+        "indicatorId": "B-046_reserves_0",
+        "sourceFileDecoded": "B-046_매장량(확인／추정, tonnes).xlsx",
+        "sourceRow": 4,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-13c2efac5bc5|t (W 함량)",
+      "dimensionLabels": {
+        "detail": "텅스텐",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "텅스텐",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "확인 매장량 — 텅스텐",
+      "indicatorId": "B-046_reserves_1",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-13c2efac5bc5",
+        "labelKo": "확인 매장량",
+        "unit": "t (W 함량)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-13c2efac5bc5|t (W 함량)|detail=텅스텐|technology=1,3,18,24|B-046_reserves_1",
+      "sourceCaveat": "[정의] USGS MCS의 \"Reserves\"는 **현재 기술·경제 조건에서 채굴 가능한 확인 매장량(proved/probable)**이며 추정 자원량(resources)이 아님. [원문 위치] USGS MCS 2026 인쇄 쪽 201 (PDF 쪽 205) — 텅스텐 챕터의 국가별 생산·매장 표, Vietnam 행 Reserves 열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "확인 매장량 — 텅스텐",
+      "sourceLabelEn": "Proved reserves: 텅스텐",
+      "sourceNote": "[정의] USGS MCS의 \"Reserves\"는 **현재 기술·경제 조건에서 채굴 가능한 확인 매장량(proved/probable)**이며 추정 자원량(resources)이 아님. [원문 위치] USGS MCS 2026 인쇄 쪽 201 (PDF 쪽 205) — 텅스텐 챕터의 국가별 생산·매장 표, Vietnam 행 Reserves 열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-046",
+        "indicatorId": "B-046_reserves_1",
+        "sourceFileDecoded": "B-046_매장량(확인／추정, tonnes).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1b13946b70c0|천 t (건조 기준)",
+      "dimensionLabels": {
+        "detail": "보크사이트",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "보크사이트",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "확인 매장량 — 보크사이트",
+      "indicatorId": "B-046_reserves_2",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1b13946b70c0",
+        "labelKo": "확인 매장량",
+        "unit": "천 t (건조 기준)",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-1b13946b70c0|천 t (건조 기준)|detail=보크사이트|technology=1,3,18,24|B-046_reserves_2",
+      "sourceCaveat": "[정의] USGS MCS의 \"Reserves\"는 **현재 기술·경제 조건에서 채굴 가능한 확인 매장량(proved/probable)**이며 추정 자원량(resources)이 아님. [원문 위치] USGS MCS 2026 인쇄 쪽 51 (PDF 쪽 55) — 보크사이트 챕터의 국가별 생산·매장 표, Vietnam 행 Reserves 열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "확인 매장량 — 보크사이트",
+      "sourceLabelEn": "Proved reserves: 보크사이트",
+      "sourceNote": "[정의] USGS MCS의 \"Reserves\"는 **현재 기술·경제 조건에서 채굴 가능한 확인 매장량(proved/probable)**이며 추정 자원량(resources)이 아님. [원문 위치] USGS MCS 2026 인쇄 쪽 51 (PDF 쪽 55) — 보크사이트 챕터의 국가별 생산·매장 표, Vietnam 행 Reserves 열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-046",
+        "indicatorId": "B-046_reserves_2",
+        "sourceFileDecoded": "B-046_매장량(확인／추정, tonnes).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-19b2eff5ac74|t (천연)",
+      "dimensionLabels": {
+        "detail": "흑연",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "흑연",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "확인 매장량 — 흑연",
+      "indicatorId": "B-046_reserves_3",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-19b2eff5ac74",
+        "labelKo": "확인 매장량",
+        "unit": "t (천연)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-19b2eff5ac74|t (천연)|detail=흑연|technology=1,3,18,24|B-046_reserves_3",
+      "sourceCaveat": "[정의] USGS MCS의 \"Reserves\"는 **현재 기술·경제 조건에서 채굴 가능한 확인 매장량(proved/probable)**이며 추정 자원량(resources)이 아님. [원문 위치] USGS MCS 2026 인쇄 쪽 93 (PDF 쪽 97) — 흑연 챕터의 국가별 생산·매장 표, Vietnam 행 Reserves 열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "확인 매장량 — 흑연",
+      "sourceLabelEn": "Proved reserves: 흑연",
+      "sourceNote": "[정의] USGS MCS의 \"Reserves\"는 **현재 기술·경제 조건에서 채굴 가능한 확인 매장량(proved/probable)**이며 추정 자원량(resources)이 아님. [원문 위치] USGS MCS 2026 인쇄 쪽 93 (PDF 쪽 97) — 흑연 챕터의 국가별 생산·매장 표, Vietnam 행 Reserves 열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-046",
+        "indicatorId": "B-046_reserves_3",
+        "sourceFileDecoded": "B-046_매장량(확인／추정, tonnes).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-080d04348d93|t (Sb 함량)",
+      "dimensionLabels": {
+        "detail": "안티모니",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "안티모니",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "확인 매장량 — 안티모니",
+      "indicatorId": "B-046_reserves_4",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-080d04348d93",
+        "labelKo": "확인 매장량",
+        "unit": "t (Sb 함량)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-080d04348d93|t (Sb 함량)|detail=안티모니|technology=1,3,18,24|B-046_reserves_4",
+      "sourceCaveat": "[정의] USGS MCS의 \"Reserves\"는 **현재 기술·경제 조건에서 채굴 가능한 확인 매장량(proved/probable)**이며 추정 자원량(resources)이 아님. [원문 위치] USGS MCS 2026 인쇄 쪽 43 (PDF 쪽 47) — 안티모니 챕터의 국가별 생산·매장 표, Vietnam 행 Reserves 열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "확인 매장량 — 안티모니",
+      "sourceLabelEn": "Proved reserves: 안티모니",
+      "sourceNote": "[정의] USGS MCS의 \"Reserves\"는 **현재 기술·경제 조건에서 채굴 가능한 확인 매장량(proved/probable)**이며 추정 자원량(resources)이 아님. [원문 위치] USGS MCS 2026 인쇄 쪽 43 (PDF 쪽 47) — 안티모니 챕터의 국가별 생산·매장 표, Vietnam 행 Reserves 열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-046",
+        "indicatorId": "B-046_reserves_4",
+        "sourceFileDecoded": "B-046_매장량(확인／추정, tonnes).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-df52641260d9|t (Sn 함량)",
+      "dimensionLabels": {
+        "detail": "주석",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "주석",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "확인 매장량 — 주석",
+      "indicatorId": "B-046_reserves_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-df52641260d9",
+        "labelKo": "확인 매장량",
+        "unit": "t (Sn 함량)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-df52641260d9|t (Sn 함량)|detail=주석|technology=1,3,18,24|B-046_reserves_5",
+      "sourceCaveat": "[정의] USGS MCS의 \"Reserves\"는 **현재 기술·경제 조건에서 채굴 가능한 확인 매장량(proved/probable)**이며 추정 자원량(resources)이 아님. [원문 위치] USGS MCS 2026 인쇄 쪽 195 (PDF 쪽 199) — 주석 챕터의 국가별 생산·매장 표, Vietnam 행 Reserves 열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "확인 매장량 — 주석",
+      "sourceLabelEn": "Proved reserves: 주석",
+      "sourceNote": "[정의] USGS MCS의 \"Reserves\"는 **현재 기술·경제 조건에서 채굴 가능한 확인 매장량(proved/probable)**이며 추정 자원량(resources)이 아님. [원문 위치] USGS MCS 2026 인쇄 쪽 195 (PDF 쪽 199) — 주석 챕터의 국가별 생산·매장 표, Vietnam 행 Reserves 열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-046",
+        "indicatorId": "B-046_reserves_5",
+        "sourceFileDecoded": "B-046_매장량(확인／추정, tonnes).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-ca3cf59a6c8a|천 t",
+      "dimensionLabels": {
+        "detail": "형석",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "형석",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "확인 매장량 — 형석",
+      "indicatorId": "B-046_reserves_6",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ca3cf59a6c8a",
+        "labelKo": "확인 매장량",
+        "unit": "천 t",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-ca3cf59a6c8a|천 t|detail=형석|technology=1,3,18,24|B-046_reserves_6",
+      "sourceCaveat": "[정의] USGS MCS의 \"Reserves\"는 **현재 기술·경제 조건에서 채굴 가능한 확인 매장량(proved/probable)**이며 추정 자원량(resources)이 아님. [원문 위치] USGS MCS 2026 인쇄 쪽 81 (PDF 쪽 85) — 형석 챕터의 국가별 생산·매장 표, Vietnam 행 Reserves 열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "확인 매장량 — 형석",
+      "sourceLabelEn": "Proved reserves: 형석",
+      "sourceNote": "[정의] USGS MCS의 \"Reserves\"는 **현재 기술·경제 조건에서 채굴 가능한 확인 매장량(proved/probable)**이며 추정 자원량(resources)이 아님. [원문 위치] USGS MCS 2026 인쇄 쪽 81 (PDF 쪽 85) — 형석 챕터의 국가별 생산·매장 표, Vietnam 행 Reserves 열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-046",
+        "indicatorId": "B-046_reserves_6",
+        "sourceFileDecoded": "B-046_매장량(확인／추정, tonnes).xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6d37016d2efa|천 t (아파타이트)",
+      "dimensionLabels": {
+        "detail": "인광석",
+        "technology": "1 · 3 · 18 · 24"
+      },
+      "dimensions": {
+        "detail": "인광석",
+        "technology": "1,3,18,24"
+      },
+      "displayLabel": "확인 매장량 — 인광석",
+      "indicatorId": "B-046_reserves_7",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6d37016d2efa",
+        "labelKo": "확인 매장량",
+        "unit": "천 t (아파타이트)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-6d37016d2efa|천 t (아파타이트)|detail=인광석|technology=1,3,18,24|B-046_reserves_7",
+      "sourceCaveat": "[정의] USGS MCS의 \"Reserves\"는 **현재 기술·경제 조건에서 채굴 가능한 확인 매장량(proved/probable)**이며 추정 자원량(resources)이 아님. [원문 위치] USGS MCS 2026 인쇄 쪽 143 (PDF 쪽 147) — 인광석 챕터의 국가별 생산·매장 표, Vietnam 행 Reserves 열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "확인 매장량 — 인광석",
+      "sourceLabelEn": "Proved reserves: 인광석",
+      "sourceNote": "[정의] USGS MCS의 \"Reserves\"는 **현재 기술·경제 조건에서 채굴 가능한 확인 매장량(proved/probable)**이며 추정 자원량(resources)이 아님. [원문 위치] USGS MCS 2026 인쇄 쪽 143 (PDF 쪽 147) — 인광석 챕터의 국가별 생산·매장 표, Vietnam 행 Reserves 열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceProvenance": {
+        "elementId": "B-046",
+        "indicatorId": "B-046_reserves_7",
+        "sourceFileDecoded": "B-046_매장량(확인／추정, tonnes).xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-96ef1ebf118a|t",
+      "dimensionLabels": {
+        "category": "코발트 · 니켈 · 구리 · 망간)",
+        "detail": "코발트"
+      },
+      "dimensions": {
+        "category": "코발트 · 니켈 · 구리 · 망간)",
+        "detail": "코발트"
+      },
+      "displayLabel": "핵심광물 매장량 미수록(리튬·코발트·니켈·구리·망간) — 코발트",
+      "indicatorId": "B-046_reserves_critical_missing_cobalt",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-96ef1ebf118a",
+        "labelKo": "핵심광물 매장량 미수록(리튬",
+        "unit": "t",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-96ef1ebf118a|t|category=코발트 · 니켈 · 구리 · 망간)|detail=코발트|B-046_reserves_critical_missing_cobalt",
+      "sourceCaveat": "[정합성] B-044 핵심광물 6종 중 희토류만 정량 수록되고 나머지 5종이 없던 문제. 5종 지표행을 신설하고 결측사유 NP(원천 미제공)와 개별 사유를 기재했습니다. 부존이 없다는 뜻이 아니며, 정량이 필요하면 베트남 지질광물국(DGMV) 광물자원 조사보고서 또는 S&P Global Market Intelligence(유료)로 보완 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "핵심광물 매장량 미수록(리튬·코발트·니켈·구리·망간) — 코발트",
+      "sourceLabelEn": "Reserves not reported: Li, Co, Ni, Cu, Mn",
+      "sourceNote": "2026년: USGS가 베트남 상업적 매장량을 보고하지 않음 — 니켈 부산물 소량 — USGS 미수록",
+      "sourceProvenance": {
+        "elementId": "B-046",
+        "indicatorId": "B-046_reserves_critical_missing_cobalt",
+        "sourceFileDecoded": "B-046_매장량(확인／추정, tonnes).xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-96ef1ebf118a|t",
+      "dimensionLabels": {
+        "category": "코발트 · 니켈 · 구리 · 망간)",
+        "detail": "구리"
+      },
+      "dimensions": {
+        "category": "코발트 · 니켈 · 구리 · 망간)",
+        "detail": "구리"
+      },
+      "displayLabel": "핵심광물 매장량 미수록(리튬·코발트·니켈·구리·망간) — 구리",
+      "indicatorId": "B-046_reserves_critical_missing_copper",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-96ef1ebf118a",
+        "labelKo": "핵심광물 매장량 미수록(리튬",
+        "unit": "t",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-96ef1ebf118a|t|category=코발트 · 니켈 · 구리 · 망간)|detail=구리|B-046_reserves_critical_missing_copper",
+      "sourceCaveat": "[정합성] B-044 핵심광물 6종 중 희토류만 정량 수록되고 나머지 5종이 없던 문제. 5종 지표행을 신설하고 결측사유 NP(원천 미제공)와 개별 사유를 기재했습니다. 부존이 없다는 뜻이 아니며, 정량이 필요하면 베트남 지질광물국(DGMV) 광물자원 조사보고서 또는 S&P Global Market Intelligence(유료)로 보완 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "핵심광물 매장량 미수록(리튬·코발트·니켈·구리·망간) — 구리",
+      "sourceLabelEn": "Reserves not reported: Li, Co, Ni, Cu, Mn",
+      "sourceNote": "2026년: USGS가 베트남 상업적 매장량을 보고하지 않음 — 소규모 부존(Sin Quyen 광산) — USGS 매장량 미수록",
+      "sourceProvenance": {
+        "elementId": "B-046",
+        "indicatorId": "B-046_reserves_critical_missing_copper",
+        "sourceFileDecoded": "B-046_매장량(확인／추정, tonnes).xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-96ef1ebf118a|t",
+      "dimensionLabels": {
+        "category": "코발트 · 니켈 · 구리 · 망간)",
+        "detail": "리튬"
+      },
+      "dimensions": {
+        "category": "코발트 · 니켈 · 구리 · 망간)",
+        "detail": "리튬"
+      },
+      "displayLabel": "핵심광물 매장량 미수록(리튬·코발트·니켈·구리·망간) — 리튬",
+      "indicatorId": "B-046_reserves_critical_missing_lithium",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-96ef1ebf118a",
+        "labelKo": "핵심광물 매장량 미수록(리튬",
+        "unit": "t",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-96ef1ebf118a|t|category=코발트 · 니켈 · 구리 · 망간)|detail=리튬|B-046_reserves_critical_missing_lithium",
+      "sourceCaveat": "[정합성] B-044 핵심광물 6종 중 희토류만 정량 수록되고 나머지 5종이 없던 문제. 5종 지표행을 신설하고 결측사유 NP(원천 미제공)와 개별 사유를 기재했습니다. 부존이 없다는 뜻이 아니며, 정량이 필요하면 베트남 지질광물국(DGMV) 광물자원 조사보고서 또는 S&P Global Market Intelligence(유료)로 보완 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "핵심광물 매장량 미수록(리튬·코발트·니켈·구리·망간) — 리튬",
+      "sourceLabelEn": "Reserves not reported: Li, Co, Ni, Cu, Mn",
+      "sourceNote": "2026년: USGS가 베트남 상업적 매장량을 보고하지 않음 — 탐사 단계 — USGS 매장량 미수록",
+      "sourceProvenance": {
+        "elementId": "B-046",
+        "indicatorId": "B-046_reserves_critical_missing_lithium",
+        "sourceFileDecoded": "B-046_매장량(확인／추정, tonnes).xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-96ef1ebf118a|t",
+      "dimensionLabels": {
+        "category": "코발트 · 니켈 · 구리 · 망간)",
+        "detail": "망간"
+      },
+      "dimensions": {
+        "category": "코발트 · 니켈 · 구리 · 망간)",
+        "detail": "망간"
+      },
+      "displayLabel": "핵심광물 매장량 미수록(리튬·코발트·니켈·구리·망간) — 망간",
+      "indicatorId": "B-046_reserves_critical_missing_manganese",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-96ef1ebf118a",
+        "labelKo": "핵심광물 매장량 미수록(리튬",
+        "unit": "t",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-96ef1ebf118a|t|category=코발트 · 니켈 · 구리 · 망간)|detail=망간|B-046_reserves_critical_missing_manganese",
+      "sourceCaveat": "[정합성] B-044 핵심광물 6종 중 희토류만 정량 수록되고 나머지 5종이 없던 문제. 5종 지표행을 신설하고 결측사유 NP(원천 미제공)와 개별 사유를 기재했습니다. 부존이 없다는 뜻이 아니며, 정량이 필요하면 베트남 지질광물국(DGMV) 광물자원 조사보고서 또는 S&P Global Market Intelligence(유료)로 보완 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "핵심광물 매장량 미수록(리튬·코발트·니켈·구리·망간) — 망간",
+      "sourceLabelEn": "Reserves not reported: Li, Co, Ni, Cu, Mn",
+      "sourceNote": "2026년: USGS가 베트남 상업적 매장량을 보고하지 않음 — 부존 확인, 정량 미상 — USGS 매장량 미수록",
+      "sourceProvenance": {
+        "elementId": "B-046",
+        "indicatorId": "B-046_reserves_critical_missing_manganese",
+        "sourceFileDecoded": "B-046_매장량(확인／추정, tonnes).xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-96ef1ebf118a|t",
+      "dimensionLabels": {
+        "category": "코발트 · 니켈 · 구리 · 망간)",
+        "detail": "니켈"
+      },
+      "dimensions": {
+        "category": "코발트 · 니켈 · 구리 · 망간)",
+        "detail": "니켈"
+      },
+      "displayLabel": "핵심광물 매장량 미수록(리튬·코발트·니켈·구리·망간) — 니켈",
+      "indicatorId": "B-046_reserves_critical_missing_nickel",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-96ef1ebf118a",
+        "labelKo": "핵심광물 매장량 미수록(리튬",
+        "unit": "t",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-96ef1ebf118a|t|category=코발트 · 니켈 · 구리 · 망간)|detail=니켈|B-046_reserves_critical_missing_nickel",
+      "sourceCaveat": "[정합성] B-044 핵심광물 6종 중 희토류만 정량 수록되고 나머지 5종이 없던 문제. 5종 지표행을 신설하고 결측사유 NP(원천 미제공)와 개별 사유를 기재했습니다. 부존이 없다는 뜻이 아니며, 정량이 필요하면 베트남 지질광물국(DGMV) 광물자원 조사보고서 또는 S&P Global Market Intelligence(유료)로 보완 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+      "sourceLabel": "핵심광물 매장량 미수록(리튬·코발트·니켈·구리·망간) — 니켈",
+      "sourceLabelEn": "Reserves not reported: Li, Co, Ni, Cu, Mn",
+      "sourceNote": "2026년: USGS가 베트남 상업적 매장량을 보고하지 않음 — 소규모 부존(Ban Phuc 광산) — USGS 매장량 미수록",
+      "sourceProvenance": {
+        "elementId": "B-046",
+        "indicatorId": "B-046_reserves_critical_missing_nickel",
+        "sourceFileDecoded": "B-046_매장량(확인／추정, tonnes).xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 5,
+      "key": "measure-96ef1ebf118a",
+      "labelKo": "핵심광물 매장량 미수록(리튬",
+      "recordCount": 5,
+      "unit": "t",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-080d04348d93",
+      "labelKo": "확인 매장량",
+      "recordCount": 1,
+      "unit": "t (Sb 함량)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-df52641260d9",
+      "labelKo": "확인 매장량",
+      "recordCount": 1,
+      "unit": "t (Sn 함량)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-13c2efac5bc5",
+      "labelKo": "확인 매장량",
+      "recordCount": 1,
+      "unit": "t (W 함량)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-19b2eff5ac74",
+      "labelKo": "확인 매장량",
+      "recordCount": 1,
+      "unit": "t (천연)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-0d37ac614ce3",
+      "labelKo": "확인 매장량",
+      "recordCount": 1,
+      "unit": "t REO",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-ca3cf59a6c8a",
+      "labelKo": "확인 매장량",
+      "recordCount": 1,
+      "unit": "천 t",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-1b13946b70c0",
+      "labelKo": "확인 매장량",
+      "recordCount": 1,
+      "unit": "천 t (건조 기준)",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-6d37016d2efa",
+      "labelKo": "확인 매장량",
+      "recordCount": 1,
+      "unit": "천 t (아파타이트)",
+      "unitFamily": "other"
+    }
+  ],
+  "observationCount": 13,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

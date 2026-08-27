@@ -1,0 +1,1068 @@
+{
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 8,
+      "values": [
+        "100m 장기평균)",
+        "GHI 장기평균)",
+        "historical",
+        "SSP1-1.9",
+        "SSP1-2.6",
+        "SSP2-4.5",
+        "SSP3-7.0",
+        "SSP5-8.5"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 2,
+      "values": [
+        "1,2",
+        "3"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 151,
+      "values": [
+        "1950",
+        "1951",
+        "1952",
+        "1953",
+        "1954",
+        "1955",
+        "1956",
+        "1957",
+        "1958",
+        "1959",
+        "1960",
+        "1961",
+        "1962",
+        "1963",
+        "1964",
+        "1965",
+        "1966",
+        "1967",
+        "1968",
+        "1969",
+        "1970",
+        "1971",
+        "1972",
+        "1973",
+        "1974",
+        "1975",
+        "1976",
+        "1977",
+        "1978",
+        "1979",
+        "1980",
+        "1981",
+        "1982",
+        "1983",
+        "1984",
+        "1985",
+        "1986",
+        "1987",
+        "1988",
+        "1989",
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026",
+        "2027",
+        "2028",
+        "2029",
+        "2030",
+        "2031",
+        "2032",
+        "2033",
+        "2034",
+        "2035",
+        "2036",
+        "2037",
+        "2038",
+        "2039",
+        "2040",
+        "2041",
+        "2042",
+        "2043",
+        "2044",
+        "2045",
+        "2046",
+        "2047",
+        "2048",
+        "2049",
+        "2050",
+        "2051",
+        "2052",
+        "2053",
+        "2054",
+        "2055",
+        "2056",
+        "2057",
+        "2058",
+        "2059",
+        "2060",
+        "2061",
+        "2062",
+        "2063",
+        "2064",
+        "2065",
+        "2066",
+        "2067",
+        "2068",
+        "2069",
+        "2070",
+        "2071",
+        "2072",
+        "2073",
+        "2074",
+        "2075",
+        "2076",
+        "2077",
+        "2078",
+        "2079",
+        "2080",
+        "2081",
+        "2082",
+        "2083",
+        "2084",
+        "2085",
+        "2086",
+        "2087",
+        "2088",
+        "2089",
+        "2090",
+        "2091",
+        "2092",
+        "2093",
+        "2094",
+        "2095",
+        "2096",
+        "2097",
+        "2098",
+        "2099",
+        "2100"
+      ]
+    }
+  ],
+  "elementId": "B-004",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 27,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-ba0b2ca41b5e|%",
+      "dimensionLabels": {
+        "detail": "historical"
+      },
+      "dimensions": {
+        "detail": "historical"
+      },
+      "displayLabel": "상대습도(hurs) — historical",
+      "indicatorId": "B-004_hurs_historical",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ba0b2ca41b5e",
+        "labelKo": "상대습도(hurs)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-ba0b2ca41b5e|%|detail=historical|B-004_hurs_historical",
+      "sourceCaveat": "CCKP 국가 API가 hurs의 SSP 시나리오를 제공하지 않아 historical만 수록(결측사유 NP) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "상대습도(hurs) — historical",
+      "sourceLabelEn": "Relative humidity historical",
+      "sourceNote": "CCKP 국가 API가 hurs의 SSP 시나리오를 제공하지 않아 historical만 수록(결측사유 NP) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-004",
+        "indicatorId": "B-004_hurs_historical",
+        "sourceFileDecoded": "B-004_CMIP6 기반 과거／미래 기온(tas, tasmax, tasmin), 강수(pr), 풍속(sfcWind)), 일사량(rsds), 상대습도(hurs).xlsx",
+        "sourceRow": 28,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a0fd8db382af|mm",
+      "dimensionLabels": {
+        "detail": "historical"
+      },
+      "dimensions": {
+        "detail": "historical"
+      },
+      "displayLabel": "연강수(pr) — historical",
+      "indicatorId": "B-004_pr_historical",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a0fd8db382af",
+        "labelKo": "연강수(pr)",
+        "unit": "mm",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a0fd8db382af|mm|detail=historical|B-004_pr_historical",
+      "sourceCaveat": "다중모델 앙상블 중앙값(median), historical 실험 / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "연강수(pr) — historical",
+      "sourceLabelEn": "연강수 historical",
+      "sourceNote": "다중모델 앙상블 중앙값(median), historical 실험 / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-004",
+        "indicatorId": "B-004_pr_historical",
+        "sourceFileDecoded": "B-004_CMIP6 기반 과거／미래 기온(tas, tasmax, tasmin), 강수(pr), 풍속(sfcWind)), 일사량(rsds), 상대습도(hurs).xlsx",
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a0fd8db382af|mm",
+      "dimensionLabels": {
+        "detail": "SSP1-1.9"
+      },
+      "dimensions": {
+        "detail": "SSP1-1.9"
+      },
+      "displayLabel": "연강수(pr) — SSP1-1.9",
+      "indicatorId": "B-004_pr_ssp119",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a0fd8db382af",
+        "labelKo": "연강수(pr)",
+        "unit": "mm",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a0fd8db382af|mm|detail=SSP1-1.9|B-004_pr_ssp119",
+      "sourceCaveat": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "연강수(pr) — SSP1-1.9",
+      "sourceLabelEn": "연강수 SSP1-1.9",
+      "sourceNote": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-004",
+        "indicatorId": "B-004_pr_ssp119",
+        "sourceFileDecoded": "B-004_CMIP6 기반 과거／미래 기온(tas, tasmax, tasmin), 강수(pr), 풍속(sfcWind)), 일사량(rsds), 상대습도(hurs).xlsx",
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a0fd8db382af|mm",
+      "dimensionLabels": {
+        "detail": "SSP1-2.6"
+      },
+      "dimensions": {
+        "detail": "SSP1-2.6"
+      },
+      "displayLabel": "연강수(pr) — SSP1-2.6",
+      "indicatorId": "B-004_pr_ssp126",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a0fd8db382af",
+        "labelKo": "연강수(pr)",
+        "unit": "mm",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a0fd8db382af|mm|detail=SSP1-2.6|B-004_pr_ssp126",
+      "sourceCaveat": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "연강수(pr) — SSP1-2.6",
+      "sourceLabelEn": "연강수 SSP1-2.6",
+      "sourceNote": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-004",
+        "indicatorId": "B-004_pr_ssp126",
+        "sourceFileDecoded": "B-004_CMIP6 기반 과거／미래 기온(tas, tasmax, tasmin), 강수(pr), 풍속(sfcWind)), 일사량(rsds), 상대습도(hurs).xlsx",
+        "sourceRow": 24,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a0fd8db382af|mm",
+      "dimensionLabels": {
+        "detail": "SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "SSP2-4.5"
+      },
+      "displayLabel": "연강수(pr) — SSP2-4.5",
+      "indicatorId": "B-004_pr_ssp245",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a0fd8db382af",
+        "labelKo": "연강수(pr)",
+        "unit": "mm",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a0fd8db382af|mm|detail=SSP2-4.5|B-004_pr_ssp245",
+      "sourceCaveat": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "연강수(pr) — SSP2-4.5",
+      "sourceLabelEn": "연강수 SSP2-4.5",
+      "sourceNote": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-004",
+        "indicatorId": "B-004_pr_ssp245",
+        "sourceFileDecoded": "B-004_CMIP6 기반 과거／미래 기온(tas, tasmax, tasmin), 강수(pr), 풍속(sfcWind)), 일사량(rsds), 상대습도(hurs).xlsx",
+        "sourceRow": 25,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a0fd8db382af|mm",
+      "dimensionLabels": {
+        "detail": "SSP3-7.0"
+      },
+      "dimensions": {
+        "detail": "SSP3-7.0"
+      },
+      "displayLabel": "연강수(pr) — SSP3-7.0",
+      "indicatorId": "B-004_pr_ssp370",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a0fd8db382af",
+        "labelKo": "연강수(pr)",
+        "unit": "mm",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a0fd8db382af|mm|detail=SSP3-7.0|B-004_pr_ssp370",
+      "sourceCaveat": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "연강수(pr) — SSP3-7.0",
+      "sourceLabelEn": "연강수 SSP3-7.0",
+      "sourceNote": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-004",
+        "indicatorId": "B-004_pr_ssp370",
+        "sourceFileDecoded": "B-004_CMIP6 기반 과거／미래 기온(tas, tasmax, tasmin), 강수(pr), 풍속(sfcWind)), 일사량(rsds), 상대습도(hurs).xlsx",
+        "sourceRow": 26,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a0fd8db382af|mm",
+      "dimensionLabels": {
+        "detail": "SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "SSP5-8.5"
+      },
+      "displayLabel": "연강수(pr) — SSP5-8.5",
+      "indicatorId": "B-004_pr_ssp585",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a0fd8db382af",
+        "labelKo": "연강수(pr)",
+        "unit": "mm",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a0fd8db382af|mm|detail=SSP5-8.5|B-004_pr_ssp585",
+      "sourceCaveat": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "연강수(pr) — SSP5-8.5",
+      "sourceLabelEn": "연강수 SSP5-8.5",
+      "sourceNote": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-004",
+        "indicatorId": "B-004_pr_ssp585",
+        "sourceFileDecoded": "B-004_CMIP6 기반 과거／미래 기온(tas, tasmax, tasmin), 강수(pr), 풍속(sfcWind)), 일사량(rsds), 상대습도(hurs).xlsx",
+        "sourceRow": 27,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-3272c7050f67|kWh/m²/day",
+      "dimensionLabels": {
+        "detail": "GHI 장기평균)",
+        "technology": "1 · 2"
+      },
+      "dimensions": {
+        "detail": "GHI 장기평균)",
+        "technology": "1,2"
+      },
+      "displayLabel": "일사량(rsds 대체 — GHI 장기평균)",
+      "indicatorId": "B-004_rsds_ghi",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3272c7050f67",
+        "labelKo": "일사량(rsds 대체",
+        "unit": "kWh/m²/day",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-3272c7050f67|kWh/m²/day|detail=GHI 장기평균)|technology=1,2|B-004_rsds_ghi",
+      "sourceCaveat": "[대체 사유] CCKP 국가 API가 rsds 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceLabel": "일사량(rsds 대체 — GHI 장기평균)",
+      "sourceLabelEn": "Global horizontal irradiation",
+      "sourceNote": "[대체 사유] CCKP 국가 API가 rsds 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-004",
+        "indicatorId": "B-004_rsds_ghi",
+        "sourceFileDecoded": "B-004_CMIP6 기반 과거／미래 기온(tas, tasmax, tasmin), 강수(pr), 풍속(sfcWind)), 일사량(rsds), 상대습도(hurs).xlsx",
+        "sourceRow": 30,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6e876ea9fffa|m/s",
+      "dimensionLabels": {
+        "detail": "100m 장기평균)",
+        "technology": "3"
+      },
+      "dimensions": {
+        "detail": "100m 장기평균)",
+        "technology": "3"
+      },
+      "displayLabel": "풍속(sfcWind 대체 — 100m 장기평균)",
+      "indicatorId": "B-004_sfcwind_100m",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6e876ea9fffa",
+        "labelKo": "풍속(sfcWind 대체",
+        "unit": "m/s",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-6e876ea9fffa|m/s|detail=100m 장기평균)|technology=3|B-004_sfcwind_100m",
+      "sourceCaveat": "[값 선택 근거] 원천 GWA는 전역 평균을 단일 수치로 배포하지 않고 **면적 백분위 곡선**(상위 2%~100% 각 구간의 평균 풍속 50개 행) 형태로 제공합니다. 각 행이 \"면적 상위 X%의 평균\"이므로 행들을 산술평균하면 공간 평균이 되지 않습니다(그렇게 계산하면 5.49 m/s가 나오나 무효). 전 국토 면적평균은 곡선의 **perc=100 행인 4.28 m/s**이며 이 값을 채택했습니다. [독립 검증] 보유 원본 래스터(VNM_wind-speed_100m.tif, 0.0025°, 유효셀 14,683,458)를 국경 마스크로 절단하고 위도 가중 면적평균을 계산한 결과 4.50 m/s로 원천 값과 정합합니다(마스크가 연안 해상을 일부 포함해 소폭 높으며, 마스크 미적용 시 6.28로 해상 영향이 큼). [대체 사유] CCKP 국가 API가 sfcWind를 제공하지 않음(NP). CMIP6 기반 연도별·SSP 시계열은 미확보이며, NEX-GDDP-CMIP6 격자 클리핑으로 보완 가능(후속 조치). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 확대 가능 — 성 단위 면적가중 평균 산출 가능 / [원천 갱신일 근거] GWA 3.x 릴리스",
+      "sourceLabel": "풍속(sfcWind 대체 — 100m 장기평균)",
+      "sourceLabelEn": "Mean wind speed at 100m",
+      "sourceNote": "[값 선택 근거] 원천 GWA는 전역 평균을 단일 수치로 배포하지 않고 **면적 백분위 곡선**(상위 2%~100% 각 구간의 평균 풍속 50개 행) 형태로 제공합니다. 각 행이 \"면적 상위 X%의 평균\"이므로 행들을 산술평균하면 공간 평균이 되지 않습니다(그렇게 계산하면 5.49 m/s가 나오나 무효). 전 국토 면적평균은 곡선의 **perc=100 행인 4.28 m/s**이며 이 값을 채택했습니다. [독립 검증] 보유 원본 래스터(VNM_wind-speed_100m.tif, 0.0025°, 유효셀 14,683,458)를 국경 마스크로 절단하고 위도 가중 면적평균을 계산한 결과 4.50 m/s로 원천 값과 정합합니다(마스크가 연안 해상을 일부 포함해 소폭 높으며, 마스크 미적용 시 6.28로 해상 영향이 큼). [대체 사유] CCKP 국가 API가 sfcWind를 제공하지 않음(NP). CMIP6 기반 연도별·SSP 시계열은 미확보이며, NEX-GDDP-CMIP6 격자 클리핑으로 보완 가능(후속 조치). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 확대 가능 — 성 단위 면적가중 평균 산출 가능 / [원천 갱신일 근거] GWA 3.x 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-004",
+        "indicatorId": "B-004_sfcwind_100m",
+        "sourceFileDecoded": "B-004_CMIP6 기반 과거／미래 기온(tas, tasmax, tasmin), 강수(pr), 풍속(sfcWind)), 일사량(rsds), 상대습도(hurs).xlsx",
+        "sourceRow": 29,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-3b0256e14999|℃",
+      "dimensionLabels": {
+        "detail": "historical"
+      },
+      "dimensions": {
+        "detail": "historical"
+      },
+      "displayLabel": "평균기온(tas) — historical",
+      "indicatorId": "B-004_tas_historical",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3b0256e14999",
+        "labelKo": "평균기온(tas)",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-3b0256e14999|℃|detail=historical|B-004_tas_historical",
+      "sourceCaveat": "다중모델 앙상블 중앙값(median), historical 실험 / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "평균기온(tas) — historical",
+      "sourceLabelEn": "평균기온 historical",
+      "sourceNote": "다중모델 앙상블 중앙값(median), historical 실험 / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-004",
+        "indicatorId": "B-004_tas_historical",
+        "sourceFileDecoded": "B-004_CMIP6 기반 과거／미래 기온(tas, tasmax, tasmin), 강수(pr), 풍속(sfcWind)), 일사량(rsds), 상대습도(hurs).xlsx",
+        "sourceRow": 4,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-3b0256e14999|℃",
+      "dimensionLabels": {
+        "detail": "SSP1-1.9"
+      },
+      "dimensions": {
+        "detail": "SSP1-1.9"
+      },
+      "displayLabel": "평균기온(tas) — SSP1-1.9",
+      "indicatorId": "B-004_tas_ssp119",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3b0256e14999",
+        "labelKo": "평균기온(tas)",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-3b0256e14999|℃|detail=SSP1-1.9|B-004_tas_ssp119",
+      "sourceCaveat": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "평균기온(tas) — SSP1-1.9",
+      "sourceLabelEn": "평균기온 SSP1-1.9",
+      "sourceNote": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-004",
+        "indicatorId": "B-004_tas_ssp119",
+        "sourceFileDecoded": "B-004_CMIP6 기반 과거／미래 기온(tas, tasmax, tasmin), 강수(pr), 풍속(sfcWind)), 일사량(rsds), 상대습도(hurs).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-3b0256e14999|℃",
+      "dimensionLabels": {
+        "detail": "SSP1-2.6"
+      },
+      "dimensions": {
+        "detail": "SSP1-2.6"
+      },
+      "displayLabel": "평균기온(tas) — SSP1-2.6",
+      "indicatorId": "B-004_tas_ssp126",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3b0256e14999",
+        "labelKo": "평균기온(tas)",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-3b0256e14999|℃|detail=SSP1-2.6|B-004_tas_ssp126",
+      "sourceCaveat": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "평균기온(tas) — SSP1-2.6",
+      "sourceLabelEn": "평균기온 SSP1-2.6",
+      "sourceNote": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-004",
+        "indicatorId": "B-004_tas_ssp126",
+        "sourceFileDecoded": "B-004_CMIP6 기반 과거／미래 기온(tas, tasmax, tasmin), 강수(pr), 풍속(sfcWind)), 일사량(rsds), 상대습도(hurs).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-3b0256e14999|℃",
+      "dimensionLabels": {
+        "detail": "SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "SSP2-4.5"
+      },
+      "displayLabel": "평균기온(tas) — SSP2-4.5",
+      "indicatorId": "B-004_tas_ssp245",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3b0256e14999",
+        "labelKo": "평균기온(tas)",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-3b0256e14999|℃|detail=SSP2-4.5|B-004_tas_ssp245",
+      "sourceCaveat": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "평균기온(tas) — SSP2-4.5",
+      "sourceLabelEn": "평균기온 SSP2-4.5",
+      "sourceNote": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-004",
+        "indicatorId": "B-004_tas_ssp245",
+        "sourceFileDecoded": "B-004_CMIP6 기반 과거／미래 기온(tas, tasmax, tasmin), 강수(pr), 풍속(sfcWind)), 일사량(rsds), 상대습도(hurs).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-3b0256e14999|℃",
+      "dimensionLabels": {
+        "detail": "SSP3-7.0"
+      },
+      "dimensions": {
+        "detail": "SSP3-7.0"
+      },
+      "displayLabel": "평균기온(tas) — SSP3-7.0",
+      "indicatorId": "B-004_tas_ssp370",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3b0256e14999",
+        "labelKo": "평균기온(tas)",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-3b0256e14999|℃|detail=SSP3-7.0|B-004_tas_ssp370",
+      "sourceCaveat": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "평균기온(tas) — SSP3-7.0",
+      "sourceLabelEn": "평균기온 SSP3-7.0",
+      "sourceNote": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-004",
+        "indicatorId": "B-004_tas_ssp370",
+        "sourceFileDecoded": "B-004_CMIP6 기반 과거／미래 기온(tas, tasmax, tasmin), 강수(pr), 풍속(sfcWind)), 일사량(rsds), 상대습도(hurs).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-3b0256e14999|℃",
+      "dimensionLabels": {
+        "detail": "SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "SSP5-8.5"
+      },
+      "displayLabel": "평균기온(tas) — SSP5-8.5",
+      "indicatorId": "B-004_tas_ssp585",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3b0256e14999",
+        "labelKo": "평균기온(tas)",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-3b0256e14999|℃|detail=SSP5-8.5|B-004_tas_ssp585",
+      "sourceCaveat": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "평균기온(tas) — SSP5-8.5",
+      "sourceLabelEn": "평균기온 SSP5-8.5",
+      "sourceNote": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-004",
+        "indicatorId": "B-004_tas_ssp585",
+        "sourceFileDecoded": "B-004_CMIP6 기반 과거／미래 기온(tas, tasmax, tasmin), 강수(pr), 풍속(sfcWind)), 일사량(rsds), 상대습도(hurs).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d0a9cdeb4f17|℃",
+      "dimensionLabels": {
+        "detail": "historical"
+      },
+      "dimensions": {
+        "detail": "historical"
+      },
+      "displayLabel": "최고기온(tasmax) — historical",
+      "indicatorId": "B-004_tasmax_historical",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d0a9cdeb4f17",
+        "labelKo": "최고기온(tasmax)",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-d0a9cdeb4f17|℃|detail=historical|B-004_tasmax_historical",
+      "sourceCaveat": "다중모델 앙상블 중앙값(median), historical 실험 / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "최고기온(tasmax) — historical",
+      "sourceLabelEn": "최고기온 historical",
+      "sourceNote": "다중모델 앙상블 중앙값(median), historical 실험 / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-004",
+        "indicatorId": "B-004_tasmax_historical",
+        "sourceFileDecoded": "B-004_CMIP6 기반 과거／미래 기온(tas, tasmax, tasmin), 강수(pr), 풍속(sfcWind)), 일사량(rsds), 상대습도(hurs).xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d0a9cdeb4f17|℃",
+      "dimensionLabels": {
+        "detail": "SSP1-1.9"
+      },
+      "dimensions": {
+        "detail": "SSP1-1.9"
+      },
+      "displayLabel": "최고기온(tasmax) — SSP1-1.9",
+      "indicatorId": "B-004_tasmax_ssp119",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d0a9cdeb4f17",
+        "labelKo": "최고기온(tasmax)",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-d0a9cdeb4f17|℃|detail=SSP1-1.9|B-004_tasmax_ssp119",
+      "sourceCaveat": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "최고기온(tasmax) — SSP1-1.9",
+      "sourceLabelEn": "최고기온 SSP1-1.9",
+      "sourceNote": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-004",
+        "indicatorId": "B-004_tasmax_ssp119",
+        "sourceFileDecoded": "B-004_CMIP6 기반 과거／미래 기온(tas, tasmax, tasmin), 강수(pr), 풍속(sfcWind)), 일사량(rsds), 상대습도(hurs).xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d0a9cdeb4f17|℃",
+      "dimensionLabels": {
+        "detail": "SSP1-2.6"
+      },
+      "dimensions": {
+        "detail": "SSP1-2.6"
+      },
+      "displayLabel": "최고기온(tasmax) — SSP1-2.6",
+      "indicatorId": "B-004_tasmax_ssp126",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d0a9cdeb4f17",
+        "labelKo": "최고기온(tasmax)",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-d0a9cdeb4f17|℃|detail=SSP1-2.6|B-004_tasmax_ssp126",
+      "sourceCaveat": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "최고기온(tasmax) — SSP1-2.6",
+      "sourceLabelEn": "최고기온 SSP1-2.6",
+      "sourceNote": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-004",
+        "indicatorId": "B-004_tasmax_ssp126",
+        "sourceFileDecoded": "B-004_CMIP6 기반 과거／미래 기온(tas, tasmax, tasmin), 강수(pr), 풍속(sfcWind)), 일사량(rsds), 상대습도(hurs).xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d0a9cdeb4f17|℃",
+      "dimensionLabels": {
+        "detail": "SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "SSP2-4.5"
+      },
+      "displayLabel": "최고기온(tasmax) — SSP2-4.5",
+      "indicatorId": "B-004_tasmax_ssp245",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d0a9cdeb4f17",
+        "labelKo": "최고기온(tasmax)",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-d0a9cdeb4f17|℃|detail=SSP2-4.5|B-004_tasmax_ssp245",
+      "sourceCaveat": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "최고기온(tasmax) — SSP2-4.5",
+      "sourceLabelEn": "최고기온 SSP2-4.5",
+      "sourceNote": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-004",
+        "indicatorId": "B-004_tasmax_ssp245",
+        "sourceFileDecoded": "B-004_CMIP6 기반 과거／미래 기온(tas, tasmax, tasmin), 강수(pr), 풍속(sfcWind)), 일사량(rsds), 상대습도(hurs).xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d0a9cdeb4f17|℃",
+      "dimensionLabels": {
+        "detail": "SSP3-7.0"
+      },
+      "dimensions": {
+        "detail": "SSP3-7.0"
+      },
+      "displayLabel": "최고기온(tasmax) — SSP3-7.0",
+      "indicatorId": "B-004_tasmax_ssp370",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d0a9cdeb4f17",
+        "labelKo": "최고기온(tasmax)",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-d0a9cdeb4f17|℃|detail=SSP3-7.0|B-004_tasmax_ssp370",
+      "sourceCaveat": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "최고기온(tasmax) — SSP3-7.0",
+      "sourceLabelEn": "최고기온 SSP3-7.0",
+      "sourceNote": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-004",
+        "indicatorId": "B-004_tasmax_ssp370",
+        "sourceFileDecoded": "B-004_CMIP6 기반 과거／미래 기온(tas, tasmax, tasmin), 강수(pr), 풍속(sfcWind)), 일사량(rsds), 상대습도(hurs).xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d0a9cdeb4f17|℃",
+      "dimensionLabels": {
+        "detail": "SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "SSP5-8.5"
+      },
+      "displayLabel": "최고기온(tasmax) — SSP5-8.5",
+      "indicatorId": "B-004_tasmax_ssp585",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d0a9cdeb4f17",
+        "labelKo": "최고기온(tasmax)",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-d0a9cdeb4f17|℃|detail=SSP5-8.5|B-004_tasmax_ssp585",
+      "sourceCaveat": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "최고기온(tasmax) — SSP5-8.5",
+      "sourceLabelEn": "최고기온 SSP5-8.5",
+      "sourceNote": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-004",
+        "indicatorId": "B-004_tasmax_ssp585",
+        "sourceFileDecoded": "B-004_CMIP6 기반 과거／미래 기온(tas, tasmax, tasmin), 강수(pr), 풍속(sfcWind)), 일사량(rsds), 상대습도(hurs).xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f3143216ac48|℃",
+      "dimensionLabels": {
+        "detail": "historical"
+      },
+      "dimensions": {
+        "detail": "historical"
+      },
+      "displayLabel": "최저기온(tasmin) — historical",
+      "indicatorId": "B-004_tasmin_historical",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f3143216ac48",
+        "labelKo": "최저기온(tasmin)",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-f3143216ac48|℃|detail=historical|B-004_tasmin_historical",
+      "sourceCaveat": "다중모델 앙상블 중앙값(median), historical 실험 / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "최저기온(tasmin) — historical",
+      "sourceLabelEn": "최저기온 historical",
+      "sourceNote": "다중모델 앙상블 중앙값(median), historical 실험 / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-004",
+        "indicatorId": "B-004_tasmin_historical",
+        "sourceFileDecoded": "B-004_CMIP6 기반 과거／미래 기온(tas, tasmax, tasmin), 강수(pr), 풍속(sfcWind)), 일사량(rsds), 상대습도(hurs).xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f3143216ac48|℃",
+      "dimensionLabels": {
+        "detail": "SSP1-1.9"
+      },
+      "dimensions": {
+        "detail": "SSP1-1.9"
+      },
+      "displayLabel": "최저기온(tasmin) — SSP1-1.9",
+      "indicatorId": "B-004_tasmin_ssp119",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f3143216ac48",
+        "labelKo": "최저기온(tasmin)",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-f3143216ac48|℃|detail=SSP1-1.9|B-004_tasmin_ssp119",
+      "sourceCaveat": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "최저기온(tasmin) — SSP1-1.9",
+      "sourceLabelEn": "최저기온 SSP1-1.9",
+      "sourceNote": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-004",
+        "indicatorId": "B-004_tasmin_ssp119",
+        "sourceFileDecoded": "B-004_CMIP6 기반 과거／미래 기온(tas, tasmax, tasmin), 강수(pr), 풍속(sfcWind)), 일사량(rsds), 상대습도(hurs).xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f3143216ac48|℃",
+      "dimensionLabels": {
+        "detail": "SSP1-2.6"
+      },
+      "dimensions": {
+        "detail": "SSP1-2.6"
+      },
+      "displayLabel": "최저기온(tasmin) — SSP1-2.6",
+      "indicatorId": "B-004_tasmin_ssp126",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f3143216ac48",
+        "labelKo": "최저기온(tasmin)",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-f3143216ac48|℃|detail=SSP1-2.6|B-004_tasmin_ssp126",
+      "sourceCaveat": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "최저기온(tasmin) — SSP1-2.6",
+      "sourceLabelEn": "최저기온 SSP1-2.6",
+      "sourceNote": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-004",
+        "indicatorId": "B-004_tasmin_ssp126",
+        "sourceFileDecoded": "B-004_CMIP6 기반 과거／미래 기온(tas, tasmax, tasmin), 강수(pr), 풍속(sfcWind)), 일사량(rsds), 상대습도(hurs).xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f3143216ac48|℃",
+      "dimensionLabels": {
+        "detail": "SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "SSP2-4.5"
+      },
+      "displayLabel": "최저기온(tasmin) — SSP2-4.5",
+      "indicatorId": "B-004_tasmin_ssp245",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f3143216ac48",
+        "labelKo": "최저기온(tasmin)",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-f3143216ac48|℃|detail=SSP2-4.5|B-004_tasmin_ssp245",
+      "sourceCaveat": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "최저기온(tasmin) — SSP2-4.5",
+      "sourceLabelEn": "최저기온 SSP2-4.5",
+      "sourceNote": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-004",
+        "indicatorId": "B-004_tasmin_ssp245",
+        "sourceFileDecoded": "B-004_CMIP6 기반 과거／미래 기온(tas, tasmax, tasmin), 강수(pr), 풍속(sfcWind)), 일사량(rsds), 상대습도(hurs).xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f3143216ac48|℃",
+      "dimensionLabels": {
+        "detail": "SSP3-7.0"
+      },
+      "dimensions": {
+        "detail": "SSP3-7.0"
+      },
+      "displayLabel": "최저기온(tasmin) — SSP3-7.0",
+      "indicatorId": "B-004_tasmin_ssp370",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f3143216ac48",
+        "labelKo": "최저기온(tasmin)",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-f3143216ac48|℃|detail=SSP3-7.0|B-004_tasmin_ssp370",
+      "sourceCaveat": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "최저기온(tasmin) — SSP3-7.0",
+      "sourceLabelEn": "최저기온 SSP3-7.0",
+      "sourceNote": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-004",
+        "indicatorId": "B-004_tasmin_ssp370",
+        "sourceFileDecoded": "B-004_CMIP6 기반 과거／미래 기온(tas, tasmax, tasmin), 강수(pr), 풍속(sfcWind)), 일사량(rsds), 상대습도(hurs).xlsx",
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f3143216ac48|℃",
+      "dimensionLabels": {
+        "detail": "SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "SSP5-8.5"
+      },
+      "displayLabel": "최저기온(tasmin) — SSP5-8.5",
+      "indicatorId": "B-004_tasmin_ssp585",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f3143216ac48",
+        "labelKo": "최저기온(tasmin)",
+        "unit": "℃",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-f3143216ac48|℃|detail=SSP5-8.5|B-004_tasmin_ssp585",
+      "sourceCaveat": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "최저기온(tasmin) — SSP5-8.5",
+      "sourceLabelEn": "최저기온 SSP5-8.5",
+      "sourceNote": "다중모델 앙상블 중앙값(median) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-004",
+        "indicatorId": "B-004_tasmin_ssp585",
+        "sourceFileDecoded": "B-004_CMIP6 기반 과거／미래 기온(tas, tasmax, tasmin), 강수(pr), 풍속(sfcWind)), 일사량(rsds), 상대습도(hurs).xlsx",
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-ba0b2ca41b5e",
+      "labelKo": "상대습도(hurs)",
+      "recordCount": 65,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 6,
+      "key": "measure-a0fd8db382af",
+      "labelKo": "연강수(pr)",
+      "recordCount": 495,
+      "unit": "mm",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-3272c7050f67",
+      "labelKo": "일사량(rsds 대체",
+      "recordCount": 1,
+      "unit": "kWh/m²/day",
+      "unitFamily": "energy"
+    },
+    {
+      "indicatorCount": 6,
+      "key": "measure-d0a9cdeb4f17",
+      "labelKo": "최고기온(tasmax)",
+      "recordCount": 495,
+      "unit": "℃",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 6,
+      "key": "measure-f3143216ac48",
+      "labelKo": "최저기온(tasmin)",
+      "recordCount": 495,
+      "unit": "℃",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 6,
+      "key": "measure-3b0256e14999",
+      "labelKo": "평균기온(tas)",
+      "recordCount": 495,
+      "unit": "℃",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-6e876ea9fffa",
+      "labelKo": "풍속(sfcWind 대체",
+      "recordCount": 1,
+      "unit": "m/s",
+      "unitFamily": "other"
+    }
+  ],
+  "observationCount": 2047,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}
