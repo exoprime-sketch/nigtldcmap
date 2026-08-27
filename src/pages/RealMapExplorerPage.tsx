@@ -30,6 +30,9 @@ import type {
 import type {
   VietnamSpatialLayerAssetV124,
 } from "../data/vietnam/vietnamTypesV124";
+import { parseDataFinderSelectorStateV125 } from "../types/dataFinderV125";
+import type { DataFinderSelectorStateV125 } from "../types/dataFinderV125";
+import { resolveMapSelectorBindingV125 } from "../data/visualization/mapSelectorBindingsV125";
 import { loadWorldCountryBoundaries } from "../data/map/worldCountryBoundaries";
 import type { WorldCountryBoundaryGeometry } from "../data/map/worldCountryBoundaries";
 import { PRIORITY_COUNTRIES } from "../data/priorityCountries";
@@ -366,6 +369,41 @@ function selectorForLayer(
   };
 }
 
+function selectorForLayerFromSharedSelectionV125(
+  layer: CountryMapLayerV122,
+  shared: DataFinderSelectorStateV125
+): LayerSelectorState {
+  const binding = resolveMapSelectorBindingV125(
+    layer.elementId,
+    shared,
+    layer.selectors
+  );
+  const variable =
+    binding.variable &&
+    layer.selectors.variables.some((option) => option.key === binding.variable)
+      ? binding.variable
+      : layer.selectors.defaultVariable;
+  return selectorForLayer(layer, {
+    variable,
+    period:
+      binding.period || layer.selectors.defaultPeriod,
+  });
+}
+
+function sharedSelectorKeyV125(
+  selection: DataFinderSelectorStateV125
+): string {
+  return JSON.stringify({
+    measure: selection.measure,
+    sex: selection.sex,
+    year: selection.year,
+    period: selection.period,
+    dimensions: Object.entries(selection.dimensions).sort(([left], [right]) =>
+      left.localeCompare(right)
+    ),
+  });
+}
+
 function choroplethFeatureCollection(
   layer: CountryMapLayerV122,
   asset: SpatialRuntimeAsset,
@@ -520,6 +558,10 @@ export default function RealMapExplorerPage({
   initialState,
   onStateChange,
 }: RealMapExplorerPageProps) {
+  const sharedSelectorState = parseDataFinderSelectorStateV125(
+    new URLSearchParams(window.location.search)
+  );
+  const sharedSelectorKey = sharedSelectorKeyV125(sharedSelectorState);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
   const popupRef = useRef<MapLibrePopup | null>(null);
@@ -536,9 +578,17 @@ export default function RealMapExplorerPage({
   const [mapIndexStatus, setMapIndexStatus] = useState<LoadStatus>("idle");
   const [mapIndexError, setMapIndexError] = useState("");
   const [mapIndexReloadNonce, setMapIndexReloadNonce] = useState(0);
+  const [externalStateHydrated, setExternalStateHydrated] = useState(false);
   const [layers, setLayers] = useState<CountryMapLayerV122[]>([]);
-  const [activeIds, setActiveIds] = useState<string[]>([]);
-  const [focusId, setFocusId] = useState<string | null>(null);
+  const [activeIds, setActiveIds] = useState<string[]>(() => [
+    ...initialState.activeLayerKeys,
+  ]);
+  const [focusId, setFocusId] = useState<string | null>(
+    () =>
+      initialState.focusLayerKey ||
+      initialState.activeLayerKeys[initialState.activeLayerKeys.length - 1] ||
+      null
+  );
   const [recordsByElement, setRecordsByElement] = useState<
     Record<string, CountryEntityV122[]>
   >({});
@@ -707,6 +757,7 @@ export default function RealMapExplorerPage({
 
   useEffect(() => {
     let cancelled = false;
+    setExternalStateHydrated(false);
     setLayers([]);
     setRecordsByElement({});
     setSpatialByElement({});
@@ -733,14 +784,6 @@ export default function RealMapExplorerPage({
       .then((nextLayers) => {
         if (cancelled) return;
         setLayers(nextLayers);
-        setSelectorByElement(
-          Object.fromEntries(
-            nextLayers.map((layer) => [
-              layer.elementId,
-              selectorForLayer(layer, undefined),
-            ])
-          )
-        );
         setMapIndexStatus("ready");
       })
       .catch((reason: unknown) => {
@@ -759,6 +802,24 @@ export default function RealMapExplorerPage({
       cancelled = true;
     };
   }, [countryIso3, mapIndexReloadNonce]);
+
+  useEffect(() => {
+    if (mapIndexStatus !== "ready") return;
+    const currentSharedSelector = parseDataFinderSelectorStateV125(
+      new URLSearchParams(window.location.search)
+    );
+    setSelectorByElement(
+      Object.fromEntries(
+        layers.map((layer) => [
+          layer.elementId,
+          selectorForLayerFromSharedSelectionV125(
+            layer,
+            currentSharedSelector
+          ),
+        ])
+      )
+    );
+  }, [layers, mapIndexStatus, sharedSelectorKey]);
 
   const externalActiveLayerKey = initialState.activeLayerKeys.join("|");
 
@@ -780,6 +841,7 @@ export default function RealMapExplorerPage({
       sameStringArray(current, nextActive) ? current : nextActive
     );
     setFocusId((current) => (current === nextFocus ? current : nextFocus));
+    setExternalStateHydrated(true);
   }, [
     countryIso3,
     externalActiveLayerKey,
@@ -957,6 +1019,7 @@ export default function RealMapExplorerPage({
   }, [recordsByElement]);
 
   useEffect(() => {
+    if (mapIndexStatus !== "ready" || !externalStateHydrated) return;
     const nextOpacities = Object.fromEntries(
       activeIds.map((id) => [id, initialState.layerOpacities[id] ?? 0.78])
     );
@@ -980,7 +1043,9 @@ export default function RealMapExplorerPage({
   }, [
     activeIds,
     countryIso3,
+    externalStateHydrated,
     focusId,
+    mapIndexStatus,
     onStateChange,
     selectorByElement,
   ]); // initialState is intentionally reconciled through explicit fields
@@ -1311,6 +1376,13 @@ export default function RealMapExplorerPage({
           (row) => row.key === focusedSelector.variable
         ) || null
       : null;
+  const focusedHandoff = focusedLayer
+    ? resolveMapSelectorBindingV125(
+        focusedLayer.elementId,
+        sharedSelectorState,
+        focusedLayer.selectors
+      )
+    : null;
   const selectedLayer = selected
     ? layers.find((layer) => layer.elementId === selected.elementId) || null
     : null;
@@ -1532,10 +1604,20 @@ export default function RealMapExplorerPage({
           {focusedLayer && focusedSelector && (
             <section className="cdp-map-layer-group cdp-map-selector-panel">
               <h2>{focusedLayer.publicShortTitle} 표시 설정</h2>
+              {focusedHandoff?.reason && (
+                <p
+                  className="cdp-map-selector-notice"
+                  role="note"
+                  data-testid="map-selector-handoff-notice"
+                >
+                  {focusedHandoff.reason}
+                </p>
+              )}
               <label className="cdp-field" style={{ marginBottom: 9 }}>
                 <span className="cdp-field__label">변수</span>
                 <select
                   className="cdp-select"
+                  data-testid="map-layer-variable-select"
                   value={focusedSelector.variable}
                   onChange={(event) =>
                     changeLayerVariable(focusedLayer, event.target.value)
@@ -1552,6 +1634,7 @@ export default function RealMapExplorerPage({
                 <span className="cdp-field__label">연도/기간</span>
                 <select
                   className="cdp-select"
+                  data-testid="map-layer-period-select"
                   value={focusedSelector.period}
                   onChange={(event) =>
                     changeLayerPeriod(focusedLayer, event.target.value)

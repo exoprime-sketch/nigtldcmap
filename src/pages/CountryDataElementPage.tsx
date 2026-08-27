@@ -15,6 +15,7 @@ import type {
   VietnamIndicatorMetaV124,
   VietnamObservationV124,
 } from "../data/vietnam/vietnamTypesV124";
+import type { DataFinderSelectorStateV125 } from "../types/dataFinderV125";
 import {
   entityColumnsV121,
   entityDisplayNameV121,
@@ -42,7 +43,13 @@ interface Props {
   ) => void;
   onCountryChange: (iso3: string) => void;
   onOpenElement: (elementId: string, countryIso3: string) => void;
-  onOpenMapElement: (elementId: string, countryIso3: string) => void;
+  onOpenMapElement: (
+    elementId: string,
+    countryIso3: string,
+    selectorState?: DataFinderSelectorStateV125
+  ) => void;
+  selectorState: DataFinderSelectorStateV125;
+  onSelectorStateChange: (state: DataFinderSelectorStateV125) => void;
 }
 
 type Tab = "data" | "source";
@@ -55,29 +62,86 @@ interface ElementBundle {
 
 const PAGE_SIZE = 25;
 
-function escapeRegExpV122(value: string): string {
-  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+function cleanPublicIndicatorLabelV122(label: string): string {
+  // Source labels carry meaningful dimensions after dashes (occupation, sex,
+  // technology, region, scenario, and similar qualifiers). Keep the complete
+  // published label instead of treating its suffix as decoration.
+  return label.trim() || "항목";
 }
 
-function cleanPublicIndicatorLabelV122(
-  label: string,
-  countryNameKo?: string | null
+type RawIndicatorOptionV125 = {
+  indicatorId: string;
+  labels: string[];
+  recordCount: number;
+};
+
+function hasPopulatedEntityAttributeV125(value: unknown): boolean {
+  if (value === null || value === undefined) return false;
+  if (typeof value === "string") return value.trim().length > 0;
+  if (Array.isArray(value)) return value.length > 0;
+  if (typeof value === "object") return Object.keys(value).length > 0;
+  return true;
+}
+
+function allPublicEntityColumnsV125(
+  records: VietnamEntityV124[],
+  template: string
+): string[] {
+  const populatedKeys = new Set<string>();
+  records.forEach((record) => {
+    Object.entries(record.normalizedAttributes || {}).forEach(([key, value]) => {
+      if (hasPopulatedEntityAttributeV125(value)) populatedKeys.add(key);
+    });
+  });
+
+  const preferred = entityColumnsV121(
+    records,
+    template,
+    Number.MAX_SAFE_INTEGER
+  ).filter((key) => populatedKeys.has(key));
+  const preferredKeys = new Set(preferred);
+  const remaining = Array.from(populatedKeys)
+    .filter((key) => !preferredKeys.has(key))
+    .sort((left, right) => left.localeCompare(right, "ko"));
+  return [...preferred, ...remaining];
+}
+
+function provenanceLocatorV125(
+  provenance: VietnamObservationV124["provenance"]
 ): string {
-  let cleaned = label
-    .replace(/^\s*[A-E]-\d{3}_[A-Za-z0-9_]+\s*[-–—:]?\s*/i, "")
-    .replace(/^\s*[A-E]-\d{3}[_:\-\s]*/i, "")
-    .trim();
+  const sourceLocation = [
+    provenance.sourceFileDecoded,
+    provenance.sourceSheet,
+    Number.isFinite(provenance.sourceRow)
+      ? `${provenance.sourceRow}행`
+      : null,
+  ]
+    .filter((value): value is string => Boolean(value))
+    .join(" · ");
+  return [provenance.citationLocator, sourceLocation]
+    .filter((value): value is string => Boolean(value))
+    .join(" · ") || "원문 위치 미기재";
+}
 
-  if (countryNameKo?.trim()) {
-    const countryPattern = new RegExp(
-      `\\s*[·•]\\s*${escapeRegExpV122(countryNameKo.trim())}\\s*(?:[–—-].*)?$`,
-      "i"
-    );
-    cleaned = cleaned.replace(countryPattern, "").trim();
+function observationMissingReasonV125(row: VietnamObservationV124): string {
+  if (row.missingReasonCode?.trim()) return row.missingReasonCode;
+  if (row.value === null || row.value === undefined || row.value === "") {
+    return "원천 미제공(사유 미기재)";
   }
+  return "해당 없음";
+}
 
-  cleaned = cleaned.replace(/\s+[–—]\s+.*$/, "").trim();
-  return cleaned || "항목";
+function metadataForObservationV125(
+  row: VietnamObservationV124,
+  candidates: VietnamIndicatorMetaV124[]
+): VietnamIndicatorMetaV124 | undefined {
+  return (
+    candidates.find(
+      (candidate) =>
+        candidate.provenance.sourceRow === row.provenance.sourceRow &&
+        candidate.provenance.sourceSheet === row.provenance.sourceSheet
+    ) || candidates[candidates.length - 1]
+  );
 }
 
 const CHART_SERIES_COLORS_V122 = [
@@ -208,8 +272,7 @@ function smoothMonotonePathV122(
 function buildChartGroupsV122(
   rows: VietnamObservationV124[],
   metadataById: Map<string, VietnamIndicatorMetaV124>,
-  selectedIndicatorId: string,
-  countryNameKo: string
+  selectedIndicatorId: string
 ): ChartGroupV122[] {
   const byIndicator = new Map<string, NumericObservationV122[]>();
   rows.forEach((row) => {
@@ -265,10 +328,7 @@ function buildChartGroupsV122(
     }
     groups.get(group.key)?.series.push({
       indicatorId,
-      label: cleanPublicIndicatorLabelV122(
-        meta?.labelKo || indicatorId,
-        countryNameKo
-      ),
+      label: cleanPublicIndicatorLabelV122(meta?.labelKo || indicatorId),
       unit: meta?.unit || fallbackUnit,
       color:
         CHART_SERIES_COLORS_V122[colorIndex % CHART_SERIES_COLORS_V122.length],
@@ -588,22 +648,19 @@ function TimeSeriesChart({
   rows,
   metadataById,
   selectedIndicatorId,
-  countryNameKo,
 }: {
   rows: VietnamObservationV124[];
   metadataById: Map<string, VietnamIndicatorMetaV124>;
   selectedIndicatorId: string;
-  countryNameKo: string;
 }) {
   const groups = useMemo(
     () =>
       buildChartGroupsV122(
         rows,
         metadataById,
-        selectedIndicatorId,
-        countryNameKo
+        selectedIndicatorId
       ),
-    [countryNameKo, metadataById, rows, selectedIndicatorId]
+    [metadataById, rows, selectedIndicatorId]
   );
   if (groups.length === 0) return null;
 
@@ -711,6 +768,8 @@ export default function CountryDataElementPage({
   onCountryChange,
   onOpenElement: _onOpenElement,
   onOpenMapElement,
+  selectorState,
+  onSelectorStateChange,
 }: Props) {
   const providers = useMemo(() => listCountryDataProvidersV122(), []);
   const provider = getCountryDataProviderV122(countryIso3);
@@ -778,6 +837,35 @@ export default function CountryDataElementPage({
       ),
     [bundle]
   );
+  const metadataRowsById = useMemo(() => {
+    const grouped = new Map<string, VietnamIndicatorMetaV124[]>();
+    (bundle?.meta.indicators || []).forEach((item) => {
+      const rows = grouped.get(item.indicatorId) || [];
+      rows.push(item);
+      grouped.set(item.indicatorId, rows);
+    });
+    return grouped;
+  }, [bundle]);
+  const rawIndicatorOptions = useMemo<RawIndicatorOptionV125[]>(() => {
+    const observations = bundle?.observations || [];
+    const entities = bundle?.entities || [];
+    return Array.from(metadataRowsById.entries()).map(
+      ([indicatorId, metadataRows]) => ({
+        indicatorId,
+        labels: Array.from(
+          new Set(
+            metadataRows
+              .map((item) => cleanPublicIndicatorLabelV122(item.labelKo))
+              .filter(Boolean)
+          )
+        ),
+        recordCount:
+          observations.filter((row) => row.indicatorId === indicatorId)
+            .length +
+          entities.filter((row) => row.indicatorId === indicatorId).length,
+      })
+    );
+  }, [bundle, metadataRowsById]);
   const normalizedQuery = normalizedSearchV121(query);
   const hasPopulatedRows =
     catalogItem?.dataPresenceStatus === "actual-records" ||
@@ -789,12 +877,21 @@ export default function CountryDataElementPage({
       if (indicatorId !== "all" && row.indicatorId !== indicatorId)
         return false;
       if (!normalizedQuery) return true;
-      return observationSearchTextV121(
-        row,
-        metadataById.get(row.indicatorId)
-      ).includes(normalizedQuery);
+      const metadataRows = metadataRowsById.get(row.indicatorId) || [];
+      if (metadataRows.length === 0) {
+        return observationSearchTextV121(row).includes(normalizedQuery);
+      }
+      return metadataRows.some((metadata) =>
+        observationSearchTextV121(row, metadata).includes(normalizedQuery)
+      );
     });
-  }, [bundle, hasPopulatedRows, indicatorId, metadataById, normalizedQuery]);
+  }, [
+    bundle,
+    hasPopulatedRows,
+    indicatorId,
+    metadataRowsById,
+    normalizedQuery,
+  ]);
 
   const entities = useMemo(() => {
     if (!bundle || !hasPopulatedRows) return [];
@@ -873,14 +970,17 @@ export default function CountryDataElementPage({
   const meta = bundle?.meta;
   const selectedMeta =
     indicatorId === "all" ? undefined : metadataById.get(indicatorId);
+  const selectedRawIndicatorOption =
+    indicatorId === "all"
+      ? undefined
+      : rawIndicatorOptions.find((option) => option.indicatorId === indicatorId);
   const latest =
     indicatorId === "all"
       ? null
       : latestObservationV121(bundle?.observations || [], indicatorId);
-  const entityColumns = entityColumnsV121(
+  const entityColumns = allPublicEntityColumnsV125(
     entities,
-    meta?.element.detailTemplate || "entity",
-    meta?.element.detailTemplate === "partner" ? 16 : 10
+    meta?.element.detailTemplate || "entity"
   );
   const entityFieldLabels = new Map(
     (meta?.fieldDefinitions || []).map((field) => [
@@ -917,7 +1017,10 @@ export default function CountryDataElementPage({
   );
 
   return (
-    <div className="page-shell cdp-page">
+    <div
+      className="page-shell cdp-page"
+      data-v125-element-id={elementId}
+    >
       <button
         type="button"
         className="cdp-button cdp-button--secondary"
@@ -989,7 +1092,11 @@ export default function CountryDataElementPage({
                   type="button"
                   className="cdp-button cdp-button--secondary"
                   onClick={() =>
-                    onOpenMapElement(elementId, provider.countryIso3)
+                    onOpenMapElement(
+                      elementId,
+                      provider.countryIso3,
+                      selectorState
+                    )
                   }
                 >
                   지도에서 보기
@@ -1057,38 +1164,63 @@ export default function CountryDataElementPage({
 
           {tab === "data" && (
             <section className="cdp-panel cdp-detail-panel">
-              <div className="cdp-filter-grid cdp-filter-grid--detail">
-                <label className="cdp-field">
-                  <span className="cdp-field__label">항목</span>
-                  <select
-                    className="cdp-select"
-                    value={indicatorId}
-                    onChange={(event) => setIndicatorId(event.target.value)}
-                  >
-                    <option value="all">전체</option>
-                    {meta.indicators.map((indicator) => (
-                      <option
-                        key={indicator.indicatorId}
-                        value={indicator.indicatorId}
-                      >
-                        {cleanPublicIndicatorLabelV122(
-                          indicator.labelKo,
-                          provider.countryNameKo
-                        )}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-                <label className="cdp-field cdp-field--wide">
-                  <span className="cdp-field__label">표 검색</span>
-                  <input
-                    className="cdp-input"
-                    value={query}
-                    onChange={(event) => setQuery(event.target.value)}
-                    placeholder="명칭, 지역, 기관 또는 내용 검색"
-                  />
-                </label>
-              </div>
+              {elementId !== "E-012" && (
+                <div className="cdp-filter-grid cdp-filter-grid--detail">
+                  <label className="cdp-field">
+                    <span className="cdp-field__label">원자료 계열</span>
+                    <select
+                      className="cdp-select"
+                      value={indicatorId}
+                      onChange={(event) => setIndicatorId(event.target.value)}
+                    >
+                      <option value="all">전체</option>
+                      {rawIndicatorOptions.map((option) => (
+                        <option key={option.indicatorId} value={option.indicatorId}>
+                          {option.labels.join(" / ")}
+                          {option.labels.length > 1
+                            ? ` · 동일 ID 원자료 ${option.recordCount.toLocaleString(
+                                "ko-KR"
+                              )}건 함께 표시`
+                            : ""}
+                        </option>
+                      ))}
+                    </select>
+                    {selectedRawIndicatorOption &&
+                      selectedRawIndicatorOption.labels.length > 1 && (
+                        <small role="note">
+                          동일 indicatorId에 연결된 원문 라벨
+                          {" "}
+                          {selectedRawIndicatorOption.labels
+                            .map((label) => `“${label}”`)
+                            .join(", ")}
+                          을 구분해 보존하며, 원자료 레코드
+                          {" "}
+                          {selectedRawIndicatorOption.recordCount.toLocaleString(
+                            "ko-KR"
+                          )}
+                          건을 함께 표시합니다.
+                        </small>
+                      )}
+                  </label>
+                  <label className="cdp-field cdp-field--wide">
+                    <span className="cdp-field__label">표 검색</span>
+                    <input
+                      className="cdp-input"
+                      value={query}
+                      onChange={(event) => setQuery(event.target.value)}
+                      placeholder="명칭, 지역, 기관 또는 내용 검색"
+                    />
+                  </label>
+                </div>
+              )}
+
+              <section className="cdp-section cdp-meaning-intro" data-v125-section="meaning">
+                <h2>이 데이터로 확인할 수 있는 내용</h2>
+                <p>
+                  {catalogItem?.publicDescription ||
+                    `${meta.element.elementLabel}의 실제 공개 레코드와 분류별 측정값을 확인할 수 있습니다.`}
+                </p>
+              </section>
 
               <CountryElementVisualizationV123
                 elementId={elementId}
@@ -1097,48 +1229,79 @@ export default function CountryDataElementPage({
                 entities={hasPopulatedRows ? bundle?.entities || [] : []}
                 indicators={meta.indicators}
                 selectedIndicatorId={indicatorId}
+                selectorState={selectorState}
+                onSelectorStateChange={onSelectorStateChange}
               />
 
-              <TimeSeriesChart
-                rows={observations}
-                metadataById={metadataById}
-                selectedIndicatorId={indicatorId}
-                countryNameKo={provider.countryNameKo}
-              />
-
-              {observations.length > 0 && (
+              {observations.length > 0 && elementId !== "E-012" && (
                 <section className="cdp-section">
                   <h3>수치 자료</h3>
                   <div className="cdp-table-wrap">
-                    <table className="cdp-table">
+                    <table
+                      className="cdp-table"
+                      data-v125-table-fallback="source-observations"
+                    >
                       <thead>
                         <tr>
-                          <th>항목</th>
+                          <th>원자료 ID</th>
+                          <th>원문 라벨</th>
+                          <th>분류·원문 메모</th>
                           <th>연도</th>
                           <th>값</th>
                           <th>단위</th>
+                          <th>결측 사유</th>
                           <th>출처</th>
+                          <th>원문 근거</th>
                         </tr>
                       </thead>
                       <tbody>
                         {pagedObservations.map((row) => {
-                          const indicator = metadataById.get(row.indicatorId);
+                          const metadataRows =
+                            metadataRowsById.get(row.indicatorId) || [];
+                          const indicator = metadataForObservationV125(
+                            row,
+                            metadataRows
+                          );
+                          const classificationAndNote = [
+                            row.countryRole
+                              ? `국가 역할: ${row.countryRole}`
+                              : null,
+                            row.note,
+                          ]
+                            .filter((value): value is string => Boolean(value))
+                            .join(" · ");
+                          const evidence = [
+                            row.rawValue !== null &&
+                            row.rawValue !== undefined &&
+                            String(row.rawValue).trim()
+                              ? `원문값: ${row.rawValue}`
+                              : null,
+                            provenanceLocatorV125(row.provenance),
+                          ]
+                            .filter((value): value is string => Boolean(value))
+                            .join(" · ");
                           return (
                             <tr key={row.recordId}>
+                              <td>{row.indicatorId}</td>
                               <td>
                                 {cleanPublicIndicatorLabelV122(
-                                  indicator?.labelKo || "항목",
-                                  provider.countryNameKo
+                                  indicator?.labelKo || row.indicatorId
                                 )}
                               </td>
+                              <td>{classificationAndNote || "—"}</td>
                               <td>{row.year ?? row.period ?? "-"}</td>
                               <td>{formatValueV121(row.value)}</td>
                               <td>{row.unit || indicator?.unit || "-"}</td>
+                              <td>{observationMissingReasonV125(row)}</td>
                               <td>
+                                <span>
+                                  {row.provenance.sourceOrg ||
+                                    indicator?.sourceOrg ||
+                                    "기관 미기재"}
+                                </span>{" "}
                                 <SourceLink url={row.provenance.sourceUrl} />
-                                {!row.provenance.sourceUrl &&
-                                  (row.provenance.sourceOrg || "-")}
                               </td>
+                              <td>{evidence}</td>
                             </tr>
                           );
                         })}
@@ -1152,7 +1315,10 @@ export default function CountryDataElementPage({
                 <section className="cdp-section">
                   <h3>목록 자료</h3>
                   <div className="cdp-table-wrap">
-                    <table className="cdp-table">
+                    <table
+                      className="cdp-table"
+                      data-v125-table-fallback="source-entities"
+                    >
                       <thead>
                         <tr>
                           <th>명칭</th>
@@ -1200,7 +1366,7 @@ export default function CountryDataElementPage({
                 </div>
               )}
 
-              {totalPages > 1 && (
+              {totalPages > 1 && elementId !== "E-012" && (
                 <div className="cdp-pagination">
                   <button
                     type="button"
@@ -1225,6 +1391,63 @@ export default function CountryDataElementPage({
                   </button>
                 </div>
               )}
+
+              <section className="cdp-section cdp-v125-provenance" data-v125-section="source-year-unit">
+                <h3>출처·기준연도·단위</h3>
+                <dl className="cdp-card__facts">
+                  <div>
+                    <dt>출처</dt>
+                    <dd>{sourceOrganizations.join(" · ") || "미기재"}</dd>
+                  </div>
+                  <div>
+                    <dt>기준연도</dt>
+                    <dd>{meta.element.referenceYears.join(" · ") || String(meta.element.latestYear || "미기재")}</dd>
+                  </div>
+                  <div>
+                    <dt>단위</dt>
+                    <dd>
+                      {Array.from(
+                        new Set(
+                          meta.indicators
+                            .map((item) => item.unit?.trim())
+                            .filter((value): value is string => Boolean(value))
+                        )
+                      ).join(" · ") || "미기재"}
+                    </dd>
+                  </div>
+                </dl>
+              </section>
+
+              <section className="cdp-section cdp-v125-limitations" data-v125-section="limitations">
+                <h3>데이터 한계·결측</h3>
+                <p>
+                  {meta.element.emptyReason || meta.element.packageReason ||
+                    "원자료에 없는 값은 0으로 대체하지 않으며 결측 사유를 그대로 표시합니다."}
+                </p>
+                <p>
+                  결측 레코드 {(
+                    (bundle?.observations || []).filter(
+                      (row) => row.value === null || row.value === undefined || row.value === ""
+                    ).length +
+                    (bundle?.entities || []).filter((row) => Boolean(row.missingReasonCode)).length
+                  ).toLocaleString("ko-KR")}건 · 품질 경고 {meta.element.qualityIssueCount.toLocaleString("ko-KR")}건
+                </p>
+              </section>
+
+              <section className="cdp-section cdp-v125-download" data-v125-section="download">
+                <h3>다운로드</h3>
+                {meta.element.downloadableRecordCount > 0 ? (
+                  <button
+                    type="button"
+                    className="cdp-button cdp-button--primary"
+                    onClick={() => onOpenDownload(elementId, provider.countryIso3, null)}
+                  >
+                    전체 공개 레코드 다운로드
+                  </button>
+                ) : (
+                  <p>이 항목은 현재 공개 다운로드 자산이 없습니다.</p>
+                )}
+              </section>
             </section>
           )}
 

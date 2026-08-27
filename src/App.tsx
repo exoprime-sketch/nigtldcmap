@@ -36,6 +36,13 @@ import type {
 import { DEFAULT_COMPARE_VIEW_STATE } from "./types/compare";
 import { parseMapViewState } from "./types/map";
 import type { MapViewState } from "./types/map";
+import {
+  appendDataFinderSelectorParamsV125,
+  dataFinderSelectorStatesEqualV125,
+  EMPTY_DATA_FINDER_SELECTOR_STATE_V125,
+  parseDataFinderSelectorStateV125,
+} from "./types/dataFinderV125";
+import type { DataFinderSelectorStateV125 } from "./types/dataFinderV125";
 
 type HistoryMode = "push" | "replace";
 type DatasetReturnView =
@@ -288,6 +295,8 @@ export default function App() {
   const initialParams = new URLSearchParams(window.location.search);
   const initialMapState = parseMapViewState(initialParams);
   const initialCompareState = parseCompareViewState(initialParams);
+  const initialDataFinderSelectorState =
+    parseDataFinderSelectorStateV125(initialParams);
   const initialView = getViewFromLocation();
   const initialDatasetReturnView = parseDatasetReturnView(
     initialParams.get("from")
@@ -307,6 +316,8 @@ export default function App() {
     useState<MapViewState>(initialMapState);
   const [compareViewState, setCompareViewState] =
     useState<CompareViewState>(initialCompareState);
+  const [dataFinderSelectorState, setDataFinderSelectorState] =
+    useState<DataFinderSelectorStateV125>(initialDataFinderSelectorState);
   const [query, setQuery] = useState(initialParams.get("q") ?? "");
   const [sourceOrganization, setSourceOrganization] = useState(
     initialParams.get("source") ?? "all"
@@ -401,6 +412,8 @@ export default function App() {
       const params = new URLSearchParams(window.location.search);
       const restoredMapState = parseMapViewState(params);
       const restoredCompareState = parseCompareViewState(params);
+      const restoredDataFinderSelectorState =
+        parseDataFinderSelectorStateV125(params);
       const nextView = getViewFromLocation();
       const countryParam = params.get("country")?.toUpperCase() ?? null;
 
@@ -453,6 +466,7 @@ export default function App() {
       setDatasetReturnView(restoredReturnView);
       setMapViewState(restoredMapState);
       setCompareViewState(restoredCompareState);
+      setDataFinderSelectorState(restoredDataFinderSelectorState);
       setSelectedCountryIso3(
         nextView === "map"
           ? restoredMapState.countryIso3
@@ -510,6 +524,7 @@ export default function App() {
       selectedElementId &&
       selectedElementCountryIso3
     ) {
+      params.set("view", "data");
       params.set(
         "element",
         publicCountryElementTokenV122(
@@ -520,6 +535,7 @@ export default function App() {
       params.set("country", selectedElementCountryIso3);
       params.set("from", "explorer");
       if (explorerGroup) params.set("group", explorerGroup);
+      appendDataFinderSelectorParamsV125(params, dataFinderSelectorState);
     }
 
     if (view === "dataset-detail" && selectedDatasetId) {
@@ -571,6 +587,16 @@ export default function App() {
 
     if (view === "map") {
       appendMapViewParams(params, mapViewState);
+      if (mapViewState.focusLayerKey && mapViewState.countryIso3) {
+        params.set(
+          "element",
+          publicCountryElementTokenV122(
+            mapViewState.countryIso3,
+            mapViewState.focusLayerKey
+          )
+        );
+      }
+      appendDataFinderSelectorParamsV125(params, dataFinderSelectorState);
     }
 
     if (view === "country" && selectedCountryIso3) {
@@ -625,6 +651,7 @@ export default function App() {
     selectedCountryIso3,
     mapViewState,
     compareViewState,
+    dataFinderSelectorState,
   ]);
 
   useEffect(() => {
@@ -764,25 +791,36 @@ export default function App() {
     setSelectedElementId(elementId);
     setSelectedElementCountryIso3(countryIso3);
     setSelectedCountryIso3(countryIso3);
+    setDataFinderSelectorState(EMPTY_DATA_FINDER_SELECTOR_STATE_V125);
     // 상세 화면의 국가 선택은 데이터 찾기 필터 상태와 분리합니다.
     setSelectedDatasetId(null);
     setView("element-detail");
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  function openElementOnMap(elementId: string, countryIso3: string) {
+  function openElementOnMap(
+    elementId: string,
+    countryIso3: string,
+    selectorState?: DataFinderSelectorStateV125
+  ) {
     if (!hasCountryDataProviderV122(countryIso3)) return;
 
+    const nextSelectorState =
+      selectorState ?? EMPTY_DATA_FINDER_SELECTOR_STATE_V125;
     markNextNavigationAsPush();
     setSelectedCountryIso3(countryIso3);
+    setDataFinderSelectorState(nextSelectorState);
     setMapViewState((current) => ({
       ...current,
       countryIso3,
+      year: nextSelectorState.year ?? current.year,
       activeLayerKeys: [elementId],
       layerOpacities: {
         [elementId]: current.layerOpacities[elementId] ?? 0.78,
       },
-      layerYears: { [elementId]: current.layerYears[elementId] ?? null },
+      layerYears: {
+        [elementId]: nextSelectorState.year ?? current.layerYears[elementId] ?? null,
+      },
       focusLayerKey: elementId,
     }));
     setView("map");
@@ -1054,6 +1092,14 @@ export default function App() {
             }
             onOpenElement={openElement}
             onOpenMapElement={openElementOnMap}
+            selectorState={dataFinderSelectorState}
+            onSelectorStateChange={(nextState) =>
+              setDataFinderSelectorState((current) =>
+                dataFinderSelectorStatesEqualV125(current, nextState)
+                  ? current
+                  : nextState
+              )
+            }
             onCountryChange={(iso3) => {
               if (!hasCountryDataProviderV122(iso3)) return;
 
