@@ -1,0 +1,327 @@
+{
+  "dataSchemaVersion": "v124",
+  "layers": [
+    {
+      "assetRef": {
+        "elementId": "A-023",
+        "provider": "vietnam-v124",
+        "section": "entities"
+      },
+      "category": "국가·경제",
+      "cluster": true,
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "downloadableRecordCount": 236,
+      "elementId": "A-023",
+      "featureCount": 1889,
+      "filters": [
+        {
+          "field": "fuelType",
+          "label": "발전원",
+          "values": [
+            "(미표기)",
+            "가스",
+            "가스·석유",
+            "바이오매스",
+            "석유",
+            "석탄",
+            "수력",
+            "태양광",
+            "폐기물",
+            "풍력"
+          ]
+        },
+        {
+          "field": "capacityBand",
+          "label": "용량구간",
+          "values": [
+            "100~499MW",
+            "10MW 미만",
+            "10~99MW",
+            "500MW 이상"
+          ]
+        }
+      ],
+      "geometryTypes": [
+        "point"
+      ],
+      "label": "발전소",
+      "latestYear": 2026,
+      "layerId": "vnm-v124-a-023",
+      "legend": {
+        "note": "자료연도 2026",
+        "title": "발전소"
+      },
+      "legendTitle": "발전소",
+      "mapMode": "cluster",
+      "publicShortTitle": "발전소",
+      "rawLabel": "발전소",
+      "sourceOrganizations": [
+        "OpenStreetMap contributors",
+        "World Resources Institute"
+      ],
+      "tooltipFields": [
+        "name",
+        "fuelType",
+        "capacityMw",
+        "status",
+        "referenceYear"
+      ],
+      "totalEntityCount": 1963
+    },
+    {
+      "assetRef": {
+        "elementId": "B-048",
+        "provider": "vietnam-v124",
+        "section": "entities"
+      },
+      "category": "기후·환경·자원",
+      "cluster": false,
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "downloadableRecordCount": 18,
+      "elementId": "B-048",
+      "featureCount": 2,
+      "filters": [
+        {
+          "field": "mineral",
+          "label": "광종",
+          "values": [
+            "구리",
+            "니켈"
+          ]
+        },
+        {
+          "field": "regionName",
+          "label": "지역",
+          "values": [
+            "Lao Cai",
+            "Son La"
+          ]
+        }
+      ],
+      "geometryTypes": [
+        "point"
+      ],
+      "label": "주요 광산",
+      "latestYear": 2022,
+      "layerId": "vnm-v124-b-048",
+      "legend": {
+        "note": "자료연도 2022",
+        "title": "주요 광산"
+      },
+      "legendTitle": "주요 광산",
+      "mapMode": "point",
+      "publicShortTitle": "주요 광산",
+      "rawLabel": "주요 광산",
+      "sourceOrganizations": [
+        "USGS MRDS (Mineral Resources Data System)",
+        "USGS Minerals Yearbook Vietnam 2022 (Table 2); USGS MRDS"
+      ],
+      "tooltipFields": [
+        "name",
+        "mineral",
+        "regionName",
+        "referenceYear"
+      ],
+      "totalEntityCount": 8
+    },
+    {
+      "assetRef": {
+        "elementId": "C-025",
+        "provider": "vietnam-v124",
+        "section": "entities"
+      },
+      "category": "정책·기술수요",
+      "cluster": false,
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "downloadableRecordCount": 5,
+      "elementId": "C-025",
+      "featureCount": 20,
+      "filters": [
+        {
+          "field": "standard",
+          "label": "표준",
+          "values": [
+            "Gold Standard"
+          ]
+        },
+        {
+          "field": "technologyField",
+          "label": "기술분야",
+          "values": [
+            "CTIS-03 풍력 기술",
+            "CTIS-05 수력 기술",
+            "CTIS-08 바이오에너지 기술"
+          ]
+        },
+        {
+          "field": "status",
+          "label": "상태",
+          "values": [
+            "GOLD_STANDARD_CERTIFIED_DESIGN",
+            "GOLD_STANDARD_CERTIFIED_PROJECT"
+          ]
+        }
+      ],
+      "geometryTypes": [
+        "point"
+      ],
+      "label": "탄소크레딧 사업",
+      "latestYear": 2026,
+      "layerId": "vnm-v124-c-025",
+      "legend": {
+        "note": "자료연도 2026",
+        "title": "탄소크레딧 사업"
+      },
+      "legendTitle": "탄소크레딧 사업",
+      "mapMode": "point",
+      "publicShortTitle": "탄소크레딧 사업",
+      "rawLabel": "탄소사업",
+      "sourceOrganizations": [
+        "Global Carbon Council (GCC)",
+        "UNFCCC CDM Insights",
+        "Verra Registry / Gold Standard Registry / CarbonPlan offsets-db",
+        "Verra VCS Registry · Gold Standard Registry"
+      ],
+      "tooltipFields": [
+        "name",
+        "standard",
+        "technologyField",
+        "status",
+        "annualReduction",
+        "creditingPeriod"
+      ],
+      "totalEntityCount": 146
+    },
+    {
+      "assetRef": {
+        "elementId": "D-018",
+        "provider": "vietnam-v124",
+        "section": "entities"
+      },
+      "category": "국제사업·재원",
+      "cluster": false,
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "downloadableRecordCount": 0,
+      "elementId": "D-018",
+      "featureCount": 3,
+      "filters": [
+        {
+          "field": "status",
+          "label": "상태",
+          "values": [
+            "Project Under Implementation"
+          ]
+        },
+        {
+          "field": "implementingEntity",
+          "label": "기관",
+          "values": [
+            "UN Environment Programme (MIE)",
+            "UN-Habitat (MIE)",
+            "United Nations Educational, Scientific and Cultural Organization (MIE)"
+          ]
+        }
+      ],
+      "geometryTypes": [
+        "point"
+      ],
+      "label": "적응기금 사업",
+      "latestYear": 2026,
+      "layerId": "vnm-v124-d-018",
+      "legend": {
+        "note": "자료연도 2026",
+        "title": "적응기금 사업"
+      },
+      "legendTitle": "적응기금 사업",
+      "mapMode": "point",
+      "publicShortTitle": "적응기금 사업",
+      "rawLabel": "Adaptation Fund 사업",
+      "sourceOrganizations": [
+        "Adaptation Fund Board Secretariat"
+      ],
+      "tooltipFields": [
+        "name",
+        "implementingEntity",
+        "status",
+        "projectPeriod",
+        "approvedAmount",
+        "sourceUrl"
+      ],
+      "totalEntityCount": 4
+    },
+    {
+      "assetRef": {
+        "elementId": "D-023",
+        "provider": "vietnam-v124",
+        "section": "entities"
+      },
+      "category": "국제사업·재원",
+      "cluster": false,
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "downloadableRecordCount": 0,
+      "elementId": "D-023",
+      "featureCount": 3,
+      "filters": [
+        {
+          "field": "fund",
+          "label": "기금",
+          "values": [
+            "Adaptation Fund"
+          ]
+        },
+        {
+          "field": "status",
+          "label": "상태",
+          "values": [
+            "Project Under Implementation"
+          ]
+        },
+        {
+          "field": "sector",
+          "label": "분야",
+          "values": [
+            "Transboundary Water Management",
+            "Urban development"
+          ]
+        }
+      ],
+      "geometryTypes": [
+        "point"
+      ],
+      "label": "국제협력·기후재원 사업",
+      "latestYear": 2026,
+      "layerId": "vnm-v124-d-023",
+      "legend": {
+        "note": "자료연도 2026",
+        "title": "국제협력·기후재원"
+      },
+      "legendTitle": "국제협력·기후재원 사업",
+      "mapMode": "point",
+      "publicShortTitle": "국제협력·기후재원",
+      "rawLabel": "ODA·기후재원 사업",
+      "sourceOrganizations": [
+        "Climate Investment Funds (CIF) — Clean Technology Fund (CTF) Trust Fund Committee",
+        "Global Environment Facility (GEF) Secretariat",
+        "Green Climate Fund",
+        "Green Climate Fund · Global Environment Facility · Adaptation Fund Board Secretariat · Climate Investment Funds"
+      ],
+      "tooltipFields": [
+        "name",
+        "fund",
+        "accreditedEntity",
+        "status",
+        "approvedAmount",
+        "projectPeriod",
+        "sourceUrl"
+      ],
+      "totalEntityCount": 71
+    }
+  ],
+  "platformRelease": "v122",
+  "schemaVersion": "v124"
+}

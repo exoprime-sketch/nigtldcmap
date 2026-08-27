@@ -1,0 +1,559 @@
+{
+  "countryIso3": "VNM",
+  "element": {
+    "assetRef": {
+      "elementId": "A-025",
+      "provider": "vietnam-v124",
+      "section": "bundle"
+    },
+    "availableIndicatorCount": 2,
+    "categoryCode": "A",
+    "categoryLabel": "국가 기본 정보",
+    "dataPresenceStatus": "actual-records",
+    "dataTypes": [
+      "geo_point",
+      "numeric"
+    ],
+    "detailTemplate": "spatial",
+    "displayAllowed": true,
+    "downloadAllowed": true,
+    "downloadAssets": [
+      {
+        "format": "JSON",
+        "mediaType": "application/json",
+        "recordCount": 6,
+        "url": "/data/vietnam/v2/downloads/a-025.json"
+      },
+      {
+        "format": "CSV",
+        "mediaType": "text/csv; charset=utf-8",
+        "recordCount": 6,
+        "url": "/data/vietnam/v2/downloads/a-025.csv"
+      }
+    ],
+    "downloadableRecordCount": 6,
+    "elementId": "A-025",
+    "elementLabel": "CCS 시설",
+    "emptyReason": null,
+    "entityCount": 5,
+    "groupCode": "A.3.a",
+    "groupLabel": "인프라 GIS 공간정보",
+    "hasWarnings": false,
+    "indicatorCount": 2,
+    "latestYear": 2026,
+    "mapFeatureCount": 0,
+    "mapMode": "panel-only",
+    "nonstandardRowCount": 0,
+    "observationCount": 1,
+    "packageReason": "요소별 Excel 파일 제공",
+    "packageStatus": "provided",
+    "publicStatus": "actual",
+    "publicationDecision": null,
+    "qualityIssueCount": 0,
+    "referenceYears": [
+      "2026"
+    ],
+    "rights": {
+      "attributionTexts": [
+        "STADT 자체 정리(공개 1차 출처 기반). 원천 표기는 각 행 note 참조."
+      ],
+      "downloadAllowedValues": [
+        "가능"
+      ],
+      "licenses": [
+        "용역 자체 정리자료"
+      ],
+      "redistributionAllowedValues": [
+        "가능"
+      ],
+      "status": "public"
+    },
+    "rowAccounting": {
+      "metadataRows": 2,
+      "nonstandardRows": 0,
+      "normalizedEntityRows": 5,
+      "normalizedObservationRows": 1,
+      "placeholderRows": 0,
+      "publicPopulatedRows": 6,
+      "templateRows": 7
+    },
+    "sectionCode": "A.3",
+    "sectionLabel": "인프라",
+    "sourceOrganizations": [
+      "STADT(공개 1차 출처 정리)"
+    ],
+    "sourceUrls": [
+      "https://www.globalccsinstitute.com/resources/global-status-of-ccs/"
+    ],
+    "sourceWorkbook": {
+      "exists": true,
+      "fileName": "A-025_CCS 시설.xlsx"
+    },
+    "spatialUnits": [
+      "nation",
+      "point"
+    ],
+    "technologyIds": [
+      "20"
+    ]
+  },
+  "entities": [
+    {
+      "coordinateQuality": "근사(블록 단위)",
+      "countryIso3": "VNM",
+      "countryRole": "subject-country",
+      "crs": "EPSG:4326",
+      "downloadEligible": true,
+      "elementId": "A-025",
+      "entityType": "CCS 시설",
+      "geometry": null,
+      "geometryType": "point",
+      "indicatorId": "A-025_ccs_facility_registry",
+      "latitude": 10.35,
+      "loadStatus": "published",
+      "longitude": 108.1,
+      "mapEligibilityReason": "좌표가 근사·필드·개념 대표점으로 시설의 정밀 위치가 아님",
+      "mapEligible": false,
+      "missingReasonCode": null,
+      "name": "Rang Dong 유전 CO2-EOR 파일럿",
+      "normalizedAttributes": {
+        "coordinateAccuracy": "근사(블록 단위)",
+        "facilityName": "Rang Dong 유전 CO2-EOR 파일럿",
+        "facilityType": "CO2 주입(EOR)",
+        "field_b25998a0": "완료(2011.6 주입, 2012.2 종료)",
+        "leadPartners": "JVPC(JX Nippon)·PetroVietnam·JOGMEC",
+        "location": "Block 15-2, Cuu Long 분지, 붕따우 남동 약 135km 해상",
+        "status": "완료(2011.6 주입, 2012.2 종료)",
+        "type": "CO2 주입(EOR)"
+      },
+      "note": "[시설명: Rang Dong 유전 CO2-EOR 파일럿] 주관/파트너: JVPC(JX Nippon)·PetroVietnam·JOGMEC · 위치: Block 15-2, Cuu Long 분지, 붕따우 남동 약 135km 해상 · 좌표 정확도: 근사(블록 단위) / 동남아 최초 해상 CO2-EOR. 상용 CCS 아닌 파일럿",
+      "noteFields": {
+        "coordinateAccuracy": "근사(블록 단위)",
+        "facilityName": "Rang Dong 유전 CO2-EOR 파일럿",
+        "leadPartners": "JVPC(JX Nippon)·PetroVietnam·JOGMEC",
+        "location": "Block 15-2, Cuu Long 분지, 붕따우 남동 약 135km 해상"
+      },
+      "provenance": {
+        "citationLocator": "베트남_CCS시설_좌표.xlsx / \"CCS시설_좌표\" 시트 (헤더 4행, 좌표 보유 3건 + 위치 미정 2건)",
+        "downloadAllowed": "가능",
+        "elementId": "A-025",
+        "indicatorId": "A-025_ccs_facility_registry",
+        "licenseCode": "용역 자체 정리자료",
+        "redistributionAllowed": "가능",
+        "referenceYear": "2026",
+        "sourceFileDecoded": "A-025_CCS 시설.xlsx",
+        "sourceFileOriginal": "A-025_CCS 시설.xlsx",
+        "sourceOrg": "STADT(공개 1차 출처 정리)",
+        "sourcePackage": "vietnam-data.zip",
+        "sourceRow": 3,
+        "sourceSheet": "1.2_entity(레코드형)",
+        "sourceUrl": "https://www.globalccsinstitute.com/resources/global-status-of-ccs/"
+      },
+      "rawAttributes": {
+        "attr_1": "CO2 주입(EOR)",
+        "attr_2": "완료(2011.6 주입, 2012.2 종료)"
+      },
+      "recordId": "vnm-v121-a-025-ent-3-cbedfcb4cbca5666",
+      "rightsNote": "플랫폼 표출 가능",
+      "rightsStatus": "public",
+      "warnings": []
+    },
+    {
+      "coordinateQuality": "중(필드 좌표)",
+      "countryIso3": "VNM",
+      "countryRole": "subject-country",
+      "crs": "EPSG:4326",
+      "downloadEligible": true,
+      "elementId": "A-025",
+      "entityType": "CCS 시설",
+      "geometry": null,
+      "geometryType": "point",
+      "indicatorId": "A-025_ccs_facility_registry",
+      "latitude": 15.6989,
+      "loadStatus": "published",
+      "longitude": 109.6027,
+      "mapEligibilityReason": "좌표가 근사·필드·개념 대표점으로 시설의 정밀 위치가 아님",
+      "mapEligible": false,
+      "missingReasonCode": null,
+      "name": "Ca Voi Xanh(Blue Whale) 가스전",
+      "normalizedAttributes": {
+        "coordinateAccuracy": "중(필드 좌표)",
+        "facilityName": "Ca Voi Xanh(Blue Whale) 가스전",
+        "facilityType": "고농도 CO2 가스전(CO2 분리·재주입 잠재)",
+        "field_b25998a0": "계획(FID~2025, 생산~2030 목표)",
+        "leadPartners": "ExxonMobil(64%)·PVEP(36%)",
+        "location": "Block 118, Song Hong 분지, 중부 해상",
+        "status": "계획(FID~2025, 생산~2030 목표)",
+        "type": "고농도 CO2 가스전(CO2 분리·재주입 잠재)"
+      },
+      "note": "[시설명: Ca Voi Xanh(Blue Whale) 가스전] 주관/파트너: ExxonMobil(64%)·PVEP(36%) · 위치: Block 118, Song Hong 분지, 중부 해상 · 좌표 정확도: 중(필드 좌표) / 고 CO2 함량으로 CCS/재주입 후보. 개발 지연",
+      "noteFields": {
+        "coordinateAccuracy": "중(필드 좌표)",
+        "facilityName": "Ca Voi Xanh(Blue Whale) 가스전",
+        "leadPartners": "ExxonMobil(64%)·PVEP(36%)",
+        "location": "Block 118, Song Hong 분지, 중부 해상"
+      },
+      "provenance": {
+        "citationLocator": "베트남_CCS시설_좌표.xlsx / \"CCS시설_좌표\" 시트 (헤더 4행, 좌표 보유 3건 + 위치 미정 2건)",
+        "downloadAllowed": "가능",
+        "elementId": "A-025",
+        "indicatorId": "A-025_ccs_facility_registry",
+        "licenseCode": "용역 자체 정리자료",
+        "redistributionAllowed": "가능",
+        "referenceYear": "2026",
+        "sourceFileDecoded": "A-025_CCS 시설.xlsx",
+        "sourceFileOriginal": "A-025_CCS 시설.xlsx",
+        "sourceOrg": "STADT(공개 1차 출처 정리)",
+        "sourcePackage": "vietnam-data.zip",
+        "sourceRow": 4,
+        "sourceSheet": "1.2_entity(레코드형)",
+        "sourceUrl": "https://www.globalccsinstitute.com/resources/global-status-of-ccs/"
+      },
+      "rawAttributes": {
+        "attr_1": "고농도 CO2 가스전(CO2 분리·재주입 잠재)",
+        "attr_2": "계획(FID~2025, 생산~2030 목표)"
+      },
+      "recordId": "vnm-v121-a-025-ent-4-2e981d4aca9ece48",
+      "rightsNote": "플랫폼 표출 가능",
+      "rightsStatus": "public",
+      "warnings": []
+    },
+    {
+      "coordinateQuality": "개념(분지 대표점)",
+      "countryIso3": "VNM",
+      "countryRole": "subject-country",
+      "crs": "EPSG:4326",
+      "downloadEligible": true,
+      "elementId": "A-025",
+      "entityType": "CCS 시설",
+      "geometry": null,
+      "geometryType": "point",
+      "indicatorId": "A-025_ccs_facility_registry",
+      "latitude": 9.8,
+      "loadStatus": "published",
+      "longitude": 108.5,
+      "mapEligibilityReason": "좌표가 근사·필드·개념 대표점으로 시설의 정밀 위치가 아님",
+      "mapEligible": false,
+      "missingReasonCode": null,
+      "name": "고갈 유·가스전 CO2 저장(개념)",
+      "normalizedAttributes": {
+        "coordinateAccuracy": "개념(분지 대표점)",
+        "facilityName": "고갈 유·가스전 CO2 저장(개념)",
+        "facilityType": "지중 저장 후보(Storage)",
+        "field_b25998a0": "계획·법제화 단계",
+        "leadPartners": "PetroVietnam(PVN)",
+        "location": "Cuu Long·Nam Con Son 분지(대표 위치)",
+        "status": "계획·법제화 단계",
+        "type": "지중 저장 후보(Storage)"
+      },
+      "note": "[시설명: 고갈 유·가스전 CO2 저장(개념)] 주관/파트너: PetroVietnam(PVN) · 위치: Cuu Long·Nam Con Son 분지(대표 위치) · 좌표 정확도: 개념(분지 대표점) / 석유법 개정으로 CO2 저장 산업화 추진 중",
+      "noteFields": {
+        "coordinateAccuracy": "개념(분지 대표점)",
+        "facilityName": "고갈 유·가스전 CO2 저장(개념)",
+        "leadPartners": "PetroVietnam(PVN)",
+        "location": "Cuu Long·Nam Con Son 분지(대표 위치)"
+      },
+      "provenance": {
+        "citationLocator": "베트남_CCS시설_좌표.xlsx / \"CCS시설_좌표\" 시트 (헤더 4행, 좌표 보유 3건 + 위치 미정 2건)",
+        "downloadAllowed": "가능",
+        "elementId": "A-025",
+        "indicatorId": "A-025_ccs_facility_registry",
+        "licenseCode": "용역 자체 정리자료",
+        "redistributionAllowed": "가능",
+        "referenceYear": "2026",
+        "sourceFileDecoded": "A-025_CCS 시설.xlsx",
+        "sourceFileOriginal": "A-025_CCS 시설.xlsx",
+        "sourceOrg": "STADT(공개 1차 출처 정리)",
+        "sourcePackage": "vietnam-data.zip",
+        "sourceRow": 5,
+        "sourceSheet": "1.2_entity(레코드형)",
+        "sourceUrl": "https://www.globalccsinstitute.com/resources/global-status-of-ccs/"
+      },
+      "rawAttributes": {
+        "attr_1": "지중 저장 후보(Storage)",
+        "attr_2": "계획·법제화 단계"
+      },
+      "recordId": "vnm-v121-a-025-ent-5-b4fde18378f24944",
+      "rightsNote": "플랫폼 표출 가능",
+      "rightsStatus": "public",
+      "warnings": []
+    },
+    {
+      "coordinateQuality": null,
+      "countryIso3": "VNM",
+      "countryRole": "subject-country",
+      "crs": "EPSG:4326",
+      "downloadEligible": true,
+      "elementId": "A-025",
+      "entityType": "CCS 시설",
+      "geometry": null,
+      "geometryType": "point",
+      "indicatorId": "A-025_ccs_facility_registry",
+      "latitude": null,
+      "loadStatus": "published",
+      "longitude": null,
+      "mapEligibilityReason": "좌표가 근사·필드·개념 대표점으로 시설의 정밀 위치가 아님",
+      "mapEligible": false,
+      "missingReasonCode": "M01",
+      "name": "포집(Capture) 연구",
+      "normalizedAttributes": {
+        "facilityName": "포집(Capture) 연구",
+        "facilityType": "연구/타당성",
+        "field_b25998a0": "Black & Veatch 등",
+        "leadOrganization": "대상 발전소 미정",
+        "location": "베트남 최초 석탄화력 flue-gas CCUS 개발 모색",
+        "status": "Black & Veatch 등",
+        "type": "연구/타당성"
+      },
+      "note": "[시설명: 포집(Capture) 연구] 주관: 대상 발전소 미정 · 위치: 베트남 최초 석탄화력 flue-gas CCUS 개발 모색 · [M01·원자료 결측] 연구·타당성 단계로 대상 지점이 확정되지 않아 원천에 좌표가 없음",
+      "noteFields": {
+        "facilityName": "포집(Capture) 연구",
+        "leadOrganization": "대상 발전소 미정",
+        "location": "베트남 최초 석탄화력 flue-gas CCUS 개발 모색"
+      },
+      "provenance": {
+        "citationLocator": "베트남_CCS시설_좌표.xlsx / \"CCS시설_좌표\" 시트 (헤더 4행, 좌표 보유 3건 + 위치 미정 2건)",
+        "downloadAllowed": "가능",
+        "elementId": "A-025",
+        "indicatorId": "A-025_ccs_facility_registry",
+        "licenseCode": "용역 자체 정리자료",
+        "redistributionAllowed": "가능",
+        "referenceYear": "2026",
+        "sourceFileDecoded": "A-025_CCS 시설.xlsx",
+        "sourceFileOriginal": "A-025_CCS 시설.xlsx",
+        "sourceOrg": "STADT(공개 1차 출처 정리)",
+        "sourcePackage": "vietnam-data.zip",
+        "sourceRow": 6,
+        "sourceSheet": "1.2_entity(레코드형)",
+        "sourceUrl": "https://www.globalccsinstitute.com/resources/global-status-of-ccs/"
+      },
+      "rawAttributes": {
+        "attr_1": "연구/타당성",
+        "attr_2": "Black & Veatch 등"
+      },
+      "recordId": "vnm-v121-a-025-ent-6-c35335c84b34a12d",
+      "rightsNote": "플랫폼 표출 가능",
+      "rightsStatus": "public",
+      "warnings": []
+    },
+    {
+      "coordinateQuality": null,
+      "countryIso3": "VNM",
+      "countryRole": "subject-country",
+      "crs": "EPSG:4326",
+      "downloadEligible": true,
+      "elementId": "A-025",
+      "entityType": "CCS 시설",
+      "geometry": null,
+      "geometryType": "point",
+      "indicatorId": "A-025_ccs_facility_registry",
+      "latitude": null,
+      "loadStatus": "published",
+      "longitude": null,
+      "mapEligibilityReason": "좌표가 근사·필드·개념 대표점으로 시설의 정밀 위치가 아님",
+      "mapEligible": false,
+      "missingReasonCode": "M01",
+      "name": "포집(Capture) 연구",
+      "normalizedAttributes": {
+        "facilityName": "포집(Capture) 연구",
+        "facilityType": "연구",
+        "field_b25998a0": "학계/산업",
+        "leadOrganization": "대상 공장 미정",
+        "location": "시멘트 생산 탈탄소화 CCS 연구",
+        "status": "학계/산업",
+        "type": "연구"
+      },
+      "note": "[시설명: 포집(Capture) 연구] 주관: 대상 공장 미정 · 위치: 시멘트 생산 탈탄소화 CCS 연구 · [M01·원자료 결측] 연구·타당성 단계로 대상 지점이 확정되지 않아 원천에 좌표가 없음",
+      "noteFields": {
+        "facilityName": "포집(Capture) 연구",
+        "leadOrganization": "대상 공장 미정",
+        "location": "시멘트 생산 탈탄소화 CCS 연구"
+      },
+      "provenance": {
+        "citationLocator": "베트남_CCS시설_좌표.xlsx / \"CCS시설_좌표\" 시트 (헤더 4행, 좌표 보유 3건 + 위치 미정 2건)",
+        "downloadAllowed": "가능",
+        "elementId": "A-025",
+        "indicatorId": "A-025_ccs_facility_registry",
+        "licenseCode": "용역 자체 정리자료",
+        "redistributionAllowed": "가능",
+        "referenceYear": "2026",
+        "sourceFileDecoded": "A-025_CCS 시설.xlsx",
+        "sourceFileOriginal": "A-025_CCS 시설.xlsx",
+        "sourceOrg": "STADT(공개 1차 출처 정리)",
+        "sourcePackage": "vietnam-data.zip",
+        "sourceRow": 7,
+        "sourceSheet": "1.2_entity(레코드형)",
+        "sourceUrl": "https://www.globalccsinstitute.com/resources/global-status-of-ccs/"
+      },
+      "rawAttributes": {
+        "attr_1": "연구",
+        "attr_2": "학계/산업"
+      },
+      "recordId": "vnm-v121-a-025-ent-7-b16eaa0cbf427d0e",
+      "rightsNote": "플랫폼 표출 가능",
+      "rightsStatus": "public",
+      "warnings": []
+    }
+  ],
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicators": [
+    {
+      "accessedDate": "2026-08-18",
+      "apiEndpoint": null,
+      "apiParams": null,
+      "attributionText": "STADT 자체 정리(공개 1차 출처 기반). 원천 표기는 각 행 note 참조.",
+      "caveat": "[원본 버전] STADT 자체 정리본(검증일 2026-08-04). 원천은 JOGMEC(Rang Dong CO2-EOR)·GEM.wiki(Ca Voi Xanh)·Global CCS Institute·Offshore-technology·Mondaq(법제)·Carbon Pulse의 공개 페이지이며, 각 행 note에 프로젝트별 근거를 병기함. [활용기준] 검토의견 1번에 대응 — 원문이 \"2026년 현재 베트남에 상용 가동 CCS 시설은 없음\"을 명시함. 따라서 상용 가동 시설 수를 0으로 명시적으로 수록하여 \"데이터 없음\"과 \"값이 0\"을 구분하고(1.1), 파일럿·계획·개념·연구 단계 프로젝트 5건은 개체 목록으로 수록함(1.2). 상용 시설 부재는 결측이 아니라 사실이므로 결측코드를 부여하지 않음. [좌표 정밀도] 좌표 3건 모두 근사값임 — Rang Dong은 Block 15-2 블록 단위 근사, Ca Voi Xanh은 GEM.wiki 필드 좌표, 고갈 유·가스전 저장은 분지 대표점(특정 지점 아님). 정밀 GIS 용도로 쓰기 전에 원 사업자(PVN/JVPC/ExxonMobil) 공식 좌표를 별도 확인해야 함. 위치 미정 2건(석탄화력 CCUS 타당성 연구, 시멘트 산업 CCS 연구)은 좌표 없이 수록하고 M01로 표기함. [출처 성격] OpenStreetMap에 CCS 태깅이 사실상 없어 권위 출처 웹조사로 작성된 정리본임. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "citationLocator": "베트남_CCS시설_좌표.xlsx / \"CCS시설_좌표\" 시트 (헤더 4행, 좌표 보유 3건 + 위치 미정 2건)",
+      "comparabilityFlag": "미확인",
+      "crs": "EPSG:4326",
+      "dataOwner": "STADT",
+      "dataType": "geo_point",
+      "derivationMethod": null,
+      "derivationType": "원본",
+      "downloadAllowed": "가능",
+      "elementId": "A-025",
+      "extraMeta": {},
+      "indicatorId": "A-025_ccs_facility_registry",
+      "labelEn": "CCS facility and project registry",
+      "labelKo": "CCS 시설 목록 — 베트남 CCS 관련 시설·프로젝트 개체 목록(좌표·유형·상태)",
+      "lastUpdated": "2026-08-04",
+      "licenseCode": "용역 자체 정리자료",
+      "licenseUrl": "https://www.globalccsinstitute.com/resources/global-status-of-ccs/",
+      "loadStatus": "published",
+      "missingNote": "위치 미정 2건(석탄화력 CCUS 타당성 연구·시멘트 산업 CCS 연구)은 연구·타당성 단계로 대상 지점이 미확정이어서 좌표 없음. 재확보 대상 1차 출처: 사업 시행 시 사업자 공시 및 Global CCS Institute Facilities Database.",
+      "missingReasonCode": "M01",
+      "provenance": {
+        "citationLocator": "베트남_CCS시설_좌표.xlsx / \"CCS시설_좌표\" 시트 (헤더 4행, 좌표 보유 3건 + 위치 미정 2건)",
+        "downloadAllowed": "가능",
+        "elementId": "A-025",
+        "indicatorId": "A-025_ccs_facility_registry",
+        "licenseCode": "용역 자체 정리자료",
+        "redistributionAllowed": "가능",
+        "referenceYear": "2026",
+        "sourceFileDecoded": "A-025_CCS 시설.xlsx",
+        "sourceFileOriginal": "A-025_CCS 시설.xlsx",
+        "sourceOrg": "STADT(공개 1차 출처 정리)",
+        "sourcePackage": "vietnam-data.zip",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info",
+        "sourceUrl": "https://www.globalccsinstitute.com/resources/global-status-of-ccs/"
+      },
+      "redistributionAllowed": "가능",
+      "referenceYear": "2026",
+      "sourceGrade": "학술·연구",
+      "sourceOrg": "STADT(공개 1차 출처 정리)",
+      "sourceSeriesId": "STADT CCS 정리본 2026-08-04",
+      "sourceUrl": "https://www.globalccsinstitute.com/resources/global-status-of-ccs/",
+      "spatialResolution": "point",
+      "spatialUnit": "point",
+      "technologyIds": [
+        "20"
+      ],
+      "timeInterval": "one-off",
+      "timeRange": "2026-2026",
+      "unit": "건",
+      "unitDetail": "attr_1 = 유형, attr_2 = 상태. 좌표계 WGS84(X=경도, Y=위도)",
+      "updateFrequency": "비정기",
+      "verifiedBy": "STADT",
+      "warnings": []
+    },
+    {
+      "accessedDate": "2026-08-18",
+      "apiEndpoint": null,
+      "apiParams": null,
+      "attributionText": "STADT 자체 정리(공개 1차 출처 기반). 원천 표기는 각 행 note 참조.",
+      "caveat": "[원본 버전] STADT 자체 정리본(검증일 2026-08-04). 원천은 JOGMEC(Rang Dong CO2-EOR)·GEM.wiki(Ca Voi Xanh)·Global CCS Institute·Offshore-technology·Mondaq(법제)·Carbon Pulse의 공개 페이지이며, 각 행 note에 프로젝트별 근거를 병기함. [활용기준] 검토의견 1번에 대응 — 원문이 \"2026년 현재 베트남에 상용 가동 CCS 시설은 없음\"을 명시함. 따라서 상용 가동 시설 수를 0으로 명시적으로 수록하여 \"데이터 없음\"과 \"값이 0\"을 구분하고(1.1), 파일럿·계획·개념·연구 단계 프로젝트 5건은 개체 목록으로 수록함(1.2). 상용 시설 부재는 결측이 아니라 사실이므로 결측코드를 부여하지 않음. [좌표 정밀도] 좌표 3건 모두 근사값임 — Rang Dong은 Block 15-2 블록 단위 근사, Ca Voi Xanh은 GEM.wiki 필드 좌표, 고갈 유·가스전 저장은 분지 대표점(특정 지점 아님). 정밀 GIS 용도로 쓰기 전에 원 사업자(PVN/JVPC/ExxonMobil) 공식 좌표를 별도 확인해야 함. 위치 미정 2건(석탄화력 CCUS 타당성 연구, 시멘트 산업 CCS 연구)은 좌표 없이 수록하고 M01로 표기함. [출처 성격] OpenStreetMap에 CCS 태깅이 사실상 없어 권위 출처 웹조사로 작성된 정리본임. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "citationLocator": "베트남_CCS시설_좌표.xlsx / \"출처·메타데이터\" 시트 \"핵심 결론\" 행",
+      "comparabilityFlag": "미확인",
+      "crs": null,
+      "dataOwner": "STADT",
+      "dataType": "numeric",
+      "derivationMethod": null,
+      "derivationType": "원본",
+      "downloadAllowed": "가능",
+      "elementId": "A-025",
+      "extraMeta": {},
+      "indicatorId": "A-025_ccs_operating_facility_count",
+      "labelEn": "Number of commercially operating CCS facilities",
+      "labelKo": "상용 가동 CCS 시설 수 — 상업 운전 중인 CCS 시설 개소",
+      "lastUpdated": "2026-08-04",
+      "licenseCode": "용역 자체 정리자료",
+      "licenseUrl": "https://www.globalccsinstitute.com/resources/global-status-of-ccs/",
+      "loadStatus": "published",
+      "missingNote": null,
+      "missingReasonCode": null,
+      "provenance": {
+        "citationLocator": "베트남_CCS시설_좌표.xlsx / \"출처·메타데이터\" 시트 \"핵심 결론\" 행",
+        "downloadAllowed": "가능",
+        "elementId": "A-025",
+        "indicatorId": "A-025_ccs_operating_facility_count",
+        "licenseCode": "용역 자체 정리자료",
+        "redistributionAllowed": "가능",
+        "referenceYear": "2026",
+        "sourceFileDecoded": "A-025_CCS 시설.xlsx",
+        "sourceFileOriginal": "A-025_CCS 시설.xlsx",
+        "sourceOrg": "STADT(공개 1차 출처 정리)",
+        "sourcePackage": "vietnam-data.zip",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info",
+        "sourceUrl": "https://www.globalccsinstitute.com/resources/global-status-of-ccs/"
+      },
+      "redistributionAllowed": "가능",
+      "referenceYear": "2026",
+      "sourceGrade": "학술·연구",
+      "sourceOrg": "STADT(공개 1차 출처 정리)",
+      "sourceSeriesId": "STADT CCS 정리본 2026-08-04",
+      "sourceUrl": "https://www.globalccsinstitute.com/resources/global-status-of-ccs/",
+      "spatialResolution": "nation",
+      "spatialUnit": "nation",
+      "technologyIds": [
+        "20"
+      ],
+      "timeInterval": "one-off",
+      "timeRange": "2026-2026",
+      "unit": "건",
+      "unitDetail": "개소",
+      "updateFrequency": "비정기",
+      "verifiedBy": "STADT",
+      "warnings": []
+    }
+  ],
+  "observations": [
+    {
+      "countryIso3": "VNM",
+      "countryRole": "subject-country",
+      "downloadEligible": true,
+      "elementId": "A-025",
+      "indicatorId": "A-025_ccs_operating_facility_count",
+      "loadStatus": "published",
+      "missingReasonCode": null,
+      "note": "원문이 \"베트남은 2026년 현재 상용 가동 CCS 시설 없음\"을 명시함. 결측이 아니라 실제 0건.",
+      "period": null,
+      "provenance": {
+        "citationLocator": "베트남_CCS시설_좌표.xlsx / \"출처·메타데이터\" 시트 \"핵심 결론\" 행",
+        "downloadAllowed": "가능",
+        "elementId": "A-025",
+        "indicatorId": "A-025_ccs_operating_facility_count",
+        "licenseCode": "용역 자체 정리자료",
+        "redistributionAllowed": "가능",
+        "referenceYear": "2026",
+        "sourceFileDecoded": "A-025_CCS 시설.xlsx",
+        "sourceFileOriginal": "A-025_CCS 시설.xlsx",
+        "sourceOrg": "STADT(공개 1차 출처 정리)",
+        "sourcePackage": "vietnam-data.zip",
+        "sourceRow": 3,
+        "sourceSheet": "1.1_observation(측정값)",
+        "sourceUrl": "https://www.globalccsinstitute.com/resources/global-status-of-ccs/"
+      },
+      "rawValue": "0",
+      "recordId": "vnm-v121-a-025-obs-3-8b73f3c4e04e60a4",
+      "rightsNote": "플랫폼 표출 가능",
+      "rightsStatus": "public",
+      "unit": "건",
+      "value": 0,
+      "warnings": [],
+      "year": 2026
+    }
+  ],
+  "schemaVersion": "v124"
+}

@@ -230,7 +230,7 @@ export async function loadCountryElementEntitiesV122(
   countryIso3: string,
   elementId: string
 ): Promise<{
-  schemaVersion: "v121";
+  schemaVersion: "v124";
   elementId: string;
   recordCount: number;
   records: CountryEntityV122[];

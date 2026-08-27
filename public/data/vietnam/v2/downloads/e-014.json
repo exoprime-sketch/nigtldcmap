@@ -1,0 +1,312 @@
+{
+  "countryIso3": "VNM",
+  "element": {
+    "assetRef": {
+      "elementId": "E-014",
+      "provider": "vietnam-v124",
+      "section": "bundle"
+    },
+    "availableIndicatorCount": 1,
+    "categoryCode": "E",
+    "categoryLabel": "협력·실행 기반",
+    "dataPresenceStatus": "actual-records",
+    "dataTypes": [
+      "text"
+    ],
+    "detailTemplate": "partner",
+    "displayAllowed": true,
+    "downloadAllowed": true,
+    "downloadAssets": [
+      {
+        "format": "JSON",
+        "mediaType": "application/json",
+        "recordCount": 2,
+        "url": "/data/vietnam/v2/downloads/e-014.json"
+      },
+      {
+        "format": "CSV",
+        "mediaType": "text/csv; charset=utf-8",
+        "recordCount": 2,
+        "url": "/data/vietnam/v2/downloads/e-014.csv"
+      }
+    ],
+    "downloadableRecordCount": 2,
+    "elementId": "E-014",
+    "elementLabel": "양자협정[협정 유형(제6.2조 양자/기후변화 공동위/녹색성장 MOU), 체결국, 체결 일자, 대상 분야, 이행 상태(발효/만료/갱신), 원본 링크]",
+    "emptyReason": null,
+    "entityCount": 2,
+    "groupCode": "E.3.a",
+    "groupLabel": "양자협정 현황",
+    "hasWarnings": true,
+    "indicatorCount": 1,
+    "latestYear": 2023,
+    "mapFeatureCount": 0,
+    "mapMode": "country-aggregate",
+    "nonstandardRowCount": 2,
+    "observationCount": 0,
+    "packageReason": "공개 승인 결정에 따라 원자료 행 공개",
+    "packageStatus": "provided",
+    "publicStatus": "public-authorized",
+    "publicationDecision": {
+      "approvedAt": "2026-08-27",
+      "approvedByRole": "project-owner",
+      "contactFieldsAllowed": true,
+      "decision": "public-release-approved",
+      "decisionId": "VNM-V124-PUBLIC-RELEASE-2026-08-27",
+      "displayAllowed": true,
+      "downloadAllowed": true,
+      "sourceAttributionRequired": true,
+      "sourceLicensePreserved": true
+    },
+    "qualityIssueCount": 1,
+    "referenceYears": [
+      "2023"
+    ],
+    "rights": {
+      "attributionTexts": [],
+      "downloadAllowedValues": [
+        "확인필요"
+      ],
+      "licenses": [],
+      "redistributionAllowedValues": [
+        "확인필요"
+      ],
+      "status": "mixed-or-restricted"
+    },
+    "rowAccounting": {
+      "metadataRows": 1,
+      "nonstandardRows": 2,
+      "normalizedEntityRows": 2,
+      "normalizedObservationRows": 0,
+      "placeholderRows": 1,
+      "publicPopulatedRows": 2,
+      "templateRows": 8
+    },
+    "sectionCode": "E.3",
+    "sectionLabel": "양국 기후협력 체계",
+    "sourceOrganizations": [
+      "대한민국 외교부(MOFA) / 2050 탄소중립녹색성장위원회 등 공식 발표자료(용역사 취합)"
+    ],
+    "sourceUrls": [
+      "레코드별 상이 → 1.2_entity(레코드형) 시트 attr_5_source_url 열 참조"
+    ],
+    "sourceWorkbook": {
+      "exists": true,
+      "fileName": "E-014_양자협정 현황.xlsx"
+    },
+    "spatialUnits": [
+      "nation"
+    ],
+    "technologyIds": []
+  },
+  "entities": [
+    {
+      "countryIso3": "VNM",
+      "crs": null,
+      "downloadEligible": true,
+      "elementId": "E-014",
+      "entityType": "entity",
+      "geometry": null,
+      "geometryType": null,
+      "indicatorId": "E-014_bilateral_agreement",
+      "latitude": null,
+      "loadStatus": "published-with-warning",
+      "longitude": null,
+      "mapEligibilityReason": "no-coordinate",
+      "mapEligible": false,
+      "missingReasonCode": null,
+      "name": "기후변화 협력 공동위원회(JWG)",
+      "normalizedAttributes": {
+        "agreementType": "기후변화 협력 공동위원회(JWG)",
+        "scope": "감축사업·정책협력",
+        "signedDate": "2023",
+        "sourceUrl": "https://www.2050cnc.go.kr/base/board/read?boardManagementNo=43&boardNo=3452",
+        "status": "운영 중"
+      },
+      "note": "제1차 한-베트남 JWG, 6.2조 이행 실무채널",
+      "provenance": {
+        "citationLocator": null,
+        "downloadAllowed": "확인필요",
+        "elementId": "E-014",
+        "indicatorId": "E-014_bilateral_agreement",
+        "licenseCode": null,
+        "redistributionAllowed": "확인필요",
+        "referenceYear": "2023",
+        "sourceFileDecoded": "E-014_양자협정 현황.xlsx",
+        "sourceFileOriginal": "E-014_양자협정 현황.xlsx",
+        "sourceOrg": "대한민국 외교부(MOFA) / 2050 탄소중립녹색성장위원회 등 공식 발표자료(용역사 취합)",
+        "sourcePackage": "vietnam-data(4).zip",
+        "sourceRow": 5,
+        "sourceSheet": "1.2_entity(레코드형)",
+        "sourceUrl": null
+      },
+      "publicationDecision": {
+        "approvedAt": "2026-08-27",
+        "approvedByRole": "project-owner",
+        "contactFieldsAllowed": true,
+        "decision": "public-release-approved",
+        "decisionId": "VNM-V124-PUBLIC-RELEASE-2026-08-27",
+        "displayAllowed": true,
+        "downloadAllowed": true,
+        "sourceAttributionRequired": true,
+        "sourceLicensePreserved": true
+      },
+      "rawAttributes": {
+        "attr_1": "기후변화 협력 공동위원회(JWG)",
+        "attr_2": "2023",
+        "attr_3": "감축사업·정책협력",
+        "attr_4": "운영 중",
+        "attr_5": "https://www.2050cnc.go.kr/base/board/read?boardManagementNo=43&boardNo=3452"
+      },
+      "recordId": "v124-e-014-entity-00001",
+      "rightsNote": "Project-owner publication decision VNM-V124-PUBLIC-RELEASE-2026-08-27; source license and attribution remain preserved",
+      "rightsStatus": "publication-authorized",
+      "warnings": [
+        "source-url-stored-as-note"
+      ]
+    },
+    {
+      "countryIso3": "VNM",
+      "crs": null,
+      "downloadEligible": true,
+      "elementId": "E-014",
+      "entityType": "entity",
+      "geometry": null,
+      "geometryType": null,
+      "indicatorId": "E-014_bilateral_agreement",
+      "latitude": null,
+      "loadStatus": "published-with-warning",
+      "longitude": null,
+      "mapEligibilityReason": "no-coordinate",
+      "mapEligible": false,
+      "missingReasonCode": null,
+      "name": "기후변화 협력 기본협정 (파리협정 6.2조 근거)",
+      "normalizedAttributes": {
+        "agreementType": "기후변화 협력 기본협정 (파리협정 6.2조 근거)",
+        "scope": "감축사업·에너지·산림 등 기후 전반",
+        "signedDate": "2021-05 서명 / 2021-11 발효",
+        "sourceUrl": "https://www.mofa.go.kr/www/brd/m_3825/view.do?seq=367599",
+        "status": "발효"
+      },
+      "note": "조약 제2493호, 온실가스국제감축포탈 6.2조 협정 등재",
+      "provenance": {
+        "citationLocator": null,
+        "downloadAllowed": "확인필요",
+        "elementId": "E-014",
+        "indicatorId": "E-014_bilateral_agreement",
+        "licenseCode": null,
+        "redistributionAllowed": "확인필요",
+        "referenceYear": "2023",
+        "sourceFileDecoded": "E-014_양자협정 현황.xlsx",
+        "sourceFileOriginal": "E-014_양자협정 현황.xlsx",
+        "sourceOrg": "대한민국 외교부(MOFA) / 2050 탄소중립녹색성장위원회 등 공식 발표자료(용역사 취합)",
+        "sourcePackage": "vietnam-data(4).zip",
+        "sourceRow": 4,
+        "sourceSheet": "1.2_entity(레코드형)",
+        "sourceUrl": null
+      },
+      "publicationDecision": {
+        "approvedAt": "2026-08-27",
+        "approvedByRole": "project-owner",
+        "contactFieldsAllowed": true,
+        "decision": "public-release-approved",
+        "decisionId": "VNM-V124-PUBLIC-RELEASE-2026-08-27",
+        "displayAllowed": true,
+        "downloadAllowed": true,
+        "sourceAttributionRequired": true,
+        "sourceLicensePreserved": true
+      },
+      "rawAttributes": {
+        "attr_1": "기후변화 협력 기본협정 (파리협정 6.2조 근거)",
+        "attr_2": "2021-05 서명 / 2021-11 발효",
+        "attr_3": "감축사업·에너지·산림 등 기후 전반",
+        "attr_4": "발효",
+        "attr_5": "https://www.mofa.go.kr/www/brd/m_3825/view.do?seq=367599"
+      },
+      "recordId": "v124-e-014-entity-00002",
+      "rightsNote": "Project-owner publication decision VNM-V124-PUBLIC-RELEASE-2026-08-27; source license and attribution remain preserved",
+      "rightsStatus": "publication-authorized",
+      "warnings": [
+        "source-url-stored-as-note"
+      ]
+    }
+  ],
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicators": [
+    {
+      "accessedDate": "2026-08-14",
+      "apiEndpoint": null,
+      "apiParams": null,
+      "attributionText": null,
+      "caveat": null,
+      "citationLocator": null,
+      "comparabilityFlag": "미확인",
+      "crs": null,
+      "dataOwner": "슈타트(STADT)",
+      "dataType": "text",
+      "derivationMethod": "원본 E-014 시트의 협정 2건을 협정유형/체결일자/대상분야/이행상태/원본링크 5개 속성의 레코드로 전환. 집계·연산 없음.",
+      "derivationType": "자체 산출",
+      "downloadAllowed": "확인필요",
+      "elementId": "E-014",
+      "extraMeta": {
+        "sourceUrlNote": "레코드별 상이 → 1.2_entity(레코드형) 시트 attr_5_source_url 열 참조"
+      },
+      "indicatorId": "E-014_bilateral_agreement",
+      "labelEn": "Bilateral climate cooperation agreements",
+      "labelKo": "양자협정 현황",
+      "lastUpdated": null,
+      "licenseCode": null,
+      "licenseUrl": null,
+      "loadStatus": "published-with-warning",
+      "missingNote": "라이선스·라이선스 URL·최종갱신일·수집일·담당자·검증자 미확인(M06). 레코드 값 자체의 결측은 없음.",
+      "missingReasonCode": "M06",
+      "provenance": {
+        "citationLocator": null,
+        "downloadAllowed": "확인필요",
+        "elementId": "E-014",
+        "indicatorId": "E-014_bilateral_agreement",
+        "licenseCode": null,
+        "redistributionAllowed": "확인필요",
+        "referenceYear": "2023",
+        "sourceFileDecoded": "E-014_양자협정 현황.xlsx",
+        "sourceFileOriginal": "E-014_양자협정 현황.xlsx",
+        "sourceOrg": "대한민국 외교부(MOFA) / 2050 탄소중립녹색성장위원회 등 공식 발표자료(용역사 취합)",
+        "sourcePackage": "vietnam-data.zip",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info",
+        "sourceUrl": "레코드별 상이 → 1.2_entity(레코드형) 시트 attr_5_source_url 열 참조"
+      },
+      "publicationDecision": {
+        "approvedAt": "2026-08-27",
+        "approvedByRole": "project-owner",
+        "contactFieldsAllowed": true,
+        "decision": "public-release-approved",
+        "decisionId": "VNM-V124-PUBLIC-RELEASE-2026-08-27",
+        "displayAllowed": true,
+        "downloadAllowed": true,
+        "sourceAttributionRequired": true,
+        "sourceLicensePreserved": true
+      },
+      "redistributionAllowed": "확인필요",
+      "referenceYear": "2023",
+      "sourceGrade": "공식(정부·법령)",
+      "sourceOrg": "대한민국 외교부(MOFA) / 2050 탄소중립녹색성장위원회 등 공식 발표자료(용역사 취합)",
+      "sourceSeriesId": null,
+      "sourceUrl": null,
+      "spatialResolution": "nation",
+      "spatialUnit": "nation",
+      "technologyIds": [],
+      "timeInterval": "irregular",
+      "timeRange": "2021-2023",
+      "unit": "건(협정)",
+      "unitDetail": "협정 1건 = 1레코드(entity)",
+      "updateFrequency": "비정기",
+      "verifiedBy": null,
+      "warnings": [
+        "source-url-stored-as-note"
+      ]
+    }
+  ],
+  "observations": [],
+  "schemaVersion": "v124"
+}

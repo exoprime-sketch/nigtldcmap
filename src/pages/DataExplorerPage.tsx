@@ -156,7 +156,7 @@ export default function DataExplorerPage({
   ]);
 
   const availableCatalog = useMemo(
-    () => catalog.filter((item) => item.hasPublicData),
+    () => catalog.filter((item) => item.isDiscoverable),
     [catalog]
   );
 
@@ -446,6 +446,20 @@ export default function DataExplorerPage({
               <span>{item.categoryLabel}</span>
               <span aria-hidden="true">›</span>
               <span>{item.groupLabel}</span>
+            </div>
+            <div className="cdp-chip-row" aria-label="데이터 공개 상태">
+              <span
+                className="cdp-chip"
+                data-public-status={item.publicStatus}
+              >
+                {item.publicStatusLabel}
+              </span>
+              {!item.hasMapData &&
+                (item.raw.detailTemplate === "spatial" ||
+                  item.raw.spatialAvailability === "not-available" ||
+                  item.raw.spatialAvailability === "not-collected") && (
+                  <span className="cdp-chip">공간자료 미확보</span>
+                )}
             </div>
             {showCountryContext && (
               <span className="cdp-country-chip">{item.countryNameKo}</span>

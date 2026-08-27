@@ -1,0 +1,229 @@
+{
+  "countryIso3": "VNM",
+  "element": {
+    "assetRef": {
+      "elementId": "E-011",
+      "provider": "vietnam-v124",
+      "section": "bundle"
+    },
+    "availableIndicatorCount": 0,
+    "categoryCode": "E",
+    "categoryLabel": "협력·실행 기반",
+    "dataPresenceStatus": "no-populated-record",
+    "dataTypes": [
+      "numeric"
+    ],
+    "detailTemplate": "entity",
+    "displayAllowed": true,
+    "downloadAllowed": true,
+    "downloadAssets": [
+      {
+        "format": "JSON",
+        "mediaType": "application/json",
+        "recordCount": 1,
+        "url": "/data/vietnam/v2/downloads/e-011.json"
+      },
+      {
+        "format": "CSV",
+        "mediaType": "text/csv; charset=utf-8",
+        "recordCount": 1,
+        "url": "/data/vietnam/v2/downloads/e-011.csv"
+      }
+    ],
+    "downloadableRecordCount": 1,
+    "elementId": "E-011",
+    "elementLabel": "기술준비수준(TRL)",
+    "emptyReason": "explicit-placeholder-only",
+    "entityCount": 0,
+    "groupCode": "E.2.c",
+    "groupLabel": "개도국 기술 역량 평가 지표",
+    "hasWarnings": false,
+    "indicatorCount": 1,
+    "latestYear": 2026,
+    "mapFeatureCount": 0,
+    "mapMode": "country-aggregate",
+    "nonstandardRowCount": 1,
+    "observationCount": 1,
+    "packageReason": "공개 승인 결정에 따라 원자료 행 공개",
+    "packageStatus": "provided",
+    "publicStatus": "data-entry-planned",
+    "publicationDecision": {
+      "approvedAt": "2026-08-27",
+      "approvedByRole": "project-owner",
+      "contactFieldsAllowed": true,
+      "decision": "public-release-approved",
+      "decisionId": "VNM-V124-PUBLIC-RELEASE-2026-08-27",
+      "displayAllowed": true,
+      "downloadAllowed": true,
+      "sourceAttributionRequired": true,
+      "sourceLicensePreserved": true
+    },
+    "qualityIssueCount": 0,
+    "referenceYears": [
+      "2026"
+    ],
+    "rights": {
+      "attributionTexts": [
+        "현지조사 수행 시 동의 범위에 따라 기재 예정"
+      ],
+      "downloadAllowedValues": [
+        "확인필요"
+      ],
+      "licenses": [
+        "현지조사-동의범위(예정)"
+      ],
+      "redistributionAllowedValues": [
+        "확인필요"
+      ],
+      "status": "mixed-or-restricted"
+    },
+    "rowAccounting": {
+      "metadataRows": 1,
+      "nonstandardRows": 1,
+      "normalizedEntityRows": 0,
+      "normalizedObservationRows": 1,
+      "placeholderRows": 1,
+      "publicPopulatedRows": 0,
+      "templateRows": 7
+    },
+    "sectionCode": "E.2",
+    "sectionLabel": "개도국 기술 역량",
+    "sourceOrganizations": [
+      "해당없음 — 공개 원천 부재. 전문가 평가·현장조사로 생성 예정"
+    ],
+    "sourceUrls": [],
+    "sourceWorkbook": {
+      "exists": true,
+      "fileName": "E-011_기술준비수준 (TRL).xlsx"
+    },
+    "spatialUnits": [
+      "nation"
+    ],
+    "technologyIds": [
+      "확인필요"
+    ]
+  },
+  "entities": [],
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicators": [
+    {
+      "accessedDate": "2026-08-14",
+      "apiEndpoint": null,
+      "apiParams": null,
+      "attributionText": "현지조사 수행 시 동의 범위에 따라 기재 예정",
+      "caveat": null,
+      "citationLocator": "미확보",
+      "comparabilityFlag": "미확인",
+      "crs": null,
+      "dataOwner": "슈타트(STADT)",
+      "dataType": "numeric",
+      "derivationMethod": null,
+      "derivationType": "원본",
+      "downloadAllowed": "확인필요",
+      "elementId": "E-011",
+      "extraMeta": {},
+      "indicatorId": "E-011_trl",
+      "labelEn": "Technology Readiness Level (TRL)",
+      "labelKo": "기술준비수준(TRL)",
+      "lastUpdated": null,
+      "licenseCode": "현지조사-동의범위(예정)",
+      "licenseUrl": null,
+      "loadStatus": "published",
+      "missingNote": "베트남 TRL 값 전량 미확보. 원본 기재: '미확보(공개 데이터 없음)', '공개 국제 DB 부재",
+      "missingReasonCode": "M07",
+      "provenance": {
+        "citationLocator": "미확보",
+        "downloadAllowed": "확인필요",
+        "elementId": "E-011",
+        "indicatorId": "E-011_trl",
+        "licenseCode": "현지조사-동의범위(예정)",
+        "redistributionAllowed": "확인필요",
+        "referenceYear": "2026",
+        "sourceFileDecoded": "E-011_기술준비수준 (TRL).xlsx",
+        "sourceFileOriginal": "E-011_기술준비수준 (TRL).xlsx",
+        "sourceOrg": "해당없음 — 공개 원천 부재. 전문가 평가·현장조사로 생성 예정",
+        "sourcePackage": "vietnam-data.zip",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info",
+        "sourceUrl": null
+      },
+      "publicationDecision": {
+        "approvedAt": "2026-08-27",
+        "approvedByRole": "project-owner",
+        "contactFieldsAllowed": true,
+        "decision": "public-release-approved",
+        "decisionId": "VNM-V124-PUBLIC-RELEASE-2026-08-27",
+        "displayAllowed": true,
+        "downloadAllowed": true,
+        "sourceAttributionRequired": true,
+        "sourceLicensePreserved": true
+      },
+      "redistributionAllowed": "확인필요",
+      "referenceYear": "2026",
+      "sourceGrade": "미상",
+      "sourceOrg": "해당없음 — 공개 원천 부재. 전문가 평가·현장조사로 생성 예정",
+      "sourceSeriesId": "미확보",
+      "sourceUrl": null,
+      "spatialResolution": "nation",
+      "spatialUnit": "nation",
+      "technologyIds": [
+        "확인필요"
+      ],
+      "timeInterval": "one-off",
+      "timeRange": "2026-2026",
+      "unit": "등급",
+      "unitDetail": "TRL 1~9 (9단계 척도)",
+      "updateFrequency": "1회성",
+      "verifiedBy": null,
+      "warnings": []
+    }
+  ],
+  "observations": [
+    {
+      "countryIso3": "VNM",
+      "downloadEligible": true,
+      "elementId": "E-011",
+      "indicatorId": "E-011_trl",
+      "loadStatus": "published",
+      "missingReasonCode": "M01",
+      "note": "공개 국제 DB 부재",
+      "period": null,
+      "provenance": {
+        "citationLocator": "미확보",
+        "downloadAllowed": "확인필요",
+        "elementId": "E-011",
+        "indicatorId": "E-011_trl",
+        "licenseCode": "현지조사-동의범위(예정)",
+        "redistributionAllowed": "확인필요",
+        "referenceYear": "2026",
+        "sourceFileDecoded": "E-011_기술준비수준 (TRL).xlsx",
+        "sourceFileOriginal": "E-011_기술준비수준 (TRL).xlsx",
+        "sourceOrg": "해당없음 — 공개 원천 부재. 전문가 평가·현장조사로 생성 예정",
+        "sourcePackage": "vietnam-data(4).zip",
+        "sourceRow": 3,
+        "sourceSheet": "1.1_observation(측정값)",
+        "sourceUrl": null
+      },
+      "publicationDecision": {
+        "approvedAt": "2026-08-27",
+        "approvedByRole": "project-owner",
+        "contactFieldsAllowed": true,
+        "decision": "public-release-approved",
+        "decisionId": "VNM-V124-PUBLIC-RELEASE-2026-08-27",
+        "displayAllowed": true,
+        "downloadAllowed": true,
+        "sourceAttributionRequired": true,
+        "sourceLicensePreserved": true
+      },
+      "rawValue": null,
+      "recordId": "v124-e-011-obs-00001",
+      "rightsNote": "Project-owner publication decision VNM-V124-PUBLIC-RELEASE-2026-08-27; source license and attribution remain preserved",
+      "rightsStatus": "publication-authorized",
+      "unit": "등급",
+      "value": null,
+      "warnings": [],
+      "year": 2026
+    }
+  ],
+  "schemaVersion": "v124"
+}

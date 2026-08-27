@@ -1,0 +1,76 @@
+{
+  "accountedElements": 152,
+  "assetLayoutVersion": "gzip-base64-json-envelope-v2",
+  "assets": {
+    "assetIntegrity": "/data/vietnam/v2/asset-integrity.json",
+    "bundleIndex": "/data/vietnam/v2/packs/bundle-index-v124.json",
+    "catalog": "/data/vietnam/v2/catalog.json",
+    "frameworkCoverage": "/data/vietnam/v2/framework-coverage.json",
+    "mapIndex": "/data/vietnam/v2/map-index.json",
+    "publicationDecisions": "/data/vietnam/v2/publication-decisions.json",
+    "qualityReport": "/data/vietnam/v2/quality-report.json",
+    "rightsMatrix": "/data/vietnam/v2/rights-matrix.json",
+    "searchIndex": [
+      "/data/vietnam/v2/packs/search-index-v124-fb3e015c.json"
+    ],
+    "sourceRegistry": "/data/vietnam/v2/packs/source-registry-v124-68d4d85c.json"
+  },
+  "authorizedElementCount": 20,
+  "authorizedRows": {
+    "entities": 176,
+    "found": 360,
+    "observations": 184,
+    "published": 360,
+    "suppressed": 0,
+    "withoutPopulatedRows": [
+      "E-011",
+      "E-013"
+    ]
+  },
+  "bundleIndexElements": 152,
+  "country": {
+    "iso3": "VNM",
+    "nameEn": "Viet Nam",
+    "nameKo": "베트남"
+  },
+  "downloadableElementCount": 114,
+  "frameworkElements": 152,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "mapFeatureCount": 1917,
+  "mapLayerCount": 5,
+  "packCount": 19,
+  "publicStatusCounts": {
+    "actual": 126,
+    "data-entry-planned": 1,
+    "not-collected": 3,
+    "partial": 3,
+    "public-authorized": 18,
+    "quarantined": 0,
+    "schema-only": 1
+  },
+  "rawRows": {
+    "entities": 5647,
+    "metadata": 7390,
+    "nonstandardRows": 129,
+    "normalizedCoreRows": 45453,
+    "observations": 32416,
+    "total": 45582
+  },
+  "rowBalance": {
+    "explicitPlaceholderRows": 40,
+    "formOrAuxiliaryRows": 56,
+    "matches": true,
+    "processedCoreRows": 45453,
+    "processedNonstandardRows": 129,
+    "processedRows": 45582,
+    "sourceOriginalRows": 45582,
+    "supplementalSourceRows": 33
+  },
+  "runtimeVersion": "v124-gzip-json-envelope-v1",
+  "schemaVersion": "v124",
+  "shardCount": 19,
+  "sourcePackage": "vietnam-data(4).zip",
+  "sourcePackageSha256": "db94f0c6cc2382cf2e10bf117109870b50d03172e9bbebdb84b8e421dee99b56",
+  "unexplainedElements": 0,
+  "workbookFiles": 149
+}

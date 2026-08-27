@@ -13,10 +13,10 @@ import {
 import type { CountryCatalogItemV122 } from "../data/countries/countryDataTypesV122";
 import { safePublicFilenamePartV122 } from "../data/countries/publicLabelsV122";
 import type {
-  VietnamEntityV121,
-  VietnamIndicatorMetaV121,
-  VietnamObservationV121,
-} from "../data/vietnam/vietnamTypesV121";
+  VietnamEntityV124,
+  VietnamIndicatorMetaV124,
+  VietnamObservationV124,
+} from "../data/vietnam/vietnamTypesV124";
 import {
   downloadDateV121,
   entitiesToCsvV121,
@@ -40,10 +40,10 @@ type OutputFormat = "CSV" | "JSON";
 
 type PreparedDownload = {
   element: CountryCatalogItemV122;
-  allowedMeta: VietnamIndicatorMetaV121[];
-  metadataById: Map<string, VietnamIndicatorMetaV121>;
-  observations: VietnamObservationV121[];
-  entities: VietnamEntityV121[];
+  allowedMeta: VietnamIndicatorMetaV124[];
+  metadataById: Map<string, VietnamIndicatorMetaV124>;
+  observations: VietnamObservationV124[];
+  entities: VietnamEntityV124[];
 };
 
 function unique(values: Array<string | null | undefined>): string[] {
@@ -52,13 +52,24 @@ function unique(values: Array<string | null | undefined>): string[] {
   ).sort((a, b) => a.localeCompare(b, "ko"));
 }
 
-function canDownloadMeta(meta: VietnamIndicatorMetaV121): boolean {
+function canDownloadMeta(
+  meta: VietnamIndicatorMetaV124,
+  element: CountryCatalogItemV122
+): boolean {
+  const decision =
+    meta.publicationDecision || element.raw.publicationDecision || null;
+  if (
+    decision?.downloadAllowed === true &&
+    (!decision.decision || decision.decision === "public-release-approved")
+  ) {
+    return true;
+  }
   return (
     meta.redistributionAllowed === "가능" && meta.downloadAllowed === "가능"
   );
 }
 
-function entityYear(row: VietnamEntityV121): number | null {
+function entityYear(row: VietnamEntityV124): number | null {
   const attrs = row.normalizedAttributes || {};
   for (const key of [
     "referenceYear",
@@ -91,8 +102,8 @@ function inPeriod(
 }
 
 function publicProvenance(
-  row: VietnamObservationV121 | VietnamEntityV121,
-  meta?: VietnamIndicatorMetaV121
+  row: VietnamObservationV124 | VietnamEntityV124,
+  meta?: VietnamIndicatorMetaV124
 ) {
   return {
     sourceOrganization: row.provenance.sourceOrg || meta?.sourceOrg || null,
@@ -101,6 +112,10 @@ function publicProvenance(
     referenceYear: row.provenance.referenceYear || meta?.referenceYear || null,
     license: row.provenance.licenseCode || meta?.licenseCode || null,
     attribution: meta?.attributionText || null,
+    publicationDecisionId:
+      row.publicationDecision?.decisionId ||
+      meta?.publicationDecision?.decisionId ||
+      null,
     sourceFile: row.provenance.sourceFileDecoded,
     sourceSheet: row.provenance.sourceSheet,
     sourceRow: row.provenance.sourceRow,
@@ -126,6 +141,7 @@ function combinedCsv(items: PreparedDownload[]): string {
     "citation_locator",
     "license_code",
     "attribution_text",
+    "publication_decision_id",
     "source_file",
     "source_sheet",
     "source_row",
@@ -158,6 +174,7 @@ function combinedCsv(items: PreparedDownload[]): string {
           source.citation,
           source.license,
           source.attribution,
+          source.publicationDecisionId,
           source.sourceFile,
           source.sourceSheet,
           source.sourceRow,
@@ -190,6 +207,7 @@ function combinedCsv(items: PreparedDownload[]): string {
           source.citation,
           source.license,
           source.attribution,
+          source.publicationDecisionId,
           source.sourceFile,
           source.sourceSheet,
           source.sourceRow,
@@ -385,8 +403,22 @@ export default function DownloadPage({
       );
       const prepared: PreparedDownload[] = bundles.map(
         ({ element, bundle }) => {
+          const eligibleIndicatorIds = new Set<string>();
+          bundle.observations.records.forEach((row) => {
+            if (row.downloadEligible) eligibleIndicatorIds.add(row.indicatorId);
+          });
+          bundle.entities.records.forEach((row) => {
+            if (row.downloadEligible && row.indicatorId) {
+              eligibleIndicatorIds.add(row.indicatorId);
+            }
+          });
           const allowedMeta = bundle.meta.indicators.filter((meta) => {
-            if (!canDownloadMeta(meta)) return false;
+            if (
+              !canDownloadMeta(meta, element) &&
+              !eligibleIndicatorIds.has(meta.indicatorId)
+            ) {
+              return false;
+            }
             if (
               sourceOrganization !== "all" &&
               meta.sourceOrg !== sourceOrganization
@@ -401,7 +433,7 @@ export default function DownloadPage({
             }
             return true;
           });
-          const metadataById = new Map<string, VietnamIndicatorMetaV121>(
+          const metadataById = new Map<string, VietnamIndicatorMetaV124>(
             allowedMeta.map((meta) => [meta.indicatorId, meta])
           );
           const observations = bundle.observations.records.filter(

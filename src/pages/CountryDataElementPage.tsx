@@ -10,11 +10,11 @@ import {
 } from "../data/countries/countryDataProviderRegistryV122";
 import type { CountryCatalogItemV122 } from "../data/countries/countryDataTypesV122";
 import type {
-  VietnamElementMetaBundleV121,
-  VietnamEntityV121,
-  VietnamIndicatorMetaV121,
-  VietnamObservationV121,
-} from "../data/vietnam/vietnamTypesV121";
+  VietnamElementMetaBundleV124,
+  VietnamEntityV124,
+  VietnamIndicatorMetaV124,
+  VietnamObservationV124,
+} from "../data/vietnam/vietnamTypesV124";
 import {
   entityColumnsV121,
   entityDisplayNameV121,
@@ -48,9 +48,9 @@ interface Props {
 type Tab = "data" | "source";
 
 interface ElementBundle {
-  meta: VietnamElementMetaBundleV121;
-  observations: VietnamObservationV121[];
-  entities: VietnamEntityV121[];
+  meta: VietnamElementMetaBundleV124;
+  observations: VietnamObservationV124[];
+  entities: VietnamEntityV124[];
 }
 
 const PAGE_SIZE = 25;
@@ -95,7 +95,7 @@ const CHART_SERIES_COLORS_V122 = [
   "#3f6212",
 ] as const;
 
-type NumericObservationV122 = VietnamObservationV121 & {
+type NumericObservationV122 = VietnamObservationV124 & {
   year: number;
   value: number;
 };
@@ -132,7 +132,7 @@ type ChartTooltipV122 = {
 };
 
 function chartGroupForIndicatorV122(
-  meta: VietnamIndicatorMetaV121 | undefined,
+  meta: VietnamIndicatorMetaV124 | undefined,
   fallbackUnit: string
 ): { key: string; label: string } {
   const unit = (meta?.unit || fallbackUnit || "값").trim() || "값";
@@ -206,8 +206,8 @@ function smoothMonotonePathV122(
 }
 
 function buildChartGroupsV122(
-  rows: VietnamObservationV121[],
-  metadataById: Map<string, VietnamIndicatorMetaV121>,
+  rows: VietnamObservationV124[],
+  metadataById: Map<string, VietnamIndicatorMetaV124>,
   selectedIndicatorId: string,
   countryNameKo: string
 ): ChartGroupV122[] {
@@ -590,8 +590,8 @@ function TimeSeriesChart({
   selectedIndicatorId,
   countryNameKo,
 }: {
-  rows: VietnamObservationV121[];
-  metadataById: Map<string, VietnamIndicatorMetaV121>;
+  rows: VietnamObservationV124[];
+  metadataById: Map<string, VietnamIndicatorMetaV124>;
   selectedIndicatorId: string;
   countryNameKo: string;
 }) {
@@ -637,6 +637,69 @@ function SourceLink({ url }: { url?: string | null }) {
       원자료 확인
     </a>
   );
+}
+
+function emptyStateCopyV124(item: CountryCatalogItemV122 | null): {
+  title: string;
+  description: string;
+} {
+  const explicitReason = item?.emptyReason?.trim();
+  switch (item?.publicStatus) {
+    case "schema-only":
+      return {
+        title: "입력 양식만 제공된 데이터입니다",
+        description:
+          explicitReason || "원자료에 실제 값이 채워진 레코드는 없습니다",
+      };
+    case "data-entry-planned":
+      return {
+        title: "데이터 입력 예정입니다",
+        description:
+          explicitReason || "수집·입력이 완료되면 실제 레코드를 제공합니다",
+      };
+    case "not-collected":
+      return {
+        title: "원자료가 아직 수집되지 않았습니다",
+        description:
+          explicitReason || "확인된 범위에서 임의 데이터를 생성하지 않았습니다",
+      };
+    case "quarantined":
+      return {
+        title: "형식 검토가 필요한 데이터입니다",
+        description:
+          explicitReason || "원자료 형식을 확인한 뒤 공개 레코드를 제공합니다",
+      };
+    default:
+      return {
+        title: "표시할 자료가 없습니다",
+        description:
+          explicitReason || "출처·이용조건에서 공식 원자료를 확인할 수 있습니다",
+      };
+  }
+}
+
+function EntityAttributeValueV124({
+  column,
+  value,
+}: {
+  column: string;
+  value: unknown;
+}) {
+  if (isHttpUrlV121(value)) {
+    return (
+      <a href={String(value)} target="_blank" rel="noreferrer">
+        원문
+      </a>
+    );
+  }
+  const text = value === null || value === undefined ? "" : String(value);
+  if (/email/i.test(column) && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(text)) {
+    return <a href={`mailto:${text}`}>{text}</a>;
+  }
+  if (/phone|telephone|tel$/i.test(column) && text.trim()) {
+    return <a href={`tel:${text.replace(/[^0-9+]/g, "")}`}>{text}</a>;
+  }
+  return <>{formatValueV121(value)}</>;
 }
 
 export default function CountryDataElementPage({
@@ -716,9 +779,12 @@ export default function CountryDataElementPage({
     [bundle]
   );
   const normalizedQuery = normalizedSearchV121(query);
+  const hasPopulatedRows =
+    catalogItem?.dataPresenceStatus === "actual-records" ||
+    catalogItem?.dataPresenceStatus === "partial-records";
 
   const observations = useMemo(() => {
-    if (!bundle) return [];
+    if (!bundle || !hasPopulatedRows) return [];
     return bundle.observations.filter((row) => {
       if (indicatorId !== "all" && row.indicatorId !== indicatorId)
         return false;
@@ -728,17 +794,17 @@ export default function CountryDataElementPage({
         metadataById.get(row.indicatorId)
       ).includes(normalizedQuery);
     });
-  }, [bundle, indicatorId, metadataById, normalizedQuery]);
+  }, [bundle, hasPopulatedRows, indicatorId, metadataById, normalizedQuery]);
 
   const entities = useMemo(() => {
-    if (!bundle) return [];
+    if (!bundle || !hasPopulatedRows) return [];
     return bundle.entities.filter((row) => {
       if (indicatorId !== "all" && row.indicatorId !== indicatorId)
         return false;
       if (!normalizedQuery) return true;
       return entitySearchTextV121(row).includes(normalizedQuery);
     });
-  }, [bundle, indicatorId, normalizedQuery]);
+  }, [bundle, hasPopulatedRows, indicatorId, normalizedQuery]);
 
   const totalPages = Math.max(
     1,
@@ -813,8 +879,16 @@ export default function CountryDataElementPage({
       : latestObservationV121(bundle?.observations || [], indicatorId);
   const entityColumns = entityColumnsV121(
     entities,
-    meta?.element.detailTemplate || "entity"
+    meta?.element.detailTemplate || "entity",
+    meta?.element.detailTemplate === "partner" ? 16 : 10
   );
+  const entityFieldLabels = new Map(
+    (meta?.fieldDefinitions || []).map((field) => [
+      field.normalizedKey,
+      field.label,
+    ])
+  );
+  const emptyStateCopy = emptyStateCopyV124(catalogItem);
   const sourceOrganizations = Array.from(
     new Set(
       (meta?.indicators || []).map((item) => item.sourceOrg).filter(Boolean)
@@ -875,6 +949,16 @@ export default function CountryDataElementPage({
                   {catalogItem?.groupLabel || meta.element.groupLabel}
                 </span>
               </div>
+              {catalogItem && (
+                <div className="cdp-chip-row" aria-label="데이터 공개 상태">
+                  <span
+                    className="cdp-chip"
+                    data-public-status={catalogItem.publicStatus}
+                  >
+                    {catalogItem.publicStatusLabel}
+                  </span>
+                </div>
+              )}
               <h1>{catalogItem?.publicTitle || meta.element.elementLabel}</h1>
               <p>
                 {provider.countryNameKo}
@@ -1009,8 +1093,8 @@ export default function CountryDataElementPage({
               <CountryElementVisualizationV123
                 elementId={elementId}
                 countryNameKo={provider.countryNameKo}
-                observations={bundle?.observations || []}
-                entities={bundle?.entities || []}
+                observations={hasPopulatedRows ? bundle?.observations || [] : []}
+                entities={hasPopulatedRows ? bundle?.entities || [] : []}
                 indicators={meta.indicators}
                 selectedIndicatorId={indicatorId}
               />
@@ -1073,7 +1157,10 @@ export default function CountryDataElementPage({
                         <tr>
                           <th>명칭</th>
                           {entityColumns.map((column) => (
-                            <th key={column}>{fieldLabelV121(column)}</th>
+                            <th key={column}>
+                              {entityFieldLabels.get(column) ||
+                                fieldLabelV121(column)}
+                            </th>
                           ))}
                           <th>출처</th>
                         </tr>
@@ -1086,17 +1173,10 @@ export default function CountryDataElementPage({
                               const value = row.normalizedAttributes?.[column];
                               return (
                                 <td key={column}>
-                                  {isHttpUrlV121(value) ? (
-                                    <a
-                                      href={String(value)}
-                                      target="_blank"
-                                      rel="noreferrer"
-                                    >
-                                      원문
-                                    </a>
-                                  ) : (
-                                    formatValueV121(value)
-                                  )}
+                                  <EntityAttributeValueV124
+                                    column={column}
+                                    value={value}
+                                  />
                                 </td>
                               );
                             })}
@@ -1115,8 +1195,8 @@ export default function CountryDataElementPage({
 
               {observations.length === 0 && entities.length === 0 && (
                 <div className="cdp-empty">
-                  <h3>표시할 자료가 없습니다</h3>
-                  <p>출처·이용조건에서 공식 원자료를 확인할 수 있습니다</p>
+                  <h3>{emptyStateCopy.title}</h3>
+                  <p>{emptyStateCopy.description}</p>
                 </div>
               )}
 

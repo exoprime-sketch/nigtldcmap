@@ -53,7 +53,9 @@
     "audit:v121": "node scripts/final-release-audit-v121.mjs",
     "finalize:v121": "npm run audit:v121",
     "audit:v122": "node scripts/final-release-audit-v122.mjs",
-    "finalize:v122": "npm run audit:v122"
+    "finalize:v122": "npm run audit:v122",
+    "build:data:v124": "node scripts/build-vietnam-data-v124.mjs",
+    "audit:data:v124": "node scripts/audit-vietnam-data-v124.mjs"
   },
   "browserslist": [
     ">0.2%",

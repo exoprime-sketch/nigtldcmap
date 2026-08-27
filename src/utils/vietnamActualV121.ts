@@ -5,6 +5,7 @@ import type {
   VietnamIndicatorMetaV121,
   VietnamObservationV121,
 } from "../data/vietnam/vietnamTypesV121";
+import type { VietnamElementPublicStatusV124 } from "../data/vietnam/vietnamTypesV124";
 
 export const VIETNAM_PUBLIC_STATUS_LABEL_V121: Record<
   VietnamCatalogElementV121["publicStatus"],
@@ -24,13 +25,31 @@ export const VIETNAM_CATEGORY_LABEL_V121: Record<string, string> = {
   E: "파트너·기술역량",
 };
 
+export const VIETNAM_PUBLIC_STATUS_LABEL_V124: Record<
+  VietnamElementPublicStatusV124,
+  string
+> = {
+  actual: "실제 데이터",
+  partial: "부분 데이터",
+  "public-authorized": "공개 승인 데이터",
+  "schema-only": "입력 양식만 제공",
+  "data-entry-planned": "입력 예정",
+  "not-collected": "원자료 미수집",
+  quarantined: "형식 검토 필요",
+};
+
 const FIELD_LABELS: Record<string, string> = {
   name: "명칭",
   projectName: "사업명",
   plantName: "발전소명",
   mineName: "광산명",
   organizationName: "기관명",
+  orgName: "기관명",
+  orgType: "기관 유형",
+  orgCategory: "기관 유형",
+  parentOrg: "소속 부처·상위기관",
   companyName: "기업명",
+  supportingOrganization: "지원기관",
   title: "제목",
   plantId: "발전소 ID",
   capacityMw: "설비용량(MW)",
@@ -63,6 +82,31 @@ const FIELD_LABELS: Record<string, string> = {
   projectPeriod: "기간",
   approvalDate: "승인일",
   sourceUrl: "공식 링크",
+  recordSourceUrl: "레코드 출처",
+  websiteUrl: "웹사이트",
+  city: "도시",
+  address: "주소",
+  officeAddress: "사무소 주소",
+  officeProgram: "사무소·프로그램",
+  focalPointName: "담당자명",
+  focalPointTitle: "직함",
+  personName: "담당자명",
+  contactName: "담당자명",
+  contactType: "담당자 구분",
+  email: "이메일",
+  emailAlt: "이메일 2",
+  phone: "전화번호",
+  telephone: "전화번호",
+  fax: "팩스",
+  contact: "연락처",
+  agreementType: "협정 유형",
+  signedDate: "체결일",
+  scope: "대상 분야",
+  supportType: "지원 유형",
+  eligibleRecipients: "지원 대상",
+  budgetScale: "예산 규모",
+  supportLimit: "지원 한도",
+  applicationPeriod: "신청 시기",
   vietnamAllocation: "베트남 귀속액",
   referenceYear: "자료연도",
   sourceFirstLatitude: "원천 첫 위도",
@@ -126,10 +170,25 @@ const TEMPLATE_PREFERRED_FIELDS: Record<string, string[]> = {
   ],
   partner: [
     "organizationName",
+    "orgName",
     "name",
+    "orgType",
+    "orgCategory",
     "organizationType",
     "role",
+    "city",
+    "address",
+    "officeAddress",
+    "focalPointName",
+    "personName",
+    "focalPointTitle",
+    "title",
+    "email",
+    "emailAlt",
+    "phone",
+    "contact",
     "technologyField",
+    "websiteUrl",
     "website",
     "sourceUrl",
   ],
@@ -159,6 +218,12 @@ export function publicStatusLabelV121(
   status: VietnamCatalogElementV121["publicStatus"]
 ): string {
   return VIETNAM_PUBLIC_STATUS_LABEL_V121[status];
+}
+
+export function publicStatusLabelV124(
+  status: VietnamElementPublicStatusV124
+): string {
+  return VIETNAM_PUBLIC_STATUS_LABEL_V124[status];
 }
 
 export function technologyLabelV121(id: string): string {
@@ -210,7 +275,9 @@ export function entityDisplayNameV121(entity: VietnamEntityV121): string {
     "plantName",
     "mineName",
     "organizationName",
+    "orgName",
     "companyName",
+    "supportingOrganization",
     "title",
     "name",
   ]) {
