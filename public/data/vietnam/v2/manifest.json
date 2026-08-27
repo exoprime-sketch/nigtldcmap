@@ -2,10 +2,13 @@
   "accountedElements": 152,
   "assetLayoutVersion": "gzip-base64-json-envelope-v2",
   "assets": {
+    "adm1Aliases": "/data/vietnam/v2/geometry/vnm-adm1-aliases.json",
+    "adm1Geometry": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
     "assetIntegrity": "/data/vietnam/v2/asset-integrity.json",
     "bundleIndex": "/data/vietnam/v2/packs/bundle-index-v124.json",
     "catalog": "/data/vietnam/v2/catalog.json",
     "frameworkCoverage": "/data/vietnam/v2/framework-coverage.json",
+    "geometryManifest": "/data/vietnam/v2/geometry/geometry-manifest.json",
     "mapIndex": "/data/vietnam/v2/map-index.json",
     "publicationDecisions": "/data/vietnam/v2/publication-decisions.json",
     "qualityReport": "/data/vietnam/v2/quality-report.json",
@@ -13,7 +16,17 @@
     "searchIndex": [
       "/data/vietnam/v2/packs/search-index-v124-fb3e015c.json"
     ],
-    "sourceRegistry": "/data/vietnam/v2/packs/source-registry-v124-68d4d85c.json"
+    "sourceRegistry": "/data/vietnam/v2/packs/source-registry-v124-68d4d85c.json",
+    "spatialLayers": [
+      "/data/vietnam/v2/spatial/layers/b-021.json",
+      "/data/vietnam/v2/spatial/layers/b-031.json",
+      "/data/vietnam/v2/spatial/layers/b-032.json",
+      "/data/vietnam/v2/spatial/layers/b-033.json",
+      "/data/vietnam/v2/spatial/layers/b-034.json",
+      "/data/vietnam/v2/spatial/layers/c-016.json",
+      "/data/vietnam/v2/spatial/layers/d-008.json"
+    ],
+    "transmissionGeometry": "/data/vietnam/v2/geometry/vnm-transmission-network.geojson"
   },
   "authorizedElementCount": 20,
   "authorizedRows": {
@@ -36,8 +49,8 @@
   "downloadableElementCount": 114,
   "frameworkElements": 152,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "mapFeatureCount": 1917,
-  "mapLayerCount": 5,
+  "mapFeatureCount": 2904,
+  "mapLayerCount": 13,
   "packCount": 19,
   "publicStatusCounts": {
     "actual": 126,

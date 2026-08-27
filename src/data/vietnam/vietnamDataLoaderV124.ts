@@ -18,6 +18,7 @@ import type {
   VietnamQualityReportV124,
   VietnamShardEnvelopeV124,
   VietnamShardV124,
+  VietnamSpatialLayerAssetV124,
 } from "./vietnamTypesV124";
 
 const MANIFEST_URL = "/data/vietnam/v2/manifest.json";
@@ -563,6 +564,64 @@ export async function loadVietnamMapIndexV124(): Promise<
     );
   }
   return payload.layers;
+}
+
+export interface VietnamMapGeoJsonV124 {
+  type: "FeatureCollection";
+  features: Array<{
+    type: "Feature";
+    id?: string | number;
+    properties: Record<string, unknown>;
+    geometry: {
+      type: string;
+      coordinates: unknown;
+    };
+  }>;
+  metadata?: Record<string, unknown>;
+}
+
+function assertVietnamV124MapAssetUrl(url: string): void {
+  if (!url.startsWith("/data/vietnam/v2/")) {
+    throw new VietnamAssetErrorV124(
+      "ASSET_SCHEMA_INVALID",
+      "V124 지도는 Vietnam V2 공개 자산만 사용할 수 있습니다",
+      { url }
+    );
+  }
+}
+
+export async function loadVietnamSpatialLayerV124(
+  dataUrl: string
+): Promise<VietnamSpatialLayerAssetV124> {
+  assertVietnamV124MapAssetUrl(dataUrl);
+  const payload = await fetchJson<VietnamSpatialLayerAssetV124>(dataUrl);
+  if (
+    payload.schemaVersion !== "v124" ||
+    payload.assetSchemaVersion !== "v124-spatial-layer-1" ||
+    !Array.isArray(payload.values)
+  ) {
+    throw new VietnamAssetErrorV124(
+      "ASSET_SCHEMA_INVALID",
+      "V124 공간값 자산 계약이 올바르지 않습니다",
+      { dataUrl }
+    );
+  }
+  return payload;
+}
+
+export async function loadVietnamSpatialGeoJsonV124(
+  geometryUrl: string
+): Promise<VietnamMapGeoJsonV124> {
+  assertVietnamV124MapAssetUrl(geometryUrl);
+  const payload = await fetchJson<VietnamMapGeoJsonV124>(geometryUrl);
+  if (payload.type !== "FeatureCollection" || !Array.isArray(payload.features)) {
+    throw new VietnamAssetErrorV124(
+      "ASSET_SCHEMA_INVALID",
+      "V124 지도 geometry 자산 계약이 올바르지 않습니다",
+      { geometryUrl }
+    );
+  }
+  return payload;
 }
 
 export async function loadVietnamCatalogV124(): Promise<

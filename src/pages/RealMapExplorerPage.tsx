@@ -20,6 +20,16 @@ import type {
   CountryEntityV122,
   CountryMapLayerV122,
 } from "../data/countries/countryDataTypesV122";
+import {
+  loadVietnamSpatialGeoJsonV124,
+  loadVietnamSpatialLayerV124,
+} from "../data/vietnam/vietnamDataLoaderV124";
+import type {
+  VietnamMapGeoJsonV124,
+} from "../data/vietnam/vietnamDataLoaderV124";
+import type {
+  VietnamSpatialLayerAssetV124,
+} from "../data/vietnam/vietnamTypesV124";
 import { loadWorldCountryBoundaries } from "../data/map/worldCountryBoundaries";
 import type { WorldCountryBoundaryGeometry } from "../data/map/worldCountryBoundaries";
 import { PRIORITY_COUNTRIES } from "../data/priorityCountries";
@@ -84,8 +94,16 @@ const MAP_STYLE: any = {
 
 const LAYER_COLORS: Record<string, string> = {
   "A-023": "#176a4b",
+  "A-024": "#c94f37",
+  "B-021": "#7a4ca5",
+  "B-031": "#2c7a43",
+  "B-032": "#4b9a5d",
+  "B-033": "#d17832",
+  "B-034": "#315b50",
   "B-048": "#855b20",
+  "C-016": "#d39c19",
   "C-025": "#7053a3",
+  "D-008": "#287e91",
   "D-018": "#226f96",
   "D-023": "#b05e2e",
 };
@@ -138,7 +156,7 @@ function fallbackRingToPath(
 }
 
 function geometryToFallbackPath(
-  geometry: WorldCountryBoundaryGeometry,
+  geometry: WorldCountryBoundaryGeometry | { type: string; coordinates: unknown },
   bounds: FallbackBounds
 ): string {
   if (!Array.isArray(geometry.coordinates)) return "";
@@ -151,6 +169,54 @@ function geometryToFallbackPath(
     .map((ring) => fallbackRingToPath(ring, bounds))
     .filter(Boolean)
     .join(" ");
+}
+
+function geometryToFallbackLinePath(
+  geometry: { type: string; coordinates: unknown },
+  bounds: FallbackBounds
+): string {
+  if (!Array.isArray(geometry.coordinates)) return "";
+  const lines: unknown[] =
+    geometry.type === "LineString"
+      ? [geometry.coordinates]
+      : geometry.type === "MultiLineString"
+      ? geometry.coordinates
+      : [];
+  return lines
+    .map((line) => {
+      if (!Array.isArray(line)) return "";
+      const coordinates = line.filter(isLngLatCoordinate);
+      if (coordinates.length < 2) return "";
+      return coordinates
+        .map((coordinate, index) => {
+          const { x, y } = projectFallbackCoordinate(coordinate, bounds);
+          return `${index === 0 ? "M" : "L"}${x.toFixed(2)},${y.toFixed(2)}`;
+        })
+        .join(" ");
+    })
+    .filter(Boolean)
+    .join(" ");
+}
+
+function rendererOf(layer: CountryMapLayerV122) {
+  return layer.renderer || (layer.cluster ? "cluster" : "point");
+}
+
+function isExternalSpatialLayer(layer: CountryMapLayerV122): boolean {
+  return ["line", "admin1-choropleth", "partial-choropleth"].includes(
+    rendererOf(layer)
+  );
+}
+
+function colorForValue(value: number, minimum: number, maximum: number): string {
+  const ratio = maximum === minimum ? 0.62 : (value - minimum) / (maximum - minimum);
+  const clamped = Math.max(0, Math.min(1, ratio));
+  const start = [230, 242, 234];
+  const end = [16, 111, 78];
+  const channels = start.map((channel, index) =>
+    Math.round(channel + (end[index] - channel) * clamped)
+  );
+  return `rgb(${channels.join(",")})`;
 }
 
 /**
@@ -235,12 +301,33 @@ export const MAP_RUNTIME_POLICY_V116 = {
 } as const;
 
 interface LayerHandlers {
-  pointLayerId: string;
+  interactiveLayerId: string;
   clusterLayerId?: string;
-  onPointClick: (event: MapLayerMouseEvent) => void;
-  onPointEnter: (event: MapLayerMouseEvent) => void;
+  onClick: (event: MapLayerMouseEvent) => void;
+  onEnter: (event: MapLayerMouseEvent) => void;
   onPointLeave: () => void;
   onClusterClick?: (event: MapLayerMouseEvent) => void;
+}
+
+interface SpatialRuntimeAsset {
+  geometry: VietnamMapGeoJsonV124;
+  data?: VietnamSpatialLayerAssetV124;
+}
+
+interface SpatialSelection {
+  elementId: string;
+  adm1Code?: string;
+  adm1Name: string;
+  value?: number | null;
+  unit?: string | null;
+  period?: string;
+  variableLabel?: string;
+  properties: Record<string, unknown>;
+}
+
+interface LayerSelectorState {
+  variable: string;
+  period: string;
 }
 
 function runtimeKey(countryIso3: string, elementId: string): string {
@@ -255,6 +342,100 @@ function layerRuntimeIds(countryIso3: string, elementId: string) {
     source: `v122-source-${suffix}`,
     point: `v122-point-${suffix}`,
     cluster: `v122-cluster-${suffix}`,
+    line: `v124-line-${suffix}`,
+    fill: `v124-fill-${suffix}`,
+    outline: `v124-outline-${suffix}`,
+  };
+}
+
+function selectorForLayer(
+  layer: CountryMapLayerV122,
+  selected: LayerSelectorState | undefined
+): LayerSelectorState {
+  const variable =
+    selected?.variable || layer.selectors?.defaultVariable || "locations";
+  const option = layer.selectors?.variables.find((row) => row.key === variable);
+  const periods = option?.periods || layer.selectors?.periods || [];
+  const requestedPeriod = selected?.period || layer.selectors?.defaultPeriod;
+  return {
+    variable,
+    period:
+      requestedPeriod && periods.includes(requestedPeriod)
+        ? requestedPeriod
+        : periods[periods.length - 1] || "미표기",
+  };
+}
+
+function choroplethFeatureCollection(
+  layer: CountryMapLayerV122,
+  asset: SpatialRuntimeAsset,
+  selector: LayerSelectorState
+): {
+  collection: GeoJSON.FeatureCollection<GeoJSON.Geometry>;
+  minimum: number;
+  maximum: number;
+} {
+  const values = (asset.data?.values || []).filter(
+    (row) => row.variable === selector.variable && row.period === selector.period
+  );
+  const valueByCode = new Map(values.map((row) => [row.adm1Code, row]));
+  const numericValues = values.map((row) => row.value).filter(Number.isFinite);
+  const minimum = numericValues.length ? Math.min(...numericValues) : 0;
+  const maximum = numericValues.length ? Math.max(...numericValues) : 1;
+  return {
+    minimum,
+    maximum,
+    collection: {
+      type: "FeatureCollection",
+      features: asset.geometry.features.map((feature) => {
+        const adm1Code = String(feature.properties?.adm1Code || "");
+        const value = valueByCode.get(adm1Code);
+        return {
+          type: "Feature" as const,
+          id: adm1Code,
+          geometry: feature.geometry as GeoJSON.Geometry,
+          properties: {
+            ...feature.properties,
+            elementId: layer.elementId,
+            adm1Code,
+            adm1Name: value?.adm1Name || feature.properties?.name || adm1Code,
+            value: value?.value ?? null,
+            hasValue: Boolean(value),
+            unit: value?.unit || "",
+            period: selector.period,
+            variable: selector.variable,
+            variableLabel:
+              value?.variableLabel ||
+              layer.selectors.variables.find((row) => row.key === selector.variable)
+                ?.label ||
+              layer.publicShortTitle,
+          },
+        };
+      }),
+    },
+  };
+}
+
+function lineFeatureCollection(
+  asset: SpatialRuntimeAsset,
+  selector: LayerSelectorState
+): GeoJSON.FeatureCollection<GeoJSON.Geometry> {
+  const features =
+    selector.variable === "all"
+      ? asset.geometry.features
+      : asset.geometry.features.filter(
+          (feature) =>
+            String(feature.properties?.voltageKv || feature.properties?.voltage) ===
+            selector.variable
+        );
+  return {
+    type: "FeatureCollection",
+    features: features.map((feature, index) => ({
+      type: "Feature" as const,
+      id: feature.id ?? index,
+      properties: { ...feature.properties },
+      geometry: feature.geometry as GeoJSON.Geometry,
+    })),
   };
 }
 
@@ -361,10 +542,18 @@ export default function RealMapExplorerPage({
   const [recordsByElement, setRecordsByElement] = useState<
     Record<string, CountryEntityV122[]>
   >({});
+  const [spatialByElement, setSpatialByElement] = useState<
+    Record<string, SpatialRuntimeAsset>
+  >({});
+  const [selectorByElement, setSelectorByElement] = useState<
+    Record<string, LayerSelectorState>
+  >({});
   const [loadingIds, setLoadingIds] = useState<string[]>([]);
   const [layerErrors, setLayerErrors] = useState<Record<string, string>>({});
   const [filters, setFilters] = useState<Record<string, string>>({});
   const [selected, setSelected] = useState<CountryEntityV122 | null>(null);
+  const [selectedSpatial, setSelectedSpatial] =
+    useState<SpatialSelection | null>(null);
 
   const provider = getCountryDataProviderV122(countryIso3);
   const fallbackBounds: FallbackBounds = provider?.mapView.bounds || [
@@ -403,6 +592,75 @@ export default function RealMapExplorerPage({
     });
     return points;
   }, [activeIds, fallbackBounds, recordsByElement]);
+
+  const fallbackSpatial = useMemo(() => {
+    const fills: Array<{
+      adm1Code: string;
+      elementId: string;
+      fill: string;
+      name: string;
+      path: string;
+      value: number | null;
+      unit: string;
+    }> = [];
+    const lines: Array<{ color: string; elementId: string; path: string }> = [];
+    activeIds.forEach((elementId) => {
+      const layer = layers.find((item) => item.elementId === elementId);
+      const asset = spatialByElement[elementId];
+      if (!layer || !asset) return;
+      const selector = selectorForLayer(layer, selectorByElement[elementId]);
+      if (rendererOf(layer) === "line") {
+        const collection = lineFeatureCollection(asset, selector);
+        const path = collection.features
+          .map((feature) =>
+            geometryToFallbackLinePath(
+              feature.geometry as { type: string; coordinates: unknown },
+              fallbackBounds
+            )
+          )
+          .filter(Boolean)
+          .join(" ");
+        if (path) {
+          lines.push({
+            color: LAYER_COLORS[elementId] || "#b64d36",
+            elementId,
+            path,
+          });
+        }
+        return;
+      }
+      const result = choroplethFeatureCollection(layer, asset, selector);
+      result.collection.features.forEach((feature) => {
+        const properties = feature.properties || {};
+        const value =
+          typeof properties.value === "number" ? properties.value : null;
+        const path = geometryToFallbackPath(
+          feature.geometry as { type: string; coordinates: unknown },
+          fallbackBounds
+        );
+        if (!path) return;
+        fills.push({
+          adm1Code: String(properties.adm1Code || ""),
+          elementId,
+          fill:
+            value === null
+              ? "rgba(210, 218, 214, 0.42)"
+              : colorForValue(value, result.minimum, result.maximum),
+          name: String(properties.adm1Name || properties.name || ""),
+          path,
+          value,
+          unit: String(properties.unit || ""),
+        });
+      });
+    });
+    return { fills, lines };
+  }, [
+    activeIds,
+    fallbackBounds,
+    layers,
+    selectorByElement,
+    spatialByElement,
+  ]);
 
   useEffect(() => {
     const requested = initialState.countryIso3?.toUpperCase() || "";
@@ -451,10 +709,13 @@ export default function RealMapExplorerPage({
     let cancelled = false;
     setLayers([]);
     setRecordsByElement({});
+    setSpatialByElement({});
+    setSelectorByElement({});
     setLoadingIds([]);
     setLayerErrors({});
     setFilters({});
     setSelected(null);
+    setSelectedSpatial(null);
     setActiveIds([]);
     setFocusId(null);
 
@@ -472,6 +733,14 @@ export default function RealMapExplorerPage({
       .then((nextLayers) => {
         if (cancelled) return;
         setLayers(nextLayers);
+        setSelectorByElement(
+          Object.fromEntries(
+            nextLayers.map((layer) => [
+              layer.elementId,
+              selectorForLayer(layer, undefined),
+            ])
+          )
+        );
         setMapIndexStatus("ready");
       })
       .catch((reason: unknown) => {
@@ -569,7 +838,7 @@ export default function RealMapExplorerPage({
       if (!ready && !map.isStyleLoaded()) setBaseMapStatus("error");
     };
     const handleStyleLoad = () => {
-      if (!ready) markReady();
+      if (!ready && map.isStyleLoaded()) markReady();
     };
     map.on("load", markReady);
     map.on("style.load", handleStyleLoad);
@@ -612,20 +881,50 @@ export default function RealMapExplorerPage({
 
   useEffect(() => {
     activeIds.forEach((elementId) => {
-      if (recordsByElement[elementId] || loadingIds.includes(elementId)) return;
+      const layer = layers.find((item) => item.elementId === elementId);
+      if (!layer || layer.enabled === false || loadingIds.includes(elementId)) {
+        return;
+      }
+      const externalSpatial = isExternalSpatialLayer(layer);
+      if (
+        (externalSpatial && spatialByElement[elementId]) ||
+        (!externalSpatial && recordsByElement[elementId])
+      ) {
+        return;
+      }
       setLoadingIds((current) => [...current, elementId]);
       setLayerErrors((current) => {
         const next = { ...current };
         delete next[elementId];
         return next;
       });
-      void loadCountryElementEntitiesV122(countryIso3, elementId)
-        .then((payload) => {
-          setRecordsByElement((current) => ({
-            ...current,
-            [elementId]: payload.records,
-          }));
-        })
+      const request = externalSpatial
+        ? countryIso3 === "VNM" && layer.geometryUrl
+          ? Promise.all([
+              loadVietnamSpatialGeoJsonV124(layer.geometryUrl),
+              layer.dataUrl
+                ? loadVietnamSpatialLayerV124(layer.dataUrl)
+                : Promise.resolve(undefined),
+            ]).then(([geometry, data]) => {
+              setSpatialByElement((current) => ({
+                ...current,
+                [elementId]: { geometry, data },
+              }));
+            })
+          : Promise.reject(
+              new Error(
+                layer.disabledReason || "이 레이어의 공간자료 경로가 없습니다"
+              )
+            )
+        : loadCountryElementEntitiesV122(countryIso3, elementId).then(
+            (payload) => {
+              setRecordsByElement((current) => ({
+                ...current,
+                [elementId]: payload.records,
+              }));
+            }
+          );
+      void request
         .catch((reason: unknown) => {
           console.error("Country map layer load failed", reason);
           setLayerErrors((current) => ({
@@ -640,7 +939,14 @@ export default function RealMapExplorerPage({
           setLoadingIds((current) => current.filter((id) => id !== elementId));
         });
     });
-  }, [activeIds, countryIso3, loadingIds, recordsByElement]);
+  }, [
+    activeIds,
+    countryIso3,
+    layers,
+    loadingIds,
+    recordsByElement,
+    spatialByElement,
+  ]);
 
   useEffect(() => {
     const index = new Map<string, CountryEntityV122>();
@@ -654,8 +960,14 @@ export default function RealMapExplorerPage({
     const nextOpacities = Object.fromEntries(
       activeIds.map((id) => [id, initialState.layerOpacities[id] ?? 0.78])
     );
-    const nextYears = Object.fromEntries(
-      activeIds.map((id) => [id, initialState.layerYears[id] ?? null])
+    const nextYears: Record<string, number | null> = Object.fromEntries(
+      activeIds.map((id) => {
+        const selectedPeriod = selectorByElement[id]?.period;
+        const parsedYear = selectedPeriod
+          ? Number.parseInt(selectedPeriod.slice(0, 4), 10)
+          : initialState.layerYears[id] ?? null;
+        return [id, Number.isFinite(parsedYear) ? parsedYear : null];
+      })
     );
     onStateChange({
       ...initialState,
@@ -665,11 +977,17 @@ export default function RealMapExplorerPage({
       layerOpacities: nextOpacities,
       layerYears: nextYears,
     });
-  }, [activeIds, countryIso3, focusId, onStateChange]); // initialState is intentionally reconciled through explicit fields
+  }, [
+    activeIds,
+    countryIso3,
+    focusId,
+    onStateChange,
+    selectorByElement,
+  ]); // initialState is intentionally reconciled through explicit fields
 
   useEffect(() => {
     const map = mapRef.current;
-    if (!map || baseMapStatus !== "ready") return;
+    if (!map || baseMapStatus !== "ready" || !map.isStyleLoaded()) return;
 
     (Array.from(mountedKeysRef.current) as string[]).forEach((key) => {
       const [mountedCountry, ...elementParts] = key.split(":");
@@ -682,11 +1000,178 @@ export default function RealMapExplorerPage({
 
     activeIds.forEach((elementId) => {
       const layer = layers.find((item) => item.elementId === elementId);
+      if (!layer || layer.enabled === false) return;
+      const ids = layerRuntimeIds(countryIso3, elementId);
+      const renderer = rendererOf(layer);
+      const color = LAYER_COLORS[elementId] || "#176a4b";
+
+      if (
+        renderer === "line" ||
+        renderer === "admin1-choropleth" ||
+        renderer === "partial-choropleth"
+      ) {
+        const asset = spatialByElement[elementId];
+        if (!asset) return;
+        const selector = selectorForLayer(layer, selectorByElement[elementId]);
+        const choropleth =
+          renderer === "line"
+            ? null
+            : choroplethFeatureCollection(layer, asset, selector);
+        const data =
+          renderer === "line"
+            ? lineFeatureCollection(asset, selector)
+            : choropleth!.collection;
+        const existing = map.getSource(ids.source) as GeoJSONSource | undefined;
+        const fillColor = choropleth
+          ? ([
+              "case",
+              ["==", ["get", "hasValue"], false],
+              "rgba(174, 186, 180, 0.38)",
+              [
+                "interpolate",
+                ["linear"],
+                ["to-number", ["get", "value"]],
+                choropleth.minimum,
+                "#e6f2ea",
+                choropleth.maximum,
+                color,
+              ],
+            ] as any)
+          : color;
+        if (existing) {
+          existing.setData(data);
+          if (choropleth && map.getLayer(ids.fill)) {
+            map.setPaintProperty(ids.fill, "fill-color", fillColor);
+          }
+          return;
+        }
+
+        map.addSource(ids.source, { type: "geojson", data });
+        let interactiveLayerId = ids.line;
+        if (renderer === "line") {
+          map.addLayer({
+            id: ids.line,
+            type: "line",
+            source: ids.source,
+            paint: {
+              "line-color": [
+                "match",
+                ["get", "voltageKv"],
+                110,
+                "#e59b32",
+                220,
+                "#d35a3d",
+                500,
+                "#8b2635",
+                color,
+              ] as any,
+              "line-width": [
+                "interpolate",
+                ["linear"],
+                ["zoom"],
+                4,
+                1.2,
+                9,
+                3.2,
+              ],
+              "line-opacity": 0.82,
+            },
+          });
+        } else {
+          interactiveLayerId = ids.fill;
+          map.addLayer({
+            id: ids.fill,
+            type: "fill",
+            source: ids.source,
+            paint: {
+              "fill-color": fillColor,
+              "fill-opacity": 0.76,
+            },
+          });
+          map.addLayer({
+            id: ids.outline,
+            type: "line",
+            source: ids.source,
+            paint: {
+              "line-color": "#48665a",
+              "line-width": 0.75,
+              "line-opacity": 0.75,
+            },
+          });
+        }
+
+        const onClick = (event: MapLayerMouseEvent) => {
+          const properties = (event.features?.[0]?.properties || {}) as Record<
+            string,
+            unknown
+          >;
+          const value =
+            typeof properties.value === "number" ? properties.value : null;
+          setSelected(null);
+          setSelectedSpatial({
+            elementId,
+            adm1Code: String(properties.adm1Code || "") || undefined,
+            adm1Name:
+              renderer === "line"
+                ? `${properties.voltageKv || properties.voltage || ""} kV 송전선`
+                : String(properties.adm1Name || properties.name || "성·시"),
+            value,
+            unit: String(properties.unit || (renderer === "line" ? "kV" : "")),
+            period: String(properties.period || layer.sourceYear || ""),
+            variableLabel: String(
+              properties.variableLabel || layer.publicShortTitle
+            ),
+            properties,
+          });
+          setFocusId(elementId);
+        };
+        const onEnter = (event: MapLayerMouseEvent) => {
+          map.getCanvas().style.cursor = "pointer";
+          const properties = event.features?.[0]?.properties || {};
+          const label =
+            renderer === "line"
+              ? `${properties.voltageKv || properties.voltage || ""} kV · ${Number(
+                  properties.lengthKm || properties.length || 0
+                ).toLocaleString()} km`
+              : `${properties.adm1Name || properties.name || "성·시"} · ${
+                  properties.hasValue
+                    ? `${Number(properties.value).toLocaleString()} ${
+                        properties.unit || ""
+                      }`
+                    : "결측"
+                }`;
+          popupRef.current?.remove();
+          popupRef.current = new maplibregl.Popup({
+            closeButton: false,
+            closeOnClick: false,
+            offset: 10,
+          })
+            .setLngLat(event.lngLat)
+            .setText(label)
+            .addTo(map);
+        };
+        const onPointLeave = () => {
+          map.getCanvas().style.cursor = "";
+          popupRef.current?.remove();
+        };
+        map.on("click", interactiveLayerId, onClick);
+        map.on("mouseenter", interactiveLayerId, onEnter);
+        map.on("mouseleave", interactiveLayerId, onPointLeave);
+        const key = runtimeKey(countryIso3, elementId);
+        handlersRef.current[key] = {
+          interactiveLayerId,
+          onClick,
+          onEnter,
+          onPointLeave,
+        };
+        mountedKeysRef.current.add(key);
+        return;
+      }
+
       const records = recordsByElement[elementId];
-      if (!layer || !records) return;
+      if (!records) return;
       const filteredRecords = filterRecords(records, layer, filters);
       const data = featureCollection(filteredRecords, layer);
-      const ids = layerRuntimeIds(countryIso3, elementId);
       const existing = map.getSource(ids.source) as GeoJSONSource | undefined;
       if (existing) {
         existing.setData(data);
@@ -700,7 +1185,6 @@ export default function RealMapExplorerPage({
         clusterMaxZoom: 13,
         clusterRadius: 46,
       });
-      const color = LAYER_COLORS[elementId] || "#176a4b";
       if (layer.cluster) {
         map.addLayer({
           id: ids.cluster,
@@ -746,6 +1230,7 @@ export default function RealMapExplorerPage({
         );
         const record = recordIndexRef.current.get(recordId) || null;
         setSelected(record);
+        setSelectedSpatial(null);
         setFocusId(elementId);
       };
       const onPointEnter = (event: MapLayerMouseEvent) => {
@@ -787,10 +1272,10 @@ export default function RealMapExplorerPage({
       if (onClusterClick) map.on("click", ids.cluster, onClusterClick);
       const key = runtimeKey(countryIso3, elementId);
       handlersRef.current[key] = {
-        pointLayerId: ids.point,
+        interactiveLayerId: ids.point,
         clusterLayerId: layer.cluster ? ids.cluster : undefined,
-        onPointClick,
-        onPointEnter,
+        onClick: onPointClick,
+        onEnter: onPointEnter,
         onPointLeave,
         onClusterClick,
       };
@@ -803,6 +1288,8 @@ export default function RealMapExplorerPage({
     filters,
     layers,
     recordsByElement,
+    selectorByElement,
+    spatialByElement,
   ]);
 
   const groupedLayers = useMemo(() => {
@@ -815,6 +1302,15 @@ export default function RealMapExplorerPage({
 
   const focusedLayer =
     layers.find((layer) => layer.elementId === focusId) || null;
+  const focusedSelector = focusedLayer
+    ? selectorForLayer(focusedLayer, selectorByElement[focusedLayer.elementId])
+    : null;
+  const focusedVariable =
+    focusedLayer && focusedSelector
+      ? focusedLayer.selectors.variables.find(
+          (row) => row.key === focusedSelector.variable
+        ) || null
+      : null;
   const selectedLayer = selected
     ? layers.find((layer) => layer.elementId === selected.elementId) || null
     : null;
@@ -825,9 +1321,12 @@ export default function RealMapExplorerPage({
     setActiveIds([]);
     setFocusId(null);
     setSelected(null);
+    setSelectedSpatial(null);
   }
 
   function toggleLayer(elementId: string) {
+    const layer = layers.find((item) => item.elementId === elementId);
+    if (!layer || layer.enabled === false) return;
     setActiveIds((current) => {
       if (current.includes(elementId)) {
         const next = current.filter((id) => id !== elementId);
@@ -838,6 +1337,7 @@ export default function RealMapExplorerPage({
       return [...current, elementId];
     });
     setSelected(null);
+    setSelectedSpatial(null);
   }
 
   function retryLayer(elementId: string) {
@@ -853,6 +1353,31 @@ export default function RealMapExplorerPage({
     });
     if (!activeIds.includes(elementId))
       setActiveIds((current) => [...current, elementId]);
+  }
+
+  function changeLayerVariable(layer: CountryMapLayerV122, variable: string) {
+    const option = layer.selectors.variables.find((row) => row.key === variable);
+    const periods = option?.periods || layer.selectors.periods;
+    setSelectorByElement((current) => ({
+      ...current,
+      [layer.elementId]: {
+        variable,
+        period:
+          periods.includes(layer.selectors.defaultPeriod)
+            ? layer.selectors.defaultPeriod
+            : periods[periods.length - 1] || "미표기",
+      },
+    }));
+    setSelectedSpatial(null);
+  }
+
+  function changeLayerPeriod(layer: CountryMapLayerV122, period: string) {
+    const current = selectorForLayer(layer, selectorByElement[layer.elementId]);
+    setSelectorByElement((selectors) => ({
+      ...selectors,
+      [layer.elementId]: { ...current, period },
+    }));
+    setSelectedSpatial(null);
   }
 
   function fitSelectedCountry() {
@@ -954,17 +1479,23 @@ export default function RealMapExplorerPage({
                   key={layer.elementId}
                   className={`cdp-layer-card ${
                     activeIds.includes(layer.elementId) ? "is-active" : ""
-                  }`}
+                  } ${layer.enabled === false ? "is-disabled" : ""}`}
                 >
                   <input
                     type="checkbox"
                     checked={activeIds.includes(layer.elementId)}
+                    disabled={layer.enabled === false}
                     onChange={() => toggleLayer(layer.elementId)}
                   />
                   <span>
                     <strong>{layer.publicShortTitle}</strong>
                     {layer.latestYear && (
                       <small>자료연도 {layer.latestYear}</small>
+                    )}
+                    {layer.enabled === false && (
+                      <small>
+                        공간자료 미확보 · {layer.disabledReason || layer.accuracyNotice}
+                      </small>
                     )}
                   </span>
                   <button
@@ -977,6 +1508,7 @@ export default function RealMapExplorerPage({
                       if (!activeIds.includes(layer.elementId))
                         toggleLayer(layer.elementId);
                     }}
+                    disabled={layer.enabled === false}
                   >
                     보기
                   </button>
@@ -996,6 +1528,68 @@ export default function RealMapExplorerPage({
               ))}
             </section>
           ))}
+
+          {focusedLayer && focusedSelector && (
+            <section className="cdp-map-layer-group cdp-map-selector-panel">
+              <h2>{focusedLayer.publicShortTitle} 표시 설정</h2>
+              <label className="cdp-field" style={{ marginBottom: 9 }}>
+                <span className="cdp-field__label">변수</span>
+                <select
+                  className="cdp-select"
+                  value={focusedSelector.variable}
+                  onChange={(event) =>
+                    changeLayerVariable(focusedLayer, event.target.value)
+                  }
+                >
+                  {focusedLayer.selectors.variables.map((option) => (
+                    <option key={option.key} value={option.key}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label className="cdp-field" style={{ marginBottom: 9 }}>
+                <span className="cdp-field__label">연도/기간</span>
+                <select
+                  className="cdp-select"
+                  value={focusedSelector.period}
+                  onChange={(event) =>
+                    changeLayerPeriod(focusedLayer, event.target.value)
+                  }
+                >
+                  {(focusedVariable?.periods || focusedLayer.selectors.periods).map(
+                    (period) => (
+                      <option key={period} value={period}>
+                        {period}
+                      </option>
+                    )
+                  )}
+                </select>
+              </label>
+              <dl className="cdp-map-layer-meta">
+                <div>
+                  <dt>단위</dt>
+                  <dd>{focusedVariable?.unit || focusedLayer.unit}</dd>
+                </div>
+                <div>
+                  <dt>공간 커버리지</dt>
+                  <dd>{focusedLayer.spatialCoverage}</dd>
+                </div>
+                <div>
+                  <dt>결측지역</dt>
+                  <dd>
+                    {focusedLayer.missingRegions.length
+                      ? focusedLayer.missingRegions.join(" · ")
+                      : "없음"}
+                  </dd>
+                </div>
+                <div>
+                  <dt>정확도 한계</dt>
+                  <dd>{focusedLayer.accuracyNotice}</dd>
+                </div>
+              </dl>
+            </section>
+          )}
 
           {focusedLayer && focusedLayer.filters.length > 0 && (
             <section className="cdp-map-layer-group">
@@ -1080,6 +1674,66 @@ export default function RealMapExplorerPage({
                   d="M365 80 L640 110 L720 260 L650 555 L470 625 L300 470 L285 225 Z"
                 />
               )}
+              {fallbackSpatial.fills.map((feature) => (
+                <path
+                  key={`${feature.elementId}:${feature.adm1Code}`}
+                  className="cdp-map-fallback__choropleth"
+                  d={feature.path}
+                  fill={feature.fill}
+                  fillRule="evenodd"
+                  onClick={() => {
+                    const layer = layers.find(
+                      (item) => item.elementId === feature.elementId
+                    );
+                    const selector = layer
+                      ? selectorForLayer(
+                          layer,
+                          selectorByElement[feature.elementId]
+                        )
+                      : null;
+                    setSelected(null);
+                    setSelectedSpatial({
+                      elementId: feature.elementId,
+                      adm1Code: feature.adm1Code,
+                      adm1Name: feature.name,
+                      value: feature.value,
+                      unit: feature.unit,
+                      period: selector?.period,
+                      variableLabel: layer?.publicShortTitle,
+                      properties: {},
+                    });
+                    setFocusId(feature.elementId);
+                  }}
+                >
+                  <title>
+                    {feature.name} · {feature.value === null
+                      ? "결측"
+                      : `${feature.value.toLocaleString()} ${feature.unit}`}
+                  </title>
+                </path>
+              ))}
+              {fallbackSpatial.lines.map((line) => (
+                <path
+                  key={line.elementId}
+                  className="cdp-map-fallback__line"
+                  d={line.path}
+                  fill="none"
+                  stroke={line.color}
+                  onClick={() => {
+                    setSelected(null);
+                    setSelectedSpatial({
+                      elementId: line.elementId,
+                      adm1Name: "실제 송전망",
+                      period: "2016",
+                      variableLabel: "송전 전압",
+                      properties: {},
+                    });
+                    setFocusId(line.elementId);
+                  }}
+                >
+                  <title>World Bank / ENERGYDATA.INFO 실제 송전망</title>
+                </path>
+              ))}
               {fallbackPoints.map((point) => (
                 <circle
                   key={`${point.elementId}:${point.record.recordId}`}
@@ -1095,6 +1749,7 @@ export default function RealMapExplorerPage({
                   opacity="0.82"
                   onClick={() => {
                     setSelected(point.record);
+                    setSelectedSpatial(null);
                     setFocusId(point.elementId);
                   }}
                 >
@@ -1136,13 +1791,110 @@ export default function RealMapExplorerPage({
           {focusedLayer && (
             <div className="cdp-map-legend">
               <strong>{focusedLayer.publicShortTitle}</strong>
-              <span>자료연도 {focusedLayer.latestYear || "미표기"}</span>
+              <span>{focusedVariable?.label || focusedLayer.legend.title}</span>
+              <span>
+                기준연도/기간 {focusedSelector?.period || focusedLayer.sourceYear || "미표기"}
+              </span>
+              <span>단위 {focusedVariable?.unit || focusedLayer.unit}</span>
+              {(rendererOf(focusedLayer) === "admin1-choropleth" ||
+                rendererOf(focusedLayer) === "partial-choropleth") && (
+                <span className="cdp-map-legend__gradient" aria-label="낮음에서 높음">
+                  <i /> 낮음 <b /> 높음
+                </span>
+              )}
             </div>
           )}
         </main>
 
         <aside className="cdp-map-evidence">
-          {selected ? (
+          {selectedSpatial && focusedLayer ? (
+            <>
+              <h2>{selectedSpatial.adm1Name}</h2>
+              <div className="cdp-evidence-grid">
+                <Evidence
+                  label="변수"
+                  value={
+                    selectedSpatial.variableLabel ||
+                    focusedVariable?.label ||
+                    focusedLayer.publicShortTitle
+                  }
+                />
+                <Evidence
+                  label="값"
+                  value={
+                    selectedSpatial.value === null ||
+                    selectedSpatial.value === undefined
+                      ? "결측"
+                      : `${selectedSpatial.value.toLocaleString()} ${
+                          selectedSpatial.unit || focusedVariable?.unit || ""
+                        }`
+                  }
+                />
+                <Evidence
+                  label="기준연도/기간"
+                  value={
+                    selectedSpatial.period || focusedSelector?.period || "미표기"
+                  }
+                />
+                {Object.entries(selectedSpatial.properties)
+                  .filter(
+                    ([key, value]) =>
+                      ["voltageKv", "status", "lengthKm"].includes(key) &&
+                      value !== null &&
+                      value !== undefined
+                  )
+                  .map(([key, value]) => (
+                    <Evidence
+                      key={key}
+                      label={fieldLabelV121(key)}
+                      value={formatValueV121(value)}
+                    />
+                  ))}
+                <Evidence label="출처" value={focusedLayer.source} />
+                <Evidence
+                  label="공간 커버리지"
+                  value={focusedLayer.spatialCoverage}
+                />
+                <Evidence
+                  label="정확도 한계"
+                  value={focusedLayer.accuracyNotice}
+                />
+              </div>
+              <div className="cdp-action-row" style={{ marginTop: 14 }}>
+                <button
+                  type="button"
+                  className="cdp-button cdp-button--primary"
+                  onClick={() =>
+                    onOpenElement(focusedLayer.elementId, countryIso3)
+                  }
+                >
+                  데이터 상세
+                </button>
+                {focusedLayer.downloadStatus === "available" && (
+                  <button
+                    type="button"
+                    className="cdp-button cdp-button--secondary"
+                    onClick={() =>
+                      onOpenDownload(focusedLayer.elementId, countryIso3)
+                    }
+                  >
+                    다운로드
+                  </button>
+                )}
+                {focusedLayer.sourceUrls?.[0] &&
+                  isHttpUrlV121(focusedLayer.sourceUrls[0]) && (
+                    <a
+                      className="cdp-button cdp-button--secondary"
+                      href={focusedLayer.sourceUrls[0]}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      공식 출처
+                    </a>
+                  )}
+              </div>
+            </>
+          ) : selected ? (
             <>
               <h2>{entityDisplayNameV121(selected)}</h2>
               <div className="cdp-evidence-grid">
@@ -1206,12 +1958,39 @@ export default function RealMapExplorerPage({
               <h2>{focusedLayer.publicTitle}</h2>
               <div className="cdp-evidence-grid">
                 <Evidence
-                  label="자료연도"
-                  value={String(focusedLayer.latestYear || "미표기")}
+                  label="기준연도/기간"
+                  value={
+                    focusedSelector?.period ||
+                    String(focusedLayer.latestYear || "미표기")
+                  }
+                />
+                <Evidence
+                  label="변수"
+                  value={focusedVariable?.label || focusedLayer.legend.title}
+                />
+                <Evidence
+                  label="단위"
+                  value={focusedVariable?.unit || focusedLayer.unit}
                 />
                 <Evidence
                   label="자료 제공기관"
                   value={focusedLayer.sourceOrganizations.join(" · ")}
+                />
+                <Evidence
+                  label="공간 커버리지"
+                  value={focusedLayer.spatialCoverage}
+                />
+                <Evidence
+                  label="결측지역"
+                  value={
+                    focusedLayer.missingRegions.length
+                      ? focusedLayer.missingRegions.join(" · ")
+                      : "없음"
+                  }
+                />
+                <Evidence
+                  label="정확도 한계"
+                  value={focusedLayer.accuracyNotice}
                 />
               </div>
               <p className="cdp-evidence-empty">지도에서 항목을 선택하세요</p>
@@ -1225,6 +2004,17 @@ export default function RealMapExplorerPage({
                 >
                   데이터 상세
                 </button>
+                {focusedLayer.downloadStatus === "available" && (
+                  <button
+                    type="button"
+                    className="cdp-button cdp-button--secondary"
+                    onClick={() =>
+                      onOpenDownload(focusedLayer.elementId, countryIso3)
+                    }
+                  >
+                    다운로드
+                  </button>
+                )}
               </div>
             </>
           ) : (
@@ -1267,10 +2057,10 @@ function removeLayerFromMap(
   const key = runtimeKey(countryIso3, elementId);
   const handler = handlers[key];
   if (handler) {
-    if (map.getLayer(handler.pointLayerId)) {
-      map.off("click", handler.pointLayerId, handler.onPointClick);
-      map.off("mouseenter", handler.pointLayerId, handler.onPointEnter);
-      map.off("mouseleave", handler.pointLayerId, handler.onPointLeave);
+    if (map.getLayer(handler.interactiveLayerId)) {
+      map.off("click", handler.interactiveLayerId, handler.onClick);
+      map.off("mouseenter", handler.interactiveLayerId, handler.onEnter);
+      map.off("mouseleave", handler.interactiveLayerId, handler.onPointLeave);
     }
     if (
       handler.clusterLayerId &&
@@ -1281,7 +2071,7 @@ function removeLayerFromMap(
     }
     delete handlers[key];
   }
-  [ids.point, ids.cluster].forEach((id) => {
+  [ids.point, ids.cluster, ids.line, ids.fill, ids.outline].forEach((id) => {
     if (map.getLayer(id)) map.removeLayer(id);
   });
   if (map.getSource(ids.source)) map.removeSource(ids.source);

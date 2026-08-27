@@ -22,6 +22,7 @@ from typing import Any, Iterable, Mapping
 
 from .normalization import canonical_json, is_placeholder, nfc_text
 from .source_zip import analyze_source_zip
+from tools.vietnam_spatial.build_spatial_v124 import build_spatial_assets
 
 
 SCHEMA_VERSION = "v124"
@@ -805,6 +806,22 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
             }
         )
 
+    base_map_index = json.loads((v1_root / "map-index.json").read_text(encoding="utf-8"))
+    spatial_build = build_spatial_assets(
+        repo, out, payloads, catalog, base_map_index
+    )
+    map_index = spatial_build["mapIndex"]
+    map_layers_by_element = {
+        row["elementId"]: row for row in map_index.get("layers", [])
+    }
+    for element in catalog:
+        layer = map_layers_by_element.get(element["elementId"])
+        if layer is None:
+            element["mapFeatureCount"] = 0
+            continue
+        element["mapFeatureCount"] = int(layer.get("featureCount", 0))
+        element["mapMode"] = layer.get("mapMode", element.get("mapMode"))
+
     # Static download assets are built from the exact public projection.
     for element in catalog:
         if not element["downloadAssets"]:
@@ -961,15 +978,6 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
     )
     _write_json(source_registry_path, source_envelope, pretty=False)
 
-    map_index = json.loads((v1_root / "map-index.json").read_text(encoding="utf-8"))
-    map_index["schemaVersion"] = SCHEMA_VERSION
-    map_index["dataSchemaVersion"] = SCHEMA_VERSION
-    for layer in map_index.get("layers", []):
-        layer["layerId"] = str(layer["layerId"]).replace("v121", "v124")
-        if layer.get("assetRef"):
-            layer["assetRef"]["provider"] = "vietnam-v124"
-    _write_json(out / "map-index.json", map_index)
-
     status_counts = {
         status: sum(row["publicStatus"] == status for row in catalog)
         for status in sorted(ALLOWED_STATUSES)
@@ -1097,8 +1105,8 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         },
         "rowBalance": row_balance,
         "publicStatusCounts": status_counts,
-        "mapLayerCount": len(map_index.get("layers", [])),
-        "mapFeatureCount": sum(int(row.get("featureCount", 0)) for row in map_index.get("layers", [])),
+        "mapLayerCount": spatial_build["mapLayerCount"],
+        "mapFeatureCount": spatial_build["mapFeatureCount"],
         "downloadableElementCount": sum(bool(row.get("downloadAssets")) for row in catalog),
         "bundleIndexElements": len(bundle_elements),
         "packCount": len(bundle_packs),
@@ -1111,6 +1119,14 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
             "rightsMatrix": "/data/vietnam/v2/rights-matrix.json",
             "assetIntegrity": "/data/vietnam/v2/asset-integrity.json",
             "mapIndex": "/data/vietnam/v2/map-index.json",
+            "geometryManifest": "/data/vietnam/v2/geometry/geometry-manifest.json",
+            "adm1Geometry": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+            "adm1Aliases": "/data/vietnam/v2/geometry/vnm-adm1-aliases.json",
+            "transmissionGeometry": "/data/vietnam/v2/geometry/vnm-transmission-network.geojson",
+            "spatialLayers": [
+                spatial_build["spatialAssetUrls"][element_id]
+                for element_id in sorted(spatial_build["spatialAssetUrls"])
+            ],
             "bundleIndex": _asset_url(bundle_index_path, public_dir),
             "searchIndex": [_asset_url(search_path, public_dir)],
             "sourceRegistry": _asset_url(source_registry_path, public_dir),
@@ -1160,6 +1176,8 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         "statusCounts": status_counts,
         "rowBalance": row_balance,
         "assetCount": integrity["assetCount"],
+        "mapLayerCount": spatial_build["mapLayerCount"],
+        "mapFeatureCount": spatial_build["mapFeatureCount"],
     }
 
 

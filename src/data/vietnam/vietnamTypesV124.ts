@@ -287,12 +287,106 @@ export interface VietnamManifestV124 {
   countryRuntimeVersion?: string;
 }
 
-export type VietnamMapLayerV124 = Omit<
-  VietnamMapLayerV121,
-  "assetRef"
-> & {
+export type VietnamMapRendererV124 =
+  | "point"
+  | "cluster"
+  | "line"
+  | "admin1-choropleth"
+  | "partial-choropleth";
+
+export interface VietnamMapSelectorOptionV124 {
+  key: string;
+  label: string;
+  unit: string;
+  periods: string[];
+  maxFeatureCount?: number;
+}
+
+export interface VietnamMapSelectorsV124 {
+  variables: VietnamMapSelectorOptionV124[];
+  periods: string[];
+  defaultVariable: string;
+  defaultPeriod: string;
+}
+
+export interface VietnamMapJoinV124 {
+  requiredCount: number;
+  matchedCount: number;
+  missingCount?: number;
+  failures: string[];
+}
+
+export type VietnamMapLayerV124 = Omit<VietnamMapLayerV121, "assetRef"> & {
   assetRef: VietnamDataAssetRefV124;
+  active?: boolean;
+  enabled?: boolean;
+  disabledReason?: string;
+  renderer: VietnamMapRendererV124;
+  geometryUrl?: string;
+  dataUrl?: string;
+  selectors: VietnamMapSelectorsV124;
+  unit: string;
+  source: string;
+  sourceUrls?: string[];
+  sourceYear?: number | string | null;
+  licenses?: string[];
+  license?: string;
+  spatialCoverage: string;
+  missingRegions: string[];
+  accuracyNotice: string;
+  detailElementId: string;
+  detailUrl: string;
+  downloadStatus: "available" | "source-restricted" | "unavailable";
+  join: VietnamMapJoinV124;
+  fakeGeometryCount: number;
+  zeroImputationCount: number;
 };
+
+export interface VietnamSpatialValueV124 {
+  adm1Code: string;
+  adm1Name: string;
+  variable: string;
+  variableLabel: string;
+  period: string;
+  value: number;
+  unit?: string | null;
+  sourceIndicatorId?: string | null;
+  sourceRecordId?: string | null;
+  sourceSpatialUnit: "admin1" | "region";
+  sourceRegion?: string;
+  mappingMethod?: string;
+  imputed: false;
+}
+
+export interface VietnamSpatialLayerAssetV124 {
+  schemaVersion: "v124";
+  assetSchemaVersion: "v124-spatial-layer-1";
+  countryIso3: "VNM";
+  elementId: string;
+  geometryUrl: string;
+  joinKey: "adm1Code";
+  boundarySystem: "pre-2025-63";
+  coverageKind: "full" | "partial";
+  selectors: VietnamMapSelectorsV124;
+  values: VietnamSpatialValueV124[];
+  seriesCoverage: Array<{
+    variable: string;
+    period: string;
+    expectedCount: 63;
+    matchedCount: number;
+    missingCount: number;
+    failureCount: 0;
+  }>;
+  validation: {
+    publishedValueCount: number;
+    matchedAdm1Count: number;
+    joinFailureCount: 0;
+    duplicateValueCount: 0;
+    fakeGeometryCount: 0;
+    zeroImputationCount: 0;
+    maxSeriesFeatureCount: number;
+  };
+}
 
 export interface VietnamQualityReportV124 {
   schemaVersion: "v124";

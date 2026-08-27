@@ -1,0 +1,238 @@
+{
+  "assets": [
+    {
+      "attribution": "geoBoundaries (William & Mary geoLab), VNM ADM1, boundary year 2008, build 2023-12-12; Runfola et al. (2020), PLOS ONE 15(4): e0231866.",
+      "featureCount": 63,
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "kind": "adm1-boundary",
+      "license": {
+        "attributionRequired": true,
+        "geoBoundariesDerivativeLicense": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "sourceBoundaryLicense": "Public Domain"
+      },
+      "sha256": "1985e5dc1f60be511b5e6da9642fbd25fb9e0a19c814e4c141772dd6b858b873",
+      "source": {
+        "apiUrl": "https://www.geoboundaries.org/api/current/gbOpen/VNM/ADM1/",
+        "boundaryId": "VNM-ADM1-63759600",
+        "metadataUrl": "https://media.githubusercontent.com/media/wmgeolab/geoBoundaries/9469f09/releaseData/gbOpen/VNM/ADM1/geoBoundaries-VNM-ADM1-metaData.json",
+        "name": "geoBoundaries VNM ADM1",
+        "sourceBuildDate": "2023-12-12",
+        "sourceCommit": "9469f09",
+        "sourceDataUpdateDate": "2023-01-19",
+        "sourceFeatureCount": 64,
+        "sourceSha256": "25dbc2fec9862016710118fc98042d3e803830c72361c91c4e864ae668fa9541",
+        "sourceUrl": "https://media.githubusercontent.com/media/wmgeolab/geoBoundaries/9469f09/releaseData/gbOpen/VNM/ADM1/geoBoundaries-VNM-ADM1.geojson"
+      },
+      "url": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+      "validation": {
+        "duplicateProvinceCount": 0,
+        "emptyGeometryCount": 0,
+        "fakeGeometryCount": 0,
+        "featureCount": 63,
+        "geometryValidity": "pass",
+        "invalidGeometryCount": 0,
+        "multiPolygonCount": 13,
+        "polygonCount": 50,
+        "sourceInvalidGeometryCount": 0,
+        "validator": "Shapely 2.1.2 (GEOS is_valid)"
+      },
+      "version": "2023-12-12"
+    },
+    {
+      "featureCount": 63,
+      "kind": "adm1-aliases",
+      "sha256": "593b3da1a8c3c8fb99e05bf8bcedaa7c8e5a1e9ff75a14a6ad965face4969778",
+      "url": "/data/vietnam/v2/geometry/vnm-adm1-aliases.json",
+      "validation": {
+        "duplicateAliasCount": 0,
+        "lookupKeyCount": 208,
+        "provinceCount": 63,
+        "unmappedProvinceCount": 0
+      }
+    },
+    {
+      "accuracyNotice": "Digitized from a georeferenced PDF. The source warns of isolated horizontal and vertical displacement of 2–10 km; use only for approximate visualization, not high-accuracy engineering or routing.",
+      "attribution": "World Bank Group / ENERGYDATA.INFO, Vietnam - Electricity Transmission Network (2016), CC BY 4.0",
+      "featureCount": 606,
+      "geometryTypes": [
+        "MultiLineString"
+      ],
+      "kind": "transmission-network",
+      "license": "CC-BY-4.0",
+      "sha256": "3fd682c9a9253fd101d48e83491fd4cc4d131f6bfe6fefe3a69d840932b63446",
+      "source": "World Bank Group / ENERGYDATA.INFO",
+      "url": "/data/vietnam/v2/geometry/vnm-transmission-network.geojson",
+      "version": "2016 network; source resource last modified 2018-11-14"
+    }
+  ],
+  "boundarySystem": "pre-2025-63",
+  "countryIso3": "VNM",
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "regionMappings": {
+    "B-021": {
+      "joinFailureCount": 0,
+      "mapping": {
+        "Central Highlands": [
+          "Kon Tum",
+          "Gia Lai",
+          "Đắk Lắk",
+          "Đắk Nông",
+          "Lâm Đồng"
+        ],
+        "Mekong River Delta": [
+          "Long An",
+          "Tiền Giang",
+          "Bến Tre",
+          "Trà Vinh",
+          "Vĩnh Long",
+          "Đồng Tháp",
+          "An Giang",
+          "Kiên Giang",
+          "Cần Thơ",
+          "Hậu Giang",
+          "Sóc Trăng",
+          "Bạc Liêu",
+          "Cà Mau"
+        ],
+        "North Central Coast and South Central Coast": [
+          "Thanh Hóa",
+          "Nghệ An",
+          "Hà Tĩnh",
+          "Quảng Bình",
+          "Quảng Trị",
+          "Thừa Thiên Huế",
+          "Đà Nẵng",
+          "Quảng Nam",
+          "Quảng Ngãi",
+          "Bình Định",
+          "Phú Yên",
+          "Khánh Hòa",
+          "Ninh Thuận",
+          "Bình Thuận"
+        ],
+        "North East, North West": [
+          "Hà Giang",
+          "Cao Bằng",
+          "Bắc Kạn",
+          "Tuyên Quang",
+          "Lào Cai",
+          "Yên Bái",
+          "Thái Nguyên",
+          "Lạng Sơn",
+          "Bắc Giang",
+          "Phú Thọ",
+          "Điện Biên",
+          "Lai Châu",
+          "Sơn La",
+          "Hòa Bình"
+        ],
+        "Red River Delta": [
+          "Hà Nội",
+          "Hải Phòng",
+          "Vĩnh Phúc",
+          "Bắc Ninh",
+          "Hải Dương",
+          "Hưng Yên",
+          "Thái Bình",
+          "Hà Nam",
+          "Nam Định",
+          "Ninh Bình",
+          "Quảng Ninh"
+        ],
+        "South East": [
+          "Hồ Chí Minh",
+          "Bình Phước",
+          "Tây Ninh",
+          "Bình Dương",
+          "Đồng Nai",
+          "Bà Rịa–Vũng Tàu"
+        ]
+      },
+      "sourceSpatialUnitCount": 6,
+      "targetAdm1Count": 63
+    }
+  },
+  "schemaVersion": "v124-geometry-manifest-1",
+  "spatialValueAssets": [
+    {
+      "elementId": "B-021",
+      "joinFailureCount": 0,
+      "matchedAdm1Count": 63,
+      "publishedValueCount": 21672,
+      "sha256": "8a9aeb8a270fb8cd9591cbd35c487a5f11616fd2d5bb5c7bbf4f4c42c13f903e",
+      "url": "/data/vietnam/v2/spatial/layers/b-021.json",
+      "zeroImputationCount": 0
+    },
+    {
+      "elementId": "B-031",
+      "joinFailureCount": 0,
+      "matchedAdm1Count": 63,
+      "publishedValueCount": 189,
+      "sha256": "0812ca9b8e9f244637b532dd2f803835dcbe3f478f9f68aad7b687d84493db4e",
+      "url": "/data/vietnam/v2/spatial/layers/b-031.json",
+      "zeroImputationCount": 0
+    },
+    {
+      "elementId": "B-032",
+      "joinFailureCount": 0,
+      "matchedAdm1Count": 63,
+      "publishedValueCount": 126,
+      "sha256": "61d5189f705e15244ea7e28c70b90b4665e5cf72eb3da418db965734e41b4777",
+      "url": "/data/vietnam/v2/spatial/layers/b-032.json",
+      "zeroImputationCount": 0
+    },
+    {
+      "elementId": "B-033",
+      "joinFailureCount": 0,
+      "matchedAdm1Count": 63,
+      "publishedValueCount": 1575,
+      "sha256": "f1f712b508b8e485aec96322217b23d8c48dcacd4689d1d8ca42d16d15e2b699",
+      "url": "/data/vietnam/v2/spatial/layers/b-033.json",
+      "zeroImputationCount": 0
+    },
+    {
+      "elementId": "B-034",
+      "joinFailureCount": 0,
+      "matchedAdm1Count": 63,
+      "publishedValueCount": 441,
+      "sha256": "daf5b7ee1c754628f45eec7283cf768cd66eda5553fd35e7e9e7eb211240506b",
+      "url": "/data/vietnam/v2/spatial/layers/b-034.json",
+      "zeroImputationCount": 0
+    },
+    {
+      "elementId": "C-016",
+      "joinFailureCount": 0,
+      "matchedAdm1Count": 63,
+      "publishedValueCount": 639,
+      "sha256": "52ef32c6510b0e36b39771769b9f885ca450dea792be11095374073f30a269c3",
+      "url": "/data/vietnam/v2/spatial/layers/c-016.json",
+      "zeroImputationCount": 0
+    },
+    {
+      "elementId": "D-008",
+      "joinFailureCount": 0,
+      "matchedAdm1Count": 3,
+      "publishedValueCount": 3,
+      "sha256": "4f297f3cb84ea43c25bed98bbc6b67d6628b93ea062f87063f03c48010a75dee",
+      "url": "/data/vietnam/v2/spatial/layers/d-008.json",
+      "zeroImputationCount": 0
+    }
+  ],
+  "validation": {
+    "activeMapLayerCount": 13,
+    "actualLineGeometry": true,
+    "adm1FeatureCount": 63,
+    "adm1JoinFailureCount": 0,
+    "duplicateProvinceCount": 0,
+    "emptyGeometryCount": 0,
+    "fakeGeometryCount": 0,
+    "invalidGeometryCount": 0,
+    "mapFeatureCount": 2904,
+    "transmissionFeatureCount": 606,
+    "zeroImputationCount": 0
+  }
+}

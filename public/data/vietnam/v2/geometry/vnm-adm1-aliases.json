@@ -1,0 +1,955 @@
+{
+  "aliases": [
+    {
+      "adm1Code": "VN-01",
+      "canonicalName": "Lai Châu",
+      "normalizedKey": "lai chau",
+      "variants": [
+        "Lai Châu",
+        "lai chau",
+        "Tỉnh Lai Châu",
+        "Province Lai Châu"
+      ]
+    },
+    {
+      "adm1Code": "VN-02",
+      "canonicalName": "Lào Cai",
+      "normalizedKey": "lao cai",
+      "variants": [
+        "Lào Cai",
+        "lao cai",
+        "Tỉnh Lào Cai",
+        "Province Lào Cai"
+      ]
+    },
+    {
+      "adm1Code": "VN-03",
+      "canonicalName": "Hà Giang",
+      "normalizedKey": "ha giang",
+      "variants": [
+        "Hà Giang",
+        "ha giang",
+        "Tỉnh Hà Giang",
+        "Province Hà Giang"
+      ]
+    },
+    {
+      "adm1Code": "VN-04",
+      "canonicalName": "Cao Bằng",
+      "normalizedKey": "cao bang",
+      "variants": [
+        "Cao Bằng",
+        "cao bang",
+        "Tỉnh Cao Bằng",
+        "Province Cao Bằng"
+      ]
+    },
+    {
+      "adm1Code": "VN-05",
+      "canonicalName": "Sơn La",
+      "normalizedKey": "son la",
+      "variants": [
+        "Sơn La",
+        "son la",
+        "Tỉnh Sơn La",
+        "Province Sơn La"
+      ]
+    },
+    {
+      "adm1Code": "VN-06",
+      "canonicalName": "Yên Bái",
+      "normalizedKey": "yen bai",
+      "variants": [
+        "Yên Bái",
+        "yen bai",
+        "Tỉnh Yên Bái",
+        "Province Yên Bái"
+      ]
+    },
+    {
+      "adm1Code": "VN-07",
+      "canonicalName": "Tuyên Quang",
+      "normalizedKey": "tuyen quang",
+      "variants": [
+        "Tuyên Quang",
+        "tuyen quang",
+        "Tỉnh Tuyên Quang",
+        "Province Tuyên Quang"
+      ]
+    },
+    {
+      "adm1Code": "VN-09",
+      "canonicalName": "Lạng Sơn",
+      "normalizedKey": "lang son",
+      "variants": [
+        "Lạng Sơn",
+        "lang son",
+        "Tỉnh Lạng Sơn",
+        "Province Lạng Sơn"
+      ]
+    },
+    {
+      "adm1Code": "VN-13",
+      "canonicalName": "Quảng Ninh",
+      "normalizedKey": "quang ninh",
+      "variants": [
+        "Quảng Ninh",
+        "quang ninh",
+        "Tỉnh Quảng Ninh",
+        "Province Quảng Ninh"
+      ]
+    },
+    {
+      "adm1Code": "VN-14",
+      "canonicalName": "Hòa Bình",
+      "normalizedKey": "hoa binh",
+      "variants": [
+        "Hòa Bình",
+        "hoa binh",
+        "Tỉnh Hòa Bình",
+        "Province Hòa Bình"
+      ]
+    },
+    {
+      "adm1Code": "VN-18",
+      "canonicalName": "Ninh Bình",
+      "normalizedKey": "ninh binh",
+      "variants": [
+        "Ninh Bình",
+        "ninh binh",
+        "Tỉnh Ninh Bình",
+        "Province Ninh Bình"
+      ]
+    },
+    {
+      "adm1Code": "VN-20",
+      "canonicalName": "Thái Bình",
+      "normalizedKey": "thai binh",
+      "variants": [
+        "Thái Bình",
+        "thai binh",
+        "Tỉnh Thái Bình",
+        "Province Thái Bình"
+      ]
+    },
+    {
+      "adm1Code": "VN-21",
+      "canonicalName": "Thanh Hóa",
+      "normalizedKey": "thanh hoa",
+      "variants": [
+        "Thanh Hóa",
+        "thanh hoa",
+        "Tỉnh Thanh Hóa",
+        "Province Thanh Hóa"
+      ]
+    },
+    {
+      "adm1Code": "VN-22",
+      "canonicalName": "Nghệ An",
+      "normalizedKey": "nghe an",
+      "variants": [
+        "Nghệ An",
+        "nghe an",
+        "Tỉnh Nghệ An",
+        "Province Nghệ An"
+      ]
+    },
+    {
+      "adm1Code": "VN-23",
+      "canonicalName": "Hà Tĩnh",
+      "normalizedKey": "ha tinh",
+      "variants": [
+        "Hà Tĩnh",
+        "ha tinh",
+        "Tỉnh Hà Tĩnh",
+        "Province Hà Tĩnh"
+      ]
+    },
+    {
+      "adm1Code": "VN-24",
+      "canonicalName": "Quảng Bình",
+      "normalizedKey": "quang binh",
+      "variants": [
+        "Quảng Bình",
+        "quang binh",
+        "Tỉnh Quảng Bình",
+        "Province Quảng Bình"
+      ]
+    },
+    {
+      "adm1Code": "VN-25",
+      "canonicalName": "Quảng Trị",
+      "normalizedKey": "quang tri",
+      "variants": [
+        "Quảng Trị",
+        "quang tri",
+        "Tỉnh Quảng Trị",
+        "Province Quảng Trị"
+      ]
+    },
+    {
+      "adm1Code": "VN-26",
+      "canonicalName": "Thừa Thiên Huế",
+      "normalizedKey": "thua thien hue",
+      "variants": [
+        "Thừa Thiên Huế",
+        "thua thien hue",
+        "Tỉnh Thừa Thiên Huế",
+        "Province Thừa Thiên Huế",
+        "Thua Thien Hue",
+        "Thừa Thiên-Huế",
+        "Thua Thien-Hue",
+        "Huế",
+        "Hue"
+      ]
+    },
+    {
+      "adm1Code": "VN-27",
+      "canonicalName": "Quảng Nam",
+      "normalizedKey": "quang nam",
+      "variants": [
+        "Quảng Nam",
+        "quang nam",
+        "Tỉnh Quảng Nam",
+        "Province Quảng Nam"
+      ]
+    },
+    {
+      "adm1Code": "VN-28",
+      "canonicalName": "Kon Tum",
+      "normalizedKey": "kon tum",
+      "variants": [
+        "Kon Tum",
+        "kon tum",
+        "Tỉnh Kon Tum",
+        "Province Kon Tum"
+      ]
+    },
+    {
+      "adm1Code": "VN-29",
+      "canonicalName": "Quảng Ngãi",
+      "normalizedKey": "quang ngai",
+      "variants": [
+        "Quảng Ngãi",
+        "quang ngai",
+        "Tỉnh Quảng Ngãi",
+        "Province Quảng Ngãi"
+      ]
+    },
+    {
+      "adm1Code": "VN-30",
+      "canonicalName": "Gia Lai",
+      "normalizedKey": "gia lai",
+      "variants": [
+        "Gia Lai",
+        "gia lai",
+        "Tỉnh Gia Lai",
+        "Province Gia Lai"
+      ]
+    },
+    {
+      "adm1Code": "VN-31",
+      "canonicalName": "Bình Định",
+      "normalizedKey": "binh dinh",
+      "variants": [
+        "Bình Định",
+        "binh dinh",
+        "Tỉnh Bình Định",
+        "Province Bình Định"
+      ]
+    },
+    {
+      "adm1Code": "VN-32",
+      "canonicalName": "Phú Yên",
+      "normalizedKey": "phu yen",
+      "variants": [
+        "Phú Yên",
+        "phu yen",
+        "Tỉnh Phú Yên",
+        "Province Phú Yên"
+      ]
+    },
+    {
+      "adm1Code": "VN-33",
+      "canonicalName": "Đắk Lắk",
+      "normalizedKey": "dak lak",
+      "variants": [
+        "Đắk Lắk",
+        "dak lak",
+        "Tỉnh Đắk Lắk",
+        "Province Đắk Lắk",
+        "Dak Lak",
+        "Dac Lac",
+        "Đắc Lắk"
+      ]
+    },
+    {
+      "adm1Code": "VN-34",
+      "canonicalName": "Khánh Hòa",
+      "normalizedKey": "khanh hoa",
+      "variants": [
+        "Khánh Hòa",
+        "khanh hoa",
+        "Tỉnh Khánh Hòa",
+        "Province Khánh Hòa"
+      ]
+    },
+    {
+      "adm1Code": "VN-35",
+      "canonicalName": "Lâm Đồng",
+      "normalizedKey": "lam dong",
+      "variants": [
+        "Lâm Đồng",
+        "lam dong",
+        "Tỉnh Lâm Đồng",
+        "Province Lâm Đồng"
+      ]
+    },
+    {
+      "adm1Code": "VN-36",
+      "canonicalName": "Ninh Thuận",
+      "normalizedKey": "ninh thuan",
+      "variants": [
+        "Ninh Thuận",
+        "ninh thuan",
+        "Tỉnh Ninh Thuận",
+        "Province Ninh Thuận"
+      ]
+    },
+    {
+      "adm1Code": "VN-37",
+      "canonicalName": "Tây Ninh",
+      "normalizedKey": "tay ninh",
+      "variants": [
+        "Tây Ninh",
+        "tay ninh",
+        "Tỉnh Tây Ninh",
+        "Province Tây Ninh"
+      ]
+    },
+    {
+      "adm1Code": "VN-39",
+      "canonicalName": "Đồng Nai",
+      "normalizedKey": "dong nai",
+      "variants": [
+        "Đồng Nai",
+        "dong nai",
+        "Tỉnh Đồng Nai",
+        "Province Đồng Nai"
+      ]
+    },
+    {
+      "adm1Code": "VN-40",
+      "canonicalName": "Bình Thuận",
+      "normalizedKey": "binh thuan",
+      "variants": [
+        "Bình Thuận",
+        "binh thuan",
+        "Tỉnh Bình Thuận",
+        "Province Bình Thuận"
+      ]
+    },
+    {
+      "adm1Code": "VN-41",
+      "canonicalName": "Long An",
+      "normalizedKey": "long an",
+      "variants": [
+        "Long An",
+        "long an",
+        "Tỉnh Long An",
+        "Province Long An"
+      ]
+    },
+    {
+      "adm1Code": "VN-43",
+      "canonicalName": "Bà Rịa–Vũng Tàu",
+      "normalizedKey": "ba ria vung tau",
+      "variants": [
+        "Bà Rịa–Vũng Tàu",
+        "Côn Đảo",
+        "ba ria vung tau",
+        "Tỉnh Bà Rịa–Vũng Tàu",
+        "Province Bà Rịa–Vũng Tàu",
+        "Bà Rịa - Vũng Tàu",
+        "Bà Rịa – Vũng Tàu",
+        "Ba Ria Vung Tau",
+        "Ba Ria-Vung Tau",
+        "Vung Tau"
+      ]
+    },
+    {
+      "adm1Code": "VN-44",
+      "canonicalName": "An Giang",
+      "normalizedKey": "an giang",
+      "variants": [
+        "An Giang",
+        "an giang",
+        "Tỉnh An Giang",
+        "Province An Giang"
+      ]
+    },
+    {
+      "adm1Code": "VN-45",
+      "canonicalName": "Đồng Tháp",
+      "normalizedKey": "dong thap",
+      "variants": [
+        "Đồng Tháp",
+        "dong thap",
+        "Tỉnh Đồng Tháp",
+        "Province Đồng Tháp"
+      ]
+    },
+    {
+      "adm1Code": "VN-46",
+      "canonicalName": "Tiền Giang",
+      "normalizedKey": "tien giang",
+      "variants": [
+        "Tiền Giang",
+        "tien giang",
+        "Tỉnh Tiền Giang",
+        "Province Tiền Giang"
+      ]
+    },
+    {
+      "adm1Code": "VN-47",
+      "canonicalName": "Kiên Giang",
+      "normalizedKey": "kien giang",
+      "variants": [
+        "Kiên Giang",
+        "kien giang",
+        "Tỉnh Kiên Giang",
+        "Province Kiên Giang"
+      ]
+    },
+    {
+      "adm1Code": "VN-49",
+      "canonicalName": "Vĩnh Long",
+      "normalizedKey": "vinh long",
+      "variants": [
+        "Vĩnh Long",
+        "vinh long",
+        "Tỉnh Vĩnh Long",
+        "Province Vĩnh Long"
+      ]
+    },
+    {
+      "adm1Code": "VN-50",
+      "canonicalName": "Bến Tre",
+      "normalizedKey": "ben tre",
+      "variants": [
+        "Bến Tre",
+        "ben tre",
+        "Tỉnh Bến Tre",
+        "Province Bến Tre"
+      ]
+    },
+    {
+      "adm1Code": "VN-51",
+      "canonicalName": "Trà Vinh",
+      "normalizedKey": "tra vinh",
+      "variants": [
+        "Trà Vinh",
+        "tra vinh",
+        "Tỉnh Trà Vinh",
+        "Province Trà Vinh"
+      ]
+    },
+    {
+      "adm1Code": "VN-52",
+      "canonicalName": "Sóc Trăng",
+      "normalizedKey": "soc trang",
+      "variants": [
+        "Sóc Trăng",
+        "soc trang",
+        "Tỉnh Sóc Trăng",
+        "Province Sóc Trăng"
+      ]
+    },
+    {
+      "adm1Code": "VN-53",
+      "canonicalName": "Bắc Kạn",
+      "normalizedKey": "bac kan",
+      "variants": [
+        "Bắc Kạn",
+        "bac kan",
+        "Tỉnh Bắc Kạn",
+        "Province Bắc Kạn"
+      ]
+    },
+    {
+      "adm1Code": "VN-54",
+      "canonicalName": "Bắc Giang",
+      "normalizedKey": "bac giang",
+      "variants": [
+        "Bắc Giang",
+        "bac giang",
+        "Tỉnh Bắc Giang",
+        "Province Bắc Giang"
+      ]
+    },
+    {
+      "adm1Code": "VN-55",
+      "canonicalName": "Bạc Liêu",
+      "normalizedKey": "bac lieu",
+      "variants": [
+        "Bạc Liêu",
+        "bac lieu",
+        "Tỉnh Bạc Liêu",
+        "Province Bạc Liêu"
+      ]
+    },
+    {
+      "adm1Code": "VN-56",
+      "canonicalName": "Bắc Ninh",
+      "normalizedKey": "bac ninh",
+      "variants": [
+        "Bắc Ninh",
+        "bac ninh",
+        "Tỉnh Bắc Ninh",
+        "Province Bắc Ninh"
+      ]
+    },
+    {
+      "adm1Code": "VN-57",
+      "canonicalName": "Bình Dương",
+      "normalizedKey": "binh duong",
+      "variants": [
+        "Bình Dương",
+        "binh duong",
+        "Tỉnh Bình Dương",
+        "Province Bình Dương"
+      ]
+    },
+    {
+      "adm1Code": "VN-58",
+      "canonicalName": "Bình Phước",
+      "normalizedKey": "binh phuoc",
+      "variants": [
+        "Bình Phước",
+        "binh phuoc",
+        "Tỉnh Bình Phước",
+        "Province Bình Phước"
+      ]
+    },
+    {
+      "adm1Code": "VN-59",
+      "canonicalName": "Cà Mau",
+      "normalizedKey": "ca mau",
+      "variants": [
+        "Cà Mau",
+        "ca mau",
+        "Tỉnh Cà Mau",
+        "Province Cà Mau"
+      ]
+    },
+    {
+      "adm1Code": "VN-61",
+      "canonicalName": "Hải Dương",
+      "normalizedKey": "hai duong",
+      "variants": [
+        "Hải Dương",
+        "hai duong",
+        "Tỉnh Hải Dương",
+        "Province Hải Dương"
+      ]
+    },
+    {
+      "adm1Code": "VN-63",
+      "canonicalName": "Hà Nam",
+      "normalizedKey": "ha nam",
+      "variants": [
+        "Hà Nam",
+        "ha nam",
+        "Tỉnh Hà Nam",
+        "Province Hà Nam"
+      ]
+    },
+    {
+      "adm1Code": "VN-66",
+      "canonicalName": "Hưng Yên",
+      "normalizedKey": "hung yen",
+      "variants": [
+        "Hưng Yên",
+        "hung yen",
+        "Tỉnh Hưng Yên",
+        "Province Hưng Yên"
+      ]
+    },
+    {
+      "adm1Code": "VN-67",
+      "canonicalName": "Nam Định",
+      "normalizedKey": "nam dinh",
+      "variants": [
+        "Nam Định",
+        "nam dinh",
+        "Tỉnh Nam Định",
+        "Province Nam Định"
+      ]
+    },
+    {
+      "adm1Code": "VN-68",
+      "canonicalName": "Phú Thọ",
+      "normalizedKey": "phu tho",
+      "variants": [
+        "Phú Thọ",
+        "phu tho",
+        "Tỉnh Phú Thọ",
+        "Province Phú Thọ"
+      ]
+    },
+    {
+      "adm1Code": "VN-69",
+      "canonicalName": "Thái Nguyên",
+      "normalizedKey": "thai nguyen",
+      "variants": [
+        "Thái Nguyên",
+        "thai nguyen",
+        "Tỉnh Thái Nguyên",
+        "Province Thái Nguyên"
+      ]
+    },
+    {
+      "adm1Code": "VN-70",
+      "canonicalName": "Vĩnh Phúc",
+      "normalizedKey": "vinh phuc",
+      "variants": [
+        "Vĩnh Phúc",
+        "vinh phuc",
+        "Tỉnh Vĩnh Phúc",
+        "Province Vĩnh Phúc"
+      ]
+    },
+    {
+      "adm1Code": "VN-71",
+      "canonicalName": "Điện Biên",
+      "normalizedKey": "dien bien",
+      "variants": [
+        "Điện Biên",
+        "dien bien",
+        "Tỉnh Điện Biên",
+        "Province Điện Biên"
+      ]
+    },
+    {
+      "adm1Code": "VN-72",
+      "canonicalName": "Đắk Nông",
+      "normalizedKey": "dak nong",
+      "variants": [
+        "Đắk Nông",
+        "dak nong",
+        "Tỉnh Đắk Nông",
+        "Province Đắk Nông",
+        "Dak Nong",
+        "Dac Nong",
+        "Đắc Nông"
+      ]
+    },
+    {
+      "adm1Code": "VN-73",
+      "canonicalName": "Hậu Giang",
+      "normalizedKey": "hau giang",
+      "variants": [
+        "Hậu Giang",
+        "hau giang",
+        "Tỉnh Hậu Giang",
+        "Province Hậu Giang"
+      ]
+    },
+    {
+      "adm1Code": "VN-CT",
+      "canonicalName": "Cần Thơ",
+      "normalizedKey": "can tho",
+      "variants": [
+        "Cần Thơ",
+        "can tho",
+        "Tỉnh Cần Thơ",
+        "Province Cần Thơ",
+        "Can Tho",
+        "Thành phố Cần Thơ"
+      ]
+    },
+    {
+      "adm1Code": "VN-DN",
+      "canonicalName": "Đà Nẵng",
+      "normalizedKey": "da nang",
+      "variants": [
+        "Đà Nẵng",
+        "da nang",
+        "Tỉnh Đà Nẵng",
+        "Province Đà Nẵng",
+        "Da Nang",
+        "Danang",
+        "Thành phố Đà Nẵng"
+      ]
+    },
+    {
+      "adm1Code": "VN-HN",
+      "canonicalName": "Hà Nội",
+      "normalizedKey": "ha noi",
+      "variants": [
+        "Hà Nội",
+        "ha noi",
+        "Tỉnh Hà Nội",
+        "Province Hà Nội",
+        "Ha Noi",
+        "Hanoi",
+        "Thành phố Hà Nội"
+      ]
+    },
+    {
+      "adm1Code": "VN-HP",
+      "canonicalName": "Hải Phòng",
+      "normalizedKey": "hai phong",
+      "variants": [
+        "Hải Phòng",
+        "hai phong",
+        "Tỉnh Hải Phòng",
+        "Province Hải Phòng",
+        "Hai Phong",
+        "Haiphong",
+        "Thành phố Hải Phòng"
+      ]
+    },
+    {
+      "adm1Code": "VN-SG",
+      "canonicalName": "Hồ Chí Minh",
+      "normalizedKey": "ho chi minh",
+      "variants": [
+        "Hồ Chí Minh",
+        "Ho Chi Minh",
+        "ho chi minh",
+        "Tỉnh Hồ Chí Minh",
+        "Province Hồ Chí Minh",
+        "Ho Chi Minh City",
+        "HCMC",
+        "TP Ho Chi Minh",
+        "TP. Hồ Chí Minh",
+        "Thành phố Hồ Chí Minh",
+        "Sai Gon",
+        "Saigon"
+      ]
+    }
+  ],
+  "boundarySystem": "pre-2025-63",
+  "canonicalKey": "adm1Code",
+  "countryIso3": "VNM",
+  "lookup": {
+    "an giang": "VN-44",
+    "ba ria vung tau": "VN-43",
+    "bac giang": "VN-54",
+    "bac kan": "VN-53",
+    "bac lieu": "VN-55",
+    "bac ninh": "VN-56",
+    "ben tre": "VN-50",
+    "binh dinh": "VN-31",
+    "binh duong": "VN-57",
+    "binh phuoc": "VN-58",
+    "binh thuan": "VN-40",
+    "ca mau": "VN-59",
+    "can tho": "VN-CT",
+    "cao bang": "VN-04",
+    "con dao": "VN-43",
+    "da nang": "VN-DN",
+    "dac lac": "VN-33",
+    "dac lak": "VN-33",
+    "dac nong": "VN-72",
+    "dak lak": "VN-33",
+    "dak nong": "VN-72",
+    "danang": "VN-DN",
+    "dien bien": "VN-71",
+    "dong nai": "VN-39",
+    "dong thap": "VN-45",
+    "gia lai": "VN-30",
+    "ha giang": "VN-03",
+    "ha nam": "VN-63",
+    "ha noi": "VN-HN",
+    "ha tinh": "VN-23",
+    "hai duong": "VN-61",
+    "hai phong": "VN-HP",
+    "haiphong": "VN-HP",
+    "hanoi": "VN-HN",
+    "hau giang": "VN-73",
+    "hcmc": "VN-SG",
+    "ho chi minh": "VN-SG",
+    "ho chi minh city": "VN-SG",
+    "hoa binh": "VN-14",
+    "hue": "VN-26",
+    "hung yen": "VN-66",
+    "khanh hoa": "VN-34",
+    "kien giang": "VN-47",
+    "kon tum": "VN-28",
+    "lai chau": "VN-01",
+    "lam dong": "VN-35",
+    "lang son": "VN-09",
+    "lao cai": "VN-02",
+    "long an": "VN-41",
+    "nam dinh": "VN-67",
+    "nghe an": "VN-22",
+    "ninh binh": "VN-18",
+    "ninh thuan": "VN-36",
+    "phu tho": "VN-68",
+    "phu yen": "VN-32",
+    "province an giang": "VN-44",
+    "province ba ria vung tau": "VN-43",
+    "province bac giang": "VN-54",
+    "province bac kan": "VN-53",
+    "province bac lieu": "VN-55",
+    "province bac ninh": "VN-56",
+    "province ben tre": "VN-50",
+    "province binh dinh": "VN-31",
+    "province binh duong": "VN-57",
+    "province binh phuoc": "VN-58",
+    "province binh thuan": "VN-40",
+    "province ca mau": "VN-59",
+    "province can tho": "VN-CT",
+    "province cao bang": "VN-04",
+    "province da nang": "VN-DN",
+    "province dak lak": "VN-33",
+    "province dak nong": "VN-72",
+    "province dien bien": "VN-71",
+    "province dong nai": "VN-39",
+    "province dong thap": "VN-45",
+    "province gia lai": "VN-30",
+    "province ha giang": "VN-03",
+    "province ha nam": "VN-63",
+    "province ha noi": "VN-HN",
+    "province ha tinh": "VN-23",
+    "province hai duong": "VN-61",
+    "province hai phong": "VN-HP",
+    "province hau giang": "VN-73",
+    "province ho chi minh": "VN-SG",
+    "province hoa binh": "VN-14",
+    "province hung yen": "VN-66",
+    "province khanh hoa": "VN-34",
+    "province kien giang": "VN-47",
+    "province kon tum": "VN-28",
+    "province lai chau": "VN-01",
+    "province lam dong": "VN-35",
+    "province lang son": "VN-09",
+    "province lao cai": "VN-02",
+    "province long an": "VN-41",
+    "province nam dinh": "VN-67",
+    "province nghe an": "VN-22",
+    "province ninh binh": "VN-18",
+    "province ninh thuan": "VN-36",
+    "province phu tho": "VN-68",
+    "province phu yen": "VN-32",
+    "province quang binh": "VN-24",
+    "province quang nam": "VN-27",
+    "province quang ngai": "VN-29",
+    "province quang ninh": "VN-13",
+    "province quang tri": "VN-25",
+    "province soc trang": "VN-52",
+    "province son la": "VN-05",
+    "province tay ninh": "VN-37",
+    "province thai binh": "VN-20",
+    "province thai nguyen": "VN-69",
+    "province thanh hoa": "VN-21",
+    "province thua thien hue": "VN-26",
+    "province tien giang": "VN-46",
+    "province tra vinh": "VN-51",
+    "province tuyen quang": "VN-07",
+    "province vinh long": "VN-49",
+    "province vinh phuc": "VN-70",
+    "province yen bai": "VN-06",
+    "quang binh": "VN-24",
+    "quang nam": "VN-27",
+    "quang ngai": "VN-29",
+    "quang ninh": "VN-13",
+    "quang tri": "VN-25",
+    "sai gon": "VN-SG",
+    "saigon": "VN-SG",
+    "soc trang": "VN-52",
+    "son la": "VN-05",
+    "tay ninh": "VN-37",
+    "thai binh": "VN-20",
+    "thai nguyen": "VN-69",
+    "thanh hoa": "VN-21",
+    "thanh pho can tho": "VN-CT",
+    "thanh pho da nang": "VN-DN",
+    "thanh pho ha noi": "VN-HN",
+    "thanh pho hai phong": "VN-HP",
+    "thanh pho ho chi minh": "VN-SG",
+    "thua thien hue": "VN-26",
+    "tien giang": "VN-46",
+    "tinh an giang": "VN-44",
+    "tinh ba ria vung tau": "VN-43",
+    "tinh bac giang": "VN-54",
+    "tinh bac kan": "VN-53",
+    "tinh bac lieu": "VN-55",
+    "tinh bac ninh": "VN-56",
+    "tinh ben tre": "VN-50",
+    "tinh binh dinh": "VN-31",
+    "tinh binh duong": "VN-57",
+    "tinh binh phuoc": "VN-58",
+    "tinh binh thuan": "VN-40",
+    "tinh ca mau": "VN-59",
+    "tinh can tho": "VN-CT",
+    "tinh cao bang": "VN-04",
+    "tinh da nang": "VN-DN",
+    "tinh dak lak": "VN-33",
+    "tinh dak nong": "VN-72",
+    "tinh dien bien": "VN-71",
+    "tinh dong nai": "VN-39",
+    "tinh dong thap": "VN-45",
+    "tinh gia lai": "VN-30",
+    "tinh ha giang": "VN-03",
+    "tinh ha nam": "VN-63",
+    "tinh ha noi": "VN-HN",
+    "tinh ha tinh": "VN-23",
+    "tinh hai duong": "VN-61",
+    "tinh hai phong": "VN-HP",
+    "tinh hau giang": "VN-73",
+    "tinh ho chi minh": "VN-SG",
+    "tinh hoa binh": "VN-14",
+    "tinh hung yen": "VN-66",
+    "tinh khanh hoa": "VN-34",
+    "tinh kien giang": "VN-47",
+    "tinh kon tum": "VN-28",
+    "tinh lai chau": "VN-01",
+    "tinh lam dong": "VN-35",
+    "tinh lang son": "VN-09",
+    "tinh lao cai": "VN-02",
+    "tinh long an": "VN-41",
+    "tinh nam dinh": "VN-67",
+    "tinh nghe an": "VN-22",
+    "tinh ninh binh": "VN-18",
+    "tinh ninh thuan": "VN-36",
+    "tinh phu tho": "VN-68",
+    "tinh phu yen": "VN-32",
+    "tinh quang binh": "VN-24",
+    "tinh quang nam": "VN-27",
+    "tinh quang ngai": "VN-29",
+    "tinh quang ninh": "VN-13",
+    "tinh quang tri": "VN-25",
+    "tinh soc trang": "VN-52",
+    "tinh son la": "VN-05",
+    "tinh tay ninh": "VN-37",
+    "tinh thai binh": "VN-20",
+    "tinh thai nguyen": "VN-69",
+    "tinh thanh hoa": "VN-21",
+    "tinh thua thien hue": "VN-26",
+    "tinh tien giang": "VN-46",
+    "tinh tra vinh": "VN-51",
+    "tinh tuyen quang": "VN-07",
+    "tinh vinh long": "VN-49",
+    "tinh vinh phuc": "VN-70",
+    "tinh yen bai": "VN-06",
+    "tp ho chi minh": "VN-SG",
+    "tra vinh": "VN-51",
+    "tuyen quang": "VN-07",
+    "vinh long": "VN-49",
+    "vinh phuc": "VN-70",
+    "vung tau": "VN-43",
+    "yen bai": "VN-06"
+  },
+  "normalization": "Unicode NFC; Vietnamese tone removal; đ→d; case-fold; alphanumeric spaces",
+  "schemaVersion": "v124-adm1-aliases-1",
+  "sourceAsset": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+  "validation": {
+    "duplicateAliasCount": 0,
+    "lookupKeyCount": 208,
+    "provinceCount": 63,
+    "unmappedProvinceCount": 0
+  }
+}
