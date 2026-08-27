@@ -257,10 +257,14 @@ const providerContract = sourceHasAll(providerSource, [
 ]);
 addCheck("V124_PROVIDER_CONTRACT", providerContract, providerContract, true);
 
-const routeMounted =
+const mapRouteImport =
   /import\s+RealMapExplorerPage\s+from\s+["'].+RealMapExplorerPage["']/u.test(
     appSource
-  ) && /<RealMapExplorerPage\b/u.test(appSource);
+  ) ||
+  /RealMapExplorerPage\s*=\s*lazy\(\(\)\s*=>\s*import\(["'].+RealMapExplorerPage["']\)\)/u.test(
+    appSource
+  );
+const routeMounted = mapRouteImport && /<RealMapExplorerPage\b/u.test(appSource);
 addCheck("MAP_PAGE_MOUNTED", routeMounted, routeMounted, true);
 
 const fallbackMarkup = sourceHasAll(pageSource, [
