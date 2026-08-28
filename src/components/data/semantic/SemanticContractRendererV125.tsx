@@ -5,9 +5,15 @@ import type {
 } from "../../../data/visualization/semanticTypesV125";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import {
-  entityDisplayNameV121,
   formatValueV121,
 } from "../../../utils/vietnamActualV121";
+import {
+  approvedEntityAttributesV126,
+  publicEntityAttributeLabelV126,
+  publicMissingReasonLabelV126,
+  publicSourceUrlV126,
+  publicTextV126,
+} from "../../../data/visualization/publicFieldPolicyV126";
 
 import "./semantic-contract-renderer-v125.css";
 
@@ -23,6 +29,8 @@ interface Props {
   contextRows: SemanticObservationV125[];
   entities: VietnamEntityV124[];
   countryNameKo: string;
+  markEntityTableAsPublic?: boolean;
+  showRawTable?: boolean;
 }
 
 const SERIES_PATTERNS = ["solid", "dashed", "dotted", "double"] as const;
@@ -33,6 +41,8 @@ export default function SemanticContractRendererV125({
   contextRows,
   entities,
   countryNameKo,
+  markEntityTableAsPublic = false,
+  showRawTable = true,
 }: Props) {
   const renderer = contract.primaryRenderer;
   const presentRows = rows.filter(isPresentRowV125);
@@ -44,8 +54,7 @@ export default function SemanticContractRendererV125({
   return (
     <section
       className="sv125-contract-renderer"
-      data-testid={`v125-renderer-${renderer}`}
-      data-renderer={renderer}
+      data-testid="public-primary-visualization"
       data-unit-axis-policy="one-unit-per-axis"
       data-zero-imputation="false"
       aria-label={`${rendererLabelV125(renderer)} 주 시각화`}
@@ -66,7 +75,12 @@ export default function SemanticContractRendererV125({
           {renderEntityPanelV125(renderer, entities, contract, countryNameKo)}
         </>
       )}
-      {entities.length > 0 && <EntityTableFallbackV125 entities={entities} />}
+      {showRawTable && entities.length > 0 && (
+        <EntityTableFallbackV125
+          entities={entities}
+          markAsPublic={markEntityTableAsPublic}
+        />
+      )}
     </section>
   );
 }
@@ -140,7 +154,7 @@ function renderObservationPanelV125(
         <section className="sv125-contract-note" role="note">
           <strong>구조화 표에 적합한 데이터</strong>
           <span>
-            수치 축으로 변환하지 않고 아래 표 대체 보기에서 원자료 값을
+            수치 축으로 변환하지 않고 아래 원자료 보기에서 공개된 값을
             유지합니다.
           </span>
         </section>
@@ -204,20 +218,39 @@ function CompositionPanelV125({ rows }: { rows: NumericRowV125[] }) {
         재정규화하지 않습니다.
       </p>
       {groupByUnitV125(rows).map(({ unit, rows: unitRows }) => {
-        const nonNegative = unitRows.every((row) => row.value >= 0);
+        const hasBroadIndustry = unitRows.some((row) =>
+          /광공업|industry.*construction/i.test(categoryLabelV125(row))
+        );
+        const hasManufacturingSubset = unitRows.some((row) =>
+          /제조업|manufactur/i.test(categoryLabelV125(row))
+        );
+        const compositionRows =
+          hasBroadIndustry && hasManufacturingSubset
+            ? unitRows.filter(
+                (row) => !/제조업|manufactur/i.test(categoryLabelV125(row))
+              )
+            : unitRows;
+        const nonNegative = compositionRows.every((row) => row.value >= 0);
         const max = unit.includes("%")
           ? 100
-          : Math.max(...unitRows.map((row) => Math.abs(row.value)), 1e-9);
+          : Math.max(...compositionRows.map((row) => Math.abs(row.value)), 1e-9);
         return (
           <article className="sv125-contract-axis" key={unit || "no-unit"}>
             <h5>단위: {unit || "미기재"}</h5>
+            {hasBroadIndustry && hasManufacturingSubset && (
+              <p className="sv125-contract-help">
+                제조업은 광공업·건설에 포함되므로 100% 구성 막대에서
+                중복하지 않습니다. 원자료 표에서 별도 항목으로 확인할 수
+                있습니다.
+              </p>
+            )}
             {!nonNegative && (
               <p className="sv125-contract-warning">
                 음수 값이 있어 구성 막대를 만들지 않고 값을 그대로 표시합니다.
               </p>
             )}
             <div className="sv125-composition-list" role="list">
-              {unitRows.map((row, index) => (
+              {compositionRows.map((row, index) => (
                 <div
                   className="sv125-composition-row"
                   key={row.recordId}
@@ -412,45 +445,11 @@ function ScoreBenchmarkPanelV125({
   contextRows: SemanticObservationV125[];
 }) {
   if (rows.length === 0) return null;
-  const contextNumeric = contextRows.filter(isNumericRowV125);
   return (
-    <VisualizationFrameV125 eyebrow="점수·기준" title="관측범위 기준 위치">
-      <p className="sv125-contract-help">
-        별도 목표값을 만들지 않고, 같은 측정항목·단위의 공개 원자료 관측범위만
-        기준으로 사용합니다.
-      </p>
-      <div className="sv125-score-list">
-        {groupByUnitV125(rows).flatMap(({ unit, rows: unitRows }) =>
-          unitRows.map((row) => {
-            const history = contextNumeric.filter(
-              (item) =>
-                item.semanticMeasure.key === row.semanticMeasure.key &&
-                observationUnitV125(item) === unit
-            );
-            const values = history.length > 0 ? history.map((item) => item.value) : [row.value];
-            const min = Math.min(...values);
-            const max = Math.max(...values);
-            const position = max === min ? 50 : ((row.value - min) / (max - min)) * 100;
-            return (
-              <article key={row.recordId} tabIndex={0}>
-                <div>
-                  <strong>{row.displayLabel}</strong>
-                  <b>
-                    {formatValueV121(row.value)} {unit}
-                  </b>
-                </div>
-                <span className="sv125-score-track" aria-hidden="true">
-                  <i style={{ left: `${position}%` }} />
-                </span>
-                <small>
-                  공개 관측범위 {formatValueV121(min)}–{formatValueV121(max)} {unit}
-                </small>
-              </article>
-            );
-          })
-        )}
-      </div>
-    </VisualizationFrameV125>
+    <>
+      <MetricCardsV125 rows={rows} title="현재 점수" />
+      <TrendPanelV125 rows={contextRows} />
+    </>
   );
 }
 
@@ -663,7 +662,7 @@ function EvidenceCardsV125({
           <strong>{row.displayLabel}</strong>
           <p>{formatValueV121(row.value)}</p>
           <small>
-            {[row.year || row.period, row.provenance.sourceOrg]
+            {[row.year || row.period, publicTextV126(row.provenance.sourceOrg)]
               .filter(Boolean)
               .join(" · ") || "기준정보 미기재"}
           </small>
@@ -671,7 +670,7 @@ function EvidenceCardsV125({
       ))}
       {rows.length > 24 && (
         <p className="sv125-contract-overflow-note">
-          나머지 {rows.length - 24}건은 표 대체 보기에서 확인할 수 있습니다.
+          나머지 {rows.length - 24}건은 아래 원자료 보기에서 확인할 수 있습니다.
         </p>
       )}
     </div>
@@ -709,10 +708,10 @@ function PolicyTimelineV125({
         "year",
         "referenceYear",
       ]),
-      title: entityDisplayNameV121(entity),
+      title: publicEntityNameV126(entity),
       detail:
         entityFieldV125(entity, ["status", "scope", "agreementType"]) ||
-        entity.note ||
+        publicTextV126(entity.note) ||
         "세부 내용은 원자료 표에서 확인",
       sourceUrl: entityUrlV125(entity),
     })),
@@ -753,21 +752,21 @@ function EvidenceMatrixV125({
       area: categoryLabelV125(row),
       result: formatValueV121(row.value),
       basis: String(row.year || row.period || row.provenance.referenceYear || "—"),
-      source: row.provenance.sourceOrg || "미기재",
+      source: publicTextV126(row.provenance.sourceOrg) || "미기재",
     })),
     ...entities.map((entity) => ({
       key: entity.recordId,
       area:
         entityFieldV125(entity, ["category", "item", "topic", "sector"]) ||
-        entityDisplayNameV121(entity),
+        publicEntityNameV126(entity),
       result:
         entityFieldV125(entity, ["content", "status", "result", "description"]) ||
-        entity.note ||
+        publicTextV126(entity.note) ||
         "세부 내용은 원자료 표에서 확인",
       basis:
         entityFieldV125(entity, ["legalBasis", "referenceYear", "year"]) ||
         "—",
-      source: entity.provenance.sourceOrg || "미기재",
+      source: publicTextV126(entity.provenance.sourceOrg) || "미기재",
     })),
   ];
   if (items.length === 0) return null;
@@ -810,26 +809,46 @@ function PortfolioEntitiesV125({ entities }: { entities: VietnamEntityV124[] }) 
     <VisualizationFrameV125 eyebrow="사업·재원" title="포트폴리오 목록">
       <div className="sv125-portfolio-grid">
         {entities.slice(0, 12).map((entity) => {
-          const status = entityFieldV125(entity, ["status", "projectStatus"]);
-          const fund = entityFieldV125(entity, ["fund", "financingType", "donor"]);
-          const sector = entityFieldV125(entity, ["sector", "sectors", "supportType"]);
-          const amount = entityFieldV125(entity, [
-            "amount",
-            "budget",
-            "approvedAmount",
-            "capacity",
-          ]);
+          const status =
+            entityFieldV125(entity, ["status", "projectStatus"]) ||
+            approvedEntityFieldV126(entity, ["entryMode"]);
+          const fund =
+            entityFieldV125(entity, [
+              "fund",
+              "financingType",
+              "donor",
+              "supportingOrganization",
+            ]) || approvedEntityFieldV126(entity, ["supportingOrganization"]);
+          const sector =
+            entityFieldV125(entity, ["sector", "sectors", "supportType"]) ||
+            approvedEntityFieldV126(entity, ["businessSector", "supportType"]);
+          const amount =
+            entityFieldV125(entity, [
+              "amount",
+              "budget",
+              "approvedAmount",
+              "capacity",
+              "budgetScale",
+            ]) || approvedEntityFieldV126(entity, ["budgetScale"]);
+          const target =
+            entityFieldV125(entity, ["eligibleRecipients", "targetGroup"]) ||
+            approvedEntityFieldV126(entity, ["eligibleRecipients"]);
+          const period =
+            entityFieldV125(entity, ["applicationPeriod", "projectPeriod"]) ||
+            approvedEntityFieldV126(entity, ["applicationPeriod", "projectPeriod"]);
           const url = entityUrlV125(entity);
           return (
             <article key={entity.recordId}>
               <div>
-                <span>{status || entity.entityType || "사업"}</span>
-                <strong>{entityDisplayNameV121(entity)}</strong>
+                <span>{status || publicEntityTypeLabelV126(entity, "사업")}</span>
+                <strong>{publicEntityNameV126(entity)}</strong>
               </div>
               <dl>
-                {fund && <><dt>재원·유형</dt><dd>{fund}</dd></>}
-                {sector && <><dt>분야</dt><dd>{sector}</dd></>}
+                {fund && <><dt>기관·재원</dt><dd>{fund}</dd></>}
+                {sector && <><dt>분야·유형</dt><dd>{sector}</dd></>}
                 {amount && <><dt>규모</dt><dd>{amount}</dd></>}
+                {target && target !== "해당없음" && <><dt>지원 대상</dt><dd>{target}</dd></>}
+                {period && <><dt>기간</dt><dd>{period}</dd></>}
               </dl>
               {safeHttpUrlV125(url) && (
                 <a href={url} target="_blank" rel="noreferrer">사업 원문</a>
@@ -865,16 +884,18 @@ function DirectoryEntitiesV125({ entities }: { entities: VietnamEntityV124[] }) 
           ]);
           const email = entityFieldV125(entity, ["email", "emailAlt"]);
           const phone = entityFieldV125(entity, ["phone", "telephone"]);
+          const contact = entityFieldV125(entity, ["contact"]);
           const city = entityFieldV125(entity, ["city", "regionName", "address"]);
           const url = entityUrlV125(entity);
           return (
             <article key={entity.recordId}>
-              <span>{role || entity.entityType || "기관"}</span>
-              <strong>{organization || entityDisplayNameV121(entity)}</strong>
-              {organization && entityDisplayNameV121(entity) !== organization && (
-                <small>{entityDisplayNameV121(entity)}</small>
+              <span>{role || publicEntityTypeLabelV126(entity, "기관")}</span>
+              <strong>{organization || publicEntityNameV126(entity)}</strong>
+              {organization && publicEntityNameV126(entity) !== organization && (
+                <small>{publicEntityNameV126(entity)}</small>
               )}
               {city && <small>{city}</small>}
+              {contact && <small className="sv125-contact-summary">{contact}</small>}
               <div className="sv125-contact-links">
                 {email && <a href={`mailto:${email}`}>{email}</a>}
                 {phone && <a href={`tel:${phone.replace(/[^0-9+]/g, "")}`}>{phone}</a>}
@@ -916,8 +937,8 @@ function DocumentLibraryV125({ entities }: { entities: VietnamEntityV124[] }) {
             entityUrlV125(entity);
           return (
             <article key={entity.recordId}>
-              <span>{[entity.entityType, technology].filter(Boolean).join(" · ")}</span>
-              <strong>{title || entityDisplayNameV121(entity)}</strong>
+              <span>{[publicEntityTypeLabelV126(entity, "문서"), technology].filter(Boolean).join(" · ")}</span>
+              <strong>{title || publicEntityNameV126(entity)}</strong>
               <small>{[year, publication, doi].filter(Boolean).join(" · ") || "서지정보 미기재"}</small>
               {safeHttpUrlV125(url) && (
                 <a href={url} target="_blank" rel="noreferrer">문서 원문</a>
@@ -949,22 +970,22 @@ function SpatialSummaryV125({
       <div className="sv125-spatial-kpis">
         <article><span>전체 개체</span><strong>{entities.length.toLocaleString("ko-KR")}</strong><small>건</small></article>
         <article><span>유효 좌표</span><strong>{coordinateCount.toLocaleString("ko-KR")}</strong><small>건</small></article>
-        <article><span>geometry 표기</span><strong>{geometryCount.toLocaleString("ko-KR")}</strong><small>건</small></article>
+        <article><span>공간정보 표기</span><strong>{geometryCount.toLocaleString("ko-KR")}</strong><small>건</small></article>
         <article><span>지도 연결 피처</span><strong>{contract.mapLinkage.featureCount.toLocaleString("ko-KR")}</strong><small>{contract.mapLinkage.enabled ? "지도 연결" : "공간자료 미확보"}</small></article>
       </div>
       <p className="sv125-contract-help">
-        {countryNameKo} 상세 데이터만 요약하며, 이 화면에서 지도 geometry를 미리
+        {countryNameKo} 상세 데이터만 요약하며, 이 화면에서 지도 공간자료를 미리
         내려받지 않습니다.
       </p>
       <div className="sv125-spatial-samples">
         {entities.slice(0, 8).map((entity) => (
           <article key={entity.recordId}>
-            <strong>{entityDisplayNameV121(entity)}</strong>
-            <span>{entity.entityType || "공간 개체"}</span>
+            <strong>{publicEntityNameV126(entity)}</strong>
+            <span>{publicEntityTypeLabelV126(entity, "공간 자료")}</span>
             <small>
               {hasCoordinateV125(entity)
                 ? `${entity.latitude}, ${entity.longitude}`
-                : entity.mapEligibilityReason || "좌표·geometry 미제공"}
+                : publicTextV126(entity.mapEligibilityReason) || "좌표·공간정보 미제공"}
             </small>
           </article>
         ))}
@@ -986,9 +1007,9 @@ function GenericEntitiesV125({
       <div className="sv125-contract-evidence-grid">
         {entities.slice(0, 12).map((entity) => (
           <article key={entity.recordId}>
-            <strong>{entityDisplayNameV121(entity)}</strong>
-            <p>{entity.entityType || countryNameKo}</p>
-            <small>{entity.note || entity.provenance.sourceOrg || "세부 속성은 원자료 표에서 확인"}</small>
+            <strong>{publicEntityNameV126(entity)}</strong>
+            <p>{publicEntityTypeLabelV126(entity, countryNameKo)}</p>
+            <small>{publicTextV126(entity.note) || publicTextV126(entity.provenance.sourceOrg) || "세부 속성은 원자료 표에서 확인"}</small>
           </article>
         ))}
       </div>
@@ -997,15 +1018,22 @@ function GenericEntitiesV125({
   );
 }
 
-function EntityTableFallbackV125({ entities }: { entities: VietnamEntityV124[] }) {
+function EntityTableFallbackV125({
+  entities,
+  markAsPublic,
+}: {
+  entities: VietnamEntityV124[];
+  markAsPublic: boolean;
+}) {
   const shown = entities.slice(0, 100);
   return (
     <details
       className="sv125-entity-table-fallback"
-      data-testid="v125-entity-table-fallback"
+      data-testid={markAsPublic ? "public-raw-table" : undefined}
     >
       <summary>
-        목록 표 대체 보기 · {entities.length.toLocaleString("ko-KR")}건
+        {markAsPublic ? "원자료 보기" : "목록 자료 더 보기"} ·{" "}
+        {entities.length.toLocaleString("ko-KR")}건
       </summary>
       <div className="sv125-matrix-wrap">
         <table>
@@ -1021,11 +1049,11 @@ function EntityTableFallbackV125({ entities }: { entities: VietnamEntityV124[] }
           <tbody>
             {shown.map((entity) => (
               <tr key={entity.recordId}>
-                <th scope="row">{entityDisplayNameV121(entity)}</th>
-                <td>{entity.entityType || "—"}</td>
+                <th scope="row">{publicEntityNameV126(entity)}</th>
+                <td>{publicEntityTypeLabelV126(entity, "자료")}</td>
                 <td>{entityFactsV125(entity)}</td>
-                <td>{entity.provenance.sourceOrg || "미기재"}</td>
-                <td>{entity.missingReasonCode || entity.note || "해당 없음"}</td>
+                <td>{publicTextV126(entity.provenance.sourceOrg) || ""}</td>
+                <td>{publicMissingReasonLabelV126(entity.missingReasonCode, entity.note) || ""}</td>
               </tr>
             ))}
           </tbody>
@@ -1065,8 +1093,8 @@ function PreviewCountNoteV125({ shown, total }: { shown: number; total: number }
   if (total <= shown) return null;
   return (
     <p className="sv125-contract-overflow-note">
-      대표 {shown}건을 표시합니다. 나머지 {total - shown}건은 표 대체 보기와 전체
-      원자료 표에서 확인할 수 있습니다.
+      대표 {shown}건을 표시합니다. 나머지 {total - shown}건은 아래 원자료 보기에서
+      확인할 수 있습니다.
     </p>
   );
 }
@@ -1178,15 +1206,25 @@ function entityFieldV125(
   for (const key of keys) {
     const normalized = scalarV125(entity.normalizedAttributes?.[key]);
     if (normalized) return normalized;
-    const raw = scalarV125(entity.rawAttributes?.[key]);
-    if (raw) return raw;
+  }
+  return "";
+}
+
+function approvedEntityFieldV126(
+  entity: VietnamEntityV124,
+  keys: string[]
+): string {
+  const attributes = approvedEntityAttributesV126(entity, "partner");
+  for (const key of keys) {
+    const value = scalarV125(attributes[key]);
+    if (value) return value;
   }
   return "";
 }
 
 function scalarV125(value: unknown): string {
   if (value === null || value === undefined || value === "") return "";
-  if (typeof value === "string") return value.trim();
+  if (typeof value === "string") return publicTextV126(value) || "";
   if (typeof value === "number" || typeof value === "boolean") {
     return formatValueV121(value);
   }
@@ -1194,7 +1232,7 @@ function scalarV125(value: unknown): string {
 }
 
 function entityUrlV125(entity: VietnamEntityV124): string {
-  return (
+  const candidate = (
     entityFieldV125(entity, [
       "sourceUrl",
       "recordSourceUrl",
@@ -1205,6 +1243,7 @@ function entityUrlV125(entity: VietnamEntityV124): string {
     entity.provenance.sourceUrl ||
     ""
   );
+  return publicSourceUrlV126(candidate) || "";
 }
 
 function safeHttpUrlV125(value: string): boolean {
@@ -1230,13 +1269,67 @@ function hasCoordinateV125(entity: VietnamEntityV124): boolean {
 }
 
 function entityFactsV125(entity: VietnamEntityV124): string {
-  const entries = Object.entries(entity.normalizedAttributes || {})
-    .flatMap(([, value]) => {
-      const text = scalarV125(value);
-      return text ? [text] : [];
+  const entries = Object.entries(approvedEntityAttributesV126(entity, "entity"))
+    .flatMap(([key, value]) => {
+      const text = Array.isArray(value)
+        ? value.map((item) => scalarV125(item)).filter(Boolean).join(" · ")
+        : scalarV125(value);
+      return text ? [`${publicEntityAttributeLabelV126(key)}: ${text}`] : [];
     })
     .slice(0, 4);
   return entries.join(" · ") || "세부 속성 미기재";
+}
+
+function publicEntityNameV126(entity: VietnamEntityV124): string {
+  if (entity.elementId === "E-020") {
+    const programName = approvedEntityFieldV126(entity, ["programName"]);
+    if (programName) return programName;
+  }
+  const direct = publicTextV126(entity.name);
+  if (direct) return direct;
+  for (const key of [
+    "projectName",
+    "plantName",
+    "mineName",
+    "organizationName",
+    "orgName",
+    "companyName",
+    "supportingOrganization",
+    "title",
+    "name",
+  ]) {
+    const value = entityFieldV125(entity, [key]);
+    if (value) return value;
+  }
+  return "명칭 미기재";
+}
+
+function publicEntityTypeLabelV126(
+  entity: VietnamEntityV124,
+  fallback: string
+): string {
+  const raw = publicTextV126(entity.entityType)?.trim();
+  if (!raw) return fallback;
+
+  const labels: Record<string, string> = {
+    entity: fallback,
+    record: fallback,
+    item: fallback,
+    row: fallback,
+    organization: "기관",
+    organisation: "기관",
+    company: "기업",
+    office: "사무소",
+    project: "사업",
+    program: "지원 프로그램",
+    programme: "지원 프로그램",
+    document: "문서",
+    facility: "시설",
+    plant: "시설",
+    mine: "광산",
+  };
+
+  return labels[raw.toLocaleLowerCase("en-US")] || raw;
 }
 
 function rendererLabelV125(renderer: RendererV125): string {

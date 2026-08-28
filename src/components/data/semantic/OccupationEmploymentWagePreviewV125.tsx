@@ -5,6 +5,11 @@ import type {
   E012SexV125,
   SemanticObservationV125,
 } from "../../../data/visualization/semanticTypesV125";
+import {
+  publicMissingReasonLabelV126,
+  publicSourceUrlV126,
+  publicTextV126,
+} from "../../../data/visualization/publicFieldPolicyV126";
 
 import "./occupation-employment-wage-v125.css";
 
@@ -26,6 +31,7 @@ export interface OccupationEmploymentWagePreviewV125Props {
   onSelectionChange?: (selection: E012VisualizationSelectionV125) => void;
   countryNameKo?: string;
   className?: string;
+  showRawTable?: boolean;
 }
 
 type OccupationKey =
@@ -156,20 +162,13 @@ const DEFAULT_SELECTION: E012VisualizationSelectionV125 = {
   year: 2024,
 };
 
-const MISSING_REASON_LABELS: Record<string, string> = {
-  M01: "원천 미제공",
-  M02: "원자료 공란",
-  M03: "해당 없음",
-  M04: "수집되지 않음",
-  M08: "정의·비교 기준 확인 필요",
-};
-
 export default function OccupationEmploymentWagePreviewV125({
   observations,
   selection,
   onSelectionChange,
   countryNameKo = "베트남",
   className = "",
+  showRawTable = true,
 }: OccupationEmploymentWagePreviewV125Props) {
   const measureId = useId();
   const sexId = useId();
@@ -246,7 +245,7 @@ export default function OccupationEmploymentWagePreviewV125({
     >
       <header className="e012v125__heading">
         <div>
-          <span className="e012v125__eyebrow">직군·성별 의미 보존 시각화</span>
+          <span className="e012v125__eyebrow">고용·임금 분석</span>
           <h3 id="e012v125-title">직군별 종사자 수와 월평균 임금</h3>
           <p>
             측정항목, 직군, 성별과 기준연도를 분리해 원자료의 분류를 그대로
@@ -269,7 +268,11 @@ export default function OccupationEmploymentWagePreviewV125({
           <span>{current.year}년</span>
         </div>
 
-        <div className="e012v125__selectors" aria-label="직군별 차트 조건">
+        <div
+          className="e012v125__selectors"
+          aria-label="직군별 차트 조건"
+          data-testid="public-selector"
+        >
           <label htmlFor={measureId}>
             측정항목
             <select
@@ -369,7 +372,7 @@ export default function OccupationEmploymentWagePreviewV125({
         <span>기타·미정의 직군의 임금은 원천 미제공</span>
       </div>
 
-      <RawObservationTable observations={observations} />
+      {showRawTable && <RawObservationTable observations={observations} />}
     </section>
   );
 }
@@ -836,77 +839,84 @@ function RawObservationTable({
   observations: SemanticObservationV125[];
 }) {
   return (
-    <section
-      className="e012v125__panel e012v125__raw"
-      data-testid="e012-raw-table"
-      data-v125-table-fallback="e012-source-observations"
-      aria-labelledby="e012v125-table-title"
-    >
-      <div className="e012v125__panel-heading">
-        <div>
-          <span className="e012v125__eyebrow">전체 원자료</span>
-          <h4 id="e012v125-table-title">의미 차원을 보존한 레코드 표</h4>
+    <details className="e012v125__raw" data-testid="public-raw-table">
+      <summary>원자료 보기 · {observations.length.toLocaleString("ko-KR")}건</summary>
+      <section
+        className="e012v125__panel"
+        data-testid="e012-raw-table"
+        aria-labelledby="e012v125-table-title"
+      >
+        <div className="e012v125__panel-heading">
+          <div>
+            <span className="e012v125__eyebrow">상세 레코드</span>
+            <h4 id="e012v125-table-title">직군·성별 측정값</h4>
+          </div>
+          <span>{observations.length.toLocaleString("ko-KR")}건</span>
         </div>
-        <span>{observations.length.toLocaleString("ko-KR")}건</span>
-      </div>
-      <p className="e012v125__table-description" id="e012v125-table-description">
-        직군, 성별, 측정항목, 값과 원문 근거를 원자료 레코드 단위로 표시합니다.
-        결측값은 0으로 바꾸지 않습니다.
-      </p>
-      <div className="e012v125__table-wrap">
-        <table aria-describedby="e012v125-table-description">
-          <thead>
-            <tr>
-              <th scope="col">직군</th>
-              <th scope="col">성별</th>
-              <th scope="col">측정항목</th>
-              <th scope="col">값</th>
-              <th scope="col">단위</th>
-              <th scope="col">연도</th>
-              <th scope="col">출처</th>
-              <th scope="col">결측 사유</th>
-              <th scope="col">원문 근거</th>
-            </tr>
-          </thead>
-          <tbody>
-            {observations.map((observation) => {
-              const value = numericValue(observation);
-              const occupation = dimensionValue(observation, "occupation");
-              const sex = dimensionValue(observation, "sex");
-              const unit = observationUnit(observation);
-              return (
-                <tr
-                  key={observation.recordId}
-                  data-record-id={observation.recordId}
-                >
-                  <td>{dimensionLabel(observation, "occupation", occupation)}</td>
-                  <td>{dimensionLabel(observation, "sex", sex)}</td>
-                  <th scope="row">
-                    {observation.semanticMeasure.labelKo ||
-                      measureLabel(observation.semanticMeasure.key)}
-                  </th>
-                  <td>
-                    {value === null
-                      ? "—"
-                      : formatRawValue(value, observation.value)}
-                  </td>
-                  <td>{unit || "미기재"}</td>
-                  <td>{observationYear(observation) || "미기재"}</td>
-                  <td>{observation.provenance.sourceOrg || "미기재"}</td>
-                  <td>{missingReason(observation)}</td>
-                  <td className="e012v125__evidence-cell">
-                    {observation.note ||
-                      observation.rawValue ||
-                      observation.provenance.citationLocator ||
-                      "미기재"}
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
-    </section>
+        <p className="e012v125__table-description" id="e012v125-table-description">
+          직군, 성별, 측정항목과 값을 공개 레코드 단위로 표시합니다. 결측값은
+          0으로 바꾸지 않습니다.
+        </p>
+        <div className="e012v125__table-wrap">
+          <table aria-describedby="e012v125-table-description">
+            <thead>
+              <tr>
+                <th scope="col">직군</th>
+                <th scope="col">성별</th>
+                <th scope="col">측정항목</th>
+                <th scope="col">값</th>
+                <th scope="col">단위</th>
+                <th scope="col">연도</th>
+                <th scope="col">자료 제공기관</th>
+                <th scope="col">결측 사유</th>
+                <th scope="col">공식 원문</th>
+              </tr>
+            </thead>
+            <tbody>
+              {observations.map((observation) => {
+                const value = numericValue(observation);
+                const occupation = dimensionValue(observation, "occupation");
+                const sex = dimensionValue(observation, "sex");
+                const unit = observationUnit(observation);
+                const sourceUrl = publicSourceUrlV126(
+                  observation.provenance.sourceUrl
+                );
+                return (
+                  <tr key={observation.recordId}>
+                    <td>{dimensionLabel(observation, "occupation", occupation)}</td>
+                    <td>{dimensionLabel(observation, "sex", sex)}</td>
+                    <th scope="row">
+                      {publicTextV126(observation.semanticMeasure.labelKo) ||
+                        measureLabel(observation.semanticMeasure.key)}
+                    </th>
+                    <td>
+                      {value === null
+                        ? "—"
+                        : formatRawValue(value, observation.value)}
+                    </td>
+                    <td>{unit || "미기재"}</td>
+                    <td>{observationYear(observation) || "미기재"}</td>
+                    <td>
+                      {publicTextV126(observation.provenance.sourceOrg) || ""}
+                    </td>
+                    <td>{missingReason(observation)}</td>
+                    <td className="e012v125__evidence-cell">
+                      {sourceUrl ? (
+                        <a href={sourceUrl} target="_blank" rel="noreferrer">
+                          원문 확인
+                        </a>
+                      ) : (
+                        ""
+                      )}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </details>
   );
 }
 
@@ -1159,11 +1169,12 @@ function numericValue(observation?: SemanticObservationV125): number | null {
 
 function missingReason(observation?: SemanticObservationV125): string {
   if (!observation) return "해당 선택 조합 원자료 없음";
-  if (!observation.missingReasonCode) return "해당 없음";
-  const label = MISSING_REASON_LABELS[observation.missingReasonCode];
-  return label
-    ? `${observation.missingReasonCode} · ${label}`
-    : observation.missingReasonCode;
+  return (
+    publicMissingReasonLabelV126(
+      observation.missingReasonCode,
+      observation.note
+    ) || ""
+  );
 }
 
 function measureLabel(key: string): string {

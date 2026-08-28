@@ -1,0 +1,122 @@
+import type {
+  VietnamEntityV124,
+  VietnamIndicatorMetaV124,
+  VietnamObservationV124,
+} from "../../../data/vietnam/vietnamTypesV124";
+import {
+  publicSourceUrlV126,
+  publicTextV126,
+} from "../../../data/visualization/publicFieldPolicyV126";
+
+interface Props {
+  indicators: VietnamIndicatorMetaV124[];
+  observations: VietnamObservationV124[];
+  entities: VietnamEntityV124[];
+}
+
+export default function PublicSourcePanelV126({
+  indicators,
+  observations,
+  entities,
+}: Props) {
+  const organizations = uniquePublicValuesV126([
+    ...indicators.map((item) => item.sourceOrg),
+    ...observations.map((item) => item.provenance.sourceOrg),
+    ...entities.map((item) => item.provenance.sourceOrg),
+  ]);
+  const urls = Array.from(
+    new Set(
+      [
+        ...indicators.map((item) => item.sourceUrl),
+        ...observations.map((item) => item.provenance.sourceUrl),
+        ...entities.map((item) => item.provenance.sourceUrl),
+      ]
+        .map((value) => publicSourceUrlV126(value))
+        .filter((value): value is string => Boolean(value))
+    )
+  );
+  const populatedYears = uniquePublicValuesV126(
+    observations
+      .filter(
+        (item) =>
+          item.value !== null && item.value !== undefined && item.value !== ""
+      )
+      .map((item) => item.year || item.period)
+  );
+  const years =
+    populatedYears.length > 0
+      ? populatedYears
+      : uniquePublicValuesV126(indicators.map((item) => item.referenceYear));
+  const units = uniquePublicValuesV126([
+    ...indicators.map((item) => item.unit),
+    ...observations.map((item) => item.unit),
+  ]);
+  const licenses = uniquePublicValuesV126([
+    ...indicators.map((item) => item.licenseCode),
+    ...indicators.map((item) => item.attributionText),
+  ]);
+
+  return (
+    <section className="pav126-source" data-testid="public-source-panel">
+      <div className="pav126-section-heading">
+        <span>출처·기준연도</span>
+        <h3>공식 자료와 해석 기준</h3>
+      </div>
+      <dl>
+        <div>
+          <dt>자료 제공기관</dt>
+          <dd>{organizations.join(" · ") || "공개 자료에 기관명이 명시되지 않음"}</dd>
+        </div>
+        <div>
+          <dt>기준연도·기간</dt>
+          <dd>{summarizeYearsV126(years)}</dd>
+        </div>
+        <div>
+          <dt>단위</dt>
+          <dd>{units.join(" · ") || "미기재"}</dd>
+        </div>
+        {licenses.length > 0 && (
+          <div>
+            <dt>이용조건·출처표시</dt>
+            <dd>{licenses.join(" · ")}</dd>
+          </div>
+        )}
+      </dl>
+      {urls.length > 0 && (
+        <div className="pav126-source__links">
+          {urls.slice(0, 4).map((url, index) => (
+            <a key={url} href={url} target="_blank" rel="noreferrer">
+              {organizations[index] || organizations[0] || "공식 원문"} 확인
+            </a>
+          ))}
+        </div>
+      )}
+    </section>
+  );
+}
+
+function uniquePublicValuesV126(values: unknown[]): string[] {
+  return Array.from(
+    new Set(
+      values
+        .map((value) =>
+          value === null || value === undefined
+            ? null
+            : publicTextV126(String(value))
+        )
+        .filter((value): value is string => Boolean(value))
+    )
+  );
+}
+
+function summarizeYearsV126(values: string[]): string {
+  const years = values
+    .flatMap((value) => value.match(/(?:19|20|21)\d{2}/gu) || [])
+    .map(Number)
+    .filter(Number.isFinite)
+    .sort((left, right) => left - right);
+  if (years.length === 0) return values.slice(0, 8).join(" · ") || "미기재";
+  const first = years[0];
+  const last = years[years.length - 1];
+  return first === last ? String(first) : `${first}~${last}`;
+}

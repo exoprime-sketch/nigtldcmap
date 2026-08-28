@@ -1,9 +1,9 @@
-import { lazy, Suspense, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   getElementVisualizationSummaryV125,
   loadElementIndicatorSemanticsV125,
 } from "../../data/visualization/elementVisualizationRegistryV125";
-import { buildSemanticObservationsV125 } from "../../data/visualization/semanticObservationBuilderV125";
+import { getPublicVisualizationSummaryV126 } from "../../data/visualization/publicVisualizationRegistryV126";
 import type {
   ElementIndicatorSemanticsV125,
   ElementVisualizationContractV125,
@@ -14,16 +14,8 @@ import type {
   VietnamObservationV124,
 } from "../../data/vietnam/vietnamTypesV124";
 import type { DataFinderSelectorStateV125 } from "../../types/dataFinderV125";
-import SemanticArchetypePreviewV125 from "./semantic/SemanticArchetypePreviewV125";
-import type {
-  E012OccupationMeasureKeyV125,
-  E012VisualizationSelectionV125,
-} from "./semantic/OccupationEmploymentWagePreviewV125";
+import PublicDataAnalysisRouterV126 from "./public/PublicDataAnalysisRouterV126";
 import "../../styles/data-full-preview-v52.css";
-
-const OccupationEmploymentWagePreviewV125 = lazy(
-  () => import("./semantic/OccupationEmploymentWagePreviewV125")
-);
 
 interface Props {
   elementId: string;
@@ -31,6 +23,7 @@ interface Props {
   observations?: VietnamObservationV124[];
   entities?: VietnamEntityV124[];
   indicators?: VietnamIndicatorMetaV124[];
+  detailTemplate?: string;
   selectedIndicatorId?: string;
   selectorState?: DataFinderSelectorStateV125;
   onSelectorStateChange?: (state: DataFinderSelectorStateV125) => void;
@@ -49,27 +42,18 @@ const DEFAULT_SELECTOR_STATE_V125: DataFinderSelectorStateV125 = {
   dimensions: {},
 };
 
-const E012_OCCUPATION_MEASURES_V125 = new Set<E012OccupationMeasureKeyV125>([
-  "occupation_employment_count",
-  "occupation_employment_share",
-  "occupation_female_share",
-  "occupation_wage",
-]);
-
 /**
- * V125 semantic visualization entry point.
- *
- * The historical filename is kept for import compatibility. Unlike the V123
- * preview, this renderer never truncates labels at an em dash and never
- * reduces every indicator to one latest value. The selected element's
- * deterministic semantic shard is loaded only after detail navigation.
+ * The historical filename is retained for import compatibility. Public
+ * presentation is selected through the analysis registry while the verified
+ * semantic shard remains the single interpretation layer.
  */
 export default function CountryDataFullPreviewV52({
   elementId,
   countryNameKo = "대상국",
   observations = [],
   entities = [],
-  indicators: _indicators = [],
+  indicators = [],
+  detailTemplate = "entity",
   selectedIndicatorId = "all",
   selectorState = DEFAULT_SELECTOR_STATE_V125,
   onSelectorStateChange = () => undefined,
@@ -83,7 +67,7 @@ export default function CountryDataFullPreviewV52({
     setError("");
     const summary = getElementVisualizationSummaryV125(elementId);
     if (!summary) {
-      setError("시각화 계약을 찾을 수 없습니다");
+      setError("분석 구성을 확인할 수 없습니다");
       return () => controller.abort();
     }
     void loadElementIndicatorSemanticsV125(elementId, controller.signal)
@@ -95,8 +79,8 @@ export default function CountryDataFullPreviewV52({
       )
       .catch((reason: unknown) => {
         if (controller.signal.aborted) return;
-        console.error("V125 semantic visualization load failed", reason);
-        setError("의미 구조화 자산을 불러오지 못했습니다");
+        console.error("Public data analysis load failed", reason);
+        setError("분석에 필요한 데이터를 불러오지 못했습니다");
       });
     return () => controller.abort();
   }, [elementId]);
@@ -115,80 +99,54 @@ export default function CountryDataFullPreviewV52({
         : entities.filter((row) => row.indicatorId === selectedIndicatorId),
     [entities, selectedIndicatorId]
   );
-
-  const renderer = runtime?.contract.primaryRenderer || "loading";
+  const publicSummary = getPublicVisualizationSummaryV126(elementId);
+  const presentationTier = publicSummary?.presentationKind || "generic-fallback";
 
   return (
     <section
       className="cev123-shell cev125-shell"
-      aria-label="데이터 의미 시각화"
-      data-v125-element-id={elementId}
-      data-v125-renderer={renderer}
-      data-testid="v125-detail-visualization"
+      aria-label="공개 데이터 분석"
+      data-element-id={elementId}
+      data-presentation-tier={presentationTier}
+      data-analysis-state={runtime ? "ready" : "loading"}
+      data-testid="public-analysis-root"
     >
       <header className="cev123-heading">
         <div>
-          <span>V125 의미 보존 시각화</span>
-          <h3>{runtime ? rendererLabelV125(runtime.contract) : "시각화 계약 확인 중"}</h3>
+          <span>공개 데이터</span>
+          <h3>{runtime ? "분석 화면" : "데이터를 준비하는 중"}</h3>
         </div>
         <small>
           {countryNameKo} · 수치 {visibleObservations.length.toLocaleString("ko-KR")}건 ·
-          개체 {visibleEntities.length.toLocaleString("ko-KR")}건
+          목록 {visibleEntities.length.toLocaleString("ko-KR")}건
         </small>
       </header>
 
       {error && (
-        <div className="cev123-empty" role="alert" data-v125-empty-reason="semantic-asset-error">
+        <div className="cev123-empty" role="alert" data-public-empty-reason="analysis-asset-error">
           <strong>{error}</strong>
-          <p>원자료 표는 아래에서 계속 확인할 수 있습니다.</p>
+          <p>잠시 후 다시 시도해 주세요.</p>
         </div>
       )}
 
       {!error && !runtime && (
         <div className="cev123-empty" role="status">
-          <strong>측정항목과 분류 차원을 준비하는 중입니다</strong>
+          <strong>측정항목과 분류를 준비하는 중입니다</strong>
         </div>
       )}
 
-      {runtime && elementId === "E-012" && (
-        <Suspense
-          fallback={
-            <div className="cev123-empty" role="status">
-              직군별 시각화를 불러오는 중입니다
-            </div>
-          }
-        >
-          <OccupationEmploymentWagePreviewV125
-            observations={buildSemanticObservationsV125(
-              observations,
-              runtime.semantics.indicators,
-              runtime.semantics.records
-            )}
-            selection={e012SelectionV125(selectorState)}
-            onSelectionChange={(next) =>
-              onSelectorStateChange({
-                ...selectorState,
-                measure: next.measure,
-                sex: next.sex,
-                year: next.year,
-                period: null,
-                dimensions: {},
-              })
-            }
-            countryNameKo={countryNameKo}
-          />
-        </Suspense>
-      )}
-
-      {runtime && elementId !== "E-012" && (
-        <SemanticArchetypePreviewV125
+      {runtime && (
+        <PublicDataAnalysisRouterV126
+          elementId={elementId}
           contract={runtime.contract}
           semantics={runtime.semantics}
           observations={visibleObservations}
           entities={visibleEntities}
+          indicators={indicators}
           countryNameKo={countryNameKo}
           selectorState={selectorState}
           onSelectorStateChange={onSelectorStateChange}
+          detailTemplate={detailTemplate}
         />
       )}
     </section>
@@ -236,31 +194,7 @@ function runtimeContractV125(
     },
     comparisonPolicy: "동일 정의·단위·기준시점에서만 비교",
     missingDataPolicy: "결측값을 0으로 대체하지 않음",
-    currentVisualizationIssue: "V125 의미 계약 적용",
+    currentVisualizationIssue: "",
     contractStatus: summary.contractStatus,
   };
-}
-
-function e012SelectionV125(
-  selectorState: DataFinderSelectorStateV125
-): Partial<E012VisualizationSelectionV125> {
-  const measure =
-    selectorState.measure &&
-    E012_OCCUPATION_MEASURES_V125.has(
-      selectorState.measure as E012OccupationMeasureKeyV125
-    )
-      ? (selectorState.measure as E012OccupationMeasureKeyV125)
-      : "occupation_employment_count";
-  return {
-    measure,
-    sex: selectorState.sex || "total",
-    year: selectorState.year || 2024,
-  };
-}
-
-function rendererLabelV125(contract: ElementVisualizationContractV125): string {
-  if (contract.contractStatus === "specialized") return "데이터 전용 시각화";
-  if (contract.contractStatus === "status-only") return "데이터 수집 상태";
-  if (contract.contractStatus === "structured-table") return "구조화된 표와 근거";
-  return "측정항목·분류 차원별 시각화";
 }

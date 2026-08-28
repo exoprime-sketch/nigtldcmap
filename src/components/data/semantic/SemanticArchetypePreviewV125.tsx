@@ -14,8 +14,16 @@ import type { DataFinderSelectorStateV125 } from "../../../types/dataFinderV125"
 import {
   entityDisplayNameV121,
   formatValueV121,
-  isHttpUrlV121,
 } from "../../../utils/vietnamActualV121";
+import {
+  publicMissingReasonLabelV126,
+  publicSourceUrlV126,
+  publicTextV126,
+} from "../../../data/visualization/publicFieldPolicyV126";
+import {
+  publicDimensionLabelV126,
+  publicMeasureLabelV126,
+} from "../../../data/visualization/publicCopyRegistryV126";
 import SemanticContractRendererV125 from "./SemanticContractRendererV125";
 import "../../../styles/semantic-visualization-v125.css";
 
@@ -27,6 +35,7 @@ interface Props {
   countryNameKo: string;
   selectorState: DataFinderSelectorStateV125;
   onSelectorStateChange: (state: DataFinderSelectorStateV125) => void;
+  showRawTable?: boolean;
 }
 
 type NumericSemanticObservation = SemanticObservationV125 & { value: number };
@@ -41,6 +50,7 @@ export default function SemanticArchetypePreviewV125({
   countryNameKo,
   selectorState,
   onSelectorStateChange,
+  showRawTable = true,
 }: Props) {
   const semanticRows = useMemo(
     () =>
@@ -176,11 +186,10 @@ export default function SemanticArchetypePreviewV125({
     return (
       <section
         className="sv125-status"
-        data-testid="v125-status-only"
-        data-renderer="status-only"
-        data-v125-empty-reason="no-populated-records"
+        data-testid="public-status-only"
+        data-public-empty-reason="no-populated-records"
       >
-        <div data-testid="v125-renderer-status-only">
+        <div data-testid="public-primary-visualization">
           <strong>표시할 실제 레코드가 없습니다</strong>
           <p>{contract.noDataReason || contract.missingDataPolicy}</p>
         </div>
@@ -206,31 +215,21 @@ export default function SemanticArchetypePreviewV125({
   const missingRows = selectedRows.filter(
     (row) => row.value === null || row.value === undefined || row.value === ""
   );
-  const visualizationTableRows =
-    contract.primaryRenderer === "kpi-trend" ||
-    contract.primaryRenderer === "multi-metric-trend" ||
-    contract.primaryRenderer === "score-benchmark" ||
-    contract.primaryRenderer === "capability-scorecard"
-      ? dimensionFilteredRows
-      : selectedRows;
+  const visualizationTableRows = semanticRows;
   const rendererLabel = rendererLabelV125(contract.primaryRenderer);
 
   return (
     <div
       className="sv125-shell"
-      data-renderer={contract.primaryRenderer}
-      data-testid="v125-semantic-visualization"
+      data-testid="public-analytical-view"
     >
       <section className="sv125-intro" aria-labelledby="sv125-intro-title">
-        <span>이 데이터로 확인할 수 있는 내용</span>
+        <span>분석 안내</span>
         <h3 id="sv125-intro-title">{rendererLabel}</h3>
-        <p>
-          측정항목 {contract.measures.length}종과 분류 차원 {contract.dimensions.length}종을
-          원자료의 의미와 단위를 유지해 탐색합니다.
-        </p>
+        <p>{publicAnalysisIntroV126(contract, observations.length, entities.length)}</p>
       </section>
 
-      <div className="sv125-controls" aria-label="데이터 분류 선택">
+      <div className="sv125-controls" aria-label="데이터 분류 선택" data-testid="public-selector">
         {measureOptions.length > 1 && (
           <label>
             <span>측정항목</span>
@@ -250,7 +249,7 @@ export default function SemanticArchetypePreviewV125({
             >
               {measureOptions.map((measure) => (
                 <option key={measure.key} value={measure.key}>
-                  {measure.labelKo} · {measure.unit || "단위 미기재"}
+                  {publicMeasureLabelV126(measure.labelKo)} · {measure.unit || "단위 미기재"}
                 </option>
               ))}
             </select>
@@ -280,10 +279,13 @@ export default function SemanticArchetypePreviewV125({
         )}
         {additionalDimensions.map((dimension) => (
           <label key={dimension.key}>
-            <span>{dimension.labelKo}</span>
+            <span>{publicDimensionLabelV126(dimension.key, dimension.labelKo)}</span>
             <select
-              aria-label={`${dimension.labelKo} 선택`}
-              data-v125-dimension-key={dimension.key}
+              aria-label={`${publicDimensionLabelV126(
+                dimension.key,
+                dimension.labelKo
+              )} 선택`}
+              data-public-dimension-key={dimension.key}
               value={dimensions[dimension.key] || ""}
               onChange={(event) =>
                 onSelectorStateChange({
@@ -364,6 +366,8 @@ export default function SemanticArchetypePreviewV125({
           contextRows={dimensionFilteredRows}
           entities={entities}
           countryNameKo={countryNameKo}
+          markEntityTableAsPublic={showRawTable && visualizationTableRows.length === 0}
+          showRawTable={showRawTable}
         />
       )}
 
@@ -374,7 +378,11 @@ export default function SemanticArchetypePreviewV125({
             {Array.from(
               new Set(
                 missingRows.map(
-                  (row) => row.missingReasonCode || row.note || "원천 미제공"
+                  (row) =>
+                    publicMissingReasonLabelV126(
+                      row.missingReasonCode,
+                      row.note
+                    ) || "원천에서 값을 제공하지 않음"
                 )
               )
             )
@@ -390,14 +398,16 @@ export default function SemanticArchetypePreviewV125({
           <div
             className="sv125-empty"
             role="status"
-            data-v125-empty-reason="selection-has-no-values"
+            data-public-empty-reason="selection-has-no-values"
           >
             <strong>현재 선택 조건에 표시할 값이 없습니다</strong>
             <p>결측값을 0으로 대체하지 않았습니다.</p>
           </div>
         )}
 
-      <SemanticTableFallbackV125 rows={visualizationTableRows} />
+      {showRawTable && visualizationTableRows.length > 0 && (
+        <SemanticTableFallbackV125 rows={visualizationTableRows} />
+      )}
     </div>
   );
 }
@@ -411,6 +421,8 @@ function SemanticKpisV125({
   contract: ElementVisualizationContractV125;
   selectedMeasureKey: string | null;
 }) {
+  if (!rows.some(isPopulatedSemanticRowV125)) return null;
+
   const selectedMeasures = selectedMeasureKey
     ? contract.measures.filter((measure) => measure.key === selectedMeasureKey)
     : [];
@@ -443,12 +455,12 @@ function SemanticKpisV125({
     <section
       className="sv125-kpis"
       aria-label="현재 선택 조건의 핵심 KPI"
-      data-testid="v125-context-kpis"
-      data-v125-selection-has-values={kpis.some(({ row }) => Boolean(row)) ? "true" : "false"}
+      data-testid="public-context-kpis"
+      data-public-has-values={kpis.some(({ row }) => Boolean(row)) ? "true" : "false"}
     >
       {kpis.map(({ measure, row, dimensionContext, isAggregate }) => (
         <article key={`${measure.key}-${measure.unit}`}>
-          <span>{row?.displayLabel || measure.labelKo}</span>
+          <span>{publicMeasureLabelV126(measure.labelKo)}</span>
           <strong>{row ? formatValueV121(row.value) : "미제공"}</strong>
           <small>
             {row
@@ -625,48 +637,27 @@ function TrendAxisGroupV125({
 }
 
 function semanticMissingReasonV125(row: SemanticObservationV125): string {
-  if (row.missingReasonCode?.trim()) return row.missingReasonCode;
+  const reason = publicMissingReasonLabelV126(row.missingReasonCode, row.note);
+  if (reason) return reason;
   if (row.value === null || row.value === undefined || row.value === "") {
-    return "원천 미제공(사유 미기재)";
+    return "원천에서 값을 제공하지 않음";
   }
-  return "해당 없음";
+  return "";
 }
 
 function semanticEvidenceV125(row: SemanticObservationV125): string {
-  const evidence = [
-    row.note?.trim() ? `원문 메모: ${row.note}` : null,
-    row.rawValue !== null &&
-    row.rawValue !== undefined &&
-    String(row.rawValue).trim()
-      ? `원문값: ${row.rawValue}`
-      : null,
-  ].filter((value): value is string => Boolean(value));
-  return evidence.join(" · ") || "원문 근거 미기재";
-}
-
-function semanticProvenanceV125(row: SemanticObservationV125): string {
-  const sourceLocation = [
-    row.provenance.sourceFileDecoded,
-    row.provenance.sourceSheet,
-    Number.isFinite(row.provenance.sourceRow)
-      ? `${row.provenance.sourceRow}행`
-      : null,
-  ]
-    .filter((value): value is string => Boolean(value))
-    .join(" · ");
-  return [row.provenance.citationLocator, sourceLocation]
-    .filter((value): value is string => Boolean(value))
-    .join(" · ") || "원문 위치 미기재";
+  return publicTextV126(row.provenance.citationLocator) || "";
 }
 
 function SemanticSourceV125({ row }: { row: SemanticObservationV125 }) {
-  const organization = row.provenance.sourceOrg || "기관 미기재";
-  if (!isHttpUrlV121(row.provenance.sourceUrl)) return <>{organization}</>;
+  const organization = publicTextV126(row.provenance.sourceOrg) || "기관 미기재";
+  const sourceUrl = publicSourceUrlV126(row.provenance.sourceUrl);
+  if (!sourceUrl) return <>{organization}</>;
   return (
     <>
       {organization}{" "}
       <a
-        href={row.provenance.sourceUrl}
+        href={sourceUrl}
         target="_blank"
         rel="noreferrer"
         aria-label={`${organization} 원자료 열기`}
@@ -687,7 +678,7 @@ function TextEvidenceV125({ rows }: { rows: SemanticObservationV125[] }) {
       <div className="sv125-evidence-grid">
         {rows.map((row) => (
           <article key={row.recordId}>
-            <strong>{row.displayLabel}</strong>
+            <strong>{publicMeasureLabelV126(row.displayLabel)}</strong>
             <p>{formatValueV121(row.value)}</p>
             <small>
               기준시점: {row.year || row.period || row.provenance.referenceYear || "미기재"}
@@ -696,8 +687,9 @@ function TextEvidenceV125({ rows }: { rows: SemanticObservationV125[] }) {
               출처: <SemanticSourceV125 row={row} />
             </small>
             <small>결측 사유: {semanticMissingReasonV125(row)}</small>
-            <small>원문 근거: {semanticEvidenceV125(row)}</small>
-            <small>추적 정보: {semanticProvenanceV125(row)}</small>
+            {semanticEvidenceV125(row) && (
+              <small>공식 인용: {semanticEvidenceV125(row)}</small>
+            )}
           </article>
         ))}
       </div>
@@ -726,7 +718,7 @@ function EntityCollectionV125({
           <article key={entity.recordId}>
             <strong>{entityDisplayNameV121(entity)}</strong>
             <p>{entity.entityType || countryNameKo}</p>
-            <small>{entity.note || entity.provenance.sourceOrg || "세부 속성은 전체 표에서 확인"}</small>
+            <small>{publicTextV126(entity.provenance.sourceOrg) || "세부 내용은 원자료 표에서 확인"}</small>
           </article>
         ))}
       </div>
@@ -742,34 +734,47 @@ function EntityCollectionV125({
 
 function SemanticTableFallbackV125({ rows }: { rows: SemanticObservationV125[] }) {
   return (
-    <details className="sv125-table-fallback" data-v125-table-fallback="semantic-observations">
-      <summary>차트 표 대체 보기 · {rows.length.toLocaleString("ko-KR")}건</summary>
+    <details
+      className="sv125-table-fallback"
+      data-testid="public-raw-table"
+    >
+      <summary>원자료 보기 · {rows.length.toLocaleString("ko-KR")}건</summary>
       <div className="cdp-table-wrap">
         <table className="cdp-table">
           <thead>
             <tr>
-              <th>계열</th>
               <th>측정항목</th>
               <th>분류</th>
+              <th>지역·성별·기술·시나리오</th>
               <th>값</th>
               <th>단위</th>
               <th>연도·기간</th>
               <th>출처</th>
               <th>결측 사유</th>
-              <th>원문 근거</th>
-              <th>추적 정보</th>
+              <th>공식 원문</th>
             </tr>
           </thead>
           <tbody>
             {rows.map((row) => (
               <tr key={row.recordId}>
-                <td>{row.displayLabel}</td>
-                <td>{row.semanticMeasure.labelKo}</td>
+                <td>{publicMeasureLabelV126(row.semanticMeasure.labelKo)}</td>
                 <td>
                   {Object.entries(row.dimensionLabels)
-                    .filter(([key]) => key !== "year" && key !== "period")
-                    .map(([key, value]) => `${key}: ${value}`)
-                    .join(" · ") || "—"}
+                    .filter(([key]) =>
+                      !["year", "period", "region", "regionName", "sex", "technology", "scenario"].includes(key)
+                    )
+                    .map(([, value]) => publicTextV126(value))
+                    .filter(Boolean)
+                    .join(" · ") || ""}
+                </td>
+                <td>
+                  {Object.entries(row.dimensionLabels)
+                    .filter(([key]) =>
+                      ["region", "regionName", "sex", "technology", "scenario"].includes(key)
+                    )
+                    .map(([, value]) => publicTextV126(value))
+                    .filter(Boolean)
+                    .join(" · ") || ""}
                 </td>
                 <td>{formatValueV121(row.value)}</td>
                 <td>{row.unit || row.semanticMeasure.unit || "—"}</td>
@@ -777,7 +782,6 @@ function SemanticTableFallbackV125({ rows }: { rows: SemanticObservationV125[] }
                 <td><SemanticSourceV125 row={row} /></td>
                 <td>{semanticMissingReasonV125(row)}</td>
                 <td>{semanticEvidenceV125(row)}</td>
-                <td>{semanticProvenanceV125(row)}</td>
               </tr>
             ))}
           </tbody>
@@ -843,4 +847,30 @@ function rendererLabelV125(
     "status-only": "데이터 상태",
   };
   return labels[renderer];
+}
+
+function publicAnalysisIntroV126(
+  contract: ElementVisualizationContractV125,
+  observationCount: number,
+  entityCount: number
+): string {
+  if (observationCount === 0 && entityCount > 0) {
+    if (contract.elementId === "E-018") {
+      return `진출 기업 ${entityCount.toLocaleString("ko-KR")}곳을 진출 형태와 사업 분야별로 탐색할 수 있습니다.`;
+    }
+    if (contract.elementId === "E-019") {
+      return `현지 기관 ${entityCount.toLocaleString("ko-KR")}곳을 도시와 공개 연락정보로 탐색할 수 있습니다.`;
+    }
+    if (contract.elementId === "E-020") {
+      return `지원 프로그램 ${entityCount.toLocaleString("ko-KR")}건을 지원 유형과 기관별로 탐색할 수 있습니다.`;
+    }
+    if (contract.primaryRenderer === "directory") {
+      return `기관·연락망 ${entityCount.toLocaleString("ko-KR")}건을 지역과 공개 연락정보로 탐색할 수 있습니다.`;
+    }
+    if (contract.primaryRenderer === "portfolio") {
+      return `사업·지원 프로그램 ${entityCount.toLocaleString("ko-KR")}건을 유형과 기관별로 탐색할 수 있습니다.`;
+    }
+    return `공개 목록 ${entityCount.toLocaleString("ko-KR")}건의 항목별 정보를 확인할 수 있습니다.`;
+  }
+  return `측정항목 ${contract.measures.length}종과 분류 ${contract.dimensions.length}종을 선택해 값과 변화를 확인할 수 있습니다.`;
 }

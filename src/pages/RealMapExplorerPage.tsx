@@ -1486,7 +1486,7 @@ export default function RealMapExplorerPage({
       : null;
   const focusedCoverage = focusedLayer
     ? focusedLayer.elementId === "A-024"
-      ? "606개 MultiLineString · 베트남 송전선 원천 geometry"
+      ? "검증된 송전선 606개 구간 · 베트남 송전망 공개 원천"
       : focusedSeriesCoverage
       ? `${focusedSeriesCoverage.matchedCount}/63개 성·시 값 보유`
       : focusedLayer.spatialCoverage
@@ -1874,7 +1874,7 @@ export default function RealMapExplorerPage({
               )}
               {focusedLayer.elementId === "A-024" && (
                 <p data-testid="a024-geometry-accuracy" role="note">
-                  606개 MultiLineString · 원천 위치 오차 약 2~10km ·
+                  검증된 송전선 606개 구간 · 원천 위치 오차 약 2~10km ·
                   공학·경로 설계용으로 사용하지 마세요.
                 </p>
               )}
@@ -2024,7 +2024,7 @@ export default function RealMapExplorerPage({
                       elementId: line.elementId,
                       adm1Name: "실제 송전망",
                       value: line.featureCount,
-                      unit: "개 MultiLineString",
+                      unit: "개 선로 구간",
                       period: line.period,
                       variableLabel: "송전망 선로 목록",
                       properties: {
@@ -2074,9 +2074,9 @@ export default function RealMapExplorerPage({
           />
           <div className="cdp-map-renderer-badge">
             {baseMapStatus === "ready"
-              ? "MapLibre · 로컬 벡터 배경지도"
+              ? "상호작용형 로컬 배경지도"
               : fallbackBoundaryStatus === "ready"
-              ? "SVG 대체 지도"
+              ? "접근성 대체 지도"
               : "지도 준비 중"}
           </div>
           <div className="cdp-map-overlay-card">
