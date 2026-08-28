@@ -361,14 +361,14 @@ try {
   await navigate(browser.cdp, detailUrl.toString());
   await waitForValue(
     browser.cdp,
-    `Boolean(document.querySelector('[data-v125-element-id="C-016"]'))`,
+    `Boolean(document.querySelector('[data-testid="public-analysis-root"][data-element-id="C-016"] [data-testid="public-data-title"]'))`,
     { timeoutMs: 30_000 }
   );
   const finderToMap = await evaluateValue(
     browser.cdp,
     `(() => {
-      const root = document.querySelector('[data-v125-element-id="C-016"]');
-      const button = [...(root?.querySelectorAll('button') || [])]
+      const action = document.querySelector('.cdp-detail-map-action');
+      const button = [...(action?.querySelectorAll('button') || [])]
         .find((node) => node.textContent?.trim() === '지도에서 보기');
       if (!button || button.disabled) return { clicked: false };
       button.click();
@@ -413,7 +413,7 @@ try {
         },
         variable: document.querySelector('[data-testid="map-layer-variable-select"]')?.value ?? null,
         period: document.querySelector('[data-testid="map-layer-period-select"]')?.value ?? null,
-        semanticPanel: Boolean(document.querySelector('[data-testid="map-semantic-contract"]')),
+        semanticPanel: Boolean(document.querySelector('[data-testid="map-semantic-contract"], [data-testid="map-primary-controls"]')),
         wrap: { width: wrapRect?.width || 0, height: wrapRect?.height || 0 },
         fallbackVisible,
         canvasVisible,
@@ -435,7 +435,7 @@ try {
   if (!mapToFinder?.clicked) throw new Error("Map to Finder action unavailable");
   await waitForValue(
     browser.cdp,
-    `Boolean(document.querySelector('[data-v125-element-id="C-016"]'))`,
+    `Boolean(document.querySelector('[data-testid="public-analysis-root"][data-element-id="C-016"] [data-testid="public-data-title"]'))`,
     { timeoutMs: 30_000 }
   );
   const returnedState = await evaluateValue(
@@ -449,14 +449,14 @@ try {
         category: params.get('dim.category'),
         element: params.get('element'),
         hash: location.hash,
-        detailRoot: Boolean(document.querySelector('[data-v125-element-id="C-016"]')),
+        detailRoot: Boolean(document.querySelector('[data-testid="public-analysis-root"][data-element-id="C-016"]')),
       };
     })()`
   );
   await navigate(browser.cdp, await evaluateValue(browser.cdp, "location.href"));
   await waitForValue(
     browser.cdp,
-    `Boolean(document.querySelector('[data-v125-element-id="C-016"]'))`,
+    `Boolean(document.querySelector('[data-testid="public-analysis-root"][data-element-id="C-016"] [data-testid="public-data-title"]'))`,
     { timeoutMs: 30_000 }
   );
   const reloadedState = await evaluateValue(

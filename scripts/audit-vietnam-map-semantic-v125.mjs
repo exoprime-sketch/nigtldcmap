@@ -393,7 +393,9 @@ const combinedSemanticSource = `${bindingSource.value || ""}\n${pageSource.value
 const semanticUiContract = {
   commonSemanticProjection:
     /semantic(?:Map|Presentation)|mapSemantic|SemanticMap/iu.test(combinedSemanticSource),
-  semanticPanel: /data-testid=["']map-semantic-contract["']/u.test(pageSource.value || ""),
+  semanticPanel: /data-testid=["'](?:map-semantic-contract|map-primary-controls)["']/u.test(
+    pageSource.value || ""
+  ),
   featureDetail: /data-testid=["']map-feature-detail["']/u.test(pageSource.value || ""),
   datasetName: /데이터명/u.test(pageSource.value || ""),
   indicatorOrMeasure: /(?:지표명|측정항목)/u.test(pageSource.value || ""),
