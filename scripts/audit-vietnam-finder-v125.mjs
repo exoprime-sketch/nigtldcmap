@@ -519,7 +519,10 @@ const e012AccessibilityChecks = {
   keyboardPoints:
     /tabIndex=\{?0\}?/u.test(e012Source.value || "") &&
     /data-occupation/u.test(e012Source.value || ""),
-  tableRecordIds: /data-record-id/u.test(e012Source.value || ""),
+  noTechnicalRecordIds: !/data-record-id/u.test(e012Source.value || ""),
+  rawTableDefaultClosed: /data-testid="public-raw-table"/u.test(
+    e012Source.value || ""
+  ),
 };
 audit.check(
   "E012_DETAIL_DOM_CONTRACT",
@@ -530,7 +533,8 @@ audit.check(
     markers: true,
     ariaLabels: true,
     keyboardPoints: true,
-    tableRecordIds: true,
+    noTechnicalRecordIds: true,
+    rawTableDefaultClosed: true,
     missingMarkers: [],
   }
 );

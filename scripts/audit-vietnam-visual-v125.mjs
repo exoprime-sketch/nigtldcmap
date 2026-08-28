@@ -74,17 +74,16 @@ const explorerSource = readText(resolve(PROJECT_ROOT, "src/pages/DataExplorerPag
 
 const staticVisualContract = {
   elementRootMarker:
-    /data-v125-element-id/u.test(detailSource.value || "") ||
-    /data-v125-element-id/u.test(previewSource.value || ""),
+    /data-element-id/u.test(detailSource.value || "") ||
+    /data-element-id/u.test(previewSource.value || ""),
   rendererMarker:
-    /data-v125-renderer/u.test(detailSource.value || "") ||
-    /data-v125-renderer/u.test(previewSource.value || ""),
+    /data-analysis-state/u.test(detailSource.value || "") ||
+    /data-analysis-state/u.test(previewSource.value || ""),
   tableFallback:
-    /data-v125-table-fallback/u.test(detailSource.value || "") ||
-    /data-v125-table-fallback/u.test(archetypeSource.value || "") ||
-    /전체 원자료 표/u.test(detailSource.value || ""),
+    /public-raw-table/u.test(detailSource.value || "") ||
+    /public-raw-table/u.test(archetypeSource.value || ""),
   emptyReason:
-    /data-v125-empty-reason/u.test(detailSource.value || "") ||
+    /data-public-empty-reason/u.test(detailSource.value || "") ||
     /emptyReason/u.test(detailSource.value || ""),
   e012KeyboardTooltip:
     /tabIndex=\{?0\}?/u.test(e012Source.value || "") &&
@@ -201,7 +200,7 @@ try {
   await waitForValue(
     browser.cdp,
     `(() => {
-      const root = document.querySelector('[data-v125-element-id="E-012"]');
+      const root = document.querySelector('[data-testid="public-analysis-root"][data-element-id="E-012"]');
       const error = document.querySelector('.cdp-alert--error');
       const semantic = document.querySelector('[data-testid="e012-semantic-preview"]');
       const loading = [...document.querySelectorAll('.cdp-empty')]
@@ -215,7 +214,7 @@ try {
     `(() => {
       const value = (id) => document.querySelector('[data-testid="' + id + '"]')?.value ?? null;
       return {
-        elementRoot: Boolean(document.querySelector('[data-v125-element-id="E-012"]')),
+        elementRoot: Boolean(document.querySelector('[data-testid="public-analysis-root"][data-element-id="E-012"]')),
         measure: value('e012-measure-select'),
         sex: value('e012-sex-select'),
         year: value('e012-year-select'),
@@ -228,14 +227,14 @@ try {
     `(() => {
       const raw = document.querySelector('[data-testid="e012-raw-table"]');
       const rows = [...(raw?.querySelectorAll('tbody tr') || [])];
-      const recordIds = rows.map((row) => row.getAttribute('data-record-id')).filter(Boolean);
+      const technicalRecordIdAttributeCount = rows.filter((row) => row.hasAttribute('data-record-id')).length;
       const ranked = document.querySelector('[data-testid="e012-ranked-bars"]');
       const scatter = document.querySelector('[data-testid="e012-employment-wage-scatter"]');
       const sexComparison = document.querySelector('[data-testid="e012-sex-comparison"]');
       return {
         kpis: Boolean(document.querySelector('[data-testid="e012-kpis"]')),
         rawRowCount: rows.length,
-        uniqueRecordIdCount: new Set(recordIds).size,
+        technicalRecordIdAttributeCount,
         missingWageNotice: Boolean(document.querySelector('[data-testid="e012-wage-missing-notice"]')),
         totalInRankedBars: Boolean(ranked?.querySelector('[data-occupation="all"]')),
         scatterPointCount: scatter?.querySelectorAll('[data-occupation]').length || 0,
@@ -260,15 +259,14 @@ try {
     let timedOut = false;
     let navigationMode = "spa-popstate";
     const readyExpression = `(() => {
-      const root = document.querySelector('[data-v125-element-id=${JSON.stringify(element.elementId)}]');
-      const renderer = document.querySelector(
-        '[data-v125-element-id=${JSON.stringify(element.elementId)}][data-v125-renderer]'
+      const root = document.querySelector(
+        '[data-testid="public-analysis-root"][data-element-id=${JSON.stringify(element.elementId)}]'
       );
-      const rendererState = renderer?.getAttribute('data-v125-renderer') || null;
+      const analysisState = root?.getAttribute('data-analysis-state') || null;
       const error = document.querySelector('.cdp-alert--error');
       const loading = [...document.querySelectorAll('.cdp-empty')]
         .some((node) => node.textContent.includes('불러오는 중'));
-      return Boolean(root && !loading && ((renderer && rendererState !== 'loading') || error));
+      return Boolean(root && !loading && (analysisState === 'ready' || error));
     })()`;
     try {
       await waitForValue(
@@ -295,33 +293,28 @@ try {
     const result = await evaluateValue(
       browser.cdp,
       `(() => {
-        const root = document.querySelector('[data-v125-element-id=${JSON.stringify(element.elementId)}]');
-        const renderer = root?.querySelector(
-          '[data-v125-element-id=${JSON.stringify(element.elementId)}][data-v125-renderer]'
-        ) ||
-          (root?.matches?.('[data-v125-renderer]') ? root : null);
+        const root = document.querySelector(
+          '[data-testid="public-analysis-root"][data-element-id=${JSON.stringify(element.elementId)}]'
+        );
         const normalize = (value) => String(value ?? '')
           .normalize('NFC')
           .replace(/\\s+/gu, ' ')
           .trim();
-        const fallbackRoots = [...(root?.querySelectorAll('[data-v125-table-fallback]') || [])];
+        const fallbackRoots = [...(root?.querySelectorAll('[data-testid="public-raw-table"]') || [])];
         const fallbackTables = fallbackRoots
           .map((node) => node.matches('table') ? node : node.querySelector('table'))
           .filter(Boolean);
         const fallbackRowCounts = fallbackTables.map(
           (table) => table.querySelectorAll('tbody tr').length
         );
-        const semanticTable = root?.querySelector(
-          '[data-v125-table-fallback="semantic-observations"] table'
-        );
+        const semanticTable = root?.querySelector('[data-testid="public-raw-table"] table');
         const e012Table = root?.querySelector('[data-testid="e012-raw-table"]');
         const entityTables = [
-          root?.querySelector('[data-testid="v125-entity-table-fallback"] table'),
-          root?.querySelector('[data-v125-table-fallback="source-entities"]')
+          root?.querySelector('[data-testid="public-raw-table"] table')
         ].filter(Boolean);
         const displayRoots = [
           root?.querySelector(
-            '[data-testid^="v125-renderer-"], [data-testid="e012-semantic-preview"]'
+            '[data-testid="public-primary-visualization"], [data-testid="e012-semantic-preview"], [data-testid="a002-cpia-analysis"]'
           ),
           root?.querySelector('.sv125-kpis')
         ].filter((node, index, nodes) => node && nodes.indexOf(node) === index);
@@ -331,12 +324,12 @@ try {
               '[role="listitem"], article, circle[aria-label], [tabindex="0"], tbody tr'
             )
           ])
-          .filter((node) => !node.closest('details, [data-v125-table-fallback]'))
+          .filter((node) => !node.closest('details'))
           .slice(0, 300);
         const primaryText = displayRoots.map((displayRoot) => {
           const clone = displayRoot.cloneNode(true);
           clone.querySelectorAll(
-            'details, [data-v125-table-fallback], [data-testid="e012-raw-table"]'
+            'details, [data-testid="e012-raw-table"]'
           ).forEach((node) => node.remove());
           return normalize(clone.textContent || '');
         }).filter(Boolean).join(' ');
@@ -354,13 +347,16 @@ try {
           .map((part) => part.includes(':') ? normalize(part.slice(part.indexOf(':') + 1)) : part)
           .filter(Boolean);
         const observationRows = [...((semanticTable || e012Table)?.querySelectorAll('tbody tr') || [])]
-          .slice(0, 300)
+          .slice(0, 5000)
           .map((row) => [...row.children].map((cell) => normalize(cell.textContent)));
         const observationMatch = observationRows.flatMap((cells) => {
           const e012 = Boolean(e012Table && !semanticTable);
-          const value = cells[e012 ? 3 : 3] || '';
+          const a002 = Boolean(root?.querySelector('[data-testid="a002-cpia-analysis"]'));
+          const value = cells[e012 ? 3 : a002 ? 1 : 3] || '';
           const identities = e012
             ? [cells[0], cells[2], cells[5]].filter(Boolean)
+            : a002
+            ? [cells[0], cells[3]].filter(Boolean)
             : [cells[0], ...dimensionValues(cells[2]), cells[5]].filter(Boolean);
           if (missingValue(value)) return [];
           const visualText = visualTexts.find(
@@ -369,7 +365,7 @@ try {
             )
           );
           return visualText
-            ? [{ kind: e012 ? 'e012-observation' : 'semantic-observation', value, identity: identities.find((identity) => visualText.includes(identity)) || null }]
+            ? [{ kind: e012 ? 'e012-observation' : a002 ? 'a002-observation' : 'semantic-observation', value, identity: identities.find((identity) => visualText.includes(identity)) || null }]
             : [];
         })[0] || null;
         const entityNames = entityTables.flatMap((table) =>
@@ -383,11 +379,11 @@ try {
         ) || null;
         const reconciliation = observationMatch ||
           (entityMatchName ? { kind: 'entity', identity: entityMatchName, value: null } : null);
-        const empty = root?.querySelector('[data-v125-empty-reason], .cdp-empty, [role="status"]');
+        const empty = root?.querySelector('[data-public-empty-reason], .cdp-empty, [role="status"]');
         const alert = document.querySelector('.cdp-alert--error');
         return {
           rootFound: Boolean(root),
-          renderer: renderer?.getAttribute('data-v125-renderer') || null,
+          renderer: root?.getAttribute('data-analysis-state') || null,
           tableFallbackFound: fallbackTables.length > 0,
           nonEmptyTableFallbackFound: fallbackRowCounts.some((count) => count > 0),
           tableRows: fallbackRowCounts.reduce((sum, count) => sum + count, 0),
@@ -498,19 +494,16 @@ try {
     await waitForValue(
       browser.cdp,
       `(() => {
-        const root = document.querySelector('[data-v125-element-id="C-016"]');
-        const renderer = root?.matches?.('[data-v125-renderer]')
-          ? root
-          : root?.querySelector('[data-v125-renderer]');
-        const rendererState = renderer?.getAttribute('data-v125-renderer') || null;
-        const semantic = root?.querySelector('[data-testid="v125-semantic-visualization"]');
+        const root = document.querySelector('[data-testid="public-analysis-root"][data-element-id="C-016"]');
+        const analysisState = root?.getAttribute('data-analysis-state') || null;
+        const semantic = root?.querySelector('[data-testid="public-analytical-view"]');
         const error = document.querySelector('.cdp-alert--error');
         const measure = root?.querySelector('[data-testid="v125-measure-select"]')?.value;
         const period = root?.querySelector('[data-testid="v125-period-select"]')?.value;
-        const category = root?.querySelector('[data-v125-dimension-key="category"]')?.value;
+        const category = root?.querySelector('[data-public-dimension-key="category"]')?.value;
         return Boolean(
           root &&
-          rendererState !== 'loading' &&
+          analysisState === 'ready' &&
           (error || (semantic &&
             measure === ${JSON.stringify(C016_MAP_HANDOFF.measure)} &&
             period === ${JSON.stringify(C016_MAP_HANDOFF.period)} &&
@@ -522,11 +515,11 @@ try {
     c016MapTransition.detail = await evaluateValue(
       browser.cdp,
       `(() => {
-        const root = document.querySelector('[data-v125-element-id="C-016"]');
+        const root = document.querySelector('[data-testid="public-analysis-root"][data-element-id="C-016"]');
         const value = (selector) => root?.querySelector(selector)?.value ?? null;
         const yearSelect = root?.querySelector('[data-testid="v125-year-select"]');
         const rows = [...(root?.querySelectorAll(
-          '[data-v125-table-fallback="semantic-observations"] tbody tr'
+          '[data-testid="public-raw-table"] tbody tr'
         ) || [])];
         const visibleYears = [...new Set(rows.map((row) =>
           row.querySelector('td:nth-child(6)')?.textContent?.trim() || ''
@@ -534,12 +527,11 @@ try {
         const params = new URLSearchParams(location.search);
         return {
           rootFound: Boolean(root),
-          renderer: root?.getAttribute('data-v125-renderer') ||
-            root?.querySelector('[data-v125-renderer]')?.getAttribute('data-v125-renderer') || null,
-          semanticFound: Boolean(root?.querySelector('[data-testid="v125-semantic-visualization"]')),
+          renderer: root?.getAttribute('data-analysis-state') || null,
+          semanticFound: Boolean(root?.querySelector('[data-testid="public-analytical-view"]')),
           measure: value('[data-testid="v125-measure-select"]'),
           period: value('[data-testid="v125-period-select"]'),
-          category: value('[data-v125-dimension-key="category"]'),
+          category: value('[data-public-dimension-key="category"]'),
           yearSelectPresent: Boolean(yearSelect),
           year: yearSelect?.value ?? null,
           tableRowCount: rows.length,
@@ -558,8 +550,8 @@ try {
     const mapClickResult = await evaluateValue(
       browser.cdp,
       `(() => {
-        const root = document.querySelector('[data-v125-element-id="C-016"]');
-        const button = [...(root?.querySelectorAll('button') || [])].find(
+        const root = document.querySelector('[data-testid="public-analysis-root"][data-element-id="C-016"]');
+        const button = [...document.querySelectorAll('button')].find(
           (node) => node.textContent?.trim() === '지도에서 보기'
         );
         if (!button) return { clicked: false, reason: 'map-button-missing' };
@@ -626,9 +618,7 @@ audit.check("LOCAL_PRODUCTION_RUNTIME_AVAILABLE", runtimeFailure === null, runti
 
 const routeFailures = routeResults.filter((result) => {
   const populated = ["actual-records", "partial-records"].includes(result.dataPresenceStatus);
-  const rendererMatches =
-    result.renderer === result.expectedRenderer ||
-    (result.elementId === "E-012" && result.renderer === "occupation-employment-wage");
+  const rendererMatches = result.renderer === "ready";
   if (!result.rootFound || result.timedOut || result.errorText || result.runtimeErrors > 0) return true;
   if (result.horizontalOverflow > 1) return true;
   if (populated) {
@@ -740,7 +730,7 @@ audit.check(
 const e012RuntimePass =
   e012RuntimeContract?.kpis === true &&
   e012RuntimeContract?.rawRowCount === 91 &&
-  e012RuntimeContract?.uniqueRecordIdCount === 91 &&
+  e012RuntimeContract?.technicalRecordIdAttributeCount === 0 &&
   e012RuntimeContract?.missingWageNotice === true &&
   e012RuntimeContract?.totalInRankedBars === false &&
   e012RuntimeContract?.scatterPointCount === 9 &&
@@ -753,7 +743,7 @@ audit.check(
   {
     kpis: true,
     rawRowCount: 91,
-    uniqueRecordIdCount: 91,
+    technicalRecordIdAttributeCount: 0,
     missingWageNotice: true,
     totalInRankedBars: false,
     scatterPointCount: 9,

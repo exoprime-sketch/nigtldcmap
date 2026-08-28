@@ -65,6 +65,9 @@
     "audit:map-semantic:v125": "node scripts/audit-vietnam-map-semantic-v125.mjs",
     "audit:navigation:v125": "node scripts/audit-vietnam-navigation-v125.mjs",
     "audit:release:v125": "node scripts/audit-vietnam-release-v125.mjs",
+    "audit:public-content:v126": "node scripts/audit-vietnam-public-content-v126.mjs",
+    "audit:finder-ux:v126": "node scripts/audit-vietnam-finder-ux-v126.mjs",
+    "audit:public-downloads:v126": "node scripts/audit-vietnam-public-downloads-v126.mjs",
     "finalize:v125": "npm run audit:data:v124 && npm run audit:map:v124 && npm run audit:runtime:v124 && npm run build:semantic:v125 && npm run audit:semantic:v125 && npm run audit:finder:v125 && npm run build && npm run audit:visual:v125"
   },
   "browserslist": [
