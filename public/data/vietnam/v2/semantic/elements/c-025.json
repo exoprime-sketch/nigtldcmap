@@ -1,0 +1,713 @@
+{
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 1,
+      "values": [
+        "Approved Projects(REGISTERED) 전수 계수"
+      ]
+    },
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "탄소크레딧"
+      ]
+    },
+    {
+      "key": "period",
+      "labelKo": "기간",
+      "valueCount": 1,
+      "values": [
+        "—"
+      ]
+    },
+    {
+      "key": "status",
+      "labelKo": "status",
+      "valueCount": 11,
+      "values": [
+        "GOLD_STANDARD_CERTIFIED_DESIGN",
+        "GOLD_STANDARD_CERTIFIED_PROJECT",
+        "Late to verify",
+        "LISTED",
+        "Registered",
+        "Registration requested",
+        "Under development",
+        "Under validation",
+        "Units Transferred from Approved GHG Program",
+        "Verification approval requested",
+        "Withdrawn"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35"
+      ]
+    },
+    {
+      "key": "technologyField",
+      "labelKo": "technologyField",
+      "valueCount": 11,
+      "values": [
+        "CTIS-01 태양광 기술",
+        "CTIS-02 태양열 기술",
+        "CTIS-03 풍력 기술",
+        "CTIS-05 수력 기술",
+        "CTIS-08 바이오에너지 기술",
+        "CTIS-15 폐자원 기술",
+        "CTIS-17 산업효율 기술",
+        "CTIS-18 수송효율 기술",
+        "CTIS-19 건물효율 기술",
+        "CTIS-23 탄소흡수원 기술",
+        "CTIS-34 농축수산 부문 기술"
+      ]
+    },
+    {
+      "key": "technologyMappingBasis",
+      "labelKo": "technologyMappingBasis",
+      "valueCount": 1,
+      "values": [
+        "Excel 수록 기술매핑값; AI가 새로 추론하지 않음"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 2,
+      "values": [
+        "2025",
+        "2026"
+      ]
+    }
+  ],
+  "elementId": "C-025",
+  "entityCount": 146,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 16,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-fc3208a87cfa|—",
+      "dimensionLabels": {
+        "category": "Gold Standard 등재 사업 123건)",
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-05 · CTIS-07 · CTIS-08 · CTIS-14 · CTIS-15 · CTIS-17 · CTIS-19 · CTIS-21 · CTIS-23 · CTIS-34 · CTIS-35"
+      },
+      "dimensions": {
+        "category": "Gold Standard 등재 사업 123건)",
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35"
+      },
+      "displayLabel": "탄소크레딧 프로젝트 레지스트리 (Verra VCS · Gold Standard 등재 사업 123건)",
+      "indicatorId": "C-025_carbon_credit_project_registry_gold_standard_listed_project",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-fc3208a87cfa",
+        "labelKo": "탄소크레딧 프로젝트 레지스트리 (Verra VCS",
+        "unit": "—",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-fc3208a87cfa|—|category=Gold Standard 등재 사업 123건)|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35|C-025_carbon_credit_project_registry_gold_standard_listed_project",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 사용. 지정 URL(Verra Registry)에서 베트남 등재 프로젝트를 추출하여 raw에 보관(Verra_VCS_Vietnam.json). Gold Standard 레지스트리도 병행 수집(GS_projects_Vietnam.json). CDM·JCM 실적은 두 레지스트리 소관이 아니어서 UNFCCC CDM Insights를 별도 확인. ‖ [라이선스 검증 2026-08-15] Verra Registry 이용약관 §17 \"reproduction of part or all of the contents in any form of the Verra Registry is prohibited other than for individual use by the User only\", Gold Standard Impact Registry 이용약관 25.3 \"reproduction of all or part of the contents ... is prohibited and may not be copied and shared with a third party\" 확인. → 레지스트리 콘텐츠 원문 재배포 불가. 본 데이터셋은 공개 검색결과의 프로젝트 식별정보·건수 등 사실 값만 수록 → 재배포 「제한」. ‖ ★2026-08-15 구조 정정: 종전에는 프로젝트마다 개별 indicator_id를 부여해 1.2 시트 123행이 2_meta_info에 대응 행을 갖지 못했음. 1.2_entity는 레코드형 시트이므로 indicator_id를 단일값으로 통일하고 개별 프로젝트 식별자는 note의 [프로젝트ID: …]로 이관함. 이로써 1.1+1.2 지표 ↔ 2_meta_info 1:1 대응이 성립함. raw 보유: raw/Verra_VCS_Vietnam.json, raw/GS_projects_Vietnam.json.",
+      "sourceLabel": "탄소크레딧 프로젝트 레지스트리 (Verra VCS · Gold Standard 등재 사업 123건)",
+      "sourceLabelEn": "Carbon Credit Project Registry Gold Standard Listed Project",
+      "sourceNote": "레지스트리가 프로젝트별 좌표(lat/lon)를 공개하지 않아 geometry 결측",
+      "sourceProvenance": {
+        "elementId": "C-025",
+        "indicatorId": "C-025_carbon_credit_project_registry_gold_standard_listed_project",
+        "sourceFileDecoded": "C-025_탄소크레딧 발행·소각 실적.xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1a91ca84909f|tCO₂e",
+      "dimensionLabels": {
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-05 · CTIS-07 · CTIS-08 · CTIS-14 · CTIS-15 · CTIS-17 · CTIS-19 · CTIS-21 · CTIS-23 · CTIS-34 · CTIS-35"
+      },
+      "dimensions": {
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35"
+      },
+      "displayLabel": "CDM 크레딧 소각량",
+      "indicatorId": "C-025_cdm_credit_retired_volume",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1a91ca84909f",
+        "labelKo": "CDM 크레딧 소각량",
+        "unit": "tCO₂e",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-1a91ca84909f|tCO₂e|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35|C-025_cdm_credit_retired_volume",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 사용. 지정 URL(Verra Registry)에서 베트남 등재 프로젝트를 추출하여 raw에 보관(Verra_VCS_Vietnam.json). Gold Standard 레지스트리도 병행 수집(GS_projects_Vietnam.json). CDM·JCM 실적은 두 레지스트리 소관이 아니어서 UNFCCC CDM Insights를 별도 확인. ‖ [라이선스 검증 2026-08-15] UNFCCC·InforMEA 등 국제기구 공개 데이터로 출처 표기 조건 이용 허용. ‖ [변경이력] CDM 크레딧 소각량(retirement) — UNFCCC CDM Insights 공개 통계에 국가별 소각·취소 파일이 존재하지 않음(어느 국가든 동일). 제공 파일은 호스트국별 발행량(collapsed_iss_byHost.xls)과 등록 사업 수(Proj_reg_byHost.xls)뿐. ★2026-08-14 재판정: 우리 미수집(M06)이 아니라 원천 미제공(M01)으로 확정 ‖ 대체 지표로 호스트국별 CER 발행량(collapsed_iss_byHost.xls)을 사용할 수 있음. 소각량은 각국 국가등록부 소관이라 CDM 중앙 통계에 집계되지 않음.",
+      "sourceLabel": "CDM 크레딧 소각량",
+      "sourceLabelEn": "Cdm Credit Retired Volume",
+      "sourceNote": "CDM 공개 통계는 발행량·등록사업 수만 제공하고 국가별 소각(retirement) 통계를 발표하지 않음",
+      "sourceProvenance": {
+        "elementId": "C-025",
+        "indicatorId": "C-025_cdm_credit_retired_volume",
+        "sourceFileDecoded": "C-025_탄소크레딧 발행·소각 실적.xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-299c9675e303|건",
+      "dimensionLabels": {
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-05 · CTIS-07 · CTIS-08 · CTIS-14 · CTIS-15 · CTIS-17 · CTIS-19 · CTIS-21 · CTIS-23 · CTIS-34 · CTIS-35"
+      },
+      "dimensions": {
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35"
+      },
+      "displayLabel": "GCC 등록 심사중 프로젝트 수",
+      "indicatorId": "C-025_gcc_pending_registration_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-299c9675e303",
+        "labelKo": "GCC 등록 심사중 프로젝트 수",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-299c9675e303|건|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35|C-025_gcc_pending_registration_count",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 사용. 지정 URL(Verra Registry)에서 베트남 등재 프로젝트를 추출하여 raw에 보관(Verra_VCS_Vietnam.json). Gold Standard 레지스트리도 병행 수집(GS_projects_Vietnam.json). CDM·JCM 실적은 두 레지스트리 소관이 아니어서 UNFCCC CDM Insights를 별도 확인. ‖ [라이선스 검증 2026-08-15] 개별 이용약관 미공개 사이트. 본문은 수록하지 않고 사실 값만 인용 → 재배포 「제한」. ‖ 종전 「공식 웹사이트 URL 미확보」 상태 해소. 등록 사례로 베트남 500MW 태양광 프로젝트 확인됨.",
+      "sourceLabel": "GCC 등록 심사중 프로젝트 수",
+      "sourceLabelEn": "Gcc Registration Project Count",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 사용. 지정 URL(Verra Registry)에서 베트남 등재 프로젝트를 추출하여 raw에 보관(Verra_VCS_Vietnam.json). Gold Standard 레지스트리도 병행 수집(GS_projects_Vietnam.json). CDM·JCM 실적은 두 레지스트리 소관이 아니어서 UNFCCC CDM Insights를 별도 확인. ‖ [라이선스 검증 2026-08-15] 개별 이용약관 미공개 사이트. 본문은 수록하지 않고 사실 값만 인용 → 재배포 「제한」. ‖ 종전 「공식 웹사이트 URL 미확보」 상태 해소. 등록 사례로 베트남 500MW 태양광 프로젝트 확인됨.",
+      "sourceProvenance": {
+        "elementId": "C-025",
+        "indicatorId": "C-025_gcc_pending_registration_count",
+        "sourceFileDecoded": "C-025_탄소크레딧 발행·소각 실적.xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5150cc33038a|건",
+      "dimensionLabels": {
+        "detail": "Approved Projects(REGISTERED) 전수 계수",
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-05 · CTIS-07 · CTIS-08 · CTIS-14 · CTIS-15 · CTIS-17 · CTIS-19 · CTIS-21 · CTIS-23 · CTIS-34 · CTIS-35"
+      },
+      "dimensions": {
+        "detail": "Approved Projects(REGISTERED) 전수 계수",
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35"
+      },
+      "displayLabel": "GCC 등록 프로젝트 수 — Approved Projects(REGISTERED) 전수 계수",
+      "indicatorId": "C-025_gcc_registration_project_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5150cc33038a",
+        "labelKo": "GCC 등록 프로젝트 수",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-5150cc33038a|건|detail=Approved Projects(REGISTERED) 전수 계수|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35|C-025_gcc_registration_project_count",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 사용. 지정 URL(Verra Registry)에서 베트남 등재 프로젝트를 추출하여 raw에 보관(Verra_VCS_Vietnam.json). Gold Standard 레지스트리도 병행 수집(GS_projects_Vietnam.json). CDM·JCM 실적은 두 레지스트리 소관이 아니어서 UNFCCC CDM Insights를 별도 확인. ‖ [라이선스 검증 2026-08-15] 개별 이용약관 미공개 사이트. 본문은 수록하지 않고 사실 값만 인용 → 재배포 「제한」. ‖ 종전 「공식 웹사이트 URL 미확보」 상태 해소. 등록 사례로 베트남 500MW 태양광 프로젝트 확인됨.",
+      "sourceLabel": "GCC 등록 프로젝트 수 — Approved Projects(REGISTERED) 전수 계수",
+      "sourceLabelEn": "Gcc Registration Project Count",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 사용. 지정 URL(Verra Registry)에서 베트남 등재 프로젝트를 추출하여 raw에 보관(Verra_VCS_Vietnam.json). Gold Standard 레지스트리도 병행 수집(GS_projects_Vietnam.json). CDM·JCM 실적은 두 레지스트리 소관이 아니어서 UNFCCC CDM Insights를 별도 확인. ‖ [라이선스 검증 2026-08-15] 개별 이용약관 미공개 사이트. 본문은 수록하지 않고 사실 값만 인용 → 재배포 「제한」. ‖ 종전 「공식 웹사이트 URL 미확보」 상태 해소. 등록 사례로 베트남 500MW 태양광 프로젝트 확인됨.",
+      "sourceProvenance": {
+        "elementId": "C-025",
+        "indicatorId": "C-025_gcc_registration_project_count",
+        "sourceFileDecoded": "C-025_탄소크레딧 발행·소각 실적.xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6725944a1f3c|tCO₂e/년",
+      "dimensionLabels": {
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-05 · CTIS-07 · CTIS-08 · CTIS-14 · CTIS-15 · CTIS-17 · CTIS-19 · CTIS-21 · CTIS-23 · CTIS-34 · CTIS-35"
+      },
+      "dimensions": {
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35"
+      },
+      "displayLabel": "GCC 등록 프로젝트 검증 연간 감축량 합계",
+      "indicatorId": "C-025_gcc_verified_annual_reduction_total",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6725944a1f3c",
+        "labelKo": "GCC 등록 프로젝트 검증 연간 감축량 합계",
+        "unit": "tCO₂e/년",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-6725944a1f3c|tCO₂e/년|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35|C-025_gcc_verified_annual_reduction_total",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 사용. 지정 URL(Verra Registry)에서 베트남 등재 프로젝트를 추출하여 raw에 보관(Verra_VCS_Vietnam.json). Gold Standard 레지스트리도 병행 수집(GS_projects_Vietnam.json). CDM·JCM 실적은 두 레지스트리 소관이 아니어서 UNFCCC CDM Insights를 별도 확인. ‖ [라이선스 검증 2026-08-15] 개별 이용약관 미공개 사이트. 본문은 수록하지 않고 사실 값만 인용 → 재배포 「제한」. ‖ 종전 「공식 웹사이트 URL 미확보」 상태 해소. 등록 사례로 베트남 500MW 태양광 프로젝트 확인됨.",
+      "sourceLabel": "GCC 등록 프로젝트 검증 연간 감축량 합계",
+      "sourceLabelEn": "Gcc Registration Project Count",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 사용. 지정 URL(Verra Registry)에서 베트남 등재 프로젝트를 추출하여 raw에 보관(Verra_VCS_Vietnam.json). Gold Standard 레지스트리도 병행 수집(GS_projects_Vietnam.json). CDM·JCM 실적은 두 레지스트리 소관이 아니어서 UNFCCC CDM Insights를 별도 확인. ‖ [라이선스 검증 2026-08-15] 개별 이용약관 미공개 사이트. 본문은 수록하지 않고 사실 값만 인용 → 재배포 「제한」. ‖ 종전 「공식 웹사이트 URL 미확보」 상태 해소. 등록 사례로 베트남 500MW 태양광 프로젝트 확인됨.",
+      "sourceProvenance": {
+        "elementId": "C-025",
+        "indicatorId": "C-025_gcc_verified_annual_reduction_total",
+        "sourceFileDecoded": "C-025_탄소크레딧 발행·소각 실적.xlsx",
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-19abac6bdf7b|tCO₂e/yr",
+      "dimensionLabels": {
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-05 · CTIS-07 · CTIS-08 · CTIS-14 · CTIS-15 · CTIS-17 · CTIS-19 · CTIS-21 · CTIS-23 · CTIS-34 · CTIS-35"
+      },
+      "dimensions": {
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35"
+      },
+      "displayLabel": "Gold Standard 연간 예상 크레딧 합계",
+      "indicatorId": "C-025_gold_standard_annual_yesat",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-19abac6bdf7b",
+        "labelKo": "Gold Standard 연간 예상 크레딧 합계",
+        "unit": "tCO₂e/yr",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-19abac6bdf7b|tCO₂e/yr|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35|C-025_gold_standard_annual_yesat",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 사용. 지정 URL(Verra Registry)에서 베트남 등재 프로젝트를 추출하여 raw에 보관(Verra_VCS_Vietnam.json). Gold Standard 레지스트리도 병행 수집(GS_projects_Vietnam.json). CDM·JCM 실적은 두 레지스트리 소관이 아니어서 UNFCCC CDM Insights를 별도 확인. ‖ [라이선스 검증 2026-08-15] Verra Registry 이용약관 §17 \"reproduction of part or all of the contents in any form of the Verra Registry is prohibited other than for individual use by the User only\", Gold Standard Impact Registry 이용약관 25.3 \"reproduction of all or part of the contents ... is prohibited and may not be copied and shared with a third party\" 확인. → 레지스트리 콘텐츠 원문 재배포 불가. 본 데이터셋은 공개 검색결과의 프로젝트 식별정보·건수 등 사실 값만 수록 → 재배포 「제한」. ‖ [결측처리] 59건 중 55건에만 값이 있어 4건은 합계에서 제외됨.",
+      "sourceLabel": "Gold Standard 연간 예상 크레딧 합계",
+      "sourceLabelEn": "Gold Standard Annual Yesat",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 사용. 지정 URL(Verra Registry)에서 베트남 등재 프로젝트를 추출하여 raw에 보관(Verra_VCS_Vietnam.json). Gold Standard 레지스트리도 병행 수집(GS_projects_Vietnam.json). CDM·JCM 실적은 두 레지스트리 소관이 아니어서 UNFCCC CDM Insights를 별도 확인. ‖ [라이선스 검증 2026-08-15] Verra Registry 이용약관 §17 \"reproduction of part or all of the contents in any form of the Verra Registry is prohibited other than for individual use by the User only\", Gold Standard Impact Registry 이용약관 25.3 \"reproduction of all or part of the contents ... is prohibited and may not be copied and shared with a third party\" 확인. → 레지스트리 콘텐츠 원문 재배포 불가. 본 데이터셋은 공개 검색결과의 프로젝트 식별정보·건수 등 사실 값만 수록 → 재배포 「제한」. ‖ [결측처리] 59건 중 55건에만 값이 있어 4건은 합계에서 제외됨.",
+      "sourceProvenance": {
+        "elementId": "C-025",
+        "indicatorId": "C-025_gold_standard_annual_yesat",
+        "sourceFileDecoded": "C-025_탄소크레딧 발행·소각 실적.xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-caab166a6513|건",
+      "dimensionLabels": {
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-05 · CTIS-07 · CTIS-08 · CTIS-14 · CTIS-15 · CTIS-17 · CTIS-19 · CTIS-21 · CTIS-23 · CTIS-34 · CTIS-35"
+      },
+      "dimensions": {
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35"
+      },
+      "displayLabel": "Gold Standard 인증 완료",
+      "indicatorId": "C-025_gold_standard_certification_completed",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-caab166a6513",
+        "labelKo": "Gold Standard 인증 완료",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-caab166a6513|건|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35|C-025_gold_standard_certification_completed",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 사용. 지정 URL(Verra Registry)에서 베트남 등재 프로젝트를 추출하여 raw에 보관(Verra_VCS_Vietnam.json). Gold Standard 레지스트리도 병행 수집(GS_projects_Vietnam.json). CDM·JCM 실적은 두 레지스트리 소관이 아니어서 UNFCCC CDM Insights를 별도 확인. ‖ [라이선스 검증 2026-08-15] Verra Registry 이용약관 §17 \"reproduction of part or all of the contents in any form of the Verra Registry is prohibited other than for individual use by the User only\", Gold Standard Impact Registry 이용약관 25.3 \"reproduction of all or part of the contents ... is prohibited and may not be copied and shared with a third party\" 확인. → 레지스트리 콘텐츠 원문 재배포 불가. 본 데이터셋은 공개 검색결과의 프로젝트 식별정보·건수 등 사실 값만 수록 → 재배포 「제한」. ‖",
+      "sourceLabel": "Gold Standard 인증 완료",
+      "sourceLabelEn": "Gold Standard Certification Completed",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 사용. 지정 URL(Verra Registry)에서 베트남 등재 프로젝트를 추출하여 raw에 보관(Verra_VCS_Vietnam.json). Gold Standard 레지스트리도 병행 수집(GS_projects_Vietnam.json). CDM·JCM 실적은 두 레지스트리 소관이 아니어서 UNFCCC CDM Insights를 별도 확인. ‖ [라이선스 검증 2026-08-15] Verra Registry 이용약관 §17 \"reproduction of part or all of the contents in any form of the Verra Registry is prohibited other than for individual use by the User only\", Gold Standard Impact Registry 이용약관 25.3 \"reproduction of all or part of the contents ... is prohibited and may not be copied and shared with a third party\" 확인. → 레지스트리 콘텐츠 원문 재배포 불가. 본 데이터셋은 공개 검색결과의 프로젝트 식별정보·건수 등 사실 값만 수록 → 재배포 「제한」. ‖",
+      "sourceProvenance": {
+        "elementId": "C-025",
+        "indicatorId": "C-025_gold_standard_certification_completed",
+        "sourceFileDecoded": "C-025_탄소크레딧 발행·소각 실적.xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-76c6c3c0d1f1|건",
+      "dimensionLabels": {
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-05 · CTIS-07 · CTIS-08 · CTIS-14 · CTIS-15 · CTIS-17 · CTIS-19 · CTIS-21 · CTIS-23 · CTIS-34 · CTIS-35"
+      },
+      "dimensions": {
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35"
+      },
+      "displayLabel": "Gold Standard 등록 프로젝트 수",
+      "indicatorId": "C-025_gold_standard_registration",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-76c6c3c0d1f1",
+        "labelKo": "Gold Standard 등록 프로젝트 수",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-76c6c3c0d1f1|건|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35|C-025_gold_standard_registration",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 사용. 지정 URL(Verra Registry)에서 베트남 등재 프로젝트를 추출하여 raw에 보관(Verra_VCS_Vietnam.json). Gold Standard 레지스트리도 병행 수집(GS_projects_Vietnam.json). CDM·JCM 실적은 두 레지스트리 소관이 아니어서 UNFCCC CDM Insights를 별도 확인. ‖ [라이선스 검증 2026-08-15] Verra Registry 이용약관 §17 \"reproduction of part or all of the contents in any form of the Verra Registry is prohibited other than for individual use by the User only\", Gold Standard Impact Registry 이용약관 25.3 \"reproduction of all or part of the contents ... is prohibited and may not be copied and shared with a third party\" 확인. → 레지스트리 콘텐츠 원문 재배포 불가. 본 데이터셋은 공개 검색결과의 프로젝트 식별정보·건수 등 사실 값만 수록 → 재배포 「제한」. ‖ [정의·범위] raw/GS_projects_Vietnam.json 전수.",
+      "sourceLabel": "Gold Standard 등록 프로젝트 수",
+      "sourceLabelEn": "Gold Standard Registration",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 사용. 지정 URL(Verra Registry)에서 베트남 등재 프로젝트를 추출하여 raw에 보관(Verra_VCS_Vietnam.json). Gold Standard 레지스트리도 병행 수집(GS_projects_Vietnam.json). CDM·JCM 실적은 두 레지스트리 소관이 아니어서 UNFCCC CDM Insights를 별도 확인. ‖ [라이선스 검증 2026-08-15] Verra Registry 이용약관 §17 \"reproduction of part or all of the contents in any form of the Verra Registry is prohibited other than for individual use by the User only\", Gold Standard Impact Registry 이용약관 25.3 \"reproduction of all or part of the contents ... is prohibited and may not be copied and shared with a third party\" 확인. → 레지스트리 콘텐츠 원문 재배포 불가. 본 데이터셋은 공개 검색결과의 프로젝트 식별정보·건수 등 사실 값만 수록 → 재배포 「제한」. ‖ [정의·범위] raw/GS_projects_Vietnam.json 전수.",
+      "sourceProvenance": {
+        "elementId": "C-025",
+        "indicatorId": "C-025_gold_standard_registration",
+        "sourceFileDecoded": "C-025_탄소크레딧 발행·소각 실적.xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1f7a1f8b818a|tCO₂e",
+      "dimensionLabels": {
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-05 · CTIS-07 · CTIS-08 · CTIS-14 · CTIS-15 · CTIS-17 · CTIS-19 · CTIS-21 · CTIS-23 · CTIS-34 · CTIS-35"
+      },
+      "dimensions": {
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35"
+      },
+      "displayLabel": "JCM 크레딧 발행량",
+      "indicatorId": "C-025_jcm_credit_issued_volume",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1f7a1f8b818a",
+        "labelKo": "JCM 크레딧 발행량",
+        "unit": "tCO₂e",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-1f7a1f8b818a|tCO₂e|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35|C-025_jcm_credit_issued_volume",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 사용. 지정 URL(Verra Registry)에서 베트남 등재 프로젝트를 추출하여 raw에 보관(Verra_VCS_Vietnam.json). Gold Standard 레지스트리도 병행 수집(GS_projects_Vietnam.json). CDM·JCM 실적은 두 레지스트리 소관이 아니어서 UNFCCC CDM Insights를 별도 확인. ‖ [라이선스 검증 2026-08-15] 언론·업계 전문지·연구기관 해설물은 저작권 유보가 일반적임(개별 약관 미확인). 기사 본문은 수록하지 않고 원문 결정문·통계 수치 등 사실 값만 수록 → 재배포 「제한」. ‖",
+      "sourceLabel": "JCM 크레딧 발행량",
+      "sourceLabelEn": "Jcm Credit Issued Volume",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 사용. 지정 URL(Verra Registry)에서 베트남 등재 프로젝트를 추출하여 raw에 보관(Verra_VCS_Vietnam.json). Gold Standard 레지스트리도 병행 수집(GS_projects_Vietnam.json). CDM·JCM 실적은 두 레지스트리 소관이 아니어서 UNFCCC CDM Insights를 별도 확인. ‖ [라이선스 검증 2026-08-15] 언론·업계 전문지·연구기관 해설물은 저작권 유보가 일반적임(개별 약관 미확인). 기사 본문은 수록하지 않고 원문 결정문·통계 수치 등 사실 값만 수록 → 재배포 「제한」. ‖",
+      "sourceProvenance": {
+        "elementId": "C-025",
+        "indicatorId": "C-025_jcm_credit_issued_volume",
+        "sourceFileDecoded": "C-025_탄소크레딧 발행·소각 실적.xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-fedab6cf324f|tCO₂e",
+      "dimensionLabels": {
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-05 · CTIS-07 · CTIS-08 · CTIS-14 · CTIS-15 · CTIS-17 · CTIS-19 · CTIS-21 · CTIS-23 · CTIS-34 · CTIS-35"
+      },
+      "dimensions": {
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35"
+      },
+      "displayLabel": "JCM 크레딧 소각량",
+      "indicatorId": "C-025_jcm_credit_retired_volume",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-fedab6cf324f",
+        "labelKo": "JCM 크레딧 소각량",
+        "unit": "tCO₂e",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-fedab6cf324f|tCO₂e|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35|C-025_jcm_credit_retired_volume",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 사용. 지정 URL(Verra Registry)에서 베트남 등재 프로젝트를 추출하여 raw에 보관(Verra_VCS_Vietnam.json). Gold Standard 레지스트리도 병행 수집(GS_projects_Vietnam.json). CDM·JCM 실적은 두 레지스트리 소관이 아니어서 UNFCCC CDM Insights를 별도 확인. ‖ [라이선스 검증 2026-08-15] UNFCCC·InforMEA 등 국제기구 공개 데이터로 출처 표기 조건 이용 허용. ‖ [변경이력] JCM 크레딧 소각량(retirement) — UNFCCC CDM Insights 공개 통계에 국가별 소각·취소 파일이 존재하지 않음(어느 국가든 동일). 제공 파일은 호스트국별 발행량(collapsed_iss_byHost.xls)과 등록 사업 수(Proj_reg_byHost.xls)뿐. ★2026-08-14 재판정: 우리 미수집(M06)이 아니라 원천 미제공(M01)으로 확정 ‖ 대체 지표로 호스트국별 CER 발행량(collapsed_iss_byHost.xls)을 사용할 수 있음. 소각량은 각국 국가등록부 소관이라 CDM 중앙 통계에 집계되지 않음.",
+      "sourceLabel": "JCM 크레딧 소각량",
+      "sourceLabelEn": "Jcm Credit Retired Volume",
+      "sourceNote": "CDM 공개 통계는 발행량·등록사업 수만 제공하고 국가별 소각(retirement) 통계를 발표하지 않음",
+      "sourceProvenance": {
+        "elementId": "C-025",
+        "indicatorId": "C-025_jcm_credit_retired_volume",
+        "sourceFileDecoded": "C-025_탄소크레딧 발행·소각 실적.xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-3293209f94d0|건",
+      "dimensionLabels": {
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-05 · CTIS-07 · CTIS-08 · CTIS-14 · CTIS-15 · CTIS-17 · CTIS-19 · CTIS-21 · CTIS-23 · CTIS-34 · CTIS-35"
+      },
+      "dimensions": {
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35"
+      },
+      "displayLabel": "JCM 등록 프로젝트 수",
+      "indicatorId": "C-025_jcm_registration_project_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3293209f94d0",
+        "labelKo": "JCM 등록 프로젝트 수",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-3293209f94d0|건|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35|C-025_jcm_registration_project_count",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 사용. 지정 URL(Verra Registry)에서 베트남 등재 프로젝트를 추출하여 raw에 보관(Verra_VCS_Vietnam.json). Gold Standard 레지스트리도 병행 수집(GS_projects_Vietnam.json). CDM·JCM 실적은 두 레지스트리 소관이 아니어서 UNFCCC CDM Insights를 별도 확인. ‖ [라이선스 검증 2026-08-15] 언론·업계 전문지·연구기관 해설물은 저작권 유보가 일반적임(개별 약관 미확인). 기사 본문은 수록하지 않고 원문 결정문·통계 수치 등 사실 값만 수록 → 재배포 「제한」. ‖ [정의·범위] 상세는 C-006(C.1.e) 시트 참조.",
+      "sourceLabel": "JCM 등록 프로젝트 수",
+      "sourceLabelEn": "Jcm Registration Project Count",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 사용. 지정 URL(Verra Registry)에서 베트남 등재 프로젝트를 추출하여 raw에 보관(Verra_VCS_Vietnam.json). Gold Standard 레지스트리도 병행 수집(GS_projects_Vietnam.json). CDM·JCM 실적은 두 레지스트리 소관이 아니어서 UNFCCC CDM Insights를 별도 확인. ‖ [라이선스 검증 2026-08-15] 언론·업계 전문지·연구기관 해설물은 저작권 유보가 일반적임(개별 약관 미확인). 기사 본문은 수록하지 않고 원문 결정문·통계 수치 등 사실 값만 수록 → 재배포 「제한」. ‖ [정의·범위] 상세는 C-006(C.1.e) 시트 참조.",
+      "sourceProvenance": {
+        "elementId": "C-025",
+        "indicatorId": "C-025_jcm_registration_project_count",
+        "sourceFileDecoded": "C-025_탄소크레딧 발행·소각 실적.xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-51dfc6fef535|tCO₂e",
+      "dimensionLabels": {
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-05 · CTIS-07 · CTIS-08 · CTIS-14 · CTIS-15 · CTIS-17 · CTIS-19 · CTIS-21 · CTIS-23 · CTIS-34 · CTIS-35"
+      },
+      "dimensions": {
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35"
+      },
+      "displayLabel": "JCM 베트남 배분량",
+      "indicatorId": "C-025_jcm_vietnam_allocated_volume",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-51dfc6fef535",
+        "labelKo": "JCM 베트남 배분량",
+        "unit": "tCO₂e",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-51dfc6fef535|tCO₂e|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35|C-025_jcm_vietnam_allocated_volume",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 사용. 지정 URL(Verra Registry)에서 베트남 등재 프로젝트를 추출하여 raw에 보관(Verra_VCS_Vietnam.json). Gold Standard 레지스트리도 병행 수집(GS_projects_Vietnam.json). CDM·JCM 실적은 두 레지스트리 소관이 아니어서 UNFCCC CDM Insights를 별도 확인. ‖ [라이선스 검증 2026-08-15] 언론·업계 전문지·연구기관 해설물은 저작권 유보가 일반적임(개별 약관 미확인). 기사 본문은 수록하지 않고 원문 결정문·통계 수치 등 사실 값만 수록 → 재배포 「제한」. ‖ [정의·범위] 총 발행 35,313 tCO₂e 중 베트남 배분분(47.22%).",
+      "sourceLabel": "JCM 베트남 배분량",
+      "sourceLabelEn": "Jcm Vietnam Allocated Volume",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 사용. 지정 URL(Verra Registry)에서 베트남 등재 프로젝트를 추출하여 raw에 보관(Verra_VCS_Vietnam.json). Gold Standard 레지스트리도 병행 수집(GS_projects_Vietnam.json). CDM·JCM 실적은 두 레지스트리 소관이 아니어서 UNFCCC CDM Insights를 별도 확인. ‖ [라이선스 검증 2026-08-15] 언론·업계 전문지·연구기관 해설물은 저작권 유보가 일반적임(개별 약관 미확인). 기사 본문은 수록하지 않고 원문 결정문·통계 수치 등 사실 값만 수록 → 재배포 「제한」. ‖ [정의·범위] 총 발행 35,313 tCO₂e 중 베트남 배분분(47.22%).",
+      "sourceProvenance": {
+        "elementId": "C-025",
+        "indicatorId": "C-025_jcm_vietnam_allocated_volume",
+        "sourceFileDecoded": "C-025_탄소크레딧 발행·소각 실적.xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a84ace6c3b56|건",
+      "dimensionLabels": {
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-05 · CTIS-07 · CTIS-08 · CTIS-14 · CTIS-15 · CTIS-17 · CTIS-19 · CTIS-21 · CTIS-23 · CTIS-34 · CTIS-35"
+      },
+      "dimensions": {
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35"
+      },
+      "displayLabel": "VCM 프로젝트 총계(Verra+GS)",
+      "indicatorId": "C-025_vcm_project_total",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a84ace6c3b56",
+        "labelKo": "VCM 프로젝트 총계(Verra+GS)",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-a84ace6c3b56|건|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35|C-025_vcm_project_total",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 사용. 지정 URL(Verra Registry)에서 베트남 등재 프로젝트를 추출하여 raw에 보관(Verra_VCS_Vietnam.json). Gold Standard 레지스트리도 병행 수집(GS_projects_Vietnam.json). CDM·JCM 실적은 두 레지스트리 소관이 아니어서 UNFCCC CDM Insights를 별도 확인. ‖ [라이선스 검증 2026-08-15] Verra Registry 이용약관 §17 \"reproduction of part or all of the contents in any form of the Verra Registry is prohibited other than for individual use by the User only\", Gold Standard Impact Registry 이용약관 25.3 \"reproduction of all or part of the contents ... is prohibited and may not be copied and shared with a third party\" 확인. → 레지스트리 콘텐츠 원문 재배포 불가. 본 데이터셋은 공개 검색결과의 프로젝트 식별정보·건수 등 사실 값만 수록 → 재배포 「제한」. ‖ [정의·범위] 검토의견 C-025(6건만 수록) 반영하여 프로젝트 단위 전수로 확장. 개별 목록은 1.2_entity 시트 참조.",
+      "sourceLabel": "VCM 프로젝트 총계(Verra+GS)",
+      "sourceLabelEn": "Vcm Project Total",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 사용. 지정 URL(Verra Registry)에서 베트남 등재 프로젝트를 추출하여 raw에 보관(Verra_VCS_Vietnam.json). Gold Standard 레지스트리도 병행 수집(GS_projects_Vietnam.json). CDM·JCM 실적은 두 레지스트리 소관이 아니어서 UNFCCC CDM Insights를 별도 확인. ‖ [라이선스 검증 2026-08-15] Verra Registry 이용약관 §17 \"reproduction of part or all of the contents in any form of the Verra Registry is prohibited other than for individual use by the User only\", Gold Standard Impact Registry 이용약관 25.3 \"reproduction of all or part of the contents ... is prohibited and may not be copied and shared with a third party\" 확인. → 레지스트리 콘텐츠 원문 재배포 불가. 본 데이터셋은 공개 검색결과의 프로젝트 식별정보·건수 등 사실 값만 수록 → 재배포 「제한」. ‖ [정의·범위] 검토의견 C-025(6건만 수록) 반영하여 프로젝트 단위 전수로 확장. 개별 목록은 1.2_entity 시트 참조.",
+      "sourceProvenance": {
+        "elementId": "C-025",
+        "indicatorId": "C-025_vcm_project_total",
+        "sourceFileDecoded": "C-025_탄소크레딧 발행·소각 실적.xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-3c703d3fa737|tCO₂e/yr",
+      "dimensionLabels": {
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-05 · CTIS-07 · CTIS-08 · CTIS-14 · CTIS-15 · CTIS-17 · CTIS-19 · CTIS-21 · CTIS-23 · CTIS-34 · CTIS-35"
+      },
+      "dimensions": {
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35"
+      },
+      "displayLabel": "Verra VCS 연간 예상 감축량 합계",
+      "indicatorId": "C-025_verra_vcs_annual_yesat",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3c703d3fa737",
+        "labelKo": "Verra VCS 연간 예상 감축량 합계",
+        "unit": "tCO₂e/yr",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-3c703d3fa737|tCO₂e/yr|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35|C-025_verra_vcs_annual_yesat",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 사용. 지정 URL(Verra Registry)에서 베트남 등재 프로젝트를 추출하여 raw에 보관(Verra_VCS_Vietnam.json). Gold Standard 레지스트리도 병행 수집(GS_projects_Vietnam.json). CDM·JCM 실적은 두 레지스트리 소관이 아니어서 UNFCCC CDM Insights를 별도 확인. ‖ [라이선스 검증 2026-08-15] Verra Registry 이용약관 §17 \"reproduction of part or all of the contents in any form of the Verra Registry is prohibited other than for individual use by the User only\", Gold Standard Impact Registry 이용약관 25.3 \"reproduction of all or part of the contents ... is prohibited and may not be copied and shared with a third party\" 확인. → 레지스트리 콘텐츠 원문 재배포 불가. 본 데이터셋은 공개 검색결과의 프로젝트 식별정보·건수 등 사실 값만 수록 → 재배포 「제한」. ‖ [정의·범위] 실제 발행량이 아니라 사업계획상 연간 예상 감축량의 합계.",
+      "sourceLabel": "Verra VCS 연간 예상 감축량 합계",
+      "sourceLabelEn": "Verra Vcs Annual Yesat",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 사용. 지정 URL(Verra Registry)에서 베트남 등재 프로젝트를 추출하여 raw에 보관(Verra_VCS_Vietnam.json). Gold Standard 레지스트리도 병행 수집(GS_projects_Vietnam.json). CDM·JCM 실적은 두 레지스트리 소관이 아니어서 UNFCCC CDM Insights를 별도 확인. ‖ [라이선스 검증 2026-08-15] Verra Registry 이용약관 §17 \"reproduction of part or all of the contents in any form of the Verra Registry is prohibited other than for individual use by the User only\", Gold Standard Impact Registry 이용약관 25.3 \"reproduction of all or part of the contents ... is prohibited and may not be copied and shared with a third party\" 확인. → 레지스트리 콘텐츠 원문 재배포 불가. 본 데이터셋은 공개 검색결과의 프로젝트 식별정보·건수 등 사실 값만 수록 → 재배포 「제한」. ‖ [정의·범위] 실제 발행량이 아니라 사업계획상 연간 예상 감축량의 합계.",
+      "sourceProvenance": {
+        "elementId": "C-025",
+        "indicatorId": "C-025_verra_vcs_annual_yesat",
+        "sourceFileDecoded": "C-025_탄소크레딧 발행·소각 실적.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9357335aacb1|건",
+      "dimensionLabels": {
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-05 · CTIS-07 · CTIS-08 · CTIS-14 · CTIS-15 · CTIS-17 · CTIS-19 · CTIS-21 · CTIS-23 · CTIS-34 · CTIS-35"
+      },
+      "dimensions": {
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35"
+      },
+      "displayLabel": "Verra VCS 등록완료(Registered)",
+      "indicatorId": "C-025_verra_vcs_registration_completed",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9357335aacb1",
+        "labelKo": "Verra VCS 등록완료(Registered)",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-9357335aacb1|건|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35|C-025_verra_vcs_registration_completed",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 사용. 지정 URL(Verra Registry)에서 베트남 등재 프로젝트를 추출하여 raw에 보관(Verra_VCS_Vietnam.json). Gold Standard 레지스트리도 병행 수집(GS_projects_Vietnam.json). CDM·JCM 실적은 두 레지스트리 소관이 아니어서 UNFCCC CDM Insights를 별도 확인. ‖ [라이선스 검증 2026-08-15] Verra Registry 이용약관 §17 \"reproduction of part or all of the contents in any form of the Verra Registry is prohibited other than for individual use by the User only\", Gold Standard Impact Registry 이용약관 25.3 \"reproduction of all or part of the contents ... is prohibited and may not be copied and shared with a third party\" 확인. → 레지스트리 콘텐츠 원문 재배포 불가. 본 데이터셋은 공개 검색결과의 프로젝트 식별정보·건수 등 사실 값만 수록 → 재배포 「제한」. ‖",
+      "sourceLabel": "Verra VCS 등록완료(Registered)",
+      "sourceLabelEn": "Verra Vcs Registration Completed",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 사용. 지정 URL(Verra Registry)에서 베트남 등재 프로젝트를 추출하여 raw에 보관(Verra_VCS_Vietnam.json). Gold Standard 레지스트리도 병행 수집(GS_projects_Vietnam.json). CDM·JCM 실적은 두 레지스트리 소관이 아니어서 UNFCCC CDM Insights를 별도 확인. ‖ [라이선스 검증 2026-08-15] Verra Registry 이용약관 §17 \"reproduction of part or all of the contents in any form of the Verra Registry is prohibited other than for individual use by the User only\", Gold Standard Impact Registry 이용약관 25.3 \"reproduction of all or part of the contents ... is prohibited and may not be copied and shared with a third party\" 확인. → 레지스트리 콘텐츠 원문 재배포 불가. 본 데이터셋은 공개 검색결과의 프로젝트 식별정보·건수 등 사실 값만 수록 → 재배포 「제한」. ‖",
+      "sourceProvenance": {
+        "elementId": "C-025",
+        "indicatorId": "C-025_verra_vcs_registration_completed",
+        "sourceFileDecoded": "C-025_탄소크레딧 발행·소각 실적.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-09e20b230faf|건",
+      "dimensionLabels": {
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-05 · CTIS-07 · CTIS-08 · CTIS-14 · CTIS-15 · CTIS-17 · CTIS-19 · CTIS-21 · CTIS-23 · CTIS-34 · CTIS-35"
+      },
+      "dimensions": {
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35"
+      },
+      "displayLabel": "Verra VCS 등록 프로젝트 수",
+      "indicatorId": "C-025_verra_vcs_registration_project",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-09e20b230faf",
+        "labelKo": "Verra VCS 등록 프로젝트 수",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-09e20b230faf|건|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35|C-025_verra_vcs_registration_project",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 사용. 지정 URL(Verra Registry)에서 베트남 등재 프로젝트를 추출하여 raw에 보관(Verra_VCS_Vietnam.json). Gold Standard 레지스트리도 병행 수집(GS_projects_Vietnam.json). CDM·JCM 실적은 두 레지스트리 소관이 아니어서 UNFCCC CDM Insights를 별도 확인. ‖ [라이선스 검증 2026-08-15] Verra Registry 이용약관 §17 \"reproduction of part or all of the contents in any form of the Verra Registry is prohibited other than for individual use by the User only\", Gold Standard Impact Registry 이용약관 25.3 \"reproduction of all or part of the contents ... is prohibited and may not be copied and shared with a third party\" 확인. → 레지스트리 콘텐츠 원문 재배포 불가. 본 데이터셋은 공개 검색결과의 프로젝트 식별정보·건수 등 사실 값만 수록 → 재배포 「제한」. ‖ [정의·범위] raw/Verra_VCS_Vietnam.json 전수. 상태 무관 합계.",
+      "sourceLabel": "Verra VCS 등록 프로젝트 수",
+      "sourceLabelEn": "Verra Vcs Registration Project",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: Verra / Gold Standard / 지정 URL: https://registry.verra.org/ / 지정 수집방법: API → 판정: 사용. 지정 URL(Verra Registry)에서 베트남 등재 프로젝트를 추출하여 raw에 보관(Verra_VCS_Vietnam.json). Gold Standard 레지스트리도 병행 수집(GS_projects_Vietnam.json). CDM·JCM 실적은 두 레지스트리 소관이 아니어서 UNFCCC CDM Insights를 별도 확인. ‖ [라이선스 검증 2026-08-15] Verra Registry 이용약관 §17 \"reproduction of part or all of the contents in any form of the Verra Registry is prohibited other than for individual use by the User only\", Gold Standard Impact Registry 이용약관 25.3 \"reproduction of all or part of the contents ... is prohibited and may not be copied and shared with a third party\" 확인. → 레지스트리 콘텐츠 원문 재배포 불가. 본 데이터셋은 공개 검색결과의 프로젝트 식별정보·건수 등 사실 값만 수록 → 재배포 「제한」. ‖ [정의·범위] raw/Verra_VCS_Vietnam.json 전수. 상태 무관 합계.",
+      "sourceProvenance": {
+        "elementId": "C-025",
+        "indicatorId": "C-025_verra_vcs_registration_project",
+        "sourceFileDecoded": "C-025_탄소크레딧 발행·소각 실적.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-1a91ca84909f",
+      "labelKo": "CDM 크레딧 소각량",
+      "recordCount": 1,
+      "unit": "tCO₂e",
+      "unitFamily": "emissions"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-299c9675e303",
+      "labelKo": "GCC 등록 심사중 프로젝트 수",
+      "recordCount": 1,
+      "unit": "건",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-6725944a1f3c",
+      "labelKo": "GCC 등록 프로젝트 검증 연간 감축량 합계",
+      "recordCount": 1,
+      "unit": "tCO₂e/년",
+      "unitFamily": "emissions"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-5150cc33038a",
+      "labelKo": "GCC 등록 프로젝트 수",
+      "recordCount": 1,
+      "unit": "건",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-76c6c3c0d1f1",
+      "labelKo": "Gold Standard 등록 프로젝트 수",
+      "recordCount": 1,
+      "unit": "건",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-19abac6bdf7b",
+      "labelKo": "Gold Standard 연간 예상 크레딧 합계",
+      "recordCount": 1,
+      "unit": "tCO₂e/yr",
+      "unitFamily": "emissions"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-caab166a6513",
+      "labelKo": "Gold Standard 인증 완료",
+      "recordCount": 1,
+      "unit": "건",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-3293209f94d0",
+      "labelKo": "JCM 등록 프로젝트 수",
+      "recordCount": 1,
+      "unit": "건",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-51dfc6fef535",
+      "labelKo": "JCM 베트남 배분량",
+      "recordCount": 1,
+      "unit": "tCO₂e",
+      "unitFamily": "emissions"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-1f7a1f8b818a",
+      "labelKo": "JCM 크레딧 발행량",
+      "recordCount": 1,
+      "unit": "tCO₂e",
+      "unitFamily": "emissions"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-fedab6cf324f",
+      "labelKo": "JCM 크레딧 소각량",
+      "recordCount": 1,
+      "unit": "tCO₂e",
+      "unitFamily": "emissions"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-a84ace6c3b56",
+      "labelKo": "VCM 프로젝트 총계(Verra+GS)",
+      "recordCount": 1,
+      "unit": "건",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-09e20b230faf",
+      "labelKo": "Verra VCS 등록 프로젝트 수",
+      "recordCount": 1,
+      "unit": "건",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-9357335aacb1",
+      "labelKo": "Verra VCS 등록완료(Registered)",
+      "recordCount": 1,
+      "unit": "건",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-3c703d3fa737",
+      "labelKo": "Verra VCS 연간 예상 감축량 합계",
+      "recordCount": 1,
+      "unit": "tCO₂e/yr",
+      "unitFamily": "emissions"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-fc3208a87cfa",
+      "labelKo": "탄소크레딧 프로젝트 레지스트리 (Verra VCS",
+      "recordCount": 0,
+      "unit": "—",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 15,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

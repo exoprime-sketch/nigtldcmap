@@ -1,0 +1,1102 @@
+{
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 25,
+      "values": [
+        "가경지",
+        "경작지",
+        "관개 정비면적",
+        "관목지",
+        "국토면적",
+        "기타 토지",
+        "나지",
+        "내륙 수역",
+        "내수면",
+        "농지",
+        "맹그로브",
+        "목본 작물",
+        "산림지",
+        "수목 피복지(산림지)",
+        "습지 또는 정기 침수 관목/초본 식생",
+        "시가화지역(인공지표)",
+        "영구 초지·목초지",
+        "영년생 작물",
+        "원시림",
+        "육지면적",
+        "자연 식생 희소 지역",
+        "자연재생림",
+        "조림지",
+        "초본 작물(농경지)",
+        "초지"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 3,
+      "values": [
+        "2020",
+        "2022",
+        "2024"
+      ]
+    }
+  ],
+  "elementId": "B-036",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 34,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-f8b75d5987f8|%/yr",
+      "dimensionLabels": {
+        "detail": "시가화지역(인공지표)"
+      },
+      "dimensions": {
+        "detail": "시가화지역(인공지표)"
+      },
+      "displayLabel": "토지피복 변화율 — 시가화지역(인공지표)",
+      "indicatorId": "B-036_cagr_lc_artificial_surface",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f8b75d5987f8",
+        "labelKo": "토지피복 변화율",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f8b75d5987f8|%/yr|detail=시가화지역(인공지표)|B-036_cagr_lc_artificial_surface",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 변화율 — 시가화지역(인공지표)",
+      "sourceLabelEn": "CAGR (CCI_LC): Artificial surfaces (including urban and associated areas)",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_lc_artificial_surface",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f8b75d5987f8|%/yr",
+      "dimensionLabels": {
+        "detail": "초지"
+      },
+      "dimensions": {
+        "detail": "초지"
+      },
+      "displayLabel": "토지피복 변화율 — 초지",
+      "indicatorId": "B-036_cagr_lc_grassland",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f8b75d5987f8",
+        "labelKo": "토지피복 변화율",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f8b75d5987f8|%/yr|detail=초지|B-036_cagr_lc_grassland",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 변화율 — 초지",
+      "sourceLabelEn": "CAGR (CCI_LC): Grassland",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_lc_grassland",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f8b75d5987f8|%/yr",
+      "dimensionLabels": {
+        "detail": "초본 작물(농경지)"
+      },
+      "dimensions": {
+        "detail": "초본 작물(농경지)"
+      },
+      "displayLabel": "토지피복 변화율 — 초본 작물(농경지)",
+      "indicatorId": "B-036_cagr_lc_herbaceous_crops",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f8b75d5987f8",
+        "labelKo": "토지피복 변화율",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f8b75d5987f8|%/yr|detail=초본 작물(농경지)|B-036_cagr_lc_herbaceous_crops",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 변화율 — 초본 작물(농경지)",
+      "sourceLabelEn": "CAGR (CCI_LC): Herbaceous crops",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_lc_herbaceous_crops",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f8b75d5987f8|%/yr",
+      "dimensionLabels": {
+        "detail": "내륙 수역"
+      },
+      "dimensions": {
+        "detail": "내륙 수역"
+      },
+      "displayLabel": "토지피복 변화율 — 내륙 수역",
+      "indicatorId": "B-036_cagr_lc_inland_water_bodie",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f8b75d5987f8",
+        "labelKo": "토지피복 변화율",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f8b75d5987f8|%/yr|detail=내륙 수역|B-036_cagr_lc_inland_water_bodie",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 변화율 — 내륙 수역",
+      "sourceLabelEn": "CAGR (CCI_LC): Inland water bodies",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_lc_inland_water_bodie",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f8b75d5987f8|%/yr",
+      "dimensionLabels": {
+        "detail": "맹그로브"
+      },
+      "dimensions": {
+        "detail": "맹그로브"
+      },
+      "displayLabel": "토지피복 변화율 — 맹그로브",
+      "indicatorId": "B-036_cagr_lc_mangroves",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f8b75d5987f8",
+        "labelKo": "토지피복 변화율",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f8b75d5987f8|%/yr|detail=맹그로브|B-036_cagr_lc_mangroves",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 변화율 — 맹그로브",
+      "sourceLabelEn": "CAGR (CCI_LC): Mangroves",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_lc_mangroves",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f8b75d5987f8|%/yr",
+      "dimensionLabels": {
+        "detail": "관목지"
+      },
+      "dimensions": {
+        "detail": "관목지"
+      },
+      "displayLabel": "토지피복 변화율 — 관목지",
+      "indicatorId": "B-036_cagr_lc_shrub-covered_area",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f8b75d5987f8",
+        "labelKo": "토지피복 변화율",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f8b75d5987f8|%/yr|detail=관목지|B-036_cagr_lc_shrub-covered_area",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 변화율 — 관목지",
+      "sourceLabelEn": "CAGR (CCI_LC): Shrub-covered areas",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_lc_shrub-covered_area",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f8b75d5987f8|%/yr",
+      "dimensionLabels": {
+        "detail": "습지 또는 정기 침수 관목/초본 식생"
+      },
+      "dimensions": {
+        "detail": "습지 또는 정기 침수 관목/초본 식생"
+      },
+      "displayLabel": "토지피복 변화율 — 습지 또는 정기 침수 관목/초본 식생",
+      "indicatorId": "B-036_cagr_lc_shrubs_and/or_herb",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f8b75d5987f8",
+        "labelKo": "토지피복 변화율",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f8b75d5987f8|%/yr|detail=습지 또는 정기 침수 관목/초본 식생|B-036_cagr_lc_shrubs_and/or_herb",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 변화율 — 습지 또는 정기 침수 관목/초본 식생",
+      "sourceLabelEn": "CAGR (CCI_LC): Shrubs and/or herbaceous vegetation, aquatic or regularly flooded",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_lc_shrubs_and/or_herb",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 24,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f8b75d5987f8|%/yr",
+      "dimensionLabels": {
+        "detail": "자연 식생 희소 지역"
+      },
+      "dimensions": {
+        "detail": "자연 식생 희소 지역"
+      },
+      "displayLabel": "토지피복 변화율 — 자연 식생 희소 지역",
+      "indicatorId": "B-036_cagr_lc_sparsely_natural_v",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f8b75d5987f8",
+        "labelKo": "토지피복 변화율",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f8b75d5987f8|%/yr|detail=자연 식생 희소 지역|B-036_cagr_lc_sparsely_natural_v",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 변화율 — 자연 식생 희소 지역",
+      "sourceLabelEn": "CAGR (CCI_LC): Sparsely natural vegetated areas",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_lc_sparsely_natural_v",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 25,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f8b75d5987f8|%/yr",
+      "dimensionLabels": {
+        "detail": "나지"
+      },
+      "dimensions": {
+        "detail": "나지"
+      },
+      "displayLabel": "토지피복 변화율 — 나지",
+      "indicatorId": "B-036_cagr_lc_terrestrial_barren",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f8b75d5987f8",
+        "labelKo": "토지피복 변화율",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f8b75d5987f8|%/yr|detail=나지|B-036_cagr_lc_terrestrial_barren",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 변화율 — 나지",
+      "sourceLabelEn": "CAGR (CCI_LC): Terrestrial barren land",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_lc_terrestrial_barren",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 26,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f8b75d5987f8|%/yr",
+      "dimensionLabels": {
+        "detail": "수목 피복지(산림지)"
+      },
+      "dimensions": {
+        "detail": "수목 피복지(산림지)"
+      },
+      "displayLabel": "토지피복 변화율 — 수목 피복지(산림지)",
+      "indicatorId": "B-036_cagr_lc_tree-covered_areas",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f8b75d5987f8",
+        "labelKo": "토지피복 변화율",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f8b75d5987f8|%/yr|detail=수목 피복지(산림지)|B-036_cagr_lc_tree-covered_areas",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 변화율 — 수목 피복지(산림지)",
+      "sourceLabelEn": "CAGR (CCI_LC): Tree-covered areas",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_lc_tree-covered_areas",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 27,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f8b75d5987f8|%/yr",
+      "dimensionLabels": {
+        "detail": "목본 작물"
+      },
+      "dimensions": {
+        "detail": "목본 작물"
+      },
+      "displayLabel": "토지피복 변화율 — 목본 작물",
+      "indicatorId": "B-036_cagr_lc_woody_crops",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f8b75d5987f8",
+        "labelKo": "토지피복 변화율",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f8b75d5987f8|%/yr|detail=목본 작물|B-036_cagr_lc_woody_crops",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 변화율 — 목본 작물",
+      "sourceLabelEn": "CAGR (CCI_LC): Woody crops",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_lc_woody_crops",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 28,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9c9a9d42a47b|%/yr",
+      "dimensionLabels": {
+        "detail": "농지"
+      },
+      "dimensions": {
+        "detail": "농지"
+      },
+      "displayLabel": "토지이용 변화율 — 농지",
+      "indicatorId": "B-036_cagr_lu_agricultural_land",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9c9a9d42a47b",
+        "labelKo": "토지이용 변화율",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-9c9a9d42a47b|%/yr|detail=농지|B-036_cagr_lu_agricultural_land",
+      "sourceCaveat": "[기준기간 통일 + 최신 구간 반영] 종전 파일은 분류별로 1961–2024 / 1990–2025 / 1992–2022 세 기간이 혼재해 직접 비교가 불가했음. FAO Land Use 계열은 **1990–2024**(원자료가 공통으로 보유한 최신 종점), Land Cover(CCI_LC) 계열은 1992–2022로 각 원천 내 공통 기준기간을 적용하고, 서로 다른 원천 간에는 접속·비교하지 않음(Q-004). 산림지·조림지·원시림·자연재생림은 원자료에 2025년 값도 있으나 육지면적 등 다른 분류가 2024년까지만 있어 비교 가능성을 위해 종점을 2024년으로 통일함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지이용 변화율 — 농지",
+      "sourceLabelEn": "CAGR: Agricultural land",
+      "sourceNote": "[기준기간 통일 + 최신 구간 반영] 종전 파일은 분류별로 1961–2024 / 1990–2025 / 1992–2022 세 기간이 혼재해 직접 비교가 불가했음. FAO Land Use 계열은 **1990–2024**(원자료가 공통으로 보유한 최신 종점), Land Cover(CCI_LC) 계열은 1992–2022로 각 원천 내 공통 기준기간을 적용하고, 서로 다른 원천 간에는 접속·비교하지 않음(Q-004). 산림지·조림지·원시림·자연재생림은 원자료에 2025년 값도 있으나 육지면적 등 다른 분류가 2024년까지만 있어 비교 가능성을 위해 종점을 2024년으로 통일함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_lu_agricultural_land",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9c9a9d42a47b|%/yr",
+      "dimensionLabels": {
+        "detail": "가경지"
+      },
+      "dimensions": {
+        "detail": "가경지"
+      },
+      "displayLabel": "토지이용 변화율 — 가경지",
+      "indicatorId": "B-036_cagr_lu_arable_land",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9c9a9d42a47b",
+        "labelKo": "토지이용 변화율",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-9c9a9d42a47b|%/yr|detail=가경지|B-036_cagr_lu_arable_land",
+      "sourceCaveat": "[기준기간 통일 + 최신 구간 반영] 종전 파일은 분류별로 1961–2024 / 1990–2025 / 1992–2022 세 기간이 혼재해 직접 비교가 불가했음. FAO Land Use 계열은 **1990–2024**(원자료가 공통으로 보유한 최신 종점), Land Cover(CCI_LC) 계열은 1992–2022로 각 원천 내 공통 기준기간을 적용하고, 서로 다른 원천 간에는 접속·비교하지 않음(Q-004). 산림지·조림지·원시림·자연재생림은 원자료에 2025년 값도 있으나 육지면적 등 다른 분류가 2024년까지만 있어 비교 가능성을 위해 종점을 2024년으로 통일함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지이용 변화율 — 가경지",
+      "sourceLabelEn": "CAGR: Arable land",
+      "sourceNote": "[기준기간 통일 + 최신 구간 반영] 종전 파일은 분류별로 1961–2024 / 1990–2025 / 1992–2022 세 기간이 혼재해 직접 비교가 불가했음. FAO Land Use 계열은 **1990–2024**(원자료가 공통으로 보유한 최신 종점), Land Cover(CCI_LC) 계열은 1992–2022로 각 원천 내 공통 기준기간을 적용하고, 서로 다른 원천 간에는 접속·비교하지 않음(Q-004). 산림지·조림지·원시림·자연재생림은 원자료에 2025년 값도 있으나 육지면적 등 다른 분류가 2024년까지만 있어 비교 가능성을 위해 종점을 2024년으로 통일함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_lu_arable_land",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9c9a9d42a47b|%/yr",
+      "dimensionLabels": {
+        "detail": "국토면적"
+      },
+      "dimensions": {
+        "detail": "국토면적"
+      },
+      "displayLabel": "토지이용 변화율 — 국토면적",
+      "indicatorId": "B-036_cagr_lu_country_area",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9c9a9d42a47b",
+        "labelKo": "토지이용 변화율",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-9c9a9d42a47b|%/yr|detail=국토면적|B-036_cagr_lu_country_area",
+      "sourceCaveat": "[기준기간 통일 + 최신 구간 반영] 종전 파일은 분류별로 1961–2024 / 1990–2025 / 1992–2022 세 기간이 혼재해 직접 비교가 불가했음. FAO Land Use 계열은 **1990–2024**(원자료가 공통으로 보유한 최신 종점), Land Cover(CCI_LC) 계열은 1992–2022로 각 원천 내 공통 기준기간을 적용하고, 서로 다른 원천 간에는 접속·비교하지 않음(Q-004). 산림지·조림지·원시림·자연재생림은 원자료에 2025년 값도 있으나 육지면적 등 다른 분류가 2024년까지만 있어 비교 가능성을 위해 종점을 2024년으로 통일함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지이용 변화율 — 국토면적",
+      "sourceLabelEn": "CAGR: Country area",
+      "sourceNote": "[기준기간 통일 + 최신 구간 반영] 종전 파일은 분류별로 1961–2024 / 1990–2025 / 1992–2022 세 기간이 혼재해 직접 비교가 불가했음. FAO Land Use 계열은 **1990–2024**(원자료가 공통으로 보유한 최신 종점), Land Cover(CCI_LC) 계열은 1992–2022로 각 원천 내 공통 기준기간을 적용하고, 서로 다른 원천 간에는 접속·비교하지 않음(Q-004). 산림지·조림지·원시림·자연재생림은 원자료에 2025년 값도 있으나 육지면적 등 다른 분류가 2024년까지만 있어 비교 가능성을 위해 종점을 2024년으로 통일함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_lu_country_area",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9c9a9d42a47b|%/yr",
+      "dimensionLabels": {
+        "detail": "경작지"
+      },
+      "dimensions": {
+        "detail": "경작지"
+      },
+      "displayLabel": "토지이용 변화율 — 경작지",
+      "indicatorId": "B-036_cagr_lu_cropland",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9c9a9d42a47b",
+        "labelKo": "토지이용 변화율",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-9c9a9d42a47b|%/yr|detail=경작지|B-036_cagr_lu_cropland",
+      "sourceCaveat": "[기준기간 통일 + 최신 구간 반영] 종전 파일은 분류별로 1961–2024 / 1990–2025 / 1992–2022 세 기간이 혼재해 직접 비교가 불가했음. FAO Land Use 계열은 **1990–2024**(원자료가 공통으로 보유한 최신 종점), Land Cover(CCI_LC) 계열은 1992–2022로 각 원천 내 공통 기준기간을 적용하고, 서로 다른 원천 간에는 접속·비교하지 않음(Q-004). 산림지·조림지·원시림·자연재생림은 원자료에 2025년 값도 있으나 육지면적 등 다른 분류가 2024년까지만 있어 비교 가능성을 위해 종점을 2024년으로 통일함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지이용 변화율 — 경작지",
+      "sourceLabelEn": "CAGR: Cropland",
+      "sourceNote": "[기준기간 통일 + 최신 구간 반영] 종전 파일은 분류별로 1961–2024 / 1990–2025 / 1992–2022 세 기간이 혼재해 직접 비교가 불가했음. FAO Land Use 계열은 **1990–2024**(원자료가 공통으로 보유한 최신 종점), Land Cover(CCI_LC) 계열은 1992–2022로 각 원천 내 공통 기준기간을 적용하고, 서로 다른 원천 간에는 접속·비교하지 않음(Q-004). 산림지·조림지·원시림·자연재생림은 원자료에 2025년 값도 있으나 육지면적 등 다른 분류가 2024년까지만 있어 비교 가능성을 위해 종점을 2024년으로 통일함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_lu_cropland",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9c9a9d42a47b|%/yr",
+      "dimensionLabels": {
+        "detail": "산림지"
+      },
+      "dimensions": {
+        "detail": "산림지"
+      },
+      "displayLabel": "토지이용 변화율 — 산림지",
+      "indicatorId": "B-036_cagr_lu_forest_land",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9c9a9d42a47b",
+        "labelKo": "토지이용 변화율",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-9c9a9d42a47b|%/yr|detail=산림지|B-036_cagr_lu_forest_land",
+      "sourceCaveat": "[기준기간 통일 + 최신 구간 반영] 종전 파일은 분류별로 1961–2024 / 1990–2025 / 1992–2022 세 기간이 혼재해 직접 비교가 불가했음. FAO Land Use 계열은 **1990–2024**(원자료가 공통으로 보유한 최신 종점), Land Cover(CCI_LC) 계열은 1992–2022로 각 원천 내 공통 기준기간을 적용하고, 서로 다른 원천 간에는 접속·비교하지 않음(Q-004). 산림지·조림지·원시림·자연재생림은 원자료에 2025년 값도 있으나 육지면적 등 다른 분류가 2024년까지만 있어 비교 가능성을 위해 종점을 2024년으로 통일함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지이용 변화율 — 산림지",
+      "sourceLabelEn": "CAGR: Forest land",
+      "sourceNote": "[기준기간 통일 + 최신 구간 반영] 종전 파일은 분류별로 1961–2024 / 1990–2025 / 1992–2022 세 기간이 혼재해 직접 비교가 불가했음. FAO Land Use 계열은 **1990–2024**(원자료가 공통으로 보유한 최신 종점), Land Cover(CCI_LC) 계열은 1992–2022로 각 원천 내 공통 기준기간을 적용하고, 서로 다른 원천 간에는 접속·비교하지 않음(Q-004). 산림지·조림지·원시림·자연재생림은 원자료에 2025년 값도 있으나 육지면적 등 다른 분류가 2024년까지만 있어 비교 가능성을 위해 종점을 2024년으로 통일함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_lu_forest_land",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 4,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9c9a9d42a47b|%/yr",
+      "dimensionLabels": {
+        "detail": "내수면"
+      },
+      "dimensions": {
+        "detail": "내수면"
+      },
+      "displayLabel": "토지이용 변화율 — 내수면",
+      "indicatorId": "B-036_cagr_lu_inland_waters",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9c9a9d42a47b",
+        "labelKo": "토지이용 변화율",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-9c9a9d42a47b|%/yr|detail=내수면|B-036_cagr_lu_inland_waters",
+      "sourceCaveat": "[기준기간 통일 + 최신 구간 반영] 종전 파일은 분류별로 1961–2024 / 1990–2025 / 1992–2022 세 기간이 혼재해 직접 비교가 불가했음. FAO Land Use 계열은 **1990–2024**(원자료가 공통으로 보유한 최신 종점), Land Cover(CCI_LC) 계열은 1992–2022로 각 원천 내 공통 기준기간을 적용하고, 서로 다른 원천 간에는 접속·비교하지 않음(Q-004). 산림지·조림지·원시림·자연재생림은 원자료에 2025년 값도 있으나 육지면적 등 다른 분류가 2024년까지만 있어 비교 가능성을 위해 종점을 2024년으로 통일함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지이용 변화율 — 내수면",
+      "sourceLabelEn": "CAGR: Inland waters",
+      "sourceNote": "[기준기간 통일 + 최신 구간 반영] 종전 파일은 분류별로 1961–2024 / 1990–2025 / 1992–2022 세 기간이 혼재해 직접 비교가 불가했음. FAO Land Use 계열은 **1990–2024**(원자료가 공통으로 보유한 최신 종점), Land Cover(CCI_LC) 계열은 1992–2022로 각 원천 내 공통 기준기간을 적용하고, 서로 다른 원천 간에는 접속·비교하지 않음(Q-004). 산림지·조림지·원시림·자연재생림은 원자료에 2025년 값도 있으나 육지면적 등 다른 분류가 2024년까지만 있어 비교 가능성을 위해 종점을 2024년으로 통일함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_lu_inland_waters",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9c9a9d42a47b|%/yr",
+      "dimensionLabels": {
+        "detail": "육지면적"
+      },
+      "dimensions": {
+        "detail": "육지면적"
+      },
+      "displayLabel": "토지이용 변화율 — 육지면적",
+      "indicatorId": "B-036_cagr_lu_land_area",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9c9a9d42a47b",
+        "labelKo": "토지이용 변화율",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-9c9a9d42a47b|%/yr|detail=육지면적|B-036_cagr_lu_land_area",
+      "sourceCaveat": "[기준기간 통일 + 최신 구간 반영] 종전 파일은 분류별로 1961–2024 / 1990–2025 / 1992–2022 세 기간이 혼재해 직접 비교가 불가했음. FAO Land Use 계열은 **1990–2024**(원자료가 공통으로 보유한 최신 종점), Land Cover(CCI_LC) 계열은 1992–2022로 각 원천 내 공통 기준기간을 적용하고, 서로 다른 원천 간에는 접속·비교하지 않음(Q-004). 산림지·조림지·원시림·자연재생림은 원자료에 2025년 값도 있으나 육지면적 등 다른 분류가 2024년까지만 있어 비교 가능성을 위해 종점을 2024년으로 통일함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지이용 변화율 — 육지면적",
+      "sourceLabelEn": "CAGR: Land area",
+      "sourceNote": "[기준기간 통일 + 최신 구간 반영] 종전 파일은 분류별로 1961–2024 / 1990–2025 / 1992–2022 세 기간이 혼재해 직접 비교가 불가했음. FAO Land Use 계열은 **1990–2024**(원자료가 공통으로 보유한 최신 종점), Land Cover(CCI_LC) 계열은 1992–2022로 각 원천 내 공통 기준기간을 적용하고, 서로 다른 원천 간에는 접속·비교하지 않음(Q-004). 산림지·조림지·원시림·자연재생림은 원자료에 2025년 값도 있으나 육지면적 등 다른 분류가 2024년까지만 있어 비교 가능성을 위해 종점을 2024년으로 통일함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_lu_land_area",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9c9a9d42a47b|%/yr",
+      "dimensionLabels": {
+        "detail": "관개 정비면적"
+      },
+      "dimensions": {
+        "detail": "관개 정비면적"
+      },
+      "displayLabel": "토지이용 변화율 — 관개 정비면적",
+      "indicatorId": "B-036_cagr_lu_land_area_equipped_for_irrigation",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9c9a9d42a47b",
+        "labelKo": "토지이용 변화율",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-9c9a9d42a47b|%/yr|detail=관개 정비면적|B-036_cagr_lu_land_area_equipped_for_irrigation",
+      "sourceCaveat": "[기준기간 통일 + 최신 구간 반영] 종전 파일은 분류별로 1961–2024 / 1990–2025 / 1992–2022 세 기간이 혼재해 직접 비교가 불가했음. FAO Land Use 계열은 **1990–2024**(원자료가 공통으로 보유한 최신 종점), Land Cover(CCI_LC) 계열은 1992–2022로 각 원천 내 공통 기준기간을 적용하고, 서로 다른 원천 간에는 접속·비교하지 않음(Q-004). 산림지·조림지·원시림·자연재생림은 원자료에 2025년 값도 있으나 육지면적 등 다른 분류가 2024년까지만 있어 비교 가능성을 위해 종점을 2024년으로 통일함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지이용 변화율 — 관개 정비면적",
+      "sourceLabelEn": "CAGR: Land area equipped for irrigation",
+      "sourceNote": "[기준기간 통일 + 최신 구간 반영] 종전 파일은 분류별로 1961–2024 / 1990–2025 / 1992–2022 세 기간이 혼재해 직접 비교가 불가했음. FAO Land Use 계열은 **1990–2024**(원자료가 공통으로 보유한 최신 종점), Land Cover(CCI_LC) 계열은 1992–2022로 각 원천 내 공통 기준기간을 적용하고, 서로 다른 원천 간에는 접속·비교하지 않음(Q-004). 산림지·조림지·원시림·자연재생림은 원자료에 2025년 값도 있으나 육지면적 등 다른 분류가 2024년까지만 있어 비교 가능성을 위해 종점을 2024년으로 통일함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_lu_land_area_equipped_for_irrigation",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9c9a9d42a47b|%/yr",
+      "dimensionLabels": {
+        "detail": "자연재생림"
+      },
+      "dimensions": {
+        "detail": "자연재생림"
+      },
+      "displayLabel": "토지이용 변화율 — 자연재생림",
+      "indicatorId": "B-036_cagr_lu_naturally_regenerating_forest",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9c9a9d42a47b",
+        "labelKo": "토지이용 변화율",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-9c9a9d42a47b|%/yr|detail=자연재생림|B-036_cagr_lu_naturally_regenerating_forest",
+      "sourceCaveat": "[기준기간 통일 + 최신 구간 반영] 종전 파일은 분류별로 1961–2024 / 1990–2025 / 1992–2022 세 기간이 혼재해 직접 비교가 불가했음. FAO Land Use 계열은 **1990–2024**(원자료가 공통으로 보유한 최신 종점), Land Cover(CCI_LC) 계열은 1992–2022로 각 원천 내 공통 기준기간을 적용하고, 서로 다른 원천 간에는 접속·비교하지 않음(Q-004). 산림지·조림지·원시림·자연재생림은 원자료에 2025년 값도 있으나 육지면적 등 다른 분류가 2024년까지만 있어 비교 가능성을 위해 종점을 2024년으로 통일함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지이용 변화율 — 자연재생림",
+      "sourceLabelEn": "CAGR: Naturally regenerating forest",
+      "sourceNote": "[기준기간 통일 + 최신 구간 반영] 종전 파일은 분류별로 1961–2024 / 1990–2025 / 1992–2022 세 기간이 혼재해 직접 비교가 불가했음. FAO Land Use 계열은 **1990–2024**(원자료가 공통으로 보유한 최신 종점), Land Cover(CCI_LC) 계열은 1992–2022로 각 원천 내 공통 기준기간을 적용하고, 서로 다른 원천 간에는 접속·비교하지 않음(Q-004). 산림지·조림지·원시림·자연재생림은 원자료에 2025년 값도 있으나 육지면적 등 다른 분류가 2024년까지만 있어 비교 가능성을 위해 종점을 2024년으로 통일함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_lu_naturally_regenerating_forest",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9c9a9d42a47b|%/yr",
+      "dimensionLabels": {
+        "detail": "기타 토지"
+      },
+      "dimensions": {
+        "detail": "기타 토지"
+      },
+      "displayLabel": "토지이용 변화율 — 기타 토지",
+      "indicatorId": "B-036_cagr_lu_other_land",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9c9a9d42a47b",
+        "labelKo": "토지이용 변화율",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-9c9a9d42a47b|%/yr|detail=기타 토지|B-036_cagr_lu_other_land",
+      "sourceCaveat": "[기준기간 통일 + 최신 구간 반영] 종전 파일은 분류별로 1961–2024 / 1990–2025 / 1992–2022 세 기간이 혼재해 직접 비교가 불가했음. FAO Land Use 계열은 **1990–2024**(원자료가 공통으로 보유한 최신 종점), Land Cover(CCI_LC) 계열은 1992–2022로 각 원천 내 공통 기준기간을 적용하고, 서로 다른 원천 간에는 접속·비교하지 않음(Q-004). 산림지·조림지·원시림·자연재생림은 원자료에 2025년 값도 있으나 육지면적 등 다른 분류가 2024년까지만 있어 비교 가능성을 위해 종점을 2024년으로 통일함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지이용 변화율 — 기타 토지",
+      "sourceLabelEn": "CAGR: Other land",
+      "sourceNote": "[기준기간 통일 + 최신 구간 반영] 종전 파일은 분류별로 1961–2024 / 1990–2025 / 1992–2022 세 기간이 혼재해 직접 비교가 불가했음. FAO Land Use 계열은 **1990–2024**(원자료가 공통으로 보유한 최신 종점), Land Cover(CCI_LC) 계열은 1992–2022로 각 원천 내 공통 기준기간을 적용하고, 서로 다른 원천 간에는 접속·비교하지 않음(Q-004). 산림지·조림지·원시림·자연재생림은 원자료에 2025년 값도 있으나 육지면적 등 다른 분류가 2024년까지만 있어 비교 가능성을 위해 종점을 2024년으로 통일함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_lu_other_land",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9c9a9d42a47b|%/yr",
+      "dimensionLabels": {
+        "detail": "영년생 작물"
+      },
+      "dimensions": {
+        "detail": "영년생 작물"
+      },
+      "displayLabel": "토지이용 변화율 — 영년생 작물",
+      "indicatorId": "B-036_cagr_lu_permanent_crops",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9c9a9d42a47b",
+        "labelKo": "토지이용 변화율",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-9c9a9d42a47b|%/yr|detail=영년생 작물|B-036_cagr_lu_permanent_crops",
+      "sourceCaveat": "[기준기간 통일 + 최신 구간 반영] 종전 파일은 분류별로 1961–2024 / 1990–2025 / 1992–2022 세 기간이 혼재해 직접 비교가 불가했음. FAO Land Use 계열은 **1990–2024**(원자료가 공통으로 보유한 최신 종점), Land Cover(CCI_LC) 계열은 1992–2022로 각 원천 내 공통 기준기간을 적용하고, 서로 다른 원천 간에는 접속·비교하지 않음(Q-004). 산림지·조림지·원시림·자연재생림은 원자료에 2025년 값도 있으나 육지면적 등 다른 분류가 2024년까지만 있어 비교 가능성을 위해 종점을 2024년으로 통일함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지이용 변화율 — 영년생 작물",
+      "sourceLabelEn": "CAGR: Permanent crops",
+      "sourceNote": "[기준기간 통일 + 최신 구간 반영] 종전 파일은 분류별로 1961–2024 / 1990–2025 / 1992–2022 세 기간이 혼재해 직접 비교가 불가했음. FAO Land Use 계열은 **1990–2024**(원자료가 공통으로 보유한 최신 종점), Land Cover(CCI_LC) 계열은 1992–2022로 각 원천 내 공통 기준기간을 적용하고, 서로 다른 원천 간에는 접속·비교하지 않음(Q-004). 산림지·조림지·원시림·자연재생림은 원자료에 2025년 값도 있으나 육지면적 등 다른 분류가 2024년까지만 있어 비교 가능성을 위해 종점을 2024년으로 통일함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_lu_permanent_crops",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9c9a9d42a47b|%/yr",
+      "dimensionLabels": {
+        "detail": "영구 초지·목초지"
+      },
+      "dimensions": {
+        "detail": "영구 초지·목초지"
+      },
+      "displayLabel": "토지이용 변화율 — 영구 초지·목초지",
+      "indicatorId": "B-036_cagr_lu_permanent_meadows_and_pastures",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9c9a9d42a47b",
+        "labelKo": "토지이용 변화율",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-9c9a9d42a47b|%/yr|detail=영구 초지·목초지|B-036_cagr_lu_permanent_meadows_and_pastures",
+      "sourceCaveat": "[기준기간 통일 + 최신 구간 반영] 종전 파일은 분류별로 1961–2024 / 1990–2025 / 1992–2022 세 기간이 혼재해 직접 비교가 불가했음. FAO Land Use 계열은 **1990–2024**(원자료가 공통으로 보유한 최신 종점), Land Cover(CCI_LC) 계열은 1992–2022로 각 원천 내 공통 기준기간을 적용하고, 서로 다른 원천 간에는 접속·비교하지 않음(Q-004). 산림지·조림지·원시림·자연재생림은 원자료에 2025년 값도 있으나 육지면적 등 다른 분류가 2024년까지만 있어 비교 가능성을 위해 종점을 2024년으로 통일함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지이용 변화율 — 영구 초지·목초지",
+      "sourceLabelEn": "CAGR: Permanent meadows and pastures",
+      "sourceNote": "[기준기간 통일 + 최신 구간 반영] 종전 파일은 분류별로 1961–2024 / 1990–2025 / 1992–2022 세 기간이 혼재해 직접 비교가 불가했음. FAO Land Use 계열은 **1990–2024**(원자료가 공통으로 보유한 최신 종점), Land Cover(CCI_LC) 계열은 1992–2022로 각 원천 내 공통 기준기간을 적용하고, 서로 다른 원천 간에는 접속·비교하지 않음(Q-004). 산림지·조림지·원시림·자연재생림은 원자료에 2025년 값도 있으나 육지면적 등 다른 분류가 2024년까지만 있어 비교 가능성을 위해 종점을 2024년으로 통일함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_lu_permanent_meadows_and_pastures",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9c9a9d42a47b|%/yr",
+      "dimensionLabels": {
+        "detail": "조림지"
+      },
+      "dimensions": {
+        "detail": "조림지"
+      },
+      "displayLabel": "토지이용 변화율 — 조림지",
+      "indicatorId": "B-036_cagr_lu_planted_forest",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9c9a9d42a47b",
+        "labelKo": "토지이용 변화율",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-9c9a9d42a47b|%/yr|detail=조림지|B-036_cagr_lu_planted_forest",
+      "sourceCaveat": "[기준기간 통일 + 최신 구간 반영] 종전 파일은 분류별로 1961–2024 / 1990–2025 / 1992–2022 세 기간이 혼재해 직접 비교가 불가했음. FAO Land Use 계열은 **1990–2024**(원자료가 공통으로 보유한 최신 종점), Land Cover(CCI_LC) 계열은 1992–2022로 각 원천 내 공통 기준기간을 적용하고, 서로 다른 원천 간에는 접속·비교하지 않음(Q-004). 산림지·조림지·원시림·자연재생림은 원자료에 2025년 값도 있으나 육지면적 등 다른 분류가 2024년까지만 있어 비교 가능성을 위해 종점을 2024년으로 통일함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지이용 변화율 — 조림지",
+      "sourceLabelEn": "CAGR: Planted Forest",
+      "sourceNote": "[기준기간 통일 + 최신 구간 반영] 종전 파일은 분류별로 1961–2024 / 1990–2025 / 1992–2022 세 기간이 혼재해 직접 비교가 불가했음. FAO Land Use 계열은 **1990–2024**(원자료가 공통으로 보유한 최신 종점), Land Cover(CCI_LC) 계열은 1992–2022로 각 원천 내 공통 기준기간을 적용하고, 서로 다른 원천 간에는 접속·비교하지 않음(Q-004). 산림지·조림지·원시림·자연재생림은 원자료에 2025년 값도 있으나 육지면적 등 다른 분류가 2024년까지만 있어 비교 가능성을 위해 종점을 2024년으로 통일함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_lu_planted_forest",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9c9a9d42a47b|%/yr",
+      "dimensionLabels": {
+        "detail": "원시림"
+      },
+      "dimensions": {
+        "detail": "원시림"
+      },
+      "displayLabel": "토지이용 변화율 — 원시림",
+      "indicatorId": "B-036_cagr_lu_primary_forest",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9c9a9d42a47b",
+        "labelKo": "토지이용 변화율",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-9c9a9d42a47b|%/yr|detail=원시림|B-036_cagr_lu_primary_forest",
+      "sourceCaveat": "[기준기간 통일 + 최신 구간 반영] 종전 파일은 분류별로 1961–2024 / 1990–2025 / 1992–2022 세 기간이 혼재해 직접 비교가 불가했음. FAO Land Use 계열은 **1990–2024**(원자료가 공통으로 보유한 최신 종점), Land Cover(CCI_LC) 계열은 1992–2022로 각 원천 내 공통 기준기간을 적용하고, 서로 다른 원천 간에는 접속·비교하지 않음(Q-004). 산림지·조림지·원시림·자연재생림은 원자료에 2025년 값도 있으나 육지면적 등 다른 분류가 2024년까지만 있어 비교 가능성을 위해 종점을 2024년으로 통일함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지이용 변화율 — 원시림",
+      "sourceLabelEn": "CAGR: Primary Forest",
+      "sourceNote": "[기준기간 통일 + 최신 구간 반영] 종전 파일은 분류별로 1961–2024 / 1990–2025 / 1992–2022 세 기간이 혼재해 직접 비교가 불가했음. FAO Land Use 계열은 **1990–2024**(원자료가 공통으로 보유한 최신 종점), Land Cover(CCI_LC) 계열은 1992–2022로 각 원천 내 공통 기준기간을 적용하고, 서로 다른 원천 간에는 접속·비교하지 않음(Q-004). 산림지·조림지·원시림·자연재생림은 원자료에 2025년 값도 있으나 육지면적 등 다른 분류가 2024년까지만 있어 비교 가능성을 위해 종점을 2024년으로 통일함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_lu_primary_forest",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f127f098da3c|%/yr",
+      "dimensionLabels": {
+        "detail": "시가화지역(인공지표)"
+      },
+      "dimensions": {
+        "detail": "시가화지역(인공지표)"
+      },
+      "displayLabel": "토지피복 변화율(MODIS) — 시가화지역(인공지표)",
+      "indicatorId": "B-036_cagr_modis_artificial_surfa",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f127f098da3c",
+        "labelKo": "토지피복 변화율(MODIS)",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f127f098da3c|%/yr|detail=시가화지역(인공지표)|B-036_cagr_modis_artificial_surfa",
+      "sourceCaveat": "[산출물별 분리] CCI_LC 계열(1992–2022)과 별도 지표. 두 산출물은 위성·알고리즘·분류체계가 달라 같은 계열로 접속하지 않음(Q-004). 2023·2024년을 포함하는 최신 변화율이 필요할 때 사용. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 변화율(MODIS) — 시가화지역(인공지표)",
+      "sourceLabelEn": "CAGR (MODIS): Artificial surfaces (including urban and associated areas)",
+      "sourceNote": "[산출물별 분리] CCI_LC 계열(1992–2022)과 별도 지표. 두 산출물은 위성·알고리즘·분류체계가 달라 같은 계열로 접속하지 않음(Q-004). 2023·2024년을 포함하는 최신 변화율이 필요할 때 사용. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_modis_artificial_surfa",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 29,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f127f098da3c|%/yr",
+      "dimensionLabels": {
+        "detail": "초지"
+      },
+      "dimensions": {
+        "detail": "초지"
+      },
+      "displayLabel": "토지피복 변화율(MODIS) — 초지",
+      "indicatorId": "B-036_cagr_modis_grassland",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f127f098da3c",
+        "labelKo": "토지피복 변화율(MODIS)",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f127f098da3c|%/yr|detail=초지|B-036_cagr_modis_grassland",
+      "sourceCaveat": "[산출물별 분리] CCI_LC 계열(1992–2022)과 별도 지표. 두 산출물은 위성·알고리즘·분류체계가 달라 같은 계열로 접속하지 않음(Q-004). 2023·2024년을 포함하는 최신 변화율이 필요할 때 사용. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 변화율(MODIS) — 초지",
+      "sourceLabelEn": "CAGR (MODIS): Grassland",
+      "sourceNote": "[산출물별 분리] CCI_LC 계열(1992–2022)과 별도 지표. 두 산출물은 위성·알고리즘·분류체계가 달라 같은 계열로 접속하지 않음(Q-004). 2023·2024년을 포함하는 최신 변화율이 필요할 때 사용. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_modis_grassland",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 30,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f127f098da3c|%/yr",
+      "dimensionLabels": {
+        "detail": "초본 작물(농경지)"
+      },
+      "dimensions": {
+        "detail": "초본 작물(농경지)"
+      },
+      "displayLabel": "토지피복 변화율(MODIS) — 초본 작물(농경지)",
+      "indicatorId": "B-036_cagr_modis_herbaceous_crops",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f127f098da3c",
+        "labelKo": "토지피복 변화율(MODIS)",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f127f098da3c|%/yr|detail=초본 작물(농경지)|B-036_cagr_modis_herbaceous_crops",
+      "sourceCaveat": "[산출물별 분리] CCI_LC 계열(1992–2022)과 별도 지표. 두 산출물은 위성·알고리즘·분류체계가 달라 같은 계열로 접속하지 않음(Q-004). 2023·2024년을 포함하는 최신 변화율이 필요할 때 사용. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 변화율(MODIS) — 초본 작물(농경지)",
+      "sourceLabelEn": "CAGR (MODIS): Herbaceous crops",
+      "sourceNote": "[산출물별 분리] CCI_LC 계열(1992–2022)과 별도 지표. 두 산출물은 위성·알고리즘·분류체계가 달라 같은 계열로 접속하지 않음(Q-004). 2023·2024년을 포함하는 최신 변화율이 필요할 때 사용. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_modis_herbaceous_crops",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 31,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f127f098da3c|%/yr",
+      "dimensionLabels": {
+        "detail": "내륙 수역"
+      },
+      "dimensions": {
+        "detail": "내륙 수역"
+      },
+      "displayLabel": "토지피복 변화율(MODIS) — 내륙 수역",
+      "indicatorId": "B-036_cagr_modis_inland_water_bod",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f127f098da3c",
+        "labelKo": "토지피복 변화율(MODIS)",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f127f098da3c|%/yr|detail=내륙 수역|B-036_cagr_modis_inland_water_bod",
+      "sourceCaveat": "[산출물별 분리] CCI_LC 계열(1992–2022)과 별도 지표. 두 산출물은 위성·알고리즘·분류체계가 달라 같은 계열로 접속하지 않음(Q-004). 2023·2024년을 포함하는 최신 변화율이 필요할 때 사용. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 변화율(MODIS) — 내륙 수역",
+      "sourceLabelEn": "CAGR (MODIS): Inland water bodies",
+      "sourceNote": "[산출물별 분리] CCI_LC 계열(1992–2022)과 별도 지표. 두 산출물은 위성·알고리즘·분류체계가 달라 같은 계열로 접속하지 않음(Q-004). 2023·2024년을 포함하는 최신 변화율이 필요할 때 사용. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_modis_inland_water_bod",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 32,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f127f098da3c|%/yr",
+      "dimensionLabels": {
+        "detail": "맹그로브"
+      },
+      "dimensions": {
+        "detail": "맹그로브"
+      },
+      "displayLabel": "토지피복 변화율(MODIS) — 맹그로브",
+      "indicatorId": "B-036_cagr_modis_mangroves",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f127f098da3c",
+        "labelKo": "토지피복 변화율(MODIS)",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f127f098da3c|%/yr|detail=맹그로브|B-036_cagr_modis_mangroves",
+      "sourceCaveat": "[산출물별 분리] CCI_LC 계열(1992–2022)과 별도 지표. 두 산출물은 위성·알고리즘·분류체계가 달라 같은 계열로 접속하지 않음(Q-004). 2023·2024년을 포함하는 최신 변화율이 필요할 때 사용. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 변화율(MODIS) — 맹그로브",
+      "sourceLabelEn": "CAGR (MODIS): Mangroves",
+      "sourceNote": "[산출물별 분리] CCI_LC 계열(1992–2022)과 별도 지표. 두 산출물은 위성·알고리즘·분류체계가 달라 같은 계열로 접속하지 않음(Q-004). 2023·2024년을 포함하는 최신 변화율이 필요할 때 사용. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_modis_mangroves",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 33,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f127f098da3c|%/yr",
+      "dimensionLabels": {
+        "detail": "관목지"
+      },
+      "dimensions": {
+        "detail": "관목지"
+      },
+      "displayLabel": "토지피복 변화율(MODIS) — 관목지",
+      "indicatorId": "B-036_cagr_modis_shrub-covered_ar",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f127f098da3c",
+        "labelKo": "토지피복 변화율(MODIS)",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f127f098da3c|%/yr|detail=관목지|B-036_cagr_modis_shrub-covered_ar",
+      "sourceCaveat": "[산출물별 분리] CCI_LC 계열(1992–2022)과 별도 지표. 두 산출물은 위성·알고리즘·분류체계가 달라 같은 계열로 접속하지 않음(Q-004). 2023·2024년을 포함하는 최신 변화율이 필요할 때 사용. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 변화율(MODIS) — 관목지",
+      "sourceLabelEn": "CAGR (MODIS): Shrub-covered areas",
+      "sourceNote": "[산출물별 분리] CCI_LC 계열(1992–2022)과 별도 지표. 두 산출물은 위성·알고리즘·분류체계가 달라 같은 계열로 접속하지 않음(Q-004). 2023·2024년을 포함하는 최신 변화율이 필요할 때 사용. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_modis_shrub-covered_ar",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 34,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f127f098da3c|%/yr",
+      "dimensionLabels": {
+        "detail": "습지 또는 정기 침수 관목/초본 식생"
+      },
+      "dimensions": {
+        "detail": "습지 또는 정기 침수 관목/초본 식생"
+      },
+      "displayLabel": "토지피복 변화율(MODIS) — 습지 또는 정기 침수 관목/초본 식생",
+      "indicatorId": "B-036_cagr_modis_shrubs_and/or_he",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f127f098da3c",
+        "labelKo": "토지피복 변화율(MODIS)",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f127f098da3c|%/yr|detail=습지 또는 정기 침수 관목/초본 식생|B-036_cagr_modis_shrubs_and/or_he",
+      "sourceCaveat": "[산출물별 분리] CCI_LC 계열(1992–2022)과 별도 지표. 두 산출물은 위성·알고리즘·분류체계가 달라 같은 계열로 접속하지 않음(Q-004). 2023·2024년을 포함하는 최신 변화율이 필요할 때 사용. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 변화율(MODIS) — 습지 또는 정기 침수 관목/초본 식생",
+      "sourceLabelEn": "CAGR (MODIS): Shrubs and/or herbaceous vegetation, aquatic or regularly flooded",
+      "sourceNote": "[산출물별 분리] CCI_LC 계열(1992–2022)과 별도 지표. 두 산출물은 위성·알고리즘·분류체계가 달라 같은 계열로 접속하지 않음(Q-004). 2023·2024년을 포함하는 최신 변화율이 필요할 때 사용. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_modis_shrubs_and/or_he",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 35,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f127f098da3c|%/yr",
+      "dimensionLabels": {
+        "detail": "나지"
+      },
+      "dimensions": {
+        "detail": "나지"
+      },
+      "displayLabel": "토지피복 변화율(MODIS) — 나지",
+      "indicatorId": "B-036_cagr_modis_terrestrial_barr",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f127f098da3c",
+        "labelKo": "토지피복 변화율(MODIS)",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f127f098da3c|%/yr|detail=나지|B-036_cagr_modis_terrestrial_barr",
+      "sourceCaveat": "[산출물별 분리] CCI_LC 계열(1992–2022)과 별도 지표. 두 산출물은 위성·알고리즘·분류체계가 달라 같은 계열로 접속하지 않음(Q-004). 2023·2024년을 포함하는 최신 변화율이 필요할 때 사용. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 변화율(MODIS) — 나지",
+      "sourceLabelEn": "CAGR (MODIS): Terrestrial barren land",
+      "sourceNote": "[산출물별 분리] CCI_LC 계열(1992–2022)과 별도 지표. 두 산출물은 위성·알고리즘·분류체계가 달라 같은 계열로 접속하지 않음(Q-004). 2023·2024년을 포함하는 최신 변화율이 필요할 때 사용. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_modis_terrestrial_barr",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 36,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f127f098da3c|%/yr",
+      "dimensionLabels": {
+        "detail": "수목 피복지(산림지)"
+      },
+      "dimensions": {
+        "detail": "수목 피복지(산림지)"
+      },
+      "displayLabel": "토지피복 변화율(MODIS) — 수목 피복지(산림지)",
+      "indicatorId": "B-036_cagr_modis_tree-covered_are",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f127f098da3c",
+        "labelKo": "토지피복 변화율(MODIS)",
+        "unit": "%/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f127f098da3c|%/yr|detail=수목 피복지(산림지)|B-036_cagr_modis_tree-covered_are",
+      "sourceCaveat": "[산출물별 분리] CCI_LC 계열(1992–2022)과 별도 지표. 두 산출물은 위성·알고리즘·분류체계가 달라 같은 계열로 접속하지 않음(Q-004). 2023·2024년을 포함하는 최신 변화율이 필요할 때 사용. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "토지피복 변화율(MODIS) — 수목 피복지(산림지)",
+      "sourceLabelEn": "CAGR (MODIS): Tree-covered areas",
+      "sourceNote": "[산출물별 분리] CCI_LC 계열(1992–2022)과 별도 지표. 두 산출물은 위성·알고리즘·분류체계가 달라 같은 계열로 접속하지 않음(Q-004). 2023·2024년을 포함하는 최신 변화율이 필요할 때 사용. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-036",
+        "indicatorId": "B-036_cagr_modis_tree-covered_are",
+        "sourceFileDecoded": "B-036_토지이용 변화율(%／yr).xlsx",
+        "sourceRow": 37,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 14,
+      "key": "measure-9c9a9d42a47b",
+      "labelKo": "토지이용 변화율",
+      "recordCount": 28,
+      "unit": "%/yr",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 11,
+      "key": "measure-f8b75d5987f8",
+      "labelKo": "토지피복 변화율",
+      "recordCount": 11,
+      "unit": "%/yr",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 9,
+      "key": "measure-f127f098da3c",
+      "labelKo": "토지피복 변화율(MODIS)",
+      "recordCount": 9,
+      "unit": "%/yr",
+      "unitFamily": "percent"
+    }
+  ],
+  "observationCount": 48,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

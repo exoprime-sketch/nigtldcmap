@@ -1,0 +1,405 @@
+{
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 6,
+      "values": [
+        "공공",
+        "민간",
+        "사회 지원 프로그램",
+        "산업·수송·농업",
+        "에너지 전환",
+        "외부(대외) 지원"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 3,
+      "values": [
+        "2030",
+        "2040",
+        "2050"
+      ]
+    }
+  ],
+  "elementId": "B-022",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 11,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-82708b28b15c|십억 USD",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "적응 투자 필요액",
+      "indicatorId": "B-022_adaptation_investment",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-82708b28b15c",
+        "labelKo": "적응 투자 필요액",
+        "unit": "십억 USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-82708b28b15c|십억 USD||B-022_adaptation_investment",
+      "sourceCaveat": "[정의] \"적응 투자 필요\"는 기후 영향에 대한 **회복력 확보(Resilient pathway)에 필요한 투자**로, 해안·삼각주 방재, 농업 전환, 인프라 보강 등 적응 조치에 한정된 금액. \"총 투자 필요\"는 여기에 탈탄소(Decarbonizing pathway) 투자를 더한 개념으로 정의가 상이함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceLabel": "적응 투자 필요액",
+      "sourceLabelEn": "Adaptation investment need",
+      "sourceNote": "[정의] \"적응 투자 필요\"는 기후 영향에 대한 **회복력 확보(Resilient pathway)에 필요한 투자**로, 해안·삼각주 방재, 농업 전환, 인프라 보강 등 적응 조치에 한정된 금액. \"총 투자 필요\"는 여기에 탈탄소(Decarbonizing pathway) 투자를 더한 개념으로 정의가 상이함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceProvenance": {
+        "elementId": "B-022",
+        "indicatorId": "B-022_adaptation_investment",
+        "sourceFileDecoded": "B-022_World Bank CCDR(Country Climate and Development)의 기후 피해 경제적 비용 (GDP 대비 %).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-ec462d18fe1e|십억 US$",
+      "dimensionLabels": {
+        "detail": "사회 지원 프로그램"
+      },
+      "dimensions": {
+        "detail": "사회 지원 프로그램"
+      },
+      "displayLabel": "탈탄소 경로 투자 구성 — 사회 지원 프로그램",
+      "indicatorId": "B-022_decarb_investment_breakdown_g01",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ec462d18fe1e",
+        "labelKo": "탈탄소 경로 투자 구성",
+        "unit": "십억 US$",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-ec462d18fe1e|십억 US$|detail=사회 지원 프로그램|B-022_decarb_investment_breakdown_g01",
+      "sourceCaveat": "[신규 수록] CCDR 원문에 있으나 미수록이던 정량치. 탈탄소 투자의 56%가 에너지 전환에 집중되며, 사회 지원 프로그램이 29%로 두 번째로 큼 — 기술 중심 투자만으로 경로가 성립하지 않음을 보여주는 값. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceLabel": "탈탄소 경로 투자 구성 — 사회 지원 프로그램",
+      "sourceLabelEn": "Decarbonizing pathway investment breakdown",
+      "sourceNote": "[신규 수록] CCDR 원문에 있으나 미수록이던 정량치. 탈탄소 투자의 56%가 에너지 전환에 집중되며, 사회 지원 프로그램이 29%로 두 번째로 큼 — 기술 중심 투자만으로 경로가 성립하지 않음을 보여주는 값. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceProvenance": {
+        "elementId": "B-022",
+        "indicatorId": "B-022_decarb_investment_breakdown_g01",
+        "sourceFileDecoded": "B-022_World Bank CCDR(Country Climate and Development)의 기후 피해 경제적 비용 (GDP 대비 %).xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-ec462d18fe1e|십억 US$",
+      "dimensionLabels": {
+        "detail": "산업·수송·농업"
+      },
+      "dimensions": {
+        "detail": "산업·수송·농업"
+      },
+      "displayLabel": "탈탄소 경로 투자 구성 — 산업·수송·농업",
+      "indicatorId": "B-022_decarb_investment_breakdown_g02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ec462d18fe1e",
+        "labelKo": "탈탄소 경로 투자 구성",
+        "unit": "십억 US$",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-ec462d18fe1e|십억 US$|detail=산업·수송·농업|B-022_decarb_investment_breakdown_g02",
+      "sourceCaveat": "[신규 수록] CCDR 원문에 있으나 미수록이던 정량치. 탈탄소 투자의 56%가 에너지 전환에 집중되며, 사회 지원 프로그램이 29%로 두 번째로 큼 — 기술 중심 투자만으로 경로가 성립하지 않음을 보여주는 값. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceLabel": "탈탄소 경로 투자 구성 — 산업·수송·농업",
+      "sourceLabelEn": "Decarbonizing pathway investment breakdown",
+      "sourceNote": "[신규 수록] CCDR 원문에 있으나 미수록이던 정량치. 탈탄소 투자의 56%가 에너지 전환에 집중되며, 사회 지원 프로그램이 29%로 두 번째로 큼 — 기술 중심 투자만으로 경로가 성립하지 않음을 보여주는 값. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceProvenance": {
+        "elementId": "B-022",
+        "indicatorId": "B-022_decarb_investment_breakdown_g02",
+        "sourceFileDecoded": "B-022_World Bank CCDR(Country Climate and Development)의 기후 피해 경제적 비용 (GDP 대비 %).xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-ec462d18fe1e|십억 US$",
+      "dimensionLabels": {
+        "detail": "에너지 전환"
+      },
+      "dimensions": {
+        "detail": "에너지 전환"
+      },
+      "displayLabel": "탈탄소 경로 투자 구성 — 에너지 전환",
+      "indicatorId": "B-022_decarb_investment_breakdown_g03",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ec462d18fe1e",
+        "labelKo": "탈탄소 경로 투자 구성",
+        "unit": "십억 US$",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-ec462d18fe1e|십억 US$|detail=에너지 전환|B-022_decarb_investment_breakdown_g03",
+      "sourceCaveat": "[신규 수록] CCDR 원문에 있으나 미수록이던 정량치. 탈탄소 투자의 56%가 에너지 전환에 집중되며, 사회 지원 프로그램이 29%로 두 번째로 큼 — 기술 중심 투자만으로 경로가 성립하지 않음을 보여주는 값. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceLabel": "탈탄소 경로 투자 구성 — 에너지 전환",
+      "sourceLabelEn": "Decarbonizing pathway investment breakdown",
+      "sourceNote": "[신규 수록] CCDR 원문에 있으나 미수록이던 정량치. 탈탄소 투자의 56%가 에너지 전환에 집중되며, 사회 지원 프로그램이 29%로 두 번째로 큼 — 기술 중심 투자만으로 경로가 성립하지 않음을 보여주는 값. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceProvenance": {
+        "elementId": "B-022",
+        "indicatorId": "B-022_decarb_investment_breakdown_g03",
+        "sourceFileDecoded": "B-022_World Bank CCDR(Country Climate and Development)의 기후 피해 경제적 비용 (GDP 대비 %).xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5a69d68b924a|명",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "추가 극빈곤 인구",
+      "indicatorId": "B-022_extreme_poor",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5a69d68b924a",
+        "labelKo": "추가 극빈곤 인구",
+        "unit": "명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-5a69d68b924a|명||B-022_extreme_poor",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceLabel": "추가 극빈곤 인구",
+      "sourceLabelEn": "Additional people in extreme poverty",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceProvenance": {
+        "elementId": "B-022",
+        "indicatorId": "B-022_extreme_poor",
+        "sourceFileDecoded": "B-022_World Bank CCDR(Country Climate and Development)의 기후 피해 경제적 비용 (GDP 대비 %).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-165518c98ba5|십억 US$",
+      "dimensionLabels": {
+        "detail": "공공"
+      },
+      "dimensions": {
+        "detail": "공공"
+      },
+      "displayLabel": "기후 투자 재원 구성 — 공공",
+      "indicatorId": "B-022_financing_source_g01",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-165518c98ba5",
+        "labelKo": "기후 투자 재원 구성",
+        "unit": "십억 US$",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-165518c98ba5|십억 US$|detail=공공|B-022_financing_source_g01",
+      "sourceCaveat": "[신규 수록 — 발주처 지적 대응] 검토의견의 「적응 투자 필요와 총 투자 필요에 대한 설명」에 대한 조치. CCDR 원문 Figure 6이 총 368십억 US$를 민간·공공·외부 재원으로 분해해 제시하고 있어 수록함. 총액만으로는 \"누가 부담하는가\"가 드러나지 않으나, 절반(184십억)이 민간 재원 전제라는 점이 정책·기술협력 설계에 직접 영향을 줌. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "기후 투자 재원 구성 — 공공",
+      "sourceLabelEn": "Climate financing needs by source",
+      "sourceNote": "[신규 수록 — 발주처 지적 대응] 검토의견의 「적응 투자 필요와 총 투자 필요에 대한 설명」에 대한 조치. CCDR 원문 Figure 6이 총 368십억 US$를 민간·공공·외부 재원으로 분해해 제시하고 있어 수록함. 총액만으로는 \"누가 부담하는가\"가 드러나지 않으나, 절반(184십억)이 민간 재원 전제라는 점이 정책·기술협력 설계에 직접 영향을 줌. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-022",
+        "indicatorId": "B-022_financing_source_g01",
+        "sourceFileDecoded": "B-022_World Bank CCDR(Country Climate and Development)의 기후 피해 경제적 비용 (GDP 대비 %).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-165518c98ba5|십억 US$",
+      "dimensionLabels": {
+        "detail": "민간"
+      },
+      "dimensions": {
+        "detail": "민간"
+      },
+      "displayLabel": "기후 투자 재원 구성 — 민간",
+      "indicatorId": "B-022_financing_source_g02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-165518c98ba5",
+        "labelKo": "기후 투자 재원 구성",
+        "unit": "십억 US$",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-165518c98ba5|십억 US$|detail=민간|B-022_financing_source_g02",
+      "sourceCaveat": "[신규 수록 — 발주처 지적 대응] 검토의견의 「적응 투자 필요와 총 투자 필요에 대한 설명」에 대한 조치. CCDR 원문 Figure 6이 총 368십억 US$를 민간·공공·외부 재원으로 분해해 제시하고 있어 수록함. 총액만으로는 \"누가 부담하는가\"가 드러나지 않으나, 절반(184십억)이 민간 재원 전제라는 점이 정책·기술협력 설계에 직접 영향을 줌. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "기후 투자 재원 구성 — 민간",
+      "sourceLabelEn": "Climate financing needs by source",
+      "sourceNote": "[신규 수록 — 발주처 지적 대응] 검토의견의 「적응 투자 필요와 총 투자 필요에 대한 설명」에 대한 조치. CCDR 원문 Figure 6이 총 368십억 US$를 민간·공공·외부 재원으로 분해해 제시하고 있어 수록함. 총액만으로는 \"누가 부담하는가\"가 드러나지 않으나, 절반(184십억)이 민간 재원 전제라는 점이 정책·기술협력 설계에 직접 영향을 줌. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-022",
+        "indicatorId": "B-022_financing_source_g02",
+        "sourceFileDecoded": "B-022_World Bank CCDR(Country Climate and Development)의 기후 피해 경제적 비용 (GDP 대비 %).xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-165518c98ba5|십억 US$",
+      "dimensionLabels": {
+        "detail": "외부(대외) 지원"
+      },
+      "dimensions": {
+        "detail": "외부(대외) 지원"
+      },
+      "displayLabel": "기후 투자 재원 구성 — 외부(대외) 지원",
+      "indicatorId": "B-022_financing_source_g03",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-165518c98ba5",
+        "labelKo": "기후 투자 재원 구성",
+        "unit": "십억 US$",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-165518c98ba5|십억 US$|detail=외부(대외) 지원|B-022_financing_source_g03",
+      "sourceCaveat": "[신규 수록 — 발주처 지적 대응] 검토의견의 「적응 투자 필요와 총 투자 필요에 대한 설명」에 대한 조치. CCDR 원문 Figure 6이 총 368십억 US$를 민간·공공·외부 재원으로 분해해 제시하고 있어 수록함. 총액만으로는 \"누가 부담하는가\"가 드러나지 않으나, 절반(184십억)이 민간 재원 전제라는 점이 정책·기술협력 설계에 직접 영향을 줌. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "기후 투자 재원 구성 — 외부(대외) 지원",
+      "sourceLabelEn": "Climate financing needs by source",
+      "sourceNote": "[신규 수록 — 발주처 지적 대응] 검토의견의 「적응 투자 필요와 총 투자 필요에 대한 설명」에 대한 조치. CCDR 원문 Figure 6이 총 368십억 US$를 민간·공공·외부 재원으로 분해해 제시하고 있어 수록함. 총액만으로는 \"누가 부담하는가\"가 드러나지 않으나, 절반(184십억)이 민간 재원 전제라는 점이 정책·기술협력 설계에 직접 영향을 줌. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-022",
+        "indicatorId": "B-022_financing_source_g03",
+        "sourceFileDecoded": "B-022_World Bank CCDR(Country Climate and Development)의 기후 피해 경제적 비용 (GDP 대비 %).xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d3df35520c94|% of GDP/yr",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "기후 피해 경제손실(적응 부재 시) (범위 상한)",
+      "indicatorId": "B-022_gdp_loss_max",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d3df35520c94",
+        "labelKo": "기후 피해 경제손실(적응 부재 시) (범위 상한)",
+        "unit": "% of GDP/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-d3df35520c94|% of GDP/yr||B-022_gdp_loss_max",
+      "sourceCaveat": "[정의 명확화] 종전 파일의 \"총 경제손실 12–14.5\"와 \"최대손실 14.5\"는 별개 지표가 아니라 **동일 추정치의 범위와 그 상한**이었음. 중복을 해소하고 하한(value_min)·상한(value_max) 2개 열로 분리 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceLabel": "기후 피해 경제손실(적응 부재 시) (범위 상한)",
+      "sourceLabelEn": "Economic loss from climate impacts (no adaptation)",
+      "sourceNote": "[정의 명확화] 종전 파일의 \"총 경제손실 12–14.5\"와 \"최대손실 14.5\"는 별개 지표가 아니라 **동일 추정치의 범위와 그 상한**이었음. 중복을 해소하고 하한(value_min)·상한(value_max) 2개 열로 분리 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceProvenance": {
+        "elementId": "B-022",
+        "indicatorId": "B-022_gdp_loss_max",
+        "sourceFileDecoded": "B-022_World Bank CCDR(Country Climate and Development)의 기후 피해 경제적 비용 (GDP 대비 %).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bb28582e989e|% of GDP/yr",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "기후 피해 경제손실(적응 부재 시) (범위 하한)",
+      "indicatorId": "B-022_gdp_loss_min",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bb28582e989e",
+        "labelKo": "기후 피해 경제손실(적응 부재 시) (범위 하한)",
+        "unit": "% of GDP/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-bb28582e989e|% of GDP/yr||B-022_gdp_loss_min",
+      "sourceCaveat": "[정의 명확화] 종전 파일의 \"총 경제손실 12–14.5\"와 \"최대손실 14.5\"는 별개 지표가 아니라 **동일 추정치의 범위와 그 상한**이었음. 중복을 해소하고 하한(value_min)·상한(value_max) 2개 열로 분리 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceLabel": "기후 피해 경제손실(적응 부재 시) (범위 하한)",
+      "sourceLabelEn": "Economic loss from climate impacts (no adaptation)",
+      "sourceNote": "[정의 명확화] 종전 파일의 \"총 경제손실 12–14.5\"와 \"최대손실 14.5\"는 별개 지표가 아니라 **동일 추정치의 범위와 그 상한**이었음. 중복을 해소하고 하한(value_min)·상한(value_max) 2개 열로 분리 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceProvenance": {
+        "elementId": "B-022",
+        "indicatorId": "B-022_gdp_loss_min",
+        "sourceFileDecoded": "B-022_World Bank CCDR(Country Climate and Development)의 기후 피해 경제적 비용 (GDP 대비 %).xlsx",
+        "sourceRow": 4,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-23352841c3ec|십억 USD",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "총 투자 필요액(적응+탈탄소)",
+      "indicatorId": "B-022_total_investment",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-23352841c3ec",
+        "labelKo": "총 투자 필요액(적응+탈탄소)",
+        "unit": "십억 USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-23352841c3ec|십억 USD||B-022_total_investment",
+      "sourceCaveat": "[정의·추출 완료] 적응(Resilient) + 탈탄소(Decarbonizing) 두 경로의 투자 소요 합계. CCDR 본문에 \"Investments to the tune of $368 billion (in net present value terms) between 2022 and 2040\"으로 명시되어 있으며, 구성은 Resilient pathway 254십억 USD(≈4.7%GDP/yr) + Decarbonizing pathway 114십억 USD(≈2.1%GDP/yr). 할인율 6%(World Bank 경제성 분석 지침) 기준 현재가치이므로 명목 총액과 다름 — 10개국 비교 시 이 점을 반드시 맞춰야 함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceLabel": "총 투자 필요액(적응+탈탄소)",
+      "sourceLabelEn": "Total investment need",
+      "sourceNote": "[정의·추출 완료] 적응(Resilient) + 탈탄소(Decarbonizing) 두 경로의 투자 소요 합계. CCDR 본문에 \"Investments to the tune of $368 billion (in net present value terms) between 2022 and 2040\"으로 명시되어 있으며, 구성은 Resilient pathway 254십억 USD(≈4.7%GDP/yr) + Decarbonizing pathway 114십억 USD(≈2.1%GDP/yr). 할인율 6%(World Bank 경제성 분석 지침) 기준 현재가치이므로 명목 총액과 다름 — 10개국 비교 시 이 점을 반드시 맞춰야 함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceProvenance": {
+        "elementId": "B-022",
+        "indicatorId": "B-022_total_investment",
+        "sourceFileDecoded": "B-022_World Bank CCDR(Country Climate and Development)의 기후 피해 경제적 비용 (GDP 대비 %).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 3,
+      "key": "measure-165518c98ba5",
+      "labelKo": "기후 투자 재원 구성",
+      "recordCount": 3,
+      "unit": "십억 US$",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-d3df35520c94",
+      "labelKo": "기후 피해 경제손실(적응 부재 시) (범위 상한)",
+      "recordCount": 1,
+      "unit": "% of GDP/yr",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-bb28582e989e",
+      "labelKo": "기후 피해 경제손실(적응 부재 시) (범위 하한)",
+      "recordCount": 1,
+      "unit": "% of GDP/yr",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-82708b28b15c",
+      "labelKo": "적응 투자 필요액",
+      "recordCount": 1,
+      "unit": "십억 USD",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-23352841c3ec",
+      "labelKo": "총 투자 필요액(적응+탈탄소)",
+      "recordCount": 1,
+      "unit": "십억 USD",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-5a69d68b924a",
+      "labelKo": "추가 극빈곤 인구",
+      "recordCount": 1,
+      "unit": "명",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 3,
+      "key": "measure-ec462d18fe1e",
+      "labelKo": "탈탄소 경로 투자 구성",
+      "recordCount": 3,
+      "unit": "십억 US$",
+      "unitFamily": "currency"
+    }
+  ],
+  "observationCount": 11,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

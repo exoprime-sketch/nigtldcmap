@@ -1,0 +1,92 @@
+{
+  "dimensions": [
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2020"
+      ]
+    }
+  ],
+  "elementId": "E-017",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 2,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-61b55f54f87c|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "기후기술 수준(최고국 대비)",
+      "indicatorId": "E-017_tech_level",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-61b55f54f87c",
+        "labelKo": "기후기술 수준(최고국 대비)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-61b55f54f87c|%||E-017_tech_level",
+      "sourceCaveat": null,
+      "sourceLabel": "기후기술 수준(최고국 대비)",
+      "sourceLabelEn": "Climate technology level (vs. frontier)",
+      "sourceNote": "메타 결측: 라이선스·라이선스 URL·최종갱신일·수집일·담당자·검증자 미확인(M06). value 결측 없음.",
+      "sourceProvenance": {
+        "elementId": "E-017",
+        "indicatorId": "E-017_tech_level",
+        "sourceFileDecoded": "E-017_한국-경쟁국 기후기술 비교우위.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-21b0eed49d22|위",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "기후기술 수준 순위",
+      "indicatorId": "E-017_tech_rank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-21b0eed49d22",
+        "labelKo": "기후기술 수준 순위",
+        "unit": "위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-21b0eed49d22|위||E-017_tech_rank",
+      "sourceCaveat": null,
+      "sourceLabel": "기후기술 수준 순위",
+      "sourceLabelEn": "Climate technology level ranking",
+      "sourceNote": "메타 결측: 라이선스·라이선스 URL·최종갱신일·수집일·담당자·검증자 미확인(M06). value 결측 없음.",
+      "sourceProvenance": {
+        "elementId": "E-017",
+        "indicatorId": "E-017_tech_rank",
+        "sourceFileDecoded": "E-017_한국-경쟁국 기후기술 비교우위.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-21b0eed49d22",
+      "labelKo": "기후기술 수준 순위",
+      "recordCount": 5,
+      "unit": "위",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-61b55f54f87c",
+      "labelKo": "기후기술 수준(최고국 대비)",
+      "recordCount": 5,
+      "unit": "%",
+      "unitFamily": "percent"
+    }
+  ],
+  "observationCount": 10,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

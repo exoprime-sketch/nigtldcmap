@@ -1,0 +1,208 @@
+{
+  "dimensions": [
+    {
+      "key": "amountStatus",
+      "labelKo": "amountStatus",
+      "valueCount": 5,
+      "values": [
+        "목표",
+        "미공개",
+        "미확보",
+        "비해당",
+        "확정"
+      ]
+    },
+    {
+      "key": "amountType",
+      "labelKo": "amountType",
+      "valueCount": 12,
+      "values": [
+        "AUM",
+        "개별 커밋액",
+        "개별 투자액",
+        "비해당(DFI)",
+        "비해당(IFI)",
+        "비해당(액셀러레이터·인큐베이터)",
+        "외부 커밋액",
+        "펀드 목표규모",
+        "펀드 커밋규모",
+        "펀드규모(1차 클로징)",
+        "펀드규모(최종 클로징)",
+        "펀드규모(하한)"
+      ]
+    },
+    {
+      "key": "city",
+      "labelKo": "city",
+      "valueCount": 8,
+      "values": [
+        "Ho Chi Minh City",
+        "Ho Chi Minh City; Hanoi",
+        "London",
+        "Manila",
+        "Paris",
+        "Singapore",
+        "Washington, D.C.",
+        "Zurich"
+      ]
+    },
+    {
+      "key": "collectionStatus",
+      "labelKo": "collectionStatus",
+      "valueCount": 2,
+      "values": [
+        "보완(2026-08-14)",
+        "수집현황"
+      ]
+    },
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    },
+    {
+      "key": "fundOrAffiliate",
+      "labelKo": "fundOrAffiliate",
+      "valueCount": 11,
+      "values": [
+        "AFD 그룹",
+        "Clean Development Investments / Mekong Brahmaputra Clean Development Fund",
+        "Fund II",
+        "Green Transition Fund",
+        "Patamar Capital",
+        "PIDG / Ninety One 운용",
+        "SEA Clean Energy Fund",
+        "SEACEF / SEACEF II",
+        "VinaCapital Ventures",
+        "World Bank Group",
+        "아시아 기후펀드"
+      ]
+    },
+    {
+      "key": "hqCountryIso3",
+      "labelKo": "hqCountryIso3",
+      "valueCount": 7,
+      "values": [
+        "CHE",
+        "FRA",
+        "GBR",
+        "PHL",
+        "SGP",
+        "USA",
+        "VNM"
+      ]
+    },
+    {
+      "key": "investSector",
+      "labelKo": "investSector",
+      "valueCount": 14,
+      "values": [
+        "기후테크·청정에너지 스타트업(인큐베이션·초기투자)",
+        "동남아 청정에너지(소규모 재생에너지)",
+        "부동산·기업·벤처, C&I 옥상태양광",
+        "소비재 중심 성장자본",
+        "수력·태양광·풍력·바이오매스·바이오가스, 에너지효율",
+        "아시아 기후금융(C&I 태양광, 에너지효율)",
+        "에너지·재생에너지·기후회복 인프라",
+        "여성주도 SME 사모대출(지속가능 농업·기후연계 포함)",
+        "인프라·청정에너지 부채금융",
+        "재생에너지·그린파이낸스·민간 기후 인프라",
+        "저탄소 전환, 청정에너지 펀드 LP",
+        "지속가능농업·순환경제·폐기물·신에너지",
+        "청정에너지, 저탄소 전환",
+        "초기·성장기 SME, 에너지전환·기후적응"
+      ]
+    },
+    {
+      "key": "recordSourceType",
+      "labelKo": "recordSourceType",
+      "valueCount": 9,
+      "values": [
+        "국제기구 공시(CIF)",
+        "국제기구 공시(IFC disclosure)",
+        "기관 공식(DFI)",
+        "기관 공식(DFI) 보도자료",
+        "기관 공식(국제기구)",
+        "기관 공식(민간)",
+        "기관 공식(민간) 보도자료",
+        "언론(DealStreetAsia)",
+        "정부 보도자료(주베트남 호주대사관)"
+      ]
+    }
+  ],
+  "elementId": "E-006",
+  "entityCount": 14,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 2,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-5f64c524f78d|USD(백만)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "현지 투자자 네트워크 · 베트남 기후금융 관련 개발금융기관 4곳 · dfi",
+      "indicatorId": "E-006_dfi",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5f64c524f78d",
+        "labelKo": "현지 투자자 네트워크",
+        "unit": "USD(백만)",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-5f64c524f78d|USD(백만)||E-006_dfi",
+      "sourceCaveat": null,
+      "sourceLabel": "현지 투자자 네트워크",
+      "sourceLabelEn": "Local investor network (climate finance)",
+      "sourceNote": "4건 모두 이메일 미확보, 3건은 전화번호도 미확보(M07). Proparco는 투자 규모 미확보.",
+      "sourceProvenance": {
+        "elementId": "E-006",
+        "indicatorId": "E-006_dfi",
+        "sourceFileDecoded": "E-006_현지 투자자 네트워크.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5f64c524f78d|USD(백만)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "현지 투자자 네트워크 · 베트남 기후금융 민간 투자자 10곳 · private_investor",
+      "indicatorId": "E-006_private_investor",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5f64c524f78d",
+        "labelKo": "현지 투자자 네트워크",
+        "unit": "USD(백만)",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-5f64c524f78d|USD(백만)||E-006_private_investor",
+      "sourceCaveat": "① 원본 '투자 규모(AUM)' 열에 성격이 다른 값이 혼재하여 attr_9~attr_13으로 분해함",
+      "sourceLabel": "현지 투자자 네트워크",
+      "sourceLabelEn": "Local investor network (climate finance)",
+      "sourceNote": "전화번호 7건, 이메일 4건, 도시 1건 미확보(M07). VinaCapital·Mekong Capital은 AUM 미공개(M02). Mekong Capital은 기후실적 서술이 원본 내에서 상충하여 M10(확인중).",
+      "sourceProvenance": {
+        "elementId": "E-006",
+        "indicatorId": "E-006_private_investor",
+        "sourceFileDecoded": "E-006_현지 투자자 네트워크.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 2,
+      "key": "measure-5f64c524f78d",
+      "labelKo": "현지 투자자 네트워크",
+      "recordCount": 0,
+      "unit": "USD(백만)",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

@@ -1,0 +1,58 @@
+{
+  "dimensions": [
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2026"
+      ]
+    }
+  ],
+  "elementId": "E-015",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 1,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-b1136b8f8947|회원 여부(Y/N)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "NDC Partnership 회원 여부",
+      "indicatorId": "E-015_ndcp_membership",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b1136b8f8947",
+        "labelKo": "NDC Partnership 회원 여부",
+        "unit": "회원 여부(Y/N)",
+        "unitFamily": "boolean"
+      },
+      "seriesKey": "measure-b1136b8f8947|회원 여부(Y/N)||E-015_ndcp_membership",
+      "sourceCaveat": null,
+      "sourceLabel": "NDC Partnership 회원 여부",
+      "sourceLabelEn": "NDC Partnership membership status",
+      "sourceNote": "메타 결측: 라이선스·라이선스 URL·최종갱신일·수집일·담당자·검증자 미확인(M06).",
+      "sourceProvenance": {
+        "elementId": "E-015",
+        "indicatorId": "E-015_ndcp_membership",
+        "sourceFileDecoded": "E-015_기타 협력 체계.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-b1136b8f8947",
+      "labelKo": "NDC Partnership 회원 여부",
+      "recordCount": 8,
+      "unit": "회원 여부(Y/N)",
+      "unitFamily": "boolean"
+    }
+  ],
+  "observationCount": 8,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

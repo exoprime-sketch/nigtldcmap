@@ -25,7 +25,7 @@ import {
   MAP_LAYER_IDS_RUNTIME_V116,
   MAP_RUNTIME_POLICY_V116,
   MAP_SOURCE_IDS_RUNTIME_V116,
-} from "../pages/RealMapExplorerPage";
+} from "../data/map/mapRuntimeContractsV116";
 import { isRegionalResolutionV116 } from "../types/spatialDataV116";
 import {
   runWebSandboxFinalizationV115,

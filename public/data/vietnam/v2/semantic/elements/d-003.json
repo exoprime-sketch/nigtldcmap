@@ -1,0 +1,482 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 6,
+      "values": [
+        "바이오에너지 기술",
+        "수력 기술",
+        "태양광 기술",
+        "폐자원 기술",
+        "풍력 기술(육상 · 근해)",
+        "풍력 기술(해상)"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 2,
+      "values": [
+        "1MW당 20년 누적 온실가스 감축량",
+        "1MW당 연간 온실가스 감축량"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 5,
+      "values": [
+        "1",
+        "3",
+        "5",
+        "8",
+        "15"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2023"
+      ]
+    }
+  ],
+  "elementId": "D-003",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 12,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-d3b4eabbfb70|tCO2/20년·MW",
+      "dimensionLabels": {
+        "category": "바이오에너지 기술",
+        "detail": "1MW당 20년 누적 온실가스 감축량",
+        "technology": "8"
+      },
+      "dimensions": {
+        "category": "바이오에너지 기술",
+        "detail": "1MW당 20년 누적 온실가스 감축량",
+        "technology": "8"
+      },
+      "displayLabel": "예상 감축량 · 바이오에너지 기술 — 1MW당 20년 누적 온실가스 감축량",
+      "indicatorId": "D-003_expected_reduction_20yr_biomass",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d3b4eabbfb70",
+        "labelKo": "예상 감축량",
+        "unit": "tCO2/20년·MW",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-d3b4eabbfb70|tCO2/20년·MW|category=바이오에너지 기술|detail=1MW당 20년 누적 온실가스 감축량|technology=8|D-003_expected_reduction_20yr_biomass",
+      "sourceCaveat": "[산정식·변수 출처] 검토의견(산식·변수 출처 불명확)에 따라 전면 재산출함. 계통배출계수(EF)는 베트남 기후변화국(DCC)이 공표한 2023년 값 0.6592 tCO2/MWh를 사용하고, 설비이용률은 문헌 가정치 대신 2023년 베트남 실적(발전량÷설비용량)에서 직접 도출함. [복수 원천] 발전량은 EVN 2023 결산, 설비용량은 수력만 EVN, 태양광·풍력·바이오에너지는 개정 PDP8 해설본의 2023 실적치를 사용 — 단일 원천으로 두 값을 모두 제공하는 자료가 없어 불가피하게 병용했으며 지표별로 출처를 명기함. [척도] 20년 누적값은 연간값 × 20의 단순 누적이며 설비 열화·가동률 변화를 반영하지 않음. [전망·실적 구분] 감축량은 1MW 신규 설비 도입 시의 전망치(설계값)임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "예상 감축량 · 바이오에너지 기술 — 1MW당 20년 누적 온실가스 감축량",
+      "sourceLabelEn": "Expected GHG reduction per MW, bioenergy (20-year cumulative)",
+      "sourceNote": "[산정식·변수 출처] 검토의견(산식·변수 출처 불명확)에 따라 전면 재산출함. 계통배출계수(EF)는 베트남 기후변화국(DCC)이 공표한 2023년 값 0.6592 tCO2/MWh를 사용하고, 설비이용률은 문헌 가정치 대신 2023년 베트남 실적(발전량÷설비용량)에서 직접 도출함. [복수 원천] 발전량은 EVN 2023 결산, 설비용량은 수력만 EVN, 태양광·풍력·바이오에너지는 개정 PDP8 해설본의 2023 실적치를 사용 — 단일 원천으로 두 값을 모두 제공하는 자료가 없어 불가피하게 병용했으며 지표별로 출처를 명기함. [척도] 20년 누적값은 연간값 × 20의 단순 누적이며 설비 열화·가동률 변화를 반영하지 않음. [전망·실적 구분] 감축량은 1MW 신규 설비 도입 시의 전망치(설계값)임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-003",
+        "indicatorId": "D-003_expected_reduction_20yr_biomass",
+        "sourceFileDecoded": "D-003_예상 감축량.xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d3b4eabbfb70|tCO2/20년·MW",
+      "dimensionLabels": {
+        "category": "수력 기술",
+        "detail": "1MW당 20년 누적 온실가스 감축량",
+        "technology": "5"
+      },
+      "dimensions": {
+        "category": "수력 기술",
+        "detail": "1MW당 20년 누적 온실가스 감축량",
+        "technology": "5"
+      },
+      "displayLabel": "예상 감축량 · 수력 기술 — 1MW당 20년 누적 온실가스 감축량",
+      "indicatorId": "D-003_expected_reduction_20yr_hydro",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d3b4eabbfb70",
+        "labelKo": "예상 감축량",
+        "unit": "tCO2/20년·MW",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-d3b4eabbfb70|tCO2/20년·MW|category=수력 기술|detail=1MW당 20년 누적 온실가스 감축량|technology=5|D-003_expected_reduction_20yr_hydro",
+      "sourceCaveat": "[산정식·변수 출처] 검토의견(산식·변수 출처 불명확)에 따라 전면 재산출함. 계통배출계수(EF)는 베트남 기후변화국(DCC)이 공표한 2023년 값 0.6592 tCO2/MWh를 사용하고, 설비이용률은 문헌 가정치 대신 2023년 베트남 실적(발전량÷설비용량)에서 직접 도출함. [복수 원천] 발전량은 EVN 2023 결산, 설비용량은 수력만 EVN, 태양광·풍력·바이오에너지는 개정 PDP8 해설본의 2023 실적치를 사용 — 단일 원천으로 두 값을 모두 제공하는 자료가 없어 불가피하게 병용했으며 지표별로 출처를 명기함. [척도] 20년 누적값은 연간값 × 20의 단순 누적이며 설비 열화·가동률 변화를 반영하지 않음. [전망·실적 구분] 감축량은 1MW 신규 설비 도입 시의 전망치(설계값)임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "예상 감축량 · 수력 기술 — 1MW당 20년 누적 온실가스 감축량",
+      "sourceLabelEn": "Expected GHG reduction per MW, hydropower (20-year cumulative)",
+      "sourceNote": "[산정식·변수 출처] 검토의견(산식·변수 출처 불명확)에 따라 전면 재산출함. 계통배출계수(EF)는 베트남 기후변화국(DCC)이 공표한 2023년 값 0.6592 tCO2/MWh를 사용하고, 설비이용률은 문헌 가정치 대신 2023년 베트남 실적(발전량÷설비용량)에서 직접 도출함. [복수 원천] 발전량은 EVN 2023 결산, 설비용량은 수력만 EVN, 태양광·풍력·바이오에너지는 개정 PDP8 해설본의 2023 실적치를 사용 — 단일 원천으로 두 값을 모두 제공하는 자료가 없어 불가피하게 병용했으며 지표별로 출처를 명기함. [척도] 20년 누적값은 연간값 × 20의 단순 누적이며 설비 열화·가동률 변화를 반영하지 않음. [전망·실적 구분] 감축량은 1MW 신규 설비 도입 시의 전망치(설계값)임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-003",
+        "indicatorId": "D-003_expected_reduction_20yr_hydro",
+        "sourceFileDecoded": "D-003_예상 감축량.xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d3b4eabbfb70|tCO2/20년·MW",
+      "dimensionLabels": {
+        "category": "태양광 기술",
+        "detail": "1MW당 20년 누적 온실가스 감축량",
+        "technology": "1"
+      },
+      "dimensions": {
+        "category": "태양광 기술",
+        "detail": "1MW당 20년 누적 온실가스 감축량",
+        "technology": "1"
+      },
+      "displayLabel": "예상 감축량 · 태양광 기술 — 1MW당 20년 누적 온실가스 감축량",
+      "indicatorId": "D-003_expected_reduction_20yr_solar_pv",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d3b4eabbfb70",
+        "labelKo": "예상 감축량",
+        "unit": "tCO2/20년·MW",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-d3b4eabbfb70|tCO2/20년·MW|category=태양광 기술|detail=1MW당 20년 누적 온실가스 감축량|technology=1|D-003_expected_reduction_20yr_solar_pv",
+      "sourceCaveat": "[산정식·변수 출처] 검토의견(산식·변수 출처 불명확)에 따라 전면 재산출함. 계통배출계수(EF)는 베트남 기후변화국(DCC)이 공표한 2023년 값 0.6592 tCO2/MWh를 사용하고, 설비이용률은 문헌 가정치 대신 2023년 베트남 실적(발전량÷설비용량)에서 직접 도출함. [복수 원천] 발전량은 EVN 2023 결산, 설비용량은 수력만 EVN, 태양광·풍력·바이오에너지는 개정 PDP8 해설본의 2023 실적치를 사용 — 단일 원천으로 두 값을 모두 제공하는 자료가 없어 불가피하게 병용했으며 지표별로 출처를 명기함. [척도] 20년 누적값은 연간값 × 20의 단순 누적이며 설비 열화·가동률 변화를 반영하지 않음. [전망·실적 구분] 감축량은 1MW 신규 설비 도입 시의 전망치(설계값)임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "예상 감축량 · 태양광 기술 — 1MW당 20년 누적 온실가스 감축량",
+      "sourceLabelEn": "Expected GHG reduction per MW, solar PV (20-year cumulative)",
+      "sourceNote": "[산정식·변수 출처] 검토의견(산식·변수 출처 불명확)에 따라 전면 재산출함. 계통배출계수(EF)는 베트남 기후변화국(DCC)이 공표한 2023년 값 0.6592 tCO2/MWh를 사용하고, 설비이용률은 문헌 가정치 대신 2023년 베트남 실적(발전량÷설비용량)에서 직접 도출함. [복수 원천] 발전량은 EVN 2023 결산, 설비용량은 수력만 EVN, 태양광·풍력·바이오에너지는 개정 PDP8 해설본의 2023 실적치를 사용 — 단일 원천으로 두 값을 모두 제공하는 자료가 없어 불가피하게 병용했으며 지표별로 출처를 명기함. [척도] 20년 누적값은 연간값 × 20의 단순 누적이며 설비 열화·가동률 변화를 반영하지 않음. [전망·실적 구분] 감축량은 1MW 신규 설비 도입 시의 전망치(설계값)임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-003",
+        "indicatorId": "D-003_expected_reduction_20yr_solar_pv",
+        "sourceFileDecoded": "D-003_예상 감축량.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d3b4eabbfb70|tCO2/20년·MW",
+      "dimensionLabels": {
+        "category": "폐자원 기술",
+        "detail": "1MW당 20년 누적 온실가스 감축량",
+        "technology": "15"
+      },
+      "dimensions": {
+        "category": "폐자원 기술",
+        "detail": "1MW당 20년 누적 온실가스 감축량",
+        "technology": "15"
+      },
+      "displayLabel": "예상 감축량 · 폐자원 기술 — 1MW당 20년 누적 온실가스 감축량",
+      "indicatorId": "D-003_expected_reduction_20yr_waste_to_energy",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d3b4eabbfb70",
+        "labelKo": "예상 감축량",
+        "unit": "tCO2/20년·MW",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-d3b4eabbfb70|tCO2/20년·MW|category=폐자원 기술|detail=1MW당 20년 누적 온실가스 감축량|technology=15|D-003_expected_reduction_20yr_waste_to_energy",
+      "sourceCaveat": "[산정식·변수 출처] 검토의견(산식·변수 출처 불명확)에 따라 전면 재산출함. 계통배출계수(EF)는 베트남 기후변화국(DCC)이 공표한 2023년 값 0.6592 tCO2/MWh를 사용하고, 설비이용률은 문헌 가정치 대신 2023년 베트남 실적(발전량÷설비용량)에서 직접 도출함. [복수 원천] 발전량은 EVN 2023 결산, 설비용량은 수력만 EVN, 태양광·풍력·바이오에너지는 개정 PDP8 해설본의 2023 실적치를 사용 — 단일 원천으로 두 값을 모두 제공하는 자료가 없어 불가피하게 병용했으며 지표별로 출처를 명기함. [척도] 20년 누적값은 연간값 × 20의 단순 누적이며 설비 열화·가동률 변화를 반영하지 않음. [전망·실적 구분] 감축량은 1MW 신규 설비 도입 시의 전망치(설계값)임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "예상 감축량 · 폐자원 기술 — 1MW당 20년 누적 온실가스 감축량",
+      "sourceLabelEn": "Expected GHG reduction per MW, waste-to-energy",
+      "sourceNote": "EVN 2023 결산에 해당 기술의 발전량·설비용량이 게재되지 않음(상업운전 실적 부재).",
+      "sourceProvenance": {
+        "elementId": "D-003",
+        "indicatorId": "D-003_expected_reduction_20yr_waste_to_energy",
+        "sourceFileDecoded": "D-003_예상 감축량.xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d3b4eabbfb70|tCO2/20년·MW",
+      "dimensionLabels": {
+        "category": "풍력 기술(해상)",
+        "detail": "1MW당 20년 누적 온실가스 감축량",
+        "technology": "3"
+      },
+      "dimensions": {
+        "category": "풍력 기술(해상)",
+        "detail": "1MW당 20년 누적 온실가스 감축량",
+        "technology": "3"
+      },
+      "displayLabel": "예상 감축량 · 풍력 기술(해상) — 1MW당 20년 누적 온실가스 감축량",
+      "indicatorId": "D-003_expected_reduction_20yr_wind_offshore",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d3b4eabbfb70",
+        "labelKo": "예상 감축량",
+        "unit": "tCO2/20년·MW",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-d3b4eabbfb70|tCO2/20년·MW|category=풍력 기술(해상)|detail=1MW당 20년 누적 온실가스 감축량|technology=3|D-003_expected_reduction_20yr_wind_offshore",
+      "sourceCaveat": "[산정식·변수 출처] 검토의견(산식·변수 출처 불명확)에 따라 전면 재산출함. 계통배출계수(EF)는 베트남 기후변화국(DCC)이 공표한 2023년 값 0.6592 tCO2/MWh를 사용하고, 설비이용률은 문헌 가정치 대신 2023년 베트남 실적(발전량÷설비용량)에서 직접 도출함. [복수 원천] 발전량은 EVN 2023 결산, 설비용량은 수력만 EVN, 태양광·풍력·바이오에너지는 개정 PDP8 해설본의 2023 실적치를 사용 — 단일 원천으로 두 값을 모두 제공하는 자료가 없어 불가피하게 병용했으며 지표별로 출처를 명기함. [척도] 20년 누적값은 연간값 × 20의 단순 누적이며 설비 열화·가동률 변화를 반영하지 않음. [전망·실적 구분] 감축량은 1MW 신규 설비 도입 시의 전망치(설계값)임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "예상 감축량 · 풍력 기술(해상) — 1MW당 20년 누적 온실가스 감축량",
+      "sourceLabelEn": "Expected GHG reduction per MW, offshore wind",
+      "sourceNote": "EVN 2023 결산에 해당 기술의 발전량·설비용량이 게재되지 않음(상업운전 실적 부재).",
+      "sourceProvenance": {
+        "elementId": "D-003",
+        "indicatorId": "D-003_expected_reduction_20yr_wind_offshore",
+        "sourceFileDecoded": "D-003_예상 감축량.xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d3b4eabbfb70|tCO2/20년·MW",
+      "dimensionLabels": {
+        "category": "풍력 기술(육상 · 근해)",
+        "detail": "1MW당 20년 누적 온실가스 감축량",
+        "technology": "3"
+      },
+      "dimensions": {
+        "category": "풍력 기술(육상 · 근해)",
+        "detail": "1MW당 20년 누적 온실가스 감축량",
+        "technology": "3"
+      },
+      "displayLabel": "예상 감축량 · 풍력 기술(육상·근해) — 1MW당 20년 누적 온실가스 감축량",
+      "indicatorId": "D-003_expected_reduction_20yr_wind_onshore",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d3b4eabbfb70",
+        "labelKo": "예상 감축량",
+        "unit": "tCO2/20년·MW",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-d3b4eabbfb70|tCO2/20년·MW|category=풍력 기술(육상 · 근해)|detail=1MW당 20년 누적 온실가스 감축량|technology=3|D-003_expected_reduction_20yr_wind_onshore",
+      "sourceCaveat": "[산정식·변수 출처] 검토의견(산식·변수 출처 불명확)에 따라 전면 재산출함. 계통배출계수(EF)는 베트남 기후변화국(DCC)이 공표한 2023년 값 0.6592 tCO2/MWh를 사용하고, 설비이용률은 문헌 가정치 대신 2023년 베트남 실적(발전량÷설비용량)에서 직접 도출함. [복수 원천] 발전량은 EVN 2023 결산, 설비용량은 수력만 EVN, 태양광·풍력·바이오에너지는 개정 PDP8 해설본의 2023 실적치를 사용 — 단일 원천으로 두 값을 모두 제공하는 자료가 없어 불가피하게 병용했으며 지표별로 출처를 명기함. [척도] 20년 누적값은 연간값 × 20의 단순 누적이며 설비 열화·가동률 변화를 반영하지 않음. [전망·실적 구분] 감축량은 1MW 신규 설비 도입 시의 전망치(설계값)임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "예상 감축량 · 풍력 기술(육상·근해) — 1MW당 20년 누적 온실가스 감축량",
+      "sourceLabelEn": "Expected GHG reduction per MW, onshore wind (20-year cumulative)",
+      "sourceNote": "[산정식·변수 출처] 검토의견(산식·변수 출처 불명확)에 따라 전면 재산출함. 계통배출계수(EF)는 베트남 기후변화국(DCC)이 공표한 2023년 값 0.6592 tCO2/MWh를 사용하고, 설비이용률은 문헌 가정치 대신 2023년 베트남 실적(발전량÷설비용량)에서 직접 도출함. [복수 원천] 발전량은 EVN 2023 결산, 설비용량은 수력만 EVN, 태양광·풍력·바이오에너지는 개정 PDP8 해설본의 2023 실적치를 사용 — 단일 원천으로 두 값을 모두 제공하는 자료가 없어 불가피하게 병용했으며 지표별로 출처를 명기함. [척도] 20년 누적값은 연간값 × 20의 단순 누적이며 설비 열화·가동률 변화를 반영하지 않음. [전망·실적 구분] 감축량은 1MW 신규 설비 도입 시의 전망치(설계값)임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-003",
+        "indicatorId": "D-003_expected_reduction_20yr_wind_onshore",
+        "sourceFileDecoded": "D-003_예상 감축량.xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bc66780056cc|tCO2/년·MW",
+      "dimensionLabels": {
+        "category": "바이오에너지 기술",
+        "detail": "1MW당 연간 온실가스 감축량",
+        "technology": "8"
+      },
+      "dimensions": {
+        "category": "바이오에너지 기술",
+        "detail": "1MW당 연간 온실가스 감축량",
+        "technology": "8"
+      },
+      "displayLabel": "예상 감축량 · 바이오에너지 기술 — 1MW당 연간 온실가스 감축량",
+      "indicatorId": "D-003_expected_reduction_annual_biomass",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bc66780056cc",
+        "labelKo": "예상 감축량",
+        "unit": "tCO2/년·MW",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-bc66780056cc|tCO2/년·MW|category=바이오에너지 기술|detail=1MW당 연간 온실가스 감축량|technology=8|D-003_expected_reduction_annual_biomass",
+      "sourceCaveat": "[산정식·변수 출처] 검토의견(산식·변수 출처 불명확)에 따라 전면 재산출함. 계통배출계수(EF)는 베트남 기후변화국(DCC)이 공표한 2023년 값 0.6592 tCO2/MWh를 사용하고, 설비이용률은 문헌 가정치 대신 2023년 베트남 실적(발전량÷설비용량)에서 직접 도출함. [복수 원천] 발전량은 EVN 2023 결산, 설비용량은 수력만 EVN, 태양광·풍력·바이오에너지는 개정 PDP8 해설본의 2023 실적치를 사용 — 단일 원천으로 두 값을 모두 제공하는 자료가 없어 불가피하게 병용했으며 지표별로 출처를 명기함. [척도] 20년 누적값은 연간값 × 20의 단순 누적이며 설비 열화·가동률 변화를 반영하지 않음. [전망·실적 구분] 감축량은 1MW 신규 설비 도입 시의 전망치(설계값)임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "예상 감축량 · 바이오에너지 기술 — 1MW당 연간 온실가스 감축량",
+      "sourceLabelEn": "Expected GHG reduction per MW, bioenergy (annual)",
+      "sourceNote": "[산정식·변수 출처] 검토의견(산식·변수 출처 불명확)에 따라 전면 재산출함. 계통배출계수(EF)는 베트남 기후변화국(DCC)이 공표한 2023년 값 0.6592 tCO2/MWh를 사용하고, 설비이용률은 문헌 가정치 대신 2023년 베트남 실적(발전량÷설비용량)에서 직접 도출함. [복수 원천] 발전량은 EVN 2023 결산, 설비용량은 수력만 EVN, 태양광·풍력·바이오에너지는 개정 PDP8 해설본의 2023 실적치를 사용 — 단일 원천으로 두 값을 모두 제공하는 자료가 없어 불가피하게 병용했으며 지표별로 출처를 명기함. [척도] 20년 누적값은 연간값 × 20의 단순 누적이며 설비 열화·가동률 변화를 반영하지 않음. [전망·실적 구분] 감축량은 1MW 신규 설비 도입 시의 전망치(설계값)임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-003",
+        "indicatorId": "D-003_expected_reduction_annual_biomass",
+        "sourceFileDecoded": "D-003_예상 감축량.xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bc66780056cc|tCO2/년·MW",
+      "dimensionLabels": {
+        "category": "수력 기술",
+        "detail": "1MW당 연간 온실가스 감축량",
+        "technology": "5"
+      },
+      "dimensions": {
+        "category": "수력 기술",
+        "detail": "1MW당 연간 온실가스 감축량",
+        "technology": "5"
+      },
+      "displayLabel": "예상 감축량 · 수력 기술 — 1MW당 연간 온실가스 감축량",
+      "indicatorId": "D-003_expected_reduction_annual_hydro",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bc66780056cc",
+        "labelKo": "예상 감축량",
+        "unit": "tCO2/년·MW",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-bc66780056cc|tCO2/년·MW|category=수력 기술|detail=1MW당 연간 온실가스 감축량|technology=5|D-003_expected_reduction_annual_hydro",
+      "sourceCaveat": "[산정식·변수 출처] 검토의견(산식·변수 출처 불명확)에 따라 전면 재산출함. 계통배출계수(EF)는 베트남 기후변화국(DCC)이 공표한 2023년 값 0.6592 tCO2/MWh를 사용하고, 설비이용률은 문헌 가정치 대신 2023년 베트남 실적(발전량÷설비용량)에서 직접 도출함. [복수 원천] 발전량은 EVN 2023 결산, 설비용량은 수력만 EVN, 태양광·풍력·바이오에너지는 개정 PDP8 해설본의 2023 실적치를 사용 — 단일 원천으로 두 값을 모두 제공하는 자료가 없어 불가피하게 병용했으며 지표별로 출처를 명기함. [척도] 20년 누적값은 연간값 × 20의 단순 누적이며 설비 열화·가동률 변화를 반영하지 않음. [전망·실적 구분] 감축량은 1MW 신규 설비 도입 시의 전망치(설계값)임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "예상 감축량 · 수력 기술 — 1MW당 연간 온실가스 감축량",
+      "sourceLabelEn": "Expected GHG reduction per MW, hydropower (annual)",
+      "sourceNote": "[산정식·변수 출처] 검토의견(산식·변수 출처 불명확)에 따라 전면 재산출함. 계통배출계수(EF)는 베트남 기후변화국(DCC)이 공표한 2023년 값 0.6592 tCO2/MWh를 사용하고, 설비이용률은 문헌 가정치 대신 2023년 베트남 실적(발전량÷설비용량)에서 직접 도출함. [복수 원천] 발전량은 EVN 2023 결산, 설비용량은 수력만 EVN, 태양광·풍력·바이오에너지는 개정 PDP8 해설본의 2023 실적치를 사용 — 단일 원천으로 두 값을 모두 제공하는 자료가 없어 불가피하게 병용했으며 지표별로 출처를 명기함. [척도] 20년 누적값은 연간값 × 20의 단순 누적이며 설비 열화·가동률 변화를 반영하지 않음. [전망·실적 구분] 감축량은 1MW 신규 설비 도입 시의 전망치(설계값)임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-003",
+        "indicatorId": "D-003_expected_reduction_annual_hydro",
+        "sourceFileDecoded": "D-003_예상 감축량.xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bc66780056cc|tCO2/년·MW",
+      "dimensionLabels": {
+        "category": "태양광 기술",
+        "detail": "1MW당 연간 온실가스 감축량",
+        "technology": "1"
+      },
+      "dimensions": {
+        "category": "태양광 기술",
+        "detail": "1MW당 연간 온실가스 감축량",
+        "technology": "1"
+      },
+      "displayLabel": "예상 감축량 · 태양광 기술 — 1MW당 연간 온실가스 감축량",
+      "indicatorId": "D-003_expected_reduction_annual_solar_pv",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bc66780056cc",
+        "labelKo": "예상 감축량",
+        "unit": "tCO2/년·MW",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-bc66780056cc|tCO2/년·MW|category=태양광 기술|detail=1MW당 연간 온실가스 감축량|technology=1|D-003_expected_reduction_annual_solar_pv",
+      "sourceCaveat": "[산정식·변수 출처] 검토의견(산식·변수 출처 불명확)에 따라 전면 재산출함. 계통배출계수(EF)는 베트남 기후변화국(DCC)이 공표한 2023년 값 0.6592 tCO2/MWh를 사용하고, 설비이용률은 문헌 가정치 대신 2023년 베트남 실적(발전량÷설비용량)에서 직접 도출함. [복수 원천] 발전량은 EVN 2023 결산, 설비용량은 수력만 EVN, 태양광·풍력·바이오에너지는 개정 PDP8 해설본의 2023 실적치를 사용 — 단일 원천으로 두 값을 모두 제공하는 자료가 없어 불가피하게 병용했으며 지표별로 출처를 명기함. [척도] 20년 누적값은 연간값 × 20의 단순 누적이며 설비 열화·가동률 변화를 반영하지 않음. [전망·실적 구분] 감축량은 1MW 신규 설비 도입 시의 전망치(설계값)임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "예상 감축량 · 태양광 기술 — 1MW당 연간 온실가스 감축량",
+      "sourceLabelEn": "Expected GHG reduction per MW, solar PV (annual)",
+      "sourceNote": "[산정식·변수 출처] 검토의견(산식·변수 출처 불명확)에 따라 전면 재산출함. 계통배출계수(EF)는 베트남 기후변화국(DCC)이 공표한 2023년 값 0.6592 tCO2/MWh를 사용하고, 설비이용률은 문헌 가정치 대신 2023년 베트남 실적(발전량÷설비용량)에서 직접 도출함. [복수 원천] 발전량은 EVN 2023 결산, 설비용량은 수력만 EVN, 태양광·풍력·바이오에너지는 개정 PDP8 해설본의 2023 실적치를 사용 — 단일 원천으로 두 값을 모두 제공하는 자료가 없어 불가피하게 병용했으며 지표별로 출처를 명기함. [척도] 20년 누적값은 연간값 × 20의 단순 누적이며 설비 열화·가동률 변화를 반영하지 않음. [전망·실적 구분] 감축량은 1MW 신규 설비 도입 시의 전망치(설계값)임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-003",
+        "indicatorId": "D-003_expected_reduction_annual_solar_pv",
+        "sourceFileDecoded": "D-003_예상 감축량.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bc66780056cc|tCO2/년·MW",
+      "dimensionLabels": {
+        "category": "폐자원 기술",
+        "detail": "1MW당 연간 온실가스 감축량",
+        "technology": "15"
+      },
+      "dimensions": {
+        "category": "폐자원 기술",
+        "detail": "1MW당 연간 온실가스 감축량",
+        "technology": "15"
+      },
+      "displayLabel": "예상 감축량 · 폐자원 기술 — 1MW당 연간 온실가스 감축량",
+      "indicatorId": "D-003_expected_reduction_annual_waste_to_energy",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bc66780056cc",
+        "labelKo": "예상 감축량",
+        "unit": "tCO2/년·MW",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-bc66780056cc|tCO2/년·MW|category=폐자원 기술|detail=1MW당 연간 온실가스 감축량|technology=15|D-003_expected_reduction_annual_waste_to_energy",
+      "sourceCaveat": "[산정식·변수 출처] 검토의견(산식·변수 출처 불명확)에 따라 전면 재산출함. 계통배출계수(EF)는 베트남 기후변화국(DCC)이 공표한 2023년 값 0.6592 tCO2/MWh를 사용하고, 설비이용률은 문헌 가정치 대신 2023년 베트남 실적(발전량÷설비용량)에서 직접 도출함. [복수 원천] 발전량은 EVN 2023 결산, 설비용량은 수력만 EVN, 태양광·풍력·바이오에너지는 개정 PDP8 해설본의 2023 실적치를 사용 — 단일 원천으로 두 값을 모두 제공하는 자료가 없어 불가피하게 병용했으며 지표별로 출처를 명기함. [척도] 20년 누적값은 연간값 × 20의 단순 누적이며 설비 열화·가동률 변화를 반영하지 않음. [전망·실적 구분] 감축량은 1MW 신규 설비 도입 시의 전망치(설계값)임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "예상 감축량 · 폐자원 기술 — 1MW당 연간 온실가스 감축량",
+      "sourceLabelEn": "Expected GHG reduction per MW, waste-to-energy",
+      "sourceNote": "EVN 2023 결산에 해당 기술의 발전량·설비용량이 게재되지 않음(상업운전 실적 부재).",
+      "sourceProvenance": {
+        "elementId": "D-003",
+        "indicatorId": "D-003_expected_reduction_annual_waste_to_energy",
+        "sourceFileDecoded": "D-003_예상 감축량.xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bc66780056cc|tCO2/년·MW",
+      "dimensionLabels": {
+        "category": "풍력 기술(해상)",
+        "detail": "1MW당 연간 온실가스 감축량",
+        "technology": "3"
+      },
+      "dimensions": {
+        "category": "풍력 기술(해상)",
+        "detail": "1MW당 연간 온실가스 감축량",
+        "technology": "3"
+      },
+      "displayLabel": "예상 감축량 · 풍력 기술(해상) — 1MW당 연간 온실가스 감축량",
+      "indicatorId": "D-003_expected_reduction_annual_wind_offshore",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bc66780056cc",
+        "labelKo": "예상 감축량",
+        "unit": "tCO2/년·MW",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-bc66780056cc|tCO2/년·MW|category=풍력 기술(해상)|detail=1MW당 연간 온실가스 감축량|technology=3|D-003_expected_reduction_annual_wind_offshore",
+      "sourceCaveat": "[산정식·변수 출처] 검토의견(산식·변수 출처 불명확)에 따라 전면 재산출함. 계통배출계수(EF)는 베트남 기후변화국(DCC)이 공표한 2023년 값 0.6592 tCO2/MWh를 사용하고, 설비이용률은 문헌 가정치 대신 2023년 베트남 실적(발전량÷설비용량)에서 직접 도출함. [복수 원천] 발전량은 EVN 2023 결산, 설비용량은 수력만 EVN, 태양광·풍력·바이오에너지는 개정 PDP8 해설본의 2023 실적치를 사용 — 단일 원천으로 두 값을 모두 제공하는 자료가 없어 불가피하게 병용했으며 지표별로 출처를 명기함. [척도] 20년 누적값은 연간값 × 20의 단순 누적이며 설비 열화·가동률 변화를 반영하지 않음. [전망·실적 구분] 감축량은 1MW 신규 설비 도입 시의 전망치(설계값)임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "예상 감축량 · 풍력 기술(해상) — 1MW당 연간 온실가스 감축량",
+      "sourceLabelEn": "Expected GHG reduction per MW, offshore wind",
+      "sourceNote": "EVN 2023 결산에 해당 기술의 발전량·설비용량이 게재되지 않음(상업운전 실적 부재).",
+      "sourceProvenance": {
+        "elementId": "D-003",
+        "indicatorId": "D-003_expected_reduction_annual_wind_offshore",
+        "sourceFileDecoded": "D-003_예상 감축량.xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bc66780056cc|tCO2/년·MW",
+      "dimensionLabels": {
+        "category": "풍력 기술(육상 · 근해)",
+        "detail": "1MW당 연간 온실가스 감축량",
+        "technology": "3"
+      },
+      "dimensions": {
+        "category": "풍력 기술(육상 · 근해)",
+        "detail": "1MW당 연간 온실가스 감축량",
+        "technology": "3"
+      },
+      "displayLabel": "예상 감축량 · 풍력 기술(육상·근해) — 1MW당 연간 온실가스 감축량",
+      "indicatorId": "D-003_expected_reduction_annual_wind_onshore",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bc66780056cc",
+        "labelKo": "예상 감축량",
+        "unit": "tCO2/년·MW",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-bc66780056cc|tCO2/년·MW|category=풍력 기술(육상 · 근해)|detail=1MW당 연간 온실가스 감축량|technology=3|D-003_expected_reduction_annual_wind_onshore",
+      "sourceCaveat": "[산정식·변수 출처] 검토의견(산식·변수 출처 불명확)에 따라 전면 재산출함. 계통배출계수(EF)는 베트남 기후변화국(DCC)이 공표한 2023년 값 0.6592 tCO2/MWh를 사용하고, 설비이용률은 문헌 가정치 대신 2023년 베트남 실적(발전량÷설비용량)에서 직접 도출함. [복수 원천] 발전량은 EVN 2023 결산, 설비용량은 수력만 EVN, 태양광·풍력·바이오에너지는 개정 PDP8 해설본의 2023 실적치를 사용 — 단일 원천으로 두 값을 모두 제공하는 자료가 없어 불가피하게 병용했으며 지표별로 출처를 명기함. [척도] 20년 누적값은 연간값 × 20의 단순 누적이며 설비 열화·가동률 변화를 반영하지 않음. [전망·실적 구분] 감축량은 1MW 신규 설비 도입 시의 전망치(설계값)임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "예상 감축량 · 풍력 기술(육상·근해) — 1MW당 연간 온실가스 감축량",
+      "sourceLabelEn": "Expected GHG reduction per MW, onshore wind (annual)",
+      "sourceNote": "[산정식·변수 출처] 검토의견(산식·변수 출처 불명확)에 따라 전면 재산출함. 계통배출계수(EF)는 베트남 기후변화국(DCC)이 공표한 2023년 값 0.6592 tCO2/MWh를 사용하고, 설비이용률은 문헌 가정치 대신 2023년 베트남 실적(발전량÷설비용량)에서 직접 도출함. [복수 원천] 발전량은 EVN 2023 결산, 설비용량은 수력만 EVN, 태양광·풍력·바이오에너지는 개정 PDP8 해설본의 2023 실적치를 사용 — 단일 원천으로 두 값을 모두 제공하는 자료가 없어 불가피하게 병용했으며 지표별로 출처를 명기함. [척도] 20년 누적값은 연간값 × 20의 단순 누적이며 설비 열화·가동률 변화를 반영하지 않음. [전망·실적 구분] 감축량은 1MW 신규 설비 도입 시의 전망치(설계값)임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-003",
+        "indicatorId": "D-003_expected_reduction_annual_wind_onshore",
+        "sourceFileDecoded": "D-003_예상 감축량.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 6,
+      "key": "measure-d3b4eabbfb70",
+      "labelKo": "예상 감축량",
+      "recordCount": 6,
+      "unit": "tCO2/20년·MW",
+      "unitFamily": "emissions"
+    },
+    {
+      "indicatorCount": 6,
+      "key": "measure-bc66780056cc",
+      "labelKo": "예상 감축량",
+      "recordCount": 6,
+      "unit": "tCO2/년·MW",
+      "unitFamily": "emissions"
+    }
+  ],
+  "observationCount": 12,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

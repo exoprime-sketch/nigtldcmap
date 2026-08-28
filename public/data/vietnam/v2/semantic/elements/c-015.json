@@ -1,0 +1,896 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 19,
+      "values": [
+        "C-016 C-018 설비목표",
+        "IRENA IRENASTAT(지정 DB)",
+        "IRENA IRENASTAT(지정 DB, 참고용)",
+        "MOIT(산업무역부)",
+        "raw 스캔본 OCR 재추출",
+        "개정 PDP8",
+        "개정령",
+        "법인세법",
+        "법인세법 시행령",
+        "수출입관세법",
+        "원안 PDP8",
+        "전력법",
+        "전력법 시행령",
+        "전환기 발전가격",
+        "직접전력거래",
+        "태양광 FIT 1차",
+        "태양광 FIT 2차",
+        "토지 시행령",
+        "풍력 FIT"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 21,
+      "values": [
+        "768-ttg.signed.pdf 본문 24p OCR(300dpi)",
+        "Decision 11/2017/QĐ-TTg",
+        "Decision 13/2020/QĐ-TTg",
+        "Decision 39/2018/QĐ-TTg",
+        "Decision 500/QĐ-TTg",
+        "Decision 768/QĐ-TTg",
+        "Decree 57/2025(DPPA) 및 Decree 58/2025(재생에너지 개발) 개정",
+        "Decree 57/2025/NĐ-CP",
+        "Decree 103/2024/NĐ-CP",
+        "Decree 320/2025/NĐ-CP",
+        "Law 61/2024/QH15",
+        "Law 67/2025/QH15",
+        "Law 107/2016/QH13",
+        "Quyết định 21/QĐ-BCT",
+        "설비·발전량 실적 통계",
+        "원안(500/2023) 수치 오기재를 개정(768/2025)으로 정정",
+        "재생에너지·신에너지 개발(phát triển điện năng lượng tái tạo, điện năng lượng mới)",
+        "전력사업 허가(giấy phép hoạt động điện lực)",
+        "전원개발계획 운영·입찰 공고",
+        "정부 포털 게시",
+        "통계 DB"
+      ]
+    },
+    {
+      "key": "detail_2",
+      "labelKo": "detail_2",
+      "valueCount": 17,
+      "values": [
+        "CIT 우대 대상·기간 세부",
+        "CIT 우대세율·면제감면 근거",
+        "Decision 768 정부 포털 게시 위치",
+        "Decree 58/2025/NĐ-CP",
+        "Decree 61/2025/NĐ-CP",
+        "Decree 243/2026/NĐ-CP",
+        "대체됨(2025.4 개정본으로 대체)",
+        "수입관세 면제 근거",
+        "적용 중(FIT 종료~경쟁입찰 시행 전 과도기)",
+        "정책요소 미수록",
+        "종료(2019.6 이후 COD 미적용)",
+        "종료(2021.1 이후 신규 COD 미적용)",
+        "종료(2021.11 이후 신규 COD 미적용)",
+        "토지·수면 임대료 면제 근거",
+        "현행 DPPA 시행령",
+        "현행 전력 기본법",
+        "현행 전력개발계획8(2030·2050 전원구성·용량 목표)"
+      ]
+    },
+    {
+      "key": "period",
+      "labelKo": "기간",
+      "valueCount": 8,
+      "values": [
+        "2016-09-01",
+        "2024-08-01",
+        "2025-04-15",
+        "2025-10-01",
+        "2025-12-15",
+        "2026-07",
+        "2026-08-10",
+        "—"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 8,
+      "values": [
+        "2016",
+        "2017",
+        "2018",
+        "2020",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ]
+    }
+  ],
+  "elementId": "C-015",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 21,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-1a8991448f45|—",
+      "dimensionLabels": {
+        "category": "C-016 C-018 설비목표",
+        "detail": "원안(500/2023) 수치 오기재를 개정(768/2025)으로 정정",
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-04 · CTIS-05 · CTIS-06 · CTIS-07 · CTIS-08"
+      },
+      "dimensions": {
+        "category": "C-016 C-018 설비목표",
+        "detail": "원안(500/2023) 수치 오기재를 개정(768/2025)으로 정정",
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08"
+      },
+      "displayLabel": "지정 출처 상태 및 데이터 보완 이력 · C-016 C-018 설비목표 — 원안(500/2023) 수치 오기재를 개정(768/2025)으로 정정",
+      "indicatorId": "C-015_designation_source_status_c_016_c_018_capacity_target",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1a8991448f45",
+        "labelKo": "지정 출처 상태 및 데이터 보완 이력",
+        "unit": "—",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-1a8991448f45|—|category=C-016 C-018 설비목표|detail=원안(500/2023) 수치 오기재를 개정(768/2025)으로 정정|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08|C-015_designation_source_status_c_016_c_018_capacity_target",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ 2030 태양광 12,836→46,459–73,416MW · 2030 총설비 150,489→183,291–236,363MW · 2050 총설비 490,529–573,129→774,503–838,681MW",
+      "sourceLabel": "지정 출처 상태 및 데이터 보완 이력 · C-016 C-018 설비목표 — 원안(500/2023) 수치 오기재를 개정(768/2025)으로 정정",
+      "sourceLabelEn": "Designation Source Status C 016 C 018 Capacity Target",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ 2030 태양광 12,836→46,459–73,416MW · 2030 총설비 150,489→183,291–236,363MW · 2050 총설비 490,529–573,129→774,503–838,681MW",
+      "sourceProvenance": {
+        "elementId": "C-015",
+        "indicatorId": "C-015_designation_source_status_c_016_c_018_capacity_target",
+        "sourceFileDecoded": "C-015_재생에너지 법제도 원본 링크.xlsx",
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1a8991448f45|—",
+      "dimensionLabels": {
+        "category": "IRENA IRENASTAT(지정 DB)",
+        "detail": "통계 DB",
+        "detail_2": "정책요소 미수록",
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-04 · CTIS-05 · CTIS-06 · CTIS-07 · CTIS-08"
+      },
+      "dimensions": {
+        "category": "IRENA IRENASTAT(지정 DB)",
+        "detail": "통계 DB",
+        "detail_2": "정책요소 미수록",
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08"
+      },
+      "displayLabel": "지정 출처 상태 및 데이터 보완 이력 · IRENA IRENASTAT(지정 DB) — 통계 DB — 정책요소 미수록",
+      "indicatorId": "C-015_designation_source_status_irena_irenastat",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1a8991448f45",
+        "labelKo": "지정 출처 상태 및 데이터 보완 이력",
+        "unit": "—",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-1a8991448f45|—|category=IRENA IRENASTAT(지정 DB)|detail=통계 DB|detail_2=정책요소 미수록|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08|C-015_designation_source_status_irena_irenastat",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ 설비용량·발전량 '실적' 통계만 수록. C-015~018이 요구하는 정책 문서 원본링크·용량 '목표'·투자 인센티브·중장기 '전망'은 수록 범위 밖 → 지정 DB명 앞부분 '현지 에너지부·전력청' 계열 1차 법령원문으로 수집",
+      "sourceLabel": "지정 출처 상태 및 데이터 보완 이력 · IRENA IRENASTAT(지정 DB) — 통계 DB — 정책요소 미수록",
+      "sourceLabelEn": "Designation Source Status Irena Irenastat",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ 설비용량·발전량 '실적' 통계만 수록. C-015~018이 요구하는 정책 문서 원본링크·용량 '목표'·투자 인센티브·중장기 '전망'은 수록 범위 밖 → 지정 DB명 앞부분 '현지 에너지부·전력청' 계열 1차 법령원문으로 수집",
+      "sourceProvenance": {
+        "elementId": "C-015",
+        "indicatorId": "C-015_designation_source_status_irena_irenastat",
+        "sourceFileDecoded": "C-015_재생에너지 법제도 원본 링크.xlsx",
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1a8991448f45|—",
+      "dimensionLabels": {
+        "category": "raw 스캔본 OCR 재추출",
+        "detail": "768-ttg.signed.pdf 본문 24p OCR(300dpi)",
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-04 · CTIS-05 · CTIS-06 · CTIS-07 · CTIS-08"
+      },
+      "dimensions": {
+        "category": "raw 스캔본 OCR 재추출",
+        "detail": "768-ttg.signed.pdf 본문 24p OCR(300dpi)",
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08"
+      },
+      "displayLabel": "지정 출처 상태 및 데이터 보완 이력 · raw 스캔본 OCR 재추출 — 768-ttg.signed.pdf 본문 24p OCR(300dpi)",
+      "indicatorId": "C-015_designation_source_status_raw_scan_ocr_reextraction",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1a8991448f45",
+        "labelKo": "지정 출처 상태 및 데이터 보완 이력",
+        "unit": "—",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-1a8991448f45|—|category=raw 스캔본 OCR 재추출|detail=768-ttg.signed.pdf 본문 24p OCR(300dpi)|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08|C-015_designation_source_status_raw_scan_ocr_reextraction",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ 종전 인수인계 문서는 '텍스트 레이어 없어 본문 재추출 불가'로 기록했으나 OCR로 추출 성공. 비-재생 전원 구성·원자력·지열·양수·수입전력·전력수출 대상국/조건·2050 저장장치 정량목표 등을 원문 근거로 보완",
+      "sourceLabel": "지정 출처 상태 및 데이터 보완 이력 · raw 스캔본 OCR 재추출 — 768-ttg.signed.pdf 본문 24p OCR(300dpi)",
+      "sourceLabelEn": "Designation Source Status Raw Scan Ocr Reextraction",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ 종전 인수인계 문서는 '텍스트 레이어 없어 본문 재추출 불가'로 기록했으나 OCR로 추출 성공. 비-재생 전원 구성·원자력·지열·양수·수입전력·전력수출 대상국/조건·2050 저장장치 정량목표 등을 원문 근거로 보완",
+      "sourceProvenance": {
+        "elementId": "C-015",
+        "indicatorId": "C-015_designation_source_status_raw_scan_ocr_reextraction",
+        "sourceFileDecoded": "C-015_재생에너지 법제도 원본 링크.xlsx",
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-af1eb5f40c48|URL",
+      "dimensionLabels": {
+        "category": "개정 PDP8",
+        "detail": "Decision 768/QĐ-TTg",
+        "detail_2": "현행 전력개발계획8(2030·2050 전원구성·용량 목표)",
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-04 · CTIS-05 · CTIS-06 · CTIS-07 · CTIS-08"
+      },
+      "dimensions": {
+        "category": "개정 PDP8",
+        "detail": "Decision 768/QĐ-TTg",
+        "detail_2": "현행 전력개발계획8(2030·2050 전원구성·용량 목표)",
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08"
+      },
+      "displayLabel": "정책 문서 원본 링크 레지스트리 · 개정 PDP8 — Decision 768/QĐ-TTg — 현행 전력개발계획8(2030·2050 전원구성·용량 목표)",
+      "indicatorId": "C-015_policy_document_source_link_amendment_pdp8",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-af1eb5f40c48",
+        "labelKo": "정책 문서 원본 링크 레지스트리",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-af1eb5f40c48|URL|category=개정 PDP8|detail=Decision 768/QĐ-TTg|detail_2=현행 전력개발계획8(2030·2050 전원구성·용량 목표)|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08|C-015_policy_document_source_link_amendment_pdp8",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ 베트남 정부 파일서버 서명원문. 본문 24p + 부록 I·II(pl1-2.pdf)·III(pl3-.pdf·pl3-tiep.pdf), raw 폴더 보유. 원안 500/QĐ-TTg 대체",
+      "sourceLabel": "정책 문서 원본 링크 레지스트리 · 개정 PDP8 — Decision 768/QĐ-TTg — 현행 전력개발계획8(2030·2050 전원구성·용량 목표)",
+      "sourceLabelEn": "Policy Document Source Link Amendment Pdp8",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ 베트남 정부 파일서버 서명원문. 본문 24p + 부록 I·II(pl1-2.pdf)·III(pl3-.pdf·pl3-tiep.pdf), raw 폴더 보유. 원안 500/QĐ-TTg 대체",
+      "sourceProvenance": {
+        "elementId": "C-015",
+        "indicatorId": "C-015_policy_document_source_link_amendment_pdp8",
+        "sourceFileDecoded": "C-015_재생에너지 법제도 원본 링크.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-af1eb5f40c48|URL",
+      "dimensionLabels": {
+        "category": "개정 PDP8",
+        "detail": "정부 포털 게시",
+        "detail_2": "Decision 768 정부 포털 게시 위치",
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-04 · CTIS-05 · CTIS-06 · CTIS-07 · CTIS-08"
+      },
+      "dimensions": {
+        "category": "개정 PDP8",
+        "detail": "정부 포털 게시",
+        "detail_2": "Decision 768 정부 포털 게시 위치",
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08"
+      },
+      "displayLabel": "정책 문서 원본 링크 레지스트리 · 개정 PDP8 — 정부 포털 게시 — Decision 768 정부 포털 게시 위치",
+      "indicatorId": "C-015_policy_document_source_link_amendment_pdp8_2025",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-af1eb5f40c48",
+        "labelKo": "정책 문서 원본 링크 레지스트리",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-af1eb5f40c48|URL|category=개정 PDP8|detail=정부 포털 게시|detail_2=Decision 768 정부 포털 게시 위치|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08|C-015_policy_document_source_link_amendment_pdp8_2025",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ 서명원문 PDF 게시 위치",
+      "sourceLabel": "정책 문서 원본 링크 레지스트리 · 개정 PDP8 — 정부 포털 게시 — Decision 768 정부 포털 게시 위치",
+      "sourceLabelEn": "Policy Document Source Link Amendment Pdp8 2025",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ 서명원문 PDF 게시 위치",
+      "sourceProvenance": {
+        "elementId": "C-015",
+        "indicatorId": "C-015_policy_document_source_link_amendment_pdp8_2025",
+        "sourceFileDecoded": "C-015_재생에너지 법제도 원본 링크.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-af1eb5f40c48|URL",
+      "dimensionLabels": {
+        "category": "직접전력거래",
+        "detail": "Decree 57/2025/NĐ-CP",
+        "detail_2": "현행 DPPA 시행령",
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-04 · CTIS-05 · CTIS-06 · CTIS-07 · CTIS-08"
+      },
+      "dimensions": {
+        "category": "직접전력거래",
+        "detail": "Decree 57/2025/NĐ-CP",
+        "detail_2": "현행 DPPA 시행령",
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08"
+      },
+      "displayLabel": "정책 문서 원본 링크 레지스트리 · 직접전력거래 — Decree 57/2025/NĐ-CP — 현행 DPPA 시행령",
+      "indicatorId": "C-015_policy_document_source_link_dppa",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-af1eb5f40c48",
+        "labelKo": "정책 문서 원본 링크 레지스트리",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-af1eb5f40c48|URL|category=직접전력거래|detail=Decree 57/2025/NĐ-CP|detail_2=현행 DPPA 시행령|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08|C-015_policy_document_source_link_dppa",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ [라이선스 검증 2026-08-15] 이용약관 원문 확인: \"The re-using of information, English translating documents from LuatVietnam to circulate on means of media or other websites must be allowed in writing from INCOM Company\" / \"Must not provide LuatVietnam's translations to the third party\". → 본 데이터셋은 해당 사이트가 게재한 「법령번호·조항번호·공포일·시행일·주무부처」 등 저작권 보호 대상이 아닌 사실(fact) 값만 수록하였고 LuatVietnam의 영문 번역문·해설문은 수록하지 않음. 따라서 재배포 「제한」으로 판정. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [출처 성격] 법령 원문을 게재하는 상업 법령DB의 재게시본으로 확인함. 법령번호·조항은 원문과 일치하나 정부 공식 사이트 원본은 미확보(접근 차단). 재배포 가부는 해당 DB 이용약관 확인 필요. ‖ 선행 Decree 80/2024/NĐ-CP 대체 ‖ [원본링크 교체 2026-08-18] 종전 source_url이 상업 법령DB 도메인 루트(https://luatvietnam.vn/)만 가리켜 원문에 도달할 수 없었음. 베트남 정부 공보(vanban.chinhphu.vn) 상세 페이지와 서명본 PDF로 교체함. 이에 따라 라이선스도 상업DB 약관(재배포 제한)에서 베트남 지식재산법 제15조(법률규범문서 저작권 비보호, 재배포 가능)로 변경됨. raw: C-015_원본링크_공보전환_2026-08-18.md",
+      "sourceLabel": "정책 문서 원본 링크 레지스트리 · 직접전력거래 — Decree 57/2025/NĐ-CP — 현행 DPPA 시행령",
+      "sourceLabelEn": "Policy Document Source Link Dppa",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ [라이선스 검증 2026-08-15] 이용약관 원문 확인: \"The re-using of information, English translating documents from LuatVietnam to circulate on means of media or other websites must be allowed in writing from INCOM Company\" / \"Must not provide LuatVietnam's translations to the third party\". → 본 데이터셋은 해당 사이트가 게재한 「법령번호·조항번호·공포일·시행일·주무부처」 등 저작권 보호 대상이 아닌 사실(fact) 값만 수록하였고 LuatVietnam의 영문 번역문·해설문은 수록하지 않음. 따라서 재배포 「제한」으로 판정. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [출처 성격] 법령 원문을 게재하는 상업 법령DB의 재게시본으로 확인함. 법령번호·조항은 원문과 일치하나 정부 공식 사이트 원본은 미확보(접근 차단). 재배포 가부는 해당 DB 이용약관 확인 필요. ‖ 선행 Decree 80/2024/NĐ-CP 대체 ‖ [원본링크 교체 2026-08-18] 종전 source_url이 상업 법령DB 도메인 루트(https://luatvietnam.vn/)만 가리켜 원문에 도달할 수 없었음. 베트남 정부 공보(vanban.chinhphu.vn) 상세 페이지와 서명본 PDF로 교체함. 이에 따라 라이선스도 상업DB 약관(재배포 제한)에서 베트남 지식재산법 제15조(법률규범문서 저작권 비보호, 재배포 가능)로 변경됨. raw: C-015_원본링크_공보전환_2026-08-18.md",
+      "sourceProvenance": {
+        "elementId": "C-015",
+        "indicatorId": "C-015_policy_document_source_link_dppa",
+        "sourceFileDecoded": "C-015_재생에너지 법제도 원본 링크.xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-af1eb5f40c48|URL",
+      "dimensionLabels": {
+        "category": "전력법",
+        "detail": "Law 61/2024/QH15",
+        "detail_2": "현행 전력 기본법",
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-04 · CTIS-05 · CTIS-06 · CTIS-07 · CTIS-08"
+      },
+      "dimensions": {
+        "category": "전력법",
+        "detail": "Law 61/2024/QH15",
+        "detail_2": "현행 전력 기본법",
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08"
+      },
+      "displayLabel": "정책 문서 원본 링크 레지스트리 · 전력법 — Law 61/2024/QH15 — 현행 전력 기본법",
+      "indicatorId": "C-015_policy_document_source_link_electricity_law",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-af1eb5f40c48",
+        "labelKo": "정책 문서 원본 링크 레지스트리",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-af1eb5f40c48|URL|category=전력법|detail=Law 61/2024/QH15|detail_2=현행 전력 기본법|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08|C-015_policy_document_source_link_electricity_law",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ [라이선스 검증 2026-08-15] 이용약관 원문 확인: \"The re-using of information, English translating documents from LuatVietnam to circulate on means of media or other websites must be allowed in writing from INCOM Company\" / \"Must not provide LuatVietnam's translations to the third party\". → 본 데이터셋은 해당 사이트가 게재한 「법령번호·조항번호·공포일·시행일·주무부처」 등 저작권 보호 대상이 아닌 사실(fact) 값만 수록하였고 LuatVietnam의 영문 번역문·해설문은 수록하지 않음. 따라서 재배포 「제한」으로 판정. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [출처 성격] 법령 원문을 게재하는 상업 법령DB의 재게시본으로 확인함. 법령번호·조항은 원문과 일치하나 정부 공식 사이트 원본은 미확보(접근 차단). 재배포 가부는 해당 DB 이용약관 확인 필요. ‖ 舊 28/2004/QH11 대체. 제10조 제5항이 PDP8 태양광 목표 제외 대상 규정 ‖ [원본링크 교체 2026-08-18] 종전 source_url이 상업 법령DB 도메인 루트(https://luatvietnam.vn/)만 가리켜 원문에 도달할 수 없었음. 베트남 정부 공보(vanban.chinhphu.vn) 상세 페이지와 서명본 PDF로 교체함. 이에 따라 라이선스도 상업DB 약관(재배포 제한)에서 베트남 지식재산법 제15조(법률규범문서 저작권 비보호, 재배포 가능)로 변경됨. raw: C-015_원본링크_공보전환_2026-08-18.md",
+      "sourceLabel": "정책 문서 원본 링크 레지스트리 · 전력법 — Law 61/2024/QH15 — 현행 전력 기본법",
+      "sourceLabelEn": "Policy Document Source Link Electricity Law",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ [라이선스 검증 2026-08-15] 이용약관 원문 확인: \"The re-using of information, English translating documents from LuatVietnam to circulate on means of media or other websites must be allowed in writing from INCOM Company\" / \"Must not provide LuatVietnam's translations to the third party\". → 본 데이터셋은 해당 사이트가 게재한 「법령번호·조항번호·공포일·시행일·주무부처」 등 저작권 보호 대상이 아닌 사실(fact) 값만 수록하였고 LuatVietnam의 영문 번역문·해설문은 수록하지 않음. 따라서 재배포 「제한」으로 판정. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [출처 성격] 법령 원문을 게재하는 상업 법령DB의 재게시본으로 확인함. 법령번호·조항은 원문과 일치하나 정부 공식 사이트 원본은 미확보(접근 차단). 재배포 가부는 해당 DB 이용약관 확인 필요. ‖ 舊 28/2004/QH11 대체. 제10조 제5항이 PDP8 태양광 목표 제외 대상 규정 ‖ [원본링크 교체 2026-08-18] 종전 source_url이 상업 법령DB 도메인 루트(https://luatvietnam.vn/)만 가리켜 원문에 도달할 수 없었음. 베트남 정부 공보(vanban.chinhphu.vn) 상세 페이지와 서명본 PDF로 교체함. 이에 따라 라이선스도 상업DB 약관(재배포 제한)에서 베트남 지식재산법 제15조(법률규범문서 저작권 비보호, 재배포 가능)로 변경됨. raw: C-015_원본링크_공보전환_2026-08-18.md",
+      "sourceProvenance": {
+        "elementId": "C-015",
+        "indicatorId": "C-015_policy_document_source_link_electricity_law",
+        "sourceFileDecoded": "C-015_재생에너지 법제도 원본 링크.xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-af1eb5f40c48|URL",
+      "dimensionLabels": {
+        "category": "수출입관세법",
+        "detail": "Law 107/2016/QH13",
+        "detail_2": "수입관세 면제 근거",
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-04 · CTIS-05 · CTIS-06 · CTIS-07 · CTIS-08"
+      },
+      "dimensions": {
+        "category": "수출입관세법",
+        "detail": "Law 107/2016/QH13",
+        "detail_2": "수입관세 면제 근거",
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08"
+      },
+      "displayLabel": "정책 문서 원본 링크 레지스트리 · 수출입관세법 — Law 107/2016/QH13 — 수입관세 면제 근거",
+      "indicatorId": "C-015_policy_document_source_link_export_import_tariff_law",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-af1eb5f40c48",
+        "labelKo": "정책 문서 원본 링크 레지스트리",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-af1eb5f40c48|URL|category=수출입관세법|detail=Law 107/2016/QH13|detail_2=수입관세 면제 근거|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08|C-015_policy_document_source_link_export_import_tariff_law",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ [라이선스 검증 2026-08-15] 이용약관 원문 확인: \"The re-using of information, English translating documents from LuatVietnam to circulate on means of media or other websites must be allowed in writing from INCOM Company\" / \"Must not provide LuatVietnam's translations to the third party\". → 본 데이터셋은 해당 사이트가 게재한 「법령번호·조항번호·공포일·시행일·주무부처」 등 저작권 보호 대상이 아닌 사실(fact) 값만 수록하였고 LuatVietnam의 영문 번역문·해설문은 수록하지 않음. 따라서 재배포 「제한」으로 판정. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [출처 성격] 법령 원문을 게재하는 상업 법령DB의 재게시본으로 확인함. 법령번호·조항은 원문과 일치하나 정부 공식 사이트 원본은 미확보(접근 차단). 재배포 가부는 해당 DB 이용약관 확인 필요. ‖ 제16조. 시행 세부 Decree 134/2016/NĐ-CP(Decree 18/2021 개정) ‖ [링크 유지 사유 2026-08-18] 본 4행은 상업 법령DB의 영문 번역본을 가리키고 있어 재배포 판정이 「제한」임. 베트남어 공보 원문이 아닌 영문본을 가리키는 것은 의도된 선택으로, 세율·감면기간 등 조문 대조 시 영문본이 필요하기 때문임. 데이터셋에는 사실 값(세율·기간)만 수록하고 번역문 자체는 수록하지 않음. 공보 원문 링크 병기가 필요하면 별도 행으로 추가 가능. raw: C-015_원본링크_공보전환_2026-08-18.md",
+      "sourceLabel": "정책 문서 원본 링크 레지스트리 · 수출입관세법 — Law 107/2016/QH13 — 수입관세 면제 근거",
+      "sourceLabelEn": "Policy Document Source Link Export Import Tariff Law",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ [라이선스 검증 2026-08-15] 이용약관 원문 확인: \"The re-using of information, English translating documents from LuatVietnam to circulate on means of media or other websites must be allowed in writing from INCOM Company\" / \"Must not provide LuatVietnam's translations to the third party\". → 본 데이터셋은 해당 사이트가 게재한 「법령번호·조항번호·공포일·시행일·주무부처」 등 저작권 보호 대상이 아닌 사실(fact) 값만 수록하였고 LuatVietnam의 영문 번역문·해설문은 수록하지 않음. 따라서 재배포 「제한」으로 판정. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [출처 성격] 법령 원문을 게재하는 상업 법령DB의 재게시본으로 확인함. 법령번호·조항은 원문과 일치하나 정부 공식 사이트 원본은 미확보(접근 차단). 재배포 가부는 해당 DB 이용약관 확인 필요. ‖ 제16조. 시행 세부 Decree 134/2016/NĐ-CP(Decree 18/2021 개정) ‖ [링크 유지 사유 2026-08-18] 본 4행은 상업 법령DB의 영문 번역본을 가리키고 있어 재배포 판정이 「제한」임. 베트남어 공보 원문이 아닌 영문본을 가리키는 것은 의도된 선택으로, 세율·감면기간 등 조문 대조 시 영문본이 필요하기 때문임. 데이터셋에는 사실 값(세율·기간)만 수록하고 번역문 자체는 수록하지 않음. 공보 원문 링크 병기가 필요하면 별도 행으로 추가 가능. raw: C-015_원본링크_공보전환_2026-08-18.md",
+      "sourceProvenance": {
+        "elementId": "C-015",
+        "indicatorId": "C-015_policy_document_source_link_export_import_tariff_law",
+        "sourceFileDecoded": "C-015_재생에너지 법제도 원본 링크.xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-af1eb5f40c48|URL",
+      "dimensionLabels": {
+        "category": "원안 PDP8",
+        "detail": "Decision 500/QĐ-TTg",
+        "detail_2": "대체됨(2025.4 개정본으로 대체)",
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-04 · CTIS-05 · CTIS-06 · CTIS-07 · CTIS-08"
+      },
+      "dimensions": {
+        "category": "원안 PDP8",
+        "detail": "Decision 500/QĐ-TTg",
+        "detail_2": "대체됨(2025.4 개정본으로 대체)",
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08"
+      },
+      "displayLabel": "정책 문서 원본 링크 레지스트리 · 원안 PDP8 — Decision 500/QĐ-TTg — 대체됨(2025.4 개정본으로 대체)",
+      "indicatorId": "C-015_policy_document_source_link_institute_an_pdp8",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-af1eb5f40c48",
+        "labelKo": "정책 문서 원본 링크 레지스트리",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-af1eb5f40c48|URL|category=원안 PDP8|detail=Decision 500/QĐ-TTg|detail_2=대체됨(2025.4 개정본으로 대체)|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08|C-015_policy_document_source_link_institute_an_pdp8",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ [라이선스 검증 2026-08-15] 이용약관 원문 확인: \"The re-using of information, English translating documents from LuatVietnam to circulate on means of media or other websites must be allowed in writing from INCOM Company\" / \"Must not provide LuatVietnam's translations to the third party\". → 본 데이터셋은 해당 사이트가 게재한 「법령번호·조항번호·공포일·시행일·주무부처」 등 저작권 보호 대상이 아닌 사실(fact) 값만 수록하였고 LuatVietnam의 영문 번역문·해설문은 수록하지 않음. 따라서 재배포 「제한」으로 판정. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [출처 성격] 법령 원문을 게재하는 상업 법령DB의 재게시본으로 확인함. 법령번호·조항은 원문과 일치하나 정부 공식 사이트 원본은 미확보(접근 차단). 재배포 가부는 해당 DB 이용약관 확인 필요. ‖ 2030 태양광 12,836MW·총설비 150,489MW 등 구 목표치 — 개정 768로 정정 ‖ [원본링크 교체 2026-08-18] 종전 source_url이 상업 법령DB 도메인 루트(https://luatvietnam.vn/)만 가리켜 원문에 도달할 수 없었음. 베트남 정부 공보(vanban.chinhphu.vn) 상세 페이지와 서명본 PDF로 교체함. 이에 따라 라이선스도 상업DB 약관(재배포 제한)에서 베트남 지식재산법 제15조(법률규범문서 저작권 비보호, 재배포 가능)로 변경됨. raw: C-015_원본링크_공보전환_2026-08-18.md",
+      "sourceLabel": "정책 문서 원본 링크 레지스트리 · 원안 PDP8 — Decision 500/QĐ-TTg — 대체됨(2025.4 개정본으로 대체)",
+      "sourceLabelEn": "Policy Document Source Link Institute An Pdp8",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ [라이선스 검증 2026-08-15] 이용약관 원문 확인: \"The re-using of information, English translating documents from LuatVietnam to circulate on means of media or other websites must be allowed in writing from INCOM Company\" / \"Must not provide LuatVietnam's translations to the third party\". → 본 데이터셋은 해당 사이트가 게재한 「법령번호·조항번호·공포일·시행일·주무부처」 등 저작권 보호 대상이 아닌 사실(fact) 값만 수록하였고 LuatVietnam의 영문 번역문·해설문은 수록하지 않음. 따라서 재배포 「제한」으로 판정. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [출처 성격] 법령 원문을 게재하는 상업 법령DB의 재게시본으로 확인함. 법령번호·조항은 원문과 일치하나 정부 공식 사이트 원본은 미확보(접근 차단). 재배포 가부는 해당 DB 이용약관 확인 필요. ‖ 2030 태양광 12,836MW·총설비 150,489MW 등 구 목표치 — 개정 768로 정정 ‖ [원본링크 교체 2026-08-18] 종전 source_url이 상업 법령DB 도메인 루트(https://luatvietnam.vn/)만 가리켜 원문에 도달할 수 없었음. 베트남 정부 공보(vanban.chinhphu.vn) 상세 페이지와 서명본 PDF로 교체함. 이에 따라 라이선스도 상업DB 약관(재배포 제한)에서 베트남 지식재산법 제15조(법률규범문서 저작권 비보호, 재배포 가능)로 변경됨. raw: C-015_원본링크_공보전환_2026-08-18.md",
+      "sourceProvenance": {
+        "elementId": "C-015",
+        "indicatorId": "C-015_policy_document_source_link_institute_an_pdp8",
+        "sourceFileDecoded": "C-015_재생에너지 법제도 원본 링크.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-af1eb5f40c48|URL",
+      "dimensionLabels": {
+        "category": "IRENA IRENASTAT(지정 DB, 참고용)",
+        "detail": "설비·발전량 실적 통계",
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-04 · CTIS-05 · CTIS-06 · CTIS-07 · CTIS-08"
+      },
+      "dimensions": {
+        "category": "IRENA IRENASTAT(지정 DB, 참고용)",
+        "detail": "설비·발전량 실적 통계",
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08"
+      },
+      "displayLabel": "정책 문서 원본 링크 레지스트리 · IRENA IRENASTAT(지정 DB, 참고용) — 설비·발전량 실적 통계",
+      "indicatorId": "C-015_policy_document_source_link_irena_irenastat",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-af1eb5f40c48",
+        "labelKo": "정책 문서 원본 링크 레지스트리",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-af1eb5f40c48|URL|category=IRENA IRENASTAT(지정 DB, 참고용)|detail=설비·발전량 실적 통계|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08|C-015_policy_document_source_link_irena_irenastat",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ 정책·목표·인센티브 데이터는 수록 범위 밖",
+      "sourceLabel": "정책 문서 원본 링크 레지스트리 · IRENA IRENASTAT(지정 DB, 참고용) — 설비·발전량 실적 통계",
+      "sourceLabelEn": "Policy Document Source Link Irena Irenastat",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ 정책·목표·인센티브 데이터는 수록 범위 밖",
+      "sourceProvenance": {
+        "elementId": "C-015",
+        "indicatorId": "C-015_policy_document_source_link_irena_irenastat",
+        "sourceFileDecoded": "C-015_재생에너지 법제도 원본 링크.xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-af1eb5f40c48|URL",
+      "dimensionLabels": {
+        "category": "토지 시행령",
+        "detail": "Decree 103/2024/NĐ-CP",
+        "detail_2": "토지·수면 임대료 면제 근거",
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-04 · CTIS-05 · CTIS-06 · CTIS-07 · CTIS-08"
+      },
+      "dimensions": {
+        "category": "토지 시행령",
+        "detail": "Decree 103/2024/NĐ-CP",
+        "detail_2": "토지·수면 임대료 면제 근거",
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08"
+      },
+      "displayLabel": "정책 문서 원본 링크 레지스트리 · 토지 시행령 — Decree 103/2024/NĐ-CP — 토지·수면 임대료 면제 근거",
+      "indicatorId": "C-015_policy_document_source_link_land_decree",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-af1eb5f40c48",
+        "labelKo": "정책 문서 원본 링크 레지스트리",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-af1eb5f40c48|URL|category=토지 시행령|detail=Decree 103/2024/NĐ-CP|detail_2=토지·수면 임대료 면제 근거|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08|C-015_policy_document_source_link_land_decree",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ [라이선스 검증 2026-08-15] 이용약관 원문 확인: \"The re-using of information, English translating documents from LuatVietnam to circulate on means of media or other websites must be allowed in writing from INCOM Company\" / \"Must not provide LuatVietnam's translations to the third party\". → 본 데이터셋은 해당 사이트가 게재한 「법령번호·조항번호·공포일·시행일·주무부처」 등 저작권 보호 대상이 아닌 사실(fact) 값만 수록하였고 LuatVietnam의 영문 번역문·해설문은 수록하지 않음. 따라서 재배포 「제한」으로 판정. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [출처 성격] 법령 원문을 게재하는 상업 법령DB의 재게시본으로 확인함. 법령번호·조항은 원문과 일치하나 정부 공식 사이트 원본은 미확보(접근 차단). 재배포 가부는 해당 DB 이용약관 확인 필요. ‖ 제39조 제2항(건설기간 최대 3년)·제3항(3/7/11/15년) ‖ [링크 유지 사유 2026-08-18] 본 4행은 상업 법령DB의 영문 번역본을 가리키고 있어 재배포 판정이 「제한」임. 베트남어 공보 원문이 아닌 영문본을 가리키는 것은 의도된 선택으로, 세율·감면기간 등 조문 대조 시 영문본이 필요하기 때문임. 데이터셋에는 사실 값(세율·기간)만 수록하고 번역문 자체는 수록하지 않음. 공보 원문 링크 병기가 필요하면 별도 행으로 추가 가능. raw: C-015_원본링크_공보전환_2026-08-18.md",
+      "sourceLabel": "정책 문서 원본 링크 레지스트리 · 토지 시행령 — Decree 103/2024/NĐ-CP — 토지·수면 임대료 면제 근거",
+      "sourceLabelEn": "Policy Document Source Link Land Decree",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ [라이선스 검증 2026-08-15] 이용약관 원문 확인: \"The re-using of information, English translating documents from LuatVietnam to circulate on means of media or other websites must be allowed in writing from INCOM Company\" / \"Must not provide LuatVietnam's translations to the third party\". → 본 데이터셋은 해당 사이트가 게재한 「법령번호·조항번호·공포일·시행일·주무부처」 등 저작권 보호 대상이 아닌 사실(fact) 값만 수록하였고 LuatVietnam의 영문 번역문·해설문은 수록하지 않음. 따라서 재배포 「제한」으로 판정. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [출처 성격] 법령 원문을 게재하는 상업 법령DB의 재게시본으로 확인함. 법령번호·조항은 원문과 일치하나 정부 공식 사이트 원본은 미확보(접근 차단). 재배포 가부는 해당 DB 이용약관 확인 필요. ‖ 제39조 제2항(건설기간 최대 3년)·제3항(3/7/11/15년) ‖ [링크 유지 사유 2026-08-18] 본 4행은 상업 법령DB의 영문 번역본을 가리키고 있어 재배포 판정이 「제한」임. 베트남어 공보 원문이 아닌 영문본을 가리키는 것은 의도된 선택으로, 세율·감면기간 등 조문 대조 시 영문본이 필요하기 때문임. 데이터셋에는 사실 값(세율·기간)만 수록하고 번역문 자체는 수록하지 않음. 공보 원문 링크 병기가 필요하면 별도 행으로 추가 가능. raw: C-015_원본링크_공보전환_2026-08-18.md",
+      "sourceProvenance": {
+        "elementId": "C-015",
+        "indicatorId": "C-015_policy_document_source_link_land_decree",
+        "sourceFileDecoded": "C-015_재생에너지 법제도 원본 링크.xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-af1eb5f40c48|URL",
+      "dimensionLabels": {
+        "category": "법인세법",
+        "detail": "Law 67/2025/QH15",
+        "detail_2": "CIT 우대세율·면제감면 근거",
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-04 · CTIS-05 · CTIS-06 · CTIS-07 · CTIS-08"
+      },
+      "dimensions": {
+        "category": "법인세법",
+        "detail": "Law 67/2025/QH15",
+        "detail_2": "CIT 우대세율·면제감면 근거",
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08"
+      },
+      "displayLabel": "정책 문서 원본 링크 레지스트리 · 법인세법 — Law 67/2025/QH15 — CIT 우대세율·면제감면 근거",
+      "indicatorId": "C-015_policy_document_source_link_law_corporate_tax_law",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-af1eb5f40c48",
+        "labelKo": "정책 문서 원본 링크 레지스트리",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-af1eb5f40c48|URL|category=법인세법|detail=Law 67/2025/QH15|detail_2=CIT 우대세율·면제감면 근거|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08|C-015_policy_document_source_link_law_corporate_tax_law",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ [라이선스 검증 2026-08-15] 이용약관 원문 확인: \"The re-using of information, English translating documents from LuatVietnam to circulate on means of media or other websites must be allowed in writing from INCOM Company\" / \"Must not provide LuatVietnam's translations to the third party\". → 본 데이터셋은 해당 사이트가 게재한 「법령번호·조항번호·공포일·시행일·주무부처」 등 저작권 보호 대상이 아닌 사실(fact) 값만 수록하였고 LuatVietnam의 영문 번역문·해설문은 수록하지 않음. 따라서 재배포 「제한」으로 판정. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [출처 성격] 법령 원문을 게재하는 상업 법령DB의 재게시본으로 확인함. 법령번호·조항은 원문과 일치하나 정부 공식 사이트 원본은 미확보(접근 차단). 재배포 가부는 해당 DB 이용약관 확인 필요. ‖ 제10조 제1항(표준 20%)·제13조 제1항(10%·15년)·제14조(4년 면제+9년 50% 감면) ‖ [링크 유지 사유 2026-08-18] 본 4행은 상업 법령DB의 영문 번역본을 가리키고 있어 재배포 판정이 「제한」임. 베트남어 공보 원문이 아닌 영문본을 가리키는 것은 의도된 선택으로, 세율·감면기간 등 조문 대조 시 영문본이 필요하기 때문임. 데이터셋에는 사실 값(세율·기간)만 수록하고 번역문 자체는 수록하지 않음. 공보 원문 링크 병기가 필요하면 별도 행으로 추가 가능. raw: C-015_원본링크_공보전환_2026-08-18.md",
+      "sourceLabel": "정책 문서 원본 링크 레지스트리 · 법인세법 — Law 67/2025/QH15 — CIT 우대세율·면제감면 근거",
+      "sourceLabelEn": "Policy Document Source Link Law Corporate Tax Law",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ [라이선스 검증 2026-08-15] 이용약관 원문 확인: \"The re-using of information, English translating documents from LuatVietnam to circulate on means of media or other websites must be allowed in writing from INCOM Company\" / \"Must not provide LuatVietnam's translations to the third party\". → 본 데이터셋은 해당 사이트가 게재한 「법령번호·조항번호·공포일·시행일·주무부처」 등 저작권 보호 대상이 아닌 사실(fact) 값만 수록하였고 LuatVietnam의 영문 번역문·해설문은 수록하지 않음. 따라서 재배포 「제한」으로 판정. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [출처 성격] 법령 원문을 게재하는 상업 법령DB의 재게시본으로 확인함. 법령번호·조항은 원문과 일치하나 정부 공식 사이트 원본은 미확보(접근 차단). 재배포 가부는 해당 DB 이용약관 확인 필요. ‖ 제10조 제1항(표준 20%)·제13조 제1항(10%·15년)·제14조(4년 면제+9년 50% 감면) ‖ [링크 유지 사유 2026-08-18] 본 4행은 상업 법령DB의 영문 번역본을 가리키고 있어 재배포 판정이 「제한」임. 베트남어 공보 원문이 아닌 영문본을 가리키는 것은 의도된 선택으로, 세율·감면기간 등 조문 대조 시 영문본이 필요하기 때문임. 데이터셋에는 사실 값(세율·기간)만 수록하고 번역문 자체는 수록하지 않음. 공보 원문 링크 병기가 필요하면 별도 행으로 추가 가능. raw: C-015_원본링크_공보전환_2026-08-18.md",
+      "sourceProvenance": {
+        "elementId": "C-015",
+        "indicatorId": "C-015_policy_document_source_link_law_corporate_tax_law",
+        "sourceFileDecoded": "C-015_재생에너지 법제도 원본 링크.xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-af1eb5f40c48|URL",
+      "dimensionLabels": {
+        "category": "법인세법 시행령",
+        "detail": "Decree 320/2025/NĐ-CP",
+        "detail_2": "CIT 우대 대상·기간 세부",
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-04 · CTIS-05 · CTIS-06 · CTIS-07 · CTIS-08"
+      },
+      "dimensions": {
+        "category": "법인세법 시행령",
+        "detail": "Decree 320/2025/NĐ-CP",
+        "detail_2": "CIT 우대 대상·기간 세부",
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08"
+      },
+      "displayLabel": "정책 문서 원본 링크 레지스트리 · 법인세법 시행령 — Decree 320/2025/NĐ-CP — CIT 우대 대상·기간 세부",
+      "indicatorId": "C-015_policy_document_source_link_law_corporate_tax_law_decree",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-af1eb5f40c48",
+        "labelKo": "정책 문서 원본 링크 레지스트리",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-af1eb5f40c48|URL|category=법인세법 시행령|detail=Decree 320/2025/NĐ-CP|detail_2=CIT 우대 대상·기간 세부|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08|C-015_policy_document_source_link_law_corporate_tax_law_decree",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ [라이선스 검증 2026-08-15] 유료 구독형 상업 법령DB. 이용약관 페이지가 응답하지 않아(410) LuatVietnam과 동일 성격으로 보수적 판정. 법령번호·조항 등 사실 값만 수록하고 게재문 자체는 수록하지 않음 → 재배포 「제한」. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [출처 성격] 법령 원문을 게재하는 상업 법령DB의 재게시본으로 확인함. 법령번호·조항은 원문과 일치하나 정부 공식 사이트 원본은 미확보(접근 차단). 재배포 가부는 해당 DB 이용약관 확인 필요. ‖ 제19조 제1항·제20조 제1항 ‖ [링크 유지 사유 2026-08-18] 본 4행은 상업 법령DB의 영문 번역본을 가리키고 있어 재배포 판정이 「제한」임. 베트남어 공보 원문이 아닌 영문본을 가리키는 것은 의도된 선택으로, 세율·감면기간 등 조문 대조 시 영문본이 필요하기 때문임. 데이터셋에는 사실 값(세율·기간)만 수록하고 번역문 자체는 수록하지 않음. 공보 원문 링크 병기가 필요하면 별도 행으로 추가 가능. raw: C-015_원본링크_공보전환_2026-08-18.md",
+      "sourceLabel": "정책 문서 원본 링크 레지스트리 · 법인세법 시행령 — Decree 320/2025/NĐ-CP — CIT 우대 대상·기간 세부",
+      "sourceLabelEn": "Policy Document Source Link Law Corporate Tax Law Decree",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ [라이선스 검증 2026-08-15] 유료 구독형 상업 법령DB. 이용약관 페이지가 응답하지 않아(410) LuatVietnam과 동일 성격으로 보수적 판정. 법령번호·조항 등 사실 값만 수록하고 게재문 자체는 수록하지 않음 → 재배포 「제한」. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [출처 성격] 법령 원문을 게재하는 상업 법령DB의 재게시본으로 확인함. 법령번호·조항은 원문과 일치하나 정부 공식 사이트 원본은 미확보(접근 차단). 재배포 가부는 해당 DB 이용약관 확인 필요. ‖ 제19조 제1항·제20조 제1항 ‖ [링크 유지 사유 2026-08-18] 본 4행은 상업 법령DB의 영문 번역본을 가리키고 있어 재배포 판정이 「제한」임. 베트남어 공보 원문이 아닌 영문본을 가리키는 것은 의도된 선택으로, 세율·감면기간 등 조문 대조 시 영문본이 필요하기 때문임. 데이터셋에는 사실 값(세율·기간)만 수록하고 번역문 자체는 수록하지 않음. 공보 원문 링크 병기가 필요하면 별도 행으로 추가 가능. raw: C-015_원본링크_공보전환_2026-08-18.md",
+      "sourceProvenance": {
+        "elementId": "C-015",
+        "indicatorId": "C-015_policy_document_source_link_law_corporate_tax_law_decree",
+        "sourceFileDecoded": "C-015_재생에너지 법제도 원본 링크.xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-af1eb5f40c48|URL",
+      "dimensionLabels": {
+        "category": "MOIT(산업무역부)",
+        "detail": "전원개발계획 운영·입찰 공고",
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-04 · CTIS-05 · CTIS-06 · CTIS-07 · CTIS-08"
+      },
+      "dimensions": {
+        "category": "MOIT(산업무역부)",
+        "detail": "전원개발계획 운영·입찰 공고",
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08"
+      },
+      "displayLabel": "정책 문서 원본 링크 레지스트리 · MOIT(산업무역부) — 전원개발계획 운영·입찰 공고",
+      "indicatorId": "C-015_policy_document_source_link_moit",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-af1eb5f40c48",
+        "labelKo": "정책 문서 원본 링크 레지스트리",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-af1eb5f40c48|URL|category=MOIT(산업무역부)|detail=전원개발계획 운영·입찰 공고|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08|C-015_policy_document_source_link_moit",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ [라이선스 검증 2026-08-15] 베트남 지식재산법 제15조는 법률규범문서(văn bản quy phạm pháp luật) 및 그 공식 번역문을 저작권 보호 대상에서 제외함. 정부 공보·부처 공식 게재문의 법령 본문·수치는 저작권 보호 대상이 아니므로 재배포 「가능」으로 판정. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ 경쟁입찰 라운드 일정 확인처",
+      "sourceLabel": "정책 문서 원본 링크 레지스트리 · MOIT(산업무역부) — 전원개발계획 운영·입찰 공고",
+      "sourceLabelEn": "Policy Document Source Link Moit",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ [라이선스 검증 2026-08-15] 베트남 지식재산법 제15조는 법률규범문서(văn bản quy phạm pháp luật) 및 그 공식 번역문을 저작권 보호 대상에서 제외함. 정부 공보·부처 공식 게재문의 법령 본문·수치는 저작권 보호 대상이 아니므로 재배포 「가능」으로 판정. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ 경쟁입찰 라운드 일정 확인처",
+      "sourceProvenance": {
+        "elementId": "C-015",
+        "indicatorId": "C-015_policy_document_source_link_moit",
+        "sourceFileDecoded": "C-015_재생에너지 법제도 원본 링크.xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-af1eb5f40c48|URL",
+      "dimensionLabels": {
+        "category": "개정령",
+        "detail": "Decree 57/2025(DPPA) 및 Decree 58/2025(재생에너지 개발) 개정",
+        "detail_2": "Decree 243/2026/NĐ-CP",
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-04 · CTIS-05 · CTIS-06 · CTIS-07 · CTIS-08"
+      },
+      "dimensions": {
+        "category": "개정령",
+        "detail": "Decree 57/2025(DPPA) 및 Decree 58/2025(재생에너지 개발) 개정",
+        "detail_2": "Decree 243/2026/NĐ-CP",
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08"
+      },
+      "displayLabel": "정책 문서 원본 링크 레지스트리 · 개정령 — Decree 57/2025(DPPA) 및 Decree 58/2025(재생에너지 개발) 개정 — Decree 243/2026/NĐ-CP",
+      "indicatorId": "C-015_policy_document_source_link_nghi_dinh_243_2026",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-af1eb5f40c48",
+        "labelKo": "정책 문서 원본 링크 레지스트리",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-af1eb5f40c48|URL|category=개정령|detail=Decree 57/2025(DPPA) 및 Decree 58/2025(재생에너지 개발) 개정|detail_2=Decree 243/2026/NĐ-CP|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08|C-015_policy_document_source_link_nghi_dinh_243_2026",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: RENA / IEA / 현지 에너지부·전력청 통계 / 지정 URL: IRENA IRENASTAT → 판정: 사용 불가. IRENASTAT은 설비용량·발전량 실적 통계만 수록하고 정책 문서 원본링크를 담지 않아 「현지 에너지부·전력청」 계열 1차 법령원문(정부 공보)으로 수집함. ‖ [신규 수록 2026-08-18] 원본링크 공보 전환 작업 중 데이터셋 전체에 한 번도 등장하지 않던 법령임을 확인해 레지스트리에 추가함. ‖ [라이선스 검증 2026-08-18] 베트남 지식재산법 제15조상 법률규범문서는 저작권 비보호 → 재배포 「가능」. raw: C-015_원본링크_공보전환_2026-08-18.md",
+      "sourceLabel": "정책 문서 원본 링크 레지스트리 · 개정령 — Decree 57/2025(DPPA) 및 Decree 58/2025(재생에너지 개발) 개정 — Decree 243/2026/NĐ-CP",
+      "sourceLabelEn": "Policy Document Source Link — 243/2026/NĐ-CP",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: RENA / IEA / 현지 에너지부·전력청 통계 / 지정 URL: IRENA IRENASTAT → 판정: 사용 불가. IRENASTAT은 설비용량·발전량 실적 통계만 수록하고 정책 문서 원본링크를 담지 않아 「현지 에너지부·전력청」 계열 1차 법령원문(정부 공보)으로 수집함. ‖ [신규 수록 2026-08-18] 원본링크 공보 전환 작업 중 데이터셋 전체에 한 번도 등장하지 않던 법령임을 확인해 레지스트리에 추가함. ‖ [라이선스 검증 2026-08-18] 베트남 지식재산법 제15조상 법률규범문서는 저작권 비보호 → 재배포 「가능」. raw: C-015_원본링크_공보전환_2026-08-18.md",
+      "sourceProvenance": {
+        "elementId": "C-015",
+        "indicatorId": "C-015_policy_document_source_link_nghi_dinh_243_2026",
+        "sourceFileDecoded": "C-015_재생에너지 법제도 원본 링크.xlsx",
+        "sourceRow": 25,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-af1eb5f40c48|URL",
+      "dimensionLabels": {
+        "category": "전력법 시행령",
+        "detail": "재생에너지·신에너지 개발(phát triển điện năng lượng tái tạo, điện năng lượng mới)",
+        "detail_2": "Decree 58/2025/NĐ-CP",
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-04 · CTIS-05 · CTIS-06 · CTIS-07 · CTIS-08"
+      },
+      "dimensions": {
+        "category": "전력법 시행령",
+        "detail": "재생에너지·신에너지 개발(phát triển điện năng lượng tái tạo, điện năng lượng mới)",
+        "detail_2": "Decree 58/2025/NĐ-CP",
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08"
+      },
+      "displayLabel": "정책 문서 원본 링크 레지스트리 · 전력법 시행령 — 재생에너지·신에너지 개발(phát triển điện năng lượng tái tạo, điện năng lượng mới) — Decree 58/2025/NĐ-CP",
+      "indicatorId": "C-015_policy_document_source_link_nghi_dinh_58_2025",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-af1eb5f40c48",
+        "labelKo": "정책 문서 원본 링크 레지스트리",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-af1eb5f40c48|URL|category=전력법 시행령|detail=재생에너지·신에너지 개발(phát triển điện năng lượng tái tạo, điện năng lượng mới)|detail_2=Decree 58/2025/NĐ-CP|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08|C-015_policy_document_source_link_nghi_dinh_58_2025",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: RENA / IEA / 현지 에너지부·전력청 통계 / 지정 URL: IRENA IRENASTAT → 판정: 사용 불가. IRENASTAT은 설비용량·발전량 실적 통계만 수록하고 정책 문서 원본링크를 담지 않아 「현지 에너지부·전력청」 계열 1차 법령원문(정부 공보)으로 수집함. ‖ [신규 수록 2026-08-18] 원본링크 공보 전환 작업 중 데이터셋 전체에 한 번도 등장하지 않던 법령임을 확인해 레지스트리에 추가함. ‖ [라이선스 검증 2026-08-18] 베트남 지식재산법 제15조상 법률규범문서는 저작권 비보호 → 재배포 「가능」. raw: C-015_원본링크_공보전환_2026-08-18.md",
+      "sourceLabel": "정책 문서 원본 링크 레지스트리 · 전력법 시행령 — 재생에너지·신에너지 개발(phát triển điện năng lượng tái tạo, điện năng lượng mới) — Decree 58/2025/NĐ-CP",
+      "sourceLabelEn": "Policy Document Source Link — 58/2025/NĐ-CP",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: RENA / IEA / 현지 에너지부·전력청 통계 / 지정 URL: IRENA IRENASTAT → 판정: 사용 불가. IRENASTAT은 설비용량·발전량 실적 통계만 수록하고 정책 문서 원본링크를 담지 않아 「현지 에너지부·전력청」 계열 1차 법령원문(정부 공보)으로 수집함. ‖ [신규 수록 2026-08-18] 원본링크 공보 전환 작업 중 데이터셋 전체에 한 번도 등장하지 않던 법령임을 확인해 레지스트리에 추가함. ‖ [라이선스 검증 2026-08-18] 베트남 지식재산법 제15조상 법률규범문서는 저작권 비보호 → 재배포 「가능」. raw: C-015_원본링크_공보전환_2026-08-18.md",
+      "sourceProvenance": {
+        "elementId": "C-015",
+        "indicatorId": "C-015_policy_document_source_link_nghi_dinh_58_2025",
+        "sourceFileDecoded": "C-015_재생에너지 법제도 원본 링크.xlsx",
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-af1eb5f40c48|URL",
+      "dimensionLabels": {
+        "category": "전력법 시행령",
+        "detail": "전력사업 허가(giấy phép hoạt động điện lực)",
+        "detail_2": "Decree 61/2025/NĐ-CP",
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-04 · CTIS-05 · CTIS-06 · CTIS-07 · CTIS-08"
+      },
+      "dimensions": {
+        "category": "전력법 시행령",
+        "detail": "전력사업 허가(giấy phép hoạt động điện lực)",
+        "detail_2": "Decree 61/2025/NĐ-CP",
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08"
+      },
+      "displayLabel": "정책 문서 원본 링크 레지스트리 · 전력법 시행령 — 전력사업 허가(giấy phép hoạt động điện lực) — Decree 61/2025/NĐ-CP",
+      "indicatorId": "C-015_policy_document_source_link_nghi_dinh_61_2025",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-af1eb5f40c48",
+        "labelKo": "정책 문서 원본 링크 레지스트리",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-af1eb5f40c48|URL|category=전력법 시행령|detail=전력사업 허가(giấy phép hoạt động điện lực)|detail_2=Decree 61/2025/NĐ-CP|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08|C-015_policy_document_source_link_nghi_dinh_61_2025",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: RENA / IEA / 현지 에너지부·전력청 통계 / 지정 URL: IRENA IRENASTAT → 판정: 사용 불가. IRENASTAT은 설비용량·발전량 실적 통계만 수록하고 정책 문서 원본링크를 담지 않아 「현지 에너지부·전력청」 계열 1차 법령원문(정부 공보)으로 수집함. ‖ [신규 수록 2026-08-18] 원본링크 공보 전환 작업 중 데이터셋 전체에 한 번도 등장하지 않던 법령임을 확인해 레지스트리에 추가함. ‖ [라이선스 검증 2026-08-18] 베트남 지식재산법 제15조상 법률규범문서는 저작권 비보호 → 재배포 「가능」. raw: C-015_원본링크_공보전환_2026-08-18.md",
+      "sourceLabel": "정책 문서 원본 링크 레지스트리 · 전력법 시행령 — 전력사업 허가(giấy phép hoạt động điện lực) — Decree 61/2025/NĐ-CP",
+      "sourceLabelEn": "Policy Document Source Link — 61/2025/NĐ-CP",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: RENA / IEA / 현지 에너지부·전력청 통계 / 지정 URL: IRENA IRENASTAT → 판정: 사용 불가. IRENASTAT은 설비용량·발전량 실적 통계만 수록하고 정책 문서 원본링크를 담지 않아 「현지 에너지부·전력청」 계열 1차 법령원문(정부 공보)으로 수집함. ‖ [신규 수록 2026-08-18] 원본링크 공보 전환 작업 중 데이터셋 전체에 한 번도 등장하지 않던 법령임을 확인해 레지스트리에 추가함. ‖ [라이선스 검증 2026-08-18] 베트남 지식재산법 제15조상 법률규범문서는 저작권 비보호 → 재배포 「가능」. raw: C-015_원본링크_공보전환_2026-08-18.md",
+      "sourceProvenance": {
+        "elementId": "C-015",
+        "indicatorId": "C-015_policy_document_source_link_nghi_dinh_61_2025",
+        "sourceFileDecoded": "C-015_재생에너지 법제도 원본 링크.xlsx",
+        "sourceRow": 24,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-af1eb5f40c48|URL",
+      "dimensionLabels": {
+        "category": "태양광 FIT 1차",
+        "detail": "Decision 11/2017/QĐ-TTg",
+        "detail_2": "종료(2019.6 이후 COD 미적용)",
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-04 · CTIS-05 · CTIS-06 · CTIS-07 · CTIS-08"
+      },
+      "dimensions": {
+        "category": "태양광 FIT 1차",
+        "detail": "Decision 11/2017/QĐ-TTg",
+        "detail_2": "종료(2019.6 이후 COD 미적용)",
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08"
+      },
+      "displayLabel": "정책 문서 원본 링크 레지스트리 · 태양광 FIT 1차 — Decision 11/2017/QĐ-TTg — 종료(2019.6 이후 COD 미적용)",
+      "indicatorId": "C-015_policy_document_source_link_solar_fit_primary",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-af1eb5f40c48",
+        "labelKo": "정책 문서 원본 링크 레지스트리",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-af1eb5f40c48|URL|category=태양광 FIT 1차|detail=Decision 11/2017/QĐ-TTg|detail_2=종료(2019.6 이후 COD 미적용)|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08|C-015_policy_document_source_link_solar_fit_primary",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ [라이선스 검증 2026-08-15] 이용약관 원문 확인: \"The re-using of information, English translating documents from LuatVietnam to circulate on means of media or other websites must be allowed in writing from INCOM Company\" / \"Must not provide LuatVietnam's translations to the third party\". → 본 데이터셋은 해당 사이트가 게재한 「법령번호·조항번호·공포일·시행일·주무부처」 등 저작권 보호 대상이 아닌 사실(fact) 값만 수록하였고 LuatVietnam의 영문 번역문·해설문은 수록하지 않음. 따라서 재배포 「제한」으로 판정. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [출처 성격] 법령 원문을 게재하는 상업 법령DB의 재게시본으로 확인함. 법령번호·조항은 원문과 일치하나 정부 공식 사이트 원본은 미확보(접근 차단). 재배포 가부는 해당 DB 이용약관 확인 필요. ‖ Decision 13/2020으로 대체 ‖ [원본링크 교체 2026-08-18] 종전 source_url이 상업 법령DB 도메인 루트(https://luatvietnam.vn/)만 가리켜 원문에 도달할 수 없었음. 베트남 정부 공보(vanban.chinhphu.vn) 상세 페이지와 서명본 PDF로 교체함. 이에 따라 라이선스도 상업DB 약관(재배포 제한)에서 베트남 지식재산법 제15조(법률규범문서 저작권 비보호, 재배포 가능)로 변경됨. raw: C-015_원본링크_공보전환_2026-08-18.md",
+      "sourceLabel": "정책 문서 원본 링크 레지스트리 · 태양광 FIT 1차 — Decision 11/2017/QĐ-TTg — 종료(2019.6 이후 COD 미적용)",
+      "sourceLabelEn": "Policy Document Source Link Solar Fit Primary",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ [라이선스 검증 2026-08-15] 이용약관 원문 확인: \"The re-using of information, English translating documents from LuatVietnam to circulate on means of media or other websites must be allowed in writing from INCOM Company\" / \"Must not provide LuatVietnam's translations to the third party\". → 본 데이터셋은 해당 사이트가 게재한 「법령번호·조항번호·공포일·시행일·주무부처」 등 저작권 보호 대상이 아닌 사실(fact) 값만 수록하였고 LuatVietnam의 영문 번역문·해설문은 수록하지 않음. 따라서 재배포 「제한」으로 판정. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [출처 성격] 법령 원문을 게재하는 상업 법령DB의 재게시본으로 확인함. 법령번호·조항은 원문과 일치하나 정부 공식 사이트 원본은 미확보(접근 차단). 재배포 가부는 해당 DB 이용약관 확인 필요. ‖ Decision 13/2020으로 대체 ‖ [원본링크 교체 2026-08-18] 종전 source_url이 상업 법령DB 도메인 루트(https://luatvietnam.vn/)만 가리켜 원문에 도달할 수 없었음. 베트남 정부 공보(vanban.chinhphu.vn) 상세 페이지와 서명본 PDF로 교체함. 이에 따라 라이선스도 상업DB 약관(재배포 제한)에서 베트남 지식재산법 제15조(법률규범문서 저작권 비보호, 재배포 가능)로 변경됨. raw: C-015_원본링크_공보전환_2026-08-18.md",
+      "sourceProvenance": {
+        "elementId": "C-015",
+        "indicatorId": "C-015_policy_document_source_link_solar_fit_primary",
+        "sourceFileDecoded": "C-015_재생에너지 법제도 원본 링크.xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-af1eb5f40c48|URL",
+      "dimensionLabels": {
+        "category": "태양광 FIT 2차",
+        "detail": "Decision 13/2020/QĐ-TTg",
+        "detail_2": "종료(2021.1 이후 신규 COD 미적용)",
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-04 · CTIS-05 · CTIS-06 · CTIS-07 · CTIS-08"
+      },
+      "dimensions": {
+        "category": "태양광 FIT 2차",
+        "detail": "Decision 13/2020/QĐ-TTg",
+        "detail_2": "종료(2021.1 이후 신규 COD 미적용)",
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08"
+      },
+      "displayLabel": "정책 문서 원본 링크 레지스트리 · 태양광 FIT 2차 — Decision 13/2020/QĐ-TTg — 종료(2021.1 이후 신규 COD 미적용)",
+      "indicatorId": "C-015_policy_document_source_link_solar_fit_secondary",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-af1eb5f40c48",
+        "labelKo": "정책 문서 원본 링크 레지스트리",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-af1eb5f40c48|URL|category=태양광 FIT 2차|detail=Decision 13/2020/QĐ-TTg|detail_2=종료(2021.1 이후 신규 COD 미적용)|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08|C-015_policy_document_source_link_solar_fit_secondary",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ [라이선스 검증 2026-08-15] 이용약관 원문 확인: \"The re-using of information, English translating documents from LuatVietnam to circulate on means of media or other websites must be allowed in writing from INCOM Company\" / \"Must not provide LuatVietnam's translations to the third party\". → 본 데이터셋은 해당 사이트가 게재한 「법령번호·조항번호·공포일·시행일·주무부처」 등 저작권 보호 대상이 아닌 사실(fact) 값만 수록하였고 LuatVietnam의 영문 번역문·해설문은 수록하지 않음. 따라서 재배포 「제한」으로 판정. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [출처 성격] 법령 원문을 게재하는 상업 법령DB의 재게시본으로 확인함. 법령번호·조항은 원문과 일치하나 정부 공식 사이트 원본은 미확보(접근 차단). 재배포 가부는 해당 DB 이용약관 확인 필요. ‖ 선행 Decision 11/2017/QĐ-TTg 대체 ‖ [원본링크 교체 2026-08-18] 종전 source_url이 상업 법령DB 도메인 루트(https://luatvietnam.vn/)만 가리켜 원문에 도달할 수 없었음. 베트남 정부 공보(vanban.chinhphu.vn) 상세 페이지와 서명본 PDF로 교체함. 이에 따라 라이선스도 상업DB 약관(재배포 제한)에서 베트남 지식재산법 제15조(법률규범문서 저작권 비보호, 재배포 가능)로 변경됨. raw: C-015_원본링크_공보전환_2026-08-18.md",
+      "sourceLabel": "정책 문서 원본 링크 레지스트리 · 태양광 FIT 2차 — Decision 13/2020/QĐ-TTg — 종료(2021.1 이후 신규 COD 미적용)",
+      "sourceLabelEn": "Policy Document Source Link Solar Fit Secondary",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ [라이선스 검증 2026-08-15] 이용약관 원문 확인: \"The re-using of information, English translating documents from LuatVietnam to circulate on means of media or other websites must be allowed in writing from INCOM Company\" / \"Must not provide LuatVietnam's translations to the third party\". → 본 데이터셋은 해당 사이트가 게재한 「법령번호·조항번호·공포일·시행일·주무부처」 등 저작권 보호 대상이 아닌 사실(fact) 값만 수록하였고 LuatVietnam의 영문 번역문·해설문은 수록하지 않음. 따라서 재배포 「제한」으로 판정. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [출처 성격] 법령 원문을 게재하는 상업 법령DB의 재게시본으로 확인함. 법령번호·조항은 원문과 일치하나 정부 공식 사이트 원본은 미확보(접근 차단). 재배포 가부는 해당 DB 이용약관 확인 필요. ‖ 선행 Decision 11/2017/QĐ-TTg 대체 ‖ [원본링크 교체 2026-08-18] 종전 source_url이 상업 법령DB 도메인 루트(https://luatvietnam.vn/)만 가리켜 원문에 도달할 수 없었음. 베트남 정부 공보(vanban.chinhphu.vn) 상세 페이지와 서명본 PDF로 교체함. 이에 따라 라이선스도 상업DB 약관(재배포 제한)에서 베트남 지식재산법 제15조(법률규범문서 저작권 비보호, 재배포 가능)로 변경됨. raw: C-015_원본링크_공보전환_2026-08-18.md",
+      "sourceProvenance": {
+        "elementId": "C-015",
+        "indicatorId": "C-015_policy_document_source_link_solar_fit_secondary",
+        "sourceFileDecoded": "C-015_재생에너지 법제도 원본 링크.xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-af1eb5f40c48|URL",
+      "dimensionLabels": {
+        "category": "전환기 발전가격",
+        "detail": "Quyết định 21/QĐ-BCT",
+        "detail_2": "적용 중(FIT 종료~경쟁입찰 시행 전 과도기)",
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-04 · CTIS-05 · CTIS-06 · CTIS-07 · CTIS-08"
+      },
+      "dimensions": {
+        "category": "전환기 발전가격",
+        "detail": "Quyết định 21/QĐ-BCT",
+        "detail_2": "적용 중(FIT 종료~경쟁입찰 시행 전 과도기)",
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08"
+      },
+      "displayLabel": "정책 문서 원본 링크 레지스트리 · 전환기 발전가격 — Quyết định 21/QĐ-BCT — 적용 중(FIT 종료~경쟁입찰 시행 전 과도기)",
+      "indicatorId": "C-015_policy_document_source_link_transition_gi_generation_price",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-af1eb5f40c48",
+        "labelKo": "정책 문서 원본 링크 레지스트리",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-af1eb5f40c48|URL|category=전환기 발전가격|detail=Quyết định 21/QĐ-BCT|detail_2=적용 중(FIT 종료~경쟁입찰 시행 전 과도기)|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08|C-015_policy_document_source_link_transition_gi_generation_price",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ [라이선스 검증 2026-08-15] 이용약관 원문 확인: \"The re-using of information, English translating documents from LuatVietnam to circulate on means of media or other websites must be allowed in writing from INCOM Company\" / \"Must not provide LuatVietnam's translations to the third party\". → 본 데이터셋은 해당 사이트가 게재한 「법령번호·조항번호·공포일·시행일·주무부처」 등 저작권 보호 대상이 아닌 사실(fact) 값만 수록하였고 LuatVietnam의 영문 번역문·해설문은 수록하지 않음. 따라서 재배포 「제한」으로 판정. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [출처 성격] 법령 원문을 게재하는 상업 법령DB의 재게시본으로 확인함. 법령번호·조항은 원문과 일치하나 정부 공식 사이트 원본은 미확보(접근 차단). 재배포 가부는 해당 DB 이용약관 확인 필요. ‖ 협상 상한가 제도, MOIT 소관 ‖ [법령번호 정정 2026-08-18] 종전 기재 「21/2023/QĐ-BCT」는 오기임. 실제 문서번호는 「21/QĐ-BCT」(2023-01-07)로, 연도가 붙는 규범문서가 아니라 산업무역부 장관의 개별 결정임. 산업무역부 전력·재생에너지국(EREA) 공고로 확인하고 출처도 해당 기관 공고로 교체함. raw: C-015_원본링크_공보전환_2026-08-18.md",
+      "sourceLabel": "정책 문서 원본 링크 레지스트리 · 전환기 발전가격 — Quyết định 21/QĐ-BCT — 적용 중(FIT 종료~경쟁입찰 시행 전 과도기)",
+      "sourceLabelEn": "Policy Document Source Link Transition Gi Generation Price",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ [라이선스 검증 2026-08-15] 이용약관 원문 확인: \"The re-using of information, English translating documents from LuatVietnam to circulate on means of media or other websites must be allowed in writing from INCOM Company\" / \"Must not provide LuatVietnam's translations to the third party\". → 본 데이터셋은 해당 사이트가 게재한 「법령번호·조항번호·공포일·시행일·주무부처」 등 저작권 보호 대상이 아닌 사실(fact) 값만 수록하였고 LuatVietnam의 영문 번역문·해설문은 수록하지 않음. 따라서 재배포 「제한」으로 판정. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [출처 성격] 법령 원문을 게재하는 상업 법령DB의 재게시본으로 확인함. 법령번호·조항은 원문과 일치하나 정부 공식 사이트 원본은 미확보(접근 차단). 재배포 가부는 해당 DB 이용약관 확인 필요. ‖ 협상 상한가 제도, MOIT 소관 ‖ [법령번호 정정 2026-08-18] 종전 기재 「21/2023/QĐ-BCT」는 오기임. 실제 문서번호는 「21/QĐ-BCT」(2023-01-07)로, 연도가 붙는 규범문서가 아니라 산업무역부 장관의 개별 결정임. 산업무역부 전력·재생에너지국(EREA) 공고로 확인하고 출처도 해당 기관 공고로 교체함. raw: C-015_원본링크_공보전환_2026-08-18.md",
+      "sourceProvenance": {
+        "elementId": "C-015",
+        "indicatorId": "C-015_policy_document_source_link_transition_gi_generation_price",
+        "sourceFileDecoded": "C-015_재생에너지 법제도 원본 링크.xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-af1eb5f40c48|URL",
+      "dimensionLabels": {
+        "category": "풍력 FIT",
+        "detail": "Decision 39/2018/QĐ-TTg",
+        "detail_2": "종료(2021.11 이후 신규 COD 미적용)",
+        "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-04 · CTIS-05 · CTIS-06 · CTIS-07 · CTIS-08"
+      },
+      "dimensions": {
+        "category": "풍력 FIT",
+        "detail": "Decision 39/2018/QĐ-TTg",
+        "detail_2": "종료(2021.11 이후 신규 COD 미적용)",
+        "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08"
+      },
+      "displayLabel": "정책 문서 원본 링크 레지스트리 · 풍력 FIT — Decision 39/2018/QĐ-TTg — 종료(2021.11 이후 신규 COD 미적용)",
+      "indicatorId": "C-015_policy_document_source_link_wind_fit",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-af1eb5f40c48",
+        "labelKo": "정책 문서 원본 링크 레지스트리",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-af1eb5f40c48|URL|category=풍력 FIT|detail=Decision 39/2018/QĐ-TTg|detail_2=종료(2021.11 이후 신규 COD 미적용)|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08|C-015_policy_document_source_link_wind_fit",
+      "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ [라이선스 검증 2026-08-15] 이용약관 원문 확인: \"The re-using of information, English translating documents from LuatVietnam to circulate on means of media or other websites must be allowed in writing from INCOM Company\" / \"Must not provide LuatVietnam's translations to the third party\". → 본 데이터셋은 해당 사이트가 게재한 「법령번호·조항번호·공포일·시행일·주무부처」 등 저작권 보호 대상이 아닌 사실(fact) 값만 수록하였고 LuatVietnam의 영문 번역문·해설문은 수록하지 않음. 따라서 재배포 「제한」으로 판정. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [출처 성격] 법령 원문을 게재하는 상업 법령DB의 재게시본으로 확인함. 법령번호·조항은 원문과 일치하나 정부 공식 사이트 원본은 미확보(접근 차단). 재배포 가부는 해당 DB 이용약관 확인 필요. ‖ 육상·해상 풍력 공통 적용 ‖ [원본링크 교체 2026-08-18] 종전 source_url이 상업 법령DB 도메인 루트(https://luatvietnam.vn/)만 가리켜 원문에 도달할 수 없었음. 베트남 정부 공보(vanban.chinhphu.vn) 상세 페이지와 서명본 PDF로 교체함. 이에 따라 라이선스도 상업DB 약관(재배포 제한)에서 베트남 지식재산법 제15조(법률규범문서 저작권 비보호, 재배포 가능)로 변경됨. raw: C-015_원본링크_공보전환_2026-08-18.md",
+      "sourceLabel": "정책 문서 원본 링크 레지스트리 · 풍력 FIT — Decision 39/2018/QĐ-TTg — 종료(2021.11 이후 신규 COD 미적용)",
+      "sourceLabelEn": "Policy Document Source Link Wind Fit",
+      "sourceNote": "[지정 출처 대조] 수집현황 v5.29 지정 DB: 현지 에너지부·전력청 / IRENA / 지정 URL: https://pxweb.irena.org/pxweb/en/IRENASTAT/ / 지정 수집방법: 웹 다운로드 → 판정: 대체. 지정 URL(IRENA IRENASTAT)은 설비용량·발전량 통계 실적만 수록하는 통계 DB로, 이 요소가 요구하는 정책 문서 원본 링크를 수록하지 않음(차단이 아니라 수록 범위 밖). 지정 DB명 앞부분의 「현지 에너지부·전력청」 계열에서 정책 원문을 확보 — 개정 PDP8 서명 원문 등 raw 5건 보유. ‖ [라이선스 검증 2026-08-15] 이용약관 원문 확인: \"The re-using of information, English translating documents from LuatVietnam to circulate on means of media or other websites must be allowed in writing from INCOM Company\" / \"Must not provide LuatVietnam's translations to the third party\". → 본 데이터셋은 해당 사이트가 게재한 「법령번호·조항번호·공포일·시행일·주무부처」 등 저작권 보호 대상이 아닌 사실(fact) 값만 수록하였고 LuatVietnam의 영문 번역문·해설문은 수록하지 않음. 따라서 재배포 「제한」으로 판정. ‖ [raw 미보관] 출처 URL로 확인한 값이며 원본 파일은 raw 폴더에 보관되어 있지 않음(제3자 재현 시 URL 접속 필요). ‖ [출처 성격] 법령 원문을 게재하는 상업 법령DB의 재게시본으로 확인함. 법령번호·조항은 원문과 일치하나 정부 공식 사이트 원본은 미확보(접근 차단). 재배포 가부는 해당 DB 이용약관 확인 필요. ‖ 육상·해상 풍력 공통 적용 ‖ [원본링크 교체 2026-08-18] 종전 source_url이 상업 법령DB 도메인 루트(https://luatvietnam.vn/)만 가리켜 원문에 도달할 수 없었음. 베트남 정부 공보(vanban.chinhphu.vn) 상세 페이지와 서명본 PDF로 교체함. 이에 따라 라이선스도 상업DB 약관(재배포 제한)에서 베트남 지식재산법 제15조(법률규범문서 저작권 비보호, 재배포 가능)로 변경됨. raw: C-015_원본링크_공보전환_2026-08-18.md",
+      "sourceProvenance": {
+        "elementId": "C-015",
+        "indicatorId": "C-015_policy_document_source_link_wind_fit",
+        "sourceFileDecoded": "C-015_재생에너지 법제도 원본 링크.xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 18,
+      "key": "measure-af1eb5f40c48",
+      "labelKo": "정책 문서 원본 링크 레지스트리",
+      "recordCount": 18,
+      "unit": "URL",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 3,
+      "key": "measure-1a8991448f45",
+      "labelKo": "지정 출처 상태 및 데이터 보완 이력",
+      "recordCount": 3,
+      "unit": "—",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 21,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

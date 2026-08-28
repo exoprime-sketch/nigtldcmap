@@ -1,0 +1,2427 @@
+{
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 5,
+      "values": [
+        "FAO 국토면적 분모(임계 30%)",
+        "임계 10%",
+        "임계 30%",
+        "임계 50%",
+        "임계 75%"
+      ]
+    },
+    {
+      "key": "detail_2",
+      "labelKo": "detail_2",
+      "valueCount": 63,
+      "values": [
+        "An Giang",
+        "Bà Rịa - Vũng Tàu",
+        "Bình Dương",
+        "Bình Phước",
+        "Bình Thuận",
+        "Bình Định",
+        "Bạc Liêu",
+        "Bắc Giang",
+        "Bắc Kạn",
+        "Bắc Ninh",
+        "Bến Tre",
+        "Cao Bằng",
+        "Cà Mau",
+        "Cần Thơ",
+        "Gia Lai",
+        "Hoà Bình",
+        "Hà Giang",
+        "Hà Nam",
+        "Hà Nội",
+        "Hà Tĩnh",
+        "Hưng Yên",
+        "Hải Dương",
+        "Hải Phòng",
+        "Hậu Giang",
+        "Hồ Chí Minh",
+        "Khánh Hòa",
+        "Kiên Giang",
+        "Kon Tum",
+        "Lai Châu",
+        "Long An",
+        "Lào Cai",
+        "Lâm Đồng",
+        "Lạng Sơn",
+        "Nam Định",
+        "Nghệ An",
+        "Ninh Bình",
+        "Ninh Thuận",
+        "Phú Thọ",
+        "Phú Yên",
+        "Quảng Bình",
+        "Quảng Nam",
+        "Quảng Ngãi",
+        "Quảng Ninh",
+        "Quảng Trị",
+        "Sóc Trăng",
+        "Sơn La",
+        "Thanh Hóa",
+        "Thái Bình",
+        "Thái Nguyên",
+        "Thừa Thiên Huế",
+        "Tiền Giang",
+        "Trà Vinh",
+        "Tuyên Quang",
+        "Tây Ninh",
+        "Vĩnh Long",
+        "Vĩnh Phúc",
+        "Yên Bái",
+        "Điện Biên",
+        "Đà Nẵng",
+        "Đắk Lắk",
+        "Đắk Nông",
+        "Đồng Nai",
+        "Đồng Tháp"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "23,35"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 2,
+      "values": [
+        "2000",
+        "2010"
+      ]
+    }
+  ],
+  "elementId": "B-032",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 68,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-fb60a24be7d8|%",
+      "dimensionLabels": {
+        "detail": "임계 10%"
+      },
+      "dimensions": {
+        "detail": "임계 10%"
+      },
+      "displayLabel": "수관 피복률 — 임계 10%",
+      "indicatorId": "B-032_canopy_cover_10",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-fb60a24be7d8",
+        "labelKo": "수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-fb60a24be7d8|%|detail=임계 10%|B-032_canopy_cover_10",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "수관 피복률 — 임계 10%",
+      "sourceLabelEn": "Tree canopy cover 10% threshold",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_10",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-fb60a24be7d8|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "technology": "23,35"
+      },
+      "displayLabel": "수관 피복률 — 임계 30%",
+      "indicatorId": "B-032_canopy_cover_30",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-fb60a24be7d8",
+        "labelKo": "수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-fb60a24be7d8|%|detail=임계 30%|technology=23,35|B-032_canopy_cover_30",
+      "sourceCaveat": "[분모 주석] 피복률의 분모는 GFW 분석 국토면적(32,926,971 ha, 연도 무관 고정값)이며 FAOSTAT Country area는 연도별로 변하는 계열입니다(2000년 32,924천ha · 2010년 33,095.4천ha · 2024년 33,133.8천ha). **연도를 맞춰 계산하면 두 분모의 결과는 사실상 같습니다** — 2000년 FAO 분모 기준 50.27%로 GFW 분모 기준(50.27%)과 동일하고, 2010년은 FAO 분모 49.47% vs GFW 분모 49.72%로 0.25%p 차이입니다. 즉 분모 차이의 본질은 \"정의 차이\"보다 **연도 정합 여부**이며, FAO 국토면적이 2000→2024년에 걸쳐 210천ha 증가하는 반면 GFW 분석면적은 고정값이라는 점에서 발생합니다. 분모 출처와 기준연도를 반드시 병기해야 합니다.[GIS 처리] 원천 산출물은 30m 해상도 위성 래스터(UMD/Hansen Global Forest Change)이며, 슈타트가 보유·사용한 원자료는 GFW가 국가·성·현 경계로 집계해 배포하는 통계 워크북입니다 ([raw]\\Global Forest Watch_VNM.xlsx). 본 표의 값은 이 워크북에서 추출한 것이며 30m 래스터를 직접 처리한 값이 아닙니다. 메타 3종(레이어명·버전 / 추출일자 / 좌표계 EPSG:4326·경계기준 GADM)은 워크북 기준으로 기재했습니다. 30m 래스터 원본이 필요할 경우 GFW Data API 또는 Hansen GFC 타일에서 별도 수집이 필요하며, 집계방식(수관밀도 임계 30%)은 향후 가공 가이드라인 확정 시 재조정. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 확보됨 — 원본 다운로드에 성(63개) 및 현(710개) 단위 시트 포함. 발주처 확정 시 즉시 확장 수록 가능. / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "수관 피복률 — 임계 30%",
+      "sourceLabelEn": "Tree canopy cover 30% threshold",
+      "sourceNote": "[분모 주석] 피복률의 분모는 GFW 분석 국토면적(32,926,971 ha, 연도 무관 고정값)이며 FAOSTAT Country area는 연도별로 변하는 계열입니다(2000년 32,924천ha · 2010년 33,095.4천ha · 2024년 33,133.8천ha). **연도를 맞춰 계산하면 두 분모의 결과는 사실상 같습니다** — 2000년 FAO 분모 기준 50.27%로 GFW 분모 기준(50.27%)과 동일하고, 2010년은 FAO 분모 49.47% vs GFW 분모 49.72%로 0.25%p 차이입니다. 즉 분모 차이의 본질은 \"정의 차이\"보다 **연도 정합 여부**이며, FAO 국토면적이 2000→2024년에 걸쳐 210천ha 증가하는 반면 GFW 분석면적은 고정값이라는 점에서 발생합니다. 분모 출처와 기준연도를 반드시 병기해야 합니다.[GIS 처리] 원천 산출물은 30m 해상도 위성 래스터(UMD/Hansen Global Forest Change)이며, 슈타트가 보유·사용한 원자료는 GFW가 국가·성·현 경계로 집계해 배포하는 통계 워크북입니다 ([raw]\\Global Forest Watch_VNM.xlsx). 본 표의 값은 이 워크북에서 추출한 것이며 30m 래스터를 직접 처리한 값이 아닙니다. 메타 3종(레이어명·버전 / 추출일자 / 좌표계 EPSG:4326·경계기준 GADM)은 워크북 기준으로 기재했습니다. 30m 래스터 원본이 필요할 경우 GFW Data API 또는 Hansen GFC 타일에서 별도 수집이 필요하며, 집계방식(수관밀도 임계 30%)은 향후 가공 가이드라인 확정 시 재조정. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 확보됨 — 원본 다운로드에 성(63개) 및 현(710개) 단위 시트 포함. 발주처 확정 시 즉시 확장 수록 가능. / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_30",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 4,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-fb60a24be7d8|%",
+      "dimensionLabels": {
+        "detail": "임계 50%"
+      },
+      "dimensions": {
+        "detail": "임계 50%"
+      },
+      "displayLabel": "수관 피복률 — 임계 50%",
+      "indicatorId": "B-032_canopy_cover_50",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-fb60a24be7d8",
+        "labelKo": "수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-fb60a24be7d8|%|detail=임계 50%|B-032_canopy_cover_50",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "수관 피복률 — 임계 50%",
+      "sourceLabelEn": "Tree canopy cover 50% threshold",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_50",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-fb60a24be7d8|%",
+      "dimensionLabels": {
+        "detail": "임계 75%"
+      },
+      "dimensions": {
+        "detail": "임계 75%"
+      },
+      "displayLabel": "수관 피복률 — 임계 75%",
+      "indicatorId": "B-032_canopy_cover_75",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-fb60a24be7d8",
+        "labelKo": "수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-fb60a24be7d8|%|detail=임계 75%|B-032_canopy_cover_75",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "수관 피복률 — 임계 75%",
+      "sourceLabelEn": "Tree canopy cover 75% threshold",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_75",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-fb60a24be7d8|%",
+      "dimensionLabels": {
+        "detail": "FAO 국토면적 분모(임계 30%)",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "FAO 국토면적 분모(임계 30%)",
+        "technology": "23,35"
+      },
+      "displayLabel": "수관 피복률 — FAO 국토면적 분모(임계 30%)",
+      "indicatorId": "B-032_canopy_cover_fao_denom",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-fb60a24be7d8",
+        "labelKo": "수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-fb60a24be7d8|%|detail=FAO 국토면적 분모(임계 30%)|technology=23,35|B-032_canopy_cover_fao_denom",
+      "sourceCaveat": "[분모 정합 대조] 발주처 지적(분모가 B-035와 다름)에 대한 대조 계열. 연도를 맞추면 2000년은 GFW 분모와 동일(50.27%), 2010년만 0.25%p 낮게 산출됨. 분자·분모의 원천이 달라 참고용 대조 지표이며 주계열은 canopy_cover_30임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "수관 피복률 — FAO 국토면적 분모(임계 30%)",
+      "sourceLabelEn": "Tree canopy cover with FAO country area as denominator",
+      "sourceNote": "[분모 정합 대조] 발주처 지적(분모가 B-035와 다름)에 대한 대조 계열. 연도를 맞추면 2000년은 GFW 분모와 동일(50.27%), 2010년만 0.25%p 낮게 산출됨. 분자·분모의 원천이 달라 참고용 대조 지표이며 주계열은 canopy_cover_30임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_fao_denom",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Đà Nẵng",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Đà Nẵng",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Đà Nẵng",
+      "indicatorId": "B-032_canopy_cover_prov_30_a_nang",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Đà Nẵng|technology=23,35|B-032_canopy_cover_prov_30_a_nang",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Đà Nẵng",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_a_nang",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 67,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Đắk Lắk",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Đắk Lắk",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Đắk Lắk",
+      "indicatorId": "B-032_canopy_cover_prov_30_ak_lak",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Đắk Lắk|technology=23,35|B-032_canopy_cover_prov_30_ak_lak",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Đắk Lắk",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_ak_lak",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 68,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Đắk Nông",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Đắk Nông",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Đắk Nông",
+      "indicatorId": "B-032_canopy_cover_prov_30_ak_nong",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Đắk Nông|technology=23,35|B-032_canopy_cover_prov_30_ak_nong",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Đắk Nông",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_ak_nong",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 69,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "An Giang",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "An Giang",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — An Giang",
+      "indicatorId": "B-032_canopy_cover_prov_30_an_giang",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=An Giang|technology=23,35|B-032_canopy_cover_prov_30_an_giang",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — An Giang",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_an_giang",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Bà Rịa - Vũng Tàu",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Bà Rịa - Vũng Tàu",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Bà Rịa - Vũng Tàu",
+      "indicatorId": "B-032_canopy_cover_prov_30_ba_ria_vung_tau",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Bà Rịa - Vũng Tàu|technology=23,35|B-032_canopy_cover_prov_30_ba_ria_vung_tau",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Bà Rịa - Vũng Tàu",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_ba_ria_vung_tau",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Bắc Giang",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Bắc Giang",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Bắc Giang",
+      "indicatorId": "B-032_canopy_cover_prov_30_bac_giang",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Bắc Giang|technology=23,35|B-032_canopy_cover_prov_30_bac_giang",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Bắc Giang",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_bac_giang",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Bắc Kạn",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Bắc Kạn",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Bắc Kạn",
+      "indicatorId": "B-032_canopy_cover_prov_30_bac_kan",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Bắc Kạn|technology=23,35|B-032_canopy_cover_prov_30_bac_kan",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Bắc Kạn",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_bac_kan",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Bạc Liêu",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Bạc Liêu",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Bạc Liêu",
+      "indicatorId": "B-032_canopy_cover_prov_30_bac_lieu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Bạc Liêu|technology=23,35|B-032_canopy_cover_prov_30_bac_lieu",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Bạc Liêu",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_bac_lieu",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Bắc Ninh",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Bắc Ninh",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Bắc Ninh",
+      "indicatorId": "B-032_canopy_cover_prov_30_bac_ninh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Bắc Ninh|technology=23,35|B-032_canopy_cover_prov_30_bac_ninh",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Bắc Ninh",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_bac_ninh",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Bến Tre",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Bến Tre",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Bến Tre",
+      "indicatorId": "B-032_canopy_cover_prov_30_ben_tre",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Bến Tre|technology=23,35|B-032_canopy_cover_prov_30_ben_tre",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Bến Tre",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_ben_tre",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Bình Dương",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Bình Dương",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Bình Dương",
+      "indicatorId": "B-032_canopy_cover_prov_30_binh_duong",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Bình Dương|technology=23,35|B-032_canopy_cover_prov_30_binh_duong",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Bình Dương",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_binh_duong",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Bình Định",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Bình Định",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Bình Định",
+      "indicatorId": "B-032_canopy_cover_prov_30_binh_inh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Bình Định|technology=23,35|B-032_canopy_cover_prov_30_binh_inh",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Bình Định",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_binh_inh",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Bình Phước",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Bình Phước",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Bình Phước",
+      "indicatorId": "B-032_canopy_cover_prov_30_binh_phuoc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Bình Phước|technology=23,35|B-032_canopy_cover_prov_30_binh_phuoc",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Bình Phước",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_binh_phuoc",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Bình Thuận",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Bình Thuận",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Bình Thuận",
+      "indicatorId": "B-032_canopy_cover_prov_30_binh_thuan",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Bình Thuận|technology=23,35|B-032_canopy_cover_prov_30_binh_thuan",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Bình Thuận",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_binh_thuan",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Cà Mau",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Cà Mau",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Cà Mau",
+      "indicatorId": "B-032_canopy_cover_prov_30_ca_mau",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Cà Mau|technology=23,35|B-032_canopy_cover_prov_30_ca_mau",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Cà Mau",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_ca_mau",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Cần Thơ",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Cần Thơ",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Cần Thơ",
+      "indicatorId": "B-032_canopy_cover_prov_30_can_tho",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Cần Thơ|technology=23,35|B-032_canopy_cover_prov_30_can_tho",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Cần Thơ",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_can_tho",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Cao Bằng",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Cao Bằng",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Cao Bằng",
+      "indicatorId": "B-032_canopy_cover_prov_30_cao_bang",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Cao Bằng|technology=23,35|B-032_canopy_cover_prov_30_cao_bang",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Cao Bằng",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_cao_bang",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Đồng Nai",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Đồng Nai",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Đồng Nai",
+      "indicatorId": "B-032_canopy_cover_prov_30_dong_nai",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Đồng Nai|technology=23,35|B-032_canopy_cover_prov_30_dong_nai",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Đồng Nai",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_dong_nai",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 70,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Gia Lai",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Gia Lai",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Gia Lai",
+      "indicatorId": "B-032_canopy_cover_prov_30_gia_lai",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Gia Lai|technology=23,35|B-032_canopy_cover_prov_30_gia_lai",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Gia Lai",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_gia_lai",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Hà Giang",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Hà Giang",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Hà Giang",
+      "indicatorId": "B-032_canopy_cover_prov_30_ha_giang",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Hà Giang|technology=23,35|B-032_canopy_cover_prov_30_ha_giang",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Hà Giang",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_ha_giang",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 25,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Hà Nam",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Hà Nam",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Hà Nam",
+      "indicatorId": "B-032_canopy_cover_prov_30_ha_nam",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Hà Nam|technology=23,35|B-032_canopy_cover_prov_30_ha_nam",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Hà Nam",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_ha_nam",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 26,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Hà Nội",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Hà Nội",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Hà Nội",
+      "indicatorId": "B-032_canopy_cover_prov_30_ha_noi",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Hà Nội|technology=23,35|B-032_canopy_cover_prov_30_ha_noi",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Hà Nội",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_ha_noi",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 27,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Hà Tĩnh",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Hà Tĩnh",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Hà Tĩnh",
+      "indicatorId": "B-032_canopy_cover_prov_30_ha_tinh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Hà Tĩnh|technology=23,35|B-032_canopy_cover_prov_30_ha_tinh",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Hà Tĩnh",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_ha_tinh",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 28,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Hải Dương",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Hải Dương",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Hải Dương",
+      "indicatorId": "B-032_canopy_cover_prov_30_hai_duong",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Hải Dương|technology=23,35|B-032_canopy_cover_prov_30_hai_duong",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Hải Dương",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_hai_duong",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 30,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Hải Phòng",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Hải Phòng",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Hải Phòng",
+      "indicatorId": "B-032_canopy_cover_prov_30_hai_phong",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Hải Phòng|technology=23,35|B-032_canopy_cover_prov_30_hai_phong",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Hải Phòng",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_hai_phong",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 31,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Hậu Giang",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Hậu Giang",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Hậu Giang",
+      "indicatorId": "B-032_canopy_cover_prov_30_hau_giang",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Hậu Giang|technology=23,35|B-032_canopy_cover_prov_30_hau_giang",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Hậu Giang",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_hau_giang",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 32,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Hồ Chí Minh",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Hồ Chí Minh",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Hồ Chí Minh",
+      "indicatorId": "B-032_canopy_cover_prov_30_ho_chi_minh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Hồ Chí Minh|technology=23,35|B-032_canopy_cover_prov_30_ho_chi_minh",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Hồ Chí Minh",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_ho_chi_minh",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 33,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Hoà Bình",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Hoà Bình",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Hoà Bình",
+      "indicatorId": "B-032_canopy_cover_prov_30_hoa_binh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Hoà Bình|technology=23,35|B-032_canopy_cover_prov_30_hoa_binh",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Hoà Bình",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_hoa_binh",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 24,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Hưng Yên",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Hưng Yên",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Hưng Yên",
+      "indicatorId": "B-032_canopy_cover_prov_30_hung_yen",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Hưng Yên|technology=23,35|B-032_canopy_cover_prov_30_hung_yen",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Hưng Yên",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_hung_yen",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 29,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Điện Biên",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Điện Biên",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Điện Biên",
+      "indicatorId": "B-032_canopy_cover_prov_30_ien_bien",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Điện Biên|technology=23,35|B-032_canopy_cover_prov_30_ien_bien",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Điện Biên",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_ien_bien",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 66,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Khánh Hòa",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Khánh Hòa",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Khánh Hòa",
+      "indicatorId": "B-032_canopy_cover_prov_30_khanh_hoa",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Khánh Hòa|technology=23,35|B-032_canopy_cover_prov_30_khanh_hoa",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Khánh Hòa",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_khanh_hoa",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 34,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Kiên Giang",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Kiên Giang",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Kiên Giang",
+      "indicatorId": "B-032_canopy_cover_prov_30_kien_giang",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Kiên Giang|technology=23,35|B-032_canopy_cover_prov_30_kien_giang",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Kiên Giang",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_kien_giang",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 35,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Kon Tum",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Kon Tum",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Kon Tum",
+      "indicatorId": "B-032_canopy_cover_prov_30_kon_tum",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Kon Tum|technology=23,35|B-032_canopy_cover_prov_30_kon_tum",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Kon Tum",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_kon_tum",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 36,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Lai Châu",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Lai Châu",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Lai Châu",
+      "indicatorId": "B-032_canopy_cover_prov_30_lai_chau",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Lai Châu|technology=23,35|B-032_canopy_cover_prov_30_lai_chau",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Lai Châu",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_lai_chau",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 37,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Lâm Đồng",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Lâm Đồng",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Lâm Đồng",
+      "indicatorId": "B-032_canopy_cover_prov_30_lam_ong",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Lâm Đồng|technology=23,35|B-032_canopy_cover_prov_30_lam_ong",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Lâm Đồng",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_lam_ong",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 40,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Lạng Sơn",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Lạng Sơn",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Lạng Sơn",
+      "indicatorId": "B-032_canopy_cover_prov_30_lang_son",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Lạng Sơn|technology=23,35|B-032_canopy_cover_prov_30_lang_son",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Lạng Sơn",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_lang_son",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 41,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Lào Cai",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Lào Cai",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Lào Cai",
+      "indicatorId": "B-032_canopy_cover_prov_30_lao_cai",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Lào Cai|technology=23,35|B-032_canopy_cover_prov_30_lao_cai",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Lào Cai",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_lao_cai",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 39,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Long An",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Long An",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Long An",
+      "indicatorId": "B-032_canopy_cover_prov_30_long_an",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Long An|technology=23,35|B-032_canopy_cover_prov_30_long_an",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Long An",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_long_an",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 38,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Nam Định",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Nam Định",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Nam Định",
+      "indicatorId": "B-032_canopy_cover_prov_30_nam_inh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Nam Định|technology=23,35|B-032_canopy_cover_prov_30_nam_inh",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Nam Định",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_nam_inh",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 42,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Nghệ An",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Nghệ An",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Nghệ An",
+      "indicatorId": "B-032_canopy_cover_prov_30_nghe_an",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Nghệ An|technology=23,35|B-032_canopy_cover_prov_30_nghe_an",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Nghệ An",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_nghe_an",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 43,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Ninh Bình",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Ninh Bình",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Ninh Bình",
+      "indicatorId": "B-032_canopy_cover_prov_30_ninh_binh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Ninh Bình|technology=23,35|B-032_canopy_cover_prov_30_ninh_binh",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Ninh Bình",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_ninh_binh",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 44,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Ninh Thuận",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Ninh Thuận",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Ninh Thuận",
+      "indicatorId": "B-032_canopy_cover_prov_30_ninh_thuan",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Ninh Thuận|technology=23,35|B-032_canopy_cover_prov_30_ninh_thuan",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Ninh Thuận",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_ninh_thuan",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 45,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Đồng Tháp",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Đồng Tháp",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Đồng Tháp",
+      "indicatorId": "B-032_canopy_cover_prov_30_ong_thap",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Đồng Tháp|technology=23,35|B-032_canopy_cover_prov_30_ong_thap",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Đồng Tháp",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_ong_thap",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 71,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Phú Thọ",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Phú Thọ",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Phú Thọ",
+      "indicatorId": "B-032_canopy_cover_prov_30_phu_tho",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Phú Thọ|technology=23,35|B-032_canopy_cover_prov_30_phu_tho",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Phú Thọ",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_phu_tho",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 46,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Phú Yên",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Phú Yên",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Phú Yên",
+      "indicatorId": "B-032_canopy_cover_prov_30_phu_yen",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Phú Yên|technology=23,35|B-032_canopy_cover_prov_30_phu_yen",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Phú Yên",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_phu_yen",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 47,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Quảng Bình",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Quảng Bình",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Quảng Bình",
+      "indicatorId": "B-032_canopy_cover_prov_30_quang_binh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Quảng Bình|technology=23,35|B-032_canopy_cover_prov_30_quang_binh",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Quảng Bình",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_quang_binh",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 48,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Quảng Nam",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Quảng Nam",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Quảng Nam",
+      "indicatorId": "B-032_canopy_cover_prov_30_quang_nam",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Quảng Nam|technology=23,35|B-032_canopy_cover_prov_30_quang_nam",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Quảng Nam",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_quang_nam",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 49,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Quảng Ngãi",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Quảng Ngãi",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Quảng Ngãi",
+      "indicatorId": "B-032_canopy_cover_prov_30_quang_ngai",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Quảng Ngãi|technology=23,35|B-032_canopy_cover_prov_30_quang_ngai",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Quảng Ngãi",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_quang_ngai",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 50,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Quảng Ninh",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Quảng Ninh",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Quảng Ninh",
+      "indicatorId": "B-032_canopy_cover_prov_30_quang_ninh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Quảng Ninh|technology=23,35|B-032_canopy_cover_prov_30_quang_ninh",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Quảng Ninh",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_quang_ninh",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 51,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Quảng Trị",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Quảng Trị",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Quảng Trị",
+      "indicatorId": "B-032_canopy_cover_prov_30_quang_tri",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Quảng Trị|technology=23,35|B-032_canopy_cover_prov_30_quang_tri",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Quảng Trị",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_quang_tri",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 52,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Sóc Trăng",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Sóc Trăng",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Sóc Trăng",
+      "indicatorId": "B-032_canopy_cover_prov_30_soc_trang",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Sóc Trăng|technology=23,35|B-032_canopy_cover_prov_30_soc_trang",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Sóc Trăng",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_soc_trang",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 53,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Sơn La",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Sơn La",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Sơn La",
+      "indicatorId": "B-032_canopy_cover_prov_30_son_la",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Sơn La|technology=23,35|B-032_canopy_cover_prov_30_son_la",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Sơn La",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_son_la",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 54,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Tây Ninh",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Tây Ninh",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Tây Ninh",
+      "indicatorId": "B-032_canopy_cover_prov_30_tay_ninh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Tây Ninh|technology=23,35|B-032_canopy_cover_prov_30_tay_ninh",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Tây Ninh",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_tay_ninh",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 62,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Thái Bình",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Thái Bình",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Thái Bình",
+      "indicatorId": "B-032_canopy_cover_prov_30_thai_binh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Thái Bình|technology=23,35|B-032_canopy_cover_prov_30_thai_binh",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Thái Bình",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_thai_binh",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 56,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Thái Nguyên",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Thái Nguyên",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Thái Nguyên",
+      "indicatorId": "B-032_canopy_cover_prov_30_thai_nguyen",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Thái Nguyên|technology=23,35|B-032_canopy_cover_prov_30_thai_nguyen",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Thái Nguyên",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_thai_nguyen",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 57,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Thanh Hóa",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Thanh Hóa",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Thanh Hóa",
+      "indicatorId": "B-032_canopy_cover_prov_30_thanh_hoa",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Thanh Hóa|technology=23,35|B-032_canopy_cover_prov_30_thanh_hoa",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Thanh Hóa",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_thanh_hoa",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 55,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Thừa Thiên Huế",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Thừa Thiên Huế",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Thừa Thiên Huế",
+      "indicatorId": "B-032_canopy_cover_prov_30_thua_thien_hue",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Thừa Thiên Huế|technology=23,35|B-032_canopy_cover_prov_30_thua_thien_hue",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Thừa Thiên Huế",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_thua_thien_hue",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 58,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Tiền Giang",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Tiền Giang",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Tiền Giang",
+      "indicatorId": "B-032_canopy_cover_prov_30_tien_giang",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Tiền Giang|technology=23,35|B-032_canopy_cover_prov_30_tien_giang",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Tiền Giang",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_tien_giang",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 59,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Trà Vinh",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Trà Vinh",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Trà Vinh",
+      "indicatorId": "B-032_canopy_cover_prov_30_tra_vinh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Trà Vinh|technology=23,35|B-032_canopy_cover_prov_30_tra_vinh",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Trà Vinh",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_tra_vinh",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 60,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Tuyên Quang",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Tuyên Quang",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Tuyên Quang",
+      "indicatorId": "B-032_canopy_cover_prov_30_tuyen_quang",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Tuyên Quang|technology=23,35|B-032_canopy_cover_prov_30_tuyen_quang",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Tuyên Quang",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_tuyen_quang",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 61,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Vĩnh Long",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Vĩnh Long",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Vĩnh Long",
+      "indicatorId": "B-032_canopy_cover_prov_30_vinh_long",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Vĩnh Long|technology=23,35|B-032_canopy_cover_prov_30_vinh_long",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Vĩnh Long",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_vinh_long",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 63,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Vĩnh Phúc",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Vĩnh Phúc",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Vĩnh Phúc",
+      "indicatorId": "B-032_canopy_cover_prov_30_vinh_phuc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Vĩnh Phúc|technology=23,35|B-032_canopy_cover_prov_30_vinh_phuc",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Vĩnh Phúc",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_vinh_phuc",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 64,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-15d5f8e7a89f|%",
+      "dimensionLabels": {
+        "detail": "임계 30%",
+        "detail_2": "Yên Bái",
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "detail": "임계 30%",
+        "detail_2": "Yên Bái",
+        "technology": "23,35"
+      },
+      "displayLabel": "성(省)별 수관 피복률 — 임계 30% — Yên Bái",
+      "indicatorId": "B-032_canopy_cover_prov_30_yen_bai",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-15d5f8e7a89f",
+        "labelKo": "성(省)별 수관 피복률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-15d5f8e7a89f|%|detail=임계 30%|detail_2=Yên Bái|technology=23,35|B-032_canopy_cover_prov_30_yen_bai",
+      "sourceCaveat": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "성(省)별 수관 피복률 — 임계 30% — Yên Bái",
+      "sourceLabelEn": "Tree canopy cover by province (30%)",
+      "sourceNote": "[공간 단위 확장] 보유 [raw] 워크북 Subnational 1 시트로 63개 성·직할시 피복률을 산출. 지역 편차가 큼 — 2000년 기준 Kon Tum 77.34% · Lâm Đồng 73.35% · Nghệ An 65.94% · Cà Mau 15.11%. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 63개 성·직할시 / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-032",
+        "indicatorId": "B-032_canopy_cover_prov_30_yen_bai",
+        "sourceFileDecoded": "B-032_수관 피복률(%).xlsx",
+        "sourceRow": 65,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 63,
+      "key": "measure-15d5f8e7a89f",
+      "labelKo": "성(省)별 수관 피복률",
+      "recordCount": 126,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 5,
+      "key": "measure-fb60a24be7d8",
+      "labelKo": "수관 피복률",
+      "recordCount": 10,
+      "unit": "%",
+      "unitFamily": "percent"
+    }
+  ],
+  "observationCount": 136,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

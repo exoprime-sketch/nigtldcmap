@@ -1,0 +1,221 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 2,
+      "values": [
+        "ILO 모델추정",
+        "국가추정"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 3,
+      "values": [
+        "15~24세 경제활동인구 대비 실업자 비율",
+        "경제활동인구 대비 실업자 비율(ILO 모형 보정 추정치)",
+        "경제활동인구 대비 실업자 비율(베트남 통계총국 노동력조사 기반)"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 35,
+      "values": [
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ]
+    }
+  ],
+  "elementId": "A-006",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 4,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-93ccf6a5d485|%",
+      "dimensionLabels": {
+        "category": "ILO 모델추정",
+        "detail": "경제활동인구 대비 실업자 비율(ILO 모형 보정 추정치)"
+      },
+      "dimensions": {
+        "category": "ILO 모델추정",
+        "detail": "경제활동인구 대비 실업자 비율(ILO 모형 보정 추정치)"
+      },
+      "displayLabel": "전체 실업률 · ILO 모델추정 — 경제활동인구 대비 실업자 비율(ILO 모형 보정 추정치)",
+      "indicatorId": "A-006_unemp_total_ilo",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-93ccf6a5d485",
+        "labelKo": "전체 실업률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-93ccf6a5d485|%|category=ILO 모델추정|detail=경제활동인구 대비 실업자 비율(ILO 모형 보정 추정치)|A-006_unemp_total_ilo",
+      "sourceCaveat": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-006 폴더 Unemployment rate; youth unemployment rate.xlsx). [중복 검토] 검토의견 1번을 raw 전수 대조로 확인함 — 전체 실업률은 국가추정과 ILO 모델추정이 겹치는 26개년 중 25개년이 0.005%p 이내로 일치하며 상이한 해는 2024뿐임. 반면 청년 실업률은 겹치는 18개년 중 일치하는 해가 0개년에 불과함. 즉 지적은 전체 실업률 계열에만 해당함. ILO 모형이 베트남의 경우 국가 노동력조사 값을 그대로 채택하기 때문이며, 서로 다른 두 계열이므로 원문대로 각각 수록하고 임의 통합·삭제하지 않음. 두 계열을 합산하거나 평균하지 말 것. [결측] 검토의견 2번에 따라 국가추정 계열의 조사 미시행 연도(2005·2006·2008)를 값 공란 + M01로 명시함. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "전체 실업률 · ILO 모델추정 — 경제활동인구 대비 실업자 비율(ILO 모형 보정 추정치)",
+      "sourceLabelEn": "Unemployment, total (ILO modelled estimate)",
+      "sourceNote": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-006 폴더 Unemployment rate; youth unemployment rate.xlsx). [중복 검토] 검토의견 1번을 raw 전수 대조로 확인함 — 전체 실업률은 국가추정과 ILO 모델추정이 겹치는 26개년 중 25개년이 0.005%p 이내로 일치하며 상이한 해는 2024뿐임. 반면 청년 실업률은 겹치는 18개년 중 일치하는 해가 0개년에 불과함. 즉 지적은 전체 실업률 계열에만 해당함. ILO 모형이 베트남의 경우 국가 노동력조사 값을 그대로 채택하기 때문이며, 서로 다른 두 계열이므로 원문대로 각각 수록하고 임의 통합·삭제하지 않음. 두 계열을 합산하거나 평균하지 말 것. [결측] 검토의견 2번에 따라 국가추정 계열의 조사 미시행 연도(2005·2006·2008)를 값 공란 + M01로 명시함. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-006",
+        "indicatorId": "A-006_unemp_total_ilo",
+        "sourceFileDecoded": "A-006_실업률; 청년실업률.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-93ccf6a5d485|%",
+      "dimensionLabels": {
+        "category": "국가추정",
+        "detail": "경제활동인구 대비 실업자 비율(베트남 통계총국 노동력조사 기반)"
+      },
+      "dimensions": {
+        "category": "국가추정",
+        "detail": "경제활동인구 대비 실업자 비율(베트남 통계총국 노동력조사 기반)"
+      },
+      "displayLabel": "전체 실업률 · 국가추정 — 경제활동인구 대비 실업자 비율(베트남 통계총국 노동력조사 기반)",
+      "indicatorId": "A-006_unemp_total_national",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-93ccf6a5d485",
+        "labelKo": "전체 실업률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-93ccf6a5d485|%|category=국가추정|detail=경제활동인구 대비 실업자 비율(베트남 통계총국 노동력조사 기반)|A-006_unemp_total_national",
+      "sourceCaveat": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-006 폴더 Unemployment rate; youth unemployment rate.xlsx). [중복 검토] 검토의견 1번을 raw 전수 대조로 확인함 — 전체 실업률은 국가추정과 ILO 모델추정이 겹치는 26개년 중 25개년이 0.005%p 이내로 일치하며 상이한 해는 2024뿐임. 반면 청년 실업률은 겹치는 18개년 중 일치하는 해가 0개년에 불과함. 즉 지적은 전체 실업률 계열에만 해당함. ILO 모형이 베트남의 경우 국가 노동력조사 값을 그대로 채택하기 때문이며, 서로 다른 두 계열이므로 원문대로 각각 수록하고 임의 통합·삭제하지 않음. 두 계열을 합산하거나 평균하지 말 것. [결측] 검토의견 2번에 따라 국가추정 계열의 조사 미시행 연도(2005·2006·2008)를 값 공란 + M01로 명시함. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "전체 실업률 · 국가추정 — 경제활동인구 대비 실업자 비율(베트남 통계총국 노동력조사 기반)",
+      "sourceLabelEn": "Unemployment, total (national estimate)",
+      "sourceNote": "1996-2024 중 2005, 2006, 2008년 값이 원천에 없음. 재확보 대상 1차 출처: 베트남 통계총국(GSO) 연도별 노동력조사 보고서.",
+      "sourceProvenance": {
+        "elementId": "A-006",
+        "indicatorId": "A-006_unemp_total_national",
+        "sourceFileDecoded": "A-006_실업률; 청년실업률.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-74f02116590a|%",
+      "dimensionLabels": {
+        "category": "ILO 모델추정",
+        "detail": "15~24세 경제활동인구 대비 실업자 비율"
+      },
+      "dimensions": {
+        "category": "ILO 모델추정",
+        "detail": "15~24세 경제활동인구 대비 실업자 비율"
+      },
+      "displayLabel": "청년 실업률 · ILO 모델추정 — 15~24세 경제활동인구 대비 실업자 비율",
+      "indicatorId": "A-006_unemp_youth_ilo",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-74f02116590a",
+        "labelKo": "청년 실업률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-74f02116590a|%|category=ILO 모델추정|detail=15~24세 경제활동인구 대비 실업자 비율|A-006_unemp_youth_ilo",
+      "sourceCaveat": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-006 폴더 Unemployment rate; youth unemployment rate.xlsx). [중복 검토] 검토의견 1번을 raw 전수 대조로 확인함 — 전체 실업률은 국가추정과 ILO 모델추정이 겹치는 26개년 중 25개년이 0.005%p 이내로 일치하며 상이한 해는 2024뿐임. 반면 청년 실업률은 겹치는 18개년 중 일치하는 해가 0개년에 불과함. 즉 지적은 전체 실업률 계열에만 해당함. ILO 모형이 베트남의 경우 국가 노동력조사 값을 그대로 채택하기 때문이며, 서로 다른 두 계열이므로 원문대로 각각 수록하고 임의 통합·삭제하지 않음. 두 계열을 합산하거나 평균하지 말 것. [결측] 검토의견 2번에 따라 국가추정 계열의 조사 미시행 연도(2005·2006·2008)를 값 공란 + M01로 명시함. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "청년 실업률 · ILO 모델추정 — 15~24세 경제활동인구 대비 실업자 비율",
+      "sourceLabelEn": "Unemployment, youth total, ages 15-24 (ILO modelled estimate)",
+      "sourceNote": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-006 폴더 Unemployment rate; youth unemployment rate.xlsx). [중복 검토] 검토의견 1번을 raw 전수 대조로 확인함 — 전체 실업률은 국가추정과 ILO 모델추정이 겹치는 26개년 중 25개년이 0.005%p 이내로 일치하며 상이한 해는 2024뿐임. 반면 청년 실업률은 겹치는 18개년 중 일치하는 해가 0개년에 불과함. 즉 지적은 전체 실업률 계열에만 해당함. ILO 모형이 베트남의 경우 국가 노동력조사 값을 그대로 채택하기 때문이며, 서로 다른 두 계열이므로 원문대로 각각 수록하고 임의 통합·삭제하지 않음. 두 계열을 합산하거나 평균하지 말 것. [결측] 검토의견 2번에 따라 국가추정 계열의 조사 미시행 연도(2005·2006·2008)를 값 공란 + M01로 명시함. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-006",
+        "indicatorId": "A-006_unemp_youth_ilo",
+        "sourceFileDecoded": "A-006_실업률; 청년실업률.xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-74f02116590a|%",
+      "dimensionLabels": {
+        "category": "국가추정",
+        "detail": "15~24세 경제활동인구 대비 실업자 비율"
+      },
+      "dimensions": {
+        "category": "국가추정",
+        "detail": "15~24세 경제활동인구 대비 실업자 비율"
+      },
+      "displayLabel": "청년 실업률 · 국가추정 — 15~24세 경제활동인구 대비 실업자 비율",
+      "indicatorId": "A-006_unemp_youth_national",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-74f02116590a",
+        "labelKo": "청년 실업률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-74f02116590a|%|category=국가추정|detail=15~24세 경제활동인구 대비 실업자 비율|A-006_unemp_youth_national",
+      "sourceCaveat": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-006 폴더 Unemployment rate; youth unemployment rate.xlsx). [중복 검토] 검토의견 1번을 raw 전수 대조로 확인함 — 전체 실업률은 국가추정과 ILO 모델추정이 겹치는 26개년 중 25개년이 0.005%p 이내로 일치하며 상이한 해는 2024뿐임. 반면 청년 실업률은 겹치는 18개년 중 일치하는 해가 0개년에 불과함. 즉 지적은 전체 실업률 계열에만 해당함. ILO 모형이 베트남의 경우 국가 노동력조사 값을 그대로 채택하기 때문이며, 서로 다른 두 계열이므로 원문대로 각각 수록하고 임의 통합·삭제하지 않음. 두 계열을 합산하거나 평균하지 말 것. [결측] 검토의견 2번에 따라 국가추정 계열의 조사 미시행 연도(2005·2006·2008)를 값 공란 + M01로 명시함. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "청년 실업률 · 국가추정 — 15~24세 경제활동인구 대비 실업자 비율",
+      "sourceLabelEn": "Unemployment, youth total, ages 15-24 (national estimate)",
+      "sourceNote": "2004-2024 중 2005, 2006, 2008년 값이 원천에 없음. 재확보 대상 1차 출처: 베트남 통계총국(GSO) 연도별 노동력조사 보고서.",
+      "sourceProvenance": {
+        "elementId": "A-006",
+        "indicatorId": "A-006_unemp_youth_national",
+        "sourceFileDecoded": "A-006_실업률; 청년실업률.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 2,
+      "key": "measure-93ccf6a5d485",
+      "labelKo": "전체 실업률",
+      "recordCount": 64,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-74f02116590a",
+      "labelKo": "청년 실업률",
+      "recordCount": 56,
+      "unit": "%",
+      "unitFamily": "percent"
+    }
+  ],
+  "observationCount": 120,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

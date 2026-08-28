@@ -1,0 +1,395 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 1,
+      "values": [
+        "베트남"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 8,
+      "values": [
+        "90% 신뢰구간 상한",
+        "90% 신뢰구간 하한",
+        "2011년 이전 방법론 기준 부패인식지수 점수(0~10)",
+        "2011년 이전 방법론 기준 조사대상국 중 순위",
+        "국제투명성기구 부패인식지수 점수(0=매우 부패, 100=매우 청렴)",
+        "점수 산출에 사용된 원천 조사 건수",
+        "점수 추정의 표준오차",
+        "조사대상국 중 부패인식지수 순위"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 29,
+      "values": [
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ]
+    }
+  ],
+  "elementId": "A-001",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 8,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-e1d0f1a6c1e8|점",
+      "dimensionLabels": {
+        "category": "베트남",
+        "detail": "90% 신뢰구간 하한"
+      },
+      "dimensions": {
+        "category": "베트남",
+        "detail": "90% 신뢰구간 하한"
+      },
+      "displayLabel": "CPI 신뢰구간 하한 · 베트남 — 90% 신뢰구간 하한",
+      "indicatorId": "A-001_cpi_ci_lower",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e1d0f1a6c1e8",
+        "labelKo": "CPI 신뢰구간 하한",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-e1d0f1a6c1e8|점|category=베트남|detail=90% 신뢰구간 하한|A-001_cpi_ci_lower",
+      "sourceCaveat": "[원본 버전] Transparency International 「Corruption Perceptions Index 2025」 공식 결과파일 CPI2025_Results.xlsx(2026-02-10 공개)를 raw로 사용. 원본이 OOXML strict 형식이라 무손실 변환 후 판독하였으며 값은 원문 그대로임. [시계열 보강] 2011년 이전 15개년(1997~2011)은 Transparency International이 연차별로 공개한 공식 데이터셋(CPI-YYYY.csv, transparencycdn.org)에서 전건 확보하여 0~10 척도 별도 지표(A-001_cpi_score_scale10 · A-001_cpi_rank_scale10)로 수록함. TI가 2012년 방법론 개편 이전 값을 현행 계열과 비교 불가로 명시하므로 하나의 지표로 접속하지 않고 척도별로 분리하였으며, 두 계열을 이어 붙여 추세를 해석하지 말 것. [요소 부합] 요구지표는 TI CPI이므로 종전에 함께 수록되어 있던 World Bank WGI Control of Corruption(GOV_WGI_CC_EST/GOV_WGI_CC_SC) 계열은 참고자료로 분리하고 본 데이터셋에서 제외함. 참고로 WGI의 1997·1999·2001년 공백은 결측이 아니라 1996~2002년이 격년 조사(1996·1998·2000·2002)였기 때문임(raw에서 확인). [시계열 단절] 2012년 방법론 개편으로 척도가 0~10에서 0~100으로 변경되어 2011년 이전 값과 접속되지 않음. [라이선스] 원천 약관이 CC BY-ND 4.0 DE(개변 배포 제한, 인용 허용, 파생물은 TI 서면 문의)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠. [원문 정합] 2012~2018년은 원문이 정수로, 2019년 이후는 소수로 공표되어 자릿수가 혼재함. 원문대로 두고 보정하지 않음.",
+      "sourceLabel": "CPI 신뢰구간 하한 · 베트남 — 90% 신뢰구간 하한",
+      "sourceLabelEn": "CPI score 90% confidence interval, lower bound",
+      "sourceNote": "[원본 버전] Transparency International 「Corruption Perceptions Index 2025」 공식 결과파일 CPI2025_Results.xlsx(2026-02-10 공개)를 raw로 사용. 원본이 OOXML strict 형식이라 무손실 변환 후 판독하였으며 값은 원문 그대로임. [시계열 보강] 2011년 이전 15개년(1997~2011)은 Transparency International이 연차별로 공개한 공식 데이터셋(CPI-YYYY.csv, transparencycdn.org)에서 전건 확보하여 0~10 척도 별도 지표(A-001_cpi_score_scale10 · A-001_cpi_rank_scale10)로 수록함. TI가 2012년 방법론 개편 이전 값을 현행 계열과 비교 불가로 명시하므로 하나의 지표로 접속하지 않고 척도별로 분리하였으며, 두 계열을 이어 붙여 추세를 해석하지 말 것. [요소 부합] 요구지표는 TI CPI이므로 종전에 함께 수록되어 있던 World Bank WGI Control of Corruption(GOV_WGI_CC_EST/GOV_WGI_CC_SC) 계열은 참고자료로 분리하고 본 데이터셋에서 제외함. 참고로 WGI의 1997·1999·2001년 공백은 결측이 아니라 1996~2002년이 격년 조사(1996·1998·2000·2002)였기 때문임(raw에서 확인). [시계열 단절] 2012년 방법론 개편으로 척도가 0~10에서 0~100으로 변경되어 2011년 이전 값과 접속되지 않음. [라이선스] 원천 약관이 CC BY-ND 4.0 DE(개변 배포 제한, 인용 허용, 파생물은 TI 서면 문의)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠. [원문 정합] 2012~2018년은 원문이 정수로, 2019년 이후는 소수로 공표되어 자릿수가 혼재함. 원문대로 두고 보정하지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-001",
+        "indicatorId": "A-001_cpi_ci_lower",
+        "sourceFileDecoded": "A-001_CPI(Corruption Perceptions Index, 부패인식지수).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-caff7e75bb43|점",
+      "dimensionLabels": {
+        "category": "베트남",
+        "detail": "90% 신뢰구간 상한"
+      },
+      "dimensions": {
+        "category": "베트남",
+        "detail": "90% 신뢰구간 상한"
+      },
+      "displayLabel": "CPI 신뢰구간 상한 · 베트남 — 90% 신뢰구간 상한",
+      "indicatorId": "A-001_cpi_ci_upper",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-caff7e75bb43",
+        "labelKo": "CPI 신뢰구간 상한",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-caff7e75bb43|점|category=베트남|detail=90% 신뢰구간 상한|A-001_cpi_ci_upper",
+      "sourceCaveat": "[원본 버전] Transparency International 「Corruption Perceptions Index 2025」 공식 결과파일 CPI2025_Results.xlsx(2026-02-10 공개)를 raw로 사용. 원본이 OOXML strict 형식이라 무손실 변환 후 판독하였으며 값은 원문 그대로임. [시계열 보강] 2011년 이전 15개년(1997~2011)은 Transparency International이 연차별로 공개한 공식 데이터셋(CPI-YYYY.csv, transparencycdn.org)에서 전건 확보하여 0~10 척도 별도 지표(A-001_cpi_score_scale10 · A-001_cpi_rank_scale10)로 수록함. TI가 2012년 방법론 개편 이전 값을 현행 계열과 비교 불가로 명시하므로 하나의 지표로 접속하지 않고 척도별로 분리하였으며, 두 계열을 이어 붙여 추세를 해석하지 말 것. [요소 부합] 요구지표는 TI CPI이므로 종전에 함께 수록되어 있던 World Bank WGI Control of Corruption(GOV_WGI_CC_EST/GOV_WGI_CC_SC) 계열은 참고자료로 분리하고 본 데이터셋에서 제외함. 참고로 WGI의 1997·1999·2001년 공백은 결측이 아니라 1996~2002년이 격년 조사(1996·1998·2000·2002)였기 때문임(raw에서 확인). [시계열 단절] 2012년 방법론 개편으로 척도가 0~10에서 0~100으로 변경되어 2011년 이전 값과 접속되지 않음. [라이선스] 원천 약관이 CC BY-ND 4.0 DE(개변 배포 제한, 인용 허용, 파생물은 TI 서면 문의)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠. [원문 정합] 2012~2018년은 원문이 정수로, 2019년 이후는 소수로 공표되어 자릿수가 혼재함. 원문대로 두고 보정하지 않음.",
+      "sourceLabel": "CPI 신뢰구간 상한 · 베트남 — 90% 신뢰구간 상한",
+      "sourceLabelEn": "CPI score 90% confidence interval, upper bound",
+      "sourceNote": "[원본 버전] Transparency International 「Corruption Perceptions Index 2025」 공식 결과파일 CPI2025_Results.xlsx(2026-02-10 공개)를 raw로 사용. 원본이 OOXML strict 형식이라 무손실 변환 후 판독하였으며 값은 원문 그대로임. [시계열 보강] 2011년 이전 15개년(1997~2011)은 Transparency International이 연차별로 공개한 공식 데이터셋(CPI-YYYY.csv, transparencycdn.org)에서 전건 확보하여 0~10 척도 별도 지표(A-001_cpi_score_scale10 · A-001_cpi_rank_scale10)로 수록함. TI가 2012년 방법론 개편 이전 값을 현행 계열과 비교 불가로 명시하므로 하나의 지표로 접속하지 않고 척도별로 분리하였으며, 두 계열을 이어 붙여 추세를 해석하지 말 것. [요소 부합] 요구지표는 TI CPI이므로 종전에 함께 수록되어 있던 World Bank WGI Control of Corruption(GOV_WGI_CC_EST/GOV_WGI_CC_SC) 계열은 참고자료로 분리하고 본 데이터셋에서 제외함. 참고로 WGI의 1997·1999·2001년 공백은 결측이 아니라 1996~2002년이 격년 조사(1996·1998·2000·2002)였기 때문임(raw에서 확인). [시계열 단절] 2012년 방법론 개편으로 척도가 0~10에서 0~100으로 변경되어 2011년 이전 값과 접속되지 않음. [라이선스] 원천 약관이 CC BY-ND 4.0 DE(개변 배포 제한, 인용 허용, 파생물은 TI 서면 문의)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠. [원문 정합] 2012~2018년은 원문이 정수로, 2019년 이후는 소수로 공표되어 자릿수가 혼재함. 원문대로 두고 보정하지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-001",
+        "indicatorId": "A-001_cpi_ci_upper",
+        "sourceFileDecoded": "A-001_CPI(Corruption Perceptions Index, 부패인식지수).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-52970bf6a5a9|위",
+      "dimensionLabels": {
+        "category": "베트남",
+        "detail": "조사대상국 중 부패인식지수 순위"
+      },
+      "dimensions": {
+        "category": "베트남",
+        "detail": "조사대상국 중 부패인식지수 순위"
+      },
+      "displayLabel": "CPI 순위 · 베트남 — 조사대상국 중 부패인식지수 순위",
+      "indicatorId": "A-001_cpi_rank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-52970bf6a5a9",
+        "labelKo": "CPI 순위",
+        "unit": "위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-52970bf6a5a9|위|category=베트남|detail=조사대상국 중 부패인식지수 순위|A-001_cpi_rank",
+      "sourceCaveat": "[원본 버전] Transparency International 「Corruption Perceptions Index 2025」 공식 결과파일 CPI2025_Results.xlsx(2026-02-10 공개)를 raw로 사용. 원본이 OOXML strict 형식이라 무손실 변환 후 판독하였으며 값은 원문 그대로임. [시계열 보강] 2011년 이전 15개년(1997~2011)은 Transparency International이 연차별로 공개한 공식 데이터셋(CPI-YYYY.csv, transparencycdn.org)에서 전건 확보하여 0~10 척도 별도 지표(A-001_cpi_score_scale10 · A-001_cpi_rank_scale10)로 수록함. TI가 2012년 방법론 개편 이전 값을 현행 계열과 비교 불가로 명시하므로 하나의 지표로 접속하지 않고 척도별로 분리하였으며, 두 계열을 이어 붙여 추세를 해석하지 말 것. [요소 부합] 요구지표는 TI CPI이므로 종전에 함께 수록되어 있던 World Bank WGI Control of Corruption(GOV_WGI_CC_EST/GOV_WGI_CC_SC) 계열은 참고자료로 분리하고 본 데이터셋에서 제외함. 참고로 WGI의 1997·1999·2001년 공백은 결측이 아니라 1996~2002년이 격년 조사(1996·1998·2000·2002)였기 때문임(raw에서 확인). [시계열 단절] 2012년 방법론 개편으로 척도가 0~10에서 0~100으로 변경되어 2011년 이전 값과 접속되지 않음. [라이선스] 원천 약관이 CC BY-ND 4.0 DE(개변 배포 제한, 인용 허용, 파생물은 TI 서면 문의)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠. [해석 주의] 조사대상국 수가 연도마다 달라(2012년 176개국 → 2025년 182개국) 순위의 연도 간 직접 비교는 제한적임. 추세 판단에는 점수를 사용할 것.",
+      "sourceLabel": "CPI 순위 · 베트남 — 조사대상국 중 부패인식지수 순위",
+      "sourceLabelEn": "Corruption Perceptions Index (CPI) rank",
+      "sourceNote": "[원본 버전] Transparency International 「Corruption Perceptions Index 2025」 공식 결과파일 CPI2025_Results.xlsx(2026-02-10 공개)를 raw로 사용. 원본이 OOXML strict 형식이라 무손실 변환 후 판독하였으며 값은 원문 그대로임. [시계열 보강] 2011년 이전 15개년(1997~2011)은 Transparency International이 연차별로 공개한 공식 데이터셋(CPI-YYYY.csv, transparencycdn.org)에서 전건 확보하여 0~10 척도 별도 지표(A-001_cpi_score_scale10 · A-001_cpi_rank_scale10)로 수록함. TI가 2012년 방법론 개편 이전 값을 현행 계열과 비교 불가로 명시하므로 하나의 지표로 접속하지 않고 척도별로 분리하였으며, 두 계열을 이어 붙여 추세를 해석하지 말 것. [요소 부합] 요구지표는 TI CPI이므로 종전에 함께 수록되어 있던 World Bank WGI Control of Corruption(GOV_WGI_CC_EST/GOV_WGI_CC_SC) 계열은 참고자료로 분리하고 본 데이터셋에서 제외함. 참고로 WGI의 1997·1999·2001년 공백은 결측이 아니라 1996~2002년이 격년 조사(1996·1998·2000·2002)였기 때문임(raw에서 확인). [시계열 단절] 2012년 방법론 개편으로 척도가 0~10에서 0~100으로 변경되어 2011년 이전 값과 접속되지 않음. [라이선스] 원천 약관이 CC BY-ND 4.0 DE(개변 배포 제한, 인용 허용, 파생물은 TI 서면 문의)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠. [해석 주의] 조사대상국 수가 연도마다 달라(2012년 176개국 → 2025년 182개국) 순위의 연도 간 직접 비교는 제한적임. 추세 판단에는 점수를 사용할 것.",
+      "sourceProvenance": {
+        "elementId": "A-001",
+        "indicatorId": "A-001_cpi_rank",
+        "sourceFileDecoded": "A-001_CPI(Corruption Perceptions Index, 부패인식지수).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-ece9d66a0235|위",
+      "dimensionLabels": {
+        "category": "베트남",
+        "detail": "2011년 이전 방법론 기준 조사대상국 중 순위"
+      },
+      "dimensions": {
+        "category": "베트남",
+        "detail": "2011년 이전 방법론 기준 조사대상국 중 순위"
+      },
+      "displayLabel": "CPI 순위(구 척도) · 베트남 — 2011년 이전 방법론 기준 조사대상국 중 순위",
+      "indicatorId": "A-001_cpi_rank_scale10",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ece9d66a0235",
+        "labelKo": "CPI 순위(구 척도)",
+        "unit": "위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-ece9d66a0235|위|category=베트남|detail=2011년 이전 방법론 기준 조사대상국 중 순위|A-001_cpi_rank_scale10",
+      "sourceCaveat": "[원본 버전] Transparency International이 연차별로 공개하는 공식 데이터셋(CPI-1997 ~ CPI-2011 CSV, transparencycdn.org)에서 연도별로 베트남 행을 직접 확보함. 각 연도 원본 URL은 note에 병기함. [척도] 2011년 이전 CPI는 0(매우 부패)~10(매우 청렴) 척도이며 2012년 이후의 0~100 척도와 다름. TI가 두 계열을 비교 불가로 명시하므로 별도 지표로 분리 수록하였고, 단순히 10을 곱해 접속시키지 말 것. [신뢰구간] 원문 interval 열은 연도별로 표기 방식이 달라(1997년 미기재, 1998~1999년 표준편차 단일값, 2000~2010년 범위, 2011년 표준오차) 지표화하지 않고 각 행 note에 원문 그대로 병기함. [라이선스] 원천 약관이 CC BY-ND 4.0 DE이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "CPI 순위(구 척도) · 베트남 — 2011년 이전 방법론 기준 조사대상국 중 순위",
+      "sourceLabelEn": "Corruption Perceptions Index (CPI) rank, pre-2012 methodology",
+      "sourceNote": "[원본 버전] Transparency International이 연차별로 공개하는 공식 데이터셋(CPI-1997 ~ CPI-2011 CSV, transparencycdn.org)에서 연도별로 베트남 행을 직접 확보함. 각 연도 원본 URL은 note에 병기함. [척도] 2011년 이전 CPI는 0(매우 부패)~10(매우 청렴) 척도이며 2012년 이후의 0~100 척도와 다름. TI가 두 계열을 비교 불가로 명시하므로 별도 지표로 분리 수록하였고, 단순히 10을 곱해 접속시키지 말 것. [신뢰구간] 원문 interval 열은 연도별로 표기 방식이 달라(1997년 미기재, 1998~1999년 표준편차 단일값, 2000~2010년 범위, 2011년 표준오차) 지표화하지 않고 각 행 note에 원문 그대로 병기함. [라이선스] 원천 약관이 CC BY-ND 4.0 DE이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-001",
+        "indicatorId": "A-001_cpi_rank_scale10",
+        "sourceFileDecoded": "A-001_CPI(Corruption Perceptions Index, 부패인식지수).xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-ffa3eb23fb73|점",
+      "dimensionLabels": {
+        "category": "베트남",
+        "detail": "국제투명성기구 부패인식지수 점수(0=매우 부패, 100=매우 청렴)"
+      },
+      "dimensions": {
+        "category": "베트남",
+        "detail": "국제투명성기구 부패인식지수 점수(0=매우 부패, 100=매우 청렴)"
+      },
+      "displayLabel": "CPI 점수 · 베트남 — 국제투명성기구 부패인식지수 점수(0=매우 부패, 100=매우 청렴)",
+      "indicatorId": "A-001_cpi_score",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ffa3eb23fb73",
+        "labelKo": "CPI 점수",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-ffa3eb23fb73|점|category=베트남|detail=국제투명성기구 부패인식지수 점수(0=매우 부패, 100=매우 청렴)|A-001_cpi_score",
+      "sourceCaveat": "[원본 버전] Transparency International 「Corruption Perceptions Index 2025」 공식 결과파일 CPI2025_Results.xlsx(2026-02-10 공개)를 raw로 사용. 원본이 OOXML strict 형식이라 무손실 변환 후 판독하였으며 값은 원문 그대로임. [시계열 보강] 2011년 이전 15개년(1997~2011)은 Transparency International이 연차별로 공개한 공식 데이터셋(CPI-YYYY.csv, transparencycdn.org)에서 전건 확보하여 0~10 척도 별도 지표(A-001_cpi_score_scale10 · A-001_cpi_rank_scale10)로 수록함. TI가 2012년 방법론 개편 이전 값을 현행 계열과 비교 불가로 명시하므로 하나의 지표로 접속하지 않고 척도별로 분리하였으며, 두 계열을 이어 붙여 추세를 해석하지 말 것. [요소 부합] 요구지표는 TI CPI이므로 종전에 함께 수록되어 있던 World Bank WGI Control of Corruption(GOV_WGI_CC_EST/GOV_WGI_CC_SC) 계열은 참고자료로 분리하고 본 데이터셋에서 제외함. 참고로 WGI의 1997·1999·2001년 공백은 결측이 아니라 1996~2002년이 격년 조사(1996·1998·2000·2002)였기 때문임(raw에서 확인). [시계열 단절] 2012년 방법론 개편으로 척도가 0~10에서 0~100으로 변경되어 2011년 이전 값과 접속되지 않음. [라이선스] 원천 약관이 CC BY-ND 4.0 DE(개변 배포 제한, 인용 허용, 파생물은 TI 서면 문의)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠. [척도] 0~100 절대 척도이며 순위와 달리 조사대상국 수 변동의 영향을 받지 않음.",
+      "sourceLabel": "CPI 점수 · 베트남 — 국제투명성기구 부패인식지수 점수(0=매우 부패, 100=매우 청렴)",
+      "sourceLabelEn": "Corruption Perceptions Index (CPI) score",
+      "sourceNote": "[원본 버전] Transparency International 「Corruption Perceptions Index 2025」 공식 결과파일 CPI2025_Results.xlsx(2026-02-10 공개)를 raw로 사용. 원본이 OOXML strict 형식이라 무손실 변환 후 판독하였으며 값은 원문 그대로임. [시계열 보강] 2011년 이전 15개년(1997~2011)은 Transparency International이 연차별로 공개한 공식 데이터셋(CPI-YYYY.csv, transparencycdn.org)에서 전건 확보하여 0~10 척도 별도 지표(A-001_cpi_score_scale10 · A-001_cpi_rank_scale10)로 수록함. TI가 2012년 방법론 개편 이전 값을 현행 계열과 비교 불가로 명시하므로 하나의 지표로 접속하지 않고 척도별로 분리하였으며, 두 계열을 이어 붙여 추세를 해석하지 말 것. [요소 부합] 요구지표는 TI CPI이므로 종전에 함께 수록되어 있던 World Bank WGI Control of Corruption(GOV_WGI_CC_EST/GOV_WGI_CC_SC) 계열은 참고자료로 분리하고 본 데이터셋에서 제외함. 참고로 WGI의 1997·1999·2001년 공백은 결측이 아니라 1996~2002년이 격년 조사(1996·1998·2000·2002)였기 때문임(raw에서 확인). [시계열 단절] 2012년 방법론 개편으로 척도가 0~10에서 0~100으로 변경되어 2011년 이전 값과 접속되지 않음. [라이선스] 원천 약관이 CC BY-ND 4.0 DE(개변 배포 제한, 인용 허용, 파생물은 TI 서면 문의)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠. [척도] 0~100 절대 척도이며 순위와 달리 조사대상국 수 변동의 영향을 받지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-001",
+        "indicatorId": "A-001_cpi_score",
+        "sourceFileDecoded": "A-001_CPI(Corruption Perceptions Index, 부패인식지수).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9db6f2970bf5|점",
+      "dimensionLabels": {
+        "category": "베트남",
+        "detail": "2011년 이전 방법론 기준 부패인식지수 점수(0~10)"
+      },
+      "dimensions": {
+        "category": "베트남",
+        "detail": "2011년 이전 방법론 기준 부패인식지수 점수(0~10)"
+      },
+      "displayLabel": "CPI 점수(구 척도) · 베트남 — 2011년 이전 방법론 기준 부패인식지수 점수(0~10)",
+      "indicatorId": "A-001_cpi_score_scale10",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9db6f2970bf5",
+        "labelKo": "CPI 점수(구 척도)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-9db6f2970bf5|점|category=베트남|detail=2011년 이전 방법론 기준 부패인식지수 점수(0~10)|A-001_cpi_score_scale10",
+      "sourceCaveat": "[원본 버전] Transparency International이 연차별로 공개하는 공식 데이터셋(CPI-1997 ~ CPI-2011 CSV, transparencycdn.org)에서 연도별로 베트남 행을 직접 확보함. 각 연도 원본 URL은 note에 병기함. [척도] 2011년 이전 CPI는 0(매우 부패)~10(매우 청렴) 척도이며 2012년 이후의 0~100 척도와 다름. TI가 두 계열을 비교 불가로 명시하므로 별도 지표로 분리 수록하였고, 단순히 10을 곱해 접속시키지 말 것. [신뢰구간] 원문 interval 열은 연도별로 표기 방식이 달라(1997년 미기재, 1998~1999년 표준편차 단일값, 2000~2010년 범위, 2011년 표준오차) 지표화하지 않고 각 행 note에 원문 그대로 병기함. [라이선스] 원천 약관이 CC BY-ND 4.0 DE이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "CPI 점수(구 척도) · 베트남 — 2011년 이전 방법론 기준 부패인식지수 점수(0~10)",
+      "sourceLabelEn": "Corruption Perceptions Index (CPI) score, pre-2012 methodology (0-10 scale)",
+      "sourceNote": "[원본 버전] Transparency International이 연차별로 공개하는 공식 데이터셋(CPI-1997 ~ CPI-2011 CSV, transparencycdn.org)에서 연도별로 베트남 행을 직접 확보함. 각 연도 원본 URL은 note에 병기함. [척도] 2011년 이전 CPI는 0(매우 부패)~10(매우 청렴) 척도이며 2012년 이후의 0~100 척도와 다름. TI가 두 계열을 비교 불가로 명시하므로 별도 지표로 분리 수록하였고, 단순히 10을 곱해 접속시키지 말 것. [신뢰구간] 원문 interval 열은 연도별로 표기 방식이 달라(1997년 미기재, 1998~1999년 표준편차 단일값, 2000~2010년 범위, 2011년 표준오차) 지표화하지 않고 각 행 note에 원문 그대로 병기함. [라이선스] 원천 약관이 CC BY-ND 4.0 DE이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-001",
+        "indicatorId": "A-001_cpi_score_scale10",
+        "sourceFileDecoded": "A-001_CPI(Corruption Perceptions Index, 부패인식지수).xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-50b92eeee587|건",
+      "dimensionLabels": {
+        "category": "베트남",
+        "detail": "점수 산출에 사용된 원천 조사 건수"
+      },
+      "dimensions": {
+        "category": "베트남",
+        "detail": "점수 산출에 사용된 원천 조사 건수"
+      },
+      "displayLabel": "CPI 산출 원천 수 · 베트남 — 점수 산출에 사용된 원천 조사 건수",
+      "indicatorId": "A-001_cpi_sources_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-50b92eeee587",
+        "labelKo": "CPI 산출 원천 수",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-50b92eeee587|건|category=베트남|detail=점수 산출에 사용된 원천 조사 건수|A-001_cpi_sources_count",
+      "sourceCaveat": "[원본 버전] Transparency International 「Corruption Perceptions Index 2025」 공식 결과파일 CPI2025_Results.xlsx(2026-02-10 공개)를 raw로 사용. 원본이 OOXML strict 형식이라 무손실 변환 후 판독하였으며 값은 원문 그대로임. [시계열 보강] 2011년 이전 15개년(1997~2011)은 Transparency International이 연차별로 공개한 공식 데이터셋(CPI-YYYY.csv, transparencycdn.org)에서 전건 확보하여 0~10 척도 별도 지표(A-001_cpi_score_scale10 · A-001_cpi_rank_scale10)로 수록함. TI가 2012년 방법론 개편 이전 값을 현행 계열과 비교 불가로 명시하므로 하나의 지표로 접속하지 않고 척도별로 분리하였으며, 두 계열을 이어 붙여 추세를 해석하지 말 것. [요소 부합] 요구지표는 TI CPI이므로 종전에 함께 수록되어 있던 World Bank WGI Control of Corruption(GOV_WGI_CC_EST/GOV_WGI_CC_SC) 계열은 참고자료로 분리하고 본 데이터셋에서 제외함. 참고로 WGI의 1997·1999·2001년 공백은 결측이 아니라 1996~2002년이 격년 조사(1996·1998·2000·2002)였기 때문임(raw에서 확인). [시계열 단절] 2012년 방법론 개편으로 척도가 0~10에서 0~100으로 변경되어 2011년 이전 값과 접속되지 않음. [라이선스] 원천 약관이 CC BY-ND 4.0 DE(개변 배포 제한, 인용 허용, 파생물은 TI 서면 문의)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠. [해석] 베트남은 전 연도 8개 원천으로 산출되어 CPI 최소요건(3개)을 충족함.",
+      "sourceLabel": "CPI 산출 원천 수 · 베트남 — 점수 산출에 사용된 원천 조사 건수",
+      "sourceLabelEn": "Number of data sources used for the CPI score",
+      "sourceNote": "[원본 버전] Transparency International 「Corruption Perceptions Index 2025」 공식 결과파일 CPI2025_Results.xlsx(2026-02-10 공개)를 raw로 사용. 원본이 OOXML strict 형식이라 무손실 변환 후 판독하였으며 값은 원문 그대로임. [시계열 보강] 2011년 이전 15개년(1997~2011)은 Transparency International이 연차별로 공개한 공식 데이터셋(CPI-YYYY.csv, transparencycdn.org)에서 전건 확보하여 0~10 척도 별도 지표(A-001_cpi_score_scale10 · A-001_cpi_rank_scale10)로 수록함. TI가 2012년 방법론 개편 이전 값을 현행 계열과 비교 불가로 명시하므로 하나의 지표로 접속하지 않고 척도별로 분리하였으며, 두 계열을 이어 붙여 추세를 해석하지 말 것. [요소 부합] 요구지표는 TI CPI이므로 종전에 함께 수록되어 있던 World Bank WGI Control of Corruption(GOV_WGI_CC_EST/GOV_WGI_CC_SC) 계열은 참고자료로 분리하고 본 데이터셋에서 제외함. 참고로 WGI의 1997·1999·2001년 공백은 결측이 아니라 1996~2002년이 격년 조사(1996·1998·2000·2002)였기 때문임(raw에서 확인). [시계열 단절] 2012년 방법론 개편으로 척도가 0~10에서 0~100으로 변경되어 2011년 이전 값과 접속되지 않음. [라이선스] 원천 약관이 CC BY-ND 4.0 DE(개변 배포 제한, 인용 허용, 파생물은 TI 서면 문의)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠. [해석] 베트남은 전 연도 8개 원천으로 산출되어 CPI 최소요건(3개)을 충족함.",
+      "sourceProvenance": {
+        "elementId": "A-001",
+        "indicatorId": "A-001_cpi_sources_count",
+        "sourceFileDecoded": "A-001_CPI(Corruption Perceptions Index, 부패인식지수).xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f31b6f1d6e7f|점",
+      "dimensionLabels": {
+        "category": "베트남",
+        "detail": "점수 추정의 표준오차"
+      },
+      "dimensions": {
+        "category": "베트남",
+        "detail": "점수 추정의 표준오차"
+      },
+      "displayLabel": "CPI 표준오차 · 베트남 — 점수 추정의 표준오차",
+      "indicatorId": "A-001_cpi_standard_error",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f31b6f1d6e7f",
+        "labelKo": "CPI 표준오차",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-f31b6f1d6e7f|점|category=베트남|detail=점수 추정의 표준오차|A-001_cpi_standard_error",
+      "sourceCaveat": "[원본 버전] Transparency International 「Corruption Perceptions Index 2025」 공식 결과파일 CPI2025_Results.xlsx(2026-02-10 공개)를 raw로 사용. 원본이 OOXML strict 형식이라 무손실 변환 후 판독하였으며 값은 원문 그대로임. [시계열 보강] 2011년 이전 15개년(1997~2011)은 Transparency International이 연차별로 공개한 공식 데이터셋(CPI-YYYY.csv, transparencycdn.org)에서 전건 확보하여 0~10 척도 별도 지표(A-001_cpi_score_scale10 · A-001_cpi_rank_scale10)로 수록함. TI가 2012년 방법론 개편 이전 값을 현행 계열과 비교 불가로 명시하므로 하나의 지표로 접속하지 않고 척도별로 분리하였으며, 두 계열을 이어 붙여 추세를 해석하지 말 것. [요소 부합] 요구지표는 TI CPI이므로 종전에 함께 수록되어 있던 World Bank WGI Control of Corruption(GOV_WGI_CC_EST/GOV_WGI_CC_SC) 계열은 참고자료로 분리하고 본 데이터셋에서 제외함. 참고로 WGI의 1997·1999·2001년 공백은 결측이 아니라 1996~2002년이 격년 조사(1996·1998·2000·2002)였기 때문임(raw에서 확인). [시계열 단절] 2012년 방법론 개편으로 척도가 0~10에서 0~100으로 변경되어 2011년 이전 값과 접속되지 않음. [라이선스] 원천 약관이 CC BY-ND 4.0 DE(개변 배포 제한, 인용 허용, 파생물은 TI 서면 문의)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠. [용도] 연도 간 점수 변화가 통계적으로 유의한지 판단하는 데 사용.",
+      "sourceLabel": "CPI 표준오차 · 베트남 — 점수 추정의 표준오차",
+      "sourceLabelEn": "CPI score standard error",
+      "sourceNote": "[원본 버전] Transparency International 「Corruption Perceptions Index 2025」 공식 결과파일 CPI2025_Results.xlsx(2026-02-10 공개)를 raw로 사용. 원본이 OOXML strict 형식이라 무손실 변환 후 판독하였으며 값은 원문 그대로임. [시계열 보강] 2011년 이전 15개년(1997~2011)은 Transparency International이 연차별로 공개한 공식 데이터셋(CPI-YYYY.csv, transparencycdn.org)에서 전건 확보하여 0~10 척도 별도 지표(A-001_cpi_score_scale10 · A-001_cpi_rank_scale10)로 수록함. TI가 2012년 방법론 개편 이전 값을 현행 계열과 비교 불가로 명시하므로 하나의 지표로 접속하지 않고 척도별로 분리하였으며, 두 계열을 이어 붙여 추세를 해석하지 말 것. [요소 부합] 요구지표는 TI CPI이므로 종전에 함께 수록되어 있던 World Bank WGI Control of Corruption(GOV_WGI_CC_EST/GOV_WGI_CC_SC) 계열은 참고자료로 분리하고 본 데이터셋에서 제외함. 참고로 WGI의 1997·1999·2001년 공백은 결측이 아니라 1996~2002년이 격년 조사(1996·1998·2000·2002)였기 때문임(raw에서 확인). [시계열 단절] 2012년 방법론 개편으로 척도가 0~10에서 0~100으로 변경되어 2011년 이전 값과 접속되지 않음. [라이선스] 원천 약관이 CC BY-ND 4.0 DE(개변 배포 제한, 인용 허용, 파생물은 TI 서면 문의)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠. [용도] 연도 간 점수 변화가 통계적으로 유의한지 판단하는 데 사용.",
+      "sourceProvenance": {
+        "elementId": "A-001",
+        "indicatorId": "A-001_cpi_standard_error",
+        "sourceFileDecoded": "A-001_CPI(Corruption Perceptions Index, 부패인식지수).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-50b92eeee587",
+      "labelKo": "CPI 산출 원천 수",
+      "recordCount": 14,
+      "unit": "건",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-52970bf6a5a9",
+      "labelKo": "CPI 순위",
+      "recordCount": 14,
+      "unit": "위",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-ece9d66a0235",
+      "labelKo": "CPI 순위(구 척도)",
+      "recordCount": 15,
+      "unit": "위",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-caff7e75bb43",
+      "labelKo": "CPI 신뢰구간 상한",
+      "recordCount": 14,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-e1d0f1a6c1e8",
+      "labelKo": "CPI 신뢰구간 하한",
+      "recordCount": 14,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-ffa3eb23fb73",
+      "labelKo": "CPI 점수",
+      "recordCount": 14,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-9db6f2970bf5",
+      "labelKo": "CPI 점수(구 척도)",
+      "recordCount": 15,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-f31b6f1d6e7f",
+      "labelKo": "CPI 표준오차",
+      "recordCount": 14,
+      "unit": "점",
+      "unitFamily": "score"
+    }
+  ],
+  "observationCount": 114,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

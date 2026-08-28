@@ -1,0 +1,998 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 26,
+      "values": [
+        "Bioenergy(계통연계)",
+        "Bioenergy(독립형)",
+        "Coal(계통연계)",
+        "Fossil fuels(계통연계)",
+        "Gas biofuels(계통연계)",
+        "Gas biofuels(독립형)",
+        "Natural gas(계통연계)",
+        "Offshore wind energy(계통연계)",
+        "Oil(계통연계)",
+        "Onshore wind energy(계통연계)",
+        "Onshore wind energy(독립형)",
+        "Other non-renewable energy(계통연계)",
+        "Renewable hydropower(계통연계)",
+        "Renewable hydropower(독립형)",
+        "Renewable waste(계통연계)",
+        "Solar energy(계통연계)",
+        "Solar energy(독립형)",
+        "Solar photovoltaic(계통연계)",
+        "Solar photovoltaic(독립형)",
+        "Solid biofuels(계통연계)",
+        "Solid biofuels(독립형)",
+        "Total non-renewable energy(계통연계)",
+        "Total renewable energy(계통연계)",
+        "Total renewable energy(독립형)",
+        "Wind energy(계통연계)",
+        "Wind energy(독립형)"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 1,
+      "values": [
+        "기술별 누적 설치 발전설비 용량"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 9,
+      "values": [
+        "1",
+        "1,2",
+        "1,2,3,4,5,7,8",
+        "3",
+        "5",
+        "8",
+        "11,16",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 26,
+      "values": [
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ]
+    }
+  ],
+  "elementId": "A-018",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 26,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-0487be6ab6ec|MW",
+      "dimensionLabels": {
+        "category": "Bioenergy(독립형)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "8"
+      },
+      "dimensions": {
+        "category": "Bioenergy(독립형)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "8"
+      },
+      "displayLabel": "발전 설비용량 · Bioenergy(독립형) — 기술별 누적 설치 발전설비 용량",
+      "indicatorId": "A-018_capacity_bioenergy_offgrid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0487be6ab6ec",
+        "labelKo": "발전 설비용량",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-0487be6ab6ec|MW|category=Bioenergy(독립형)|detail=기술별 누적 설치 발전설비 용량|technology=8|A-018_capacity_bioenergy_offgrid",
+      "sourceCaveat": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "발전 설비용량 · Bioenergy(독립형) — 기술별 누적 설치 발전설비 용량",
+      "sourceLabelEn": "Installed electricity capacity: Bioenergy (OffGrid)",
+      "sourceNote": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-018",
+        "indicatorId": "A-018_capacity_bioenergy_offgrid",
+        "sourceFileDecoded": "A-018_기술별 발전 설비용량.xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0487be6ab6ec|MW",
+      "dimensionLabels": {
+        "category": "Bioenergy(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "8"
+      },
+      "dimensions": {
+        "category": "Bioenergy(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "8"
+      },
+      "displayLabel": "발전 설비용량 · Bioenergy(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "indicatorId": "A-018_capacity_bioenergy_ongrid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0487be6ab6ec",
+        "labelKo": "발전 설비용량",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-0487be6ab6ec|MW|category=Bioenergy(계통연계)|detail=기술별 누적 설치 발전설비 용량|technology=8|A-018_capacity_bioenergy_ongrid",
+      "sourceCaveat": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "발전 설비용량 · Bioenergy(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "sourceLabelEn": "Installed electricity capacity: Bioenergy (OnGrid)",
+      "sourceNote": "2000–2004년 원문 \"-\". 재확보 대상 1차 출처: 베트남 산업무역부(MOIT)·EVN 연차 설비통계.",
+      "sourceProvenance": {
+        "elementId": "A-018",
+        "indicatorId": "A-018_capacity_bioenergy_ongrid",
+        "sourceFileDecoded": "A-018_기술별 발전 설비용량.xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0487be6ab6ec|MW",
+      "dimensionLabels": {
+        "category": "Coal(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "16"
+      },
+      "dimensions": {
+        "category": "Coal(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "16"
+      },
+      "displayLabel": "발전 설비용량 · Coal(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "indicatorId": "A-018_capacity_coal_ongrid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0487be6ab6ec",
+        "labelKo": "발전 설비용량",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-0487be6ab6ec|MW|category=Coal(계통연계)|detail=기술별 누적 설치 발전설비 용량|technology=16|A-018_capacity_coal_ongrid",
+      "sourceCaveat": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "발전 설비용량 · Coal(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "sourceLabelEn": "Installed electricity capacity: Coal (OnGrid)",
+      "sourceNote": "2000–2013년 원문 \"-\". 재확보 대상 1차 출처: 베트남 산업무역부(MOIT)·EVN 연차 설비통계.",
+      "sourceProvenance": {
+        "elementId": "A-018",
+        "indicatorId": "A-018_capacity_coal_ongrid",
+        "sourceFileDecoded": "A-018_기술별 발전 설비용량.xlsx",
+        "sourceRow": 27,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0487be6ab6ec|MW",
+      "dimensionLabels": {
+        "category": "Fossil fuels(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "16"
+      },
+      "dimensions": {
+        "category": "Fossil fuels(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "16"
+      },
+      "displayLabel": "발전 설비용량 · Fossil fuels(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "indicatorId": "A-018_capacity_fossil_fuels_ongrid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0487be6ab6ec",
+        "labelKo": "발전 설비용량",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-0487be6ab6ec|MW|category=Fossil fuels(계통연계)|detail=기술별 누적 설치 발전설비 용량|technology=16|A-018_capacity_fossil_fuels_ongrid",
+      "sourceCaveat": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "발전 설비용량 · Fossil fuels(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "sourceLabelEn": "Installed electricity capacity: Fossil fuels (OnGrid)",
+      "sourceNote": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-018",
+        "indicatorId": "A-018_capacity_fossil_fuels_ongrid",
+        "sourceFileDecoded": "A-018_기술별 발전 설비용량.xlsx",
+        "sourceRow": 26,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0487be6ab6ec|MW",
+      "dimensionLabels": {
+        "category": "Gas biofuels(독립형)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "8"
+      },
+      "dimensions": {
+        "category": "Gas biofuels(독립형)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "8"
+      },
+      "displayLabel": "발전 설비용량 · Gas biofuels(독립형) — 기술별 누적 설치 발전설비 용량",
+      "indicatorId": "A-018_capacity_gas_biofuels_offgrid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0487be6ab6ec",
+        "labelKo": "발전 설비용량",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-0487be6ab6ec|MW|category=Gas biofuels(독립형)|detail=기술별 누적 설치 발전설비 용량|technology=8|A-018_capacity_gas_biofuels_offgrid",
+      "sourceCaveat": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "발전 설비용량 · Gas biofuels(독립형) — 기술별 누적 설치 발전설비 용량",
+      "sourceLabelEn": "Installed electricity capacity: Gas biofuels (OffGrid)",
+      "sourceNote": "2000–2015년 원문 \"-\". 재확보 대상 1차 출처: 베트남 산업무역부(MOIT)·EVN 연차 설비통계.",
+      "sourceProvenance": {
+        "elementId": "A-018",
+        "indicatorId": "A-018_capacity_gas_biofuels_offgrid",
+        "sourceFileDecoded": "A-018_기술별 발전 설비용량.xlsx",
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0487be6ab6ec|MW",
+      "dimensionLabels": {
+        "category": "Gas biofuels(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "8"
+      },
+      "dimensions": {
+        "category": "Gas biofuels(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "8"
+      },
+      "displayLabel": "발전 설비용량 · Gas biofuels(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "indicatorId": "A-018_capacity_gas_biofuels_ongrid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0487be6ab6ec",
+        "labelKo": "발전 설비용량",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-0487be6ab6ec|MW|category=Gas biofuels(계통연계)|detail=기술별 누적 설치 발전설비 용량|technology=8|A-018_capacity_gas_biofuels_ongrid",
+      "sourceCaveat": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "발전 설비용량 · Gas biofuels(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "sourceLabelEn": "Installed electricity capacity: Gas biofuels (OnGrid)",
+      "sourceNote": "2000–2004년 원문 \"-\". 재확보 대상 1차 출처: 베트남 산업무역부(MOIT)·EVN 연차 설비통계.",
+      "sourceProvenance": {
+        "elementId": "A-018",
+        "indicatorId": "A-018_capacity_gas_biofuels_ongrid",
+        "sourceFileDecoded": "A-018_기술별 발전 설비용량.xlsx",
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0487be6ab6ec|MW",
+      "dimensionLabels": {
+        "category": "Natural gas(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "16"
+      },
+      "dimensions": {
+        "category": "Natural gas(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "16"
+      },
+      "displayLabel": "발전 설비용량 · Natural gas(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "indicatorId": "A-018_capacity_natural_gas_ongrid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0487be6ab6ec",
+        "labelKo": "발전 설비용량",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-0487be6ab6ec|MW|category=Natural gas(계통연계)|detail=기술별 누적 설치 발전설비 용량|technology=16|A-018_capacity_natural_gas_ongrid",
+      "sourceCaveat": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "발전 설비용량 · Natural gas(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "sourceLabelEn": "Installed electricity capacity: Natural gas (OnGrid)",
+      "sourceNote": "2000–2013년 원문 \"-\". 재확보 대상 1차 출처: 베트남 산업무역부(MOIT)·EVN 연차 설비통계.",
+      "sourceProvenance": {
+        "elementId": "A-018",
+        "indicatorId": "A-018_capacity_natural_gas_ongrid",
+        "sourceFileDecoded": "A-018_기술별 발전 설비용량.xlsx",
+        "sourceRow": 29,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0487be6ab6ec|MW",
+      "dimensionLabels": {
+        "category": "Offshore wind energy(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "3"
+      },
+      "dimensions": {
+        "category": "Offshore wind energy(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "3"
+      },
+      "displayLabel": "발전 설비용량 · Offshore wind energy(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "indicatorId": "A-018_capacity_offshore_wind_energy_ongrid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0487be6ab6ec",
+        "labelKo": "발전 설비용량",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-0487be6ab6ec|MW|category=Offshore wind energy(계통연계)|detail=기술별 누적 설치 발전설비 용량|technology=3|A-018_capacity_offshore_wind_energy_ongrid",
+      "sourceCaveat": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "발전 설비용량 · Offshore wind energy(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "sourceLabelEn": "Installed electricity capacity: Offshore wind energy (OnGrid)",
+      "sourceNote": "2000–2012년 원문 \"-\". 재확보 대상 1차 출처: 베트남 산업무역부(MOIT)·EVN 연차 설비통계.",
+      "sourceProvenance": {
+        "elementId": "A-018",
+        "indicatorId": "A-018_capacity_offshore_wind_energy_ongrid",
+        "sourceFileDecoded": "A-018_기술별 발전 설비용량.xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0487be6ab6ec|MW",
+      "dimensionLabels": {
+        "category": "Oil(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "16"
+      },
+      "dimensions": {
+        "category": "Oil(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "16"
+      },
+      "displayLabel": "발전 설비용량 · Oil(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "indicatorId": "A-018_capacity_oil_ongrid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0487be6ab6ec",
+        "labelKo": "발전 설비용량",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-0487be6ab6ec|MW|category=Oil(계통연계)|detail=기술별 누적 설치 발전설비 용량|technology=16|A-018_capacity_oil_ongrid",
+      "sourceCaveat": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "발전 설비용량 · Oil(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "sourceLabelEn": "Installed electricity capacity: Oil (OnGrid)",
+      "sourceNote": "2000–2013년 원문 \"-\". 재확보 대상 1차 출처: 베트남 산업무역부(MOIT)·EVN 연차 설비통계.",
+      "sourceProvenance": {
+        "elementId": "A-018",
+        "indicatorId": "A-018_capacity_oil_ongrid",
+        "sourceFileDecoded": "A-018_기술별 발전 설비용량.xlsx",
+        "sourceRow": 28,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0487be6ab6ec|MW",
+      "dimensionLabels": {
+        "category": "Onshore wind energy(독립형)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "3"
+      },
+      "dimensions": {
+        "category": "Onshore wind energy(독립형)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "3"
+      },
+      "displayLabel": "발전 설비용량 · Onshore wind energy(독립형) — 기술별 누적 설치 발전설비 용량",
+      "indicatorId": "A-018_capacity_onshore_wind_energy_offgrid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0487be6ab6ec",
+        "labelKo": "발전 설비용량",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-0487be6ab6ec|MW|category=Onshore wind energy(독립형)|detail=기술별 누적 설치 발전설비 용량|technology=3|A-018_capacity_onshore_wind_energy_offgrid",
+      "sourceCaveat": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "발전 설비용량 · Onshore wind energy(독립형) — 기술별 누적 설치 발전설비 용량",
+      "sourceLabelEn": "Installed electricity capacity: Onshore wind energy (OffGrid)",
+      "sourceNote": "2000–2012년 원문 \"-\". 재확보 대상 1차 출처: 베트남 산업무역부(MOIT)·EVN 연차 설비통계.",
+      "sourceProvenance": {
+        "elementId": "A-018",
+        "indicatorId": "A-018_capacity_onshore_wind_energy_offgrid",
+        "sourceFileDecoded": "A-018_기술별 발전 설비용량.xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0487be6ab6ec|MW",
+      "dimensionLabels": {
+        "category": "Onshore wind energy(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "3"
+      },
+      "dimensions": {
+        "category": "Onshore wind energy(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "3"
+      },
+      "displayLabel": "발전 설비용량 · Onshore wind energy(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "indicatorId": "A-018_capacity_onshore_wind_energy_ongrid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0487be6ab6ec",
+        "labelKo": "발전 설비용량",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-0487be6ab6ec|MW|category=Onshore wind energy(계통연계)|detail=기술별 누적 설치 발전설비 용량|technology=3|A-018_capacity_onshore_wind_energy_ongrid",
+      "sourceCaveat": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "발전 설비용량 · Onshore wind energy(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "sourceLabelEn": "Installed electricity capacity: Onshore wind energy (OnGrid)",
+      "sourceNote": "2000–2007년 원문 \"-\". 재확보 대상 1차 출처: 베트남 산업무역부(MOIT)·EVN 연차 설비통계.",
+      "sourceProvenance": {
+        "elementId": "A-018",
+        "indicatorId": "A-018_capacity_onshore_wind_energy_ongrid",
+        "sourceFileDecoded": "A-018_기술별 발전 설비용량.xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0487be6ab6ec|MW",
+      "dimensionLabels": {
+        "category": "Other non-renewable energy(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "16"
+      },
+      "dimensions": {
+        "category": "Other non-renewable energy(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "16"
+      },
+      "displayLabel": "발전 설비용량 · Other non-renewable energy(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "indicatorId": "A-018_capacity_other_non_renewable_energy_ongrid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0487be6ab6ec",
+        "labelKo": "발전 설비용량",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-0487be6ab6ec|MW|category=Other non-renewable energy(계통연계)|detail=기술별 누적 설치 발전설비 용량|technology=16|A-018_capacity_other_non_renewable_energy_ongrid",
+      "sourceCaveat": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "발전 설비용량 · Other non-renewable energy(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "sourceLabelEn": "Installed electricity capacity: Other non-renewable energy (OnGrid)",
+      "sourceNote": "2000–2016년 원문 \"-\". 재확보 대상 1차 출처: 베트남 산업무역부(MOIT)·EVN 연차 설비통계.",
+      "sourceProvenance": {
+        "elementId": "A-018",
+        "indicatorId": "A-018_capacity_other_non_renewable_energy_ongrid",
+        "sourceFileDecoded": "A-018_기술별 발전 설비용량.xlsx",
+        "sourceRow": 30,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0487be6ab6ec|MW",
+      "dimensionLabels": {
+        "category": "Renewable hydropower(독립형)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "5"
+      },
+      "dimensions": {
+        "category": "Renewable hydropower(독립형)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "5"
+      },
+      "displayLabel": "발전 설비용량 · Renewable hydropower(독립형) — 기술별 누적 설치 발전설비 용량",
+      "indicatorId": "A-018_capacity_renewable_hydropower_offgrid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0487be6ab6ec",
+        "labelKo": "발전 설비용량",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-0487be6ab6ec|MW|category=Renewable hydropower(독립형)|detail=기술별 누적 설치 발전설비 용량|technology=5|A-018_capacity_renewable_hydropower_offgrid",
+      "sourceCaveat": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "발전 설비용량 · Renewable hydropower(독립형) — 기술별 누적 설치 발전설비 용량",
+      "sourceLabelEn": "Installed electricity capacity: Renewable hydropower (OffGrid)",
+      "sourceNote": "2000–2004년 원문 \"-\". 재확보 대상 1차 출처: 베트남 산업무역부(MOIT)·EVN 연차 설비통계.",
+      "sourceProvenance": {
+        "elementId": "A-018",
+        "indicatorId": "A-018_capacity_renewable_hydropower_offgrid",
+        "sourceFileDecoded": "A-018_기술별 발전 설비용량.xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0487be6ab6ec|MW",
+      "dimensionLabels": {
+        "category": "Renewable hydropower(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "5"
+      },
+      "dimensions": {
+        "category": "Renewable hydropower(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "5"
+      },
+      "displayLabel": "발전 설비용량 · Renewable hydropower(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "indicatorId": "A-018_capacity_renewable_hydropower_ongrid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0487be6ab6ec",
+        "labelKo": "발전 설비용량",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-0487be6ab6ec|MW|category=Renewable hydropower(계통연계)|detail=기술별 누적 설치 발전설비 용량|technology=5|A-018_capacity_renewable_hydropower_ongrid",
+      "sourceCaveat": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "발전 설비용량 · Renewable hydropower(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "sourceLabelEn": "Installed electricity capacity: Renewable hydropower (OnGrid)",
+      "sourceNote": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-018",
+        "indicatorId": "A-018_capacity_renewable_hydropower_ongrid",
+        "sourceFileDecoded": "A-018_기술별 발전 설비용량.xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0487be6ab6ec|MW",
+      "dimensionLabels": {
+        "category": "Renewable waste(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "15"
+      },
+      "dimensions": {
+        "category": "Renewable waste(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "15"
+      },
+      "displayLabel": "발전 설비용량 · Renewable waste(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "indicatorId": "A-018_capacity_renewable_waste_ongrid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0487be6ab6ec",
+        "labelKo": "발전 설비용량",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-0487be6ab6ec|MW|category=Renewable waste(계통연계)|detail=기술별 누적 설치 발전설비 용량|technology=15|A-018_capacity_renewable_waste_ongrid",
+      "sourceCaveat": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "발전 설비용량 · Renewable waste(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "sourceLabelEn": "Installed electricity capacity: Renewable waste (OnGrid)",
+      "sourceNote": "2000–2016년 원문 \"-\". 재확보 대상 1차 출처: 베트남 산업무역부(MOIT)·EVN 연차 설비통계.",
+      "sourceProvenance": {
+        "elementId": "A-018",
+        "indicatorId": "A-018_capacity_renewable_waste_ongrid",
+        "sourceFileDecoded": "A-018_기술별 발전 설비용량.xlsx",
+        "sourceRow": 24,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0487be6ab6ec|MW",
+      "dimensionLabels": {
+        "category": "Solar energy(독립형)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "1 · 2"
+      },
+      "dimensions": {
+        "category": "Solar energy(독립형)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "1,2"
+      },
+      "displayLabel": "발전 설비용량 · Solar energy(독립형) — 기술별 누적 설치 발전설비 용량",
+      "indicatorId": "A-018_capacity_solar_energy_offgrid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0487be6ab6ec",
+        "labelKo": "발전 설비용량",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-0487be6ab6ec|MW|category=Solar energy(독립형)|detail=기술별 누적 설치 발전설비 용량|technology=1,2|A-018_capacity_solar_energy_offgrid",
+      "sourceCaveat": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "발전 설비용량 · Solar energy(독립형) — 기술별 누적 설치 발전설비 용량",
+      "sourceLabelEn": "Installed electricity capacity: Solar energy (OffGrid)",
+      "sourceNote": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-018",
+        "indicatorId": "A-018_capacity_solar_energy_offgrid",
+        "sourceFileDecoded": "A-018_기술별 발전 설비용량.xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0487be6ab6ec|MW",
+      "dimensionLabels": {
+        "category": "Solar energy(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "1 · 2"
+      },
+      "dimensions": {
+        "category": "Solar energy(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "1,2"
+      },
+      "displayLabel": "발전 설비용량 · Solar energy(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "indicatorId": "A-018_capacity_solar_energy_ongrid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0487be6ab6ec",
+        "labelKo": "발전 설비용량",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-0487be6ab6ec|MW|category=Solar energy(계통연계)|detail=기술별 누적 설치 발전설비 용량|technology=1,2|A-018_capacity_solar_energy_ongrid",
+      "sourceCaveat": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "발전 설비용량 · Solar energy(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "sourceLabelEn": "Installed electricity capacity: Solar energy (OnGrid)",
+      "sourceNote": "2000–2013년 원문 \"-\". 재확보 대상 1차 출처: 베트남 산업무역부(MOIT)·EVN 연차 설비통계.",
+      "sourceProvenance": {
+        "elementId": "A-018",
+        "indicatorId": "A-018_capacity_solar_energy_ongrid",
+        "sourceFileDecoded": "A-018_기술별 발전 설비용량.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0487be6ab6ec|MW",
+      "dimensionLabels": {
+        "category": "Solar photovoltaic(독립형)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "1"
+      },
+      "dimensions": {
+        "category": "Solar photovoltaic(독립형)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "1"
+      },
+      "displayLabel": "발전 설비용량 · Solar photovoltaic(독립형) — 기술별 누적 설치 발전설비 용량",
+      "indicatorId": "A-018_capacity_solar_photovoltaic_offgrid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0487be6ab6ec",
+        "labelKo": "발전 설비용량",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-0487be6ab6ec|MW|category=Solar photovoltaic(독립형)|detail=기술별 누적 설치 발전설비 용량|technology=1|A-018_capacity_solar_photovoltaic_offgrid",
+      "sourceCaveat": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "발전 설비용량 · Solar photovoltaic(독립형) — 기술별 누적 설치 발전설비 용량",
+      "sourceLabelEn": "Installed electricity capacity: Solar photovoltaic (OffGrid)",
+      "sourceNote": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-018",
+        "indicatorId": "A-018_capacity_solar_photovoltaic_offgrid",
+        "sourceFileDecoded": "A-018_기술별 발전 설비용량.xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0487be6ab6ec|MW",
+      "dimensionLabels": {
+        "category": "Solar photovoltaic(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "1"
+      },
+      "dimensions": {
+        "category": "Solar photovoltaic(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "1"
+      },
+      "displayLabel": "발전 설비용량 · Solar photovoltaic(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "indicatorId": "A-018_capacity_solar_photovoltaic_ongrid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0487be6ab6ec",
+        "labelKo": "발전 설비용량",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-0487be6ab6ec|MW|category=Solar photovoltaic(계통연계)|detail=기술별 누적 설치 발전설비 용량|technology=1|A-018_capacity_solar_photovoltaic_ongrid",
+      "sourceCaveat": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "발전 설비용량 · Solar photovoltaic(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "sourceLabelEn": "Installed electricity capacity: Solar photovoltaic (OnGrid)",
+      "sourceNote": "2000–2013년 원문 \"-\". 재확보 대상 1차 출처: 베트남 산업무역부(MOIT)·EVN 연차 설비통계.",
+      "sourceProvenance": {
+        "elementId": "A-018",
+        "indicatorId": "A-018_capacity_solar_photovoltaic_ongrid",
+        "sourceFileDecoded": "A-018_기술별 발전 설비용량.xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0487be6ab6ec|MW",
+      "dimensionLabels": {
+        "category": "Solid biofuels(독립형)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "8"
+      },
+      "dimensions": {
+        "category": "Solid biofuels(독립형)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "8"
+      },
+      "displayLabel": "발전 설비용량 · Solid biofuels(독립형) — 기술별 누적 설치 발전설비 용량",
+      "indicatorId": "A-018_capacity_solid_biofuels_offgrid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0487be6ab6ec",
+        "labelKo": "발전 설비용량",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-0487be6ab6ec|MW|category=Solid biofuels(독립형)|detail=기술별 누적 설치 발전설비 용량|technology=8|A-018_capacity_solid_biofuels_offgrid",
+      "sourceCaveat": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "발전 설비용량 · Solid biofuels(독립형) — 기술별 누적 설치 발전설비 용량",
+      "sourceLabelEn": "Installed electricity capacity: Solid biofuels (OffGrid)",
+      "sourceNote": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-018",
+        "indicatorId": "A-018_capacity_solid_biofuels_offgrid",
+        "sourceFileDecoded": "A-018_기술별 발전 설비용량.xlsx",
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0487be6ab6ec|MW",
+      "dimensionLabels": {
+        "category": "Solid biofuels(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "8"
+      },
+      "dimensions": {
+        "category": "Solid biofuels(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "8"
+      },
+      "displayLabel": "발전 설비용량 · Solid biofuels(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "indicatorId": "A-018_capacity_solid_biofuels_ongrid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0487be6ab6ec",
+        "labelKo": "발전 설비용량",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-0487be6ab6ec|MW|category=Solid biofuels(계통연계)|detail=기술별 누적 설치 발전설비 용량|technology=8|A-018_capacity_solid_biofuels_ongrid",
+      "sourceCaveat": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "발전 설비용량 · Solid biofuels(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "sourceLabelEn": "Installed electricity capacity: Solid biofuels (OnGrid)",
+      "sourceNote": "2000–2013년 원문 \"-\". 재확보 대상 1차 출처: 베트남 산업무역부(MOIT)·EVN 연차 설비통계.",
+      "sourceProvenance": {
+        "elementId": "A-018",
+        "indicatorId": "A-018_capacity_solid_biofuels_ongrid",
+        "sourceFileDecoded": "A-018_기술별 발전 설비용량.xlsx",
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0487be6ab6ec|MW",
+      "dimensionLabels": {
+        "category": "Total non-renewable energy(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "11 · 16"
+      },
+      "dimensions": {
+        "category": "Total non-renewable energy(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "11,16"
+      },
+      "displayLabel": "발전 설비용량 · Total non-renewable energy(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "indicatorId": "A-018_capacity_total_non_renewable_energy_ongrid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0487be6ab6ec",
+        "labelKo": "발전 설비용량",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-0487be6ab6ec|MW|category=Total non-renewable energy(계통연계)|detail=기술별 누적 설치 발전설비 용량|technology=11,16|A-018_capacity_total_non_renewable_energy_ongrid",
+      "sourceCaveat": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "발전 설비용량 · Total non-renewable energy(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "sourceLabelEn": "Installed electricity capacity: Total non-renewable energy (OnGrid)",
+      "sourceNote": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-018",
+        "indicatorId": "A-018_capacity_total_non_renewable_energy_ongrid",
+        "sourceFileDecoded": "A-018_기술별 발전 설비용량.xlsx",
+        "sourceRow": 25,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0487be6ab6ec|MW",
+      "dimensionLabels": {
+        "category": "Total renewable energy(독립형)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "1 · 2 · 3 · 4 · 5 · 7 · 8"
+      },
+      "dimensions": {
+        "category": "Total renewable energy(독립형)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "1,2,3,4,5,7,8"
+      },
+      "displayLabel": "발전 설비용량 · Total renewable energy(독립형) — 기술별 누적 설치 발전설비 용량",
+      "indicatorId": "A-018_capacity_total_renewable_energy_offgrid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0487be6ab6ec",
+        "labelKo": "발전 설비용량",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-0487be6ab6ec|MW|category=Total renewable energy(독립형)|detail=기술별 누적 설치 발전설비 용량|technology=1,2,3,4,5,7,8|A-018_capacity_total_renewable_energy_offgrid",
+      "sourceCaveat": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "발전 설비용량 · Total renewable energy(독립형) — 기술별 누적 설치 발전설비 용량",
+      "sourceLabelEn": "Installed electricity capacity: Total renewable energy (OffGrid)",
+      "sourceNote": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-018",
+        "indicatorId": "A-018_capacity_total_renewable_energy_offgrid",
+        "sourceFileDecoded": "A-018_기술별 발전 설비용량.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0487be6ab6ec|MW",
+      "dimensionLabels": {
+        "category": "Total renewable energy(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "1 · 2 · 3 · 4 · 5 · 7 · 8"
+      },
+      "dimensions": {
+        "category": "Total renewable energy(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "1,2,3,4,5,7,8"
+      },
+      "displayLabel": "발전 설비용량 · Total renewable energy(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "indicatorId": "A-018_capacity_total_renewable_energy_ongrid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0487be6ab6ec",
+        "labelKo": "발전 설비용량",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-0487be6ab6ec|MW|category=Total renewable energy(계통연계)|detail=기술별 누적 설치 발전설비 용량|technology=1,2,3,4,5,7,8|A-018_capacity_total_renewable_energy_ongrid",
+      "sourceCaveat": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "발전 설비용량 · Total renewable energy(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "sourceLabelEn": "Installed electricity capacity: Total renewable energy (OnGrid)",
+      "sourceNote": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-018",
+        "indicatorId": "A-018_capacity_total_renewable_energy_ongrid",
+        "sourceFileDecoded": "A-018_기술별 발전 설비용량.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0487be6ab6ec|MW",
+      "dimensionLabels": {
+        "category": "Wind energy(독립형)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "3"
+      },
+      "dimensions": {
+        "category": "Wind energy(독립형)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "3"
+      },
+      "displayLabel": "발전 설비용량 · Wind energy(독립형) — 기술별 누적 설치 발전설비 용량",
+      "indicatorId": "A-018_capacity_wind_energy_offgrid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0487be6ab6ec",
+        "labelKo": "발전 설비용량",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-0487be6ab6ec|MW|category=Wind energy(독립형)|detail=기술별 누적 설치 발전설비 용량|technology=3|A-018_capacity_wind_energy_offgrid",
+      "sourceCaveat": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "발전 설비용량 · Wind energy(독립형) — 기술별 누적 설치 발전설비 용량",
+      "sourceLabelEn": "Installed electricity capacity: Wind energy (OffGrid)",
+      "sourceNote": "2000–2012년 원문 \"-\". 재확보 대상 1차 출처: 베트남 산업무역부(MOIT)·EVN 연차 설비통계.",
+      "sourceProvenance": {
+        "elementId": "A-018",
+        "indicatorId": "A-018_capacity_wind_energy_offgrid",
+        "sourceFileDecoded": "A-018_기술별 발전 설비용량.xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0487be6ab6ec|MW",
+      "dimensionLabels": {
+        "category": "Wind energy(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "3"
+      },
+      "dimensions": {
+        "category": "Wind energy(계통연계)",
+        "detail": "기술별 누적 설치 발전설비 용량",
+        "technology": "3"
+      },
+      "displayLabel": "발전 설비용량 · Wind energy(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "indicatorId": "A-018_capacity_wind_energy_ongrid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0487be6ab6ec",
+        "labelKo": "발전 설비용량",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-0487be6ab6ec|MW|category=Wind energy(계통연계)|detail=기술별 누적 설치 발전설비 용량|technology=3|A-018_capacity_wind_energy_ongrid",
+      "sourceCaveat": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [정의 명확화] 검토의견 1번 확인 — raw에 실제로 존재하는 기술 라벨은 26종(재생 16종·비재생 10종)이며 \"재생 16종 + 비재생 8종\"이라는 종전 설명은 비재생 종수가 틀림. 전 26종을 계통연계(OnGrid)·독립형(OffGrid)으로 나누어 52개 지표로 전건 수록함. [결측] 검토의견 2번 확인 — 석탄·석유·천연가스는 2014년부터만 값이 있고 2000~2013년은 원문이 \"-\"임. 다만 상위 항목인 \"Fossil fuels\"·\"Total non-renewable energy\"는 2000년부터 값이 있으므로, 연료별 분해값만 미제공된 것임. 해당 연도는 M01로 표기함. [정합성] 검토의견 3번 확인 — 2025년 비재생 총계 36,995.27 MW와 석탄(28,100)+석유(1,291)+천연가스(7,527)=36,918 MW의 차이 77.27 MW는 \"Other non-renewable energy\" 77.27 MW와 정확히 일치함. 이 항목을 지표로 추가 수록하여 차이가 해소됨. 다만 동일 값 77.27 MW가 재생 쪽 \"Renewable waste\"로도 계상되어 있어(폐기물 발전의 재생·비재생 양분) 재생+비재생 단순 합산 시 중복될 수 있음. [이상치] 검토의견 4번 확인 — 독립형(OffGrid) 재생수력은 2005~2025년 21개년 내내 43 MW로 동일하며 2000~2004년은 \"-\"임. raw 원문 그대로이고 원천에 갱신 중단 여부를 밝힌 주석은 없음. 임의 보정하지 않음. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "발전 설비용량 · Wind energy(계통연계) — 기술별 누적 설치 발전설비 용량",
+      "sourceLabelEn": "Installed electricity capacity: Wind energy (OnGrid)",
+      "sourceNote": "2000–2007년 원문 \"-\". 재확보 대상 1차 출처: 베트남 산업무역부(MOIT)·EVN 연차 설비통계.",
+      "sourceProvenance": {
+        "elementId": "A-018",
+        "indicatorId": "A-018_capacity_wind_energy_ongrid",
+        "sourceFileDecoded": "A-018_기술별 발전 설비용량.xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 26,
+      "key": "measure-0487be6ab6ec",
+      "labelKo": "발전 설비용량",
+      "recordCount": 676,
+      "unit": "MW",
+      "unitFamily": "capacity"
+    }
+  ],
+  "observationCount": 676,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

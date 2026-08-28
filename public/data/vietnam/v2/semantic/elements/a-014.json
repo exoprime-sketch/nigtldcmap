@@ -1,0 +1,711 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 17,
+      "values": [
+        "SDG1 빈곤 종식",
+        "SDG2 기아 종식",
+        "SDG3 건강과 웰빙",
+        "SDG4 양질의 교육",
+        "SDG5 성평등",
+        "SDG6 물과 위생",
+        "SDG7 깨끗한 에너지",
+        "SDG8 양질의 일자리와 경제성장",
+        "SDG9 산업 · 혁신 · 인프라",
+        "SDG10 불평등 완화",
+        "SDG11 지속가능한 도시",
+        "SDG12 책임있는 소비 · 생산",
+        "SDG13 기후변화 대응",
+        "SDG14 해양 생태계",
+        "SDG15 육상 생태계",
+        "SDG16 평화 · 정의 · 제도",
+        "SDG17 글로벌 파트너십"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 3,
+      "values": [
+        "17개 목표 평균 달성도(0~100)",
+        "목표 단위 달성도 점수(0~100)",
+        "조사대상국 중 순위"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 26,
+      "values": [
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ]
+    }
+  ],
+  "elementId": "A-014",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 19,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-599d35373f35|점",
+      "dimensionLabels": {
+        "category": "SDG1 빈곤 종식",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "dimensions": {
+        "category": "SDG1 빈곤 종식",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "displayLabel": "목표별 달성도 · SDG1 빈곤 종식 — 목표 단위 달성도 점수(0~100)",
+      "indicatorId": "A-014_sdg_goal_score_sdg01",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-599d35373f35",
+        "labelKo": "목표별 달성도",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-599d35373f35|점|category=SDG1 빈곤 종식|detail=목표 단위 달성도 점수(0~100)|A-014_sdg_goal_score_sdg01",
+      "sourceCaveat": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "목표별 달성도 · SDG1 빈곤 종식 — 목표 단위 달성도 점수(0~100)",
+      "sourceLabelEn": "SDG1 goal score",
+      "sourceNote": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-014",
+        "indicatorId": "A-014_sdg_goal_score_sdg01",
+        "sourceFileDecoded": "A-014_UNDESA SDG Index Score.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-599d35373f35|점",
+      "dimensionLabels": {
+        "category": "SDG2 기아 종식",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "dimensions": {
+        "category": "SDG2 기아 종식",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "displayLabel": "목표별 달성도 · SDG2 기아 종식 — 목표 단위 달성도 점수(0~100)",
+      "indicatorId": "A-014_sdg_goal_score_sdg02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-599d35373f35",
+        "labelKo": "목표별 달성도",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-599d35373f35|점|category=SDG2 기아 종식|detail=목표 단위 달성도 점수(0~100)|A-014_sdg_goal_score_sdg02",
+      "sourceCaveat": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "목표별 달성도 · SDG2 기아 종식 — 목표 단위 달성도 점수(0~100)",
+      "sourceLabelEn": "SDG2 goal score",
+      "sourceNote": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-014",
+        "indicatorId": "A-014_sdg_goal_score_sdg02",
+        "sourceFileDecoded": "A-014_UNDESA SDG Index Score.xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-599d35373f35|점",
+      "dimensionLabels": {
+        "category": "SDG3 건강과 웰빙",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "dimensions": {
+        "category": "SDG3 건강과 웰빙",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "displayLabel": "목표별 달성도 · SDG3 건강과 웰빙 — 목표 단위 달성도 점수(0~100)",
+      "indicatorId": "A-014_sdg_goal_score_sdg03",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-599d35373f35",
+        "labelKo": "목표별 달성도",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-599d35373f35|점|category=SDG3 건강과 웰빙|detail=목표 단위 달성도 점수(0~100)|A-014_sdg_goal_score_sdg03",
+      "sourceCaveat": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "목표별 달성도 · SDG3 건강과 웰빙 — 목표 단위 달성도 점수(0~100)",
+      "sourceLabelEn": "SDG3 goal score",
+      "sourceNote": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-014",
+        "indicatorId": "A-014_sdg_goal_score_sdg03",
+        "sourceFileDecoded": "A-014_UNDESA SDG Index Score.xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-599d35373f35|점",
+      "dimensionLabels": {
+        "category": "SDG4 양질의 교육",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "dimensions": {
+        "category": "SDG4 양질의 교육",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "displayLabel": "목표별 달성도 · SDG4 양질의 교육 — 목표 단위 달성도 점수(0~100)",
+      "indicatorId": "A-014_sdg_goal_score_sdg04",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-599d35373f35",
+        "labelKo": "목표별 달성도",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-599d35373f35|점|category=SDG4 양질의 교육|detail=목표 단위 달성도 점수(0~100)|A-014_sdg_goal_score_sdg04",
+      "sourceCaveat": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "목표별 달성도 · SDG4 양질의 교육 — 목표 단위 달성도 점수(0~100)",
+      "sourceLabelEn": "SDG4 goal score",
+      "sourceNote": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-014",
+        "indicatorId": "A-014_sdg_goal_score_sdg04",
+        "sourceFileDecoded": "A-014_UNDESA SDG Index Score.xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-599d35373f35|점",
+      "dimensionLabels": {
+        "category": "SDG5 성평등",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "dimensions": {
+        "category": "SDG5 성평등",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "displayLabel": "목표별 달성도 · SDG5 성평등 — 목표 단위 달성도 점수(0~100)",
+      "indicatorId": "A-014_sdg_goal_score_sdg05",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-599d35373f35",
+        "labelKo": "목표별 달성도",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-599d35373f35|점|category=SDG5 성평등|detail=목표 단위 달성도 점수(0~100)|A-014_sdg_goal_score_sdg05",
+      "sourceCaveat": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "목표별 달성도 · SDG5 성평등 — 목표 단위 달성도 점수(0~100)",
+      "sourceLabelEn": "SDG5 goal score",
+      "sourceNote": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-014",
+        "indicatorId": "A-014_sdg_goal_score_sdg05",
+        "sourceFileDecoded": "A-014_UNDESA SDG Index Score.xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-599d35373f35|점",
+      "dimensionLabels": {
+        "category": "SDG6 물과 위생",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "dimensions": {
+        "category": "SDG6 물과 위생",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "displayLabel": "목표별 달성도 · SDG6 물과 위생 — 목표 단위 달성도 점수(0~100)",
+      "indicatorId": "A-014_sdg_goal_score_sdg06",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-599d35373f35",
+        "labelKo": "목표별 달성도",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-599d35373f35|점|category=SDG6 물과 위생|detail=목표 단위 달성도 점수(0~100)|A-014_sdg_goal_score_sdg06",
+      "sourceCaveat": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "목표별 달성도 · SDG6 물과 위생 — 목표 단위 달성도 점수(0~100)",
+      "sourceLabelEn": "SDG6 goal score",
+      "sourceNote": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-014",
+        "indicatorId": "A-014_sdg_goal_score_sdg06",
+        "sourceFileDecoded": "A-014_UNDESA SDG Index Score.xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-599d35373f35|점",
+      "dimensionLabels": {
+        "category": "SDG7 깨끗한 에너지",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "dimensions": {
+        "category": "SDG7 깨끗한 에너지",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "displayLabel": "목표별 달성도 · SDG7 깨끗한 에너지 — 목표 단위 달성도 점수(0~100)",
+      "indicatorId": "A-014_sdg_goal_score_sdg07",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-599d35373f35",
+        "labelKo": "목표별 달성도",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-599d35373f35|점|category=SDG7 깨끗한 에너지|detail=목표 단위 달성도 점수(0~100)|A-014_sdg_goal_score_sdg07",
+      "sourceCaveat": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "목표별 달성도 · SDG7 깨끗한 에너지 — 목표 단위 달성도 점수(0~100)",
+      "sourceLabelEn": "SDG7 goal score",
+      "sourceNote": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-014",
+        "indicatorId": "A-014_sdg_goal_score_sdg07",
+        "sourceFileDecoded": "A-014_UNDESA SDG Index Score.xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-599d35373f35|점",
+      "dimensionLabels": {
+        "category": "SDG8 양질의 일자리와 경제성장",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "dimensions": {
+        "category": "SDG8 양질의 일자리와 경제성장",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "displayLabel": "목표별 달성도 · SDG8 양질의 일자리와 경제성장 — 목표 단위 달성도 점수(0~100)",
+      "indicatorId": "A-014_sdg_goal_score_sdg08",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-599d35373f35",
+        "labelKo": "목표별 달성도",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-599d35373f35|점|category=SDG8 양질의 일자리와 경제성장|detail=목표 단위 달성도 점수(0~100)|A-014_sdg_goal_score_sdg08",
+      "sourceCaveat": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "목표별 달성도 · SDG8 양질의 일자리와 경제성장 — 목표 단위 달성도 점수(0~100)",
+      "sourceLabelEn": "SDG8 goal score",
+      "sourceNote": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-014",
+        "indicatorId": "A-014_sdg_goal_score_sdg08",
+        "sourceFileDecoded": "A-014_UNDESA SDG Index Score.xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-599d35373f35|점",
+      "dimensionLabels": {
+        "category": "SDG9 산업 · 혁신 · 인프라",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "dimensions": {
+        "category": "SDG9 산업 · 혁신 · 인프라",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "displayLabel": "목표별 달성도 · SDG9 산업·혁신·인프라 — 목표 단위 달성도 점수(0~100)",
+      "indicatorId": "A-014_sdg_goal_score_sdg09",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-599d35373f35",
+        "labelKo": "목표별 달성도",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-599d35373f35|점|category=SDG9 산업 · 혁신 · 인프라|detail=목표 단위 달성도 점수(0~100)|A-014_sdg_goal_score_sdg09",
+      "sourceCaveat": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "목표별 달성도 · SDG9 산업·혁신·인프라 — 목표 단위 달성도 점수(0~100)",
+      "sourceLabelEn": "SDG9 goal score",
+      "sourceNote": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-014",
+        "indicatorId": "A-014_sdg_goal_score_sdg09",
+        "sourceFileDecoded": "A-014_UNDESA SDG Index Score.xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-599d35373f35|점",
+      "dimensionLabels": {
+        "category": "SDG10 불평등 완화",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "dimensions": {
+        "category": "SDG10 불평등 완화",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "displayLabel": "목표별 달성도 · SDG10 불평등 완화 — 목표 단위 달성도 점수(0~100)",
+      "indicatorId": "A-014_sdg_goal_score_sdg10",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-599d35373f35",
+        "labelKo": "목표별 달성도",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-599d35373f35|점|category=SDG10 불평등 완화|detail=목표 단위 달성도 점수(0~100)|A-014_sdg_goal_score_sdg10",
+      "sourceCaveat": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "목표별 달성도 · SDG10 불평등 완화 — 목표 단위 달성도 점수(0~100)",
+      "sourceLabelEn": "SDG10 goal score",
+      "sourceNote": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-014",
+        "indicatorId": "A-014_sdg_goal_score_sdg10",
+        "sourceFileDecoded": "A-014_UNDESA SDG Index Score.xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-599d35373f35|점",
+      "dimensionLabels": {
+        "category": "SDG11 지속가능한 도시",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "dimensions": {
+        "category": "SDG11 지속가능한 도시",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "displayLabel": "목표별 달성도 · SDG11 지속가능한 도시 — 목표 단위 달성도 점수(0~100)",
+      "indicatorId": "A-014_sdg_goal_score_sdg11",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-599d35373f35",
+        "labelKo": "목표별 달성도",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-599d35373f35|점|category=SDG11 지속가능한 도시|detail=목표 단위 달성도 점수(0~100)|A-014_sdg_goal_score_sdg11",
+      "sourceCaveat": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "목표별 달성도 · SDG11 지속가능한 도시 — 목표 단위 달성도 점수(0~100)",
+      "sourceLabelEn": "SDG11 goal score",
+      "sourceNote": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-014",
+        "indicatorId": "A-014_sdg_goal_score_sdg11",
+        "sourceFileDecoded": "A-014_UNDESA SDG Index Score.xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-599d35373f35|점",
+      "dimensionLabels": {
+        "category": "SDG12 책임있는 소비 · 생산",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "dimensions": {
+        "category": "SDG12 책임있는 소비 · 생산",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "displayLabel": "목표별 달성도 · SDG12 책임있는 소비·생산 — 목표 단위 달성도 점수(0~100)",
+      "indicatorId": "A-014_sdg_goal_score_sdg12",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-599d35373f35",
+        "labelKo": "목표별 달성도",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-599d35373f35|점|category=SDG12 책임있는 소비 · 생산|detail=목표 단위 달성도 점수(0~100)|A-014_sdg_goal_score_sdg12",
+      "sourceCaveat": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "목표별 달성도 · SDG12 책임있는 소비·생산 — 목표 단위 달성도 점수(0~100)",
+      "sourceLabelEn": "SDG12 goal score",
+      "sourceNote": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-014",
+        "indicatorId": "A-014_sdg_goal_score_sdg12",
+        "sourceFileDecoded": "A-014_UNDESA SDG Index Score.xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-599d35373f35|점",
+      "dimensionLabels": {
+        "category": "SDG13 기후변화 대응",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "dimensions": {
+        "category": "SDG13 기후변화 대응",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "displayLabel": "목표별 달성도 · SDG13 기후변화 대응 — 목표 단위 달성도 점수(0~100)",
+      "indicatorId": "A-014_sdg_goal_score_sdg13",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-599d35373f35",
+        "labelKo": "목표별 달성도",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-599d35373f35|점|category=SDG13 기후변화 대응|detail=목표 단위 달성도 점수(0~100)|A-014_sdg_goal_score_sdg13",
+      "sourceCaveat": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "목표별 달성도 · SDG13 기후변화 대응 — 목표 단위 달성도 점수(0~100)",
+      "sourceLabelEn": "SDG13 goal score",
+      "sourceNote": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-014",
+        "indicatorId": "A-014_sdg_goal_score_sdg13",
+        "sourceFileDecoded": "A-014_UNDESA SDG Index Score.xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-599d35373f35|점",
+      "dimensionLabels": {
+        "category": "SDG14 해양 생태계",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "dimensions": {
+        "category": "SDG14 해양 생태계",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "displayLabel": "목표별 달성도 · SDG14 해양 생태계 — 목표 단위 달성도 점수(0~100)",
+      "indicatorId": "A-014_sdg_goal_score_sdg14",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-599d35373f35",
+        "labelKo": "목표별 달성도",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-599d35373f35|점|category=SDG14 해양 생태계|detail=목표 단위 달성도 점수(0~100)|A-014_sdg_goal_score_sdg14",
+      "sourceCaveat": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "목표별 달성도 · SDG14 해양 생태계 — 목표 단위 달성도 점수(0~100)",
+      "sourceLabelEn": "SDG14 goal score",
+      "sourceNote": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-014",
+        "indicatorId": "A-014_sdg_goal_score_sdg14",
+        "sourceFileDecoded": "A-014_UNDESA SDG Index Score.xlsx",
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-599d35373f35|점",
+      "dimensionLabels": {
+        "category": "SDG15 육상 생태계",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "dimensions": {
+        "category": "SDG15 육상 생태계",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "displayLabel": "목표별 달성도 · SDG15 육상 생태계 — 목표 단위 달성도 점수(0~100)",
+      "indicatorId": "A-014_sdg_goal_score_sdg15",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-599d35373f35",
+        "labelKo": "목표별 달성도",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-599d35373f35|점|category=SDG15 육상 생태계|detail=목표 단위 달성도 점수(0~100)|A-014_sdg_goal_score_sdg15",
+      "sourceCaveat": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "목표별 달성도 · SDG15 육상 생태계 — 목표 단위 달성도 점수(0~100)",
+      "sourceLabelEn": "SDG15 goal score",
+      "sourceNote": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-014",
+        "indicatorId": "A-014_sdg_goal_score_sdg15",
+        "sourceFileDecoded": "A-014_UNDESA SDG Index Score.xlsx",
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-599d35373f35|점",
+      "dimensionLabels": {
+        "category": "SDG16 평화 · 정의 · 제도",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "dimensions": {
+        "category": "SDG16 평화 · 정의 · 제도",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "displayLabel": "목표별 달성도 · SDG16 평화·정의·제도 — 목표 단위 달성도 점수(0~100)",
+      "indicatorId": "A-014_sdg_goal_score_sdg16",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-599d35373f35",
+        "labelKo": "목표별 달성도",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-599d35373f35|점|category=SDG16 평화 · 정의 · 제도|detail=목표 단위 달성도 점수(0~100)|A-014_sdg_goal_score_sdg16",
+      "sourceCaveat": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "목표별 달성도 · SDG16 평화·정의·제도 — 목표 단위 달성도 점수(0~100)",
+      "sourceLabelEn": "SDG16 goal score",
+      "sourceNote": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-014",
+        "indicatorId": "A-014_sdg_goal_score_sdg16",
+        "sourceFileDecoded": "A-014_UNDESA SDG Index Score.xlsx",
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-599d35373f35|점",
+      "dimensionLabels": {
+        "category": "SDG17 글로벌 파트너십",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "dimensions": {
+        "category": "SDG17 글로벌 파트너십",
+        "detail": "목표 단위 달성도 점수(0~100)"
+      },
+      "displayLabel": "목표별 달성도 · SDG17 글로벌 파트너십 — 목표 단위 달성도 점수(0~100)",
+      "indicatorId": "A-014_sdg_goal_score_sdg17",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-599d35373f35",
+        "labelKo": "목표별 달성도",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-599d35373f35|점|category=SDG17 글로벌 파트너십|detail=목표 단위 달성도 점수(0~100)|A-014_sdg_goal_score_sdg17",
+      "sourceCaveat": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "목표별 달성도 · SDG17 글로벌 파트너십 — 목표 단위 달성도 점수(0~100)",
+      "sourceLabelEn": "SDG17 goal score",
+      "sourceNote": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-014",
+        "indicatorId": "A-014_sdg_goal_score_sdg17",
+        "sourceFileDecoded": "A-014_UNDESA SDG Index Score.xlsx",
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-24b846901416|위",
+      "dimensionLabels": {
+        "detail": "조사대상국 중 순위"
+      },
+      "dimensions": {
+        "detail": "조사대상국 중 순위"
+      },
+      "displayLabel": "SDG Index 종합순위 — 조사대상국 중 순위",
+      "indicatorId": "A-014_sdg_index_rank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-24b846901416",
+        "labelKo": "SDG Index 종합순위",
+        "unit": "위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-24b846901416|위|detail=조사대상국 중 순위|A-014_sdg_index_rank",
+      "sourceCaveat": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "SDG Index 종합순위 — 조사대상국 중 순위",
+      "sourceLabelEn": "SDG Index Rank",
+      "sourceNote": "2000–2014년 순위 결측. SDR가 소급 순위를 2015년부터만 공표하기 때문임. 재확보 대상 없음(원천 미산출).",
+      "sourceProvenance": {
+        "elementId": "A-014",
+        "indicatorId": "A-014_sdg_index_rank",
+        "sourceFileDecoded": "A-014_UNDESA SDG Index Score.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-87fffae7373e|점",
+      "dimensionLabels": {
+        "detail": "17개 목표 평균 달성도(0~100)"
+      },
+      "dimensions": {
+        "detail": "17개 목표 평균 달성도(0~100)"
+      },
+      "displayLabel": "SDG Index 종합점수 — 17개 목표 평균 달성도(0~100)",
+      "indicatorId": "A-014_sdg_index_score",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-87fffae7373e",
+        "labelKo": "SDG Index 종합점수",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-87fffae7373e|점|detail=17개 목표 평균 달성도(0~100)|A-014_sdg_index_score",
+      "sourceCaveat": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "SDG Index 종합점수 — 17개 목표 평균 달성도(0~100)",
+      "sourceLabelEn": "SDG Index Score",
+      "sourceNote": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [보완] 검토의견 1번에 따라 종합점수(SDG Index Score)와 종합 순위(SDG Index Rank)를 추가 수록함. [값 확인] 검토의견 2번을 raw 전수 대조로 확인함 — 17개 목표 중 정확히 10개(SDG2·4·6·7·10·11·12·13·14·17)의 2025년 값이 2024년과 동일함. 이는 SDR가 해당 목표 구성지표의 원자료 갱신이 없을 때 직전 값을 이월(carry-forward)하기 때문이며 원문 그대로임. SDG10은 26개년 중 15개년이 직전 해 값의 반복인데, 구성지표 sdg10_gini가 짝수 연도(2002·2004…2022)에만 존재하고 2022년에서 끝나기 때문임(raw에서 확인). 임의 보정하지 않고 원문대로 수록함. [딥링크] 검토의견 3번에 따라 source_url을 베트남 국가 프로파일 딥링크로 교체함. 원자료 파일은 https://dashboards.sdgindex.org/downloads 에서 내려받음. [중복 제거] raw의 \"2026 SDG Index Score\"는 2026년판 발간 기준 표기일 뿐 값이 backdated 2025년 값과 완전히 동일하므로, 연도 중복을 피하기 위해 2000~2025년 계열만 수록함. [라이선스] 원천 약관이 CC BY-NC-ND 4.0(비상업·개변 금지)이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-014",
+        "indicatorId": "A-014_sdg_index_score",
+        "sourceFileDecoded": "A-014_UNDESA SDG Index Score.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-24b846901416",
+      "labelKo": "SDG Index 종합순위",
+      "recordCount": 26,
+      "unit": "위",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-87fffae7373e",
+      "labelKo": "SDG Index 종합점수",
+      "recordCount": 26,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 17,
+      "key": "measure-599d35373f35",
+      "labelKo": "목표별 달성도",
+      "recordCount": 442,
+      "unit": "점",
+      "unitFamily": "score"
+    }
+  ],
+  "observationCount": 494,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

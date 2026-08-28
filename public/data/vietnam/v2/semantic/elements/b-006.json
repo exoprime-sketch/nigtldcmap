@@ -1,0 +1,818 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 1,
+      "values": [
+        "TR25(요구 임계)"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 3,
+      "values": [
+        "historical",
+        "SSP2-4.5",
+        "SSP5-8.5"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 151,
+      "values": [
+        "1950",
+        "1951",
+        "1952",
+        "1953",
+        "1954",
+        "1955",
+        "1956",
+        "1957",
+        "1958",
+        "1959",
+        "1960",
+        "1961",
+        "1962",
+        "1963",
+        "1964",
+        "1965",
+        "1966",
+        "1967",
+        "1968",
+        "1969",
+        "1970",
+        "1971",
+        "1972",
+        "1973",
+        "1974",
+        "1975",
+        "1976",
+        "1977",
+        "1978",
+        "1979",
+        "1980",
+        "1981",
+        "1982",
+        "1983",
+        "1984",
+        "1985",
+        "1986",
+        "1987",
+        "1988",
+        "1989",
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026",
+        "2027",
+        "2028",
+        "2029",
+        "2030",
+        "2031",
+        "2032",
+        "2033",
+        "2034",
+        "2035",
+        "2036",
+        "2037",
+        "2038",
+        "2039",
+        "2040",
+        "2041",
+        "2042",
+        "2043",
+        "2044",
+        "2045",
+        "2046",
+        "2047",
+        "2048",
+        "2049",
+        "2050",
+        "2051",
+        "2052",
+        "2053",
+        "2054",
+        "2055",
+        "2056",
+        "2057",
+        "2058",
+        "2059",
+        "2060",
+        "2061",
+        "2062",
+        "2063",
+        "2064",
+        "2065",
+        "2066",
+        "2067",
+        "2068",
+        "2069",
+        "2070",
+        "2071",
+        "2072",
+        "2073",
+        "2074",
+        "2075",
+        "2076",
+        "2077",
+        "2078",
+        "2079",
+        "2080",
+        "2081",
+        "2082",
+        "2083",
+        "2084",
+        "2085",
+        "2086",
+        "2087",
+        "2088",
+        "2089",
+        "2090",
+        "2091",
+        "2092",
+        "2093",
+        "2094",
+        "2095",
+        "2096",
+        "2097",
+        "2098",
+        "2099",
+        "2100"
+      ]
+    }
+  ],
+  "elementId": "B-006",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 19,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-8186ff340789|일",
+      "dimensionLabels": {
+        "detail": "historical"
+      },
+      "dimensions": {
+        "detail": "historical"
+      },
+      "displayLabel": "폭염일수 TX35 — historical",
+      "indicatorId": "B-006_hd35_historical",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8186ff340789",
+        "labelKo": "폭염일수 TX35",
+        "unit": "일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-8186ff340789|일|detail=historical|B-006_hd35_historical",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "폭염일수 TX35 — historical",
+      "sourceLabelEn": "폭염일수 TX35 historical",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-006",
+        "indicatorId": "B-006_hd35_historical",
+        "sourceFileDecoded": "B-006_폭염： 폭염일수(TX35, TX40), 열대야(TR20, TR25), Heat Index(HI35)).xlsx",
+        "sourceRow": 4,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8186ff340789|일",
+      "dimensionLabels": {
+        "detail": "SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "SSP2-4.5"
+      },
+      "displayLabel": "폭염일수 TX35 — SSP2-4.5",
+      "indicatorId": "B-006_hd35_ssp245",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8186ff340789",
+        "labelKo": "폭염일수 TX35",
+        "unit": "일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-8186ff340789|일|detail=SSP2-4.5|B-006_hd35_ssp245",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "폭염일수 TX35 — SSP2-4.5",
+      "sourceLabelEn": "폭염일수 TX35 SSP2-4.5",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-006",
+        "indicatorId": "B-006_hd35_ssp245",
+        "sourceFileDecoded": "B-006_폭염： 폭염일수(TX35, TX40), 열대야(TR20, TR25), Heat Index(HI35)).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8186ff340789|일",
+      "dimensionLabels": {
+        "detail": "SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "SSP5-8.5"
+      },
+      "displayLabel": "폭염일수 TX35 — SSP5-8.5",
+      "indicatorId": "B-006_hd35_ssp585",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8186ff340789",
+        "labelKo": "폭염일수 TX35",
+        "unit": "일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-8186ff340789|일|detail=SSP5-8.5|B-006_hd35_ssp585",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "폭염일수 TX35 — SSP5-8.5",
+      "sourceLabelEn": "폭염일수 TX35 SSP5-8.5",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-006",
+        "indicatorId": "B-006_hd35_ssp585",
+        "sourceFileDecoded": "B-006_폭염： 폭염일수(TX35, TX40), 열대야(TR20, TR25), Heat Index(HI35)).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a94ec48e5f86|일",
+      "dimensionLabels": {
+        "detail": "historical"
+      },
+      "dimensions": {
+        "detail": "historical"
+      },
+      "displayLabel": "폭염일수 TX40 — historical",
+      "indicatorId": "B-006_hd40_historical",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a94ec48e5f86",
+        "labelKo": "폭염일수 TX40",
+        "unit": "일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a94ec48e5f86|일|detail=historical|B-006_hd40_historical",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "폭염일수 TX40 — historical",
+      "sourceLabelEn": "폭염일수 TX40 historical",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-006",
+        "indicatorId": "B-006_hd40_historical",
+        "sourceFileDecoded": "B-006_폭염： 폭염일수(TX35, TX40), 열대야(TR20, TR25), Heat Index(HI35)).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a94ec48e5f86|일",
+      "dimensionLabels": {
+        "detail": "SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "SSP2-4.5"
+      },
+      "displayLabel": "폭염일수 TX40 — SSP2-4.5",
+      "indicatorId": "B-006_hd40_ssp245",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a94ec48e5f86",
+        "labelKo": "폭염일수 TX40",
+        "unit": "일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a94ec48e5f86|일|detail=SSP2-4.5|B-006_hd40_ssp245",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "폭염일수 TX40 — SSP2-4.5",
+      "sourceLabelEn": "폭염일수 TX40 SSP2-4.5",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-006",
+        "indicatorId": "B-006_hd40_ssp245",
+        "sourceFileDecoded": "B-006_폭염： 폭염일수(TX35, TX40), 열대야(TR20, TR25), Heat Index(HI35)).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a94ec48e5f86|일",
+      "dimensionLabels": {
+        "detail": "SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "SSP5-8.5"
+      },
+      "displayLabel": "폭염일수 TX40 — SSP5-8.5",
+      "indicatorId": "B-006_hd40_ssp585",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a94ec48e5f86",
+        "labelKo": "폭염일수 TX40",
+        "unit": "일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a94ec48e5f86|일|detail=SSP5-8.5|B-006_hd40_ssp585",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "폭염일수 TX40 — SSP5-8.5",
+      "sourceLabelEn": "폭염일수 TX40 SSP5-8.5",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-006",
+        "indicatorId": "B-006_hd40_ssp585",
+        "sourceFileDecoded": "B-006_폭염： 폭염일수(TX35, TX40), 열대야(TR20, TR25), Heat Index(HI35)).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-38647dc84e65|일",
+      "dimensionLabels": {
+        "detail": "historical"
+      },
+      "dimensions": {
+        "detail": "historical"
+      },
+      "displayLabel": "체감폭염 HI35 — historical",
+      "indicatorId": "B-006_hi35_historical",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-38647dc84e65",
+        "labelKo": "체감폭염 HI35",
+        "unit": "일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-38647dc84e65|일|detail=historical|B-006_hi35_historical",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "체감폭염 HI35 — historical",
+      "sourceLabelEn": "체감폭염 HI35 historical",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-006",
+        "indicatorId": "B-006_hi35_historical",
+        "sourceFileDecoded": "B-006_폭염： 폭염일수(TX35, TX40), 열대야(TR20, TR25), Heat Index(HI35)).xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-38647dc84e65|일",
+      "dimensionLabels": {
+        "detail": "SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "SSP2-4.5"
+      },
+      "displayLabel": "체감폭염 HI35 — SSP2-4.5",
+      "indicatorId": "B-006_hi35_ssp245",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-38647dc84e65",
+        "labelKo": "체감폭염 HI35",
+        "unit": "일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-38647dc84e65|일|detail=SSP2-4.5|B-006_hi35_ssp245",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "체감폭염 HI35 — SSP2-4.5",
+      "sourceLabelEn": "체감폭염 HI35 SSP2-4.5",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-006",
+        "indicatorId": "B-006_hi35_ssp245",
+        "sourceFileDecoded": "B-006_폭염： 폭염일수(TX35, TX40), 열대야(TR20, TR25), Heat Index(HI35)).xlsx",
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-38647dc84e65|일",
+      "dimensionLabels": {
+        "detail": "SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "SSP5-8.5"
+      },
+      "displayLabel": "체감폭염 HI35 — SSP5-8.5",
+      "indicatorId": "B-006_hi35_ssp585",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-38647dc84e65",
+        "labelKo": "체감폭염 HI35",
+        "unit": "일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-38647dc84e65|일|detail=SSP5-8.5|B-006_hi35_ssp585",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "체감폭염 HI35 — SSP5-8.5",
+      "sourceLabelEn": "체감폭염 HI35 SSP5-8.5",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-006",
+        "indicatorId": "B-006_hi35_ssp585",
+        "sourceFileDecoded": "B-006_폭염： 폭염일수(TX35, TX40), 열대야(TR20, TR25), Heat Index(HI35)).xlsx",
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7ccd09db2c2b|일",
+      "dimensionLabels": {
+        "category": "TR25(요구 임계)"
+      },
+      "dimensions": {
+        "category": "TR25(요구 임계)"
+      },
+      "displayLabel": "열대야 TR20·TR25(요구 임계)",
+      "indicatorId": "B-006_tr20_tr25",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7ccd09db2c2b",
+        "labelKo": "열대야 TR20",
+        "unit": "일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-7ccd09db2c2b|일|category=TR25(요구 임계)|B-006_tr20_tr25",
+      "sourceCaveat": "[결측] 요구 임계 TR20·TR25는 CCKP 미제공(NP). 대체지표 TR23·TR26·TR29 수록. 정확한 TR20/TR25가 필요하면 NEX-GDDP-CMIP6 일자료에서 직접 산출 필요(후속 조치). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "열대야 TR20·TR25(요구 임계)",
+      "sourceLabelEn": "Tropical nights TR20/TR25",
+      "sourceNote": "2014년: CCKP가 TR20·TR25 임계값 산출물을 제공하지 않음. TR23·TR26·TR29로 대체 수록",
+      "sourceProvenance": {
+        "elementId": "B-006",
+        "indicatorId": "B-006_tr20_tr25",
+        "sourceFileDecoded": "B-006_폭염： 폭염일수(TX35, TX40), 열대야(TR20, TR25), Heat Index(HI35)).xlsx",
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-397c23cf750c|일",
+      "dimensionLabels": {
+        "detail": "historical"
+      },
+      "dimensions": {
+        "detail": "historical"
+      },
+      "displayLabel": "열대야 TR23 — historical",
+      "indicatorId": "B-006_tr23_historical",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-397c23cf750c",
+        "labelKo": "열대야 TR23",
+        "unit": "일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-397c23cf750c|일|detail=historical|B-006_tr23_historical",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "열대야 TR23 — historical",
+      "sourceLabelEn": "열대야 TR23 historical",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-006",
+        "indicatorId": "B-006_tr23_historical",
+        "sourceFileDecoded": "B-006_폭염： 폭염일수(TX35, TX40), 열대야(TR20, TR25), Heat Index(HI35)).xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-397c23cf750c|일",
+      "dimensionLabels": {
+        "detail": "SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "SSP2-4.5"
+      },
+      "displayLabel": "열대야 TR23 — SSP2-4.5",
+      "indicatorId": "B-006_tr23_ssp245",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-397c23cf750c",
+        "labelKo": "열대야 TR23",
+        "unit": "일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-397c23cf750c|일|detail=SSP2-4.5|B-006_tr23_ssp245",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "열대야 TR23 — SSP2-4.5",
+      "sourceLabelEn": "열대야 TR23 SSP2-4.5",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-006",
+        "indicatorId": "B-006_tr23_ssp245",
+        "sourceFileDecoded": "B-006_폭염： 폭염일수(TX35, TX40), 열대야(TR20, TR25), Heat Index(HI35)).xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-397c23cf750c|일",
+      "dimensionLabels": {
+        "detail": "SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "SSP5-8.5"
+      },
+      "displayLabel": "열대야 TR23 — SSP5-8.5",
+      "indicatorId": "B-006_tr23_ssp585",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-397c23cf750c",
+        "labelKo": "열대야 TR23",
+        "unit": "일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-397c23cf750c|일|detail=SSP5-8.5|B-006_tr23_ssp585",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "열대야 TR23 — SSP5-8.5",
+      "sourceLabelEn": "열대야 TR23 SSP5-8.5",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-006",
+        "indicatorId": "B-006_tr23_ssp585",
+        "sourceFileDecoded": "B-006_폭염： 폭염일수(TX35, TX40), 열대야(TR20, TR25), Heat Index(HI35)).xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f712fa192226|일",
+      "dimensionLabels": {
+        "detail": "historical"
+      },
+      "dimensions": {
+        "detail": "historical"
+      },
+      "displayLabel": "열대야 TR26 — historical",
+      "indicatorId": "B-006_tr26_historical",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f712fa192226",
+        "labelKo": "열대야 TR26",
+        "unit": "일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-f712fa192226|일|detail=historical|B-006_tr26_historical",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "열대야 TR26 — historical",
+      "sourceLabelEn": "열대야 TR26 historical",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-006",
+        "indicatorId": "B-006_tr26_historical",
+        "sourceFileDecoded": "B-006_폭염： 폭염일수(TX35, TX40), 열대야(TR20, TR25), Heat Index(HI35)).xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f712fa192226|일",
+      "dimensionLabels": {
+        "detail": "SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "SSP2-4.5"
+      },
+      "displayLabel": "열대야 TR26 — SSP2-4.5",
+      "indicatorId": "B-006_tr26_ssp245",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f712fa192226",
+        "labelKo": "열대야 TR26",
+        "unit": "일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-f712fa192226|일|detail=SSP2-4.5|B-006_tr26_ssp245",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "열대야 TR26 — SSP2-4.5",
+      "sourceLabelEn": "열대야 TR26 SSP2-4.5",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-006",
+        "indicatorId": "B-006_tr26_ssp245",
+        "sourceFileDecoded": "B-006_폭염： 폭염일수(TX35, TX40), 열대야(TR20, TR25), Heat Index(HI35)).xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f712fa192226|일",
+      "dimensionLabels": {
+        "detail": "SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "SSP5-8.5"
+      },
+      "displayLabel": "열대야 TR26 — SSP5-8.5",
+      "indicatorId": "B-006_tr26_ssp585",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f712fa192226",
+        "labelKo": "열대야 TR26",
+        "unit": "일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-f712fa192226|일|detail=SSP5-8.5|B-006_tr26_ssp585",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "열대야 TR26 — SSP5-8.5",
+      "sourceLabelEn": "열대야 TR26 SSP5-8.5",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-006",
+        "indicatorId": "B-006_tr26_ssp585",
+        "sourceFileDecoded": "B-006_폭염： 폭염일수(TX35, TX40), 열대야(TR20, TR25), Heat Index(HI35)).xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-297710c11721|일",
+      "dimensionLabels": {
+        "detail": "historical"
+      },
+      "dimensions": {
+        "detail": "historical"
+      },
+      "displayLabel": "열대야 TR29 — historical",
+      "indicatorId": "B-006_tr29_historical",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-297710c11721",
+        "labelKo": "열대야 TR29",
+        "unit": "일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-297710c11721|일|detail=historical|B-006_tr29_historical",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "열대야 TR29 — historical",
+      "sourceLabelEn": "열대야 TR29 historical",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-006",
+        "indicatorId": "B-006_tr29_historical",
+        "sourceFileDecoded": "B-006_폭염： 폭염일수(TX35, TX40), 열대야(TR20, TR25), Heat Index(HI35)).xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-297710c11721|일",
+      "dimensionLabels": {
+        "detail": "SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "SSP2-4.5"
+      },
+      "displayLabel": "열대야 TR29 — SSP2-4.5",
+      "indicatorId": "B-006_tr29_ssp245",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-297710c11721",
+        "labelKo": "열대야 TR29",
+        "unit": "일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-297710c11721|일|detail=SSP2-4.5|B-006_tr29_ssp245",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "열대야 TR29 — SSP2-4.5",
+      "sourceLabelEn": "열대야 TR29 SSP2-4.5",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-006",
+        "indicatorId": "B-006_tr29_ssp245",
+        "sourceFileDecoded": "B-006_폭염： 폭염일수(TX35, TX40), 열대야(TR20, TR25), Heat Index(HI35)).xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-297710c11721|일",
+      "dimensionLabels": {
+        "detail": "SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "SSP5-8.5"
+      },
+      "displayLabel": "열대야 TR29 — SSP5-8.5",
+      "indicatorId": "B-006_tr29_ssp585",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-297710c11721",
+        "labelKo": "열대야 TR29",
+        "unit": "일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-297710c11721|일|detail=SSP5-8.5|B-006_tr29_ssp585",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceLabel": "열대야 TR29 — SSP5-8.5",
+      "sourceLabelEn": "열대야 TR29 SSP5-8.5",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-006",
+        "indicatorId": "B-006_tr29_ssp585",
+        "sourceFileDecoded": "B-006_폭염： 폭염일수(TX35, TX40), 열대야(TR20, TR25), Heat Index(HI35)).xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-7ccd09db2c2b",
+      "labelKo": "열대야 TR20",
+      "recordCount": 1,
+      "unit": "일",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 3,
+      "key": "measure-397c23cf750c",
+      "labelKo": "열대야 TR23",
+      "recordCount": 237,
+      "unit": "일",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 3,
+      "key": "measure-f712fa192226",
+      "labelKo": "열대야 TR26",
+      "recordCount": 237,
+      "unit": "일",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 3,
+      "key": "measure-297710c11721",
+      "labelKo": "열대야 TR29",
+      "recordCount": 237,
+      "unit": "일",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 3,
+      "key": "measure-38647dc84e65",
+      "labelKo": "체감폭염 HI35",
+      "recordCount": 237,
+      "unit": "일",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 3,
+      "key": "measure-8186ff340789",
+      "labelKo": "폭염일수 TX35",
+      "recordCount": 237,
+      "unit": "일",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 3,
+      "key": "measure-a94ec48e5f86",
+      "labelKo": "폭염일수 TX40",
+      "recordCount": 237,
+      "unit": "일",
+      "unitFamily": "other"
+    }
+  ],
+  "observationCount": 1423,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

@@ -1,0 +1,91 @@
+{
+  "dimensions": [
+    {
+      "key": "city",
+      "labelKo": "city",
+      "valueCount": 5,
+      "values": [
+        "Can Tho",
+        "Hanoi",
+        "Hanoi 외 8개 지역",
+        "Ho Chi Minh City",
+        "Hue"
+      ]
+    },
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    },
+    {
+      "key": "orgType",
+      "labelKo": "orgType",
+      "valueCount": 10,
+      "values": [
+        "NGO",
+        "NGO(국제)",
+        "네트워크(NGO 연합)",
+        "대학",
+        "대학 부설 연구소",
+        "대학(연구그룹)",
+        "대학(학부)",
+        "싱크탱크",
+        "연구기관(국가 아카데미)",
+        "연구소"
+      ]
+    }
+  ],
+  "elementId": "E-005",
+  "entityCount": 20,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 1,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-1cf59fec9fbd|기관(건)",
+      "dimensionLabels": {
+        "category": "연구기관 · NGO"
+      },
+      "dimensions": {
+        "category": "연구기관 · NGO"
+      },
+      "displayLabel": "대학·연구기관·NGO",
+      "indicatorId": "E-005_partner_org",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1cf59fec9fbd",
+        "labelKo": "대학",
+        "unit": "기관(건)",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-1cf59fec9fbd|기관(건)|category=연구기관 · NGO|E-005_partner_org",
+      "sourceCaveat": null,
+      "sourceLabel": "대학·연구기관·NGO",
+      "sourceLabelEn": "Universities, Research Institutes and NGOs",
+      "sourceNote": "레코드 결측: 국제협력 실적 미기재 7건(M01), 공개 연락처 미확보 5건(M07), 연락처 중 이메일만 미확보 1건(M01, Thuyloi University). 메타 결측: license_code·license_url·attribution_text·last_updated·data_owner·verified_by 미확인(M06, 용역사 확정 후 기입).",
+      "sourceProvenance": {
+        "elementId": "E-005",
+        "indicatorId": "E-005_partner_org",
+        "sourceFileDecoded": "E-005_대학,연구기관,NGO.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-1cf59fec9fbd",
+      "labelKo": "대학",
+      "recordCount": 0,
+      "unit": "기관(건)",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

@@ -1,0 +1,225 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 3,
+      "values": [
+        "투자 약정액 합계",
+        "투자 집행액 합계",
+        "프로젝트 건수"
+      ]
+    },
+    {
+      "key": "dacSectorCode",
+      "labelKo": "dacSectorCode",
+      "valueCount": 7,
+      "values": [
+        "14022",
+        "14040",
+        "21040",
+        "23111",
+        "31210",
+        "31220",
+        "32110"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 2,
+      "values": [
+        "기후 태깅 프로젝트 단순합",
+        "기후 태깅 프로젝트 총 건수"
+      ]
+    },
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "사업·재원"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2026"
+      ]
+    }
+  ],
+  "elementId": "D-022",
+  "entityCount": 15,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 4,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-6bccef632200|USD",
+      "dimensionLabels": {
+        "category": "투자 약정액 합계",
+        "detail": "기후 태깅 프로젝트 단순합",
+        "technology": "1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10 · 11 · 12 · 13 · 14 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 22 · 23 · 24 · 25 · 26 · 27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "투자 약정액 합계",
+        "detail": "기후 태깅 프로젝트 단순합",
+        "technology": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "MDB/DFI/PPP 투자 프로젝트 · 투자 약정액 합계 — 기후 태깅 프로젝트 단순합",
+      "indicatorId": "D-022_commitment_sum",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6bccef632200",
+        "labelKo": "MDB/DFI/PPP 투자 프로젝트",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-6bccef632200|USD|category=투자 약정액 합계|detail=기후 태깅 프로젝트 단순합|technology=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38|D-022_commitment_sum",
+      "sourceCaveat": "[검토지적 반영 ①] 종전 자료가 기후 관련 60건·World Bank 전체 333건·DAC 매핑표 3개 블록으로 구성되어 활용대상이 불명확했던 것을 기후 태깅(Rio Marker)이 부여된 프로젝트만 남긴 단일 레코드셋으로 정리함. 수록 15건 / 종전 블록 60건. World Bank 전체 프로젝트 목록과 DAC 매핑표는 데이터셋이 아닌 참고자료이므로 본 요소에서 제외함. [검토지적 반영 ②] 각 프로젝트의 유형 구분(MDB / DFI / PPP)을 note의 \"투자기관 유형\"에 명시함. [원본 버전] d-portal(IATI) 베트남 활동에서 MDB 기후 관련 건을 추출한 종전 수집분을 기준으로 하며, 섹터는 OECD DAC 5자리 목적코드로 매핑함. [교차확인] IATI Datastore Activity API 원자료(2026-08-18 내려받기)와 IATI 식별자로 조인하여 섹터·사업기간·실행기관·정책마커를 레코드별 note에 병기함(15건 중 8건 조인). [Rio Marker 성격 주의] 본 요소의 Rio Marker 열은 d-portal 상세페이지에서 수집한 값이며, IATI 원자료에서 OECD DAC 정책마커(vocabulary 1)를 직접 보고한 활동은 매우 적음 — 두 값의 출처가 다르므로 note의 [IATI 원자료] 항목과 함께 해석해야 함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "MDB/DFI/PPP 투자 프로젝트 · 투자 약정액 합계 — 기후 태깅 프로젝트 단순합",
+      "sourceLabelEn": "Total commitments of climate-tagged MDB/DFI/PPP projects",
+      "sourceNote": "[검토지적 반영 ①] 종전 자료가 기후 관련 60건·World Bank 전체 333건·DAC 매핑표 3개 블록으로 구성되어 활용대상이 불명확했던 것을 기후 태깅(Rio Marker)이 부여된 프로젝트만 남긴 단일 레코드셋으로 정리함. 수록 15건 / 종전 블록 60건. World Bank 전체 프로젝트 목록과 DAC 매핑표는 데이터셋이 아닌 참고자료이므로 본 요소에서 제외함. [검토지적 반영 ②] 각 프로젝트의 유형 구분(MDB / DFI / PPP)을 note의 \"투자기관 유형\"에 명시함. [원본 버전] d-portal(IATI) 베트남 활동에서 MDB 기후 관련 건을 추출한 종전 수집분을 기준으로 하며, 섹터는 OECD DAC 5자리 목적코드로 매핑함. [교차확인] IATI Datastore Activity API 원자료(2026-08-18 내려받기)와 IATI 식별자로 조인하여 섹터·사업기간·실행기관·정책마커를 레코드별 note에 병기함(15건 중 8건 조인). [Rio Marker 성격 주의] 본 요소의 Rio Marker 열은 d-portal 상세페이지에서 수집한 값이며, IATI 원자료에서 OECD DAC 정책마커(vocabulary 1)를 직접 보고한 활동은 매우 적음 — 두 값의 출처가 다르므로 note의 [IATI 원자료] 항목과 함께 해석해야 함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-022",
+        "indicatorId": "D-022_commitment_sum",
+        "sourceFileDecoded": "D-022_MDBDFIPPP 투자 프로젝트.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6bccef632200|USD",
+      "dimensionLabels": {
+        "category": "투자 집행액 합계",
+        "detail": "기후 태깅 프로젝트 단순합",
+        "technology": "1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10 · 11 · 12 · 13 · 14 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 22 · 23 · 24 · 25 · 26 · 27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "투자 집행액 합계",
+        "detail": "기후 태깅 프로젝트 단순합",
+        "technology": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "MDB/DFI/PPP 투자 프로젝트 · 투자 집행액 합계 — 기후 태깅 프로젝트 단순합",
+      "indicatorId": "D-022_disbursement_sum",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6bccef632200",
+        "labelKo": "MDB/DFI/PPP 투자 프로젝트",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-6bccef632200|USD|category=투자 집행액 합계|detail=기후 태깅 프로젝트 단순합|technology=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38|D-022_disbursement_sum",
+      "sourceCaveat": "[검토지적 반영 ①] 종전 자료가 기후 관련 60건·World Bank 전체 333건·DAC 매핑표 3개 블록으로 구성되어 활용대상이 불명확했던 것을 기후 태깅(Rio Marker)이 부여된 프로젝트만 남긴 단일 레코드셋으로 정리함. 수록 15건 / 종전 블록 60건. World Bank 전체 프로젝트 목록과 DAC 매핑표는 데이터셋이 아닌 참고자료이므로 본 요소에서 제외함. [검토지적 반영 ②] 각 프로젝트의 유형 구분(MDB / DFI / PPP)을 note의 \"투자기관 유형\"에 명시함. [원본 버전] d-portal(IATI) 베트남 활동에서 MDB 기후 관련 건을 추출한 종전 수집분을 기준으로 하며, 섹터는 OECD DAC 5자리 목적코드로 매핑함. [교차확인] IATI Datastore Activity API 원자료(2026-08-18 내려받기)와 IATI 식별자로 조인하여 섹터·사업기간·실행기관·정책마커를 레코드별 note에 병기함(15건 중 8건 조인). [Rio Marker 성격 주의] 본 요소의 Rio Marker 열은 d-portal 상세페이지에서 수집한 값이며, IATI 원자료에서 OECD DAC 정책마커(vocabulary 1)를 직접 보고한 활동은 매우 적음 — 두 값의 출처가 다르므로 note의 [IATI 원자료] 항목과 함께 해석해야 함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "MDB/DFI/PPP 투자 프로젝트 · 투자 집행액 합계 — 기후 태깅 프로젝트 단순합",
+      "sourceLabelEn": "Total disbursements of climate-tagged MDB/DFI/PPP projects",
+      "sourceNote": "[검토지적 반영 ①] 종전 자료가 기후 관련 60건·World Bank 전체 333건·DAC 매핑표 3개 블록으로 구성되어 활용대상이 불명확했던 것을 기후 태깅(Rio Marker)이 부여된 프로젝트만 남긴 단일 레코드셋으로 정리함. 수록 15건 / 종전 블록 60건. World Bank 전체 프로젝트 목록과 DAC 매핑표는 데이터셋이 아닌 참고자료이므로 본 요소에서 제외함. [검토지적 반영 ②] 각 프로젝트의 유형 구분(MDB / DFI / PPP)을 note의 \"투자기관 유형\"에 명시함. [원본 버전] d-portal(IATI) 베트남 활동에서 MDB 기후 관련 건을 추출한 종전 수집분을 기준으로 하며, 섹터는 OECD DAC 5자리 목적코드로 매핑함. [교차확인] IATI Datastore Activity API 원자료(2026-08-18 내려받기)와 IATI 식별자로 조인하여 섹터·사업기간·실행기관·정책마커를 레코드별 note에 병기함(15건 중 8건 조인). [Rio Marker 성격 주의] 본 요소의 Rio Marker 열은 d-portal 상세페이지에서 수집한 값이며, IATI 원자료에서 OECD DAC 정책마커(vocabulary 1)를 직접 보고한 활동은 매우 적음 — 두 값의 출처가 다르므로 note의 [IATI 원자료] 항목과 함께 해석해야 함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-022",
+        "indicatorId": "D-022_disbursement_sum",
+        "sourceFileDecoded": "D-022_MDBDFIPPP 투자 프로젝트.xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f0715eaa79cd|건",
+      "dimensionLabels": {
+        "category": "베트남 기후 관련 투자 레지스트리",
+        "detail": "레코드 1건 = 1행(1.2 레코드형 시트)",
+        "technology": "1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10 · 11 · 12 · 13 · 14 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 22 · 23 · 24 · 25 · 26 · 27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "베트남 기후 관련 투자 레지스트리",
+        "detail": "레코드 1건 = 1행(1.2 레코드형 시트)",
+        "technology": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "MDB/DFI/PPP 투자 프로젝트 · 베트남 기후 관련 투자 레지스트리 — 레코드 1건 = 1행(1.2 레코드형 시트)",
+      "indicatorId": "D-022_mdb_dfi_ppp_investment_registry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f0715eaa79cd",
+        "labelKo": "MDB/DFI/PPP 투자 프로젝트",
+        "unit": "건",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-f0715eaa79cd|건|category=베트남 기후 관련 투자 레지스트리|detail=레코드 1건 = 1행(1.2 레코드형 시트)|technology=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38|D-022_mdb_dfi_ppp_investment_registry",
+      "sourceCaveat": "[검토지적 반영 ①] 종전 자료가 기후 관련 60건·World Bank 전체 333건·DAC 매핑표 3개 블록으로 구성되어 활용대상이 불명확했던 것을 기후 태깅(Rio Marker)이 부여된 프로젝트만 남긴 단일 레코드셋으로 정리함. 수록 15건 / 종전 블록 60건. World Bank 전체 프로젝트 목록과 DAC 매핑표는 데이터셋이 아닌 참고자료이므로 본 요소에서 제외함. [검토지적 반영 ②] 각 프로젝트의 유형 구분(MDB / DFI / PPP)을 note의 \"투자기관 유형\"에 명시함. [원본 버전] d-portal(IATI) 베트남 활동에서 MDB 기후 관련 건을 추출한 종전 수집분을 기준으로 하며, 섹터는 OECD DAC 5자리 목적코드로 매핑함. [교차확인] IATI Datastore Activity API 원자료(2026-08-18 내려받기)와 IATI 식별자로 조인하여 섹터·사업기간·실행기관·정책마커를 레코드별 note에 병기함(15건 중 8건 조인). [Rio Marker 성격 주의] 본 요소의 Rio Marker 열은 d-portal 상세페이지에서 수집한 값이며, IATI 원자료에서 OECD DAC 정책마커(vocabulary 1)를 직접 보고한 활동은 매우 적음 — 두 값의 출처가 다르므로 note의 [IATI 원자료] 항목과 함께 해석해야 함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "MDB/DFI/PPP 투자 프로젝트 · 베트남 기후 관련 투자 레지스트리 — 레코드 1건 = 1행(1.2 레코드형 시트)",
+      "sourceLabelEn": "Registry of MDB/DFI/PPP climate-related investment projects in Viet Nam",
+      "sourceNote": "일부 프로젝트는 집행액(disbursement)이 원천에 게재되지 않음.",
+      "sourceProvenance": {
+        "elementId": "D-022",
+        "indicatorId": "D-022_mdb_dfi_ppp_investment_registry",
+        "sourceFileDecoded": "D-022_MDBDFIPPP 투자 프로젝트.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f0715eaa79cd|건",
+      "dimensionLabels": {
+        "category": "프로젝트 건수",
+        "detail": "기후 태깅 프로젝트 총 건수",
+        "technology": "1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10 · 11 · 12 · 13 · 14 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 22 · 23 · 24 · 25 · 26 · 27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "프로젝트 건수",
+        "detail": "기후 태깅 프로젝트 총 건수",
+        "technology": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "MDB/DFI/PPP 투자 프로젝트 · 프로젝트 건수 — 기후 태깅 프로젝트 총 건수",
+      "indicatorId": "D-022_project_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f0715eaa79cd",
+        "labelKo": "MDB/DFI/PPP 투자 프로젝트",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-f0715eaa79cd|건|category=프로젝트 건수|detail=기후 태깅 프로젝트 총 건수|technology=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38|D-022_project_count",
+      "sourceCaveat": "[검토지적 반영 ①] 종전 자료가 기후 관련 60건·World Bank 전체 333건·DAC 매핑표 3개 블록으로 구성되어 활용대상이 불명확했던 것을 기후 태깅(Rio Marker)이 부여된 프로젝트만 남긴 단일 레코드셋으로 정리함. 수록 15건 / 종전 블록 60건. World Bank 전체 프로젝트 목록과 DAC 매핑표는 데이터셋이 아닌 참고자료이므로 본 요소에서 제외함. [검토지적 반영 ②] 각 프로젝트의 유형 구분(MDB / DFI / PPP)을 note의 \"투자기관 유형\"에 명시함. [원본 버전] d-portal(IATI) 베트남 활동에서 MDB 기후 관련 건을 추출한 종전 수집분을 기준으로 하며, 섹터는 OECD DAC 5자리 목적코드로 매핑함. [교차확인] IATI Datastore Activity API 원자료(2026-08-18 내려받기)와 IATI 식별자로 조인하여 섹터·사업기간·실행기관·정책마커를 레코드별 note에 병기함(15건 중 8건 조인). [Rio Marker 성격 주의] 본 요소의 Rio Marker 열은 d-portal 상세페이지에서 수집한 값이며, IATI 원자료에서 OECD DAC 정책마커(vocabulary 1)를 직접 보고한 활동은 매우 적음 — 두 값의 출처가 다르므로 note의 [IATI 원자료] 항목과 함께 해석해야 함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "MDB/DFI/PPP 투자 프로젝트 · 프로젝트 건수 — 기후 태깅 프로젝트 총 건수",
+      "sourceLabelEn": "Number of climate-tagged MDB/DFI/PPP projects",
+      "sourceNote": "[검토지적 반영 ①] 종전 자료가 기후 관련 60건·World Bank 전체 333건·DAC 매핑표 3개 블록으로 구성되어 활용대상이 불명확했던 것을 기후 태깅(Rio Marker)이 부여된 프로젝트만 남긴 단일 레코드셋으로 정리함. 수록 15건 / 종전 블록 60건. World Bank 전체 프로젝트 목록과 DAC 매핑표는 데이터셋이 아닌 참고자료이므로 본 요소에서 제외함. [검토지적 반영 ②] 각 프로젝트의 유형 구분(MDB / DFI / PPP)을 note의 \"투자기관 유형\"에 명시함. [원본 버전] d-portal(IATI) 베트남 활동에서 MDB 기후 관련 건을 추출한 종전 수집분을 기준으로 하며, 섹터는 OECD DAC 5자리 목적코드로 매핑함. [교차확인] IATI Datastore Activity API 원자료(2026-08-18 내려받기)와 IATI 식별자로 조인하여 섹터·사업기간·실행기관·정책마커를 레코드별 note에 병기함(15건 중 8건 조인). [Rio Marker 성격 주의] 본 요소의 Rio Marker 열은 d-portal 상세페이지에서 수집한 값이며, IATI 원자료에서 OECD DAC 정책마커(vocabulary 1)를 직접 보고한 활동은 매우 적음 — 두 값의 출처가 다르므로 note의 [IATI 원자료] 항목과 함께 해석해야 함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-022",
+        "indicatorId": "D-022_project_count",
+        "sourceFileDecoded": "D-022_MDBDFIPPP 투자 프로젝트.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 2,
+      "key": "measure-6bccef632200",
+      "labelKo": "MDB/DFI/PPP 투자 프로젝트",
+      "recordCount": 2,
+      "unit": "USD",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-f0715eaa79cd",
+      "labelKo": "MDB/DFI/PPP 투자 프로젝트",
+      "recordCount": 1,
+      "unit": "건",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 3,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

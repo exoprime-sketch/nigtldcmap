@@ -13,17 +13,27 @@ import {
 import type { CountryCatalogItemV122 } from "../data/countries/countryDataTypesV122";
 import { safePublicFilenamePartV122 } from "../data/countries/publicLabelsV122";
 import type {
-  VietnamEntityV121,
-  VietnamIndicatorMetaV121,
-  VietnamObservationV121,
-} from "../data/vietnam/vietnamTypesV121";
+  VietnamEntityV124,
+  VietnamIndicatorMetaV124,
+  VietnamObservationV124,
+} from "../data/vietnam/vietnamTypesV124";
+import { loadElementIndicatorSemanticsV125 } from "../data/visualization/elementVisualizationRegistryV125";
+import {
+  publicDownloadRowsHaveTechnicalFieldsV126,
+  publicRowsToCsvV126,
+  publicRowsToJsonV126,
+  publicSourceUrlV126,
+  publicTextV126,
+  toPublicEntityRowsV126,
+  toPublicObservationRowsV126,
+} from "../data/visualization/publicFieldPolicyV126";
+import type {
+  IndicatorSemanticV125,
+  RecordSemanticV125,
+} from "../data/visualization/semanticTypesV125";
 import {
   downloadDateV121,
-  entitiesToCsvV121,
-  entityDisplayNameV121,
-  formatValueForExportV121,
   normalizedSearchV121,
-  observationsToCsvV121,
   technologyLabelV121,
   triggerTextDownloadV121,
 } from "../utils/vietnamActualV121";
@@ -40,10 +50,11 @@ type OutputFormat = "CSV" | "JSON";
 
 type PreparedDownload = {
   element: CountryCatalogItemV122;
-  allowedMeta: VietnamIndicatorMetaV121[];
-  metadataById: Map<string, VietnamIndicatorMetaV121>;
-  observations: VietnamObservationV121[];
-  entities: VietnamEntityV121[];
+  metadataById: Map<string, VietnamIndicatorMetaV124>;
+  observations: VietnamObservationV124[];
+  entities: VietnamEntityV124[];
+  indicatorSemantics: IndicatorSemanticV125[];
+  recordSemantics: RecordSemanticV125[];
 };
 
 function unique(values: Array<string | null | undefined>): string[] {
@@ -52,13 +63,24 @@ function unique(values: Array<string | null | undefined>): string[] {
   ).sort((a, b) => a.localeCompare(b, "ko"));
 }
 
-function canDownloadMeta(meta: VietnamIndicatorMetaV121): boolean {
+function canDownloadMeta(
+  meta: VietnamIndicatorMetaV124,
+  element: CountryCatalogItemV122
+): boolean {
+  const decision =
+    meta.publicationDecision || element.raw.publicationDecision || null;
+  if (
+    decision?.downloadAllowed === true &&
+    (!decision.decision || decision.decision === "public-release-approved")
+  ) {
+    return true;
+  }
   return (
     meta.redistributionAllowed === "가능" && meta.downloadAllowed === "가능"
   );
 }
 
-function entityYear(row: VietnamEntityV121): number | null {
+function entityYear(row: VietnamEntityV124): number | null {
   const attrs = row.normalizedAttributes || {};
   for (const key of [
     "referenceYear",
@@ -88,118 +110,6 @@ function inPeriod(
   return (
     value >= Math.min(fromYear, toYear) && value <= Math.max(fromYear, toYear)
   );
-}
-
-function publicProvenance(
-  row: VietnamObservationV121 | VietnamEntityV121,
-  meta?: VietnamIndicatorMetaV121
-) {
-  return {
-    sourceOrganization: row.provenance.sourceOrg || meta?.sourceOrg || null,
-    sourceUrl: row.provenance.sourceUrl || meta?.sourceUrl || null,
-    citation: row.provenance.citationLocator || meta?.citationLocator || null,
-    referenceYear: row.provenance.referenceYear || meta?.referenceYear || null,
-    license: row.provenance.licenseCode || meta?.licenseCode || null,
-    attribution: meta?.attributionText || null,
-    sourceFile: row.provenance.sourceFileDecoded,
-    sourceSheet: row.provenance.sourceSheet,
-    sourceRow: row.provenance.sourceRow,
-  };
-}
-
-function combinedCsv(items: PreparedDownload[]): string {
-  const headers = [
-    "country_iso3",
-    "country_name",
-    "data_name",
-    "record_type",
-    "indicator_name",
-    "year",
-    "value",
-    "unit",
-    "name",
-    "attributes_json",
-    "missing_reason_code",
-    "note",
-    "source_org",
-    "source_url",
-    "citation_locator",
-    "license_code",
-    "attribution_text",
-    "source_file",
-    "source_sheet",
-    "source_row",
-  ];
-  const escape = (value: unknown) => {
-    const text = formatValueForExportV121(value);
-    return /[",\n\r]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text;
-  };
-  const lines = [headers.join(",")];
-  items.forEach(({ element, observations, entities, metadataById }) => {
-    observations.forEach((row) => {
-      const meta = metadataById.get(row.indicatorId);
-      const source = publicProvenance(row, meta);
-      lines.push(
-        [
-          row.countryIso3 || element.countryIso3,
-          element.countryNameKo,
-          element.publicTitle,
-          "observation",
-          meta?.labelKo,
-          row.year ?? row.period,
-          row.value,
-          row.unit || meta?.unit,
-          null,
-          null,
-          row.missingReasonCode,
-          row.note,
-          source.sourceOrganization,
-          source.sourceUrl,
-          source.citation,
-          source.license,
-          source.attribution,
-          source.sourceFile,
-          source.sourceSheet,
-          source.sourceRow,
-        ]
-          .map(escape)
-          .join(",")
-      );
-    });
-    entities.forEach((row) => {
-      const meta = row.indicatorId
-        ? metadataById.get(row.indicatorId)
-        : undefined;
-      const source = publicProvenance(row, meta);
-      lines.push(
-        [
-          row.countryIso3 || element.countryIso3,
-          element.countryNameKo,
-          element.publicTitle,
-          "entity",
-          meta?.labelKo,
-          entityYear(row),
-          null,
-          meta?.unit,
-          entityDisplayNameV121(row),
-          row.normalizedAttributes,
-          row.missingReasonCode,
-          row.note,
-          source.sourceOrganization,
-          source.sourceUrl,
-          source.citation,
-          source.license,
-          source.attribution,
-          source.sourceFile,
-          source.sourceSheet,
-          source.sourceRow,
-        ]
-          .map(escape)
-          .join(",")
-      );
-    });
-  });
-  return `\uFEFF${lines.join("\n")}\n`;
 }
 
 function selectionKey(item: CountryCatalogItemV122): string {
@@ -349,12 +259,18 @@ export default function DownloadPage({
     [catalog, selectedKeys]
   );
   const licenses = unique(
-    selectedCatalog.flatMap((item) => item.raw.rights.licenses)
+    selectedCatalog
+      .flatMap((item) => item.raw.rights.licenses)
+      .map(publicTextV126)
   );
   const attributions = unique(
-    selectedCatalog.flatMap((item) => item.raw.rights.attributionTexts)
+    selectedCatalog
+      .flatMap((item) => item.raw.rights.attributionTexts)
+      .map(publicTextV126)
   );
-  const sourceUrls = unique(selectedCatalog.flatMap((item) => item.sourceUrls));
+  const sourceUrls = unique(
+    selectedCatalog.flatMap((item) => item.sourceUrls).map(publicSourceUrlV126)
+  );
 
   function toggleSelection(item: CountryCatalogItemV122): void {
     const key = selectionKey(item);
@@ -381,12 +297,27 @@ export default function DownloadPage({
             element.countryIso3,
             element.elementId
           ),
+          semantics: await loadElementIndicatorSemanticsV125(element.elementId),
         }))
       );
       const prepared: PreparedDownload[] = bundles.map(
-        ({ element, bundle }) => {
+        ({ element, bundle, semantics }) => {
+          const eligibleIndicatorIds = new Set<string>();
+          bundle.observations.records.forEach((row) => {
+            if (row.downloadEligible) eligibleIndicatorIds.add(row.indicatorId);
+          });
+          bundle.entities.records.forEach((row) => {
+            if (row.downloadEligible && row.indicatorId) {
+              eligibleIndicatorIds.add(row.indicatorId);
+            }
+          });
           const allowedMeta = bundle.meta.indicators.filter((meta) => {
-            if (!canDownloadMeta(meta)) return false;
+            if (
+              !canDownloadMeta(meta, element) &&
+              !eligibleIndicatorIds.has(meta.indicatorId)
+            ) {
+              return false;
+            }
             if (
               sourceOrganization !== "all" &&
               meta.sourceOrg !== sourceOrganization
@@ -401,7 +332,7 @@ export default function DownloadPage({
             }
             return true;
           });
-          const metadataById = new Map<string, VietnamIndicatorMetaV121>(
+          const metadataById = new Map<string, VietnamIndicatorMetaV124>(
             allowedMeta.map((meta) => [meta.indicatorId, meta])
           );
           const observations = bundle.observations.records.filter(
@@ -437,7 +368,14 @@ export default function DownloadPage({
               toYear
             );
           });
-          return { element, allowedMeta, metadataById, observations, entities };
+          return {
+            element,
+            metadataById,
+            observations,
+            entities,
+            indicatorSemantics: semantics.indicators,
+            recordSemantics: semantics.records,
+          };
         }
       );
 
@@ -469,105 +407,44 @@ export default function DownloadPage({
           : "selected-data";
       const filename = `${countryPart}_${dataPart}_${date}`;
 
+      const publicRows = nonEmpty.flatMap((item) => [
+        ...toPublicObservationRowsV126({
+          element: item.element,
+          metadataById: item.metadataById,
+          indicatorSemantics: item.indicatorSemantics,
+          recordSemantics: item.recordSemantics,
+          observations: item.observations,
+        }),
+        ...toPublicEntityRowsV126({
+          element: item.element,
+          metadataById: item.metadataById,
+          indicatorSemantics: item.indicatorSemantics,
+          recordSemantics: item.recordSemantics,
+          entities: item.entities,
+        }),
+      ]);
+      const expectedRowCount = nonEmpty.reduce(
+        (total, item) =>
+          total + item.observations.length + item.entities.length,
+        0
+      );
+      if (publicRows.length !== expectedRowCount) {
+        throw new Error("공개 다운로드 행 수를 확인할 수 없습니다");
+      }
+      if (publicDownloadRowsHaveTechnicalFieldsV126(publicRows)) {
+        throw new Error("공개 다운로드 필드 정책을 확인할 수 없습니다");
+      }
+
       if (format === "CSV") {
-        let csv: string;
-        if (
-          nonEmpty.length === 1 &&
-          nonEmpty[0].observations.length > 0 &&
-          nonEmpty[0].entities.length === 0
-        ) {
-          csv = observationsToCsvV121(
-            nonEmpty[0].observations,
-            nonEmpty[0].metadataById,
-            nonEmpty[0].element.publicTitle
-          );
-        } else if (
-          nonEmpty.length === 1 &&
-          nonEmpty[0].entities.length > 0 &&
-          nonEmpty[0].observations.length === 0
-        ) {
-          csv = entitiesToCsvV121(
-            nonEmpty[0].entities,
-            nonEmpty[0].metadataById,
-            nonEmpty[0].element.publicTitle
-          );
-        } else {
-          csv = combinedCsv(nonEmpty);
-        }
         triggerTextDownloadV121(
           `${filename}.csv`,
-          csv,
+          publicRowsToCsvV126(publicRows),
           "text/csv;charset=utf-8"
         );
       } else {
-        const countries = unique(
-          nonEmpty.map(
-            (item) =>
-              `${item.element.countryIso3}|${item.element.countryNameKo}`
-          )
-        ).map((value) => {
-          const [iso3, name] = value.split("|", 2);
-          return { iso3, name };
-        });
-        const payload = {
-          schemaVersion: "public-v1",
-          countries,
-          generatedAt: new Date().toISOString(),
-          data: nonEmpty.map((item) => ({
-            country: {
-              iso3: item.element.countryIso3,
-              name: item.element.countryNameKo,
-            },
-            dataName: item.element.publicTitle,
-            indicators: item.allowedMeta.map((meta) => ({
-              name: meta.labelKo,
-              nameEn: meta.labelEn || null,
-              unit: meta.unit || null,
-              sourceOrganization: meta.sourceOrg,
-              sourceUrl: meta.sourceUrl || null,
-              referenceYear: meta.referenceYear || null,
-              license: meta.licenseCode || null,
-              attribution: meta.attributionText || null,
-              limitations: meta.caveat || meta.missingNote || null,
-            })),
-            observations: item.observations.map((row) => {
-              const meta = item.metadataById.get(row.indicatorId);
-              return {
-                indicatorName: meta?.labelKo || null,
-                countryIso3: row.countryIso3,
-                year: row.year ?? null,
-                period: row.period ?? null,
-                value: row.value,
-                unit: row.unit || meta?.unit || null,
-                missingReason: row.missingReasonCode || null,
-                note: row.note || null,
-                provenance: publicProvenance(row, meta),
-              };
-            }),
-            entities: item.entities.map((row) => {
-              const meta = row.indicatorId
-                ? item.metadataById.get(row.indicatorId)
-                : undefined;
-              return {
-                indicatorName: meta?.labelKo || null,
-                countryIso3: row.countryIso3 || item.element.countryIso3,
-                name: entityDisplayNameV121(row),
-                latitude: row.latitude ?? null,
-                longitude: row.longitude ?? null,
-                geometryType: row.geometryType || null,
-                crs: row.crs || null,
-                attributes: row.normalizedAttributes,
-                rawAttributes: row.rawAttributes,
-                missingReason: row.missingReasonCode || null,
-                note: row.note || null,
-                provenance: publicProvenance(row, meta),
-              };
-            }),
-          })),
-        };
         triggerTextDownloadV121(
           `${filename}.json`,
-          JSON.stringify(payload, null, 2),
+          publicRowsToJsonV126(publicRows),
           "application/json;charset=utf-8"
         );
       }
@@ -795,19 +672,31 @@ export default function DownloadPage({
       <section className="cdp-panel cdp-step">
         <h2>3. 형식과 출처</h2>
         <div className="cdp-filter-grid cdp-filter-grid--secondary">
-          <label className="cdp-field">
-            <span className="cdp-field__label">파일 형식</span>
-            <select
-              className="cdp-select"
-              value={format}
-              onChange={(event) =>
-                setFormat(event.target.value as OutputFormat)
-              }
-            >
-              <option value="CSV">CSV</option>
-              <option value="JSON">JSON</option>
-            </select>
-          </label>
+          <fieldset className="cdp-field">
+            <legend className="cdp-field__label">파일 형식</legend>
+            <label>
+              <input
+                checked={format === "CSV"}
+                data-testid="public-download-csv"
+                name="public-download-format"
+                onChange={() => setFormat("CSV")}
+                type="radio"
+                value="CSV"
+              />{" "}
+              CSV
+            </label>
+            <label>
+              <input
+                checked={format === "JSON"}
+                data-testid="public-download-json"
+                name="public-download-format"
+                onChange={() => setFormat("JSON")}
+                type="radio"
+                value="JSON"
+              />{" "}
+              JSON
+            </label>
+          </fieldset>
         </div>
 
         {selectedCatalog.length > 0 && (

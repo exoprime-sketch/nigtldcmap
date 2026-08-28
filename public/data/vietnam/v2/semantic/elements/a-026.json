@@ -1,0 +1,257 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 5,
+      "values": [
+        "명칭(name) 결측률",
+        "속성 필드 수",
+        "용도구분(type) 결측률",
+        "좌표계",
+        "피처 수"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 4,
+      "values": [
+        ".dbf 속성 테이블의 필드 개수",
+        "OSM 건물 풋프린트 레이어의 좌표참조체계",
+        "OSM 건물 풋프린트 레이어의 지물 건수",
+        "속성 필드 공란 비율"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "19"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2026"
+      ]
+    }
+  ],
+  "elementId": "A-026",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 5,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-56e00f81fd7c|EPSG 코드",
+      "dimensionLabels": {
+        "category": "좌표계",
+        "detail": "OSM 건물 풋프린트 레이어의 좌표참조체계",
+        "technology": "19"
+      },
+      "dimensions": {
+        "category": "좌표계",
+        "detail": "OSM 건물 풋프린트 레이어의 좌표참조체계",
+        "technology": "19"
+      },
+      "displayLabel": "건물 풋프린트 레이어 · 좌표계 — OSM 건물 풋프린트 레이어의 좌표참조체계",
+      "indicatorId": "A-026_buildings_crs",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-56e00f81fd7c",
+        "labelKo": "건물 풋프린트 레이어",
+        "unit": "EPSG 코드",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-56e00f81fd7c|EPSG 코드|category=좌표계|detail=OSM 건물 풋프린트 레이어의 좌표참조체계|technology=19|A-026_buildings_crs",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "건물 풋프린트 레이어 · 좌표계 — OSM 건물 풋프린트 레이어의 좌표참조체계",
+      "sourceLabelEn": "CRS of the OSM building footprints layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-026",
+        "indicatorId": "A-026_buildings_crs",
+        "sourceFileDecoded": "A-026_건물 풋프린트(Footprint).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-68939de0f81f|건",
+      "dimensionLabels": {
+        "category": "피처 수",
+        "detail": "OSM 건물 풋프린트 레이어의 지물 건수",
+        "technology": "19"
+      },
+      "dimensions": {
+        "category": "피처 수",
+        "detail": "OSM 건물 풋프린트 레이어의 지물 건수",
+        "technology": "19"
+      },
+      "displayLabel": "건물 풋프린트 레이어 · 피처 수 — OSM 건물 풋프린트 레이어의 지물 건수",
+      "indicatorId": "A-026_buildings_feature_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-68939de0f81f",
+        "labelKo": "건물 풋프린트 레이어",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-68939de0f81f|건|category=피처 수|detail=OSM 건물 풋프린트 레이어의 지물 건수|technology=19|A-026_buildings_feature_count",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "건물 풋프린트 레이어 · 피처 수 — OSM 건물 풋프린트 레이어의 지물 건수",
+      "sourceLabelEn": "Feature count of the OSM building footprints layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-026",
+        "indicatorId": "A-026_buildings_feature_count",
+        "sourceFileDecoded": "A-026_건물 풋프린트(Footprint).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5be10dfd86d4|개",
+      "dimensionLabels": {
+        "category": "속성 필드 수",
+        "detail": ".dbf 속성 테이블의 필드 개수",
+        "technology": "19"
+      },
+      "dimensions": {
+        "category": "속성 필드 수",
+        "detail": ".dbf 속성 테이블의 필드 개수",
+        "technology": "19"
+      },
+      "displayLabel": "건물 풋프린트 레이어 · 속성 필드 수 — .dbf 속성 테이블의 필드 개수",
+      "indicatorId": "A-026_buildings_field_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5be10dfd86d4",
+        "labelKo": "건물 풋프린트 레이어",
+        "unit": "개",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-5be10dfd86d4|개|category=속성 필드 수|detail=.dbf 속성 테이블의 필드 개수|technology=19|A-026_buildings_field_count",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "건물 풋프린트 레이어 · 속성 필드 수 — .dbf 속성 테이블의 필드 개수",
+      "sourceLabelEn": "Attribute field count, OSM building footprints layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-026",
+        "indicatorId": "A-026_buildings_field_count",
+        "sourceFileDecoded": "A-026_건물 풋프린트(Footprint).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5477e3e78fc3|%",
+      "dimensionLabels": {
+        "category": "명칭(name) 결측률",
+        "detail": "속성 필드 공란 비율",
+        "technology": "19"
+      },
+      "dimensions": {
+        "category": "명칭(name) 결측률",
+        "detail": "속성 필드 공란 비율",
+        "technology": "19"
+      },
+      "displayLabel": "건물 풋프린트 레이어 · 명칭(name) 결측률 — 속성 필드 공란 비율",
+      "indicatorId": "A-026_buildings_null_rate_name",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5477e3e78fc3",
+        "labelKo": "건물 풋프린트 레이어",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-5477e3e78fc3|%|category=명칭(name) 결측률|detail=속성 필드 공란 비율|technology=19|A-026_buildings_null_rate_name",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "건물 풋프린트 레이어 · 명칭(name) 결측률 — 속성 필드 공란 비율",
+      "sourceLabelEn": "Null rate of the name field, OSM building footprints layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-026",
+        "indicatorId": "A-026_buildings_null_rate_name",
+        "sourceFileDecoded": "A-026_건물 풋프린트(Footprint).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5477e3e78fc3|%",
+      "dimensionLabels": {
+        "category": "용도구분(type) 결측률",
+        "detail": "속성 필드 공란 비율",
+        "technology": "19"
+      },
+      "dimensions": {
+        "category": "용도구분(type) 결측률",
+        "detail": "속성 필드 공란 비율",
+        "technology": "19"
+      },
+      "displayLabel": "건물 풋프린트 레이어 · 용도구분(type) 결측률 — 속성 필드 공란 비율",
+      "indicatorId": "A-026_buildings_null_rate_type",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5477e3e78fc3",
+        "labelKo": "건물 풋프린트 레이어",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-5477e3e78fc3|%|category=용도구분(type) 결측률|detail=속성 필드 공란 비율|technology=19|A-026_buildings_null_rate_type",
+      "sourceCaveat": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "건물 풋프린트 레이어 · 용도구분(type) 결측률 — 속성 필드 공란 비율",
+      "sourceLabelEn": "Null rate of the type field, OSM building footprints layer",
+      "sourceNote": "[원본 포맷·레이어] 검토의견 1번에 대응 — 원자료는 OSM 파생 shapefile 세트(.shp/.dbf/.shx/.prj/.cpg/.qmd)임. 파일명 규칙 gis_osm_<layer>_free / gis_osm_buildings_a_free 는 Geofabrik \"OSM Data in Layered GIS Format\" 명명과 일치하나, 배포처를 증명하는 문자열은 원자료 어디에도 없음(.prj·.cpg·.qmd 전수 확인). Overture·MS Building Footprints가 아님은 스키마로 확인됨. [속성 스키마·결측률] 검토의견 2번에 대응 — 각 레이어의 필드 구성과 필드별 결측률을 지표로 수록함. [추출 기준] 검토의견 3번에 대응 — 좌표계는 4개 .prj 파일이 바이트 단위로 동일한 ESRI 형식 WKT GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]] 로 EPSG 코드 문자열은 파일에 없으며 WGS 84 지리좌표(EPSG:4326)에 해당함(.qmd는 OGC:CRS84로 명시). 인코딩은 buildings 레이어의 .cpg만 존재하며 UTF-8임. 추출일자는 어느 사이드카에도 기재되어 있지 않으나, 동일 수집분의 형제 파일명이 vietnam-260803-free.gpkg / vietnam-260803.osm.pbf 이므로 2026-08-03 추출본으로 판단하여 last_updated에 기재함(파일명 근거이며 원문 명시가 아님). 국경 정의는 원자료에 기술이 없고, buildings·roads 레이어의 .shx 경계상자가 경도 114.356까지 확장되어 남중국해 도서를 포함함. [GIS 변환] 검토의견에 따라 대용량 GIS 레이어는 엑셀 개체 목록으로 변환하지 않고, 레이어 메타(피처 수·좌표계·인코딩·필드별 결측률·분류값 분포)를 측정값으로 수록함. 원본 형상은 shapefile 그대로 제출·보관함. [라이선스] OSM 파생물은 ODbL 1.0 대상이며 원자료 내 라이선스 문구는 없음. 사실값(피처 수·결측률 등)만 수록하므로 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-026",
+        "indicatorId": "A-026_buildings_null_rate_type",
+        "sourceFileDecoded": "A-026_건물 풋프린트(Footprint).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 2,
+      "key": "measure-5477e3e78fc3",
+      "labelKo": "건물 풋프린트 레이어",
+      "recordCount": 2,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-56e00f81fd7c",
+      "labelKo": "건물 풋프린트 레이어",
+      "recordCount": 1,
+      "unit": "EPSG 코드",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-5be10dfd86d4",
+      "labelKo": "건물 풋프린트 레이어",
+      "recordCount": 1,
+      "unit": "개",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-68939de0f81f",
+      "labelKo": "건물 풋프린트 레이어",
+      "recordCount": 1,
+      "unit": "건",
+      "unitFamily": "count"
+    }
+  ],
+  "observationCount": 5,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

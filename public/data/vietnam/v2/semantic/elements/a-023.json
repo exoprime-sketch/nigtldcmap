@@ -1,0 +1,185 @@
+{
+  "dimensions": [
+    {
+      "key": "capacityBand",
+      "labelKo": "capacityBand",
+      "valueCount": 4,
+      "values": [
+        "10MW 미만",
+        "10~99MW",
+        "100~499MW",
+        "500MW 이상"
+      ]
+    },
+    {
+      "key": "commissioningYear",
+      "labelKo": "commissioningYear",
+      "valueCount": 27,
+      "values": [
+        "1945.0",
+        "1964.0",
+        "1971.0",
+        "1973.0",
+        "1984.0",
+        "1988.0",
+        "1990.0",
+        "1991.0",
+        "1995.0",
+        "2001.0",
+        "2002.0",
+        "2003.0",
+        "2004.0",
+        "2005.0",
+        "2006.0",
+        "2007.0",
+        "2008.0",
+        "2009.0",
+        "2010.0",
+        "2011.0",
+        "2012.0",
+        "2013.0",
+        "2014.0",
+        "2015.0",
+        "2016.0",
+        "2017.0",
+        "미기재"
+      ]
+    },
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "발전소"
+      ]
+    },
+    {
+      "key": "fuelType",
+      "labelKo": "fuelType",
+      "valueCount": 10,
+      "values": [
+        "(미표기)",
+        "가스",
+        "가스·석유",
+        "바이오매스",
+        "석유",
+        "석탄",
+        "수력",
+        "태양광",
+        "폐기물",
+        "풍력"
+      ]
+    },
+    {
+      "key": "fuelTypeRaw",
+      "labelKo": "fuelTypeRaw",
+      "valueCount": 16,
+      "values": [
+        "(미표기)",
+        "Biomass",
+        "Coal",
+        "coal",
+        "Gas",
+        "gas",
+        "gas;oil",
+        "Hydro",
+        "hydro",
+        "Oil",
+        "oil",
+        "Solar",
+        "solar",
+        "waste",
+        "Wind",
+        "wind"
+      ]
+    }
+  ],
+  "elementId": "A-023",
+  "entityCount": 1963,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 2,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-e5647010075d|MW",
+      "dimensionLabels": {
+        "category": "위치 · 용량",
+        "detail": "베트남 소재 발전소 개체 목록(좌표·설비용량)",
+        "technology": "1 · 3 · 5 · 8 · 16"
+      },
+      "dimensions": {
+        "category": "위치 · 용량",
+        "detail": "베트남 소재 발전소 개체 목록(좌표·설비용량)",
+        "technology": "1,3,5,8,16"
+      },
+      "displayLabel": "발전소 목록 · 위치·용량 — 베트남 소재 발전소 개체 목록(좌표·설비용량)",
+      "indicatorId": "A-023_power_plant_registry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e5647010075d",
+        "labelKo": "발전소 목록",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-e5647010075d|MW|category=위치 · 용량|detail=베트남 소재 발전소 개체 목록(좌표·설비용량)|technology=1,3,5,8,16|A-023_power_plant_registry",
+      "sourceCaveat": "[원본 버전] WRI Global Power Plant Database v1.3.0 (Release Date 2021-06-02). 원본 CSV에서 country=VNM 236건을 전수 수록함. [최신성] 검토의견 1번 확인 — 준공연도 최대값이 2017년이고 236건 중 167건만 준공연도를 가짐. 원천 README가 \"Though updates have been infrequent, there is the potential that this is the last major update to this database\"라고 명시하고 있어 2019년 이후 태양광·풍력 증설분이 반영되지 않음. 최신 목록이 아니며, 갱신 원천 확보가 필요함. [정합성] 검토의견 2번·3번 확인 — 본 목록 합계는 41,350.49 MW로 A-018 IRENA 2025년 총 설비용량 대비 크게 부족하며, 특히 태양광 1,616.40 MW·풍력 188.00 MW로 A-018의 2025년 값과 10배 이상 차이가 남. 이는 데이터 오류가 아니라 수집 시점 차이(2017년 이전 vs 2025년)에서 비롯된 것으로, 두 요소를 같은 시점 값으로 비교하지 말 것. [좌표] 검토의견 4번 확인 — 서로 다른 발전소 3쌍(6개소)이 동일 좌표를 사용함: (22.2985, 103.1613) Coc Ly·Nam Na 3, (22.1379, 102.9839) Lai Chau·Nam Cat, (21.3412, 104.3498) Nam Luc·Xim Vang 2. 모두 수력이며 원문 그대로임. 해당 행 note에 표시함. [출처] 검토의견 5번에 따라 출처기관·라이선스·인용위치를 기재하고, 각 행 note에 원문 source·geolocation_source를 병기함. [라이선스] 원천 README가 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "발전소 목록 · 위치·용량 — 베트남 소재 발전소 개체 목록(좌표·설비용량)",
+      "sourceLabelEn": "Power plant registry: location and capacity",
+      "sourceNote": "[원본 버전] WRI Global Power Plant Database v1.3.0 (Release Date 2021-06-02). 원본 CSV에서 country=VNM 236건을 전수 수록함. [최신성] 검토의견 1번 확인 — 준공연도 최대값이 2017년이고 236건 중 167건만 준공연도를 가짐. 원천 README가 \"Though updates have been infrequent, there is the potential that this is the last major update to this database\"라고 명시하고 있어 2019년 이후 태양광·풍력 증설분이 반영되지 않음. 최신 목록이 아니며, 갱신 원천 확보가 필요함. [정합성] 검토의견 2번·3번 확인 — 본 목록 합계는 41,350.49 MW로 A-018 IRENA 2025년 총 설비용량 대비 크게 부족하며, 특히 태양광 1,616.40 MW·풍력 188.00 MW로 A-018의 2025년 값과 10배 이상 차이가 남. 이는 데이터 오류가 아니라 수집 시점 차이(2017년 이전 vs 2025년)에서 비롯된 것으로, 두 요소를 같은 시점 값으로 비교하지 말 것. [좌표] 검토의견 4번 확인 — 서로 다른 발전소 3쌍(6개소)이 동일 좌표를 사용함: (22.2985, 103.1613) Coc Ly·Nam Na 3, (22.1379, 102.9839) Lai Chau·Nam Cat, (21.3412, 104.3498) Nam Luc·Xim Vang 2. 모두 수력이며 원문 그대로임. 해당 행 note에 표시함. [출처] 검토의견 5번에 따라 출처기관·라이선스·인용위치를 기재하고, 각 행 note에 원문 source·geolocation_source를 병기함. [라이선스] 원천 README가 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-023",
+        "indicatorId": "A-023_power_plant_registry",
+        "sourceFileDecoded": "A-023_발전소[위치, 용량].xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e5647010075d|MW",
+      "dimensionLabels": {
+        "category": "OSM 2026",
+        "detail": "OpenStreetMap 기준 최신 발전소 개체 목록(좌표·용량)",
+        "technology": "1 · 3 · 5 · 8 · 11 · 15 · 16"
+      },
+      "dimensions": {
+        "category": "OSM 2026",
+        "detail": "OpenStreetMap 기준 최신 발전소 개체 목록(좌표·용량)",
+        "technology": "1,3,5,8,11,15,16"
+      },
+      "displayLabel": "발전소 목록 · OSM 2026 — OpenStreetMap 기준 최신 발전소 개체 목록(좌표·용량)",
+      "indicatorId": "A-023_power_plant_registry_osm2026",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e5647010075d",
+        "labelKo": "발전소 목록",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-e5647010075d|MW|category=OSM 2026|detail=OpenStreetMap 기준 최신 발전소 개체 목록(좌표·용량)|technology=1,3,5,8,11,15,16|A-023_power_plant_registry_osm2026",
+      "sourceCaveat": "[최신 목록 보완] 검토의견 1번·2번에 대응 — WRI Global Power Plant Database가 2017년 준공분까지만 담고 있어, 동일 수집분의 OpenStreetMap 베트남 원본(vietnam-260803.osm.pbf, 2026-08-03 추출)에서 power=plant 태그 지물을 전수 추출하여 1,727개소를 최신 목록으로 추가 수록함. 연료별 개소는 태양광 1,213 · 수력 422 · 풍력 38 · 석탄 36 · 가스 9 등임. [용량 한계] 1,727개소 중 plant:output:electricity 태그를 보유한 곳은 277개소(76,446 MW)뿐이며 나머지는 용량 미상임(태그 값이 \"yes\"인 경우 포함). 따라서 본 목록의 용량 합계를 국가 총 설비용량으로 사용하지 말 것. 다만 확인된 용량만으로도 석탄 30,142 MW·수력 23,784 MW·가스 12,964 MW로 A-018 IRENA 2025년 값(석탄 28,100 · 가스 7,527)과 동일 자릿수여서, WRI 목록(총 41,350 MW)보다 현행 설비 규모에 훨씬 근접함. [속성 한계] 명칭 미보유 1,349개소, 준공연도(start_date) 보유 34개소, 좌표 산출 불가 74개소(관계형 지물). [출처 성격] OSM은 자원봉사자 현장 수집 기반 크라우드소싱 데이터이며 공식 설비대장이 아님. 공식 최신 목록이 필요하면 베트남 산업무역부(MOIT) PDP8 개정 결정(768/QĐ-TTg, 2025) 부속 사업목록 또는 EVN 연차 설비공시를 별도 확보해야 함. [라이선스] OSM 파생물은 ODbL 1.0 대상이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "발전소 목록 · OSM 2026 — OpenStreetMap 기준 최신 발전소 개체 목록(좌표·용량)",
+      "sourceLabelEn": "Power plant registry from OpenStreetMap (2026-08-03 extract)",
+      "sourceNote": "좌표 산출 불가 74건(관계형 지물로 중심좌표 미계산). 재확보 방법: 로컬 osmium/QGIS에서 relation 멤버 형상을 병합하여 중심점 산출 가능.",
+      "sourceProvenance": {
+        "elementId": "A-023",
+        "indicatorId": "A-023_power_plant_registry_osm2026",
+        "sourceFileDecoded": "A-023_발전소[위치, 용량].xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 2,
+      "key": "measure-e5647010075d",
+      "labelKo": "발전소 목록",
+      "recordCount": 0,
+      "unit": "MW",
+      "unitFamily": "capacity"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

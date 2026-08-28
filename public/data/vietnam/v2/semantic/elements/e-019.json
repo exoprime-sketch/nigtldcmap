@@ -1,0 +1,67 @@
+{
+  "dimensions": [
+    {
+      "key": "city",
+      "labelKo": "city",
+      "valueCount": 2,
+      "values": [
+        "Hanoi",
+        "Ho Chi Minh City"
+      ]
+    },
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    }
+  ],
+  "elementId": "E-019",
+  "entityCount": 9,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 1,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-32c05c3abf2c|개소(사무소)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "개도국 내 한국 기관 사무소",
+      "indicatorId": "E-019_kr_agency_office",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-32c05c3abf2c",
+        "labelKo": "개도국 내 한국 기관 사무소",
+        "unit": "개소(사무소)",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-32c05c3abf2c|개소(사무소)||E-019_kr_agency_office",
+      "sourceCaveat": null,
+      "sourceLabel": "개도국 내 한국 기관 사무소",
+      "sourceLabelEn": "Korean public agency offices in developing countries",
+      "sourceNote": "레코드 결측: \"기후·에너지 담당\" 9건 전량 미수집, 사무소 부존 3건의 도시·주소·연락처 미수집, 한국수출입은행 하노이 주소·연락처 미확보(M06). 메타 결측: 라이선스·라이선스 URL·최종갱신일·담당자·검증자 미확인(M06).",
+      "sourceProvenance": {
+        "elementId": "E-019",
+        "indicatorId": "E-019_kr_agency_office",
+        "sourceFileDecoded": "E-019_개도국 내 한국기관 사무소.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-32c05c3abf2c",
+      "labelKo": "개도국 내 한국 기관 사무소",
+      "recordCount": 0,
+      "unit": "개소(사무소)",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

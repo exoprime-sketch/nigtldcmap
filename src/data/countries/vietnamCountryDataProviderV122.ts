@@ -1,18 +1,21 @@
 import {
-  clearVietnamDataCacheV121,
-  loadVietnamCatalogV121,
-  loadVietnamElementBundleV121,
-  loadVietnamElementEntitiesV121,
-  loadVietnamManifestV121,
-  loadVietnamMapIndexV121,
-  loadVietnamSearchIndexV121,
-  loadVietnamSourceRegistryV121,
-} from "../vietnam/vietnamDataLoaderV121";
+  clearVietnamDataCacheV124,
+  loadVietnamCatalogV124,
+  loadVietnamElementBundleV124,
+  loadVietnamElementEntitiesV124,
+  loadVietnamManifestV124,
+  loadVietnamMapIndexV124,
+  loadVietnamSearchIndexV124,
+  loadVietnamSourceRegistryV124,
+} from "../vietnam/vietnamDataLoaderV124";
 import {
   elementIdFromPublicSlugV121,
   publicElementPathTokenV121,
 } from "../vietnam/vietnamElementSlugsV121";
-import type { VietnamCatalogElementV121 } from "../vietnam/vietnamTypesV121";
+import type {
+  VietnamCatalogElementV124,
+  VietnamElementPublicStatusV124,
+} from "../vietnam/vietnamTypesV124";
 import type {
   CountryCatalogItemV122,
   CountryDataProviderV122,
@@ -28,11 +31,16 @@ import {
 } from "./publicLabelsV122";
 
 function toCatalogItem(
-  item: VietnamCatalogElementV121
+  item: VietnamCatalogElementV124
 ): CountryCatalogItemV122 {
   const publicTitle = publicDatasetTitleV122(item.elementId, item.elementLabel);
+  const hasPopulatedRows =
+    item.dataPresenceStatus === "actual-records" ||
+    item.dataPresenceStatus === "partial-records";
+  const hasPublicData =
+    hasPopulatedRows && (item.observationCount > 0 || item.entityCount > 0);
   return {
-    providerId: "vietnam-v121",
+    providerId: "vietnam-v124",
     countryIso3: "VNM",
     countryNameKo: "베트남",
     countryNameEn: "Viet Nam",
@@ -55,29 +63,49 @@ function toCatalogItem(
     sourceOrganizations: item.sourceOrganizations,
     sourceUrls: item.sourceUrls,
     technologyIds: item.technologyIds,
-    hasPublicData:
-      item.publicStatus !== "not-in-package" &&
-      (item.observationCount > 0 ||
-        item.entityCount > 0 ||
-        item.availableIndicatorCount > 0),
+    publicStatus: item.publicStatus,
+    publicStatusLabel: publicStatusLabelV124(item.publicStatus),
+    dataPresenceStatus: item.dataPresenceStatus,
+    emptyReason: item.emptyReason,
+    displayAllowed: item.displayAllowed !== false,
+    downloadAllowed: item.downloadAllowed === true,
+    isDiscoverable: true,
+    hasPublicData,
     hasMapData: item.mapFeatureCount > 0,
-    hasDownloadableData: item.downloadableRecordCount > 0,
+    hasDownloadableData:
+      item.downloadAllowed === true && item.downloadableRecordCount > 0,
     observationCount: item.observationCount,
     entityCount: item.entityCount,
     mapFeatureCount: item.mapFeatureCount,
     downloadableRecordCount: item.downloadableRecordCount,
+    downloadAssets: item.downloadAssets || [],
     raw: item,
   };
 }
 
+function publicStatusLabelV124(
+  status: VietnamElementPublicStatusV124
+): string {
+  const labels: Record<VietnamElementPublicStatusV124, string> = {
+    actual: "실제 데이터",
+    partial: "부분 데이터",
+    "public-authorized": "공개 승인 데이터",
+    "schema-only": "입력 양식만 제공",
+    "data-entry-planned": "입력 예정",
+    "not-collected": "원자료 미수집",
+    quarantined: "형식 검토 필요",
+  };
+  return labels[status];
+}
+
 export const VietnamCountryDataProviderV122: CountryDataProviderV122 = {
-  providerId: "vietnam-v121",
+  providerId: "vietnam-v124",
   countryIso3: "VNM",
   countryNameKo: "베트남",
   countryNameEn: "Viet Nam",
   countryPublicSlug: publicCountrySlugV122("VNM"),
-  dataSchemaVersion: "v121",
-  manifestUrl: "/data/vietnam/v1/manifest.json",
+  dataSchemaVersion: "v124",
+  manifestUrl: "/data/vietnam/v2/manifest.json",
   availability: "available",
   mapView: {
     center: [106.2, 16.1],
@@ -87,14 +115,14 @@ export const VietnamCountryDataProviderV122: CountryDataProviderV122 = {
       [110.8, 23.8],
     ],
   },
-  loadManifest: loadVietnamManifestV121,
+  loadManifest: loadVietnamManifestV124,
   async loadCatalog() {
-    return (await loadVietnamCatalogV121()).map(toCatalogItem);
+    return (await loadVietnamCatalogV124()).map(toCatalogItem);
   },
   async loadSearchIndex() {
     const [rawCatalog, index] = await Promise.all([
-      loadVietnamCatalogV121(),
-      loadVietnamSearchIndexV121(),
+      loadVietnamCatalogV124(),
+      loadVietnamSearchIndexV124(),
     ]);
     const catalog: CountryCatalogItemV122[] = rawCatalog.map(toCatalogItem);
     const catalogById = new Map<string, CountryCatalogItemV122>(
@@ -105,7 +133,7 @@ export const VietnamCountryDataProviderV122: CountryDataProviderV122 = {
       const item = catalogById.get(elementId);
       if (!item) return;
       result.set(elementId, {
-        providerId: "vietnam-v121",
+        providerId: "vietnam-v124",
         countryIso3: "VNM",
         elementId,
         publicSlug: item.publicSlug,
@@ -121,10 +149,10 @@ export const VietnamCountryDataProviderV122: CountryDataProviderV122 = {
     return result;
   },
   async loadMapIndex() {
-    return (await loadVietnamMapIndexV121()).map(
+    return (await loadVietnamMapIndexV124()).map(
       (layer): CountryMapLayerV122 => ({
         ...layer,
-        providerId: "vietnam-v121",
+        providerId: "vietnam-v124",
         countryIso3: "VNM",
         countryNameKo: "베트남",
         publicTitle: publicDatasetTitleV122(layer.elementId, layer.label),
@@ -135,10 +163,10 @@ export const VietnamCountryDataProviderV122: CountryDataProviderV122 = {
       })
     );
   },
-  loadElementBundle: loadVietnamElementBundleV121,
-  loadElementEntities: loadVietnamElementEntitiesV121,
-  loadSourceRegistry: loadVietnamSourceRegistryV121,
+  loadElementBundle: loadVietnamElementBundleV124,
+  loadElementEntities: loadVietnamElementEntitiesV124,
+  loadSourceRegistry: loadVietnamSourceRegistryV124,
   resolveElementId: elementIdFromPublicSlugV121,
   publicElementToken: publicElementPathTokenV121,
-  clearCache: clearVietnamDataCacheV121,
+  clearCache: clearVietnamDataCacheV124,
 };

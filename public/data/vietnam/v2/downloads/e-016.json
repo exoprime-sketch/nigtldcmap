@@ -1,0 +1,450 @@
+{
+  "countryIso3": "VNM",
+  "element": {
+    "assetRef": {
+      "elementId": "E-016",
+      "provider": "vietnam-v124",
+      "section": "bundle"
+    },
+    "availableIndicatorCount": 1,
+    "categoryCode": "E",
+    "categoryLabel": "협력·실행 기반",
+    "dataPresenceStatus": "actual-records",
+    "dataTypes": [
+      "text"
+    ],
+    "detailTemplate": "entity",
+    "displayAllowed": true,
+    "downloadAllowed": true,
+    "downloadAssets": [
+      {
+        "format": "JSON",
+        "mediaType": "application/json",
+        "recordCount": 4,
+        "url": "/data/vietnam/v2/downloads/e-016.json"
+      },
+      {
+        "format": "CSV",
+        "mediaType": "text/csv; charset=utf-8",
+        "recordCount": 4,
+        "url": "/data/vietnam/v2/downloads/e-016.csv"
+      }
+    ],
+    "downloadableRecordCount": 4,
+    "elementId": "E-016",
+    "elementLabel": "한국 기후기술 TRL",
+    "emptyReason": null,
+    "entityCount": 4,
+    "groupCode": "E.4.a",
+    "groupLabel": "한국 기후기술 역량",
+    "hasWarnings": true,
+    "indicatorCount": 1,
+    "latestYear": 2020,
+    "mapFeatureCount": 0,
+    "mapMode": "country-aggregate",
+    "nonstandardRowCount": 2,
+    "observationCount": 0,
+    "packageReason": "공개 승인 결정에 따라 원자료 행 공개",
+    "packageStatus": "provided",
+    "publicStatus": "public-authorized",
+    "publicationDecision": {
+      "approvedAt": "2026-08-27",
+      "approvedByRole": "project-owner",
+      "contactFieldsAllowed": true,
+      "decision": "public-release-approved",
+      "decisionId": "VNM-V124-PUBLIC-RELEASE-2026-08-27",
+      "displayAllowed": true,
+      "downloadAllowed": true,
+      "sourceAttributionRequired": true,
+      "sourceLicensePreserved": true
+    },
+    "qualityIssueCount": 4,
+    "referenceYears": [
+      "2020"
+    ],
+    "rights": {
+      "attributionTexts": [],
+      "downloadAllowedValues": [
+        "확인필요"
+      ],
+      "licenses": [],
+      "redistributionAllowedValues": [
+        "확인필요"
+      ],
+      "status": "mixed-or-restricted"
+    },
+    "rowAccounting": {
+      "metadataRows": 1,
+      "nonstandardRows": 2,
+      "normalizedEntityRows": 4,
+      "normalizedObservationRows": 0,
+      "placeholderRows": 1,
+      "publicPopulatedRows": 4,
+      "templateRows": 8
+    },
+    "sectionCode": "E.4",
+    "sectionLabel": "한국 기술·네트워크 역량",
+    "sourceOrganizations": [
+      "국가녹색기술연구소(NIGT) / 기후기술정보시스템(CTis)"
+    ],
+    "sourceUrls": [
+      "레코드별 상이 → 1.2_entity(레코드형) 시트 attr_6_source_url 열 참조"
+    ],
+    "sourceWorkbook": {
+      "exists": true,
+      "fileName": "E-016_한국 기후기술 TRL.xlsx"
+    },
+    "spatialUnits": [
+      "nation"
+    ],
+    "technologyIds": []
+  },
+  "entities": [
+    {
+      "countryIso3": "KOR",
+      "crs": null,
+      "downloadEligible": true,
+      "elementId": "E-016",
+      "entityType": "entity",
+      "geometry": null,
+      "geometryType": null,
+      "indicatorId": "E-016_kr_climate_tech_trl",
+      "latitude": null,
+      "loadStatus": "published-with-warning",
+      "longitude": null,
+      "mapEligibilityReason": "no-coordinate",
+      "mapEligible": false,
+      "missingReasonCode": null,
+      "name": "기후기술:전체 - 5년 후 전망(2025)",
+      "normalizedAttributes": {
+        "field_8c8721a1": "80.8%",
+        "field_a1c8da40": "3.4년",
+        "field_edf04a1a": "미국(98.6)",
+        "referenceYear": "2025 전망",
+        "sector": "기후기술:전체 - 5년 후 전망(2025)",
+        "sourceUrl": "https://ctis.re.kr/lvExmn/lvExmnBoard?mid=a10201040000"
+      },
+      "note": null,
+      "provenance": {
+        "citationLocator": null,
+        "downloadAllowed": "확인필요",
+        "elementId": "E-016",
+        "indicatorId": "E-016_kr_climate_tech_trl",
+        "licenseCode": null,
+        "redistributionAllowed": "확인필요",
+        "referenceYear": "2020",
+        "sourceFileDecoded": "E-016_한국 기후기술 TRL.xlsx",
+        "sourceFileOriginal": "E-016_한국 기후기술 TRL.xlsx",
+        "sourceOrg": "국가녹색기술연구소(NIGT) / 기후기술정보시스템(CTis)",
+        "sourcePackage": "vietnam-data(4).zip",
+        "sourceRow": 4,
+        "sourceSheet": "1.2_entity(레코드형)",
+        "sourceUrl": null
+      },
+      "publicationDecision": {
+        "approvedAt": "2026-08-27",
+        "approvedByRole": "project-owner",
+        "contactFieldsAllowed": true,
+        "decision": "public-release-approved",
+        "decisionId": "VNM-V124-PUBLIC-RELEASE-2026-08-27",
+        "displayAllowed": true,
+        "downloadAllowed": true,
+        "sourceAttributionRequired": true,
+        "sourceLicensePreserved": true
+      },
+      "rawAttributes": {
+        "attr_1": "기후기술:전체 - 5년 후 전망(2025)",
+        "attr_2": "80.8%",
+        "attr_3": "3.4년",
+        "attr_4": "미국(98.6)",
+        "attr_5": "2025 전망",
+        "attr_6": "https://ctis.re.kr/lvExmn/lvExmnBoard?mid=a10201040000"
+      },
+      "recordId": "v124-e-016-entity-00001",
+      "rightsNote": "Project-owner publication decision VNM-V124-PUBLIC-RELEASE-2026-08-27; source license and attribution remain preserved",
+      "rightsStatus": "publication-authorized",
+      "warnings": [
+        "source-url-stored-as-note"
+      ]
+    },
+    {
+      "countryIso3": "KOR",
+      "crs": null,
+      "downloadEligible": true,
+      "elementId": "E-016",
+      "entityType": "entity",
+      "geometry": null,
+      "geometryType": null,
+      "indicatorId": "E-016_kr_climate_tech_trl",
+      "latitude": null,
+      "loadStatus": "published-with-warning",
+      "longitude": null,
+      "mapEligibilityReason": "no-coordinate",
+      "mapEligible": false,
+      "missingReasonCode": "M06",
+      "name": "기후기술: 감축(Mitigation)",
+      "normalizedAttributes": {
+        "field_8c8721a1": null,
+        "field_a1c8da40": null,
+        "field_edf04a1a": null,
+        "referenceYear": "2020",
+        "sector": "기후기술: 감축(Mitigation)",
+        "sourceUrl": "https://nigt.re.kr/gtck/researchall.do?mode=view&articleNo=2487"
+      },
+      "note": null,
+      "provenance": {
+        "citationLocator": null,
+        "downloadAllowed": "확인필요",
+        "elementId": "E-016",
+        "indicatorId": "E-016_kr_climate_tech_trl",
+        "licenseCode": null,
+        "redistributionAllowed": "확인필요",
+        "referenceYear": "2020",
+        "sourceFileDecoded": "E-016_한국 기후기술 TRL.xlsx",
+        "sourceFileOriginal": "E-016_한국 기후기술 TRL.xlsx",
+        "sourceOrg": "국가녹색기술연구소(NIGT) / 기후기술정보시스템(CTis)",
+        "sourcePackage": "vietnam-data(4).zip",
+        "sourceRow": 5,
+        "sourceSheet": "1.2_entity(레코드형)",
+        "sourceUrl": null
+      },
+      "publicationDecision": {
+        "approvedAt": "2026-08-27",
+        "approvedByRole": "project-owner",
+        "contactFieldsAllowed": true,
+        "decision": "public-release-approved",
+        "decisionId": "VNM-V124-PUBLIC-RELEASE-2026-08-27",
+        "displayAllowed": true,
+        "downloadAllowed": true,
+        "sourceAttributionRequired": true,
+        "sourceLicensePreserved": true
+      },
+      "rawAttributes": {
+        "attr_1": "기후기술: 감축(Mitigation)",
+        "attr_2": null,
+        "attr_3": null,
+        "attr_4": null,
+        "attr_5": "2020",
+        "attr_6": "https://nigt.re.kr/gtck/researchall.do?mode=view&articleNo=2487"
+      },
+      "recordId": "v124-e-016-entity-00002",
+      "rightsNote": "Project-owner publication decision VNM-V124-PUBLIC-RELEASE-2026-08-27; source license and attribution remain preserved",
+      "rightsStatus": "publication-authorized",
+      "warnings": [
+        "source-url-stored-as-note"
+      ]
+    },
+    {
+      "countryIso3": "KOR",
+      "crs": null,
+      "downloadEligible": true,
+      "elementId": "E-016",
+      "entityType": "entity",
+      "geometry": null,
+      "geometryType": null,
+      "indicatorId": "E-016_kr_climate_tech_trl",
+      "latitude": null,
+      "loadStatus": "published-with-warning",
+      "longitude": null,
+      "mapEligibilityReason": "no-coordinate",
+      "mapEligible": false,
+      "missingReasonCode": "M06",
+      "name": "기후기술: 융복합(Convergence)",
+      "normalizedAttributes": {
+        "field_8c8721a1": null,
+        "field_a1c8da40": null,
+        "field_edf04a1a": null,
+        "referenceYear": "2020",
+        "sector": "기후기술: 융복합(Convergence)",
+        "sourceUrl": "https://nigt.re.kr/gtck/researchall.do?mode=view&articleNo=2487"
+      },
+      "note": null,
+      "provenance": {
+        "citationLocator": null,
+        "downloadAllowed": "확인필요",
+        "elementId": "E-016",
+        "indicatorId": "E-016_kr_climate_tech_trl",
+        "licenseCode": null,
+        "redistributionAllowed": "확인필요",
+        "referenceYear": "2020",
+        "sourceFileDecoded": "E-016_한국 기후기술 TRL.xlsx",
+        "sourceFileOriginal": "E-016_한국 기후기술 TRL.xlsx",
+        "sourceOrg": "국가녹색기술연구소(NIGT) / 기후기술정보시스템(CTis)",
+        "sourcePackage": "vietnam-data(4).zip",
+        "sourceRow": 7,
+        "sourceSheet": "1.2_entity(레코드형)",
+        "sourceUrl": null
+      },
+      "publicationDecision": {
+        "approvedAt": "2026-08-27",
+        "approvedByRole": "project-owner",
+        "contactFieldsAllowed": true,
+        "decision": "public-release-approved",
+        "decisionId": "VNM-V124-PUBLIC-RELEASE-2026-08-27",
+        "displayAllowed": true,
+        "downloadAllowed": true,
+        "sourceAttributionRequired": true,
+        "sourceLicensePreserved": true
+      },
+      "rawAttributes": {
+        "attr_1": "기후기술: 융복합(Convergence)",
+        "attr_2": null,
+        "attr_3": null,
+        "attr_4": null,
+        "attr_5": "2020",
+        "attr_6": "https://nigt.re.kr/gtck/researchall.do?mode=view&articleNo=2487"
+      },
+      "recordId": "v124-e-016-entity-00003",
+      "rightsNote": "Project-owner publication decision VNM-V124-PUBLIC-RELEASE-2026-08-27; source license and attribution remain preserved",
+      "rightsStatus": "publication-authorized",
+      "warnings": [
+        "source-url-stored-as-note"
+      ]
+    },
+    {
+      "countryIso3": "KOR",
+      "crs": null,
+      "downloadEligible": true,
+      "elementId": "E-016",
+      "entityType": "entity",
+      "geometry": null,
+      "geometryType": null,
+      "indicatorId": "E-016_kr_climate_tech_trl",
+      "latitude": null,
+      "loadStatus": "published-with-warning",
+      "longitude": null,
+      "mapEligibilityReason": "no-coordinate",
+      "mapEligible": false,
+      "missingReasonCode": "M06",
+      "name": "기후기술: 적응(Adaptation)",
+      "normalizedAttributes": {
+        "field_8c8721a1": null,
+        "field_a1c8da40": null,
+        "field_edf04a1a": null,
+        "referenceYear": "2020",
+        "sector": "기후기술: 적응(Adaptation)",
+        "sourceUrl": "https://nigt.re.kr/gtck/researchall.do?mode=view&articleNo=2487"
+      },
+      "note": null,
+      "provenance": {
+        "citationLocator": null,
+        "downloadAllowed": "확인필요",
+        "elementId": "E-016",
+        "indicatorId": "E-016_kr_climate_tech_trl",
+        "licenseCode": null,
+        "redistributionAllowed": "확인필요",
+        "referenceYear": "2020",
+        "sourceFileDecoded": "E-016_한국 기후기술 TRL.xlsx",
+        "sourceFileOriginal": "E-016_한국 기후기술 TRL.xlsx",
+        "sourceOrg": "국가녹색기술연구소(NIGT) / 기후기술정보시스템(CTis)",
+        "sourcePackage": "vietnam-data(4).zip",
+        "sourceRow": 6,
+        "sourceSheet": "1.2_entity(레코드형)",
+        "sourceUrl": null
+      },
+      "publicationDecision": {
+        "approvedAt": "2026-08-27",
+        "approvedByRole": "project-owner",
+        "contactFieldsAllowed": true,
+        "decision": "public-release-approved",
+        "decisionId": "VNM-V124-PUBLIC-RELEASE-2026-08-27",
+        "displayAllowed": true,
+        "downloadAllowed": true,
+        "sourceAttributionRequired": true,
+        "sourceLicensePreserved": true
+      },
+      "rawAttributes": {
+        "attr_1": "기후기술: 적응(Adaptation)",
+        "attr_2": null,
+        "attr_3": null,
+        "attr_4": null,
+        "attr_5": "2020",
+        "attr_6": "https://nigt.re.kr/gtck/researchall.do?mode=view&articleNo=2487"
+      },
+      "recordId": "v124-e-016-entity-00004",
+      "rightsNote": "Project-owner publication decision VNM-V124-PUBLIC-RELEASE-2026-08-27; source license and attribution remain preserved",
+      "rightsStatus": "publication-authorized",
+      "warnings": [
+        "source-url-stored-as-note"
+      ]
+    }
+  ],
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicators": [
+    {
+      "accessedDate": "2026-08-14",
+      "apiEndpoint": null,
+      "apiParams": null,
+      "attributionText": null,
+      "caveat": null,
+      "citationLocator": null,
+      "comparabilityFlag": "미확인",
+      "crs": null,
+      "dataOwner": "슈타트(STADT)",
+      "dataType": "text",
+      "derivationMethod": "원본 E-016 시트의 분야 4건을 분야/기술수준/기술격차/최고국/기준연도/출처 6개 속성의 레코드로 전환. 집계·연산 없음.",
+      "derivationType": "원본",
+      "downloadAllowed": "확인필요",
+      "elementId": "E-016",
+      "extraMeta": {
+        "sourceUrlNote": "레코드별 상이 → 1.2_entity(레코드형) 시트 attr_6_source_url 열 참조"
+      },
+      "indicatorId": "E-016_kr_climate_tech_trl",
+      "labelEn": "Korea climate technology readiness level by field",
+      "labelKo": "한국 기후기술 TRL(분야별 기술수준·격차)",
+      "lastUpdated": null,
+      "licenseCode": null,
+      "licenseUrl": null,
+      "loadStatus": "published-with-warning",
+      "missingNote": "레코드 결측: 감축·적응·융복합 3개 분야의 기술수준·기술격차·최고국 전량 \"미확보\"(M06). 사유는 원본 비고대로 PDF 파싱 불가 / 정성 서술만 존재 / 접근 가능 소스 미노출. 메타 결측: 라이선스·라이선스 URL·최종갱신일·수집일·담당자·검증자 미확인(M06).",
+      "missingReasonCode": "M06",
+      "provenance": {
+        "citationLocator": null,
+        "downloadAllowed": "확인필요",
+        "elementId": "E-016",
+        "indicatorId": "E-016_kr_climate_tech_trl",
+        "licenseCode": null,
+        "redistributionAllowed": "확인필요",
+        "referenceYear": "2020",
+        "sourceFileDecoded": "E-016_한국 기후기술 TRL.xlsx",
+        "sourceFileOriginal": "E-016_한국 기후기술 TRL.xlsx",
+        "sourceOrg": "국가녹색기술연구소(NIGT) / 기후기술정보시스템(CTis)",
+        "sourcePackage": "vietnam-data.zip",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info",
+        "sourceUrl": "레코드별 상이 → 1.2_entity(레코드형) 시트 attr_6_source_url 열 참조"
+      },
+      "publicationDecision": {
+        "approvedAt": "2026-08-27",
+        "approvedByRole": "project-owner",
+        "contactFieldsAllowed": true,
+        "decision": "public-release-approved",
+        "decisionId": "VNM-V124-PUBLIC-RELEASE-2026-08-27",
+        "displayAllowed": true,
+        "downloadAllowed": true,
+        "sourceAttributionRequired": true,
+        "sourceLicensePreserved": true
+      },
+      "redistributionAllowed": "확인필요",
+      "referenceYear": "2020",
+      "sourceGrade": "학술·연구",
+      "sourceOrg": "국가녹색기술연구소(NIGT) / 기후기술정보시스템(CTis)",
+      "sourceSeriesId": null,
+      "sourceUrl": null,
+      "spatialResolution": "nation",
+      "spatialUnit": "nation",
+      "technologyIds": [],
+      "timeInterval": "irregular",
+      "timeRange": "2020-2025",
+      "unit": "건(분야)",
+      "unitDetail": "분야 1개 = 1레코드(entity). 속성 단위는 attr_2_tech_level %, attr_3_gap_years 년",
+      "updateFrequency": "비정기",
+      "verifiedBy": null,
+      "warnings": [
+        "source-url-stored-as-note"
+      ]
+    }
+  ],
+  "observations": [],
+  "schemaVersion": "v124"
+}

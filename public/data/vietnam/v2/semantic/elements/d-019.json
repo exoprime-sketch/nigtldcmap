@@ -1,0 +1,296 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 3,
+      "values": [
+        "단계별 요청 건수",
+        "예산 합계",
+        "요청 건수"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 5,
+      "values": [
+        "Completed",
+        "Design",
+        "Implementation",
+        "베트남 기술지원 요청 총 건수",
+        "요청건 예산 총액"
+      ]
+    },
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "사업·재원"
+      ]
+    },
+    {
+      "key": "sectors",
+      "labelKo": "sectors",
+      "valueCount": 7,
+      "values": [
+        "Agriculture",
+        "Coastal zones",
+        "Early warning and Environmental assessment",
+        "Energy efficiency",
+        "Industry",
+        "Waste management",
+        "Water"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2025"
+      ]
+    }
+  ],
+  "elementId": "D-019",
+  "entityCount": 10,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 6,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-5bc9cf65db2a|USD",
+      "dimensionLabels": {
+        "category": "예산 합계",
+        "detail": "요청건 예산 총액",
+        "technology": "1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10 · 11 · 12 · 13 · 14 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 22 · 23 · 24 · 25 · 26 · 27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "예산 합계",
+        "detail": "요청건 예산 총액",
+        "technology": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "CTCN 기술지원 요청 · 예산 합계 — 요청건 예산 총액",
+      "indicatorId": "D-019_budget_sum",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5bc9cf65db2a",
+        "labelKo": "CTCN 기술지원 요청",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-5bc9cf65db2a|USD|category=예산 합계|detail=요청건 예산 총액|technology=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38|D-019_budget_sum",
+      "sourceCaveat": "[검토지적 반영 ①] 종전 자료의 \"TA 결과 요약\" 열에 CTCN 원문의 Objective 값(Mitigation/Adaptation)이 들어가 있어, 이를 \"목적 구분(Objective)\"으로 정정하고 실제 수행내용·결과 요약은 결측(M06)으로 표기함. [검토지적 반영 ②] 지원 단계는 CTCN 원문이 Design / Implementation / Completed 3단계를 사용하고 요청 서식의 Scoping / TA Delivery / Completed와 명칭이 다르므로, 원문 값을 유지하고 대응관계를 병기함 (Design≈Scoping, Implementation≈TA Delivery, Completed=Completed). [결측] 예산은 CTCN이 구간(예: $200-250k)으로만 공개하거나 비공개인 건이 있어 단일 수치로 확정할 수 없음. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "CTCN 기술지원 요청 · 예산 합계 — 요청건 예산 총액",
+      "sourceLabelEn": "Total budget of CTCN technical assistance requests",
+      "sourceNote": "원천이 예산을 구간(range)으로만 공개하여 지표 정의(단일 합계)와 불일치. 재확보 대상 1차 출처: CTCN 각 기술지원 상세페이지의 확정 예산 및 TA 종료보고서",
+      "sourceProvenance": {
+        "elementId": "D-019",
+        "indicatorId": "D-019_budget_sum",
+        "sourceFileDecoded": "D-019_CTCN 기술지원 요청.xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-646a4a09318f|건",
+      "dimensionLabels": {
+        "category": "베트남 요청건 레지스트리",
+        "detail": "레코드 1건 = 1행(1.2 레코드형 시트)",
+        "technology": "1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10 · 11 · 12 · 13 · 14 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 22 · 23 · 24 · 25 · 26 · 27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "베트남 요청건 레지스트리",
+        "detail": "레코드 1건 = 1행(1.2 레코드형 시트)",
+        "technology": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "CTCN 기술지원 요청 · 베트남 요청건 레지스트리 — 레코드 1건 = 1행(1.2 레코드형 시트)",
+      "indicatorId": "D-019_ctcn_technical_assistance_registry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-646a4a09318f",
+        "labelKo": "CTCN 기술지원 요청",
+        "unit": "건",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-646a4a09318f|건|category=베트남 요청건 레지스트리|detail=레코드 1건 = 1행(1.2 레코드형 시트)|technology=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38|D-019_ctcn_technical_assistance_registry",
+      "sourceCaveat": "[검토지적 반영 ①] 종전 자료의 \"TA 결과 요약\" 열에 CTCN 원문의 Objective 값(Mitigation/Adaptation)이 들어가 있어, 이를 \"목적 구분(Objective)\"으로 정정하고 실제 수행내용·결과 요약은 결측(M06)으로 표기함. [검토지적 반영 ②] 지원 단계는 CTCN 원문이 Design / Implementation / Completed 3단계를 사용하고 요청 서식의 Scoping / TA Delivery / Completed와 명칭이 다르므로, 원문 값을 유지하고 대응관계를 병기함 (Design≈Scoping, Implementation≈TA Delivery, Completed=Completed). [결측] 예산은 CTCN이 구간(예: $200-250k)으로만 공개하거나 비공개인 건이 있어 단일 수치로 확정할 수 없음. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "CTCN 기술지원 요청 · 베트남 요청건 레지스트리 — 레코드 1건 = 1행(1.2 레코드형 시트)",
+      "sourceLabelEn": "Registry of CTCN technical assistance requests from Viet Nam",
+      "sourceNote": "TA 수행내용·결과 요약과 기술유형·실행기관은 각 요청 상세페이지 본문에서 전 10건 확보하여 반영함. 다만 사업 시작·종료일은 CTCN이 상세페이지에도 게재하지 않으며(제출일만 공개), 예산도 4건은 구간값, 6건은 미게재임 — 원천에서 공백.",
+      "sourceProvenance": {
+        "elementId": "D-019",
+        "indicatorId": "D-019_ctcn_technical_assistance_registry",
+        "sourceFileDecoded": "D-019_CTCN 기술지원 요청.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-646a4a09318f|건",
+      "dimensionLabels": {
+        "category": "요청 건수",
+        "detail": "베트남 기술지원 요청 총 건수",
+        "technology": "1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10 · 11 · 12 · 13 · 14 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 22 · 23 · 24 · 25 · 26 · 27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "요청 건수",
+        "detail": "베트남 기술지원 요청 총 건수",
+        "technology": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "CTCN 기술지원 요청 · 요청 건수 — 베트남 기술지원 요청 총 건수",
+      "indicatorId": "D-019_request_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-646a4a09318f",
+        "labelKo": "CTCN 기술지원 요청",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-646a4a09318f|건|category=요청 건수|detail=베트남 기술지원 요청 총 건수|technology=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38|D-019_request_count",
+      "sourceCaveat": "[검토지적 반영 ①] 종전 자료의 \"TA 결과 요약\" 열에 CTCN 원문의 Objective 값(Mitigation/Adaptation)이 들어가 있어, 이를 \"목적 구분(Objective)\"으로 정정하고 실제 수행내용·결과 요약은 결측(M06)으로 표기함. [검토지적 반영 ②] 지원 단계는 CTCN 원문이 Design / Implementation / Completed 3단계를 사용하고 요청 서식의 Scoping / TA Delivery / Completed와 명칭이 다르므로, 원문 값을 유지하고 대응관계를 병기함 (Design≈Scoping, Implementation≈TA Delivery, Completed=Completed). [결측] 예산은 CTCN이 구간(예: $200-250k)으로만 공개하거나 비공개인 건이 있어 단일 수치로 확정할 수 없음. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "CTCN 기술지원 요청 · 요청 건수 — 베트남 기술지원 요청 총 건수",
+      "sourceLabelEn": "Number of CTCN technical assistance requests from Viet Nam",
+      "sourceNote": "[검토지적 반영 ①] 종전 자료의 \"TA 결과 요약\" 열에 CTCN 원문의 Objective 값(Mitigation/Adaptation)이 들어가 있어, 이를 \"목적 구분(Objective)\"으로 정정하고 실제 수행내용·결과 요약은 결측(M06)으로 표기함. [검토지적 반영 ②] 지원 단계는 CTCN 원문이 Design / Implementation / Completed 3단계를 사용하고 요청 서식의 Scoping / TA Delivery / Completed와 명칭이 다르므로, 원문 값을 유지하고 대응관계를 병기함 (Design≈Scoping, Implementation≈TA Delivery, Completed=Completed). [결측] 예산은 CTCN이 구간(예: $200-250k)으로만 공개하거나 비공개인 건이 있어 단일 수치로 확정할 수 없음. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-019",
+        "indicatorId": "D-019_request_count",
+        "sourceFileDecoded": "D-019_CTCN 기술지원 요청.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-646a4a09318f|건",
+      "dimensionLabels": {
+        "category": "단계별 요청 건수",
+        "detail": "Completed",
+        "technology": "1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10 · 11 · 12 · 13 · 14 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 22 · 23 · 24 · 25 · 26 · 27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "단계별 요청 건수",
+        "detail": "Completed",
+        "technology": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "CTCN 기술지원 요청 · 단계별 요청 건수 — Completed",
+      "indicatorId": "D-019_request_count_completed",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-646a4a09318f",
+        "labelKo": "CTCN 기술지원 요청",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-646a4a09318f|건|category=단계별 요청 건수|detail=Completed|technology=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38|D-019_request_count_completed",
+      "sourceCaveat": "[검토지적 반영 ①] 종전 자료의 \"TA 결과 요약\" 열에 CTCN 원문의 Objective 값(Mitigation/Adaptation)이 들어가 있어, 이를 \"목적 구분(Objective)\"으로 정정하고 실제 수행내용·결과 요약은 결측(M06)으로 표기함. [검토지적 반영 ②] 지원 단계는 CTCN 원문이 Design / Implementation / Completed 3단계를 사용하고 요청 서식의 Scoping / TA Delivery / Completed와 명칭이 다르므로, 원문 값을 유지하고 대응관계를 병기함 (Design≈Scoping, Implementation≈TA Delivery, Completed=Completed). [결측] 예산은 CTCN이 구간(예: $200-250k)으로만 공개하거나 비공개인 건이 있어 단일 수치로 확정할 수 없음. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "CTCN 기술지원 요청 · 단계별 요청 건수 — Completed",
+      "sourceLabelEn": "Number of CTCN requests by phase — Completed",
+      "sourceNote": "[검토지적 반영 ①] 종전 자료의 \"TA 결과 요약\" 열에 CTCN 원문의 Objective 값(Mitigation/Adaptation)이 들어가 있어, 이를 \"목적 구분(Objective)\"으로 정정하고 실제 수행내용·결과 요약은 결측(M06)으로 표기함. [검토지적 반영 ②] 지원 단계는 CTCN 원문이 Design / Implementation / Completed 3단계를 사용하고 요청 서식의 Scoping / TA Delivery / Completed와 명칭이 다르므로, 원문 값을 유지하고 대응관계를 병기함 (Design≈Scoping, Implementation≈TA Delivery, Completed=Completed). [결측] 예산은 CTCN이 구간(예: $200-250k)으로만 공개하거나 비공개인 건이 있어 단일 수치로 확정할 수 없음. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-019",
+        "indicatorId": "D-019_request_count_completed",
+        "sourceFileDecoded": "D-019_CTCN 기술지원 요청.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-646a4a09318f|건",
+      "dimensionLabels": {
+        "category": "단계별 요청 건수",
+        "detail": "Design",
+        "technology": "1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10 · 11 · 12 · 13 · 14 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 22 · 23 · 24 · 25 · 26 · 27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "단계별 요청 건수",
+        "detail": "Design",
+        "technology": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "CTCN 기술지원 요청 · 단계별 요청 건수 — Design",
+      "indicatorId": "D-019_request_count_design",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-646a4a09318f",
+        "labelKo": "CTCN 기술지원 요청",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-646a4a09318f|건|category=단계별 요청 건수|detail=Design|technology=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38|D-019_request_count_design",
+      "sourceCaveat": "[검토지적 반영 ①] 종전 자료의 \"TA 결과 요약\" 열에 CTCN 원문의 Objective 값(Mitigation/Adaptation)이 들어가 있어, 이를 \"목적 구분(Objective)\"으로 정정하고 실제 수행내용·결과 요약은 결측(M06)으로 표기함. [검토지적 반영 ②] 지원 단계는 CTCN 원문이 Design / Implementation / Completed 3단계를 사용하고 요청 서식의 Scoping / TA Delivery / Completed와 명칭이 다르므로, 원문 값을 유지하고 대응관계를 병기함 (Design≈Scoping, Implementation≈TA Delivery, Completed=Completed). [결측] 예산은 CTCN이 구간(예: $200-250k)으로만 공개하거나 비공개인 건이 있어 단일 수치로 확정할 수 없음. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "CTCN 기술지원 요청 · 단계별 요청 건수 — Design",
+      "sourceLabelEn": "Number of CTCN requests by phase — Design",
+      "sourceNote": "[검토지적 반영 ①] 종전 자료의 \"TA 결과 요약\" 열에 CTCN 원문의 Objective 값(Mitigation/Adaptation)이 들어가 있어, 이를 \"목적 구분(Objective)\"으로 정정하고 실제 수행내용·결과 요약은 결측(M06)으로 표기함. [검토지적 반영 ②] 지원 단계는 CTCN 원문이 Design / Implementation / Completed 3단계를 사용하고 요청 서식의 Scoping / TA Delivery / Completed와 명칭이 다르므로, 원문 값을 유지하고 대응관계를 병기함 (Design≈Scoping, Implementation≈TA Delivery, Completed=Completed). [결측] 예산은 CTCN이 구간(예: $200-250k)으로만 공개하거나 비공개인 건이 있어 단일 수치로 확정할 수 없음. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-019",
+        "indicatorId": "D-019_request_count_design",
+        "sourceFileDecoded": "D-019_CTCN 기술지원 요청.xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-646a4a09318f|건",
+      "dimensionLabels": {
+        "category": "단계별 요청 건수",
+        "detail": "Implementation",
+        "technology": "1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10 · 11 · 12 · 13 · 14 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 22 · 23 · 24 · 25 · 26 · 27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
+      },
+      "dimensions": {
+        "category": "단계별 요청 건수",
+        "detail": "Implementation",
+        "technology": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+      },
+      "displayLabel": "CTCN 기술지원 요청 · 단계별 요청 건수 — Implementation",
+      "indicatorId": "D-019_request_count_implementation",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-646a4a09318f",
+        "labelKo": "CTCN 기술지원 요청",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-646a4a09318f|건|category=단계별 요청 건수|detail=Implementation|technology=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38|D-019_request_count_implementation",
+      "sourceCaveat": "[검토지적 반영 ①] 종전 자료의 \"TA 결과 요약\" 열에 CTCN 원문의 Objective 값(Mitigation/Adaptation)이 들어가 있어, 이를 \"목적 구분(Objective)\"으로 정정하고 실제 수행내용·결과 요약은 결측(M06)으로 표기함. [검토지적 반영 ②] 지원 단계는 CTCN 원문이 Design / Implementation / Completed 3단계를 사용하고 요청 서식의 Scoping / TA Delivery / Completed와 명칭이 다르므로, 원문 값을 유지하고 대응관계를 병기함 (Design≈Scoping, Implementation≈TA Delivery, Completed=Completed). [결측] 예산은 CTCN이 구간(예: $200-250k)으로만 공개하거나 비공개인 건이 있어 단일 수치로 확정할 수 없음. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "CTCN 기술지원 요청 · 단계별 요청 건수 — Implementation",
+      "sourceLabelEn": "Number of CTCN requests by phase — Implementation",
+      "sourceNote": "[검토지적 반영 ①] 종전 자료의 \"TA 결과 요약\" 열에 CTCN 원문의 Objective 값(Mitigation/Adaptation)이 들어가 있어, 이를 \"목적 구분(Objective)\"으로 정정하고 실제 수행내용·결과 요약은 결측(M06)으로 표기함. [검토지적 반영 ②] 지원 단계는 CTCN 원문이 Design / Implementation / Completed 3단계를 사용하고 요청 서식의 Scoping / TA Delivery / Completed와 명칭이 다르므로, 원문 값을 유지하고 대응관계를 병기함 (Design≈Scoping, Implementation≈TA Delivery, Completed=Completed). [결측] 예산은 CTCN이 구간(예: $200-250k)으로만 공개하거나 비공개인 건이 있어 단일 수치로 확정할 수 없음. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-019",
+        "indicatorId": "D-019_request_count_implementation",
+        "sourceFileDecoded": "D-019_CTCN 기술지원 요청.xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-5bc9cf65db2a",
+      "labelKo": "CTCN 기술지원 요청",
+      "recordCount": 1,
+      "unit": "USD",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 5,
+      "key": "measure-646a4a09318f",
+      "labelKo": "CTCN 기술지원 요청",
+      "recordCount": 4,
+      "unit": "건",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 5,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

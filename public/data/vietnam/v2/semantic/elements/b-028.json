@@ -1,0 +1,621 @@
+{
+  "dimensions": [
+    {
+      "key": "dam_period",
+      "labelKo": "댐 건설 시기",
+      "valueCount": 2,
+      "values": [
+        "post_dam",
+        "pre_dam"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 3,
+      "values": [
+        "m³/s 기준",
+        "격자/유역 단위(GIS)",
+        "타이빈 수계 연유량"
+      ]
+    },
+    {
+      "key": "detail_2",
+      "labelKo": "detail_2",
+      "valueCount": 5,
+      "values": [
+        "메콩강(해양 유출 기준)",
+        "메콩강(해양 유출 기준) (범위 상한)",
+        "메콩강(해양 유출 기준) (범위 하한)",
+        "홍-타이빈 수계 전체",
+        "홍강(Son Tay 지점)"
+      ]
+    },
+    {
+      "key": "detail_3",
+      "labelKo": "detail_3",
+      "valueCount": 1,
+      "values": [
+        "댐 건설 후"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "5,32"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 6,
+      "values": [
+        "2004",
+        "2009",
+        "2010",
+        "2022",
+        "2023",
+        "2026"
+      ]
+    }
+  ],
+  "elementId": "B-028",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 15,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-8c63feed7431|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "수자원 국외 의존율",
+      "indicatorId": "B-028_dependency_ratio",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8c63feed7431",
+        "labelKo": "수자원 국외 의존율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-8c63feed7431|%||B-028_dependency_ratio",
+      "sourceCaveat": "[미수집 raw 반영] raw CSV 주석의 dependency ratio 59.4%를 지표로 승격. 상류국(중국·라오스·캄보디아) 수자원 개발이 베트남 수자원에 미치는 구조적 노출도를 나타냄. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] AQUASTAT Dissemination System 조회 기준일",
+      "sourceLabel": "수자원 국외 의존율",
+      "sourceLabelEn": "Water dependency ratio",
+      "sourceNote": "[미수집 raw 반영] raw CSV 주석의 dependency ratio 59.4%를 지표로 승격. 상류국(중국·라오스·캄보디아) 수자원 개발이 베트남 수자원에 미치는 구조적 노출도를 나타냄. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] AQUASTAT Dissemination System 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-028",
+        "indicatorId": "B-028_dependency_ratio",
+        "sourceFileDecoded": "B-028_하천 유량(m³／s).xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a5bb9f20399d|m³/s",
+      "dimensionLabels": {
+        "detail": "m³/s 기준",
+        "detail_2": "메콩강(해양 유출 기준)"
+      },
+      "dimensions": {
+        "detail": "m³/s 기준",
+        "detail_2": "메콩강(해양 유출 기준)"
+      },
+      "displayLabel": "하천 유량 — m³/s 기준 — 메콩강(해양 유출 기준)",
+      "indicatorId": "B-028_discharge_cumecs_g01",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a5bb9f20399d",
+        "labelKo": "하천 유량",
+        "unit": "m³/s",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a5bb9f20399d|m³/s|detail=m³/s 기준|detail_2=메콩강(해양 유출 기준)|B-028_discharge_cumecs_g01",
+      "sourceCaveat": "[요소 단위 정합 — 신규 수록] 본 요소가 요구하는 단위는 m³/s인데 종전에는 km³/yr 값만 지표화되어 있고 m³/s 환산치는 보유 [raw] CSV의 source 열에 문자열로만 남아 있었음. 원자료가 직접 병기한 값이므로 자체 환산이 아니라 원본값으로 수록. 홍강은 댐 건설 전후 값이 함께 제시되어 있어(3,740 → 3,350 m³/s, −10.4%) 상류 댐 개발의 유황 변화 영향을 그대로 확인할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "하천 유량 — m³/s 기준 — 메콩강(해양 유출 기준)",
+      "sourceLabelEn": "River discharge (cumecs)",
+      "sourceNote": "[요소 단위 정합 — 신규 수록] 본 요소가 요구하는 단위는 m³/s인데 종전에는 km³/yr 값만 지표화되어 있고 m³/s 환산치는 보유 [raw] CSV의 source 열에 문자열로만 남아 있었음. 원자료가 직접 병기한 값이므로 자체 환산이 아니라 원본값으로 수록. 홍강은 댐 건설 전후 값이 함께 제시되어 있어(3,740 → 3,350 m³/s, −10.4%) 상류 댐 개발의 유황 변화 영향을 그대로 확인할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-028",
+        "indicatorId": "B-028_discharge_cumecs_g01",
+        "sourceFileDecoded": "B-028_하천 유량(m³／s).xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a5bb9f20399d|m³/s",
+      "dimensionLabels": {
+        "detail": "m³/s 기준",
+        "detail_2": "메콩강(해양 유출 기준) (범위 상한)"
+      },
+      "dimensions": {
+        "detail": "m³/s 기준",
+        "detail_2": "메콩강(해양 유출 기준) (범위 상한)"
+      },
+      "displayLabel": "하천 유량 — m³/s 기준 — 메콩강(해양 유출 기준) (범위 상한)",
+      "indicatorId": "B-028_discharge_cumecs_g01_max",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a5bb9f20399d",
+        "labelKo": "하천 유량",
+        "unit": "m³/s",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a5bb9f20399d|m³/s|detail=m³/s 기준|detail_2=메콩강(해양 유출 기준) (범위 상한)|B-028_discharge_cumecs_g01_max",
+      "sourceCaveat": "[요소 단위 정합 — 신규 수록] 본 요소가 요구하는 단위는 m³/s인데 종전에는 km³/yr 값만 지표화되어 있고 m³/s 환산치는 보유 [raw] CSV의 source 열에 문자열로만 남아 있었음. 원자료가 직접 병기한 값이므로 자체 환산이 아니라 원본값으로 수록. 홍강은 댐 건설 전후 값이 함께 제시되어 있어(3,740 → 3,350 m³/s, −10.4%) 상류 댐 개발의 유황 변화 영향을 그대로 확인할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "하천 유량 — m³/s 기준 — 메콩강(해양 유출 기준) (범위 상한)",
+      "sourceLabelEn": "River discharge (cumecs)",
+      "sourceNote": "[요소 단위 정합 — 신규 수록] 본 요소가 요구하는 단위는 m³/s인데 종전에는 km³/yr 값만 지표화되어 있고 m³/s 환산치는 보유 [raw] CSV의 source 열에 문자열로만 남아 있었음. 원자료가 직접 병기한 값이므로 자체 환산이 아니라 원본값으로 수록. 홍강은 댐 건설 전후 값이 함께 제시되어 있어(3,740 → 3,350 m³/s, −10.4%) 상류 댐 개발의 유황 변화 영향을 그대로 확인할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-028",
+        "indicatorId": "B-028_discharge_cumecs_g01_max",
+        "sourceFileDecoded": "B-028_하천 유량(m³／s).xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a5bb9f20399d|m³/s",
+      "dimensionLabels": {
+        "detail": "m³/s 기준",
+        "detail_2": "메콩강(해양 유출 기준) (범위 하한)"
+      },
+      "dimensions": {
+        "detail": "m³/s 기준",
+        "detail_2": "메콩강(해양 유출 기준) (범위 하한)"
+      },
+      "displayLabel": "하천 유량 — m³/s 기준 — 메콩강(해양 유출 기준) (범위 하한)",
+      "indicatorId": "B-028_discharge_cumecs_g01_min",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a5bb9f20399d",
+        "labelKo": "하천 유량",
+        "unit": "m³/s",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a5bb9f20399d|m³/s|detail=m³/s 기준|detail_2=메콩강(해양 유출 기준) (범위 하한)|B-028_discharge_cumecs_g01_min",
+      "sourceCaveat": "[요소 단위 정합 — 신규 수록] 본 요소가 요구하는 단위는 m³/s인데 종전에는 km³/yr 값만 지표화되어 있고 m³/s 환산치는 보유 [raw] CSV의 source 열에 문자열로만 남아 있었음. 원자료가 직접 병기한 값이므로 자체 환산이 아니라 원본값으로 수록. 홍강은 댐 건설 전후 값이 함께 제시되어 있어(3,740 → 3,350 m³/s, −10.4%) 상류 댐 개발의 유황 변화 영향을 그대로 확인할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "하천 유량 — m³/s 기준 — 메콩강(해양 유출 기준) (범위 하한)",
+      "sourceLabelEn": "River discharge (cumecs)",
+      "sourceNote": "[요소 단위 정합 — 신규 수록] 본 요소가 요구하는 단위는 m³/s인데 종전에는 km³/yr 값만 지표화되어 있고 m³/s 환산치는 보유 [raw] CSV의 source 열에 문자열로만 남아 있었음. 원자료가 직접 병기한 값이므로 자체 환산이 아니라 원본값으로 수록. 홍강은 댐 건설 전후 값이 함께 제시되어 있어(3,740 → 3,350 m³/s, −10.4%) 상류 댐 개발의 유황 변화 영향을 그대로 확인할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-028",
+        "indicatorId": "B-028_discharge_cumecs_g01_min",
+        "sourceFileDecoded": "B-028_하천 유량(m³／s).xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a5bb9f20399d|m³/s",
+      "dimensionLabels": {
+        "detail": "m³/s 기준",
+        "detail_2": "홍-타이빈 수계 전체"
+      },
+      "dimensions": {
+        "detail": "m³/s 기준",
+        "detail_2": "홍-타이빈 수계 전체"
+      },
+      "displayLabel": "하천 유량 — m³/s 기준 — 홍-타이빈 수계 전체",
+      "indicatorId": "B-028_discharge_cumecs_g02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a5bb9f20399d",
+        "labelKo": "하천 유량",
+        "unit": "m³/s",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a5bb9f20399d|m³/s|detail=m³/s 기준|detail_2=홍-타이빈 수계 전체|B-028_discharge_cumecs_g02",
+      "sourceCaveat": "[요소 단위 정합 — 신규 수록] 본 요소가 요구하는 단위는 m³/s인데 종전에는 km³/yr 값만 지표화되어 있고 m³/s 환산치는 보유 [raw] CSV의 source 열에 문자열로만 남아 있었음. 원자료가 직접 병기한 값이므로 자체 환산이 아니라 원본값으로 수록. 홍강은 댐 건설 전후 값이 함께 제시되어 있어(3,740 → 3,350 m³/s, −10.4%) 상류 댐 개발의 유황 변화 영향을 그대로 확인할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "하천 유량 — m³/s 기준 — 홍-타이빈 수계 전체",
+      "sourceLabelEn": "River discharge (cumecs)",
+      "sourceNote": "[요소 단위 정합 — 신규 수록] 본 요소가 요구하는 단위는 m³/s인데 종전에는 km³/yr 값만 지표화되어 있고 m³/s 환산치는 보유 [raw] CSV의 source 열에 문자열로만 남아 있었음. 원자료가 직접 병기한 값이므로 자체 환산이 아니라 원본값으로 수록. 홍강은 댐 건설 전후 값이 함께 제시되어 있어(3,740 → 3,350 m³/s, −10.4%) 상류 댐 개발의 유황 변화 영향을 그대로 확인할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-028",
+        "indicatorId": "B-028_discharge_cumecs_g02",
+        "sourceFileDecoded": "B-028_하천 유량(m³／s).xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a5bb9f20399d|m³/s",
+      "dimensionLabels": {
+        "detail": "m³/s 기준",
+        "detail_2": "홍강(Son Tay 지점)",
+        "detail_3": "댐 건설 후"
+      },
+      "dimensions": {
+        "detail": "m³/s 기준",
+        "detail_2": "홍강(Son Tay 지점)",
+        "detail_3": "댐 건설 후"
+      },
+      "displayLabel": "하천 유량 — m³/s 기준 — 홍강(Son Tay 지점) — 댐 건설 후",
+      "indicatorId": "B-028_discharge_cumecs_son_tay",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a5bb9f20399d",
+        "labelKo": "하천 유량",
+        "unit": "m³/s",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a5bb9f20399d|m³/s|detail=m³/s 기준|detail_2=홍강(Son Tay 지점)|detail_3=댐 건설 후|B-028_discharge_cumecs_son_tay",
+      "sourceCaveat": "[요소 단위 정합 — 신규 수록] 본 요소가 요구하는 단위는 m³/s인데 종전에는 km³/yr 값만 지표화되어 있고 m³/s 환산치는 보유 [raw] CSV의 source 열에 문자열로만 남아 있었음. 원자료가 직접 병기한 값이므로 자체 환산이 아니라 원본값으로 수록. 홍강은 댐 건설 전후 값이 함께 제시되어 있어(3,740 → 3,350 m³/s, −10.4%) 상류 댐 개발의 유황 변화 영향을 그대로 확인할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "하천 유량 — m³/s 기준 — 홍강(Son Tay 지점) — 댐 건설 후",
+      "sourceLabelEn": "River discharge (cumecs)",
+      "sourceNote": "[요소 단위 정합 — 신규 수록] 본 요소가 요구하는 단위는 m³/s인데 종전에는 km³/yr 값만 지표화되어 있고 m³/s 환산치는 보유 [raw] CSV의 source 열에 문자열로만 남아 있었음. 원자료가 직접 병기한 값이므로 자체 환산이 아니라 원본값으로 수록. 홍강은 댐 건설 전후 값이 함께 제시되어 있어(3,740 → 3,350 m³/s, −10.4%) 상류 댐 개발의 유황 변화 영향을 그대로 확인할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-028",
+        "indicatorId": "B-028_discharge_cumecs_son_tay",
+        "sourceFileDecoded": "B-028_하천 유량(m³／s).xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a5bb9f20399d|m³/s",
+      "dimensionLabels": {
+        "detail": "격자/유역 단위(GIS)"
+      },
+      "dimensions": {
+        "detail": "격자/유역 단위(GIS)"
+      },
+      "displayLabel": "하천 유량 — 격자/유역 단위(GIS)",
+      "indicatorId": "B-028_discharge_gis",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a5bb9f20399d",
+        "labelKo": "하천 유량",
+        "unit": "m³/s",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a5bb9f20399d|m³/s|detail=격자/유역 단위(GIS)|B-028_discharge_gis",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin)·유역 단위 산출 가능 / [원천 갱신일 근거] HydroSHEDS v1 (2022 릴리스)",
+      "sourceLabel": "하천 유량 — 격자/유역 단위(GIS)",
+      "sourceLabelEn": "River discharge (gridded/basin)",
+      "sourceNote": "2026년: GloFAS 격자 유량 집계 미수행 — 절차 확정 후 진행",
+      "sourceProvenance": {
+        "elementId": "B-028",
+        "indicatorId": "B-028_discharge_gis",
+        "sourceFileDecoded": "B-028_하천 유량(m³／s).xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f581706c90b2|km³/yr",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "메콩 연평균 유량 (범위 상한)",
+      "indicatorId": "B-028_discharge_mekong_max",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f581706c90b2",
+        "labelKo": "메콩 연평균 유량 (범위 상한)",
+        "unit": "km³/yr",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-f581706c90b2|km³/yr||B-028_discharge_mekong_max",
+      "sourceCaveat": "[10개국 비교가능성] △ — MRC는 메콩 유역국 한정 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "메콩 연평균 유량 (범위 상한)",
+      "sourceLabelEn": "Mekong annual mean discharge",
+      "sourceNote": "[10개국 비교가능성] △ — MRC는 메콩 유역국 한정 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-028",
+        "indicatorId": "B-028_discharge_mekong_max",
+        "sourceFileDecoded": "B-028_하천 유량(m³／s).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5a65202b0e6e|km³/yr",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "메콩 연평균 유량 (범위 하한)",
+      "indicatorId": "B-028_discharge_mekong_min",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5a65202b0e6e",
+        "labelKo": "메콩 연평균 유량 (범위 하한)",
+        "unit": "km³/yr",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-5a65202b0e6e|km³/yr||B-028_discharge_mekong_min",
+      "sourceCaveat": "[10개국 비교가능성] △ — MRC는 메콩 유역국 한정 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "메콩 연평균 유량 (범위 하한)",
+      "sourceLabelEn": "Mekong annual mean discharge",
+      "sourceNote": "[10개국 비교가능성] △ — MRC는 메콩 유역국 한정 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-028",
+        "indicatorId": "B-028_discharge_mekong_min",
+        "sourceFileDecoded": "B-028_하천 유량(m³／s).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5a24e942b976|km³/yr",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "홍강(Sơn Tây) 연평균 유량 (범위 상한)",
+      "indicatorId": "B-028_discharge_redriver_max",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5a24e942b976",
+        "labelKo": "홍강(Sơn Tây) 연평균 유량 (범위 상한)",
+        "unit": "km³/yr",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-5a24e942b976|km³/yr||B-028_discharge_redriver_max",
+      "sourceCaveat": "[10개국 비교가능성] X — 베트남 전용 논문 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "홍강(Sơn Tây) 연평균 유량 (범위 상한)",
+      "sourceLabelEn": "Red River (Son Tay) annual mean discharge",
+      "sourceNote": "[10개국 비교가능성] X — 베트남 전용 논문 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-028",
+        "indicatorId": "B-028_discharge_redriver_max",
+        "sourceFileDecoded": "B-028_하천 유량(m³／s).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-89ae90c21531|km³/yr",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "홍강(Sơn Tây) 연평균 유량 (범위 하한)",
+      "indicatorId": "B-028_discharge_redriver_min",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-89ae90c21531",
+        "labelKo": "홍강(Sơn Tây) 연평균 유량 (범위 하한)",
+        "unit": "km³/yr",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-89ae90c21531|km³/yr||B-028_discharge_redriver_min",
+      "sourceCaveat": "[10개국 비교가능성] X — 베트남 전용 논문 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "홍강(Sơn Tây) 연평균 유량 (범위 하한)",
+      "sourceLabelEn": "Red River (Son Tay) annual mean discharge",
+      "sourceNote": "[10개국 비교가능성] X — 베트남 전용 논문 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-028",
+        "indicatorId": "B-028_discharge_redriver_min",
+        "sourceFileDecoded": "B-028_하천 유량(m³／s).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d742d86dd108|km³/yr",
+      "dimensionLabels": {
+        "detail": "타이빈 수계 연유량"
+      },
+      "dimensions": {
+        "detail": "타이빈 수계 연유량"
+      },
+      "displayLabel": "홍강–타이빈 수계 연유량",
+      "indicatorId": "B-028_discharge_redriver_system",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d742d86dd108",
+        "labelKo": "홍강",
+        "unit": "km³/yr",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-d742d86dd108|km³/yr|detail=타이빈 수계 연유량|B-028_discharge_redriver_system",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "홍강–타이빈 수계 연유량",
+      "sourceLabelEn": "Red–Thai Binh river system annual flow",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-028",
+        "indicatorId": "B-028_discharge_redriver_system",
+        "sourceFileDecoded": "B-028_하천 유량(m³／s).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4a6a136722a4|km³/yr",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "외부 유입 수자원",
+      "indicatorId": "B-028_external_inflow",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4a6a136722a4",
+        "labelKo": "외부 유입 수자원",
+        "unit": "km³/yr",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-4a6a136722a4|km³/yr||B-028_external_inflow",
+      "sourceCaveat": "[미수집 raw 반영] 국외 기원 수자원. TRWR = IRWR 359.42 + 외부유입 524.70 = 884.12로 정합. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] AQUASTAT Dissemination System 조회 기준일",
+      "sourceLabel": "외부 유입 수자원",
+      "sourceLabelEn": "External inflow of water resources",
+      "sourceNote": "[미수집 raw 반영] 국외 기원 수자원. TRWR = IRWR 359.42 + 외부유입 524.70 = 884.12로 정합. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] AQUASTAT Dissemination System 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-028",
+        "indicatorId": "B-028_external_inflow",
+        "sourceFileDecoded": "B-028_하천 유량(m³／s).xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-ebf490ca9705|km³/yr",
+      "dimensionLabels": {
+        "technology": "5 · 32"
+      },
+      "dimensions": {
+        "technology": "5,32"
+      },
+      "displayLabel": "내부 재생가능 수자원(IRWR)",
+      "indicatorId": "B-028_irwr",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ebf490ca9705",
+        "labelKo": "내부 재생가능 수자원(IRWR)",
+        "unit": "km³/yr",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-ebf490ca9705|km³/yr|technology=5,32|B-028_irwr",
+      "sourceCaveat": "[미수집 raw 반영] raw CSV의 IRWR 행이 지표화되지 않았던 것을 신설. TRWR(884.12)만 수록되어 있었음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] AQUASTAT Dissemination System 조회 기준일",
+      "sourceLabel": "내부 재생가능 수자원(IRWR)",
+      "sourceLabelEn": "Internal renewable water resources",
+      "sourceNote": "[미수집 raw 반영] raw CSV의 IRWR 행이 지표화되지 않았던 것을 신설. TRWR(884.12)만 수록되어 있었음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] AQUASTAT Dissemination System 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-028",
+        "indicatorId": "B-028_irwr",
+        "sourceFileDecoded": "B-028_하천 유량(m³／s).xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7150170a2d4c|km³/yr",
+      "dimensionLabels": {
+        "technology": "5 · 32"
+      },
+      "dimensions": {
+        "technology": "5,32"
+      },
+      "displayLabel": "총 재생가능 수자원(TRWR)",
+      "indicatorId": "B-028_trwr",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7150170a2d4c",
+        "labelKo": "총 재생가능 수자원(TRWR)",
+        "unit": "km³/yr",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-7150170a2d4c|km³/yr|technology=5,32|B-028_trwr",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] AQUASTAT Dissemination System 조회 기준일",
+      "sourceLabel": "총 재생가능 수자원(TRWR)",
+      "sourceLabelEn": "Total renewable water resources",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] AQUASTAT Dissemination System 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-028",
+        "indicatorId": "B-028_trwr",
+        "sourceFileDecoded": "B-028_하천 유량(m³／s).xlsx",
+        "sourceRow": 4,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-ebf490ca9705",
+      "labelKo": "내부 재생가능 수자원(IRWR)",
+      "recordCount": 1,
+      "unit": "km³/yr",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-f581706c90b2",
+      "labelKo": "메콩 연평균 유량 (범위 상한)",
+      "recordCount": 1,
+      "unit": "km³/yr",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-5a65202b0e6e",
+      "labelKo": "메콩 연평균 유량 (범위 하한)",
+      "recordCount": 1,
+      "unit": "km³/yr",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-8c63feed7431",
+      "labelKo": "수자원 국외 의존율",
+      "recordCount": 1,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-4a6a136722a4",
+      "labelKo": "외부 유입 수자원",
+      "recordCount": 1,
+      "unit": "km³/yr",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-7150170a2d4c",
+      "labelKo": "총 재생가능 수자원(TRWR)",
+      "recordCount": 1,
+      "unit": "km³/yr",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 6,
+      "key": "measure-a5bb9f20399d",
+      "labelKo": "하천 유량",
+      "recordCount": 7,
+      "unit": "m³/s",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-d742d86dd108",
+      "labelKo": "홍강",
+      "recordCount": 1,
+      "unit": "km³/yr",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-5a24e942b976",
+      "labelKo": "홍강(Sơn Tây) 연평균 유량 (범위 상한)",
+      "recordCount": 1,
+      "unit": "km³/yr",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-89ae90c21531",
+      "labelKo": "홍강(Sơn Tây) 연평균 유량 (범위 하한)",
+      "recordCount": 1,
+      "unit": "km³/yr",
+      "unitFamily": "other"
+    }
+  ],
+  "observationCount": 16,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [
+    {
+      "dimensionLabels": {
+        "dam_period": "댐 건설 전"
+      },
+      "dimensions": {
+        "dam_period": "pre_dam"
+      },
+      "displayLabel": "하천 유량 · 홍강(Son Tay 지점) · 댐 건설 전 [m³/s]",
+      "indicatorId": "B-028_discharge_cumecs_son_tay",
+      "recordId": "vnm-v121-b-028-obs-18-b6fa2cae53fdf66c",
+      "seriesKey": "measure-a5bb9f20399d|m³/s|detail=m³/s 기준|detail_2=홍강(Son Tay 지점)|detail_3=댐 건설 후|B-028_discharge_cumecs_son_tay|dam_period=pre_dam",
+      "sourceLabel": "하천 유량 — m³/s 기준 — 홍강(Son Tay 지점) — 댐 건설 전"
+    },
+    {
+      "dimensionLabels": {
+        "dam_period": "댐 건설 후"
+      },
+      "dimensions": {
+        "dam_period": "post_dam"
+      },
+      "displayLabel": "하천 유량 · 홍강(Son Tay 지점) · 댐 건설 후 [m³/s]",
+      "indicatorId": "B-028_discharge_cumecs_son_tay",
+      "recordId": "vnm-v121-b-028-obs-19-dd8297a0b66a2774",
+      "seriesKey": "measure-a5bb9f20399d|m³/s|detail=m³/s 기준|detail_2=홍강(Son Tay 지점)|detail_3=댐 건설 후|B-028_discharge_cumecs_son_tay|dam_period=post_dam",
+      "sourceLabel": "하천 유량 — m³/s 기준 — 홍강(Son Tay 지점) — 댐 건설 후"
+    }
+  ],
+  "schemaVersion": "v125"
+}

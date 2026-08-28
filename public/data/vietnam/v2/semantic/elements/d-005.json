@@ -1,0 +1,344 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 3,
+      "values": [
+        "감축",
+        "동시기여",
+        "적응"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 5,
+      "values": [
+        "경상예산 대비 비중",
+        "공공 자본지출 대비 비중",
+        "부처 기후예산 대비 비중",
+        "성 단위 기후예산 대비 비중",
+        "총 기후변화 지출 대비 비중(대표값)"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 3,
+      "values": [
+        "2010",
+        "2013",
+        "2020"
+      ]
+    }
+  ],
+  "elementId": "D-005",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 9,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-a7c43c49fe43|%",
+      "dimensionLabels": {
+        "category": "적응",
+        "detail": "공공 자본지출 대비 비중"
+      },
+      "dimensions": {
+        "category": "적응",
+        "detail": "공공 자본지출 대비 비중"
+      },
+      "displayLabel": "감축/적응 구분별 예산 배분 비율 · 적응 — 공공 자본지출 대비 비중",
+      "indicatorId": "D-005_adaptation_share_capital_expenditure",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a7c43c49fe43",
+        "labelKo": "감축/적응 구분별 예산 배분 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-a7c43c49fe43|%|category=적응|detail=공공 자본지출 대비 비중|D-005_adaptation_share_capital_expenditure",
+      "sourceCaveat": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [대표값 선정] 검토의견(동일 예산범위 분모·합 100%)에 따라, 합이 100%가 되는 유일한 세트인 CPEIR 2015의 총 기후변화 지출 분모 기준 3개 구분(적응 88% + 감축 2% + 동시기여 10% = 100%)을 대표값으로 제시함. 최신판인 CPEIR 2022는 적응 비중만 공표하고 감축·동시기여 비중을 공표하지 않아 최신연도 기준 100% 세트를 구성할 수 없음(M01). [raw 원문 검증] 보유 중인 CPEIR 2015 보고서 원본 PDF에서 본 요소의 전 수치를 재대조하여 본문 문장·그림 제목과 일치함을 확인함(2026-08-17). 인용위치는 확인된 쪽·그림 번호로 기재함. 원문(p.19) 문장: \"From 2010—2013, the share of total CC-response expenditure directed toward adaptation was about 88 percent, while the share directed toward mitigation accounted for only two percent. By 2013, the mitigation budget increased to 3.9 percent.\" 동시기여 10%는 같은 장 본문의 \"to both adaptation and mitigation objectives, totaling about 10 percent of CC-response spending\"에서 확인됨. [분모 주의] 본 지표만 분모가 공공 자본지출이며, 다른 지표는 총 기후변화 지출·부처 기후예산·성 단위 기후예산을 분모로 함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "감축/적응 구분별 예산 배분 비율 · 적응 — 공공 자본지출 대비 비중",
+      "sourceLabelEn": "Share of adaptation in public capital expenditure",
+      "sourceNote": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [대표값 선정] 검토의견(동일 예산범위 분모·합 100%)에 따라, 합이 100%가 되는 유일한 세트인 CPEIR 2015의 총 기후변화 지출 분모 기준 3개 구분(적응 88% + 감축 2% + 동시기여 10% = 100%)을 대표값으로 제시함. 최신판인 CPEIR 2022는 적응 비중만 공표하고 감축·동시기여 비중을 공표하지 않아 최신연도 기준 100% 세트를 구성할 수 없음(M01). [raw 원문 검증] 보유 중인 CPEIR 2015 보고서 원본 PDF에서 본 요소의 전 수치를 재대조하여 본문 문장·그림 제목과 일치함을 확인함(2026-08-17). 인용위치는 확인된 쪽·그림 번호로 기재함. 원문(p.19) 문장: \"From 2010—2013, the share of total CC-response expenditure directed toward adaptation was about 88 percent, while the share directed toward mitigation accounted for only two percent. By 2013, the mitigation budget increased to 3.9 percent.\" 동시기여 10%는 같은 장 본문의 \"to both adaptation and mitigation objectives, totaling about 10 percent of CC-response spending\"에서 확인됨. [분모 주의] 본 지표만 분모가 공공 자본지출이며, 다른 지표는 총 기후변화 지출·부처 기후예산·성 단위 기후예산을 분모로 함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-005",
+        "indicatorId": "D-005_adaptation_share_capital_expenditure",
+        "sourceFileDecoded": "D-005_감축적응 구분별 예산 배분 비율.xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a7c43c49fe43|%",
+      "dimensionLabels": {
+        "category": "적응",
+        "detail": "부처 기후예산 대비 비중"
+      },
+      "dimensions": {
+        "category": "적응",
+        "detail": "부처 기후예산 대비 비중"
+      },
+      "displayLabel": "감축/적응 구분별 예산 배분 비율 · 적응 — 부처 기후예산 대비 비중",
+      "indicatorId": "D-005_adaptation_share_ministry_budget",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a7c43c49fe43",
+        "labelKo": "감축/적응 구분별 예산 배분 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-a7c43c49fe43|%|category=적응|detail=부처 기후예산 대비 비중|D-005_adaptation_share_ministry_budget",
+      "sourceCaveat": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [대표값 선정] 검토의견(동일 예산범위 분모·합 100%)에 따라, 합이 100%가 되는 유일한 세트인 CPEIR 2015의 총 기후변화 지출 분모 기준 3개 구분(적응 88% + 감축 2% + 동시기여 10% = 100%)을 대표값으로 제시함. 최신판인 CPEIR 2022는 적응 비중만 공표하고 감축·동시기여 비중을 공표하지 않아 최신연도 기준 100% 세트를 구성할 수 없음(M01). [raw 원문 검증] 보유 중인 CPEIR 2015 보고서 원본 PDF에서 본 요소의 전 수치를 재대조하여 본문 문장·그림 제목과 일치함을 확인함(2026-08-17). 인용위치는 확인된 쪽·그림 번호로 기재함. 원문(p.19) 문장: \"From 2010—2013, the share of total CC-response expenditure directed toward adaptation was about 88 percent, while the share directed toward mitigation accounted for only two percent. By 2013, the mitigation budget increased to 3.9 percent.\" 동시기여 10%는 같은 장 본문의 \"to both adaptation and mitigation objectives, totaling about 10 percent of CC-response spending\"에서 확인됨. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "감축/적응 구분별 예산 배분 비율 · 적응 — 부처 기후예산 대비 비중",
+      "sourceLabelEn": "Share of adaptation in ministry budget",
+      "sourceNote": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [대표값 선정] 검토의견(동일 예산범위 분모·합 100%)에 따라, 합이 100%가 되는 유일한 세트인 CPEIR 2015의 총 기후변화 지출 분모 기준 3개 구분(적응 88% + 감축 2% + 동시기여 10% = 100%)을 대표값으로 제시함. 최신판인 CPEIR 2022는 적응 비중만 공표하고 감축·동시기여 비중을 공표하지 않아 최신연도 기준 100% 세트를 구성할 수 없음(M01). [raw 원문 검증] 보유 중인 CPEIR 2015 보고서 원본 PDF에서 본 요소의 전 수치를 재대조하여 본문 문장·그림 제목과 일치함을 확인함(2026-08-17). 인용위치는 확인된 쪽·그림 번호로 기재함. 원문(p.19) 문장: \"From 2010—2013, the share of total CC-response expenditure directed toward adaptation was about 88 percent, while the share directed toward mitigation accounted for only two percent. By 2013, the mitigation budget increased to 3.9 percent.\" 동시기여 10%는 같은 장 본문의 \"to both adaptation and mitigation objectives, totaling about 10 percent of CC-response spending\"에서 확인됨. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-005",
+        "indicatorId": "D-005_adaptation_share_ministry_budget",
+        "sourceFileDecoded": "D-005_감축적응 구분별 예산 배분 비율.xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a7c43c49fe43|%",
+      "dimensionLabels": {
+        "category": "적응",
+        "detail": "성 단위 기후예산 대비 비중"
+      },
+      "dimensions": {
+        "category": "적응",
+        "detail": "성 단위 기후예산 대비 비중"
+      },
+      "displayLabel": "감축/적응 구분별 예산 배분 비율 · 적응 — 성 단위 기후예산 대비 비중",
+      "indicatorId": "D-005_adaptation_share_province_budget",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a7c43c49fe43",
+        "labelKo": "감축/적응 구분별 예산 배분 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-a7c43c49fe43|%|category=적응|detail=성 단위 기후예산 대비 비중|D-005_adaptation_share_province_budget",
+      "sourceCaveat": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [대표값 선정] 검토의견(동일 예산범위 분모·합 100%)에 따라, 합이 100%가 되는 유일한 세트인 CPEIR 2015의 총 기후변화 지출 분모 기준 3개 구분(적응 88% + 감축 2% + 동시기여 10% = 100%)을 대표값으로 제시함. 최신판인 CPEIR 2022는 적응 비중만 공표하고 감축·동시기여 비중을 공표하지 않아 최신연도 기준 100% 세트를 구성할 수 없음(M01). [raw 원문 검증] 보유 중인 CPEIR 2015 보고서 원본 PDF에서 본 요소의 전 수치를 재대조하여 본문 문장·그림 제목과 일치함을 확인함(2026-08-17). 인용위치는 확인된 쪽·그림 번호로 기재함. 원문(p.19) 문장: \"From 2010—2013, the share of total CC-response expenditure directed toward adaptation was about 88 percent, while the share directed toward mitigation accounted for only two percent. By 2013, the mitigation budget increased to 3.9 percent.\" 동시기여 10%는 같은 장 본문의 \"to both adaptation and mitigation objectives, totaling about 10 percent of CC-response spending\"에서 확인됨. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "감축/적응 구분별 예산 배분 비율 · 적응 — 성 단위 기후예산 대비 비중",
+      "sourceLabelEn": "Share of adaptation in province budget",
+      "sourceNote": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [대표값 선정] 검토의견(동일 예산범위 분모·합 100%)에 따라, 합이 100%가 되는 유일한 세트인 CPEIR 2015의 총 기후변화 지출 분모 기준 3개 구분(적응 88% + 감축 2% + 동시기여 10% = 100%)을 대표값으로 제시함. 최신판인 CPEIR 2022는 적응 비중만 공표하고 감축·동시기여 비중을 공표하지 않아 최신연도 기준 100% 세트를 구성할 수 없음(M01). [raw 원문 검증] 보유 중인 CPEIR 2015 보고서 원본 PDF에서 본 요소의 전 수치를 재대조하여 본문 문장·그림 제목과 일치함을 확인함(2026-08-17). 인용위치는 확인된 쪽·그림 번호로 기재함. 원문(p.19) 문장: \"From 2010—2013, the share of total CC-response expenditure directed toward adaptation was about 88 percent, while the share directed toward mitigation accounted for only two percent. By 2013, the mitigation budget increased to 3.9 percent.\" 동시기여 10%는 같은 장 본문의 \"to both adaptation and mitigation objectives, totaling about 10 percent of CC-response spending\"에서 확인됨. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-005",
+        "indicatorId": "D-005_adaptation_share_province_budget",
+        "sourceFileDecoded": "D-005_감축적응 구분별 예산 배분 비율.xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a7c43c49fe43|%",
+      "dimensionLabels": {
+        "category": "적응",
+        "detail": "총 기후변화 지출 대비 비중(대표값)"
+      },
+      "dimensions": {
+        "category": "적응",
+        "detail": "총 기후변화 지출 대비 비중(대표값)"
+      },
+      "displayLabel": "감축/적응 구분별 예산 배분 비율 · 적응 — 총 기후변화 지출 대비 비중(대표값)",
+      "indicatorId": "D-005_adaptation_share_total_cc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a7c43c49fe43",
+        "labelKo": "감축/적응 구분별 예산 배분 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-a7c43c49fe43|%|category=적응|detail=총 기후변화 지출 대비 비중(대표값)|D-005_adaptation_share_total_cc",
+      "sourceCaveat": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [대표값 선정] 검토의견(동일 예산범위 분모·합 100%)에 따라, 합이 100%가 되는 유일한 세트인 CPEIR 2015의 총 기후변화 지출 분모 기준 3개 구분(적응 88% + 감축 2% + 동시기여 10% = 100%)을 대표값으로 제시함. 최신판인 CPEIR 2022는 적응 비중만 공표하고 감축·동시기여 비중을 공표하지 않아 최신연도 기준 100% 세트를 구성할 수 없음(M01). [raw 원문 검증] 보유 중인 CPEIR 2015 보고서 원본 PDF에서 본 요소의 전 수치를 재대조하여 본문 문장·그림 제목과 일치함을 확인함(2026-08-17). 인용위치는 확인된 쪽·그림 번호로 기재함. 원문(p.19) 문장: \"From 2010—2013, the share of total CC-response expenditure directed toward adaptation was about 88 percent, while the share directed toward mitigation accounted for only two percent. By 2013, the mitigation budget increased to 3.9 percent.\" 동시기여 10%는 같은 장 본문의 \"to both adaptation and mitigation objectives, totaling about 10 percent of CC-response spending\"에서 확인됨. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "감축/적응 구분별 예산 배분 비율 · 적응 — 총 기후변화 지출 대비 비중(대표값)",
+      "sourceLabelEn": "Share of adaptation in total climate change expenditure",
+      "sourceNote": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [대표값 선정] 검토의견(동일 예산범위 분모·합 100%)에 따라, 합이 100%가 되는 유일한 세트인 CPEIR 2015의 총 기후변화 지출 분모 기준 3개 구분(적응 88% + 감축 2% + 동시기여 10% = 100%)을 대표값으로 제시함. 최신판인 CPEIR 2022는 적응 비중만 공표하고 감축·동시기여 비중을 공표하지 않아 최신연도 기준 100% 세트를 구성할 수 없음(M01). [raw 원문 검증] 보유 중인 CPEIR 2015 보고서 원본 PDF에서 본 요소의 전 수치를 재대조하여 본문 문장·그림 제목과 일치함을 확인함(2026-08-17). 인용위치는 확인된 쪽·그림 번호로 기재함. 원문(p.19) 문장: \"From 2010—2013, the share of total CC-response expenditure directed toward adaptation was about 88 percent, while the share directed toward mitigation accounted for only two percent. By 2013, the mitigation budget increased to 3.9 percent.\" 동시기여 10%는 같은 장 본문의 \"to both adaptation and mitigation objectives, totaling about 10 percent of CC-response spending\"에서 확인됨. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-005",
+        "indicatorId": "D-005_adaptation_share_total_cc",
+        "sourceFileDecoded": "D-005_감축적응 구분별 예산 배분 비율.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a7c43c49fe43|%",
+      "dimensionLabels": {
+        "category": "동시기여",
+        "detail": "총 기후변화 지출 대비 비중(대표값)"
+      },
+      "dimensions": {
+        "category": "동시기여",
+        "detail": "총 기후변화 지출 대비 비중(대표값)"
+      },
+      "displayLabel": "감축/적응 구분별 예산 배분 비율 · 동시기여 — 총 기후변화 지출 대비 비중(대표값)",
+      "indicatorId": "D-005_dual_benefit_share_total_cc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a7c43c49fe43",
+        "labelKo": "감축/적응 구분별 예산 배분 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-a7c43c49fe43|%|category=동시기여|detail=총 기후변화 지출 대비 비중(대표값)|D-005_dual_benefit_share_total_cc",
+      "sourceCaveat": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [대표값 선정] 검토의견(동일 예산범위 분모·합 100%)에 따라, 합이 100%가 되는 유일한 세트인 CPEIR 2015의 총 기후변화 지출 분모 기준 3개 구분(적응 88% + 감축 2% + 동시기여 10% = 100%)을 대표값으로 제시함. 최신판인 CPEIR 2022는 적응 비중만 공표하고 감축·동시기여 비중을 공표하지 않아 최신연도 기준 100% 세트를 구성할 수 없음(M01). [raw 원문 검증] 보유 중인 CPEIR 2015 보고서 원본 PDF에서 본 요소의 전 수치를 재대조하여 본문 문장·그림 제목과 일치함을 확인함(2026-08-17). 인용위치는 확인된 쪽·그림 번호로 기재함. 원문(p.19) 문장: \"From 2010—2013, the share of total CC-response expenditure directed toward adaptation was about 88 percent, while the share directed toward mitigation accounted for only two percent. By 2013, the mitigation budget increased to 3.9 percent.\" 동시기여 10%는 같은 장 본문의 \"to both adaptation and mitigation objectives, totaling about 10 percent of CC-response spending\"에서 확인됨. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "감축/적응 구분별 예산 배분 비율 · 동시기여 — 총 기후변화 지출 대비 비중(대표값)",
+      "sourceLabelEn": "Share of dual-benefit (adaptation and mitigation) in total climate change expenditure",
+      "sourceNote": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [대표값 선정] 검토의견(동일 예산범위 분모·합 100%)에 따라, 합이 100%가 되는 유일한 세트인 CPEIR 2015의 총 기후변화 지출 분모 기준 3개 구분(적응 88% + 감축 2% + 동시기여 10% = 100%)을 대표값으로 제시함. 최신판인 CPEIR 2022는 적응 비중만 공표하고 감축·동시기여 비중을 공표하지 않아 최신연도 기준 100% 세트를 구성할 수 없음(M01). [raw 원문 검증] 보유 중인 CPEIR 2015 보고서 원본 PDF에서 본 요소의 전 수치를 재대조하여 본문 문장·그림 제목과 일치함을 확인함(2026-08-17). 인용위치는 확인된 쪽·그림 번호로 기재함. 원문(p.19) 문장: \"From 2010—2013, the share of total CC-response expenditure directed toward adaptation was about 88 percent, while the share directed toward mitigation accounted for only two percent. By 2013, the mitigation budget increased to 3.9 percent.\" 동시기여 10%는 같은 장 본문의 \"to both adaptation and mitigation objectives, totaling about 10 percent of CC-response spending\"에서 확인됨. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-005",
+        "indicatorId": "D-005_dual_benefit_share_total_cc",
+        "sourceFileDecoded": "D-005_감축적응 구분별 예산 배분 비율.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a7c43c49fe43|%",
+      "dimensionLabels": {
+        "category": "감축",
+        "detail": "부처 기후예산 대비 비중"
+      },
+      "dimensions": {
+        "category": "감축",
+        "detail": "부처 기후예산 대비 비중"
+      },
+      "displayLabel": "감축/적응 구분별 예산 배분 비율 · 감축 — 부처 기후예산 대비 비중",
+      "indicatorId": "D-005_mitigation_share_ministry_budget",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a7c43c49fe43",
+        "labelKo": "감축/적응 구분별 예산 배분 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-a7c43c49fe43|%|category=감축|detail=부처 기후예산 대비 비중|D-005_mitigation_share_ministry_budget",
+      "sourceCaveat": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [대표값 선정] 검토의견(동일 예산범위 분모·합 100%)에 따라, 합이 100%가 되는 유일한 세트인 CPEIR 2015의 총 기후변화 지출 분모 기준 3개 구분(적응 88% + 감축 2% + 동시기여 10% = 100%)을 대표값으로 제시함. 최신판인 CPEIR 2022는 적응 비중만 공표하고 감축·동시기여 비중을 공표하지 않아 최신연도 기준 100% 세트를 구성할 수 없음(M01). [raw 원문 검증] 보유 중인 CPEIR 2015 보고서 원본 PDF에서 본 요소의 전 수치를 재대조하여 본문 문장·그림 제목과 일치함을 확인함(2026-08-17). 인용위치는 확인된 쪽·그림 번호로 기재함. 원문(p.19) 문장: \"From 2010—2013, the share of total CC-response expenditure directed toward adaptation was about 88 percent, while the share directed toward mitigation accounted for only two percent. By 2013, the mitigation budget increased to 3.9 percent.\" 동시기여 10%는 같은 장 본문의 \"to both adaptation and mitigation objectives, totaling about 10 percent of CC-response spending\"에서 확인됨. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "감축/적응 구분별 예산 배분 비율 · 감축 — 부처 기후예산 대비 비중",
+      "sourceLabelEn": "Share of mitigation in ministry budget",
+      "sourceNote": "CPEIR 2022는 적응 비중만 공표하고 감축 비중을 별도 공표하지 않음(원천에서 공백).",
+      "sourceProvenance": {
+        "elementId": "D-005",
+        "indicatorId": "D-005_mitigation_share_ministry_budget",
+        "sourceFileDecoded": "D-005_감축적응 구분별 예산 배분 비율.xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a7c43c49fe43|%",
+      "dimensionLabels": {
+        "category": "감축",
+        "detail": "성 단위 기후예산 대비 비중"
+      },
+      "dimensions": {
+        "category": "감축",
+        "detail": "성 단위 기후예산 대비 비중"
+      },
+      "displayLabel": "감축/적응 구분별 예산 배분 비율 · 감축 — 성 단위 기후예산 대비 비중",
+      "indicatorId": "D-005_mitigation_share_province_budget",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a7c43c49fe43",
+        "labelKo": "감축/적응 구분별 예산 배분 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-a7c43c49fe43|%|category=감축|detail=성 단위 기후예산 대비 비중|D-005_mitigation_share_province_budget",
+      "sourceCaveat": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [대표값 선정] 검토의견(동일 예산범위 분모·합 100%)에 따라, 합이 100%가 되는 유일한 세트인 CPEIR 2015의 총 기후변화 지출 분모 기준 3개 구분(적응 88% + 감축 2% + 동시기여 10% = 100%)을 대표값으로 제시함. 최신판인 CPEIR 2022는 적응 비중만 공표하고 감축·동시기여 비중을 공표하지 않아 최신연도 기준 100% 세트를 구성할 수 없음(M01). [raw 원문 검증] 보유 중인 CPEIR 2015 보고서 원본 PDF에서 본 요소의 전 수치를 재대조하여 본문 문장·그림 제목과 일치함을 확인함(2026-08-17). 인용위치는 확인된 쪽·그림 번호로 기재함. 원문(p.19) 문장: \"From 2010—2013, the share of total CC-response expenditure directed toward adaptation was about 88 percent, while the share directed toward mitigation accounted for only two percent. By 2013, the mitigation budget increased to 3.9 percent.\" 동시기여 10%는 같은 장 본문의 \"to both adaptation and mitigation objectives, totaling about 10 percent of CC-response spending\"에서 확인됨. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "감축/적응 구분별 예산 배분 비율 · 감축 — 성 단위 기후예산 대비 비중",
+      "sourceLabelEn": "Share of mitigation in province budget",
+      "sourceNote": "CPEIR 2022는 적응 비중만 공표하고 감축 비중을 별도 공표하지 않음(원천에서 공백).",
+      "sourceProvenance": {
+        "elementId": "D-005",
+        "indicatorId": "D-005_mitigation_share_province_budget",
+        "sourceFileDecoded": "D-005_감축적응 구분별 예산 배분 비율.xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a7c43c49fe43|%",
+      "dimensionLabels": {
+        "category": "감축",
+        "detail": "경상예산 대비 비중"
+      },
+      "dimensions": {
+        "category": "감축",
+        "detail": "경상예산 대비 비중"
+      },
+      "displayLabel": "감축/적응 구분별 예산 배분 비율 · 감축 — 경상예산 대비 비중",
+      "indicatorId": "D-005_mitigation_share_recurrent_budget",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a7c43c49fe43",
+        "labelKo": "감축/적응 구분별 예산 배분 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-a7c43c49fe43|%|category=감축|detail=경상예산 대비 비중|D-005_mitigation_share_recurrent_budget",
+      "sourceCaveat": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [대표값 선정] 검토의견(동일 예산범위 분모·합 100%)에 따라, 합이 100%가 되는 유일한 세트인 CPEIR 2015의 총 기후변화 지출 분모 기준 3개 구분(적응 88% + 감축 2% + 동시기여 10% = 100%)을 대표값으로 제시함. 최신판인 CPEIR 2022는 적응 비중만 공표하고 감축·동시기여 비중을 공표하지 않아 최신연도 기준 100% 세트를 구성할 수 없음(M01). [raw 원문 검증] 보유 중인 CPEIR 2015 보고서 원본 PDF에서 본 요소의 전 수치를 재대조하여 본문 문장·그림 제목과 일치함을 확인함(2026-08-17). 인용위치는 확인된 쪽·그림 번호로 기재함. 원문(p.19) 문장: \"From 2010—2013, the share of total CC-response expenditure directed toward adaptation was about 88 percent, while the share directed toward mitigation accounted for only two percent. By 2013, the mitigation budget increased to 3.9 percent.\" 동시기여 10%는 같은 장 본문의 \"to both adaptation and mitigation objectives, totaling about 10 percent of CC-response spending\"에서 확인됨. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "감축/적응 구분별 예산 배분 비율 · 감축 — 경상예산 대비 비중",
+      "sourceLabelEn": "Share of mitigation in recurrent budget",
+      "sourceNote": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [대표값 선정] 검토의견(동일 예산범위 분모·합 100%)에 따라, 합이 100%가 되는 유일한 세트인 CPEIR 2015의 총 기후변화 지출 분모 기준 3개 구분(적응 88% + 감축 2% + 동시기여 10% = 100%)을 대표값으로 제시함. 최신판인 CPEIR 2022는 적응 비중만 공표하고 감축·동시기여 비중을 공표하지 않아 최신연도 기준 100% 세트를 구성할 수 없음(M01). [raw 원문 검증] 보유 중인 CPEIR 2015 보고서 원본 PDF에서 본 요소의 전 수치를 재대조하여 본문 문장·그림 제목과 일치함을 확인함(2026-08-17). 인용위치는 확인된 쪽·그림 번호로 기재함. 원문(p.19) 문장: \"From 2010—2013, the share of total CC-response expenditure directed toward adaptation was about 88 percent, while the share directed toward mitigation accounted for only two percent. By 2013, the mitigation budget increased to 3.9 percent.\" 동시기여 10%는 같은 장 본문의 \"to both adaptation and mitigation objectives, totaling about 10 percent of CC-response spending\"에서 확인됨. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-005",
+        "indicatorId": "D-005_mitigation_share_recurrent_budget",
+        "sourceFileDecoded": "D-005_감축적응 구분별 예산 배분 비율.xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a7c43c49fe43|%",
+      "dimensionLabels": {
+        "category": "감축",
+        "detail": "총 기후변화 지출 대비 비중(대표값)"
+      },
+      "dimensions": {
+        "category": "감축",
+        "detail": "총 기후변화 지출 대비 비중(대표값)"
+      },
+      "displayLabel": "감축/적응 구분별 예산 배분 비율 · 감축 — 총 기후변화 지출 대비 비중(대표값)",
+      "indicatorId": "D-005_mitigation_share_total_cc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a7c43c49fe43",
+        "labelKo": "감축/적응 구분별 예산 배분 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-a7c43c49fe43|%|category=감축|detail=총 기후변화 지출 대비 비중(대표값)|D-005_mitigation_share_total_cc",
+      "sourceCaveat": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [대표값 선정] 검토의견(동일 예산범위 분모·합 100%)에 따라, 합이 100%가 되는 유일한 세트인 CPEIR 2015의 총 기후변화 지출 분모 기준 3개 구분(적응 88% + 감축 2% + 동시기여 10% = 100%)을 대표값으로 제시함. 최신판인 CPEIR 2022는 적응 비중만 공표하고 감축·동시기여 비중을 공표하지 않아 최신연도 기준 100% 세트를 구성할 수 없음(M01). [raw 원문 검증] 보유 중인 CPEIR 2015 보고서 원본 PDF에서 본 요소의 전 수치를 재대조하여 본문 문장·그림 제목과 일치함을 확인함(2026-08-17). 인용위치는 확인된 쪽·그림 번호로 기재함. 원문(p.19) 문장: \"From 2010—2013, the share of total CC-response expenditure directed toward adaptation was about 88 percent, while the share directed toward mitigation accounted for only two percent. By 2013, the mitigation budget increased to 3.9 percent.\" 동시기여 10%는 같은 장 본문의 \"to both adaptation and mitigation objectives, totaling about 10 percent of CC-response spending\"에서 확인됨. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "감축/적응 구분별 예산 배분 비율 · 감축 — 총 기후변화 지출 대비 비중(대표값)",
+      "sourceLabelEn": "Share of mitigation in total climate change expenditure",
+      "sourceNote": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [대표값 선정] 검토의견(동일 예산범위 분모·합 100%)에 따라, 합이 100%가 되는 유일한 세트인 CPEIR 2015의 총 기후변화 지출 분모 기준 3개 구분(적응 88% + 감축 2% + 동시기여 10% = 100%)을 대표값으로 제시함. 최신판인 CPEIR 2022는 적응 비중만 공표하고 감축·동시기여 비중을 공표하지 않아 최신연도 기준 100% 세트를 구성할 수 없음(M01). [raw 원문 검증] 보유 중인 CPEIR 2015 보고서 원본 PDF에서 본 요소의 전 수치를 재대조하여 본문 문장·그림 제목과 일치함을 확인함(2026-08-17). 인용위치는 확인된 쪽·그림 번호로 기재함. 원문(p.19) 문장: \"From 2010—2013, the share of total CC-response expenditure directed toward adaptation was about 88 percent, while the share directed toward mitigation accounted for only two percent. By 2013, the mitigation budget increased to 3.9 percent.\" 동시기여 10%는 같은 장 본문의 \"to both adaptation and mitigation objectives, totaling about 10 percent of CC-response spending\"에서 확인됨. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-005",
+        "indicatorId": "D-005_mitigation_share_total_cc",
+        "sourceFileDecoded": "D-005_감축적응 구분별 예산 배분 비율.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 9,
+      "key": "measure-a7c43c49fe43",
+      "labelKo": "감축/적응 구분별 예산 배분 비율",
+      "recordCount": 10,
+      "unit": "%",
+      "unitFamily": "percent"
+    }
+  ],
+  "observationCount": 10,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

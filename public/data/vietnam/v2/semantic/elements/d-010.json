@@ -1,0 +1,335 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 6,
+      "values": [
+        "GDP 대비 비중",
+        "IMF 국가군 GDP 대비 구간 상한(max)",
+        "IMF 국가군 GDP 대비 구간 하한(min)",
+        "가솔린 효율가격(외부효과 반영)",
+        "연료별 구성비",
+        "총액"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 8,
+      "values": [
+        "IMF 국가군 분류 구간 상한",
+        "IMF 국가군 분류 구간 하한",
+        "기타(디젤 등)",
+        "명시적+암묵적 보조금의 GDP 대비 비중",
+        "석탄",
+        "연도별",
+        "외부효과 반영 리터당 효율가격",
+        "휘발유"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 4,
+      "values": [
+        "2020",
+        "2021",
+        "2022",
+        "2024"
+      ]
+    }
+  ],
+  "elementId": "D-010",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 8,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-f8ee4fcb7553|USD/L",
+      "dimensionLabels": {
+        "category": "가솔린 효율가격(외부효과 반영)",
+        "detail": "외부효과 반영 리터당 효율가격"
+      },
+      "dimensions": {
+        "category": "가솔린 효율가격(외부효과 반영)",
+        "detail": "외부효과 반영 리터당 효율가격"
+      },
+      "displayLabel": "화석연료 보조금 규모 · 가솔린 효율가격(외부효과 반영) — 외부효과 반영 리터당 효율가격",
+      "indicatorId": "D-010_efficient_price_gasoline",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f8ee4fcb7553",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "USD/L",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-f8ee4fcb7553|USD/L|category=가솔린 효율가격(외부효과 반영)|detail=외부효과 반영 리터당 효율가격|D-010_efficient_price_gasoline",
+      "sourceCaveat": "[대표값 선정] 검토의견에 따라 2024년 화석연료 보조금 총액 38.7십억 USD를 대표값으로 사용함. [정의·범위] IEEFA·IMF의 보조금은 명시적 보조금과 암묵적 보조금(외부효과 미반영분)을 합산한 IMF 정의 기준이며, 재정에서 실제로 지출된 금액이 아님. OECD의 GDP 대비 14.3%(2022)도 같은 IMF 추정치를 인용한 값임. [원문 불일치] 2022년 총액은 IEEFA 53.7십억 USD, 같은 해 GDP 대비 비중은 OECD 인용 14.3%로 제시되어 있으나 두 값의 분모 GDP가 명시되지 않아 상호 검산되지 않음. 보정하지 않고 원문대로 수록함. [출처 정정] 종전 자료에서 본 값의 링크가 IEEFA URL로 잘못 기재되어 있었으며 IMF 원천 페이지로 정정함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "화석연료 보조금 규모 · 가솔린 효율가격(외부효과 반영) — 외부효과 반영 리터당 효율가격",
+      "sourceLabelEn": "Efficient price of gasoline (externality-inclusive)",
+      "sourceNote": "[대표값 선정] 검토의견에 따라 2024년 화석연료 보조금 총액 38.7십억 USD를 대표값으로 사용함. [정의·범위] IEEFA·IMF의 보조금은 명시적 보조금과 암묵적 보조금(외부효과 미반영분)을 합산한 IMF 정의 기준이며, 재정에서 실제로 지출된 금액이 아님. OECD의 GDP 대비 14.3%(2022)도 같은 IMF 추정치를 인용한 값임. [원문 불일치] 2022년 총액은 IEEFA 53.7십억 USD, 같은 해 GDP 대비 비중은 OECD 인용 14.3%로 제시되어 있으나 두 값의 분모 GDP가 명시되지 않아 상호 검산되지 않음. 보정하지 않고 원문대로 수록함. [출처 정정] 종전 자료에서 본 값의 링크가 IEEFA URL로 잘못 기재되어 있었으며 IMF 원천 페이지로 정정함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-010",
+        "indicatorId": "D-010_efficient_price_gasoline",
+        "sourceFileDecoded": "D-010_화석연료 보조금 규모.xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f89153b46866|%",
+      "dimensionLabels": {
+        "category": "GDP 대비 비중",
+        "detail": "명시적+암묵적 보조금의 GDP 대비 비중"
+      },
+      "dimensions": {
+        "category": "GDP 대비 비중",
+        "detail": "명시적+암묵적 보조금의 GDP 대비 비중"
+      },
+      "displayLabel": "화석연료 보조금 규모 · GDP 대비 비중 — 명시적+암묵적 보조금의 GDP 대비 비중",
+      "indicatorId": "D-010_fossil_fuel_subsidy_gdp_share",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f89153b46866",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f89153b46866|%|category=GDP 대비 비중|detail=명시적+암묵적 보조금의 GDP 대비 비중|D-010_fossil_fuel_subsidy_gdp_share",
+      "sourceCaveat": "[대표값 선정] 검토의견에 따라 2024년 화석연료 보조금 총액 38.7십억 USD를 대표값으로 사용함. [정의·범위] IEEFA·IMF의 보조금은 명시적 보조금과 암묵적 보조금(외부효과 미반영분)을 합산한 IMF 정의 기준이며, 재정에서 실제로 지출된 금액이 아님. OECD의 GDP 대비 14.3%(2022)도 같은 IMF 추정치를 인용한 값임. [원문 불일치] 2022년 총액은 IEEFA 53.7십억 USD, 같은 해 GDP 대비 비중은 OECD 인용 14.3%로 제시되어 있으나 두 값의 분모 GDP가 명시되지 않아 상호 검산되지 않음. 보정하지 않고 원문대로 수록함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "화석연료 보조금 규모 · GDP 대비 비중 — 명시적+암묵적 보조금의 GDP 대비 비중",
+      "sourceLabelEn": "Fossil fuel subsidies as share of GDP",
+      "sourceNote": "[대표값 선정] 검토의견에 따라 2024년 화석연료 보조금 총액 38.7십억 USD를 대표값으로 사용함. [정의·범위] IEEFA·IMF의 보조금은 명시적 보조금과 암묵적 보조금(외부효과 미반영분)을 합산한 IMF 정의 기준이며, 재정에서 실제로 지출된 금액이 아님. OECD의 GDP 대비 14.3%(2022)도 같은 IMF 추정치를 인용한 값임. [원문 불일치] 2022년 총액은 IEEFA 53.7십억 USD, 같은 해 GDP 대비 비중은 OECD 인용 14.3%로 제시되어 있으나 두 값의 분모 GDP가 명시되지 않아 상호 검산되지 않음. 보정하지 않고 원문대로 수록함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-010",
+        "indicatorId": "D-010_fossil_fuel_subsidy_gdp_share",
+        "sourceFileDecoded": "D-010_화석연료 보조금 규모.xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-465d4d66c9ba|USD",
+      "dimensionLabels": {
+        "category": "총액",
+        "detail": "연도별"
+      },
+      "dimensions": {
+        "category": "총액",
+        "detail": "연도별"
+      },
+      "displayLabel": "화석연료 보조금 규모 · 총액 — 연도별",
+      "indicatorId": "D-010_fossil_fuel_subsidy_total",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-465d4d66c9ba",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-465d4d66c9ba|USD|category=총액|detail=연도별|D-010_fossil_fuel_subsidy_total",
+      "sourceCaveat": "[대표값 선정] 검토의견에 따라 2024년 화석연료 보조금 총액 38.7십억 USD를 대표값으로 사용함. [정의·범위] IEEFA·IMF의 보조금은 명시적 보조금과 암묵적 보조금(외부효과 미반영분)을 합산한 IMF 정의 기준이며, 재정에서 실제로 지출된 금액이 아님. OECD의 GDP 대비 14.3%(2022)도 같은 IMF 추정치를 인용한 값임. [원문 불일치] 2022년 총액은 IEEFA 53.7십억 USD, 같은 해 GDP 대비 비중은 OECD 인용 14.3%로 제시되어 있으나 두 값의 분모 GDP가 명시되지 않아 상호 검산되지 않음. 보정하지 않고 원문대로 수록함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "화석연료 보조금 규모 · 총액 — 연도별",
+      "sourceLabelEn": "Fossil fuel subsidies, total",
+      "sourceNote": "[대표값 선정] 검토의견에 따라 2024년 화석연료 보조금 총액 38.7십억 USD를 대표값으로 사용함. [정의·범위] IEEFA·IMF의 보조금은 명시적 보조금과 암묵적 보조금(외부효과 미반영분)을 합산한 IMF 정의 기준이며, 재정에서 실제로 지출된 금액이 아님. OECD의 GDP 대비 14.3%(2022)도 같은 IMF 추정치를 인용한 값임. [원문 불일치] 2022년 총액은 IEEFA 53.7십억 USD, 같은 해 GDP 대비 비중은 OECD 인용 14.3%로 제시되어 있으나 두 값의 분모 GDP가 명시되지 않아 상호 검산되지 않음. 보정하지 않고 원문대로 수록함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-010",
+        "indicatorId": "D-010_fossil_fuel_subsidy_total",
+        "sourceFileDecoded": "D-010_화석연료 보조금 규모.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f89153b46866|%",
+      "dimensionLabels": {
+        "category": "IMF 국가군 GDP 대비 구간 상한(max)",
+        "detail": "IMF 국가군 분류 구간 상한"
+      },
+      "dimensions": {
+        "category": "IMF 국가군 GDP 대비 구간 상한(max)",
+        "detail": "IMF 국가군 분류 구간 상한"
+      },
+      "displayLabel": "화석연료 보조금 규모 · IMF 국가군 GDP 대비 구간 상한(max) — IMF 국가군 분류 구간 상한",
+      "indicatorId": "D-010_subsidy_gdp_band_max",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f89153b46866",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f89153b46866|%|category=IMF 국가군 GDP 대비 구간 상한(max)|detail=IMF 국가군 분류 구간 상한|D-010_subsidy_gdp_band_max",
+      "sourceCaveat": "[대표값 선정] 검토의견에 따라 2024년 화석연료 보조금 총액 38.7십억 USD를 대표값으로 사용함. [정의·범위] IEEFA·IMF의 보조금은 명시적 보조금과 암묵적 보조금(외부효과 미반영분)을 합산한 IMF 정의 기준이며, 재정에서 실제로 지출된 금액이 아님. OECD의 GDP 대비 14.3%(2022)도 같은 IMF 추정치를 인용한 값임. [원문 불일치] 2022년 총액은 IEEFA 53.7십억 USD, 같은 해 GDP 대비 비중은 OECD 인용 14.3%로 제시되어 있으나 두 값의 분모 GDP가 명시되지 않아 상호 검산되지 않음. 보정하지 않고 원문대로 수록함. [출처 정정] 종전 자료에서 본 값의 링크가 IEEFA URL로 잘못 기재되어 있었으며 IMF 원천 페이지로 정정함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "화석연료 보조금 규모 · IMF 국가군 GDP 대비 구간 상한(max) — IMF 국가군 분류 구간 상한",
+      "sourceLabelEn": "IMF country-group band of subsidies as % of GDP (maximum)",
+      "sourceNote": "[대표값 선정] 검토의견에 따라 2024년 화석연료 보조금 총액 38.7십억 USD를 대표값으로 사용함. [정의·범위] IEEFA·IMF의 보조금은 명시적 보조금과 암묵적 보조금(외부효과 미반영분)을 합산한 IMF 정의 기준이며, 재정에서 실제로 지출된 금액이 아님. OECD의 GDP 대비 14.3%(2022)도 같은 IMF 추정치를 인용한 값임. [원문 불일치] 2022년 총액은 IEEFA 53.7십억 USD, 같은 해 GDP 대비 비중은 OECD 인용 14.3%로 제시되어 있으나 두 값의 분모 GDP가 명시되지 않아 상호 검산되지 않음. 보정하지 않고 원문대로 수록함. [출처 정정] 종전 자료에서 본 값의 링크가 IEEFA URL로 잘못 기재되어 있었으며 IMF 원천 페이지로 정정함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-010",
+        "indicatorId": "D-010_subsidy_gdp_band_max",
+        "sourceFileDecoded": "D-010_화석연료 보조금 규모.xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f89153b46866|%",
+      "dimensionLabels": {
+        "category": "IMF 국가군 GDP 대비 구간 하한(min)",
+        "detail": "IMF 국가군 분류 구간 하한"
+      },
+      "dimensions": {
+        "category": "IMF 국가군 GDP 대비 구간 하한(min)",
+        "detail": "IMF 국가군 분류 구간 하한"
+      },
+      "displayLabel": "화석연료 보조금 규모 · IMF 국가군 GDP 대비 구간 하한(min) — IMF 국가군 분류 구간 하한",
+      "indicatorId": "D-010_subsidy_gdp_band_min",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f89153b46866",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f89153b46866|%|category=IMF 국가군 GDP 대비 구간 하한(min)|detail=IMF 국가군 분류 구간 하한|D-010_subsidy_gdp_band_min",
+      "sourceCaveat": "[대표값 선정] 검토의견에 따라 2024년 화석연료 보조금 총액 38.7십억 USD를 대표값으로 사용함. [정의·범위] IEEFA·IMF의 보조금은 명시적 보조금과 암묵적 보조금(외부효과 미반영분)을 합산한 IMF 정의 기준이며, 재정에서 실제로 지출된 금액이 아님. OECD의 GDP 대비 14.3%(2022)도 같은 IMF 추정치를 인용한 값임. [원문 불일치] 2022년 총액은 IEEFA 53.7십억 USD, 같은 해 GDP 대비 비중은 OECD 인용 14.3%로 제시되어 있으나 두 값의 분모 GDP가 명시되지 않아 상호 검산되지 않음. 보정하지 않고 원문대로 수록함. [출처 정정] 종전 자료에서 본 값의 링크가 IEEFA URL로 잘못 기재되어 있었으며 IMF 원천 페이지로 정정함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "화석연료 보조금 규모 · IMF 국가군 GDP 대비 구간 하한(min) — IMF 국가군 분류 구간 하한",
+      "sourceLabelEn": "IMF country-group band of subsidies as % of GDP (minimum)",
+      "sourceNote": "[대표값 선정] 검토의견에 따라 2024년 화석연료 보조금 총액 38.7십억 USD를 대표값으로 사용함. [정의·범위] IEEFA·IMF의 보조금은 명시적 보조금과 암묵적 보조금(외부효과 미반영분)을 합산한 IMF 정의 기준이며, 재정에서 실제로 지출된 금액이 아님. OECD의 GDP 대비 14.3%(2022)도 같은 IMF 추정치를 인용한 값임. [원문 불일치] 2022년 총액은 IEEFA 53.7십억 USD, 같은 해 GDP 대비 비중은 OECD 인용 14.3%로 제시되어 있으나 두 값의 분모 GDP가 명시되지 않아 상호 검산되지 않음. 보정하지 않고 원문대로 수록함. [출처 정정] 종전 자료에서 본 값의 링크가 IEEFA URL로 잘못 기재되어 있었으며 IMF 원천 페이지로 정정함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-010",
+        "indicatorId": "D-010_subsidy_gdp_band_min",
+        "sourceFileDecoded": "D-010_화석연료 보조금 규모.xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f89153b46866|%",
+      "dimensionLabels": {
+        "category": "연료별 구성비",
+        "detail": "석탄"
+      },
+      "dimensions": {
+        "category": "연료별 구성비",
+        "detail": "석탄"
+      },
+      "displayLabel": "화석연료 보조금 규모 · 연료별 구성비 — 석탄",
+      "indicatorId": "D-010_subsidy_share_coal",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f89153b46866",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f89153b46866|%|category=연료별 구성비|detail=석탄|D-010_subsidy_share_coal",
+      "sourceCaveat": "[대표값 선정] 검토의견에 따라 2024년 화석연료 보조금 총액 38.7십억 USD를 대표값으로 사용함. [정의·범위] IEEFA·IMF의 보조금은 명시적 보조금과 암묵적 보조금(외부효과 미반영분)을 합산한 IMF 정의 기준이며, 재정에서 실제로 지출된 금액이 아님. OECD의 GDP 대비 14.3%(2022)도 같은 IMF 추정치를 인용한 값임. [원문 불일치] 2022년 총액은 IEEFA 53.7십억 USD, 같은 해 GDP 대비 비중은 OECD 인용 14.3%로 제시되어 있으나 두 값의 분모 GDP가 명시되지 않아 상호 검산되지 않음. 보정하지 않고 원문대로 수록함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "화석연료 보조금 규모 · 연료별 구성비 — 석탄",
+      "sourceLabelEn": "Fossil fuel subsidy composition — coal",
+      "sourceNote": "[대표값 선정] 검토의견에 따라 2024년 화석연료 보조금 총액 38.7십억 USD를 대표값으로 사용함. [정의·범위] IEEFA·IMF의 보조금은 명시적 보조금과 암묵적 보조금(외부효과 미반영분)을 합산한 IMF 정의 기준이며, 재정에서 실제로 지출된 금액이 아님. OECD의 GDP 대비 14.3%(2022)도 같은 IMF 추정치를 인용한 값임. [원문 불일치] 2022년 총액은 IEEFA 53.7십억 USD, 같은 해 GDP 대비 비중은 OECD 인용 14.3%로 제시되어 있으나 두 값의 분모 GDP가 명시되지 않아 상호 검산되지 않음. 보정하지 않고 원문대로 수록함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-010",
+        "indicatorId": "D-010_subsidy_share_coal",
+        "sourceFileDecoded": "D-010_화석연료 보조금 규모.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f89153b46866|%",
+      "dimensionLabels": {
+        "category": "연료별 구성비",
+        "detail": "휘발유"
+      },
+      "dimensions": {
+        "category": "연료별 구성비",
+        "detail": "휘발유"
+      },
+      "displayLabel": "화석연료 보조금 규모 · 연료별 구성비 — 휘발유",
+      "indicatorId": "D-010_subsidy_share_gasoline",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f89153b46866",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f89153b46866|%|category=연료별 구성비|detail=휘발유|D-010_subsidy_share_gasoline",
+      "sourceCaveat": "[대표값 선정] 검토의견에 따라 2024년 화석연료 보조금 총액 38.7십억 USD를 대표값으로 사용함. [정의·범위] IEEFA·IMF의 보조금은 명시적 보조금과 암묵적 보조금(외부효과 미반영분)을 합산한 IMF 정의 기준이며, 재정에서 실제로 지출된 금액이 아님. OECD의 GDP 대비 14.3%(2022)도 같은 IMF 추정치를 인용한 값임. [원문 불일치] 2022년 총액은 IEEFA 53.7십억 USD, 같은 해 GDP 대비 비중은 OECD 인용 14.3%로 제시되어 있으나 두 값의 분모 GDP가 명시되지 않아 상호 검산되지 않음. 보정하지 않고 원문대로 수록함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "화석연료 보조금 규모 · 연료별 구성비 — 휘발유",
+      "sourceLabelEn": "Fossil fuel subsidy composition — gasoline",
+      "sourceNote": "[대표값 선정] 검토의견에 따라 2024년 화석연료 보조금 총액 38.7십억 USD를 대표값으로 사용함. [정의·범위] IEEFA·IMF의 보조금은 명시적 보조금과 암묵적 보조금(외부효과 미반영분)을 합산한 IMF 정의 기준이며, 재정에서 실제로 지출된 금액이 아님. OECD의 GDP 대비 14.3%(2022)도 같은 IMF 추정치를 인용한 값임. [원문 불일치] 2022년 총액은 IEEFA 53.7십억 USD, 같은 해 GDP 대비 비중은 OECD 인용 14.3%로 제시되어 있으나 두 값의 분모 GDP가 명시되지 않아 상호 검산되지 않음. 보정하지 않고 원문대로 수록함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-010",
+        "indicatorId": "D-010_subsidy_share_gasoline",
+        "sourceFileDecoded": "D-010_화석연료 보조금 규모.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f89153b46866|%",
+      "dimensionLabels": {
+        "category": "연료별 구성비",
+        "detail": "기타(디젤 등)"
+      },
+      "dimensions": {
+        "category": "연료별 구성비",
+        "detail": "기타(디젤 등)"
+      },
+      "displayLabel": "화석연료 보조금 규모 · 연료별 구성비 — 기타(디젤 등)",
+      "indicatorId": "D-010_subsidy_share_other",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f89153b46866",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f89153b46866|%|category=연료별 구성비|detail=기타(디젤 등)|D-010_subsidy_share_other",
+      "sourceCaveat": "[대표값 선정] 검토의견에 따라 2024년 화석연료 보조금 총액 38.7십억 USD를 대표값으로 사용함. [정의·범위] IEEFA·IMF의 보조금은 명시적 보조금과 암묵적 보조금(외부효과 미반영분)을 합산한 IMF 정의 기준이며, 재정에서 실제로 지출된 금액이 아님. OECD의 GDP 대비 14.3%(2022)도 같은 IMF 추정치를 인용한 값임. [원문 불일치] 2022년 총액은 IEEFA 53.7십억 USD, 같은 해 GDP 대비 비중은 OECD 인용 14.3%로 제시되어 있으나 두 값의 분모 GDP가 명시되지 않아 상호 검산되지 않음. 보정하지 않고 원문대로 수록함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "화석연료 보조금 규모 · 연료별 구성비 — 기타(디젤 등)",
+      "sourceLabelEn": "Fossil fuel subsidy composition — other",
+      "sourceNote": "[대표값 선정] 검토의견에 따라 2024년 화석연료 보조금 총액 38.7십억 USD를 대표값으로 사용함. [정의·범위] IEEFA·IMF의 보조금은 명시적 보조금과 암묵적 보조금(외부효과 미반영분)을 합산한 IMF 정의 기준이며, 재정에서 실제로 지출된 금액이 아님. OECD의 GDP 대비 14.3%(2022)도 같은 IMF 추정치를 인용한 값임. [원문 불일치] 2022년 총액은 IEEFA 53.7십억 USD, 같은 해 GDP 대비 비중은 OECD 인용 14.3%로 제시되어 있으나 두 값의 분모 GDP가 명시되지 않아 상호 검산되지 않음. 보정하지 않고 원문대로 수록함. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-010",
+        "indicatorId": "D-010_subsidy_share_other",
+        "sourceFileDecoded": "D-010_화석연료 보조금 규모.xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 6,
+      "key": "measure-f89153b46866",
+      "labelKo": "화석연료 보조금 규모",
+      "recordCount": 6,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-465d4d66c9ba",
+      "labelKo": "화석연료 보조금 규모",
+      "recordCount": 3,
+      "unit": "USD",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-f8ee4fcb7553",
+      "labelKo": "화석연료 보조금 규모",
+      "recordCount": 1,
+      "unit": "USD/L",
+      "unitFamily": "currency"
+    }
+  ],
+  "observationCount": 10,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

@@ -1,0 +1,164 @@
+{
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 1,
+      "values": [
+        "상업 운전 중인 CCS 시설 개소"
+      ]
+    },
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "CCS 시설"
+      ]
+    },
+    {
+      "key": "facilityType",
+      "labelKo": "facilityType",
+      "valueCount": 5,
+      "values": [
+        "CO2 주입(EOR)",
+        "고농도 CO2 가스전(CO2 분리·재주입 잠재)",
+        "연구",
+        "연구/타당성",
+        "지중 저장 후보(Storage)"
+      ]
+    },
+    {
+      "key": "status",
+      "labelKo": "status",
+      "valueCount": 5,
+      "values": [
+        "Black & Veatch 등",
+        "계획(FID~2025, 생산~2030 목표)",
+        "계획·법제화 단계",
+        "완료(2011.6 주입, 2012.2 종료)",
+        "학계/산업"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "20"
+      ]
+    },
+    {
+      "key": "type",
+      "labelKo": "type",
+      "valueCount": 5,
+      "values": [
+        "CO2 주입(EOR)",
+        "고농도 CO2 가스전(CO2 분리·재주입 잠재)",
+        "연구",
+        "연구/타당성",
+        "지중 저장 후보(Storage)"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2026"
+      ]
+    }
+  ],
+  "elementId": "A-025",
+  "entityCount": 5,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 2,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-b3485f17df75|건",
+      "dimensionLabels": {
+        "detail": "베트남 CCS 관련 시설·프로젝트 개체 목록(좌표·유형·상태)",
+        "technology": "20"
+      },
+      "dimensions": {
+        "detail": "베트남 CCS 관련 시설·프로젝트 개체 목록(좌표·유형·상태)",
+        "technology": "20"
+      },
+      "displayLabel": "CCS 시설 목록 — 베트남 CCS 관련 시설·프로젝트 개체 목록(좌표·유형·상태)",
+      "indicatorId": "A-025_ccs_facility_registry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b3485f17df75",
+        "labelKo": "CCS 시설 목록",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-b3485f17df75|건|detail=베트남 CCS 관련 시설·프로젝트 개체 목록(좌표·유형·상태)|technology=20|A-025_ccs_facility_registry",
+      "sourceCaveat": "[원본 버전] STADT 자체 정리본(검증일 2026-08-04). 원천은 JOGMEC(Rang Dong CO2-EOR)·GEM.wiki(Ca Voi Xanh)·Global CCS Institute·Offshore-technology·Mondaq(법제)·Carbon Pulse의 공개 페이지이며, 각 행 note에 프로젝트별 근거를 병기함. [활용기준] 검토의견 1번에 대응 — 원문이 \"2026년 현재 베트남에 상용 가동 CCS 시설은 없음\"을 명시함. 따라서 상용 가동 시설 수를 0으로 명시적으로 수록하여 \"데이터 없음\"과 \"값이 0\"을 구분하고(1.1), 파일럿·계획·개념·연구 단계 프로젝트 5건은 개체 목록으로 수록함(1.2). 상용 시설 부재는 결측이 아니라 사실이므로 결측코드를 부여하지 않음. [좌표 정밀도] 좌표 3건 모두 근사값임 — Rang Dong은 Block 15-2 블록 단위 근사, Ca Voi Xanh은 GEM.wiki 필드 좌표, 고갈 유·가스전 저장은 분지 대표점(특정 지점 아님). 정밀 GIS 용도로 쓰기 전에 원 사업자(PVN/JVPC/ExxonMobil) 공식 좌표를 별도 확인해야 함. 위치 미정 2건(석탄화력 CCUS 타당성 연구, 시멘트 산업 CCS 연구)은 좌표 없이 수록하고 M01로 표기함. [출처 성격] OpenStreetMap에 CCS 태깅이 사실상 없어 권위 출처 웹조사로 작성된 정리본임. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "CCS 시설 목록 — 베트남 CCS 관련 시설·프로젝트 개체 목록(좌표·유형·상태)",
+      "sourceLabelEn": "CCS facility and project registry",
+      "sourceNote": "위치 미정 2건(석탄화력 CCUS 타당성 연구·시멘트 산업 CCS 연구)은 연구·타당성 단계로 대상 지점이 미확정이어서 좌표 없음. 재확보 대상 1차 출처: 사업 시행 시 사업자 공시 및 Global CCS Institute Facilities Database.",
+      "sourceProvenance": {
+        "elementId": "A-025",
+        "indicatorId": "A-025_ccs_facility_registry",
+        "sourceFileDecoded": "A-025_CCS 시설.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-305e39a21a64|건",
+      "dimensionLabels": {
+        "detail": "상업 운전 중인 CCS 시설 개소",
+        "technology": "20"
+      },
+      "dimensions": {
+        "detail": "상업 운전 중인 CCS 시설 개소",
+        "technology": "20"
+      },
+      "displayLabel": "상용 가동 CCS 시설 수 — 상업 운전 중인 CCS 시설 개소",
+      "indicatorId": "A-025_ccs_operating_facility_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-305e39a21a64",
+        "labelKo": "상용 가동 CCS 시설 수",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-305e39a21a64|건|detail=상업 운전 중인 CCS 시설 개소|technology=20|A-025_ccs_operating_facility_count",
+      "sourceCaveat": "[원본 버전] STADT 자체 정리본(검증일 2026-08-04). 원천은 JOGMEC(Rang Dong CO2-EOR)·GEM.wiki(Ca Voi Xanh)·Global CCS Institute·Offshore-technology·Mondaq(법제)·Carbon Pulse의 공개 페이지이며, 각 행 note에 프로젝트별 근거를 병기함. [활용기준] 검토의견 1번에 대응 — 원문이 \"2026년 현재 베트남에 상용 가동 CCS 시설은 없음\"을 명시함. 따라서 상용 가동 시설 수를 0으로 명시적으로 수록하여 \"데이터 없음\"과 \"값이 0\"을 구분하고(1.1), 파일럿·계획·개념·연구 단계 프로젝트 5건은 개체 목록으로 수록함(1.2). 상용 시설 부재는 결측이 아니라 사실이므로 결측코드를 부여하지 않음. [좌표 정밀도] 좌표 3건 모두 근사값임 — Rang Dong은 Block 15-2 블록 단위 근사, Ca Voi Xanh은 GEM.wiki 필드 좌표, 고갈 유·가스전 저장은 분지 대표점(특정 지점 아님). 정밀 GIS 용도로 쓰기 전에 원 사업자(PVN/JVPC/ExxonMobil) 공식 좌표를 별도 확인해야 함. 위치 미정 2건(석탄화력 CCUS 타당성 연구, 시멘트 산업 CCS 연구)은 좌표 없이 수록하고 M01로 표기함. [출처 성격] OpenStreetMap에 CCS 태깅이 사실상 없어 권위 출처 웹조사로 작성된 정리본임. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "상용 가동 CCS 시설 수 — 상업 운전 중인 CCS 시설 개소",
+      "sourceLabelEn": "Number of commercially operating CCS facilities",
+      "sourceNote": "[원본 버전] STADT 자체 정리본(검증일 2026-08-04). 원천은 JOGMEC(Rang Dong CO2-EOR)·GEM.wiki(Ca Voi Xanh)·Global CCS Institute·Offshore-technology·Mondaq(법제)·Carbon Pulse의 공개 페이지이며, 각 행 note에 프로젝트별 근거를 병기함. [활용기준] 검토의견 1번에 대응 — 원문이 \"2026년 현재 베트남에 상용 가동 CCS 시설은 없음\"을 명시함. 따라서 상용 가동 시설 수를 0으로 명시적으로 수록하여 \"데이터 없음\"과 \"값이 0\"을 구분하고(1.1), 파일럿·계획·개념·연구 단계 프로젝트 5건은 개체 목록으로 수록함(1.2). 상용 시설 부재는 결측이 아니라 사실이므로 결측코드를 부여하지 않음. [좌표 정밀도] 좌표 3건 모두 근사값임 — Rang Dong은 Block 15-2 블록 단위 근사, Ca Voi Xanh은 GEM.wiki 필드 좌표, 고갈 유·가스전 저장은 분지 대표점(특정 지점 아님). 정밀 GIS 용도로 쓰기 전에 원 사업자(PVN/JVPC/ExxonMobil) 공식 좌표를 별도 확인해야 함. 위치 미정 2건(석탄화력 CCUS 타당성 연구, 시멘트 산업 CCS 연구)은 좌표 없이 수록하고 M01로 표기함. [출처 성격] OpenStreetMap에 CCS 태깅이 사실상 없어 권위 출처 웹조사로 작성된 정리본임. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-025",
+        "indicatorId": "A-025_ccs_operating_facility_count",
+        "sourceFileDecoded": "A-025_CCS 시설.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-b3485f17df75",
+      "labelKo": "CCS 시설 목록",
+      "recordCount": 0,
+      "unit": "건",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-305e39a21a64",
+      "labelKo": "상용 가동 CCS 시설 수",
+      "recordCount": 1,
+      "unit": "건",
+      "unitFamily": "count"
+    }
+  ],
+  "observationCount": 1,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

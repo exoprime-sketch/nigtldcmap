@@ -1,0 +1,76 @@
+{
+  "dimensions": [
+    {
+      "key": "a64Status",
+      "labelKo": "a64Status",
+      "valueCount": 2,
+      "values": [
+        "제6.4조 국가지정기관 지정: MONRE (개편 전 기준)",
+        "파리협정 제6.4조 국가지정기관(DNA) — 현행"
+      ]
+    },
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    },
+    {
+      "key": "recordStatus",
+      "labelKo": "recordStatus",
+      "valueCount": 2,
+      "values": [
+        "종료(2025년 부처 개편으로 MAE 이관)",
+        "현행"
+      ]
+    }
+  ],
+  "elementId": "E-002",
+  "entityCount": 2,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 1,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-259fd2435dc6|해당없음",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "DNA(국가지정기관)",
+      "indicatorId": "E-002_dna",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-259fd2435dc6",
+        "labelKo": "DNA(국가지정기관)",
+        "unit": "해당없음",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-259fd2435dc6|해당없음||E-002_dna",
+      "sourceCaveat": "① 2025년 베트남 부처 개편으로 기후변화국이 MONRE→MAE(농업환경부)로 이관. 동일 조직·동일 주소(No.10 Ton That Thuyet)이며 소속 부처만 변경 ② 6.4조 LoA 승인 세부규정은 제정 중(HPPR v02.0 기준)이므로 승인 절차 정보는 변동 가능",
+      "sourceLabel": "DNA(국가지정기관)",
+      "sourceLabelEn": "Designated National Authority (DNA)",
+      "sourceNote": "① 2025년 베트남 부처 개편으로 기후변화국이 MONRE→MAE(농업환경부)로 이관. 동일 조직·동일 주소(No.10 Ton That Thuyet)이며 소속 부처만 변경 ② 6.4조 LoA 승인 세부규정은 제정 중(HPPR v02.0 기준)이므로 승인 절차 정보는 변동 가능",
+      "sourceProvenance": {
+        "elementId": "E-002",
+        "indicatorId": "E-002_dna",
+        "sourceFileDecoded": "E-002_DNA(국가지정기관).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-259fd2435dc6",
+      "labelKo": "DNA(국가지정기관)",
+      "recordCount": 0,
+      "unit": "해당없음",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

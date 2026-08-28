@@ -1,0 +1,901 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 24,
+      "values": [
+        "가스복합화력(CCGT)(기준값)",
+        "가스복합화력(CCGT)(상한)",
+        "가스복합화력(CCGT)(하한)",
+        "석탄화력(기준값)",
+        "석탄화력(상한)",
+        "석탄화력(하한)",
+        "수상 태양광(기준값)",
+        "수상 태양광(상한)",
+        "수상 태양광(하한)",
+        "육상풍력(기준값)",
+        "육상풍력(상한)",
+        "육상풍력(하한)",
+        "육상풍력+배터리(4시간)(기준값)",
+        "육상풍력+배터리(4시간)(상한)",
+        "육상풍력+배터리(4시간)(하한)",
+        "태양광(기준값)",
+        "태양광(상한)",
+        "태양광(하한)",
+        "태양광+배터리(4시간)(기준값)",
+        "태양광+배터리(4시간)(상한)",
+        "태양광+배터리(4시간)(하한)",
+        "해상풍력(기준값)",
+        "해상풍력(상한)",
+        "해상풍력(하한)"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 1,
+      "values": [
+        "신규 발전설비 균등화 발전비용"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 5,
+      "values": [
+        "1",
+        "1,24",
+        "3",
+        "3,24",
+        "16"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 3,
+      "values": [
+        "2023",
+        "2030",
+        "2050"
+      ]
+    }
+  ],
+  "elementId": "A-017",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 24,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-353011f9421d|USD/MWh",
+      "dimensionLabels": {
+        "category": "가스복합화력(CCGT)(기준값)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "16"
+      },
+      "dimensions": {
+        "category": "가스복합화력(CCGT)(기준값)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "16"
+      },
+      "displayLabel": "LCOE · 가스복합화력(CCGT)(기준값) — 신규 발전설비 균등화 발전비용",
+      "indicatorId": "A-017_lcoe_ccgt_benchmark",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-353011f9421d",
+        "labelKo": "LCOE",
+        "unit": "USD/MWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-353011f9421d|USD/MWh|category=가스복합화력(CCGT)(기준값)|detail=신규 발전설비 균등화 발전비용|technology=16|A-017_lcoe_ccgt_benchmark",
+      "sourceCaveat": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "LCOE · 가스복합화력(CCGT)(기준값) — 신규 발전설비 균등화 발전비용",
+      "sourceLabelEn": "LCOE of new build, Combined-cycle gas turbine (CCGT) (benchmark)",
+      "sourceNote": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-017",
+        "indicatorId": "A-017_lcoe_ccgt_benchmark",
+        "sourceFileDecoded": "A-017_LCOE(균등화 발전비용).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-353011f9421d|USD/MWh",
+      "dimensionLabels": {
+        "category": "가스복합화력(CCGT)(상한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "16"
+      },
+      "dimensions": {
+        "category": "가스복합화력(CCGT)(상한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "16"
+      },
+      "displayLabel": "LCOE · 가스복합화력(CCGT)(상한) — 신규 발전설비 균등화 발전비용",
+      "indicatorId": "A-017_lcoe_ccgt_max",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-353011f9421d",
+        "labelKo": "LCOE",
+        "unit": "USD/MWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-353011f9421d|USD/MWh|category=가스복합화력(CCGT)(상한)|detail=신규 발전설비 균등화 발전비용|technology=16|A-017_lcoe_ccgt_max",
+      "sourceCaveat": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "LCOE · 가스복합화력(CCGT)(상한) — 신규 발전설비 균등화 발전비용",
+      "sourceLabelEn": "LCOE of new build, Combined-cycle gas turbine (CCGT) (max)",
+      "sourceNote": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-017",
+        "indicatorId": "A-017_lcoe_ccgt_max",
+        "sourceFileDecoded": "A-017_LCOE(균등화 발전비용).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-353011f9421d|USD/MWh",
+      "dimensionLabels": {
+        "category": "가스복합화력(CCGT)(하한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "16"
+      },
+      "dimensions": {
+        "category": "가스복합화력(CCGT)(하한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "16"
+      },
+      "displayLabel": "LCOE · 가스복합화력(CCGT)(하한) — 신규 발전설비 균등화 발전비용",
+      "indicatorId": "A-017_lcoe_ccgt_min",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-353011f9421d",
+        "labelKo": "LCOE",
+        "unit": "USD/MWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-353011f9421d|USD/MWh|category=가스복합화력(CCGT)(하한)|detail=신규 발전설비 균등화 발전비용|technology=16|A-017_lcoe_ccgt_min",
+      "sourceCaveat": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "LCOE · 가스복합화력(CCGT)(하한) — 신규 발전설비 균등화 발전비용",
+      "sourceLabelEn": "LCOE of new build, Combined-cycle gas turbine (CCGT) (min)",
+      "sourceNote": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-017",
+        "indicatorId": "A-017_lcoe_ccgt_min",
+        "sourceFileDecoded": "A-017_LCOE(균등화 발전비용).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-353011f9421d|USD/MWh",
+      "dimensionLabels": {
+        "category": "석탄화력(기준값)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "16"
+      },
+      "dimensions": {
+        "category": "석탄화력(기준값)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "16"
+      },
+      "displayLabel": "LCOE · 석탄화력(기준값) — 신규 발전설비 균등화 발전비용",
+      "indicatorId": "A-017_lcoe_coal_benchmark",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-353011f9421d",
+        "labelKo": "LCOE",
+        "unit": "USD/MWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-353011f9421d|USD/MWh|category=석탄화력(기준값)|detail=신규 발전설비 균등화 발전비용|technology=16|A-017_lcoe_coal_benchmark",
+      "sourceCaveat": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "LCOE · 석탄화력(기준값) — 신규 발전설비 균등화 발전비용",
+      "sourceLabelEn": "LCOE of new build, Coal (benchmark)",
+      "sourceNote": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-017",
+        "indicatorId": "A-017_lcoe_coal_benchmark",
+        "sourceFileDecoded": "A-017_LCOE(균등화 발전비용).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-353011f9421d|USD/MWh",
+      "dimensionLabels": {
+        "category": "석탄화력(상한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "16"
+      },
+      "dimensions": {
+        "category": "석탄화력(상한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "16"
+      },
+      "displayLabel": "LCOE · 석탄화력(상한) — 신규 발전설비 균등화 발전비용",
+      "indicatorId": "A-017_lcoe_coal_max",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-353011f9421d",
+        "labelKo": "LCOE",
+        "unit": "USD/MWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-353011f9421d|USD/MWh|category=석탄화력(상한)|detail=신규 발전설비 균등화 발전비용|technology=16|A-017_lcoe_coal_max",
+      "sourceCaveat": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "LCOE · 석탄화력(상한) — 신규 발전설비 균등화 발전비용",
+      "sourceLabelEn": "LCOE of new build, Coal (max)",
+      "sourceNote": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-017",
+        "indicatorId": "A-017_lcoe_coal_max",
+        "sourceFileDecoded": "A-017_LCOE(균등화 발전비용).xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-353011f9421d|USD/MWh",
+      "dimensionLabels": {
+        "category": "석탄화력(하한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "16"
+      },
+      "dimensions": {
+        "category": "석탄화력(하한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "16"
+      },
+      "displayLabel": "LCOE · 석탄화력(하한) — 신규 발전설비 균등화 발전비용",
+      "indicatorId": "A-017_lcoe_coal_min",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-353011f9421d",
+        "labelKo": "LCOE",
+        "unit": "USD/MWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-353011f9421d|USD/MWh|category=석탄화력(하한)|detail=신규 발전설비 균등화 발전비용|technology=16|A-017_lcoe_coal_min",
+      "sourceCaveat": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "LCOE · 석탄화력(하한) — 신규 발전설비 균등화 발전비용",
+      "sourceLabelEn": "LCOE of new build, Coal (min)",
+      "sourceNote": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-017",
+        "indicatorId": "A-017_lcoe_coal_min",
+        "sourceFileDecoded": "A-017_LCOE(균등화 발전비용).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-353011f9421d|USD/MWh",
+      "dimensionLabels": {
+        "category": "수상 태양광(기준값)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "1"
+      },
+      "dimensions": {
+        "category": "수상 태양광(기준값)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "1"
+      },
+      "displayLabel": "LCOE · 수상 태양광(기준값) — 신규 발전설비 균등화 발전비용",
+      "indicatorId": "A-017_lcoe_floating_solar_benchmark",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-353011f9421d",
+        "labelKo": "LCOE",
+        "unit": "USD/MWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-353011f9421d|USD/MWh|category=수상 태양광(기준값)|detail=신규 발전설비 균등화 발전비용|technology=1|A-017_lcoe_floating_solar_benchmark",
+      "sourceCaveat": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "LCOE · 수상 태양광(기준값) — 신규 발전설비 균등화 발전비용",
+      "sourceLabelEn": "LCOE of new build, Floating solar PV (benchmark)",
+      "sourceNote": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-017",
+        "indicatorId": "A-017_lcoe_floating_solar_benchmark",
+        "sourceFileDecoded": "A-017_LCOE(균등화 발전비용).xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-353011f9421d|USD/MWh",
+      "dimensionLabels": {
+        "category": "수상 태양광(상한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "1"
+      },
+      "dimensions": {
+        "category": "수상 태양광(상한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "1"
+      },
+      "displayLabel": "LCOE · 수상 태양광(상한) — 신규 발전설비 균등화 발전비용",
+      "indicatorId": "A-017_lcoe_floating_solar_max",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-353011f9421d",
+        "labelKo": "LCOE",
+        "unit": "USD/MWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-353011f9421d|USD/MWh|category=수상 태양광(상한)|detail=신규 발전설비 균등화 발전비용|technology=1|A-017_lcoe_floating_solar_max",
+      "sourceCaveat": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "LCOE · 수상 태양광(상한) — 신규 발전설비 균등화 발전비용",
+      "sourceLabelEn": "LCOE of new build, Floating solar PV (max)",
+      "sourceNote": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-017",
+        "indicatorId": "A-017_lcoe_floating_solar_max",
+        "sourceFileDecoded": "A-017_LCOE(균등화 발전비용).xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-353011f9421d|USD/MWh",
+      "dimensionLabels": {
+        "category": "수상 태양광(하한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "1"
+      },
+      "dimensions": {
+        "category": "수상 태양광(하한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "1"
+      },
+      "displayLabel": "LCOE · 수상 태양광(하한) — 신규 발전설비 균등화 발전비용",
+      "indicatorId": "A-017_lcoe_floating_solar_min",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-353011f9421d",
+        "labelKo": "LCOE",
+        "unit": "USD/MWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-353011f9421d|USD/MWh|category=수상 태양광(하한)|detail=신규 발전설비 균등화 발전비용|technology=1|A-017_lcoe_floating_solar_min",
+      "sourceCaveat": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "LCOE · 수상 태양광(하한) — 신규 발전설비 균등화 발전비용",
+      "sourceLabelEn": "LCOE of new build, Floating solar PV (min)",
+      "sourceNote": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-017",
+        "indicatorId": "A-017_lcoe_floating_solar_min",
+        "sourceFileDecoded": "A-017_LCOE(균등화 발전비용).xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-353011f9421d|USD/MWh",
+      "dimensionLabels": {
+        "category": "해상풍력(기준값)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "3"
+      },
+      "dimensions": {
+        "category": "해상풍력(기준값)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "3"
+      },
+      "displayLabel": "LCOE · 해상풍력(기준값) — 신규 발전설비 균등화 발전비용",
+      "indicatorId": "A-017_lcoe_offshore_wind_benchmark",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-353011f9421d",
+        "labelKo": "LCOE",
+        "unit": "USD/MWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-353011f9421d|USD/MWh|category=해상풍력(기준값)|detail=신규 발전설비 균등화 발전비용|technology=3|A-017_lcoe_offshore_wind_benchmark",
+      "sourceCaveat": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "LCOE · 해상풍력(기준값) — 신규 발전설비 균등화 발전비용",
+      "sourceLabelEn": "LCOE of new build, Offshore wind (benchmark)",
+      "sourceNote": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-017",
+        "indicatorId": "A-017_lcoe_offshore_wind_benchmark",
+        "sourceFileDecoded": "A-017_LCOE(균등화 발전비용).xlsx",
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-353011f9421d|USD/MWh",
+      "dimensionLabels": {
+        "category": "해상풍력(상한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "3"
+      },
+      "dimensions": {
+        "category": "해상풍력(상한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "3"
+      },
+      "displayLabel": "LCOE · 해상풍력(상한) — 신규 발전설비 균등화 발전비용",
+      "indicatorId": "A-017_lcoe_offshore_wind_max",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-353011f9421d",
+        "labelKo": "LCOE",
+        "unit": "USD/MWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-353011f9421d|USD/MWh|category=해상풍력(상한)|detail=신규 발전설비 균등화 발전비용|technology=3|A-017_lcoe_offshore_wind_max",
+      "sourceCaveat": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "LCOE · 해상풍력(상한) — 신규 발전설비 균등화 발전비용",
+      "sourceLabelEn": "LCOE of new build, Offshore wind (max)",
+      "sourceNote": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-017",
+        "indicatorId": "A-017_lcoe_offshore_wind_max",
+        "sourceFileDecoded": "A-017_LCOE(균등화 발전비용).xlsx",
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-353011f9421d|USD/MWh",
+      "dimensionLabels": {
+        "category": "해상풍력(하한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "3"
+      },
+      "dimensions": {
+        "category": "해상풍력(하한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "3"
+      },
+      "displayLabel": "LCOE · 해상풍력(하한) — 신규 발전설비 균등화 발전비용",
+      "indicatorId": "A-017_lcoe_offshore_wind_min",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-353011f9421d",
+        "labelKo": "LCOE",
+        "unit": "USD/MWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-353011f9421d|USD/MWh|category=해상풍력(하한)|detail=신규 발전설비 균등화 발전비용|technology=3|A-017_lcoe_offshore_wind_min",
+      "sourceCaveat": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "LCOE · 해상풍력(하한) — 신규 발전설비 균등화 발전비용",
+      "sourceLabelEn": "LCOE of new build, Offshore wind (min)",
+      "sourceNote": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-017",
+        "indicatorId": "A-017_lcoe_offshore_wind_min",
+        "sourceFileDecoded": "A-017_LCOE(균등화 발전비용).xlsx",
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-353011f9421d|USD/MWh",
+      "dimensionLabels": {
+        "category": "육상풍력+배터리(4시간)(기준값)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "3 · 24"
+      },
+      "dimensions": {
+        "category": "육상풍력+배터리(4시간)(기준값)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "3,24"
+      },
+      "displayLabel": "LCOE · 육상풍력+배터리(4시간)(기준값) — 신규 발전설비 균등화 발전비용",
+      "indicatorId": "A-017_lcoe_onshore_wind_battery_benchmark",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-353011f9421d",
+        "labelKo": "LCOE",
+        "unit": "USD/MWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-353011f9421d|USD/MWh|category=육상풍력+배터리(4시간)(기준값)|detail=신규 발전설비 균등화 발전비용|technology=3,24|A-017_lcoe_onshore_wind_battery_benchmark",
+      "sourceCaveat": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "LCOE · 육상풍력+배터리(4시간)(기준값) — 신규 발전설비 균등화 발전비용",
+      "sourceLabelEn": "LCOE of new build, Onshore wind plus 4-hour battery (benchmark)",
+      "sourceNote": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-017",
+        "indicatorId": "A-017_lcoe_onshore_wind_battery_benchmark",
+        "sourceFileDecoded": "A-017_LCOE(균등화 발전비용).xlsx",
+        "sourceRow": 27,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-353011f9421d|USD/MWh",
+      "dimensionLabels": {
+        "category": "육상풍력+배터리(4시간)(상한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "3 · 24"
+      },
+      "dimensions": {
+        "category": "육상풍력+배터리(4시간)(상한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "3,24"
+      },
+      "displayLabel": "LCOE · 육상풍력+배터리(4시간)(상한) — 신규 발전설비 균등화 발전비용",
+      "indicatorId": "A-017_lcoe_onshore_wind_battery_max",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-353011f9421d",
+        "labelKo": "LCOE",
+        "unit": "USD/MWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-353011f9421d|USD/MWh|category=육상풍력+배터리(4시간)(상한)|detail=신규 발전설비 균등화 발전비용|technology=3,24|A-017_lcoe_onshore_wind_battery_max",
+      "sourceCaveat": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "LCOE · 육상풍력+배터리(4시간)(상한) — 신규 발전설비 균등화 발전비용",
+      "sourceLabelEn": "LCOE of new build, Onshore wind plus 4-hour battery (max)",
+      "sourceNote": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-017",
+        "indicatorId": "A-017_lcoe_onshore_wind_battery_max",
+        "sourceFileDecoded": "A-017_LCOE(균등화 발전비용).xlsx",
+        "sourceRow": 28,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-353011f9421d|USD/MWh",
+      "dimensionLabels": {
+        "category": "육상풍력+배터리(4시간)(하한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "3 · 24"
+      },
+      "dimensions": {
+        "category": "육상풍력+배터리(4시간)(하한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "3,24"
+      },
+      "displayLabel": "LCOE · 육상풍력+배터리(4시간)(하한) — 신규 발전설비 균등화 발전비용",
+      "indicatorId": "A-017_lcoe_onshore_wind_battery_min",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-353011f9421d",
+        "labelKo": "LCOE",
+        "unit": "USD/MWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-353011f9421d|USD/MWh|category=육상풍력+배터리(4시간)(하한)|detail=신규 발전설비 균등화 발전비용|technology=3,24|A-017_lcoe_onshore_wind_battery_min",
+      "sourceCaveat": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "LCOE · 육상풍력+배터리(4시간)(하한) — 신규 발전설비 균등화 발전비용",
+      "sourceLabelEn": "LCOE of new build, Onshore wind plus 4-hour battery (min)",
+      "sourceNote": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-017",
+        "indicatorId": "A-017_lcoe_onshore_wind_battery_min",
+        "sourceFileDecoded": "A-017_LCOE(균등화 발전비용).xlsx",
+        "sourceRow": 26,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-353011f9421d|USD/MWh",
+      "dimensionLabels": {
+        "category": "육상풍력(기준값)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "3"
+      },
+      "dimensions": {
+        "category": "육상풍력(기준값)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "3"
+      },
+      "displayLabel": "LCOE · 육상풍력(기준값) — 신규 발전설비 균등화 발전비용",
+      "indicatorId": "A-017_lcoe_onshore_wind_benchmark",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-353011f9421d",
+        "labelKo": "LCOE",
+        "unit": "USD/MWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-353011f9421d|USD/MWh|category=육상풍력(기준값)|detail=신규 발전설비 균등화 발전비용|technology=3|A-017_lcoe_onshore_wind_benchmark",
+      "sourceCaveat": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "LCOE · 육상풍력(기준값) — 신규 발전설비 균등화 발전비용",
+      "sourceLabelEn": "LCOE of new build, Onshore wind (benchmark)",
+      "sourceNote": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-017",
+        "indicatorId": "A-017_lcoe_onshore_wind_benchmark",
+        "sourceFileDecoded": "A-017_LCOE(균등화 발전비용).xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-353011f9421d|USD/MWh",
+      "dimensionLabels": {
+        "category": "육상풍력(상한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "3"
+      },
+      "dimensions": {
+        "category": "육상풍력(상한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "3"
+      },
+      "displayLabel": "LCOE · 육상풍력(상한) — 신규 발전설비 균등화 발전비용",
+      "indicatorId": "A-017_lcoe_onshore_wind_max",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-353011f9421d",
+        "labelKo": "LCOE",
+        "unit": "USD/MWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-353011f9421d|USD/MWh|category=육상풍력(상한)|detail=신규 발전설비 균등화 발전비용|technology=3|A-017_lcoe_onshore_wind_max",
+      "sourceCaveat": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "LCOE · 육상풍력(상한) — 신규 발전설비 균등화 발전비용",
+      "sourceLabelEn": "LCOE of new build, Onshore wind (max)",
+      "sourceNote": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-017",
+        "indicatorId": "A-017_lcoe_onshore_wind_max",
+        "sourceFileDecoded": "A-017_LCOE(균등화 발전비용).xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-353011f9421d|USD/MWh",
+      "dimensionLabels": {
+        "category": "육상풍력(하한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "3"
+      },
+      "dimensions": {
+        "category": "육상풍력(하한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "3"
+      },
+      "displayLabel": "LCOE · 육상풍력(하한) — 신규 발전설비 균등화 발전비용",
+      "indicatorId": "A-017_lcoe_onshore_wind_min",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-353011f9421d",
+        "labelKo": "LCOE",
+        "unit": "USD/MWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-353011f9421d|USD/MWh|category=육상풍력(하한)|detail=신규 발전설비 균등화 발전비용|technology=3|A-017_lcoe_onshore_wind_min",
+      "sourceCaveat": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "LCOE · 육상풍력(하한) — 신규 발전설비 균등화 발전비용",
+      "sourceLabelEn": "LCOE of new build, Onshore wind (min)",
+      "sourceNote": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-017",
+        "indicatorId": "A-017_lcoe_onshore_wind_min",
+        "sourceFileDecoded": "A-017_LCOE(균등화 발전비용).xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-353011f9421d|USD/MWh",
+      "dimensionLabels": {
+        "category": "태양광+배터리(4시간)(기준값)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "1 · 24"
+      },
+      "dimensions": {
+        "category": "태양광+배터리(4시간)(기준값)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "1,24"
+      },
+      "displayLabel": "LCOE · 태양광+배터리(4시간)(기준값) — 신규 발전설비 균등화 발전비용",
+      "indicatorId": "A-017_lcoe_solar_battery_benchmark",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-353011f9421d",
+        "labelKo": "LCOE",
+        "unit": "USD/MWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-353011f9421d|USD/MWh|category=태양광+배터리(4시간)(기준값)|detail=신규 발전설비 균등화 발전비용|technology=1,24|A-017_lcoe_solar_battery_benchmark",
+      "sourceCaveat": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "LCOE · 태양광+배터리(4시간)(기준값) — 신규 발전설비 균등화 발전비용",
+      "sourceLabelEn": "LCOE of new build, Solar PV plus 4-hour battery (benchmark)",
+      "sourceNote": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-017",
+        "indicatorId": "A-017_lcoe_solar_battery_benchmark",
+        "sourceFileDecoded": "A-017_LCOE(균등화 발전비용).xlsx",
+        "sourceRow": 24,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-353011f9421d|USD/MWh",
+      "dimensionLabels": {
+        "category": "태양광+배터리(4시간)(상한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "1 · 24"
+      },
+      "dimensions": {
+        "category": "태양광+배터리(4시간)(상한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "1,24"
+      },
+      "displayLabel": "LCOE · 태양광+배터리(4시간)(상한) — 신규 발전설비 균등화 발전비용",
+      "indicatorId": "A-017_lcoe_solar_battery_max",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-353011f9421d",
+        "labelKo": "LCOE",
+        "unit": "USD/MWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-353011f9421d|USD/MWh|category=태양광+배터리(4시간)(상한)|detail=신규 발전설비 균등화 발전비용|technology=1,24|A-017_lcoe_solar_battery_max",
+      "sourceCaveat": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "LCOE · 태양광+배터리(4시간)(상한) — 신규 발전설비 균등화 발전비용",
+      "sourceLabelEn": "LCOE of new build, Solar PV plus 4-hour battery (max)",
+      "sourceNote": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-017",
+        "indicatorId": "A-017_lcoe_solar_battery_max",
+        "sourceFileDecoded": "A-017_LCOE(균등화 발전비용).xlsx",
+        "sourceRow": 25,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-353011f9421d|USD/MWh",
+      "dimensionLabels": {
+        "category": "태양광+배터리(4시간)(하한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "1 · 24"
+      },
+      "dimensions": {
+        "category": "태양광+배터리(4시간)(하한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "1,24"
+      },
+      "displayLabel": "LCOE · 태양광+배터리(4시간)(하한) — 신규 발전설비 균등화 발전비용",
+      "indicatorId": "A-017_lcoe_solar_battery_min",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-353011f9421d",
+        "labelKo": "LCOE",
+        "unit": "USD/MWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-353011f9421d|USD/MWh|category=태양광+배터리(4시간)(하한)|detail=신규 발전설비 균등화 발전비용|technology=1,24|A-017_lcoe_solar_battery_min",
+      "sourceCaveat": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "LCOE · 태양광+배터리(4시간)(하한) — 신규 발전설비 균등화 발전비용",
+      "sourceLabelEn": "LCOE of new build, Solar PV plus 4-hour battery (min)",
+      "sourceNote": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-017",
+        "indicatorId": "A-017_lcoe_solar_battery_min",
+        "sourceFileDecoded": "A-017_LCOE(균등화 발전비용).xlsx",
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-353011f9421d|USD/MWh",
+      "dimensionLabels": {
+        "category": "태양광(기준값)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "1"
+      },
+      "dimensions": {
+        "category": "태양광(기준값)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "1"
+      },
+      "displayLabel": "LCOE · 태양광(기준값) — 신규 발전설비 균등화 발전비용",
+      "indicatorId": "A-017_lcoe_solar_benchmark",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-353011f9421d",
+        "labelKo": "LCOE",
+        "unit": "USD/MWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-353011f9421d|USD/MWh|category=태양광(기준값)|detail=신규 발전설비 균등화 발전비용|technology=1|A-017_lcoe_solar_benchmark",
+      "sourceCaveat": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "LCOE · 태양광(기준값) — 신규 발전설비 균등화 발전비용",
+      "sourceLabelEn": "LCOE of new build, Solar PV (benchmark)",
+      "sourceNote": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-017",
+        "indicatorId": "A-017_lcoe_solar_benchmark",
+        "sourceFileDecoded": "A-017_LCOE(균등화 발전비용).xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-353011f9421d|USD/MWh",
+      "dimensionLabels": {
+        "category": "태양광(상한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "1"
+      },
+      "dimensions": {
+        "category": "태양광(상한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "1"
+      },
+      "displayLabel": "LCOE · 태양광(상한) — 신규 발전설비 균등화 발전비용",
+      "indicatorId": "A-017_lcoe_solar_max",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-353011f9421d",
+        "labelKo": "LCOE",
+        "unit": "USD/MWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-353011f9421d|USD/MWh|category=태양광(상한)|detail=신규 발전설비 균등화 발전비용|technology=1|A-017_lcoe_solar_max",
+      "sourceCaveat": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "LCOE · 태양광(상한) — 신규 발전설비 균등화 발전비용",
+      "sourceLabelEn": "LCOE of new build, Solar PV (max)",
+      "sourceNote": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-017",
+        "indicatorId": "A-017_lcoe_solar_max",
+        "sourceFileDecoded": "A-017_LCOE(균등화 발전비용).xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-353011f9421d|USD/MWh",
+      "dimensionLabels": {
+        "category": "태양광(하한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "1"
+      },
+      "dimensions": {
+        "category": "태양광(하한)",
+        "detail": "신규 발전설비 균등화 발전비용",
+        "technology": "1"
+      },
+      "displayLabel": "LCOE · 태양광(하한) — 신규 발전설비 균등화 발전비용",
+      "indicatorId": "A-017_lcoe_solar_min",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-353011f9421d",
+        "labelKo": "LCOE",
+        "unit": "USD/MWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-353011f9421d|USD/MWh|category=태양광(하한)|detail=신규 발전설비 균등화 발전비용|technology=1|A-017_lcoe_solar_min",
+      "sourceCaveat": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "LCOE · 태양광(하한) — 신규 발전설비 균등화 발전비용",
+      "sourceLabelEn": "LCOE of new build, Solar PV (min)",
+      "sourceNote": "[원천 확인] A-017 폴더의 raw CSV(Sustainable_Development_Report_2026_(with_indicators).csv)는 LCOE 자료가 아니라 SDG Index 데이터임(693개 열 전수 검색 결과 lcoe·cost·USD·kWh·MWh·tariff·price 관련 열 0건). 실제 LCOE 원천은 같은 요소 폴더의 BloombergNEF 「Vietnam: A Techno-Economic Analysis of Power Generation」(2023-10-23) 보고서 Figure 6·7·8이며, 이를 판독하여 수록함. [결측 처리] 검토의견 1번 확인 — 해상풍력은 값이 비어 있지 않음. 원문 p.9는 \"Vietnam does not have any operational offshore wind plants yet\"이라고 명시하면서도 모델 기반 LCOE를 2023년 121~218 USD/MWh로 제시함. 즉 실적 부재 기술도 모델값이 존재하므로 행 삭제나 결측 처리 대상이 아니며, 실적치가 아니라는 사실을 note에 표기함. [IRENA 확인] 검토의견 2번의 요구 출처인 IRENA는 베트남 국가별 LCOE를 공개 산출물에 수록하지 않음 — IRENA Renewable Power Generation Costs 2024년판·2025년판 요약본을 전문 검색한 결과 \"Viet Nam/Vietnam\" 문자열이 0회이며, 국가별 LCOE가 제시되는 국가는 중국·인도·브라질·미국·독일·호주·뉴질랜드·인도네시아·남아공 등으로 한정됨. IRENA Renewable Cost Database 원자료는 비공개이므로 IRENA로 출처를 대체하는 것은 현재 불가능하며, 대신 산정방식·단위·통화기준이 동일한 BNEF 단일 원천으로 통일함. [기준시점] 검토의견 4번에 대응 — 원문은 2023·2030·2050 세 시점만 제시하며 2024·2025 값은 원문에 없음. 종전 자료의 2024·2025 혼재는 원문 근거가 없음. 본 데이터셋은 시점을 year 열에 명시하여 실적 기준연도(2023)와 전망(2030·2050)을 분리함. [범위값] 검토의견 3번에 대응 — 하한·상한·기준값(BNEF benchmark)을 각각 별도 지표(_min/_max/_benchmark)로 분리하여 모두 수치형으로 저장함. 원문에 \"25~70\" 같은 문자열 범위는 존재하지 않음(종전 산출물 가공 과정의 산물). [값 확인] 검토의견 6번(태양광 61.3 vs 태양광+4시간 배터리 63.8) 확인 — 두 값 모두 원문·CSV 어디에도 없음. 원문 2023년 값은 태양광 53~105(기준 70), 태양광+배터리 106~227(기준 144)로 약 2배 차이임. 배터리 비용은 정상 반영되어 있음. [단위] 축 라벨 원문 \"$/MWh (2022 real)\" — 2022년 실질 미달러 기준. [출처 성격] 상업 조사기관 보고서로 재배포가 제한되나, 본 데이터셋은 기술별 비용 수치라는 사실값만 수록하고 보고서 본문·도표를 수록하지 않으므로 「제한」으로 판정함. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-017",
+        "indicatorId": "A-017_lcoe_solar_min",
+        "sourceFileDecoded": "A-017_LCOE(균등화 발전비용).xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 24,
+      "key": "measure-353011f9421d",
+      "labelKo": "LCOE",
+      "recordCount": 72,
+      "unit": "USD/MWh",
+      "unitFamily": "energy"
+    }
+  ],
+  "observationCount": 72,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

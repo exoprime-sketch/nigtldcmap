@@ -1,0 +1,322 @@
+{
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 4,
+      "values": [
+        "산업 (SDG 6.4.1)",
+        "서비스 (SDG 6.4.1)",
+        "전체 (SDG 6.4.1)",
+        "지역 단위(추정)"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "32,34"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 34,
+      "values": [
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023"
+      ]
+    }
+  ],
+  "elementId": "B-024",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 7,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-357fd35f6277|%",
+      "dimensionLabels": {
+        "technology": "32 · 34"
+      },
+      "dimensions": {
+        "technology": "32,34"
+      },
+      "displayLabel": "농업 용수 취수 비중",
+      "indicatorId": "B-024_agri_water_share",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-357fd35f6277",
+        "labelKo": "농업 용수 취수 비중",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-357fd35f6277|%|technology=32,34|B-024_agri_water_share",
+      "sourceCaveat": "[시계열 확인] 1990–2023년 34개년 전 구간 값이 존재함. 다만 원천 품질기호가 1990–2005는 E(추정), **2006–2023은 I(원천 보간값으로 2005년 값 94.782%가 그대로 반복)**임. 즉 실질 갱신은 2005년까지이며 이후는 원천 보간이므로 산출유형을 추정치로 표기하고 note에 symbol을 기재함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 확대 검토 — 아래 이슈 2 참조 / [원천 갱신일 근거] AQUASTAT Dissemination System 조회 기준일",
+      "sourceLabel": "농업 용수 취수 비중",
+      "sourceLabelEn": "Agricultural water withdrawal as % of total",
+      "sourceNote": "[시계열 확인] 1990–2023년 34개년 전 구간 값이 존재함. 다만 원천 품질기호가 1990–2005는 E(추정), **2006–2023은 I(원천 보간값으로 2005년 값 94.782%가 그대로 반복)**임. 즉 실질 갱신은 2005년까지이며 이후는 원천 보간이므로 산출유형을 추정치로 표기하고 note에 symbol을 기재함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 확대 검토 — 아래 이슈 2 참조 / [원천 갱신일 근거] AQUASTAT Dissemination System 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-024",
+        "indicatorId": "B-024_agri_water_share",
+        "sourceFileDecoded": "B-024_농업 용수 비중(%).xlsx",
+        "sourceRow": 4,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-ec7e036da091|%",
+      "dimensionLabels": {
+        "detail": "지역 단위(추정)"
+      },
+      "dimensions": {
+        "detail": "지역 단위(추정)"
+      },
+      "displayLabel": "농업 용수 비중 — 지역 단위(추정)",
+      "indicatorId": "B-024_agri_water_share_subnat",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ec7e036da091",
+        "labelKo": "농업 용수 비중",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-ec7e036da091|%|detail=지역 단위(추정)|B-024_agri_water_share_subnat",
+      "sourceCaveat": "[주의] 추정값이므로 AQUASTAT 국가값과 접속하지 않고 별도 지표로 분리. 2025년 행정구역 개편으로 성 경계가 변경되었으므로 어느 시점 기준인지 명시 필요(Q-020). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "농업 용수 비중 — 지역 단위(추정)",
+      "sourceLabelEn": "Agri. water share by province (estimated)",
+      "sourceNote": "2023년: GSO 관개·수확면적 기반 성 단위 추정 미수행 — 절차 확정 후 진행",
+      "sourceProvenance": {
+        "elementId": "B-024",
+        "indicatorId": "B-024_agri_water_share_subnat",
+        "sourceFileDecoded": "B-024_농업 용수 비중(%).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-531231004ae8|%",
+      "dimensionLabels": {
+        "technology": "32 · 34"
+      },
+      "dimensions": {
+        "technology": "32,34"
+      },
+      "displayLabel": "농업 용수 취수 비중(총 재생가능 수자원 대비)",
+      "indicatorId": "B-024_agri_water_share_trwr",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-531231004ae8",
+        "labelKo": "농업 용수 취수 비중(총 재생가능 수자원 대비)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-531231004ae8|%|technology=32,34|B-024_agri_water_share_trwr",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 총 취수량 대비 비중(94.8%)과 분모가 달라 별도 지표로 분리 수록(2023년 8.60%). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] AQUASTAT Dissemination System 조회 기준일",
+      "sourceLabel": "농업 용수 취수 비중(총 재생가능 수자원 대비)",
+      "sourceLabelEn": "Agricultural water withdrawal as % of TRWR",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 총 취수량 대비 비중(94.8%)과 분모가 달라 별도 지표로 분리 수록(2023년 8.60%). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] AQUASTAT Dissemination System 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-024",
+        "indicatorId": "B-024_agri_water_share_trwr",
+        "sourceFileDecoded": "B-024_농업 용수 비중(%).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-b106b0e28ac3|US$/m³",
+      "dimensionLabels": {
+        "detail": "산업 (SDG 6.4.1)"
+      },
+      "dimensions": {
+        "detail": "산업 (SDG 6.4.1)"
+      },
+      "displayLabel": "용수생산성 — 산업 (SDG 6.4.1)",
+      "indicatorId": "B-024_wue_industrial",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b106b0e28ac3",
+        "labelKo": "용수생산성",
+        "unit": "US$/m³",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-b106b0e28ac3|US$/m³|detail=산업 (SDG 6.4.1)|B-024_wue_industrial",
+      "sourceCaveat": "[신규 수록] 1990년 2.466 → 2023년 40.966 US$/m³ (16.6배). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] AQUASTAT Dissemination System 조회 기준일",
+      "sourceLabel": "용수생산성 — 산업 (SDG 6.4.1)",
+      "sourceLabelEn": "Industrial water use efficiency",
+      "sourceNote": "[신규 수록] 1990년 2.466 → 2023년 40.966 US$/m³ (16.6배). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] AQUASTAT Dissemination System 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-024",
+        "indicatorId": "B-024_wue_industrial",
+        "sourceFileDecoded": "B-024_농업 용수 비중(%).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6d7408256783|US$/m³",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "관개농업 용수생산성 (SDG 6.4.1)",
+      "indicatorId": "B-024_wue_irrigated_agri",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6d7408256783",
+        "labelKo": "관개농업 용수생산성 (SDG 6.4.1)",
+        "unit": "US$/m³",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-6d7408256783|US$/m³||B-024_wue_irrigated_agri",
+      "sourceCaveat": "[신규 수록 — 요소 직결 계열] 보유 [raw] AQUASTAT 워크북에 34개년 계열이 있으나 미수록이었음. 본 요소(농업 용수 비중)의 직접 보완 지표로, 취수 \"비중\"이 아니라 취수의 \"효율\"을 나타냄. 1990년 0.144 → 2023년 0.319 US$/m³로 33년간 2.2배 개선. 동일 계열의 전체·산업·서비스 부문 값도 함께 수록하여 부문 간 비교가 가능함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] AQUASTAT Dissemination System 조회 기준일",
+      "sourceLabel": "관개농업 용수생산성 (SDG 6.4.1)",
+      "sourceLabelEn": "Irrigated agriculture water use efficiency",
+      "sourceNote": "[신규 수록 — 요소 직결 계열] 보유 [raw] AQUASTAT 워크북에 34개년 계열이 있으나 미수록이었음. 본 요소(농업 용수 비중)의 직접 보완 지표로, 취수 \"비중\"이 아니라 취수의 \"효율\"을 나타냄. 1990년 0.144 → 2023년 0.319 US$/m³로 33년간 2.2배 개선. 동일 계열의 전체·산업·서비스 부문 값도 함께 수록하여 부문 간 비교가 가능함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] AQUASTAT Dissemination System 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-024",
+        "indicatorId": "B-024_wue_irrigated_agri",
+        "sourceFileDecoded": "B-024_농업 용수 비중(%).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-b106b0e28ac3|US$/m³",
+      "dimensionLabels": {
+        "detail": "서비스 (SDG 6.4.1)"
+      },
+      "dimensions": {
+        "detail": "서비스 (SDG 6.4.1)"
+      },
+      "displayLabel": "용수생산성 — 서비스 (SDG 6.4.1)",
+      "indicatorId": "B-024_wue_services",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b106b0e28ac3",
+        "labelKo": "용수생산성",
+        "unit": "US$/m³",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-b106b0e28ac3|US$/m³|detail=서비스 (SDG 6.4.1)|B-024_wue_services",
+      "sourceCaveat": "[신규 수록] 1990년 11.634 → 2023년 150.519 US$/m³. 세 부문 값을 나란히 보면 물 배분의 경제적 기회비용이 드러남 — 농업 취수 1m³의 부가가치가 서비스업의 1/470 수준. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] AQUASTAT Dissemination System 조회 기준일",
+      "sourceLabel": "용수생산성 — 서비스 (SDG 6.4.1)",
+      "sourceLabelEn": "Services water use efficiency",
+      "sourceNote": "[신규 수록] 1990년 11.634 → 2023년 150.519 US$/m³. 세 부문 값을 나란히 보면 물 배분의 경제적 기회비용이 드러남 — 농업 취수 1m³의 부가가치가 서비스업의 1/470 수준. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] AQUASTAT Dissemination System 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-024",
+        "indicatorId": "B-024_wue_services",
+        "sourceFileDecoded": "B-024_농업 용수 비중(%).xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-b106b0e28ac3|US$/m³",
+      "dimensionLabels": {
+        "detail": "전체 (SDG 6.4.1)"
+      },
+      "dimensions": {
+        "detail": "전체 (SDG 6.4.1)"
+      },
+      "displayLabel": "용수생산성 — 전체 (SDG 6.4.1)",
+      "indicatorId": "B-024_wue_total",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b106b0e28ac3",
+        "labelKo": "용수생산성",
+        "unit": "US$/m³",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-b106b0e28ac3|US$/m³|detail=전체 (SDG 6.4.1)|B-024_wue_total",
+      "sourceCaveat": "[신규 수록] 1990년 0.617 → 2023년 4.051 US$/m³. 전체 값이 관개농업 값(0.319)의 12.7배인 것은 산업·서비스 부문의 생산성이 훨씬 높기 때문이며, 농업이 취수량의 대부분을 차지하는 구조를 반영함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] AQUASTAT Dissemination System 조회 기준일",
+      "sourceLabel": "용수생산성 — 전체 (SDG 6.4.1)",
+      "sourceLabelEn": "Water use efficiency, total",
+      "sourceNote": "[신규 수록] 1990년 0.617 → 2023년 4.051 US$/m³. 전체 값이 관개농업 값(0.319)의 12.7배인 것은 산업·서비스 부문의 생산성이 훨씬 높기 때문이며, 농업이 취수량의 대부분을 차지하는 구조를 반영함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] AQUASTAT Dissemination System 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-024",
+        "indicatorId": "B-024_wue_total",
+        "sourceFileDecoded": "B-024_농업 용수 비중(%).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-6d7408256783",
+      "labelKo": "관개농업 용수생산성 (SDG 6.4.1)",
+      "recordCount": 34,
+      "unit": "US$/m³",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-ec7e036da091",
+      "labelKo": "농업 용수 비중",
+      "recordCount": 1,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-357fd35f6277",
+      "labelKo": "농업 용수 취수 비중",
+      "recordCount": 34,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-531231004ae8",
+      "labelKo": "농업 용수 취수 비중(총 재생가능 수자원 대비)",
+      "recordCount": 34,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 3,
+      "key": "measure-b106b0e28ac3",
+      "labelKo": "용수생산성",
+      "recordCount": 102,
+      "unit": "US$/m³",
+      "unitFamily": "currency"
+    }
+  ],
+  "observationCount": 205,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

@@ -1,0 +1,377 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 8,
+      "values": [
+        "CH4",
+        "CH4(CO2 환산)",
+        "CO2",
+        "CO2(CO2 환산)",
+        "F-gas",
+        "F-gas(CO2 환산)",
+        "N2O",
+        "N2O(CO2 환산)"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 5,
+      "values": [
+        "CH4 질량 기준 배출량(LULUCF 제외)",
+        "CO2 질량 기준 배출량(LULUCF 제외)",
+        "GWP-100 AR5 적용 CO2 환산 배출량",
+        "N2O 질량 기준 배출량(LULUCF 제외)",
+        "불소계 온실가스 10개 화종 질량 합계"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 55,
+      "values": [
+        "1970",
+        "1971",
+        "1972",
+        "1973",
+        "1974",
+        "1975",
+        "1976",
+        "1977",
+        "1978",
+        "1979",
+        "1980",
+        "1981",
+        "1982",
+        "1983",
+        "1984",
+        "1985",
+        "1986",
+        "1987",
+        "1988",
+        "1989",
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ]
+    }
+  ],
+  "elementId": "A-010",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 8,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-165d8811fba3|Mt CO2eq",
+      "dimensionLabels": {
+        "category": "CH4(CO2 환산)",
+        "detail": "GWP-100 AR5 적용 CO2 환산 배출량"
+      },
+      "dimensions": {
+        "category": "CH4(CO2 환산)",
+        "detail": "GWP-100 AR5 적용 CO2 환산 배출량"
+      },
+      "displayLabel": "가스별 배출량 · CH4(CO2 환산) — GWP-100 AR5 적용 CO2 환산 배출량",
+      "indicatorId": "A-010_emissions_ch4_co2eq",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-165d8811fba3",
+        "labelKo": "가스별 배출량",
+        "unit": "Mt CO2eq",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-165d8811fba3|Mt CO2eq|category=CH4(CO2 환산)|detail=GWP-100 AR5 적용 CO2 환산 배출량|A-010_emissions_ch4_co2eq",
+      "sourceCaveat": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [단위 확인] 검토의견 3번에 대한 확인 결과 — raw 4개 파일 모두 셀 A5에 \"Unit: Gg\"라고만 적혀 있고 각 파일의 Compound는 CO2/CH4/N2O 및 F-gas 화종명이므로, 원자료는 CO2 환산값이 아니라 각 가스의 질량(Gg)임. \"F-gas 원자료는 이미 CO2 환산값\"이라는 종전 전제는 사실과 다름. [결측 처리] 검토의견 2번에 대한 확인 결과 — F-gas 1990~2015년 값은 0이 아니며 결측도 아님(예: 1990년 HFC-134a 0.001202051 Gg, HFC-152a 0.000272132 Gg). 질량(Gg)을 GWP 미적용 상태로 반올림하면 0으로 보일 뿐임. [정합성] 검토의견 1번·4번에 대한 확인 결과 — GWP-100 AR5(CH4 28, N2O 265, F-gas 화종별)로 환산한 4개 가스 합계 2024년 값은 582.697 Mt로 A-012 총량 584.258 Mt보다 1.561 Mt 작음. 잔차는 전부 IPCC 1.B(연료 채굴·수송 누출) 부문에 있으며, EDGAR가 이 부문 CH4에는 GWP 30을, 그 외에는 28을 적용하기 때문임(원문 대조로 확인). 1.B에 30을 적용하면 차이가 0이 됨. GWP 계수는 raw에 명시되어 있지 않아 A-011의 GWP_100_AR5_CH4/N2O 행과 질량을 나누어 역산했으며 이를 산출방식에 기재함. [시계열] F-gas 계열만 1990년부터인 것은(검토의견 5번) EDGAR F-gas 데이터셋 자체가 1990~2024년을 대상으로 하기 때문이며 결측이 아님. [화종] 베트남은 25개 화종 중 10종(C2F6, CF4, HFC-125, HFC-134a, HFC-143a, HFC-152a, HFC-227ea, HFC-245fa, HFC-32, HFC-365mfc)만 수록되어 있고 SF6·NF3·HFC-23 행은 없음. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "가스별 배출량 · CH4(CO2 환산) — GWP-100 AR5 적용 CO2 환산 배출량",
+      "sourceLabelEn": "CH4 emissions in CO2-equivalent (GWP-100, AR5)",
+      "sourceNote": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [단위 확인] 검토의견 3번에 대한 확인 결과 — raw 4개 파일 모두 셀 A5에 \"Unit: Gg\"라고만 적혀 있고 각 파일의 Compound는 CO2/CH4/N2O 및 F-gas 화종명이므로, 원자료는 CO2 환산값이 아니라 각 가스의 질량(Gg)임. \"F-gas 원자료는 이미 CO2 환산값\"이라는 종전 전제는 사실과 다름. [결측 처리] 검토의견 2번에 대한 확인 결과 — F-gas 1990~2015년 값은 0이 아니며 결측도 아님(예: 1990년 HFC-134a 0.001202051 Gg, HFC-152a 0.000272132 Gg). 질량(Gg)을 GWP 미적용 상태로 반올림하면 0으로 보일 뿐임. [정합성] 검토의견 1번·4번에 대한 확인 결과 — GWP-100 AR5(CH4 28, N2O 265, F-gas 화종별)로 환산한 4개 가스 합계 2024년 값은 582.697 Mt로 A-012 총량 584.258 Mt보다 1.561 Mt 작음. 잔차는 전부 IPCC 1.B(연료 채굴·수송 누출) 부문에 있으며, EDGAR가 이 부문 CH4에는 GWP 30을, 그 외에는 28을 적용하기 때문임(원문 대조로 확인). 1.B에 30을 적용하면 차이가 0이 됨. GWP 계수는 raw에 명시되어 있지 않아 A-011의 GWP_100_AR5_CH4/N2O 행과 질량을 나누어 역산했으며 이를 산출방식에 기재함. [시계열] F-gas 계열만 1990년부터인 것은(검토의견 5번) EDGAR F-gas 데이터셋 자체가 1990~2024년을 대상으로 하기 때문이며 결측이 아님. [화종] 베트남은 25개 화종 중 10종(C2F6, CF4, HFC-125, HFC-134a, HFC-143a, HFC-152a, HFC-227ea, HFC-245fa, HFC-32, HFC-365mfc)만 수록되어 있고 SF6·NF3·HFC-23 행은 없음. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-010",
+        "indicatorId": "A-010_emissions_ch4_co2eq",
+        "sourceFileDecoded": "A-010_GHG 배출량[CO₂, CH₄, N₂O, F-gas].xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a8662d9267c1|Gg",
+      "dimensionLabels": {
+        "category": "CH4",
+        "detail": "CH4 질량 기준 배출량(LULUCF 제외)"
+      },
+      "dimensions": {
+        "category": "CH4",
+        "detail": "CH4 질량 기준 배출량(LULUCF 제외)"
+      },
+      "displayLabel": "가스별 배출량 · CH4 — CH4 질량 기준 배출량(LULUCF 제외)",
+      "indicatorId": "A-010_emissions_ch4_mass",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a8662d9267c1",
+        "labelKo": "가스별 배출량",
+        "unit": "Gg",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a8662d9267c1|Gg|category=CH4|detail=CH4 질량 기준 배출량(LULUCF 제외)|A-010_emissions_ch4_mass",
+      "sourceCaveat": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [단위 확인] 검토의견 3번에 대한 확인 결과 — raw 4개 파일 모두 셀 A5에 \"Unit: Gg\"라고만 적혀 있고 각 파일의 Compound는 CO2/CH4/N2O 및 F-gas 화종명이므로, 원자료는 CO2 환산값이 아니라 각 가스의 질량(Gg)임. \"F-gas 원자료는 이미 CO2 환산값\"이라는 종전 전제는 사실과 다름. [결측 처리] 검토의견 2번에 대한 확인 결과 — F-gas 1990~2015년 값은 0이 아니며 결측도 아님(예: 1990년 HFC-134a 0.001202051 Gg, HFC-152a 0.000272132 Gg). 질량(Gg)을 GWP 미적용 상태로 반올림하면 0으로 보일 뿐임. [정합성] 검토의견 1번·4번에 대한 확인 결과 — GWP-100 AR5(CH4 28, N2O 265, F-gas 화종별)로 환산한 4개 가스 합계 2024년 값은 582.697 Mt로 A-012 총량 584.258 Mt보다 1.561 Mt 작음. 잔차는 전부 IPCC 1.B(연료 채굴·수송 누출) 부문에 있으며, EDGAR가 이 부문 CH4에는 GWP 30을, 그 외에는 28을 적용하기 때문임(원문 대조로 확인). 1.B에 30을 적용하면 차이가 0이 됨. GWP 계수는 raw에 명시되어 있지 않아 A-011의 GWP_100_AR5_CH4/N2O 행과 질량을 나누어 역산했으며 이를 산출방식에 기재함. [시계열] F-gas 계열만 1990년부터인 것은(검토의견 5번) EDGAR F-gas 데이터셋 자체가 1990~2024년을 대상으로 하기 때문이며 결측이 아님. [화종] 베트남은 25개 화종 중 10종(C2F6, CF4, HFC-125, HFC-134a, HFC-143a, HFC-152a, HFC-227ea, HFC-245fa, HFC-32, HFC-365mfc)만 수록되어 있고 SF6·NF3·HFC-23 행은 없음. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "가스별 배출량 · CH4 — CH4 질량 기준 배출량(LULUCF 제외)",
+      "sourceLabelEn": "CH4 emissions (mass basis, excluding LULUCF)",
+      "sourceNote": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [단위 확인] 검토의견 3번에 대한 확인 결과 — raw 4개 파일 모두 셀 A5에 \"Unit: Gg\"라고만 적혀 있고 각 파일의 Compound는 CO2/CH4/N2O 및 F-gas 화종명이므로, 원자료는 CO2 환산값이 아니라 각 가스의 질량(Gg)임. \"F-gas 원자료는 이미 CO2 환산값\"이라는 종전 전제는 사실과 다름. [결측 처리] 검토의견 2번에 대한 확인 결과 — F-gas 1990~2015년 값은 0이 아니며 결측도 아님(예: 1990년 HFC-134a 0.001202051 Gg, HFC-152a 0.000272132 Gg). 질량(Gg)을 GWP 미적용 상태로 반올림하면 0으로 보일 뿐임. [정합성] 검토의견 1번·4번에 대한 확인 결과 — GWP-100 AR5(CH4 28, N2O 265, F-gas 화종별)로 환산한 4개 가스 합계 2024년 값은 582.697 Mt로 A-012 총량 584.258 Mt보다 1.561 Mt 작음. 잔차는 전부 IPCC 1.B(연료 채굴·수송 누출) 부문에 있으며, EDGAR가 이 부문 CH4에는 GWP 30을, 그 외에는 28을 적용하기 때문임(원문 대조로 확인). 1.B에 30을 적용하면 차이가 0이 됨. GWP 계수는 raw에 명시되어 있지 않아 A-011의 GWP_100_AR5_CH4/N2O 행과 질량을 나누어 역산했으며 이를 산출방식에 기재함. [시계열] F-gas 계열만 1990년부터인 것은(검토의견 5번) EDGAR F-gas 데이터셋 자체가 1990~2024년을 대상으로 하기 때문이며 결측이 아님. [화종] 베트남은 25개 화종 중 10종(C2F6, CF4, HFC-125, HFC-134a, HFC-143a, HFC-152a, HFC-227ea, HFC-245fa, HFC-32, HFC-365mfc)만 수록되어 있고 SF6·NF3·HFC-23 행은 없음. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-010",
+        "indicatorId": "A-010_emissions_ch4_mass",
+        "sourceFileDecoded": "A-010_GHG 배출량[CO₂, CH₄, N₂O, F-gas].xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-165d8811fba3|Mt CO2eq",
+      "dimensionLabels": {
+        "category": "CO2(CO2 환산)",
+        "detail": "GWP-100 AR5 적용 CO2 환산 배출량"
+      },
+      "dimensions": {
+        "category": "CO2(CO2 환산)",
+        "detail": "GWP-100 AR5 적용 CO2 환산 배출량"
+      },
+      "displayLabel": "가스별 배출량 · CO2(CO2 환산) — GWP-100 AR5 적용 CO2 환산 배출량",
+      "indicatorId": "A-010_emissions_co2_co2eq",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-165d8811fba3",
+        "labelKo": "가스별 배출량",
+        "unit": "Mt CO2eq",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-165d8811fba3|Mt CO2eq|category=CO2(CO2 환산)|detail=GWP-100 AR5 적용 CO2 환산 배출량|A-010_emissions_co2_co2eq",
+      "sourceCaveat": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [단위 확인] 검토의견 3번에 대한 확인 결과 — raw 4개 파일 모두 셀 A5에 \"Unit: Gg\"라고만 적혀 있고 각 파일의 Compound는 CO2/CH4/N2O 및 F-gas 화종명이므로, 원자료는 CO2 환산값이 아니라 각 가스의 질량(Gg)임. \"F-gas 원자료는 이미 CO2 환산값\"이라는 종전 전제는 사실과 다름. [결측 처리] 검토의견 2번에 대한 확인 결과 — F-gas 1990~2015년 값은 0이 아니며 결측도 아님(예: 1990년 HFC-134a 0.001202051 Gg, HFC-152a 0.000272132 Gg). 질량(Gg)을 GWP 미적용 상태로 반올림하면 0으로 보일 뿐임. [정합성] 검토의견 1번·4번에 대한 확인 결과 — GWP-100 AR5(CH4 28, N2O 265, F-gas 화종별)로 환산한 4개 가스 합계 2024년 값은 582.697 Mt로 A-012 총량 584.258 Mt보다 1.561 Mt 작음. 잔차는 전부 IPCC 1.B(연료 채굴·수송 누출) 부문에 있으며, EDGAR가 이 부문 CH4에는 GWP 30을, 그 외에는 28을 적용하기 때문임(원문 대조로 확인). 1.B에 30을 적용하면 차이가 0이 됨. GWP 계수는 raw에 명시되어 있지 않아 A-011의 GWP_100_AR5_CH4/N2O 행과 질량을 나누어 역산했으며 이를 산출방식에 기재함. [시계열] F-gas 계열만 1990년부터인 것은(검토의견 5번) EDGAR F-gas 데이터셋 자체가 1990~2024년을 대상으로 하기 때문이며 결측이 아님. [화종] 베트남은 25개 화종 중 10종(C2F6, CF4, HFC-125, HFC-134a, HFC-143a, HFC-152a, HFC-227ea, HFC-245fa, HFC-32, HFC-365mfc)만 수록되어 있고 SF6·NF3·HFC-23 행은 없음. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "가스별 배출량 · CO2(CO2 환산) — GWP-100 AR5 적용 CO2 환산 배출량",
+      "sourceLabelEn": "CO2 emissions in CO2-equivalent (GWP-100, AR5)",
+      "sourceNote": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [단위 확인] 검토의견 3번에 대한 확인 결과 — raw 4개 파일 모두 셀 A5에 \"Unit: Gg\"라고만 적혀 있고 각 파일의 Compound는 CO2/CH4/N2O 및 F-gas 화종명이므로, 원자료는 CO2 환산값이 아니라 각 가스의 질량(Gg)임. \"F-gas 원자료는 이미 CO2 환산값\"이라는 종전 전제는 사실과 다름. [결측 처리] 검토의견 2번에 대한 확인 결과 — F-gas 1990~2015년 값은 0이 아니며 결측도 아님(예: 1990년 HFC-134a 0.001202051 Gg, HFC-152a 0.000272132 Gg). 질량(Gg)을 GWP 미적용 상태로 반올림하면 0으로 보일 뿐임. [정합성] 검토의견 1번·4번에 대한 확인 결과 — GWP-100 AR5(CH4 28, N2O 265, F-gas 화종별)로 환산한 4개 가스 합계 2024년 값은 582.697 Mt로 A-012 총량 584.258 Mt보다 1.561 Mt 작음. 잔차는 전부 IPCC 1.B(연료 채굴·수송 누출) 부문에 있으며, EDGAR가 이 부문 CH4에는 GWP 30을, 그 외에는 28을 적용하기 때문임(원문 대조로 확인). 1.B에 30을 적용하면 차이가 0이 됨. GWP 계수는 raw에 명시되어 있지 않아 A-011의 GWP_100_AR5_CH4/N2O 행과 질량을 나누어 역산했으며 이를 산출방식에 기재함. [시계열] F-gas 계열만 1990년부터인 것은(검토의견 5번) EDGAR F-gas 데이터셋 자체가 1990~2024년을 대상으로 하기 때문이며 결측이 아님. [화종] 베트남은 25개 화종 중 10종(C2F6, CF4, HFC-125, HFC-134a, HFC-143a, HFC-152a, HFC-227ea, HFC-245fa, HFC-32, HFC-365mfc)만 수록되어 있고 SF6·NF3·HFC-23 행은 없음. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-010",
+        "indicatorId": "A-010_emissions_co2_co2eq",
+        "sourceFileDecoded": "A-010_GHG 배출량[CO₂, CH₄, N₂O, F-gas].xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a8662d9267c1|Gg",
+      "dimensionLabels": {
+        "category": "CO2",
+        "detail": "CO2 질량 기준 배출량(LULUCF 제외)"
+      },
+      "dimensions": {
+        "category": "CO2",
+        "detail": "CO2 질량 기준 배출량(LULUCF 제외)"
+      },
+      "displayLabel": "가스별 배출량 · CO2 — CO2 질량 기준 배출량(LULUCF 제외)",
+      "indicatorId": "A-010_emissions_co2_mass",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a8662d9267c1",
+        "labelKo": "가스별 배출량",
+        "unit": "Gg",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a8662d9267c1|Gg|category=CO2|detail=CO2 질량 기준 배출량(LULUCF 제외)|A-010_emissions_co2_mass",
+      "sourceCaveat": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [단위 확인] 검토의견 3번에 대한 확인 결과 — raw 4개 파일 모두 셀 A5에 \"Unit: Gg\"라고만 적혀 있고 각 파일의 Compound는 CO2/CH4/N2O 및 F-gas 화종명이므로, 원자료는 CO2 환산값이 아니라 각 가스의 질량(Gg)임. \"F-gas 원자료는 이미 CO2 환산값\"이라는 종전 전제는 사실과 다름. [결측 처리] 검토의견 2번에 대한 확인 결과 — F-gas 1990~2015년 값은 0이 아니며 결측도 아님(예: 1990년 HFC-134a 0.001202051 Gg, HFC-152a 0.000272132 Gg). 질량(Gg)을 GWP 미적용 상태로 반올림하면 0으로 보일 뿐임. [정합성] 검토의견 1번·4번에 대한 확인 결과 — GWP-100 AR5(CH4 28, N2O 265, F-gas 화종별)로 환산한 4개 가스 합계 2024년 값은 582.697 Mt로 A-012 총량 584.258 Mt보다 1.561 Mt 작음. 잔차는 전부 IPCC 1.B(연료 채굴·수송 누출) 부문에 있으며, EDGAR가 이 부문 CH4에는 GWP 30을, 그 외에는 28을 적용하기 때문임(원문 대조로 확인). 1.B에 30을 적용하면 차이가 0이 됨. GWP 계수는 raw에 명시되어 있지 않아 A-011의 GWP_100_AR5_CH4/N2O 행과 질량을 나누어 역산했으며 이를 산출방식에 기재함. [시계열] F-gas 계열만 1990년부터인 것은(검토의견 5번) EDGAR F-gas 데이터셋 자체가 1990~2024년을 대상으로 하기 때문이며 결측이 아님. [화종] 베트남은 25개 화종 중 10종(C2F6, CF4, HFC-125, HFC-134a, HFC-143a, HFC-152a, HFC-227ea, HFC-245fa, HFC-32, HFC-365mfc)만 수록되어 있고 SF6·NF3·HFC-23 행은 없음. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "가스별 배출량 · CO2 — CO2 질량 기준 배출량(LULUCF 제외)",
+      "sourceLabelEn": "CO2 emissions (mass basis, excluding LULUCF)",
+      "sourceNote": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [단위 확인] 검토의견 3번에 대한 확인 결과 — raw 4개 파일 모두 셀 A5에 \"Unit: Gg\"라고만 적혀 있고 각 파일의 Compound는 CO2/CH4/N2O 및 F-gas 화종명이므로, 원자료는 CO2 환산값이 아니라 각 가스의 질량(Gg)임. \"F-gas 원자료는 이미 CO2 환산값\"이라는 종전 전제는 사실과 다름. [결측 처리] 검토의견 2번에 대한 확인 결과 — F-gas 1990~2015년 값은 0이 아니며 결측도 아님(예: 1990년 HFC-134a 0.001202051 Gg, HFC-152a 0.000272132 Gg). 질량(Gg)을 GWP 미적용 상태로 반올림하면 0으로 보일 뿐임. [정합성] 검토의견 1번·4번에 대한 확인 결과 — GWP-100 AR5(CH4 28, N2O 265, F-gas 화종별)로 환산한 4개 가스 합계 2024년 값은 582.697 Mt로 A-012 총량 584.258 Mt보다 1.561 Mt 작음. 잔차는 전부 IPCC 1.B(연료 채굴·수송 누출) 부문에 있으며, EDGAR가 이 부문 CH4에는 GWP 30을, 그 외에는 28을 적용하기 때문임(원문 대조로 확인). 1.B에 30을 적용하면 차이가 0이 됨. GWP 계수는 raw에 명시되어 있지 않아 A-011의 GWP_100_AR5_CH4/N2O 행과 질량을 나누어 역산했으며 이를 산출방식에 기재함. [시계열] F-gas 계열만 1990년부터인 것은(검토의견 5번) EDGAR F-gas 데이터셋 자체가 1990~2024년을 대상으로 하기 때문이며 결측이 아님. [화종] 베트남은 25개 화종 중 10종(C2F6, CF4, HFC-125, HFC-134a, HFC-143a, HFC-152a, HFC-227ea, HFC-245fa, HFC-32, HFC-365mfc)만 수록되어 있고 SF6·NF3·HFC-23 행은 없음. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-010",
+        "indicatorId": "A-010_emissions_co2_mass",
+        "sourceFileDecoded": "A-010_GHG 배출량[CO₂, CH₄, N₂O, F-gas].xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-165d8811fba3|Mt CO2eq",
+      "dimensionLabels": {
+        "category": "F-gas(CO2 환산)",
+        "detail": "GWP-100 AR5 적용 CO2 환산 배출량"
+      },
+      "dimensions": {
+        "category": "F-gas(CO2 환산)",
+        "detail": "GWP-100 AR5 적용 CO2 환산 배출량"
+      },
+      "displayLabel": "가스별 배출량 · F-gas(CO2 환산) — GWP-100 AR5 적용 CO2 환산 배출량",
+      "indicatorId": "A-010_emissions_fgas_co2eq",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-165d8811fba3",
+        "labelKo": "가스별 배출량",
+        "unit": "Mt CO2eq",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-165d8811fba3|Mt CO2eq|category=F-gas(CO2 환산)|detail=GWP-100 AR5 적용 CO2 환산 배출량|A-010_emissions_fgas_co2eq",
+      "sourceCaveat": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [단위 확인] 검토의견 3번에 대한 확인 결과 — raw 4개 파일 모두 셀 A5에 \"Unit: Gg\"라고만 적혀 있고 각 파일의 Compound는 CO2/CH4/N2O 및 F-gas 화종명이므로, 원자료는 CO2 환산값이 아니라 각 가스의 질량(Gg)임. \"F-gas 원자료는 이미 CO2 환산값\"이라는 종전 전제는 사실과 다름. [결측 처리] 검토의견 2번에 대한 확인 결과 — F-gas 1990~2015년 값은 0이 아니며 결측도 아님(예: 1990년 HFC-134a 0.001202051 Gg, HFC-152a 0.000272132 Gg). 질량(Gg)을 GWP 미적용 상태로 반올림하면 0으로 보일 뿐임. [정합성] 검토의견 1번·4번에 대한 확인 결과 — GWP-100 AR5(CH4 28, N2O 265, F-gas 화종별)로 환산한 4개 가스 합계 2024년 값은 582.697 Mt로 A-012 총량 584.258 Mt보다 1.561 Mt 작음. 잔차는 전부 IPCC 1.B(연료 채굴·수송 누출) 부문에 있으며, EDGAR가 이 부문 CH4에는 GWP 30을, 그 외에는 28을 적용하기 때문임(원문 대조로 확인). 1.B에 30을 적용하면 차이가 0이 됨. GWP 계수는 raw에 명시되어 있지 않아 A-011의 GWP_100_AR5_CH4/N2O 행과 질량을 나누어 역산했으며 이를 산출방식에 기재함. [시계열] F-gas 계열만 1990년부터인 것은(검토의견 5번) EDGAR F-gas 데이터셋 자체가 1990~2024년을 대상으로 하기 때문이며 결측이 아님. [화종] 베트남은 25개 화종 중 10종(C2F6, CF4, HFC-125, HFC-134a, HFC-143a, HFC-152a, HFC-227ea, HFC-245fa, HFC-32, HFC-365mfc)만 수록되어 있고 SF6·NF3·HFC-23 행은 없음. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "가스별 배출량 · F-gas(CO2 환산) — GWP-100 AR5 적용 CO2 환산 배출량",
+      "sourceLabelEn": "F-gas emissions in CO2-equivalent (GWP-100, AR5)",
+      "sourceNote": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [단위 확인] 검토의견 3번에 대한 확인 결과 — raw 4개 파일 모두 셀 A5에 \"Unit: Gg\"라고만 적혀 있고 각 파일의 Compound는 CO2/CH4/N2O 및 F-gas 화종명이므로, 원자료는 CO2 환산값이 아니라 각 가스의 질량(Gg)임. \"F-gas 원자료는 이미 CO2 환산값\"이라는 종전 전제는 사실과 다름. [결측 처리] 검토의견 2번에 대한 확인 결과 — F-gas 1990~2015년 값은 0이 아니며 결측도 아님(예: 1990년 HFC-134a 0.001202051 Gg, HFC-152a 0.000272132 Gg). 질량(Gg)을 GWP 미적용 상태로 반올림하면 0으로 보일 뿐임. [정합성] 검토의견 1번·4번에 대한 확인 결과 — GWP-100 AR5(CH4 28, N2O 265, F-gas 화종별)로 환산한 4개 가스 합계 2024년 값은 582.697 Mt로 A-012 총량 584.258 Mt보다 1.561 Mt 작음. 잔차는 전부 IPCC 1.B(연료 채굴·수송 누출) 부문에 있으며, EDGAR가 이 부문 CH4에는 GWP 30을, 그 외에는 28을 적용하기 때문임(원문 대조로 확인). 1.B에 30을 적용하면 차이가 0이 됨. GWP 계수는 raw에 명시되어 있지 않아 A-011의 GWP_100_AR5_CH4/N2O 행과 질량을 나누어 역산했으며 이를 산출방식에 기재함. [시계열] F-gas 계열만 1990년부터인 것은(검토의견 5번) EDGAR F-gas 데이터셋 자체가 1990~2024년을 대상으로 하기 때문이며 결측이 아님. [화종] 베트남은 25개 화종 중 10종(C2F6, CF4, HFC-125, HFC-134a, HFC-143a, HFC-152a, HFC-227ea, HFC-245fa, HFC-32, HFC-365mfc)만 수록되어 있고 SF6·NF3·HFC-23 행은 없음. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-010",
+        "indicatorId": "A-010_emissions_fgas_co2eq",
+        "sourceFileDecoded": "A-010_GHG 배출량[CO₂, CH₄, N₂O, F-gas].xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a8662d9267c1|Gg",
+      "dimensionLabels": {
+        "category": "F-gas",
+        "detail": "불소계 온실가스 10개 화종 질량 합계"
+      },
+      "dimensions": {
+        "category": "F-gas",
+        "detail": "불소계 온실가스 10개 화종 질량 합계"
+      },
+      "displayLabel": "가스별 배출량 · F-gas — 불소계 온실가스 10개 화종 질량 합계",
+      "indicatorId": "A-010_emissions_fgas_mass",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a8662d9267c1",
+        "labelKo": "가스별 배출량",
+        "unit": "Gg",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a8662d9267c1|Gg|category=F-gas|detail=불소계 온실가스 10개 화종 질량 합계|A-010_emissions_fgas_mass",
+      "sourceCaveat": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [단위 확인] 검토의견 3번에 대한 확인 결과 — raw 4개 파일 모두 셀 A5에 \"Unit: Gg\"라고만 적혀 있고 각 파일의 Compound는 CO2/CH4/N2O 및 F-gas 화종명이므로, 원자료는 CO2 환산값이 아니라 각 가스의 질량(Gg)임. \"F-gas 원자료는 이미 CO2 환산값\"이라는 종전 전제는 사실과 다름. [결측 처리] 검토의견 2번에 대한 확인 결과 — F-gas 1990~2015년 값은 0이 아니며 결측도 아님(예: 1990년 HFC-134a 0.001202051 Gg, HFC-152a 0.000272132 Gg). 질량(Gg)을 GWP 미적용 상태로 반올림하면 0으로 보일 뿐임. [정합성] 검토의견 1번·4번에 대한 확인 결과 — GWP-100 AR5(CH4 28, N2O 265, F-gas 화종별)로 환산한 4개 가스 합계 2024년 값은 582.697 Mt로 A-012 총량 584.258 Mt보다 1.561 Mt 작음. 잔차는 전부 IPCC 1.B(연료 채굴·수송 누출) 부문에 있으며, EDGAR가 이 부문 CH4에는 GWP 30을, 그 외에는 28을 적용하기 때문임(원문 대조로 확인). 1.B에 30을 적용하면 차이가 0이 됨. GWP 계수는 raw에 명시되어 있지 않아 A-011의 GWP_100_AR5_CH4/N2O 행과 질량을 나누어 역산했으며 이를 산출방식에 기재함. [시계열] F-gas 계열만 1990년부터인 것은(검토의견 5번) EDGAR F-gas 데이터셋 자체가 1990~2024년을 대상으로 하기 때문이며 결측이 아님. [화종] 베트남은 25개 화종 중 10종(C2F6, CF4, HFC-125, HFC-134a, HFC-143a, HFC-152a, HFC-227ea, HFC-245fa, HFC-32, HFC-365mfc)만 수록되어 있고 SF6·NF3·HFC-23 행은 없음. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "가스별 배출량 · F-gas — 불소계 온실가스 10개 화종 질량 합계",
+      "sourceLabelEn": "F-gas emissions (sum of 10 reported species, mass basis)",
+      "sourceNote": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [단위 확인] 검토의견 3번에 대한 확인 결과 — raw 4개 파일 모두 셀 A5에 \"Unit: Gg\"라고만 적혀 있고 각 파일의 Compound는 CO2/CH4/N2O 및 F-gas 화종명이므로, 원자료는 CO2 환산값이 아니라 각 가스의 질량(Gg)임. \"F-gas 원자료는 이미 CO2 환산값\"이라는 종전 전제는 사실과 다름. [결측 처리] 검토의견 2번에 대한 확인 결과 — F-gas 1990~2015년 값은 0이 아니며 결측도 아님(예: 1990년 HFC-134a 0.001202051 Gg, HFC-152a 0.000272132 Gg). 질량(Gg)을 GWP 미적용 상태로 반올림하면 0으로 보일 뿐임. [정합성] 검토의견 1번·4번에 대한 확인 결과 — GWP-100 AR5(CH4 28, N2O 265, F-gas 화종별)로 환산한 4개 가스 합계 2024년 값은 582.697 Mt로 A-012 총량 584.258 Mt보다 1.561 Mt 작음. 잔차는 전부 IPCC 1.B(연료 채굴·수송 누출) 부문에 있으며, EDGAR가 이 부문 CH4에는 GWP 30을, 그 외에는 28을 적용하기 때문임(원문 대조로 확인). 1.B에 30을 적용하면 차이가 0이 됨. GWP 계수는 raw에 명시되어 있지 않아 A-011의 GWP_100_AR5_CH4/N2O 행과 질량을 나누어 역산했으며 이를 산출방식에 기재함. [시계열] F-gas 계열만 1990년부터인 것은(검토의견 5번) EDGAR F-gas 데이터셋 자체가 1990~2024년을 대상으로 하기 때문이며 결측이 아님. [화종] 베트남은 25개 화종 중 10종(C2F6, CF4, HFC-125, HFC-134a, HFC-143a, HFC-152a, HFC-227ea, HFC-245fa, HFC-32, HFC-365mfc)만 수록되어 있고 SF6·NF3·HFC-23 행은 없음. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-010",
+        "indicatorId": "A-010_emissions_fgas_mass",
+        "sourceFileDecoded": "A-010_GHG 배출량[CO₂, CH₄, N₂O, F-gas].xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-165d8811fba3|Mt CO2eq",
+      "dimensionLabels": {
+        "category": "N2O(CO2 환산)",
+        "detail": "GWP-100 AR5 적용 CO2 환산 배출량"
+      },
+      "dimensions": {
+        "category": "N2O(CO2 환산)",
+        "detail": "GWP-100 AR5 적용 CO2 환산 배출량"
+      },
+      "displayLabel": "가스별 배출량 · N2O(CO2 환산) — GWP-100 AR5 적용 CO2 환산 배출량",
+      "indicatorId": "A-010_emissions_n2o_co2eq",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-165d8811fba3",
+        "labelKo": "가스별 배출량",
+        "unit": "Mt CO2eq",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-165d8811fba3|Mt CO2eq|category=N2O(CO2 환산)|detail=GWP-100 AR5 적용 CO2 환산 배출량|A-010_emissions_n2o_co2eq",
+      "sourceCaveat": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [단위 확인] 검토의견 3번에 대한 확인 결과 — raw 4개 파일 모두 셀 A5에 \"Unit: Gg\"라고만 적혀 있고 각 파일의 Compound는 CO2/CH4/N2O 및 F-gas 화종명이므로, 원자료는 CO2 환산값이 아니라 각 가스의 질량(Gg)임. \"F-gas 원자료는 이미 CO2 환산값\"이라는 종전 전제는 사실과 다름. [결측 처리] 검토의견 2번에 대한 확인 결과 — F-gas 1990~2015년 값은 0이 아니며 결측도 아님(예: 1990년 HFC-134a 0.001202051 Gg, HFC-152a 0.000272132 Gg). 질량(Gg)을 GWP 미적용 상태로 반올림하면 0으로 보일 뿐임. [정합성] 검토의견 1번·4번에 대한 확인 결과 — GWP-100 AR5(CH4 28, N2O 265, F-gas 화종별)로 환산한 4개 가스 합계 2024년 값은 582.697 Mt로 A-012 총량 584.258 Mt보다 1.561 Mt 작음. 잔차는 전부 IPCC 1.B(연료 채굴·수송 누출) 부문에 있으며, EDGAR가 이 부문 CH4에는 GWP 30을, 그 외에는 28을 적용하기 때문임(원문 대조로 확인). 1.B에 30을 적용하면 차이가 0이 됨. GWP 계수는 raw에 명시되어 있지 않아 A-011의 GWP_100_AR5_CH4/N2O 행과 질량을 나누어 역산했으며 이를 산출방식에 기재함. [시계열] F-gas 계열만 1990년부터인 것은(검토의견 5번) EDGAR F-gas 데이터셋 자체가 1990~2024년을 대상으로 하기 때문이며 결측이 아님. [화종] 베트남은 25개 화종 중 10종(C2F6, CF4, HFC-125, HFC-134a, HFC-143a, HFC-152a, HFC-227ea, HFC-245fa, HFC-32, HFC-365mfc)만 수록되어 있고 SF6·NF3·HFC-23 행은 없음. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "가스별 배출량 · N2O(CO2 환산) — GWP-100 AR5 적용 CO2 환산 배출량",
+      "sourceLabelEn": "N2O emissions in CO2-equivalent (GWP-100, AR5)",
+      "sourceNote": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [단위 확인] 검토의견 3번에 대한 확인 결과 — raw 4개 파일 모두 셀 A5에 \"Unit: Gg\"라고만 적혀 있고 각 파일의 Compound는 CO2/CH4/N2O 및 F-gas 화종명이므로, 원자료는 CO2 환산값이 아니라 각 가스의 질량(Gg)임. \"F-gas 원자료는 이미 CO2 환산값\"이라는 종전 전제는 사실과 다름. [결측 처리] 검토의견 2번에 대한 확인 결과 — F-gas 1990~2015년 값은 0이 아니며 결측도 아님(예: 1990년 HFC-134a 0.001202051 Gg, HFC-152a 0.000272132 Gg). 질량(Gg)을 GWP 미적용 상태로 반올림하면 0으로 보일 뿐임. [정합성] 검토의견 1번·4번에 대한 확인 결과 — GWP-100 AR5(CH4 28, N2O 265, F-gas 화종별)로 환산한 4개 가스 합계 2024년 값은 582.697 Mt로 A-012 총량 584.258 Mt보다 1.561 Mt 작음. 잔차는 전부 IPCC 1.B(연료 채굴·수송 누출) 부문에 있으며, EDGAR가 이 부문 CH4에는 GWP 30을, 그 외에는 28을 적용하기 때문임(원문 대조로 확인). 1.B에 30을 적용하면 차이가 0이 됨. GWP 계수는 raw에 명시되어 있지 않아 A-011의 GWP_100_AR5_CH4/N2O 행과 질량을 나누어 역산했으며 이를 산출방식에 기재함. [시계열] F-gas 계열만 1990년부터인 것은(검토의견 5번) EDGAR F-gas 데이터셋 자체가 1990~2024년을 대상으로 하기 때문이며 결측이 아님. [화종] 베트남은 25개 화종 중 10종(C2F6, CF4, HFC-125, HFC-134a, HFC-143a, HFC-152a, HFC-227ea, HFC-245fa, HFC-32, HFC-365mfc)만 수록되어 있고 SF6·NF3·HFC-23 행은 없음. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-010",
+        "indicatorId": "A-010_emissions_n2o_co2eq",
+        "sourceFileDecoded": "A-010_GHG 배출량[CO₂, CH₄, N₂O, F-gas].xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a8662d9267c1|Gg",
+      "dimensionLabels": {
+        "category": "N2O",
+        "detail": "N2O 질량 기준 배출량(LULUCF 제외)"
+      },
+      "dimensions": {
+        "category": "N2O",
+        "detail": "N2O 질량 기준 배출량(LULUCF 제외)"
+      },
+      "displayLabel": "가스별 배출량 · N2O — N2O 질량 기준 배출량(LULUCF 제외)",
+      "indicatorId": "A-010_emissions_n2o_mass",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a8662d9267c1",
+        "labelKo": "가스별 배출량",
+        "unit": "Gg",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a8662d9267c1|Gg|category=N2O|detail=N2O 질량 기준 배출량(LULUCF 제외)|A-010_emissions_n2o_mass",
+      "sourceCaveat": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [단위 확인] 검토의견 3번에 대한 확인 결과 — raw 4개 파일 모두 셀 A5에 \"Unit: Gg\"라고만 적혀 있고 각 파일의 Compound는 CO2/CH4/N2O 및 F-gas 화종명이므로, 원자료는 CO2 환산값이 아니라 각 가스의 질량(Gg)임. \"F-gas 원자료는 이미 CO2 환산값\"이라는 종전 전제는 사실과 다름. [결측 처리] 검토의견 2번에 대한 확인 결과 — F-gas 1990~2015년 값은 0이 아니며 결측도 아님(예: 1990년 HFC-134a 0.001202051 Gg, HFC-152a 0.000272132 Gg). 질량(Gg)을 GWP 미적용 상태로 반올림하면 0으로 보일 뿐임. [정합성] 검토의견 1번·4번에 대한 확인 결과 — GWP-100 AR5(CH4 28, N2O 265, F-gas 화종별)로 환산한 4개 가스 합계 2024년 값은 582.697 Mt로 A-012 총량 584.258 Mt보다 1.561 Mt 작음. 잔차는 전부 IPCC 1.B(연료 채굴·수송 누출) 부문에 있으며, EDGAR가 이 부문 CH4에는 GWP 30을, 그 외에는 28을 적용하기 때문임(원문 대조로 확인). 1.B에 30을 적용하면 차이가 0이 됨. GWP 계수는 raw에 명시되어 있지 않아 A-011의 GWP_100_AR5_CH4/N2O 행과 질량을 나누어 역산했으며 이를 산출방식에 기재함. [시계열] F-gas 계열만 1990년부터인 것은(검토의견 5번) EDGAR F-gas 데이터셋 자체가 1990~2024년을 대상으로 하기 때문이며 결측이 아님. [화종] 베트남은 25개 화종 중 10종(C2F6, CF4, HFC-125, HFC-134a, HFC-143a, HFC-152a, HFC-227ea, HFC-245fa, HFC-32, HFC-365mfc)만 수록되어 있고 SF6·NF3·HFC-23 행은 없음. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "가스별 배출량 · N2O — N2O 질량 기준 배출량(LULUCF 제외)",
+      "sourceLabelEn": "N2O emissions (mass basis, excluding LULUCF)",
+      "sourceNote": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [단위 확인] 검토의견 3번에 대한 확인 결과 — raw 4개 파일 모두 셀 A5에 \"Unit: Gg\"라고만 적혀 있고 각 파일의 Compound는 CO2/CH4/N2O 및 F-gas 화종명이므로, 원자료는 CO2 환산값이 아니라 각 가스의 질량(Gg)임. \"F-gas 원자료는 이미 CO2 환산값\"이라는 종전 전제는 사실과 다름. [결측 처리] 검토의견 2번에 대한 확인 결과 — F-gas 1990~2015년 값은 0이 아니며 결측도 아님(예: 1990년 HFC-134a 0.001202051 Gg, HFC-152a 0.000272132 Gg). 질량(Gg)을 GWP 미적용 상태로 반올림하면 0으로 보일 뿐임. [정합성] 검토의견 1번·4번에 대한 확인 결과 — GWP-100 AR5(CH4 28, N2O 265, F-gas 화종별)로 환산한 4개 가스 합계 2024년 값은 582.697 Mt로 A-012 총량 584.258 Mt보다 1.561 Mt 작음. 잔차는 전부 IPCC 1.B(연료 채굴·수송 누출) 부문에 있으며, EDGAR가 이 부문 CH4에는 GWP 30을, 그 외에는 28을 적용하기 때문임(원문 대조로 확인). 1.B에 30을 적용하면 차이가 0이 됨. GWP 계수는 raw에 명시되어 있지 않아 A-011의 GWP_100_AR5_CH4/N2O 행과 질량을 나누어 역산했으며 이를 산출방식에 기재함. [시계열] F-gas 계열만 1990년부터인 것은(검토의견 5번) EDGAR F-gas 데이터셋 자체가 1990~2024년을 대상으로 하기 때문이며 결측이 아님. [화종] 베트남은 25개 화종 중 10종(C2F6, CF4, HFC-125, HFC-134a, HFC-143a, HFC-152a, HFC-227ea, HFC-245fa, HFC-32, HFC-365mfc)만 수록되어 있고 SF6·NF3·HFC-23 행은 없음. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-010",
+        "indicatorId": "A-010_emissions_n2o_mass",
+        "sourceFileDecoded": "A-010_GHG 배출량[CO₂, CH₄, N₂O, F-gas].xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 4,
+      "key": "measure-a8662d9267c1",
+      "labelKo": "가스별 배출량",
+      "recordCount": 200,
+      "unit": "Gg",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 4,
+      "key": "measure-165d8811fba3",
+      "labelKo": "가스별 배출량",
+      "recordCount": 200,
+      "unit": "Mt CO2eq",
+      "unitFamily": "emissions"
+    }
+  ],
+  "observationCount": 400,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

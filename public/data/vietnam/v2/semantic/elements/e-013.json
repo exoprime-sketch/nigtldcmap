@@ -1,0 +1,206 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 1,
+      "values": [
+        "원격모니터링 유무)"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2026"
+      ]
+    }
+  ],
+  "elementId": "E-013",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 5,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-1bdcc1cd9551|유무(Y/N)",
+      "dimensionLabels": {
+        "category": "원격모니터링 유무)"
+      },
+      "dimensions": {
+        "category": "원격모니터링 유무)"
+      },
+      "displayLabel": "A/S 인프라(서비스센터·원격모니터링 유무)",
+      "indicatorId": "E-013_after_sales_infra",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1bdcc1cd9551",
+        "labelKo": "A/S 인프라(서비스센터",
+        "unit": "유무(Y/N)",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-1bdcc1cd9551|유무(Y/N)|category=원격모니터링 유무)|E-013_after_sales_infra",
+      "sourceCaveat": null,
+      "sourceLabel": "A/S 인프라(서비스센터·원격모니터링 유무)",
+      "sourceLabelEn": "After-sales infrastructure (service centre / remote monitoring)",
+      "sourceNote": "값 전량 미확보(M07): 공개 국제 DB 부재로 문헌 확보 불가, 현장 실사·사업자 인터뷰 대상. 출처기관·URL·라이선스·수집일·담당자 등 메타 미확인(M06).",
+      "sourceProvenance": {
+        "elementId": "E-013",
+        "indicatorId": "E-013_after_sales_infra",
+        "sourceFileDecoded": "E-013_운영,유지보수 역량.xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-c49aa6c6a067|유무(Y/N)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "과거 유사시설 O&M 실적",
+      "indicatorId": "E-013_om_track_record",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-c49aa6c6a067",
+        "labelKo": "과거 유사시설 O&M 실적",
+        "unit": "유무(Y/N)",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-c49aa6c6a067|유무(Y/N)||E-013_om_track_record",
+      "sourceCaveat": null,
+      "sourceLabel": "과거 유사시설 O&M 실적",
+      "sourceLabelEn": "Track record of O&M for comparable facilities",
+      "sourceNote": "값 전량 미확보(M07): 공개 국제 DB 부재로 문헌 확보 불가, 현장 실사·사업자 인터뷰 대상. 출처기관·URL·라이선스·수집일·담당자 등 메타 미확인(M06).",
+      "sourceProvenance": {
+        "elementId": "E-013",
+        "indicatorId": "E-013_om_track_record",
+        "sourceFileDecoded": "E-013_운영,유지보수 역량.xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-949b0d27450c|구분(국내생산/수입의존)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "부품 조달 가능성(국내생산/수입의존)",
+      "indicatorId": "E-013_parts_procurement",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-949b0d27450c",
+        "labelKo": "부품 조달 가능성(국내생산/수입의존)",
+        "unit": "구분(국내생산/수입의존)",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-949b0d27450c|구분(국내생산/수입의존)||E-013_parts_procurement",
+      "sourceCaveat": null,
+      "sourceLabel": "부품 조달 가능성(국내생산/수입의존)",
+      "sourceLabelEn": "Spare parts procurement (domestic production / import dependence)",
+      "sourceNote": "값 전량 미확보(M07): 공개 국제 DB 부재로 문헌 확보 불가, 현장 실사·사업자 인터뷰 대상. 출처기관·URL·라이선스·수집일·담당자 등 메타 미확인(M06).",
+      "sourceProvenance": {
+        "elementId": "E-013",
+        "indicatorId": "E-013_parts_procurement",
+        "sourceFileDecoded": "E-013_운영,유지보수 역량.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-145eed542474|등급",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "예방정비 체계 수준(등급)",
+      "indicatorId": "E-013_preventive_maintenance",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-145eed542474",
+        "labelKo": "예방정비 체계 수준(등급)",
+        "unit": "등급",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-145eed542474|등급||E-013_preventive_maintenance",
+      "sourceCaveat": null,
+      "sourceLabel": "예방정비 체계 수준(등급)",
+      "sourceLabelEn": "Preventive maintenance system level (grade)",
+      "sourceNote": "값 전량 미확보(M07): 공개 국제 DB 부재로 문헌 확보 불가, 현장 실사·사업자 인터뷰 대상. 출처기관·URL·라이선스·수집일·담당자 등 메타 미확인(M06).",
+      "sourceProvenance": {
+        "elementId": "E-013",
+        "indicatorId": "E-013_preventive_maintenance",
+        "sourceFileDecoded": "E-013_운영,유지보수 역량.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-17b1f5f47581|등급",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "숙련 기술인력 가용성(등급)",
+      "indicatorId": "E-013_skilled_workforce_availability",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-17b1f5f47581",
+        "labelKo": "숙련 기술인력 가용성(등급)",
+        "unit": "등급",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-17b1f5f47581|등급||E-013_skilled_workforce_availability",
+      "sourceCaveat": null,
+      "sourceLabel": "숙련 기술인력 가용성(등급)",
+      "sourceLabelEn": "Availability of skilled technical workforce (grade)",
+      "sourceNote": "값 전량 미확보(M07): 공개 국제 DB 부재로 문헌 확보 불가, 현장 실사·사업자 인터뷰 대상. 출처기관·URL·라이선스·수집일·담당자 등 메타 미확인(M06).",
+      "sourceProvenance": {
+        "elementId": "E-013",
+        "indicatorId": "E-013_skilled_workforce_availability",
+        "sourceFileDecoded": "E-013_운영,유지보수 역량.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-1bdcc1cd9551",
+      "labelKo": "A/S 인프라(서비스센터",
+      "recordCount": 1,
+      "unit": "유무(Y/N)",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-c49aa6c6a067",
+      "labelKo": "과거 유사시설 O&M 실적",
+      "recordCount": 1,
+      "unit": "유무(Y/N)",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-949b0d27450c",
+      "labelKo": "부품 조달 가능성(국내생산/수입의존)",
+      "recordCount": 1,
+      "unit": "구분(국내생산/수입의존)",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-17b1f5f47581",
+      "labelKo": "숙련 기술인력 가용성(등급)",
+      "recordCount": 1,
+      "unit": "등급",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-145eed542474",
+      "labelKo": "예방정비 체계 수준(등급)",
+      "recordCount": 1,
+      "unit": "등급",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 5,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

@@ -1,0 +1,289 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 5,
+      "values": [
+        "임팩트 투자 현황 · Dat Bike (전기 오토바이 제조)",
+        "임팩트 투자 현황 · 베트남 기후기술 연간 투자액",
+        "임팩트 투자 현황 · 베트남 기후기술 전체 누적 투자액",
+        "임팩트 투자 현황 · 베트남 활동 임팩트 투자자 수",
+        "임팩트 투자 현황 · 에너지전환 부문 투자액"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 1,
+      "values": [
+        "개별 거래와 구분되는 집계 지표"
+      ]
+    },
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "사업·재원"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "1,3,8,15,17,18,19,32,34"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 2,
+      "values": [
+        "2024",
+        "2026"
+      ]
+    }
+  ],
+  "elementId": "D-024",
+  "entityCount": 7,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 6,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-698a3100e366|USD",
+      "dimensionLabels": {
+        "category": "임팩트 투자 현황 · 베트남 기후기술 연간 투자액",
+        "detail": "개별 거래와 구분되는 집계 지표",
+        "technology": "1 · 3 · 8 · 15 · 17 · 18 · 19 · 32 · 34"
+      },
+      "dimensions": {
+        "category": "임팩트 투자 현황 · 베트남 기후기술 연간 투자액",
+        "detail": "개별 거래와 구분되는 집계 지표",
+        "technology": "1,3,8,15,17,18,19,32,34"
+      },
+      "displayLabel": "VC·임팩트 투자 현황 · 베트남 기후기술 연간 투자액 — 개별 거래와 구분되는 집계 지표",
+      "indicatorId": "D-024_aggregate_climate_tech_annual",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-698a3100e366",
+        "labelKo": "VC",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-698a3100e366|USD|category=임팩트 투자 현황 · 베트남 기후기술 연간 투자액|detail=개별 거래와 구분되는 집계 지표|technology=1,3,8,15,17,18,19,32,34|D-024_aggregate_climate_tech_annual",
+      "sourceCaveat": "[검토지적 반영 ①] 개별 투자거래와 기업 누적 투자액·시장 전체 집계값이 혼재되어 있던 것을 분리하여, 1.2 레코드형 시트에는 개별 투자거래 7건만 수록하고 누적·집계값 5건은 1.1 측정값 시트의 별도 지표로 분리함. [검토지적 반영 ②] 투자자명이 원천에 공개되지 않은 건은 \"(미확인)\"이 아닌 결측 표기로 처리함. [출처 성격] VC 투자 정보는 정부 공표 통계가 아니라 업계 매체·투자정보 서비스(DealStreetAsia, Tracxn 등)와 연구보고서(New Energy Nexus·RMIT)에 근거하므로 전수 목록이 아니며 신뢰등급은 「학술·연구」임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "VC·임팩트 투자 현황 · 베트남 기후기술 연간 투자액 — 개별 거래와 구분되는 집계 지표",
+      "sourceLabelEn": "VC and impact investment — Viet Nam climate tech, annual investment",
+      "sourceNote": "[검토지적 반영 ①] 개별 투자거래와 기업 누적 투자액·시장 전체 집계값이 혼재되어 있던 것을 분리하여, 1.2 레코드형 시트에는 개별 투자거래 7건만 수록하고 누적·집계값 5건은 1.1 측정값 시트의 별도 지표로 분리함. [검토지적 반영 ②] 투자자명이 원천에 공개되지 않은 건은 \"(미확인)\"이 아닌 결측 표기로 처리함. [출처 성격] VC 투자 정보는 정부 공표 통계가 아니라 업계 매체·투자정보 서비스(DealStreetAsia, Tracxn 등)와 연구보고서(New Energy Nexus·RMIT)에 근거하므로 전수 목록이 아니며 신뢰등급은 「학술·연구」임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-024",
+        "indicatorId": "D-024_aggregate_climate_tech_annual",
+        "sourceFileDecoded": "D-024_VC·임팩트 투자 현황.xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-698a3100e366|USD",
+      "dimensionLabels": {
+        "category": "임팩트 투자 현황 · 베트남 기후기술 전체 누적 투자액",
+        "detail": "개별 거래와 구분되는 집계 지표",
+        "technology": "1 · 3 · 8 · 15 · 17 · 18 · 19 · 32 · 34"
+      },
+      "dimensions": {
+        "category": "임팩트 투자 현황 · 베트남 기후기술 전체 누적 투자액",
+        "detail": "개별 거래와 구분되는 집계 지표",
+        "technology": "1,3,8,15,17,18,19,32,34"
+      },
+      "displayLabel": "VC·임팩트 투자 현황 · 베트남 기후기술 전체 누적 투자액 — 개별 거래와 구분되는 집계 지표",
+      "indicatorId": "D-024_aggregate_climate_tech_total",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-698a3100e366",
+        "labelKo": "VC",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-698a3100e366|USD|category=임팩트 투자 현황 · 베트남 기후기술 전체 누적 투자액|detail=개별 거래와 구분되는 집계 지표|technology=1,3,8,15,17,18,19,32,34|D-024_aggregate_climate_tech_total",
+      "sourceCaveat": "[검토지적 반영 ①] 개별 투자거래와 기업 누적 투자액·시장 전체 집계값이 혼재되어 있던 것을 분리하여, 1.2 레코드형 시트에는 개별 투자거래 7건만 수록하고 누적·집계값 5건은 1.1 측정값 시트의 별도 지표로 분리함. [검토지적 반영 ②] 투자자명이 원천에 공개되지 않은 건은 \"(미확인)\"이 아닌 결측 표기로 처리함. [출처 성격] VC 투자 정보는 정부 공표 통계가 아니라 업계 매체·투자정보 서비스(DealStreetAsia, Tracxn 등)와 연구보고서(New Energy Nexus·RMIT)에 근거하므로 전수 목록이 아니며 신뢰등급은 「학술·연구」임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "VC·임팩트 투자 현황 · 베트남 기후기술 전체 누적 투자액 — 개별 거래와 구분되는 집계 지표",
+      "sourceLabelEn": "VC and impact investment — Viet Nam climate tech, cumulative investment",
+      "sourceNote": "[검토지적 반영 ①] 개별 투자거래와 기업 누적 투자액·시장 전체 집계값이 혼재되어 있던 것을 분리하여, 1.2 레코드형 시트에는 개별 투자거래 7건만 수록하고 누적·집계값 5건은 1.1 측정값 시트의 별도 지표로 분리함. [검토지적 반영 ②] 투자자명이 원천에 공개되지 않은 건은 \"(미확인)\"이 아닌 결측 표기로 처리함. [출처 성격] VC 투자 정보는 정부 공표 통계가 아니라 업계 매체·투자정보 서비스(DealStreetAsia, Tracxn 등)와 연구보고서(New Energy Nexus·RMIT)에 근거하므로 전수 목록이 아니며 신뢰등급은 「학술·연구」임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-024",
+        "indicatorId": "D-024_aggregate_climate_tech_total",
+        "sourceFileDecoded": "D-024_VC·임팩트 투자 현황.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-698a3100e366|USD",
+      "dimensionLabels": {
+        "category": "임팩트 투자 현황 · Dat Bike (전기 오토바이 제조)",
+        "detail": "개별 거래와 구분되는 집계 지표",
+        "technology": "1 · 3 · 8 · 15 · 17 · 18 · 19 · 32 · 34"
+      },
+      "dimensions": {
+        "category": "임팩트 투자 현황 · Dat Bike (전기 오토바이 제조)",
+        "detail": "개별 거래와 구분되는 집계 지표",
+        "technology": "1,3,8,15,17,18,19,32,34"
+      },
+      "displayLabel": "VC·임팩트 투자 현황 · Dat Bike (전기 오토바이 제조) — 개별 거래와 구분되는 집계 지표",
+      "indicatorId": "D-024_aggregate_dat_bike",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-698a3100e366",
+        "labelKo": "VC",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-698a3100e366|USD|category=임팩트 투자 현황 · Dat Bike (전기 오토바이 제조)|detail=개별 거래와 구분되는 집계 지표|technology=1,3,8,15,17,18,19,32,34|D-024_aggregate_dat_bike",
+      "sourceCaveat": "[검토지적 반영 ①] 개별 투자거래와 기업 누적 투자액·시장 전체 집계값이 혼재되어 있던 것을 분리하여, 1.2 레코드형 시트에는 개별 투자거래 7건만 수록하고 누적·집계값 5건은 1.1 측정값 시트의 별도 지표로 분리함. [검토지적 반영 ②] 투자자명이 원천에 공개되지 않은 건은 \"(미확인)\"이 아닌 결측 표기로 처리함. [출처 성격] VC 투자 정보는 정부 공표 통계가 아니라 업계 매체·투자정보 서비스(DealStreetAsia, Tracxn 등)와 연구보고서(New Energy Nexus·RMIT)에 근거하므로 전수 목록이 아니며 신뢰등급은 「학술·연구」임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "VC·임팩트 투자 현황 · Dat Bike (전기 오토바이 제조) — 개별 거래와 구분되는 집계 지표",
+      "sourceLabelEn": "VC and impact investment — Dat Bike (electric motorbike manufacturer)",
+      "sourceNote": "[검토지적 반영 ①] 개별 투자거래와 기업 누적 투자액·시장 전체 집계값이 혼재되어 있던 것을 분리하여, 1.2 레코드형 시트에는 개별 투자거래 7건만 수록하고 누적·집계값 5건은 1.1 측정값 시트의 별도 지표로 분리함. [검토지적 반영 ②] 투자자명이 원천에 공개되지 않은 건은 \"(미확인)\"이 아닌 결측 표기로 처리함. [출처 성격] VC 투자 정보는 정부 공표 통계가 아니라 업계 매체·투자정보 서비스(DealStreetAsia, Tracxn 등)와 연구보고서(New Energy Nexus·RMIT)에 근거하므로 전수 목록이 아니며 신뢰등급은 「학술·연구」임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-024",
+        "indicatorId": "D-024_aggregate_dat_bike",
+        "sourceFileDecoded": "D-024_VC·임팩트 투자 현황.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-698a3100e366|USD",
+      "dimensionLabels": {
+        "category": "임팩트 투자 현황 · 에너지전환 부문 투자액",
+        "detail": "개별 거래와 구분되는 집계 지표",
+        "technology": "1 · 3 · 8 · 15 · 17 · 18 · 19 · 32 · 34"
+      },
+      "dimensions": {
+        "category": "임팩트 투자 현황 · 에너지전환 부문 투자액",
+        "detail": "개별 거래와 구분되는 집계 지표",
+        "technology": "1,3,8,15,17,18,19,32,34"
+      },
+      "displayLabel": "VC·임팩트 투자 현황 · 에너지전환 부문 투자액 — 개별 거래와 구분되는 집계 지표",
+      "indicatorId": "D-024_aggregate_energy_transition_sector",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-698a3100e366",
+        "labelKo": "VC",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-698a3100e366|USD|category=임팩트 투자 현황 · 에너지전환 부문 투자액|detail=개별 거래와 구분되는 집계 지표|technology=1,3,8,15,17,18,19,32,34|D-024_aggregate_energy_transition_sector",
+      "sourceCaveat": "[검토지적 반영 ①] 개별 투자거래와 기업 누적 투자액·시장 전체 집계값이 혼재되어 있던 것을 분리하여, 1.2 레코드형 시트에는 개별 투자거래 7건만 수록하고 누적·집계값 5건은 1.1 측정값 시트의 별도 지표로 분리함. [검토지적 반영 ②] 투자자명이 원천에 공개되지 않은 건은 \"(미확인)\"이 아닌 결측 표기로 처리함. [출처 성격] VC 투자 정보는 정부 공표 통계가 아니라 업계 매체·투자정보 서비스(DealStreetAsia, Tracxn 등)와 연구보고서(New Energy Nexus·RMIT)에 근거하므로 전수 목록이 아니며 신뢰등급은 「학술·연구」임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "VC·임팩트 투자 현황 · 에너지전환 부문 투자액 — 개별 거래와 구분되는 집계 지표",
+      "sourceLabelEn": "VC and impact investment — Energy transition sector investment",
+      "sourceNote": "[검토지적 반영 ①] 개별 투자거래와 기업 누적 투자액·시장 전체 집계값이 혼재되어 있던 것을 분리하여, 1.2 레코드형 시트에는 개별 투자거래 7건만 수록하고 누적·집계값 5건은 1.1 측정값 시트의 별도 지표로 분리함. [검토지적 반영 ②] 투자자명이 원천에 공개되지 않은 건은 \"(미확인)\"이 아닌 결측 표기로 처리함. [출처 성격] VC 투자 정보는 정부 공표 통계가 아니라 업계 매체·투자정보 서비스(DealStreetAsia, Tracxn 등)와 연구보고서(New Energy Nexus·RMIT)에 근거하므로 전수 목록이 아니며 신뢰등급은 「학술·연구」임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-024",
+        "indicatorId": "D-024_aggregate_energy_transition_sector",
+        "sourceFileDecoded": "D-024_VC·임팩트 투자 현황.xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f1d71b510edb|개사",
+      "dimensionLabels": {
+        "category": "임팩트 투자 현황 · 베트남 활동 임팩트 투자자 수",
+        "detail": "개별 거래와 구분되는 집계 지표",
+        "technology": "1 · 3 · 8 · 15 · 17 · 18 · 19 · 32 · 34"
+      },
+      "dimensions": {
+        "category": "임팩트 투자 현황 · 베트남 활동 임팩트 투자자 수",
+        "detail": "개별 거래와 구분되는 집계 지표",
+        "technology": "1,3,8,15,17,18,19,32,34"
+      },
+      "displayLabel": "VC·임팩트 투자 현황 · 베트남 활동 임팩트 투자자 수 — 개별 거래와 구분되는 집계 지표",
+      "indicatorId": "D-024_aggregate_impact_investor_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f1d71b510edb",
+        "labelKo": "VC",
+        "unit": "개사",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-f1d71b510edb|개사|category=임팩트 투자 현황 · 베트남 활동 임팩트 투자자 수|detail=개별 거래와 구분되는 집계 지표|technology=1,3,8,15,17,18,19,32,34|D-024_aggregate_impact_investor_count",
+      "sourceCaveat": "[검토지적 반영 ①] 개별 투자거래와 기업 누적 투자액·시장 전체 집계값이 혼재되어 있던 것을 분리하여, 1.2 레코드형 시트에는 개별 투자거래 7건만 수록하고 누적·집계값 5건은 1.1 측정값 시트의 별도 지표로 분리함. [검토지적 반영 ②] 투자자명이 원천에 공개되지 않은 건은 \"(미확인)\"이 아닌 결측 표기로 처리함. [출처 성격] VC 투자 정보는 정부 공표 통계가 아니라 업계 매체·투자정보 서비스(DealStreetAsia, Tracxn 등)와 연구보고서(New Energy Nexus·RMIT)에 근거하므로 전수 목록이 아니며 신뢰등급은 「학술·연구」임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "VC·임팩트 투자 현황 · 베트남 활동 임팩트 투자자 수 — 개별 거래와 구분되는 집계 지표",
+      "sourceLabelEn": "VC and impact investment — Number of impact investors active in Viet Nam",
+      "sourceNote": "해당 집계값이 원천에 비공개임.",
+      "sourceProvenance": {
+        "elementId": "D-024",
+        "indicatorId": "D-024_aggregate_impact_investor_count",
+        "sourceFileDecoded": "D-024_VC·임팩트 투자 현황.xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-cb62efeb5ad3|건",
+      "dimensionLabels": {
+        "category": "임팩트 투자 현황 · 개별 투자거래 레지스트리",
+        "detail": "베트남 기후기술",
+        "technology": "1 · 3 · 8 · 15 · 17 · 18 · 19 · 32 · 34"
+      },
+      "dimensions": {
+        "category": "임팩트 투자 현황 · 개별 투자거래 레지스트리",
+        "detail": "베트남 기후기술",
+        "technology": "1,3,8,15,17,18,19,32,34"
+      },
+      "displayLabel": "VC·임팩트 투자 현황 · 개별 투자거래 레지스트리 — 베트남 기후기술",
+      "indicatorId": "D-024_vc_impact_investment_deal_registry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-cb62efeb5ad3",
+        "labelKo": "VC",
+        "unit": "건",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-cb62efeb5ad3|건|category=임팩트 투자 현황 · 개별 투자거래 레지스트리|detail=베트남 기후기술|technology=1,3,8,15,17,18,19,32,34|D-024_vc_impact_investment_deal_registry",
+      "sourceCaveat": "[검토지적 반영 ①] 개별 투자거래와 기업 누적 투자액·시장 전체 집계값이 혼재되어 있던 것을 분리하여, 1.2 레코드형 시트에는 개별 투자거래 7건만 수록하고 누적·집계값 5건은 1.1 측정값 시트의 별도 지표로 분리함. [검토지적 반영 ②] 투자자명이 원천에 공개되지 않은 건은 \"(미확인)\"이 아닌 결측 표기로 처리함. [출처 성격] VC 투자 정보는 정부 공표 통계가 아니라 업계 매체·투자정보 서비스(DealStreetAsia, Tracxn 등)와 연구보고서(New Energy Nexus·RMIT)에 근거하므로 전수 목록이 아니며 신뢰등급은 「학술·연구」임. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "VC·임팩트 투자 현황 · 개별 투자거래 레지스트리 — 베트남 기후기술",
+      "sourceLabelEn": "Registry of VC and impact investment deals in Viet Nam climate tech",
+      "sourceNote": "일부 거래의 투자자명·투자금액이 투자자 요청으로 비공개임(원천에 미게재).",
+      "sourceProvenance": {
+        "elementId": "D-024",
+        "indicatorId": "D-024_vc_impact_investment_deal_registry",
+        "sourceFileDecoded": "D-024_VC·임팩트 투자 현황.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 4,
+      "key": "measure-698a3100e366",
+      "labelKo": "VC",
+      "recordCount": 4,
+      "unit": "USD",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-f1d71b510edb",
+      "labelKo": "VC",
+      "recordCount": 1,
+      "unit": "개사",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-cb62efeb5ad3",
+      "labelKo": "VC",
+      "recordCount": 0,
+      "unit": "건",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 5,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

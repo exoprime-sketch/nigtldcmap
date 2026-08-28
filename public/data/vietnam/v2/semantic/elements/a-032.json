@@ -1,0 +1,218 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 4,
+      "values": [
+        "수입액",
+        "수출 중 중간재 국내부가가치 비중",
+        "수출액",
+        "재수출된 중간재 수입 비중"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 4,
+      "values": [
+        "Trade in Value Added: Domestic value added in gross exports of intermediate products",
+        "Trade in Value Added: Re-exported intermediate imports",
+        "UNCTAD 가공단계 분류 중간재 수입 금액",
+        "UNCTAD 가공단계 분류 중간재 수출 금액"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 29,
+      "values": [
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023"
+      ]
+    }
+  ],
+  "elementId": "A-032",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 4,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-2183e07a67f3|%",
+      "dimensionLabels": {
+        "category": "수출 중 중간재 국내부가가치 비중",
+        "detail": "Trade in Value Added: Domestic value added in gross exports of intermediate products"
+      },
+      "dimensions": {
+        "category": "수출 중 중간재 국내부가가치 비중",
+        "detail": "Trade in Value Added: Domestic value added in gross exports of intermediate products"
+      },
+      "displayLabel": "중간재 교역 · 수출 중 중간재 국내부가가치 비중 — Trade in Value Added: Domestic value added in gross exports of intermediate products",
+      "indicatorId": "A-032_intermediate_dva_share_in_exports",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2183e07a67f3",
+        "labelKo": "중간재 교역",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-2183e07a67f3|%|category=수출 중 중간재 국내부가가치 비중|detail=Trade in Value Added: Domestic value added in gross exports of intermediate products|A-032_intermediate_dva_share_in_exports",
+      "sourceCaveat": "[원천 확인] 검토의견 2번에 대응 — raw(OECD_TIVA.xls, World Bank Data360 재배포본)에는 베트남 24개 지표 × 1995~2020년 624개 행이 있으나 전부 비율(RATIO) 지표이며 금액(USD) 계열이 하나도 없음. 따라서 본 요소가 요구하는 \"중간재 교역 규모\"(금액)는 raw로 충족할 수 없어 별도 지표로 두고 M06으로 표기함. [참고자료 분리] 검토의견 2번에 따라 TiVA 부가가치(GVC) 지표 21개는 본 데이터셋에서 제외하고, 중간재와 직접 관련된 2개 지표(수출 중 중간재의 국내 부가가치 비중, 재수출된 중간재 수입 비중)만 수록함. 제외한 지표는 필요 시 별도 참고자료로 관리할 것. [무정보 지표 제외] OECD_TIVA_EXGR_INT_DVA_PSH는 전 연도 100.0으로 고정되어 있어(파트너·산업 차원이 _Z=해당없음으로 내려받아졌기 때문) 정보량이 없어 제외함. [시점] 원천 최신 연도가 2020년이어서 최근 5개년 값이 없음. [라이선스] OECD 이용약관 기준으로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "중간재 교역 · 수출 중 중간재 국내부가가치 비중 — Trade in Value Added: Domestic value added in gross exports of intermediate products",
+      "sourceLabelEn": "Domestic value added in gross exports of intermediates (% of gross exports)",
+      "sourceNote": "[원천 확인] 검토의견 2번에 대응 — raw(OECD_TIVA.xls, World Bank Data360 재배포본)에는 베트남 24개 지표 × 1995~2020년 624개 행이 있으나 전부 비율(RATIO) 지표이며 금액(USD) 계열이 하나도 없음. 따라서 본 요소가 요구하는 \"중간재 교역 규모\"(금액)는 raw로 충족할 수 없어 별도 지표로 두고 M06으로 표기함. [참고자료 분리] 검토의견 2번에 따라 TiVA 부가가치(GVC) 지표 21개는 본 데이터셋에서 제외하고, 중간재와 직접 관련된 2개 지표(수출 중 중간재의 국내 부가가치 비중, 재수출된 중간재 수입 비중)만 수록함. 제외한 지표는 필요 시 별도 참고자료로 관리할 것. [무정보 지표 제외] OECD_TIVA_EXGR_INT_DVA_PSH는 전 연도 100.0으로 고정되어 있어(파트너·산업 차원이 _Z=해당없음으로 내려받아졌기 때문) 정보량이 없어 제외함. [시점] 원천 최신 연도가 2020년이어서 최근 5개년 값이 없음. [라이선스] OECD 이용약관 기준으로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-032",
+        "indicatorId": "A-032_intermediate_dva_share_in_exports",
+        "sourceFileDecoded": "A-032_중간재 교역 규모.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-c1b0bd519c31|천 USD",
+      "dimensionLabels": {
+        "category": "수출액",
+        "detail": "UNCTAD 가공단계 분류 중간재 수출 금액"
+      },
+      "dimensions": {
+        "category": "수출액",
+        "detail": "UNCTAD 가공단계 분류 중간재 수출 금액"
+      },
+      "displayLabel": "중간재 교역 규모 · 수출액 — UNCTAD 가공단계 분류 중간재 수출 금액",
+      "indicatorId": "A-032_intermediate_goods_export_value",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-c1b0bd519c31",
+        "labelKo": "중간재 교역 규모",
+        "unit": "천 USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-c1b0bd519c31|천 USD|category=수출액|detail=UNCTAD 가공단계 분류 중간재 수출 금액|A-032_intermediate_goods_export_value",
+      "sourceCaveat": "[원천 확인] 검토의견 2번에 대응 — raw(OECD_TIVA.xls, World Bank Data360 재배포본)에는 베트남 24개 지표 × 1995~2020년 624개 행이 있으나 전부 비율(RATIO) 지표이며 금액(USD) 계열이 하나도 없음. 따라서 본 요소가 요구하는 \"중간재 교역 규모\"(금액)는 raw로 충족할 수 없어 별도 지표로 두고 M06으로 표기함. [참고자료 분리] 검토의견 2번에 따라 TiVA 부가가치(GVC) 지표 21개는 본 데이터셋에서 제외하고, 중간재와 직접 관련된 2개 지표(수출 중 중간재의 국내 부가가치 비중, 재수출된 중간재 수입 비중)만 수록함. 제외한 지표는 필요 시 별도 참고자료로 관리할 것. [무정보 지표 제외] OECD_TIVA_EXGR_INT_DVA_PSH는 전 연도 100.0으로 고정되어 있어(파트너·산업 차원이 _Z=해당없음으로 내려받아졌기 때문) 정보량이 없어 제외함. [시점] 원천 최신 연도가 2020년이어서 최근 5개년 값이 없음. [라이선스] OECD 이용약관 기준으로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠. [금액 계열 확보] 검토의견 3번 대응 — raw(OECD TiVA 재배포본)에는 비율 지표만 있어 \"중간재 교역 규모\"(금액)를 충족할 수 없으므로, 세계은행 WITS(World Integrated Trade Solution) API에서 UNCTAD 가공단계 분류(Stages of Processing) 중 중간재(UNCTAD-SoP2) 수출입 금액을 2000~2023년 전 연도 확보하여 수록함. 원자료는 UN Comtrade이며 WITS가 UNCTAD SoP 분류로 집계한 값임. [단위] WITS 원문 단위는 US$ Thousand(천 달러)이며 본 데이터셋은 원문 단위를 그대로 유지함. [정합 참고] 2020년 수출 33,909,422.8 천달러(≒339억 달러)·수입 71,588,779.9 천달러(≒716억 달러)로 무역수지가 큰 폭 적자인데, 이는 베트남이 중간재를 수입하여 완제품으로 가공·수출하는 구조이기 때문이며 TiVA의 재수출 중간재 비중 상승(29.6%→60.8%)과 방향이 일치함. [시점] WITS 최신 연도는 2023년으로 raw TiVA(2020년)보다 3개년 최신임. [라이선스] WITS/UN Comtrade는 출처 표기 조건의 공개 이용약관이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "중간재 교역 규모 · 수출액 — UNCTAD 가공단계 분류 중간재 수출 금액",
+      "sourceLabelEn": "Intermediate goods exports (UNCTAD Stages of Processing)",
+      "sourceNote": "[원천 확인] 검토의견 2번에 대응 — raw(OECD_TIVA.xls, World Bank Data360 재배포본)에는 베트남 24개 지표 × 1995~2020년 624개 행이 있으나 전부 비율(RATIO) 지표이며 금액(USD) 계열이 하나도 없음. 따라서 본 요소가 요구하는 \"중간재 교역 규모\"(금액)는 raw로 충족할 수 없어 별도 지표로 두고 M06으로 표기함. [참고자료 분리] 검토의견 2번에 따라 TiVA 부가가치(GVC) 지표 21개는 본 데이터셋에서 제외하고, 중간재와 직접 관련된 2개 지표(수출 중 중간재의 국내 부가가치 비중, 재수출된 중간재 수입 비중)만 수록함. 제외한 지표는 필요 시 별도 참고자료로 관리할 것. [무정보 지표 제외] OECD_TIVA_EXGR_INT_DVA_PSH는 전 연도 100.0으로 고정되어 있어(파트너·산업 차원이 _Z=해당없음으로 내려받아졌기 때문) 정보량이 없어 제외함. [시점] 원천 최신 연도가 2020년이어서 최근 5개년 값이 없음. [라이선스] OECD 이용약관 기준으로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠. [금액 계열 확보] 검토의견 3번 대응 — raw(OECD TiVA 재배포본)에는 비율 지표만 있어 \"중간재 교역 규모\"(금액)를 충족할 수 없으므로, 세계은행 WITS(World Integrated Trade Solution) API에서 UNCTAD 가공단계 분류(Stages of Processing) 중 중간재(UNCTAD-SoP2) 수출입 금액을 2000~2023년 전 연도 확보하여 수록함. 원자료는 UN Comtrade이며 WITS가 UNCTAD SoP 분류로 집계한 값임. [단위] WITS 원문 단위는 US$ Thousand(천 달러)이며 본 데이터셋은 원문 단위를 그대로 유지함. [정합 참고] 2020년 수출 33,909,422.8 천달러(≒339억 달러)·수입 71,588,779.9 천달러(≒716억 달러)로 무역수지가 큰 폭 적자인데, 이는 베트남이 중간재를 수입하여 완제품으로 가공·수출하는 구조이기 때문이며 TiVA의 재수출 중간재 비중 상승(29.6%→60.8%)과 방향이 일치함. [시점] WITS 최신 연도는 2023년으로 raw TiVA(2020년)보다 3개년 최신임. [라이선스] WITS/UN Comtrade는 출처 표기 조건의 공개 이용약관이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "A-032",
+        "indicatorId": "A-032_intermediate_goods_export_value",
+        "sourceFileDecoded": "A-032_중간재 교역 규모.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-c1b0bd519c31|천 USD",
+      "dimensionLabels": {
+        "category": "수입액",
+        "detail": "UNCTAD 가공단계 분류 중간재 수입 금액"
+      },
+      "dimensions": {
+        "category": "수입액",
+        "detail": "UNCTAD 가공단계 분류 중간재 수입 금액"
+      },
+      "displayLabel": "중간재 교역 규모 · 수입액 — UNCTAD 가공단계 분류 중간재 수입 금액",
+      "indicatorId": "A-032_intermediate_goods_import_value",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-c1b0bd519c31",
+        "labelKo": "중간재 교역 규모",
+        "unit": "천 USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-c1b0bd519c31|천 USD|category=수입액|detail=UNCTAD 가공단계 분류 중간재 수입 금액|A-032_intermediate_goods_import_value",
+      "sourceCaveat": "[원천 확인] 검토의견 2번에 대응 — raw(OECD_TIVA.xls, World Bank Data360 재배포본)에는 베트남 24개 지표 × 1995~2020년 624개 행이 있으나 전부 비율(RATIO) 지표이며 금액(USD) 계열이 하나도 없음. 따라서 본 요소가 요구하는 \"중간재 교역 규모\"(금액)는 raw로 충족할 수 없어 별도 지표로 두고 M06으로 표기함. [참고자료 분리] 검토의견 2번에 따라 TiVA 부가가치(GVC) 지표 21개는 본 데이터셋에서 제외하고, 중간재와 직접 관련된 2개 지표(수출 중 중간재의 국내 부가가치 비중, 재수출된 중간재 수입 비중)만 수록함. 제외한 지표는 필요 시 별도 참고자료로 관리할 것. [무정보 지표 제외] OECD_TIVA_EXGR_INT_DVA_PSH는 전 연도 100.0으로 고정되어 있어(파트너·산업 차원이 _Z=해당없음으로 내려받아졌기 때문) 정보량이 없어 제외함. [시점] 원천 최신 연도가 2020년이어서 최근 5개년 값이 없음. [라이선스] OECD 이용약관 기준으로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠. [금액 계열 확보] 검토의견 3번 대응 — raw(OECD TiVA 재배포본)에는 비율 지표만 있어 \"중간재 교역 규모\"(금액)를 충족할 수 없으므로, 세계은행 WITS(World Integrated Trade Solution) API에서 UNCTAD 가공단계 분류(Stages of Processing) 중 중간재(UNCTAD-SoP2) 수출입 금액을 2000~2023년 전 연도 확보하여 수록함. 원자료는 UN Comtrade이며 WITS가 UNCTAD SoP 분류로 집계한 값임. [단위] WITS 원문 단위는 US$ Thousand(천 달러)이며 본 데이터셋은 원문 단위를 그대로 유지함. [정합 참고] 2020년 수출 33,909,422.8 천달러(≒339억 달러)·수입 71,588,779.9 천달러(≒716억 달러)로 무역수지가 큰 폭 적자인데, 이는 베트남이 중간재를 수입하여 완제품으로 가공·수출하는 구조이기 때문이며 TiVA의 재수출 중간재 비중 상승(29.6%→60.8%)과 방향이 일치함. [시점] WITS 최신 연도는 2023년으로 raw TiVA(2020년)보다 3개년 최신임. [라이선스] WITS/UN Comtrade는 출처 표기 조건의 공개 이용약관이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "중간재 교역 규모 · 수입액 — UNCTAD 가공단계 분류 중간재 수입 금액",
+      "sourceLabelEn": "Intermediate goods imports (UNCTAD Stages of Processing)",
+      "sourceNote": "[원천 확인] 검토의견 2번에 대응 — raw(OECD_TIVA.xls, World Bank Data360 재배포본)에는 베트남 24개 지표 × 1995~2020년 624개 행이 있으나 전부 비율(RATIO) 지표이며 금액(USD) 계열이 하나도 없음. 따라서 본 요소가 요구하는 \"중간재 교역 규모\"(금액)는 raw로 충족할 수 없어 별도 지표로 두고 M06으로 표기함. [참고자료 분리] 검토의견 2번에 따라 TiVA 부가가치(GVC) 지표 21개는 본 데이터셋에서 제외하고, 중간재와 직접 관련된 2개 지표(수출 중 중간재의 국내 부가가치 비중, 재수출된 중간재 수입 비중)만 수록함. 제외한 지표는 필요 시 별도 참고자료로 관리할 것. [무정보 지표 제외] OECD_TIVA_EXGR_INT_DVA_PSH는 전 연도 100.0으로 고정되어 있어(파트너·산업 차원이 _Z=해당없음으로 내려받아졌기 때문) 정보량이 없어 제외함. [시점] 원천 최신 연도가 2020년이어서 최근 5개년 값이 없음. [라이선스] OECD 이용약관 기준으로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠. [금액 계열 확보] 검토의견 3번 대응 — raw(OECD TiVA 재배포본)에는 비율 지표만 있어 \"중간재 교역 규모\"(금액)를 충족할 수 없으므로, 세계은행 WITS(World Integrated Trade Solution) API에서 UNCTAD 가공단계 분류(Stages of Processing) 중 중간재(UNCTAD-SoP2) 수출입 금액을 2000~2023년 전 연도 확보하여 수록함. 원자료는 UN Comtrade이며 WITS가 UNCTAD SoP 분류로 집계한 값임. [단위] WITS 원문 단위는 US$ Thousand(천 달러)이며 본 데이터셋은 원문 단위를 그대로 유지함. [정합 참고] 2020년 수출 33,909,422.8 천달러(≒339억 달러)·수입 71,588,779.9 천달러(≒716억 달러)로 무역수지가 큰 폭 적자인데, 이는 베트남이 중간재를 수입하여 완제품으로 가공·수출하는 구조이기 때문이며 TiVA의 재수출 중간재 비중 상승(29.6%→60.8%)과 방향이 일치함. [시점] WITS 최신 연도는 2023년으로 raw TiVA(2020년)보다 3개년 최신임. [라이선스] WITS/UN Comtrade는 출처 표기 조건의 공개 이용약관이므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "A-032",
+        "indicatorId": "A-032_intermediate_goods_import_value",
+        "sourceFileDecoded": "A-032_중간재 교역 규모.xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2183e07a67f3|%",
+      "dimensionLabels": {
+        "category": "재수출된 중간재 수입 비중",
+        "detail": "Trade in Value Added: Re-exported intermediate imports"
+      },
+      "dimensions": {
+        "category": "재수출된 중간재 수입 비중",
+        "detail": "Trade in Value Added: Re-exported intermediate imports"
+      },
+      "displayLabel": "중간재 교역 · 재수출된 중간재 수입 비중 — Trade in Value Added: Re-exported intermediate imports",
+      "indicatorId": "A-032_reexported_intermediate_import_share",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2183e07a67f3",
+        "labelKo": "중간재 교역",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-2183e07a67f3|%|category=재수출된 중간재 수입 비중|detail=Trade in Value Added: Re-exported intermediate imports|A-032_reexported_intermediate_import_share",
+      "sourceCaveat": "[원천 확인] 검토의견 2번에 대응 — raw(OECD_TIVA.xls, World Bank Data360 재배포본)에는 베트남 24개 지표 × 1995~2020년 624개 행이 있으나 전부 비율(RATIO) 지표이며 금액(USD) 계열이 하나도 없음. 따라서 본 요소가 요구하는 \"중간재 교역 규모\"(금액)는 raw로 충족할 수 없어 별도 지표로 두고 M06으로 표기함. [참고자료 분리] 검토의견 2번에 따라 TiVA 부가가치(GVC) 지표 21개는 본 데이터셋에서 제외하고, 중간재와 직접 관련된 2개 지표(수출 중 중간재의 국내 부가가치 비중, 재수출된 중간재 수입 비중)만 수록함. 제외한 지표는 필요 시 별도 참고자료로 관리할 것. [무정보 지표 제외] OECD_TIVA_EXGR_INT_DVA_PSH는 전 연도 100.0으로 고정되어 있어(파트너·산업 차원이 _Z=해당없음으로 내려받아졌기 때문) 정보량이 없어 제외함. [시점] 원천 최신 연도가 2020년이어서 최근 5개년 값이 없음. [라이선스] OECD 이용약관 기준으로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "중간재 교역 · 재수출된 중간재 수입 비중 — Trade in Value Added: Re-exported intermediate imports",
+      "sourceLabelEn": "Re-exported intermediate imports (% of intermediate imports)",
+      "sourceNote": "[원천 확인] 검토의견 2번에 대응 — raw(OECD_TIVA.xls, World Bank Data360 재배포본)에는 베트남 24개 지표 × 1995~2020년 624개 행이 있으나 전부 비율(RATIO) 지표이며 금액(USD) 계열이 하나도 없음. 따라서 본 요소가 요구하는 \"중간재 교역 규모\"(금액)는 raw로 충족할 수 없어 별도 지표로 두고 M06으로 표기함. [참고자료 분리] 검토의견 2번에 따라 TiVA 부가가치(GVC) 지표 21개는 본 데이터셋에서 제외하고, 중간재와 직접 관련된 2개 지표(수출 중 중간재의 국내 부가가치 비중, 재수출된 중간재 수입 비중)만 수록함. 제외한 지표는 필요 시 별도 참고자료로 관리할 것. [무정보 지표 제외] OECD_TIVA_EXGR_INT_DVA_PSH는 전 연도 100.0으로 고정되어 있어(파트너·산업 차원이 _Z=해당없음으로 내려받아졌기 때문) 정보량이 없어 제외함. [시점] 원천 최신 연도가 2020년이어서 최근 5개년 값이 없음. [라이선스] OECD 이용약관 기준으로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-032",
+        "indicatorId": "A-032_reexported_intermediate_import_share",
+        "sourceFileDecoded": "A-032_중간재 교역 규모.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 2,
+      "key": "measure-2183e07a67f3",
+      "labelKo": "중간재 교역",
+      "recordCount": 52,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-c1b0bd519c31",
+      "labelKo": "중간재 교역 규모",
+      "recordCount": 48,
+      "unit": "천 USD",
+      "unitFamily": "currency"
+    }
+  ],
+  "observationCount": 100,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

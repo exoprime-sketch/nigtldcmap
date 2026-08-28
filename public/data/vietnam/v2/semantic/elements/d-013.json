@@ -1,0 +1,742 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 21,
+      "values": [
+        "기초 서비스 · 자원 접근성",
+        "녹색 고용(Green Employment)",
+        "녹색 무역(Green Trade)",
+        "녹색 투자(Green Investment)",
+        "녹색 혁신(Green Innovation)",
+        "녹색경제 기회(GEO)",
+        "문화 · 사회적 가치",
+        "물 효율 · 지속가능성",
+        "물질 이용 효율",
+        "사회 보호(Social Protection)",
+        "사회 통합(Social Inclusion)",
+        "사회 형평(Social Equity)",
+        "생물다양성 · 생태계 보호",
+        "성 평등(Gender Balance)",
+        "에너지 효율 · 지속가능성",
+        "온실가스 감축",
+        "자연자본 보호(NCP)",
+        "종합지수",
+        "지속가능한 토지 이용",
+        "환경질(Environmental Quality)",
+        "효율 · 지속가능 자원이용(ESRU)"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 3,
+      "values": [
+        "부문(pillar) 점수",
+        "종합 점수",
+        "차원(dimension) 점수"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2024"
+      ]
+    }
+  ],
+  "elementId": "D-013",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 21,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "효율 · 지속가능 자원이용(ESRU)",
+        "detail": "차원(dimension) 점수"
+      },
+      "dimensions": {
+        "category": "효율 · 지속가능 자원이용(ESRU)",
+        "detail": "차원(dimension) 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 효율·지속가능 자원이용(ESRU) — 차원(dimension) 점수",
+      "indicatorId": "D-013_dimension_score_esru",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=효율 · 지속가능 자원이용(ESRU)|detail=차원(dimension) 점수|D-013_dimension_score_esru",
+      "sourceCaveat": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "GGGI Green Growth Index · 효율·지속가능 자원이용(ESRU) — 차원(dimension) 점수",
+      "sourceLabelEn": "Dimension score — Efficient and Sustainable Resource Use (ESRU)",
+      "sourceNote": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-013",
+        "indicatorId": "D-013_dimension_score_esru",
+        "sourceFileDecoded": "D-013_GGGI Green Growth Index(녹색성장지수).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "녹색경제 기회(GEO)",
+        "detail": "차원(dimension) 점수"
+      },
+      "dimensions": {
+        "category": "녹색경제 기회(GEO)",
+        "detail": "차원(dimension) 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 녹색경제 기회(GEO) — 차원(dimension) 점수",
+      "indicatorId": "D-013_dimension_score_geo",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=녹색경제 기회(GEO)|detail=차원(dimension) 점수|D-013_dimension_score_geo",
+      "sourceCaveat": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "GGGI Green Growth Index · 녹색경제 기회(GEO) — 차원(dimension) 점수",
+      "sourceLabelEn": "Dimension score — Green Economic Opportunities (GEO)",
+      "sourceNote": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-013",
+        "indicatorId": "D-013_dimension_score_geo",
+        "sourceFileDecoded": "D-013_GGGI Green Growth Index(녹색성장지수).xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "자연자본 보호(NCP)",
+        "detail": "차원(dimension) 점수"
+      },
+      "dimensions": {
+        "category": "자연자본 보호(NCP)",
+        "detail": "차원(dimension) 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 자연자본 보호(NCP) — 차원(dimension) 점수",
+      "indicatorId": "D-013_dimension_score_ncp",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=자연자본 보호(NCP)|detail=차원(dimension) 점수|D-013_dimension_score_ncp",
+      "sourceCaveat": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "GGGI Green Growth Index · 자연자본 보호(NCP) — 차원(dimension) 점수",
+      "sourceLabelEn": "Dimension score — Natural Capital Protection (NCP)",
+      "sourceNote": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-013",
+        "indicatorId": "D-013_dimension_score_ncp",
+        "sourceFileDecoded": "D-013_GGGI Green Growth Index(녹색성장지수).xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "사회 통합(Social Inclusion)",
+        "detail": "차원(dimension) 점수"
+      },
+      "dimensions": {
+        "category": "사회 통합(Social Inclusion)",
+        "detail": "차원(dimension) 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 사회 통합(Social Inclusion) — 차원(dimension) 점수",
+      "indicatorId": "D-013_dimension_score_si",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=사회 통합(Social Inclusion)|detail=차원(dimension) 점수|D-013_dimension_score_si",
+      "sourceCaveat": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "GGGI Green Growth Index · 사회 통합(Social Inclusion) — 차원(dimension) 점수",
+      "sourceLabelEn": "Dimension score — Social Inclusion (SI)",
+      "sourceNote": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-013",
+        "indicatorId": "D-013_dimension_score_si",
+        "sourceFileDecoded": "D-013_GGGI Green Growth Index(녹색성장지수).xlsx",
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "종합지수",
+        "detail": "종합 점수"
+      },
+      "dimensions": {
+        "category": "종합지수",
+        "detail": "종합 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 종합지수 — 종합 점수",
+      "indicatorId": "D-013_green_growth_index",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=종합지수|detail=종합 점수|D-013_green_growth_index",
+      "sourceCaveat": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "GGGI Green Growth Index · 종합지수 — 종합 점수",
+      "sourceLabelEn": "Green Growth Index (composite)",
+      "sourceNote": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-013",
+        "indicatorId": "D-013_green_growth_index",
+        "sourceFileDecoded": "D-013_GGGI Green Growth Index(녹색성장지수).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "기초 서비스 · 자원 접근성",
+        "detail": "부문(pillar) 점수"
+      },
+      "dimensions": {
+        "category": "기초 서비스 · 자원 접근성",
+        "detail": "부문(pillar) 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 기초 서비스·자원 접근성 — 부문(pillar) 점수",
+      "indicatorId": "D-013_pillar_score_access_to_basic_services",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=기초 서비스 · 자원 접근성|detail=부문(pillar) 점수|D-013_pillar_score_access_to_basic_services",
+      "sourceCaveat": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "GGGI Green Growth Index · 기초 서비스·자원 접근성 — 부문(pillar) 점수",
+      "sourceLabelEn": "Pillar score — Access to basic services and resources",
+      "sourceNote": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-013",
+        "indicatorId": "D-013_pillar_score_access_to_basic_services",
+        "sourceFileDecoded": "D-013_GGGI Green Growth Index(녹색성장지수).xlsx",
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "생물다양성 · 생태계 보호",
+        "detail": "부문(pillar) 점수"
+      },
+      "dimensions": {
+        "category": "생물다양성 · 생태계 보호",
+        "detail": "부문(pillar) 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 생물다양성·생태계 보호 — 부문(pillar) 점수",
+      "indicatorId": "D-013_pillar_score_biodiversity_ecosystem_protection",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=생물다양성 · 생태계 보호|detail=부문(pillar) 점수|D-013_pillar_score_biodiversity_ecosystem_protection",
+      "sourceCaveat": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "GGGI Green Growth Index · 생물다양성·생태계 보호 — 부문(pillar) 점수",
+      "sourceLabelEn": "Pillar score — Biodiversity and ecosystem protection",
+      "sourceNote": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-013",
+        "indicatorId": "D-013_pillar_score_biodiversity_ecosystem_protection",
+        "sourceFileDecoded": "D-013_GGGI Green Growth Index(녹색성장지수).xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "문화 · 사회적 가치",
+        "detail": "부문(pillar) 점수"
+      },
+      "dimensions": {
+        "category": "문화 · 사회적 가치",
+        "detail": "부문(pillar) 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 문화·사회적 가치 — 부문(pillar) 점수",
+      "indicatorId": "D-013_pillar_score_cultural_social_value",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=문화 · 사회적 가치|detail=부문(pillar) 점수|D-013_pillar_score_cultural_social_value",
+      "sourceCaveat": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "GGGI Green Growth Index · 문화·사회적 가치 — 부문(pillar) 점수",
+      "sourceLabelEn": "Pillar score — Cultural and social value",
+      "sourceNote": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-013",
+        "indicatorId": "D-013_pillar_score_cultural_social_value",
+        "sourceFileDecoded": "D-013_GGGI Green Growth Index(녹색성장지수).xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "에너지 효율 · 지속가능성",
+        "detail": "부문(pillar) 점수"
+      },
+      "dimensions": {
+        "category": "에너지 효율 · 지속가능성",
+        "detail": "부문(pillar) 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 에너지 효율·지속가능성 — 부문(pillar) 점수",
+      "indicatorId": "D-013_pillar_score_efficient_sustainable_energy",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=에너지 효율 · 지속가능성|detail=부문(pillar) 점수|D-013_pillar_score_efficient_sustainable_energy",
+      "sourceCaveat": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "GGGI Green Growth Index · 에너지 효율·지속가능성 — 부문(pillar) 점수",
+      "sourceLabelEn": "Pillar score — Efficient and sustainable energy",
+      "sourceNote": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-013",
+        "indicatorId": "D-013_pillar_score_efficient_sustainable_energy",
+        "sourceFileDecoded": "D-013_GGGI Green Growth Index(녹색성장지수).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "물 효율 · 지속가능성",
+        "detail": "부문(pillar) 점수"
+      },
+      "dimensions": {
+        "category": "물 효율 · 지속가능성",
+        "detail": "부문(pillar) 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 물 효율·지속가능성 — 부문(pillar) 점수",
+      "indicatorId": "D-013_pillar_score_efficient_sustainable_water",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=물 효율 · 지속가능성|detail=부문(pillar) 점수|D-013_pillar_score_efficient_sustainable_water",
+      "sourceCaveat": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "GGGI Green Growth Index · 물 효율·지속가능성 — 부문(pillar) 점수",
+      "sourceLabelEn": "Pillar score — Efficient and sustainable water use",
+      "sourceNote": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-013",
+        "indicatorId": "D-013_pillar_score_efficient_sustainable_water",
+        "sourceFileDecoded": "D-013_GGGI Green Growth Index(녹색성장지수).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "환경질(Environmental Quality)",
+        "detail": "부문(pillar) 점수"
+      },
+      "dimensions": {
+        "category": "환경질(Environmental Quality)",
+        "detail": "부문(pillar) 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 환경질(Environmental Quality) — 부문(pillar) 점수",
+      "indicatorId": "D-013_pillar_score_environmental_quality",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=환경질(Environmental Quality)|detail=부문(pillar) 점수|D-013_pillar_score_environmental_quality",
+      "sourceCaveat": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "GGGI Green Growth Index · 환경질(Environmental Quality) — 부문(pillar) 점수",
+      "sourceLabelEn": "Pillar score — Environmental quality",
+      "sourceNote": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-013",
+        "indicatorId": "D-013_pillar_score_environmental_quality",
+        "sourceFileDecoded": "D-013_GGGI Green Growth Index(녹색성장지수).xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "성 평등(Gender Balance)",
+        "detail": "부문(pillar) 점수"
+      },
+      "dimensions": {
+        "category": "성 평등(Gender Balance)",
+        "detail": "부문(pillar) 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 성 평등(Gender Balance) — 부문(pillar) 점수",
+      "indicatorId": "D-013_pillar_score_gender_balance",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=성 평등(Gender Balance)|detail=부문(pillar) 점수|D-013_pillar_score_gender_balance",
+      "sourceCaveat": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "GGGI Green Growth Index · 성 평등(Gender Balance) — 부문(pillar) 점수",
+      "sourceLabelEn": "Pillar score — Gender balance",
+      "sourceNote": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-013",
+        "indicatorId": "D-013_pillar_score_gender_balance",
+        "sourceFileDecoded": "D-013_GGGI Green Growth Index(녹색성장지수).xlsx",
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "온실가스 감축",
+        "detail": "부문(pillar) 점수"
+      },
+      "dimensions": {
+        "category": "온실가스 감축",
+        "detail": "부문(pillar) 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 온실가스 감축 — 부문(pillar) 점수",
+      "indicatorId": "D-013_pillar_score_ghg_emission_reduction",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=온실가스 감축|detail=부문(pillar) 점수|D-013_pillar_score_ghg_emission_reduction",
+      "sourceCaveat": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "GGGI Green Growth Index · 온실가스 감축 — 부문(pillar) 점수",
+      "sourceLabelEn": "Pillar score — Greenhouse gas emission reductions",
+      "sourceNote": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-013",
+        "indicatorId": "D-013_pillar_score_ghg_emission_reduction",
+        "sourceFileDecoded": "D-013_GGGI Green Growth Index(녹색성장지수).xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "녹색 고용(Green Employment)",
+        "detail": "부문(pillar) 점수"
+      },
+      "dimensions": {
+        "category": "녹색 고용(Green Employment)",
+        "detail": "부문(pillar) 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 녹색 고용(Green Employment) — 부문(pillar) 점수",
+      "indicatorId": "D-013_pillar_score_green_employment",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=녹색 고용(Green Employment)|detail=부문(pillar) 점수|D-013_pillar_score_green_employment",
+      "sourceCaveat": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "GGGI Green Growth Index · 녹색 고용(Green Employment) — 부문(pillar) 점수",
+      "sourceLabelEn": "Pillar score — Green employment",
+      "sourceNote": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-013",
+        "indicatorId": "D-013_pillar_score_green_employment",
+        "sourceFileDecoded": "D-013_GGGI Green Growth Index(녹색성장지수).xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "녹색 혁신(Green Innovation)",
+        "detail": "부문(pillar) 점수"
+      },
+      "dimensions": {
+        "category": "녹색 혁신(Green Innovation)",
+        "detail": "부문(pillar) 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 녹색 혁신(Green Innovation) — 부문(pillar) 점수",
+      "indicatorId": "D-013_pillar_score_green_innovation",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=녹색 혁신(Green Innovation)|detail=부문(pillar) 점수|D-013_pillar_score_green_innovation",
+      "sourceCaveat": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "GGGI Green Growth Index · 녹색 혁신(Green Innovation) — 부문(pillar) 점수",
+      "sourceLabelEn": "Pillar score — Green innovation",
+      "sourceNote": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-013",
+        "indicatorId": "D-013_pillar_score_green_innovation",
+        "sourceFileDecoded": "D-013_GGGI Green Growth Index(녹색성장지수).xlsx",
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "녹색 투자(Green Investment)",
+        "detail": "부문(pillar) 점수"
+      },
+      "dimensions": {
+        "category": "녹색 투자(Green Investment)",
+        "detail": "부문(pillar) 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 녹색 투자(Green Investment) — 부문(pillar) 점수",
+      "indicatorId": "D-013_pillar_score_green_investment",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=녹색 투자(Green Investment)|detail=부문(pillar) 점수|D-013_pillar_score_green_investment",
+      "sourceCaveat": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "GGGI Green Growth Index · 녹색 투자(Green Investment) — 부문(pillar) 점수",
+      "sourceLabelEn": "Pillar score — Green investment",
+      "sourceNote": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-013",
+        "indicatorId": "D-013_pillar_score_green_investment",
+        "sourceFileDecoded": "D-013_GGGI Green Growth Index(녹색성장지수).xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "녹색 무역(Green Trade)",
+        "detail": "부문(pillar) 점수"
+      },
+      "dimensions": {
+        "category": "녹색 무역(Green Trade)",
+        "detail": "부문(pillar) 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 녹색 무역(Green Trade) — 부문(pillar) 점수",
+      "indicatorId": "D-013_pillar_score_green_trade",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=녹색 무역(Green Trade)|detail=부문(pillar) 점수|D-013_pillar_score_green_trade",
+      "sourceCaveat": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "GGGI Green Growth Index · 녹색 무역(Green Trade) — 부문(pillar) 점수",
+      "sourceLabelEn": "Pillar score — Green trade",
+      "sourceNote": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-013",
+        "indicatorId": "D-013_pillar_score_green_trade",
+        "sourceFileDecoded": "D-013_GGGI Green Growth Index(녹색성장지수).xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "물질 이용 효율",
+        "detail": "부문(pillar) 점수"
+      },
+      "dimensions": {
+        "category": "물질 이용 효율",
+        "detail": "부문(pillar) 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 물질 이용 효율 — 부문(pillar) 점수",
+      "indicatorId": "D-013_pillar_score_material_use_efficiency",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=물질 이용 효율|detail=부문(pillar) 점수|D-013_pillar_score_material_use_efficiency",
+      "sourceCaveat": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "GGGI Green Growth Index · 물질 이용 효율 — 부문(pillar) 점수",
+      "sourceLabelEn": "Pillar score — Material use efficiency",
+      "sourceNote": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-013",
+        "indicatorId": "D-013_pillar_score_material_use_efficiency",
+        "sourceFileDecoded": "D-013_GGGI Green Growth Index(녹색성장지수).xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "사회 형평(Social Equity)",
+        "detail": "부문(pillar) 점수"
+      },
+      "dimensions": {
+        "category": "사회 형평(Social Equity)",
+        "detail": "부문(pillar) 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 사회 형평(Social Equity) — 부문(pillar) 점수",
+      "indicatorId": "D-013_pillar_score_social_equity",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=사회 형평(Social Equity)|detail=부문(pillar) 점수|D-013_pillar_score_social_equity",
+      "sourceCaveat": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "GGGI Green Growth Index · 사회 형평(Social Equity) — 부문(pillar) 점수",
+      "sourceLabelEn": "Pillar score — Social equity",
+      "sourceNote": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-013",
+        "indicatorId": "D-013_pillar_score_social_equity",
+        "sourceFileDecoded": "D-013_GGGI Green Growth Index(녹색성장지수).xlsx",
+        "sourceRow": 24,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "사회 보호(Social Protection)",
+        "detail": "부문(pillar) 점수"
+      },
+      "dimensions": {
+        "category": "사회 보호(Social Protection)",
+        "detail": "부문(pillar) 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 사회 보호(Social Protection) — 부문(pillar) 점수",
+      "indicatorId": "D-013_pillar_score_social_protection",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=사회 보호(Social Protection)|detail=부문(pillar) 점수|D-013_pillar_score_social_protection",
+      "sourceCaveat": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "GGGI Green Growth Index · 사회 보호(Social Protection) — 부문(pillar) 점수",
+      "sourceLabelEn": "Pillar score — Social protection",
+      "sourceNote": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-013",
+        "indicatorId": "D-013_pillar_score_social_protection",
+        "sourceFileDecoded": "D-013_GGGI Green Growth Index(녹색성장지수).xlsx",
+        "sourceRow": 25,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "지속가능한 토지 이용",
+        "detail": "부문(pillar) 점수"
+      },
+      "dimensions": {
+        "category": "지속가능한 토지 이용",
+        "detail": "부문(pillar) 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 지속가능한 토지 이용 — 부문(pillar) 점수",
+      "indicatorId": "D-013_pillar_score_sustainable_land_use",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=지속가능한 토지 이용|detail=부문(pillar) 점수|D-013_pillar_score_sustainable_land_use",
+      "sourceCaveat": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "GGGI Green Growth Index · 지속가능한 토지 이용 — 부문(pillar) 점수",
+      "sourceLabelEn": "Pillar score — Sustainable land use",
+      "sourceNote": "[대표값] 검토의견에 따라 종합지수 59.32점(D-013_green_growth_index)을 베트남 대표값으로 사용함. 4개 차원(dimension)과 16개 부문(pillar) 점수는 대표값을 구성하는 하위 지표로 별도 수록함. [정의·범위] 점수는 0~100 척도이며 값이 클수록 녹색성장 성과가 높음. 등급 Moderate, 아시아 9위. [비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠. [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-013",
+        "indicatorId": "D-013_pillar_score_sustainable_land_use",
+        "sourceFileDecoded": "D-013_GGGI Green Growth Index(녹색성장지수).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 21,
+      "key": "measure-36c8b59e695d",
+      "labelKo": "GGGI Green Growth Index",
+      "recordCount": 21,
+      "unit": "점",
+      "unitFamily": "score"
+    }
+  ],
+  "observationCount": 21,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

@@ -1,0 +1,971 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 3,
+      "values": [
+        "유기성 비중",
+        "전자 폐기물 발생량",
+        "폐기물 발전설비 용량(교차검증, EIA)"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 11,
+      "values": [
+        "기타",
+        "닭(산출 투입자료)",
+        "돼지(산출 투입자료)",
+        "매립(형식 미상)",
+        "물소(산출 투입자료)",
+        "미수거",
+        "소(산출 투입자료)",
+        "소각",
+        "위생매립(매립가스 회수설비 보유)",
+        "재활용",
+        "퇴비화"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 4,
+      "values": [
+        "8",
+        "8,14",
+        "8,15",
+        "15"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 29,
+      "values": [
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2030",
+        "2040",
+        "2050"
+      ]
+    }
+  ],
+  "elementId": "B-038",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 25,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-76bf52d804b4|Mt/yr",
+      "dimensionLabels": {
+        "technology": "8 · 14"
+      },
+      "dimensions": {
+        "technology": "8,14"
+      },
+      "displayLabel": "농업잔재 자원량",
+      "indicatorId": "B-038_agri_residue",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-76bf52d804b4",
+        "labelKo": "농업잔재 자원량",
+        "unit": "Mt/yr",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-76bf52d804b4|Mt/yr|technology=8,14|B-038_agri_residue",
+      "sourceCaveat": "종전 파일은 \"대규모(세계 5위 쌀 생산)\" 정성 표기였음 → 정량 산출 경로로 대체. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "농업잔재 자원량",
+      "sourceLabelEn": "Agricultural residue availability",
+      "sourceNote": "2025년: FAOSTAT 생산량 × 잔재계수 산출 미수행 — 절차 확정 후 진행",
+      "sourceProvenance": {
+        "elementId": "B-038",
+        "indicatorId": "B-038_agri_residue",
+        "sourceFileDecoded": "B-038_바이오매스 자원 가용량 (농업잔재／임업잔재／도시폐기물／축산폐기물).xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8643816ff83c|백만 kW",
+      "dimensionLabels": {
+        "category": "폐기물 발전설비 용량(교차검증, EIA)"
+      },
+      "dimensions": {
+        "category": "폐기물 발전설비 용량(교차검증, EIA)"
+      },
+      "displayLabel": "바이오매스·폐기물 발전설비 용량(교차검증, EIA)",
+      "indicatorId": "B-038_bioenergy_capacity_eia",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8643816ff83c",
+        "labelKo": "바이오매스",
+        "unit": "백만 kW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-8643816ff83c|백만 kW|category=폐기물 발전설비 용량(교차검증, EIA)|B-038_bioenergy_capacity_eia",
+      "sourceCaveat": "[교차검증용 신규 수록] 보유 [raw] EIA 벌크파일 미수록 계열. 2024년 0.456 백만 kW(= 456 MW)로, IRENA 계열의 계통연계 442.74 MW + 독립계통 13.0 MW = 455.74 MW와 거의 정확히 일치하여 두 원천이 상호 검증됨. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "바이오매스·폐기물 발전설비 용량(교차검증, EIA)",
+      "sourceLabelEn": "Biomass and waste electricity installed capacity (EIA)",
+      "sourceNote": "[교차검증용 신규 수록] 보유 [raw] EIA 벌크파일 미수록 계열. 2024년 0.456 백만 kW(= 456 MW)로, IRENA 계열의 계통연계 442.74 MW + 독립계통 13.0 MW = 455.74 MW와 거의 정확히 일치하여 두 원천이 상호 검증됨. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-038",
+        "indicatorId": "B-038_bioenergy_capacity_eia",
+        "sourceFileDecoded": "B-038_바이오매스 자원 가용량 (농업잔재／임업잔재／도시폐기물／축산폐기물).xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-877aae060687|MW",
+      "dimensionLabels": {
+        "technology": "8"
+      },
+      "dimensions": {
+        "technology": "8"
+      },
+      "displayLabel": "바이오에너지 발전설비 용량(독립계통, 참고)",
+      "indicatorId": "B-038_bioenergy_capacity_offgrid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-877aae060687",
+        "labelKo": "바이오에너지 발전설비 용량(독립계통, 참고)",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-877aae060687|MW|technology=8|B-038_bioenergy_capacity_offgrid",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 2018년 283MW를 정점으로 2021년 이후 13MW로 축소 — 계통연계 전환의 결과로 보임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "바이오에너지 발전설비 용량(독립계통, 참고)",
+      "sourceLabelEn": "Bioenergy electricity capacity, off-grid",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 2018년 283MW를 정점으로 2021년 이후 13MW로 축소 — 계통연계 전환의 결과로 보임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-038",
+        "indicatorId": "B-038_bioenergy_capacity_offgrid",
+        "sourceFileDecoded": "B-038_바이오매스 자원 가용량 (농업잔재／임업잔재／도시폐기물／축산폐기물).xlsx",
+        "sourceRow": 26,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-44865662c365|MW",
+      "dimensionLabels": {
+        "technology": "8"
+      },
+      "dimensions": {
+        "technology": "8"
+      },
+      "displayLabel": "바이오에너지 발전설비 용량(계통연계, 참고)",
+      "indicatorId": "B-038_bioenergy_capacity_ongrid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-44865662c365",
+        "labelKo": "바이오에너지 발전설비 용량(계통연계, 참고)",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-44865662c365|MW|technology=8|B-038_bioenergy_capacity_ongrid",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. [raw]에 IRENA 설비용량 파일이 있으나 어느 요소에도 수록되어 있지 않았음. Q-005에서 \"별도 참고 데이터셋으로 분리\"라고 회신했던 계열로, 참고자료임을 명시하여 본 요소에 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "바이오에너지 발전설비 용량(계통연계, 참고)",
+      "sourceLabelEn": "Bioenergy electricity capacity, on-grid",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. [raw]에 IRENA 설비용량 파일이 있으나 어느 요소에도 수록되어 있지 않았음. Q-005에서 \"별도 참고 데이터셋으로 분리\"라고 회신했던 계열로, 참고자료임을 명시하여 본 요소에 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-038",
+        "indicatorId": "B-038_bioenergy_capacity_ongrid",
+        "sourceFileDecoded": "B-038_바이오매스 자원 가용량 (농업잔재／임업잔재／도시폐기물／축산폐기물).xlsx",
+        "sourceRow": 25,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d58e7b07454a|t/yr",
+      "dimensionLabels": {
+        "category": "전자 폐기물 발생량"
+      },
+      "dimensions": {
+        "category": "전자 폐기물 발생량"
+      },
+      "displayLabel": "전기·전자 폐기물 발생량",
+      "indicatorId": "B-038_ewaste",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d58e7b07454a",
+        "labelKo": "전기",
+        "unit": "t/yr",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-d58e7b07454a|t/yr|category=전자 폐기물 발생량|B-038_ewaste",
+      "sourceCaveat": "[신규 수록] 보유 [raw] 워크북 미수록 계열. 동 워크북의 다른 Non-MSW 항목(농업·산업·건설·의료·유해·광업 폐기물)은 **베트남 행이 전부 공란**이어서 농업잔재 자원량은 이 원천으로 채울 수 없음을 확인함 — 별도 원천 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "전기·전자 폐기물 발생량",
+      "sourceLabelEn": "E-waste generated",
+      "sourceNote": "[신규 수록] 보유 [raw] 워크북 미수록 계열. 동 워크북의 다른 Non-MSW 항목(농업·산업·건설·의료·유해·광업 폐기물)은 **베트남 행이 전부 공란**이어서 농업잔재 자원량은 이 원천으로 채울 수 없음을 확인함 — 별도 원천 필요. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-038",
+        "indicatorId": "B-038_ewaste",
+        "sourceFileDecoded": "B-038_바이오매스 자원 가용량 (농업잔재／임업잔재／도시폐기물／축산폐기물).xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-cce048e76be7|Mt/yr",
+      "dimensionLabels": {
+        "technology": "8 · 14"
+      },
+      "dimensions": {
+        "technology": "8,14"
+      },
+      "displayLabel": "임업잔재 자원량",
+      "indicatorId": "B-038_forestry_residue",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-cce048e76be7",
+        "labelKo": "임업잔재 자원량",
+        "unit": "Mt/yr",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-cce048e76be7|Mt/yr|technology=8,14|B-038_forestry_residue",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "임업잔재 자원량",
+      "sourceLabelEn": "Forestry residue availability",
+      "sourceNote": "2025년: 미산출 — 현지조사 병행 필요",
+      "sourceProvenance": {
+        "elementId": "B-038",
+        "indicatorId": "B-038_forestry_residue",
+        "sourceFileDecoded": "B-038_바이오매스 자원 가용량 (농업잔재／임업잔재／도시폐기물／축산폐기물).xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-29a5e522b7a8|Mt/yr",
+      "dimensionLabels": {
+        "technology": "8 · 15"
+      },
+      "dimensions": {
+        "technology": "8,15"
+      },
+      "displayLabel": "축산폐기물(가축분뇨) 자원량",
+      "indicatorId": "B-038_livestock_manure",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-29a5e522b7a8",
+        "labelKo": "축산폐기물(가축분뇨) 자원량",
+        "unit": "Mt/yr",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-29a5e522b7a8|Mt/yr|technology=8,15|B-038_livestock_manure",
+      "sourceCaveat": "[신규 수집 반영] 발주처 검토의견 「축산폐기물 자원량 산출」에 대한 조치. FAOSTAT QCL에서 Viet Nam · Element=Stocks · 4축종(소·물소·돼지·닭) × 2015–2024년 40건을 내려받아 수록했습니다(원자료: FAOSTAT_data_en_8-18-2026.csv, 39건 Official value). 분뇨 자원량 산출의 투입자료이자 그 자체로 축산 규모 지표로 사용 가능하도록 별도 지표화했습니다. [산출 보류 사유 — 계수 미확정] 받으신 FAOSTAT 파일에는 사육두수만 있고 분뇨발생 원단위는 포함되어 있지 않습니다. 공개 문헌에서 확인 가능한 계수는 축산 사육구조에 따라 편차가 커, 소농 중심 계수(소 4.5 kg/두/일 등)를 적용하면 2024년 기준 약 47 Mt/yr, 집약축산(유럽 낙농) 계수(소 17 t/두/년 등)를 적용하면 약 192 Mt/yr로 **약 4.5배 차이**가 발생합니다. 차이의 대부분은 소 계수(1.6 t/두/년 vs 17 t/두/년)에서 나오는데, 베트남 소는 재래 육우·역우가 주종이라 유럽 낙농우 계수를 그대로 적용하는 것은 부적절합니다. 근거 없는 단일값 제시를 피하기 위해 수록을 보류하고, 베트남 국가 온실가스 인벤토리(MONRE BUR/NC) 또는 MARD 축산 통계의 국가 고유 원단위를 확보한 뒤 적용하겠습니다. [참고] 상기 시산값은 산출 절차 검증용이며 수록값이 아닙니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "축산폐기물(가축분뇨) 자원량",
+      "sourceLabelEn": "Livestock manure availability",
+      "sourceNote": "2024년: [산출 투입자료 확보 완료 · 원단위 확정 대기] 사육두수 4축종 × 2015–2024년은 아래 stock_* 4개 지표로 수록 완료. 분뇨발생 원단위(계수)만 확정되면 즉시 산출 가능",
+      "sourceProvenance": {
+        "elementId": "B-038",
+        "indicatorId": "B-038_livestock_manure",
+        "sourceFileDecoded": "B-038_바이오매스 자원 가용량 (농업잔재／임업잔재／도시폐기물／축산폐기물).xlsx",
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9c0d857558df|Mt/yr",
+      "dimensionLabels": {
+        "technology": "8 · 15"
+      },
+      "dimensions": {
+        "technology": "8,15"
+      },
+      "displayLabel": "도시폐기물(MSW) 자원량",
+      "indicatorId": "B-038_msw",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9c0d857558df",
+        "labelKo": "도시폐기물(MSW) 자원량",
+        "unit": "Mt/yr",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-9c0d857558df|Mt/yr|technology=8,15|B-038_msw",
+      "sourceCaveat": "[신규 수집 완료 · M06 해소] 발주처 검토의견 「도시폐기물 자원량 미수집」에 대한 조치. World Bank Data Catalog에서 What a Waste **3.0** Country dataset(217개국, 2026-03 공개, CC BY 4.0)을 내려받아 iso3c=VNM 행을 추출했습니다. 종전 계획이던 What a Waste 2.0(2018)은 3.0으로 대체되었습니다. 인용: Cook, E., Ionkova, K., Bhada-Tata, P., Yadav, S., Van Woerden, F. (2026), World Bank Group. 동일 파일에 10개국 전체가 수록되어 있어 나머지 9개국도 동일 절차로 즉시 확장 가능합니다. [측정지점] 원자료 point_of_measurement = \"Not stated\"(발생·수거·처리 어느 지점 계측인지 미기재) → 베트남 MONRE 국가환경현황보고서와 대조 시 오차 가능. [연도 주의] 실적치는 2015년 단일시점이며, 2022년 값도 실측이 아닌 투영치입니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "도시폐기물(MSW) 자원량",
+      "sourceLabelEn": "Municipal solid waste generation",
+      "sourceNote": "[신규 수집 완료 · M06 해소] 발주처 검토의견 「도시폐기물 자원량 미수집」에 대한 조치. World Bank Data Catalog에서 What a Waste **3.0** Country dataset(217개국, 2026-03 공개, CC BY 4.0)을 내려받아 iso3c=VNM 행을 추출했습니다. 종전 계획이던 What a Waste 2.0(2018)은 3.0으로 대체되었습니다. 인용: Cook, E., Ionkova, K., Bhada-Tata, P., Yadav, S., Van Woerden, F. (2026), World Bank Group. 동일 파일에 10개국 전체가 수록되어 있어 나머지 9개국도 동일 절차로 즉시 확장 가능합니다. [측정지점] 원자료 point_of_measurement = \"Not stated\"(발생·수거·처리 어느 지점 계측인지 미기재) → 베트남 MONRE 국가환경현황보고서와 대조 시 오차 가능. [연도 주의] 실적치는 2015년 단일시점이며, 2022년 값도 실측이 아닌 투영치입니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-038",
+        "indicatorId": "B-038_msw",
+        "sourceFileDecoded": "B-038_바이오매스 자원 가용량 (농업잔재／임업잔재／도시폐기물／축산폐기물).xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a1c76d6d4e02|% 인구",
+      "dimensionLabels": {
+        "technology": "15"
+      },
+      "dimensions": {
+        "technology": "15"
+      },
+      "displayLabel": "도시폐기물 수거율(참고)",
+      "indicatorId": "B-038_msw_collection",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a1c76d6d4e02",
+        "labelKo": "도시폐기물 수거율(참고)",
+        "unit": "% 인구",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-a1c76d6d4e02|% 인구|technology=15|B-038_msw_collection",
+      "sourceCaveat": "[참고자료] 자원 \"발생량\"과 실제 \"이용가능량\"을 가르는 제약조건입니다. 수거율 75%를 적용하면 2015년 기준 실제 회수 가능한 MSW는 약 14.3 Mt/yr, 유기성분은 약 7.8 Mt/yr 수준으로 추정됩니다. 도농 격차(도시 85% vs 농촌 47.5%)가 커 지역별 사업 입지 판단 시 함께 고려가 필요합니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "도시폐기물 수거율(참고)",
+      "sourceLabelEn": "MSW collection coverage",
+      "sourceNote": "[참고자료] 자원 \"발생량\"과 실제 \"이용가능량\"을 가르는 제약조건입니다. 수거율 75%를 적용하면 2015년 기준 실제 회수 가능한 MSW는 약 14.3 Mt/yr, 유기성분은 약 7.8 Mt/yr 수준으로 추정됩니다. 도농 격차(도시 85% vs 농촌 47.5%)가 커 지역별 사업 입지 판단 시 함께 고려가 필요합니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-038",
+        "indicatorId": "B-038_msw_collection",
+        "sourceFileDecoded": "B-038_바이오매스 자원 가용량 (농업잔재／임업잔재／도시폐기물／축산폐기물).xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f206688f0259|Mt/yr",
+      "dimensionLabels": {
+        "technology": "8 · 15"
+      },
+      "dimensions": {
+        "technology": "8,15"
+      },
+      "displayLabel": "도시폐기물 중 유기성 자원량(산출)",
+      "indicatorId": "B-038_msw_organic",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f206688f0259",
+        "labelKo": "도시폐기물 중 유기성 자원량(산출)",
+        "unit": "Mt/yr",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-f206688f0259|Mt/yr|technology=8,15|B-038_msw_organic",
+      "sourceCaveat": "[산출값 · 슈타트 자체 계산] 원자료에 직접 수록된 계열이 아니라 두 원자료 열을 곱해 산출한 값입니다. 바이오매스 자원 가용량 관점에서 MSW 총량보다 유기성 분율이 직접적인 전환 대상이므로 별도 지표로 수록했습니다. 구성비 고정 가정에 따른 불확실성이 있어 총량(msw)과 병행 검토를 권장드립니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "도시폐기물 중 유기성 자원량(산출)",
+      "sourceLabelEn": "Organic fraction of MSW (derived)",
+      "sourceNote": "[산출값 · 슈타트 자체 계산] 원자료에 직접 수록된 계열이 아니라 두 원자료 열을 곱해 산출한 값입니다. 바이오매스 자원 가용량 관점에서 MSW 총량보다 유기성 분율이 직접적인 전환 대상이므로 별도 지표로 수록했습니다. 구성비 고정 가정에 따른 불확실성이 있어 총량(msw)과 병행 검토를 권장드립니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-038",
+        "indicatorId": "B-038_msw_organic",
+        "sourceFileDecoded": "B-038_바이오매스 자원 가용량 (농업잔재／임업잔재／도시폐기물／축산폐기물).xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-cd737328bac0|% 중량",
+      "dimensionLabels": {
+        "category": "유기성 비중",
+        "technology": "8 · 15"
+      },
+      "dimensions": {
+        "category": "유기성 비중",
+        "technology": "8,15"
+      },
+      "displayLabel": "도시폐기물 중 음식물·유기성 비중",
+      "indicatorId": "B-038_msw_organic_share",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-cd737328bac0",
+        "labelKo": "도시폐기물 중 음식물",
+        "unit": "% 중량",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-cd737328bac0|% 중량|category=유기성 비중|technology=8,15|B-038_msw_organic_share",
+      "sourceCaveat": "[신규 수집 완료 · M06 해소] 발주처 검토의견 「도시폐기물 자원량 미수집」에 대한 조치. World Bank Data Catalog에서 What a Waste **3.0** Country dataset(217개국, 2026-03 공개, CC BY 4.0)을 내려받아 iso3c=VNM 행을 추출했습니다. 종전 계획이던 What a Waste 2.0(2018)은 3.0으로 대체되었습니다. 인용: Cook, E., Ionkova, K., Bhada-Tata, P., Yadav, S., Van Woerden, F. (2026), World Bank Group. 동일 파일에 10개국 전체가 수록되어 있어 나머지 9개국도 동일 절차로 즉시 확장 가능합니다. 바이오에너지(혐기소화·매립가스) 전환이 가능한 유기성 분율로, 아래 msw_organic 산출의 계수로 사용했습니다. 원자료는 2015년 단일시점만 제공됩니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "도시폐기물 중 음식물·유기성 비중",
+      "sourceLabelEn": "Organic (food) share of MSW",
+      "sourceNote": "[신규 수집 완료 · M06 해소] 발주처 검토의견 「도시폐기물 자원량 미수집」에 대한 조치. World Bank Data Catalog에서 What a Waste **3.0** Country dataset(217개국, 2026-03 공개, CC BY 4.0)을 내려받아 iso3c=VNM 행을 추출했습니다. 종전 계획이던 What a Waste 2.0(2018)은 3.0으로 대체되었습니다. 인용: Cook, E., Ionkova, K., Bhada-Tata, P., Yadav, S., Van Woerden, F. (2026), World Bank Group. 동일 파일에 10개국 전체가 수록되어 있어 나머지 9개국도 동일 절차로 즉시 확장 가능합니다. 바이오에너지(혐기소화·매립가스) 전환이 가능한 유기성 분율로, 아래 msw_organic 산출의 계수로 사용했습니다. 원자료는 2015년 단일시점만 제공됩니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-038",
+        "indicatorId": "B-038_msw_organic_share",
+        "sourceFileDecoded": "B-038_바이오매스 자원 가용량 (농업잔재／임업잔재／도시폐기물／축산폐기물).xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-13e56f3e0776|kg/인/일",
+      "dimensionLabels": {
+        "technology": "15"
+      },
+      "dimensions": {
+        "technology": "15"
+      },
+      "displayLabel": "1인당 도시폐기물 발생량",
+      "indicatorId": "B-038_msw_percap",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-13e56f3e0776",
+        "labelKo": "1인당 도시폐기물 발생량",
+        "unit": "kg/인/일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-13e56f3e0776|kg/인/일|technology=15|B-038_msw_percap",
+      "sourceCaveat": "[신규 수집 완료 · M06 해소] 발주처 검토의견 「도시폐기물 자원량 미수집」에 대한 조치. World Bank Data Catalog에서 What a Waste **3.0** Country dataset(217개국, 2026-03 공개, CC BY 4.0)을 내려받아 iso3c=VNM 행을 추출했습니다. 종전 계획이던 What a Waste 2.0(2018)은 3.0으로 대체되었습니다. 인용: Cook, E., Ionkova, K., Bhada-Tata, P., Yadav, S., Van Woerden, F. (2026), World Bank Group. 동일 파일에 10개국 전체가 수록되어 있어 나머지 9개국도 동일 절차로 즉시 확장 가능합니다. 1인당 발생량이 2015년 0.56 → 2050년 0.82 kg/인/일로 증가하는 경로로, 총량 증가(19.0 → 32.9 Mt/yr)의 상당 부분이 인구가 아닌 1인당 원단위 상승에서 기인합니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "1인당 도시폐기물 발생량",
+      "sourceLabelEn": "MSW generation per capita",
+      "sourceNote": "[신규 수집 완료 · M06 해소] 발주처 검토의견 「도시폐기물 자원량 미수집」에 대한 조치. World Bank Data Catalog에서 What a Waste **3.0** Country dataset(217개국, 2026-03 공개, CC BY 4.0)을 내려받아 iso3c=VNM 행을 추출했습니다. 종전 계획이던 What a Waste 2.0(2018)은 3.0으로 대체되었습니다. 인용: Cook, E., Ionkova, K., Bhada-Tata, P., Yadav, S., Van Woerden, F. (2026), World Bank Group. 동일 파일에 10개국 전체가 수록되어 있어 나머지 9개국도 동일 절차로 즉시 확장 가능합니다. 1인당 발생량이 2015년 0.56 → 2050년 0.82 kg/인/일로 증가하는 경로로, 총량 증가(19.0 → 32.9 Mt/yr)의 상당 부분이 인구가 아닌 1인당 원단위 상승에서 기인합니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-038",
+        "indicatorId": "B-038_msw_percap",
+        "sourceFileDecoded": "B-038_바이오매스 자원 가용량 (농업잔재／임업잔재／도시폐기물／축산폐기물).xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4cb7b5447f5a|% 중량",
+      "dimensionLabels": {
+        "detail": "기타"
+      },
+      "dimensions": {
+        "detail": "기타"
+      },
+      "displayLabel": "도시폐기물 처리경로별 비중 — 기타",
+      "indicatorId": "B-038_msw_treatment_share_g01",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4cb7b5447f5a",
+        "labelKo": "도시폐기물 처리경로별 비중",
+        "unit": "% 중량",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-4cb7b5447f5a|% 중량|detail=기타|B-038_msw_treatment_share_g01",
+      "sourceCaveat": "[신규 수록 — 회수 가능량 판단의 직접 입력값] 보유 [raw] What a Waste 3.0 워크북에 있으나 미수록이던 계열. 매립가스 회수·소각열 회수 가능 규모를 판단하려면 총 발생량만으로는 부족하고 처리경로 구성이 필요함. 베트남은 **위생매립(매립가스 설비 보유) 15.0% · 형식 미상 매립 32.25% · 소각 10.5% · 재활용 7.5% · 퇴비화 3.0% · 기타 6.75% · 미수거 25.0%** 구성으로, 매립가스 회수 대상은 현재 위생매립 15%에 한정되고 형식 미상 매립 32%가 잠재 개선 대상입니다. 원천이 보고연도를 국가별로 달리 기재하므로 특정 연도 실적이 아니라 최근 국가보고 시점 기준임에 유의. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "도시폐기물 처리경로별 비중 — 기타",
+      "sourceLabelEn": "MSW treatment pathway shares",
+      "sourceNote": "[신규 수록 — 회수 가능량 판단의 직접 입력값] 보유 [raw] What a Waste 3.0 워크북에 있으나 미수록이던 계열. 매립가스 회수·소각열 회수 가능 규모를 판단하려면 총 발생량만으로는 부족하고 처리경로 구성이 필요함. 베트남은 **위생매립(매립가스 설비 보유) 15.0% · 형식 미상 매립 32.25% · 소각 10.5% · 재활용 7.5% · 퇴비화 3.0% · 기타 6.75% · 미수거 25.0%** 구성으로, 매립가스 회수 대상은 현재 위생매립 15%에 한정되고 형식 미상 매립 32%가 잠재 개선 대상입니다. 원천이 보고연도를 국가별로 달리 기재하므로 특정 연도 실적이 아니라 최근 국가보고 시점 기준임에 유의. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-038",
+        "indicatorId": "B-038_msw_treatment_share_g01",
+        "sourceFileDecoded": "B-038_바이오매스 자원 가용량 (농업잔재／임업잔재／도시폐기물／축산폐기물).xlsx",
+        "sourceRow": 4,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4cb7b5447f5a|% 중량",
+      "dimensionLabels": {
+        "detail": "매립(형식 미상)"
+      },
+      "dimensions": {
+        "detail": "매립(형식 미상)"
+      },
+      "displayLabel": "도시폐기물 처리경로별 비중 — 매립(형식 미상)",
+      "indicatorId": "B-038_msw_treatment_share_g02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4cb7b5447f5a",
+        "labelKo": "도시폐기물 처리경로별 비중",
+        "unit": "% 중량",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-4cb7b5447f5a|% 중량|detail=매립(형식 미상)|B-038_msw_treatment_share_g02",
+      "sourceCaveat": "[신규 수록 — 회수 가능량 판단의 직접 입력값] 보유 [raw] What a Waste 3.0 워크북에 있으나 미수록이던 계열. 매립가스 회수·소각열 회수 가능 규모를 판단하려면 총 발생량만으로는 부족하고 처리경로 구성이 필요함. 베트남은 **위생매립(매립가스 설비 보유) 15.0% · 형식 미상 매립 32.25% · 소각 10.5% · 재활용 7.5% · 퇴비화 3.0% · 기타 6.75% · 미수거 25.0%** 구성으로, 매립가스 회수 대상은 현재 위생매립 15%에 한정되고 형식 미상 매립 32%가 잠재 개선 대상입니다. 원천이 보고연도를 국가별로 달리 기재하므로 특정 연도 실적이 아니라 최근 국가보고 시점 기준임에 유의. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "도시폐기물 처리경로별 비중 — 매립(형식 미상)",
+      "sourceLabelEn": "MSW treatment pathway shares",
+      "sourceNote": "[신규 수록 — 회수 가능량 판단의 직접 입력값] 보유 [raw] What a Waste 3.0 워크북에 있으나 미수록이던 계열. 매립가스 회수·소각열 회수 가능 규모를 판단하려면 총 발생량만으로는 부족하고 처리경로 구성이 필요함. 베트남은 **위생매립(매립가스 설비 보유) 15.0% · 형식 미상 매립 32.25% · 소각 10.5% · 재활용 7.5% · 퇴비화 3.0% · 기타 6.75% · 미수거 25.0%** 구성으로, 매립가스 회수 대상은 현재 위생매립 15%에 한정되고 형식 미상 매립 32%가 잠재 개선 대상입니다. 원천이 보고연도를 국가별로 달리 기재하므로 특정 연도 실적이 아니라 최근 국가보고 시점 기준임에 유의. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-038",
+        "indicatorId": "B-038_msw_treatment_share_g02",
+        "sourceFileDecoded": "B-038_바이오매스 자원 가용량 (농업잔재／임업잔재／도시폐기물／축산폐기물).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4cb7b5447f5a|% 중량",
+      "dimensionLabels": {
+        "detail": "미수거"
+      },
+      "dimensions": {
+        "detail": "미수거"
+      },
+      "displayLabel": "도시폐기물 처리경로별 비중 — 미수거",
+      "indicatorId": "B-038_msw_treatment_share_g03",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4cb7b5447f5a",
+        "labelKo": "도시폐기물 처리경로별 비중",
+        "unit": "% 중량",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-4cb7b5447f5a|% 중량|detail=미수거|B-038_msw_treatment_share_g03",
+      "sourceCaveat": "[신규 수록 — 회수 가능량 판단의 직접 입력값] 보유 [raw] What a Waste 3.0 워크북에 있으나 미수록이던 계열. 매립가스 회수·소각열 회수 가능 규모를 판단하려면 총 발생량만으로는 부족하고 처리경로 구성이 필요함. 베트남은 **위생매립(매립가스 설비 보유) 15.0% · 형식 미상 매립 32.25% · 소각 10.5% · 재활용 7.5% · 퇴비화 3.0% · 기타 6.75% · 미수거 25.0%** 구성으로, 매립가스 회수 대상은 현재 위생매립 15%에 한정되고 형식 미상 매립 32%가 잠재 개선 대상입니다. 원천이 보고연도를 국가별로 달리 기재하므로 특정 연도 실적이 아니라 최근 국가보고 시점 기준임에 유의. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "도시폐기물 처리경로별 비중 — 미수거",
+      "sourceLabelEn": "MSW treatment pathway shares",
+      "sourceNote": "[신규 수록 — 회수 가능량 판단의 직접 입력값] 보유 [raw] What a Waste 3.0 워크북에 있으나 미수록이던 계열. 매립가스 회수·소각열 회수 가능 규모를 판단하려면 총 발생량만으로는 부족하고 처리경로 구성이 필요함. 베트남은 **위생매립(매립가스 설비 보유) 15.0% · 형식 미상 매립 32.25% · 소각 10.5% · 재활용 7.5% · 퇴비화 3.0% · 기타 6.75% · 미수거 25.0%** 구성으로, 매립가스 회수 대상은 현재 위생매립 15%에 한정되고 형식 미상 매립 32%가 잠재 개선 대상입니다. 원천이 보고연도를 국가별로 달리 기재하므로 특정 연도 실적이 아니라 최근 국가보고 시점 기준임에 유의. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-038",
+        "indicatorId": "B-038_msw_treatment_share_g03",
+        "sourceFileDecoded": "B-038_바이오매스 자원 가용량 (농업잔재／임업잔재／도시폐기물／축산폐기물).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4cb7b5447f5a|% 중량",
+      "dimensionLabels": {
+        "detail": "소각"
+      },
+      "dimensions": {
+        "detail": "소각"
+      },
+      "displayLabel": "도시폐기물 처리경로별 비중 — 소각",
+      "indicatorId": "B-038_msw_treatment_share_g04",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4cb7b5447f5a",
+        "labelKo": "도시폐기물 처리경로별 비중",
+        "unit": "% 중량",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-4cb7b5447f5a|% 중량|detail=소각|B-038_msw_treatment_share_g04",
+      "sourceCaveat": "[신규 수록 — 회수 가능량 판단의 직접 입력값] 보유 [raw] What a Waste 3.0 워크북에 있으나 미수록이던 계열. 매립가스 회수·소각열 회수 가능 규모를 판단하려면 총 발생량만으로는 부족하고 처리경로 구성이 필요함. 베트남은 **위생매립(매립가스 설비 보유) 15.0% · 형식 미상 매립 32.25% · 소각 10.5% · 재활용 7.5% · 퇴비화 3.0% · 기타 6.75% · 미수거 25.0%** 구성으로, 매립가스 회수 대상은 현재 위생매립 15%에 한정되고 형식 미상 매립 32%가 잠재 개선 대상입니다. 원천이 보고연도를 국가별로 달리 기재하므로 특정 연도 실적이 아니라 최근 국가보고 시점 기준임에 유의. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "도시폐기물 처리경로별 비중 — 소각",
+      "sourceLabelEn": "MSW treatment pathway shares",
+      "sourceNote": "[신규 수록 — 회수 가능량 판단의 직접 입력값] 보유 [raw] What a Waste 3.0 워크북에 있으나 미수록이던 계열. 매립가스 회수·소각열 회수 가능 규모를 판단하려면 총 발생량만으로는 부족하고 처리경로 구성이 필요함. 베트남은 **위생매립(매립가스 설비 보유) 15.0% · 형식 미상 매립 32.25% · 소각 10.5% · 재활용 7.5% · 퇴비화 3.0% · 기타 6.75% · 미수거 25.0%** 구성으로, 매립가스 회수 대상은 현재 위생매립 15%에 한정되고 형식 미상 매립 32%가 잠재 개선 대상입니다. 원천이 보고연도를 국가별로 달리 기재하므로 특정 연도 실적이 아니라 최근 국가보고 시점 기준임에 유의. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-038",
+        "indicatorId": "B-038_msw_treatment_share_g04",
+        "sourceFileDecoded": "B-038_바이오매스 자원 가용량 (농업잔재／임업잔재／도시폐기물／축산폐기물).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4cb7b5447f5a|% 중량",
+      "dimensionLabels": {
+        "detail": "위생매립(매립가스 회수설비 보유)"
+      },
+      "dimensions": {
+        "detail": "위생매립(매립가스 회수설비 보유)"
+      },
+      "displayLabel": "도시폐기물 처리경로별 비중 — 위생매립(매립가스 회수설비 보유)",
+      "indicatorId": "B-038_msw_treatment_share_g05",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4cb7b5447f5a",
+        "labelKo": "도시폐기물 처리경로별 비중",
+        "unit": "% 중량",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-4cb7b5447f5a|% 중량|detail=위생매립(매립가스 회수설비 보유)|B-038_msw_treatment_share_g05",
+      "sourceCaveat": "[신규 수록 — 회수 가능량 판단의 직접 입력값] 보유 [raw] What a Waste 3.0 워크북에 있으나 미수록이던 계열. 매립가스 회수·소각열 회수 가능 규모를 판단하려면 총 발생량만으로는 부족하고 처리경로 구성이 필요함. 베트남은 **위생매립(매립가스 설비 보유) 15.0% · 형식 미상 매립 32.25% · 소각 10.5% · 재활용 7.5% · 퇴비화 3.0% · 기타 6.75% · 미수거 25.0%** 구성으로, 매립가스 회수 대상은 현재 위생매립 15%에 한정되고 형식 미상 매립 32%가 잠재 개선 대상입니다. 원천이 보고연도를 국가별로 달리 기재하므로 특정 연도 실적이 아니라 최근 국가보고 시점 기준임에 유의. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "도시폐기물 처리경로별 비중 — 위생매립(매립가스 회수설비 보유)",
+      "sourceLabelEn": "MSW treatment pathway shares",
+      "sourceNote": "[신규 수록 — 회수 가능량 판단의 직접 입력값] 보유 [raw] What a Waste 3.0 워크북에 있으나 미수록이던 계열. 매립가스 회수·소각열 회수 가능 규모를 판단하려면 총 발생량만으로는 부족하고 처리경로 구성이 필요함. 베트남은 **위생매립(매립가스 설비 보유) 15.0% · 형식 미상 매립 32.25% · 소각 10.5% · 재활용 7.5% · 퇴비화 3.0% · 기타 6.75% · 미수거 25.0%** 구성으로, 매립가스 회수 대상은 현재 위생매립 15%에 한정되고 형식 미상 매립 32%가 잠재 개선 대상입니다. 원천이 보고연도를 국가별로 달리 기재하므로 특정 연도 실적이 아니라 최근 국가보고 시점 기준임에 유의. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-038",
+        "indicatorId": "B-038_msw_treatment_share_g05",
+        "sourceFileDecoded": "B-038_바이오매스 자원 가용량 (농업잔재／임업잔재／도시폐기물／축산폐기물).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4cb7b5447f5a|% 중량",
+      "dimensionLabels": {
+        "detail": "재활용"
+      },
+      "dimensions": {
+        "detail": "재활용"
+      },
+      "displayLabel": "도시폐기물 처리경로별 비중 — 재활용",
+      "indicatorId": "B-038_msw_treatment_share_g06",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4cb7b5447f5a",
+        "labelKo": "도시폐기물 처리경로별 비중",
+        "unit": "% 중량",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-4cb7b5447f5a|% 중량|detail=재활용|B-038_msw_treatment_share_g06",
+      "sourceCaveat": "[신규 수록 — 회수 가능량 판단의 직접 입력값] 보유 [raw] What a Waste 3.0 워크북에 있으나 미수록이던 계열. 매립가스 회수·소각열 회수 가능 규모를 판단하려면 총 발생량만으로는 부족하고 처리경로 구성이 필요함. 베트남은 **위생매립(매립가스 설비 보유) 15.0% · 형식 미상 매립 32.25% · 소각 10.5% · 재활용 7.5% · 퇴비화 3.0% · 기타 6.75% · 미수거 25.0%** 구성으로, 매립가스 회수 대상은 현재 위생매립 15%에 한정되고 형식 미상 매립 32%가 잠재 개선 대상입니다. 원천이 보고연도를 국가별로 달리 기재하므로 특정 연도 실적이 아니라 최근 국가보고 시점 기준임에 유의. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "도시폐기물 처리경로별 비중 — 재활용",
+      "sourceLabelEn": "MSW treatment pathway shares",
+      "sourceNote": "[신규 수록 — 회수 가능량 판단의 직접 입력값] 보유 [raw] What a Waste 3.0 워크북에 있으나 미수록이던 계열. 매립가스 회수·소각열 회수 가능 규모를 판단하려면 총 발생량만으로는 부족하고 처리경로 구성이 필요함. 베트남은 **위생매립(매립가스 설비 보유) 15.0% · 형식 미상 매립 32.25% · 소각 10.5% · 재활용 7.5% · 퇴비화 3.0% · 기타 6.75% · 미수거 25.0%** 구성으로, 매립가스 회수 대상은 현재 위생매립 15%에 한정되고 형식 미상 매립 32%가 잠재 개선 대상입니다. 원천이 보고연도를 국가별로 달리 기재하므로 특정 연도 실적이 아니라 최근 국가보고 시점 기준임에 유의. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-038",
+        "indicatorId": "B-038_msw_treatment_share_g06",
+        "sourceFileDecoded": "B-038_바이오매스 자원 가용량 (농업잔재／임업잔재／도시폐기물／축산폐기물).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4cb7b5447f5a|% 중량",
+      "dimensionLabels": {
+        "detail": "퇴비화"
+      },
+      "dimensions": {
+        "detail": "퇴비화"
+      },
+      "displayLabel": "도시폐기물 처리경로별 비중 — 퇴비화",
+      "indicatorId": "B-038_msw_treatment_share_g07",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4cb7b5447f5a",
+        "labelKo": "도시폐기물 처리경로별 비중",
+        "unit": "% 중량",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-4cb7b5447f5a|% 중량|detail=퇴비화|B-038_msw_treatment_share_g07",
+      "sourceCaveat": "[신규 수록 — 회수 가능량 판단의 직접 입력값] 보유 [raw] What a Waste 3.0 워크북에 있으나 미수록이던 계열. 매립가스 회수·소각열 회수 가능 규모를 판단하려면 총 발생량만으로는 부족하고 처리경로 구성이 필요함. 베트남은 **위생매립(매립가스 설비 보유) 15.0% · 형식 미상 매립 32.25% · 소각 10.5% · 재활용 7.5% · 퇴비화 3.0% · 기타 6.75% · 미수거 25.0%** 구성으로, 매립가스 회수 대상은 현재 위생매립 15%에 한정되고 형식 미상 매립 32%가 잠재 개선 대상입니다. 원천이 보고연도를 국가별로 달리 기재하므로 특정 연도 실적이 아니라 최근 국가보고 시점 기준임에 유의. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "도시폐기물 처리경로별 비중 — 퇴비화",
+      "sourceLabelEn": "MSW treatment pathway shares",
+      "sourceNote": "[신규 수록 — 회수 가능량 판단의 직접 입력값] 보유 [raw] What a Waste 3.0 워크북에 있으나 미수록이던 계열. 매립가스 회수·소각열 회수 가능 규모를 판단하려면 총 발생량만으로는 부족하고 처리경로 구성이 필요함. 베트남은 **위생매립(매립가스 설비 보유) 15.0% · 형식 미상 매립 32.25% · 소각 10.5% · 재활용 7.5% · 퇴비화 3.0% · 기타 6.75% · 미수거 25.0%** 구성으로, 매립가스 회수 대상은 현재 위생매립 15%에 한정되고 형식 미상 매립 32%가 잠재 개선 대상입니다. 원천이 보고연도를 국가별로 달리 기재하므로 특정 연도 실적이 아니라 최근 국가보고 시점 기준임에 유의. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-038",
+        "indicatorId": "B-038_msw_treatment_share_g07",
+        "sourceFileDecoded": "B-038_바이오매스 자원 가용량 (농업잔재／임업잔재／도시폐기물／축산폐기물).xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-684bafb2a64b|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "재생에너지 설비용량 비중(참고)",
+      "indicatorId": "B-038_re_share_capacity",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-684bafb2a64b",
+        "labelKo": "재생에너지 설비용량 비중(참고)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-684bafb2a64b|%||B-038_re_share_capacity",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 2025년 57.8% — 발전량 비중(2023년 44.9%)과 차이는 변동성 자원의 이용률 차이에서 발생. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "재생에너지 설비용량 비중(참고)",
+      "sourceLabelEn": "RE share of electricity capacity",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 2025년 57.8% — 발전량 비중(2023년 44.9%)과 차이는 변동성 자원의 이용률 차이에서 발생. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-038",
+        "indicatorId": "B-038_re_share_capacity",
+        "sourceFileDecoded": "B-038_바이오매스 자원 가용량 (농업잔재／임업잔재／도시폐기물／축산폐기물).xlsx",
+        "sourceRow": 28,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-34b5f36d14cf|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "재생에너지 발전량 비중(참고)",
+      "indicatorId": "B-038_re_share_generation",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-34b5f36d14cf",
+        "labelKo": "재생에너지 발전량 비중(참고)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-34b5f36d14cf|%||B-038_re_share_generation",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 자원 가용량이 아닌 활용 현황 지표 — 참고자료로 분리 표기. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "재생에너지 발전량 비중(참고)",
+      "sourceLabelEn": "RE share of electricity generation",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 자원 가용량이 아닌 활용 현황 지표 — 참고자료로 분리 표기. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-038",
+        "indicatorId": "B-038_re_share_generation",
+        "sourceFileDecoded": "B-038_바이오매스 자원 가용량 (농업잔재／임업잔재／도시폐기물／축산폐기물).xlsx",
+        "sourceRow": 27,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-efdceb96360b|두",
+      "dimensionLabels": {
+        "detail": "물소(산출 투입자료)",
+        "technology": "8 · 15"
+      },
+      "dimensions": {
+        "detail": "물소(산출 투입자료)",
+        "technology": "8,15"
+      },
+      "displayLabel": "사육두수 — 물소(산출 투입자료)",
+      "indicatorId": "B-038_stock_buffalo",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-efdceb96360b",
+        "labelKo": "사육두수",
+        "unit": "두",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-efdceb96360b|두|detail=물소(산출 투입자료)|technology=8,15|B-038_stock_buffalo",
+      "sourceCaveat": "[신규 수집 반영] 발주처 검토의견 「축산폐기물 자원량 산출」에 대한 조치. FAOSTAT QCL에서 Viet Nam · Element=Stocks · 4축종(소·물소·돼지·닭) × 2015–2024년 40건을 내려받아 수록했습니다(원자료: FAOSTAT_data_en_8-18-2026.csv, 39건 Official value). 분뇨 자원량 산출의 투입자료이자 그 자체로 축산 규모 지표로 사용 가능하도록 별도 지표화했습니다. 10년간 2.52 → 2.03백만 두로 지속 감소(−19%) — 기계화에 따른 역축 수요 감소로 보입니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "사육두수 — 물소(산출 투입자료)",
+      "sourceLabelEn": "Livestock stocks — buffalo",
+      "sourceNote": "[신규 수집 반영] 발주처 검토의견 「축산폐기물 자원량 산출」에 대한 조치. FAOSTAT QCL에서 Viet Nam · Element=Stocks · 4축종(소·물소·돼지·닭) × 2015–2024년 40건을 내려받아 수록했습니다(원자료: FAOSTAT_data_en_8-18-2026.csv, 39건 Official value). 분뇨 자원량 산출의 투입자료이자 그 자체로 축산 규모 지표로 사용 가능하도록 별도 지표화했습니다. 10년간 2.52 → 2.03백만 두로 지속 감소(−19%) — 기계화에 따른 역축 수요 감소로 보입니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-038",
+        "indicatorId": "B-038_stock_buffalo",
+        "sourceFileDecoded": "B-038_바이오매스 자원 가용량 (농업잔재／임업잔재／도시폐기물／축산폐기물).xlsx",
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-efdceb96360b|두",
+      "dimensionLabels": {
+        "detail": "소(산출 투입자료)",
+        "technology": "8 · 15"
+      },
+      "dimensions": {
+        "detail": "소(산출 투입자료)",
+        "technology": "8,15"
+      },
+      "displayLabel": "사육두수 — 소(산출 투입자료)",
+      "indicatorId": "B-038_stock_cattle",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-efdceb96360b",
+        "labelKo": "사육두수",
+        "unit": "두",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-efdceb96360b|두|detail=소(산출 투입자료)|technology=8,15|B-038_stock_cattle",
+      "sourceCaveat": "[신규 수집 반영] 발주처 검토의견 「축산폐기물 자원량 산출」에 대한 조치. FAOSTAT QCL에서 Viet Nam · Element=Stocks · 4축종(소·물소·돼지·닭) × 2015–2024년 40건을 내려받아 수록했습니다(원자료: FAOSTAT_data_en_8-18-2026.csv, 39건 Official value). 분뇨 자원량 산출의 투입자료이자 그 자체로 축산 규모 지표로 사용 가능하도록 별도 지표화했습니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "사육두수 — 소(산출 투입자료)",
+      "sourceLabelEn": "Livestock stocks — cattle",
+      "sourceNote": "[신규 수집 반영] 발주처 검토의견 「축산폐기물 자원량 산출」에 대한 조치. FAOSTAT QCL에서 Viet Nam · Element=Stocks · 4축종(소·물소·돼지·닭) × 2015–2024년 40건을 내려받아 수록했습니다(원자료: FAOSTAT_data_en_8-18-2026.csv, 39건 Official value). 분뇨 자원량 산출의 투입자료이자 그 자체로 축산 규모 지표로 사용 가능하도록 별도 지표화했습니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-038",
+        "indicatorId": "B-038_stock_cattle",
+        "sourceFileDecoded": "B-038_바이오매스 자원 가용량 (농업잔재／임업잔재／도시폐기물／축산폐기물).xlsx",
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-efdceb96360b|두",
+      "dimensionLabels": {
+        "detail": "돼지(산출 투입자료)",
+        "technology": "8 · 15"
+      },
+      "dimensions": {
+        "detail": "돼지(산출 투입자료)",
+        "technology": "8,15"
+      },
+      "displayLabel": "사육두수 — 돼지(산출 투입자료)",
+      "indicatorId": "B-038_stock_pig",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-efdceb96360b",
+        "labelKo": "사육두수",
+        "unit": "두",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-efdceb96360b|두|detail=돼지(산출 투입자료)|technology=8,15|B-038_stock_pig",
+      "sourceCaveat": "[신규 수집 반영] 발주처 검토의견 「축산폐기물 자원량 산출」에 대한 조치. FAOSTAT QCL에서 Viet Nam · Element=Stocks · 4축종(소·물소·돼지·닭) × 2015–2024년 40건을 내려받아 수록했습니다(원자료: FAOSTAT_data_en_8-18-2026.csv, 39건 Official value). 분뇨 자원량 산출의 투입자료이자 그 자체로 축산 규모 지표로 사용 가능하도록 별도 지표화했습니다. [특이사항] 2019년 19.6백만 두로 전년(28.2백만) 대비 30% 급감 — 2019년 아프리카돼지열병(ASF) 대유행에 따른 살처분 영향이며, 2024년 26.5백만 두까지 회복했습니다. 분뇨 자원량 산정 시 특정 연도 단일값을 쓰면 왜곡되므로 다년 평균 사용을 권장드립니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "사육두수 — 돼지(산출 투입자료)",
+      "sourceLabelEn": "Livestock stocks — swine/pigs",
+      "sourceNote": "[신규 수집 반영] 발주처 검토의견 「축산폐기물 자원량 산출」에 대한 조치. FAOSTAT QCL에서 Viet Nam · Element=Stocks · 4축종(소·물소·돼지·닭) × 2015–2024년 40건을 내려받아 수록했습니다(원자료: FAOSTAT_data_en_8-18-2026.csv, 39건 Official value). 분뇨 자원량 산출의 투입자료이자 그 자체로 축산 규모 지표로 사용 가능하도록 별도 지표화했습니다. [특이사항] 2019년 19.6백만 두로 전년(28.2백만) 대비 30% 급감 — 2019년 아프리카돼지열병(ASF) 대유행에 따른 살처분 영향이며, 2024년 26.5백만 두까지 회복했습니다. 분뇨 자원량 산정 시 특정 연도 단일값을 쓰면 왜곡되므로 다년 평균 사용을 권장드립니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-038",
+        "indicatorId": "B-038_stock_pig",
+        "sourceFileDecoded": "B-038_바이오매스 자원 가용량 (농업잔재／임업잔재／도시폐기물／축산폐기물).xlsx",
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-efdceb96360b|두",
+      "dimensionLabels": {
+        "detail": "닭(산출 투입자료)",
+        "technology": "8 · 15"
+      },
+      "dimensions": {
+        "detail": "닭(산출 투입자료)",
+        "technology": "8,15"
+      },
+      "displayLabel": "사육두수 — 닭(산출 투입자료)",
+      "indicatorId": "B-038_stock_poultry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-efdceb96360b",
+        "labelKo": "사육두수",
+        "unit": "두",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-efdceb96360b|두|detail=닭(산출 투입자료)|technology=8,15|B-038_stock_poultry",
+      "sourceCaveat": "[신규 수집 반영] 발주처 검토의견 「축산폐기물 자원량 산출」에 대한 조치. FAOSTAT QCL에서 Viet Nam · Element=Stocks · 4축종(소·물소·돼지·닭) × 2015–2024년 40건을 내려받아 수록했습니다(원자료: FAOSTAT_data_en_8-18-2026.csv, 39건 Official value). 분뇨 자원량 산출의 투입자료이자 그 자체로 축산 규모 지표로 사용 가능하도록 별도 지표화했습니다. 259.3 → 481.0백만 두로 10년간 85% 증가하여 4축종 중 증가폭이 가장 큽니다. 두수는 가장 많으나 개체당 분뇨 발생량이 작아 물량 기여도는 돼지·소보다 낮습니다. 2021년 값은 원자료 플래그가 \"Value imputed by a receiving agency\"(수령기관 추정치)입니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "사육두수 — 닭(산출 투입자료)",
+      "sourceLabelEn": "Livestock stocks — chickens",
+      "sourceNote": "[신규 수집 반영] 발주처 검토의견 「축산폐기물 자원량 산출」에 대한 조치. FAOSTAT QCL에서 Viet Nam · Element=Stocks · 4축종(소·물소·돼지·닭) × 2015–2024년 40건을 내려받아 수록했습니다(원자료: FAOSTAT_data_en_8-18-2026.csv, 39건 Official value). 분뇨 자원량 산출의 투입자료이자 그 자체로 축산 규모 지표로 사용 가능하도록 별도 지표화했습니다. 259.3 → 481.0백만 두로 10년간 85% 증가하여 4축종 중 증가폭이 가장 큽니다. 두수는 가장 많으나 개체당 분뇨 발생량이 작아 물량 기여도는 돼지·소보다 낮습니다. 2021년 값은 원자료 플래그가 \"Value imputed by a receiving agency\"(수령기관 추정치)입니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-038",
+        "indicatorId": "B-038_stock_poultry",
+        "sourceFileDecoded": "B-038_바이오매스 자원 가용량 (농업잔재／임업잔재／도시폐기물／축산폐기물).xlsx",
+        "sourceRow": 24,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-13e56f3e0776",
+      "labelKo": "1인당 도시폐기물 발생량",
+      "recordCount": 5,
+      "unit": "kg/인/일",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-76bf52d804b4",
+      "labelKo": "농업잔재 자원량",
+      "recordCount": 1,
+      "unit": "Mt/yr",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-a1c76d6d4e02",
+      "labelKo": "도시폐기물 수거율(참고)",
+      "recordCount": 1,
+      "unit": "% 인구",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-f206688f0259",
+      "labelKo": "도시폐기물 중 유기성 자원량(산출)",
+      "recordCount": 5,
+      "unit": "Mt/yr",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-cd737328bac0",
+      "labelKo": "도시폐기물 중 음식물",
+      "recordCount": 1,
+      "unit": "% 중량",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 7,
+      "key": "measure-4cb7b5447f5a",
+      "labelKo": "도시폐기물 처리경로별 비중",
+      "recordCount": 7,
+      "unit": "% 중량",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-9c0d857558df",
+      "labelKo": "도시폐기물(MSW) 자원량",
+      "recordCount": 5,
+      "unit": "Mt/yr",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-8643816ff83c",
+      "labelKo": "바이오매스",
+      "recordCount": 25,
+      "unit": "백만 kW",
+      "unitFamily": "capacity"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-44865662c365",
+      "labelKo": "바이오에너지 발전설비 용량(계통연계, 참고)",
+      "recordCount": 21,
+      "unit": "MW",
+      "unitFamily": "capacity"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-877aae060687",
+      "labelKo": "바이오에너지 발전설비 용량(독립계통, 참고)",
+      "recordCount": 26,
+      "unit": "MW",
+      "unitFamily": "capacity"
+    },
+    {
+      "indicatorCount": 4,
+      "key": "measure-efdceb96360b",
+      "labelKo": "사육두수",
+      "recordCount": 40,
+      "unit": "두",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-cce048e76be7",
+      "labelKo": "임업잔재 자원량",
+      "recordCount": 1,
+      "unit": "Mt/yr",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-34b5f36d14cf",
+      "labelKo": "재생에너지 발전량 비중(참고)",
+      "recordCount": 24,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-684bafb2a64b",
+      "labelKo": "재생에너지 설비용량 비중(참고)",
+      "recordCount": 26,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-d58e7b07454a",
+      "labelKo": "전기",
+      "recordCount": 1,
+      "unit": "t/yr",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-29a5e522b7a8",
+      "labelKo": "축산폐기물(가축분뇨) 자원량",
+      "recordCount": 1,
+      "unit": "Mt/yr",
+      "unitFamily": "other"
+    }
+  ],
+  "observationCount": 190,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

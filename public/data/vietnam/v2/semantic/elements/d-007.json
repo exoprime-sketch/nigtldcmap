@@ -1,0 +1,149 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 3,
+      "values": [
+        "도입 여부",
+        "제도화 수준",
+        "태깅 분류체계 구조"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 3,
+      "values": [
+        "기둥·범주 구성",
+        "상시 예산과정 내장 정도",
+        "제도 도입 형태"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 2,
+      "values": [
+        "2015",
+        "2022"
+      ]
+    }
+  ],
+  "elementId": "D-007",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 3,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-f23fdc3a02fd|구분",
+      "dimensionLabels": {
+        "category": "도입 여부",
+        "detail": "제도 도입 형태"
+      },
+      "dimensions": {
+        "category": "도입 여부",
+        "detail": "제도 도입 형태"
+      },
+      "displayLabel": "기후예산태깅(CBT) · 도입 여부 — 제도 도입 형태",
+      "indicatorId": "D-007_cbt_adoption_status",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f23fdc3a02fd",
+        "labelKo": "기후예산태깅(CBT)",
+        "unit": "구분",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-f23fdc3a02fd|구분|category=도입 여부|detail=제도 도입 형태|D-007_cbt_adoption_status",
+      "sourceCaveat": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [검토지적 반영] 종전 자료의 \"미완성(4단계 중 3단계)\"은 World Bank CCDR 2022 원문에 제시된 평가체계가 아니라 용역사가 자체 분류한 값이었으며 단계 구분 기준을 재현할 수 없어 그대로 사용하지 않고 결측(M08) 처리함. [용어 정의] TCCRE = Typology of Climate Change Response Expenditure(CPEIR 2015이 정의한 기후대응지출 유형분류). [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "기후예산태깅(CBT) · 도입 여부 — 제도 도입 형태",
+      "sourceLabelEn": "Climate Budget Tagging — adoption status",
+      "sourceNote": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [검토지적 반영] 종전 자료의 \"미완성(4단계 중 3단계)\"은 World Bank CCDR 2022 원문에 제시된 평가체계가 아니라 용역사가 자체 분류한 값이었으며 단계 구분 기준을 재현할 수 없어 그대로 사용하지 않고 결측(M08) 처리함. [용어 정의] TCCRE = Typology of Climate Change Response Expenditure(CPEIR 2015이 정의한 기후대응지출 유형분류). [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-007",
+        "indicatorId": "D-007_cbt_adoption_status",
+        "sourceFileDecoded": "D-007_기후예산태깅(CBT, Climate Budget Tagging) 도입 여부 및 수준.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f23fdc3a02fd|구분",
+      "dimensionLabels": {
+        "category": "제도화 수준",
+        "detail": "상시 예산과정 내장 정도"
+      },
+      "dimensions": {
+        "category": "제도화 수준",
+        "detail": "상시 예산과정 내장 정도"
+      },
+      "displayLabel": "기후예산태깅(CBT) · 제도화 수준 — 상시 예산과정 내장 정도",
+      "indicatorId": "D-007_cbt_institutionalization_level",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f23fdc3a02fd",
+        "labelKo": "기후예산태깅(CBT)",
+        "unit": "구분",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-f23fdc3a02fd|구분|category=제도화 수준|detail=상시 예산과정 내장 정도|D-007_cbt_institutionalization_level",
+      "sourceCaveat": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [검토지적 반영] 종전 자료의 \"미완성(4단계 중 3단계)\"은 World Bank CCDR 2022 원문에 제시된 평가체계가 아니라 용역사가 자체 분류한 값이었으며 단계 구분 기준을 재현할 수 없어 그대로 사용하지 않고 결측(M08) 처리함. [용어 정의] TCCRE = Typology of Climate Change Response Expenditure(CPEIR 2015이 정의한 기후대응지출 유형분류). [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "기후예산태깅(CBT) · 제도화 수준 — 상시 예산과정 내장 정도",
+      "sourceLabelEn": "Climate Budget Tagging — level of institutionalisation",
+      "sourceNote": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [검토지적 반영] 종전 자료의 \"미완성(4단계 중 3단계)\"은 World Bank CCDR 2022 원문에 제시된 평가체계가 아니라 용역사가 자체 분류한 값이었으며 단계 구분 기준을 재현할 수 없어 그대로 사용하지 않고 결측(M08) 처리함. [용어 정의] TCCRE = Typology of Climate Change Response Expenditure(CPEIR 2015이 정의한 기후대응지출 유형분류). [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-007",
+        "indicatorId": "D-007_cbt_institutionalization_level",
+        "sourceFileDecoded": "D-007_기후예산태깅(CBT, Climate Budget Tagging) 도입 여부 및 수준.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f23fdc3a02fd|구분",
+      "dimensionLabels": {
+        "category": "태깅 분류체계 구조",
+        "detail": "기둥·범주 구성"
+      },
+      "dimensions": {
+        "category": "태깅 분류체계 구조",
+        "detail": "기둥·범주 구성"
+      },
+      "displayLabel": "기후예산태깅(CBT) · 태깅 분류체계 구조 — 기둥·범주 구성",
+      "indicatorId": "D-007_cbt_taxonomy_structure",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f23fdc3a02fd",
+        "labelKo": "기후예산태깅(CBT)",
+        "unit": "구분",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-f23fdc3a02fd|구분|category=태깅 분류체계 구조|detail=기둥·범주 구성|D-007_cbt_taxonomy_structure",
+      "sourceCaveat": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [검토지적 반영] 종전 자료의 \"미완성(4단계 중 3단계)\"은 World Bank CCDR 2022 원문에 제시된 평가체계가 아니라 용역사가 자체 분류한 값이었으며 단계 구분 기준을 재현할 수 없어 그대로 사용하지 않고 결측(M08) 처리함. [용어 정의] TCCRE = Typology of Climate Change Response Expenditure(CPEIR 2015이 정의한 기후대응지출 유형분류). [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceLabel": "기후예산태깅(CBT) · 태깅 분류체계 구조 — 기둥·범주 구성",
+      "sourceLabelEn": "Climate Budget Tagging — taxonomy structure",
+      "sourceNote": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함. [시계열 단절] 2014~2015년은 어느 판에서도 다루지 않아 공백임. [검토지적 반영] 종전 자료의 \"미완성(4단계 중 3단계)\"은 World Bank CCDR 2022 원문에 제시된 평가체계가 아니라 용역사가 자체 분류한 값이었으며 단계 구분 기준을 재현할 수 없어 그대로 사용하지 않고 결측(M08) 처리함. [용어 정의] TCCRE = Typology of Climate Change Response Expenditure(CPEIR 2015이 정의한 기후대응지출 유형분류). [라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+      "sourceProvenance": {
+        "elementId": "D-007",
+        "indicatorId": "D-007_cbt_taxonomy_structure",
+        "sourceFileDecoded": "D-007_기후예산태깅(CBT, Climate Budget Tagging) 도입 여부 및 수준.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 3,
+      "key": "measure-f23fdc3a02fd",
+      "labelKo": "기후예산태깅(CBT)",
+      "recordCount": 3,
+      "unit": "구분",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 3,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

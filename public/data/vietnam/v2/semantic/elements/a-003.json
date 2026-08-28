@@ -1,0 +1,365 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 3,
+      "values": [
+        "PPP",
+        "명목",
+        "총액"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 6,
+      "values": [
+        "경상 미달러 기준",
+        "경상 미달러 기준 국내총생산",
+        "구매력평가 경상 국제달러 기준",
+        "구매력평가 경상 국제달러 기준 국민총소득",
+        "실질 1인당 GDP 연간 증가율",
+        "실질 GDP 연간 증가율"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 41,
+      "values": [
+        "1985",
+        "1986",
+        "1987",
+        "1988",
+        "1989",
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ]
+    }
+  ],
+  "elementId": "A-003",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 7,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-82dc14f247b2|USD",
+      "dimensionLabels": {
+        "category": "명목",
+        "detail": "경상 미달러 기준 국내총생산"
+      },
+      "dimensions": {
+        "category": "명목",
+        "detail": "경상 미달러 기준 국내총생산"
+      },
+      "displayLabel": "GDP 총액 · 명목 — 경상 미달러 기준 국내총생산",
+      "indicatorId": "A-003_gdp_current_usd",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-82dc14f247b2",
+        "labelKo": "GDP 총액",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-82dc14f247b2|USD|category=명목|detail=경상 미달러 기준 국내총생산|A-003_gdp_current_usd",
+      "sourceCaveat": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-003 폴더 GDP.xlsx)과 동일 지표의 WDI API를 사용. 검토의견 1번(총 성장률·명목 총액 누락)에 따라 GDP 총 성장률(NY.GDP.MKTP.KD.ZG)과 명목 GDP 총액(NY.GDP.MKTP.CD) 2개 지표를 WDI API에서 추가 수집하여 보완함. [시계열 단절] 검토의견 2번 확인 — 1인당 명목 GDP가 1988년 405달러에서 1989년 98달러로 급락하는 것은 raw 그대로이며, 1989년 3월 복수환율제 폐지·공식환율 대폭 절하에 따른 달러 환산 기준 변동 때문임. 실질 성장률(NY.GDP.PCAP.KD.ZG)은 1988년 5.14%, 1989년 7.36%로 정상이므로 실물경제 위축이 아님. 달러 표시 계열의 1990년 이전 값은 시계열 비교에 사용하지 말 것. [중복] 검토의견 3번(1인당 GDP PPP가 두 시트에 중복)은 종전 제출본의 시트 구성 문제이며, 본 데이터셋은 지표당 1행 구조이므로 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠. [보완] 검토의견 1번에 따라 WDI API에서 추가 수집함.",
+      "sourceLabel": "GDP 총액 · 명목 — 경상 미달러 기준 국내총생산",
+      "sourceLabelEn": "GDP (current US$)",
+      "sourceNote": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-003 폴더 GDP.xlsx)과 동일 지표의 WDI API를 사용. 검토의견 1번(총 성장률·명목 총액 누락)에 따라 GDP 총 성장률(NY.GDP.MKTP.KD.ZG)과 명목 GDP 총액(NY.GDP.MKTP.CD) 2개 지표를 WDI API에서 추가 수집하여 보완함. [시계열 단절] 검토의견 2번 확인 — 1인당 명목 GDP가 1988년 405달러에서 1989년 98달러로 급락하는 것은 raw 그대로이며, 1989년 3월 복수환율제 폐지·공식환율 대폭 절하에 따른 달러 환산 기준 변동 때문임. 실질 성장률(NY.GDP.PCAP.KD.ZG)은 1988년 5.14%, 1989년 7.36%로 정상이므로 실물경제 위축이 아님. 달러 표시 계열의 1990년 이전 값은 시계열 비교에 사용하지 말 것. [중복] 검토의견 3번(1인당 GDP PPP가 두 시트에 중복)은 종전 제출본의 시트 구성 문제이며, 본 데이터셋은 지표당 1행 구조이므로 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠. [보완] 검토의견 1번에 따라 WDI API에서 추가 수집함.",
+      "sourceProvenance": {
+        "elementId": "A-003",
+        "indicatorId": "A-003_gdp_current_usd",
+        "sourceFileDecoded": "A-003_GDP[현재가, PPP, 성장률, 1인당].xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6fe34b6384df|%",
+      "dimensionLabels": {
+        "category": "총액",
+        "detail": "실질 GDP 연간 증가율"
+      },
+      "dimensions": {
+        "category": "총액",
+        "detail": "실질 GDP 연간 증가율"
+      },
+      "displayLabel": "GDP 성장률 · 총액 — 실질 GDP 연간 증가율",
+      "indicatorId": "A-003_gdp_growth_rate",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6fe34b6384df",
+        "labelKo": "GDP 성장률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-6fe34b6384df|%|category=총액|detail=실질 GDP 연간 증가율|A-003_gdp_growth_rate",
+      "sourceCaveat": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-003 폴더 GDP.xlsx)과 동일 지표의 WDI API를 사용. 검토의견 1번(총 성장률·명목 총액 누락)에 따라 GDP 총 성장률(NY.GDP.MKTP.KD.ZG)과 명목 GDP 총액(NY.GDP.MKTP.CD) 2개 지표를 WDI API에서 추가 수집하여 보완함. [시계열 단절] 검토의견 2번 확인 — 1인당 명목 GDP가 1988년 405달러에서 1989년 98달러로 급락하는 것은 raw 그대로이며, 1989년 3월 복수환율제 폐지·공식환율 대폭 절하에 따른 달러 환산 기준 변동 때문임. 실질 성장률(NY.GDP.PCAP.KD.ZG)은 1988년 5.14%, 1989년 7.36%로 정상이므로 실물경제 위축이 아님. 달러 표시 계열의 1990년 이전 값은 시계열 비교에 사용하지 말 것. [중복] 검토의견 3번(1인당 GDP PPP가 두 시트에 중복)은 종전 제출본의 시트 구성 문제이며, 본 데이터셋은 지표당 1행 구조이므로 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠. [보완] 검토의견 1번에 따라 WDI API에서 추가 수집함.",
+      "sourceLabel": "GDP 성장률 · 총액 — 실질 GDP 연간 증가율",
+      "sourceLabelEn": "GDP growth (annual %)",
+      "sourceNote": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-003 폴더 GDP.xlsx)과 동일 지표의 WDI API를 사용. 검토의견 1번(총 성장률·명목 총액 누락)에 따라 GDP 총 성장률(NY.GDP.MKTP.KD.ZG)과 명목 GDP 총액(NY.GDP.MKTP.CD) 2개 지표를 WDI API에서 추가 수집하여 보완함. [시계열 단절] 검토의견 2번 확인 — 1인당 명목 GDP가 1988년 405달러에서 1989년 98달러로 급락하는 것은 raw 그대로이며, 1989년 3월 복수환율제 폐지·공식환율 대폭 절하에 따른 달러 환산 기준 변동 때문임. 실질 성장률(NY.GDP.PCAP.KD.ZG)은 1988년 5.14%, 1989년 7.36%로 정상이므로 실물경제 위축이 아님. 달러 표시 계열의 1990년 이전 값은 시계열 비교에 사용하지 말 것. [중복] 검토의견 3번(1인당 GDP PPP가 두 시트에 중복)은 종전 제출본의 시트 구성 문제이며, 본 데이터셋은 지표당 1행 구조이므로 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠. [보완] 검토의견 1번에 따라 WDI API에서 추가 수집함.",
+      "sourceProvenance": {
+        "elementId": "A-003",
+        "indicatorId": "A-003_gdp_growth_rate",
+        "sourceFileDecoded": "A-003_GDP[현재가, PPP, 성장률, 1인당].xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d13498b8bcf3|USD",
+      "dimensionLabels": {
+        "category": "명목",
+        "detail": "경상 미달러 기준"
+      },
+      "dimensions": {
+        "category": "명목",
+        "detail": "경상 미달러 기준"
+      },
+      "displayLabel": "1인당 GDP · 명목 — 경상 미달러 기준",
+      "indicatorId": "A-003_gdp_per_capita_current_usd",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d13498b8bcf3",
+        "labelKo": "1인당 GDP",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-d13498b8bcf3|USD|category=명목|detail=경상 미달러 기준|A-003_gdp_per_capita_current_usd",
+      "sourceCaveat": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-003 폴더 GDP.xlsx)과 동일 지표의 WDI API를 사용. 검토의견 1번(총 성장률·명목 총액 누락)에 따라 GDP 총 성장률(NY.GDP.MKTP.KD.ZG)과 명목 GDP 총액(NY.GDP.MKTP.CD) 2개 지표를 WDI API에서 추가 수집하여 보완함. [시계열 단절] 검토의견 2번 확인 — 1인당 명목 GDP가 1988년 405달러에서 1989년 98달러로 급락하는 것은 raw 그대로이며, 1989년 3월 복수환율제 폐지·공식환율 대폭 절하에 따른 달러 환산 기준 변동 때문임. 실질 성장률(NY.GDP.PCAP.KD.ZG)은 1988년 5.14%, 1989년 7.36%로 정상이므로 실물경제 위축이 아님. 달러 표시 계열의 1990년 이전 값은 시계열 비교에 사용하지 말 것. [중복] 검토의견 3번(1인당 GDP PPP가 두 시트에 중복)은 종전 제출본의 시트 구성 문제이며, 본 데이터셋은 지표당 1행 구조이므로 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠. [시계열 단절] 1989년 환율제도 변경으로 1990년 이전 값이 단절됨(위 유의사항 참조).",
+      "sourceLabel": "1인당 GDP · 명목 — 경상 미달러 기준",
+      "sourceLabelEn": "GDP per capita (current US$)",
+      "sourceNote": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-003 폴더 GDP.xlsx)과 동일 지표의 WDI API를 사용. 검토의견 1번(총 성장률·명목 총액 누락)에 따라 GDP 총 성장률(NY.GDP.MKTP.KD.ZG)과 명목 GDP 총액(NY.GDP.MKTP.CD) 2개 지표를 WDI API에서 추가 수집하여 보완함. [시계열 단절] 검토의견 2번 확인 — 1인당 명목 GDP가 1988년 405달러에서 1989년 98달러로 급락하는 것은 raw 그대로이며, 1989년 3월 복수환율제 폐지·공식환율 대폭 절하에 따른 달러 환산 기준 변동 때문임. 실질 성장률(NY.GDP.PCAP.KD.ZG)은 1988년 5.14%, 1989년 7.36%로 정상이므로 실물경제 위축이 아님. 달러 표시 계열의 1990년 이전 값은 시계열 비교에 사용하지 말 것. [중복] 검토의견 3번(1인당 GDP PPP가 두 시트에 중복)은 종전 제출본의 시트 구성 문제이며, 본 데이터셋은 지표당 1행 구조이므로 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠. [시계열 단절] 1989년 환율제도 변경으로 1990년 이전 값이 단절됨(위 유의사항 참조).",
+      "sourceProvenance": {
+        "elementId": "A-003",
+        "indicatorId": "A-003_gdp_per_capita_current_usd",
+        "sourceFileDecoded": "A-003_GDP[현재가, PPP, 성장률, 1인당].xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f1bf7b7bcc8c|%",
+      "dimensionLabels": {
+        "detail": "실질 1인당 GDP 연간 증가율"
+      },
+      "dimensions": {
+        "detail": "실질 1인당 GDP 연간 증가율"
+      },
+      "displayLabel": "1인당 GDP 성장률 — 실질 1인당 GDP 연간 증가율",
+      "indicatorId": "A-003_gdp_per_capita_growth_rate",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f1bf7b7bcc8c",
+        "labelKo": "1인당 GDP 성장률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f1bf7b7bcc8c|%|detail=실질 1인당 GDP 연간 증가율|A-003_gdp_per_capita_growth_rate",
+      "sourceCaveat": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-003 폴더 GDP.xlsx)과 동일 지표의 WDI API를 사용. 검토의견 1번(총 성장률·명목 총액 누락)에 따라 GDP 총 성장률(NY.GDP.MKTP.KD.ZG)과 명목 GDP 총액(NY.GDP.MKTP.CD) 2개 지표를 WDI API에서 추가 수집하여 보완함. [시계열 단절] 검토의견 2번 확인 — 1인당 명목 GDP가 1988년 405달러에서 1989년 98달러로 급락하는 것은 raw 그대로이며, 1989년 3월 복수환율제 폐지·공식환율 대폭 절하에 따른 달러 환산 기준 변동 때문임. 실질 성장률(NY.GDP.PCAP.KD.ZG)은 1988년 5.14%, 1989년 7.36%로 정상이므로 실물경제 위축이 아님. 달러 표시 계열의 1990년 이전 값은 시계열 비교에 사용하지 말 것. [중복] 검토의견 3번(1인당 GDP PPP가 두 시트에 중복)은 종전 제출본의 시트 구성 문제이며, 본 데이터셋은 지표당 1행 구조이므로 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "1인당 GDP 성장률 — 실질 1인당 GDP 연간 증가율",
+      "sourceLabelEn": "GDP per capita growth (annual %)",
+      "sourceNote": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-003 폴더 GDP.xlsx)과 동일 지표의 WDI API를 사용. 검토의견 1번(총 성장률·명목 총액 누락)에 따라 GDP 총 성장률(NY.GDP.MKTP.KD.ZG)과 명목 GDP 총액(NY.GDP.MKTP.CD) 2개 지표를 WDI API에서 추가 수집하여 보완함. [시계열 단절] 검토의견 2번 확인 — 1인당 명목 GDP가 1988년 405달러에서 1989년 98달러로 급락하는 것은 raw 그대로이며, 1989년 3월 복수환율제 폐지·공식환율 대폭 절하에 따른 달러 환산 기준 변동 때문임. 실질 성장률(NY.GDP.PCAP.KD.ZG)은 1988년 5.14%, 1989년 7.36%로 정상이므로 실물경제 위축이 아님. 달러 표시 계열의 1990년 이전 값은 시계열 비교에 사용하지 말 것. [중복] 검토의견 3번(1인당 GDP PPP가 두 시트에 중복)은 종전 제출본의 시트 구성 문제이며, 본 데이터셋은 지표당 1행 구조이므로 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-003",
+        "indicatorId": "A-003_gdp_per_capita_growth_rate",
+        "sourceFileDecoded": "A-003_GDP[현재가, PPP, 성장률, 1인당].xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-3d31eca43a86|국제달러",
+      "dimensionLabels": {
+        "category": "PPP",
+        "detail": "구매력평가 경상 국제달러 기준"
+      },
+      "dimensions": {
+        "category": "PPP",
+        "detail": "구매력평가 경상 국제달러 기준"
+      },
+      "displayLabel": "1인당 GDP · PPP — 구매력평가 경상 국제달러 기준",
+      "indicatorId": "A-003_gdp_per_capita_ppp_current",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3d31eca43a86",
+        "labelKo": "1인당 GDP",
+        "unit": "국제달러",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-3d31eca43a86|국제달러|category=PPP|detail=구매력평가 경상 국제달러 기준|A-003_gdp_per_capita_ppp_current",
+      "sourceCaveat": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-003 폴더 GDP.xlsx)과 동일 지표의 WDI API를 사용. 검토의견 1번(총 성장률·명목 총액 누락)에 따라 GDP 총 성장률(NY.GDP.MKTP.KD.ZG)과 명목 GDP 총액(NY.GDP.MKTP.CD) 2개 지표를 WDI API에서 추가 수집하여 보완함. [시계열 단절] 검토의견 2번 확인 — 1인당 명목 GDP가 1988년 405달러에서 1989년 98달러로 급락하는 것은 raw 그대로이며, 1989년 3월 복수환율제 폐지·공식환율 대폭 절하에 따른 달러 환산 기준 변동 때문임. 실질 성장률(NY.GDP.PCAP.KD.ZG)은 1988년 5.14%, 1989년 7.36%로 정상이므로 실물경제 위축이 아님. 달러 표시 계열의 1990년 이전 값은 시계열 비교에 사용하지 말 것. [중복] 검토의견 3번(1인당 GDP PPP가 두 시트에 중복)은 종전 제출본의 시트 구성 문제이며, 본 데이터셋은 지표당 1행 구조이므로 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "1인당 GDP · PPP — 구매력평가 경상 국제달러 기준",
+      "sourceLabelEn": "GDP per capita, PPP (current international $)",
+      "sourceNote": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-003 폴더 GDP.xlsx)과 동일 지표의 WDI API를 사용. 검토의견 1번(총 성장률·명목 총액 누락)에 따라 GDP 총 성장률(NY.GDP.MKTP.KD.ZG)과 명목 GDP 총액(NY.GDP.MKTP.CD) 2개 지표를 WDI API에서 추가 수집하여 보완함. [시계열 단절] 검토의견 2번 확인 — 1인당 명목 GDP가 1988년 405달러에서 1989년 98달러로 급락하는 것은 raw 그대로이며, 1989년 3월 복수환율제 폐지·공식환율 대폭 절하에 따른 달러 환산 기준 변동 때문임. 실질 성장률(NY.GDP.PCAP.KD.ZG)은 1988년 5.14%, 1989년 7.36%로 정상이므로 실물경제 위축이 아님. 달러 표시 계열의 1990년 이전 값은 시계열 비교에 사용하지 말 것. [중복] 검토의견 3번(1인당 GDP PPP가 두 시트에 중복)은 종전 제출본의 시트 구성 문제이며, 본 데이터셋은 지표당 1행 구조이므로 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-003",
+        "indicatorId": "A-003_gdp_per_capita_ppp_current",
+        "sourceFileDecoded": "A-003_GDP[현재가, PPP, 성장률, 1인당].xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1a3374a7d271|국제달러",
+      "dimensionLabels": {
+        "category": "PPP",
+        "detail": "구매력평가 경상 국제달러 기준"
+      },
+      "dimensions": {
+        "category": "PPP",
+        "detail": "구매력평가 경상 국제달러 기준"
+      },
+      "displayLabel": "GDP 총액 · PPP — 구매력평가 경상 국제달러 기준",
+      "indicatorId": "A-003_gdp_ppp_current",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1a3374a7d271",
+        "labelKo": "GDP 총액",
+        "unit": "국제달러",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-1a3374a7d271|국제달러|category=PPP|detail=구매력평가 경상 국제달러 기준|A-003_gdp_ppp_current",
+      "sourceCaveat": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-003 폴더 GDP.xlsx)과 동일 지표의 WDI API를 사용. 검토의견 1번(총 성장률·명목 총액 누락)에 따라 GDP 총 성장률(NY.GDP.MKTP.KD.ZG)과 명목 GDP 총액(NY.GDP.MKTP.CD) 2개 지표를 WDI API에서 추가 수집하여 보완함. [시계열 단절] 검토의견 2번 확인 — 1인당 명목 GDP가 1988년 405달러에서 1989년 98달러로 급락하는 것은 raw 그대로이며, 1989년 3월 복수환율제 폐지·공식환율 대폭 절하에 따른 달러 환산 기준 변동 때문임. 실질 성장률(NY.GDP.PCAP.KD.ZG)은 1988년 5.14%, 1989년 7.36%로 정상이므로 실물경제 위축이 아님. 달러 표시 계열의 1990년 이전 값은 시계열 비교에 사용하지 말 것. [중복] 검토의견 3번(1인당 GDP PPP가 두 시트에 중복)은 종전 제출본의 시트 구성 문제이며, 본 데이터셋은 지표당 1행 구조이므로 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "GDP 총액 · PPP — 구매력평가 경상 국제달러 기준",
+      "sourceLabelEn": "GDP, PPP (current international $)",
+      "sourceNote": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-003 폴더 GDP.xlsx)과 동일 지표의 WDI API를 사용. 검토의견 1번(총 성장률·명목 총액 누락)에 따라 GDP 총 성장률(NY.GDP.MKTP.KD.ZG)과 명목 GDP 총액(NY.GDP.MKTP.CD) 2개 지표를 WDI API에서 추가 수집하여 보완함. [시계열 단절] 검토의견 2번 확인 — 1인당 명목 GDP가 1988년 405달러에서 1989년 98달러로 급락하는 것은 raw 그대로이며, 1989년 3월 복수환율제 폐지·공식환율 대폭 절하에 따른 달러 환산 기준 변동 때문임. 실질 성장률(NY.GDP.PCAP.KD.ZG)은 1988년 5.14%, 1989년 7.36%로 정상이므로 실물경제 위축이 아님. 달러 표시 계열의 1990년 이전 값은 시계열 비교에 사용하지 말 것. [중복] 검토의견 3번(1인당 GDP PPP가 두 시트에 중복)은 종전 제출본의 시트 구성 문제이며, 본 데이터셋은 지표당 1행 구조이므로 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-003",
+        "indicatorId": "A-003_gdp_ppp_current",
+        "sourceFileDecoded": "A-003_GDP[현재가, PPP, 성장률, 1인당].xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8af2c9bb4526|국제달러",
+      "dimensionLabels": {
+        "category": "PPP",
+        "detail": "구매력평가 경상 국제달러 기준 국민총소득"
+      },
+      "dimensions": {
+        "category": "PPP",
+        "detail": "구매력평가 경상 국제달러 기준 국민총소득"
+      },
+      "displayLabel": "GNI 총액 · PPP — 구매력평가 경상 국제달러 기준 국민총소득",
+      "indicatorId": "A-003_gni_ppp_current",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8af2c9bb4526",
+        "labelKo": "GNI 총액",
+        "unit": "국제달러",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-8af2c9bb4526|국제달러|category=PPP|detail=구매력평가 경상 국제달러 기준 국민총소득|A-003_gni_ppp_current",
+      "sourceCaveat": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-003 폴더 GDP.xlsx)과 동일 지표의 WDI API를 사용. 검토의견 1번(총 성장률·명목 총액 누락)에 따라 GDP 총 성장률(NY.GDP.MKTP.KD.ZG)과 명목 GDP 총액(NY.GDP.MKTP.CD) 2개 지표를 WDI API에서 추가 수집하여 보완함. [시계열 단절] 검토의견 2번 확인 — 1인당 명목 GDP가 1988년 405달러에서 1989년 98달러로 급락하는 것은 raw 그대로이며, 1989년 3월 복수환율제 폐지·공식환율 대폭 절하에 따른 달러 환산 기준 변동 때문임. 실질 성장률(NY.GDP.PCAP.KD.ZG)은 1988년 5.14%, 1989년 7.36%로 정상이므로 실물경제 위축이 아님. 달러 표시 계열의 1990년 이전 값은 시계열 비교에 사용하지 말 것. [중복] 검토의견 3번(1인당 GDP PPP가 두 시트에 중복)은 종전 제출본의 시트 구성 문제이며, 본 데이터셋은 지표당 1행 구조이므로 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "GNI 총액 · PPP — 구매력평가 경상 국제달러 기준 국민총소득",
+      "sourceLabelEn": "GNI, PPP (current international $)",
+      "sourceNote": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-003 폴더 GDP.xlsx)과 동일 지표의 WDI API를 사용. 검토의견 1번(총 성장률·명목 총액 누락)에 따라 GDP 총 성장률(NY.GDP.MKTP.KD.ZG)과 명목 GDP 총액(NY.GDP.MKTP.CD) 2개 지표를 WDI API에서 추가 수집하여 보완함. [시계열 단절] 검토의견 2번 확인 — 1인당 명목 GDP가 1988년 405달러에서 1989년 98달러로 급락하는 것은 raw 그대로이며, 1989년 3월 복수환율제 폐지·공식환율 대폭 절하에 따른 달러 환산 기준 변동 때문임. 실질 성장률(NY.GDP.PCAP.KD.ZG)은 1988년 5.14%, 1989년 7.36%로 정상이므로 실물경제 위축이 아님. 달러 표시 계열의 1990년 이전 값은 시계열 비교에 사용하지 말 것. [중복] 검토의견 3번(1인당 GDP PPP가 두 시트에 중복)은 종전 제출본의 시트 구성 문제이며, 본 데이터셋은 지표당 1행 구조이므로 해소됨. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-003",
+        "indicatorId": "A-003_gni_ppp_current",
+        "sourceFileDecoded": "A-003_GDP[현재가, PPP, 성장률, 1인당].xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-d13498b8bcf3",
+      "labelKo": "1인당 GDP",
+      "recordCount": 41,
+      "unit": "USD",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-3d31eca43a86",
+      "labelKo": "1인당 GDP",
+      "recordCount": 36,
+      "unit": "국제달러",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-f1bf7b7bcc8c",
+      "labelKo": "1인당 GDP 성장률",
+      "recordCount": 41,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-6fe34b6384df",
+      "labelKo": "GDP 성장률",
+      "recordCount": 41,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-82dc14f247b2",
+      "labelKo": "GDP 총액",
+      "recordCount": 41,
+      "unit": "USD",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-1a3374a7d271",
+      "labelKo": "GDP 총액",
+      "recordCount": 36,
+      "unit": "국제달러",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-8af2c9bb4526",
+      "labelKo": "GNI 총액",
+      "recordCount": 36,
+      "unit": "국제달러",
+      "unitFamily": "other"
+    }
+  ],
+  "observationCount": 272,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

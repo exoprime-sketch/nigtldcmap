@@ -1,0 +1,833 @@
+{
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 10,
+      "values": [
+        "IIASA 모형 SSP1",
+        "IIASA 모형 SSP2",
+        "IIASA 모형 SSP3",
+        "IIASA 모형 SSP4",
+        "IIASA 모형 SSP5",
+        "SSP1",
+        "SSP2",
+        "SSP3",
+        "SSP4",
+        "SSP5"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 25,
+      "values": [
+        "1980",
+        "1985",
+        "1990",
+        "1995",
+        "2000",
+        "2005",
+        "2010",
+        "2015",
+        "2020",
+        "2025",
+        "2030",
+        "2035",
+        "2040",
+        "2045",
+        "2050",
+        "2055",
+        "2060",
+        "2065",
+        "2070",
+        "2075",
+        "2080",
+        "2085",
+        "2090",
+        "2095",
+        "2100"
+      ]
+    }
+  ],
+  "elementId": "B-018",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 24,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-a82e1fdc55f5|USD_2017/인",
+      "dimensionLabels": {
+        "detail": "SSP1"
+      },
+      "dimensions": {
+        "detail": "SSP1"
+      },
+      "displayLabel": "1인당 GDP(PPP) 전 구간 — SSP1",
+      "indicatorId": "B-018_gdp_pc_full_ssp1",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a82e1fdc55f5",
+        "labelKo": "1인당 GDP(PPP) 전 구간",
+        "unit": "USD_2017/인",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-a82e1fdc55f5|USD_2017/인|detail=SSP1|B-018_gdp_pc_full_ssp1",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 종전에는 SSP2·SSP5 두 시나리오의 2050·2100만 수록되어 있었음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceLabel": "1인당 GDP(PPP) 전 구간 — SSP1",
+      "sourceLabelEn": "GDP PPP per capita full series — SSP1",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 종전에는 SSP2·SSP5 두 시나리오의 2050·2100만 수록되어 있었음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-018",
+        "indicatorId": "B-018_gdp_pc_full_ssp1",
+        "sourceFileDecoded": "B-018_SSP GDP(PPP, PPP per cap) 전망 (SSP 1~5).xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a82e1fdc55f5|USD_2017/인",
+      "dimensionLabels": {
+        "detail": "SSP2"
+      },
+      "dimensions": {
+        "detail": "SSP2"
+      },
+      "displayLabel": "1인당 GDP(PPP) 전 구간 — SSP2",
+      "indicatorId": "B-018_gdp_pc_full_ssp2",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a82e1fdc55f5",
+        "labelKo": "1인당 GDP(PPP) 전 구간",
+        "unit": "USD_2017/인",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-a82e1fdc55f5|USD_2017/인|detail=SSP2|B-018_gdp_pc_full_ssp2",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 종전에는 SSP2·SSP5 두 시나리오의 2050·2100만 수록되어 있었음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceLabel": "1인당 GDP(PPP) 전 구간 — SSP2",
+      "sourceLabelEn": "GDP PPP per capita full series — SSP2",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 종전에는 SSP2·SSP5 두 시나리오의 2050·2100만 수록되어 있었음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-018",
+        "indicatorId": "B-018_gdp_pc_full_ssp2",
+        "sourceFileDecoded": "B-018_SSP GDP(PPP, PPP per cap) 전망 (SSP 1~5).xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a82e1fdc55f5|USD_2017/인",
+      "dimensionLabels": {
+        "detail": "SSP3"
+      },
+      "dimensions": {
+        "detail": "SSP3"
+      },
+      "displayLabel": "1인당 GDP(PPP) 전 구간 — SSP3",
+      "indicatorId": "B-018_gdp_pc_full_ssp3",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a82e1fdc55f5",
+        "labelKo": "1인당 GDP(PPP) 전 구간",
+        "unit": "USD_2017/인",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-a82e1fdc55f5|USD_2017/인|detail=SSP3|B-018_gdp_pc_full_ssp3",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 종전에는 SSP2·SSP5 두 시나리오의 2050·2100만 수록되어 있었음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceLabel": "1인당 GDP(PPP) 전 구간 — SSP3",
+      "sourceLabelEn": "GDP PPP per capita full series — SSP3",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 종전에는 SSP2·SSP5 두 시나리오의 2050·2100만 수록되어 있었음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-018",
+        "indicatorId": "B-018_gdp_pc_full_ssp3",
+        "sourceFileDecoded": "B-018_SSP GDP(PPP, PPP per cap) 전망 (SSP 1~5).xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a82e1fdc55f5|USD_2017/인",
+      "dimensionLabels": {
+        "detail": "SSP4"
+      },
+      "dimensions": {
+        "detail": "SSP4"
+      },
+      "displayLabel": "1인당 GDP(PPP) 전 구간 — SSP4",
+      "indicatorId": "B-018_gdp_pc_full_ssp4",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a82e1fdc55f5",
+        "labelKo": "1인당 GDP(PPP) 전 구간",
+        "unit": "USD_2017/인",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-a82e1fdc55f5|USD_2017/인|detail=SSP4|B-018_gdp_pc_full_ssp4",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 종전에는 SSP2·SSP5 두 시나리오의 2050·2100만 수록되어 있었음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceLabel": "1인당 GDP(PPP) 전 구간 — SSP4",
+      "sourceLabelEn": "GDP PPP per capita full series — SSP4",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 종전에는 SSP2·SSP5 두 시나리오의 2050·2100만 수록되어 있었음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-018",
+        "indicatorId": "B-018_gdp_pc_full_ssp4",
+        "sourceFileDecoded": "B-018_SSP GDP(PPP, PPP per cap) 전망 (SSP 1~5).xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a82e1fdc55f5|USD_2017/인",
+      "dimensionLabels": {
+        "detail": "SSP5"
+      },
+      "dimensions": {
+        "detail": "SSP5"
+      },
+      "displayLabel": "1인당 GDP(PPP) 전 구간 — SSP5",
+      "indicatorId": "B-018_gdp_pc_full_ssp5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a82e1fdc55f5",
+        "labelKo": "1인당 GDP(PPP) 전 구간",
+        "unit": "USD_2017/인",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-a82e1fdc55f5|USD_2017/인|detail=SSP5|B-018_gdp_pc_full_ssp5",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 종전에는 SSP2·SSP5 두 시나리오의 2050·2100만 수록되어 있었음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceLabel": "1인당 GDP(PPP) 전 구간 — SSP5",
+      "sourceLabelEn": "GDP PPP per capita full series — SSP5",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 종전에는 SSP2·SSP5 두 시나리오의 2050·2100만 수록되어 있었음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-018",
+        "indicatorId": "B-018_gdp_pc_full_ssp5",
+        "sourceFileDecoded": "B-018_SSP GDP(PPP, PPP per cap) 전망 (SSP 1~5).xlsx",
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1f0f30c0f1d2|USD_2017/인",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "1인당 GDP(PPP) 과거 실적(참고)",
+      "indicatorId": "B-018_gdp_pc_hist",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1f0f30c0f1d2",
+        "labelKo": "1인당 GDP(PPP) 과거 실적(참고)",
+        "unit": "USD_2017/인",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-1f0f30c0f1d2|USD_2017/인||B-018_gdp_pc_hist",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceLabel": "1인당 GDP(PPP) 과거 실적(참고)",
+      "sourceLabelEn": "GDP PPP per capita historical reference",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-018",
+        "indicatorId": "B-018_gdp_pc_hist",
+        "sourceFileDecoded": "B-018_SSP GDP(PPP, PPP per cap) 전망 (SSP 1~5).xlsx",
+        "sourceRow": 27,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-74ce637d8956|USD_2017/인",
+      "dimensionLabels": {
+        "detail": "SSP2"
+      },
+      "dimensions": {
+        "detail": "SSP2"
+      },
+      "displayLabel": "1인당 GDP(PPP) — SSP2",
+      "indicatorId": "B-018_gdp_pc_ssp2",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-74ce637d8956",
+        "labelKo": "1인당 GDP(PPP)",
+        "unit": "USD_2017/인",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-74ce637d8956|USD_2017/인|detail=SSP2|B-018_gdp_pc_ssp2",
+      "sourceCaveat": "IIASA SSP Database v3.1 Basic Drivers. GDP는 OECD ENV-Growth 2023 모형, 인구는 IIASA-WiC POP 2023 모형. 국가 단위 값이며 격자·행정구역 자료가 아님(GIS 아님). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceLabel": "1인당 GDP(PPP) — SSP2",
+      "sourceLabelEn": "GDP per capita PPP SSP2",
+      "sourceNote": "IIASA SSP Database v3.1 Basic Drivers. GDP는 OECD ENV-Growth 2023 모형, 인구는 IIASA-WiC POP 2023 모형. 국가 단위 값이며 격자·행정구역 자료가 아님(GIS 아님). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-018",
+        "indicatorId": "B-018_gdp_pc_ssp2",
+        "sourceFileDecoded": "B-018_SSP GDP(PPP, PPP per cap) 전망 (SSP 1~5).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-74ce637d8956|USD_2017/인",
+      "dimensionLabels": {
+        "detail": "SSP5"
+      },
+      "dimensions": {
+        "detail": "SSP5"
+      },
+      "displayLabel": "1인당 GDP(PPP) — SSP5",
+      "indicatorId": "B-018_gdp_pc_ssp5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-74ce637d8956",
+        "labelKo": "1인당 GDP(PPP)",
+        "unit": "USD_2017/인",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-74ce637d8956|USD_2017/인|detail=SSP5|B-018_gdp_pc_ssp5",
+      "sourceCaveat": "IIASA SSP Database v3.1 Basic Drivers. GDP는 OECD ENV-Growth 2023 모형, 인구는 IIASA-WiC POP 2023 모형. 국가 단위 값이며 격자·행정구역 자료가 아님(GIS 아님). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceLabel": "1인당 GDP(PPP) — SSP5",
+      "sourceLabelEn": "GDP per capita PPP SSP5",
+      "sourceNote": "IIASA SSP Database v3.1 Basic Drivers. GDP는 OECD ENV-Growth 2023 모형, 인구는 IIASA-WiC POP 2023 모형. 국가 단위 값이며 격자·행정구역 자료가 아님(GIS 아님). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-018",
+        "indicatorId": "B-018_gdp_pc_ssp5",
+        "sourceFileDecoded": "B-018_SSP GDP(PPP, PPP per cap) 전망 (SSP 1~5).xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-42d427ed0568|십억 USD_2017/yr",
+      "dimensionLabels": {
+        "detail": "SSP1"
+      },
+      "dimensions": {
+        "detail": "SSP1"
+      },
+      "displayLabel": "GDP(PPP) 전 구간 — SSP1",
+      "indicatorId": "B-018_gdp_ppp_full_ssp1",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-42d427ed0568",
+        "labelKo": "GDP(PPP) 전 구간",
+        "unit": "십억 USD_2017/yr",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "measure-42d427ed0568|십억 USD_2017/yr|detail=SSP1|B-018_gdp_ppp_full_ssp1",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 종전에는 2050·2100 두 시점만 수록되어 있었으나 원본에는 2020–2100 5년 간격 17개 시점이 전량 존재함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceLabel": "GDP(PPP) 전 구간 — SSP1",
+      "sourceLabelEn": "GDP PPP full series — SSP1",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 종전에는 2050·2100 두 시점만 수록되어 있었으나 원본에는 2020–2100 5년 간격 17개 시점이 전량 존재함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-018",
+        "indicatorId": "B-018_gdp_ppp_full_ssp1",
+        "sourceFileDecoded": "B-018_SSP GDP(PPP, PPP per cap) 전망 (SSP 1~5).xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-42d427ed0568|십억 USD_2017/yr",
+      "dimensionLabels": {
+        "detail": "SSP2"
+      },
+      "dimensions": {
+        "detail": "SSP2"
+      },
+      "displayLabel": "GDP(PPP) 전 구간 — SSP2",
+      "indicatorId": "B-018_gdp_ppp_full_ssp2",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-42d427ed0568",
+        "labelKo": "GDP(PPP) 전 구간",
+        "unit": "십억 USD_2017/yr",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "measure-42d427ed0568|십억 USD_2017/yr|detail=SSP2|B-018_gdp_ppp_full_ssp2",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 종전에는 2050·2100 두 시점만 수록되어 있었으나 원본에는 2020–2100 5년 간격 17개 시점이 전량 존재함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceLabel": "GDP(PPP) 전 구간 — SSP2",
+      "sourceLabelEn": "GDP PPP full series — SSP2",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 종전에는 2050·2100 두 시점만 수록되어 있었으나 원본에는 2020–2100 5년 간격 17개 시점이 전량 존재함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-018",
+        "indicatorId": "B-018_gdp_ppp_full_ssp2",
+        "sourceFileDecoded": "B-018_SSP GDP(PPP, PPP per cap) 전망 (SSP 1~5).xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-42d427ed0568|십억 USD_2017/yr",
+      "dimensionLabels": {
+        "detail": "SSP3"
+      },
+      "dimensions": {
+        "detail": "SSP3"
+      },
+      "displayLabel": "GDP(PPP) 전 구간 — SSP3",
+      "indicatorId": "B-018_gdp_ppp_full_ssp3",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-42d427ed0568",
+        "labelKo": "GDP(PPP) 전 구간",
+        "unit": "십억 USD_2017/yr",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "measure-42d427ed0568|십억 USD_2017/yr|detail=SSP3|B-018_gdp_ppp_full_ssp3",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 종전에는 2050·2100 두 시점만 수록되어 있었으나 원본에는 2020–2100 5년 간격 17개 시점이 전량 존재함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceLabel": "GDP(PPP) 전 구간 — SSP3",
+      "sourceLabelEn": "GDP PPP full series — SSP3",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 종전에는 2050·2100 두 시점만 수록되어 있었으나 원본에는 2020–2100 5년 간격 17개 시점이 전량 존재함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-018",
+        "indicatorId": "B-018_gdp_ppp_full_ssp3",
+        "sourceFileDecoded": "B-018_SSP GDP(PPP, PPP per cap) 전망 (SSP 1~5).xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-42d427ed0568|십억 USD_2017/yr",
+      "dimensionLabels": {
+        "detail": "SSP4"
+      },
+      "dimensions": {
+        "detail": "SSP4"
+      },
+      "displayLabel": "GDP(PPP) 전 구간 — SSP4",
+      "indicatorId": "B-018_gdp_ppp_full_ssp4",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-42d427ed0568",
+        "labelKo": "GDP(PPP) 전 구간",
+        "unit": "십억 USD_2017/yr",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "measure-42d427ed0568|십억 USD_2017/yr|detail=SSP4|B-018_gdp_ppp_full_ssp4",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 종전에는 2050·2100 두 시점만 수록되어 있었으나 원본에는 2020–2100 5년 간격 17개 시점이 전량 존재함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceLabel": "GDP(PPP) 전 구간 — SSP4",
+      "sourceLabelEn": "GDP PPP full series — SSP4",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 종전에는 2050·2100 두 시점만 수록되어 있었으나 원본에는 2020–2100 5년 간격 17개 시점이 전량 존재함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-018",
+        "indicatorId": "B-018_gdp_ppp_full_ssp4",
+        "sourceFileDecoded": "B-018_SSP GDP(PPP, PPP per cap) 전망 (SSP 1~5).xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-42d427ed0568|십억 USD_2017/yr",
+      "dimensionLabels": {
+        "detail": "SSP5"
+      },
+      "dimensions": {
+        "detail": "SSP5"
+      },
+      "displayLabel": "GDP(PPP) 전 구간 — SSP5",
+      "indicatorId": "B-018_gdp_ppp_full_ssp5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-42d427ed0568",
+        "labelKo": "GDP(PPP) 전 구간",
+        "unit": "십억 USD_2017/yr",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "measure-42d427ed0568|십억 USD_2017/yr|detail=SSP5|B-018_gdp_ppp_full_ssp5",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 종전에는 2050·2100 두 시점만 수록되어 있었으나 원본에는 2020–2100 5년 간격 17개 시점이 전량 존재함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceLabel": "GDP(PPP) 전 구간 — SSP5",
+      "sourceLabelEn": "GDP PPP full series — SSP5",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 종전에는 2050·2100 두 시점만 수록되어 있었으나 원본에는 2020–2100 5년 간격 17개 시점이 전량 존재함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-018",
+        "indicatorId": "B-018_gdp_ppp_full_ssp5",
+        "sourceFileDecoded": "B-018_SSP GDP(PPP, PPP per cap) 전망 (SSP 1~5).xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-ea3c308c37cd|십억 USD_2017/yr",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "GDP(PPP) 과거 실적(참고)",
+      "indicatorId": "B-018_gdp_ppp_hist",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ea3c308c37cd",
+        "labelKo": "GDP(PPP) 과거 실적(참고)",
+        "unit": "십억 USD_2017/yr",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "measure-ea3c308c37cd|십억 USD_2017/yr||B-018_gdp_ppp_hist",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 전망 시계열의 기준선이 되는 과거 실적 계열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceLabel": "GDP(PPP) 과거 실적(참고)",
+      "sourceLabelEn": "GDP PPP historical reference",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 전망 시계열의 기준선이 되는 과거 실적 계열. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-018",
+        "indicatorId": "B-018_gdp_ppp_hist",
+        "sourceFileDecoded": "B-018_SSP GDP(PPP, PPP per cap) 전망 (SSP 1~5).xlsx",
+        "sourceRow": 26,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-728a79e71da5|십억 USD_2017/yr",
+      "dimensionLabels": {
+        "detail": "IIASA 모형 SSP1"
+      },
+      "dimensions": {
+        "detail": "IIASA 모형 SSP1"
+      },
+      "displayLabel": "GDP(PPP) — IIASA 모형 SSP1",
+      "indicatorId": "B-018_gdp_ppp_iiasa_ssp1",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-728a79e71da5",
+        "labelKo": "GDP(PPP)",
+        "unit": "십억 USD_2017/yr",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "measure-728a79e71da5|십억 USD_2017/yr|detail=IIASA 모형 SSP1|B-018_gdp_ppp_iiasa_ssp1",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 원본에는 GDP 모형이 OECD ENV-Growth와 IIASA GDP 2종 수록되어 있으나 종전에는 OECD만 반영. 모형 간 수준 차이가 커(2050년 SSP2 기준 OECD 3,930 vs IIASA 2,772) 접속하지 않고 별도 지표로 분리. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceLabel": "GDP(PPP) — IIASA 모형 SSP1",
+      "sourceLabelEn": "GDP PPP (IIASA GDP 2023) — SSP1",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 원본에는 GDP 모형이 OECD ENV-Growth와 IIASA GDP 2종 수록되어 있으나 종전에는 OECD만 반영. 모형 간 수준 차이가 커(2050년 SSP2 기준 OECD 3,930 vs IIASA 2,772) 접속하지 않고 별도 지표로 분리. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-018",
+        "indicatorId": "B-018_gdp_ppp_iiasa_ssp1",
+        "sourceFileDecoded": "B-018_SSP GDP(PPP, PPP per cap) 전망 (SSP 1~5).xlsx",
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-728a79e71da5|십억 USD_2017/yr",
+      "dimensionLabels": {
+        "detail": "IIASA 모형 SSP2"
+      },
+      "dimensions": {
+        "detail": "IIASA 모형 SSP2"
+      },
+      "displayLabel": "GDP(PPP) — IIASA 모형 SSP2",
+      "indicatorId": "B-018_gdp_ppp_iiasa_ssp2",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-728a79e71da5",
+        "labelKo": "GDP(PPP)",
+        "unit": "십억 USD_2017/yr",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "measure-728a79e71da5|십억 USD_2017/yr|detail=IIASA 모형 SSP2|B-018_gdp_ppp_iiasa_ssp2",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 원본에는 GDP 모형이 OECD ENV-Growth와 IIASA GDP 2종 수록되어 있으나 종전에는 OECD만 반영. 모형 간 수준 차이가 커(2050년 SSP2 기준 OECD 3,930 vs IIASA 2,772) 접속하지 않고 별도 지표로 분리. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceLabel": "GDP(PPP) — IIASA 모형 SSP2",
+      "sourceLabelEn": "GDP PPP (IIASA GDP 2023) — SSP2",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 원본에는 GDP 모형이 OECD ENV-Growth와 IIASA GDP 2종 수록되어 있으나 종전에는 OECD만 반영. 모형 간 수준 차이가 커(2050년 SSP2 기준 OECD 3,930 vs IIASA 2,772) 접속하지 않고 별도 지표로 분리. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-018",
+        "indicatorId": "B-018_gdp_ppp_iiasa_ssp2",
+        "sourceFileDecoded": "B-018_SSP GDP(PPP, PPP per cap) 전망 (SSP 1~5).xlsx",
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-728a79e71da5|십억 USD_2017/yr",
+      "dimensionLabels": {
+        "detail": "IIASA 모형 SSP3"
+      },
+      "dimensions": {
+        "detail": "IIASA 모형 SSP3"
+      },
+      "displayLabel": "GDP(PPP) — IIASA 모형 SSP3",
+      "indicatorId": "B-018_gdp_ppp_iiasa_ssp3",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-728a79e71da5",
+        "labelKo": "GDP(PPP)",
+        "unit": "십억 USD_2017/yr",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "measure-728a79e71da5|십억 USD_2017/yr|detail=IIASA 모형 SSP3|B-018_gdp_ppp_iiasa_ssp3",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 원본에는 GDP 모형이 OECD ENV-Growth와 IIASA GDP 2종 수록되어 있으나 종전에는 OECD만 반영. 모형 간 수준 차이가 커(2050년 SSP2 기준 OECD 3,930 vs IIASA 2,772) 접속하지 않고 별도 지표로 분리. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceLabel": "GDP(PPP) — IIASA 모형 SSP3",
+      "sourceLabelEn": "GDP PPP (IIASA GDP 2023) — SSP3",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 원본에는 GDP 모형이 OECD ENV-Growth와 IIASA GDP 2종 수록되어 있으나 종전에는 OECD만 반영. 모형 간 수준 차이가 커(2050년 SSP2 기준 OECD 3,930 vs IIASA 2,772) 접속하지 않고 별도 지표로 분리. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-018",
+        "indicatorId": "B-018_gdp_ppp_iiasa_ssp3",
+        "sourceFileDecoded": "B-018_SSP GDP(PPP, PPP per cap) 전망 (SSP 1~5).xlsx",
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-728a79e71da5|십억 USD_2017/yr",
+      "dimensionLabels": {
+        "detail": "IIASA 모형 SSP4"
+      },
+      "dimensions": {
+        "detail": "IIASA 모형 SSP4"
+      },
+      "displayLabel": "GDP(PPP) — IIASA 모형 SSP4",
+      "indicatorId": "B-018_gdp_ppp_iiasa_ssp4",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-728a79e71da5",
+        "labelKo": "GDP(PPP)",
+        "unit": "십억 USD_2017/yr",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "measure-728a79e71da5|십억 USD_2017/yr|detail=IIASA 모형 SSP4|B-018_gdp_ppp_iiasa_ssp4",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 원본에는 GDP 모형이 OECD ENV-Growth와 IIASA GDP 2종 수록되어 있으나 종전에는 OECD만 반영. 모형 간 수준 차이가 커(2050년 SSP2 기준 OECD 3,930 vs IIASA 2,772) 접속하지 않고 별도 지표로 분리. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceLabel": "GDP(PPP) — IIASA 모형 SSP4",
+      "sourceLabelEn": "GDP PPP (IIASA GDP 2023) — SSP4",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 원본에는 GDP 모형이 OECD ENV-Growth와 IIASA GDP 2종 수록되어 있으나 종전에는 OECD만 반영. 모형 간 수준 차이가 커(2050년 SSP2 기준 OECD 3,930 vs IIASA 2,772) 접속하지 않고 별도 지표로 분리. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-018",
+        "indicatorId": "B-018_gdp_ppp_iiasa_ssp4",
+        "sourceFileDecoded": "B-018_SSP GDP(PPP, PPP per cap) 전망 (SSP 1~5).xlsx",
+        "sourceRow": 24,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-728a79e71da5|십억 USD_2017/yr",
+      "dimensionLabels": {
+        "detail": "IIASA 모형 SSP5"
+      },
+      "dimensions": {
+        "detail": "IIASA 모형 SSP5"
+      },
+      "displayLabel": "GDP(PPP) — IIASA 모형 SSP5",
+      "indicatorId": "B-018_gdp_ppp_iiasa_ssp5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-728a79e71da5",
+        "labelKo": "GDP(PPP)",
+        "unit": "십억 USD_2017/yr",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "measure-728a79e71da5|십억 USD_2017/yr|detail=IIASA 모형 SSP5|B-018_gdp_ppp_iiasa_ssp5",
+      "sourceCaveat": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 원본에는 GDP 모형이 OECD ENV-Growth와 IIASA GDP 2종 수록되어 있으나 종전에는 OECD만 반영. 모형 간 수준 차이가 커(2050년 SSP2 기준 OECD 3,930 vs IIASA 2,772) 접속하지 않고 별도 지표로 분리. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceLabel": "GDP(PPP) — IIASA 모형 SSP5",
+      "sourceLabelEn": "GDP PPP (IIASA GDP 2023) — SSP5",
+      "sourceNote": "[2차 검수 반영] 보유 raw 원본에 값이 있었으나 지표로 승격되지 않았던 계열 — 2026-08-16 [raw]·[미수집] 전수 재대조에서 확인·수록. 원본에는 GDP 모형이 OECD ENV-Growth와 IIASA GDP 2종 수록되어 있으나 종전에는 OECD만 반영. 모형 간 수준 차이가 커(2050년 SSP2 기준 OECD 3,930 vs IIASA 2,772) 접속하지 않고 별도 지표로 분리. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-018",
+        "indicatorId": "B-018_gdp_ppp_iiasa_ssp5",
+        "sourceFileDecoded": "B-018_SSP GDP(PPP, PPP per cap) 전망 (SSP 1~5).xlsx",
+        "sourceRow": 25,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-fda949c6aa98|십억 USD_2017/yr",
+      "dimensionLabels": {
+        "detail": "SSP1"
+      },
+      "dimensions": {
+        "detail": "SSP1"
+      },
+      "displayLabel": "GDP(PPP) 전망 — SSP1",
+      "indicatorId": "B-018_gdp_ppp_ssp1",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-fda949c6aa98",
+        "labelKo": "GDP(PPP) 전망",
+        "unit": "십억 USD_2017/yr",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "measure-fda949c6aa98|십억 USD_2017/yr|detail=SSP1|B-018_gdp_ppp_ssp1",
+      "sourceCaveat": "[발췌] 원천은 2020–2100 5년 간격 전체 시계열을 제공하며, 본 표준서식에는 대표연도(2050·2100)를 수록. 전체 시계열은 [raw] ssp_basic_drivers_release_3.1_full.xlsx 및 그룹 워크북에 보존. IIASA SSP Database v3.1 Basic Drivers. GDP는 OECD ENV-Growth 2023 모형, 인구는 IIASA-WiC POP 2023 모형. 국가 단위 값이며 격자·행정구역 자료가 아님(GIS 아님). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceLabel": "GDP(PPP) 전망 — SSP1",
+      "sourceLabelEn": "GDP|PPP SSP1",
+      "sourceNote": "[발췌] 원천은 2020–2100 5년 간격 전체 시계열을 제공하며, 본 표준서식에는 대표연도(2050·2100)를 수록. 전체 시계열은 [raw] ssp_basic_drivers_release_3.1_full.xlsx 및 그룹 워크북에 보존. IIASA SSP Database v3.1 Basic Drivers. GDP는 OECD ENV-Growth 2023 모형, 인구는 IIASA-WiC POP 2023 모형. 국가 단위 값이며 격자·행정구역 자료가 아님(GIS 아님). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-018",
+        "indicatorId": "B-018_gdp_ppp_ssp1",
+        "sourceFileDecoded": "B-018_SSP GDP(PPP, PPP per cap) 전망 (SSP 1~5).xlsx",
+        "sourceRow": 4,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-fda949c6aa98|십억 USD_2017/yr",
+      "dimensionLabels": {
+        "detail": "SSP2"
+      },
+      "dimensions": {
+        "detail": "SSP2"
+      },
+      "displayLabel": "GDP(PPP) 전망 — SSP2",
+      "indicatorId": "B-018_gdp_ppp_ssp2",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-fda949c6aa98",
+        "labelKo": "GDP(PPP) 전망",
+        "unit": "십억 USD_2017/yr",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "measure-fda949c6aa98|십억 USD_2017/yr|detail=SSP2|B-018_gdp_ppp_ssp2",
+      "sourceCaveat": "[발췌] 원천은 2020–2100 5년 간격 전체 시계열을 제공하며, 본 표준서식에는 대표연도(2050·2100)를 수록. 전체 시계열은 [raw] ssp_basic_drivers_release_3.1_full.xlsx 및 그룹 워크북에 보존. IIASA SSP Database v3.1 Basic Drivers. GDP는 OECD ENV-Growth 2023 모형, 인구는 IIASA-WiC POP 2023 모형. 국가 단위 값이며 격자·행정구역 자료가 아님(GIS 아님). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceLabel": "GDP(PPP) 전망 — SSP2",
+      "sourceLabelEn": "GDP|PPP SSP2",
+      "sourceNote": "[발췌] 원천은 2020–2100 5년 간격 전체 시계열을 제공하며, 본 표준서식에는 대표연도(2050·2100)를 수록. 전체 시계열은 [raw] ssp_basic_drivers_release_3.1_full.xlsx 및 그룹 워크북에 보존. IIASA SSP Database v3.1 Basic Drivers. GDP는 OECD ENV-Growth 2023 모형, 인구는 IIASA-WiC POP 2023 모형. 국가 단위 값이며 격자·행정구역 자료가 아님(GIS 아님). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-018",
+        "indicatorId": "B-018_gdp_ppp_ssp2",
+        "sourceFileDecoded": "B-018_SSP GDP(PPP, PPP per cap) 전망 (SSP 1~5).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-fda949c6aa98|십억 USD_2017/yr",
+      "dimensionLabels": {
+        "detail": "SSP3"
+      },
+      "dimensions": {
+        "detail": "SSP3"
+      },
+      "displayLabel": "GDP(PPP) 전망 — SSP3",
+      "indicatorId": "B-018_gdp_ppp_ssp3",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-fda949c6aa98",
+        "labelKo": "GDP(PPP) 전망",
+        "unit": "십억 USD_2017/yr",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "measure-fda949c6aa98|십억 USD_2017/yr|detail=SSP3|B-018_gdp_ppp_ssp3",
+      "sourceCaveat": "[발췌] 원천은 2020–2100 5년 간격 전체 시계열을 제공하며, 본 표준서식에는 대표연도(2050·2100)를 수록. 전체 시계열은 [raw] ssp_basic_drivers_release_3.1_full.xlsx 및 그룹 워크북에 보존. IIASA SSP Database v3.1 Basic Drivers. GDP는 OECD ENV-Growth 2023 모형, 인구는 IIASA-WiC POP 2023 모형. 국가 단위 값이며 격자·행정구역 자료가 아님(GIS 아님). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceLabel": "GDP(PPP) 전망 — SSP3",
+      "sourceLabelEn": "GDP|PPP SSP3",
+      "sourceNote": "[발췌] 원천은 2020–2100 5년 간격 전체 시계열을 제공하며, 본 표준서식에는 대표연도(2050·2100)를 수록. 전체 시계열은 [raw] ssp_basic_drivers_release_3.1_full.xlsx 및 그룹 워크북에 보존. IIASA SSP Database v3.1 Basic Drivers. GDP는 OECD ENV-Growth 2023 모형, 인구는 IIASA-WiC POP 2023 모형. 국가 단위 값이며 격자·행정구역 자료가 아님(GIS 아님). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-018",
+        "indicatorId": "B-018_gdp_ppp_ssp3",
+        "sourceFileDecoded": "B-018_SSP GDP(PPP, PPP per cap) 전망 (SSP 1~5).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-fda949c6aa98|십억 USD_2017/yr",
+      "dimensionLabels": {
+        "detail": "SSP4"
+      },
+      "dimensions": {
+        "detail": "SSP4"
+      },
+      "displayLabel": "GDP(PPP) 전망 — SSP4",
+      "indicatorId": "B-018_gdp_ppp_ssp4",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-fda949c6aa98",
+        "labelKo": "GDP(PPP) 전망",
+        "unit": "십억 USD_2017/yr",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "measure-fda949c6aa98|십억 USD_2017/yr|detail=SSP4|B-018_gdp_ppp_ssp4",
+      "sourceCaveat": "[발췌] 원천은 2020–2100 5년 간격 전체 시계열을 제공하며, 본 표준서식에는 대표연도(2050·2100)를 수록. 전체 시계열은 [raw] ssp_basic_drivers_release_3.1_full.xlsx 및 그룹 워크북에 보존. IIASA SSP Database v3.1 Basic Drivers. GDP는 OECD ENV-Growth 2023 모형, 인구는 IIASA-WiC POP 2023 모형. 국가 단위 값이며 격자·행정구역 자료가 아님(GIS 아님). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceLabel": "GDP(PPP) 전망 — SSP4",
+      "sourceLabelEn": "GDP|PPP SSP4",
+      "sourceNote": "[발췌] 원천은 2020–2100 5년 간격 전체 시계열을 제공하며, 본 표준서식에는 대표연도(2050·2100)를 수록. 전체 시계열은 [raw] ssp_basic_drivers_release_3.1_full.xlsx 및 그룹 워크북에 보존. IIASA SSP Database v3.1 Basic Drivers. GDP는 OECD ENV-Growth 2023 모형, 인구는 IIASA-WiC POP 2023 모형. 국가 단위 값이며 격자·행정구역 자료가 아님(GIS 아님). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-018",
+        "indicatorId": "B-018_gdp_ppp_ssp4",
+        "sourceFileDecoded": "B-018_SSP GDP(PPP, PPP per cap) 전망 (SSP 1~5).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-fda949c6aa98|십억 USD_2017/yr",
+      "dimensionLabels": {
+        "detail": "SSP5"
+      },
+      "dimensions": {
+        "detail": "SSP5"
+      },
+      "displayLabel": "GDP(PPP) 전망 — SSP5",
+      "indicatorId": "B-018_gdp_ppp_ssp5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-fda949c6aa98",
+        "labelKo": "GDP(PPP) 전망",
+        "unit": "십억 USD_2017/yr",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "measure-fda949c6aa98|십억 USD_2017/yr|detail=SSP5|B-018_gdp_ppp_ssp5",
+      "sourceCaveat": "[발췌] 원천은 2020–2100 5년 간격 전체 시계열을 제공하며, 본 표준서식에는 대표연도(2050·2100)를 수록. 전체 시계열은 [raw] ssp_basic_drivers_release_3.1_full.xlsx 및 그룹 워크북에 보존. IIASA SSP Database v3.1 Basic Drivers. GDP는 OECD ENV-Growth 2023 모형, 인구는 IIASA-WiC POP 2023 모형. 국가 단위 값이며 격자·행정구역 자료가 아님(GIS 아님). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceLabel": "GDP(PPP) 전망 — SSP5",
+      "sourceLabelEn": "GDP|PPP SSP5",
+      "sourceNote": "[발췌] 원천은 2020–2100 5년 간격 전체 시계열을 제공하며, 본 표준서식에는 대표연도(2050·2100)를 수록. 전체 시계열은 [raw] ssp_basic_drivers_release_3.1_full.xlsx 및 그룹 워크북에 보존. IIASA SSP Database v3.1 Basic Drivers. GDP는 OECD ENV-Growth 2023 모형, 인구는 IIASA-WiC POP 2023 모형. 국가 단위 값이며 격자·행정구역 자료가 아님(GIS 아님). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] SSP Database v3.1 릴리스",
+      "sourceProvenance": {
+        "elementId": "B-018",
+        "indicatorId": "B-018_gdp_ppp_ssp5",
+        "sourceFileDecoded": "B-018_SSP GDP(PPP, PPP per cap) 전망 (SSP 1~5).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 2,
+      "key": "measure-74ce637d8956",
+      "labelKo": "1인당 GDP(PPP)",
+      "recordCount": 4,
+      "unit": "USD_2017/인",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-1f0f30c0f1d2",
+      "labelKo": "1인당 GDP(PPP) 과거 실적(참고)",
+      "recordCount": 9,
+      "unit": "USD_2017/인",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 5,
+      "key": "measure-a82e1fdc55f5",
+      "labelKo": "1인당 GDP(PPP) 전 구간",
+      "recordCount": 85,
+      "unit": "USD_2017/인",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 5,
+      "key": "measure-728a79e71da5",
+      "labelKo": "GDP(PPP)",
+      "recordCount": 80,
+      "unit": "십억 USD_2017/yr",
+      "unitFamily": "currency-per-period"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-ea3c308c37cd",
+      "labelKo": "GDP(PPP) 과거 실적(참고)",
+      "recordCount": 9,
+      "unit": "십억 USD_2017/yr",
+      "unitFamily": "currency-per-period"
+    },
+    {
+      "indicatorCount": 5,
+      "key": "measure-42d427ed0568",
+      "labelKo": "GDP(PPP) 전 구간",
+      "recordCount": 85,
+      "unit": "십억 USD_2017/yr",
+      "unitFamily": "currency-per-period"
+    },
+    {
+      "indicatorCount": 5,
+      "key": "measure-fda949c6aa98",
+      "labelKo": "GDP(PPP) 전망",
+      "recordCount": 10,
+      "unit": "십억 USD_2017/yr",
+      "unitFamily": "currency-per-period"
+    }
+  ],
+  "observationCount": 282,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

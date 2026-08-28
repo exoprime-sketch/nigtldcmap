@@ -1,0 +1,3144 @@
+{
+  "dimensions": [
+    {
+      "key": "classification",
+      "labelKo": "분류체계",
+      "valueCount": 1,
+      "values": [
+        "industry"
+      ]
+    },
+    {
+      "key": "currency",
+      "labelKo": "통화",
+      "valueCount": 2,
+      "values": [
+        "USD",
+        "VND"
+      ]
+    },
+    {
+      "key": "occupation",
+      "labelKo": "직군",
+      "valueCount": 11,
+      "values": [
+        "all",
+        "clerk",
+        "craft",
+        "elementary",
+        "machine_operator",
+        "manager",
+        "other",
+        "professional",
+        "service_sales",
+        "skilled_agriculture",
+        "technician"
+      ]
+    },
+    {
+      "key": "sex",
+      "labelKo": "성별",
+      "valueCount": 3,
+      "values": [
+        "female",
+        "male",
+        "total"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 2,
+      "values": [
+        "2023",
+        "2024"
+      ]
+    }
+  ],
+  "elementId": "E-012",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 90,
+  "indicators": [
+    {
+      "axisGroupKey": "average_monthly_wage|VND",
+      "dimensionLabels": {
+        "currency": "VND"
+      },
+      "dimensions": {
+        "currency": "VND"
+      },
+      "displayLabel": "평균 월임금 · VND",
+      "indicatorId": "E-012_avg_monthly_wage_lcu",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "average_monthly_wage",
+        "labelKo": "평균 월임금",
+        "unit": "VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "average_monthly_wage|VND|currency=VND|E-012_avg_monthly_wage_lcu",
+      "sourceCaveat": null,
+      "sourceLabel": "직군별 종사자 수·임금 — 평균 월임금(현지통화, 전체 근로자)",
+      "sourceLabelEn": "Employment and wages by occupation",
+      "sourceNote": "LFS 2024 Table 3.5의 임금근로자 평균(8,673.6천 VND)과 상이 — 대상 범위 차이로 추정되나 정의 확인 필요.",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_avg_monthly_wage_lcu",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "average_monthly_wage|USD",
+      "dimensionLabels": {
+        "currency": "USD"
+      },
+      "dimensions": {
+        "currency": "USD"
+      },
+      "displayLabel": "평균 월임금 · USD",
+      "indicatorId": "E-012_avg_monthly_wage_usd",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "average_monthly_wage",
+        "labelKo": "평균 월임금",
+        "unit": "USD",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "average_monthly_wage|USD|currency=USD|E-012_avg_monthly_wage_usd",
+      "sourceCaveat": null,
+      "sourceLabel": "직군별 종사자 수·임금 — 평균 월임금(USD 환산)",
+      "sourceLabelEn": "Employment and wages by occupation",
+      "sourceNote": "환율 기준(연평균/기말)·적용 시점이 원본에 기재되어 있지 않음",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_avg_monthly_wage_usd",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "employed_persons|백만명",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "총 취업자 수",
+      "indicatorId": "E-012_employed_persons",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "sum",
+        "key": "employed_persons",
+        "labelKo": "총 취업자 수",
+        "unit": "백만명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "employed_persons|백만명||E-012_employed_persons",
+      "sourceCaveat": null,
+      "sourceLabel": "직군별 종사자 수·임금 — 취업자 수",
+      "sourceLabelEn": "Employment and wages by occupation",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_employed_persons",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "employment_rate|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "고용률",
+      "indicatorId": "E-012_employment_rate",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "rate",
+        "denominator": "생산가능인구",
+        "key": "employment_rate",
+        "labelKo": "고용률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "employment_rate|%||E-012_employment_rate",
+      "sourceCaveat": null,
+      "sourceLabel": "직군별 종사자 수·임금 — 고용률",
+      "sourceLabelEn": "Employment and wages by occupation",
+      "sourceNote": "LFS 2024 보고서의 15세 이상 고용률(67.4%)과 값이 상이 — 연령기준·정의 차이로 추정.",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_employment_rate",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "classification": "산업부문",
+        "occupation": "전체 직군",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "classification": "industry",
+        "occupation": "all",
+        "sex": "total"
+      },
+      "displayLabel": "고용 구성비 · 전체 직군 · 전체 · 산업부문",
+      "indicatorId": "E-012_industry_employment_share",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|classification=industry|occupation=all|sex=total|E-012_industry_employment_share",
+      "sourceCaveat": null,
+      "sourceLabel": "직군별 종사자 수·임금 — 산업부문 종사자 비중",
+      "sourceLabelEn": "Employment and wages by occupation",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_industry_employment_share",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_count|천명",
+      "dimensionLabels": {
+        "occupation": "농림어업 숙련직",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "skilled_agriculture",
+        "sex": "total"
+      },
+      "displayLabel": "직군별 종사자 수 · 농림어업 숙련직 · 전체",
+      "indicatorId": "E-012_occupation_employment_agri_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "sum",
+        "key": "occupation_employment_count",
+        "labelKo": "직군별 종사자 수",
+        "unit": "천명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "occupation_employment_count|천명|occupation=skilled_agriculture|sex=total|E-012_occupation_employment_agri_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 종사자 수 — 농림어업 숙련직 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Skilled agricultural, forestry and fishery workers, total",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_agri_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_count|천명",
+      "dimensionLabels": {
+        "occupation": "전체 직군",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "all",
+        "sex": "total"
+      },
+      "displayLabel": "직군별 종사자 수 · 전체 직군 · 전체",
+      "indicatorId": "E-012_occupation_employment_all_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "sum",
+        "key": "occupation_employment_count",
+        "labelKo": "직군별 종사자 수",
+        "unit": "천명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "occupation_employment_count|천명|occupation=all|sex=total|E-012_occupation_employment_all_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 종사자 수 — 합계 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Total, total",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_all_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_count|천명",
+      "dimensionLabels": {
+        "occupation": "사무직",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "clerk",
+        "sex": "total"
+      },
+      "displayLabel": "직군별 종사자 수 · 사무직 · 전체",
+      "indicatorId": "E-012_occupation_employment_clerk_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "sum",
+        "key": "occupation_employment_count",
+        "labelKo": "직군별 종사자 수",
+        "unit": "천명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "occupation_employment_count|천명|occupation=clerk|sex=total|E-012_occupation_employment_clerk_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 종사자 수 — 사무직 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Clerks, total",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_clerk_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_count|천명",
+      "dimensionLabels": {
+        "occupation": "기능원·관련직",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "craft",
+        "sex": "total"
+      },
+      "displayLabel": "직군별 종사자 수 · 기능원·관련직 · 전체",
+      "indicatorId": "E-012_occupation_employment_craft_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "sum",
+        "key": "occupation_employment_count",
+        "labelKo": "직군별 종사자 수",
+        "unit": "천명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "occupation_employment_count|천명|occupation=craft|sex=total|E-012_occupation_employment_craft_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 종사자 수 — 기능원·관련직 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Craft and related workers, total",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_craft_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_count|천명",
+      "dimensionLabels": {
+        "occupation": "단순노무직",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "elementary",
+        "sex": "total"
+      },
+      "displayLabel": "직군별 종사자 수 · 단순노무직 · 전체",
+      "indicatorId": "E-012_occupation_employment_elem_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "sum",
+        "key": "occupation_employment_count",
+        "labelKo": "직군별 종사자 수",
+        "unit": "천명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "occupation_employment_count|천명|occupation=elementary|sex=total|E-012_occupation_employment_elem_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 종사자 수 — 단순노무직 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Elementary occupations, total",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_elem_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_count|천명",
+      "dimensionLabels": {
+        "occupation": "관리자",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "manager",
+        "sex": "total"
+      },
+      "displayLabel": "직군별 종사자 수 · 관리자 · 전체",
+      "indicatorId": "E-012_occupation_employment_mgr_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "sum",
+        "key": "occupation_employment_count",
+        "labelKo": "직군별 종사자 수",
+        "unit": "천명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "occupation_employment_count|천명|occupation=manager|sex=total|E-012_occupation_employment_mgr_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 종사자 수 — 관리자 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Leaders, managers and administrators, total",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_mgr_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_count|천명",
+      "dimensionLabels": {
+        "occupation": "장치·기계 조작·조립원",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "machine_operator",
+        "sex": "total"
+      },
+      "displayLabel": "직군별 종사자 수 · 장치·기계 조작·조립원 · 전체",
+      "indicatorId": "E-012_occupation_employment_operator_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "sum",
+        "key": "occupation_employment_count",
+        "labelKo": "직군별 종사자 수",
+        "unit": "천명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "occupation_employment_count|천명|occupation=machine_operator|sex=total|E-012_occupation_employment_operator_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 종사자 수 — 장치·기계 조작·조립원 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Plant, machine operator and assemblers, total",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_operator_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_count|천명",
+      "dimensionLabels": {
+        "occupation": "기타·미정의",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "other",
+        "sex": "total"
+      },
+      "displayLabel": "직군별 종사자 수 · 기타·미정의 · 전체",
+      "indicatorId": "E-012_occupation_employment_other_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "sum",
+        "key": "occupation_employment_count",
+        "labelKo": "직군별 종사자 수",
+        "unit": "천명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "occupation_employment_count|천명|occupation=other|sex=total|E-012_occupation_employment_other_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 종사자 수 — 기타·미정의 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Other, incl. not defined, total",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_other_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_count|천명",
+      "dimensionLabels": {
+        "occupation": "전문가",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "professional",
+        "sex": "total"
+      },
+      "displayLabel": "직군별 종사자 수 · 전문가 · 전체",
+      "indicatorId": "E-012_occupation_employment_prof_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "sum",
+        "key": "occupation_employment_count",
+        "labelKo": "직군별 종사자 수",
+        "unit": "천명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "occupation_employment_count|천명|occupation=professional|sex=total|E-012_occupation_employment_prof_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 종사자 수 — 전문가 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Professionals, total",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_prof_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_count|천명",
+      "dimensionLabels": {
+        "occupation": "서비스·판매직",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "service_sales",
+        "sex": "total"
+      },
+      "displayLabel": "직군별 종사자 수 · 서비스·판매직 · 전체",
+      "indicatorId": "E-012_occupation_employment_service_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "sum",
+        "key": "occupation_employment_count",
+        "labelKo": "직군별 종사자 수",
+        "unit": "천명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "occupation_employment_count|천명|occupation=service_sales|sex=total|E-012_occupation_employment_service_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 종사자 수 — 서비스·판매직 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Service workers and market sales workers, total",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_service_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "농림어업 숙련직",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "skilled_agriculture",
+        "sex": "female"
+      },
+      "displayLabel": "고용 구성비 · 농림어업 숙련직 · 여성",
+      "indicatorId": "E-012_occupation_employment_share_agri_female",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=skilled_agriculture|sex=female|E-012_occupation_employment_share_agri_female",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 농림어업 숙련직 · 여성",
+      "sourceLabelEn": "Employment and wages by occupation — Skilled agricultural, forestry and fishery workers, female",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_agri_female",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 38,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "농림어업 숙련직",
+        "sex": "남성"
+      },
+      "dimensions": {
+        "occupation": "skilled_agriculture",
+        "sex": "male"
+      },
+      "displayLabel": "고용 구성비 · 농림어업 숙련직 · 남성",
+      "indicatorId": "E-012_occupation_employment_share_agri_male",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=skilled_agriculture|sex=male|E-012_occupation_employment_share_agri_male",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 농림어업 숙련직 · 남성",
+      "sourceLabelEn": "Employment and wages by occupation — Skilled agricultural, forestry and fishery workers, male",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_agri_male",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 37,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "농림어업 숙련직",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "skilled_agriculture",
+        "sex": "total"
+      },
+      "displayLabel": "고용 구성비 · 농림어업 숙련직 · 전체",
+      "indicatorId": "E-012_occupation_employment_share_agri_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=skilled_agriculture|sex=total|E-012_occupation_employment_share_agri_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 농림어업 숙련직 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Skilled agricultural, forestry and fishery workers, total",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_agri_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 36,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "사무직",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "clerk",
+        "sex": "female"
+      },
+      "displayLabel": "고용 구성비 · 사무직 · 여성",
+      "indicatorId": "E-012_occupation_employment_share_clerk_female",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=clerk|sex=female|E-012_occupation_employment_share_clerk_female",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 사무직 · 여성",
+      "sourceLabelEn": "Employment and wages by occupation — Clerks, female",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_clerk_female",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 32,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "사무직",
+        "sex": "남성"
+      },
+      "dimensions": {
+        "occupation": "clerk",
+        "sex": "male"
+      },
+      "displayLabel": "고용 구성비 · 사무직 · 남성",
+      "indicatorId": "E-012_occupation_employment_share_clerk_male",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=clerk|sex=male|E-012_occupation_employment_share_clerk_male",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 사무직 · 남성",
+      "sourceLabelEn": "Employment and wages by occupation — Clerks, male",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_clerk_male",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 31,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "사무직",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "clerk",
+        "sex": "total"
+      },
+      "displayLabel": "고용 구성비 · 사무직 · 전체",
+      "indicatorId": "E-012_occupation_employment_share_clerk_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=clerk|sex=total|E-012_occupation_employment_share_clerk_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 사무직 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Clerks, total",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_clerk_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 30,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "기능원·관련직",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "craft",
+        "sex": "female"
+      },
+      "displayLabel": "고용 구성비 · 기능원·관련직 · 여성",
+      "indicatorId": "E-012_occupation_employment_share_craft_female",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=craft|sex=female|E-012_occupation_employment_share_craft_female",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 기능원·관련직 · 여성",
+      "sourceLabelEn": "Employment and wages by occupation — Craft and related workers, female",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_craft_female",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 41,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "기능원·관련직",
+        "sex": "남성"
+      },
+      "dimensions": {
+        "occupation": "craft",
+        "sex": "male"
+      },
+      "displayLabel": "고용 구성비 · 기능원·관련직 · 남성",
+      "indicatorId": "E-012_occupation_employment_share_craft_male",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=craft|sex=male|E-012_occupation_employment_share_craft_male",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 기능원·관련직 · 남성",
+      "sourceLabelEn": "Employment and wages by occupation — Craft and related workers, male",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_craft_male",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 40,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "기능원·관련직",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "craft",
+        "sex": "total"
+      },
+      "displayLabel": "고용 구성비 · 기능원·관련직 · 전체",
+      "indicatorId": "E-012_occupation_employment_share_craft_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=craft|sex=total|E-012_occupation_employment_share_craft_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 기능원·관련직 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Craft and related workers, total",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_craft_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 39,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "단순노무직",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "elementary",
+        "sex": "female"
+      },
+      "displayLabel": "고용 구성비 · 단순노무직 · 여성",
+      "indicatorId": "E-012_occupation_employment_share_elem_female",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=elementary|sex=female|E-012_occupation_employment_share_elem_female",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 단순노무직 · 여성",
+      "sourceLabelEn": "Employment and wages by occupation — Elementary occupations, female",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_elem_female",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 47,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "단순노무직",
+        "sex": "남성"
+      },
+      "dimensions": {
+        "occupation": "elementary",
+        "sex": "male"
+      },
+      "displayLabel": "고용 구성비 · 단순노무직 · 남성",
+      "indicatorId": "E-012_occupation_employment_share_elem_male",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=elementary|sex=male|E-012_occupation_employment_share_elem_male",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 단순노무직 · 남성",
+      "sourceLabelEn": "Employment and wages by occupation — Elementary occupations, male",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_elem_male",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 46,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "단순노무직",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "elementary",
+        "sex": "total"
+      },
+      "displayLabel": "고용 구성비 · 단순노무직 · 전체",
+      "indicatorId": "E-012_occupation_employment_share_elem_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=elementary|sex=total|E-012_occupation_employment_share_elem_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 단순노무직 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Elementary occupations, total",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_elem_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 45,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "관리자",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "manager",
+        "sex": "female"
+      },
+      "displayLabel": "고용 구성비 · 관리자 · 여성",
+      "indicatorId": "E-012_occupation_employment_share_mgr_female",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=manager|sex=female|E-012_occupation_employment_share_mgr_female",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 관리자 · 여성",
+      "sourceLabelEn": "Employment and wages by occupation — Leaders, managers and administrators, female",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_mgr_female",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "관리자",
+        "sex": "남성"
+      },
+      "dimensions": {
+        "occupation": "manager",
+        "sex": "male"
+      },
+      "displayLabel": "고용 구성비 · 관리자 · 남성",
+      "indicatorId": "E-012_occupation_employment_share_mgr_male",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=manager|sex=male|E-012_occupation_employment_share_mgr_male",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 관리자 · 남성",
+      "sourceLabelEn": "Employment and wages by occupation — Leaders, managers and administrators, male",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_mgr_male",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "관리자",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "manager",
+        "sex": "total"
+      },
+      "displayLabel": "고용 구성비 · 관리자 · 전체",
+      "indicatorId": "E-012_occupation_employment_share_mgr_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=manager|sex=total|E-012_occupation_employment_share_mgr_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 관리자 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Leaders, managers and administrators, total",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_mgr_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "장치·기계 조작·조립원",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "machine_operator",
+        "sex": "female"
+      },
+      "displayLabel": "고용 구성비 · 장치·기계 조작·조립원 · 여성",
+      "indicatorId": "E-012_occupation_employment_share_operator_female",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=machine_operator|sex=female|E-012_occupation_employment_share_operator_female",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 장치·기계 조작·조립원 · 여성",
+      "sourceLabelEn": "Employment and wages by occupation — Plant, machine operator and assemblers, female",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_operator_female",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 44,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "장치·기계 조작·조립원",
+        "sex": "남성"
+      },
+      "dimensions": {
+        "occupation": "machine_operator",
+        "sex": "male"
+      },
+      "displayLabel": "고용 구성비 · 장치·기계 조작·조립원 · 남성",
+      "indicatorId": "E-012_occupation_employment_share_operator_male",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=machine_operator|sex=male|E-012_occupation_employment_share_operator_male",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 장치·기계 조작·조립원 · 남성",
+      "sourceLabelEn": "Employment and wages by occupation — Plant, machine operator and assemblers, male",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_operator_male",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 43,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "장치·기계 조작·조립원",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "machine_operator",
+        "sex": "total"
+      },
+      "displayLabel": "고용 구성비 · 장치·기계 조작·조립원 · 전체",
+      "indicatorId": "E-012_occupation_employment_share_operator_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=machine_operator|sex=total|E-012_occupation_employment_share_operator_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 장치·기계 조작·조립원 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Plant, machine operator and assemblers, total",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_operator_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 42,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "기타·미정의",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "other",
+        "sex": "female"
+      },
+      "displayLabel": "고용 구성비 · 기타·미정의 · 여성",
+      "indicatorId": "E-012_occupation_employment_share_other_female",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=other|sex=female|E-012_occupation_employment_share_other_female",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 기타·미정의 · 여성",
+      "sourceLabelEn": "Employment and wages by occupation — Other, incl. not defined, female",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_other_female",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 50,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "기타·미정의",
+        "sex": "남성"
+      },
+      "dimensions": {
+        "occupation": "other",
+        "sex": "male"
+      },
+      "displayLabel": "고용 구성비 · 기타·미정의 · 남성",
+      "indicatorId": "E-012_occupation_employment_share_other_male",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=other|sex=male|E-012_occupation_employment_share_other_male",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 기타·미정의 · 남성",
+      "sourceLabelEn": "Employment and wages by occupation — Other, incl. not defined, male",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_other_male",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 49,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "기타·미정의",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "other",
+        "sex": "total"
+      },
+      "displayLabel": "고용 구성비 · 기타·미정의 · 전체",
+      "indicatorId": "E-012_occupation_employment_share_other_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=other|sex=total|E-012_occupation_employment_share_other_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 기타·미정의 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Other, incl. not defined, total",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_other_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 48,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "전문가",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "professional",
+        "sex": "female"
+      },
+      "displayLabel": "고용 구성비 · 전문가 · 여성",
+      "indicatorId": "E-012_occupation_employment_share_prof_female",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=professional|sex=female|E-012_occupation_employment_share_prof_female",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 전문가 · 여성",
+      "sourceLabelEn": "Employment and wages by occupation — Professionals, female",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_prof_female",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 26,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "전문가",
+        "sex": "남성"
+      },
+      "dimensions": {
+        "occupation": "professional",
+        "sex": "male"
+      },
+      "displayLabel": "고용 구성비 · 전문가 · 남성",
+      "indicatorId": "E-012_occupation_employment_share_prof_male",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=professional|sex=male|E-012_occupation_employment_share_prof_male",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 전문가 · 남성",
+      "sourceLabelEn": "Employment and wages by occupation — Professionals, male",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_prof_male",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 25,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "전문가",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "professional",
+        "sex": "total"
+      },
+      "displayLabel": "고용 구성비 · 전문가 · 전체",
+      "indicatorId": "E-012_occupation_employment_share_prof_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=professional|sex=total|E-012_occupation_employment_share_prof_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 전문가 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Professionals, total",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_prof_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 24,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "서비스·판매직",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "service_sales",
+        "sex": "female"
+      },
+      "displayLabel": "고용 구성비 · 서비스·판매직 · 여성",
+      "indicatorId": "E-012_occupation_employment_share_service_female",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=service_sales|sex=female|E-012_occupation_employment_share_service_female",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 서비스·판매직 · 여성",
+      "sourceLabelEn": "Employment and wages by occupation — Service workers and market sales workers, female",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_service_female",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 35,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "서비스·판매직",
+        "sex": "남성"
+      },
+      "dimensions": {
+        "occupation": "service_sales",
+        "sex": "male"
+      },
+      "displayLabel": "고용 구성비 · 서비스·판매직 · 남성",
+      "indicatorId": "E-012_occupation_employment_share_service_male",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=service_sales|sex=male|E-012_occupation_employment_share_service_male",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 서비스·판매직 · 남성",
+      "sourceLabelEn": "Employment and wages by occupation — Service workers and market sales workers, male",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_service_male",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 34,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "서비스·판매직",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "service_sales",
+        "sex": "total"
+      },
+      "displayLabel": "고용 구성비 · 서비스·판매직 · 전체",
+      "indicatorId": "E-012_occupation_employment_share_service_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=service_sales|sex=total|E-012_occupation_employment_share_service_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 서비스·판매직 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Service workers and market sales workers, total",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_service_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 33,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "기술공·준전문가",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "technician",
+        "sex": "female"
+      },
+      "displayLabel": "고용 구성비 · 기술공·준전문가 · 여성",
+      "indicatorId": "E-012_occupation_employment_share_tech_female",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=technician|sex=female|E-012_occupation_employment_share_tech_female",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 기술공·준전문가 · 여성",
+      "sourceLabelEn": "Employment and wages by occupation — Technicians and associate professionals, female",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_tech_female",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 29,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "기술공·준전문가",
+        "sex": "남성"
+      },
+      "dimensions": {
+        "occupation": "technician",
+        "sex": "male"
+      },
+      "displayLabel": "고용 구성비 · 기술공·준전문가 · 남성",
+      "indicatorId": "E-012_occupation_employment_share_tech_male",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=technician|sex=male|E-012_occupation_employment_share_tech_male",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 기술공·준전문가 · 남성",
+      "sourceLabelEn": "Employment and wages by occupation — Technicians and associate professionals, male",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_tech_male",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 28,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_share|%",
+      "dimensionLabels": {
+        "occupation": "기술공·준전문가",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "technician",
+        "sex": "total"
+      },
+      "displayLabel": "고용 구성비 · 기술공·준전문가 · 전체",
+      "indicatorId": "E-012_occupation_employment_share_tech_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 성별 전체 취업자",
+        "key": "occupation_employment_share",
+        "labelKo": "고용 구성비",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_employment_share|%|occupation=technician|sex=total|E-012_occupation_employment_share_tech_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 기술공·준전문가 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Technicians and associate professionals, total",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_share_tech_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 27,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_employment_count|천명",
+      "dimensionLabels": {
+        "occupation": "기술공·준전문가",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "technician",
+        "sex": "total"
+      },
+      "displayLabel": "직군별 종사자 수 · 기술공·준전문가 · 전체",
+      "indicatorId": "E-012_occupation_employment_tech_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "sum",
+        "key": "occupation_employment_count",
+        "labelKo": "직군별 종사자 수",
+        "unit": "천명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "occupation_employment_count|천명|occupation=technician|sex=total|E-012_occupation_employment_tech_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 종사자 수 — 기술공·준전문가 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Technicians and associate professionals, total",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_employment_tech_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_female_share|%",
+      "dimensionLabels": {
+        "occupation": "농림어업 숙련직",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "skilled_agriculture",
+        "sex": "female"
+      },
+      "displayLabel": "직군 내 여성 비중 · 농림어업 숙련직 · 여성",
+      "indicatorId": "E-012_occupation_female_share_agri",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 직군 전체 취업자",
+        "key": "occupation_female_share",
+        "labelKo": "직군 내 여성 비중",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_female_share|%|occupation=skilled_agriculture|sex=female|E-012_occupation_female_share_agri",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 여성 비중 — 농림어업 숙련직",
+      "sourceLabelEn": "Employment and wages by occupation — Skilled agricultural, forestry and fishery workers",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_female_share_agri",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 57,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_female_share|%",
+      "dimensionLabels": {
+        "occupation": "전체 직군",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "all",
+        "sex": "female"
+      },
+      "displayLabel": "직군 내 여성 비중 · 전체 직군 · 여성",
+      "indicatorId": "E-012_occupation_female_share_all",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 직군 전체 취업자",
+        "key": "occupation_female_share",
+        "labelKo": "직군 내 여성 비중",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_female_share|%|occupation=all|sex=female|E-012_occupation_female_share_all",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 여성 비중 — 합계",
+      "sourceLabelEn": "Employment and wages by occupation — Total",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_female_share_all",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 51,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_female_share|%",
+      "dimensionLabels": {
+        "occupation": "사무직",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "clerk",
+        "sex": "female"
+      },
+      "displayLabel": "직군 내 여성 비중 · 사무직 · 여성",
+      "indicatorId": "E-012_occupation_female_share_clerk",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 직군 전체 취업자",
+        "key": "occupation_female_share",
+        "labelKo": "직군 내 여성 비중",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_female_share|%|occupation=clerk|sex=female|E-012_occupation_female_share_clerk",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 여성 비중 — 사무직",
+      "sourceLabelEn": "Employment and wages by occupation — Clerks",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_female_share_clerk",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 55,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_female_share|%",
+      "dimensionLabels": {
+        "occupation": "기능원·관련직",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "craft",
+        "sex": "female"
+      },
+      "displayLabel": "직군 내 여성 비중 · 기능원·관련직 · 여성",
+      "indicatorId": "E-012_occupation_female_share_craft",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 직군 전체 취업자",
+        "key": "occupation_female_share",
+        "labelKo": "직군 내 여성 비중",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_female_share|%|occupation=craft|sex=female|E-012_occupation_female_share_craft",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 여성 비중 — 기능원·관련직",
+      "sourceLabelEn": "Employment and wages by occupation — Craft and related workers",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_female_share_craft",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 58,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_female_share|%",
+      "dimensionLabels": {
+        "occupation": "단순노무직",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "elementary",
+        "sex": "female"
+      },
+      "displayLabel": "직군 내 여성 비중 · 단순노무직 · 여성",
+      "indicatorId": "E-012_occupation_female_share_elem",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 직군 전체 취업자",
+        "key": "occupation_female_share",
+        "labelKo": "직군 내 여성 비중",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_female_share|%|occupation=elementary|sex=female|E-012_occupation_female_share_elem",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 여성 비중 — 단순노무직",
+      "sourceLabelEn": "Employment and wages by occupation — Elementary occupations",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_female_share_elem",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 60,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_female_share|%",
+      "dimensionLabels": {
+        "occupation": "관리자",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "manager",
+        "sex": "female"
+      },
+      "displayLabel": "직군 내 여성 비중 · 관리자 · 여성",
+      "indicatorId": "E-012_occupation_female_share_mgr",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 직군 전체 취업자",
+        "key": "occupation_female_share",
+        "labelKo": "직군 내 여성 비중",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_female_share|%|occupation=manager|sex=female|E-012_occupation_female_share_mgr",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 여성 비중 — 관리자",
+      "sourceLabelEn": "Employment and wages by occupation — Leaders, managers and administrators",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_female_share_mgr",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 52,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_female_share|%",
+      "dimensionLabels": {
+        "occupation": "장치·기계 조작·조립원",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "machine_operator",
+        "sex": "female"
+      },
+      "displayLabel": "직군 내 여성 비중 · 장치·기계 조작·조립원 · 여성",
+      "indicatorId": "E-012_occupation_female_share_operator",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 직군 전체 취업자",
+        "key": "occupation_female_share",
+        "labelKo": "직군 내 여성 비중",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_female_share|%|occupation=machine_operator|sex=female|E-012_occupation_female_share_operator",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 여성 비중 — 장치·기계 조작·조립원",
+      "sourceLabelEn": "Employment and wages by occupation — Plant, machine operator and assemblers",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_female_share_operator",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 59,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_female_share|%",
+      "dimensionLabels": {
+        "occupation": "기타·미정의",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "other",
+        "sex": "female"
+      },
+      "displayLabel": "직군 내 여성 비중 · 기타·미정의 · 여성",
+      "indicatorId": "E-012_occupation_female_share_other",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 직군 전체 취업자",
+        "key": "occupation_female_share",
+        "labelKo": "직군 내 여성 비중",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_female_share|%|occupation=other|sex=female|E-012_occupation_female_share_other",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 여성 비중 — 기타·미정의",
+      "sourceLabelEn": "Employment and wages by occupation — Other, incl. not defined",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_female_share_other",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 61,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_female_share|%",
+      "dimensionLabels": {
+        "occupation": "전문가",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "professional",
+        "sex": "female"
+      },
+      "displayLabel": "직군 내 여성 비중 · 전문가 · 여성",
+      "indicatorId": "E-012_occupation_female_share_prof",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 직군 전체 취업자",
+        "key": "occupation_female_share",
+        "labelKo": "직군 내 여성 비중",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_female_share|%|occupation=professional|sex=female|E-012_occupation_female_share_prof",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 여성 비중 — 전문가",
+      "sourceLabelEn": "Employment and wages by occupation — Professionals",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_female_share_prof",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 53,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_female_share|%",
+      "dimensionLabels": {
+        "occupation": "서비스·판매직",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "service_sales",
+        "sex": "female"
+      },
+      "displayLabel": "직군 내 여성 비중 · 서비스·판매직 · 여성",
+      "indicatorId": "E-012_occupation_female_share_service",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 직군 전체 취업자",
+        "key": "occupation_female_share",
+        "labelKo": "직군 내 여성 비중",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_female_share|%|occupation=service_sales|sex=female|E-012_occupation_female_share_service",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 여성 비중 — 서비스·판매직",
+      "sourceLabelEn": "Employment and wages by occupation — Service workers and market sales workers",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_female_share_service",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 56,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_female_share|%",
+      "dimensionLabels": {
+        "occupation": "기술공·준전문가",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "technician",
+        "sex": "female"
+      },
+      "displayLabel": "직군 내 여성 비중 · 기술공·준전문가 · 여성",
+      "indicatorId": "E-012_occupation_female_share_tech",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "share",
+        "denominator": "해당 직군 전체 취업자",
+        "key": "occupation_female_share",
+        "labelKo": "직군 내 여성 비중",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "occupation_female_share|%|occupation=technician|sex=female|E-012_occupation_female_share_tech",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 여성 비중 — 기술공·준전문가",
+      "sourceLabelEn": "Employment and wages by occupation — Technicians and associate professionals",
+      "sourceNote": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_female_share_tech",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 54,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "농림어업 숙련직",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "skilled_agriculture",
+        "sex": "female"
+      },
+      "displayLabel": "직군별 월평균 임금 · 농림어업 숙련직 · 여성",
+      "indicatorId": "E-012_occupation_wage_agri_female",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=skilled_agriculture|sex=female|E-012_occupation_wage_agri_female",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 농림어업 숙련직 · 여성",
+      "sourceLabelEn": "Employment and wages by occupation — Skilled agricultural, forestry and fishery workers, female",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_agri_female",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 82,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "농림어업 숙련직",
+        "sex": "남성"
+      },
+      "dimensions": {
+        "occupation": "skilled_agriculture",
+        "sex": "male"
+      },
+      "displayLabel": "직군별 월평균 임금 · 농림어업 숙련직 · 남성",
+      "indicatorId": "E-012_occupation_wage_agri_male",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=skilled_agriculture|sex=male|E-012_occupation_wage_agri_male",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 농림어업 숙련직 · 남성",
+      "sourceLabelEn": "Employment and wages by occupation — Skilled agricultural, forestry and fishery workers, male",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_agri_male",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 81,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "농림어업 숙련직",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "skilled_agriculture",
+        "sex": "total"
+      },
+      "displayLabel": "직군별 월평균 임금 · 농림어업 숙련직 · 전체",
+      "indicatorId": "E-012_occupation_wage_agri_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=skilled_agriculture|sex=total|E-012_occupation_wage_agri_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 농림어업 숙련직 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Skilled agricultural, forestry and fishery workers, total",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_agri_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 80,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "전체 직군",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "all",
+        "sex": "female"
+      },
+      "displayLabel": "직군별 월평균 임금 · 전체 직군 · 여성",
+      "indicatorId": "E-012_occupation_wage_all_female",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=all|sex=female|E-012_occupation_wage_all_female",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 합계 · 여성",
+      "sourceLabelEn": "Employment and wages by occupation — Total, female",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_all_female",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 64,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "전체 직군",
+        "sex": "남성"
+      },
+      "dimensions": {
+        "occupation": "all",
+        "sex": "male"
+      },
+      "displayLabel": "직군별 월평균 임금 · 전체 직군 · 남성",
+      "indicatorId": "E-012_occupation_wage_all_male",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=all|sex=male|E-012_occupation_wage_all_male",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 합계 · 남성",
+      "sourceLabelEn": "Employment and wages by occupation — Total, male",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_all_male",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 63,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "전체 직군",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "all",
+        "sex": "total"
+      },
+      "displayLabel": "직군별 월평균 임금 · 전체 직군 · 전체",
+      "indicatorId": "E-012_occupation_wage_all_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=all|sex=total|E-012_occupation_wage_all_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 합계 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Total, total",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_all_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 62,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "사무직",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "clerk",
+        "sex": "female"
+      },
+      "displayLabel": "직군별 월평균 임금 · 사무직 · 여성",
+      "indicatorId": "E-012_occupation_wage_clerk_female",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=clerk|sex=female|E-012_occupation_wage_clerk_female",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 사무직 · 여성",
+      "sourceLabelEn": "Employment and wages by occupation — Clerks, female",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_clerk_female",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 76,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "사무직",
+        "sex": "남성"
+      },
+      "dimensions": {
+        "occupation": "clerk",
+        "sex": "male"
+      },
+      "displayLabel": "직군별 월평균 임금 · 사무직 · 남성",
+      "indicatorId": "E-012_occupation_wage_clerk_male",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=clerk|sex=male|E-012_occupation_wage_clerk_male",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 사무직 · 남성",
+      "sourceLabelEn": "Employment and wages by occupation — Clerks, male",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_clerk_male",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 75,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "사무직",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "clerk",
+        "sex": "total"
+      },
+      "displayLabel": "직군별 월평균 임금 · 사무직 · 전체",
+      "indicatorId": "E-012_occupation_wage_clerk_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=clerk|sex=total|E-012_occupation_wage_clerk_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 사무직 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Clerks, total",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_clerk_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 74,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "기능원·관련직",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "craft",
+        "sex": "female"
+      },
+      "displayLabel": "직군별 월평균 임금 · 기능원·관련직 · 여성",
+      "indicatorId": "E-012_occupation_wage_craft_female",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=craft|sex=female|E-012_occupation_wage_craft_female",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기능원·관련직 · 여성",
+      "sourceLabelEn": "Employment and wages by occupation — Craft and related workers, female",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_craft_female",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 85,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "기능원·관련직",
+        "sex": "남성"
+      },
+      "dimensions": {
+        "occupation": "craft",
+        "sex": "male"
+      },
+      "displayLabel": "직군별 월평균 임금 · 기능원·관련직 · 남성",
+      "indicatorId": "E-012_occupation_wage_craft_male",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=craft|sex=male|E-012_occupation_wage_craft_male",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기능원·관련직 · 남성",
+      "sourceLabelEn": "Employment and wages by occupation — Craft and related workers, male",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_craft_male",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 84,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "기능원·관련직",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "craft",
+        "sex": "total"
+      },
+      "displayLabel": "직군별 월평균 임금 · 기능원·관련직 · 전체",
+      "indicatorId": "E-012_occupation_wage_craft_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=craft|sex=total|E-012_occupation_wage_craft_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기능원·관련직 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Craft and related workers, total",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_craft_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 83,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "단순노무직",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "elementary",
+        "sex": "female"
+      },
+      "displayLabel": "직군별 월평균 임금 · 단순노무직 · 여성",
+      "indicatorId": "E-012_occupation_wage_elem_female",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=elementary|sex=female|E-012_occupation_wage_elem_female",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 단순노무직 · 여성",
+      "sourceLabelEn": "Employment and wages by occupation — Elementary occupations, female",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_elem_female",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 91,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "단순노무직",
+        "sex": "남성"
+      },
+      "dimensions": {
+        "occupation": "elementary",
+        "sex": "male"
+      },
+      "displayLabel": "직군별 월평균 임금 · 단순노무직 · 남성",
+      "indicatorId": "E-012_occupation_wage_elem_male",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=elementary|sex=male|E-012_occupation_wage_elem_male",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 단순노무직 · 남성",
+      "sourceLabelEn": "Employment and wages by occupation — Elementary occupations, male",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_elem_male",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 90,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "단순노무직",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "elementary",
+        "sex": "total"
+      },
+      "displayLabel": "직군별 월평균 임금 · 단순노무직 · 전체",
+      "indicatorId": "E-012_occupation_wage_elem_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=elementary|sex=total|E-012_occupation_wage_elem_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 단순노무직 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Elementary occupations, total",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_elem_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 89,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "관리자",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "manager",
+        "sex": "female"
+      },
+      "displayLabel": "직군별 월평균 임금 · 관리자 · 여성",
+      "indicatorId": "E-012_occupation_wage_mgr_female",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=manager|sex=female|E-012_occupation_wage_mgr_female",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 관리자 · 여성",
+      "sourceLabelEn": "Employment and wages by occupation — Leaders, managers and administrators, female",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_mgr_female",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 67,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "관리자",
+        "sex": "남성"
+      },
+      "dimensions": {
+        "occupation": "manager",
+        "sex": "male"
+      },
+      "displayLabel": "직군별 월평균 임금 · 관리자 · 남성",
+      "indicatorId": "E-012_occupation_wage_mgr_male",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=manager|sex=male|E-012_occupation_wage_mgr_male",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 관리자 · 남성",
+      "sourceLabelEn": "Employment and wages by occupation — Leaders, managers and administrators, male",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_mgr_male",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 66,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "관리자",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "manager",
+        "sex": "total"
+      },
+      "displayLabel": "직군별 월평균 임금 · 관리자 · 전체",
+      "indicatorId": "E-012_occupation_wage_mgr_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=manager|sex=total|E-012_occupation_wage_mgr_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 관리자 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Leaders, managers and administrators, total",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_mgr_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 65,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "장치·기계 조작·조립원",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "machine_operator",
+        "sex": "female"
+      },
+      "displayLabel": "직군별 월평균 임금 · 장치·기계 조작·조립원 · 여성",
+      "indicatorId": "E-012_occupation_wage_operator_female",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=machine_operator|sex=female|E-012_occupation_wage_operator_female",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 장치·기계 조작·조립원 · 여성",
+      "sourceLabelEn": "Employment and wages by occupation — Plant, machine operator and assemblers, female",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_operator_female",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 88,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "장치·기계 조작·조립원",
+        "sex": "남성"
+      },
+      "dimensions": {
+        "occupation": "machine_operator",
+        "sex": "male"
+      },
+      "displayLabel": "직군별 월평균 임금 · 장치·기계 조작·조립원 · 남성",
+      "indicatorId": "E-012_occupation_wage_operator_male",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=machine_operator|sex=male|E-012_occupation_wage_operator_male",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 장치·기계 조작·조립원 · 남성",
+      "sourceLabelEn": "Employment and wages by occupation — Plant, machine operator and assemblers, male",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_operator_male",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 87,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "장치·기계 조작·조립원",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "machine_operator",
+        "sex": "total"
+      },
+      "displayLabel": "직군별 월평균 임금 · 장치·기계 조작·조립원 · 전체",
+      "indicatorId": "E-012_occupation_wage_operator_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=machine_operator|sex=total|E-012_occupation_wage_operator_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 장치·기계 조작·조립원 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Plant, machine operator and assemblers, total",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_operator_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 86,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "기타·미정의",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "other",
+        "sex": "female"
+      },
+      "displayLabel": "직군별 월평균 임금 · 기타·미정의 · 여성",
+      "indicatorId": "E-012_occupation_wage_other_female",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=other|sex=female|E-012_occupation_wage_other_female",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기타·미정의 · 여성",
+      "sourceLabelEn": "Employment and wages by occupation — Other, incl. not defined, female",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_other_female",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 94,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "기타·미정의",
+        "sex": "남성"
+      },
+      "dimensions": {
+        "occupation": "other",
+        "sex": "male"
+      },
+      "displayLabel": "직군별 월평균 임금 · 기타·미정의 · 남성",
+      "indicatorId": "E-012_occupation_wage_other_male",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=other|sex=male|E-012_occupation_wage_other_male",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기타·미정의 · 남성",
+      "sourceLabelEn": "Employment and wages by occupation — Other, incl. not defined, male",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_other_male",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 93,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "기타·미정의",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "other",
+        "sex": "total"
+      },
+      "displayLabel": "직군별 월평균 임금 · 기타·미정의 · 전체",
+      "indicatorId": "E-012_occupation_wage_other_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=other|sex=total|E-012_occupation_wage_other_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기타·미정의 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Other, incl. not defined, total",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_other_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 92,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "전문가",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "professional",
+        "sex": "female"
+      },
+      "displayLabel": "직군별 월평균 임금 · 전문가 · 여성",
+      "indicatorId": "E-012_occupation_wage_prof_female",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=professional|sex=female|E-012_occupation_wage_prof_female",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 전문가 · 여성",
+      "sourceLabelEn": "Employment and wages by occupation — Professionals, female",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_prof_female",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 70,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "전문가",
+        "sex": "남성"
+      },
+      "dimensions": {
+        "occupation": "professional",
+        "sex": "male"
+      },
+      "displayLabel": "직군별 월평균 임금 · 전문가 · 남성",
+      "indicatorId": "E-012_occupation_wage_prof_male",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=professional|sex=male|E-012_occupation_wage_prof_male",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 전문가 · 남성",
+      "sourceLabelEn": "Employment and wages by occupation — Professionals, male",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_prof_male",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 69,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "전문가",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "professional",
+        "sex": "total"
+      },
+      "displayLabel": "직군별 월평균 임금 · 전문가 · 전체",
+      "indicatorId": "E-012_occupation_wage_prof_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=professional|sex=total|E-012_occupation_wage_prof_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 전문가 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Professionals, total",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_prof_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 68,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "서비스·판매직",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "service_sales",
+        "sex": "female"
+      },
+      "displayLabel": "직군별 월평균 임금 · 서비스·판매직 · 여성",
+      "indicatorId": "E-012_occupation_wage_service_female",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=service_sales|sex=female|E-012_occupation_wage_service_female",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 서비스·판매직 · 여성",
+      "sourceLabelEn": "Employment and wages by occupation — Service workers and market sales workers, female",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_service_female",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 79,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "서비스·판매직",
+        "sex": "남성"
+      },
+      "dimensions": {
+        "occupation": "service_sales",
+        "sex": "male"
+      },
+      "displayLabel": "직군별 월평균 임금 · 서비스·판매직 · 남성",
+      "indicatorId": "E-012_occupation_wage_service_male",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=service_sales|sex=male|E-012_occupation_wage_service_male",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 서비스·판매직 · 남성",
+      "sourceLabelEn": "Employment and wages by occupation — Service workers and market sales workers, male",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_service_male",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 78,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "서비스·판매직",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "service_sales",
+        "sex": "total"
+      },
+      "displayLabel": "직군별 월평균 임금 · 서비스·판매직 · 전체",
+      "indicatorId": "E-012_occupation_wage_service_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=service_sales|sex=total|E-012_occupation_wage_service_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 서비스·판매직 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Service workers and market sales workers, total",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_service_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 77,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "기술공·준전문가",
+        "sex": "여성"
+      },
+      "dimensions": {
+        "occupation": "technician",
+        "sex": "female"
+      },
+      "displayLabel": "직군별 월평균 임금 · 기술공·준전문가 · 여성",
+      "indicatorId": "E-012_occupation_wage_tech_female",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=technician|sex=female|E-012_occupation_wage_tech_female",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기술공·준전문가 · 여성",
+      "sourceLabelEn": "Employment and wages by occupation — Technicians and associate professionals, female",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_tech_female",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 73,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "기술공·준전문가",
+        "sex": "남성"
+      },
+      "dimensions": {
+        "occupation": "technician",
+        "sex": "male"
+      },
+      "displayLabel": "직군별 월평균 임금 · 기술공·준전문가 · 남성",
+      "indicatorId": "E-012_occupation_wage_tech_male",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=technician|sex=male|E-012_occupation_wage_tech_male",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기술공·준전문가 · 남성",
+      "sourceLabelEn": "Employment and wages by occupation — Technicians and associate professionals, male",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_tech_male",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 72,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "occupation_wage|천VND",
+      "dimensionLabels": {
+        "occupation": "기술공·준전문가",
+        "sex": "전체"
+      },
+      "dimensions": {
+        "occupation": "technician",
+        "sex": "total"
+      },
+      "displayLabel": "직군별 월평균 임금 · 기술공·준전문가 · 전체",
+      "indicatorId": "E-012_occupation_wage_tech_total",
+      "inferenceMethod": "explicit-override",
+      "measure": {
+        "aggregation": "mean",
+        "key": "occupation_wage",
+        "labelKo": "직군별 월평균 임금",
+        "unit": "천VND",
+        "unitFamily": "currency-per-period"
+      },
+      "seriesKey": "occupation_wage|천VND|occupation=technician|sex=total|E-012_occupation_wage_tech_total",
+      "sourceCaveat": "직군 분류는 베트남 직업분류(총리령 34/2020/QĐ-TTg)이며, 보고서 p.211이 'International Standard Classification of Occupations 2012(ISCO-08)에 기초하며 국제분류와 본질적으로 대응한다'고 명시",
+      "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기술공·준전문가 · 전체",
+      "sourceLabelEn": "Employment and wages by occupation — Technicians and associate professionals, total",
+      "sourceNote": "Table 3.5에 10번 직군(기타·미정의) 행이 존재하지 않아 3건(전체/남/여) 결측. 원천 미제공(M01).",
+      "sourceProvenance": {
+        "elementId": "E-012",
+        "indicatorId": "E-012_occupation_wage_tech_total",
+        "sourceFileDecoded": "E-012_직군별 종사자 수·임금.xlsx",
+        "sourceRow": 71,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "aggregation": "share",
+      "denominator": "해당 성별 전체 취업자",
+      "indicatorCount": 31,
+      "key": "occupation_employment_share",
+      "labelKo": "고용 구성비",
+      "recordCount": 31,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "aggregation": "rate",
+      "denominator": "생산가능인구",
+      "indicatorCount": 1,
+      "key": "employment_rate",
+      "labelKo": "고용률",
+      "recordCount": 1,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "aggregation": "share",
+      "denominator": "해당 직군 전체 취업자",
+      "indicatorCount": 11,
+      "key": "occupation_female_share",
+      "labelKo": "직군 내 여성 비중",
+      "recordCount": 11,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "aggregation": "mean",
+      "indicatorCount": 33,
+      "key": "occupation_wage",
+      "labelKo": "직군별 월평균 임금",
+      "recordCount": 33,
+      "unit": "천VND",
+      "unitFamily": "currency-per-period"
+    },
+    {
+      "aggregation": "sum",
+      "indicatorCount": 11,
+      "key": "occupation_employment_count",
+      "labelKo": "직군별 종사자 수",
+      "recordCount": 11,
+      "unit": "천명",
+      "unitFamily": "count"
+    },
+    {
+      "aggregation": "sum",
+      "indicatorCount": 1,
+      "key": "employed_persons",
+      "labelKo": "총 취업자 수",
+      "recordCount": 1,
+      "unit": "백만명",
+      "unitFamily": "count"
+    },
+    {
+      "aggregation": "mean",
+      "indicatorCount": 1,
+      "key": "average_monthly_wage",
+      "labelKo": "평균 월임금",
+      "recordCount": 1,
+      "unit": "USD",
+      "unitFamily": "currency-per-period"
+    },
+    {
+      "aggregation": "mean",
+      "indicatorCount": 1,
+      "key": "average_monthly_wage",
+      "labelKo": "평균 월임금",
+      "recordCount": 2,
+      "unit": "VND",
+      "unitFamily": "currency-per-period"
+    }
+  ],
+  "observationCount": 91,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

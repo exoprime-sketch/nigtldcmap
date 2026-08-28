@@ -1,0 +1,203 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 3,
+      "values": [
+        "발효",
+        "한국 관련(직접)",
+        "협상중"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 3,
+      "values": [
+        "발효 자유무역협정 건수",
+        "한국 관련(직접) 자유무역협정 건수",
+        "협상중 자유무역협정 건수"
+      ]
+    },
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "개체"
+      ]
+    },
+    {
+      "key": "status",
+      "labelKo": "status",
+      "valueCount": 2,
+      "values": [
+        "발효",
+        "협상중"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2026"
+      ]
+    }
+  ],
+  "elementId": "A-029",
+  "entityCount": 19,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 4,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-daaf99925122|건",
+      "dimensionLabels": {
+        "category": "발효",
+        "detail": "발효 자유무역협정 건수"
+      },
+      "dimensions": {
+        "category": "발효",
+        "detail": "발효 자유무역협정 건수"
+      },
+      "displayLabel": "FTA 건수 · 발효 — 발효 자유무역협정 건수",
+      "indicatorId": "A-029_fta_count_in_force",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-daaf99925122",
+        "labelKo": "FTA 건수",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-daaf99925122|건|category=발효|detail=발효 자유무역협정 건수|A-029_fta_count_in_force",
+      "sourceCaveat": "[원본 버전] STADT 자체 정리본(기준 시점 2026년 8월). 원천은 베트남 WTO Center(VCCI) FTA 종합 페이지 및 개별 발효 확인 기사임. [출처·링크] 검토의견 1번에 대응 — 출처기관·원천 URL·인용위치를 기재하고, 협정별 근거를 각 행 note에 병기함. [날짜 형식] 검토의견 2번에 대응 — 원문에서 서명일·발효일이 문자열로 저장되어 있어(number_format General, 셀 자료형 s) attr_1·attr_2에 YYYY-MM-DD 형식 문자열로 통일 수록하고, 협상중 2건의 \"—\" 표기는 값 없이 note에 사유를 명시함. [상대국 전수 표기] 검토의견 4번 반영 — 원문에서 \"ASEAN 9개국\"·\"EU 27개국\"처럼 축약되어 있던 5개 다자협정의 상대국을 협정별 당사국 명단으로 전수 기입함(2026년 8월 기준). ATIGA·CPTPP·RCEP·VN-EAEU·EVFTA 5건이며, 국가명은 한글 국명으로 통일함. 동티모르는 2025년 10월 ASEAN 11번째 회원국이 되었으나 ATIGA 가입은 별도 절차로 준비 단계이므로 ATIGA 당사국에서 제외함. 영국은 2024-12-15 CPTPP 발효로 당사국에 포함하되, 베트남-영국 간 적용 개시일은 베트남 비준서 기탁 시점에 따르므로 별도 확인 대상임. [한국 관련 열] 검토의견 3번에 대응 — 원문 \"한국관련\" 열은 \"★\"·\"(간접)\"라는 기호만 담고 있어 그대로는 활용도가 낮으므로, 별도 열로 두지 않고 note에 \"한국 관련: 직접/간접/해당없음\"으로 서술 수록함. VKFTA·AKFTA가 직접, RCEP이 간접임. [라이선스] 사실값(협정명·서명일·발효일·상태)만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "FTA 건수 · 발효 — 발효 자유무역협정 건수",
+      "sourceLabelEn": "Number of FTAs in force",
+      "sourceNote": "[원본 버전] STADT 자체 정리본(기준 시점 2026년 8월). 원천은 베트남 WTO Center(VCCI) FTA 종합 페이지 및 개별 발효 확인 기사임. [출처·링크] 검토의견 1번에 대응 — 출처기관·원천 URL·인용위치를 기재하고, 협정별 근거를 각 행 note에 병기함. [날짜 형식] 검토의견 2번에 대응 — 원문에서 서명일·발효일이 문자열로 저장되어 있어(number_format General, 셀 자료형 s) attr_1·attr_2에 YYYY-MM-DD 형식 문자열로 통일 수록하고, 협상중 2건의 \"—\" 표기는 값 없이 note에 사유를 명시함. [상대국 전수 표기] 검토의견 4번 반영 — 원문에서 \"ASEAN 9개국\"·\"EU 27개국\"처럼 축약되어 있던 5개 다자협정의 상대국을 협정별 당사국 명단으로 전수 기입함(2026년 8월 기준). ATIGA·CPTPP·RCEP·VN-EAEU·EVFTA 5건이며, 국가명은 한글 국명으로 통일함. 동티모르는 2025년 10월 ASEAN 11번째 회원국이 되었으나 ATIGA 가입은 별도 절차로 준비 단계이므로 ATIGA 당사국에서 제외함. 영국은 2024-12-15 CPTPP 발효로 당사국에 포함하되, 베트남-영국 간 적용 개시일은 베트남 비준서 기탁 시점에 따르므로 별도 확인 대상임. [한국 관련 열] 검토의견 3번에 대응 — 원문 \"한국관련\" 열은 \"★\"·\"(간접)\"라는 기호만 담고 있어 그대로는 활용도가 낮으므로, 별도 열로 두지 않고 note에 \"한국 관련: 직접/간접/해당없음\"으로 서술 수록함. VKFTA·AKFTA가 직접, RCEP이 간접임. [라이선스] 사실값(협정명·서명일·발효일·상태)만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-029",
+        "indicatorId": "A-029_fta_count_in_force",
+        "sourceFileDecoded": "A-029_FTA 체결 현황.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-daaf99925122|건",
+      "dimensionLabels": {
+        "category": "한국 관련(직접)",
+        "detail": "한국 관련(직접) 자유무역협정 건수"
+      },
+      "dimensions": {
+        "category": "한국 관련(직접)",
+        "detail": "한국 관련(직접) 자유무역협정 건수"
+      },
+      "displayLabel": "FTA 건수 · 한국 관련(직접) — 한국 관련(직접) 자유무역협정 건수",
+      "indicatorId": "A-029_fta_count_korea_related",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-daaf99925122",
+        "labelKo": "FTA 건수",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-daaf99925122|건|category=한국 관련(직접)|detail=한국 관련(직접) 자유무역협정 건수|A-029_fta_count_korea_related",
+      "sourceCaveat": "[원본 버전] STADT 자체 정리본(기준 시점 2026년 8월). 원천은 베트남 WTO Center(VCCI) FTA 종합 페이지 및 개별 발효 확인 기사임. [출처·링크] 검토의견 1번에 대응 — 출처기관·원천 URL·인용위치를 기재하고, 협정별 근거를 각 행 note에 병기함. [날짜 형식] 검토의견 2번에 대응 — 원문에서 서명일·발효일이 문자열로 저장되어 있어(number_format General, 셀 자료형 s) attr_1·attr_2에 YYYY-MM-DD 형식 문자열로 통일 수록하고, 협상중 2건의 \"—\" 표기는 값 없이 note에 사유를 명시함. [상대국 전수 표기] 검토의견 4번 반영 — 원문에서 \"ASEAN 9개국\"·\"EU 27개국\"처럼 축약되어 있던 5개 다자협정의 상대국을 협정별 당사국 명단으로 전수 기입함(2026년 8월 기준). ATIGA·CPTPP·RCEP·VN-EAEU·EVFTA 5건이며, 국가명은 한글 국명으로 통일함. 동티모르는 2025년 10월 ASEAN 11번째 회원국이 되었으나 ATIGA 가입은 별도 절차로 준비 단계이므로 ATIGA 당사국에서 제외함. 영국은 2024-12-15 CPTPP 발효로 당사국에 포함하되, 베트남-영국 간 적용 개시일은 베트남 비준서 기탁 시점에 따르므로 별도 확인 대상임. [한국 관련 열] 검토의견 3번에 대응 — 원문 \"한국관련\" 열은 \"★\"·\"(간접)\"라는 기호만 담고 있어 그대로는 활용도가 낮으므로, 별도 열로 두지 않고 note에 \"한국 관련: 직접/간접/해당없음\"으로 서술 수록함. VKFTA·AKFTA가 직접, RCEP이 간접임. [라이선스] 사실값(협정명·서명일·발효일·상태)만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "FTA 건수 · 한국 관련(직접) — 한국 관련(직접) 자유무역협정 건수",
+      "sourceLabelEn": "Number of FTAs Korea-related (direct)",
+      "sourceNote": "[원본 버전] STADT 자체 정리본(기준 시점 2026년 8월). 원천은 베트남 WTO Center(VCCI) FTA 종합 페이지 및 개별 발효 확인 기사임. [출처·링크] 검토의견 1번에 대응 — 출처기관·원천 URL·인용위치를 기재하고, 협정별 근거를 각 행 note에 병기함. [날짜 형식] 검토의견 2번에 대응 — 원문에서 서명일·발효일이 문자열로 저장되어 있어(number_format General, 셀 자료형 s) attr_1·attr_2에 YYYY-MM-DD 형식 문자열로 통일 수록하고, 협상중 2건의 \"—\" 표기는 값 없이 note에 사유를 명시함. [상대국 전수 표기] 검토의견 4번 반영 — 원문에서 \"ASEAN 9개국\"·\"EU 27개국\"처럼 축약되어 있던 5개 다자협정의 상대국을 협정별 당사국 명단으로 전수 기입함(2026년 8월 기준). ATIGA·CPTPP·RCEP·VN-EAEU·EVFTA 5건이며, 국가명은 한글 국명으로 통일함. 동티모르는 2025년 10월 ASEAN 11번째 회원국이 되었으나 ATIGA 가입은 별도 절차로 준비 단계이므로 ATIGA 당사국에서 제외함. 영국은 2024-12-15 CPTPP 발효로 당사국에 포함하되, 베트남-영국 간 적용 개시일은 베트남 비준서 기탁 시점에 따르므로 별도 확인 대상임. [한국 관련 열] 검토의견 3번에 대응 — 원문 \"한국관련\" 열은 \"★\"·\"(간접)\"라는 기호만 담고 있어 그대로는 활용도가 낮으므로, 별도 열로 두지 않고 note에 \"한국 관련: 직접/간접/해당없음\"으로 서술 수록함. VKFTA·AKFTA가 직접, RCEP이 간접임. [라이선스] 사실값(협정명·서명일·발효일·상태)만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-029",
+        "indicatorId": "A-029_fta_count_korea_related",
+        "sourceFileDecoded": "A-029_FTA 체결 현황.xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-daaf99925122|건",
+      "dimensionLabels": {
+        "category": "협상중",
+        "detail": "협상중 자유무역협정 건수"
+      },
+      "dimensions": {
+        "category": "협상중",
+        "detail": "협상중 자유무역협정 건수"
+      },
+      "displayLabel": "FTA 건수 · 협상중 — 협상중 자유무역협정 건수",
+      "indicatorId": "A-029_fta_count_under_negotiation",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-daaf99925122",
+        "labelKo": "FTA 건수",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-daaf99925122|건|category=협상중|detail=협상중 자유무역협정 건수|A-029_fta_count_under_negotiation",
+      "sourceCaveat": "[원본 버전] STADT 자체 정리본(기준 시점 2026년 8월). 원천은 베트남 WTO Center(VCCI) FTA 종합 페이지 및 개별 발효 확인 기사임. [출처·링크] 검토의견 1번에 대응 — 출처기관·원천 URL·인용위치를 기재하고, 협정별 근거를 각 행 note에 병기함. [날짜 형식] 검토의견 2번에 대응 — 원문에서 서명일·발효일이 문자열로 저장되어 있어(number_format General, 셀 자료형 s) attr_1·attr_2에 YYYY-MM-DD 형식 문자열로 통일 수록하고, 협상중 2건의 \"—\" 표기는 값 없이 note에 사유를 명시함. [상대국 전수 표기] 검토의견 4번 반영 — 원문에서 \"ASEAN 9개국\"·\"EU 27개국\"처럼 축약되어 있던 5개 다자협정의 상대국을 협정별 당사국 명단으로 전수 기입함(2026년 8월 기준). ATIGA·CPTPP·RCEP·VN-EAEU·EVFTA 5건이며, 국가명은 한글 국명으로 통일함. 동티모르는 2025년 10월 ASEAN 11번째 회원국이 되었으나 ATIGA 가입은 별도 절차로 준비 단계이므로 ATIGA 당사국에서 제외함. 영국은 2024-12-15 CPTPP 발효로 당사국에 포함하되, 베트남-영국 간 적용 개시일은 베트남 비준서 기탁 시점에 따르므로 별도 확인 대상임. [한국 관련 열] 검토의견 3번에 대응 — 원문 \"한국관련\" 열은 \"★\"·\"(간접)\"라는 기호만 담고 있어 그대로는 활용도가 낮으므로, 별도 열로 두지 않고 note에 \"한국 관련: 직접/간접/해당없음\"으로 서술 수록함. VKFTA·AKFTA가 직접, RCEP이 간접임. [라이선스] 사실값(협정명·서명일·발효일·상태)만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "FTA 건수 · 협상중 — 협상중 자유무역협정 건수",
+      "sourceLabelEn": "Number of FTAs under negotiation",
+      "sourceNote": "[원본 버전] STADT 자체 정리본(기준 시점 2026년 8월). 원천은 베트남 WTO Center(VCCI) FTA 종합 페이지 및 개별 발효 확인 기사임. [출처·링크] 검토의견 1번에 대응 — 출처기관·원천 URL·인용위치를 기재하고, 협정별 근거를 각 행 note에 병기함. [날짜 형식] 검토의견 2번에 대응 — 원문에서 서명일·발효일이 문자열로 저장되어 있어(number_format General, 셀 자료형 s) attr_1·attr_2에 YYYY-MM-DD 형식 문자열로 통일 수록하고, 협상중 2건의 \"—\" 표기는 값 없이 note에 사유를 명시함. [상대국 전수 표기] 검토의견 4번 반영 — 원문에서 \"ASEAN 9개국\"·\"EU 27개국\"처럼 축약되어 있던 5개 다자협정의 상대국을 협정별 당사국 명단으로 전수 기입함(2026년 8월 기준). ATIGA·CPTPP·RCEP·VN-EAEU·EVFTA 5건이며, 국가명은 한글 국명으로 통일함. 동티모르는 2025년 10월 ASEAN 11번째 회원국이 되었으나 ATIGA 가입은 별도 절차로 준비 단계이므로 ATIGA 당사국에서 제외함. 영국은 2024-12-15 CPTPP 발효로 당사국에 포함하되, 베트남-영국 간 적용 개시일은 베트남 비준서 기탁 시점에 따르므로 별도 확인 대상임. [한국 관련 열] 검토의견 3번에 대응 — 원문 \"한국관련\" 열은 \"★\"·\"(간접)\"라는 기호만 담고 있어 그대로는 활용도가 낮으므로, 별도 열로 두지 않고 note에 \"한국 관련: 직접/간접/해당없음\"으로 서술 수록함. VKFTA·AKFTA가 직접, RCEP이 간접임. [라이선스] 사실값(협정명·서명일·발효일·상태)만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-029",
+        "indicatorId": "A-029_fta_count_under_negotiation",
+        "sourceFileDecoded": "A-029_FTA 체결 현황.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0f0ddbb20f78|건",
+      "dimensionLabels": {
+        "detail": "베트남이 체결·협상 중인 자유무역협정 개체 목록"
+      },
+      "dimensions": {
+        "detail": "베트남이 체결·협상 중인 자유무역협정 개체 목록"
+      },
+      "displayLabel": "FTA 체결 현황 목록 — 베트남이 체결·협상 중인 자유무역협정 개체 목록",
+      "indicatorId": "A-029_fta_registry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0f0ddbb20f78",
+        "labelKo": "FTA 체결 현황 목록",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-0f0ddbb20f78|건|detail=베트남이 체결·협상 중인 자유무역협정 개체 목록|A-029_fta_registry",
+      "sourceCaveat": "[원본 버전] STADT 자체 정리본(기준 시점 2026년 8월). 원천은 베트남 WTO Center(VCCI) FTA 종합 페이지 및 개별 발효 확인 기사임. [출처·링크] 검토의견 1번에 대응 — 출처기관·원천 URL·인용위치를 기재하고, 협정별 근거를 각 행 note에 병기함. [날짜 형식] 검토의견 2번에 대응 — 원문에서 서명일·발효일이 문자열로 저장되어 있어(number_format General, 셀 자료형 s) attr_1·attr_2에 YYYY-MM-DD 형식 문자열로 통일 수록하고, 협상중 2건의 \"—\" 표기는 값 없이 note에 사유를 명시함. [상대국 전수 표기] 검토의견 4번 반영 — 원문에서 \"ASEAN 9개국\"·\"EU 27개국\"처럼 축약되어 있던 5개 다자협정의 상대국을 협정별 당사국 명단으로 전수 기입함(2026년 8월 기준). ATIGA·CPTPP·RCEP·VN-EAEU·EVFTA 5건이며, 국가명은 한글 국명으로 통일함. 동티모르는 2025년 10월 ASEAN 11번째 회원국이 되었으나 ATIGA 가입은 별도 절차로 준비 단계이므로 ATIGA 당사국에서 제외함. 영국은 2024-12-15 CPTPP 발효로 당사국에 포함하되, 베트남-영국 간 적용 개시일은 베트남 비준서 기탁 시점에 따르므로 별도 확인 대상임. [한국 관련 열] 검토의견 3번에 대응 — 원문 \"한국관련\" 열은 \"★\"·\"(간접)\"라는 기호만 담고 있어 그대로는 활용도가 낮으므로, 별도 열로 두지 않고 note에 \"한국 관련: 직접/간접/해당없음\"으로 서술 수록함. VKFTA·AKFTA가 직접, RCEP이 간접임. [라이선스] 사실값(협정명·서명일·발효일·상태)만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "FTA 체결 현황 목록 — 베트남이 체결·협상 중인 자유무역협정 개체 목록",
+      "sourceLabelEn": "Free trade agreement registry",
+      "sourceNote": "협상중 2건(VN-EFTA FTA, ASEAN-캐나다 FTA)은 아직 서명·발효되지 않아 해당 날짜 자체가 존재하지 않음(구조적 부존).",
+      "sourceProvenance": {
+        "elementId": "A-029",
+        "indicatorId": "A-029_fta_registry",
+        "sourceFileDecoded": "A-029_FTA 체결 현황.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 3,
+      "key": "measure-daaf99925122",
+      "labelKo": "FTA 건수",
+      "recordCount": 3,
+      "unit": "건",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-0f0ddbb20f78",
+      "labelKo": "FTA 체결 현황 목록",
+      "recordCount": 0,
+      "unit": "건",
+      "unitFamily": "count"
+    }
+  ],
+  "observationCount": 3,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

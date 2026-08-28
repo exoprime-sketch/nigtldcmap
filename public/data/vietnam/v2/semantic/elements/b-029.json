@@ -1,0 +1,397 @@
+{
+  "dimensions": [
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "23,35"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 36,
+      "values": [
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ]
+    }
+  ],
+  "elementId": "B-029",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 9,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-980a5def086b|ha",
+      "dimensionLabels": {
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "technology": "23,35"
+      },
+      "displayLabel": "습윤열대 1차림 면적(위성 기준)",
+      "indicatorId": "B-029_humid_primary_forest",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-980a5def086b",
+        "labelKo": "습윤열대 1차림 면적(위성 기준)",
+        "unit": "ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-980a5def086b|ha|technology=23,35|B-029_humid_primary_forest",
+      "sourceCaveat": "[신규 수록 — 산림유형 축 보완] 보유 [raw] 워크북 \"Country primary loss\" 시트의 area__ha 열. **FAO 원시림(Primary Forest, 2025년 584.80천ha)과는 전혀 다른 지표**입니다 — FAO는 국가보고 기준 \"인위 교란 흔적이 없는 자생 산림\"이고, GFW는 위성 기준 \"습윤열대 지역의 성숙 자연림(Turubanova et al. 2018)\"으로 정의·산출방식·대상 범위가 모두 다릅니다. 두 값을 접속하거나 비교하지 않고 별도 지표로 관리합니다(Q-004). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 확보됨 — 원본 다운로드에 성(63개) 및 현(710개) 단위 시트 포함. 발주처 확정 시 즉시 확장 수록 가능. / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceLabel": "습윤열대 1차림 면적(위성 기준)",
+      "sourceLabelEn": "Humid tropical primary forest extent",
+      "sourceNote": "[신규 수록 — 산림유형 축 보완] 보유 [raw] 워크북 \"Country primary loss\" 시트의 area__ha 열. **FAO 원시림(Primary Forest, 2025년 584.80천ha)과는 전혀 다른 지표**입니다 — FAO는 국가보고 기준 \"인위 교란 흔적이 없는 자생 산림\"이고, GFW는 위성 기준 \"습윤열대 지역의 성숙 자연림(Turubanova et al. 2018)\"으로 정의·산출방식·대상 범위가 모두 다릅니다. 두 값을 접속하거나 비교하지 않고 별도 지표로 관리합니다(Q-004). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 확보됨 — 원본 다운로드에 성(63개) 및 현(710개) 단위 시트 포함. 발주처 확정 시 즉시 확장 수록 가능. / [원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+      "sourceProvenance": {
+        "elementId": "B-029",
+        "indicatorId": "B-029_humid_primary_forest",
+        "sourceFileDecoded": "B-029_산림 유형별 면적(열대우림／맹그로브／이탄지 등).xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-8d3ddba38d09|1000 ha",
+      "dimensionLabels": {
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "technology": "23,35"
+      },
+      "displayLabel": "맹그로브 면적",
+      "indicatorId": "B-029_mangroves",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8d3ddba38d09",
+        "labelKo": "맹그로브 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-8d3ddba38d09|1000 ha|technology=23,35|B-029_mangroves",
+      "sourceCaveat": "[소스 분리] 자연재생림·조림지·원시림은 FAO 국가보고 통계(Land Use), 맹그로브는 위성 토지피복(CCI_LC)으로 원천·산출방식이 다름. Q-004에 따라 별도 지표코드로 분리하고 접속하지 않음. 동일 항목의 MODIS·WorldCover 산출물 계열은 아래 별도 지표에 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "맹그로브 면적",
+      "sourceLabelEn": "Mangrove area",
+      "sourceNote": "[소스 분리] 자연재생림·조림지·원시림은 FAO 국가보고 통계(Land Use), 맹그로브는 위성 토지피복(CCI_LC)으로 원천·산출방식이 다름. Q-004에 따라 별도 지표코드로 분리하고 접속하지 않음. 동일 항목의 MODIS·WorldCover 산출물 계열은 아래 별도 지표에 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-029",
+        "indicatorId": "B-029_mangroves",
+        "sourceFileDecoded": "B-029_산림 유형별 면적(열대우림／맹그로브／이탄지 등).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-cc106cca15c2|1000 ha",
+      "dimensionLabels": {
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "technology": "23,35"
+      },
+      "displayLabel": "맹그로브 면적(MODIS)",
+      "indicatorId": "B-029_mangroves_modis",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-cc106cca15c2",
+        "labelKo": "맹그로브 면적(MODIS)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-cc106cca15c2|1000 ha|technology=23,35|B-029_mangroves_modis",
+      "sourceCaveat": "[최신치 확보] CCI_LC 계열이 2022년으로 종료되는 반면 MODIS 계열은 **2023·2024년까지** 제공됨 (2023년 418.20천ha · 2024년 406.35천ha). 다만 수준(level)이 CCI_LC와 크게 달라(2022년 MODIS 413.90 vs CCI_LC 215.73천ha) 두 계열을 이어 붙이거나 직접 비교하지 않음 — 위성·분류 알고리즘·최소 판정단위가 다르기 때문(Q-004). 추세 판단에는 각 계열 내부에서만 비교할 것. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "맹그로브 면적(MODIS)",
+      "sourceLabelEn": "Mangrove area (MODIS)",
+      "sourceNote": "[최신치 확보] CCI_LC 계열이 2022년으로 종료되는 반면 MODIS 계열은 **2023·2024년까지** 제공됨 (2023년 418.20천ha · 2024년 406.35천ha). 다만 수준(level)이 CCI_LC와 크게 달라(2022년 MODIS 413.90 vs CCI_LC 215.73천ha) 두 계열을 이어 붙이거나 직접 비교하지 않음 — 위성·분류 알고리즘·최소 판정단위가 다르기 때문(Q-004). 추세 판단에는 각 계열 내부에서만 비교할 것. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-029",
+        "indicatorId": "B-029_mangroves_modis",
+        "sourceFileDecoded": "B-029_산림 유형별 면적(열대우림／맹그로브／이탄지 등).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bc49a0cbc1c1|1000 ha",
+      "dimensionLabels": {
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "technology": "23,35"
+      },
+      "displayLabel": "맹그로브 면적(WorldCover)",
+      "indicatorId": "B-029_mangroves_wc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bc49a0cbc1c1",
+        "labelKo": "맹그로브 면적(WorldCover)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-bc49a0cbc1c1|1000 ha|technology=23,35|B-029_mangroves_wc",
+      "sourceCaveat": "[고해상도 대조] ESA WorldCover 10m 기준 2020년 207.92 · 2021년 180.62천ha. 세 산출물(CCI_LC 300m · MODIS 500m · WorldCover 10m)의 맹그로브 면적이 2배 이상 벌어지므로 **단일 값으로 확정하지 말고 산출물을 반드시 병기**할 것을 권고드림. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "맹그로브 면적(WorldCover)",
+      "sourceLabelEn": "Mangrove area (ESA WorldCover)",
+      "sourceNote": "[고해상도 대조] ESA WorldCover 10m 기준 2020년 207.92 · 2021년 180.62천ha. 세 산출물(CCI_LC 300m · MODIS 500m · WorldCover 10m)의 맹그로브 면적이 2배 이상 벌어지므로 **단일 값으로 확정하지 말고 산출물을 반드시 병기**할 것을 권고드림. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-029",
+        "indicatorId": "B-029_mangroves_wc",
+        "sourceFileDecoded": "B-029_산림 유형별 면적(열대우림／맹그로브／이탄지 등).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d907bd3ae7d5|1000 ha",
+      "dimensionLabels": {
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "technology": "23,35"
+      },
+      "displayLabel": "자연재생림 면적",
+      "indicatorId": "B-029_naturally_regenerating",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d907bd3ae7d5",
+        "labelKo": "자연재생림 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-d907bd3ae7d5|1000 ha|technology=23,35|B-029_naturally_regenerating",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "자연재생림 면적",
+      "sourceLabelEn": "Naturally regenerating forest area",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-029",
+        "indicatorId": "B-029_naturally_regenerating",
+        "sourceFileDecoded": "B-029_산림 유형별 면적(열대우림／맹그로브／이탄지 등).xlsx",
+        "sourceRow": 4,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d6fbee3cc540|1000 ha",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "이탄지 면적",
+      "indicatorId": "B-029_peatland",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d6fbee3cc540",
+        "labelKo": "이탄지 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-d6fbee3cc540|1000 ha||B-029_peatland",
+      "sourceCaveat": "[신규 수집·산출 완료] 발주처 검토의견 「이탄지 면적 미수집」에 대한 조치. Global Peatland Map 2.0(Greifswald Mire Centre 2022, UNEP Global Peatlands Assessment 기반자료) GeoTIFF를 수령하여 베트남 면적을 직접 산출했습니다. FAOSTAT·GFW 분류체계에는 이탄지 항목이 아예 없어 별도 원천이 필요했던 항목입니다. [수집 경로 주의] UNEP Knowledge Repository(wedocs.unep.org/handle/20.500.11822/44664)의 Download는 2.3KB로 실제 래스터가 아닌 안내 파일이며, 실파일은 제작기관인 Greifswald Mire Centre가 직접 배포합니다. [라이선스 — 발주처 확인 필요] 동봉된 GPM2022_Licence.txt에 **CC BY-NC-SA 4.0**(비영리·동일조건변경허락)이 명시되어 있습니다. 비영리 조건 및 2차 저작물의 동일조건 배포 의무가 있어, 민간 수행 주체의 사용·재배포 가능 여부 확정이 필요합니다(EM-DAT R-03과 동종 쟁점). 인용 지정 형식: \"Greifswald Mire Centre (2022) Global Peatland Map 2.0. Underlying dataset of the UNEP Global Peatland Assessment\". [중복 계상 주의] 이탄지는 산림·습지와 공간적으로 겹칠 수 있어 FAO·GFW 산림 면적과 단순 합산 불가. [본 지표 = 하한값] 셀값 1(이탄 우세)만 집계한 값입니다. **491개 셀이 전부 위도 9.19~9.72°N · 경도 104.85~105.16°E에 집중**되어 있는데, 이는 까마우(Cà Mau)·끼엔장(Kiên Giang)의 우민(U Minh Thượng·U Minh Hạ) 이탄습지림과 정확히 일치합니다 — 베트남에서 이탄지로 알려진 유일한 대규모 분포지로, 산출 결과의 공간적 타당성이 확인됩니다. 모자이크 등급까지 포함한 상한값은 아래 peatland_incl_mosaic 지표를 참조하십시오. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "이탄지 면적",
+      "sourceLabelEn": "Peatland area",
+      "sourceNote": "[신규 수집·산출 완료] 발주처 검토의견 「이탄지 면적 미수집」에 대한 조치. Global Peatland Map 2.0(Greifswald Mire Centre 2022, UNEP Global Peatlands Assessment 기반자료) GeoTIFF를 수령하여 베트남 면적을 직접 산출했습니다. FAOSTAT·GFW 분류체계에는 이탄지 항목이 아예 없어 별도 원천이 필요했던 항목입니다. [수집 경로 주의] UNEP Knowledge Repository(wedocs.unep.org/handle/20.500.11822/44664)의 Download는 2.3KB로 실제 래스터가 아닌 안내 파일이며, 실파일은 제작기관인 Greifswald Mire Centre가 직접 배포합니다. [라이선스 — 발주처 확인 필요] 동봉된 GPM2022_Licence.txt에 **CC BY-NC-SA 4.0**(비영리·동일조건변경허락)이 명시되어 있습니다. 비영리 조건 및 2차 저작물의 동일조건 배포 의무가 있어, 민간 수행 주체의 사용·재배포 가능 여부 확정이 필요합니다(EM-DAT R-03과 동종 쟁점). 인용 지정 형식: \"Greifswald Mire Centre (2022) Global Peatland Map 2.0. Underlying dataset of the UNEP Global Peatland Assessment\". [중복 계상 주의] 이탄지는 산림·습지와 공간적으로 겹칠 수 있어 FAO·GFW 산림 면적과 단순 합산 불가. [본 지표 = 하한값] 셀값 1(이탄 우세)만 집계한 값입니다. **491개 셀이 전부 위도 9.19~9.72°N · 경도 104.85~105.16°E에 집중**되어 있는데, 이는 까마우(Cà Mau)·끼엔장(Kiên Giang)의 우민(U Minh Thượng·U Minh Hạ) 이탄습지림과 정확히 일치합니다 — 베트남에서 이탄지로 알려진 유일한 대규모 분포지로, 산출 결과의 공간적 타당성이 확인됩니다. 모자이크 등급까지 포함한 상한값은 아래 peatland_incl_mosaic 지표를 참조하십시오. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-029",
+        "indicatorId": "B-029_peatland",
+        "sourceFileDecoded": "B-029_산림 유형별 면적(열대우림／맹그로브／이탄지 등).xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d6fbee3cc540|1000 ha",
+      "dimensionLabels": {
+        "detail": "모자이크 포함(상한)"
+      },
+      "dimensions": {
+        "detail": "모자이크 포함(상한)"
+      },
+      "displayLabel": "이탄지 면적 — 모자이크 포함(상한)",
+      "indicatorId": "B-029_peatland_incl_mosaic",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d6fbee3cc540",
+        "labelKo": "이탄지 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-d6fbee3cc540|1000 ha|detail=모자이크 포함(상한)|B-029_peatland_incl_mosaic",
+      "sourceCaveat": "[신규 수집·산출 완료] 발주처 검토의견 「이탄지 면적 미수집」에 대한 조치. Global Peatland Map 2.0(Greifswald Mire Centre 2022, UNEP Global Peatlands Assessment 기반자료) GeoTIFF를 수령하여 베트남 면적을 직접 산출했습니다. FAOSTAT·GFW 분류체계에는 이탄지 항목이 아예 없어 별도 원천이 필요했던 항목입니다. [수집 경로 주의] UNEP Knowledge Repository(wedocs.unep.org/handle/20.500.11822/44664)의 Download는 2.3KB로 실제 래스터가 아닌 안내 파일이며, 실파일은 제작기관인 Greifswald Mire Centre가 직접 배포합니다. [라이선스 — 발주처 확인 필요] 동봉된 GPM2022_Licence.txt에 **CC BY-NC-SA 4.0**(비영리·동일조건변경허락)이 명시되어 있습니다. 비영리 조건 및 2차 저작물의 동일조건 배포 의무가 있어, 민간 수행 주체의 사용·재배포 가능 여부 확정이 필요합니다(EM-DAT R-03과 동종 쟁점). 인용 지정 형식: \"Greifswald Mire Centre (2022) Global Peatland Map 2.0. Underlying dataset of the UNEP Global Peatland Assessment\". [중복 계상 주의] 이탄지는 산림·습지와 공간적으로 겹칠 수 있어 FAO·GFW 산림 면적과 단순 합산 불가. [본 지표 = 상한값] 셀값 2만 따로 보면 236.3 천ha이며, 셀값 1과 달리 메콩델타 41% · 북중부 30% · 중부 16% 등 전국에 분산 분포합니다. 원천이 두 등급에 고정 임계값이 없다고 명시하므로 **하한(59.7 천ha)과 상한(296.0 천ha)을 함께 제시하고 단일값으로 확정하지 않는 것**을 권장드립니다. 탄소 배출·복원 사업 대상 산정에는 하한값(이탄 우세)이, 잠재 분포 범위 파악에는 상한값이 적합합니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "이탄지 면적 — 모자이크 포함(상한)",
+      "sourceLabelEn": "Peatland area incl. soil mosaic (upper bound)",
+      "sourceNote": "[신규 수집·산출 완료] 발주처 검토의견 「이탄지 면적 미수집」에 대한 조치. Global Peatland Map 2.0(Greifswald Mire Centre 2022, UNEP Global Peatlands Assessment 기반자료) GeoTIFF를 수령하여 베트남 면적을 직접 산출했습니다. FAOSTAT·GFW 분류체계에는 이탄지 항목이 아예 없어 별도 원천이 필요했던 항목입니다. [수집 경로 주의] UNEP Knowledge Repository(wedocs.unep.org/handle/20.500.11822/44664)의 Download는 2.3KB로 실제 래스터가 아닌 안내 파일이며, 실파일은 제작기관인 Greifswald Mire Centre가 직접 배포합니다. [라이선스 — 발주처 확인 필요] 동봉된 GPM2022_Licence.txt에 **CC BY-NC-SA 4.0**(비영리·동일조건변경허락)이 명시되어 있습니다. 비영리 조건 및 2차 저작물의 동일조건 배포 의무가 있어, 민간 수행 주체의 사용·재배포 가능 여부 확정이 필요합니다(EM-DAT R-03과 동종 쟁점). 인용 지정 형식: \"Greifswald Mire Centre (2022) Global Peatland Map 2.0. Underlying dataset of the UNEP Global Peatland Assessment\". [중복 계상 주의] 이탄지는 산림·습지와 공간적으로 겹칠 수 있어 FAO·GFW 산림 면적과 단순 합산 불가. [본 지표 = 상한값] 셀값 2만 따로 보면 236.3 천ha이며, 셀값 1과 달리 메콩델타 41% · 북중부 30% · 중부 16% 등 전국에 분산 분포합니다. 원천이 두 등급에 고정 임계값이 없다고 명시하므로 **하한(59.7 천ha)과 상한(296.0 천ha)을 함께 제시하고 단일값으로 확정하지 않는 것**을 권장드립니다. 탄소 배출·복원 사업 대상 산정에는 하한값(이탄 우세)이, 잠재 분포 범위 파악에는 상한값이 적합합니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceProvenance": {
+        "elementId": "B-029",
+        "indicatorId": "B-029_peatland_incl_mosaic",
+        "sourceFileDecoded": "B-029_산림 유형별 면적(열대우림／맹그로브／이탄지 등).xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-da5947305341|1000 ha",
+      "dimensionLabels": {
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "technology": "23,35"
+      },
+      "displayLabel": "조림지 면적",
+      "indicatorId": "B-029_planted_forest",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-da5947305341",
+        "labelKo": "조림지 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-da5947305341|1000 ha|technology=23,35|B-029_planted_forest",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "조림지 면적",
+      "sourceLabelEn": "Planted forest area",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-029",
+        "indicatorId": "B-029_planted_forest",
+        "sourceFileDecoded": "B-029_산림 유형별 면적(열대우림／맹그로브／이탄지 등).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-92cdbada6989|1000 ha",
+      "dimensionLabels": {
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "technology": "23,35"
+      },
+      "displayLabel": "원시림 면적",
+      "indicatorId": "B-029_primary_forest",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-92cdbada6989",
+        "labelKo": "원시림 면적",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-92cdbada6989|1000 ha|technology=23,35|B-029_primary_forest",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceLabel": "원시림 면적",
+      "sourceLabelEn": "Primary forest area",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+      "sourceProvenance": {
+        "elementId": "B-029",
+        "indicatorId": "B-029_primary_forest",
+        "sourceFileDecoded": "B-029_산림 유형별 면적(열대우림／맹그로브／이탄지 등).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-8d3ddba38d09",
+      "labelKo": "맹그로브 면적",
+      "recordCount": 31,
+      "unit": "1000 ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-cc106cca15c2",
+      "labelKo": "맹그로브 면적(MODIS)",
+      "recordCount": 24,
+      "unit": "1000 ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-bc49a0cbc1c1",
+      "labelKo": "맹그로브 면적(WorldCover)",
+      "recordCount": 2,
+      "unit": "1000 ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-980a5def086b",
+      "labelKo": "습윤열대 1차림 면적(위성 기준)",
+      "recordCount": 1,
+      "unit": "ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-92cdbada6989",
+      "labelKo": "원시림 면적",
+      "recordCount": 36,
+      "unit": "1000 ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-d6fbee3cc540",
+      "labelKo": "이탄지 면적",
+      "recordCount": 0,
+      "unit": "1000 ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-d907bd3ae7d5",
+      "labelKo": "자연재생림 면적",
+      "recordCount": 36,
+      "unit": "1000 ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-da5947305341",
+      "labelKo": "조림지 면적",
+      "recordCount": 36,
+      "unit": "1000 ha",
+      "unitFamily": "area"
+    }
+  ],
+  "observationCount": 166,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

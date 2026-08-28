@@ -1,0 +1,202 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 4,
+      "values": [
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 4,
+      "values": [
+        "정기선 해운 연결성 지수(Q1 분기값)",
+        "정기선 해운 연결성 지수(Q2 분기값)",
+        "정기선 해운 연결성 지수(Q3 분기값)",
+        "정기선 해운 연결성 지수(Q4 분기값)"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 21,
+      "values": [
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ]
+    }
+  ],
+  "elementId": "A-033",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 4,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-a8b5f1ca1a7a|지수",
+      "dimensionLabels": {
+        "category": "Q1",
+        "detail": "정기선 해운 연결성 지수(Q1 분기값)"
+      },
+      "dimensions": {
+        "category": "Q1",
+        "detail": "정기선 해운 연결성 지수(Q1 분기값)"
+      },
+      "displayLabel": "해운 연결성 지수(LSCI) · Q1 — 정기선 해운 연결성 지수(Q1 분기값)",
+      "indicatorId": "A-033_lsci_q1",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a8b5f1ca1a7a",
+        "labelKo": "해운 연결성 지수(LSCI)",
+        "unit": "지수",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a8b5f1ca1a7a|지수|category=Q1|detail=정기선 해운 연결성 지수(Q1 분기값)|A-033_lsci_q1",
+      "sourceCaveat": "[원본 버전] UNCTADstat 정기간행 LSCI(US.LSCI) 분기 계열, 2026-08-02 조회분. [출처·링크] 검토의견 1번에 따라 출처기관·딥링크·인용위치를 기재함. [기준값 확인] 검토의견 2번은 성립하지 않음 — 원천 열 이름이 \"Index, Average Q1 2023 = 100\"인데 이는 「전 세계 경제 평균」이 100이라는 뜻이지 각국의 2023년 1분기 값이 100이라는 뜻이 아님. raw 전수 검증 결과 2023년 1분기 값이 있는 176개 경제의 평균은 100.487(최대 1,159.68, 최소 2.5)로 기준 정의와 일치하며, 베트남의 397.45는 세계 평균의 약 4배 수준이라는 의미이므로 오류가 아님. [결측 표준화] 검토의견 3번에 대응 — 라오스처럼 내륙국은 이 지수가 구조적으로 존재하지 않으므로 M03(구조적 부존)으로 처리해야 함. 베트남은 해당 없음(전 82개 분기 값 보유, 결측 0건). [구조] 분기 계열이므로 분기를 지표로, 연도를 year 열로 분리하여 표준서식의 열 추가 없이 수록함. [라이선스] UNCTAD 공개 통계로 출처 표기 조건 하 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "해운 연결성 지수(LSCI) · Q1 — 정기선 해운 연결성 지수(Q1 분기값)",
+      "sourceLabelEn": "Liner Shipping Connectivity Index (LSCI), Q1",
+      "sourceNote": "[원본 버전] UNCTADstat 정기간행 LSCI(US.LSCI) 분기 계열, 2026-08-02 조회분. [출처·링크] 검토의견 1번에 따라 출처기관·딥링크·인용위치를 기재함. [기준값 확인] 검토의견 2번은 성립하지 않음 — 원천 열 이름이 \"Index, Average Q1 2023 = 100\"인데 이는 「전 세계 경제 평균」이 100이라는 뜻이지 각국의 2023년 1분기 값이 100이라는 뜻이 아님. raw 전수 검증 결과 2023년 1분기 값이 있는 176개 경제의 평균은 100.487(최대 1,159.68, 최소 2.5)로 기준 정의와 일치하며, 베트남의 397.45는 세계 평균의 약 4배 수준이라는 의미이므로 오류가 아님. [결측 표준화] 검토의견 3번에 대응 — 라오스처럼 내륙국은 이 지수가 구조적으로 존재하지 않으므로 M03(구조적 부존)으로 처리해야 함. 베트남은 해당 없음(전 82개 분기 값 보유, 결측 0건). [구조] 분기 계열이므로 분기를 지표로, 연도를 year 열로 분리하여 표준서식의 열 추가 없이 수록함. [라이선스] UNCTAD 공개 통계로 출처 표기 조건 하 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-033",
+        "indicatorId": "A-033_lsci_q1",
+        "sourceFileDecoded": "A-033_해운 연결성(LSCI).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a8b5f1ca1a7a|지수",
+      "dimensionLabels": {
+        "category": "Q2",
+        "detail": "정기선 해운 연결성 지수(Q2 분기값)"
+      },
+      "dimensions": {
+        "category": "Q2",
+        "detail": "정기선 해운 연결성 지수(Q2 분기값)"
+      },
+      "displayLabel": "해운 연결성 지수(LSCI) · Q2 — 정기선 해운 연결성 지수(Q2 분기값)",
+      "indicatorId": "A-033_lsci_q2",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a8b5f1ca1a7a",
+        "labelKo": "해운 연결성 지수(LSCI)",
+        "unit": "지수",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a8b5f1ca1a7a|지수|category=Q2|detail=정기선 해운 연결성 지수(Q2 분기값)|A-033_lsci_q2",
+      "sourceCaveat": "[원본 버전] UNCTADstat 정기간행 LSCI(US.LSCI) 분기 계열, 2026-08-02 조회분. [출처·링크] 검토의견 1번에 따라 출처기관·딥링크·인용위치를 기재함. [기준값 확인] 검토의견 2번은 성립하지 않음 — 원천 열 이름이 \"Index, Average Q1 2023 = 100\"인데 이는 「전 세계 경제 평균」이 100이라는 뜻이지 각국의 2023년 1분기 값이 100이라는 뜻이 아님. raw 전수 검증 결과 2023년 1분기 값이 있는 176개 경제의 평균은 100.487(최대 1,159.68, 최소 2.5)로 기준 정의와 일치하며, 베트남의 397.45는 세계 평균의 약 4배 수준이라는 의미이므로 오류가 아님. [결측 표준화] 검토의견 3번에 대응 — 라오스처럼 내륙국은 이 지수가 구조적으로 존재하지 않으므로 M03(구조적 부존)으로 처리해야 함. 베트남은 해당 없음(전 82개 분기 값 보유, 결측 0건). [구조] 분기 계열이므로 분기를 지표로, 연도를 year 열로 분리하여 표준서식의 열 추가 없이 수록함. [라이선스] UNCTAD 공개 통계로 출처 표기 조건 하 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "해운 연결성 지수(LSCI) · Q2 — 정기선 해운 연결성 지수(Q2 분기값)",
+      "sourceLabelEn": "Liner Shipping Connectivity Index (LSCI), Q2",
+      "sourceNote": "[원본 버전] UNCTADstat 정기간행 LSCI(US.LSCI) 분기 계열, 2026-08-02 조회분. [출처·링크] 검토의견 1번에 따라 출처기관·딥링크·인용위치를 기재함. [기준값 확인] 검토의견 2번은 성립하지 않음 — 원천 열 이름이 \"Index, Average Q1 2023 = 100\"인데 이는 「전 세계 경제 평균」이 100이라는 뜻이지 각국의 2023년 1분기 값이 100이라는 뜻이 아님. raw 전수 검증 결과 2023년 1분기 값이 있는 176개 경제의 평균은 100.487(최대 1,159.68, 최소 2.5)로 기준 정의와 일치하며, 베트남의 397.45는 세계 평균의 약 4배 수준이라는 의미이므로 오류가 아님. [결측 표준화] 검토의견 3번에 대응 — 라오스처럼 내륙국은 이 지수가 구조적으로 존재하지 않으므로 M03(구조적 부존)으로 처리해야 함. 베트남은 해당 없음(전 82개 분기 값 보유, 결측 0건). [구조] 분기 계열이므로 분기를 지표로, 연도를 year 열로 분리하여 표준서식의 열 추가 없이 수록함. [라이선스] UNCTAD 공개 통계로 출처 표기 조건 하 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-033",
+        "indicatorId": "A-033_lsci_q2",
+        "sourceFileDecoded": "A-033_해운 연결성(LSCI).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a8b5f1ca1a7a|지수",
+      "dimensionLabels": {
+        "category": "Q3",
+        "detail": "정기선 해운 연결성 지수(Q3 분기값)"
+      },
+      "dimensions": {
+        "category": "Q3",
+        "detail": "정기선 해운 연결성 지수(Q3 분기값)"
+      },
+      "displayLabel": "해운 연결성 지수(LSCI) · Q3 — 정기선 해운 연결성 지수(Q3 분기값)",
+      "indicatorId": "A-033_lsci_q3",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a8b5f1ca1a7a",
+        "labelKo": "해운 연결성 지수(LSCI)",
+        "unit": "지수",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a8b5f1ca1a7a|지수|category=Q3|detail=정기선 해운 연결성 지수(Q3 분기값)|A-033_lsci_q3",
+      "sourceCaveat": "[원본 버전] UNCTADstat 정기간행 LSCI(US.LSCI) 분기 계열, 2026-08-02 조회분. [출처·링크] 검토의견 1번에 따라 출처기관·딥링크·인용위치를 기재함. [기준값 확인] 검토의견 2번은 성립하지 않음 — 원천 열 이름이 \"Index, Average Q1 2023 = 100\"인데 이는 「전 세계 경제 평균」이 100이라는 뜻이지 각국의 2023년 1분기 값이 100이라는 뜻이 아님. raw 전수 검증 결과 2023년 1분기 값이 있는 176개 경제의 평균은 100.487(최대 1,159.68, 최소 2.5)로 기준 정의와 일치하며, 베트남의 397.45는 세계 평균의 약 4배 수준이라는 의미이므로 오류가 아님. [결측 표준화] 검토의견 3번에 대응 — 라오스처럼 내륙국은 이 지수가 구조적으로 존재하지 않으므로 M03(구조적 부존)으로 처리해야 함. 베트남은 해당 없음(전 82개 분기 값 보유, 결측 0건). [구조] 분기 계열이므로 분기를 지표로, 연도를 year 열로 분리하여 표준서식의 열 추가 없이 수록함. [라이선스] UNCTAD 공개 통계로 출처 표기 조건 하 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "해운 연결성 지수(LSCI) · Q3 — 정기선 해운 연결성 지수(Q3 분기값)",
+      "sourceLabelEn": "Liner Shipping Connectivity Index (LSCI), Q3",
+      "sourceNote": "[원본 버전] UNCTADstat 정기간행 LSCI(US.LSCI) 분기 계열, 2026-08-02 조회분. [출처·링크] 검토의견 1번에 따라 출처기관·딥링크·인용위치를 기재함. [기준값 확인] 검토의견 2번은 성립하지 않음 — 원천 열 이름이 \"Index, Average Q1 2023 = 100\"인데 이는 「전 세계 경제 평균」이 100이라는 뜻이지 각국의 2023년 1분기 값이 100이라는 뜻이 아님. raw 전수 검증 결과 2023년 1분기 값이 있는 176개 경제의 평균은 100.487(최대 1,159.68, 최소 2.5)로 기준 정의와 일치하며, 베트남의 397.45는 세계 평균의 약 4배 수준이라는 의미이므로 오류가 아님. [결측 표준화] 검토의견 3번에 대응 — 라오스처럼 내륙국은 이 지수가 구조적으로 존재하지 않으므로 M03(구조적 부존)으로 처리해야 함. 베트남은 해당 없음(전 82개 분기 값 보유, 결측 0건). [구조] 분기 계열이므로 분기를 지표로, 연도를 year 열로 분리하여 표준서식의 열 추가 없이 수록함. [라이선스] UNCTAD 공개 통계로 출처 표기 조건 하 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-033",
+        "indicatorId": "A-033_lsci_q3",
+        "sourceFileDecoded": "A-033_해운 연결성(LSCI).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a8b5f1ca1a7a|지수",
+      "dimensionLabels": {
+        "category": "Q4",
+        "detail": "정기선 해운 연결성 지수(Q4 분기값)"
+      },
+      "dimensions": {
+        "category": "Q4",
+        "detail": "정기선 해운 연결성 지수(Q4 분기값)"
+      },
+      "displayLabel": "해운 연결성 지수(LSCI) · Q4 — 정기선 해운 연결성 지수(Q4 분기값)",
+      "indicatorId": "A-033_lsci_q4",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a8b5f1ca1a7a",
+        "labelKo": "해운 연결성 지수(LSCI)",
+        "unit": "지수",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a8b5f1ca1a7a|지수|category=Q4|detail=정기선 해운 연결성 지수(Q4 분기값)|A-033_lsci_q4",
+      "sourceCaveat": "[원본 버전] UNCTADstat 정기간행 LSCI(US.LSCI) 분기 계열, 2026-08-02 조회분. [출처·링크] 검토의견 1번에 따라 출처기관·딥링크·인용위치를 기재함. [기준값 확인] 검토의견 2번은 성립하지 않음 — 원천 열 이름이 \"Index, Average Q1 2023 = 100\"인데 이는 「전 세계 경제 평균」이 100이라는 뜻이지 각국의 2023년 1분기 값이 100이라는 뜻이 아님. raw 전수 검증 결과 2023년 1분기 값이 있는 176개 경제의 평균은 100.487(최대 1,159.68, 최소 2.5)로 기준 정의와 일치하며, 베트남의 397.45는 세계 평균의 약 4배 수준이라는 의미이므로 오류가 아님. [결측 표준화] 검토의견 3번에 대응 — 라오스처럼 내륙국은 이 지수가 구조적으로 존재하지 않으므로 M03(구조적 부존)으로 처리해야 함. 베트남은 해당 없음(전 82개 분기 값 보유, 결측 0건). [구조] 분기 계열이므로 분기를 지표로, 연도를 year 열로 분리하여 표준서식의 열 추가 없이 수록함. [라이선스] UNCTAD 공개 통계로 출처 표기 조건 하 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "해운 연결성 지수(LSCI) · Q4 — 정기선 해운 연결성 지수(Q4 분기값)",
+      "sourceLabelEn": "Liner Shipping Connectivity Index (LSCI), Q4",
+      "sourceNote": "[원본 버전] UNCTADstat 정기간행 LSCI(US.LSCI) 분기 계열, 2026-08-02 조회분. [출처·링크] 검토의견 1번에 따라 출처기관·딥링크·인용위치를 기재함. [기준값 확인] 검토의견 2번은 성립하지 않음 — 원천 열 이름이 \"Index, Average Q1 2023 = 100\"인데 이는 「전 세계 경제 평균」이 100이라는 뜻이지 각국의 2023년 1분기 값이 100이라는 뜻이 아님. raw 전수 검증 결과 2023년 1분기 값이 있는 176개 경제의 평균은 100.487(최대 1,159.68, 최소 2.5)로 기준 정의와 일치하며, 베트남의 397.45는 세계 평균의 약 4배 수준이라는 의미이므로 오류가 아님. [결측 표준화] 검토의견 3번에 대응 — 라오스처럼 내륙국은 이 지수가 구조적으로 존재하지 않으므로 M03(구조적 부존)으로 처리해야 함. 베트남은 해당 없음(전 82개 분기 값 보유, 결측 0건). [구조] 분기 계열이므로 분기를 지표로, 연도를 year 열로 분리하여 표준서식의 열 추가 없이 수록함. [라이선스] UNCTAD 공개 통계로 출처 표기 조건 하 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-033",
+        "indicatorId": "A-033_lsci_q4",
+        "sourceFileDecoded": "A-033_해운 연결성(LSCI).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 4,
+      "key": "measure-a8b5f1ca1a7a",
+      "labelKo": "해운 연결성 지수(LSCI)",
+      "recordCount": 82,
+      "unit": "지수",
+      "unitFamily": "other"
+    }
+  ],
+  "observationCount": 82,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

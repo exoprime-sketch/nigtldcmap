@@ -1,0 +1,184 @@
+{
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 1,
+      "values": [
+        "격자/대수층 단위(GIS)"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "32"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 35,
+      "values": [
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2026"
+      ]
+    }
+  ],
+  "elementId": "B-027",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 3,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-551da7ede3b6|10⁹ m³/yr",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "이용가능(정규 재생) 지하수",
+      "indicatorId": "B-027_exploitable_gw",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-551da7ede3b6",
+        "labelKo": "이용가능(정규 재생) 지하수",
+        "unit": "10⁹ m³/yr",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-551da7ede3b6|10⁹ m³/yr||B-027_exploitable_gw",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] AQUASTAT Dissemination System 조회 기준일",
+      "sourceLabel": "이용가능(정규 재생) 지하수",
+      "sourceLabelEn": "Exploitable regular renewable groundwater",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] AQUASTAT Dissemination System 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-027",
+        "indicatorId": "B-027_exploitable_gw",
+        "sourceFileDecoded": "B-027_지하수 잠재량(m³／yr).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-34f4236b35f8|mm/yr 또는 10⁹ m³/yr",
+      "dimensionLabels": {
+        "detail": "격자/대수층 단위(GIS)"
+      },
+      "dimensions": {
+        "detail": "격자/대수층 단위(GIS)"
+      },
+      "displayLabel": "지하수 잠재량 — 격자/대수층 단위(GIS)",
+      "indicatorId": "B-027_gw_gis",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-34f4236b35f8",
+        "labelKo": "지하수 잠재량",
+        "unit": "mm/yr 또는 10⁹ m³/yr",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-34f4236b35f8|mm/yr 또는 10⁹ m³/yr|detail=격자/대수층 단위(GIS)|B-027_gw_gis",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin)·대수층 단위 산출 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceLabel": "지하수 잠재량 — 격자/대수층 단위(GIS)",
+      "sourceLabelEn": "Groundwater potential (gridded/aquifer)",
+      "sourceNote": "2026년: GIS 원천 검토 완료·수집 미착수 — 절차 확정 후 진행",
+      "sourceProvenance": {
+        "elementId": "B-027",
+        "indicatorId": "B-027_gw_gis",
+        "sourceFileDecoded": "B-027_지하수 잠재량(m³／yr).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-b4eb329a4a57|10⁹ m³/yr",
+      "dimensionLabels": {
+        "technology": "32"
+      },
+      "dimensions": {
+        "technology": "32"
+      },
+      "displayLabel": "총 재생가능 지하수 자원량",
+      "indicatorId": "B-027_total_renewable_gw",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b4eb329a4a57",
+        "labelKo": "총 재생가능 지하수 자원량",
+        "unit": "10⁹ m³/yr",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-b4eb329a4a57|10⁹ m³/yr|technology=32|B-027_total_renewable_gw",
+      "sourceCaveat": "장기 일정값(71.42)으로 원천이 전 기간 동일 값을 유지. 1990–2018 E(추정), 2019–2023 I(보간). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] AQUASTAT Dissemination System 조회 기준일",
+      "sourceLabel": "총 재생가능 지하수 자원량",
+      "sourceLabelEn": "Total renewable groundwater",
+      "sourceNote": "장기 일정값(71.42)으로 원천이 전 기간 동일 값을 유지. 1990–2018 E(추정), 2019–2023 I(보간). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] AQUASTAT Dissemination System 조회 기준일",
+      "sourceProvenance": {
+        "elementId": "B-027",
+        "indicatorId": "B-027_total_renewable_gw",
+        "sourceFileDecoded": "B-027_지하수 잠재량(m³／yr).xlsx",
+        "sourceRow": 4,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-551da7ede3b6",
+      "labelKo": "이용가능(정규 재생) 지하수",
+      "recordCount": 19,
+      "unit": "10⁹ m³/yr",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-34f4236b35f8",
+      "labelKo": "지하수 잠재량",
+      "recordCount": 1,
+      "unit": "mm/yr 또는 10⁹ m³/yr",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-b4eb329a4a57",
+      "labelKo": "총 재생가능 지하수 자원량",
+      "recordCount": 34,
+      "unit": "10⁹ m³/yr",
+      "unitFamily": "other"
+    }
+  ],
+  "observationCount": 54,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

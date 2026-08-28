@@ -1,5 +1,5 @@
 import type { FormEvent } from "react";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { lazy, Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { getViewFromLocation } from "./app/navigation";
 import type { View } from "./app/navigation";
 import { applyDocumentMeta, getPageMeta } from "./app/pageMeta";
@@ -22,11 +22,9 @@ import CountryComparePage from "./pages/CountryComparePage";
 import CountryProfilePage from "./pages/CountryProfilePage";
 import CountryDataElementPage from "./pages/CountryDataElementPage";
 import DataExplorerPage from "./pages/DataExplorerPage";
-import DatasetDetailPage from "./pages/DatasetDetailPage";
 import DownloadPage from "./pages/DownloadPage";
 import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
-import RealMapExplorerPage from "./pages/RealMapExplorerPage";
 import { getAuthoritativeElementIdV88 } from "./utils/elementDatasetRegistryV88";
 import type {
   CompareNavigationTarget,
@@ -36,6 +34,24 @@ import type {
 import { DEFAULT_COMPARE_VIEW_STATE } from "./types/compare";
 import { parseMapViewState } from "./types/map";
 import type { MapViewState } from "./types/map";
+import {
+  appendDataFinderSelectorParamsV125,
+  dataFinderSelectorStatesEqualV125,
+  EMPTY_DATA_FINDER_SELECTOR_STATE_V125,
+  parseDataFinderSelectorStateV125,
+} from "./types/dataFinderV125";
+import type { DataFinderSelectorStateV125 } from "./types/dataFinderV125";
+
+const DatasetDetailPage = lazy(() => import("./pages/DatasetDetailPage"));
+const RealMapExplorerPage = lazy(() => import("./pages/RealMapExplorerPage"));
+
+function DeferredPageFallback({ label }: { label: string }) {
+  return (
+    <div className="cdp-page-shell" role="status" aria-live="polite">
+      <p className="cdp-muted">{label}</p>
+    </div>
+  );
+}
 
 type HistoryMode = "push" | "replace";
 type DatasetReturnView =
@@ -179,6 +195,9 @@ function mapViewStatesEqual(a: MapViewState, b: MapViewState): boolean {
     a.overlayOpacity !== b.overlayOpacity ||
     a.policyOpacity !== b.policyOpacity ||
     a.focusLayerKey !== b.focusLayerKey ||
+    a.primaryLayerId !== b.primaryLayerId ||
+    a.mapPresetId !== b.mapPresetId ||
+    a.contextLayerIds.length !== b.contextLayerIds.length ||
     a.activeLayerKeys.length !== b.activeLayerKeys.length
   ) {
     return false;
@@ -193,6 +212,10 @@ function mapViewStatesEqual(a: MapViewState, b: MapViewState): boolean {
     if ((a.layerYears[key] ?? null) !== (b.layerYears[key] ?? null)) {
       return false;
     }
+  }
+
+  for (let index = 0; index < a.contextLayerIds.length; index += 1) {
+    if (a.contextLayerIds[index] !== b.contextLayerIds[index]) return false;
   }
 
   return true;
@@ -239,6 +262,21 @@ function appendMapViewParams(
       publicMapStateKeyV122(state.focusLayerKey, state.countryIso3)
     );
   }
+  if (state.primaryLayerId) {
+    params.set(
+      "primaryLayer",
+      publicMapStateKeyV122(state.primaryLayerId, state.countryIso3)
+    );
+  }
+  params.set(
+    "contextLayers",
+    state.contextLayerIds.length
+      ? state.contextLayerIds
+          .map((key) => publicMapStateKeyV122(key, state.countryIso3))
+          .join(",")
+      : "none"
+  );
+  if (state.mapPresetId) params.set("mapPreset", state.mapPresetId);
   if (state.activeLayerKeys.length) {
     params.set(
       "layerYears",
@@ -288,6 +326,8 @@ export default function App() {
   const initialParams = new URLSearchParams(window.location.search);
   const initialMapState = parseMapViewState(initialParams);
   const initialCompareState = parseCompareViewState(initialParams);
+  const initialDataFinderSelectorState =
+    parseDataFinderSelectorStateV125(initialParams);
   const initialView = getViewFromLocation();
   const initialDatasetReturnView = parseDatasetReturnView(
     initialParams.get("from")
@@ -307,6 +347,8 @@ export default function App() {
     useState<MapViewState>(initialMapState);
   const [compareViewState, setCompareViewState] =
     useState<CompareViewState>(initialCompareState);
+  const [dataFinderSelectorState, setDataFinderSelectorState] =
+    useState<DataFinderSelectorStateV125>(initialDataFinderSelectorState);
   const [query, setQuery] = useState(initialParams.get("q") ?? "");
   const [sourceOrganization, setSourceOrganization] = useState(
     initialParams.get("source") ?? "all"
@@ -401,6 +443,8 @@ export default function App() {
       const params = new URLSearchParams(window.location.search);
       const restoredMapState = parseMapViewState(params);
       const restoredCompareState = parseCompareViewState(params);
+      const restoredDataFinderSelectorState =
+        parseDataFinderSelectorStateV125(params);
       const nextView = getViewFromLocation();
       const countryParam = params.get("country")?.toUpperCase() ?? null;
 
@@ -453,6 +497,7 @@ export default function App() {
       setDatasetReturnView(restoredReturnView);
       setMapViewState(restoredMapState);
       setCompareViewState(restoredCompareState);
+      setDataFinderSelectorState(restoredDataFinderSelectorState);
       setSelectedCountryIso3(
         nextView === "map"
           ? restoredMapState.countryIso3
@@ -510,6 +555,7 @@ export default function App() {
       selectedElementId &&
       selectedElementCountryIso3
     ) {
+      params.set("view", "data");
       params.set(
         "element",
         publicCountryElementTokenV122(
@@ -520,6 +566,7 @@ export default function App() {
       params.set("country", selectedElementCountryIso3);
       params.set("from", "explorer");
       if (explorerGroup) params.set("group", explorerGroup);
+      appendDataFinderSelectorParamsV125(params, dataFinderSelectorState);
     }
 
     if (view === "dataset-detail" && selectedDatasetId) {
@@ -571,6 +618,16 @@ export default function App() {
 
     if (view === "map") {
       appendMapViewParams(params, mapViewState);
+      if (mapViewState.focusLayerKey && mapViewState.countryIso3) {
+        params.set(
+          "element",
+          publicCountryElementTokenV122(
+            mapViewState.countryIso3,
+            mapViewState.focusLayerKey
+          )
+        );
+      }
+      appendDataFinderSelectorParamsV125(params, dataFinderSelectorState);
     }
 
     if (view === "country" && selectedCountryIso3) {
@@ -625,6 +682,7 @@ export default function App() {
     selectedCountryIso3,
     mapViewState,
     compareViewState,
+    dataFinderSelectorState,
   ]);
 
   useEffect(() => {
@@ -695,6 +753,9 @@ export default function App() {
         layerOpacities: {},
         layerYears: {},
         focusLayerKey: null,
+        primaryLayerId: null,
+        contextLayerIds: [],
+        mapPresetId: null,
       }));
     }
 
@@ -757,33 +818,53 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  function openElement(elementId: string, countryIso3: string) {
+  function openElement(
+    elementId: string,
+    countryIso3: string,
+    selectorState?: DataFinderSelectorStateV125
+  ) {
     if (!hasCountryDataProviderV122(countryIso3)) return;
 
     markNextNavigationAsPush();
     setSelectedElementId(elementId);
     setSelectedElementCountryIso3(countryIso3);
     setSelectedCountryIso3(countryIso3);
+    setDataFinderSelectorState(
+      selectorState ?? EMPTY_DATA_FINDER_SELECTOR_STATE_V125
+    );
     // 상세 화면의 국가 선택은 데이터 찾기 필터 상태와 분리합니다.
     setSelectedDatasetId(null);
     setView("element-detail");
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  function openElementOnMap(elementId: string, countryIso3: string) {
+  function openElementOnMap(
+    elementId: string,
+    countryIso3: string,
+    selectorState?: DataFinderSelectorStateV125
+  ) {
     if (!hasCountryDataProviderV122(countryIso3)) return;
 
+    const nextSelectorState =
+      selectorState ?? EMPTY_DATA_FINDER_SELECTOR_STATE_V125;
     markNextNavigationAsPush();
     setSelectedCountryIso3(countryIso3);
+    setDataFinderSelectorState(nextSelectorState);
     setMapViewState((current) => ({
       ...current,
       countryIso3,
+      year: nextSelectorState.year ?? current.year,
       activeLayerKeys: [elementId],
       layerOpacities: {
         [elementId]: current.layerOpacities[elementId] ?? 0.78,
       },
-      layerYears: { [elementId]: current.layerYears[elementId] ?? null },
+      layerYears: {
+        [elementId]: nextSelectorState.year ?? current.layerYears[elementId] ?? null,
+      },
       focusLayerKey: elementId,
+      primaryLayerId: elementId,
+      contextLayerIds: [],
+      mapPresetId: null,
     }));
     setView("map");
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -1054,6 +1135,14 @@ export default function App() {
             }
             onOpenElement={openElement}
             onOpenMapElement={openElementOnMap}
+            selectorState={dataFinderSelectorState}
+            onSelectorStateChange={(nextState) =>
+              setDataFinderSelectorState((current) =>
+                dataFinderSelectorStatesEqualV125(current, nextState)
+                  ? current
+                  : nextState
+              )
+            }
             onCountryChange={(iso3) => {
               if (!hasCountryDataProviderV122(iso3)) return;
 
@@ -1064,64 +1153,73 @@ export default function App() {
         )}
 
         {view === "dataset-detail" && (
-          <DatasetDetailPage
-            dataset={selectedDataset}
-            onBack={returnFromDataset}
-            backLabel={getDatasetBackLabel(datasetReturnView)}
-            countryIso3={planningContextCountryIso3}
-            countryName={
-              PRIORITY_COUNTRIES.find(
-                (item) => item.iso3 === planningContextCountryIso3
-              )?.nameKo ?? null
-            }
-            onOpenDownload={() => {
-              markNextNavigationAsPush();
-              setSelectedDatasetId(selectedDataset?.id ?? null);
-              setDownloadElementId(
-                selectedDataset
-                  ? getAuthoritativeElementIdV88(selectedDataset)
-                  : null
-              );
-              setDownloadCountryIso3(
-                normalizeDownloadCountryIso3(planningContextCountryIso3)
-              );
-              setView("download");
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
-          />
+          <Suspense fallback={<DeferredPageFallback label="데이터 상세 화면을 준비하고 있습니다" />}>
+            <DatasetDetailPage
+              dataset={selectedDataset}
+              onBack={returnFromDataset}
+              backLabel={getDatasetBackLabel(datasetReturnView)}
+              countryIso3={planningContextCountryIso3}
+              countryName={
+                PRIORITY_COUNTRIES.find(
+                  (item) => item.iso3 === planningContextCountryIso3
+                )?.nameKo ?? null
+              }
+              onOpenDownload={() => {
+                markNextNavigationAsPush();
+                setSelectedDatasetId(selectedDataset?.id ?? null);
+                setDownloadElementId(
+                  selectedDataset
+                    ? getAuthoritativeElementIdV88(selectedDataset)
+                    : null
+                );
+                setDownloadCountryIso3(
+                  normalizeDownloadCountryIso3(planningContextCountryIso3)
+                );
+                setView("download");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            />
+          </Suspense>
         )}
 
         {view === "map" && (
-          <RealMapExplorerPage
-            onOpenElement={openElement}
-            onOpenCountry={(iso3) => {
-              markNextNavigationAsPush();
-              setSelectedCountryIso3(iso3);
-              setMapViewState((current) => ({
-                ...current,
-                countryIso3: iso3,
-                activeLayerKeys: [],
-                layerOpacities: {},
-                layerYears: {},
-                focusLayerKey: null,
-              }));
-              setView("country");
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
-            onOpenDownload={(elementId, iso3) => {
-              if (iso3) setSelectedCountryIso3(iso3);
-              setDownloadCountryIso3(iso3);
-              setDownloadElementId(elementId);
-              setSelectedDatasetId(null);
-              setView("download");
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
-            initialState={{
-              ...mapViewState,
-              countryIso3: mapViewState.countryIso3 ?? selectedCountryIso3,
-            }}
-            onStateChange={handleMapStateChange}
-          />
+          <Suspense fallback={<DeferredPageFallback label="데이터 지도를 준비하고 있습니다" />}>
+            <RealMapExplorerPage
+              onOpenElement={openElement}
+              onOpenCountry={(iso3) => {
+                markNextNavigationAsPush();
+                setSelectedCountryIso3(iso3);
+                setMapViewState((current) => ({
+                  ...current,
+                  countryIso3: iso3,
+                  activeLayerKeys: [],
+                  layerOpacities: {},
+                  layerYears: {},
+                  focusLayerKey: null,
+                  primaryLayerId: null,
+                  contextLayerIds: [],
+                  mapPresetId: null,
+                }));
+                setView("country");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              onOpenDownload={(elementId, iso3) => {
+                if (iso3) setSelectedCountryIso3(iso3);
+                setDownloadCountryIso3(iso3);
+                setDownloadElementId(elementId);
+                setSelectedDatasetId(null);
+                setView("download");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              initialState={{
+                ...mapViewState,
+                countryIso3: mapViewState.countryIso3 ?? selectedCountryIso3,
+              }}
+              onStateChange={handleMapStateChange}
+              selectorState={dataFinderSelectorState}
+              onSelectorStateChange={setDataFinderSelectorState}
+            />
+          </Suspense>
         )}
 
         {view === "country" && (
@@ -1160,6 +1258,9 @@ export default function App() {
                 layerOpacities: {},
                 layerYears: {},
                 focusLayerKey: null,
+                primaryLayerId: null,
+                contextLayerIds: [],
+                mapPresetId: null,
               }));
               setView("map");
               window.scrollTo({ top: 0, behavior: "smooth" });
@@ -1201,6 +1302,9 @@ export default function App() {
                 layerOpacities: {},
                 layerYears: {},
                 focusLayerKey: null,
+                primaryLayerId: null,
+                contextLayerIds: [],
+                mapPresetId: null,
               }));
               setView("country");
               window.scrollTo({ top: 0, behavior: "smooth" });
@@ -1215,6 +1319,9 @@ export default function App() {
                 layerOpacities: {},
                 layerYears: {},
                 focusLayerKey: null,
+                primaryLayerId: null,
+                contextLayerIds: [],
+                mapPresetId: null,
               }));
               setView("map");
               window.scrollTo({ top: 0, behavior: "smooth" });

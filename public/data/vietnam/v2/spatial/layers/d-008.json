@@ -1,0 +1,115 @@
+{
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "boundarySystem": "pre-2025-63",
+  "countryIso3": "VNM",
+  "coverageKind": "partial",
+  "elementId": "D-008",
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+  "joinKey": "adm1Code",
+  "schemaVersion": "v124",
+  "selectors": {
+    "defaultPeriod": "2010-2013",
+    "defaultVariable": "provincial-climate-budget",
+    "periods": [
+      "2010-2013"
+    ],
+    "variables": [
+      {
+        "key": "provincial-climate-budget",
+        "label": "성 단위 기후변화 지출 누계",
+        "maxFeatureCount": 3,
+        "periods": [
+          "2010-2013"
+        ],
+        "unit": "VND"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "expectedCount": 63,
+      "failureCount": 0,
+      "matchedCount": 3,
+      "missingCount": 60,
+      "period": "2010-2013",
+      "variable": "provincial-climate-budget"
+    }
+  ],
+  "source": {
+    "attribution": [
+      "Source: UNDP Viet Nam, Climate Public Expenditure and Investment Review (CPEIR).",
+      "Source: World Bank Group. Reproduced under the World Bank Group Terms and Conditions."
+    ],
+    "licenses": [
+      "UNDP Terms of Use",
+      "World Bank Group Terms and Conditions"
+    ],
+    "organizations": [
+      "United Nations Development Programme · 베트남 기획투자부(MPI) — Viet Nam Climate Public Expenditure and Investment Review (CPEIR) 2015",
+      "United Nations Development Programme 베트남사무소 · 베트남 기획투자부(MPI) — CPEIR 2022",
+      "World Bank — Viet Nam Country Climate and Development Report (CCDR) 2022"
+    ],
+    "urls": [
+      "https://vietnam.un.org/sites/default/files/2019-08/ietnam%20CPEIR%20Report%20%20(ENG).pdf",
+      "https://www.undp.org/vietnam/publications/climate-public-expenditure-and-investment-review-viet-nam",
+      "https://www.worldbank.org/en/country/vietnam/brief/key-highlights-country-climate-and-development-report-for-vietnam"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 63,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 3,
+    "maxSeriesFeatureCount": 3,
+    "missingAdm1Count": 60,
+    "providedZeroCount": 0,
+    "publishedValueCount": 3,
+    "sourceValueCount": 3,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0
+  },
+  "values": [
+    {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "imputed": false,
+      "period": "2010-2013",
+      "sourceIndicatorId": "D-008_climate_budget_province_quang_nam",
+      "sourceRecordId": "vnm-v121-d-008-obs-10-559596b8ba188efe",
+      "sourceSpatialUnit": "admin1",
+      "unit": "VND",
+      "value": 850000000000,
+      "variable": "provincial-climate-budget",
+      "variableLabel": "성 단위 기후변화 지출 누계"
+    },
+    {
+      "adm1Code": "VN-44",
+      "adm1Name": "An Giang",
+      "imputed": false,
+      "period": "2010-2013",
+      "sourceIndicatorId": "D-008_climate_budget_province_an_giang",
+      "sourceRecordId": "vnm-v121-d-008-obs-12-97e61ffdc0123e00",
+      "sourceSpatialUnit": "admin1",
+      "unit": "VND",
+      "value": 179000000000,
+      "variable": "provincial-climate-budget",
+      "variableLabel": "성 단위 기후변화 지출 누계"
+    },
+    {
+      "adm1Code": "VN-56",
+      "adm1Name": "Bắc Ninh",
+      "imputed": false,
+      "period": "2010-2013",
+      "sourceIndicatorId": "D-008_climate_budget_province_bac_ninh",
+      "sourceRecordId": "vnm-v121-d-008-obs-11-5e44c25a32370624",
+      "sourceSpatialUnit": "admin1",
+      "unit": "VND",
+      "value": 481000000000,
+      "variable": "provincial-climate-budget",
+      "variableLabel": "성 단위 기후변화 지출 누계"
+    }
+  ]
+}

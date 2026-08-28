@@ -1,0 +1,82 @@
+{
+  "dimensions": [
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    },
+    {
+      "key": "referenceYear",
+      "labelKo": "referenceYear",
+      "valueCount": 2,
+      "values": [
+        "2020",
+        "2025 전망"
+      ]
+    },
+    {
+      "key": "sector",
+      "labelKo": "부문",
+      "valueCount": 4,
+      "values": [
+        "기후기술: 감축(Mitigation)",
+        "기후기술: 융복합(Convergence)",
+        "기후기술: 적응(Adaptation)",
+        "기후기술:전체 - 5년 후 전망(2025)"
+      ]
+    }
+  ],
+  "elementId": "E-016",
+  "entityCount": 4,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 1,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-baa0271bb16c|건(분야)",
+      "dimensionLabels": {
+        "category": "격차)"
+      },
+      "dimensions": {
+        "category": "격차)"
+      },
+      "displayLabel": "한국 기후기술 TRL(분야별 기술수준·격차)",
+      "indicatorId": "E-016_kr_climate_tech_trl",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-baa0271bb16c",
+        "labelKo": "한국 기후기술 TRL(분야별 기술수준",
+        "unit": "건(분야)",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-baa0271bb16c|건(분야)|category=격차)|E-016_kr_climate_tech_trl",
+      "sourceCaveat": null,
+      "sourceLabel": "한국 기후기술 TRL(분야별 기술수준·격차)",
+      "sourceLabelEn": "Korea climate technology readiness level by field",
+      "sourceNote": "레코드 결측: 감축·적응·융복합 3개 분야의 기술수준·기술격차·최고국 전량 \"미확보\"(M06). 사유는 원본 비고대로 PDF 파싱 불가 / 정성 서술만 존재 / 접근 가능 소스 미노출. 메타 결측: 라이선스·라이선스 URL·최종갱신일·수집일·담당자·검증자 미확인(M06).",
+      "sourceProvenance": {
+        "elementId": "E-016",
+        "indicatorId": "E-016_kr_climate_tech_trl",
+        "sourceFileDecoded": "E-016_한국 기후기술 TRL.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-baa0271bb16c",
+      "labelKo": "한국 기후기술 TRL(분야별 기술수준",
+      "recordCount": 0,
+      "unit": "건(분야)",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

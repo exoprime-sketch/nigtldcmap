@@ -1,0 +1,805 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 7,
+      "values": [
+        "EVN 그룹 전체",
+        "EVNCPC(중부)",
+        "EVNHANOI(하노이)",
+        "EVNHCMC(호치민, 구 시가지 관할)",
+        "EVNHCMC(호치민, 현행 확대 관할)",
+        "EVNNPC(북부)",
+        "EVNSPC(남부)"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 3,
+      "values": [
+        "연간 고객당 순간정전 횟수",
+        "연간 고객당 지속정전 횟수",
+        "연간 고객당 총 정전시간"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "24"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 12,
+      "values": [
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ]
+    }
+  ],
+  "elementId": "A-022",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 21,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-12b77d48a0f1|회/고객",
+      "dimensionLabels": {
+        "category": "EVN 그룹 전체",
+        "detail": "연간 고객당 순간정전 횟수",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "EVN 그룹 전체",
+        "detail": "연간 고객당 순간정전 횟수",
+        "technology": "24"
+      },
+      "displayLabel": "MAIFI · EVN 그룹 전체 — 연간 고객당 순간정전 횟수",
+      "indicatorId": "A-022_maifi_evn_group",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-12b77d48a0f1",
+        "labelKo": "MAIFI",
+        "unit": "회/고객",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-12b77d48a0f1|회/고객|category=EVN 그룹 전체|detail=연간 고객당 순간정전 횟수|technology=24|A-022_maifi_evn_group",
+      "sourceCaveat": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "MAIFI · EVN 그룹 전체 — 연간 고객당 순간정전 횟수",
+      "sourceLabelEn": "Momentary Average Interruption Frequency Index (MAIFI), EVN group (national)",
+      "sourceNote": "3건 미공개. EVN·배전공사가 해당 지표를 산정하나 공식 공시에 수치를 게재하지 않음(2026-08-05 기준 확인). 재확보 경로(구체화): ① 산업통상부 통합공문 제38/VBHN-BCT호(원 Thông tư 39/2015/TT-BCT) 제15조가 배전사업자에게 SAIDI·SAIFI·MAIFI 산정·보고를 의무화하므로 전력규제국(ERAV, erav.vn) 앞 공식 자료요청으로 확보 가능. ② EVNNPC 본사(npc.com.vn) 연간 실적보고서·경영공시 원문 요청. ③ 2026-08 기준 EVNNPC 공개자료에는 절대값 대신 증감률만 확인됨(2025년 상반기 계획정전 SAIDI 15.79% 감소, VCCI 게재 EVNNPC 보도자료) — 증감률만으로는 절대값을 복원할 수 없어 수록하지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-022",
+        "indicatorId": "A-022_maifi_evn_group",
+        "sourceFileDecoded": "A-022_정전빈도[SAIDI, SAIFI].xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-12b77d48a0f1|회/고객",
+      "dimensionLabels": {
+        "category": "EVNCPC(중부)",
+        "detail": "연간 고객당 순간정전 횟수",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "EVNCPC(중부)",
+        "detail": "연간 고객당 순간정전 횟수",
+        "technology": "24"
+      },
+      "displayLabel": "MAIFI · EVNCPC(중부) — 연간 고객당 순간정전 횟수",
+      "indicatorId": "A-022_maifi_evncpc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-12b77d48a0f1",
+        "labelKo": "MAIFI",
+        "unit": "회/고객",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-12b77d48a0f1|회/고객|category=EVNCPC(중부)|detail=연간 고객당 순간정전 횟수|technology=24|A-022_maifi_evncpc",
+      "sourceCaveat": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "MAIFI · EVNCPC(중부) — 연간 고객당 순간정전 횟수",
+      "sourceLabelEn": "Momentary Average Interruption Frequency Index (MAIFI), EVNCPC (central region)",
+      "sourceNote": "1건 미공개. EVN·배전공사가 해당 지표를 산정하나 공식 공시에 수치를 게재하지 않음(2026-08-05 기준 확인). 재확보 경로(구체화): ① 산업통상부 통합공문 제38/VBHN-BCT호(원 Thông tư 39/2015/TT-BCT) 제15조가 배전사업자에게 SAIDI·SAIFI·MAIFI 산정·보고를 의무화하므로 전력규제국(ERAV, erav.vn) 앞 공식 자료요청으로 확보 가능. ② EVNNPC 본사(npc.com.vn) 연간 실적보고서·경영공시 원문 요청. ③ 2026-08 기준 EVNNPC 공개자료에는 절대값 대신 증감률만 확인됨(2025년 상반기 계획정전 SAIDI 15.79% 감소, VCCI 게재 EVNNPC 보도자료) — 증감률만으로는 절대값을 복원할 수 없어 수록하지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-022",
+        "indicatorId": "A-022_maifi_evncpc",
+        "sourceFileDecoded": "A-022_정전빈도[SAIDI, SAIFI].xlsx",
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-12b77d48a0f1|회/고객",
+      "dimensionLabels": {
+        "category": "EVNHANOI(하노이)",
+        "detail": "연간 고객당 순간정전 횟수",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "EVNHANOI(하노이)",
+        "detail": "연간 고객당 순간정전 횟수",
+        "technology": "24"
+      },
+      "displayLabel": "MAIFI · EVNHANOI(하노이) — 연간 고객당 순간정전 횟수",
+      "indicatorId": "A-022_maifi_evnhanoi",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-12b77d48a0f1",
+        "labelKo": "MAIFI",
+        "unit": "회/고객",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-12b77d48a0f1|회/고객|category=EVNHANOI(하노이)|detail=연간 고객당 순간정전 횟수|technology=24|A-022_maifi_evnhanoi",
+      "sourceCaveat": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "MAIFI · EVNHANOI(하노이) — 연간 고객당 순간정전 횟수",
+      "sourceLabelEn": "Momentary Average Interruption Frequency Index (MAIFI), EVNHANOI (Hanoi)",
+      "sourceNote": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-022",
+        "indicatorId": "A-022_maifi_evnhanoi",
+        "sourceFileDecoded": "A-022_정전빈도[SAIDI, SAIFI].xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-12b77d48a0f1|회/고객",
+      "dimensionLabels": {
+        "category": "EVNHCMC(호치민, 현행 확대 관할)",
+        "detail": "연간 고객당 순간정전 횟수",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "EVNHCMC(호치민, 현행 확대 관할)",
+        "detail": "연간 고객당 순간정전 횟수",
+        "technology": "24"
+      },
+      "displayLabel": "MAIFI · EVNHCMC(호치민, 현행 확대 관할) — 연간 고객당 순간정전 횟수",
+      "indicatorId": "A-022_maifi_evnhcmc_current",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-12b77d48a0f1",
+        "labelKo": "MAIFI",
+        "unit": "회/고객",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-12b77d48a0f1|회/고객|category=EVNHCMC(호치민, 현행 확대 관할)|detail=연간 고객당 순간정전 횟수|technology=24|A-022_maifi_evnhcmc_current",
+      "sourceCaveat": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "MAIFI · EVNHCMC(호치민, 현행 확대 관할) — 연간 고객당 순간정전 횟수",
+      "sourceLabelEn": "Momentary Average Interruption Frequency Index (MAIFI), EVNHCMC (current expanded service territory)",
+      "sourceNote": "1건 미공개. EVN·배전공사가 해당 지표를 산정하나 공식 공시에 수치를 게재하지 않음(2026-08-05 기준 확인). 재확보 경로(구체화): ① 산업통상부 통합공문 제38/VBHN-BCT호(원 Thông tư 39/2015/TT-BCT) 제15조가 배전사업자에게 SAIDI·SAIFI·MAIFI 산정·보고를 의무화하므로 전력규제국(ERAV, erav.vn) 앞 공식 자료요청으로 확보 가능. ② EVNNPC 본사(npc.com.vn) 연간 실적보고서·경영공시 원문 요청. ③ 2026-08 기준 EVNNPC 공개자료에는 절대값 대신 증감률만 확인됨(2025년 상반기 계획정전 SAIDI 15.79% 감소, VCCI 게재 EVNNPC 보도자료) — 증감률만으로는 절대값을 복원할 수 없어 수록하지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-022",
+        "indicatorId": "A-022_maifi_evnhcmc_current",
+        "sourceFileDecoded": "A-022_정전빈도[SAIDI, SAIFI].xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-12b77d48a0f1|회/고객",
+      "dimensionLabels": {
+        "category": "EVNHCMC(호치민, 구 시가지 관할)",
+        "detail": "연간 고객당 순간정전 횟수",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "EVNHCMC(호치민, 구 시가지 관할)",
+        "detail": "연간 고객당 순간정전 횟수",
+        "technology": "24"
+      },
+      "displayLabel": "MAIFI · EVNHCMC(호치민, 구 시가지 관할) — 연간 고객당 순간정전 횟수",
+      "indicatorId": "A-022_maifi_evnhcmc_former",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-12b77d48a0f1",
+        "labelKo": "MAIFI",
+        "unit": "회/고객",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-12b77d48a0f1|회/고객|category=EVNHCMC(호치민, 구 시가지 관할)|detail=연간 고객당 순간정전 횟수|technology=24|A-022_maifi_evnhcmc_former",
+      "sourceCaveat": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "MAIFI · EVNHCMC(호치민, 구 시가지 관할) — 연간 고객당 순간정전 횟수",
+      "sourceLabelEn": "Momentary Average Interruption Frequency Index (MAIFI), EVNHCMC (former city footprint)",
+      "sourceNote": "1건 미공개. EVN·배전공사가 해당 지표를 산정하나 공식 공시에 수치를 게재하지 않음(2026-08-05 기준 확인). 재확보 경로(구체화): ① 산업통상부 통합공문 제38/VBHN-BCT호(원 Thông tư 39/2015/TT-BCT) 제15조가 배전사업자에게 SAIDI·SAIFI·MAIFI 산정·보고를 의무화하므로 전력규제국(ERAV, erav.vn) 앞 공식 자료요청으로 확보 가능. ② EVNNPC 본사(npc.com.vn) 연간 실적보고서·경영공시 원문 요청. ③ 2026-08 기준 EVNNPC 공개자료에는 절대값 대신 증감률만 확인됨(2025년 상반기 계획정전 SAIDI 15.79% 감소, VCCI 게재 EVNNPC 보도자료) — 증감률만으로는 절대값을 복원할 수 없어 수록하지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-022",
+        "indicatorId": "A-022_maifi_evnhcmc_former",
+        "sourceFileDecoded": "A-022_정전빈도[SAIDI, SAIFI].xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-12b77d48a0f1|회/고객",
+      "dimensionLabels": {
+        "category": "EVNNPC(북부)",
+        "detail": "연간 고객당 순간정전 횟수",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "EVNNPC(북부)",
+        "detail": "연간 고객당 순간정전 횟수",
+        "technology": "24"
+      },
+      "displayLabel": "MAIFI · EVNNPC(북부) — 연간 고객당 순간정전 횟수",
+      "indicatorId": "A-022_maifi_evnnpc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-12b77d48a0f1",
+        "labelKo": "MAIFI",
+        "unit": "회/고객",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-12b77d48a0f1|회/고객|category=EVNNPC(북부)|detail=연간 고객당 순간정전 횟수|technology=24|A-022_maifi_evnnpc",
+      "sourceCaveat": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "MAIFI · EVNNPC(북부) — 연간 고객당 순간정전 횟수",
+      "sourceLabelEn": "Momentary Average Interruption Frequency Index (MAIFI), EVNNPC (northern region)",
+      "sourceNote": "1건 미공개. EVN·배전공사가 해당 지표를 산정하나 공식 공시에 수치를 게재하지 않음(2026-08-05 기준 확인). 재확보 경로(구체화): ① 산업통상부 통합공문 제38/VBHN-BCT호(원 Thông tư 39/2015/TT-BCT) 제15조가 배전사업자에게 SAIDI·SAIFI·MAIFI 산정·보고를 의무화하므로 전력규제국(ERAV, erav.vn) 앞 공식 자료요청으로 확보 가능. ② EVNNPC 본사(npc.com.vn) 연간 실적보고서·경영공시 원문 요청. ③ 2026-08 기준 EVNNPC 공개자료에는 절대값 대신 증감률만 확인됨(2025년 상반기 계획정전 SAIDI 15.79% 감소, VCCI 게재 EVNNPC 보도자료) — 증감률만으로는 절대값을 복원할 수 없어 수록하지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-022",
+        "indicatorId": "A-022_maifi_evnnpc",
+        "sourceFileDecoded": "A-022_정전빈도[SAIDI, SAIFI].xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-12b77d48a0f1|회/고객",
+      "dimensionLabels": {
+        "category": "EVNSPC(남부)",
+        "detail": "연간 고객당 순간정전 횟수",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "EVNSPC(남부)",
+        "detail": "연간 고객당 순간정전 횟수",
+        "technology": "24"
+      },
+      "displayLabel": "MAIFI · EVNSPC(남부) — 연간 고객당 순간정전 횟수",
+      "indicatorId": "A-022_maifi_evnspc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-12b77d48a0f1",
+        "labelKo": "MAIFI",
+        "unit": "회/고객",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-12b77d48a0f1|회/고객|category=EVNSPC(남부)|detail=연간 고객당 순간정전 횟수|technology=24|A-022_maifi_evnspc",
+      "sourceCaveat": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "MAIFI · EVNSPC(남부) — 연간 고객당 순간정전 횟수",
+      "sourceLabelEn": "Momentary Average Interruption Frequency Index (MAIFI), EVNSPC (southern region)",
+      "sourceNote": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-022",
+        "indicatorId": "A-022_maifi_evnspc",
+        "sourceFileDecoded": "A-022_정전빈도[SAIDI, SAIFI].xlsx",
+        "sourceRow": 25,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-24815c640251|분/고객",
+      "dimensionLabels": {
+        "category": "EVN 그룹 전체",
+        "detail": "연간 고객당 총 정전시간",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "EVN 그룹 전체",
+        "detail": "연간 고객당 총 정전시간",
+        "technology": "24"
+      },
+      "displayLabel": "SAIDI · EVN 그룹 전체 — 연간 고객당 총 정전시간",
+      "indicatorId": "A-022_saidi_evn_group",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-24815c640251",
+        "labelKo": "SAIDI",
+        "unit": "분/고객",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-24815c640251|분/고객|category=EVN 그룹 전체|detail=연간 고객당 총 정전시간|technology=24|A-022_saidi_evn_group",
+      "sourceCaveat": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "SAIDI · EVN 그룹 전체 — 연간 고객당 총 정전시간",
+      "sourceLabelEn": "System Average Interruption Duration Index (SAIDI), EVN group (national)",
+      "sourceNote": "2건 미공개. EVN·배전공사가 해당 지표를 산정하나 공식 공시에 수치를 게재하지 않음(2026-08-05 기준 확인). 재확보 경로(구체화): ① 산업통상부 통합공문 제38/VBHN-BCT호(원 Thông tư 39/2015/TT-BCT) 제15조가 배전사업자에게 SAIDI·SAIFI·MAIFI 산정·보고를 의무화하므로 전력규제국(ERAV, erav.vn) 앞 공식 자료요청으로 확보 가능. ② EVNNPC 본사(npc.com.vn) 연간 실적보고서·경영공시 원문 요청. ③ 2026-08 기준 EVNNPC 공개자료에는 절대값 대신 증감률만 확인됨(2025년 상반기 계획정전 SAIDI 15.79% 감소, VCCI 게재 EVNNPC 보도자료) — 증감률만으로는 절대값을 복원할 수 없어 수록하지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-022",
+        "indicatorId": "A-022_saidi_evn_group",
+        "sourceFileDecoded": "A-022_정전빈도[SAIDI, SAIFI].xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-24815c640251|분/고객",
+      "dimensionLabels": {
+        "category": "EVNCPC(중부)",
+        "detail": "연간 고객당 총 정전시간",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "EVNCPC(중부)",
+        "detail": "연간 고객당 총 정전시간",
+        "technology": "24"
+      },
+      "displayLabel": "SAIDI · EVNCPC(중부) — 연간 고객당 총 정전시간",
+      "indicatorId": "A-022_saidi_evncpc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-24815c640251",
+        "labelKo": "SAIDI",
+        "unit": "분/고객",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-24815c640251|분/고객|category=EVNCPC(중부)|detail=연간 고객당 총 정전시간|technology=24|A-022_saidi_evncpc",
+      "sourceCaveat": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "SAIDI · EVNCPC(중부) — 연간 고객당 총 정전시간",
+      "sourceLabelEn": "System Average Interruption Duration Index (SAIDI), EVNCPC (central region)",
+      "sourceNote": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-022",
+        "indicatorId": "A-022_saidi_evncpc",
+        "sourceFileDecoded": "A-022_정전빈도[SAIDI, SAIFI].xlsx",
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-24815c640251|분/고객",
+      "dimensionLabels": {
+        "category": "EVNHANOI(하노이)",
+        "detail": "연간 고객당 총 정전시간",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "EVNHANOI(하노이)",
+        "detail": "연간 고객당 총 정전시간",
+        "technology": "24"
+      },
+      "displayLabel": "SAIDI · EVNHANOI(하노이) — 연간 고객당 총 정전시간",
+      "indicatorId": "A-022_saidi_evnhanoi",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-24815c640251",
+        "labelKo": "SAIDI",
+        "unit": "분/고객",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-24815c640251|분/고객|category=EVNHANOI(하노이)|detail=연간 고객당 총 정전시간|technology=24|A-022_saidi_evnhanoi",
+      "sourceCaveat": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "SAIDI · EVNHANOI(하노이) — 연간 고객당 총 정전시간",
+      "sourceLabelEn": "System Average Interruption Duration Index (SAIDI), EVNHANOI (Hanoi)",
+      "sourceNote": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-022",
+        "indicatorId": "A-022_saidi_evnhanoi",
+        "sourceFileDecoded": "A-022_정전빈도[SAIDI, SAIFI].xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-24815c640251|분/고객",
+      "dimensionLabels": {
+        "category": "EVNHCMC(호치민, 현행 확대 관할)",
+        "detail": "연간 고객당 총 정전시간",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "EVNHCMC(호치민, 현행 확대 관할)",
+        "detail": "연간 고객당 총 정전시간",
+        "technology": "24"
+      },
+      "displayLabel": "SAIDI · EVNHCMC(호치민, 현행 확대 관할) — 연간 고객당 총 정전시간",
+      "indicatorId": "A-022_saidi_evnhcmc_current",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-24815c640251",
+        "labelKo": "SAIDI",
+        "unit": "분/고객",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-24815c640251|분/고객|category=EVNHCMC(호치민, 현행 확대 관할)|detail=연간 고객당 총 정전시간|technology=24|A-022_saidi_evnhcmc_current",
+      "sourceCaveat": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "SAIDI · EVNHCMC(호치민, 현행 확대 관할) — 연간 고객당 총 정전시간",
+      "sourceLabelEn": "System Average Interruption Duration Index (SAIDI), EVNHCMC (current expanded service territory)",
+      "sourceNote": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-022",
+        "indicatorId": "A-022_saidi_evnhcmc_current",
+        "sourceFileDecoded": "A-022_정전빈도[SAIDI, SAIFI].xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-24815c640251|분/고객",
+      "dimensionLabels": {
+        "category": "EVNHCMC(호치민, 구 시가지 관할)",
+        "detail": "연간 고객당 총 정전시간",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "EVNHCMC(호치민, 구 시가지 관할)",
+        "detail": "연간 고객당 총 정전시간",
+        "technology": "24"
+      },
+      "displayLabel": "SAIDI · EVNHCMC(호치민, 구 시가지 관할) — 연간 고객당 총 정전시간",
+      "indicatorId": "A-022_saidi_evnhcmc_former",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-24815c640251",
+        "labelKo": "SAIDI",
+        "unit": "분/고객",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-24815c640251|분/고객|category=EVNHCMC(호치민, 구 시가지 관할)|detail=연간 고객당 총 정전시간|technology=24|A-022_saidi_evnhcmc_former",
+      "sourceCaveat": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "SAIDI · EVNHCMC(호치민, 구 시가지 관할) — 연간 고객당 총 정전시간",
+      "sourceLabelEn": "System Average Interruption Duration Index (SAIDI), EVNHCMC (former city footprint)",
+      "sourceNote": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-022",
+        "indicatorId": "A-022_saidi_evnhcmc_former",
+        "sourceFileDecoded": "A-022_정전빈도[SAIDI, SAIFI].xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-24815c640251|분/고객",
+      "dimensionLabels": {
+        "category": "EVNNPC(북부)",
+        "detail": "연간 고객당 총 정전시간",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "EVNNPC(북부)",
+        "detail": "연간 고객당 총 정전시간",
+        "technology": "24"
+      },
+      "displayLabel": "SAIDI · EVNNPC(북부) — 연간 고객당 총 정전시간",
+      "indicatorId": "A-022_saidi_evnnpc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-24815c640251",
+        "labelKo": "SAIDI",
+        "unit": "분/고객",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-24815c640251|분/고객|category=EVNNPC(북부)|detail=연간 고객당 총 정전시간|technology=24|A-022_saidi_evnnpc",
+      "sourceCaveat": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "SAIDI · EVNNPC(북부) — 연간 고객당 총 정전시간",
+      "sourceLabelEn": "System Average Interruption Duration Index (SAIDI), EVNNPC (northern region)",
+      "sourceNote": "1건 미공개. EVN·배전공사가 해당 지표를 산정하나 공식 공시에 수치를 게재하지 않음(2026-08-05 기준 확인). 재확보 경로(구체화): ① 산업통상부 통합공문 제38/VBHN-BCT호(원 Thông tư 39/2015/TT-BCT) 제15조가 배전사업자에게 SAIDI·SAIFI·MAIFI 산정·보고를 의무화하므로 전력규제국(ERAV, erav.vn) 앞 공식 자료요청으로 확보 가능. ② EVNNPC 본사(npc.com.vn) 연간 실적보고서·경영공시 원문 요청. ③ 2026-08 기준 EVNNPC 공개자료에는 절대값 대신 증감률만 확인됨(2025년 상반기 계획정전 SAIDI 15.79% 감소, VCCI 게재 EVNNPC 보도자료) — 증감률만으로는 절대값을 복원할 수 없어 수록하지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-022",
+        "indicatorId": "A-022_saidi_evnnpc",
+        "sourceFileDecoded": "A-022_정전빈도[SAIDI, SAIFI].xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-24815c640251|분/고객",
+      "dimensionLabels": {
+        "category": "EVNSPC(남부)",
+        "detail": "연간 고객당 총 정전시간",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "EVNSPC(남부)",
+        "detail": "연간 고객당 총 정전시간",
+        "technology": "24"
+      },
+      "displayLabel": "SAIDI · EVNSPC(남부) — 연간 고객당 총 정전시간",
+      "indicatorId": "A-022_saidi_evnspc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-24815c640251",
+        "labelKo": "SAIDI",
+        "unit": "분/고객",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-24815c640251|분/고객|category=EVNSPC(남부)|detail=연간 고객당 총 정전시간|technology=24|A-022_saidi_evnspc",
+      "sourceCaveat": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "SAIDI · EVNSPC(남부) — 연간 고객당 총 정전시간",
+      "sourceLabelEn": "System Average Interruption Duration Index (SAIDI), EVNSPC (southern region)",
+      "sourceNote": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-022",
+        "indicatorId": "A-022_saidi_evnspc",
+        "sourceFileDecoded": "A-022_정전빈도[SAIDI, SAIFI].xlsx",
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36db0aadc092|회/고객",
+      "dimensionLabels": {
+        "category": "EVN 그룹 전체",
+        "detail": "연간 고객당 지속정전 횟수",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "EVN 그룹 전체",
+        "detail": "연간 고객당 지속정전 횟수",
+        "technology": "24"
+      },
+      "displayLabel": "SAIFI · EVN 그룹 전체 — 연간 고객당 지속정전 횟수",
+      "indicatorId": "A-022_saifi_evn_group",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36db0aadc092",
+        "labelKo": "SAIFI",
+        "unit": "회/고객",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-36db0aadc092|회/고객|category=EVN 그룹 전체|detail=연간 고객당 지속정전 횟수|technology=24|A-022_saifi_evn_group",
+      "sourceCaveat": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "SAIFI · EVN 그룹 전체 — 연간 고객당 지속정전 횟수",
+      "sourceLabelEn": "System Average Interruption Frequency Index (SAIFI), EVN group (national)",
+      "sourceNote": "3건 미공개. EVN·배전공사가 해당 지표를 산정하나 공식 공시에 수치를 게재하지 않음(2026-08-05 기준 확인). 재확보 경로(구체화): ① 산업통상부 통합공문 제38/VBHN-BCT호(원 Thông tư 39/2015/TT-BCT) 제15조가 배전사업자에게 SAIDI·SAIFI·MAIFI 산정·보고를 의무화하므로 전력규제국(ERAV, erav.vn) 앞 공식 자료요청으로 확보 가능. ② EVNNPC 본사(npc.com.vn) 연간 실적보고서·경영공시 원문 요청. ③ 2026-08 기준 EVNNPC 공개자료에는 절대값 대신 증감률만 확인됨(2025년 상반기 계획정전 SAIDI 15.79% 감소, VCCI 게재 EVNNPC 보도자료) — 증감률만으로는 절대값을 복원할 수 없어 수록하지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-022",
+        "indicatorId": "A-022_saifi_evn_group",
+        "sourceFileDecoded": "A-022_정전빈도[SAIDI, SAIFI].xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36db0aadc092|회/고객",
+      "dimensionLabels": {
+        "category": "EVNCPC(중부)",
+        "detail": "연간 고객당 지속정전 횟수",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "EVNCPC(중부)",
+        "detail": "연간 고객당 지속정전 횟수",
+        "technology": "24"
+      },
+      "displayLabel": "SAIFI · EVNCPC(중부) — 연간 고객당 지속정전 횟수",
+      "indicatorId": "A-022_saifi_evncpc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36db0aadc092",
+        "labelKo": "SAIFI",
+        "unit": "회/고객",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-36db0aadc092|회/고객|category=EVNCPC(중부)|detail=연간 고객당 지속정전 횟수|technology=24|A-022_saifi_evncpc",
+      "sourceCaveat": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "SAIFI · EVNCPC(중부) — 연간 고객당 지속정전 횟수",
+      "sourceLabelEn": "System Average Interruption Frequency Index (SAIFI), EVNCPC (central region)",
+      "sourceNote": "1건 미공개. EVN·배전공사가 해당 지표를 산정하나 공식 공시에 수치를 게재하지 않음(2026-08-05 기준 확인). 재확보 경로(구체화): ① 산업통상부 통합공문 제38/VBHN-BCT호(원 Thông tư 39/2015/TT-BCT) 제15조가 배전사업자에게 SAIDI·SAIFI·MAIFI 산정·보고를 의무화하므로 전력규제국(ERAV, erav.vn) 앞 공식 자료요청으로 확보 가능. ② EVNNPC 본사(npc.com.vn) 연간 실적보고서·경영공시 원문 요청. ③ 2026-08 기준 EVNNPC 공개자료에는 절대값 대신 증감률만 확인됨(2025년 상반기 계획정전 SAIDI 15.79% 감소, VCCI 게재 EVNNPC 보도자료) — 증감률만으로는 절대값을 복원할 수 없어 수록하지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-022",
+        "indicatorId": "A-022_saifi_evncpc",
+        "sourceFileDecoded": "A-022_정전빈도[SAIDI, SAIFI].xlsx",
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36db0aadc092|회/고객",
+      "dimensionLabels": {
+        "category": "EVNHANOI(하노이)",
+        "detail": "연간 고객당 지속정전 횟수",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "EVNHANOI(하노이)",
+        "detail": "연간 고객당 지속정전 횟수",
+        "technology": "24"
+      },
+      "displayLabel": "SAIFI · EVNHANOI(하노이) — 연간 고객당 지속정전 횟수",
+      "indicatorId": "A-022_saifi_evnhanoi",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36db0aadc092",
+        "labelKo": "SAIFI",
+        "unit": "회/고객",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-36db0aadc092|회/고객|category=EVNHANOI(하노이)|detail=연간 고객당 지속정전 횟수|technology=24|A-022_saifi_evnhanoi",
+      "sourceCaveat": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "SAIFI · EVNHANOI(하노이) — 연간 고객당 지속정전 횟수",
+      "sourceLabelEn": "System Average Interruption Frequency Index (SAIFI), EVNHANOI (Hanoi)",
+      "sourceNote": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-022",
+        "indicatorId": "A-022_saifi_evnhanoi",
+        "sourceFileDecoded": "A-022_정전빈도[SAIDI, SAIFI].xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36db0aadc092|회/고객",
+      "dimensionLabels": {
+        "category": "EVNHCMC(호치민, 현행 확대 관할)",
+        "detail": "연간 고객당 지속정전 횟수",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "EVNHCMC(호치민, 현행 확대 관할)",
+        "detail": "연간 고객당 지속정전 횟수",
+        "technology": "24"
+      },
+      "displayLabel": "SAIFI · EVNHCMC(호치민, 현행 확대 관할) — 연간 고객당 지속정전 횟수",
+      "indicatorId": "A-022_saifi_evnhcmc_current",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36db0aadc092",
+        "labelKo": "SAIFI",
+        "unit": "회/고객",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-36db0aadc092|회/고객|category=EVNHCMC(호치민, 현행 확대 관할)|detail=연간 고객당 지속정전 횟수|technology=24|A-022_saifi_evnhcmc_current",
+      "sourceCaveat": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "SAIFI · EVNHCMC(호치민, 현행 확대 관할) — 연간 고객당 지속정전 횟수",
+      "sourceLabelEn": "System Average Interruption Frequency Index (SAIFI), EVNHCMC (current expanded service territory)",
+      "sourceNote": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-022",
+        "indicatorId": "A-022_saifi_evnhcmc_current",
+        "sourceFileDecoded": "A-022_정전빈도[SAIDI, SAIFI].xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36db0aadc092|회/고객",
+      "dimensionLabels": {
+        "category": "EVNHCMC(호치민, 구 시가지 관할)",
+        "detail": "연간 고객당 지속정전 횟수",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "EVNHCMC(호치민, 구 시가지 관할)",
+        "detail": "연간 고객당 지속정전 횟수",
+        "technology": "24"
+      },
+      "displayLabel": "SAIFI · EVNHCMC(호치민, 구 시가지 관할) — 연간 고객당 지속정전 횟수",
+      "indicatorId": "A-022_saifi_evnhcmc_former",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36db0aadc092",
+        "labelKo": "SAIFI",
+        "unit": "회/고객",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-36db0aadc092|회/고객|category=EVNHCMC(호치민, 구 시가지 관할)|detail=연간 고객당 지속정전 횟수|technology=24|A-022_saifi_evnhcmc_former",
+      "sourceCaveat": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "SAIFI · EVNHCMC(호치민, 구 시가지 관할) — 연간 고객당 지속정전 횟수",
+      "sourceLabelEn": "System Average Interruption Frequency Index (SAIFI), EVNHCMC (former city footprint)",
+      "sourceNote": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-022",
+        "indicatorId": "A-022_saifi_evnhcmc_former",
+        "sourceFileDecoded": "A-022_정전빈도[SAIDI, SAIFI].xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36db0aadc092|회/고객",
+      "dimensionLabels": {
+        "category": "EVNNPC(북부)",
+        "detail": "연간 고객당 지속정전 횟수",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "EVNNPC(북부)",
+        "detail": "연간 고객당 지속정전 횟수",
+        "technology": "24"
+      },
+      "displayLabel": "SAIFI · EVNNPC(북부) — 연간 고객당 지속정전 횟수",
+      "indicatorId": "A-022_saifi_evnnpc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36db0aadc092",
+        "labelKo": "SAIFI",
+        "unit": "회/고객",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-36db0aadc092|회/고객|category=EVNNPC(북부)|detail=연간 고객당 지속정전 횟수|technology=24|A-022_saifi_evnnpc",
+      "sourceCaveat": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "SAIFI · EVNNPC(북부) — 연간 고객당 지속정전 횟수",
+      "sourceLabelEn": "System Average Interruption Frequency Index (SAIFI), EVNNPC (northern region)",
+      "sourceNote": "1건 미공개. EVN·배전공사가 해당 지표를 산정하나 공식 공시에 수치를 게재하지 않음(2026-08-05 기준 확인). 재확보 경로(구체화): ① 산업통상부 통합공문 제38/VBHN-BCT호(원 Thông tư 39/2015/TT-BCT) 제15조가 배전사업자에게 SAIDI·SAIFI·MAIFI 산정·보고를 의무화하므로 전력규제국(ERAV, erav.vn) 앞 공식 자료요청으로 확보 가능. ② EVNNPC 본사(npc.com.vn) 연간 실적보고서·경영공시 원문 요청. ③ 2026-08 기준 EVNNPC 공개자료에는 절대값 대신 증감률만 확인됨(2025년 상반기 계획정전 SAIDI 15.79% 감소, VCCI 게재 EVNNPC 보도자료) — 증감률만으로는 절대값을 복원할 수 없어 수록하지 않음.",
+      "sourceProvenance": {
+        "elementId": "A-022",
+        "indicatorId": "A-022_saifi_evnnpc",
+        "sourceFileDecoded": "A-022_정전빈도[SAIDI, SAIFI].xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36db0aadc092|회/고객",
+      "dimensionLabels": {
+        "category": "EVNSPC(남부)",
+        "detail": "연간 고객당 지속정전 횟수",
+        "technology": "24"
+      },
+      "dimensions": {
+        "category": "EVNSPC(남부)",
+        "detail": "연간 고객당 지속정전 횟수",
+        "technology": "24"
+      },
+      "displayLabel": "SAIFI · EVNSPC(남부) — 연간 고객당 지속정전 횟수",
+      "indicatorId": "A-022_saifi_evnspc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36db0aadc092",
+        "labelKo": "SAIFI",
+        "unit": "회/고객",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-36db0aadc092|회/고객|category=EVNSPC(남부)|detail=연간 고객당 지속정전 횟수|technology=24|A-022_saifi_evnspc",
+      "sourceCaveat": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "SAIFI · EVNSPC(남부) — 연간 고객당 지속정전 횟수",
+      "sourceLabelEn": "System Average Interruption Frequency Index (SAIFI), EVNSPC (southern region)",
+      "sourceNote": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시). [결측 처리] 검토의견 1번에 대응 — 원문에서 값 열에 문자열 \"(미공개)\"로 기재된 15건은 값을 비우고 M02(미공개)로 처리하여 수치 열의 자료형을 numeric으로 유지함. [기준연도] 검토의견 3번에 대응 — 배전공사별 18건의 연도가 원문에 \"최신 공시\"라는 문자열로 기재되어 있어, 각 행의 출처 표기에서 실제 공시 연도를 추출하여 year 열에 정수로 기재하고 원 출처 문자열을 note에 병기함. [중복 아님] 검토의견 4번 확인 — EVNHCMC가 SAIDI 158분과 25.5분 두 건으로 나타나는 것은 중복이 아니라 관할 범위가 다른 두 공시임(현행 확대 관할 vs 구 시가지 관할). 원문 영문 표기도 \"expanded/current service territory\"와 \"former city footprint\"로 구분됨. 두 계열을 서로 다른 지표로 분리하고 관할 범위를 지표명·note에 명시함. 플랫폼에서 \"호치민 SAIDI\" 대표값이 필요하면 행정구역 개편을 반영한 현행 확대 관할(158분)을 사용해야 함. [커버리지] 검토의견 5번 확인 — 배전공사 5곳 중 EVNNPC는 SAIDI·SAIFI·MAIFI 3개 지표 전부 미공개이고 EVNCPC는 SAIDI만 공개됨. 2026-08-05 기준 검토한 공식 출처에서 확인되지 않았음이 원문에 기재되어 있음. [비교가능성] 검토의견 2번 확인 — 원문 블록3이 \"기관·기간별로 적용 지표세트·제외규칙이 상이\"하다고 명시하고 있음. 규정 정의는 통합공문 제38/VBHN-BCT호 제15조로, SAIDI·SAIFI는 5분 초과 지속정전, MAIFI는 5분 이하 순간정전 기준이며 배전망 신뢰도는 고객원인·불가항력·상류송전·긴급부하차단·안전관련 정전을 제외함. 그룹 값과 배전공사별 값은 보고경계·측정기간이 달라 단순 가중평균 정합을 기대할 수 없음. [참고자료 분리] 같은 폴더의 정전빈도.xlsx는 SAIDI/SAIFI가 아니라 세계은행 기업조사 정전 관련 지표(IC.FRM.OUTG.ZS, IC.ELC.OUTG.ZS)이므로 본 요소의 요구지표와 부합하지 않아 제외함. [라이선스] EVN 공시자료는 사실 수치만 수록하므로 재배포 「제한」. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-022",
+        "indicatorId": "A-022_saifi_evnspc",
+        "sourceFileDecoded": "A-022_정전빈도[SAIDI, SAIFI].xlsx",
+        "sourceRow": 24,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 7,
+      "key": "measure-12b77d48a0f1",
+      "labelKo": "MAIFI",
+      "recordCount": 18,
+      "unit": "회/고객",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 7,
+      "key": "measure-24815c640251",
+      "labelKo": "SAIDI",
+      "recordCount": 18,
+      "unit": "분/고객",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 7,
+      "key": "measure-36db0aadc092",
+      "labelKo": "SAIFI",
+      "recordCount": 18,
+      "unit": "회/고객",
+      "unitFamily": "other"
+    }
+  ],
+  "observationCount": 54,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

@@ -1,0 +1,1025 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 1,
+      "values": [
+        "특허"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 20,
+      "values": [
+        "Scimago H지수(1996",
+        "Scimago 논문 수",
+        "Scimago 누적 기준 세계 순위",
+        "Scimago 누적 논문 수(1996",
+        "Scimago 누적 인용 수(1996",
+        "Scimago 문헌당 인용 수",
+        "Scimago 세계 순위",
+        "Scimago 인용 수",
+        "Scimago 인용가능 문헌 수",
+        "WIPO 디자인 출원",
+        "WIPO 디자인 출원 총계",
+        "WIPO 상표 출원",
+        "WIPO 상표 출원 총계",
+        "WIPO 특허 출원",
+        "WIPO 특허 출원 총계",
+        "표본 국제공저 논문 건수",
+        "표본 논문 건수",
+        "표본 논문 국제공저 비율",
+        "표본 총 건수",
+        "표본 특허 건수"
+      ]
+    },
+    {
+      "key": "detail_2",
+      "labelKo": "detail_2",
+      "valueCount": 3,
+      "values": [
+        "2025)",
+        "거주자",
+        "해외출원"
+      ]
+    },
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "확인필요"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 3,
+      "values": [
+        "2024",
+        "2025",
+        "2026"
+      ]
+    }
+  ],
+  "elementId": "E-008",
+  "entityCount": 13,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 26,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-bb2c50075d03|건",
+      "dimensionLabels": {
+        "category": "특허",
+        "technology": "확인필요"
+      },
+      "dimensions": {
+        "category": "특허",
+        "technology": "확인필요"
+      },
+      "displayLabel": "논문·특허 · 베트남 기후기술 논문 8편(선별 표본) · paper",
+      "indicatorId": "E-008_paper",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bb2c50075d03",
+        "labelKo": "논문",
+        "unit": "건",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-bb2c50075d03|건|category=특허|technology=확인필요|E-008_paper",
+      "sourceCaveat": null,
+      "sourceLabel": "논문·특허",
+      "sourceLabelEn": "Publications and patents (climate technology)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-008",
+        "indicatorId": "E-008_paper",
+        "sourceFileDecoded": "E-008_논문,특허.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bb2c50075d03|건",
+      "dimensionLabels": {
+        "category": "특허",
+        "technology": "확인필요"
+      },
+      "dimensions": {
+        "category": "특허",
+        "technology": "확인필요"
+      },
+      "displayLabel": "논문·특허 · 베트남 기후기술 특허 5건(선별 표본) · patent",
+      "indicatorId": "E-008_patent",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bb2c50075d03",
+        "labelKo": "논문",
+        "unit": "건",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-bb2c50075d03|건|category=특허|technology=확인필요|E-008_patent",
+      "sourceCaveat": "① 5건 모두 미국 특허청(USPTO) 등록 건으로, 베트남 자국 특허청(IP Viet Nam) 출원은 포함되지 않음 — '특허 출원 연구기관' 집계 시 범위 한정에 유의.",
+      "sourceLabel": "논문·특허",
+      "sourceLabelEn": "Publications and patents (climate technology)",
+      "sourceNote": "① 5건 모두 미국 특허청(USPTO) 등록 건으로, 베트남 자국 특허청(IP Viet Nam) 출원은 포함되지 않음 — '특허 출원 연구기관' 집계 시 범위 한정에 유의.",
+      "sourceProvenance": {
+        "elementId": "E-008",
+        "indicatorId": "E-008_patent",
+        "sourceFileDecoded": "E-008_논문,특허.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bb2c50075d03|건",
+      "dimensionLabels": {
+        "category": "특허",
+        "detail": "표본 국제공저 논문 건수",
+        "technology": "확인필요"
+      },
+      "dimensions": {
+        "category": "특허",
+        "detail": "표본 국제공저 논문 건수",
+        "technology": "확인필요"
+      },
+      "displayLabel": "논문·특허 — 표본 국제공저 논문 건수",
+      "indicatorId": "E-008_sample_intl_coauthor_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bb2c50075d03",
+        "labelKo": "논문",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-bb2c50075d03|건|category=특허|detail=표본 국제공저 논문 건수|technology=확인필요|E-008_sample_intl_coauthor_count",
+      "sourceCaveat": null,
+      "sourceLabel": "논문·특허 — 표본 국제공저 논문 건수",
+      "sourceLabelEn": "Publications and patents (climate technology)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-008",
+        "indicatorId": "E-008_sample_intl_coauthor_count",
+        "sourceFileDecoded": "E-008_논문,특허.xlsx",
+        "sourceRow": 28,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-db6ee34b72d2|비율(0-1)",
+      "dimensionLabels": {
+        "category": "특허",
+        "detail": "표본 논문 국제공저 비율",
+        "technology": "확인필요"
+      },
+      "dimensions": {
+        "category": "특허",
+        "detail": "표본 논문 국제공저 비율",
+        "technology": "확인필요"
+      },
+      "displayLabel": "논문·특허 — 표본 논문 국제공저 비율",
+      "indicatorId": "E-008_sample_intl_coauthor_ratio",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-db6ee34b72d2",
+        "labelKo": "논문",
+        "unit": "비율(0-1)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-db6ee34b72d2|비율(0-1)|category=특허|detail=표본 논문 국제공저 비율|technology=확인필요|E-008_sample_intl_coauthor_ratio",
+      "sourceCaveat": "★논문 8건 표본 기준이므로 국가 대표값이 아님. 요소 정의가 요구하는 '논문 국제 공저 비율'을 국가 대표값으로 쓰려면 Scimago 등에서 별도 산출 필요. 산출식: 국제공저 논문 수(5) / 표본 논문 수(8) = 0.625.",
+      "sourceLabel": "논문·특허 — 표본 논문 국제공저 비율",
+      "sourceLabelEn": "Publications and patents (climate technology)",
+      "sourceNote": "★논문 8건 표본 기준이므로 국가 대표값이 아님. 요소 정의가 요구하는 '논문 국제 공저 비율'을 국가 대표값으로 쓰려면 Scimago 등에서 별도 산출 필요. 산출식: 국제공저 논문 수(5) / 표본 논문 수(8) = 0.625.",
+      "sourceProvenance": {
+        "elementId": "E-008",
+        "indicatorId": "E-008_sample_intl_coauthor_ratio",
+        "sourceFileDecoded": "E-008_논문,특허.xlsx",
+        "sourceRow": 29,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bb2c50075d03|건",
+      "dimensionLabels": {
+        "category": "특허",
+        "detail": "표본 한국 공저·공동출원 건수",
+        "technology": "확인필요"
+      },
+      "dimensions": {
+        "category": "특허",
+        "detail": "표본 한국 공저·공동출원 건수",
+        "technology": "확인필요"
+      },
+      "displayLabel": "논문·특허 — 표본 한국 공저·공동출원 건수",
+      "indicatorId": "E-008_sample_korea_collab_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bb2c50075d03",
+        "labelKo": "논문",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-bb2c50075d03|건|category=특허|detail=표본 한국 공저·공동출원 건수|technology=확인필요|E-008_sample_korea_collab_count",
+      "sourceCaveat": null,
+      "sourceLabel": "논문·특허 — 표본 한국 공저·공동출원 건수",
+      "sourceLabelEn": "Publications and patents (climate technology)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-008",
+        "indicatorId": "E-008_sample_korea_collab_count",
+        "sourceFileDecoded": "E-008_논문,특허.xlsx",
+        "sourceRow": 30,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bb2c50075d03|건",
+      "dimensionLabels": {
+        "category": "특허",
+        "detail": "표본 논문 건수",
+        "technology": "확인필요"
+      },
+      "dimensions": {
+        "category": "특허",
+        "detail": "표본 논문 건수",
+        "technology": "확인필요"
+      },
+      "displayLabel": "논문·특허 — 표본 논문 건수",
+      "indicatorId": "E-008_sample_paper_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bb2c50075d03",
+        "labelKo": "논문",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-bb2c50075d03|건|category=특허|detail=표본 논문 건수|technology=확인필요|E-008_sample_paper_count",
+      "sourceCaveat": null,
+      "sourceLabel": "논문·특허 — 표본 논문 건수",
+      "sourceLabelEn": "Publications and patents (climate technology)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-008",
+        "indicatorId": "E-008_sample_paper_count",
+        "sourceFileDecoded": "E-008_논문,특허.xlsx",
+        "sourceRow": 26,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bb2c50075d03|건",
+      "dimensionLabels": {
+        "category": "특허",
+        "detail": "표본 특허 건수",
+        "technology": "확인필요"
+      },
+      "dimensions": {
+        "category": "특허",
+        "detail": "표본 특허 건수",
+        "technology": "확인필요"
+      },
+      "displayLabel": "논문·특허 — 표본 특허 건수",
+      "indicatorId": "E-008_sample_patent_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bb2c50075d03",
+        "labelKo": "논문",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-bb2c50075d03|건|category=특허|detail=표본 특허 건수|technology=확인필요|E-008_sample_patent_count",
+      "sourceCaveat": null,
+      "sourceLabel": "논문·특허 — 표본 특허 건수",
+      "sourceLabelEn": "Publications and patents (climate technology)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-008",
+        "indicatorId": "E-008_sample_patent_count",
+        "sourceFileDecoded": "E-008_논문,특허.xlsx",
+        "sourceRow": 27,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bb2c50075d03|건",
+      "dimensionLabels": {
+        "category": "특허",
+        "detail": "표본 총 건수",
+        "technology": "확인필요"
+      },
+      "dimensions": {
+        "category": "특허",
+        "detail": "표본 총 건수",
+        "technology": "확인필요"
+      },
+      "displayLabel": "논문·특허 — 표본 총 건수",
+      "indicatorId": "E-008_sample_total_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bb2c50075d03",
+        "labelKo": "논문",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-bb2c50075d03|건|category=특허|detail=표본 총 건수|technology=확인필요|E-008_sample_total_count",
+      "sourceCaveat": null,
+      "sourceLabel": "논문·특허 — 표본 총 건수",
+      "sourceLabelEn": "Publications and patents (climate technology)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-008",
+        "indicatorId": "E-008_sample_total_count",
+        "sourceFileDecoded": "E-008_논문,특허.xlsx",
+        "sourceRow": 25,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bb2c50075d03|건",
+      "dimensionLabels": {
+        "category": "특허",
+        "detail": "Scimago 인용가능 문헌 수",
+        "technology": "확인필요"
+      },
+      "dimensions": {
+        "category": "특허",
+        "detail": "Scimago 인용가능 문헌 수",
+        "technology": "확인필요"
+      },
+      "displayLabel": "논문·특허 — Scimago 인용가능 문헌 수",
+      "indicatorId": "E-008_scimago_citable_docs",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bb2c50075d03",
+        "labelKo": "논문",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-bb2c50075d03|건|category=특허|detail=Scimago 인용가능 문헌 수|technology=확인필요|E-008_scimago_citable_docs",
+      "sourceCaveat": "전 학문분야 합계이며 기후기술 분야로 한정된 값이 아님.",
+      "sourceLabel": "논문·특허 — Scimago 인용가능 문헌 수",
+      "sourceLabelEn": "Publications and patents (climate technology)",
+      "sourceNote": "전 학문분야 합계이며 기후기술 분야로 한정된 값이 아님.",
+      "sourceProvenance": {
+        "elementId": "E-008",
+        "indicatorId": "E-008_scimago_citable_docs",
+        "sourceFileDecoded": "E-008_논문,특허.xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bb2c50075d03|건",
+      "dimensionLabels": {
+        "category": "특허",
+        "detail": "Scimago 인용 수",
+        "technology": "확인필요"
+      },
+      "dimensions": {
+        "category": "특허",
+        "detail": "Scimago 인용 수",
+        "technology": "확인필요"
+      },
+      "displayLabel": "논문·특허 — Scimago 인용 수",
+      "indicatorId": "E-008_scimago_citations",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bb2c50075d03",
+        "labelKo": "논문",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-bb2c50075d03|건|category=특허|detail=Scimago 인용 수|technology=확인필요|E-008_scimago_citations",
+      "sourceCaveat": null,
+      "sourceLabel": "논문·특허 — Scimago 인용 수",
+      "sourceLabelEn": "Publications and patents (climate technology)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-008",
+        "indicatorId": "E-008_scimago_citations",
+        "sourceFileDecoded": "E-008_논문,특허.xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-033cb9320d59|건/문헌",
+      "dimensionLabels": {
+        "category": "특허",
+        "detail": "Scimago 문헌당 인용 수",
+        "technology": "확인필요"
+      },
+      "dimensions": {
+        "category": "특허",
+        "detail": "Scimago 문헌당 인용 수",
+        "technology": "확인필요"
+      },
+      "displayLabel": "논문·특허 — Scimago 문헌당 인용 수",
+      "indicatorId": "E-008_scimago_cites_per_doc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-033cb9320d59",
+        "labelKo": "논문",
+        "unit": "건/문헌",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-033cb9320d59|건/문헌|category=특허|detail=Scimago 문헌당 인용 수|technology=확인필요|E-008_scimago_cites_per_doc",
+      "sourceCaveat": "전 학문분야 합계이며 기후기술 분야로 한정된 값이 아님.",
+      "sourceLabel": "논문·특허 — Scimago 문헌당 인용 수",
+      "sourceLabelEn": "Publications and patents (climate technology)",
+      "sourceNote": "전 학문분야 합계이며 기후기술 분야로 한정된 값이 아님.",
+      "sourceProvenance": {
+        "elementId": "E-008",
+        "indicatorId": "E-008_scimago_cites_per_doc",
+        "sourceFileDecoded": "E-008_논문,특허.xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bb2c50075d03|건",
+      "dimensionLabels": {
+        "category": "특허",
+        "detail": "Scimago 누적 인용 수(1996",
+        "detail_2": "2025)",
+        "technology": "확인필요"
+      },
+      "dimensions": {
+        "category": "특허",
+        "detail": "Scimago 누적 인용 수(1996",
+        "detail_2": "2025)",
+        "technology": "확인필요"
+      },
+      "displayLabel": "논문·특허 — Scimago 누적 인용 수(1996–2025)",
+      "indicatorId": "E-008_scimago_cum_citations",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bb2c50075d03",
+        "labelKo": "논문",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-bb2c50075d03|건|category=특허|detail=Scimago 누적 인용 수(1996|detail_2=2025)|technology=확인필요|E-008_scimago_cum_citations",
+      "sourceCaveat": "전 학문분야 합계이며 기후기술 분야로 한정된 값이 아님.",
+      "sourceLabel": "논문·특허 — Scimago 누적 인용 수(1996–2025)",
+      "sourceLabelEn": "Publications and patents (climate technology)",
+      "sourceNote": "전 학문분야 합계이며 기후기술 분야로 한정된 값이 아님.",
+      "sourceProvenance": {
+        "elementId": "E-008",
+        "indicatorId": "E-008_scimago_cum_citations",
+        "sourceFileDecoded": "E-008_논문,특허.xlsx",
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bb2c50075d03|건",
+      "dimensionLabels": {
+        "category": "특허",
+        "detail": "Scimago 누적 논문 수(1996",
+        "detail_2": "2025)",
+        "technology": "확인필요"
+      },
+      "dimensions": {
+        "category": "특허",
+        "detail": "Scimago 누적 논문 수(1996",
+        "detail_2": "2025)",
+        "technology": "확인필요"
+      },
+      "displayLabel": "논문·특허 — Scimago 누적 논문 수(1996–2025)",
+      "indicatorId": "E-008_scimago_cum_publications",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bb2c50075d03",
+        "labelKo": "논문",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-bb2c50075d03|건|category=특허|detail=Scimago 누적 논문 수(1996|detail_2=2025)|technology=확인필요|E-008_scimago_cum_publications",
+      "sourceCaveat": "전 학문분야 합계이며 기후기술 분야로 한정된 값이 아님.",
+      "sourceLabel": "논문·특허 — Scimago 누적 논문 수(1996–2025)",
+      "sourceLabelEn": "Publications and patents (climate technology)",
+      "sourceNote": "전 학문분야 합계이며 기후기술 분야로 한정된 값이 아님.",
+      "sourceProvenance": {
+        "elementId": "E-008",
+        "indicatorId": "E-008_scimago_cum_publications",
+        "sourceFileDecoded": "E-008_논문,특허.xlsx",
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-b5875e256867|위",
+      "dimensionLabels": {
+        "category": "특허",
+        "detail": "Scimago 누적 기준 세계 순위",
+        "technology": "확인필요"
+      },
+      "dimensions": {
+        "category": "특허",
+        "detail": "Scimago 누적 기준 세계 순위",
+        "technology": "확인필요"
+      },
+      "displayLabel": "논문·특허 — Scimago 누적 기준 세계 순위",
+      "indicatorId": "E-008_scimago_cum_world_rank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b5875e256867",
+        "labelKo": "논문",
+        "unit": "위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-b5875e256867|위|category=특허|detail=Scimago 누적 기준 세계 순위|technology=확인필요|E-008_scimago_cum_world_rank",
+      "sourceCaveat": "순위는 값이 작을수록 우수 — 방향 주의.",
+      "sourceLabel": "논문·특허 — Scimago 누적 기준 세계 순위",
+      "sourceLabelEn": "Publications and patents (climate technology)",
+      "sourceNote": "순위는 값이 작을수록 우수 — 방향 주의.",
+      "sourceProvenance": {
+        "elementId": "E-008",
+        "indicatorId": "E-008_scimago_cum_world_rank",
+        "sourceFileDecoded": "E-008_논문,특허.xlsx",
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-c2e8bb7681e5|지수",
+      "dimensionLabels": {
+        "category": "특허",
+        "detail": "Scimago H지수(1996",
+        "detail_2": "2025)",
+        "technology": "확인필요"
+      },
+      "dimensions": {
+        "category": "특허",
+        "detail": "Scimago H지수(1996",
+        "detail_2": "2025)",
+        "technology": "확인필요"
+      },
+      "displayLabel": "논문·특허 — Scimago H지수(1996–2025)",
+      "indicatorId": "E-008_scimago_h_index",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-c2e8bb7681e5",
+        "labelKo": "논문",
+        "unit": "지수",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-c2e8bb7681e5|지수|category=특허|detail=Scimago H지수(1996|detail_2=2025)|technology=확인필요|E-008_scimago_h_index",
+      "sourceCaveat": "전 학문분야 합계이며 기후기술 분야로 한정된 값이 아님.",
+      "sourceLabel": "논문·특허 — Scimago H지수(1996–2025)",
+      "sourceLabelEn": "Publications and patents (climate technology)",
+      "sourceNote": "전 학문분야 합계이며 기후기술 분야로 한정된 값이 아님.",
+      "sourceProvenance": {
+        "elementId": "E-008",
+        "indicatorId": "E-008_scimago_h_index",
+        "sourceFileDecoded": "E-008_논문,특허.xlsx",
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bb2c50075d03|건",
+      "dimensionLabels": {
+        "category": "특허",
+        "detail": "Scimago 논문 수",
+        "technology": "확인필요"
+      },
+      "dimensions": {
+        "category": "특허",
+        "detail": "Scimago 논문 수",
+        "technology": "확인필요"
+      },
+      "displayLabel": "논문·특허 — Scimago 논문 수",
+      "indicatorId": "E-008_scimago_publications",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bb2c50075d03",
+        "labelKo": "논문",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-bb2c50075d03|건|category=특허|detail=Scimago 논문 수|technology=확인필요|E-008_scimago_publications",
+      "sourceCaveat": "전 학문분야 합계이며 기후기술 분야로 한정된 값이 아님.",
+      "sourceLabel": "논문·특허 — Scimago 논문 수",
+      "sourceLabelEn": "Publications and patents (climate technology)",
+      "sourceNote": "전 학문분야 합계이며 기후기술 분야로 한정된 값이 아님.",
+      "sourceProvenance": {
+        "elementId": "E-008",
+        "indicatorId": "E-008_scimago_publications",
+        "sourceFileDecoded": "E-008_논문,특허.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-b5875e256867|위",
+      "dimensionLabels": {
+        "category": "특허",
+        "detail": "Scimago 세계 순위",
+        "technology": "확인필요"
+      },
+      "dimensions": {
+        "category": "특허",
+        "detail": "Scimago 세계 순위",
+        "technology": "확인필요"
+      },
+      "displayLabel": "논문·특허 — Scimago 세계 순위",
+      "indicatorId": "E-008_scimago_world_rank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b5875e256867",
+        "labelKo": "논문",
+        "unit": "위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-b5875e256867|위|category=특허|detail=Scimago 세계 순위|technology=확인필요|E-008_scimago_world_rank",
+      "sourceCaveat": "순위는 값이 작을수록 우수 — 다른 지표와 방향이 반대이므로 시각화·집계 시 주의.",
+      "sourceLabel": "논문·특허 — Scimago 세계 순위",
+      "sourceLabelEn": "Publications and patents (climate technology)",
+      "sourceNote": "순위는 값이 작을수록 우수 — 다른 지표와 방향이 반대이므로 시각화·집계 시 주의.",
+      "sourceProvenance": {
+        "elementId": "E-008",
+        "indicatorId": "E-008_scimago_world_rank",
+        "sourceFileDecoded": "E-008_논문,특허.xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bb2c50075d03|건",
+      "dimensionLabels": {
+        "category": "특허",
+        "detail": "WIPO 디자인 출원",
+        "detail_2": "해외출원",
+        "technology": "확인필요"
+      },
+      "dimensions": {
+        "category": "특허",
+        "detail": "WIPO 디자인 출원",
+        "detail_2": "해외출원",
+        "technology": "확인필요"
+      },
+      "displayLabel": "논문·특허 — WIPO 디자인 출원 — 해외출원",
+      "indicatorId": "E-008_wipo_design_abroad",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bb2c50075d03",
+        "labelKo": "논문",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-bb2c50075d03|건|category=특허|detail=WIPO 디자인 출원|detail_2=해외출원|technology=확인필요|E-008_wipo_design_abroad",
+      "sourceCaveat": null,
+      "sourceLabel": "논문·특허 — WIPO 디자인 출원 — 해외출원",
+      "sourceLabelEn": "Publications and patents (climate technology)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-008",
+        "indicatorId": "E-008_wipo_design_abroad",
+        "sourceFileDecoded": "E-008_논문,특허.xlsx",
+        "sourceRow": 24,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bb2c50075d03|건",
+      "dimensionLabels": {
+        "category": "특허",
+        "detail": "WIPO 디자인 출원",
+        "detail_2": "거주자",
+        "technology": "확인필요"
+      },
+      "dimensions": {
+        "category": "특허",
+        "detail": "WIPO 디자인 출원",
+        "detail_2": "거주자",
+        "technology": "확인필요"
+      },
+      "displayLabel": "논문·특허 — WIPO 디자인 출원 — 거주자",
+      "indicatorId": "E-008_wipo_design_resident",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bb2c50075d03",
+        "labelKo": "논문",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-bb2c50075d03|건|category=특허|detail=WIPO 디자인 출원|detail_2=거주자|technology=확인필요|E-008_wipo_design_resident",
+      "sourceCaveat": null,
+      "sourceLabel": "논문·특허 — WIPO 디자인 출원 — 거주자",
+      "sourceLabelEn": "Publications and patents (climate technology)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-008",
+        "indicatorId": "E-008_wipo_design_resident",
+        "sourceFileDecoded": "E-008_논문,특허.xlsx",
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bb2c50075d03|건",
+      "dimensionLabels": {
+        "category": "특허",
+        "detail": "WIPO 디자인 출원 총계",
+        "technology": "확인필요"
+      },
+      "dimensions": {
+        "category": "특허",
+        "detail": "WIPO 디자인 출원 총계",
+        "technology": "확인필요"
+      },
+      "displayLabel": "논문·특허 — WIPO 디자인 출원 총계",
+      "indicatorId": "E-008_wipo_design_total",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bb2c50075d03",
+        "labelKo": "논문",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-bb2c50075d03|건|category=특허|detail=WIPO 디자인 출원 총계|technology=확인필요|E-008_wipo_design_total",
+      "sourceCaveat": null,
+      "sourceLabel": "논문·특허 — WIPO 디자인 출원 총계",
+      "sourceLabelEn": "Publications and patents (climate technology)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-008",
+        "indicatorId": "E-008_wipo_design_total",
+        "sourceFileDecoded": "E-008_논문,특허.xlsx",
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bb2c50075d03|건",
+      "dimensionLabels": {
+        "category": "특허",
+        "detail": "WIPO 특허 출원",
+        "detail_2": "해외출원",
+        "technology": "확인필요"
+      },
+      "dimensions": {
+        "category": "특허",
+        "detail": "WIPO 특허 출원",
+        "detail_2": "해외출원",
+        "technology": "확인필요"
+      },
+      "displayLabel": "논문·특허 — WIPO 특허 출원 — 해외출원",
+      "indicatorId": "E-008_wipo_patent_abroad",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bb2c50075d03",
+        "labelKo": "논문",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-bb2c50075d03|건|category=특허|detail=WIPO 특허 출원|detail_2=해외출원|technology=확인필요|E-008_wipo_patent_abroad",
+      "sourceCaveat": "전 기술분야 합계이며 기후기술 분야로 한정된 값이 아님.",
+      "sourceLabel": "논문·특허 — WIPO 특허 출원 — 해외출원",
+      "sourceLabelEn": "Publications and patents (climate technology)",
+      "sourceNote": "전 기술분야 합계이며 기후기술 분야로 한정된 값이 아님.",
+      "sourceProvenance": {
+        "elementId": "E-008",
+        "indicatorId": "E-008_wipo_patent_abroad",
+        "sourceFileDecoded": "E-008_논문,특허.xlsx",
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bb2c50075d03|건",
+      "dimensionLabels": {
+        "category": "특허",
+        "detail": "WIPO 특허 출원",
+        "detail_2": "거주자",
+        "technology": "확인필요"
+      },
+      "dimensions": {
+        "category": "특허",
+        "detail": "WIPO 특허 출원",
+        "detail_2": "거주자",
+        "technology": "확인필요"
+      },
+      "displayLabel": "논문·특허 — WIPO 특허 출원 — 거주자",
+      "indicatorId": "E-008_wipo_patent_resident",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bb2c50075d03",
+        "labelKo": "논문",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-bb2c50075d03|건|category=특허|detail=WIPO 특허 출원|detail_2=거주자|technology=확인필요|E-008_wipo_patent_resident",
+      "sourceCaveat": "전 기술분야 합계이며 기후기술 분야로 한정된 값이 아님.",
+      "sourceLabel": "논문·특허 — WIPO 특허 출원 — 거주자",
+      "sourceLabelEn": "Publications and patents (climate technology)",
+      "sourceNote": "전 기술분야 합계이며 기후기술 분야로 한정된 값이 아님.",
+      "sourceProvenance": {
+        "elementId": "E-008",
+        "indicatorId": "E-008_wipo_patent_resident",
+        "sourceFileDecoded": "E-008_논문,특허.xlsx",
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bb2c50075d03|건",
+      "dimensionLabels": {
+        "category": "특허",
+        "detail": "WIPO 특허 출원 총계",
+        "technology": "확인필요"
+      },
+      "dimensions": {
+        "category": "특허",
+        "detail": "WIPO 특허 출원 총계",
+        "technology": "확인필요"
+      },
+      "displayLabel": "논문·특허 — WIPO 특허 출원 총계",
+      "indicatorId": "E-008_wipo_patent_total",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bb2c50075d03",
+        "labelKo": "논문",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-bb2c50075d03|건|category=특허|detail=WIPO 특허 출원 총계|technology=확인필요|E-008_wipo_patent_total",
+      "sourceCaveat": "2025년 값은 WIPO 국가프로필 최신판(2026-06 발간)의 데이터연도가 2024여서 미수집(M06). 차기 갱신 시 보완.",
+      "sourceLabel": "논문·특허 — WIPO 특허 출원 총계",
+      "sourceLabelEn": "Publications and patents (climate technology)",
+      "sourceNote": "2025년 값은 WIPO 국가프로필 최신판(2026-06 발간)의 데이터연도가 2024여서 미수집(M06). 차기 갱신 시 보완.",
+      "sourceProvenance": {
+        "elementId": "E-008",
+        "indicatorId": "E-008_wipo_patent_total",
+        "sourceFileDecoded": "E-008_논문,특허.xlsx",
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bb2c50075d03|건",
+      "dimensionLabels": {
+        "category": "특허",
+        "detail": "WIPO 상표 출원",
+        "detail_2": "해외출원",
+        "technology": "확인필요"
+      },
+      "dimensions": {
+        "category": "특허",
+        "detail": "WIPO 상표 출원",
+        "detail_2": "해외출원",
+        "technology": "확인필요"
+      },
+      "displayLabel": "논문·특허 — WIPO 상표 출원 — 해외출원",
+      "indicatorId": "E-008_wipo_trademark_abroad",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bb2c50075d03",
+        "labelKo": "논문",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-bb2c50075d03|건|category=특허|detail=WIPO 상표 출원|detail_2=해외출원|technology=확인필요|E-008_wipo_trademark_abroad",
+      "sourceCaveat": null,
+      "sourceLabel": "논문·특허 — WIPO 상표 출원 — 해외출원",
+      "sourceLabelEn": "Publications and patents (climate technology)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-008",
+        "indicatorId": "E-008_wipo_trademark_abroad",
+        "sourceFileDecoded": "E-008_논문,특허.xlsx",
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bb2c50075d03|건",
+      "dimensionLabels": {
+        "category": "특허",
+        "detail": "WIPO 상표 출원",
+        "detail_2": "거주자",
+        "technology": "확인필요"
+      },
+      "dimensions": {
+        "category": "특허",
+        "detail": "WIPO 상표 출원",
+        "detail_2": "거주자",
+        "technology": "확인필요"
+      },
+      "displayLabel": "논문·특허 — WIPO 상표 출원 — 거주자",
+      "indicatorId": "E-008_wipo_trademark_resident",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bb2c50075d03",
+        "labelKo": "논문",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-bb2c50075d03|건|category=특허|detail=WIPO 상표 출원|detail_2=거주자|technology=확인필요|E-008_wipo_trademark_resident",
+      "sourceCaveat": null,
+      "sourceLabel": "논문·특허 — WIPO 상표 출원 — 거주자",
+      "sourceLabelEn": "Publications and patents (climate technology)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-008",
+        "indicatorId": "E-008_wipo_trademark_resident",
+        "sourceFileDecoded": "E-008_논문,특허.xlsx",
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bb2c50075d03|건",
+      "dimensionLabels": {
+        "category": "특허",
+        "detail": "WIPO 상표 출원 총계",
+        "technology": "확인필요"
+      },
+      "dimensions": {
+        "category": "특허",
+        "detail": "WIPO 상표 출원 총계",
+        "technology": "확인필요"
+      },
+      "displayLabel": "논문·특허 — WIPO 상표 출원 총계",
+      "indicatorId": "E-008_wipo_trademark_total",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bb2c50075d03",
+        "labelKo": "논문",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-bb2c50075d03|건|category=특허|detail=WIPO 상표 출원 총계|technology=확인필요|E-008_wipo_trademark_total",
+      "sourceCaveat": null,
+      "sourceLabel": "논문·특허 — WIPO 상표 출원 총계",
+      "sourceLabelEn": "Publications and patents (climate technology)",
+      "sourceNote": null,
+      "sourceProvenance": {
+        "elementId": "E-008",
+        "indicatorId": "E-008_wipo_trademark_total",
+        "sourceFileDecoded": "E-008_논문,특허.xlsx",
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 21,
+      "key": "measure-bb2c50075d03",
+      "labelKo": "논문",
+      "recordCount": 22,
+      "unit": "건",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-033cb9320d59",
+      "labelKo": "논문",
+      "recordCount": 1,
+      "unit": "건/문헌",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-db6ee34b72d2",
+      "labelKo": "논문",
+      "recordCount": 1,
+      "unit": "비율(0-1)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-b5875e256867",
+      "labelKo": "논문",
+      "recordCount": 3,
+      "unit": "위",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-c2e8bb7681e5",
+      "labelKo": "논문",
+      "recordCount": 1,
+      "unit": "지수",
+      "unitFamily": "other"
+    }
+  ],
+  "observationCount": 28,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

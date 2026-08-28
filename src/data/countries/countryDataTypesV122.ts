@@ -1,10 +1,12 @@
 import type {
-  VietnamCatalogElementV121,
-  VietnamElementShardPayloadV121,
-  VietnamEntityV121,
-  VietnamMapLayerV121,
-  VietnamManifestV121,
-} from "../vietnam/vietnamTypesV121";
+  VietnamCatalogElementV124,
+  VietnamDownloadAssetV124,
+  VietnamElementPublicStatusV124,
+  VietnamElementShardPayloadV124,
+  VietnamEntityV124,
+  VietnamMapLayerV124,
+  VietnamManifestV124,
+} from "../vietnam/vietnamTypesV124";
 
 export const PLATFORM_RELEASE_V122 = "v122" as const;
 export const COUNTRY_DATA_RUNTIME_VERSION_V122 =
@@ -43,6 +45,13 @@ export interface CountryCatalogItemV122 {
   sourceOrganizations: string[];
   sourceUrls: string[];
   technologyIds: string[];
+  publicStatus: VietnamElementPublicStatusV124;
+  publicStatusLabel: string;
+  dataPresenceStatus?: string | null;
+  emptyReason?: string | null;
+  displayAllowed: boolean;
+  downloadAllowed: boolean;
+  isDiscoverable: boolean;
   hasPublicData: boolean;
   hasMapData: boolean;
   hasDownloadableData: boolean;
@@ -50,7 +59,8 @@ export interface CountryCatalogItemV122 {
   entityCount: number;
   mapFeatureCount: number;
   downloadableRecordCount: number;
-  raw: VietnamCatalogElementV121;
+  downloadAssets: VietnamDownloadAssetV124[];
+  raw: VietnamCatalogElementV124;
 }
 
 export interface CountrySearchEntryV122 {
@@ -63,7 +73,7 @@ export interface CountrySearchEntryV122 {
   keywords: string[];
 }
 
-export interface CountryMapLayerV122 extends VietnamMapLayerV121 {
+export interface CountryMapLayerV122 extends VietnamMapLayerV124 {
   providerId: string;
   countryIso3: string;
   countryNameKo: string;
@@ -71,9 +81,9 @@ export interface CountryMapLayerV122 extends VietnamMapLayerV121 {
   publicShortTitle: string;
 }
 
-export type CountryElementBundleV122 = VietnamElementShardPayloadV121;
-export type CountryEntityV122 = VietnamEntityV121;
-export type CountryManifestV122 = VietnamManifestV121;
+export type CountryElementBundleV122 = VietnamElementShardPayloadV124;
+export type CountryEntityV122 = VietnamEntityV124;
+export type CountryManifestV122 = VietnamManifestV124;
 
 export interface CountryDataProviderV122 {
   providerId: string;
@@ -91,7 +101,7 @@ export interface CountryDataProviderV122 {
   loadMapIndex(): Promise<CountryMapLayerV122[]>;
   loadElementBundle(elementId: string): Promise<CountryElementBundleV122>;
   loadElementEntities(elementId: string): Promise<{
-    schemaVersion: "v121";
+    schemaVersion: "v124";
     elementId: string;
     recordCount: number;
     records: CountryEntityV122[];

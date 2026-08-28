@@ -1,0 +1,221 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 4,
+      "values": [
+        "광공업 · 건설",
+        "농림어업",
+        "서비스업",
+        "제조업"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 4,
+      "values": [
+        "GDP 대비 농림어업 부가가치 비중",
+        "GDP 대비 산업(건설 포함) 부가가치 비중",
+        "GDP 대비 서비스업 부가가치 비중",
+        "GDP 대비 제조업 부가가치 비중"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 40,
+      "values": [
+        "1986",
+        "1987",
+        "1988",
+        "1989",
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ]
+    }
+  ],
+  "elementId": "A-005",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 4,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-398b8bde8064|%",
+      "dimensionLabels": {
+        "category": "농림어업",
+        "detail": "GDP 대비 농림어업 부가가치 비중"
+      },
+      "dimensions": {
+        "category": "농림어업",
+        "detail": "GDP 대비 농림어업 부가가치 비중"
+      },
+      "displayLabel": "산업구조 · 농림어업 — GDP 대비 농림어업 부가가치 비중",
+      "indicatorId": "A-005_va_share_agriculture",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-398b8bde8064",
+        "labelKo": "산업구조",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-398b8bde8064|%|category=농림어업|detail=GDP 대비 농림어업 부가가치 비중|A-005_va_share_agriculture",
+      "sourceCaveat": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-005 폴더 산업구조 (농업제조서비스 비중).xlsx). [참고자료 분리] 검토의견 3번에 따라 베트남 통계총국(GSO) 계열은 본 데이터셋에서 제외함 — 세계은행 값 자체가 GSO 제출 기초자료를 가공한 것이어서 중복이고, 국가 확장성 측면에서도 세계은행 단일 원천이 일관됨. 검토의견 1번(GSO 4개 계열의 2022년 결측)과 2번(GSO 링크가 기관 대문 주소)은 GSO 계열 제외로 함께 해소됨. [딥링크] source_url을 기관 대문이 아닌 지표별 딥링크로, api_endpoint에 재현 가능한 API 쿼리를 기재함. [정의] 제조업(NV.IND.MANF.ZS)은 광업·건설을 포함하는 광의 산업(NV.IND.TOTL.ZS)의 부분집합이므로 3개 부문 합계에 중복 합산하지 말 것. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "산업구조 · 농림어업 — GDP 대비 농림어업 부가가치 비중",
+      "sourceLabelEn": "Agriculture, forestry and fishing, value added (% of GDP)",
+      "sourceNote": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-005 폴더 산업구조 (농업제조서비스 비중).xlsx). [참고자료 분리] 검토의견 3번에 따라 베트남 통계총국(GSO) 계열은 본 데이터셋에서 제외함 — 세계은행 값 자체가 GSO 제출 기초자료를 가공한 것이어서 중복이고, 국가 확장성 측면에서도 세계은행 단일 원천이 일관됨. 검토의견 1번(GSO 4개 계열의 2022년 결측)과 2번(GSO 링크가 기관 대문 주소)은 GSO 계열 제외로 함께 해소됨. [딥링크] source_url을 기관 대문이 아닌 지표별 딥링크로, api_endpoint에 재현 가능한 API 쿼리를 기재함. [정의] 제조업(NV.IND.MANF.ZS)은 광업·건설을 포함하는 광의 산업(NV.IND.TOTL.ZS)의 부분집합이므로 3개 부문 합계에 중복 합산하지 말 것. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-005",
+        "indicatorId": "A-005_va_share_agriculture",
+        "sourceFileDecoded": "A-005_산업구조[농업, 제조, 서비스].xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-398b8bde8064|%",
+      "dimensionLabels": {
+        "category": "광공업 · 건설",
+        "detail": "GDP 대비 산업(건설 포함) 부가가치 비중"
+      },
+      "dimensions": {
+        "category": "광공업 · 건설",
+        "detail": "GDP 대비 산업(건설 포함) 부가가치 비중"
+      },
+      "displayLabel": "산업구조 · 광공업·건설 — GDP 대비 산업(건설 포함) 부가가치 비중",
+      "indicatorId": "A-005_va_share_industry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-398b8bde8064",
+        "labelKo": "산업구조",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-398b8bde8064|%|category=광공업 · 건설|detail=GDP 대비 산업(건설 포함) 부가가치 비중|A-005_va_share_industry",
+      "sourceCaveat": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-005 폴더 산업구조 (농업제조서비스 비중).xlsx). [참고자료 분리] 검토의견 3번에 따라 베트남 통계총국(GSO) 계열은 본 데이터셋에서 제외함 — 세계은행 값 자체가 GSO 제출 기초자료를 가공한 것이어서 중복이고, 국가 확장성 측면에서도 세계은행 단일 원천이 일관됨. 검토의견 1번(GSO 4개 계열의 2022년 결측)과 2번(GSO 링크가 기관 대문 주소)은 GSO 계열 제외로 함께 해소됨. [딥링크] source_url을 기관 대문이 아닌 지표별 딥링크로, api_endpoint에 재현 가능한 API 쿼리를 기재함. [정의] 제조업(NV.IND.MANF.ZS)은 광업·건설을 포함하는 광의 산업(NV.IND.TOTL.ZS)의 부분집합이므로 3개 부문 합계에 중복 합산하지 말 것. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "산업구조 · 광공업·건설 — GDP 대비 산업(건설 포함) 부가가치 비중",
+      "sourceLabelEn": "Industry (including construction), value added (% of GDP)",
+      "sourceNote": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-005 폴더 산업구조 (농업제조서비스 비중).xlsx). [참고자료 분리] 검토의견 3번에 따라 베트남 통계총국(GSO) 계열은 본 데이터셋에서 제외함 — 세계은행 값 자체가 GSO 제출 기초자료를 가공한 것이어서 중복이고, 국가 확장성 측면에서도 세계은행 단일 원천이 일관됨. 검토의견 1번(GSO 4개 계열의 2022년 결측)과 2번(GSO 링크가 기관 대문 주소)은 GSO 계열 제외로 함께 해소됨. [딥링크] source_url을 기관 대문이 아닌 지표별 딥링크로, api_endpoint에 재현 가능한 API 쿼리를 기재함. [정의] 제조업(NV.IND.MANF.ZS)은 광업·건설을 포함하는 광의 산업(NV.IND.TOTL.ZS)의 부분집합이므로 3개 부문 합계에 중복 합산하지 말 것. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-005",
+        "indicatorId": "A-005_va_share_industry",
+        "sourceFileDecoded": "A-005_산업구조[농업, 제조, 서비스].xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-398b8bde8064|%",
+      "dimensionLabels": {
+        "category": "제조업",
+        "detail": "GDP 대비 제조업 부가가치 비중"
+      },
+      "dimensions": {
+        "category": "제조업",
+        "detail": "GDP 대비 제조업 부가가치 비중"
+      },
+      "displayLabel": "산업구조 · 제조업 — GDP 대비 제조업 부가가치 비중",
+      "indicatorId": "A-005_va_share_manufacturing",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-398b8bde8064",
+        "labelKo": "산업구조",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-398b8bde8064|%|category=제조업|detail=GDP 대비 제조업 부가가치 비중|A-005_va_share_manufacturing",
+      "sourceCaveat": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-005 폴더 산업구조 (농업제조서비스 비중).xlsx). [참고자료 분리] 검토의견 3번에 따라 베트남 통계총국(GSO) 계열은 본 데이터셋에서 제외함 — 세계은행 값 자체가 GSO 제출 기초자료를 가공한 것이어서 중복이고, 국가 확장성 측면에서도 세계은행 단일 원천이 일관됨. 검토의견 1번(GSO 4개 계열의 2022년 결측)과 2번(GSO 링크가 기관 대문 주소)은 GSO 계열 제외로 함께 해소됨. [딥링크] source_url을 기관 대문이 아닌 지표별 딥링크로, api_endpoint에 재현 가능한 API 쿼리를 기재함. [정의] 제조업(NV.IND.MANF.ZS)은 광업·건설을 포함하는 광의 산업(NV.IND.TOTL.ZS)의 부분집합이므로 3개 부문 합계에 중복 합산하지 말 것. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "산업구조 · 제조업 — GDP 대비 제조업 부가가치 비중",
+      "sourceLabelEn": "Manufacturing, value added (% of GDP)",
+      "sourceNote": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-005 폴더 산업구조 (농업제조서비스 비중).xlsx). [참고자료 분리] 검토의견 3번에 따라 베트남 통계총국(GSO) 계열은 본 데이터셋에서 제외함 — 세계은행 값 자체가 GSO 제출 기초자료를 가공한 것이어서 중복이고, 국가 확장성 측면에서도 세계은행 단일 원천이 일관됨. 검토의견 1번(GSO 4개 계열의 2022년 결측)과 2번(GSO 링크가 기관 대문 주소)은 GSO 계열 제외로 함께 해소됨. [딥링크] source_url을 기관 대문이 아닌 지표별 딥링크로, api_endpoint에 재현 가능한 API 쿼리를 기재함. [정의] 제조업(NV.IND.MANF.ZS)은 광업·건설을 포함하는 광의 산업(NV.IND.TOTL.ZS)의 부분집합이므로 3개 부문 합계에 중복 합산하지 말 것. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-005",
+        "indicatorId": "A-005_va_share_manufacturing",
+        "sourceFileDecoded": "A-005_산업구조[농업, 제조, 서비스].xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-398b8bde8064|%",
+      "dimensionLabels": {
+        "category": "서비스업",
+        "detail": "GDP 대비 서비스업 부가가치 비중"
+      },
+      "dimensions": {
+        "category": "서비스업",
+        "detail": "GDP 대비 서비스업 부가가치 비중"
+      },
+      "displayLabel": "산업구조 · 서비스업 — GDP 대비 서비스업 부가가치 비중",
+      "indicatorId": "A-005_va_share_services",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-398b8bde8064",
+        "labelKo": "산업구조",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-398b8bde8064|%|category=서비스업|detail=GDP 대비 서비스업 부가가치 비중|A-005_va_share_services",
+      "sourceCaveat": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-005 폴더 산업구조 (농업제조서비스 비중).xlsx). [참고자료 분리] 검토의견 3번에 따라 베트남 통계총국(GSO) 계열은 본 데이터셋에서 제외함 — 세계은행 값 자체가 GSO 제출 기초자료를 가공한 것이어서 중복이고, 국가 확장성 측면에서도 세계은행 단일 원천이 일관됨. 검토의견 1번(GSO 4개 계열의 2022년 결측)과 2번(GSO 링크가 기관 대문 주소)은 GSO 계열 제외로 함께 해소됨. [딥링크] source_url을 기관 대문이 아닌 지표별 딥링크로, api_endpoint에 재현 가능한 API 쿼리를 기재함. [정의] 제조업(NV.IND.MANF.ZS)은 광업·건설을 포함하는 광의 산업(NV.IND.TOTL.ZS)의 부분집합이므로 3개 부문 합계에 중복 합산하지 말 것. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceLabel": "산업구조 · 서비스업 — GDP 대비 서비스업 부가가치 비중",
+      "sourceLabelEn": "Services, value added (% of GDP)",
+      "sourceNote": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-005 폴더 산업구조 (농업제조서비스 비중).xlsx). [참고자료 분리] 검토의견 3번에 따라 베트남 통계총국(GSO) 계열은 본 데이터셋에서 제외함 — 세계은행 값 자체가 GSO 제출 기초자료를 가공한 것이어서 중복이고, 국가 확장성 측면에서도 세계은행 단일 원천이 일관됨. 검토의견 1번(GSO 4개 계열의 2022년 결측)과 2번(GSO 링크가 기관 대문 주소)은 GSO 계열 제외로 함께 해소됨. [딥링크] source_url을 기관 대문이 아닌 지표별 딥링크로, api_endpoint에 재현 가능한 API 쿼리를 기재함. [정의] 제조업(NV.IND.MANF.ZS)은 광업·건설을 포함하는 광의 산업(NV.IND.TOTL.ZS)의 부분집합이므로 3개 부문 합계에 중복 합산하지 말 것. [라이선스] 원천이 CC BY 4.0을 명시하므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceProvenance": {
+        "elementId": "A-005",
+        "indicatorId": "A-005_va_share_services",
+        "sourceFileDecoded": "A-005_산업구조[농업, 제조, 서비스].xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 4,
+      "key": "measure-398b8bde8064",
+      "labelKo": "산업구조",
+      "recordCount": 141,
+      "unit": "%",
+      "unitFamily": "percent"
+    }
+  ],
+  "observationCount": 141,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

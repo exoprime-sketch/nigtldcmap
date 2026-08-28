@@ -1,0 +1,95 @@
+{
+  "dimensions": [
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    },
+    {
+      "key": "role",
+      "labelKo": "role",
+      "valueCount": 4,
+      "values": [
+        "NDA 대표(National Designated Authority)",
+        "NDA 부대표(Deputy)",
+        "Operational Focal Point",
+        "직접접근 인증기관(DAE) 담당"
+      ]
+    }
+  ],
+  "elementId": "E-003",
+  "entityCount": 6,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 2,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-4276fd55b524|해당없음",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "GCF NDA(국가지정기관) · GCF Country page – Viet Nam (Direct Access Entities) · gcf_dae",
+      "indicatorId": "E-003_gcf_dae",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4276fd55b524",
+        "labelKo": "GCF NDA(국가지정기관)",
+        "unit": "해당없음",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-4276fd55b524|해당없음||E-003_gcf_dae",
+      "sourceCaveat": null,
+      "sourceLabel": "GCF NDA(국가지정기관)",
+      "sourceLabelEn": "GCF National Designated Authority (NDA)",
+      "sourceNote": "VDB·BIDV 담당자 2명 모두 전화번호 및 소속 부서 미확보.",
+      "sourceProvenance": {
+        "elementId": "E-003",
+        "indicatorId": "E-003_gcf_dae",
+        "sourceFileDecoded": "E-003_GCF NDA(국가지정기관).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-4276fd55b524|해당없음",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "GCF NDA(국가지정기관) · GCF Country page – Viet Nam (NDA) · gcf_nda",
+      "indicatorId": "E-003_gcf_nda",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4276fd55b524",
+        "labelKo": "GCF NDA(국가지정기관)",
+        "unit": "해당없음",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-4276fd55b524|해당없음||E-003_gcf_nda",
+      "sourceCaveat": null,
+      "sourceLabel": "GCF NDA(국가지정기관)",
+      "sourceLabelEn": "GCF National Designated Authority (NDA)",
+      "sourceNote": "NDA 대표(Quoc Phuong Nguyen) 외 3명 전원 전화번호 미확보. 부대표·OFP 2명은 소속 부서(국·과)도 미확보.",
+      "sourceProvenance": {
+        "elementId": "E-003",
+        "indicatorId": "E-003_gcf_nda",
+        "sourceFileDecoded": "E-003_GCF NDA(국가지정기관).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 2,
+      "key": "measure-4276fd55b524",
+      "labelKo": "GCF NDA(국가지정기관)",
+      "recordCount": 0,
+      "unit": "해당없음",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

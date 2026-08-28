@@ -1,0 +1,306 @@
+{
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 2,
+      "values": [
+        "NZP-no-reforms",
+        "NZP-with-measures"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 2,
+      "values": [
+        "2030",
+        "2040"
+      ]
+    }
+  ],
+  "elementId": "B-014",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 8,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-f3fb8b4b017f|USD/tCO₂e",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "권고 탄소가격 경로",
+      "indicatorId": "B-014_carbon_price_path",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f3fb8b4b017f",
+        "labelKo": "권고 탄소가격 경로",
+        "unit": "USD/tCO₂e",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-f3fb8b4b017f|USD/tCO₂e||B-014_carbon_price_path",
+      "sourceCaveat": "출처 문서명: World Bank(2022) \"Vietnam Country Climate and Development Report\". 해당 수치는 탄소가격 정책 시나리오 절. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceLabel": "권고 탄소가격 경로",
+      "sourceLabelEn": "Recommended carbon price path",
+      "sourceNote": "출처 문서명: World Bank(2022) \"Vietnam Country Climate and Development Report\". 해당 수치는 탄소가격 정책 시나리오 절. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceProvenance": {
+        "elementId": "B-014",
+        "indicatorId": "B-014_carbon_price_path",
+        "sourceFileDecoded": "B-014_World Bank CCDR(Country Climate and Development) 내 '탄소세 시뮬레이션 결과(배출감소율, GDP 영향, 세수 효과).xlsx",
+        "sourceRow": 4,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-195d31a84a4c|%",
+      "dimensionLabels": {
+        "detail": "NZP-no-reforms"
+      },
+      "dimensions": {
+        "detail": "NZP-no-reforms"
+      },
+      "displayLabel": "배출 감소율 — NZP-no-reforms",
+      "indicatorId": "B-014_emission_reduction_nzp_no_reforms",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-195d31a84a4c",
+        "labelKo": "배출 감소율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-195d31a84a4c|%|detail=NZP-no-reforms|B-014_emission_reduction_nzp_no_reforms",
+      "sourceCaveat": "[추출 완료] CCDR Figure 5 \"The net-zero pathway (NZP), with and without supportive measures\"에서 시나리오 2종 × 시점 2개(2030·2040)의 기준선 대비 배출 변화율을 추출. 지원조치 병행 시나리오의 감축폭이 다소 작은 것은 성장률이 높아 배출이 함께 늘기 때문이며, GDP 영향 지표(gdp_impact)와 함께 보아야 함. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceLabel": "배출 감소율 — NZP-no-reforms",
+      "sourceLabelEn": "Emission reduction rate",
+      "sourceNote": "[추출 완료] CCDR Figure 5 \"The net-zero pathway (NZP), with and without supportive measures\"에서 시나리오 2종 × 시점 2개(2030·2040)의 기준선 대비 배출 변화율을 추출. 지원조치 병행 시나리오의 감축폭이 다소 작은 것은 성장률이 높아 배출이 함께 늘기 때문이며, GDP 영향 지표(gdp_impact)와 함께 보아야 함. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceProvenance": {
+        "elementId": "B-014",
+        "indicatorId": "B-014_emission_reduction_nzp_no_reforms",
+        "sourceFileDecoded": "B-014_World Bank CCDR(Country Climate and Development) 내 '탄소세 시뮬레이션 결과(배출감소율, GDP 영향, 세수 효과).xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-195d31a84a4c|%",
+      "dimensionLabels": {
+        "detail": "NZP-with-measures"
+      },
+      "dimensions": {
+        "detail": "NZP-with-measures"
+      },
+      "displayLabel": "배출 감소율 — NZP-with-measures",
+      "indicatorId": "B-014_emission_reduction_nzp_with_measures",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-195d31a84a4c",
+        "labelKo": "배출 감소율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-195d31a84a4c|%|detail=NZP-with-measures|B-014_emission_reduction_nzp_with_measures",
+      "sourceCaveat": "[추출 완료] CCDR Figure 5 \"The net-zero pathway (NZP), with and without supportive measures\"에서 시나리오 2종 × 시점 2개(2030·2040)의 기준선 대비 배출 변화율을 추출. 지원조치 병행 시나리오의 감축폭이 다소 작은 것은 성장률이 높아 배출이 함께 늘기 때문이며, GDP 영향 지표(gdp_impact)와 함께 보아야 함. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceLabel": "배출 감소율 — NZP-with-measures",
+      "sourceLabelEn": "Emission reduction rate",
+      "sourceNote": "[추출 완료] CCDR Figure 5 \"The net-zero pathway (NZP), with and without supportive measures\"에서 시나리오 2종 × 시점 2개(2030·2040)의 기준선 대비 배출 변화율을 추출. 지원조치 병행 시나리오의 감축폭이 다소 작은 것은 성장률이 높아 배출이 함께 늘기 때문이며, GDP 영향 지표(gdp_impact)와 함께 보아야 함. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceProvenance": {
+        "elementId": "B-014",
+        "indicatorId": "B-014_emission_reduction_nzp_with_measures",
+        "sourceFileDecoded": "B-014_World Bank CCDR(Country Climate and Development) 내 '탄소세 시뮬레이션 결과(배출감소율, GDP 영향, 세수 효과).xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bf20bb336833|%",
+      "dimensionLabels": {
+        "detail": "NZP-no-reforms"
+      },
+      "dimensions": {
+        "detail": "NZP-no-reforms"
+      },
+      "displayLabel": "GDP 영향 — NZP-no-reforms",
+      "indicatorId": "B-014_gdp_impact_nzp_no_reforms",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bf20bb336833",
+        "labelKo": "GDP 영향",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-bf20bb336833|%|detail=NZP-no-reforms|B-014_gdp_impact_nzp_no_reforms",
+      "sourceCaveat": "[추출 완료] CCDR Figure 5에서 시나리오 2종 × 2030·2040 시점의 기준선 대비 GDP 변화율을 추출. 개혁이 동반되지 않으면 GDP가 기준선 대비 감소(2040년 -2.2%)하나, 지원조치를 병행하면 오히려 증가(+3.3%)한다는 것이 CCDR의 핵심 메시지. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceLabel": "GDP 영향 — NZP-no-reforms",
+      "sourceLabelEn": "GDP impact",
+      "sourceNote": "[추출 완료] CCDR Figure 5에서 시나리오 2종 × 2030·2040 시점의 기준선 대비 GDP 변화율을 추출. 개혁이 동반되지 않으면 GDP가 기준선 대비 감소(2040년 -2.2%)하나, 지원조치를 병행하면 오히려 증가(+3.3%)한다는 것이 CCDR의 핵심 메시지. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceProvenance": {
+        "elementId": "B-014",
+        "indicatorId": "B-014_gdp_impact_nzp_no_reforms",
+        "sourceFileDecoded": "B-014_World Bank CCDR(Country Climate and Development) 내 '탄소세 시뮬레이션 결과(배출감소율, GDP 영향, 세수 효과).xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bf20bb336833|%",
+      "dimensionLabels": {
+        "detail": "NZP-with-measures"
+      },
+      "dimensions": {
+        "detail": "NZP-with-measures"
+      },
+      "displayLabel": "GDP 영향 — NZP-with-measures",
+      "indicatorId": "B-014_gdp_impact_nzp_with_measures",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bf20bb336833",
+        "labelKo": "GDP 영향",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-bf20bb336833|%|detail=NZP-with-measures|B-014_gdp_impact_nzp_with_measures",
+      "sourceCaveat": "[추출 완료] CCDR Figure 5에서 시나리오 2종 × 2030·2040 시점의 기준선 대비 GDP 변화율을 추출. 개혁이 동반되지 않으면 GDP가 기준선 대비 감소(2040년 -2.2%)하나, 지원조치를 병행하면 오히려 증가(+3.3%)한다는 것이 CCDR의 핵심 메시지. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceLabel": "GDP 영향 — NZP-with-measures",
+      "sourceLabelEn": "GDP impact",
+      "sourceNote": "[추출 완료] CCDR Figure 5에서 시나리오 2종 × 2030·2040 시점의 기준선 대비 GDP 변화율을 추출. 개혁이 동반되지 않으면 GDP가 기준선 대비 감소(2040년 -2.2%)하나, 지원조치를 병행하면 오히려 증가(+3.3%)한다는 것이 CCDR의 핵심 메시지. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceProvenance": {
+        "elementId": "B-014",
+        "indicatorId": "B-014_gdp_impact_nzp_with_measures",
+        "sourceFileDecoded": "B-014_World Bank CCDR(Country Climate and Development) 내 '탄소세 시뮬레이션 결과(배출감소율, GDP 영향, 세수 효과).xlsx",
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2ff22836a17a|십억 USD",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "누적 추가 세수",
+      "indicatorId": "B-014_revenue_cumulative",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2ff22836a17a",
+        "labelKo": "누적 추가 세수",
+        "unit": "십억 USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-2ff22836a17a|십억 USD||B-014_revenue_cumulative",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceLabel": "누적 추가 세수",
+      "sourceLabelEn": "Cumulative additional fiscal revenue",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceProvenance": {
+        "elementId": "B-014",
+        "indicatorId": "B-014_revenue_cumulative",
+        "sourceFileDecoded": "B-014_World Bank CCDR(Country Climate and Development) 내 '탄소세 시뮬레이션 결과(배출감소율, GDP 영향, 세수 효과).xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-3a9a86388734|% of GDP/yr",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "연간 세수(GDP 대비) (범위 상한)",
+      "indicatorId": "B-014_revenue_gdp_share_max",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3a9a86388734",
+        "labelKo": "연간 세수(GDP 대비) (범위 상한)",
+        "unit": "% of GDP/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-3a9a86388734|% of GDP/yr||B-014_revenue_gdp_share_max",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceLabel": "연간 세수(GDP 대비) (범위 상한)",
+      "sourceLabelEn": "Annual revenue (% of GDP)",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceProvenance": {
+        "elementId": "B-014",
+        "indicatorId": "B-014_revenue_gdp_share_max",
+        "sourceFileDecoded": "B-014_World Bank CCDR(Country Climate and Development) 내 '탄소세 시뮬레이션 결과(배출감소율, GDP 영향, 세수 효과).xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-ca151feccf73|% of GDP/yr",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "연간 세수(GDP 대비) (범위 하한)",
+      "indicatorId": "B-014_revenue_gdp_share_min",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ca151feccf73",
+        "labelKo": "연간 세수(GDP 대비) (범위 하한)",
+        "unit": "% of GDP/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-ca151feccf73|% of GDP/yr||B-014_revenue_gdp_share_min",
+      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceLabel": "연간 세수(GDP 대비) (범위 하한)",
+      "sourceLabelEn": "Annual revenue (% of GDP)",
+      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간",
+      "sourceProvenance": {
+        "elementId": "B-014",
+        "indicatorId": "B-014_revenue_gdp_share_min",
+        "sourceFileDecoded": "B-014_World Bank CCDR(Country Climate and Development) 내 '탄소세 시뮬레이션 결과(배출감소율, GDP 영향, 세수 효과).xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 2,
+      "key": "measure-bf20bb336833",
+      "labelKo": "GDP 영향",
+      "recordCount": 4,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-f3fb8b4b017f",
+      "labelKo": "권고 탄소가격 경로",
+      "recordCount": 2,
+      "unit": "USD/tCO₂e",
+      "unitFamily": "emissions"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-2ff22836a17a",
+      "labelKo": "누적 추가 세수",
+      "recordCount": 1,
+      "unit": "십억 USD",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-195d31a84a4c",
+      "labelKo": "배출 감소율",
+      "recordCount": 4,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-3a9a86388734",
+      "labelKo": "연간 세수(GDP 대비) (범위 상한)",
+      "recordCount": 1,
+      "unit": "% of GDP/yr",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-ca151feccf73",
+      "labelKo": "연간 세수(GDP 대비) (범위 하한)",
+      "recordCount": 1,
+      "unit": "% of GDP/yr",
+      "unitFamily": "percent"
+    }
+  ],
+  "observationCount": 13,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

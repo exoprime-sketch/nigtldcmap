@@ -1,0 +1,259 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 8,
+      "values": [
+        "검증",
+        "대상",
+        "등록부",
+        "등록부(레지스트리) 보유 여부",
+        "보고",
+        "인벤토리",
+        "제도",
+        "탄소시장"
+      ]
+    },
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2026"
+      ]
+    }
+  ],
+  "elementId": "E-007",
+  "entityCount": 19,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 6,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-9b267d3219bf|제출 여부(제출/미제출)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "BTR(격년투명성보고서) 제출 이력",
+      "indicatorId": "E-007_btr_submission",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9b267d3219bf",
+        "labelKo": "BTR(격년투명성보고서) 제출 이력",
+        "unit": "제출 여부(제출/미제출)",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-9b267d3219bf|제출 여부(제출/미제출)||E-007_btr_submission",
+      "sourceCaveat": "2026-08-14 기준 BTR1 미제출, 최신 제출문서는 BUR3(2021-04-16). GEF 지원으로 BTR1 준비 중",
+      "sourceLabel": "BTR(격년투명성보고서) 제출 이력",
+      "sourceLabelEn": "Biennial Transparency Report (BTR) submission status",
+      "sourceNote": "라이선스·최종갱신일·담당자·검증자 미확인(M06).",
+      "sourceProvenance": {
+        "elementId": "E-007",
+        "indicatorId": "E-007_btr_submission",
+        "sourceFileDecoded": "E-007_온실가스 산정 MRV체계.xlsx",
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a0020d1f09fb|유무(Y/N)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "CBIT(투명성역량강화이니셔티브) 지원 수혜 여부",
+      "indicatorId": "E-007_cbit_support",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a0020d1f09fb",
+        "labelKo": "CBIT(투명성역량강화이니셔티브) 지원 수혜 여부",
+        "unit": "유무(Y/N)",
+        "unitFamily": "boolean"
+      },
+      "seriesKey": "measure-a0020d1f09fb|유무(Y/N)||E-007_cbit_support",
+      "sourceCaveat": "원본 요약행이 제시한 유일한 출처 URL(GEF 프로젝트 페이지)에 직접 대응하는 지표.",
+      "sourceLabel": "CBIT(투명성역량강화이니셔티브) 지원 수혜 여부",
+      "sourceLabelEn": "CBIT support received",
+      "sourceNote": "라이선스·최종갱신일·담당자·검증자 미확인(M06).",
+      "sourceProvenance": {
+        "elementId": "E-007",
+        "indicatorId": "E-007_cbit_support",
+        "sourceFileDecoded": "E-007_온실가스 산정 MRV체계.xlsx",
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-303c74128939|등급(Tier)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "GHG 인벤토리 작성 역량(Tier)",
+      "indicatorId": "E-007_inventory_tier",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-303c74128939",
+        "labelKo": "GHG 인벤토리 작성 역량(Tier)",
+        "unit": "등급(Tier)",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-303c74128939|등급(Tier)||E-007_inventory_tier",
+      "sourceCaveat": "①일부 근거 URL이 1차 관보·법령 원문이 아닌 법률DB(thuvienphapluat, climate-laws)·언론(baodautu, bnews, vietstock)·회계법인 자료(Andersen) 등 2차 출처. ②law·decree 기반 정성 지표로 단위·수치가 없어 value는 범주값(Y/미제출 등)으로 기재.",
+      "sourceLabel": "GHG 인벤토리 작성 역량(Tier)",
+      "sourceLabelEn": "GHG inventory compilation capacity (IPCC Tier level)",
+      "sourceNote": "value 미채택(M10): 원본 요약행 \"NP(원천 미제공)\"와 상세행의 BUR3 부문별 Tier1~2 근거가 상충하여 채택 미결. 라이선스·최종갱신일·담당자 미확인(M06).",
+      "sourceProvenance": {
+        "elementId": "E-007",
+        "indicatorId": "E-007_inventory_tier",
+        "sourceFileDecoded": "E-007_온실가스 산정 MRV체계.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-b2b62b29699a|건(제도·근거 문서)",
+      "dimensionLabels": {
+        "category": "근거 문서 목록"
+      },
+      "dimensions": {
+        "category": "근거 문서 목록"
+      },
+      "displayLabel": "MRV 제도·근거 문서 목록",
+      "indicatorId": "E-007_mrv_institution",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b2b62b29699a",
+        "labelKo": "MRV 제도",
+        "unit": "건(제도·근거 문서)",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-b2b62b29699a|건(제도·근거 문서)|category=근거 문서 목록|E-007_mrv_institution",
+      "sourceCaveat": null,
+      "sourceLabel": "MRV 제도·근거 문서 목록",
+      "sourceLabelEn": "GHG MRV legal and institutional basis (record list)",
+      "sourceNote": "공식 등록 검증기관 명단 1건 접근 제한(M02, 원본 \"CF\" 표기). 라이선스·최종갱신일·담당자·검증자 미확인(M06).",
+      "sourceProvenance": {
+        "elementId": "E-007",
+        "indicatorId": "E-007_mrv_institution",
+        "sourceFileDecoded": "E-007_온실가스 산정 MRV체계.xlsx",
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-ce474baa08af|유무(Y/N)",
+      "dimensionLabels": {
+        "category": "등록부(레지스트리) 보유 여부"
+      },
+      "dimensions": {
+        "category": "등록부(레지스트리) 보유 여부"
+      },
+      "displayLabel": "국가 인벤토리·등록부(레지스트리) 보유 여부",
+      "indicatorId": "E-007_national_registry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ce474baa08af",
+        "labelKo": "국가 인벤토리",
+        "unit": "유무(Y/N)",
+        "unitFamily": "boolean"
+      },
+      "seriesKey": "measure-ce474baa08af|유무(Y/N)|category=등록부(레지스트리) 보유 여부|E-007_national_registry",
+      "sourceCaveat": "국가등록시스템 2026-03-30 발효 가동, 세금코드 기반 1기관 1계정. 근거 URL이 언론 보도 ①1차 관보·법령 원문이 아닌 법률DB(thuvienphapluat, climate-laws)·언론(baodautu, bnews, vietstock)·회계법인 자료(Andersen) 등 2차 출처 ②law·decree 기반 정성 지표로 단위·수치가 없어 value는 범주값(Y/미제출 등)으로 기재.",
+      "sourceLabel": "국가 인벤토리·등록부(레지스트리) 보유 여부",
+      "sourceLabelEn": "National GHG inventory system / registry in place",
+      "sourceNote": "라이선스·최종갱신일·담당자·검증자 미확인(M06).",
+      "sourceProvenance": {
+        "elementId": "E-007",
+        "indicatorId": "E-007_national_registry",
+        "sourceFileDecoded": "E-007_온실가스 산정 MRV체계.xlsx",
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-78d6bb5d837d|유무(Y/N)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "제3자 검증 체계 보유 여부",
+      "indicatorId": "E-007_third_party_verification",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-78d6bb5d837d",
+        "labelKo": "제3자 검증 체계 보유 여부",
+        "unit": "유무(Y/N)",
+        "unitFamily": "boolean"
+      },
+      "seriesKey": "measure-78d6bb5d837d|유무(Y/N)||E-007_third_party_verification",
+      "sourceCaveat": "검증기관 자격요건(UNFCCC 인정 / TCVN ISO 14065 / 심사교육 이수 중 1) 및 검증 의무주기(할당대상 2027년부터 연 1회)는 1.2_entity 시트 참조.",
+      "sourceLabel": "제3자 검증 체계 보유 여부",
+      "sourceLabelEn": "Third-party verification system in place",
+      "sourceNote": "value 미채택(M10): 원본 요약행 \"미확보\"와 상세행 \"존재(Decree 06/2022 제14조 등록제)\"가 상충하여 채택 미결. 등록 검증기관 공식 명단은 접근 제한(M02, 1.2_entity 참조). 라이선스·담당자 미확인(M06).",
+      "sourceProvenance": {
+        "elementId": "E-007",
+        "indicatorId": "E-007_third_party_verification",
+        "sourceFileDecoded": "E-007_온실가스 산정 MRV체계.xlsx",
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-9b267d3219bf",
+      "labelKo": "BTR(격년투명성보고서) 제출 이력",
+      "recordCount": 1,
+      "unit": "제출 여부(제출/미제출)",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-a0020d1f09fb",
+      "labelKo": "CBIT(투명성역량강화이니셔티브) 지원 수혜 여부",
+      "recordCount": 1,
+      "unit": "유무(Y/N)",
+      "unitFamily": "boolean"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-303c74128939",
+      "labelKo": "GHG 인벤토리 작성 역량(Tier)",
+      "recordCount": 1,
+      "unit": "등급(Tier)",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-b2b62b29699a",
+      "labelKo": "MRV 제도",
+      "recordCount": 0,
+      "unit": "건(제도·근거 문서)",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-ce474baa08af",
+      "labelKo": "국가 인벤토리",
+      "recordCount": 1,
+      "unit": "유무(Y/N)",
+      "unitFamily": "boolean"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-78d6bb5d837d",
+      "labelKo": "제3자 검증 체계 보유 여부",
+      "recordCount": 1,
+      "unit": "유무(Y/N)",
+      "unitFamily": "boolean"
+    }
+  ],
+  "observationCount": 5,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}
