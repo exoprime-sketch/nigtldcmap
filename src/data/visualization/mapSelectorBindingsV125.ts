@@ -47,7 +47,7 @@ type MapSelectorBindingV125 = {
   elementOnly?: boolean;
 };
 
-const A024_LINE_MEASURE_V125 = "measure-d30e19e20b62";
+export const A024_LINE_MEASURE_V125 = "measure-d30e19e20b62";
 
 /**
  * This is the checked, map-facing projection of the generated V125 semantic

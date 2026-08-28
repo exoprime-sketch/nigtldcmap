@@ -69,6 +69,12 @@ export interface MapViewState {
   layerOpacities: Record<string, number>;
   layerYears: Record<string, number | null>;
   focusLayerKey: string | null;
+  /** V126 public workspace: at most one dataset drives analysis and legend. */
+  primaryLayerId: string | null;
+  /** V126 public workspace: at most two lower-priority reference datasets. */
+  contextLayerIds: string[];
+  /** Optional deterministic public workspace preset restored from the URL. */
+  mapPresetId: string | null;
 }
 
 export const DEFAULT_MAP_VIEW_STATE: MapViewState = {
@@ -89,6 +95,9 @@ export const DEFAULT_MAP_VIEW_STATE: MapViewState = {
   layerOpacities: {},
   layerYears: {},
   focusLayerKey: null,
+  primaryLayerId: null,
+  contextLayerIds: [],
+  mapPresetId: null,
 };
 
 const MAP_LAYER_IDS = new Set<MapLayerId>([
@@ -305,6 +314,40 @@ export function parseMapViewState(params: URLSearchParams): MapViewState {
       ? normalizedFocusParam
       : normalizedActiveKeys[normalizedActiveKeys.length - 1] ?? null;
 
+  const primaryParam = params.get("primaryLayer");
+  const normalizedPrimaryParam = primaryParam
+    ? normalizeModernElementMapKey(primaryParam, countryIso3) ?? primaryParam
+    : null;
+  const primaryLayerId =
+    normalizedPrimaryParam &&
+    isValidCatalogKey(normalizedPrimaryParam, countryIso3)
+      ? normalizedPrimaryParam
+      : focusLayerKey;
+  const explicitContextIds = uniqueValidKeys(
+    (params.get("contextLayers") || "").split(","),
+    countryIso3
+  );
+  const contextLayerIds = (
+    params.has("contextLayers")
+      ? explicitContextIds
+      : normalizedActiveKeys.filter((key) => key !== primaryLayerId)
+  )
+    .filter((key) => key !== primaryLayerId)
+    .slice(0, 2);
+  const roleActiveLayerKeys = primaryLayerId
+    ? [primaryLayerId, ...contextLayerIds]
+    : [];
+  const mapPresetParam = params.get("mapPreset");
+  const mapPresetId = new Set([
+    "POWER_INFRASTRUCTURE",
+    "RENEWABLE_PLANNING",
+    "FOREST_CHANGE",
+    "CLIMATE_VULNERABILITY",
+    "CLIMATE_FINANCE_PROJECTS",
+  ]).has(mapPresetParam || "")
+    ? mapPresetParam
+    : null;
+
   return {
     layer,
     overlay,
@@ -331,9 +374,12 @@ export function parseMapViewState(params: URLSearchParams): MapViewState {
         ? layerOpacities[`point:${policyOverlay}`] ??
           DEFAULT_MAP_VIEW_STATE.policyOpacity
         : DEFAULT_MAP_VIEW_STATE.policyOpacity,
-    activeLayerKeys: normalizedActiveKeys,
+    activeLayerKeys: roleActiveLayerKeys,
     layerOpacities,
     layerYears,
-    focusLayerKey,
+    focusLayerKey: primaryLayerId,
+    primaryLayerId,
+    contextLayerIds,
+    mapPresetId,
   };
 }

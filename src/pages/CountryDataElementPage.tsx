@@ -20,6 +20,7 @@ import {
   formatValueV121,
 } from "../utils/vietnamActualV121";
 import { publicTextV126 } from "../data/visualization/publicFieldPolicyV126";
+import { A024_LINE_MEASURE_V125 } from "../data/visualization/mapSelectorBindingsV125";
 import CountryElementVisualizationV123 from "../components/data/CountryDataFullPreviewV52";
 import "../styles/country-data-platform-v122.css";
 
@@ -767,6 +768,10 @@ export default function CountryDataElementPage({
 
   const observations = hasPopulatedRows ? bundle?.observations || [] : [];
   const entities = hasPopulatedRows ? bundle?.entities || [] : [];
+  const mapSelectionUnavailableReason =
+    elementId === "A-024" && selectorState.measure !== A024_LINE_MEASURE_V125
+      ? "선택한 전력 접근성 지표에는 공개 공간자료가 없어 지도에 연결하지 않습니다. 데이터 지도에서 베트남 송전망을 별도로 분석할 수 있습니다."
+      : "";
   const latestPopulatedYear = latestPopulatedYearV126(observations, entities);
 
   if (!elementId) {
@@ -896,19 +901,25 @@ export default function CountryDataElementPage({
                 </label>
               )}
               {meta.element.mapFeatureCount > 0 && (
-                <button
-                  type="button"
-                  className="cdp-button cdp-button--secondary"
-                  onClick={() =>
-                    onOpenMapElement(
-                      elementId,
-                      provider.countryIso3,
-                      selectorState
-                    )
-                  }
-                >
-                  지도에서 보기
-                </button>
+                <div className="cdp-detail-map-action">
+                  <button
+                    type="button"
+                    className="cdp-button cdp-button--secondary"
+                    disabled={Boolean(mapSelectionUnavailableReason)}
+                    onClick={() =>
+                      onOpenMapElement(
+                        elementId,
+                        provider.countryIso3,
+                        selectorState
+                      )
+                    }
+                  >
+                    지도에서 보기
+                  </button>
+                  {mapSelectionUnavailableReason && (
+                    <span role="note">{mapSelectionUnavailableReason}</span>
+                  )}
+                </div>
               )}
               {meta.element.downloadableRecordCount > 0 && (
                 <button

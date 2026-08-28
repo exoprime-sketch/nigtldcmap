@@ -93,6 +93,9 @@ export default function SemanticArchetypePreviewV125({
   const explicitMeasureIsValid = measureOptions.some(
     (measure) => measure.key === selectorState.measure
   );
+  const explicitMeasureIsKnown = contract.measures.some(
+    (measure) => measure.key === selectorState.measure
+  );
   const populatedDefaultMeasure = measureOptions.find((measure) =>
     semanticRows.some(
       (row) =>
@@ -101,7 +104,7 @@ export default function SemanticArchetypePreviewV125({
         isPopulatedSemanticRowV125(row)
     )
   );
-  const measureKey = explicitMeasureIsValid
+  const measureKey = explicitMeasureIsValid || explicitMeasureIsKnown
     ? (selectorState.measure as string)
     : populatedDefaultMeasure?.key || measureOptions[0]?.key || null;
   const measureRows = semanticRows.filter(
@@ -145,7 +148,9 @@ export default function SemanticArchetypePreviewV125({
     )
   );
   const period =
-    selectorState.period && periods.includes(selectorState.period)
+    measureRows.length === 0
+      ? selectorState.period
+      : selectorState.period && periods.includes(selectorState.period)
       ? selectorState.period
       : populatedDefaultPeriod || periods[0] || null;
   const periodContextRows = measureContextRows.filter(
@@ -164,7 +169,9 @@ export default function SemanticArchetypePreviewV125({
     )
   );
   const year =
-    selectorState.year !== null && years.includes(selectorState.year)
+    measureRows.length === 0
+      ? selectorState.year
+      : selectorState.year !== null && years.includes(selectorState.year)
       ? selectorState.year
       : populatedDefaultYear ?? years[0] ?? null;
   const dimensionFilteredRows = periodContextRows;
@@ -175,12 +182,13 @@ export default function SemanticArchetypePreviewV125({
       sex,
       year,
       period,
-      dimensions,
+      dimensions:
+        measureRows.length === 0 ? selectorState.dimensions : dimensions,
     };
     if (!dataFinderSelectorStatesEqualV125(next, selectorState)) {
       onSelectorStateChange(next);
     }
-  }, [dimensions, measureKey, onSelectorStateChange, period, selectorState, sex, year]);
+  }, [dimensions, measureKey, measureRows.length, onSelectorStateChange, period, selectorState, sex, year]);
 
   if (contract.primaryRenderer === "status-only") {
     return (

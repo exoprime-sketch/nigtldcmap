@@ -195,6 +195,9 @@ function mapViewStatesEqual(a: MapViewState, b: MapViewState): boolean {
     a.overlayOpacity !== b.overlayOpacity ||
     a.policyOpacity !== b.policyOpacity ||
     a.focusLayerKey !== b.focusLayerKey ||
+    a.primaryLayerId !== b.primaryLayerId ||
+    a.mapPresetId !== b.mapPresetId ||
+    a.contextLayerIds.length !== b.contextLayerIds.length ||
     a.activeLayerKeys.length !== b.activeLayerKeys.length
   ) {
     return false;
@@ -209,6 +212,10 @@ function mapViewStatesEqual(a: MapViewState, b: MapViewState): boolean {
     if ((a.layerYears[key] ?? null) !== (b.layerYears[key] ?? null)) {
       return false;
     }
+  }
+
+  for (let index = 0; index < a.contextLayerIds.length; index += 1) {
+    if (a.contextLayerIds[index] !== b.contextLayerIds[index]) return false;
   }
 
   return true;
@@ -255,6 +262,21 @@ function appendMapViewParams(
       publicMapStateKeyV122(state.focusLayerKey, state.countryIso3)
     );
   }
+  if (state.primaryLayerId) {
+    params.set(
+      "primaryLayer",
+      publicMapStateKeyV122(state.primaryLayerId, state.countryIso3)
+    );
+  }
+  params.set(
+    "contextLayers",
+    state.contextLayerIds.length
+      ? state.contextLayerIds
+          .map((key) => publicMapStateKeyV122(key, state.countryIso3))
+          .join(",")
+      : "none"
+  );
+  if (state.mapPresetId) params.set("mapPreset", state.mapPresetId);
   if (state.activeLayerKeys.length) {
     params.set(
       "layerYears",
@@ -731,6 +753,9 @@ export default function App() {
         layerOpacities: {},
         layerYears: {},
         focusLayerKey: null,
+        primaryLayerId: null,
+        contextLayerIds: [],
+        mapPresetId: null,
       }));
     }
 
@@ -837,6 +862,9 @@ export default function App() {
         [elementId]: nextSelectorState.year ?? current.layerYears[elementId] ?? null,
       },
       focusLayerKey: elementId,
+      primaryLayerId: elementId,
+      contextLayerIds: [],
+      mapPresetId: null,
     }));
     setView("map");
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -1168,6 +1196,9 @@ export default function App() {
                   layerOpacities: {},
                   layerYears: {},
                   focusLayerKey: null,
+                  primaryLayerId: null,
+                  contextLayerIds: [],
+                  mapPresetId: null,
                 }));
                 setView("country");
                 window.scrollTo({ top: 0, behavior: "smooth" });
@@ -1227,6 +1258,9 @@ export default function App() {
                 layerOpacities: {},
                 layerYears: {},
                 focusLayerKey: null,
+                primaryLayerId: null,
+                contextLayerIds: [],
+                mapPresetId: null,
               }));
               setView("map");
               window.scrollTo({ top: 0, behavior: "smooth" });
@@ -1268,6 +1302,9 @@ export default function App() {
                 layerOpacities: {},
                 layerYears: {},
                 focusLayerKey: null,
+                primaryLayerId: null,
+                contextLayerIds: [],
+                mapPresetId: null,
               }));
               setView("country");
               window.scrollTo({ top: 0, behavior: "smooth" });
@@ -1282,6 +1319,9 @@ export default function App() {
                 layerOpacities: {},
                 layerYears: {},
                 focusLayerKey: null,
+                primaryLayerId: null,
+                contextLayerIds: [],
+                mapPresetId: null,
               }));
               setView("map");
               window.scrollTo({ top: 0, behavior: "smooth" });
