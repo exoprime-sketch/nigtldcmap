@@ -63,7 +63,7 @@ export const PUBLIC_MAP_WORKSPACE_PRESETS_V126: readonly [
   {
     id: "POWER_INFRASTRUCTURE",
     labelKo: "전력 인프라",
-    descriptionKo: "송전망을 중심으로 발전소 위치를 함께 확인합니다.",
+    descriptionKo: "송전망 + 발전소",
     primary: { elementId: "A-024", variable: "all", period: "2016" },
     context: [
       { elementId: "A-023", variable: "locations", period: "2026" },
@@ -72,8 +72,7 @@ export const PUBLIC_MAP_WORKSPACE_PRESETS_V126: readonly [
   {
     id: "RENEWABLE_PLANNING",
     labelKo: "재생에너지 계획",
-    descriptionKo:
-      "지역별 재생에너지 계획을 송전망과 발전소 현황에 맞춰 살펴봅니다.",
+    descriptionKo: "지역별 계획 + 송전망·발전소",
     primary: {
       elementId: "C-016",
       variable: "dmt-mai-nha",
@@ -87,8 +86,7 @@ export const PUBLIC_MAP_WORKSPACE_PRESETS_V126: readonly [
   {
     id: "FOREST_CHANGE",
     labelKo: "산림 변화",
-    descriptionKo:
-      "연간 산림손실을 산림 면적과 산림 탄소 정보와 함께 비교합니다.",
+    descriptionKo: "산림손실 + 산림면적·탄소",
     primary: {
       elementId: "B-033",
       variable: "annual-tree-cover-loss",
@@ -106,8 +104,7 @@ export const PUBLIC_MAP_WORKSPACE_PRESETS_V126: readonly [
   {
     id: "CLIMATE_VULNERABILITY",
     labelKo: "기후 취약성",
-    descriptionKo:
-      "지역 취약성을 기후예산과 적응사업의 공개 위치 정보와 함께 검토합니다.",
+    descriptionKo: "취약성 + 기후예산·적응사업",
     primary: { elementId: "B-021", variable: "gvi-6", period: "2023" },
     context: [
       {
@@ -121,8 +118,7 @@ export const PUBLIC_MAP_WORKSPACE_PRESETS_V126: readonly [
   {
     id: "CLIMATE_FINANCE_PROJECTS",
     labelKo: "기후재원 사업",
-    descriptionKo:
-      "국제협력·기후재원 사업을 탄소크레딧 및 적응기금 사업과 함께 살펴봅니다.",
+    descriptionKo: "국제협력 + 탄소크레딧·적응기금",
     primary: { elementId: "D-023", variable: "locations", period: "2026" },
     context: [
       { elementId: "C-025", variable: "locations", period: "2026" },

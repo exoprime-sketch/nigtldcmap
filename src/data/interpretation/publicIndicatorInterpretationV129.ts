@@ -1,0 +1,994 @@
+export type PublicIndicatorDirectionV129 =
+  | "higher-better"
+  | "higher-worse"
+  | "lower-rank-better"
+  | "neutral"
+  | "context-dependent";
+
+export type PublicIndicatorBenchmarkTypeV129 =
+  | "official-band"
+  | "global-percentile"
+  | "national-percentile"
+  | "group-rank"
+  | "none";
+
+export type PublicIndicatorInterpretationV129 = {
+  elementId: string;
+  variableKey?: string;
+  indicatorIdPattern?: string;
+  explanationRequired: boolean;
+  publicName: string;
+  publicUnit?: string;
+  scaleApplicable?: boolean;
+  meaningBullets: string[];
+  scale?: {
+    minimum: number;
+    maximum: number;
+    minimumLabel: string;
+    maximumLabel: string;
+  };
+  direction: PublicIndicatorDirectionV129;
+  directionLabel: string;
+  officialBands?: Array<{
+    minimum: number;
+    maximum: number;
+    label: string;
+  }> | null;
+  benchmarkType: PublicIndicatorBenchmarkTypeV129;
+  benchmarkScope?: string;
+  aggregationLevel?: string;
+  aggregationNotice?: string;
+  numerator?: string;
+  denominator?: string;
+  sourceOrganization?: string;
+  sourceUrl?: string;
+};
+
+const GDL_SOURCE_V129 = "Global Data Lab";
+const GDL_URL_V129 = "https://globaldatalab.org/gvi/";
+const GDL_REGION_NOTICE_V129 =
+  "GDL 6개 권역의 값을 해당 성·시에 표시하며, 성 단위 독립 추정값이 아닙니다.";
+
+function b021VariableV129(
+  variableKey: string,
+  publicName: string,
+  publicUnit: string,
+  meaningBullets: string[],
+  direction: PublicIndicatorDirectionV129,
+  directionLabel: string,
+  options: Partial<Pick<
+    PublicIndicatorInterpretationV129,
+    | "scale"
+    | "numerator"
+    | "denominator"
+    | "indicatorIdPattern"
+    | "benchmarkType"
+    | "benchmarkScope"
+  >> = {}
+): PublicIndicatorInterpretationV129 {
+  return {
+    elementId: "B-021",
+    variableKey,
+    explanationRequired: true,
+    publicName,
+    publicUnit,
+    meaningBullets,
+    direction,
+    directionLabel,
+    officialBands: null,
+    benchmarkType: "none",
+    benchmarkScope: "GDL 6개 권역 간 비교",
+    aggregationLevel: "GDL 6개 권역",
+    aggregationNotice: GDL_REGION_NOTICE_V129,
+    sourceOrganization: GDL_SOURCE_V129,
+    sourceUrl: GDL_URL_V129,
+    ...options,
+  };
+}
+
+function reviewedDecisionV129(
+  elementId: string,
+  publicName: string,
+  explanationRequired = false
+): PublicIndicatorInterpretationV129 {
+  return {
+    elementId,
+    explanationRequired,
+    publicName,
+    meaningBullets: [],
+    direction: "neutral",
+    directionLabel: explanationRequired
+      ? "선택한 측정항목의 정의에 따라 해석"
+      : "직접 측정값으로 별도 지수 해석이 필요하지 않음",
+    officialBands: null,
+    benchmarkType: "none",
+  };
+}
+
+/**
+ * Reviewed public explanations only. Runtime components must never derive
+ * meaning or direction from source notes. Entries intentionally omit official
+ * bands when the source does not publish a reviewed classification.
+ */
+export const PUBLIC_INDICATOR_INTERPRETATIONS_V129: readonly PublicIndicatorInterpretationV129[] =
+  Object.freeze([
+    {
+      elementId: "A-001",
+      explanationRequired: true,
+      publicName: "부패인식지수(CPI)",
+      publicUnit: "점(시기별 척도)",
+      scaleApplicable: false,
+      meaningBullets: [
+        "공공부문의 부패가 얼마나 크게 인식되는지 보여줍니다.",
+        "현재 0–100 척도에서는 점수가 높을수록 청렴하게 인식됩니다.",
+        "2011년 이전 0–10 척도와 이후 0–100 척도는 화면에 표시된 단위를 확인해야 합니다.",
+      ],
+      direction: "higher-better",
+      directionLabel: "점수가 높을수록 공공부문이 더 청렴하게 인식됨",
+      officialBands: null,
+      benchmarkType: "group-rank",
+      benchmarkScope: "동일 연도 조사 대상국",
+    },
+    {
+      elementId: "A-002",
+      explanationRequired: true,
+      publicName: "정책·제도 역량(CPIA)",
+      publicUnit: "점",
+      meaningBullets: [
+        "경제관리, 구조정책, 사회적 포용, 공공부문 관리 역량을 평가합니다.",
+        "1–6점 척도이며 점수가 높을수록 정책·제도 수준이 높음을 뜻합니다.",
+        "종합점수와 클러스터·세부항목은 같은 척도이지만 평가 수준이 다릅니다.",
+      ],
+      scale: {
+        minimum: 1,
+        maximum: 6,
+        minimumLabel: "낮음",
+        maximumLabel: "높음",
+      },
+      direction: "higher-better",
+      directionLabel: "점수가 높을수록 정책·제도 역량이 높음",
+      officialBands: null,
+      benchmarkType: "none",
+      sourceOrganization: "World Bank",
+    },
+    {
+      elementId: "A-014",
+      explanationRequired: true,
+      publicName: "SDG 지수 점수",
+      publicUnit: "점",
+      meaningBullets: [
+        "지속가능발전목표 달성 성과를 여러 지표로 종합한 점수입니다.",
+        "점수가 높을수록 전체 SDG 달성 수준이 높음을 뜻합니다.",
+      ],
+      scale: { minimum: 0, maximum: 100, minimumLabel: "낮음", maximumLabel: "높음" },
+      direction: "higher-better",
+      directionLabel: "높을수록 SDG 달성 수준이 높음",
+      officialBands: null,
+      benchmarkType: "group-rank",
+      benchmarkScope: "동일 발간연도 평가 대상국",
+    },
+    {
+      elementId: "A-031",
+      explanationRequired: true,
+      publicName: "물류성과지수(LPI)",
+      publicUnit: "점",
+      meaningBullets: [
+        "통관, 인프라, 국제운송, 물류역량, 추적성, 정시성을 종합합니다.",
+        "1–5점 척도에서 점수가 높을수록 물류 성과가 좋음을 뜻합니다.",
+      ],
+      scale: { minimum: 1, maximum: 5, minimumLabel: "낮음", maximumLabel: "높음" },
+      direction: "higher-better",
+      directionLabel: "높을수록 물류 성과가 좋음",
+      officialBands: null,
+      benchmarkType: "group-rank",
+      benchmarkScope: "동일 조사연도 평가 대상국",
+    },
+    {
+      elementId: "B-008",
+      explanationRequired: true,
+      publicName: "해수면 상승 전망",
+      meaningBullets: [
+        "온실가스 경로와 시점에 따른 해수면 변화 전망입니다.",
+        "시나리오는 예측이 아니라 서로 다른 미래 경로를 가정한 결과입니다.",
+      ],
+      direction: "context-dependent",
+      directionLabel: "같은 기준선·시점·시나리오 안에서 해석",
+      officialBands: null,
+      benchmarkType: "none",
+    },
+    {
+      elementId: "B-010",
+      explanationRequired: true,
+      publicName: "기후리스크지수(CRI)",
+      meaningBullets: [
+        "극한기상으로 인한 피해 수준을 점수와 순위로 보여줍니다.",
+        "점수와 순위는 방향이 다르므로 화면에서 선택한 측정항목을 확인해야 합니다.",
+      ],
+      direction: "context-dependent",
+      directionLabel: "점수·순위를 구분해 해석",
+      officialBands: null,
+      benchmarkType: "group-rank",
+      benchmarkScope: "동일 보고서 평가 대상국",
+    },
+    {
+      elementId: "B-011",
+      explanationRequired: true,
+      publicName: "ND-GAIN 기후 취약성·준비도",
+      meaningBullets: [
+        "기후변화 취약성과 적응 투자를 활용할 준비도를 구분해 보여줍니다.",
+        "취약성은 낮을수록, 준비도와 종합점수는 높을수록 유리하여 항목별 방향을 확인해야 합니다.",
+      ],
+      direction: "context-dependent",
+      directionLabel: "취약성·준비도·종합점수의 방향이 다름",
+      officialBands: null,
+      benchmarkType: "group-rank",
+      benchmarkScope: "동일 연도 평가 대상국",
+    },
+    {
+      elementId: "B-013",
+      explanationRequired: true,
+      publicName: "CBAM 영향 지수",
+      meaningBullets: [
+        "탄소국경조정제도에 노출된 산업·무역 영향을 복수 항목으로 보여줍니다.",
+        "세부 지표마다 단위와 방향이 다를 수 있어 선택한 항목 기준으로 해석합니다.",
+      ],
+      direction: "context-dependent",
+      directionLabel: "선택한 영향 지표의 정의에 따라 해석",
+      officialBands: null,
+      benchmarkType: "none",
+    },
+    {
+      elementId: "B-017",
+      explanationRequired: true,
+      publicName: "물 스트레스 지수",
+      meaningBullets: [
+        "물 공급에 비해 물 수요가 얼마나 큰지 보여주는 상대적 압력 지표입니다.",
+        "값이 높을수록 물 스트레스가 크다는 뜻입니다.",
+      ],
+      direction: "higher-worse",
+      directionLabel: "높을수록 물 스트레스가 큼",
+      officialBands: null,
+      benchmarkType: "none",
+    },
+    {
+      elementId: "B-018",
+      explanationRequired: true,
+      publicName: "SSP GDP 전망",
+      meaningBullets: [
+        "공유사회경제경로(SSP)별 미래 GDP 가정값을 보여줍니다.",
+        "시나리오는 실제 예측값이 아니므로 동일 시나리오·가격 기준 안에서 비교합니다.",
+      ],
+      direction: "context-dependent",
+      directionLabel: "동일 시나리오와 가격 기준 안에서 해석",
+      officialBands: null,
+      benchmarkType: "none",
+    },
+    {
+      elementId: "B-019",
+      explanationRequired: true,
+      publicName: "SSP 인구 전망",
+      meaningBullets: [
+        "공유사회경제경로(SSP)별 미래 인구 가정값을 보여줍니다.",
+        "인구 증감은 좋고 나쁨을 단독으로 판정하는 점수가 아닙니다.",
+      ],
+      direction: "neutral",
+      directionLabel: "높고 낮음에 가치 판단을 부여하지 않음",
+      officialBands: null,
+      benchmarkType: "none",
+    },
+    {
+      elementId: "B-020",
+      explanationRequired: true,
+      publicName: "INFORM 복합 리스크 지수",
+      meaningBullets: [
+        "위험, 취약성, 대응역량 부족을 결합한 인도적 위기 리스크 지수입니다.",
+        "점수가 높을수록 복합 리스크가 크다는 뜻입니다.",
+      ],
+      scale: { minimum: 0, maximum: 10, minimumLabel: "낮은 리스크", maximumLabel: "높은 리스크" },
+      direction: "higher-worse",
+      directionLabel: "높을수록 복합 리스크가 큼",
+      officialBands: null,
+      benchmarkType: "none",
+    },
+    b021VariableV129(
+      "gvi-6",
+      "GVI 취약성 지수",
+      "0–100 지수",
+      [
+        "경제·교육·보건·성·인프라·거버넌스·인구 차원의 사회경제적 취약성을 종합합니다.",
+        "0은 취약성이 매우 낮고 100은 매우 높음을 뜻합니다.",
+        GDL_REGION_NOTICE_V129,
+      ],
+      "higher-worse",
+      "높을수록 사회경제적 취약성이 큼",
+      {
+        indicatorIdPattern: "^B-021_gvi_(?:national|subnational_)",
+        benchmarkType: "group-rank",
+        benchmarkScope: "베트남 GDL 6개 권역",
+        scale: {
+          minimum: 0,
+          maximum: 100,
+          minimumLabel: "취약성이 매우 낮음",
+          maximumLabel: "취약성이 매우 높음",
+        },
+      }
+    ),
+    b021VariableV129(
+      "1-gni",
+      "1인당 GNI(로그)",
+      "log(USD_2017 PPP)",
+      [
+        "2017년 PPP 기준 1인당 GNI에 자연로그를 적용한 값입니다.",
+        "값이 높을수록 소득 수준이 높지만 GVI 취약성을 단독으로 판정하지 않습니다.",
+        GDL_REGION_NOTICE_V129,
+      ],
+      "higher-better",
+      "높을수록 소득 여건이 높음",
+      { indicatorIdPattern: "^B-021_comp_lgnic_" }
+    ),
+    b021VariableV129(
+      "361901f103f6",
+      "기대수명",
+      "세",
+      [
+        "출생 시점에서 기대할 수 있는 평균 수명을 나타냅니다.",
+        "길수록 일반적으로 보건 여건이 양호하지만 취약성을 단독 판정하지 않습니다.",
+        GDL_REGION_NOTICE_V129,
+      ],
+      "context-dependent",
+      "긴 기대수명은 일반적으로 양호하지만 단독 판정은 금지",
+      { indicatorIdPattern: "^B-021_comp_lifexp_" }
+    ),
+    b021VariableV129(
+      "e7f52a81c079",
+      "도시화율",
+      "%",
+      [
+        "총인구 중 도시지역에 거주하는 인구의 비율입니다.",
+        "도시화율의 높고 낮음만으로 취약성을 판정하지 않습니다.",
+        GDL_REGION_NOTICE_V129,
+      ],
+      "context-dependent",
+      "지역 여건과 함께 해석",
+      {
+        indicatorIdPattern: "^B-021_comp_urban_",
+        numerator: "도시지역 거주 인구",
+        denominator: "총인구",
+      }
+    ),
+    b021VariableV129(
+      "c823a6adab58",
+      "부양비",
+      "%",
+      [
+        "생산가능인구에 비한 피부양인구의 비율입니다.",
+        "비율이 높을수록 생산가능인구의 부양 부담이 큽니다.",
+        GDL_REGION_NOTICE_V129,
+      ],
+      "higher-worse",
+      "높을수록 부양 부담이 큼",
+      {
+        indicatorIdPattern: "^B-021_comp_depratio_",
+        numerator: "0–14세와 65세 이상 인구",
+        denominator: "15–64세 인구",
+      }
+    ),
+    b021VariableV129(
+      "iwi-70",
+      "빈곤 가구 비율(IWI<70)",
+      "%",
+      [
+        "국제자산지수(IWI) 70 미만인 가구의 비율입니다.",
+        "비율이 높을수록 자산 기반의 빈곤 노출이 큽니다.",
+        GDL_REGION_NOTICE_V129,
+      ],
+      "higher-worse",
+      "높을수록 빈곤 가구 비율이 큼",
+      {
+        indicatorIdPattern: "^B-021_comp_iwipov70_",
+        numerator: "IWI 70 미만 가구",
+        denominator: "전체 가구",
+      }
+    ),
+    b021VariableV129(
+      "b9e9fdabb2df",
+      "상수도 보급 가구 비율",
+      "%",
+      [
+        "전체 가구 중 상수도를 이용할 수 있는 가구의 비율입니다.",
+        "비율이 높을수록 안전한 식수 접근 여건이 양호합니다.",
+        GDL_REGION_NOTICE_V129,
+      ],
+      "higher-better",
+      "높을수록 식수 접근 여건이 양호함",
+      {
+        indicatorIdPattern: "^B-021_comp_pipedwater_",
+        numerator: "상수도 보급 가구",
+        denominator: "전체 가구",
+      }
+    ),
+    b021VariableV129(
+      "gdi",
+      "성개발지수(GDI)",
+      "지수",
+      [
+        "남성과 여성의 인간개발 성과 격차를 나타내는 지수입니다.",
+        "1에 가까울수록 남녀 격차가 작지만, 1을 넘는 값을 더 좋다고 단순 정렬하지 않습니다.",
+        GDL_REGION_NOTICE_V129,
+      ],
+      "context-dependent",
+      "1에 가까울수록 남녀 격차가 작음",
+      { indicatorIdPattern: "^B-021_comp_sgdi_" }
+    ),
+    b021VariableV129(
+      "ac9d19fb3b52",
+      "전기 보급 가구 비율",
+      "%",
+      [
+        "전체 가구 중 전기를 이용할 수 있는 가구의 비율입니다.",
+        "비율이 높을수록 기초 에너지 접근 여건이 양호합니다.",
+        GDL_REGION_NOTICE_V129,
+      ],
+      "higher-better",
+      "높을수록 전력 접근 여건이 양호함",
+      {
+        indicatorIdPattern: "^B-021_comp_electr_",
+        numerator: "전기 보급 가구",
+        denominator: "전체 가구",
+      }
+    ),
+    b021VariableV129(
+      "sci",
+      "종합 지방부패지수(SCI)",
+      "지수",
+      [
+        "지역의 부패 수준을 종합한 거버넌스 구성지표입니다.",
+        "값이 높을수록 부패 수준이 높음을 뜻합니다.",
+        GDL_REGION_NOTICE_V129,
+      ],
+      "higher-worse",
+      "높을수록 부패 수준이 높음",
+      { indicatorIdPattern: "^B-021_comp_fullsci_" }
+    ),
+    b021VariableV129(
+      "25",
+      "평균 교육연수(25세 이상)",
+      "년",
+      [
+        "25세 이상 인구가 받은 교육 기간의 평균입니다.",
+        "길수록 일반적으로 교육 역량이 높지만 취약성을 단독으로 판정하지 않습니다.",
+        GDL_REGION_NOTICE_V129,
+      ],
+      "higher-better",
+      "높을수록 교육 이수 수준이 높음",
+      {
+        indicatorIdPattern: "^B-021_comp_edyr25_",
+        numerator: "25세 이상 인구의 총 교육연수",
+        denominator: "25세 이상 인구",
+      }
+    ),
+    b021VariableV129(
+      "5d51cd2a3a0c",
+      "휴대폰 보유 가구 비율",
+      "%",
+      [
+        "전체 가구 중 휴대폰을 보유한 가구의 비율입니다.",
+        "비율이 높을수록 통신 접근 여건이 양호합니다.",
+        GDL_REGION_NOTICE_V129,
+      ],
+      "higher-better",
+      "높을수록 통신 접근 여건이 양호함",
+      {
+        indicatorIdPattern: "^B-021_comp_cellphone_",
+        numerator: "휴대폰 보유 가구",
+        denominator: "전체 가구",
+      }
+    ),
+    {
+      elementId: "B-021",
+      variableKey: "semantic-forecast",
+      indicatorIdPattern: "^B-021_(?:gvi_projection|gvi_subindices|proj_)",
+      explanationRequired: true,
+      scaleApplicable: false,
+      publicName: "GVI 관련 전망·구성지표",
+      meaningBullets: [
+        "선택한 시나리오와 기간에 따른 GVI 관련 전망 또는 구성지표입니다.",
+        "전망값은 관측값이 아니며 같은 지표·단위·시나리오 안에서 비교합니다.",
+        "지표마다 높고 낮음의 의미가 달라 화면에 표시된 측정항목을 함께 확인합니다.",
+      ],
+      direction: "context-dependent",
+      directionLabel: "선택한 전망 구성지표의 정의와 단위에 따라 해석",
+      officialBands: null,
+      benchmarkType: "none",
+      aggregationLevel: "국가·시나리오",
+      aggregationNotice: "성 단위 값으로 해석하지 않습니다.",
+      sourceOrganization: GDL_SOURCE_V129,
+      sourceUrl: GDL_URL_V129,
+    },
+    {
+      elementId: "B-021",
+      variableKey: "semantic-components",
+      explanationRequired: true,
+      scaleApplicable: false,
+      publicName: "GVI 구성지표",
+      meaningBullets: [
+        "GVI를 구성하는 소득·교육·보건·인프라·거버넌스 관련 측정값입니다.",
+        "구성지표마다 단위와 높고 낮음의 의미가 달라 선택한 항목을 기준으로 해석합니다.",
+        GDL_REGION_NOTICE_V129,
+      ],
+      direction: "context-dependent",
+      directionLabel: "선택한 구성지표의 정의와 단위에 따라 해석",
+      officialBands: null,
+      benchmarkType: "none",
+      aggregationLevel: "GDL 6개 권역",
+      aggregationNotice: GDL_REGION_NOTICE_V129,
+      sourceOrganization: GDL_SOURCE_V129,
+      sourceUrl: GDL_URL_V129,
+    },
+    {
+      elementId: "B-045",
+      explanationRequired: true,
+      publicName: "글로벌 순위",
+      meaningBullets: [
+        "국제 평가에서 베트남의 상대적 위치를 보여줍니다.",
+        "순위 숫자가 작을수록 상위이며, 평가별 참가국 수가 다를 수 있습니다.",
+      ],
+      direction: "lower-rank-better",
+      directionLabel: "순위 숫자가 작을수록 상위",
+      officialBands: null,
+      benchmarkType: "group-rank",
+      benchmarkScope: "각 평가의 동일 연도 참가국",
+    },
+    {
+      elementId: "C-004",
+      explanationRequired: true,
+      publicName: "장기 배출·에너지 시나리오",
+      meaningBullets: [
+        "기준경로, 감축경로, 넷제로 경로의 장기 변화를 비교합니다.",
+        "시나리오는 서로 다른 정책·기술 가정을 두므로 같은 경로의 시점별 값만 연결합니다.",
+      ],
+      direction: "context-dependent",
+      directionLabel: "동일 측정항목·시나리오 안에서 해석",
+      officialBands: null,
+      benchmarkType: "none",
+    },
+    {
+      elementId: "C-018",
+      explanationRequired: true,
+      publicName: "중장기 에너지 전망",
+      meaningBullets: [
+        "전망 기관과 시나리오가 가정한 수요·설비·에너지 구성입니다.",
+        "서로 다른 기관·시나리오·단위의 값을 하나의 추세로 연결하지 않습니다.",
+      ],
+      direction: "context-dependent",
+      directionLabel: "동일 전망 기관·시나리오·단위 안에서 해석",
+      officialBands: null,
+      benchmarkType: "none",
+    },
+    {
+      elementId: "C-022",
+      explanationRequired: true,
+      publicName: "탄소시장 준비도",
+      meaningBullets: [
+        "탄소시장을 설계·운영하기 위한 제도와 기반을 항목별로 보여줍니다.",
+        "항목별 상태와 근거를 함께 확인하며 하나의 임의 점수로 바꾸지 않습니다.",
+      ],
+      direction: "context-dependent",
+      directionLabel: "항목별 상태와 근거로 판단",
+      officialBands: null,
+      benchmarkType: "none",
+    },
+    {
+      elementId: "D-005",
+      explanationRequired: true,
+      publicName: "기후예산 배분 비율",
+      publicUnit: "%",
+      meaningBullets: [
+        "기후변화 대응 지출이 적응·감축·동시기여에 어떻게 배분됐는지 보여줍니다.",
+        "각 비율은 선택한 예산 범위를 분모로 사용합니다.",
+        "분모와 보고서 판이 다른 값은 하나의 추세로 연결하지 않습니다.",
+      ],
+      direction: "context-dependent",
+      directionLabel: "선택한 예산 분모 안에서 배분 구조를 해석",
+      officialBands: null,
+      benchmarkType: "none",
+      denominator: "선택한 총 기후변화 지출·경상예산·공공 자본지출·부처 기후예산·성 단위 기후예산",
+    },
+    {
+      elementId: "D-013",
+      explanationRequired: true,
+      publicName: "녹색성장지수",
+      meaningBullets: [
+        "효율적·지속가능한 자원 이용, 자연자산 보호, 녹색 경제기회, 사회적 포용을 종합합니다.",
+        "점수가 높을수록 녹색성장 성과가 높음을 뜻합니다.",
+      ],
+      scale: { minimum: 0, maximum: 100, minimumLabel: "낮음", maximumLabel: "높음" },
+      direction: "higher-better",
+      directionLabel: "높을수록 녹색성장 성과가 높음",
+      officialBands: null,
+      benchmarkType: "group-rank",
+      benchmarkScope: "동일 발간연도 평가 대상국",
+    },
+    {
+      elementId: "E-010",
+      explanationRequired: true,
+      publicName: "R&D 투자·혁신 지수",
+      meaningBullets: [
+        "R&D 지출 비율과 글로벌 혁신지수를 구분해 보여줍니다.",
+        "비율·점수·순위는 단위와 방향이 다르므로 선택한 측정항목을 확인합니다.",
+      ],
+      direction: "context-dependent",
+      directionLabel: "R&D 비율·혁신점수·순위를 구분해 해석",
+      officialBands: null,
+      benchmarkType: "group-rank",
+      benchmarkScope: "혁신지수의 동일 연도 평가 대상국",
+    },
+    {
+      elementId: "A-015",
+      explanationRequired: true,
+      publicName: "SDG 세부지표 달성도",
+      publicUnit: "점",
+      meaningBullets: [
+        "각 SDG 세부지표를 0–100 범위로 정규화한 달성도입니다.",
+        "점수가 높을수록 해당 세부목표에 가까우며 서로 다른 원 단위의 값과 직접 비교하지 않습니다.",
+      ],
+      scale: { minimum: 0, maximum: 100, minimumLabel: "낮은 달성도", maximumLabel: "높은 달성도" },
+      direction: "higher-better",
+      directionLabel: "높을수록 해당 세부목표의 달성도가 높음",
+      officialBands: null,
+      benchmarkType: "none",
+    },
+    reviewedDecisionV129("A-024", "베트남 송전망"),
+    {
+      elementId: "A-033",
+      explanationRequired: true,
+      publicName: "정기선 해운 연결성 지수",
+      publicUnit: "지수",
+      meaningBullets: [
+        "국제 정기선 해운망에 얼마나 잘 연결되어 있는지 항만 기항과 서비스 여건을 종합합니다.",
+        "값이 높을수록 국제 해운 연결성이 높으며 같은 산출 기준의 분기값끼리 비교합니다.",
+      ],
+      direction: "higher-better",
+      directionLabel: "높을수록 국제 해운 연결성이 높음",
+      officialBands: null,
+      benchmarkType: "none",
+    },
+    {
+      elementId: "B-002",
+      explanationRequired: true,
+      publicName: "기후대 변화 시나리오",
+      publicUnit: "%",
+      meaningBullets: [
+        "기간과 온실가스 경로에 따라 열대기후가 차지하는 국토 비율을 비교합니다.",
+        "미래 시나리오는 관측값이 아니라 각 배출경로를 가정한 전망입니다.",
+      ],
+      direction: "context-dependent",
+      directionLabel: "같은 기간·시나리오 안에서 국토 비율을 해석",
+      officialBands: null,
+      benchmarkType: "none",
+    },
+    {
+      elementId: "B-005",
+      explanationRequired: true,
+      publicName: "가뭄 지표",
+      meaningBullets: [
+        "연속 건조일수, 강수·증발산 편차, 토양수분으로 가뭄 양상을 봅니다.",
+        "지표별 단위와 방향이 다르므로 선택한 측정항목의 정의와 기간을 함께 확인합니다.",
+      ],
+      direction: "context-dependent",
+      directionLabel: "선택한 가뭄 지표의 정의에 따라 해석",
+      officialBands: null,
+      benchmarkType: "none",
+    },
+    {
+      elementId: "B-006",
+      explanationRequired: true,
+      publicName: "폭염·열대야 전망",
+      publicUnit: "일",
+      meaningBullets: [
+        "기온·체감온도 임계값을 넘는 폭염일과 열대야 일수를 보여줍니다.",
+        "미래 값은 온실가스 시나리오를 가정한 전망이므로 관측값과 구분합니다.",
+        "임계값이 다른 지표는 같은 계열로 연결하지 않습니다.",
+      ],
+      direction: "higher-worse",
+      directionLabel: "일수가 많을수록 해당 폭염·열대야 조건에 노출되는 기간이 김",
+      officialBands: null,
+      benchmarkType: "none",
+    },
+    {
+      elementId: "B-009",
+      explanationRequired: true,
+      publicName: "생물다양성·기후 리스크",
+      meaningBullets: [
+        "생태계와 사회 부문이 기후위험에 얼마나 노출되고 취약한지 항목별로 보여줍니다.",
+        "값의 방향은 선택한 리스크·취약성 항목의 정의에 따라 확인합니다.",
+      ],
+      direction: "context-dependent",
+      directionLabel: "선택한 리스크·취약성 항목의 정의에 따라 해석",
+      officialBands: null,
+      benchmarkType: "none",
+    },
+    {
+      elementId: "B-041",
+      explanationRequired: true,
+      publicName: "태양광 계절변동 지수",
+      meaningBullets: [
+        "연중 태양광 발전 잠재량이 계절에 따라 얼마나 달라지는지 보여줍니다.",
+        "지수의 높고 낮음은 발전량 자체가 아니라 계절 변동 폭을 나타냅니다.",
+      ],
+      direction: "context-dependent",
+      directionLabel: "태양광 잠재량이 아닌 계절 변동 폭으로 해석",
+      officialBands: null,
+      benchmarkType: "none",
+    },
+    {
+      elementId: "C-001",
+      explanationRequired: true,
+      publicName: "NDC 감축·적응 목표",
+      meaningBullets: [
+        "국가가 제출한 기준배출 전망과 감축·적응 목표를 함께 보여줍니다.",
+        "전망과 목표는 같은 기준연도·대상부문·조건 여부 안에서 비교합니다.",
+      ],
+      direction: "context-dependent",
+      directionLabel: "기준배출·감축조건·대상부문을 함께 확인",
+      officialBands: null,
+      benchmarkType: "none",
+    },
+    {
+      elementId: "C-002",
+      explanationRequired: true,
+      publicName: "격년투명성보고서 기후 전망",
+      meaningBullets: [
+        "보고된 배출량과 미래 기후·경제손실 전망을 측정항목별로 보여줍니다.",
+        "전망은 선택한 시나리오·기간·단위가 같은 값끼리 비교합니다.",
+      ],
+      direction: "context-dependent",
+      directionLabel: "선택한 시나리오·기간·측정항목 안에서 해석",
+      officialBands: null,
+      benchmarkType: "none",
+    },
+    {
+      elementId: "C-003",
+      explanationRequired: true,
+      publicName: "국가적응계획 취약성 평가",
+      meaningBullets: [
+        "국가적응계획이 평가한 부문별 기후위험과 적응 우선과제를 보여줍니다.",
+        "등급과 과제 수는 서로 다른 측정항목이므로 같은 척도로 비교하지 않습니다.",
+      ],
+      direction: "context-dependent",
+      directionLabel: "부문별 위험등급과 과제 수를 구분해 해석",
+      officialBands: null,
+      benchmarkType: "none",
+    },
+    {
+      elementId: "C-005",
+      explanationRequired: true,
+      publicName: "기술수요평가 우선순위",
+      meaningBullets: [
+        "감축·적응 기술의 다기준 평가점수와 우선순위를 보여줍니다.",
+        "점수와 순위의 방향이 다르므로 같은 부문·평가기준 안에서 해석합니다.",
+      ],
+      direction: "context-dependent",
+      directionLabel: "점수와 순위를 구분하고 같은 평가기준 안에서 해석",
+      officialBands: null,
+      benchmarkType: "group-rank",
+      benchmarkScope: "같은 기술수요평가의 감축 또는 적응 후보군",
+    },
+    reviewedDecisionV129("C-007", "파리협정 제6.8조 비시장 접근 활동"),
+    {
+      elementId: "C-010",
+      explanationRequired: true,
+      publicName: "환경 법제도 적용 기준",
+      meaningBullets: [
+        "환경민감도와 허가 적용 여부를 법령의 기준에 따라 분류합니다.",
+        "등급은 성과점수가 아니라 적용 절차와 관리수준을 구분하는 법적 분류입니다.",
+      ],
+      direction: "neutral",
+      directionLabel: "높고 낮음의 성과순위가 아닌 법적 분류로 해석",
+      officialBands: null,
+      benchmarkType: "none",
+    },
+    {
+      elementId: "C-011",
+      explanationRequired: true,
+      publicName: "여행경보 단계",
+      meaningBullets: [
+        "외교부가 여행안전 수준에 따라 구분한 단계와 적용 지역을 보여줍니다.",
+        "단계 숫자가 높을수록 권고되는 안전조치가 강해집니다.",
+      ],
+      direction: "higher-worse",
+      directionLabel: "단계가 높을수록 더 강한 안전조치가 권고됨",
+      officialBands: null,
+      benchmarkType: "none",
+    },
+    {
+      elementId: "C-013",
+      explanationRequired: true,
+      publicName: "소액투자자 보호 지표",
+      meaningBullets: [
+        "공시, 주주권리, 이사책임 등 투자자 보호 제도를 항목별 지수로 보여줍니다.",
+        "점수가 높을수록 해당 제도적 보호가 강하지만 항목별 정의를 함께 확인합니다.",
+      ],
+      direction: "higher-better",
+      directionLabel: "높을수록 해당 투자자 보호 제도가 강함",
+      officialBands: null,
+      benchmarkType: "none",
+    },
+    {
+      elementId: "C-014",
+      explanationRequired: true,
+      publicName: "인허가 품질·신뢰성 지수",
+      meaningBullets: [
+        "건축허가 품질관리와 전력공급 신뢰성·요금 투명성을 별도 지수로 보여줍니다.",
+        "서로 다른 제도의 점수는 각 산출척도 안에서 해석합니다.",
+      ],
+      direction: "higher-better",
+      directionLabel: "높을수록 해당 제도의 품질·신뢰성이 높음",
+      officialBands: null,
+      benchmarkType: "none",
+    },
+    {
+      elementId: "D-004",
+      explanationRequired: true,
+      publicName: "크레딧 가격 시나리오별 수익성",
+      meaningBullets: [
+        "탄소크레딧 가격 가정에 따라 기술별 누적 수익과 투자비 회수 가능성을 비교합니다.",
+        "저·중·고 가격은 실제 확정가격이 아니라 분석을 위한 시나리오입니다.",
+      ],
+      direction: "context-dependent",
+      directionLabel: "같은 기술·가격 시나리오·기간 안에서 해석",
+      officialBands: null,
+      benchmarkType: "none",
+    },
+    reviewedDecisionV129("D-023", "국제협력·기후재원 사업"),
+    reviewedDecisionV129("E-005", "대학·연구기관·비영리기관"),
+    {
+      elementId: "E-007",
+      explanationRequired: true,
+      publicName: "온실가스 산정·보고 역량",
+      meaningBullets: [
+        "인벤토리 산정 수준, 보고체계와 국제 지원 이력을 항목별로 보여줍니다.",
+        "산정 Tier와 지원 수혜 여부는 서로 다른 상태이므로 하나의 점수로 합치지 않습니다.",
+      ],
+      direction: "context-dependent",
+      directionLabel: "항목별 상태와 근거를 구분해 해석",
+      officialBands: null,
+      benchmarkType: "none",
+    },
+    {
+      elementId: "E-008",
+      explanationRequired: true,
+      publicName: "연구·특허 성과와 순위",
+      meaningBullets: [
+        "논문·특허 건수, 인용성과와 국제 순위를 구분해 보여줍니다.",
+        "건수·지수는 높을수록 많거나 크고, 순위 숫자는 작을수록 상위입니다.",
+      ],
+      direction: "context-dependent",
+      directionLabel: "건수·지수와 순위의 방향을 구분해 해석",
+      officialBands: null,
+      benchmarkType: "group-rank",
+      benchmarkScope: "동일 자료의 평가 대상국",
+    },
+    {
+      elementId: "E-013",
+      explanationRequired: true,
+      publicName: "운영·유지보수 역량 등급",
+      meaningBullets: [
+        "숙련인력, 부품조달, 예방정비와 서비스 기반을 항목별로 평가하는 구조입니다.",
+        "입력값이 제공되기 전에는 등급이나 종합점수를 임의로 만들지 않습니다.",
+      ],
+      direction: "context-dependent",
+      directionLabel: "항목별 등급 기준과 실제 입력값이 있을 때 해석",
+      officialBands: null,
+      benchmarkType: "none",
+    },
+    {
+      elementId: "E-017",
+      explanationRequired: true,
+      publicName: "기후기술 비교우위 순위",
+      meaningBullets: [
+        "한국과 경쟁국의 기술수준을 동일 평가 안에서 상대 순위로 보여줍니다.",
+        "순위 숫자가 작을수록 상위이며 평가대상과 평가연도를 함께 확인합니다.",
+      ],
+      direction: "lower-rank-better",
+      directionLabel: "순위 숫자가 작을수록 상위",
+      officialBands: null,
+      benchmarkType: "group-rank",
+      benchmarkScope: "동일 기술수준 평가의 비교 대상국",
+    },
+  ]);
+
+export function getPublicIndicatorInterpretationV129(
+  elementId: string,
+  variableKey?: string | null,
+  indicatorId?: string | null
+): PublicIndicatorInterpretationV129 | null {
+  const candidates = PUBLIC_INDICATOR_INTERPRETATIONS_V129.filter(
+    (item) => item.elementId === elementId
+  );
+  if (candidates.length === 0) return null;
+
+  if (variableKey) {
+    const variableMatch = candidates.find(
+      (item) => item.variableKey === variableKey
+    );
+    if (variableMatch) return variableMatch;
+  }
+  if (indicatorId) {
+    const indicatorMatch = candidates.find(
+      (item) =>
+        item.indicatorIdPattern &&
+        new RegExp(item.indicatorIdPattern, "u").test(indicatorId)
+    );
+    if (indicatorMatch) return indicatorMatch;
+  }
+  if (elementId === "B-021" && (variableKey || indicatorId)) {
+    return (
+      candidates.find((item) => item.variableKey === "semantic-components") ||
+      null
+    );
+  }
+  return (
+    candidates.find((item) => !item.variableKey && !item.indicatorIdPattern) ||
+    candidates.find((item) => item.variableKey === "gvi-6") ||
+    candidates[0]
+  );
+}
+
+export function publicIndicatorInterpretationRequiredV129(
+  elementId: string
+): boolean {
+  return PUBLIC_INDICATOR_INTERPRETATIONS_V129.some(
+    (item) => item.elementId === elementId && item.explanationRequired
+  );
+}
+
+export type PublicIndicatorVariablePresentationV129 = {
+  label: string;
+  unit: string;
+  direction: PublicIndicatorDirectionV129;
+  directionLabel: string;
+  aggregationLevel?: string;
+  aggregationNotice?: string;
+};
+
+export function getPublicIndicatorVariablePresentationV129(
+  elementId: string,
+  variableKey?: string | null
+): PublicIndicatorVariablePresentationV129 | null {
+  const interpretation = getPublicIndicatorInterpretationV129(
+    elementId,
+    variableKey
+  );
+  if (!interpretation?.publicUnit) return null;
+  return {
+    label: interpretation.publicName,
+    unit: interpretation.publicUnit,
+    direction: interpretation.direction,
+    directionLabel: interpretation.directionLabel,
+    aggregationLevel: interpretation.aggregationLevel,
+    aggregationNotice: interpretation.aggregationNotice,
+  };
+}
+
+export function getB021VariablePresentationV129(
+  variableKey: string
+): PublicIndicatorVariablePresentationV129 | null {
+  return getPublicIndicatorVariablePresentationV129("B-021", variableKey);
+}
+
+export const PUBLIC_INTERPRETATION_SUMMARY_V129 = Object.freeze({
+  interpretationCount: PUBLIC_INDICATOR_INTERPRETATIONS_V129.length,
+  requiredCount: PUBLIC_INDICATOR_INTERPRETATIONS_V129.filter(
+    (item) => item.explanationRequired
+  ).length,
+  missingDirectionCount: PUBLIC_INDICATOR_INTERPRETATIONS_V129.filter(
+    (item) => !item.direction || !item.directionLabel
+  ).length,
+  arbitraryBandCount: PUBLIC_INDICATOR_INTERPRETATIONS_V129.filter(
+    (item) => Array.isArray(item.officialBands) && item.officialBands.length > 0
+  ).length,
+  b021VariableCount: PUBLIC_INDICATOR_INTERPRETATIONS_V129.filter(
+    (item) => item.elementId === "B-021" && item.variableKey
+  ).length,
+});
