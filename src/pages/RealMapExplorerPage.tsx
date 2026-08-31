@@ -3569,7 +3569,11 @@ export default function RealMapExplorerPage({
                           const missingLabels = selectedLayer.tooltipFields
                             .filter((field) => field !== "name")
                             .filter((field) => {
-                              const fieldValue = selected.normalizedAttributes?.[field];
+                              const fieldValue =
+                                field === "referenceYear"
+                                  ? selected.provenance.referenceYear ??
+                                    selected.normalizedAttributes?.[field]
+                                  : selected.normalizedAttributes?.[field];
                               return (
                                 fieldValue === null ||
                                 fieldValue === undefined ||

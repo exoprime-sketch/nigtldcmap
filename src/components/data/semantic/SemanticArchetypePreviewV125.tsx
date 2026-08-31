@@ -10,6 +10,7 @@ import type {
   VietnamObservationV124,
 } from "../../../data/vietnam/vietnamTypesV124";
 import { dataFinderSelectorStatesEqualV125 } from "../../../types/dataFinderV125";
+import { getPublicVisualizationSummaryV126 } from "../../../data/visualization/publicVisualizationRegistryV126";
 import type { DataFinderSelectorStateV125 } from "../../../types/dataFinderV125";
 import {
   entityDisplayNameV121,
@@ -104,9 +105,26 @@ export default function SemanticArchetypePreviewV125({
         isPopulatedSemanticRowV125(row)
     )
   );
+  const preferredMeasureKey =
+    getPublicVisualizationSummaryV126(contract.elementId)?.defaultMeasureKey;
+  const preferredDefaultMeasure = preferredMeasureKey
+    ? measureOptions.find(
+        (measure) =>
+          measure.key === preferredMeasureKey &&
+          semanticRows.some(
+            (row) =>
+              row.semanticMeasure.key === measure.key &&
+              semanticRowMatchesDimensionsV125(row, dimensions) &&
+              isPopulatedSemanticRowV125(row)
+          )
+      )
+    : null;
   const measureKey = explicitMeasureIsValid || explicitMeasureIsKnown
     ? (selectorState.measure as string)
-    : populatedDefaultMeasure?.key || measureOptions[0]?.key || null;
+    : preferredDefaultMeasure?.key ||
+      populatedDefaultMeasure?.key ||
+      measureOptions[0]?.key ||
+      null;
   const measureRows = semanticRows.filter(
     (row) => row.semanticMeasure.key === measureKey
   );
@@ -409,7 +427,7 @@ export default function SemanticArchetypePreviewV125({
             data-public-empty-reason="selection-has-no-values"
           >
             <strong>현재 선택 조건에 표시할 값이 없습니다</strong>
-            <p>결측값을 0으로 대체하지 않았습니다.</p>
+            <p>다른 측정항목이나 기간을 선택해 확인해 주세요.</p>
           </div>
         )}
 
