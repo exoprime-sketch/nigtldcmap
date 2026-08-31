@@ -7,6 +7,10 @@ import {
 } from "../data/countries/countryDataFacadeV122";
 import { listCountryDataProvidersV122 } from "../data/countries/countryDataProviderRegistryV122";
 import type { CountryCatalogItemV122 } from "../data/countries/countryDataTypesV122";
+import {
+  publicDataStatusKeyV128,
+  publicDownloadStatusV128,
+} from "../data/publicPlatformV128";
 import { getElementVisualizationSummaryV125 } from "../data/visualization/elementVisualizationRegistryV125";
 import { CATEGORIES } from "../data/publicTaxonomy";
 import type { CategoryCode } from "../data/publicTaxonomy";
@@ -35,6 +39,7 @@ interface DataExplorerPageProps {
 }
 
 const INITIAL_VISIBLE_COUNT = 24;
+type FinderSortModeV128 = "relevance" | "latest" | "title";
 
 function unique(values: Array<string | null | undefined>): string[] {
   return Array.from(
@@ -95,6 +100,8 @@ export default function DataExplorerPage({
   const [searchIndexLoadedFor, setSearchIndexLoadedFor] = useState("");
   const [error, setError] = useState("");
   const [yearFilter, setYearFilter] = useState("all");
+  const [sortMode, setSortMode] =
+    useState<FinderSortModeV128>("relevance");
   const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE_COUNT);
 
   const normalizedCountry = countryIso3 === "all" ? "all" : countryIso3;
@@ -215,7 +222,7 @@ export default function DataExplorerPage({
   );
 
   const filtered = useMemo(() => {
-    return availableCatalog.filter((item) => {
+    const matching = availableCatalog.filter((item) => {
       if (category !== "all" && item.categoryCode !== category) return false;
       if (selectedGroup && item.groupCode !== selectedGroup) return false;
       if (
@@ -258,12 +265,42 @@ export default function DataExplorerPage({
       }
       return true;
     });
+
+    return matching.sort((left, right) => {
+      if (sortMode === "latest") {
+        const yearDifference =
+          Number(right.latestYear || 0) - Number(left.latestYear || 0);
+        if (yearDifference !== 0) return yearDifference;
+      } else if (sortMode === "relevance" && normalizedQuery) {
+        const relevance = (item: CountryCatalogItemV122): number => {
+          const title = normalizedSearchV121(item.publicTitle);
+          if (title === normalizedQuery) return 1_000;
+          if (title.startsWith(normalizedQuery)) return 700;
+          if (title.includes(normalizedQuery)) return 500;
+          const indexed = searchIndex.get(
+            countryCatalogKeyV122(item.providerId, item.elementId)
+          );
+          const measureOrCategory = normalizedSearchV121(
+            [
+              item.categoryLabel,
+              item.groupLabel,
+              ...(indexed?.keywords || []),
+            ].join(" ")
+          );
+          return measureOrCategory.includes(normalizedQuery) ? 300 : 100;
+        };
+        const scoreDifference = relevance(right) - relevance(left);
+        if (scoreDifference !== 0) return scoreDifference;
+      }
+      return left.publicTitle.localeCompare(right.publicTitle, "ko");
+    });
   }, [
     availableCatalog,
     category,
     normalizedQuery,
     searchIndex,
     selectedGroup,
+    sortMode,
     sourceOrganization,
     technologyId,
     yearFilter,
@@ -277,6 +314,7 @@ export default function DataExplorerPage({
       category,
       selectedGroup,
       sourceOrganization,
+      sortMode,
       technologyId,
       yearFilter,
     ]
@@ -294,6 +332,7 @@ export default function DataExplorerPage({
     onSourceOrganizationChange("all");
     onTechnologyChange("all");
     setYearFilter("all");
+    setSortMode("relevance");
   }
 
   return (
@@ -328,6 +367,20 @@ export default function DataExplorerPage({
                   {provider.countryNameKo}
                 </option>
               ))}
+            </select>
+          </label>
+          <label className="cdp-field">
+            <span className="cdp-field__label">정렬</span>
+            <select
+              className="cdp-select"
+              value={sortMode}
+              onChange={(event) =>
+                setSortMode(event.target.value as FinderSortModeV128)
+              }
+            >
+              <option value="relevance">관련도</option>
+              <option value="latest">최신 기준연도</option>
+              <option value="title">데이터명</option>
             </select>
           </label>
 
@@ -460,6 +513,7 @@ export default function DataExplorerPage({
       <section className="cdp-card-grid" aria-label="데이터 검색결과">
         {visibleItems.map((item) => {
           const contract = getElementVisualizationSummaryV125(item.elementId);
+          const downloadStatus = publicDownloadStatusV128(item);
           const publicRecordCount =
             contract?.populatedRecordCount ?? item.observationCount + item.entityCount;
           const semanticYearRange = contract
@@ -482,9 +536,16 @@ export default function DataExplorerPage({
             <div className="cdp-chip-row" aria-label="데이터 공개 상태">
               <span
                 className="cdp-chip"
-                data-public-status={item.publicStatus}
+                data-public-status={publicDataStatusKeyV128(item.publicStatus)}
               >
                 {item.publicStatusLabel}
+              </span>
+              <span
+                className="cdp-chip"
+                data-download-status={downloadStatus.key}
+                title={downloadStatus.reason || undefined}
+              >
+                {downloadStatus.label}
               </span>
               {!item.hasMapData &&
                 (item.raw.detailTemplate === "spatial" ||
@@ -524,12 +585,20 @@ export default function DataExplorerPage({
                 </dd>
               </div>
               <div>
+                <dt>자료 제공기관</dt>
+                <dd>
+                  {item.sourceOrganizations.length > 0
+                    ? item.sourceOrganizations.slice(0, 2).join(" · ")
+                    : "수집 예정"}
+                </dd>
+              </div>
+              <div>
                 <dt>공간표현</dt>
                 <dd>{contract?.spatiallyLinked || item.hasMapData ? "가능" : "미확보"}</dd>
               </div>
               <div>
                 <dt>다운로드</dt>
-                <dd>{contract?.downloadAvailable || item.hasDownloadableData ? "가능" : "제공되지 않음"}</dd>
+                <dd>{downloadStatus.label}</dd>
               </div>
             </dl>
             {item.technologyIds.length > 0 && (
@@ -560,7 +629,7 @@ export default function DataExplorerPage({
                   지도에서 보기
                 </button>
               )}
-              {item.hasDownloadableData && (
+              {downloadStatus.key === "downloadable" && (
                 <button
                   type="button"
                   className="cdp-button cdp-button--secondary"

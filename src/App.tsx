@@ -17,10 +17,8 @@ import {
   resolveCountryElementIdV122,
 } from "./data/countries/countryDataFacadeV122";
 import type { CategoryCode } from "./data/publicTaxonomy";
-import CooperationInsightsPage from "./pages/CooperationInsightsPage";
-import CountryComparePage from "./pages/CountryComparePage";
-import CountryProfilePage from "./pages/CountryProfilePage";
 import CountryDataElementPage from "./pages/CountryDataElementPage";
+import DataGuidePage from "./pages/DataGuidePage";
 import DataExplorerPage from "./pages/DataExplorerPage";
 import DownloadPage from "./pages/DownloadPage";
 import HomePage from "./pages/HomePage";
@@ -42,7 +40,6 @@ import {
 } from "./types/dataFinderV125";
 import type { DataFinderSelectorStateV125 } from "./types/dataFinderV125";
 
-const DatasetDetailPage = lazy(() => import("./pages/DatasetDetailPage"));
 const RealMapExplorerPage = lazy(() => import("./pages/RealMapExplorerPage"));
 
 function DeferredPageFallback({ label }: { label: string }) {
@@ -77,25 +74,6 @@ function parseDatasetReturnView(value: string | null): DatasetReturnView {
   return DATASET_RETURN_VIEWS.includes(value as DatasetReturnView)
     ? (value as DatasetReturnView)
     : "explorer";
-}
-
-function getDatasetBackLabel(view: DatasetReturnView): string {
-  switch (view) {
-    case "home":
-      return "홈으로 돌아가기";
-    case "insights":
-      return "협력 인사이트로 돌아가기";
-    case "element-detail":
-      return "데이터 항목으로 돌아가기";
-    case "country":
-      return "국가 프로필로 돌아가기";
-    case "map":
-      return "지도로 돌아가기";
-    case "compare":
-      return "국가 비교로 돌아가기";
-    default:
-      return "검색 결과로 돌아가기";
-  }
 }
 
 function isValidPriorityCountry(value: string | null): boolean {
@@ -322,25 +300,51 @@ function appendCompareViewParams(
   }
 }
 
+function resolveLegacyDatasetElementV128(
+  params: URLSearchParams
+): string | null {
+  const datasetId = params.get("dataset");
+  const dataset = DATASETS.find((item) => item.id === datasetId);
+  if (!dataset) return null;
+  return resolveCountryElementIdV122(
+    "VNM",
+    getAuthoritativeElementIdV88(dataset)
+  );
+}
+
 export default function App() {
   const initialParams = new URLSearchParams(window.location.search);
+  const initialRawHash = window.location.hash.replace(/^#/, "").trim();
   const initialMapState = parseMapViewState(initialParams);
   const initialCompareState = parseCompareViewState(initialParams);
   const initialDataFinderSelectorState =
     parseDataFinderSelectorStateV125(initialParams);
-  const initialView = getViewFromLocation();
+  const initialLocationView = getViewFromLocation();
+  const initialLegacyElementId =
+    initialLocationView === "dataset-detail"
+      ? resolveLegacyDatasetElementV128(initialParams)
+      : null;
+  const initialView: View =
+    initialLocationView === "dataset-detail"
+      ? initialLegacyElementId
+        ? "element-detail"
+        : "explorer"
+      : initialLocationView;
   const initialDatasetReturnView = parseDatasetReturnView(
     initialParams.get("from")
   );
-  const initialCountryParam =
-    initialParams.get("country")?.toUpperCase() ?? null;
+  const initialCountryParam = initialLegacyElementId
+    ? "VNM"
+    : initialParams.get("country")?.toUpperCase() ?? null;
   const initialDataCountryIso3 = hasCountryDataProviderV122(initialCountryParam)
     ? initialCountryParam
     : null;
-  const initialElementId = resolveCountryElementIdV122(
-    initialDataCountryIso3,
-    initialParams.get("element")
-  );
+  const initialElementId =
+    initialLegacyElementId ||
+    resolveCountryElementIdV122(
+      initialDataCountryIso3,
+      initialParams.get("element")
+    );
 
   const [view, setView] = useState<View>(initialView);
   const [mapViewState, setMapViewState] =
@@ -373,23 +377,15 @@ export default function App() {
     initialParams.get("group")
   );
   const [selectedDatasetId, setSelectedDatasetId] = useState<string | null>(
-    initialParams.get("dataset")
+    initialLocationView === "dataset-detail" ? null : initialParams.get("dataset")
   );
   const [selectedElementId, setSelectedElementId] = useState<string | null>(
-    initialView === "element-detail" ||
-      (initialView === "dataset-detail" &&
-        initialDatasetReturnView === "element-detail")
-      ? initialElementId
-      : null
+    initialView === "element-detail" ? initialElementId : null
   );
   const [selectedElementCountryIso3, setSelectedElementCountryIso3] = useState<
     string | null
   >(
-    initialView === "element-detail" ||
-      (initialView === "dataset-detail" &&
-        initialDatasetReturnView === "element-detail")
-      ? initialDataCountryIso3
-      : null
+    initialView === "element-detail" ? initialDataCountryIso3 : null
   );
   const [downloadCountryIso3, setDownloadCountryIso3] = useState<string | null>(
     initialView === "download"
@@ -410,19 +406,30 @@ export default function App() {
       : initialView === "insights" &&
         isValidPriorityCountry(initialCountryParam)
       ? initialCountryParam
-      : initialView === "dataset-detail" && initialDatasetReturnView === "map"
-      ? initialMapState.countryIso3
-      : initialView === "dataset-detail" &&
-        (initialDatasetReturnView === "compare" ||
-          initialDatasetReturnView === "country" ||
-          initialDatasetReturnView === "insights")
-      ? initialCountryParam
       : null
   );
 
   const historyModeRef = useRef<HistoryMode>("replace");
   const restoringHistoryRef = useRef(false);
   const mainRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const startsWithLegacyRoute =
+      initialRawHash === "dataset-detail" ||
+      initialRawHash === "compare" ||
+      initialRawHash === "country" ||
+      initialRawHash.startsWith("country-") ||
+      initialRawHash === "insights" ||
+      initialRawHash.startsWith("insight-");
+    if (!startsWithLegacyRoute || window.location.hash === `#${initialView}`) {
+      return;
+    }
+    window.history.replaceState(
+      null,
+      "",
+      `${window.location.pathname}${window.location.search}#${initialView}`
+    );
+  }, [initialRawHash, initialView]);
 
   const handleMapStateChange = useCallback((nextState: MapViewState) => {
     setMapViewState((current) =>
@@ -445,8 +452,20 @@ export default function App() {
       const restoredCompareState = parseCompareViewState(params);
       const restoredDataFinderSelectorState =
         parseDataFinderSelectorStateV125(params);
-      const nextView = getViewFromLocation();
-      const countryParam = params.get("country")?.toUpperCase() ?? null;
+      const locationView = getViewFromLocation();
+      const legacyElementId =
+        locationView === "dataset-detail"
+          ? resolveLegacyDatasetElementV128(params)
+          : null;
+      const nextView: View =
+        locationView === "dataset-detail"
+          ? legacyElementId
+            ? "element-detail"
+            : "explorer"
+          : locationView;
+      const countryParam = legacyElementId
+        ? "VNM"
+        : params.get("country")?.toUpperCase() ?? null;
 
       setView(nextView);
       setQuery(params.get("q") ?? "");
@@ -468,26 +487,22 @@ export default function App() {
       const restoredDataCountryIso3 = hasCountryDataProviderV122(countryParam)
         ? countryParam
         : null;
-      const restoredElementId = resolveCountryElementIdV122(
-        restoredDataCountryIso3,
-        params.get("element")
-      );
+      const restoredElementId =
+        legacyElementId ||
+        resolveCountryElementIdV122(
+          restoredDataCountryIso3,
+          params.get("element")
+        );
 
       setExplorerGroup(params.get("group"));
-      setSelectedDatasetId(params.get("dataset"));
+      setSelectedDatasetId(
+        locationView === "dataset-detail" ? null : params.get("dataset")
+      );
       setSelectedElementId(
-        nextView === "element-detail" ||
-          (nextView === "dataset-detail" &&
-            parseDatasetReturnView(params.get("from")) === "element-detail")
-          ? restoredElementId
-          : null
+        nextView === "element-detail" ? restoredElementId : null
       );
       setSelectedElementCountryIso3(
-        nextView === "element-detail" ||
-          (nextView === "dataset-detail" &&
-            parseDatasetReturnView(params.get("from")) === "element-detail")
-          ? restoredDataCountryIso3
-          : null
+        nextView === "element-detail" ? restoredDataCountryIso3 : null
       );
       setDownloadCountryIso3(
         nextView === "download" ? restoredDataCountryIso3 : null
@@ -506,16 +521,6 @@ export default function App() {
           : nextView === "country" || nextView === "compare"
           ? countryParam
           : nextView === "insights" && isValidPriorityCountry(countryParam)
-          ? countryParam
-          : nextView === "dataset-detail" &&
-            restoredReturnView === "insights" &&
-            isValidPriorityCountry(countryParam)
-          ? countryParam
-          : nextView === "dataset-detail" && restoredReturnView === "country"
-          ? countryParam
-          : nextView === "dataset-detail" && restoredReturnView === "map"
-          ? restoredMapState.countryIso3
-          : nextView === "dataset-detail" && restoredReturnView === "compare"
           ? countryParam
           : null
       );
@@ -702,6 +707,11 @@ export default function App() {
   }
 
   function navigate(nextView: View) {
+    if (nextView === "dataset-detail" || nextView === "country" || nextView === "insights") {
+      nextView = "explorer";
+    } else if (nextView === "compare") {
+      nextView = "download";
+    }
     if (nextView !== view) {
       markNextNavigationAsPush();
     }
@@ -721,19 +731,6 @@ export default function App() {
       if (view !== "explorer" && view !== "element-detail") {
         setExplorerGroup(null);
       }
-    }
-
-    if (nextView === "insights") {
-      setSelectedCountryIso3(
-        currentContextCountry && isValidPriorityCountry(currentContextCountry)
-          ? currentContextCountry
-          : null
-      );
-      setTechnologyId((current) =>
-        current !== "all" && CLIMATE_TECHNOLOGY_BY_ID.has(current)
-          ? current
-          : "all"
-      );
     }
 
     if (nextView === "map" && view !== "map") {
@@ -803,18 +800,6 @@ export default function App() {
       setExplorerGroup(null);
     }
 
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-
-  function openDataset(datasetId: string) {
-    markNextNavigationAsPush();
-    setDatasetReturnView(
-      DATASET_RETURN_VIEWS.includes(view as DatasetReturnView)
-        ? (view as DatasetReturnView)
-        : "explorer"
-    );
-    setSelectedDatasetId(datasetId);
-    setView("dataset-detail");
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
@@ -890,36 +875,6 @@ export default function App() {
     setSelectedDatasetId(datasetId ?? null);
     setDownloadCountryIso3(normalizeDownloadCountryIso3(countryIso3 ?? null));
     setView("download");
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-
-  function returnFromDataset() {
-    markNextNavigationAsPush();
-    const nextView = datasetReturnView;
-    setSelectedDatasetId(null);
-    setView(nextView);
-
-    if (nextView === "home") {
-      setQuery("");
-      setSourceOrganization("all");
-      setExplorerCountryIso3("all");
-      setCategory("all");
-      setTechnologyId("all");
-      setExplorerGroup(null);
-    }
-
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-
-  function openCountry(iso3: string) {
-    markNextNavigationAsPush();
-    setSelectedCountryIso3(iso3);
-    setTechnologyId("all");
-    setMapViewState((current) => ({
-      ...current,
-      countryIso3: iso3,
-    }));
-    setView("country");
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
@@ -1048,16 +1003,11 @@ export default function App() {
       return;
     }
 
-    markNextNavigationAsPush();
-    setSelectedCountryIso3(planningContextCountryIso3);
-    setTechnologyId(planningContextTechnologyId ?? "all");
-    setMapViewState((current) => ({
-      ...current,
-      countryIso3: planningContextCountryIso3,
-    }));
-    setSelectedDatasetId(null);
-    setView("country");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    openExplorerFromGlobalSearch(
+      "",
+      planningContextCountryIso3,
+      planningContextTechnologyId
+    );
   }
 
   const isMapView = view === "map";
@@ -1067,8 +1017,11 @@ export default function App() {
       <Header
         currentView={view}
         onNavigate={navigate}
-        onOpenDataset={openDataset}
-        onOpenCountry={openCountry}
+        onOpenElement={openElement}
+        onOpenMapElement={openElementOnMap}
+        onOpenDownload={(elementId, countryIso3) =>
+          openElementDownload(elementId, countryIso3, null)
+        }
         onExploreSearch={openExplorerFromGlobalSearch}
       />
 
@@ -1093,7 +1046,7 @@ export default function App() {
             onQueryChange={setQuery}
             onSubmit={submitSearch}
             onSelectCategory={selectCategory}
-            onOpenDataset={openDataset}
+            onOpenElement={openElement}
             onNavigate={navigate}
           />
         )}
@@ -1152,56 +1105,12 @@ export default function App() {
           />
         )}
 
-        {view === "dataset-detail" && (
-          <Suspense fallback={<DeferredPageFallback label="데이터 상세 화면을 준비하고 있습니다" />}>
-            <DatasetDetailPage
-              dataset={selectedDataset}
-              onBack={returnFromDataset}
-              backLabel={getDatasetBackLabel(datasetReturnView)}
-              countryIso3={planningContextCountryIso3}
-              countryName={
-                PRIORITY_COUNTRIES.find(
-                  (item) => item.iso3 === planningContextCountryIso3
-                )?.nameKo ?? null
-              }
-              onOpenDownload={() => {
-                markNextNavigationAsPush();
-                setSelectedDatasetId(selectedDataset?.id ?? null);
-                setDownloadElementId(
-                  selectedDataset
-                    ? getAuthoritativeElementIdV88(selectedDataset)
-                    : null
-                );
-                setDownloadCountryIso3(
-                  normalizeDownloadCountryIso3(planningContextCountryIso3)
-                );
-                setView("download");
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
-            />
-          </Suspense>
-        )}
-
         {view === "map" && (
           <Suspense fallback={<DeferredPageFallback label="데이터 지도를 준비하고 있습니다" />}>
             <RealMapExplorerPage
               onOpenElement={openElement}
               onOpenCountry={(iso3) => {
-                markNextNavigationAsPush();
-                setSelectedCountryIso3(iso3);
-                setMapViewState((current) => ({
-                  ...current,
-                  countryIso3: iso3,
-                  activeLayerKeys: [],
-                  layerOpacities: {},
-                  layerYears: {},
-                  focusLayerKey: null,
-                  primaryLayerId: null,
-                  contextLayerIds: [],
-                  mapPresetId: null,
-                }));
-                setView("country");
-                window.scrollTo({ top: 0, behavior: "smooth" });
+                openExplorerFromGlobalSearch("", iso3, null);
               }}
               onOpenDownload={(elementId, iso3) => {
                 if (iso3) setSelectedCountryIso3(iso3);
@@ -1222,126 +1131,6 @@ export default function App() {
           </Suspense>
         )}
 
-        {view === "country" && (
-          <CountryProfilePage
-            iso3={selectedCountryIso3}
-            technologyId={technologyId}
-            onTechnologyChange={setTechnologyId}
-            onBack={() => navigate("map")}
-            onOpenDataset={openDataset}
-            onExploreDatasets={(countryIso3, nextTechnologyId) => {
-              markNextNavigationAsPush();
-              setQuery("");
-              setExplorerCountryIso3(
-                hasCountryDataProviderV122(countryIso3) ? countryIso3 : "all"
-              );
-              setCategory("all");
-              setTechnologyId(nextTechnologyId);
-              setExplorerGroup(null);
-              setView("explorer");
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
-            onOpenCompare={(iso3) => {
-              markNextNavigationAsPush();
-              if (iso3) setSelectedCountryIso3(iso3);
-              setSelectedDatasetId(null);
-              setView("compare");
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
-            onOpenMap={(iso3) => {
-              markNextNavigationAsPush();
-              setSelectedCountryIso3(iso3);
-              setMapViewState((current) => ({
-                ...current,
-                countryIso3: iso3,
-                activeLayerKeys: [],
-                layerOpacities: {},
-                layerYears: {},
-                focusLayerKey: null,
-                primaryLayerId: null,
-                contextLayerIds: [],
-                mapPresetId: null,
-              }));
-              setView("map");
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
-          />
-        )}
-
-        {view === "compare" && (
-          <CountryComparePage
-            initialCountryIso3={selectedCountryIso3}
-            initialState={compareViewState}
-            onStateChange={setCompareViewState}
-            onOpenCountry={openCountry}
-          />
-        )}
-
-        {view === "insights" && (
-          <CooperationInsightsPage
-            countryIso3={
-              selectedCountryIso3 && isValidPriorityCountry(selectedCountryIso3)
-                ? selectedCountryIso3
-                : null
-            }
-            technologyId={
-              technologyId !== "all" &&
-              CLIMATE_TECHNOLOGY_BY_ID.has(technologyId)
-                ? technologyId
-                : "all"
-            }
-            onCountryChange={setSelectedCountryIso3}
-            onTechnologyChange={setTechnologyId}
-            onOpenCountry={(iso3) => {
-              markNextNavigationAsPush();
-              setSelectedCountryIso3(iso3);
-              setMapViewState((current) => ({
-                ...current,
-                countryIso3: iso3,
-                activeLayerKeys: [],
-                layerOpacities: {},
-                layerYears: {},
-                focusLayerKey: null,
-                primaryLayerId: null,
-                contextLayerIds: [],
-                mapPresetId: null,
-              }));
-              setView("country");
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
-            onOpenMap={(iso3) => {
-              markNextNavigationAsPush();
-              setSelectedCountryIso3(iso3);
-              setMapViewState((current) => ({
-                ...current,
-                countryIso3: iso3,
-                activeLayerKeys: [],
-                layerOpacities: {},
-                layerYears: {},
-                focusLayerKey: null,
-                primaryLayerId: null,
-                contextLayerIds: [],
-                mapPresetId: null,
-              }));
-              setView("map");
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
-            onOpenDataset={openDataset}
-            onExploreDatasets={(countryIso3, nextTechnologyId) => {
-              markNextNavigationAsPush();
-              setQuery("");
-              setExplorerCountryIso3(
-                hasCountryDataProviderV122(countryIso3) ? countryIso3 : "all"
-              );
-              setCategory("all");
-              setTechnologyId(nextTechnologyId);
-              setExplorerGroup(null);
-              setView("explorer");
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
-          />
-        )}
-
         {view === "download" && (
           <DownloadPage
             initialDatasetId={selectedDatasetId}
@@ -1350,10 +1139,12 @@ export default function App() {
           />
         )}
 
+        {view === "guide" && <DataGuidePage onNavigate={navigate} />}
+
         {view === "not-found" && <NotFoundPage onNavigate={navigate} />}
       </main>
 
-      {!isMapView && view !== "home" && <Footer onNavigate={navigate} />}
+      {!isMapView && <Footer onNavigate={navigate} />}
     </div>
   );
 }

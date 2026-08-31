@@ -133,11 +133,18 @@ export function publicElementCopyV126(
   renderer: PublicAnalyticalRendererV126
 ): PublicElementCopyV126 {
   return (
-    ELEMENT_COPY_V126[elementId] || {
-      title: RENDERER_TITLES_V126[renderer],
-      description:
-        "공개된 측정값과 분류를 선택해 시점별 변화와 항목 간 차이를 확인할 수 있습니다.",
-    }
+    ELEMENT_COPY_V126[elementId] ||
+    (renderer === "status-only"
+      ? {
+          title: RENDERER_TITLES_V126[renderer],
+          description:
+            "현재 공개된 실제 값이 없어 자료 확보 또는 입력 진행 상태를 안내합니다.",
+        }
+      : {
+          title: RENDERER_TITLES_V126[renderer],
+          description:
+            "공개된 측정값과 분류를 선택해 시점별 변화와 항목 간 차이를 확인할 수 있습니다.",
+        })
   );
 }
 

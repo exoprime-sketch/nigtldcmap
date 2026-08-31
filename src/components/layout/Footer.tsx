@@ -33,6 +33,9 @@ export default function Footer({ onNavigate }: FooterProps) {
           <button type="button" onClick={() => onNavigate("download")}>
             데이터 다운로드
           </button>
+          <button type="button" onClick={() => onNavigate("guide")}>
+            데이터 이용안내
+          </button>
         </nav>
       </div>
       <div className="page-shell footer-bottom">

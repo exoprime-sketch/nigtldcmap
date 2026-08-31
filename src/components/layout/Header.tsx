@@ -8,8 +8,9 @@ import "../../styles/global-search-v41.css";
 interface HeaderProps {
   currentView: View;
   onNavigate: (view: View) => void;
-  onOpenDataset: (datasetId: string) => void;
-  onOpenCountry: (iso3: string) => void;
+  onOpenElement: (elementId: string, countryIso3: string) => void;
+  onOpenMapElement: (elementId: string, countryIso3: string) => void;
+  onOpenDownload: (elementId: string, countryIso3: string) => void;
   onExploreSearch: (
     query: string,
     countryIso3: string | null,
@@ -20,8 +21,9 @@ interface HeaderProps {
 export default function Header({
   currentView,
   onNavigate,
-  onOpenDataset,
-  onOpenCountry,
+  onOpenElement,
+  onOpenMapElement,
+  onOpenDownload,
   onExploreSearch,
 }: HeaderProps) {
   const [searchOpen, setSearchOpen] = useState(false);
@@ -96,8 +98,9 @@ export default function Header({
       <GlobalQuickSearchV41
         open={searchOpen}
         onClose={() => setSearchOpen(false)}
-        onOpenCountry={onOpenCountry}
-        onOpenDataset={onOpenDataset}
+        onOpenElement={onOpenElement}
+        onOpenMapElement={onOpenMapElement}
+        onOpenDownload={onOpenDownload}
         onExploreSearch={onExploreSearch}
       />
     </>

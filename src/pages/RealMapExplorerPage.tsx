@@ -1152,6 +1152,7 @@ export default function RealMapExplorerPage({
         style: MAP_STYLE,
         center: provider?.mapView.center || [20, 15],
         zoom: provider?.mapView.zoom || 1.5,
+        attributionControl: false,
       });
       pendingMap.addControl(new maplibregl.NavigationControl(), "top-right");
       pendingMap.addControl(
@@ -3119,6 +3120,24 @@ export default function RealMapExplorerPage({
               baseMapStatus === "ready" ? "is-visible" : "is-suspended"
             }`}
           />
+          <span className="cdp-map-public-attribution">
+            <a
+              href="https://www.naturalearthdata.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Natural Earth
+            </a>{" "}
+            · 국가 외곽선 |{" "}
+            <a
+              href="https://www.geoboundaries.org/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              geoBoundaries
+            </a>{" "}
+            · 베트남 63개 성·시 (CC BY 4.0)
+          </span>
           <div className="cdp-map-status-badge">
             {baseMapStatus === "ready"
               ? "지도 사용 가능"

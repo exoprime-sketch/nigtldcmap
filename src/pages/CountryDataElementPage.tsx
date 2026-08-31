@@ -9,6 +9,11 @@ import {
   listCountryDataProvidersV122,
 } from "../data/countries/countryDataProviderRegistryV122";
 import type { CountryCatalogItemV122 } from "../data/countries/countryDataTypesV122";
+import {
+  publicDataStatusLabelV128,
+  publicDataStatusKeyV128,
+  publicDownloadStatusV128,
+} from "../data/publicPlatformV128";
 import type {
   VietnamElementMetaBundleV124,
   VietnamEntityV124,
@@ -622,37 +627,31 @@ function emptyStateCopyV124(item: CountryCatalogItemV122 | null): {
   title: string;
   description: string;
 } {
-  const explicitReason = item?.emptyReason?.trim();
   switch (item?.publicStatus) {
     case "schema-only":
       return {
         title: "입력 양식만 제공된 데이터입니다",
-        description:
-          explicitReason || "원자료에 실제 값이 채워진 레코드는 없습니다",
+        description: "원자료에는 입력 항목만 있고 실제 값은 아직 없습니다",
       };
     case "data-entry-planned":
       return {
         title: "데이터 입력 예정입니다",
-        description:
-          explicitReason || "수집·입력이 완료되면 실제 레코드를 제공합니다",
+        description: "현장조사와 검증을 거쳐 실제 값을 입력할 예정입니다",
       };
     case "not-collected":
       return {
         title: "원자료가 아직 수집되지 않았습니다",
-        description:
-          explicitReason || "확인된 범위에서 임의 데이터를 생성하지 않았습니다",
+        description: "공식 원자료를 확보하고 검증한 뒤 데이터를 제공합니다",
       };
     case "quarantined":
       return {
         title: "형식 검토가 필요한 데이터입니다",
-        description:
-          explicitReason || "원자료 형식을 확인한 뒤 공개 레코드를 제공합니다",
+        description: "원자료 형식을 확인한 뒤 공개 가능한 데이터를 제공합니다",
       };
     default:
       return {
         title: "표시할 자료가 없습니다",
-        description:
-          explicitReason || "출처·이용조건에서 공식 원자료를 확인할 수 있습니다",
+        description: "출처·이용조건에서 공식 원자료를 확인할 수 있습니다",
       };
   }
 }
@@ -824,6 +823,9 @@ export default function CountryDataElementPage({
 
   const meta = bundle?.meta;
   const emptyStateCopy = emptyStateCopyV124(catalogItem);
+  const downloadStatus = catalogItem
+    ? publicDownloadStatusV128(catalogItem)
+    : null;
   const sourceOrganizations = Array.from(
     new Set(
       (meta?.indicators || [])
@@ -869,10 +871,20 @@ export default function CountryDataElementPage({
                 <div className="cdp-chip-row" aria-label="데이터 공개 상태">
                   <span
                     className="cdp-chip"
-                    data-public-status={catalogItem.publicStatus}
+                    data-public-status={publicDataStatusKeyV128(
+                      catalogItem.publicStatus
+                    )}
                   >
-                    {catalogItem.publicStatusLabel}
+                    {publicDataStatusLabelV128(catalogItem.publicStatus)}
                   </span>
+                  {downloadStatus && (
+                    <span
+                      className="cdp-chip"
+                      data-download-status={downloadStatus.key}
+                    >
+                      {downloadStatus.label}
+                    </span>
+                  )}
                 </div>
               )}
               <h1>{catalogItem?.publicTitle || meta.element.elementLabel}</h1>
@@ -921,7 +933,7 @@ export default function CountryDataElementPage({
                   )}
                 </div>
               )}
-              {meta.element.downloadableRecordCount > 0 && (
+              {downloadStatus?.key === "downloadable" && (
                 <button
                   type="button"
                   className="cdp-button cdp-button--primary"
@@ -978,7 +990,7 @@ export default function CountryDataElementPage({
 
               <section className="cdp-section cdp-v125-download">
                 <h3>다운로드</h3>
-                {meta.element.downloadableRecordCount > 0 ? (
+                {downloadStatus?.key === "downloadable" ? (
                   <button
                     type="button"
                     className="cdp-button cdp-button--primary"
@@ -988,7 +1000,10 @@ export default function CountryDataElementPage({
                     전체 공개 레코드 다운로드
                   </button>
                 ) : (
-                  <p>이 항목은 현재 공개 다운로드 자산이 없습니다.</p>
+                  <div data-download-status={downloadStatus?.key}>
+                    <strong>{downloadStatus?.label || "다운로드 자료 없음"}</strong>
+                    {downloadStatus?.reason && <p>{downloadStatus.reason}</p>}
+                  </div>
                 )}
               </section>
           </section>

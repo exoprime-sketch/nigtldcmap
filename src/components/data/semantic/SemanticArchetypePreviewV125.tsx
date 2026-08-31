@@ -43,6 +43,20 @@ type NumericSemanticObservation = SemanticObservationV125 & { value: number };
 
 const SERIES_PATTERNS_V125 = ["solid", "dashed", "dotted", "double"] as const;
 
+function publicNoDataReasonV128(reason: string | null): string {
+  switch (reason) {
+    case "not-collected":
+      return "공식 원자료를 확보한 뒤 제공합니다.";
+    case "schema-only":
+      return "입력 항목만 있고 실제 값은 아직 없습니다.";
+    case "explicit-placeholder-only":
+    case "no-populated-record":
+      return "실제 값은 입력 준비 중입니다.";
+    default:
+      return "현재 표시할 공개 값이 없습니다.";
+  }
+}
+
 export default function SemanticArchetypePreviewV125({
   contract,
   semantics,
@@ -217,7 +231,7 @@ export default function SemanticArchetypePreviewV125({
       >
         <div data-testid="public-primary-visualization">
           <strong>표시할 실제 레코드가 없습니다</strong>
-          <p>{contract.noDataReason || contract.missingDataPolicy}</p>
+          <p>{publicNoDataReasonV128(contract.noDataReason)}</p>
         </div>
       </section>
     );

@@ -12,6 +12,7 @@ import {
 } from "../data/countries/countryDataProviderRegistryV122";
 import type { CountryCatalogItemV122 } from "../data/countries/countryDataTypesV122";
 import { safePublicFilenamePartV122 } from "../data/countries/publicLabelsV122";
+import { publicDownloadStatusV128 } from "../data/publicPlatformV128";
 import type {
   VietnamEntityV124,
   VietnamIndicatorMetaV124,
@@ -153,7 +154,7 @@ export default function DownloadPage({
       .then((items) => {
         if (cancelled) return;
         const downloadable = items.filter((item) => item.hasDownloadableData);
-        setCatalog(downloadable);
+        setCatalog(items);
         setSelectedKeys((current) => {
           const allowed = new Set<string>(downloadable.map(selectionKey));
           return new Set<string>(
@@ -258,6 +259,14 @@ export default function DownloadPage({
     () => catalog.filter((item) => selectedKeys.has(selectionKey(item))),
     [catalog, selectedKeys]
   );
+  const expectedDownloadRows = useMemo(
+    () =>
+      selectedCatalog.reduce(
+        (total, item) => total + item.downloadableRecordCount,
+        0
+      ),
+    [selectedCatalog]
+  );
   const licenses = unique(
     selectedCatalog
       .flatMap((item) => item.raw.rights.licenses)
@@ -273,6 +282,7 @@ export default function DownloadPage({
   );
 
   function toggleSelection(item: CountryCatalogItemV122): void {
+    if (publicDownloadStatusV128(item).key !== "downloadable") return;
     const key = selectionKey(item);
     setSelectedKeys((current) => {
       const next = new Set(current);
@@ -547,20 +557,32 @@ export default function DownloadPage({
             {filtered.map((item) => {
               const key = selectionKey(item);
               const selected = selectedKeys.has(key);
+              const downloadStatus = publicDownloadStatusV128(item);
+              const downloadSelectable = downloadStatus.key === "downloadable";
               return (
                 <label
                   className={`cdp-download-item ${
                     selected ? "is-selected" : ""
-                  }`}
+                  } ${downloadSelectable ? "" : "is-unavailable"}`}
                   key={key}
                 >
                   <input
                     type="checkbox"
                     checked={selected}
+                    disabled={!downloadSelectable}
                     onChange={() => toggleSelection(item)}
+                    aria-label={`${item.publicTitle} ${downloadStatus.label}`}
                   />
                   <span>
-                    <strong>{item.publicTitle}</strong>
+                    <span className="cdp-download-item__heading">
+                      <strong>{item.publicTitle}</strong>
+                      <span
+                        className={`cdp-download-status cdp-download-status--${downloadStatus.key}`}
+                        data-download-status={downloadStatus.key}
+                      >
+                        {downloadStatus.label}
+                      </span>
+                    </span>
                     <small>
                       {[
                         providers.length > 1 ? item.countryNameKo : null,
@@ -569,6 +591,12 @@ export default function DownloadPage({
                       ]
                         .filter(Boolean)
                         .join(" · ")}
+                    </small>
+                    <small className="cdp-download-item__reason">
+                      {downloadStatus.reason ||
+                        `${item.downloadableRecordCount.toLocaleString(
+                          "ko-KR"
+                        )}개 공개 레코드`}
                     </small>
                   </span>
                 </label>
@@ -739,7 +767,9 @@ export default function DownloadPage({
             {selectedCatalog.length > 0
               ? `${selectedCatalog.length.toLocaleString(
                   "ko-KR"
-                )}개 데이터 선택`
+                )}개 데이터 선택 · 예상 다운로드 행 수 최대 ${expectedDownloadRows.toLocaleString(
+                  "ko-KR"
+                )}행`
               : "다운로드할 데이터를 선택해 주세요"}
           </span>
           <button
