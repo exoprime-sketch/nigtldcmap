@@ -16,3 +16,9 @@ audit-v122-*.txt
 Thumbs.db
 
 _source/
+
+# Generated V128 runtime reports are uploaded by CI, not source-controlled.
+reports/v128/deployment-audit-v128.json
+reports/v128/security-audit-v128.json
+reports/v128/production-performance-v128.json
+reports/v128/production-smoke-v128.json

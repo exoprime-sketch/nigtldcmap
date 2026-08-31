@@ -1,0 +1,86 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  release-gate:
+    name: Vietnam pilot release gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      CI: "true"
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Resolve Chrome executable
+        shell: bash
+        run: |
+          browser_path="$(command -v google-chrome || command -v chromium-browser || command -v chromium || true)"
+          if [[ -z "$browser_path" ]]; then
+            curl --fail --location --silent --show-error \
+              --output "$RUNNER_TEMP/google-chrome-stable_current_amd64.deb" \
+              https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+            sudo apt-get update
+            sudo apt-get install --yes "$RUNNER_TEMP/google-chrome-stable_current_amd64.deb"
+            browser_path="$(command -v google-chrome)"
+          fi
+          "$browser_path" --version
+          echo "V125_BROWSER_EXECUTABLE=$browser_path" >> "$GITHUB_ENV"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run blocking V128 release gate
+        run: npm run finalize:v128
+
+      - name: Verify deployment, security, and performance contracts
+        run: |
+          npm run audit:deployment:v128
+          npm run audit:security:v128
+          npm run audit:performance:v128
+
+      - name: Rebuild root-domain artifact
+        env:
+          GENERATE_SOURCEMAP: "false"
+        run: npm run build
+
+      - name: Upload production build
+        if: success()
+        uses: actions/upload-artifact@v7
+        with:
+          name: vietnam-pilot-build-${{ github.sha }}
+          path: build/
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Upload V128 reports
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: vietnam-pilot-reports-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            reports/v128/
+            !reports/v128/**/*.zip
+            !reports/v128/**/*.xlsx
+            !reports/v128/**/*.xls
+          if-no-files-found: warn
+          retention-days: 30
