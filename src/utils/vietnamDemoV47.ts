@@ -7,8 +7,11 @@ import {
   AUTHORITATIVE_ELEMENT_ID_BY_DATASET_V88,
   getAuthoritativeElementIdV88,
 } from "./elementDatasetRegistryV88";
+import { publicAssetUrlV128 } from "./publicAssetUrlV128";
 
-const DEMO_URL = "/data/catalog/authoritative-elements-v101.json";
+const DEMO_URL = publicAssetUrlV128(
+  "data/catalog/authoritative-elements-v101.json"
+);
 
 let demoPromise: Promise<VietnamFullLoadDemo> | null = null;
 

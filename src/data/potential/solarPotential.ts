@@ -7,8 +7,11 @@ import type {
   SolarPotentialCountryRecord,
   SolarPotentialDataset,
 } from "../../types/solar";
+import { publicAssetUrlV128 } from "../../utils/publicAssetUrlV128";
 
-const SOLAR_POTENTIAL_URL = "/data/solar/country-solar-potential.json";
+const SOLAR_POTENTIAL_URL = publicAssetUrlV128(
+  "data/solar/country-solar-potential.json"
+);
 const SOLAR_REPRESENTATIVE_YEAR = 2020;
 
 let cachedDataset: SolarPotentialDataset | null = null;

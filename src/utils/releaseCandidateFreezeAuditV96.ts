@@ -1,4 +1,5 @@
 import type { Final152CompletionAuditV95 } from "./final152CompletionAuditV95";
+import { publicAssetUrlV128 } from "./publicAssetUrlV128";
 
 export type RcFreezeSeverityV96 = "P0" | "P1" | "INFO";
 
@@ -64,7 +65,9 @@ export interface ReleaseCandidateFreezeResultV96 {
   issues: RcFreezeIssueV96[];
 }
 
-const RC_MANIFEST_URL = "/data/registry/release-candidate-v96.json";
+const RC_MANIFEST_URL = publicAssetUrlV128(
+  "data/registry/release-candidate-v96.json"
+);
 
 async function fetchJson<T>(url: string): Promise<T> {
   const response = await fetch(url, {

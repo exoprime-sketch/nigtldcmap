@@ -2,6 +2,10 @@ import {
   elementIdFromPublicSlugV121,
   isVietnamElementIdV121,
 } from "./vietnamElementSlugsV121";
+import {
+  isPublicAssetWithinV128,
+  publicAssetUrlV128,
+} from "../../utils/publicAssetUrlV128";
 import { VIETNAM_DATA_RUNTIME_VERSION_V124 } from "./vietnamTypesV124";
 import type {
   VietnamAssetErrorCodeV124,
@@ -21,9 +25,9 @@ import type {
   VietnamSpatialLayerAssetV124,
 } from "./vietnamTypesV124";
 
-const MANIFEST_URL = "/data/vietnam/v2/manifest.json";
+const MANIFEST_URL = publicAssetUrlV128("data/vietnam/v2/manifest.json");
 const DEFAULT_BUNDLE_INDEX_URL =
-  "/data/vietnam/v2/packs/bundle-index-v124.json";
+  publicAssetUrlV128("data/vietnam/v2/packs/bundle-index-v124.json");
 
 const jsonCache = new Map<string, Promise<unknown>>();
 const envelopeCache = new Map<
@@ -94,41 +98,45 @@ async function fetchTextChecked(
   cacheMode: RequestCache = "default",
   signal?: AbortSignal
 ): Promise<{ text: string; contentType: string; responseUrl: string }> {
+  const requestUrl = publicAssetUrlV128(url);
   let response: Response;
   try {
-    response = await fetch(url, { cache: cacheMode, signal });
+    response = await fetch(requestUrl, { cache: cacheMode, signal });
   } catch (error) {
     if (signal?.aborted) throw error;
     throw new VietnamAssetErrorV124(
       "ASSET_HTTP_ERROR",
-      `정적 자산 요청 실패: ${url}`,
-      { url, cause: error instanceof Error ? error.message : String(error) }
+      `정적 자산 요청 실패: ${requestUrl}`,
+      {
+        url: requestUrl,
+        cause: error instanceof Error ? error.message : String(error),
+      }
     );
   }
   const contentType = response.headers.get("content-type") || "";
   const text = await response.text();
-  const responseUrl = response.url || url;
+  const responseUrl = response.url || requestUrl;
   const sample = text.slice(0, 200);
 
   if (!response.ok) {
     throw new VietnamAssetErrorV124(
       response.status === 404 ? "ASSET_NOT_FOUND" : "ASSET_HTTP_ERROR",
       `정적 자산 응답 오류: ${response.status}`,
-      { url, responseUrl, status: response.status, contentType, sample }
+      { url: requestUrl, responseUrl, status: response.status, contentType, sample }
     );
   }
   if (contentType.toLowerCase().includes("text/html") || startsWithHtml(text)) {
     throw new VietnamAssetErrorV124(
       "ASSET_HTML_FALLBACK",
       "정적 데이터 대신 HTML 문서가 응답되었습니다",
-      { url, responseUrl, status: response.status, contentType, sample }
+      { url: requestUrl, responseUrl, status: response.status, contentType, sample }
     );
   }
   if (!text.trim()) {
     throw new VietnamAssetErrorV124(
       "ASSET_EMPTY",
       "정적 자산이 비어 있습니다",
-      { url, responseUrl, status: response.status, contentType }
+      { url: requestUrl, responseUrl, status: response.status, contentType }
     );
   }
   return { text, contentType, responseUrl };
@@ -546,7 +554,7 @@ async function loadElementPayload(
 export async function loadVietnamQualityReportV124(): Promise<VietnamQualityReportV124> {
   const url = await manifestAssetUrl(
     "qualityReport",
-    "/data/vietnam/v2/quality-report.json"
+    publicAssetUrlV128("data/vietnam/v2/quality-report.json")
   );
   return fetchJson<VietnamQualityReportV124>(url);
 }
@@ -556,7 +564,7 @@ export async function loadVietnamMapIndexV124(): Promise<
 > {
   const url = await manifestAssetUrl(
     "mapIndex",
-    "/data/vietnam/v2/map-index.json"
+    publicAssetUrlV128("data/vietnam/v2/map-index.json")
   );
   const payload = await fetchJson<{
     schemaVersion: "v124";
@@ -587,7 +595,7 @@ export interface VietnamMapGeoJsonV124 {
 }
 
 function assertVietnamV124MapAssetUrl(url: string): void {
-  if (!url.startsWith("/data/vietnam/v2/")) {
+  if (!isPublicAssetWithinV128(url, "data/vietnam/v2")) {
     throw new VietnamAssetErrorV124(
       "ASSET_SCHEMA_INVALID",
       "V124 지도는 Vietnam V2 공개 자산만 사용할 수 있습니다",
@@ -645,7 +653,7 @@ export async function loadVietnamCatalogV124(): Promise<
 > {
   const url = await manifestAssetUrl(
     "catalog",
-    "/data/vietnam/v2/catalog.json"
+    publicAssetUrlV128("data/vietnam/v2/catalog.json")
   );
   const payload = await fetchJson<{
     schemaVersion: "v124";

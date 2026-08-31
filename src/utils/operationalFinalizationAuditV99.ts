@@ -7,6 +7,7 @@ import {
   isSupportElementIdV88,
 } from "./elementDatasetRegistryV88";
 import { GCF_PROJECT_TECHNOLOGY_MAPPINGS_V99 } from "../data/gcf/gcfProjectTechnologyMappingV99";
+import { publicAssetUrlV128 } from "./publicAssetUrlV128";
 
 export async function runOperationalFinalizationAuditV99() {
   const actualElements = new Set(
@@ -20,11 +21,13 @@ export async function runOperationalFinalizationAuditV99() {
       .filter((id) => !isSupportElementIdV88(id))
   );
   const required = [
-    "/data/gcf/gcf-priority-country-projects-2026-08-13.json",
-    "/data/gcf/gcf-priority-country-current-check-2026-08-13.json",
-    "/data/gcf/gcf-project-technology-mapping-2026-08-13.json",
-    "/data/gcf/gcf-location-verification-2026-08-13.json",
-    "/data/platform/organizations/E-003__gcf-vnm-organizations__20260813.json",
+    publicAssetUrlV128("data/gcf/gcf-priority-country-projects-2026-08-13.json"),
+    publicAssetUrlV128("data/gcf/gcf-priority-country-current-check-2026-08-13.json"),
+    publicAssetUrlV128("data/gcf/gcf-project-technology-mapping-2026-08-13.json"),
+    publicAssetUrlV128("data/gcf/gcf-location-verification-2026-08-13.json"),
+    publicAssetUrlV128(
+      "data/platform/organizations/E-003__gcf-vnm-organizations__20260813.json"
+    ),
   ];
   const fetched = await Promise.all(
     required.map(async (url) => {

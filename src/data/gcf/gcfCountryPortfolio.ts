@@ -4,8 +4,11 @@ import type {
   GcfMetricDefinition,
   GcfMetricId,
 } from "../../types/gcf";
+import { publicAssetUrlV128 } from "../../utils/publicAssetUrlV128";
 
-const GCF_PORTFOLIO_URL = "/data/gcf/gcf-country-portfolio-2026-07-31.json";
+const GCF_PORTFOLIO_URL = publicAssetUrlV128(
+  "data/gcf/gcf-country-portfolio-2026-07-31.json"
+);
 
 let cachedPortfolio: GcfCountryPortfolio | null = null;
 

@@ -5,6 +5,7 @@ import type {
   Final152ElementServiceRowV93,
 } from "./final152ElementServiceRegistryV93";
 import type { Final152RuntimeAuditV94 } from "./final152RuntimeAuditV94";
+import { publicAssetUrlV128 } from "./publicAssetUrlV128";
 
 export type Final152CompletionSeverityV95 = "P0" | "P1" | "INFO";
 
@@ -64,7 +65,7 @@ export interface Final152CompletionAuditV95 {
 }
 
 const COMPLETION_MANIFEST_URL =
-  "/data/registry/final-152-platform-completion-v95.json";
+  publicAssetUrlV128("data/registry/final-152-platform-completion-v95.json");
 
 async function fetchJson<T>(url: string): Promise<T> {
   const response = await fetch(url, {

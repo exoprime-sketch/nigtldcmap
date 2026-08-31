@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { PUBLIC_NAVIGATION_V114 } from "../../app/navigation";
 import type { View } from "../../app/navigation";
+import { publicAssetUrlV128 } from "../../utils/publicAssetUrlV128";
 import GlobalQuickSearchV41 from "../search/GlobalQuickSearchV41";
 import "../../styles/brand-v15.css";
 import "../../styles/global-search-v41.css";
@@ -51,7 +52,7 @@ export default function Header({
           >
             <img
               className="brand-symbol-v15"
-              src="/assets/brand/nigt-symbol.png"
+              src={publicAssetUrlV128("assets/brand/nigt-symbol.png")}
               alt=""
               aria-hidden="true"
             />

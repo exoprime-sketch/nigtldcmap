@@ -7,6 +7,7 @@ import type {
   PublicIndicator,
 } from "../../types/indicator";
 import type { MapLayerId } from "../../types/map";
+import { publicAssetUrlV128 } from "../../utils/publicAssetUrlV128";
 
 export type IndicatorId =
   | "population-total"
@@ -1043,7 +1044,7 @@ async function loadIndicatorSnapshot(
   id: IndicatorId
 ): Promise<IndicatorDataResult | null> {
   try {
-    const response = await fetch(`/data/worldbank/${id}.json`, {
+    const response = await fetch(publicAssetUrlV128(`data/worldbank/${id}.json`), {
       headers: { Accept: "application/json" },
     });
     if (!response.ok) return null;

@@ -21,6 +21,7 @@ import {
   fetchWorldBankIndicatorsForCountries,
 } from "../services/worldBankApi";
 import { fetchOecdOdaCountryV113 } from "../services/oecdOdaApiV113";
+import { publicAssetUrlV128 } from "./publicAssetUrlV128";
 import {
   fetchMdbCountryPortfolioV113,
   getAdbIatiSourceUrlV113,
@@ -178,10 +179,13 @@ function getWorldBankConfigs() {
 
 async function hasLocalSnapshot(indicatorId: string): Promise<boolean> {
   try {
-    const response = await fetch(`/data/worldbank/${indicatorId}.json`, {
+    const response = await fetch(
+      publicAssetUrlV128(`data/worldbank/${indicatorId}.json`),
+      {
       cache: "no-store",
       headers: { Accept: "application/json" },
-    });
+      }
+    );
     if (!response.ok) return false;
     const payload = (await response.json()) as { observations?: unknown[] };
     return (

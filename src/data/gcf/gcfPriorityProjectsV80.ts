@@ -1,3 +1,5 @@
+import { publicAssetUrlV128 } from "../../utils/publicAssetUrlV128";
+
 export type GcfProjectStatusV80 =
   | "Approved"
   | "Under implementation"
@@ -48,7 +50,7 @@ export interface GcfPriorityProjectDatasetV80 {
 }
 
 const GCF_PRIORITY_PROJECTS_URL =
-  "/data/gcf/gcf-priority-country-projects-2026-08-13.json";
+  publicAssetUrlV128("data/gcf/gcf-priority-country-projects-2026-08-13.json");
 
 let cachedData: GcfPriorityProjectDatasetV80 | null = null;
 

@@ -22,6 +22,7 @@ import type {
   VietnamManifestV121,
   VietnamQualityReportV121,
 } from "../data/vietnam/vietnamTypesV121";
+import { publicAssetUrlV128 } from "./publicAssetUrlV128";
 
 interface AssetIntegrityV121R2 {
   schemaVersion: "v121";
@@ -144,9 +145,12 @@ function addCheck(
 }
 
 async function loadAssetIntegrity(): Promise<AssetIntegrityV121R2> {
-  const response = await fetch("/data/vietnam/v1/asset-integrity.json", {
-    cache: "no-store",
-  });
+  const response = await fetch(
+    publicAssetUrlV128("data/vietnam/v1/asset-integrity.json"),
+    {
+      cache: "no-store",
+    }
+  );
   const text = await response.text();
   if (!response.ok || /^(?:\s*<!doctype html|\s*<html)/i.test(text)) {
     throw new Error("asset-integrity.json을 불러오지 못했습니다");

@@ -63,6 +63,7 @@ import {
   formatValueV121,
   isHttpUrlV121,
 } from "../utils/vietnamActualV121";
+import { publicAssetUrlV128 } from "../utils/publicAssetUrlV128";
 import "../styles/country-data-platform-v122.css";
 
 interface RealMapExplorerPageProps {
@@ -89,7 +90,7 @@ const MAP_STYLE: any = {
   sources: {
     "country-boundaries": {
       type: "geojson",
-      data: "/data/world-countries.geojson",
+      data: publicAssetUrlV128("data/world-countries.geojson"),
       attribution: "Natural Earth · 로컬 국가 경계",
     },
   },
@@ -165,7 +166,7 @@ function publicVietnamSourceRegionV126(value: string | undefined): string {
 }
 
 const VNM_ADM1_GEOMETRY_URL_V126 =
-  "/data/vietnam/v2/geometry/vnm-adm1-63.geojson";
+  publicAssetUrlV128("data/vietnam/v2/geometry/vnm-adm1-63.geojson");
 const VNM_ADM1_BASE_SOURCE_V126 = "cdp-vietnam-adm1-reference";
 const VNM_ADM1_BASE_OUTLINE_V126 = "cdp-vietnam-adm1-reference-outline";
 

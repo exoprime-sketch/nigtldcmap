@@ -64,6 +64,16 @@ function unique(values: Array<string | null | undefined>): string[] {
   ).sort((a, b) => a.localeCompare(b, "ko"));
 }
 
+async function yieldDownloadWorkV128(): Promise<void> {
+  await new Promise<void>((resolve) => {
+    if (typeof window !== "undefined" && window.requestAnimationFrame) {
+      window.requestAnimationFrame(() => resolve());
+      return;
+    }
+    setTimeout(resolve, 0);
+  });
+}
+
 function canDownloadMeta(
   meta: VietnamIndicatorMetaV124,
   element: CountryCatalogItemV122
@@ -310,8 +320,9 @@ export default function DownloadPage({
           semantics: await loadElementIndicatorSemanticsV125(element.elementId),
         }))
       );
-      const prepared: PreparedDownload[] = bundles.map(
-        ({ element, bundle, semantics }) => {
+      const prepared: PreparedDownload[] = [];
+      for (let bundleIndex = 0; bundleIndex < bundles.length; bundleIndex += 1) {
+        const { element, bundle, semantics } = bundles[bundleIndex];
           const eligibleIndicatorIds = new Set<string>();
           bundle.observations.records.forEach((row) => {
             if (row.downloadEligible) eligibleIndicatorIds.add(row.indicatorId);
@@ -378,16 +389,18 @@ export default function DownloadPage({
               toYear
             );
           });
-          return {
+          prepared.push({
             element,
             metadataById,
             observations,
             entities,
             indicatorSemantics: semantics.indicators,
             recordSemantics: semantics.records,
-          };
+          });
+          if ((bundleIndex + 1) % 4 === 0) {
+            await yieldDownloadWorkV128();
+          }
         }
-      );
 
       const nonEmpty = prepared.filter(
         (item) => item.observations.length > 0 || item.entities.length > 0
@@ -417,22 +430,24 @@ export default function DownloadPage({
           : "selected-data";
       const filename = `${countryPart}_${dataPart}_${date}`;
 
-      const publicRows = nonEmpty.flatMap((item) => [
-        ...toPublicObservationRowsV126({
+      const publicRows = [];
+      for (const item of nonEmpty) {
+        publicRows.push(...toPublicObservationRowsV126({
           element: item.element,
           metadataById: item.metadataById,
           indicatorSemantics: item.indicatorSemantics,
           recordSemantics: item.recordSemantics,
           observations: item.observations,
-        }),
-        ...toPublicEntityRowsV126({
+        }));
+        publicRows.push(...toPublicEntityRowsV126({
           element: item.element,
           metadataById: item.metadataById,
           indicatorSemantics: item.indicatorSemantics,
           recordSemantics: item.recordSemantics,
           entities: item.entities,
-        }),
-      ]);
+        }));
+        await yieldDownloadWorkV128();
+      }
       const expectedRowCount = nonEmpty.reduce(
         (total, item) =>
           total + item.observations.length + item.entities.length,
@@ -445,6 +460,7 @@ export default function DownloadPage({
         throw new Error("공개 다운로드 필드 정책을 확인할 수 없습니다");
       }
 
+      await yieldDownloadWorkV128();
       if (format === "CSV") {
         triggerTextDownloadV121(
           `${filename}.csv`,
