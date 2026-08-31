@@ -7,6 +7,7 @@ import {
   useState,
 } from "react";
 import ChartTooltipV127 from "./ChartTooltipV127";
+import ChartViewportControlsV129 from "./ChartViewportControlsV129";
 import type {
   ChartDomainV127,
   ChartLinePatternV127,
@@ -332,12 +333,13 @@ export function InteractiveTimeSeriesChartV127({
     setTooltip(null);
   }, [calculatedFullDomain]);
 
-  const zoomEnabled = zoom?.enabled !== false && calculatedFullDomain[1] > calculatedFullDomain[0];
   const fullSpan = Math.max(0, calculatedFullDomain[1] - calculatedFullDomain[0]);
   const minimumZoomSpan = Math.min(
     fullSpan,
     Math.max(1e-8, zoom?.minimumSpan ?? Math.max(1, fullSpan / 5))
   );
+  const zoomEnabled =
+    zoom?.enabled !== false && fullSpan > minimumZoomSpan + 1e-8;
   const zoomStep = clampV127(zoom?.step ?? 0.35, 0.1, 0.8);
   const currentSpan = Math.max(1e-8, visibleXDomain[1] - visibleXDomain[0]);
   const isFullRange = sameDomainV127(visibleXDomain, calculatedFullDomain);
@@ -440,6 +442,13 @@ export function InteractiveTimeSeriesChartV127({
   const visibleXValues = allXValues.filter(
     (value) => value >= visibleXDomain[0] && value <= visibleXDomain[1]
   );
+  const viewportRangeLabel = isFullRange
+    ? "전체"
+    : visibleXValues.length > 0
+    ? `${formatX(visibleXValues[0])}–${formatX(
+        visibleXValues[visibleXValues.length - 1]
+      )}`
+    : `${formatX(visibleXDomain[0])}–${formatX(visibleXDomain[1])}`;
   const xTicks = adaptiveTicksV127(visibleXValues, chartWidth < 480 ? 4 : chartWidth < 760 ? 6 : 8);
 
   const updateDomainV127 = (
@@ -664,6 +673,7 @@ export function InteractiveTimeSeriesChartV127({
 
   return (
     <section
+      aria-label={chartSummary}
       className={rootClassName}
       ref={rootRef}
       data-chart-interaction-v127="true"
@@ -768,42 +778,19 @@ export function InteractiveTimeSeriesChartV127({
         </div>
 
         {zoomEnabled ? (
-          <div className="v127-interactive-chart__zoom" aria-label="기간 확대 축소">
-            <button
-              aria-label={controlLabels?.zoomOut || "기간 축소"}
-              data-chart-zoom-out="true"
-              data-testid="chart-zoom-out"
-              disabled={isFullRange}
-              onClick={() => zoomAroundV127("out")}
-              onFocus={clearTransientTooltipV127}
-              type="button"
-            >
-              {controlLabels?.zoomOut || "축소"}
-            </button>
-            <button
-              aria-label={controlLabels?.zoomIn || "기간 확대"}
-              data-chart-zoom-in="true"
-              data-testid="chart-zoom-in"
-              disabled={currentSpan <= minimumZoomSpan + 1e-8}
-              onClick={() => zoomAroundV127("in")}
-              onFocus={clearTransientTooltipV127}
-              type="button"
-            >
-              {controlLabels?.zoomIn || "확대"}
-            </button>
-            <button
-              aria-label={controlLabels?.reset || "전체 기간 복원"}
-              data-chart-reset="true"
-              data-chart-zoom-reset="true"
-              data-testid="chart-reset"
-              disabled={isFullRange}
-              onClick={resetRangeV127}
-              onFocus={clearTransientTooltipV127}
-              type="button"
-            >
-              {controlLabels?.reset || "전체기간"}
-            </button>
-          </div>
+          <ChartViewportControlsV129
+            canZoomIn={currentSpan > minimumZoomSpan + 1e-8}
+            canZoomOut={!isFullRange}
+            formatX={formatX}
+            fullDomain={calculatedFullDomain}
+            labels={controlLabels}
+            onControlFocus={clearTransientTooltipV127}
+            onReset={resetRangeV127}
+            onZoomIn={() => zoomAroundV127("in")}
+            onZoomOut={() => zoomAroundV127("out")}
+            rangeLabel={viewportRangeLabel}
+            visibleDomain={visibleXDomain}
+          />
         ) : null}
       </div>
 
@@ -1132,7 +1119,7 @@ export function InteractiveTimeSeriesChartV127({
         <ChartTooltipV127 state={tooltip} stageHeight={safeHeight} stageWidth={chartWidth} />
       </div>
 
-      {zoom?.showRangeBrush && allXValues.length > 1 ? (
+      {zoomEnabled && zoom?.showRangeBrush && allXValues.length > 1 ? (
         <div className="v127-interactive-chart__brush" data-chart-range-brush="true">
           <label>
             <span>{controlLabels?.rangeStart || "시작 기간"}</span>

@@ -146,36 +146,6 @@
     linear-gradient(-45deg, transparent 43%, currentColor 44%, currentColor 56%, transparent 57%);
 }
 
-.v127-interactive-chart__zoom {
-  display: flex;
-  flex: 0 0 auto;
-  gap: 4px;
-}
-
-.v127-interactive-chart__zoom button {
-  min-height: 40px;
-  border: 1px solid var(--cdp-line-strong, #bfd3ca);
-  border-radius: 8px;
-  padding: 7px 11px;
-  background: var(--cdp-panel, #fff);
-  color: var(--cdp-ink, #14231f);
-  cursor: pointer;
-  font: inherit;
-  font-size: 0.875rem;
-}
-
-.v127-interactive-chart__zoom button:hover:not(:disabled),
-.v127-interactive-chart__zoom button:focus-visible {
-  border-color: var(--cdp-brand, #0f6b4d);
-  outline: 2px solid var(--cdp-brand, #0f6b4d);
-  outline-offset: 1px;
-}
-
-.v127-interactive-chart__zoom button:disabled {
-  cursor: not-allowed;
-  opacity: 0.45;
-}
-
 .v127-interactive-chart__stage {
   position: relative;
   width: 100%;
@@ -399,15 +369,6 @@
     flex-direction: column-reverse;
   }
 
-  .v127-interactive-chart__zoom {
-    width: 100%;
-  }
-
-  .v127-interactive-chart__zoom button {
-    min-height: 44px;
-    flex: 1 1 0;
-  }
-
   .v127-chart-legend-button {
     min-height: 44px;
   }
@@ -423,8 +384,7 @@
 }
 
 @media (pointer: coarse) {
-  .v127-chart-legend-button,
-  .v127-interactive-chart__zoom button {
+  .v127-chart-legend-button {
     min-height: 44px;
   }
 }

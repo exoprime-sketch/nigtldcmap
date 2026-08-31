@@ -65,7 +65,7 @@ export function getPageMeta({
       return {
         title: `데이터 이용안내 | ${SERVICE_NAME}`,
         description:
-          "베트남 파일럿 데이터의 제공 범위·상태·결측·이용조건·지도 정확도 안내",
+          "베트남 데이터의 제공 범위·상태·결측·이용조건·지도 정확도 안내",
       };
     case "insights":
       return {

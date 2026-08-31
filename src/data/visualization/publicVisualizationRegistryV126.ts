@@ -51,7 +51,7 @@ export type PublicVisualizationSummaryV126 = {
   fixedDomainRules?: readonly PublicFixedDomainRuleV127[];
 };
 
-const SPECIALIZED_ELEMENTS_V126 = new Set(["A-002", "E-012"]);
+const SPECIALIZED_ELEMENTS_V126 = new Set(["A-002", "D-005", "E-012"]);
 
 const PUBLIC_DEFAULT_MEASURE_KEYS_V127: Readonly<Record<string, string>> =
   Object.freeze({
@@ -110,6 +110,7 @@ const ELEMENT_RENDERER_OVERRIDES_V126: Record<
   "A-011": "stacked-emissions",
   "A-017": "technology-comparison",
   "A-018": "composition-trend",
+  "D-005": "composition-trend",
   "B-033": "spatial-analysis",
   "B-034": "spatial-analysis",
   "C-016": "spatial-analysis",

@@ -57,12 +57,12 @@ export default function HomePage({
         <div className="home-final-grid">
           <div className="home-final-copy">
             <span className="home-final-eyebrow">
-              개도국 기후기술 협력 데이터
+              국가별 기후기술 협력 데이터
             </span>
-            <h1 id="home-v128-title">베트남 파일럿</h1>
+            <h1 id="home-v128-title">개도국 기후기술 협력 플랫폼</h1>
             <p>
-              정책·제도, 에너지, 온실가스, 산림, 기후사업과 협력기관
-              데이터를 한곳에서 찾고 분석할 수 있습니다.
+              베트남의 정책·제도, 에너지·인프라, 기후위험, 사업·재원,
+              협력기관 데이터를 검색하고 지도와 차트로 분석할 수 있습니다.
             </p>
 
             <form
@@ -140,8 +140,8 @@ export default function HomePage({
           <aside className="home-featured-panel" aria-label="주요 분석 데이터">
             <div className="home-featured-heading">
               <div>
-                <span>베트남 파일럿</span>
-                <strong>주요 분석 데이터</strong>
+                <span>현재 제공 국가 · 베트남</span>
+                <strong>베트남 주요 분석 데이터</strong>
               </div>
               <button type="button" onClick={() => onNavigate("explorer")}>
                 전체 데이터 보기 →
@@ -207,8 +207,8 @@ export default function HomePage({
         <div className="home-v128-overview__inner">
           <div className="home-v128-overview__heading">
             <div>
-              <span>현재 베트남 파일럿 데이터를 제공합니다</span>
-              <h2 id="home-v128-status">데이터 현황</h2>
+              <span>데이터 현황</span>
+              <h2 id="home-v128-status">현재 제공 국가 · 베트남</h2>
             </div>
             <button type="button" onClick={() => onNavigate("guide")}>
               데이터 이용안내 →
