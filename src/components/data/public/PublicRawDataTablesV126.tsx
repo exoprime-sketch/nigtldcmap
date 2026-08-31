@@ -40,14 +40,36 @@ export default function PublicRawDataTablesV126({
     detailTemplate
   );
   const total = observations.length + entities.length;
+  const populatedObservationCount = observations.filter(
+    (row) =>
+      row.value !== null &&
+      row.value !== undefined &&
+      row.value !== "" &&
+      (typeof row.value !== "number" || Number.isFinite(row.value))
+  ).length;
+  const missingObservationCount = observations.length - populatedObservationCount;
   if (total === 0) return null;
+
+  const rawTableSummary =
+    observations.length > 0
+      ? [
+          `원자료 보기 · 전체 ${total.toLocaleString("ko-KR")}행`,
+          `값 있음 ${populatedObservationCount.toLocaleString("ko-KR")}행`,
+          `결측 ${missingObservationCount.toLocaleString("ko-KR")}행`,
+          entities.length > 0
+            ? `목록 ${entities.length.toLocaleString("ko-KR")}건`
+            : "",
+        ]
+          .filter(Boolean)
+          .join(" · ")
+      : `원자료 보기 · 목록 ${entities.length.toLocaleString("ko-KR")}건`;
 
   return (
     <details
       className="pav126-raw-table"
       data-testid="public-raw-table"
     >
-      <summary>원자료 보기 · {total.toLocaleString("ko-KR")}건</summary>
+      <summary data-testid="public-raw-table-summary">{rawTableSummary}</summary>
 
       {observations.length > 0 && (
         <div className="cdp-table-wrap">

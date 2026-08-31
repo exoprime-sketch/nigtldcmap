@@ -161,7 +161,7 @@ export default function PublicDataAnalysisRouterV126({
         )}
       </section>
 
-      <PublicDataLimitationsV126 observations={observations} entities={entities} />
+      <PublicDataLimitationsV126 elementId={elementId} />
       <PublicSourcePanelV126
         indicators={indicators}
         observations={observations}

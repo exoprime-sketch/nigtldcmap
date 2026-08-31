@@ -99,6 +99,15 @@ export default function CountryDataFullPreviewV52({
         : entities.filter((row) => row.indicatorId === selectedIndicatorId),
     [entities, selectedIndicatorId]
   );
+  const publicDataSummary = useMemo(
+    () =>
+      buildPublicDataSummaryV127(
+        countryNameKo,
+        visibleObservations,
+        visibleEntities
+      ),
+    [countryNameKo, visibleEntities, visibleObservations]
+  );
   const publicSummary = getPublicVisualizationSummaryV126(elementId);
   const presentationTier = publicSummary?.presentationKind || "generic-fallback";
 
@@ -116,10 +125,7 @@ export default function CountryDataFullPreviewV52({
           <span>공개 데이터</span>
           <h3>{runtime ? "분석 화면" : "데이터를 준비하는 중"}</h3>
         </div>
-        <small>
-          {countryNameKo} · 수치 {visibleObservations.length.toLocaleString("ko-KR")}건 ·
-          목록 {visibleEntities.length.toLocaleString("ko-KR")}건
-        </small>
+        <small data-testid="public-data-summary">{publicDataSummary}</small>
       </header>
 
       {error && (
@@ -151,6 +157,79 @@ export default function CountryDataFullPreviewV52({
       )}
     </section>
   );
+}
+
+function buildPublicDataSummaryV127(
+  countryNameKo: string,
+  observations: VietnamObservationV124[],
+  entities: VietnamEntityV124[]
+): string {
+  const populatedObservations = observations.filter(
+    isPopulatedObservationV127
+  );
+  const missingObservationCount =
+    observations.length - populatedObservations.length;
+  const populatedEntityCount = entities.filter(isPopulatedEntityV127).length;
+
+  if (observations.length > 0) {
+    const indicatorCount = new Set(
+      populatedObservations.map((row) => row.indicatorId).filter(Boolean)
+    ).size;
+    const populatedYears = populatedObservations
+      .map((row) => row.year)
+      .filter((year): year is number =>
+        typeof year === "number" && Number.isFinite(year)
+      )
+      .sort((left, right) => left - right);
+
+    if (indicatorCount > 0 && populatedYears.length > 0) {
+      const firstYear = populatedYears[0];
+      const lastYear = populatedYears[populatedYears.length - 1];
+      const yearRange =
+        firstYear === lastYear ? `${firstYear}년` : `${firstYear}~${lastYear}년`;
+      return `${countryNameKo} · 지표 ${indicatorCount.toLocaleString(
+        "ko-KR"
+      )}종 · 관측기간 ${yearRange}`;
+    }
+
+    const observationSummary = [
+      `공개 관측값 ${populatedObservations.length.toLocaleString("ko-KR")}건`,
+      missingObservationCount > 0
+        ? `결측 ${missingObservationCount.toLocaleString("ko-KR")}건`
+        : "",
+    ]
+      .filter(Boolean)
+      .join(" · ");
+    const entitySummary =
+      populatedEntityCount > 0
+        ? ` · 목록 ${populatedEntityCount.toLocaleString("ko-KR")}건`
+        : "";
+    return `${countryNameKo} · ${observationSummary}${entitySummary}`;
+  }
+
+  if (entities.length > 0) {
+    return `${countryNameKo} · 목록 ${populatedEntityCount.toLocaleString(
+      "ko-KR"
+    )}건`;
+  }
+
+  return `${countryNameKo} · 공개된 관측값 또는 목록이 없습니다`;
+}
+
+function isPopulatedObservationV127(row: VietnamObservationV124): boolean {
+  if (row.value === null || row.value === undefined || row.value === "") {
+    return false;
+  }
+  return typeof row.value !== "number" || Number.isFinite(row.value);
+}
+
+function isPopulatedEntityV127(row: VietnamEntityV124): boolean {
+  if (typeof row.name === "string" && row.name.trim()) return true;
+  return Object.values(row.normalizedAttributes).some((value) => {
+    if (value === null || value === undefined || value === "") return false;
+    if (Array.isArray(value)) return value.length > 0;
+    return typeof value !== "number" || Number.isFinite(value);
+  });
 }
 
 function runtimeContractV125(
@@ -193,7 +272,7 @@ function runtimeContractV125(
       stateParameters: ["element", "measure", "sex", "year", "period", "dim.*"],
     },
     comparisonPolicy: "동일 정의·단위·기준시점에서만 비교",
-    missingDataPolicy: "결측값을 0으로 대체하지 않음",
+    missingDataPolicy: "현재 공개된 값을 확인할 수 없습니다",
     currentVisualizationIssue: "",
     contractStatus: summary.contractStatus,
   };
