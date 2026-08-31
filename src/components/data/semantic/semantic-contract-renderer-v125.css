@@ -94,6 +94,36 @@
   outline-offset: 2px;
 }
 
+.sv125-interactive-value {
+  cursor: pointer;
+  position: relative;
+}
+
+.sv125-interactive-value__tooltip {
+  background: #102a25;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  bottom: calc(100% + 8px);
+  box-shadow: 0 10px 28px rgba(13, 39, 33, 0.22);
+  color: #fff;
+  display: grid;
+  gap: 3px;
+  left: min(12px, 4vw);
+  max-width: min(280px, calc(100vw - 48px));
+  padding: 9px 11px;
+  pointer-events: none;
+  position: absolute;
+  width: max-content;
+  z-index: 8;
+}
+
+.sv125-interactive-value__tooltip strong,
+.sv125-interactive-value__tooltip span {
+  color: inherit;
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
 .sv125-composition-row > div {
   align-items: center;
   display: flex;

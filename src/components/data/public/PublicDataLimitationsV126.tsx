@@ -1,43 +1,35 @@
-import type {
-  VietnamEntityV124,
-  VietnamObservationV124,
-} from "../../../data/vietnam/vietnamTypesV124";
-import { publicMissingReasonLabelV126 } from "../../../data/visualization/publicFieldPolicyV126";
+import { getPublicLimitationsV127 } from "../../../data/visualization/publicLimitationsRegistryV127";
 
 interface Props {
-  observations: VietnamObservationV124[];
-  entities: VietnamEntityV124[];
+  elementId: string;
 }
 
-export default function PublicDataLimitationsV126({ observations, entities }: Props) {
-  const missing = [
-    ...observations
-      .filter((row) => row.value === null || row.value === undefined || row.value === "")
-      .map((row) =>
-        publicMissingReasonLabelV126(row.missingReasonCode, row.note)
-      ),
-    ...entities.map((row) =>
-      publicMissingReasonLabelV126(row.missingReasonCode, row.note)
-    ),
-  ].filter(Boolean);
-  const reasons = Array.from(new Set(missing));
+export default function PublicDataLimitationsV126({
+  elementId,
+}: Props) {
+  const limitations = getPublicLimitationsV127(elementId);
+
+  if (limitations.length === 0) return null;
 
   return (
-    <section className="pav126-limitations" data-testid="public-limitations-panel">
-      <div className="pav126-section-heading">
-        <span>해석 유의사항</span>
-        <h3>데이터 한계·결측</h3>
-      </div>
-      <p>원천에 제공되지 않은 값은 0으로 바꾸지 않습니다.</p>
-      {reasons.length > 0 ? (
-        <ul>
-          {reasons.slice(0, 4).map((reason) => (
-            <li key={reason}>{reason}</li>
-          ))}
-        </ul>
-      ) : (
-        <p>현재 선택한 공개 레코드에 별도로 기재된 결측 사유가 없습니다.</p>
-      )}
-    </section>
+    <details
+      className="pav126-limitations"
+      data-testid="public-limitations-panel"
+    >
+      <summary>
+        <strong>자료 이용 시 유의사항</strong>
+      </summary>
+      <ul>
+        {limitations.map((limitation) => (
+          <li
+            key={`${limitation.kind}:${limitation.message}`}
+            data-testid="public-limitation-item"
+            data-limitation-kind={limitation.kind}
+          >
+            {limitation.message}
+          </li>
+        ))}
+      </ul>
+    </details>
   );
 }

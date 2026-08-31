@@ -3512,9 +3512,23 @@ export default function RealMapExplorerPage({
                         label="기준연도"
                         value={selected.provenance.referenceYear || String(selectedLayer.latestYear || "미표기")}
                       />
+                      <Evidence label="값" value="1" />
+                      <Evidence
+                        label="단위"
+                        value={
+                          focusedSemantic?.unit ||
+                          focusedVariable?.unit ||
+                          "개"
+                        }
+                      />
                       {selectedLayer.tooltipFields.map((field) => {
                         if (field === "name") return null;
                         const value = selected.normalizedAttributes?.[field];
+                        const hasSourceValue =
+                          value !== null &&
+                          value !== undefined &&
+                          !(typeof value === "string" && value.trim() === "");
+                        if (!hasSourceValue) return null;
                         const hasNumericValue =
                           (typeof value === "number" && Number.isFinite(value)) ||
                           (typeof value === "string" &&
@@ -3555,7 +3569,11 @@ export default function RealMapExplorerPage({
                           const missingLabels = selectedLayer.tooltipFields
                             .filter((field) => field !== "name")
                             .filter((field) => {
-                              const fieldValue = selected.normalizedAttributes?.[field];
+                              const fieldValue =
+                                field === "referenceYear"
+                                  ? selected.provenance.referenceYear ??
+                                    selected.normalizedAttributes?.[field]
+                                  : selected.normalizedAttributes?.[field];
                               return (
                                 fieldValue === null ||
                                 fieldValue === undefined ||

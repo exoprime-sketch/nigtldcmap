@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import type {
   ElementVisualizationContractV125,
@@ -14,6 +15,13 @@ import {
   publicSourceUrlV126,
   publicTextV126,
 } from "../../../data/visualization/publicFieldPolicyV126";
+import InteractiveTimeSeriesChartV127 from "../../charts/InteractiveTimeSeriesChartV127";
+import type {
+  ChartLinePatternV127,
+  ChartMarkerShapeV127,
+  TimeSeriesV127,
+} from "../../../types/chartInteractionV127";
+import { getPublicFixedDomainV127 } from "../../../data/visualization/publicVisualizationRegistryV126";
 
 import "./semantic-contract-renderer-v125.css";
 
@@ -66,6 +74,7 @@ export default function SemanticContractRendererV125({
       ) : (
         <>
           {renderObservationPanelV125(
+            contract.elementId,
             renderer,
             presentRows,
             numericRows,
@@ -86,6 +95,7 @@ export default function SemanticContractRendererV125({
 }
 
 function renderObservationPanelV125(
+  elementId: string,
   renderer: RendererV125,
   presentRows: PresentRowV125[],
   numericRows: NumericRowV125[],
@@ -109,13 +119,18 @@ function renderObservationPanelV125(
     case "score-benchmark":
       return (
         <>
-          <ScoreBenchmarkPanelV125 rows={numericRows} contextRows={contextRows} />
+          <ScoreBenchmarkPanelV125
+            contextRows={contextRows}
+            elementId={elementId}
+            rows={numericRows}
+          />
           {textRows.length > 0 && <EvidenceCardsV125 rows={textRows} />}
         </>
       );
     case "capability-scorecard":
       return (
         <CapabilityScorecardV125
+          elementId={elementId}
           rows={presentRows}
           numericRows={numericRows}
           contextRows={contextRows}
@@ -145,7 +160,7 @@ function renderObservationPanelV125(
     case "multi-metric-trend":
       return (
         <>
-          <TrendPanelV125 rows={contextRows} />
+          <TrendPanelV125 elementId={elementId} rows={contextRows} />
           {textRows.length > 0 && <EvidenceCardsV125 rows={textRows} />}
         </>
       );
@@ -251,14 +266,12 @@ function CompositionPanelV125({ rows }: { rows: NumericRowV125[] }) {
             )}
             <div className="sv125-composition-list" role="list">
               {compositionRows.map((row, index) => (
-                <div
+                <InteractiveValueItemV127
                   className="sv125-composition-row"
                   key={row.recordId}
-                  role="listitem"
-                  tabIndex={0}
-                  aria-label={`${categoryLabelV125(row)}, ${formatValueV121(
-                    row.value
-                  )} ${unit}`}
+                  label={categoryLabelV125(row)}
+                  value={formatValueV121(row.value)}
+                  unit={unit}
                 >
                   <div>
                     <i
@@ -279,7 +292,7 @@ function CompositionPanelV125({ rows }: { rows: NumericRowV125[] }) {
                   <b>
                     {formatValueV121(row.value)} {unit}
                   </b>
-                </div>
+                </InteractiveValueItemV127>
               ))}
             </div>
           </article>
@@ -440,15 +453,17 @@ function PairedCategoryPanelV125({ rows }: { rows: PresentRowV125[] }) {
 function ScoreBenchmarkPanelV125({
   rows,
   contextRows,
+  elementId,
 }: {
   rows: NumericRowV125[];
   contextRows: SemanticObservationV125[];
+  elementId: string;
 }) {
   if (rows.length === 0) return null;
   return (
     <>
       <MetricCardsV125 rows={rows} title="현재 점수" />
-      <TrendPanelV125 rows={contextRows} />
+      <TrendPanelV125 elementId={elementId} rows={contextRows} />
     </>
   );
 }
@@ -457,10 +472,12 @@ function CapabilityScorecardV125({
   rows,
   numericRows,
   contextRows,
+  elementId,
 }: {
   rows: PresentRowV125[];
   numericRows: NumericRowV125[];
   contextRows: SemanticObservationV125[];
+  elementId: string;
 }) {
   if (rows.length === 0) return null;
   const statusRows = rows.filter((row) => typeof row.value !== "number");
@@ -480,12 +497,22 @@ function CapabilityScorecardV125({
           ))}
         </div>
       </VisualizationFrameV125>
-      <ScoreBenchmarkPanelV125 rows={numericRows} contextRows={contextRows} />
+      <ScoreBenchmarkPanelV125
+        contextRows={contextRows}
+        elementId={elementId}
+        rows={numericRows}
+      />
     </>
   );
 }
 
-function TrendPanelV125({ rows }: { rows: SemanticObservationV125[] }) {
+function TrendPanelV125({
+  rows,
+  elementId,
+}: {
+  rows: SemanticObservationV125[];
+  elementId: string;
+}) {
   const numericRows = rows.filter(
     (row): row is NumericRowV125 =>
       isNumericRowV125(row) && typeof row.year === "number"
@@ -494,14 +521,27 @@ function TrendPanelV125({ rows }: { rows: SemanticObservationV125[] }) {
   return (
     <VisualizationFrameV125 eyebrow="연도별" title="측정항목 추세">
       {groupByUnitV125(numericRows).map(({ unit, rows: unitRows }) => (
-        <TrendUnitV125 key={unit || "no-unit"} rows={unitRows} unit={unit} />
+        <TrendUnitV125
+          elementId={elementId}
+          key={unit || "no-unit"}
+          rows={unitRows}
+          unit={unit}
+        />
       ))}
     </VisualizationFrameV125>
   );
 }
 
-function TrendUnitV125({ rows, unit }: { rows: NumericRowV125[]; unit: string }) {
-  const series = Array.from(
+function TrendUnitV125({
+  rows,
+  unit,
+  elementId,
+}: {
+  rows: NumericRowV125[];
+  unit: string;
+  elementId: string;
+}) {
+  const sourceSeries = Array.from(
     rows.reduce((map, row) => {
       const bucket = map.get(row.seriesKey) || [];
       bucket.push(row);
@@ -513,79 +553,63 @@ function TrendUnitV125({ rows, unit }: { rows: NumericRowV125[]; unit: string })
     label: values[0].displayLabel,
     rows: values.sort((left, right) => (left.year || 0) - (right.year || 0)),
   }));
-  const all = series.flatMap((item) => item.rows);
-  const years = all.map((row) => row.year as number);
-  const values = all.map((row) => row.value);
+  const years = sourceSeries.flatMap((item) =>
+    item.rows.map((row) => row.year as number)
+  );
   const minYear = Math.min(...years);
   const maxYear = Math.max(...years);
-  const minValue = Math.min(...values);
-  const maxValue = Math.max(...values);
-  const width = 880;
-  const height = 300;
-  const pad = { left: 58, right: 28, top: 25, bottom: 42 };
-  const x = (value: number) =>
-    pad.left +
-    ((value - minYear) / Math.max(1, maxYear - minYear)) *
-      (width - pad.left - pad.right);
-  const y = (value: number) =>
-    height -
-    pad.bottom -
-    ((value - minValue) / Math.max(1e-9, maxValue - minValue)) *
-      (height - pad.top - pad.bottom);
+  const publicUnit = unit || "단위 미기재";
+  const patterns: ChartLinePatternV127[] = [
+    "solid",
+    "dash",
+    "dot",
+    "long-dash",
+  ];
+  const markers: ChartMarkerShapeV127[] = [
+    "circle",
+    "square",
+    "diamond",
+    "triangle",
+    "cross",
+  ];
+  const series: TimeSeriesV127[] = sourceSeries.map((item, index) => ({
+    id: item.key,
+    label: item.label,
+    unit: publicUnit,
+    linePattern: patterns[index % patterns.length],
+    marker: markers[index % markers.length],
+    points: item.rows.map((row) => ({
+      id: row.recordId,
+      x: row.year as number,
+      xLabel: `${row.year}년`,
+      value: row.value,
+    })),
+  }));
+  const fixedDomain = getPublicFixedDomainV127(
+    elementId,
+    Array.from(new Set(rows.map((row) => row.semanticMeasure.key)))
+  );
+
   return (
     <article className="sv125-contract-axis">
-      <h5>단위: {unit || "미기재"}</h5>
-      <div className="sv125-contract-trend-scroll">
-        <svg
-          viewBox={`0 0 ${width} ${height}`}
-          role="img"
-          aria-label={`${unit || "단위 미기재"} 연도별 추세`}
-        >
-          <line x1={pad.left} y1={height - pad.bottom} x2={width - pad.right} y2={height - pad.bottom} />
-          <line x1={pad.left} y1={pad.top} x2={pad.left} y2={height - pad.bottom} />
-          {series.map((item, index) => (
-            <g
-              key={item.key}
-              className={`sv125-contract-series sv125-contract-series--${SERIES_PATTERNS[index % SERIES_PATTERNS.length]}`}
-            >
-              <polyline
-                fill="none"
-                points={item.rows
-                  .map((row) => `${x(row.year as number)},${y(row.value)}`)
-                  .join(" ")}
-              />
-              {item.rows.map((row) => (
-                <circle
-                  key={row.recordId}
-                  cx={x(row.year as number)}
-                  cy={y(row.value)}
-                  r="4"
-                  tabIndex={0}
-                  aria-label={`${item.label}, ${row.year}, ${formatValueV121(
-                    row.value
-                  )} ${unit}`}
-                >
-                  <title>
-                    {item.label} · {row.year} · {formatValueV121(row.value)} {unit}
-                  </title>
-                </circle>
-              ))}
-            </g>
-          ))}
-          <text x={pad.left} y={height - 12}>{minYear}</text>
-          <text x={width - pad.right} y={height - 12} textAnchor="end">{maxYear}</text>
-        </svg>
-      </div>
-      <div className="sv125-contract-legend" aria-label="계열 범례">
-        {series.map((item, index) => (
-          <span key={item.key}>
-            <i
-              className={`sv125-contract-pattern sv125-contract-pattern--${SERIES_PATTERNS[index % SERIES_PATTERNS.length]}`}
-            />
-            {item.label}
-          </span>
-        ))}
-      </div>
+      <InteractiveTimeSeriesChartV127
+        ariaLabel={`${minYear}년부터 ${maxYear}년까지 ${publicUnit} 시계열`}
+        formatDelta={(value) => `${value > 0 ? "+" : ""}${formatValueV121(value)}`}
+        formatValue={formatValueV121}
+        fixedYDomain={fixedDomain?.domain}
+        minimumVisibleSeries={1}
+        scaleDescription={fixedDomain?.scaleDescription}
+        series={series}
+        sharedYearTooltip
+        title={`${minYear}~${maxYear}년 추세`}
+        unit={publicUnit}
+        xAxisTitle="연도"
+        yAxisTitle="측정값"
+        zoom={{
+          enabled: maxYear > minYear,
+          minimumSpan: Math.max(1, Math.floor((maxYear - minYear) / 5)),
+        }}
+      />
     </article>
   );
 }
@@ -601,7 +625,12 @@ function CategoryComparisonV125({ rows }: { rows: NumericRowV125[] }) {
             <h5>단위: {unit || "미기재"}</h5>
             <div className="sv125-contract-bars" role="list">
               {unitRows.map((row, index) => (
-                <div key={row.recordId} role="listitem" tabIndex={0}>
+                <InteractiveValueItemV127
+                  key={row.recordId}
+                  label={categoryLabelV125(row)}
+                  value={formatValueV121(row.value)}
+                  unit={unit}
+                >
                   <strong>{categoryLabelV125(row)}</strong>
                   <span aria-hidden="true">
                     <i
@@ -612,7 +641,7 @@ function CategoryComparisonV125({ rows }: { rows: NumericRowV125[] }) {
                   <b>
                     {formatValueV121(row.value)} {unit}
                   </b>
-                </div>
+                </InteractiveValueItemV127>
               ))}
             </div>
           </article>
@@ -1066,6 +1095,87 @@ function EntityTableFallbackV125({
         </p>
       )}
     </details>
+  );
+}
+
+function InteractiveValueItemV127({
+  children,
+  className = "",
+  label,
+  value,
+  unit,
+}: {
+  children: ReactNode;
+  className?: string;
+  label: string;
+  value: string;
+  unit: string;
+}) {
+  const [visible, setVisible] = useState(false);
+  const [pinned, setPinned] = useState(false);
+  const rootRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!pinned) return undefined;
+    const closeOutside = (event: PointerEvent) => {
+      const target = event.target;
+      if (target instanceof Node && !rootRef.current?.contains(target)) {
+        setPinned(false);
+        setVisible(false);
+      }
+    };
+    document.addEventListener("pointerdown", closeOutside, true);
+    return () => document.removeEventListener("pointerdown", closeOutside, true);
+  }, [pinned]);
+
+  const hideIfUnpinned = () => {
+    if (!pinned) setVisible(false);
+  };
+  const togglePinned = () => {
+    setPinned((current) => {
+      const next = !current;
+      setVisible(next);
+      return next;
+    });
+  };
+
+  return (
+    <div
+      className={`sv125-interactive-value ${className}`.trim()}
+      ref={rootRef}
+      role="listitem"
+      tabIndex={0}
+      data-chart-interactive-item="true"
+      aria-label={`${label}, ${value}${unit ? ` ${unit}` : ""}`}
+      onPointerEnter={() => setVisible(true)}
+      onPointerLeave={hideIfUnpinned}
+      onFocus={() => setVisible(true)}
+      onBlur={hideIfUnpinned}
+      onClick={togglePinned}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          togglePinned();
+        }
+        if (event.key === "Escape") {
+          setPinned(false);
+          setVisible(false);
+        }
+      }}
+    >
+      {children}
+      {visible && (
+        <div
+          className="sv125-interactive-value__tooltip"
+          data-testid="chart-tooltip"
+          data-tooltip-pinned={pinned ? "true" : "false"}
+          role="tooltip"
+        >
+          <strong>{label}</strong>
+          <span>{value}{unit ? ` ${unit}` : ""}</span>
+        </div>
+      )}
+    </div>
   );
 }
 

@@ -1,4 +1,5 @@
 import { useEffect, useMemo } from "react";
+import InteractiveTimeSeriesChartV127 from "../../charts/InteractiveTimeSeriesChartV127";
 import type { SemanticObservationV125 } from "../../../data/visualization/semanticTypesV125";
 import {
   publicCpiaLabelV126,
@@ -11,6 +12,12 @@ import {
   formatPublicDeltaV126,
   formatPublicNumberV126,
 } from "../../../data/visualization/publicNumberFormatV126";
+import { getPublicChartLimitationSummaryV127 } from "../../../data/visualization/publicLimitationsRegistryV127";
+import type {
+  ChartLinePatternV127,
+  ChartMarkerShapeV127,
+  TimeSeriesV127,
+} from "../../../types/chartInteractionV127";
 import type { DataFinderSelectorStateV125 } from "../../../types/dataFinderV125";
 
 interface Props {
@@ -29,15 +36,16 @@ type CpiaSeriesV126 = {
   indicatorId: string;
   label: string;
   color: string;
-  dash: string;
+  linePattern: ChartLinePatternV127;
+  marker: ChartMarkerShapeV127;
 };
 
 const CPIA_CORE_SERIES_V126: CpiaSeriesV126[] = [
-  { indicatorId: "A-002_cpia_irai_overall", label: "IRAI 종합", color: "#0f766e", dash: "" },
-  { indicatorId: "A-002_cpia_economic_management", label: "경제관리", color: "#2563eb", dash: "10 0" },
-  { indicatorId: "A-002_cpia_structural_policies", label: "구조정책", color: "#c2410c", dash: "10 5" },
-  { indicatorId: "A-002_cpia_social_inclusion", label: "사회적 포용", color: "#7c3aed", dash: "3 4" },
-  { indicatorId: "A-002_cpia_public_sector", label: "공공부문 관리", color: "#be123c", dash: "13 4 3 4" },
+  { indicatorId: "A-002_cpia_irai_overall", label: "IRAI 종합", color: "#0f766e", linePattern: "solid", marker: "circle" },
+  { indicatorId: "A-002_cpia_economic_management", label: "경제관리", color: "#2563eb", linePattern: "dash", marker: "square" },
+  { indicatorId: "A-002_cpia_structural_policies", label: "구조정책", color: "#c2410c", linePattern: "long-dash", marker: "diamond" },
+  { indicatorId: "A-002_cpia_social_inclusion", label: "사회적 포용", color: "#7c3aed", linePattern: "dot", marker: "triangle" },
+  { indicatorId: "A-002_cpia_public_sector", label: "공공부문 관리", color: "#be123c", linePattern: "dash", marker: "cross" },
 ];
 
 const CPIA_CLUSTERS_V126 = [
@@ -75,10 +83,6 @@ const CPIA_CLUSTERS_V126 = [
   },
 ] as const;
 
-const CHART_WIDTH_V126 = 920;
-const CHART_HEIGHT_V126 = 340;
-const CHART_PADDING_V126 = { left: 58, right: 24, top: 22, bottom: 44 };
-
 export default function CpiaPolicyCapacityAnalysisV126({
   rows,
   selectorState,
@@ -101,6 +105,8 @@ export default function CpiaPolicyCapacityAnalysisV126({
   const availableYears = Array.from(new Set(coreRows.map((row) => row.year))).sort(
     (left, right) => right - left
   );
+  const firstPopulatedYear = availableYears[availableYears.length - 1];
+  const lastPopulatedYear = availableYears[0];
   const selectedYear =
     selectorState.year !== null && availableYears.includes(selectorState.year)
       ? selectorState.year
@@ -176,8 +182,7 @@ export default function CpiaPolicyCapacityAnalysisV126({
       <section className="cpia126__panel" data-testid="a002-cpia-trend">
         <div className="pav126-section-heading">
           <span>주 분석</span>
-          <h3>2005~{availableYears[0]}년 정책·제도 역량 추이</h3>
-          <p>World Bank CPIA의 1~6점 공식 척도를 고정해 표시합니다.</p>
+          <h3>{firstPopulatedYear}~{lastPopulatedYear}년 정책·제도 역량 추이</h3>
         </div>
         <CpiaTrendChartV126 rows={coreRows} />
       </section>
@@ -292,54 +297,50 @@ function CpiaTrendChartV126({ rows }: { rows: NumericCpiaRowV126[] }) {
   const years = Array.from(new Set(rows.map((row) => row.year))).sort((a, b) => a - b);
   const minYear = years[0];
   const maxYear = years[years.length - 1];
-  const x = (year: number) =>
-    CHART_PADDING_V126.left +
-    ((year - minYear) / Math.max(1, maxYear - minYear)) *
-      (CHART_WIDTH_V126 - CHART_PADDING_V126.left - CHART_PADDING_V126.right);
-  const y = (value: number) =>
-    CHART_PADDING_V126.top +
-    ((6 - value) / 5) *
-      (CHART_HEIGHT_V126 - CHART_PADDING_V126.top - CHART_PADDING_V126.bottom);
-  const yearTicks = years.filter(
-    (_, index) => index === 0 || index === years.length - 1 || index % 2 === 0
-  );
+  const chartLimitation = getPublicChartLimitationSummaryV127("A-002");
+  const series: TimeSeriesV127[] = CPIA_CORE_SERIES_V126.map((definition) => ({
+    id: definition.indicatorId,
+    label: definition.label,
+    unit: "점",
+    color: definition.color,
+    linePattern: definition.linePattern,
+    marker: definition.marker,
+    defaultVisible: true,
+    points: rows
+      .filter((row) => row.indicatorId === definition.indicatorId)
+      .sort((left, right) => left.year - right.year)
+      .map((row) => ({
+        id: row.recordId,
+        x: row.year,
+        xLabel: `${row.year}년`,
+        value: row.value,
+      })),
+  }));
 
   return (
     <>
-      <div className="cpia126__legend" aria-label="지표 범례">
-        {CPIA_CORE_SERIES_V126.map((series) => (
-          <span key={series.indicatorId}><i style={{ backgroundColor: series.color }} aria-hidden="true" />{series.label}</span>
-        ))}
-      </div>
-      <div className="cpia126__chart-scroll">
-        <svg viewBox={`0 0 ${CHART_WIDTH_V126} ${CHART_HEIGHT_V126}`} role="img" aria-label="CPIA 종합과 4개 클러스터의 1점에서 6점 사이 연도별 추이">
-          {[1, 2, 3, 4, 5, 6].map((tick) => (
-            <g key={tick}>
-              <line x1={CHART_PADDING_V126.left} x2={CHART_WIDTH_V126 - CHART_PADDING_V126.right} y1={y(tick)} y2={y(tick)} />
-              <text x={CHART_PADDING_V126.left - 12} y={y(tick) + 4} textAnchor="end">{tick}</text>
-            </g>
-          ))}
-          {yearTicks.map((year) => (
-            <text key={year} x={x(year)} y={CHART_HEIGHT_V126 - 14} textAnchor="middle">{year}</text>
-          ))}
-          {CPIA_CORE_SERIES_V126.map((series) => {
-            const seriesRows = rows
-              .filter((row) => row.indicatorId === series.indicatorId)
-              .sort((left, right) => left.year - right.year);
-            const points = seriesRows.map((row) => `${x(row.year)},${y(row.value)}`).join(" ");
-            return (
-              <g key={series.indicatorId}>
-                <polyline points={points} fill="none" stroke={series.color} strokeWidth="3" strokeDasharray={series.dash || undefined} />
-                {seriesRows.map((row) => (
-                  <circle key={row.recordId} cx={x(row.year)} cy={y(row.value)} r="4" fill="#fff" stroke={series.color} strokeWidth="2" tabIndex={0} aria-label={`${series.label}, ${row.year}년, ${formatPublicNumberV126(row.value, "점")}점`}>
-                    <title>{series.label} · {row.year}년 · {formatPublicNumberV126(row.value, "점")}점</title>
-                  </circle>
-                ))}
-              </g>
-            );
-          })}
-        </svg>
-      </div>
+      <InteractiveTimeSeriesChartV127
+        ariaLabel={`CPIA 종합과 4개 클러스터의 ${minYear}년부터 ${maxYear}년까지 추이`}
+        controlLabels={{ zoomOut: "축소", zoomIn: "확대", reset: "전체기간" }}
+        fixedYDomain={[1, 6]}
+        formatDelta={(value) => `${value > 0 ? "+" : ""}${formatPublicNumberV126(value, "점")}`}
+        formatValue={(value) => formatPublicNumberV126(value, "점")}
+        minimumVisibleSeries={1}
+        scaleDescription="1(낮음)–6(높음)"
+        series={series}
+        sharedYearTooltip
+        testId="interactive-time-series-chart"
+        title={`${minYear}~${maxYear}년 CPIA 추이`}
+        unit="점"
+        xAxisTitle="연도"
+        yAxisTitle="CPIA 점수"
+        zoom={{ enabled: true, minimumSpan: 2 }}
+      />
+      {chartLimitation && (
+        <p className="cpia126__chart-limitation" data-testid="a002-coverage-gap-note">
+          {chartLimitation}
+        </p>
+      )}
     </>
   );
 }

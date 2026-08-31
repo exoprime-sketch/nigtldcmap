@@ -29,6 +29,17 @@ export type PublicPresentationKindV126 =
   | "status-only"
   | "generic-fallback";
 
+export type PublicFixedDomainRuleV127 = {
+  measureKeys: readonly string[];
+  domain: readonly [number, number];
+  scaleDescription: string;
+};
+
+export type PublicFixedDomainV127 = {
+  domain: [number, number];
+  scaleDescription: string;
+};
+
 export type PublicVisualizationSummaryV126 = {
   elementId: string;
   presentationKind: PublicPresentationKindV126;
@@ -36,9 +47,56 @@ export type PublicVisualizationSummaryV126 = {
   adapterRenderer: SemanticRendererV125;
   dataPresenceStatus: string;
   populatedRecordCount: number;
+  defaultMeasureKey?: string;
+  fixedDomainRules?: readonly PublicFixedDomainRuleV127[];
 };
 
 const SPECIALIZED_ELEMENTS_V126 = new Set(["A-002", "E-012"]);
+
+const PUBLIC_DEFAULT_MEASURE_KEYS_V127: Readonly<Record<string, string>> =
+  Object.freeze({
+    "A-001": "measure-ffa3eb23fb73",
+  });
+
+/**
+ * Reviewed official score scales only. Percentage and currency series keep an
+ * adaptive domain so ordinary variation remains legible. Rules are keyed by
+ * public semantic measure rather than inferred from source notes at runtime.
+ */
+const PUBLIC_FIXED_DOMAIN_RULES_V127: Readonly<
+  Record<string, readonly PublicFixedDomainRuleV127[]>
+> = Object.freeze({
+  "A-001": Object.freeze([
+    {
+      measureKeys: Object.freeze([
+        "measure-ffa3eb23fb73",
+        "measure-caff7e75bb43",
+        "measure-e1d0f1a6c1e8",
+      ]),
+      domain: Object.freeze([0, 100]) as readonly [number, number],
+      scaleDescription: "0(매우 부패)–100(매우 청렴)",
+    },
+    {
+      measureKeys: Object.freeze(["measure-9db6f2970bf5"]),
+      domain: Object.freeze([0, 10]) as readonly [number, number],
+      scaleDescription: "0–10(2011년 이전 방법론)",
+    },
+  ]),
+  "A-002": Object.freeze([
+    {
+      measureKeys: Object.freeze(["*"]),
+      domain: Object.freeze([1, 6]) as readonly [number, number],
+      scaleDescription: "1(낮음)–6(높음)",
+    },
+  ]),
+  "A-008": Object.freeze([
+    {
+      measureKeys: Object.freeze(["measure-a6e5b6b4f25f"]),
+      domain: Object.freeze([0, 100]) as readonly [number, number],
+      scaleDescription: "0(완전 평등)–100(완전 불평등)",
+    },
+  ]),
+});
 
 const ELEMENT_RENDERER_OVERRIDES_V126: Record<
   string,
@@ -106,6 +164,8 @@ export const PUBLIC_VISUALIZATION_SUMMARIES_V126: PublicVisualizationSummaryV126
     adapterRenderer: summary.primaryRenderer,
     dataPresenceStatus: summary.dataPresenceStatus,
     populatedRecordCount: summary.populatedRecordCount,
+    defaultMeasureKey: PUBLIC_DEFAULT_MEASURE_KEYS_V127[summary.elementId],
+    fixedDomainRules: PUBLIC_FIXED_DOMAIN_RULES_V127[summary.elementId],
   }));
 
 const PUBLIC_VISUALIZATION_BY_ELEMENT_V126 = new Map(
@@ -119,6 +179,38 @@ export function getPublicVisualizationSummaryV126(
   elementId: string
 ): PublicVisualizationSummaryV126 | null {
   return PUBLIC_VISUALIZATION_BY_ELEMENT_V126.get(elementId) || null;
+}
+
+export function getPublicFixedDomainV127(
+  elementId: string,
+  measureKeys: readonly string[]
+): PublicFixedDomainV127 | null {
+  const rules = PUBLIC_FIXED_DOMAIN_RULES_V127[elementId] || [];
+  const uniqueMeasureKeys = Array.from(new Set(measureKeys.filter(Boolean)));
+  if (uniqueMeasureKeys.length === 0 || rules.length === 0) return null;
+
+  const matchedRules = uniqueMeasureKeys.map((measureKey) =>
+    rules.find(
+      (rule) =>
+        rule.measureKeys.includes("*") || rule.measureKeys.includes(measureKey)
+    )
+  );
+  if (matchedRules.some((rule) => !rule)) return null;
+
+  const firstRule = matchedRules[0];
+  if (!firstRule) return null;
+  const sameScale = matchedRules.every(
+    (rule) =>
+      rule?.domain[0] === firstRule.domain[0] &&
+      rule?.domain[1] === firstRule.domain[1] &&
+      rule?.scaleDescription === firstRule.scaleDescription
+  );
+  if (!sameScale) return null;
+
+  return {
+    domain: [firstRule.domain[0], firstRule.domain[1]],
+    scaleDescription: firstRule.scaleDescription,
+  };
 }
 
 export const PUBLIC_PRESENTATION_COVERAGE_V126 = {
