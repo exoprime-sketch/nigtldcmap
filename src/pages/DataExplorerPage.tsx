@@ -136,7 +136,6 @@ export default function DataExplorerPage({
   useEffect(() => {
     if (
       !normalizedQuery ||
-      searchIndexLoading ||
       searchIndexLoadedFor === normalizedCountry
     ) {
       return;
@@ -180,7 +179,6 @@ export default function DataExplorerPage({
     normalizedCountry,
     normalizedQuery,
     searchIndexLoadedFor,
-    searchIndexLoading,
   ]);
 
   const availableCatalog = useMemo(
