@@ -1,0 +1,339 @@
+{
+  "schemaVersion": "v129-audit-report-1",
+  "generatedAt": "2026-08-31T23:50:34.106Z",
+  "audit": "interpretation:v129",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "interpretation:v129",
+    "status": "PASS",
+    "passed": 21,
+    "failed": 0,
+    "total": 21,
+    "failedChecks": [],
+    "interpretationRequiredCount": 53,
+    "interpretationCoverage": "100%",
+    "missingDirectionCount": 0,
+    "missingScaleCount": 0,
+    "arbitraryBandCount": 0,
+    "b021VariableCount": 12,
+    "variableUnitMismatchCount": 0,
+    "gviGlobalBenchmarkStatus": "unavailable-version-not-verified"
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "interpretation:v129",
+      "name": "INTERPRETATION_JSON",
+      "status": "PASS",
+      "actual": null,
+      "expected": null
+    },
+    {
+      "type": "check",
+      "audit": "interpretation:v129",
+      "name": "RUNTIME_PUBLIC_INTERPRETATION_PARITY",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": null
+    },
+    {
+      "type": "check",
+      "audit": "interpretation:v129",
+      "name": "BENCHMARK_JSON",
+      "status": "PASS",
+      "actual": null,
+      "expected": null
+    },
+    {
+      "type": "check",
+      "audit": "interpretation:v129",
+      "name": "CATALOG_JSON",
+      "status": "PASS",
+      "actual": null,
+      "expected": null
+    },
+    {
+      "type": "check",
+      "audit": "interpretation:v129",
+      "name": "MAP_INDEX_JSON",
+      "status": "PASS",
+      "actual": null,
+      "expected": null
+    },
+    {
+      "type": "check",
+      "audit": "interpretation:v129",
+      "name": "B021_SPATIAL_JSON",
+      "status": "PASS",
+      "actual": null,
+      "expected": null
+    },
+    {
+      "type": "check",
+      "audit": "interpretation:v129",
+      "name": "INTERPRETATION_KEY_UNIQUENESS",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "type": "check",
+      "audit": "interpretation:v129",
+      "name": "NON_OBVIOUS_INDICATOR_DETECTION",
+      "status": "PASS",
+      "actual": 43,
+      "expected": "> 0",
+      "details": [
+        "A-001",
+        "A-002",
+        "A-014",
+        "A-015",
+        "A-024",
+        "A-031",
+        "A-033",
+        "B-002",
+        "B-005",
+        "B-006",
+        "B-008",
+        "B-009",
+        "B-010",
+        "B-011",
+        "B-013",
+        "B-017",
+        "B-018",
+        "B-019",
+        "B-020",
+        "B-021",
+        "B-041",
+        "B-045",
+        "C-001",
+        "C-002",
+        "C-003",
+        "C-004",
+        "C-005",
+        "C-007",
+        "C-010",
+        "C-011",
+        "C-013",
+        "C-014",
+        "C-018",
+        "C-022",
+        "D-004",
+        "D-013",
+        "D-023",
+        "E-005",
+        "E-007",
+        "E-008",
+        "E-010",
+        "E-013",
+        "E-017"
+      ]
+    },
+    {
+      "type": "check",
+      "audit": "interpretation:v129",
+      "name": "REQUIRED_INTERPRETATION_COVERAGE",
+      "status": "PASS",
+      "actual": {
+        "detected": 43,
+        "required": 53,
+        "missingElements": 0,
+        "missingB021Variables": 0,
+        "invalidItems": 0
+      },
+      "expected": {
+        "missingElements": 0,
+        "missingB021Variables": 0,
+        "invalidItems": 0
+      },
+      "details": {
+        "detectedWithoutDecision": [],
+        "b021MissingVariables": [],
+        "invalidItems": []
+      }
+    },
+    {
+      "type": "check",
+      "audit": "interpretation:v129",
+      "name": "MISSING_DIRECTION",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "type": "check",
+      "audit": "interpretation:v129",
+      "name": "MISSING_SCALE_WHERE_APPLICABLE",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "type": "check",
+      "audit": "interpretation:v129",
+      "name": "ARBITRARY_OFFICIAL_BAND",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "type": "check",
+      "audit": "interpretation:v129",
+      "name": "B021_GVI_SCALE_0_100",
+      "status": "PASS",
+      "actual": {
+        "minimum": 0,
+        "maximum": 100,
+        "minimumLabel": "취약성이 매우 낮음",
+        "maximumLabel": "취약성이 매우 높음"
+      },
+      "expected": {
+        "minimum": 0,
+        "maximum": 100
+      }
+    },
+    {
+      "type": "check",
+      "audit": "interpretation:v129",
+      "name": "B021_GVI_HIGHER_WORSE",
+      "status": "PASS",
+      "actual": "higher-worse",
+      "expected": "higher-worse"
+    },
+    {
+      "type": "check",
+      "audit": "interpretation:v129",
+      "name": "B021_REGION_AGGREGATION_DISCLOSURE",
+      "status": "PASS",
+      "actual": {
+        "uniqueSourceRegions": 6,
+        "aggregationLevel": "GDL 6개 권역",
+        "aggregationNotice": "GDL 6개 권역의 값을 해당 성·시에 표시하며, 성 단위 독립 추정값이 아닙니다.",
+        "quangTriValue": 39.6,
+        "quangTriRank": 3
+      },
+      "expected": {
+        "uniqueSourceRegions": 6,
+        "quangTriValue": 39.6,
+        "quangTriRank": 3,
+        "disclosure": true
+      }
+    },
+    {
+      "type": "check",
+      "audit": "interpretation:v129",
+      "name": "B021_GVI_GROUP_RANK_CONTRACT",
+      "status": "PASS",
+      "actual": {
+        "benchmarkType": "group-rank",
+        "benchmarkScope": "베트남 GDL 6개 권역",
+        "uniqueSourceRegions": 6,
+        "quangTriRank": 3
+      },
+      "expected": {
+        "benchmarkType": "group-rank",
+        "benchmarkScope": "베트남 GDL 6개 권역",
+        "uniqueSourceRegions": 6,
+        "quangTriRank": 3
+      }
+    },
+    {
+      "type": "check",
+      "audit": "interpretation:v129",
+      "name": "B021_GLOBAL_BENCHMARK_SAFETY",
+      "status": "PASS",
+      "actual": {
+        "benchmark": {
+          "elementId": "B-021",
+          "variableKey": "gvi-6",
+          "benchmarkType": "global-percentile",
+          "available": false,
+          "official": true,
+          "status": "unavailable-version-not-verified",
+          "reason": "공개 패키지에 원천 historical table 버전이 보존되지 않아 동일 정의·버전·연도의 세계 분포와 일치함을 검증할 수 없습니다.",
+          "percentileGenerated": false,
+          "sourceOrganization": "Global Data Lab",
+          "sourceUrl": "https://globaldatalab.org/gvi/about/",
+          "referenceTableUrl": "https://globaldatalab.org/gvi/table/gvi/"
+        },
+        "unsafeGlobalClaim": false
+      },
+      "expected": {
+        "unsafeGlobalClaim": false
+      }
+    },
+    {
+      "type": "check",
+      "audit": "interpretation:v129",
+      "name": "MAP_SELECTED_VARIABLE_UNIT_AND_LABEL",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null,
+        "staticMismatches": 0,
+        "runtimeMismatches": 0
+      },
+      "expected": {
+        "runtimeFailure": null,
+        "staticMismatches": 0,
+        "runtimeMismatches": 0
+      },
+      "details": {
+        "b021VariableMismatches": [],
+        "runtimeVariableMismatches": []
+      }
+    },
+    {
+      "type": "check",
+      "audit": "interpretation:v129",
+      "name": "B021_PUBLIC_MEANING_RUNTIME",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null,
+        "meaningText": "지표 읽는 법경제·교육·보건·성·인프라·거버넌스·인구 차원의 사회경제적 취약성을 종합합니다.0은 취약성이 매우 낮고 100은 매우 높음을 뜻합니다.GDL 6개 권역의 값을 해당 성·시에 표시하며, 성 단위 독립 추정값이 아닙니다."
+      },
+      "expected": {
+        "scale": "0-100",
+        "direction": "higher means more vulnerable"
+      }
+    },
+    {
+      "type": "check",
+      "audit": "interpretation:v129",
+      "name": "B021_DETAIL_RUNTIME_PUBLIC_PARITY",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null,
+        "checkedVariables": 12,
+        "mismatchCount": 0
+      },
+      "expected": {
+        "runtimeFailure": null,
+        "checkedVariables": 12,
+        "mismatchCount": 0
+      },
+      "details": []
+    },
+    {
+      "type": "check",
+      "audit": "interpretation:v129",
+      "name": "UNCAUGHT_RUNTIME_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "interpretationRequiredCount": 53,
+  "interpretationCoverage": "100%",
+  "missingDirectionCount": 0,
+  "missingScaleCount": 0,
+  "arbitraryBandCount": 0,
+  "b021VariableCount": 12,
+  "variableUnitMismatchCount": 0,
+  "gviGlobalBenchmarkStatus": "unavailable-version-not-verified"
+}

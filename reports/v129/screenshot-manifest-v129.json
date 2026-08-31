@@ -1,0 +1,271 @@
+{
+  "schemaVersion": "v129-audit-report-1",
+  "generatedAt": "2026-08-31T23:51:58.011Z",
+  "audit": "screenshots:v129",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "screenshots:v129",
+    "status": "PASS",
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "failedChecks": [],
+    "screenshotCount": 13,
+    "screenshots": [
+      {
+        "name": "home-canonical-title.png",
+        "width": 1425,
+        "height": 1341,
+        "byteSize": 751804,
+        "sha256": "8d737af8d66051235019aafc643cd47e11e1292e63e7728f3e4c4ce31369f341",
+        "error": null
+      },
+      {
+        "name": "map-default-layout.png",
+        "width": 1425,
+        "height": 1034,
+        "byteSize": 184598,
+        "sha256": "aa1acc9fbddc117baa8ce0bf4f7d8cf246b6fe12218e93c6d9afd197b8573f43",
+        "error": null
+      },
+      {
+        "name": "map-left-panel-expanded.png",
+        "width": 1425,
+        "height": 1034,
+        "byteSize": 211035,
+        "sha256": "9aec587e03cffc668116f9028d368034052ed00eb64c1fa0e8cf787f3b72b487",
+        "error": null
+      },
+      {
+        "name": "map-right-panel-expanded.png",
+        "width": 1425,
+        "height": 1034,
+        "byteSize": 200748,
+        "sha256": "46d95de80f35f3a369f481782bdab7df58753abffd7ec73071fcffbdec2e492a",
+        "error": null
+      },
+      {
+        "name": "map-preset-list.png",
+        "width": 283,
+        "height": 588,
+        "byteSize": 28610,
+        "sha256": "b213b45c72b6fdc2ceb62f74dd470fedae08f5189a155f346a9808132a596d2d",
+        "error": null
+      },
+      {
+        "name": "map-gvi-tooltip.png",
+        "width": 1425,
+        "height": 1034,
+        "byteSize": 306540,
+        "sha256": "53da48a2b15e72596b7434d5781deb37113d9e70acebe7cb95bf78bc7d029f64",
+        "error": null
+      },
+      {
+        "name": "map-gvi-selected.png",
+        "width": 1425,
+        "height": 1034,
+        "byteSize": 301638,
+        "sha256": "e2d34e69cf581b353f2b1f9a7b4c8019cd36f615e519bc9d93ddd7cb20263fa6",
+        "error": null
+      },
+      {
+        "name": "map-context-point-tooltip.png",
+        "width": 1425,
+        "height": 1034,
+        "byteSize": 320769,
+        "sha256": "005a06b918601a8007a590e300d7964a1d2ae0e6d548e4deffbc0b7f098eff21",
+        "error": null
+      },
+      {
+        "name": "map-context-point-selected.png",
+        "width": 1425,
+        "height": 1034,
+        "byteSize": 326000,
+        "sha256": "35ddcb2e40c9c6e29a7c7a46909dd30c313f37ac0724d4c1731b29ad6642546b",
+        "error": null
+      },
+      {
+        "name": "chart-toolbar-desktop.png",
+        "width": 1084,
+        "height": 474,
+        "byteSize": 51702,
+        "sha256": "bce3f23e9502c79d3f97e9d12e987ac7ff8c1c40faad157316d298e0fbf1e18f",
+        "error": null
+      },
+      {
+        "name": "chart-toolbar-mobile.png",
+        "width": 279,
+        "height": 603,
+        "byteSize": 34798,
+        "sha256": "1b88b40afd4752c03a8a69cf4efba3b5c1ea0e4d5fb2fe10b60c5dd8387e5300",
+        "error": null
+      },
+      {
+        "name": "d-005-representative-allocation.png",
+        "width": 1130,
+        "height": 797,
+        "byteSize": 78744,
+        "sha256": "c0f326e4b1bbae32a71ddc48760e2ffe06e06b531ed77a626ab0cefd5b7892b6",
+        "error": null
+      },
+      {
+        "name": "d-005-denominator-selection.png",
+        "width": 1130,
+        "height": 797,
+        "byteSize": 79406,
+        "sha256": "74c5d553334e28c8568274222af6d583fc21953ed2b6777b203e75badee9b11e",
+        "error": null
+      }
+    ],
+    "duplicateHashes": []
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "screenshots:v129",
+      "name": "SCREENSHOT_RUNTIME",
+      "status": "PASS",
+      "actual": null,
+      "expected": null
+    },
+    {
+      "type": "check",
+      "audit": "screenshots:v129",
+      "name": "REQUIRED_SCREENSHOTS",
+      "status": "PASS",
+      "actual": {
+        "count": 13,
+        "invalid": []
+      },
+      "expected": {
+        "count": 13,
+        "invalid": []
+      }
+    },
+    {
+      "type": "check",
+      "audit": "screenshots:v129",
+      "name": "SCREENSHOT_DISTINCT_STATES",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "screenshots:v129",
+      "name": "UNCAUGHT_RUNTIME_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "screenshotCount": 13,
+  "screenshots": [
+    {
+      "name": "home-canonical-title.png",
+      "width": 1425,
+      "height": 1341,
+      "byteSize": 751804,
+      "sha256": "8d737af8d66051235019aafc643cd47e11e1292e63e7728f3e4c4ce31369f341",
+      "error": null
+    },
+    {
+      "name": "map-default-layout.png",
+      "width": 1425,
+      "height": 1034,
+      "byteSize": 184598,
+      "sha256": "aa1acc9fbddc117baa8ce0bf4f7d8cf246b6fe12218e93c6d9afd197b8573f43",
+      "error": null
+    },
+    {
+      "name": "map-left-panel-expanded.png",
+      "width": 1425,
+      "height": 1034,
+      "byteSize": 211035,
+      "sha256": "9aec587e03cffc668116f9028d368034052ed00eb64c1fa0e8cf787f3b72b487",
+      "error": null
+    },
+    {
+      "name": "map-right-panel-expanded.png",
+      "width": 1425,
+      "height": 1034,
+      "byteSize": 200748,
+      "sha256": "46d95de80f35f3a369f481782bdab7df58753abffd7ec73071fcffbdec2e492a",
+      "error": null
+    },
+    {
+      "name": "map-preset-list.png",
+      "width": 283,
+      "height": 588,
+      "byteSize": 28610,
+      "sha256": "b213b45c72b6fdc2ceb62f74dd470fedae08f5189a155f346a9808132a596d2d",
+      "error": null
+    },
+    {
+      "name": "map-gvi-tooltip.png",
+      "width": 1425,
+      "height": 1034,
+      "byteSize": 306540,
+      "sha256": "53da48a2b15e72596b7434d5781deb37113d9e70acebe7cb95bf78bc7d029f64",
+      "error": null
+    },
+    {
+      "name": "map-gvi-selected.png",
+      "width": 1425,
+      "height": 1034,
+      "byteSize": 301638,
+      "sha256": "e2d34e69cf581b353f2b1f9a7b4c8019cd36f615e519bc9d93ddd7cb20263fa6",
+      "error": null
+    },
+    {
+      "name": "map-context-point-tooltip.png",
+      "width": 1425,
+      "height": 1034,
+      "byteSize": 320769,
+      "sha256": "005a06b918601a8007a590e300d7964a1d2ae0e6d548e4deffbc0b7f098eff21",
+      "error": null
+    },
+    {
+      "name": "map-context-point-selected.png",
+      "width": 1425,
+      "height": 1034,
+      "byteSize": 326000,
+      "sha256": "35ddcb2e40c9c6e29a7c7a46909dd30c313f37ac0724d4c1731b29ad6642546b",
+      "error": null
+    },
+    {
+      "name": "chart-toolbar-desktop.png",
+      "width": 1084,
+      "height": 474,
+      "byteSize": 51702,
+      "sha256": "bce3f23e9502c79d3f97e9d12e987ac7ff8c1c40faad157316d298e0fbf1e18f",
+      "error": null
+    },
+    {
+      "name": "chart-toolbar-mobile.png",
+      "width": 279,
+      "height": 603,
+      "byteSize": 34798,
+      "sha256": "1b88b40afd4752c03a8a69cf4efba3b5c1ea0e4d5fb2fe10b60c5dd8387e5300",
+      "error": null
+    },
+    {
+      "name": "d-005-representative-allocation.png",
+      "width": 1130,
+      "height": 797,
+      "byteSize": 78744,
+      "sha256": "c0f326e4b1bbae32a71ddc48760e2ffe06e06b531ed77a626ab0cefd5b7892b6",
+      "error": null
+    },
+    {
+      "name": "d-005-denominator-selection.png",
+      "width": 1130,
+      "height": 797,
+      "byteSize": 79406,
+      "sha256": "74c5d553334e28c8568274222af6d583fc21953ed2b6777b203e75badee9b11e",
+      "error": null
+    }
+  ],
+  "duplicateHashes": []
+}

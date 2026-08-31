@@ -279,7 +279,7 @@ addCheck("MAP_PAGE_MOUNTED", routeMounted, routeMounted, true);
 
 const fallbackMarkup = sourceHasAll(pageSource, [
   /className=["']cdp-map-page["']/u,
-  /className=["']cdp-map-layout["']/u,
+  /className=(?:["']cdp-map-layout["']|\{`cdp-map-layout\s)/u,
   /className=["']cdp-map-canvas-wrap["']/u,
   /cdp-map-canvas/u,
   /className=["']cdp-map-fallback["']/u,

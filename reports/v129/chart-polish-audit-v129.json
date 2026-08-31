@@ -1,0 +1,571 @@
+{
+  "schemaVersion": "v129-audit-report-1",
+  "generatedAt": "2026-08-31T23:51:38.770Z",
+  "audit": "chart-polish:v129",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "chart-polish:v129",
+    "status": "PASS",
+    "passed": 13,
+    "failed": 0,
+    "total": 13,
+    "failedChecks": [],
+    "chartToolbar": "PASS",
+    "currentRangeLabel": "전체",
+    "ineligibleChartToolbarCount": 0,
+    "dependencyChanges": 0
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "chart-polish:v129",
+      "name": "CHART_POLISH_SOURCES",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "chart-polish:v129",
+      "name": "SEGMENTED_TOOLBAR_SOURCE",
+      "status": "PASS",
+      "actual": {
+        "contract": true,
+        "buttonGroup": true,
+        "segmentedBorder": true
+      },
+      "expected": {
+        "contract": true,
+        "buttonGroup": true,
+        "segmentedBorder": true
+      }
+    },
+    {
+      "type": "check",
+      "audit": "chart-polish:v129",
+      "name": "CHART_CONTROL_ACCESSIBLE_SOURCE",
+      "status": "PASS",
+      "actual": {
+        "zoomOutName": true,
+        "zoomInName": true,
+        "resetName": true,
+        "focus": true,
+        "touchTarget": true,
+        "reducedMotion": true
+      },
+      "expected": "all chart control accessibility contracts"
+    },
+    {
+      "type": "check",
+      "audit": "chart-polish:v129",
+      "name": "SEGMENTED_TOOLBAR_RUNTIME",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null,
+        "desktopInitial": {
+          "chartCount": 1,
+          "toolbarCount": 1,
+          "toolbar": {
+            "segmented": "true",
+            "rangeAttribute": "전체",
+            "rangeText": "표시기간전체",
+            "ariaLabel": "표시 기간 조정",
+            "box": {
+              "left": 934.96875,
+              "right": 1254.5,
+              "top": 1375.828125,
+              "bottom": 1417.828125,
+              "width": 319.53125,
+              "height": 42
+            }
+          },
+          "buttons": [
+            {
+              "testid": "chart-zoom-out",
+              "name": "표시 기간을 넓혀 보기",
+              "tooltip": "표시 기간을 넓혀 보기",
+              "disabled": true,
+              "visibleText": "축소",
+              "svgCount": 1,
+              "box": {
+                "left": 1050.734375,
+                "right": 1118.65625,
+                "top": 1376.828125,
+                "bottom": 1416.828125,
+                "width": 67.921875,
+                "height": 40
+              },
+              "display": "flex",
+              "opacity": "0.5"
+            },
+            {
+              "testid": "chart-zoom-in",
+              "name": "표시 기간을 좁혀 자세히 보기",
+              "tooltip": "표시 기간을 좁혀 자세히 보기",
+              "disabled": false,
+              "visibleText": "확대",
+              "svgCount": 1,
+              "box": {
+                "left": 1118.65625,
+                "right": 1186.578125,
+                "top": 1376.828125,
+                "bottom": 1416.828125,
+                "width": 67.921875,
+                "height": 40
+              },
+              "display": "flex",
+              "opacity": "1"
+            },
+            {
+              "testid": "chart-reset",
+              "name": "전체 기간으로 복원",
+              "tooltip": "전체 기간으로 복원",
+              "disabled": true,
+              "visibleText": "전체",
+              "svgCount": 1,
+              "box": {
+                "left": 1186.578125,
+                "right": 1253.5,
+                "top": 1376.828125,
+                "bottom": 1416.828125,
+                "width": 66.921875,
+                "height": 40
+              },
+              "display": "flex",
+              "opacity": "0.5"
+            }
+          ],
+          "pageOverflow": -15,
+          "toolbarOverflow": 0
+        }
+      },
+      "expected": {
+        "segmented": true,
+        "buttons": 3,
+        "equalHeight": true,
+        "inlineSvg": true
+      }
+    },
+    {
+      "type": "check",
+      "audit": "chart-polish:v129",
+      "name": "CURRENT_RANGE_LABEL",
+      "status": "PASS",
+      "actual": {
+        "segmented": "true",
+        "rangeAttribute": "전체",
+        "rangeText": "표시기간전체",
+        "ariaLabel": "표시 기간 조정",
+        "box": {
+          "left": 934.96875,
+          "right": 1254.5,
+          "top": 1375.828125,
+          "bottom": 1417.828125,
+          "width": 319.53125,
+          "height": 42
+        }
+      },
+      "expected": {
+        "rangeAttribute": "전체",
+        "rangeText": "표시기간 전체"
+      }
+    },
+    {
+      "type": "check",
+      "audit": "chart-polish:v129",
+      "name": "ICON_ACCESSIBLE_NAMES",
+      "status": "PASS",
+      "actual": [
+        {
+          "testid": "chart-zoom-out",
+          "name": "표시 기간을 넓혀 보기",
+          "tooltip": "표시 기간을 넓혀 보기",
+          "disabled": true,
+          "visibleText": "축소",
+          "svgCount": 1,
+          "box": {
+            "left": 1050.734375,
+            "right": 1118.65625,
+            "top": 1376.828125,
+            "bottom": 1416.828125,
+            "width": 67.921875,
+            "height": 40
+          },
+          "display": "flex",
+          "opacity": "0.5"
+        },
+        {
+          "testid": "chart-zoom-in",
+          "name": "표시 기간을 좁혀 자세히 보기",
+          "tooltip": "표시 기간을 좁혀 자세히 보기",
+          "disabled": false,
+          "visibleText": "확대",
+          "svgCount": 1,
+          "box": {
+            "left": 1118.65625,
+            "right": 1186.578125,
+            "top": 1376.828125,
+            "bottom": 1416.828125,
+            "width": 67.921875,
+            "height": 40
+          },
+          "display": "flex",
+          "opacity": "1"
+        },
+        {
+          "testid": "chart-reset",
+          "name": "전체 기간으로 복원",
+          "tooltip": "전체 기간으로 복원",
+          "disabled": true,
+          "visibleText": "전체",
+          "svgCount": 1,
+          "box": {
+            "left": 1186.578125,
+            "right": 1253.5,
+            "top": 1376.828125,
+            "bottom": 1416.828125,
+            "width": 66.921875,
+            "height": 40
+          },
+          "display": "flex",
+          "opacity": "0.5"
+        }
+      ],
+      "expected": [
+        [
+          "chart-zoom-out",
+          "표시 기간을 넓혀 보기"
+        ],
+        [
+          "chart-zoom-in",
+          "표시 기간을 좁혀 자세히 보기"
+        ],
+        [
+          "chart-reset",
+          "전체 기간으로 복원"
+        ]
+      ]
+    },
+    {
+      "type": "check",
+      "audit": "chart-polish:v129",
+      "name": "DISABLED_STATE",
+      "status": "PASS",
+      "actual": {
+        "initial": [
+          {
+            "testid": "chart-zoom-out",
+            "name": "표시 기간을 넓혀 보기",
+            "tooltip": "표시 기간을 넓혀 보기",
+            "disabled": true,
+            "visibleText": "축소",
+            "svgCount": 1,
+            "box": {
+              "left": 1050.734375,
+              "right": 1118.65625,
+              "top": 1376.828125,
+              "bottom": 1416.828125,
+              "width": 67.921875,
+              "height": 40
+            },
+            "display": "flex",
+            "opacity": "0.5"
+          },
+          {
+            "testid": "chart-zoom-in",
+            "name": "표시 기간을 좁혀 자세히 보기",
+            "tooltip": "표시 기간을 좁혀 자세히 보기",
+            "disabled": false,
+            "visibleText": "확대",
+            "svgCount": 1,
+            "box": {
+              "left": 1118.65625,
+              "right": 1186.578125,
+              "top": 1376.828125,
+              "bottom": 1416.828125,
+              "width": 67.921875,
+              "height": 40
+            },
+            "display": "flex",
+            "opacity": "1"
+          },
+          {
+            "testid": "chart-reset",
+            "name": "전체 기간으로 복원",
+            "tooltip": "전체 기간으로 복원",
+            "disabled": true,
+            "visibleText": "전체",
+            "svgCount": 1,
+            "box": {
+              "left": 1186.578125,
+              "right": 1253.5,
+              "top": 1376.828125,
+              "bottom": 1416.828125,
+              "width": 66.921875,
+              "height": 40
+            },
+            "display": "flex",
+            "opacity": "0.5"
+          }
+        ],
+        "reset": [
+          {
+            "testid": "chart-zoom-out",
+            "name": "표시 기간을 넓혀 보기",
+            "tooltip": "표시 기간을 넓혀 보기",
+            "disabled": true,
+            "visibleText": "축소",
+            "svgCount": 1,
+            "box": {
+              "left": 1050.734375,
+              "right": 1118.65625,
+              "top": 1376.828125,
+              "bottom": 1416.828125,
+              "width": 67.921875,
+              "height": 40
+            },
+            "display": "flex",
+            "opacity": "0.5"
+          },
+          {
+            "testid": "chart-zoom-in",
+            "name": "표시 기간을 좁혀 자세히 보기",
+            "tooltip": "표시 기간을 좁혀 자세히 보기",
+            "disabled": false,
+            "visibleText": "확대",
+            "svgCount": 1,
+            "box": {
+              "left": 1118.65625,
+              "right": 1186.578125,
+              "top": 1376.828125,
+              "bottom": 1416.828125,
+              "width": 67.921875,
+              "height": 40
+            },
+            "display": "flex",
+            "opacity": "1"
+          },
+          {
+            "testid": "chart-reset",
+            "name": "전체 기간으로 복원",
+            "tooltip": "전체 기간으로 복원",
+            "disabled": true,
+            "visibleText": "전체",
+            "svgCount": 1,
+            "box": {
+              "left": 1186.578125,
+              "right": 1253.5,
+              "top": 1376.828125,
+              "bottom": 1416.828125,
+              "width": 66.921875,
+              "height": 40
+            },
+            "display": "flex",
+            "opacity": "0.5"
+          }
+        ]
+      },
+      "expected": {
+        "initialZoomOut": "disabled",
+        "initialReset": "disabled",
+        "resetAfterRestore": "disabled"
+      }
+    },
+    {
+      "type": "check",
+      "audit": "chart-polish:v129",
+      "name": "ZOOM_IN_INTERACTION",
+      "status": "PASS",
+      "actual": {
+        "segmented": "true",
+        "rangeAttribute": "2007–2013",
+        "rangeText": "표시기간2007–2013",
+        "ariaLabel": "표시 기간 조정",
+        "box": {
+          "left": 890.453125,
+          "right": 1254.5,
+          "top": 1375.828125,
+          "bottom": 1417.828125,
+          "width": 364.046875,
+          "height": 42
+        }
+      },
+      "expected": "populated integer-year range narrower than full (YYYY–YYYY)"
+    },
+    {
+      "type": "check",
+      "audit": "chart-polish:v129",
+      "name": "ZOOM_OUT_INTERACTION",
+      "status": "PASS",
+      "actual": {
+        "segmented": "true",
+        "rangeAttribute": "전체",
+        "rangeText": "표시기간전체",
+        "ariaLabel": "표시 기간 조정",
+        "box": {
+          "left": 934.96875,
+          "right": 1254.5,
+          "top": 1375.828125,
+          "bottom": 1417.828125,
+          "width": 319.53125,
+          "height": 42
+        }
+      },
+      "expected": "range wider than zoomed"
+    },
+    {
+      "type": "check",
+      "audit": "chart-polish:v129",
+      "name": "RESET_INTERACTION",
+      "status": "PASS",
+      "actual": {
+        "segmented": "true",
+        "rangeAttribute": "전체",
+        "rangeText": "표시기간전체",
+        "ariaLabel": "표시 기간 조정",
+        "box": {
+          "left": 934.96875,
+          "right": 1254.5,
+          "top": 1375.828125,
+          "bottom": 1417.828125,
+          "width": 319.53125,
+          "height": 42
+        }
+      },
+      "expected": {
+        "range": "전체"
+      }
+    },
+    {
+      "type": "check",
+      "audit": "chart-polish:v129",
+      "name": "MOBILE_TOOLBAR_OVERFLOW",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null,
+        "mobile": {
+          "chartCount": 1,
+          "toolbarCount": 1,
+          "toolbar": {
+            "segmented": "true",
+            "rangeAttribute": "전체",
+            "rangeText": "표시기간전체",
+            "ariaLabel": "표시 기간 조정",
+            "box": {
+              "left": 48,
+              "right": 327,
+              "top": 2680.078125,
+              "bottom": 2726.078125,
+              "width": 279,
+              "height": 46
+            }
+          },
+          "buttons": [
+            {
+              "testid": "chart-zoom-out",
+              "name": "표시 기간을 넓혀 보기",
+              "tooltip": "표시 기간을 넓혀 보기",
+              "disabled": true,
+              "visibleText": "축소",
+              "svgCount": 1,
+              "box": {
+                "left": 194,
+                "right": 238,
+                "top": 2681.078125,
+                "bottom": 2725.078125,
+                "width": 44,
+                "height": 44
+              },
+              "display": "flex",
+              "opacity": "0.5"
+            },
+            {
+              "testid": "chart-zoom-in",
+              "name": "표시 기간을 좁혀 자세히 보기",
+              "tooltip": "표시 기간을 좁혀 자세히 보기",
+              "disabled": false,
+              "visibleText": "확대",
+              "svgCount": 1,
+              "box": {
+                "left": 238,
+                "right": 282,
+                "top": 2681.078125,
+                "bottom": 2725.078125,
+                "width": 44,
+                "height": 44
+              },
+              "display": "flex",
+              "opacity": "1"
+            },
+            {
+              "testid": "chart-reset",
+              "name": "전체 기간으로 복원",
+              "tooltip": "전체 기간으로 복원",
+              "disabled": true,
+              "visibleText": "전체",
+              "svgCount": 1,
+              "box": {
+                "left": 282,
+                "right": 326,
+                "top": 2681.078125,
+                "bottom": 2725.078125,
+                "width": 44,
+                "height": 44
+              },
+              "display": "flex",
+              "opacity": "0.5"
+            }
+          ],
+          "pageOverflow": -15,
+          "toolbarOverflow": 0
+        }
+      },
+      "expected": {
+        "pageOverflow": 0,
+        "toolbarOverflow": 0,
+        "touchTargets": ">=44px"
+      }
+    },
+    {
+      "type": "check",
+      "audit": "chart-polish:v129",
+      "name": "INELIGIBLE_CHART_TOOLBAR",
+      "status": "PASS",
+      "actual": {
+        "checked": [
+          "A-005",
+          "A-017",
+          "D-005",
+          "E-012",
+          "E-018",
+          "E-019"
+        ],
+        "failures": []
+      },
+      "expected": {
+        "checked": [
+          "A-005",
+          "A-017",
+          "D-005",
+          "E-012",
+          "E-018",
+          "E-019"
+        ],
+        "toolbarCount": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "chart-polish:v129",
+      "name": "UNCAUGHT_RUNTIME_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "chartToolbar": "PASS",
+  "currentRangeLabel": "전체",
+  "ineligibleChartToolbarCount": 0,
+  "dependencyChanges": 0
+}

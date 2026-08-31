@@ -129,7 +129,9 @@ try {
           downloadableCountPresent: numberPresent(${expected.downloadableCount}),
           mapLayerCountPresent: numberPresent(${expected.mapLayerCount}),
           releaseDatePresent: ${JSON.stringify(releaseDateCandidates(expected.releaseDate))}.some((value) => text.includes(value)),
-          vietnamScopePresent: /현재\\s*베트남\\s*파일럿\\s*데이터를\\s*제공/u.test(text),
+          vietnamScopePresent:
+            /현재\\s*베트남\\s*파일럿\\s*데이터를\\s*제공/u.test(text) ||
+            /현재\\s*제공\\s*국가\\s*[·ㆍ]?\\s*베트남/u.test(text),
           featureEntryPoints: ['데이터 찾기', '데이터 지도', '데이터 다운로드'].filter((label) =>
             interactive.some((node) => normalize(node.textContent).includes(label))
           ),

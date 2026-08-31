@@ -117,24 +117,29 @@ try {
     url.searchParams.set("element", element.elementId);
     url.hash = "element-detail";
     try {
-      await navigate(browser.cdp, url.toString());
-      await waitForValue(
-        browser.cdp,
-        `(() => {
+      let result = null;
+      let lastRouteError = null;
+      for (let attempt = 1; attempt <= 2; attempt += 1) {
+        try {
+          await navigate(browser.cdp, url.toString());
+          await waitForValue(
+            browser.cdp,
+            `(() => {
+              const root = document.querySelector('[data-v126-public-analysis], [data-testid="public-analysis-root"]');
+              if (document.querySelector('[role="alert"]')) return true;
+              if (!root || !root.querySelector('[data-testid="public-data-title"]')) return false;
+              if (!root.querySelector('[data-testid="public-analysis-primary"]')) return false;
+              if (!root.querySelector('[data-testid="public-source-panel"]')) return false;
+              return ${populated ? "Boolean(root.querySelector('details[data-testid=\"public-raw-table\"]'))" : "true"};
+            })()`,
+            { timeoutMs: 20_000 }
+          );
+          const inspected = await evaluateValue(
+            browser.cdp,
+            `(() => {
           const root = document.querySelector('[data-v126-public-analysis], [data-testid="public-analysis-root"]');
-          if (document.querySelector('[role="alert"]')) return true;
-          if (!root || !root.querySelector('[data-testid="public-data-title"]')) return false;
-          if (!root.querySelector('[data-testid="public-analysis-primary"]')) return false;
-          if (!root.querySelector('[data-testid="public-source-panel"]')) return false;
-          return ${populated ? "Boolean(root.querySelector('details[data-testid=\"public-raw-table\"]'))" : "true"};
-        })()`,
-        { timeoutMs: 20_000 }
-      );
-      const result = await evaluateValue(
-        browser.cdp,
-        `(() => {
-          const root = document.querySelector('[data-v126-public-analysis], [data-testid="public-analysis-root"]');
-          if (!root) return { mounted: false, alert: document.querySelector('[role="alert"]')?.textContent?.trim() || null };
+          const alert = document.querySelector('[role="alert"]')?.textContent?.trim() || null;
+          if (!root) return { mounted: false, alert };
           const text = String(root.innerText || '').normalize('NFC');
           const lower = text.toLocaleLowerCase('ko-KR');
           const primary = root.querySelector('[data-testid="public-analysis-primary"]');
@@ -167,6 +172,7 @@ try {
             .filter((cell) => cell.textContent?.trim() === '해당 없음').length;
           return {
             mounted: true,
+            alert,
             elementId: root.getAttribute('data-element-id') || root.getAttribute('data-v126-element-id') || null,
             presentationId: root.getAttribute('data-presentation-id') || root.getAttribute('data-element-id') || root.getAttribute('data-v126-element-id') || null,
             tier: root.getAttribute('data-presentation-tier') || root.getAttribute('data-renderer-tier') || null,
@@ -192,10 +198,23 @@ try {
             blankPanels,
           };
         })()`
-      );
+          );
+          if (!inspected?.mounted || inspected.alert) {
+            throw new Error(inspected?.alert || "public root missing");
+          }
+          result = inspected;
+          lastRouteError = null;
+          break;
+        } catch (error) {
+          lastRouteError = error instanceof Error ? error.message : String(error);
+        }
+      }
 
-      if (!result?.mounted) {
-        routeFailures.push({ elementId: element.elementId, error: result?.alert || "public root missing" });
+      if (!result) {
+        routeFailures.push({
+          elementId: element.elementId,
+          error: lastRouteError || "public route inspection failed after 2 attempts",
+        });
         continue;
       }
       if (result.elementId && result.elementId !== element.elementId) {

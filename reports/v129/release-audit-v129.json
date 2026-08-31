@@ -1,0 +1,271 @@
+{
+  "schemaVersion": "v129-audit-report-1",
+  "generatedAt": "2026-08-31T23:52:14.527Z",
+  "audit": "release:v129",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "release:v129",
+    "status": "PASS",
+    "passed": 10,
+    "failed": 0,
+    "total": 10,
+    "failedChecks": [],
+    "releaseGate": "PASS",
+    "requestedStepCount": 8,
+    "completedStepCount": 8,
+    "stepFailureCount": 0,
+    "releaseCheckFailureCount": 0,
+    "v128Regression": "PASS",
+    "interpretationAudit": "PASS",
+    "mapLayoutAudit": "PASS",
+    "mapInteractionAudit": "PASS",
+    "chartPolishAudit": "PASS",
+    "specializedAudit": "PASS",
+    "screenshotAudit": "PASS",
+    "productionBuild": "PASS"
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "release:v129",
+      "name": "STEP_V128_RELEASE_REGRESSION",
+      "status": "PASS",
+      "actual": {
+        "exitCode": 0,
+        "status": "PASS",
+        "failed": 0,
+        "durationMs": 272181,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0,
+        "status": "PASS",
+        "failed": null
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v129",
+      "name": "STEP_INTERPRETATION_V129",
+      "status": "PASS",
+      "actual": {
+        "exitCode": 0,
+        "status": "PASS",
+        "failed": 0,
+        "durationMs": 10629,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0,
+        "status": "PASS",
+        "failed": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v129",
+      "name": "STEP_MAP_LAYOUT_V129",
+      "status": "PASS",
+      "actual": {
+        "exitCode": 0,
+        "status": "PASS",
+        "failed": 0,
+        "durationMs": 19931,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0,
+        "status": "PASS",
+        "failed": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v129",
+      "name": "STEP_MAP_INTERACTION_V129",
+      "status": "PASS",
+      "actual": {
+        "exitCode": 0,
+        "status": "PASS",
+        "failed": 0,
+        "durationMs": 41118,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0,
+        "status": "PASS",
+        "failed": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v129",
+      "name": "STEP_CHART_POLISH_V129",
+      "status": "PASS",
+      "actual": {
+        "exitCode": 0,
+        "status": "PASS",
+        "failed": 0,
+        "durationMs": 3570,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0,
+        "status": "PASS",
+        "failed": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v129",
+      "name": "STEP_SPECIALIZED_V129",
+      "status": "PASS",
+      "actual": {
+        "exitCode": 0,
+        "status": "PASS",
+        "failed": 0,
+        "durationMs": 3871,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0,
+        "status": "PASS",
+        "failed": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v129",
+      "name": "STEP_SCREENSHOTS_V129",
+      "status": "PASS",
+      "actual": {
+        "exitCode": 0,
+        "status": "PASS",
+        "failed": 0,
+        "durationMs": 15566,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0,
+        "status": "PASS",
+        "failed": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v129",
+      "name": "STEP_PRODUCTION_BUILD",
+      "status": "PASS",
+      "actual": {
+        "exitCode": 0,
+        "status": "PASS",
+        "failed": null,
+        "durationMs": 15421,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0,
+        "status": "PASS",
+        "failed": null
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v129",
+      "name": "V129_REPORT_CONTRACTS",
+      "status": "PASS",
+      "actual": [
+        {
+          "name": "interpretation-audit-v129.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "name": "map-layout-audit-v129.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "name": "map-interaction-audit-v129.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "name": "chart-polish-audit-v129.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "name": "specialized-audit-v129.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "name": "screenshot-manifest-v129.json",
+          "valid": true,
+          "error": null
+        }
+      ],
+      "expected": [
+        {
+          "name": "interpretation-audit-v129.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "name": "map-layout-audit-v129.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "name": "map-interaction-audit-v129.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "name": "chart-polish-audit-v129.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "name": "specialized-audit-v129.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "name": "screenshot-manifest-v129.json",
+          "valid": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "type": "check",
+      "audit": "release:v129",
+      "name": "PRODUCTION_BUILD_ASSETS",
+      "status": "PASS",
+      "actual": {
+        "indexExists": true,
+        "assets": true
+      },
+      "expected": {
+        "indexExists": true,
+        "assets": true
+      }
+    }
+  ],
+  "releaseGate": "PASS",
+  "requestedStepCount": 8,
+  "completedStepCount": 8,
+  "stepFailureCount": 0,
+  "releaseCheckFailureCount": 0,
+  "v128Regression": "PASS",
+  "interpretationAudit": "PASS",
+  "mapLayoutAudit": "PASS",
+  "mapInteractionAudit": "PASS",
+  "chartPolishAudit": "PASS",
+  "specializedAudit": "PASS",
+  "screenshotAudit": "PASS",
+  "productionBuild": "PASS"
+}

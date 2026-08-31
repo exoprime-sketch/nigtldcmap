@@ -1,0 +1,382 @@
+{
+  "schemaVersion": "v129-audit-report-1",
+  "generatedAt": "2026-08-31T23:51:42.633Z",
+  "audit": "specialized:v129",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "specialized:v129",
+    "status": "PASS",
+    "passed": 16,
+    "failed": 0,
+    "total": 16,
+    "failedChecks": [],
+    "d005Renderer": "PASS",
+    "d005RepresentativeShares": {
+      "adaptation": 88,
+      "mitigation": 2,
+      "dual": 10
+    },
+    "d005RepresentativeShareSum": 100,
+    "homeBrand": "PASS"
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "specialized:v129",
+      "name": "SPECIALIZED_SOURCES",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "specialized:v129",
+      "name": "D005_PACK_AVAILABLE",
+      "status": "PASS",
+      "actual": {
+        "packErrors": [],
+        "rows": 10
+      },
+      "expected": {
+        "packErrors": [],
+        "rows": 10
+      }
+    },
+    {
+      "type": "check",
+      "audit": "specialized:v129",
+      "name": "D005_REPRESENTATIVE_SOURCE_VALUES",
+      "status": "PASS",
+      "actual": {
+        "adaptation": 88,
+        "mitigation": 2,
+        "dual": 10,
+        "sum": 100
+      },
+      "expected": {
+        "adaptation": 88,
+        "mitigation": 2,
+        "dual": 10,
+        "sum": 100
+      }
+    },
+    {
+      "type": "check",
+      "audit": "specialized:v129",
+      "name": "D005_MISSING_SOURCE_VALUES",
+      "status": "PASS",
+      "actual": {
+        "populated": 8,
+        "missing": 2,
+        "missingCodes": [
+          "M01",
+          "M01"
+        ]
+      },
+      "expected": {
+        "populated": 8,
+        "missing": 2,
+        "missingCodes": [
+          "M01",
+          "M01"
+        ]
+      }
+    },
+    {
+      "type": "check",
+      "audit": "specialized:v129",
+      "name": "D005_SPECIALIZED_SOURCE_CONTRACT",
+      "status": "PASS",
+      "actual": {
+        "registry": true,
+        "component": true,
+        "root": true,
+        "representative": true,
+        "selector": true
+      },
+      "expected": "all specialized source contracts"
+    },
+    {
+      "type": "check",
+      "audit": "specialized:v129",
+      "name": "D005_SPECIALIZED_RENDERER",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null,
+        "d005Initial": {
+          "mounted": true,
+          "zeroImputation": "false",
+          "zoomControls": "false",
+          "representative": true,
+          "segmentCount": 3,
+          "segmentText": [
+            "적응88%",
+            "감축2%",
+            "동시기여10%"
+          ],
+          "selector": {
+            "value": "total-climate",
+            "options": [
+              {
+                "value": "total-climate",
+                "text": "총 기후변화 지출"
+              },
+              {
+                "value": "recurrent",
+                "text": "경상예산"
+              },
+              {
+                "value": "capital",
+                "text": "공공 자본지출"
+              },
+              {
+                "value": "ministry",
+                "text": "부처 기후예산"
+              },
+              {
+                "value": "province",
+                "text": "성 단위 기후예산"
+              }
+            ]
+          },
+          "text": "이 데이터로 확인할 수 있는 내용기후변화 대응 지출이 적응·감축·동시기여에 어떻게 배분됐는지 확인할 수 있습니다.각 비율은 화면에 적힌 예산범위를 분모로 사용합니다.서로 다른 분모와 보고서의 값은 직접 비교하지 않습니다.주 분석대표 예산 배분 구조2010–2013년 총 기후변화 대응 지출 기준적응88%감축2%동시기여10%적응88%감축2%동시기여10%CPEIR 2015의 동일한 총 기후변화 대응 지출 분모에서 세 구분의 합이 100%가 되는 공개값입니다.보조 분석다른 예산 기준의 공개값예산 기준총 기후변화 지출경상예산공공 자본지출부처 기후예산성 단위 기후예산보고서CPEIR 2015기준기간2010–2013분모총 기후변화 대응 지출적응88%감축2%동시기여10%보고서에 공개되지 않은 구분은 미공개로 표시하며 임의 값으로 바꾸지 않습니다.",
+          "toolbarCount": 0,
+          "interactiveLineCount": 0,
+          "missingPublic": true,
+          "zeroMissingClaim": false
+        }
+      },
+      "expected": {
+        "mounted": true
+      }
+    },
+    {
+      "type": "check",
+      "audit": "specialized:v129",
+      "name": "D005_REPRESENTATIVE_SHARES",
+      "status": "PASS",
+      "actual": [
+        "적응88%",
+        "감축2%",
+        "동시기여10%"
+      ],
+      "expected": [
+        "88%",
+        "2%",
+        "10%"
+      ]
+    },
+    {
+      "type": "check",
+      "audit": "specialized:v129",
+      "name": "D005_SHARE_SUM",
+      "status": "PASS",
+      "actual": 100,
+      "expected": 100
+    },
+    {
+      "type": "check",
+      "audit": "specialized:v129",
+      "name": "D005_DENOMINATOR_SELECTOR",
+      "status": "PASS",
+      "actual": {
+        "labels": [
+          "총 기후변화 지출",
+          "경상예산",
+          "공공 자본지출",
+          "부처 기후예산",
+          "성 단위 기후예산"
+        ],
+        "snapshots": 5
+      },
+      "expected": {
+        "labels": [
+          "총 기후변화 지출",
+          "경상예산",
+          "공공 자본지출",
+          "부처 기후예산",
+          "성 단위 기후예산"
+        ],
+        "snapshots": 5
+      }
+    },
+    {
+      "type": "check",
+      "audit": "specialized:v129",
+      "name": "D005_MIXED_DENOMINATOR_LINE",
+      "status": "PASS",
+      "actual": {
+        "initial": 0,
+        "selections": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "expected": {
+        "all": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "specialized:v129",
+      "name": "D005_ZERO_IMPUTATION",
+      "status": "PASS",
+      "actual": {
+        "initial": {
+          "mounted": true,
+          "zeroImputation": "false",
+          "zoomControls": "false",
+          "representative": true,
+          "segmentCount": 3,
+          "segmentText": [
+            "적응88%",
+            "감축2%",
+            "동시기여10%"
+          ],
+          "selector": {
+            "value": "total-climate",
+            "options": [
+              {
+                "value": "total-climate",
+                "text": "총 기후변화 지출"
+              },
+              {
+                "value": "recurrent",
+                "text": "경상예산"
+              },
+              {
+                "value": "capital",
+                "text": "공공 자본지출"
+              },
+              {
+                "value": "ministry",
+                "text": "부처 기후예산"
+              },
+              {
+                "value": "province",
+                "text": "성 단위 기후예산"
+              }
+            ]
+          },
+          "text": "이 데이터로 확인할 수 있는 내용기후변화 대응 지출이 적응·감축·동시기여에 어떻게 배분됐는지 확인할 수 있습니다.각 비율은 화면에 적힌 예산범위를 분모로 사용합니다.서로 다른 분모와 보고서의 값은 직접 비교하지 않습니다.주 분석대표 예산 배분 구조2010–2013년 총 기후변화 대응 지출 기준적응88%감축2%동시기여10%적응88%감축2%동시기여10%CPEIR 2015의 동일한 총 기후변화 대응 지출 분모에서 세 구분의 합이 100%가 되는 공개값입니다.보조 분석다른 예산 기준의 공개값예산 기준총 기후변화 지출경상예산공공 자본지출부처 기후예산성 단위 기후예산보고서CPEIR 2015기준기간2010–2013분모총 기후변화 대응 지출적응88%감축2%동시기여10%보고서에 공개되지 않은 구분은 미공개로 표시하며 임의 값으로 바꾸지 않습니다.",
+          "toolbarCount": 0,
+          "interactiveLineCount": 0,
+          "missingPublic": true,
+          "zeroMissingClaim": false
+        },
+        "selections": [
+          {
+            "value": "total-climate",
+            "zeroMissingClaim": false
+          },
+          {
+            "value": "recurrent",
+            "zeroMissingClaim": false
+          },
+          {
+            "value": "capital",
+            "zeroMissingClaim": false
+          },
+          {
+            "value": "ministry",
+            "zeroMissingClaim": false
+          },
+          {
+            "value": "province",
+            "zeroMissingClaim": false
+          }
+        ]
+      },
+      "expected": {
+        "dataZeroImputation": false,
+        "missingLabel": "미공개",
+        "missingAsZero": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "specialized:v129",
+      "name": "D005_ZOOM_CONTROL",
+      "status": "PASS",
+      "actual": {
+        "initial": 0,
+        "selections": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "expected": {
+        "all": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "specialized:v129",
+      "name": "D005_CAPITAL_PUBLIC_METADATA",
+      "status": "PASS",
+      "actual": {
+        "selector": "capital",
+        "text": "이 데이터로 확인할 수 있는 내용기후변화 대응 지출이 적응·감축·동시기여에 어떻게 배분됐는지 확인할 수 있습니다.각 비율은 화면에 적힌 예산범위를 분모로 사용합니다.서로 다른 분모와 보고서의 값은 직접 비교하지 않습니다.주 분석대표 예산 배분 구조2010–2013년 총 기후변화 대응 지출 기준적응88%감축2%동시기여10%적응88%감축2%동시기여10%CPEIR 2015의 동일한 총 기후변화 대응 지출 분모에서 세 구분의 합이 100%가 되는 공개값입니다.보조 분석다른 예산 기준의 공개값예산 기준총 기후변화 지출경상예산공공 자본지출부처 기후예산성 단위 기후예산보고서World Bank CCDR 2022기준기간2020 기준분모공공 자본지출적응약 25%감축미공개동시기여미공개보고서에 공개되지 않은 구분은 미공개로 표시하며 임의 값으로 바꾸지 않습니다."
+      },
+      "expected": {
+        "selector": "capital",
+        "referencePeriod": "2020 기준",
+        "adaptation": "약 25%"
+      }
+    },
+    {
+      "type": "check",
+      "audit": "specialized:v129",
+      "name": "HOME_CANONICAL_TITLE",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null,
+        "home": {
+          "h1": "개도국 기후기술 협력 플랫폼",
+          "text": "국가별 기후기술 협력 데이터개도국 기후기술 협력 플랫폼베트남의 정책·제도, 에너지·인프라, 기후위험, 사업·재원, 협력기관 데이터를 검색하고 지도와 차트로 분석할 수 있습니다.베트남 데이터 검색데이터 찾기빠른 검색GDP송전망산림손실재생에너지기후재원데이터 찾기152개 데이터 항목을 주제·기관·기술로 탐색 →데이터 지도시설·인프라·지역 데이터를 지도에서 분석 →데이터 다운로드재사용 가능한 공개 데이터를 선택해 내려받기 →국가 기본정보기후·환경정책·제도시장·산업·재원협력사업·이행현재 제공 국가 · 베트남베트남 주요 분석 데이터전체 데이터 보기 →01국가 정책·제도 평가(CPIA)World Bank · 2005–2015년데이터 제공다운로드 가능02국내총생산 및 경제성장World Bank · 1985–2025년데이터 제공다운로드 가능03온실가스 종류별 배출량European Commission, Joint Research Centre (JRC) — EDGAR · 1970–2024년데이터 제공다운로드 가능04발전소 현황OpenStreetMap contributors · 2021–2026년데이터 제공다운로드 가능05베트남 송전망World Bank (ENERGYDATA.INFO) · 2015–2024년데이터 제공다운로드 가능06연간 산림손실Global Forest Watch (UMD/WRI) · 2001–2025년데이터 제공다운로드 가능07재생에너지 발주·확대계획개정 PDP8 부록Ⅱ(768/QĐ-TTg) 원문 자체 검산 · 2021–2050년데이터 제공다운로드 가능08국제협력·기후재원 사업Climate Investment Funds (CIF) — Clean Technology Fund (CTF) Trust Fund Committee · 2013–2026년데이터 제공화면에서만 제공데이터 현황현재 제공 국가 · 베트남데이터 이용안내 →데이터 항목152개데이터 제공 항목147개다운로드 가능 항목114개지도 데이터13개최종 데이터 릴리스2026.08.27",
+          "pilotH1": false,
+          "eyebrow": true,
+          "scope": true,
+          "description": true,
+          "featured": true
+        }
+      },
+      "expected": {
+        "h1": "개도국 기후기술 협력 플랫폼",
+        "pilotH1": false,
+        "canonicalCopy": true
+      }
+    },
+    {
+      "type": "check",
+      "audit": "specialized:v129",
+      "name": "PUBLIC_VIETNAM_PILOT_PRIMARY_COPY",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "specialized:v129",
+      "name": "UNCAUGHT_RUNTIME_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "d005Renderer": "PASS",
+  "d005RepresentativeShares": {
+    "adaptation": 88,
+    "mitigation": 2,
+    "dual": 10
+  },
+  "d005RepresentativeShareSum": 100,
+  "homeBrand": "PASS"
+}

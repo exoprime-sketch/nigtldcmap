@@ -86,11 +86,20 @@
     "audit:security:v128": "node scripts/audit-vietnam-security-v128.mjs",
     "audit:performance:v128": "node scripts/audit-vietnam-performance-v128.mjs",
     "smoke:production:v128": "node scripts/smoke-vietnam-production-v128.mjs",
+    "build:interpretation:v129": "node scripts/build-vietnam-interpretation-v129.mjs",
+    "audit:interpretation:v129": "node scripts/audit-vietnam-interpretation-v129.mjs",
+    "audit:map-interaction:v129": "node scripts/audit-vietnam-map-interaction-v129.mjs",
+    "audit:map-layout:v129": "node scripts/audit-vietnam-map-layout-v129.mjs",
+    "audit:chart-polish:v129": "node scripts/audit-vietnam-chart-polish-v129.mjs",
+    "audit:specialized:v129": "node scripts/audit-vietnam-specialized-v129.mjs",
+    "capture:screenshots:v129": "node scripts/capture-vietnam-v129-screenshots.mjs",
+    "audit:release:v129": "node scripts/audit-vietnam-release-v129.mjs",
     "finalize:v125": "npm run audit:data:v124 && npm run audit:map:v124 && npm run audit:runtime:v124 && npm run build:semantic:v125 && npm run audit:semantic:v125 && npm run audit:finder:v125 && npm run build && npm run audit:visual:v125",
     "finalize:v126": "npm run build && npm run audit:release:v126",
     "finalize:v127": "npm run audit:release:v127",
     "finalize:v128": "npm run audit:release:v128",
-    "release:vietnam-pilot": "npm run finalize:v128 && npm run audit:deployment:v128 && npm run audit:security:v128 && npm run audit:performance:v128 && npm run build"
+    "release:vietnam-pilot": "npm run finalize:v128 && npm run audit:deployment:v128 && npm run audit:security:v128 && npm run audit:performance:v128 && npm run build",
+    "finalize:v129": "npm run audit:release:v129"
   },
   "browserslist": [
     ">0.2%",
