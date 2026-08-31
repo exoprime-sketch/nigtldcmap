@@ -33,7 +33,7 @@ function paethPredictor(left, above, upperLeft) {
   return upperLeft;
 }
 
-function pngVisualStats(bytes) {
+function pngVisualStats(bytes, { collectSaturatedPoints = false } = {}) {
   if (bytes.subarray(0, 8).toString("hex") !== "89504e470d0a1a0a") {
     throw new Error("map screenshot is not PNG");
   }
@@ -101,6 +101,7 @@ function pngVisualStats(bytes) {
   let sampleCount = 0;
   let luminanceSum = 0;
   let luminanceSquareSum = 0;
+  const saturatedPoints = [];
   for (let y = 0; y < height; y += step) {
     for (let x = 0; x < width; x += step) {
       const index = y * rowBytes + x * channels;
@@ -108,6 +109,13 @@ function pngVisualStats(bytes) {
       const red = pixels[index];
       const green = pixels[index + 1];
       const blue = pixels[index + 2];
+      if (
+        collectSaturatedPoints &&
+        Math.max(red, green, blue) - Math.min(red, green, blue) >= 42 &&
+        Math.min(red, green, blue) < 205
+      ) {
+        saturatedPoints.push({ x, y });
+      }
       const key = `${red >> 4}:${green >> 4}:${blue >> 4}`;
       colors.set(key, (colors.get(key) || 0) + 1);
       const luminance = 0.2126 * red + 0.7152 * green + 0.0722 * blue;
@@ -135,6 +143,7 @@ function pngVisualStats(bytes) {
       colors.size >= 12 &&
       luminanceVariance >= 25 &&
       nonDominantPixelRatio >= 0.02,
+    saturatedPoints,
   };
 }
 const mapResult = readJson(resolve(V2_ROOT, "map-index.json"));
@@ -384,7 +393,12 @@ async function applyPresetAndWait(
   throw new Error(`map preset ${presetId} did not reach exact primary state: ${lastFailure}`);
 }
 
-async function clickRenderedPrimaryFeature(cdp, expectedTitle, preferredKind) {
+async function clickRenderedPrimaryFeature(
+  cdp,
+  expectedTitle,
+  preferredKind,
+  preferredPositions = []
+) {
   await waitForValue(
     cdp,
     `(() => {
@@ -466,7 +480,22 @@ async function clickRenderedPrimaryFeature(cdp, expectedTitle, preferredKind) {
   }
 
   const step = preferredKind === "adm1" ? 34 : preferredKind === "line" ? 10 : 18;
-  const positions = [];
+  const positions = preferredPositions
+    .filter(
+      (position) =>
+        position.x >= surface.left &&
+        position.x <= surface.left + surface.width &&
+        position.y >= surface.top &&
+        position.y <= surface.top + surface.height
+    )
+    .map((position) => ({
+      ...position,
+      distance: Math.hypot(
+        position.x - (surface.left + surface.width / 2),
+        position.y - (surface.top + surface.height / 2)
+      ),
+      preferred: true,
+    }));
   for (let y = surface.top + step / 2; y < surface.top + surface.height - step / 2; y += step) {
     for (let x = surface.left + step / 2; x < surface.left + surface.width - step / 2; x += step) {
       positions.push({
@@ -476,22 +505,32 @@ async function clickRenderedPrimaryFeature(cdp, expectedTitle, preferredKind) {
           x - (surface.left + surface.width / 2),
           y - (surface.top + surface.height / 2)
         ),
+        preferred: false,
       });
     }
   }
-  positions.sort((left, right) => left.distance - right.distance);
+  positions.sort(
+    (left, right) =>
+      Number(right.preferred) - Number(left.preferred) ||
+      left.distance - right.distance
+  );
   let clicks = 0;
   for (const position of positions) {
     await clickAt(position.x, position.y);
     clicks += 1;
-    if (clicks % 24 === 0 && (await evaluateValue(cdp, selectedExpression))) {
-      return { surface: "maplibre-canvas", clicks };
+    if (clicks % 24 === 0) {
+      await new Promise((resolveWait) => setTimeout(resolveWait, 60));
+      if (await evaluateValue(cdp, selectedExpression)) {
+        return { surface: "maplibre-canvas", clicks };
+      }
     }
   }
   if (await evaluateValue(cdp, selectedExpression)) {
     return { surface: "maplibre-canvas", clicks };
   }
-  throw new Error(`actual ${preferredKind} canvas click did not select ${expectedTitle}`);
+  throw new Error(
+    `actual ${preferredKind} canvas click did not select ${expectedTitle}; preferred pixels=${preferredPositions.length}`
+  );
 }
 
 async function verifyA023ClusterAndPoint(cdp) {
@@ -537,11 +576,21 @@ async function verifyA023ClusterAndPoint(cdp) {
           rect.width <= 300 || rect.height <= 400) return null;
       const scale = document.querySelector('.maplibregl-ctrl-scale');
       const scaleRect = scale?.getBoundingClientRect();
+      const blockers = [...document.querySelectorAll(
+        '.cdp-map-overlay-card, .cdp-map-legend, .maplibregl-control-container > div'
+      )].flatMap((element) => {
+        const blocker = element.getBoundingClientRect();
+        return blocker.width > 0 && blocker.height > 0
+          ? [{ left: blocker.left, top: blocker.top, right: blocker.right, bottom: blocker.bottom }]
+          : [];
+      });
       return {
         left: rect.left,
         top: rect.top,
         width: rect.width,
         height: rect.height,
+        blockers,
+        scaleTextBefore: scale?.textContent?.trim() || "",
         scaleBefore: (scale?.textContent?.trim() || '') + ':' + (scaleRect?.width || 0),
       };
     })()`
@@ -549,6 +598,23 @@ async function verifyA023ClusterAndPoint(cdp) {
   if (!canvas || canvas.scaleBefore === ":0") {
     throw new Error("A-023 MapLibre canvas or scale unavailable");
   }
+  const captureCanvas = async () => {
+    const offset = await evaluateValue(cdp, `({ x: window.scrollX, y: window.scrollY })`);
+    const capture = await cdp.send("Page.captureScreenshot", {
+      format: "png",
+      fromSurface: true,
+      captureBeyondViewport: true,
+      clip: {
+        x: canvas.left + Number(offset?.x || 0),
+        y: canvas.top + Number(offset?.y || 0),
+        width: canvas.width,
+        height: canvas.height,
+        scale: 1,
+      },
+    });
+    return Buffer.from(capture.data, "base64");
+  };
+  const beforeCanvasBytes = await captureCanvas();
   const clickAt = async (x, y) => {
     await cdp.send("Input.dispatchMouseEvent", {
       type: "mousePressed", x, y, button: "left", buttons: 1, clickCount: 1,
@@ -557,10 +623,57 @@ async function verifyA023ClusterAndPoint(cdp) {
       type: "mouseReleased", x, y, button: "left", buttons: 0, clickCount: 1,
     });
   };
-  const positions = [];
+  const denseClusterCandidates = (bytes) => {
+    const pixelStats = pngVisualStats(bytes, {
+      collectSaturatedPoints: true,
+    });
+    const cells = new Map();
+    pixelStats.saturatedPoints.forEach((position) => {
+      const key = `${Math.floor(position.x / 12)}:${Math.floor(position.y / 12)}`;
+      const cell = cells.get(key) || { count: 0, x: 0, y: 0 };
+      cell.count += 1;
+      cell.x += position.x;
+      cell.y += position.y;
+      cells.set(key, cell);
+    });
+    return [...cells.values()]
+      .filter((cell) => cell.count >= 8)
+      .map((cell) => ({
+        x: canvas.left + cell.x / cell.count,
+        y: canvas.top + cell.y / cell.count,
+        density: cell.count,
+      }))
+      .filter(
+        (position) =>
+          !canvas.blockers.some(
+            (blocker) =>
+              position.x >= blocker.left - 2 &&
+              position.x <= blocker.right + 2 &&
+              position.y >= blocker.top - 2 &&
+              position.y <= blocker.bottom + 2
+          )
+      )
+      .sort((left, right) => right.density - left.density);
+  };
+  const clusterPixelCandidates = denseClusterCandidates(beforeCanvasBytes);
+  const positions = clusterPixelCandidates.map((position) => ({
+    ...position,
+    distance: -position.density,
+  }));
   const step = 20;
   for (let y = canvas.top + step / 2; y < canvas.top + canvas.height - step / 2; y += step) {
     for (let x = canvas.left + step / 2; x < canvas.left + canvas.width - step / 2; x += step) {
+      if (
+        canvas.blockers.some(
+          (blocker) =>
+            x >= blocker.left - 2 &&
+            x <= blocker.right + 2 &&
+            y >= blocker.top - 2 &&
+            y <= blocker.bottom + 2
+        )
+      ) {
+        continue;
+      }
       positions.push({
         x,
         y,
@@ -573,7 +686,7 @@ async function verifyA023ClusterAndPoint(cdp) {
   }
   positions.sort((left, right) => left.distance - right.distance);
   let clusterClicksTried = 0;
-  let scaleAfter = canvas.scaleBefore;
+  let scaleAfter = canvas.scaleTextBefore;
   for (const position of positions) {
     await clickAt(position.x, position.y);
     clusterClicksTried += 1;
@@ -583,35 +696,80 @@ async function verifyA023ClusterAndPoint(cdp) {
       cdp,
       `(() => {
         const scale = document.querySelector('.maplibregl-ctrl-scale');
-        const rect = scale?.getBoundingClientRect();
-        return (scale?.textContent?.trim() || '') + ':' + (rect?.width || 0);
+        return scale?.textContent?.trim() || '';
       })()`
     );
-    if (scaleAfter !== canvas.scaleBefore) break;
+    if (scaleAfter && scaleAfter !== canvas.scaleTextBefore) break;
   }
-  if (scaleAfter === canvas.scaleBefore) {
+  if (!scaleAfter || scaleAfter === canvas.scaleTextBefore) {
     throw new Error("A-023 cluster click did not change map scale");
   }
+  await new Promise((resolveWait) => setTimeout(resolveWait, 650));
 
-  for (let count = 0; count < 8; count += 1) {
-    const zoomButton = await evaluateValue(
+  let clusterExpansionCount = 1;
+  for (let depth = 0; depth < 5; depth += 1) {
+    const expansionBytes = await captureCanvas();
+    const expansionCandidates = denseClusterCandidates(expansionBytes);
+    const scaleBeforeExpansion = await evaluateValue(
       cdp,
-      `(() => {
-        const button = document.querySelector('.maplibregl-ctrl-zoom-in');
-        const rect = button?.getBoundingClientRect();
-        return rect && rect.width > 0 && rect.height > 0
-          ? { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 }
-          : null;
-      })()`
+      `document.querySelector('.maplibregl-ctrl-scale')?.textContent?.trim() || ''`
     );
-    if (!zoomButton) throw new Error("MapLibre zoom control unavailable");
-    await clickAt(zoomButton.x, zoomButton.y);
-    await new Promise((resolveWait) => setTimeout(resolveWait, 140));
+    let expanded = false;
+    for (const position of expansionCandidates) {
+      await clickAt(position.x, position.y);
+      clusterClicksTried += 1;
+      await new Promise((resolveWait) => setTimeout(resolveWait, 420));
+      const nextScale = await evaluateValue(
+        cdp,
+        `document.querySelector('.maplibregl-ctrl-scale')?.textContent?.trim() || ''`
+      );
+      if (nextScale && nextScale !== scaleBeforeExpansion) {
+        scaleAfter = nextScale;
+        clusterExpansionCount += 1;
+        expanded = true;
+        await new Promise((resolveWait) => setTimeout(resolveWait, 650));
+        break;
+      }
+    }
+    if (!expanded) break;
   }
+  const pageOffset = await evaluateValue(
+    cdp,
+    `({ x: window.scrollX, y: window.scrollY })`
+  );
+  const pointScreenshot = await cdp.send("Page.captureScreenshot", {
+    format: "png",
+    fromSurface: true,
+    captureBeyondViewport: true,
+    clip: {
+      x: canvas.left + Number(pageOffset?.x || 0),
+      y: canvas.top + Number(pageOffset?.y || 0),
+      width: canvas.width,
+      height: canvas.height,
+      scale: 1,
+    },
+  });
+  const pointPixelStats = pngVisualStats(
+    Buffer.from(pointScreenshot.data, "base64"),
+    { collectSaturatedPoints: true }
+  );
+  const candidateCells = new Set();
+  const pixelCandidates = pointPixelStats.saturatedPoints
+    .filter((position) => {
+      const key = `${Math.floor(position.x / 12)}:${Math.floor(position.y / 12)}`;
+      if (candidateCells.has(key)) return false;
+      candidateCells.add(key);
+      return true;
+    })
+    .map((position) => ({
+      x: canvas.left + position.x,
+      y: canvas.top + position.y,
+    }));
   const pointSelection = await clickRenderedPrimaryFeature(
     cdp,
     "발전소",
-    "point"
+    "point",
+    pixelCandidates
   );
   const capacityPresentation = await evaluateValue(
     cdp,
@@ -624,13 +782,17 @@ async function verifyA023ClusterAndPoint(cdp) {
         value: normalize(row.querySelector('strong')?.textContent),
       }));
       const capacityValue = rows.find((row) => row.label === '설비용량(MW)')?.value || null;
+      const referenceYearValue = rows.find((row) => row.label === '기준연도')?.value || null;
       const missingValue = rows.find((row) => row.label === '결측 여부')?.value || '';
       const missingCapacity = /원천 미제공[^]*설비용량/u.test(missingValue);
+      const missingReferenceYear = /원천 미제공[^]*기준연도/u.test(missingValue);
       return {
         facilityName: normalize(detail.querySelector('h4')?.textContent) || null,
         capacityValue,
+        referenceYearValue,
         missingValue,
         missingCapacity,
+        missingReferenceYear,
         missingCapacityRenderedAsZero:
           missingCapacity && /(?:^|\\s)0(?:\\.0+)?\\s*MW(?:$|\\s)/iu.test(normalize(detail.textContent)),
       };
@@ -641,10 +803,12 @@ async function verifyA023ClusterAndPoint(cdp) {
     featureCount: Number(
       activeLayers.find((layer) => layer.elementId === "A-023")?.featureCount || 0
     ),
-    scaleBefore: canvas.scaleBefore,
+    scaleBefore: canvas.scaleTextBefore,
     scaleAfter,
     clusterClicksTried,
-    clusterZoomObserved: scaleAfter !== canvas.scaleBefore,
+    clusterExpansionCount,
+    clusterZoomObserved: scaleAfter !== canvas.scaleTextBefore,
+    pointPixelCandidateCount: pixelCandidates.length,
     pointSelection,
     capacityPresentation,
   };
@@ -1105,6 +1269,9 @@ const missingCapacityFalseZero =
   capacityPresentation?.missingCapacityRenderedAsZero === false &&
   (capacityPresentation?.missingCapacity !== true ||
     capacityPresentation?.capacityValue === null);
+const referenceYearPresentationConsistent =
+  Boolean(capacityPresentation?.referenceYearValue) &&
+  capacityPresentation?.missingReferenceYear === false;
 const legendSignatures = new Set(
   presetSnapshots.map((item) => item.legendText).filter(Boolean)
 );
@@ -1189,6 +1356,20 @@ audit.check(
     sourceContract: true,
     missingCapacityRenderedAsZero: false,
     missingCapacityValueOmitted: true,
+    runtimeFailure: null,
+  }
+);
+audit.check(
+  "A023_REFERENCE_YEAR_NOT_FALSE_MISSING",
+  runtimeFailure === null && referenceYearPresentationConsistent,
+  {
+    referenceYear: capacityPresentation?.referenceYearValue ?? null,
+    missingReferenceYear: capacityPresentation?.missingReferenceYear ?? null,
+    runtimeFailure,
+  },
+  {
+    referenceYear: "populated",
+    missingReferenceYear: false,
     runtimeFailure: null,
   }
 );
@@ -1293,6 +1474,8 @@ audit.finish({
   a023MissingCapacityFalseZero: missingCapacityFalseZero,
   a023MissingCapacityObserved:
     capacityPresentation?.missingCapacity ?? null,
+  a023ReferenceYearFalseMissing:
+    capacityPresentation?.missingReferenceYear ?? null,
   adm1SelectionOutline:
     runtimeResult?.adm1BaseOutline?.pathCount === 63 &&
     runtimeResult?.adm1BaseOutline?.uniqueNameCount === 63,
