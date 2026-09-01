@@ -1,0 +1,275 @@
+{
+  "schemaVersion": "v131-public-content-audit-1",
+  "generatedAt": "2026-09-01T07:01:31.269Z",
+  "audit": "release:v131",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "release:v131",
+    "status": "PASS",
+    "passed": 10,
+    "failed": 0,
+    "total": 10,
+    "failedChecks": [],
+    "commandResults": [
+      {
+        "name": "V130_RELEASE_REGRESSION",
+        "command": "npm run finalize:v130",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "PUBLIC_NAMING_V131",
+        "command": "npm run audit:public-naming:v131",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "ENTITY_CARDS_V131",
+        "command": "npm run audit:entity-cards:v131",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "MAP_COPY_V131",
+        "command": "npm run audit:map-copy:v131",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "ROUTE_CONTENT_V131",
+        "command": "npm run audit:route-content:v131",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "PRODUCTION_BUILD",
+        "command": "npm run build",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      }
+    ],
+    "frameworkElements": 152,
+    "accountedElements": 152,
+    "visualizationFit": "152/152",
+    "statusOnlyElements": 5,
+    "finalMapLayers": 12,
+    "finalMapFeatureOrScopeCount": 2900,
+    "remainingBlockers": 0
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "release:v131",
+      "name": "V130_RELEASE_REGRESSION",
+      "status": "PASS",
+      "actual": {
+        "name": "V130_RELEASE_REGRESSION",
+        "command": "npm run finalize:v130",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v131",
+      "name": "PUBLIC_NAMING_V131",
+      "status": "PASS",
+      "actual": {
+        "name": "PUBLIC_NAMING_V131",
+        "command": "npm run audit:public-naming:v131",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v131",
+      "name": "ENTITY_CARDS_V131",
+      "status": "PASS",
+      "actual": {
+        "name": "ENTITY_CARDS_V131",
+        "command": "npm run audit:entity-cards:v131",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v131",
+      "name": "MAP_COPY_V131",
+      "status": "PASS",
+      "actual": {
+        "name": "MAP_COPY_V131",
+        "command": "npm run audit:map-copy:v131",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v131",
+      "name": "ROUTE_CONTENT_V131",
+      "status": "PASS",
+      "actual": {
+        "name": "ROUTE_CONTENT_V131",
+        "command": "npm run audit:route-content:v131",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v131",
+      "name": "PRODUCTION_BUILD",
+      "status": "PASS",
+      "actual": {
+        "name": "PRODUCTION_BUILD",
+        "command": "npm run build",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v131",
+      "name": "V131_REPORTS_PASS",
+      "status": "PASS",
+      "actual": {
+        "naming": "PASS",
+        "cards": "PASS",
+        "mapCopy": "PASS",
+        "routes": "PASS"
+      },
+      "expected": {
+        "naming": "PASS",
+        "cards": "PASS",
+        "mapCopy": "PASS",
+        "routes": "PASS"
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v131",
+      "name": "VISUALIZATION_FIT_152",
+      "status": "PASS",
+      "actual": {
+        "fit": 75,
+        "fit-with-caveat": 69,
+        "specialized-required": 3,
+        "status-only": 5,
+        "fail": 0
+      },
+      "expected": {
+        "fit": 75,
+        "fit-with-caveat": 69,
+        "specialized-required": 3,
+        "status-only": 5,
+        "fail": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v131",
+      "name": "FINAL_MAP_CONTRACT",
+      "status": "PASS",
+      "actual": {
+        "layers": 12,
+        "featureOrScopeCount": 2900
+      },
+      "expected": {
+        "layers": 12,
+        "featureOrScopeCount": 2900
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v131",
+      "name": "REMAINING_BLOCKER",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    }
+  ],
+  "commandResults": [
+    {
+      "name": "V130_RELEASE_REGRESSION",
+      "command": "npm run finalize:v130",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "PUBLIC_NAMING_V131",
+      "command": "npm run audit:public-naming:v131",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "ENTITY_CARDS_V131",
+      "command": "npm run audit:entity-cards:v131",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "MAP_COPY_V131",
+      "command": "npm run audit:map-copy:v131",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "ROUTE_CONTENT_V131",
+      "command": "npm run audit:route-content:v131",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "PRODUCTION_BUILD",
+      "command": "npm run build",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    }
+  ],
+  "frameworkElements": 152,
+  "accountedElements": 152,
+  "visualizationFit": "152/152",
+  "statusOnlyElements": 5,
+  "finalMapLayers": 12,
+  "finalMapFeatureOrScopeCount": 2900,
+  "remainingBlockers": 0
+}

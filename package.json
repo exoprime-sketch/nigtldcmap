@@ -111,7 +111,13 @@
     "audit:map-dedup:v130": "node scripts/audit-map-dedup-v130.mjs",
     "audit:map-semantic-geography:v130": "node scripts/audit-map-semantic-geography-v130.mjs",
     "audit:runtime:v130": "node scripts/audit-vietnam-runtime-v130.mjs",
-    "finalize:v130": "node scripts/audit-vietnam-data-v124.mjs && node scripts/audit-vietnam-semantic-v125.mjs && node scripts/audit-vietnam-data-acceptance-v128.mjs && node scripts/audit-vietnam-semantic-fit-v129.mjs && node scripts/audit-vietnam-map-feature-join-v129.mjs && node scripts/audit-vietnam-public-copy-v129.mjs && node scripts/audit-vietnam-final-screens-v129.mjs && node scripts/generate-v130-spatial-reports.mjs && node scripts/audit-map-selection-v130.mjs && node scripts/audit-project-scope-v130.mjs && node scripts/audit-map-dedup-v130.mjs && node scripts/audit-map-semantic-geography-v130.mjs && node ./node_modules/react-scripts/bin/react-scripts.js build && node scripts/audit-vietnam-runtime-v130.mjs"
+    "finalize:v130": "node scripts/audit-vietnam-data-v124.mjs && node scripts/audit-vietnam-semantic-v125.mjs && node scripts/audit-vietnam-data-acceptance-v128.mjs && node scripts/audit-vietnam-semantic-fit-v129.mjs && node scripts/audit-vietnam-map-feature-join-v129.mjs && node scripts/audit-vietnam-public-copy-v129.mjs && node scripts/audit-vietnam-final-screens-v129.mjs && node scripts/generate-v130-spatial-reports.mjs && node scripts/audit-map-selection-v130.mjs && node scripts/audit-project-scope-v130.mjs && node scripts/audit-map-dedup-v130.mjs && node scripts/audit-map-semantic-geography-v130.mjs && node ./node_modules/react-scripts/bin/react-scripts.js build && node scripts/audit-vietnam-runtime-v130.mjs",
+    "audit:public-naming:v131": "node scripts/audit-vietnam-public-naming-v131.mjs",
+    "audit:entity-cards:v131": "node scripts/audit-vietnam-entity-cards-v131.mjs",
+    "audit:map-copy:v131": "node scripts/audit-vietnam-map-copy-v131.mjs",
+    "audit:route-content:v131": "node scripts/audit-vietnam-route-content-v131.mjs",
+    "audit:release:v131": "node scripts/audit-vietnam-release-v131.mjs",
+    "finalize:v131": "npm run audit:release:v131"
   },
   "browserslist": [
     ">0.2%",

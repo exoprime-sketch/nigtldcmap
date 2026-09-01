@@ -1,0 +1,252 @@
+{
+  "schemaVersion": "v131-public-content-audit-1",
+  "generatedAt": "2026-09-01T07:01:13.760Z",
+  "audit": "route-content:v131",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "route-content:v131",
+    "status": "PASS",
+    "passed": 14,
+    "failed": 0,
+    "total": 14,
+    "failedChecks": [],
+    "detailRouteCount": 152,
+    "detailRouteFailureCount": 0,
+    "publicPlaceholderPrimaryTitleCount": 0,
+    "publicBlankPrimaryTitleCount": 0,
+    "publicTechnicalTokenCount": 0,
+    "statusOnlyFakeChartCount": 0,
+    "screenshotCount": 9,
+    "runtimeFailure": null
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "route-content:v131",
+      "name": "CATALOG_JSON",
+      "status": "PASS",
+      "actual": null,
+      "expected": null
+    },
+    {
+      "type": "check",
+      "audit": "route-content:v131",
+      "name": "FRAMEWORK_ELEMENTS",
+      "status": "PASS",
+      "actual": 152,
+      "expected": 152
+    },
+    {
+      "type": "check",
+      "audit": "route-content:v131",
+      "name": "VISUALIZATION_FIT_BASELINE",
+      "status": "PASS",
+      "actual": {
+        "fit": 152,
+        "failure": 0,
+        "fitCounts": {
+          "fit": 75,
+          "fit-with-caveat": 69,
+          "specialized-required": 3,
+          "status-only": 5,
+          "fail": 0
+        }
+      },
+      "expected": {
+        "fit": 152,
+        "failure": 0,
+        "fitCounts": {
+          "fit": 75,
+          "fit-with-caveat": 69,
+          "specialized-required": 3,
+          "status-only": 5,
+          "fail": 0
+        }
+      }
+    },
+    {
+      "type": "check",
+      "audit": "route-content:v131",
+      "name": "DETAIL_ROUTE_COUNT",
+      "status": "PASS",
+      "actual": 152,
+      "expected": 152,
+      "details": {
+        "runtimeFailure": null
+      }
+    },
+    {
+      "type": "check",
+      "audit": "route-content:v131",
+      "name": "DETAIL_ROUTE_CONTENT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "type": "check",
+      "audit": "route-content:v131",
+      "name": "PUBLIC_PLACEHOLDER_PRIMARY_TITLE_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "type": "check",
+      "audit": "route-content:v131",
+      "name": "PUBLIC_BLANK_PRIMARY_TITLE_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "type": "check",
+      "audit": "route-content:v131",
+      "name": "RAW_TECHNICAL_PRIMARY_LABEL_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "type": "check",
+      "audit": "route-content:v131",
+      "name": "STATUS_ONLY_FAKE_CHART_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "type": "check",
+      "audit": "route-content:v131",
+      "name": "PUBLIC_TECHNICAL_TOKEN_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "type": "check",
+      "audit": "route-content:v131",
+      "name": "BROKEN_ASSET",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "type": "check",
+      "audit": "route-content:v131",
+      "name": "HTML_FOR_JSON",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "type": "check",
+      "audit": "route-content:v131",
+      "name": "CONSOLE_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "route-content:v131",
+      "name": "SCREENSHOT_PNG",
+      "status": "PASS",
+      "actual": {
+        "screenshots": [
+          {
+            "name": "home.png",
+            "width": 1425,
+            "height": 1341,
+            "byteSize": 751660,
+            "sha256": "51d7e11cce9e19c7d2dd4afaec0ca5af397a54a017b9fad97f3620e184497e82",
+            "error": null
+          },
+          {
+            "name": "finder.png",
+            "width": 1425,
+            "height": 8206,
+            "byteSize": 1134518,
+            "sha256": "7afdd2dedfe91468b105763ad0d5d52e634eb4e4ed1e2da476c7c05b51154f1c",
+            "error": null
+          },
+          {
+            "name": "detail-investment-cards.png",
+            "width": 1130,
+            "height": 1527,
+            "byteSize": 200933,
+            "sha256": "cb667d4460dc2a68a41e9e9ab58169e4aafbcfa4b3072d1630fd9ca41ae4317f",
+            "error": null
+          },
+          {
+            "name": "detail-project-portfolio.png",
+            "width": 1130,
+            "height": 2882,
+            "byteSize": 504631,
+            "sha256": "e4d7b4d3a5e7e6ece928b1ce9972726cce6b58ffecb8e50fa11182c50dd1a053",
+            "error": null
+          },
+          {
+            "name": "detail-directory.png",
+            "width": 1130,
+            "height": 1656,
+            "byteSize": 197853,
+            "sha256": "247bd8364c9d245996a314ae88f36a35380c21d64ec9196d6c8f6d6c616a24bc",
+            "error": null
+          },
+          {
+            "name": "detail-a002.png",
+            "width": 1130,
+            "height": 2356,
+            "byteSize": 330705,
+            "sha256": "f428cb369b94004206adfa12d5eb8603ff7a7d3f869ff8e54d13be7f6e269355",
+            "error": null
+          },
+          {
+            "name": "detail-d005.png",
+            "width": 1130,
+            "height": 2029,
+            "byteSize": 342895,
+            "sha256": "4ab513cf01bd48585b6d3ea7285d2f5312e2ba9de02331afba9e74d19fa6c5c4",
+            "error": null
+          },
+          {
+            "name": "detail-e012.png",
+            "width": 1130,
+            "height": 2461,
+            "byteSize": 306339,
+            "sha256": "1c411bae6b239f78fc16ef032cf17b8f41448868b8402e559029a9e6af201e08",
+            "error": null
+          },
+          {
+            "name": "mobile-cards.png",
+            "width": 313,
+            "height": 3823,
+            "byteSize": 199162,
+            "sha256": "7bfafaabfb796b1e0fe0cc7a9e77a02423d846b8b42932bf96e7e524ea6e2e84",
+            "error": null
+          }
+        ],
+        "invalidScreenshots": []
+      },
+      "expected": "nine valid PNG screenshots"
+    }
+  ],
+  "detailRouteCount": 152,
+  "detailRouteFailureCount": 0,
+  "publicPlaceholderPrimaryTitleCount": 0,
+  "publicBlankPrimaryTitleCount": 0,
+  "publicTechnicalTokenCount": 0,
+  "statusOnlyFakeChartCount": 0,
+  "screenshotCount": 9,
+  "runtimeFailure": null
+}

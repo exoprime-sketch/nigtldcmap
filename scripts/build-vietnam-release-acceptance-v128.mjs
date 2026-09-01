@@ -299,39 +299,55 @@ function curatedTitlesV128() {
 }
 
 function compilePolicyV128() {
+  const compileCommonJsV128 = (source, fileName, runtimeModules = {}) => {
+    const compiled = ts.transpileModule(source, {
+      compilerOptions: {
+        module: ts.ModuleKind.CommonJS,
+        target: ts.ScriptTarget.ES2020,
+      },
+      fileName,
+      reportDiagnostics: true,
+    });
+    const diagnostics = (compiled.diagnostics || []).filter(
+      (diagnostic) => diagnostic.category === ts.DiagnosticCategory.Error
+    );
+    if (diagnostics.length > 0) {
+      throw new Error(
+        diagnostics
+          .map((diagnostic) =>
+            ts.flattenDiagnosticMessageText(diagnostic.messageText, " ")
+          )
+          .join("; ")
+      );
+    }
+    const moduleRecord = { exports: {} };
+    new Function("exports", "module", "require", compiled.outputText)(
+      moduleRecord.exports,
+      moduleRecord,
+      (specifier) => {
+        if (Object.prototype.hasOwnProperty.call(runtimeModules, specifier)) {
+          return runtimeModules[specifier];
+        }
+        throw new Error(`unexpected runtime import: ${specifier}`);
+      }
+    );
+    return moduleRecord.exports;
+  };
+  const titlePath = resolve(
+    PROJECT_ROOT_V128,
+    "src/data/visualization/publicEntityTitleV131.ts"
+  );
+  const titleApi = compileCommonJsV128(
+    readFileSync(titlePath, "utf8"),
+    titlePath
+  );
   const path = resolve(
     PROJECT_ROOT_V128,
     "src/data/visualization/publicFieldPolicyV126.ts"
   );
-  const result = ts.transpileModule(readFileSync(path, "utf8"), {
-    compilerOptions: {
-      module: ts.ModuleKind.CommonJS,
-      target: ts.ScriptTarget.ES2020,
-    },
-    fileName: path,
-    reportDiagnostics: true,
+  return compileCommonJsV128(readFileSync(path, "utf8"), path, {
+    "./publicEntityTitleV131": titleApi,
   });
-  const errors = (result.diagnostics || []).filter(
-    (diagnostic) => diagnostic.category === ts.DiagnosticCategory.Error
-  );
-  if (errors.length > 0) {
-    throw new Error(
-      errors
-        .map((diagnostic) =>
-          ts.flattenDiagnosticMessageText(diagnostic.messageText, " ")
-        )
-        .join("; ")
-    );
-  }
-  const moduleRecord = { exports: {} };
-  new Function("exports", "module", "require", result.outputText)(
-    moduleRecord.exports,
-    moduleRecord,
-    (specifier) => {
-      throw new Error(`unexpected runtime import: ${specifier}`);
-    }
-  );
-  return moduleRecord.exports;
 }
 
 function normalizedKeyV128(value) {

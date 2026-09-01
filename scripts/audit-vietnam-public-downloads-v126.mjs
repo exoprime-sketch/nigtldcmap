@@ -24,6 +24,9 @@ const policyPath = resolve(
   "src/data/visualization/publicFieldPolicyV126.ts"
 );
 const policySource = readText(policyPath);
+const entityTitleSource = readText(
+  resolve(PROJECT_ROOT, "src/data/visualization/publicEntityTitleV131.ts")
+);
 const downloadPageSource = readText(resolve(PROJECT_ROOT, "src/pages/DownloadPage.tsx"));
 const packs = loadPackPayloads();
 
@@ -31,7 +34,7 @@ audit.check("CATALOG_JSON", catalogResult.error === null, catalogResult.error, n
 audit.check("PUBLIC_FIELD_POLICY_SOURCE", policySource.error === null, policySource.error, null);
 audit.check("PACK_PAYLOADS", packs.errors.length === 0, packs.errors.length, 0, packs.errors);
 
-function compileCommonJs(source, fileName) {
+function compileCommonJs(source, fileName, runtimeModules = {}) {
   const result = ts.transpileModule(source, {
     compilerOptions: {
       module: ts.ModuleKind.CommonJS,
@@ -55,6 +58,9 @@ function compileCommonJs(source, fileName) {
     moduleRecord.exports,
     moduleRecord,
     (specifier) => {
+      if (Object.prototype.hasOwnProperty.call(runtimeModules, specifier)) {
+        return runtimeModules[specifier];
+      }
       throw new Error(`unexpected runtime import: ${specifier}`);
     }
   );
@@ -65,7 +71,16 @@ let policyApi = null;
 let policyCompileError = null;
 try {
   if (!policySource.value) throw new Error(policySource.error || "policy source unavailable");
-  policyApi = compileCommonJs(policySource.value, "publicFieldPolicyV126.ts");
+  if (!entityTitleSource.value) {
+    throw new Error(entityTitleSource.error || "entity title source unavailable");
+  }
+  const entityTitleApi = compileCommonJs(
+    entityTitleSource.value,
+    "publicEntityTitleV131.ts"
+  );
+  policyApi = compileCommonJs(policySource.value, "publicFieldPolicyV126.ts", {
+    "./publicEntityTitleV131": entityTitleApi,
+  });
 } catch (error) {
   policyCompileError = error instanceof Error ? error.message : String(error);
 }

@@ -1,0 +1,196 @@
+{
+  "schemaVersion": "v131-public-content-audit-1",
+  "generatedAt": "2026-09-01T07:00:44.241Z",
+  "audit": "map-copy:v131",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "map-copy:v131",
+    "status": "PASS",
+    "passed": 12,
+    "failed": 0,
+    "total": 12,
+    "failedChecks": [],
+    "finalMapLayerCount": 12,
+    "finalMapFeatureOrScopeCount": 2900,
+    "mapTooltipPlaceholderCount": 0,
+    "mapSelectedPanelPlaceholderCount": 0,
+    "v130RegressionResult": "PASS",
+    "runtimeFailure": null
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "map-copy:v131",
+      "name": "MAP_INDEX_JSON",
+      "status": "PASS",
+      "actual": null,
+      "expected": null
+    },
+    {
+      "type": "check",
+      "audit": "map-copy:v131",
+      "name": "FINAL_MAP_LAYERS",
+      "status": "PASS",
+      "actual": 12,
+      "expected": 12
+    },
+    {
+      "type": "check",
+      "audit": "map-copy:v131",
+      "name": "FINAL_MAP_FEATURE_OR_SCOPE_COUNT",
+      "status": "PASS",
+      "actual": 2900,
+      "expected": 2900
+    },
+    {
+      "type": "check",
+      "audit": "map-copy:v131",
+      "name": "MAP_TITLE_RESOLVER_WIRING",
+      "status": "PASS",
+      "actual": {
+        "resolver": true,
+        "mapResolver": true,
+        "selectedResolution": true,
+        "nameNote": true
+      },
+      "expected": {
+        "resolver": true,
+        "mapResolver": true,
+        "selectedResolution": true,
+        "nameNote": true
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-copy:v131",
+      "name": "MAP_TOOLTIP_PLACEHOLDER_TITLE_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "type": "check",
+      "audit": "map-copy:v131",
+      "name": "MAP_ALL_LAYER_TOOLTIP_CLICK_BASELINE",
+      "status": "PASS",
+      "actual": {
+        "reportStatus": "PASS",
+        "checked": 12,
+        "failures": []
+      },
+      "expected": {
+        "reportStatus": "PASS",
+        "checked": 12,
+        "failures": []
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-copy:v131",
+      "name": "V130_REGIONAL_SCOPE_REGRESSION",
+      "status": "PASS",
+      "actual": {
+        "mapSelectedElements": 12,
+        "mapFeatureOrScopeCount": 2900,
+        "projectScope": "PASS",
+        "greaterMekong": "regional-scope"
+      },
+      "expected": {
+        "mapSelectedElements": 12,
+        "mapFeatureOrScopeCount": 2900,
+        "projectScope": "PASS",
+        "greaterMekong": "regional-scope"
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-copy:v131",
+      "name": "D023_DUPLICATE_MAP_REPRESENTATION",
+      "status": "PASS",
+      "actual": {
+        "auditStatus": "PASS",
+        "visibleAfter": 0,
+        "d023Layer": false
+      },
+      "expected": {
+        "auditStatus": "PASS",
+        "visibleAfter": 0,
+        "d023Layer": false
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-copy:v131",
+      "name": "MAP_TOOLTIP_PLACEHOLDER_RUNTIME",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": {
+        "runtimeFailure": null
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-copy:v131",
+      "name": "MAP_SELECTED_PANEL_PLACEHOLDER_TITLE_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": {
+        "runtimeFailure": null
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-copy:v131",
+      "name": "MAP_SCREENSHOTS",
+      "status": "PASS",
+      "actual": {
+        "screenshots": [
+          {
+            "name": "map-point-tooltip.png",
+            "width": 1425,
+            "height": 1034,
+            "byteSize": 253465,
+            "sha256": "52884573aa92dd71a40e0efcebcf262705437f27d9fca5836dd60f894821733e",
+            "error": null
+          },
+          {
+            "name": "map-regional-project.png",
+            "width": 1425,
+            "height": 1034,
+            "byteSize": 295724,
+            "sha256": "0b3e11a3dcb799a910f34a86ea786c59dfe342d2543f1f9a1e4e92261377d477",
+            "error": null
+          },
+          {
+            "name": "map-selected-feature.png",
+            "width": 1425,
+            "height": 1034,
+            "byteSize": 258517,
+            "sha256": "9b1c333afaceb673a2a5ac18fc47d86c5e945f2b70c4f5bea704f39419233c91",
+            "error": null
+          }
+        ],
+        "invalidScreenshots": []
+      },
+      "expected": "three valid PNG screenshots"
+    },
+    {
+      "type": "check",
+      "audit": "map-copy:v131",
+      "name": "CONSOLE_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "finalMapLayerCount": 12,
+  "finalMapFeatureOrScopeCount": 2900,
+  "mapTooltipPlaceholderCount": 0,
+  "mapSelectedPanelPlaceholderCount": 0,
+  "v130RegressionResult": "PASS",
+  "runtimeFailure": null
+}
