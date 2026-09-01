@@ -1,0 +1,268 @@
+{
+  "schemaVersion": "v130-runtime-audit-1",
+  "generatedAt": "2026-09-01T05:27:26.033Z",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "runtime:v130",
+    "status": "PASS",
+    "passed": 10,
+    "failed": 0,
+    "total": 10,
+    "failedChecks": [],
+    "screenshotCount": 6,
+    "consoleErrorCount": 0,
+    "brokenAssetCount": 0,
+    "htmlForJsonCount": 0
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "runtime:v130",
+      "name": "RUNTIME_EXECUTION",
+      "status": "PASS",
+      "actual": null,
+      "expected": null
+    },
+    {
+      "type": "check",
+      "audit": "runtime:v130",
+      "name": "MAP_GUIDE",
+      "status": "PASS",
+      "actual": {
+        "groupCount": 5,
+        "rowCount": 12,
+        "elementIdVisible": false,
+        "horizontalOverflow": false,
+        "finderLink": true
+      },
+      "expected": {
+        "groupCount": 5,
+        "rowCount": 12,
+        "elementIdVisible": false,
+        "horizontalOverflow": false,
+        "finderLink": true
+      }
+    },
+    {
+      "type": "check",
+      "audit": "runtime:v130",
+      "name": "CLIMATE_FINANCE_PRESET",
+      "status": "PASS",
+      "actual": {
+        "primary": "D-018",
+        "context": "C-025",
+        "hasD023": false,
+        "summary": "지도 분석전국 현황과 선택한 항목을 함께 확인하세요.접기현재 분석데이터명적응기금 사업측정항목Adaptation Fund 프로젝트선택 변수지역 협력범위·세부 활동지역기준연도·기간2026단위사업공간 커버리지지역 협력사업 2건의 참여국 범위 2개와 검증된 세부 활동지역 2곳전국 요약지역 협력사업2건참여국 범위2개 범위검증된 세부 활동지역2곳베트남 참여2개 사업 모두 포함선택한 시설·선로·지역 범위지도에서 선로·시설·지역을 선택하면 세부정보를 확인할 수 있습니다.데이터 상세공식 출처"
+      },
+      "expected": "D-018 primary, C-025 context, D-023 absent, two regional projects"
+    },
+    {
+      "type": "check",
+      "audit": "runtime:v130",
+      "name": "GREATER_MEKONG_REGIONAL_DETAIL",
+      "status": "PASS",
+      "actual": {
+        "text": "지역 협력사업Groundwater resources in the Greater Mekong Subregion: Collaborative management to increase resilience (Cambodia, Lao People’s Democratic Republic, Thailand, Viet Nam)데이터명적응기금 사업사업 참여지역Cambodia · Lao PDR · Thailand · Viet Nam사업분야초국경 수자원 관리베트남 참여포함상태Project Under Implementation승인액USD 4,898,775수행기관United Nations Educational, Scientific and Cultural Organization (MIE)세부 활동지역Vientiane Plains (Lao PDR–Thailand) · northwest Cambodia–Thailand border area · upper Mekong Delta (Cambodia–Viet Nam)공간 표현4개 참여국의 지역 협력범위입니다. 공식 제안서의 3개 파일럿 권역은 상세에 명시하지만 정밀 경계가 없어 점으로 만들지 않습니다.좌표 처리원천 4개 · 지점 표시 0개공간 해석 유의4개 참여국의 지역 협력범위를 표시합니다. 공식 제안서의 3개 파일럿 권역은 상세에 명시하되 정밀 경계가 없어 점으로 만들지 않으며, 원천의 국가별 대표좌표도 사업 위치로 표시하지 않습니다.공식 출처",
+        "participatingCountries": true,
+        "vietnamParticipation": true,
+        "approvedAmount": true,
+        "arbitrarySiteClaim": false
+      },
+      "expected": "four participating countries; Vietnam included; no project-site claim"
+    },
+    {
+      "type": "check",
+      "audit": "runtime:v130",
+      "name": "C025_PUBLIC_POINT_NAMES",
+      "status": "PASS",
+      "actual": [
+        "탄소크레딧 사업 · Gold Standard 등록사업 · GS 1278",
+        "탄소크레딧 사업 · Gold Standard 등록사업 · GS 1219",
+        "탄소크레딧 사업 · Gold Standard 등록사업 · GS 1218",
+        "탄소크레딧 사업 · Gold Standard 등록사업 · GS 515",
+        "탄소크레딧 사업 · Gold Standard 등록사업 · GS 512",
+        "탄소크레딧 사업 · Gold Standard 등록사업 · GS 487",
+        "탄소크레딧 사업 · Gold Standard 등록사업 · GS 486",
+        "탄소크레딧 사업 · Gold Standard 등록사업 · GS 485",
+        "탄소크레딧 사업 · Gold Standard 등록사업 · GS 484",
+        "탄소크레딧 사업 · Gold Standard 등록사업 · GS 483",
+        "탄소크레딧 사업 · Gold Standard 등록사업 · GS 466",
+        "탄소크레딧 사업 · Gold Standard 등록사업 · GS 408",
+        "탄소크레딧 사업 · Gold Standard 등록사업 · GS 318",
+        "탄소크레딧 사업 · Gold Standard 등록사업 · GS 300",
+        "탄소크레딧 사업 · Gold Standard 등록사업 · GS 216",
+        "탄소크레딧 사업 · Gold Standard 등록사업 · GS 213",
+        "탄소크레딧 사업 · Gold Standard 등록사업 · GS 206",
+        "탄소크레딧 사업 · Gold Standard 등록사업 · GS 204"
+      ],
+      "expected": "18 named public points"
+    },
+    {
+      "type": "check",
+      "audit": "runtime:v130",
+      "name": "SCREENSHOT_PNG",
+      "status": "PASS",
+      "actual": {
+        "screenshots": [
+          {
+            "name": "map-data-guide.png",
+            "width": 320,
+            "height": 1034,
+            "byteSize": 83796,
+            "sha256": "bb605938710fbe0a8acaa9374f43accf341e0eb3e8fe83da5456584ef2a354ba",
+            "error": null
+          },
+          {
+            "name": "map-layer-groups.png",
+            "width": 320,
+            "height": 1034,
+            "byteSize": 59397,
+            "sha256": "d774cf019ba8331dfa0d941fbd4dc9415243e8bbfd8476e7e208d42d9d42c01d",
+            "error": null
+          },
+          {
+            "name": "map-adaptation-fund.png",
+            "width": 729,
+            "height": 1034,
+            "byteSize": 167135,
+            "sha256": "67c18e89cd4fd148ea62672595433b657bd602cab96a52a3d6dd582050fddbdd",
+            "error": null
+          },
+          {
+            "name": "map-greater-mekong-regional.png",
+            "width": 729,
+            "height": 1034,
+            "byteSize": 162828,
+            "sha256": "0d19a94f91b44db1f14dd553141616831f37e88b372043ec64a573aad05647cc",
+            "error": null
+          },
+          {
+            "name": "map-climate-finance-preset.png",
+            "width": 1440,
+            "height": 1034,
+            "byteSize": 285162,
+            "sha256": "a7dc717b7784822454e18153336bed9b24c1d52b7872f4a51eb5623e95b09fa7",
+            "error": null
+          },
+          {
+            "name": "map-regional-project-selected.png",
+            "width": 360,
+            "height": 1034,
+            "byteSize": 78035,
+            "sha256": "c0a0ec40b25e5ca94537b12b29d0d2819a4178e48e40ffd1cfef867a25a6e40d",
+            "error": null
+          }
+        ],
+        "invalidScreenshots": []
+      },
+      "expected": "six valid PNG screenshots"
+    },
+    {
+      "type": "check",
+      "audit": "runtime:v130",
+      "name": "BROKEN_ASSET",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "runtime:v130",
+      "name": "HTML_FOR_JSON",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "runtime:v130",
+      "name": "NETWORK_FAILURE",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "runtime:v130",
+      "name": "CONSOLE_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "guideEvidence": {
+    "groupCount": 5,
+    "rowCount": 12,
+    "elementIdVisible": false,
+    "horizontalOverflow": false,
+    "finderLink": true
+  },
+  "presetEvidence": {
+    "primary": "D-018",
+    "context": "C-025",
+    "hasD023": false,
+    "summary": "지도 분석전국 현황과 선택한 항목을 함께 확인하세요.접기현재 분석데이터명적응기금 사업측정항목Adaptation Fund 프로젝트선택 변수지역 협력범위·세부 활동지역기준연도·기간2026단위사업공간 커버리지지역 협력사업 2건의 참여국 범위 2개와 검증된 세부 활동지역 2곳전국 요약지역 협력사업2건참여국 범위2개 범위검증된 세부 활동지역2곳베트남 참여2개 사업 모두 포함선택한 시설·선로·지역 범위지도에서 선로·시설·지역을 선택하면 세부정보를 확인할 수 있습니다.데이터 상세공식 출처"
+  },
+  "regionalEvidence": {
+    "text": "지역 협력사업Groundwater resources in the Greater Mekong Subregion: Collaborative management to increase resilience (Cambodia, Lao People’s Democratic Republic, Thailand, Viet Nam)데이터명적응기금 사업사업 참여지역Cambodia · Lao PDR · Thailand · Viet Nam사업분야초국경 수자원 관리베트남 참여포함상태Project Under Implementation승인액USD 4,898,775수행기관United Nations Educational, Scientific and Cultural Organization (MIE)세부 활동지역Vientiane Plains (Lao PDR–Thailand) · northwest Cambodia–Thailand border area · upper Mekong Delta (Cambodia–Viet Nam)공간 표현4개 참여국의 지역 협력범위입니다. 공식 제안서의 3개 파일럿 권역은 상세에 명시하지만 정밀 경계가 없어 점으로 만들지 않습니다.좌표 처리원천 4개 · 지점 표시 0개공간 해석 유의4개 참여국의 지역 협력범위를 표시합니다. 공식 제안서의 3개 파일럿 권역은 상세에 명시하되 정밀 경계가 없어 점으로 만들지 않으며, 원천의 국가별 대표좌표도 사업 위치로 표시하지 않습니다.공식 출처",
+    "participatingCountries": true,
+    "vietnamParticipation": true,
+    "approvedAmount": true,
+    "arbitrarySiteClaim": false
+  },
+  "screenshots": [
+    {
+      "name": "map-data-guide.png",
+      "width": 320,
+      "height": 1034,
+      "byteSize": 83796,
+      "sha256": "bb605938710fbe0a8acaa9374f43accf341e0eb3e8fe83da5456584ef2a354ba",
+      "error": null
+    },
+    {
+      "name": "map-layer-groups.png",
+      "width": 320,
+      "height": 1034,
+      "byteSize": 59397,
+      "sha256": "d774cf019ba8331dfa0d941fbd4dc9415243e8bbfd8476e7e208d42d9d42c01d",
+      "error": null
+    },
+    {
+      "name": "map-adaptation-fund.png",
+      "width": 729,
+      "height": 1034,
+      "byteSize": 167135,
+      "sha256": "67c18e89cd4fd148ea62672595433b657bd602cab96a52a3d6dd582050fddbdd",
+      "error": null
+    },
+    {
+      "name": "map-greater-mekong-regional.png",
+      "width": 729,
+      "height": 1034,
+      "byteSize": 162828,
+      "sha256": "0d19a94f91b44db1f14dd553141616831f37e88b372043ec64a573aad05647cc",
+      "error": null
+    },
+    {
+      "name": "map-climate-finance-preset.png",
+      "width": 1440,
+      "height": 1034,
+      "byteSize": 285162,
+      "sha256": "a7dc717b7784822454e18153336bed9b24c1d52b7872f4a51eb5623e95b09fa7",
+      "error": null
+    },
+    {
+      "name": "map-regional-project-selected.png",
+      "width": 360,
+      "height": 1034,
+      "byteSize": 78035,
+      "sha256": "c0a0ec40b25e5ca94537b12b29d0d2819a4178e48e40ffd1cfef867a25a6e40d",
+      "error": null
+    }
+  ],
+  "brokenAssets": [],
+  "htmlForJson": [],
+  "networkFailures": [],
+  "runtimeErrors": []
+}

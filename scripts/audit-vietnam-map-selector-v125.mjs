@@ -142,9 +142,9 @@ const defaultFailures = activeLayers.filter((layer) => {
 });
 check(
   "ACTIVE_LAYER_DEFAULT_REGRESSION",
-  activeLayers.length === 13 && defaultFailures.length === 0,
+  activeLayers.length === 12 && defaultFailures.length === 0,
   { activeLayerCount: activeLayers.length, failures: defaultFailures.map((row) => row.elementId) },
-  { activeLayerCount: 13, failures: [] }
+  { activeLayerCount: 12, failures: [] }
 );
 
 check(

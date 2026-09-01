@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v129-audit-report-1",
-  "generatedAt": "2026-09-01T00:22:24.027Z",
+  "generatedAt": "2026-09-01T05:26:12.013Z",
   "audit": "map-interaction:v129",
   "status": "PASS",
   "summary": {
@@ -11,12 +11,12 @@
     "failed": 0,
     "total": 24,
     "failedChecks": [],
-    "mapLayerCount": 13,
-    "mapFeatureCount": 2904,
+    "mapLayerCount": 12,
+    "mapFeatureCount": 2900,
     "mapOrphanFeatureCount": 0,
     "mapUnknownSymbolCount": 0,
-    "mapTooltipCoverage": "13/13 browser hover",
-    "mapClickDetailCoverage": "13/13 browser click detail",
+    "mapTooltipCoverage": "12/12 browser hover",
+    "mapClickDetailCoverage": "12/12 browser click detail",
     "contextLayerSelection": "PASS"
   },
   "checks": [
@@ -57,16 +57,16 @@
       "audit": "map-interaction:v129",
       "name": "ACTIVE_MAP_LAYERS",
       "status": "PASS",
-      "actual": 13,
-      "expected": 13
+      "actual": 12,
+      "expected": 12
     },
     {
       "type": "check",
       "audit": "map-interaction:v129",
       "name": "MAP_FEATURE_COUNT",
       "status": "PASS",
-      "actual": 2904,
-      "expected": 2904
+      "actual": 2900,
+      "expected": 2900
     },
     {
       "type": "check",
@@ -212,12 +212,12 @@
       "status": "PASS",
       "actual": {
         "runtimeFailure": null,
-        "checked": 13,
+        "checked": 12,
         "failures": 0
       },
       "expected": {
         "runtimeFailure": null,
-        "checked": 13,
+        "checked": 12,
         "failures": 0
       },
       "details": []
@@ -344,7 +344,7 @@
             "kind": "point",
             "surface": "map-canvas",
             "tooltip": true,
-            "tooltipText": "탄소크레딧 사업명칭 미기재주 분석 데이터",
+            "tooltipText": "탄소크레딧 사업Gold Standard 등록사업 · GS 1218주 분석 데이터",
             "detail": true,
             "attempts": 13,
             "hoverHitCount": 1,
@@ -365,31 +365,19 @@
           {
             "elementId": "D-018",
             "role": "primary",
-            "kind": "point",
+            "kind": "regional",
             "surface": "map-canvas",
             "tooltip": true,
-            "tooltipText": "적응기금 사업Groundwater resources in the Greater Mekong Subregion: Collaborative management to increase resilience (Cambodia, Lao People’s Democratic Republic, Thailand, Viet Nam)주 분석 데이터",
+            "tooltipText": "적응기금 사업지역 협력사업 · 4개 참여국Cambodia · Lao PDR · Thailand · Viet Nam베트남 참여 포함",
             "detail": true,
-            "attempts": 17,
-            "hoverHitCount": 1,
-            "readinessAttempt": 1
-          },
-          {
-            "elementId": "D-023",
-            "role": "primary",
-            "kind": "point",
-            "surface": "map-canvas",
-            "tooltip": true,
-            "tooltipText": "국제협력·기후재원 사업Groundwater resources in the Greater Mekong Subregion: Collaborative management to increase resilience (Cambodia, Lao People’s Democratic Republic, Thailand, Viet Nam)주 분석 데이터",
-            "detail": true,
-            "attempts": 17,
+            "attempts": 1,
             "hoverHitCount": 1,
             "readinessAttempt": 1
           }
         ]
       },
       "expected": {
-        "layers": 13,
+        "layers": 12,
         "tooltip": true,
         "detail": true
       }
@@ -441,9 +429,9 @@
             "kind": "adm1",
             "surface": "map-canvas",
             "tooltip": true,
-            "tooltipText": "지역 취약성Quảng Nam · GVI 취약성 지수 39.6 / 100높을수록 사회경제적 취약성이 큼북중부·남중부 해안 권역의 값 · 성 단위 독립 추정값이 아님",
+            "tooltipText": "지역 취약성Gia Lai · GVI 취약성 지수 41.4 / 100높을수록 사회경제적 취약성이 큼중부고원 권역의 값 · 성 단위 독립 추정값이 아님",
             "detail": true,
-            "attempts": 29,
+            "attempts": 50,
             "hoverHitCount": 1,
             "readinessAttempt": 1
           },
@@ -453,9 +441,9 @@
             "kind": "adm1",
             "surface": "map-canvas",
             "tooltip": true,
-            "tooltipText": "지역 기후예산Quảng Nam · 현재 값 850,000,000,000 VND보조 데이터",
+            "tooltipText": "지역 기후예산Quảng Bình · 현재 값 결측보조 데이터",
             "detail": true,
-            "attempts": 11,
+            "attempts": 14,
             "hoverHitCount": 1,
             "readinessAttempt": 1
           },
@@ -503,25 +491,25 @@
             "navigation": true,
             "focused": true,
             "label": "지역 취약성 · Lai Châu 선택",
-            "counter": "1 / 129",
+            "counter": "1 / 130",
             "primary": "B-021",
             "role": "context",
-            "detail": "Quảng Nam데이터명지역 기후예산측정항목성 단위 기후변화 지출 누계값850,000,000,000단위VND기준연도·기간2010-2013지역Quảng Nam출처United Nations Development Programme · 베트남 기획투자부(MPI) — Viet Nam Climate Public Expenditure and Investment Review (CPEIR) 2015 · United Nations Development Programme 베트남사무소 · 베트남 기획투자부(MPI) — CPEIR 2022 · World Bank — Viet Nam Country Climate and Development Report (CCDR) 2022공간 정확도개편 전 63개 성·시 중 실제 예산값이 공개된 3개 지역만 표시하며, 나머지 지역은 0으로 바꾸지 않습니다.자료 커버리지3/63개 성·시 값 보유결측 여부값 보유"
+            "detail": "Quảng Bình데이터명지역 기후예산측정항목성 단위 기후변화 지출 누계값원천 미제공단위VND기준연도·기간2010-2013지역Quảng Bình출처United Nations Development Programme · 베트남 기획투자부(MPI) — Viet Nam Climate Public Expenditure and Investment Review (CPEIR) 2015 · United Nations Development Programme 베트남사무소 · 베트남 기획투자부(MPI) — CPEIR 2022 · World Bank — Viet Nam Country Climate and Development Report (CCDR) 2022공간 정확도개편 전 63개 성·시 중 실제 예산값이 공개된 3개 지역만 표시하며, 나머지 지역은 0으로 바꾸지 않습니다.자료 커버리지3/63개 성·시 값 보유결측 여부원천 미제공 · 60개 성·시 원천 미제공"
           },
           "moved": {
             "navigation": true,
             "focused": true,
             "label": "지역 취약성 · Lào Cai 선택",
-            "counter": "2 / 129",
+            "counter": "2 / 130",
             "primary": "B-021",
             "role": "context",
-            "detail": "Quảng Nam데이터명지역 기후예산측정항목성 단위 기후변화 지출 누계값850,000,000,000단위VND기준연도·기간2010-2013지역Quảng Nam출처United Nations Development Programme · 베트남 기획투자부(MPI) — Viet Nam Climate Public Expenditure and Investment Review (CPEIR) 2015 · United Nations Development Programme 베트남사무소 · 베트남 기획투자부(MPI) — CPEIR 2022 · World Bank — Viet Nam Country Climate and Development Report (CCDR) 2022공간 정확도개편 전 63개 성·시 중 실제 예산값이 공개된 3개 지역만 표시하며, 나머지 지역은 0으로 바꾸지 않습니다.자료 커버리지3/63개 성·시 값 보유결측 여부값 보유"
+            "detail": "Quảng Bình데이터명지역 기후예산측정항목성 단위 기후변화 지출 누계값원천 미제공단위VND기준연도·기간2010-2013지역Quảng Bình출처United Nations Development Programme · 베트남 기획투자부(MPI) — Viet Nam Climate Public Expenditure and Investment Review (CPEIR) 2015 · United Nations Development Programme 베트남사무소 · 베트남 기획투자부(MPI) — CPEIR 2022 · World Bank — Viet Nam Country Climate and Development Report (CCDR) 2022공간 정확도개편 전 63개 성·시 중 실제 예산값이 공개된 3개 지역만 표시하며, 나머지 지역은 0으로 바꾸지 않습니다.자료 커버리지3/63개 성·시 값 보유결측 여부원천 미제공 · 60개 성·시 원천 미제공"
           },
           "primary": {
             "navigation": true,
             "focused": true,
             "label": "지역 취약성 · Lào Cai 선택",
-            "counter": "2 / 129",
+            "counter": "2 / 130",
             "primary": "B-021",
             "role": "primary",
             "detail": "Lào Cai데이터명지역 취약성측정항목GVI 취약성 지수값44.7 / 100단위0–100 지수기준연도·기간2023값 해석높을수록 사회경제적 취약성이 큼지역Lào Cai비교·공간단위동북부·서북부 권역의 값 · 성 단위 독립 추정값이 아님권역 비교베트남 6개 권역 중 1위 · 현재 값이 큰 순서출처Global Data Lab (GDL Area Database) · Global Data Lab GVI · Global Data Lab GVI (Huisman et al., 2025) · Global Data Lab — GVIP Database (Huisman et al., 2025)공간 정확도공개된 권역값을 명시된 소속 성·시에 표시합니다. 개별 성·시에서 별도로 추정한 값은 아닙니다.자료 커버리지63/63개 성·시 값 보유결측 여부값 보유"
@@ -530,7 +518,7 @@
             "navigation": true,
             "focused": true,
             "label": "지역 기후예산 · Lai Châu 선택",
-            "counter": "64 / 129",
+            "counter": "64 / 130",
             "primary": "B-021",
             "role": "primary",
             "detail": "Lào Cai데이터명지역 취약성측정항목GVI 취약성 지수값44.7 / 100단위0–100 지수기준연도·기간2023값 해석높을수록 사회경제적 취약성이 큼지역Lào Cai비교·공간단위동북부·서북부 권역의 값 · 성 단위 독립 추정값이 아님권역 비교베트남 6개 권역 중 1위 · 현재 값이 큰 순서출처Global Data Lab (GDL Area Database) · Global Data Lab GVI · Global Data Lab GVI (Huisman et al., 2025) · Global Data Lab — GVIP Database (Huisman et al., 2025)공간 정확도공개된 권역값을 명시된 소속 성·시에 표시합니다. 개별 성·시에서 별도로 추정한 값은 아닙니다.자료 커버리지63/63개 성·시 값 보유결측 여부값 보유"
@@ -539,7 +527,7 @@
             "navigation": true,
             "focused": true,
             "label": "지역 기후예산 · Lai Châu 선택",
-            "counter": "64 / 129",
+            "counter": "64 / 130",
             "primary": "B-021",
             "role": "context",
             "detail": "Lai Châu데이터명지역 기후예산측정항목성 단위 기후변화 지출 누계값원천 미제공단위VND기준연도·기간2010-2013지역Lai Châu출처United Nations Development Programme · 베트남 기획투자부(MPI) — Viet Nam Climate Public Expenditure and Investment Review (CPEIR) 2015 · United Nations Development Programme 베트남사무소 · 베트남 기획투자부(MPI) — CPEIR 2022 · World Bank — Viet Nam Country Climate and Development Report (CCDR) 2022공간 정확도개편 전 63개 성·시 중 실제 예산값이 공개된 3개 지역만 표시하며, 나머지 지역은 0으로 바꾸지 않습니다.자료 커버리지3/63개 성·시 값 보유결측 여부원천 미제공 · 60개 성·시 원천 미제공"
@@ -587,11 +575,11 @@
       "expected": []
     }
   ],
-  "mapLayerCount": 13,
-  "mapFeatureCount": 2904,
+  "mapLayerCount": 12,
+  "mapFeatureCount": 2900,
   "mapOrphanFeatureCount": 0,
   "mapUnknownSymbolCount": 0,
-  "mapTooltipCoverage": "13/13 browser hover",
-  "mapClickDetailCoverage": "13/13 browser click detail",
+  "mapTooltipCoverage": "12/12 browser hover",
+  "mapClickDetailCoverage": "12/12 browser click detail",
   "contextLayerSelection": "PASS"
 }

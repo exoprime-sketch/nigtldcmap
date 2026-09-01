@@ -1,0 +1,157 @@
+{
+  "schemaVersion": "v130-audit-result-1",
+  "checks": [
+    {
+      "type": "check",
+      "name": "VISIBLE_FEATURE_WITHOUT_SPATIAL_SCOPE",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "type": "check",
+      "name": "VISIBLE_POINT_SOURCE_EVIDENCE",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "type": "check",
+      "name": "TRANSMISSION_NETWORK_SPATIAL_MEANING",
+      "status": "PASS",
+      "actual": {
+        "spatialScopeType": "network",
+        "coordinateMeaning": "verified-network-geometry",
+        "sourceCoordinateCount": 6693,
+        "displayedCoordinateCount": 6693
+      },
+      "expected": {
+        "spatialScopeType": "network",
+        "coordinateMeaning": "verified-network-geometry",
+        "sourceCoordinateCount": 6693,
+        "displayedCoordinateCount": 6693
+      }
+    },
+    {
+      "type": "check",
+      "name": "GREATER_MEKONG_NO_FALSE_POINT",
+      "status": "PASS",
+      "actual": [
+        "MultiPolygon"
+      ],
+      "expected": [
+        "MultiPolygon"
+      ]
+    },
+    {
+      "type": "check",
+      "name": "D018_REGIONAL_ASSET_CONTRACT",
+      "status": "PASS",
+      "actual": {
+        "total": 4,
+        "scopes": 2,
+        "sites": 2
+      },
+      "expected": {
+        "total": 4,
+        "scopes": 2,
+        "sites": 2
+      }
+    },
+    {
+      "type": "check",
+      "name": "D018_ROLE_MEANING",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "type": "check",
+      "name": "D018_SCOPE_PROVENANCE",
+      "status": "PASS",
+      "actual": {
+        "attribution": "Adaptation Fund Board Secretariat; Natural Earth",
+        "elementId": "D-018",
+        "fakeGeometryCount": 0,
+        "featureCount": 4,
+        "geometryTypes": [
+          "MultiPolygon",
+          "Point"
+        ],
+        "kind": "regional-project-scope",
+        "license": {
+          "projectMetadata": "Adaptation Fund Legal Notice (World Bank terms apply)",
+          "scopeBoundary": "Natural Earth public domain"
+        },
+        "publicSpatialNotice": "참여국 경계는 협력범위이며 정밀 사업구역이나 시설 위치가 아닙니다.",
+        "regionalScopeCount": 2,
+        "sha256": "4c7819ea4b0f5c35dcce1a8844ef92ada70c7a6ada77331d4d156f470db0fd55",
+        "source": {
+          "projectEvidence": "Adaptation Fund official project pages and proposals",
+          "scopeBoundary": "Natural Earth-derived local country boundaries",
+          "scopeBoundaryUrl": "/data/world-countries.geojson"
+        },
+        "url": "/data/vietnam/v2/spatial/projects/d-018-regional.geojson",
+        "verifiedActivitySiteCount": 2,
+        "version": "Adaptation Fund snapshot 2026; local country boundary release V130"
+      },
+      "expected": "source/version/license/attribution"
+    },
+    {
+      "type": "check",
+      "name": "RUNTIME_MISSING_VALUE_NOT_ZERO",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "name": "FALLBACK_REGIONAL_ROLE_COVERAGE",
+      "status": "PASS",
+      "actual": "runtime source",
+      "expected": "scope and activity-site fallback renderers"
+    },
+    {
+      "type": "check",
+      "name": "ZERO_IMPUTATION",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "type": "check",
+      "name": "FAKE_GEOMETRY",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "type": "check",
+      "name": "D008_PUBLIC_TITLE_MATCHES_MAPPED_RECORDS",
+      "status": "PASS",
+      "actual": "성·시 기후변화 지출",
+      "expected": "성·시 기후변화 지출"
+    },
+    {
+      "type": "check",
+      "name": "FINAL_MAP_FEATURE_OR_SCOPE_COUNT",
+      "status": "PASS",
+      "actual": 2900,
+      "expected": 2900
+    }
+  ],
+  "summary": {
+    "type": "summary",
+    "audit": "MAP_SEMANTIC_GEOGRAPHY_V130",
+    "status": "PASS",
+    "passed": 13,
+    "failed": 0,
+    "total": 13,
+    "failedChecks": [],
+    "visibleFeatureWithoutSpatialScope": 0,
+    "zeroImputationCount": 0,
+    "fakeGeometryCount": 0
+  }
+}

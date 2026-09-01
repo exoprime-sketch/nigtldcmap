@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
 import { resolve } from "node:path";
 import { inflateSync } from "node:zlib";
 import ts from "typescript";
@@ -194,8 +195,8 @@ const adm1ManifestAsset = (geometryManifestResult.value?.assets || []).find(
   (asset) => asset?.kind === "adm1-boundary"
 );
 
-audit.check("ACTIVE_MAP_LAYERS", activeLayers.length === 13, activeLayers.length, 13);
-audit.check("MAP_FEATURE_COUNT", mapFeatureCount === 2904, mapFeatureCount, 2904);
+audit.check("ACTIVE_MAP_LAYERS", activeLayers.length === 12, activeLayers.length, 12);
+audit.check("MAP_FEATURE_COUNT", mapFeatureCount === 2900, mapFeatureCount, 2900);
 audit.check("ADM1_FEATURE_COUNT", adm1FeatureCount === 63, adm1FeatureCount, 63);
 const adm1SourceContract = {
   canonicalUrl:
@@ -875,7 +876,7 @@ try {
     const presets = document.querySelectorAll('[data-testid="map-analysis-preset"]');
     const layerCards = document.querySelectorAll('[data-map-element]');
     const wrap = document.querySelector('.cdp-map-canvas-wrap');
-    return Boolean(root && presets.length >= 5 && layerCards.length >= 13 &&
+    return Boolean(root && presets.length >= 5 && layerCards.length >= 12 &&
       wrap && wrap.getBoundingClientRect().height > 400);
   })()`;
   let mapReady = false;
@@ -1026,7 +1027,7 @@ try {
   const mobileScreenshotBytes = Buffer.from(mobileScreenshot.data, "base64");
   const mobileVisualStats = pngVisualStats(mobileScreenshotBytes);
   writeFileSync(
-    resolve(PROJECT_ROOT, "reports/v126/screenshots/map-mobile-power.png"),
+    resolve(tmpdir(), `nigtldcmap-v126-map-mobile-power-${process.pid}.png`),
     mobileScreenshotBytes
   );
   await setViewport(browser.cdp, 1440, 1100);
@@ -1109,7 +1110,7 @@ try {
   await captureElementPng(
     browser.cdp,
     ".cdp-map-layout",
-    resolve(PROJECT_ROOT, "reports/v126/screenshots/map-powerplant-selected.png")
+    resolve(tmpdir(), `nigtldcmap-v126-map-powerplant-selected-${process.pid}.png`)
   );
   const fittedCountry = await evaluateValue(
     browser.cdp,

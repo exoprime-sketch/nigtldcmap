@@ -30,7 +30,6 @@ const REQUIRED_LAYER_IDS = [
   "C-025",
   "D-008",
   "D-018",
-  "D-023",
 ];
 const SPATIAL_VALUE_IDS = [
   "B-021",
@@ -84,15 +83,15 @@ const missingRequiredLayers = REQUIRED_LAYER_IDS.filter((id) => !activeById.has(
 audit.check("DATA_CONTRACTS", contracts.length === 152, contracts.length, 152);
 audit.check(
   "ACTIVE_MAP_LAYERS",
-  activeLayers.length === 13 && missingRequiredLayers.length === 0,
+  activeLayers.length === 12 && missingRequiredLayers.length === 0,
   { count: activeLayers.length, missing: missingRequiredLayers },
-  { count: 13, missing: [] }
+  { count: 12, missing: [] }
 );
 audit.check(
   "MAP_FEATURE_COUNT",
-  mapFeatureCount === 2904 && Number(mapIndex.mapFeatureCount) === 2904,
+  mapFeatureCount === 2900 && Number(mapIndex.mapFeatureCount) === 2900,
   { calculated: mapFeatureCount, declared: mapIndex.mapFeatureCount ?? null },
-  { calculated: 2904, declared: 2904 }
+  { calculated: 2900, declared: 2900 }
 );
 
 const adm1Features = Array.isArray(adm1Result.value?.features)

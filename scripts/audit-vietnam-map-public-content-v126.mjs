@@ -25,7 +25,7 @@ const activeLayers = layers.filter(
 );
 
 audit.check("MAP_INDEX_JSON", mapResult.error === null, mapResult.error, null);
-audit.check("MAP_LAYER_TARGET_COUNT", activeLayers.length === 13, activeLayers.length, 13);
+audit.check("MAP_LAYER_TARGET_COUNT", activeLayers.length === 12, activeLayers.length, 12);
 
 const PUBLIC_MAP_DOM_FORBIDDEN = [
   ".xlsx",
@@ -71,9 +71,9 @@ const PRESET_PRIMARY_PUBLIC_CONTRACT = {
   FOREST_CHANGE: { element: "B-033", title: "연간 산림손실", kind: "adm1" },
   CLIMATE_VULNERABILITY: { element: "B-021", title: "지역 취약성", kind: "adm1" },
   CLIMATE_FINANCE_PROJECTS: {
-    element: "D-023",
-    title: "국제협력·기후재원 사업",
-    kind: "point",
+    element: "D-018",
+    title: "적응기금 사업",
+    kind: "regional",
   },
 };
 
@@ -302,7 +302,7 @@ try {
       const root = document.querySelector('[data-testid="map-public-content"], [data-testid="public-map-root"], .cdp-map-page');
       const viewButtons = [...document.querySelectorAll('.cdp-layer-card button')]
         .filter((node) => ['분석하기', '분석 중'].includes(node.textContent?.trim()));
-      return Boolean(root && viewButtons.length === 13);
+      return Boolean(root && viewButtons.length === 12);
     })()`,
     { timeoutMs: 40_000 }
   );
@@ -457,10 +457,10 @@ const invalidInteractionCount = selectedFeatureInteractions.filter(
 audit.check(
   "PUBLIC_MAP_SURFACES_INSPECTED",
   runtimeFailure === null &&
-    focusedLayerCount === 13 &&
+    focusedLayerCount === 12 &&
     inspectedPresetCount >= 5 &&
     selectedFeatureSurfaceCount >= 5 &&
-    ["line", "point", "adm1"].every((kind) => selectedKinds.has(kind)) &&
+    ["line", "adm1", "regional"].every((kind) => selectedKinds.has(kind)) &&
     invalidInteractionCount === 0 &&
     inspectionFailures.length === 0,
   {
@@ -474,10 +474,10 @@ audit.check(
     runtimeFailure,
   },
   {
-    focusedLayers: 13,
+    focusedLayers: 12,
     presets: ">= 5",
     selectedFeatures: ">= 5",
-    selectedKinds: ["adm1", "line", "point"],
+    selectedKinds: ["adm1", "line", "regional"],
     invalidInteractions: 0,
     failures: 0,
     runtimeFailure: null,

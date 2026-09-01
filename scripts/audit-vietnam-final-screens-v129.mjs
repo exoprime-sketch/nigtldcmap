@@ -57,7 +57,7 @@ const presets = [
   { id: "RENEWABLE_PLANNING", primary: "C-016", context: ["A-024", "A-023"] },
   { id: "FOREST_CHANGE", primary: "B-033", context: ["B-031", "B-034"] },
   { id: "CLIMATE_VULNERABILITY", primary: "B-021", context: ["D-008", "D-018"] },
-  { id: "CLIMATE_FINANCE_PROJECTS", primary: "D-023", context: ["C-025", "D-018"] },
+  { id: "CLIMATE_FINANCE_PROJECTS", primary: "D-018", context: ["C-025"] },
 ];
 
 function normalize(value) {
@@ -327,8 +327,8 @@ const mapSummary = mapInteractionReport.value?.summary || {};
 const contextSelectionPass =
   mapInteractionReport.error === null &&
   mapSummary.status === "PASS" &&
-  String(mapSummary.mapTooltipCoverage || "").startsWith("13/13") &&
-  String(mapSummary.mapClickDetailCoverage || "").startsWith("13/13") &&
+  String(mapSummary.mapTooltipCoverage || "").startsWith("12/12") &&
+  String(mapSummary.mapClickDetailCoverage || "").startsWith("12/12") &&
   mapSummary.contextLayerSelection === "PASS";
 const b021Pass =
   b021Gvi?.label === true &&
@@ -350,7 +350,7 @@ audit.check("BLANK_MAP", screenResults.filter((item) => item.route === "map-empt
 audit.check("MAP_PRESET_SCREEN_COVERAGE", presetResults.length === 5 && presetFailures.length === 0, { inspected: presetResults.length, failures: presetFailures }, { inspected: 5, failures: [] });
 audit.check("PRESET_HORIZONTAL_OVERFLOW", presetResults.every((item) => Number(item?.overflow || 0) <= 1), presetResults.map((item) => ({ id: item?.id, overflow: item?.overflow })), "all <= 1px");
 audit.check("B021_VARIABLE_SEMANTICS", b021Pass, { gvi: b021Gvi, component: b021Component }, { gvi: "label/unit/direction/6-region", component: "label/unit/direction/6-region" });
-audit.check("MAP_CONTEXT_POINT_SELECTION", contextSelectionPass, { reportError: mapInteractionReport.error, status: mapSummary.status, tooltipCoverage: mapSummary.mapTooltipCoverage, clickCoverage: mapSummary.mapClickDetailCoverage, contextSelection: mapSummary.contextLayerSelection }, { status: "PASS", tooltipCoverage: "13/13", clickCoverage: "13/13", contextSelection: "PASS" });
+audit.check("MAP_CONTEXT_POINT_SELECTION", contextSelectionPass, { reportError: mapInteractionReport.error, status: mapSummary.status, tooltipCoverage: mapSummary.mapTooltipCoverage, clickCoverage: mapSummary.mapClickDetailCoverage, contextSelection: mapSummary.contextLayerSelection }, { status: "PASS", tooltipCoverage: "12/12", clickCoverage: "12/12", contextSelection: "PASS" });
 audit.check("PUBLIC_ASSET_RESPONSE", networkFailures.length === 0, networkFailures, []);
 audit.check("UNCAUGHT_RUNTIME_ERROR", (browser?.runtimeErrors?.length || 0) === 0, browser?.runtimeErrors || [], []);
 

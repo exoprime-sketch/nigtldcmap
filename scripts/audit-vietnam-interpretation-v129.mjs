@@ -271,7 +271,7 @@ try {
   await waitForValue(browser.cdp, `Boolean(document.querySelector('.cdp-map-page'))`, { timeoutMs: 30_000 });
   await waitForValue(
     browser.cdp,
-    `document.querySelectorAll('.cdp-layer-card[data-map-element]').length === 13`,
+    `document.querySelectorAll('.cdp-layer-card[data-map-element]').length === 12`,
     { timeoutMs: 35_000 }
   );
   const applied = await evaluateValue(
@@ -356,7 +356,7 @@ try {
     await navigate(browser.cdp, mapUrlV129(server.url));
     await waitForValue(
       browser.cdp,
-      `document.querySelectorAll('.cdp-layer-card[data-map-element]').length === 13`,
+      `document.querySelectorAll('.cdp-layer-card[data-map-element]').length === 12`,
       { timeoutMs: 35_000 }
     );
     const detailPresetApplied = await evaluateValue(

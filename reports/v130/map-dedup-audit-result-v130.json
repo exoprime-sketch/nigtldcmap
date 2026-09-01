@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "v130-audit-result-1",
+  "checks": [
+    {
+      "type": "check",
+      "name": "D023_D018_DUPLICATE_COUNT_BEFORE",
+      "status": "PASS",
+      "actual": 4,
+      "expected": 4
+    },
+    {
+      "type": "check",
+      "name": "D023_D018_VISIBLE_DUPLICATE_COUNT_BEFORE",
+      "status": "PASS",
+      "actual": 3,
+      "expected": 3
+    },
+    {
+      "type": "check",
+      "name": "D023_ACTIVE_MAP_LAYER_REMOVED",
+      "status": "PASS",
+      "actual": {
+        "activeLayers": 0,
+        "catalogMapMode": "panel-only",
+        "semanticMapMode": "panel-only"
+      },
+      "expected": "no active layer or preset type; catalog/semantic panel-only"
+    },
+    {
+      "type": "check",
+      "name": "CROSS_LAYER_DUPLICATE_VISIBLE_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "type": "check",
+      "name": "CLIMATE_FINANCE_PRESET_PRIMARY_D018",
+      "status": "PASS",
+      "actual": "preset source",
+      "expected": "D-018 primary"
+    },
+    {
+      "type": "check",
+      "name": "CLIMATE_FINANCE_PRESET_NO_D023_LAYER",
+      "status": "PASS",
+      "actual": "preset composition",
+      "expected": "no D-023"
+    },
+    {
+      "type": "check",
+      "name": "D023_MAP_SELECTOR_BINDING_REMOVED",
+      "status": "PASS",
+      "actual": "selector binding source",
+      "expected": "no D-023 map selector binding"
+    }
+  ],
+  "summary": {
+    "type": "summary",
+    "audit": "MAP_DEDUP_V130",
+    "status": "PASS",
+    "passed": 7,
+    "failed": 0,
+    "total": 7,
+    "failedChecks": [],
+    "duplicateCountBefore": 4,
+    "duplicateVisibleCountAfter": 0
+  }
+}

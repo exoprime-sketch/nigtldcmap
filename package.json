@@ -23,7 +23,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "node ./node_modules/react-scripts/bin/react-scripts.js build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "quarantine:legacy": "node scripts/quarantine-legacy-v44.mjs",
@@ -100,11 +100,18 @@
     "audit:final-screens:v129": "node scripts/audit-vietnam-final-screens-v129.mjs",
     "finalize:v125": "npm run audit:data:v124 && npm run audit:map:v124 && npm run audit:runtime:v124 && npm run build:semantic:v125 && npm run audit:semantic:v125 && npm run audit:finder:v125 && npm run build && npm run audit:visual:v125",
     "finalize:v126": "npm run build && npm run audit:release:v126",
-    "finalize:v127": "npm run audit:release:v127",
-    "finalize:v128": "npm run audit:release:v128",
-    "release:vietnam-pilot": "npm run finalize:v128 && npm run audit:deployment:v128 && npm run audit:security:v128 && npm run audit:performance:v128 && npm run build",
-    "finalize:v129": "npm run audit:release:v129",
-    "finalize:public-v129": "npm run finalize:v129 && npm run audit:semantic-fit:v129 && npm run audit:map-feature-join:v129 && npm run audit:public-copy:v129 && npm run audit:final-screens:v129 && npm run build"
+    "finalize:v127": "node scripts/audit-vietnam-release-v127.mjs",
+    "finalize:v128": "node scripts/audit-vietnam-release-v128.mjs",
+    "release:vietnam-pilot": "node scripts/audit-vietnam-release-v128.mjs && node scripts/audit-vietnam-deployment-v128.mjs && node scripts/audit-vietnam-security-v128.mjs && node scripts/audit-vietnam-performance-v128.mjs && node ./node_modules/react-scripts/bin/react-scripts.js build",
+    "finalize:v129": "node scripts/audit-vietnam-release-v129.mjs",
+    "finalize:public-v129": "node scripts/audit-vietnam-release-v129.mjs && node scripts/audit-vietnam-semantic-fit-v129.mjs && node scripts/audit-vietnam-map-feature-join-v129.mjs && node scripts/audit-vietnam-public-copy-v129.mjs && node scripts/audit-vietnam-final-screens-v129.mjs && node ./node_modules/react-scripts/bin/react-scripts.js build",
+    "report:v130": "node scripts/generate-v130-spatial-reports.mjs",
+    "audit:map-selection:v130": "node scripts/audit-map-selection-v130.mjs",
+    "audit:project-scope:v130": "node scripts/audit-project-scope-v130.mjs",
+    "audit:map-dedup:v130": "node scripts/audit-map-dedup-v130.mjs",
+    "audit:map-semantic-geography:v130": "node scripts/audit-map-semantic-geography-v130.mjs",
+    "audit:runtime:v130": "node scripts/audit-vietnam-runtime-v130.mjs",
+    "finalize:v130": "node scripts/audit-vietnam-data-v124.mjs && node scripts/audit-vietnam-semantic-v125.mjs && node scripts/audit-vietnam-data-acceptance-v128.mjs && node scripts/audit-vietnam-semantic-fit-v129.mjs && node scripts/audit-vietnam-map-feature-join-v129.mjs && node scripts/audit-vietnam-public-copy-v129.mjs && node scripts/audit-vietnam-final-screens-v129.mjs && node scripts/generate-v130-spatial-reports.mjs && node scripts/audit-map-selection-v130.mjs && node scripts/audit-project-scope-v130.mjs && node scripts/audit-map-dedup-v130.mjs && node scripts/audit-map-semantic-geography-v130.mjs && node ./node_modules/react-scripts/bin/react-scripts.js build && node scripts/audit-vietnam-runtime-v130.mjs"
   },
   "browserslist": [
     ">0.2%",

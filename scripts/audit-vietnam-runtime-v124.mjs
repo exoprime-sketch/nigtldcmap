@@ -35,7 +35,6 @@ const REQUIRED_LAYER_IDS = [
   "B-048",
   "C-025",
   "D-018",
-  "D-023",
   "A-024",
   "B-021",
   "B-031",
@@ -54,6 +53,7 @@ const EXTERNAL_GEOMETRY_IDS = [
   "B-034",
   "C-016",
   "D-008",
+  "D-018",
 ];
 const CHOROPLETH_IDS = [
   "B-021",
@@ -224,9 +224,9 @@ const missingLayerIds = REQUIRED_LAYER_IDS.filter(
 );
 addCheck(
   "RUNTIME_ACTIVE_LAYER_COUNT",
-  activeLayers.length >= 13 && missingLayerIds.length === 0,
+  activeLayers.length >= 12 && missingLayerIds.length === 0,
   activeLayers.length,
-  ">= 13",
+  ">= 12",
   { missing: missingLayerIds }
 );
 

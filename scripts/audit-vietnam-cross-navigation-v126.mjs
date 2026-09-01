@@ -160,9 +160,9 @@ const detailLinkFailures = activeLayers.flatMap((layer) => {
 
 audit.check(
   "MAP_DETAIL_LINK_CONTRACT",
-  activeLayers.length === 13 && detailLinkFailures.length === 0,
+  activeLayers.length === 12 && detailLinkFailures.length === 0,
   { checked: activeLayers.length, failures: detailLinkFailures.length },
-  { checked: 13, failures: 0 },
+  { checked: 12, failures: 0 },
   detailLinkFailures
 );
 

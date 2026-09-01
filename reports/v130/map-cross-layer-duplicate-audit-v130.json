@@ -1,0 +1,89 @@
+{
+  "schemaVersion": "v130-cross-layer-dedup-1",
+  "datasets": [
+    "D-018",
+    "D-023"
+  ],
+  "keyFields": [
+    "official project ID",
+    "source URL",
+    "normalized title",
+    "fund",
+    "approval date",
+    "approved amount"
+  ],
+  "duplicateLogicalProjectCountBefore": 4,
+  "duplicateVisibleProjectCountBefore": 3,
+  "duplicateVisibleProjectCountAfter": 0,
+  "resolution": "D-023 remains an integrated portfolio in Data Finder and is panel-only; D-018 owns Adaptation Fund spatial representation.",
+  "duplicatePairs": [
+    {
+      "dedupKey": "no-project-id|https://www.adaptation-fund.org/project/innovative-financial-incentives-for-adaptation-in-wetland-livelihoods-ifia-2/|adaptation fund|03/24/2023|5000000",
+      "matchedBy": "source-url",
+      "d018RecordId": "vnm-v121-d-018-ent-3-74366413ab866855",
+      "d023RecordId": "vnm-v121-d-023-ent-11-ad1a76c0d1973444",
+      "title": "Innovative Financial Incentives for Adaptation in Wetland Livelihoods (IFIA)",
+      "identity": {
+        "officialProjectId": null,
+        "sourceUrl": "https://www.adaptation-fund.org/project/innovative-financial-incentives-for-adaptation-in-wetland-livelihoods-ifia-2/",
+        "normalizedTitle": "innovative financial incentives for adaptation in wetland livelihoods ifia",
+        "fund": "adaptation fund",
+        "approvalDate": "03/24/2023",
+        "approvedAmountUsd": 5000000
+      },
+      "visibleBeforeV130": false,
+      "visibleAfterV130": false
+    },
+    {
+      "dedupKey": "no-project-id|https://www.adaptation-fund.org/project/mekong-eba-south-enhancing-climate-resilience-in-the-greater-mekong-sub-region-through-ecosystem-based-adaptation-in-the-context-of-south-south-cooperation-thailand-viet-nam/|adaptation fund|03/11/2021|7000000",
+      "matchedBy": "source-url",
+      "d018RecordId": "vnm-v121-d-018-ent-4-87897faac6ff452d",
+      "d023RecordId": "vnm-v121-d-023-ent-12-34996b98c46435d2",
+      "title": "Mekong EbA South: Enhancing Climate Resilience in the Greater Mekong Sub-region through Ecosystem-based Adaptation in the Context of South-South Cooperation (Thailand, Viet Nam)",
+      "identity": {
+        "officialProjectId": null,
+        "sourceUrl": "https://www.adaptation-fund.org/project/mekong-eba-south-enhancing-climate-resilience-in-the-greater-mekong-sub-region-through-ecosystem-based-adaptation-in-the-context-of-south-south-cooperation-thailand-viet-nam/",
+        "normalizedTitle": "mekong eba south enhancing climate resilience in the greater mekong sub region through ecosystem based adaptation in the context of south south cooperation thailand viet nam",
+        "fund": "adaptation fund",
+        "approvalDate": "03/11/2021",
+        "approvedAmountUsd": 7000000
+      },
+      "visibleBeforeV130": true,
+      "visibleAfterV130": false
+    },
+    {
+      "dedupKey": "no-project-id|https://www.adaptation-fund.org/project/enhancing-the-resilience-inclusive-and-sustainable-eco-human-settlement-development-through-small-scale-infrastructure-interventions-in-the-coastal-regions-of-the-mekong-delta-in-viet-nam-2/|adaptation fund|06/01/2020|6345292",
+      "matchedBy": "source-url",
+      "d018RecordId": "vnm-v121-d-018-ent-5-05d60f1c904526d3",
+      "d023RecordId": "vnm-v121-d-023-ent-13-e725f89a8f9a9d07",
+      "title": "Enhancing the resilience inclusive and sustainable eco-human settlement development through small scale infrastructure interventions in the coastal regions of the Mekong Delta in Viet Nam",
+      "identity": {
+        "officialProjectId": null,
+        "sourceUrl": "https://www.adaptation-fund.org/project/enhancing-the-resilience-inclusive-and-sustainable-eco-human-settlement-development-through-small-scale-infrastructure-interventions-in-the-coastal-regions-of-the-mekong-delta-in-viet-nam-2/",
+        "normalizedTitle": "enhancing the resilience inclusive and sustainable eco human settlement development through small scale infrastructure interventions in the coastal regions of the mekong delta in viet nam",
+        "fund": "adaptation fund",
+        "approvalDate": "06/01/2020",
+        "approvedAmountUsd": 6345292
+      },
+      "visibleBeforeV130": true,
+      "visibleAfterV130": false
+    },
+    {
+      "dedupKey": "no-project-id|https://www.adaptation-fund.org/project/groundwater-resources-greater-mekong-subregion-collaborative-management-increase-resilience-cambodia-lao-peoples-democratic-republic-myanmar-thailand-vietnam-2/|adaptation fund|07/28/2022|4898775",
+      "matchedBy": "source-url",
+      "d018RecordId": "vnm-v121-d-018-ent-6-abff27b668f0437c",
+      "d023RecordId": "vnm-v121-d-023-ent-14-9c48b4f38b2be9ec",
+      "title": "Groundwater resources in the Greater Mekong Subregion: Collaborative management to increase resilience (Cambodia, Lao People’s Democratic Republic, Thailand, Viet Nam)",
+      "identity": {
+        "officialProjectId": null,
+        "sourceUrl": "https://www.adaptation-fund.org/project/groundwater-resources-greater-mekong-subregion-collaborative-management-increase-resilience-cambodia-lao-peoples-democratic-republic-myanmar-thailand-vietnam-2/",
+        "normalizedTitle": "groundwater resources in the greater mekong subregion collaborative management to increase resilience cambodia lao people s democratic republic thailand viet nam",
+        "fund": "adaptation fund",
+        "approvalDate": "07/28/2022",
+        "approvedAmountUsd": 4898775
+      },
+      "visibleBeforeV130": true,
+      "visibleAfterV130": false
+    }
+  ]
+}

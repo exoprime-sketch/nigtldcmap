@@ -104,6 +104,38 @@ let server = null;
 let browser = null;
 let runtimeFailure = null;
 
+async function navigateLimitationsDetail(cdp, url) {
+  let lastError = null;
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    try {
+      await navigate(cdp, url);
+      await waitForValue(
+        cdp,
+        `(() => {
+          if (document.querySelector('[role="alert"]')) return true;
+          const root = document.querySelector('[data-testid="public-analysis-root"]');
+          return Boolean(
+            root &&
+            root.getAttribute('data-analysis-state') === 'ready' &&
+            root.querySelector('[data-testid="public-data-title"]')
+          );
+        })()`,
+        { timeoutMs: 20_000 }
+      );
+      const alertText = await evaluateValue(
+        cdp,
+        `document.querySelector('[role="alert"]')?.textContent?.replace(/\\s+/gu, ' ').trim() || null`
+      );
+      if (alertText) throw new Error(alertText);
+      return;
+    } catch (error) {
+      lastError = error instanceof Error ? error.message : String(error);
+      if (attempt < 2) await new Promise((resolveWait) => setTimeout(resolveWait, 150));
+    }
+  }
+  throw new Error(lastError || "public limitation route unavailable");
+}
+
 try {
   server = await startStaticBuildServer(resolve(PROJECT_ROOT, "build"));
   browser = await launchHeadlessBrowser();
@@ -124,19 +156,7 @@ try {
     url.searchParams.set("element", element.elementId);
     url.hash = "element-detail";
     try {
-      await navigate(browser.cdp, url.toString());
-      await waitForValue(
-        browser.cdp,
-        `(() => {
-          const root = document.querySelector('[data-testid="public-analysis-root"]');
-          return Boolean(
-            root &&
-            root.getAttribute('data-analysis-state') === 'ready' &&
-            root.querySelector('[data-testid="public-data-title"]')
-          );
-        })()`,
-        { timeoutMs: 20_000 }
-      );
+      await navigateLimitationsDetail(browser.cdp, url.toString());
       const result = await evaluateValue(
         browser.cdp,
         `(() => {

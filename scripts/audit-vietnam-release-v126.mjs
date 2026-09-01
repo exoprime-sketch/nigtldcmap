@@ -162,15 +162,15 @@ const zeroImputationCount = sumNumeric([
 audit.check("DATA_CONTRACTS", contracts.length === 152, contracts.length, 152);
 audit.check(
   "ACTIVE_MAP_LAYERS",
-  activeLayers.length === 13 && Number(mapResult.value?.activeMapLayerCount) === 13,
+  activeLayers.length === 12 && Number(mapResult.value?.activeMapLayerCount) === 12,
   { calculated: activeLayers.length, declared: mapResult.value?.activeMapLayerCount ?? null },
-  { calculated: 13, declared: 13 }
+  { calculated: 12, declared: 12 }
 );
 audit.check(
   "MAP_FEATURE_COUNT",
-  mapFeatureCount === 2904 && Number(mapResult.value?.mapFeatureCount) === 2904,
+  mapFeatureCount === 2900 && Number(mapResult.value?.mapFeatureCount) === 2900,
   { calculated: mapFeatureCount, declared: mapResult.value?.mapFeatureCount ?? null },
-  { calculated: 2904, declared: 2904 }
+  { calculated: 2900, declared: 2900 }
 );
 audit.check("ADM1_FEATURE_COUNT", adm1FeatureCount === 63, adm1FeatureCount, 63);
 audit.check(

@@ -133,6 +133,37 @@ const GENERIC_DEVELOPER_COPY = [
   "technical provenance",
 ];
 
+async function navigatePublicDetail(cdp, url, populated) {
+  let lastError = null;
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    try {
+      await navigate(cdp, url);
+      await waitForValue(
+        cdp,
+        `(() => {
+          const root = document.querySelector('[data-v126-public-analysis], [data-testid="public-analysis-root"]');
+          if (document.querySelector('[role="alert"]')) return true;
+          if (!root || !root.querySelector('[data-testid="public-data-title"]')) return false;
+          if (!root.querySelector('[data-testid="public-analysis-primary"]')) return false;
+          if (!root.querySelector('[data-testid="public-source-panel"]')) return false;
+          return ${populated ? "Boolean(root.querySelector('details[data-testid=\"public-raw-table\"]'))" : "true"};
+        })()`,
+        { timeoutMs: 20_000 }
+      );
+      const alertText = await evaluateValue(
+        cdp,
+        `document.querySelector('[role="alert"]')?.textContent?.replace(/\\s+/gu, ' ').trim() || null`
+      );
+      if (alertText) throw new Error(alertText);
+      return;
+    } catch (error) {
+      lastError = error instanceof Error ? error.message : String(error);
+      if (attempt < 2) await new Promise((resolveWait) => setTimeout(resolveWait, 150));
+    }
+  }
+  throw new Error(lastError || "public detail route unavailable");
+}
+
 let server = null;
 let browser = null;
 let runtimeFailure = null;
@@ -159,19 +190,7 @@ try {
     url.searchParams.set("element", element.elementId);
     url.hash = "element-detail";
     try {
-      await navigate(browser.cdp, url.toString());
-      await waitForValue(
-        browser.cdp,
-        `(() => {
-          const root = document.querySelector('[data-v126-public-analysis], [data-testid="public-analysis-root"]');
-          if (document.querySelector('[role="alert"]')) return true;
-          if (!root || !root.querySelector('[data-testid="public-data-title"]')) return false;
-          if (!root.querySelector('[data-testid="public-analysis-primary"]')) return false;
-          if (!root.querySelector('[data-testid="public-source-panel"]')) return false;
-          return ${populated ? "Boolean(root.querySelector('details[data-testid=\"public-raw-table\"]'))" : "true"};
-        })()`,
-        { timeoutMs: 20_000 }
-      );
+      await navigatePublicDetail(browser.cdp, url.toString(), populated);
       const result = await evaluateValue(
         browser.cdp,
         `(() => {

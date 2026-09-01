@@ -58,6 +58,9 @@ function sourceText(path) {
 const baselineResult = readJson(baselinePath);
 const deploymentReportResult = readJson(deploymentReportPath);
 const manifestResult = readJson(resolve(buildRoot, "asset-manifest.json"));
+const vietnamManifestResult = readJson(
+  resolve(publicDataRoot, "vietnam/v2/manifest.json")
+);
 const baseline = baselineResult.value || {};
 const buildManifest = manifestResult.value || {};
 const entrypointPaths = (Array.isArray(buildManifest.entrypoints)
@@ -153,11 +156,16 @@ const publicDataAssets = walk(publicDataRoot)
   }))
   .sort((left, right) => right.bytes - left.bytes);
 
+const searchIndexAsset = Array.isArray(
+  vietnamManifestResult.value?.assets?.searchIndex
+)
+  ? vietnamManifestResult.value.assets.searchIndex[0]
+  : vietnamManifestResult.value?.assets?.searchIndex;
 const timedAssets = [
-  "data/vietnam/v2/packs/search-index-v124-fb3e015c.json",
+  String(searchIndexAsset || "").replace(/^\/+/, ""),
   "data/vietnam/v2/geometry/vnm-adm1-63.geojson",
   "data/vietnam/v2/geometry/vnm-transmission-network.geojson",
-];
+].filter(Boolean);
 const loadMeasurements = [];
 let server = null;
 let loadError = null;

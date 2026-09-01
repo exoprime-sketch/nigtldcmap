@@ -63,7 +63,6 @@ const PUBLIC_LAYER_TITLES = new Map([
   ["C-025", "탄소크레딧 사업"],
   ["D-008", "지역 기후예산"],
   ["D-018", "적응기금 사업"],
-  ["D-023", "국제협력·기후재원 사업"],
 ]);
 
 audit.check("MAP_INDEX_JSON", mapResult.error === null, mapResult.error, null);
@@ -107,7 +106,7 @@ for (const layer of layers) {
   }
 }
 
-const pointLayerIds = new Set(["A-023", "B-048", "C-025", "D-018", "D-023"]);
+const pointLayerIds = new Set(["A-023", "B-048", "C-025"]);
 const pointAssetReconciliation = [];
 const pointRecordIndex = new Map();
 for (const elementId of pointLayerIds) {
@@ -232,6 +231,7 @@ const sourceInteractionContract = {
 function expectedKind(layer) {
   const renderer = String(layer?.renderer || layer?.mapMode || "");
   if (/line/u.test(renderer)) return "line";
+  if (/regional-scope/u.test(renderer)) return "regional";
   if (/choropleth/u.test(renderer)) return "adm1";
   return "point";
 }
@@ -574,7 +574,7 @@ try {
     browser.cdp,
     `(() => {
       const cards = [...document.querySelectorAll('.cdp-layer-card[data-map-element]')];
-      return cards.length === 13 && cards.every((card) =>
+      return cards.length === 12 && cards.every((card) =>
         [...card.querySelectorAll('button')].some((button) =>
           ['분석하기', '분석 중'].includes(button.textContent?.trim()) && !button.disabled
         )
@@ -785,8 +785,8 @@ const keyboardSelectionPass =
   keyboardSelection?.context?.primary === "B-021" &&
   /지역 기후예산/u.test(keyboardSelection?.context?.detail || "");
 
-audit.check("ACTIVE_MAP_LAYERS", layers.length === 13, layers.length, 13);
-audit.check("MAP_FEATURE_COUNT", featureCount === 2904, featureCount, 2904);
+audit.check("ACTIVE_MAP_LAYERS", layers.length === 12, layers.length, 12);
+audit.check("MAP_FEATURE_COUNT", featureCount === 2900, featureCount, 2900);
 audit.check("ADM1_FEATURE_COUNT", adm1Codes.size === 63, adm1Codes.size, 63);
 audit.check(
   "MAP_SELECTOR_PUBLIC_CONTRACT",
@@ -832,16 +832,16 @@ audit.check(
 );
 audit.check(
   "ALL_LAYER_BROWSER_ACTIVATION_AND_LEGEND",
-  runtimeFailure === null && activationResults.length === 13 && activationFailures.length === 0,
+  runtimeFailure === null && activationResults.length === 12 && activationFailures.length === 0,
   { runtimeFailure, checked: activationResults.length, failures: activationFailures.length },
-  { runtimeFailure: null, checked: 13, failures: 0 },
+  { runtimeFailure: null, checked: 12, failures: 0 },
   activationFailures
 );
 audit.check(
   "ALL_LAYER_TOOLTIP_AND_CLICK",
-  runtimeFailure === null && interactionResults.length === 13 && interactionFailures.length === 0,
+  runtimeFailure === null && interactionResults.length === 12 && interactionFailures.length === 0,
   { runtimeFailure, interactionResults },
-  { layers: 13, tooltip: true, detail: true }
+  { layers: 12, tooltip: true, detail: true }
 );
 audit.check(
   "CONTEXT_LAYER_SELECTION_DETAIL",
@@ -917,12 +917,12 @@ finishAuditV129(audit, "map-interaction-audit-v129.json", {
   mapUnknownSymbolCount:
     legendContractFailures.length + activationFailures.filter((item) => !item.legend?.shape).length,
   mapTooltipCoverage:
-    runtimeFailure === null && interactionResults.length === 13 && interactionFailures.every((item) => item.tooltip)
-      ? "13/13 browser hover"
+    runtimeFailure === null && interactionResults.length === 12 && interactionFailures.every((item) => item.tooltip)
+      ? "12/12 browser hover"
       : "FAIL",
   mapClickDetailCoverage:
-    runtimeFailure === null && interactionResults.length === 13 && interactionFailures.every((item) => item.detail)
-      ? "13/13 browser click detail"
+    runtimeFailure === null && interactionResults.length === 12 && interactionFailures.every((item) => item.detail)
+      ? "12/12 browser click detail"
       : "FAIL",
   contextLayerSelection: contextPass ? "PASS" : "FAIL",
 });

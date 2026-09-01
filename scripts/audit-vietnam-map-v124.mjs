@@ -30,7 +30,6 @@ const REQUIRED_LAYER_IDS = [
   "B-048",
   "C-025",
   "D-018",
-  "D-023",
   "A-024",
   "B-021",
   "B-031",
@@ -52,8 +51,7 @@ const EXPECTED_RENDERERS = {
   "A-023": new Set(["point", "cluster"]),
   "B-048": new Set(["point", "cluster"]),
   "C-025": new Set(["point", "cluster"]),
-  "D-018": new Set(["point", "cluster"]),
-  "D-023": new Set(["point", "cluster"]),
+  "D-018": new Set(["regional-scope"]),
   "A-024": new Set(["line"]),
   "B-021": new Set(["admin1-choropleth", "region-choropleth", "choropleth"]),
   "B-031": new Set(["admin1-choropleth", "choropleth"]),
@@ -622,9 +620,9 @@ addCheck(
 );
 addCheck(
   "ACTIVE_MAP_LAYERS",
-  activeLayers.length >= 13,
+  activeLayers.length >= 12,
   activeLayers.length,
-  ">= 13",
+  ">= 12",
   { elementIds: activeLayers.map((layer) => layer.elementId) }
 );
 

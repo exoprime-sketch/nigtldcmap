@@ -1,0 +1,174 @@
+{
+  "schemaVersion": "v130-audit-result-1",
+  "checks": [
+    {
+      "type": "check",
+      "name": "D018_PROJECT_COUNT",
+      "status": "PASS",
+      "actual": 4,
+      "expected": 4
+    },
+    {
+      "type": "check",
+      "name": "D018_REGIONAL_PROJECTS",
+      "status": "PASS",
+      "actual": 2,
+      "expected": 2
+    },
+    {
+      "type": "check",
+      "name": "D018_SPATIAL_PROJECT_JOIN",
+      "status": "PASS",
+      "actual": {
+        "join": {
+          "failures": [],
+          "matchedCount": 2,
+          "panelOnlyEntityCount": 2,
+          "requiredCount": 2,
+          "sourceEntityCount": 4
+        },
+        "featureCount": 4
+      },
+      "expected": {
+        "requiredCount": 2,
+        "matchedCount": 2,
+        "featureCount": 4
+      }
+    },
+    {
+      "type": "check",
+      "name": "D018_NO_STALE_FILTER",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "name": "GREATER_MEKONG_SCOPE",
+      "status": "PASS",
+      "actual": {
+        "scope": "multi-country-regional",
+        "countries": [
+          "KHM",
+          "LAO",
+          "THA",
+          "VNM"
+        ]
+      },
+      "expected": {
+        "scope": "multi-country-regional",
+        "countries": [
+          "KHM",
+          "LAO",
+          "THA",
+          "VNM"
+        ]
+      }
+    },
+    {
+      "type": "check",
+      "name": "GREATER_MEKONG_SOURCE_COORDINATE_COUNT",
+      "status": "PASS",
+      "actual": 4,
+      "expected": 4
+    },
+    {
+      "type": "check",
+      "name": "GREATER_MEKONG_DISPLAY_MODE",
+      "status": "PASS",
+      "actual": {
+        "displayedCoordinates": 0,
+        "geometryTypes": [
+          "MultiPolygon"
+        ]
+      },
+      "expected": "one participating-country MultiPolygon; zero project-site points"
+    },
+    {
+      "type": "check",
+      "name": "POINT_WITH_UNKNOWN_MEANING",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "type": "check",
+      "name": "REGIONAL_PROJECT_AS_SINGLE_POINT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "type": "check",
+      "name": "COUNTRY_PROJECT_AS_FAKE_SITE",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "type": "check",
+      "name": "FIRST_COORDINATE_AS_PROJECT_LOCATION",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "type": "check",
+      "name": "D023_PANEL_ONLY",
+      "status": "PASS",
+      "actual": {
+        "mapEligibleEntities": 0,
+        "catalogMapMode": "panel-only",
+        "catalogMapFeatureCount": 0,
+        "semanticMapLinkage": {
+          "enabled": false,
+          "featureCount": 0,
+          "mapMode": "panel-only",
+          "stateParameters": [
+            "element",
+            "measure",
+            "sex",
+            "year",
+            "period",
+            "dim.*"
+          ]
+        }
+      },
+      "expected": "entities disabled; catalog and semantic contract panel-only"
+    },
+    {
+      "type": "check",
+      "name": "C025_VISIBLE_PUBLIC_NAME",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "type": "check",
+      "name": "C025_NONSPATIAL_REASON_ACCURATE",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "type": "check",
+      "name": "ALL_PROJECT_RECORDS_CLASSIFIED",
+      "status": "PASS",
+      "actual": 221,
+      "expected": 221
+    }
+  ],
+  "summary": {
+    "type": "summary",
+    "audit": "PROJECT_SCOPE_V130",
+    "status": "PASS",
+    "passed": 15,
+    "failed": 0,
+    "total": 15,
+    "failedChecks": [],
+    "d018ProjectCount": 4,
+    "d018RegionalProjectCount": 2,
+    "greaterMekongDisplayMode": "regional-scope"
+  }
+}

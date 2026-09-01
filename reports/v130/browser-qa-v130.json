@@ -1,0 +1,27 @@
+{
+  "projectPhase": "V130_FINAL_SPATIAL_SCOPE_AND_MAP_SELECTION",
+  "testedAt": "2026-09-01T14:11:00+09:00",
+  "runtime": {
+    "mode": "production-build",
+    "url": "http://127.0.0.1:4175/",
+    "result": "PASS"
+  },
+  "checks": {
+    "greaterMekongNotArbitrarySingleSite": "PASS",
+    "participatingCountriesClear": "PASS",
+    "vietnamParticipationClear": "PASS",
+    "projectDetailAvailable": "PASS",
+    "d018D023DuplicateVisibleCount": 0,
+    "mapGuideExplainsVerifiedSubset": "PASS",
+    "consoleErrors": 0,
+    "brokenAssets": 0
+  },
+  "screenshots": [
+    "reports/v130/screenshots/map-data-guide.png",
+    "reports/v130/screenshots/map-layer-groups.png",
+    "reports/v130/screenshots/map-adaptation-fund.png",
+    "reports/v130/screenshots/map-greater-mekong-regional.png",
+    "reports/v130/screenshots/map-climate-finance-preset.png",
+    "reports/v130/screenshots/map-regional-project-selected.png"
+  ]
+}

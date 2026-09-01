@@ -121,6 +121,9 @@ const requiredAssets = [
   "/data/vietnam/v2/map-index.json",
   "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
   "/data/vietnam/v2/geometry/vnm-transmission-network.geojson",
+  ...(manifest.assets?.regionalProjectGeometry
+    ? [manifest.assets.regionalProjectGeometry]
+    : []),
   ...(searchIndex ? [searchIndex] : []),
   ...(Array.isArray(manifest.assets?.spatialLayers)
     ? manifest.assets.spatialLayers
