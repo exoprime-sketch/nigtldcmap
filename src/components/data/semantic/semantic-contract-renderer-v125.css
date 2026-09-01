@@ -229,8 +229,6 @@
 .sv125-metric-grid,
 .sv125-capability-grid,
 .sv125-contract-evidence-grid,
-.sv125-portfolio-grid,
-.sv125-directory-grid,
 .sv125-spatial-kpis,
 .sv125-spatial-samples {
   display: grid;
@@ -467,10 +465,7 @@
   margin: 0;
 }
 
-.sv125-policy-timeline a,
-.sv125-portfolio-grid a,
-.sv125-directory-grid a,
-.sv125-document-list a {
+.sv125-policy-timeline a {
   color: #0f766e;
   font-size: 0.76rem;
   font-weight: 750;
@@ -500,63 +495,6 @@
 .sv125-entity-table-fallback thead th {
   background: #f0f7f5;
   color: #33534b;
-}
-
-.sv125-portfolio-grid,
-.sv125-directory-grid {
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-}
-
-.sv125-portfolio-grid > article,
-.sv125-directory-grid > article,
-.sv125-document-list > article {
-  border: 1px solid #dfe9e6;
-  border-radius: 13px;
-  display: grid;
-  gap: 0.55rem;
-  min-width: 0;
-  padding: 0.85rem;
-}
-
-.sv125-portfolio-grid > article > div,
-.sv125-directory-grid > article {
-  align-content: start;
-}
-
-.sv125-portfolio-grid span,
-.sv125-directory-grid span,
-.sv125-document-list span,
-.sv125-directory-grid small,
-.sv125-document-list small {
-  color: #60746e;
-  font-size: 0.75rem;
-}
-
-.sv125-portfolio-grid dl {
-  display: grid;
-  gap: 0.35rem;
-  grid-template-columns: auto minmax(0, 1fr);
-  margin: 0;
-}
-
-.sv125-portfolio-grid dt,
-.sv125-portfolio-grid dd {
-  font-size: 0.74rem;
-  margin: 0;
-}
-
-.sv125-portfolio-grid dt {
-  color: #60746e;
-}
-
-.sv125-contact-links {
-  display: grid;
-  gap: 0.3rem;
-}
-
-.sv125-document-list {
-  display: grid;
-  gap: 0.7rem;
 }
 
 .sv125-spatial-kpis {
@@ -643,8 +581,4 @@
   .sv125-policy-timeline li > div {
     margin-top: 0.35rem;
   }
-}
-.sv125-directory-grid .sv125-contact-summary {
-  line-height: 1.55;
-  white-space: pre-line;
 }

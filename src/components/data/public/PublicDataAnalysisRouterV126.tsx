@@ -205,6 +205,8 @@ export default function PublicDataAnalysisRouterV126({
             observations={observations}
             entities={entities}
             countryNameKo={countryNameKo}
+            detailTemplate={detailTemplate}
+            elementTitle={copy.title}
             selectorState={selectorState}
             onSelectorStateChange={onSelectorStateChange}
             showRawTable={false}
