@@ -1,0 +1,440 @@
+{
+  "schemaVersion": "v129-audit-report-1",
+  "generatedAt": "2026-09-01T00:21:42.786Z",
+  "audit": "semantic-fit:v129",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "semantic-fit:v129",
+    "status": "PASS",
+    "passed": 21,
+    "failed": 0,
+    "total": 21,
+    "failedChecks": [],
+    "frameworkElementCount": 152,
+    "accountedElementCount": 152,
+    "unexplainedElementCount": 0,
+    "matrixElementCount": 152,
+    "visualizationFitCount": 152,
+    "visualizationFitFailureCount": 0,
+    "fitCounts": {
+      "fit": 75,
+      "fit-with-caveat": 69,
+      "specialized-required": 3,
+      "status-only": 5,
+      "fail": 0
+    },
+    "specializedRendererCount": 3,
+    "interpretationRequiredCount": 59,
+    "interpretationCoveredCount": 59,
+    "interpretationCoverage": "100%",
+    "unexplainedIndexCount": 0,
+    "missingDirectionCount": 0,
+    "missingScaleCount": 0,
+    "inappropriateTrendCount": 0,
+    "mixedDenominatorAxisCount": 0,
+    "compositionOverlapFailureCount": 0,
+    "statusOnlyFakeChartCount": 0,
+    "meaninglessKpiOnlyCount": 0,
+    "variableUnitMismatchCount": 0,
+    "zeroImputationCount": 0,
+    "reportFiles": [
+      "reports/v129/visualization-semantic-fit-v129.csv",
+      "reports/v129/visualization-semantic-fit-v129.json"
+    ]
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "semantic-fit:v129",
+      "name": "SOURCE_JSON",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "semantic-fit:v129",
+      "name": "FRAMEWORK_ELEMENTS",
+      "status": "PASS",
+      "actual": 152,
+      "expected": 152
+    },
+    {
+      "type": "check",
+      "audit": "semantic-fit:v129",
+      "name": "ACCOUNTED_ELEMENTS",
+      "status": "PASS",
+      "actual": 152,
+      "expected": 152
+    },
+    {
+      "type": "check",
+      "audit": "semantic-fit:v129",
+      "name": "UNEXPLAINED_ELEMENTS",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "type": "check",
+      "audit": "semantic-fit:v129",
+      "name": "CATALOG_CONTRACT_MATRIX_COVERAGE",
+      "status": "PASS",
+      "actual": {
+        "catalog": 152,
+        "contracts": 152,
+        "matrix": 152,
+        "duplicateCatalogIds": [],
+        "duplicateContractIds": [],
+        "duplicateMatrixIds": []
+      },
+      "expected": {
+        "catalog": 152,
+        "contracts": 152,
+        "matrix": 152,
+        "duplicates": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "semantic-fit:v129",
+      "name": "PUBLIC_RENDERER_REGISTRY_PARITY",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "semantic-fit:v129",
+      "name": "REPRESENTATIVE_NON_OBVIOUS_COVERAGE",
+      "status": "PASS",
+      "actual": [
+        {
+          "elementId": "A-001",
+          "explanationRequired": true,
+          "interpretationStatus": "covered"
+        },
+        {
+          "elementId": "A-002",
+          "explanationRequired": true,
+          "interpretationStatus": "covered"
+        },
+        {
+          "elementId": "A-008",
+          "explanationRequired": true,
+          "interpretationStatus": "covered"
+        },
+        {
+          "elementId": "A-013",
+          "explanationRequired": true,
+          "interpretationStatus": "covered"
+        },
+        {
+          "elementId": "A-014",
+          "explanationRequired": true,
+          "interpretationStatus": "covered"
+        },
+        {
+          "elementId": "B-021",
+          "explanationRequired": true,
+          "interpretationStatus": "covered"
+        },
+        {
+          "elementId": "C-019",
+          "explanationRequired": true,
+          "interpretationStatus": "covered"
+        },
+        {
+          "elementId": "D-005",
+          "explanationRequired": true,
+          "interpretationStatus": "covered"
+        },
+        {
+          "elementId": "E-007",
+          "explanationRequired": true,
+          "interpretationStatus": "covered"
+        },
+        {
+          "elementId": "E-014",
+          "explanationRequired": true,
+          "interpretationStatus": "covered"
+        }
+      ],
+      "expected": [
+        {
+          "elementId": "A-001",
+          "explanationRequired": true,
+          "interpretationStatus": "covered"
+        },
+        {
+          "elementId": "A-002",
+          "explanationRequired": true,
+          "interpretationStatus": "covered"
+        },
+        {
+          "elementId": "A-008",
+          "explanationRequired": true,
+          "interpretationStatus": "covered"
+        },
+        {
+          "elementId": "A-013",
+          "explanationRequired": true,
+          "interpretationStatus": "covered"
+        },
+        {
+          "elementId": "A-014",
+          "explanationRequired": true,
+          "interpretationStatus": "covered"
+        },
+        {
+          "elementId": "B-021",
+          "explanationRequired": true,
+          "interpretationStatus": "covered"
+        },
+        {
+          "elementId": "C-019",
+          "explanationRequired": true,
+          "interpretationStatus": "covered"
+        },
+        {
+          "elementId": "D-005",
+          "explanationRequired": true,
+          "interpretationStatus": "covered"
+        },
+        {
+          "elementId": "E-007",
+          "explanationRequired": true,
+          "interpretationStatus": "covered"
+        },
+        {
+          "elementId": "E-014",
+          "explanationRequired": true,
+          "interpretationStatus": "covered"
+        }
+      ]
+    },
+    {
+      "type": "check",
+      "audit": "semantic-fit:v129",
+      "name": "NON_OBVIOUS_EXPLANATION_COVERAGE",
+      "status": "PASS",
+      "actual": {
+        "requiredEntryCount": 59,
+        "requiredCoveredEntryCount": 59,
+        "missingElements": []
+      },
+      "expected": {
+        "coverage": "100%",
+        "missingElements": []
+      }
+    },
+    {
+      "type": "check",
+      "audit": "semantic-fit:v129",
+      "name": "MISSING_DIRECTION",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "semantic-fit:v129",
+      "name": "MISSING_SCALE",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "semantic-fit:v129",
+      "name": "VISUALIZATION_FIT",
+      "status": "PASS",
+      "actual": {
+        "accepted": 152,
+        "failed": 0,
+        "failures": []
+      },
+      "expected": {
+        "accepted": 152,
+        "failed": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "semantic-fit:v129",
+      "name": "INAPPROPRIATE_TREND",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "semantic-fit:v129",
+      "name": "MIXED_DENOMINATOR_AXIS",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "semantic-fit:v129",
+      "name": "DENOMINATOR_SELECTOR_RUNTIME",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null,
+        "b013Runtime": {
+          "mounted": true,
+          "selectorValue": "비료",
+          "emptyOptionCount": 0,
+          "trendChartCount": 0,
+          "comparisonItemCount": 1
+        },
+        "d010Runtime": [
+          {
+            "measure": "measure-f89153b46866",
+            "category": "GDP 대비 비중",
+            "emptyOptionCount": 0,
+            "chartCount": 1,
+            "units": [
+              "단위: %"
+            ]
+          },
+          {
+            "measure": "measure-465d4d66c9ba",
+            "category": "총액",
+            "emptyOptionCount": 0,
+            "chartCount": 1,
+            "units": [
+              "단위: USD"
+            ]
+          },
+          {
+            "measure": "measure-f8ee4fcb7553",
+            "category": "가솔린 효율가격(외부효과 반영)",
+            "emptyOptionCount": 0,
+            "chartCount": 1,
+            "units": [
+              "단위: USD/L"
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "runtimeFailure": null,
+        "b013": "single denominator selector, comparison only",
+        "d010": "3 measures, one denominator category at a time"
+      }
+    },
+    {
+      "type": "check",
+      "audit": "semantic-fit:v129",
+      "name": "COMPOSITION_OVERLAP",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "semantic-fit:v129",
+      "name": "ZERO_IMPUTATION",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "type": "check",
+      "audit": "semantic-fit:v129",
+      "name": "STATUS_ONLY_FAKE_CHART",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "semantic-fit:v129",
+      "name": "MEANINGLESS_KPI_ONLY",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "semantic-fit:v129",
+      "name": "MAP_VARIABLE_UNIT_MISMATCH",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "semantic-fit:v129",
+      "name": "SPECIALIZED_RENDERER_WIRING",
+      "status": "PASS",
+      "actual": {
+        "specializedIds": [
+          "A-002",
+          "D-005",
+          "E-012"
+        ],
+        "ready": {
+          "A-002": true,
+          "D-005": true,
+          "E-012": true
+        },
+        "count": 3
+      },
+      "expected": {
+        "count": 3,
+        "allReady": true
+      }
+    },
+    {
+      "type": "check",
+      "audit": "semantic-fit:v129",
+      "name": "SEMANTIC_INTEGRITY",
+      "status": "PASS",
+      "actual": {
+        "recordReconciliation": "PASS",
+        "mixedUnitAxisCount": 0,
+        "semanticDimensionLossCount": 0
+      },
+      "expected": {
+        "recordReconciliation": "PASS",
+        "mixedUnitAxisCount": 0,
+        "semanticDimensionLossCount": 0
+      }
+    }
+  ],
+  "frameworkElementCount": 152,
+  "accountedElementCount": 152,
+  "unexplainedElementCount": 0,
+  "matrixElementCount": 152,
+  "visualizationFitCount": 152,
+  "visualizationFitFailureCount": 0,
+  "fitCounts": {
+    "fit": 75,
+    "fit-with-caveat": 69,
+    "specialized-required": 3,
+    "status-only": 5,
+    "fail": 0
+  },
+  "specializedRendererCount": 3,
+  "interpretationRequiredCount": 59,
+  "interpretationCoveredCount": 59,
+  "interpretationCoverage": "100%",
+  "unexplainedIndexCount": 0,
+  "missingDirectionCount": 0,
+  "missingScaleCount": 0,
+  "inappropriateTrendCount": 0,
+  "mixedDenominatorAxisCount": 0,
+  "compositionOverlapFailureCount": 0,
+  "statusOnlyFakeChartCount": 0,
+  "meaninglessKpiOnlyCount": 0,
+  "variableUnitMismatchCount": 0,
+  "zeroImputationCount": 0,
+  "reportFiles": [
+    "reports/v129/visualization-semantic-fit-v129.csv",
+    "reports/v129/visualization-semantic-fit-v129.json"
+  ]
+}

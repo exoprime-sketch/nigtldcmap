@@ -49,6 +49,11 @@ export type PublicVisualizationSummaryV126 = {
   populatedRecordCount: number;
   defaultMeasureKey?: string;
   fixedDomainRules?: readonly PublicFixedDomainRuleV127[];
+  /**
+   * Dimensions whose values use different denominators and therefore must be
+   * selected one at a time instead of sharing a public comparison axis.
+   */
+  singleDenominatorDimensionKeys?: readonly string[];
 };
 
 const SPECIALIZED_ELEMENTS_V126 = new Set(["A-002", "D-005", "E-012"]);
@@ -57,6 +62,13 @@ const PUBLIC_DEFAULT_MEASURE_KEYS_V127: Readonly<Record<string, string>> =
   Object.freeze({
     "A-001": "measure-ffa3eb23fb73",
   });
+
+const PUBLIC_SINGLE_DENOMINATOR_DIMENSIONS_V129: Readonly<
+  Record<string, readonly string[]>
+> = Object.freeze({
+  "B-013": Object.freeze(["detail"]),
+  "D-010": Object.freeze(["category"]),
+});
 
 /**
  * Reviewed official score scales only. Percentage and currency series keep an
@@ -110,6 +122,7 @@ const ELEMENT_RENDERER_OVERRIDES_V126: Record<
   "A-011": "stacked-emissions",
   "A-017": "technology-comparison",
   "A-018": "composition-trend",
+  "B-013": "technology-comparison",
   "D-005": "composition-trend",
   "B-033": "spatial-analysis",
   "B-034": "spatial-analysis",
@@ -167,6 +180,8 @@ export const PUBLIC_VISUALIZATION_SUMMARIES_V126: PublicVisualizationSummaryV126
     populatedRecordCount: summary.populatedRecordCount,
     defaultMeasureKey: PUBLIC_DEFAULT_MEASURE_KEYS_V127[summary.elementId],
     fixedDomainRules: PUBLIC_FIXED_DOMAIN_RULES_V127[summary.elementId],
+    singleDenominatorDimensionKeys:
+      PUBLIC_SINGLE_DENOMINATOR_DIMENSIONS_V129[summary.elementId],
   }));
 
 const PUBLIC_VISUALIZATION_BY_ELEMENT_V126 = new Map(
