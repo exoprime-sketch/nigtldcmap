@@ -124,8 +124,12 @@ const MAP_SELECTOR_BINDINGS_V125: MapSelectorBindingV125[] = [
   },
   { elementId: "B-048", mapVariable: "locations", fixedPeriod: "2022", elementOnly: true },
   { elementId: "C-025", mapVariable: "locations", fixedPeriod: "2026", elementOnly: true },
-  { elementId: "D-018", mapVariable: "locations", fixedPeriod: "2026", elementOnly: true },
-  { elementId: "D-023", mapVariable: "locations", fixedPeriod: "2026", elementOnly: true },
+  {
+    elementId: "D-018",
+    mapVariable: "regional-scope",
+    fixedPeriod: "2026",
+    elementOnly: true,
+  },
 
   {
     elementId: "B-021",
