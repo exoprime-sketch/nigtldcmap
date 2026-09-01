@@ -571,7 +571,7 @@ export default function DataExplorerPage({
                 <dd>
                   {contract
                     ? contractSummaryValuesV125(contract.measureLabels, "측정항목 없음")
-                    : "의미 계약 확인 중"}
+                    : "측정항목 확인 중"}
                 </dd>
               </div>
               <div>
@@ -579,7 +579,7 @@ export default function DataExplorerPage({
                 <dd>
                   {contract
                     ? contractSummaryValuesV125(contract.dimensionLabels, "추가 분류 없음")
-                    : "의미 계약 확인 중"}
+                    : "분류 정보 확인 중"}
                 </dd>
               </div>
               <div>

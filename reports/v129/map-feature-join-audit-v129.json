@@ -1,0 +1,1012 @@
+{
+  "schemaVersion": "v129-audit-report-1",
+  "generatedAt": "2026-09-01T00:22:35.544Z",
+  "audit": "map-feature-join:v129",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "map-feature-join:v129",
+    "status": "PASS",
+    "passed": 18,
+    "failed": 0,
+    "total": 18,
+    "failedChecks": [],
+    "mapLayerCount": 13,
+    "mapFeatureCount": 2904,
+    "adm1FeatureCount": 63,
+    "pointFeatureCount": 1917,
+    "transmissionFeatureCount": 606,
+    "mapOrphanFeatureCount": 0,
+    "mapUnknownSymbolCount": 0,
+    "mapUnclickableFeatureCount": 0,
+    "mapVisibleFeatureWithoutTooltip": 0,
+    "b021UniqueSourceRegionCount": 6,
+    "b021VariableRuntimeCoverage": "12/12",
+    "layerAcceptance": [
+      {
+        "elementId": "A-023",
+        "publicTitle": "발전소",
+        "featureCount": 1889,
+        "symbolIdentified": true,
+        "publicSpatialType": "시설 위치",
+        "primaryRoleVerified": true,
+        "contextRoleVerified": true,
+        "selectorLabelUnitPeriod": true,
+        "hoverTooltip": true,
+        "clickDetail": true,
+        "selectionHighlight": true,
+        "publicCaveat": true,
+        "detailLink": true,
+        "downloadStatus": true,
+        "result": "PASS"
+      },
+      {
+        "elementId": "A-024",
+        "publicTitle": "베트남 송전망",
+        "featureCount": 606,
+        "symbolIdentified": true,
+        "publicSpatialType": "선형 인프라",
+        "primaryRoleVerified": true,
+        "contextRoleVerified": true,
+        "selectorLabelUnitPeriod": true,
+        "hoverTooltip": true,
+        "clickDetail": true,
+        "selectionHighlight": true,
+        "publicCaveat": true,
+        "detailLink": true,
+        "downloadStatus": true,
+        "result": "PASS"
+      },
+      {
+        "elementId": "C-016",
+        "publicTitle": "재생에너지 지역계획",
+        "featureCount": 63,
+        "symbolIdentified": true,
+        "publicSpatialType": "지역별 색상지도",
+        "primaryRoleVerified": true,
+        "contextRoleVerified": true,
+        "selectorLabelUnitPeriod": true,
+        "hoverTooltip": true,
+        "clickDetail": true,
+        "selectionHighlight": true,
+        "publicCaveat": true,
+        "detailLink": true,
+        "downloadStatus": true,
+        "result": "PASS"
+      },
+      {
+        "elementId": "B-031",
+        "publicTitle": "산림 총면적",
+        "featureCount": 63,
+        "symbolIdentified": true,
+        "publicSpatialType": "지역별 색상지도",
+        "primaryRoleVerified": true,
+        "contextRoleVerified": true,
+        "selectorLabelUnitPeriod": true,
+        "hoverTooltip": true,
+        "clickDetail": true,
+        "selectionHighlight": true,
+        "publicCaveat": true,
+        "detailLink": true,
+        "downloadStatus": true,
+        "result": "PASS"
+      },
+      {
+        "elementId": "B-032",
+        "publicTitle": "수관 피복률",
+        "featureCount": 63,
+        "symbolIdentified": true,
+        "publicSpatialType": "지역별 색상지도",
+        "primaryRoleVerified": true,
+        "contextRoleVerified": true,
+        "selectorLabelUnitPeriod": true,
+        "hoverTooltip": true,
+        "clickDetail": true,
+        "selectionHighlight": true,
+        "publicCaveat": true,
+        "detailLink": true,
+        "downloadStatus": true,
+        "result": "PASS"
+      },
+      {
+        "elementId": "B-033",
+        "publicTitle": "연간 산림손실",
+        "featureCount": 63,
+        "symbolIdentified": true,
+        "publicSpatialType": "지역별 색상지도",
+        "primaryRoleVerified": true,
+        "contextRoleVerified": true,
+        "selectorLabelUnitPeriod": true,
+        "hoverTooltip": true,
+        "clickDetail": true,
+        "selectionHighlight": true,
+        "publicCaveat": true,
+        "detailLink": true,
+        "downloadStatus": true,
+        "result": "PASS"
+      },
+      {
+        "elementId": "B-034",
+        "publicTitle": "산림 탄소",
+        "featureCount": 63,
+        "symbolIdentified": true,
+        "publicSpatialType": "지역별 색상지도",
+        "primaryRoleVerified": true,
+        "contextRoleVerified": true,
+        "selectorLabelUnitPeriod": true,
+        "hoverTooltip": true,
+        "clickDetail": true,
+        "selectionHighlight": true,
+        "publicCaveat": true,
+        "detailLink": true,
+        "downloadStatus": true,
+        "result": "PASS"
+      },
+      {
+        "elementId": "B-021",
+        "publicTitle": "지역 취약성",
+        "featureCount": 63,
+        "symbolIdentified": true,
+        "publicSpatialType": "지역별 색상지도",
+        "primaryRoleVerified": true,
+        "contextRoleVerified": true,
+        "selectorLabelUnitPeriod": true,
+        "hoverTooltip": true,
+        "clickDetail": true,
+        "selectionHighlight": true,
+        "publicCaveat": true,
+        "detailLink": true,
+        "downloadStatus": true,
+        "result": "PASS"
+      },
+      {
+        "elementId": "B-048",
+        "publicTitle": "주요 광산",
+        "featureCount": 2,
+        "symbolIdentified": true,
+        "publicSpatialType": "시설 위치",
+        "primaryRoleVerified": true,
+        "contextRoleVerified": true,
+        "selectorLabelUnitPeriod": true,
+        "hoverTooltip": true,
+        "clickDetail": true,
+        "selectionHighlight": true,
+        "publicCaveat": true,
+        "detailLink": true,
+        "downloadStatus": true,
+        "result": "PASS"
+      },
+      {
+        "elementId": "C-025",
+        "publicTitle": "탄소크레딧 사업",
+        "featureCount": 20,
+        "symbolIdentified": true,
+        "publicSpatialType": "사업 위치",
+        "primaryRoleVerified": true,
+        "contextRoleVerified": true,
+        "selectorLabelUnitPeriod": true,
+        "hoverTooltip": true,
+        "clickDetail": true,
+        "selectionHighlight": true,
+        "publicCaveat": true,
+        "detailLink": true,
+        "downloadStatus": true,
+        "result": "PASS"
+      },
+      {
+        "elementId": "D-008",
+        "publicTitle": "지역 기후예산",
+        "featureCount": 3,
+        "symbolIdentified": true,
+        "publicSpatialType": "지역별 색상지도",
+        "primaryRoleVerified": true,
+        "contextRoleVerified": true,
+        "selectorLabelUnitPeriod": true,
+        "hoverTooltip": true,
+        "clickDetail": true,
+        "selectionHighlight": true,
+        "publicCaveat": true,
+        "detailLink": true,
+        "downloadStatus": true,
+        "result": "PASS"
+      },
+      {
+        "elementId": "D-018",
+        "publicTitle": "적응기금 사업",
+        "featureCount": 3,
+        "symbolIdentified": true,
+        "publicSpatialType": "사업 위치",
+        "primaryRoleVerified": true,
+        "contextRoleVerified": true,
+        "selectorLabelUnitPeriod": true,
+        "hoverTooltip": true,
+        "clickDetail": true,
+        "selectionHighlight": true,
+        "publicCaveat": true,
+        "detailLink": true,
+        "downloadStatus": true,
+        "result": "PASS"
+      },
+      {
+        "elementId": "D-023",
+        "publicTitle": "국제협력·기후재원 사업",
+        "featureCount": 3,
+        "symbolIdentified": true,
+        "publicSpatialType": "사업 위치",
+        "primaryRoleVerified": true,
+        "contextRoleVerified": true,
+        "selectorLabelUnitPeriod": true,
+        "hoverTooltip": true,
+        "clickDetail": true,
+        "selectionHighlight": true,
+        "publicCaveat": true,
+        "detailLink": true,
+        "downloadStatus": true,
+        "result": "PASS"
+      }
+    ],
+    "pointJoinRows": [
+      {
+        "elementId": "A-023",
+        "visibleFeatureCount": 1889,
+        "eligiblePublicRecordCount": 1889,
+        "duplicateRecordIdCount": 0,
+        "publicDetailFailureCount": 0,
+        "result": "PASS"
+      },
+      {
+        "elementId": "B-048",
+        "visibleFeatureCount": 2,
+        "eligiblePublicRecordCount": 2,
+        "duplicateRecordIdCount": 0,
+        "publicDetailFailureCount": 0,
+        "result": "PASS"
+      },
+      {
+        "elementId": "C-025",
+        "visibleFeatureCount": 20,
+        "eligiblePublicRecordCount": 20,
+        "duplicateRecordIdCount": 0,
+        "publicDetailFailureCount": 0,
+        "result": "PASS"
+      },
+      {
+        "elementId": "D-018",
+        "visibleFeatureCount": 3,
+        "eligiblePublicRecordCount": 3,
+        "duplicateRecordIdCount": 0,
+        "publicDetailFailureCount": 0,
+        "result": "PASS"
+      },
+      {
+        "elementId": "D-023",
+        "visibleFeatureCount": 3,
+        "eligiblePublicRecordCount": 3,
+        "duplicateRecordIdCount": 0,
+        "publicDetailFailureCount": 0,
+        "result": "PASS"
+      }
+    ],
+    "spatialJoinRows": [
+      {
+        "elementId": "B-021",
+        "spatialValueCount": 21672,
+        "observationRecordCount": 2970,
+        "selectorPairCount": 344,
+        "maximumFeatureCoverage": 63,
+        "mapFeatureCount": 63,
+        "invalidRowCount": 0,
+        "result": "PASS"
+      },
+      {
+        "elementId": "B-031",
+        "spatialValueCount": 189,
+        "observationRecordCount": 208,
+        "selectorPairCount": 3,
+        "maximumFeatureCoverage": 63,
+        "mapFeatureCount": 63,
+        "invalidRowCount": 0,
+        "result": "PASS"
+      },
+      {
+        "elementId": "B-032",
+        "spatialValueCount": 126,
+        "observationRecordCount": 136,
+        "selectorPairCount": 2,
+        "maximumFeatureCoverage": 63,
+        "mapFeatureCount": 63,
+        "invalidRowCount": 0,
+        "result": "PASS"
+      },
+      {
+        "elementId": "B-033",
+        "spatialValueCount": 1575,
+        "observationRecordCount": 2142,
+        "selectorPairCount": 25,
+        "maximumFeatureCoverage": 63,
+        "mapFeatureCount": 63,
+        "invalidRowCount": 0,
+        "result": "PASS"
+      },
+      {
+        "elementId": "B-034",
+        "spatialValueCount": 441,
+        "observationRecordCount": 498,
+        "selectorPairCount": 7,
+        "maximumFeatureCoverage": 63,
+        "mapFeatureCount": 63,
+        "invalidRowCount": 0,
+        "result": "PASS"
+      },
+      {
+        "elementId": "C-016",
+        "spatialValueCount": 639,
+        "observationRecordCount": 817,
+        "selectorPairCount": 15,
+        "maximumFeatureCoverage": 63,
+        "mapFeatureCount": 63,
+        "invalidRowCount": 0,
+        "result": "PASS"
+      },
+      {
+        "elementId": "D-008",
+        "spatialValueCount": 3,
+        "observationRecordCount": 15,
+        "selectorPairCount": 1,
+        "maximumFeatureCoverage": 3,
+        "mapFeatureCount": 3,
+        "invalidRowCount": 0,
+        "result": "PASS"
+      }
+    ]
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "map-feature-join:v129",
+      "name": "V129_A_MAP_INTERACTION_GATE",
+      "status": "PASS",
+      "actual": {
+        "exitCode": 0,
+        "reportStatus": "PASS"
+      },
+      "expected": {
+        "exitCode": 0,
+        "reportStatus": "PASS"
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-feature-join:v129",
+      "name": "V129_A_INTERPRETATION_GATE",
+      "status": "PASS",
+      "actual": {
+        "exitCode": 0,
+        "reportStatus": "PASS"
+      },
+      "expected": {
+        "exitCode": 0,
+        "reportStatus": "PASS"
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-feature-join:v129",
+      "name": "MAP_LAYER_COUNT",
+      "status": "PASS",
+      "actual": 13,
+      "expected": 13
+    },
+    {
+      "type": "check",
+      "audit": "map-feature-join:v129",
+      "name": "MAP_FEATURE_COUNT",
+      "status": "PASS",
+      "actual": 2904,
+      "expected": 2904
+    },
+    {
+      "type": "check",
+      "audit": "map-feature-join:v129",
+      "name": "ADM1_FEATURE_COUNT",
+      "status": "PASS",
+      "actual": 63,
+      "expected": 63
+    },
+    {
+      "type": "check",
+      "audit": "map-feature-join:v129",
+      "name": "PACK_INTEGRITY",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-feature-join:v129",
+      "name": "LAYER_PUBLIC_ACCEPTANCE_CONTRACT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-feature-join:v129",
+      "name": "SELECTOR_LABEL_UNIT_PERIOD_CONTRACT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-feature-join:v129",
+      "name": "POINT_VISIBLE_FEATURE_PUBLIC_RECORD_JOIN",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-feature-join:v129",
+      "name": "SPATIAL_VALUE_OBSERVATION_ADM1_JOIN",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-feature-join:v129",
+      "name": "TRANSMISSION_ACTUAL_FEATURE_JOIN",
+      "status": "PASS",
+      "actual": {
+        "featureCount": 606,
+        "invalidFeatureCount": 0,
+        "duplicateFeatureIdCount": 0
+      },
+      "expected": {
+        "featureCount": 606,
+        "invalidFeatureCount": 0,
+        "duplicateFeatureIdCount": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-feature-join:v129",
+      "name": "B021_REGION_VARIABLE_SEMANTIC_JOIN",
+      "status": "PASS",
+      "actual": {
+        "variableCount": 12,
+        "variableFailureCount": 0,
+        "invalidSpatialRowCount": 0,
+        "latestGviProvinceRows": 63,
+        "uniqueSourceRegions": 6,
+        "uniqueSourceRecords": 6,
+        "inconsistentRegionValues": [],
+        "runtimeVariablesChecked": 12,
+        "runtimeMismatchCount": 0,
+        "direction": "higher-worse",
+        "scale": {
+          "minimum": 0,
+          "maximum": 100,
+          "minimumLabel": "취약성이 매우 낮음",
+          "maximumLabel": "취약성이 매우 높음"
+        }
+      },
+      "expected": {
+        "variableCount": 12,
+        "variableFailureCount": 0,
+        "invalidSpatialRowCount": 0,
+        "latestGviProvinceRows": 63,
+        "uniqueSourceRegions": 6,
+        "uniqueSourceRecords": 6,
+        "inconsistentRegionValues": [],
+        "runtimeVariablesChecked": 12,
+        "runtimeMismatchCount": 0,
+        "direction": "higher-worse",
+        "scale": {
+          "minimum": 0,
+          "maximum": 100
+        }
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-feature-join:v129",
+      "name": "ALL_LAYER_BROWSER_TOOLTIP_CLICK",
+      "status": "PASS",
+      "actual": [
+        {
+          "elementId": "A-023",
+          "tooltip": true,
+          "detail": true,
+          "surface": "map-canvas"
+        },
+        {
+          "elementId": "A-024",
+          "tooltip": true,
+          "detail": true,
+          "surface": "map-canvas"
+        },
+        {
+          "elementId": "C-016",
+          "tooltip": true,
+          "detail": true,
+          "surface": "map-canvas"
+        },
+        {
+          "elementId": "B-031",
+          "tooltip": true,
+          "detail": true,
+          "surface": "map-canvas"
+        },
+        {
+          "elementId": "B-032",
+          "tooltip": true,
+          "detail": true,
+          "surface": "map-canvas"
+        },
+        {
+          "elementId": "B-033",
+          "tooltip": true,
+          "detail": true,
+          "surface": "map-canvas"
+        },
+        {
+          "elementId": "B-034",
+          "tooltip": true,
+          "detail": true,
+          "surface": "map-canvas"
+        },
+        {
+          "elementId": "B-021",
+          "tooltip": true,
+          "detail": true,
+          "surface": "map-canvas"
+        },
+        {
+          "elementId": "B-048",
+          "tooltip": true,
+          "detail": true,
+          "surface": "map-canvas"
+        },
+        {
+          "elementId": "C-025",
+          "tooltip": true,
+          "detail": true,
+          "surface": "map-canvas"
+        },
+        {
+          "elementId": "D-008",
+          "tooltip": true,
+          "detail": true,
+          "surface": "map-canvas"
+        },
+        {
+          "elementId": "D-018",
+          "tooltip": true,
+          "detail": true,
+          "surface": "map-canvas"
+        },
+        {
+          "elementId": "D-023",
+          "tooltip": true,
+          "detail": true,
+          "surface": "map-canvas"
+        }
+      ],
+      "expected": "13/13 tooltip and click detail"
+    },
+    {
+      "type": "check",
+      "audit": "map-feature-join:v129",
+      "name": "PRIMARY_CONTEXT_ROLE_AND_SELECTION",
+      "status": "PASS",
+      "actual": {
+        "activation": "PASS",
+        "pointContext": "PASS",
+        "polygonContext": "PASS"
+      },
+      "expected": {
+        "activation": "PASS",
+        "pointContext": "PASS",
+        "polygonContext": "PASS"
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-feature-join:v129",
+      "name": "SELECTION_HIGHLIGHT_ALL_RENDERERS",
+      "status": "PASS",
+      "actual": {
+        "selectionLayerPerRenderer": true,
+        "selectedFeatureFilter": true,
+        "selectedFeatureKey": true,
+        "fallbackSelectedClassCount": true,
+        "fallbackPointRenderer": true,
+        "fallbackLineRenderer": true,
+        "fallbackPolygonRenderer": true
+      },
+      "expected": {
+        "selectionLayerPerRenderer": true,
+        "selectedFeatureFilter": true,
+        "selectedFeatureKey": true,
+        "fallbackSelectedClassCount": true,
+        "fallbackPointRenderer": true,
+        "fallbackLineRenderer": true,
+        "fallbackPolygonRenderer": true
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-feature-join:v129",
+      "name": "MAP_VISIBLE_FEATURE_WITHOUT_TOOLTIP",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-feature-join:v129",
+      "name": "MAP_UNCLICKABLE_VISIBLE_FEATURE",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-feature-join:v129",
+      "name": "MAP_UNKNOWN_SYMBOL",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "mapLayerCount": 13,
+  "mapFeatureCount": 2904,
+  "adm1FeatureCount": 63,
+  "pointFeatureCount": 1917,
+  "transmissionFeatureCount": 606,
+  "mapOrphanFeatureCount": 0,
+  "mapUnknownSymbolCount": 0,
+  "mapUnclickableFeatureCount": 0,
+  "mapVisibleFeatureWithoutTooltip": 0,
+  "b021UniqueSourceRegionCount": 6,
+  "b021VariableRuntimeCoverage": "12/12",
+  "layerAcceptance": [
+    {
+      "elementId": "A-023",
+      "publicTitle": "발전소",
+      "featureCount": 1889,
+      "symbolIdentified": true,
+      "publicSpatialType": "시설 위치",
+      "primaryRoleVerified": true,
+      "contextRoleVerified": true,
+      "selectorLabelUnitPeriod": true,
+      "hoverTooltip": true,
+      "clickDetail": true,
+      "selectionHighlight": true,
+      "publicCaveat": true,
+      "detailLink": true,
+      "downloadStatus": true,
+      "result": "PASS"
+    },
+    {
+      "elementId": "A-024",
+      "publicTitle": "베트남 송전망",
+      "featureCount": 606,
+      "symbolIdentified": true,
+      "publicSpatialType": "선형 인프라",
+      "primaryRoleVerified": true,
+      "contextRoleVerified": true,
+      "selectorLabelUnitPeriod": true,
+      "hoverTooltip": true,
+      "clickDetail": true,
+      "selectionHighlight": true,
+      "publicCaveat": true,
+      "detailLink": true,
+      "downloadStatus": true,
+      "result": "PASS"
+    },
+    {
+      "elementId": "C-016",
+      "publicTitle": "재생에너지 지역계획",
+      "featureCount": 63,
+      "symbolIdentified": true,
+      "publicSpatialType": "지역별 색상지도",
+      "primaryRoleVerified": true,
+      "contextRoleVerified": true,
+      "selectorLabelUnitPeriod": true,
+      "hoverTooltip": true,
+      "clickDetail": true,
+      "selectionHighlight": true,
+      "publicCaveat": true,
+      "detailLink": true,
+      "downloadStatus": true,
+      "result": "PASS"
+    },
+    {
+      "elementId": "B-031",
+      "publicTitle": "산림 총면적",
+      "featureCount": 63,
+      "symbolIdentified": true,
+      "publicSpatialType": "지역별 색상지도",
+      "primaryRoleVerified": true,
+      "contextRoleVerified": true,
+      "selectorLabelUnitPeriod": true,
+      "hoverTooltip": true,
+      "clickDetail": true,
+      "selectionHighlight": true,
+      "publicCaveat": true,
+      "detailLink": true,
+      "downloadStatus": true,
+      "result": "PASS"
+    },
+    {
+      "elementId": "B-032",
+      "publicTitle": "수관 피복률",
+      "featureCount": 63,
+      "symbolIdentified": true,
+      "publicSpatialType": "지역별 색상지도",
+      "primaryRoleVerified": true,
+      "contextRoleVerified": true,
+      "selectorLabelUnitPeriod": true,
+      "hoverTooltip": true,
+      "clickDetail": true,
+      "selectionHighlight": true,
+      "publicCaveat": true,
+      "detailLink": true,
+      "downloadStatus": true,
+      "result": "PASS"
+    },
+    {
+      "elementId": "B-033",
+      "publicTitle": "연간 산림손실",
+      "featureCount": 63,
+      "symbolIdentified": true,
+      "publicSpatialType": "지역별 색상지도",
+      "primaryRoleVerified": true,
+      "contextRoleVerified": true,
+      "selectorLabelUnitPeriod": true,
+      "hoverTooltip": true,
+      "clickDetail": true,
+      "selectionHighlight": true,
+      "publicCaveat": true,
+      "detailLink": true,
+      "downloadStatus": true,
+      "result": "PASS"
+    },
+    {
+      "elementId": "B-034",
+      "publicTitle": "산림 탄소",
+      "featureCount": 63,
+      "symbolIdentified": true,
+      "publicSpatialType": "지역별 색상지도",
+      "primaryRoleVerified": true,
+      "contextRoleVerified": true,
+      "selectorLabelUnitPeriod": true,
+      "hoverTooltip": true,
+      "clickDetail": true,
+      "selectionHighlight": true,
+      "publicCaveat": true,
+      "detailLink": true,
+      "downloadStatus": true,
+      "result": "PASS"
+    },
+    {
+      "elementId": "B-021",
+      "publicTitle": "지역 취약성",
+      "featureCount": 63,
+      "symbolIdentified": true,
+      "publicSpatialType": "지역별 색상지도",
+      "primaryRoleVerified": true,
+      "contextRoleVerified": true,
+      "selectorLabelUnitPeriod": true,
+      "hoverTooltip": true,
+      "clickDetail": true,
+      "selectionHighlight": true,
+      "publicCaveat": true,
+      "detailLink": true,
+      "downloadStatus": true,
+      "result": "PASS"
+    },
+    {
+      "elementId": "B-048",
+      "publicTitle": "주요 광산",
+      "featureCount": 2,
+      "symbolIdentified": true,
+      "publicSpatialType": "시설 위치",
+      "primaryRoleVerified": true,
+      "contextRoleVerified": true,
+      "selectorLabelUnitPeriod": true,
+      "hoverTooltip": true,
+      "clickDetail": true,
+      "selectionHighlight": true,
+      "publicCaveat": true,
+      "detailLink": true,
+      "downloadStatus": true,
+      "result": "PASS"
+    },
+    {
+      "elementId": "C-025",
+      "publicTitle": "탄소크레딧 사업",
+      "featureCount": 20,
+      "symbolIdentified": true,
+      "publicSpatialType": "사업 위치",
+      "primaryRoleVerified": true,
+      "contextRoleVerified": true,
+      "selectorLabelUnitPeriod": true,
+      "hoverTooltip": true,
+      "clickDetail": true,
+      "selectionHighlight": true,
+      "publicCaveat": true,
+      "detailLink": true,
+      "downloadStatus": true,
+      "result": "PASS"
+    },
+    {
+      "elementId": "D-008",
+      "publicTitle": "지역 기후예산",
+      "featureCount": 3,
+      "symbolIdentified": true,
+      "publicSpatialType": "지역별 색상지도",
+      "primaryRoleVerified": true,
+      "contextRoleVerified": true,
+      "selectorLabelUnitPeriod": true,
+      "hoverTooltip": true,
+      "clickDetail": true,
+      "selectionHighlight": true,
+      "publicCaveat": true,
+      "detailLink": true,
+      "downloadStatus": true,
+      "result": "PASS"
+    },
+    {
+      "elementId": "D-018",
+      "publicTitle": "적응기금 사업",
+      "featureCount": 3,
+      "symbolIdentified": true,
+      "publicSpatialType": "사업 위치",
+      "primaryRoleVerified": true,
+      "contextRoleVerified": true,
+      "selectorLabelUnitPeriod": true,
+      "hoverTooltip": true,
+      "clickDetail": true,
+      "selectionHighlight": true,
+      "publicCaveat": true,
+      "detailLink": true,
+      "downloadStatus": true,
+      "result": "PASS"
+    },
+    {
+      "elementId": "D-023",
+      "publicTitle": "국제협력·기후재원 사업",
+      "featureCount": 3,
+      "symbolIdentified": true,
+      "publicSpatialType": "사업 위치",
+      "primaryRoleVerified": true,
+      "contextRoleVerified": true,
+      "selectorLabelUnitPeriod": true,
+      "hoverTooltip": true,
+      "clickDetail": true,
+      "selectionHighlight": true,
+      "publicCaveat": true,
+      "detailLink": true,
+      "downloadStatus": true,
+      "result": "PASS"
+    }
+  ],
+  "pointJoinRows": [
+    {
+      "elementId": "A-023",
+      "visibleFeatureCount": 1889,
+      "eligiblePublicRecordCount": 1889,
+      "duplicateRecordIdCount": 0,
+      "publicDetailFailureCount": 0,
+      "result": "PASS"
+    },
+    {
+      "elementId": "B-048",
+      "visibleFeatureCount": 2,
+      "eligiblePublicRecordCount": 2,
+      "duplicateRecordIdCount": 0,
+      "publicDetailFailureCount": 0,
+      "result": "PASS"
+    },
+    {
+      "elementId": "C-025",
+      "visibleFeatureCount": 20,
+      "eligiblePublicRecordCount": 20,
+      "duplicateRecordIdCount": 0,
+      "publicDetailFailureCount": 0,
+      "result": "PASS"
+    },
+    {
+      "elementId": "D-018",
+      "visibleFeatureCount": 3,
+      "eligiblePublicRecordCount": 3,
+      "duplicateRecordIdCount": 0,
+      "publicDetailFailureCount": 0,
+      "result": "PASS"
+    },
+    {
+      "elementId": "D-023",
+      "visibleFeatureCount": 3,
+      "eligiblePublicRecordCount": 3,
+      "duplicateRecordIdCount": 0,
+      "publicDetailFailureCount": 0,
+      "result": "PASS"
+    }
+  ],
+  "spatialJoinRows": [
+    {
+      "elementId": "B-021",
+      "spatialValueCount": 21672,
+      "observationRecordCount": 2970,
+      "selectorPairCount": 344,
+      "maximumFeatureCoverage": 63,
+      "mapFeatureCount": 63,
+      "invalidRowCount": 0,
+      "result": "PASS"
+    },
+    {
+      "elementId": "B-031",
+      "spatialValueCount": 189,
+      "observationRecordCount": 208,
+      "selectorPairCount": 3,
+      "maximumFeatureCoverage": 63,
+      "mapFeatureCount": 63,
+      "invalidRowCount": 0,
+      "result": "PASS"
+    },
+    {
+      "elementId": "B-032",
+      "spatialValueCount": 126,
+      "observationRecordCount": 136,
+      "selectorPairCount": 2,
+      "maximumFeatureCoverage": 63,
+      "mapFeatureCount": 63,
+      "invalidRowCount": 0,
+      "result": "PASS"
+    },
+    {
+      "elementId": "B-033",
+      "spatialValueCount": 1575,
+      "observationRecordCount": 2142,
+      "selectorPairCount": 25,
+      "maximumFeatureCoverage": 63,
+      "mapFeatureCount": 63,
+      "invalidRowCount": 0,
+      "result": "PASS"
+    },
+    {
+      "elementId": "B-034",
+      "spatialValueCount": 441,
+      "observationRecordCount": 498,
+      "selectorPairCount": 7,
+      "maximumFeatureCoverage": 63,
+      "mapFeatureCount": 63,
+      "invalidRowCount": 0,
+      "result": "PASS"
+    },
+    {
+      "elementId": "C-016",
+      "spatialValueCount": 639,
+      "observationRecordCount": 817,
+      "selectorPairCount": 15,
+      "maximumFeatureCoverage": 63,
+      "mapFeatureCount": 63,
+      "invalidRowCount": 0,
+      "result": "PASS"
+    },
+    {
+      "elementId": "D-008",
+      "spatialValueCount": 3,
+      "observationRecordCount": 15,
+      "selectorPairCount": 1,
+      "maximumFeatureCoverage": 3,
+      "mapFeatureCount": 3,
+      "invalidRowCount": 0,
+      "result": "PASS"
+    }
+  ]
+}
