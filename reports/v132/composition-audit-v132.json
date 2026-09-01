@@ -1,0 +1,192 @@
+{
+  "schemaVersion": "v132-public-visualization-audit-1",
+  "generatedAt": "2026-09-01T00:00:00.000Z",
+  "audit": "composition:v132",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "composition:v132",
+    "status": "PASS",
+    "passed": 10,
+    "failed": 0,
+    "total": 10,
+    "failedChecks": [],
+    "reviewedElementIds": [
+      "A-005",
+      "A-016",
+      "A-018",
+      "B-024",
+      "D-005",
+      "A-020"
+    ],
+    "trendEligibleElementIds": [
+      "A-005",
+      "A-016",
+      "A-018",
+      "B-024",
+      "A-020"
+    ],
+    "trendDataWithoutTrendVisualCount": 0,
+    "compositionWithoutTimeAnalysisCount": 0,
+    "totalIncludedAsComponentCount": 0,
+    "mixedUnitAxisCount": 0,
+    "a016Result": "PASS"
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "composition:v132",
+      "name": "PACK_PAYLOADS",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "composition:v132",
+      "name": "COMPOSITION_ELEMENT_REVIEW",
+      "status": "PASS",
+      "actual": [
+        "A-005",
+        "A-016",
+        "A-018",
+        "B-024",
+        "D-005"
+      ],
+      "expected": ">= 4 elements"
+    },
+    {
+      "type": "check",
+      "audit": "composition:v132",
+      "name": "COMPOSITION_WITH_TIME_ANALYSIS",
+      "status": "PASS",
+      "actual": {
+        "runtimeError": null,
+        "eligible": [
+          "A-005",
+          "A-016",
+          "A-018",
+          "B-024",
+          "A-020"
+        ],
+        "failures": []
+      },
+      "expected": {
+        "runtimeError": null,
+        "failures": []
+      }
+    },
+    {
+      "type": "check",
+      "audit": "composition:v132",
+      "name": "A016_OBSERVATION_RECONCILIATION",
+      "status": "PASS",
+      "actual": {
+        "observations": 427,
+        "years": 61,
+        "components": 6,
+        "totalRows": 61
+      },
+      "expected": {
+        "observations": 427,
+        "years": 61,
+        "components": 6,
+        "totalRows": 61
+      }
+    },
+    {
+      "type": "check",
+      "audit": "composition:v132",
+      "name": "A016_TOTAL_SEPARATED_FROM_COMPONENTS",
+      "status": "PASS",
+      "actual": {
+        "totalLine": true,
+        "totalLegend": true,
+        "totalIncludedAsComponentFalse": true
+      },
+      "expected": {
+        "totalLine": true,
+        "totalLegend": true,
+        "totalIncludedAsComponentFalse": true
+      }
+    },
+    {
+      "type": "check",
+      "audit": "composition:v132",
+      "name": "A016_PRIMARY_ANALYSIS_STRUCTURE",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "composition:v132",
+      "name": "EMISSIONS_BENCHMARK_STRUCTURE",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "composition:v132",
+      "name": "EMISSIONS_COMPLETE_YEAR_DERIVATION",
+      "status": "PASS",
+      "actual": {
+        "a010": {
+          "seriesCount": 4,
+          "completeYearCount": 35
+        },
+        "a011": {
+          "seriesCount": 9,
+          "completeYearCount": 55
+        }
+      },
+      "expected": {
+        "a010": {
+          "seriesCount": 4,
+          "completeYearCount": 35
+        },
+        "a011": {
+          "seriesCount": 9,
+          "completeYearCount": 55
+        }
+      }
+    },
+    {
+      "type": "check",
+      "audit": "composition:v132",
+      "name": "MIXED_UNIT_AXIS",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "composition:v132",
+      "name": "ZERO_IMPUTATION",
+      "status": "PASS",
+      "actual": false,
+      "expected": false
+    }
+  ],
+  "reviewedElementIds": [
+    "A-005",
+    "A-016",
+    "A-018",
+    "B-024",
+    "D-005",
+    "A-020"
+  ],
+  "trendEligibleElementIds": [
+    "A-005",
+    "A-016",
+    "A-018",
+    "B-024",
+    "A-020"
+  ],
+  "trendDataWithoutTrendVisualCount": 0,
+  "compositionWithoutTimeAnalysisCount": 0,
+  "totalIncludedAsComponentCount": 0,
+  "mixedUnitAxisCount": 0,
+  "a016Result": "PASS"
+}

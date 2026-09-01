@@ -1,0 +1,227 @@
+{
+  "schemaVersion": "v132-public-visualization-audit-1",
+  "generatedAt": "2026-09-01T00:00:00.000Z",
+  "audit": "benchmark-fit:v132",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "benchmark-fit:v132",
+    "status": "PASS",
+    "passed": 9,
+    "failed": 0,
+    "total": 9,
+    "failedChecks": [],
+    "frameworkElementCount": 152,
+    "benchmarkTypeCount": 7,
+    "finalVisualizationContractCount": 152,
+    "runtimeVerifiedCount": 152,
+    "screenshotCount": 10,
+    "remainingBlockers": 0
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "benchmark-fit:v132",
+      "name": "FRAMEWORK_ELEMENTS",
+      "status": "PASS",
+      "actual": 152,
+      "expected": 152
+    },
+    {
+      "type": "check",
+      "audit": "benchmark-fit:v132",
+      "name": "BENCHMARK_TYPE_COUNT",
+      "status": "PASS",
+      "actual": 7,
+      "expected": 7
+    },
+    {
+      "type": "check",
+      "audit": "benchmark-fit:v132",
+      "name": "BENCHMARK_OFFICIAL_REFERENCE",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "benchmark-fit:v132",
+      "name": "BENCHMARK_MATRIX_CSV",
+      "status": "PASS",
+      "actual": 7,
+      "expected": 7
+    },
+    {
+      "type": "check",
+      "audit": "benchmark-fit:v132",
+      "name": "FINAL_VISUALIZATION_CONTRACT_COVERAGE",
+      "status": "PASS",
+      "actual": {
+        "contracts": 152,
+        "missingCatalogIds": [],
+        "unknownContractIds": [],
+        "duplicateContractIds": []
+      },
+      "expected": {
+        "contracts": 152,
+        "missingCatalogIds": [],
+        "unknownContractIds": [],
+        "duplicateContractIds": []
+      }
+    },
+    {
+      "type": "check",
+      "audit": "benchmark-fit:v132",
+      "name": "FINAL_VISUALIZATION_CONTRACT_FIELDS",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "benchmark-fit:v132",
+      "name": "RUNTIME_REVIEW_COVERAGE",
+      "status": "PASS",
+      "actual": {
+        "rows": 152,
+        "unique": 152
+      },
+      "expected": {
+        "rows": 152,
+        "unique": 152
+      }
+    },
+    {
+      "type": "check",
+      "audit": "benchmark-fit:v132",
+      "name": "RUNTIME_VISUALIZATION_VERIFIED",
+      "status": "PASS",
+      "actual": 152,
+      "expected": 152,
+      "details": []
+    },
+    {
+      "type": "check",
+      "audit": "benchmark-fit:v132",
+      "name": "SCREENSHOT_ACCEPTANCE",
+      "status": "PASS",
+      "actual": {
+        "schemaVersion": "v132-screenshot-manifest-1",
+        "generatedAt": "2026-09-01T08:42:01.931Z",
+        "status": "PASS",
+        "requiredCount": 10,
+        "screenshotCount": 10,
+        "runtimeFailure": null,
+        "runtimeErrors": [],
+        "invalid": [],
+        "duplicateHashes": [],
+        "powerPlantTooltips": {
+          "named": {
+            "fileName": "a023-map-tooltip-named.png",
+            "title": "A Vuong",
+            "text": "A Vuong발전소발전원 수력 · 용량 210 MW자료연도 2021"
+          },
+          "fallback": {
+            "fileName": "a023-map-tooltip-fallback.png",
+            "title": "태양광 발전시설",
+            "text": "태양광 발전시설발전소발전원 태양광자료연도 2026"
+          }
+        },
+        "screenshots": [
+          {
+            "name": "a016-energy-absolute-trend.png",
+            "width": 1130,
+            "height": 621,
+            "byteSize": 132360,
+            "sha256": "d2bf449415c72ecb62a3aaa29690f0e12e2e3d6c09e1adce643abf111ebac889",
+            "error": null
+          },
+          {
+            "name": "a016-energy-share-trend.png",
+            "width": 1130,
+            "height": 552,
+            "byteSize": 296588,
+            "sha256": "4a75bd4badec6843e9de1f463ff2c0c3e95004b49e705b68f3a1519823098dc8",
+            "error": null
+          },
+          {
+            "name": "a016-energy-selected-year.png",
+            "width": 1130,
+            "height": 394,
+            "byteSize": 28041,
+            "sha256": "2173ff7c88409be89dde274b9dd8f73ffd9ad4ee00e54dcb28478b4ba295c2a7",
+            "error": null
+          },
+          {
+            "name": "e008-research-trend.png",
+            "width": 1130,
+            "height": 529,
+            "byteSize": 31192,
+            "sha256": "64a47adf437dc9140b56d9ed425d9a1850190c98624045c2ccdf50c2d9aea8d6",
+            "error": null
+          },
+          {
+            "name": "e008-research-breakdown.png",
+            "width": 1130,
+            "height": 814,
+            "byteSize": 87838,
+            "sha256": "1b9323791068294cf32389203e95e426f44c6e330ad292410567b090fd5e7963",
+            "error": null
+          },
+          {
+            "name": "e008-research-list.png",
+            "width": 1130,
+            "height": 874,
+            "byteSize": 128726,
+            "sha256": "ce4a049a747dce286e9a4b504d3e9192f58692a35e13347d6460fd6372fc052c",
+            "error": null
+          },
+          {
+            "name": "a023-map-tooltip-named.png",
+            "width": 1425,
+            "height": 1034,
+            "byteSize": 191957,
+            "sha256": "04dcfa315b36c0cd429346e9ea91d23c5304a8361fbf16f8fc917d6f5bfba8d6",
+            "error": null
+          },
+          {
+            "name": "a023-map-tooltip-fallback.png",
+            "width": 1425,
+            "height": 1034,
+            "byteSize": 230431,
+            "sha256": "d20dc89273d2406caea356f29cd5ded30131a1f2d2d813c0ca5d87667e84be69",
+            "error": null
+          },
+          {
+            "name": "b033-map-region-trend.png",
+            "width": 442,
+            "height": 569,
+            "byteSize": 36479,
+            "sha256": "9db20359cc52677cc86775b9269c1d50f29ab45b7728f76e0314f0d9f1f763db",
+            "error": null
+          },
+          {
+            "name": "portfolio-summary-before-list.png",
+            "width": 1108,
+            "height": 750,
+            "byteSize": 68306,
+            "sha256": "aad7645bd718c7eee9ac1407d41ff2dafd278a8b10a664c5cd45adcde13c139e",
+            "error": null
+          }
+        ]
+      },
+      "expected": {
+        "status": "PASS",
+        "requiredCount": 10,
+        "screenshotCount": 10,
+        "runtimeErrors": []
+      }
+    }
+  ],
+  "frameworkElementCount": 152,
+  "benchmarkTypeCount": 7,
+  "finalVisualizationContractCount": 152,
+  "runtimeVerifiedCount": 152,
+  "screenshotCount": 10,
+  "remainingBlockers": 0
+}
