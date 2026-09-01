@@ -8,6 +8,7 @@ import {
   publicTextV126,
 } from "../../../data/visualization/publicFieldPolicyV126";
 import { publicMeasureLabelV126 } from "../../../data/visualization/publicCopyRegistryV126";
+import { resolvePublicEntityTitleV131 } from "../../../data/visualization/publicEntityTitleV131";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { formatValueV121 } from "../../../utils/vietnamActualV121";
 
@@ -163,12 +164,15 @@ export default function PublicRawDataTablesV126({
                   row,
                   detailTemplate
                 );
+                const titleResolution = resolvePublicEntityTitleV131(row, {
+                  template: detailTemplate,
+                });
                 const sourceUrl = publicSourceUrlV126(
                   row.provenance.sourceUrl
                 );
                 return (
                   <tr key={row.recordId}>
-                    <td>{publicEntityNameV126(row, attributes)}</td>
+                    <td>{titleResolution.title}</td>
                     <td>{publicTextV126(row.entityType) || ""}</td>
                     {entityColumns.map((column) => (
                       <td key={column}>{publicAttributeValueV126(attributes[column])}</td>
@@ -197,27 +201,6 @@ export default function PublicRawDataTablesV126({
         </div>
       )}
     </details>
-  );
-}
-
-function publicEntityNameV126(
-  row: VietnamEntityV124,
-  attributes: ReturnType<typeof approvedEntityAttributesV126>
-): string {
-  const candidates = [
-    row.name,
-    attributes.projectName,
-    attributes.organizationName,
-    attributes.orgName,
-    attributes.companyName,
-    attributes.programName,
-    attributes.title,
-    attributes.name,
-  ];
-  return (
-    candidates
-      .map((value) => publicTextV126(value))
-      .find((value): value is string => Boolean(value)) || "명칭 미기재"
   );
 }
 

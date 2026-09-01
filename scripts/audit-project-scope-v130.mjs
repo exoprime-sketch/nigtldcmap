@@ -29,10 +29,12 @@ const d023Catalog = catalog.elements.find((element) => element.elementId === "D-
 const d023Contract = semanticContracts.contracts.find(
   (contract) => contract.elementId === "D-023"
 );
-const entityNameSource = readFileSync(
-  resolve(PROJECT_ROOT, "src/utils/vietnamActualV121.ts"),
-  "utf8"
-);
+const entityNameSource = [
+  "src/utils/vietnamActualV121.ts",
+  "src/data/visualization/publicEntityTitleV131.ts",
+]
+  .map((path) => readFileSync(resolve(PROJECT_ROOT, path), "utf8"))
+  .join("\n");
 const greater = d018.find((entity) =>
   String(entity.name || "").toLowerCase().includes("groundwater resources in the greater mekong subregion")
 );
@@ -146,8 +148,10 @@ const c025VisibleNameFailures = c025.filter(
 check(
   "C025_VISIBLE_PUBLIC_NAME",
   c025VisibleNameFailures.length === 0 &&
-    /standard[\s\S]{0,700}등록사업/u.test(entityNameSource) &&
-    /projectId/u.test(entityNameSource),
+    /publicSourceIdentifierV131/u.test(entityNameSource) &&
+    /standard[\s\S]{0,900}등록사업/u.test(entityNameSource) &&
+    /projectId/u.test(entityNameSource) &&
+    /publicEntityTitleV131/u.test(entityNameSource),
   c025VisibleNameFailures.length,
   0,
   c025VisibleNameFailures.slice(0, 10).map((entity) => entity.recordId)

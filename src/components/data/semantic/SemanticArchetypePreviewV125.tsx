@@ -13,9 +13,9 @@ import { dataFinderSelectorStatesEqualV125 } from "../../../types/dataFinderV125
 import { getPublicVisualizationSummaryV126 } from "../../../data/visualization/publicVisualizationRegistryV126";
 import type { DataFinderSelectorStateV125 } from "../../../types/dataFinderV125";
 import {
-  entityDisplayNameV121,
   formatValueV121,
 } from "../../../utils/vietnamActualV121";
+import { publicEntityTitleV131 } from "../../../data/visualization/publicEntityTitleV131";
 import {
   publicMissingReasonLabelV126,
   publicSourceUrlV126,
@@ -34,6 +34,8 @@ interface Props {
   observations: VietnamObservationV124[];
   entities: VietnamEntityV124[];
   countryNameKo: string;
+  detailTemplate?: string;
+  elementTitle?: string;
   selectorState: DataFinderSelectorStateV125;
   onSelectorStateChange: (state: DataFinderSelectorStateV125) => void;
   showRawTable?: boolean;
@@ -65,6 +67,8 @@ export default function SemanticArchetypePreviewV125({
   observations,
   entities,
   countryNameKo,
+  detailTemplate,
+  elementTitle,
   selectorState,
   onSelectorStateChange,
   showRawTable = true,
@@ -439,6 +443,8 @@ export default function SemanticArchetypePreviewV125({
           contextRows={dimensionFilteredRows}
           entities={entities}
           countryNameKo={countryNameKo}
+          detailTemplate={detailTemplate}
+          elementTitle={elementTitle}
           markEntityTableAsPublic={showRawTable && visualizationTableRows.length === 0}
           showRawTable={showRawTable}
         />
@@ -789,7 +795,7 @@ function EntityCollectionV125({
       <div className="sv125-evidence-grid">
         {shown.map((entity) => (
           <article key={entity.recordId}>
-            <strong>{entityDisplayNameV121(entity)}</strong>
+            <strong>{publicEntityTitleV131(entity)}</strong>
             <p>{entity.entityType || countryNameKo}</p>
             <small>{publicTextV126(entity.provenance.sourceOrg) || "세부 내용은 원자료 표에서 확인"}</small>
           </article>

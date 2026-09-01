@@ -1,0 +1,151 @@
+{
+  "schemaVersion": "v131-public-content-audit-1",
+  "generatedAt": "2026-09-01T07:00:40.507Z",
+  "audit": "entity-cards:v131",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "entity-cards:v131",
+    "status": "PASS",
+    "passed": 14,
+    "failed": 0,
+    "total": 14,
+    "failedChecks": [],
+    "entityElementRouteCount": 30,
+    "entityCardCount": 309,
+    "entityContextTitleCount": 0,
+    "entityCardLongTextCount": 0,
+    "entityCardDuplicatePrimaryTitleCount": 0,
+    "responsiveWidthCount": 6,
+    "runtimeFailure": null
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "entity-cards:v131",
+      "name": "CATALOG_JSON",
+      "status": "PASS",
+      "actual": null,
+      "expected": null
+    },
+    {
+      "type": "check",
+      "audit": "entity-cards:v131",
+      "name": "PACK_PAYLOADS",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "type": "check",
+      "audit": "entity-cards:v131",
+      "name": "CARD_COMPONENT_CONTRACT",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "type": "check",
+      "audit": "entity-cards:v131",
+      "name": "ENTITY_CARD_ROUTE_COVERAGE",
+      "status": "PASS",
+      "actual": 30,
+      "expected": 30,
+      "details": {
+        "runtimeFailure": null
+      }
+    },
+    {
+      "type": "check",
+      "audit": "entity-cards:v131",
+      "name": "ENTITY_CARD_WITHOUT_MEANINGFUL_PRIMARY_TITLE",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "type": "check",
+      "audit": "entity-cards:v131",
+      "name": "ENTITY_CARD_LONG_UNSTRUCTURED_TEXT_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "type": "check",
+      "audit": "entity-cards:v131",
+      "name": "ENTITY_CARD_RESPONSIVE",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "type": "check",
+      "audit": "entity-cards:v131",
+      "name": "ENTITY_CARD_COLUMNS_MAX",
+      "status": "PASS",
+      "actual": 4,
+      "expected": "<= 4"
+    },
+    {
+      "type": "check",
+      "audit": "entity-cards:v131",
+      "name": "ENTITY_CARD_FACT_LIMIT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "type": "check",
+      "audit": "entity-cards:v131",
+      "name": "ENTITY_CARD_ROUTE_RENDERING",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "type": "check",
+      "audit": "entity-cards:v131",
+      "name": "ENTITY_CARD_DUPLICATE_PRIMARY_TITLE_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "type": "check",
+      "audit": "entity-cards:v131",
+      "name": "ENTITY_CARD_PUBLIC_TITLE_RESOLVER",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "type": "check",
+      "audit": "entity-cards:v131",
+      "name": "ENTITY_CARD_PUBLIC_DOM_POLICY",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "type": "check",
+      "audit": "entity-cards:v131",
+      "name": "CONSOLE_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "entityElementRouteCount": 30,
+  "entityCardCount": 309,
+  "entityContextTitleCount": 0,
+  "entityCardLongTextCount": 0,
+  "entityCardDuplicatePrimaryTitleCount": 0,
+  "responsiveWidthCount": 6,
+  "runtimeFailure": null
+}

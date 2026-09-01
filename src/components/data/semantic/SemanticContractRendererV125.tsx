@@ -22,6 +22,8 @@ import type {
   TimeSeriesV127,
 } from "../../../types/chartInteractionV127";
 import { getPublicFixedDomainV127 } from "../../../data/visualization/publicVisualizationRegistryV126";
+import { publicEntityTitleV131 } from "../../../data/visualization/publicEntityTitleV131";
+import PublicEntityCardGridV131 from "../public/PublicEntityCardGridV131";
 
 import "./semantic-contract-renderer-v125.css";
 
@@ -37,6 +39,8 @@ interface Props {
   contextRows: SemanticObservationV125[];
   entities: VietnamEntityV124[];
   countryNameKo: string;
+  detailTemplate?: string;
+  elementTitle?: string;
   markEntityTableAsPublic?: boolean;
   showRawTable?: boolean;
 }
@@ -49,6 +53,8 @@ export default function SemanticContractRendererV125({
   contextRows,
   entities,
   countryNameKo,
+  detailTemplate,
+  elementTitle,
   markEntityTableAsPublic = false,
   showRawTable = true,
 }: Props) {
@@ -81,7 +87,14 @@ export default function SemanticContractRendererV125({
             textRows,
             contextRows
           )}
-          {renderEntityPanelV125(renderer, entities, contract, countryNameKo)}
+          {renderEntityPanelV125(
+            renderer,
+            entities,
+            contract,
+            countryNameKo,
+            detailTemplate,
+            elementTitle
+          )}
         </>
       )}
       {showRawTable && entities.length > 0 && (
@@ -191,21 +204,41 @@ function renderEntityPanelV125(
   renderer: RendererV125,
   entities: VietnamEntityV124[],
   contract: ElementVisualizationContractV125,
-  countryNameKo: string
+  countryNameKo: string,
+  detailTemplate?: string,
+  elementTitle?: string
 ) {
   if (entities.length === 0) return null;
   switch (renderer) {
     case "portfolio":
-      return <PortfolioEntitiesV125 entities={entities} />;
+      return (
+        <PortfolioEntitiesV125
+          entities={entities}
+          detailTemplate={detailTemplate}
+          elementTitle={elementTitle}
+        />
+      );
     case "directory":
-      return <DirectoryEntitiesV125 entities={entities} />;
+      return (
+        <DirectoryEntitiesV125
+          entities={entities}
+          detailTemplate={detailTemplate}
+          elementTitle={elementTitle}
+        />
+      );
     case "policy-timeline":
       return <PolicyTimelineV125 rows={[]} entities={entities} />;
     case "evidence-matrix":
     case "capability-scorecard":
       return <EvidenceMatrixV125 rows={[]} entities={entities} />;
     case "document-library":
-      return <DocumentLibraryV125 entities={entities} />;
+      return (
+        <DocumentLibraryV125
+          entities={entities}
+          detailTemplate={detailTemplate}
+          elementTitle={elementTitle}
+        />
+      );
     case "spatial-summary":
       return (
         <SpatialSummaryV125
@@ -219,6 +252,8 @@ function renderEntityPanelV125(
         <GenericEntitiesV125
           entities={entities}
           countryNameKo={countryNameKo}
+          detailTemplate={detailTemplate}
+          elementTitle={elementTitle}
         />
       );
   }
@@ -737,7 +772,7 @@ function PolicyTimelineV125({
         "year",
         "referenceYear",
       ]),
-      title: publicEntityNameV126(entity),
+      title: publicEntityTitleV131(entity),
       detail:
         entityFieldV125(entity, ["status", "scope", "agreementType"]) ||
         publicTextV126(entity.note) ||
@@ -787,7 +822,7 @@ function EvidenceMatrixV125({
       key: entity.recordId,
       area:
         entityFieldV125(entity, ["category", "item", "topic", "sector"]) ||
-        publicEntityNameV126(entity),
+        publicEntityTitleV131(entity),
       result:
         entityFieldV125(entity, ["content", "status", "result", "description"]) ||
         publicTextV126(entity.note) ||
@@ -833,150 +868,65 @@ function EvidenceMatrixV125({
   );
 }
 
-function PortfolioEntitiesV125({ entities }: { entities: VietnamEntityV124[] }) {
+function PortfolioEntitiesV125({
+  entities,
+  detailTemplate,
+  elementTitle,
+}: {
+  entities: VietnamEntityV124[];
+  detailTemplate?: string;
+  elementTitle?: string;
+}) {
   return (
     <VisualizationFrameV125 eyebrow="사업·재원" title="포트폴리오 목록">
-      <div className="sv125-portfolio-grid">
-        {entities.slice(0, 12).map((entity) => {
-          const status =
-            entityFieldV125(entity, ["status", "projectStatus"]) ||
-            approvedEntityFieldV126(entity, ["entryMode"]);
-          const fund =
-            entityFieldV125(entity, [
-              "fund",
-              "financingType",
-              "donor",
-              "supportingOrganization",
-            ]) || approvedEntityFieldV126(entity, ["supportingOrganization"]);
-          const sector =
-            entityFieldV125(entity, ["sector", "sectors", "supportType"]) ||
-            approvedEntityFieldV126(entity, ["businessSector", "supportType"]);
-          const amount =
-            entityFieldV125(entity, [
-              "amount",
-              "budget",
-              "approvedAmount",
-              "capacity",
-              "budgetScale",
-            ]) || approvedEntityFieldV126(entity, ["budgetScale"]);
-          const target =
-            entityFieldV125(entity, ["eligibleRecipients", "targetGroup"]) ||
-            approvedEntityFieldV126(entity, ["eligibleRecipients"]);
-          const period =
-            entityFieldV125(entity, ["applicationPeriod", "projectPeriod"]) ||
-            approvedEntityFieldV126(entity, ["applicationPeriod", "projectPeriod"]);
-          const url = entityUrlV125(entity);
-          return (
-            <article key={entity.recordId}>
-              <div>
-                <span>{status || publicEntityTypeLabelV126(entity, "사업")}</span>
-                <strong>{publicEntityNameV126(entity)}</strong>
-              </div>
-              <dl>
-                {fund && <><dt>기관·재원</dt><dd>{fund}</dd></>}
-                {sector && <><dt>분야·유형</dt><dd>{sector}</dd></>}
-                {amount && <><dt>규모</dt><dd>{amount}</dd></>}
-                {target && target !== "해당없음" && <><dt>지원 대상</dt><dd>{target}</dd></>}
-                {period && <><dt>기간</dt><dd>{period}</dd></>}
-              </dl>
-              {safeHttpUrlV125(url) && (
-                <a href={url} target="_blank" rel="noreferrer">사업 원문</a>
-              )}
-            </article>
-          );
-        })}
-      </div>
-      <PreviewCountNoteV125 shown={12} total={entities.length} />
+      <PublicEntityCardGridV131
+        entities={entities}
+        template="portfolio"
+        detailTemplate={detailTemplate}
+        elementTitle={elementTitle}
+      />
     </VisualizationFrameV125>
   );
 }
 
-function DirectoryEntitiesV125({ entities }: { entities: VietnamEntityV124[] }) {
+function DirectoryEntitiesV125({
+  entities,
+  detailTemplate,
+  elementTitle,
+}: {
+  entities: VietnamEntityV124[];
+  detailTemplate?: string;
+  elementTitle?: string;
+}) {
   return (
     <VisualizationFrameV125 eyebrow="기관·연락망" title="기관 디렉터리">
-      <div className="sv125-directory-grid">
-        {entities.slice(0, 12).map((entity) => {
-          const organization = entityFieldV125(entity, [
-            "organization",
-            "organizationName",
-            "parentOrg",
-            "institution",
-            "company",
-            "field_7b638c0f",
-          ]);
-          const role = entityFieldV125(entity, [
-            "orgCategory",
-            "orgType",
-            "organizationType",
-            "role",
-            "focalPointTitle",
-          ]);
-          const email = entityFieldV125(entity, ["email", "emailAlt"]);
-          const phone = entityFieldV125(entity, ["phone", "telephone"]);
-          const contact = entityFieldV125(entity, ["contact"]);
-          const city = entityFieldV125(entity, ["city", "regionName", "address"]);
-          const url = entityUrlV125(entity);
-          return (
-            <article key={entity.recordId}>
-              <span>{role || publicEntityTypeLabelV126(entity, "기관")}</span>
-              <strong>{organization || publicEntityNameV126(entity)}</strong>
-              {organization && publicEntityNameV126(entity) !== organization && (
-                <small>{publicEntityNameV126(entity)}</small>
-              )}
-              {city && <small>{city}</small>}
-              {contact && <small className="sv125-contact-summary">{contact}</small>}
-              <div className="sv125-contact-links">
-                {email && <a href={`mailto:${email}`}>{email}</a>}
-                {phone && <a href={`tel:${phone.replace(/[^0-9+]/g, "")}`}>{phone}</a>}
-                {safeHttpUrlV125(url) && (
-                  <a href={url} target="_blank" rel="noreferrer">공식 페이지</a>
-                )}
-              </div>
-            </article>
-          );
-        })}
-      </div>
-      <PreviewCountNoteV125 shown={12} total={entities.length} />
+      <PublicEntityCardGridV131
+        entities={entities}
+        template="directory"
+        detailTemplate={detailTemplate}
+        elementTitle={elementTitle}
+      />
     </VisualizationFrameV125>
   );
 }
 
-function DocumentLibraryV125({ entities }: { entities: VietnamEntityV124[] }) {
+function DocumentLibraryV125({
+  entities,
+  detailTemplate,
+  elementTitle,
+}: {
+  entities: VietnamEntityV124[];
+  detailTemplate?: string;
+  elementTitle?: string;
+}) {
   return (
     <VisualizationFrameV125 eyebrow="문헌·성과" title="문서 라이브러리">
-      <div className="sv125-document-list">
-        {entities.slice(0, 16).map((entity) => {
-          const title = entityFieldV125(entity, [
-            "title",
-            "documentTitle",
-            "paperTitle",
-            "attr_2",
-          ]);
-          const year = entityFieldV125(entity, ["publicationYear", "year", "attr_11"]);
-          const publication = entityFieldV125(entity, [
-            "journal",
-            "publisher",
-            "publication",
-            "attr_12",
-          ]);
-          const doi = entityFieldV125(entity, ["doi", "attr_13"]);
-          const technology = entityFieldV125(entity, ["technology", "technologyField", "attr_4"]);
-          const url =
-            entityFieldV125(entity, ["documentUrl", "publicationUrl", "attr_14"]) ||
-            entityUrlV125(entity);
-          return (
-            <article key={entity.recordId}>
-              <span>{[publicEntityTypeLabelV126(entity, "문서"), technology].filter(Boolean).join(" · ")}</span>
-              <strong>{title || publicEntityNameV126(entity)}</strong>
-              <small>{[year, publication, doi].filter(Boolean).join(" · ") || "서지정보 미기재"}</small>
-              {safeHttpUrlV125(url) && (
-                <a href={url} target="_blank" rel="noreferrer">문서 원문</a>
-              )}
-            </article>
-          );
-        })}
-      </div>
-      <PreviewCountNoteV125 shown={16} total={entities.length} />
+      <PublicEntityCardGridV131
+        entities={entities}
+        template="document"
+        detailTemplate={detailTemplate}
+        elementTitle={elementTitle}
+      />
     </VisualizationFrameV125>
   );
 }
@@ -1009,7 +959,7 @@ function SpatialSummaryV125({
       <div className="sv125-spatial-samples">
         {entities.slice(0, 8).map((entity) => (
           <article key={entity.recordId}>
-            <strong>{publicEntityNameV126(entity)}</strong>
+            <strong>{publicEntityTitleV131(entity)}</strong>
             <span>{publicEntityTypeLabelV126(entity, "공간 자료")}</span>
             <small>
               {hasCoordinateV125(entity)
@@ -1027,22 +977,22 @@ function SpatialSummaryV125({
 function GenericEntitiesV125({
   entities,
   countryNameKo,
+  detailTemplate,
+  elementTitle,
 }: {
   entities: VietnamEntityV124[];
   countryNameKo: string;
+  detailTemplate?: string;
+  elementTitle?: string;
 }) {
   return (
     <VisualizationFrameV125 eyebrow="개체 목록" title="주요 레코드">
-      <div className="sv125-contract-evidence-grid">
-        {entities.slice(0, 12).map((entity) => (
-          <article key={entity.recordId}>
-            <strong>{publicEntityNameV126(entity)}</strong>
-            <p>{publicEntityTypeLabelV126(entity, countryNameKo)}</p>
-            <small>{publicTextV126(entity.note) || publicTextV126(entity.provenance.sourceOrg) || "세부 속성은 원자료 표에서 확인"}</small>
-          </article>
-        ))}
-      </div>
-      <PreviewCountNoteV125 shown={12} total={entities.length} />
+      <PublicEntityCardGridV131
+        entities={entities}
+        template="generic"
+        detailTemplate={detailTemplate}
+        elementTitle={elementTitle || countryNameKo}
+      />
     </VisualizationFrameV125>
   );
 }
@@ -1078,7 +1028,7 @@ function EntityTableFallbackV125({
           <tbody>
             {shown.map((entity) => (
               <tr key={entity.recordId}>
-                <th scope="row">{publicEntityNameV126(entity)}</th>
+                <th scope="row">{publicEntityTitleV131(entity)}</th>
                 <td>{publicEntityTypeLabelV126(entity, "자료")}</td>
                 <td>{entityFactsV125(entity)}</td>
                 <td>{publicTextV126(entity.provenance.sourceOrg) || ""}</td>
@@ -1388,30 +1338,6 @@ function entityFactsV125(entity: VietnamEntityV124): string {
     })
     .slice(0, 4);
   return entries.join(" · ") || "세부 속성 미기재";
-}
-
-function publicEntityNameV126(entity: VietnamEntityV124): string {
-  if (entity.elementId === "E-020") {
-    const programName = approvedEntityFieldV126(entity, ["programName"]);
-    if (programName) return programName;
-  }
-  const direct = publicTextV126(entity.name);
-  if (direct) return direct;
-  for (const key of [
-    "projectName",
-    "plantName",
-    "mineName",
-    "organizationName",
-    "orgName",
-    "companyName",
-    "supportingOrganization",
-    "title",
-    "name",
-  ]) {
-    const value = entityFieldV125(entity, [key]);
-    if (value) return value;
-  }
-  return "명칭 미기재";
 }
 
 function publicEntityTypeLabelV126(

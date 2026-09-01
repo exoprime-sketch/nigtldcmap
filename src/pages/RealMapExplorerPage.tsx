@@ -53,6 +53,7 @@ import {
 import type { PublicMapWorkspacePresetIdV126 } from "../data/visualization/publicMapWorkspaceV126";
 import { formatPublicNumberV126 } from "../data/visualization/publicNumberFormatV126";
 import { publicTextV126 } from "../data/visualization/publicFieldPolicyV126";
+import { resolvePublicEntityTitleV131 } from "../data/visualization/publicEntityTitleV131";
 import {
   getPublicIndicatorInterpretationV129,
   getPublicIndicatorVariablePresentationV129,
@@ -62,7 +63,6 @@ import type { WorldCountryBoundaryGeometry } from "../data/map/worldCountryBound
 import { PRIORITY_COUNTRIES } from "../data/priorityCountries";
 import type { MapViewState } from "../types/map";
 import {
-  entityDisplayNameV121,
   fieldLabelV121,
   formatValueV121,
   isHttpUrlV121,
@@ -669,11 +669,13 @@ function featureCollection(
       )
       .map((record) => {
         const attrs = record.normalizedAttributes || {};
+        const titleResolution = resolvePublicMapEntityTitleV131(record, layer);
         const properties: Record<string, string | number | boolean | null> = {
           recordId: record.recordId,
           elementId: record.elementId,
           countryIso3: layer.countryIso3,
-          name: entityDisplayNameV121(record),
+          name: titleResolution.title,
+          nameNote: titleResolution.secondaryNote,
           entityType: record.entityType,
           referenceYear:
             record.provenance.referenceYear || layer.latestYear || null,
@@ -761,6 +763,33 @@ function countByPublicFieldV126(
 
 function publicMapFeatureNameV126(value: unknown, fallback: string): string {
   return publicTextV126(value) || fallback;
+}
+
+function publicMapEntityTitleV131(
+  entity: CountryEntityV122,
+  layer: CountryMapLayerV122
+): string {
+  return resolvePublicMapEntityTitleV131(entity, layer).title;
+}
+
+function resolvePublicMapEntityTitleV131(
+  entity: CountryEntityV122,
+  layer: CountryMapLayerV122
+) {
+  const elementTitle = publicMapLayerTitleV126(
+    layer.elementId,
+    layer.publicShortTitle
+  );
+  return resolvePublicEntityTitleV131(entity, { elementTitle });
+}
+
+function publicTransmissionSegmentTitleV131(
+  properties: Record<string, unknown>
+): string {
+  const voltage = publicTextV126(
+    properties.voltageKv ?? properties.voltage
+  );
+  return voltage ? `${voltage} kV 송전선로` : "송전망 구간";
 }
 
 function publicMapSymbolShapeV129(
@@ -2071,7 +2100,7 @@ export default function RealMapExplorerPage({
             adm1Code: String(properties.adm1Code || "") || undefined,
             adm1Name:
               renderer === "line"
-                ? `${properties.voltageKv || properties.voltage || ""} kV 송전선로`
+                ? publicTransmissionSegmentTitleV131(properties)
                 : isRegionalScope
                 ? publicMapFeatureNameV126(
                     properties.projectTitle || properties.name,
@@ -2472,7 +2501,11 @@ export default function RealMapExplorerPage({
           .setDOMContent(
             createPublicMapPopupContentV129(
               publicMapLayerTitleV126(elementId, layer.publicShortTitle),
-              [name, isPrimary ? "주 분석 데이터" : "보조 데이터"]
+              [
+                name,
+                publicTextV126(feature.properties?.nameNote) || "",
+                isPrimary ? "주 분석 데이터" : "보조 데이터",
+              ]
             )
           )
           .addTo(map);
@@ -2986,6 +3019,10 @@ export default function RealMapExplorerPage({
   const selectedLayer = selected
     ? layers.find((layer) => layer.elementId === selected.elementId) || null
       : null;
+  const selectedEntityTitleResolutionV131 =
+    selected && selectedLayer
+      ? resolvePublicMapEntityTitleV131(selected, selectedLayer)
+      : null;
   const selectedOwningLayer = selectedSpatial
     ? layers.find((layer) => layer.elementId === selectedSpatial.elementId) || null
     : selectedLayer;
@@ -3102,7 +3139,7 @@ export default function RealMapExplorerPage({
               typeof record.latitude === "number"
           )
           .forEach((record) => {
-            const name = entityDisplayNameV121(record);
+            const name = publicMapEntityTitleV131(record, layer);
             features.push({
               elementId,
               label: `${title} · ${name}`,
@@ -3134,7 +3171,7 @@ export default function RealMapExplorerPage({
             : Number(rawLength);
         const name =
           renderer === "line"
-            ? `${properties.voltageKv || properties.voltage || ""} kV 송전선로`
+            ? publicTransmissionSegmentTitleV131(properties)
             : renderer === "regional-scope"
             ? `${publicMapFeatureNameV126(
                 properties.displayLabel,
@@ -4320,7 +4357,10 @@ export default function RealMapExplorerPage({
                   point.elementId,
                   pointLayer?.publicShortTitle || "지도 데이터"
                 );
-                const publicName = entityDisplayNameV121(point.record);
+                const titleResolution = pointLayer
+                  ? resolvePublicMapEntityTitleV131(point.record, pointLayer)
+                  : null;
+                const publicName = titleResolution?.title || "지도 데이터";
                 const isSelected =
                   selected?.elementId === point.elementId &&
                   selected.recordId === point.record.recordId;
@@ -4338,7 +4378,9 @@ export default function RealMapExplorerPage({
                 };
                 const showTooltip = () =>
                   setFallbackTooltipV129({
-                    detail: publicName,
+                    detail: titleResolution?.secondaryNote
+                      ? `${publicName} · ${titleResolution.secondaryNote}`
+                      : publicName,
                     leftPercent: Math.max(
                       8,
                       Math.min(
@@ -5147,8 +5189,14 @@ export default function RealMapExplorerPage({
                   </div>
                 ) : selected && selectedLayer ? (
                   <div data-testid="map-feature-detail">
-                    <h4>{entityDisplayNameV121(selected)}</h4>
+                    <h4>{selectedEntityTitleResolutionV131?.title}</h4>
                     <div className="cdp-evidence-grid">
+                      {selectedEntityTitleResolutionV131?.secondaryNote && (
+                        <Evidence
+                          label="개별 명칭"
+                          value={selectedEntityTitleResolutionV131.secondaryNote}
+                        />
+                      )}
                       <Evidence
                         label="데이터명"
                         value={publicMapLayerTitleV126(

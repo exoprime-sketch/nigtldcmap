@@ -1,0 +1,136 @@
+{
+  "schemaVersion": "v131-public-content-audit-1",
+  "generatedAt": "2026-09-01T07:00:31.522Z",
+  "audit": "public-naming:v131",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "public-naming:v131",
+    "status": "PASS",
+    "passed": 10,
+    "failed": 0,
+    "total": 10,
+    "failedChecks": [],
+    "entityCount": 5481,
+    "entityContextTitleCount": 2727,
+    "publicPlaceholderPrimaryTitleCount": 0,
+    "publicBlankPrimaryTitleCount": 0,
+    "rawTechnicalPrimaryLabelCount": 0,
+    "strategyCounts": {
+      "element-title-field": 1143,
+      "factual-composite": 2579,
+      "record-type": 2,
+      "source-identifier": 146,
+      "source-name": 33,
+      "template-title-field": 1578
+    }
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "public-naming:v131",
+      "name": "CATALOG_JSON",
+      "status": "PASS",
+      "actual": null,
+      "expected": null
+    },
+    {
+      "type": "check",
+      "audit": "public-naming:v131",
+      "name": "PACK_PAYLOADS",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "type": "check",
+      "audit": "public-naming:v131",
+      "name": "FRAMEWORK_ELEMENTS",
+      "status": "PASS",
+      "actual": 152,
+      "expected": 152
+    },
+    {
+      "type": "check",
+      "audit": "public-naming:v131",
+      "name": "ACCOUNTED_ELEMENTS",
+      "status": "PASS",
+      "actual": 152,
+      "expected": 152
+    },
+    {
+      "type": "check",
+      "audit": "public-naming:v131",
+      "name": "PUBLIC_ENTITY_TITLE_POLICY_API",
+      "status": "PASS",
+      "actual": {
+        "error": null,
+        "resolve": "function",
+        "title": "function"
+      },
+      "expected": {
+        "error": null,
+        "resolve": "function",
+        "title": "function"
+      }
+    },
+    {
+      "type": "check",
+      "audit": "public-naming:v131",
+      "name": "PUBLIC_PLACEHOLDER_PRIMARY_TITLE_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "type": "check",
+      "audit": "public-naming:v131",
+      "name": "PUBLIC_BLANK_PRIMARY_TITLE_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "type": "check",
+      "audit": "public-naming:v131",
+      "name": "RAW_TECHNICAL_PRIMARY_LABEL_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "type": "check",
+      "audit": "public-naming:v131",
+      "name": "UNAVAILABLE_TITLE_STRATEGY_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "type": "check",
+      "audit": "public-naming:v131",
+      "name": "ENTITY_TITLE_RECONCILIATION",
+      "status": "PASS",
+      "actual": 5481,
+      "expected": "all public entities"
+    }
+  ],
+  "entityCount": 5481,
+  "entityContextTitleCount": 2727,
+  "publicPlaceholderPrimaryTitleCount": 0,
+  "publicBlankPrimaryTitleCount": 0,
+  "rawTechnicalPrimaryLabelCount": 0,
+  "strategyCounts": {
+    "element-title-field": 1143,
+    "factual-composite": 2579,
+    "record-type": 2,
+    "source-identifier": 146,
+    "source-name": 33,
+    "template-title-field": 1578
+  }
+}
