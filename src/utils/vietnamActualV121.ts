@@ -6,6 +6,7 @@ import type {
   VietnamObservationV121,
 } from "../data/vietnam/vietnamTypesV121";
 import type { VietnamElementPublicStatusV124 } from "../data/vietnam/vietnamTypesV124";
+import { publicEntityTitleV131 } from "../data/visualization/publicEntityTitleV131";
 
 export const VIETNAM_PUBLIC_STATUS_LABEL_V121: Record<
   VietnamCatalogElementV121["publicStatus"],
@@ -268,41 +269,7 @@ export function isHttpUrlV121(value: unknown): value is string {
 }
 
 export function entityDisplayNameV121(entity: VietnamEntityV121): string {
-  if (entity.name) return entity.name;
-  const attrs = entity.normalizedAttributes || {};
-  for (const key of [
-    "projectName",
-    "plantName",
-    "mineName",
-    "organizationName",
-    "orgName",
-    "companyName",
-    "supportingOrganization",
-    "title",
-    "name",
-  ]) {
-    const value = attrs[key];
-    if (value !== null && value !== undefined && String(value).trim()) {
-      return String(value);
-    }
-  }
-  const projectId = attrs.projectId;
-  const standard = attrs.standard;
-  if (
-    projectId !== null &&
-    projectId !== undefined &&
-    String(projectId).trim() &&
-    standard !== null &&
-    standard !== undefined &&
-    String(standard).trim()
-  ) {
-    const publicProjectId = String(projectId)
-      .trim()
-      .replace(/^gs[_\s-]*/iu, "GS ")
-      .replace(/_/gu, " ");
-    return `${String(standard).trim()} 등록사업 · ${publicProjectId}`;
-  }
-  return "명칭 미기재";
+  return publicEntityTitleV131(entity);
 }
 
 export function entityColumnsV121(

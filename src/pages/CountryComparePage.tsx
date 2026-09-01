@@ -17,10 +17,10 @@ import type {
 import type { CompareTab, CompareViewState } from "../types/compare";
 import { DEFAULT_COMPARE_VIEW_STATE } from "../types/compare";
 import {
-  entityDisplayNameV121,
   formatValueV121,
   latestObservationV121,
 } from "../utils/vietnamActualV121";
+import { publicEntityTitleV131 } from "../data/visualization/publicEntityTitleV131";
 import "../styles/country-data-platform-v122.css";
 
 interface CountryComparePageProps {
@@ -524,7 +524,7 @@ export default function CountryComparePage({
                 <div className="cdp-entity-preview-grid">
                   {entities.slice(0, 24).map((entity: VietnamEntityV121) => (
                     <article key={entity.recordId}>
-                      <strong>{entityDisplayNameV121(entity)}</strong>
+                      <strong>{publicEntityTitleV131(entity)}</strong>
                       <small>
                         {entity.provenance.referenceYear || "연도 미표기"} ·{" "}
                         {entity.provenance.sourceOrg || "출처 미표기"}

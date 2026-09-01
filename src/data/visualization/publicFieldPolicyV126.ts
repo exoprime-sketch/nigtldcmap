@@ -8,6 +8,7 @@ import type {
   IndicatorSemanticV125,
   RecordSemanticV125,
 } from "./semanticTypesV125";
+import { publicEntityTitleV131 } from "./publicEntityTitleV131";
 
 export const PUBLIC_ANALYSIS_FIELDS_V126 = [
   "country",
@@ -598,26 +599,6 @@ export function publicMissingReasonLabelV126(
   return null;
 }
 
-function entityDisplayNameV126(row: VietnamEntityV124): string {
-  const directName = normalizeTextV126(row.name);
-  if (directName) return directName;
-  for (const key of [
-    "projectName",
-    "plantName",
-    "mineName",
-    "organizationName",
-    "orgName",
-    "companyName",
-    "supportingOrganization",
-    "title",
-    "name",
-  ]) {
-    const value = safeAttributeValueV126(row.normalizedAttributes?.[key]);
-    if (typeof value === "string" && value) return value;
-  }
-  return "명칭 미기재";
-}
-
 function entityYearV126(row: VietnamEntityV124): number | null {
   for (const key of [
     "referenceYear",
@@ -870,7 +851,10 @@ export function toPublicEntityRowsV126(
       period:
         normalizeTextV126(attributes.projectPeriod) ||
         normalizeTextV126(attributes.applicationPeriod),
-      entity_name: entityDisplayNameV126(row),
+      entity_name: publicEntityTitleV131(row, {
+        template: input.element.raw.detailTemplate,
+        elementTitle: input.element.publicTitle,
+      }),
       entity_type: normalizeTextV126(row.entityType),
       ...sourceFieldsV126(source),
       missing_reason: publicMissingReasonLabelV126(
