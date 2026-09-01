@@ -389,7 +389,7 @@ export function InteractiveTimeSeriesChartV127({
     left: Math.round(
       clampV127(desiredLeftPadding, chartWidth < 480 ? 68 : 78, maximumLeftPadding)
     ),
-    right: chartWidth < 480 ? 16 : 28,
+    right: 28,
     top: 22,
     bottom: 68,
   };

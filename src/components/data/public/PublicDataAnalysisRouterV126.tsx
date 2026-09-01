@@ -26,6 +26,10 @@ import type {
 } from "../semantic/OccupationEmploymentWagePreviewV125";
 import CpiaPolicyCapacityAnalysisV126 from "./CpiaPolicyCapacityAnalysisV126";
 import ClimateBudgetAllocationAnalysisV129 from "./ClimateBudgetAllocationAnalysisV129";
+import PrimaryEnergyCompositionAnalysisV132 from "./PrimaryEnergyCompositionAnalysisV132";
+import PublicEmissionsAnalysisV132 from "./PublicEmissionsAnalysisV132";
+import PublicCompositionTrendAnalysisV132 from "./PublicCompositionTrendAnalysisV132";
+import ResearchPatentAnalysisV132 from "./ResearchPatentAnalysisV132";
 import PublicDataLimitationsV126 from "./PublicDataLimitationsV126";
 import PublicIndicatorMeaningV129 from "./PublicIndicatorMeaningV129";
 import PublicRawDataTablesV126 from "./PublicRawDataTablesV126";
@@ -66,7 +70,7 @@ const ADAPTER_RENDERER_V126: Record<
   "composition-trend": "composition",
   "stacked-emissions": "composition",
   "technology-comparison": "category-comparison",
-  "scenario-comparison": "scenario-range",
+  "scenario-comparison": "multi-metric-trend",
   seasonality: "seasonality",
   "policy-timeline": "policy-timeline",
   "portfolio-dashboard": "portfolio",
@@ -164,7 +168,13 @@ export default function PublicDataAnalysisRouterV126({
       />
 
       <section className="pav126-primary" data-testid="public-analysis-primary">
-        {elementId === "D-005" ? (
+        {elementId === "A-016" ? (
+          <PrimaryEnergyCompositionAnalysisV132
+            rows={semanticRows}
+            selectorState={selectorState}
+            onSelectorStateChange={onSelectorStateChange}
+          />
+        ) : elementId === "D-005" ? (
           <ClimateBudgetAllocationAnalysisV129
             rows={semanticRows}
             selectorState={selectorState}
@@ -176,6 +186,13 @@ export default function PublicDataAnalysisRouterV126({
             selectorState={selectorState}
             onSelectorStateChange={onSelectorStateChange}
             showRawTable={false}
+          />
+        ) : elementId === "E-008" ? (
+          <ResearchPatentAnalysisV132
+            rows={semanticRows}
+            entities={entities}
+            detailTemplate={detailTemplate}
+            elementTitle={copy.title}
           />
         ) : elementId === "E-012" ? (
           <Suspense
@@ -198,6 +215,20 @@ export default function PublicDataAnalysisRouterV126({
               showRawTable={false}
             />
           </Suspense>
+        ) : publicRenderer === "stacked-emissions" ? (
+          <PublicEmissionsAnalysisV132
+            elementId={elementId}
+            rows={semanticRows}
+            selectorState={selectorState}
+            onSelectorStateChange={onSelectorStateChange}
+          />
+        ) : publicRenderer === "composition-trend" ? (
+          <PublicCompositionTrendAnalysisV132
+            elementId={elementId}
+            rows={semanticRows}
+            selectorState={selectorState}
+            onSelectorStateChange={onSelectorStateChange}
+          />
         ) : (
           <SemanticArchetypePreviewV125
             contract={adapterContract}

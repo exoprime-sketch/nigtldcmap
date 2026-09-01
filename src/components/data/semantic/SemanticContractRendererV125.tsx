@@ -24,6 +24,8 @@ import type {
 import { getPublicFixedDomainV127 } from "../../../data/visualization/publicVisualizationRegistryV126";
 import { publicEntityTitleV131 } from "../../../data/visualization/publicEntityTitleV131";
 import PublicEntityCardGridV131 from "../public/PublicEntityCardGridV131";
+import PublicPortfolioListV132 from "../public/PublicPortfolioListV132";
+import PublicPortfolioSummaryV132 from "../public/PublicPortfolioSummaryV132";
 
 import "./semantic-contract-renderer-v125.css";
 
@@ -46,6 +48,24 @@ interface Props {
 }
 
 const SERIES_PATTERNS = ["solid", "dashed", "dotted", "double"] as const;
+
+const PUBLIC_PORTFOLIO_ELEMENTS_V132 = new Set([
+  "D-012",
+  "D-013",
+  "D-014",
+  "D-015",
+  "D-016",
+  "D-017",
+  "D-018",
+  "D-019",
+  "D-020",
+  "D-021",
+  "D-022",
+  "D-023",
+  "D-024",
+  "D-025",
+  "D-026",
+]);
 
 export default function SemanticContractRendererV125({
   contract,
@@ -209,10 +229,21 @@ function renderEntityPanelV125(
   elementTitle?: string
 ) {
   if (entities.length === 0) return null;
+  if (PUBLIC_PORTFOLIO_ELEMENTS_V132.has(contract.elementId)) {
+    return (
+      <PortfolioEntitiesV125
+        elementId={contract.elementId}
+        entities={entities}
+        detailTemplate={detailTemplate}
+        elementTitle={elementTitle}
+      />
+    );
+  }
   switch (renderer) {
     case "portfolio":
       return (
         <PortfolioEntitiesV125
+          elementId={contract.elementId}
           entities={entities}
           detailTemplate={detailTemplate}
           elementTitle={elementTitle}
@@ -869,19 +900,26 @@ function EvidenceMatrixV125({
 }
 
 function PortfolioEntitiesV125({
+  elementId,
   entities,
   detailTemplate,
   elementTitle,
 }: {
+  elementId: string;
   entities: VietnamEntityV124[];
   detailTemplate?: string;
   elementTitle?: string;
 }) {
   return (
-    <VisualizationFrameV125 eyebrow="사업·재원" title="포트폴리오 목록">
-      <PublicEntityCardGridV131
+    <VisualizationFrameV125 eyebrow="사업·재원" title="포트폴리오 분석">
+      <PublicPortfolioSummaryV132
+        elementId={elementId}
         entities={entities}
-        template="portfolio"
+        detailTemplate={detailTemplate}
+      />
+      <PublicPortfolioListV132
+        elementId={elementId}
+        entities={entities}
         detailTemplate={detailTemplate}
         elementTitle={elementTitle}
       />

@@ -117,7 +117,14 @@
     "audit:map-copy:v131": "node scripts/audit-vietnam-map-copy-v131.mjs",
     "audit:route-content:v131": "node scripts/audit-vietnam-route-content-v131.mjs",
     "audit:release:v131": "node scripts/audit-vietnam-release-v131.mjs",
-    "finalize:v131": "npm run audit:release:v131"
+    "finalize:v131": "npm run audit:release:v131",
+    "audit:visualization-runtime:v132": "node scripts/audit-vietnam-visualization-runtime-v132.mjs",
+    "audit:composition:v132": "node scripts/audit-vietnam-composition-v132.mjs",
+    "audit:portfolio-analysis:v132": "node scripts/audit-vietnam-portfolio-analysis-v132.mjs",
+    "audit:map-tooltip:v132": "node scripts/audit-vietnam-map-tooltip-v132.mjs",
+    "audit:benchmark-fit:v132": "node scripts/audit-vietnam-benchmark-fit-v132.mjs",
+    "capture:screenshots:v132": "node scripts/capture-vietnam-v132-screenshots.mjs",
+    "finalize:v132": "npm run finalize:v131 && npm run build && node scripts/generate-v132-visualization-reports.mjs && npm run audit:visualization-runtime:v132 && npm run audit:composition:v132 && npm run audit:portfolio-analysis:v132 && npm run audit:map-tooltip:v132 && npm run capture:screenshots:v132 && npm run audit:benchmark-fit:v132"
   },
   "browserslist": [
     ">0.2%",

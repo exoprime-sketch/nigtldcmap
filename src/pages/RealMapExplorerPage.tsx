@@ -70,6 +70,8 @@ import {
 import { publicAssetUrlV128 } from "../utils/publicAssetUrlV128";
 import MapPanelSeparatorV129 from "../components/map/MapPanelSeparatorV129";
 import MapDataGuideV130 from "../components/map/MapDataGuideV130";
+import { InteractiveTimeSeriesChartV127 } from "../components/charts/InteractiveTimeSeriesChartV127";
+import type { TimeSeriesV127 } from "../types/chartInteractionV127";
 import { useResizableMapPanelsV129 } from "../hooks/useResizableMapPanelsV129";
 import "../styles/country-data-platform-v122.css";
 import "../styles/map-layout-v129.css";
@@ -398,6 +400,20 @@ interface FallbackMapTooltipV129 {
   leftPercent: number;
   title: string;
   topPercent: number;
+}
+
+interface PublicPowerPlantFactsV132 {
+  capacity: string | null;
+  fuel: string | null;
+  status: string | null;
+  year: string | null;
+}
+
+interface SelectedRegionTrendV132 {
+  region: string;
+  rows: Array<{ period: string; value: number }>;
+  series: TimeSeriesV127[];
+  unit: string;
 }
 
 interface PublicMapSummaryRowV126 {
@@ -783,6 +799,63 @@ function resolvePublicMapEntityTitleV131(
   return resolvePublicEntityTitleV131(entity, { elementTitle });
 }
 
+const UNAVAILABLE_MAP_FACT_V132 =
+  /^(?:\(?\s*(?:미기재|미표기|미공개|미확인|미상)\s*\)?|해당\s*없음|unknown|n\/?a|null|undefined|[-—–])$/iu;
+
+function publicMapFactV132(value: unknown): string | null {
+  const text = publicTextV126(value);
+  return text && !UNAVAILABLE_MAP_FACT_V132.test(text) ? text : null;
+}
+
+function publicPowerPlantStatusV132(value: unknown): string | null {
+  const status = publicMapFactV132(value);
+  if (!status) return null;
+  const normalized = status.toLocaleLowerCase("en-US");
+  if (/^(?:existing|operating|operational|in operation|active)$/u.test(normalized)) {
+    return "운영";
+  }
+  if (/^(?:construction|under construction)$/u.test(normalized)) return "건설 중";
+  if (/^(?:planned|proposed)$/u.test(normalized)) return "계획";
+  if (/^(?:retired|decommissioned|closed)$/u.test(normalized)) return "운영 종료";
+  return status;
+}
+
+function publicPowerPlantFactsV132(
+  properties: Record<string, unknown>
+): PublicPowerPlantFactsV132 {
+  const rawCapacity = properties.capacityMw ?? properties.mw;
+  const capacity =
+    rawCapacity !== null &&
+    rawCapacity !== undefined &&
+    rawCapacity !== "" &&
+    Number.isFinite(Number(rawCapacity))
+      ? `${formatPublicNumberV126(Number(rawCapacity), "MW")} MW`
+      : null;
+  return {
+    capacity,
+    fuel: publicMapFactV132(properties.fuelType ?? properties.primaryFuel),
+    status: publicPowerPlantStatusV132(properties.status),
+    year: publicMapFactV132(properties.referenceYear),
+  };
+}
+
+function publicPowerPlantTooltipLinesV132(
+  properties: Record<string, unknown>,
+  layerTitle: string,
+  isPrimary: boolean
+): string[] {
+  const facts = publicPowerPlantFactsV132(properties);
+  return [
+    `${layerTitle}${isPrimary ? "" : " · 보조 데이터"}`,
+    [facts.fuel ? `발전원 ${facts.fuel}` : "", facts.capacity ? `용량 ${facts.capacity}` : ""]
+      .filter(Boolean)
+      .join(" · "),
+    [facts.status ? `상태 ${facts.status}` : "", facts.year ? `자료연도 ${facts.year}` : ""]
+      .filter(Boolean)
+      .join(" · "),
+  ].filter(Boolean);
+}
+
 function publicTransmissionSegmentTitleV131(
   properties: Record<string, unknown>
 ): string {
@@ -811,10 +884,18 @@ function publicMapSymbolShapeV129(
 
 function createPublicMapPopupContentV129(
   title: string,
-  lines: string[]
+  lines: string[],
+  options?: {
+    attributes?: Record<string, string>;
+    testId?: string;
+  }
 ): HTMLDivElement {
   const root = document.createElement("div");
   root.className = "cdp-map-public-popup";
+  if (options?.testId) root.setAttribute("data-testid", options.testId);
+  Object.entries(options?.attributes || {}).forEach(([name, value]) => {
+    root.setAttribute(`data-${name}`, value);
+  });
   const heading = document.createElement("strong");
   heading.textContent = title;
   root.appendChild(heading);
@@ -2490,6 +2571,11 @@ export default function RealMapExplorerPage({
           feature.properties?.name,
           publicMapLayerTitleV126(elementId, layer.publicShortTitle)
         );
+        const layerTitle = publicMapLayerTitleV126(
+          elementId,
+          layer.publicShortTitle
+        );
+        const isPowerPlant = elementId === "A-023";
         popupRef.current?.remove();
         popupOwnerRef.current = pointPopupOwnerKey;
         popupRef.current = new maplibregl.Popup({
@@ -2500,12 +2586,28 @@ export default function RealMapExplorerPage({
           .setLngLat(coordinates)
           .setDOMContent(
             createPublicMapPopupContentV129(
-              publicMapLayerTitleV126(elementId, layer.publicShortTitle),
-              [
-                name,
-                publicTextV126(feature.properties?.nameNote) || "",
-                isPrimary ? "주 분석 데이터" : "보조 데이터",
-              ]
+              isPowerPlant ? name : layerTitle,
+              isPowerPlant
+                ? publicPowerPlantTooltipLinesV132(
+                    (feature.properties || {}) as Record<string, unknown>,
+                    layerTitle,
+                    isPrimary
+                  )
+                : [
+                    name,
+                    publicTextV126(feature.properties?.nameNote) || "",
+                    isPrimary ? "주 분석 데이터" : "보조 데이터",
+                  ],
+              isPowerPlant
+                ? {
+                    attributes: {
+                      "feature-title": name,
+                      "key-facts": "fuel,capacity,status,year",
+                      "layer-role": isPrimary ? "primary" : "context",
+                    },
+                    testId: "a023-map-tooltip-v132",
+                  }
+                : undefined
             )
           )
           .addTo(map);
@@ -3023,6 +3125,13 @@ export default function RealMapExplorerPage({
     selected && selectedLayer
       ? resolvePublicMapEntityTitleV131(selected, selectedLayer)
       : null;
+  const selectedPowerPlantFactsV132 =
+    selected?.elementId === "A-023"
+      ? publicPowerPlantFactsV132({
+          ...(selected.normalizedAttributes || {}),
+          referenceYear: selected.provenance.referenceYear,
+        })
+      : null;
   const selectedOwningLayer = selectedSpatial
     ? layers.find((layer) => layer.elementId === selectedSpatial.elementId) || null
     : selectedLayer;
@@ -3121,6 +3230,64 @@ export default function RealMapExplorerPage({
       ? `베트남 ${ordered.length}개 권역 중 ${rank + 1}위 · 현재 값이 큰 순서`
       : "";
   })();
+  const selectedB033TrendV132 = useMemo<SelectedRegionTrendV132 | null>(() => {
+    if (
+      selectedSpatial?.elementId !== "B-033" ||
+      !selectedSpatial.adm1Code ||
+      selectedOwningLayer?.elementId !== "B-033" ||
+      !selectedOwningSelector
+    ) {
+      return null;
+    }
+    const data = spatialByElement["B-033"]?.data;
+    if (!data) return null;
+    const actualRows = data.values
+      .filter(
+        (row) =>
+          row.adm1Code === selectedSpatial.adm1Code &&
+          row.variable === selectedOwningSelector.variable &&
+          Number.isFinite(row.value) &&
+          /^\d{4}$/u.test(row.period)
+      )
+      .sort((left, right) => Number(left.period) - Number(right.period));
+    const firstUnit = publicMapFactV132(actualRows[0]?.unit) || "ha/yr";
+    const rows = Array.from(
+      new Map(
+        actualRows
+          .filter(
+            (row) => (publicMapFactV132(row.unit) || firstUnit) === firstUnit
+          )
+          .map((row) => [row.period, { period: row.period, value: row.value }])
+      ).values()
+    );
+    if (rows.length < 2) return null;
+    return {
+      region: selectedSpatial.adm1Name,
+      rows,
+      unit: firstUnit,
+      series: [
+        {
+          id: "annual-tree-cover-loss",
+          label: "연간 산림손실",
+          unit: firstUnit,
+          color: LAYER_COLORS["B-033"],
+          marker: "circle",
+          linePattern: "solid",
+          points: rows.map((row) => ({
+            id: `${selectedSpatial.adm1Code}:${row.period}`,
+            x: Number(row.period),
+            xLabel: `${row.period}년`,
+            value: row.value,
+          })),
+        },
+      ],
+    };
+  }, [
+    selectedOwningLayer,
+    selectedOwningSelector,
+    selectedSpatial,
+    spatialByElement,
+  ]);
   const keyboardMapFeaturesV129 = useMemo<KeyboardMapFeatureV129[]>(() => {
     const features: KeyboardMapFeatureV129[] = [];
     renderOrderedActiveIds.forEach((elementId) => {
@@ -4368,6 +4535,13 @@ export default function RealMapExplorerPage({
                 const pointShapeClassName = `cdp-map-fallback__point ${
                   isPrimary ? "is-primary" : "is-context"
                 } ${isSelected ? "is-selected" : ""}`;
+                const powerPlantFacts =
+                  point.elementId === "A-023"
+                    ? publicPowerPlantFactsV132({
+                        ...(point.record.normalizedAttributes || {}),
+                        referenceYear: point.record.provenance.referenceYear,
+                      })
+                    : null;
                 const selectPoint = () => {
                   setSelected(point.record);
                   setSelectedSpatial(null);
@@ -4378,9 +4552,28 @@ export default function RealMapExplorerPage({
                 };
                 const showTooltip = () =>
                   setFallbackTooltipV129({
-                    detail: titleResolution?.secondaryNote
-                      ? `${publicName} · ${titleResolution.secondaryNote}`
-                      : publicName,
+                    detail:
+                      point.elementId === "A-023" && powerPlantFacts
+                        ? [
+                            powerPlantFacts.fuel
+                              ? `발전원 ${powerPlantFacts.fuel}`
+                              : "",
+                            powerPlantFacts.capacity
+                              ? `용량 ${powerPlantFacts.capacity}`
+                              : "",
+                            powerPlantFacts.status
+                              ? `상태 ${powerPlantFacts.status}`
+                              : "",
+                            powerPlantFacts.year
+                              ? `자료연도 ${powerPlantFacts.year}`
+                              : "",
+                            isPrimary ? "" : "보조 데이터",
+                          ]
+                            .filter(Boolean)
+                            .join(" · ") || publicTitle
+                        : titleResolution?.secondaryNote
+                        ? `${publicName} · ${titleResolution.secondaryNote}`
+                        : publicName,
                     leftPercent: Math.max(
                       8,
                       Math.min(
@@ -4388,7 +4581,8 @@ export default function RealMapExplorerPage({
                         (point.x / FALLBACK_VIEWBOX_WIDTH) * 100
                       )
                     ),
-                    title: publicTitle,
+                    title:
+                      point.elementId === "A-023" ? publicName : publicTitle,
                     topPercent: Math.max(
                       14,
                       Math.min(
@@ -5186,9 +5380,80 @@ export default function RealMapExplorerPage({
                         }
                       />
                     </div>
+                    {selectedB033TrendV132 && (
+                      <section
+                        className="cdp-map-region-trend-v132"
+                        data-testid="b033-map-region-trend-v132"
+                        data-region-name={selectedB033TrendV132.region}
+                        data-region-record-count={selectedB033TrendV132.rows.length}
+                        data-region-unit={selectedB033TrendV132.unit}
+                      >
+                        <InteractiveTimeSeriesChartV127
+                          ariaLabel={`${selectedB033TrendV132.region} 연간 산림손실 추이`}
+                          className="cdp-map-region-trend-v132__chart"
+                          formatValue={(value) =>
+                            formatPublicNumberV126(
+                              value,
+                              selectedB033TrendV132.unit
+                            )
+                          }
+                          height={270}
+                          series={selectedB033TrendV132.series}
+                          showDelta={false}
+                          testId="map-b033-region-trend-chart"
+                          title={`${selectedB033TrendV132.region} 연간 산림손실 추이`}
+                          tooltipMode="nearest-point"
+                          unit={selectedB033TrendV132.unit}
+                          xAxisTitle="연도"
+                          yAxisTitle={`산림손실 (${selectedB033TrendV132.unit})`}
+                          zoom={{
+                            enabled: selectedB033TrendV132.rows.length > 8,
+                            minimumSpan: 4,
+                            showRangeBrush: false,
+                          }}
+                        />
+                        <p className="cdp-map-region-trend-v132__notice">
+                          지도에서 선택한 지역의 공개 관측값만 연결해 표시합니다.
+                        </p>
+                        <details className="cdp-map-region-trend-v132__table">
+                          <summary>연도별 값 표</summary>
+                          <div>
+                            <table>
+                              <caption>{selectedB033TrendV132.region} 연간 산림손실</caption>
+                              <thead>
+                                <tr>
+                                  <th scope="col">연도</th>
+                                  <th scope="col">값</th>
+                                  <th scope="col">단위</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {selectedB033TrendV132.rows.map((row) => (
+                                  <tr key={row.period}>
+                                    <th scope="row">{row.period}</th>
+                                    <td>
+                                      {formatPublicNumberV126(
+                                        row.value,
+                                        selectedB033TrendV132.unit
+                                      )}
+                                    </td>
+                                    <td>{selectedB033TrendV132.unit}</td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          </div>
+                        </details>
+                      </section>
+                    )}
                   </div>
                 ) : selected && selectedLayer ? (
-                  <div data-testid="map-feature-detail">
+                  <div
+                    data-testid="map-feature-detail"
+                    data-a023-key-facts={
+                      selectedLayer.elementId === "A-023" ? "true" : undefined
+                    }
+                  >
                     <h4>{selectedEntityTitleResolutionV131?.title}</h4>
                     <div className="cdp-evidence-grid">
                       {selectedEntityTitleResolutionV131?.secondaryNote && (
@@ -5204,29 +5469,59 @@ export default function RealMapExplorerPage({
                           selectedLayer.publicShortTitle
                         )}
                       />
-                      <Evidence
-                        label="측정항목"
-                        value={
-                          selectedOwningVariablePresentationV129?.label ||
-                          selectedOwningSemantic?.measureLabel ||
-                          selectedLayer.legend.title
-                        }
-                      />
-                      <Evidence
-                        label="기준연도"
-                        value={selected.provenance.referenceYear || String(selectedLayer.latestYear || "미표기")}
-                      />
-                      <Evidence label="값" value="1" />
-                      <Evidence
-                        label="단위"
-                        value={
-                          selectedOwningVariablePresentationV129?.unit ||
-                          selectedOwningSemantic?.unit ||
-                          selectedOwningVariable?.unit ||
-                          "개"
-                        }
-                      />
-                      {selectedLayer.tooltipFields.map((field) => {
+                      {selectedPowerPlantFactsV132 ? (
+                        <div
+                          className="cdp-map-a023-key-facts-v132"
+                          data-testid="a023-map-selected-key-facts-v132"
+                        >
+                          <Evidence
+                            label="발전원"
+                            value={selectedPowerPlantFactsV132.fuel || ""}
+                          />
+                          <Evidence
+                            label="용량"
+                            value={selectedPowerPlantFactsV132.capacity || ""}
+                          />
+                          <Evidence
+                            label="상태"
+                            value={selectedPowerPlantFactsV132.status || ""}
+                          />
+                          <Evidence
+                            label="자료연도"
+                            value={selectedPowerPlantFactsV132.year || ""}
+                          />
+                        </div>
+                      ) : (
+                        <>
+                          <Evidence
+                            label="측정항목"
+                            value={
+                              selectedOwningVariablePresentationV129?.label ||
+                              selectedOwningSemantic?.measureLabel ||
+                              selectedLayer.legend.title
+                            }
+                          />
+                          <Evidence
+                            label="기준연도"
+                            value={
+                              selected.provenance.referenceYear ||
+                              String(selectedLayer.latestYear || "미표기")
+                            }
+                          />
+                          <Evidence label="값" value="1" />
+                          <Evidence
+                            label="단위"
+                            value={
+                              selectedOwningVariablePresentationV129?.unit ||
+                              selectedOwningSemantic?.unit ||
+                              selectedOwningVariable?.unit ||
+                              "개"
+                            }
+                          />
+                        </>
+                      )}
+                      {!selectedPowerPlantFactsV132 &&
+                        selectedLayer.tooltipFields.map((field) => {
                         if (field === "name") return null;
                         const value = selected.normalizedAttributes?.[field];
                         const hasSourceValue =
@@ -5251,7 +5546,7 @@ export default function RealMapExplorerPage({
                             value={safeValue}
                           />
                         );
-                      })}
+                        })}
                       <Evidence
                         label="출처"
                         value={publicTextV126(selected.provenance.sourceOrg) || ""}

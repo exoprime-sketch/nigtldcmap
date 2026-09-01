@@ -1310,6 +1310,106 @@
   background: #f8fbf9 !important;
 }
 
+.cdp-map-a023-key-facts-v132 {
+  display: contents;
+}
+
+.cdp-map-region-trend-v132 {
+  min-width: 0;
+  margin-top: 16px;
+  border-top: 1px solid var(--cdp-line);
+  padding-top: 14px;
+}
+
+.cdp-map-region-trend-v132__chart {
+  min-width: 0;
+}
+
+.cdp-map-region-trend-v132__chart .v129-chart-viewport-controls {
+  max-width: 100%;
+}
+
+.cdp-map-region-trend-v132__chart .v127-interactive-chart__toolbar {
+  align-items: stretch;
+  flex-direction: column-reverse;
+}
+
+.cdp-map-region-trend-v132__chart .v129-chart-viewport {
+  width: 100%;
+  justify-content: flex-start;
+  gap: 6px;
+}
+
+.cdp-map-region-trend-v132__chart .v129-chart-viewport__buttons button {
+  width: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+}
+
+.cdp-map-region-trend-v132__chart .v129-chart-viewport__button-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.cdp-map-region-trend-v132__notice {
+  margin: 8px 0 0;
+  color: var(--cdp-muted);
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+
+.cdp-map-region-trend-v132__table {
+  margin-top: 10px;
+  border: 1px solid var(--cdp-line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.cdp-map-region-trend-v132__table summary {
+  min-height: 44px;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+.cdp-map-region-trend-v132__table > div {
+  max-height: 260px;
+  overflow: auto;
+  border-top: 1px solid var(--cdp-line);
+}
+
+.cdp-map-region-trend-v132__table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.72rem;
+}
+
+.cdp-map-region-trend-v132__table caption {
+  padding: 10px 12px 4px;
+  color: var(--cdp-muted);
+  text-align: left;
+}
+
+.cdp-map-region-trend-v132__table th,
+.cdp-map-region-trend-v132__table td {
+  border-bottom: 1px solid #edf1ef;
+  padding: 7px 10px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.cdp-map-region-trend-v132__table th:first-child,
+.cdp-map-region-trend-v132__table td:first-child {
+  text-align: left;
+}
+
 .cdp-map-analysis-actions {
   position: sticky;
   bottom: -18px;

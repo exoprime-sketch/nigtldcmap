@@ -1,0 +1,166 @@
+{
+  "schemaVersion": "v132-public-visualization-audit-1",
+  "generatedAt": "2026-09-01T00:00:00.000Z",
+  "audit": "map-tooltip:v132",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "map-tooltip:v132",
+    "status": "PASS",
+    "passed": 8,
+    "failed": 0,
+    "total": 8,
+    "failedChecks": [],
+    "mapLayerCount": 12,
+    "mapFeatureOrScopeCount": 2900,
+    "mapPlaceholderPrimaryTitleCount": 0,
+    "mapTooltipMissingKeyFactsCount": 0,
+    "a023TooltipResult": "PASS",
+    "b033MapTrendResult": "PASS",
+    "v130RegressionResult": "PASS",
+    "runtimeFailure": null
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "map-tooltip:v132",
+      "name": "FINAL_MAP_LAYERS",
+      "status": "PASS",
+      "actual": 12,
+      "expected": 12
+    },
+    {
+      "type": "check",
+      "audit": "map-tooltip:v132",
+      "name": "FINAL_MAP_FEATURE_OR_SCOPE_COUNT",
+      "status": "PASS",
+      "actual": 2900,
+      "expected": 2900
+    },
+    {
+      "type": "check",
+      "audit": "map-tooltip:v132",
+      "name": "V130_MAP_REGRESSION",
+      "status": "PASS",
+      "actual": {
+        "type": "summary",
+        "audit": "map-copy:v131",
+        "status": "PASS",
+        "passed": 12,
+        "failed": 0,
+        "total": 12,
+        "failedChecks": [],
+        "finalMapLayerCount": 12,
+        "finalMapFeatureOrScopeCount": 2900,
+        "mapTooltipPlaceholderCount": 0,
+        "mapSelectedPanelPlaceholderCount": 0,
+        "v130RegressionResult": "PASS",
+        "runtimeFailure": null
+      },
+      "expected": {
+        "finalMapLayerCount": 12,
+        "finalMapFeatureOrScopeCount": 2900,
+        "v130RegressionResult": "PASS"
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-tooltip:v132",
+      "name": "A023_TOOLTIP_PUBLIC_TITLE_RESOLVER",
+      "status": "PASS",
+      "actual": {
+        "resolver": true,
+        "tooltipHook": true,
+        "facts": true
+      },
+      "expected": {
+        "resolver": true,
+        "tooltipHook": true,
+        "facts": true
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-tooltip:v132",
+      "name": "MAP_PLACEHOLDER_PRIMARY_TITLE",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null,
+        "a023Result": {
+          "title": "A Luoi",
+          "text": "발전원수력용량170 MW자료연도2021",
+          "meaningfulTitle": true,
+          "fuel": true,
+          "capacity": true,
+          "status": false,
+          "year": true
+        }
+      },
+      "expected": {
+        "runtimeFailure": null,
+        "meaningfulTitle": true
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-tooltip:v132",
+      "name": "MAP_TOOLTIP_MISSING_KEY_FACTS",
+      "status": "PASS",
+      "actual": {
+        "title": "A Luoi",
+        "text": "발전원수력용량170 MW자료연도2021",
+        "meaningfulTitle": true,
+        "fuel": true,
+        "capacity": true,
+        "status": false,
+        "year": true,
+        "sourceStatusAvailable": false
+      },
+      "expected": {
+        "fuel": true,
+        "capacity": true,
+        "status": "when source provides it",
+        "year": true
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-tooltip:v132",
+      "name": "B033_MAP_REGION_TREND",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null,
+        "b033Result": {
+          "region": "Lai Châu",
+          "count": 25,
+          "unit": "ha/yr",
+          "chart": true,
+          "tableRows": 25
+        }
+      },
+      "expected": {
+        "region": "named ADM1",
+        "count": 25,
+        "unit": "source unit",
+        "chart": true,
+        "tableRows": 25
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-tooltip:v132",
+      "name": "CONSOLE_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "mapLayerCount": 12,
+  "mapFeatureOrScopeCount": 2900,
+  "mapPlaceholderPrimaryTitleCount": 0,
+  "mapTooltipMissingKeyFactsCount": 0,
+  "a023TooltipResult": "PASS",
+  "b033MapTrendResult": "PASS",
+  "v130RegressionResult": "PASS",
+  "runtimeFailure": null
+}

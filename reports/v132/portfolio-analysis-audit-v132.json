@@ -1,0 +1,145 @@
+{
+  "schemaVersion": "v132-public-visualization-audit-1",
+  "generatedAt": "2026-09-01T00:00:00.000Z",
+  "audit": "portfolio-analysis:v132",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "portfolio-analysis:v132",
+    "status": "PASS",
+    "passed": 10,
+    "failed": 0,
+    "total": 10,
+    "failedChecks": [],
+    "portfolioElementCount": 19,
+    "entityBearingPortfolioElementCount": 18,
+    "portfolioListBeforeSummaryCount": 0,
+    "researchListBeforeAnalysisCount": 0,
+    "e008Result": "PASS",
+    "runtimeFailure": null
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "portfolio-analysis:v132",
+      "name": "PACK_PAYLOADS",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "portfolio-analysis:v132",
+      "name": "PORTFOLIO_ELEMENT_COUNT",
+      "status": "PASS",
+      "actual": 19,
+      "expected": ">= 16"
+    },
+    {
+      "type": "check",
+      "audit": "portfolio-analysis:v132",
+      "name": "D012_PORTFOLIO_ANALYSIS",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "type": "check",
+      "audit": "portfolio-analysis:v132",
+      "name": "PORTFOLIO_DATA_ACCOUNTED",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "portfolio-analysis:v132",
+      "name": "PORTFOLIO_LIST_BEFORE_SUMMARY",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null,
+        "checked": 19,
+        "failures": []
+      },
+      "expected": {
+        "runtimeFailure": null,
+        "checked": 19,
+        "failures": []
+      }
+    },
+    {
+      "type": "check",
+      "audit": "portfolio-analysis:v132",
+      "name": "E008_ANALYSIS_BEFORE_LIST",
+      "status": "PASS",
+      "actual": {
+        "sections": {
+          "e008-kpis": true,
+          "e008-trend": true,
+          "e008-breakdown": true,
+          "e008-collaboration": true,
+          "e008-list": true
+        },
+        "ordered": true,
+        "filterCount": 4,
+        "listItemCount": 6,
+        "internalTitleCount": 0
+      },
+      "expected": {
+        "sections": {
+          "e008-kpis": true,
+          "e008-trend": true,
+          "e008-breakdown": true,
+          "e008-collaboration": true,
+          "e008-list": true
+        },
+        "ordered": true,
+        "filterCount": ">= 3"
+      }
+    },
+    {
+      "type": "check",
+      "audit": "portfolio-analysis:v132",
+      "name": "RESEARCH_LIST_BEFORE_ANALYSIS",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "type": "check",
+      "audit": "portfolio-analysis:v132",
+      "name": "E008_PUBLIC_TITLE_POLICY",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "type": "check",
+      "audit": "portfolio-analysis:v132",
+      "name": "PUBLIC_FIELD_WHITELIST",
+      "status": "PASS",
+      "actual": {
+        "directNormalizedAttributeAccess": false,
+        "reviewedProjectionUsed": true
+      },
+      "expected": {
+        "directNormalizedAttributeAccess": false,
+        "reviewedProjectionUsed": true
+      }
+    },
+    {
+      "type": "check",
+      "audit": "portfolio-analysis:v132",
+      "name": "CONSOLE_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "portfolioElementCount": 19,
+  "entityBearingPortfolioElementCount": 18,
+  "portfolioListBeforeSummaryCount": 0,
+  "researchListBeforeAnalysisCount": 0,
+  "e008Result": "PASS",
+  "runtimeFailure": null
+}
