@@ -1,0 +1,104 @@
+.ppl132 {
+  display: grid;
+  gap: 16px;
+  border-top: 1px solid #dce7e3;
+  padding-top: 18px;
+}
+.ppl132-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.ppl132-heading span {
+  color: #126d51;
+  font-size: 0.76rem;
+  font-weight: 760;
+  letter-spacing: 0.08em;
+}
+
+.ppl132-heading h4 {
+  margin: 4px 0 0;
+}
+
+.ppl132-heading > strong {
+  color: #245448;
+  white-space: nowrap;
+}
+
+.ppl132-filters {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.5fr) repeat(2, minmax(150px, 0.75fr));
+  gap: 10px;
+  border-radius: 12px;
+  padding: 12px;
+  background: #f4f8f6;
+}
+
+.ppl132-filters label {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+  color: #45645b;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.ppl132-filters input,
+.ppl132-filters select {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid #b9cdc5;
+  border-radius: 8px;
+  padding: 0 11px;
+  background: #fff;
+  color: #173f34;
+  font: inherit;
+  font-weight: 500;
+}
+
+.ppl132-filters input:focus-visible,
+.ppl132-filters select:focus-visible,
+.ppl132-pagination button:focus-visible {
+  outline: 2px solid #0f6b4d;
+  outline-offset: 2px;
+}
+
+.ppl132-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.ppl132-pagination button {
+  min-width: 64px;
+  min-height: 44px;
+  border: 1px solid #aac6bc;
+  border-radius: 8px;
+  background: #fff;
+  color: #155844;
+  font-weight: 720;
+  cursor: pointer;
+}
+
+.ppl132-pagination button:disabled {
+  cursor: default;
+  opacity: 0.45;
+}
+
+.ppl132-empty {
+  margin: 0;
+  border-radius: 10px;
+  padding: 22px;
+  background: #f5f8f7;
+  color: #536d65;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .ppl132-filters {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
