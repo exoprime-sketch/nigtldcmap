@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "v130-audit-result-1",
+  "checks": [
+    {
+      "type": "check",
+      "name": "FRAMEWORK_ELEMENTS",
+      "status": "PASS",
+      "actual": 152,
+      "expected": 152
+    },
+    {
+      "type": "check",
+      "name": "ACCOUNTED_ELEMENTS",
+      "status": "PASS",
+      "actual": 152,
+      "expected": 152
+    },
+    {
+      "type": "check",
+      "name": "MAP_SELECTION_INVENTORY_ROWS",
+      "status": "PASS",
+      "actual": 152,
+      "expected": 152
+    },
+    {
+      "type": "check",
+      "name": "MAP_SELECTED_ELEMENTS",
+      "status": "PASS",
+      "actual": 12,
+      "expected": 12
+    },
+    {
+      "type": "check",
+      "name": "MAP_SELECTION_EXPLAINED",
+      "status": "PASS",
+      "actual": "152/152",
+      "expected": "152/152"
+    },
+    {
+      "type": "check",
+      "name": "INVENTORY_REQUIRED_FIELDS",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "type": "check",
+      "name": "INVENTORY_ENUM_VALUES",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "type": "check",
+      "name": "SELECTED_SEMANTICS_VERIFIED",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "type": "check",
+      "name": "FINAL_MAP_COUNTS_RECONCILED",
+      "status": "PASS",
+      "actual": {
+        "manifestLayers": 12,
+        "indexLayers": 12,
+        "manifestFeatures": 2900,
+        "indexFeatures": 2900
+      },
+      "expected": "manifest = map-index"
+    },
+    {
+      "type": "check",
+      "name": "REGIONAL_PROJECT_ASSET_DECLARED",
+      "status": "PASS",
+      "actual": "/data/vietnam/v2/spatial/projects/d-018-regional.geojson",
+      "expected": "/data/vietnam/v2/spatial/projects/d-018-regional.geojson"
+    }
+  ],
+  "summary": {
+    "type": "summary",
+    "audit": "MAP_SELECTION_V130",
+    "status": "PASS",
+    "passed": 10,
+    "failed": 0,
+    "total": 10,
+    "failedChecks": [],
+    "mapSelectedElements": 12,
+    "mapFeatureOrScopeCount": 2900
+  }
+}

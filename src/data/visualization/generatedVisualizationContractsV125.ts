@@ -3362,7 +3362,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "noDataReason": null,
     "populatedRecordCount": 79,
     "primaryRenderer": "portfolio",
-    "spatiallyLinked": true,
+    "spatiallyLinked": false,
     "yearRange": {
       "end": 2026,
       "start": 2013

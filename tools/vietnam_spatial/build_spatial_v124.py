@@ -13,7 +13,6 @@ import hashlib
 import json
 import pathlib
 import re
-import shutil
 import unicodedata
 from collections import defaultdict
 from copy import deepcopy
@@ -25,13 +24,18 @@ from tools.vietnam_spatial.build_transmission_network import (
     read_vendored_source,
     write_json as write_transmission_json,
 )
+from tools.vietnam_spatial.spatial_semantics_v130 import (
+    GREATER_MEKONG_TITLE_TOKEN,
+    MEKONG_EBA_TITLE_TOKEN,
+)
 
 
 SCHEMA_VERSION = "v124"
-GENERATED_AT = "2026-08-27T00:00:00Z"
+GENERATED_AT = "2026-09-01T00:00:00Z"
 ADM1_GEOMETRY_URL = "/data/vietnam/v2/geometry/vnm-adm1-63.geojson"
 ADM1_ALIASES_URL = "/data/vietnam/v2/geometry/vnm-adm1-aliases.json"
 TRANSMISSION_URL = "/data/vietnam/v2/geometry/vnm-transmission-network.geojson"
+REGIONAL_PROJECT_URL = "/data/vietnam/v2/spatial/projects/d-018-regional.geojson"
 
 LAYER_ORDER = [
     "A-023",
@@ -46,7 +50,6 @@ LAYER_ORDER = [
     "C-025",
     "D-008",
     "D-018",
-    "D-023",
 ]
 
 CATEGORY_BY_ELEMENT = {
@@ -621,16 +624,20 @@ def _build_spatial_documents(
 
 
 def _point_layer(
-    base: Mapping[str, Any], catalog_element: Mapping[str, Any]
+    base: Mapping[str, Any],
+    catalog_element: Mapping[str, Any],
+    payload: Mapping[str, Any],
 ) -> dict[str, Any]:
     layer = deepcopy(base)
     element_id = str(layer["elementId"])
-    feature_count = int(layer.get("featureCount", 0))
+    entities = payload.get("entities", {}).get("records", [])
+    feature_count = sum(1 for row in entities if row.get("mapEligible"))
     latest = layer.get("latestYear")
     layer.update(
         {
             "active": True,
             "enabled": True,
+            "featureCount": feature_count,
             "renderer": "cluster" if layer.get("cluster") else "point",
             "category": CATEGORY_BY_ELEMENT[element_id],
             "unit": "source-provided location",
@@ -667,6 +674,263 @@ def _point_layer(
             "zeroImputationCount": 0,
         }
     )
+    return layer
+
+
+def _multi_polygon_for_countries(
+    world: Mapping[str, Any], country_codes: list[str]
+) -> dict[str, Any]:
+    polygons: list[Any] = []
+    wanted = set(country_codes)
+    matched: set[str] = set()
+    for feature in world.get("features", []):
+        properties = feature.get("properties") or {}
+        iso3 = str(properties.get("iso3") or "")
+        if iso3 not in wanted:
+            continue
+        geometry = feature.get("geometry") or {}
+        if geometry.get("type") == "Polygon":
+            polygons.append(geometry.get("coordinates") or [])
+        elif geometry.get("type") == "MultiPolygon":
+            polygons.extend(geometry.get("coordinates") or [])
+        else:
+            raise ValueError(f"unsupported country geometry for {iso3}")
+        matched.add(iso3)
+    missing = wanted - matched
+    if missing:
+        raise ValueError(f"world country geometry missing: {sorted(missing)}")
+    return {"type": "MultiPolygon", "coordinates": polygons}
+
+
+def _d018_properties(entity: Mapping[str, Any]) -> dict[str, Any]:
+    attributes = entity.get("normalizedAttributes") or {}
+    title = str(attributes.get("projectName") or entity.get("name") or "")
+    country_names = {
+        "KHM": "Cambodia",
+        "LAO": "Lao PDR",
+        "THA": "Thailand",
+        "VNM": "Viet Nam",
+    }
+    scope_codes = list(entity.get("scopeCountries") or [])
+    approved_amount = attributes.get("approvedAmount")
+    if approved_amount in (None, ""):
+        approved_amount = attributes.get("usd")
+    return {
+        "recordId": entity.get("recordId"),
+        "elementId": "D-018",
+        "projectTitle": title,
+        "name": title,
+        "fund": "Adaptation Fund",
+        "projectCategory": attributes.get("field_20eaa6c8") or "Regional (Asia-Pacific)",
+        "participatingCountries": " · ".join(country_names[code] for code in scope_codes),
+        "scopeCountries": ",".join(scope_codes),
+        "participantCount": len(scope_codes),
+        "sector": attributes.get("sector") or "",
+        "sectorKo": "초국경 수자원 관리",
+        "status": attributes.get("status") or "",
+        "approvedAmount": approved_amount if approved_amount not in (None, "") else None,
+        "implementingEntity": attributes.get("implementingEntity") or "",
+        "officialSource": attributes.get("sourceUrl") or "",
+        "regionalProject": True,
+        "spatialScopeType": entity.get("spatialScopeType"),
+        "coordinateMeaning": entity.get("coordinateMeaning"),
+        "sourceCoordinateCount": entity.get("sourceCoordinateCount"),
+        "displayedCoordinateCount": entity.get("displayedCoordinateCount"),
+        "vietnamParticipation": "포함" if "VNM" in scope_codes else "미포함",
+        "publicSpatialNotice": entity.get("publicSpatialNotice") or "",
+        "selectionKey": entity.get("recordId"),
+    }
+
+
+def _build_d018_regional_geojson(
+    repo: pathlib.Path, payload: Mapping[str, Any]
+) -> dict[str, Any]:
+    world = json.loads(
+        (repo / "public/data/world-countries.geojson").read_text(encoding="utf-8")
+    )
+    features: list[dict[str, Any]] = []
+    records = payload.get("entities", {}).get("records", [])
+    for entity in records:
+        title = str(entity.get("name") or "")
+        lower_title = title.lower()
+        if MEKONG_EBA_TITLE_TOKEN not in lower_title and GREATER_MEKONG_TITLE_TOKEN not in lower_title:
+            continue
+        properties = _d018_properties(entity)
+        scope_codes = list(entity.get("scopeCountries") or [])
+        scope_explanation = (
+            "태국·베트남의 지역 협력범위입니다. 두 점은 공식 제안서에 명시된 세부 활동지역입니다."
+            if MEKONG_EBA_TITLE_TOKEN in lower_title
+            else "4개 참여국의 지역 협력범위입니다. 공식 제안서의 3개 파일럿 권역은 상세에 명시하지만 정밀 경계가 없어 점으로 만들지 않습니다."
+        )
+        activity_areas = (
+            "Young Basin (Thailand) · Tram Chim National Park 주변 (Viet Nam)"
+            if MEKONG_EBA_TITLE_TOKEN in lower_title
+            else "Vientiane Plains (Lao PDR–Thailand) · northwest Cambodia–Thailand border area · upper Mekong Delta (Cambodia–Viet Nam)"
+        )
+        features.append(
+            {
+                "type": "Feature",
+                "id": f"{entity['recordId']}:scope",
+                "geometry": _multi_polygon_for_countries(world, scope_codes),
+                "properties": {
+                    **properties,
+                    "geometryRole": "regional-scope",
+                    "coordinateMeaning": "project-country-scope",
+                    "displayedCoordinateCount": 0,
+                    "displayLabel": "지역 협력사업",
+                    "scopeExplanation": scope_explanation,
+                    "verifiedActivityAreas": activity_areas,
+                    "sourceEvidence": properties["officialSource"],
+                },
+            }
+        )
+        if MEKONG_EBA_TITLE_TOKEN in lower_title:
+            attributes = entity.get("normalizedAttributes") or {}
+            candidates = attributes.get("sourceCoordinateCandidates") or []
+            if len(candidates) != 2:
+                raise ValueError("Mekong EbA must expose exactly two reviewed activity sites")
+            for index, candidate in enumerate(candidates, start=1):
+                features.append(
+                    {
+                        "type": "Feature",
+                        "id": f"{entity['recordId']}:site:{index}",
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [
+                                candidate["longitude"],
+                                candidate["latitude"],
+                            ],
+                        },
+                        "properties": {
+                            **properties,
+                            "geometryRole": "activity-site",
+                            "displayedCoordinateCount": 1,
+                            "displayLabel": "세부 활동지역",
+                            "activitySiteLabel": candidate.get("label") or f"활동지역 {index}",
+                            "scopeExplanation": scope_explanation,
+                            "verifiedActivityAreas": activity_areas,
+                            "coordinateMeaning": "verified-activity-site",
+                            "sourceEvidence": "https://www.adaptation-fund.org/wp-content/uploads/2018/08/Mekong-EbA-South_Project-Proposal_6-August-2018_Clean.pdf",
+                        },
+                    }
+                )
+    if len(features) != 4:
+        raise ValueError(f"D-018 regional asset must contain 4 features, got {len(features)}")
+    return {
+        "type": "FeatureCollection",
+        "metadata": {
+            "schemaVersion": "v130-regional-project-1",
+            "elementId": "D-018",
+            "featureCount": 4,
+            "regionalScopeCount": 2,
+            "verifiedActivitySiteCount": 2,
+            "sourceProjectCount": 4,
+            "spatialProjectCount": 2,
+            "sourceCoordinateCount": 7,
+            "displayedCoordinateCount": 2,
+            "fakeGeometryCount": 0,
+            "firstCoordinateAsProjectLocationCount": 0,
+        },
+        "features": features,
+    }
+
+
+def _regional_project_layer(
+    base: Mapping[str, Any],
+    catalog_element: Mapping[str, Any],
+    regional_asset: Mapping[str, Any],
+) -> dict[str, Any]:
+    layer = deepcopy(base)
+    layer.update(
+        {
+            "active": True,
+            "enabled": True,
+            "mapMode": "regional-scope",
+            "renderer": "regional-scope",
+            "category": CATEGORY_BY_ELEMENT["D-018"],
+            "label": "적응기금 지역 협력사업",
+            "publicShortTitle": "적응기금 지역 협력사업",
+            "geometryTypes": ["MultiPolygon", "Point"],
+            "geometryUrl": REGIONAL_PROJECT_URL,
+            "featureCount": len(regional_asset["features"]),
+            "totalEntityCount": int(catalog_element.get("entityCount", 0)),
+            "unit": "사업 범위·세부 활동지역",
+            "source": "Adaptation Fund Board Secretariat",
+            "sourceOrganizations": ["Adaptation Fund Board Secretariat"],
+            "licenses": list(catalog_element.get("rights", {}).get("licenses", [])),
+            "sourceUrls": [
+                "https://www.adaptation-fund.org/projects-programmes/"
+            ],
+            "sourceYear": "2026",
+            "latestYear": "2026",
+            "spatialCoverage": "지역 협력사업 2건의 참여국 범위 2개와 검증된 세부 활동지역 2곳",
+            "missingRegions": [
+                "단일국 사업 2건은 검증된 세부 지점 또는 정밀 경계가 없어 상세에서만 제공"
+            ],
+            "accuracyNotice": "참여국 경계는 사업의 협력범위이며 사업 위치가 아닙니다. 검증된 세부 활동지역만 점으로 표시합니다.",
+            "publicSpatialNotice": "참여국 경계는 지역 협력범위를 뜻하며 실제 시설 위치를 뜻하지 않습니다.",
+            "mapBenefit": "초국경 적응사업의 참여국과 베트남 참여 여부를 한눈에 확인할 수 있습니다.",
+            "spatialLimitation": "국가 경계는 정밀 사업구역이 아니며 Greater Mekong의 원천 대표좌표 4개는 표시하지 않습니다.",
+            "detailElementId": "D-018",
+            "detailUrl": "/?element=d-018&country=VNM#element-detail",
+            "downloadStatus": "available" if catalog_element.get("downloadAllowed") else "source-restricted",
+            "selectors": {
+                "variables": [
+                    {
+                        "key": "regional-scope",
+                        "label": "지역 협력범위·세부 활동지역",
+                        "unit": "사업",
+                        "periods": ["2026"],
+                    }
+                ],
+                "periods": ["2026"],
+                "defaultVariable": "regional-scope",
+                "defaultPeriod": "2026",
+            },
+            "join": {"requiredCount": 4, "matchedCount": 4, "failures": []},
+            "spatialScopeType": "multi-country-regional",
+            "coordinateMeaning": "project-country-scope",
+            "coordinateMeanings": [
+                "project-country-scope",
+                "verified-activity-site",
+            ],
+            "scopeCountries": ["KHM", "LAO", "THA", "VNM"],
+            "sourceCoordinateCount": 6,
+            "displayedCoordinateCount": 2,
+            "regionalProject": True,
+            "aggregationLevel": "regional-project",
+            "coordinateMeaningByGeometryRole": {
+                "regional-scope": "project-country-scope",
+                "activity-site": "verified-activity-site",
+            },
+            "sourceProjectCount": 4,
+            "spatialProjectCount": 2,
+            "regionalScopeFeatureCount": 2,
+            "verifiedActivitySiteFeatureCount": 2,
+            "fakeGeometryCount": 0,
+            "zeroImputationCount": 0,
+            "filters": [],
+            "tooltipFields": [
+                "projectTitle",
+                "participatingCountries",
+                "sector",
+                "status",
+                "approvedAmount",
+                "implementingEntity",
+                "officialSource",
+                "publicSpatialNotice",
+            ],
+        }
+    )
+    layer["sourceCoordinateCount"] = 7
+    layer["displayedCoordinateCount"] = 2
+    layer["join"] = {
+        "requiredCount": 2,
+        "matchedCount": 2,
+        "failures": [],
+        "sourceEntityCount": 4,
+        "panelOnlyEntityCount": 2,
+    }
     return layer
 
 
@@ -725,6 +989,8 @@ def _transmission_layer(
             "defaultPeriod": "2016",
         },
         "join": {"requiredCount": feature_count, "matchedCount": feature_count, "failures": []},
+        "sourceCoordinateCount": int(metadata["coordinateCount"]),
+        "displayedCoordinateCount": int(metadata["coordinateCount"]),
         "active": True,
         "enabled": True,
         "fakeGeometryCount": 0,
@@ -779,13 +1045,13 @@ def _choropleth_layer(
         },
         "unit": variable["unit"],
         "spatialCoverage": (
-            "GDL 6개 권역을 명시적 63개 성·시 membership으로 표시"
+            "GDL 6개 권역값을 명시적 대응표로 63개 성·시 경계에 표시"
             if element_id == "B-021"
             else f"개편 전 63개 성·시 중 선택 계열 최대 {feature_count}개"
         ),
         "missingRegions": [] if missing_count == 0 else [f"선택 변수에 따라 최대 {missing_count}개 성·시 결측"],
         "accuracyNotice": (
-            "권역값은 명시된 GDL 권역 소속 성·시에 동일하게 표시하며 성별 추정값이 아닙니다."
+            "권역값은 명시된 GDL 권역 소속 성·시에 동일하게 표시하며 성·시별 독립 추정값이 아닙니다."
             if element_id == "B-021"
             else "누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다."
         ),
@@ -807,6 +1073,114 @@ def _choropleth_layer(
     }
 
 
+LAYER_SEMANTICS_V130: dict[str, dict[str, Any]] = {
+    "A-023": {
+        "spatialScopeType": "facility-site",
+        "coordinateMeaning": "verified-physical-site",
+        "aggregationLevel": "facility",
+        "mapBenefit": "발전소의 입지와 설비 분포를 비교할 수 있습니다.",
+        "spatialLimitation": "원천 좌표가 있는 개별 발전소만 표시합니다.",
+    },
+    "A-024": {
+        "spatialScopeType": "network",
+        "coordinateMeaning": "verified-network-geometry",
+        "aggregationLevel": "network-segment",
+        "mapBenefit": "송전망의 연결 구조와 발전소 접근성을 함께 분석할 수 있습니다.",
+        "spatialLimitation": "지오리퍼런싱 오차가 있어 정밀 설계용 위치가 아닙니다.",
+    },
+    "C-016": {
+        "spatialScopeType": "admin1",
+        "coordinateMeaning": "source-region-value",
+        "aggregationLevel": "admin1",
+        "mapBenefit": "공개된 성·시별 재생에너지 계획의 공간 차이를 비교할 수 있습니다.",
+        "spatialLimitation": "값이 공개된 성·시만 표시하며 미제공 지역은 0이 아닙니다.",
+    },
+    "B-031": {
+        "spatialScopeType": "admin1",
+        "coordinateMeaning": "source-region-value",
+        "aggregationLevel": "admin1",
+        "mapBenefit": "성·시별 산림면적 차이를 비교할 수 있습니다.",
+        "spatialLimitation": "개편 전 63개 성·시 통계 경계를 사용합니다.",
+    },
+    "B-032": {
+        "spatialScopeType": "admin1",
+        "coordinateMeaning": "source-region-value",
+        "aggregationLevel": "admin1",
+        "mapBenefit": "성·시별 수관 피복 차이를 비교할 수 있습니다.",
+        "spatialLimitation": "개편 전 63개 성·시 통계 경계를 사용합니다.",
+    },
+    "B-033": {
+        "spatialScopeType": "admin1",
+        "coordinateMeaning": "source-region-value",
+        "aggregationLevel": "admin1",
+        "mapBenefit": "성·시별 산림손실의 공간 분포를 비교할 수 있습니다.",
+        "spatialLimitation": "개편 전 63개 성·시 통계 경계를 사용합니다.",
+    },
+    "B-034": {
+        "spatialScopeType": "admin1",
+        "coordinateMeaning": "source-region-value",
+        "aggregationLevel": "admin1",
+        "mapBenefit": "성·시별 산림 탄소의 공간 차이를 비교할 수 있습니다.",
+        "spatialLimitation": "개편 전 63개 성·시 통계 경계를 사용합니다.",
+    },
+    "B-021": {
+        "spatialScopeType": "region",
+        "coordinateMeaning": "source-region-value",
+        "aggregationLevel": "six-region",
+        "mapBenefit": "6개 권역의 취약성 차이를 행정경계 위에서 비교할 수 있습니다.",
+        "spatialLimitation": "권역값을 소속 성·시에 동일 표시하며 성·시 독립 추정값이 아닙니다.",
+    },
+    "B-048": {
+        "spatialScopeType": "facility-site",
+        "coordinateMeaning": "verified-physical-site",
+        "aggregationLevel": "facility",
+        "mapBenefit": "주요 광산의 실제 입지를 다른 자원·인프라와 비교할 수 있습니다.",
+        "spatialLimitation": "공개 좌표가 검증된 주요 광산 2곳만 표시합니다.",
+    },
+    "C-025": {
+        "spatialScopeType": "project-site",
+        "coordinateMeaning": "verified-physical-site",
+        "aggregationLevel": "project-site",
+        "mapBenefit": "검증된 탄소크레딧 사업지의 기술·입지 분포를 비교할 수 있습니다.",
+        "spatialLimitation": "전국 프로그램 대표좌표 2건과 베트남 밖 잘못된 좌표 2건은 표시하지 않습니다.",
+    },
+    "D-008": {
+        "spatialScopeType": "admin1",
+        "coordinateMeaning": "source-region-value",
+        "aggregationLevel": "admin1",
+        "mapBenefit": "실제 공개된 성·시 기후지출의 지역 차이를 비교할 수 있습니다.",
+        "spatialLimitation": "3개 성·시 자료만 있으며 나머지는 0이 아니라 미제공입니다.",
+    },
+}
+
+
+def _apply_layer_semantics_v130(
+    layer: dict[str, Any], payload: Mapping[str, Any] | None = None
+) -> dict[str, Any]:
+    element_id = str(layer["elementId"])
+    semantics = LAYER_SEMANTICS_V130.get(element_id)
+    if semantics:
+        layer.update(semantics)
+    layer.setdefault("scopeCountries", ["VNM"])
+    layer.setdefault("regionalProject", False)
+    entities = (payload or {}).get("entities", {}).get("records", [])
+    source_coordinate_count = sum(
+        1
+        for entity in entities
+        if isinstance(entity.get("latitude"), (int, float))
+        and isinstance(entity.get("longitude"), (int, float))
+    )
+    renderer = layer.get("renderer")
+    if renderer in {"point", "cluster"}:
+        layer["sourceCoordinateCount"] = source_coordinate_count
+        layer["displayedCoordinateCount"] = int(layer.get("featureCount", 0))
+    else:
+        layer.setdefault("sourceCoordinateCount", 0)
+        layer.setdefault("displayedCoordinateCount", 0)
+    layer["publicSpatialNotice"] = semantics.get("spatialLimitation", "") if semantics else layer.get("publicSpatialNotice", "")
+    return layer
+
+
 def build_spatial_assets(
     repo: pathlib.Path,
     out: pathlib.Path,
@@ -817,14 +1191,27 @@ def build_spatial_assets(
     public_dir = repo / "public"
     geometry_dir = out / "geometry"
     spatial_dir = out / "spatial/layers"
+    project_spatial_dir = out / "spatial/projects"
     geometry_dir.mkdir(parents=True, exist_ok=True)
     spatial_dir.mkdir(parents=True, exist_ok=True)
+    project_spatial_dir.mkdir(parents=True, exist_ok=True)
 
     canonical_dir = repo / "tools/vietnam_spatial/source"
     adm1_path = geometry_dir / "vnm-adm1-63.geojson"
     aliases_path = geometry_dir / "vnm-adm1-aliases.json"
-    shutil.copyfile(canonical_dir / "vnm-adm1-63-source.geojson", adm1_path)
-    shutil.copyfile(canonical_dir / "vnm-adm1-aliases-source.json", aliases_path)
+    # Keep generated public assets byte-stable across Windows and CI.  The
+    # canonical sources may use CRLF, while the generated tree is normalized
+    # to LF so a rebuild does not rewrite the complete boundary files.
+    adm1_path.write_text(
+        (canonical_dir / "vnm-adm1-63-source.geojson").read_text(encoding="utf-8"),
+        encoding="utf-8",
+        newline="\n",
+    )
+    aliases_path.write_text(
+        (canonical_dir / "vnm-adm1-aliases-source.json").read_text(encoding="utf-8"),
+        encoding="utf-8",
+        newline="\n",
+    )
     adm1 = json.loads(adm1_path.read_text(encoding="utf-8"))
     aliases = json.loads(aliases_path.read_text(encoding="utf-8"))
     if len(adm1.get("features", [])) != 63:
@@ -850,24 +1237,46 @@ def build_spatial_assets(
         _write_json(path, document)
         spatial_urls[element_id] = _asset_url(path, public_dir)
 
+    d018_regional = _build_d018_regional_geojson(repo, payloads["D-018"])
+    d018_regional_path = project_spatial_dir / "d-018-regional.geojson"
+    _write_json(d018_regional_path, d018_regional)
+
     catalog_by_id = {str(row["elementId"]): row for row in catalog}
     base_layers = {
         str(row["elementId"]): row for row in base_map_index.get("layers", [])
     }
     layers: dict[str, dict[str, Any]] = {
-        element_id: _point_layer(base_layers[element_id], catalog_by_id[element_id])
-        for element_id in ["A-023", "B-048", "C-025", "D-018", "D-023"]
+        element_id: _point_layer(
+            base_layers[element_id], catalog_by_id[element_id], payloads[element_id]
+        )
+        for element_id in ["A-023", "B-048", "C-025"]
     }
     layers["A-024"] = _transmission_layer(catalog_by_id, transmission)
     for element_id, document in documents.items():
         layers[element_id] = _choropleth_layer(element_id, document, catalog_by_id)
+    layers["D-018"] = _regional_project_layer(
+        base_layers["D-018"], catalog_by_id["D-018"], d018_regional
+    )
+
+    for element_id, layer in layers.items():
+        _apply_layer_semantics_v130(layer, payloads.get(element_id))
+    layers["D-008"].update(
+        {
+            "label": "성·시 기후변화 지출",
+            "publicShortTitle": "성·시 기후변화 지출",
+            "legend": {
+                **layers["D-008"]["legend"],
+                "title": "성·시 기후변화 지출",
+            },
+        }
+    )
 
     ordered_layers = [layers[element_id] for element_id in LAYER_ORDER]
     map_feature_count = sum(int(row["featureCount"]) for row in ordered_layers)
     map_index = {
         "schemaVersion": SCHEMA_VERSION,
         "dataSchemaVersion": SCHEMA_VERSION,
-        "platformRelease": "v124",
+        "platformRelease": "v130",
         "generatedAt": GENERATED_AT,
         "countryIso3": "VNM",
         "activeMapLayerCount": len(ordered_layers),
@@ -913,6 +1322,29 @@ def build_spatial_assets(
                 "license": transmission["metadata"]["license"],
                 "attribution": transmission["metadata"]["attribution"],
                 "accuracyNotice": transmission["metadata"]["accuracyNotice"],
+            },
+            {
+                "kind": "regional-project-scope",
+                "elementId": "D-018",
+                "url": REGIONAL_PROJECT_URL,
+                "sha256": _sha256_path(d018_regional_path),
+                "featureCount": 4,
+                "geometryTypes": ["MultiPolygon", "Point"],
+                "regionalScopeCount": 2,
+                "verifiedActivitySiteCount": 2,
+                "fakeGeometryCount": 0,
+                "source": {
+                    "projectEvidence": "Adaptation Fund official project pages and proposals",
+                    "scopeBoundary": "Natural Earth-derived local country boundaries",
+                    "scopeBoundaryUrl": "/data/world-countries.geojson",
+                },
+                "version": "Adaptation Fund snapshot 2026; local country boundary release V130",
+                "license": {
+                    "projectMetadata": "Adaptation Fund Legal Notice (World Bank terms apply)",
+                    "scopeBoundary": "Natural Earth public domain",
+                },
+                "attribution": "Adaptation Fund Board Secretariat; Natural Earth",
+                "publicSpatialNotice": "참여국 경계는 협력범위이며 정밀 사업구역이나 시설 위치가 아닙니다.",
             },
         ],
         "spatialValueAssets": [

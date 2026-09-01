@@ -23,6 +23,9 @@ from typing import Any, Iterable, Mapping
 from .normalization import canonical_json, is_placeholder, nfc_text
 from .source_zip import analyze_source_zip
 from tools.vietnam_spatial.build_spatial_v124 import build_spatial_assets
+from tools.vietnam_spatial.spatial_semantics_v130 import (
+    apply_entity_spatial_semantics_v130,
+)
 
 
 SCHEMA_VERSION = "v124"
@@ -641,6 +644,8 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
             observations = deepcopy(base_payload["observations"]["records"])
             entities = deepcopy(base_payload["entities"]["records"])
 
+        entities = apply_entity_spatial_semantics_v130(element_id, entities)
+
         indicators = deepcopy(base_payload.get("meta", {}).get("indicators", []))
         if is_authorized:
             for indicator in indicators:
@@ -818,6 +823,8 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         layer = map_layers_by_element.get(element["elementId"])
         if layer is None:
             element["mapFeatureCount"] = 0
+            if element["elementId"] == "D-023":
+                element["mapMode"] = "panel-only"
             continue
         element["mapFeatureCount"] = int(layer.get("featureCount", 0))
         element["mapMode"] = layer.get("mapMode", element.get("mapMode"))
@@ -1123,6 +1130,7 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
             "adm1Geometry": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
             "adm1Aliases": "/data/vietnam/v2/geometry/vnm-adm1-aliases.json",
             "transmissionGeometry": "/data/vietnam/v2/geometry/vnm-transmission-network.geojson",
+            "regionalProjectGeometry": "/data/vietnam/v2/spatial/projects/d-018-regional.geojson",
             "spatialLayers": [
                 spatial_build["spatialAssetUrls"][element_id]
                 for element_id in sorted(spatial_build["spatialAssetUrls"])
@@ -1136,7 +1144,9 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
 
     # Asset integrity excludes itself to avoid a circular hash.
     integrity_rows: list[dict[str, Any]] = []
-    for path in sorted(item for item in out.rglob("*") if item.is_file()):
+    integrity_paths = [item for item in out.rglob("*") if item.is_file()]
+    integrity_paths.append(public_dir / "data" / "world-countries.geojson")
+    for path in sorted(integrity_paths, key=lambda item: _asset_url(item, public_dir)):
         if path.name == "asset-integrity.json":
             continue
         data = path.read_bytes()

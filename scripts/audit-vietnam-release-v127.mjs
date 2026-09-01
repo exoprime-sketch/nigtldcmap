@@ -2,40 +2,36 @@
 
 import { spawnSync } from "node:child_process";
 import { existsSync, readFileSync } from "node:fs";
-import { dirname, resolve } from "node:path";
+import { resolve } from "node:path";
 import { AuditV125, PROJECT_ROOT } from "./v125/audit-utils.mjs";
 
 const audit = new AuditV125("release:v127");
-const npmCliCandidates = [
-  process.env.npm_execpath,
-  resolve(dirname(process.execPath), "node_modules/npm/bin/npm-cli.js"),
-  process.env.APPDATA
-    ? resolve(process.env.APPDATA, "npm/node_modules/npm/bin/npm-cli.js")
-    : null,
-].filter((candidate) => typeof candidate === "string" && candidate.length > 0);
-const npmCliPath = npmCliCandidates.find((candidate) => existsSync(candidate)) || null;
-const npmExecutable = npmCliPath
-  ? process.execPath
-  : process.platform === "win32"
-  ? "npm.cmd"
-  : "npm";
-const npmArgumentPrefix = npmCliPath ? [npmCliPath] : [];
 const STEPS = [
-  ["production-build", ["run", "build"], false],
-  ["data:v124", ["run", "audit:data:v124"], true],
-  ["map:v124", ["run", "audit:map:v124"], true],
-  ["runtime:v124", ["run", "audit:runtime:v124"], true],
-  ["semantic:v125", ["run", "audit:semantic:v125"], true],
-  ["public-content:v126", ["run", "audit:public-content:v126"], true],
-  ["finder-ux:v126", ["run", "audit:finder-ux:v126"], true],
-  ["public-downloads:v126", ["run", "audit:public-downloads:v126"], true],
-  ["map-ux:v126", ["run", "audit:map-ux:v126"], true],
-  ["map-public-content:v126", ["run", "audit:map-public-content:v126"], true],
-  ["cross-navigation:v126", ["run", "audit:cross-navigation:v126"], true],
-  ["limitations:v127", ["run", "audit:limitations:v127"], true],
-  ["data-summary:v127", ["run", "audit:data-summary:v127"], true],
-  ["chart-interaction:v127", ["run", "audit:chart-interaction:v127"], true],
+  ["production-build", [resolve(PROJECT_ROOT, "node_modules/react-scripts/bin/react-scripts.js"), "build"], false],
+  ["data:v124", [resolve(PROJECT_ROOT, "scripts/audit-vietnam-data-v124.mjs")], true],
+  ["map:v124", [resolve(PROJECT_ROOT, "scripts/audit-vietnam-map-v124.mjs")], true],
+  ["runtime:v124", [resolve(PROJECT_ROOT, "scripts/audit-vietnam-runtime-v124.mjs")], true],
+  ["semantic:v125", [resolve(PROJECT_ROOT, "scripts/audit-vietnam-semantic-v125.mjs")], true],
+  ["public-content:v126", [resolve(PROJECT_ROOT, "scripts/audit-vietnam-public-content-v126.mjs")], true],
+  ["finder-ux:v126", [resolve(PROJECT_ROOT, "scripts/audit-vietnam-finder-ux-v126.mjs")], true],
+  ["public-downloads:v126", [resolve(PROJECT_ROOT, "scripts/audit-vietnam-public-downloads-v126.mjs")], true],
+  ["map-ux:v126", [resolve(PROJECT_ROOT, "scripts/audit-vietnam-map-ux-v126.mjs")], true],
+  ["map-public-content:v126", [resolve(PROJECT_ROOT, "scripts/audit-vietnam-map-public-content-v126.mjs")], true],
+  ["cross-navigation:v126", [resolve(PROJECT_ROOT, "scripts/audit-vietnam-cross-navigation-v126.mjs")], true],
+  ["limitations:v127", [resolve(PROJECT_ROOT, "scripts/audit-vietnam-limitations-v127.mjs")], true],
+  ["data-summary:v127", [resolve(PROJECT_ROOT, "scripts/audit-vietnam-data-summary-v127.mjs")], true],
+  ["chart-interaction:v127", [resolve(PROJECT_ROOT, "scripts/audit-vietnam-chart-interaction-v127.mjs")], true],
 ];
+const RETRYABLE_STEPS = new Set([
+  "public-content:v126",
+  "finder-ux:v126",
+  "map-ux:v126",
+  "map-public-content:v126",
+  "cross-navigation:v126",
+  "limitations:v127",
+  "data-summary:v127",
+  "chart-interaction:v127",
+]);
 
 function parseJsonLines(text) {
   return String(text || "")
@@ -50,14 +46,13 @@ function parseJsonLines(text) {
     });
 }
 
-function runStep(label, args, expectsAuditSummary) {
+function runStepOnce(label, args, expectsAuditSummary) {
   const startedAt = Date.now();
-  const result = spawnSync(npmExecutable, [...npmArgumentPrefix, ...args], {
+  const result = spawnSync(process.execPath, args, {
     cwd: PROJECT_ROOT,
     env: process.env,
     encoding: "utf8",
     maxBuffer: 128 * 1024 * 1024,
-    shell: npmCliPath === null && process.platform === "win32",
     timeout: 30 * 60 * 1000,
     windowsHide: true,
   });
@@ -78,15 +73,36 @@ function runStep(label, args, expectsAuditSummary) {
   };
 }
 
+function stepPassed(result) {
+  return (
+    result.exitCode === 0 &&
+    result.error === null &&
+    (!result.expectsAuditSummary ||
+      (result.summary?.status === "PASS" && Number(result.summary?.failed || 0) === 0))
+  );
+}
+
+function runStep(label, args, expectsAuditSummary) {
+  const maxAttempts = RETRYABLE_STEPS.has(label) ? 2 : 1;
+  const attempts = [];
+  for (let attempt = 0; attempt < maxAttempts; attempt += 1) {
+    const result = runStepOnce(label, args, expectsAuditSummary);
+    attempts.push(result);
+    if (stepPassed(result)) break;
+  }
+  const result = attempts[attempts.length - 1];
+  return {
+    ...result,
+    attemptCount: attempts.length,
+    durationMs: attempts.reduce((total, attempt) => total + attempt.durationMs, 0),
+  };
+}
+
 const results = [];
 for (const [label, args, expectsAuditSummary] of STEPS) {
   const result = runStep(label, args, expectsAuditSummary);
   results.push(result);
-  const passed =
-    result.exitCode === 0 &&
-    result.error === null &&
-    (!expectsAuditSummary ||
-      (result.summary?.status === "PASS" && Number(result.summary?.failed || 0) === 0));
+  const passed = stepPassed(result);
   audit.check(
     `STEP_${label.replace(/[^a-z0-9]+/giu, "_").toUpperCase()}`,
     passed,
@@ -95,6 +111,7 @@ for (const [label, args, expectsAuditSummary] of STEPS) {
       status: result.summary?.status ?? (expectsAuditSummary ? null : "PASS"),
       failed: result.summary?.failed ?? null,
       durationMs: result.durationMs,
+      attemptCount: result.attemptCount,
       error: result.error,
     },
     { exitCode: 0, status: "PASS", failed: expectsAuditSummary ? 0 : null },

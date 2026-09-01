@@ -91,6 +91,7 @@ export interface VietnamCatalogElementV124 {
     | "polygon"
     | "raster"
     | "country-aggregate"
+    | "regional-scope"
     | "panel-only"
     | "not-applicable";
   latestYear?: number | string | null;
@@ -292,7 +293,8 @@ export type VietnamMapRendererV124 =
   | "cluster"
   | "line"
   | "admin1-choropleth"
-  | "partial-choropleth";
+  | "partial-choropleth"
+  | "regional-scope";
 
 export interface VietnamMapSelectorOptionV124 {
   key: string;
@@ -340,6 +342,35 @@ export type VietnamMapLayerV124 = Omit<VietnamMapLayerV121, "assetRef"> & {
   join: VietnamMapJoinV124;
   fakeGeometryCount: number;
   zeroImputationCount: number;
+  spatialScopeType:
+    | "facility-site"
+    | "project-site"
+    | "multi-site"
+    | "admin1"
+    | "region"
+    | "country"
+    | "multi-country-regional"
+    | "network"
+    | "raster"
+    | "unknown";
+  coordinateMeaning:
+    | "verified-physical-site"
+    | "verified-activity-site"
+    | "verified-network-geometry"
+    | "source-region-value"
+    | "project-country-scope"
+    | "first-source-coordinate"
+    | "representative-coordinate"
+    | "centroid"
+    | "unknown";
+  scopeCountries: string[];
+  sourceCoordinateCount: number;
+  displayedCoordinateCount: number;
+  regionalProject: boolean;
+  aggregationLevel: string;
+  publicSpatialNotice: string;
+  mapBenefit?: string;
+  spatialLimitation?: string;
 };
 
 export interface VietnamSpatialValueV124 {

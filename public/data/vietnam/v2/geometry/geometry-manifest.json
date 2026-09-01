@@ -67,11 +67,37 @@
       "source": "World Bank Group / ENERGYDATA.INFO",
       "url": "/data/vietnam/v2/geometry/vnm-transmission-network.geojson",
       "version": "2016 network; source resource last modified 2018-11-14"
+    },
+    {
+      "attribution": "Adaptation Fund Board Secretariat; Natural Earth",
+      "elementId": "D-018",
+      "fakeGeometryCount": 0,
+      "featureCount": 4,
+      "geometryTypes": [
+        "MultiPolygon",
+        "Point"
+      ],
+      "kind": "regional-project-scope",
+      "license": {
+        "projectMetadata": "Adaptation Fund Legal Notice (World Bank terms apply)",
+        "scopeBoundary": "Natural Earth public domain"
+      },
+      "publicSpatialNotice": "참여국 경계는 협력범위이며 정밀 사업구역이나 시설 위치가 아닙니다.",
+      "regionalScopeCount": 2,
+      "sha256": "4c7819ea4b0f5c35dcce1a8844ef92ada70c7a6ada77331d4d156f470db0fd55",
+      "source": {
+        "projectEvidence": "Adaptation Fund official project pages and proposals",
+        "scopeBoundary": "Natural Earth-derived local country boundaries",
+        "scopeBoundaryUrl": "/data/world-countries.geojson"
+      },
+      "url": "/data/vietnam/v2/spatial/projects/d-018-regional.geojson",
+      "verifiedActivitySiteCount": 2,
+      "version": "Adaptation Fund snapshot 2026; local country boundary release V130"
     }
   ],
   "boundarySystem": "pre-2025-63",
   "countryIso3": "VNM",
-  "generatedAt": "2026-08-27T00:00:00Z",
+  "generatedAt": "2026-09-01T00:00:00Z",
   "regionMappings": {
     "B-021": {
       "joinFailureCount": 0,
@@ -163,7 +189,7 @@
       "joinFailureCount": 0,
       "matchedAdm1Count": 63,
       "publishedValueCount": 21672,
-      "sha256": "8a9aeb8a270fb8cd9591cbd35c487a5f11616fd2d5bb5c7bbf4f4c42c13f903e",
+      "sha256": "db1ed2bd677f7909e4c7d5fee8b4e73403479ccc4cec0932776670ec3f4e3afa",
       "url": "/data/vietnam/v2/spatial/layers/b-021.json",
       "zeroImputationCount": 0
     },
@@ -172,7 +198,7 @@
       "joinFailureCount": 0,
       "matchedAdm1Count": 63,
       "publishedValueCount": 189,
-      "sha256": "0812ca9b8e9f244637b532dd2f803835dcbe3f478f9f68aad7b687d84493db4e",
+      "sha256": "abb149eff15bea49c2255e587b014212354271a1e3c09747bf1837808c9392e7",
       "url": "/data/vietnam/v2/spatial/layers/b-031.json",
       "zeroImputationCount": 0
     },
@@ -181,7 +207,7 @@
       "joinFailureCount": 0,
       "matchedAdm1Count": 63,
       "publishedValueCount": 126,
-      "sha256": "61d5189f705e15244ea7e28c70b90b4665e5cf72eb3da418db965734e41b4777",
+      "sha256": "c0d1630bf0fa123aff016f4cc91f4e42dd4fe45778f942996f03c2db9876cdf5",
       "url": "/data/vietnam/v2/spatial/layers/b-032.json",
       "zeroImputationCount": 0
     },
@@ -190,7 +216,7 @@
       "joinFailureCount": 0,
       "matchedAdm1Count": 63,
       "publishedValueCount": 1575,
-      "sha256": "f1f712b508b8e485aec96322217b23d8c48dcacd4689d1d8ca42d16d15e2b699",
+      "sha256": "5ba600f8a6eb62a77d2bf817b244704613618e181373471ebb1ba2bbf0a80fac",
       "url": "/data/vietnam/v2/spatial/layers/b-033.json",
       "zeroImputationCount": 0
     },
@@ -199,7 +225,7 @@
       "joinFailureCount": 0,
       "matchedAdm1Count": 63,
       "publishedValueCount": 441,
-      "sha256": "daf5b7ee1c754628f45eec7283cf768cd66eda5553fd35e7e9e7eb211240506b",
+      "sha256": "39d5cadadb54114499a431b0c6389be7c5930a811edc49b56d58ffc82728031c",
       "url": "/data/vietnam/v2/spatial/layers/b-034.json",
       "zeroImputationCount": 0
     },
@@ -208,7 +234,7 @@
       "joinFailureCount": 0,
       "matchedAdm1Count": 63,
       "publishedValueCount": 639,
-      "sha256": "52ef32c6510b0e36b39771769b9f885ca450dea792be11095374073f30a269c3",
+      "sha256": "0498ea63c60d87b10f2d9f3f288149650aa4364747388b5e72c3865cdd8a8dc4",
       "url": "/data/vietnam/v2/spatial/layers/c-016.json",
       "zeroImputationCount": 0
     },
@@ -217,13 +243,13 @@
       "joinFailureCount": 0,
       "matchedAdm1Count": 3,
       "publishedValueCount": 3,
-      "sha256": "4f297f3cb84ea43c25bed98bbc6b67d6628b93ea062f87063f03c48010a75dee",
+      "sha256": "cef9acc746d4452d3b05e2aab7998391a527fc68932ae1022e73ab05ac68392a",
       "url": "/data/vietnam/v2/spatial/layers/d-008.json",
       "zeroImputationCount": 0
     }
   ],
   "validation": {
-    "activeMapLayerCount": 13,
+    "activeMapLayerCount": 12,
     "actualLineGeometry": true,
     "adm1FeatureCount": 63,
     "adm1JoinFailureCount": 0,
@@ -231,7 +257,7 @@
     "emptyGeometryCount": 0,
     "fakeGeometryCount": 0,
     "invalidGeometryCount": 0,
-    "mapFeatureCount": 2904,
+    "mapFeatureCount": 2900,
     "transmissionFeatureCount": 606,
     "zeroImputationCount": 0
   }

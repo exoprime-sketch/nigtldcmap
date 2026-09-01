@@ -146,7 +146,6 @@ const PUBLIC_LAYER_TITLES = new Map([
   ["C-025", "탄소크레딧 사업"],
   ["D-008", "지역 기후예산"],
   ["D-018", "적응기금 사업"],
-  ["D-023", "국제협력·기후재원 사업"],
 ]);
 const selectionHighlightContract = {
   selectionLayerPerRenderer:
@@ -201,7 +200,7 @@ const mapFeatureCount = layers.reduce(
   (sum, layer) => sum + Number(layer?.featureCount || 0),
   0
 );
-const pointLayerIds = new Set(["A-023", "B-048", "C-025", "D-018", "D-023"]);
+const pointLayerIds = new Set(["A-023", "B-048", "C-025"]);
 const spatialLayerIds = new Set([
   "B-021",
   "B-031",
@@ -234,9 +233,12 @@ for (const layer of layers) {
   const isPoint = pointLayerIds.has(elementId);
   const isSpatial = spatialLayerIds.has(elementId);
   const isTransmission = elementId === "A-024";
+  const isRegional = layer?.renderer === "regional-scope";
   const publicSpatialType = isTransmission
     ? "선형 인프라"
-    : isSpatial
+    : isRegional
+      ? "지역 협력범위"
+      : isSpatial
       ? "지역별 색상지도"
       : elementId === "A-023" || elementId === "B-048"
         ? "시설 위치"
@@ -578,8 +580,8 @@ audit.check(
   },
   { exitCode: 0, reportStatus: "PASS" }
 );
-audit.check("MAP_LAYER_COUNT", layers.length === 13, layers.length, 13);
-audit.check("MAP_FEATURE_COUNT", mapFeatureCount === 2904, mapFeatureCount, 2904);
+audit.check("MAP_LAYER_COUNT", layers.length === 12, layers.length, 12);
+audit.check("MAP_FEATURE_COUNT", mapFeatureCount === 2900, mapFeatureCount, 2900);
 audit.check("ADM1_FEATURE_COUNT", adm1Codes.size === 63, adm1Codes.size, 63);
 audit.check("PACK_INTEGRITY", packs.errors.length === 0, packs.errors, []);
 audit.check(
@@ -648,7 +650,7 @@ audit.check(
 );
 audit.check(
   "ALL_LAYER_BROWSER_TOOLTIP_CLICK",
-  interactionRows.length === 13 &&
+  interactionRows.length === 12 &&
     interactionRows.every(
       (row) => row?.tooltip === true && row?.detail === true
     ),
@@ -658,7 +660,7 @@ audit.check(
     detail: row?.detail,
     surface: row?.surface,
   })),
-  "13/13 tooltip and click detail"
+  "12/12 tooltip and click detail"
 );
 audit.check(
   "PRIMARY_CONTEXT_ROLE_AND_SELECTION",

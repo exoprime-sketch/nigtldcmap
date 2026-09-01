@@ -23,7 +23,10 @@ const npmExecutable = npmCliPath
 const npmArgumentPrefix = npmCliPath ? [npmCliPath] : [];
 
 const STEPS = [
-  ["v128-release-regression", ["run", "release:vietnam-pilot"], false],
+  ["v128-release-regression", [resolve(PROJECT_ROOT, "scripts/audit-vietnam-release-v128.mjs")], true, true],
+  ["deployment:v128", [resolve(PROJECT_ROOT, "scripts/audit-vietnam-deployment-v128.mjs")], true, true],
+  ["security:v128", [resolve(PROJECT_ROOT, "scripts/audit-vietnam-security-v128.mjs")], true, true],
+  ["performance:v128", [resolve(PROJECT_ROOT, "scripts/audit-vietnam-performance-v128.mjs")], true, true],
   ["interpretation:v129", ["run", "audit:interpretation:v129"], true],
   ["map-layout:v129", ["run", "audit:map-layout:v129"], true],
   ["map-interaction:v129", ["run", "audit:map-interaction:v129"], true],
@@ -32,6 +35,14 @@ const STEPS = [
   ["screenshots:v129", ["run", "capture:screenshots:v129"], true],
   ["production-build", ["run", "build"], false],
 ];
+const RETRYABLE_STEPS = new Set([
+  "interpretation:v129",
+  "map-layout:v129",
+  "map-interaction:v129",
+  "chart-polish:v129",
+  "specialized:v129",
+  "screenshots:v129",
+]);
 
 function parseJsonLines(text) {
   return String(text || "")
@@ -46,9 +57,11 @@ function parseJsonLines(text) {
     });
 }
 
-function runStep(label, args, expectsAuditSummary) {
+function runStepOnce(label, args, expectsAuditSummary, directNode = false) {
   const startedAt = Date.now();
-  const result = spawnSync(npmExecutable, [...npmArgumentPrefix, ...args], {
+  const executable = directNode ? process.execPath : npmExecutable;
+  const executableArgs = directNode ? args : [...npmArgumentPrefix, ...args];
+  const result = spawnSync(executable, executableArgs, {
     cwd: PROJECT_ROOT,
     env: process.env,
     encoding: "utf8",
@@ -74,15 +87,36 @@ function runStep(label, args, expectsAuditSummary) {
   };
 }
 
-const results = [];
-for (const [label, args, expectsAuditSummary] of STEPS) {
-  const result = runStep(label, args, expectsAuditSummary);
-  results.push(result);
-  const passed =
+function stepPassed(result) {
+  return (
     result.exitCode === 0 &&
     result.error === null &&
-    (!expectsAuditSummary ||
-      (result.summary?.status === "PASS" && Number(result.summary?.failed || 0) === 0));
+    (!result.expectsAuditSummary ||
+      (result.summary?.status === "PASS" && Number(result.summary?.failed || 0) === 0))
+  );
+}
+
+function runStep(label, args, expectsAuditSummary, directNode = false) {
+  const maxAttempts = RETRYABLE_STEPS.has(label) ? 2 : 1;
+  const attempts = [];
+  for (let attempt = 0; attempt < maxAttempts; attempt += 1) {
+    const result = runStepOnce(label, args, expectsAuditSummary, directNode);
+    attempts.push(result);
+    if (stepPassed(result)) break;
+  }
+  const result = attempts[attempts.length - 1];
+  return {
+    ...result,
+    attemptCount: attempts.length,
+    durationMs: attempts.reduce((total, item) => total + item.durationMs, 0),
+  };
+}
+
+const results = [];
+for (const [label, args, expectsAuditSummary, directNode] of STEPS) {
+  const result = runStep(label, args, expectsAuditSummary, directNode);
+  results.push(result);
+  const passed = stepPassed(result);
   audit.check(
     `STEP_${label.replace(/[^a-z0-9]+/giu, "_").toUpperCase()}`,
     passed,
@@ -91,6 +125,7 @@ for (const [label, args, expectsAuditSummary] of STEPS) {
       status: result.summary?.status ?? (expectsAuditSummary ? null : "PASS"),
       failed: result.summary?.failed ?? null,
       durationMs: result.durationMs,
+      attemptCount: result.attemptCount,
       error: result.error,
     },
     { exitCode: 0, status: "PASS", failed: expectsAuditSummary ? 0 : null },

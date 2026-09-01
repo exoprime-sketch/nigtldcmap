@@ -1109,6 +1109,9 @@ export default function App() {
           <Suspense fallback={<DeferredPageFallback label="데이터 지도를 준비하고 있습니다" />}>
             <RealMapExplorerPage
               onOpenElement={openElement}
+              onOpenDataFinder={() =>
+                openExplorerFromGlobalSearch("", "VNM", null)
+              }
               onOpenCountry={(iso3) => {
                 openExplorerFromGlobalSearch("", iso3, null);
               }}

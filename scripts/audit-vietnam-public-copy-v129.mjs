@@ -266,7 +266,7 @@ try {
 
   try {
     await navigate(browser.cdp, `${server.url}/?country=VNM#map`);
-    await waitForValue(browser.cdp, `document.querySelectorAll('[data-testid="map-analysis-preset"]').length === 5 && document.querySelectorAll('.cdp-layer-card[data-map-element]').length === 13`, { timeoutMs: 35_000 });
+    await waitForValue(browser.cdp, `document.querySelectorAll('[data-testid="map-analysis-preset"]').length === 5 && document.querySelectorAll('.cdp-layer-card[data-map-element]').length === 12`, { timeoutMs: 35_000 });
     const emptyResult = await evaluateValue(browser.cdp, scanExpression("map:empty"));
     recordScan("map:empty", emptyResult);
     if (emptyResult.h1.length !== 1 || emptyResult.h1[0] !== "데이터 지도") {

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v129-audit-report-1",
-  "generatedAt": "2026-09-01T00:22:35.544Z",
+  "generatedAt": "2026-09-01T05:26:24.640Z",
   "audit": "map-feature-join:v129",
   "status": "PASS",
   "summary": {
@@ -11,10 +11,10 @@
     "failed": 0,
     "total": 18,
     "failedChecks": [],
-    "mapLayerCount": 13,
-    "mapFeatureCount": 2904,
+    "mapLayerCount": 12,
+    "mapFeatureCount": 2900,
     "adm1FeatureCount": 63,
-    "pointFeatureCount": 1917,
+    "pointFeatureCount": 1909,
     "transmissionFeatureCount": 606,
     "mapOrphanFeatureCount": 0,
     "mapUnknownSymbolCount": 0,
@@ -179,7 +179,7 @@
       {
         "elementId": "C-025",
         "publicTitle": "탄소크레딧 사업",
-        "featureCount": 20,
+        "featureCount": 18,
         "symbolIdentified": true,
         "publicSpatialType": "사업 위치",
         "primaryRoleVerified": true,
@@ -213,26 +213,9 @@
       {
         "elementId": "D-018",
         "publicTitle": "적응기금 사업",
-        "featureCount": 3,
+        "featureCount": 4,
         "symbolIdentified": true,
-        "publicSpatialType": "사업 위치",
-        "primaryRoleVerified": true,
-        "contextRoleVerified": true,
-        "selectorLabelUnitPeriod": true,
-        "hoverTooltip": true,
-        "clickDetail": true,
-        "selectionHighlight": true,
-        "publicCaveat": true,
-        "detailLink": true,
-        "downloadStatus": true,
-        "result": "PASS"
-      },
-      {
-        "elementId": "D-023",
-        "publicTitle": "국제협력·기후재원 사업",
-        "featureCount": 3,
-        "symbolIdentified": true,
-        "publicSpatialType": "사업 위치",
+        "publicSpatialType": "지역 협력범위",
         "primaryRoleVerified": true,
         "contextRoleVerified": true,
         "selectorLabelUnitPeriod": true,
@@ -264,24 +247,8 @@
       },
       {
         "elementId": "C-025",
-        "visibleFeatureCount": 20,
-        "eligiblePublicRecordCount": 20,
-        "duplicateRecordIdCount": 0,
-        "publicDetailFailureCount": 0,
-        "result": "PASS"
-      },
-      {
-        "elementId": "D-018",
-        "visibleFeatureCount": 3,
-        "eligiblePublicRecordCount": 3,
-        "duplicateRecordIdCount": 0,
-        "publicDetailFailureCount": 0,
-        "result": "PASS"
-      },
-      {
-        "elementId": "D-023",
-        "visibleFeatureCount": 3,
-        "eligiblePublicRecordCount": 3,
+        "visibleFeatureCount": 18,
+        "eligiblePublicRecordCount": 18,
         "duplicateRecordIdCount": 0,
         "publicDetailFailureCount": 0,
         "result": "PASS"
@@ -394,16 +361,16 @@
       "audit": "map-feature-join:v129",
       "name": "MAP_LAYER_COUNT",
       "status": "PASS",
-      "actual": 13,
-      "expected": 13
+      "actual": 12,
+      "expected": 12
     },
     {
       "type": "check",
       "audit": "map-feature-join:v129",
       "name": "MAP_FEATURE_COUNT",
       "status": "PASS",
-      "actual": 2904,
-      "expected": 2904
+      "actual": 2900,
+      "expected": 2900
     },
     {
       "type": "check",
@@ -586,15 +553,9 @@
           "tooltip": true,
           "detail": true,
           "surface": "map-canvas"
-        },
-        {
-          "elementId": "D-023",
-          "tooltip": true,
-          "detail": true,
-          "surface": "map-canvas"
         }
       ],
-      "expected": "13/13 tooltip and click detail"
+      "expected": "12/12 tooltip and click detail"
     },
     {
       "type": "check",
@@ -661,10 +622,10 @@
       "expected": []
     }
   ],
-  "mapLayerCount": 13,
-  "mapFeatureCount": 2904,
+  "mapLayerCount": 12,
+  "mapFeatureCount": 2900,
   "adm1FeatureCount": 63,
-  "pointFeatureCount": 1917,
+  "pointFeatureCount": 1909,
   "transmissionFeatureCount": 606,
   "mapOrphanFeatureCount": 0,
   "mapUnknownSymbolCount": 0,
@@ -829,7 +790,7 @@
     {
       "elementId": "C-025",
       "publicTitle": "탄소크레딧 사업",
-      "featureCount": 20,
+      "featureCount": 18,
       "symbolIdentified": true,
       "publicSpatialType": "사업 위치",
       "primaryRoleVerified": true,
@@ -863,26 +824,9 @@
     {
       "elementId": "D-018",
       "publicTitle": "적응기금 사업",
-      "featureCount": 3,
+      "featureCount": 4,
       "symbolIdentified": true,
-      "publicSpatialType": "사업 위치",
-      "primaryRoleVerified": true,
-      "contextRoleVerified": true,
-      "selectorLabelUnitPeriod": true,
-      "hoverTooltip": true,
-      "clickDetail": true,
-      "selectionHighlight": true,
-      "publicCaveat": true,
-      "detailLink": true,
-      "downloadStatus": true,
-      "result": "PASS"
-    },
-    {
-      "elementId": "D-023",
-      "publicTitle": "국제협력·기후재원 사업",
-      "featureCount": 3,
-      "symbolIdentified": true,
-      "publicSpatialType": "사업 위치",
+      "publicSpatialType": "지역 협력범위",
       "primaryRoleVerified": true,
       "contextRoleVerified": true,
       "selectorLabelUnitPeriod": true,
@@ -914,24 +858,8 @@
     },
     {
       "elementId": "C-025",
-      "visibleFeatureCount": 20,
-      "eligiblePublicRecordCount": 20,
-      "duplicateRecordIdCount": 0,
-      "publicDetailFailureCount": 0,
-      "result": "PASS"
-    },
-    {
-      "elementId": "D-018",
-      "visibleFeatureCount": 3,
-      "eligiblePublicRecordCount": 3,
-      "duplicateRecordIdCount": 0,
-      "publicDetailFailureCount": 0,
-      "result": "PASS"
-    },
-    {
-      "elementId": "D-023",
-      "visibleFeatureCount": 3,
-      "eligiblePublicRecordCount": 3,
+      "visibleFeatureCount": 18,
+      "eligiblePublicRecordCount": 18,
       "duplicateRecordIdCount": 0,
       "publicDetailFailureCount": 0,
       "result": "PASS"

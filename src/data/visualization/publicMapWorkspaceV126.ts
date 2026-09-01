@@ -31,8 +31,7 @@ export type PublicMapPresetElementIdV126 =
   | "C-016"
   | "C-025"
   | "D-008"
-  | "D-018"
-  | "D-023";
+  | "D-018";
 
 export interface PublicMapPresetLayerV126 {
   elementId: PublicMapPresetElementIdV126;
@@ -112,17 +111,20 @@ export const PUBLIC_MAP_WORKSPACE_PRESETS_V126: readonly [
         variable: "provincial-climate-budget",
         period: "2010-2013",
       },
-      { elementId: "D-018", variable: "locations", period: "2026" },
+      { elementId: "D-018", variable: "regional-scope", period: "2026" },
     ],
   },
   {
     id: "CLIMATE_FINANCE_PROJECTS",
     labelKo: "기후재원 사업",
-    descriptionKo: "국제협력 + 탄소크레딧·적응기금",
-    primary: { elementId: "D-023", variable: "locations", period: "2026" },
+    descriptionKo: "적응기금 지역 협력범위 + 검증된 탄소사업지",
+    primary: {
+      elementId: "D-018",
+      variable: "regional-scope",
+      period: "2026",
+    },
     context: [
       { elementId: "C-025", variable: "locations", period: "2026" },
-      { elementId: "D-018", variable: "locations", period: "2026" },
     ],
   },
 ];
@@ -247,7 +249,8 @@ export type PublicMapSpatialTypeV126 =
   | "location"
   | "network"
   | "admin1-complete"
-  | "admin1-partial";
+  | "admin1-partial"
+  | "regional-scope";
 
 export interface PublicMapSpatialTypeCopyV126 {
   labelKo: string;
@@ -274,6 +277,11 @@ export const PUBLIC_MAP_SPATIAL_TYPE_COPY_V126: Record<
     labelKo: "일부 지역 자료",
     descriptionKo: "실제 값이 공개된 성·시만 구분해 표시합니다.",
   },
+  "regional-scope": {
+    labelKo: "지역 협력범위",
+    descriptionKo:
+      "참여국 범위를 표시하며 검증된 세부 활동지역만 점으로 표시합니다.",
+  },
 };
 
 export const A024_PUBLIC_TITLE_V126 = "베트남 송전망";
@@ -294,7 +302,6 @@ const PUBLIC_MAP_LAYER_TITLES_V126: Record<string, string> = {
   "C-025": "탄소크레딧 사업",
   "D-008": "지역 기후예산",
   "D-018": "적응기금 사업",
-  "D-023": "국제협력·기후재원 사업",
 };
 
 const PUBLIC_MAP_LAYER_ACCURACY_V126: Record<string, string> = {
@@ -326,6 +333,7 @@ export function publicMapSpatialTypeV126(
   renderer: VietnamMapRendererV124
 ): PublicMapSpatialTypeV126 {
   if (renderer === "line") return "network";
+  if (renderer === "regional-scope") return "regional-scope";
   if (renderer === "admin1-choropleth") return "admin1-complete";
   if (renderer === "partial-choropleth") return "admin1-partial";
   return "location";
@@ -368,7 +376,7 @@ export function publicMapLayerCopyV126(
   const spatialCopy = PUBLIC_MAP_SPATIAL_TYPE_COPY_V126[spatialType];
   const spatialTypeLabelKo =
     spatialType === "location"
-      ? ["C-025", "D-018", "D-023"].includes(input.elementId)
+      ? ["C-025", "D-018"].includes(input.elementId)
         ? "사업 위치"
         : "시설 위치"
       : spatialCopy.labelKo;
