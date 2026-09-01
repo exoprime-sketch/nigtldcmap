@@ -441,7 +441,51 @@ async function clickRenderedPrimaryFeature(
       return null;
     })()`
   );
-  if (!surface) throw new Error(`visible ${preferredKind} map surface unavailable`);
+  if (!surface) {
+    const surfaceDiagnostic = await evaluateValue(
+      cdp,
+      `(() => {
+        const describe = (node) => {
+          if (!node) return null;
+          const style = getComputedStyle(node);
+          const rect = node.getBoundingClientRect();
+          return {
+            className: node.getAttribute('class'),
+            display: style.display,
+            visibility: style.visibility,
+            opacity: style.opacity,
+            width: rect.width,
+            height: rect.height,
+          };
+        };
+        const host = document.querySelector('.cdp-map-canvas');
+        const fallback = document.querySelector('.cdp-map-fallback');
+        const layout = document.querySelector('.cdp-map-layout');
+        const wrap = document.querySelector('.cdp-map-canvas-wrap');
+        const selector = ${JSON.stringify(preferredKind)} === 'line'
+          ? '[data-testid="map-selectable-network"]'
+          : ${JSON.stringify(preferredKind)} === 'point'
+          ? '[data-testid="map-selectable-location"]'
+          : '[data-testid="map-selectable-adm1-feature"]';
+        return {
+          host: describe(host),
+          canvas: describe(host?.querySelector('canvas')),
+          fallback: describe(fallback),
+          layout: describe(layout),
+          wrap: describe(wrap),
+          layoutChildren: [...(layout?.children || [])].map((node) => describe(node)),
+          layoutGridColumns: layout ? getComputedStyle(layout).gridTemplateColumns : null,
+          feature: describe(fallback?.querySelector(selector)),
+          selector,
+          mapStatus: document.querySelector('.cdp-map-status-badge')?.textContent?.trim() || null,
+          overlay: document.querySelector('.cdp-map-overlay-card')?.textContent?.replace(/\\s+/gu, ' ').trim() || null,
+        };
+      })()`
+    );
+    throw new Error(
+      `visible ${preferredKind} map surface unavailable: ${JSON.stringify(surfaceDiagnostic)}`
+    );
+  }
 
   const selectedExpression = `(() => {
     const normalize = (value) => String(value || '').replace(/\\s+/gu, ' ').trim();

@@ -1,3 +1,5 @@
+import { publicAssetUrlV128 } from "../../utils/publicAssetUrlV128";
+
 export interface WorldCountryBoundaryProperties {
   iso3: string;
   nameEn: string;
@@ -21,7 +23,9 @@ export interface WorldCountryBoundaryCollection {
   features: WorldCountryBoundaryFeature[];
 }
 
-const WORLD_COUNTRY_BOUNDARIES_URL = "/data/world-countries.geojson";
+const WORLD_COUNTRY_BOUNDARIES_URL = publicAssetUrlV128(
+  "data/world-countries.geojson"
+);
 let boundaryPromise: Promise<WorldCountryBoundaryCollection> | null = null;
 
 function isBoundaryCollection(

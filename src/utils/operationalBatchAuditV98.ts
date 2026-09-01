@@ -6,6 +6,7 @@ import {
   SOURCE_REFRESH_ACTIONS_V98,
   VERIFIED_LOCATIONS_V98,
 } from "../data/operations/operationalBatchV98";
+import { publicAssetUrlV128 } from "./publicAssetUrlV128";
 
 export interface OperationalBatchAuditV98 {
   status: "READY_FOR_REFRESH" | "BLOCKED";
@@ -52,7 +53,7 @@ export async function runOperationalBatchAuditV98(): Promise<OperationalBatchAud
 
   try {
     const response = await fetch(
-      "/data/gcf/gcf-priority-country-projects-2026-08-11.json",
+      publicAssetUrlV128("data/gcf/gcf-priority-country-projects-2026-08-11.json"),
       { cache: "no-store" }
     );
     if (!response.ok) {

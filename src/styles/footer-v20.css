@@ -4,6 +4,14 @@
   text-decoration: none;
 }
 
+.footer-grid nav button,
+.footer-bottom a {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
 .footer-bottom a:hover,
 .footer-bottom a:focus-visible {
   color: var(--white);

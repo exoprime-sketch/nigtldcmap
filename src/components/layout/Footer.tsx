@@ -1,4 +1,5 @@
 import type { View } from "../../app/navigation";
+import { publicAssetUrlV128 } from "../../utils/publicAssetUrlV128";
 import { SERVICE_LINKS } from "../../config/serviceLinks";
 import "../../styles/brand-v15.css";
 import "../../styles/footer-v20.css";
@@ -14,7 +15,7 @@ export default function Footer({ onNavigate }: FooterProps) {
         <div className="footer-brand-block footer-brand-v15">
           <span className="footer-logo-frame-v15">
             <img
-              src="/assets/brand/nigt-logo-full.png"
+              src={publicAssetUrlV128("assets/brand/nigt-logo-full.png")}
               alt="국가녹색기술연구소"
             />
           </span>
@@ -32,6 +33,9 @@ export default function Footer({ onNavigate }: FooterProps) {
           </button>
           <button type="button" onClick={() => onNavigate("download")}>
             데이터 다운로드
+          </button>
+          <button type="button" onClick={() => onNavigate("guide")}>
+            데이터 이용안내
           </button>
         </nav>
       </div>

@@ -6,18 +6,22 @@ import type {
   IndicatorSemanticsIndexV125,
 } from "./semanticTypesV125";
 import { ELEMENT_VISUALIZATION_SUMMARIES_V125 } from "./generatedVisualizationContractsV125";
+import { publicAssetUrlV128 } from "../../utils/publicAssetUrlV128";
 
-const SEMANTIC_BASE_V125 = "/data/vietnam/v2/semantic";
+const SEMANTIC_BASE_V125 = publicAssetUrlV128("data/vietnam/v2/semantic");
 
 async function readJsonV125<T>(url: string, signal?: AbortSignal): Promise<T> {
-  const response = await fetch(url, { signal });
+  const requestUrl = publicAssetUrlV128(url);
+  const response = await fetch(requestUrl, { signal });
   if (!response.ok) {
-    throw new Error(`V125 semantic asset request failed (${response.status}): ${url}`);
+    throw new Error(
+      `V125 semantic asset request failed (${response.status}): ${requestUrl}`
+    );
   }
   const contentType = response.headers.get("content-type") || "";
   const text = await response.text();
   if (contentType.includes("text/html") || /^\s*</.test(text)) {
-    throw new Error(`V125 semantic asset returned HTML: ${url}`);
+    throw new Error(`V125 semantic asset returned HTML: ${requestUrl}`);
   }
   return JSON.parse(text) as T;
 }

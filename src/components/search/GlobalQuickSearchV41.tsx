@@ -1,13 +1,22 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { MouseEvent } from "react";
-import { searchGlobalV41 } from "../../utils/globalSearchV41";
+import {
+  loadPublicSearchItemsV128,
+  publicDataStatusLabelV128,
+  publicDataStatusKeyV128,
+  publicDownloadStatusV128,
+  publicReferencePeriodV128,
+  searchPublicDataV128,
+} from "../../data/publicPlatformV128";
+import type { PublicSearchItemV128 } from "../../data/publicPlatformV128";
 import "../../styles/global-search-v41.css";
 
 interface GlobalQuickSearchV41Props {
   open: boolean;
   onClose: () => void;
-  onOpenCountry: (iso3: string) => void;
-  onOpenDataset: (datasetId: string) => void;
+  onOpenElement: (elementId: string, countryIso3: string) => void;
+  onOpenMapElement: (elementId: string, countryIso3: string) => void;
+  onOpenDownload: (elementId: string, countryIso3: string) => void;
   onExploreSearch: (
     query: string,
     countryIso3: string | null,
@@ -18,20 +27,45 @@ interface GlobalQuickSearchV41Props {
 export default function GlobalQuickSearchV41({
   open,
   onClose,
-  onOpenCountry,
-  onOpenDataset,
+  onOpenElement,
+  onOpenMapElement,
+  onOpenDownload,
   onExploreSearch,
 }: GlobalQuickSearchV41Props) {
   const [query, setQuery] = useState("");
+  const [items, setItems] = useState<PublicSearchItemV128[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [loadError, setLoadError] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
-  const results = useMemo(() => searchGlobalV41(query), [query]);
+  const results = useMemo(
+    () => searchPublicDataV128(query, items),
+    [items, query]
+  );
+
+  useEffect(() => {
+    if (!open || items.length > 0) return;
+    let cancelled = false;
+    setLoading(true);
+    setLoadError(false);
+    void loadPublicSearchItemsV128()
+      .then((value) => {
+        if (!cancelled) setItems(value);
+      })
+      .catch(() => {
+        if (!cancelled) setLoadError(true);
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [items.length, open]);
 
   useEffect(() => {
     if (!open) return;
-
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-
     const timer = window.setTimeout(() => inputRef.current?.focus(), 0);
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -39,9 +73,7 @@ export default function GlobalQuickSearchV41({
         onClose();
       }
     };
-
     window.addEventListener("keydown", handleKeyDown);
-
     return () => {
       window.clearTimeout(timer);
       window.removeEventListener("keydown", handleKeyDown);
@@ -56,9 +88,6 @@ export default function GlobalQuickSearchV41({
   if (!open) return null;
 
   const hasQuery = Boolean(query.trim());
-  const hasPlanningCombination = Boolean(
-    results.detectedCountry && results.detectedTechnology
-  );
 
   function closeAnd(run: () => void) {
     onClose();
@@ -82,9 +111,7 @@ export default function GlobalQuickSearchV41({
         <div className="global-search-v41-head">
           <div>
             <span className="global-search-v41-kicker">통합 검색</span>
-            <h2 id="global-search-v41-title">
-              국가·기후기술·데이터 빠르게 찾기
-            </h2>
+            <h2 id="global-search-v41-title">베트남 공개 데이터 찾기</h2>
           </div>
           <button
             type="button"
@@ -102,7 +129,7 @@ export default function GlobalQuickSearchV41({
             ref={inputRef}
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="예: 베트남 태양광, 산업효율, NDC, GCF, World Bank"
+            placeholder="데이터명, 측정항목, 기술, 기관, 사업 또는 지역"
             aria-label="통합 검색어"
           />
           {query && (
@@ -118,178 +145,119 @@ export default function GlobalQuickSearchV41({
 
         {!hasQuery ? (
           <div className="global-search-v41-empty">
-            <strong>한 번에 검색</strong>
+            <strong>공개 데이터 통합 검색</strong>
             <p>
-              국가명·ISO 코드·기후기술 분야·데이터 항목명·출처기관 입력 · 검색
-              결과에서 국가 프로필, 관련 데이터 또는 협력 검토로 바로 이동
+              데이터명과 사용자용 측정항목·분류·기술·기관·정책·사업·지역·자료
+              제공기관을 함께 검색합니다.
             </p>
             <button
               type="button"
               className="global-search-v41-all-button"
-              onClick={() => closeAnd(() => onExploreSearch("", null, null))}
+              onClick={() => closeAnd(() => onExploreSearch("", "VNM", null))}
             >
-              데이터 찾기 전체 보기 →
+              전체 데이터 보기 →
             </button>
           </div>
         ) : (
           <div className="global-search-v41-results" aria-live="polite">
-            {hasPlanningCombination &&
-              results.detectedCountry &&
-              results.detectedTechnology && (
-                <section className="global-search-v41-group global-search-v41-planning">
-                  <div className="global-search-v41-group-title">
-                    <strong>국가 × 기후기술 데이터</strong>
-                    <span>
-                      검색어에서 인식한 조건으로 데이터 찾기 필터 적용
-                    </span>
-                  </div>
-                  <button
-                    type="button"
-                    className="global-search-v41-planning-card"
-                    onClick={() =>
-                      closeAnd(() =>
-                        onExploreSearch(
-                          "",
-                          results.detectedCountry!.iso3,
-                          results.detectedTechnology!.id
-                        )
-                      )
-                    }
-                  >
-                    <span
-                      className="global-search-v41-result-icon"
-                      aria-hidden="true"
-                    >
-                      ↗
-                    </span>
-                    <span>
-                      <strong>
-                        {results.detectedCountry.nameKo} ×{" "}
-                        {results.detectedTechnology.nameKo}
-                      </strong>
-                      <small>해당 조건의 공개 데이터와 출처를 바로 확인</small>
-                    </span>
-                  </button>
-                </section>
-              )}
-
-            {results.countryMatches.length > 0 && (
-              <section className="global-search-v41-group">
-                <div className="global-search-v41-group-title">
-                  <strong>국가</strong>
-                </div>
-                <div className="global-search-v41-list">
-                  {results.countryMatches.map((country) => (
-                    <button
-                      type="button"
-                      key={country.iso3}
-                      className="global-search-v41-result"
-                      onClick={() =>
-                        closeAnd(() => onOpenCountry(country.iso3))
-                      }
-                    >
-                      <span
-                        className="global-search-v41-result-icon"
-                        aria-hidden="true"
-                      >
-                        ◉
-                      </span>
-                      <span className="global-search-v41-result-copy">
-                        <strong>{country.nameKo}</strong>
-                        <small>
-                          {country.nameEn} · {country.iso3} · 국가 프로필
-                        </small>
-                      </span>
-                      <span aria-hidden="true">→</span>
-                    </button>
-                  ))}
-                </div>
-              </section>
+            {loading && (
+              <div className="global-search-v41-empty" role="status">
+                <strong>검색 데이터를 불러오는 중입니다</strong>
+              </div>
             )}
-
-            {results.technologyMatches.length > 0 && (
-              <section className="global-search-v41-group">
-                <div className="global-search-v41-group-title">
-                  <strong>기후기술</strong>
-                </div>
-                <div className="global-search-v41-list">
-                  {results.technologyMatches.map((technology) => (
-                    <button
-                      type="button"
-                      key={technology.id}
-                      className="global-search-v41-result"
-                      onClick={() =>
-                        closeAnd(() => onExploreSearch("", null, technology.id))
-                      }
-                    >
-                      <span
-                        className="global-search-v41-result-icon"
-                        aria-hidden="true"
-                      >
-                        ◇
-                      </span>
-                      <span className="global-search-v41-result-copy">
-                        <strong>{technology.nameKo}</strong>
-                        <small>
-                          {technology.category} · 관련 공개 데이터{" "}
-                          {technology.datasetCount}건
-                        </small>
-                      </span>
-                      <span aria-hidden="true">→</span>
-                    </button>
-                  ))}
-                </div>
-              </section>
+            {loadError && (
+              <div className="global-search-v41-empty" role="alert">
+                <strong>검색 데이터를 불러오지 못했습니다</strong>
+                <p>데이터 찾기에서 다시 검색해 주세요.</p>
+              </div>
             )}
-
-            {results.elementMatches.length > 0 && (
+            {!loading && !loadError && results.length > 0 && (
               <section className="global-search-v41-group">
                 <div className="global-search-v41-group-title">
                   <strong>데이터 항목</strong>
-                  <span>152개 상위 카탈로그 기준</span>
+                  <span>{results.length}개 우선 결과</span>
                 </div>
                 <div className="global-search-v41-list">
-                  {results.elementMatches.map(({ element }) => (
-                    <button
-                      type="button"
-                      key={element.elementId}
-                      className="global-search-v41-result"
-                      onClick={() =>
-                        closeAnd(() =>
-                          onExploreSearch(
-                            element.displayTitle,
-                            results.detectedCountry?.iso3 ?? null,
-                            results.detectedTechnology?.id ?? null
-                          )
-                        )
-                      }
-                    >
-                      <span
-                        className="global-search-v41-result-icon"
-                        aria-hidden="true"
+                  {results.map(({ catalogItem, measureLabels }) => {
+                    const downloadStatus = publicDownloadStatusV128(catalogItem);
+                    return (
+                      <article
+                        className="global-search-v128-result"
+                        key={catalogItem.elementId}
                       >
-                        ▤
-                      </span>
-                      <span className="global-search-v41-result-copy">
-                        <strong>{element.displayTitle}</strong>
-                        <small>
-                          {element.categoryLabel}
-                          {element.source ? ` · ${element.source}` : ""}
-                        </small>
-                      </span>
-                      <span aria-hidden="true">→</span>
-                    </button>
-                  ))}
+                        <button
+                          type="button"
+                          className="global-search-v41-result"
+                          onClick={() =>
+                            closeAnd(() =>
+                              onOpenElement(catalogItem.elementId, "VNM")
+                            )
+                          }
+                        >
+                          <span
+                            className="global-search-v41-result-icon"
+                            aria-hidden="true"
+                          >
+                            ▤
+                          </span>
+                          <span className="global-search-v41-result-copy">
+                            <strong>{catalogItem.publicTitle}</strong>
+                            <small>
+                              {measureLabels.slice(0, 2).join(" · ") ||
+                                catalogItem.groupLabel}
+                              {` · ${publicReferencePeriodV128(catalogItem)}`}
+                            </small>
+                          </span>
+                          <span aria-hidden="true">→</span>
+                        </button>
+                        <div className="global-search-v128-result__meta">
+                          <span
+                            data-public-status={publicDataStatusKeyV128(
+                              catalogItem.publicStatus
+                            )}
+                          >
+                            {publicDataStatusLabelV128(
+                              catalogItem.publicStatus
+                            )}
+                          </span>
+                          <span data-download-status={downloadStatus.key}>
+                            {downloadStatus.label}
+                          </span>
+                          {catalogItem.hasMapData && (
+                            <button
+                              type="button"
+                              onClick={() =>
+                                closeAnd(() =>
+                                  onOpenMapElement(catalogItem.elementId, "VNM")
+                                )
+                              }
+                            >
+                              지도에서 보기
+                            </button>
+                          )}
+                          {downloadStatus.key === "downloadable" && (
+                            <button
+                              type="button"
+                              onClick={() =>
+                                closeAnd(() =>
+                                  onOpenDownload(catalogItem.elementId, "VNM")
+                                )
+                              }
+                            >
+                              다운로드
+                            </button>
+                          )}
+                        </div>
+                      </article>
+                    );
+                  })}
                 </div>
               </section>
             )}
-            {results.totalCount === 0 && !hasPlanningCombination && (
+            {!loading && !loadError && results.length === 0 && (
               <div className="global-search-v41-empty global-search-v41-no-result">
-                <strong>바로 일치하는 결과 없음</strong>
-                <p>
-                  검색어를 줄이거나 데이터 찾기에서 국가·기후기술·출처 조건을
-                  직접 선택
-                </p>
+                <strong>바로 일치하는 데이터가 없습니다</strong>
+                <p>검색어를 줄이거나 데이터 찾기에서 필터를 조정해 주세요.</p>
               </div>
             )}
 
@@ -298,13 +266,7 @@ export default function GlobalQuickSearchV41({
                 type="button"
                 className="global-search-v41-all-button"
                 onClick={() =>
-                  closeAnd(() =>
-                    onExploreSearch(
-                      results.residualQuery,
-                      results.detectedCountry?.iso3 ?? null,
-                      results.detectedTechnology?.id ?? null
-                    )
-                  )
+                  closeAnd(() => onExploreSearch(query.trim(), "VNM", null))
                 }
               >
                 데이터 찾기에서 전체 결과 보기 →

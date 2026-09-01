@@ -127,7 +127,7 @@ async function inspectTimeSeries(cdp, elementId) {
             } : null,
             unitLabel: unitLabel?.textContent?.trim() || '',
             ariaLabel: chart.getAttribute('aria-label') ||
-              chart.querySelector('svg')?.getAttribute('aria-label') || '',
+              chart.querySelector('.v127-interactive-chart__svg, svg[data-chart-responsive="true"]')?.getAttribute('aria-label') || '',
             pointCount: points.length,
             focusablePointCount: points.filter((point) =>
               point instanceof SVGElement && point.tabIndex >= 0
@@ -1015,9 +1015,9 @@ audit.check(
   "RESET_FULL_RANGE",
   a002Interaction?.resetControl?.clicked === true &&
     reset?.min === 2005 && reset?.max === 2015 &&
-    /전체기간/u.test(`${a002Interaction?.resetControl?.text || ""} ${a002Interaction?.resetControl?.ariaLabel || ""}`),
+    /전체\s*기간|전체/u.test(`${a002Interaction?.resetControl?.text || ""} ${a002Interaction?.resetControl?.ariaLabel || ""}`),
   { control: a002Interaction?.resetControl, reset },
-  { min: 2005, max: 2015, label: "전체기간" }
+  { min: 2005, max: 2015, label: "전체" }
 );
 audit.check(
   "CPIA_FIXED_Y_DOMAIN",

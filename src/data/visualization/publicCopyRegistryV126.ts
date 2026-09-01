@@ -55,6 +55,11 @@ const ELEMENT_COPY_V126: Record<string, PublicElementCopyV126> = {
     title: "탄소시장 정책",
     description: "탄소시장 제도와 정책 변화의 주요 시점을 시간 순서로 확인할 수 있습니다.",
   },
+  "D-005": {
+    title: "기후예산의 적응·감축 배분",
+    description:
+      "예산 범위와 보고서 기준을 구분해 적응·감축·동시기여 지출 비율을 확인할 수 있습니다.",
+  },
   "E-007": {
     title: "MRV 운영 현황과 근거",
     description: "측정·보고·검증 체계의 운영 상태와 공개 근거를 항목별로 확인할 수 있습니다.",
@@ -133,11 +138,18 @@ export function publicElementCopyV126(
   renderer: PublicAnalyticalRendererV126
 ): PublicElementCopyV126 {
   return (
-    ELEMENT_COPY_V126[elementId] || {
-      title: RENDERER_TITLES_V126[renderer],
-      description:
-        "공개된 측정값과 분류를 선택해 시점별 변화와 항목 간 차이를 확인할 수 있습니다.",
-    }
+    ELEMENT_COPY_V126[elementId] ||
+    (renderer === "status-only"
+      ? {
+          title: RENDERER_TITLES_V126[renderer],
+          description:
+            "현재 공개된 실제 값이 없어 자료 확보 또는 입력 진행 상태를 안내합니다.",
+        }
+      : {
+          title: RENDERER_TITLES_V126[renderer],
+          description:
+            "공개된 측정값과 분류를 선택해 시점별 변화와 항목 간 차이를 확인할 수 있습니다.",
+        })
   );
 }
 

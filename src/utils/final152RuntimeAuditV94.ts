@@ -1,4 +1,5 @@
 import { getFinal152UploadAuditV93 } from "./final152UploadAuditV93";
+import { publicAssetUrlV128 } from "./publicAssetUrlV128";
 
 interface V94ManifestRow {
   elementId: string;
@@ -53,18 +54,22 @@ export interface Final152RuntimeAuditV94 {
   issues: Final152RuntimeIssueV94[];
 }
 
-const MANIFEST_URL = "/data/registry/final-152-upload-manifest-v94.json";
-const DEMO_URL = "/data/demo/vietnam-full-load-v48.json";
+const MANIFEST_URL = publicAssetUrlV128(
+  "data/registry/final-152-upload-manifest-v94.json"
+);
+const DEMO_URL = publicAssetUrlV128("data/demo/vietnam-full-load-v48.json");
 
 const REQUIRED_LOCAL_DATA_FILES = [
-  "/data/world-countries.geojson",
-  "/data/cckp/heat-index-hi35-country.json",
-  "/data/solar/country-solar-potential.json",
-  "/data/ndc/ndc-technology-priorities.json",
-  "/data/gcf/gcf-country-portfolio-2026-07-31.json",
-  "/data/gcf/gcf-priority-country-projects-2026-08-11.json",
-  "/data/platform/organizations/E-003__gcf-vnm-organizations__20260806.json",
-  "/data/policy/policy-document-previews.json",
+  publicAssetUrlV128("data/world-countries.geojson"),
+  publicAssetUrlV128("data/cckp/heat-index-hi35-country.json"),
+  publicAssetUrlV128("data/solar/country-solar-potential.json"),
+  publicAssetUrlV128("data/ndc/ndc-technology-priorities.json"),
+  publicAssetUrlV128("data/gcf/gcf-country-portfolio-2026-07-31.json"),
+  publicAssetUrlV128("data/gcf/gcf-priority-country-projects-2026-08-11.json"),
+  publicAssetUrlV128(
+    "data/platform/organizations/E-003__gcf-vnm-organizations__20260806.json"
+  ),
+  publicAssetUrlV128("data/policy/policy-document-previews.json"),
   DEMO_URL,
   MANIFEST_URL,
 ] as const;
@@ -205,7 +210,8 @@ export async function runFinal152RuntimeAuditV94(): Promise<Final152RuntimeAudit
 
   // optional snapshot: 없는 경우에도 World Bank API → 코드 내 최소 fallback 경로가 있어 차단하지 않음.
   try {
-    const response = await fetch("/data/worldbank/countries.json", {
+    const countriesUrl = publicAssetUrlV128("data/worldbank/countries.json");
+    const response = await fetch(countriesUrl, {
       cache: "no-store",
       headers: { Accept: "application/json" },
     });
@@ -213,7 +219,7 @@ export async function runFinal152RuntimeAuditV94(): Promise<Final152RuntimeAudit
       issues.push({
         severity: "INFO",
         code: "OPTIONAL_COUNTRY_SNAPSHOT_MISSING",
-        subject: "/data/worldbank/countries.json",
+        subject: countriesUrl,
         message:
           "선택적 국가목록 로컬 snapshot 없음 · World Bank API 실패 시 코드 내 우선국 fallback 사용",
       });
@@ -222,7 +228,7 @@ export async function runFinal152RuntimeAuditV94(): Promise<Final152RuntimeAudit
     issues.push({
       severity: "INFO",
       code: "OPTIONAL_COUNTRY_SNAPSHOT_MISSING",
-      subject: "/data/worldbank/countries.json",
+      subject: publicAssetUrlV128("data/worldbank/countries.json"),
       message:
         "선택적 국가목록 로컬 snapshot 없음 · World Bank API 실패 시 코드 내 우선국 fallback 사용",
     });

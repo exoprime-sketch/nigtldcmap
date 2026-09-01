@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "v128-production-bundle-baseline-1",
+  "capturedAt": "2026-08-31T00:00:00+09:00",
+  "baselineCommit": "d66b83e06956a4ff1745f25f76ccf0d460e239c1",
+  "baselineDescription": "V128-A accepted production build before V128-B deployment changes",
+  "buildEnvironment": {
+    "node": "22.19.0",
+    "npm": "10.9.3",
+    "publicUrl": "/",
+    "sourceMapsGenerated": true
+  },
+  "entrypoints": {
+    "javascript": {
+      "rawBytes": 999706,
+      "gzipBytes": 200287
+    },
+    "css": {
+      "rawBytes": 149988,
+      "gzipBytes": 26356
+    },
+    "totalGzipBytes": 226643
+  },
+  "allBuildAssets": {
+    "javascriptGzipBytes": 503581,
+    "cssGzipBytes": 38448,
+    "sourceMapCount": 7
+  },
+  "largestLazyJavascript": {
+    "rawBytes": 1062861,
+    "gzipBytes": 277458,
+    "purpose": "lazy-loaded map workspace and mapping runtime"
+  },
+  "largestPublicDataAsset": {
+    "path": "data/vietnam/v2/spatial/layers/b-021.json",
+    "bytes": 11914665
+  },
+  "referenceAssets": {
+    "searchIndexBytes": 860041,
+    "adm1GeometryBytes": 1574643,
+    "transmissionGeometryBytes": 1492369,
+    "mapIndexBytes": 56322
+  },
+  "regressionPolicy": {
+    "metric": "entrypoint total gzip bytes",
+    "maximumPercent": 10
+  }
+}

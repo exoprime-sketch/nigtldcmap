@@ -230,22 +230,32 @@ addCheck(
   { missing: missingLayerIds }
 );
 
+const manifestResolverContract =
+  /publicAssetUrlV128\(\s*["']data\/vietnam\/v2\/manifest\.json["']\s*\)/u.test(
+    loaderSource
+  );
+const mapIndexResolverContract =
+  /publicAssetUrlV128\(\s*["']data\/vietnam\/v2\/map-index\.json["']\s*\)/u.test(
+    loaderSource
+  );
 const v2LoaderContract = sourceHasAll(loaderSource, [
-  /\/data\/vietnam\/v2\/manifest\.json/u,
-  /\/data\/vietnam\/v2\/map-index\.json/u,
+  /import\s*\{[^}]*publicAssetUrlV128[^}]*\}\s*from\s*["'][^"']*publicAssetUrlV128["']/su,
+  /const\s+requestUrl\s*=\s*publicAssetUrlV128\(url\)/u,
   /loadVietnamMapIndexV124/u,
   /ASSET_HTML_FALLBACK/u,
   /content-type/iu,
   /JSON\.parse/u,
-]);
+]) && manifestResolverContract && mapIndexResolverContract;
 addCheck(
   "V124_LOADER_CONTRACT",
   v2LoaderContract,
   v2LoaderContract,
   true,
   {
-    manifestUrl: loaderSource.includes("/data/vietnam/v2/manifest.json"),
-    mapIndexUrl: loaderSource.includes("/data/vietnam/v2/map-index.json"),
+    manifestUrl: manifestResolverContract,
+    mapIndexUrl: mapIndexResolverContract,
+    publicAssetResolver: loaderSource.includes("publicAssetUrlV128"),
+    fetchResolver: loaderSource.includes("publicAssetUrlV128(url)"),
     htmlGuard: loaderSource.includes("ASSET_HTML_FALLBACK"),
   }
 );
@@ -269,7 +279,7 @@ addCheck("MAP_PAGE_MOUNTED", routeMounted, routeMounted, true);
 
 const fallbackMarkup = sourceHasAll(pageSource, [
   /className=["']cdp-map-page["']/u,
-  /className=["']cdp-map-layout["']/u,
+  /className=(?:["']cdp-map-layout["']|\{`cdp-map-layout\s)/u,
   /className=["']cdp-map-canvas-wrap["']/u,
   /cdp-map-canvas/u,
   /className=["']cdp-map-fallback["']/u,

@@ -1,4 +1,5 @@
 import type { Dataset } from "../types/dataset";
+import { publicAssetUrlV128 } from "../utils/publicAssetUrlV128";
 
 export const DATASETS: Dataset[] = [
   {
@@ -621,7 +622,7 @@ export const DATASETS: Dataset[] = [
     sourceType: "official_document",
     dataStatus: "partial",
     accessLevel: "public",
-    dataPayloadUrl: "/data/ndc/ndc-technology-priorities.json",
+    dataPayloadUrl: publicAssetUrlV128("data/ndc/ndc-technology-priorities.json"),
     resources: [
       {
         id: "vnm-latest-ndc",
@@ -2209,8 +2210,9 @@ export const DATASETS: Dataset[] = [
     variables: ["기관명", "기관유형", "확인된 역할", "관련 기술", "근거 URL"],
     primaryRepresentationType: "organization",
     representationTypes: ["organization"],
-    dataPayloadUrl:
-      "/data/platform/organizations/E-003__gcf-vnm-organizations__20260813.json",
+    dataPayloadUrl: publicAssetUrlV128(
+      "data/platform/organizations/E-003__gcf-vnm-organizations__20260813.json"
+    ),
     sourceType: "international_organization",
     dataStatus: "available",
     accessLevel: "public",
@@ -2295,7 +2297,9 @@ export const DATASETS: Dataset[] = [
       "categorical",
       "geospatial",
     ],
-    dataPayloadUrl: "/data/gcf/gcf-priority-country-projects-2026-08-13.json",
+    dataPayloadUrl: publicAssetUrlV128(
+      "data/gcf/gcf-priority-country-projects-2026-08-13.json"
+    ),
     sourceType: "international_organization",
     dataStatus: "available",
     accessLevel: "public",

@@ -7,7 +7,7 @@ interface NotFoundPageProps {
 
 export default function NotFoundPage({ onNavigate }: NotFoundPageProps) {
   return (
-    <div className="page-shell not-found-page">
+    <div className="page-shell not-found-page" data-v128-not-found>
       <span className="not-found-code" aria-hidden="true">
         404
       </span>

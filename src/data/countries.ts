@@ -1,5 +1,6 @@
 import { fetchWorldBankCountries } from "../services/worldBankApi";
 import type { Country, CountryDataResult } from "../types/country";
+import { publicAssetUrlV128 } from "../utils/publicAssetUrlV128";
 
 export const FALLBACK_COUNTRIES: Country[] = [
   {
@@ -181,7 +182,7 @@ function localizeCountryName(iso2: string, fallback: string): string {
 
 async function loadCountrySnapshot(): Promise<Country[] | null> {
   try {
-    const response = await fetch("/data/worldbank/countries.json", {
+    const response = await fetch(publicAssetUrlV128("data/worldbank/countries.json"), {
       headers: { Accept: "application/json" },
     });
     if (!response.ok) return null;

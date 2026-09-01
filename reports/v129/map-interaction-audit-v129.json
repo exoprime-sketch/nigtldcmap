@@ -1,0 +1,597 @@
+{
+  "schemaVersion": "v129-audit-report-1",
+  "generatedAt": "2026-09-01T00:22:24.027Z",
+  "audit": "map-interaction:v129",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "map-interaction:v129",
+    "status": "PASS",
+    "passed": 24,
+    "failed": 0,
+    "total": 24,
+    "failedChecks": [],
+    "mapLayerCount": 13,
+    "mapFeatureCount": 2904,
+    "mapOrphanFeatureCount": 0,
+    "mapUnknownSymbolCount": 0,
+    "mapTooltipCoverage": "13/13 browser hover",
+    "mapClickDetailCoverage": "13/13 browser click detail",
+    "contextLayerSelection": "PASS"
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "map-interaction:v129",
+      "name": "MAP_INDEX_JSON",
+      "status": "PASS",
+      "actual": null,
+      "expected": null
+    },
+    {
+      "type": "check",
+      "audit": "map-interaction:v129",
+      "name": "ADM1_JSON",
+      "status": "PASS",
+      "actual": null,
+      "expected": null
+    },
+    {
+      "type": "check",
+      "audit": "map-interaction:v129",
+      "name": "TRANSMISSION_JSON",
+      "status": "PASS",
+      "actual": null,
+      "expected": null
+    },
+    {
+      "type": "check",
+      "audit": "map-interaction:v129",
+      "name": "PACK_INTEGRITY",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-interaction:v129",
+      "name": "ACTIVE_MAP_LAYERS",
+      "status": "PASS",
+      "actual": 13,
+      "expected": 13
+    },
+    {
+      "type": "check",
+      "audit": "map-interaction:v129",
+      "name": "MAP_FEATURE_COUNT",
+      "status": "PASS",
+      "actual": 2904,
+      "expected": 2904
+    },
+    {
+      "type": "check",
+      "audit": "map-interaction:v129",
+      "name": "ADM1_FEATURE_COUNT",
+      "status": "PASS",
+      "actual": 63,
+      "expected": 63
+    },
+    {
+      "type": "check",
+      "audit": "map-interaction:v129",
+      "name": "MAP_SELECTOR_PUBLIC_CONTRACT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-interaction:v129",
+      "name": "ACTIVE_LAYER_LEGEND_CONTRACT",
+      "status": "PASS",
+      "actual": {
+        "failures": [],
+        "sourceInteractionContract": {
+          "publicPopup": true,
+          "pointHover": true,
+          "pointMove": true,
+          "pointClick": true,
+          "lineOrPolygonHover": true,
+          "lineOrPolygonMove": true,
+          "lineOrPolygonClick": true,
+          "selectedDetail": true,
+          "selectedRole": true,
+          "contextBadge": true,
+          "activeLegend": true,
+          "symbolShape": true,
+          "keyboardNavigation": true,
+          "keyboardSelect": true
+        }
+      },
+      "expected": {
+        "failures": [],
+        "activeLegend": true,
+        "symbolShape": true
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-interaction:v129",
+      "name": "POINT_RECORD_RECONCILIATION",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-interaction:v129",
+      "name": "SPATIAL_RECORD_RECONCILIATION",
+      "status": "PASS",
+      "actual": {
+        "spatialOrphans": 0,
+        "zeroImputations": 0
+      },
+      "expected": {
+        "spatialOrphans": 0,
+        "zeroImputations": 0
+      },
+      "details": {
+        "spatialOrphans": [],
+        "zeroImputations": []
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-interaction:v129",
+      "name": "TRANSMISSION_FEATURE_RECONCILIATION",
+      "status": "PASS",
+      "actual": {
+        "featureCount": 606,
+        "orphanCount": 0
+      },
+      "expected": {
+        "featureCount": 606,
+        "orphanCount": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-interaction:v129",
+      "name": "MAP_ORPHAN_FEATURE",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": {
+        "pointAssetReconciliation": [],
+        "spatialOrphans": [],
+        "transmissionOrphans": []
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-interaction:v129",
+      "name": "MAP_INTERACTION_SOURCE_CONTRACT",
+      "status": "PASS",
+      "actual": {
+        "publicPopup": true,
+        "pointHover": true,
+        "pointMove": true,
+        "pointClick": true,
+        "lineOrPolygonHover": true,
+        "lineOrPolygonMove": true,
+        "lineOrPolygonClick": true,
+        "selectedDetail": true,
+        "selectedRole": true,
+        "contextBadge": true,
+        "activeLegend": true,
+        "symbolShape": true,
+        "keyboardNavigation": true,
+        "keyboardSelect": true
+      },
+      "expected": {
+        "publicPopup": true,
+        "pointHover": true,
+        "pointMove": true,
+        "pointClick": true,
+        "lineOrPolygonHover": true,
+        "lineOrPolygonMove": true,
+        "lineOrPolygonClick": true,
+        "selectedDetail": true,
+        "selectedRole": true,
+        "contextBadge": true,
+        "activeLegend": true,
+        "symbolShape": true,
+        "keyboardNavigation": true,
+        "keyboardSelect": true
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-interaction:v129",
+      "name": "ALL_LAYER_BROWSER_ACTIVATION_AND_LEGEND",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null,
+        "checked": 13,
+        "failures": 0
+      },
+      "expected": {
+        "runtimeFailure": null,
+        "checked": 13,
+        "failures": 0
+      },
+      "details": []
+    },
+    {
+      "type": "check",
+      "audit": "map-interaction:v129",
+      "name": "ALL_LAYER_TOOLTIP_AND_CLICK",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null,
+        "interactionResults": [
+          {
+            "elementId": "A-023",
+            "role": "primary",
+            "kind": "point",
+            "surface": "map-canvas",
+            "tooltip": true,
+            "tooltipText": "발전소위치 118개 묶음누르면 지도를 확대합니다",
+            "detail": true,
+            "attempts": 23,
+            "hoverHitCount": 1,
+            "readinessAttempt": 1
+          },
+          {
+            "elementId": "A-024",
+            "role": "primary",
+            "kind": "line",
+            "surface": "map-canvas",
+            "tooltip": true,
+            "tooltipText": "베트남 송전망110 kV · 30.36 km주 분석 데이터",
+            "detail": true,
+            "attempts": 37,
+            "hoverHitCount": 1,
+            "readinessAttempt": 1
+          },
+          {
+            "elementId": "C-016",
+            "role": "primary",
+            "kind": "adm1",
+            "surface": "map-canvas",
+            "tooltip": true,
+            "tooltipText": "재생에너지 지역계획Quảng Trị · 현재 값 50 MW주 분석 데이터",
+            "detail": true,
+            "attempts": 8,
+            "hoverHitCount": 1,
+            "readinessAttempt": 1
+          },
+          {
+            "elementId": "B-031",
+            "role": "primary",
+            "kind": "adm1",
+            "surface": "map-canvas",
+            "tooltip": true,
+            "tooltipText": "산림 총면적Quảng Trị · 현재 값 302,371 ha주 분석 데이터",
+            "detail": true,
+            "attempts": 8,
+            "hoverHitCount": 1,
+            "readinessAttempt": 1
+          },
+          {
+            "elementId": "B-032",
+            "role": "primary",
+            "kind": "adm1",
+            "surface": "map-canvas",
+            "tooltip": true,
+            "tooltipText": "수관 피복률Quảng Trị · 현재 값 65.6 %주 분석 데이터",
+            "detail": true,
+            "attempts": 8,
+            "hoverHitCount": 1,
+            "readinessAttempt": 1
+          },
+          {
+            "elementId": "B-033",
+            "role": "primary",
+            "kind": "adm1",
+            "surface": "map-canvas",
+            "tooltip": true,
+            "tooltipText": "연간 산림손실Quảng Trị · 현재 값 2,079 ha/yr주 분석 데이터",
+            "detail": true,
+            "attempts": 8,
+            "hoverHitCount": 1,
+            "readinessAttempt": 1
+          },
+          {
+            "elementId": "B-034",
+            "role": "primary",
+            "kind": "adm1",
+            "surface": "map-canvas",
+            "tooltip": true,
+            "tooltipText": "산림 탄소Quảng Trị · 현재 값 684,791 Mg CO₂e/yr주 분석 데이터",
+            "detail": true,
+            "attempts": 8,
+            "hoverHitCount": 1,
+            "readinessAttempt": 1
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "kind": "adm1",
+            "surface": "map-canvas",
+            "tooltip": true,
+            "tooltipText": "지역 취약성Quảng Trị · GVI 취약성 지수 39.6 / 100높을수록 사회경제적 취약성이 큼북중부·남중부 해안 권역의 값 · 성 단위 독립 추정값이 아님",
+            "detail": true,
+            "attempts": 8,
+            "hoverHitCount": 1,
+            "readinessAttempt": 1
+          },
+          {
+            "elementId": "B-048",
+            "role": "primary",
+            "kind": "point",
+            "surface": "map-canvas",
+            "tooltip": true,
+            "tooltipText": "주요 광산Ban Phuc주 분석 데이터",
+            "detail": true,
+            "attempts": 1357,
+            "hoverHitCount": 1,
+            "readinessAttempt": 1
+          },
+          {
+            "elementId": "C-025",
+            "role": "primary",
+            "kind": "point",
+            "surface": "map-canvas",
+            "tooltip": true,
+            "tooltipText": "탄소크레딧 사업명칭 미기재주 분석 데이터",
+            "detail": true,
+            "attempts": 13,
+            "hoverHitCount": 1,
+            "readinessAttempt": 1
+          },
+          {
+            "elementId": "D-008",
+            "role": "primary",
+            "kind": "adm1",
+            "surface": "map-canvas",
+            "tooltip": true,
+            "tooltipText": "지역 기후예산Quảng Trị · 현재 값 결측주 분석 데이터",
+            "detail": true,
+            "attempts": 8,
+            "hoverHitCount": 1,
+            "readinessAttempt": 1
+          },
+          {
+            "elementId": "D-018",
+            "role": "primary",
+            "kind": "point",
+            "surface": "map-canvas",
+            "tooltip": true,
+            "tooltipText": "적응기금 사업Groundwater resources in the Greater Mekong Subregion: Collaborative management to increase resilience (Cambodia, Lao People’s Democratic Republic, Thailand, Viet Nam)주 분석 데이터",
+            "detail": true,
+            "attempts": 17,
+            "hoverHitCount": 1,
+            "readinessAttempt": 1
+          },
+          {
+            "elementId": "D-023",
+            "role": "primary",
+            "kind": "point",
+            "surface": "map-canvas",
+            "tooltip": true,
+            "tooltipText": "국제협력·기후재원 사업Groundwater resources in the Greater Mekong Subregion: Collaborative management to increase resilience (Cambodia, Lao People’s Democratic Republic, Thailand, Viet Nam)주 분석 데이터",
+            "detail": true,
+            "attempts": 17,
+            "hoverHitCount": 1,
+            "readinessAttempt": 1
+          }
+        ]
+      },
+      "expected": {
+        "layers": 13,
+        "tooltip": true,
+        "detail": true
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-interaction:v129",
+      "name": "CONTEXT_LAYER_SELECTION_DETAIL",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null,
+        "contextSelection": {
+          "elementId": "A-023",
+          "role": "context",
+          "kind": "point",
+          "surface": "map-canvas",
+          "tooltip": true,
+          "tooltipText": "발전소위치 63개 묶음누르면 지도를 확대합니다",
+          "detail": true,
+          "attempts": 43,
+          "hoverHitCount": 1,
+          "readinessAttempt": 1,
+          "preservedPrimary": {
+            "primary": "A-024",
+            "role": "context",
+            "badge": "선택한 보조 데이터"
+          }
+        }
+      },
+      "expected": {
+        "tooltip": true,
+        "detail": true,
+        "primaryPreserved": "A-024",
+        "selectedRole": "context"
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-interaction:v129",
+      "name": "POLYGON_PRIMARY_CONTEXT_HIT_ORDER",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null,
+        "polygonStackSelection": {
+          "preset": "CLIMATE_VULNERABILITY",
+          "primaryPolygon": {
+            "elementId": "B-021",
+            "role": "primary",
+            "kind": "adm1",
+            "surface": "map-canvas",
+            "tooltip": true,
+            "tooltipText": "지역 취약성Quảng Nam · GVI 취약성 지수 39.6 / 100높을수록 사회경제적 취약성이 큼북중부·남중부 해안 권역의 값 · 성 단위 독립 추정값이 아님",
+            "detail": true,
+            "attempts": 29,
+            "hoverHitCount": 1,
+            "readinessAttempt": 1
+          },
+          "contextPolygon": {
+            "elementId": "D-008",
+            "role": "context",
+            "kind": "adm1",
+            "surface": "map-canvas",
+            "tooltip": true,
+            "tooltipText": "지역 기후예산Quảng Nam · 현재 값 850,000,000,000 VND보조 데이터",
+            "detail": true,
+            "attempts": 11,
+            "hoverHitCount": 1,
+            "readinessAttempt": 1
+          },
+          "preservedPrimary": {
+            "primary": "B-021",
+            "role": "context",
+            "badge": "선택한 보조 데이터"
+          }
+        }
+      },
+      "expected": {
+        "preset": "CLIMATE_VULNERABILITY",
+        "primaryPolygon": "B-021 tooltip/detail",
+        "contextPolygon": "D-008 tooltip/detail",
+        "primaryPreserved": "B-021"
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-interaction:v129",
+      "name": "SAME_LAYER_HOVER_FEATURE_REFRESH",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null,
+        "popupTexts": [
+          "지역 취약성Cao Bằng · GVI 취약성 지수 44.7 / 100높을수록 사회경제적 취약성이 큼동북부·서북부 권역의 값 · 성 단위 독립 추정값이 아님",
+          "지역 취약성Tuyên Quang · GVI 취약성 지수 44.7 / 100높을수록 사회경제적 취약성이 큼동북부·서북부 권역의 값 · 성 단위 독립 추정값이 아님"
+        ]
+      },
+      "expected": {
+        "distinctPopupTexts": ">= 2",
+        "sameActiveLayer": "B-021"
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-interaction:v129",
+      "name": "KEYBOARD_FEATURE_NAVIGATION",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null,
+        "keyboardSelection": {
+          "focused": true,
+          "initial": {
+            "navigation": true,
+            "focused": true,
+            "label": "지역 취약성 · Lai Châu 선택",
+            "counter": "1 / 129",
+            "primary": "B-021",
+            "role": "context",
+            "detail": "Quảng Nam데이터명지역 기후예산측정항목성 단위 기후변화 지출 누계값850,000,000,000단위VND기준연도·기간2010-2013지역Quảng Nam출처United Nations Development Programme · 베트남 기획투자부(MPI) — Viet Nam Climate Public Expenditure and Investment Review (CPEIR) 2015 · United Nations Development Programme 베트남사무소 · 베트남 기획투자부(MPI) — CPEIR 2022 · World Bank — Viet Nam Country Climate and Development Report (CCDR) 2022공간 정확도개편 전 63개 성·시 중 실제 예산값이 공개된 3개 지역만 표시하며, 나머지 지역은 0으로 바꾸지 않습니다.자료 커버리지3/63개 성·시 값 보유결측 여부값 보유"
+          },
+          "moved": {
+            "navigation": true,
+            "focused": true,
+            "label": "지역 취약성 · Lào Cai 선택",
+            "counter": "2 / 129",
+            "primary": "B-021",
+            "role": "context",
+            "detail": "Quảng Nam데이터명지역 기후예산측정항목성 단위 기후변화 지출 누계값850,000,000,000단위VND기준연도·기간2010-2013지역Quảng Nam출처United Nations Development Programme · 베트남 기획투자부(MPI) — Viet Nam Climate Public Expenditure and Investment Review (CPEIR) 2015 · United Nations Development Programme 베트남사무소 · 베트남 기획투자부(MPI) — CPEIR 2022 · World Bank — Viet Nam Country Climate and Development Report (CCDR) 2022공간 정확도개편 전 63개 성·시 중 실제 예산값이 공개된 3개 지역만 표시하며, 나머지 지역은 0으로 바꾸지 않습니다.자료 커버리지3/63개 성·시 값 보유결측 여부값 보유"
+          },
+          "primary": {
+            "navigation": true,
+            "focused": true,
+            "label": "지역 취약성 · Lào Cai 선택",
+            "counter": "2 / 129",
+            "primary": "B-021",
+            "role": "primary",
+            "detail": "Lào Cai데이터명지역 취약성측정항목GVI 취약성 지수값44.7 / 100단위0–100 지수기준연도·기간2023값 해석높을수록 사회경제적 취약성이 큼지역Lào Cai비교·공간단위동북부·서북부 권역의 값 · 성 단위 독립 추정값이 아님권역 비교베트남 6개 권역 중 1위 · 현재 값이 큰 순서출처Global Data Lab (GDL Area Database) · Global Data Lab GVI · Global Data Lab GVI (Huisman et al., 2025) · Global Data Lab — GVIP Database (Huisman et al., 2025)공간 정확도공개된 권역값을 명시된 소속 성·시에 표시합니다. 개별 성·시에서 별도로 추정한 값은 아닙니다.자료 커버리지63/63개 성·시 값 보유결측 여부값 보유"
+          },
+          "contextCandidate": {
+            "navigation": true,
+            "focused": true,
+            "label": "지역 기후예산 · Lai Châu 선택",
+            "counter": "64 / 129",
+            "primary": "B-021",
+            "role": "primary",
+            "detail": "Lào Cai데이터명지역 취약성측정항목GVI 취약성 지수값44.7 / 100단위0–100 지수기준연도·기간2023값 해석높을수록 사회경제적 취약성이 큼지역Lào Cai비교·공간단위동북부·서북부 권역의 값 · 성 단위 독립 추정값이 아님권역 비교베트남 6개 권역 중 1위 · 현재 값이 큰 순서출처Global Data Lab (GDL Area Database) · Global Data Lab GVI · Global Data Lab GVI (Huisman et al., 2025) · Global Data Lab — GVIP Database (Huisman et al., 2025)공간 정확도공개된 권역값을 명시된 소속 성·시에 표시합니다. 개별 성·시에서 별도로 추정한 값은 아닙니다.자료 커버리지63/63개 성·시 값 보유결측 여부값 보유"
+          },
+          "context": {
+            "navigation": true,
+            "focused": true,
+            "label": "지역 기후예산 · Lai Châu 선택",
+            "counter": "64 / 129",
+            "primary": "B-021",
+            "role": "context",
+            "detail": "Lai Châu데이터명지역 기후예산측정항목성 단위 기후변화 지출 누계값원천 미제공단위VND기준연도·기간2010-2013지역Lai Châu출처United Nations Development Programme · 베트남 기획투자부(MPI) — Viet Nam Climate Public Expenditure and Investment Review (CPEIR) 2015 · United Nations Development Programme 베트남사무소 · 베트남 기획투자부(MPI) — CPEIR 2022 · World Bank — Viet Nam Country Climate and Development Report (CCDR) 2022공간 정확도개편 전 63개 성·시 중 실제 예산값이 공개된 3개 지역만 표시하며, 나머지 지역은 0으로 바꾸지 않습니다.자료 커버리지3/63개 성·시 값 보유결측 여부원천 미제공 · 60개 성·시 원천 미제공"
+          }
+        }
+      },
+      "expected": {
+        "navigation": true,
+        "arrowRightChangesCounterAndLabel": true,
+        "enterSelectsPrimary": true,
+        "spaceSelectsContext": true,
+        "primaryPreserved": "B-021"
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-interaction:v129",
+      "name": "MAP_VISIBLE_FEATURE_WITHOUT_TOOLTIP",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-interaction:v129",
+      "name": "MAP_CLICKABLE_FEATURE_WITHOUT_DETAIL",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-interaction:v129",
+      "name": "MAP_UNKNOWN_SYMBOL",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-interaction:v129",
+      "name": "UNCAUGHT_RUNTIME_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "mapLayerCount": 13,
+  "mapFeatureCount": 2904,
+  "mapOrphanFeatureCount": 0,
+  "mapUnknownSymbolCount": 0,
+  "mapTooltipCoverage": "13/13 browser hover",
+  "mapClickDetailCoverage": "13/13 browser click detail",
+  "contextLayerSelection": "PASS"
+}

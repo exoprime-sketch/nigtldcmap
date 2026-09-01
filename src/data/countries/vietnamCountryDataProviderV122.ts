@@ -29,6 +29,7 @@ import {
   publicDatasetTitleV122,
   removeInternalSearchTokensV122,
 } from "./publicLabelsV122";
+import { publicAssetUrlV128 } from "../../utils/publicAssetUrlV128";
 
 function toCatalogItem(
   item: VietnamCatalogElementV124
@@ -73,7 +74,9 @@ function toCatalogItem(
     hasPublicData,
     hasMapData: item.mapFeatureCount > 0,
     hasDownloadableData:
-      item.downloadAllowed === true && item.downloadableRecordCount > 0,
+      hasPublicData &&
+      item.downloadAllowed === true &&
+      item.downloadableRecordCount > 0,
     observationCount: item.observationCount,
     entityCount: item.entityCount,
     mapFeatureCount: item.mapFeatureCount,
@@ -87,13 +90,13 @@ function publicStatusLabelV124(
   status: VietnamElementPublicStatusV124
 ): string {
   const labels: Record<VietnamElementPublicStatusV124, string> = {
-    actual: "실제 데이터",
-    partial: "부분 데이터",
-    "public-authorized": "공개 승인 데이터",
-    "schema-only": "입력 양식만 제공",
+    actual: "데이터 제공",
+    partial: "일부 데이터 제공",
+    "public-authorized": "데이터 제공",
+    "schema-only": "입력 양식",
     "data-entry-planned": "입력 예정",
     "not-collected": "원자료 미수집",
-    quarantined: "형식 검토 필요",
+    quarantined: "현재 제공하지 않음",
   };
   return labels[status];
 }
@@ -105,7 +108,7 @@ export const VietnamCountryDataProviderV122: CountryDataProviderV122 = {
   countryNameEn: "Viet Nam",
   countryPublicSlug: publicCountrySlugV122("VNM"),
   dataSchemaVersion: "v124",
-  manifestUrl: "/data/vietnam/v2/manifest.json",
+  manifestUrl: publicAssetUrlV128("data/vietnam/v2/manifest.json"),
   availability: "available",
   mapView: {
     center: [106.2, 16.1],

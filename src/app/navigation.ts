@@ -7,6 +7,7 @@ export type View =
   | "compare"
   | "country"
   | "download"
+  | "guide"
   | "insights"
   | "not-found";
 
@@ -27,6 +28,7 @@ export const VALID_VIEWS: View[] = [
   "compare",
   "country",
   "download",
+  "guide",
   "insights",
 
   "not-found",
@@ -52,14 +54,12 @@ export function getViewFromLocation(): View {
     return "explorer";
   }
 
-  if (hash.startsWith("country-")) {
-    return "country";
+  if (hash === "country" || hash.startsWith("country-")) {
+    return "explorer";
   }
 
-  // v77: 과거 공유 링크 #guide는 삭제된 이용안내 페이지 대신
-  // 실제 데이터 탐색 화면으로 안전하게 보냅니다.
   if (hash === "guide") {
-    return "explorer";
+    return "guide";
   }
 
   // v114: 별도 국가 비교 페이지는 데이터 상세 내 비교기능으로 통합했다.

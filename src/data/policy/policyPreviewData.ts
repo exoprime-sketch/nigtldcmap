@@ -1,3 +1,5 @@
+import { publicAssetUrlV128 } from "../../utils/publicAssetUrlV128";
+
 export interface PolicyPreviewSection {
   id: string;
   headingKo: string;
@@ -27,7 +29,9 @@ interface PolicyPreviewPayload {
   documents: PolicyDocumentPreview[];
 }
 
-const POLICY_PREVIEW_URL = "/data/policy/policy-document-previews.json";
+const POLICY_PREVIEW_URL = publicAssetUrlV128(
+  "data/policy/policy-document-previews.json"
+);
 
 let cachedPayload: PolicyPreviewPayload | null = null;
 

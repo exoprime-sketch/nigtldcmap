@@ -24,7 +24,7 @@ const CURATED_TITLES: Record<string, { title: string; short: string }> = {
   "A-021": { title: "전력 접근률", short: "전력 접근률" },
   "A-022": { title: "정전 빈도와 지속시간", short: "정전 현황" },
   "A-023": { title: "발전소 현황", short: "발전소" },
-  "A-024": { title: "전력망 및 미공급지역", short: "전력망" },
+  "A-024": { title: "베트남 송전망", short: "송전망" },
   "A-025": { title: "탄소포집·저장 시설", short: "CCS 시설" },
   "A-026": { title: "건물 분포", short: "건물 분포" },
   "A-027": { title: "육상교통 인프라", short: "교통 인프라" },

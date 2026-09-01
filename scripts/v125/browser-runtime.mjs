@@ -26,15 +26,32 @@ function isInside(root, target) {
   return relation === "" || (!relation.startsWith("..") && !resolve(relation).startsWith("\\"));
 }
 
-export async function startStaticBuildServer(buildRoot) {
+function normalizedBasePath(value) {
+  const trimmed = String(value || "").trim();
+  if (!trimmed || trimmed === "/") return "";
+  return `/${trimmed.replace(/^\/+|\/+$/gu, "")}`;
+}
+
+export async function startStaticBuildServer(buildRoot, options = {}) {
   const safeRoot = resolve(buildRoot);
   const indexPath = resolve(safeRoot, "index.html");
+  const basePath = normalizedBasePath(options.basePath);
   if (!existsSync(indexPath)) throw new Error(`production build missing: ${indexPath}`);
 
   const server = createServer((request, response) => {
     try {
       const requestUrl = new URL(request.url || "/", "http://127.0.0.1");
-      const decodedPath = decodeURIComponent(requestUrl.pathname).replace(/^\/+/, "");
+      let publicPath = decodeURIComponent(requestUrl.pathname);
+      if (basePath) {
+        if (publicPath === basePath) publicPath = `${basePath}/`;
+        if (!publicPath.startsWith(`${basePath}/`)) {
+          response.writeHead(404, { "content-type": "text/plain; charset=utf-8" });
+          response.end("Not Found");
+          return;
+        }
+        publicPath = publicPath.slice(basePath.length);
+      }
+      const decodedPath = publicPath.replace(/^\/+/, "");
       const candidate = resolve(safeRoot, decodedPath || "index.html");
       let filePath = candidate;
       if (!isInside(safeRoot, candidate)) {
@@ -67,7 +84,9 @@ export async function startStaticBuildServer(buildRoot) {
   const address = server.address();
   if (!address || typeof address === "string") throw new Error("static server address unavailable");
   return {
-    url: `http://127.0.0.1:${address.port}`,
+    url: `http://127.0.0.1:${address.port}${basePath}`,
+    origin: `http://127.0.0.1:${address.port}`,
+    basePath,
     close: () => new Promise((resolveClose) => server.close(resolveClose)),
   };
 }
@@ -155,6 +174,12 @@ function edgeExecutable() {
     "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
     "C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe",
     "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "/usr/bin/google-chrome",
+    "/usr/bin/google-chrome-stable",
+    "/usr/bin/chromium",
+    "/usr/bin/chromium-browser",
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge",
   ].filter(Boolean);
   return candidates.find((path) => existsSync(path)) || null;
 }

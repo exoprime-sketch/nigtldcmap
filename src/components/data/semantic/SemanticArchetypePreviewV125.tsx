@@ -43,6 +43,22 @@ type NumericSemanticObservation = SemanticObservationV125 & { value: number };
 
 const SERIES_PATTERNS_V125 = ["solid", "dashed", "dotted", "double"] as const;
 
+function publicNoDataReasonV128(reason: string | null): string {
+  switch (reason) {
+    case "not-collected":
+      return "공식 원자료를 확보한 뒤 제공합니다.";
+    case "schema-only":
+      return "입력 항목만 있고 실제 값은 아직 없습니다.";
+    case "explicit-placeholder-only":
+    case "no-populated-record":
+      return "실제 값은 입력 준비 중입니다.";
+    default:
+      return "현재 표시할 공개 값이 없습니다.";
+  }
+}
+
+const EMPTY_DIMENSION_KEYS_V129: readonly string[] = Object.freeze([]);
+
 export default function SemanticArchetypePreviewV125({
   contract,
   semantics,
@@ -71,7 +87,7 @@ export default function SemanticArchetypePreviewV125({
       ),
     [contract.dimensions]
   );
-  const dimensions = useMemo(
+  const explicitDimensions = useMemo(
     () =>
       Object.fromEntries(
         additionalDimensions.flatMap((dimension) => {
@@ -101,7 +117,7 @@ export default function SemanticArchetypePreviewV125({
     semanticRows.some(
       (row) =>
         row.semanticMeasure.key === measure.key &&
-        semanticRowMatchesDimensionsV125(row, dimensions) &&
+        semanticRowMatchesDimensionsV125(row, explicitDimensions) &&
         isPopulatedSemanticRowV125(row)
     )
   );
@@ -114,7 +130,7 @@ export default function SemanticArchetypePreviewV125({
           semanticRows.some(
             (row) =>
               row.semanticMeasure.key === measure.key &&
-              semanticRowMatchesDimensionsV125(row, dimensions) &&
+              semanticRowMatchesDimensionsV125(row, explicitDimensions) &&
               isPopulatedSemanticRowV125(row)
           )
       )
@@ -127,6 +143,35 @@ export default function SemanticArchetypePreviewV125({
       null;
   const measureRows = semanticRows.filter(
     (row) => row.semanticMeasure.key === measureKey
+  );
+  const singleDenominatorDimensionKeys =
+    getPublicVisualizationSummaryV126(contract.elementId)
+      ?.singleDenominatorDimensionKeys || EMPTY_DIMENSION_KEYS_V129;
+  const dimensions = useMemo(
+    () =>
+      Object.fromEntries(
+        additionalDimensions.flatMap((dimension) => {
+          const selected = explicitDimensions[dimension.key];
+          if (selected) return [[dimension.key, selected]];
+          if (!singleDenominatorDimensionKeys.includes(dimension.key)) return [];
+          const populatedDefault = dimension.values.find((value) =>
+            measureRows.some(
+              (row) =>
+                row.dimensions[dimension.key] === value &&
+                isPopulatedSemanticRowV125(row)
+            )
+          );
+          return populatedDefault
+            ? [[dimension.key, populatedDefault]]
+            : [];
+        })
+      ),
+    [
+      additionalDimensions,
+      explicitDimensions,
+      measureRows,
+      singleDenominatorDimensionKeys,
+    ]
   );
   const sexDimension = contract.dimensions.find(
     (dimension) => dimension.key === "sex"
@@ -217,7 +262,7 @@ export default function SemanticArchetypePreviewV125({
       >
         <div data-testid="public-primary-visualization">
           <strong>표시할 실제 레코드가 없습니다</strong>
-          <p>{contract.noDataReason || contract.missingDataPolicy}</p>
+          <p>{publicNoDataReasonV128(contract.noDataReason)}</p>
         </div>
       </section>
     );
@@ -324,7 +369,9 @@ export default function SemanticArchetypePreviewV125({
                 })
               }
             >
-              <option value="">전체</option>
+              {!singleDenominatorDimensionKeys.includes(dimension.key) && (
+                <option value="">전체</option>
+              )}
               {dimension.values.map((value) => (
                 <option key={value} value={value}>
                   {dimensionValueLabelV125(dimension.key, value)}

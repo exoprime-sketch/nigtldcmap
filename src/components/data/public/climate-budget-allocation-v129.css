@@ -1,0 +1,254 @@
+.cab129 {
+  display: grid;
+  gap: 18px;
+}
+
+.cab129 > section {
+  background: #fff;
+  border: 1px solid #d8e2de;
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.cab129 h3,
+.cab129 p {
+  margin-top: 0;
+}
+
+.cab129__purpose {
+  background: #f7faf9 !important;
+}
+
+.cab129__purpose h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.cab129__purpose ul {
+  display: grid;
+  gap: 6px;
+  line-height: 1.55;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.cab129__representative > header,
+.cab129__alternatives > header {
+  align-items: end;
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+}
+
+.cab129 header span {
+  color: #597169;
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+}
+
+.cab129 header h3 {
+  font-size: 19px;
+  margin: 3px 0 0;
+}
+
+.cab129__representative > header > p {
+  color: #51665f;
+  font-size: 13px;
+  margin-bottom: 1px;
+}
+
+.cab129__stack {
+  border-radius: 12px;
+  display: flex;
+  height: 64px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.cab129__stack > span {
+  align-items: center;
+  background: var(--cab129-color);
+  color: #fff;
+  display: flex;
+  flex: var(--cab129-share) 0 0;
+  justify-content: center;
+  min-width: 2px;
+}
+
+.cab129__stack > span + span {
+  border-left: 2px solid #fff;
+}
+
+.cab129__stack b {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-weight: 750;
+  gap: 2px;
+  line-height: 1.05;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.28);
+}
+
+.cab129__stack b small {
+  font-size: 11px;
+}
+
+.cab129__stack b strong {
+  font-size: 15px;
+}
+
+.cab129__stack > span:nth-child(2) b {
+  font-size: 10px;
+  gap: 1px;
+  writing-mode: vertical-rl;
+}
+
+.cab129__stack > span:nth-child(2) b small,
+.cab129__stack > span:nth-child(2) b strong {
+  font-size: 10px;
+}
+
+.cab129__share-labels {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 12px;
+}
+
+.cab129__share-labels > div {
+  align-items: center;
+  background: #f7f9f8;
+  border-radius: 10px;
+  display: grid;
+  gap: 4px 8px;
+  grid-template-columns: auto 1fr;
+  padding: 10px 12px;
+}
+
+.cab129__share-labels i,
+.cab129__basis-values i {
+  border: 2px solid rgba(20, 43, 34, 0.25);
+  border-radius: 3px;
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+}
+
+.cab129__share-labels strong {
+  font-size: 21px;
+  grid-column: 1 / -1;
+}
+
+.cab129__source-note,
+.cab129__missing-note {
+  color: #5b6d66;
+  font-size: 13px;
+  line-height: 1.55;
+  margin: 14px 0 0;
+}
+
+.cab129__alternatives header label {
+  color: #445d54;
+  display: grid;
+  font-size: 12px;
+  font-weight: 700;
+  gap: 5px;
+  min-width: 230px;
+}
+
+.cab129__alternatives select {
+  background: #fff;
+  border: 1px solid #9fb2aa;
+  border-radius: 10px;
+  color: #17382c;
+  font: inherit;
+  min-height: 44px;
+  padding: 8px 34px 8px 11px;
+}
+
+.cab129__alternatives select:focus-visible {
+  outline: 3px solid rgba(35, 127, 91, 0.3);
+  outline-offset: 2px;
+}
+
+.cab129__basis-meta {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 18px 0 0;
+}
+
+.cab129__basis-meta > div {
+  background: #f5f8f7;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.cab129__basis-meta dt {
+  color: #667b73;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.cab129__basis-meta dd {
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.45;
+  margin: 4px 0 0;
+}
+
+.cab129__basis-values {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 12px;
+}
+
+.cab129__basis-values article {
+  border: 1px solid #dbe4e0;
+  border-radius: 12px;
+  display: grid;
+  gap: 8px;
+  padding: 13px;
+}
+
+.cab129__basis-values article > span {
+  align-items: center;
+  color: #496159;
+  display: flex;
+  font-size: 13px;
+  gap: 7px;
+}
+
+.cab129__basis-values strong {
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+@media (max-width: 700px) {
+  .cab129 > section {
+    padding: 16px;
+  }
+
+  .cab129__representative > header,
+  .cab129__alternatives > header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .cab129__alternatives header label {
+    min-width: 0;
+  }
+
+  .cab129__share-labels,
+  .cab129__basis-meta,
+  .cab129__basis-values {
+    grid-template-columns: 1fr;
+  }
+
+  .cab129__stack {
+    height: 52px;
+  }
+}

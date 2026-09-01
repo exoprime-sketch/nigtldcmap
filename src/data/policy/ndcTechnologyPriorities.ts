@@ -9,8 +9,11 @@ import {
   NDC_PRIORITY_STATUS_LABELS,
   NDC_PRIORITY_STATUS_VALUES,
 } from "../../types/ndc";
+import { publicAssetUrlV128 } from "../../utils/publicAssetUrlV128";
 
-const NDC_DATA_URL = "/data/ndc/ndc-technology-priorities.json";
+const NDC_DATA_URL = publicAssetUrlV128(
+  "data/ndc/ndc-technology-priorities.json"
+);
 
 let cachedDataset: NdcTechnologyPriorityDataset | null = null;
 

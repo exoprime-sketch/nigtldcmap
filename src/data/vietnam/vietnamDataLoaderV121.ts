@@ -1,4 +1,5 @@
 import type { Dataset } from "../../types/dataset";
+import { publicAssetUrlV128 } from "../../utils/publicAssetUrlV128";
 import {
   elementIdFromPublicSlugV121,
   isVietnamElementIdV121,
@@ -23,8 +24,10 @@ import type {
   VietnamShardV121,
 } from "./vietnamTypesV121";
 
-const MANIFEST_URL = "/data/vietnam/v1/manifest.json";
-const BUNDLE_INDEX_URL = "/data/vietnam/v1/packs-r2/bundle-index-v121r2.json";
+const MANIFEST_URL = publicAssetUrlV128("data/vietnam/v1/manifest.json");
+const BUNDLE_INDEX_URL = publicAssetUrlV128(
+  "data/vietnam/v1/packs-r2/bundle-index-v121r2.json"
+);
 
 const jsonCache = new Map<string, Promise<unknown>>();
 const envelopeCache = new Map<
@@ -91,19 +94,23 @@ async function fetchTextChecked(
   url: string,
   cacheMode: RequestCache = "default"
 ): Promise<{ text: string; contentType: string; responseUrl: string }> {
+  const requestUrl = publicAssetUrlV128(url);
   let response: Response;
   try {
-    response = await fetch(url, { cache: cacheMode });
+    response = await fetch(requestUrl, { cache: cacheMode });
   } catch (error) {
     throw new VietnamAssetErrorV121(
       "ASSET_HTTP_ERROR",
-      `정적 자산 요청 실패: ${url}`,
-      { url, cause: error instanceof Error ? error.message : String(error) }
+      `정적 자산 요청 실패: ${requestUrl}`,
+      {
+        url: requestUrl,
+        cause: error instanceof Error ? error.message : String(error),
+      }
     );
   }
   const contentType = response.headers.get("content-type") || "";
   const text = await response.text();
-  const responseUrl = response.url || url;
+  const responseUrl = response.url || requestUrl;
   const sample = text.slice(0, 200);
 
   if (!response.ok) {
@@ -515,7 +522,7 @@ async function loadElementPayload(
 
 export async function loadVietnamQualityReportV121(): Promise<VietnamQualityReportV121> {
   return fetchJson<VietnamQualityReportV121>(
-    "/data/vietnam/v1/quality-report.json"
+    publicAssetUrlV128("data/vietnam/v1/quality-report.json")
   );
 }
 
@@ -525,7 +532,7 @@ export async function loadVietnamMapIndexV121(): Promise<
   const payload = await fetchJson<{
     schemaVersion: "v121";
     layers: VietnamMapLayerV121[];
-  }>("/data/vietnam/v1/map-index.json");
+  }>(publicAssetUrlV128("data/vietnam/v1/map-index.json"));
   return payload.layers;
 }
 
@@ -535,7 +542,7 @@ export async function loadVietnamCatalogV121(): Promise<
   const payload = await fetchJson<{
     schemaVersion: "v121";
     elements: VietnamCatalogElementV121[];
-  }>("/data/vietnam/v1/catalog.json");
+  }>(publicAssetUrlV128("data/vietnam/v1/catalog.json"));
   return payload.elements;
 }
 

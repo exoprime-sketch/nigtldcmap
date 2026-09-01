@@ -1,0 +1,157 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: vietnam-pilot-pages-production
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Gate and build Pages site
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      CI: "true"
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Resolve Chrome executable
+        shell: bash
+        run: |
+          browser_path="$(command -v google-chrome || command -v chromium-browser || command -v chromium || true)"
+          if [[ -z "$browser_path" ]]; then
+            curl --fail --location --silent --show-error \
+              --output "$RUNNER_TEMP/google-chrome-stable_current_amd64.deb" \
+              https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+            sudo apt-get update
+            sudo apt-get install --yes "$RUNNER_TEMP/google-chrome-stable_current_amd64.deb"
+            browser_path="$(command -v google-chrome)"
+          fi
+          "$browser_path" --version
+          echo "V125_BROWSER_EXECUTABLE=$browser_path" >> "$GITHUB_ENV"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run blocking V128 release gate
+        run: npm run finalize:v128
+
+      - name: Verify deployment, security, and performance contracts
+        run: |
+          npm run audit:deployment:v128
+          npm run audit:security:v128
+          npm run audit:performance:v128
+
+      - name: Resolve deployment public URL
+        shell: bash
+        env:
+          CONFIGURED_PUBLIC_URL: ${{ vars.PUBLIC_URL }}
+        run: |
+          if [[ -n "$CONFIGURED_PUBLIC_URL" ]]; then
+            public_url="$CONFIGURED_PUBLIC_URL"
+          else
+            repository_name="${GITHUB_REPOSITORY#*/}"
+            public_url="/$repository_name"
+          fi
+          if [[ "$public_url" != "/" ]]; then
+            public_url="${public_url%/}"
+          fi
+          echo "PUBLIC_URL=$public_url" >> "$GITHUB_ENV"
+          echo "Pages PUBLIC_URL: $public_url"
+
+      - name: Build deployment artifact
+        env:
+          GENERATE_SOURCEMAP: "false"
+        run: npm run build
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: build/
+
+  deploy:
+    name: Deploy production site
+    needs: build
+    runs-on: ubuntu-latest
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  smoke:
+    name: Smoke deployed production site
+    needs: deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      CI: "true"
+      PRODUCTION_URL: ${{ needs.deploy.outputs.page_url }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Resolve Chrome executable
+        shell: bash
+        run: |
+          browser_path="$(command -v google-chrome || command -v chromium-browser || command -v chromium || true)"
+          if [[ -z "$browser_path" ]]; then
+            curl --fail --location --silent --show-error \
+              --output "$RUNNER_TEMP/google-chrome-stable_current_amd64.deb" \
+              https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+            sudo apt-get update
+            sudo apt-get install --yes "$RUNNER_TEMP/google-chrome-stable_current_amd64.deb"
+            browser_path="$(command -v google-chrome)"
+          fi
+          "$browser_path" --version
+          echo "V125_BROWSER_EXECUTABLE=$browser_path" >> "$GITHUB_ENV"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Smoke deployed URL
+        run: npm run smoke:production:v128
+
+      - name: Upload production smoke report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: vietnam-pilot-production-smoke-${{ github.run_id }}-${{ github.run_attempt }}
+          path: reports/v128/production-smoke-v128.json
+          if-no-files-found: error
+          retention-days: 30

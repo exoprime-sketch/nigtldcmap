@@ -1358,6 +1358,65 @@
   background: #eff8f4;
 }
 
+.cdp-map-public-attribution {
+  position: absolute;
+  z-index: 6;
+  left: 10px;
+  bottom: 8px;
+  max-width: calc(100% - 120px);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #52665e;
+  font-size: 0.64rem;
+  line-height: 1.35;
+  padding: 3px 6px;
+}
+
+.cdp-map-public-attribution a {
+  color: #245f4b;
+}
+
+.cdp-download-item.is-unavailable {
+  cursor: default;
+  background: #f7f9f8;
+}
+
+.cdp-download-item.is-unavailable input {
+  cursor: not-allowed;
+}
+
+.cdp-download-item__heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.cdp-download-status {
+  flex: none;
+  border-radius: 999px;
+  background: #e8f4ef;
+  color: #126148;
+  font-size: 0.69rem;
+  font-weight: 800;
+  line-height: 1.25;
+  padding: 4px 7px;
+}
+
+.cdp-download-status--display-only {
+  background: #fff3d8;
+  color: #785610;
+}
+
+.cdp-download-status--no-download-data {
+  background: #edf0ef;
+  color: #59645f;
+}
+
+.cdp-download-item small.cdp-download-item__reason {
+  color: #4f625a;
+}
+
 .cdp-download-item input {
   width: 17px;
   height: 17px;

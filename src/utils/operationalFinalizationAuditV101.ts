@@ -9,6 +9,7 @@ import {
   getAuthoritativeElementIdV88,
   isSupportElementIdV88,
 } from "./elementDatasetRegistryV88";
+import { publicAssetUrlV128 } from "./publicAssetUrlV128";
 
 export async function runOperationalFinalizationAuditV101() {
   const publicDatasets = DATASETS.filter(isDatasetPubliclyVisible);
@@ -18,12 +19,14 @@ export async function runOperationalFinalizationAuditV101() {
       .filter((id) => !isSupportElementIdV88(id))
   );
   const required = [
-    "/data/catalog/authoritative-elements-v101.json",
-    "/data/gcf/gcf-priority-country-projects-2026-08-13.json",
-    "/data/gcf/gcf-priority-country-current-check-2026-08-13.json",
-    "/data/gcf/gcf-project-technology-mapping-2026-08-13.json",
-    "/data/gcf/gcf-location-verification-2026-08-13.json",
-    "/data/platform/organizations/E-003__gcf-vnm-organizations__20260813.json",
+    publicAssetUrlV128("data/catalog/authoritative-elements-v101.json"),
+    publicAssetUrlV128("data/gcf/gcf-priority-country-projects-2026-08-13.json"),
+    publicAssetUrlV128("data/gcf/gcf-priority-country-current-check-2026-08-13.json"),
+    publicAssetUrlV128("data/gcf/gcf-project-technology-mapping-2026-08-13.json"),
+    publicAssetUrlV128("data/gcf/gcf-location-verification-2026-08-13.json"),
+    publicAssetUrlV128(
+      "data/platform/organizations/E-003__gcf-vnm-organizations__20260813.json"
+    ),
   ];
   const fetched = await Promise.all(
     required.map(async (url) => {

@@ -12,6 +12,7 @@ import type {
   PublicAnalyticalRendererV126,
 } from "../../../data/visualization/publicVisualizationRegistryV126";
 import { publicElementCopyV126 } from "../../../data/visualization/publicCopyRegistryV126";
+import { getPublicIndicatorInterpretationV129 } from "../../../data/interpretation/publicIndicatorInterpretationV129";
 import type {
   VietnamEntityV124,
   VietnamIndicatorMetaV124,
@@ -24,7 +25,9 @@ import type {
   E012VisualizationSelectionV125,
 } from "../semantic/OccupationEmploymentWagePreviewV125";
 import CpiaPolicyCapacityAnalysisV126 from "./CpiaPolicyCapacityAnalysisV126";
+import ClimateBudgetAllocationAnalysisV129 from "./ClimateBudgetAllocationAnalysisV129";
 import PublicDataLimitationsV126 from "./PublicDataLimitationsV126";
+import PublicIndicatorMeaningV129 from "./PublicIndicatorMeaningV129";
 import PublicRawDataTablesV126 from "./PublicRawDataTablesV126";
 import PublicSourcePanelV126 from "./PublicSourcePanelV126";
 import "./public-data-analysis-v126.css";
@@ -109,6 +112,38 @@ export default function PublicDataAnalysisRouterV126({
     }),
     [contract, publicRenderer]
   );
+  const meaningIndicatorId = useMemo(() => {
+    const dimensionEntries = Object.entries(selectorState.dimensions).filter(
+      ([key, value]) =>
+        Boolean(value) && !["variable", "mapVariable"].includes(key)
+    );
+    const candidates = semanticRows.filter(
+      (row) =>
+        (!selectorState.measure ||
+          row.semanticMeasure.key === selectorState.measure) &&
+        dimensionEntries.every(
+          ([key, value]) => row.dimensions[key] === value
+        )
+    );
+    if (candidates.length === 0) return null;
+    if (dimensionEntries.length > 0) return candidates[0].indicatorId;
+    const candidateInterpretations = candidates.map((row) =>
+      getPublicIndicatorInterpretationV129(elementId, null, row.indicatorId)
+    );
+    const uniqueInterpretations = new Set(candidateInterpretations);
+    if (
+      candidateInterpretations.every((interpretation) => interpretation !== null) &&
+      uniqueInterpretations.size === 1
+    ) {
+      return candidates[0].indicatorId;
+    }
+    const indicatorFamilies = new Set(
+      candidates.map((row) =>
+        row.indicatorId.replace(/_(?:central_highlands|mekong_river_delta|north_central_coast_and_south_central_coast|north_east_north_west|red_river_delta|south_east|total|ssp[123])$/u, "")
+      )
+    );
+    return indicatorFamilies.size === 1 ? candidates[0].indicatorId : null;
+  }, [elementId, selectorState.dimensions, selectorState.measure, semanticRows]);
 
   return (
     <>
@@ -118,8 +153,24 @@ export default function PublicDataAnalysisRouterV126({
         <p>{copy.description}</p>
       </header>
 
+      <PublicIndicatorMeaningV129
+        elementId={elementId}
+        indicatorId={meaningIndicatorId}
+        variableKey={
+          selectorState.dimensions.variable ||
+          selectorState.dimensions.mapVariable ||
+          (selectorState.measure ? "semantic-selection" : undefined)
+        }
+      />
+
       <section className="pav126-primary" data-testid="public-analysis-primary">
-        {elementId === "A-002" ? (
+        {elementId === "D-005" ? (
+          <ClimateBudgetAllocationAnalysisV129
+            rows={semanticRows}
+            selectorState={selectorState}
+            onSelectorStateChange={onSelectorStateChange}
+          />
+        ) : elementId === "A-002" ? (
           <CpiaPolicyCapacityAnalysisV126
             rows={semanticRows}
             selectorState={selectorState}
