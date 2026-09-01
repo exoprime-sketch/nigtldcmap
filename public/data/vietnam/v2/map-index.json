@@ -1,13 +1,14 @@
 {
-  "activeMapLayerCount": 13,
+  "activeMapLayerCount": 12,
   "countryIso3": "VNM",
   "dataSchemaVersion": "v124",
-  "generatedAt": "2026-08-27T00:00:00Z",
+  "generatedAt": "2026-09-01T00:00:00Z",
   "geometryManifest": "/data/vietnam/v2/geometry/geometry-manifest.json",
   "layers": [
     {
       "accuracyNotice": "원천이 제공한 좌표만 표시하며 좌표가 없는 레코드는 지도에 투영하지 않습니다.",
       "active": true,
+      "aggregationLevel": "facility",
       "assetRef": {
         "elementId": "A-023",
         "provider": "vietnam-v121",
@@ -15,10 +16,12 @@
       },
       "category": "에너지·인프라",
       "cluster": true,
+      "coordinateMeaning": "verified-physical-site",
       "defaultOverlay": false,
       "defaultPrimary": false,
       "detailElementId": "A-023",
       "detailUrl": "/?element=a-023&country=VNM#element-detail",
+      "displayedCoordinateCount": 1889,
       "downloadStatus": "available",
       "downloadableRecordCount": 236,
       "elementId": "A-023",
@@ -73,11 +76,17 @@
         "CC-BY-4.0",
         "ODbL-1.0"
       ],
+      "mapBenefit": "발전소의 입지와 설비 분포를 비교할 수 있습니다.",
       "mapMode": "cluster",
       "missingRegions": [],
       "publicShortTitle": "발전소",
+      "publicSpatialNotice": "원천 좌표가 있는 개별 발전소만 표시합니다.",
       "rawLabel": "발전소",
+      "regionalProject": false,
       "renderer": "cluster",
+      "scopeCountries": [
+        "VNM"
+      ],
       "selectors": {
         "defaultPeriod": "2026",
         "defaultVariable": "locations",
@@ -96,12 +105,15 @@
         ]
       },
       "source": "OpenStreetMap contributors · World Resources Institute",
+      "sourceCoordinateCount": 1889,
       "sourceOrganizations": [
         "OpenStreetMap contributors",
         "World Resources Institute"
       ],
       "sourceYear": 2026,
       "spatialCoverage": "출처 좌표가 있는 1,889개 피처",
+      "spatialLimitation": "원천 좌표가 있는 개별 발전소만 표시합니다.",
+      "spatialScopeType": "facility-site",
       "tooltipFields": [
         "name",
         "fuelType",
@@ -116,6 +128,7 @@
     {
       "accuracyNotice": "Digitized from a georeferenced PDF. The source warns of isolated horizontal and vertical displacement of 2–10 km; use only for approximate visualization, not high-accuracy engineering or routing.",
       "active": true,
+      "aggregationLevel": "network-segment",
       "assetRef": {
         "elementId": "A-024",
         "provider": "vietnam-v124",
@@ -123,10 +136,12 @@
       },
       "category": "에너지·인프라",
       "cluster": false,
+      "coordinateMeaning": "verified-network-geometry",
       "defaultOverlay": false,
       "defaultPrimary": false,
       "detailElementId": "A-024",
       "detailUrl": "/?element=a-024&country=VNM#element-detail",
+      "displayedCoordinateCount": 6693,
       "downloadStatus": "available",
       "downloadableRecordCount": 762,
       "elementId": "A-024",
@@ -168,11 +183,17 @@
         "title": "송전 전압"
       },
       "license": "CC-BY-4.0",
+      "mapBenefit": "송전망의 연결 구조와 발전소 접근성을 함께 분석할 수 있습니다.",
       "mapMode": "line",
       "missingRegions": [],
       "publicShortTitle": "송전망",
+      "publicSpatialNotice": "지오리퍼런싱 오차가 있어 정밀 설계용 위치가 아닙니다.",
       "rawLabel": "전력망[위치, 미공급 지역]",
+      "regionalProject": false,
       "renderer": "line",
+      "scopeCountries": [
+        "VNM"
+      ],
       "selectors": {
         "defaultPeriod": "2016",
         "defaultVariable": "all",
@@ -215,6 +236,7 @@
         ]
       },
       "source": "World Bank Group / ENERGYDATA.INFO",
+      "sourceCoordinateCount": 6693,
       "sourceOrganizations": [
         "World Bank Group / ENERGYDATA.INFO"
       ],
@@ -223,6 +245,8 @@
       ],
       "sourceYear": 2016,
       "spatialCoverage": "베트남 기존 송전선 606개, 총 23,607.625 km",
+      "spatialLimitation": "지오리퍼런싱 오차가 있어 정밀 설계용 위치가 아닙니다.",
+      "spatialScopeType": "network",
       "tooltipFields": [
         "voltageKv",
         "status",
@@ -236,6 +260,7 @@
     {
       "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다.",
       "active": true,
+      "aggregationLevel": "admin1",
       "assetRef": {
         "elementId": "C-016",
         "provider": "vietnam-v124",
@@ -243,11 +268,13 @@
       },
       "category": "에너지·인프라",
       "cluster": false,
+      "coordinateMeaning": "source-region-value",
       "dataUrl": "/data/vietnam/v2/spatial/layers/c-016.json",
       "defaultOverlay": false,
       "defaultPrimary": false,
       "detailElementId": "C-016",
       "detailUrl": "/?element=c-016&country=VNM#element-detail",
+      "displayedCoordinateCount": 0,
       "downloadStatus": "available",
       "downloadableRecordCount": 808,
       "elementId": "C-016",
@@ -280,11 +307,17 @@
         "베트남 지식재산법 제15조 — 법률규범문서 저작권 비보호",
         "언론 보도 — 사실 정보 인용"
       ],
+      "mapBenefit": "공개된 성·시별 재생에너지 계획의 공간 차이를 비교할 수 있습니다.",
       "mapMode": "choropleth",
       "missingRegions": [],
       "publicShortTitle": "재생에너지 발주 및 확대 계획[국가 RE 용량 목표, 입찰 일정(예정/진행/완료), 대상 기술, 사업자 선정 방식(경쟁입찰/FIT), 발주 기관]",
+      "publicSpatialNotice": "값이 공개된 성·시만 표시하며 미제공 지역은 0이 아닙니다.",
       "rawLabel": "재생에너지 발주 및 확대 계획[국가 RE 용량 목표, 입찰 일정(예정/진행/완료), 대상 기술, 사업자 선정 방식(경쟁입찰/FIT), 발주 기관]",
+      "regionalProject": false,
       "renderer": "partial-choropleth",
+      "scopeCountries": [
+        "VNM"
+      ],
       "selectors": {
         "defaultPeriod": "2025-2030",
         "defaultVariable": "dmt-mai-nha",
@@ -375,6 +408,7 @@
         ]
       },
       "source": "개정 PDP8 부록Ⅱ(768/QĐ-TTg) 원문 자체 검산 · 베트남 국회·정부 — 전력법 61/2024/QH15 및 Nghị định 58/2025/NĐ-CP · 베트남 산업무역부(의견수렴 공고) · 베트남 총리실 (Quyết định 768/QĐ-TTg) / 산업무역부(MOIT)",
+      "sourceCoordinateCount": 0,
       "sourceOrganizations": [
         "개정 PDP8 부록Ⅱ(768/QĐ-TTg) 원문 자체 검산",
         "베트남 국회·정부 — 전력법 61/2024/QH15 및 Nghị định 58/2025/NĐ-CP",
@@ -391,6 +425,8 @@
       ],
       "sourceYear": "2025-2030",
       "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개",
+      "spatialLimitation": "값이 공개된 성·시만 표시하며 미제공 지역은 0이 아닙니다.",
+      "spatialScopeType": "admin1",
       "spatialStatus": "partial",
       "tooltipFields": [
         "adm1Name",
@@ -405,6 +441,7 @@
     {
       "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다.",
       "active": true,
+      "aggregationLevel": "admin1",
       "assetRef": {
         "elementId": "B-031",
         "provider": "vietnam-v124",
@@ -412,11 +449,13 @@
       },
       "category": "산림·토지",
       "cluster": false,
+      "coordinateMeaning": "source-region-value",
       "dataUrl": "/data/vietnam/v2/spatial/layers/b-031.json",
       "defaultOverlay": false,
       "defaultPrimary": false,
       "detailElementId": "B-031",
       "detailUrl": "/?element=b-031&country=VNM#element-detail",
+      "displayedCoordinateCount": 0,
       "downloadStatus": "available",
       "downloadableRecordCount": 208,
       "elementId": "B-031",
@@ -446,11 +485,17 @@
         "CC-BY-4.0",
         "기관 이용약관"
       ],
+      "mapBenefit": "성·시별 산림면적 차이를 비교할 수 있습니다.",
       "mapMode": "choropleth",
       "missingRegions": [],
       "publicShortTitle": "산림 총 면적",
+      "publicSpatialNotice": "개편 전 63개 성·시 통계 경계를 사용합니다.",
       "rawLabel": "산림 총 면적",
+      "regionalProject": false,
       "renderer": "admin1-choropleth",
+      "scopeCountries": [
+        "VNM"
+      ],
       "selectors": {
         "defaultPeriod": "2010",
         "defaultVariable": "tree-cover-area-2010",
@@ -489,6 +534,7 @@
         ]
       },
       "source": "Global Forest Watch (UMD/WRI) · Global Forest Watch / Hansen et al.(2013) · Global Forest Watch / Hansen et al.(2013), UMD",
+      "sourceCoordinateCount": 0,
       "sourceOrganizations": [
         "Global Forest Watch (UMD/WRI)",
         "Global Forest Watch / Hansen et al.(2013)",
@@ -500,6 +546,8 @@
       ],
       "sourceYear": "2010",
       "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개",
+      "spatialLimitation": "개편 전 63개 성·시 통계 경계를 사용합니다.",
+      "spatialScopeType": "admin1",
       "spatialStatus": "ready",
       "tooltipFields": [
         "adm1Name",
@@ -514,6 +562,7 @@
     {
       "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다.",
       "active": true,
+      "aggregationLevel": "admin1",
       "assetRef": {
         "elementId": "B-032",
         "provider": "vietnam-v124",
@@ -521,11 +570,13 @@
       },
       "category": "산림·토지",
       "cluster": false,
+      "coordinateMeaning": "source-region-value",
       "dataUrl": "/data/vietnam/v2/spatial/layers/b-032.json",
       "defaultOverlay": false,
       "defaultPrimary": false,
       "detailElementId": "B-032",
       "detailUrl": "/?element=b-032&country=VNM#element-detail",
+      "displayedCoordinateCount": 0,
       "downloadStatus": "available",
       "downloadableRecordCount": 136,
       "elementId": "B-032",
@@ -555,11 +606,17 @@
         "CC-BY-4.0",
         "기관 이용약관"
       ],
+      "mapBenefit": "성·시별 수관 피복 차이를 비교할 수 있습니다.",
       "mapMode": "choropleth",
       "missingRegions": [],
       "publicShortTitle": "수관 피복률",
+      "publicSpatialNotice": "개편 전 63개 성·시 통계 경계를 사용합니다.",
       "rawLabel": "수관 피복률",
+      "regionalProject": false,
       "renderer": "admin1-choropleth",
+      "scopeCountries": [
+        "VNM"
+      ],
       "selectors": {
         "defaultPeriod": "2010",
         "defaultVariable": "canopy-cover-30",
@@ -581,6 +638,7 @@
         ]
       },
       "source": "Global Forest Watch (UMD/WRI) · Global Forest Watch (분자) / FAOSTAT Land Use (분모) · Global Forest Watch / Hansen et al.(2013)",
+      "sourceCoordinateCount": 0,
       "sourceOrganizations": [
         "Global Forest Watch (UMD/WRI)",
         "Global Forest Watch (분자) / FAOSTAT Land Use (분모)",
@@ -592,6 +650,8 @@
       ],
       "sourceYear": "2010",
       "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개",
+      "spatialLimitation": "개편 전 63개 성·시 통계 경계를 사용합니다.",
+      "spatialScopeType": "admin1",
       "spatialStatus": "ready",
       "tooltipFields": [
         "adm1Name",
@@ -606,6 +666,7 @@
     {
       "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다.",
       "active": true,
+      "aggregationLevel": "admin1",
       "assetRef": {
         "elementId": "B-033",
         "provider": "vietnam-v124",
@@ -613,11 +674,13 @@
       },
       "category": "산림·토지",
       "cluster": false,
+      "coordinateMeaning": "source-region-value",
       "dataUrl": "/data/vietnam/v2/spatial/layers/b-033.json",
       "defaultOverlay": false,
       "defaultPrimary": false,
       "detailElementId": "B-033",
       "detailUrl": "/?element=b-033&country=VNM#element-detail",
+      "displayedCoordinateCount": 0,
       "downloadStatus": "available",
       "downloadableRecordCount": 2142,
       "elementId": "B-033",
@@ -646,11 +709,17 @@
       "licenses": [
         "CC-BY-4.0"
       ],
+      "mapBenefit": "성·시별 산림손실의 공간 분포를 비교할 수 있습니다.",
       "mapMode": "choropleth",
       "missingRegions": [],
       "publicShortTitle": "연간 산림 손실",
+      "publicSpatialNotice": "개편 전 63개 성·시 통계 경계를 사용합니다.",
       "rawLabel": "연간 산림 손실",
+      "regionalProject": false,
       "renderer": "admin1-choropleth",
+      "scopeCountries": [
+        "VNM"
+      ],
       "selectors": {
         "defaultPeriod": "2025",
         "defaultVariable": "annual-tree-cover-loss",
@@ -718,6 +787,7 @@
         ]
       },
       "source": "Global Forest Watch (UMD/WRI) · Global Forest Watch (UMD/WRI, Curtis et al. 2018 drivers) · Global Forest Watch / Curtis et al.(2018) drivers · Global Forest Watch / Hansen (UMD)",
+      "sourceCoordinateCount": 0,
       "sourceOrganizations": [
         "Global Forest Watch (UMD/WRI)",
         "Global Forest Watch (UMD/WRI, Curtis et al. 2018 drivers)",
@@ -730,6 +800,8 @@
       ],
       "sourceYear": "2025",
       "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개",
+      "spatialLimitation": "개편 전 63개 성·시 통계 경계를 사용합니다.",
+      "spatialScopeType": "admin1",
       "spatialStatus": "ready",
       "tooltipFields": [
         "adm1Name",
@@ -744,6 +816,7 @@
     {
       "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다.",
       "active": true,
+      "aggregationLevel": "admin1",
       "assetRef": {
         "elementId": "B-034",
         "provider": "vietnam-v124",
@@ -751,11 +824,13 @@
       },
       "category": "산림·토지",
       "cluster": false,
+      "coordinateMeaning": "source-region-value",
       "dataUrl": "/data/vietnam/v2/spatial/layers/b-034.json",
       "defaultOverlay": false,
       "defaultPrimary": false,
       "detailElementId": "B-034",
       "detailUrl": "/?element=b-034&country=VNM#element-detail",
+      "displayedCoordinateCount": 0,
       "downloadStatus": "available",
       "downloadableRecordCount": 498,
       "elementId": "B-034",
@@ -785,11 +860,17 @@
         "CC-BY-4.0",
         "기관 이용약관"
       ],
+      "mapBenefit": "성·시별 산림 탄소의 공간 차이를 비교할 수 있습니다.",
       "mapMode": "choropleth",
       "missingRegions": [],
       "publicShortTitle": "탄소 저장량",
+      "publicSpatialNotice": "개편 전 63개 성·시 통계 경계를 사용합니다.",
       "rawLabel": "탄소 저장량",
+      "regionalProject": false,
       "renderer": "admin1-choropleth",
+      "scopeCountries": [
+        "VNM"
+      ],
       "selectors": {
         "defaultPeriod": "2025",
         "defaultVariable": "8fca7c8dd189",
@@ -864,6 +945,7 @@
         ]
       },
       "source": "Global Forest Watch · Global Forest Watch (Harris et al. 2021) · Global Forest Watch (UMD/WRI)",
+      "sourceCoordinateCount": 0,
       "sourceOrganizations": [
         "Global Forest Watch",
         "Global Forest Watch (Harris et al. 2021)",
@@ -875,6 +957,8 @@
       ],
       "sourceYear": "2025",
       "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개",
+      "spatialLimitation": "개편 전 63개 성·시 통계 경계를 사용합니다.",
+      "spatialScopeType": "admin1",
       "spatialStatus": "ready",
       "tooltipFields": [
         "adm1Name",
@@ -887,8 +971,9 @@
       "zeroImputationCount": 0
     },
     {
-      "accuracyNotice": "권역값은 명시된 GDL 권역 소속 성·시에 동일하게 표시하며 성별 추정값이 아닙니다.",
+      "accuracyNotice": "권역값은 명시된 GDL 권역 소속 성·시에 동일하게 표시하며 성·시별 독립 추정값이 아닙니다.",
       "active": true,
+      "aggregationLevel": "six-region",
       "assetRef": {
         "elementId": "B-021",
         "provider": "vietnam-v124",
@@ -896,11 +981,13 @@
       },
       "category": "기후·위험",
       "cluster": false,
+      "coordinateMeaning": "source-region-value",
       "dataUrl": "/data/vietnam/v2/spatial/layers/b-021.json",
       "defaultOverlay": false,
       "defaultPrimary": false,
       "detailElementId": "B-021",
       "detailUrl": "/?element=b-021&country=VNM#element-detail",
+      "displayedCoordinateCount": 0,
       "downloadStatus": "available",
       "downloadableRecordCount": 2970,
       "elementId": "B-021",
@@ -929,11 +1016,17 @@
       "licenses": [
         "기관 이용약관"
       ],
+      "mapBenefit": "6개 권역의 취약성 차이를 행정경계 위에서 비교할 수 있습니다.",
       "mapMode": "region-choropleth",
       "missingRegions": [],
       "publicShortTitle": "Global Data Lab GVI(Vulnerability Index)",
+      "publicSpatialNotice": "권역값을 소속 성·시에 동일 표시하며 성·시 독립 추정값이 아닙니다.",
       "rawLabel": "Global Data Lab GVI(Vulnerability Index)",
+      "regionalProject": false,
       "renderer": "admin1-choropleth",
+      "scopeCountries": [
+        "VNM"
+      ],
       "selectors": {
         "defaultPeriod": "2023",
         "defaultVariable": "gvi-6",
@@ -1417,6 +1510,7 @@
         ]
       },
       "source": "Global Data Lab (GDL Area Database) · Global Data Lab GVI · Global Data Lab GVI (Huisman et al., 2025) · Global Data Lab — GVIP Database (Huisman et al., 2025)",
+      "sourceCoordinateCount": 0,
       "sourceOrganizations": [
         "Global Data Lab (GDL Area Database)",
         "Global Data Lab GVI",
@@ -1427,7 +1521,9 @@
         "https://globaldatalab.org/gvi/download/"
       ],
       "sourceYear": "2023",
-      "spatialCoverage": "GDL 6개 권역을 명시적 63개 성·시 membership으로 표시",
+      "spatialCoverage": "GDL 6개 권역값을 명시적 대응표로 63개 성·시 경계에 표시",
+      "spatialLimitation": "권역값을 소속 성·시에 동일 표시하며 성·시 독립 추정값이 아닙니다.",
+      "spatialScopeType": "region",
       "spatialStatus": "ready",
       "tooltipFields": [
         "adm1Name",
@@ -1442,6 +1538,7 @@
     {
       "accuracyNotice": "원천이 제공한 좌표만 표시하며 좌표가 없는 레코드는 지도에 투영하지 않습니다.",
       "active": true,
+      "aggregationLevel": "facility",
       "assetRef": {
         "elementId": "B-048",
         "provider": "vietnam-v121",
@@ -1449,10 +1546,12 @@
       },
       "category": "물·자원",
       "cluster": false,
+      "coordinateMeaning": "verified-physical-site",
       "defaultOverlay": false,
       "defaultPrimary": false,
       "detailElementId": "B-048",
       "detailUrl": "/?element=b-048&country=VNM#element-detail",
+      "displayedCoordinateCount": 2,
       "downloadStatus": "available",
       "downloadableRecordCount": 18,
       "elementId": "B-048",
@@ -1496,11 +1595,17 @@
       "licenses": [
         "Public Domain (U.S. Government Work)"
       ],
+      "mapBenefit": "주요 광산의 실제 입지를 다른 자원·인프라와 비교할 수 있습니다.",
       "mapMode": "point",
       "missingRegions": [],
       "publicShortTitle": "주요 광산",
+      "publicSpatialNotice": "공개 좌표가 검증된 주요 광산 2곳만 표시합니다.",
       "rawLabel": "주요 광산",
+      "regionalProject": false,
       "renderer": "point",
+      "scopeCountries": [
+        "VNM"
+      ],
       "selectors": {
         "defaultPeriod": "2022",
         "defaultVariable": "locations",
@@ -1519,12 +1624,15 @@
         ]
       },
       "source": "USGS MRDS (Mineral Resources Data System) · USGS Minerals Yearbook Vietnam 2022 (Table 2); USGS MRDS",
+      "sourceCoordinateCount": 2,
       "sourceOrganizations": [
         "USGS MRDS (Mineral Resources Data System)",
         "USGS Minerals Yearbook Vietnam 2022 (Table 2); USGS MRDS"
       ],
       "sourceYear": 2022,
       "spatialCoverage": "출처 좌표가 있는 2개 피처",
+      "spatialLimitation": "공개 좌표가 검증된 주요 광산 2곳만 표시합니다.",
+      "spatialScopeType": "facility-site",
       "tooltipFields": [
         "name",
         "mineral",
@@ -1538,6 +1646,7 @@
     {
       "accuracyNotice": "원천이 제공한 좌표만 표시하며 좌표가 없는 레코드는 지도에 투영하지 않습니다.",
       "active": true,
+      "aggregationLevel": "project-site",
       "assetRef": {
         "elementId": "C-025",
         "provider": "vietnam-v121",
@@ -1545,16 +1654,18 @@
       },
       "category": "국제사업·재원",
       "cluster": false,
+      "coordinateMeaning": "verified-physical-site",
       "defaultOverlay": false,
       "defaultPrimary": false,
       "detailElementId": "C-025",
       "detailUrl": "/?element=c-025&country=VNM#element-detail",
+      "displayedCoordinateCount": 18,
       "downloadStatus": "available",
       "downloadableRecordCount": 5,
       "elementId": "C-025",
       "enabled": true,
       "fakeGeometryCount": 0,
-      "featureCount": 20,
+      "featureCount": 18,
       "filters": [
         {
           "field": "standard",
@@ -1586,8 +1697,8 @@
       ],
       "join": {
         "failures": [],
-        "matchedCount": 20,
-        "requiredCount": 20
+        "matchedCount": 18,
+        "requiredCount": 18
       },
       "label": "탄소크레딧 사업",
       "latestYear": 2026,
@@ -1603,11 +1714,17 @@
         "국제기구·공공기관 공개자료 — 출처 표기 조건",
         "언론·전문지 저작권 유보 — 인용 시 출처 표기"
       ],
+      "mapBenefit": "검증된 탄소크레딧 사업지의 기술·입지 분포를 비교할 수 있습니다.",
       "mapMode": "point",
       "missingRegions": [],
       "publicShortTitle": "탄소크레딧 사업",
+      "publicSpatialNotice": "전국 프로그램 대표좌표 2건과 베트남 밖 잘못된 좌표 2건은 표시하지 않습니다.",
       "rawLabel": "탄소사업",
+      "regionalProject": false,
       "renderer": "point",
+      "scopeCountries": [
+        "VNM"
+      ],
       "selectors": {
         "defaultPeriod": "2026",
         "defaultVariable": "locations",
@@ -1626,6 +1743,7 @@
         ]
       },
       "source": "Global Carbon Council (GCC) · UNFCCC CDM Insights · Verra Registry / Gold Standard Registry / CarbonPlan offsets-db · Verra VCS Registry · Gold Standard Registry",
+      "sourceCoordinateCount": 22,
       "sourceOrganizations": [
         "Global Carbon Council (GCC)",
         "UNFCCC CDM Insights",
@@ -1633,7 +1751,9 @@
         "Verra VCS Registry · Gold Standard Registry"
       ],
       "sourceYear": 2026,
-      "spatialCoverage": "출처 좌표가 있는 20개 피처",
+      "spatialCoverage": "출처 좌표가 있는 18개 피처",
+      "spatialLimitation": "전국 프로그램 대표좌표 2건과 베트남 밖 잘못된 좌표 2건은 표시하지 않습니다.",
+      "spatialScopeType": "project-site",
       "tooltipFields": [
         "name",
         "standard",
@@ -1649,6 +1769,7 @@
     {
       "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다.",
       "active": true,
+      "aggregationLevel": "admin1",
       "assetRef": {
         "elementId": "D-008",
         "provider": "vietnam-v124",
@@ -1656,11 +1777,13 @@
       },
       "category": "국제사업·재원",
       "cluster": false,
+      "coordinateMeaning": "source-region-value",
       "dataUrl": "/data/vietnam/v2/spatial/layers/d-008.json",
       "defaultOverlay": false,
       "defaultPrimary": false,
       "detailElementId": "D-008",
       "detailUrl": "/?element=d-008&country=VNM#element-detail",
+      "displayedCoordinateCount": 0,
       "downloadStatus": "source-restricted",
       "downloadableRecordCount": 0,
       "elementId": "D-008",
@@ -1679,24 +1802,30 @@
         "missingCount": 60,
         "requiredCount": 63
       },
-      "label": "주관 부처별 기후 예산 규모",
+      "label": "성·시 기후변화 지출",
       "latestYear": "2010-2013",
       "layerId": "vnm-v124-d-008",
       "legend": {
         "note": "단위 VND · 결측 60개 성·시",
-        "title": "성 단위 기후변화 지출 누계"
+        "title": "성·시 기후변화 지출"
       },
       "licenses": [
         "UNDP Terms of Use",
         "World Bank Group Terms and Conditions"
       ],
+      "mapBenefit": "실제 공개된 성·시 기후지출의 지역 차이를 비교할 수 있습니다.",
       "mapMode": "choropleth",
       "missingRegions": [
         "선택 변수에 따라 최대 60개 성·시 결측"
       ],
-      "publicShortTitle": "주관 부처별 기후 예산 규모",
+      "publicShortTitle": "성·시 기후변화 지출",
+      "publicSpatialNotice": "3개 성·시 자료만 있으며 나머지는 0이 아니라 미제공입니다.",
       "rawLabel": "주관 부처별 기후 예산 규모",
+      "regionalProject": false,
       "renderer": "partial-choropleth",
+      "scopeCountries": [
+        "VNM"
+      ],
       "selectors": {
         "defaultPeriod": "2010-2013",
         "defaultVariable": "provincial-climate-budget",
@@ -1716,6 +1845,7 @@
         ]
       },
       "source": "United Nations Development Programme · 베트남 기획투자부(MPI) — Viet Nam Climate Public Expenditure and Investment Review (CPEIR) 2015 · United Nations Development Programme 베트남사무소 · 베트남 기획투자부(MPI) — CPEIR 2022 · World Bank — Viet Nam Country Climate and Development Report (CCDR) 2022",
+      "sourceCoordinateCount": 0,
       "sourceOrganizations": [
         "United Nations Development Programme · 베트남 기획투자부(MPI) — Viet Nam Climate Public Expenditure and Investment Review (CPEIR) 2015",
         "United Nations Development Programme 베트남사무소 · 베트남 기획투자부(MPI) — CPEIR 2022",
@@ -1728,6 +1858,8 @@
       ],
       "sourceYear": "2010-2013",
       "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 3개",
+      "spatialLimitation": "3개 성·시 자료만 있으며 나머지는 0이 아니라 미제공입니다.",
+      "spatialScopeType": "admin1",
       "spatialStatus": "partial",
       "tooltipFields": [
         "adm1Name",
@@ -1740,8 +1872,9 @@
       "zeroImputationCount": 0
     },
     {
-      "accuracyNotice": "원천이 제공한 좌표만 표시하며 좌표가 없는 레코드는 지도에 투영하지 않습니다.",
+      "accuracyNotice": "참여국 경계는 사업의 협력범위이며 사업 위치가 아닙니다. 검증된 세부 활동지역만 점으로 표시합니다.",
       "active": true,
+      "aggregationLevel": "regional-project",
       "assetRef": {
         "elementId": "D-018",
         "provider": "vietnam-v121",
@@ -1749,44 +1882,41 @@
       },
       "category": "국제사업·재원",
       "cluster": false,
+      "coordinateMeaning": "project-country-scope",
+      "coordinateMeaningByGeometryRole": {
+        "activity-site": "verified-activity-site",
+        "regional-scope": "project-country-scope"
+      },
+      "coordinateMeanings": [
+        "project-country-scope",
+        "verified-activity-site"
+      ],
       "defaultOverlay": false,
       "defaultPrimary": false,
       "detailElementId": "D-018",
       "detailUrl": "/?element=d-018&country=VNM#element-detail",
+      "displayedCoordinateCount": 2,
       "downloadStatus": "source-restricted",
       "downloadableRecordCount": 0,
       "elementId": "D-018",
       "enabled": true,
       "fakeGeometryCount": 0,
-      "featureCount": 3,
-      "filters": [
-        {
-          "field": "status",
-          "label": "상태",
-          "values": [
-            "Project Under Implementation"
-          ]
-        },
-        {
-          "field": "implementingEntity",
-          "label": "기관",
-          "values": [
-            "UN Environment Programme (MIE)",
-            "UN-Habitat (MIE)",
-            "United Nations Educational, Scientific and Cultural Organization (MIE)"
-          ]
-        }
-      ],
+      "featureCount": 4,
+      "filters": [],
       "geometryTypes": [
-        "point"
+        "MultiPolygon",
+        "Point"
       ],
+      "geometryUrl": "/data/vietnam/v2/spatial/projects/d-018-regional.geojson",
       "join": {
         "failures": [],
-        "matchedCount": 3,
-        "requiredCount": 3
+        "matchedCount": 2,
+        "panelOnlyEntityCount": 2,
+        "requiredCount": 2,
+        "sourceEntityCount": 4
       },
-      "label": "적응기금 사업",
-      "latestYear": 2026,
+      "label": "적응기금 지역 협력사업",
+      "latestYear": "2026",
       "layerId": "vnm-v121-d-018",
       "legend": {
         "note": "자료연도 2026",
@@ -1796,156 +1926,71 @@
       "licenses": [
         "Adaptation Fund Legal Notice (World Bank 약관 준용)"
       ],
-      "mapMode": "point",
-      "missingRegions": [],
-      "publicShortTitle": "적응기금 사업",
+      "mapBenefit": "초국경 적응사업의 참여국과 베트남 참여 여부를 한눈에 확인할 수 있습니다.",
+      "mapMode": "regional-scope",
+      "missingRegions": [
+        "단일국 사업 2건은 검증된 세부 지점 또는 정밀 경계가 없어 상세에서만 제공"
+      ],
+      "publicShortTitle": "적응기금 지역 협력사업",
+      "publicSpatialNotice": "참여국 경계는 지역 협력범위를 뜻하며 실제 시설 위치를 뜻하지 않습니다.",
       "rawLabel": "Adaptation Fund 사업",
-      "renderer": "point",
+      "regionalProject": true,
+      "regionalScopeFeatureCount": 2,
+      "renderer": "regional-scope",
+      "scopeCountries": [
+        "KHM",
+        "LAO",
+        "THA",
+        "VNM"
+      ],
       "selectors": {
         "defaultPeriod": "2026",
-        "defaultVariable": "locations",
+        "defaultVariable": "regional-scope",
         "periods": [
           "2026"
         ],
         "variables": [
           {
-            "key": "locations",
-            "label": "적응기금 사업",
+            "key": "regional-scope",
+            "label": "지역 협력범위·세부 활동지역",
             "periods": [
               "2026"
             ],
-            "unit": "개"
+            "unit": "사업"
           }
         ]
       },
       "source": "Adaptation Fund Board Secretariat",
+      "sourceCoordinateCount": 7,
       "sourceOrganizations": [
         "Adaptation Fund Board Secretariat"
       ],
-      "sourceYear": 2026,
-      "spatialCoverage": "출처 좌표가 있는 3개 피처",
+      "sourceProjectCount": 4,
+      "sourceUrls": [
+        "https://www.adaptation-fund.org/projects-programmes/"
+      ],
+      "sourceYear": "2026",
+      "spatialCoverage": "지역 협력사업 2건의 참여국 범위 2개와 검증된 세부 활동지역 2곳",
+      "spatialLimitation": "국가 경계는 정밀 사업구역이 아니며 Greater Mekong의 원천 대표좌표 4개는 표시하지 않습니다.",
+      "spatialProjectCount": 2,
+      "spatialScopeType": "multi-country-regional",
       "tooltipFields": [
-        "name",
-        "implementingEntity",
+        "projectTitle",
+        "participatingCountries",
+        "sector",
         "status",
-        "projectPeriod",
         "approvedAmount",
-        "sourceUrl"
+        "implementingEntity",
+        "officialSource",
+        "publicSpatialNotice"
       ],
       "totalEntityCount": 4,
-      "unit": "source-provided location",
-      "zeroImputationCount": 0
-    },
-    {
-      "accuracyNotice": "원천이 제공한 좌표만 표시하며 좌표가 없는 레코드는 지도에 투영하지 않습니다.",
-      "active": true,
-      "assetRef": {
-        "elementId": "D-023",
-        "provider": "vietnam-v121",
-        "section": "entities"
-      },
-      "category": "국제사업·재원",
-      "cluster": false,
-      "defaultOverlay": false,
-      "defaultPrimary": false,
-      "detailElementId": "D-023",
-      "detailUrl": "/?element=d-023&country=VNM#element-detail",
-      "downloadStatus": "source-restricted",
-      "downloadableRecordCount": 0,
-      "elementId": "D-023",
-      "enabled": true,
-      "fakeGeometryCount": 0,
-      "featureCount": 3,
-      "filters": [
-        {
-          "field": "fund",
-          "label": "기금",
-          "values": [
-            "Adaptation Fund"
-          ]
-        },
-        {
-          "field": "status",
-          "label": "상태",
-          "values": [
-            "Project Under Implementation"
-          ]
-        },
-        {
-          "field": "sector",
-          "label": "분야",
-          "values": [
-            "Transboundary Water Management",
-            "Urban development"
-          ]
-        }
-      ],
-      "geometryTypes": [
-        "point"
-      ],
-      "join": {
-        "failures": [],
-        "matchedCount": 3,
-        "requiredCount": 3
-      },
-      "label": "국제협력·기후재원 사업",
-      "latestYear": 2026,
-      "layerId": "vnm-v121-d-023",
-      "legend": {
-        "note": "자료연도 2026",
-        "title": "국제협력·기후재원"
-      },
-      "legendTitle": "국제협력·기후재원 사업",
-      "licenses": [
-        "GCF Terms and conditions (기관 이용약관)",
-        "World Bank Group Terms and Conditions"
-      ],
-      "mapMode": "point",
-      "missingRegions": [],
-      "publicShortTitle": "국제협력·기후재원",
-      "rawLabel": "ODA·기후재원 사업",
-      "renderer": "point",
-      "selectors": {
-        "defaultPeriod": "2026",
-        "defaultVariable": "locations",
-        "periods": [
-          "2026"
-        ],
-        "variables": [
-          {
-            "key": "locations",
-            "label": "국제협력·기후재원",
-            "periods": [
-              "2026"
-            ],
-            "unit": "개"
-          }
-        ]
-      },
-      "source": "Climate Investment Funds (CIF) — Clean Technology Fund (CTF) Trust Fund Committee · Global Environment Facility (GEF) Secretariat · Green Climate Fund · Green Climate Fund · Global Environment Facility · Adaptation Fund Board Secretariat · Climate Investment Funds",
-      "sourceOrganizations": [
-        "Climate Investment Funds (CIF) — Clean Technology Fund (CTF) Trust Fund Committee",
-        "Global Environment Facility (GEF) Secretariat",
-        "Green Climate Fund",
-        "Green Climate Fund · Global Environment Facility · Adaptation Fund Board Secretariat · Climate Investment Funds"
-      ],
-      "sourceYear": 2026,
-      "spatialCoverage": "출처 좌표가 있는 3개 피처",
-      "tooltipFields": [
-        "name",
-        "fund",
-        "accreditedEntity",
-        "status",
-        "approvedAmount",
-        "projectPeriod",
-        "sourceUrl"
-      ],
-      "totalEntityCount": 71,
-      "unit": "source-provided location",
+      "unit": "사업 범위·세부 활동지역",
+      "verifiedActivitySiteFeatureCount": 2,
       "zeroImputationCount": 0
     }
   ],
-  "mapFeatureCount": 2904,
-  "platformRelease": "v124",
+  "mapFeatureCount": 2900,
+  "platformRelease": "v130",
   "schemaVersion": "v124"
 }

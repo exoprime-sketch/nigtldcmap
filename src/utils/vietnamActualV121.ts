@@ -286,6 +286,22 @@ export function entityDisplayNameV121(entity: VietnamEntityV121): string {
       return String(value);
     }
   }
+  const projectId = attrs.projectId;
+  const standard = attrs.standard;
+  if (
+    projectId !== null &&
+    projectId !== undefined &&
+    String(projectId).trim() &&
+    standard !== null &&
+    standard !== undefined &&
+    String(standard).trim()
+  ) {
+    const publicProjectId = String(projectId)
+      .trim()
+      .replace(/^gs[_\s-]*/iu, "GS ")
+      .replace(/_/gu, " ");
+    return `${String(standard).trim()} 등록사업 · ${publicProjectId}`;
+  }
   return "명칭 미기재";
 }
 

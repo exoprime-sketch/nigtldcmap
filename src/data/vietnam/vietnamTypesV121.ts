@@ -99,6 +99,36 @@ export type VietnamEntityV121 = {
   geometryCompleteness?: string;
   coordinateSelectionNote?: string;
   normalizationNote?: string;
+  spatialScopeType?:
+    | "facility-site"
+    | "project-site"
+    | "multi-site"
+    | "admin1"
+    | "region"
+    | "country"
+    | "multi-country-regional"
+    | "network"
+    | "raster"
+    | "unknown";
+  coordinateMeaning?:
+    | "verified-physical-site"
+    | "verified-activity-site"
+    | "verified-network-geometry"
+    | "source-region-value"
+    | "project-country-scope"
+    | "first-source-coordinate"
+    | "representative-coordinate"
+    | "centroid"
+    | "unknown";
+  scopeCountries?: string[];
+  sourceCoordinateCount?: number;
+  displayedCoordinateCount?: number;
+  regionalProject?: boolean;
+  aggregationLevel?: string;
+  sourceSpatialUnit?: string;
+  targetSpatialUnit?: string;
+  spatialSemanticsVerified?: boolean;
+  publicSpatialNotice?: string;
   provenance: VietnamRecordProvenanceV121;
 };
 
@@ -168,6 +198,7 @@ export type VietnamElementUseV121 = {
     | "polygon"
     | "raster"
     | "country-aggregate"
+    | "regional-scope"
     | "panel-only"
     | "not-applicable";
   reason: string;
@@ -433,7 +464,13 @@ export interface VietnamMapLayerV121 {
   rawLabel?: string;
   publicShortTitle?: string;
   category: string;
-  mapMode: "point" | "cluster" | "line" | "choropleth" | "region-choropleth";
+  mapMode:
+    | "point"
+    | "cluster"
+    | "line"
+    | "choropleth"
+    | "region-choropleth"
+    | "regional-scope";
   geometryTypes: string[];
   featureCount: number;
   totalEntityCount: number;
