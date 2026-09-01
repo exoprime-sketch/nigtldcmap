@@ -69,6 +69,7 @@ import {
 } from "../utils/vietnamActualV121";
 import { publicAssetUrlV128 } from "../utils/publicAssetUrlV128";
 import MapPanelSeparatorV129 from "../components/map/MapPanelSeparatorV129";
+import MapDataGuideV130 from "../components/map/MapDataGuideV130";
 import { useResizableMapPanelsV129 } from "../hooks/useResizableMapPanelsV129";
 import "../styles/country-data-platform-v122.css";
 import "../styles/map-layout-v129.css";
@@ -80,6 +81,7 @@ interface RealMapExplorerPageProps {
     selectorState?: DataFinderSelectorStateV125
   ) => void;
   onOpenCountry: (iso3: string) => void;
+  onOpenDataFinder: () => void;
   onOpenDownload: (
     elementId: string | null,
     countryIso3: string | null
@@ -287,9 +289,20 @@ function publicMapCoverageTextV126(layer: CountryMapLayerV122): string {
 }
 
 function isExternalSpatialLayer(layer: CountryMapLayerV122): boolean {
-  return ["line", "admin1-choropleth", "partial-choropleth"].includes(
+  return [
+    "line",
+    "admin1-choropleth",
+    "partial-choropleth",
+    "regional-scope",
+  ].includes(
     rendererOf(layer)
   );
+}
+
+function optionalFiniteNumberV130(value: unknown): number | null {
+  if (value === null || value === undefined || value === "") return null;
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : null;
 }
 
 function colorForValue(
@@ -324,6 +337,7 @@ export {
 
 interface LayerHandlers {
   interactiveLayerId: string;
+  additionalInteractiveLayerId?: string;
   clusterLayerId?: string;
   onClick: (event: MapLayerMouseEvent) => void;
   onEnter: (event: MapLayerMouseEvent) => void;
@@ -409,6 +423,7 @@ function layerRuntimeIds(countryIso3: string, elementId: string) {
     source: `v122-source-${suffix}`,
     point: `v122-point-${suffix}`,
     pointHit: `v126-point-hit-${suffix}`,
+    pointSelection: `v130-point-selection-${suffix}`,
     cluster: `v122-cluster-${suffix}`,
     clusterCount: `v126-cluster-count-${suffix}`,
     pointSymbol: `v129-point-symbol-${suffix}`,
@@ -434,6 +449,7 @@ function moveMapDataLayersV126(
       ids.clusterCount,
       ids.point,
       ids.pointSymbol,
+      ids.pointSelection,
       ids.line,
       ids.pointHit,
       ids.lineHit,
@@ -752,7 +768,11 @@ function publicMapSymbolShapeV129(
 ): PublicMapSymbolShapeV129 {
   const renderer = rendererOf(layer);
   if (renderer === "line") return "line";
-  if (renderer === "admin1-choropleth" || renderer === "partial-choropleth") {
+  if (
+    renderer === "admin1-choropleth" ||
+    renderer === "partial-choropleth" ||
+    renderer === "regional-scope"
+  ) {
     return "area";
   }
   if (["B-048", "D-018"].includes(layer.elementId)) return "diamond";
@@ -824,6 +844,7 @@ function sameStringArray(a: string[], b: string[]): boolean {
 export default function RealMapExplorerPage({
   onOpenElement,
   onOpenCountry,
+  onOpenDataFinder,
   onOpenDownload,
   initialState,
   onStateChange,
@@ -933,7 +954,9 @@ export default function RealMapExplorerPage({
         const layer = layers.find((item) => item.elementId === elementId);
         const renderer = layer ? rendererOf(layer) : "point";
         const isArea =
-          renderer === "admin1-choropleth" || renderer === "partial-choropleth";
+          renderer === "admin1-choropleth" ||
+          renderer === "partial-choropleth" ||
+          renderer === "regional-scope";
         const isPrimary = elementId === primaryLayerId;
         if (isArea) return isPrimary ? 0 : 1;
         return isPrimary ? 3 : 2;
@@ -990,6 +1013,7 @@ export default function RealMapExplorerPage({
       name: string;
       path: string;
       period: string;
+      properties: Record<string, unknown>;
       sourceRegion: string;
       sourceSpatialUnit: string;
       value: number | null;
@@ -1004,7 +1028,18 @@ export default function RealMapExplorerPage({
       period: string;
       variable: string;
     }> = [];
-    if (baseMapStatus === "ready") return { fills, lines };
+    const regionalPoints: Array<{
+      color: string;
+      elementId: string;
+      name: string;
+      period: string;
+      properties: Record<string, unknown>;
+      selectionKey: string;
+      variable: string;
+      x: number;
+      y: number;
+    }> = [];
+    if (baseMapStatus === "ready") return { fills, lines, regionalPoints };
     renderOrderedActiveIds.forEach((elementId) => {
       const layer = layers.find((item) => item.elementId === elementId);
       const asset = spatialByElement[elementId];
@@ -1033,6 +1068,68 @@ export default function RealMapExplorerPage({
         }
         return;
       }
+      if (rendererOf(layer) === "regional-scope") {
+        asset.geometry.features.forEach((feature, featureIndex) => {
+            const properties = feature.properties || {};
+            if (
+              properties.geometryRole === "activity-site" &&
+              feature.geometry?.type === "Point"
+            ) {
+              const coordinates = feature.geometry.coordinates as number[];
+              if (
+                coordinates.length >= 2 &&
+                Number.isFinite(coordinates[0]) &&
+                Number.isFinite(coordinates[1])
+              ) {
+                regionalPoints.push({
+                  color: LAYER_COLORS[elementId] || "#226f96",
+                  elementId,
+                  name: publicMapFeatureNameV126(
+                    properties.activitySiteLabel || properties.name,
+                    "세부 활동지역"
+                  ),
+                  period: selector.period,
+                  properties: properties as Record<string, unknown>,
+                  selectionKey: String(
+                    properties.selectionKey || feature.id || featureIndex
+                  ),
+                  variable: selector.variable,
+                  ...projectFallbackCoordinate(
+                    [coordinates[0], coordinates[1]],
+                    fallbackBounds
+                  ),
+                });
+              }
+              return;
+            }
+            if (properties.geometryRole !== "regional-scope") return;
+            const path = geometryToFallbackPath(
+              feature.geometry as { type: string; coordinates: unknown },
+              fallbackBounds
+            );
+            if (!path) return;
+            fills.push({
+              adm1Code: String(
+                properties.selectionKey || feature.id || featureIndex
+              ),
+              elementId,
+              fill: LAYER_COLORS[elementId] || "#226f96",
+              name: publicMapFeatureNameV126(
+                properties.projectTitle || properties.name,
+                "지역 협력사업"
+              ),
+              path,
+              period: selector.period,
+              properties: properties as Record<string, unknown>,
+              sourceRegion: "",
+              sourceSpatialUnit: "multi-country-regional",
+              value: optionalFiniteNumberV130(properties.approvedAmount),
+              unit: "USD",
+              variable: selector.variable,
+            });
+          });
+        return;
+      }
       const result = choroplethFeatureCollection(layer, asset, selector);
       result.collection.features.forEach((feature) => {
         const properties = feature.properties || {};
@@ -1058,6 +1155,7 @@ export default function RealMapExplorerPage({
           name: String(properties.adm1Name || properties.name || ""),
           path,
           period: selector.period,
+          properties: properties as Record<string, unknown>,
           sourceRegion: String(properties.sourceRegion || ""),
           sourceSpatialUnit: String(properties.sourceSpatialUnit || "admin1"),
           value,
@@ -1066,7 +1164,7 @@ export default function RealMapExplorerPage({
         });
       });
     });
-    return { fills, lines };
+    return { fills, lines, regionalPoints };
   }, [
     baseMapStatus,
     fallbackBounds,
@@ -1653,7 +1751,8 @@ export default function RealMapExplorerPage({
       if (
         renderer === "line" ||
         renderer === "admin1-choropleth" ||
-        renderer === "partial-choropleth"
+        renderer === "partial-choropleth" ||
+        renderer === "regional-scope"
       ) {
         const asset = spatialByElement[elementId];
         if (!asset) return;
@@ -1663,13 +1762,16 @@ export default function RealMapExplorerPage({
             elementId,
             selector.variable
           );
+        const isRegionalScope = renderer === "regional-scope";
         const choropleth =
-          renderer === "line"
+          renderer === "line" || isRegionalScope
             ? null
             : choroplethFeatureCollection(layer, asset, selector);
         const data =
           renderer === "line"
             ? lineFeatureCollection(layer, asset, selector, filters)
+            : isRegionalScope
+            ? (asset.geometry as unknown as GeoJSON.FeatureCollection<GeoJSON.Geometry>)
             : choropleth!.collection;
         const renderKey = runtimeKey(countryIso3, elementId);
         const renderSignature = JSON.stringify({
@@ -1680,7 +1782,9 @@ export default function RealMapExplorerPage({
           role: isPrimary ? "primary" : "context",
         });
         const existing = map.getSource(ids.source) as GeoJSONSource | undefined;
-        const fillColor = choropleth
+        const fillColor = isRegionalScope
+          ? color
+          : choropleth
           ? ([
               "case",
               ["==", ["get", "hasValue"], false],
@@ -1707,6 +1811,7 @@ export default function RealMapExplorerPage({
 
         map.addSource(ids.source, { type: "geojson", data });
         let interactiveLayerId = ids.line;
+        let additionalInteractiveLayerId: string | undefined;
         if (renderer === "line") {
           const voltageWidth = isPrimary
             ? ([
@@ -1782,6 +1887,89 @@ export default function RealMapExplorerPage({
             },
           });
           interactiveLayerId = ids.lineHit;
+        } else if (isRegionalScope) {
+          interactiveLayerId = ids.fill;
+          additionalInteractiveLayerId = ids.pointHit;
+          const scopeFilter = [
+            "==",
+            ["get", "geometryRole"],
+            "regional-scope",
+          ] as any;
+          const activityFilter = [
+            "==",
+            ["get", "geometryRole"],
+            "activity-site",
+          ] as any;
+          map.addLayer({
+            id: ids.fill,
+            type: "fill",
+            source: ids.source,
+            filter: scopeFilter,
+            paint: {
+              "fill-color": color,
+              "fill-opacity": isPrimary ? 0.2 : 0.08,
+            },
+          });
+          map.addLayer({
+            id: ids.outline,
+            type: "line",
+            source: ids.source,
+            filter: scopeFilter,
+            paint: {
+              "line-color": color,
+              "line-width": isPrimary ? 2.6 : 1.8,
+              "line-opacity": isPrimary ? 0.92 : 0.58,
+              "line-dasharray": [3, 2],
+            },
+          });
+          map.addLayer({
+            id: ids.point,
+            type: "circle",
+            source: ids.source,
+            filter: activityFilter,
+            paint: {
+              "circle-color": color,
+              "circle-radius": isPrimary ? 7 : 4.5,
+              "circle-opacity": isPrimary ? 0.94 : 0.56,
+              "circle-stroke-color": "#ffffff",
+              "circle-stroke-width": isPrimary ? 2 : 1,
+            },
+          });
+          map.addLayer({
+            id: ids.pointHit,
+            type: "circle",
+            source: ids.source,
+            filter: activityFilter,
+            paint: {
+              "circle-color": "#000000",
+              "circle-radius": 14,
+              "circle-opacity": 0.001,
+            },
+          });
+          map.addLayer({
+            id: ids.pointSelection,
+            type: "circle",
+            source: ids.source,
+            filter: ["==", ["get", "selectionKey"], "__none__"],
+            paint: {
+              "circle-color": color,
+              "circle-radius": isPrimary ? 10 : 8,
+              "circle-opacity": 1,
+              "circle-stroke-color": "#f0a51a",
+              "circle-stroke-width": 4,
+            },
+          });
+          map.addLayer({
+            id: ids.selection,
+            type: "line",
+            source: ids.source,
+            filter: ["==", ["get", "selectionKey"], "__none__"],
+            paint: {
+              "line-color": "#f0a51a",
+              "line-width": isPrimary ? 4 : 3,
+              "line-opacity": 1,
+            },
+          });
         } else {
           interactiveLayerId = ids.fill;
           map.addLayer({
@@ -1866,9 +2054,14 @@ export default function RealMapExplorerPage({
             rawLineLength === ""
               ? Number.NaN
               : Number(rawLineLength);
+          const approvedAmount = optionalFiniteNumberV130(
+            properties.approvedAmount
+          );
           const value =
             renderer === "line" && Number.isFinite(lineLength)
               ? lineLength
+              : isRegionalScope
+              ? approvedAmount
               : typeof properties.value === "number"
               ? properties.value
               : null;
@@ -1879,6 +2072,11 @@ export default function RealMapExplorerPage({
             adm1Name:
               renderer === "line"
                 ? `${properties.voltageKv || properties.voltage || ""} kV 송전선로`
+                : isRegionalScope
+                ? publicMapFeatureNameV126(
+                    properties.projectTitle || properties.name,
+                    "지역 협력사업"
+                  )
                 : publicMapFeatureNameV126(
                     properties.adm1Name || properties.name,
                     "성·시"
@@ -1887,11 +2085,18 @@ export default function RealMapExplorerPage({
             unit:
               renderer === "line"
                 ? String(properties.unit || "km")
+                : isRegionalScope
+                ? "USD"
                 : variablePresentationV129?.unit || String(properties.unit || ""),
             period: String(properties.period || layer.sourceYear || ""),
             variableLabel:
               renderer === "line"
                 ? "송전망 선로"
+                : isRegionalScope
+                ? publicMapFeatureNameV126(
+                    properties.displayLabel,
+                    "지역 협력사업"
+                  )
                 : variablePresentationV129?.label ||
                   publicMapFeatureNameV126(
                     properties.variableLabel,
@@ -1946,12 +2151,24 @@ export default function RealMapExplorerPage({
                   : ""
               }`
             : "결측";
+          const participantCount = optionalFiniteNumberV130(
+            properties.participantCount
+          );
           const featureLabel =
             renderer === "line"
               ? `${properties.voltageKv || properties.voltage || ""} kV · ${
                   parsedLength !== null && Number.isFinite(parsedLength)
                     ? `${formatPublicNumberV126(parsedLength, "km")} km`
                     : "길이 미표기"
+                }`
+              : isRegionalScope
+              ? `${publicMapFeatureNameV126(
+                  properties.displayLabel,
+                  "지역 협력사업"
+                )} · ${
+                  participantCount === null
+                    ? "참여국 수 미표기"
+                    : `${participantCount}개 참여국`
                 }`
               : `${publicMapFeatureNameV126(
                   properties.adm1Name || properties.name,
@@ -1973,8 +2190,18 @@ export default function RealMapExplorerPage({
                 publicMapLayerTitleV126(elementId, layer.publicShortTitle),
                 [
                   featureLabel,
-                  variablePresentationV129?.directionLabel || "",
-                  publicTextV126(properties.sourceRegion)
+                  isRegionalScope
+                    ? publicMapFeatureNameV126(
+                        properties.activitySiteLabel || properties.participatingCountries,
+                        "참여국 범위"
+                      )
+                    : variablePresentationV129?.directionLabel || "",
+                  isRegionalScope
+                    ? `베트남 참여 ${publicMapFeatureNameV126(
+                        properties.vietnamParticipation,
+                        "포함"
+                      )}`
+                    : publicTextV126(properties.sourceRegion)
                     ? `${sourceRegion} 권역의 값 · 성 단위 독립 추정값이 아님`
                     : isPrimary
                     ? "주 분석 데이터"
@@ -1995,9 +2222,16 @@ export default function RealMapExplorerPage({
         map.on("mouseenter", interactiveLayerId, onEnter);
         map.on("mousemove", interactiveLayerId, onEnter);
         map.on("mouseleave", interactiveLayerId, onPointLeave);
+        if (additionalInteractiveLayerId) {
+          map.on("click", additionalInteractiveLayerId, onClick);
+          map.on("mouseenter", additionalInteractiveLayerId, onEnter);
+          map.on("mousemove", additionalInteractiveLayerId, onEnter);
+          map.on("mouseleave", additionalInteractiveLayerId, onPointLeave);
+        }
         const key = runtimeKey(countryIso3, elementId);
         handlersRef.current[key] = {
           interactiveLayerId,
+          additionalInteractiveLayerId,
           onClick,
           onEnter,
           onMove: onEnter,
@@ -2396,7 +2630,17 @@ export default function RealMapExplorerPage({
         ["get", "selectionKey"],
         selectionKey || "__none__",
       ]);
-      if (selectionKey) map.moveLayer(ids.selection);
+      if (map.getLayer(ids.pointSelection)) {
+        map.setFilter(ids.pointSelection, [
+          "all",
+          ["==", ["get", "geometryRole"], "activity-site"],
+          ["==", ["get", "selectionKey"], selectionKey || "__none__"],
+        ]);
+      }
+      if (selectionKey) {
+        map.moveLayer(ids.selection);
+        if (map.getLayer(ids.pointSelection)) map.moveLayer(ids.pointSelection);
+      }
     });
   }, [
     activeIds,
@@ -2554,6 +2798,25 @@ export default function RealMapExplorerPage({
       focusedLayer.elementId,
       focusedLayer.publicShortTitle
     );
+    if (renderer === "regional-scope") {
+      const features = spatialByElement[focusedLayer.elementId]?.geometry.features || [];
+      const projectIds = new Set(
+        features.map((feature) => String(feature.properties?.recordId || feature.id || ""))
+      );
+      const scopeCount = features.filter(
+        (feature) => feature.properties?.geometryRole === "regional-scope"
+      ).length;
+      const activitySiteCount = features.filter(
+        (feature) => feature.properties?.geometryRole === "activity-site"
+      ).length;
+      summaryRows.push(
+        { label: "지역 협력사업", value: `${projectIds.size.toLocaleString()}건` },
+        { label: "참여국 범위", value: `${scopeCount.toLocaleString()}개 범위` },
+        { label: "검증된 세부 활동지역", value: `${activitySiteCount.toLocaleString()}곳` },
+        { label: "베트남 참여", value: "2개 사업 모두 포함" }
+      );
+      return { ...empty, summaryRows, unit: "사업" };
+    }
     if (renderer === "line") {
       const asset = spatialByElement[focusedLayer.elementId];
       if (!asset) return empty;
@@ -2859,6 +3122,8 @@ export default function RealMapExplorerPage({
       const collection =
         renderer === "line"
           ? lineFeatureCollection(layer, asset, selector, filters)
+          : renderer === "regional-scope"
+          ? asset.geometry
           : choroplethFeatureCollection(layer, asset, selector).collection;
       collection.features.forEach((feature, featureIndex) => {
         const properties = (feature.properties || {}) as Record<string, unknown>;
@@ -2870,6 +3135,14 @@ export default function RealMapExplorerPage({
         const name =
           renderer === "line"
             ? `${properties.voltageKv || properties.voltage || ""} kV 송전선로`
+            : renderer === "regional-scope"
+            ? `${publicMapFeatureNameV126(
+                properties.displayLabel,
+                "지역 협력사업"
+              )} · ${publicMapFeatureNameV126(
+                properties.activitySiteLabel || properties.projectTitle,
+                "참여국 범위"
+              )}`
             : publicMapFeatureNameV126(
                 properties.adm1Name || properties.name,
                 "성·시"
@@ -2885,17 +3158,26 @@ export default function RealMapExplorerPage({
             value:
               renderer === "line" && Number.isFinite(lineLength)
                 ? lineLength
+                : renderer === "regional-scope"
+                ? optionalFiniteNumberV130(properties.approvedAmount)
                 : typeof properties.value === "number"
                 ? properties.value
                 : null,
             unit:
               renderer === "line"
                 ? String(properties.unit || "km")
+                : renderer === "regional-scope"
+                ? "USD"
                 : presentation?.unit || String(properties.unit || ""),
             period: String(properties.period || layer.sourceYear || ""),
             variableLabel:
               renderer === "line"
                 ? "송전망 선로"
+                : renderer === "regional-scope"
+                ? publicMapFeatureNameV126(
+                    properties.displayLabel,
+                    "지역 협력사업"
+                  )
                 : presentation?.label ||
                   publicMapFeatureNameV126(properties.variableLabel, title),
             selectionKey: String(
@@ -3335,6 +3617,11 @@ export default function RealMapExplorerPage({
             </p>
           )}
 
+          <MapDataGuideV130
+            layers={layers}
+            onOpenDataFinder={onOpenDataFinder}
+          />
+
           {baseMapStatus === "error" && (
             <div className="cdp-alert" role="status">
               <strong>대체 경계지도를 표시하고 있습니다</strong>
@@ -3710,8 +3997,10 @@ export default function RealMapExplorerPage({
                   );
                 const publicTitle = publicMapLayerTitleV126(
                   feature.elementId,
-                  layer?.publicShortTitle || feature.elementId
+                  layer?.publicShortTitle || "지도 데이터"
                 );
+                const isRegionalScope =
+                  layer && rendererOf(layer) === "regional-scope";
                 const publicUnit = variablePresentation?.unit || feature.unit;
                 const publicValue =
                   feature.value === null
@@ -3737,9 +4026,15 @@ export default function RealMapExplorerPage({
                     unit: publicUnit,
                     period: selector?.period || feature.period,
                     variableLabel:
-                      variablePresentation?.label || layer?.publicShortTitle,
+                      isRegionalScope
+                        ? publicMapFeatureNameV126(
+                            feature.properties.displayLabel,
+                            "지역 협력사업"
+                          )
+                        : variablePresentation?.label || layer?.publicShortTitle,
                     selectionKey: feature.adm1Code,
                     properties: {
+                      ...feature.properties,
                       sourceRegion: feature.sourceRegion,
                       sourceSpatialUnit: feature.sourceSpatialUnit,
                     },
@@ -3751,9 +4046,18 @@ export default function RealMapExplorerPage({
                 };
                 const showTooltip = () =>
                   setFallbackTooltipV129({
-                    detail: `${feature.name} · ${
-                      variablePresentation?.label || "현재 값"
-                    } ${publicValue}`,
+                    detail: isRegionalScope
+                      ? `${feature.name} · ${
+                          typeof feature.properties.participantCount === "number"
+                            ? `${feature.properties.participantCount}개 참여국`
+                            : "참여국 범위"
+                        } · 베트남 참여 ${publicMapFeatureNameV126(
+                          feature.properties.vietnamParticipation,
+                          "포함"
+                        )}`
+                      : `${feature.name} · ${
+                          variablePresentation?.label || "현재 값"
+                        } ${publicValue}`,
                     leftPercent: 50,
                     title: publicTitle,
                     topPercent: 48,
@@ -3813,6 +4117,105 @@ export default function RealMapExplorerPage({
                   </path>
                 );
               })}
+              {fallbackSpatial.regionalPoints.map((point) => {
+                const isPrimary = point.elementId === primaryLayerId;
+                const layer = layers.find(
+                  (item) => item.elementId === point.elementId
+                );
+                const publicTitle = publicMapLayerTitleV126(
+                  point.elementId,
+                  layer?.publicShortTitle || "지도 데이터"
+                );
+                const projectTitle = publicMapFeatureNameV126(
+                  point.properties.projectTitle || point.properties.name,
+                  "지역 협력사업"
+                );
+                const isSelected =
+                  selectedSpatial?.elementId === point.elementId &&
+                  selectedSpatial.selectionKey === point.selectionKey;
+                const selectPoint = () => {
+                  const approvedAmount = optionalFiniteNumberV130(
+                    point.properties.approvedAmount
+                  );
+                  setSelected(null);
+                  setSelectedSpatial({
+                    elementId: point.elementId,
+                    adm1Name: projectTitle,
+                    value: approvedAmount,
+                    unit: "USD",
+                    period: point.period,
+                    variableLabel: publicMapFeatureNameV126(
+                      point.properties.displayLabel,
+                      "세부 활동지역"
+                    ),
+                    selectionKey: point.selectionKey,
+                    properties: point.properties,
+                  });
+                  if (!isPrimary) {
+                    setRoleNotice(`선택한 보조 데이터 · ${publicTitle}`);
+                  }
+                  setAnalysisPanelOpen(true);
+                };
+                const showTooltip = () =>
+                  setFallbackTooltipV129({
+                    detail: `${point.name} · ${projectTitle}`,
+                    leftPercent: Math.max(
+                      8,
+                      Math.min(72, (point.x / FALLBACK_VIEWBOX_WIDTH) * 100)
+                    ),
+                    title: publicTitle,
+                    topPercent: Math.max(
+                      14,
+                      Math.min(90, (point.y / FALLBACK_VIEWBOX_HEIGHT) * 100)
+                    ),
+                  });
+                return (
+                  <g
+                    key={`${point.elementId}:${point.selectionKey}:${point.name}`}
+                    className={`cdp-map-fallback__feature-control cdp-map-fallback__point-control ${
+                      isPrimary ? "is-primary" : "is-context"
+                    } ${isSelected ? "is-selected" : ""}`}
+                    data-testid="map-selectable-regional-activity"
+                    data-layer-role={isPrimary ? "primary" : "context"}
+                    data-symbol-shape="diamond"
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`${publicTitle} · ${point.name} · ${projectTitle}`}
+                    onClick={selectPoint}
+                    onKeyDown={(event) => {
+                      if (event.key !== "Enter" && event.key !== " ") return;
+                      event.preventDefault();
+                      selectPoint();
+                    }}
+                    onFocus={showTooltip}
+                    onBlur={() => setFallbackTooltipV129(null)}
+                    onMouseEnter={showTooltip}
+                    onMouseLeave={() => setFallbackTooltipV129(null)}
+                  >
+                    <circle
+                      className="cdp-map-fallback__point-hit"
+                      cx={point.x}
+                      cy={point.y}
+                      r={14}
+                      fill="transparent"
+                    />
+                    <rect
+                      className="cdp-map-fallback__point"
+                      x={point.x - (isSelected ? 6 : 4.5)}
+                      y={point.y - (isSelected ? 6 : 4.5)}
+                      width={isSelected ? 12 : 9}
+                      height={isSelected ? 12 : 9}
+                      rx={1}
+                      fill={point.color}
+                      stroke={isSelected ? "#f0a51a" : "#ffffff"}
+                      strokeWidth={isSelected ? 3 : 1.5}
+                      transform={`rotate(45 ${point.x} ${point.y})`}
+                      pointerEvents="none"
+                    />
+                    <title>{`${publicTitle} · ${point.name}`}</title>
+                  </g>
+                );
+              })}
               {fallbackSpatial.lines.map((line) => {
                 const isPrimary = line.elementId === primaryLayerId;
                 const lineLayer = layers.find(
@@ -3820,7 +4223,7 @@ export default function RealMapExplorerPage({
                 );
                 const publicTitle = publicMapLayerTitleV126(
                   line.elementId,
-                  lineLayer?.publicShortTitle || line.elementId
+                  lineLayer?.publicShortTitle || "지도 데이터"
                 );
                 const isSelected =
                   selectedSpatial?.elementId === line.elementId;
@@ -3915,7 +4318,7 @@ export default function RealMapExplorerPage({
                   : "circle";
                 const publicTitle = publicMapLayerTitleV126(
                   point.elementId,
-                  pointLayer?.publicShortTitle || point.elementId
+                  pointLayer?.publicShortTitle || "지도 데이터"
                 );
                 const publicName = entityDisplayNameV121(point.record);
                 const isSelected =
@@ -4268,6 +4671,12 @@ export default function RealMapExplorerPage({
                   </div>
                   <p>묶음 숫자는 포함된 발전소 수를 뜻합니다.</p>
                 </div>
+              ) : rendererOf(focusedLayer) === "regional-scope" ? (
+                <div className="cdp-map-legend__explanation">
+                  <span>점선 경계·옅은 면: 사업 참여지역</span>
+                  <span>점: 원문에서 검증된 세부 활동지역</span>
+                  <p>국가 대표좌표는 실제 사업 위치로 표시하지 않습니다.</p>
+                </div>
               ) : rendererOf(focusedLayer) === "admin1-choropleth" ||
                 rendererOf(focusedLayer) === "partial-choropleth" ? (
                 <div className="cdp-map-legend__scale">
@@ -4459,7 +4868,7 @@ export default function RealMapExplorerPage({
                 className="cdp-map-selected-panel"
                 data-selected-layer-role={selectedFeatureRoleV129 || "none"}
               >
-                <h3>선택한 시설·선로·지역</h3>
+                <h3>선택한 시설·선로·지역 범위</h3>
                 {selectedFeatureRoleV129 === "context" && (
                   <span
                     className="cdp-map-selected-role-badge"
@@ -4468,7 +4877,131 @@ export default function RealMapExplorerPage({
                     선택한 보조 데이터
                   </span>
                 )}
-                {selectedSpatial && selectedOwningLayer ? (
+                {selectedSpatial &&
+                selectedOwningLayer &&
+                rendererOf(selectedOwningLayer) === "regional-scope" ? (
+                  <div
+                    data-testid="map-feature-detail"
+                    data-regional-project-detail="true"
+                    data-regional-project="true"
+                  >
+                    <span className="cdp-map-regional-badge">지역 협력사업</span>
+                    <h4>
+                      {publicMapFeatureNameV126(
+                        selectedSpatial.properties.projectTitle ||
+                          selectedSpatial.adm1Name,
+                        "지역 협력사업"
+                      )}
+                    </h4>
+                    <div className="cdp-evidence-grid">
+                      <Evidence
+                        label="데이터명"
+                        value={publicMapLayerTitleV126(
+                          selectedOwningLayer.elementId,
+                          selectedOwningLayer.publicShortTitle
+                        )}
+                      />
+                      <Evidence
+                        label="사업 참여지역"
+                        value={publicMapFeatureNameV126(
+                          selectedSpatial.properties.participatingCountries,
+                          "참여국 미표기"
+                        )}
+                      />
+                      <Evidence
+                        label="사업분야"
+                        value={publicMapFeatureNameV126(
+                          selectedSpatial.properties.sectorKo ||
+                            selectedSpatial.properties.sector,
+                          "미표기"
+                        )}
+                      />
+                      <Evidence
+                        label="베트남 참여"
+                        value={publicMapFeatureNameV126(
+                          selectedSpatial.properties.vietnamParticipation,
+                          "포함"
+                        )}
+                      />
+                      <Evidence
+                        label="상태"
+                        value={publicMapFeatureNameV126(
+                          selectedSpatial.properties.status,
+                          "미표기"
+                        )}
+                      />
+                      <Evidence
+                        label="승인액"
+                        value={
+                          optionalFiniteNumberV130(
+                            selectedSpatial.properties.approvedAmount
+                          ) === null
+                            ? "미표기"
+                            : `USD ${formatPublicNumberV126(
+                                optionalFiniteNumberV130(
+                                  selectedSpatial.properties.approvedAmount
+                                ) as number,
+                                "USD"
+                              )}`
+                        }
+                      />
+                      <Evidence
+                        label="수행기관"
+                        value={publicMapFeatureNameV126(
+                          selectedSpatial.properties.implementingEntity,
+                          "미표기"
+                        )}
+                      />
+                      <Evidence
+                        label="세부 활동지역"
+                        value={publicMapFeatureNameV126(
+                          selectedSpatial.properties.verifiedActivityAreas,
+                          "원천 미제공"
+                        )}
+                      />
+                      <Evidence
+                        label="공간 표현"
+                        value={publicMapFeatureNameV126(
+                          selectedSpatial.properties.scopeExplanation,
+                          "참여국의 지역 협력범위"
+                        )}
+                      />
+                      <Evidence
+                        label="좌표 처리"
+                        value={`원천 ${
+                          optionalFiniteNumberV130(
+                            selectedSpatial.properties.sourceCoordinateCount
+                          ) ?? "미표기"
+                        }개 · 지점 표시 ${
+                          optionalFiniteNumberV130(
+                            selectedSpatial.properties.displayedCoordinateCount
+                          ) ?? "미표기"
+                        }개`}
+                      />
+                      <Evidence
+                        label="공간 해석 유의"
+                        value={publicMapFeatureNameV126(
+                          selectedSpatial.properties.publicSpatialNotice,
+                          selectedOwningLayer.publicSpatialNotice
+                        )}
+                      />
+                    </div>
+                    {isHttpUrlV121(
+                      String(selectedSpatial.properties.officialSource || "")
+                    ) && (
+                      <a
+                        className="cdp-button cdp-button--secondary cdp-button--compact"
+                        href={String(
+                          selectedSpatial.properties.officialSource || ""
+                        )}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        공식 출처
+                      </a>
+                    )}
+                  </div>
+                ) : selectedSpatial && selectedOwningLayer ? (
                   <div data-testid="map-feature-detail">
                     <h4>{publicMapFeatureNameV126(selectedSpatial.adm1Name, "선택 항목")}</h4>
                     <div className="cdp-evidence-grid">
@@ -4803,6 +5336,29 @@ function removeLayerFromMap(
       map.off("mouseleave", handler.interactiveLayerId, handler.onPointLeave);
     }
     if (
+      handler.additionalInteractiveLayerId &&
+      map.getLayer(handler.additionalInteractiveLayerId)
+    ) {
+      map.off("click", handler.additionalInteractiveLayerId, handler.onClick);
+      map.off(
+        "mouseenter",
+        handler.additionalInteractiveLayerId,
+        handler.onEnter
+      );
+      if (handler.onMove) {
+        map.off(
+          "mousemove",
+          handler.additionalInteractiveLayerId,
+          handler.onMove
+        );
+      }
+      map.off(
+        "mouseleave",
+        handler.additionalInteractiveLayerId,
+        handler.onPointLeave
+      );
+    }
+    if (
       handler.clusterLayerId &&
       handler.onClusterClick &&
       map.getLayer(handler.clusterLayerId)
@@ -4824,6 +5380,7 @@ function removeLayerFromMap(
   }
   [
     ids.selection,
+    ids.pointSelection,
     ids.clusterCount,
     ids.pointHit,
     ids.pointSymbol,
