@@ -22,8 +22,37 @@ import {
   writeJsonV133,
 } from "./v133/audit-helpers.mjs";
 
-const sleep = (milliseconds) => new Promise((resolveWait) => setTimeout(resolveWait, milliseconds));
 const screenshotPath = (name) => resolve(V133_SCREENSHOT_ROOT, name);
+
+async function settleVisualState(cdp) {
+  await evaluateValue(
+    cdp,
+    `new Promise((resolve) => {
+      const afterFonts = () => requestAnimationFrame(() => requestAnimationFrame(() => resolve(true)));
+      if (document.fonts?.ready) document.fonts.ready.then(afterFonts, afterFonts);
+      else afterFonts();
+    })`
+  );
+}
+
+function renderedLayerReadyExpression(elementId) {
+  return `(() => {
+    const root = document.querySelector('[data-testid="map-public-content"]');
+    const loading = document.querySelector('.cdp-map-overlay-card')?.textContent || '';
+    const renderedElements = (root?.getAttribute('data-rendered-map-elements') || '').split(',');
+    const renderedSymbols = (root?.getAttribute('data-rendered-map-symbols') || '').split(',');
+    const target = document.querySelector(
+      '[data-testid="map-selectable-adm1-feature"][data-element-id=${JSON.stringify(elementId)}]'
+    );
+    const rect = target?.getBoundingClientRect();
+    return root?.getAttribute('data-primary-element') === ${JSON.stringify(elementId)} &&
+      root?.getAttribute('data-context-layer-count') === '0' &&
+      !/불러오는 중/u.test(loading) &&
+      renderedElements.includes(${JSON.stringify(elementId)}) &&
+      renderedSymbols.some((item) => item.startsWith(${JSON.stringify(`${elementId}|primary|`)})) &&
+      Boolean(rect && rect.width > 0 && rect.height > 0);
+  })()`;
+}
 
 async function selectPreset(cdp, presetId, expectedPrimary) {
   const clicked = await evaluateValue(
@@ -38,15 +67,10 @@ async function selectPreset(cdp, presetId, expectedPrimary) {
   if (!clicked) throw new Error(`preset unavailable: ${presetId}`);
   await waitForValue(
     cdp,
-    `(() => {
-      const root = document.querySelector('[data-testid="map-public-content"]');
-      const loading = document.querySelector('.cdp-map-overlay-card')?.textContent || '';
-      return root?.getAttribute('data-primary-element') === ${JSON.stringify(expectedPrimary)} &&
-        root?.getAttribute('data-context-layer-count') === '0' && !/불러오는 중/u.test(loading);
-    })()`,
+    renderedLayerReadyExpression(expectedPrimary),
     { timeoutMs: 35_000 }
   );
-  await sleep(180);
+  await settleVisualState(cdp);
 }
 
 async function setContext(cdp, elementId, enabled) {
@@ -73,7 +97,14 @@ async function setContext(cdp, elementId, enabled) {
     `(() => (document.querySelector('[data-testid="map-public-content"]')?.getAttribute('data-context-elements') || '').split(',').includes(${JSON.stringify(elementId)}) === ${enabled})()`,
     { timeoutMs: 35_000 }
   );
-  await sleep(180);
+  await waitForValue(
+    cdp,
+    enabled
+      ? `(() => (document.querySelector('[data-testid="map-public-content"]')?.getAttribute('data-rendered-map-symbols') || '').split(',').some((item) => item.startsWith(${JSON.stringify(`${elementId}|context|`)})))()`
+      : `(() => !(document.querySelector('[data-testid="map-public-content"]')?.getAttribute('data-rendered-map-elements') || '').split(',').includes(${JSON.stringify(elementId)}))()`,
+    { timeoutMs: 35_000 }
+  );
+  await settleVisualState(cdp);
 }
 
 async function selectFinanceType(cdp, type) {
@@ -95,12 +126,17 @@ async function selectFinanceType(cdp, type) {
     `document.querySelector('[data-testid="map-public-content"]')?.getAttribute('data-primary-element') === ${JSON.stringify(type === "carbon" ? "C-025" : "D-018")}`,
     { timeoutMs: 35_000 }
   );
-  await sleep(180);
+  await waitForValue(
+    cdp,
+    `(() => (document.querySelector('[data-testid="map-public-content"]')?.getAttribute('data-rendered-map-elements') || '').split(',').includes(${JSON.stringify(type === "carbon" ? "C-025" : "D-018")}))()`,
+    { timeoutMs: 35_000 }
+  );
+  await settleVisualState(cdp);
 }
 
 async function captureWorkspace(cdp, name) {
   await evaluateValue(cdp, `window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); true`);
-  await sleep(100);
+  await settleVisualState(cdp);
   return captureElementPng(cdp, '[data-testid="map-resizable-layout"]', screenshotPath(name));
 }
 
@@ -116,45 +152,12 @@ async function assertNoStaleGviPopup(cdp) {
   );
 }
 
-async function focusGviRegion(cdp) {
-  const targetPoint = await evaluateValue(
-    cdp,
-    `(() => {
-      const features = [...document.querySelectorAll('[data-testid="map-selectable-adm1-feature"][data-element-id="B-021"]')];
-      const target = features.find((node) => /Quảng Bình/u.test(node.getAttribute('aria-label') || '')) || features[0];
-      if (!(target instanceof SVGElement)) return null;
-      const rect = target.getBoundingClientRect();
-      target.focus();
-      return {
-        x: rect.left + rect.width / 2,
-        y: rect.top + rect.height / 2,
-      };
-    })()`
-  );
-  if (!targetPoint) throw new Error("GVI fallback region unavailable");
-  await cdp.send("Input.dispatchMouseEvent", {
-    type: "mouseMoved",
-    x: targetPoint.x,
-    y: targetPoint.y,
-  });
-  await evaluateValue(
-    cdp,
-    `(() => {
-      const features = [...document.querySelectorAll('[data-testid="map-selectable-adm1-feature"][data-element-id="B-021"]')];
-      const target = features.find((node) => /Quảng Bình/u.test(node.getAttribute('aria-label') || '')) || features[0];
-      if (!(target instanceof SVGElement)) return false;
-      target.dispatchEvent(new MouseEvent('mouseover', { bubbles: true }));
-      return true;
-    })()`
-  );
-  await waitForValue(
-    cdp,
-    `Boolean(document.querySelector('[data-testid="map-hover-popup-v133"], [data-testid="map-feature-tooltip"]'))`,
-    { timeoutMs: 10_000 }
-  );
-  const pixelVisible = await evaluateValue(
+async function visibleGviPopup(cdp) {
+  return evaluateValue(
     cdp,
     `(() => [...document.querySelectorAll('[data-testid="map-hover-popup-v133"], [data-testid="map-feature-tooltip"]')].some((node) => {
+      const text = (node.textContent || '').normalize('NFC').replace(/\\s+/gu, ' ').trim();
+      if (!/GVI|지역 취약성/u.test(text) || !/2023/u.test(text)) return false;
       const rect = node.getBoundingClientRect();
       const style = getComputedStyle(node);
       if (rect.width <= 0 || rect.height <= 0 || style.display === 'none' || style.visibility === 'hidden' || Number(style.opacity || 1) <= 0) return false;
@@ -162,6 +165,99 @@ async function focusGviRegion(cdp) {
       return Boolean(topmost && node.contains(topmost));
     }))()`
   );
+}
+
+function nearbyPositions(point, radius = 56, step = 8) {
+  const positions = [];
+  for (let y = point.y - radius; y <= point.y + radius; y += step) {
+    for (let x = point.x - radius; x <= point.x + radius; x += step) {
+      positions.push({ x, y, distance: Math.hypot(x - point.x, y - point.y) });
+    }
+  }
+  return positions.sort((left, right) => left.distance - right.distance);
+}
+
+async function focusGviRegion(cdp) {
+  await waitForValue(cdp, renderedLayerReadyExpression("B-021"), {
+    timeoutMs: 35_000,
+  });
+  const target = await evaluateValue(
+    cdp,
+    `(() => {
+      const features = [...document.querySelectorAll('[data-testid="map-selectable-adm1-feature"][data-element-id="B-021"]')];
+      const target = features.find((node) => /Quảng Bình/u.test(node.getAttribute('aria-label') || '')) || features[0];
+      if (!(target instanceof SVGElement)) return null;
+      const rect = target.getBoundingClientRect();
+      return {
+        x: rect.left + rect.width / 2,
+        y: rect.top + rect.height / 2,
+        fallbackTopmost: document.elementsFromPoint(rect.left + rect.width / 2, rect.top + rect.height / 2).includes(target),
+        label: target.getAttribute('aria-label') || '',
+      };
+    })()`
+  );
+  if (!target) throw new Error("GVI target polygon unavailable after layer-ready signal");
+
+  if (target.fallbackTopmost) {
+    const dispatched = await evaluateValue(
+      cdp,
+      `(() => {
+        const features = [...document.querySelectorAll('[data-testid="map-selectable-adm1-feature"][data-element-id="B-021"]')];
+        const target = features.find((node) => /Quảng Bình/u.test(node.getAttribute('aria-label') || '')) || features[0];
+        if (!(target instanceof SVGElement)) return false;
+        target.focus();
+        target.dispatchEvent(new PointerEvent('pointerover', { bubbles: true, pointerType: 'mouse' }));
+        target.dispatchEvent(new MouseEvent('mouseover', { bubbles: true }));
+        return true;
+      })()`
+    );
+    if (!dispatched) throw new Error("GVI fallback pointer event was not dispatched");
+    await settleVisualState(cdp);
+    if (!(await visibleGviPopup(cdp))) {
+      throw new Error("GVI fallback popup text was not pixel-visible");
+    }
+    return { mode: "fallback", ...target };
+  }
+
+  const surface = await evaluateValue(
+    cdp,
+    `(() => {
+      const canvas = document.querySelector('.cdp-map-canvas.is-visible canvas');
+      const rect = canvas?.getBoundingClientRect();
+      return rect && rect.width > 0 && rect.height > 0
+        ? { left: rect.left, right: rect.right, top: rect.top, bottom: rect.bottom }
+        : null;
+    })()`
+  );
+  if (!surface) throw new Error("GVI layer rendered but no visible map surface was available");
+  for (const point of nearbyPositions(target)) {
+    if (
+      point.x <= surface.left ||
+      point.x >= surface.right ||
+      point.y <= surface.top ||
+      point.y >= surface.bottom
+    ) {
+      continue;
+    }
+    await cdp.send("Input.dispatchMouseEvent", {
+      type: "mouseMoved",
+      x: point.x,
+      y: point.y,
+      button: "none",
+      buttons: 0,
+    });
+    if (await visibleGviPopup(cdp)) return { mode: "canvas", ...point, label: target.label };
+  }
+  throw new Error(`GVI pointer scan completed without confirmed popup text: ${target.label}`);
+}
+
+async function confirmGviHoverPopup(cdp) {
+  await waitForValue(
+    cdp,
+    `(() => [...document.querySelectorAll('[data-testid="map-hover-popup-v133"], [data-testid="map-feature-tooltip"]')].some((node) => /GVI|지역 취약성/u.test(node.textContent || '') && /2023/u.test(node.textContent || '')))()`,
+    { timeoutMs: 10_000 }
+  );
+  const pixelVisible = await visibleGviPopup(cdp);
   if (!pixelVisible) throw new Error("GVI hover popup exists in DOM but is not pixel-visible");
   return pixelVisible;
 }
@@ -178,21 +274,40 @@ async function revealSelectedDetail(cdp) {
     })()`
   );
   if (!revealed) throw new Error("selected GVI detail could not be revealed");
-  await sleep(120);
+  await settleVisualState(cdp);
 }
 
-async function selectFocusedGviRegion(cdp) {
-  const selected = await evaluateValue(
-    cdp,
-    `(() => {
-      const features = [...document.querySelectorAll('[data-testid="map-selectable-adm1-feature"][data-element-id="B-021"]')];
-      const target = features.find((node) => /Quảng Bình/u.test(node.getAttribute('aria-label') || '')) || features[0];
-      if (!(target instanceof SVGElement)) return false;
-      target.dispatchEvent(new MouseEvent('click', { bubbles: true }));
-      return true;
-    })()`
-  );
-  if (!selected) throw new Error("focused GVI region not selectable");
+async function selectFocusedGviRegion(cdp, focusedTarget) {
+  if (focusedTarget?.mode === "canvas") {
+    await cdp.send("Input.dispatchMouseEvent", {
+      type: "mousePressed",
+      x: focusedTarget.x,
+      y: focusedTarget.y,
+      button: "left",
+      buttons: 1,
+      clickCount: 1,
+    });
+    await cdp.send("Input.dispatchMouseEvent", {
+      type: "mouseReleased",
+      x: focusedTarget.x,
+      y: focusedTarget.y,
+      button: "left",
+      buttons: 0,
+      clickCount: 1,
+    });
+  } else {
+    const selected = await evaluateValue(
+      cdp,
+      `(() => {
+        const features = [...document.querySelectorAll('[data-testid="map-selectable-adm1-feature"][data-element-id="B-021"]')];
+        const target = features.find((node) => /Quảng Bình/u.test(node.getAttribute('aria-label') || '')) || features[0];
+        if (!(target instanceof SVGElement)) return false;
+        target.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+        return true;
+      })()`
+    );
+    if (!selected) throw new Error("focused GVI fallback region not selectable");
+  }
   await waitForValue(
     cdp,
     `Boolean(document.querySelector('[data-testid="map-selected-detail-v133"], [data-testid="map-feature-detail"]'))`,
@@ -218,7 +333,7 @@ async function openFinanceCompare(cdp) {
     `document.querySelector('[data-testid="map-public-content"]')?.getAttribute('data-context-layer-count') === '1'`,
     { timeoutMs: 35_000 }
   );
-  await sleep(180);
+  await settleVisualState(cdp);
 }
 
 async function openOverlapPicker(cdp) {
@@ -241,12 +356,12 @@ async function openOverlapPicker(cdp) {
         : null;
     })()`
   );
-  await sleep(80);
+  await settleVisualState(cdp);
   if (await evaluateValue(cdp, `Boolean(document.querySelector('[data-testid="map-overlap-picker-v133"]'))`)) return true;
   if (statisticalPoint) {
     await cdp.send("Input.dispatchMouseEvent", { type: "mousePressed", x: statisticalPoint.x, y: statisticalPoint.y, button: "left", clickCount: 1 });
     await cdp.send("Input.dispatchMouseEvent", { type: "mouseReleased", x: statisticalPoint.x, y: statisticalPoint.y, button: "left", clickCount: 1 });
-    await sleep(120);
+    await settleVisualState(cdp);
     if (await evaluateValue(cdp, `Boolean(document.querySelector('[data-testid="map-overlap-picker-v133"]'))`)) return true;
   }
 
@@ -272,7 +387,7 @@ async function openOverlapPicker(cdp) {
   if (collision) {
     await cdp.send("Input.dispatchMouseEvent", { type: "mousePressed", x: collision.x, y: collision.y, button: "left", clickCount: 1 });
     await cdp.send("Input.dispatchMouseEvent", { type: "mouseReleased", x: collision.x, y: collision.y, button: "left", clickCount: 1 });
-    await sleep(120);
+    await settleVisualState(cdp);
     if (await evaluateValue(cdp, `Boolean(document.querySelector('[data-testid="map-overlap-picker-v133"]'))`)) return true;
   }
 
@@ -307,6 +422,7 @@ const brokenAssets = [];
 const htmlForJson = [];
 let overlapPickerOpened = false;
 let gviHoverPixelVisible = false;
+let gviTargetMode = null;
 let staleFinanceGviPopupCount = 0;
 try {
   server = await startStaticBuildServer(resolve(PROJECT_ROOT, "build"));
@@ -337,13 +453,15 @@ try {
   await captureWorkspace(browser.cdp, "map-vulnerability-adaptation-context.png");
   await setContext(browser.cdp, "D-018", false);
 
-  gviHoverPixelVisible = await focusGviRegion(browser.cdp);
+  const focusedGviTarget = await focusGviRegion(browser.cdp);
+  gviTargetMode = focusedGviTarget.mode;
+  gviHoverPixelVisible = await confirmGviHoverPopup(browser.cdp);
   await captureElementPng(
     browser.cdp,
     '[data-testid="map-hover-popup-v133"], [data-testid="map-feature-tooltip"]',
     screenshotPath("map-gvi-hover.png")
   );
-  await selectFocusedGviRegion(browser.cdp);
+  await selectFocusedGviRegion(browser.cdp, focusedGviTarget);
   await revealSelectedDetail(browser.cdp);
   await captureElementPng(
     browser.cdp,
@@ -433,6 +551,7 @@ writeJsonV133(resolve(V133_SCREENSHOT_ROOT, "screenshot-manifest-v133.json"), {
   viewportChecks,
   overlapPickerOpened,
   gviHoverPixelVisible,
+  gviTargetMode,
   staleFinanceGviPopupCount,
   runtimeFailure,
   runtimeErrors,
@@ -456,6 +575,7 @@ console.log(
     brokenAssetCount: brokenAssets.length,
     htmlForJsonCount: htmlForJson.length,
     staleFinanceGviPopupCount,
+    gviTargetMode,
     invalid: invalid.map((item) => item.name),
     duplicateHashes,
   })
