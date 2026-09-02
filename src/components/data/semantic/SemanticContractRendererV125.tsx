@@ -23,9 +23,12 @@ import type {
 } from "../../../types/chartInteractionV127";
 import { getPublicFixedDomainV127 } from "../../../data/visualization/publicVisualizationRegistryV126";
 import { publicEntityTitleV131 } from "../../../data/visualization/publicEntityTitleV131";
+import { getPublicAnalysisHeadingsV134 } from "../../../data/visualization/publicAnalysisHeadingsV134";
+import { publicDimensionValueV134 } from "../../../data/visualization/publicCopyRegistryV126";
 import PublicEntityCardGridV131 from "../public/PublicEntityCardGridV131";
 import PublicPortfolioListV132 from "../public/PublicPortfolioListV132";
 import PublicPortfolioSummaryV132 from "../public/PublicPortfolioSummaryV132";
+import { PublicTermTextV134 } from "../../help/PublicTermV134";
 
 import "./semantic-contract-renderer-v125.css";
 
@@ -84,6 +87,7 @@ export default function SemanticContractRendererV125({
   const textRows = presentRows.filter(
     (row) => typeof row.value !== "number"
   );
+  const publicHeadings = getPublicAnalysisHeadingsV134(contract.elementId);
 
   return (
     <section
@@ -91,8 +95,16 @@ export default function SemanticContractRendererV125({
       data-testid="public-primary-visualization"
       data-unit-axis-policy="one-unit-per-axis"
       data-zero-imputation="false"
-      aria-label={`${rendererLabelV125(renderer)} 주 시각화`}
+      aria-label={`${
+        publicHeadings?.primaryChartTitle || rendererLabelV125(renderer)
+      } 주 분석`}
     >
+      {publicHeadings && (
+        <header className="sv125-section-heading" data-testid="public-analysis-heading-v134">
+          <span>주 분석</span>
+          <h3>{publicHeadings.primaryChartTitle}</h3>
+        </header>
+      )}
       {renderer === "policy-timeline" ? (
         <PolicyTimelineV125 rows={presentRows} entities={entities} />
       ) : renderer === "evidence-matrix" ? (
@@ -344,7 +356,7 @@ function CompositionPanelV125({ rows }: { rows: NumericRowV125[] }) {
                       className={`sv125-contract-pattern sv125-contract-pattern--${SERIES_PATTERNS[index % SERIES_PATTERNS.length]}`}
                       aria-hidden="true"
                     />
-                    <strong>{categoryLabelV125(row)}</strong>
+                    <strong><PublicTermTextV134 text={categoryLabelV125(row)} /></strong>
                   </div>
                   <span className="sv125-composition-track" aria-hidden="true">
                     {nonNegative && (
@@ -407,7 +419,7 @@ function ScenarioRangePanelV125({ rows }: { rows: NumericRowV125[] }) {
                       row.value
                     )} ${unit}`}
                   >
-                    <strong>{scenarioLabelV125(row)}</strong>
+                    <strong><PublicTermTextV134 text={scenarioLabelV125(row)} /></strong>
                     <span className="sv125-range-track" aria-hidden="true">
                       <i
                         className={`sv125-contract-pattern--${SERIES_PATTERNS[index % SERIES_PATTERNS.length]}`}
@@ -438,7 +450,7 @@ function SeasonalityPanelV125({ rows }: { rows: PresentRowV125[] }) {
       <div className="sv125-season-grid" role="list">
         {ordered.map((row) => (
           <article key={row.recordId} role="listitem" tabIndex={0}>
-            <span>{seasonLabelV125(row)}</span>
+            <span><PublicTermTextV134 text={seasonLabelV125(row)} /></span>
             <strong>{formatValueV121(row.value)}</strong>
             <small>
               {[row.unit, row.year || row.period].filter(Boolean).join(" · ") ||
@@ -486,7 +498,7 @@ function PairedCategoryPanelV125({ rows }: { rows: PresentRowV125[] }) {
       <div className="sv125-paired-grid">
         {Array.from(groups.entries()).map(([key, group]) => (
           <article key={key}>
-            <h5>{pairGroupLabelV125(group[0], pairKey)}</h5>
+            <h5><PublicTermTextV134 text={pairGroupLabelV125(group[0], pairKey)} /></h5>
             <div>
               {pairValues.map((value, index) => {
                 const row = group.find((item) => item.dimensions[pairKey] === value);
@@ -497,7 +509,7 @@ function PairedCategoryPanelV125({ rows }: { rows: PresentRowV125[] }) {
                         className={`sv125-contract-pattern sv125-contract-pattern--${SERIES_PATTERNS[index % SERIES_PATTERNS.length]}`}
                         aria-hidden="true"
                       />
-                      {row?.dimensionLabels[pairKey] || value}
+                      <PublicTermTextV134 text={row?.dimensionLabels[pairKey] || value} />
                     </span>
                     <strong>{row ? formatValueV121(row.value) : "미제공"}</strong>
                     <small>
@@ -553,7 +565,7 @@ function CapabilityScorecardV125({
         <div className="sv125-capability-grid">
           {statusRows.map((row) => (
             <article key={row.recordId} tabIndex={0}>
-              <span>{row.displayLabel}</span>
+              <span><PublicTermTextV134 text={row.displayLabel} /></span>
               <strong>{formatValueV121(row.value)}</strong>
               <small>
                 {[row.unit, row.year || row.period].filter(Boolean).join(" · ") ||
@@ -616,7 +628,9 @@ function TrendUnitV125({
     }, new Map<string, NumericRowV125[]>())
   ).map(([key, values]) => ({
     key,
-    label: values[0].displayLabel,
+    label:
+      publicTextV126(values[0].displayLabel) ||
+      values[0].semanticMeasure.labelKo,
     rows: values.sort((left, right) => (left.year || 0) - (right.year || 0)),
   }));
   const years = sourceSeries.flatMap((item) =>
@@ -624,7 +638,7 @@ function TrendUnitV125({
   );
   const minYear = Math.min(...years);
   const maxYear = Math.max(...years);
-  const publicUnit = unit || "단위 미기재";
+  const publicUnit = publicTextV126(unit) || "단위 미기재";
   const patterns: ChartLinePatternV127[] = [
     "solid",
     "dash",
@@ -683,7 +697,7 @@ function TrendUnitV125({
 function CategoryComparisonV125({ rows }: { rows: NumericRowV125[] }) {
   if (rows.length === 0) return null;
   return (
-    <VisualizationFrameV125 eyebrow="범주" title="분류별 값 비교">
+    <VisualizationFrameV125 eyebrow="항목" title="항목별 값">
       {groupByUnitV125(rows).map(({ unit, rows: unitRows }) => {
         const max = Math.max(...unitRows.map((row) => Math.abs(row.value)), 1e-9);
         return (
@@ -697,7 +711,7 @@ function CategoryComparisonV125({ rows }: { rows: NumericRowV125[] }) {
                   value={formatValueV121(row.value)}
                   unit={unit}
                 >
-                  <strong>{categoryLabelV125(row)}</strong>
+                  <strong><PublicTermTextV134 text={categoryLabelV125(row)} /></strong>
                   <span aria-hidden="true">
                     <i
                       className={`sv125-contract-pattern--${SERIES_PATTERNS[index % SERIES_PATTERNS.length]}`}
@@ -729,7 +743,7 @@ function MetricCardsV125({
       <div className="sv125-metric-grid">
         {rows.map((row) => (
           <article key={row.recordId}>
-            <span>{row.displayLabel}</span>
+            <span><PublicTermTextV134 text={row.displayLabel} /></span>
             <strong>{formatValueV121(row.value)}</strong>
             <small>
               {[observationUnitV125(row), row.year || row.period]
@@ -754,8 +768,8 @@ function EvidenceCardsV125({
     <div className="sv125-contract-evidence-grid">
       {rows.slice(0, 24).map((row) => (
         <article key={row.recordId} tabIndex={0}>
-          <strong>{row.displayLabel}</strong>
-          <p>{formatValueV121(row.value)}</p>
+          <strong><PublicTermTextV134 text={row.displayLabel} /></strong>
+          <p><PublicTermTextV134 text={formatValueV121(row.value)} /></p>
           <small>
             {[row.year || row.period, publicTextV126(row.provenance.sourceOrg)]
               .filter(Boolean)
@@ -819,8 +833,8 @@ function PolicyTimelineV125({
           <li key={item.key}>
             <time>{item.date || "시점 미기재"}</time>
             <div>
-              <strong>{item.title}</strong>
-              <p>{item.detail}</p>
+              <strong><PublicTermTextV134 text={item.title} /></strong>
+              <p><PublicTermTextV134 text={item.detail} /></p>
               {safeHttpUrlV125(item.sourceUrl) && (
                 <a href={item.sourceUrl} target="_blank" rel="noreferrer">
                   원문 보기
@@ -880,10 +894,10 @@ function EvidenceMatrixV125({
           <tbody>
             {items.slice(0, 40).map((item) => (
               <tr key={item.key}>
-                <th scope="row">{item.area}</th>
-                <td>{item.result}</td>
-                <td>{item.basis}</td>
-                <td>{item.source}</td>
+                <th scope="row"><PublicTermTextV134 text={item.area} /></th>
+                <td><PublicTermTextV134 text={item.result} /></td>
+                <td><PublicTermTextV134 text={item.basis} /></td>
+                <td><PublicTermTextV134 text={item.source} /></td>
               </tr>
             ))}
           </tbody>
@@ -1066,11 +1080,11 @@ function EntityTableFallbackV125({
           <tbody>
             {shown.map((entity) => (
               <tr key={entity.recordId}>
-                <th scope="row">{publicEntityTitleV131(entity)}</th>
-                <td>{publicEntityTypeLabelV126(entity, "자료")}</td>
-                <td>{entityFactsV125(entity)}</td>
-                <td>{publicTextV126(entity.provenance.sourceOrg) || ""}</td>
-                <td>{publicMissingReasonLabelV126(entity.missingReasonCode, entity.note) || ""}</td>
+                <th scope="row"><PublicTermTextV134 text={publicEntityTitleV131(entity)} /></th>
+                <td><PublicTermTextV134 text={publicEntityTypeLabelV126(entity, "자료")} /></td>
+                <td><PublicTermTextV134 text={entityFactsV125(entity)} /></td>
+                <td><PublicTermTextV134 text={publicTextV126(entity.provenance.sourceOrg) || ""} /></td>
+                <td><PublicTermTextV134 text={publicMissingReasonLabelV126(entity.missingReasonCode, entity.note) || ""} /></td>
               </tr>
             ))}
           </tbody>
@@ -1179,8 +1193,8 @@ function VisualizationFrameV125({
   return (
     <section className="sv125-contract-panel">
       <header>
-        <span>{eyebrow}</span>
-        <h4>{title}</h4>
+        <span><PublicTermTextV134 text={eyebrow} /></span>
+        <h4><PublicTermTextV134 text={title} /></h4>
       </header>
       {children}
     </section>
@@ -1240,25 +1254,29 @@ function categoryLabelV125(row: SemanticObservationV125): string {
     "sex",
   ]) {
     const label = row.dimensionLabels[key] || row.dimensions[key];
-    if (label) return label;
+    if (label) return publicDimensionValueV134(key, label);
   }
-  return row.displayLabel;
+  return publicTextV126(row.displayLabel) || row.semanticMeasure.labelKo;
 }
 
 function scenarioLabelV125(row: SemanticObservationV125): string {
   for (const key of ["scenario", "detail", "category", "pathway"]) {
     const label = row.dimensionLabels[key] || row.dimensions[key];
-    if (label) return label;
+    if (label) return publicDimensionValueV134(key, label);
   }
-  return row.displayLabel;
+  return publicTextV126(row.displayLabel) || row.semanticMeasure.labelKo;
 }
 
 function seasonLabelV125(row: SemanticObservationV125): string {
   for (const key of ["month", "period", "season", "detail", "category"]) {
     const label = row.dimensionLabels[key] || row.dimensions[key];
-    if (label) return label;
+    if (label) return publicDimensionValueV134(key, label);
   }
-  return row.period || row.displayLabel;
+  return (
+    row.period ||
+    publicTextV126(row.displayLabel) ||
+    row.semanticMeasure.labelKo
+  );
 }
 
 function seasonOrderV125(row: SemanticObservationV125): number {
@@ -1292,7 +1310,7 @@ function pairedDimensionKeyV125(rows: PresentRowV125[]): string | null {
 function pairGroupLabelV125(row: PresentRowV125, pairKey: string): string {
   const labels = Object.entries(row.dimensionLabels)
     .filter(([key]) => ![pairKey, "year", "period"].includes(key))
-    .map(([, value]) => value)
+    .map(([key, value]) => publicDimensionValueV134(key, value))
     .filter(Boolean);
   return labels.join(" · ") || row.semanticMeasure.labelKo;
 }
@@ -1411,8 +1429,8 @@ function rendererLabelV125(renderer: RendererV125): string {
     "kpi-trend": "핵심 지표와 추세",
     "multi-metric-trend": "복수 측정항목 추세",
     composition: "구성비",
-    "category-comparison": "범주 비교",
-    "paired-category-comparison": "짝지은 범주 비교",
+    "category-comparison": "항목별 비교",
+    "paired-category-comparison": "연관 항목 비교",
     "score-benchmark": "점수·기준 비교",
     "scenario-range": "시나리오 범위",
     seasonality: "계절성",

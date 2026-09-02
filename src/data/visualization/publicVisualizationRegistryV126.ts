@@ -56,7 +56,13 @@ export type PublicVisualizationSummaryV126 = {
   singleDenominatorDimensionKeys?: readonly string[];
 };
 
-const SPECIALIZED_ELEMENTS_V126 = new Set(["A-002", "D-005", "E-012"]);
+const SPECIALIZED_ELEMENTS_V126 = new Set([
+  "A-002",
+  "B-005",
+  "D-005",
+  "D-011",
+  "E-012",
+]);
 
 const PUBLIC_DEFAULT_MEASURE_KEYS_V127: Readonly<Record<string, string>> =
   Object.freeze({
@@ -123,9 +129,11 @@ const ELEMENT_RENDERER_OVERRIDES_V126: Record<
   "A-016": "composition-trend",
   "A-017": "technology-comparison",
   "A-018": "composition-trend",
+  "B-005": "scenario-comparison",
   "B-013": "technology-comparison",
   "B-003": "multi-metric-trend",
   "D-005": "composition-trend",
+  "D-011": "multi-metric-trend",
   "D-007": "policy-timeline",
   "B-033": "spatial-analysis",
   "B-034": "spatial-analysis",

@@ -12,6 +12,7 @@ import type {
   PublicAnalyticalRendererV126,
 } from "../../../data/visualization/publicVisualizationRegistryV126";
 import { publicElementCopyV126 } from "../../../data/visualization/publicCopyRegistryV126";
+import { getPublicAnalysisHeadingsV134 } from "../../../data/visualization/publicAnalysisHeadingsV134";
 import { getPublicIndicatorInterpretationV129 } from "../../../data/interpretation/publicIndicatorInterpretationV129";
 import type {
   VietnamEntityV124,
@@ -32,12 +33,19 @@ import PublicCompositionTrendAnalysisV132 from "./PublicCompositionTrendAnalysis
 import ResearchPatentAnalysisV132 from "./ResearchPatentAnalysisV132";
 import PublicDataLimitationsV126 from "./PublicDataLimitationsV126";
 import PublicIndicatorMeaningV129 from "./PublicIndicatorMeaningV129";
+import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import PublicRawDataTablesV126 from "./PublicRawDataTablesV126";
 import PublicSourcePanelV126 from "./PublicSourcePanelV126";
 import "./public-data-analysis-v126.css";
 
 const OccupationEmploymentWagePreviewV125 = lazy(
   () => import("../semantic/OccupationEmploymentWagePreviewV125")
+);
+const OdaProviderAnalysisV134 = lazy(
+  () => import("./OdaProviderAnalysisV134")
+);
+const SpeiDroughtScenarioAnalysisV134 = lazy(
+  () => import("./SpeiDroughtScenarioAnalysisV134")
 );
 
 interface Props {
@@ -97,6 +105,7 @@ export default function PublicDataAnalysisRouterV126({
   const summary = getPublicVisualizationSummaryV126(elementId);
   const publicRenderer = summary?.primaryRenderer || "structured-table";
   const copy = publicElementCopyV126(elementId, publicRenderer);
+  const headings = getPublicAnalysisHeadingsV134(elementId);
   const semanticRows = useMemo(
     () =>
       buildSemanticObservationsV125(
@@ -153,22 +162,48 @@ export default function PublicDataAnalysisRouterV126({
     <>
       <header className="pav126-heading">
         <span>이 데이터로 확인할 수 있는 내용</span>
-        <h2 data-testid="public-data-title">{copy.title}</h2>
-        <p>{copy.description}</p>
+        <h2 data-testid="public-data-title">
+          <PublicTermTextV134 text={headings?.publicAnalysisTitle || copy.title} />
+        </h2>
+        <p>
+          <PublicTermTextV134 text={headings?.publicQuestion || copy.description} />
+        </p>
       </header>
 
-      <PublicIndicatorMeaningV129
-        elementId={elementId}
-        indicatorId={meaningIndicatorId}
-        variableKey={
-          selectorState.dimensions.variable ||
-          selectorState.dimensions.mapVariable ||
-          (selectorState.measure ? "semantic-selection" : undefined)
-        }
-      />
+      {elementId !== "B-005" && (
+        <PublicIndicatorMeaningV129
+          elementId={elementId}
+          indicatorId={meaningIndicatorId}
+          variableKey={
+            selectorState.dimensions.variable ||
+            selectorState.dimensions.mapVariable ||
+            (selectorState.measure ? "semantic-selection" : undefined)
+          }
+        />
+      )}
 
       <section className="pav126-primary" data-testid="public-analysis-primary">
-        {elementId === "A-016" ? (
+        {elementId === "D-011" ? (
+          <Suspense fallback={<div className="pav126-empty" role="status">ODA 분석을 불러오는 중입니다</div>}>
+            <OdaProviderAnalysisV134
+              rows={semanticRows}
+              selectorState={selectorState}
+              onSelectorStateChange={onSelectorStateChange}
+              primaryTitle={headings?.primaryChartTitle}
+              secondaryTitle={headings?.secondaryChartTitle}
+            />
+          </Suspense>
+        ) : elementId === "B-005" ? (
+          <Suspense fallback={<div className="pav126-empty" role="status">가뭄 전망을 불러오는 중입니다</div>}>
+            <SpeiDroughtScenarioAnalysisV134
+              rows={semanticRows}
+              selectorState={selectorState}
+              onSelectorStateChange={onSelectorStateChange}
+              primaryTitle={headings?.primaryChartTitle}
+              secondaryTitle={headings?.secondaryChartTitle}
+            />
+          </Suspense>
+        ) : elementId === "A-016" ? (
           <PrimaryEnergyCompositionAnalysisV132
             rows={semanticRows}
             selectorState={selectorState}
@@ -251,12 +286,14 @@ export default function PublicDataAnalysisRouterV126({
         observations={observations}
         entities={entities}
       />
-      <PublicRawDataTablesV126
-        elementId={elementId}
-        observations={semanticRows}
-        entities={entities}
-        detailTemplate={detailTemplate}
-      />
+      {elementId !== "D-011" ? (
+        <PublicRawDataTablesV126
+          elementId={elementId}
+          observations={semanticRows}
+          entities={entities}
+          detailTemplate={detailTemplate}
+        />
+      ) : null}
     </>
   );
 }
