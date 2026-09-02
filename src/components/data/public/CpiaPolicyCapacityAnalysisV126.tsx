@@ -333,7 +333,7 @@ function CpiaTrendChartV126({ rows }: { rows: NumericCpiaRowV126[] }) {
         title={`${minYear}~${maxYear}년 CPIA 추이`}
         unit="점"
         xAxisTitle="연도"
-        yAxisTitle="CPIA 점수"
+        yAxisTitle="정책·제도 역량 점수"
         zoom={{ enabled: true, minimumSpan: 2 }}
       />
       {chartLimitation && (

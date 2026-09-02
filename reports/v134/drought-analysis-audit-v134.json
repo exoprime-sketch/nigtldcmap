@@ -1,0 +1,246 @@
+{
+  "schemaVersion": "v134-context-glossary-analysis-audit-1",
+  "generatedAt": "2026-09-02T03:50:20.759Z",
+  "audit": "drought-analysis:v134",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "drought-analysis:v134",
+    "status": "PASS",
+    "passed": 19,
+    "failed": 0,
+    "total": 19,
+    "failedChecks": [],
+    "speiYearRange": "1951–2100",
+    "scenarioYearRange": "2015–2100",
+    "speiScenarioCount": 2,
+    "runtimeFailure": null
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "drought-analysis:v134",
+      "name": "FRAMEWORK_ELEMENTS",
+      "status": "PASS",
+      "actual": 152,
+      "expected": 152
+    },
+    {
+      "type": "check",
+      "audit": "drought-analysis:v134",
+      "name": "B005_SOURCE_PAYLOAD",
+      "status": "PASS",
+      "actual": {
+        "errors": [],
+        "rows": 503
+      },
+      "expected": {
+        "errors": [],
+        "rows": 503
+      }
+    },
+    {
+      "type": "check",
+      "audit": "drought-analysis:v134",
+      "name": "B005_SPEI_YEAR_RANGE",
+      "status": "PASS",
+      "actual": [
+        1951,
+        2100
+      ],
+      "expected": [
+        1951,
+        2100
+      ]
+    },
+    {
+      "type": "check",
+      "audit": "drought-analysis:v134",
+      "name": "B005_SCENARIO_YEAR_RANGE",
+      "status": "PASS",
+      "actual": [
+        2015,
+        2100
+      ],
+      "expected": [
+        2015,
+        2100
+      ]
+    },
+    {
+      "type": "check",
+      "audit": "drought-analysis:v134",
+      "name": "B005_SCENARIO_COUNT",
+      "status": "PASS",
+      "actual": [
+        "B-005_spei12_ssp245",
+        "B-005_spei12_ssp585"
+      ],
+      "expected": [
+        "B-005_spei12_ssp245",
+        "B-005_spei12_ssp585"
+      ]
+    },
+    {
+      "type": "check",
+      "audit": "drought-analysis:v134",
+      "name": "B005_COMPARISON_VALUES",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "drought-analysis:v134",
+      "name": "B005_SPECIALIZED_RENDERER",
+      "status": "PASS",
+      "actual": "SpeiDroughtScenarioAnalysisV134 + B-005",
+      "expected": "wired"
+    },
+    {
+      "type": "check",
+      "audit": "drought-analysis:v134",
+      "name": "B005_NO_ARBITRARY_BAND",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "type": "check",
+      "audit": "drought-analysis:v134",
+      "name": "B005_ZERO_REFERENCE_CONTRACT",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "type": "check",
+      "audit": "drought-analysis:v134",
+      "name": "B005_RUNTIME_MOUNT",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null,
+        "snapshot": {
+          "mounted": true,
+          "meaning": true,
+          "zeroReference": true,
+          "scenarioTrend": true,
+          "scenarioCount": 2,
+          "yearButtons": [
+            "2050년",
+            "2075년",
+            "2100년",
+            "SSP2-4.5",
+            "SSP5-8.5"
+          ],
+          "comparisonRows": 2,
+          "zeroImputationCopy": false,
+          "arbitraryQualitative": false,
+          "internalCodeVisible": false
+        }
+      },
+      "expected": {
+        "runtimeFailure": null,
+        "mounted": true
+      }
+    },
+    {
+      "type": "check",
+      "audit": "drought-analysis:v134",
+      "name": "B005_SPEI_MEANING_VISIBLE",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "type": "check",
+      "audit": "drought-analysis:v134",
+      "name": "B005_ZERO_REFERENCE",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "type": "check",
+      "audit": "drought-analysis:v134",
+      "name": "B005_SCENARIO_TREND",
+      "status": "PASS",
+      "actual": {
+        "trend": true,
+        "scenarioCount": 2
+      },
+      "expected": {
+        "trend": true,
+        "scenarioCount": 2
+      }
+    },
+    {
+      "type": "check",
+      "audit": "drought-analysis:v134",
+      "name": "B005_SELECTED_YEAR_COMPARISON",
+      "status": "PASS",
+      "actual": {
+        "rows": 2,
+        "buttons": [
+          "2050년",
+          "2075년",
+          "2100년",
+          "SSP2-4.5",
+          "SSP5-8.5"
+        ]
+      },
+      "expected": {
+        "rows": 2,
+        "buttons": [
+          "2050년",
+          "2075년",
+          "2100년"
+        ]
+      }
+    },
+    {
+      "type": "check",
+      "audit": "drought-analysis:v134",
+      "name": "B005_ZERO_IMPUTATION",
+      "status": "PASS",
+      "actual": false,
+      "expected": false
+    },
+    {
+      "type": "check",
+      "audit": "drought-analysis:v134",
+      "name": "B005_ARBITRARY_THRESHOLD",
+      "status": "PASS",
+      "actual": false,
+      "expected": false
+    },
+    {
+      "type": "check",
+      "audit": "drought-analysis:v134",
+      "name": "B005_INTERNAL_CODE_VISIBLE",
+      "status": "PASS",
+      "actual": false,
+      "expected": false
+    },
+    {
+      "type": "check",
+      "audit": "drought-analysis:v134",
+      "name": "BROKEN_ASSET",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "drought-analysis:v134",
+      "name": "CONSOLE_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "speiYearRange": "1951–2100",
+  "scenarioYearRange": "2015–2100",
+  "speiScenarioCount": 2,
+  "runtimeFailure": null
+}

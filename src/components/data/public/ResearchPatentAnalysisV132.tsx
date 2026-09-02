@@ -9,6 +9,7 @@ import {
 } from "../../../data/visualization/publicFieldPolicyV126";
 import { reviewedEntityAttributesV132 } from "../../../data/visualization/publicEntityFieldPolicyV132";
 import { resolvePublicEntityTitleV131 } from "../../../data/visualization/publicEntityTitleV131";
+import { PublicTermTextV134 } from "../../help/PublicTermV134";
 
 import "./research-patent-analysis-v132.css";
 
@@ -345,7 +346,7 @@ function BreakdownV132({
       <ul>
         {rows.map((row) => (
           <li key={row.label} tabIndex={0} aria-label={`${row.label} ${row.value}건`}>
-            <span>{row.label}</span>
+            <span><PublicTermTextV134 text={row.label} /></span>
             <i aria-hidden="true"><b style={{ width: `${(row.value / maximum) * 100}%` }} /></i>
             <strong>{row.value}건</strong>
           </li>
@@ -360,14 +361,14 @@ function ResearchCardV132({ record }: { record: ResearchRecordV132 }) {
     <article className="rpa132-record" data-testid="public-entity-card-v131" role="listitem">
       <div data-testid="e008-public-record">
         <div className="rpa132-record__badges">
-          <span>{record.type}</span>
-          <span>{record.field}</span>
+          <span><PublicTermTextV134 text={record.type} /></span>
+          <span><PublicTermTextV134 text={record.field} /></span>
           {record.year && <span>{record.year}년</span>}
         </div>
-        <h4 data-testid="public-entity-card-title">{record.title}</h4>
+        <h4 data-testid="public-entity-card-title"><PublicTermTextV134 text={record.title} /></h4>
         <dl data-testid="public-entity-card-facts">
-          {record.institution && <div><dt>기관</dt><dd>{record.institution}</dd></div>}
-          {record.collaboration && <div><dt>협력구조</dt><dd>{record.collaboration}</dd></div>}
+          {record.institution && <div><dt>기관</dt><dd><PublicTermTextV134 text={record.institution} /></dd></div>}
+          {record.collaboration && <div><dt>협력구조</dt><dd><PublicTermTextV134 text={record.collaboration} /></dd></div>}
         </dl>
         {record.sourceUrl && <a href={record.sourceUrl} target="_blank" rel="noreferrer">공식 원문</a>}
       </div>

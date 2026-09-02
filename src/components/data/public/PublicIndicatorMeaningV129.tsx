@@ -1,4 +1,5 @@
 import { getPublicIndicatorInterpretationV129 } from "../../../data/interpretation/publicIndicatorInterpretationV129";
+import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import "./public-indicator-meaning-v129.css";
 
 interface Props {
@@ -41,10 +42,10 @@ export default function PublicIndicatorMeaningV129({
         className={`pim129 pim129--tooltip ${className}`.trim()}
         data-testid="public-indicator-meaning-v129"
       >
-        <strong>{interpretation.publicName}</strong>
-        {interpretation.publicUnit ? <span>{interpretation.publicUnit}</span> : null}
+        <strong><PublicTermTextV134 text={interpretation.publicName} /></strong>
+        {interpretation.publicUnit ? <span><PublicTermTextV134 text={interpretation.publicUnit} /></span> : null}
         {bullets.map((bullet) => (
-          <p key={bullet}>{bullet}</p>
+          <p key={bullet}><PublicTermTextV134 text={bullet} /></p>
         ))}
       </div>
     );
@@ -60,13 +61,13 @@ export default function PublicIndicatorMeaningV129({
         <span aria-hidden="true">i</span>
         <div>
           <h3 id={`public-indicator-meaning-${elementId}`}>지표 읽는 법</h3>
-          <p>{interpretation.publicName}</p>
+          <p><PublicTermTextV134 text={interpretation.publicName} /></p>
         </div>
       </header>
 
       <ul className="pim129__bullets">
         {bullets.map((bullet) => (
-          <li key={bullet}>{bullet}</li>
+          <li key={bullet}><PublicTermTextV134 text={bullet} /></li>
         ))}
       </ul>
 
@@ -74,7 +75,7 @@ export default function PublicIndicatorMeaningV129({
         {interpretation.publicUnit ? (
           <div>
             <dt>단위</dt>
-            <dd>{interpretation.publicUnit}</dd>
+            <dd><PublicTermTextV134 text={interpretation.publicUnit} /></dd>
           </div>
         ) : null}
         {scale ? (
@@ -85,12 +86,12 @@ export default function PublicIndicatorMeaningV129({
         ) : null}
         <div>
           <dt>높고 낮음의 의미</dt>
-          <dd>{interpretation.directionLabel}</dd>
+          <dd><PublicTermTextV134 text={interpretation.directionLabel} /></dd>
         </div>
         {comparison ? (
           <div>
             <dt>비교·공간단위</dt>
-            <dd>{comparison}</dd>
+            <dd><PublicTermTextV134 text={comparison} /></dd>
           </div>
         ) : null}
       </dl>

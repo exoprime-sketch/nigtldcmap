@@ -1,4 +1,7 @@
 import type { PublicAnalyticalRendererV126 } from "./publicVisualizationRegistryV126";
+import { getPublicAnalysisHeadingsV134 } from "./publicAnalysisHeadingsV134";
+import { technologyLabelV121 } from "../../utils/vietnamActualV121";
+import { publicTextV126 } from "./publicFieldPolicyV126";
 
 type PublicElementCopyV126 = {
   title: string;
@@ -90,8 +93,8 @@ const RENDERER_TITLES_V126: Record<PublicAnalyticalRendererV126, string> = {
   "score-trend": "점수와 장기 추이",
   "kpi-trend": "핵심지표와 장기 추이",
   "multi-metric-trend": "복수 지표 추이",
-  "composition-trend": "구성과 변화",
-  "stacked-emissions": "배출량 구성과 변화",
+  "composition-trend": "연도별 구성",
+  "stacked-emissions": "연도별 배출 구성",
   "technology-comparison": "기술·분류 비교",
   "scenario-comparison": "시나리오 비교",
   seasonality: "시기별 변화",
@@ -137,9 +140,15 @@ export function publicElementCopyV126(
   elementId: string,
   renderer: PublicAnalyticalRendererV126
 ): PublicElementCopyV126 {
+  const headings = getPublicAnalysisHeadingsV134(elementId);
   return (
     ELEMENT_COPY_V126[elementId] ||
-    (renderer === "status-only"
+    (headings
+      ? {
+          title: headings.publicAnalysisTitle,
+          description: headings.publicQuestion,
+        }
+      : renderer === "status-only"
       ? {
           title: RENDERER_TITLES_V126[renderer],
           description:
@@ -208,6 +217,53 @@ export function publicDimensionLabelV126(
   const label = publicCopyOrEmptyV126(labelValue);
   if (label && !/^[a-z][a-z0-9_\s-]*$/iu.test(label)) return label;
   return label ? label.replace(/[_-]+/g, " ") : "분류";
+}
+
+const PUBLIC_DIMENSION_VALUE_LABELS_V134: Record<string, string> = {
+  GOLD_STANDARD_CERTIFIED_DESIGN: "Gold Standard 설계 인증",
+  GOLD_STANDARD_CERTIFIED_PROJECT: "Gold Standard 사업 인증",
+  "Late to verify": "검증 지연",
+  LISTED: "목록 등재",
+  Registered: "등록",
+  "Registration requested": "등록 요청",
+  "Under development": "개발 중",
+  "Under validation": "타당성 검토 중",
+  "Units Transferred from Approved GHG Program":
+    "승인된 온실가스 프로그램에서 이전",
+  "Verification approval requested": "검증 승인 요청",
+  Withdrawn: "철회",
+};
+
+/** Converts stored dimension codes into stable public selector/chart labels. */
+export function publicDimensionValueV134(
+  keyValue: string,
+  value: string
+): string {
+  const mapped = PUBLIC_DIMENSION_VALUE_LABELS_V134[value.trim()];
+  if (mapped) return mapped;
+
+  const key = keyValue.replace(/[_\s-]/gu, "").toLocaleLowerCase("en-US");
+  if (key.includes("technology")) {
+    const technologyIds = Array.from(
+      new Set(value.match(/\bCTIS-\d{2}\b/giu) || [])
+    );
+    if (technologyIds.length > 0) {
+      const remainder = value
+        .replace(/\bCTIS-\d{2}\b/giu, "")
+        .replace(/^[\s,·|:;-]+|[\s,·|:;-]+$/gu, "")
+        .trim();
+      if (remainder) {
+        const safeRemainder = publicTextV126(remainder);
+        if (safeRemainder) return safeRemainder;
+      }
+      if (technologyIds.length <= 4) {
+        return technologyIds.map(technologyLabelV121).join(" · ");
+      }
+      return `기후기술 ${technologyIds.length}개 분야`;
+    }
+  }
+
+  return publicTextV126(value) || "분류 미기재";
 }
 
 export function publicCopyOrEmptyV126(value: unknown): string {

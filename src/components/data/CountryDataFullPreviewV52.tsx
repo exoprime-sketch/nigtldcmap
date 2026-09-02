@@ -123,7 +123,7 @@ export default function CountryDataFullPreviewV52({
       <header className="cev123-heading">
         <div>
           <span>공개 데이터</span>
-          <h3>{runtime ? "분석 화면" : "데이터를 준비하는 중"}</h3>
+          <h2>{runtime ? "데이터 분석" : "데이터를 준비하는 중"}</h2>
         </div>
         <small data-testid="public-data-summary">{publicDataSummary}</small>
       </header>

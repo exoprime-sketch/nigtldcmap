@@ -11,6 +11,10 @@ import {
 } from "../data/publicPlatformV128";
 import type { VietnamPublicOverviewV128 } from "../data/publicPlatformV128";
 import type { CategoryCode } from "../data/publicTaxonomy";
+import {
+  PublicTermExpandedTextV134,
+  PublicTermTextV134,
+} from "../components/help/PublicTermV134";
 import "../styles/home-final-v13.css";
 import "../styles/user-facing-v37.css";
 import "../styles/benchmark-ux-v39.css";
@@ -61,8 +65,7 @@ export default function HomePage({
             </span>
             <h1 id="home-v128-title">개도국 기후기술 협력 플랫폼</h1>
             <p>
-              베트남의 정책·제도, 에너지·인프라, 기후위험, 사업·재원,
-              협력기관 데이터를 검색하고 지도와 차트로 분석할 수 있습니다.
+              <PublicTermTextV134 text="베트남의 GDP 등 경제지표, NDC·GHG 정책, 에너지·인프라, 기후위험, ODA 사업·재원, 협력기관 데이터를 검색하고 지도와 차트로 분석할 수 있습니다." />
             </p>
 
             <form
@@ -93,7 +96,7 @@ export default function HomePage({
                     type="button"
                     onClick={() => onQueryChange(example)}
                   >
-                    {example}
+                    <PublicTermExpandedTextV134 text={example} />
                   </button>
                 )
               )}
@@ -163,9 +166,9 @@ export default function HomePage({
                         {String(index + 1).padStart(2, "0")}
                       </span>
                       <span className="home-featured-copy">
-                        <strong>{item.publicTitle}</strong>
+                        <strong><PublicTermExpandedTextV134 text={item.publicTitle} /></strong>
                         <small>
-                          {item.sourceOrganizations[0] || "자료 제공기관 확인"} ·{" "}
+                          <PublicTermExpandedTextV134 text={item.sourceOrganizations[0] || "자료 제공기관 확인"} /> ·{" "}
                           {publicReferencePeriodV128(item)}
                         </small>
                       </span>

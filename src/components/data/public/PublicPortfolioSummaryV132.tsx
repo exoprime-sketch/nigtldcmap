@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { publicTextV126 } from "../../../data/visualization/publicFieldPolicyV126";
 import { reviewedEntityAttributesV132 } from "../../../data/visualization/publicEntityFieldPolicyV132";
+import { PublicTermTextV134 } from "../../help/PublicTermV134";
 
 import "./public-portfolio-summary-v132.css";
 
@@ -131,7 +132,7 @@ export default function PublicPortfolioSummaryV132({
           <article data-portfolio-kpi="funding-total" key={amount.currency}>
             <span>확인 금액 합계</span>
             <strong>{formatAmountV132(amount.value)}</strong>
-            <small>{amount.currency} · {amount.count.toLocaleString("ko-KR")}건</small>
+            <small><PublicTermTextV134 text={`${amount.currency} · ${amount.count.toLocaleString("ko-KR")}건`} /></small>
           </article>
         ))}
         {analysis.yearRange && (
@@ -303,7 +304,7 @@ function DistributionV132({
       <ul>
         {rows.map((row) => (
           <li key={row.label} tabIndex={0} aria-label={`${row.label} ${row.value}건`}>
-            <span title={row.label}>{row.label}</span>
+            <span title={row.label}><PublicTermTextV134 text={row.label} /></span>
             <i aria-hidden="true"><b style={{ width: `${Math.max(4, (row.value / maximum) * 100)}%` }} /></i>
             <strong>{row.value.toLocaleString("ko-KR")}건</strong>
           </li>

@@ -1,4 +1,5 @@
 import type { CountryMapLayerV122 } from "../../data/countries/countryDataTypesV122";
+import { PublicTermTextV134 } from "../help/PublicTermV134";
 
 const GROUP_ORDER = [
   "에너지·인프라",
@@ -73,16 +74,25 @@ export default function MapDataGuideV130({
                     <tbody>
                       {groupLayers.map((layer) => (
                         <tr key={layer.elementId}>
-                          <th scope="row">{layer.publicShortTitle}</th>
+                          <th scope="row">
+                            <PublicTermTextV134 text={layer.publicShortTitle} />
+                          </th>
                           <td data-label="공간 표현">{representation(layer)}</td>
                           <td data-label="기준기간">
                             {layer.latestYear || layer.sourceYear || "미표기"}
                           </td>
                           <td data-label="지도 표시 이유">
-                            {layer.mapBenefit || layer.spatialCoverage}
+                            <PublicTermTextV134
+                              text={layer.mapBenefit || layer.spatialCoverage}
+                            />
                           </td>
                           <td data-label="공간 한계">
-                            {layer.spatialLimitation || layer.publicSpatialNotice}
+                            <PublicTermTextV134
+                              text={
+                                layer.spatialLimitation ||
+                                layer.publicSpatialNotice
+                              }
+                            />
                           </td>
                         </tr>
                       ))}

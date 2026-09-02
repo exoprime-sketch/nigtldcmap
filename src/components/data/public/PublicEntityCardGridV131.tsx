@@ -6,6 +6,7 @@ import {
 import type { PublicAttributeValueV126 } from "../../../data/visualization/publicFieldPolicyV126";
 import { resolvePublicEntityTitleV131 } from "../../../data/visualization/publicEntityTitleV131";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
+import { PublicTermTextV134 } from "../../help/PublicTermV134";
 
 import "./public-entity-cards-v131.css";
 
@@ -222,7 +223,7 @@ function PublicEntityCardV131({
         {badges.length > 0 && (
           <ul className="pec131-card__badges" aria-label="항목 분류">
             {badges.map((badge) => (
-              <li key={badge}>{badge}</li>
+              <li key={badge}><PublicTermTextV134 text={badge} /></li>
             ))}
           </ul>
         )}
@@ -231,10 +232,12 @@ function PublicEntityCardV131({
           data-testid="public-entity-card-title"
           aria-label={title}
         >
-          {title}
+          <PublicTermTextV134 text={title} />
         </h5>
         {secondaryNote && secondaryNote !== title && (
-          <p className="pec131-card__secondary">{secondaryNote}</p>
+          <p className="pec131-card__secondary">
+            <PublicTermTextV134 text={secondaryNote} />
+          </p>
         )}
       </div>
 
@@ -283,8 +286,8 @@ function disambiguatedCardTitleV131(
 function FactV131({ fact }: { fact: PublicCardFactV131 }) {
   return (
     <div>
-      <dt>{fact.label}</dt>
-      <dd>{fact.value}</dd>
+      <dt><PublicTermTextV134 text={fact.label} /></dt>
+      <dd><PublicTermTextV134 text={fact.value} /></dd>
     </div>
   );
 }

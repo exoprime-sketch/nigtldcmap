@@ -15,6 +15,10 @@ import { getElementVisualizationSummaryV125 } from "../data/visualization/elemen
 import { CATEGORIES } from "../data/publicTaxonomy";
 import type { CategoryCode } from "../data/publicTaxonomy";
 import {
+  PublicTermHelpV134,
+  PublicTermTextV134,
+} from "../components/help/PublicTermV134";
+import {
   normalizedSearchV121,
   technologyLabelV121,
 } from "../utils/vietnamActualV121";
@@ -473,6 +477,14 @@ export default function DataExplorerPage({
               </select>
             </label>
           </div>
+          <PublicTermHelpV134
+            text={[
+              sourceOrganization === "all" ? "" : sourceOrganization,
+              technologyId === "all" ? "" : technologyLabelV121(technologyId),
+            ]
+              .filter(Boolean)
+              .join(" · ")}
+          />
         </details>
 
         <div className="cdp-filter-actions">
@@ -555,8 +567,10 @@ export default function DataExplorerPage({
             {showCountryContext && (
               <span className="cdp-country-chip">{item.countryNameKo}</span>
             )}
-            <h2>{item.publicTitle}</h2>
-            <p className="cdp-card__description">{item.publicDescription}</p>
+            <h2><PublicTermTextV134 text={item.publicTitle} /></h2>
+            <p className="cdp-card__description">
+              <PublicTermTextV134 text={item.publicDescription} />
+            </p>
             <dl className="cdp-card__facts">
               <div>
                 <dt>실제 레코드</dt>
@@ -569,25 +583,43 @@ export default function DataExplorerPage({
               <div>
                 <dt>주요 측정항목</dt>
                 <dd>
-                  {contract
-                    ? contractSummaryValuesV125(contract.measureLabels, "측정항목 없음")
-                    : "측정항목 확인 중"}
+                  <PublicTermTextV134
+                    text={
+                      contract
+                        ? contractSummaryValuesV125(
+                            contract.measureLabels,
+                            "측정항목 없음"
+                          )
+                        : "측정항목 확인 중"
+                    }
+                  />
                 </dd>
               </div>
               <div>
                 <dt>주요 분류 차원</dt>
                 <dd>
-                  {contract
-                    ? contractSummaryValuesV125(contract.dimensionLabels, "추가 분류 없음")
-                    : "분류 정보 확인 중"}
+                  <PublicTermTextV134
+                    text={
+                      contract
+                        ? contractSummaryValuesV125(
+                            contract.dimensionLabels,
+                            "추가 분류 없음"
+                          )
+                        : "분류 정보 확인 중"
+                    }
+                  />
                 </dd>
               </div>
               <div>
                 <dt>자료 제공기관</dt>
                 <dd>
-                  {item.sourceOrganizations.length > 0
-                    ? item.sourceOrganizations.slice(0, 2).join(" · ")
-                    : "수집 예정"}
+                  <PublicTermTextV134
+                    text={
+                      item.sourceOrganizations.length > 0
+                        ? item.sourceOrganizations.slice(0, 2).join(" · ")
+                        : "수집 예정"
+                    }
+                  />
                 </dd>
               </div>
               <div>
@@ -603,7 +635,7 @@ export default function DataExplorerPage({
               <div className="cdp-chip-row" aria-label="관련 기후기술">
                 {item.technologyIds.slice(0, 3).map((id) => (
                   <span className="cdp-chip" key={id}>
-                    {technologyLabelV121(id)}
+                    <PublicTermTextV134 text={technologyLabelV121(id)} />
                   </span>
                 ))}
               </div>

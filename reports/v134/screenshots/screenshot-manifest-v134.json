@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "v134-visual-screenshot-manifest-1",
+  "generatedAt": "2026-09-02T03:51:01.790Z",
+  "audit": "screenshots:v134",
+  "status": "PASS",
+  "releaseBlocker": false,
+  "readinessContract": [
+    "production build served",
+    "specialized analysis root visible",
+    "requested chart/section visible",
+    "public term trigger visible",
+    "aria-describedby linked tooltip visible",
+    "map B-021 rendered signal visible before GVI glossary capture"
+  ],
+  "requiredCount": 11,
+  "screenshotCount": 11,
+  "failedCaptures": [],
+  "invalid": [],
+  "duplicateHashes": [],
+  "runtimeErrors": [],
+  "brokenAssets": [],
+  "htmlForJson": [],
+  "screenshots": [
+    {
+      "name": "d011-oda-overview.png",
+      "width": 1130,
+      "height": 2545,
+      "byteSize": 274303,
+      "sha256": "dbbe89a75e5298d384623c62309854c64422f654c31c35fe2564579ab58619c1",
+      "error": null,
+      "capture": {
+        "name": "d011-oda-overview.png",
+        "status": "PASS",
+        "details": {
+          "tagName": "DIV",
+          "testId": "d011-specialized-analysis",
+          "text": "최신 총 ODAUSD 1.67B2024년 불변가격전년 대비-22.3%2023년과 2024년 비교기준연도2024년2020–2024년 공개값자료 제공기관OECD CRS지출액 기준주 분석연도별 총 ODA공식 공여자 총계를 연도별로 비교합니다.베트남 총 공적개발원조 추이단위: USD (2024년 불변가격)총 ODA(공적개발원조)베트남 연도별 총 ODA 지출액범례에서 계열을 선택하고, 차트에 마우스를 올리거나 키보드 화살표로 연도별 값"
+        },
+        "error": null
+      }
+    },
+    {
+      "name": "d011-oda-provider-ranking.png",
+      "width": 1084,
+      "height": 840,
+      "byteSize": 80552,
+      "sha256": "0aa1e9ddede4679f4a0639d1d028b3489486fec81af38722b57159c569f66420",
+      "error": null,
+      "capture": {
+        "name": "d011-oda-provider-ranking.png",
+        "status": "PASS",
+        "details": {
+          "tagName": "DIV",
+          "testId": "d011-provider-ranking",
+          "text": "1. 세계은행그룹USD 356.3M총 ODA의 21.4%2. 일본USD 256.7M총 ODA의 15.4%3. 프랑스USD 222.6M총 ODA의 13.4%4. 미국USD 192.3M총 ODA의 11.5%5. 대한민국USD 133.9M총 ODA의 8%6. 독일USD 117.6M총 ODA의 7.1%7. 지역개발은행USD 105.7M총 ODA의 6.3%8. 호주USD 60.8M총 ODA의 3.7%9. 기타 다자기구USD 54.2M총"
+        },
+        "error": null
+      }
+    },
+    {
+      "name": "d011-oda-provider-trend.png",
+      "width": 1084,
+      "height": 470,
+      "byteSize": 37203,
+      "sha256": "16f7eeeea6c730f3600e8f814755acb764199816bc76122eafaf81a6d9c619c8",
+      "error": null,
+      "capture": {
+        "name": "d011-oda-provider-trend.png",
+        "status": "PASS",
+        "details": {
+          "tagName": "SECTION",
+          "testId": "d011-provider-trend",
+          "text": "세계은행그룹 ODA 추이단위: USD (2024년 불변가격)세계은행그룹세계은행그룹 연도별 ODA 지출액범례에서 계열을 선택하고, 차트에 마우스를 올리거나 키보드 화살표로 연도별 값을 확인할 수 있습니다.USD 786.8MUSD 678.4MUSD 570.1MUSD 461.8MUSD 353.4MUSD 245.1M20202021202220232024연도공적개발원조 지출액(USD (2024년 불변가격))"
+        },
+        "error": null
+      }
+    },
+    {
+      "name": "b005-spei-overview.png",
+      "width": 1130,
+      "height": 1171,
+      "byteSize": 216658,
+      "sha256": "01ec82cfc08ec7623b1a992d0b332d4d7a03be57184edc228ecb834253aedbbc",
+      "error": null,
+      "capture": {
+        "name": "b005-spei-overview.png",
+        "status": "PASS",
+        "details": {
+          "tagName": "DIV",
+          "testId": "b005-specialized-analysis",
+          "text": "지수 읽는 법SPEI-12는 무엇을 나타내나요?최근 12개월의 강수량과 잠재증발산량을 함께 반영한 표준화 강수증발산지수입니다.0 주변은 평년 수준, 음수는 평년보다 건조, 양수는 평년보다 습윤함을 뜻합니다.임의의 가뭄 심각도 구간을 만들지 않고 원천에 공개된 연도별 지수를 비교합니다.주 분석시나리오별 SPEI-12 전망2015–2100년 · 단위 SPEI 지수 · 0을 평년 기준선으로 표시SSP2-4.5SSP5-8.5-0.5-"
+        },
+        "error": null
+      }
+    },
+    {
+      "name": "b005-spei-scenario-trend.png",
+      "width": 1084,
+      "height": 494,
+      "byteSize": 94543,
+      "sha256": "8f73d96de545e698fceddcb4214e9e532c57347f9b3ce645b253b15e978e6152",
+      "error": null,
+      "capture": {
+        "name": "b005-spei-scenario-trend.png",
+        "status": "PASS",
+        "details": {
+          "tagName": "DIV",
+          "testId": "b005-scenario-trend",
+          "text": "-0.5-0.250+0.25+0.520152030205020752100연도가뭄지수2100년SSP2-4.5 +0.16 · 평년보다 습윤SSP5-8.5 -0.13 · 평년보다 건조"
+        },
+        "error": null
+      }
+    },
+    {
+      "name": "b005-spei-year-comparison.png",
+      "width": 1130,
+      "height": 268,
+      "byteSize": 25821,
+      "sha256": "3686cb86f7c834aaa735e65c89abf388407abf8fedbae0cc9d88349034787bce",
+      "error": null,
+      "capture": {
+        "name": "b005-spei-year-comparison.png",
+        "status": "PASS",
+        "details": {
+          "tagName": "SECTION",
+          "testId": "b005-selected-year-comparison",
+          "text": "보조 분석선택연도 시나리오 비교2050년2075년2100년SSP2-4.5+0.16 · 평년보다 습윤SSP5-8.5-0.13 · 평년보다 건조0을 중심으로 부호와 크기를 비교합니다. 원천에 없는 가뭄 심각도 기준은 적용하지 않습니다."
+        },
+        "error": null
+      }
+    },
+    {
+      "name": "glossary-oda-hover.png",
+      "width": 1440,
+      "height": 900,
+      "byteSize": 169853,
+      "sha256": "94d7c8a8b7aa5dec61b10f795dfa69e6fb9db0967bea5fb6317b2db9cfd56a41",
+      "error": null,
+      "capture": {
+        "name": "glossary-oda-hover.png",
+        "status": "PASS",
+        "details": {
+          "width": 1440,
+          "height": 900
+        },
+        "error": null
+      }
+    },
+    {
+      "name": "glossary-spei-hover.png",
+      "width": 1440,
+      "height": 900,
+      "byteSize": 250075,
+      "sha256": "bbfd94111c26258655978b68fb91ea6d34f8a4292e4690fc30b1ed3ae6b3674d",
+      "error": null,
+      "capture": {
+        "name": "glossary-spei-hover.png",
+        "status": "PASS",
+        "details": {
+          "width": 1440,
+          "height": 900
+        },
+        "error": null
+      }
+    },
+    {
+      "name": "glossary-ssp-hover.png",
+      "width": 1440,
+      "height": 900,
+      "byteSize": 279359,
+      "sha256": "2755526cb63d8c2031ce2dbee57e847d38592153ed336200c17f2f1a5ed06214",
+      "error": null,
+      "capture": {
+        "name": "glossary-ssp-hover.png",
+        "status": "PASS",
+        "details": {
+          "width": 1440,
+          "height": 900
+        },
+        "error": null
+      }
+    },
+    {
+      "name": "glossary-mobile.png",
+      "width": 390,
+      "height": 844,
+      "byteSize": 67953,
+      "sha256": "0661c2dd91f9dbe1ac8b89cb6490b35e9898d63705b6478a22b9353ab2715869",
+      "error": null,
+      "capture": {
+        "name": "glossary-mobile.png",
+        "status": "PASS",
+        "details": {
+          "width": 390,
+          "height": 844
+        },
+        "error": null
+      }
+    },
+    {
+      "name": "map-gvi-glossary.png",
+      "width": 1425,
+      "height": 934,
+      "byteSize": 269816,
+      "sha256": "c53be7ad9b6dc19d1a7605416ce71fe87c070f1e06c1b35d0df804a6469ce684",
+      "error": null,
+      "capture": {
+        "name": "map-gvi-glossary.png",
+        "status": "PASS",
+        "details": {
+          "x": 0,
+          "y": 71,
+          "width": 1425,
+          "height": 934
+        },
+        "error": null
+      }
+    }
+  ]
+}

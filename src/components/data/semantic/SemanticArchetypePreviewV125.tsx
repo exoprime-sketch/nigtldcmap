@@ -23,8 +23,14 @@ import {
 } from "../../../data/visualization/publicFieldPolicyV126";
 import {
   publicDimensionLabelV126,
+  publicDimensionValueV134,
   publicMeasureLabelV126,
 } from "../../../data/visualization/publicCopyRegistryV126";
+import { getPublicAnalysisHeadingsV134 } from "../../../data/visualization/publicAnalysisHeadingsV134";
+import {
+  PublicTermHelpV134,
+  PublicTermTextV134,
+} from "../../help/PublicTermV134";
 import SemanticContractRendererV125 from "./SemanticContractRendererV125";
 import "../../../styles/semantic-visualization-v125.css";
 
@@ -292,17 +298,30 @@ export default function SemanticArchetypePreviewV125({
   );
   const visualizationTableRows = semanticRows;
   const rendererLabel = rendererLabelV125(contract.primaryRenderer);
+  const publicHeadings = getPublicAnalysisHeadingsV134(contract.elementId);
 
   return (
     <div
       className="sv125-shell"
       data-testid="public-analytical-view"
     >
-      <section className="sv125-intro" aria-labelledby="sv125-intro-title">
-        <span>분석 안내</span>
-        <h3 id="sv125-intro-title">{rendererLabel}</h3>
-        <p>{publicAnalysisIntroV126(contract, observations.length, entities.length)}</p>
-      </section>
+      {!publicHeadings && (
+        <section className="sv125-intro" aria-labelledby="sv125-intro-title">
+          <span>분석 안내</span>
+          <h3 id="sv125-intro-title">
+            <PublicTermTextV134 text={elementTitle || rendererLabel} />
+          </h3>
+          <p>
+            <PublicTermTextV134
+              text={publicAnalysisIntroV126(
+                contract,
+                observations.length,
+                entities.length
+              )}
+            />
+          </p>
+        </section>
+      )}
 
       <div className="sv125-controls" aria-label="데이터 분류 선택" data-testid="public-selector">
         {measureOptions.length > 1 && (
@@ -324,7 +343,7 @@ export default function SemanticArchetypePreviewV125({
             >
               {measureOptions.map((measure) => (
                 <option key={measure.key} value={measure.key}>
-                  {publicMeasureLabelV126(measure.labelKo)} · {measure.unit || "단위 미기재"}
+                  {publicMeasureLabelV126(measure.labelKo)} · {publicTextV126(measure.unit) || "단위 미기재"}
                 </option>
               ))}
             </select>
@@ -428,6 +447,17 @@ export default function SemanticArchetypePreviewV125({
             </select>
           </label>
         )}
+        <PublicTermHelpV134
+          text={[
+            measureOptions.find((measure) => measure.key === measureKey)?.labelKo,
+            measureOptions.find((measure) => measure.key === measureKey)?.unit,
+            ...additionalDimensions.map((dimension) => {
+              const value = dimensions[dimension.key];
+              return value ? dimensionValueLabelV125(dimension.key, value) : "";
+            }),
+            period || "",
+          ].filter(Boolean).join(" · ")}
+        />
       </div>
 
       <SemanticKpisV125
@@ -524,11 +554,11 @@ function SemanticKpisV125({
     const dimensionContext = row
       ? Object.entries(row.dimensionLabels)
           .filter(([key]) => !["year", "period"].includes(key))
-          .map(([, value]) => value)
+          .map(([key, value]) => publicDimensionValueV134(key, value))
           .filter(Boolean)
           .join(" · ")
       : "";
-    return { measure, row, dimensionContext, isAggregate: Boolean(aggregate) };
+    return { measure, row, dimensionContext };
   });
   return (
     <section
@@ -537,21 +567,20 @@ function SemanticKpisV125({
       data-testid="public-context-kpis"
       data-public-has-values={kpis.some(({ row }) => Boolean(row)) ? "true" : "false"}
     >
-      {kpis.map(({ measure, row, dimensionContext, isAggregate }) => (
+      {kpis.map(({ measure, row, dimensionContext }) => (
         <article key={`${measure.key}-${measure.unit}`}>
-          <span>{publicMeasureLabelV126(measure.labelKo)}</span>
+          <span><PublicTermTextV134 text={publicMeasureLabelV126(measure.labelKo)} /></span>
           <strong>{row ? formatValueV121(row.value) : "미제공"}</strong>
           <small>
-            {row
+            <PublicTermTextV134 text={row
               ? [
                   row.unit || measure.unit,
                   row.year || row.period,
                   dimensionContext,
-                  !isAggregate && dimensionContext ? "분류 레코드" : null,
                 ]
                   .filter(Boolean)
                   .join(" · ")
-              : measure.unit || "단위 미기재"}
+              : measure.unit || "단위 미기재"} />
           </small>
         </article>
       ))}
@@ -589,16 +618,16 @@ function semanticRowMatchesDimensionsV125(
 function CategoryPanelsV125({ rows }: { rows: NumericSemanticObservation[] }) {
   const groups = groupByUnitV125(rows);
   return (
-    <section className="sv125-primary" aria-label="범주 비교">
+    <section className="sv125-primary" aria-label="항목별 값 비교">
       <div className="sv125-section-heading">
         <span>주 시각화</span>
-        <h4>분류별 값 비교</h4>
+        <h4>항목별 값</h4>
       </div>
       {groups.map(({ unit, rows: unitRows }) => {
         const max = Math.max(...unitRows.map((row) => Math.abs(row.value)), 1e-9);
         return (
           <article className="sv125-axis-group" key={unit}>
-            <h5>단위: {unit || "미기재"}</h5>
+            <h5>단위: <PublicTermTextV134 text={unit || "미기재"} /></h5>
             <div className="sv125-bars">
               {unitRows.map((row, index) => (
                 <div
@@ -610,13 +639,13 @@ function CategoryPanelsV125({ rows }: { rows: NumericSemanticObservation[] }) {
                   }`}
                 >
                   <div>
-                    <strong>{row.displayLabel}</strong>
+                    <strong><PublicTermTextV134 text={row.displayLabel} /></strong>
                     <small>{row.year || row.period || "기준시점 미기재"}</small>
                   </div>
                   <span className={`sv125-pattern sv125-pattern--${SERIES_PATTERNS_V125[index % SERIES_PATTERNS_V125.length]}`}>
                     <i style={{ width: `${Math.max(2, (Math.abs(row.value) / max) * 100)}%` }} />
                   </span>
-                  <b>{formatValueV121(row.value)} {unit}</b>
+                  <b><PublicTermTextV134 text={`${formatValueV121(row.value)} ${unit}`} /></b>
                 </div>
               ))}
             </div>
@@ -682,7 +711,7 @@ function TrendAxisGroupV125({
     height - pad.bottom - ((value - minValue) / Math.max(1e-9, maxValue - minValue)) * (height - pad.top - pad.bottom);
   return (
     <article className="sv125-axis-group">
-      <h5>단위: {unit || "미기재"}</h5>
+      <h5>단위: <PublicTermTextV134 text={unit || "미기재"} /></h5>
       <div className="sv125-trend-scroll">
         <svg viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`${unit} 연도별 추세`}>
           <line x1={pad.left} y1={height - pad.bottom} x2={width - pad.right} y2={height - pad.bottom} />
@@ -707,7 +736,7 @@ function TrendAxisGroupV125({
       <div className="sv125-legend" aria-label="계열 범례">
         {series.map((item, index) => (
           <span key={item.key} className={`sv125-pattern--${SERIES_PATTERNS_V125[index % SERIES_PATTERNS_V125.length]}`}>
-            <i /> {item.label}
+            <i /> <PublicTermTextV134 text={item.label} />
           </span>
         ))}
       </div>
@@ -731,10 +760,10 @@ function semanticEvidenceV125(row: SemanticObservationV125): string {
 function SemanticSourceV125({ row }: { row: SemanticObservationV125 }) {
   const organization = publicTextV126(row.provenance.sourceOrg) || "기관 미기재";
   const sourceUrl = publicSourceUrlV126(row.provenance.sourceUrl);
-  if (!sourceUrl) return <>{organization}</>;
+  if (!sourceUrl) return <PublicTermTextV134 text={organization} />;
   return (
     <>
-      {organization}{" "}
+      <PublicTermTextV134 text={organization} />{" "}
       <a
         href={sourceUrl}
         target="_blank"
@@ -757,8 +786,8 @@ function TextEvidenceV125({ rows }: { rows: SemanticObservationV125[] }) {
       <div className="sv125-evidence-grid">
         {rows.map((row) => (
           <article key={row.recordId}>
-            <strong>{publicMeasureLabelV126(row.displayLabel)}</strong>
-            <p>{formatValueV121(row.value)}</p>
+            <strong><PublicTermTextV134 text={publicMeasureLabelV126(row.displayLabel)} /></strong>
+            <p><PublicTermTextV134 text={formatValueV121(row.value)} /></p>
             <small>
               기준시점: {row.year || row.period || row.provenance.referenceYear || "미기재"}
             </small>
@@ -795,9 +824,9 @@ function EntityCollectionV125({
       <div className="sv125-evidence-grid">
         {shown.map((entity) => (
           <article key={entity.recordId}>
-            <strong>{publicEntityTitleV131(entity)}</strong>
-            <p>{entity.entityType || countryNameKo}</p>
-            <small>{publicTextV126(entity.provenance.sourceOrg) || "세부 내용은 원자료 표에서 확인"}</small>
+            <strong><PublicTermTextV134 text={publicEntityTitleV131(entity)} /></strong>
+            <p><PublicTermTextV134 text={entity.entityType || countryNameKo} /></p>
+            <small><PublicTermTextV134 text={publicTextV126(entity.provenance.sourceOrg) || "세부 내용은 원자료 표에서 확인"} /></small>
           </article>
         ))}
       </div>
@@ -836,31 +865,31 @@ function SemanticTableFallbackV125({ rows }: { rows: SemanticObservationV125[] }
           <tbody>
             {rows.map((row) => (
               <tr key={row.recordId}>
-                <td>{publicMeasureLabelV126(row.semanticMeasure.labelKo)}</td>
+                <td><PublicTermTextV134 text={publicMeasureLabelV126(row.semanticMeasure.labelKo)} /></td>
                 <td>
-                  {Object.entries(row.dimensionLabels)
+                  <PublicTermTextV134 text={Object.entries(row.dimensionLabels)
                     .filter(([key]) =>
                       !["year", "period", "region", "regionName", "sex", "technology", "scenario"].includes(key)
                     )
                     .map(([, value]) => publicTextV126(value))
                     .filter(Boolean)
-                    .join(" · ") || ""}
+                    .join(" · ") || ""} />
                 </td>
                 <td>
-                  {Object.entries(row.dimensionLabels)
+                  <PublicTermTextV134 text={Object.entries(row.dimensionLabels)
                     .filter(([key]) =>
                       ["region", "regionName", "sex", "technology", "scenario"].includes(key)
                     )
                     .map(([, value]) => publicTextV126(value))
                     .filter(Boolean)
-                    .join(" · ") || ""}
+                    .join(" · ") || ""} />
                 </td>
-                <td>{formatValueV121(row.value)}</td>
-                <td>{row.unit || row.semanticMeasure.unit || "—"}</td>
+                <td><PublicTermTextV134 text={formatValueV121(row.value)} /></td>
+                <td><PublicTermTextV134 text={row.unit || row.semanticMeasure.unit || "—"} /></td>
                 <td>{row.year || row.period || "—"}</td>
                 <td><SemanticSourceV125 row={row} /></td>
-                <td>{semanticMissingReasonV125(row)}</td>
-                <td>{semanticEvidenceV125(row)}</td>
+                <td><PublicTermTextV134 text={semanticMissingReasonV125(row)} /></td>
+                <td><PublicTermTextV134 text={semanticEvidenceV125(row)} /></td>
               </tr>
             ))}
           </tbody>
@@ -900,7 +929,7 @@ function dimensionValueLabelV125(key: string, value: string): string {
     if (value === "male") return "남성";
     if (value === "female") return "여성";
   }
-  return value;
+  return publicDimensionValueV134(key, value);
 }
 
 function rendererLabelV125(
@@ -910,8 +939,8 @@ function rendererLabelV125(
     "kpi-trend": "핵심 지표와 추세",
     "multi-metric-trend": "복수 측정항목 추세",
     composition: "구성비",
-    "category-comparison": "범주 비교",
-    "paired-category-comparison": "짝지은 범주 비교",
+    "category-comparison": "항목별 비교",
+    "paired-category-comparison": "연관 항목 비교",
     "score-benchmark": "점수·기준 비교",
     "scenario-range": "시나리오 범위",
     seasonality: "계절성",
@@ -931,7 +960,8 @@ function rendererLabelV125(
 function publicAnalysisIntroV126(
   contract: ElementVisualizationContractV125,
   observationCount: number,
-  entityCount: number
+  entityCount: number,
+  publicQuestion?: string
 ): string {
   if (observationCount === 0 && entityCount > 0) {
     if (contract.elementId === "E-018") {
@@ -951,5 +981,8 @@ function publicAnalysisIntroV126(
     }
     return `공개 목록 ${entityCount.toLocaleString("ko-KR")}건의 항목별 정보를 확인할 수 있습니다.`;
   }
-  return `측정항목 ${contract.measures.length}종과 분류 ${contract.dimensions.length}종을 선택해 값과 변화를 확인할 수 있습니다.`;
+  return (
+    publicQuestion ||
+    "공개된 지표의 기준시점별 값과 항목 간 차이를 확인할 수 있습니다."
+  );
 }

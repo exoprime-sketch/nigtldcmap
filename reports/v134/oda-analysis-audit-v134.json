@@ -1,0 +1,282 @@
+{
+  "schemaVersion": "v134-context-glossary-analysis-audit-1",
+  "generatedAt": "2026-09-02T03:50:18.059Z",
+  "audit": "oda-analysis:v134",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "oda-analysis:v134",
+    "status": "PASS",
+    "passed": 23,
+    "failed": 0,
+    "total": 23,
+    "failedChecks": [],
+    "odaProviderCount": 48,
+    "odaYearRange": "2020–2024",
+    "totalObservationCount": 5,
+    "runtimeFailure": null
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "oda-analysis:v134",
+      "name": "FRAMEWORK_ELEMENTS",
+      "status": "PASS",
+      "actual": 152,
+      "expected": 152
+    },
+    {
+      "type": "check",
+      "audit": "oda-analysis:v134",
+      "name": "D011_SOURCE_PAYLOAD",
+      "status": "PASS",
+      "actual": {
+        "errors": [],
+        "rows": 400
+      },
+      "expected": {
+        "errors": [],
+        "rows": 400
+      }
+    },
+    {
+      "type": "check",
+      "audit": "oda-analysis:v134",
+      "name": "D011_PROVIDER_COUNT",
+      "status": "PASS",
+      "actual": 48,
+      "expected": "> 0"
+    },
+    {
+      "type": "check",
+      "audit": "oda-analysis:v134",
+      "name": "D011_SUB_PROVIDER_COUNT",
+      "status": "PASS",
+      "actual": 28,
+      "expected": 28
+    },
+    {
+      "type": "check",
+      "audit": "oda-analysis:v134",
+      "name": "D011_POPULATED_RECONCILIATION",
+      "status": "PASS",
+      "actual": 354,
+      "expected": 354
+    },
+    {
+      "type": "check",
+      "audit": "oda-analysis:v134",
+      "name": "D011_TOTAL_YEAR_RANGE",
+      "status": "PASS",
+      "actual": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "expected": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    },
+    {
+      "type": "check",
+      "audit": "oda-analysis:v134",
+      "name": "D011_TOTAL_SERIES",
+      "status": "PASS",
+      "actual": 5,
+      "expected": 5
+    },
+    {
+      "type": "check",
+      "audit": "oda-analysis:v134",
+      "name": "D011_SPECIALIZED_RENDERER",
+      "status": "PASS",
+      "actual": "OdaProviderAnalysisV134 + D-011",
+      "expected": "wired"
+    },
+    {
+      "type": "check",
+      "audit": "oda-analysis:v134",
+      "name": "D011_PROVIDER_RANKING_CONTRACT",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "type": "check",
+      "audit": "oda-analysis:v134",
+      "name": "D011_TOTAL_TREND_CONTRACT",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "type": "check",
+      "audit": "oda-analysis:v134",
+      "name": "D011_PROVIDER_TREND_CONTRACT",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "type": "check",
+      "audit": "oda-analysis:v134",
+      "name": "D011_RUNTIME_MOUNT",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null,
+        "snapshot": {
+          "mounted": true,
+          "providerOptionCount": 48,
+          "totalTrend": true,
+          "rankingCount": 11,
+          "providerTrend": true,
+          "detailTable": true,
+          "detailTableRowCount": 354,
+          "detailTableGlossaryControlCount": 4,
+          "populatedRowCount": 354,
+          "subProviderRowCount": 115,
+          "oecdVisible": true,
+          "yearRangeVisible": true,
+          "rawCategoryCodeVisible": false,
+          "internalCodeVisible": false
+        }
+      },
+      "expected": {
+        "runtimeFailure": null,
+        "mounted": true
+      }
+    },
+    {
+      "type": "check",
+      "audit": "oda-analysis:v134",
+      "name": "D011_PROVIDER_RANKING",
+      "status": "PASS",
+      "actual": 11,
+      "expected": ">= 10"
+    },
+    {
+      "type": "check",
+      "audit": "oda-analysis:v134",
+      "name": "D011_TOTAL_TREND",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "type": "check",
+      "audit": "oda-analysis:v134",
+      "name": "D011_PROVIDER_TREND",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "type": "check",
+      "audit": "oda-analysis:v134",
+      "name": "D011_PROVIDER_SELECTOR",
+      "status": "PASS",
+      "actual": 48,
+      "expected": 48
+    },
+    {
+      "type": "check",
+      "audit": "oda-analysis:v134",
+      "name": "D011_PUBLIC_ROW_RECONCILIATION",
+      "status": "PASS",
+      "actual": {
+        "mounted": true,
+        "providerOptionCount": 48,
+        "totalTrend": true,
+        "rankingCount": 11,
+        "providerTrend": true,
+        "detailTable": true,
+        "detailTableRowCount": 354,
+        "detailTableGlossaryControlCount": 4,
+        "populatedRowCount": 354,
+        "subProviderRowCount": 115,
+        "oecdVisible": true,
+        "yearRangeVisible": true,
+        "rawCategoryCodeVisible": false,
+        "internalCodeVisible": false
+      },
+      "expected": {
+        "detailTableRowCount": 354,
+        "populatedRowCount": 354,
+        "subProviderRowCount": 115
+      }
+    },
+    {
+      "type": "check",
+      "audit": "oda-analysis:v134",
+      "name": "D011_PUBLIC_METADATA",
+      "status": "PASS",
+      "actual": {
+        "mounted": true,
+        "providerOptionCount": 48,
+        "totalTrend": true,
+        "rankingCount": 11,
+        "providerTrend": true,
+        "detailTable": true,
+        "detailTableRowCount": 354,
+        "detailTableGlossaryControlCount": 4,
+        "populatedRowCount": 354,
+        "subProviderRowCount": 115,
+        "oecdVisible": true,
+        "yearRangeVisible": true,
+        "rawCategoryCodeVisible": false,
+        "internalCodeVisible": false
+      },
+      "expected": "OECD + 2020–2024 + detail table"
+    },
+    {
+      "type": "check",
+      "audit": "oda-analysis:v134",
+      "name": "D011_RAW_CATEGORY_CODE_VISIBLE",
+      "status": "PASS",
+      "actual": false,
+      "expected": false
+    },
+    {
+      "type": "check",
+      "audit": "oda-analysis:v134",
+      "name": "D011_INTERNAL_CODE_VISIBLE",
+      "status": "PASS",
+      "actual": false,
+      "expected": false
+    },
+    {
+      "type": "check",
+      "audit": "oda-analysis:v134",
+      "name": "D011_DETAIL_TABLE_GLOSSARY_CONTROL_DENSITY",
+      "status": "PASS",
+      "actual": 4,
+      "expected": "1–4 adjacent help controls; no per-row repetition"
+    },
+    {
+      "type": "check",
+      "audit": "oda-analysis:v134",
+      "name": "BROKEN_ASSET",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "oda-analysis:v134",
+      "name": "CONSOLE_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "odaProviderCount": 48,
+  "odaYearRange": "2020–2024",
+  "totalObservationCount": 5,
+  "runtimeFailure": null
+}

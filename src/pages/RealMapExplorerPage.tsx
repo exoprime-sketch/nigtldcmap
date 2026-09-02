@@ -71,6 +71,12 @@ import {
 import { publicAssetUrlV128 } from "../utils/publicAssetUrlV128";
 import MapPanelSeparatorV129 from "../components/map/MapPanelSeparatorV129";
 import MapDataGuideV130 from "../components/map/MapDataGuideV130";
+import {
+  PublicTermExpandedTextV134,
+  PublicTermHelpV134,
+  PublicTermTextV134,
+} from "../components/help/PublicTermV134";
+import { tokenizePublicTermsV134 } from "../utils/publicTermTokenizerV134";
 import { InteractiveTimeSeriesChartV127 } from "../components/charts/InteractiveTimeSeriesChartV127";
 import type { TimeSeriesV127 } from "../types/chartInteractionV127";
 import { useResizableMapPanelsV129 } from "../hooks/useResizableMapPanelsV129";
@@ -1079,12 +1085,32 @@ function createPublicMapPopupContentV129(
   Object.entries(options?.attributes || {}).forEach(([name, value]) => {
     root.setAttribute(`data-${name}`, value);
   });
+  const appendPublicText = (node: HTMLElement, value: string) => {
+    tokenizePublicTermsV134(value, { firstOccurrenceOnly: false }).forEach(
+      (token) => {
+        if (token.type === "text") {
+          node.appendChild(document.createTextNode(token.value));
+          return;
+        }
+        const term = document.createElement("span");
+        term.setAttribute("data-public-term-v134", token.entry.id);
+        term.setAttribute("data-public-term-mode", "visible-expansion");
+        term.appendChild(document.createTextNode(token.value));
+        const expansion = document.createElement("span");
+        expansion.className = "public-term-visible-expansion-v134";
+        expansion.setAttribute("data-public-term-expansion-v134", "true");
+        expansion.textContent = `(${token.entry.koreanName})`;
+        term.appendChild(expansion);
+        node.appendChild(term);
+      }
+    );
+  };
   const heading = document.createElement("strong");
-  heading.textContent = title;
+  appendPublicText(heading, title);
   root.appendChild(heading);
   lines.filter(Boolean).slice(0, 5).forEach((line) => {
     const row = document.createElement("span");
-    row.textContent = line;
+    appendPublicText(row, line);
     root.appendChild(row);
   });
   if (options?.legacyTestId) {
@@ -4709,7 +4735,9 @@ export default function RealMapExplorerPage({
                       <div>
                         <dt>커버리지</dt>
                         <dd>
-                          {publicMapCoverageTextV126(layer)}
+                          <PublicTermTextV134
+                            text={publicMapCoverageTextV126(layer)}
+                          />
                         </dd>
                       </div>
                     </dl>
@@ -4780,12 +4808,20 @@ export default function RealMapExplorerPage({
               {focusedSemantic && (
                 <p className="cdp-map-selector-notice" role="note">
                   <strong>
-                    {focusedVariablePresentationV129?.label ||
-                      focusedSemantic.measureLabel}
+                    <PublicTermTextV134
+                      text={
+                        focusedVariablePresentationV129?.label ||
+                        focusedSemantic.measureLabel
+                      }
+                    />
                   </strong>
                   {" · "}
-                  {focusedVariablePresentationV129?.directionLabel ||
-                    focusedSemantic.indicatorLabel}
+                  <PublicTermTextV134
+                    text={
+                      focusedVariablePresentationV129?.directionLabel ||
+                      focusedSemantic.indicatorLabel
+                    }
+                  />
                 </p>
               )}
               <label className="cdp-field" style={{ marginBottom: 9 }}>
@@ -4831,27 +4867,52 @@ export default function RealMapExplorerPage({
                   )}
                 </select>
               </label>
+              <PublicTermHelpV134
+                text={[
+                  focusedVariablePresentationV129?.label ||
+                    focusedSemantic?.measureLabel ||
+                    focusedVariable?.label ||
+                    focusedLayer.legend.title,
+                  focusedVariablePresentationV129?.unit ||
+                    focusedSemantic?.unit ||
+                    focusedVariable?.unit ||
+                    focusedLayer.unit,
+                  focusedSelector.period,
+                ]
+                  .filter(Boolean)
+                  .join(" · ")}
+              />
               <dl className="cdp-map-layer-meta">
                 <div>
                   <dt>측정항목</dt>
                   <dd>
-                    {focusedVariablePresentationV129?.label ||
-                      focusedSemantic?.measureLabel ||
-                      focusedLayer.legend.title}
+                    <PublicTermTextV134
+                      text={
+                        focusedVariablePresentationV129?.label ||
+                        focusedSemantic?.measureLabel ||
+                        focusedLayer.legend.title
+                      }
+                    />
                   </dd>
                 </div>
                 <div>
                   <dt>단위</dt>
                   <dd>
-                    {focusedVariablePresentationV129?.unit ||
-                      focusedSemantic?.unit ||
-                      focusedVariable?.unit ||
-                      focusedLayer.unit}
+                    <PublicTermTextV134
+                      text={
+                        focusedVariablePresentationV129?.unit ||
+                        focusedSemantic?.unit ||
+                        focusedVariable?.unit ||
+                        focusedLayer.unit
+                      }
+                    />
                   </dd>
                 </div>
                 <div>
                   <dt>공간 커버리지</dt>
-                  <dd data-testid="map-primary-coverage">{focusedCoverage}</dd>
+                  <dd data-testid="map-primary-coverage">
+                    <PublicTermTextV134 text={focusedCoverage} />
+                  </dd>
                 </div>
                 <div>
                   <dt>결측지역</dt>
@@ -4861,7 +4922,7 @@ export default function RealMapExplorerPage({
                 </div>
                 <div>
                   <dt>출처</dt>
-                  <dd>{focusedLayer.source}</dd>
+                  <dd><PublicTermTextV134 text={focusedLayer.source} /></dd>
                 </div>
                 <div>
                   <dt>정확도 한계</dt>
@@ -5651,8 +5712,12 @@ export default function RealMapExplorerPage({
                 top: `${fallbackTooltipV129.topPercent}%`,
               }}
             >
-              <strong>{fallbackTooltipV129.title}</strong>
-              <span>{fallbackTooltipV129.detail}</span>
+              <strong>
+                <PublicTermExpandedTextV134 text={fallbackTooltipV129.title} />
+              </strong>
+              <span>
+                <PublicTermExpandedTextV134 text={fallbackTooltipV129.detail} />
+              </span>
             </div>
           )}
           <span className="cdp-map-public-attribution">
@@ -5682,9 +5747,13 @@ export default function RealMapExplorerPage({
           </div>
           <div className="cdp-map-overlay-card">
             <strong>
-              {focusedLayer
-                ? focusedPublicCopy?.titleKo
-                : "분석 프리셋을 선택하세요"}
+              <PublicTermTextV134
+                text={
+                  focusedLayer
+                    ? focusedPublicCopy?.titleKo || ""
+                    : "분석 프리셋을 선택하세요"
+                }
+              />
             </strong>
             <div>
               {focusedLayer
@@ -5789,7 +5858,9 @@ export default function RealMapExplorerPage({
           {focusedLayer && (
             <div className="cdp-map-legend" data-testid="map-dynamic-legend">
               <div className="cdp-map-legend__header">
-                <strong>{focusedPublicCopy?.titleKo}</strong>
+                <strong>
+                  <PublicTermTextV134 text={focusedPublicCopy?.titleKo || ""} />
+                </strong>
                 <span>주 분석</span>
               </div>
               <div
@@ -5816,11 +5887,16 @@ export default function RealMapExplorerPage({
                         data-testid="map-layer-legend-item"
                       />
                       <span>
-                        <strong>{item.title}</strong>
+                        <strong>
+                          <PublicTermTextV134 text={item.title} />
+                        </strong>
                         <small>
                           {item.role === "primary"
                             ? "주 분석 데이터"
-                            : "함께 보기"} · {item.variable} · {item.unit}
+                            : "함께 보기"} ·{" "}
+                          <PublicTermTextV134
+                            text={`${item.variable} · ${item.unit}`}
+                          />
                           {item.elementId === "D-008" &&
                           item.role === "context"
                             ? " · 원 크기 = 예산"
@@ -5863,18 +5939,26 @@ export default function RealMapExplorerPage({
                 <div>
                   <dt>측정항목</dt>
                   <dd>
-                    {focusedVariablePresentationV129?.label ||
-                      focusedSemantic?.measureLabel ||
-                      focusedLayer.legend.title}
+                    <PublicTermTextV134
+                      text={
+                        focusedVariablePresentationV129?.label ||
+                        focusedSemantic?.measureLabel ||
+                        focusedLayer.legend.title
+                      }
+                    />
                   </dd>
                 </div>
                 <div>
                   <dt>단위</dt>
                   <dd data-testid="map-legend-unit">
-                    {focusedVariablePresentationV129?.unit ||
-                      focusedSemantic?.unit ||
-                      focusedVariable?.unit ||
-                      focusedLayer.unit}
+                    <PublicTermTextV134
+                      text={
+                        focusedVariablePresentationV129?.unit ||
+                        focusedSemantic?.unit ||
+                        focusedVariable?.unit ||
+                        focusedLayer.unit
+                      }
+                    />
                   </dd>
                 </div>
                 <div>
@@ -6116,7 +6200,7 @@ export default function RealMapExplorerPage({
                       {focusedInterpretationV129.meaningBullets
                         .slice(0, 4)
                         .map((bullet) => (
-                          <li key={bullet}>{bullet}</li>
+                          <li key={bullet}><PublicTermTextV134 text={bullet} /></li>
                         ))}
                     </ul>
                   </section>
@@ -6729,8 +6813,12 @@ function Evidence({ label, value }: { label: string; value: string }) {
   if (!value) return null;
   return (
     <div className="cdp-evidence-row">
-      <span>{label}</span>
-      <strong>{value}</strong>
+      <span>
+        <PublicTermTextV134 text={label} />
+      </span>
+      <strong>
+        <PublicTermTextV134 text={value} />
+      </strong>
     </div>
   );
 }

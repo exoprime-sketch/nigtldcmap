@@ -1,0 +1,174 @@
+{
+  "schemaVersion": "v134-context-glossary-analysis-audit-1",
+  "generatedAt": "2026-09-02T03:50:15.304Z",
+  "audit": "glossary:v134",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "glossary:v134",
+    "status": "PASS",
+    "passed": 15,
+    "failed": 0,
+    "total": 15,
+    "failedChecks": [],
+    "frameworkElements": 152,
+    "accountedElements": 152,
+    "glossaryTermCount": 358,
+    "visibleAcronymWithoutGlossaryCount": 0,
+    "acronymInventoryCount": 559,
+    "selectedOptionGlossaryFailureCount": 0,
+    "mapInteractionPass": true,
+    "inspectedRoutes": 157,
+    "runtimeFailure": null
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "glossary:v134",
+      "name": "GLOSSARY_REQUIRED_SEED",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "glossary:v134",
+      "name": "GLOSSARY_ENTRY_COMPLETENESS",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "glossary:v134",
+      "name": "GLOSSARY_UNIQUE_ID",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "glossary:v134",
+      "name": "SPEI12_PATTERN",
+      "status": "PASS",
+      "actual": {
+        "id": "spei-12",
+        "term": "SPEI12",
+        "englishName": "Standardised Precipitation-Evapotranspiration Index (12-month)",
+        "koreanName": "12개월 표준강수증발산지수",
+        "definition": "강수량과 잠재증발산을 함께 반영해 평년 대비 건조·습윤 상태를 나타내는 표준화 지수입니다 12개월 누적기간을 반영합니다.",
+        "category": "climate-risk",
+        "aliases": [
+          "SPEI"
+        ],
+        "displayTerm": "SPEI12",
+        "derivedFrom": "SPEI"
+      },
+      "expected": "SPEI-derived"
+    },
+    {
+      "type": "check",
+      "audit": "glossary:v134",
+      "name": "SSP245_PATTERN",
+      "status": "PASS",
+      "actual": "사회경제적 중간 경로와 2100년 복사강제력 4.5 W/m²를 가정한 시나리오입니다.",
+      "expected": "scenario forcing explanation"
+    },
+    {
+      "type": "check",
+      "audit": "glossary:v134",
+      "name": "FRAMEWORK_ELEMENTS",
+      "status": "PASS",
+      "actual": 152,
+      "expected": 152
+    },
+    {
+      "type": "check",
+      "audit": "glossary:v134",
+      "name": "PRODUCTION_DOM_ROUTE_COVERAGE",
+      "status": "PASS",
+      "actual": {
+        "inspectedRoutes": 157,
+        "routeFailures": [],
+        "runtimeFailure": null
+      },
+      "expected": {
+        "inspectedRoutes": 157,
+        "routeFailures": []
+      }
+    },
+    {
+      "type": "check",
+      "audit": "glossary:v134",
+      "name": "VISIBLE_ACRONYM_WITHOUT_GLOSSARY",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "glossary:v134",
+      "name": "SELECTED_OPTION_GLOSSARY_HELP",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "glossary:v134",
+      "name": "GLOSSARY_HOVER_PASS",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "type": "check",
+      "audit": "glossary:v134",
+      "name": "GLOSSARY_KEYBOARD_PASS",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "type": "check",
+      "audit": "glossary:v134",
+      "name": "GLOSSARY_MOBILE_PASS",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "type": "check",
+      "audit": "glossary:v134",
+      "name": "MAP_GLOSSARY_INTERACTION_PASS",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "type": "check",
+      "audit": "glossary:v134",
+      "name": "BROKEN_ASSET",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "glossary:v134",
+      "name": "CONSOLE_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "frameworkElements": 152,
+  "accountedElements": 152,
+  "glossaryTermCount": 358,
+  "visibleAcronymWithoutGlossaryCount": 0,
+  "acronymInventoryCount": 559,
+  "selectedOptionGlossaryFailureCount": 0,
+  "mapInteractionPass": true,
+  "inspectedRoutes": 157,
+  "runtimeFailure": null
+}

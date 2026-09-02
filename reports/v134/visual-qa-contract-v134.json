@@ -1,0 +1,165 @@
+{
+  "schemaVersion": "v134-visual-qa-contract-1",
+  "generatedAt": "2026-09-02T03:59:42.989Z",
+  "audit": "visual-qa-contract:v134",
+  "checks": [
+    {
+      "name": "V134_VISUAL_QA_SCRIPT_CONTRACT",
+      "status": "PASS",
+      "actual": 2,
+      "expected": 2,
+      "details": []
+    },
+    {
+      "name": "SCREENSHOT_CAPTURE_IS_RELEASE_BLOCKER",
+      "status": "PASS",
+      "actual": false,
+      "expected": false,
+      "details": []
+    },
+    {
+      "name": "FUNCTIONAL_BROWSER_AUDIT_IS_RELEASE_BLOCKER",
+      "status": "PASS",
+      "actual": {
+        "generatedData": true,
+        "mapFocus": true,
+        "mapPopup": true,
+        "mapLayerDistinction": true,
+        "mapClickDetail": true
+      },
+      "expected": {
+        "generatedData": true,
+        "mapFocus": true,
+        "mapPopup": true,
+        "mapLayerDistinction": true,
+        "mapClickDetail": true
+      }
+    },
+    {
+      "name": "CI_BLOCKING_RELEASE_JOB",
+      "status": "PASS",
+      "actual": {
+        "finalizeV134": true,
+        "productionBuild": true,
+        "noScreenshotCapture": true,
+        "v134Reports": true
+      },
+      "expected": {
+        "finalizeV134": true,
+        "productionBuild": true,
+        "noScreenshotCapture": true,
+        "v134Reports": true
+      }
+    },
+    {
+      "name": "PAGES_BLOCKING_RELEASE_JOB",
+      "status": "PASS",
+      "actual": {
+        "finalizeV134": true,
+        "productionBuild": true,
+        "noScreenshotCapture": true,
+        "v134Reports": true
+      },
+      "expected": {
+        "finalizeV134": true,
+        "productionBuild": true,
+        "noScreenshotCapture": true,
+        "v134Reports": true
+      }
+    },
+    {
+      "name": "NON_BLOCKING_VISUAL_QA_WORKFLOW",
+      "status": "PASS",
+      "actual": {
+        "separateWorkflow": true,
+        "productionBuild": true,
+        "captureV134": true,
+        "captureContinuesOnError": true,
+        "artifactAlwaysUploaded": true,
+        "artifactPath": true,
+        "noFinalizeDependency": true
+      },
+      "expected": {
+        "separateWorkflow": true,
+        "productionBuild": true,
+        "captureV134": true,
+        "captureContinuesOnError": true,
+        "artifactAlwaysUploaded": true,
+        "artifactPath": true,
+        "noFinalizeDependency": true
+      }
+    }
+  ],
+  "contract": {
+    "SCREENSHOT_CAPTURE_IS_RELEASE_BLOCKER": false,
+    "FUNCTIONAL_BROWSER_AUDIT_IS_RELEASE_BLOCKER": true,
+    "releaseWorkflows": [
+      ".github/workflows/ci.yml",
+      ".github/workflows/pages.yml"
+    ],
+    "visualQaWorkflow": ".github/workflows/visual-qa.yml",
+    "blockingEntryPoint": "npm run finalize:v134",
+    "nonBlockingEntryPoint": "npm run capture:screenshots:v134"
+  },
+  "evidence": {
+    "finalizeClosure": {
+      "names": [
+        "finalize:v134",
+        "audit:release:v134"
+      ],
+      "missing": [],
+      "commands": [
+        {
+          "name": "finalize:v134",
+          "command": "npm run audit:release:v134"
+        },
+        {
+          "name": "audit:release:v134",
+          "command": "node scripts/audit-vietnam-release-v134.mjs"
+        }
+      ],
+      "nodePaths": [
+        "scripts/audit-vietnam-release-v134.mjs"
+      ]
+    },
+    "releaseSourcePaths": [
+      "scripts/audit-vietnam-release-v134.mjs"
+    ],
+    "releaseScreenshotReferences": [],
+    "blockingFunctionalCommands": {
+      "generatedData": true,
+      "mapFocus": true,
+      "mapPopup": true,
+      "mapLayerDistinction": true,
+      "mapClickDetail": true
+    },
+    "ciContract": {
+      "finalizeV134": true,
+      "productionBuild": true,
+      "noScreenshotCapture": true,
+      "v134Reports": true
+    },
+    "pagesContract": {
+      "finalizeV134": true,
+      "productionBuild": true,
+      "noScreenshotCapture": true,
+      "v134Reports": true
+    },
+    "visualWorkflowContract": {
+      "separateWorkflow": true,
+      "productionBuild": true,
+      "captureV134": true,
+      "captureContinuesOnError": true,
+      "artifactAlwaysUploaded": true,
+      "artifactPath": true,
+      "noFinalizeDependency": true
+    }
+  },
+  "summary": {
+    "status": "PASS",
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "failedChecks": []
+  }
+}

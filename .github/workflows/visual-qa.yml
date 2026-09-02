@@ -1,0 +1,87 @@
+name: Visual QA (non-blocking)
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: vietnam-pilot-visual-qa-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  visual-qa:
+    name: Capture V134 screenshot artifacts
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      CI: "true"
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Resolve Chrome executable
+        shell: bash
+        run: |
+          browser_path="$(command -v google-chrome || command -v chromium-browser || command -v chromium || true)"
+          if [[ -z "$browser_path" ]]; then
+            curl --fail --location --silent --show-error \
+              --output "$RUNNER_TEMP/google-chrome-stable_current_amd64.deb" \
+              https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+            sudo apt-get update
+            sudo apt-get install --yes "$RUNNER_TEMP/google-chrome-stable_current_amd64.deb"
+            browser_path="$(command -v google-chrome)"
+          fi
+          "$browser_path" --version
+          echo "V125_BROWSER_EXECUTABLE=$browser_path" >> "$GITHUB_ENV"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build screenshot target
+        env:
+          GENERATE_SOURCEMAP: "false"
+        run: npm run build
+
+      - name: Capture V134 screenshots
+        id: capture
+        continue-on-error: true
+        run: npm run capture:screenshots:v134
+
+      - name: Record visual QA outcome
+        if: always()
+        shell: bash
+        env:
+          CAPTURE_OUTCOME: ${{ steps.capture.outcome }}
+        run: |
+          {
+            echo "## V134 visual QA"
+            echo
+            echo "Screenshot capture outcome: \`$CAPTURE_OUTCOME\`"
+            echo
+            echo "Screenshot artifacts are diagnostic and do not gate release or Pages deployment."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload V134 screenshot artifacts
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: vietnam-pilot-visual-qa-${{ github.run_id }}-${{ github.run_attempt }}
+          path: reports/v134/screenshots/
+          if-no-files-found: warn
+          retention-days: 30
