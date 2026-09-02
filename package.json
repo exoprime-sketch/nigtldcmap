@@ -135,7 +135,15 @@
     "audit:map-layer-distinction:v133": "node scripts/audit-vietnam-map-layer-distinction-v133.mjs",
     "capture:screenshots:v133": "node scripts/capture-vietnam-v133-screenshots.mjs",
     "audit:release:v133": "node scripts/audit-vietnam-release-v133.mjs",
-    "finalize:v133": "npm run audit:release-ci:v133 && npm run audit:release:v133"
+    "finalize:v133": "npm run audit:release-ci:v133 && npm run audit:release:v133",
+    "audit:glossary:v134": "node scripts/audit-vietnam-glossary-v134.mjs",
+    "audit:oda-analysis:v134": "node scripts/audit-vietnam-oda-analysis-v134.mjs",
+    "audit:drought-analysis:v134": "node scripts/audit-vietnam-drought-analysis-v134.mjs",
+    "audit:public-copy:v134": "node scripts/audit-vietnam-public-copy-v134.mjs",
+    "audit:visual-qa-contract:v134": "node scripts/audit-vietnam-visual-qa-contract-v134.mjs",
+    "audit:release:v134": "node scripts/audit-vietnam-release-v134.mjs",
+    "capture:screenshots:v134": "node scripts/capture-vietnam-v134-screenshots.mjs",
+    "finalize:v134": "npm run audit:release:v134"
   },
   "browserslist": [
     ">0.2%",

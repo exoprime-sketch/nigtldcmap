@@ -1,0 +1,817 @@
+{
+  "schemaVersion": "v134-context-glossary-analysis-audit-1",
+  "generatedAt": "2026-09-02T03:50:51.715Z",
+  "audit": "release:v134",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "release:v134",
+    "status": "PASS",
+    "passed": 30,
+    "failed": 0,
+    "total": 30,
+    "failedChecks": [],
+    "commandResults": [
+      {
+        "name": "PRODUCTION_BUILD_FOR_RUNTIME",
+        "command": "npm run build",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V133_GENERATED_DATA",
+        "command": "npm run audit:generated-data:v133",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V133_CI_CONTRACT",
+        "command": "npm run audit:ci-contract:v133",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V130_PROJECT_SCOPE",
+        "command": "npm run audit:project-scope:v130",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V130_MAP_DEDUP",
+        "command": "npm run audit:map-dedup:v130",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V130_SEMANTIC_GEOGRAPHY",
+        "command": "npm run audit:map-semantic-geography:v130",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V131_PUBLIC_NAMING",
+        "command": "npm run audit:public-naming:v131",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V131_ENTITY_CARDS",
+        "command": "npm run audit:entity-cards:v131",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V132_COMPOSITION",
+        "command": "npm run audit:composition:v132",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V132_PORTFOLIO",
+        "command": "npm run audit:portfolio-analysis:v132",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V132_MAP_TOOLTIP",
+        "command": "npm run audit:map-tooltip:v132",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V132_BENCHMARK_FIT",
+        "command": "npm run audit:benchmark-fit:v132",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V133_MAP_FOCUS",
+        "command": "npm run audit:map-focus:v133",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V133_MAP_POPUP",
+        "command": "npm run audit:map-popup:v133",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V133_LAYER_DISTINCTION",
+        "command": "npm run audit:map-layer-distinction:v133",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V134_GLOSSARY",
+        "command": "npm run audit:glossary:v134",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V134_ODA_ANALYSIS",
+        "command": "npm run audit:oda-analysis:v134",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V134_DROUGHT_ANALYSIS",
+        "command": "npm run audit:drought-analysis:v134",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V134_PUBLIC_COPY",
+        "command": "npm run audit:public-copy:v134",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V134_VISUAL_QA_CONTRACT",
+        "command": "npm run audit:visual-qa-contract:v134",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      }
+    ],
+    "reportStatuses": {
+      "generatedData": "PASS",
+      "ciContract": "PASS",
+      "v130ProjectScope": "PASS",
+      "v130Dedup": "PASS",
+      "v130Geography": "PASS",
+      "v131Naming": "PASS",
+      "v131Cards": "PASS",
+      "v132Composition": "PASS",
+      "v132Portfolio": "PASS",
+      "v132MapTooltip": "PASS",
+      "v132Benchmark": "PASS",
+      "v133MapFocus": "PASS",
+      "v133MapPopup": "PASS",
+      "v133LayerDistinction": "PASS",
+      "glossary": "PASS",
+      "oda": "PASS",
+      "drought": "PASS",
+      "publicCopy": "PASS",
+      "visualContract": "PASS"
+    },
+    "frameworkElements": 152,
+    "accountedElements": 152,
+    "screenshotCaptureIsReleaseBlocker": false,
+    "functionalBrowserAuditIsReleaseBlocker": true,
+    "remainingBlockers": 0
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "PRODUCTION_BUILD_FOR_RUNTIME",
+      "status": "PASS",
+      "actual": {
+        "name": "PRODUCTION_BUILD_FOR_RUNTIME",
+        "command": "npm run build",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "V133_GENERATED_DATA",
+      "status": "PASS",
+      "actual": {
+        "name": "V133_GENERATED_DATA",
+        "command": "npm run audit:generated-data:v133",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "V133_CI_CONTRACT",
+      "status": "PASS",
+      "actual": {
+        "name": "V133_CI_CONTRACT",
+        "command": "npm run audit:ci-contract:v133",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "V130_PROJECT_SCOPE",
+      "status": "PASS",
+      "actual": {
+        "name": "V130_PROJECT_SCOPE",
+        "command": "npm run audit:project-scope:v130",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "V130_MAP_DEDUP",
+      "status": "PASS",
+      "actual": {
+        "name": "V130_MAP_DEDUP",
+        "command": "npm run audit:map-dedup:v130",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "V130_SEMANTIC_GEOGRAPHY",
+      "status": "PASS",
+      "actual": {
+        "name": "V130_SEMANTIC_GEOGRAPHY",
+        "command": "npm run audit:map-semantic-geography:v130",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "V131_PUBLIC_NAMING",
+      "status": "PASS",
+      "actual": {
+        "name": "V131_PUBLIC_NAMING",
+        "command": "npm run audit:public-naming:v131",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "V131_ENTITY_CARDS",
+      "status": "PASS",
+      "actual": {
+        "name": "V131_ENTITY_CARDS",
+        "command": "npm run audit:entity-cards:v131",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "V132_COMPOSITION",
+      "status": "PASS",
+      "actual": {
+        "name": "V132_COMPOSITION",
+        "command": "npm run audit:composition:v132",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "V132_PORTFOLIO",
+      "status": "PASS",
+      "actual": {
+        "name": "V132_PORTFOLIO",
+        "command": "npm run audit:portfolio-analysis:v132",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "V132_MAP_TOOLTIP",
+      "status": "PASS",
+      "actual": {
+        "name": "V132_MAP_TOOLTIP",
+        "command": "npm run audit:map-tooltip:v132",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "V132_BENCHMARK_FIT",
+      "status": "PASS",
+      "actual": {
+        "name": "V132_BENCHMARK_FIT",
+        "command": "npm run audit:benchmark-fit:v132",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "V133_MAP_FOCUS",
+      "status": "PASS",
+      "actual": {
+        "name": "V133_MAP_FOCUS",
+        "command": "npm run audit:map-focus:v133",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "V133_MAP_POPUP",
+      "status": "PASS",
+      "actual": {
+        "name": "V133_MAP_POPUP",
+        "command": "npm run audit:map-popup:v133",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "V133_LAYER_DISTINCTION",
+      "status": "PASS",
+      "actual": {
+        "name": "V133_LAYER_DISTINCTION",
+        "command": "npm run audit:map-layer-distinction:v133",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "V134_GLOSSARY",
+      "status": "PASS",
+      "actual": {
+        "name": "V134_GLOSSARY",
+        "command": "npm run audit:glossary:v134",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "V134_ODA_ANALYSIS",
+      "status": "PASS",
+      "actual": {
+        "name": "V134_ODA_ANALYSIS",
+        "command": "npm run audit:oda-analysis:v134",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "V134_DROUGHT_ANALYSIS",
+      "status": "PASS",
+      "actual": {
+        "name": "V134_DROUGHT_ANALYSIS",
+        "command": "npm run audit:drought-analysis:v134",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "V134_PUBLIC_COPY",
+      "status": "PASS",
+      "actual": {
+        "name": "V134_PUBLIC_COPY",
+        "command": "npm run audit:public-copy:v134",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "V134_VISUAL_QA_CONTRACT",
+      "status": "PASS",
+      "actual": {
+        "name": "V134_VISUAL_QA_CONTRACT",
+        "command": "npm run audit:visual-qa-contract:v134",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "FRAMEWORK_ELEMENTS",
+      "status": "PASS",
+      "actual": 152,
+      "expected": 152
+    },
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "ACCOUNTED_ELEMENTS",
+      "status": "PASS",
+      "actual": 152,
+      "expected": 152
+    },
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "V130_REGRESSION",
+      "status": "PASS",
+      "actual": {
+        "projectScope": "PASS",
+        "dedup": "PASS",
+        "geography": "PASS"
+      },
+      "expected": "PASS"
+    },
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "V131_REGRESSION",
+      "status": "PASS",
+      "actual": {
+        "naming": "PASS",
+        "cards": "PASS"
+      },
+      "expected": "PASS"
+    },
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "V132_REGRESSION",
+      "status": "PASS",
+      "actual": {
+        "composition": "PASS",
+        "portfolio": "PASS",
+        "mapTooltip": "PASS",
+        "benchmark": "PASS"
+      },
+      "expected": "PASS"
+    },
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "V133_MAP_REGRESSION",
+      "status": "PASS",
+      "actual": {
+        "focus": "PASS",
+        "popup": "PASS",
+        "layerDistinction": "PASS"
+      },
+      "expected": "PASS"
+    },
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "V134_COMPREHENSION",
+      "status": "PASS",
+      "actual": {
+        "glossary": "PASS",
+        "oda": "PASS",
+        "drought": "PASS",
+        "publicCopy": "PASS",
+        "visualContract": "PASS"
+      },
+      "expected": "PASS"
+    },
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "SCREENSHOT_CAPTURE_IS_RELEASE_BLOCKER",
+      "status": "PASS",
+      "actual": [
+        "npm run build",
+        "npm run audit:generated-data:v133",
+        "npm run audit:ci-contract:v133",
+        "npm run audit:project-scope:v130",
+        "npm run audit:map-dedup:v130",
+        "npm run audit:map-semantic-geography:v130",
+        "npm run audit:public-naming:v131",
+        "npm run audit:entity-cards:v131",
+        "npm run audit:composition:v132",
+        "npm run audit:portfolio-analysis:v132",
+        "npm run audit:map-tooltip:v132",
+        "npm run audit:benchmark-fit:v132",
+        "npm run audit:map-focus:v133",
+        "npm run audit:map-popup:v133",
+        "npm run audit:map-layer-distinction:v133",
+        "npm run audit:glossary:v134",
+        "npm run audit:oda-analysis:v134",
+        "npm run audit:drought-analysis:v134",
+        "npm run audit:public-copy:v134",
+        "npm run audit:visual-qa-contract:v134"
+      ],
+      "expected": "no screenshot command"
+    },
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "FUNCTIONAL_BROWSER_AUDIT_IS_RELEASE_BLOCKER",
+      "status": "PASS",
+      "actual": [
+        "PRODUCTION_BUILD_FOR_RUNTIME",
+        "V133_GENERATED_DATA",
+        "V133_CI_CONTRACT",
+        "V130_PROJECT_SCOPE",
+        "V130_MAP_DEDUP",
+        "V130_SEMANTIC_GEOGRAPHY",
+        "V131_PUBLIC_NAMING",
+        "V131_ENTITY_CARDS",
+        "V132_COMPOSITION",
+        "V132_PORTFOLIO",
+        "V132_MAP_TOOLTIP",
+        "V132_BENCHMARK_FIT",
+        "V133_MAP_FOCUS",
+        "V133_MAP_POPUP",
+        "V133_LAYER_DISTINCTION",
+        "V134_GLOSSARY",
+        "V134_ODA_ANALYSIS",
+        "V134_DROUGHT_ANALYSIS",
+        "V134_PUBLIC_COPY",
+        "V134_VISUAL_QA_CONTRACT"
+      ],
+      "expected": "map popup and V134 functional DOM audits"
+    },
+    {
+      "type": "check",
+      "audit": "release:v134",
+      "name": "REMAINING_BLOCKER",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "commandResults": [
+    {
+      "name": "PRODUCTION_BUILD_FOR_RUNTIME",
+      "command": "npm run build",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V133_GENERATED_DATA",
+      "command": "npm run audit:generated-data:v133",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V133_CI_CONTRACT",
+      "command": "npm run audit:ci-contract:v133",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V130_PROJECT_SCOPE",
+      "command": "npm run audit:project-scope:v130",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V130_MAP_DEDUP",
+      "command": "npm run audit:map-dedup:v130",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V130_SEMANTIC_GEOGRAPHY",
+      "command": "npm run audit:map-semantic-geography:v130",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V131_PUBLIC_NAMING",
+      "command": "npm run audit:public-naming:v131",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V131_ENTITY_CARDS",
+      "command": "npm run audit:entity-cards:v131",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V132_COMPOSITION",
+      "command": "npm run audit:composition:v132",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V132_PORTFOLIO",
+      "command": "npm run audit:portfolio-analysis:v132",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V132_MAP_TOOLTIP",
+      "command": "npm run audit:map-tooltip:v132",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V132_BENCHMARK_FIT",
+      "command": "npm run audit:benchmark-fit:v132",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V133_MAP_FOCUS",
+      "command": "npm run audit:map-focus:v133",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V133_MAP_POPUP",
+      "command": "npm run audit:map-popup:v133",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V133_LAYER_DISTINCTION",
+      "command": "npm run audit:map-layer-distinction:v133",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V134_GLOSSARY",
+      "command": "npm run audit:glossary:v134",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V134_ODA_ANALYSIS",
+      "command": "npm run audit:oda-analysis:v134",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V134_DROUGHT_ANALYSIS",
+      "command": "npm run audit:drought-analysis:v134",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V134_PUBLIC_COPY",
+      "command": "npm run audit:public-copy:v134",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V134_VISUAL_QA_CONTRACT",
+      "command": "npm run audit:visual-qa-contract:v134",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    }
+  ],
+  "reportStatuses": {
+    "generatedData": "PASS",
+    "ciContract": "PASS",
+    "v130ProjectScope": "PASS",
+    "v130Dedup": "PASS",
+    "v130Geography": "PASS",
+    "v131Naming": "PASS",
+    "v131Cards": "PASS",
+    "v132Composition": "PASS",
+    "v132Portfolio": "PASS",
+    "v132MapTooltip": "PASS",
+    "v132Benchmark": "PASS",
+    "v133MapFocus": "PASS",
+    "v133MapPopup": "PASS",
+    "v133LayerDistinction": "PASS",
+    "glossary": "PASS",
+    "oda": "PASS",
+    "drought": "PASS",
+    "publicCopy": "PASS",
+    "visualContract": "PASS"
+  },
+  "frameworkElements": 152,
+  "accountedElements": 152,
+  "screenshotCaptureIsReleaseBlocker": false,
+  "functionalBrowserAuditIsReleaseBlocker": true,
+  "remainingBlockers": 0
+}
