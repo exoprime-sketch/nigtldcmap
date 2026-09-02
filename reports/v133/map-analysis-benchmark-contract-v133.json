@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "v133-map-analysis-benchmark-contract-1",
+  "benchmarks": [
+    {
+      "platform": "Global Forest Watch",
+      "officialUrl": "https://www.globalforestwatch.org/",
+      "adoptedPrinciple": "표시 레이어의 범례를 유지하고 선택 지역을 지도와 추이 분석에 연결한다.",
+      "acceptanceEvidence": ["compact-visible-legend", "selected-area-detail", "map-to-trend-linkage"]
+    },
+    {
+      "platform": "Resource Watch",
+      "officialUrl": "https://resourcewatch.org/",
+      "adoptedPrinciple": "다차원 자료 중 공간 의미가 검증된 핵심 부분만 지도에 표시하고 전체 자료는 상세와 다운로드로 제공한다.",
+      "acceptanceEvidence": ["verified-spatial-subset", "detail-link", "download-link"]
+    },
+    {
+      "platform": "World Bank Maps",
+      "officialUrl": "https://maps.worldbank.org/projects",
+      "adoptedPrinciple": "사업 유형을 먼저 선택하고 사업 수·금액·위치 확인 건수를 요약한 뒤 개별 사업을 탐색한다.",
+      "acceptanceEvidence": ["portfolio-type-filter", "project-summary", "verified-location-count"]
+    },
+    {
+      "platform": "World Bank Climate Change Knowledge Portal",
+      "officialUrl": "https://climateknowledgeportal.worldbank.org/",
+      "adoptedPrinciple": "변수·기간·공간단위를 명시하고 선택값의 의미를 함께 설명한다.",
+      "acceptanceEvidence": ["variable-selector", "period-selector", "spatial-unit-disclosure"]
+    },
+    {
+      "platform": "Esri Living Atlas / ArcGIS Online",
+      "officialUrl": "https://doc.arcgis.com/en/arcgis-online/reference/configure-pop-ups.htm",
+      "adoptedPrinciple": "원시 속성 전체를 나열하지 않고 판단에 필요한 공개 필드만 구성한 짧은 hover와 상세 click을 제공한다.",
+      "acceptanceEvidence": ["configured-hover", "no-raw-attribute-dump", "selected-detail-panel"]
+    },
+    {
+      "platform": "산림공간정보서비스",
+      "officialUrl": "https://map.forest.go.kr/",
+      "adoptedPrinciple": "범례·표시 설정·상세 정보처럼 사용자가 바로 이해할 수 있는 한국어를 사용한다.",
+      "acceptanceEvidence": ["korean-map-copy", "legend", "display-controls", "detail-information"]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "schemaVersion": "v133",
+  "audit": "ci-release-contract",
+  "checks": [
+    {
+      "name": "V133_CI_SCRIPT_CONTRACT",
+      "status": "PASS",
+      "actual": 5,
+      "expected": 5,
+      "details": []
+    },
+    {
+      "name": "CI_WORKFLOW_CURRENT_RELEASE_GATE",
+      "status": "PASS",
+      "actual": {
+        "finalize": true,
+        "build": true,
+        "currentGateName": true,
+        "reportsV133": true,
+        "noLegacyGate": true,
+        "noLocalSourceAudit": true
+      },
+      "expected": {
+        "finalize": true,
+        "build": true,
+        "currentGateName": true,
+        "reportsV133": true,
+        "noLegacyGate": true,
+        "noLocalSourceAudit": true
+      }
+    },
+    {
+      "name": "PAGES_WORKFLOW_CURRENT_RELEASE_GATE",
+      "status": "PASS",
+      "actual": {
+        "finalize": true,
+        "build": true,
+        "publicUrl": true,
+        "deploy": true,
+        "smoke": true,
+        "reportsV133": true,
+        "noLegacyGate": true,
+        "noLocalSourceAudit": true
+      },
+      "expected": {
+        "finalize": true,
+        "build": true,
+        "publicUrl": true,
+        "deploy": true,
+        "smoke": true,
+        "reportsV133": true,
+        "noLegacyGate": true,
+        "noLocalSourceAudit": true
+      }
+    },
+    {
+      "name": "SOURCE_ZIP_REQUIRED_IN_CI",
+      "status": "PASS",
+      "actual": false,
+      "expected": false,
+      "details": {
+        "generatedAuditSourceIndependent": true
+      }
+    },
+    {
+      "name": "SOURCE_ZIP_TRACKED",
+      "status": "PASS",
+      "actual": false,
+      "expected": false,
+      "details": []
+    },
+    {
+      "name": "SOURCE_ZIP_IGNORE_CONTRACT",
+      "status": "PASS",
+      "actual": true,
+      "expected": true,
+      "details": {
+        "rule": ".gitignore:18:_source/\t_source/vietnam/v124/vietnam-data(4).zip"
+      }
+    },
+    {
+      "name": "WORLD_COUNTRIES_CANONICAL_EOL",
+      "status": "PASS",
+      "actual": "text eol=lf",
+      "expected": "text eol=lf"
+    }
+  ],
+  "summary": {
+    "status": "PASS",
+    "passed": 7,
+    "failed": 0,
+    "total": 7,
+    "failedChecks": []
+  }
+}

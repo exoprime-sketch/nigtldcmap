@@ -84,6 +84,102 @@
   padding: 6px 7px;
 }
 
+.cdp-map-active-legend li {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+}
+
+.cdp-map-active-legend__toggle {
+  min-width: 44px;
+  min-height: 36px;
+  padding: 5px 7px;
+  border: 1px solid #c2d2ca;
+  border-radius: 7px;
+  background: #fff;
+  color: #36594b;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cdp-map-active-legend > p {
+  margin: 8px 0 0;
+  padding-top: 8px;
+  border-top: 1px solid #dfe8e3;
+  color: #53685f;
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+
+.cdp-map-overlap-picker-v133 {
+  position: absolute;
+  z-index: 18;
+  top: 74px;
+  right: 18px;
+  width: min(320px, calc(100% - 36px));
+  max-height: min(420px, calc(100% - 100px));
+  overflow: auto;
+  padding: 12px;
+  border: 1px solid #a9c3b7;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 14px 35px rgba(24, 60, 47, 0.2);
+}
+
+.cdp-map-overlap-picker-v133 > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.cdp-map-overlap-picker-v133 > div > button {
+  min-width: 44px;
+  min-height: 44px;
+  border: 0;
+  background: transparent;
+  color: #35604f;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cdp-map-overlap-picker-v133 > p {
+  margin: 4px 0 9px;
+  color: #5c6f67;
+  font-size: 0.78rem;
+}
+
+.cdp-map-overlap-picker-v133 ul {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cdp-map-overlap-picker-v133 li > button {
+  display: grid;
+  width: 100%;
+  min-height: 52px;
+  padding: 8px 10px;
+  border: 1px solid #d0ded7;
+  border-radius: 9px;
+  background: #f8fbf9;
+  color: #1e4536;
+  text-align: left;
+  cursor: pointer;
+}
+
+.cdp-map-overlap-picker-v133 li span,
+.cdp-map-overlap-picker-v133 li small {
+  color: #61736b;
+  font-size: 0.7rem;
+}
+
+.cdp-map-overlap-picker-v133 li strong {
+  margin: 2px 0;
+  font-size: 0.82rem;
+}
+
 .cdp-map-active-legend li > span,
 .cdp-map-active-legend li > span > strong,
 .cdp-map-active-legend li > span > small {

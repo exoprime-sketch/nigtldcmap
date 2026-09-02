@@ -4,3 +4,6 @@ public/data/vietnam/v2/downloads/*.csv binary
 # V125 semantic JSON is generated with canonical LF bytes so its SHA-256
 # integrity values are stable on every platform.
 public/data/vietnam/v2/semantic/** text eol=lf
+# The basemap participates in the public asset manifest. Pinning LF prevents
+# Windows and Linux checkouts from producing different deployed SHA-256 bytes.
+public/data/world-countries.geojson text eol=lf

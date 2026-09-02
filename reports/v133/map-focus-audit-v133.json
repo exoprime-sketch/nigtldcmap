@@ -1,0 +1,2164 @@
+{
+  "schemaVersion": "v133-ci-map-analysis-audit-1",
+  "generatedAt": "2026-09-02T00:36:28.273Z",
+  "audit": "map-focus:v133",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "map-focus:v133",
+    "status": "PASS",
+    "passed": 13,
+    "failed": 0,
+    "total": 13,
+    "failedChecks": [],
+    "mapLayerCount": 12,
+    "mapFeatureOrScopeCount": 2900,
+    "presetDefaultContextCount": 0,
+    "primaryLayerMax": 1,
+    "contextLayerMax": 2,
+    "simultaneousPolygonFillContextCount": 0,
+    "renderedPolygonFillContextCount": 0,
+    "presetSnapshots": [
+      {
+        "presetId": "POWER_INFRASTRUCTURE",
+        "primaryCount": 1,
+        "contextCount": 0,
+        "primaryElement": "A-024",
+        "contextElements": "none",
+        "legend": [
+          {
+            "elementId": "A-024",
+            "role": "primary",
+            "shape": "line",
+            "text": "베트남 송전망주 분석 데이터 · 전체 전압 · kV숨기기"
+          }
+        ]
+      },
+      {
+        "presetId": "RENEWABLE_PLANNING",
+        "primaryCount": 1,
+        "contextCount": 0,
+        "primaryElement": "C-016",
+        "contextElements": "none",
+        "legend": [
+          {
+            "elementId": "C-016",
+            "role": "primary",
+            "shape": "area",
+            "text": "재생에너지 지역계획주 분석 데이터 · 옥상태양광(ĐMT mái nhà) · MW숨기기"
+          }
+        ]
+      },
+      {
+        "presetId": "FOREST_CHANGE",
+        "primaryCount": 1,
+        "contextCount": 0,
+        "primaryElement": "B-033",
+        "contextElements": "none",
+        "legend": [
+          {
+            "elementId": "B-033",
+            "role": "primary",
+            "shape": "area",
+            "text": "연간 산림손실주 분석 데이터 · 연간 수관 손실 — 성(省) 단위 · ha/yr숨기기"
+          }
+        ]
+      },
+      {
+        "presetId": "CLIMATE_VULNERABILITY",
+        "primaryCount": 1,
+        "contextCount": 0,
+        "primaryElement": "B-021",
+        "contextElements": "none",
+        "legend": [
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "text": "지역 취약성주 분석 데이터 · GVI 취약성 지수 · 0–100 지수숨기기"
+          }
+        ]
+      },
+      {
+        "presetId": "CLIMATE_FINANCE_PROJECTS",
+        "primaryCount": 1,
+        "contextCount": 0,
+        "primaryElement": "D-018",
+        "contextElements": "none",
+        "legend": [
+          {
+            "elementId": "D-018",
+            "role": "primary",
+            "shape": "diamond",
+            "text": "적응기금 사업주 분석 데이터 · 지역 협력범위·세부 활동지역 · 사업숨기기"
+          }
+        ]
+      }
+    ],
+    "distinctionSnapshot": {
+      "primaryCount": 1,
+      "contextCount": 2,
+      "items": [
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "text": "지역 취약성주 분석 데이터 · GVI 취약성 지수 · 0–100 지수숨기기"
+        },
+        {
+          "elementId": "D-008",
+          "role": "context",
+          "shape": "circle",
+          "text": "지역 기후예산함께 보기 · 성 단위 기후변화 지출 누계 · VND · 원 크기 = 예산숨기기"
+        },
+        {
+          "elementId": "D-018",
+          "role": "context",
+          "shape": "diamond",
+          "text": "적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업숨기기"
+        }
+      ],
+      "rendered": [
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(122, 76, 165)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Lai Châu · 44.7 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(122, 76, 165)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Lào Cai · 44.7 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(122, 76, 165)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Hà Giang · 44.7 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(122, 76, 165)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Cao Bằng · 44.7 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(122, 76, 165)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Sơn La · 44.7 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(122, 76, 165)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Yên Bái · 44.7 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(122, 76, 165)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Tuyên Quang · 44.7 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(122, 76, 165)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Lạng Sơn · 44.7 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(185, 173, 205)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Quảng Ninh · 36.9 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(122, 76, 165)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Hòa Bình · 44.7 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(185, 173, 205)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Ninh Bình · 36.9 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(185, 173, 205)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Thái Bình · 36.9 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(163, 140, 191)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Thanh Hóa · 39.6 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(163, 140, 191)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Nghệ An · 39.6 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(163, 140, 191)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Hà Tĩnh · 39.6 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(163, 140, 191)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Quảng Bình · 39.6 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(163, 140, 191)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Quảng Trị · 39.6 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(163, 140, 191)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Thừa Thiên Huế · 39.6 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(163, 140, 191)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Quảng Nam · 39.6 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(149, 117, 182)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Kon Tum · 41.4 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(163, 140, 191)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Quảng Ngãi · 39.6 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(149, 117, 182)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Gia Lai · 41.4 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(163, 140, 191)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Bình Định · 39.6 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(163, 140, 191)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Phú Yên · 39.6 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(149, 117, 182)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Đắk Lắk · 41.4 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(163, 140, 191)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Khánh Hòa · 39.6 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(149, 117, 182)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Lâm Đồng · 41.4 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(163, 140, 191)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Ninh Thuận · 39.6 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(230, 242, 234)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Tây Ninh · 31.4 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(230, 242, 234)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Đồng Nai · 31.4 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(163, 140, 191)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Bình Thuận · 39.6 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(172, 152, 197)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Long An · 38.6 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(230, 242, 234)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Bà Rịa–Vũng Tàu · 31.4 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(172, 152, 197)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · An Giang · 38.6 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(172, 152, 197)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Đồng Tháp · 38.6 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(172, 152, 197)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Tiền Giang · 38.6 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(172, 152, 197)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Kiên Giang · 38.6 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(172, 152, 197)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Vĩnh Long · 38.6 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(172, 152, 197)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Bến Tre · 38.6 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(172, 152, 197)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Trà Vinh · 38.6 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(172, 152, 197)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Sóc Trăng · 38.6 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(122, 76, 165)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Bắc Kạn · 44.7 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(122, 76, 165)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Bắc Giang · 44.7 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(172, 152, 197)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Bạc Liêu · 38.6 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(185, 173, 205)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Bắc Ninh · 36.9 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(230, 242, 234)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Bình Dương · 31.4 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(230, 242, 234)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Bình Phước · 31.4 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(172, 152, 197)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Cà Mau · 38.6 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(185, 173, 205)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Hải Dương · 36.9 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(185, 173, 205)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Hà Nam · 36.9 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(185, 173, 205)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Hưng Yên · 36.9 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(185, 173, 205)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Nam Định · 36.9 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(122, 76, 165)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Phú Thọ · 44.7 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(122, 76, 165)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Thái Nguyên · 44.7 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(185, 173, 205)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Vĩnh Phúc · 36.9 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(122, 76, 165)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Điện Biên · 44.7 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(149, 117, 182)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Đắk Nông · 41.4 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(172, 152, 197)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Hậu Giang · 38.6 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(172, 152, 197)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Cần Thơ · 38.6 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(163, 140, 191)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Đà Nẵng · 39.6 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(185, 173, 205)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Hà Nội · 36.9 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(185, 173, 205)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Hải Phòng · 36.9 / 100"
+        },
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "fill": "rgb(230, 242, 234)",
+          "fillOpacity": 1,
+          "label": "지역 취약성 · Hồ Chí Minh · 31.4 / 100"
+        },
+        {
+          "elementId": "D-018",
+          "role": "context",
+          "shape": "area",
+          "fill": "none",
+          "fillOpacity": 1,
+          "label": "적응기금 사업 · Mekong EbA South: Enhancing Climate Resilience in the Greater Mekong Sub-region through Ecosystem-based Adaptation in the Context of South-South Cooperation (Thailand, Viet Nam) · 7,000,000 USD"
+        },
+        {
+          "elementId": "D-018",
+          "role": "context",
+          "shape": "area",
+          "fill": "none",
+          "fillOpacity": 1,
+          "label": "적응기금 사업 · Groundwater resources in the Greater Mekong Subregion: Collaborative management to increase resilience (Cambodia, Lao People’s Democratic Republic, Thailand, Viet Nam) · 4,898,775 USD"
+        },
+        {
+          "elementId": "D-018",
+          "role": "context",
+          "shape": "diamond",
+          "fill": "rgb(0, 0, 0)",
+          "fillOpacity": 1,
+          "label": "적응기금 사업 · Young Basin · Mekong EbA South: Enhancing Climate Resilience in the Greater Mekong Sub-region through Ecosystem-based Adaptation in the Context of South-South Cooperation (Thailand, Viet Nam)"
+        },
+        {
+          "elementId": "D-018",
+          "role": "context",
+          "shape": "diamond",
+          "fill": "rgb(0, 0, 0)",
+          "fillOpacity": 1,
+          "label": "적응기금 사업 · surrounding Tram Chim National Park,Vietnam · Mekong EbA South: Enhancing Climate Resilience in the Greater Mekong Sub-region through Ecosystem-based Adaptation in the Context of South-South Cooperation (Thailand, Viet Nam)"
+        },
+        {
+          "elementId": "D-008",
+          "role": "context",
+          "shape": "circle",
+          "fill": "rgb(0, 0, 0)",
+          "fillOpacity": 1,
+          "label": "지역 기후예산 · Quảng Nam · 850,000,000,000 VND · 성·시 단위 통계"
+        },
+        {
+          "elementId": "D-008",
+          "role": "context",
+          "shape": "circle",
+          "fill": "rgb(0, 0, 0)",
+          "fillOpacity": 1,
+          "label": "지역 기후예산 · An Giang · 179,000,000,000 VND · 성·시 단위 통계"
+        },
+        {
+          "elementId": "D-008",
+          "role": "context",
+          "shape": "circle",
+          "fill": "rgb(0, 0, 0)",
+          "fillOpacity": 1,
+          "label": "지역 기후예산 · Bắc Ninh · 481,000,000,000 VND · 성·시 단위 통계"
+        }
+      ]
+    },
+    "responsiveChecks": [
+      {
+        "width": 390,
+        "horizontalOverflow": 0,
+        "rootExists": true,
+        "canvasWidth": 375
+      },
+      {
+        "width": 768,
+        "horizontalOverflow": 0,
+        "rootExists": true,
+        "canvasWidth": 753
+      },
+      {
+        "width": 1024,
+        "horizontalOverflow": 0,
+        "rootExists": true,
+        "canvasWidth": 749
+      },
+      {
+        "width": 1440,
+        "horizontalOverflow": 0,
+        "rootExists": true,
+        "canvasWidth": 729
+      },
+      {
+        "width": 1920,
+        "horizontalOverflow": 0,
+        "rootExists": true,
+        "canvasWidth": 1209
+      }
+    ],
+    "runtimeFailure": null
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "map-focus:v133",
+      "name": "MAP_INDEX_JSON",
+      "status": "PASS",
+      "actual": null,
+      "expected": null
+    },
+    {
+      "type": "check",
+      "audit": "map-focus:v133",
+      "name": "MAP_LAYERS",
+      "status": "PASS",
+      "actual": 12,
+      "expected": 12
+    },
+    {
+      "type": "check",
+      "audit": "map-focus:v133",
+      "name": "MAP_FEATURE_OR_SCOPE_COUNT",
+      "status": "PASS",
+      "actual": 2900,
+      "expected": 2900
+    },
+    {
+      "type": "check",
+      "audit": "map-focus:v133",
+      "name": "PRESET_COUNT",
+      "status": "PASS",
+      "actual": [
+        "POWER_INFRASTRUCTURE",
+        "RENEWABLE_PLANNING",
+        "FOREST_CHANGE",
+        "CLIMATE_VULNERABILITY",
+        "CLIMATE_FINANCE_PROJECTS"
+      ],
+      "expected": [
+        "POWER_INFRASTRUCTURE",
+        "RENEWABLE_PLANNING",
+        "FOREST_CHANGE",
+        "CLIMATE_VULNERABILITY",
+        "CLIMATE_FINANCE_PROJECTS"
+      ]
+    },
+    {
+      "type": "check",
+      "audit": "map-focus:v133",
+      "name": "PRESET_DEFAULT_CONTEXT_COUNT",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null,
+        "failures": []
+      },
+      "expected": {
+        "runtimeFailure": null,
+        "failures": []
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-focus:v133",
+      "name": "DEFAULT_CONTEXT_STATE_CONTRACT",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "type": "check",
+      "audit": "map-focus:v133",
+      "name": "PRIMARY_LAYER_MAX",
+      "status": "PASS",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "type": "check",
+      "audit": "map-focus:v133",
+      "name": "CONTEXT_LAYER_MAX",
+      "status": "PASS",
+      "actual": 2,
+      "expected": 2
+    },
+    {
+      "type": "check",
+      "audit": "map-focus:v133",
+      "name": "SIMULTANEOUS_POLYGON_FILL_CONTEXT_COUNT",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null,
+        "polygonFillContextCount": 0,
+        "renderedPolygonFillContextCount": 0,
+        "contextShapes": {
+          "D-008": "circle",
+          "D-018": "diamond"
+        },
+        "rendered": [
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(122, 76, 165)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Lai Châu · 44.7 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(122, 76, 165)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Lào Cai · 44.7 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(122, 76, 165)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Hà Giang · 44.7 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(122, 76, 165)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Cao Bằng · 44.7 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(122, 76, 165)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Sơn La · 44.7 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(122, 76, 165)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Yên Bái · 44.7 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(122, 76, 165)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Tuyên Quang · 44.7 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(122, 76, 165)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Lạng Sơn · 44.7 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(185, 173, 205)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Quảng Ninh · 36.9 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(122, 76, 165)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Hòa Bình · 44.7 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(185, 173, 205)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Ninh Bình · 36.9 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(185, 173, 205)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Thái Bình · 36.9 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(163, 140, 191)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Thanh Hóa · 39.6 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(163, 140, 191)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Nghệ An · 39.6 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(163, 140, 191)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Hà Tĩnh · 39.6 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(163, 140, 191)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Quảng Bình · 39.6 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(163, 140, 191)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Quảng Trị · 39.6 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(163, 140, 191)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Thừa Thiên Huế · 39.6 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(163, 140, 191)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Quảng Nam · 39.6 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(149, 117, 182)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Kon Tum · 41.4 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(163, 140, 191)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Quảng Ngãi · 39.6 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(149, 117, 182)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Gia Lai · 41.4 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(163, 140, 191)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Bình Định · 39.6 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(163, 140, 191)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Phú Yên · 39.6 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(149, 117, 182)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Đắk Lắk · 41.4 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(163, 140, 191)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Khánh Hòa · 39.6 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(149, 117, 182)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Lâm Đồng · 41.4 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(163, 140, 191)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Ninh Thuận · 39.6 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(230, 242, 234)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Tây Ninh · 31.4 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(230, 242, 234)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Đồng Nai · 31.4 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(163, 140, 191)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Bình Thuận · 39.6 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(172, 152, 197)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Long An · 38.6 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(230, 242, 234)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Bà Rịa–Vũng Tàu · 31.4 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(172, 152, 197)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · An Giang · 38.6 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(172, 152, 197)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Đồng Tháp · 38.6 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(172, 152, 197)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Tiền Giang · 38.6 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(172, 152, 197)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Kiên Giang · 38.6 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(172, 152, 197)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Vĩnh Long · 38.6 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(172, 152, 197)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Bến Tre · 38.6 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(172, 152, 197)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Trà Vinh · 38.6 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(172, 152, 197)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Sóc Trăng · 38.6 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(122, 76, 165)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Bắc Kạn · 44.7 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(122, 76, 165)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Bắc Giang · 44.7 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(172, 152, 197)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Bạc Liêu · 38.6 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(185, 173, 205)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Bắc Ninh · 36.9 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(230, 242, 234)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Bình Dương · 31.4 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(230, 242, 234)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Bình Phước · 31.4 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(172, 152, 197)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Cà Mau · 38.6 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(185, 173, 205)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Hải Dương · 36.9 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(185, 173, 205)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Hà Nam · 36.9 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(185, 173, 205)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Hưng Yên · 36.9 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(185, 173, 205)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Nam Định · 36.9 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(122, 76, 165)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Phú Thọ · 44.7 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(122, 76, 165)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Thái Nguyên · 44.7 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(185, 173, 205)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Vĩnh Phúc · 36.9 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(122, 76, 165)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Điện Biên · 44.7 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(149, 117, 182)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Đắk Nông · 41.4 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(172, 152, 197)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Hậu Giang · 38.6 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(172, 152, 197)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Cần Thơ · 38.6 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(163, 140, 191)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Đà Nẵng · 39.6 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(185, 173, 205)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Hà Nội · 36.9 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(185, 173, 205)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Hải Phòng · 36.9 / 100"
+          },
+          {
+            "elementId": "B-021",
+            "role": "primary",
+            "shape": "area",
+            "fill": "rgb(230, 242, 234)",
+            "fillOpacity": 1,
+            "label": "지역 취약성 · Hồ Chí Minh · 31.4 / 100"
+          },
+          {
+            "elementId": "D-018",
+            "role": "context",
+            "shape": "area",
+            "fill": "none",
+            "fillOpacity": 1,
+            "label": "적응기금 사업 · Mekong EbA South: Enhancing Climate Resilience in the Greater Mekong Sub-region through Ecosystem-based Adaptation in the Context of South-South Cooperation (Thailand, Viet Nam) · 7,000,000 USD"
+          },
+          {
+            "elementId": "D-018",
+            "role": "context",
+            "shape": "area",
+            "fill": "none",
+            "fillOpacity": 1,
+            "label": "적응기금 사업 · Groundwater resources in the Greater Mekong Subregion: Collaborative management to increase resilience (Cambodia, Lao People’s Democratic Republic, Thailand, Viet Nam) · 4,898,775 USD"
+          },
+          {
+            "elementId": "D-018",
+            "role": "context",
+            "shape": "diamond",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": 1,
+            "label": "적응기금 사업 · Young Basin · Mekong EbA South: Enhancing Climate Resilience in the Greater Mekong Sub-region through Ecosystem-based Adaptation in the Context of South-South Cooperation (Thailand, Viet Nam)"
+          },
+          {
+            "elementId": "D-018",
+            "role": "context",
+            "shape": "diamond",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": 1,
+            "label": "적응기금 사업 · surrounding Tram Chim National Park,Vietnam · Mekong EbA South: Enhancing Climate Resilience in the Greater Mekong Sub-region through Ecosystem-based Adaptation in the Context of South-South Cooperation (Thailand, Viet Nam)"
+          },
+          {
+            "elementId": "D-008",
+            "role": "context",
+            "shape": "circle",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": 1,
+            "label": "지역 기후예산 · Quảng Nam · 850,000,000,000 VND · 성·시 단위 통계"
+          },
+          {
+            "elementId": "D-008",
+            "role": "context",
+            "shape": "circle",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": 1,
+            "label": "지역 기후예산 · An Giang · 179,000,000,000 VND · 성·시 단위 통계"
+          },
+          {
+            "elementId": "D-008",
+            "role": "context",
+            "shape": "circle",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": 1,
+            "label": "지역 기후예산 · Bắc Ninh · 481,000,000,000 VND · 성·시 단위 통계"
+          }
+        ]
+      },
+      "expected": {
+        "runtimeFailure": null,
+        "polygonFillContextCount": 0,
+        "renderedPolygonFillContextCount": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-focus:v133",
+      "name": "CLIMATE_CONTEXT_VISUAL_DISTINCTION",
+      "status": "PASS",
+      "actual": {
+        "D-008": "circle",
+        "D-018": "diamond"
+      },
+      "expected": {
+        "D-008": "circle",
+        "D-018": "diamond or regional-scope"
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-focus:v133",
+      "name": "RESPONSIVE_VIEWPORTS",
+      "status": "PASS",
+      "actual": [
+        {
+          "width": 390,
+          "horizontalOverflow": 0,
+          "rootExists": true,
+          "canvasWidth": 375
+        },
+        {
+          "width": 768,
+          "horizontalOverflow": 0,
+          "rootExists": true,
+          "canvasWidth": 753
+        },
+        {
+          "width": 1024,
+          "horizontalOverflow": 0,
+          "rootExists": true,
+          "canvasWidth": 749
+        },
+        {
+          "width": 1440,
+          "horizontalOverflow": 0,
+          "rootExists": true,
+          "canvasWidth": 729
+        },
+        {
+          "width": 1920,
+          "horizontalOverflow": 0,
+          "rootExists": true,
+          "canvasWidth": 1209
+        }
+      ],
+      "expected": "390/768/1024/1440/1920 with map canvas and no horizontal overflow"
+    },
+    {
+      "type": "check",
+      "audit": "map-focus:v133",
+      "name": "MAP_FOCUS_PUBLIC_COPY",
+      "status": "PASS",
+      "actual": {
+        "primary": true,
+        "compare": true,
+        "settings": true
+      },
+      "expected": {
+        "primary": true,
+        "compare": true,
+        "settings": true
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-focus:v133",
+      "name": "CONSOLE_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "mapLayerCount": 12,
+  "mapFeatureOrScopeCount": 2900,
+  "presetDefaultContextCount": 0,
+  "primaryLayerMax": 1,
+  "contextLayerMax": 2,
+  "simultaneousPolygonFillContextCount": 0,
+  "renderedPolygonFillContextCount": 0,
+  "presetSnapshots": [
+    {
+      "presetId": "POWER_INFRASTRUCTURE",
+      "primaryCount": 1,
+      "contextCount": 0,
+      "primaryElement": "A-024",
+      "contextElements": "none",
+      "legend": [
+        {
+          "elementId": "A-024",
+          "role": "primary",
+          "shape": "line",
+          "text": "베트남 송전망주 분석 데이터 · 전체 전압 · kV숨기기"
+        }
+      ]
+    },
+    {
+      "presetId": "RENEWABLE_PLANNING",
+      "primaryCount": 1,
+      "contextCount": 0,
+      "primaryElement": "C-016",
+      "contextElements": "none",
+      "legend": [
+        {
+          "elementId": "C-016",
+          "role": "primary",
+          "shape": "area",
+          "text": "재생에너지 지역계획주 분석 데이터 · 옥상태양광(ĐMT mái nhà) · MW숨기기"
+        }
+      ]
+    },
+    {
+      "presetId": "FOREST_CHANGE",
+      "primaryCount": 1,
+      "contextCount": 0,
+      "primaryElement": "B-033",
+      "contextElements": "none",
+      "legend": [
+        {
+          "elementId": "B-033",
+          "role": "primary",
+          "shape": "area",
+          "text": "연간 산림손실주 분석 데이터 · 연간 수관 손실 — 성(省) 단위 · ha/yr숨기기"
+        }
+      ]
+    },
+    {
+      "presetId": "CLIMATE_VULNERABILITY",
+      "primaryCount": 1,
+      "contextCount": 0,
+      "primaryElement": "B-021",
+      "contextElements": "none",
+      "legend": [
+        {
+          "elementId": "B-021",
+          "role": "primary",
+          "shape": "area",
+          "text": "지역 취약성주 분석 데이터 · GVI 취약성 지수 · 0–100 지수숨기기"
+        }
+      ]
+    },
+    {
+      "presetId": "CLIMATE_FINANCE_PROJECTS",
+      "primaryCount": 1,
+      "contextCount": 0,
+      "primaryElement": "D-018",
+      "contextElements": "none",
+      "legend": [
+        {
+          "elementId": "D-018",
+          "role": "primary",
+          "shape": "diamond",
+          "text": "적응기금 사업주 분석 데이터 · 지역 협력범위·세부 활동지역 · 사업숨기기"
+        }
+      ]
+    }
+  ],
+  "distinctionSnapshot": {
+    "primaryCount": 1,
+    "contextCount": 2,
+    "items": [
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "text": "지역 취약성주 분석 데이터 · GVI 취약성 지수 · 0–100 지수숨기기"
+      },
+      {
+        "elementId": "D-008",
+        "role": "context",
+        "shape": "circle",
+        "text": "지역 기후예산함께 보기 · 성 단위 기후변화 지출 누계 · VND · 원 크기 = 예산숨기기"
+      },
+      {
+        "elementId": "D-018",
+        "role": "context",
+        "shape": "diamond",
+        "text": "적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업숨기기"
+      }
+    ],
+    "rendered": [
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(122, 76, 165)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Lai Châu · 44.7 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(122, 76, 165)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Lào Cai · 44.7 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(122, 76, 165)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Hà Giang · 44.7 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(122, 76, 165)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Cao Bằng · 44.7 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(122, 76, 165)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Sơn La · 44.7 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(122, 76, 165)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Yên Bái · 44.7 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(122, 76, 165)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Tuyên Quang · 44.7 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(122, 76, 165)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Lạng Sơn · 44.7 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(185, 173, 205)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Quảng Ninh · 36.9 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(122, 76, 165)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Hòa Bình · 44.7 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(185, 173, 205)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Ninh Bình · 36.9 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(185, 173, 205)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Thái Bình · 36.9 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(163, 140, 191)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Thanh Hóa · 39.6 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(163, 140, 191)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Nghệ An · 39.6 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(163, 140, 191)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Hà Tĩnh · 39.6 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(163, 140, 191)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Quảng Bình · 39.6 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(163, 140, 191)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Quảng Trị · 39.6 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(163, 140, 191)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Thừa Thiên Huế · 39.6 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(163, 140, 191)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Quảng Nam · 39.6 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(149, 117, 182)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Kon Tum · 41.4 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(163, 140, 191)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Quảng Ngãi · 39.6 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(149, 117, 182)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Gia Lai · 41.4 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(163, 140, 191)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Bình Định · 39.6 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(163, 140, 191)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Phú Yên · 39.6 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(149, 117, 182)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Đắk Lắk · 41.4 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(163, 140, 191)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Khánh Hòa · 39.6 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(149, 117, 182)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Lâm Đồng · 41.4 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(163, 140, 191)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Ninh Thuận · 39.6 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(230, 242, 234)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Tây Ninh · 31.4 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(230, 242, 234)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Đồng Nai · 31.4 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(163, 140, 191)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Bình Thuận · 39.6 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(172, 152, 197)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Long An · 38.6 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(230, 242, 234)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Bà Rịa–Vũng Tàu · 31.4 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(172, 152, 197)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · An Giang · 38.6 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(172, 152, 197)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Đồng Tháp · 38.6 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(172, 152, 197)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Tiền Giang · 38.6 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(172, 152, 197)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Kiên Giang · 38.6 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(172, 152, 197)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Vĩnh Long · 38.6 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(172, 152, 197)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Bến Tre · 38.6 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(172, 152, 197)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Trà Vinh · 38.6 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(172, 152, 197)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Sóc Trăng · 38.6 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(122, 76, 165)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Bắc Kạn · 44.7 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(122, 76, 165)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Bắc Giang · 44.7 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(172, 152, 197)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Bạc Liêu · 38.6 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(185, 173, 205)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Bắc Ninh · 36.9 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(230, 242, 234)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Bình Dương · 31.4 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(230, 242, 234)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Bình Phước · 31.4 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(172, 152, 197)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Cà Mau · 38.6 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(185, 173, 205)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Hải Dương · 36.9 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(185, 173, 205)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Hà Nam · 36.9 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(185, 173, 205)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Hưng Yên · 36.9 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(185, 173, 205)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Nam Định · 36.9 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(122, 76, 165)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Phú Thọ · 44.7 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(122, 76, 165)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Thái Nguyên · 44.7 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(185, 173, 205)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Vĩnh Phúc · 36.9 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(122, 76, 165)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Điện Biên · 44.7 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(149, 117, 182)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Đắk Nông · 41.4 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(172, 152, 197)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Hậu Giang · 38.6 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(172, 152, 197)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Cần Thơ · 38.6 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(163, 140, 191)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Đà Nẵng · 39.6 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(185, 173, 205)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Hà Nội · 36.9 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(185, 173, 205)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Hải Phòng · 36.9 / 100"
+      },
+      {
+        "elementId": "B-021",
+        "role": "primary",
+        "shape": "area",
+        "fill": "rgb(230, 242, 234)",
+        "fillOpacity": 1,
+        "label": "지역 취약성 · Hồ Chí Minh · 31.4 / 100"
+      },
+      {
+        "elementId": "D-018",
+        "role": "context",
+        "shape": "area",
+        "fill": "none",
+        "fillOpacity": 1,
+        "label": "적응기금 사업 · Mekong EbA South: Enhancing Climate Resilience in the Greater Mekong Sub-region through Ecosystem-based Adaptation in the Context of South-South Cooperation (Thailand, Viet Nam) · 7,000,000 USD"
+      },
+      {
+        "elementId": "D-018",
+        "role": "context",
+        "shape": "area",
+        "fill": "none",
+        "fillOpacity": 1,
+        "label": "적응기금 사업 · Groundwater resources in the Greater Mekong Subregion: Collaborative management to increase resilience (Cambodia, Lao People’s Democratic Republic, Thailand, Viet Nam) · 4,898,775 USD"
+      },
+      {
+        "elementId": "D-018",
+        "role": "context",
+        "shape": "diamond",
+        "fill": "rgb(0, 0, 0)",
+        "fillOpacity": 1,
+        "label": "적응기금 사업 · Young Basin · Mekong EbA South: Enhancing Climate Resilience in the Greater Mekong Sub-region through Ecosystem-based Adaptation in the Context of South-South Cooperation (Thailand, Viet Nam)"
+      },
+      {
+        "elementId": "D-018",
+        "role": "context",
+        "shape": "diamond",
+        "fill": "rgb(0, 0, 0)",
+        "fillOpacity": 1,
+        "label": "적응기금 사업 · surrounding Tram Chim National Park,Vietnam · Mekong EbA South: Enhancing Climate Resilience in the Greater Mekong Sub-region through Ecosystem-based Adaptation in the Context of South-South Cooperation (Thailand, Viet Nam)"
+      },
+      {
+        "elementId": "D-008",
+        "role": "context",
+        "shape": "circle",
+        "fill": "rgb(0, 0, 0)",
+        "fillOpacity": 1,
+        "label": "지역 기후예산 · Quảng Nam · 850,000,000,000 VND · 성·시 단위 통계"
+      },
+      {
+        "elementId": "D-008",
+        "role": "context",
+        "shape": "circle",
+        "fill": "rgb(0, 0, 0)",
+        "fillOpacity": 1,
+        "label": "지역 기후예산 · An Giang · 179,000,000,000 VND · 성·시 단위 통계"
+      },
+      {
+        "elementId": "D-008",
+        "role": "context",
+        "shape": "circle",
+        "fill": "rgb(0, 0, 0)",
+        "fillOpacity": 1,
+        "label": "지역 기후예산 · Bắc Ninh · 481,000,000,000 VND · 성·시 단위 통계"
+      }
+    ]
+  },
+  "responsiveChecks": [
+    {
+      "width": 390,
+      "horizontalOverflow": 0,
+      "rootExists": true,
+      "canvasWidth": 375
+    },
+    {
+      "width": 768,
+      "horizontalOverflow": 0,
+      "rootExists": true,
+      "canvasWidth": 753
+    },
+    {
+      "width": 1024,
+      "horizontalOverflow": 0,
+      "rootExists": true,
+      "canvasWidth": 749
+    },
+    {
+      "width": 1440,
+      "horizontalOverflow": 0,
+      "rootExists": true,
+      "canvasWidth": 729
+    },
+    {
+      "width": 1920,
+      "horizontalOverflow": 0,
+      "rootExists": true,
+      "canvasWidth": 1209
+    }
+  ],
+  "runtimeFailure": null
+}

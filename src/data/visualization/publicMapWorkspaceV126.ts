@@ -150,6 +150,20 @@ export interface PublicMapWorkspaceStateV126 {
   focusElementId: PublicMapPresetElementIdV126;
 }
 
+/**
+ * Presets define useful comparison candidates, but V133 intentionally starts
+ * with the primary analysis only. Comparison layers are mounted only after an
+ * explicit user action so two thematic surfaces never appear to be one value.
+ */
+export function publicMapPresetContextCandidatesV133(
+  id: PublicMapWorkspacePresetIdV126
+): readonly PublicMapPresetLayerV126[] {
+  return getPublicMapWorkspacePresetV126(id).context.slice(
+    0,
+    PUBLIC_MAP_WORKSPACE_LIMITS_V126.contextLayers
+  );
+}
+
 export function isPublicMapWorkspacePresetIdV126(
   value: string | null | undefined
 ): value is PublicMapWorkspacePresetIdV126 {
@@ -173,18 +187,14 @@ export function createPublicMapWorkspaceStateV126(
   const preset = getPublicMapWorkspacePresetV126(id);
   return {
     presetId: preset.id,
+    // Context candidates remain on the preset contract, but are OFF by
+    // default. This is the public-map focus contract introduced in V133.
+    context: [],
     primary: {
       ...preset.primary,
       role: "primary",
       opacity: 0.88,
     },
-    context: preset.context
-      .slice(0, PUBLIC_MAP_WORKSPACE_LIMITS_V126.contextLayers)
-      .map((layer) => ({
-        ...layer,
-        role: "context",
-        opacity: 0.52,
-      })),
     focusElementId: preset.primary.elementId,
   };
 }
