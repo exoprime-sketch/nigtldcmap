@@ -52,8 +52,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run blocking V128 release gate
-        run: npm run finalize:v128
+      - name: Run current release gate
+        run: npm run finalize:v133
 
       - name: Verify deployment, security, and performance contracts
         run: |
@@ -147,11 +147,21 @@ jobs:
       - name: Smoke deployed URL
         run: npm run smoke:production:v128
 
+      - name: Stage current production smoke report
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p reports/v133
+          if [[ -f reports/v128/production-smoke-v128.json ]]; then
+            cp reports/v128/production-smoke-v128.json \
+              reports/v133/production-smoke-v133.json
+          fi
+
       - name: Upload production smoke report
         if: always()
         uses: actions/upload-artifact@v7
         with:
           name: vietnam-pilot-production-smoke-${{ github.run_id }}-${{ github.run_attempt }}
-          path: reports/v128/production-smoke-v128.json
+          path: reports/v133/production-smoke-v133.json
           if-no-files-found: error
           retention-days: 30

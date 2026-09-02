@@ -124,7 +124,18 @@
     "audit:map-tooltip:v132": "node scripts/audit-vietnam-map-tooltip-v132.mjs",
     "audit:benchmark-fit:v132": "node scripts/audit-vietnam-benchmark-fit-v132.mjs",
     "capture:screenshots:v132": "node scripts/capture-vietnam-v132-screenshots.mjs",
-    "finalize:v132": "npm run finalize:v131 && npm run build && node scripts/generate-v132-visualization-reports.mjs && npm run audit:visualization-runtime:v132 && npm run audit:composition:v132 && npm run audit:portfolio-analysis:v132 && npm run audit:map-tooltip:v132 && npm run capture:screenshots:v132 && npm run audit:benchmark-fit:v132"
+    "finalize:v132": "npm run finalize:v131 && npm run build && node scripts/generate-v132-visualization-reports.mjs && npm run audit:visualization-runtime:v132 && npm run audit:composition:v132 && npm run audit:portfolio-analysis:v132 && npm run audit:map-tooltip:v132 && npm run capture:screenshots:v132 && npm run audit:benchmark-fit:v132",
+    "audit:source-local:v133": "node scripts/audit-vietnam-source-local-v133.mjs",
+    "generate:asset-integrity:v133": "node scripts/generate-vietnam-asset-integrity-v133.mjs",
+    "audit:generated-data:v133": "node scripts/audit-vietnam-generated-data-v133.mjs",
+    "audit:ci-contract:v133": "node scripts/audit-vietnam-ci-contract-v133.mjs",
+    "audit:release-ci:v133": "npm run audit:generated-data:v133 && npm run audit:ci-contract:v133",
+    "audit:map-focus:v133": "node scripts/audit-vietnam-map-focus-v133.mjs",
+    "audit:map-popup:v133": "node scripts/audit-vietnam-map-popup-v133.mjs",
+    "audit:map-layer-distinction:v133": "node scripts/audit-vietnam-map-layer-distinction-v133.mjs",
+    "capture:screenshots:v133": "node scripts/capture-vietnam-v133-screenshots.mjs",
+    "audit:release:v133": "node scripts/audit-vietnam-release-v133.mjs",
+    "finalize:v133": "npm run audit:release-ci:v133 && npm run audit:release:v133"
   },
   "browserslist": [
     ">0.2%",

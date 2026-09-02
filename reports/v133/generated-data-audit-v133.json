@@ -1,0 +1,182 @@
+{
+  "schemaVersion": "v133",
+  "audit": "committed-generated-data",
+  "sourceZipRequired": false,
+  "checks": [
+    {
+      "name": "COMMITTED_REQUIRED_ASSETS",
+      "status": "PASS",
+      "actual": 12,
+      "expected": 12,
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "MALFORMED_JSON_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "name": "FRAMEWORK_ELEMENTS",
+      "status": "PASS",
+      "actual": {
+        "manifest": 152,
+        "catalog": 152,
+        "coverage": 152
+      },
+      "expected": 152
+    },
+    {
+      "name": "ACCOUNTED_ELEMENTS",
+      "status": "PASS",
+      "actual": {
+        "manifest": 152,
+        "coverage": 152
+      },
+      "expected": 152
+    },
+    {
+      "name": "UNEXPLAINED_ELEMENTS",
+      "status": "PASS",
+      "actual": {
+        "manifest": 0,
+        "coverage": 0
+      },
+      "expected": 0
+    },
+    {
+      "name": "ROW_BALANCE",
+      "status": "PASS",
+      "actual": {
+        "sourceRows": 45582,
+        "processedRows": 45582,
+        "publicPopulatedRows": 37375,
+        "catalogProcessedRows": 45582,
+        "catalogPublicPopulatedRows": 37375,
+        "catalogRowBreakdown": {
+          "metadataRows": 7390,
+          "nonstandardRows": 129,
+          "observationRows": 32416,
+          "entityRows": 5647,
+          "publicPopulatedRows": 37375
+        }
+      },
+      "expected": {
+        "matches": true,
+        "catalogProcessedRows": 45582,
+        "catalogPublicPopulatedRows": 37375
+      }
+    },
+    {
+      "name": "ASSET_INTEGRITY_COVERAGE",
+      "status": "PASS",
+      "actual": {
+        "declared": 427,
+        "recorded": 427,
+        "expected": 427,
+        "missing": 0,
+        "unexpected": 0,
+        "duplicate": 0
+      },
+      "expected": {
+        "missing": 0,
+        "unexpected": 0,
+        "duplicate": 0
+      }
+    },
+    {
+      "name": "ASSET_HASH_FAILURE_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": []
+    },
+    {
+      "name": "BROKEN_ASSET_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0,
+      "details": {
+        "checked": 428,
+        "broken": []
+      }
+    },
+    {
+      "name": "DOWNLOAD_INTEGRITY",
+      "status": "PASS",
+      "actual": {
+        "checked": 228,
+        "invalid": 0
+      },
+      "expected": {
+        "checked": "> 0",
+        "invalid": 0
+      },
+      "details": []
+    },
+    {
+      "name": "DOWNLOAD_ROW_RECONCILIATION",
+      "status": "PASS",
+      "actual": {
+        "checked": 114,
+        "failed": 0
+      },
+      "expected": {
+        "checked": "> 0",
+        "failed": 0
+      },
+      "details": []
+    },
+    {
+      "name": "MAP_INTEGRITY",
+      "status": "PASS",
+      "actual": {
+        "declaredLayers": 12,
+        "layers": 12,
+        "declaredFeatures": 2900,
+        "features": 2900
+      },
+      "expected": {
+        "layers": 12,
+        "features": 2900,
+        "fakeGeometry": 0
+      }
+    },
+    {
+      "name": "SEMANTIC_ASSET_INTEGRITY",
+      "status": "PASS",
+      "actual": {
+        "integrityContracts": 152,
+        "contracts": 152,
+        "elementAssets": 152
+      },
+      "expected": 152
+    },
+    {
+      "name": "SOURCE_ZIP_TRACKED",
+      "status": "PASS",
+      "actual": false,
+      "expected": false,
+      "details": []
+    },
+    {
+      "name": "SOURCE_ZIP_REQUIRED_IN_CI",
+      "status": "PASS",
+      "actual": false,
+      "expected": false,
+      "details": {
+        "sourceFilesystemDependencyCount": 0
+      }
+    }
+  ],
+  "summary": {
+    "status": "PASS",
+    "passed": 15,
+    "failed": 0,
+    "total": 15,
+    "failedChecks": []
+  }
+}

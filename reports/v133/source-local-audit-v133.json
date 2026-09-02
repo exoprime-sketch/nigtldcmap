@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "v133",
+  "audit": "developer-local-source",
+  "ciEligible": false,
+  "checks": [
+    {
+      "name": "SOURCE_ZIP_EXISTS",
+      "status": "PASS",
+      "actual": true,
+      "expected": true,
+      "details": {
+        "path": "_source/vietnam/v124/vietnam-data(4).zip",
+        "environment": "developer-local-only"
+      }
+    },
+    {
+      "name": "SOURCE_WORKBOOK_COUNT",
+      "status": "PASS",
+      "actual": 149,
+      "expected": 149,
+      "details": {
+        "zipEntries": 149
+      }
+    },
+    {
+      "name": "SOURCE_HASH_MATCH",
+      "status": "PASS",
+      "actual": {
+        "actual": "db94f0c6cc2382cf2e10bf117109870b50d03172e9bbebdb84b8e421dee99b56",
+        "recorded": [
+          "db94f0c6cc2382cf2e10bf117109870b50d03172e9bbebdb84b8e421dee99b56",
+          "db94f0c6cc2382cf2e10bf117109870b50d03172e9bbebdb84b8e421dee99b56"
+        ]
+      },
+      "expected": "quality report and manifest match the local ZIP"
+    },
+    {
+      "name": "ETL_ROW_RECONCILIATION",
+      "status": "PASS",
+      "actual": {
+        "sourceRows": 45582,
+        "processedRows": 45582,
+        "qualityPass": true
+      },
+      "expected": {
+        "matches": true
+      }
+    },
+    {
+      "name": "SOURCE_ZIP_NOT_TRACKED",
+      "status": "PASS",
+      "actual": false,
+      "expected": false,
+      "details": {
+        "path": "_source/vietnam/v124/vietnam-data(4).zip"
+      }
+    },
+    {
+      "name": "SOURCE_ZIP_IGNORED",
+      "status": "PASS",
+      "actual": true,
+      "expected": true,
+      "details": {
+        "path": "_source/vietnam/v124/vietnam-data(4).zip",
+        "rule": ".gitignore:18:_source/\t_source/vietnam/v124/vietnam-data(4).zip"
+      }
+    }
+  ],
+  "summary": {
+    "status": "PASS",
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "failedChecks": []
+  }
+}
