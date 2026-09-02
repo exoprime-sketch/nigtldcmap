@@ -27,6 +27,7 @@ import {
 import { publicTextV126 } from "../data/visualization/publicFieldPolicyV126";
 import { A024_LINE_MEASURE_V125 } from "../data/visualization/mapSelectorBindingsV125";
 import CountryElementVisualizationV123 from "../components/data/CountryDataFullPreviewV52";
+import { PublicTermTextV134 } from "../components/help/PublicTermV134";
 import "../styles/country-data-platform-v122.css";
 
 interface Props {
@@ -887,12 +888,19 @@ export default function CountryDataElementPage({
                   )}
                 </div>
               )}
-              <h1>{catalogItem?.publicTitle || meta.element.elementLabel}</h1>
+              <h1>
+                <PublicTermTextV134
+                  text={catalogItem?.publicTitle || meta.element.elementLabel}
+                />
+              </h1>
               <p>
-                {provider.countryNameKo}
-                {catalogItem?.publicDescription
-                  ? ` · ${catalogItem.publicDescription}`
-                  : ""}
+                <PublicTermTextV134
+                  text={`${provider.countryNameKo}${
+                    catalogItem?.publicDescription
+                      ? ` · ${catalogItem.publicDescription}`
+                      : ""
+                  }`}
+                />
               </p>
             </div>
             <div className="cdp-detail-hero__actions">
@@ -957,13 +965,19 @@ export default function CountryDataElementPage({
             {sourceOrganizations[0] && (
               <article className="cdp-summary-card">
                 <span>자료 제공기관</span>
-                <strong>{sourceOrganizations[0]}</strong>
+                <strong>
+                  <PublicTermTextV134 text={sourceOrganizations[0]} />
+                </strong>
               </article>
             )}
             {meta.element.spatialUnits[0] && (
               <article className="cdp-summary-card">
                 <span>자료 범위</span>
-                <strong>{publicSpatialUnitLabelV126(meta.element.spatialUnits[0])}</strong>
+                <strong>
+                  <PublicTermTextV134
+                    text={publicSpatialUnitLabelV126(meta.element.spatialUnits[0])}
+                  />
+                </strong>
               </article>
             )}
           </section>

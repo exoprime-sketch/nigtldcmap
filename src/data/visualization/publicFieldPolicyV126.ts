@@ -478,7 +478,32 @@ function normalizeKeyV126(value: string): string {
 
 function normalizeTextV126(value: unknown): string | null {
   if (typeof value !== "string") return null;
-  const normalized = value.replace(/\s+/g, " ").trim();
+  const normalized = value
+    .replace(/\bEDGAR_2025_GHG\b/gu, "EDGAR 온실가스 데이터베이스 2025판")
+    .replace(/\bCCI_LC\b/gu, "CCI-LC")
+    .replace(/\blog\(USD_2017\s+PPP\)/giu, "2017년 구매력평가 기준 미국달러(로그)")
+    .replace(/십억\s+USD_2017\/yr\b/giu, "2017년 구매력평가 기준 10억 미국달러/년")
+    .replace(/\bUSD_2017\/인/giu, "2017년 구매력평가 기준 미국달러/인")
+    .replace(/\bUSD_PPP\/ha\b/giu, "구매력평가 기준 미국달러/ha")
+    .replace(/\bUSD_2017\b/giu, "2017년 기준 미국달러")
+    .replace(/\bUSD_PPP\b/giu, "구매력평가 기준 미국달러")
+    .replace(/\bIP\s+not\s+published\b/giu, "세부 이행정보 미공개")
+    .replace(/\bGOLD_STANDARD_CERTIFIED_DESIGN\b/gu, "Gold Standard 설계 인증")
+    .replace(/\bGOLD_STANDARD_CERTIFIED_PROJECT\b/gu, "Gold Standard 사업 인증")
+    .replace(/\bUnits Transferred from Approved GHG Program\b/giu, "승인된 온실가스 프로그램에서 이전")
+    .replace(/\bVerification approval requested\b/giu, "검증 승인 요청")
+    .replace(/\bRegistration requested\b/giu, "등록 요청")
+    .replace(/\bUnder development\b/giu, "개발 중")
+    .replace(/\bUnder validation\b/giu, "타당성 검토 중")
+    .replace(/\bLate to verify\b/giu, "검증 지연")
+    .replace(/\bLISTED\b/gu, "목록 등재")
+    .replace(/\bRegistered\b/gu, "등록")
+    .replace(/\bWithdrawn\b/gu, "철회")
+    .replace(/\bCTIS-\d{2}\b/gi, "")
+    .replace(/(?:\s*[,·|]\s*){2,}/gu, " · ")
+    .replace(/\s+/g, " ")
+    .replace(/^\s*[·|—–-]+\s*|\s*[·|—–-]+\s*$/gu, "")
+    .trim();
   if (!normalized) return null;
   if (
     PUBLIC_DOM_FORBIDDEN_VALUE_PATTERNS_V126.some((pattern) =>

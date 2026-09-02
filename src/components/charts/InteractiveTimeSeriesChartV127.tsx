@@ -8,6 +8,10 @@ import {
 } from "react";
 import ChartTooltipV127 from "./ChartTooltipV127";
 import ChartViewportControlsV129 from "./ChartViewportControlsV129";
+import {
+  PublicTermExpandedTextV134,
+  PublicTermTextV134,
+} from "../help/PublicTermV134";
 import type {
   ChartDomainV127,
   ChartLinePatternV127,
@@ -249,16 +253,18 @@ export function InteractiveTimeSeriesChartV127({
     return new Set(defaults.length > 0 ? defaults : fallback ? [fallback] : []);
   });
   const knownSeriesIdsRef = useRef<Set<string>>(new Set(seriesIds));
+  const tooltipReturnFocusRef = useRef<HTMLElement | SVGElement | null>(null);
   const [tooltip, setTooltip] = useState<ChartTooltipStateV127 | null>(null);
 
   useEffect(() => {
     const clearTransientTooltip = (event: FocusEvent) => {
       const target = event.target;
-      const focusedOwnPoint =
+      const focusedOwnChartControl =
         target instanceof Element &&
         rootRef.current?.contains(target) &&
-        target.matches('[data-chart-point="true"]');
-      if (!focusedOwnPoint) {
+        (target.matches('[data-chart-point="true"]') ||
+          Boolean(target.closest('[data-chart-tooltip="custom"]')));
+      if (!focusedOwnChartControl) {
         setTooltip((current) => (current?.pinned ? current : null));
       }
     };
@@ -713,6 +719,7 @@ export function InteractiveTimeSeriesChartV127({
       onKeyDown={(event) => {
         if (event.key === "Escape") {
           setTooltip(null);
+          window.requestAnimationFrame(() => tooltipReturnFocusRef.current?.focus());
           return;
         }
         if (event.target === svgRef.current) {
@@ -735,10 +742,20 @@ export function InteractiveTimeSeriesChartV127({
       }}
     >
       <header className="v127-interactive-chart__header">
-        {title ? <h4>{title}</h4> : null}
-        {description ? <p>{description}</p> : null}
+        {title ? (
+          <h4>
+            <PublicTermTextV134 text={title} />
+          </h4>
+        ) : null}
+        {description ? (
+          <p>
+            <PublicTermTextV134 text={description} />
+          </p>
+        ) : null}
         <div className="v127-interactive-chart__metadata">
-          <span data-testid="chart-unit-label">단위: {unit}</span>
+          <span data-testid="chart-unit-label">
+            단위: <PublicTermTextV134 text={unit} />
+          </span>
           {scaleDescription ? <span>척도: {scaleDescription}</span> : null}
         </div>
       </header>
@@ -771,7 +788,7 @@ export function InteractiveTimeSeriesChartV127({
                     className={`v127-chart-legend-button__sample v127-chart-legend-button__sample--${marker}`}
                     style={{ color }}
                   />
-                  <span>{item.label}</span>
+                  <span><PublicTermExpandedTextV134 text={item.label} /></span>
                 </button>
               );
             })}
@@ -925,14 +942,20 @@ export function InteractiveTimeSeriesChartV127({
                     data-series-unit={item.unit}
                     key={point.id || `${item.id}-${point.x}-${pointIndex}`}
                     onBlur={() => {
-                      setTooltip((current) =>
-                        current?.pinned ? current : null
-                      );
+                      window.requestAnimationFrame(() => {
+                        if (document.activeElement?.closest('[data-chart-tooltip="custom"]')) {
+                          return;
+                        }
+                        setTooltip((current) =>
+                          current?.pinned ? current : null
+                        );
+                      });
                     }}
                     onFocus={() => focusPointV127(item, point)}
                     onKeyDown={(event) => {
                       if (event.key === "Enter" || event.key === " ") {
                         event.preventDefault();
+                        tooltipReturnFocusRef.current = event.currentTarget;
                         setTooltip(
                           buildTooltipStateV127(
                             point.x,
@@ -941,6 +964,11 @@ export function InteractiveTimeSeriesChartV127({
                             item.id
                           )
                         );
+                        window.requestAnimationFrame(() => {
+                          rootRef.current
+                            ?.querySelector<HTMLElement>('[data-chart-tooltip="custom"][data-tooltip-pinned="true"]')
+                            ?.focus();
+                        });
                       }
                     }}
                     role="button"
@@ -990,12 +1018,10 @@ export function InteractiveTimeSeriesChartV127({
             ) : null}
 
             <rect
-              aria-label="연도별 값 탐색 영역. 좌우 화살표 키로 이동합니다."
               className={`v127-interactive-chart__overlay${!isFullRange ? " is-zoomed" : ""}`}
               data-chart-hit="true"
               height={plotHeight}
               onPointerDown={(event) => {
-                event.currentTarget.focus();
                 dragRef.current = {
                   pointerId: event.pointerId,
                   startClientX: event.clientX,
@@ -1109,7 +1135,6 @@ export function InteractiveTimeSeriesChartV127({
                 showNearestV127(local.x, local.y, true, true);
               }}
               role="presentation"
-              tabIndex={-1}
               width={plotWidth}
               x={padding.left}
               y={padding.top}

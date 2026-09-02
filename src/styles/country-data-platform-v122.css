@@ -1579,7 +1579,21 @@
   border-radius: 11px;
   padding: 13px;
   background: #fff;
+  cursor: default;
+}
+
+.cdp-download-item__selector {
+  align-items: center;
   cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  margin: -11px 0 -11px -11px;
+}
+
+.cdp-download-item.is-unavailable .cdp-download-item__selector {
+  cursor: not-allowed;
 }
 
 .cdp-download-item.is-selected {

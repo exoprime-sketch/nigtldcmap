@@ -13,13 +13,17 @@ export default function MapDynamicLegendV120({
 }: MapDynamicLegendV120Props) {
   return (
     <aside className="map-dynamic-legend-v120" aria-label={`${title} 범례`}>
-      <strong>{title}</strong>
-      {unit && <span className="map-dynamic-legend-v120__unit">{unit}</span>}
+      <strong><PublicTermTextV134 text={title} /></strong>
+      {unit && (
+        <span className="map-dynamic-legend-v120__unit">
+          <PublicTermTextV134 text={unit} />
+        </span>
+      )}
       <ul>
         {items.map((item) => (
           <li key={`${item.label}-${item.value ?? ""}`}>
             {item.symbol && <span aria-hidden="true">{item.symbol}</span>}
-            <span>{item.label}</span>
+            <span><PublicTermTextV134 text={item.label} /></span>
             {item.value !== undefined && <b>{item.value}</b>}
           </li>
         ))}
@@ -31,3 +35,4 @@ export default function MapDynamicLegendV120({
     </aside>
   );
 }
+import { PublicTermTextV134 } from "../help/PublicTermV134";

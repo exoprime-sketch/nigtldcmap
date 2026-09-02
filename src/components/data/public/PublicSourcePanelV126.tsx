@@ -7,6 +7,10 @@ import {
   publicSourceUrlV126,
   publicTextV126,
 } from "../../../data/visualization/publicFieldPolicyV126";
+import {
+  PublicTermExpandedTextV134,
+  PublicTermTextV134,
+} from "../../help/PublicTermV134";
 
 interface Props {
   indicators: VietnamIndicatorMetaV124[];
@@ -65,7 +69,11 @@ export default function PublicSourcePanelV126({
       <dl>
         <div>
           <dt>자료 제공기관</dt>
-          <dd>{organizations.join(" · ") || "공개 자료에 기관명이 명시되지 않음"}</dd>
+          <dd>
+            <PublicTermTextV134
+              text={organizations.join(" · ") || "공개 자료에 기관명이 명시되지 않음"}
+            />
+          </dd>
         </div>
         <div>
           <dt>기준연도·기간</dt>
@@ -73,12 +81,16 @@ export default function PublicSourcePanelV126({
         </div>
         <div>
           <dt>단위</dt>
-          <dd>{units.join(" · ") || "미기재"}</dd>
+          <dd>
+            <PublicTermTextV134 text={units.join(" · ") || "미기재"} />
+          </dd>
         </div>
         {licenses.length > 0 && (
           <div>
             <dt>이용조건·출처표시</dt>
-            <dd>{licenses.join(" · ")}</dd>
+            <dd>
+              <PublicTermTextV134 text={licenses.join(" · ")} />
+            </dd>
           </div>
         )}
       </dl>
@@ -86,7 +98,9 @@ export default function PublicSourcePanelV126({
         <div className="pav126-source__links">
           {urls.slice(0, 4).map((url, index) => (
             <a key={url} href={url} target="_blank" rel="noreferrer">
-              {organizations[index] || organizations[0] || "공식 원문"} 확인
+              <PublicTermExpandedTextV134
+                text={`${organizations[index] || organizations[0] || "공식 원문"} 확인`}
+              />
             </a>
           ))}
         </div>

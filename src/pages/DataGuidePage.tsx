@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { View } from "../app/navigation";
 import { SERVICE_LINKS } from "../config/serviceLinks";
+import { PUBLIC_GLOSSARY_V134 } from "../data/glossary/publicGlossaryV134";
 import { loadVietnamPublicOverviewV128 } from "../data/publicPlatformV128";
+import { PublicTermTextV134 } from "../components/help/PublicTermV134";
 import "../styles/data-guide-v128.css";
 
 interface DataGuidePageProps {
@@ -10,6 +12,31 @@ interface DataGuidePageProps {
 
 export default function DataGuidePage({ onNavigate }: DataGuidePageProps) {
   const [releaseDate, setReleaseDate] = useState("확인 중");
+  const [glossaryQuery, setGlossaryQuery] = useState("");
+
+  const visibleGlossary = useMemo(() => {
+    const normalized = glossaryQuery.trim().toLocaleLowerCase("ko-KR");
+    if (!normalized) return PUBLIC_GLOSSARY_V134;
+    return PUBLIC_GLOSSARY_V134.filter((entry) => {
+      const patternAliases =
+        entry.id === "spei"
+          ? "SPEI3 SPEI6 SPEI12 SPEI-3 SPEI-6 SPEI-12"
+          : entry.id === "ssp"
+          ? "SSP1-1.9 SSP1-2.6 SSP2-4.5 SSP3-7.0 SSP5-8.5"
+          : "";
+      return [
+        entry.term,
+        entry.englishName,
+        entry.koreanName,
+        entry.definition,
+        ...entry.aliases,
+        patternAliases,
+      ]
+        .join(" ")
+        .toLocaleLowerCase("ko-KR")
+        .includes(normalized);
+    });
+  }, [glossaryQuery]);
 
   useEffect(() => {
     let cancelled = false;
@@ -23,6 +50,20 @@ export default function DataGuidePage({ onNavigate }: DataGuidePageProps) {
     return () => {
       cancelled = true;
     };
+  }, []);
+
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).get("guide") !== "glossary") {
+      return;
+    }
+    const frame = window.requestAnimationFrame(() => {
+      document.getElementById("guide-glossary")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+      document.getElementById("guide-glossary-search")?.focus();
+    });
+    return () => window.cancelAnimationFrame(frame);
   }, []);
 
   function scrollToSection(id: string) {
@@ -61,6 +102,12 @@ export default function DataGuidePage({ onNavigate }: DataGuidePageProps) {
         </button>
         <button type="button" onClick={() => scrollToSection("guide-map")}>
           지도자료
+        </button>
+        <button
+          type="button"
+          onClick={() => scrollToSection("guide-glossary")}
+        >
+          용어·약어
         </button>
       </nav>
 
@@ -150,6 +197,90 @@ export default function DataGuidePage({ onNavigate }: DataGuidePageProps) {
           <p>
             현재 공개 데이터 릴리스 기준일은 <strong>{releaseDate}</strong>입니다.
             이후 보완 자료는 검증과 공개 수용검사를 거쳐 반영합니다.
+          </p>
+        </section>
+
+        <section
+          className="data-guide-v134__glossary"
+          data-v134-glossary-directory
+          id="guide-glossary"
+        >
+          <div className="data-guide-v134__glossary-heading">
+            <div>
+              <h2>용어·약어</h2>
+              <p>
+                플랫폼의 개발협력·기후·에너지 용어와 단위를
+                한국어·영어 명칭과 함께 확인할 수 있습니다.
+              </p>
+            </div>
+            <span aria-live="polite">
+              {visibleGlossary.length.toLocaleString("ko-KR")}개 용어
+            </span>
+          </div>
+
+          <div className="data-guide-v134__glossary-search">
+            <label htmlFor="guide-glossary-search">용어 검색</label>
+            <div>
+              <input
+                autoComplete="off"
+                id="guide-glossary-search"
+                onChange={(event) => setGlossaryQuery(event.target.value)}
+                placeholder="ODA, SPEI12, SSP2-4.5, GVI, NDC 검색"
+                type="search"
+                value={glossaryQuery}
+              />
+              {glossaryQuery && (
+                <button type="button" onClick={() => setGlossaryQuery("")}>
+                  검색어 지우기
+                </button>
+              )}
+            </div>
+          </div>
+
+          {visibleGlossary.length > 0 ? (
+            <ul className="data-guide-v134__glossary-list">
+              {visibleGlossary.map((entry) => (
+                <li
+                  key={entry.id}
+                  data-glossary-id={entry.id}
+                  data-glossary-term={entry.term}
+                >
+                  <div className="data-guide-v134__glossary-term">
+                    <strong>{entry.term}</strong>
+                    <span>{entry.koreanName}</span>
+                  </div>
+                  <span className="data-guide-v134__glossary-english">
+                    {entry.englishName}
+                  </span>
+                  <p>{entry.definition}</p>
+                  {entry.id === "spei" && (
+                    <small>
+                      지원 패턴: SPEI3 · SPEI6 · SPEI12 (누적기간
+                      3·6·12개월)
+                    </small>
+                  )}
+                  {entry.id === "ssp" && (
+                    <small>
+                      지원 예시: SSP1-2.6 · SSP2-4.5 · SSP3-7.0 ·
+                      SSP5-8.5
+                    </small>
+                  )}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <div className="data-guide-v134__glossary-empty" role="status">
+              <strong>검색 결과가 없습니다.</strong>
+              <p>약어, 한국어 명칭 또는 영어 명칭으로 다시 검색해 보세요.</p>
+            </div>
+          )}
+
+          <p className="data-guide-v134__glossary-example">
+            화면에서는{" "}
+            <PublicTermTextV134 text="ODA, SPEI12, SSP2-4.5, GVI, MW" />
+            처럼 점선이 표시된 용어에 마우스를 올리거나 키보드로
+            초점을 이동하면 설명을 볼 수 있습니다. 모바일에서는 용어를
+            눌러 고정합니다.
           </p>
         </section>
 

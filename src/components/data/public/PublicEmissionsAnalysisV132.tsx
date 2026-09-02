@@ -4,6 +4,10 @@ import type { TimeSeriesV127 } from "../../../types/chartInteractionV127";
 import type { SemanticObservationV125 } from "../../../data/visualization/semanticTypesV125";
 import type { DataFinderSelectorStateV125 } from "../../../types/dataFinderV125";
 import { formatPublicNumberV126 } from "../../../data/visualization/publicNumberFormatV126";
+import {
+  PublicTermHelpV134,
+  PublicTermTextV134,
+} from "../../help/PublicTermV134";
 import "./public-emissions-analysis-v132.css";
 
 interface Props {
@@ -312,9 +316,10 @@ export default function PublicEmissionsAnalysisV132({
             <p>같은 단위의 계열만 비교하며, 공개되지 않은 값은 합계에 포함하지 않습니다.</p>
           </div>
           {measures.length > 1 ? (
-            <label>
-              측정 기준
-              <select
+            <div data-public-selector-scope-v134="emissions-measure">
+              <label>
+                측정 기준
+                <select
                 data-testid="emissions-measure-selector-v132"
                 onChange={(event) => {
                   const next = measures.find((measure) => measure.key === event.target.value);
@@ -332,8 +337,12 @@ export default function PublicEmissionsAnalysisV132({
                     {measure.label} · {measure.unit}
                   </option>
                 ))}
-              </select>
-            </label>
+                </select>
+              </label>
+              <PublicTermHelpV134
+                text={`${selectedMeasure.label} · ${selectedMeasure.unit}`}
+              />
+            </div>
           ) : null}
         </header>
 
@@ -343,7 +352,7 @@ export default function PublicEmissionsAnalysisV132({
             <strong>
               {totalIsMeaningful && latestComplete
                 ? `${formatPublicNumberV126(latestComplete.total, selectedMeasure.unit)} ${selectedMeasure.unit}`
-                : selectedMeasure.label}
+                : <PublicTermTextV134 text={selectedMeasure.label} />}
             </strong>
             <small>{totalIsMeaningful ? "모든 구성계열이 있는 연도만 산출" : "서로 다른 가스 질량은 합산하지 않음"}</small>
           </article>
@@ -354,7 +363,7 @@ export default function PublicEmissionsAnalysisV132({
           </article>
           <article>
             <span>가장 큰 {elementId === "A-010" ? "가스" : "부문"}</span>
-            <strong>{largestComponent?.label || "—"}</strong>
+            <strong><PublicTermTextV134 text={largestComponent?.label || "—"} /></strong>
             <small>
               {largestComponent
                 ? `${formatPublicNumberV126(largestComponent.value, selectedMeasure.unit)} ${selectedMeasure.unit}`

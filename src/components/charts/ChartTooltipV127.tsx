@@ -1,4 +1,8 @@
 import { useLayoutEffect, useRef, useState } from "react";
+import {
+  PublicTermExpandedTextV134,
+  PublicTermTextV134,
+} from "../help/PublicTermV134";
 import type {
   ChartTooltipStateV127,
   ChartMarkerShapeV127,
@@ -78,7 +82,9 @@ export function ChartTooltipV127({
       data-tooltip-pinned={state.pinned ? "true" : "false"}
       data-testid="chart-tooltip"
       ref={tooltipRef}
-      role="tooltip"
+      aria-label={state.pinned ? "선택한 차트 값과 용어 도움말" : undefined}
+      role={state.pinned ? "dialog" : "tooltip"}
+      tabIndex={state.pinned ? -1 : undefined}
       style={{
         left,
         maxHeight: maximumHeight,
@@ -96,10 +102,22 @@ export function ChartTooltipV127({
               className={tooltipMarkerClassV127(item.marker)}
               style={{ color: item.color }}
             />
-            <span className="v127-chart-tooltip__label">{item.label}</span>
+            <span className="v127-chart-tooltip__label">
+              {state.pinned ? (
+                <PublicTermTextV134 text={item.label} />
+              ) : (
+                <PublicTermExpandedTextV134 text={item.label} />
+              )}
+            </span>
             <span className="v127-chart-tooltip__value">
               {item.formattedValue}
-              {item.unit ? ` ${item.unit}` : ""}
+              {item.unit ? (
+                <> {state.pinned ? (
+                  <PublicTermTextV134 text={item.unit} />
+                ) : (
+                  <PublicTermExpandedTextV134 text={item.unit} />
+                )}</>
+              ) : ""}
             </span>
             {item.formattedDelta ? (
               <small className="v127-chart-tooltip__delta">

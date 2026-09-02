@@ -11,6 +11,10 @@ import {
   listCountryDataProvidersV122,
 } from "../data/countries/countryDataProviderRegistryV122";
 import type { CountryCatalogItemV122 } from "../data/countries/countryDataTypesV122";
+import {
+  PublicTermHelpV134,
+  PublicTermTextV134,
+} from "../components/help/PublicTermV134";
 import { safePublicFilenamePartV122 } from "../data/countries/publicLabelsV122";
 import { publicDownloadStatusV128 } from "../data/publicPlatformV128";
 import type {
@@ -491,7 +495,9 @@ export default function DownloadPage({
     <div className="page-shell cdp-page">
       <section className="cdp-hero">
         <h1>데이터 다운로드</h1>
-        <p>필요한 데이터를 선택해 CSV 또는 JSON으로 내려받을 수 있습니다</p>
+        <p>
+          <PublicTermTextV134 text="필요한 데이터를 선택해 CSV 또는 JSON으로 내려받을 수 있습니다" />
+        </p>
       </section>
 
       {error && (
@@ -575,23 +581,30 @@ export default function DownloadPage({
               const selected = selectedKeys.has(key);
               const downloadStatus = publicDownloadStatusV128(item);
               const downloadSelectable = downloadStatus.key === "downloadable";
+              const inputId = `download-${key.replace(/[^a-z0-9_-]+/giu, "-")}`;
               return (
-                <label
+                <article
                   className={`cdp-download-item ${
                     selected ? "is-selected" : ""
                   } ${downloadSelectable ? "" : "is-unavailable"}`}
                   key={key}
                 >
-                  <input
-                    type="checkbox"
-                    checked={selected}
-                    disabled={!downloadSelectable}
-                    onChange={() => toggleSelection(item)}
-                    aria-label={`${item.publicTitle} ${downloadStatus.label}`}
-                  />
+                  <label className="cdp-download-item__selector" htmlFor={inputId}>
+                    <input
+                      id={inputId}
+                      type="checkbox"
+                      checked={selected}
+                      disabled={!downloadSelectable}
+                      onChange={() => toggleSelection(item)}
+                      aria-label={`${item.publicTitle} ${downloadStatus.label}`}
+                    />
+                    <span className="sr-only">{item.publicTitle} 선택</span>
+                  </label>
                   <span>
                     <span className="cdp-download-item__heading">
-                      <strong>{item.publicTitle}</strong>
+                      <strong>
+                        <PublicTermTextV134 text={item.publicTitle} />
+                      </strong>
                       <span
                         className={`cdp-download-status cdp-download-status--${downloadStatus.key}`}
                         data-download-status={downloadStatus.key}
@@ -600,13 +613,15 @@ export default function DownloadPage({
                       </span>
                     </span>
                     <small>
-                      {[
-                        providers.length > 1 ? item.countryNameKo : null,
-                        item.latestYear,
-                        item.sourceOrganizations[0],
-                      ]
-                        .filter(Boolean)
-                        .join(" · ")}
+                      <PublicTermTextV134
+                        text={[
+                          providers.length > 1 ? item.countryNameKo : null,
+                          item.latestYear,
+                          item.sourceOrganizations[0],
+                        ]
+                          .filter(Boolean)
+                          .join(" · ")}
+                      />
                     </small>
                     <small className="cdp-download-item__reason">
                       {downloadStatus.reason ||
@@ -615,7 +630,7 @@ export default function DownloadPage({
                         )}개 공개 레코드`}
                     </small>
                   </span>
-                </label>
+                </article>
               );
             })}
             {filtered.length === 0 && (
@@ -710,6 +725,12 @@ export default function DownloadPage({
               ))}
             </select>
           </label>
+          <PublicTermHelpV134
+            text={[
+              sourceOrganization === "all" ? "" : sourceOrganization,
+              technologyId === "all" ? "" : technologyLabelV121(technologyId),
+            ].filter(Boolean).join(" · ")}
+          />
         </div>
       </section>
 

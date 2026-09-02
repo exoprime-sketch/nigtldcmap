@@ -11,6 +11,7 @@ import { publicMeasureLabelV126 } from "../../../data/visualization/publicCopyRe
 import { resolvePublicEntityTitleV131 } from "../../../data/visualization/publicEntityTitleV131";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { formatValueV121 } from "../../../utils/vietnamActualV121";
+import { PublicTermTextV134 } from "../../help/PublicTermV134";
 
 interface Props {
   elementId: string;
@@ -113,13 +114,13 @@ export default function PublicRawDataTablesV126({
                 );
                 return (
                   <tr key={row.recordId}>
-                    <td>{publicMeasureLabelV126(row.semanticMeasure.labelKo)}</td>
-                    <td>{category}</td>
-                    <td>{context}</td>
-                    <td>{publicObservationValueV126(row.value)}</td>
-                    <td>{publicTextV126(row.unit || row.semanticMeasure.unit) || ""}</td>
+                    <td><PublicTermTextV134 text={publicMeasureLabelV126(row.semanticMeasure.labelKo)} /></td>
+                    <td><PublicTermTextV134 text={category} /></td>
+                    <td><PublicTermTextV134 text={context} /></td>
+                    <td><PublicTermTextV134 text={publicObservationValueV126(row.value)} /></td>
+                    <td><PublicTermTextV134 text={publicTextV126(row.unit || row.semanticMeasure.unit) || ""} /></td>
                     <td>{row.year || publicTextV126(row.period) || ""}</td>
-                    <td>{publicTextV126(row.provenance.sourceOrg) || ""}</td>
+                    <td><PublicTermTextV134 text={publicTextV126(row.provenance.sourceOrg) || ""} /></td>
                     <td>
                       {publicMissingReasonLabelV126(
                         row.missingReasonCode,
@@ -172,12 +173,12 @@ export default function PublicRawDataTablesV126({
                 );
                 return (
                   <tr key={row.recordId}>
-                    <td>{titleResolution.title}</td>
-                    <td>{publicTextV126(row.entityType) || ""}</td>
+                    <td><PublicTermTextV134 text={titleResolution.title} /></td>
+                    <td><PublicTermTextV134 text={publicTextV126(row.entityType) || ""} /></td>
                     {entityColumns.map((column) => (
-                      <td key={column}>{publicAttributeValueV126(attributes[column])}</td>
+                      <td key={column}><PublicTermTextV134 text={publicAttributeValueV126(attributes[column])} /></td>
                     ))}
-                    <td>{publicTextV126(row.provenance.sourceOrg) || ""}</td>
+                    <td><PublicTermTextV134 text={publicTextV126(row.provenance.sourceOrg) || ""} /></td>
                     <td>
                       {publicMissingReasonLabelV126(
                         row.missingReasonCode,
