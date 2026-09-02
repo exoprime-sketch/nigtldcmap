@@ -110,4 +110,3 @@ export function containsForbiddenPublicMapTokenV133(value) {
     "sourcerow",
   ].filter((token) => text.includes(token));
 }
-
