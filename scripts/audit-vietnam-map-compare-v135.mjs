@@ -134,7 +134,21 @@ try {
   desktop = pairResults[0]?.snapshot || await evaluateValue(browser.cdp, compareSnapshotExpression());
   const savedUrl = desktop?.url || mapUrlV135(server.url);
   await navigate(browser.cdp, savedUrl);
-  await waitForValue(browser.cdp, `Boolean(document.querySelector('[data-testid="map-comparison-workspace-v135"]'))`, { timeoutMs: 35_000 });
+  // The workspace element alone is not proof of restoration: it renders from
+  // the URL on the first paint, before the layer set is loaded. Wait until both
+  // panes actually carry their restored dataset.
+  await waitForValue(
+    browser.cdp,
+    `(() => {
+      const workspace = document.querySelector('[data-testid="map-comparison-workspace-v135"]');
+      if (!workspace) return false;
+      const pane = (side) => workspace.querySelector('[data-testid="map-compare-pane-' + side + '"]');
+      const a = pane('a');
+      const b = pane('b');
+      return Boolean(a && b && a.getAttribute('data-element-id') && b.getAttribute('data-element-id'));
+    })()`,
+    { timeoutMs: 35_000 }
+  );
   restored = await evaluateValue(browser.cdp, compareSnapshotExpression());
   await setViewport(browser.cdp, 390, 844);
   await new Promise((resolveWait) => setTimeout(resolveWait, 180));

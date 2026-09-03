@@ -1723,6 +1723,12 @@ export default function RealMapExplorerPage({
   useEffect(() => {
     let cancelled = false;
     setExternalStateHydrated(false);
+    // The workspace is being rebuilt for a freshly loaded layer set, so the URL
+    // state has to be applied again. Without clearing the marker the hydration
+    // effect still recognises the signature it applied before this reset and
+    // skips, which silently drops a shared comparison link back to the normal
+    // map once the reset lands after hydration.
+    appliedHydrationRefV135.current = "";
     setLayers([]);
     setRecordsByElement({});
     setSpatialByElement({});
@@ -1735,7 +1741,14 @@ export default function RealMapExplorerPage({
     setActiveIds([]);
     setFocusId(null);
     setSelectedPresetId(null);
-    setComparisonModeV135(false);
+    // Opening a shared comparison link renders the workspace from the URL on
+    // the first paint. Clearing the flag unconditionally here tore it back down
+    // until hydration restored it, so the reader saw the comparison, then the
+    // normal map, then the comparison again. Honour the URL's intent instead;
+    // changeCountry still turns comparison off explicitly.
+    setComparisonModeV135(
+      initialState.comparisonMode && initialState.comparisonLayerIds.length === 2
+    );
     setRoleNotice("");
 
     if (!hasCountryDataProviderV122(countryIso3)) {

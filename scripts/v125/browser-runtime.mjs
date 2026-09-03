@@ -250,6 +250,25 @@ export async function launchHeadlessBrowser() {
       cdp.send("Runtime.enable"),
       cdp.send("Log.enable"),
     ]);
+
+    // Opt-in reproduction of a slower CI runner. Several release audits have
+    // failed only on GitHub because a wait was satisfied before the thing it
+    // was really waiting for existed; throttling makes those windows wide
+    // enough to observe locally. Unset by default, so normal runs are unchanged.
+    const cpuThrottle = Number(process.env.V135_THROTTLE_CPU || 0);
+    const netLatency = Number(process.env.V135_THROTTLE_LATENCY_MS || 0);
+    if (cpuThrottle > 1) {
+      await cdp.send("Emulation.setCPUThrottlingRate", { rate: cpuThrottle });
+    }
+    if (netLatency > 0) {
+      await cdp.send("Network.enable");
+      await cdp.send("Network.emulateNetworkConditions", {
+        offline: false,
+        latency: netLatency,
+        downloadThroughput: (1.5 * 1024 * 1024) / 8,
+        uploadThroughput: (750 * 1024) / 8,
+      });
+    }
     return {
       cdp,
       runtimeErrors,
@@ -302,12 +321,26 @@ export async function waitForValue(cdp, expression, options = {}) {
   const intervalMs = options.intervalMs ?? 100;
   const deadline = Date.now() + timeoutMs;
   let lastValue;
+  let lastError = null;
   while (Date.now() < deadline) {
-    lastValue = await evaluateValue(cdp, expression);
-    if (lastValue) return lastValue;
+    try {
+      lastValue = await evaluateValue(cdp, expression);
+      lastError = null;
+      if (lastValue) return lastValue;
+    } catch (error) {
+      // A document swapping under us destroys the execution context. That is a
+      // transient state on the way to the condition, not a verdict, so keep
+      // polling and only report it if the deadline is reached.
+      lastError = error instanceof Error ? error.message : String(error);
+      lastValue = undefined;
+    }
     await new Promise((resolveWait) => setTimeout(resolveWait, intervalMs));
   }
-  throw new Error(`condition timeout; last value: ${JSON.stringify(lastValue)}`);
+  throw new Error(
+    `condition timeout; last value: ${JSON.stringify(lastValue)}${
+      lastError ? `; last error: ${lastError}` : ""
+    }`
+  );
 }
 
 export async function setViewport(cdp, width, height = 1000) {
