@@ -1,0 +1,213 @@
+.ghg-sector-gas-v135 {
+  display: grid;
+  gap: 16px;
+  padding: 20px;
+  border: 1px solid #dfe7e3;
+  border-radius: 14px;
+  background: #fcfcfb;
+}
+
+.ghg-sector-gas-v135__header h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  color: #14322a;
+}
+
+.ghg-sector-gas-v135__header p {
+  margin: 0;
+  color: #4b5b55;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.ghg-sector-gas-v135__kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 0;
+}
+
+.ghg-sector-gas-v135__kpis > div {
+  padding: 12px 14px;
+  border: 1px solid #e4ebe8;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.ghg-sector-gas-v135__kpis dt {
+  margin: 0 0 4px;
+  color: #5c6b65;
+  font-size: 0.82rem;
+}
+
+.ghg-sector-gas-v135__kpis dd {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+  margin: 0;
+  color: #12302a;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.ghg-sector-gas-v135__kpis dd small {
+  color: #5c6b65;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.ghg-sector-gas-v135__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.85rem;
+  color: #3c4a45;
+}
+
+.ghg-sector-gas-v135__legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ghg-sector-gas-v135__legend i,
+.ghg-sector-gas-v135__gas-label i {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+.ghg-sector-gas-v135__chart-scroll {
+  overflow-x: auto;
+}
+
+.ghg-sector-gas-v135__chart {
+  display: block;
+  width: 100%;
+  min-width: 560px;
+  height: auto;
+}
+
+.ghg-sector-gas-v135__zero {
+  stroke: #9aa8a2;
+  stroke-width: 1;
+}
+
+.ghg-sector-gas-v135__row-label {
+  fill: #2c3a35;
+  font-size: 13px;
+}
+
+.ghg-sector-gas-v135__row-value {
+  fill: #45544e;
+  font-size: 12px;
+}
+
+.ghg-sector-gas-v135__axis-note {
+  fill: #6b7a74;
+  font-size: 11px;
+}
+
+.ghg-sector-gas-v135__secondary h4 {
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+  color: #14322a;
+}
+
+.ghg-sector-gas-v135__secondary ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ghg-sector-gas-v135__secondary li {
+  display: grid;
+  grid-template-columns: minmax(72px, auto) 1fr minmax(120px, auto);
+  align-items: center;
+  gap: 10px;
+  font-size: 0.86rem;
+  color: #33413c;
+}
+
+.ghg-sector-gas-v135__gas-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ghg-sector-gas-v135__gas-track {
+  display: block;
+  height: 10px;
+  border-radius: 999px;
+  background: #eef3f1;
+}
+
+.ghg-sector-gas-v135__gas-track > span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+}
+
+.ghg-sector-gas-v135__secondary b {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.ghg-sector-gas-v135__table summary {
+  cursor: pointer;
+  font-size: 0.88rem;
+  color: #1d4b3c;
+}
+
+.ghg-sector-gas-v135__table-scroll {
+  overflow-x: auto;
+  margin-top: 10px;
+}
+
+.ghg-sector-gas-v135__table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+}
+
+.ghg-sector-gas-v135__table caption {
+  padding-bottom: 8px;
+  color: #5c6b65;
+  text-align: left;
+}
+
+.ghg-sector-gas-v135__table th,
+.ghg-sector-gas-v135__table td {
+  padding: 7px 10px;
+  border-bottom: 1px solid #e8eeeb;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.ghg-sector-gas-v135__table thead th:first-child,
+.ghg-sector-gas-v135__table tbody th {
+  text-align: left;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .ghg-sector-gas-v135 {
+    padding: 16px;
+  }
+
+  .ghg-sector-gas-v135__secondary li {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .ghg-sector-gas-v135__secondary b {
+    text-align: left;
+  }
+}
