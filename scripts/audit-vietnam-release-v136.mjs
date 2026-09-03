@@ -45,6 +45,7 @@ const commands = [
   { name: "V136_PUBLIC_CONTROLS", command: "npm run audit:public-controls:v136" },
   { name: "V136_FINDER_SCROLL", command: "npm run audit:finder-scroll:v136" },
   { name: "V136_HUMAN_REVIEW", command: "npm run audit:human-review:v136" },
+  { name: "V136_WORKFLOW", command: "npm run audit:workflow:v136" },
 ];
 
 const commandResults = [];
@@ -104,6 +105,7 @@ const reportPaths = {
   publicControls: "reports/v136/public-controls-audit-v136.json",
   finderScroll: "reports/v136/finder-scroll-audit-v136.json",
   humanReview: "reports/v136/human-review-audit-v136.json",
+  workflow: "reports/v136/workflow-audit-v136.json",
 };
 const reports = Object.fromEntries(
   Object.entries(reportPaths).map(([key, path]) => [key, readJson(resolve(PROJECT_ROOT, path))])
@@ -121,6 +123,7 @@ const listUi = reports.mapListUi.value || {};
 const controls = reports.publicControls.value || {};
 const scroll = reports.finderScroll.value || {};
 const review = reports.humanReview.value || {};
+const workflow = reports.workflow.value || {};
 const mapAccess = reports.v135MapAccess.value || {};
 const mapGuide = reports.v135MapGuide.value || {};
 const glossary = reports.glossary.value || {};
@@ -164,6 +167,10 @@ audit.check("MAP_DATASET_HUMAN_REVIEW_COUNT", review.mapDatasetHumanReviewCount 
 audit.check("UNRESOLVED_REWRITE_COUNT", review.unresolvedRewriteCount === 0, review.unresolvedRewriteCount ?? null, 0);
 audit.check("UNRESOLVED_REMOVE_COUNT", review.unresolvedRemoveCount === 0, review.unresolvedRemoveCount ?? null, 0);
 audit.check("V136_1_REGRESSION", statuses.finderScroll === "PASS" && statuses.humanReview === "PASS", { finderScroll: statuses.finderScroll, humanReview: statuses.humanReview }, "PASS");
+audit.check("CI_CURRENT_RELEASE_GATE", workflow.ciCurrentGate === "finalize:v136", workflow.ciCurrentGate ?? null, "finalize:v136");
+audit.check("PAGES_CURRENT_RELEASE_GATE", workflow.pagesCurrentGate === "finalize:v136", workflow.pagesCurrentGate ?? null, "finalize:v136");
+audit.check("VISUAL_QA_CURRENT_CAPTURE", workflow.visualQaCurrentCapture === "capture:screenshots:v136", workflow.visualQaCurrentCapture ?? null, "capture:screenshots:v136");
+audit.check("OLD_V135_CURRENT_GATE_COUNT", workflow.oldV135CurrentGateCount === 0, workflow.oldV135CurrentGateCount ?? null, 0);
 audit.check("SCREENSHOT_CAPTURE_IS_RELEASE_BLOCKER", !commands.some((entry) => /screenshot|capture:/iu.test(entry.command)), commands.map((entry) => entry.command), "no screenshot command");
 audit.check("REMAINING_BLOCKERS", allCommandsPassed, commandResults.filter((item) => item.exitCode !== 0), []);
 

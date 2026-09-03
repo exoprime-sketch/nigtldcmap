@@ -1,0 +1,125 @@
+{
+  "schemaVersion": "v136-public-copy-acceptance-1",
+  "generatedAt": "2026-09-03T07:24:06.219Z",
+  "audit": "workflow:v136",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "workflow:v136",
+    "status": "PASS",
+    "passed": 9,
+    "failed": 0,
+    "total": 9,
+    "failedChecks": [],
+    "ciCurrentGate": "finalize:v136",
+    "pagesCurrentGate": "finalize:v136",
+    "visualQaCurrentCapture": "capture:screenshots:v136",
+    "ciReportPath": "reports/v136",
+    "pagesSmokeReportPath": "reports/v136/production-smoke-v136.json",
+    "visualQaScreenshotPath": "reports/v136/screenshots",
+    "screenshotCaptureIsReleaseBlocker": false,
+    "oldV135CurrentGateCount": 0
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "workflow:v136",
+      "name": "CI_CURRENT_RELEASE_GATE",
+      "status": "PASS",
+      "actual": {
+        "finalize": true
+      },
+      "expected": "finalize:v136"
+    },
+    {
+      "type": "check",
+      "audit": "workflow:v136",
+      "name": "PAGES_CURRENT_RELEASE_GATE",
+      "status": "PASS",
+      "actual": {
+        "finalize": true
+      },
+      "expected": "finalize:v136"
+    },
+    {
+      "type": "check",
+      "audit": "workflow:v136",
+      "name": "VISUAL_QA_CURRENT_CAPTURE",
+      "status": "PASS",
+      "actual": {
+        "capture": true
+      },
+      "expected": "capture:screenshots:v136"
+    },
+    {
+      "type": "check",
+      "audit": "workflow:v136",
+      "name": "CI_REPORT_PATH",
+      "status": "PASS",
+      "actual": {
+        "reportsV136": true
+      },
+      "expected": "reports/v136"
+    },
+    {
+      "type": "check",
+      "audit": "workflow:v136",
+      "name": "PAGES_SMOKE_REPORT_PATH",
+      "status": "PASS",
+      "actual": {
+        "smokePath": true
+      },
+      "expected": "reports/v136/production-smoke-v136.json"
+    },
+    {
+      "type": "check",
+      "audit": "workflow:v136",
+      "name": "VISUAL_QA_SCREENSHOT_PATH",
+      "status": "PASS",
+      "actual": {
+        "screenshotPath": true
+      },
+      "expected": "reports/v136/screenshots"
+    },
+    {
+      "type": "check",
+      "audit": "workflow:v136",
+      "name": "SCREENSHOT_CAPTURE_IS_RELEASE_BLOCKER",
+      "status": "PASS",
+      "actual": {
+        "captureInBlockingJob": false
+      },
+      "expected": false
+    },
+    {
+      "type": "check",
+      "audit": "workflow:v136",
+      "name": "VISUAL_QA_NON_BLOCKING",
+      "status": "PASS",
+      "actual": {
+        "captureContinuesOnError": true,
+        "visualQaHasNoGate": true
+      },
+      "expected": {
+        "captureContinuesOnError": true,
+        "visualQaHasNoGate": true
+      }
+    },
+    {
+      "type": "check",
+      "audit": "workflow:v136",
+      "name": "OLD_V135_CURRENT_GATE_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "ciCurrentGate": "finalize:v136",
+  "pagesCurrentGate": "finalize:v136",
+  "visualQaCurrentCapture": "capture:screenshots:v136",
+  "ciReportPath": "reports/v136",
+  "pagesSmokeReportPath": "reports/v136/production-smoke-v136.json",
+  "visualQaScreenshotPath": "reports/v136/screenshots",
+  "screenshotCaptureIsReleaseBlocker": false,
+  "oldV135CurrentGateCount": 0
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v136-public-copy-acceptance-1",
-  "generatedAt": "2026-09-03T07:05:37.710Z",
+  "generatedAt": "2026-09-03T07:23:29.533Z",
   "audit": "finder-scroll:v136",
   "status": "PASS",
   "summary": {
@@ -25,18 +25,18 @@
     ],
     "duplicateCardCount": 0,
     "filterReset": {
-      "visible": 73,
+      "visible": 48,
       "total": 73,
       "resetTo": 24
     },
     "backNav": {
       "beforeLeave": {
         "count": 96,
-        "scrollY": 14400
+        "scrollY": 14483
       },
       "afterBack": {
         "count": 96,
-        "scrollY": 14309
+        "scrollY": 14388
       }
     },
     "ariaContract": {
@@ -180,7 +180,7 @@
       "name": "FILTER_RESET_VISIBLE_COUNT",
       "status": "PASS",
       "actual": {
-        "visible": 73,
+        "visible": 48,
         "total": 73,
         "resetTo": 24
       },
@@ -196,11 +196,11 @@
       "actual": {
         "beforeLeave": {
           "count": 96,
-          "scrollY": 14400
+          "scrollY": 14483
         },
         "afterBack": {
           "count": 96,
-          "scrollY": 14309
+          "scrollY": 14388
         }
       },
       "expected": "restored revealed rows"
@@ -213,13 +213,13 @@
       "actual": {
         "beforeLeave": {
           "count": 96,
-          "scrollY": 14400
+          "scrollY": 14483
         },
         "afterBack": {
           "count": 96,
-          "scrollY": 14309
+          "scrollY": 14388
         },
-        "scrollDrift": 91
+        "scrollDrift": 95
       },
       "expected": "within 200px of the previous offset"
     },
@@ -279,18 +279,18 @@
   ],
   "duplicateCardCount": 0,
   "filterReset": {
-    "visible": 73,
+    "visible": 48,
     "total": 73,
     "resetTo": 24
   },
   "backNav": {
     "beforeLeave": {
       "count": 96,
-      "scrollY": 14400
+      "scrollY": 14483
     },
     "afterBack": {
       "count": 96,
-      "scrollY": 14309
+      "scrollY": 14388
     }
   },
   "ariaContract": {

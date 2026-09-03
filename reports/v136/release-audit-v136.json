@@ -1,15 +1,15 @@
 {
   "schemaVersion": "v136-public-copy-acceptance-1",
-  "generatedAt": "2026-09-03T07:06:16.755Z",
+  "generatedAt": "2026-09-03T07:24:06.288Z",
   "audit": "release:v136",
   "status": "PASS",
   "summary": {
     "type": "summary",
     "audit": "release:v136",
     "status": "PASS",
-    "passed": 69,
+    "passed": 74,
     "failed": 0,
-    "total": 69,
+    "total": 74,
     "failedChecks": [],
     "commandResults": [
       {
@@ -249,6 +249,13 @@
         "exitCode": 0,
         "signal": null,
         "error": null
+      },
+      {
+        "name": "V136_WORKFLOW",
+        "command": "npm run audit:workflow:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
       }
     ],
     "reportStatuses": {
@@ -284,7 +291,8 @@
       "mapCopy": "PASS",
       "publicControls": "PASS",
       "finderScroll": "PASS",
-      "humanReview": "PASS"
+      "humanReview": "PASS",
+      "workflow": "PASS"
     },
     "frameworkElements": 152,
     "accountedElements": 152,
@@ -844,6 +852,22 @@
     {
       "type": "check",
       "audit": "release:v136",
+      "name": "V136_WORKFLOW",
+      "status": "PASS",
+      "actual": {
+        "name": "V136_WORKFLOW",
+        "command": "npm run audit:workflow:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
       "name": "FRAMEWORK_ELEMENTS",
       "status": "PASS",
       "actual": 152,
@@ -1169,6 +1193,38 @@
     {
       "type": "check",
       "audit": "release:v136",
+      "name": "CI_CURRENT_RELEASE_GATE",
+      "status": "PASS",
+      "actual": "finalize:v136",
+      "expected": "finalize:v136"
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "PAGES_CURRENT_RELEASE_GATE",
+      "status": "PASS",
+      "actual": "finalize:v136",
+      "expected": "finalize:v136"
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "VISUAL_QA_CURRENT_CAPTURE",
+      "status": "PASS",
+      "actual": "capture:screenshots:v136",
+      "expected": "capture:screenshots:v136"
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "OLD_V135_CURRENT_GATE_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
       "name": "SCREENSHOT_CAPTURE_IS_RELEASE_BLOCKER",
       "status": "PASS",
       "actual": [
@@ -1205,7 +1261,8 @@
         "npm run audit:map-copy:v136",
         "npm run audit:public-controls:v136",
         "npm run audit:finder-scroll:v136",
-        "npm run audit:human-review:v136"
+        "npm run audit:human-review:v136",
+        "npm run audit:workflow:v136"
       ],
       "expected": "no screenshot command"
     },
@@ -1456,6 +1513,13 @@
       "exitCode": 0,
       "signal": null,
       "error": null
+    },
+    {
+      "name": "V136_WORKFLOW",
+      "command": "npm run audit:workflow:v136",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
     }
   ],
   "reportStatuses": {
@@ -1491,7 +1555,8 @@
     "mapCopy": "PASS",
     "publicControls": "PASS",
     "finderScroll": "PASS",
-    "humanReview": "PASS"
+    "humanReview": "PASS",
+    "workflow": "PASS"
   },
   "frameworkElements": 152,
   "accountedElements": 152,

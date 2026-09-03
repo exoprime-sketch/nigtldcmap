@@ -77,12 +77,12 @@ check(
 );
 
 const ciContract = {
-  finalize: /npm run finalize:v135/u.test(ci),
+  finalize: /npm run finalize:v136/u.test(ci),
   build: /npm run build/u.test(ci),
-  currentGateName: /Run V135 blocking release gate/u.test(ci),
-  currentReports: /reports\/v135\//u.test(ci),
-  screenshotCaptureSeparated: !/capture:screenshots:v13[45]/u.test(ci),
-  noLegacyGate: !/finalize:v128|finalize:v134|blocking V128 release gate/iu.test(ci),
+  currentGateName: /Run V136 blocking release gate/u.test(ci),
+  currentReports: /reports\/v136\//u.test(ci),
+  screenshotCaptureSeparated: !/capture:screenshots:v13[0-9]/u.test(ci),
+  noLegacyGate: !/finalize:v12[0-9]|finalize:v13[0-5]\b|blocking V128 release gate/iu.test(ci),
   noLocalSourceAudit: !/audit:source-local:v133|_source\//u.test(ci),
 };
 check(
@@ -93,14 +93,14 @@ check(
 );
 
 const pagesContract = {
-  finalize: /npm run finalize:v135/u.test(pages),
+  finalize: /npm run finalize:v136/u.test(pages),
   build: /npm run build/u.test(pages),
   publicUrl: /PUBLIC_URL/u.test(pages),
   deploy: /actions\/deploy-pages@/u.test(pages),
   smoke: /Smoke deployed production site|Smoke deployed URL/u.test(pages),
-  currentReports: /reports\/v135\//u.test(pages),
-  screenshotCaptureSeparated: !/capture:screenshots:v13[45]/u.test(pages),
-  noLegacyGate: !/finalize:v128|finalize:v134|blocking V128 release gate/iu.test(pages),
+  currentReports: /reports\/v136\//u.test(pages),
+  screenshotCaptureSeparated: !/capture:screenshots:v13[0-9]/u.test(pages),
+  noLegacyGate: !/finalize:v12[0-9]|finalize:v13[0-5]\b|blocking V128 release gate/iu.test(pages),
   noLocalSourceAudit: !/audit:source-local:v133|_source\//u.test(pages),
 };
 check(
