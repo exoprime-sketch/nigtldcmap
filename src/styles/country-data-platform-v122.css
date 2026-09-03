@@ -247,7 +247,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 300px;
+  min-height: 276px;
   padding: 22px;
 }
 
@@ -289,6 +289,19 @@
   margin: 0 0 16px;
   color: var(--cdp-muted);
   line-height: 1.58;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.cdp-card__facts--public-v135 {
+  padding: 12px 0;
+  border-block: 1px solid #e2e9e6;
+}
+
+.cdp-card__public-tags-v135 {
+  margin-bottom: 16px;
 }
 
 .cdp-card__facts {
@@ -2595,4 +2608,43 @@
   color: #195879;
   font-size: 0.72rem;
   font-weight: 800;
+}
+
+/* V135 two-year before/after change, used where a trend line would mislead. */
+.sv125-two-year-change-v135 {
+  display: grid;
+  gap: 10px;
+}
+
+.sv125-two-year-change-v135 > div {
+  display: grid;
+  grid-template-columns: minmax(140px, 1.2fr) minmax(180px, 1.6fr) minmax(120px, auto);
+  align-items: baseline;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid #e4ebe8;
+  border-radius: 10px;
+  background: #ffffff;
+  font-size: 0.88rem;
+}
+
+.sv125-two-year-change-v135 span {
+  color: #4b5b55;
+}
+
+.sv125-two-year-change-v135 b {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: #12302a;
+}
+
+@media (max-width: 640px) {
+  .sv125-two-year-change-v135 > div {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .sv125-two-year-change-v135 b {
+    text-align: left;
+  }
 }

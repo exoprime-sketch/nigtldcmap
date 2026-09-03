@@ -107,10 +107,24 @@ async function toggleContext(cdp, elementId) {
   );
 }
 
+const legendShapesExpressionV135 = `(() => {
+  const root = document.querySelector('[data-testid="map-public-content"]');
+  const items = [...document.querySelectorAll('[data-testid="map-active-layer-legend-item"]')].map((node) => ({
+    elementId: node.getAttribute('data-element-id') || '',
+    role: node.getAttribute('data-layer-role') || '',
+    shape: node.getAttribute('data-symbol-shape') || '',
+  }));
+  return {
+    contextCount: Number(root?.getAttribute('data-context-layer-count') || 0),
+    items,
+  };
+})()`;
+
 let server = null;
 let browser = null;
 let runtimeFailure = null;
 const presetSnapshots = [];
+const companionShapeSnapshots = [];
 const responsiveChecks = [];
 let distinctionSnapshot = null;
 try {
@@ -129,8 +143,12 @@ try {
   }
 
   await selectPreset(browser.cdp, "CLIMATE_VULNERABILITY");
-  await toggleContext(browser.cdp, "D-008");
-  await toggleContext(browser.cdp, "D-018");
+  for (const companionId of ["D-008", "D-018"]) {
+    await toggleContext(browser.cdp, companionId);
+    companionShapeSnapshots.push(
+      await evaluateValue(browser.cdp, legendShapesExpressionV135)
+    );
+  }
   distinctionSnapshot = await evaluateValue(
     browser.cdp,
     `(() => {
@@ -194,7 +212,10 @@ const defaultContextFailures = presetSnapshots.filter(
   (snapshot) => snapshot.primaryCount !== 1 || snapshot.contextCount !== 0
 );
 const contextShapes = new Map(
-  (distinctionSnapshot?.items || [])
+  [
+    ...companionShapeSnapshots.flatMap((snapshot) => snapshot?.items || []),
+    ...(distinctionSnapshot?.items || []),
+  ]
     .filter((item) => item.role === "context")
     .map((item) => [item.elementId, item.shape])
 );
@@ -243,9 +264,9 @@ audit.check(
 );
 audit.check(
   "CONTEXT_LAYER_MAX",
-  /contextLayers\s*:\s*2/u.test(workspaceSource) && Number(distinctionSnapshot?.contextCount || 0) <= 2,
+  /contextLayers\s*:\s*1/u.test(workspaceSource) && Number(distinctionSnapshot?.contextCount || 0) <= 1,
   distinctionSnapshot?.contextCount ?? null,
-  2
+  1
 );
 audit.check(
   "SIMULTANEOUS_POLYGON_FILL_CONTEXT_COUNT",
@@ -288,7 +309,7 @@ finishAuditV133(audit, "map-focus-audit-v133.json", {
   mapFeatureOrScopeCount: featureOrScopeCount,
   presetDefaultContextCount: defaultContextFailures.length === 0 ? 0 : null,
   primaryLayerMax: 1,
-  contextLayerMax: 2,
+  contextLayerMax: 1,
   simultaneousPolygonFillContextCount: polygonFillContextCount,
   renderedPolygonFillContextCount,
   presetSnapshots,

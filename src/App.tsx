@@ -175,6 +175,8 @@ function mapViewStatesEqual(a: MapViewState, b: MapViewState): boolean {
     a.focusLayerKey !== b.focusLayerKey ||
     a.primaryLayerId !== b.primaryLayerId ||
     a.mapPresetId !== b.mapPresetId ||
+    a.comparisonMode !== b.comparisonMode ||
+    a.comparisonLayerIds.length !== b.comparisonLayerIds.length ||
     a.contextLayerIds.length !== b.contextLayerIds.length ||
     a.activeLayerKeys.length !== b.activeLayerKeys.length
   ) {
@@ -194,6 +196,14 @@ function mapViewStatesEqual(a: MapViewState, b: MapViewState): boolean {
 
   for (let index = 0; index < a.contextLayerIds.length; index += 1) {
     if (a.contextLayerIds[index] !== b.contextLayerIds[index]) return false;
+  }
+
+  for (let index = 0; index < a.comparisonLayerIds.length; index += 1) {
+    if (a.comparisonLayerIds[index] !== b.comparisonLayerIds[index]) return false;
+  }
+
+  if (JSON.stringify(a.layerSelectors) !== JSON.stringify(b.layerSelectors)) {
+    return false;
   }
 
   return true;
@@ -255,6 +265,28 @@ function appendMapViewParams(
       : "none"
   );
   if (state.mapPresetId) params.set("mapPreset", state.mapPresetId);
+  if (state.comparisonMode && state.comparisonLayerIds.length === 2) {
+    params.set("mapMode", "compare");
+    params.set(
+      "compareLayers",
+      state.comparisonLayerIds
+        .map((key) => publicMapStateKeyV122(key, state.countryIso3))
+        .join(",")
+    );
+  }
+  if (Object.keys(state.layerSelectors).length > 0) {
+    params.set(
+      "mapSelectors",
+      JSON.stringify(
+        Object.fromEntries(
+          Object.entries(state.layerSelectors).map(([key, value]) => [
+            publicMapStateKeyV122(key, state.countryIso3),
+            value,
+          ])
+        )
+      )
+    );
+  }
   if (state.activeLayerKeys.length) {
     params.set(
       "layerYears",
@@ -753,6 +785,9 @@ export default function App() {
         primaryLayerId: null,
         contextLayerIds: [],
         mapPresetId: null,
+        comparisonMode: false,
+        comparisonLayerIds: [],
+        layerSelectors: {},
       }));
     }
 
@@ -850,6 +885,9 @@ export default function App() {
       primaryLayerId: elementId,
       contextLayerIds: [],
       mapPresetId: null,
+      comparisonMode: false,
+      comparisonLayerIds: [],
+      layerSelectors: {},
     }));
     setView("map");
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -1112,9 +1150,6 @@ export default function App() {
               onOpenDataFinder={() =>
                 openExplorerFromGlobalSearch("", "VNM", null)
               }
-              onOpenCountry={(iso3) => {
-                openExplorerFromGlobalSearch("", iso3, null);
-              }}
               onOpenDownload={(elementId, iso3) => {
                 if (iso3) setSelectedCountryIso3(iso3);
                 setDownloadCountryIso3(iso3);

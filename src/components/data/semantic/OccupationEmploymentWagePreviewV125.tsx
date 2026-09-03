@@ -12,6 +12,7 @@ import {
 } from "../../../data/visualization/publicFieldPolicyV126";
 
 import "./occupation-employment-wage-v125.css";
+import { PublicTermTextV134 } from "../../help/PublicTermV134";
 
 export type E012OccupationMeasureKeyV125 =
   | "occupation_employment_count"
@@ -231,8 +232,8 @@ export default function OccupationEmploymentWagePreviewV125({
         data-testid="e012-semantic-preview"
         aria-label="직군별 고용과 임금 시각화"
       >
-        <strong>표시할 실제 레코드가 없습니다</strong>
-        <p>값을 만들거나 0으로 대체하지 않았습니다.</p>
+        <strong>아직 공개된 값이 없습니다</strong>
+        <p>확인되지 않은 값을 임의로 채우지 않습니다.</p>
       </section>
     );
   }
@@ -429,13 +430,23 @@ function KpiCard({
   return (
     <article className="e012v125__kpi">
       <span>{label}</span>
-      <strong>{value === null ? "—" : formatValue(value, unit)}</strong>
+      <strong>
+        {value === null ? (
+          "—"
+        ) : (
+          <PublicTermTextV134 text={formatValue(value, unit)} />
+        )}
+      </strong>
       <small>
-        {value === null
-          ? emptyReason
-          : [year ? `${year}년` : null, unit || null]
+        {value === null ? (
+          emptyReason
+        ) : (
+          <PublicTermTextV134
+            text={[year ? `${year}년` : null, unit || null]
               .filter(Boolean)
               .join(" · ")}
+          />
+        )}
       </small>
     </article>
   );
@@ -684,9 +695,12 @@ function EmploymentWageScatter({
               transform={`translate(18 ${margin.top + plotHeight / 2}) rotate(-90)`}
               textAnchor="middle"
             >
-              월평균 임금 ({wageUnit})
+              월평균 임금
             </text>
           </svg>
+          <p className="e012v125__axis-unit-note">
+            세로축 단위: <PublicTermTextV134 text={wageUnit} />
+          </p>
 
           <details className="e012v125__table-fallback">
             <summary>산점도 표로 보기</summary>
@@ -705,8 +719,16 @@ function EmploymentWageScatter({
                   {points.map((point) => (
                     <tr key={point.occupation.key}>
                       <th scope="row">{point.occupation.label}</th>
-                      <td>{formatValue(point.employment, point.employmentUnit)}</td>
-                      <td>{formatValue(point.wage, point.wageUnit)}</td>
+                      <td>
+                        <PublicTermTextV134
+                          text={formatValue(point.employment, point.employmentUnit)}
+                        />
+                      </td>
+                      <td>
+                        <PublicTermTextV134
+                          text={formatValue(point.wage, point.wageUnit)}
+                        />
+                      </td>
                       <td>{SEX_LABELS[selection.sex]}</td>
                       <td>{selection.year}</td>
                     </tr>
@@ -786,7 +808,9 @@ function SexComparison({
                     style={{ width: percentWidth(row.male, maxValue) }}
                     aria-hidden="true"
                   />
-                  <small>{formatValue(row.male, row.unit)}</small>
+                  <small>
+                    <PublicTermTextV134 text={formatValue(row.male, row.unit)} />
+                  </small>
                 </div>
                 <div>
                   <span>여</span>
@@ -795,7 +819,9 @@ function SexComparison({
                     style={{ width: percentWidth(row.female, maxValue) }}
                     aria-hidden="true"
                   />
-                  <small>{formatValue(row.female, row.unit)}</small>
+                  <small>
+                    <PublicTermTextV134 text={formatValue(row.female, row.unit)} />
+                  </small>
                 </div>
               </div>
             ))}

@@ -196,6 +196,7 @@ async function selectFinanceType(cdp, type) {
   );
 }
 
+const climateStates = [];
 let server = null;
 let browser = null;
 let runtimeFailure = null;
@@ -213,9 +214,11 @@ try {
   });
 
   await selectPreset(browser.cdp, "CLIMATE_VULNERABILITY", "B-021");
-  await toggleContext(browser.cdp, "D-008");
-  await toggleContext(browser.cdp, "D-018");
-  climateSnapshot = await legendSnapshot(browser.cdp);
+  for (const companionId of ["D-008", "D-018"]) {
+    await toggleContext(browser.cdp, companionId);
+    climateStates.push(await legendSnapshot(browser.cdp));
+  }
+  climateSnapshot = climateStates[climateStates.length - 1];
 
   await selectPreset(browser.cdp, "CLIMATE_FINANCE_PROJECTS", "D-018");
   financeAdaptation = await legendSnapshot(browser.cdp);
@@ -229,10 +232,10 @@ try {
   const compareClicked = await evaluateValue(
     browser.cdp,
     `(() => {
-      const explicit = document.querySelector('[data-testid="map-finance-compare-v133"]');
+      const explicit = document.querySelector('[data-testid="map-compare-open-v135"]');
       const fallback = [...document.querySelectorAll('button')].find((node) => /비교해서 보기/u.test(node.textContent || ''));
       const button = explicit || fallback;
-      if (!(button instanceof HTMLButtonElement)) return false;
+      if (!(button instanceof HTMLElement)) return false;
       button.click();
       return true;
     })()`
@@ -240,23 +243,35 @@ try {
   if (!compareClicked) throw new Error("finance compare action unavailable");
   await waitForValue(
     browser.cdp,
-    `document.querySelector('[data-testid="map-public-content"]')?.getAttribute('data-context-layer-count') === '1'`,
+    `Boolean(document.querySelector('[data-testid="map-comparison-workspace-v135"]'))`,
     { timeoutMs: 35_000 }
   );
   await waitForValue(
     browser.cdp,
     `(() => {
-      const symbols = (document.querySelector('[data-testid="map-public-content"]')?.getAttribute('data-rendered-map-symbols') || '').split(',');
-      return symbols.includes('C-025|primary|square') && symbols.includes('D-018|context|diamond');
+      const pane = (side) => document.querySelector('[data-testid="map-compare-pane-' + side + '"]');
+      return pane('a')?.getAttribute('data-map-ready') === 'true' &&
+        pane('b')?.getAttribute('data-map-ready') === 'true';
     })()`,
-    { timeoutMs: 35_000 }
+    { timeoutMs: 45_000 }
   );
-  await waitForValue(
+  financeCompare = await evaluateValue(
     browser.cdp,
-    `Boolean(document.querySelector('.cdp-map-fallback__feature-control[data-element-id="C-025"][data-layer-role="primary"][data-symbol-shape="square"]')) && Boolean(document.querySelector('.cdp-map-fallback__feature-control[data-element-id="D-018"][data-layer-role="context"][data-symbol-shape="diamond"]'))`,
-    { timeoutMs: 35_000 }
+    `(() => {
+      const pane = (side) => {
+        const node = document.querySelector('[data-testid="map-compare-pane-' + side + '"]');
+        const swatch = node?.querySelector('[data-testid="map-comparison-legend-' + side + '"] i');
+        return {
+          elementId: node?.getAttribute('data-element-id') || '',
+          ready: node?.getAttribute('data-map-ready') || '',
+          legendText: String(node?.querySelector('[data-testid="map-comparison-legend-' + side + '"]')?.textContent || '')
+            .normalize('NFC').replace(/\\s+/gu, ' ').trim(),
+          color: swatch ? getComputedStyle(swatch).backgroundColor : '',
+        };
+      };
+      return { a: pane('a'), b: pane('b') };
+    })()`
   );
-  financeCompare = await legendSnapshot(browser.cdp);
 } catch (error) {
   runtimeFailure = error instanceof Error ? error.message : String(error);
 } finally {
@@ -264,7 +279,9 @@ try {
   if (server) await server.close();
 }
 
-const climateById = new Map((climateSnapshot?.items || []).map((item) => [item.elementId, item]));
+const climateById = new Map(
+  climateStates.flatMap((state) => state?.items || []).map((item) => [item.elementId, item])
+);
 const climateLegendIdentities = new Set(
   (climateSnapshot?.items || []).map((item) => [item.elementId, item.role].join("|"))
 );
@@ -326,28 +343,20 @@ const carbonOnly =
   financeCarbon.renderedPointSymbols[0]?.elementId === "C-025" &&
   financeCarbon.renderedPointSymbols[0]?.role === "primary" &&
   financeCarbon.renderedPointSymbols[0]?.shape === "square";
+const comparePair = [financeCompare?.a?.elementId, financeCompare?.b?.elementId]
+  .filter(Boolean)
+  .sort()
+  .join(",");
 const comparePass =
-  financeCompare?.items?.length === 2 &&
-  financeCompare.items.some(
-    (item) => item.elementId === "C-025" && item.role === "primary" && item.shape === "square"
-  ) &&
-  financeCompare.items.some(
-    (item) => item.elementId === "D-018" && item.role === "context" && item.shape === "diamond"
-  ) &&
-  !/GVI|지역 취약성|Quảng Bình/u.test(financeCompare?.hoverPopupText || "") &&
-  financeCompare?.renderedMapSymbols?.some(
-    (item) => item.elementId === "C-025" && item.role === "primary" && item.shape === "square"
-  ) &&
-  financeCompare?.renderedMapSymbols?.some(
-    (item) => item.elementId === "D-018" && item.role === "context" && item.shape === "diamond"
-  ) &&
-  financeCompare?.renderedPointSymbols?.length === 2 &&
-  financeCompare.renderedPointSymbols.some(
-    (item) => item.elementId === "C-025" && item.role === "primary" && item.shape === "square"
-  ) &&
-  financeCompare.renderedPointSymbols.some(
-    (item) => item.elementId === "D-018" && item.role === "context" && item.shape === "diamond"
-  );
+  comparePair === "C-025,D-018" &&
+  financeCompare?.a?.ready === "true" &&
+  financeCompare?.b?.ready === "true" &&
+  Boolean(financeCompare?.a?.color) &&
+  Boolean(financeCompare?.b?.color) &&
+  financeCompare.a.color !== financeCompare.b.color &&
+  Boolean(financeCompare?.a?.legendText) &&
+  Boolean(financeCompare?.b?.legendText) &&
+  financeCompare.a.legendText !== financeCompare.b.legendText;
 const financeSummaryPass = /사업 수/u.test(financeAdaptation?.summaryText || "") &&
   /금액/u.test(financeAdaptation?.summaryText || "") &&
   /위치|참여범위/u.test(financeAdaptation?.summaryText || "");
@@ -368,8 +377,8 @@ audit.check(
     visibleSymbolWithoutLegend === 0 &&
     liveSymbolsWithoutLegend.length === 0 &&
     legendWithoutLiveSymbol.length === 0 &&
-    climateSnapshot?.items?.length === 3 &&
-    new Set(climateRenderedIdentities.map((item) => item.elementId)).size === 3,
+    climateSnapshot?.items?.length === 2 &&
+    new Set(climateRenderedIdentities.map((item) => item.elementId)).size === 2,
   {
     runtimeFailure,
     visibleSymbolWithoutLegend,
@@ -391,7 +400,7 @@ audit.check(
 );
 audit.check("FINANCE_ADAPTATION_ONLY_DEFAULT", adaptationOnly, financeAdaptation, "D-018 only");
 audit.check("FINANCE_CARBON_ONLY_SELECTION", carbonOnly, financeCarbon, "C-025 only");
-audit.check("FINANCE_COMPARE_DISTINCT_SYMBOLS", comparePass, financeCompare, "two types with two symbols");
+audit.check("FINANCE_COMPARE_DISTINCT_SYMBOLS", comparePass, financeCompare, "two comparison panes with distinct colours and legends");
 audit.check("FINANCE_PORTFOLIO_SUMMARY", financeSummaryPass, financeAdaptation?.summaryText || "", "project count, amount, verified location/scope count");
 audit.check(
   "FINANCE_TYPE_SELECTOR_CONTRACT",

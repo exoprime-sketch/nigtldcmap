@@ -3,6 +3,7 @@ import { useMemo } from "react";
 import type { SemanticObservationV125 } from "../../../data/visualization/semanticTypesV125";
 import type { DataFinderSelectorStateV125 } from "../../../types/dataFinderV125";
 import "./climate-budget-allocation-v129.css";
+import { PublicTermTextV134 } from "../../help/PublicTermV134";
 
 interface Props {
   rows: SemanticObservationV125[];
@@ -202,7 +203,7 @@ export default function ClimateBudgetAllocationAnalysisV129({
           ))}
         </div>
         <p className="cab129__source-note">
-          CPEIR 2015의 동일한 총 기후변화 대응 지출 분모에서 세 구분의 합이 100%가 되는 공개값입니다.
+          <PublicTermTextV134 text="CPEIR 2015의 동일한 총 기후변화 대응 지출 분모에서 세 구분의 합이 100%가 되는 공개값입니다." />
         </p>
       </section>
 

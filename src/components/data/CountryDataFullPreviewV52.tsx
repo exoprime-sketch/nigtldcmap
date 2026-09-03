@@ -4,6 +4,7 @@ import {
   loadElementIndicatorSemanticsV125,
 } from "../../data/visualization/elementVisualizationRegistryV125";
 import { getPublicVisualizationSummaryV126 } from "../../data/visualization/publicVisualizationRegistryV126";
+import { resolvePublicTemporalDepthV135 } from "../../data/visualization/publicTemporalDepthV135";
 import type {
   ElementIndicatorSemanticsV125,
   ElementVisualizationContractV125,
@@ -27,6 +28,7 @@ interface Props {
   selectedIndicatorId?: string;
   selectorState?: DataFinderSelectorStateV125;
   onSelectorStateChange?: (state: DataFinderSelectorStateV125) => void;
+  spatialUnit?: string;
 }
 
 type SemanticRuntimeV125 = {
@@ -57,6 +59,7 @@ export default function CountryDataFullPreviewV52({
   selectedIndicatorId = "all",
   selectorState = DEFAULT_SELECTOR_STATE_V125,
   onSelectorStateChange = () => undefined,
+  spatialUnit,
 }: Props) {
   const [runtime, setRuntime] = useState<SemanticRuntimeV125 | null>(null);
   const [error, setError] = useState("");
@@ -108,6 +111,13 @@ export default function CountryDataFullPreviewV52({
       ),
     [countryNameKo, visibleEntities, visibleObservations]
   );
+  // V135: the visualization a screen is allowed to show follows from how many
+  // years the source data can actually compare, so the depth is derived from
+  // the loaded observations rather than declared per element.
+  const temporalDepthV135 = useMemo(
+    () => resolvePublicTemporalDepthV135(visibleObservations, indicators),
+    [indicators, visibleObservations]
+  );
   const publicSummary = getPublicVisualizationSummaryV126(elementId);
   const presentationTier = publicSummary?.presentationKind || "generic-fallback";
 
@@ -118,6 +128,7 @@ export default function CountryDataFullPreviewV52({
       data-element-id={elementId}
       data-presentation-tier={presentationTier}
       data-analysis-state={runtime ? "ready" : "loading"}
+      data-temporal-depth-v135={temporalDepthV135}
       data-testid="public-analysis-root"
     >
       <header className="cev123-heading">
@@ -153,6 +164,7 @@ export default function CountryDataFullPreviewV52({
           selectorState={selectorState}
           onSelectorStateChange={onSelectorStateChange}
           detailTemplate={detailTemplate}
+          spatialUnit={spatialUnit}
         />
       )}
     </section>

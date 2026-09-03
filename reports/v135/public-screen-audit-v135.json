@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "v135-final-public-screen-audit-1",
+  "generatedAt": "2026-09-03T05:25:26.423Z",
+  "audit": "public-screen:v135",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "public-screen:v135",
+    "status": "PASS",
+    "passed": 8,
+    "failed": 0,
+    "total": 8,
+    "failedChecks": [],
+    "inspectedRoutes": 5,
+    "inspectedDetailRoutes": 152,
+    "publicGenericCopyCount": 0,
+    "runtimeFailure": null
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "public-screen:v135",
+      "name": "FRAMEWORK_ELEMENTS",
+      "status": "PASS",
+      "actual": 152,
+      "expected": 152
+    },
+    {
+      "type": "check",
+      "audit": "public-screen:v135",
+      "name": "PUBLIC_SCREEN_RUNTIME",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null
+      },
+      "expected": {
+        "runtimeFailure": null
+      }
+    },
+    {
+      "type": "check",
+      "audit": "public-screen:v135",
+      "name": "PUBLIC_ROUTE_CONTRACT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "public-screen:v135",
+      "name": "NO_NEW_PUBLIC_PAGE",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "public-screen:v135",
+      "name": "PUBLIC_GENERIC_COPY_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "public-screen:v135",
+      "name": "PUBLIC_HORIZONTAL_OVERFLOW",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "public-screen:v135",
+      "name": "BROKEN_ASSET",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "public-screen:v135",
+      "name": "CONSOLE_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "inspectedRoutes": 5,
+  "inspectedDetailRoutes": 152,
+  "publicGenericCopyCount": 0,
+  "runtimeFailure": null
+}

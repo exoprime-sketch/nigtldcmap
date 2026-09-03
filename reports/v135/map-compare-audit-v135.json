@@ -1,0 +1,562 @@
+{
+  "schemaVersion": "v135-final-public-screen-audit-1",
+  "generatedAt": "2026-09-03T05:24:52.906Z",
+  "audit": "map-compare:v135",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "map-compare:v135",
+    "status": "PASS",
+    "passed": 10,
+    "failed": 0,
+    "total": 10,
+    "failedChecks": [],
+    "pairResults": [
+      {
+        "name": "finance",
+        "a": "D-018",
+        "b": "C-025",
+        "selection": {
+          "changed": true,
+          "changedA": true,
+          "changedB": true
+        },
+        "snapshot": {
+          "present": true,
+          "mode": "side-by-side",
+          "synchronized": "true",
+          "a": {
+            "box": {
+              "left": 0,
+              "right": 712,
+              "top": 90.953125,
+              "bottom": 1000,
+              "width": 712,
+              "height": 909.046875
+            },
+            "elementId": "D-018",
+            "legendCount": 1,
+            "selectorCount": 3,
+            "viewBox": "",
+            "text": "데이터 A데이터 A 선택발전소베트남 송전망재생에너지 지역계획산림 총면적수관 피복률연간 산림손실산림 탄소지역 취약성주요 광산탄소크레딧 사업지역 기후예산적응기금 사업측정항목지역 협력범위·세부 활동지역기준연도·기간2026적응기금 사업지역 협력범위·세부 활동지역 · 사업 · 2026지역 협력사업 2건의 참여국 범위 2개와 검증된 세부 활동지역 2곳"
+          },
+          "b": {
+            "box": {
+              "left": 713,
+              "right": 1425,
+              "top": 90.953125,
+              "bottom": 1000,
+              "width": 712,
+              "height": 909.046875
+            },
+            "elementId": "C-025",
+            "legendCount": 1,
+            "selectorCount": 3,
+            "viewBox": "",
+            "text": "데이터 B데이터 B 선택발전소베트남 송전망재생에너지 지역계획산림 총면적수관 피복률연간 산림손실산림 탄소지역 취약성주요 광산탄소크레딧 사업지역 기후예산적응기금 사업측정항목탄소크레딧 사업기준연도·기간2026탄소크레딧 사업탄소크레딧 사업 · 개 · 2026위치자료 18건"
+          },
+          "url": "http://127.0.0.1:54155/?layer=electricityGap&layers=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye%2Ctansokeuredis-balhaeng-sogag-siljeog-peurojegteumyeong-deungrog-pyojun-vcs-gs-gugga-gisul&layerOpacities=0.78%2C0.78&focusLayer=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye&primaryLayer=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye&contextLayers=none&mapMode=compare&compareLayers=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye%2Ctansokeuredis-balhaeng-sogag-siljeog-peurojegteumyeong-deungrog-pyojun-vcs-gs-gugga-gisul&mapSelectors=%7B%22adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye%22%3A%7B%22variable%22%3A%22regional-scope%22%2C%22period%22%3A%222026%22%7D%2C%22tansokeuredis-balhaeng-sogag-siljeog-peurojegteumyeong-deungrog-pyojun-vcs-gs-gugga-gisul%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222026%22%7D%7D&layerYears=2026%2C2026&scope=priority&country=VNM&baseOpacity=0.58&element=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye#map",
+          "pageOverflow": -15,
+          "backAction": true
+        }
+      },
+      {
+        "name": "vulnerability-budget",
+        "a": "B-021",
+        "b": "D-008",
+        "selection": {
+          "changed": true,
+          "changedA": true,
+          "changedB": true
+        },
+        "snapshot": {
+          "present": true,
+          "mode": "side-by-side",
+          "synchronized": "true",
+          "a": {
+            "box": {
+              "left": 0,
+              "right": 712,
+              "top": 90.953125,
+              "bottom": 1000,
+              "width": 712,
+              "height": 909.046875
+            },
+            "elementId": "B-021",
+            "legendCount": 1,
+            "selectorCount": 3,
+            "viewBox": "",
+            "text": "데이터 A데이터 A 선택발전소베트남 송전망재생에너지 지역계획산림 총면적수관 피복률연간 산림손실산림 탄소지역 취약성주요 광산탄소크레딧 사업지역 기후예산적응기금 사업측정항목GVI 취약성 지수 — 지역(6권역)구성지표 — 1인당 GNI(로그)구성지표 — 기대수명구성지표 — 도시화율구성지표 — 부양비구성지표 — 빈곤 가구 비율(IWI<70)구성지표 — 상수도 보급 가구 비율구성지표 — 성개발지수(GDI)구성지표 — 전기 보급 가구 비율구성지표 — 종합 지방부패지수(SCI)구성지표 — 평균 교육연수(25세 이상)구성지표 — 휴대폰 보유 가구 비율기준연도·기간200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023지역 취약성GVI 취약성 지수 — 지역(6권역) · 0–100 지수 · 2023GDL 6개 권역값을 명시적 대응표로 63개 성·시 경계에 표시"
+          },
+          "b": {
+            "box": {
+              "left": 713,
+              "right": 1425,
+              "top": 90.953125,
+              "bottom": 1000,
+              "width": 712,
+              "height": 909.046875
+            },
+            "elementId": "D-008",
+            "legendCount": 1,
+            "selectorCount": 3,
+            "viewBox": "",
+            "text": "데이터 B데이터 B 선택발전소베트남 송전망재생에너지 지역계획산림 총면적수관 피복률연간 산림손실산림 탄소지역 취약성주요 광산탄소크레딧 사업지역 기후예산적응기금 사업측정항목성 단위 기후변화 지출 누계기준연도·기간2010-2013지역 기후예산성 단위 기후변화 지출 누계 · VND · 2010-2013개편 전 63개 성·시 중 선택 계열 최대 3개"
+          },
+          "url": "http://127.0.0.1:54155/?layer=electricityGap&layers=global-data-lab-gvi-vulnerability-index%2Cjugwan-buceobyeol-gihu-yesan-gyumo&layerOpacities=0.78%2C0.78&focusLayer=global-data-lab-gvi-vulnerability-index&primaryLayer=global-data-lab-gvi-vulnerability-index&contextLayers=none&mapMode=compare&compareLayers=global-data-lab-gvi-vulnerability-index%2Cjugwan-buceobyeol-gihu-yesan-gyumo&mapSelectors=%7B%22global-data-lab-gvi-vulnerability-index%22%3A%7B%22variable%22%3A%22gvi-6%22%2C%22period%22%3A%222023%22%7D%2C%22jugwan-buceobyeol-gihu-yesan-gyumo%22%3A%7B%22variable%22%3A%22provincial-climate-budget%22%2C%22period%22%3A%222010-2013%22%7D%7D&layerYears=2023%2C2010&scope=priority&country=VNM&baseOpacity=0.58&element=global-data-lab-gvi-vulnerability-index#map",
+          "pageOverflow": -15,
+          "backAction": true
+        }
+      },
+      {
+        "name": "forest",
+        "a": "B-033",
+        "b": "B-034",
+        "selection": {
+          "changed": true,
+          "changedA": true,
+          "changedB": true
+        },
+        "snapshot": {
+          "present": true,
+          "mode": "side-by-side",
+          "synchronized": "true",
+          "a": {
+            "box": {
+              "left": 0,
+              "right": 712,
+              "top": 90.953125,
+              "bottom": 1000,
+              "width": 712,
+              "height": 909.046875
+            },
+            "elementId": "B-033",
+            "legendCount": 1,
+            "selectorCount": 3,
+            "viewBox": "",
+            "text": "데이터 A데이터 A 선택발전소베트남 송전망재생에너지 지역계획산림 총면적수관 피복률연간 산림손실산림 탄소지역 취약성주요 광산탄소크레딧 사업지역 기후예산적응기금 사업측정항목연간 수관 손실 — 성(省) 단위기준연도·기간2001200220032004200520062007200820092010201120122013201420152016201720182019202020212022202320242025연간 산림손실연간 수관 손실 — 성(省) 단위 · ha/yr · 2025개편 전 63개 성·시 중 선택 계열 최대 63개"
+          },
+          "b": {
+            "box": {
+              "left": 713,
+              "right": 1425,
+              "top": 90.953125,
+              "bottom": 1000,
+              "width": 712,
+              "height": 909.046875
+            },
+            "elementId": "B-034",
+            "legendCount": 1,
+            "selectorCount": 3,
+            "viewBox": "",
+            "text": "데이터 B데이터 B 선택발전소베트남 송전망재생에너지 지역계획산림 총면적수관 피복률연간 산림손실산림 탄소지역 취약성주요 광산탄소크레딧 사업지역 기후예산적응기금 사업측정항목산림탄소 순플럭스 — 성(省) 단위성(省)별 산림탄소 순플럭스(연평균)성(省)별 산림탄소 총배출(연평균)성(省)별 산림탄소 총흡수(연평균)성(省)별 지상부 탄소밀도성(省)별 지상부 탄소저장량지상부 탄소저장량 — 성(省) 단위기준연도·기간2025산림 탄소성(省)별 산림탄소 순플럭스(연평균) · Mg CO₂e/yr · 2025개편 전 63개 성·시 중 선택 계열 최대 63개"
+          },
+          "url": "http://127.0.0.1:54155/?layer=electricityGap&layers=yeongan-sanrim-sonsil%2Ctanso-jeojangryang&layerOpacities=0.78%2C0.78&focusLayer=yeongan-sanrim-sonsil&primaryLayer=yeongan-sanrim-sonsil&contextLayers=none&mapMode=compare&compareLayers=yeongan-sanrim-sonsil%2Ctanso-jeojangryang&mapSelectors=%7B%22yeongan-sanrim-sonsil%22%3A%7B%22variable%22%3A%22annual-tree-cover-loss%22%2C%22period%22%3A%222025%22%7D%2C%22tanso-jeojangryang%22%3A%7B%22variable%22%3A%228fca7c8dd189%22%2C%22period%22%3A%222025%22%7D%7D&layerYears=2025%2C2025&scope=priority&country=VNM&baseOpacity=0.58&element=yeongan-sanrim-sonsil#map",
+          "pageOverflow": -15,
+          "backAction": true
+        }
+      }
+    ],
+    "compareSideBySideDesktop": true,
+    "compareStackedMobile": true,
+    "compareUrlRestoration": true,
+    "compareRuntimeErrorCount": 0,
+    "runtimeFailure": null
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "map-compare:v135",
+      "name": "COMPARE_RUNTIME",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null,
+        "present": true
+      },
+      "expected": {
+        "present": true
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-compare:v135",
+      "name": "COMPARE_PAIR_COVERAGE",
+      "status": "PASS",
+      "actual": [
+        {
+          "name": "finance",
+          "selection": {
+            "changed": true,
+            "changedA": true,
+            "changedB": true
+          },
+          "present": true
+        },
+        {
+          "name": "vulnerability-budget",
+          "selection": {
+            "changed": true,
+            "changedA": true,
+            "changedB": true
+          },
+          "present": true
+        },
+        {
+          "name": "forest",
+          "selection": {
+            "changed": true,
+            "changedA": true,
+            "changedB": true
+          },
+          "present": true
+        }
+      ],
+      "expected": 3
+    },
+    {
+      "type": "check",
+      "audit": "map-compare:v135",
+      "name": "COMPARE_SIDE_BY_SIDE_DESKTOP",
+      "status": "PASS",
+      "actual": {
+        "present": true,
+        "mode": "side-by-side",
+        "synchronized": "true",
+        "a": {
+          "box": {
+            "left": 0,
+            "right": 712,
+            "top": 90.953125,
+            "bottom": 1000,
+            "width": 712,
+            "height": 909.046875
+          },
+          "elementId": "D-018",
+          "legendCount": 1,
+          "selectorCount": 3,
+          "viewBox": "",
+          "text": "데이터 A데이터 A 선택발전소베트남 송전망재생에너지 지역계획산림 총면적수관 피복률연간 산림손실산림 탄소지역 취약성주요 광산탄소크레딧 사업지역 기후예산적응기금 사업측정항목지역 협력범위·세부 활동지역기준연도·기간2026적응기금 사업지역 협력범위·세부 활동지역 · 사업 · 2026지역 협력사업 2건의 참여국 범위 2개와 검증된 세부 활동지역 2곳"
+        },
+        "b": {
+          "box": {
+            "left": 713,
+            "right": 1425,
+            "top": 90.953125,
+            "bottom": 1000,
+            "width": 712,
+            "height": 909.046875
+          },
+          "elementId": "C-025",
+          "legendCount": 1,
+          "selectorCount": 3,
+          "viewBox": "",
+          "text": "데이터 B데이터 B 선택발전소베트남 송전망재생에너지 지역계획산림 총면적수관 피복률연간 산림손실산림 탄소지역 취약성주요 광산탄소크레딧 사업지역 기후예산적응기금 사업측정항목탄소크레딧 사업기준연도·기간2026탄소크레딧 사업탄소크레딧 사업 · 개 · 2026위치자료 18건"
+        },
+        "url": "http://127.0.0.1:54155/?layer=electricityGap&layers=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye%2Ctansokeuredis-balhaeng-sogag-siljeog-peurojegteumyeong-deungrog-pyojun-vcs-gs-gugga-gisul&layerOpacities=0.78%2C0.78&focusLayer=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye&primaryLayer=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye&contextLayers=none&mapMode=compare&compareLayers=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye%2Ctansokeuredis-balhaeng-sogag-siljeog-peurojegteumyeong-deungrog-pyojun-vcs-gs-gugga-gisul&mapSelectors=%7B%22adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye%22%3A%7B%22variable%22%3A%22regional-scope%22%2C%22period%22%3A%222026%22%7D%2C%22tansokeuredis-balhaeng-sogag-siljeog-peurojegteumyeong-deungrog-pyojun-vcs-gs-gugga-gisul%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222026%22%7D%7D&layerYears=2026%2C2026&scope=priority&country=VNM&baseOpacity=0.58&element=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye#map",
+        "pageOverflow": -15,
+        "backAction": true
+      },
+      "expected": "two non-overlapping horizontal panes"
+    },
+    {
+      "type": "check",
+      "audit": "map-compare:v135",
+      "name": "COMPARE_STACKED_MOBILE",
+      "status": "PASS",
+      "actual": {
+        "present": true,
+        "mode": "side-by-side",
+        "synchronized": "true",
+        "a": {
+          "box": {
+            "left": 0,
+            "right": 360,
+            "top": 92.390625,
+            "bottom": 612.390625,
+            "width": 360,
+            "height": 520
+          },
+          "elementId": "D-018",
+          "legendCount": 1,
+          "selectorCount": 3,
+          "viewBox": "",
+          "text": "데이터 A데이터 A 선택발전소베트남 송전망재생에너지 지역계획산림 총면적수관 피복률연간 산림손실산림 탄소지역 취약성주요 광산탄소크레딧 사업지역 기후예산적응기금 사업측정항목지역 협력범위·세부 활동지역기준연도·기간2026적응기금 사업지역 협력범위·세부 활동지역 · 사업 · 2026지역 협력사업 2건의 참여국 범위 2개와 검증된 세부 활동지역 2곳"
+        },
+        "b": {
+          "box": {
+            "left": 0,
+            "right": 360,
+            "top": 613.390625,
+            "bottom": 1133.390625,
+            "width": 360,
+            "height": 520
+          },
+          "elementId": "C-025",
+          "legendCount": 1,
+          "selectorCount": 3,
+          "viewBox": "",
+          "text": "데이터 B데이터 B 선택발전소베트남 송전망재생에너지 지역계획산림 총면적수관 피복률연간 산림손실산림 탄소지역 취약성주요 광산탄소크레딧 사업지역 기후예산적응기금 사업측정항목탄소크레딧 사업기준연도·기간2026탄소크레딧 사업탄소크레딧 사업 · 개 · 2026위치자료 18건"
+        },
+        "url": "http://127.0.0.1:54155/?layer=electricityGap&layers=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye%2Ctansokeuredis-balhaeng-sogag-siljeog-peurojegteumyeong-deungrog-pyojun-vcs-gs-gugga-gisul&layerOpacities=0.78%2C0.78&focusLayer=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye&primaryLayer=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye&contextLayers=none&mapMode=compare&compareLayers=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye%2Ctansokeuredis-balhaeng-sogag-siljeog-peurojegteumyeong-deungrog-pyojun-vcs-gs-gugga-gisul&mapSelectors=%7B%22adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye%22%3A%7B%22variable%22%3A%22regional-scope%22%2C%22period%22%3A%222026%22%7D%2C%22tansokeuredis-balhaeng-sogag-siljeog-peurojegteumyeong-deungrog-pyojun-vcs-gs-gugga-gisul%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222026%22%7D%7D&layerYears=2026%2C2026&scope=priority&country=VNM&baseOpacity=0.58&element=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye#map",
+        "pageOverflow": -15,
+        "backAction": true
+      },
+      "expected": "two stacked panes without overflow"
+    },
+    {
+      "type": "check",
+      "audit": "map-compare:v135",
+      "name": "COMPARE_INDEPENDENT_LEGENDS",
+      "status": "PASS",
+      "actual": [
+        {
+          "name": "finance",
+          "a": 1,
+          "b": 1
+        },
+        {
+          "name": "vulnerability-budget",
+          "a": 1,
+          "b": 1
+        },
+        {
+          "name": "forest",
+          "a": 1,
+          "b": 1
+        }
+      ],
+      "expected": "both panes have legends"
+    },
+    {
+      "type": "check",
+      "audit": "map-compare:v135",
+      "name": "COMPARE_SYNCHRONIZED_VIEW",
+      "status": "PASS",
+      "actual": {
+        "runtimeSyncEvidence": true,
+        "sourceSyncContract": true
+      },
+      "expected": true
+    },
+    {
+      "type": "check",
+      "audit": "map-compare:v135",
+      "name": "COMPARE_URL_RESTORATION",
+      "status": "PASS",
+      "actual": {
+        "present": true,
+        "mode": "side-by-side",
+        "synchronized": "true",
+        "a": {
+          "box": {
+            "left": 0,
+            "right": 712,
+            "top": 90.953125,
+            "bottom": 1000,
+            "width": 712,
+            "height": 909.046875
+          },
+          "elementId": "D-018",
+          "legendCount": 1,
+          "selectorCount": 3,
+          "viewBox": "",
+          "text": "데이터 A데이터 A 선택발전소베트남 송전망재생에너지 지역계획산림 총면적수관 피복률연간 산림손실산림 탄소지역 취약성주요 광산탄소크레딧 사업지역 기후예산적응기금 사업측정항목기준연도·기간선택한 지도 데이터를 불러오는 중입니다지도 데이터 준비 중"
+        },
+        "b": {
+          "box": {
+            "left": 713,
+            "right": 1425,
+            "top": 90.953125,
+            "bottom": 1000,
+            "width": 712,
+            "height": 909.046875
+          },
+          "elementId": "C-025",
+          "legendCount": 1,
+          "selectorCount": 3,
+          "viewBox": "",
+          "text": "데이터 B데이터 B 선택발전소베트남 송전망재생에너지 지역계획산림 총면적수관 피복률연간 산림손실산림 탄소지역 취약성주요 광산탄소크레딧 사업지역 기후예산적응기금 사업측정항목기준연도·기간선택한 지도 데이터를 불러오는 중입니다지도 데이터 준비 중"
+        },
+        "url": "http://127.0.0.1:54155/?layer=electricityGap&layers=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye&layerOpacities=0.78&focusLayer=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye&primaryLayer=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye&contextLayers=none&mapMode=compare&compareLayers=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye%2Ctansokeuredis-balhaeng-sogag-siljeog-peurojegteumyeong-deungrog-pyojun-vcs-gs-gugga-gisul&mapSelectors=%7B%22adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye%22%3A%7B%22variable%22%3A%22regional-scope%22%2C%22period%22%3A%222026%22%7D%2C%22tansokeuredis-balhaeng-sogag-siljeog-peurojegteumyeong-deungrog-pyojun-vcs-gs-gugga-gisul%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222026%22%7D%7D&layerYears=2026&scope=priority&country=VNM&baseOpacity=0.58&element=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye#map",
+        "pageOverflow": -15,
+        "backAction": true
+      },
+      "expected": true
+    },
+    {
+      "type": "check",
+      "audit": "map-compare:v135",
+      "name": "COMPARE_NORMAL_MAP_RETURN",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "type": "check",
+      "audit": "map-compare:v135",
+      "name": "COMPARE_RUNTIME_ERROR_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-compare:v135",
+      "name": "BROKEN_ASSET",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "pairResults": [
+    {
+      "name": "finance",
+      "a": "D-018",
+      "b": "C-025",
+      "selection": {
+        "changed": true,
+        "changedA": true,
+        "changedB": true
+      },
+      "snapshot": {
+        "present": true,
+        "mode": "side-by-side",
+        "synchronized": "true",
+        "a": {
+          "box": {
+            "left": 0,
+            "right": 712,
+            "top": 90.953125,
+            "bottom": 1000,
+            "width": 712,
+            "height": 909.046875
+          },
+          "elementId": "D-018",
+          "legendCount": 1,
+          "selectorCount": 3,
+          "viewBox": "",
+          "text": "데이터 A데이터 A 선택발전소베트남 송전망재생에너지 지역계획산림 총면적수관 피복률연간 산림손실산림 탄소지역 취약성주요 광산탄소크레딧 사업지역 기후예산적응기금 사업측정항목지역 협력범위·세부 활동지역기준연도·기간2026적응기금 사업지역 협력범위·세부 활동지역 · 사업 · 2026지역 협력사업 2건의 참여국 범위 2개와 검증된 세부 활동지역 2곳"
+        },
+        "b": {
+          "box": {
+            "left": 713,
+            "right": 1425,
+            "top": 90.953125,
+            "bottom": 1000,
+            "width": 712,
+            "height": 909.046875
+          },
+          "elementId": "C-025",
+          "legendCount": 1,
+          "selectorCount": 3,
+          "viewBox": "",
+          "text": "데이터 B데이터 B 선택발전소베트남 송전망재생에너지 지역계획산림 총면적수관 피복률연간 산림손실산림 탄소지역 취약성주요 광산탄소크레딧 사업지역 기후예산적응기금 사업측정항목탄소크레딧 사업기준연도·기간2026탄소크레딧 사업탄소크레딧 사업 · 개 · 2026위치자료 18건"
+        },
+        "url": "http://127.0.0.1:54155/?layer=electricityGap&layers=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye%2Ctansokeuredis-balhaeng-sogag-siljeog-peurojegteumyeong-deungrog-pyojun-vcs-gs-gugga-gisul&layerOpacities=0.78%2C0.78&focusLayer=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye&primaryLayer=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye&contextLayers=none&mapMode=compare&compareLayers=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye%2Ctansokeuredis-balhaeng-sogag-siljeog-peurojegteumyeong-deungrog-pyojun-vcs-gs-gugga-gisul&mapSelectors=%7B%22adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye%22%3A%7B%22variable%22%3A%22regional-scope%22%2C%22period%22%3A%222026%22%7D%2C%22tansokeuredis-balhaeng-sogag-siljeog-peurojegteumyeong-deungrog-pyojun-vcs-gs-gugga-gisul%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222026%22%7D%7D&layerYears=2026%2C2026&scope=priority&country=VNM&baseOpacity=0.58&element=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye#map",
+        "pageOverflow": -15,
+        "backAction": true
+      }
+    },
+    {
+      "name": "vulnerability-budget",
+      "a": "B-021",
+      "b": "D-008",
+      "selection": {
+        "changed": true,
+        "changedA": true,
+        "changedB": true
+      },
+      "snapshot": {
+        "present": true,
+        "mode": "side-by-side",
+        "synchronized": "true",
+        "a": {
+          "box": {
+            "left": 0,
+            "right": 712,
+            "top": 90.953125,
+            "bottom": 1000,
+            "width": 712,
+            "height": 909.046875
+          },
+          "elementId": "B-021",
+          "legendCount": 1,
+          "selectorCount": 3,
+          "viewBox": "",
+          "text": "데이터 A데이터 A 선택발전소베트남 송전망재생에너지 지역계획산림 총면적수관 피복률연간 산림손실산림 탄소지역 취약성주요 광산탄소크레딧 사업지역 기후예산적응기금 사업측정항목GVI 취약성 지수 — 지역(6권역)구성지표 — 1인당 GNI(로그)구성지표 — 기대수명구성지표 — 도시화율구성지표 — 부양비구성지표 — 빈곤 가구 비율(IWI<70)구성지표 — 상수도 보급 가구 비율구성지표 — 성개발지수(GDI)구성지표 — 전기 보급 가구 비율구성지표 — 종합 지방부패지수(SCI)구성지표 — 평균 교육연수(25세 이상)구성지표 — 휴대폰 보유 가구 비율기준연도·기간200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023지역 취약성GVI 취약성 지수 — 지역(6권역) · 0–100 지수 · 2023GDL 6개 권역값을 명시적 대응표로 63개 성·시 경계에 표시"
+        },
+        "b": {
+          "box": {
+            "left": 713,
+            "right": 1425,
+            "top": 90.953125,
+            "bottom": 1000,
+            "width": 712,
+            "height": 909.046875
+          },
+          "elementId": "D-008",
+          "legendCount": 1,
+          "selectorCount": 3,
+          "viewBox": "",
+          "text": "데이터 B데이터 B 선택발전소베트남 송전망재생에너지 지역계획산림 총면적수관 피복률연간 산림손실산림 탄소지역 취약성주요 광산탄소크레딧 사업지역 기후예산적응기금 사업측정항목성 단위 기후변화 지출 누계기준연도·기간2010-2013지역 기후예산성 단위 기후변화 지출 누계 · VND · 2010-2013개편 전 63개 성·시 중 선택 계열 최대 3개"
+        },
+        "url": "http://127.0.0.1:54155/?layer=electricityGap&layers=global-data-lab-gvi-vulnerability-index%2Cjugwan-buceobyeol-gihu-yesan-gyumo&layerOpacities=0.78%2C0.78&focusLayer=global-data-lab-gvi-vulnerability-index&primaryLayer=global-data-lab-gvi-vulnerability-index&contextLayers=none&mapMode=compare&compareLayers=global-data-lab-gvi-vulnerability-index%2Cjugwan-buceobyeol-gihu-yesan-gyumo&mapSelectors=%7B%22global-data-lab-gvi-vulnerability-index%22%3A%7B%22variable%22%3A%22gvi-6%22%2C%22period%22%3A%222023%22%7D%2C%22jugwan-buceobyeol-gihu-yesan-gyumo%22%3A%7B%22variable%22%3A%22provincial-climate-budget%22%2C%22period%22%3A%222010-2013%22%7D%7D&layerYears=2023%2C2010&scope=priority&country=VNM&baseOpacity=0.58&element=global-data-lab-gvi-vulnerability-index#map",
+        "pageOverflow": -15,
+        "backAction": true
+      }
+    },
+    {
+      "name": "forest",
+      "a": "B-033",
+      "b": "B-034",
+      "selection": {
+        "changed": true,
+        "changedA": true,
+        "changedB": true
+      },
+      "snapshot": {
+        "present": true,
+        "mode": "side-by-side",
+        "synchronized": "true",
+        "a": {
+          "box": {
+            "left": 0,
+            "right": 712,
+            "top": 90.953125,
+            "bottom": 1000,
+            "width": 712,
+            "height": 909.046875
+          },
+          "elementId": "B-033",
+          "legendCount": 1,
+          "selectorCount": 3,
+          "viewBox": "",
+          "text": "데이터 A데이터 A 선택발전소베트남 송전망재생에너지 지역계획산림 총면적수관 피복률연간 산림손실산림 탄소지역 취약성주요 광산탄소크레딧 사업지역 기후예산적응기금 사업측정항목연간 수관 손실 — 성(省) 단위기준연도·기간2001200220032004200520062007200820092010201120122013201420152016201720182019202020212022202320242025연간 산림손실연간 수관 손실 — 성(省) 단위 · ha/yr · 2025개편 전 63개 성·시 중 선택 계열 최대 63개"
+        },
+        "b": {
+          "box": {
+            "left": 713,
+            "right": 1425,
+            "top": 90.953125,
+            "bottom": 1000,
+            "width": 712,
+            "height": 909.046875
+          },
+          "elementId": "B-034",
+          "legendCount": 1,
+          "selectorCount": 3,
+          "viewBox": "",
+          "text": "데이터 B데이터 B 선택발전소베트남 송전망재생에너지 지역계획산림 총면적수관 피복률연간 산림손실산림 탄소지역 취약성주요 광산탄소크레딧 사업지역 기후예산적응기금 사업측정항목산림탄소 순플럭스 — 성(省) 단위성(省)별 산림탄소 순플럭스(연평균)성(省)별 산림탄소 총배출(연평균)성(省)별 산림탄소 총흡수(연평균)성(省)별 지상부 탄소밀도성(省)별 지상부 탄소저장량지상부 탄소저장량 — 성(省) 단위기준연도·기간2025산림 탄소성(省)별 산림탄소 순플럭스(연평균) · Mg CO₂e/yr · 2025개편 전 63개 성·시 중 선택 계열 최대 63개"
+        },
+        "url": "http://127.0.0.1:54155/?layer=electricityGap&layers=yeongan-sanrim-sonsil%2Ctanso-jeojangryang&layerOpacities=0.78%2C0.78&focusLayer=yeongan-sanrim-sonsil&primaryLayer=yeongan-sanrim-sonsil&contextLayers=none&mapMode=compare&compareLayers=yeongan-sanrim-sonsil%2Ctanso-jeojangryang&mapSelectors=%7B%22yeongan-sanrim-sonsil%22%3A%7B%22variable%22%3A%22annual-tree-cover-loss%22%2C%22period%22%3A%222025%22%7D%2C%22tanso-jeojangryang%22%3A%7B%22variable%22%3A%228fca7c8dd189%22%2C%22period%22%3A%222025%22%7D%7D&layerYears=2025%2C2025&scope=priority&country=VNM&baseOpacity=0.58&element=yeongan-sanrim-sonsil#map",
+        "pageOverflow": -15,
+        "backAction": true
+      }
+    }
+  ],
+  "compareSideBySideDesktop": true,
+  "compareStackedMobile": true,
+  "compareUrlRestoration": true,
+  "compareRuntimeErrorCount": 0,
+  "runtimeFailure": null
+}

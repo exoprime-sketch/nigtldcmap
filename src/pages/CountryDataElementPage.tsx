@@ -24,7 +24,6 @@ import type { DataFinderSelectorStateV125 } from "../types/dataFinderV125";
 import {
   formatValueV121,
 } from "../utils/vietnamActualV121";
-import { publicTextV126 } from "../data/visualization/publicFieldPolicyV126";
 import { A024_LINE_MEASURE_V125 } from "../data/visualization/mapSelectorBindingsV125";
 import CountryElementVisualizationV123 from "../components/data/CountryDataFullPreviewV52";
 import { PublicTermTextV134 } from "../components/help/PublicTermV134";
@@ -62,23 +61,6 @@ function cleanPublicIndicatorLabelV122(label: string): string {
   // technology, region, scenario, and similar qualifiers). Keep the complete
   // published label instead of treating its suffix as decoration.
   return label.trim() || "항목";
-}
-
-function publicSpatialUnitLabelV126(value: string): string {
-  const labels: Record<string, string> = {
-    nation: "국가",
-    country: "국가",
-    national: "국가",
-    region: "권역",
-    province: "성·시",
-    adm1: "성·시",
-    city: "도시",
-    district: "시·군·구",
-    facility: "시설",
-    site: "지점",
-    point: "지점",
-  };
-  return labels[value.trim().toLocaleLowerCase("en-US")] || value;
 }
 
 const CHART_SERIES_COLORS_V122 = [
@@ -657,47 +639,6 @@ function emptyStateCopyV124(item: CountryCatalogItemV122 | null): {
   }
 }
 
-function latestPopulatedYearV126(
-  observations: VietnamObservationV124[],
-  entities: VietnamEntityV124[]
-): number | null {
-  const years = observations
-    .filter(
-      (row) =>
-        row.value !== null &&
-        row.value !== undefined &&
-        row.value !== "" &&
-        Number.isInteger(row.year)
-    )
-    .map((row) => row.year as number);
-
-  entities.forEach((row) => {
-    const attributes = row.normalizedAttributes || {};
-    for (const key of [
-      "referenceYear",
-      "eventYear",
-      "year",
-      "approvalYear",
-      "commissioningYear",
-    ]) {
-      const value = Number(attributes[key]);
-      if (Number.isInteger(value)) {
-        years.push(value);
-        return;
-      }
-    }
-    for (const key of ["approvalDate", "publicationDate", "signedDate"]) {
-      const match = String(attributes[key] || "").match(/\b(?:19|20)\d{2}\b/u);
-      if (match) {
-        years.push(Number(match[0]));
-        return;
-      }
-    }
-  });
-
-  return years.length > 0 ? Math.max(...years) : null;
-}
-
 export default function CountryDataElementPage({
   elementId,
   countryIso3,
@@ -772,7 +713,6 @@ export default function CountryDataElementPage({
     elementId === "A-024" && selectorState.measure !== A024_LINE_MEASURE_V125
       ? "선택한 전력 접근성 지표에는 공개 공간자료가 없어 지도에 연결하지 않습니다. 데이터 지도에서 베트남 송전망을 별도로 분석할 수 있습니다."
       : "";
-  const latestPopulatedYear = latestPopulatedYearV126(observations, entities);
 
   if (!elementId) {
     return (
@@ -827,14 +767,6 @@ export default function CountryDataElementPage({
   const downloadStatus = catalogItem
     ? publicDownloadStatusV128(catalogItem)
     : null;
-  const sourceOrganizations = Array.from(
-    new Set(
-      (meta?.indicators || [])
-        .map((item) => publicTextV126(item.sourceOrg))
-        .filter((value): value is string => Boolean(value))
-    )
-  );
-
   return (
     <div className="page-shell cdp-page">
       <button
@@ -861,11 +793,15 @@ export default function CountryDataElementPage({
             <div>
               <div className="cdp-card__path">
                 <span>
-                  {catalogItem?.categoryLabel || meta.element.categoryLabel}
+                  <PublicTermTextV134
+                    text={catalogItem?.categoryLabel || meta.element.categoryLabel}
+                  />
                 </span>
                 <span aria-hidden="true">›</span>
                 <span>
-                  {catalogItem?.groupLabel || meta.element.groupLabel}
+                  <PublicTermTextV134
+                    text={catalogItem?.groupLabel || meta.element.groupLabel}
+                  />
                 </span>
               </div>
               {catalogItem && (
@@ -955,33 +891,6 @@ export default function CountryDataElementPage({
             </div>
           </section>
 
-          <section className="cdp-summary-grid" aria-label="데이터 요약">
-            {latestPopulatedYear !== null && (
-                <article className="cdp-summary-card">
-                  <span>최신 자료연도</span>
-                  <strong>{String(latestPopulatedYear)}</strong>
-                </article>
-              )}
-            {sourceOrganizations[0] && (
-              <article className="cdp-summary-card">
-                <span>자료 제공기관</span>
-                <strong>
-                  <PublicTermTextV134 text={sourceOrganizations[0]} />
-                </strong>
-              </article>
-            )}
-            {meta.element.spatialUnits[0] && (
-              <article className="cdp-summary-card">
-                <span>자료 범위</span>
-                <strong>
-                  <PublicTermTextV134
-                    text={publicSpatialUnitLabelV126(meta.element.spatialUnits[0])}
-                  />
-                </strong>
-              </article>
-            )}
-          </section>
-
           <section className="cdp-panel cdp-detail-panel">
               <CountryElementVisualizationV123
                 elementId={elementId}
@@ -993,6 +902,7 @@ export default function CountryDataElementPage({
                 selectedIndicatorId="all"
                 selectorState={selectorState}
                 onSelectorStateChange={onSelectorStateChange}
+                spatialUnit={meta.element.spatialUnits[0]}
               />
 
               {observations.length === 0 && entities.length === 0 && (

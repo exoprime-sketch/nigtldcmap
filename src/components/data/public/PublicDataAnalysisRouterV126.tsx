@@ -47,6 +47,9 @@ const OdaProviderAnalysisV134 = lazy(
 const SpeiDroughtScenarioAnalysisV134 = lazy(
   () => import("./SpeiDroughtScenarioAnalysisV134")
 );
+const GhgSectorGasAnalysisV135 = lazy(
+  () => import("./GhgSectorGasAnalysisV135")
+);
 
 interface Props {
   elementId: string;
@@ -59,6 +62,7 @@ interface Props {
   selectorState: DataFinderSelectorStateV125;
   onSelectorStateChange: (state: DataFinderSelectorStateV125) => void;
   detailTemplate: string;
+  spatialUnit?: string;
 }
 
 const E012_OCCUPATION_MEASURES_V126 = new Set<E012OccupationMeasureKeyV125>([
@@ -101,6 +105,7 @@ export default function PublicDataAnalysisRouterV126({
   selectorState,
   onSelectorStateChange,
   detailTemplate,
+  spatialUnit,
 }: Props) {
   const summary = getPublicVisualizationSummaryV126(elementId);
   const publicRenderer = summary?.primaryRenderer || "structured-table";
@@ -183,8 +188,12 @@ export default function PublicDataAnalysisRouterV126({
       )}
 
       <section className="pav126-primary" data-testid="public-analysis-primary">
-        {elementId === "D-011" ? (
-          <Suspense fallback={<div className="pav126-empty" role="status">ODA 분석을 불러오는 중입니다</div>}>
+        {elementId === "C-002" ? (
+          <Suspense fallback={<div className="pav126-empty" role="status" data-testid="public-analysis-pending">배출량 분석을 불러오는 중입니다</div>}>
+            <GhgSectorGasAnalysisV135 elementId={elementId} rows={semanticRows} />
+          </Suspense>
+        ) : elementId === "D-011" ? (
+          <Suspense fallback={<div className="pav126-empty" role="status" data-testid="public-analysis-pending">ODA 분석을 불러오는 중입니다</div>}>
             <OdaProviderAnalysisV134
               rows={semanticRows}
               selectorState={selectorState}
@@ -194,7 +203,7 @@ export default function PublicDataAnalysisRouterV126({
             />
           </Suspense>
         ) : elementId === "B-005" ? (
-          <Suspense fallback={<div className="pav126-empty" role="status">가뭄 전망을 불러오는 중입니다</div>}>
+          <Suspense fallback={<div className="pav126-empty" role="status" data-testid="public-analysis-pending">가뭄 전망을 불러오는 중입니다</div>}>
             <SpeiDroughtScenarioAnalysisV134
               rows={semanticRows}
               selectorState={selectorState}
@@ -231,7 +240,7 @@ export default function PublicDataAnalysisRouterV126({
           />
         ) : elementId === "E-012" ? (
           <Suspense
-            fallback={<div className="pav126-empty" role="status">직군별 분석을 불러오는 중입니다</div>}
+            fallback={<div className="pav126-empty" role="status" data-testid="public-analysis-pending">직군별 분석을 불러오는 중입니다</div>}
           >
             <OccupationEmploymentWagePreviewV125
               observations={semanticRows}
@@ -285,6 +294,7 @@ export default function PublicDataAnalysisRouterV126({
         indicators={indicators}
         observations={observations}
         entities={entities}
+        spatialUnit={spatialUnit}
       />
       {elementId !== "D-011" ? (
         <PublicRawDataTablesV126

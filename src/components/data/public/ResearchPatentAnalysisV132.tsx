@@ -99,6 +99,13 @@ export default function ResearchPatentAnalysisV132({
   );
   const institutions = new Set(institutionLabels);
   const nationalTrend = nationalPublicationTrendV132(rows);
+  // V135: two published years cannot carry a trend line, so the section falls
+  // back to an explicit before/after change instead of a two-point series.
+  const nationalTrendDepthV135 = nationalTrend.reduce(
+    (maximum, series) =>
+      Math.max(maximum, new Set(series.points.map((point) => point.x)).size),
+    0
+  );
   const technologyBreakdown = countByV132(records, (record) => record.field);
   const collaborationBreakdown = countByV132(records, (record) =>
     !record.collaboration
@@ -139,6 +146,44 @@ export default function ResearchPatentAnalysisV132({
       </div>
 
       <section className="rpa132-panel" data-testid="e008-trend">
+        {nationalTrendDepthV135 < 3 ? (
+          <div
+            className="rpa132-two-year-change-v135"
+            data-testid="e008-national-change"
+          >
+            <h4>논문·특허 공개 통계 변화</h4>
+            <p>
+              <PublicTermTextV134 text="논문은 Scimago의 연간 문헌 수, 특허는 WIPO의 연간 출원 총계입니다. 출처와 집계 범위가 달라 합산하지 않습니다." />
+            </p>
+            <ul>
+              {nationalTrend.map((series) => {
+                const points = [...series.points].sort((left, right) => left.x - right.x);
+                const first = points[0];
+                const last = points[points.length - 1];
+                if (!first || !last || first.x === last.x) return null;
+                const delta = last.value - first.value;
+                const percent =
+                  first.value === 0 ? null : (delta / Math.abs(first.value)) * 100;
+                return (
+                  <li key={series.id}>
+                    <strong>{series.label}</strong>
+                    <span>
+                      {first.x}년 {Math.round(first.value).toLocaleString("ko-KR")}건 →{" "}
+                      {last.x}년 {Math.round(last.value).toLocaleString("ko-KR")}건
+                    </span>
+                    <b>
+                      {delta > 0 ? "+" : ""}
+                      {Math.round(delta).toLocaleString("ko-KR")}건
+                      {percent === null
+                        ? ""
+                        : " (" + (percent > 0 ? "+" : "") + percent.toFixed(1) + "%)"}
+                    </b>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        ) : (
         <InteractiveTimeSeriesChartV127
           series={nationalTrend}
           title="논문·특허 공개 통계 추이"
@@ -153,6 +198,7 @@ export default function ResearchPatentAnalysisV132({
           height={340}
           testId="e008-national-trend-chart"
         />
+        )}
       </section>
 
       <div className="rpa132-analysis-grid">

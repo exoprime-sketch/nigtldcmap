@@ -1,0 +1,389 @@
+{
+  "schemaVersion": "v135-final-public-screen-audit-1",
+  "generatedAt": "2026-09-03T05:24:48.891Z",
+  "audit": "map-access:v135",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "map-access:v135",
+    "status": "PASS",
+    "passed": 13,
+    "failed": 0,
+    "total": 13,
+    "failedChecks": [],
+    "mapLayerCount": 12,
+    "allMapLayerAccessCount": 12,
+    "mapPresetCount": 5,
+    "leftPanelPointerResizePass": true,
+    "normalContextLayerMaxObserved": 1,
+    "mapTooltipUiStateLabelCount": 0,
+    "mineActivationDiagnostics": {
+      "elementId": "B-048",
+      "controlSelector": "[data-testid=\"map-all-data-layer-v135\"][data-element-id=\"B-048\"]",
+      "controlFound": true,
+      "controlTag": "BUTTON",
+      "controlRole": "button",
+      "controlText": "주요 광산주요 광산 위치·광종 분포 확인",
+      "controlDisabled": false,
+      "clickDispatched": true,
+      "clickAttempts": 1,
+      "primaryBefore": "A-023",
+      "primaryAfter": "B-048",
+      "renderedMapSymbols": "B-048|primary|diamond",
+      "featureControlCount": 2,
+      "url": "http://127.0.0.1:54201/?layer=electricityGap&layers=juyo-gwangsan-wici&layerOpacities=0.78&focusLayer=juyo-gwangsan-wici&primaryLayer=juyo-gwangsan-wici&contextLayers=none&mapSelectors=%7B%22juyo-gwangsan-wici%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222022%22%7D%7D&layerYears=2022&scope=priority&country=VNM&baseOpacity=0.58&element=juyo-gwangsan-wici&year=2022&period=2022#map",
+      "failure": null
+    },
+    "contextActivationDiagnostics": {
+      "elementId": "A-023",
+      "controlSelector": "[data-testid=\"map-all-data-layer-v135\"][data-element-id=\"A-023\"]",
+      "controlFound": true,
+      "controlTag": "BUTTON",
+      "controlRole": "button",
+      "controlText": "발전소발전소 입지·설비 분포 비교",
+      "controlDisabled": false,
+      "clickDispatched": true,
+      "clickAttempts": 1,
+      "primaryBefore": "none",
+      "primaryAfter": "A-023",
+      "renderedMapSymbols": "A-023|primary|circle",
+      "featureControlCount": 0,
+      "url": "http://127.0.0.1:54201/?layer=electricityGap&layers=baljeonso-wici-yongryang&layerOpacities=0.78&focusLayer=baljeonso-wici-yongryang&primaryLayer=baljeonso-wici-yongryang&contextLayers=none&mapSelectors=%7B%22baljeonso-wici-yongryang%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222026%22%7D%7D&layerYears=2026&scope=priority&country=VNM&baseOpacity=0.58&element=baljeonso-wici-yongryang&year=2026&period=2026#map",
+      "failure": null
+    },
+    "mineTooltipDiagnostics": {
+      "elementId": "B-048",
+      "targetSelector": ".cdp-map-fallback__feature-control[data-element-id=\"B-048\"]",
+      "targetFound": true,
+      "targetLabel": "주요 광산 · Ban Phuc",
+      "targetName": "Ban Phuc",
+      "targetRect": {
+        "x": 649,
+        "y": 329,
+        "width": 19,
+        "height": 19
+      },
+      "eventDispatched": true,
+      "tooltipNodeExists": true,
+      "tooltipText": "주요 광산Ban Phuc",
+      "primaryElement": "B-048",
+      "renderedMapSymbols": "B-048|primary|diamond",
+      "failure": null,
+      "targetCount": 2
+    },
+    "runtimeFailure": null
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "map-access:v135",
+      "name": "MAP_LAYER_COUNT",
+      "status": "PASS",
+      "actual": 12,
+      "expected": 12
+    },
+    {
+      "type": "check",
+      "audit": "map-access:v135",
+      "name": "ALL_MAP_LAYER_ACCESS_COUNT",
+      "status": "PASS",
+      "actual": {
+        "actualLayerIds": [
+          "A-023",
+          "A-024",
+          "C-016",
+          "B-031",
+          "B-032",
+          "B-033",
+          "B-034",
+          "B-021",
+          "B-048",
+          "C-025",
+          "D-008",
+          "D-018"
+        ],
+        "missingLayers": [],
+        "nonInteractive": []
+      },
+      "expected": {
+        "count": 12,
+        "missingLayers": [],
+        "nonInteractive": []
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-access:v135",
+      "name": "MAP_PRESET_COUNT",
+      "status": "PASS",
+      "actual": 5,
+      "expected": 5
+    },
+    {
+      "type": "check",
+      "audit": "map-access:v135",
+      "name": "MAP_ALL_DATA_GROUP_COUNT",
+      "status": "PASS",
+      "actual": [
+        "에너지·인프라",
+        "산림·토지",
+        "기후·위험",
+        "물·자원",
+        "국제사업·재원"
+      ],
+      "expected": ">=5"
+    },
+    {
+      "type": "check",
+      "audit": "map-access:v135",
+      "name": "LEFT_PANEL_POINTER_RESIZE_PASS",
+      "status": "PASS",
+      "actual": {
+        "before": {
+          "left": {
+            "width": 320,
+            "left": 0,
+            "right": 320
+          },
+          "map": {
+            "width": 1201,
+            "left": 332,
+            "right": 1533
+          },
+          "separator": {
+            "width": 12,
+            "left": 320,
+            "top": 71,
+            "height": 1034
+          },
+          "stored": [],
+          "contextCount": 0,
+          "primary": "none"
+        },
+        "after": {
+          "left": {
+            "width": 460,
+            "left": 0,
+            "right": 460
+          },
+          "map": {
+            "width": 1061,
+            "left": 472,
+            "right": 1533
+          },
+          "separator": {
+            "width": 12,
+            "left": 460,
+            "top": 71,
+            "height": 1034
+          },
+          "stored": [
+            [
+              "cdp-map-left-panel-width-v129",
+              "460"
+            ]
+          ],
+          "contextCount": 0,
+          "primary": "none"
+        },
+        "restored": {
+          "left": {
+            "width": 460,
+            "left": 0,
+            "right": 460
+          },
+          "map": {
+            "width": 1061,
+            "left": 472,
+            "right": 1533
+          },
+          "separator": {
+            "width": 12,
+            "left": 460,
+            "top": 71,
+            "height": 1034
+          },
+          "stored": [
+            [
+              "cdp-map-left-panel-width-v129",
+              "460"
+            ]
+          ],
+          "contextCount": 0,
+          "primary": "none"
+        }
+      },
+      "expected": "left >=420px, map width changed, persisted"
+    },
+    {
+      "type": "check",
+      "audit": "map-access:v135",
+      "name": "MAP_RESIZE_CALL_CONTRACT",
+      "status": "PASS",
+      "actual": {
+        "staticResizeContract": true
+      },
+      "expected": true
+    },
+    {
+      "type": "check",
+      "audit": "map-access:v135",
+      "name": "NORMAL_CONTEXT_LAYER_MAX",
+      "status": "PASS",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "type": "check",
+      "audit": "map-access:v135",
+      "name": "MAP_COUNTRY_INFO_BUTTON_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "type": "check",
+      "audit": "map-access:v135",
+      "name": "MAP_TOOLTIP_UI_STATE_LABEL_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-access:v135",
+      "name": "MAP_MINE_ACTIVATION",
+      "status": "PASS",
+      "actual": {
+        "elementId": "B-048",
+        "controlSelector": "[data-testid=\"map-all-data-layer-v135\"][data-element-id=\"B-048\"]",
+        "controlFound": true,
+        "controlTag": "BUTTON",
+        "controlRole": "button",
+        "controlText": "주요 광산주요 광산 위치·광종 분포 확인",
+        "controlDisabled": false,
+        "clickDispatched": true,
+        "clickAttempts": 1,
+        "primaryBefore": "A-023",
+        "primaryAfter": "B-048",
+        "renderedMapSymbols": "B-048|primary|diamond",
+        "featureControlCount": 2,
+        "url": "http://127.0.0.1:54201/?layer=electricityGap&layers=juyo-gwangsan-wici&layerOpacities=0.78&focusLayer=juyo-gwangsan-wici&primaryLayer=juyo-gwangsan-wici&contextLayers=none&mapSelectors=%7B%22juyo-gwangsan-wici%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222022%22%7D%7D&layerYears=2022&scope=priority&country=VNM&baseOpacity=0.58&element=juyo-gwangsan-wici&year=2022&period=2022#map",
+        "failure": null
+      },
+      "expected": {
+        "controlFound": true,
+        "clickDispatched": true,
+        "primaryAfter": "B-048",
+        "renderedMapSymbols": "B-048|primary|…"
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-access:v135",
+      "name": "MAP_MINE_TOOLTIP",
+      "status": "PASS",
+      "actual": {
+        "tooltipText": "주요 광산Ban Phuc",
+        "diagnostics": {
+          "elementId": "B-048",
+          "targetSelector": ".cdp-map-fallback__feature-control[data-element-id=\"B-048\"]",
+          "targetFound": true,
+          "targetLabel": "주요 광산 · Ban Phuc",
+          "targetName": "Ban Phuc",
+          "targetRect": {
+            "x": 649,
+            "y": 329,
+            "width": 19,
+            "height": 19
+          },
+          "eventDispatched": true,
+          "tooltipNodeExists": true,
+          "tooltipText": "주요 광산Ban Phuc",
+          "primaryElement": "B-048",
+          "renderedMapSymbols": "B-048|primary|diamond",
+          "failure": null,
+          "targetCount": 2
+        }
+      },
+      "expected": "meaningful mine tooltip"
+    },
+    {
+      "type": "check",
+      "audit": "map-access:v135",
+      "name": "BROKEN_ASSET",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-access:v135",
+      "name": "CONSOLE_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "mapLayerCount": 12,
+  "allMapLayerAccessCount": 12,
+  "mapPresetCount": 5,
+  "leftPanelPointerResizePass": true,
+  "normalContextLayerMaxObserved": 1,
+  "mapTooltipUiStateLabelCount": 0,
+  "mineActivationDiagnostics": {
+    "elementId": "B-048",
+    "controlSelector": "[data-testid=\"map-all-data-layer-v135\"][data-element-id=\"B-048\"]",
+    "controlFound": true,
+    "controlTag": "BUTTON",
+    "controlRole": "button",
+    "controlText": "주요 광산주요 광산 위치·광종 분포 확인",
+    "controlDisabled": false,
+    "clickDispatched": true,
+    "clickAttempts": 1,
+    "primaryBefore": "A-023",
+    "primaryAfter": "B-048",
+    "renderedMapSymbols": "B-048|primary|diamond",
+    "featureControlCount": 2,
+    "url": "http://127.0.0.1:54201/?layer=electricityGap&layers=juyo-gwangsan-wici&layerOpacities=0.78&focusLayer=juyo-gwangsan-wici&primaryLayer=juyo-gwangsan-wici&contextLayers=none&mapSelectors=%7B%22juyo-gwangsan-wici%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222022%22%7D%7D&layerYears=2022&scope=priority&country=VNM&baseOpacity=0.58&element=juyo-gwangsan-wici&year=2022&period=2022#map",
+    "failure": null
+  },
+  "contextActivationDiagnostics": {
+    "elementId": "A-023",
+    "controlSelector": "[data-testid=\"map-all-data-layer-v135\"][data-element-id=\"A-023\"]",
+    "controlFound": true,
+    "controlTag": "BUTTON",
+    "controlRole": "button",
+    "controlText": "발전소발전소 입지·설비 분포 비교",
+    "controlDisabled": false,
+    "clickDispatched": true,
+    "clickAttempts": 1,
+    "primaryBefore": "none",
+    "primaryAfter": "A-023",
+    "renderedMapSymbols": "A-023|primary|circle",
+    "featureControlCount": 0,
+    "url": "http://127.0.0.1:54201/?layer=electricityGap&layers=baljeonso-wici-yongryang&layerOpacities=0.78&focusLayer=baljeonso-wici-yongryang&primaryLayer=baljeonso-wici-yongryang&contextLayers=none&mapSelectors=%7B%22baljeonso-wici-yongryang%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222026%22%7D%7D&layerYears=2026&scope=priority&country=VNM&baseOpacity=0.58&element=baljeonso-wici-yongryang&year=2026&period=2026#map",
+    "failure": null
+  },
+  "mineTooltipDiagnostics": {
+    "elementId": "B-048",
+    "targetSelector": ".cdp-map-fallback__feature-control[data-element-id=\"B-048\"]",
+    "targetFound": true,
+    "targetLabel": "주요 광산 · Ban Phuc",
+    "targetName": "Ban Phuc",
+    "targetRect": {
+      "x": 649,
+      "y": 329,
+      "width": 19,
+      "height": 19
+    },
+    "eventDispatched": true,
+    "tooltipNodeExists": true,
+    "tooltipText": "주요 광산Ban Phuc",
+    "primaryElement": "B-048",
+    "renderedMapSymbols": "B-048|primary|diamond",
+    "failure": null,
+    "targetCount": 2
+  },
+  "runtimeFailure": null
+}

@@ -152,13 +152,13 @@ check(
 );
 
 const releaseWorkflowContract = (source, reportPath) => ({
-  finalizeV134: /\brun:\s*npm\s+run\s+finalize:v134\s*$/mu.test(source),
+  finalizeCurrentGate: /\brun:\s*npm\s+run\s+finalize:v135\s*$/mu.test(source),
   productionBuild: /\brun:\s*npm\s+run\s+build\s*$/mu.test(source),
   noScreenshotCapture:
     !/npm\s+run\s+capture:screenshots|capture-[\w./-]*screenshots/iu.test(
       source
     ),
-  v134Reports: reportPath ? /reports\/v134\//u.test(source) : true,
+  currentReports: reportPath ? /reports\/v135\//u.test(source) : true,
 });
 const ciContract = releaseWorkflowContract(ci, true);
 const pagesContract = releaseWorkflowContract(pages, false);
@@ -176,21 +176,21 @@ check(
 );
 
 const captureStep = visualQa.match(
-  /- name:\s*Capture V134 screenshots[\s\S]*?(?=\n\s{6}- name:|\n\s{4}\w|$)/u
+  /- name:\s*Capture V135 screenshots[\s\S]*?(?=\n\s{6}- name:|\n\s{4}\w|$)/u
 )?.[0] || "";
 const artifactStep = visualQa.match(
-  /- name:\s*Upload V134 screenshot artifacts[\s\S]*?(?=\n\s{6}- name:|\n\s{4}\w|$)/u
+  /- name:\s*Upload V135 screenshot artifacts[\s\S]*?(?=\n\s{6}- name:|\n\s{4}\w|$)/u
 )?.[0] || "";
 const visualWorkflowContract = {
   separateWorkflow: visualQa.length > 0,
   productionBuild: /\brun:\s*npm\s+run\s+build\s*$/mu.test(visualQa),
-  captureV134: /\brun:\s*npm\s+run\s+capture:screenshots:v134\s*$/mu.test(
+  captureCurrentScreenshots: /\brun:\s*npm\s+run\s+capture:screenshots:v135\s*$/mu.test(
     captureStep
   ),
   captureContinuesOnError: /continue-on-error:\s*true/u.test(captureStep),
   artifactAlwaysUploaded: /if:\s*always\(\)/u.test(artifactStep),
-  artifactPath: /path:\s*reports\/v134\/screenshots\//u.test(artifactStep),
-  noFinalizeDependency: !/npm\s+run\s+finalize:v134/u.test(visualQa),
+  artifactPath: /path:\s*reports\/v135\/screenshots\//u.test(artifactStep),
+  noFinalizeDependency: !/npm\s+run\s+finalize:v13[45]/u.test(visualQa),
 };
 check(
   "NON_BLOCKING_VISUAL_QA_WORKFLOW",
@@ -207,8 +207,8 @@ const captureExcludedFromFinalize =
   pagesContract.noScreenshotCapture;
 const functionalAuditBlocking =
   Object.values(blockingFunctionalCommands).every(Boolean) &&
-  ciContract.finalizeV134 &&
-  pagesContract.finalizeV134;
+  ciContract.finalizeCurrentGate &&
+  pagesContract.finalizeCurrentGate;
 const failed = checks.filter((row) => row.status === "FAIL");
 const report = {
   schemaVersion: "v134-visual-qa-contract-1",
@@ -220,8 +220,8 @@ const report = {
     FUNCTIONAL_BROWSER_AUDIT_IS_RELEASE_BLOCKER: functionalAuditBlocking,
     releaseWorkflows: [".github/workflows/ci.yml", ".github/workflows/pages.yml"],
     visualQaWorkflow: ".github/workflows/visual-qa.yml",
-    blockingEntryPoint: "npm run finalize:v134",
-    nonBlockingEntryPoint: "npm run capture:screenshots:v134",
+    blockingEntryPoint: "npm run finalize:v135",
+    nonBlockingEntryPoint: "npm run capture:screenshots:v135",
   },
   evidence: {
     finalizeClosure,

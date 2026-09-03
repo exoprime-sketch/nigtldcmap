@@ -1,0 +1,147 @@
+{
+  "schemaVersion": "v135-final-public-screen-audit-1",
+  "generatedAt": "2026-09-03T05:24:42.891Z",
+  "audit": "detail-hierarchy:v135",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "detail-hierarchy:v135",
+    "status": "PASS",
+    "passed": 12,
+    "failed": 0,
+    "total": 12,
+    "failedChecks": [],
+    "inspectedRoutes": 152,
+    "detailMetadataBeforeAnalysisCount": 0,
+    "rawMatrixAsPrimaryCount": 0,
+    "portfolioListBeforeSummaryCount": 0,
+    "runtimeFailure": null
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "detail-hierarchy:v135",
+      "name": "FRAMEWORK_ELEMENTS",
+      "status": "PASS",
+      "actual": 152,
+      "expected": 152
+    },
+    {
+      "type": "check",
+      "audit": "detail-hierarchy:v135",
+      "name": "DETAIL_ROUTE_RUNTIME_COVERAGE",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null,
+        "routeCount": 152,
+        "routeFailures": []
+      },
+      "expected": {
+        "routeCount": 152,
+        "routeFailures": []
+      }
+    },
+    {
+      "type": "check",
+      "audit": "detail-hierarchy:v135",
+      "name": "DETAIL_PUBLIC_TITLE_COVERAGE",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "detail-hierarchy:v135",
+      "name": "DETAIL_PRIMARY_ANALYSIS_COVERAGE",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "detail-hierarchy:v135",
+      "name": "DETAIL_METADATA_MARKER_COVERAGE",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "detail-hierarchy:v135",
+      "name": "DETAIL_METADATA_BEFORE_ANALYSIS_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "detail-hierarchy:v135",
+      "name": "RAW_TABLE_BEFORE_ANALYSIS_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "detail-hierarchy:v135",
+      "name": "RAW_MATRIX_AS_PRIMARY_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "detail-hierarchy:v135",
+      "name": "PORTFOLIO_LIST_BEFORE_SUMMARY_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "detail-hierarchy:v135",
+      "name": "GHG_ANALYTICAL_HIERARCHY",
+      "status": "PASS",
+      "actual": {
+        "elementId": "C-002",
+        "title": "격년투명성보고서(BTR)의 항목별 공개 현황",
+        "primary": true,
+        "metadata": true,
+        "primaryBeforeMetadata": true,
+        "primaryBeforeRaw": true,
+        "portfolioSummary": false,
+        "portfolioList": false,
+        "portfolioSummaryBeforeList": true,
+        "ghgPresent": true,
+        "rawMatrixPrimary": "false",
+        "genericRawMatrixHeading": false,
+        "alert": ""
+      },
+      "expected": {
+        "ghgPresent": true,
+        "rawMatrixPrimary": "false"
+      }
+    },
+    {
+      "type": "check",
+      "audit": "detail-hierarchy:v135",
+      "name": "BROKEN_ASSET",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "detail-hierarchy:v135",
+      "name": "CONSOLE_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "inspectedRoutes": 152,
+  "detailMetadataBeforeAnalysisCount": 0,
+  "rawMatrixAsPrimaryCount": 0,
+  "portfolioListBeforeSummaryCount": 0,
+  "runtimeFailure": null
+}

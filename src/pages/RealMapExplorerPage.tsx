@@ -47,6 +47,7 @@ import {
   createPublicMapWorkspaceStateV126,
   isPublicMapWorkspacePresetIdV126,
   publicMapAccuracyNoticeV126,
+  publicMapDataFunctionV135,
   publicMapLayerCopyV126,
   publicMapLayerTitleV126,
   publicMapPresetContextCandidatesV133,
@@ -71,6 +72,11 @@ import {
 import { publicAssetUrlV128 } from "../utils/publicAssetUrlV128";
 import MapPanelSeparatorV129 from "../components/map/MapPanelSeparatorV129";
 import MapDataGuideV130 from "../components/map/MapDataGuideV130";
+import MapComparisonWorkspaceV135 from "../components/map/MapComparisonWorkspaceV135";
+import type {
+  MapComparisonDatasetV135,
+  MapComparisonSideV135,
+} from "../components/map/MapComparisonWorkspaceV135";
 import {
   PublicTermExpandedTextV134,
   PublicTermHelpV134,
@@ -82,6 +88,7 @@ import type { TimeSeriesV127 } from "../types/chartInteractionV127";
 import { useResizableMapPanelsV129 } from "../hooks/useResizableMapPanelsV129";
 import "../styles/country-data-platform-v122.css";
 import "../styles/map-layout-v129.css";
+import "../styles/map-comparison-v135.css";
 
 interface RealMapExplorerPageProps {
   onOpenElement: (
@@ -89,7 +96,6 @@ interface RealMapExplorerPageProps {
     countryIso3: string,
     selectorState?: DataFinderSelectorStateV125
   ) => void;
-  onOpenCountry: (iso3: string) => void;
   onOpenDataFinder: () => void;
   onOpenDownload: (
     elementId: string | null,
@@ -281,6 +287,15 @@ function geometryToFallbackLinePath(
     .filter(Boolean)
     .join(" ");
 }
+
+/**
+ * V135 comparison workspace DOM contract. Each pane is an equal primary view;
+ * panning or zooming one pane synchronizes (동기화) the other to the same extent.
+ */
+export const MAP_COMPARE_PANE_TEST_IDS_V135 = [
+  "map-compare-pane-a",
+  "map-compare-pane-b",
+] as const;
 
 function rendererOf(layer: CountryMapLayerV122) {
   return layer.renderer || (layer.cluster ? "cluster" : "point");
@@ -1172,7 +1187,6 @@ function sameStringArray(a: string[], b: string[]): boolean {
 
 export default function RealMapExplorerPage({
   onOpenElement,
-  onOpenCountry,
   onOpenDataFinder,
   onOpenDownload,
   initialState,
@@ -1190,6 +1204,9 @@ export default function RealMapExplorerPage({
   const renderSignaturesRef = useRef<Record<string, string>>({});
   const recordIndexRef = useRef<Map<string, CountryEntityV122>>(new Map());
   const loadControllersRef = useRef<Map<string, AbortController>>(new Map());
+  // URL-driven hydration must not fight state the user just changed on screen,
+  // so external state is applied once per genuinely new external signature.
+  const appliedHydrationRefV135 = useRef<string>("");
   const [countryIso3, setCountryIso3] = useState(() =>
     resolveInitialCountry(initialState.countryIso3)
   );
@@ -1203,6 +1220,12 @@ export default function RealMapExplorerPage({
   const [externalStateHydrated, setExternalStateHydrated] = useState(false);
   const [layers, setLayers] = useState<CountryMapLayerV122[]>([]);
   const [activeIds, setActiveIds] = useState<string[]>(() => {
+    if (
+      initialState.comparisonMode &&
+      initialState.comparisonLayerIds.length === 2
+    ) {
+      return initialState.comparisonLayerIds.slice(0, 2);
+    }
     const primary =
       initialState.primaryLayerId || initialState.focusLayerKey || null;
     if (!primary) return [];
@@ -1254,7 +1277,17 @@ export default function RealMapExplorerPage({
   const [financeTypeV133, setFinanceTypeV133] = useState<
     "adaptation" | "carbon"
   >("adaptation");
-  const [financeCompareV133, setFinanceCompareV133] = useState(false);
+  const [comparisonModeV135, setComparisonModeV135] = useState(
+    () => initialState.comparisonMode
+  );
+  const [comparisonLayerIdsV135, setComparisonLayerIdsV135] = useState<
+    [string, string]
+  >(() => {
+    const restored = initialState.comparisonLayerIds;
+    return restored.length === 2
+      ? [restored[0], restored[1]]
+      : ["D-018", "C-025"];
+  });
   const [keyboardFeatureIndexV129, setKeyboardFeatureIndexV129] = useState(0);
   const [selectedPresetId, setSelectedPresetId] =
     useState<PublicMapWorkspacePresetIdV126 | null>(() =>
@@ -1286,10 +1319,12 @@ export default function RealMapExplorerPage({
     focusId && activeIds.includes(focusId) ? focusId : null;
   const contextLayerIds = useMemo(
     () =>
-      activeIds
-        .filter((id) => id !== primaryLayerId)
-        .slice(0, PUBLIC_MAP_WORKSPACE_LIMITS_V126.contextLayers),
-    [activeIds, primaryLayerId]
+      comparisonModeV135
+        ? []
+        : activeIds
+            .filter((id) => id !== primaryLayerId)
+            .slice(0, PUBLIC_MAP_WORKSPACE_LIMITS_V126.contextLayers),
+    [activeIds, comparisonModeV135, primaryLayerId]
   );
   const mapHitPriorityRefV133 = useRef<MapHitPriorityV133>({
     contextLayerIds: [],
@@ -1688,6 +1723,12 @@ export default function RealMapExplorerPage({
   useEffect(() => {
     let cancelled = false;
     setExternalStateHydrated(false);
+    // The workspace is being rebuilt for a freshly loaded layer set, so the URL
+    // state has to be applied again. Without clearing the marker the hydration
+    // effect still recognises the signature it applied before this reset and
+    // skips, which silently drops a shared comparison link back to the normal
+    // map once the reset lands after hydration.
+    appliedHydrationRefV135.current = "";
     setLayers([]);
     setRecordsByElement({});
     setSpatialByElement({});
@@ -1700,6 +1741,14 @@ export default function RealMapExplorerPage({
     setActiveIds([]);
     setFocusId(null);
     setSelectedPresetId(null);
+    // Opening a shared comparison link renders the workspace from the URL on
+    // the first paint. Clearing the flag unconditionally here tore it back down
+    // until hydration restored it, so the reader saw the comparison, then the
+    // normal map, then the comparison again. Honour the URL's intent instead;
+    // changeCountry still turns comparison off explicitly.
+    setComparisonModeV135(
+      initialState.comparisonMode && initialState.comparisonLayerIds.length === 2
+    );
     setRoleNotice("");
 
     if (!hasCountryDataProviderV122(countryIso3)) {
@@ -1762,18 +1811,70 @@ export default function RealMapExplorerPage({
     );
   }, [layers, mapIndexStatus, sharedSelectorKey]);
 
+  useEffect(() => {
+    if (comparisonModeV135) return;
+    const map = mapRef.current;
+    if (!map) return;
+    const frame = window.requestAnimationFrame(() => map.resize());
+    return () => window.cancelAnimationFrame(frame);
+  }, [comparisonModeV135]);
+
+  useEffect(() => {
+    if (!comparisonModeV135) return;
+    const pair = [comparisonLayerIdsV135[0], comparisonLayerIdsV135[1]].filter(
+      Boolean
+    );
+    setActiveIds((current) => (sameStringArray(current, pair) ? current : pair));
+    setFocusId((current) => (current === pair[0] ? current : pair[0] || null));
+  }, [comparisonLayerIdsV135, comparisonModeV135]);
+
   const externalActiveLayerKey = initialState.activeLayerKeys.join("|");
   const externalContextLayerKey = initialState.contextLayerIds.join("|");
+  const externalComparisonLayerKey = initialState.comparisonLayerIds.join("|");
+  const externalLayerSelectorKey = JSON.stringify(initialState.layerSelectors);
 
   useEffect(() => {
     if (mapIndexStatus !== "ready") return;
     const requestedCountry = initialState.countryIso3?.toUpperCase() || "";
     if (requestedCountry && requestedCountry !== countryIso3) return;
 
+    // While the comparison workspace is open it owns its own dataset pair. The
+    // URL echo of a pane change always trails the change itself, so hydrating
+    // from it here would race the user and strand a pane without its data.
+    // The initial pair is seeded from the URL when this page mounts, and
+    // closeComparisonV135 is the only path that leaves the workspace.
+    if (comparisonModeV135) {
+      setExternalStateHydrated(true);
+      return;
+    }
+
+    const hydrationSignature = [
+      countryIso3,
+      layers.length,
+      externalActiveLayerKey,
+      externalComparisonLayerKey,
+      externalContextLayerKey,
+      externalLayerSelectorKey,
+      initialState.comparisonMode ? "compare" : "normal",
+      initialState.primaryLayerId || "",
+      initialState.focusLayerKey || "",
+      initialState.mapPresetId || "",
+    ].join("::");
+    if (appliedHydrationRefV135.current === hydrationSignature) return;
+    appliedHydrationRefV135.current = hydrationSignature;
+
     const available = new Set(layers.map((layer) => layer.elementId));
     const requestedPrimary =
       initialState.primaryLayerId || initialState.focusLayerKey || null;
-    const nextFocus =
+    const requestedComparisonIds = initialState.comparisonLayerIds
+      .filter((id) => available.has(id))
+      .filter((id, index, values) => values.indexOf(id) === index)
+      .slice(0, 2);
+    const restoreComparison =
+      initialState.comparisonMode && requestedComparisonIds.length === 2;
+    const nextFocus = restoreComparison
+      ? requestedComparisonIds[0]
+      :
       requestedPrimary && available.has(requestedPrimary)
         ? requestedPrimary
         : null;
@@ -1784,12 +1885,23 @@ export default function RealMapExplorerPage({
       .filter((id) => available.has(id) && id !== nextFocus)
       .filter((id, index, values) => values.indexOf(id) === index)
       .slice(0, PUBLIC_MAP_WORKSPACE_LIMITS_V126.contextLayers);
-    const nextActive = nextFocus ? [nextFocus, ...nextContexts] : [];
+    const nextActive = restoreComparison
+      ? requestedComparisonIds
+      : nextFocus
+      ? [nextFocus, ...nextContexts]
+      : [];
 
     setActiveIds((current) =>
       sameStringArray(current, nextActive) ? current : nextActive
     );
     setFocusId((current) => (current === nextFocus ? current : nextFocus));
+    setComparisonModeV135(restoreComparison);
+    if (restoreComparison) {
+      setComparisonLayerIdsV135([
+        requestedComparisonIds[0],
+        requestedComparisonIds[1],
+      ]);
+    }
     const restoredPresetId = isPublicMapWorkspacePresetIdV126(
       initialState.mapPresetId
     )
@@ -1812,15 +1924,37 @@ export default function RealMapExplorerPage({
         ),
       }));
     }
+    setSelectorByElement((current) => {
+      const restored = Object.fromEntries(
+        Object.entries(initialState.layerSelectors).flatMap(
+          ([elementId, selection]) => {
+            const layer = layers.find((item) => item.elementId === elementId);
+            if (!layer) return [];
+            const variable = layer.selectors.variables.find(
+              (item) => item.key === selection.variable
+            );
+            const periods = variable?.periods || layer.selectors.periods;
+            if (!variable || !periods.includes(selection.period)) return [];
+            return [[elementId, selection]];
+          }
+        )
+      );
+      return { ...current, ...restored };
+    });
     setExternalStateHydrated(true);
   }, [
+    comparisonModeV135,
     countryIso3,
     externalActiveLayerKey,
+    externalComparisonLayerKey,
     externalContextLayerKey,
+    externalLayerSelectorKey,
+    initialState.comparisonMode,
     initialState.countryIso3,
     initialState.focusLayerKey,
     initialState.mapPresetId,
     initialState.primaryLayerId,
+    initialState.layerSelectors,
     layers,
     mapIndexStatus,
   ]);
@@ -2131,9 +2265,20 @@ export default function RealMapExplorerPage({
       mapPresetId: selectedPresetId,
       layerOpacities: nextOpacities,
       layerYears: nextYears,
+      comparisonMode: comparisonModeV135,
+      comparisonLayerIds: comparisonModeV135
+        ? [comparisonLayerIdsV135[0], comparisonLayerIdsV135[1]]
+        : [],
+      layerSelectors: Object.fromEntries(
+        activeIds
+          .map((id) => [id, selectorByElement[id]] as const)
+          .filter(([, selection]) => Boolean(selection))
+      ),
     });
   }, [
     activeIds,
+    comparisonLayerIdsV135,
+    comparisonModeV135,
     countryIso3,
     externalStateHydrated,
     focusId,
@@ -3305,6 +3450,161 @@ export default function RealMapExplorerPage({
     return Array.from(groups.entries());
   }, [layers]);
 
+  // V135 dedicated comparison workspace. Two datasets are treated as equal
+  // primary views here; the normal map still allows at most one companion.
+  const comparisonLayerOptionsV135 = useMemo(
+    () =>
+      layers
+        .filter((layer) => layer.enabled !== false)
+        .map((layer) => ({
+          elementId: layer.elementId,
+          title: publicMapLayerTitleV126(
+            layer.elementId,
+            layer.publicShortTitle
+          ),
+        })),
+    [layers]
+  );
+
+  const buildComparisonDatasetV135 = useCallback(
+    (elementId: string, color: string): MapComparisonDatasetV135 | null => {
+      const layer = layers.find((item) => item.elementId === elementId);
+      if (!layer) return null;
+      const renderer = rendererOf(layer);
+      const selector = selectorForLayer(layer, selectorByElement[elementId]);
+      const asset = spatialByElement[elementId];
+      const records = recordsByElement[elementId];
+      let geoJson: GeoJSON.FeatureCollection<GeoJSON.Geometry> | null = null;
+      let valueDomain: { maximum: number; minimum: number } | undefined;
+
+      if (renderer === "point" || renderer === "cluster") {
+        if (!records) return null;
+        geoJson = featureCollection(
+          records,
+          layer
+        ) as GeoJSON.FeatureCollection<GeoJSON.Geometry>;
+      } else if (renderer === "line") {
+        if (!asset) return null;
+        geoJson = lineFeatureCollection(layer, asset, selector, {});
+      } else if (renderer === "regional-scope") {
+        if (!asset) return null;
+        geoJson = asset.geometry as unknown as GeoJSON.FeatureCollection<GeoJSON.Geometry>;
+      } else {
+        if (!asset) return null;
+        const result = choroplethFeatureCollection(layer, asset, selector);
+        geoJson = result.collection;
+        valueDomain = { maximum: result.maximum, minimum: result.minimum };
+      }
+      if (!geoJson) return null;
+
+      const variableOption = layer.selectors.variables.find(
+        (option) => option.key === selector.variable
+      );
+      const presentation = getPublicIndicatorVariablePresentationV129(
+        elementId,
+        selector.variable
+      );
+      return {
+        color,
+        coverage: publicMapCoverageTextV126(layer),
+        elementId,
+        geoJson,
+        renderer,
+        selector,
+        source: publicTextV126(layer.source) || "출처 미표기",
+        title: publicMapLayerTitleV126(elementId, layer.publicShortTitle),
+        unit: presentation?.unit || variableOption?.unit || layer.unit || "",
+        valueDomain,
+        variableLabel: publicTextV126(variableOption?.label) || "값",
+        variableOptions: layer.selectors.variables.map((option) => ({
+          key: option.key,
+          label: publicTextV126(option.label) || option.key,
+          periods: option.periods,
+          unit: option.unit,
+        })),
+      };
+    },
+    [layers, recordsByElement, selectorByElement, spatialByElement]
+  );
+
+  const comparisonBoundsV135 = useMemo(
+    (): [[number, number], [number, number]] => [
+      [fallbackBounds[0][0], fallbackBounds[0][1]],
+      [fallbackBounds[1][0], fallbackBounds[1][1]],
+    ],
+    [fallbackBounds]
+  );
+
+  const comparisonDatasetsV135 = useMemo(
+    (): [MapComparisonDatasetV135 | null, MapComparisonDatasetV135 | null] => [
+      buildComparisonDatasetV135(comparisonLayerIdsV135[0], "#176a4b"),
+      buildComparisonDatasetV135(comparisonLayerIdsV135[1], "#8a4b12"),
+    ],
+    [buildComparisonDatasetV135, comparisonLayerIdsV135]
+  );
+
+  function openComparisonV135(elementIdA: string, elementIdB: string) {
+    const pair: [string, string] = [elementIdA, elementIdB];
+    setComparisonLayerIdsV135(pair);
+    setComparisonModeV135(true);
+    setSelected(null);
+    setSelectedSpatial(null);
+    setOverlapChoicesV133([]);
+    setLastEnabledContextIdV133(null);
+    setRoleNotice("두 데이터를 나란히 비교합니다.");
+  }
+
+  function closeComparisonV135() {
+    const [primaryElement] = comparisonLayerIdsV135;
+    setComparisonModeV135(false);
+    setActiveIds(primaryElement ? [primaryElement] : []);
+    setFocusId(primaryElement || null);
+    setSelected(null);
+    setSelectedSpatial(null);
+    setRoleNotice("일반 지도로 돌아왔습니다.");
+  }
+
+  function changeComparisonDatasetV135(
+    side: MapComparisonSideV135,
+    elementId: string
+  ) {
+    // Both panes can change inside one batch, so the pair is updated
+    // functionally and the active layers are derived from it below. Assigning
+    // activeIds here instead would let the second pane overwrite the first.
+    setComparisonLayerIdsV135((current) =>
+      side === "a" ? [elementId, current[1]] : [current[0], elementId]
+    );
+    setSelected(null);
+    setSelectedSpatial(null);
+  }
+
+  function changeComparisonSelectorV135(
+    side: MapComparisonSideV135,
+    patch: { period?: string; variable?: string }
+  ) {
+    const elementId = side === "a"
+      ? comparisonLayerIdsV135[0]
+      : comparisonLayerIdsV135[1];
+    const layer = layers.find((item) => item.elementId === elementId);
+    if (!layer) return;
+    setSelectorByElement((current) => {
+      const active = selectorForLayer(layer, current[elementId]);
+      const variable = patch.variable || active.variable;
+      const option = layer.selectors.variables.find(
+        (row) => row.key === variable
+      );
+      const periods = option?.periods || layer.selectors.periods;
+      const requested = patch.period || active.period;
+      return {
+        ...current,
+        [elementId]: {
+          variable,
+          period: periods.includes(requested) ? requested : periods[0] || "",
+        },
+      };
+    });
+  }
+
   const focusedLayer =
     layers.find((layer) => layer.elementId === focusId) || null;
   const focusedSelector = focusedLayer
@@ -4047,6 +4347,7 @@ export default function RealMapExplorerPage({
     setSelected(null);
     setSelectedSpatial(null);
     setSelectedPresetId(null);
+    setComparisonModeV135(false);
     setRoleNotice("");
     setOverlapChoicesV133([]);
     setLastEnabledContextIdV133(null);
@@ -4104,15 +4405,23 @@ export default function RealMapExplorerPage({
       setRoleNotice("보조 표시를 해제했습니다.");
       return;
     }
-    if (
-      contextLayerIds.length >= PUBLIC_MAP_WORKSPACE_LIMITS_V126.contextLayers
-    ) {
-      setRoleNotice("보조 데이터는 최대 2개까지 표시할 수 있습니다.");
-      return;
-    }
-    setActiveIds([primaryLayerId, ...contextLayerIds, elementId]);
+    // The normal map carries one companion at a time, so picking another one
+    // swaps it rather than rejecting the click. Two datasets as equal views is
+    // what the dedicated comparison workspace is for.
+    const keptContexts = contextLayerIds.slice(
+      Math.max(
+        0,
+        contextLayerIds.length -
+          (PUBLIC_MAP_WORKSPACE_LIMITS_V126.contextLayers - 1)
+      )
+    );
+    setActiveIds([primaryLayerId, ...keptContexts, elementId]);
     setLastEnabledContextIdV133(elementId);
-    setRoleNotice("함께 보기를 켰습니다.");
+    setRoleNotice(
+      contextLayerIds.length > 0
+        ? "함께 보기 데이터를 바꿨습니다."
+        : "함께 보기를 켰습니다."
+    );
     setSelected(null);
     setSelectedSpatial(null);
   }
@@ -4155,7 +4464,6 @@ export default function RealMapExplorerPage({
     setSelectedSpatial(null);
     setOverlapChoicesV133([]);
     setLastEnabledContextIdV133(null);
-    setFinanceCompareV133(false);
     if (presetId === "CLIMATE_FINANCE_PROJECTS") {
       setFinanceTypeV133("adaptation");
     }
@@ -4180,6 +4488,28 @@ export default function RealMapExplorerPage({
     fitSelectedCountry();
   }
 
+  // V135 all-map-data browser. Presets stay a curated shortcut; every verified
+  // layer is still reachable directly from here.
+  function showMapDatasetV135(elementId: string) {
+    const layer = layers.find((item) => item.elementId === elementId);
+    if (!layer || layer.enabled === false) return;
+    setComparisonModeV135(false);
+    setActiveIds([elementId]);
+    setFocusId(elementId);
+    setSelectedPresetId(null);
+    setSelected(null);
+    setSelectedSpatial(null);
+    setOverlapChoicesV133([]);
+    setLastEnabledContextIdV133(null);
+    setRoleNotice(
+      `${publicMapLayerTitleV126(
+        elementId,
+        layer.publicShortTitle
+      )}을(를) 주 분석 데이터로 표시했습니다.`
+    );
+    onSelectorStateChange(semanticStateForLayerV125(layer));
+  }
+
   function clearWorkspaceV126() {
     setActiveIds([]);
     setFocusId(null);
@@ -4193,7 +4523,6 @@ export default function RealMapExplorerPage({
 
   function applyFinanceTypeV133(type: "adaptation" | "carbon") {
     const primaryElement = type === "adaptation" ? "D-018" : "C-025";
-    const comparisonElement = type === "adaptation" ? "C-025" : "D-018";
     const primaryLayer = layers.find(
       (layer) => layer.elementId === primaryElement && layer.enabled !== false
     );
@@ -4202,16 +4531,10 @@ export default function RealMapExplorerPage({
       return;
     }
     setFinanceTypeV133(type);
-    setActiveIds(
-      financeCompareV133
-        ? [primaryElement, comparisonElement]
-        : [primaryElement]
-    );
+    setActiveIds([primaryElement]);
     setFocusId(primaryElement);
     setSelectedPresetId("CLIMATE_FINANCE_PROJECTS");
-    setLastEnabledContextIdV133(
-      financeCompareV133 ? comparisonElement : null
-    );
+    setLastEnabledContextIdV133(null);
     setSelected(null);
     setSelectedSpatial(null);
     setOverlapChoicesV133([]);
@@ -4221,27 +4544,12 @@ export default function RealMapExplorerPage({
     );
   }
 
-  function toggleFinanceCompareV133() {
-    const nextCompare = !financeCompareV133;
+  function openFinanceComparisonV135() {
     const primaryElement =
       financeTypeV133 === "adaptation" ? "D-018" : "C-025";
     const comparisonElement =
       financeTypeV133 === "adaptation" ? "C-025" : "D-018";
-    setFinanceCompareV133(nextCompare);
-    setActiveIds(
-      nextCompare ? [primaryElement, comparisonElement] : [primaryElement]
-    );
-    setFocusId(primaryElement);
-    setSelectedPresetId("CLIMATE_FINANCE_PROJECTS");
-    setLastEnabledContextIdV133(nextCompare ? comparisonElement : null);
-    setSelected(null);
-    setSelectedSpatial(null);
-    setOverlapChoicesV133([]);
-    setRoleNotice(
-      nextCompare
-        ? "적응기금과 탄소크레딧 사업을 기호로 구분해 비교합니다."
-        : "비교 표시를 끄고 선택한 사업 유형만 표시합니다."
-    );
+    openComparisonV135(primaryElement, comparisonElement);
   }
 
   function selectOverlapChoiceV133(choice: MapOverlapChoiceV133) {
@@ -4426,11 +4734,28 @@ export default function RealMapExplorerPage({
       }
       data-left-panel-compact={resizablePanelsV129.leftCompact ? "true" : "false"}
     >
+      {comparisonModeV135 && (
+        <MapComparisonWorkspaceV135
+          bounds={comparisonBoundsV135}
+          datasets={comparisonDatasetsV135}
+          layerOptions={comparisonLayerOptionsV135}
+          onClose={closeComparisonV135}
+          onDatasetChange={changeComparisonDatasetV135}
+          onPeriodChange={(side, period) =>
+            changeComparisonSelectorV135(side, { period })
+          }
+          onVariableChange={(side, variable) =>
+            changeComparisonSelectorV135(side, { variable })
+          }
+          selectedElementIds={comparisonLayerIdsV135}
+        />
+      )}
       <div
         ref={resizablePanelsV129.layoutRef}
         className={`cdp-map-layout ${
           resizablePanelsV129.isResizing ? "is-resizing" : ""
         }`}
+        hidden={comparisonModeV135}
         data-testid="map-resizable-layout"
         data-resizing={resizablePanelsV129.isResizing ? "true" : "false"}
         style={resizablePanelsV129.layoutStyle}
@@ -4445,7 +4770,7 @@ export default function RealMapExplorerPage({
           <div className="cdp-map-panel-header">
             <div>
               <h1>데이터 지도</h1>
-              <p>주 분석 데이터 1개와 보조 데이터 2개를 함께 보세요.</p>
+              <p>주 분석 데이터 1개를 보고, 필요하면 보조 데이터 1개를 함께 보세요.</p>
             </div>
             <button
               type="button"
@@ -4526,6 +4851,67 @@ export default function RealMapExplorerPage({
             </div>
           </section>
 
+          <section
+            className="cdp-map-all-data-v135"
+            data-testid="map-all-data-v135"
+            aria-labelledby="map-all-data-title-v135"
+          >
+            <h2 id="map-all-data-title-v135">전체 지도 데이터</h2>
+            <p className="cdp-map-all-data-v135__lede">
+              검증된 지도 데이터 {comparisonLayerOptionsV135.length}개를 분야별로
+              직접 선택할 수 있습니다.
+            </p>
+            {groupedLayers.map(([category, categoryLayers]) => (
+              <div key={category} className="cdp-map-all-data-v135__group">
+                <h3 data-map-group-v135={category}>{category}</h3>
+                <ul>
+                  {categoryLayers.map((layer) => (
+                    <li key={layer.elementId}>
+                      <button
+                        type="button"
+                        className={`cdp-map-all-data-v135__item ${
+                          primaryLayerId === layer.elementId ? "is-active" : ""
+                        }`}
+                        data-testid="map-all-data-layer-v135"
+                        data-element-id={layer.elementId}
+                        data-map-element={layer.elementId}
+                        aria-pressed={primaryLayerId === layer.elementId}
+                        disabled={layer.enabled === false}
+                        onClick={() => showMapDatasetV135(layer.elementId)}
+                      >
+                        <strong>
+                          {publicMapLayerTitleV126(
+                            layer.elementId,
+                            layer.publicShortTitle
+                          )}
+                        </strong>
+                        <span>
+                          {publicMapDataFunctionV135(
+                            layer.elementId,
+                            layer.mapBenefit
+                          )}
+                        </span>
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+            <button
+              type="button"
+              className="cdp-button cdp-button--secondary cdp-map-all-data-v135__compare"
+              data-testid="map-compare-open-v135"
+              onClick={() =>
+                openComparisonV135(
+                  comparisonLayerIdsV135[0],
+                  comparisonLayerIdsV135[1]
+                )
+              }
+            >
+              비교해서 보기
+            </button>
+          </section>
+
           {selectedPresetV133 && primaryLayerId && (
             <section
               className="cdp-map-focus-summary-v133"
@@ -4591,7 +4977,6 @@ export default function RealMapExplorerPage({
               className="cdp-map-finance-v133"
               data-testid="map-finance-type-selector-v133"
               data-finance-primary={financeTypeV133}
-              data-finance-compare={financeCompareV133 ? "true" : "false"}
             >
               <h2>기후재원 사업</h2>
               <span className="cdp-map-finance-v133__label">사업 유형</span>
@@ -4616,11 +5001,10 @@ export default function RealMapExplorerPage({
               <button
                 type="button"
                 className="cdp-map-finance-v133__compare"
-                data-testid="map-finance-compare-v133"
-                aria-pressed={financeCompareV133}
-                onClick={toggleFinanceCompareV133}
+                data-testid="map-compare-open-v135"
+                onClick={openFinanceComparisonV135}
               >
-                {financeCompareV133 ? "비교 끄기" : "비교해서 보기"}
+                비교해서 보기
               </button>
               <dl className="cdp-map-finance-v133__summary">
                 <div>
@@ -4637,9 +5021,7 @@ export default function RealMapExplorerPage({
                 </div>
               </dl>
               <p>
-                {financeCompareV133
-                  ? "◇ 적응기금 · ■ 탄소크레딧"
-                  : financeTypeV133 === "adaptation"
+                {financeTypeV133 === "adaptation"
                   ? "◇ 적응기금 사업·지역 협력범위"
                   : "■ 검증된 탄소크레딧 사업 위치"}
               </p>
@@ -6792,15 +7174,6 @@ export default function RealMapExplorerPage({
             <div className="cdp-evidence-empty">
               <h3>분석을 시작하세요</h3>
               <p>프리셋을 선택하면 전국 요약과 상세정보가 여기에 표시됩니다.</p>
-              {provider && (
-                <button
-                  type="button"
-                  className="cdp-button cdp-button--secondary"
-                  onClick={() => onOpenCountry(countryIso3)}
-                >
-                  국가정보 보기
-                </button>
-              )}
             </div>
           )}
         </aside>

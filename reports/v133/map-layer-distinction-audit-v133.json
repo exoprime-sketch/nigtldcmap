@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v133-ci-map-analysis-audit-1",
-  "generatedAt": "2026-09-02T00:36:34.480Z",
+  "generatedAt": "2026-09-03T05:22:35.996Z",
   "audit": "map-layer-distinction:v133",
   "status": "PASS",
   "summary": {
@@ -15,8 +15,8 @@
     "visibleMapSymbolWithoutLegend": 0,
     "climateSnapshot": {
       "primaryElement": "B-021",
-      "contextElements": "D-008,D-018",
-      "legendText": "현재 표시 중지역 취약성주 분석 데이터 · GVI 취약성 지수 · 0–100 지수숨기기지역 기후예산함께 보기 · 성 단위 기후변화 지출 누계 · VND · 원 크기 = 예산숨기기적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업숨기기○ 지역 기후예산 · 성·시 단위 통계 대표점이며 실제 사업 위치가 아닙니다.",
+      "contextElements": "D-018",
+      "legendText": "현재 표시 중지역 취약성주 분석 데이터 · GVI 취약성 지수 · 0–100 지수숨기기적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업숨기기",
       "hoverPopupText": "",
       "items": [
         {
@@ -25,14 +25,6 @@
           "shape": "area",
           "unit": "0–100 지수",
           "text": "지역 취약성주 분석 데이터 · GVI 취약성 지수 · 0–100 지수숨기기",
-          "hasToggle": true
-        },
-        {
-          "elementId": "D-008",
-          "role": "context",
-          "shape": "circle",
-          "unit": "VND",
-          "text": "지역 기후예산함께 보기 · 성 단위 기후변화 지출 누계 · VND · 원 크기 = 예산숨기기",
           "hasToggle": true
         },
         {
@@ -62,12 +54,6 @@
           "role": "context",
           "shape": "diamond",
           "interactiveSymbol": true
-        },
-        {
-          "elementId": "D-008",
-          "role": "context",
-          "shape": "circle",
-          "interactiveSymbol": true
         }
       ],
       "renderedPointSymbols": [
@@ -76,12 +62,6 @@
           "role": "context",
           "shape": "diamond",
           "interactiveSymbol": true
-        },
-        {
-          "elementId": "D-008",
-          "role": "context",
-          "shape": "circle",
-          "interactiveSymbol": true
         }
       ],
       "renderedMapSymbols": [
@@ -89,11 +69,6 @@
           "elementId": "B-021",
           "role": "primary",
           "shape": "area"
-        },
-        {
-          "elementId": "D-008",
-          "role": "context",
-          "shape": "circle"
         },
         {
           "elementId": "D-018",
@@ -188,74 +163,18 @@
       ]
     },
     "financeCompare": {
-      "primaryElement": "C-025",
-      "contextElements": "D-018",
-      "legendText": "현재 표시 중탄소크레딧 사업주 분석 데이터 · 탄소크레딧 사업 · 개숨기기적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업숨기기",
-      "hoverPopupText": "",
-      "items": [
-        {
-          "elementId": "C-025",
-          "role": "primary",
-          "shape": "square",
-          "unit": "개",
-          "text": "탄소크레딧 사업주 분석 데이터 · 탄소크레딧 사업 · 개숨기기",
-          "hasToggle": true
-        },
-        {
-          "elementId": "D-018",
-          "role": "context",
-          "shape": "diamond",
-          "unit": "사업",
-          "text": "적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업숨기기",
-          "hasToggle": true
-        }
-      ],
-      "rendered": [
-        {
-          "elementId": "D-018",
-          "role": "context",
-          "shape": "area",
-          "interactiveSymbol": false
-        },
-        {
-          "elementId": "D-018",
-          "role": "context",
-          "shape": "diamond",
-          "interactiveSymbol": true
-        },
-        {
-          "elementId": "C-025",
-          "role": "primary",
-          "shape": "square",
-          "interactiveSymbol": true
-        }
-      ],
-      "renderedPointSymbols": [
-        {
-          "elementId": "D-018",
-          "role": "context",
-          "shape": "diamond",
-          "interactiveSymbol": true
-        },
-        {
-          "elementId": "C-025",
-          "role": "primary",
-          "shape": "square",
-          "interactiveSymbol": true
-        }
-      ],
-      "renderedMapSymbols": [
-        {
-          "elementId": "C-025",
-          "role": "primary",
-          "shape": "square"
-        },
-        {
-          "elementId": "D-018",
-          "role": "context",
-          "shape": "diamond"
-        }
-      ]
+      "a": {
+        "elementId": "D-018",
+        "ready": "true",
+        "legendText": "적응기금 사업지역 협력범위·세부 활동지역 · 사업 · 2026지역 협력사업 2건의 참여국 범위 2개와 검증된 세부 활동지역 2곳",
+        "color": "rgb(23, 106, 75)"
+      },
+      "b": {
+        "elementId": "C-025",
+        "ready": "true",
+        "legendText": "탄소크레딧 사업탄소크레딧 사업 · 개 · 2026위치자료 18건",
+        "color": "rgb(138, 75, 18)"
+      }
     },
     "runtimeFailure": null
   },
@@ -301,8 +220,8 @@
         "runtimeFailure": null,
         "climateSnapshot": {
           "primaryElement": "B-021",
-          "contextElements": "D-008,D-018",
-          "legendText": "현재 표시 중지역 취약성주 분석 데이터 · GVI 취약성 지수 · 0–100 지수숨기기지역 기후예산함께 보기 · 성 단위 기후변화 지출 누계 · VND · 원 크기 = 예산숨기기적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업숨기기○ 지역 기후예산 · 성·시 단위 통계 대표점이며 실제 사업 위치가 아닙니다.",
+          "contextElements": "D-018",
+          "legendText": "현재 표시 중지역 취약성주 분석 데이터 · GVI 취약성 지수 · 0–100 지수숨기기적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업숨기기",
           "hoverPopupText": "",
           "items": [
             {
@@ -311,14 +230,6 @@
               "shape": "area",
               "unit": "0–100 지수",
               "text": "지역 취약성주 분석 데이터 · GVI 취약성 지수 · 0–100 지수숨기기",
-              "hasToggle": true
-            },
-            {
-              "elementId": "D-008",
-              "role": "context",
-              "shape": "circle",
-              "unit": "VND",
-              "text": "지역 기후예산함께 보기 · 성 단위 기후변화 지출 누계 · VND · 원 크기 = 예산숨기기",
               "hasToggle": true
             },
             {
@@ -348,12 +259,6 @@
               "role": "context",
               "shape": "diamond",
               "interactiveSymbol": true
-            },
-            {
-              "elementId": "D-008",
-              "role": "context",
-              "shape": "circle",
-              "interactiveSymbol": true
             }
           ],
           "renderedPointSymbols": [
@@ -362,12 +267,6 @@
               "role": "context",
               "shape": "diamond",
               "interactiveSymbol": true
-            },
-            {
-              "elementId": "D-008",
-              "role": "context",
-              "shape": "circle",
-              "interactiveSymbol": true
             }
           ],
           "renderedMapSymbols": [
@@ -375,11 +274,6 @@
               "elementId": "B-021",
               "role": "primary",
               "shape": "area"
-            },
-            {
-              "elementId": "D-008",
-              "role": "context",
-              "shape": "circle"
             },
             {
               "elementId": "D-018",
@@ -417,14 +311,6 @@
             "hasToggle": true
           },
           {
-            "elementId": "D-008",
-            "role": "context",
-            "shape": "circle",
-            "unit": "VND",
-            "text": "지역 기후예산함께 보기 · 성 단위 기후변화 지출 누계 · VND · 원 크기 = 예산숨기기",
-            "hasToggle": true
-          },
-          {
             "elementId": "D-018",
             "role": "context",
             "shape": "diamond",
@@ -451,12 +337,6 @@
             "role": "context",
             "shape": "diamond",
             "interactiveSymbol": true
-          },
-          {
-            "elementId": "D-008",
-            "role": "context",
-            "shape": "circle",
-            "interactiveSymbol": true
           }
         ]
       },
@@ -468,7 +348,7 @@
       "name": "COMPACT_LEGEND_PUBLIC_COPY",
       "status": "PASS",
       "actual": {
-        "text": "현재 표시 중지역 취약성주 분석 데이터 · GVI 취약성 지수 · 0–100 지수숨기기지역 기후예산함께 보기 · 성 단위 기후변화 지출 누계 · VND · 원 크기 = 예산숨기기적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업숨기기○ 지역 기후예산 · 성·시 단위 통계 대표점이며 실제 사업 위치가 아닙니다.",
+        "text": "현재 표시 중지역 취약성주 분석 데이터 · GVI 취약성 지수 · 0–100 지수숨기기적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업숨기기",
         "tokens": []
       },
       "expected": "Korean primary/compare legend without developer tokens"
@@ -578,76 +458,20 @@
       "name": "FINANCE_COMPARE_DISTINCT_SYMBOLS",
       "status": "PASS",
       "actual": {
-        "primaryElement": "C-025",
-        "contextElements": "D-018",
-        "legendText": "현재 표시 중탄소크레딧 사업주 분석 데이터 · 탄소크레딧 사업 · 개숨기기적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업숨기기",
-        "hoverPopupText": "",
-        "items": [
-          {
-            "elementId": "C-025",
-            "role": "primary",
-            "shape": "square",
-            "unit": "개",
-            "text": "탄소크레딧 사업주 분석 데이터 · 탄소크레딧 사업 · 개숨기기",
-            "hasToggle": true
-          },
-          {
-            "elementId": "D-018",
-            "role": "context",
-            "shape": "diamond",
-            "unit": "사업",
-            "text": "적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업숨기기",
-            "hasToggle": true
-          }
-        ],
-        "rendered": [
-          {
-            "elementId": "D-018",
-            "role": "context",
-            "shape": "area",
-            "interactiveSymbol": false
-          },
-          {
-            "elementId": "D-018",
-            "role": "context",
-            "shape": "diamond",
-            "interactiveSymbol": true
-          },
-          {
-            "elementId": "C-025",
-            "role": "primary",
-            "shape": "square",
-            "interactiveSymbol": true
-          }
-        ],
-        "renderedPointSymbols": [
-          {
-            "elementId": "D-018",
-            "role": "context",
-            "shape": "diamond",
-            "interactiveSymbol": true
-          },
-          {
-            "elementId": "C-025",
-            "role": "primary",
-            "shape": "square",
-            "interactiveSymbol": true
-          }
-        ],
-        "renderedMapSymbols": [
-          {
-            "elementId": "C-025",
-            "role": "primary",
-            "shape": "square"
-          },
-          {
-            "elementId": "D-018",
-            "role": "context",
-            "shape": "diamond"
-          }
-        ]
+        "a": {
+          "elementId": "D-018",
+          "ready": "true",
+          "legendText": "적응기금 사업지역 협력범위·세부 활동지역 · 사업 · 2026지역 협력사업 2건의 참여국 범위 2개와 검증된 세부 활동지역 2곳",
+          "color": "rgb(23, 106, 75)"
+        },
+        "b": {
+          "elementId": "C-025",
+          "ready": "true",
+          "legendText": "탄소크레딧 사업탄소크레딧 사업 · 개 · 2026위치자료 18건",
+          "color": "rgb(138, 75, 18)"
+        }
       },
-      "expected": "two types with two symbols"
+      "expected": "two comparison panes with distinct colours and legends"
     },
     {
       "type": "check",
@@ -686,8 +510,8 @@
   "visibleMapSymbolWithoutLegend": 0,
   "climateSnapshot": {
     "primaryElement": "B-021",
-    "contextElements": "D-008,D-018",
-    "legendText": "현재 표시 중지역 취약성주 분석 데이터 · GVI 취약성 지수 · 0–100 지수숨기기지역 기후예산함께 보기 · 성 단위 기후변화 지출 누계 · VND · 원 크기 = 예산숨기기적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업숨기기○ 지역 기후예산 · 성·시 단위 통계 대표점이며 실제 사업 위치가 아닙니다.",
+    "contextElements": "D-018",
+    "legendText": "현재 표시 중지역 취약성주 분석 데이터 · GVI 취약성 지수 · 0–100 지수숨기기적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업숨기기",
     "hoverPopupText": "",
     "items": [
       {
@@ -696,14 +520,6 @@
         "shape": "area",
         "unit": "0–100 지수",
         "text": "지역 취약성주 분석 데이터 · GVI 취약성 지수 · 0–100 지수숨기기",
-        "hasToggle": true
-      },
-      {
-        "elementId": "D-008",
-        "role": "context",
-        "shape": "circle",
-        "unit": "VND",
-        "text": "지역 기후예산함께 보기 · 성 단위 기후변화 지출 누계 · VND · 원 크기 = 예산숨기기",
         "hasToggle": true
       },
       {
@@ -733,12 +549,6 @@
         "role": "context",
         "shape": "diamond",
         "interactiveSymbol": true
-      },
-      {
-        "elementId": "D-008",
-        "role": "context",
-        "shape": "circle",
-        "interactiveSymbol": true
       }
     ],
     "renderedPointSymbols": [
@@ -747,12 +557,6 @@
         "role": "context",
         "shape": "diamond",
         "interactiveSymbol": true
-      },
-      {
-        "elementId": "D-008",
-        "role": "context",
-        "shape": "circle",
-        "interactiveSymbol": true
       }
     ],
     "renderedMapSymbols": [
@@ -760,11 +564,6 @@
         "elementId": "B-021",
         "role": "primary",
         "shape": "area"
-      },
-      {
-        "elementId": "D-008",
-        "role": "context",
-        "shape": "circle"
       },
       {
         "elementId": "D-018",
@@ -859,74 +658,18 @@
     ]
   },
   "financeCompare": {
-    "primaryElement": "C-025",
-    "contextElements": "D-018",
-    "legendText": "현재 표시 중탄소크레딧 사업주 분석 데이터 · 탄소크레딧 사업 · 개숨기기적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업숨기기",
-    "hoverPopupText": "",
-    "items": [
-      {
-        "elementId": "C-025",
-        "role": "primary",
-        "shape": "square",
-        "unit": "개",
-        "text": "탄소크레딧 사업주 분석 데이터 · 탄소크레딧 사업 · 개숨기기",
-        "hasToggle": true
-      },
-      {
-        "elementId": "D-018",
-        "role": "context",
-        "shape": "diamond",
-        "unit": "사업",
-        "text": "적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업숨기기",
-        "hasToggle": true
-      }
-    ],
-    "rendered": [
-      {
-        "elementId": "D-018",
-        "role": "context",
-        "shape": "area",
-        "interactiveSymbol": false
-      },
-      {
-        "elementId": "D-018",
-        "role": "context",
-        "shape": "diamond",
-        "interactiveSymbol": true
-      },
-      {
-        "elementId": "C-025",
-        "role": "primary",
-        "shape": "square",
-        "interactiveSymbol": true
-      }
-    ],
-    "renderedPointSymbols": [
-      {
-        "elementId": "D-018",
-        "role": "context",
-        "shape": "diamond",
-        "interactiveSymbol": true
-      },
-      {
-        "elementId": "C-025",
-        "role": "primary",
-        "shape": "square",
-        "interactiveSymbol": true
-      }
-    ],
-    "renderedMapSymbols": [
-      {
-        "elementId": "C-025",
-        "role": "primary",
-        "shape": "square"
-      },
-      {
-        "elementId": "D-018",
-        "role": "context",
-        "shape": "diamond"
-      }
-    ]
+    "a": {
+      "elementId": "D-018",
+      "ready": "true",
+      "legendText": "적응기금 사업지역 협력범위·세부 활동지역 · 사업 · 2026지역 협력사업 2건의 참여국 범위 2개와 검증된 세부 활동지역 2곳",
+      "color": "rgb(23, 106, 75)"
+    },
+    "b": {
+      "elementId": "C-025",
+      "ready": "true",
+      "legendText": "탄소크레딧 사업탄소크레딧 사업 · 개 · 2026위치자료 18건",
+      "color": "rgb(138, 75, 18)"
+    }
   },
   "runtimeFailure": null
 }

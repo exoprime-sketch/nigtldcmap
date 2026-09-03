@@ -7,10 +7,7 @@ import {
 } from "../data/countries/countryDataFacadeV122";
 import { listCountryDataProvidersV122 } from "../data/countries/countryDataProviderRegistryV122";
 import type { CountryCatalogItemV122 } from "../data/countries/countryDataTypesV122";
-import {
-  publicDataStatusKeyV128,
-  publicDownloadStatusV128,
-} from "../data/publicPlatformV128";
+import { publicDownloadStatusV128 } from "../data/publicPlatformV128";
 import { getElementVisualizationSummaryV125 } from "../data/visualization/elementVisualizationRegistryV125";
 import { CATEGORIES } from "../data/publicTaxonomy";
 import type { CategoryCode } from "../data/publicTaxonomy";
@@ -70,12 +67,31 @@ function referenceYearRangeV125(item: CountryCatalogItemV122): string {
     : `${years[0]}–${years[years.length - 1]}`;
 }
 
-function contractSummaryValuesV125(values: string[], emptyLabel: string): string {
-  if (values.length === 0) return emptyLabel;
-  const labels = values.slice(0, 3);
-  return `${labels.join(" · ")}${
-    values.length > labels.length ? ` 외 ${values.length - labels.length}종` : ""
-  }`;
+function finderCardTagsV135(
+  item: CountryCatalogItemV122,
+  measureLabels: string[],
+  dimensionLabels: string[]
+): string[] {
+  const titleKey = normalizedSearchV121(item.publicTitle);
+  const candidates = [
+    ...measureLabels.filter((label) => {
+      const key = normalizedSearchV121(label);
+      return key && key !== titleKey && !titleKey.includes(key) && !key.includes(titleKey);
+    }),
+    ...item.technologyIds.map(technologyLabelV121),
+    ...dimensionLabels.filter(
+      (label) => !["분류", "연도", "기간", "세부 분류"].includes(label)
+    ),
+  ];
+  const seen = new Set<string>();
+  return candidates
+    .map((label) => label.trim())
+    .filter((label) => {
+      if (!label || label.length > 34 || seen.has(label)) return false;
+      seen.add(label);
+      return true;
+    })
+    .slice(0, 3);
 }
 
 export default function DataExplorerPage({
@@ -524,45 +540,33 @@ export default function DataExplorerPage({
         {visibleItems.map((item) => {
           const contract = getElementVisualizationSummaryV125(item.elementId);
           const downloadStatus = publicDownloadStatusV128(item);
-          const publicRecordCount =
-            contract?.populatedRecordCount ?? item.observationCount + item.entityCount;
           const semanticYearRange = contract
             ? contract.yearRange.start === null
               ? referenceYearRangeV125(item)
               : contract.yearRange.start === contract.yearRange.end
               ? String(contract.yearRange.start)
-              : `${contract.yearRange.start}–${contract.yearRange.end}`
+                : `${contract.yearRange.start}–${contract.yearRange.end}`
             : referenceYearRangeV125(item);
+          const tags = finderCardTagsV135(
+            item,
+            contract?.measureLabels || [],
+            contract?.dimensionLabels || []
+          );
           return (
           <article
             className="cdp-dataset-card"
             key={countryCatalogKeyV122(item.providerId, item.elementId)}
+            data-element-id={item.elementId}
+            data-testid="public-finder-card-v135"
           >
             <div className="cdp-card__path">
-              <span>{item.categoryLabel}</span>
+              <span>
+                <PublicTermTextV134 text={item.categoryLabel} />
+              </span>
               <span aria-hidden="true">›</span>
-              <span>{item.groupLabel}</span>
-            </div>
-            <div className="cdp-chip-row" aria-label="데이터 공개 상태">
-              <span
-                className="cdp-chip"
-                data-public-status={publicDataStatusKeyV128(item.publicStatus)}
-              >
-                {item.publicStatusLabel}
+              <span>
+                <PublicTermTextV134 text={item.groupLabel} />
               </span>
-              <span
-                className="cdp-chip"
-                data-download-status={downloadStatus.key}
-                title={downloadStatus.reason || undefined}
-              >
-                {downloadStatus.label}
-              </span>
-              {!item.hasMapData &&
-                (item.raw.detailTemplate === "spatial" ||
-                  item.raw.spatialAvailability === "not-available" ||
-                  item.raw.spatialAvailability === "not-collected") && (
-                  <span className="cdp-chip">공간자료 미확보</span>
-                )}
             </div>
             {showCountryContext && (
               <span className="cdp-country-chip">{item.countryNameKo}</span>
@@ -571,44 +575,10 @@ export default function DataExplorerPage({
             <p className="cdp-card__description">
               <PublicTermTextV134 text={item.publicDescription} />
             </p>
-            <dl className="cdp-card__facts">
+            <dl className="cdp-card__facts cdp-card__facts--public-v135">
               <div>
-                <dt>실제 레코드</dt>
-                <dd>{publicRecordCount.toLocaleString("ko-KR")}건</dd>
-              </div>
-              <div>
-                <dt>기준연도 범위</dt>
+                <dt>기간</dt>
                 <dd>{semanticYearRange}</dd>
-              </div>
-              <div>
-                <dt>주요 측정항목</dt>
-                <dd>
-                  <PublicTermTextV134
-                    text={
-                      contract
-                        ? contractSummaryValuesV125(
-                            contract.measureLabels,
-                            "측정항목 없음"
-                          )
-                        : "측정항목 확인 중"
-                    }
-                  />
-                </dd>
-              </div>
-              <div>
-                <dt>주요 분류 차원</dt>
-                <dd>
-                  <PublicTermTextV134
-                    text={
-                      contract
-                        ? contractSummaryValuesV125(
-                            contract.dimensionLabels,
-                            "추가 분류 없음"
-                          )
-                        : "분류 정보 확인 중"
-                    }
-                  />
-                </dd>
               </div>
               <div>
                 <dt>자료 제공기관</dt>
@@ -617,25 +587,21 @@ export default function DataExplorerPage({
                     text={
                       item.sourceOrganizations.length > 0
                         ? item.sourceOrganizations.slice(0, 2).join(" · ")
-                        : "수집 예정"
+                        : "—"
                     }
                   />
                 </dd>
               </div>
-              <div>
-                <dt>공간표현</dt>
-                <dd>{contract?.spatiallyLinked || item.hasMapData ? "가능" : "미확보"}</dd>
-              </div>
-              <div>
-                <dt>다운로드</dt>
-                <dd>{downloadStatus.label}</dd>
-              </div>
             </dl>
-            {item.technologyIds.length > 0 && (
-              <div className="cdp-chip-row" aria-label="관련 기후기술">
-                {item.technologyIds.slice(0, 3).map((id) => (
-                  <span className="cdp-chip" key={id}>
-                    <PublicTermTextV134 text={technologyLabelV121(id)} />
+            {tags.length > 0 && (
+              <div
+                className="cdp-chip-row cdp-card__public-tags-v135"
+                aria-label="주요 내용"
+                data-testid="finder-card-tags-v135"
+              >
+                {tags.map((tag) => (
+                  <span className="cdp-chip" key={tag}>
+                    <PublicTermTextV134 text={tag} />
                   </span>
                 ))}
               </div>
@@ -681,6 +647,8 @@ export default function DataExplorerPage({
           <button
             type="button"
             className="cdp-button cdp-button--secondary"
+            data-testid="finder-load-more-v135"
+            data-remaining={filtered.length - visibleCount}
             onClick={() =>
               setVisibleCount((current) => current + INITIAL_VISIBLE_COUNT)
             }

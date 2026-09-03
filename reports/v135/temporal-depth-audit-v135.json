@@ -1,0 +1,144 @@
+{
+  "schemaVersion": "v135-final-public-screen-audit-1",
+  "generatedAt": "2026-09-03T05:24:14.225Z",
+  "audit": "temporal-depth:v135",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "temporal-depth:v135",
+    "status": "PASS",
+    "passed": 11,
+    "failed": 0,
+    "total": 11,
+    "failedChecks": [],
+    "inspectedRoutes": 152,
+    "temporalDepthCounts": {
+      "single-year": 64,
+      "two-year": 11,
+      "time-series": 47,
+      "scenario": 8,
+      "non-temporal": 22
+    },
+    "singleYearTimeSeriesCount": 0,
+    "twoYearGenericTrendCount": 0,
+    "onePointChartCount": 0,
+    "rawMatrixAsPrimaryCount": 0,
+    "runtimeFailure": null
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "temporal-depth:v135",
+      "name": "FRAMEWORK_ELEMENTS",
+      "status": "PASS",
+      "actual": 152,
+      "expected": 152
+    },
+    {
+      "type": "check",
+      "audit": "temporal-depth:v135",
+      "name": "TEMPORAL_RUNTIME_COVERAGE",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null,
+        "routeCount": 152,
+        "routeFailures": []
+      },
+      "expected": {
+        "routeCount": 152,
+        "routeFailures": []
+      }
+    },
+    {
+      "type": "check",
+      "audit": "temporal-depth:v135",
+      "name": "TEMPORAL_DEPTH_MARKER_COVERAGE",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "temporal-depth:v135",
+      "name": "TEMPORAL_DEPTH_CONTRACT_MATCH",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "temporal-depth:v135",
+      "name": "SINGLE_YEAR_TIME_SERIES_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "temporal-depth:v135",
+      "name": "TWO_YEAR_GENERIC_TREND_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "temporal-depth:v135",
+      "name": "ONE_POINT_CHART_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "temporal-depth:v135",
+      "name": "STATUS_ONLY_TEMPORAL_VISUAL_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "temporal-depth:v135",
+      "name": "GHG_ANALYTICAL_VIEW",
+      "status": "PASS",
+      "actual": {
+        "present": true,
+        "rawMatrixPrimary": "false"
+      },
+      "expected": {
+        "present": true,
+        "rawMatrixPrimary": "false"
+      }
+    },
+    {
+      "type": "check",
+      "audit": "temporal-depth:v135",
+      "name": "BROKEN_ASSET",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "temporal-depth:v135",
+      "name": "CONSOLE_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "inspectedRoutes": 152,
+  "temporalDepthCounts": {
+    "single-year": 64,
+    "two-year": 11,
+    "time-series": 47,
+    "scenario": 8,
+    "non-temporal": 22
+  },
+  "singleYearTimeSeriesCount": 0,
+  "twoYearGenericTrendCount": 0,
+  "onePointChartCount": 0,
+  "rawMatrixAsPrimaryCount": 0,
+  "runtimeFailure": null
+}

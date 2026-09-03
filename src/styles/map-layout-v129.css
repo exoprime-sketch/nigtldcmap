@@ -1,8 +1,8 @@
 .cdp-map-layout {
   --cdp-map-left-panel-width: 320px;
-  --cdp-map-left-separator-width: 8px;
+  --cdp-map-left-separator-width: 12px;
   --cdp-map-right-panel-width: 360px;
-  --cdp-map-right-separator-width: 8px;
+  --cdp-map-right-separator-width: 12px;
   --cdp-map-minimum-width: 560px;
 }
 
@@ -20,14 +20,34 @@
 }
 
 .cdp-map-panel-separator > span {
-  width: 2px;
-  background: #bed2c9;
+  position: relative;
+  width: 3px;
+  margin-block: 10px;
+  border-radius: 999px;
+  background: #9dbcb0;
   transition: width 120ms ease, background-color 120ms ease, box-shadow 120ms ease;
+}
+
+.cdp-map-panel-separator > span::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 44px;
+  border-radius: 999px;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.96) 0 3px,
+    transparent 3px 7px
+  );
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 }
 
 .cdp-map-panel-separator:hover > span,
 .cdp-map-panel-separator:focus-visible > span {
-  width: 3px;
+  width: 5px;
   background: #176a4b;
   box-shadow: 0 0 0 3px rgba(23, 106, 75, 0.14);
 }

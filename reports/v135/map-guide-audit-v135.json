@@ -1,0 +1,214 @@
+{
+  "schemaVersion": "v135-final-public-screen-audit-1",
+  "generatedAt": "2026-09-03T05:24:45.397Z",
+  "audit": "map-guide:v135",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "map-guide:v135",
+    "status": "PASS",
+    "passed": 13,
+    "failed": 0,
+    "total": 13,
+    "failedChecks": [],
+    "mapGuideDefaultOpen": false,
+    "mapGuideRowCount": 12,
+    "mapPolicyParagraphCount": 0,
+    "mapCountryInfoButtonCount": 0,
+    "runtimeFailure": null
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "map-guide:v135",
+      "name": "MAP_GUIDE_RUNTIME",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null,
+        "snapshotPresent": true
+      },
+      "expected": {
+        "snapshotPresent": true
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-guide:v135",
+      "name": "MAP_GUIDE_DEFAULT_OPEN",
+      "status": "PASS",
+      "actual": false,
+      "expected": false
+    },
+    {
+      "type": "check",
+      "audit": "map-guide:v135",
+      "name": "MAP_GUIDE_ROW_COUNT",
+      "status": "PASS",
+      "actual": 12,
+      "expected": 12
+    },
+    {
+      "type": "check",
+      "audit": "map-guide:v135",
+      "name": "MAP_GUIDE_COLUMN_DATA_FUNCTION",
+      "status": "PASS",
+      "actual": [
+        "데이터명",
+        "공간 표현",
+        "기준기간",
+        "데이터 기능",
+        "참고사항",
+        "데이터명",
+        "공간 표현",
+        "기준기간",
+        "데이터 기능",
+        "참고사항",
+        "데이터명",
+        "공간 표현",
+        "기준기간",
+        "데이터 기능",
+        "참고사항",
+        "데이터명",
+        "공간 표현",
+        "기준기간",
+        "데이터 기능",
+        "참고사항",
+        "데이터명",
+        "공간 표현",
+        "기준기간",
+        "데이터 기능",
+        "참고사항"
+      ],
+      "expected": "데이터 기능"
+    },
+    {
+      "type": "check",
+      "audit": "map-guide:v135",
+      "name": "MAP_GUIDE_COLUMN_REFERENCE",
+      "status": "PASS",
+      "actual": [
+        "데이터명",
+        "공간 표현",
+        "기준기간",
+        "데이터 기능",
+        "참고사항",
+        "데이터명",
+        "공간 표현",
+        "기준기간",
+        "데이터 기능",
+        "참고사항",
+        "데이터명",
+        "공간 표현",
+        "기준기간",
+        "데이터 기능",
+        "참고사항",
+        "데이터명",
+        "공간 표현",
+        "기준기간",
+        "데이터 기능",
+        "참고사항",
+        "데이터명",
+        "공간 표현",
+        "기준기간",
+        "데이터 기능",
+        "참고사항"
+      ],
+      "expected": "참고사항"
+    },
+    {
+      "type": "check",
+      "audit": "map-guide:v135",
+      "name": "MAP_GUIDE_LEGACY_COLUMNS",
+      "status": "PASS",
+      "actual": [
+        "데이터명",
+        "공간 표현",
+        "기준기간",
+        "데이터 기능",
+        "참고사항",
+        "데이터명",
+        "공간 표현",
+        "기준기간",
+        "데이터 기능",
+        "참고사항",
+        "데이터명",
+        "공간 표현",
+        "기준기간",
+        "데이터 기능",
+        "참고사항",
+        "데이터명",
+        "공간 표현",
+        "기준기간",
+        "데이터 기능",
+        "참고사항",
+        "데이터명",
+        "공간 표현",
+        "기준기간",
+        "데이터 기능",
+        "참고사항"
+      ],
+      "expected": "legacy columns absent"
+    },
+    {
+      "type": "check",
+      "audit": "map-guide:v135",
+      "name": "MAP_GUIDE_FUNCTION_COVERAGE",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-guide:v135",
+      "name": "MAP_GUIDE_FUNCTION_COPY_STYLE",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-guide:v135",
+      "name": "MAP_POLICY_PARAGRAPH_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-guide:v135",
+      "name": "MAP_PRESET_COUNT",
+      "status": "PASS",
+      "actual": 5,
+      "expected": 5
+    },
+    {
+      "type": "check",
+      "audit": "map-guide:v135",
+      "name": "MAP_COUNTRY_INFO_BUTTON_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "type": "check",
+      "audit": "map-guide:v135",
+      "name": "BROKEN_ASSET",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-guide:v135",
+      "name": "CONSOLE_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "mapGuideDefaultOpen": false,
+  "mapGuideRowCount": 12,
+  "mapPolicyParagraphCount": 0,
+  "mapCountryInfoButtonCount": 0,
+  "runtimeFailure": null
+}

@@ -584,6 +584,26 @@ function CapabilityScorecardV125({
   );
 }
 
+/**
+ * V135 temporal depth policy. A trend line is only honest when a single series
+ * actually holds three or more populated years. One year becomes a category
+ * comparison and two years become an explicit before/after change, so the
+ * screen never shows "2026~2026년 추세" or a two-point line called a trend.
+ */
+function comparableYearCountV135(rows: NumericRowV125[]): number {
+  const yearsBySeries = new Map<string, Set<number>>();
+  rows.forEach((row) => {
+    const bucket = yearsBySeries.get(row.seriesKey) || new Set<number>();
+    bucket.add(row.year as number);
+    yearsBySeries.set(row.seriesKey, bucket);
+  });
+  let maximum = 0;
+  yearsBySeries.forEach((years) => {
+    maximum = Math.max(maximum, years.size);
+  });
+  return maximum;
+}
+
 function TrendPanelV125({
   rows,
   elementId,
@@ -596,17 +616,107 @@ function TrendPanelV125({
       isNumericRowV125(row) && typeof row.year === "number"
   );
   if (numericRows.length === 0) return null;
+  const unitGroups = groupByUnitV125(numericRows);
+  const depth = comparableYearCountV135(numericRows);
+
+  if (depth <= 1) {
+    return <CategoryComparisonV125 rows={numericRows} />;
+  }
+
+  if (depth === 2) {
+    return (
+      <VisualizationFrameV125 eyebrow="기간 비교" title="기준연도 대비 변화">
+        {unitGroups.map(({ unit, rows: unitRows }) => (
+          <TwoYearChangeUnitV135
+            key={unit || "no-unit"}
+            rows={unitRows}
+            unit={unit}
+          />
+        ))}
+      </VisualizationFrameV125>
+    );
+  }
+
   return (
     <VisualizationFrameV125 eyebrow="연도별" title="측정항목 추세">
-      {groupByUnitV125(numericRows).map(({ unit, rows: unitRows }) => (
-        <TrendUnitV125
-          elementId={elementId}
-          key={unit || "no-unit"}
-          rows={unitRows}
-          unit={unit}
-        />
-      ))}
+      {unitGroups.map(({ unit, rows: unitRows }) =>
+        comparableYearCountV135(unitRows) >= 3 ? (
+          <TrendUnitV125
+            elementId={elementId}
+            key={unit || "no-unit"}
+            rows={unitRows}
+            unit={unit}
+          />
+        ) : (
+          <CategoryComparisonV125 key={unit || "no-unit"} rows={unitRows} />
+        )
+      )}
     </VisualizationFrameV125>
+  );
+}
+
+function TwoYearChangeUnitV135({
+  rows,
+  unit,
+}: {
+  rows: NumericRowV125[];
+  unit: string;
+}) {
+  const publicUnit = publicTextV126(unit) || "단위 미기재";
+  const series = Array.from(
+    rows.reduce((map, row) => {
+      const bucket = map.get(row.seriesKey) || [];
+      bucket.push(row);
+      map.set(row.seriesKey, bucket);
+      return map;
+    }, new Map<string, NumericRowV125[]>())
+  )
+    .map(([key, values]) => {
+      const ordered = [...values].sort(
+        (left, right) => (left.year || 0) - (right.year || 0)
+      );
+      const first = ordered[0];
+      const last = ordered[ordered.length - 1];
+      if (!first || !last || first.year === last.year) return null;
+      const delta = last.value - first.value;
+      const percent =
+        first.value === 0 ? null : (delta / Math.abs(first.value)) * 100;
+      return {
+        key,
+        label:
+          publicTextV126(first.displayLabel) || first.semanticMeasure.labelKo,
+        first,
+        last,
+        delta,
+        percent,
+      };
+    })
+    .filter((item): item is NonNullable<typeof item> => item !== null);
+
+  if (series.length === 0) return null;
+
+  return (
+    <article className="sv125-contract-axis">
+      <h5>단위: {publicUnit}</h5>
+      <div className="sv125-two-year-change-v135" role="list">
+        {series.map((item) => (
+          <div key={item.key} role="listitem">
+            <strong><PublicTermTextV134 text={item.label} /></strong>
+            <span>
+              {item.first.year}년 {formatValueV121(item.first.value)} →{" "}
+              {item.last.year}년 {formatValueV121(item.last.value)} {publicUnit}
+            </span>
+            <b>
+              {item.delta > 0 ? "+" : ""}
+              {formatValueV121(item.delta)} {publicUnit}
+              {item.percent === null
+                ? ""
+                : " (" + (item.percent > 0 ? "+" : "") + item.percent.toFixed(1) + "%)"}
+            </b>
+          </div>
+        ))}
+      </div>
+    </article>
   );
 }
 
@@ -746,9 +856,13 @@ function MetricCardsV125({
             <span><PublicTermTextV134 text={row.displayLabel} /></span>
             <strong>{formatValueV121(row.value)}</strong>
             <small>
-              {[observationUnitV125(row), row.year || row.period]
-                .filter(Boolean)
-                .join(" · ") || "기준정보 미기재"}
+              <PublicTermTextV134
+                text={
+                  [observationUnitV125(row), row.year || row.period]
+                    .filter(Boolean)
+                    .join(" · ") || "기준정보 미기재"
+                }
+              />
             </small>
           </article>
         ))}
@@ -771,9 +885,13 @@ function EvidenceCardsV125({
           <strong><PublicTermTextV134 text={row.displayLabel} /></strong>
           <p><PublicTermTextV134 text={formatValueV121(row.value)} /></p>
           <small>
-            {[row.year || row.period, publicTextV126(row.provenance.sourceOrg)]
-              .filter(Boolean)
-              .join(" · ") || "기준정보 미기재"}
+            <PublicTermTextV134
+              text={
+                [row.year || row.period, publicTextV126(row.provenance.sourceOrg)]
+                  .filter(Boolean)
+                  .join(" · ") || "기준정보 미기재"
+              }
+            />
           </small>
         </article>
       ))}
@@ -861,7 +979,6 @@ function EvidenceMatrixV125({
       area: categoryLabelV125(row),
       result: formatValueV121(row.value),
       basis: String(row.year || row.period || row.provenance.referenceYear || "—"),
-      source: publicTextV126(row.provenance.sourceOrg) || "미기재",
     })),
     ...entities.map((entity) => ({
       key: entity.recordId,
@@ -875,20 +992,18 @@ function EvidenceMatrixV125({
       basis:
         entityFieldV125(entity, ["legalBasis", "referenceYear", "year"]) ||
         "—",
-      source: publicTextV126(entity.provenance.sourceOrg) || "미기재",
     })),
   ];
   if (items.length === 0) return null;
   return (
-    <VisualizationFrameV125 eyebrow="근거" title="분류별 근거 매트릭스">
+    <VisualizationFrameV125 eyebrow="확인 결과" title="항목별 확인 결과와 기준연도">
       <div className="sv125-matrix-wrap">
         <table className="sv125-evidence-matrix">
           <thead>
             <tr>
-              <th scope="col">평가·분류</th>
+              <th scope="col">항목</th>
               <th scope="col">확인 결과</th>
-              <th scope="col">기준·근거</th>
-              <th scope="col">출처</th>
+              <th scope="col">기준연도·근거</th>
             </tr>
           </thead>
           <tbody>
@@ -897,7 +1012,6 @@ function EvidenceMatrixV125({
                 <th scope="row"><PublicTermTextV134 text={item.area} /></th>
                 <td><PublicTermTextV134 text={item.result} /></td>
                 <td><PublicTermTextV134 text={item.basis} /></td>
-                <td><PublicTermTextV134 text={item.source} /></td>
               </tr>
             ))}
           </tbody>
@@ -1437,7 +1551,7 @@ function rendererLabelV125(renderer: RendererV125): string {
     portfolio: "사업 포트폴리오",
     directory: "기관 디렉터리",
     "policy-timeline": "정책 타임라인",
-    "evidence-matrix": "근거 매트릭스",
+    "evidence-matrix": "항목별 확인 결과",
     "capability-scorecard": "역량 스코어카드",
     "document-library": "문서 라이브러리",
     "spatial-summary": "공간 요약",
