@@ -37,11 +37,37 @@ async function clearFinderMemory(cdp, origin) {
   await evaluateValue(cdp, "(() => { sessionStorage.clear(); return true; })()");
 }
 
+/** `html` carries `scroll-behavior: smooth`, which `behavior: 'auto'` defers
+ *  to, so an audit that scrolls the ordinary way reads positions from the
+ *  middle of an easing curve and never twice gets the same number. */
 async function scrollToBottom(cdp) {
   await evaluateValue(
     cdp,
-    `(() => { window.scrollTo({ top: document.body.scrollHeight, behavior: 'auto' }); return true; })()`
+    `(() => { window.scrollTo({ top: document.body.scrollHeight, behavior: 'instant' }); return true; })()`
   );
+}
+
+/** Waits until the offset stops moving, so "where the reader is" is a settled
+ *  fact rather than a sample of an animation still in flight. */
+async function settledScrollY(cdp) {
+  // waitForValue resolves on truthiness, so a settled offset of 0 reports as
+  // -1 and is mapped back here.
+  const settled = Number(
+    await waitForValue(
+      cdp,
+      `(() => {
+        const now = Math.round(window.scrollY);
+        const repeats = window.__v136SettleY === now
+          ? (window.__v136SettleN || 0) + 1
+          : 0;
+        window.__v136SettleY = now;
+        window.__v136SettleN = repeats;
+        return repeats >= 2 ? now || -1 : 0;
+      })()`,
+      { timeoutMs: 15_000, intervalMs: 60 }
+    )
+  );
+  return settled === -1 ? 0 : settled;
 }
 
 /** Reveals batches by scrolling, recording the count after each settle. */
@@ -168,9 +194,14 @@ try {
   await navigate(browser.cdp, finderUrlV135(server.url));
   await waitForValue(browser.cdp, `${CARD_COUNT} > 0`, { timeoutMs: 35_000 });
   await revealSequence(browser.cdp, 3);
+  await settledScrollY(browser.cdp);
   const beforeLeave = await evaluateValue(
     browser.cdp,
-    `(() => ({ count: ${CARD_COUNT}, scrollY: Math.round(window.scrollY) }))()`
+    `(() => ({
+      count: ${CARD_COUNT},
+      scrollY: Math.round(window.scrollY),
+      maxScrollY: Math.round(document.scrollingElement.scrollHeight - window.innerHeight),
+    }))()`
   );
   await navigate(browser.cdp, detailUrlV135(server.url, "A-016"));
   await waitForValue(
@@ -178,14 +209,35 @@ try {
     `Boolean(document.querySelector('[data-testid="public-analysis-root"]'))`,
     { timeoutMs: 35_000 }
   );
+  const restoreStartedAt = Date.now();
   await evaluateValue(browser.cdp, `(() => { history.back(); return true; })()`);
   await waitForValue(browser.cdp, `${CARD_COUNT} > 0`, { timeoutMs: 35_000 });
-  await new Promise((resolveWait) => setTimeout(resolveWait, 1200));
+  // The finder says when it has finished putting the reader back. Waiting on
+  // that instead of a fixed delay means the audit and the product agree on
+  // what "restored" means, on a fast laptop and a loaded CI runner alike.
+  await waitForValue(
+    browser.cdp,
+    `document.querySelector('[data-testid="finder-results-v136"]')
+      ?.getAttribute('data-finder-restore-state') === 'settled'`,
+    { timeoutMs: 35_000 }
+  );
+  const restoreDurationMs = Date.now() - restoreStartedAt;
   const afterBack = await evaluateValue(
     browser.cdp,
-    `(() => ({ count: ${CARD_COUNT}, scrollY: Math.round(window.scrollY) }))()`
+    `(() => {
+      let saved = null;
+      try { saved = JSON.parse(sessionStorage.getItem('cdp-finder-restore-v136') || 'null'); } catch (error) { saved = null; }
+      const results = document.querySelector('[data-testid="finder-results-v136"]');
+      return {
+        count: ${CARD_COUNT},
+        scrollY: Math.round(window.scrollY),
+        maxScrollY: Math.round(document.scrollingElement.scrollHeight - window.innerHeight),
+        savedScrollY: saved && Number.isFinite(saved.scrollY) ? Math.round(saved.scrollY) : null,
+        restoreState: results ? results.getAttribute('data-finder-restore-state') : null,
+      };
+    })()`
   );
-  backNav = { beforeLeave, afterBack };
+  backNav = { beforeLeave, afterBack, restoreDurationMs };
 
   for (const width of VIEWPORTS) {
     await setViewport(browser.cdp, width, width < 800 ? 900 : 1050);
@@ -233,7 +285,14 @@ audit.check("BACK_NAV_VISIBLE_COUNT_RESTORED", Number(backNav?.afterBack?.count 
 const scrollDrift = Math.abs(
   Number(backNav?.afterBack?.scrollY || 0) - Number(backNav?.beforeLeave?.scrollY || 0)
 );
-audit.check("BACK_NAV_SCROLL_RESTORED", scrollDrift <= 200, { ...backNav, scrollDrift }, "within 200px of the previous offset");
+audit.check(
+  "BACK_NAV_SCROLL_RESTORED",
+  backNav !== null &&
+    backNav.afterBack?.restoreState === "settled" &&
+    scrollDrift <= 200,
+  { ...backNav, scrollDrift },
+  "settled within 200px of the previous offset"
+);
 audit.check("ARIA_BUSY_CONTRACT", ariaContract?.busyAttributePresent === true && ariaContract?.busySettled === true && ariaContract?.sentinelFocusable === false, ariaContract, { busyAttributePresent: true, busySettled: true, sentinelFocusable: false });
 audit.check("FINDER_RESPONSIVE_AUTOLOAD", responsiveGrew.length === 0, responsiveGrew.map((row) => ({ width: row.width, revealed: row.revealed })), []);
 audit.check("FINDER_RESPONSIVE_OVERFLOW", responsiveOverflow.length === 0, responsiveOverflow.map((row) => ({ width: row.width, overflow: row.overflow })), []);
@@ -246,7 +305,15 @@ finishAuditV136(audit, "finder-scroll-audit-v136.json", {
   autoLoadSequence: sequence,
   duplicateCardCount: duplicateCards,
   filterReset,
-  backNav,
+  backNav: backNav && {
+    ...backNav,
+    savedScrollY: backNav.afterBack?.savedScrollY ?? null,
+    finalScrollY: backNav.afterBack?.scrollY ?? null,
+    scrollDrift,
+    maxScrollY: backNav.afterBack?.maxScrollY ?? null,
+    restoreState: backNav.afterBack?.restoreState ?? null,
+    restoreDuration: backNav.restoreDurationMs ?? null,
+  },
   ariaContract,
   responsive,
   runtimeFailure,

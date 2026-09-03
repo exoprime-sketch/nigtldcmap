@@ -80,6 +80,49 @@ function writeFinderRestoreV136(state: FinderRestoreStateV136): void {
     // A full or blocked session store only costs the restore, never the list.
   }
 }
+
+/**
+ * The lifecycle of putting a reader back where they were.
+ *
+ * `idle`    nothing to restore, so the list is already where it belongs.
+ * `pending` the remembered rows and offset are still being reinstated.
+ * `settled` the rows are rendered and the offset is actually held.
+ *
+ * The finder publishes this on its results root because "restored" is a state
+ * of the product, not of a timer: a reader on a slow connection is still being
+ * moved back long after a fixed delay would have declared success.
+ */
+type FinderRestoreLifecycleV136 = "idle" | "pending" | "settled";
+
+/** Sub-pixel layout rounding moves the offset by a fraction, not by a row. */
+const RESTORE_SCROLL_TOLERANCE_PX_V136 = 4;
+/** Held across consecutive frames, so a value read mid-relayout cannot settle. */
+const RESTORE_STABLE_FRAMES_V136 = 3;
+/** A backstop against a list that never grows tall enough, not a completion rule. */
+const RESTORE_TIMEOUT_MS_V136 = 15_000;
+
+/**
+ * `html` carries `scroll-behavior: smooth`, and `behavior: "auto"` defers to
+ * it, so an offset restored the ordinary way rides an easing curve for a
+ * second or more and reports whatever position the curve has reached. Coming
+ * back to a list is not a journey, so ask for the one behaviour that overrides
+ * the stylesheet. The DOM types in this toolchain predate `"instant"`.
+ */
+type ScrollBehaviorV136 = ScrollBehavior | "instant";
+
+function scrollToInstantV136(top: number): void {
+  const options: { top: number; behavior: ScrollBehaviorV136 } = {
+    top,
+    behavior: "instant",
+  };
+  window.scrollTo(options as ScrollToOptions);
+}
+
+/** How far the document can actually be scrolled right now. */
+function maxScrollYV136(): number {
+  const scroller = document.scrollingElement || document.documentElement;
+  return Math.max(0, scroller.scrollHeight - window.innerHeight);
+}
 type FinderSortModeV128 = "relevance" | "latest" | "title";
 
 function unique(values: Array<string | null | undefined>): string[] {
@@ -167,6 +210,12 @@ export default function DataExplorerPage({
   const sentinelRefV136 = useRef<HTMLDivElement | null>(null);
   const restoreAppliedRefV136 = useRef(false);
   const restoreScrollRefV136 = useRef<number | null>(null);
+  const restoreCountRefV136 = useRef(0);
+  const [restoreStateV136, setRestoreStateV136] =
+    useState<FinderRestoreLifecycleV136>("idle");
+  // Read from the persist cleanup, which closes over stale render values.
+  const restorePendingRefV136 = useRef(false);
+  restorePendingRefV136.current = restoreStateV136 === "pending";
 
   const normalizedCountry = countryIso3 === "all" ? "all" : countryIso3;
   const normalizedQuery = normalizedSearchV121(query);
@@ -386,13 +435,20 @@ export default function DataExplorerPage({
       restoreAppliedRefV136.current = true;
       const restored = readFinderRestoreV136();
       if (restored && restored.filterKey === filterKeyV136) {
-        setVisibleCount(Math.max(INITIAL_VISIBLE_COUNT, restored.visibleCount));
-        restoreScrollRefV136.current = restored.scrollY;
+        const rows = Math.max(INITIAL_VISIBLE_COUNT, restored.visibleCount);
+        setVisibleCount(rows);
+        restoreCountRefV136.current = rows;
+        restoreScrollRefV136.current = Number.isFinite(restored.scrollY)
+          ? Math.max(0, restored.scrollY)
+          : 0;
+        setRestoreStateV136("pending");
         return;
       }
     }
     setVisibleCount(INITIAL_VISIBLE_COUNT);
     restoreScrollRefV136.current = null;
+    restoreCountRefV136.current = 0;
+    setRestoreStateV136("idle");
     if (typeof window !== "undefined" && window.scrollY > 0) {
       window.scrollTo({ top: 0, behavior: "auto" });
     }
@@ -404,12 +460,17 @@ export default function DataExplorerPage({
   // Record where the reader is so a return trip can resume there.
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const persist = () =>
+    const persist = () => {
+      // Mid-restore the list is briefly short and the offset briefly zero.
+      // Writing that back would spend the reader's remembered place to record
+      // the act of returning to it.
+      if (restorePendingRefV136.current) return;
       writeFinderRestoreV136({
         filterKey: filterKeyV136,
         visibleCount,
-        scrollY: window.scrollY,
+        scrollY: Math.round(window.scrollY),
       });
+    };
     window.addEventListener("pagehide", persist);
     return () => {
       persist();
@@ -448,24 +509,84 @@ export default function DataExplorerPage({
     setAutoLoading(false);
   }, [visibleCount]);
 
-  // Apply a restored offset once the restored rows exist to scroll to.
+  // Put the reader back at the offset they left from.
+  //
+  // The offset only exists once the document is tall enough to hold it. Until
+  // the restored rows have laid out, `scrollTo` silently clamps to the current
+  // bottom of a shorter page and the reader lands a row short — which is what a
+  // slow machine reliably produces and a fast one hides. So this waits for the
+  // document to actually reach the offset, then confirms it is being held,
+  // rather than scrolling hopefully for a fixed span of time.
   useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (restoreStateV136 !== "pending") return;
+
     const target = restoreScrollRefV136.current;
-    if (target === null || typeof window === "undefined") return;
-    if (visibleItems.length === 0) return;
-    restoreScrollRefV136.current = null;
-    // Restored cards settle over a few frames as their contents lay out, which
-    // shifts the document height under the offset. Re-applying briefly lands
-    // the reader where they actually were rather than a screen short of it.
+    if (target === null || target <= 0) {
+      setRestoreStateV136("settled");
+      return;
+    }
+
+    // A searched list keeps changing until its index arrives, so an empty
+    // result mid-load is not yet an answer about how tall the page will be.
+    const listReady =
+      !loading &&
+      (!normalizedQuery || searchIndexLoadedFor === normalizedCountry);
+    if (!listReady) return;
+    if (filtered.length === 0) {
+      setRestoreStateV136("settled");
+      return;
+    }
+
+    // The remembered rows are what give the document its height, so there is
+    // nothing to measure until they are rendered. Waiting out here rather than
+    // inside the loop also keeps the backstop below measuring the restore
+    // itself, not however long the catalog took to arrive.
+    const rowsWanted = Math.min(restoreCountRefV136.current, filtered.length);
+    if (visibleItems.length < rowsWanted) return;
+
     let frame = 0;
-    const deadline = Date.now() + 600;
-    const apply = () => {
-      window.scrollTo({ top: target, behavior: "auto" });
-      if (Date.now() < deadline) frame = window.requestAnimationFrame(apply);
+    let stableFrames = 0;
+    const startedAt = Date.now();
+
+    const step = (): void => {
+      if (maxScrollYV136() + RESTORE_SCROLL_TOLERANCE_PX_V136 < target) {
+        // Still shorter than the offset. Scrolling now would clamp, so wait for
+        // the remaining layout instead of recording a position we cannot hold.
+        stableFrames = 0;
+      } else if (
+        Math.abs(window.scrollY - target) > RESTORE_SCROLL_TOLERANCE_PX_V136
+      ) {
+        stableFrames = 0;
+        scrollToInstantV136(target);
+      } else if (++stableFrames >= RESTORE_STABLE_FRAMES_V136) {
+        restoreScrollRefV136.current = null;
+        setRestoreStateV136("settled");
+        return;
+      }
+
+      if (Date.now() - startedAt >= RESTORE_TIMEOUT_MS_V136) {
+        // The list never grew to the remembered offset. End the lifecycle
+        // honestly at wherever the reader actually is rather than waiting out
+        // a page that is not coming.
+        restoreScrollRefV136.current = null;
+        setRestoreStateV136("settled");
+        return;
+      }
+      frame = window.requestAnimationFrame(step);
     };
-    frame = window.requestAnimationFrame(apply);
+
+    frame = window.requestAnimationFrame(step);
     return () => window.cancelAnimationFrame(frame);
-  }, [visibleItems.length]);
+  }, [
+    filtered.length,
+    loading,
+    normalizedCountry,
+    normalizedQuery,
+    restoreStateV136,
+    searchIndexLoadedFor,
+    visibleItems.length,
+  ]);
   const showCountryContext =
     providers.length > 1 || normalizedCountry === "all";
 
@@ -670,6 +791,7 @@ export default function DataExplorerPage({
         data-testid="finder-results-v136"
         data-visible-count={visibleItems.length}
         data-total-count={filtered.length}
+        data-finder-restore-state={restoreStateV136}
       >
         {visibleItems.map((item) => {
           const contract = getElementVisualizationSummaryV125(item.elementId);
