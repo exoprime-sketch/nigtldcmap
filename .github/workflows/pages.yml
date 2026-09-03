@@ -52,8 +52,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run V134 blocking release gate
-        run: npm run finalize:v134
+      - name: Run V135 blocking release gate
+        run: npm run finalize:v135
 
       - name: Verify deployment and security contracts
         run: |

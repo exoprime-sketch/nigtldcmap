@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v133-ci-map-analysis-audit-1",
-  "generatedAt": "2026-09-02T00:36:28.273Z",
+  "generatedAt": "2026-09-03T00:25:04.034Z",
   "audit": "map-focus:v133",
   "status": "PASS",
   "summary": {
@@ -15,7 +15,7 @@
     "mapFeatureOrScopeCount": 2900,
     "presetDefaultContextCount": 0,
     "primaryLayerMax": 1,
-    "contextLayerMax": 2,
+    "contextLayerMax": 1,
     "simultaneousPolygonFillContextCount": 0,
     "renderedPolygonFillContextCount": 0,
     "presetSnapshots": [
@@ -97,19 +97,13 @@
     ],
     "distinctionSnapshot": {
       "primaryCount": 1,
-      "contextCount": 2,
+      "contextCount": 1,
       "items": [
         {
           "elementId": "B-021",
           "role": "primary",
           "shape": "area",
           "text": "지역 취약성주 분석 데이터 · GVI 취약성 지수 · 0–100 지수숨기기"
-        },
-        {
-          "elementId": "D-008",
-          "role": "context",
-          "shape": "circle",
-          "text": "지역 기후예산함께 보기 · 성 단위 기후변화 지출 누계 · VND · 원 크기 = 예산숨기기"
         },
         {
           "elementId": "D-018",
@@ -654,30 +648,6 @@
           "fill": "rgb(0, 0, 0)",
           "fillOpacity": 1,
           "label": "적응기금 사업 · surrounding Tram Chim National Park,Vietnam · Mekong EbA South: Enhancing Climate Resilience in the Greater Mekong Sub-region through Ecosystem-based Adaptation in the Context of South-South Cooperation (Thailand, Viet Nam)"
-        },
-        {
-          "elementId": "D-008",
-          "role": "context",
-          "shape": "circle",
-          "fill": "rgb(0, 0, 0)",
-          "fillOpacity": 1,
-          "label": "지역 기후예산 · Quảng Nam · 850,000,000,000 VND · 성·시 단위 통계"
-        },
-        {
-          "elementId": "D-008",
-          "role": "context",
-          "shape": "circle",
-          "fill": "rgb(0, 0, 0)",
-          "fillOpacity": 1,
-          "label": "지역 기후예산 · An Giang · 179,000,000,000 VND · 성·시 단위 통계"
-        },
-        {
-          "elementId": "D-008",
-          "role": "context",
-          "shape": "circle",
-          "fill": "rgb(0, 0, 0)",
-          "fillOpacity": 1,
-          "label": "지역 기후예산 · Bắc Ninh · 481,000,000,000 VND · 성·시 단위 통계"
         }
       ]
     },
@@ -704,13 +674,13 @@
         "width": 1440,
         "horizontalOverflow": 0,
         "rootExists": true,
-        "canvasWidth": 729
+        "canvasWidth": 721
       },
       {
         "width": 1920,
         "horizontalOverflow": 0,
         "rootExists": true,
-        "canvasWidth": 1209
+        "canvasWidth": 1201
       }
     ],
     "runtimeFailure": null
@@ -795,8 +765,8 @@
       "audit": "map-focus:v133",
       "name": "CONTEXT_LAYER_MAX",
       "status": "PASS",
-      "actual": 2,
-      "expected": 2
+      "actual": 1,
+      "expected": 1
     },
     {
       "type": "check",
@@ -1347,30 +1317,6 @@
             "fill": "rgb(0, 0, 0)",
             "fillOpacity": 1,
             "label": "적응기금 사업 · surrounding Tram Chim National Park,Vietnam · Mekong EbA South: Enhancing Climate Resilience in the Greater Mekong Sub-region through Ecosystem-based Adaptation in the Context of South-South Cooperation (Thailand, Viet Nam)"
-          },
-          {
-            "elementId": "D-008",
-            "role": "context",
-            "shape": "circle",
-            "fill": "rgb(0, 0, 0)",
-            "fillOpacity": 1,
-            "label": "지역 기후예산 · Quảng Nam · 850,000,000,000 VND · 성·시 단위 통계"
-          },
-          {
-            "elementId": "D-008",
-            "role": "context",
-            "shape": "circle",
-            "fill": "rgb(0, 0, 0)",
-            "fillOpacity": 1,
-            "label": "지역 기후예산 · An Giang · 179,000,000,000 VND · 성·시 단위 통계"
-          },
-          {
-            "elementId": "D-008",
-            "role": "context",
-            "shape": "circle",
-            "fill": "rgb(0, 0, 0)",
-            "fillOpacity": 1,
-            "label": "지역 기후예산 · Bắc Ninh · 481,000,000,000 VND · 성·시 단위 통계"
           }
         ]
       },
@@ -1422,13 +1368,13 @@
           "width": 1440,
           "horizontalOverflow": 0,
           "rootExists": true,
-          "canvasWidth": 729
+          "canvasWidth": 721
         },
         {
           "width": 1920,
           "horizontalOverflow": 0,
           "rootExists": true,
-          "canvasWidth": 1209
+          "canvasWidth": 1201
         }
       ],
       "expected": "390/768/1024/1440/1920 with map canvas and no horizontal overflow"
@@ -1462,7 +1408,7 @@
   "mapFeatureOrScopeCount": 2900,
   "presetDefaultContextCount": 0,
   "primaryLayerMax": 1,
-  "contextLayerMax": 2,
+  "contextLayerMax": 1,
   "simultaneousPolygonFillContextCount": 0,
   "renderedPolygonFillContextCount": 0,
   "presetSnapshots": [
@@ -1544,19 +1490,13 @@
   ],
   "distinctionSnapshot": {
     "primaryCount": 1,
-    "contextCount": 2,
+    "contextCount": 1,
     "items": [
       {
         "elementId": "B-021",
         "role": "primary",
         "shape": "area",
         "text": "지역 취약성주 분석 데이터 · GVI 취약성 지수 · 0–100 지수숨기기"
-      },
-      {
-        "elementId": "D-008",
-        "role": "context",
-        "shape": "circle",
-        "text": "지역 기후예산함께 보기 · 성 단위 기후변화 지출 누계 · VND · 원 크기 = 예산숨기기"
       },
       {
         "elementId": "D-018",
@@ -2101,30 +2041,6 @@
         "fill": "rgb(0, 0, 0)",
         "fillOpacity": 1,
         "label": "적응기금 사업 · surrounding Tram Chim National Park,Vietnam · Mekong EbA South: Enhancing Climate Resilience in the Greater Mekong Sub-region through Ecosystem-based Adaptation in the Context of South-South Cooperation (Thailand, Viet Nam)"
-      },
-      {
-        "elementId": "D-008",
-        "role": "context",
-        "shape": "circle",
-        "fill": "rgb(0, 0, 0)",
-        "fillOpacity": 1,
-        "label": "지역 기후예산 · Quảng Nam · 850,000,000,000 VND · 성·시 단위 통계"
-      },
-      {
-        "elementId": "D-008",
-        "role": "context",
-        "shape": "circle",
-        "fill": "rgb(0, 0, 0)",
-        "fillOpacity": 1,
-        "label": "지역 기후예산 · An Giang · 179,000,000,000 VND · 성·시 단위 통계"
-      },
-      {
-        "elementId": "D-008",
-        "role": "context",
-        "shape": "circle",
-        "fill": "rgb(0, 0, 0)",
-        "fillOpacity": 1,
-        "label": "지역 기후예산 · Bắc Ninh · 481,000,000,000 VND · 성·시 단위 통계"
       }
     ]
   },
@@ -2151,13 +2067,13 @@
       "width": 1440,
       "horizontalOverflow": 0,
       "rootExists": true,
-      "canvasWidth": 729
+      "canvasWidth": 721
     },
     {
       "width": 1920,
       "horizontalOverflow": 0,
       "rootExists": true,
-      "canvasWidth": 1209
+      "canvasWidth": 1201
     }
   ],
   "runtimeFailure": null

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v133-ci-map-analysis-audit-1",
-  "generatedAt": "2026-09-02T00:36:31.342Z",
+  "generatedAt": "2026-09-03T00:25:06.676Z",
   "audit": "map-popup:v133",
   "status": "PASS",
   "summary": {
@@ -24,15 +24,15 @@
     "clickFeatureWithoutDetail": 0,
     "gviPopupInternalTokenCount": 0,
     "hoverSnapshot": {
-      "text": "Quảng Bình지역 취약성(GVI) · 2023 · 39.6 / 100 · 높을수록 취약 · [권역값] 북중부·남중부 해안 · 베트남 6개 권역 중 3위",
-      "informationBlocks": 2,
+      "text": "Quảng Bình지역 취약성(GVI(글로벌데이터랩 취약성지수)) · 2023 · 39.6 / 100 · 높을수록 취약 · [권역값] 북중부·남중부 해안 · 베트남 6개 권역 중 3위",
+      "informationBlocks": 7,
       "internalTokenCount": 0,
       "visible": true,
       "rect": {
         "left": 704.5,
-        "top": 461.0625,
+        "top": 415.5625,
         "width": 260,
-        "height": 94.25
+        "height": 139.75
       },
       "topmostTag": "SPAN",
       "topmostClass": ""
@@ -142,8 +142,8 @@
           "sourceRegion": true,
           "rank": true
         },
-        "hoverTextLength": 87,
-        "hoverText": "Quảng Bình지역 취약성(GVI) · 2023 · 39.6 / 100 · 높을수록 취약 · [권역값] 북중부·남중부 해안 · 베트남 6개 권역 중 3위"
+        "hoverTextLength": 102,
+        "hoverText": "Quảng Bình지역 취약성(GVI(글로벌데이터랩 취약성지수)) · 2023 · 39.6 / 100 · 높을수록 취약 · [권역값] 북중부·남중부 해안 · 베트남 6개 권역 중 3위"
       },
       "expected": {
         "runtimeFailure": null,
@@ -156,7 +156,7 @@
       "audit": "map-popup:v133",
       "name": "GVI_HOVER_LONG_METHODOLOGY_COUNT",
       "status": "PASS",
-      "actual": "Quảng Bình지역 취약성(GVI) · 2023 · 39.6 / 100 · 높을수록 취약 · [권역값] 북중부·남중부 해안 · 베트남 6개 권역 중 3위",
+      "actual": "Quảng Bình지역 취약성(GVI(글로벌데이터랩 취약성지수)) · 2023 · 39.6 / 100 · 높을수록 취약 · [권역값] 북중부·남중부 해안 · 베트남 6개 권역 중 3위",
       "expected": "short hover without methodology paragraph"
     },
     {
@@ -167,15 +167,15 @@
       "actual": {
         "runtimeFailure": null,
         "visual": {
-          "text": "Quảng Bình지역 취약성(GVI) · 2023 · 39.6 / 100 · 높을수록 취약 · [권역값] 북중부·남중부 해안 · 베트남 6개 권역 중 3위",
-          "informationBlocks": 2,
+          "text": "Quảng Bình지역 취약성(GVI(글로벌데이터랩 취약성지수)) · 2023 · 39.6 / 100 · 높을수록 취약 · [권역값] 북중부·남중부 해안 · 베트남 6개 권역 중 3위",
+          "informationBlocks": 7,
           "internalTokenCount": 0,
           "visible": true,
           "rect": {
             "left": 704.5,
-            "top": 461.0625,
+            "top": 415.5625,
             "width": 260,
-            "height": 94.25
+            "height": 139.75
           },
           "topmostTag": "SPAN",
           "topmostClass": ""
@@ -246,7 +246,7 @@
       "name": "HOVER_CLICK_ROLE_SEPARATION",
       "status": "PASS",
       "actual": {
-        "hoverText": "Quảng Bình지역 취약성(GVI) · 2023 · 39.6 / 100 · 높을수록 취약 · [권역값] 북중부·남중부 해안 · 베트남 6개 권역 중 3위",
+        "hoverText": "Quảng Bình지역 취약성(GVI(글로벌데이터랩 취약성지수)) · 2023 · 39.6 / 100 · 높을수록 취약 · [권역값] 북중부·남중부 해안 · 베트남 6개 권역 중 3위",
         "detailText": "Quảng Bình데이터명지역 취약성측정항목GVI 취약성 지수값39.6 / 100단위0–100 지수기준연도·기간2023값 해석높을수록 사회경제적 취약성이 큼지역Quảng Bình비교·공간단위북중부·남중부 해안 권역의 값 · 성 단위 독립 추정값이 아님자료 설명Quảng Bình의 개별 추정값이 아니라 북중부·남중부 해안 권역의 값을 표시합니다.권역 비교베트남 6개 권역 중 3위 · 현재 값이 큰 순서출처Global Data Lab (GDL Area Database) · Global Data Lab GVI · Global Data Lab GVI (Huisman et al., 2025) · Global Data Lab — GVIP Database (Huisman et al., 2025)공간 정확도공개된 권역값을 명시된 소속 성·시에 표시합니다. 개별 성·시에서 별도로 추정한 값은 아닙니다.자료 커버리지63/63개 성·시 값 보유결측 여부값 보유"
       },
       "expected": "methodology only in selected detail"
@@ -305,15 +305,15 @@
   "clickFeatureWithoutDetail": 0,
   "gviPopupInternalTokenCount": 0,
   "hoverSnapshot": {
-    "text": "Quảng Bình지역 취약성(GVI) · 2023 · 39.6 / 100 · 높을수록 취약 · [권역값] 북중부·남중부 해안 · 베트남 6개 권역 중 3위",
-    "informationBlocks": 2,
+    "text": "Quảng Bình지역 취약성(GVI(글로벌데이터랩 취약성지수)) · 2023 · 39.6 / 100 · 높을수록 취약 · [권역값] 북중부·남중부 해안 · 베트남 6개 권역 중 3위",
+    "informationBlocks": 7,
     "internalTokenCount": 0,
     "visible": true,
     "rect": {
       "left": 704.5,
-      "top": 461.0625,
+      "top": 415.5625,
       "width": 260,
-      "height": 94.25
+      "height": 139.75
     },
     "topmostTag": "SPAN",
     "topmostClass": ""

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v134-visual-qa-contract-1",
-  "generatedAt": "2026-09-02T03:59:42.989Z",
+  "generatedAt": "2026-09-03T00:26:13.977Z",
   "audit": "visual-qa-contract:v134",
   "checks": [
     {
@@ -39,32 +39,32 @@
       "name": "CI_BLOCKING_RELEASE_JOB",
       "status": "PASS",
       "actual": {
-        "finalizeV134": true,
+        "finalizeCurrentGate": true,
         "productionBuild": true,
         "noScreenshotCapture": true,
-        "v134Reports": true
+        "currentReports": true
       },
       "expected": {
-        "finalizeV134": true,
+        "finalizeCurrentGate": true,
         "productionBuild": true,
         "noScreenshotCapture": true,
-        "v134Reports": true
+        "currentReports": true
       }
     },
     {
       "name": "PAGES_BLOCKING_RELEASE_JOB",
       "status": "PASS",
       "actual": {
-        "finalizeV134": true,
+        "finalizeCurrentGate": true,
         "productionBuild": true,
         "noScreenshotCapture": true,
-        "v134Reports": true
+        "currentReports": true
       },
       "expected": {
-        "finalizeV134": true,
+        "finalizeCurrentGate": true,
         "productionBuild": true,
         "noScreenshotCapture": true,
-        "v134Reports": true
+        "currentReports": true
       }
     },
     {
@@ -73,7 +73,7 @@
       "actual": {
         "separateWorkflow": true,
         "productionBuild": true,
-        "captureV134": true,
+        "captureCurrentScreenshots": true,
         "captureContinuesOnError": true,
         "artifactAlwaysUploaded": true,
         "artifactPath": true,
@@ -82,7 +82,7 @@
       "expected": {
         "separateWorkflow": true,
         "productionBuild": true,
-        "captureV134": true,
+        "captureCurrentScreenshots": true,
         "captureContinuesOnError": true,
         "artifactAlwaysUploaded": true,
         "artifactPath": true,
@@ -134,21 +134,21 @@
       "mapClickDetail": true
     },
     "ciContract": {
-      "finalizeV134": true,
+      "finalizeCurrentGate": true,
       "productionBuild": true,
       "noScreenshotCapture": true,
-      "v134Reports": true
+      "currentReports": true
     },
     "pagesContract": {
-      "finalizeV134": true,
+      "finalizeCurrentGate": true,
       "productionBuild": true,
       "noScreenshotCapture": true,
-      "v134Reports": true
+      "currentReports": true
     },
     "visualWorkflowContract": {
       "separateWorkflow": true,
       "productionBuild": true,
-      "captureV134": true,
+      "captureCurrentScreenshots": true,
       "captureContinuesOnError": true,
       "artifactAlwaysUploaded": true,
       "artifactPath": true,

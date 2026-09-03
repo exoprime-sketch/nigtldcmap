@@ -1,0 +1,118 @@
+{
+  "schemaVersion": "v135-final-public-screen-audit-1",
+  "generatedAt": "2026-09-03T00:26:16.018Z",
+  "audit": "finder-card:v135",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "finder-card:v135",
+    "status": "PASS",
+    "passed": 11,
+    "failed": 0,
+    "total": 11,
+    "failedChecks": [],
+    "cardCount": 152,
+    "finderInternalMetadataCount": 0,
+    "finderDuplicateMeasureTitleCount": 0,
+    "runtimeFailure": null
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "finder-card:v135",
+      "name": "FRAMEWORK_ELEMENTS",
+      "status": "PASS",
+      "actual": 152,
+      "expected": 152
+    },
+    {
+      "type": "check",
+      "audit": "finder-card:v135",
+      "name": "FINDER_CARD_RUNTIME_COVERAGE",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null,
+        "cardCount": 152
+      },
+      "expected": {
+        "cardCount": 152
+      }
+    },
+    {
+      "type": "check",
+      "audit": "finder-card:v135",
+      "name": "FINDER_INTERNAL_METADATA_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "finder-card:v135",
+      "name": "FINDER_DUPLICATE_MEASURE_TITLE_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "finder-card:v135",
+      "name": "FINDER_BLANK_PUBLIC_TITLE_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "finder-card:v135",
+      "name": "FINDER_PRIMARY_ACTION_COVERAGE",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "finder-card:v135",
+      "name": "FINDER_TAG_MAXIMUM",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "finder-card:v135",
+      "name": "FINDER_BROKEN_ACTION",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "finder-card:v135",
+      "name": "FINDER_HORIZONTAL_OVERFLOW",
+      "status": "PASS",
+      "actual": -15,
+      "expected": "<=1px"
+    },
+    {
+      "type": "check",
+      "audit": "finder-card:v135",
+      "name": "BROKEN_ASSET",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "finder-card:v135",
+      "name": "CONSOLE_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "cardCount": 152,
+  "finderInternalMetadataCount": 0,
+  "finderDuplicateMeasureTitleCount": 0,
+  "runtimeFailure": null
+}
