@@ -45,7 +45,11 @@ try {
       await navigate(browser.cdp, detailUrlV135(server.url, elementId));
       await waitForValue(
         browser.cdp,
-        `document.querySelector('[data-testid="public-analysis-root"]')?.getAttribute('data-analysis-state') === 'ready'`,
+        `(() => {
+        const root = document.querySelector('[data-testid="public-analysis-root"]');
+        if (!root || root.getAttribute('data-analysis-state') !== 'ready') return false;
+        return root.querySelectorAll('[data-testid="public-analysis-pending"]').length === 0;
+      })()`,
         { timeoutMs: 20_000 }
       );
       const snapshot = await evaluateValue(
