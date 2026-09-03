@@ -294,9 +294,9 @@ audit.check(
 );
 audit.check(
   "MAP_FOCUS_PUBLIC_COPY",
-  mapSource.includes("주 분석 데이터") && mapSource.includes("함께 보기") && mapSource.includes("표시 설정"),
+  mapSource.includes("선택 데이터") && mapSource.includes("함께 보기") && mapSource.includes("표시 설정"),
   {
-    primary: mapSource.includes("주 분석 데이터"),
+    primary: mapSource.includes("선택 데이터"),
     compare: mapSource.includes("함께 보기"),
     settings: mapSource.includes("표시 설정"),
   },

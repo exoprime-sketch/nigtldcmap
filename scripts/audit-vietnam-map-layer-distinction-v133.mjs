@@ -393,7 +393,7 @@ audit.check(
 );
 audit.check(
   "COMPACT_LEGEND_PUBLIC_COPY",
-  /주 분석/u.test(climateSnapshot?.legendText || "") && /함께 보기/u.test(climateSnapshot?.legendText || "") &&
+  /선택 데이터/u.test(climateSnapshot?.legendText || "") && /함께 보기/u.test(climateSnapshot?.legendText || "") &&
     containsForbiddenPublicMapTokenV133(climateSnapshot?.legendText || "").length === 0,
   { text: climateSnapshot?.legendText, tokens: containsForbiddenPublicMapTokenV133(climateSnapshot?.legendText || "") },
   "Korean primary/compare legend without developer tokens"

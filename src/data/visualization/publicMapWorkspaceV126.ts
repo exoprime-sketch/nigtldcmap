@@ -111,7 +111,7 @@ export const PUBLIC_MAP_WORKSPACE_PRESETS_V126: readonly [
   {
     id: "CLIMATE_VULNERABILITY",
     labelKo: "기후 취약성",
-    descriptionKo: "취약성 + 기후예산·적응사업",
+    descriptionKo: "권역 위험도 + 기후예산·적응사업",
     primary: { elementId: "B-021", variable: "gvi-6", period: "2023" },
     context: [
       {
@@ -440,4 +440,33 @@ export function publicMapLayerCopyV126(
 function clampPublicMapOpacityV126(value: number): number {
   if (!Number.isFinite(value)) return 0.52;
   return Math.min(1, Math.max(0.15, value));
+}
+
+/**
+ * V136 compact summaries for the map dataset list.
+ *
+ * The left panel is narrow, so an item states its subject once in the title and
+ * then only what the map lets the reader do with it. The fuller sentences in
+ * PUBLIC_MAP_DATA_FUNCTION_V135 stay in the guide table, where there is room
+ * for them and the reader is comparing datasets rather than picking one.
+ */
+export const PUBLIC_MAP_DATA_ITEM_SUMMARY_V136: Readonly<
+  Record<string, string>
+> = Object.freeze({
+  "A-023": "입지·발전원·설비용량 분포",
+  "A-024": "연결구조·전압별 분포",
+  "C-016": "성·시별 계획용량",
+  "B-021": "권역별 취약성 수준",
+  "B-031": "성·시별 산림면적",
+  "B-032": "성·시별 수관피복률",
+  "B-033": "지역별 손실·연도 변화",
+  "B-034": "저장·배출·흡수량",
+  "B-048": "위치·광종 분포",
+  "C-025": "위치·유형별 분포",
+  "D-008": "성·시별 기후예산 규모",
+  "D-018": "참여지역·활동지역",
+});
+
+export function publicMapDataItemSummaryV136(elementId: string): string {
+  return PUBLIC_MAP_DATA_ITEM_SUMMARY_V136[elementId] || "지도 표시 범위";
 }
