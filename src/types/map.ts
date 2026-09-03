@@ -75,6 +75,12 @@ export interface MapViewState {
   contextLayerIds: string[];
   /** Optional deterministic public workspace preset restored from the URL. */
   mapPresetId: string | null;
+  /** V135 dedicated two-map comparison workspace. */
+  comparisonMode: boolean;
+  /** Exactly two verified element ids while comparison mode is active. */
+  comparisonLayerIds: string[];
+  /** Per-layer public variable and period selections restored from the URL. */
+  layerSelectors: Record<string, { variable: string; period: string }>;
 }
 
 export const DEFAULT_MAP_VIEW_STATE: MapViewState = {
@@ -98,6 +104,9 @@ export const DEFAULT_MAP_VIEW_STATE: MapViewState = {
   primaryLayerId: null,
   contextLayerIds: [],
   mapPresetId: null,
+  comparisonMode: false,
+  comparisonLayerIds: [],
+  layerSelectors: {},
 };
 
 const MAP_LAYER_IDS = new Set<MapLayerId>([
@@ -347,6 +356,38 @@ export function parseMapViewState(params: URLSearchParams): MapViewState {
   ]).has(mapPresetParam || "")
     ? mapPresetParam
     : null;
+  const comparisonMode = params.get("mapMode") === "compare";
+  const comparisonLayerIds = uniqueValidKeys(
+    (params.get("compareLayers") || "").split(","),
+    countryIso3
+  ).slice(0, 2);
+  const layerSelectors: Record<string, { variable: string; period: string }> = {};
+  const rawLayerSelectors = params.get("mapSelectors");
+  if (rawLayerSelectors) {
+    try {
+      const parsed = JSON.parse(rawLayerSelectors) as Record<
+        string,
+        { variable?: unknown; period?: unknown }
+      >;
+      Object.entries(parsed).forEach(([rawKey, selection]) => {
+        const key = normalizeModernElementMapKey(rawKey, countryIso3) ?? rawKey;
+        if (
+          !isValidCatalogKey(key, countryIso3) ||
+          typeof selection?.variable !== "string" ||
+          typeof selection?.period !== "string"
+        ) {
+          return;
+        }
+        layerSelectors[key] = {
+          variable: selection.variable,
+          period: selection.period,
+        };
+      });
+    } catch {
+      // Invalid shared state is ignored and each layer falls back to its
+      // catalog default without breaking the public map route.
+    }
+  }
 
   return {
     layer,
@@ -381,5 +422,12 @@ export function parseMapViewState(params: URLSearchParams): MapViewState {
     primaryLayerId,
     contextLayerIds,
     mapPresetId,
+    comparisonMode:
+      comparisonMode && comparisonLayerIds.length === 2,
+    comparisonLayerIds:
+      comparisonMode && comparisonLayerIds.length === 2
+        ? comparisonLayerIds
+        : [],
+    layerSelectors,
   };
 }
