@@ -10,7 +10,7 @@ export type ResizableMapPanelSideV129 = "left" | "right";
 
 export const MAP_PANEL_LIMITS_V129 = {
   desktopBreakpoint: 1100,
-  separatorWidth: 8,
+  separatorWidth: 12,
   mapMinimumWidth: 560,
   compactLeftWidth: 76,
   collapsedPanelWidth: 64,

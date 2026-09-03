@@ -1,4 +1,5 @@
 import type { CountryMapLayerV122 } from "../../data/countries/countryDataTypesV122";
+import { publicMapDataFunctionV135 } from "../../data/visualization/publicMapWorkspaceV126";
 import { PublicTermTextV134 } from "../help/PublicTermV134";
 
 const GROUP_ORDER = [
@@ -38,7 +39,7 @@ export default function MapDataGuideV130({
 
   return (
     <section className="cdp-map-data-guide-v130" data-testid="map-data-guide-v130">
-      <details open>
+      <details data-testid="map-data-guide-details-v135">
         <summary>지도 데이터 안내</summary>
         <div className="cdp-map-data-guide-v130__summary">
           <div>
@@ -50,11 +51,6 @@ export default function MapDataGuideV130({
             <span>공간 의미와 표현 범위가 검증된 {layers.length}개 데이터</span>
           </div>
         </div>
-        <p>
-          좌표가 있다는 이유만으로 표시하지 않습니다. 원천의 공간 단위보다
-          정밀한 위치를 암시하지 않고, 분석에 유용한 데이터만 지도에
-          제공합니다.
-        </p>
         <div className="cdp-map-data-guide-v130__tables">
           {groups.map(({ group, layers: groupLayers }) => (
             <section key={group} data-map-guide-group={group}>
@@ -67,8 +63,8 @@ export default function MapDataGuideV130({
                         <th>데이터명</th>
                         <th>공간 표현</th>
                         <th>기준기간</th>
-                        <th>지도 표시 이유</th>
-                        <th>공간 한계</th>
+                        <th>데이터 기능</th>
+                        <th>참고사항</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -81,18 +77,24 @@ export default function MapDataGuideV130({
                           <td data-label="기준기간">
                             {layer.latestYear || layer.sourceYear || "미표기"}
                           </td>
-                          <td data-label="지도 표시 이유">
+                          <td data-label="데이터 기능">
                             <PublicTermTextV134
-                              text={layer.mapBenefit || layer.spatialCoverage}
+                              text={publicMapDataFunctionV135(
+                                layer.elementId,
+                                layer.mapBenefit
+                              )}
                             />
                           </td>
-                          <td data-label="공간 한계">
-                            <PublicTermTextV134
-                              text={
-                                layer.spatialLimitation ||
-                                layer.publicSpatialNotice
-                              }
-                            />
+                          <td data-label="참고사항">
+                            {layer.spatialLimitation ||
+                            layer.publicSpatialNotice ? (
+                              <PublicTermTextV134
+                                text={
+                                  layer.spatialLimitation ||
+                                  layer.publicSpatialNotice
+                                }
+                              />
+                            ) : null}
                           </td>
                         </tr>
                       ))}
