@@ -205,17 +205,36 @@ function publicQuestionForSpecV134(spec: ElementPresentationSpecV100): string {
   }
 }
 
+/**
+ * V135. These elements are laid out as metric trends, but their published data
+ * holds a single comparable year per measure, so the generated "…의 추세와 최근
+ * 수준" heading would promise a trend the screen cannot draw. The heading is
+ * corrected here, in the registry, so the stored contract and the rendered
+ * screen stay the same string.
+ */
+const DEPTH_CORRECTED_ANALYSIS_TITLES_V135: Readonly<Record<string, string>> =
+  Object.freeze({
+    "B-001": "건기와 우기의 최근 수준과 항목별 차이",
+    "B-023": "건기/우기 유량 차이의 최근 수준과 항목별 차이",
+    "E-009": "과학기술 인력의 최근 수준과 항목별 차이",
+  });
+
 export const PUBLIC_ANALYSIS_HEADINGS_V134: readonly PublicAnalysisHeadingsV134[] =
   Object.freeze(
-    ELEMENT_PRESENTATION_SPECS_V100.map((spec) => ({
-      elementId: spec.elementId,
-      ...(SPECIALIZED_HEADINGS_V134[spec.elementId] || {
+    ELEMENT_PRESENTATION_SPECS_V100.map((spec) => {
+      const base = SPECIALIZED_HEADINGS_V134[spec.elementId] || {
         publicAnalysisTitle: analysisTitleForSpecV134(spec),
         primaryChartTitle: primaryTitleForSpecV134(spec),
         secondaryChartTitle: secondaryTitleForSpecV134(spec),
         publicQuestion: publicQuestionForSpecV134(spec),
-      }),
-    }))
+      };
+      const corrected = DEPTH_CORRECTED_ANALYSIS_TITLES_V135[spec.elementId];
+      return {
+        elementId: spec.elementId,
+        ...base,
+        ...(corrected ? { publicAnalysisTitle: corrected } : {}),
+      };
+    })
   );
 
 const PUBLIC_ANALYSIS_HEADING_BY_ELEMENT_V134 = new Map(
@@ -234,3 +253,4 @@ export const PUBLIC_ANALYSIS_HEADING_COVERAGE_V134 = Object.freeze({
     PUBLIC_ANALYSIS_HEADINGS_V134.map((item) => item.elementId)
   ).size,
 });
+

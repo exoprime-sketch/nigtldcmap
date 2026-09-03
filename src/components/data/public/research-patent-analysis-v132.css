@@ -298,3 +298,58 @@
     font-size: 0.82rem;
   }
 }
+
+/* V135 before/after change, used when only two published years exist. */
+.rpa132-two-year-change-v135 h4 {
+  margin: 0 0 6px;
+  font-size: 0.98rem;
+  color: #14322a;
+}
+
+.rpa132-two-year-change-v135 > p {
+  margin: 0 0 12px;
+  color: #4b5b55;
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.rpa132-two-year-change-v135 ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rpa132-two-year-change-v135 li {
+  display: grid;
+  grid-template-columns: minmax(150px, 1.1fr) minmax(180px, 1.5fr) minmax(120px, auto);
+  align-items: baseline;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid #e4ebe8;
+  border-radius: 10px;
+  background: #ffffff;
+  font-size: 0.88rem;
+}
+
+.rpa132-two-year-change-v135 span {
+  color: #4b5b55;
+}
+
+.rpa132-two-year-change-v135 b {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: #12302a;
+}
+
+@media (max-width: 640px) {
+  .rpa132-two-year-change-v135 li {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .rpa132-two-year-change-v135 b {
+    text-align: left;
+  }
+}
