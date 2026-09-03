@@ -3,10 +3,18 @@ import { publicTextV126 } from "./publicFieldPolicyV126";
 
 export const PUBLIC_MAP_WORKSPACE_LIMITS_V126 = {
   primaryLayers: 1,
-  contextLayers: 2,
-  activeLayers: 3,
+  contextLayers: 1,
+  activeLayers: 2,
   selectedFeatures: 1,
 } as const;
+
+/**
+ * A preset can recommend two different companion datasets even though the
+ * normal map deliberately displays at most one of them at a time. Dedicated
+ * comparison mode is the only place where two thematic datasets are treated
+ * as equal primary views.
+ */
+export const PUBLIC_MAP_PRESET_CONTEXT_CANDIDATE_LIMIT_V135 = 2 as const;
 
 export const PUBLIC_MAP_WORKSPACE_PRESET_IDS_V126 = [
   "POWER_INFRASTRUCTURE",
@@ -160,7 +168,7 @@ export function publicMapPresetContextCandidatesV133(
 ): readonly PublicMapPresetLayerV126[] {
   return getPublicMapWorkspacePresetV126(id).context.slice(
     0,
-    PUBLIC_MAP_WORKSPACE_LIMITS_V126.contextLayers
+    PUBLIC_MAP_PRESET_CONTEXT_CANDIDATE_LIMIT_V135
   );
 }
 
@@ -313,6 +321,32 @@ const PUBLIC_MAP_LAYER_TITLES_V126: Record<string, string> = {
   "D-008": "지역 기후예산",
   "D-018": "적응기금 사업",
 };
+
+export const PUBLIC_MAP_DATA_FUNCTION_V135: Readonly<Record<string, string>> = {
+  "A-023": "발전소 입지·설비 분포 비교",
+  "A-024": "송전망 연결구조·전압별 분포 확인",
+  "C-016": "성·시별 재생에너지 계획용량 비교",
+  "B-021": "권역별 취약성 수준 비교",
+  "B-031": "성·시별 산림면적 비교",
+  "B-032": "성·시별 수관피복률 비교",
+  "B-033": "지역별 산림손실·연도 변화 확인",
+  "B-034": "지역별 탄소저장·배출·흡수 비교",
+  "B-048": "주요 광산 위치·광종 분포 확인",
+  "C-025": "탄소사업 위치·사업유형 확인",
+  "D-008": "성·시별 기후예산 규모 비교",
+  "D-018": "적응사업 참여지역·활동지역 확인",
+};
+
+export function publicMapDataFunctionV135(
+  elementId: string,
+  fallback?: string | null
+): string {
+  return (
+    PUBLIC_MAP_DATA_FUNCTION_V135[elementId] ||
+    publicTextV126(fallback) ||
+    "공간 분포 확인"
+  );
+}
 
 const PUBLIC_MAP_LAYER_ACCURACY_V126: Record<string, string> = {
   "A-024": A024_PUBLIC_ACCURACY_NOTICE_V126,
