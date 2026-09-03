@@ -162,7 +162,9 @@
     "audit:public-controls:v136": "node scripts/audit-vietnam-public-controls-v136.mjs",
     "audit:release:v136": "node scripts/audit-vietnam-release-v136.mjs",
     "capture:screenshots:v136": "node scripts/capture-vietnam-v136-screenshots.mjs",
-    "finalize:v136": "npm run audit:release:v136"
+    "finalize:v136": "npm run audit:release:v136",
+    "audit:finder-scroll:v136": "node scripts/audit-vietnam-finder-scroll-v136.mjs",
+    "audit:human-review:v136": "node scripts/audit-vietnam-human-review-v136.mjs"
   },
   "browserslist": [
     ">0.2%",

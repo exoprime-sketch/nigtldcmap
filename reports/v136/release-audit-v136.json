@@ -1,15 +1,15 @@
 {
   "schemaVersion": "v136-public-copy-acceptance-1",
-  "generatedAt": "2026-09-03T06:23:19.282Z",
+  "generatedAt": "2026-09-03T07:06:16.755Z",
   "audit": "release:v136",
   "status": "PASS",
   "summary": {
     "type": "summary",
     "audit": "release:v136",
     "status": "PASS",
-    "passed": 58,
+    "passed": 69,
     "failed": 0,
-    "total": 58,
+    "total": 69,
     "failedChecks": [],
     "commandResults": [
       {
@@ -235,6 +235,20 @@
         "exitCode": 0,
         "signal": null,
         "error": null
+      },
+      {
+        "name": "V136_FINDER_SCROLL",
+        "command": "npm run audit:finder-scroll:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V136_HUMAN_REVIEW",
+        "command": "npm run audit:human-review:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
       }
     ],
     "reportStatuses": {
@@ -268,11 +282,13 @@
       "duplicateCopy": "PASS",
       "mapListUi": "PASS",
       "mapCopy": "PASS",
-      "publicControls": "PASS"
+      "publicControls": "PASS",
+      "finderScroll": "PASS",
+      "humanReview": "PASS"
     },
     "frameworkElements": 152,
     "accountedElements": 152,
-    "publicTextInventoryCount": 55789,
+    "publicTextInventoryCount": 55787,
     "publicRouteCount": 158,
     "internalPublicTokenCount": 0,
     "duplicateVisibleCopyCount": 0,
@@ -796,6 +812,38 @@
     {
       "type": "check",
       "audit": "release:v136",
+      "name": "V136_FINDER_SCROLL",
+      "status": "PASS",
+      "actual": {
+        "name": "V136_FINDER_SCROLL",
+        "command": "npm run audit:finder-scroll:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V136_HUMAN_REVIEW",
+      "status": "PASS",
+      "actual": {
+        "name": "V136_HUMAN_REVIEW",
+        "command": "npm run audit:human-review:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
       "name": "FRAMEWORK_ELEMENTS",
       "status": "PASS",
       "actual": 152,
@@ -1030,6 +1078,97 @@
     {
       "type": "check",
       "audit": "release:v136",
+      "name": "FINDER_LOAD_MORE_VISIBLE_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "FINDER_AUTO_LOAD_SEQUENCE",
+      "status": "PASS",
+      "actual": [
+        24,
+        48,
+        72,
+        96,
+        120,
+        144,
+        152
+      ],
+      "expected": [
+        24,
+        48,
+        72,
+        96,
+        120,
+        144,
+        152
+      ]
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "FINDER_DUPLICATE_CARD_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "FINDER_HUMAN_REVIEW_COUNT",
+      "status": "PASS",
+      "actual": 152,
+      "expected": 152
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "DETAIL_HUMAN_REVIEW_COUNT",
+      "status": "PASS",
+      "actual": 152,
+      "expected": 152
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "MAP_DATASET_HUMAN_REVIEW_COUNT",
+      "status": "PASS",
+      "actual": 12,
+      "expected": 12
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "UNRESOLVED_REWRITE_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "UNRESOLVED_REMOVE_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V136_1_REGRESSION",
+      "status": "PASS",
+      "actual": {
+        "finderScroll": "PASS",
+        "humanReview": "PASS"
+      },
+      "expected": "PASS"
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
       "name": "SCREENSHOT_CAPTURE_IS_RELEASE_BLOCKER",
       "status": "PASS",
       "actual": [
@@ -1064,7 +1203,9 @@
         "npm run audit:duplicate-copy:v136",
         "npm run audit:map-list-ui:v136",
         "npm run audit:map-copy:v136",
-        "npm run audit:public-controls:v136"
+        "npm run audit:public-controls:v136",
+        "npm run audit:finder-scroll:v136",
+        "npm run audit:human-review:v136"
       ],
       "expected": "no screenshot command"
     },
@@ -1301,6 +1442,20 @@
       "exitCode": 0,
       "signal": null,
       "error": null
+    },
+    {
+      "name": "V136_FINDER_SCROLL",
+      "command": "npm run audit:finder-scroll:v136",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V136_HUMAN_REVIEW",
+      "command": "npm run audit:human-review:v136",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
     }
   ],
   "reportStatuses": {
@@ -1334,11 +1489,13 @@
     "duplicateCopy": "PASS",
     "mapListUi": "PASS",
     "mapCopy": "PASS",
-    "publicControls": "PASS"
+    "publicControls": "PASS",
+    "finderScroll": "PASS",
+    "humanReview": "PASS"
   },
   "frameworkElements": 152,
   "accountedElements": 152,
-  "publicTextInventoryCount": 55789,
+  "publicTextInventoryCount": 55787,
   "publicRouteCount": 158,
   "internalPublicTokenCount": 0,
   "duplicateVisibleCopyCount": 0,

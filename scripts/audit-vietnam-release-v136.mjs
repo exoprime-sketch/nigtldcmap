@@ -43,6 +43,8 @@ const commands = [
   { name: "V136_MAP_LIST_UI", command: "npm run audit:map-list-ui:v136" },
   { name: "V136_MAP_COPY", command: "npm run audit:map-copy:v136" },
   { name: "V136_PUBLIC_CONTROLS", command: "npm run audit:public-controls:v136" },
+  { name: "V136_FINDER_SCROLL", command: "npm run audit:finder-scroll:v136" },
+  { name: "V136_HUMAN_REVIEW", command: "npm run audit:human-review:v136" },
 ];
 
 const commandResults = [];
@@ -100,6 +102,8 @@ const reportPaths = {
   mapListUi: "reports/v136/map-list-ui-audit-v136.json",
   mapCopy: "reports/v136/map-copy-audit-v136.json",
   publicControls: "reports/v136/public-controls-audit-v136.json",
+  finderScroll: "reports/v136/finder-scroll-audit-v136.json",
+  humanReview: "reports/v136/human-review-audit-v136.json",
 };
 const reports = Object.fromEntries(
   Object.entries(reportPaths).map(([key, path]) => [key, readJson(resolve(PROJECT_ROOT, path))])
@@ -115,6 +119,8 @@ const text = reports.publicText.value || {};
 const duplicate = reports.duplicateCopy.value || {};
 const listUi = reports.mapListUi.value || {};
 const controls = reports.publicControls.value || {};
+const scroll = reports.finderScroll.value || {};
+const review = reports.humanReview.value || {};
 const mapAccess = reports.v135MapAccess.value || {};
 const mapGuide = reports.v135MapGuide.value || {};
 const glossary = reports.glossary.value || {};
@@ -149,6 +155,15 @@ audit.check("V134_REGRESSION", group(["glossary", "oda", "drought", "publicCopy"
 audit.check("V135_REGRESSION", group(["v135FinderCard", "v135TemporalDepth", "v135DetailHierarchy", "v135MapGuide", "v135MapAccess", "v135MapCompare", "v135PublicScreen"]), { finderCard: statuses.v135FinderCard, temporalDepth: statuses.v135TemporalDepth, detailHierarchy: statuses.v135DetailHierarchy, mapGuide: statuses.v135MapGuide, mapAccess: statuses.v135MapAccess, mapCompare: statuses.v135MapCompare, publicScreen: statuses.v135PublicScreen }, "PASS");
 audit.check("V136_REGRESSION", group(["publicText", "duplicateCopy", "mapListUi", "mapCopy", "publicControls"]), { publicText: statuses.publicText, duplicateCopy: statuses.duplicateCopy, mapListUi: statuses.mapListUi, mapCopy: statuses.mapCopy, publicControls: statuses.publicControls }, "PASS");
 
+audit.check("FINDER_LOAD_MORE_VISIBLE_COUNT", scroll.finderLoadMoreVisibleCount === 0, scroll.finderLoadMoreVisibleCount ?? null, 0);
+audit.check("FINDER_AUTO_LOAD_SEQUENCE", JSON.stringify(scroll.autoLoadSequence) === JSON.stringify([24, 48, 72, 96, 120, 144, 152]), scroll.autoLoadSequence ?? null, [24, 48, 72, 96, 120, 144, 152]);
+audit.check("FINDER_DUPLICATE_CARD_COUNT", scroll.duplicateCardCount === 0, scroll.duplicateCardCount ?? null, 0);
+audit.check("FINDER_HUMAN_REVIEW_COUNT", review.finderHumanReviewCount === 152, review.finderHumanReviewCount ?? null, 152);
+audit.check("DETAIL_HUMAN_REVIEW_COUNT", review.detailHumanReviewCount === 152, review.detailHumanReviewCount ?? null, 152);
+audit.check("MAP_DATASET_HUMAN_REVIEW_COUNT", review.mapDatasetHumanReviewCount === 12, review.mapDatasetHumanReviewCount ?? null, 12);
+audit.check("UNRESOLVED_REWRITE_COUNT", review.unresolvedRewriteCount === 0, review.unresolvedRewriteCount ?? null, 0);
+audit.check("UNRESOLVED_REMOVE_COUNT", review.unresolvedRemoveCount === 0, review.unresolvedRemoveCount ?? null, 0);
+audit.check("V136_1_REGRESSION", statuses.finderScroll === "PASS" && statuses.humanReview === "PASS", { finderScroll: statuses.finderScroll, humanReview: statuses.humanReview }, "PASS");
 audit.check("SCREENSHOT_CAPTURE_IS_RELEASE_BLOCKER", !commands.some((entry) => /screenshot|capture:/iu.test(entry.command)), commands.map((entry) => entry.command), "no screenshot command");
 audit.check("REMAINING_BLOCKERS", allCommandsPassed, commandResults.filter((item) => item.exitCode !== 0), []);
 

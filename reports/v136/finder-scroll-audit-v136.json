@@ -1,0 +1,359 @@
+{
+  "schemaVersion": "v136-public-copy-acceptance-1",
+  "generatedAt": "2026-09-03T07:05:37.710Z",
+  "audit": "finder-scroll:v136",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "finder-scroll:v136",
+    "status": "PASS",
+    "passed": 13,
+    "failed": 0,
+    "total": 13,
+    "failedChecks": [],
+    "finderLoadMoreVisibleCount": 0,
+    "finderIntersectionObserver": true,
+    "initialVisibleCount": 24,
+    "autoLoadSequence": [
+      24,
+      48,
+      72,
+      96,
+      120,
+      144,
+      152
+    ],
+    "duplicateCardCount": 0,
+    "filterReset": {
+      "visible": 73,
+      "total": 73,
+      "resetTo": 24
+    },
+    "backNav": {
+      "beforeLeave": {
+        "count": 96,
+        "scrollY": 14400
+      },
+      "afterBack": {
+        "count": 96,
+        "scrollY": 14309
+      }
+    },
+    "ariaContract": {
+      "busyAttributePresent": true,
+      "busySettled": true,
+      "sentinelFocusable": false,
+      "sentinelHidden": true
+    },
+    "responsive": [
+      {
+        "width": 390,
+        "revealed": [
+          24,
+          48,
+          72
+        ],
+        "overflow": -15
+      },
+      {
+        "width": 768,
+        "revealed": [
+          24,
+          48,
+          72
+        ],
+        "overflow": -15
+      },
+      {
+        "width": 1024,
+        "revealed": [
+          24,
+          48,
+          72
+        ],
+        "overflow": -15
+      },
+      {
+        "width": 1280,
+        "revealed": [
+          24,
+          48,
+          72
+        ],
+        "overflow": -15
+      },
+      {
+        "width": 1440,
+        "revealed": [
+          24,
+          48,
+          72
+        ],
+        "overflow": -15
+      },
+      {
+        "width": 1920,
+        "revealed": [
+          24,
+          48,
+          72
+        ],
+        "overflow": -15
+      }
+    ],
+    "runtimeFailure": null
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "finder-scroll:v136",
+      "name": "FINDER_SCROLL_RUNTIME",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null
+      },
+      "expected": {
+        "runtimeFailure": null
+      }
+    },
+    {
+      "type": "check",
+      "audit": "finder-scroll:v136",
+      "name": "FINDER_LOAD_MORE_VISIBLE_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "type": "check",
+      "audit": "finder-scroll:v136",
+      "name": "FINDER_INTERSECTION_OBSERVER",
+      "status": "PASS",
+      "actual": {
+        "usesObserver": true
+      },
+      "expected": true
+    },
+    {
+      "type": "check",
+      "audit": "finder-scroll:v136",
+      "name": "INITIAL_VISIBLE_COUNT",
+      "status": "PASS",
+      "actual": 24,
+      "expected": 24
+    },
+    {
+      "type": "check",
+      "audit": "finder-scroll:v136",
+      "name": "AUTO_LOAD_SEQUENCE",
+      "status": "PASS",
+      "actual": [
+        24,
+        48,
+        72,
+        96,
+        120,
+        144,
+        152
+      ],
+      "expected": [
+        24,
+        48,
+        72,
+        96,
+        120,
+        144,
+        152
+      ]
+    },
+    {
+      "type": "check",
+      "audit": "finder-scroll:v136",
+      "name": "DUPLICATE_CARD_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "type": "check",
+      "audit": "finder-scroll:v136",
+      "name": "FILTER_RESET_VISIBLE_COUNT",
+      "status": "PASS",
+      "actual": {
+        "visible": 73,
+        "total": 73,
+        "resetTo": 24
+      },
+      "expected": {
+        "resetTo": 24
+      }
+    },
+    {
+      "type": "check",
+      "audit": "finder-scroll:v136",
+      "name": "BACK_NAV_VISIBLE_COUNT_RESTORED",
+      "status": "PASS",
+      "actual": {
+        "beforeLeave": {
+          "count": 96,
+          "scrollY": 14400
+        },
+        "afterBack": {
+          "count": 96,
+          "scrollY": 14309
+        }
+      },
+      "expected": "restored revealed rows"
+    },
+    {
+      "type": "check",
+      "audit": "finder-scroll:v136",
+      "name": "BACK_NAV_SCROLL_RESTORED",
+      "status": "PASS",
+      "actual": {
+        "beforeLeave": {
+          "count": 96,
+          "scrollY": 14400
+        },
+        "afterBack": {
+          "count": 96,
+          "scrollY": 14309
+        },
+        "scrollDrift": 91
+      },
+      "expected": "within 200px of the previous offset"
+    },
+    {
+      "type": "check",
+      "audit": "finder-scroll:v136",
+      "name": "ARIA_BUSY_CONTRACT",
+      "status": "PASS",
+      "actual": {
+        "busyAttributePresent": true,
+        "busySettled": true,
+        "sentinelFocusable": false,
+        "sentinelHidden": true
+      },
+      "expected": {
+        "busyAttributePresent": true,
+        "busySettled": true,
+        "sentinelFocusable": false
+      }
+    },
+    {
+      "type": "check",
+      "audit": "finder-scroll:v136",
+      "name": "FINDER_RESPONSIVE_AUTOLOAD",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "finder-scroll:v136",
+      "name": "FINDER_RESPONSIVE_OVERFLOW",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "finder-scroll:v136",
+      "name": "CONSOLE_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "finderLoadMoreVisibleCount": 0,
+  "finderIntersectionObserver": true,
+  "initialVisibleCount": 24,
+  "autoLoadSequence": [
+    24,
+    48,
+    72,
+    96,
+    120,
+    144,
+    152
+  ],
+  "duplicateCardCount": 0,
+  "filterReset": {
+    "visible": 73,
+    "total": 73,
+    "resetTo": 24
+  },
+  "backNav": {
+    "beforeLeave": {
+      "count": 96,
+      "scrollY": 14400
+    },
+    "afterBack": {
+      "count": 96,
+      "scrollY": 14309
+    }
+  },
+  "ariaContract": {
+    "busyAttributePresent": true,
+    "busySettled": true,
+    "sentinelFocusable": false,
+    "sentinelHidden": true
+  },
+  "responsive": [
+    {
+      "width": 390,
+      "revealed": [
+        24,
+        48,
+        72
+      ],
+      "overflow": -15
+    },
+    {
+      "width": 768,
+      "revealed": [
+        24,
+        48,
+        72
+      ],
+      "overflow": -15
+    },
+    {
+      "width": 1024,
+      "revealed": [
+        24,
+        48,
+        72
+      ],
+      "overflow": -15
+    },
+    {
+      "width": 1280,
+      "revealed": [
+        24,
+        48,
+        72
+      ],
+      "overflow": -15
+    },
+    {
+      "width": 1440,
+      "revealed": [
+        24,
+        48,
+        72
+      ],
+      "overflow": -15
+    },
+    {
+      "width": 1920,
+      "revealed": [
+        24,
+        48,
+        72
+      ],
+      "overflow": -15
+    }
+  ],
+  "runtimeFailure": null
+}

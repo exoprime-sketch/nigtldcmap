@@ -1,0 +1,121 @@
+{
+  "schemaVersion": "v136-public-copy-acceptance-1",
+  "generatedAt": "2026-09-03T07:06:15.863Z",
+  "audit": "human-review:v136",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "human-review:v136",
+    "status": "PASS",
+    "passed": 10,
+    "failed": 0,
+    "total": 10,
+    "failedChecks": [],
+    "finderHumanReviewCount": 152,
+    "detailHumanReviewCount": 152,
+    "mapDatasetHumanReviewCount": 12,
+    "downloadReviewRows": 120,
+    "guideReviewRows": 120,
+    "editorialDecisionLogRows": 580,
+    "keepCount": 580,
+    "unresolvedRewriteCount": 0,
+    "unresolvedRemoveCount": 0,
+    "runtimeFailure": null
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "human-review:v136",
+      "name": "HUMAN_REVIEW_RUNTIME",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null
+      },
+      "expected": {
+        "runtimeFailure": null
+      }
+    },
+    {
+      "type": "check",
+      "audit": "human-review:v136",
+      "name": "FINDER_HUMAN_REVIEW_COUNT",
+      "status": "PASS",
+      "actual": 152,
+      "expected": 152
+    },
+    {
+      "type": "check",
+      "audit": "human-review:v136",
+      "name": "DETAIL_HUMAN_REVIEW_COUNT",
+      "status": "PASS",
+      "actual": 152,
+      "expected": 152
+    },
+    {
+      "type": "check",
+      "audit": "human-review:v136",
+      "name": "MAP_DATASET_HUMAN_REVIEW_COUNT",
+      "status": "PASS",
+      "actual": 12,
+      "expected": 12
+    },
+    {
+      "type": "check",
+      "audit": "human-review:v136",
+      "name": "MAP_REVIEW_ACTIVATION",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "human-review:v136",
+      "name": "DOWNLOAD_HUMAN_REVIEW",
+      "status": "PASS",
+      "actual": 120,
+      "expected": ">0"
+    },
+    {
+      "type": "check",
+      "audit": "human-review:v136",
+      "name": "GUIDE_HUMAN_REVIEW",
+      "status": "PASS",
+      "actual": 120,
+      "expected": ">0"
+    },
+    {
+      "type": "check",
+      "audit": "human-review:v136",
+      "name": "UNRESOLVED_REWRITE_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "human-review:v136",
+      "name": "UNRESOLVED_REMOVE_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "human-review:v136",
+      "name": "EDITORIAL_DECISION_LOG_ROWS",
+      "status": "PASS",
+      "actual": 580,
+      "expected": ">=316"
+    }
+  ],
+  "finderHumanReviewCount": 152,
+  "detailHumanReviewCount": 152,
+  "mapDatasetHumanReviewCount": 12,
+  "downloadReviewRows": 120,
+  "guideReviewRows": 120,
+  "editorialDecisionLogRows": 580,
+  "keepCount": 580,
+  "unresolvedRewriteCount": 0,
+  "unresolvedRemoveCount": 0,
+  "runtimeFailure": null
+}
