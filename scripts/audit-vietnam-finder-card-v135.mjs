@@ -88,6 +88,9 @@ try {
           tags,
           actions,
           internal,
+          breadcrumb: [...card.querySelectorAll('.cdp-card__breadcrumb span, [data-testid="finder-card-breadcrumb-v135"] span')]
+            .map((node) => clean(node.textContent))
+            .filter(Boolean),
           blankTitle: !title,
           duplicateTitleTag: tags.some((tag) => tag === title),
           invalidAction: actions.some((action) => /undefined|null|#undefined|#null/iu.test(action.href)),
@@ -116,12 +119,46 @@ const duplicateMeasureTitles = cards.filter((card) => card.duplicateTitleTag);
 const blankTitles = cards.filter((card) => card.blankTitle);
 const missingDataActions = cards.filter((card) => !card.dataAction);
 const overTagged = cards.filter((card) => card.tags.length > 3);
+
+// A card has one sentence to tell the reader what they can find out. A
+// description that names a shelf ("... 관련 자료"), repeats the dataset name, or
+// echoes only its category tells them nothing.
+const GENERIC_DESCRIPTION_PATTERNS_V135 = [
+  /관련\s*자료/u,
+  /^정보\s*관련/u,
+  /^자료\s*모음/u,
+];
+const genericDescriptions = cards.filter((card) => {
+  const description = String(card.description || "").trim();
+  if (!description) return true;
+  if (description.length < 10) return true;
+  if (GENERIC_DESCRIPTION_PATTERNS_V135.some((pattern) => pattern.test(description))) {
+    return true;
+  }
+  const title = String(card.title || "").trim();
+  if (title && description === title) return true;
+  // nothing said beyond the dataset name itself
+  if (title && description.replace(title, "").replace(/[의·\s]/gu, "").length < 6) {
+    return true;
+  }
+  const shelves = (card.breadcrumb || []).map((value) => String(value).trim());
+  if (shelves.some((shelf) => shelf && description === shelf)) return true;
+  return false;
+});
 const invalidActions = cards.filter((card) => card.invalidAction);
 
 audit.check("FRAMEWORK_ELEMENTS", catalog.length === 152, catalog.length, 152);
 audit.check("FINDER_CARD_RUNTIME_COVERAGE", runtimeFailure === null && cards.length === 152, { runtimeFailure, cardCount: cards.length }, { cardCount: 152 });
 audit.check("FINDER_INTERNAL_METADATA_COUNT", internalMetadata.length === 0, internalMetadata, []);
 audit.check("FINDER_DUPLICATE_MEASURE_TITLE_COUNT", duplicateMeasureTitles.length === 0, duplicateMeasureTitles, []);
+audit.check(
+  "GENERIC_FINDER_DESCRIPTION_COUNT",
+  genericDescriptions.length === 0,
+  genericDescriptions
+    .slice(0, 20)
+    .map((card) => ({ elementId: card.elementId, title: card.title, description: card.description })),
+  []
+);
 audit.check("FINDER_BLANK_PUBLIC_TITLE_COUNT", blankTitles.length === 0, blankTitles, []);
 audit.check("FINDER_PRIMARY_ACTION_COVERAGE", missingDataActions.length === 0, missingDataActions, []);
 audit.check("FINDER_TAG_MAXIMUM", overTagged.length === 0, overTagged, []);
@@ -134,5 +171,7 @@ finishAuditV135(audit, "finder-card-audit-v135.json", {
   cardCount: cards.length,
   finderInternalMetadataCount: internalMetadata.length,
   finderDuplicateMeasureTitleCount: duplicateMeasureTitles.length,
+  genericFinderDescriptionCount: genericDescriptions.length,
+  finderDescriptionCoverage: cards.filter((card) => String(card.description || "").trim()).length,
   runtimeFailure,
 });

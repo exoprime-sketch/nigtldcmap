@@ -560,9 +560,13 @@ export default function DataExplorerPage({
             data-testid="public-finder-card-v135"
           >
             <div className="cdp-card__path">
-              <span>{item.categoryLabel}</span>
+              <span>
+                <PublicTermTextV134 text={item.categoryLabel} />
+              </span>
               <span aria-hidden="true">›</span>
-              <span>{item.groupLabel}</span>
+              <span>
+                <PublicTermTextV134 text={item.groupLabel} />
+              </span>
             </div>
             {showCountryContext && (
               <span className="cdp-country-chip">{item.countryNameKo}</span>

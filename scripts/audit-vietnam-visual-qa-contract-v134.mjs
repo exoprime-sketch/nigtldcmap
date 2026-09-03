@@ -158,7 +158,7 @@ const releaseWorkflowContract = (source, reportPath) => ({
     !/npm\s+run\s+capture:screenshots|capture-[\w./-]*screenshots/iu.test(
       source
     ),
-  currentReports: reportPath ? /reports\/v13[45]\//u.test(source) : true,
+  currentReports: reportPath ? /reports\/v135\//u.test(source) : true,
 });
 const ciContract = releaseWorkflowContract(ci, true);
 const pagesContract = releaseWorkflowContract(pages, false);
@@ -220,8 +220,8 @@ const report = {
     FUNCTIONAL_BROWSER_AUDIT_IS_RELEASE_BLOCKER: functionalAuditBlocking,
     releaseWorkflows: [".github/workflows/ci.yml", ".github/workflows/pages.yml"],
     visualQaWorkflow: ".github/workflows/visual-qa.yml",
-    blockingEntryPoint: "npm run finalize:v134",
-    nonBlockingEntryPoint: "npm run capture:screenshots:v134",
+    blockingEntryPoint: "npm run finalize:v135",
+    nonBlockingEntryPoint: "npm run capture:screenshots:v135",
   },
   evidence: {
     finalizeClosure,

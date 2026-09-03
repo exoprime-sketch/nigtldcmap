@@ -98,7 +98,7 @@ const pagesContract = {
   publicUrl: /PUBLIC_URL/u.test(pages),
   deploy: /actions\/deploy-pages@/u.test(pages),
   smoke: /Smoke deployed production site|Smoke deployed URL/u.test(pages),
-  currentReports: /reports\/v134\//u.test(pages),
+  currentReports: /reports\/v135\//u.test(pages),
   screenshotCaptureSeparated: !/capture:screenshots:v13[45]/u.test(pages),
   noLegacyGate: !/finalize:v128|finalize:v134|blocking V128 release gate/iu.test(pages),
   noLocalSourceAudit: !/audit:source-local:v133|_source\//u.test(pages),

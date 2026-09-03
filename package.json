@@ -153,7 +153,8 @@
     "audit:public-screen:v135": "node scripts/audit-vietnam-public-screen-v135.mjs",
     "audit:release:v135": "node scripts/audit-vietnam-release-v135.mjs",
     "capture:screenshots:v135": "node scripts/capture-vietnam-v135-screenshots.mjs",
-    "finalize:v135": "npm run audit:release:v135"
+    "finalize:v135": "npm run audit:release:v135",
+    "build:temporal-contract:v135": "node scripts/build-public-temporal-contract-v135.mjs"
   },
   "browserslist": [
     ">0.2%",

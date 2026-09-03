@@ -24,12 +24,12 @@ import type {
 } from "./countryDataTypesV122";
 import {
   publicCountrySlugV122,
-  publicDatasetDescriptionV122,
   publicDatasetShortTitleV122,
   publicDatasetTitleV122,
   removeInternalSearchTokensV122,
 } from "./publicLabelsV122";
 import { publicAssetUrlV128 } from "../../utils/publicAssetUrlV128";
+import { publicDatasetDescriptionV135 } from "../visualization/publicDatasetDescriptionV135";
 
 function toCatalogItem(
   item: VietnamCatalogElementV124
@@ -53,7 +53,18 @@ function toCatalogItem(
       item.elementId,
       item.elementLabel
     ),
-    publicDescription: publicDatasetDescriptionV122(item),
+    publicDescription: publicDatasetDescriptionV135({
+      elementId: item.elementId,
+      elementLabel: item.elementLabel,
+      categoryLabel: item.categoryLabel,
+      dataPresenceStatus: item.dataPresenceStatus,
+      detailTemplate: item.detailTemplate,
+      groupLabel: item.groupLabel,
+      mapFeatureCount: item.mapFeatureCount,
+      mapMode: item.mapMode,
+      publicStatus: item.publicStatus,
+      sectionLabel: item.sectionLabel,
+    }),
     categoryCode: item.categoryCode,
     categoryLabel: item.categoryLabel,
     sectionCode: item.sectionCode,

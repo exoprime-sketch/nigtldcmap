@@ -219,6 +219,10 @@ const DEPTH_CORRECTED_ANALYSIS_TITLES_V135: Readonly<Record<string, string>> =
     "E-009": "과학기술 인력의 최근 수준과 항목별 차이",
   });
 
+/** Elements whose public copy was authored and verified individually. */
+export const SPECIALIZED_PUBLIC_HEADING_ELEMENT_IDS_V134: ReadonlySet<string> =
+  new Set(Object.keys(SPECIALIZED_HEADINGS_V134));
+
 export const PUBLIC_ANALYSIS_HEADINGS_V134: readonly PublicAnalysisHeadingsV134[] =
   Object.freeze(
     ELEMENT_PRESENTATION_SPECS_V100.map((spec) => {

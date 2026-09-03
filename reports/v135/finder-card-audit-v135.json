@@ -1,19 +1,21 @@
 {
   "schemaVersion": "v135-final-public-screen-audit-1",
-  "generatedAt": "2026-09-03T00:26:16.018Z",
+  "generatedAt": "2026-09-03T01:11:47.218Z",
   "audit": "finder-card:v135",
   "status": "PASS",
   "summary": {
     "type": "summary",
     "audit": "finder-card:v135",
     "status": "PASS",
-    "passed": 11,
+    "passed": 12,
     "failed": 0,
-    "total": 11,
+    "total": 12,
     "failedChecks": [],
     "cardCount": 152,
     "finderInternalMetadataCount": 0,
     "finderDuplicateMeasureTitleCount": 0,
+    "genericFinderDescriptionCount": 0,
+    "finderDescriptionCoverage": 152,
     "runtimeFailure": null
   },
   "checks": [
@@ -50,6 +52,14 @@
       "type": "check",
       "audit": "finder-card:v135",
       "name": "FINDER_DUPLICATE_MEASURE_TITLE_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "finder-card:v135",
+      "name": "GENERIC_FINDER_DESCRIPTION_COUNT",
       "status": "PASS",
       "actual": [],
       "expected": []
@@ -114,5 +124,7 @@
   "cardCount": 152,
   "finderInternalMetadataCount": 0,
   "finderDuplicateMeasureTitleCount": 0,
+  "genericFinderDescriptionCount": 0,
+  "finderDescriptionCoverage": 152,
   "runtimeFailure": null
 }

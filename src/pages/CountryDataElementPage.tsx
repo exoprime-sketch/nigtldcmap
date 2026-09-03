@@ -793,11 +793,15 @@ export default function CountryDataElementPage({
             <div>
               <div className="cdp-card__path">
                 <span>
-                  {catalogItem?.categoryLabel || meta.element.categoryLabel}
+                  <PublicTermTextV134
+                    text={catalogItem?.categoryLabel || meta.element.categoryLabel}
+                  />
                 </span>
                 <span aria-hidden="true">›</span>
                 <span>
-                  {catalogItem?.groupLabel || meta.element.groupLabel}
+                  <PublicTermTextV134
+                    text={catalogItem?.groupLabel || meta.element.groupLabel}
+                  />
                 </span>
               </div>
               {catalogItem && (

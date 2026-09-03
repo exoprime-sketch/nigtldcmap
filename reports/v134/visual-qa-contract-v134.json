@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v134-visual-qa-contract-1",
-  "generatedAt": "2026-09-03T00:26:13.977Z",
+  "generatedAt": "2026-09-03T01:11:45.120Z",
   "audit": "visual-qa-contract:v134",
   "checks": [
     {
@@ -98,8 +98,8 @@
       ".github/workflows/pages.yml"
     ],
     "visualQaWorkflow": ".github/workflows/visual-qa.yml",
-    "blockingEntryPoint": "npm run finalize:v134",
-    "nonBlockingEntryPoint": "npm run capture:screenshots:v134"
+    "blockingEntryPoint": "npm run finalize:v135",
+    "nonBlockingEntryPoint": "npm run capture:screenshots:v135"
   },
   "evidence": {
     "finalizeClosure": {
