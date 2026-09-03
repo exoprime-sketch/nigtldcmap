@@ -100,3 +100,160 @@ export function visibleExpressionV135(selector) {
       style.visibility !== 'hidden' && Number(style.opacity || 1) > 0;
   })()`;
 }
+
+/**
+ * V135 map feature hover.
+ *
+ * `[data-element-id="X"][data-layer-role="primary"]` is not a hover target: the
+ * active-layer legend item carries the same two attributes, so a first-match
+ * query can resolve to the legend, which has no tooltip handler. Hovering it
+ * leaves the tooltip empty, which is how MAP_MINE_TOOLTIP failed in CI while
+ * passing locally — purely an ordering accident between the legend and the
+ * fallback feature layer.
+ *
+ * Real CDP pointer events are not usable here either: the MapLibre canvas sits
+ * above the fallback SVG, so a pointer at the feature's coordinates lands on the
+ * canvas. The fallback layer is driven by React mouse handlers, so the hover is
+ * dispatched onto the resolved feature node itself.
+ */
+export const MAP_FEATURE_CONTROL_SELECTOR_V135 =
+  '.cdp-map-fallback__feature-control[data-element-id="%ELEMENT_ID%"]';
+
+export function mapFeatureControlSelectorV135(elementId) {
+  return MAP_FEATURE_CONTROL_SELECTOR_V135.replace("%ELEMENT_ID%", elementId);
+}
+
+export function mapFeatureTooltipTextExpressionV135() {
+  return `(() => {
+    const node = document.querySelector('[data-testid="map-feature-tooltip"]');
+    return String(node?.textContent || '').normalize('NFC').replace(/\s+/gu, ' ').trim();
+  })()`;
+}
+
+/**
+ * Hovers one deterministic feature of a map layer and waits until the tooltip
+ * actually carries that feature's content. Returns diagnostics either way so a
+ * failure reports what was targeted rather than only an empty string.
+ */
+export async function hoverMapFeatureForTooltipV135(
+  cdp,
+  { elementId, contentPattern, evaluateValue, waitForValue, timeoutMs = 15_000 }
+) {
+  const selector = mapFeatureControlSelectorV135(elementId);
+  const diagnostics = {
+    elementId,
+    targetSelector: selector,
+    targetFound: false,
+    targetLabel: "",
+    targetName: "",
+    targetRect: null,
+    eventDispatched: false,
+    tooltipNodeExists: false,
+    tooltipText: "",
+    primaryElement: "",
+    renderedMapSymbols: "",
+    failure: null,
+  };
+
+  const readContext = async () => {
+    const context = await evaluateValue(
+      cdp,
+      `(() => {
+        const root = document.querySelector('[data-testid="map-public-content"]');
+        const tooltip = document.querySelector('[data-testid="map-feature-tooltip"]');
+        return {
+          primaryElement: root?.getAttribute('data-primary-element') || '',
+          renderedMapSymbols: root?.getAttribute('data-rendered-map-symbols') || '',
+          tooltipNodeExists: Boolean(tooltip),
+          tooltipText: String(tooltip?.textContent || '').normalize('NFC').replace(/\s+/gu, ' ').trim(),
+        };
+      })()`
+    );
+    Object.assign(diagnostics, context || {});
+  };
+
+  try {
+    // Wait for interactive features of this layer, never for the legend.
+    await waitForValue(
+      cdp,
+      `document.querySelectorAll(${JSON.stringify(selector)}).length > 0`,
+      { timeoutMs }
+    );
+
+    // Deterministic pick: order by the feature's own public label, not by DOM
+    // position, so the same mine is hovered on every run and environment.
+    const target = await evaluateValue(
+      cdp,
+      `(() => {
+        document.querySelectorAll('[data-v135-hover-target]').forEach((node) => {
+          node.removeAttribute('data-v135-hover-target');
+        });
+        const nodes = [...document.querySelectorAll(${JSON.stringify(selector)})].filter((node) => {
+          const rect = node.getBoundingClientRect();
+          return rect.width > 0 && rect.height > 0;
+        });
+        if (nodes.length === 0) return null;
+        nodes.sort((left, right) => String(left.getAttribute('aria-label') || '')
+          .localeCompare(String(right.getAttribute('aria-label') || ''), 'en'));
+        const chosen = nodes[0];
+        chosen.setAttribute('data-v135-hover-target', 'true');
+        const rect = chosen.getBoundingClientRect();
+        const label = String(chosen.getAttribute('aria-label') || '').normalize('NFC').replace(/\s+/gu, ' ').trim();
+        return {
+          label,
+          name: label.split('·').map((part) => part.trim()).filter(Boolean).pop() || '',
+          rect: { x: Math.round(rect.left), y: Math.round(rect.top), width: Math.round(rect.width), height: Math.round(rect.height) },
+          count: nodes.length,
+        };
+      })()`
+    );
+    if (!target) throw new Error(`no interactive feature for ${elementId}`);
+    diagnostics.targetFound = true;
+    diagnostics.targetLabel = target.label;
+    diagnostics.targetName = target.name;
+    diagnostics.targetRect = target.rect;
+    diagnostics.targetCount = target.count;
+
+    diagnostics.eventDispatched = Boolean(
+      await evaluateValue(
+        cdp,
+        `(() => {
+          const node = document.querySelector('[data-v135-hover-target="true"]');
+          if (!(node instanceof Element)) return false;
+          node.dispatchEvent(new PointerEvent('pointerenter', { bubbles: true }));
+          node.dispatchEvent(new MouseEvent('mouseenter', { bubbles: true }));
+          node.dispatchEvent(new MouseEvent('mouseover', { bubbles: true }));
+          return true;
+        })()`
+      )
+    );
+
+    // Wait for tooltip content, not for the tooltip node.
+    const namePart = JSON.stringify(target.name || "");
+    await waitForValue(
+      cdp,
+      `(() => {
+        const node = document.querySelector('[data-testid="map-feature-tooltip"]');
+        const text = String(node?.textContent || '').normalize('NFC').replace(/\s+/gu, ' ').trim();
+        if (!node || text.length === 0) return false;
+        if (!${contentPattern}.test(text)) return false;
+        const name = ${namePart};
+        return name.length === 0 || text.includes(name);
+      })()`,
+      { timeoutMs }
+    );
+  } catch (error) {
+    diagnostics.failure = error instanceof Error ? error.message : String(error);
+  }
+
+  await readContext();
+  return diagnostics;
+}
+
+/**
+ * Source form of the mine tooltip content test, shared by the release audit and
+ * the screenshot capture so both wait on the same semantics. Kept as a source
+ * string because it is injected into a page-side expression.
+ */
+export const MINE_TOOLTIP_CONTENT_PATTERN_SOURCE_V135 =
+  "/광산|광종|석탄|금|구리|보크사이트|철/u";

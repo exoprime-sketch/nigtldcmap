@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v135-final-public-screen-audit-1",
-  "generatedAt": "2026-09-03T01:12:48.858Z",
+  "generatedAt": "2026-09-03T01:51:30.549Z",
   "audit": "map-access:v135",
   "status": "PASS",
   "summary": {
@@ -17,6 +17,26 @@
     "leftPanelPointerResizePass": true,
     "normalContextLayerMaxObserved": 1,
     "mapTooltipUiStateLabelCount": 0,
+    "mineTooltipDiagnostics": {
+      "elementId": "B-048",
+      "targetSelector": ".cdp-map-fallback__feature-control[data-element-id=\"B-048\"]",
+      "targetFound": true,
+      "targetLabel": "주요 광산 · Ban Phuc",
+      "targetName": "Ban Phuc",
+      "targetRect": {
+        "x": 649,
+        "y": 329,
+        "width": 19,
+        "height": 19
+      },
+      "eventDispatched": true,
+      "tooltipNodeExists": true,
+      "tooltipText": "주요 광산Ban Phuc",
+      "primaryElement": "B-048",
+      "renderedMapSymbols": "B-048|primary|diamond",
+      "failure": null,
+      "targetCount": 2
+    },
     "runtimeFailure": null
   },
   "checks": [
@@ -200,7 +220,29 @@
       "audit": "map-access:v135",
       "name": "MAP_MINE_TOOLTIP",
       "status": "PASS",
-      "actual": "주요 광산Sin Quyen",
+      "actual": {
+        "tooltipText": "주요 광산Ban Phuc",
+        "diagnostics": {
+          "elementId": "B-048",
+          "targetSelector": ".cdp-map-fallback__feature-control[data-element-id=\"B-048\"]",
+          "targetFound": true,
+          "targetLabel": "주요 광산 · Ban Phuc",
+          "targetName": "Ban Phuc",
+          "targetRect": {
+            "x": 649,
+            "y": 329,
+            "width": 19,
+            "height": 19
+          },
+          "eventDispatched": true,
+          "tooltipNodeExists": true,
+          "tooltipText": "주요 광산Ban Phuc",
+          "primaryElement": "B-048",
+          "renderedMapSymbols": "B-048|primary|diamond",
+          "failure": null,
+          "targetCount": 2
+        }
+      },
       "expected": "meaningful mine tooltip"
     },
     {
@@ -226,5 +268,25 @@
   "leftPanelPointerResizePass": true,
   "normalContextLayerMaxObserved": 1,
   "mapTooltipUiStateLabelCount": 0,
+  "mineTooltipDiagnostics": {
+    "elementId": "B-048",
+    "targetSelector": ".cdp-map-fallback__feature-control[data-element-id=\"B-048\"]",
+    "targetFound": true,
+    "targetLabel": "주요 광산 · Ban Phuc",
+    "targetName": "Ban Phuc",
+    "targetRect": {
+      "x": 649,
+      "y": 329,
+      "width": 19,
+      "height": 19
+    },
+    "eventDispatched": true,
+    "tooltipNodeExists": true,
+    "tooltipText": "주요 광산Ban Phuc",
+    "primaryElement": "B-048",
+    "renderedMapSymbols": "B-048|primary|diamond",
+    "failure": null,
+    "targetCount": 2
+  },
   "runtimeFailure": null
 }

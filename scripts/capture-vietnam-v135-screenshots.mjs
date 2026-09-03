@@ -14,10 +14,12 @@ import {
   waitForValue,
 } from "./v125/browser-runtime.mjs";
 import {
+  MINE_TOOLTIP_CONTENT_PATTERN_SOURCE_V135,
   REQUIRED_SCREENSHOTS_V135,
   V135_SCREENSHOT_ROOT,
   detailUrlV135,
   finderUrlV135,
+  hoverMapFeatureForTooltipV135,
   mapUrlV135,
   visibleExpressionV135,
 } from "./v135/audit-helpers.mjs";
@@ -282,21 +284,16 @@ try {
 
   // Mine hover detail
   await showMapDataset(cdp, "B-048");
-  await waitForValue(
-    cdp,
-    `Boolean(document.querySelector('[data-element-id="B-048"][data-layer-role="primary"]'))`,
-    { timeoutMs: 35_000 }
-  );
-  await evaluateValue(
-    cdp,
-    `(() => {
-      const point = document.querySelector('[data-element-id="B-048"][data-layer-role="primary"]');
-      if (!(point instanceof Element)) return false;
-      point.dispatchEvent(new MouseEvent('mouseenter', { bubbles: true }));
-      point.dispatchEvent(new MouseEvent('mouseover', { bubbles: true }));
-      return true;
-    })()`
-  );
+  const mineHover = await hoverMapFeatureForTooltipV135(cdp, {
+    elementId: "B-048",
+    contentPattern: MINE_TOOLTIP_CONTENT_PATTERN_SOURCE_V135,
+    evaluateValue,
+    waitForValue,
+    timeoutMs: 15_000,
+  });
+  if (mineHover.failure) {
+    throw new Error(`mine tooltip unavailable: ${mineHover.failure}`);
+  }
   await capture(cdp, "map-mine-hover.png", '[data-testid="map-feature-tooltip"]');
 
   // Dedicated comparison workspace

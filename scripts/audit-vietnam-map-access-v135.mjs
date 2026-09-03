@@ -12,7 +12,13 @@ import {
   startStaticBuildServer,
   waitForValue,
 } from "./v125/browser-runtime.mjs";
-import { finishAuditV135, mapUrlV135, normalizeTextV135 } from "./v135/audit-helpers.mjs";
+import {
+  MINE_TOOLTIP_CONTENT_PATTERN_SOURCE_V135,
+  finishAuditV135,
+  hoverMapFeatureForTooltipV135,
+  mapUrlV135,
+  normalizeTextV135,
+} from "./v135/audit-helpers.mjs";
 
 const audit = new AuditV125("map-access:v135");
 const expectedLayers = [
@@ -46,6 +52,7 @@ let inventory = null;
 let resize = null;
 let contextMaximumObserved = 0;
 let tooltipText = "";
+let mineTooltipDiagnostics = null;
 const brokenAssets = [];
 try {
   if (!existsSync(resolve(PROJECT_ROOT, "build/index.html"))) {
@@ -158,19 +165,14 @@ try {
   );
   if (mineActivated) {
     await waitForValue(browser.cdp, `document.querySelector('[data-testid="map-public-content"]')?.getAttribute('data-primary-element') === 'B-048'`, { timeoutMs: 35_000 });
-    await waitForValue(browser.cdp, `Boolean(document.querySelector('[data-element-id="B-048"][data-layer-role="primary"]'))`, { timeoutMs: 35_000 });
-    await evaluateValue(
-      browser.cdp,
-      `(() => {
-        const point = document.querySelector('[data-element-id="B-048"][data-layer-role="primary"]');
-        if (!(point instanceof Element)) return false;
-        point.dispatchEvent(new MouseEvent('mouseenter', { bubbles: true }));
-        point.dispatchEvent(new MouseEvent('mouseover', { bubbles: true }));
-        return true;
-      })()`
-    );
-    await waitForValue(browser.cdp, `Boolean(document.querySelector('[data-testid="map-feature-tooltip"]'))`, { timeoutMs: 10_000 });
-    tooltipText = normalizeTextV135(await evaluateValue(browser.cdp, `document.querySelector('[data-testid="map-feature-tooltip"]')?.textContent || ''`));
+    mineTooltipDiagnostics = await hoverMapFeatureForTooltipV135(browser.cdp, {
+      elementId: "B-048",
+      contentPattern: MINE_TOOLTIP_CONTENT_PATTERN_SOURCE_V135,
+      evaluateValue,
+      waitForValue,
+      timeoutMs: 15_000,
+    });
+    tooltipText = normalizeTextV135(mineTooltipDiagnostics.tooltipText);
   }
 } catch (error) {
   runtimeFailure = error instanceof Error ? error.message : String(error);
@@ -202,7 +204,15 @@ audit.check("MAP_RESIZE_CALL_CONTRACT", staticResizeContract, { staticResizeCont
 audit.check("NORMAL_CONTEXT_LAYER_MAX", contextMaximumObserved <= 1, contextMaximumObserved, 1);
 audit.check("MAP_COUNTRY_INFO_BUTTON_COUNT", inventory?.countryActionCount === 0, inventory?.countryActionCount ?? null, 0);
 audit.check("MAP_TOOLTIP_UI_STATE_LABEL_COUNT", tooltipUiLabels.length === 0, tooltipUiLabels, []);
-audit.check("MAP_MINE_TOOLTIP", Boolean(tooltipText) && /광산|광종|석탄|금|구리|보크사이트|철/u.test(tooltipText), tooltipText, "meaningful mine tooltip");
+audit.check(
+  "MAP_MINE_TOOLTIP",
+  Boolean(tooltipText) &&
+    /광산|광종|석탄|금|구리|보크사이트|철/u.test(tooltipText) &&
+    Boolean(mineTooltipDiagnostics?.targetName) &&
+    tooltipText.includes(mineTooltipDiagnostics.targetName),
+  { tooltipText, diagnostics: mineTooltipDiagnostics },
+  "meaningful mine tooltip"
+);
 audit.check("BROKEN_ASSET", brokenAssets.length === 0, brokenAssets, []);
 audit.check("CONSOLE_ERROR", (browser?.runtimeErrors || []).length === 0, browser?.runtimeErrors || [], []);
 
@@ -213,5 +223,6 @@ finishAuditV135(audit, "map-access-audit-v135.json", {
   leftPanelPointerResizePass: resizePass,
   normalContextLayerMaxObserved: contextMaximumObserved,
   mapTooltipUiStateLabelCount: tooltipUiLabels.length,
+  mineTooltipDiagnostics,
   runtimeFailure,
 });
