@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "v136-public-copy-acceptance-1",
+  "generatedAt": "2026-09-03T06:23:09.941Z",
+  "audit": "duplicate-copy:v136",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "duplicate-copy:v136",
+    "status": "PASS",
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "failedChecks": [],
+    "duplicateVisibleCopyCount": 0,
+    "gluedFindings": [],
+    "repeatedHeadingFindings": [],
+    "inspectedRoutes": 154,
+    "runtimeFailure": null
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "duplicate-copy:v136",
+      "name": "DUPLICATE_COPY_RUNTIME",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null
+      },
+      "expected": {
+        "runtimeFailure": null
+      }
+    },
+    {
+      "type": "check",
+      "audit": "duplicate-copy:v136",
+      "name": "INSPECTED_ROUTE_COUNT",
+      "status": "PASS",
+      "actual": 154,
+      "expected": ">=154"
+    },
+    {
+      "type": "check",
+      "audit": "duplicate-copy:v136",
+      "name": "DUPLICATE_VISIBLE_COPY_COUNT",
+      "status": "PASS",
+      "actual": {
+        "glued": [],
+        "repeatedHeadings": []
+      },
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "duplicate-copy:v136",
+      "name": "CONSOLE_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "duplicateVisibleCopyCount": 0,
+  "gluedFindings": [],
+  "repeatedHeadingFindings": [],
+  "inspectedRoutes": 154,
+  "runtimeFailure": null
+}

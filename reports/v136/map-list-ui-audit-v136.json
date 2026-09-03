@@ -1,0 +1,597 @@
+{
+  "schemaVersion": "v136-public-copy-acceptance-1",
+  "generatedAt": "2026-09-03T06:23:13.549Z",
+  "audit": "map-list-ui:v136",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "map-list-ui:v136",
+    "status": "PASS",
+    "passed": 13,
+    "failed": 0,
+    "total": 13,
+    "failedChecks": [],
+    "mapDataItemCount": 12,
+    "mapNativeBulletCount": 0,
+    "mapNativeButtonStyleCount": 0,
+    "mapItemDuplicateTitleCount": 0,
+    "items": [
+      {
+        "elementId": "A-023",
+        "title": "발전소",
+        "summary": "입지·발전원·설비용량 분포",
+        "appearance": "none",
+        "background": "rgb(255, 255, 255)",
+        "borderStyle": "solid",
+        "borderRadius": 9,
+        "textAlign": "left",
+        "height": 51,
+        "width": 268,
+        "strongDisplay": "block",
+        "spanDisplay": "block",
+        "active": false
+      },
+      {
+        "elementId": "A-024",
+        "title": "베트남 송전망",
+        "summary": "연결구조·전압별 분포",
+        "appearance": "none",
+        "background": "rgb(255, 255, 255)",
+        "borderStyle": "solid",
+        "borderRadius": 9,
+        "textAlign": "left",
+        "height": 51,
+        "width": 268,
+        "strongDisplay": "block",
+        "spanDisplay": "block",
+        "active": false
+      },
+      {
+        "elementId": "C-016",
+        "title": "재생에너지 지역계획",
+        "summary": "성·시별 계획용량",
+        "appearance": "none",
+        "background": "rgb(255, 255, 255)",
+        "borderStyle": "solid",
+        "borderRadius": 9,
+        "textAlign": "left",
+        "height": 51,
+        "width": 268,
+        "strongDisplay": "block",
+        "spanDisplay": "block",
+        "active": false
+      },
+      {
+        "elementId": "B-031",
+        "title": "산림 총면적",
+        "summary": "성·시별 산림면적",
+        "appearance": "none",
+        "background": "rgb(255, 255, 255)",
+        "borderStyle": "solid",
+        "borderRadius": 9,
+        "textAlign": "left",
+        "height": 51,
+        "width": 268,
+        "strongDisplay": "block",
+        "spanDisplay": "block",
+        "active": false
+      },
+      {
+        "elementId": "B-032",
+        "title": "수관 피복률",
+        "summary": "성·시별 수관피복률",
+        "appearance": "none",
+        "background": "rgb(255, 255, 255)",
+        "borderStyle": "solid",
+        "borderRadius": 9,
+        "textAlign": "left",
+        "height": 51,
+        "width": 268,
+        "strongDisplay": "block",
+        "spanDisplay": "block",
+        "active": false
+      },
+      {
+        "elementId": "B-033",
+        "title": "연간 산림손실",
+        "summary": "지역별 손실·연도 변화",
+        "appearance": "none",
+        "background": "rgb(255, 255, 255)",
+        "borderStyle": "solid",
+        "borderRadius": 9,
+        "textAlign": "left",
+        "height": 51,
+        "width": 268,
+        "strongDisplay": "block",
+        "spanDisplay": "block",
+        "active": false
+      },
+      {
+        "elementId": "B-034",
+        "title": "산림 탄소",
+        "summary": "저장·배출·흡수량",
+        "appearance": "none",
+        "background": "rgb(255, 255, 255)",
+        "borderStyle": "solid",
+        "borderRadius": 9,
+        "textAlign": "left",
+        "height": 51,
+        "width": 268,
+        "strongDisplay": "block",
+        "spanDisplay": "block",
+        "active": false
+      },
+      {
+        "elementId": "B-021",
+        "title": "지역 취약성",
+        "summary": "권역별 취약성 수준",
+        "appearance": "none",
+        "background": "rgb(255, 255, 255)",
+        "borderStyle": "solid",
+        "borderRadius": 9,
+        "textAlign": "left",
+        "height": 51,
+        "width": 268,
+        "strongDisplay": "block",
+        "spanDisplay": "block",
+        "active": false
+      },
+      {
+        "elementId": "B-048",
+        "title": "주요 광산",
+        "summary": "위치·광종 분포",
+        "appearance": "none",
+        "background": "rgb(255, 255, 255)",
+        "borderStyle": "solid",
+        "borderRadius": 9,
+        "textAlign": "left",
+        "height": 51,
+        "width": 268,
+        "strongDisplay": "block",
+        "spanDisplay": "block",
+        "active": false
+      },
+      {
+        "elementId": "C-025",
+        "title": "탄소크레딧 사업",
+        "summary": "위치·유형별 분포",
+        "appearance": "none",
+        "background": "rgb(255, 255, 255)",
+        "borderStyle": "solid",
+        "borderRadius": 9,
+        "textAlign": "left",
+        "height": 51,
+        "width": 268,
+        "strongDisplay": "block",
+        "spanDisplay": "block",
+        "active": false
+      },
+      {
+        "elementId": "D-008",
+        "title": "지역 기후예산",
+        "summary": "성·시별 기후예산 규모",
+        "appearance": "none",
+        "background": "rgb(255, 255, 255)",
+        "borderStyle": "solid",
+        "borderRadius": 9,
+        "textAlign": "left",
+        "height": 51,
+        "width": 268,
+        "strongDisplay": "block",
+        "spanDisplay": "block",
+        "active": false
+      },
+      {
+        "elementId": "D-018",
+        "title": "적응기금 사업",
+        "summary": "참여지역·활동지역",
+        "appearance": "none",
+        "background": "rgb(255, 255, 255)",
+        "borderStyle": "solid",
+        "borderRadius": 9,
+        "textAlign": "left",
+        "height": 51,
+        "width": 268,
+        "strongDisplay": "block",
+        "spanDisplay": "block",
+        "active": false
+      }
+    ],
+    "activeState": {
+      "pressed": true,
+      "background": "rgb(252, 253, 252)",
+      "borderColor": "rgb(175, 201, 190)",
+      "markerContent": "\"✓ \""
+    },
+    "responsive": [
+      {
+        "width": 390,
+        "itemCount": 12,
+        "overflow": -15
+      },
+      {
+        "width": 768,
+        "itemCount": 12,
+        "overflow": -15
+      },
+      {
+        "width": 1024,
+        "itemCount": 12,
+        "overflow": -15
+      },
+      {
+        "width": 1280,
+        "itemCount": 12,
+        "overflow": -15
+      },
+      {
+        "width": 1440,
+        "itemCount": 12,
+        "overflow": -15
+      },
+      {
+        "width": 1920,
+        "itemCount": 12,
+        "overflow": -15
+      }
+    ],
+    "runtimeFailure": null
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "map-list-ui:v136",
+      "name": "MAP_DATA_ITEM_COUNT",
+      "status": "PASS",
+      "actual": 12,
+      "expected": 12
+    },
+    {
+      "type": "check",
+      "audit": "map-list-ui:v136",
+      "name": "MAP_DATA_GROUP_COUNT",
+      "status": "PASS",
+      "actual": 5,
+      "expected": ">=5"
+    },
+    {
+      "type": "check",
+      "audit": "map-list-ui:v136",
+      "name": "MAP_NATIVE_BULLET_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "type": "check",
+      "audit": "map-list-ui:v136",
+      "name": "MAP_NATIVE_BUTTON_STYLE_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-list-ui:v136",
+      "name": "MAP_ITEM_DUPLICATE_TITLE_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-list-ui:v136",
+      "name": "MAP_ITEM_TITLE_SUMMARY_SEPARATED",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-list-ui:v136",
+      "name": "MAP_ITEM_MINIMUM_TARGET",
+      "status": "PASS",
+      "actual": [],
+      "expected": "all >= 44px"
+    },
+    {
+      "type": "check",
+      "audit": "map-list-ui:v136",
+      "name": "MAP_ITEM_ACTIVE_STATE",
+      "status": "PASS",
+      "actual": {
+        "pressed": true,
+        "background": "rgb(252, 253, 252)",
+        "borderColor": "rgb(175, 201, 190)",
+        "markerContent": "\"✓ \""
+      },
+      "expected": "selected dataset is marked, not colour alone"
+    },
+    {
+      "type": "check",
+      "audit": "map-list-ui:v136",
+      "name": "MAP_LIST_RESPONSIVE_COVERAGE",
+      "status": "PASS",
+      "actual": {
+        "widths": [
+          390,
+          768,
+          1024,
+          1280,
+          1440,
+          1920
+        ],
+        "shortAtWidth": []
+      },
+      "expected": [
+        390,
+        768,
+        1024,
+        1280,
+        1440,
+        1920
+      ]
+    },
+    {
+      "type": "check",
+      "audit": "map-list-ui:v136",
+      "name": "MAP_LIST_HORIZONTAL_OVERFLOW",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-list-ui:v136",
+      "name": "BROKEN_ASSET",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-list-ui:v136",
+      "name": "CONSOLE_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-list-ui:v136",
+      "name": "MAP_LIST_RUNTIME",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null
+      },
+      "expected": {
+        "runtimeFailure": null
+      }
+    }
+  ],
+  "mapDataItemCount": 12,
+  "mapNativeBulletCount": 0,
+  "mapNativeButtonStyleCount": 0,
+  "mapItemDuplicateTitleCount": 0,
+  "items": [
+    {
+      "elementId": "A-023",
+      "title": "발전소",
+      "summary": "입지·발전원·설비용량 분포",
+      "appearance": "none",
+      "background": "rgb(255, 255, 255)",
+      "borderStyle": "solid",
+      "borderRadius": 9,
+      "textAlign": "left",
+      "height": 51,
+      "width": 268,
+      "strongDisplay": "block",
+      "spanDisplay": "block",
+      "active": false
+    },
+    {
+      "elementId": "A-024",
+      "title": "베트남 송전망",
+      "summary": "연결구조·전압별 분포",
+      "appearance": "none",
+      "background": "rgb(255, 255, 255)",
+      "borderStyle": "solid",
+      "borderRadius": 9,
+      "textAlign": "left",
+      "height": 51,
+      "width": 268,
+      "strongDisplay": "block",
+      "spanDisplay": "block",
+      "active": false
+    },
+    {
+      "elementId": "C-016",
+      "title": "재생에너지 지역계획",
+      "summary": "성·시별 계획용량",
+      "appearance": "none",
+      "background": "rgb(255, 255, 255)",
+      "borderStyle": "solid",
+      "borderRadius": 9,
+      "textAlign": "left",
+      "height": 51,
+      "width": 268,
+      "strongDisplay": "block",
+      "spanDisplay": "block",
+      "active": false
+    },
+    {
+      "elementId": "B-031",
+      "title": "산림 총면적",
+      "summary": "성·시별 산림면적",
+      "appearance": "none",
+      "background": "rgb(255, 255, 255)",
+      "borderStyle": "solid",
+      "borderRadius": 9,
+      "textAlign": "left",
+      "height": 51,
+      "width": 268,
+      "strongDisplay": "block",
+      "spanDisplay": "block",
+      "active": false
+    },
+    {
+      "elementId": "B-032",
+      "title": "수관 피복률",
+      "summary": "성·시별 수관피복률",
+      "appearance": "none",
+      "background": "rgb(255, 255, 255)",
+      "borderStyle": "solid",
+      "borderRadius": 9,
+      "textAlign": "left",
+      "height": 51,
+      "width": 268,
+      "strongDisplay": "block",
+      "spanDisplay": "block",
+      "active": false
+    },
+    {
+      "elementId": "B-033",
+      "title": "연간 산림손실",
+      "summary": "지역별 손실·연도 변화",
+      "appearance": "none",
+      "background": "rgb(255, 255, 255)",
+      "borderStyle": "solid",
+      "borderRadius": 9,
+      "textAlign": "left",
+      "height": 51,
+      "width": 268,
+      "strongDisplay": "block",
+      "spanDisplay": "block",
+      "active": false
+    },
+    {
+      "elementId": "B-034",
+      "title": "산림 탄소",
+      "summary": "저장·배출·흡수량",
+      "appearance": "none",
+      "background": "rgb(255, 255, 255)",
+      "borderStyle": "solid",
+      "borderRadius": 9,
+      "textAlign": "left",
+      "height": 51,
+      "width": 268,
+      "strongDisplay": "block",
+      "spanDisplay": "block",
+      "active": false
+    },
+    {
+      "elementId": "B-021",
+      "title": "지역 취약성",
+      "summary": "권역별 취약성 수준",
+      "appearance": "none",
+      "background": "rgb(255, 255, 255)",
+      "borderStyle": "solid",
+      "borderRadius": 9,
+      "textAlign": "left",
+      "height": 51,
+      "width": 268,
+      "strongDisplay": "block",
+      "spanDisplay": "block",
+      "active": false
+    },
+    {
+      "elementId": "B-048",
+      "title": "주요 광산",
+      "summary": "위치·광종 분포",
+      "appearance": "none",
+      "background": "rgb(255, 255, 255)",
+      "borderStyle": "solid",
+      "borderRadius": 9,
+      "textAlign": "left",
+      "height": 51,
+      "width": 268,
+      "strongDisplay": "block",
+      "spanDisplay": "block",
+      "active": false
+    },
+    {
+      "elementId": "C-025",
+      "title": "탄소크레딧 사업",
+      "summary": "위치·유형별 분포",
+      "appearance": "none",
+      "background": "rgb(255, 255, 255)",
+      "borderStyle": "solid",
+      "borderRadius": 9,
+      "textAlign": "left",
+      "height": 51,
+      "width": 268,
+      "strongDisplay": "block",
+      "spanDisplay": "block",
+      "active": false
+    },
+    {
+      "elementId": "D-008",
+      "title": "지역 기후예산",
+      "summary": "성·시별 기후예산 규모",
+      "appearance": "none",
+      "background": "rgb(255, 255, 255)",
+      "borderStyle": "solid",
+      "borderRadius": 9,
+      "textAlign": "left",
+      "height": 51,
+      "width": 268,
+      "strongDisplay": "block",
+      "spanDisplay": "block",
+      "active": false
+    },
+    {
+      "elementId": "D-018",
+      "title": "적응기금 사업",
+      "summary": "참여지역·활동지역",
+      "appearance": "none",
+      "background": "rgb(255, 255, 255)",
+      "borderStyle": "solid",
+      "borderRadius": 9,
+      "textAlign": "left",
+      "height": 51,
+      "width": 268,
+      "strongDisplay": "block",
+      "spanDisplay": "block",
+      "active": false
+    }
+  ],
+  "activeState": {
+    "pressed": true,
+    "background": "rgb(252, 253, 252)",
+    "borderColor": "rgb(175, 201, 190)",
+    "markerContent": "\"✓ \""
+  },
+  "responsive": [
+    {
+      "width": 390,
+      "itemCount": 12,
+      "overflow": -15
+    },
+    {
+      "width": 768,
+      "itemCount": 12,
+      "overflow": -15
+    },
+    {
+      "width": 1024,
+      "itemCount": 12,
+      "overflow": -15
+    },
+    {
+      "width": 1280,
+      "itemCount": 12,
+      "overflow": -15
+    },
+    {
+      "width": 1440,
+      "itemCount": 12,
+      "overflow": -15
+    },
+    {
+      "width": 1920,
+      "itemCount": 12,
+      "overflow": -15
+    }
+  ],
+  "runtimeFailure": null
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v133-ci-map-analysis-audit-1",
-  "generatedAt": "2026-09-03T05:22:35.996Z",
+  "generatedAt": "2026-09-03T06:19:00.705Z",
   "audit": "map-layer-distinction:v133",
   "status": "PASS",
   "summary": {
@@ -16,7 +16,7 @@
     "climateSnapshot": {
       "primaryElement": "B-021",
       "contextElements": "D-018",
-      "legendText": "현재 표시 중지역 취약성주 분석 데이터 · GVI 취약성 지수 · 0–100 지수숨기기적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업숨기기",
+      "legendText": "현재 표시 중지역 취약성선택 데이터 · GVI 취약성 지수 · 0–100 지수숨기기적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업숨기기",
       "hoverPopupText": "",
       "items": [
         {
@@ -24,7 +24,7 @@
           "role": "primary",
           "shape": "area",
           "unit": "0–100 지수",
-          "text": "지역 취약성주 분석 데이터 · GVI 취약성 지수 · 0–100 지수숨기기",
+          "text": "지역 취약성선택 데이터 · GVI 취약성 지수 · 0–100 지수숨기기",
           "hasToggle": true
         },
         {
@@ -80,7 +80,7 @@
     "financeAdaptation": {
       "primaryElement": "D-018",
       "contextElements": "none",
-      "legendText": "현재 표시 중적응기금 사업주 분석 데이터 · 지역 협력범위·세부 활동지역 · 사업숨기기",
+      "legendText": "현재 표시 중적응기금 사업선택 데이터 · 지역 협력범위·세부 활동지역 · 사업숨기기",
       "hoverPopupText": "",
       "items": [
         {
@@ -88,7 +88,7 @@
           "role": "primary",
           "shape": "diamond",
           "unit": "사업",
-          "text": "적응기금 사업주 분석 데이터 · 지역 협력범위·세부 활동지역 · 사업숨기기",
+          "text": "적응기금 사업선택 데이터 · 지역 협력범위·세부 활동지역 · 사업숨기기",
           "hasToggle": true
         }
       ],
@@ -126,7 +126,7 @@
     "financeCarbon": {
       "primaryElement": "C-025",
       "contextElements": "none",
-      "legendText": "현재 표시 중탄소크레딧 사업주 분석 데이터 · 탄소크레딧 사업 · 개숨기기",
+      "legendText": "현재 표시 중탄소크레딧 사업선택 데이터 · 탄소크레딧 사업 · 개숨기기",
       "hoverPopupText": "",
       "items": [
         {
@@ -134,7 +134,7 @@
           "role": "primary",
           "shape": "square",
           "unit": "개",
-          "text": "탄소크레딧 사업주 분석 데이터 · 탄소크레딧 사업 · 개숨기기",
+          "text": "탄소크레딧 사업선택 데이터 · 탄소크레딧 사업 · 개숨기기",
           "hasToggle": true
         }
       ],
@@ -221,7 +221,7 @@
         "climateSnapshot": {
           "primaryElement": "B-021",
           "contextElements": "D-018",
-          "legendText": "현재 표시 중지역 취약성주 분석 데이터 · GVI 취약성 지수 · 0–100 지수숨기기적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업숨기기",
+          "legendText": "현재 표시 중지역 취약성선택 데이터 · GVI 취약성 지수 · 0–100 지수숨기기적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업숨기기",
           "hoverPopupText": "",
           "items": [
             {
@@ -229,7 +229,7 @@
               "role": "primary",
               "shape": "area",
               "unit": "0–100 지수",
-              "text": "지역 취약성주 분석 데이터 · GVI 취약성 지수 · 0–100 지수숨기기",
+              "text": "지역 취약성선택 데이터 · GVI 취약성 지수 · 0–100 지수숨기기",
               "hasToggle": true
             },
             {
@@ -307,7 +307,7 @@
             "role": "primary",
             "shape": "area",
             "unit": "0–100 지수",
-            "text": "지역 취약성주 분석 데이터 · GVI 취약성 지수 · 0–100 지수숨기기",
+            "text": "지역 취약성선택 데이터 · GVI 취약성 지수 · 0–100 지수숨기기",
             "hasToggle": true
           },
           {
@@ -348,7 +348,7 @@
       "name": "COMPACT_LEGEND_PUBLIC_COPY",
       "status": "PASS",
       "actual": {
-        "text": "현재 표시 중지역 취약성주 분석 데이터 · GVI 취약성 지수 · 0–100 지수숨기기적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업숨기기",
+        "text": "현재 표시 중지역 취약성선택 데이터 · GVI 취약성 지수 · 0–100 지수숨기기적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업숨기기",
         "tokens": []
       },
       "expected": "Korean primary/compare legend without developer tokens"
@@ -361,7 +361,7 @@
       "actual": {
         "primaryElement": "D-018",
         "contextElements": "none",
-        "legendText": "현재 표시 중적응기금 사업주 분석 데이터 · 지역 협력범위·세부 활동지역 · 사업숨기기",
+        "legendText": "현재 표시 중적응기금 사업선택 데이터 · 지역 협력범위·세부 활동지역 · 사업숨기기",
         "hoverPopupText": "",
         "items": [
           {
@@ -369,7 +369,7 @@
             "role": "primary",
             "shape": "diamond",
             "unit": "사업",
-            "text": "적응기금 사업주 분석 데이터 · 지역 협력범위·세부 활동지역 · 사업숨기기",
+            "text": "적응기금 사업선택 데이터 · 지역 협력범위·세부 활동지역 · 사업숨기기",
             "hasToggle": true
           }
         ],
@@ -414,7 +414,7 @@
       "actual": {
         "primaryElement": "C-025",
         "contextElements": "none",
-        "legendText": "현재 표시 중탄소크레딧 사업주 분석 데이터 · 탄소크레딧 사업 · 개숨기기",
+        "legendText": "현재 표시 중탄소크레딧 사업선택 데이터 · 탄소크레딧 사업 · 개숨기기",
         "hoverPopupText": "",
         "items": [
           {
@@ -422,7 +422,7 @@
             "role": "primary",
             "shape": "square",
             "unit": "개",
-            "text": "탄소크레딧 사업주 분석 데이터 · 탄소크레딧 사업 · 개숨기기",
+            "text": "탄소크레딧 사업선택 데이터 · 탄소크레딧 사업 · 개숨기기",
             "hasToggle": true
           }
         ],
@@ -511,7 +511,7 @@
   "climateSnapshot": {
     "primaryElement": "B-021",
     "contextElements": "D-018",
-    "legendText": "현재 표시 중지역 취약성주 분석 데이터 · GVI 취약성 지수 · 0–100 지수숨기기적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업숨기기",
+    "legendText": "현재 표시 중지역 취약성선택 데이터 · GVI 취약성 지수 · 0–100 지수숨기기적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업숨기기",
     "hoverPopupText": "",
     "items": [
       {
@@ -519,7 +519,7 @@
         "role": "primary",
         "shape": "area",
         "unit": "0–100 지수",
-        "text": "지역 취약성주 분석 데이터 · GVI 취약성 지수 · 0–100 지수숨기기",
+        "text": "지역 취약성선택 데이터 · GVI 취약성 지수 · 0–100 지수숨기기",
         "hasToggle": true
       },
       {
@@ -575,7 +575,7 @@
   "financeAdaptation": {
     "primaryElement": "D-018",
     "contextElements": "none",
-    "legendText": "현재 표시 중적응기금 사업주 분석 데이터 · 지역 협력범위·세부 활동지역 · 사업숨기기",
+    "legendText": "현재 표시 중적응기금 사업선택 데이터 · 지역 협력범위·세부 활동지역 · 사업숨기기",
     "hoverPopupText": "",
     "items": [
       {
@@ -583,7 +583,7 @@
         "role": "primary",
         "shape": "diamond",
         "unit": "사업",
-        "text": "적응기금 사업주 분석 데이터 · 지역 협력범위·세부 활동지역 · 사업숨기기",
+        "text": "적응기금 사업선택 데이터 · 지역 협력범위·세부 활동지역 · 사업숨기기",
         "hasToggle": true
       }
     ],
@@ -621,7 +621,7 @@
   "financeCarbon": {
     "primaryElement": "C-025",
     "contextElements": "none",
-    "legendText": "현재 표시 중탄소크레딧 사업주 분석 데이터 · 탄소크레딧 사업 · 개숨기기",
+    "legendText": "현재 표시 중탄소크레딧 사업선택 데이터 · 탄소크레딧 사업 · 개숨기기",
     "hoverPopupText": "",
     "items": [
       {
@@ -629,7 +629,7 @@
         "role": "primary",
         "shape": "square",
         "unit": "개",
-        "text": "탄소크레딧 사업주 분석 데이터 · 탄소크레딧 사업 · 개숨기기",
+        "text": "탄소크레딧 사업선택 데이터 · 탄소크레딧 사업 · 개숨기기",
         "hasToggle": true
       }
     ],

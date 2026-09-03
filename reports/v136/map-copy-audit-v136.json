@@ -1,0 +1,224 @@
+{
+  "schemaVersion": "v136-public-copy-acceptance-1",
+  "generatedAt": "2026-09-03T06:23:15.856Z",
+  "audit": "map-copy:v136",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "map-copy:v136",
+    "status": "PASS",
+    "passed": 11,
+    "failed": 0,
+    "total": 11,
+    "failedChecks": [],
+    "panelHeadingOrder": [
+      "데이터 지도",
+      "추천 분석",
+      "지도 데이터",
+      "에너지·인프라",
+      "산림·토지",
+      "기후·위험",
+      "물·자원",
+      "국제사업·재원"
+    ],
+    "guideHeadings": [
+      "데이터명",
+      "지도 표시",
+      "기준기간",
+      "데이터 기능",
+      "참고사항",
+      "데이터명",
+      "지도 표시",
+      "기준기간",
+      "데이터 기능",
+      "참고사항",
+      "데이터명",
+      "지도 표시",
+      "기준기간",
+      "데이터 기능",
+      "참고사항",
+      "데이터명",
+      "지도 표시",
+      "기준기간",
+      "데이터 기능",
+      "참고사항",
+      "데이터명",
+      "지도 표시",
+      "기준기간",
+      "데이터 기능",
+      "참고사항"
+    ],
+    "missingCopy": [],
+    "retiredCopy": [],
+    "runtimeFailure": null
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "map-copy:v136",
+      "name": "MAP_COPY_RUNTIME",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null
+      },
+      "expected": {
+        "runtimeFailure": null
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-copy:v136",
+      "name": "MAP_PANEL_REQUIRED_COPY",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-copy:v136",
+      "name": "MAP_PANEL_RETIRED_COPY",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-copy:v136",
+      "name": "MAP_SOURCE_RETIRED_COPY",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-copy:v136",
+      "name": "MAP_PANEL_SECTION_ORDER",
+      "status": "PASS",
+      "actual": [
+        "데이터 지도",
+        "추천 분석",
+        "지도 데이터",
+        "에너지·인프라",
+        "산림·토지",
+        "기후·위험",
+        "물·자원",
+        "국제사업·재원"
+      ],
+      "expected": "추천 분석 before 지도 데이터"
+    },
+    {
+      "type": "check",
+      "audit": "map-copy:v136",
+      "name": "MAP_PRESET_COUNT",
+      "status": "PASS",
+      "actual": 5,
+      "expected": 5
+    },
+    {
+      "type": "check",
+      "audit": "map-copy:v136",
+      "name": "MAP_DATA_ITEM_COUNT",
+      "status": "PASS",
+      "actual": 12,
+      "expected": 12
+    },
+    {
+      "type": "check",
+      "audit": "map-copy:v136",
+      "name": "MAP_GUIDE_DEFAULT_OPEN",
+      "status": "PASS",
+      "actual": false,
+      "expected": false
+    },
+    {
+      "type": "check",
+      "audit": "map-copy:v136",
+      "name": "MAP_GUIDE_ROW_COUNT",
+      "status": "PASS",
+      "actual": 12,
+      "expected": 12
+    },
+    {
+      "type": "check",
+      "audit": "map-copy:v136",
+      "name": "MAP_GUIDE_READER_COLUMNS",
+      "status": "PASS",
+      "actual": [
+        "데이터명",
+        "지도 표시",
+        "기준기간",
+        "데이터 기능",
+        "참고사항",
+        "데이터명",
+        "지도 표시",
+        "기준기간",
+        "데이터 기능",
+        "참고사항",
+        "데이터명",
+        "지도 표시",
+        "기준기간",
+        "데이터 기능",
+        "참고사항",
+        "데이터명",
+        "지도 표시",
+        "기준기간",
+        "데이터 기능",
+        "참고사항",
+        "데이터명",
+        "지도 표시",
+        "기준기간",
+        "데이터 기능",
+        "참고사항"
+      ],
+      "expected": "지도 표시 replaces 공간 표현"
+    },
+    {
+      "type": "check",
+      "audit": "map-copy:v136",
+      "name": "CONSOLE_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "panelHeadingOrder": [
+    "데이터 지도",
+    "추천 분석",
+    "지도 데이터",
+    "에너지·인프라",
+    "산림·토지",
+    "기후·위험",
+    "물·자원",
+    "국제사업·재원"
+  ],
+  "guideHeadings": [
+    "데이터명",
+    "지도 표시",
+    "기준기간",
+    "데이터 기능",
+    "참고사항",
+    "데이터명",
+    "지도 표시",
+    "기준기간",
+    "데이터 기능",
+    "참고사항",
+    "데이터명",
+    "지도 표시",
+    "기준기간",
+    "데이터 기능",
+    "참고사항",
+    "데이터명",
+    "지도 표시",
+    "기준기간",
+    "데이터 기능",
+    "참고사항",
+    "데이터명",
+    "지도 표시",
+    "기준기간",
+    "데이터 기능",
+    "참고사항"
+  ],
+  "missingCopy": [],
+  "retiredCopy": [],
+  "runtimeFailure": null
+}
