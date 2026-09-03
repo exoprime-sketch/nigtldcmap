@@ -3,6 +3,7 @@ import type { KeyboardEvent, PointerEvent } from "react";
 import type { SemanticObservationV125 } from "../../../data/visualization/semanticTypesV125";
 import type { DataFinderSelectorStateV125 } from "../../../types/dataFinderV125";
 import "./primary-energy-composition-v132.css";
+import { PublicTermTextV134 } from "../../help/PublicTermV134";
 
 interface Props {
   rows: SemanticObservationV125[];
@@ -202,17 +203,33 @@ export default function PrimaryEnergyCompositionAnalysisV132({
       <section className="pec132__kpis" aria-label="최신 핵심현황" data-testid="a016-kpis">
         <article>
           <span>총 1차 에너지 공급량</span>
-          <strong>{latest.total === null ? "미공개" : `${formatEnergyV132(latest.total)} ${unit}`}</strong>
+          <strong>
+            {latest.total === null ? (
+              "미공개"
+            ) : (
+              <PublicTermTextV134
+                text={`${formatEnergyV132(latest.total)} ${unit}`}
+              />
+            )}
+          </strong>
           <small>{latest.year}년</small>
         </article>
         <article>
           <span>가장 큰 에너지원</span>
           <strong>{largestSource.label}</strong>
-          <small>{formatEnergyV132(largestSource.value)} {unit}</small>
+          <small>
+            <PublicTermTextV134
+              text={`${formatEnergyV132(largestSource.value)} ${unit}`}
+            />
+          </small>
         </article>
         <article>
           <span>수력·기타 재생에너지</span>
-          <strong>{formatEnergyV132(renewableTotal)} {unit}</strong>
+          <strong>
+            <PublicTermTextV134
+              text={`${formatEnergyV132(renewableTotal)} ${unit}`}
+            />
+          </strong>
           <small>두 공개 계열의 합계 · {latest.year}년</small>
         </article>
         <article>
@@ -327,7 +344,9 @@ export default function PrimaryEnergyCompositionAnalysisV132({
 
       <footer className="pec132__source">
         <span>자료 제공기관: Energy Institute</span>
-        <span>단위: {unit}</span>
+        <span>
+          단위: <PublicTermTextV134 text={unit} />
+        </span>
         <span>최신 기준연도: {maximumYear}년</span>
       </footer>
     </div>

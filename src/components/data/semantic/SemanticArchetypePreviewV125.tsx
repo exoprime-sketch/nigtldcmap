@@ -271,7 +271,7 @@ export default function SemanticArchetypePreviewV125({
         data-public-empty-reason="no-populated-records"
       >
         <div data-testid="public-primary-visualization">
-          <strong>표시할 실제 레코드가 없습니다</strong>
+          <strong>아직 공개된 값이 없습니다</strong>
           <p>{publicNoDataReasonV128(contract.noDataReason)}</p>
         </div>
       </section>

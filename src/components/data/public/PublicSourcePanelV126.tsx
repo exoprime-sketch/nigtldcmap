@@ -16,12 +16,14 @@ interface Props {
   indicators: VietnamIndicatorMetaV124[];
   observations: VietnamObservationV124[];
   entities: VietnamEntityV124[];
+  spatialUnit?: string;
 }
 
 export default function PublicSourcePanelV126({
   indicators,
   observations,
   entities,
+  spatialUnit,
 }: Props) {
   const organizations = uniquePublicValuesV126([
     ...indicators.map((item) => item.sourceOrg),
@@ -61,12 +63,20 @@ export default function PublicSourcePanelV126({
   ]);
 
   return (
-    <section className="pav126-source" data-testid="public-source-panel">
-      <div className="pav126-section-heading">
-        <span>출처·기준연도</span>
-        <h3>공식 자료와 해석 기준</h3>
-      </div>
-      <dl>
+    <details
+      className="pav126-source pav126-source--details-v135"
+      data-testid="detail-metadata-v135"
+    >
+      <summary>자료정보</summary>
+      <section
+        className="pav126-source__content-v135"
+        data-testid="public-source-panel"
+      >
+        <div className="pav126-section-heading">
+          <span>출처·기준연도</span>
+          <h3>공식 자료와 해석 기준</h3>
+        </div>
+        <dl>
         <div>
           <dt>자료 제공기관</dt>
           <dd>
@@ -85,6 +95,12 @@ export default function PublicSourcePanelV126({
             <PublicTermTextV134 text={units.join(" · ") || "미기재"} />
           </dd>
         </div>
+        {spatialUnit && (
+          <div>
+            <dt>자료 범위</dt>
+            <dd><PublicTermTextV134 text={publicSpatialUnitLabelV135(spatialUnit)} /></dd>
+          </div>
+        )}
         {licenses.length > 0 && (
           <div>
             <dt>이용조건·출처표시</dt>
@@ -93,9 +109,9 @@ export default function PublicSourcePanelV126({
             </dd>
           </div>
         )}
-      </dl>
-      {urls.length > 0 && (
-        <div className="pav126-source__links">
+        </dl>
+        {urls.length > 0 && (
+          <div className="pav126-source__links">
           {urls.slice(0, 4).map((url, index) => (
             <a key={url} href={url} target="_blank" rel="noreferrer">
               <PublicTermExpandedTextV134
@@ -103,10 +119,28 @@ export default function PublicSourcePanelV126({
               />
             </a>
           ))}
-        </div>
-      )}
-    </section>
+          </div>
+        )}
+      </section>
+    </details>
   );
+}
+
+function publicSpatialUnitLabelV135(value: string): string {
+  const labels: Record<string, string> = {
+    nation: "국가",
+    country: "국가",
+    national: "국가",
+    region: "권역",
+    province: "성·시",
+    adm1: "성·시",
+    city: "도시",
+    district: "시·군·구",
+    facility: "시설",
+    site: "지점",
+    point: "지점",
+  };
+  return labels[value.trim().toLocaleLowerCase("en-US")] || value;
 }
 
 function uniquePublicValuesV126(values: unknown[]): string[] {
