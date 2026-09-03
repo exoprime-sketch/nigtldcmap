@@ -257,3 +257,152 @@ export async function hoverMapFeatureForTooltipV135(
  */
 export const MINE_TOOLTIP_CONTENT_PATTERN_SOURCE_V135 =
   "/광산|광종|석탄|금|구리|보크사이트|철/u";
+
+/**
+ * V135 map dataset activation.
+ *
+ * The all-map-data card is itself the product's activation control: a real
+ * <button> carrying data-element-id, so it is keyboard reachable and needs no
+ * test-only affordance. Selecting it by matching UI wording ("분석", "지도",
+ * "보기") coupled the release gate to public copy, and the audit's readiness
+ * signal after a re-navigation was the panel separator, which mounts before the
+ * dataset list. On a slow runner the card is therefore absent at click time and
+ * the activation silently does nothing, which surfaces much later as an
+ * unrelated timeout. This helper waits for the control, clicks it, and confirms
+ * the effect the product is supposed to produce.
+ */
+export function mapDatasetControlSelectorV135(elementId) {
+  return `[data-testid="map-all-data-layer-v135"][data-element-id="${elementId}"]`;
+}
+
+export async function activateMapDatasetV135(
+  cdp,
+  {
+    elementId,
+    evaluateValue,
+    waitForValue,
+    timeoutMs = 35_000,
+    requireFeatureControls = false,
+  }
+) {
+  const selector = mapDatasetControlSelectorV135(elementId);
+  const diagnostics = {
+    elementId,
+    controlSelector: selector,
+    controlFound: false,
+    controlTag: "",
+    controlRole: "",
+    controlText: "",
+    controlDisabled: null,
+    clickDispatched: false,
+    clickAttempts: 0,
+    primaryBefore: "",
+    primaryAfter: "",
+    renderedMapSymbols: "",
+    featureControlCount: 0,
+    url: "",
+    failure: null,
+  };
+
+  const readContext = async () => {
+    const context = await evaluateValue(
+      cdp,
+      `(() => {
+        const root = document.querySelector('[data-testid="map-public-content"]');
+        return {
+          primaryAfter: root?.getAttribute('data-primary-element') || '',
+          renderedMapSymbols: root?.getAttribute('data-rendered-map-symbols') || '',
+          featureControlCount: document.querySelectorAll(${JSON.stringify(
+            `.cdp-map-fallback__feature-control[data-element-id="${elementId}"]`
+          )}).length,
+          url: location.href,
+        };
+      })()`
+    );
+    Object.assign(diagnostics, context || {});
+  };
+
+  try {
+    // The dataset list, not the panel shell, is what makes activation possible.
+    await waitForValue(
+      cdp,
+      `(() => {
+        const node = document.querySelector(${JSON.stringify(selector)});
+        if (!node) return false;
+        const rect = node.getBoundingClientRect();
+        return rect.width > 0 && rect.height > 0 && node.disabled !== true;
+      })()`,
+      { timeoutMs }
+    );
+
+    const before = await evaluateValue(
+      cdp,
+      `(() => {
+        const node = document.querySelector(${JSON.stringify(selector)});
+        const root = document.querySelector('[data-testid="map-public-content"]');
+        return {
+          controlFound: Boolean(node),
+          controlTag: node?.tagName || '',
+          controlRole: node?.getAttribute('role') || node?.tagName?.toLowerCase() || '',
+          controlText: String(node?.textContent || '').normalize('NFC').replace(/\s+/gu, ' ').trim().slice(0, 120),
+          controlDisabled: node?.disabled === true,
+          primaryBefore: root?.getAttribute('data-primary-element') || '',
+        };
+      })()`
+    );
+    Object.assign(diagnostics, before || {});
+
+    // Click, then confirm the product actually made this the primary analysis.
+    // A single retry covers a click landing on the frame the list re-rendered.
+    let activated = false;
+    for (let attempt = 1; attempt <= 2 && !activated; attempt += 1) {
+      diagnostics.clickAttempts = attempt;
+      diagnostics.clickDispatched = Boolean(
+        await evaluateValue(
+          cdp,
+          `(() => {
+            const node = document.querySelector(${JSON.stringify(selector)});
+            if (!(node instanceof HTMLElement) || node.disabled === true) return false;
+            node.click();
+            return true;
+          })()`
+        )
+      );
+      try {
+        await waitForValue(
+          cdp,
+          `document.querySelector('[data-testid="map-public-content"]')?.getAttribute('data-primary-element') === ${JSON.stringify(
+            elementId
+          )}`,
+          { timeoutMs: attempt === 1 ? Math.min(timeoutMs, 15_000) : timeoutMs }
+        );
+        activated = true;
+      } catch (error) {
+        if (attempt === 2) throw error;
+      }
+    }
+
+    // The layer's renderer has to be on the map, not merely selected.
+    await waitForValue(
+      cdp,
+      `(document.querySelector('[data-testid="map-public-content"]')?.getAttribute('data-rendered-map-symbols') || '')
+        .split(',').some((entry) => entry.startsWith(${JSON.stringify(`${elementId}|primary|`)}))`,
+      { timeoutMs }
+    );
+
+    if (requireFeatureControls) {
+      await waitForValue(
+        cdp,
+        `document.querySelectorAll(${JSON.stringify(
+          `.cdp-map-fallback__feature-control[data-element-id="${elementId}"]`
+        )}).length > 0`,
+        { timeoutMs }
+      );
+    }
+  } catch (error) {
+    diagnostics.failure = error instanceof Error ? error.message : String(error);
+  }
+
+  await readContext();
+  return diagnostics;
+}

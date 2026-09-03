@@ -14,6 +14,7 @@ import {
 } from "./v125/browser-runtime.mjs";
 import {
   MINE_TOOLTIP_CONTENT_PATTERN_SOURCE_V135,
+  activateMapDatasetV135,
   finishAuditV135,
   hoverMapFeatureForTooltipV135,
   mapUrlV135,
@@ -53,6 +54,8 @@ let resize = null;
 let contextMaximumObserved = 0;
 let tooltipText = "";
 let mineTooltipDiagnostics = null;
+let mineActivationDiagnostics = null;
+let contextActivationDiagnostics = null;
 const brokenAssets = [];
 try {
   if (!existsSync(resolve(PROJECT_ROOT, "build/index.html"))) {
@@ -115,20 +118,13 @@ try {
   const restored = await evaluateValue(browser.cdp, layoutExpression());
   resize = { before, after, restored };
 
-  const activated = await evaluateValue(
-    browser.cdp,
-    `(() => {
-      const card = [...document.querySelectorAll('[data-testid="map-all-data-layer-v135"]')]
-        .find((node) => (node.getAttribute('data-element-id') || node.getAttribute('data-map-element')) === 'A-023');
-      const action = [...(card?.querySelectorAll('button, a') || [])]
-        .find((node) => /분석|지도|보기/u.test(String(node.textContent || ''))) || (card?.matches('button, a') ? card : null);
-      if (!(action instanceof HTMLElement)) return false;
-      action.click();
-      return true;
-    })()`
-  );
-  if (activated) {
-    await waitForValue(browser.cdp, `document.querySelector('[data-testid="map-public-content"]')?.getAttribute('data-primary-element') === 'A-023'`, { timeoutMs: 35_000 });
+  contextActivationDiagnostics = await activateMapDatasetV135(browser.cdp, {
+    elementId: "A-023",
+    evaluateValue,
+    waitForValue,
+    timeoutMs: 35_000,
+  });
+  if (!contextActivationDiagnostics.failure) {
     const contextButtons = await evaluateValue(
       browser.cdp,
       `(() => [...document.querySelectorAll('[data-testid="map-context-toggle-v133"]')]
@@ -152,19 +148,14 @@ try {
     }
   }
 
-  const mineActivated = await evaluateValue(
-    browser.cdp,
-    `(() => {
-      const card = [...document.querySelectorAll('[data-testid="map-all-data-layer-v135"]')]
-        .find((node) => (node.getAttribute('data-element-id') || node.getAttribute('data-map-element')) === 'B-048');
-      const action = [...(card?.querySelectorAll('button, a') || [])]
-        .find((node) => /분석|지도|보기/u.test(String(node.textContent || ''))) || (card?.matches('button, a') ? card : null);
-      if (!(action instanceof HTMLElement)) return false;
-      action.click(); return true;
-    })()`
-  );
-  if (mineActivated) {
-    await waitForValue(browser.cdp, `document.querySelector('[data-testid="map-public-content"]')?.getAttribute('data-primary-element') === 'B-048'`, { timeoutMs: 35_000 });
+  mineActivationDiagnostics = await activateMapDatasetV135(browser.cdp, {
+    elementId: "B-048",
+    evaluateValue,
+    waitForValue,
+    timeoutMs: 35_000,
+    requireFeatureControls: true,
+  });
+  if (!mineActivationDiagnostics.failure) {
     mineTooltipDiagnostics = await hoverMapFeatureForTooltipV135(browser.cdp, {
       elementId: "B-048",
       contentPattern: MINE_TOOLTIP_CONTENT_PATTERN_SOURCE_V135,
@@ -205,6 +196,24 @@ audit.check("NORMAL_CONTEXT_LAYER_MAX", contextMaximumObserved <= 1, contextMaxi
 audit.check("MAP_COUNTRY_INFO_BUTTON_COUNT", inventory?.countryActionCount === 0, inventory?.countryActionCount ?? null, 0);
 audit.check("MAP_TOOLTIP_UI_STATE_LABEL_COUNT", tooltipUiLabels.length === 0, tooltipUiLabels, []);
 audit.check(
+  "MAP_MINE_ACTIVATION",
+  mineActivationDiagnostics !== null &&
+    mineActivationDiagnostics.failure === null &&
+    mineActivationDiagnostics.controlFound === true &&
+    mineActivationDiagnostics.clickDispatched === true &&
+    mineActivationDiagnostics.primaryAfter === "B-048" &&
+    String(mineActivationDiagnostics.renderedMapSymbols || "")
+      .split(",")
+      .some((entry) => entry.startsWith("B-048|primary|")),
+  mineActivationDiagnostics,
+  {
+    controlFound: true,
+    clickDispatched: true,
+    primaryAfter: "B-048",
+    renderedMapSymbols: "B-048|primary|…",
+  }
+);
+audit.check(
   "MAP_MINE_TOOLTIP",
   Boolean(tooltipText) &&
     /광산|광종|석탄|금|구리|보크사이트|철/u.test(tooltipText) &&
@@ -223,6 +232,8 @@ finishAuditV135(audit, "map-access-audit-v135.json", {
   leftPanelPointerResizePass: resizePass,
   normalContextLayerMaxObserved: contextMaximumObserved,
   mapTooltipUiStateLabelCount: tooltipUiLabels.length,
+  mineActivationDiagnostics,
+  contextActivationDiagnostics,
   mineTooltipDiagnostics,
   runtimeFailure,
 });

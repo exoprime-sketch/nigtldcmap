@@ -17,6 +17,7 @@ import {
   MINE_TOOLTIP_CONTENT_PATTERN_SOURCE_V135,
   REQUIRED_SCREENSHOTS_V135,
   V135_SCREENSHOT_ROOT,
+  activateMapDatasetV135,
   detailUrlV135,
   finderUrlV135,
   hoverMapFeatureForTooltipV135,
@@ -122,24 +123,21 @@ async function openMapGuide(cdp) {
   await settle(cdp);
 }
 
-async function showMapDataset(cdp, elementId) {
-  const clicked = await evaluateValue(
-    cdp,
-    `(() => {
-      const card = [...document.querySelectorAll('[data-testid="map-all-data-layer-v135"]')]
-        .find((node) => node.getAttribute('data-element-id') === ${JSON.stringify(elementId)});
-      if (!(card instanceof HTMLElement)) return false;
-      card.click();
-      return true;
-    })()`
-  );
-  if (!clicked) throw new Error(`map dataset control missing: ${elementId}`);
-  await waitForValue(
-    cdp,
-    `document.querySelector('[data-testid="map-public-content"]')?.getAttribute('data-primary-element') === ${JSON.stringify(elementId)}`,
-    { timeoutMs: 35_000 }
-  );
+async function showMapDataset(cdp, elementId, options = {}) {
+  const activation = await activateMapDatasetV135(cdp, {
+    elementId,
+    evaluateValue,
+    waitForValue,
+    timeoutMs: 35_000,
+    ...options,
+  });
+  if (activation.failure) {
+    throw new Error(
+      `map dataset activation failed for ${elementId}: ${activation.failure}`
+    );
+  }
   await settle(cdp);
+  return activation;
 }
 
 async function openComparison(cdp, elementA, elementB) {
@@ -283,7 +281,7 @@ try {
   await capture(cdp, "map-left-expanded.png", '[data-testid="map-resizable-layout"]');
 
   // Mine hover detail
-  await showMapDataset(cdp, "B-048");
+  await showMapDataset(cdp, "B-048", { requireFeatureControls: true });
   const mineHover = await hoverMapFeatureForTooltipV135(cdp, {
     elementId: "B-048",
     contentPattern: MINE_TOOLTIP_CONTENT_PATTERN_SOURCE_V135,
