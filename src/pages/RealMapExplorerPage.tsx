@@ -48,6 +48,7 @@ import {
   isPublicMapWorkspacePresetIdV126,
   publicMapAccuracyNoticeV126,
   publicMapDataFunctionV135,
+  publicMapDataItemSummaryV136,
   publicMapLayerCopyV126,
   publicMapLayerTitleV126,
   publicMapPresetContextCandidatesV133,
@@ -2913,7 +2914,7 @@ export default function RealMapExplorerPage({
                         : publicTextV126(properties.sourceRegion)
                         ? `[권역값] ${sourceRegion}`
                         : isPrimary
-                        ? "주 분석 데이터"
+                        ? "선택 데이터"
                         : "함께 보기",
                     ],
                 { testId: "map-hover-popup-v133" }
@@ -3240,7 +3241,7 @@ export default function RealMapExplorerPage({
                 : [
                     name,
                     publicTextV126(feature.properties?.nameNote) || "",
-                    isPrimary ? "주 분석 데이터" : "보조 데이터",
+                    isPrimary ? "선택 데이터" : "보조 데이터",
                   ],
               isPowerPlant
                 ? {
@@ -4377,11 +4378,11 @@ export default function RealMapExplorerPage({
     const layer = layers.find((item) => item.elementId === elementId);
     if (!layer || layer.enabled === false) return;
     if (!primaryLayerId) {
-      setRoleNotice("먼저 '분석하기'로 주 분석 데이터를 선택하세요.");
+      setRoleNotice("먼저 '분석하기'로 선택 데이터를 선택하세요.");
       return;
     }
     if (elementId === primaryLayerId) {
-      setRoleNotice("현재 주 분석 데이터는 보조 표시로 중복할 수 없습니다.");
+      setRoleNotice("현재 선택 데이터는 보조 표시로 중복할 수 없습니다.");
       return;
     }
     if (contextLayerIds.includes(elementId)) {
@@ -4433,7 +4434,7 @@ export default function RealMapExplorerPage({
       layers.filter((layer) => layer.enabled !== false).map((layer) => layer.elementId)
     );
     if (!available.has(workspace.primary.elementId)) {
-      setRoleNotice("이 분석 프리셋의 주 데이터를 사용할 수 없습니다.");
+      setRoleNotice("이 추천 분석의 데이터를 사용할 수 없습니다.");
       return;
     }
     const contexts = workspace.context
@@ -4471,7 +4472,7 @@ export default function RealMapExplorerPage({
       `${
         PUBLIC_MAP_WORKSPACE_PRESETS_V126.find((item) => item.id === presetId)
           ?.labelKo || "분석"
-      } 주 분석 데이터를 표시했습니다. 함께 보기는 꺼진 상태입니다.`
+      } 선택 데이터를 표시했습니다. 함께 보기는 꺼진 상태입니다.`
     );
     const primaryLayer = layers.find(
       (layer) => layer.elementId === workspace.primary.elementId
@@ -4505,7 +4506,7 @@ export default function RealMapExplorerPage({
       `${publicMapLayerTitleV126(
         elementId,
         layer.publicShortTitle
-      )}을(를) 주 분석 데이터로 표시했습니다.`
+      )}을(를) 선택 데이터로 표시했습니다.`
     );
     onSelectorStateChange(semanticStateForLayerV125(layer));
   }
@@ -4540,7 +4541,7 @@ export default function RealMapExplorerPage({
     setOverlapChoicesV133([]);
     onSelectorStateChange(semanticStateForLayerV125(primaryLayer));
     setRoleNotice(
-      `${type === "adaptation" ? "적응기금" : "탄소크레딧"} 사업을 주 분석 데이터로 표시합니다.`
+      `${type === "adaptation" ? "적응기금" : "탄소크레딧"} 사업을 선택 데이터로 표시합니다.`
     );
   }
 
@@ -4770,7 +4771,7 @@ export default function RealMapExplorerPage({
           <div className="cdp-map-panel-header">
             <div>
               <h1>데이터 지도</h1>
-              <p>주 분석 데이터 1개를 보고, 필요하면 보조 데이터 1개를 함께 보세요.</p>
+              <p>선택 데이터 1개를 보고, 필요하면 보조 데이터 1개를 함께 보세요.</p>
             </div>
             <button
               type="button"
@@ -4824,7 +4825,7 @@ export default function RealMapExplorerPage({
           </div>
 
           <section className="cdp-map-presets" aria-labelledby="map-preset-title">
-            <h2 id="map-preset-title">분석 프리셋</h2>
+            <h2 id="map-preset-title">추천 분석</h2>
             {!primaryLayerId && (
               <p className="cdp-map-preset-guide" role="note">
                 배경지도와 63개 성·시 경계가 준비됐습니다. 아래
@@ -4856,15 +4857,16 @@ export default function RealMapExplorerPage({
             data-testid="map-all-data-v135"
             aria-labelledby="map-all-data-title-v135"
           >
-            <h2 id="map-all-data-title-v135">전체 지도 데이터</h2>
-            <p className="cdp-map-all-data-v135__lede">
-              검증된 지도 데이터 {comparisonLayerOptionsV135.length}개를 분야별로
-              직접 선택할 수 있습니다.
-            </p>
+            <header>
+              <h2 id="map-all-data-title-v135">지도 데이터</h2>
+              <p className="cdp-map-all-data-v135__lede">
+                지도에서 확인할 데이터를 선택하세요
+              </p>
+            </header>
             {groupedLayers.map(([category, categoryLayers]) => (
               <div key={category} className="cdp-map-all-data-v135__group">
                 <h3 data-map-group-v135={category}>{category}</h3>
-                <ul>
+                <ul className="cdp-map-all-data-v135__list">
                   {categoryLayers.map((layer) => (
                     <li key={layer.elementId}>
                       <button
@@ -4886,10 +4888,7 @@ export default function RealMapExplorerPage({
                           )}
                         </strong>
                         <span>
-                          {publicMapDataFunctionV135(
-                            layer.elementId,
-                            layer.mapBenefit
-                          )}
+                          {publicMapDataItemSummaryV136(layer.elementId)}
                         </span>
                       </button>
                     </li>
@@ -4928,7 +4927,7 @@ export default function RealMapExplorerPage({
             >
               <h2>{selectedPresetV133.labelKo}</h2>
               <div className="cdp-map-focus-summary-v133__primary">
-                <span>주 분석 데이터</span>
+                <span>선택 데이터</span>
                 <strong>
                   {publicMapLayerTitleV126(
                     primaryLayerId,
@@ -5111,11 +5110,11 @@ export default function RealMapExplorerPage({
                         <dd>{layer.latestYear || layer.sourceYear || "미표기"}</dd>
                       </div>
                       <div>
-                        <dt>공간표현</dt>
+                        <dt>지도 표시</dt>
                         <dd>{copy.spatialTypeLabelKo}</dd>
                       </div>
                       <div>
-                        <dt>커버리지</dt>
+                        <dt>표시 범위</dt>
                         <dd>
                           <PublicTermTextV134
                             text={publicMapCoverageTextV126(layer)}
@@ -6133,7 +6132,7 @@ export default function RealMapExplorerPage({
                 text={
                   focusedLayer
                     ? focusedPublicCopy?.titleKo || ""
-                    : "분석 프리셋을 선택하세요"
+                    : "추천 분석을 선택하세요"
                 }
               />
             </strong>
@@ -6274,7 +6273,7 @@ export default function RealMapExplorerPage({
                         </strong>
                         <small>
                           {item.role === "primary"
-                            ? "주 분석 데이터"
+                            ? "선택 데이터"
                             : "함께 보기"} ·{" "}
                           <PublicTermTextV134
                             text={`${item.variable} · ${item.unit}`}
@@ -6344,7 +6343,7 @@ export default function RealMapExplorerPage({
                   </dd>
                 </div>
                 <div>
-                  <dt>기준연도·기간</dt>
+                  <dt>자료연도</dt>
                   <dd>{focusedSelector?.period || focusedLayer.sourceYear || "미표기"}</dd>
                 </div>
                 <div>
@@ -6540,7 +6539,7 @@ export default function RealMapExplorerPage({
                       ""
                     }
                   />
-                  <Evidence label="기준연도·기간" value={focusedSelector.period} />
+                  <Evidence label="자료연도" value={focusedSelector.period} />
                   <Evidence
                     label="단위"
                     value={
@@ -6807,7 +6806,7 @@ export default function RealMapExplorerPage({
                         }
                       />
                       <Evidence
-                        label="기준연도·기간"
+                        label="자료연도"
                         value={
                           selectedSpatial.period ||
                           selectedOwningSelector?.period ||

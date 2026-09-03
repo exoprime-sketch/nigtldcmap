@@ -289,3 +289,112 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* V136 map dataset list.
+   The list previously inherited browser defaults: disc bullets, 40px indent and
+   a native grey push button with centred text, which also ran the dataset name
+   straight into its summary. These rules make each dataset a legible, left
+   aligned target with its own selected state. */
+.cdp-map-all-data-v135__lede {
+  margin: 4px 0 10px;
+  color: #61766e;
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+
+.cdp-map-all-data-v135__group {
+  margin-bottom: 12px;
+}
+
+.cdp-map-all-data-v135__group:last-of-type {
+  margin-bottom: 0;
+}
+
+.cdp-map-all-data-v135__group > h3 {
+  margin: 0 0 6px;
+  color: #4a5d56;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.cdp-map-all-data-v135__list {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cdp-map-all-data-v135__list > li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cdp-map-all-data-v135__item {
+  display: grid;
+  gap: 2px;
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 1px solid #cddbd4;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #24483c;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: border-color 120ms ease, background-color 120ms ease;
+}
+
+.cdp-map-all-data-v135__item > strong {
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 750;
+  line-height: 1.3;
+}
+
+.cdp-map-all-data-v135__item > span {
+  display: block;
+  color: #61766e;
+  font-size: 0.69rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.cdp-map-all-data-v135__item:hover:not(:disabled) {
+  border-color: #7fa595;
+  background: #f4f9f6;
+}
+
+.cdp-map-all-data-v135__item:focus-visible {
+  outline: 2px solid #176a4b;
+  outline-offset: 2px;
+}
+
+.cdp-map-all-data-v135__item.is-active {
+  border-color: #176a4b;
+  background: #eaf4ef;
+}
+
+/* The selected dataset is named, not only tinted. */
+.cdp-map-all-data-v135__item.is-active > strong::before {
+  content: "✓ ";
+  color: #176a4b;
+  font-weight: 800;
+}
+
+.cdp-map-all-data-v135__item:disabled {
+  border-color: #e0e6e3;
+  background: #f6f8f7;
+  color: #93a29b;
+  cursor: not-allowed;
+}
+
+.cdp-map-all-data-v135__compare {
+  width: 100%;
+  margin-top: 10px;
+}
