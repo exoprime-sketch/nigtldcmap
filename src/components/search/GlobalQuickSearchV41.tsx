@@ -129,8 +129,8 @@ export default function GlobalQuickSearchV41({
             ref={inputRef}
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="데이터명, 측정항목, 기술, 기관, 사업 또는 지역"
-            aria-label="통합 검색어"
+            placeholder="어떤 데이터를 찾으시나요?"
+            aria-label="데이터명, 항목, 기술, 기관, 사업 또는 지역 검색"
           />
           {query && (
             <button
@@ -145,10 +145,10 @@ export default function GlobalQuickSearchV41({
 
         {!hasQuery ? (
           <div className="global-search-v41-empty">
-            <strong>공개 데이터 통합 검색</strong>
+            <strong>데이터 통합 검색</strong>
             <p>
-              데이터명과 사용자용 측정항목·분류·기술·기관·정책·사업·지역·자료
-              제공기관을 함께 검색합니다.
+              데이터명과 항목·분류·기술·기관·정책·사업·지역·제공기관을 함께
+              검색합니다.
             </p>
             <button
               type="button"

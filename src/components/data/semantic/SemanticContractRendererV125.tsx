@@ -1,3 +1,4 @@
+import { publicScaledNumberV136_2 } from "../../../utils/publicNumberScaleV136_2";
 import { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import type {
@@ -12,6 +13,7 @@ import {
   approvedEntityAttributesV126,
   publicEntityAttributeLabelV126,
   publicMissingReasonLabelV126,
+  publicSourceOrganizationV136_1,
   publicSourceUrlV126,
   publicTextV126,
 } from "../../../data/visualization/publicFieldPolicyV126";
@@ -24,7 +26,10 @@ import type {
 import { getPublicFixedDomainV127 } from "../../../data/visualization/publicVisualizationRegistryV126";
 import { publicEntityTitleV131 } from "../../../data/visualization/publicEntityTitleV131";
 import { getPublicAnalysisHeadingsV134 } from "../../../data/visualization/publicAnalysisHeadingsV134";
-import { publicDimensionValueV134 } from "../../../data/visualization/publicCopyRegistryV126";
+import {
+  publicDimensionValueV134,
+  publicMetricLabelV136_2,
+} from "../../../data/visualization/publicCopyRegistryV126";
 import PublicEntityCardGridV131 from "../public/PublicEntityCardGridV131";
 import PublicPortfolioListV132 from "../public/PublicPortfolioListV132";
 import PublicPortfolioSummaryV132 from "../public/PublicPortfolioSummaryV132";
@@ -214,7 +219,7 @@ function renderObservationPanelV125(
         <section className="sv125-contract-note" role="note">
           <strong>구조화 표에 적합한 데이터</strong>
           <span>
-            수치 축으로 변환하지 않고 아래 원자료 보기에서 공개된 값을
+            수치 축으로 변환하지 않고 아래 상세 데이터에서 공개된 값을
             유지합니다.
           </span>
         </section>
@@ -307,7 +312,7 @@ function CompositionPanelV125({ rows }: { rows: NumericRowV125[] }) {
   return (
     <VisualizationFrameV125 eyebrow="구성비" title="분류별 구성">
       <p className="sv125-contract-help">
-        원자료 백분율은 100을 기준으로 표시하며, 포함관계가 다른 항목을 임의로
+        공개된 백분율은 100을 기준으로 표시하며, 포함관계가 다른 항목을 임의로
         재정규화하지 않습니다.
       </p>
       {groupByUnitV125(rows).map(({ unit, rows: unitRows }) => {
@@ -333,7 +338,7 @@ function CompositionPanelV125({ rows }: { rows: NumericRowV125[] }) {
             {hasBroadIndustry && hasManufacturingSubset && (
               <p className="sv125-contract-help">
                 제조업은 광공업·건설에 포함되므로 100% 구성 막대에서
-                중복하지 않습니다. 원자료 표에서 별도 항목으로 확인할 수
+                중복하지 않습니다. 상세 데이터에서 별도 항목으로 확인할 수
                 있습니다.
               </p>
             )}
@@ -470,7 +475,7 @@ function PairedCategoryPanelV125({ rows }: { rows: PresentRowV125[] }) {
     return (
       <VisualizationFrameV125 eyebrow="짝 비교" title="짝지을 분류 확인 필요">
         <p className="sv125-contract-warning">
-          원자료에 정확히 두 값을 가진 분류 차원이 없어 임의로 두 계열을 묶지
+          자료에 정확히 두 값을 가진 분류 차원이 없어 임의로 두 계열을 묶지
           않았습니다.
         </p>
         <EvidenceCardsV125 rows={rows} embedded />
@@ -515,7 +520,7 @@ function PairedCategoryPanelV125({ rows }: { rows: PresentRowV125[] }) {
                     <small>
                       {row
                         ? row.unit || row.semanticMeasure.unit || "단위 미기재"
-                        : "원자료 없음"}
+                        : "자료 없음"}
                     </small>
                   </section>
                 );
@@ -638,7 +643,7 @@ function TrendPanelV125({
   }
 
   return (
-    <VisualizationFrameV125 eyebrow="연도별" title="측정항목 추세">
+    <VisualizationFrameV125 eyebrow="연도별" title="항목 추세">
       {unitGroups.map(({ unit, rows: unitRows }) =>
         comparableYearCountV135(unitRows) >= 3 ? (
           <TrendUnitV125
@@ -850,11 +855,19 @@ function MetricCardsV125({
 }) {
   return (
     <VisualizationFrameV125 eyebrow="핵심 수치" title={title}>
-      <div className="sv125-metric-grid">
-        {rows.map((row) => (
+      <div className="sv125-metric-grid" data-testid="public-metric-cards">
+        {rows.map((row) => {
+          const unit = observationUnitV125(row);
+          const scaled = publicScaledNumberV136_2(row.value, unit);
+          return (
           <article key={row.recordId}>
-            <span><PublicTermTextV134 text={row.displayLabel} /></span>
-            <strong>{formatValueV121(row.value)}</strong>
+            <span><PublicTermTextV134 text={publicMetricLabelV136_2(row.displayLabel)} /></span>
+            <strong
+              title={scaled.scaled ? `${scaled.exact}${unit ? ` ${unit}` : ""}` : undefined}
+              data-public-exact-value={scaled.scaled ? scaled.exact : undefined}
+            >
+              {scaled.display}
+            </strong>
             <small>
               <PublicTermTextV134
                 text={
@@ -865,7 +878,8 @@ function MetricCardsV125({
               />
             </small>
           </article>
-        ))}
+          );
+        })}
       </div>
     </VisualizationFrameV125>
   );
@@ -887,7 +901,7 @@ function EvidenceCardsV125({
           <small>
             <PublicTermTextV134
               text={
-                [row.year || row.period, publicTextV126(row.provenance.sourceOrg)]
+                [row.year || row.period, publicSourceOrganizationV136_1(row.provenance.sourceOrg)]
                   .filter(Boolean)
                   .join(" · ") || "기준정보 미기재"
               }
@@ -897,7 +911,7 @@ function EvidenceCardsV125({
       ))}
       {rows.length > 24 && (
         <p className="sv125-contract-overflow-note">
-          나머지 {rows.length - 24}건은 아래 원자료 보기에서 확인할 수 있습니다.
+          나머지 {rows.length - 24}건은 아래 상세 데이터에서 확인할 수 있습니다.
         </p>
       )}
     </div>
@@ -939,7 +953,7 @@ function PolicyTimelineV125({
       detail:
         entityFieldV125(entity, ["status", "scope", "agreementType"]) ||
         publicTextV126(entity.note) ||
-        "세부 내용은 원자료 표에서 확인",
+        "세부 내용은 상세 데이터에서 확인",
       sourceUrl: entityUrlV125(entity),
     })),
   ].sort((left, right) => timelineSortV125(left.date) - timelineSortV125(right.date));
@@ -988,7 +1002,7 @@ function EvidenceMatrixV125({
       result:
         entityFieldV125(entity, ["content", "status", "result", "description"]) ||
         publicTextV126(entity.note) ||
-        "세부 내용은 원자료 표에서 확인",
+        "세부 내용은 상세 데이터에서 확인",
       basis:
         entityFieldV125(entity, ["legalBasis", "referenceYear", "year"]) ||
         "—",
@@ -1019,7 +1033,7 @@ function EvidenceMatrixV125({
       </div>
       {items.length > 40 && (
         <p className="sv125-contract-overflow-note">
-          대표 40건을 표시합니다. 전체 {items.length}건은 원자료 표에서 확인할 수
+          대표 40건을 표시합니다. 전체 {items.length}건은 상세 데이터에서 확인할 수
           있습니다.
         </p>
       )}
@@ -1140,6 +1154,48 @@ function SpatialSummaryV125({
   );
 }
 
+
+/**
+ * Names the collection a detail screen lists.
+ *
+ * "주요 레코드" under "개체 목록" describes our storage. A reader on the
+ * investment portfolio is looking at projects; on a partner screen, at
+ * institutions. The archetype already knows which.
+ */
+function publicCollectionEyebrowV136_2(detailTemplate?: string): string {
+  switch (detailTemplate) {
+    case "project":
+      return "사업";
+    case "partner":
+      return "기관";
+    case "policy":
+      return "정책";
+    case "facility":
+      return "시설";
+    case "research":
+      return "연구";
+    default:
+      return "목록";
+  }
+}
+
+function publicCollectionTitleV136_2(detailTemplate?: string): string {
+  switch (detailTemplate) {
+    case "project":
+      return "사업 목록";
+    case "partner":
+      return "기관 목록";
+    case "policy":
+      return "정책 목록";
+    case "facility":
+      return "시설 목록";
+    case "research":
+      return "연구성과";
+    default:
+      return "상세 데이터";
+  }
+}
+
 function GenericEntitiesV125({
   entities,
   countryNameKo,
@@ -1152,7 +1208,10 @@ function GenericEntitiesV125({
   elementTitle?: string;
 }) {
   return (
-    <VisualizationFrameV125 eyebrow="개체 목록" title="주요 레코드">
+    <VisualizationFrameV125
+      eyebrow={publicCollectionEyebrowV136_2(detailTemplate)}
+      title={publicCollectionTitleV136_2(detailTemplate)}
+    >
       <PublicEntityCardGridV131
         entities={entities}
         template="generic"
@@ -1177,7 +1236,7 @@ function EntityTableFallbackV125({
       data-testid={markAsPublic ? "public-raw-table" : undefined}
     >
       <summary>
-        {markAsPublic ? "원자료 보기" : "목록 자료 더 보기"} ·{" "}
+        {markAsPublic ? "상세 데이터" : "목록 자료 더 보기"} ·{" "}
         {entities.length.toLocaleString("ko-KR")}건
       </summary>
       <div className="sv125-matrix-wrap">
@@ -1197,7 +1256,7 @@ function EntityTableFallbackV125({
                 <th scope="row"><PublicTermTextV134 text={publicEntityTitleV131(entity)} /></th>
                 <td><PublicTermTextV134 text={publicEntityTypeLabelV126(entity, "자료")} /></td>
                 <td><PublicTermTextV134 text={entityFactsV125(entity)} /></td>
-                <td><PublicTermTextV134 text={publicTextV126(entity.provenance.sourceOrg) || ""} /></td>
+                <td><PublicTermTextV134 text={publicSourceOrganizationV136_1(entity.provenance.sourceOrg) || ""} /></td>
                 <td><PublicTermTextV134 text={publicMissingReasonLabelV126(entity.missingReasonCode, entity.note) || ""} /></td>
               </tr>
             ))}
@@ -1206,8 +1265,8 @@ function EntityTableFallbackV125({
       </div>
       {entities.length > shown.length && (
         <p className="sv125-contract-overflow-note">
-          성능을 위해 대표 100건을 표시합니다. 전체 레코드는 상세화면의 전체
-          원자료 표와 다운로드에서 확인할 수 있습니다.
+          대표 100건을 표시합니다. 전체 목록은 아래 상세 데이터와 다운로드에서
+          확인할 수 있습니다.
         </p>
       )}
     </details>
@@ -1319,7 +1378,7 @@ function PreviewCountNoteV125({ shown, total }: { shown: number; total: number }
   if (total <= shown) return null;
   return (
     <p className="sv125-contract-overflow-note">
-      대표 {shown}건을 표시합니다. 나머지 {total - shown}건은 아래 원자료 보기에서
+      대표 {shown}건을 표시합니다. 나머지 {total - shown}건은 아래 상세 데이터에서
       확인할 수 있습니다.
     </p>
   );
@@ -1541,7 +1600,7 @@ function publicEntityTypeLabelV126(
 function rendererLabelV125(renderer: RendererV125): string {
   const labels: Record<RendererV125, string> = {
     "kpi-trend": "핵심 지표와 추세",
-    "multi-metric-trend": "복수 측정항목 추세",
+    "multi-metric-trend": "복수 항목 추세",
     composition: "구성비",
     "category-comparison": "항목별 비교",
     "paired-category-comparison": "연관 항목 비교",

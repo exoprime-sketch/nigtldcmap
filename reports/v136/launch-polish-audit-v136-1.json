@@ -1,0 +1,1023 @@
+{
+  "schemaVersion": "v136-public-copy-acceptance-1",
+  "generatedAt": "2026-09-04T01:31:19.245Z",
+  "audit": "launch-polish:v136-1",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "launch-polish:v136-1",
+    "status": "PASS",
+    "passed": 24,
+    "failed": 0,
+    "total": 24,
+    "failedChecks": [],
+    "newPublicTabCount": 0,
+    "newPublicRouteCount": 0,
+    "homeEvidence": {
+      "statusBadgeCount": 0,
+      "statCount": 4,
+      "statLabels": [
+        "데이터",
+        "지도 데이터",
+        "다운로드 가능",
+        "최근 업데이트"
+      ],
+      "featuredHeading": "주요 데이터",
+      "searchPlaceholder": "어떤 데이터를 찾으시나요?",
+      "quickActions": [
+        {
+          "title": "데이터 찾기",
+          "detail": "주제·기관·기술별 데이터 검색"
+        },
+        {
+          "title": "데이터 지도",
+          "detail": "지역·시설·사업 위치와 분포 비교"
+        },
+        {
+          "title": "데이터 다운로드",
+          "detail": "필요한 데이터를 CSV·JSON으로 다운로드"
+        },
+        {
+          "title": "",
+          "detail": ""
+        },
+        {
+          "title": "",
+          "detail": ""
+        }
+      ],
+      "scopeMentionCount": 1,
+      "h1": "개도국 기후기술 협력 플랫폼"
+    },
+    "releaseHits": [],
+    "acceptanceHits": [],
+    "measurementHits": [],
+    "looseAcronyms": [],
+    "finderAutoLoad": {
+      "sequence": [
+        24,
+        48,
+        72,
+        96,
+        120,
+        144,
+        152
+      ]
+    },
+    "finderBackRestore": {
+      "beforeLeave": {
+        "count": 152,
+        "scrollY": 30242
+      },
+      "afterBack": {
+        "count": 152,
+        "scrollY": 30242
+      },
+      "scrollDrift": 0
+    },
+    "mapEvidence": {
+      "layerCount": 12,
+      "presetCount": 5,
+      "compareControl": true,
+      "guidePresent": true
+    },
+    "mapCompare": 2,
+    "uatRows": [
+      {
+        "kind": "route",
+        "name": "home",
+        "width": 390,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "finder",
+        "width": 390,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "download",
+        "width": 390,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "guide",
+        "width": 390,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "map",
+        "width": 390,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "map-active",
+        "width": 390,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "map-feature",
+        "width": 390,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "detail",
+        "width": 390,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "home",
+        "width": 768,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "finder",
+        "width": 768,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "download",
+        "width": 768,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "guide",
+        "width": 768,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "map",
+        "width": 768,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "map-active",
+        "width": 768,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "map-feature",
+        "width": 768,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "detail",
+        "width": 768,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "home",
+        "width": 1024,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "finder",
+        "width": 1024,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "download",
+        "width": 1024,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "guide",
+        "width": 1024,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "map",
+        "width": 1024,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "map-active",
+        "width": 1024,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "map-feature",
+        "width": 1024,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "detail",
+        "width": 1024,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "home",
+        "width": 1440,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "finder",
+        "width": 1440,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "download",
+        "width": 1440,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "guide",
+        "width": 1440,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "map",
+        "width": 1440,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "map-active",
+        "width": 1440,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "map-feature",
+        "width": 1440,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "detail",
+        "width": 1440,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "home",
+        "width": 1920,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "finder",
+        "width": 1920,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "download",
+        "width": 1920,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "guide",
+        "width": 1920,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "map",
+        "width": 1920,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "map-active",
+        "width": 1920,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "map-feature",
+        "width": 1920,
+        "overflow": -15
+      },
+      {
+        "kind": "route",
+        "name": "detail",
+        "width": 1920,
+        "overflow": -15
+      },
+      {
+        "kind": "detail",
+        "name": "A-002",
+        "width": 1440,
+        "overflow": -15
+      },
+      {
+        "kind": "detail",
+        "name": "A-016",
+        "width": 1440,
+        "overflow": -15
+      },
+      {
+        "kind": "detail",
+        "name": "A-023",
+        "width": 1440,
+        "overflow": -15
+      },
+      {
+        "kind": "detail",
+        "name": "B-005",
+        "width": 1440,
+        "overflow": -15
+      },
+      {
+        "kind": "detail",
+        "name": "B-021",
+        "width": 1440,
+        "overflow": -15
+      },
+      {
+        "kind": "detail",
+        "name": "B-033",
+        "width": 1440,
+        "overflow": -15
+      },
+      {
+        "kind": "detail",
+        "name": "C-002",
+        "width": 1440,
+        "overflow": -15
+      },
+      {
+        "kind": "detail",
+        "name": "C-016",
+        "width": 1440,
+        "overflow": -15
+      },
+      {
+        "kind": "detail",
+        "name": "D-011",
+        "width": 1440,
+        "overflow": -15
+      },
+      {
+        "kind": "detail",
+        "name": "D-018",
+        "width": 1440,
+        "overflow": -15
+      },
+      {
+        "kind": "detail",
+        "name": "E-008",
+        "width": 1440,
+        "overflow": -15
+      },
+      {
+        "kind": "detail",
+        "name": "E-012",
+        "width": 1440,
+        "overflow": -15
+      }
+    ],
+    "brokenAssets": [],
+    "runtimeFailure": null
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "launch-polish:v136-1",
+      "name": "LAUNCH_POLISH_RUNTIME",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null
+      },
+      "expected": {
+        "runtimeFailure": null
+      }
+    },
+    {
+      "type": "check",
+      "audit": "launch-polish:v136-1",
+      "name": "NEW_PUBLIC_TAB_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "type": "check",
+      "audit": "launch-polish:v136-1",
+      "name": "NEW_PUBLIC_ROUTE_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "type": "check",
+      "audit": "launch-polish:v136-1",
+      "name": "HOME_INTERNAL_STATUS_BADGE_COUNT",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "type": "check",
+      "audit": "launch-polish:v136-1",
+      "name": "HOME_RELEASE_TERM_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "launch-polish:v136-1",
+      "name": "HOME_STAT_TILES",
+      "status": "PASS",
+      "actual": [
+        "데이터",
+        "지도 데이터",
+        "다운로드 가능",
+        "최근 업데이트"
+      ],
+      "expected": [
+        "데이터",
+        "지도 데이터",
+        "다운로드 가능",
+        "최근 업데이트"
+      ]
+    },
+    {
+      "type": "check",
+      "audit": "launch-polish:v136-1",
+      "name": "HOME_SCOPE_MENTION_COUNT",
+      "status": "PASS",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "type": "check",
+      "audit": "launch-polish:v136-1",
+      "name": "HOME_SEARCH_PLACEHOLDER",
+      "status": "PASS",
+      "actual": "어떤 데이터를 찾으시나요?",
+      "expected": "어떤 데이터를 찾으시나요?"
+    },
+    {
+      "type": "check",
+      "audit": "launch-polish:v136-1",
+      "name": "HOME_FEATURED_HEADING",
+      "status": "PASS",
+      "actual": "주요 데이터",
+      "expected": "주요 데이터"
+    },
+    {
+      "type": "check",
+      "audit": "launch-polish:v136-1",
+      "name": "PUBLIC_RELEASE_TERM_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "launch-polish:v136-1",
+      "name": "PUBLIC_ACCEPTANCE_TEST_TERM_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "launch-polish:v136-1",
+      "name": "PUBLIC_MEASUREMENT_TERM_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "launch-polish:v136-1",
+      "name": "AUTHORED_ACRONYM_WITHOUT_GLOSSARY",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "launch-polish:v136-1",
+      "name": "FINDER_AUTO_LOAD",
+      "status": "PASS",
+      "actual": [
+        24,
+        48,
+        72,
+        96,
+        120,
+        144,
+        152
+      ],
+      "expected": [
+        24,
+        48,
+        72,
+        96,
+        120,
+        144,
+        152
+      ]
+    },
+    {
+      "type": "check",
+      "audit": "launch-polish:v136-1",
+      "name": "FINDER_BACK_RESTORE",
+      "status": "PASS",
+      "actual": {
+        "beforeLeave": {
+          "count": 152,
+          "scrollY": 30242
+        },
+        "afterBack": {
+          "count": 152,
+          "scrollY": 30242
+        },
+        "scrollDrift": 0
+      },
+      "expected": "rows and offset restored"
+    },
+    {
+      "type": "check",
+      "audit": "launch-polish:v136-1",
+      "name": "MAP_LAYER_COUNT",
+      "status": "PASS",
+      "actual": 12,
+      "expected": 12
+    },
+    {
+      "type": "check",
+      "audit": "launch-polish:v136-1",
+      "name": "MAP_PRESET_COUNT",
+      "status": "PASS",
+      "actual": 5,
+      "expected": 5
+    },
+    {
+      "type": "check",
+      "audit": "launch-polish:v136-1",
+      "name": "MAP_COMPARE",
+      "status": "PASS",
+      "actual": 2,
+      "expected": ">=2 panes"
+    },
+    {
+      "type": "check",
+      "audit": "launch-polish:v136-1",
+      "name": "FRAMEWORK_ELEMENTS",
+      "status": "PASS",
+      "actual": 152,
+      "expected": 152
+    },
+    {
+      "type": "check",
+      "audit": "launch-polish:v136-1",
+      "name": "ACCOUNTED_ELEMENTS",
+      "status": "PASS",
+      "actual": 152,
+      "expected": 152
+    },
+    {
+      "type": "check",
+      "audit": "launch-polish:v136-1",
+      "name": "UAT_COVERAGE",
+      "status": "PASS",
+      "actual": 52,
+      "expected": 52
+    },
+    {
+      "type": "check",
+      "audit": "launch-polish:v136-1",
+      "name": "UAT_HORIZONTAL_OVERFLOW",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "launch-polish:v136-1",
+      "name": "BROKEN_ASSET",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "launch-polish:v136-1",
+      "name": "CONSOLE_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "newPublicTabCount": 0,
+  "newPublicRouteCount": 0,
+  "homeEvidence": {
+    "statusBadgeCount": 0,
+    "statCount": 4,
+    "statLabels": [
+      "데이터",
+      "지도 데이터",
+      "다운로드 가능",
+      "최근 업데이트"
+    ],
+    "featuredHeading": "주요 데이터",
+    "searchPlaceholder": "어떤 데이터를 찾으시나요?",
+    "quickActions": [
+      {
+        "title": "데이터 찾기",
+        "detail": "주제·기관·기술별 데이터 검색"
+      },
+      {
+        "title": "데이터 지도",
+        "detail": "지역·시설·사업 위치와 분포 비교"
+      },
+      {
+        "title": "데이터 다운로드",
+        "detail": "필요한 데이터를 CSV·JSON으로 다운로드"
+      },
+      {
+        "title": "",
+        "detail": ""
+      },
+      {
+        "title": "",
+        "detail": ""
+      }
+    ],
+    "scopeMentionCount": 1,
+    "h1": "개도국 기후기술 협력 플랫폼"
+  },
+  "releaseHits": [],
+  "acceptanceHits": [],
+  "measurementHits": [],
+  "looseAcronyms": [],
+  "finderAutoLoad": {
+    "sequence": [
+      24,
+      48,
+      72,
+      96,
+      120,
+      144,
+      152
+    ]
+  },
+  "finderBackRestore": {
+    "beforeLeave": {
+      "count": 152,
+      "scrollY": 30242
+    },
+    "afterBack": {
+      "count": 152,
+      "scrollY": 30242
+    },
+    "scrollDrift": 0
+  },
+  "mapEvidence": {
+    "layerCount": 12,
+    "presetCount": 5,
+    "compareControl": true,
+    "guidePresent": true
+  },
+  "mapCompare": 2,
+  "uatRows": [
+    {
+      "kind": "route",
+      "name": "home",
+      "width": 390,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "finder",
+      "width": 390,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "download",
+      "width": 390,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "guide",
+      "width": 390,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "map",
+      "width": 390,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "map-active",
+      "width": 390,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "map-feature",
+      "width": 390,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "detail",
+      "width": 390,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "home",
+      "width": 768,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "finder",
+      "width": 768,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "download",
+      "width": 768,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "guide",
+      "width": 768,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "map",
+      "width": 768,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "map-active",
+      "width": 768,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "map-feature",
+      "width": 768,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "detail",
+      "width": 768,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "home",
+      "width": 1024,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "finder",
+      "width": 1024,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "download",
+      "width": 1024,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "guide",
+      "width": 1024,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "map",
+      "width": 1024,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "map-active",
+      "width": 1024,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "map-feature",
+      "width": 1024,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "detail",
+      "width": 1024,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "home",
+      "width": 1440,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "finder",
+      "width": 1440,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "download",
+      "width": 1440,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "guide",
+      "width": 1440,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "map",
+      "width": 1440,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "map-active",
+      "width": 1440,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "map-feature",
+      "width": 1440,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "detail",
+      "width": 1440,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "home",
+      "width": 1920,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "finder",
+      "width": 1920,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "download",
+      "width": 1920,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "guide",
+      "width": 1920,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "map",
+      "width": 1920,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "map-active",
+      "width": 1920,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "map-feature",
+      "width": 1920,
+      "overflow": -15
+    },
+    {
+      "kind": "route",
+      "name": "detail",
+      "width": 1920,
+      "overflow": -15
+    },
+    {
+      "kind": "detail",
+      "name": "A-002",
+      "width": 1440,
+      "overflow": -15
+    },
+    {
+      "kind": "detail",
+      "name": "A-016",
+      "width": 1440,
+      "overflow": -15
+    },
+    {
+      "kind": "detail",
+      "name": "A-023",
+      "width": 1440,
+      "overflow": -15
+    },
+    {
+      "kind": "detail",
+      "name": "B-005",
+      "width": 1440,
+      "overflow": -15
+    },
+    {
+      "kind": "detail",
+      "name": "B-021",
+      "width": 1440,
+      "overflow": -15
+    },
+    {
+      "kind": "detail",
+      "name": "B-033",
+      "width": 1440,
+      "overflow": -15
+    },
+    {
+      "kind": "detail",
+      "name": "C-002",
+      "width": 1440,
+      "overflow": -15
+    },
+    {
+      "kind": "detail",
+      "name": "C-016",
+      "width": 1440,
+      "overflow": -15
+    },
+    {
+      "kind": "detail",
+      "name": "D-011",
+      "width": 1440,
+      "overflow": -15
+    },
+    {
+      "kind": "detail",
+      "name": "D-018",
+      "width": 1440,
+      "overflow": -15
+    },
+    {
+      "kind": "detail",
+      "name": "E-008",
+      "width": 1440,
+      "overflow": -15
+    },
+    {
+      "kind": "detail",
+      "name": "E-012",
+      "width": 1440,
+      "overflow": -15
+    }
+  ],
+  "brokenAssets": [],
+  "runtimeFailure": null
+}

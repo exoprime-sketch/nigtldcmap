@@ -4,9 +4,6 @@ import type { View } from "../app/navigation";
 import { CATEGORIES } from "../data/publicTaxonomy";
 import {
   loadVietnamPublicOverviewV128,
-  publicDataStatusLabelV128,
-  publicDataStatusKeyV128,
-  publicDownloadStatusV128,
   publicReferencePeriodV128,
 } from "../data/publicPlatformV128";
 import type { VietnamPublicOverviewV128 } from "../data/publicPlatformV128";
@@ -60,13 +57,13 @@ export default function HomePage({
       <section className="home-final-v13" aria-labelledby="home-v128-title">
         <div className="home-final-grid">
           <div className="home-final-copy">
-            <span className="home-final-eyebrow">
-              국가별 기후기술 협력 데이터
-            </span>
+            <span className="home-final-eyebrow">기후기술 협력 데이터</span>
             <h1 id="home-v128-title">개도국 기후기술 협력 플랫폼</h1>
             <p>
-              <PublicTermTextV134 text="베트남의 GDP 등 경제지표, NDC·GHG 정책, 에너지·인프라, 기후위험, ODA 사업·재원, 협력기관 데이터를 검색하고 지도와 차트로 분석할 수 있습니다." />
+              기후기술 협력에 필요한 정책·에너지·기후·사업·재원 데이터를
+              검색하고 지도와 차트로 확인하세요.
             </p>
+            <p className="home-final-scope">현재 제공 국가 · 베트남</p>
 
             <form
               className="home-final-search"
@@ -74,13 +71,13 @@ export default function HomePage({
               role="search"
             >
               <label className="sr-only" htmlFor="home-search">
-                베트남 데이터 검색
+                데이터명, 항목, 기술, 기관, 사업 또는 지역 검색
               </label>
               <input
                 id="home-search"
                 value={query}
                 onChange={(event) => onQueryChange(event.target.value)}
-                placeholder="데이터명, 측정항목, 기술, 기관, 사업 또는 지역 검색"
+                placeholder="어떤 데이터를 찾으시나요?"
               />
               <button type="submit" className="primary-button">
                 데이터 찾기
@@ -108,19 +105,17 @@ export default function HomePage({
             >
               <button type="button" onClick={() => onNavigate("explorer")}>
                 <strong>데이터 찾기</strong>
-                <span>
-                  {overview
-                    ? `${overview.frameworkElementCount}개 데이터 항목을 주제·기관·기술로 탐색 →`
-                    : "전체 데이터 항목을 주제·기관·기술로 탐색 →"}
-                </span>
+                <span>주제·기관·기술별 데이터 검색</span>
               </button>
               <button type="button" onClick={() => onNavigate("map")}>
                 <strong>데이터 지도</strong>
-                <span>시설·인프라·지역 데이터를 지도에서 분석 →</span>
+                <span>지역·시설·사업 위치와 분포 비교</span>
               </button>
               <button type="button" onClick={() => onNavigate("download")}>
                 <strong>데이터 다운로드</strong>
-                <span>재사용 가능한 공개 데이터를 선택해 내려받기 →</span>
+                <span>
+                  <PublicTermTextV134 text="필요한 데이터를 CSV·JSON으로 다운로드" />
+                </span>
               </button>
             </div>
 
@@ -140,57 +135,40 @@ export default function HomePage({
             </div>
           </div>
 
-          <aside className="home-featured-panel" aria-label="주요 분석 데이터">
+          <aside className="home-featured-panel" aria-label="주요 데이터">
             <div className="home-featured-heading">
               <div>
-                <span>현재 제공 국가 · 베트남</span>
-                <strong>베트남 주요 분석 데이터</strong>
+                <strong>주요 데이터</strong>
               </div>
               <button type="button" onClick={() => onNavigate("explorer")}>
-                전체 데이터 보기 →
+                데이터 목록 →
               </button>
             </div>
 
             {overview ? (
               <div className="home-featured-list">
-                {overview.featured.map((item, index) => {
-                  const downloadStatus = publicDownloadStatusV128(item);
-                  return (
-                    <button
-                      key={item.elementId}
-                      type="button"
-                      data-element-id={item.elementId}
-                      onClick={() => onOpenElement(item.elementId, "VNM")}
-                    >
-                      <span className="home-featured-index">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <span className="home-featured-copy">
-                        <strong><PublicTermExpandedTextV134 text={item.publicTitle} /></strong>
-                        <small>
-                          <PublicTermExpandedTextV134 text={item.sourceOrganizations[0] || "자료 제공기관 확인"} /> ·{" "}
-                          {publicReferencePeriodV128(item)}
-                        </small>
-                      </span>
-                      <span className="home-featured-badges">
-                        <span
-                          className="home-featured-status allowed"
-                          data-public-status={publicDataStatusKeyV128(
-                            item.publicStatus
-                          )}
-                        >
-                          {publicDataStatusLabelV128(item.publicStatus)}
-                        </span>
-                        <span
-                          className={`home-featured-status ${downloadStatus.key}`}
-                          data-download-status={downloadStatus.key}
-                        >
-                          {downloadStatus.label}
-                        </span>
-                      </span>
-                    </button>
-                  );
-                })}
+                {overview.featured.map((item, index) => (
+                  <button
+                    key={item.elementId}
+                    type="button"
+                    data-element-id={item.elementId}
+                    onClick={() => onOpenElement(item.elementId, "VNM")}
+                  >
+                    <span className="home-featured-index">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="home-featured-copy">
+                      <strong><PublicTermExpandedTextV134 text={item.publicTitle} /></strong>
+                      <small>
+                        <PublicTermExpandedTextV134 text={item.sourceOrganizations[0] || "제공기관 확인"} /> ·{" "}
+                        {publicReferencePeriodV128(item)}
+                      </small>
+                    </span>
+                    <span className="home-featured-open" aria-hidden="true">
+                      데이터 보기 →
+                    </span>
+                  </button>
+                ))}
               </div>
             ) : (
               <div className="home-v128-loading" role="status">
@@ -210,8 +188,7 @@ export default function HomePage({
         <div className="home-v128-overview__inner">
           <div className="home-v128-overview__heading">
             <div>
-              <span>데이터 현황</span>
-              <h2 id="home-v128-status">현재 제공 국가 · 베트남</h2>
+              <h2 id="home-v128-status">데이터 현황</h2>
             </div>
             <button type="button" onClick={() => onNavigate("guide")}>
               데이터 이용안내 →
@@ -219,27 +196,21 @@ export default function HomePage({
           </div>
           <dl className="home-v128-stats" aria-live="polite">
             <div>
-              <dt>데이터 항목</dt>
+              <dt>데이터</dt>
               <dd>{overview ? `${overview.frameworkElementCount}개` : "—"}</dd>
-            </div>
-            <div>
-              <dt>데이터 제공 항목</dt>
-              <dd>
-                {overview ? `${overview.dataProvidedElementCount}개` : "—"}
-              </dd>
-            </div>
-            <div>
-              <dt>다운로드 가능 항목</dt>
-              <dd>
-                {overview ? `${overview.downloadableElementCount}개` : "—"}
-              </dd>
             </div>
             <div>
               <dt>지도 데이터</dt>
               <dd>{overview ? `${overview.mapLayerCount}개` : "—"}</dd>
             </div>
             <div>
-              <dt>최종 데이터 릴리스</dt>
+              <dt>다운로드 가능</dt>
+              <dd>
+                {overview ? `${overview.downloadableElementCount}개` : "—"}
+              </dd>
+            </div>
+            <div>
+              <dt>최근 업데이트</dt>
               <dd>{overview?.releaseDate ?? "—"}</dd>
             </div>
           </dl>

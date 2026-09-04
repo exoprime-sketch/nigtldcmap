@@ -44,6 +44,7 @@ const commands = [
   { name: "V136_MAP_COPY", command: "npm run audit:map-copy:v136" },
   { name: "V136_PUBLIC_CONTROLS", command: "npm run audit:public-controls:v136" },
   { name: "V136_FINDER_SCROLL", command: "npm run audit:finder-scroll:v136" },
+  { name: "V136_2_GENERIC_DETAIL_PUBLIC", command: "npm run audit:generic-detail-public:v136-2" },
   { name: "V136_HUMAN_REVIEW", command: "npm run audit:human-review:v136" },
   { name: "V136_WORKFLOW", command: "npm run audit:workflow:v136" },
 ];
@@ -104,6 +105,7 @@ const reportPaths = {
   mapCopy: "reports/v136/map-copy-audit-v136.json",
   publicControls: "reports/v136/public-controls-audit-v136.json",
   finderScroll: "reports/v136/finder-scroll-audit-v136.json",
+  genericDetailPublic: "reports/v136/generic-detail-public-audit-v136-2.json",
   humanReview: "reports/v136/human-review-audit-v136.json",
   workflow: "reports/v136/workflow-audit-v136.json",
 };

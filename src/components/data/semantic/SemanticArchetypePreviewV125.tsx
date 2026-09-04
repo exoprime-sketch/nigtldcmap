@@ -18,14 +18,17 @@ import {
 import { publicEntityTitleV131 } from "../../../data/visualization/publicEntityTitleV131";
 import {
   publicMissingReasonLabelV126,
+  publicSourceOrganizationV136_1,
   publicSourceUrlV126,
   publicTextV126,
 } from "../../../data/visualization/publicFieldPolicyV126";
 import {
+  publicDimensionContextV136_2,
   publicDimensionLabelV126,
   publicDimensionValueV134,
   publicMeasureLabelV126,
 } from "../../../data/visualization/publicCopyRegistryV126";
+import { publicScaledNumberV136_2 } from "../../../utils/publicNumberScaleV136_2";
 import { getPublicAnalysisHeadingsV134 } from "../../../data/visualization/publicAnalysisHeadingsV134";
 import {
   PublicTermHelpV134,
@@ -54,7 +57,7 @@ const SERIES_PATTERNS_V125 = ["solid", "dashed", "dotted", "double"] as const;
 function publicNoDataReasonV128(reason: string | null): string {
   switch (reason) {
     case "not-collected":
-      return "공식 원자료를 확보한 뒤 제공합니다.";
+      return "공식 자료를 확보한 뒤 제공합니다.";
     case "schema-only":
       return "입력 항목만 있고 실제 값은 아직 없습니다.";
     case "explicit-placeholder-only":
@@ -326,9 +329,9 @@ export default function SemanticArchetypePreviewV125({
       <div className="sv125-controls" aria-label="데이터 분류 선택" data-testid="public-selector">
         {measureOptions.length > 1 && (
           <label>
-            <span>측정항목</span>
+            <span>항목</span>
             <select
-              aria-label="측정항목 선택"
+              aria-label="항목 선택"
               data-testid="v125-measure-select"
               value={measureKey || ""}
               onChange={(event) =>
@@ -449,7 +452,9 @@ export default function SemanticArchetypePreviewV125({
         )}
         <PublicTermHelpV134
           text={[
-            measureOptions.find((measure) => measure.key === measureKey)?.labelKo,
+            publicMeasureLabelV126(
+              measureOptions.find((measure) => measure.key === measureKey)?.labelKo || ""
+            ),
             measureOptions.find((measure) => measure.key === measureKey)?.unit,
             ...additionalDimensions.map((dimension) => {
               const value = dimensions[dimension.key];
@@ -510,7 +515,7 @@ export default function SemanticArchetypePreviewV125({
             data-public-empty-reason="selection-has-no-values"
           >
             <strong>현재 선택 조건에 표시할 값이 없습니다</strong>
-            <p>다른 측정항목이나 기간을 선택해 확인해 주세요.</p>
+            <p>다른 항목이나 기간을 선택해 확인해 주세요.</p>
           </div>
         )}
 
@@ -551,14 +556,10 @@ function SemanticKpisV125({
       )
     );
     const row = aggregate || candidates[0] || null;
-    const dimensionContext = row
-      ? Object.entries(row.dimensionLabels)
-          .filter(([key]) => !["year", "period"].includes(key))
-          .map(([key, value]) => publicDimensionValueV134(key, value))
-          .filter(Boolean)
-          .join(" · ")
-      : "";
-    return { measure, row, dimensionContext };
+    const dimensionValues = row
+      ? publicDimensionContextV136_2(row.dimensionLabels)
+      : [];
+    return { measure, row, dimensionValues };
   });
   return (
     <section
@@ -567,29 +568,37 @@ function SemanticKpisV125({
       data-testid="public-context-kpis"
       data-public-has-values={kpis.some(({ row }) => Boolean(row)) ? "true" : "false"}
     >
-      {kpis.map(({ measure, row, dimensionContext }) => (
-        <article key={`${measure.key}-${measure.unit}`}>
-          <span><PublicTermTextV134 text={publicMeasureLabelV126(measure.labelKo)} /></span>
-          <strong>{row ? formatValueV121(row.value) : "미제공"}</strong>
-          <small>
-            <PublicTermTextV134 text={row
-              ? [
-                  row.unit || measure.unit,
-                  row.year || row.period,
-                  dimensionContext,
-                ]
-                  .filter(Boolean)
-                  .join(" · ")
-              : measure.unit || "단위 미기재"} />
-          </small>
-        </article>
-      ))}
-      {contract.measures.length > selectedMeasures.length && (
-        <p className="sv125-kpi-note">
-          현재 선택한 측정항목만 표시합니다. 다른 측정항목은 선택기와 전체 원자료
-          표에서 확인할 수 있습니다.
-        </p>
-      )}
+      {kpis.map(({ measure, row, dimensionValues }) => {
+        const unit = row?.unit || measure.unit;
+        // A headline reads in 억/조; the exact figure stays on the value itself
+        // so hovering, the details table and the download all still carry it.
+        const scaled =
+          row && typeof row.value === "number" && Number.isFinite(row.value)
+            ? publicScaledNumberV136_2(row.value, unit)
+            : null;
+        return (
+          <article
+            key={`${measure.key}-${measure.unit}`}
+            data-public-dimension-count={dimensionValues.length}
+            data-public-dimension-values={JSON.stringify(dimensionValues)}
+          >
+            <span><PublicTermTextV134 text={publicMeasureLabelV126(measure.labelKo)} /></span>
+            <strong
+              title={scaled?.scaled ? `${scaled.exact}${unit ? ` ${unit}` : ""}` : undefined}
+              data-public-exact-value={scaled?.scaled ? scaled.exact : undefined}
+            >
+              {scaled ? scaled.display : row ? formatValueV121(row.value) : "미제공"}
+            </strong>
+            <small>
+              <PublicTermTextV134 text={row
+                ? [unit, row.year || row.period, ...dimensionValues]
+                    .filter(Boolean)
+                    .join(" · ")
+                : measure.unit || "단위 미기재"} />
+            </small>
+          </article>
+        );
+      })}
     </section>
   );
 }
@@ -758,7 +767,7 @@ function semanticEvidenceV125(row: SemanticObservationV125): string {
 }
 
 function SemanticSourceV125({ row }: { row: SemanticObservationV125 }) {
-  const organization = publicTextV126(row.provenance.sourceOrg) || "기관 미기재";
+  const organization = publicSourceOrganizationV136_1(row.provenance.sourceOrg) || "기관 미기재";
   const sourceUrl = publicSourceUrlV126(row.provenance.sourceUrl);
   if (!sourceUrl) return <PublicTermTextV134 text={organization} />;
   return (
@@ -768,9 +777,9 @@ function SemanticSourceV125({ row }: { row: SemanticObservationV125 }) {
         href={sourceUrl}
         target="_blank"
         rel="noreferrer"
-        aria-label={`${organization} 원자료 열기`}
+        aria-label={`${organization} 공식 원문 열기`}
       >
-        원자료
+        공식 원문
       </a>
     </>
   );
@@ -805,53 +814,18 @@ function TextEvidenceV125({ rows }: { rows: SemanticObservationV125[] }) {
   );
 }
 
-function EntityCollectionV125({
-  entities,
-  countryNameKo,
-  renderer,
-}: {
-  entities: VietnamEntityV124[];
-  countryNameKo: string;
-  renderer: ElementVisualizationContractV125["primaryRenderer"];
-}) {
-  const shown = entities.slice(0, 12);
-  return (
-    <section className="sv125-primary" aria-label="목록 자료 미리보기">
-      <div className="sv125-section-heading">
-        <span>주 시각화 · {rendererLabelV125(renderer)}</span>
-        <h4>{entities.length.toLocaleString("ko-KR")}개 레코드</h4>
-      </div>
-      <div className="sv125-evidence-grid">
-        {shown.map((entity) => (
-          <article key={entity.recordId}>
-            <strong><PublicTermTextV134 text={publicEntityTitleV131(entity)} /></strong>
-            <p><PublicTermTextV134 text={entity.entityType || countryNameKo} /></p>
-            <small><PublicTermTextV134 text={publicTextV126(entity.provenance.sourceOrg) || "세부 내용은 원자료 표에서 확인"} /></small>
-          </article>
-        ))}
-      </div>
-      {entities.length > shown.length && (
-        <p className="sv125-preview-note">
-          대표 {shown.length}건을 미리 표시합니다. 나머지 {entities.length - shown.length}건은
-          아래 전체 원자료 표에서 누락 없이 검색·페이지 이동할 수 있습니다.
-        </p>
-      )}
-    </section>
-  );
-}
-
 function SemanticTableFallbackV125({ rows }: { rows: SemanticObservationV125[] }) {
   return (
     <details
       className="sv125-table-fallback"
       data-testid="public-raw-table"
     >
-      <summary>원자료 보기 · {rows.length.toLocaleString("ko-KR")}건</summary>
+      <summary>상세 데이터 · {rows.length.toLocaleString("ko-KR")}건</summary>
       <div className="cdp-table-wrap">
         <table className="cdp-table">
           <thead>
             <tr>
-              <th>측정항목</th>
+              <th>항목</th>
               <th>분류</th>
               <th>지역·성별·기술·시나리오</th>
               <th>값</th>
@@ -937,7 +911,7 @@ function rendererLabelV125(
 ): string {
   const labels: Record<ElementVisualizationContractV125["primaryRenderer"], string> = {
     "kpi-trend": "핵심 지표와 추세",
-    "multi-metric-trend": "복수 측정항목 추세",
+    "multi-metric-trend": "복수 항목 추세",
     composition: "구성비",
     "category-comparison": "항목별 비교",
     "paired-category-comparison": "연관 항목 비교",

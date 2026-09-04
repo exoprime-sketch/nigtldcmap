@@ -27,14 +27,23 @@
   gap: clamp(32px, 5vw, 72px);
 }
 
-.home-final-eyebrow,
-.home-featured-heading > div > span {
+.home-final-eyebrow {
   display: block;
   color: #83ddd8;
   font-size: 11px;
   font-weight: 900;
   letter-spacing: 0.13em;
   text-transform: uppercase;
+}
+
+/* Korean has no inter-word breaking rule of its own, so the default lets a
+   line end mid-word - "개도국 기후기술 협력 플/랫폼". keep-all restores the
+   space as the break point on the headings a visitor reads first. */
+.home-final-copy h1,
+.home-final-copy > p,
+.home-final-actions span,
+.home-featured-heading strong {
+  word-break: keep-all;
 }
 
 .home-final-copy h1 {
@@ -51,6 +60,16 @@
   color: #c5d6e4;
   font-size: clamp(15px, 1.35vw, 18px);
   line-height: 1.7;
+}
+
+/* Which country the platform currently covers is a fact about the service, not
+   part of its pitch, so it sits quietly under the description rather than
+   being restated in every panel heading. */
+.home-final-copy > p.home-final-scope {
+  margin: -14px 0 26px;
+  color: #9fb6c9;
+  font-size: 13px;
+  line-height: 1.5;
 }
 
 .home-final-search {
@@ -235,46 +254,20 @@
   white-space: nowrap;
 }
 
-.home-featured-status {
-  padding: 4px 7px;
-  border-radius: 999px;
-  font-size: 9px;
-  font-weight: 900;
+/* Availability is carried by the action itself, not by a badge repeating a
+   state the reader cannot act on. */
+.home-featured-open {
+  color: #83ddd8;
+  font-size: 11px;
+  font-weight: 800;
   white-space: nowrap;
+  opacity: 0;
+  transition: opacity 120ms ease;
 }
 
-.home-featured-status.allowed {
-  color: #bcebd0;
-  background: rgba(37, 122, 72, 0.35);
-}
-
-.home-featured-status.metadata_only {
-  color: #c9e4ff;
-  background: rgba(11, 103, 194, 0.35);
-}
-
-.home-featured-status.restricted,
-.home-featured-status.rights_unknown {
-  color: #ffe1bd;
-  background: rgba(169, 79, 5, 0.32);
-}
-
-.home-featured-badges {
-  display: flex;
-  align-items: flex-end;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.home-featured-status.downloadable {
-  color: #c9e4ff;
-  background: rgba(11, 103, 194, 0.35);
-}
-
-.home-featured-status.display-only,
-.home-featured-status.no-download-data {
-  color: #ffe1bd;
-  background: rgba(169, 79, 5, 0.32);
+.home-featured-list > button:hover .home-featured-open,
+.home-featured-list > button:focus-visible .home-featured-open {
+  opacity: 1;
 }
 
 .home-v128-loading {
@@ -331,7 +324,7 @@
 .home-v128-stats {
   margin: 24px 0 0;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
 }
 
@@ -407,7 +400,7 @@
   }
 
   .home-v128-stats {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -447,15 +440,8 @@
     grid-template-columns: 26px minmax(0, 1fr);
   }
 
-  .home-featured-status {
-    justify-self: start;
-  }
-
-  .home-featured-badges {
-    grid-column: 2;
-    align-items: flex-start;
-    flex-direction: row;
-    flex-wrap: wrap;
+  .home-featured-open {
+    display: none;
   }
 
   .home-v128-overview__inner {
