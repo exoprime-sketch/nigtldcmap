@@ -1,15 +1,15 @@
 {
   "schemaVersion": "v136-public-copy-acceptance-1",
-  "generatedAt": "2026-09-04T01:37:32.104Z",
+  "generatedAt": "2026-09-04T02:43:19.581Z",
   "audit": "release:v136",
   "status": "PASS",
   "summary": {
     "type": "summary",
     "audit": "release:v136",
     "status": "PASS",
-    "passed": 74,
+    "passed": 75,
     "failed": 0,
-    "total": 74,
+    "total": 75,
     "failedChecks": [],
     "commandResults": [
       {
@@ -244,6 +244,13 @@
         "error": null
       },
       {
+        "name": "V136_2_GENERIC_DETAIL_PUBLIC",
+        "command": "npm run audit:generic-detail-public:v136-2",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
         "name": "V136_HUMAN_REVIEW",
         "command": "npm run audit:human-review:v136",
         "exitCode": 0,
@@ -291,12 +298,13 @@
       "mapCopy": "PASS",
       "publicControls": "PASS",
       "finderScroll": "PASS",
+      "genericDetailPublic": "PASS",
       "humanReview": "PASS",
       "workflow": "PASS"
     },
     "frameworkElements": 152,
     "accountedElements": 152,
-    "publicTextInventoryCount": 55772,
+    "publicTextInventoryCount": 55668,
     "publicRouteCount": 158,
     "internalPublicTokenCount": 0,
     "duplicateVisibleCopyCount": 0,
@@ -836,6 +844,22 @@
     {
       "type": "check",
       "audit": "release:v136",
+      "name": "V136_2_GENERIC_DETAIL_PUBLIC",
+      "status": "PASS",
+      "actual": {
+        "name": "V136_2_GENERIC_DETAIL_PUBLIC",
+        "command": "npm run audit:generic-detail-public:v136-2",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
       "name": "V136_HUMAN_REVIEW",
       "status": "PASS",
       "actual": {
@@ -1261,6 +1285,7 @@
         "npm run audit:map-copy:v136",
         "npm run audit:public-controls:v136",
         "npm run audit:finder-scroll:v136",
+        "npm run audit:generic-detail-public:v136-2",
         "npm run audit:human-review:v136",
         "npm run audit:workflow:v136"
       ],
@@ -1508,6 +1533,13 @@
       "error": null
     },
     {
+      "name": "V136_2_GENERIC_DETAIL_PUBLIC",
+      "command": "npm run audit:generic-detail-public:v136-2",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
       "name": "V136_HUMAN_REVIEW",
       "command": "npm run audit:human-review:v136",
       "exitCode": 0,
@@ -1555,12 +1587,13 @@
     "mapCopy": "PASS",
     "publicControls": "PASS",
     "finderScroll": "PASS",
+    "genericDetailPublic": "PASS",
     "humanReview": "PASS",
     "workflow": "PASS"
   },
   "frameworkElements": 152,
   "accountedElements": 152,
-  "publicTextInventoryCount": 55772,
+  "publicTextInventoryCount": 55668,
   "publicRouteCount": 158,
   "internalPublicTokenCount": 0,
   "duplicateVisibleCopyCount": 0,

@@ -1,0 +1,145 @@
+{
+  "schemaVersion": "v136-public-copy-acceptance-1",
+  "generatedAt": "2026-09-04T02:42:40.327Z",
+  "audit": "generic-detail-public:v136-2",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "generic-detail-public:v136-2",
+    "status": "PASS",
+    "passed": 14,
+    "failed": 0,
+    "total": 14,
+    "failedChecks": [],
+    "detailRouteCount": 152,
+    "genericDetailRouteCount": 134,
+    "selectorStatesVisited": 1292,
+    "findingCount": 0,
+    "findingsByKind": {},
+    "runtimeFailure": null
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "generic-detail-public:v136-2",
+      "name": "GENERIC_DETAIL_RUNTIME",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null
+      },
+      "expected": {
+        "runtimeFailure": null
+      }
+    },
+    {
+      "type": "check",
+      "audit": "generic-detail-public:v136-2",
+      "name": "DETAIL_ROUTE_COUNT",
+      "status": "PASS",
+      "actual": 152,
+      "expected": 152
+    },
+    {
+      "type": "check",
+      "audit": "generic-detail-public:v136-2",
+      "name": "GENERIC_DETAIL_ROUTE_COUNT",
+      "status": "PASS",
+      "actual": 134,
+      "expected": ">0"
+    },
+    {
+      "type": "check",
+      "audit": "generic-detail-public:v136-2",
+      "name": "PUBLIC_MEASUREMENT_TERM_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "generic-detail-public:v136-2",
+      "name": "PUBLIC_RECORD_TERM_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "generic-detail-public:v136-2",
+      "name": "PUBLIC_RAW_TABLE_TERM_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "generic-detail-public:v136-2",
+      "name": "KPI_RAW_NUMERIC_DIMENSION_DUMP_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "generic-detail-public:v136-2",
+      "name": "KPI_LONG_DIMENSION_LIST_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "generic-detail-public:v136-2",
+      "name": "KPI_INTERNAL_AGGREGATION_COPY_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "generic-detail-public:v136-2",
+      "name": "KPI_UNSCALED_LARGE_NUMBER_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "generic-detail-public:v136-2",
+      "name": "KPI_GENERIC_NOTE_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "generic-detail-public:v136-2",
+      "name": "GENERIC_SELECTOR_INTERNAL_LABEL_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "generic-detail-public:v136-2",
+      "name": "EMPTY_MISSING_REASON_LABEL_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "generic-detail-public:v136-2",
+      "name": "CONSOLE_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "detailRouteCount": 152,
+  "genericDetailRouteCount": 134,
+  "selectorStatesVisited": 1292,
+  "findingCount": 0,
+  "findingsByKind": {},
+  "runtimeFailure": null
+}
