@@ -1,0 +1,107 @@
+{
+  "schemaVersion": "v136-public-copy-acceptance-1",
+  "generatedAt": "2026-09-03T07:22:24.328Z",
+  "audit": "public-text:v136",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "public-text:v136",
+    "status": "PASS",
+    "passed": 9,
+    "failed": 0,
+    "total": 9,
+    "failedChecks": [],
+    "publicTextInventoryCount": 55787,
+    "publicTextRewriteCount": 0,
+    "publicTextRemoveCount": 0,
+    "publicRouteCount": 158,
+    "internalPublicTokenCount": 0,
+    "awkwardGenericCopyCount": 0,
+    "runtimeFailure": null
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "public-text:v136",
+      "name": "FRAMEWORK_ELEMENTS",
+      "status": "PASS",
+      "actual": 152,
+      "expected": 152
+    },
+    {
+      "type": "check",
+      "audit": "public-text:v136",
+      "name": "PUBLIC_TEXT_RUNTIME",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null
+      },
+      "expected": {
+        "runtimeFailure": null
+      }
+    },
+    {
+      "type": "check",
+      "audit": "public-text:v136",
+      "name": "PUBLIC_ROUTE_COUNT",
+      "status": "PASS",
+      "actual": 158,
+      "expected": ">=157"
+    },
+    {
+      "type": "check",
+      "audit": "public-text:v136",
+      "name": "PUBLIC_TEXT_INVENTORY_COUNT",
+      "status": "PASS",
+      "actual": 55787,
+      "expected": ">0"
+    },
+    {
+      "type": "check",
+      "audit": "public-text:v136",
+      "name": "INTERNAL_PUBLIC_TOKEN_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "public-text:v136",
+      "name": "AWKWARD_GENERIC_COPY_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "public-text:v136",
+      "name": "PUBLIC_VERSION_TOKEN_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "public-text:v136",
+      "name": "BROKEN_ASSET",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "public-text:v136",
+      "name": "CONSOLE_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "publicTextInventoryCount": 55787,
+  "publicTextRewriteCount": 0,
+  "publicTextRemoveCount": 0,
+  "publicRouteCount": 158,
+  "internalPublicTokenCount": 0,
+  "awkwardGenericCopyCount": 0,
+  "runtimeFailure": null
+}

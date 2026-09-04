@@ -18,7 +18,7 @@ concurrency:
 
 jobs:
   visual-qa:
-    name: Capture V135 screenshot artifacts
+    name: Capture V136 screenshot artifacts
     runs-on: ubuntu-latest
     timeout-minutes: 45
     env:
@@ -58,10 +58,10 @@ jobs:
           GENERATE_SOURCEMAP: "false"
         run: npm run build
 
-      - name: Capture V135 screenshots
+      - name: Capture V136 screenshots
         id: capture
         continue-on-error: true
-        run: npm run capture:screenshots:v135
+        run: npm run capture:screenshots:v136
 
       - name: Record visual QA outcome
         if: always()
@@ -70,18 +70,18 @@ jobs:
           CAPTURE_OUTCOME: ${{ steps.capture.outcome }}
         run: |
           {
-            echo "## V135 visual QA"
+            echo "## V136 visual QA"
             echo
             echo "Screenshot capture outcome: \`$CAPTURE_OUTCOME\`"
             echo
             echo "Screenshot artifacts are diagnostic and do not gate release or Pages deployment."
           } >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Upload V135 screenshot artifacts
+      - name: Upload V136 screenshot artifacts
         if: always()
         uses: actions/upload-artifact@v7
         with:
           name: vietnam-pilot-visual-qa-${{ github.run_id }}-${{ github.run_attempt }}
-          path: reports/v135/screenshots/
+          path: reports/v136/screenshots/
           if-no-files-found: warn
           retention-days: 30

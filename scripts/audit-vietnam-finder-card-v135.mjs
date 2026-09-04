@@ -42,20 +42,31 @@ try {
     `document.querySelectorAll('[data-testid="public-finder-card-v135"]').length > 0`,
     { timeoutMs: 35_000 }
   );
-  // The finder reveals results progressively. Exhaust that control so the card
-  // census below still covers all 152 public elements.
+  // The finder reveals results progressively. V136 replaced the "더 보기"
+  // control with scroll-driven loading, so the census reveals the remaining
+  // cards by scrolling. The guarantee is unchanged: all 152 public elements
+  // must be inspected.
   for (let guard = 0; guard < 40; guard += 1) {
-    const expanded = await evaluateValue(
-      browser.cdp,
-      `(() => {
-        const more = document.querySelector('[data-testid="finder-load-more-v135"]');
-        if (!(more instanceof HTMLElement)) return false;
-        more.click();
-        return true;
-      })()`
+    const count = Number(
+      await evaluateValue(
+        browser.cdp,
+        `document.querySelectorAll('[data-testid="public-finder-card-v135"]').length`
+      )
     );
-    if (!expanded) break;
-    await new Promise((resolveWait) => setTimeout(resolveWait, 120));
+    if (count >= 152) break;
+    await evaluateValue(
+      browser.cdp,
+      `(() => { window.scrollTo(0, document.body.scrollHeight); return true; })()`
+    );
+    try {
+      await waitForValue(
+        browser.cdp,
+        `document.querySelectorAll('[data-testid="public-finder-card-v135"]').length > ${count}`,
+        { timeoutMs: 8_000 }
+      );
+    } catch {
+      break;
+    }
   }
   await waitForValue(
     browser.cdp,

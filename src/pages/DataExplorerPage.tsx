@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   countryCatalogKeyV122,
   loadCatalogForCountrySelectionV122,
@@ -40,6 +40,89 @@ interface DataExplorerPageProps {
 }
 
 const INITIAL_VISIBLE_COUNT = 24;
+const VISIBLE_BATCH_SIZE_V136 = 24;
+
+/**
+ * V136 finder restoration.
+ *
+ * Returning from a dataset should put the reader back where they were, not at
+ * the top of a 24-item list they already scrolled past. The revealed count and
+ * scroll offset live in sessionStorage keyed by the active filter state, so a
+ * new search starts clean while a back navigation resumes.
+ */
+const FINDER_RESTORE_KEY_V136 = "cdp-finder-restore-v136";
+
+type FinderRestoreStateV136 = {
+  filterKey: string;
+  visibleCount: number;
+  scrollY: number;
+};
+
+function readFinderRestoreV136(): FinderRestoreStateV136 | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = window.sessionStorage.getItem(FINDER_RESTORE_KEY_V136);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as FinderRestoreStateV136;
+    if (typeof parsed?.filterKey !== "string") return null;
+    if (!Number.isFinite(parsed.visibleCount)) return null;
+    return parsed;
+  } catch {
+    return null;
+  }
+}
+
+function writeFinderRestoreV136(state: FinderRestoreStateV136): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.sessionStorage.setItem(FINDER_RESTORE_KEY_V136, JSON.stringify(state));
+  } catch {
+    // A full or blocked session store only costs the restore, never the list.
+  }
+}
+
+/**
+ * The lifecycle of putting a reader back where they were.
+ *
+ * `idle`    nothing to restore, so the list is already where it belongs.
+ * `pending` the remembered rows and offset are still being reinstated.
+ * `settled` the rows are rendered and the offset is actually held.
+ *
+ * The finder publishes this on its results root because "restored" is a state
+ * of the product, not of a timer: a reader on a slow connection is still being
+ * moved back long after a fixed delay would have declared success.
+ */
+type FinderRestoreLifecycleV136 = "idle" | "pending" | "settled";
+
+/** Sub-pixel layout rounding moves the offset by a fraction, not by a row. */
+const RESTORE_SCROLL_TOLERANCE_PX_V136 = 4;
+/** Held across consecutive frames, so a value read mid-relayout cannot settle. */
+const RESTORE_STABLE_FRAMES_V136 = 3;
+/** A backstop against a list that never grows tall enough, not a completion rule. */
+const RESTORE_TIMEOUT_MS_V136 = 15_000;
+
+/**
+ * `html` carries `scroll-behavior: smooth`, and `behavior: "auto"` defers to
+ * it, so an offset restored the ordinary way rides an easing curve for a
+ * second or more and reports whatever position the curve has reached. Coming
+ * back to a list is not a journey, so ask for the one behaviour that overrides
+ * the stylesheet. The DOM types in this toolchain predate `"instant"`.
+ */
+type ScrollBehaviorV136 = ScrollBehavior | "instant";
+
+function scrollToInstantV136(top: number): void {
+  const options: { top: number; behavior: ScrollBehaviorV136 } = {
+    top,
+    behavior: "instant",
+  };
+  window.scrollTo(options as ScrollToOptions);
+}
+
+/** How far the document can actually be scrolled right now. */
+function maxScrollYV136(): number {
+  const scroller = document.scrollingElement || document.documentElement;
+  return Math.max(0, scroller.scrollHeight - window.innerHeight);
+}
 type FinderSortModeV128 = "relevance" | "latest" | "title";
 
 function unique(values: Array<string | null | undefined>): string[] {
@@ -123,6 +206,16 @@ export default function DataExplorerPage({
   const [sortMode, setSortMode] =
     useState<FinderSortModeV128>("relevance");
   const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE_COUNT);
+  const [autoLoading, setAutoLoading] = useState(false);
+  const sentinelRefV136 = useRef<HTMLDivElement | null>(null);
+  const restoreAppliedRefV136 = useRef(false);
+  const restoreScrollRefV136 = useRef<number | null>(null);
+  const restoreCountRefV136 = useRef(0);
+  const [restoreStateV136, setRestoreStateV136] =
+    useState<FinderRestoreLifecycleV136>("idle");
+  // Read from the persist cleanup, which closes over stale render values.
+  const restorePendingRefV136 = useRef(false);
+  restorePendingRefV136.current = restoreStateV136 === "pending";
 
   const normalizedCountry = countryIso3 === "all" ? "all" : countryIso3;
   const normalizedQuery = normalizedSearchV121(query);
@@ -324,21 +417,176 @@ export default function DataExplorerPage({
     yearFilter,
   ]);
 
-  useEffect(
-    () => setVisibleCount(INITIAL_VISIBLE_COUNT),
-    [
-      normalizedCountry,
-      normalizedQuery,
-      category,
-      selectedGroup,
-      sourceOrganization,
-      sortMode,
-      technologyId,
-      yearFilter,
-    ]
-  );
+  const filterKeyV136 = [
+    normalizedCountry,
+    normalizedQuery,
+    category,
+    selectedGroup,
+    sourceOrganization,
+    sortMode,
+    technologyId,
+    yearFilter,
+  ].join("|");
+
+  useEffect(() => {
+    // The first pass after mount may be a back navigation. Restore only when
+    // the reader is looking at the same filtered list they left.
+    if (!restoreAppliedRefV136.current) {
+      restoreAppliedRefV136.current = true;
+      const restored = readFinderRestoreV136();
+      if (restored && restored.filterKey === filterKeyV136) {
+        const rows = Math.max(INITIAL_VISIBLE_COUNT, restored.visibleCount);
+        setVisibleCount(rows);
+        restoreCountRefV136.current = rows;
+        restoreScrollRefV136.current = Number.isFinite(restored.scrollY)
+          ? Math.max(0, restored.scrollY)
+          : 0;
+        setRestoreStateV136("pending");
+        return;
+      }
+    }
+    setVisibleCount(INITIAL_VISIBLE_COUNT);
+    restoreScrollRefV136.current = null;
+    restoreCountRefV136.current = 0;
+    setRestoreStateV136("idle");
+    if (typeof window !== "undefined" && window.scrollY > 0) {
+      window.scrollTo({ top: 0, behavior: "auto" });
+    }
+  }, [filterKeyV136]);
 
   const visibleItems = filtered.slice(0, visibleCount);
+  const hasMoreV136 = visibleCount < filtered.length;
+
+  // Record where the reader is so a return trip can resume there.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const persist = () => {
+      // Mid-restore the list is briefly short and the offset briefly zero.
+      // Writing that back would spend the reader's remembered place to record
+      // the act of returning to it.
+      if (restorePendingRefV136.current) return;
+      writeFinderRestoreV136({
+        filterKey: filterKeyV136,
+        visibleCount,
+        scrollY: Math.round(window.scrollY),
+      });
+    };
+    window.addEventListener("pagehide", persist);
+    return () => {
+      persist();
+      window.removeEventListener("pagehide", persist);
+    };
+  }, [filterKeyV136, visibleCount]);
+
+  // Reveal the next batch as the end of the list approaches. An observer keeps
+  // this off the scroll event loop, so no layout is measured per frame.
+  useEffect(() => {
+    const sentinel = sentinelRefV136.current;
+    if (!sentinel || typeof IntersectionObserver === "undefined") return;
+    if (!hasMoreV136) return;
+    let cancelled = false;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (cancelled) return;
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        setAutoLoading(true);
+        setVisibleCount((current) =>
+          current >= filtered.length
+            ? current
+            : Math.min(filtered.length, current + VISIBLE_BATCH_SIZE_V136)
+        );
+      },
+      { rootMargin: "700px 0px 900px 0px" }
+    );
+    observer.observe(sentinel);
+    return () => {
+      cancelled = true;
+      observer.disconnect();
+    };
+  }, [filtered.length, hasMoreV136, visibleCount]);
+
+  useEffect(() => {
+    setAutoLoading(false);
+  }, [visibleCount]);
+
+  // Put the reader back at the offset they left from.
+  //
+  // The offset only exists once the document is tall enough to hold it. Until
+  // the restored rows have laid out, `scrollTo` silently clamps to the current
+  // bottom of a shorter page and the reader lands a row short — which is what a
+  // slow machine reliably produces and a fast one hides. So this waits for the
+  // document to actually reach the offset, then confirms it is being held,
+  // rather than scrolling hopefully for a fixed span of time.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (restoreStateV136 !== "pending") return;
+
+    const target = restoreScrollRefV136.current;
+    if (target === null || target <= 0) {
+      setRestoreStateV136("settled");
+      return;
+    }
+
+    // A searched list keeps changing until its index arrives, so an empty
+    // result mid-load is not yet an answer about how tall the page will be.
+    const listReady =
+      !loading &&
+      (!normalizedQuery || searchIndexLoadedFor === normalizedCountry);
+    if (!listReady) return;
+    if (filtered.length === 0) {
+      setRestoreStateV136("settled");
+      return;
+    }
+
+    // The remembered rows are what give the document its height, so there is
+    // nothing to measure until they are rendered. Waiting out here rather than
+    // inside the loop also keeps the backstop below measuring the restore
+    // itself, not however long the catalog took to arrive.
+    const rowsWanted = Math.min(restoreCountRefV136.current, filtered.length);
+    if (visibleItems.length < rowsWanted) return;
+
+    let frame = 0;
+    let stableFrames = 0;
+    const startedAt = Date.now();
+
+    const step = (): void => {
+      if (maxScrollYV136() + RESTORE_SCROLL_TOLERANCE_PX_V136 < target) {
+        // Still shorter than the offset. Scrolling now would clamp, so wait for
+        // the remaining layout instead of recording a position we cannot hold.
+        stableFrames = 0;
+      } else if (
+        Math.abs(window.scrollY - target) > RESTORE_SCROLL_TOLERANCE_PX_V136
+      ) {
+        stableFrames = 0;
+        scrollToInstantV136(target);
+      } else if (++stableFrames >= RESTORE_STABLE_FRAMES_V136) {
+        restoreScrollRefV136.current = null;
+        setRestoreStateV136("settled");
+        return;
+      }
+
+      if (Date.now() - startedAt >= RESTORE_TIMEOUT_MS_V136) {
+        // The list never grew to the remembered offset. End the lifecycle
+        // honestly at wherever the reader actually is rather than waiting out
+        // a page that is not coming.
+        restoreScrollRefV136.current = null;
+        setRestoreStateV136("settled");
+        return;
+      }
+      frame = window.requestAnimationFrame(step);
+    };
+
+    frame = window.requestAnimationFrame(step);
+    return () => window.cancelAnimationFrame(frame);
+  }, [
+    filtered.length,
+    loading,
+    normalizedCountry,
+    normalizedQuery,
+    restoreStateV136,
+    searchIndexLoadedFor,
+    visibleItems.length,
+  ]);
   const showCountryContext =
     providers.length > 1 || normalizedCountry === "all";
 
@@ -536,7 +784,15 @@ export default function DataExplorerPage({
         </section>
       )}
 
-      <section className="cdp-card-grid" aria-label="데이터 검색결과">
+      <section
+        className="cdp-card-grid"
+        aria-label="데이터 검색결과"
+        aria-busy={autoLoading ? "true" : "false"}
+        data-testid="finder-results-v136"
+        data-visible-count={visibleItems.length}
+        data-total-count={filtered.length}
+        data-finder-restore-state={restoreStateV136}
+      >
         {visibleItems.map((item) => {
           const contract = getElementVisualizationSummaryV125(item.elementId);
           const downloadStatus = publicDownloadStatusV128(item);
@@ -642,20 +898,19 @@ export default function DataExplorerPage({
         })}
       </section>
 
-      {visibleCount < filtered.length && (
-        <div className="cdp-load-more">
-          <button
-            type="button"
-            className="cdp-button cdp-button--secondary"
-            data-testid="finder-load-more-v135"
-            data-remaining={filtered.length - visibleCount}
-            onClick={() =>
-              setVisibleCount((current) => current + INITIAL_VISIBLE_COUNT)
-            }
-          >
-            더 보기
-          </button>
-        </div>
+      {hasMoreV136 && (
+        <div
+          ref={sentinelRefV136}
+          className="cdp-finder-sentinel-v136"
+          data-testid="finder-scroll-sentinel-v136"
+          data-remaining={filtered.length - visibleCount}
+          aria-hidden="true"
+        />
+      )}
+      {hasMoreV136 && autoLoading && (
+        <p className="cdp-finder-autoload-v136" role="status" data-testid="finder-autoload-status-v136">
+          데이터를 불러오는 중
+        </p>
       )}
     </div>
   );

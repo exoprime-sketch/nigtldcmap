@@ -52,8 +52,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run V135 blocking release gate
-        run: npm run finalize:v135
+      - name: Run V136 blocking release gate
+        run: npm run finalize:v136
 
       - name: Verify deployment and security contracts
         run: |
@@ -155,10 +155,10 @@ jobs:
         if: always()
         shell: bash
         run: |
-          mkdir -p reports/v135
+          mkdir -p reports/v136
           if [[ -f reports/v128/production-smoke-v128.json ]]; then
             cp reports/v128/production-smoke-v128.json \
-              reports/v135/production-smoke-v135.json
+              reports/v136/production-smoke-v136.json
           fi
 
       - name: Upload production smoke report
@@ -166,6 +166,6 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: vietnam-pilot-production-smoke-${{ github.run_id }}-${{ github.run_attempt }}
-          path: reports/v135/production-smoke-v135.json
+          path: reports/v136/production-smoke-v136.json
           if-no-files-found: error
           retention-days: 30

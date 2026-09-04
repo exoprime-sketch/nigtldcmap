@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "v136-public-copy-acceptance-1",
+  "generatedAt": "2026-09-03T07:23:07.686Z",
+  "audit": "public-controls:v136",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "public-controls:v136",
+    "status": "PASS",
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "failedChecks": [],
+    "mapNativeButtonStyleCount": 0,
+    "mapNativeBulletCount": 0,
+    "finderNativeButtonStyleCount": 0,
+    "runtimeFailure": null
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "public-controls:v136",
+      "name": "PUBLIC_CONTROLS_RUNTIME",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null,
+        "mapPanel": true
+      },
+      "expected": {
+        "runtimeFailure": null,
+        "mapPanel": true
+      }
+    },
+    {
+      "type": "check",
+      "audit": "public-controls:v136",
+      "name": "MAP_NATIVE_BUTTON_STYLE_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "public-controls:v136",
+      "name": "MAP_NATIVE_BULLET_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "public-controls:v136",
+      "name": "FINDER_NATIVE_BUTTON_STYLE_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "public-controls:v136",
+      "name": "CONSOLE_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "mapNativeButtonStyleCount": 0,
+  "mapNativeBulletCount": 0,
+  "finderNativeButtonStyleCount": 0,
+  "runtimeFailure": null
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v135-final-public-screen-audit-1",
-  "generatedAt": "2026-09-03T05:24:48.891Z",
+  "generatedAt": "2026-09-03T07:21:06.782Z",
   "audit": "map-access:v135",
   "status": "PASS",
   "summary": {
@@ -23,7 +23,7 @@
       "controlFound": true,
       "controlTag": "BUTTON",
       "controlRole": "button",
-      "controlText": "주요 광산주요 광산 위치·광종 분포 확인",
+      "controlText": "주요 광산위치·광종 분포",
       "controlDisabled": false,
       "clickDispatched": true,
       "clickAttempts": 1,
@@ -31,7 +31,7 @@
       "primaryAfter": "B-048",
       "renderedMapSymbols": "B-048|primary|diamond",
       "featureControlCount": 2,
-      "url": "http://127.0.0.1:54201/?layer=electricityGap&layers=juyo-gwangsan-wici&layerOpacities=0.78&focusLayer=juyo-gwangsan-wici&primaryLayer=juyo-gwangsan-wici&contextLayers=none&mapSelectors=%7B%22juyo-gwangsan-wici%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222022%22%7D%7D&layerYears=2022&scope=priority&country=VNM&baseOpacity=0.58&element=juyo-gwangsan-wici&year=2022&period=2022#map",
+      "url": "http://127.0.0.1:61261/?layer=electricityGap&layers=juyo-gwangsan-wici&layerOpacities=0.78&focusLayer=juyo-gwangsan-wici&primaryLayer=juyo-gwangsan-wici&contextLayers=none&mapSelectors=%7B%22juyo-gwangsan-wici%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222022%22%7D%7D&layerYears=2022&scope=priority&country=VNM&baseOpacity=0.58&element=juyo-gwangsan-wici&year=2022&period=2022#map",
       "failure": null
     },
     "contextActivationDiagnostics": {
@@ -40,7 +40,7 @@
       "controlFound": true,
       "controlTag": "BUTTON",
       "controlRole": "button",
-      "controlText": "발전소발전소 입지·설비 분포 비교",
+      "controlText": "발전소입지·발전원·설비용량 분포",
       "controlDisabled": false,
       "clickDispatched": true,
       "clickAttempts": 1,
@@ -48,7 +48,7 @@
       "primaryAfter": "A-023",
       "renderedMapSymbols": "A-023|primary|circle",
       "featureControlCount": 0,
-      "url": "http://127.0.0.1:54201/?layer=electricityGap&layers=baljeonso-wici-yongryang&layerOpacities=0.78&focusLayer=baljeonso-wici-yongryang&primaryLayer=baljeonso-wici-yongryang&contextLayers=none&mapSelectors=%7B%22baljeonso-wici-yongryang%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222026%22%7D%7D&layerYears=2026&scope=priority&country=VNM&baseOpacity=0.58&element=baljeonso-wici-yongryang&year=2026&period=2026#map",
+      "url": "http://127.0.0.1:61261/?layer=electricityGap&layers=baljeonso-wici-yongryang&layerOpacities=0.78&focusLayer=baljeonso-wici-yongryang&primaryLayer=baljeonso-wici-yongryang&contextLayers=none&mapSelectors=%7B%22baljeonso-wici-yongryang%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222026%22%7D%7D&layerYears=2026&scope=priority&country=VNM&baseOpacity=0.58&element=baljeonso-wici-yongryang&year=2026&period=2026#map",
       "failure": null
     },
     "mineTooltipDiagnostics": {
@@ -260,7 +260,7 @@
         "controlFound": true,
         "controlTag": "BUTTON",
         "controlRole": "button",
-        "controlText": "주요 광산주요 광산 위치·광종 분포 확인",
+        "controlText": "주요 광산위치·광종 분포",
         "controlDisabled": false,
         "clickDispatched": true,
         "clickAttempts": 1,
@@ -268,7 +268,7 @@
         "primaryAfter": "B-048",
         "renderedMapSymbols": "B-048|primary|diamond",
         "featureControlCount": 2,
-        "url": "http://127.0.0.1:54201/?layer=electricityGap&layers=juyo-gwangsan-wici&layerOpacities=0.78&focusLayer=juyo-gwangsan-wici&primaryLayer=juyo-gwangsan-wici&contextLayers=none&mapSelectors=%7B%22juyo-gwangsan-wici%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222022%22%7D%7D&layerYears=2022&scope=priority&country=VNM&baseOpacity=0.58&element=juyo-gwangsan-wici&year=2022&period=2022#map",
+        "url": "http://127.0.0.1:61261/?layer=electricityGap&layers=juyo-gwangsan-wici&layerOpacities=0.78&focusLayer=juyo-gwangsan-wici&primaryLayer=juyo-gwangsan-wici&contextLayers=none&mapSelectors=%7B%22juyo-gwangsan-wici%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222022%22%7D%7D&layerYears=2022&scope=priority&country=VNM&baseOpacity=0.58&element=juyo-gwangsan-wici&year=2022&period=2022#map",
         "failure": null
       },
       "expected": {
@@ -337,7 +337,7 @@
     "controlFound": true,
     "controlTag": "BUTTON",
     "controlRole": "button",
-    "controlText": "주요 광산주요 광산 위치·광종 분포 확인",
+    "controlText": "주요 광산위치·광종 분포",
     "controlDisabled": false,
     "clickDispatched": true,
     "clickAttempts": 1,
@@ -345,7 +345,7 @@
     "primaryAfter": "B-048",
     "renderedMapSymbols": "B-048|primary|diamond",
     "featureControlCount": 2,
-    "url": "http://127.0.0.1:54201/?layer=electricityGap&layers=juyo-gwangsan-wici&layerOpacities=0.78&focusLayer=juyo-gwangsan-wici&primaryLayer=juyo-gwangsan-wici&contextLayers=none&mapSelectors=%7B%22juyo-gwangsan-wici%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222022%22%7D%7D&layerYears=2022&scope=priority&country=VNM&baseOpacity=0.58&element=juyo-gwangsan-wici&year=2022&period=2022#map",
+    "url": "http://127.0.0.1:61261/?layer=electricityGap&layers=juyo-gwangsan-wici&layerOpacities=0.78&focusLayer=juyo-gwangsan-wici&primaryLayer=juyo-gwangsan-wici&contextLayers=none&mapSelectors=%7B%22juyo-gwangsan-wici%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222022%22%7D%7D&layerYears=2022&scope=priority&country=VNM&baseOpacity=0.58&element=juyo-gwangsan-wici&year=2022&period=2022#map",
     "failure": null
   },
   "contextActivationDiagnostics": {
@@ -354,7 +354,7 @@
     "controlFound": true,
     "controlTag": "BUTTON",
     "controlRole": "button",
-    "controlText": "발전소발전소 입지·설비 분포 비교",
+    "controlText": "발전소입지·발전원·설비용량 분포",
     "controlDisabled": false,
     "clickDispatched": true,
     "clickAttempts": 1,
@@ -362,7 +362,7 @@
     "primaryAfter": "A-023",
     "renderedMapSymbols": "A-023|primary|circle",
     "featureControlCount": 0,
-    "url": "http://127.0.0.1:54201/?layer=electricityGap&layers=baljeonso-wici-yongryang&layerOpacities=0.78&focusLayer=baljeonso-wici-yongryang&primaryLayer=baljeonso-wici-yongryang&contextLayers=none&mapSelectors=%7B%22baljeonso-wici-yongryang%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222026%22%7D%7D&layerYears=2026&scope=priority&country=VNM&baseOpacity=0.58&element=baljeonso-wici-yongryang&year=2026&period=2026#map",
+    "url": "http://127.0.0.1:61261/?layer=electricityGap&layers=baljeonso-wici-yongryang&layerOpacities=0.78&focusLayer=baljeonso-wici-yongryang&primaryLayer=baljeonso-wici-yongryang&contextLayers=none&mapSelectors=%7B%22baljeonso-wici-yongryang%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222026%22%7D%7D&layerYears=2026&scope=priority&country=VNM&baseOpacity=0.58&element=baljeonso-wici-yongryang&year=2026&period=2026#map",
     "failure": null
   },
   "mineTooltipDiagnostics": {

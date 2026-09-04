@@ -388,7 +388,7 @@ function MapComparisonPaneV135({
       </header>
       <div className="cdp-map-compare-pane-v135__selectors">
         <label>
-          <span>측정항목</span>
+          <span>지표</span>
           <select
             disabled={!dataset}
             onChange={(event) => onVariableChange(event.target.value)}
@@ -402,7 +402,7 @@ function MapComparisonPaneV135({
           </select>
         </label>
         <label>
-          <span>기준연도·기간</span>
+          <span>자료연도</span>
           <select
             disabled={!dataset}
             onChange={(event) => onPeriodChange(event.target.value)}

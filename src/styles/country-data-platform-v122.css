@@ -2648,3 +2648,20 @@
     text-align: left;
   }
 }
+
+/* V136 finder progressive loading. The sentinel is a layout hook only; it is
+   never focusable and carries no label, so it stays out of the tab order. */
+.cdp-finder-sentinel-v136 {
+  width: 100%;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+}
+
+.cdp-finder-autoload-v136 {
+  margin: 12px 0 0;
+  color: #5c6b65;
+  font-size: 0.82rem;
+  text-align: center;
+}

@@ -154,7 +154,18 @@
     "audit:release:v135": "node scripts/audit-vietnam-release-v135.mjs",
     "capture:screenshots:v135": "node scripts/capture-vietnam-v135-screenshots.mjs",
     "finalize:v135": "npm run audit:release:v135",
-    "build:temporal-contract:v135": "node scripts/build-public-temporal-contract-v135.mjs"
+    "build:temporal-contract:v135": "node scripts/build-public-temporal-contract-v135.mjs",
+    "audit:map-list-ui:v136": "node scripts/audit-vietnam-map-list-ui-v136.mjs",
+    "audit:public-text:v136": "node scripts/audit-vietnam-public-text-v136.mjs",
+    "audit:duplicate-copy:v136": "node scripts/audit-vietnam-duplicate-copy-v136.mjs",
+    "audit:map-copy:v136": "node scripts/audit-vietnam-map-copy-v136.mjs",
+    "audit:public-controls:v136": "node scripts/audit-vietnam-public-controls-v136.mjs",
+    "audit:release:v136": "node scripts/audit-vietnam-release-v136.mjs",
+    "capture:screenshots:v136": "node scripts/capture-vietnam-v136-screenshots.mjs",
+    "finalize:v136": "npm run audit:release:v136",
+    "audit:finder-scroll:v136": "node scripts/audit-vietnam-finder-scroll-v136.mjs",
+    "audit:human-review:v136": "node scripts/audit-vietnam-human-review-v136.mjs",
+    "audit:workflow:v136": "node scripts/audit-vietnam-workflow-v136.mjs"
   },
   "browserslist": [
     ">0.2%",

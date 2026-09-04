@@ -61,7 +61,7 @@ export default function MapDataGuideV130({
                     <thead>
                       <tr>
                         <th>데이터명</th>
-                        <th>공간 표현</th>
+                        <th>지도 표시</th>
                         <th>기준기간</th>
                         <th>데이터 기능</th>
                         <th>참고사항</th>
@@ -73,7 +73,7 @@ export default function MapDataGuideV130({
                           <th scope="row">
                             <PublicTermTextV134 text={layer.publicShortTitle} />
                           </th>
-                          <td data-label="공간 표현">{representation(layer)}</td>
+                          <td data-label="지도 표시">{representation(layer)}</td>
                           <td data-label="기준기간">
                             {layer.latestYear || layer.sourceYear || "미표기"}
                           </td>
