@@ -171,6 +171,9 @@ export function publicCpiaLabelV126(
 
 export function publicMeasureLabelV126(labelValue: string): string {
   const label = labelValue
+    // A few measures are named after the store they came out of - "원본 레코드
+    // 수". The quantity is real; the word for a row is not one a reader uses.
+    .replace(/레코드/gu, "자료")
     .replace(/^CPIA\s+[A-D]\.\s*/iu, "")
     .replace(/\s*\u00b7\s*베트남(?:\s*[—–-].*)?$/u, "")
     .replace(/\s*[—–]\s*1\(낮음\)~6\(높음\).*$/u, "")
@@ -185,10 +188,45 @@ export function publicDimensionLabelV126(
 ): string {
   const key = keyValue.trim().toLocaleLowerCase("en-US");
   const labels: Record<string, string> = {
+    // Keys the generic renderer offers as selectors. Each is a translation of a
+    // column that exists in the source, not a name invented for it: without
+    // these the selector printed the key itself - "financingType", "dacSectorCode".
+    a64status: "상태",
+    agreementtype: "협정 유형",
+    amountstatus: "금액 구분",
+    amounttype: "금액 유형",
+    capacity: "설비용량",
+    capacityband: "용량 구간",
+    collectionstatus: "자료 상태",
+    commissioningyear: "준공연도",
+    contacttype: "연락 유형",
+    facilitytype: "시설 유형",
+    financingtype: "재원 유형",
+    fueltype: "연료 유형",
+    fueltyperaw: "연료 유형",
+    fund: "기금",
+    fundoraffiliate: "기금·소속기관",
+    gcfprojecttype: "사업 유형",
+    hqcountryiso3: "본부 소재국",
+    investsector: "투자 분야",
+    orgcategory: "기관 구분",
+    orgtype: "기관 유형",
+    recordsourcetype: "출처 유형",
+    recordstatus: "상태",
+    referenceyear: "기준연도",
+    role: "역할",
+    sectors: "부문",
+    targetcountry: "대상국",
+    targetregion: "대상 지역",
+    technologyfield: "기술 분야",
+    type: "유형",
+    typeofinformation: "정보 유형",
+
     category: "분류",
     city: "도시",
     cluster: "부문",
     country: "국가",
+    dacsectorcode: "분야",
     entitytype: "자료 유형",
     gas: "온실가스",
     industry: "산업",
@@ -215,8 +253,19 @@ export function publicDimensionLabelV126(
   if (mapped) return mapped;
 
   const label = publicCopyOrEmptyV126(labelValue);
-  if (label && !/^[a-z][a-z0-9_\s-]*$/iu.test(label)) return label;
-  return label ? label.replace(/[_-]+/g, " ") : "분류";
+  if (label && !isIdentifierLikeV136_2(label)) return label;
+  // The label is still the stored column key - "dacSectorCode" reached a
+  // selector on the public screen this way. A reader cannot use a key, and
+  // prettifying it only produces "dac Sector Code", so name the role instead.
+  return "분류";
+}
+
+/**
+ * True for text that is an ASCII identifier rather than a name: camelCase,
+ * snake_case or a bare lowercase token. Korean labels never match.
+ */
+function isIdentifierLikeV136_2(value: string): boolean {
+  return /^[A-Za-z][A-Za-z0-9]*(?:[_-][A-Za-z0-9]+)*$/u.test(value.trim());
 }
 
 const PUBLIC_DIMENSION_VALUE_LABELS_V134: Record<string, string> = {
@@ -233,6 +282,109 @@ const PUBLIC_DIMENSION_VALUE_LABELS_V134: Record<string, string> = {
   "Verification approval requested": "검증 승인 요청",
   Withdrawn: "철회",
 };
+
+/**
+ * The dimensions a KPI support line may name.
+ *
+ * The line used to join every dimension the winning row happened to be keyed
+ * by, which on the investment portfolio meant "1 · 2 · 3 … 38" - the sector
+ * codes, printed raw because no label exists for them. A dimension earns its
+ * place only if it resolves to something a reader recognises, and two of them
+ * is already as much context as a three-line card can carry.
+ */
+export function publicDimensionContextV136_2(
+  dimensionLabels: Record<string, string>,
+  limit = 2
+): string[] {
+  const seen = new Set<string>();
+  const kept: string[] = [];
+  for (const [key, rawValue] of Object.entries(dimensionLabels || {})) {
+    if (["year", "period"].includes(key)) continue;
+    const value = publicDimensionValueV134(key, String(rawValue ?? ""));
+    if (!value) continue;
+    // A bare number is a category code, and so is a list of them: the sector
+    // dimension arrives as one value reading "1 · 2 · 3 … 38". No label exists
+    // for those codes, and inventing one would misreport the data.
+    if (isNumericCodeListV136_2(value)) continue;
+    if (isIdentifierLikeV136_2(value)) continue;
+    if (value === "분류 미기재") continue;
+    // How the figure was totalled belongs with the source notes, not in the
+    // three lines under it.
+    if (AGGREGATION_BASIS_PATTERN_V136_2.test(value)) continue;
+    if (seen.has(value)) continue;
+    seen.add(value);
+    kept.push(value);
+    if (kept.length >= limit) break;
+  }
+  return kept;
+}
+
+/**
+ * True when the value is a number, or a separator-joined run of numbers.
+ *
+ * Category codes reach the renderer either one per dimension or already joined
+ * into a single value, and both forms read the same to a person: a sequence of
+ * bare integers standing where a name should be.
+ */
+function isNumericCodeListV136_2(value: string): boolean {
+  const parts = value
+    .split(/[·,/|;、]+/u)
+    .map((part) => part.trim())
+    .filter(Boolean);
+  if (parts.length === 0) return false;
+  return parts.every((part) => /^-?\d+(?:\.\d+)?$/u.test(part));
+}
+
+/** Phrases that describe how a figure was computed rather than what it is. */
+const AGGREGATION_BASIS_PATTERN_V136_2 =
+  /단순\s*합|합계|총계|집계|누계|가중\s*평균|평균값 산출/u;
+
+/**
+ * The basis on which a total was reached, for the source panel.
+ *
+ * The investment portfolio's headline used to read "… 투자 약정액 합계 · 기후
+ * 태깅 프로젝트 단순합 · 1 · 2 · 3 …". The first part is a real statement about
+ * what was counted and belongs with the other source notes; the rest was never
+ * fit to show.
+ */
+export function publicAggregationBasisV136_2(
+  dimensionLabelSets: ReadonlyArray<Record<string, string>>
+): string[] {
+  const seen = new Set<string>();
+  for (const labels of dimensionLabelSets) {
+    for (const [key, rawValue] of Object.entries(labels || {})) {
+      if (["year", "period"].includes(key)) continue;
+      const value = publicTextV126(String(rawValue ?? ""));
+      if (!value || !AGGREGATION_BASIS_PATTERN_V136_2.test(value)) continue;
+      if (isNumericCodeListV136_2(value)) continue;
+      // "…단순합" names the arithmetic we performed, which explains nothing a
+      // reader needs. What was counted does belong here.
+      if (IMPLEMENTATION_ONLY_BASIS_V136_2.test(value)) continue;
+      seen.add(value);
+    }
+  }
+  return [...seen].slice(0, 3);
+}
+
+/**
+ * A metric label with the trailing methodology clause removed.
+ *
+ * The portfolio metrics are labelled "투자 약정액 합계 - 기후 태깅 프로젝트
+ * 단순합". What was counted is worth saying; that we added the rows up is not,
+ * and it was the widest thing on the card.
+ */
+export function publicMetricLabelV136_2(labelValue: string): string {
+  const label = publicMeasureLabelV126(String(labelValue ?? ""));
+  const parts = label.split(/\s*[—–]\s*|\s+-\s+/u);
+  const kept = parts.filter(
+    (part, index) => index === 0 || !IMPLEMENTATION_ONLY_BASIS_V136_2.test(part)
+  );
+  return kept.join(" — ").trim() || label;
+}
+
+/** Wording that describes the computation itself rather than its subject. */
+const IMPLEMENTATION_ONLY_BASIS_V136_2 =
+  /단순\s*합|집계\s*방식|가중\s*평균\s*미적용|합계\s*산출/u;
 
 /** Converts stored dimension codes into stable public selector/chart labels. */
 export function publicDimensionValueV134(
@@ -263,7 +415,8 @@ export function publicDimensionValueV134(
     }
   }
 
-  return publicTextV126(value) || "분류 미기재";
+  // A stored value may still name a row rather than a thing ("원본 레코드 수").
+  return publicTextV126(value)?.replace(/레코드/gu, "자료") || "분류 미기재";
 }
 
 export function publicCopyOrEmptyV126(value: unknown): string {

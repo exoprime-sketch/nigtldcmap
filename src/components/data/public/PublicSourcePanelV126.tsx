@@ -4,6 +4,7 @@ import type {
   VietnamObservationV124,
 } from "../../../data/vietnam/vietnamTypesV124";
 import {
+  publicSourceOrganizationV136_1,
   publicSourceUrlV126,
   publicTextV126,
 } from "../../../data/visualization/publicFieldPolicyV126";
@@ -17,6 +18,8 @@ interface Props {
   observations: VietnamObservationV124[];
   entities: VietnamEntityV124[];
   spatialUnit?: string;
+  /** What the headline figure counted, moved here out of the KPI subtitle. */
+  aggregationBasis?: string[];
 }
 
 export default function PublicSourcePanelV126({
@@ -24,12 +27,18 @@ export default function PublicSourcePanelV126({
   observations,
   entities,
   spatialUnit,
+  aggregationBasis = [],
 }: Props) {
-  const organizations = uniquePublicValuesV126([
-    ...indicators.map((item) => item.sourceOrg),
-    ...observations.map((item) => item.provenance.sourceOrg),
-    ...entities.map((item) => item.provenance.sourceOrg),
-  ]);
+  // Organisation names arrive with the compiler's note about which sheet column
+  // varies per row - "(레코드별 상이 - attr_19 참조)". The names are real; the
+  // notes were never meant for a reader.
+  const organizations = uniquePublicValuesV126(
+    [
+      ...indicators.map((item) => item.sourceOrg),
+      ...observations.map((item) => item.provenance.sourceOrg),
+      ...entities.map((item) => item.provenance.sourceOrg),
+    ].map((value) => publicSourceOrganizationV136_1(value))
+  );
   const urls = Array.from(
     new Set(
       [
@@ -59,7 +68,9 @@ export default function PublicSourcePanelV126({
   ]);
   const licenses = uniquePublicValuesV126([
     ...indicators.map((item) => item.licenseCode),
-    ...indicators.map((item) => item.attributionText),
+    // Attribution lines carry the same per-row sheet note as the organisation
+    // names - "Source: 각 기관 공식 웹사이트 및 공개 보도 (레코드별 상이)".
+    ...indicators.map((item) => publicSourceOrganizationV136_1(item.attributionText)),
   ]);
 
   return (
@@ -99,6 +110,14 @@ export default function PublicSourcePanelV126({
           <div>
             <dt>자료 범위</dt>
             <dd><PublicTermTextV134 text={publicSpatialUnitLabelV135(spatialUnit)} /></dd>
+          </div>
+        )}
+        {aggregationBasis.length > 0 && (
+          <div>
+            <dt>산정기준</dt>
+            <dd>
+              <PublicTermTextV134 text={aggregationBasis.join(" · ")} />
+            </dd>
           </div>
         )}
         {licenses.length > 0 && (

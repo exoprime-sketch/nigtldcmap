@@ -249,12 +249,12 @@ export default function OccupationEmploymentWagePreviewV125({
           <span className="e012v125__eyebrow">고용·임금 분석</span>
           <h3 id="e012v125-title">직군별 종사자 수와 월평균 임금</h3>
           <p>
-            측정항목, 직군, 성별과 기준연도를 분리해 원자료의 분류를 그대로
+            항목, 직군, 성별과 기준연도를 분리해 자료의 분류를 그대로
             확인합니다.
           </p>
         </div>
         <span className="e012v125__record-count">
-          원자료 {observations.length.toLocaleString("ko-KR")}건
+          자료 {observations.length.toLocaleString("ko-KR")}건
         </span>
       </header>
 
@@ -275,7 +275,7 @@ export default function OccupationEmploymentWagePreviewV125({
           data-testid="public-selector"
         >
           <label htmlFor={measureId}>
-            측정항목
+            항목
             <select
               id={measureId}
               data-testid="e012-measure-select"
@@ -285,7 +285,7 @@ export default function OccupationEmploymentWagePreviewV125({
                   measure: event.target.value as E012OccupationMeasureKeyV125,
                 })
               }
-              aria-label="E-012 측정항목 선택"
+              aria-label="E-012 항목 선택"
             >
               {E012_MEASURE_OPTIONS_V125.map((option) => (
                 <option key={option.key} value={option.key}>
@@ -527,7 +527,7 @@ function RankedOccupationBars({
       })}
       {!invalidUnits && numericRows.length === 0 && (
         <p className="e012v125__empty-reason">
-          선택한 측정항목·성별·연도 조합의 직군별 값이 원자료에 없습니다.
+          선택한 항목·성별·연도 조합의 직군별 값이 원자료에 없습니다.
         </p>
       )}
       <details className="e012v125__table-fallback">
@@ -590,7 +590,7 @@ function EmploymentWageScatter({
     >
       <div className="e012v125__panel-heading">
         <div>
-          <span className="e012v125__eyebrow">두 측정항목의 관계</span>
+          <span className="e012v125__eyebrow">두 항목의 관계</span>
           <h4 id="e012v125-scatter-title">종사자 수–임금 관계</h4>
         </div>
         <span>
@@ -599,7 +599,7 @@ function EmploymentWageScatter({
       </div>
       <p className="e012v125__chart-note" role="note">
         X축 종사자 수는 전체 취업자, Y축 임금은 임금근로자 기준이므로 두
-        측정항목의 모집단이 다릅니다.
+        항목의 모집단이 다릅니다.
       </p>
 
       {invalidUnits ? (
@@ -866,7 +866,7 @@ function RawObservationTable({
 }) {
   return (
     <details className="e012v125__raw" data-testid="public-raw-table">
-      <summary>원자료 보기 · {observations.length.toLocaleString("ko-KR")}건</summary>
+      <summary>상세 데이터 · {observations.length.toLocaleString("ko-KR")}건</summary>
       <section
         className="e012v125__panel"
         data-testid="e012-raw-table"
@@ -874,13 +874,13 @@ function RawObservationTable({
       >
         <div className="e012v125__panel-heading">
           <div>
-            <span className="e012v125__eyebrow">상세 레코드</span>
+            <span className="e012v125__eyebrow">상세 데이터</span>
             <h4 id="e012v125-table-title">직군·성별 측정값</h4>
           </div>
           <span>{observations.length.toLocaleString("ko-KR")}건</span>
         </div>
         <p className="e012v125__table-description" id="e012v125-table-description">
-          직군, 성별, 측정항목과 값을 공개 레코드 단위로 표시합니다. 결측값은
+          직군, 성별, 항목과 값을 한 건씩 표시합니다. 결측값은
           0으로 바꾸지 않습니다.
         </p>
         <div className="e012v125__table-wrap">
@@ -889,7 +889,7 @@ function RawObservationTable({
               <tr>
                 <th scope="col">직군</th>
                 <th scope="col">성별</th>
-                <th scope="col">측정항목</th>
+                <th scope="col">항목</th>
                 <th scope="col">값</th>
                 <th scope="col">단위</th>
                 <th scope="col">연도</th>

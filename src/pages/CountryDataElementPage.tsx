@@ -614,7 +614,7 @@ function emptyStateCopyV124(item: CountryCatalogItemV122 | null): {
     case "schema-only":
       return {
         title: "입력 양식만 제공된 데이터입니다",
-        description: "원자료에는 입력 항목만 있고 실제 값은 아직 없습니다",
+        description: "공개 자료에는 입력 항목만 있고 실제 값은 아직 없습니다",
       };
     case "data-entry-planned":
       return {
@@ -623,18 +623,18 @@ function emptyStateCopyV124(item: CountryCatalogItemV122 | null): {
       };
     case "not-collected":
       return {
-        title: "원자료가 아직 수집되지 않았습니다",
-        description: "공식 원자료를 확보하고 검증한 뒤 데이터를 제공합니다",
+        title: "자료가 아직 수집되지 않았습니다",
+        description: "공식 자료를 확보하고 확인한 뒤 데이터를 제공합니다",
       };
     case "quarantined":
       return {
         title: "형식 검토가 필요한 데이터입니다",
-        description: "원자료 형식을 확인한 뒤 공개 가능한 데이터를 제공합니다",
+        description: "자료 형식을 확인한 뒤 공개 가능한 데이터를 제공합니다",
       };
     default:
       return {
         title: "표시할 자료가 없습니다",
-        description: "출처·이용조건에서 공식 원자료를 확인할 수 있습니다",
+        description: "출처·이용조건에서 공식 원문을 확인할 수 있습니다",
       };
   }
 }

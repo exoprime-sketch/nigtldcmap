@@ -210,7 +210,7 @@ export default function ResearchPatentAnalysisV132({
         />
         <BreakdownV132
           title="협력구조"
-          description="원자료의 공저·공동출원 구분을 공개 목록 단위로 집계합니다."
+          description="자료의 공저·공동출원 구분을 공개 목록 단위로 집계합니다."
           rows={collaborationBreakdown}
           testId="e008-collaboration"
         />

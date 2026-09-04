@@ -176,7 +176,7 @@ export default function PublicEntityCardGridV131({
       {entities.length > shown.length && (
         <p className="pec131-overflow-note">
           대표 {shown.length.toLocaleString("ko-KR")}건을 표시합니다. 전체{" "}
-          {entities.length.toLocaleString("ko-KR")}건은 아래 원자료 보기에서 확인할 수
+          {entities.length.toLocaleString("ko-KR")}건은 아래 상세 데이터에서 확인할 수
           있습니다.
         </p>
       )}

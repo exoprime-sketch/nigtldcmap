@@ -4,6 +4,7 @@ import { publicTextV126 } from "../../../data/visualization/publicFieldPolicyV12
 import { reviewedEntityAttributesV132 } from "../../../data/visualization/publicEntityFieldPolicyV132";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 
+import { publicScaledNumberV136_2 } from "../../../utils/publicNumberScaleV136_2";
 import "./public-portfolio-summary-v132.css";
 
 interface Props {
@@ -124,14 +125,18 @@ export default function PublicPortfolioSummaryV132({
       <header className="pps132-heading">
         <span>포트폴리오 핵심현황</span>
         <h4>사업·재원 분포</h4>
-        <p>공개된 개별 레코드를 집계하며, 통화가 확인된 금액만 통화별로 합산합니다.</p>
+        <p>공개된 사업을 집계하며, 통화가 확인된 금액만 통화별로 합산합니다.</p>
       </header>
       <div className="pps132-kpis">
-        <article data-portfolio-kpi="record-count"><span>공개 레코드</span><strong>{entities.length.toLocaleString("ko-KR")}</strong><small>건</small></article>
+        <article data-portfolio-kpi="record-count"><span>총 사업 수</span><strong>{entities.length.toLocaleString("ko-KR")}</strong><small>건</small></article>
         {analysis.amounts.map((amount) => (
           <article data-portfolio-kpi="funding-total" key={amount.currency}>
             <span>확인 금액 합계</span>
-            <strong>{formatAmountV132(amount.value)}</strong>
+            <strong
+              title={`${publicScaledNumberV136_2(amount.value, amount.currency).exact} ${amount.currency}`}
+            >
+              {publicScaledNumberV136_2(amount.value, amount.currency).display}
+            </strong>
             <small><PublicTermTextV134 text={`${amount.currency} · ${amount.count.toLocaleString("ko-KR")}건`} /></small>
           </article>
         ))}
@@ -142,7 +147,7 @@ export default function PublicPortfolioSummaryV132({
       <div className="pps132-distributions">
         {analysis.years.length > 0 && (
           <DistributionV132
-            title="연도별 공개 레코드"
+            title="연도별 사업 수"
             rows={analysis.years}
             testId="portfolio-year-trend-v132"
           />
@@ -275,13 +280,6 @@ function mapToRowsV132(values: Map<string, number>, chronological: boolean): Cou
       ? Number(left.label) - Number(right.label)
       : right.value - left.value || left.label.localeCompare(right.label, "ko")
   );
-}
-
-function formatAmountV132(value: number): string {
-  return new Intl.NumberFormat("ko-KR", {
-    notation: value >= 1_000_000_000 ? "compact" : "standard",
-    maximumFractionDigits: 2,
-  }).format(value);
 }
 
 function DistributionV132({

@@ -163,7 +163,7 @@ const TECHNICAL_FIELD_KEYS_NORMALIZED_V126 = new Set(
 );
 
 const MISSING_REASON_LABELS_V126: Record<string, string> = {
-  M01: "원자료에서 값을 제공하지 않음",
+  M01: "출처에서 값을 제공하지 않음",
   M02: "원천 기관이 공개하지 않음",
   M03: "해당 제도·현상이 존재하지 않음",
   M04: "유료 자료로 공개 범위에서 제외",
