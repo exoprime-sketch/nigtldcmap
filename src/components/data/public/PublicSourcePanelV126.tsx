@@ -73,12 +73,12 @@ export default function PublicSourcePanelV126({
         data-testid="public-source-panel"
       >
         <div className="pav126-section-heading">
-          <span>출처·기준연도</span>
-          <h3>공식 자료와 해석 기준</h3>
+          <span>자료정보</span>
+          <h3>출처와 이용조건</h3>
         </div>
         <dl>
         <div>
-          <dt>자료 제공기관</dt>
+          <dt>제공기관</dt>
           <dd>
             <PublicTermTextV134
               text={organizations.join(" · ") || "공개 자료에 기관명이 명시되지 않음"}
@@ -86,7 +86,7 @@ export default function PublicSourcePanelV126({
           </dd>
         </div>
         <div>
-          <dt>기준연도·기간</dt>
+          <dt>자료기간</dt>
           <dd>{summarizeYearsV126(years)}</dd>
         </div>
         <div>
@@ -103,7 +103,7 @@ export default function PublicSourcePanelV126({
         )}
         {licenses.length > 0 && (
           <div>
-            <dt>이용조건·출처표시</dt>
+            <dt>이용조건</dt>
             <dd>
               <PublicTermTextV134 text={licenses.join(" · ")} />
             </dd>

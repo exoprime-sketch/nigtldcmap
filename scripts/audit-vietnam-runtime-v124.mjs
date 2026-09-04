@@ -417,7 +417,7 @@ const uiContractTerms = {
   unit: /(?:unit|단위)/u,
   source: /(?:sourceOrganizations|출처)/u,
   sourceYear: /(?:sourceYear|latestYear|기준연도)/u,
-  coverage: /(?:spatialCoverage|coverageNote|공간 커버리지)/u,
+  coverage: /(?:spatialCoverage|coverageNote|공간 커버리지|지도 표시 범위)/u,
   missing: /(?:missingRegions|missingProvince|결측)/u,
   accuracy: /(?:accuracyNotice|정확도)/u,
   detail: /(?:detailUrl|onOpenElement|상세)/u,

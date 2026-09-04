@@ -48,7 +48,7 @@ const ELEMENT_COPY_V126: Record<string, PublicElementCopyV126> = {
   },
   "B-034": {
     title: "산림 탄소지표",
-    description: "탄소 측정항목을 선택해 성·시별 값과 지역 차이를 비교할 수 있습니다.",
+    description: "탄소 항목을 선택해 성·시별 값과 지역 차이를 비교할 수 있습니다.",
   },
   "C-016": {
     title: "재생에너지 지역계획",
@@ -176,7 +176,7 @@ export function publicMeasureLabelV126(labelValue: string): string {
     .replace(/\s*[—–]\s*1\(낮음\)~6\(높음\).*$/u, "")
     .replace(/\s+클러스터\s*평균$/u, "")
     .trim();
-  return label || "측정항목";
+  return label || "항목";
 }
 
 export function publicDimensionLabelV126(
@@ -192,7 +192,7 @@ export function publicDimensionLabelV126(
     entitytype: "자료 유형",
     gas: "온실가스",
     industry: "산업",
-    measure: "측정항목",
+    measure: "항목",
     occupation: "직군",
     organization: "기관",
     organizationtype: "기관 유형",

@@ -28,6 +28,7 @@ import {
   publicDatasetTitleV122,
   removeInternalSearchTokensV122,
 } from "./publicLabelsV122";
+import { publicSourceOrganizationV136_1 } from "../visualization/publicFieldPolicyV126";
 import { publicAssetUrlV128 } from "../../utils/publicAssetUrlV128";
 import { publicDatasetDescriptionV135 } from "../visualization/publicDatasetDescriptionV135";
 
@@ -72,7 +73,12 @@ function toCatalogItem(
     groupCode: item.groupCode,
     groupLabel: item.groupLabel,
     latestYear: item.latestYear,
-    sourceOrganizations: item.sourceOrganizations,
+    // Some organisation names arrive with the compiler's own note about which
+    // sheet column varies per row. That note is not a source, and it reached
+    // the finder's source filter as a selectable value.
+    sourceOrganizations: item.sourceOrganizations
+      .map((organization) => publicSourceOrganizationV136_1(organization))
+      .filter((organization): organization is string => organization !== null),
     sourceUrls: item.sourceUrls,
     technologyIds: item.technologyIds,
     publicStatus: item.publicStatus,

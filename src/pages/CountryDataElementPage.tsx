@@ -921,7 +921,7 @@ export default function CountryDataElementPage({
                     data-testid="public-download-link"
                     onClick={() => onOpenDownload(elementId, provider.countryIso3, null)}
                   >
-                    전체 공개 레코드 다운로드
+                    전체 데이터 다운로드
                   </button>
                 ) : (
                   <div data-download-status={downloadStatus?.key}>

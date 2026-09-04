@@ -359,7 +359,7 @@ export function resolveMapSelectorBindingV125(
     if (requestsLineSelector) {
       if (selection.measure && selection.measure !== A024_LINE_MEASURE_V125) {
         return unsupportedResolutionV125(
-          "선택한 측정항목은 송전망 선 geometry와 연결되지 않습니다."
+          "선택한 항목은 송전망 선 geometry와 연결되지 않습니다."
         );
       }
       if (voltage && !["all", "110", "220", "500"].includes(voltage)) {
@@ -550,7 +550,7 @@ export function mapVariableSelectorLabelV125(elementId: string): string {
   if (elementId === "A-024") return "전압";
   if (elementId === "B-034") return "탄소지표";
   if (elementId === "C-016") return "기술";
-  return "측정항목";
+  return "항목";
 }
 
 export function mapPeriodSelectorLabelV125(elementId: string): string {
@@ -675,7 +675,7 @@ function unmatchedBindingReasonV125(
       ", "
     )})는 적용하지 않고 지도 기본값을 표시합니다.`;
   }
-  return "현재 측정항목·분류 조합은 검증된 공간 selector와 일치하지 않아 지도 기본값을 표시합니다.";
+  return "현재 항목·분류 조합은 지도에 연결된 공간자료와 맞지 않아 기본 화면을 표시합니다.";
 }
 
 function unsupportedResolutionV125(reason: string): MapSelectorResolutionV125 {

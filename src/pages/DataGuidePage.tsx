@@ -79,8 +79,8 @@ export default function DataGuidePage({ onNavigate }: DataGuidePageProps) {
         <span>현재 제공 국가 · 베트남</span>
         <h1>데이터 이용안내</h1>
         <p>
-          플랫폼에서 제공하는 데이터의 범위, 상태, 기준기간, 이용조건과
-          지도자료의 해석 방법을 안내합니다.
+          데이터 범위, 자료기간, 출처, 다운로드 및 지도 이용 시 참고사항을
+          안내합니다.
         </p>
       </header>
 
@@ -92,7 +92,7 @@ export default function DataGuidePage({ onNavigate }: DataGuidePageProps) {
           데이터 상태
         </button>
         <button type="button" onClick={() => scrollToSection("guide-period")}>
-          기준기간
+          자료기간
         </button>
         <button type="button" onClick={() => scrollToSection("guide-missing")}>
           결측값
@@ -101,7 +101,7 @@ export default function DataGuidePage({ onNavigate }: DataGuidePageProps) {
           다운로드
         </button>
         <button type="button" onClick={() => scrollToSection("guide-map")}>
-          지도자료
+          지도 이용
         </button>
         <button
           type="button"
@@ -133,22 +133,17 @@ export default function DataGuidePage({ onNavigate }: DataGuidePageProps) {
               <dd>일부 기간이나 분류에 값이 있으며, 범위의 한계를 함께 표시합니다.</dd>
             </div>
             <div>
-              <dt>입력 양식</dt>
-              <dd>수집 구조만 마련되어 있고 실제 입력값은 아직 없습니다.</dd>
-            </div>
-            <div>
-              <dt>입력 예정</dt>
-              <dd>향후 입력 대상으로 정해진 데이터입니다.</dd>
-            </div>
-            <div>
-              <dt>원자료 미수집</dt>
-              <dd>현재 공개 화면에 제공할 원자료가 확보되지 않았습니다.</dd>
+              <dt>값이 없는 데이터</dt>
+              <dd>
+                입력 양식, 입력 예정, 원자료 미수집으로 표시된 데이터는 현재
+                화면에서 확인할 값이 없습니다.
+              </dd>
             </div>
           </dl>
         </section>
 
         <section id="guide-period">
-          <h2>기준연도·기간의 의미</h2>
+          <h2>자료기간의 의미</h2>
           <p>
             기준연도는 해당 값이나 목록이 설명하는 시점을 뜻합니다. 여러 해의
             값이 있는 데이터는 관측기간을 표시하며, 출처 확인일과 값의 기준연도는
@@ -177,14 +172,14 @@ export default function DataGuidePage({ onNavigate }: DataGuidePageProps) {
         <section>
           <h2>출처·이용조건</h2>
           <p>
-            각 상세화면에서 자료 제공기관, 공식 원문, 출처표시와 이용조건을
+            각 상세화면에서 제공기관, 공식 원문, 출처표시와 이용조건을
             확인할 수 있습니다. 데이터를 재사용할 때에는 해당 항목에 표시된
             출처와 이용조건을 함께 확인해 주세요.
           </p>
         </section>
 
         <section id="guide-map">
-          <h2>지도자료의 정확도</h2>
+          <h2>지도 이용 시 참고사항</h2>
           <p>
             지역별 자료는 개편 전 베트남 63개 성·시 경계를 기준으로 연결합니다.
             결측 지역을 0으로 표시하지 않습니다. 송전망 위치는 국가 단위 분포
@@ -193,10 +188,9 @@ export default function DataGuidePage({ onNavigate }: DataGuidePageProps) {
         </section>
 
         <section>
-          <h2>데이터 릴리스</h2>
+          <h2>최근 업데이트</h2>
           <p>
-            현재 공개 데이터 릴리스 기준일은 <strong>{releaseDate}</strong>입니다.
-            이후 보완 자료는 검증과 공개 수용검사를 거쳐 반영합니다.
+            현재 공개된 데이터의 기준일은 <strong>{releaseDate}</strong>입니다.
           </p>
         </section>
 

@@ -2181,7 +2181,7 @@ export default function RealMapExplorerPage({
             })
           : Promise.reject(
               new Error(
-                layer.disabledReason || "이 레이어의 공간자료 경로가 없습니다"
+                layer.disabledReason || "이 데이터는 지도에 표시할 위치자료가 없습니다"
               )
             )
         : loadCountryElementEntitiesV122(countryIso3, elementId).then(
@@ -2206,7 +2206,7 @@ export default function RealMapExplorerPage({
             ...current,
             [elementId]: publicCountryDataErrorMessageV122(
               reason,
-              "선택한 데이터 레이어를 불러오지 못했습니다"
+              "선택한 지도 데이터를 불러오지 못했습니다"
             ),
           }));
         })
@@ -3669,7 +3669,7 @@ export default function RealMapExplorerPage({
       : focusedLayer.elementId === "A-023"
       ? "발전소 위치 1,889개"
       : focusedSeriesCoverage
-      ? `${focusedSeriesCoverage.matchedCount}/63개 성·시 값 보유`
+      ? `63개 성·시 중 ${focusedSeriesCoverage.matchedCount}개에 값 있음`
       : publicMapCoverageTextV126(focusedLayer)
     : "";
   const focusedMissingReason = focusedLayer
@@ -4052,7 +4052,7 @@ export default function RealMapExplorerPage({
       : selectedOwningLayer.elementId === "A-023"
       ? "발전소 위치 1,889개"
       : selectedOwningSeriesCoverage
-      ? `${selectedOwningSeriesCoverage.matchedCount}/63개 성·시 값 보유`
+      ? `63개 성·시 중 ${selectedOwningSeriesCoverage.matchedCount}개에 값 있음`
       : publicMapCoverageTextV126(selectedOwningLayer)
     : "";
   const selectedFeatureRoleV129: PublicMapLayerRoleV129 | null =
@@ -4519,7 +4519,7 @@ export default function RealMapExplorerPage({
     setSelectedPresetId(null);
     setOverlapChoicesV133([]);
     setLastEnabledContextIdV133(null);
-    setRoleNotice("분석 데이터를 지웠습니다. 프리셋을 선택해 시작하세요.");
+    setRoleNotice("분석 데이터를 지웠습니다. 추천 분석을 선택해 시작하세요.");
   }
 
   function applyFinanceTypeV133(type: "adaptation" | "carbon") {
@@ -4828,8 +4828,8 @@ export default function RealMapExplorerPage({
             <h2 id="map-preset-title">추천 분석</h2>
             {!primaryLayerId && (
               <p className="cdp-map-preset-guide" role="note">
-                배경지도와 63개 성·시 경계가 준비됐습니다. 아래
-                프리셋을 선택하거나 데이터 카드에서 분석을 시작하세요.
+                배경지도와 63개 성·시 경계가 준비됐습니다. 아래 추천 분석을
+                선택하거나 지도 데이터에서 직접 고르세요.
               </p>
             )}
             <div className="cdp-map-preset-scroll">
@@ -5265,7 +5265,7 @@ export default function RealMapExplorerPage({
               />
               <dl className="cdp-map-layer-meta">
                 <div>
-                  <dt>측정항목</dt>
+                  <dt>항목</dt>
                   <dd>
                     <PublicTermTextV134
                       text={
@@ -5290,7 +5290,7 @@ export default function RealMapExplorerPage({
                   </dd>
                 </div>
                 <div>
-                  <dt>공간 커버리지</dt>
+                  <dt>지도 표시 범위</dt>
                   <dd data-testid="map-primary-coverage">
                     <PublicTermTextV134 text={focusedCoverage} />
                   </dd>
@@ -5312,7 +5312,7 @@ export default function RealMapExplorerPage({
               </dl>
               {focusedLayer.elementId === "D-008" && (
                 <p data-testid="d008-coverage-warning" role="note">
-                  값 보유 3/63개 성·시 · 미자료 60개 성·시는
+                  63개 성·시 중 3개에 값이 있으며, 값이 없는 60개 성·시는
                   투명하게 표시하며 0으로 대체하지 않습니다.
                 </p>
               )}
@@ -6318,7 +6318,7 @@ export default function RealMapExplorerPage({
               </div>
               <dl className="cdp-map-legend__facts">
                 <div>
-                  <dt>측정항목</dt>
+                  <dt>항목</dt>
                   <dd>
                     <PublicTermTextV134
                       text={
@@ -6347,7 +6347,7 @@ export default function RealMapExplorerPage({
                   <dd>{focusedSelector?.period || focusedLayer.sourceYear || "미표기"}</dd>
                 </div>
                 <div>
-                  <dt>공간 커버리지</dt>
+                  <dt>지도 표시 범위</dt>
                   <dd>{focusedCoverage}</dd>
                 </div>
               </dl>
@@ -6456,7 +6456,7 @@ export default function RealMapExplorerPage({
                     </span>
                   </div>
                   <p>
-                    값 보유 {focusedAnalysisV126.dataRegionCount}개 · 결측 {focusedAnalysisV126.missingRegionCount}개
+                    값 있음 {focusedAnalysisV126.dataRegionCount}개 · 결측 {focusedAnalysisV126.missingRegionCount}개
                   </p>
                 </div>
               ) : (
@@ -6523,22 +6523,30 @@ export default function RealMapExplorerPage({
                 <div className="cdp-evidence-grid">
                   <Evidence label="데이터명" value={focusedPublicCopy?.titleKo || ""} />
                   <Evidence
-                    label="측정항목"
+                    label="항목"
                     value={
                       focusedVariablePresentationV129?.label ||
                       focusedSemantic?.measureLabel ||
                       focusedLayer.legend.title
                     }
                   />
-                  <Evidence
-                    label="선택 변수"
-                    value={
+                  {/* Both rows fall back to the same presentation label, so
+                      whenever one is set they printed the same string twice
+                      under two headings. The selected variable is only worth a
+                      row of its own when it says something the item did not. */}
+                  {(() => {
+                    const item =
+                      focusedVariablePresentationV129?.label ||
+                      focusedSemantic?.measureLabel ||
+                      focusedLayer.legend.title;
+                    const variable =
                       focusedVariablePresentationV129?.label ||
                       focusedSemantic?.indicatorLabel ||
                       focusedVariable?.label ||
-                      ""
-                    }
-                  />
+                      "";
+                    if (!variable || variable === item) return null;
+                    return <Evidence label="선택 변수" value={variable} />;
+                  })()}
                   <Evidence label="자료연도" value={focusedSelector.period} />
                   <Evidence
                     label="단위"
@@ -6561,7 +6569,7 @@ export default function RealMapExplorerPage({
                       value={focusedVariablePresentationV129.aggregationNotice}
                     />
                   )}
-                  <Evidence label="공간 커버리지" value={focusedCoverage} />
+                  <Evidence label="지도 표시 범위" value={focusedCoverage} />
                 </div>
               </section>
 
@@ -6771,7 +6779,7 @@ export default function RealMapExplorerPage({
                         )}
                       />
                       <Evidence
-                        label="측정항목"
+                        label="항목"
                         value={
                           selectedOwningVariablePresentationV129?.label ||
                           selectedSpatial.variableLabel ||
@@ -6907,16 +6915,16 @@ export default function RealMapExplorerPage({
                         )}
                       />
                       <Evidence
-                        label="자료 커버리지"
+                        label="지도 표시 범위"
                         value={selectedOwningCoverage}
                       />
                       <Evidence
-                        label="결측 여부"
+                        label="값 제공 여부"
                         value={
                           selectedSpatial.value === null ||
                           selectedSpatial.value === undefined
                             ? `원천 미제공 · ${selectedOwningMissingReason}`
-                            : "값 보유"
+                            : "값 있음"
                         }
                       />
                     </div>
@@ -7034,7 +7042,7 @@ export default function RealMapExplorerPage({
                       ) : (
                         <>
                           <Evidence
-                            label="측정항목"
+                            label="항목"
                             value={
                               selectedOwningVariablePresentationV129?.label ||
                               selectedOwningSemantic?.measureLabel ||
@@ -7100,11 +7108,11 @@ export default function RealMapExplorerPage({
                         )}
                       />
                       <Evidence
-                        label="자료 커버리지"
+                        label="지도 표시 범위"
                         value={selectedOwningCoverage}
                       />
                       <Evidence
-                        label="결측 여부"
+                        label="값 제공 여부"
                         value={(() => {
                           const missingLabels = selectedLayer.tooltipFields
                             .filter((field) => field !== "name")
@@ -7123,7 +7131,7 @@ export default function RealMapExplorerPage({
                             .map((field) => fieldLabelV121(field));
                           return missingLabels.length > 0
                             ? `원천 미제공: ${missingLabels.join(" · ")}`
-                            : "표시 항목 값 보유";
+                            : "표시 항목 모두 값 있음";
                         })()}
                       />
                     </div>
@@ -7172,7 +7180,7 @@ export default function RealMapExplorerPage({
           ) : (
             <div className="cdp-evidence-empty">
               <h3>분석을 시작하세요</h3>
-              <p>프리셋을 선택하면 전국 요약과 상세정보가 여기에 표시됩니다.</p>
+              <p>추천 분석이나 지도 데이터를 선택하면 전국 요약과 상세정보가 여기에 표시됩니다.</p>
             </div>
           )}
         </aside>

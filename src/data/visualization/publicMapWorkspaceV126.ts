@@ -1,5 +1,8 @@
 import type { VietnamMapRendererV124 } from "../vietnam/vietnamTypesV124";
-import { publicTextV126 } from "./publicFieldPolicyV126";
+import {
+  publicNoticeWordingV136_1,
+  publicTextV126,
+} from "./publicFieldPolicyV126";
 
 export const PUBLIC_MAP_WORKSPACE_LIMITS_V126 = {
   primaryLayers: 1,
@@ -401,7 +404,7 @@ export function publicMapAccuracyNoticeV126(
 ): string {
   const explicit = PUBLIC_MAP_LAYER_ACCURACY_V126[elementId];
   if (explicit) return explicit;
-  const safeFallback = publicTextV126(fallback);
+  const safeFallback = publicNoticeWordingV136_1(fallback);
   if (safeFallback) return safeFallback;
   const spatialType = publicMapSpatialTypeV126(renderer);
   if (spatialType === "admin1-complete") {

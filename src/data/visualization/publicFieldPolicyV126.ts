@@ -519,6 +519,65 @@ export function publicTextV126(value: unknown): string | null {
   return normalizeTextV126(value);
 }
 
+/**
+ * Compiler notes that travelled with a source organisation name.
+ *
+ * Several entity datasets cite a different organisation per row, and the
+ * spreadsheet recorded that by appending a note to the organisation field -
+ * "(레코드별 상이 - attr_19 참조)", "1.2_entity 시트 attr_14 열 참조". Those
+ * notes address whoever maintains the sheet, not a reader picking a source
+ * filter, and they surfaced verbatim on the finder, the download list and the
+ * source panel. The organisation name in front of the note is real and stays.
+ */
+const SOURCE_NOTE_MARKER_V136_1 = /레코드별|attr_|시트|열\s*참조/u;
+
+const SOURCE_NOTE_PATTERNS_V136_1: readonly RegExp[] = [
+  // a bracketed aside about the sheet: "(레코드별 상이 - attr_19 참조)"
+  /\s*[([][^()[\]]*(?:레코드별|attr_|시트|열\s*참조)[^()[\]]*[)\]]/gu,
+  // everything from a dash or arrow onwards, once the tail turns into a note
+  /\s*[-—–→]\s*[^-—–→]*(?:레코드별|attr_|시트|열\s*참조)[\s\S]*$/u,
+];
+
+/**
+ * Store words that reached generated notices.
+ *
+ * The map's accuracy notices are compiled with the data and describe rows as
+ * "레코드". On the screen the same sentence is about the reader's data, so it
+ * says 자료. The meaning is unchanged; only the word the reader sees is.
+ */
+const PUBLIC_NOTICE_WORDING_V136_1: ReadonlyArray<readonly [RegExp, string]> = [
+  [/레코드/gu, "자료"],
+];
+
+/** A generated notice, worded for a reader rather than for the store. */
+export function publicNoticeWordingV136_1(value: unknown): string | null {
+  const normalized = normalizeTextV126(value);
+  if (normalized === null) return null;
+  let text = normalized;
+  for (const [pattern, replacement] of PUBLIC_NOTICE_WORDING_V136_1) {
+    text = text.replace(pattern, replacement);
+  }
+  return text === "" ? null : text;
+}
+
+/**
+ * The public form of a source organisation or attribution line: the cited
+ * names, with the sheet-keeping notes removed. Returns null when the value was
+ * nothing but a note, so a caller can fall back to its own wording.
+ */
+export function publicSourceOrganizationV136_1(value: unknown): string | null {
+  const normalized = normalizeTextV126(value);
+  if (normalized === null) return null;
+  let text = normalized;
+  for (const pattern of SOURCE_NOTE_PATTERNS_V136_1) {
+    text = text.replace(pattern, "");
+  }
+  text = text.replace(/\s*[-—–,·]\s*$/u, "").trim();
+  // A value that is a note through and through names no source at all.
+  if (text === "" || SOURCE_NOTE_MARKER_V136_1.test(text)) return null;
+  return text;
+}
+
 export function publicSourceUrlV126(value: unknown): string | null {
   if (typeof value !== "string" || !/^https?:\/\//i.test(value)) return null;
   try {
