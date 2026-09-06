@@ -1,20 +1,25 @@
 {
   "schemaVersion": "v136-public-copy-acceptance-1",
-  "generatedAt": "2026-09-06T22:53:26.025Z",
+  "generatedAt": "2026-09-06T23:42:28.335Z",
   "audit": "generic-detail-public:v136-2",
   "status": "PASS",
   "summary": {
     "type": "summary",
     "audit": "generic-detail-public:v136-2",
     "status": "PASS",
-    "passed": 15,
+    "passed": 20,
     "failed": 0,
-    "total": 15,
+    "total": 20,
     "failedChecks": [],
     "detailRouteCount": 152,
     "genericDetailRouteCount": 134,
     "selectorStatesVisited": 1292,
     "findingCount": 0,
+    "d022SourceRecordCount": 15,
+    "d022SourceCategoryCount": 10,
+    "d022PortfolioStates": 11,
+    "d022TitlesWithInternalIdentifiers": 0,
+    "categoryGroupingMismatches": 0,
     "findingsByKind": {},
     "runtimeFailure": null
   },
@@ -138,6 +143,58 @@
     {
       "type": "check",
       "audit": "generic-detail-public:v136-2",
+      "name": "D022_SOURCE_RECORDS",
+      "status": "PASS",
+      "actual": 15,
+      "expected": ">0"
+    },
+    {
+      "type": "check",
+      "audit": "generic-detail-public:v136-2",
+      "name": "D022_CARD_TITLE_INTERNAL_IDENTIFIER_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "generic-detail-public:v136-2",
+      "name": "D022_OFFICIAL_TITLE_FACT_PRESENT",
+      "status": "PASS",
+      "actual": {
+        "states": 11,
+        "withOfficialTitle": 11
+      },
+      "expected": {
+        "states": 11,
+        "withOfficialTitle": 11
+      }
+    },
+    {
+      "type": "check",
+      "audit": "generic-detail-public:v136-2",
+      "name": "CATEGORY_GROUPING_PRESERVED",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "generic-detail-public:v136-2",
+      "name": "CATEGORY_SOURCE_TOTAL_RECONCILED",
+      "status": "PASS",
+      "actual": {
+        "sourceCategoryTotal": 15,
+        "records": 15
+      },
+      "expected": {
+        "sourceCategoryTotal": 15,
+        "records": 15
+      }
+    },
+    {
+      "type": "check",
+      "audit": "generic-detail-public:v136-2",
       "name": "CONSOLE_ERROR",
       "status": "PASS",
       "actual": [],
@@ -148,6 +205,11 @@
   "genericDetailRouteCount": 134,
   "selectorStatesVisited": 1292,
   "findingCount": 0,
+  "d022SourceRecordCount": 15,
+  "d022SourceCategoryCount": 10,
+  "d022PortfolioStates": 11,
+  "d022TitlesWithInternalIdentifiers": 0,
+  "categoryGroupingMismatches": 0,
   "findingsByKind": {},
   "runtimeFailure": null
 }

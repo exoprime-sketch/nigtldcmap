@@ -2,6 +2,9 @@ import type { PublicAnalyticalRendererV126 } from "./publicVisualizationRegistry
 import { getPublicAnalysisHeadingsV134 } from "./publicAnalysisHeadingsV134";
 import { technologyLabelV121 } from "../../utils/vietnamActualV121";
 import { publicTextV126 } from "./publicFieldPolicyV126";
+import { isNumericCodeListV136_2 } from "./publicCategoryLabelV136_2";
+
+export { publicCategoryLabelV136_2 } from "./publicCategoryLabelV136_2";
 
 type PublicElementCopyV126 = {
   title: string;
@@ -319,40 +322,6 @@ export function publicDimensionContextV136_2(
   return kept;
 }
 
-/**
- * True when the value is a number, or a separator-joined run of numbers.
- *
- * Category codes reach the renderer either one per dimension or already joined
- * into a single value, and both forms read the same to a person: a sequence of
- * bare integers standing where a name should be.
- */
-function isNumericCodeListV136_2(value: string): boolean {
-  const parts = value
-    .split(/[·,/|;、]+/u)
-    .map((part) => part.trim())
-    .filter(Boolean);
-  if (parts.length === 0) return false;
-  return parts.every((part) => /^-?\d+(?:\.\d+)?$/u.test(part));
-}
-
-/**
- * A category label with the classification code in front of it removed.
- *
- * The investment portfolio's composition chart read "23110 — 에너지 기타",
- * "15110 — 공공행정 기타": the DAC sector code carried in front of the name it
- * already maps to. The name is the part a reader uses, and the code ahead of it
- * is the same internal value the KPI support line was cut for. Where the code
- * is all there is, there is nothing to fall back to, so the value is left as it
- * stands rather than reduced to nothing.
- */
-export function publicCategoryLabelV136_2(value: string): string {
-  const text = String(value ?? "").trim();
-  const match = text.match(/^\d{2,}\s*[—–-]\s*(.+)$/u);
-  if (!match) return text;
-  const label = match[1].trim();
-  if (!label || isNumericCodeListV136_2(label)) return text;
-  return label;
-}
 
 /** Phrases that describe how a figure was computed rather than what it is. */
 const AGGREGATION_BASIS_PATTERN_V136_2 =

@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { publicTextV126 } from "../../../data/visualization/publicFieldPolicyV126";
-import { publicCategoryLabelV136_2 } from "../../../data/visualization/publicCopyRegistryV126";
+import { publicCategoryRowsV136_3 } from "../../../utils/publicCategoryGroupingV136_3";
 import { reviewedEntityAttributesV132 } from "../../../data/visualization/publicEntityFieldPolicyV132";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 
@@ -177,8 +177,9 @@ function portfolioAnalysisV132(
 
     const category = facet.category;
     if (category) {
-      const compact = compactCategoryV132(publicCategoryLabelV136_2(category));
-      categories.set(compact, (categories.get(compact) || 0) + 1);
+      // Counted under the source's own value. Turning that into something a
+      // reader recognises happens later, on the way to the screen.
+      categories.set(category, (categories.get(category) || 0) + 1);
     }
 
     const amountCandidate = facet.amount;
@@ -194,7 +195,7 @@ function portfolioAnalysisV132(
   const parsedYears = yearRows.map((row) => Number(row.label)).filter(Number.isFinite);
   return {
     years: yearRows,
-    categories: mapToRowsV132(categories, false),
+    categories: categoryRowsV136_3(categories),
     amounts: Array.from(amounts, ([currency, value]) => ({ currency, ...value })),
     yearRange: parsedYears.length
       ? `${Math.min(...parsedYears)}–${Math.max(...parsedYears)}`
@@ -273,6 +274,14 @@ function extractYearV132(value: unknown): number | null {
 function compactCategoryV132(value: string): string {
   const normalized = value.replace(/\s+/gu, " ").trim();
   return normalized.length > 54 ? `${normalized.slice(0, 52).trim()}…` : normalized;
+}
+
+/** Composition bars, keyed by source value and labelled for the reader. */
+function categoryRowsV136_3(counts: Map<string, number>): CountRowV132[] {
+  return publicCategoryRowsV136_3(counts, compactCategoryV132).map((row) => ({
+    label: row.displayLabel,
+    value: row.value,
+  }));
 }
 
 function mapToRowsV132(values: Map<string, number>, chronological: boolean): CountRowV132[] {

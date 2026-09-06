@@ -44,6 +44,10 @@ const commands = [
   { name: "V136_MAP_COPY", command: "npm run audit:map-copy:v136" },
   { name: "V136_PUBLIC_CONTROLS", command: "npm run audit:public-controls:v136" },
   { name: "V136_FINDER_SCROLL", command: "npm run audit:finder-scroll:v136" },
+  // The category grouping's guard against merging two codes that print the
+  // same name cannot be staged on real data - no such pair exists in the
+  // catalogue today - so it is held by a unit test, and the gate runs it.
+  { name: "V136_3_UNIT_TESTS", command: "npm run test:unit" },
   { name: "V136_2_GENERIC_DETAIL_PUBLIC", command: "npm run audit:generic-detail-public:v136-2" },
   { name: "V136_HUMAN_REVIEW", command: "npm run audit:human-review:v136" },
   { name: "V136_WORKFLOW", command: "npm run audit:workflow:v136" },

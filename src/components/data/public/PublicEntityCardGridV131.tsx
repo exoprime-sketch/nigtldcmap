@@ -209,7 +209,12 @@ function PublicEntityCardV131({
     ) || "공개 데이터 항목";
   const secondaryNote = compactTextV131(titleResult.secondaryNote, 112);
   const badges = badgeValuesV131(entity, approved, template, title);
-  const facts = factValuesV131(approved, template, title);
+  // The official name and the numbers identify the record; they follow the
+  // reviewed facts rather than standing in for the project's name.
+  const facts = [
+    ...factValuesV131(approved, template, title),
+    ...(titleResult.identifierFacts || []),
+  ];
   const sourceUrl = publicEntityUrlV131(entity, approved);
 
   return (

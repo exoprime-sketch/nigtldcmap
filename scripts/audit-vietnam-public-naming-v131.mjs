@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import { readFileSync } from "node:fs";
-import { resolve } from "node:path";
+import { existsSync, readFileSync, statSync } from "node:fs";
+import { dirname, resolve } from "node:path";
 import ts from "typescript";
 
 import {
@@ -29,13 +29,31 @@ const titlePolicyPath = resolve(
   "src/data/visualization/publicEntityTitleV131.ts"
 );
 
-function compileTitlePolicyV131(path) {
-  const result = ts.transpileModule(readFileSync(path, "utf8"), {
+/**
+ * Runs the title policy from source, with its real dependencies.
+ *
+ * The policy used to be a single file and this loader refused every import, so
+ * that the titles the gate reconciles are the ones the site renders and not a
+ * stub's. That still holds - nothing here is faked - but the policy now reads
+ * the verified project names and the category-label rule from two modules
+ * beside it, so relative imports are compiled and executed the same way rather
+ * than rejected. Anything outside src/ is still refused: a dependency the gate
+ * cannot run is a dependency the gate cannot vouch for.
+ */
+function compileModuleV131(path, cache = new Map()) {
+  const resolved = resolve(path);
+  if (cache.has(resolved)) return cache.get(resolved);
+  const file = [resolved, `${resolved}.ts`, `${resolved}.tsx`].find(
+    (candidate) => existsSync(candidate) && statSync(candidate).isFile()
+  );
+  if (!file) throw new Error(`module not found: ${path}`);
+
+  const result = ts.transpileModule(readFileSync(file, "utf8"), {
     compilerOptions: {
       module: ts.ModuleKind.CommonJS,
       target: ts.ScriptTarget.ES2020,
     },
-    fileName: path,
+    fileName: file,
     reportDiagnostics: true,
   });
   const errors = (result.diagnostics || []).filter(
@@ -50,15 +68,29 @@ function compileTitlePolicyV131(path) {
         .join("; ")
     );
   }
+
   const moduleRecord = { exports: {} };
+  cache.set(resolved, moduleRecord.exports);
   new Function("exports", "module", "require", result.outputText)(
     moduleRecord.exports,
     moduleRecord,
     (specifier) => {
-      throw new Error(`unexpected runtime import: ${specifier}`);
+      if (!specifier.startsWith(".")) {
+        throw new Error(`unexpected runtime import: ${specifier}`);
+      }
+      const target = resolve(dirname(file), specifier);
+      if (!target.startsWith(resolve(PROJECT_ROOT, "src"))) {
+        throw new Error(`import outside src: ${specifier}`);
+      }
+      return compileModuleV131(target, cache);
     }
   );
+  cache.set(resolved, moduleRecord.exports);
   return moduleRecord.exports;
+}
+
+function compileTitlePolicyV131(path) {
+  return compileModuleV131(path);
 }
 
 let titleApi = null;

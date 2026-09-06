@@ -169,7 +169,8 @@
     "audit:launch-polish:v136-1": "node scripts/audit-vietnam-launch-polish-v136-1.mjs",
     "audit:generic-detail-public:v136-2": "node scripts/audit-vietnam-generic-detail-public-v136-2.mjs",
     "capture:generic-detail:v136-2": "node scripts/capture-vietnam-generic-detail-v136-2.mjs",
-    "capture:launch:v136-1": "node scripts/capture-vietnam-launch-v136-1.mjs"
+    "capture:launch:v136-1": "node scripts/capture-vietnam-launch-v136-1.mjs",
+    "test:unit": "react-scripts test --env=jsdom --watchAll=false"
   },
   "browserslist": [
     ">0.2%",

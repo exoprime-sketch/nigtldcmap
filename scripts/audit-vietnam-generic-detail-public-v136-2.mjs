@@ -19,6 +19,8 @@ import {
   PROJECT_ROOT,
   V2_ROOT,
   catalogElements,
+  loadPackPayloads,
+  payloadRecords,
   readJson,
 } from "./v125/audit-utils.mjs";
 import {
@@ -99,6 +101,38 @@ function screenReadingExpression() {
       ]
         .filter((section) => section.getAttribute('data-testid') !== 'portfolio-year-trend-v132')
         .flatMap((section) => [...section.querySelectorAll('li > span')])
+        .filter(visible)
+        .map((node) => clean(node.textContent))
+        .filter(Boolean),
+      // Each composition bar with its count, so the grouping can be reconciled
+      // against the source rather than merely read.
+      portfolioCategoryBars: [
+        ...document.querySelectorAll('[data-portfolio-distribution="true"]'),
+      ]
+        .filter((section) => section.getAttribute('data-testid') !== 'portfolio-year-trend-v132')
+        .flatMap((section) => [...section.querySelectorAll('li')])
+        .filter(visible)
+        .map((node) => ({
+          label: clean(node.querySelector('span')?.textContent),
+          count: Number(String(clean(node.querySelector('strong')?.textContent)).replace(/[^0-9]/gu, '')),
+        }))
+        .filter((row) => row.label),
+      portfolioRecordCount: Number(
+        String(
+          clean(
+            document.querySelector('[data-portfolio-kpi="record-count"] strong')?.textContent
+          )
+        ).replace(/[^0-9]/gu, '')
+      ),
+      entityCardTitles: [
+        ...document.querySelectorAll('[data-testid="public-entity-card-title"]'),
+      ]
+        .filter(visible)
+        .map((node) => clean(node.textContent))
+        .filter(Boolean),
+      entityCardFactLabels: [
+        ...document.querySelectorAll('[data-testid="public-entity-card-facts"] dt'),
+      ]
         .filter(visible)
         .map((node) => clean(node.textContent))
         .filter(Boolean),
@@ -228,6 +262,8 @@ const findings = [];
 const census = [];
 let inspectedRoutes = 0;
 let selectorStatesVisited = 0;
+/** Every state of the investment portfolio screen, for the D-022 checks. */
+const portfolioReadings = [];
 
 try {
   if (!existsSync(resolve(PROJECT_ROOT, "build/index.html"))) {
@@ -253,6 +289,7 @@ try {
       selectorLabels: reading.selectorLabels.join(" | "),
     });
     findings.push(...findingsFor(elementId, "default", reading));
+    if (elementId === "D-022") portfolioReadings.push({ state: "default", reading });
 
     if (!reading.generic) continue;
 
@@ -282,9 +319,9 @@ try {
         await waitForValue(cdp, ANALYSIS_READY, { timeoutMs: 30_000 });
         selectorStatesVisited += 1;
         const next = await evaluateValue(cdp, screenReadingExpression());
-        findings.push(
-          ...findingsFor(elementId, `${select.testId || select.dimensionKey || select.index}=${value}`, next)
-        );
+        const state = `${select.testId || select.dimensionKey || select.index}=${value}`;
+        findings.push(...findingsFor(elementId, state, next));
+        if (elementId === "D-022") portfolioReadings.push({ state, reading: next });
       }
     }
   }
@@ -314,6 +351,102 @@ audit.check("KPI_GENERIC_NOTE_COUNT", countOf("kpi-generic-note") === 0, sample(
 audit.check("GENERIC_SELECTOR_INTERNAL_LABEL_COUNT", countOf("selector-internal-label") === 0, sample("selector-internal-label"), []);
 audit.check("EMPTY_MISSING_REASON_LABEL_COUNT", countOf("empty-missing-reason-label") === 0, sample("empty-missing-reason-label"), []);
 audit.check("PORTFOLIO_RAW_CODE_LIST_COUNT", countOf("portfolio-raw-code-list") === 0, sample("portfolio-raw-code-list"), []);
+
+// --- D-022: the card titles, and what the composition chart counts ---------
+//
+// The titles here were assembled by this repository, not collected: the source
+// records carry `name: null`. So they are checked against the source rather
+// than assumed, and the grouping is reconciled against it too, because the
+// label a bar shows is now built by dropping a code out of the source value.
+
+const packs = loadPackPayloads();
+const d022Records = payloadRecords(packs.elements.get("D-022")?.entities);
+const sourceCategoryCounts = new Map();
+for (const record of d022Records) {
+  const category = record?.normalizedAttributes?.field_a9a17396;
+  if (!category) continue;
+  sourceCategoryCounts.set(category, (sourceCategoryCounts.get(category) || 0) + 1);
+}
+const sourceCategoryTotal = [...sourceCategoryCounts.values()].reduce(
+  (sum, value) => sum + value,
+  0
+);
+
+// A code standing in front of a name, or an activity number, inside a heading.
+const TITLE_INTERNAL_IDENTIFIER = /\d{4,}\s*[—–-]\s*\S|\b\d{4,}-P\d{6}\b|\bP\d{6}\b/u;
+const titlesWithIdentifiers = [];
+const groupingMismatches = [];
+for (const { state, reading } of portfolioReadings) {
+  for (const title of reading.entityCardTitles || []) {
+    if (TITLE_INTERNAL_IDENTIFIER.test(title)) {
+      titlesWithIdentifiers.push({ state, title });
+    }
+  }
+  const bars = reading.portfolioCategoryBars || [];
+  // The chart shows the leading bars only, so the whole grouping is compared
+  // by what it does show: one bar per source category, and its own count.
+  const shown = bars.length;
+  const expectedShown = Math.min(sourceCategoryCounts.size, 8);
+  if (shown !== expectedShown) {
+    groupingMismatches.push({
+      state,
+      reason: "bar count",
+      shown,
+      expected: expectedShown,
+    });
+  }
+  const expectedCounts = [...sourceCategoryCounts.values()].sort((a, b) => b - a).slice(0, 8);
+  const shownCounts = bars.map((bar) => bar.count).sort((a, b) => b - a);
+  if (JSON.stringify(shownCounts) !== JSON.stringify(expectedCounts)) {
+    groupingMismatches.push({
+      state,
+      reason: "bar counts",
+      shown: shownCounts,
+      expected: expectedCounts,
+    });
+  }
+  if (new Set(bars.map((bar) => bar.label)).size !== bars.length) {
+    groupingMismatches.push({ state, reason: "duplicate bar label", shown: bars.map((b) => b.label) });
+  }
+  if ((reading.portfolioRecordCount || 0) !== d022Records.length) {
+    groupingMismatches.push({
+      state,
+      reason: "project count",
+      shown: reading.portfolioRecordCount,
+      expected: d022Records.length,
+    });
+  }
+}
+
+const verifiedTitleStates = portfolioReadings.filter((entry) =>
+  (entry.reading.entityCardFactLabels || []).includes("공식 영문명")
+);
+
+audit.check("D022_SOURCE_RECORDS", d022Records.length > 0, d022Records.length, ">0");
+audit.check(
+  "D022_CARD_TITLE_INTERNAL_IDENTIFIER_COUNT",
+  titlesWithIdentifiers.length === 0,
+  titlesWithIdentifiers.slice(0, 12),
+  []
+);
+audit.check(
+  "D022_OFFICIAL_TITLE_FACT_PRESENT",
+  portfolioReadings.length > 0 && verifiedTitleStates.length === portfolioReadings.length,
+  { states: portfolioReadings.length, withOfficialTitle: verifiedTitleStates.length },
+  { states: portfolioReadings.length, withOfficialTitle: portfolioReadings.length }
+);
+audit.check(
+  "CATEGORY_GROUPING_PRESERVED",
+  groupingMismatches.length === 0,
+  groupingMismatches.slice(0, 12),
+  []
+);
+audit.check(
+  "CATEGORY_SOURCE_TOTAL_RECONCILED",
+  sourceCategoryTotal === d022Records.length,
+  { sourceCategoryTotal, records: d022Records.length },
+  { sourceCategoryTotal: d022Records.length, records: d022Records.length }
+);
 audit.check("CONSOLE_ERROR", (browser?.runtimeErrors || []).length === 0, browser?.runtimeErrors || [], []);
 
 writeCsvV136(
@@ -332,6 +465,11 @@ finishAuditV136(audit, "generic-detail-public-audit-v136-2.json", {
   genericDetailRouteCount: genericRoutes.length,
   selectorStatesVisited,
   findingCount: findings.length,
+  d022SourceRecordCount: d022Records.length,
+  d022SourceCategoryCount: sourceCategoryCounts.size,
+  d022PortfolioStates: portfolioReadings.length,
+  d022TitlesWithInternalIdentifiers: titlesWithIdentifiers.length,
+  categoryGroupingMismatches: groupingMismatches.length,
   findingsByKind: Object.fromEntries(
     [...new Set(findings.map((item) => item.kind))].map((kind) => [kind, countOf(kind)])
   ),
