@@ -92,6 +92,16 @@ function screenReadingExpression() {
         support: clean(card.querySelector('small')?.textContent),
       })),
       kpiNote: clean(kpiRoot?.querySelector('.sv125-kpi-note')?.textContent),
+      // The portfolio composition chart names what the money went to. The year
+      // trend beside it is numeric on purpose, so it is not read here.
+      portfolioCategoryLabels: [
+        ...document.querySelectorAll('[data-portfolio-distribution="true"]'),
+      ]
+        .filter((section) => section.getAttribute('data-testid') !== 'portfolio-year-trend-v132')
+        .flatMap((section) => [...section.querySelectorAll('li > span')])
+        .filter(visible)
+        .map((node) => clean(node.textContent))
+        .filter(Boolean),
       selectorLabels: [...(selectorRoot?.querySelectorAll('label') || [])]
         .filter(visible)
         .map((label) => clean(label.querySelector('span')?.textContent))
@@ -200,6 +210,14 @@ function findingsFor(elementId, state, reading) {
     push("empty-missing-reason-label", `empty value: "${value}"`);
   }
 
+  // A composition bar is labelled with what it counts. A bare code, or a code
+  // still carried in front of the name it maps to, is the store's key.
+  for (const label of reading.portfolioCategoryLabels || []) {
+    if (isNumericCodeList(label) || /^\d{2,}\s*[—–-]\s*\S/u.test(label)) {
+      push("portfolio-raw-code-list", label);
+    }
+  }
+
   return findings;
 }
 
@@ -295,6 +313,7 @@ audit.check("KPI_UNSCALED_LARGE_NUMBER_COUNT", countOf("kpi-unscaled-large-numbe
 audit.check("KPI_GENERIC_NOTE_COUNT", countOf("kpi-generic-note") === 0, sample("kpi-generic-note"), []);
 audit.check("GENERIC_SELECTOR_INTERNAL_LABEL_COUNT", countOf("selector-internal-label") === 0, sample("selector-internal-label"), []);
 audit.check("EMPTY_MISSING_REASON_LABEL_COUNT", countOf("empty-missing-reason-label") === 0, sample("empty-missing-reason-label"), []);
+audit.check("PORTFOLIO_RAW_CODE_LIST_COUNT", countOf("portfolio-raw-code-list") === 0, sample("portfolio-raw-code-list"), []);
 audit.check("CONSOLE_ERROR", (browser?.runtimeErrors || []).length === 0, browser?.runtimeErrors || [], []);
 
 writeCsvV136(

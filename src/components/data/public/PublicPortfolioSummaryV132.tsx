@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { publicTextV126 } from "../../../data/visualization/publicFieldPolicyV126";
+import { publicCategoryLabelV136_2 } from "../../../data/visualization/publicCopyRegistryV126";
 import { reviewedEntityAttributesV132 } from "../../../data/visualization/publicEntityFieldPolicyV132";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 
@@ -176,7 +177,7 @@ function portfolioAnalysisV132(
 
     const category = facet.category;
     if (category) {
-      const compact = compactCategoryV132(category);
+      const compact = compactCategoryV132(publicCategoryLabelV136_2(category));
       categories.set(compact, (categories.get(compact) || 0) + 1);
     }
 

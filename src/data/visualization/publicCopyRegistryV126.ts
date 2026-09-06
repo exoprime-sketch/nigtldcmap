@@ -335,6 +335,25 @@ function isNumericCodeListV136_2(value: string): boolean {
   return parts.every((part) => /^-?\d+(?:\.\d+)?$/u.test(part));
 }
 
+/**
+ * A category label with the classification code in front of it removed.
+ *
+ * The investment portfolio's composition chart read "23110 — 에너지 기타",
+ * "15110 — 공공행정 기타": the DAC sector code carried in front of the name it
+ * already maps to. The name is the part a reader uses, and the code ahead of it
+ * is the same internal value the KPI support line was cut for. Where the code
+ * is all there is, there is nothing to fall back to, so the value is left as it
+ * stands rather than reduced to nothing.
+ */
+export function publicCategoryLabelV136_2(value: string): string {
+  const text = String(value ?? "").trim();
+  const match = text.match(/^\d{2,}\s*[—–-]\s*(.+)$/u);
+  if (!match) return text;
+  const label = match[1].trim();
+  if (!label || isNumericCodeListV136_2(label)) return text;
+  return label;
+}
+
 /** Phrases that describe how a figure was computed rather than what it is. */
 const AGGREGATION_BASIS_PATTERN_V136_2 =
   /단순\s*합|합계|총계|집계|누계|가중\s*평균|평균값 산출/u;
