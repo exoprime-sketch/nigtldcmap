@@ -6,9 +6,9 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.home-actions-v37 button {
-  min-height: 76px;
-}
+/* The grid already gives the three cards a common height, so nothing here
+   fixes one: a hard min-height only adds empty space on wide screens and
+   clips the download note once it wraps to a third line. */
 
 .home-category-chips-v37 button {
   padding-inline: 12px;

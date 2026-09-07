@@ -526,6 +526,29 @@ export default function SemanticArchetypePreviewV125({
   );
 }
 
+/**
+ * True when every row describes the same subject, so one of them can speak
+ * for the measure.
+ *
+ * Year and period are how one subject is observed over time, not what
+ * distinguishes two subjects; anything else keying a row - a sector, a gas, a
+ * province - means the rows are a breakdown, and the newest is no more
+ * representative than any other.
+ */
+function singleSubjectV136_4(
+  rows: ReadonlyArray<{ dimensions: Record<string, unknown> }>
+): boolean {
+  if (rows.length <= 1) return true;
+  const signature = (row: { dimensions: Record<string, unknown> }) =>
+    Object.entries(row.dimensions || {})
+      .filter(([key]) => !["year", "period"].includes(key))
+      .map(([key, value]) => `${key}=${String(value)}`)
+      .sort()
+      .join("|");
+  const first = signature(rows[0]);
+  return rows.every((row) => signature(row) === first);
+}
+
 function SemanticKpisV125({
   rows,
   contract,
@@ -555,12 +578,24 @@ function SemanticKpisV125({
         ["year", "period"].includes(key)
       )
     );
-    const row = aggregate || candidates[0] || null;
+    // Without a total, the newest row was shown as the headline. Where the
+    // rows are one per category that headline is one category's figure wearing
+    // the measure's name - the reader has no way to tell that "감축" is the
+    // first of eleven sectors and not the sum of them. So a single value is
+    // only shown when the rows leave no doubt which one stands for the
+    // measure: either the source totalled them, or they all describe the same
+    // thing over time. Otherwise the card is dropped and the comparison below
+    // it, which shows every category, is left to answer the question.
+    const row = aggregate || (singleSubjectV136_4(candidates) ? candidates[0] : null);
     const dimensionValues = row
       ? publicDimensionContextV136_2(row.dimensionLabels)
       : [];
-    return { measure, row, dimensionValues };
-  });
+    // A measure with rows but no row that speaks for them is left out
+    // entirely; a measure with no rows at all still reports itself missing,
+    // which is a different thing to say.
+    return { measure, row, dimensionValues, ambiguous: !row && candidates.length > 0 };
+  })
+    .filter((kpi) => !kpi.ambiguous);
   return (
     <section
       className="sv125-kpis"

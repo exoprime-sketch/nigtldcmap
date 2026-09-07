@@ -334,7 +334,7 @@ function CompositionPanelV125({ rows }: { rows: NumericRowV125[] }) {
           : Math.max(...compositionRows.map((row) => Math.abs(row.value)), 1e-9);
         return (
           <article className="sv125-contract-axis" key={unit || "no-unit"}>
-            <h5>단위: {unit || "미기재"}</h5>
+            <h5>단위: <PublicTermTextV134 text={unit || "미기재"} /></h5>
             {hasBroadIndustry && hasManufacturingSubset && (
               <p className="sv125-contract-help">
                 제조업은 광공업·건설에 포함되므로 100% 구성 막대에서
@@ -702,7 +702,7 @@ function TwoYearChangeUnitV135({
 
   return (
     <article className="sv125-contract-axis">
-      <h5>단위: {publicUnit}</h5>
+      <h5>단위: <PublicTermTextV134 text={publicUnit} /></h5>
       <div className="sv125-two-year-change-v135" role="list">
         {series.map((item) => (
           <div key={item.key} role="listitem">
@@ -817,7 +817,7 @@ function CategoryComparisonV125({ rows }: { rows: NumericRowV125[] }) {
         const max = Math.max(...unitRows.map((row) => Math.abs(row.value)), 1e-9);
         return (
           <article className="sv125-contract-axis" key={unit || "no-unit"}>
-            <h5>단위: {unit || "미기재"}</h5>
+            <h5>단위: <PublicTermTextV134 text={unit || "미기재"} /></h5>
             <div className="sv125-contract-bars" role="list">
               {unitRows.map((row, index) => (
                 <InteractiveValueItemV127
@@ -1053,7 +1053,7 @@ function PortfolioEntitiesV125({
   elementTitle?: string;
 }) {
   return (
-    <VisualizationFrameV125 eyebrow="사업·재원" title="포트폴리오 분석">
+    <VisualizationFrameV125 eyebrow="사업·재원" title="사업 규모와 구성">
       <PublicPortfolioSummaryV132
         elementId={elementId}
         entities={entities}

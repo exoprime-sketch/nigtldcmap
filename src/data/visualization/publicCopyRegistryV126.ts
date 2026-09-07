@@ -198,7 +198,12 @@ export function publicDimensionLabelV126(
     agreementtype: "협정 유형",
     amountstatus: "금액 구분",
     amounttype: "금액 유형",
-    capacity: "설비용량",
+    // Not "설비용량": this column holds each project's scale in whatever unit
+    // suits it, so it reads 715 MW for a power plant and 399 KM for the gas
+    // pipeline. Naming it a capacity told the reader the pipeline's length was
+    // a megawatt figure. The values keep their own units, and nothing is
+    // converted between them.
+    capacity: "사업 규모",
     capacityband: "용량 구간",
     collectionstatus: "자료 상태",
     commissioningyear: "준공연도",
@@ -375,6 +380,35 @@ const IMPLEMENTATION_ONLY_BASIS_V136_2 =
   /단순\s*합|집계\s*방식|가중\s*평균\s*미적용|합계\s*산출/u;
 
 /** Converts stored dimension codes into stable public selector/chart labels. */
+/** Dimension keys holding a project's scale, whose unit varies by project. */
+const SCALE_DIMENSION_KEYS_V136_4 = /^(?:capacity|projectscale|scale)$/u;
+
+/** The source's own placeholder, alone or carrying a unit it cannot fill. */
+const UNAVAILABLE_SCALE_V136_4 = /not\s*available|not\s*applicable|^n\/?a$/iu;
+
+/**
+ * How a scale option reads, where the source left the value or its unit out.
+ *
+ * D-025 stores this field as a number and a unit per project: "715 MW" for a
+ * power plant, "399 KM" for the gas pipeline. Where the number is missing the
+ * source still writes the unit ("Not Available MW"), and where the unit is
+ * missing it still writes the number ("214 Not Available"). Returns null for
+ * an ordinary value, which then takes the usual path.
+ */
+function publicScaleDimensionValueV136_4(
+  key: string,
+  value: string
+): string | null {
+  if (!SCALE_DIMENSION_KEYS_V136_4.test(key)) return null;
+  const text = String(value ?? "").trim();
+  if (!text || !UNAVAILABLE_SCALE_V136_4.test(text)) return null;
+  const amount = text.match(/^-?\d+(?:[.,]\d+)?/u)?.[0];
+  // A number whose unit is the placeholder: keep the figure, say what is
+  // missing, and do not guess which unit it belonged to.
+  if (amount) return `${amount} (단위 미기재)`;
+  return "규모 미기재";
+}
+
 export function publicDimensionValueV134(
   keyValue: string,
   value: string
@@ -383,6 +417,14 @@ export function publicDimensionValueV134(
   if (mapped) return mapped;
 
   const key = keyValue.replace(/[_\s-]/gu, "").toLocaleLowerCase("en-US");
+
+  // The scale field carries the source's own "Not Available" through into the
+  // option text: "Not Available MW" reads as a capacity, and "214 Not
+  // Available" as a number whose unit was lost. Neither is something to pick
+  // from a list. The stored value is untouched - only what the option says
+  // changes - and a figure is never given a unit it did not arrive with.
+  const scale = publicScaleDimensionValueV136_4(key, value);
+  if (scale) return scale;
   if (key.includes("technology")) {
     const technologyIds = Array.from(
       new Set(value.match(/\bCTIS-\d{2}\b/giu) || [])

@@ -20,6 +20,14 @@ type PortfolioConfigV132 = {
   amountKeys: Array<{ key: string; currency: string }>;
   yearKeys: string[];
   categoryKeys: string[];
+  /**
+   * What the money and the years are, where the source column says plainly
+   * which one it is. Left unset elsewhere: several of these elements reach
+   * their amount through an opaque column, and naming it a commitment or an
+   * approval without having checked would be a guess in the reader's favour.
+   */
+  amountLabel?: string;
+  yearLabel?: string;
 };
 
 const COMMON_AMOUNT_KEYS_V132 = [
@@ -82,7 +90,12 @@ const PORTFOLIO_CONFIG_V132: Record<string, PortfolioConfigV132> = {
     categoryKeys: ["sector", "fund", "implementingEntity"],
   },
   "D-022": {
+    // The amount is the source's own "commitment" column, and the year comes
+    // from field_92700393, which the record note calls 기간(시작) - the project's
+    // start, not the date it was approved.
     amountKeys: [{ key: "financeAmountUsd", currency: "USD" }],
+    amountLabel: "투자 약정액 합계",
+    yearLabel: "사업 시작연도",
     yearKeys: ["approvalDate", "projectPeriod"],
     categoryKeys: ["portfolioCategory", "financeType", "rioMarker"],
   },
@@ -117,22 +130,26 @@ export default function PublicPortfolioSummaryV132({
     () => portfolioAnalysisV132(elementId, entities, detailTemplate),
     [detailTemplate, elementId, entities]
   );
+  const config = PORTFOLIO_CONFIG_V132[elementId];
   return (
     <section
       className="pps132"
       data-testid="portfolio-analysis-summary-v132"
       data-summary-before-list="true"
     >
+      {/* The section around this one is already titled, and it was saying the
+          same thing: "포트폴리오 분석" over "포트폴리오 핵심현황" over
+          "사업·재원 분포", three headings deep before a single number. Only the
+          note survives, because how the totals were reached is something the
+          reader cannot infer from the figures. */}
       <header className="pps132-heading">
-        <span>포트폴리오 핵심현황</span>
-        <h4>사업·재원 분포</h4>
         <p>공개된 사업을 집계하며, 통화가 확인된 금액만 통화별로 합산합니다.</p>
       </header>
       <div className="pps132-kpis">
         <article data-portfolio-kpi="record-count"><span>총 사업 수</span><strong>{entities.length.toLocaleString("ko-KR")}</strong><small>건</small></article>
         {analysis.amounts.map((amount) => (
           <article data-portfolio-kpi="funding-total" key={amount.currency}>
-            <span>확인 금액 합계</span>
+            <span>{config?.amountLabel || "확인 금액 합계"}</span>
             <strong
               title={`${publicScaledNumberV136_2(amount.value, amount.currency).exact} ${amount.currency}`}
             >
@@ -142,7 +159,7 @@ export default function PublicPortfolioSummaryV132({
           </article>
         ))}
         {analysis.yearRange && (
-          <article data-portfolio-kpi="year-range"><span>확인 기간</span><strong>{analysis.yearRange}</strong><small>년</small></article>
+          <article data-portfolio-kpi="year-range"><span>{config?.yearLabel || "확인 기간"}</span><strong>{analysis.yearRange}</strong><small>년</small></article>
         )}
       </div>
       <div className="pps132-distributions">

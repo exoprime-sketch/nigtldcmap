@@ -188,7 +188,7 @@ export default function DataGuidePage({ onNavigate }: DataGuidePageProps) {
         </section>
 
         <section>
-          <h2>최근 업데이트</h2>
+          <h2>데이터 기준일</h2>
           <p>
             현재 공개된 데이터의 기준일은 <strong>{releaseDate}</strong>입니다.
           </p>

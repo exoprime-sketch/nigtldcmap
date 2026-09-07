@@ -103,20 +103,47 @@ export default function HomePage({
               className="home-final-actions home-actions-v37"
               aria-label="주요 기능"
             >
-              <button type="button" onClick={() => onNavigate("explorer")}>
-                <strong>데이터 찾기</strong>
-                <span>주제·기관·기술별 데이터 검색</span>
-              </button>
-              <button type="button" onClick={() => onNavigate("map")}>
-                <strong>데이터 지도</strong>
-                <span>지역·시설·사업 위치와 분포 비교</span>
-              </button>
-              <button type="button" onClick={() => onNavigate("download")}>
-                <strong>데이터 다운로드</strong>
-                <span>
+              {/* The card is a container, not a control. The description sits
+                  beside the button rather than inside it, because the download
+                  note carries a term help trigger and a button cannot hold
+                  another button: the browser broke the nesting apart, and
+                  opening the help also navigated away. */}
+              <div className="home-final-action">
+                <button
+                  type="button"
+                  className="home-final-action__go"
+                  onClick={() => onNavigate("explorer")}
+                >
+                  데이터 찾기
+                </button>
+                <span className="home-final-action__note">
+                  주제·기관·기술별 데이터 검색
+                </span>
+              </div>
+              <div className="home-final-action">
+                <button
+                  type="button"
+                  className="home-final-action__go"
+                  onClick={() => onNavigate("map")}
+                >
+                  데이터 지도
+                </button>
+                <span className="home-final-action__note">
+                  지역·시설·사업 위치와 분포 비교
+                </span>
+              </div>
+              <div className="home-final-action">
+                <button
+                  type="button"
+                  className="home-final-action__go"
+                  onClick={() => onNavigate("download")}
+                >
+                  데이터 다운로드
+                </button>
+                <span className="home-final-action__note">
                   <PublicTermTextV134 text="필요한 데이터를 CSV·JSON으로 다운로드" />
                 </span>
-              </button>
+              </div>
             </div>
 
             <div
@@ -210,7 +237,11 @@ export default function HomePage({
               </dd>
             </div>
             <div>
-              <dt>최근 업데이트</dt>
+              {/* This is manifest.generatedAt - the day this platform built
+                  its snapshot - not the day any source republished. Calling it
+                  the latest update said the data was fresh; it says when the
+                  copy on show was taken. */}
+              <dt>데이터 기준일</dt>
               <dd>{overview?.releaseDate ?? "—"}</dd>
             </div>
           </dl>
