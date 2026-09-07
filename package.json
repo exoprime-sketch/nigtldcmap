@@ -170,7 +170,10 @@
     "audit:generic-detail-public:v136-2": "node scripts/audit-vietnam-generic-detail-public-v136-2.mjs",
     "capture:generic-detail:v136-2": "node scripts/capture-vietnam-generic-detail-v136-2.mjs",
     "capture:launch:v136-1": "node scripts/capture-vietnam-launch-v136-1.mjs",
-    "test:unit": "react-scripts test --env=jsdom --watchAll=false"
+    "test:unit": "react-scripts test --env=jsdom --watchAll=false",
+    "audit:screen-usability:v136-4": "node scripts/audit-vietnam-screen-usability-v136-4.mjs",
+    "capture:screen-usability:v136-4": "node scripts/capture-vietnam-screen-usability-v136-4.mjs",
+    "report:screen-review:v136-4": "node scripts/build-screen-review-record-v136-4.mjs"
   },
   "browserslist": [
     ">0.2%",

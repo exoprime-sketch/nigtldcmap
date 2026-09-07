@@ -49,6 +49,7 @@ const commands = [
   // catalogue today - so it is held by a unit test, and the gate runs it.
   { name: "V136_3_UNIT_TESTS", command: "npm run test:unit" },
   { name: "V136_2_GENERIC_DETAIL_PUBLIC", command: "npm run audit:generic-detail-public:v136-2" },
+  { name: "V136_4_SCREEN_USABILITY", command: "npm run audit:screen-usability:v136-4" },
   { name: "V136_HUMAN_REVIEW", command: "npm run audit:human-review:v136" },
   { name: "V136_WORKFLOW", command: "npm run audit:workflow:v136" },
 ];

@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "v136-public-copy-acceptance-1",
+  "generatedAt": "2026-09-07T04:20:37.061Z",
+  "audit": "screen-usability:v136-4",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "screen-usability:v136-4",
+    "status": "PASS",
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "failedChecks": [],
+    "inspectedRouteCount": 156,
+    "nestedInteractiveControlCount": 0,
+    "termHelpConflictCount": 0,
+    "capacityMixedUnitCount": 0,
+    "capacityMixedUnitSamples": [],
+    "runtimeFailure": null
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "screen-usability:v136-4",
+      "name": "SCREEN_USABILITY_RUNTIME",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null
+      },
+      "expected": {
+        "runtimeFailure": null
+      }
+    },
+    {
+      "type": "check",
+      "audit": "screen-usability:v136-4",
+      "name": "INSPECTED_ROUTE_COUNT",
+      "status": "PASS",
+      "actual": 156,
+      "expected": 156
+    },
+    {
+      "type": "check",
+      "audit": "screen-usability:v136-4",
+      "name": "NESTED_INTERACTIVE_CONTROL_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "screen-usability:v136-4",
+      "name": "TERM_HELP_NAVIGATION_CONFLICT_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "screen-usability:v136-4",
+      "name": "CAPACITY_FILTER_MIXED_UNIT_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "screen-usability:v136-4",
+      "name": "CONSOLE_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "inspectedRouteCount": 156,
+  "nestedInteractiveControlCount": 0,
+  "termHelpConflictCount": 0,
+  "capacityMixedUnitCount": 0,
+  "capacityMixedUnitSamples": [],
+  "runtimeFailure": null
+}
