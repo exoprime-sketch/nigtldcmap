@@ -324,7 +324,7 @@ try {
         const meaning = document.querySelector('[data-testid="public-indicator-meaning-v129"], [data-testid="map-indicator-meaning-v129"], .cdp-public-indicator-meaning');
         return {
           selectedLabel: normalize(selectedLabel),
-          currentVariable: evidence['선택 변수'] || evidence['측정항목'] || '',
+          currentVariable: evidence['선택 변수'] || evidence['항목'] || evidence['측정항목'] || '',
           currentUnit: evidence['단위'] || '',
           legendText: normalize(legend?.textContent),
           legendUnit: normalize(legend?.querySelector('[data-testid="map-legend-unit"]')?.textContent),

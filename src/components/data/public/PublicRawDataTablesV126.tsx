@@ -1,9 +1,11 @@
+import { publicDimensionValueV134 } from "../../../data/visualization/publicCopyRegistryV126";
 import type { SemanticObservationV125 } from "../../../data/visualization/semanticTypesV125";
 import {
   approvedEntityAttributesV126,
   publicEntityAttributeKeysV126,
   publicEntityAttributeLabelV126,
   publicMissingReasonLabelV126,
+  publicSourceOrganizationV136_1,
   publicSourceUrlV126,
   publicTextV126,
 } from "../../../data/visualization/publicFieldPolicyV126";
@@ -55,7 +57,7 @@ export default function PublicRawDataTablesV126({
   const rawTableSummary =
     observations.length > 0
       ? [
-          `원자료 보기 · 전체 ${total.toLocaleString("ko-KR")}행`,
+          `상세 데이터 · 전체 ${total.toLocaleString("ko-KR")}행`,
           `값 있음 ${populatedObservationCount.toLocaleString("ko-KR")}행`,
           `결측 ${missingObservationCount.toLocaleString("ko-KR")}행`,
           entities.length > 0
@@ -64,7 +66,7 @@ export default function PublicRawDataTablesV126({
         ]
           .filter(Boolean)
           .join(" · ")
-      : `원자료 보기 · 목록 ${entities.length.toLocaleString("ko-KR")}건`;
+      : `상세 데이터 · 목록 ${entities.length.toLocaleString("ko-KR")}건`;
 
   return (
     <details
@@ -81,13 +83,13 @@ export default function PublicRawDataTablesV126({
           >
             <thead>
               <tr>
-                <th>측정항목</th>
+                <th>항목</th>
                 <th>분류</th>
                 <th>지역·성별·기술·시나리오</th>
                 <th>값</th>
                 <th>단위</th>
                 <th>연도·기간</th>
-                <th>자료 제공기관</th>
+                <th>제공기관</th>
                 <th>결측 사유</th>
                 <th>공식 원문</th>
               </tr>
@@ -101,12 +103,12 @@ export default function PublicRawDataTablesV126({
                       !["year", "period"].includes(key) &&
                       !CONTEXT_DIMENSION_KEYS_V126.has(key)
                   )
-                  .map(([, value]) => publicTextV126(value))
+                  .map(([key, value]) => publicDimensionValueV134(key, value))
                   .filter(Boolean)
                   .join(" · ");
                 const context = dimensions
                   .filter(([key]) => CONTEXT_DIMENSION_KEYS_V126.has(key))
-                  .map(([, value]) => publicTextV126(value))
+                  .map(([key, value]) => publicDimensionValueV134(key, value))
                   .filter(Boolean)
                   .join(" · ");
                 const sourceUrl = publicSourceUrlV126(
@@ -120,7 +122,7 @@ export default function PublicRawDataTablesV126({
                     <td><PublicTermTextV134 text={publicObservationValueV126(row.value)} /></td>
                     <td><PublicTermTextV134 text={publicTextV126(row.unit || row.semanticMeasure.unit) || ""} /></td>
                     <td>{row.year || publicTextV126(row.period) || ""}</td>
-                    <td><PublicTermTextV134 text={publicTextV126(row.provenance.sourceOrg) || ""} /></td>
+                    <td><PublicTermTextV134 text={publicSourceOrganizationV136_1(row.provenance.sourceOrg) || ""} /></td>
                     <td>
                       {publicMissingReasonLabelV126(
                         row.missingReasonCode,
@@ -178,7 +180,7 @@ export default function PublicRawDataTablesV126({
                     {entityColumns.map((column) => (
                       <td key={column}><PublicTermTextV134 text={publicAttributeValueV126(attributes[column])} /></td>
                     ))}
-                    <td><PublicTermTextV134 text={publicTextV126(row.provenance.sourceOrg) || ""} /></td>
+                    <td><PublicTermTextV134 text={publicSourceOrganizationV136_1(row.provenance.sourceOrg) || ""} /></td>
                     <td>
                       {publicMissingReasonLabelV126(
                         row.missingReasonCode,

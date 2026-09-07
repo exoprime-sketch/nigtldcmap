@@ -1,9 +1,11 @@
 import { useMemo } from "react";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { publicTextV126 } from "../../../data/visualization/publicFieldPolicyV126";
+import { publicCategoryRowsV136_3 } from "../../../utils/publicCategoryGroupingV136_3";
 import { reviewedEntityAttributesV132 } from "../../../data/visualization/publicEntityFieldPolicyV132";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 
+import { publicScaledNumberV136_2 } from "../../../utils/publicNumberScaleV136_2";
 import "./public-portfolio-summary-v132.css";
 
 interface Props {
@@ -124,14 +126,18 @@ export default function PublicPortfolioSummaryV132({
       <header className="pps132-heading">
         <span>포트폴리오 핵심현황</span>
         <h4>사업·재원 분포</h4>
-        <p>공개된 개별 레코드를 집계하며, 통화가 확인된 금액만 통화별로 합산합니다.</p>
+        <p>공개된 사업을 집계하며, 통화가 확인된 금액만 통화별로 합산합니다.</p>
       </header>
       <div className="pps132-kpis">
-        <article data-portfolio-kpi="record-count"><span>공개 레코드</span><strong>{entities.length.toLocaleString("ko-KR")}</strong><small>건</small></article>
+        <article data-portfolio-kpi="record-count"><span>총 사업 수</span><strong>{entities.length.toLocaleString("ko-KR")}</strong><small>건</small></article>
         {analysis.amounts.map((amount) => (
           <article data-portfolio-kpi="funding-total" key={amount.currency}>
             <span>확인 금액 합계</span>
-            <strong>{formatAmountV132(amount.value)}</strong>
+            <strong
+              title={`${publicScaledNumberV136_2(amount.value, amount.currency).exact} ${amount.currency}`}
+            >
+              {publicScaledNumberV136_2(amount.value, amount.currency).display}
+            </strong>
             <small><PublicTermTextV134 text={`${amount.currency} · ${amount.count.toLocaleString("ko-KR")}건`} /></small>
           </article>
         ))}
@@ -142,7 +148,7 @@ export default function PublicPortfolioSummaryV132({
       <div className="pps132-distributions">
         {analysis.years.length > 0 && (
           <DistributionV132
-            title="연도별 공개 레코드"
+            title="연도별 사업 수"
             rows={analysis.years}
             testId="portfolio-year-trend-v132"
           />
@@ -171,8 +177,9 @@ function portfolioAnalysisV132(
 
     const category = facet.category;
     if (category) {
-      const compact = compactCategoryV132(category);
-      categories.set(compact, (categories.get(compact) || 0) + 1);
+      // Counted under the source's own value. Turning that into something a
+      // reader recognises happens later, on the way to the screen.
+      categories.set(category, (categories.get(category) || 0) + 1);
     }
 
     const amountCandidate = facet.amount;
@@ -188,7 +195,7 @@ function portfolioAnalysisV132(
   const parsedYears = yearRows.map((row) => Number(row.label)).filter(Number.isFinite);
   return {
     years: yearRows,
-    categories: mapToRowsV132(categories, false),
+    categories: categoryRowsV136_3(categories),
     amounts: Array.from(amounts, ([currency, value]) => ({ currency, ...value })),
     yearRange: parsedYears.length
       ? `${Math.min(...parsedYears)}–${Math.max(...parsedYears)}`
@@ -269,19 +276,20 @@ function compactCategoryV132(value: string): string {
   return normalized.length > 54 ? `${normalized.slice(0, 52).trim()}…` : normalized;
 }
 
+/** Composition bars, keyed by source value and labelled for the reader. */
+function categoryRowsV136_3(counts: Map<string, number>): CountRowV132[] {
+  return publicCategoryRowsV136_3(counts, compactCategoryV132).map((row) => ({
+    label: row.displayLabel,
+    value: row.value,
+  }));
+}
+
 function mapToRowsV132(values: Map<string, number>, chronological: boolean): CountRowV132[] {
   return Array.from(values, ([label, value]) => ({ label, value })).sort((left, right) =>
     chronological
       ? Number(left.label) - Number(right.label)
       : right.value - left.value || left.label.localeCompare(right.label, "ko")
   );
-}
-
-function formatAmountV132(value: number): string {
-  return new Intl.NumberFormat("ko-KR", {
-    notation: value >= 1_000_000_000 ? "compact" : "standard",
-    maximumFractionDigits: 2,
-  }).format(value);
 }
 
 function DistributionV132({

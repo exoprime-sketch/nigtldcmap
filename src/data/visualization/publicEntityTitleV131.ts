@@ -1,4 +1,9 @@
 import type { VietnamEntityV124 } from "../vietnam/vietnamTypesV124";
+import { publicCategoryLabelV136_2 } from "./publicCategoryLabelV136_2";
+import {
+  publicProjectNumberV136_3,
+  publicProjectTitleEntryV136_3,
+} from "./publicProjectTitleRegistryV136_3";
 
 export type PublicEntityTitleStrategyV131 =
   | "element-title-field"
@@ -18,11 +23,19 @@ export interface PublicEntityTitleOptionsV131 {
   elementTitle?: string | null;
 }
 
+/** A detail row that identifies the record without naming it. */
+export interface PublicEntityIdentifierFactV131 {
+  label: string;
+  value: string;
+}
+
 export interface PublicEntityTitleResolutionV131 {
   title: string;
   strategy: PublicEntityTitleStrategyV131;
   nameAvailability: PublicEntityNameAvailabilityV131;
   secondaryNote: string | null;
+  /** Numbers and official names, shown with the card's other detail rows. */
+  identifierFacts: PublicEntityIdentifierFactV131[];
 }
 
 type EntityTitleFieldSourceV131 = "normalized" | "raw";
@@ -185,6 +198,17 @@ interface FactualTitleV131 {
   title: string;
   nameAvailability: PublicEntityNameAvailabilityV131;
   secondaryNote: string;
+  identifierFacts?: PublicEntityIdentifierFactV131[];
+}
+
+/** Keeps the identifier rows that actually carry a value. */
+function factualIdentifierRowsV131(
+  rows: Array<[string, string | null]>
+): PublicEntityIdentifierFactV131[] {
+  return rows.flatMap(([label, value]) => {
+    const text = titleTextV131(value);
+    return text ? [{ label, value: text }] : [];
+  });
 }
 
 function normalizedFieldV131(
@@ -341,16 +365,44 @@ function factualCompositeV131(
       );
       const sector = normalizedFieldV131(entity, "field_a9a17396");
       if (!donor && !activityId && !sector) return null;
+
+      // The identifiers move out of the heading and into the card's detail
+      // rows, where they still identify the record without being read as its
+      // name. The source keeps them either way; this only decides where a
+      // reader meets them.
+      const projectNumber = publicProjectNumberV136_3(activityId);
+      const identifierFacts = factualIdentifierRowsV131([
+        ["사업번호", projectNumber],
+        ["IATI 활동번호", activityId],
+      ]);
+
+      const verified = publicProjectTitleEntryV136_3(activityId);
+      if (verified) {
+        return {
+          title: verified.displayTitleKo,
+          nameAvailability: "available",
+          secondaryNote: donor ? `${donor} 투자사업` : "개발금융 투자사업",
+          identifierFacts: [
+            { label: "공식 영문명", value: verified.officialTitle },
+            ...identifierFacts,
+          ],
+        };
+      }
+
+      // No verified name for this number. The donor and the sector are both
+      // confirmed values, so they name the card; inventing a purpose or a
+      // facility for it would be worse than a plain description.
+      const sectorLabel = publicCategoryLabelV136_2(sector || "");
       return {
         title: factualPartsV131([
           donor ? `${donor} 투자사업` : "개발금융 투자사업",
-          activityId,
-          sector,
+          sectorLabel || null,
         ]).join(" · "),
         nameAvailability: activityId ? "identifier-only" : "not-provided",
         secondaryNote: activityId
-          ? "원천의 IATI 활동번호와 공여기관·분야로 식별합니다."
+          ? "원문 사업명이 없어 공여기관과 분야로 구분하며, 사업번호로 식별합니다."
           : "원문 사업명이 없어 공개된 공여기관과 분야로 구분합니다.",
+        identifierFacts,
       };
     }
     default:
@@ -389,6 +441,7 @@ export function resolvePublicEntityTitleV131(
       strategy: "element-title-field",
       nameAvailability: "available",
       secondaryNote: null,
+      identifierFacts: [],
     };
   }
 
@@ -405,6 +458,7 @@ export function resolvePublicEntityTitleV131(
       strategy: "template-title-field",
       nameAvailability: "available",
       secondaryNote: null,
+      identifierFacts: [],
     };
   }
 
@@ -415,6 +469,7 @@ export function resolvePublicEntityTitleV131(
       strategy: "source-name",
       nameAvailability: "available",
       secondaryNote: null,
+      identifierFacts: [],
     };
   }
 
@@ -428,6 +483,7 @@ export function resolvePublicEntityTitleV131(
       strategy: "template-title-field",
       nameAvailability: "available",
       secondaryNote: null,
+      identifierFacts: [],
     };
   }
 
@@ -438,6 +494,7 @@ export function resolvePublicEntityTitleV131(
       strategy: "factual-composite",
       nameAvailability: factualComposite.nameAvailability,
       secondaryNote: factualComposite.secondaryNote,
+      identifierFacts: factualComposite.identifierFacts || [],
     };
   }
 
@@ -448,6 +505,7 @@ export function resolvePublicEntityTitleV131(
       strategy: "source-identifier",
       nameAvailability: "identifier-only",
       secondaryNote: "원천의 등록번호로 식별합니다.",
+      identifierFacts: [],
     };
   }
 
@@ -458,6 +516,7 @@ export function resolvePublicEntityTitleV131(
     secondaryNote: elementTitle
       ? "원문에 개별 명칭이 없어 데이터 유형으로 표시합니다."
       : "원문에 개별 명칭이 없어 항목 유형으로 표시합니다.",
+    identifierFacts: [],
   };
 }
 

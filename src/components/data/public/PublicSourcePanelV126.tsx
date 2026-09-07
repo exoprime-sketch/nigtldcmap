@@ -4,6 +4,7 @@ import type {
   VietnamObservationV124,
 } from "../../../data/vietnam/vietnamTypesV124";
 import {
+  publicSourceOrganizationV136_1,
   publicSourceUrlV126,
   publicTextV126,
 } from "../../../data/visualization/publicFieldPolicyV126";
@@ -17,6 +18,8 @@ interface Props {
   observations: VietnamObservationV124[];
   entities: VietnamEntityV124[];
   spatialUnit?: string;
+  /** What the headline figure counted, moved here out of the KPI subtitle. */
+  aggregationBasis?: string[];
 }
 
 export default function PublicSourcePanelV126({
@@ -24,12 +27,18 @@ export default function PublicSourcePanelV126({
   observations,
   entities,
   spatialUnit,
+  aggregationBasis = [],
 }: Props) {
-  const organizations = uniquePublicValuesV126([
-    ...indicators.map((item) => item.sourceOrg),
-    ...observations.map((item) => item.provenance.sourceOrg),
-    ...entities.map((item) => item.provenance.sourceOrg),
-  ]);
+  // Organisation names arrive with the compiler's note about which sheet column
+  // varies per row - "(레코드별 상이 - attr_19 참조)". The names are real; the
+  // notes were never meant for a reader.
+  const organizations = uniquePublicValuesV126(
+    [
+      ...indicators.map((item) => item.sourceOrg),
+      ...observations.map((item) => item.provenance.sourceOrg),
+      ...entities.map((item) => item.provenance.sourceOrg),
+    ].map((value) => publicSourceOrganizationV136_1(value))
+  );
   const urls = Array.from(
     new Set(
       [
@@ -59,7 +68,9 @@ export default function PublicSourcePanelV126({
   ]);
   const licenses = uniquePublicValuesV126([
     ...indicators.map((item) => item.licenseCode),
-    ...indicators.map((item) => item.attributionText),
+    // Attribution lines carry the same per-row sheet note as the organisation
+    // names - "Source: 각 기관 공식 웹사이트 및 공개 보도 (레코드별 상이)".
+    ...indicators.map((item) => publicSourceOrganizationV136_1(item.attributionText)),
   ]);
 
   return (
@@ -73,12 +84,12 @@ export default function PublicSourcePanelV126({
         data-testid="public-source-panel"
       >
         <div className="pav126-section-heading">
-          <span>출처·기준연도</span>
-          <h3>공식 자료와 해석 기준</h3>
+          <span>자료정보</span>
+          <h3>출처와 이용조건</h3>
         </div>
         <dl>
         <div>
-          <dt>자료 제공기관</dt>
+          <dt>제공기관</dt>
           <dd>
             <PublicTermTextV134
               text={organizations.join(" · ") || "공개 자료에 기관명이 명시되지 않음"}
@@ -86,7 +97,7 @@ export default function PublicSourcePanelV126({
           </dd>
         </div>
         <div>
-          <dt>기준연도·기간</dt>
+          <dt>자료기간</dt>
           <dd>{summarizeYearsV126(years)}</dd>
         </div>
         <div>
@@ -101,9 +112,17 @@ export default function PublicSourcePanelV126({
             <dd><PublicTermTextV134 text={publicSpatialUnitLabelV135(spatialUnit)} /></dd>
           </div>
         )}
+        {aggregationBasis.length > 0 && (
+          <div>
+            <dt>산정기준</dt>
+            <dd>
+              <PublicTermTextV134 text={aggregationBasis.join(" · ")} />
+            </dd>
+          </div>
+        )}
         {licenses.length > 0 && (
           <div>
-            <dt>이용조건·출처표시</dt>
+            <dt>이용조건</dt>
             <dd>
               <PublicTermTextV134 text={licenses.join(" · ")} />
             </dd>

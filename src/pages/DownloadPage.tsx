@@ -27,6 +27,7 @@ import {
   publicDownloadRowsHaveTechnicalFieldsV126,
   publicRowsToCsvV126,
   publicRowsToJsonV126,
+  publicSourceOrganizationV136_1,
   publicSourceUrlV126,
   publicTextV126,
   toPublicEntityRowsV126,
@@ -289,7 +290,7 @@ export default function DownloadPage({
   const attributions = unique(
     selectedCatalog
       .flatMap((item) => item.raw.rights.attributionTexts)
-      .map(publicTextV126)
+      .map(publicSourceOrganizationV136_1)
   );
   const sourceUrls = unique(
     selectedCatalog.flatMap((item) => item.sourceUrls).map(publicSourceUrlV126)
@@ -496,7 +497,7 @@ export default function DownloadPage({
       <section className="cdp-hero">
         <h1>데이터 다운로드</h1>
         <p>
-          <PublicTermTextV134 text="필요한 데이터를 선택해 CSV 또는 JSON으로 내려받을 수 있습니다" />
+          <PublicTermTextV134 text="다운로드할 데이터를 선택하세요. CSV 또는 JSON으로 내려받을 수 있습니다" />
         </p>
       </section>
 
@@ -627,7 +628,7 @@ export default function DownloadPage({
                       {downloadStatus.reason ||
                         `${item.downloadableRecordCount.toLocaleString(
                           "ko-KR"
-                        )}개 공개 레코드`}
+                        )}행`}
                     </small>
                   </span>
                 </article>
@@ -641,7 +642,7 @@ export default function DownloadPage({
       </section>
 
       <section className="cdp-panel cdp-step">
-        <h2>2. 범위 선택</h2>
+        <h2>2. 기간과 범위</h2>
         <div className="cdp-filter-grid cdp-filter-grid--secondary">
           <label className="cdp-field">
             <span className="cdp-field__label">기간</span>
@@ -696,7 +697,7 @@ export default function DownloadPage({
             </>
           )}
           <label className="cdp-field">
-            <span className="cdp-field__label">자료 제공기관</span>
+            <span className="cdp-field__label">제공기관</span>
             <select
               className="cdp-select"
               value={sourceOrganization}
@@ -735,7 +736,7 @@ export default function DownloadPage({
       </section>
 
       <section className="cdp-panel cdp-step">
-        <h2>3. 형식과 출처</h2>
+        <h2>3. 파일 형식과 출처</h2>
         <div className="cdp-filter-grid cdp-filter-grid--secondary">
           <fieldset className="cdp-field">
             <legend className="cdp-field__label">파일 형식</legend>
@@ -802,11 +803,9 @@ export default function DownloadPage({
         <div className="cdp-download-footer">
           <span className="cdp-download-summary">
             {selectedCatalog.length > 0
-              ? `${selectedCatalog.length.toLocaleString(
+              ? `선택한 데이터 ${selectedCatalog.length.toLocaleString(
                   "ko-KR"
-                )}개 데이터 선택 · 예상 다운로드 행 수 최대 ${expectedDownloadRows.toLocaleString(
-                  "ko-KR"
-                )}행`
+                )}개 · 최대 ${expectedDownloadRows.toLocaleString("ko-KR")}행`
               : "다운로드할 데이터를 선택해 주세요"}
           </span>
           <button

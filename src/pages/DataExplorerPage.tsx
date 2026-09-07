@@ -605,17 +605,17 @@ export default function DataExplorerPage({
     <div className="page-shell cdp-page">
       <section className="cdp-hero">
         <h1>데이터 찾기</h1>
-        <p>기후·경제·정책·사업 데이터를 찾아볼 수 있습니다</p>
+        <p>주제, 기관, 기술, 지역으로 데이터를 검색할 수 있습니다</p>
       </section>
 
-      <section className="cdp-panel cdp-filter-panel" aria-label="데이터 검색">
+      <section className="cdp-panel cdp-filter-panel" aria-label="검색조건">
         <label className="cdp-field cdp-field--wide">
           <span className="cdp-field__label">검색</span>
           <input
             className="cdp-input"
             value={query}
             onChange={(event) => onQueryChange(event.target.value)}
-            placeholder="데이터명, 기관명, 사업명 또는 지역명 검색"
+            placeholder="어떤 데이터를 찾으시나요?"
           />
         </label>
 
@@ -691,7 +691,7 @@ export default function DataExplorerPage({
         </div>
 
         <details className="cdp-advanced-filters">
-          <summary>상세 필터</summary>
+          <summary>상세검색</summary>
           <div className="cdp-filter-grid cdp-filter-grid--secondary">
             <label className="cdp-field">
               <span className="cdp-field__label">자료연도</span>
@@ -709,7 +709,7 @@ export default function DataExplorerPage({
               </select>
             </label>
             <label className="cdp-field">
-              <span className="cdp-field__label">자료 제공기관</span>
+              <span className="cdp-field__label">제공기관</span>
               <select
                 className="cdp-select"
                 value={sourceOrganization}
@@ -757,12 +757,12 @@ export default function DataExplorerPage({
             className="cdp-button cdp-button--secondary"
             onClick={resetFilters}
           >
-            필터 초기화
+            검색조건 초기화
           </button>
           <span className="cdp-result-count" aria-live="polite">
             {loading
               ? "불러오는 중"
-              : `검색결과 ${filtered.length.toLocaleString("ko-KR")}건`}
+              : `현재 ${filtered.length.toLocaleString("ko-KR")}개의 데이터가 있습니다`}
           </span>
           {searchIndexLoading && (
             <span className="cdp-muted">검색 범위를 확장하는 중</span>
@@ -833,11 +833,11 @@ export default function DataExplorerPage({
             </p>
             <dl className="cdp-card__facts cdp-card__facts--public-v135">
               <div>
-                <dt>기간</dt>
+                <dt>자료기간</dt>
                 <dd>{semanticYearRange}</dd>
               </div>
               <div>
-                <dt>자료 제공기관</dt>
+                <dt>제공기관</dt>
                 <dd>
                   <PublicTermTextV134
                     text={

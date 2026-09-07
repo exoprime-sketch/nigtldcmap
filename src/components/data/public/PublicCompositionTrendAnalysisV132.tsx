@@ -211,13 +211,13 @@ export default function PublicCompositionTrendAnalysisV132({
             <p>
               {allSeries.length > SERIES_LIMIT_V132 && !focused
                 ? `최신값 기준 주요 ${SERIES_LIMIT_V132}개 계열을 먼저 표시합니다. 아래 선택에서 다른 계열의 전체 추이를 볼 수 있습니다.`
-                : "동일한 측정항목과 단위의 계열만 한 축에서 비교합니다."}
+                : "동일한 항목과 단위의 계열만 한 축에서 비교합니다."}
             </p>
           </div>
           <div className="pct132__selectors">
             {measures.length > 1 ? (
               <label>
-                측정항목
+                항목
                 <select
                   onChange={(event) => {
                     const next = measures.find((measure) => measure.key === event.target.value);

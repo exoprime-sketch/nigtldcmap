@@ -262,12 +262,12 @@ export default function CpiaPolicyCapacityAnalysisV126({
         className="cpia126__table"
         data-testid="public-raw-table"
       >
-        <summary>원자료 보기 · {rows.length.toLocaleString("ko-KR")}건</summary>
+        <summary>상세 데이터 · {rows.length.toLocaleString("ko-KR")}건</summary>
         <div className="cdp-table-wrap">
           <table className="cdp-table">
             <thead>
               <tr>
-                <th>측정항목</th><th>값</th><th>단위</th><th>연도</th><th>자료 제공기관</th><th>결측 사유</th><th>공식 원문</th>
+                <th>항목</th><th>값</th><th>단위</th><th>연도</th><th>제공기관</th><th>결측 사유</th><th>공식 원문</th>
               </tr>
             </thead>
             <tbody>

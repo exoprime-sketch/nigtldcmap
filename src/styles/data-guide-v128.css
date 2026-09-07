@@ -14,6 +14,14 @@
   letter-spacing: 0.08em;
 }
 
+/* Korean has no inter-word breaking rule of its own, so the default lets a
+   line end mid-word - "개도국 기후기술 협력 플/랫폼". keep-all restores the
+   space as the break point on the headings a visitor reads first. */
+.data-guide-v128__hero h1,
+.data-guide-v128__hero p {
+  word-break: keep-all;
+}
+
 .data-guide-v128__hero h1 {
   margin: 10px 0 0;
   color: var(--navy-900);

@@ -342,6 +342,16 @@ const REQUIRED_PUBLIC_GLOSSARY_V134: PublicGlossaryEntryV134[] = [
     category: "organisation",
   }),
   seedV134({
+    id: "dpf",
+    term: "DPF",
+    englishName: "Development Policy Financing",
+    koreanName: "개발정책 금융",
+    definition:
+      "특정 시설이 아니라 정부의 정책·제도 개혁 이행을 조건으로 재원을 지원하는 세계은행의 지원 방식입니다.",
+    category: "development-finance",
+    aliases: ["DPO"],
+  }),
+  seedV134({
     id: "ppp-project",
     term: "PPP",
     englishName: "Public-Private Partnership",

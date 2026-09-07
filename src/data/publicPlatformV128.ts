@@ -125,7 +125,7 @@ export function publicDownloadStatusV128(
         : item.publicStatus === "data-entry-planned"
         ? "입력 예정 항목으로 다운로드할 실제 값이 없습니다"
         : item.publicStatus === "not-collected"
-        ? "원자료가 아직 수집되지 않아 다운로드 파일을 제공하지 않습니다"
+        ? "자료가 아직 수집되지 않아 다운로드 파일을 제공하지 않습니다"
         : "실제 입력값이 없어 다운로드 파일을 제공하지 않습니다";
     return {
       key: "no-download-data",
@@ -147,7 +147,7 @@ export function publicDownloadStatusV128(
     key: "display-only",
     label: "화면에서만 제공",
     reason: sourceRestricted
-      ? "원자료 이용조건에 따라 화면 열람만 제공합니다"
+      ? "출처의 이용조건에 따라 화면 열람만 제공합니다"
       : "재배포가 허용된 데이터만 다운로드할 수 있습니다",
   };
 }

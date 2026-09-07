@@ -11,7 +11,10 @@ import {
 import type {
   PublicAnalyticalRendererV126,
 } from "../../../data/visualization/publicVisualizationRegistryV126";
-import { publicElementCopyV126 } from "../../../data/visualization/publicCopyRegistryV126";
+import {
+  publicAggregationBasisV136_2,
+  publicElementCopyV126,
+} from "../../../data/visualization/publicCopyRegistryV126";
 import { getPublicAnalysisHeadingsV134 } from "../../../data/visualization/publicAnalysisHeadingsV134";
 import { getPublicIndicatorInterpretationV129 } from "../../../data/interpretation/publicIndicatorInterpretationV129";
 import type {
@@ -119,6 +122,13 @@ export default function PublicDataAnalysisRouterV126({
         semantics.records
       ),
     [observations, semantics]
+  );
+  // What the headline counted used to ride along in the KPI subtitle, between
+  // the unit and a run of category codes. It is a source note, so it sits with
+  // the other source notes.
+  const aggregationBasis = useMemo(
+    () => publicAggregationBasisV136_2(semanticRows.map((row) => row.dimensionLabels)),
+    [semanticRows]
   );
   const adapterContract = useMemo<ElementVisualizationContractV125>(
     () => ({
@@ -295,6 +305,7 @@ export default function PublicDataAnalysisRouterV126({
         observations={observations}
         entities={entities}
         spatialUnit={spatialUnit}
+        aggregationBasis={aggregationBasis}
       />
       {elementId !== "D-011" ? (
         <PublicRawDataTablesV126

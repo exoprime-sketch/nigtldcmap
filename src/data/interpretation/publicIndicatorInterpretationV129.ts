@@ -98,7 +98,7 @@ function reviewedDecisionV129(
     meaningBullets: [],
     direction: "neutral",
     directionLabel: explanationRequired
-      ? "선택한 측정항목의 정의에 따라 해석"
+      ? "선택한 항목의 정의에 따라 해석"
       : "직접 측정값으로 별도 지수 해석이 필요하지 않음",
     officialBands: null,
     benchmarkType: "none",
@@ -239,7 +239,7 @@ export const PUBLIC_INDICATOR_INTERPRETATIONS_V129: readonly PublicIndicatorInte
       publicName: "기후리스크지수(CRI)",
       meaningBullets: [
         "극한기상으로 인한 피해 수준을 점수와 순위로 보여줍니다.",
-        "점수와 순위는 방향이 다르므로 화면에서 선택한 측정항목을 확인해야 합니다.",
+        "점수와 순위는 방향이 다르므로 화면에서 선택한 항목을 확인해야 합니다.",
       ],
       direction: "context-dependent",
       directionLabel: "점수·순위를 구분해 해석",
@@ -531,7 +531,7 @@ export const PUBLIC_INDICATOR_INTERPRETATIONS_V129: readonly PublicIndicatorInte
       meaningBullets: [
         "선택한 시나리오와 기간에 따른 GVI 관련 전망 또는 구성지표입니다.",
         "전망값은 관측값이 아니며 같은 지표·단위·시나리오 안에서 비교합니다.",
-        "지표마다 높고 낮음의 의미가 달라 화면에 표시된 측정항목을 함께 확인합니다.",
+        "지표마다 높고 낮음의 의미가 달라 화면에 표시된 항목을 함께 확인합니다.",
       ],
       direction: "context-dependent",
       directionLabel: "선택한 전망 구성지표의 정의와 단위에 따라 해석",
@@ -585,7 +585,7 @@ export const PUBLIC_INDICATOR_INTERPRETATIONS_V129: readonly PublicIndicatorInte
         "시나리오는 서로 다른 정책·기술 가정을 두므로 같은 경로의 시점별 값만 연결합니다.",
       ],
       direction: "context-dependent",
-      directionLabel: "동일 측정항목·시나리오 안에서 해석",
+      directionLabel: "동일 항목·시나리오 안에서 해석",
       officialBands: null,
       benchmarkType: "none",
     },
@@ -655,7 +655,7 @@ export const PUBLIC_INDICATOR_INTERPRETATIONS_V129: readonly PublicIndicatorInte
         "비율은 선택한 GDP·연료 구성 등 화면에 표시된 기준 안에서 해석합니다.",
       ],
       direction: "context-dependent",
-      directionLabel: "선택한 보조금 측정항목과 분모 안에서 해석",
+      directionLabel: "선택한 보조금 항목과 분모 안에서 해석",
       officialBands: null,
       benchmarkType: "none",
       denominator: "선택한 GDP 또는 연료별 보조금 합계",
@@ -681,7 +681,7 @@ export const PUBLIC_INDICATOR_INTERPRETATIONS_V129: readonly PublicIndicatorInte
       publicName: "R&D 투자·혁신 지수",
       meaningBullets: [
         "R&D 지출 비율과 글로벌 혁신지수를 구분해 보여줍니다.",
-        "비율·점수·순위는 단위와 방향이 다르므로 선택한 측정항목을 확인합니다.",
+        "비율·점수·순위는 단위와 방향이 다르므로 선택한 항목을 확인합니다.",
       ],
       direction: "context-dependent",
       directionLabel: "R&D 비율·혁신점수·순위를 구분해 해석",
@@ -739,7 +739,7 @@ export const PUBLIC_INDICATOR_INTERPRETATIONS_V129: readonly PublicIndicatorInte
       publicName: "가뭄 지표",
       meaningBullets: [
         "연속 건조일수, 강수·증발산 편차, 토양수분으로 가뭄 양상을 봅니다.",
-        "지표별 단위와 방향이 다르므로 선택한 측정항목의 정의와 기간을 함께 확인합니다.",
+        "지표별 단위와 방향이 다르므로 선택한 항목의 정의와 기간을 함께 확인합니다.",
       ],
       direction: "context-dependent",
       directionLabel: "선택한 가뭄 지표의 정의에 따라 해석",
@@ -805,11 +805,11 @@ export const PUBLIC_INDICATOR_INTERPRETATIONS_V129: readonly PublicIndicatorInte
       explanationRequired: true,
       publicName: "격년투명성보고서 기후 전망",
       meaningBullets: [
-        "보고된 배출량과 미래 기후·경제손실 전망을 측정항목별로 보여줍니다.",
+        "보고된 배출량과 미래 기후·경제손실 전망을 항목별로 보여줍니다.",
         "전망은 선택한 시나리오·기간·단위가 같은 값끼리 비교합니다.",
       ],
       direction: "context-dependent",
-      directionLabel: "선택한 시나리오·기간·측정항목 안에서 해석",
+      directionLabel: "선택한 시나리오·기간·항목 안에서 해석",
       officialBands: null,
       benchmarkType: "none",
     },
@@ -819,7 +819,7 @@ export const PUBLIC_INDICATOR_INTERPRETATIONS_V129: readonly PublicIndicatorInte
       publicName: "국가적응계획 취약성 평가",
       meaningBullets: [
         "국가적응계획이 평가한 부문별 기후위험과 적응 우선과제를 보여줍니다.",
-        "등급과 과제 수는 서로 다른 측정항목이므로 같은 척도로 비교하지 않습니다.",
+        "등급과 과제 수는 서로 다른 항목이므로 같은 척도로 비교하지 않습니다.",
       ],
       direction: "context-dependent",
       directionLabel: "부문별 위험등급과 과제 수를 구분해 해석",
