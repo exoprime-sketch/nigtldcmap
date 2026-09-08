@@ -324,7 +324,9 @@ def _matches_label(normalized_key: str, label: str) -> bool:
     than to a column index.
     """
 
-    folded_label = re.sub(r"[^0-9a-z가-힣]+", "_", label.lower()).strip("_")
+    # ``%`` survives folding because it distinguishes real columns:
+    # 수관 피복률(%) folds to 수관_피복률_% , which is the key the parser emits.
+    folded_label = re.sub(r"[^0-9a-z가-힣%]+", "_", label.lower()).strip("_")
     folded_key = normalized_key.lower().strip("_")
     return folded_key == folded_label or folded_label.endswith(folded_key)
 
