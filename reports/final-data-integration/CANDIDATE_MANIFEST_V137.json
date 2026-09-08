@@ -1,0 +1,77 @@
+{
+  "schema": "nigt-candidate-manifest-1",
+  "generatedAt": "2026-09-08T07:20:00Z",
+  "note": "No local path or credential is recorded here. Roots are repository-relative.",
+
+  "codeCommit": "d6ac8b851a0dc434f5469f8d07bb6896be98824d",
+  "codeBranch": "fix/existing-screen-usability-v136",
+  "dirty": true,
+  "dirtyPatchHash": "bb429a0b42c41c606e007a92fa45487466232a8f06c74945efe1eecd0469400a",
+  "dirtyPaths": [
+    "src/data/visualization/generatedVisualizationContractsV125.ts",
+    "reports/v125/duplicate-visible-label-audit-v125.json",
+    "reports/v125/element-visualization-audit-v125.csv",
+    "reports/v125/semantic-dimension-audit-v125.json",
+    "reports/v125/visualization-contract-coverage-v125.json"
+  ],
+  "dirtyReason": "generatedVisualizationContractsV125.ts is build:semantic:v125 output for the new source. Regenerating it against the candidate data reproduces the working tree byte for byte (31587ce9...), so it holds no manual edit. It is deliberately not committed yet: the repository's public/data is still the 2026-08-27 payload, and committing a contract built from data the branch does not carry would make the branch internally inconsistent. It is committed together with the data promotion.",
+
+  "sourceSnapshot": {
+    "root": "베트남데이터 (read-only, never modified, never committed, never deployed)",
+    "inventoryCsvSha256": "052c6fae6c94413c37baac022933b2916c611b818ea0577fb1c31932d77db006",
+    "fileCount": 3752,
+    "realContentFileCount": 2035,
+    "uniqueNonEmptyContentCount": 2248,
+    "zeroByteFileCount": 1032,
+    "workbooksParsed": 145,
+    "previousSourceZip": "vietnam-data(4).zip",
+    "previousWorkbookCount": 149
+  },
+
+  "publicDataFingerprint": "290c6887e06b8f5f5355d529ea2e536e6017cdb7dd82e94ba34f545066fb4ccd",
+  "publicDataRoot": ".verify/candidate/build/data/vietnam/v2",
+  "generatedContractHash": "31587ce9be3916d3326cf6a80a49a17846a10c65ea2943dcfe78fe3e340dce27",
+  "appBundle": {
+    "file": "static/js/main.eeb77100.js",
+    "sha256": "fd965d8a96ede7243f552001c83ae64d7d2f97162ae0304196a624ce2b9ca1d9"
+  },
+  "outputRoot": ".verify/candidate/build",
+  "stagingRoot": ".staging/candidate",
+
+  "generationCommands": [
+    "VIETNAM_SOURCE_DIR=<source> VIETNAM_STAGING_ROOT=.staging/candidate python tools/vietnam_etl/build_public_v2.py",
+    "VIETNAM_DATA_ROOT=<candidate>/public/data/vietnam/v2 python tools/vietnam_semantic/build_semantic_v125.py",
+    "VIETNAM_DATA_ROOT=<candidate>/public/data/vietnam/v2 node scripts/build-vietnam-interpretation-v129.mjs",
+    "VIETNAM_DATA_ROOT=<candidate>/public/data/vietnam/v2 node scripts/build-public-temporal-contract-v135.mjs",
+    "react-scripts build (in .verify/candidate)"
+  ],
+
+  "versionSeparation": {
+    "PRODUCTION": {
+      "url": "https://nigtldcmap.vercel.app/",
+      "deployedSha": "UNKNOWN",
+      "shaConfirmedBy": "not confirmed; a bundle string match is not proof of a deployed commit",
+      "carriesNewData": false
+    },
+    "REMOTE_BRANCH": {
+      "sha": "d6ac8b851a0dc434f5469f8d07bb6896be98824d",
+      "publicDataManifest": "still sourcePackage=vietnam-data(4).zip, authorizedElementCount=20, downloadableElementCount=114, generatedAt=2026-08-27",
+      "note": "These are the OLD committed numbers. They are not the candidate's all-public result and must not be quoted as it."
+    },
+    "LOCAL_CANDIDATE": {
+      "publicDataFingerprint": "290c6887e06b8f5f5355d529ea2e536e6017cdb7dd82e94ba34f545066fb4ccd",
+      "carriesNewData": true
+    },
+    "PR_PREVIEW": { "status": "NOT_CREATED" }
+  },
+
+  "candidateCompleteness": {
+    "dataContractsFinished": ["B-031", "B-032", "B-033", "B-034 (province)", "A-017", "D-012..D-026 portfolio"],
+    "dataContractsOutstanding": ["C-016", "D-018", "B-034 national residual", "A-023 unique-facility split"],
+    "mapLayersTargetReviewed": 3,
+    "mapLayersTotal": 12,
+    "detailScreensMeaningReviewed": 0,
+    "detailScreensTotal": 152,
+    "releaseReady": false
+  }
+}

@@ -523,8 +523,16 @@
 }
 
 @media (min-width: 769px) and (max-width: 1099px) {
+  /* There is no room for three columns here, so the analysis panel floats over
+     the map. At 1024 and 958 the previous sizing - a 260px list beside the map
+     and a full-height 340px panel on top of it - left only 49.8% and 44.8% of
+     the canvas actually reachable by pointer: half the map was behind a panel
+     before the reader touched anything. The list gives back 40px, the panel is
+     narrower and no longer runs the full height, and it keeps its toggle and
+     its own scrolling, so nothing is removed - the map simply gets usable area
+     back at the widths where it had least. */
   .cdp-map-layout {
-    grid-template-columns: 260px minmax(0, 1fr);
+    grid-template-columns: 220px minmax(0, 1fr);
   }
 
   .cdp-map-evidence {
@@ -532,8 +540,10 @@
     z-index: 7;
     top: 12px;
     right: 12px;
-    bottom: 12px;
-    width: min(340px, calc(100% - 300px));
+    bottom: auto;
+    max-height: calc(65% - 12px);
+    overflow-y: auto;
+    width: min(300px, calc(100% - 340px));
     border: 1px solid var(--cdp-line);
     border-radius: 14px;
     box-shadow: var(--cdp-shadow);
