@@ -21,6 +21,7 @@ import shutil
 from copy import deepcopy
 from typing import Any, Iterable, Mapping
 
+from .b034_facts_v137 import derive_b034_facts
 from .normalization import canonical_json, is_placeholder, nfc_text
 from .source_zip import analyze_source_dir, analyze_source_zip
 from tools.vietnam_spatial.build_spatial_v124 import build_spatial_assets
@@ -280,12 +281,20 @@ def _element_rights(
             "publicationDecision": _decision_ref(decision),
         }
 
-    # Prefer the posture the element already publishes under, so a rebuild does
-    # not quietly restate rights in different words.
+    # Rights vary by source series, not by element: 16 of the 152 elements
+    # publish some indicators openly and others display-only, while within any
+    # one indicator the posture is uniform. So they are resolved per indicator.
+    # Taking the first record's posture and applying it to the whole element
+    # would have opened A-023's 1,727 display-limited rows or closed its 236
+    # public ones, depending only on row order.
+    by_indicator: dict[str, dict[str, Any]] = {}
     for bucket in ("observations", "entities"):
         for record in base_payload.get(bucket, {}).get("records", []):
+            indicator_id = str(record.get("indicatorId") or "")
+            if not indicator_id or indicator_id in by_indicator:
+                continue
             if record.get("rightsStatus"):
-                return {
+                by_indicator[indicator_id] = {
                     "rightsStatus": record["rightsStatus"],
                     "rightsNote": record.get("rightsNote"),
                     "downloadEligible": bool(record.get("downloadEligible")),
@@ -294,12 +303,26 @@ def _element_rights(
 
     rights = base_element.get("rights") or {}
     download_values = [str(value) for value in rights.get("downloadAllowedValues") or []]
-    return {
+    fallback = {
         "rightsStatus": str(rights.get("status") or "limited"),
         "rightsNote": None,
+        # An indicator the previous projection never carried has no posture of
+        # its own; it inherits the element's catalog rights rather than the
+        # allowance of whichever row happened to be read first.
         "downloadEligible": bool(download_values) and "불가" not in download_values,
         "publicationDecision": None,
     }
+    return {"byIndicator": by_indicator, "default": fallback, **fallback}
+
+
+def _rights_for_indicator(
+    rights: Mapping[str, Any], indicator_id: str
+) -> Mapping[str, Any]:
+    """The posture for one indicator, falling back to the element default."""
+    by_indicator = rights.get("byIndicator")
+    if by_indicator and indicator_id in by_indicator:
+        return by_indicator[indicator_id]
+    return rights.get("default", rights)
 
 
 def _apply_rights(record: dict[str, Any], rights: Mapping[str, Any]) -> dict[str, Any]:
@@ -332,6 +355,7 @@ def _authorized_observations(
     for sequence, raw in enumerate(workbook.get("observations", []), start=1):
         indicator_id = str(raw.get("indicator_id") or "")
         indicator = metadata.get(indicator_id, {})
+        row_rights = _rights_for_indicator(rights, indicator_id)
         raw_value = raw.get("value")
         value = None if is_placeholder(raw_value) else _number_or_value(raw_value)
         year = _number_or_value(raw.get("year"))
@@ -352,12 +376,12 @@ def _authorized_observations(
                 "note": raw.get("note"),
                 "loadStatus": indicator.get("loadStatus", "published"),
                 "warnings": list(indicator.get("warnings") or []),
-                "rightsStatus": rights["rightsStatus"],
-                "rightsNote": rights["rightsNote"],
-                "downloadEligible": rights["downloadEligible"],
+                "rightsStatus": row_rights["rightsStatus"],
+                "rightsNote": row_rights["rightsNote"],
+                "downloadEligible": row_rights["downloadEligible"],
                 **(
-                    {"publicationDecision": rights["publicationDecision"]}
-                    if rights.get("publicationDecision")
+                    {"publicationDecision": row_rights["publicationDecision"]}
+                    if row_rights.get("publicationDecision")
                     else {}
                 ),
                 "provenance": _source_provenance(
@@ -450,6 +474,7 @@ def _authorized_entities(
     for sequence, raw in enumerate(workbook.get("entities", []), start=1):
         indicator_id = str(raw.get("indicator_id") or "")
         indicator = metadata.get(indicator_id, {})
+        row_rights = _rights_for_indicator(rights, indicator_id)
         source_attributes = list((raw.get("attributes") or {}).values())
         normalized_attributes: dict[str, Any] = {}
         raw_attributes: dict[str, Any] = {}
@@ -489,14 +514,14 @@ def _authorized_entities(
                 "note": raw.get("note"),
                 "loadStatus": indicator.get("loadStatus", "published"),
                 "warnings": list(indicator.get("warnings") or []),
-                "rightsStatus": rights["rightsStatus"],
-                "rightsNote": rights["rightsNote"],
-                "downloadEligible": rights["downloadEligible"],
+                "rightsStatus": row_rights["rightsStatus"],
+                "rightsNote": row_rights["rightsNote"],
+                "downloadEligible": row_rights["downloadEligible"],
                 "mapEligible": map_eligible,
                 "mapEligibilityReason": "coordinates-valid" if map_eligible else "no-coordinate",
                 **(
-                    {"publicationDecision": rights["publicationDecision"]}
-                    if rights.get("publicationDecision")
+                    {"publicationDecision": row_rights["publicationDecision"]}
+                    if row_rights.get("publicationDecision")
                     else {}
                 ),
                 "provenance": _source_provenance(
@@ -505,6 +530,92 @@ def _authorized_entities(
             }
         )
     return result
+
+
+def _b034_projection(
+    workbook: Mapping[str, Any],
+    alias_payload: Mapping[str, Any],
+    rights: Mapping[str, Any],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]], dict[str, Any]]:
+    """Expand B-034's entity sheet into indicator-addressed observations.
+
+    The map layers, the detail charts and the download all read observations
+    keyed by indicator id, so the province facts are emitted in that shape
+    rather than teaching every consumer about entity attributes. One entity row
+    yields five facts, which is why the derived count is not the entity count.
+
+    Indicator ids are built from the measure and the verified adm1 code, not
+    from row order, so they stay stable if the sheet is reordered.
+    """
+
+    derived = derive_b034_facts(workbook, alias_payload)
+    observations: list[dict[str, Any]] = []
+    indicators: dict[str, dict[str, Any]] = {}
+    for fact in derived["facts"]:
+        adm1 = fact.get("adm1Code")
+        if not adm1:
+            continue
+        measure_slug = fact["measureId"].replace("b034-", "").replace("-", "_")
+        indicator_id = f"B-034_prov_{measure_slug}_{adm1.replace('-', '_').lower()}"
+        period = (
+            str(fact["periodStart"])
+            if fact["periodStart"] == fact["periodEnd"]
+            else f"{fact['periodStart']}–{fact['periodEnd']}"
+        )
+        statistic = "연평균" if fact["statisticType"] == "annual-mean" else None
+        variable_label = (
+            f"{fact['publicLabel']}({statistic})" if statistic else fact["publicLabel"]
+        )
+        indicators.setdefault(
+            indicator_id,
+            {
+                "indicatorId": indicator_id,
+                "labelKo": f"{variable_label} — {fact['regionLabel']}",
+                "unit": fact["unit"],
+                "loadStatus": "published",
+                "warnings": [],
+                "quantityType": fact["quantityType"],
+                "statisticType": fact["statisticType"],
+                "periodStart": fact["periodStart"],
+                "periodEnd": fact["periodEnd"],
+                "spatialUnit": fact["spatialUnit"],
+                "threshold": fact["threshold"],
+                "geographyVersion": fact["geographyVersion"],
+                "signConvention": fact.get("signConvention"),
+            },
+        )
+        row_rights = _rights_for_indicator(rights, indicator_id)
+        observations.append(
+            {
+                "recordId": f"v137-b-034-{indicator_id.lower()}",
+                "elementId": "B-034",
+                "indicatorId": indicator_id,
+                "countryIso3": "VNM",
+                # Flux values are a 2001-2024 mean, so they carry a period and
+                # no single year. Writing a year here would date the mean.
+                "year": fact["referenceYear"],
+                "period": period,
+                "value": fact["value"],
+                "rawValue": None,
+                "unit": fact["unit"],
+                "missingReasonCode": None,
+                "note": fact.get("sourceNote"),
+                "loadStatus": "published",
+                "warnings": [],
+                "rightsStatus": row_rights["rightsStatus"],
+                "rightsNote": row_rights["rightsNote"],
+                "downloadEligible": row_rights["downloadEligible"],
+                "regionId": adm1,
+                "regionLabel": fact["regionLabel"],
+                "sourceRegionKey": fact["sourceRegionKey"],
+                "sourceRegionKeySystem": fact["sourceRegionKeySystem"],
+                "reorganised2025Parent": fact["reorganised2025Parent"],
+                "threshold": fact["threshold"],
+                "statisticType": fact["statisticType"],
+                "provenance": fact["provenance"],
+            }
+        )
+    return observations, list(indicators.values()), derived
 
 
 def _status_for(
@@ -826,7 +937,15 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
     rights_rows: list[dict[str, Any]] = []
     decision_ref = _decision_ref(decision)
     carried_over_ids = set(analysis.get("carriedOverElementIds") or [])
+    adm1_aliases = json.loads(
+        (repo / "public/data/vietnam/v2/geometry/vnm-adm1-aliases.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    b034_derivation_summary: dict[str, Any] = {}
     source_selection_by_element: dict[str, str] = {}
+    derivation_status_by_element: dict[str, str] = {}
+    projection_origin_by_element: dict[str, str] = {}
     promotion_blockers: list[dict[str, Any]] = []
     for element_id in sorted(base_catalog):
         base_element = deepcopy(base_catalog[element_id])
@@ -859,6 +978,7 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         # An element is rebuilt whenever the selected source actually carries
         # rows. A workbook that is only a template is not a reason to blank an
         # element, so those retain the previous projection and say so.
+        derived_indicators: list[dict[str, Any]] = []
         rights = _element_rights(
             element_id,
             authorized=authorized,
@@ -882,7 +1002,9 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         # them now would publish an element whose map has no values. Until that
         # derivation exists they keep the previous projection and are recorded as
         # blocking promotion - visibly incomplete beats silently empty.
-        spatial_observation_elements = SPATIAL_ELEMENT_IDS
+        # B-034 has a derivation now, so it is no longer in the pending set.
+        # The other elements keep their block until each gets its own contract.
+        spatial_observation_elements = SPATIAL_ELEMENT_IDS - {"B-034"}
         if (
             workbook_has_rows
             and element_id in spatial_observation_elements
@@ -902,57 +1024,98 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
                 }
             )
             workbook_has_rows = False
+            derivation_status_by_element[element_id] = "PENDING_ENTITY_DERIVATION"
 
         # A replacement source may legitimately carry fewer records, but a large
         # drop is a question for the data owner, not something to absorb
         # silently. Flag it and let the element project, so the candidate build
         # shows the real figure while promotion stays blocked.
-        if workbook_has_rows and source_dir is not None:
-            previous_rows = len(base_payload["observations"]["records"]) + len(
-                base_payload["entities"]["records"]
-            )
-            new_rows = int(workbook.get("publicPopulatedRowCount", 0))
-            if previous_rows >= 50 and new_rows < previous_rows * 0.5:
-                promotion_blockers.append(
-                    {
-                        "elementId": element_id,
-                        "reason": "MATERIAL_COVERAGE_DROP",
-                        "detail": (
-                            "최종 원천의 공개 가능 행이 이전 대비 절반 미만이다. "
-                            "원천의 실제 변경으로 확인되었으나 반영 여부는 확인이 필요하다."
-                        ),
-                        "previousRows": previous_rows,
-                        "newRows": new_rows,
-                    }
-                )
+        coverage_candidate = workbook_has_rows and source_dir is not None
         if workbook is not None and workbook_has_rows:
             field_definitions = _safe_field_definitions(workbook, base_payload)
-            observations = _authorized_observations(
-                workbook, base_payload, decision, rights
-            )
-            entities = _authorized_entities(
-                workbook, base_payload, decision, field_definitions, rights
-            )
+            if element_id == "B-034" and source_dir is not None:
+                observations, derived_indicators, b034_derivation = _b034_projection(
+                    workbook, adm1_aliases, rights
+                )
+                b034_derivation_summary = {
+                    "entityCount": b034_derivation["entityCount"],
+                    "derivedFactCount": len(b034_derivation["facts"]),
+                    "provinceAliasRowCount": len(b034_derivation["provinceAliasRows"]),
+                    "nationalRowCount": len(b034_derivation["nationalRows"]),
+                    "skippedCount": len(b034_derivation["skipped"]),
+                    "unmatchedRegions": b034_derivation["unmatchedRegions"],
+                }
+                # The entity rows stay as they are, so the map keeps its
+                # polygons and the derived facts keep their lineage back to them.
+                entities = _authorized_entities(
+                    workbook, base_payload, decision, field_definitions, rights
+                )
+            else:
+                observations = _authorized_observations(
+                    workbook, base_payload, decision, rights
+                )
+                entities = _authorized_entities(
+                    workbook, base_payload, decision, field_definitions, rights
+                )
             source_selection = (
                 "CARRIED_OVER_PREVIOUS_WORKBOOK"
                 if element_id in carried_over_ids
                 else "FINAL_SOURCE"
             )
+            projection_origin_by_element[element_id] = "FINAL_SOURCE"
+            derivation_status_by_element.setdefault(element_id, "COMPLETE")
         else:
             field_definitions = deepcopy(
                 base_payload.get("meta", {}).get("fieldDefinitions", [])
             )
             observations = deepcopy(base_payload["observations"]["records"])
             entities = deepcopy(base_payload["entities"]["records"])
+            projection_origin_by_element[element_id] = "PREVIOUS_BASELINE"
+            # Which source was selected and whether it could be derived are
+            # different facts. An element whose new workbook is full of data the
+            # pipeline cannot transform yet is not a template-only source, and
+            # reporting it as one hid nine elements behind a benign label.
             if workbook is None:
-                source_selection = "NO_WORKBOOK_RETAINED_PREVIOUS"
+                source_selection = (
+                    "NO_SOURCE" if element_id not in carried_over_ids else "CARRIED_OVER_PREVIOUS_WORKBOOK"
+                )
+                derivation_status_by_element.setdefault(element_id, "NO_SOURCE")
+            elif derivation_status_by_element.get(element_id) == "PENDING_ENTITY_DERIVATION":
+                source_selection = "FINAL_SOURCE"
             else:
-                source_selection = "TEMPLATE_ONLY_RETAINED_PREVIOUS"
+                source_selection = "FINAL_SOURCE"
+                derivation_status_by_element.setdefault(element_id, "TEMPLATE_ONLY")
         source_selection_by_element[element_id] = source_selection
 
         entities = apply_entity_spatial_semantics_v130(element_id, entities)
 
+        # Compare what is actually published, not the raw row count. A wide
+        # entity sheet expands into several facts per row, so raw rows would
+        # report a drop where the published values grew.
+        if coverage_candidate:
+            previous_rows = len(base_payload["observations"]["records"]) + len(
+                base_payload["entities"]["records"]
+            )
+            new_rows = len(observations) + len(entities)
+            if previous_rows >= 50 and new_rows < previous_rows * 0.5:
+                promotion_blockers.append(
+                    {
+                        "elementId": element_id,
+                        "reason": "MATERIAL_COVERAGE_DROP",
+                        "detail": (
+                            "공개되는 값이 이전 대비 절반 미만이다. "
+                            "원천의 실제 변경으로 확인되었으나 반영 여부는 확인이 필요하다."
+                        ),
+                        "previousRows": previous_rows,
+                        "newRows": new_rows,
+                    }
+                )
+
         indicators = deepcopy(base_payload.get("meta", {}).get("indicators", []))
+        if element_id == "B-034" and source_dir is not None and derived_indicators:
+            # The derived measures define themselves; the V1 indicator list
+            # described the previous shape and must not stand in for them.
+            indicators = derived_indicators
         if is_authorized:
             for indicator in indicators:
                 indicator["publicationDecision"] = decision_ref
@@ -1530,8 +1693,19 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
             )
             for value in sorted(set(source_selection_by_element.values()))
         },
+        "b034Derivation": b034_derivation_summary,
         "promotionBlockers": promotion_blockers,
         "promotionBlocked": bool(promotion_blockers),
+        "derivationStatus": {
+            value: sorted(
+                key for key, item in derivation_status_by_element.items() if item == value
+            )
+            for value in sorted(set(derivation_status_by_element.values()))
+        },
+        "projectionOriginCounts": {
+            value: sum(1 for item in projection_origin_by_element.values() if item == value)
+            for value in sorted(set(projection_origin_by_element.values()))
+        },
         "sourceSelectionCounts": {
             value: sum(1 for item in source_selection_by_element.values() if item == value)
             for value in sorted(set(source_selection_by_element.values()))

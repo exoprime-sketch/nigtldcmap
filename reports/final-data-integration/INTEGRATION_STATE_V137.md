@@ -370,3 +370,149 @@ C-016 spatial duplicate 오류로 **구 원천 빌드를 깨뜨렸고**, 범위�
   indicators/fieldDefinitions/search/source registry는 아직 V1 경로
 - 후속 파이프라인(semantic v125 등), 로컬 공개 후보 배치, 새 데이터 UI QA, finalize:v136
 - Draft PR (gh 부재 — 인증된 다른 경로 미확인)
+
+
+---
+
+# Stage 2B — B-034 원천→공개값→지도→다운로드 연결
+
+REVIEWED_SHA `847634e` · 이 단계 산출 SHA는 커밋 후 기재.
+
+## 2B-1. sourceSelection 보고 정정 (§1)
+
+`ENTITY_FORM_NOT_YET_DERIVED` 를 기록한 뒤 `workbook_has_rows=False` 로 만들어
+뒤에서 `TEMPLATE_ONLY_RETAINED_PREVIOUS` 로 보고하던 문제를 고쳤다.
+원천 상태와 파생 상태를 분리했다.
+
+| 축 | 값 |
+|---|---|
+| sourceSelection | FINAL_SOURCE 147 / CARRIED_OVER 2 / NO_SOURCE 3 |
+| projectionOrigin | FINAL_SOURCE 137 / PREVIOUS_BASELINE 15 |
+| derivationStatus | COMPLETE 137 / PENDING_ENTITY_DERIVATION 8 / TEMPLATE_ONLY 4 / NO_SOURCE 3 |
+
+`TEMPLATE_ONLY` 4개(A-027, A-028, E-011, E-013)만이 실제 템플릿이고,
+미파생 8개는 별도로 드러난다. (B-034 파생 완료로 9→8)
+
+## 2B-2. 필드 결합을 열 순서에서 분리 (§2)
+
+`b034_facts_v137.py` 는 **인쇄된 라벨**로 결합한다. attr_N 순서를 쓰지 않는다.
+음성 fixture로 확인: 열 순서를 바꿔도 값·의미 대응이 유지되고(불변),
+중간 열을 지우면 63건이 미계상으로 검출된다(검출).
+
+## 2B-3. 권한 범위 정정 (§3)
+
+**혼재는 가정이 아니라 실측이다** — 152개 중 **16개 요소**가 레코드별로 권한이 갈린다
+(A-023: public 236 / display-limited 1,727 등). 반면 **indicatorId 단위로는 균일**하다
+(A-023·C-016·A-010 표본에서 혼재 지표 0건).
+
+→ `_element_rights` 가 첫 레코드의 `downloadEligible` 을 전체에 복제하던 구조를
+**indicator 단위 해석**(`_rights_for_indicator`)으로 교체했다.
+신규 지표는 요소 카탈로그 rights를 상속하며, 첫 허용행에 기대지 않는다.
+E 20개 소유자 승인 범위와 decisionId는 변경하지 않았다.
+
+B-034 자체는 498건 전부 `public` / `downloadEligible=true` 로 균일 →
+다운로드 허용이 정당하며 강제로 만든 것이 아니다.
+
+## 2B-4. B-034 변환계약 (§4)
+
+**기준연도 2000을 모든 지표에 쓰지 않았다.** 근거는 원천 시트의 note다:
+
+> 저장량·밀도는 2000년 기준, 배출·흡수·순플럭스는 **2001–2024 연평균**.
+
+| measureId | 단위(라벨에서) | quantityType | statisticType | 기간 |
+|---|---|---|---|---|
+| b034-agb-carbon-stock | Mg C | stock | point-in-time | 2000 |
+| b034-agb-carbon-density | Mg C/ha | density | point-in-time | 2000 |
+| b034-forest-carbon-gross-emissions | Mg CO2e/yr | flux | annual-mean | 2001–2024 |
+| b034-forest-carbon-gross-removals | Mg CO2/yr | flux | annual-mean | 2001–2024 |
+| b034-forest-carbon-net-flux | Mg CO2e/yr | flux | annual-mean | 2001–2024 |
+
+부호 규약 `음수 = 순흡수원(sink)` 은 원천 note에서 가져왔다(값이 음수라서 추정한 것이 아님).
+단위는 CO2 / CO2e / Mg C / Mg C/ha 를 구분해 보존했고 임의 통일하지 않았다.
+
+**UNRESOLVED_METADATA**: 전국 계열의 `기준연도=2025` 행은 note의 2001–2024 연평균과
+연도 표기가 어긋난다. 2001–2024 산술평균(110,966,746)과도 1.24% 다르고
+어떤 연도 창(window)으로도 재현되지 않는다(최근접 0.11%는 우연).
+→ 원천이 별도 산출한 집계로 보이나 **확정하지 않고 미해결로 기록**한다.
+
+## 2B-5. 개체→분석값 (§5)
+
+- 원천 entity **246** = adm1 63 + national 183
+- adm1 63행 × 5지표 = **315 파생 사실** (메타의 "성별 315"와 정확히 일치)
+- national 183 = 성 단위 중복 **126**(alias로 표시, 이중계상 안 함) + 임계값 27 + 기타 30
+- entity 원본은 그대로 보존(246건) → 지도 폴리곤 유지, 파생값과 lineage 연결
+- 246을 사업 수처럼 집계하지 않았고, 과거 498을 목표 개수로 쓰지 않았다
+
+## 2B-6. 지역 조인 (§6)
+
+- 원천 키: **GADM 4.1 GID_1** (`VNM.1_1`) / 지도 경계 키: **`adm1Code`** (`VN-01`), `pre-2025-63`
+- 두 체계는 다르고 repo에 GADM 크로스워크가 **없다** → repo의 검증된 alias 표를 통해
+  정규화 정확일치로만 결합
+- 결과: **63/63 결합, GADM↔adm1 양방향 1:1, 미결합 0**
+- 경계 파일 실체 확인: 63 feature, Polygon 50 + MultiPolygon 13 (파일명만 보고 판단 안 함)
+- `VN-44 = An Giang` 을 경계 파일에서 직접 확인
+- **34개 체계는 속성으로만 보존**. 초기 구현이 `2025_개편_후_소속` 으로 폴백하다
+  63→34로 붕괴(고유 코드 34개)한 것을 발견해 제거했다.
+
+## 2B-7. 독립 대조와 음성 테스트 (§7)
+
+`scripts/verify-b034-reconciliation-v137.py` 는 파생기·파이프라인 파서를 쓰지 않고
+**openpyxl로 셀을 직접** 읽어 기대값을 만든다.
+
+```
+reconciliation: expected 315 → derived 315
+  unaccounted 0 · orphan 0 · duplicate 0 · mismatch 0
+geography: joined 63 / boundary 63 · 1:1 · geometry 63
+negative controls: 9/9
+```
+
+| 유형 | 사례 | 결과 |
+|---|---|---|
+| detect | 값 삭제 / 부호 반전 / 단위 변경 / 지역키 교체 / 중복 삽입 / 중간 열 삭제 | 6/6 검출 |
+| detect | **계약의 flux 기간을 2000으로 오설정** | 검출 (mismatch 189 = 63×3) |
+| invariant | 열 순서 변경 | 출력 불변 |
+| invariant | `기준연도` 열을 2000으로 덮어씀 | 출력 불변(기간은 note 계약에서 옴) |
+
+음성 테스트는 임시 사본에서만 수행했고 원본은 쓰지 않았다.
+
+## 2B-8. 연결 결과
+
+| 지점 | 결과 |
+|---|---|
+| 원천 셀 | `attr_12`, row 4, `1.2_entity(레코드형)`, B-034.xlsx |
+| 공개 관측 | `B-034_prov_forest_carbon_net_flux_vn_44` = **-327911 Mg CO2e/yr**, year=None, period 2001–2024 |
+| 지도 레이어 | 기본 변수 `산림탄소 순플럭스(연평균)`, 기본 기간 2001–2024, joinKey adm1Code, 63 feature |
+| 다운로드 CSV | observation 315행 전부 값 보유, An Giang 행 `-327911 / Mg CO2e/yr / 2001–2024` |
+| 부호 분포 | 음수(흡수) 42 / 양수(배출) 21 → 0 기준선 분기 실제 동작 |
+
+로컬 후보 build 성공, staging 유출 0(`v2-staging`/`.staging`/절대경로 모두 0),
+`build/data/vietnam` 아래 v1·v2만 존재.
+
+**LOCAL_NEW_DATA_UI_QA_RESULT = NOT_RUN** — Chrome 확장에 localhost/127.0.0.1
+사이트 권한이 없어 실제 화면 캡처를 하지 못했다. 보안 차단을 우회하지 않았다.
+따라서 **"B-034 데이터 연결을 검증했다"와 "사용자 화면까지 확인했다"는 구분해 보고한다.**
+
+## 2B-9. A-023 / A-004 (§9)
+
+- **A-004: 차단 해제(오탐 정정)** — 이전 62→29는 **원천 행수** 비교였다.
+  공개 산출 기준으로는 62→62로 변화 없다. 비교 기준을 공개 산출물로 옮겨 해소.
+- **A-023: 차단 유지** — 공개 기준 1,963 entity → 237. 원천의 실제 축소.
+  아직 조사하지 않음: 1,963/237의 단위 의미(원천행/고유발전소/발전기), stable ID 집합 비교,
+  237이 특정 발전원·규모·지역의 부분집합인지, 최종 폴더 내 보완 파일 존재 여부.
+  → **자동 승인하지 않고 별도 승인 요청 대상으로 유지**.
+
+## 2B-10. 남은 차단 (promotionBlocked = true 유지)
+
+`A-023` (MATERIAL_COVERAGE_DROP) +
+`B-031 B-032 B-033 B-048 C-016 C-025 D-018 D-023` (ENTITY_FORM_NOT_YET_DERIVED)
+
+B-034 차단사유만 근거를 갖고 해제했다. 나머지는 각자의 의미계약이 필요하다
+(탄소 변환규칙을 사업·광산·계획 자료에 그대로 적용하지 않는다).
+
+## 2B-11. 미완료
+
+- B-034 전국 계열 56행(임계값 27 + 전국 30, 2001–2024 총배출 연도별 시계열 포함)은
+  분류까지 마쳤으나 아직 공개 관측으로 방출하지 않았다 → 315/약 474만 공개 중
+- 후속 파이프라인(semantic v125 / interpretation / search / source registry) 미실행
+- 다운로드 CSV의 `year` 열이 기간 문자열 `2001–2024` 를 담는다(스키마상 별도 period 열 없음)
+- finalize:v136, 152개 화면 검수, Draft PR 미수행

@@ -29,3 +29,6 @@ reports/v128/production-smoke-v128.json
 
 # Data-integration staging tree: a full mirror of public/, never shipped.
 /.staging/
+
+# Isolated verification worktree for candidate data builds.
+/.verify/
