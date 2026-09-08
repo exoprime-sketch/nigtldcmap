@@ -224,7 +224,39 @@ A-017도 CONTENT_IDENTICAL (관측 72행 동일).
 - 지도 나머지 6개 + 추천 분석 5개 + 비교지도 — 미착수
 - 벤치마킹 5개 사이트 — 미착수
 - 로컬 build / `finalize:v136` — 미착수
-- commit / push / Draft PR — 미착수
+- Draft PR — **NOT_CREATED** (아래 참조)
+
+## 6b. commit / push — 완료
+
+브랜치 `fix/existing-screen-usability-v136` 에 5개 커밋 추가 후 일반 push 완료.
+기존 미병합 2커밋(`574ef2a`, `6f14b5b`)은 그대로 유지. force push·amend 없음.
+
+```
+65e5536 chore(reports): preserve the read-only live QA evidence
+3867796 chore(reports): inventory the final source and record what actually changed
+c076b8c fix(charts): place signed comparison bars around a real zero
+20b3737 feat(etl): build the public projection from the final source directory
+f59c2e8 chore(data): keep the final Vietnam source archive out of git and deploys
+6f14b5b test(release): ...        <- 기존
+574ef2a fix(screens): ...         <- 기존
+```
+
+staging 전 확인: `git status`에 원본·staging 미등장, staged 0건,
+보고서 내 절대경로 유출 0건, `npm run build` 성공.
+`git add -A`를 쓰지 않고 경로를 명시해 staging 했다.
+
+### Draft PR — NOT_CREATED
+
+`gh` CLI가 이 환경에 설치되어 있지 않다(PATH·기본 설치 경로 모두 없음).
+따라서 Draft PR 생성과 GitHub CI 실행은 **수행하지 못했다**.
+
+- `GITHUB_CI` = **NOT_TRIGGERED / NOT_OBSERVED**
+- `PREVIEW_QA` = **NOT_AVAILABLE** (PR 미생성이므로 Preview 배포 없음)
+
+브랜치는 push되어 있으므로 다음 주소에서 Draft PR을 열 수 있다:
+`https://github.com/exoprime-sketch/nigtldcmap/compare/main...fix/existing-screen-usability-v136`
+
+제안 제목: `feat(data): integrate final Vietnam sources and resolve public analysis defects`
 
 ## 7. 산출물
 
