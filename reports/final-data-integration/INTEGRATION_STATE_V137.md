@@ -1,6 +1,7 @@
 # FINAL VIETNAM DATA INTEGRATION — 진행 상태 (v137)
 
-갱신: 2026-09-08 · 브랜치 `fix/existing-screen-usability-v136` · HEAD `6f14b5b` (미커밋 작업 중)
+갱신: 2026-09-08 (Stage 2) · 브랜치 `fix/existing-screen-usability-v136`
+BASELINE_SHA `6f14b5b` (통합 착수 시점) · REVIEWED_CODE_SHA `e13fbe9` (Stage 2 검토 기준)
 
 이 파일은 재개용 상태 기록이다. 사용자 화면에 노출하지 않는다.
 
@@ -276,3 +277,96 @@ scripts/
   compare-source-baseline-v137.py
   compare-source-content-v137.py
 ```
+
+
+---
+
+# Stage 2 — 실제 원천 투영과 대조
+
+REVIEWED_CODE_SHA: `e13fbe9` (지시서의 CODE_REVIEW_BASE와 일치 확인)
+
+## S2-1. 진단 확인 — 지시서의 지적이 정확했다
+
+`e13fbe9`에서 실제로 대조한 결과:
+
+- `config/data-publication/vietnam-v124-publication-decision.json`
+  `approvedElementIds` = **E-001~E-020 정확히 20개**
+- 생성기 분기: `if is_authorized and workbook is not None:` → 재생성,
+  `else:` → `deepcopy(base_payload[...])` (구 V1 복사)
+- **결과 증거**: Stage 1 staging의 `B-034` 팩 인덱스가
+  `observationCount: 498 / entityCount: 0` — 최종 원천(관측 0 / 개체 246)이 아니라
+  **구 V1 payload 그대로**였다.
+
+즉 "변경을 읽었다"와 "공개에 반영했다"는 실제로 달랐다. 재구현이 아니라 신규 수정 대상이었다.
+
+## S2-2. 원천 선택과 공개 권한 분리 — 완료
+
+`_element_rights()` 신설. 두 정책을 분리했다.
+
+| | 근거 | 적용 |
+|---|---|---|
+| **source selection** | 워크북 존재·행 보유 여부 | 어떤 파일로 재생성할지 |
+| **publication policy** | 소유자 결정(E 20개) 또는 카탈로그 `rights` | 무엇을 공개·다운로드 허용할지 |
+
+- E 계열 20개: 기존 소유자 결정 그대로 유지(`publication-authorized`, decisionId 참조).
+- A~D: **카탈로그의 기존 rights를 그대로 승계**. 예 A-017은 `downloadAllowedValues: ["불가"]`
+  이므로 새 원천으로 재생성해도 다운로드 불가가 유지된다.
+- `approvedElementIds`를 152개로 늘리거나 전부 `public-authorized`로 바꾸지 **않았다**.
+
+**중요**: 이 재투영은 **교체 원천에서만** 적용된다(`source_dir is not None`).
+V124 기본 빌드는 기존 규칙을 그대로 쓴다 — 처음에 양쪽 모두에 적용했다가
+C-016 spatial duplicate 오류로 **구 원천 빌드를 깨뜨렸고**, 범위를 좁혀 해결했다.
+
+### 결과
+
+| sourceSelection | 개수 |
+|---|---|
+| FINAL_SOURCE | **134** |
+| TEMPLATE_ONLY_RETAINED_PREVIOUS | 13 |
+| NO_WORKBOOK_RETAINED_PREVIOUS | 3 (C-020/021/023) |
+| CARRIED_OVER_PREVIOUS_WORKBOOK | 2 (E-016, E-017) |
+| 합계 | 152 |
+
+`statusCounts`는 구 빌드와 동일(actual 126 / public-authorized 18 / …).
+
+## S2-3. 회귀 검증
+
+구 원천 재빌드 vs 현재 `public/data/vietnam/v2`: **268/270 바이트 동일**.
+차이 2개(`asset-integrity.json`, `quality-report.json`)는 현재 v2가 후속 단계 산출물
+157개를 추가로 인덱싱하기 때문. ETL 산출물 자체의 회귀 없음.
+
+## S2-4. staging 분리 — 완료
+
+- `VIETNAM_STAGING_ROOT` 도입. staging은 `.staging/candidate/public/...` 에 **public/ 바깥**으로 생성.
+- `build_spatial_assets(..., public_dir=)` 추가 → **출력 파일시스템 루트와 논리 URL 접두사 분리**.
+  논리 URL은 최종 `/data/vietnam/v2/...` 그대로 생성된다.
+- 공유 자산(`world-countries.geojson`)은 repo `public/`에서 읽고 최종 URL로 기록.
+- 검증: staging 산출물 내 `v2-staging` 참조 **0건**, 절대경로 **0건**,
+  `public/`·`build/` 내 staging 디렉터리 **0개**.
+- **직전 상태 정정**: Stage 1의 `public/data/vietnam/v2-staging-*` 는 CRA가
+  `build/`로 복사하고 있었다(실제 파일로 확인). 배포는 하지 않았으므로 외부 유출은 아니며,
+  현재는 두 위치 모두에서 제거했다.
+
+## S2-5. 승격 차단 목록 (promotionBlocked = true)
+
+| 유형 | 요소 | 내용 |
+|---|---|---|
+| ENTITY_FORM_NOT_YET_DERIVED | B-031, B-032, B-033, B-034, B-048, C-016, C-025, D-018, D-023 | 최종 원천이 값을 개체 속성 열로 옮겼으나 지도 분석값 파생이 미구현. 이전 투영 유지 |
+| MATERIAL_COVERAGE_DROP | A-023 (1,963→237), A-004 (62→29) | 원천의 실제 변경으로 확인. 반영 여부 확인 필요 |
+
+`A-023`은 원천 자체가 발전소 개체 1,963개(좌표 보유 1,889) → **237개**로 줄었다.
+지도 `mapFeatureCount` 2,900 → 1,247의 전량이 이 한 요소에서 발생한다.
+과거 숫자를 맞추려 새 자료를 버리지 않았고, 조용히 반영하지도 않았다.
+
+## S2-6. 아직 하지 않은 것 (NOT_RUN)
+
+- **B-034 개체→분석값 파생** — Stage 2의 핵심 미완 항목.
+  파서가 이미 라벨 기반 정규화 키를 만든다:
+  `산림탄소_순플럭스_mg_co2e_yr = -327911`, `레코드_키 = VNM.1_1`,
+  `지역명_로마자 = AnGiang`, `기준연도 = 2000`, `구분 = 수관밀도 임계 30%`.
+  → measureId/regionId/period/unit/statisticType 분해 구현이 다음 작업.
+- rowBalance → 독립 대조 치환 (§5), 음성 테스트 fixture (§5)
+- 메타데이터·출처 새 입력 일치 (§2) — provenance의 `sourcePackage`만 실제 입력명으로 교체 완료,
+  indicators/fieldDefinitions/search/source registry는 아직 V1 경로
+- 후속 파이프라인(semantic v125 등), 로컬 공개 후보 배치, 새 데이터 UI QA, finalize:v136
+- Draft PR (gh 부재 — 인증된 다른 경로 미확인)

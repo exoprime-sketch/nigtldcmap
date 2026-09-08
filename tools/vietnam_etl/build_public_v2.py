@@ -35,6 +35,13 @@ GENERATED_AT = "2026-08-27T00:00:00Z"
 PACK_ELEMENT_COUNT = 8
 ENVELOPE_CHUNK_SIZE = 8192
 SOURCE_PACKAGE_NAME = "vietnam-data(4).zip"
+# Elements whose map assets are assembled by tools/vietnam_spatial. Their
+# builders address values by indicator id, so an element here cannot be
+# projected from an entity-only workbook until that derivation exists.
+SPATIAL_ELEMENT_IDS = {
+    "A-023", "A-024", "B-021", "B-031", "B-032", "B-033", "B-034",
+    "B-048", "C-016", "C-025", "D-008", "D-018", "D-023",
+}
 ALLOWED_STATUSES = {
     "actual",
     "partial",
@@ -202,7 +209,7 @@ def _source_provenance(
 ) -> dict[str, Any]:
     indicator = indicator or {}
     return {
-        "sourcePackage": SOURCE_PACKAGE_NAME,
+        "sourcePackage": str(workbook.get("sourcePackage") or SOURCE_PACKAGE_NAME),
         "sourceFileOriginal": workbook["archiveName"],
         "sourceFileDecoded": workbook["archiveName"],
         "sourceSheet": (
@@ -244,13 +251,83 @@ def _number_or_value(value: Any) -> Any:
     return text
 
 
+def _element_rights(
+    element_id: str,
+    *,
+    authorized: set[str],
+    decision: Mapping[str, Any],
+    base_element: Mapping[str, Any],
+    base_payload: Mapping[str, Any],
+) -> dict[str, Any]:
+    """Publication posture for one element's records.
+
+    Which source an element is rebuilt from and what may be published about it
+    are separate questions. The owner decision covers exactly the twenty
+    E-series elements; every other element publishes under the rights already
+    recorded for it in the catalog, and rebuilding it from a newer workbook does
+    not change that. Keeping these apart is what lets A-D take the new source
+    without inheriting the E-series download allowance.
+    """
+
+    if element_id in authorized:
+        return {
+            "rightsStatus": "publication-authorized",
+            "rightsNote": (
+                f"Project-owner publication decision {decision['decisionId']}; "
+                "source license and attribution remain preserved"
+            ),
+            "downloadEligible": True,
+            "publicationDecision": _decision_ref(decision),
+        }
+
+    # Prefer the posture the element already publishes under, so a rebuild does
+    # not quietly restate rights in different words.
+    for bucket in ("observations", "entities"):
+        for record in base_payload.get(bucket, {}).get("records", []):
+            if record.get("rightsStatus"):
+                return {
+                    "rightsStatus": record["rightsStatus"],
+                    "rightsNote": record.get("rightsNote"),
+                    "downloadEligible": bool(record.get("downloadEligible")),
+                    "publicationDecision": None,
+                }
+
+    rights = base_element.get("rights") or {}
+    download_values = [str(value) for value in rights.get("downloadAllowedValues") or []]
+    return {
+        "rightsStatus": str(rights.get("status") or "limited"),
+        "rightsNote": None,
+        "downloadEligible": bool(download_values) and "불가" not in download_values,
+        "publicationDecision": None,
+    }
+
+
+def _apply_rights(record: dict[str, Any], rights: Mapping[str, Any]) -> dict[str, Any]:
+    record["rightsStatus"] = rights["rightsStatus"]
+    record["rightsNote"] = rights["rightsNote"]
+    record["downloadEligible"] = rights["downloadEligible"]
+    if rights.get("publicationDecision"):
+        record["publicationDecision"] = rights["publicationDecision"]
+    return record
+
+
 def _authorized_observations(
     workbook: Mapping[str, Any],
     base_payload: Mapping[str, Any],
     decision: Mapping[str, Any],
+    rights: Mapping[str, Any] | None = None,
 ) -> list[dict[str, Any]]:
     metadata = _indicator_by_id(base_payload)
     decision_ref = _decision_ref(decision)
+    rights = rights or {
+        "rightsStatus": "publication-authorized",
+        "rightsNote": (
+            f"Project-owner publication decision {decision['decisionId']}; "
+            "source license and attribution remain preserved"
+        ),
+        "downloadEligible": True,
+        "publicationDecision": decision_ref,
+    }
     result: list[dict[str, Any]] = []
     for sequence, raw in enumerate(workbook.get("observations", []), start=1):
         indicator_id = str(raw.get("indicator_id") or "")
@@ -275,13 +352,14 @@ def _authorized_observations(
                 "note": raw.get("note"),
                 "loadStatus": indicator.get("loadStatus", "published"),
                 "warnings": list(indicator.get("warnings") or []),
-                "rightsStatus": "publication-authorized",
-                "rightsNote": (
-                    f"Project-owner publication decision {decision['decisionId']}; "
-                    "source license and attribution remain preserved"
+                "rightsStatus": rights["rightsStatus"],
+                "rightsNote": rights["rightsNote"],
+                "downloadEligible": rights["downloadEligible"],
+                **(
+                    {"publicationDecision": rights["publicationDecision"]}
+                    if rights.get("publicationDecision")
+                    else {}
                 ),
-                "downloadEligible": True,
-                "publicationDecision": decision_ref,
                 "provenance": _source_provenance(
                     workbook=workbook, record=raw, indicator=indicator
                 ),
@@ -355,9 +433,19 @@ def _authorized_entities(
     base_payload: Mapping[str, Any],
     decision: Mapping[str, Any],
     field_definitions: list[dict[str, str]],
+    rights: Mapping[str, Any] | None = None,
 ) -> list[dict[str, Any]]:
     metadata = _indicator_by_id(base_payload)
     decision_ref = _decision_ref(decision)
+    rights = rights or {
+        "rightsStatus": "publication-authorized",
+        "rightsNote": (
+            f"Project-owner publication decision {decision['decisionId']}; "
+            "source license and attribution remain preserved"
+        ),
+        "downloadEligible": True,
+        "publicationDecision": decision_ref,
+    }
     result: list[dict[str, Any]] = []
     for sequence, raw in enumerate(workbook.get("entities", []), start=1):
         indicator_id = str(raw.get("indicator_id") or "")
@@ -401,15 +489,16 @@ def _authorized_entities(
                 "note": raw.get("note"),
                 "loadStatus": indicator.get("loadStatus", "published"),
                 "warnings": list(indicator.get("warnings") or []),
-                "rightsStatus": "publication-authorized",
-                "rightsNote": (
-                    f"Project-owner publication decision {decision['decisionId']}; "
-                    "source license and attribution remain preserved"
-                ),
-                "downloadEligible": True,
+                "rightsStatus": rights["rightsStatus"],
+                "rightsNote": rights["rightsNote"],
+                "downloadEligible": rights["downloadEligible"],
                 "mapEligible": map_eligible,
                 "mapEligibilityReason": "coordinates-valid" if map_eligible else "no-coordinate",
-                "publicationDecision": decision_ref,
+                **(
+                    {"publicationDecision": rights["publicationDecision"]}
+                    if rights.get("publicationDecision")
+                    else {}
+                ),
                 "provenance": _source_provenance(
                     workbook=workbook, record=raw, indicator=indicator
                 ),
@@ -598,10 +687,24 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
     if source_dir is not None and not source_dir.is_absolute():
         source_dir = (repo / source_dir).resolve()
     v1_root = repo / "public/data/vietnam/v1"
-    public_dir = repo / "public"
-    out = pathlib.Path(output_override) if output_override else repo / "public/data/vietnam/v2"
-    if not out.is_absolute():
-        out = (repo / out).resolve()
+    # Staging writes a whole mirror of the public tree somewhere outside public/,
+    # so CRA never copies a candidate build into build/ and no asset URL can
+    # carry a staging directory name. The filesystem root moves; the logical URL
+    # prefix stays /data/vietnam/v2/... exactly as it will ship.
+    staging_root = os.environ.get("VIETNAM_STAGING_ROOT", "").strip()
+    if staging_root:
+        staging_base = pathlib.Path(staging_root)
+        if not staging_base.is_absolute():
+            staging_base = (repo / staging_base).resolve()
+        public_dir = staging_base / "public"
+        out = public_dir / "data/vietnam/v2"
+    else:
+        public_dir = repo / "public"
+        out = (
+            pathlib.Path(output_override) if output_override else repo / "public/data/vietnam/v2"
+        )
+        if not out.is_absolute():
+            out = (repo / out).resolve()
     decision_path = repo / "config/data-publication/vietnam-v124-publication-decision.json"
     if source_dir is not None:
         if not source_dir.is_dir():
@@ -620,9 +723,8 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
     # unresolvable URLs. The staging names are gitignored so they never ship.
     expected_parent = (repo / "public/data/vietnam").resolve()
     is_public_v2 = resolved_out.parent == expected_parent and resolved_out.name == "v2"
-    is_staging = (
-        resolved_out.parent == expected_parent
-        and resolved_out.name.startswith("v2-staging")
+    is_staging = bool(staging_root) and resolved_out.is_relative_to(
+        (repo / ".staging").resolve()
     )
     if not (is_public_v2 or is_staging):
         raise RuntimeError(f"refusing to replace unexpected output path: {resolved_out}")
@@ -723,6 +825,9 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
     coverage: list[dict[str, Any]] = []
     rights_rows: list[dict[str, Any]] = []
     decision_ref = _decision_ref(decision)
+    carried_over_ids = set(analysis.get("carriedOverElementIds") or [])
+    source_selection_by_element: dict[str, str] = {}
+    promotion_blockers: list[dict[str, Any]] = []
     for element_id in sorted(base_catalog):
         base_element = deepcopy(base_catalog[element_id])
         base_payload = deepcopy(v1_payloads[element_id])
@@ -743,11 +848,95 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         if status not in ALLOWED_STATUSES:
             raise ValueError(f"unsupported V124 status for {element_id}: {status}")
 
-        if is_authorized and workbook is not None:
+        # Source selection and publication policy are decided separately.
+        #
+        # The owner decision names twenty E-series elements, and that is a
+        # statement about what may be published, not about which file an element
+        # is built from. Gating regeneration on it meant A-D read the new source
+        # and then published the V1 copy anyway: B-034 arrived with 246 province
+        # entities and still shipped its old 498 observations.
+        #
+        # An element is rebuilt whenever the selected source actually carries
+        # rows. A workbook that is only a template is not a reason to blank an
+        # element, so those retain the previous projection and say so.
+        rights = _element_rights(
+            element_id,
+            authorized=authorized,
+            decision=decision,
+            base_element=base_element,
+            base_payload=base_payload,
+        )
+        # Only a replacement source re-projects beyond the authorized twenty.
+        # The V124 build keeps its original rule so its output stays byte for
+        # byte what it was; widening it there changed elements the decision never
+        # covered and broke C-016's spatial values.
+        if source_dir is None:
+            workbook_has_rows = is_authorized and workbook is not None
+        else:
+            workbook_has_rows = bool(workbook) and (
+                int(workbook.get("publicPopulatedRowCount", 0)) > 0
+            )
+        # The map layers for these elements read observations addressed by
+        # indicator id. The final delivery moves that data into entity attribute
+        # columns, which nothing derives analysis values from yet, so projecting
+        # them now would publish an element whose map has no values. Until that
+        # derivation exists they keep the previous projection and are recorded as
+        # blocking promotion - visibly incomplete beats silently empty.
+        spatial_observation_elements = SPATIAL_ELEMENT_IDS
+        if (
+            workbook_has_rows
+            and element_id in spatial_observation_elements
+            and not workbook.get("observations")
+            and base_payload["observations"]["records"]
+        ):
+            promotion_blockers.append(
+                {
+                    "elementId": element_id,
+                    "reason": "ENTITY_FORM_NOT_YET_DERIVED",
+                    "detail": (
+                        "최종 원천이 관측 시트 대신 개체 속성 열에 값을 담고 있으나 "
+                        "지도 분석값 파생이 아직 구현되지 않았다. 이전 투영을 유지한다."
+                    ),
+                    "newEntityRows": int(workbook.get("entityRowCount", 0)),
+                    "previousObservationRows": len(base_payload["observations"]["records"]),
+                }
+            )
+            workbook_has_rows = False
+
+        # A replacement source may legitimately carry fewer records, but a large
+        # drop is a question for the data owner, not something to absorb
+        # silently. Flag it and let the element project, so the candidate build
+        # shows the real figure while promotion stays blocked.
+        if workbook_has_rows and source_dir is not None:
+            previous_rows = len(base_payload["observations"]["records"]) + len(
+                base_payload["entities"]["records"]
+            )
+            new_rows = int(workbook.get("publicPopulatedRowCount", 0))
+            if previous_rows >= 50 and new_rows < previous_rows * 0.5:
+                promotion_blockers.append(
+                    {
+                        "elementId": element_id,
+                        "reason": "MATERIAL_COVERAGE_DROP",
+                        "detail": (
+                            "최종 원천의 공개 가능 행이 이전 대비 절반 미만이다. "
+                            "원천의 실제 변경으로 확인되었으나 반영 여부는 확인이 필요하다."
+                        ),
+                        "previousRows": previous_rows,
+                        "newRows": new_rows,
+                    }
+                )
+        if workbook is not None and workbook_has_rows:
             field_definitions = _safe_field_definitions(workbook, base_payload)
-            observations = _authorized_observations(workbook, base_payload, decision)
+            observations = _authorized_observations(
+                workbook, base_payload, decision, rights
+            )
             entities = _authorized_entities(
-                workbook, base_payload, decision, field_definitions
+                workbook, base_payload, decision, field_definitions, rights
+            )
+            source_selection = (
+                "CARRIED_OVER_PREVIOUS_WORKBOOK"
+                if element_id in carried_over_ids
+                else "FINAL_SOURCE"
             )
         else:
             field_definitions = deepcopy(
@@ -755,6 +944,11 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
             )
             observations = deepcopy(base_payload["observations"]["records"])
             entities = deepcopy(base_payload["entities"]["records"])
+            if workbook is None:
+                source_selection = "NO_WORKBOOK_RETAINED_PREVIOUS"
+            else:
+                source_selection = "TEMPLATE_ONLY_RETAINED_PREVIOUS"
+        source_selection_by_element[element_id] = source_selection
 
         entities = apply_entity_spatial_semantics_v130(element_id, entities)
 
@@ -925,7 +1119,7 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
 
     base_map_index = json.loads((v1_root / "map-index.json").read_text(encoding="utf-8"))
     spatial_build = build_spatial_assets(
-        repo, out, payloads, catalog, base_map_index
+        repo, out, payloads, catalog, base_map_index, public_dir=public_dir
     )
     map_index = spatial_build["mapIndex"]
     map_layers_by_element = {
@@ -1280,14 +1474,23 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
     # Asset integrity excludes itself to avoid a circular hash.
     integrity_rows: list[dict[str, Any]] = []
     integrity_paths = [item for item in out.rglob("*") if item.is_file()]
-    integrity_paths.append(public_dir / "data" / "world-countries.geojson")
-    for path in sorted(integrity_paths, key=lambda item: _asset_url(item, public_dir)):
+    # world-countries.geojson is a shared asset that lives in the repo's public
+    # tree and is not rebuilt here. A staging build reads it from there but still
+    # reports it under its final /data/... URL.
+    shared_assets = {repo / "public" / "data" / "world-countries.geojson"}
+    integrity_paths.extend(shared_assets)
+
+    def integrity_url(path: pathlib.Path) -> str:
+        root = (repo / "public") if path in shared_assets else public_dir
+        return _asset_url(path, root)
+
+    for path in sorted(integrity_paths, key=integrity_url):
         if path.name == "asset-integrity.json":
             continue
         data = path.read_bytes()
         integrity_rows.append(
             {
-                "url": _asset_url(path, public_dir),
+                "url": integrity_url(path),
                 "bytes": len(data),
                 "sha256": _sha256(data),
             }
@@ -1300,11 +1503,20 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
     }
     _write_json(out / "asset-integrity.json", integrity)
 
+    # Generated URLs are logical and always /data/... ; resolve them against the
+    # public root this build actually wrote into, falling back to the repo's own
+    # public tree for shared assets a staging build does not regenerate.
+    def asset_exists(url: str) -> bool:
+        relative = url.lstrip("/")
+        return (public_dir / relative).is_file() or (
+            repo / "public" / relative
+        ).is_file()
+
     missing_asset_urls = sorted(
         {
             url
             for url in _all_asset_urls({"manifest": manifest, "catalog": catalog})
-            if not _repo_path_from_public_url(repo, url).is_file()
+            if not asset_exists(url)
         }
     )
     if missing_asset_urls:
@@ -1312,6 +1524,18 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
 
     return {
         "sourceWorkbookCount": analysis["totals"]["workbookCount"],
+        "sourceSelection": {
+            value: sorted(
+                key for key, item in source_selection_by_element.items() if item == value
+            )
+            for value in sorted(set(source_selection_by_element.values()))
+        },
+        "promotionBlockers": promotion_blockers,
+        "promotionBlocked": bool(promotion_blockers),
+        "sourceSelectionCounts": {
+            value: sum(1 for item in source_selection_by_element.values() if item == value)
+            for value in sorted(set(source_selection_by_element.values()))
+        },
         "frameworkElementCount": 152,
         "authorizedElementCount": len(authorized),
         "authorizedObservationRows": authorized_observations,

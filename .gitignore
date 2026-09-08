@@ -26,5 +26,6 @@ reports/v128/production-smoke-v128.json
 # Final Vietnam source archive (read-only input, never published or tracked).
 /베트남데이터/
 
-# Staging output for data integration comparison; never published.
-/public/data/vietnam/v2-staging*/
+
+# Data-integration staging tree: a full mirror of public/, never shipped.
+/.staging/

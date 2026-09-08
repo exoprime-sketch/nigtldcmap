@@ -1187,8 +1187,12 @@ def build_spatial_assets(
     payloads: Mapping[str, Mapping[str, Any]],
     catalog: list[Mapping[str, Any]],
     base_map_index: Mapping[str, Any],
+    public_dir: pathlib.Path | None = None,
 ) -> dict[str, Any]:
-    public_dir = repo / "public"
+    # Asset URLs are relative to whichever public root this build writes into, so
+    # a staging tree outside the repo's public/ still emits the final
+    # /data/vietnam/v2/... paths rather than URLs naming the staging directory.
+    public_dir = public_dir or (repo / "public")
     geometry_dir = out / "geometry"
     spatial_dir = out / "spatial/layers"
     project_spatial_dir = out / "spatial/projects"

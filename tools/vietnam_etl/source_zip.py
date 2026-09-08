@@ -125,6 +125,11 @@ def _analyze_entries(
     framework_hashes: set[str] = set()
     for name, payload in entries:
         parsed = parse_workbook_bytes(payload, name, include_records=True)
+        # Record which delivery this workbook came from, so provenance on the
+        # resulting rows names the actual input instead of a module constant and
+        # carried-over rows stay distinguishable from newly supplied ones.
+        parsed["sourcePackage"] = source_descriptor["fileName"]
+        parsed["sourcePackageSha256"] = source_hash
         parsed_workbooks.append(parsed)
         if parsed.get("elementId"):
             file_ids.append(str(parsed["elementId"]))
