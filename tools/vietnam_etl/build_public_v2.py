@@ -14,6 +14,7 @@ import gzip
 import hashlib
 import io
 import json
+import os
 import pathlib
 import re
 import shutil
@@ -21,7 +22,7 @@ from copy import deepcopy
 from typing import Any, Iterable, Mapping
 
 from .normalization import canonical_json, is_placeholder, nfc_text
-from .source_zip import analyze_source_zip
+from .source_zip import analyze_source_dir, analyze_source_zip
 from tools.vietnam_spatial.build_spatial_v124 import build_spatial_assets
 from tools.vietnam_spatial.spatial_semantics_v130 import (
     apply_entity_spatial_semantics_v130,
@@ -422,8 +423,28 @@ def _status_for(
     base_status: str,
     workbook: Mapping[str, Any] | None,
     authorized: set[str],
+    *,
+    base_presence: str = "",
+    base_record_count: int = 0,
+    retain_absent: bool = False,
 ) -> tuple[str, str, str | None]:
     if workbook is None:
+        # For the V124 source a missing workbook means the element was never
+        # collected. A replacement delivery is different: an element it does not
+        # carry keeps whatever was already published, because "this delivery
+        # omitted it" is not evidence that the data ceased to exist. The caller
+        # sets retain_absent only when building from an override source.
+        #
+        # What it is retained *as* comes from the records actually carried
+        # forward, not from the previous label: the twenty authorized elements
+        # all sit at "metadata-only" in the V1 catalog, so that status cannot
+        # stand in for whether the element has data.
+        if retain_absent:
+            if base_record_count > 0:
+                retained = "public-authorized" if element_id in authorized else "actual"
+                return retained, (base_presence or "actual-records"), None
+            if element_id in authorized:
+                return "data-entry-planned", "no-populated-record", "retained-source-absent"
         return "not-collected", "not-collected", "not-collected"
     if workbook.get("normalizationResult") == "quarantined":
         return "quarantined", "quarantined", "format-error"
@@ -565,18 +586,45 @@ def _all_asset_urls(value: Any) -> Iterable[str]:
 
 
 def build(repo: pathlib.Path) -> dict[str, Any]:
+    # Three env overrides let the final source be built into a staging tree and
+    # diffed before anything under public/ is touched. Unset, every one of them
+    # keeps the original V124 behaviour byte for byte.
+    source_dir_override = os.environ.get("VIETNAM_SOURCE_DIR", "").strip()
+    output_override = os.environ.get("VIETNAM_V2_OUTPUT", "").strip()
+    expected_workbooks = int(os.environ.get("VIETNAM_EXPECTED_WORKBOOKS", "149"))
+
     source_zip = repo / "_source/vietnam/v124" / SOURCE_PACKAGE_NAME
+    source_dir = pathlib.Path(source_dir_override) if source_dir_override else None
+    if source_dir is not None and not source_dir.is_absolute():
+        source_dir = (repo / source_dir).resolve()
     v1_root = repo / "public/data/vietnam/v1"
     public_dir = repo / "public"
-    out = repo / "public/data/vietnam/v2"
+    out = pathlib.Path(output_override) if output_override else repo / "public/data/vietnam/v2"
+    if not out.is_absolute():
+        out = (repo / out).resolve()
     decision_path = repo / "config/data-publication/vietnam-v124-publication-decision.json"
-    if not source_zip.is_file():
+    if source_dir is not None:
+        if not source_dir.is_dir():
+            raise FileNotFoundError(f"SOURCE_DIR_NOT_FOUND: {source_dir}")
+    elif not source_zip.is_file():
         raise FileNotFoundError(f"SOURCE_ZIP_NOT_FOUND: {source_zip}")
     if not decision_path.is_file():
         raise FileNotFoundError(f"publication decision missing: {decision_path}")
-    expected_parent = (repo / "public/data/vietnam").resolve()
     resolved_out = out.resolve()
-    if resolved_out.parent != expected_parent or resolved_out.name != "v2":
+    # The output tree is deleted before it is rebuilt, so it must be either the
+    # real v2 directory or a v2-staging sibling. Anything else - a parent, the
+    # repo root, the read-only source - is refused.
+    #
+    # Staging stays under public/data/vietnam/ because the spatial builder
+    # derives asset URLs relative to public/; a staging tree outside it produces
+    # unresolvable URLs. The staging names are gitignored so they never ship.
+    expected_parent = (repo / "public/data/vietnam").resolve()
+    is_public_v2 = resolved_out.parent == expected_parent and resolved_out.name == "v2"
+    is_staging = (
+        resolved_out.parent == expected_parent
+        and resolved_out.name.startswith("v2-staging")
+    )
+    if not (is_public_v2 or is_staging):
         raise RuntimeError(f"refusing to replace unexpected output path: {resolved_out}")
     if out.exists():
         shutil.rmtree(out)
@@ -599,16 +647,71 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
     if metadata_only != authorized:
         raise ValueError("decision IDs do not match the V1 metadata-only catalog projection")
 
-    analysis = analyze_source_zip(
-        source_zip,
-        catalog_path=v1_root / "catalog.json",
-        include_records=True,
-    )
+    if source_dir is not None:
+        analysis = analyze_source_dir(
+            source_dir,
+            catalog_path=v1_root / "catalog.json",
+            include_records=True,
+        )
+        # Elements the replacement delivery omits keep their previous workbook
+        # rather than dropping to the much older V1 projection. Without this,
+        # E-011/E-013/E-016/E-017 - present in the V124 ZIP but not in the final
+        # folder - would silently lose their records. The merged workbooks are
+        # listed in the summary so the carry-forward is visible, not implicit.
+        carried_over: list[str] = []
+        if source_zip.is_file():
+            present = {row["elementId"] for row in analysis["workbooks"] if row.get("elementId")}
+            previous = analyze_source_zip(
+                source_zip,
+                catalog_path=v1_root / "catalog.json",
+                include_records=True,
+            )
+            for row in previous["workbooks"]:
+                element_id = row.get("elementId")
+                if element_id and element_id not in present:
+                    analysis["workbooks"].append(row)
+                    carried_over.append(str(element_id))
+            if carried_over:
+                analysis["workbooks"].sort(key=lambda row: str(row.get("elementId") or ""))
+                analysis["carriedOverElementIds"] = sorted(carried_over)
+                # Totals were computed over the replacement delivery alone, so
+                # every count that feeds the row balance has to take the carried
+                # workbooks into account as well.
+                totals = analysis["totals"]
+                totals["workbookCount"] = len(analysis["workbooks"])
+                for key in (
+                    "observationRowCount",
+                    "observationPopulatedRowCount",
+                    "observationMissingRowCount",
+                    "entityRowCount",
+                    "entityPopulatedRowCount",
+                    "entityMissingRowCount",
+                    "metadataRowCount",
+                    "templateRowCount",
+                    "placeholderRowCount",
+                    "supplementalSourceRowCount",
+                    "publicPopulatedRowCount",
+                ):
+                    totals[key] = sum(
+                        int(row.get(key, 0) or 0) for row in analysis["workbooks"]
+                    )
+                totals["workbookElementCount"] = len(
+                    {row["elementId"] for row in analysis["workbooks"] if row.get("elementId")}
+                )
+    else:
+        analysis = analyze_source_zip(
+            source_zip,
+            catalog_path=v1_root / "catalog.json",
+            include_records=True,
+        )
     workbook_by_id = {row["elementId"]: row for row in analysis["workbooks"]}
     v1_payloads, _ = _load_v1_payloads(repo)
     v1_manifest = json.loads((v1_root / "manifest.json").read_text(encoding="utf-8"))
-    if analysis["totals"]["workbookCount"] != 149:
-        raise ValueError("source workbook count must be 149")
+    if analysis["totals"]["workbookCount"] != expected_workbooks:
+        raise ValueError(
+            "source workbook count must be "
+            f"{expected_workbooks}, got {analysis['totals']['workbookCount']}"
+        )
     if len(base_catalog) != 152:
         raise ValueError("framework element count must be 152")
     if analysis["totals"]["credentialValueRemovedCount"]:
@@ -626,7 +729,16 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         workbook = workbook_by_id.get(element_id)
         is_authorized = element_id in authorized
         status, presence, empty_reason = _status_for(
-            element_id, base_element["publicStatus"], workbook, authorized
+            element_id,
+            base_element["publicStatus"],
+            workbook,
+            authorized,
+            base_presence=str(base_element.get("dataPresenceStatus") or ""),
+            base_record_count=(
+                len(base_payload["observations"]["records"])
+                + len(base_payload["entities"]["records"])
+            ),
+            retain_absent=source_dir is not None,
         )
         if status not in ALLOWED_STATUSES:
             raise ValueError(f"unsupported V124 status for {element_id}: {status}")
@@ -994,22 +1106,45 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         row["observations"]["recordCount"] for row in authorized_rows
     )
     authorized_entities = sum(row["entities"]["recordCount"] for row in authorized_rows)
+    # An element the replacement source does not carry keeps its existing
+    # projection (see the workbook lookup above, which already falls back), so
+    # absence here is "retained", not "unpopulated".
+    retained_without_workbook = sorted(
+        element_id for element_id in authorized if element_id not in workbook_by_id
+    )
     authorized_without_populated = sorted(
         element_id
         for element_id in authorized
-        if int(workbook_by_id[element_id]["publicPopulatedRowCount"]) == 0
+        if element_id in workbook_by_id
+        and int(workbook_by_id[element_id]["publicPopulatedRowCount"]) == 0
     )
     core_rows = (
         analysis["totals"]["observationRowCount"]
         + analysis["totals"]["entityRowCount"]
         + analysis["totals"]["metadataRowCount"]
     )
-    original_total = int(v1_manifest["rawRows"]["total"])
+    # The V1 manifest records how many raw rows the V124 delivery contained.
+    # A replacement source has its own row total, so anchoring to the V1
+    # figure would make every derived count negative. Use the source that was
+    # actually read.
+    if source_dir is not None:
+        original_total = core_rows + int(
+            analysis["totals"]["supplementalSourceRowCount"]
+        ) + int(analysis["totals"]["placeholderRowCount"])
+    else:
+        original_total = int(v1_manifest["rawRows"]["total"])
     nonstandard_rows = original_total - core_rows
-    if core_rows != int(v1_manifest["rawRows"]["normalizedCoreRows"]):
-        raise ValueError("fresh workbook core-row total does not reconcile with V1")
-    if nonstandard_rows != int(v1_manifest["rawRows"]["nonstandardRows"]):
-        raise ValueError("fresh workbook nonstandard-row total does not reconcile with V1")
+    # These two totals pin the V124 source against the V1 manifest and must stay
+    # exact for that source. A replacement source legitimately changes them, so
+    # there the delta is reported rather than raised - the reconciliation report
+    # is what justifies it, not a hard-coded expectation.
+    core_row_delta = core_rows - int(v1_manifest["rawRows"]["normalizedCoreRows"])
+    nonstandard_row_delta = nonstandard_rows - int(v1_manifest["rawRows"]["nonstandardRows"])
+    if source_dir is None:
+        if core_row_delta:
+            raise ValueError("fresh workbook core-row total does not reconcile with V1")
+        if nonstandard_row_delta:
+            raise ValueError("fresh workbook nonstandard-row total does not reconcile with V1")
     classified_nonstandard = (
         analysis["totals"]["supplementalSourceRowCount"]
         + analysis["totals"]["placeholderRowCount"]
@@ -1029,7 +1164,7 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
     framework_coverage = {
         "schemaVersion": SCHEMA_VERSION,
         "frameworkElementCount": 152,
-        "sourceWorkbookCount": 149,
+        "sourceWorkbookCount": analysis["totals"]["workbookCount"],
         "accountedElementCount": len(coverage),
         "unexplainedElementCount": 0,
         "unexplainedElementIds": [],
@@ -1176,7 +1311,7 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         raise ValueError(f"broken generated asset URLs: {missing_asset_urls}")
 
     return {
-        "sourceWorkbookCount": 149,
+        "sourceWorkbookCount": analysis["totals"]["workbookCount"],
         "frameworkElementCount": 152,
         "authorizedElementCount": len(authorized),
         "authorizedObservationRows": authorized_observations,

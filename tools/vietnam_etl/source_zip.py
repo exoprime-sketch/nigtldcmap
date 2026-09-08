@@ -41,30 +41,98 @@ def analyze_source_zip(
     include_records: bool = False,
 ) -> dict[str, Any]:
     source_path = pathlib.Path(zip_path)
-    catalog = pathlib.Path(catalog_path) if catalog_path else None
     zip_bytes = source_path.read_bytes()
     source_hash = hashlib.sha256(zip_bytes).hexdigest().upper()
-    parsed_workbooks: list[dict[str, Any]] = []
-    file_ids: list[str] = []
-    framework: list[dict[str, Any]] = []
-    framework_hashes: set[str] = set()
+    entries_payload: list[tuple[str, bytes]] = []
     with zipfile.ZipFile(source_path) as archive:
         entries = [entry for entry in archive.infolist() if not entry.is_dir()]
         entries.sort(key=lambda entry: (extract_element_id(entry.filename) or "", decode_zip_filename(entry.filename)))
         for entry in entries:
-            parsed = parse_workbook_bytes(
-                archive.read(entry),
-                entry.filename,
-                include_records=True,
-            )
-            parsed_workbooks.append(parsed)
-            if parsed.get("elementId"):
-                file_ids.append(str(parsed["elementId"]))
-            workbook_framework = _framework_from_workbook(parsed)
-            if workbook_framework:
-                framework_hashes.add(sha256_json(workbook_framework))
-                if not framework:
-                    framework = workbook_framework
+            entries_payload.append((entry.filename, archive.read(entry)))
+
+    return _analyze_entries(
+        entries_payload,
+        catalog_path=catalog_path,
+        include_records=include_records,
+        source_descriptor={
+            "fileName": decode_zip_filename(source_path.name),
+            "sha256": source_hash,
+        },
+        source_kind="zip",
+    )
+
+
+def analyze_source_dir(
+    dir_path: str | pathlib.Path,
+    *,
+    catalog_path: str | pathlib.Path | None = None,
+    include_records: bool = False,
+    pattern: str = "*.xlsx",
+) -> dict[str, Any]:
+    """Analyze a directory of per-element workbooks.
+
+    The final Vietnam archive ships the same one-workbook-per-element shape as
+    the V124 ZIP, just unpacked on disk under ``베트남데이터/file``. Reading it
+    directly avoids asking anyone to re-zip the delivery, and keeps a single
+    analysis path so the ZIP and the directory cannot drift apart.
+
+    The directory is only ever read. Its identity hash is computed over the
+    per-file digests rather than a container byte stream, since a directory has
+    no single archive to hash.
+    """
+
+    source_path = pathlib.Path(dir_path)
+    if not source_path.is_dir():
+        raise NotADirectoryError(f"SOURCE_DIR_NOT_FOUND: {source_path}")
+
+    files = sorted(
+        (path for path in source_path.glob(pattern) if path.is_file()),
+        key=lambda path: (extract_element_id(path.name) or "", path.name),
+    )
+    entries_payload: list[tuple[str, bytes]] = []
+    digest = hashlib.sha256()
+    for path in files:
+        payload = path.read_bytes()
+        entries_payload.append((path.name, payload))
+        digest.update(path.name.encode("utf-8"))
+        digest.update(hashlib.sha256(payload).digest())
+
+    return _analyze_entries(
+        entries_payload,
+        catalog_path=catalog_path,
+        include_records=include_records,
+        source_descriptor={
+            "fileName": source_path.name,
+            "sha256": digest.hexdigest().upper(),
+        },
+        source_kind="directory",
+    )
+
+
+def _analyze_entries(
+    entries: list[tuple[str, bytes]],
+    *,
+    catalog_path: str | pathlib.Path | None,
+    include_records: bool,
+    source_descriptor: dict[str, Any],
+    source_kind: str,
+) -> dict[str, Any]:
+    catalog = pathlib.Path(catalog_path) if catalog_path else None
+    source_hash = source_descriptor["sha256"]
+    parsed_workbooks: list[dict[str, Any]] = []
+    file_ids: list[str] = []
+    framework: list[dict[str, Any]] = []
+    framework_hashes: set[str] = set()
+    for name, payload in entries:
+        parsed = parse_workbook_bytes(payload, name, include_records=True)
+        parsed_workbooks.append(parsed)
+        if parsed.get("elementId"):
+            file_ids.append(str(parsed["elementId"]))
+        workbook_framework = _framework_from_workbook(parsed)
+        if workbook_framework:
+            framework_hashes.add(sha256_json(workbook_framework))
+            if not framework:
+                framework = workbook_framework
 
     framework_ids = sorted(str(item["element_id"]) for item in framework if item.get("element_id"))
     catalog_ids = _read_catalog_ids(catalog)
@@ -136,8 +204,9 @@ def analyze_source_zip(
     return {
         "schemaVersion": "v124-source-analysis-1",
         "normalizationVersion": "v124.1",
+        "sourceKind": source_kind,
         "sourceZip": {
-            "fileName": decode_zip_filename(source_path.name),
+            "fileName": source_descriptor["fileName"],
             "sha256": source_hash,
             "entryCount": len(parsed_workbooks),
         },
