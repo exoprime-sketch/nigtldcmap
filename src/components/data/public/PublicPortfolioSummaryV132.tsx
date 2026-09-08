@@ -43,30 +43,55 @@ const COMMON_AMOUNT_KEYS_V132 = [
  * Source columns below are reviewed amount/year/category fields for the named
  * public datasets. The internal keys are never rendered into the public DOM.
  */
+/**
+ * Reviewed amount/year/category fields, named in the vocabulary the alias table
+ * publishes. Raw source column names are deliberately absent: they are filtered
+ * out by reviewedEntityAttributesV132 before this config is consulted, so
+ * listing them here has no effect and only suggests a mapping that is not there.
+ */
 const PORTFOLIO_CONFIG_V132: Record<string, PortfolioConfigV132> = {
   "D-012": {
     amountKeys: [],
     yearKeys: ["entryYear", "entryTiming"],
+    yearLabel: "진출 확인연도",
     categoryKeys: ["technologyField", "entryCountry", "entryMode"],
   },
   "D-014": {
-    amountKeys: [{ key: "financeAmountUsd", currency: "USD" }],
+    amountKeys: [
+      { key: "financeAmountUsd", currency: "USD" },
+      { key: "financeAmountText", currency: "USD" },
+    ],
+    amountLabel: "약정액 합계",
     yearKeys: ["approvalDate", "projectPeriod"],
+    yearLabel: "약정연도",
     categoryKeys: ["portfolioCategory", "aidType", "status"],
   },
   "D-015": {
-    amountKeys: [{ key: "financeAmountUsd", currency: "USD" }],
+    amountKeys: [
+      { key: "financeAmountUsd", currency: "USD" },
+      { key: "financeAmountText", currency: "USD" },
+    ],
+    amountLabel: "약정액 합계",
     yearKeys: ["projectPeriod", "periodSummary"],
     categoryKeys: ["portfolioCategory", "aidType", "status"],
   },
   "D-016": {
-    amountKeys: [{ key: "financeAmountUsd", currency: "USD" }],
+    amountKeys: [
+      { key: "financeAmountUsd", currency: "USD" },
+      { key: "financeAmountText", currency: "USD" },
+    ],
+    amountLabel: "약정액 합계",
     yearKeys: ["projectPeriod", "periodSummary", "referenceYear"],
     categoryKeys: ["portfolioCategory", "aidType", "status"],
   },
   "D-017": {
-    amountKeys: [{ key: "financeAmountUsd", currency: "USD" }],
-    yearKeys: ["approvalDate", "projectPeriod", "referenceYear"],
+    amountKeys: [
+      { key: "financeAmountUsd", currency: "USD" },
+      { key: "financeAmountText", currency: "USD" },
+    ],
+    amountLabel: "공고 예산 합계",
+    yearKeys: ["noticeDate", "projectPeriod", "referenceYear"],
+    yearLabel: "공고연도",
     categoryKeys: ["sector", "status", "supportType"],
   },
   "D-018": {
@@ -76,7 +101,8 @@ const PORTFOLIO_CONFIG_V132: Record<string, PortfolioConfigV132> = {
   },
   "D-019": {
     amountKeys: [],
-    yearKeys: ["approvalDate", "referenceYear"],
+    yearKeys: ["submissionDate", "referenceYear"],
+    yearLabel: "요청 제출연도",
     categoryKeys: ["technologyField", "sector", "status"],
   },
   "D-020": {
@@ -90,33 +116,50 @@ const PORTFOLIO_CONFIG_V132: Record<string, PortfolioConfigV132> = {
     categoryKeys: ["sector", "fund", "implementingEntity"],
   },
   "D-022": {
-    // The amount is the source's own "commitment" column, and the year comes
-    // from field_92700393, which the record note calls 기간(시작) - the project's
-    // start, not the date it was approved.
-    amountKeys: [{ key: "financeAmountUsd", currency: "USD" }],
+    amountKeys: [
+      { key: "financeAmountUsd", currency: "USD" },
+      { key: "financeAmountText", currency: "USD" },
+    ],
     amountLabel: "투자 약정액 합계",
+    // 기간_시작 is where this year comes from, so it is labelled as the project's
+    // start and not as an approval.
+    yearKeys: ["periodStart"],
     yearLabel: "사업 시작연도",
-    yearKeys: ["approvalDate", "projectPeriod"],
-    categoryKeys: ["portfolioCategory", "financeType", "rioMarker"],
+    categoryKeys: ["portfolioCategory", "financeType", "rioMarker", "donor"],
   },
   "D-023": {
     amountKeys: [{ key: "primaryFinanceAmount", currency: "USD" }],
-    yearKeys: ["approvalDate", "boardApprovalDate", "field_92700393"],
-    categoryKeys: ["fund", "sector", "status"],
+    // Four funds, four different dating conventions. The range stays labelled
+    // generically because collapsing them into one named event would misstate
+    // every row that did not supply that event.
+    yearKeys: ["boardApprovalDate", "approvalDate", "approvalFiscalYear", "startDate"],
+    categoryKeys: ["fund", "sector", "status", "implementingEntity"],
   },
   "D-024": {
-    amountKeys: [{ key: "financeAmountUsd", currency: "USD" }],
+    amountKeys: [
+      { key: "financeAmountUsd", currency: "USD" },
+      { key: "financeAmountText", currency: "USD" },
+    ],
+    amountLabel: "투자액 합계",
     yearKeys: ["referenceYear"],
+    yearLabel: "투자연도",
     categoryKeys: ["portfolioCategory", "fundingRound", "status"],
   },
   "D-025": {
     amountKeys: [{ key: "financeAmountUsd", currency: "USD" }],
-    yearKeys: ["approvalDate"],
-    categoryKeys: ["portfolioCategory", "technologyField", "status"],
+    amountLabel: "총 투자액 합계",
+    yearKeys: ["financialCloseDate"],
+    yearLabel: "재무종결 연도",
+    categoryKeys: ["portfolioCategory", "technologyField", "status", "entryMode"],
   },
   "D-026": {
-    amountKeys: [{ key: "financeAmountUsd", currency: "USD" }],
+    amountKeys: [
+      { key: "financeAmountUsd", currency: "USD" },
+      { key: "financeAmountText", currency: "USD" },
+    ],
+    amountLabel: "보증금액 합계",
     yearKeys: ["fiscalYear", "approvalDate"],
+    yearLabel: "회계연도",
     categoryKeys: ["portfolioCategory", "guaranteeType", "status"],
   },
 };
@@ -242,11 +285,15 @@ export function publicPortfolioFacetV132(
     "project",
     "finance",
   ]);
+  // No fallback to provenance.referenceYear. That field is the dataset's own
+  // reference stamp (2026 for most of these), not an observation date, and using
+  // it gave every undated record that year: D-012's 14 "미상" rows were being
+  // counted as 2019-2026 when the source only ever states 2019-2021. A record
+  // that does not say when it happened now contributes no year.
   const year =
     config.yearKeys
       .map((key) => extractYearV132(attributes[key]))
-      .find((candidate): candidate is number => candidate !== null) ||
-    extractYearV132(entity.provenance.referenceYear);
+      .find((candidate): candidate is number => candidate !== null) ?? null;
   const category =
     config.categoryKeys
       .map((key) => publicTextV126(attributes[key]))
