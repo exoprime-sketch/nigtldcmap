@@ -1,6 +1,6 @@
 import { publicScaledNumberV136_2 } from "../../../utils/publicNumberScaleV136_2";
 import { useEffect, useRef, useState } from "react";
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import type {
   ElementVisualizationContractV125,
   SemanticObservationV125,
@@ -809,35 +809,82 @@ function TrendUnitV125({
   );
 }
 
+/**
+ * Bar geometry for one unit group.
+ *
+ * Where every value is non-negative the bars keep growing rightward from the
+ * left edge, which is what almost every element shows. Once a negative appears
+ * the group needs a real zero: a net carbon flux of -2,935,180 and one of
+ * +2,923,480 are opposite in meaning, and drawing both rightward at the same
+ * length said they were the same. So the track is split at zero, negatives run
+ * left of it and positives right, and the shared scale spans the full range.
+ *
+ * Magnitude still sets the length; only the anchor and direction come from the
+ * sign, so a value's size reads the same as before.
+ */
+function barScaleV137(values: number[]) {
+  const negMax = Math.max(0, ...values.map((value) => (value < 0 ? -value : 0)));
+  const posMax = Math.max(0, ...values.map((value) => (value > 0 ? value : 0)));
+  const span = Math.max(negMax + posMax, 1e-9);
+  return {
+    signed: negMax > 0,
+    zeroPercent: (negMax / span) * 100,
+    spanFor: (value: number) => (Math.abs(value) / span) * 100,
+  };
+}
+
 function CategoryComparisonV125({ rows }: { rows: NumericRowV125[] }) {
   if (rows.length === 0) return null;
   return (
     <VisualizationFrameV125 eyebrow="항목" title="항목별 값">
       {groupByUnitV125(rows).map(({ unit, rows: unitRows }) => {
-        const max = Math.max(...unitRows.map((row) => Math.abs(row.value)), 1e-9);
+        const scale = barScaleV137(unitRows.map((row) => row.value));
         return (
           <article className="sv125-contract-axis" key={unit || "no-unit"}>
             <h5>단위: <PublicTermTextV134 text={unit || "미기재"} /></h5>
+            {scale.signed && (
+              <p className="sv125-contract-help">
+                0을 기준으로 왼쪽은 음수, 오른쪽은 양수입니다. 막대 길이는 0에서 떨어진 크기입니다.
+              </p>
+            )}
             <div className="sv125-contract-bars" role="list">
-              {unitRows.map((row, index) => (
-                <InteractiveValueItemV127
-                  key={row.recordId}
-                  label={categoryLabelV125(row)}
-                  value={formatValueV121(row.value)}
-                  unit={unit}
-                >
-                  <strong><PublicTermTextV134 text={categoryLabelV125(row)} /></strong>
-                  <span aria-hidden="true">
-                    <i
-                      className={`sv125-contract-pattern--${SERIES_PATTERNS[index % SERIES_PATTERNS.length]}`}
-                      style={{ width: `${(Math.abs(row.value) / max) * 100}%` }}
-                    />
-                  </span>
-                  <b>
-                    {formatValueV121(row.value)} {unit}
-                  </b>
-                </InteractiveValueItemV127>
-              ))}
+              {unitRows.map((row, index) => {
+                const width = scale.spanFor(row.value);
+                const offset = scale.signed
+                  ? row.value < 0
+                    ? scale.zeroPercent - width
+                    : scale.zeroPercent
+                  : 0;
+                return (
+                  <InteractiveValueItemV127
+                    key={row.recordId}
+                    label={categoryLabelV125(row)}
+                    value={formatValueV121(row.value)}
+                    unit={unit}
+                  >
+                    <strong><PublicTermTextV134 text={categoryLabelV125(row)} /></strong>
+                    <span
+                      aria-hidden="true"
+                      className={scale.signed ? "sv125-contract-track--signed" : undefined}
+                      style={
+                        scale.signed
+                          ? ({ "--sv125-zero": `${scale.zeroPercent}%` } as CSSProperties)
+                          : undefined
+                      }
+                    >
+                      <i
+                        className={`sv125-contract-pattern--${SERIES_PATTERNS[index % SERIES_PATTERNS.length]}${
+                          scale.signed && row.value < 0 ? " sv125-contract-fill--negative" : ""
+                        }`}
+                        style={{ width: `${width}%`, marginInlineStart: `${offset}%` }}
+                      />
+                    </span>
+                    <b>
+                      {formatValueV121(row.value)} {unit}
+                    </b>
+                  </InteractiveValueItemV127>
+                );
+              })}
             </div>
           </article>
         );

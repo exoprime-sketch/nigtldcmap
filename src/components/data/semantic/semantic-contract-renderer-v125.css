@@ -582,3 +582,37 @@
     margin-top: 0.35rem;
   }
 }
+
+/*
+ * Signed comparison bars.
+ *
+ * Only applied when a unit group actually contains a negative value; groups of
+ * non-negative values keep the plain left-anchored track above. The zero line is
+ * drawn on the track itself so the reader can see which side of it a bar sits
+ * on without relying on colour alone - the direction and the printed number
+ * carry the sign too.
+ */
+.sv125-contract-track--signed {
+  position: relative;
+}
+
+.sv125-contract-track--signed::before {
+  background: #64748b;
+  content: "";
+  inset-block: -2px;
+  inset-inline-start: var(--sv125-zero, 50%);
+  position: absolute;
+  width: 1px;
+  z-index: 1;
+}
+
+.sv125-contract-bars > div > span > i.sv125-contract-fill--negative {
+  background: #b45309;
+}
+
+@media (prefers-contrast: more) {
+  .sv125-contract-track--signed::before {
+    background: currentColor;
+    width: 2px;
+  }
+}
