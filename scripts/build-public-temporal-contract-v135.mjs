@@ -15,6 +15,11 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 import { PROJECT_ROOT } from "./v125/audit-utils.mjs";
+// A candidate build points every stage at one staging tree; unset, this is
+// the published path, so the default behaviour is unchanged.
+const dataRootOverride = process.env.VIETNAM_DATA_ROOT || "";
+const v2Root = dataRootOverride || resolve(PROJECT_ROOT, "public/data/vietnam/v2");
+
 
 const CONTRACT_PATH = resolve(
   PROJECT_ROOT,

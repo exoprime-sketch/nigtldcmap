@@ -13,6 +13,7 @@ import csv
 import gzip
 import hashlib
 import json
+import os
 import re
 import unicodedata
 from collections import Counter, defaultdict
@@ -21,7 +22,13 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[2]
-DATA_ROOT = ROOT / "public" / "data" / "vietnam" / "v2"
+# A candidate build runs the whole pipeline against a staging tree, so every
+# stage has to be pointed at the same root. Unset, this is the published path.
+DATA_ROOT = (
+    Path(os.environ["VIETNAM_DATA_ROOT"]).resolve()
+    if os.environ.get("VIETNAM_DATA_ROOT")
+    else ROOT / "public" / "data" / "vietnam" / "v2"
+)
 SEMANTIC_ROOT = DATA_ROOT / "semantic"
 SEMANTIC_ELEMENT_ROOT = SEMANTIC_ROOT / "elements"
 REPORT_ROOT = ROOT / "reports" / "v125"

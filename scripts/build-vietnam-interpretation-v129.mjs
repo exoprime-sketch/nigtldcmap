@@ -9,17 +9,22 @@ const require = createRequire(import.meta.url);
 const ts = require("typescript");
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const projectRoot = resolve(scriptDirectory, "..");
+// A candidate build points every stage at one staging tree; unset, this is
+// the published path, so the default behaviour is unchanged.
+const dataRootOverride = process.env.VIETNAM_DATA_ROOT || "";
+const v2Root = dataRootOverride || resolve(projectRoot, "public/data/vietnam/v2");
+
 const sourcePath = resolve(
   projectRoot,
   "src/data/interpretation/publicIndicatorInterpretationV129.ts"
 );
 const outputPath = resolve(
-  projectRoot,
-  "public/data/vietnam/v2/interpretation/indicator-interpretation-v129.json"
+  v2Root,
+  "interpretation/indicator-interpretation-v129.json"
 );
 const benchmarkOutputPath = resolve(
-  projectRoot,
-  "public/data/vietnam/v2/interpretation/indicator-benchmarks-v129.json"
+  v2Root,
+  "interpretation/indicator-benchmarks-v129.json"
 );
 
 function loadRuntimeRegistryV129() {

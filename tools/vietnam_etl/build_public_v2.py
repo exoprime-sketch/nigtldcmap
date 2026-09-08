@@ -757,6 +757,76 @@ def _region_projection(
     return observations, list(indicators.values()), derived
 
 
+def _indicators_from_workbook(
+    workbook: Mapping[str, Any],
+    base_payload: Mapping[str, Any],
+    observations: list[Mapping[str, Any]],
+) -> list[dict[str, Any]]:
+    """Indicator definitions for a source-projected element.
+
+    The workbook's own meta_info sheet describes each indicator it carries, so
+    that is what defines them here. Reusing the V1 list would attach the old
+    element's units and sources to new series - and, where an id is new, would
+    leave an observation with no definition at all, which is what stopped the
+    semantic build.
+
+    Definitions already published for an id are kept as the base so verified
+    labels survive, with the workbook's own unit and source taking precedence.
+    """
+
+    previous = {
+        str(row.get("indicatorId")): deepcopy(row)
+        for row in base_payload.get("meta", {}).get("indicators", [])
+        if row.get("indicatorId")
+    }
+    result: dict[str, dict[str, Any]] = {}
+    for row in workbook.get("metadata") or []:
+        indicator_id = str(row.get("indicator_id") or "").strip()
+        if not indicator_id:
+            continue
+        entry = previous.get(indicator_id, {"indicatorId": indicator_id})
+        entry = {**entry, "indicatorId": indicator_id}
+        if row.get("element_kr"):
+            entry["labelKo"] = str(row["element_kr"])
+        if row.get("unit"):
+            entry["unit"] = str(row["unit"])
+        for key, field in (
+            ("sourceOrg", "source_org"),
+            ("sourceUrl", "source_url"),
+            ("licenseCode", "license_code"),
+            ("attributionText", "attribution_text"),
+            ("timeRange", "time_range"),
+            ("referenceYear", "reference_year"),
+            ("dataType", "data_type"),
+            ("unitDetail", "unit_detail"),
+            ("spatialUnit", "spatial_unit"),
+        ):
+            if row.get(field) not in (None, ""):
+                entry[key] = row[field]
+        entry.setdefault("loadStatus", "published")
+        entry.setdefault("warnings", [])
+        result[indicator_id] = entry
+
+    # An observation whose indicator the meta sheet does not describe still needs
+    # a definition; take what the row itself states rather than inventing one.
+    for observation in observations:
+        indicator_id = str(observation.get("indicatorId") or "")
+        if not indicator_id or indicator_id in result:
+            continue
+        entry = previous.get(indicator_id, {"indicatorId": indicator_id})
+        entry = {**entry, "indicatorId": indicator_id}
+        entry.setdefault("labelKo", indicator_id)
+        if observation.get("unit"):
+            entry["unit"] = observation["unit"]
+        entry.setdefault("loadStatus", "published")
+        entry.setdefault("warnings", [])
+        result[indicator_id] = entry
+
+    for indicator_id, row in previous.items():
+        result.setdefault(indicator_id, row)
+    return [result[key] for key in sorted(result)]
+
+
 def _status_for(
     element_id: str,
     base_status: str,
@@ -1345,6 +1415,12 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
                 )
 
         indicators = deepcopy(base_payload.get("meta", {}).get("indicators", []))
+        if (
+            source_dir is not None
+            and workbook is not None
+            and projection_origin_by_element.get(element_id) == "FINAL_SOURCE"
+        ):
+            indicators = _indicators_from_workbook(workbook, base_payload, observations)
         if derived_indicators and source_dir is not None:
             # The derived measures define themselves; the V1 indicator list
             # described the previous shape and must not stand in for them.
