@@ -87,6 +87,27 @@ const REVIEWED_ENTITY_ALIASES_V132: Record<string, ReviewedAliasV132[]> = {
     { publicKey: "sourceUrl", sourceKey: "상세", kind: "url" },
     // 예산 here is a band ("$200-250k"), which would be read as 200. Omitted.
   ],
+  "D-020": [
+    // 대표금액 equals GCF_승인액 on all 8 individual rows; the ninth row is the
+    // 집계 total and is excluded from sums by recordScope.
+    { publicKey: "financeAmountUsd", sourceKey: "대표금액" },
+    { publicKey: "boardApprovalDate", sourceKey: "이사회_승인일" },
+    { publicKey: "projectPeriod", sourceKey: "사업기간" },
+    { publicKey: "sector", sourceKey: "분야" },
+    { publicKey: "status", sourceKey: "상태" },
+    { publicKey: "accreditedEntity", sourceKey: "인가기관_AE" },
+  ],
+  "D-021": [
+    // 대표금액 equals 약정액_commitment on all 640 rows, so this is the commitment
+    // and not 집행액_spend; the two are never added together.
+    { publicKey: "financeAmountUsd", sourceKey: "대표금액" },
+    { publicKey: "projectPeriod", sourceKey: "사업기간" },
+    { publicKey: "sector", sourceKey: "DAC_섹터코드" },
+    { publicKey: "donor", sourceKey: "공여기관" },
+    { publicKey: "status", sourceKey: "활동상태" },
+    { publicKey: "implementingEntity", sourceKey: "실행기관" },
+    { publicKey: "rioMarker", sourceKey: "Rio_Marker" },
+  ],
   "D-022": [
     { publicKey: "financeAmountUsd", sourceKey: "대표금액" },
     { publicKey: "financeAmountText", sourceKey: "투자액_commitment" },
@@ -105,11 +126,20 @@ const REVIEWED_ENTITY_ALIASES_V132: Record<string, ReviewedAliasV132[]> = {
     { publicKey: "primaryFinanceAmount", sourceKey: "대표금액" },
     { publicKey: "boardApprovalDate", sourceKey: "이사회_승인일" },
     { publicKey: "approvalDate", sourceKey: "승인일" },
-    // Six GEF rows carry 승인_회계연도 "1970" in the delivered workbook. The GEF
-    // was established in 1991, so this is the upstream export's null-date
-    // placeholder, not an approval year, and it would otherwise open the
-    // portfolio's period at 1970. The record and its download keep the source
-    // value; only this derived year drops it.
+    // 승인_회계연도 "1970" appears on exactly six rows, and across all 53 rows
+    // carrying that column it occurs if and only if the project was never
+    // approved: 4 "Concept Approved" and 2 "Cancelled", with no approved project
+    // taking it and no unapproved project taking a real year. One of them
+    // (GEF ID 11668) is a GEF-8 row, a cycle that runs 2022-2026, so 1970 cannot
+    // be its approval year.
+    //
+    // That establishes the value is not a usable approval year. It does NOT
+    // establish why 1970 was written - an epoch rendering of an empty date is
+    // the obvious reading but is not proven from the source, so it is recorded
+    // as 원천 연도 오류/확인 필요 rather than as a diagnosed placeholder. The
+    // value is excluded from the derived approval-year range only; it is not
+    // rewritten to 1991 or to anything else, the record keeps the source text,
+    // and no other 1970 anywhere in the platform is touched.
     { publicKey: "approvalFiscalYear", sourceKey: "승인_회계연도", rejectValues: ["1970"] },
     { publicKey: "startDate", sourceKey: "착수일" },
     { publicKey: "fund", sourceKey: "기금" },
@@ -166,6 +196,13 @@ export function reviewedEntityAttributesV132(
     }),
     {}
   );
+  // 레코드구분 is the source's own structural classifier, present across the
+  // delivered workbooks, and it marks rows that are totals or explanatory notes
+  // rather than individual records ("집계"). Every element that carries it needs
+  // it, so it is reviewed once here rather than repeated per element. It is a
+  // scope marker, not presentation data.
+  const recordScope = publicTextV126(entity.normalizedAttributes?.["레코드구분"]);
+  if (recordScope) approved.recordScope = recordScope;
   const aliases = REVIEWED_ENTITY_ALIASES_V132[entity.elementId] || [];
   aliases.forEach(({ publicKey, sourceKey, kind, rejectValues }) => {
     const raw = entity.normalizedAttributes?.[sourceKey];

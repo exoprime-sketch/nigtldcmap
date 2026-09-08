@@ -106,14 +106,20 @@ const PORTFOLIO_CONFIG_V132: Record<string, PortfolioConfigV132> = {
     categoryKeys: ["technologyField", "sector", "status"],
   },
   "D-020": {
-    amountKeys: [{ key: "usd", currency: "USD" }],
+    amountKeys: [{ key: "financeAmountUsd", currency: "USD" }],
+    amountLabel: "승인액 합계",
     yearKeys: ["boardApprovalDate", "approvalDate"],
+    yearLabel: "이사회 승인연도",
     categoryKeys: ["sector", "status", "accreditedEntity"],
   },
   "D-021": {
-    amountKeys: [],
-    yearKeys: ["year", "referenceYear"],
-    categoryKeys: ["sector", "fund", "implementingEntity"],
+    amountKeys: [{ key: "financeAmountUsd", currency: "USD" }],
+    amountLabel: "약정액 합계",
+    // 사업기간 reads "2011-10-05~2014-12-31", so the first year in it is the
+    // start of the activity, which is what this is labelled as.
+    yearKeys: ["projectPeriod"],
+    yearLabel: "사업 시작연도",
+    categoryKeys: ["sector", "donor", "status", "implementingEntity"],
   },
   "D-022": {
     amountKeys: [
@@ -128,11 +134,18 @@ const PORTFOLIO_CONFIG_V132: Record<string, PortfolioConfigV132> = {
     categoryKeys: ["portfolioCategory", "financeType", "rioMarker", "donor"],
   },
   "D-023": {
+    // 대표금액 was checked against each fund's own approved amount: it equals
+    // GEF 승인액, GCF 승인액, AF 승인금액 or CTF 배분액(x10^6) on 71 of 73 rows,
+    // the remaining two being the 집계 rows now excluded. So this total is one
+    // event type - approval - and does not mix 승인/약정/집행/공동재원.
     amountKeys: [{ key: "primaryFinanceAmount", currency: "USD" }],
-    // Four funds, four different dating conventions. The range stays labelled
-    // generically because collapsing them into one named event would misstate
-    // every row that did not supply that event.
-    yearKeys: ["boardApprovalDate", "approvalDate", "approvalFiscalYear", "startDate"],
+    amountLabel: "승인액 합계",
+    // GCF 이사회 승인일, GEF 승인 회계연도 and AF 승인일 are all the approval of
+    // the respective fund, so a range over them compares one kind of event.
+    // 착수일 is the start of work, a different event, and is deliberately not
+    // mixed into the same range - it stays available on the record itself.
+    yearKeys: ["boardApprovalDate", "approvalDate", "approvalFiscalYear"],
+    yearLabel: "승인연도",
     categoryKeys: ["fund", "sector", "status", "implementingEntity"],
   },
   "D-024": {
@@ -187,9 +200,14 @@ export default function PublicPortfolioSummaryV132({
           reader cannot infer from the figures. */}
       <header className="pps132-heading">
         <p>공개된 사업을 집계하며, 통화가 확인된 금액만 통화별로 합산합니다.</p>
+        {analysis.aggregateCount > 0 && (
+          <p data-portfolio-note="aggregate-excluded">
+            {`원천이 집계·설명 행으로 표시한 ${analysis.aggregateCount.toLocaleString("ko-KR")}건은 개별 사업이 아니므로 합계와 건수에서 제외했습니다. 해당 행은 목록과 상세, 다운로드에서 그대로 확인할 수 있습니다.`}
+          </p>
+        )}
       </header>
       <div className="pps132-kpis">
-        <article data-portfolio-kpi="record-count"><span>총 사업 수</span><strong>{entities.length.toLocaleString("ko-KR")}</strong><small>건</small></article>
+        <article data-portfolio-kpi="record-count"><span>총 사업 수</span><strong>{analysis.individualCount.toLocaleString("ko-KR")}</strong><small>건</small></article>
         {analysis.amounts.map((amount) => (
           <article data-portfolio-kpi="funding-total" key={amount.currency}>
             <span>{config?.amountLabel || "확인 금액 합계"}</span>
@@ -230,7 +248,19 @@ function portfolioAnalysisV132(
   const categories = new Map<string, number>();
   const amounts = new Map<string, { value: number; count: number }>();
 
-  entities.forEach((entity) => {
+  // Rows the source itself marks 집계 are totals or explanatory lines, not
+  // individual records: D-020's single aggregate is the GCF approved total for
+  // the very projects listed beside it, so adding it doubled the portfolio, and
+  // one of D-023's holds a project count (149) in the amount column. They stay
+  // in the list, the detail view and the download; they are only kept out of the
+  // sums, the counts and the distributions.
+  const individual = entities.filter(
+    (entity) =>
+      publicPortfolioFacetV132(elementId, entity, detailTemplate).recordScope !== "집계"
+  );
+  const aggregateCount = entities.length - individual.length;
+
+  individual.forEach((entity) => {
     const facet = publicPortfolioFacetV132(elementId, entity, detailTemplate);
     const year = facet.year;
     if (year) years.set(String(year), (years.get(String(year)) || 0) + 1);
@@ -254,6 +284,8 @@ function portfolioAnalysisV132(
   const yearRows = mapToRowsV132(years, true);
   const parsedYears = yearRows.map((row) => Number(row.label)).filter(Number.isFinite);
   return {
+    individualCount: individual.length,
+    aggregateCount,
     years: yearRows,
     categories: categoryRowsV136_3(categories),
     amounts: Array.from(amounts, ([currency, value]) => ({ currency, ...value })),
@@ -264,6 +296,7 @@ function portfolioAnalysisV132(
 }
 
 export type PublicPortfolioFacetV132 = {
+  recordScope: string | null;
   year: number | null;
   category: string | null;
   amount: { currency: string; amount: number } | null;
@@ -313,7 +346,13 @@ export function publicPortfolioFacetV132(
     .map((value) => publicTextV126(value))
     .filter((value): value is string => Boolean(value))
     .join(" ");
-  return { year, category, amount, searchText };
+  return {
+    recordScope: publicTextV126(attributes.recordScope) || null,
+    year,
+    category,
+    amount,
+    searchText,
+  };
 }
 
 function numericAmountV132(value: unknown): number | null {
