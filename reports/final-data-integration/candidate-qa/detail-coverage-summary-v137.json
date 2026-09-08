@@ -1,0 +1,331 @@
+{
+  "generatedAt": "2026-09-08T03:13:05.277Z",
+  "buildRoot": ".verify/candidate/build",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "elementCount": 152,
+  "visited": {
+    "YES": 144,
+    "NO": 8
+  },
+  "interactionReviewed": {
+    "NO_EFFECT": 98,
+    "NO_CONTROL": 51,
+    "N/A": 3
+  },
+  "semanticReviewed": {
+    "NO": 45,
+    "INCOMPLETE": 73,
+    "YES": 29,
+    "YES_DATA_UNAVAILABLE": 5
+  },
+  "evidence": {
+    "YES": 19,
+    "NO": 133
+  },
+  "findingCount": 216,
+  "findings": [
+    {
+      "elementId": "A-001",
+      "issue": "선택을 바꿔도 표시 결과가 달라지지 않음",
+      "detail": "변경한 선택지: CPI 점수(구 척도) · 점"
+    },
+    {
+      "elementId": "A-001",
+      "issue": "화면 오류",
+      "detail": "ERROR TypeError: Cannot read properties of undefined (reading 'includes')"
+    },
+    {
+      "elementId": "A-002",
+      "issue": "값 또는 단위 표기를 확인하지 못함",
+      "detail": "units=0 numbers=186 bars=0"
+    },
+    {
+      "elementId": "A-003",
+      "issue": "선택을 바꿔도 표시 결과가 달라지지 않음",
+      "detail": "변경한 선택지: 1인당 GDP · 국제달러"
+    },
+    {
+      "elementId": "A-003",
+      "issue": "화면 오류",
+      "detail": "ERROR TypeError: Cannot read properties of undefined (reading 'includes')"
+    },
+    {
+      "elementId": "A-004",
+      "issue": "선택을 바꿔도 표시 결과가 달라지지 않음",
+      "detail": "변경한 선택지: 빈곤율 · %"
+    },
+    {
+      "elementId": "A-004",
+      "issue": "화면 오류",
+      "detail": "ERROR TypeError: Cannot read properties of undefined (reading 'includes')"
+    },
+    {
+      "elementId": "A-005",
+      "issue": "선택을 바꿔도 표시 결과가 달라지지 않음",
+      "detail": "변경한 선택지: 2024년"
+    },
+    {
+      "elementId": "A-005",
+      "issue": "화면 오류",
+      "detail": "ERROR TypeError: Cannot read properties of undefined (reading 'includes')"
+    },
+    {
+      "elementId": "A-006",
+      "issue": "선택을 바꿔도 표시 결과가 달라지지 않음",
+      "detail": "변경한 선택지: 청년 실업률 · %"
+    },
+    {
+      "elementId": "A-006",
+      "issue": "화면 오류",
+      "detail": "ERROR TypeError: Cannot read properties of undefined (reading 'includes')"
+    },
+    {
+      "elementId": "A-007",
+      "issue": "선택을 바꿔도 표시 결과가 달라지지 않음",
+      "detail": "변경한 선택지: 도시인구 증가율 · %"
+    },
+    {
+      "elementId": "A-007",
+      "issue": "화면 오류",
+      "detail": "ERROR TypeError: Cannot read properties of undefined (reading 'includes')"
+    },
+    {
+      "elementId": "A-008",
+      "issue": "선택을 바꿔도 표시 결과가 달라지지 않음",
+      "detail": "변경한 선택지: 2021"
+    },
+    {
+      "elementId": "A-008",
+      "issue": "화면 오류",
+      "detail": "ERROR TypeError: Cannot read properties of undefined (reading 'includes')"
+    },
+    {
+      "elementId": "A-009",
+      "issue": "선택을 바꿔도 표시 결과가 달라지지 않음",
+      "detail": "변경한 선택지: GHG 배출 강도 · tCO2eq/인"
+    },
+    {
+      "elementId": "A-009",
+      "issue": "화면 오류",
+      "detail": "ERROR TypeError: Cannot read properties of undefined (reading 'includes')"
+    },
+    {
+      "elementId": "A-010",
+      "issue": "선택을 바꿔도 표시 결과가 달라지지 않음",
+      "detail": "변경한 선택지: 가스별 질량 · Gg"
+    },
+    {
+      "elementId": "A-010",
+      "issue": "화면 오류",
+      "detail": "ERROR TypeError: Cannot read properties of undefined (reading 'includes')"
+    },
+    {
+      "elementId": "A-011",
+      "issue": "선택을 바꿔도 표시 결과가 달라지지 않음",
+      "detail": "변경한 선택지: 2023년"
+    },
+    {
+      "elementId": "A-011",
+      "issue": "화면 오류",
+      "detail": "ERROR TypeError: Cannot read properties of undefined (reading 'includes')"
+    },
+    {
+      "elementId": "A-012",
+      "issue": "선택을 바꿔도 표시 결과가 달라지지 않음",
+      "detail": "변경한 선택지: 순 GHG 배출량 · Mt CO2eq"
+    },
+    {
+      "elementId": "A-012",
+      "issue": "화면 오류",
+      "detail": "ERROR TypeError: Cannot read properties of undefined (reading 'includes')"
+    },
+    {
+      "elementId": "A-013",
+      "issue": "선택을 바꿔도 표시 결과가 달라지지 않음",
+      "detail": "변경한 선택지: Action"
+    },
+    {
+      "elementId": "A-013",
+      "issue": "화면 오류",
+      "detail": "ERROR TypeError: Cannot read properties of undefined (reading 'includes')"
+    },
+    {
+      "elementId": "A-014",
+      "issue": "선택을 바꿔도 표시 결과가 달라지지 않음",
+      "detail": "변경한 선택지: SDG Index 종합점수 · 점"
+    },
+    {
+      "elementId": "A-014",
+      "issue": "화면 오류",
+      "detail": "ERROR TypeError: Cannot read properties of undefined (reading 'includes')"
+    },
+    {
+      "elementId": "A-015",
+      "issue": "선택을 바꿔도 표시 결과가 달라지지 않음",
+      "detail": "변경한 선택지: SDG10 세부지표 달성도 · 점"
+    },
+    {
+      "elementId": "A-015",
+      "issue": "화면 오류",
+      "detail": "ERROR TypeError: Cannot read properties of undefined (reading 'includes')"
+    },
+    {
+      "elementId": "A-016",
+      "issue": "선택을 바꿔도 표시 결과가 달라지지 않음",
+      "detail": "변경한 선택지: 2024년"
+    },
+    {
+      "elementId": "A-016",
+      "issue": "화면 오류",
+      "detail": "ERROR TypeError: Cannot read properties of undefined (reading 'includes')"
+    },
+    {
+      "elementId": "A-017",
+      "issue": "선택을 바꿔도 표시 결과가 달라지지 않음",
+      "detail": "변경한 선택지: 가스복합화력(CCGT)(기준값)"
+    },
+    {
+      "elementId": "A-018",
+      "issue": "선택을 바꿔도 표시 결과가 달라지지 않음",
+      "detail": "변경한 선택지: 재생에너지 합계(계통연계)"
+    },
+    {
+      "elementId": "A-018",
+      "issue": "화면 오류",
+      "detail": "ERROR TypeError: Cannot read properties of undefined (reading 'includes')"
+    },
+    {
+      "elementId": "A-019",
+      "issue": "선택을 바꿔도 표시 결과가 달라지지 않음",
+      "detail": "변경한 선택지: 2022"
+    },
+    {
+      "elementId": "A-019",
+      "issue": "화면 오류",
+      "detail": "ERROR TypeError: Cannot read properties of undefined (reading 'includes')"
+    },
+    {
+      "elementId": "A-020",
+      "issue": "선택을 바꿔도 표시 결과가 달라지지 않음",
+      "detail": "변경한 선택지: 발전량 기준"
+    },
+    {
+      "elementId": "A-020",
+      "issue": "화면 오류",
+      "detail": "ERROR TypeError: Cannot read properties of undefined (reading 'includes')"
+    },
+    {
+      "elementId": "A-021",
+      "issue": "선택을 바꿔도 표시 결과가 달라지지 않음",
+      "detail": "변경한 선택지: 농촌"
+    },
+    {
+      "elementId": "A-021",
+      "issue": "화면 오류",
+      "detail": "ERROR TypeError: Cannot read properties of undefined (reading 'includes')"
+    },
+    {
+      "elementId": "A-022",
+      "issue": "선택을 바꿔도 표시 결과가 달라지지 않음",
+      "detail": "변경한 선택지: SAIDI · 분/고객"
+    },
+    {
+      "elementId": "A-022",
+      "issue": "화면 오류",
+      "detail": "ERROR TypeError: Cannot read properties of undefined (reading 'includes')"
+    },
+    {
+      "elementId": "A-023",
+      "issue": "선택을 바꿔도 표시 결과가 달라지지 않음",
+      "detail": "변경한 선택지: 10MW 미만"
+    },
+    {
+      "elementId": "A-023",
+      "issue": "값 또는 단위 표기를 확인하지 못함",
+      "detail": "units=0 numbers=103 bars=0"
+    },
+    {
+      "elementId": "A-025",
+      "issue": "선택을 바꿔도 표시 결과가 달라지지 않음",
+      "detail": "변경한 선택지: CO2 주입(EOR)"
+    },
+    {
+      "elementId": "A-025",
+      "issue": "값 또는 단위 표기를 확인하지 못함",
+      "detail": "units=0 numbers=27 bars=0"
+    },
+    {
+      "elementId": "A-026",
+      "issue": "선택을 바꿔도 표시 결과가 달라지지 않음",
+      "detail": "변경한 선택지: 건물 풋프린트 · m2"
+    },
+    {
+      "elementId": "A-026",
+      "issue": "값 또는 단위 표기를 확인하지 못함",
+      "detail": "units=0 numbers=32 bars=0"
+    },
+    {
+      "elementId": "A-027",
+      "issue": "선택을 바꿔도 표시 결과가 달라지지 않음",
+      "detail": "변경한 선택지: 도로 레이어 · EPSG 코드"
+    },
+    {
+      "elementId": "A-027",
+      "issue": "화면 오류",
+      "detail": "ERROR TypeError: Cannot read properties of undefined (reading 'includes')"
+    },
+    {
+      "elementId": "A-028",
+      "issue": "선택을 바꿔도 표시 결과가 달라지지 않음",
+      "detail": "변경한 선택지: 수로 레이어 · EPSG 코드"
+    },
+    {
+      "elementId": "A-028",
+      "issue": "화면 오류",
+      "detail": "ERROR TypeError: Cannot read properties of undefined (reading 'includes')"
+    },
+    {
+      "elementId": "A-029",
+      "issue": "값 또는 단위 표기를 확인하지 못함",
+      "detail": "units=0 numbers=104 bars=0"
+    },
+    {
+      "elementId": "A-030",
+      "issue": "선택을 바꿔도 표시 결과가 달라지지 않음",
+      "detail": "변경한 선택지: 대베트남 수입액"
+    },
+    {
+      "elementId": "A-031",
+      "issue": "선택을 바꿔도 표시 결과가 달라지지 않음",
+      "detail": "변경한 선택지: 국제운송"
+    },
+    {
+      "elementId": "A-031",
+      "issue": "화면 오류",
+      "detail": "ERROR TypeError: Cannot read properties of undefined (reading 'includes')"
+    },
+    {
+      "elementId": "A-032",
+      "issue": "선택을 바꿔도 표시 결과가 달라지지 않음",
+      "detail": "변경한 선택지: 중간재 교역 규모 · 천 USD"
+    },
+    {
+      "elementId": "A-033",
+      "issue": "화면 오류",
+      "detail": "ERROR TypeError: Cannot read properties of undefined (reading 'includes')"
+    },
+    {
+      "elementId": "B-001",
+      "issue": "화면 오류",
+      "detail": "ERROR TypeError: Cannot read properties of undefined (reading 'includes')"
+    },
+    {
+      "elementId": "B-002",
+      "issue": "화면 오류",
+      "detail": "ERROR TypeError: Cannot read properties of undefined (reading 'includes')"
+    }
+  ]
+}

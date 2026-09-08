@@ -584,3 +584,55 @@ mapFeatureCount 3,144 · layers 12 · assets 336
 
 `.verify/candidate` 격리 worktree · CANDIDATE_DATA_FINGERPRINT `99382f26befc6cda`
 앱 빌드 성공 · src 타입 오류 0 · B-034 독립 대조 재실행 PASS (315/315, 63/63, 음성 9/9)
+
+
+## S3-6. 후속 파이프라인 (§6) — 완료
+
+후보 화면이 전부 `데이터를 준비하는 중` 에서 멈춰 있었다. 콘솔:
+`V125 semantic asset returned HTML: /data/vietnam/v2/semantic/indicator-semantics-v125.json`
+ETL이 v2/를 새로 만들지만 semantic·interpretation·temporal 단계는 `public/` 로 경로가
+고정되어 있어 후보 트리에 산출물이 없었고, 정적 서버가 없는 파일에 index.html을 돌려주고 있었다.
+
+- 세 단계 모두 `VIETNAM_DATA_ROOT` 를 받도록 변경(미설정 시 기존 `public/` 동작 유지)
+- **지표 정의를 워크북 meta_info에서 생성**하도록 변경.
+  값은 최종 원천에서 오는데 indicators는 V1에서 복사되고 있어
+  `A-002_wgi_cc_est` 처럼 새 지표에 정의가 없어 semantic 빌드가 거부했다.
+- 실행 순서: ETL → semantic v125 → interpretation v129 → temporal contract v135 → 앱 build
+
+결과: A-017 6,312자·선택 3개·막대 24개, B-034 23,264자·단위 헤딩 12개, **런타임 오류 0**
+
+## S3-7. 다운로드 대조 (§5) — PASS
+
+B-034 기준 **CSV 315 = JSON 315 = 지도 315**, 값·단위·기간 **불일치 0**.
+An Giang: `-327911 / Mg CO2e/yr / year=null / period 2001–2024 / annual-mean / regionLabel=An Giang`
+
+## S3-8. 릴리스 점검 (§11, 브라우저 불요) — PASS
+
+| 항목 | 결과 |
+|---|---|
+| 승인 대상 = 실제 152 | YES |
+| 배포 산출물 내 원본·staging·.verify | 0 |
+| node_modules | 0 |
+| 인증정보(단어경계) | 0 (기존 15건은 "**Secret**ariat" 부분일치) |
+| v2-staging 참조 | 0 |
+| 상단 탭 | 3개 유지 |
+| 신규 route/nav | 0 (src 변경 파일 2개: 부호 막대 렌더러 + CSS) |
+
+## S3-9. 152개 화면 자동 스윕 — **신뢰 불가, 결과 불채택**
+
+`scripts/qa-candidate-screens-v137.mjs` 를 4회 돌렸으나 **하네스 자체가 아직 부정확**하다.
+아래는 전부 하네스 문제로 확인되었고 **결함으로 보고하지 않는다**:
+
+| 증상 | 원인 |
+|---|---|
+| 1차 147건 "값·단위 없음" | semantic 자산 누락(실제 원인, S3-6에서 해결) |
+| "units=0" 다수 | 단위 검출이 한 템플릿의 `h5` 마크업만 확인 |
+| `NO_EFFECT 98` | React가 `selectedIndex` 직접 대입을 무시. native setter로 고쳤으나 여전히 미해결 |
+| `화면 오류 26` | 하네스가 던진 `TypeError`(앱 오류 아님) |
+
+**따라서 DETAIL_INTERACTION_REVIEWED / DETAIL_SEMANTIC_REVIEWED 는 NOT_RUN 으로 보고한다.**
+개별 확인이 끝난 화면(A-017·B-034·B-005·D-022·D-025 등)은 별도 근거로만 인정한다.
+
+다음 작업: 하네스를 실제 포인터·키보드 조작(CDP Input)으로 바꾸고
+단위 검출을 요소별 실제 단위 대조로 교체한 뒤 재실행.
+`scripts/qa-candidate-map-v137.mjs` (지도 12개 실제 포인터) 는 **아직 미실행**.

@@ -10,7 +10,7 @@
  * Runs against a candidate build only; it neither reads nor writes public/.
  */
 
-import { mkdirSync, writeFileSync, existsSync, statSync } from "node:fs";
+import { mkdirSync, writeFileSync, existsSync, statSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 import {
@@ -83,6 +83,21 @@ async function main() {
   const catalog = JSON.parse(catalogText);
   const elements = catalog.elements;
 
+  // Units each element actually publishes, read from the candidate's own
+  // download payloads on disk rather than guessed from a summary file.
+  const unitsByElement = {};
+  for (const element of catalog.elements) {
+    const file = resolve(BUILD_ROOT, "data/vietnam/v2/downloads", `${element.elementId.toLowerCase()}.json`);
+    try {
+      const payload = JSON.parse(readFileSync(file, "utf8"));
+      const units = new Set();
+      for (const row of payload.observations || []) if (row.unit) units.add(String(row.unit));
+      unitsByElement[element.elementId] = [...units];
+    } catch {
+      unitsByElement[element.elementId] = [];
+    }
+  }
+
   const rows = [];
   const findings = [];
 
@@ -111,24 +126,27 @@ async function main() {
 
       // Operate the screen: move the first selector that has real choices, and
       // confirm the page actually responds rather than just accepting the click.
-      const before = JSON.stringify({ b: screen.barSample, k: screen.kpis });
+      const before = screen.body;
       const changed = await evaluateValue(
         cdp,
         `(() => {
           const s = [...document.querySelectorAll("main select")].find((x) => x.options.length > 1);
           if (!s) return "NO_CONTROL";
-          const i = s.selectedIndex;
-          s.selectedIndex = (i + 1) % s.options.length;
+          const next = s.options[(s.selectedIndex + 1) % s.options.length];
+          const setter = Object.getOwnPropertyDescriptor(
+            window.HTMLSelectElement.prototype, "value"
+          ).set;
+          setter.call(s, next.value);
           s.dispatchEvent(new Event("change", { bubbles: true }));
-          return s.options[s.selectedIndex].text;
+          return next.text;
         })()`
       );
       if (changed === "NO_CONTROL") {
         row.interactionReviewed = element.dataPresenceStatus === "not-collected" ? "N/A" : "NO_CONTROL";
       } else {
-        await sleep(500);
+        await sleep(1200);
         const after = await readScreen(cdp);
-        const differs = JSON.stringify({ b: after.barSample, k: after.kpis }) !== before;
+        const differs = after.body !== before;
         row.interactionReviewed = differs ? "YES" : "NO_EFFECT";
         if (!differs) {
           findings.push({
@@ -142,7 +160,13 @@ async function main() {
 
       // Meaning: a screen counts as reviewed when it shows a unit and either a
       // value or an explicit no-data notice. Rendering alone is not enough.
-      const hasUnit = screen.units.length > 0 || /단위/.test(JSON.stringify(screen.headings));
+      // Units live in different markup per template, so look for the units the
+      // element's own data declares rather than for one template's markup.
+      const declaredUnits = (unitsByElement[id] || []).filter(Boolean);
+      const hasUnit =
+        screen.units.length > 0 ||
+        /단위/.test(screen.body) ||
+        declaredUnits.some((u) => screen.body.includes(u));
       const hasValues = screen.numberCount > 0 || screen.barCount > 0;
       if (element.dataPresenceStatus === "not-collected" || element.observationCount + element.entityCount === 0) {
         row.semanticReviewed = screen.hasNoDataNotice ? "YES_DATA_UNAVAILABLE" : "NO_NOTICE";
