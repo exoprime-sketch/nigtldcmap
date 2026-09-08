@@ -486,6 +486,132 @@ function runtimeKey(countryIso3: string, elementId: string): string {
   return `${countryIso3}:${elementId}`;
 }
 
+/**
+ * Read-only observation handle for the candidate QA harness.
+ *
+ * Attached only when the page is served from the local verification server, so
+ * it cannot appear on the deployed site, and it is not reachable from any menu.
+ * Everything it exposes is a read of what MapLibre has already rendered:
+ * queryRenderedFeatures and project. It holds no setter, touches no React
+ * state, and cannot put the page into a "selected" or "loaded" state - a test
+ * that wants a selection has to drive the real control like a user would.
+ *
+ * It exists because asserting that the thing under the pointer is the thing the
+ * panel then describes needs the renderer's own idea of what is on screen and
+ * where. Without it a map test can only confirm that a click was dispatched.
+ */
+function attachMapObserverV137(map: MapLibreMap, countryIso3: string): void {
+  const host =
+    typeof window === "undefined" ? "" : String(window.location.hostname || "");
+  if (host !== "localhost" && host !== "127.0.0.1" && host !== "[::1]") return;
+
+  const hitLayerIds = (elementId: string): string[] => {
+    const ids = layerRuntimeIds(countryIso3, elementId);
+    return [ids.pointHit, ids.lineHit, ids.fill, ids.cluster].filter((layerId) =>
+      Boolean(map.getLayer(layerId))
+    );
+  };
+  const identify = (feature: maplibregl.MapGeoJSONFeature) => {
+    const properties = (feature.properties || {}) as Record<string, unknown>;
+    return {
+      layerId: feature.layer.id,
+      geometryType: feature.geometry?.type ?? null,
+      selectionKey: String(
+        properties.selectionKey ??
+          properties.recordId ??
+          properties.adm1Code ??
+          properties.cluster_id ??
+          feature.id ??
+          ""
+      ),
+      name: String(properties.name ?? properties.label ?? properties.title ?? ""),
+      adm1Code: String(properties.adm1Code ?? ""),
+      isCluster: Boolean(properties.cluster),
+      properties,
+    };
+  };
+
+  const observer = {
+    ready: () => map.isStyleLoaded() && map.areTilesLoaded(),
+    canvasRect: () => {
+      const rect = map.getCanvas().getBoundingClientRect();
+      return { left: rect.left, top: rect.top, width: rect.width, height: rect.height };
+    },
+    layersFor: hitLayerIds,
+    /** Every feature of this element MapLibre currently has rendered. */
+    renderedFeatures: (elementId: string) => {
+      const layers = hitLayerIds(elementId);
+      if (!layers.length) return [];
+      const seen = new Set<string>();
+      return map
+        .queryRenderedFeatures({ layers })
+        .map(identify)
+        .filter((item) => {
+          if (!item.selectionKey || seen.has(item.selectionKey)) return false;
+          seen.add(item.selectionKey);
+          return true;
+        });
+    },
+    /** What is actually under this viewport CSS point. */
+    queryAt: (x: number, y: number, elementId?: string) => {
+      const rect = map.getCanvas().getBoundingClientRect();
+      const point: [number, number] = [x - rect.left, y - rect.top];
+      const layers = elementId ? hitLayerIds(elementId) : undefined;
+      if (elementId && !layers?.length) return [];
+      return map
+        .queryRenderedFeatures(point, layers ? { layers } : undefined)
+        .map(identify);
+    },
+    /**
+     * A viewport point that genuinely lands on the named feature, found by
+     * probing the renderer rather than by trusting a centroid: a centroid can
+     * fall in a hole, outside a concave province, or off a line entirely.
+     * Returns null when the feature is on the map but no probed point hits it.
+     */
+    hitPointFor: (elementId: string, selectionKey: string, step = 12) => {
+      const layers = hitLayerIds(elementId);
+      if (!layers.length) return null;
+      const rect = map.getCanvas().getBoundingClientRect();
+      const describe = (element: Element | null) =>
+        element
+          ? element.tagName.toLowerCase() +
+            (element.className && typeof element.className === "string"
+              ? `.${element.className.split(/\s+/)[0]}`
+              : "")
+          : null;
+      let covered: { x: number; y: number; occludedBy: string | null } | null = null;
+      for (let y = 4; y < rect.height - 4; y += step) {
+        for (let x = 4; x < rect.width - 4; x += step) {
+          const hit = map
+            .queryRenderedFeatures([x, y], { layers })
+            .map(identify)
+            .some((item) => item.selectionKey === selectionKey);
+          if (!hit) continue;
+          const viewportX = rect.left + x;
+          const viewportY = rect.top + y;
+          const topmost =
+            typeof document === "undefined"
+              ? null
+              : document.elementFromPoint(viewportX, viewportY);
+          if (!topmost || topmost === map.getCanvas()) {
+            return { x: viewportX, y: viewportY, occludedBy: null };
+          }
+          // Keep the first covered hit, but carry on looking. A feature is only
+          // genuinely unreachable when every point that lands on it is behind
+          // some panel or header - reporting the first covered point as an
+          // occlusion defect would flag a province merely because its northern
+          // tip happens to sit under the legend.
+          if (!covered) {
+            covered = { x: viewportX, y: viewportY, occludedBy: describe(topmost) };
+          }
+        }
+      }
+      return covered;
+    },
+  };
+  (window as unknown as Record<string, unknown>).__nigtMapObserverV137 = observer;
+}
+
 function layerRuntimeIds(countryIso3: string, elementId: string) {
   const suffix = `${countryIso3}-${elementId}`
     .toLowerCase()
@@ -1991,6 +2117,7 @@ export default function RealMapExplorerPage({
     if (!pendingMap) return;
     const map = pendingMap;
     mapRef.current = map;
+    attachMapObserverV137(map, countryIso3);
 
     let ready = false;
     const markReady = () => {
