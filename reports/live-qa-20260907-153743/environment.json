@@ -1,0 +1,62 @@
+{
+  "task": "INDEPENDENT_LIVE_PLATFORM_QA_READ_ONLY",
+  "liveUrl": "https://nigtldcmap.vercel.app/",
+  "accessResult": "OK (HTTP 200, app rendered)",
+  "localRepo": "exoprime-sketch/nigtldcmap",
+  "localBranch": "fix/existing-screen-usability-v136",
+  "localHEAD": "6f14b5b8a0f5d72292c0007966e6a4aefdc504d4",
+  "originMain": "5ca33de4d17a8589fc5cfea02224f605696e4491",
+  "unmergedCommitsVsMain": 2,
+  "deploymentSHA": "UNKNOWN",
+  "deploymentSHAEvidence": "Vercel exposes no build SHA in the page or headers that was readable; identity was established by probing the served bundle for marker strings instead.",
+  "deployedBundle": "https://nigtldcmap.vercel.app/static/js/main.e662987e.js",
+  "deployedBundleBytes": 1340300,
+  "deployedCssBundle": "https://nigtldcmap.vercel.app/static/css/main.617ece4f.css",
+  "deployedContentMatches": "origin/main (PR #12 merged)",
+  "deployedContentEvidence": {
+    "presentFromPR12": [
+      "베트남 배전 효율화 사업",
+      "Distribution Efficiency Project",
+      "Development Policy Financing",
+      "사업 목록"
+    ],
+    "absentFromUnmergedBranch": [
+      "사업 규모와 구성",
+      "데이터 기준일",
+      "사업 시작연도",
+      "규모 미기재"
+    ],
+    "stillPresentPreBranchWording": [
+      "포트폴리오 분석",
+      "포트폴리오 핵심현황",
+      "최근 업데이트",
+      "설비용량",
+      "확인 금액 합계",
+      "확인 기간"
+    ]
+  },
+  "conclusion": "The live site serves main. None of the 2 unmerged commits on fix/existing-screen-usability-v136 are deployed.",
+  "browser": "Chrome 152.0.0.0 (Windows NT 10.0; Win64; x64), real pointer/keyboard via CDP",
+  "startedAt": "2026-09-07T06:36:18Z",
+  "resumeChecks": [
+    {
+      "at": "2026-09-08T07:20:00Z",
+      "checkedBundle": "https://nigtldcmap.vercel.app/static/js/main.e662987e.js",
+      "bundleChanged": false,
+      "cssBundle": "https://nigtldcmap.vercel.app/static/css/main.617ece4f.css",
+      "indexLastModified": "Mon, 07 Sep 2026 00:05:50 GMT",
+      "indexEtag": "8ea07e9d56c4cd82e5928df671f1ee8c",
+      "deploymentSHA": "UNKNOWN",
+      "note": "Bundle filenames identical to the interrupted session, so the prior deployment-identity conclusion is carried forward and the bundle was not re-explored. SHA still not asserted from string matching."
+    }
+  ],
+  "toolConstraints": [
+    "javascript_tool blocked by extension ([BLOCKED: Cookie/query string data]); not bypassed. DOM collected via read_page/get_page_text and real pointer/keyboard input."
+  ],
+  "contentViewport": "958x918",
+  "viewportsPending": [
+    "1440",
+    "1024",
+    "390"
+  ]
+}
