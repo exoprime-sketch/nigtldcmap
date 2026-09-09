@@ -24,6 +24,14 @@ from tools.vietnam_spatial.build_transmission_network import (
     read_vendored_source,
     write_json as write_transmission_json,
 )
+from tools.vietnam_spatial.map_facts_v137 import (
+    FACILITY_FACTS_V137,
+    LINE_FACTS_V137,
+    fact_values,
+    line_fact_values,
+    resolve_facts,
+    resolve_line_facts,
+)
 from tools.vietnam_spatial.spatial_semantics_v130 import (
     GREATER_MEKONG_TITLE_TOKEN,
     MEKONG_EBA_TITLE_TOKEN,
@@ -674,7 +682,51 @@ def _point_layer(
             "zeroImputationCount": 0,
         }
     )
+    _apply_fact_contract(layer, FACILITY_FACTS_V137.get(element_id, ()), entities)
     return layer
+
+
+def _apply_fact_contract(
+    layer: dict[str, Any],
+    facts: Iterable[Mapping[str, Any]],
+    records: list[Mapping[str, Any]],
+    *,
+    line_features: list[Mapping[str, Any]] | None = None,
+) -> None:
+    """Publish the facts this layer's own delivery actually carries.
+
+    Until now the V2 index reused V1's ``tooltipFields`` and ``filters``, whose
+    field names belong to the previous delivery. None of them resolve against
+    the final source, so the popup showed no mineral for a mine, the panel
+    reported "원천 미제공" for values the source ships, and the filters offered
+    values from a delivery this build no longer reads. Both lists are now
+    derived from the delivered records through an explicit contract, and a fact
+    that resolves to nothing is simply not published.
+    """
+
+    resolved = (
+        resolve_line_facts(facts, line_features)
+        if line_features is not None
+        else resolve_facts(facts, records)
+    )
+    if not resolved:
+        return
+    layer["factFields"] = resolved
+    layer["tooltipFields"] = ["name"] + [fact["key"] for fact in resolved]
+    layer["fieldLabels"] = {fact["key"]: fact["label"] for fact in resolved}
+    filters: list[dict[str, Any]] = []
+    for fact in resolved:
+        if not fact.get("filterable"):
+            continue
+        values = (
+            line_fact_values(fact, line_features)
+            if line_features is not None
+            else fact_values(fact, records)
+        )
+        if len(values) < 2:
+            continue
+        filters.append({"field": fact["key"], "label": fact["label"], "values": values})
+    layer["filters"] = filters
 
 
 def _multi_polygon_for_countries(
@@ -702,9 +754,31 @@ def _multi_polygon_for_countries(
     return {"type": "MultiPolygon", "coordinates": polygons}
 
 
+def _d018_attribute(
+    attributes: Mapping[str, Any], *names: str
+) -> Any:
+    """First delivered value among these column names.
+
+    The final delivery names D-018's columns in Korean (명칭, 승인금액, 분야,
+    상태, 실행기관_IE, 프로젝트_URL, 대상) where the previous projection used
+    English ones. Reading only the English names left the project popup and the
+    right-hand panel blank for every field once the element started projecting
+    from the final source.
+    """
+
+    for name in names:
+        value = attributes.get(name)
+        if value is None:
+            continue
+        if isinstance(value, str) and value.strip() == "":
+            continue
+        return value
+    return None
+
+
 def _d018_properties(entity: Mapping[str, Any]) -> dict[str, Any]:
     attributes = entity.get("normalizedAttributes") or {}
-    title = str(attributes.get("projectName") or entity.get("name") or "")
+    title = str(_d018_attribute(attributes, "명칭", "projectName") or entity.get("name") or "")
     country_names = {
         "KHM": "Cambodia",
         "LAO": "Lao PDR",
@@ -712,25 +786,26 @@ def _d018_properties(entity: Mapping[str, Any]) -> dict[str, Any]:
         "VNM": "Viet Nam",
     }
     scope_codes = list(entity.get("scopeCountries") or [])
-    approved_amount = attributes.get("approvedAmount")
-    if approved_amount in (None, ""):
-        approved_amount = attributes.get("usd")
+    approved_amount = _d018_attribute(attributes, "승인금액", "approvedAmount", "usd", "대표금액")
     return {
         "recordId": entity.get("recordId"),
         "elementId": "D-018",
         "projectTitle": title,
         "name": title,
         "fund": "Adaptation Fund",
-        "projectCategory": attributes.get("field_20eaa6c8") or "Regional (Asia-Pacific)",
+        "projectCategory": _d018_attribute(attributes, "대상", "field_20eaa6c8")
+        or "Regional (Asia-Pacific)",
         "participatingCountries": " · ".join(country_names[code] for code in scope_codes),
         "scopeCountries": ",".join(scope_codes),
         "participantCount": len(scope_codes),
-        "sector": attributes.get("sector") or "",
+        "sector": _d018_attribute(attributes, "분야", "sector") or "",
         "sectorKo": "초국경 수자원 관리",
-        "status": attributes.get("status") or "",
-        "approvedAmount": approved_amount if approved_amount not in (None, "") else None,
-        "implementingEntity": attributes.get("implementingEntity") or "",
-        "officialSource": attributes.get("sourceUrl") or "",
+        "status": _d018_attribute(attributes, "상태", "status") or "",
+        "approvedAmount": approved_amount,
+        "projectPeriod": _d018_attribute(attributes, "기간", "field_f21e665d") or "",
+        "implementingEntity": _d018_attribute(attributes, "실행기관_IE", "ie", "implementingEntity")
+        or "",
+        "officialSource": _d018_attribute(attributes, "프로젝트_URL", "sourceUrl") or "",
         "regionalProject": True,
         "spatialScopeType": entity.get("spatialScopeType"),
         "coordinateMeaning": entity.get("coordinateMeaning"),
@@ -774,6 +849,10 @@ def _build_d018_regional_geojson(
                 "geometry": _multi_polygon_for_countries(world, scope_codes),
                 "properties": {
                     **properties,
+                    # The scope polygon and this project's activity sites are
+                    # different things a reader can click. Sharing one key made
+                    # them indistinguishable to anything reading identity.
+                    "selectionKey": f"{entity['recordId']}:scope",
                     "geometryRole": "regional-scope",
                     "coordinateMeaning": "project-country-scope",
                     "displayedCoordinateCount": 0,
@@ -803,6 +882,7 @@ def _build_d018_regional_geojson(
                         },
                         "properties": {
                             **properties,
+                            "selectionKey": f"{entity['recordId']}:site:{index}",
                             "geometryRole": "activity-site",
                             "displayedCoordinateCount": 1,
                             "displayLabel": "세부 활동지역",
@@ -940,7 +1020,7 @@ def _transmission_layer(
     element = catalog_by_id["A-024"]
     metadata = transmission["metadata"]
     feature_count = int(metadata["featureCount"])
-    return {
+    layer = {
         "layerId": "vnm-v124-a-024",
         "elementId": "A-024",
         "label": "송전망",
@@ -996,6 +1076,15 @@ def _transmission_layer(
         "fakeGeometryCount": 0,
         "zeroImputationCount": 0,
     }
+    _apply_fact_contract(
+        layer, LINE_FACTS_V137["A-024"], [], line_features=list(transmission["features"])
+    )
+    # The reference year belongs on every segment: the popup states a length and
+    # a voltage, and a reader cannot judge either without knowing the survey it
+    # comes from. It is one value for the whole asset, so it rides on the layer.
+    layer["fieldLabels"]["sourceYear"] = "자료연도"
+    layer["tooltipFields"].append("sourceYear")
+    return layer
 
 
 def _choropleth_layer(
@@ -1079,7 +1168,15 @@ LAYER_SEMANTICS_V130: dict[str, dict[str, Any]] = {
         "coordinateMeaning": "verified-physical-site",
         "aggregationLevel": "facility",
         "mapBenefit": "발전소의 입지와 설비 분포를 비교할 수 있습니다.",
-        "spatialLimitation": "원천 좌표가 있는 개별 발전소만 표시합니다.",
+        # A-023 is two registries side by side - World Resources Institute and
+        # OpenStreetMap - and they share no identifier. The map shows source
+        # records, not a verified national plant list, and saying so is the
+        # difference between a count a reader can use and one they cannot.
+        "spatialLimitation": (
+            "원천 좌표가 있는 자료를 그대로 표시합니다. WRI 등록부와 "
+            "OpenStreetMap 자료가 함께 들어 있어 같은 발전소가 두 건으로 "
+            "실릴 수 있으며, 표시 건수는 고유 발전소 수가 아닙니다."
+        ),
     },
     "A-024": {
         "spatialScopeType": "network",

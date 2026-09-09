@@ -502,7 +502,13 @@ function normalizeTextV126(value: unknown): string | null {
     .replace(/\bCTIS-\d{2}\b/gi, "")
     .replace(/(?:\s*[,·|]\s*){2,}/gu, " · ")
     .replace(/\s+/g, " ")
-    .replace(/^\s*[·|—–-]+\s*|\s*[·|—–-]+\s*$/gu, "")
+    // Trim dangling separators left behind by the substitutions above - but not
+    // a minus sign. The ASCII hyphen is in that character class, so "-822,213"
+    // came out as "822,213" and every negative number this text passes through
+    // lost its sign: a province that is a net carbon sink read as an equally
+    // large source, and the popup and the panel disagreed about the same value.
+    .replace(/^\s*(?![-−]\s*[\d.])[·|—–-]+\s*/u, "")
+    .replace(/\s*[·|—–-]+\s*$/u, "")
     .trim();
   if (!normalized) return null;
   if (

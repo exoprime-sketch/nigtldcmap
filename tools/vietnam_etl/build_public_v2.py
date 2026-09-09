@@ -22,8 +22,19 @@ from copy import deepcopy
 from typing import Any, Iterable, Mapping
 
 from .b034_facts_v137 import derive_b034_facts
+from .c016_facts_v137 import derive_c016_facts
+from .d018_facts_v137 import (
+    AGGREGATES as D018_AGGREGATES,
+    derive_d018_facts,
+    site_candidates_for_entity,
+)
 from .region_facts_v137 import REGION_CONTRACTS, derive_region_facts
-from .normalization import canonical_json, is_placeholder, nfc_text
+from .normalization import (
+    canonical_json,
+    is_placeholder,
+    nfc_text,
+    strip_tool_truncation_marker,
+)
 from .source_zip import analyze_source_dir, analyze_source_zip
 from tools.vietnam_spatial.build_spatial_v124 import build_spatial_assets
 from tools.vietnam_spatial.spatial_semantics_v130 import (
@@ -67,6 +78,10 @@ RETAIN_MISSING_INDICATOR_ELEMENT_IDS = {"A-023"}
 # expresses in that shape. Relaxing the assertion would trade a verified
 # claim for a passing build.
 ENTITY_LAYER_ELEMENT_IDS = {"B-048", "C-025", "D-023"}
+
+# Cells whose delivered value carried an AI tool truncation message. Collected
+# during projection so the build reports the damage instead of hiding it.
+TOOL_TRUNCATED_CELLS: list[dict[str, Any]] = []
 
 SPATIAL_ELEMENT_IDS = {
     "A-023", "A-024", "B-021", "B-031", "B-032", "B-033", "B-034",
@@ -481,7 +496,20 @@ def _safe_field_definitions(
     return definitions
 
 
-def _entity_name(attributes: Mapping[str, Any], fallback: str) -> str:
+_NOTE_NAME_RE = re.compile(r"명칭\s*[:：]\s*([^·\n]+)")
+
+
+def _name_from_note(note: Any) -> str:
+    """The name the delivery states in its own note, or "" when it states none."""
+
+    match = _NOTE_NAME_RE.search(nfc_text(str(note or "")))
+    if not match:
+        return ""
+    value = match.group(1).strip()
+    return "" if not value or is_placeholder(value) else value
+
+
+def _entity_name(attributes: Mapping[str, Any], fallback: str, note: Any = None) -> str:
     preferred = (
         "projectName",
         "plantName",
@@ -511,6 +539,15 @@ def _entity_name(attributes: Mapping[str, Any], fallback: str) -> str:
         value = attributes.get(key)
         if value is not None and not is_placeholder(value):
             return str(value)
+    # Some deliveries carry the name in the row note rather than in a column of
+    # its own, in the archive's own "명칭: X ·" form. A-023's 236 World Resources
+    # Institute rows are the case that matters: their only attribute columns are
+    # capacity and fuel, so the loop below took the capacity and every one of
+    # those plants was labelled "1.0", "156.0", "170.0" on the map and in the
+    # panel. Reading the name the source actually states is not a new value.
+    from_note = _name_from_note(note)
+    if from_note:
+        return from_note
     for value in attributes.values():
         if value is not None and not is_placeholder(value):
             return str(value)
@@ -536,6 +573,7 @@ def _authorized_entities(
         "publicationDecision": decision_ref,
     }
     result: list[dict[str, Any]] = []
+    truncated_cells: list[dict[str, Any]] = TOOL_TRUNCATED_CELLS
     for sequence, raw in enumerate(workbook.get("entities", []), start=1):
         indicator_id = str(raw.get("indicator_id") or "")
         indicator = metadata.get(indicator_id, {})
@@ -545,7 +583,19 @@ def _authorized_entities(
         raw_attributes: dict[str, Any] = {}
         for index, definition in enumerate(field_definitions):
             value = source_attributes[index] if index < len(source_attributes) else None
-            normalized_attributes[definition["normalizedKey"]] = value
+            cleaned, was_truncated = strip_tool_truncation_marker(value)
+            if was_truncated:
+                truncated_cells.append(
+                    {
+                        "elementId": workbook["elementId"],
+                        "sourceRow": int(raw.get("source_row") or 0),
+                        "field": definition["normalizedKey"],
+                        "keptCharacters": len(str(cleaned or "")),
+                    }
+                )
+            normalized_attributes[definition["normalizedKey"]] = cleaned
+            # rawAttributes records what the delivery shipped under the source
+            # column name, so the damaged cell stays visible there.
             raw_attributes[definition["sourceField"]] = value
         latitude = _number_or_value(raw.get("lat"))
         longitude = _number_or_value(raw.get("lon"))
@@ -567,7 +617,9 @@ def _authorized_entities(
                 "indicatorId": indicator_id or None,
                 "countryIso3": str(raw.get("country_iso3") or "VNM").upper(),
                 "entityType": "entity",
-                "name": _entity_name(normalized_attributes, fallback_name),
+                "name": _entity_name(
+                    normalized_attributes, fallback_name, raw.get("note")
+                ),
                 "latitude": latitude,
                 "longitude": longitude,
                 "geometryType": raw.get("geometry_type"),
@@ -680,6 +732,74 @@ def _b034_projection(
                 "provenance": fact["provenance"],
             }
         )
+
+    # The national series the sheet also carries. These were counted but never
+    # published, so 24 real annual national gross-emission values and the plan's
+    # threshold breakdowns existed in the source and nowhere on the screen. Each
+    # keeps its own dimensions: a real data year stays a year, a 24-year mean
+    # stays a period, and the canopy threshold stays a dimension of its own.
+    for fact in derived["nationalFacts"]:
+        measure = fact["measure"]
+        measure_slug = measure["measureId"].replace("b034-", "").replace("-", "_")
+        threshold = fact.get("threshold")
+        parts = ["B-034_national", measure_slug]
+        if threshold:
+            parts.append(f"t{threshold.rstrip('%')}")
+        if fact["statisticType"] == "annual":
+            parts.append(f"y{fact['period']}")
+        indicator_id = "_".join(parts)
+        statistic_label = {
+            "annual": "연간",
+            "annual-mean": "연평균",
+            "point-in-time": None,
+        }[fact["statisticType"]]
+        label = measure["publicLabel"]
+        if statistic_label:
+            label = f"{label}({statistic_label})"
+        if threshold:
+            label = f"{label} — 수관피복률 ≥{threshold}"
+        indicators.setdefault(
+            indicator_id,
+            {
+                "indicatorId": indicator_id,
+                "labelKo": f"{label} — 전국",
+                "unit": fact["unit"],
+                "loadStatus": "published",
+                "warnings": [],
+                "quantityType": measure["quantityType"],
+                "statisticType": fact["statisticType"],
+                "spatialUnit": "nation",
+                "threshold": threshold,
+                # What the sheet printed in 기준연도. For a 24-year mean that is
+                # the extraction vintage, not the period the value covers.
+                "sourceYearLabel": fact.get("sourceYearLabel"),
+            },
+        )
+        row_rights = _rights_for_indicator(rights, indicator_id)
+        observations.append(
+            {
+                "recordId": f"v137-b-034-{indicator_id.lower()}",
+                "elementId": "B-034",
+                "indicatorId": indicator_id,
+                "countryIso3": "VNM",
+                "year": fact["year"],
+                "period": fact["period"],
+                "value": fact["value"],
+                "rawValue": None,
+                "unit": fact["unit"],
+                "missingReasonCode": None,
+                "note": fact.get("classificationText"),
+                "loadStatus": "published",
+                "warnings": [],
+                "rightsStatus": row_rights["rightsStatus"],
+                "rightsNote": row_rights["rightsNote"],
+                "downloadEligible": row_rights["downloadEligible"],
+                "threshold": threshold,
+                "statisticType": fact["statisticType"],
+                "sourceYearLabel": fact.get("sourceYearLabel"),
+                "provenance": fact["provenance"],
+            }
+        )
     return observations, list(indicators.values()), derived
 
 
@@ -755,6 +875,145 @@ def _region_projection(
             }
         )
     return observations, list(indicators.values()), derived
+
+
+def _c016_projection(
+    workbook: Mapping[str, Any],
+    alias_payload: Mapping[str, Any],
+    rights: Mapping[str, Any],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]], dict[str, Any]]:
+    """Expand C-016's plan allocation sheet into indicator-addressed observations.
+
+    Only the province rows become map values. The plan's own 권역 subtotals and
+    its national totals are carried as observations too, but under their own
+    indicator ids and spatial units, so nothing spreads a regional or national
+    figure across provinces. Technology, period and the min/max end of the
+    plan's range each stay a separate series.
+    """
+
+    derived = derive_c016_facts(workbook, alias_payload)
+    observations: list[dict[str, Any]] = []
+    indicators: dict[str, dict[str, Any]] = {}
+
+    for fact in derived["facts"]:
+        suffix = str(fact["adm1Code"]).replace("-", "_").lower()
+        indicator_id = f"C-016_re_capacity_{fact['variable'].replace('-', '_')}_prov_{suffix}"
+        indicators.setdefault(
+            indicator_id,
+            {
+                "indicatorId": indicator_id,
+                "labelKo": f"{fact['variableLabel']} — {fact['adm1Name']}",
+                "unit": fact["unit"],
+                "loadStatus": "published",
+                "warnings": [],
+                "quantityType": fact["quantityType"],
+                "statisticType": fact["statisticType"],
+                "spatialUnit": "admin1",
+                "geographyVersion": fact["geographyVersion"],
+                "planVersion": fact["planVersion"],
+                "sourceTable": fact["tableRef"],
+            },
+        )
+        row_rights = _rights_for_indicator(rights, indicator_id)
+        observations.append(
+            {
+                "recordId": f"v137-c-016-{indicator_id.lower()}-{_slug_period(fact['period'])}",
+                "elementId": "C-016",
+                "indicatorId": indicator_id,
+                "countryIso3": "VNM",
+                "year": int(fact["period"]) if fact["period"].isdigit() else None,
+                "period": fact["period"],
+                "value": fact["value"],
+                "rawValue": fact["rawValue"],
+                "unit": fact["unit"],
+                "missingReasonCode": None,
+                "note": fact["description"] or fact["note"] or None,
+                "loadStatus": "published",
+                "warnings": [],
+                "rightsStatus": row_rights["rightsStatus"],
+                "rightsNote": row_rights["rightsNote"],
+                "downloadEligible": row_rights["downloadEligible"],
+                "regionId": fact["adm1Code"],
+                "regionLabel": fact["adm1Name"],
+                "sourceRegionKey": fact["regionSourceName"],
+                "sourceRegionKeySystem": "PDP8 Phụ lục II 지역명",
+                "reorganised2025Parent": fact["region2025Name"],
+                "statisticType": fact["statisticType"],
+                "planVersion": fact["planVersion"],
+                "provenance": {
+                    "sourceRow": fact["sourceRow"],
+                    "sourceUrl": fact["sourceUrl"],
+                    "sourceTable": fact["tableRef"],
+                },
+            }
+        )
+    return observations, list(indicators.values()), derived
+
+
+def _d018_projection(
+    workbook: Mapping[str, Any],
+    rights: Mapping[str, Any],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]], dict[str, Any]]:
+    """Rebuild D-018's four portfolio totals from the delivered project rows.
+
+    The registry itself is entity rows; these four are the totals the element
+    publishes over them. They are recomputed rather than carried over so the
+    numbers belong to the delivery on screen, and the multi-country and
+    single-country sums stay two separate figures - the Adaptation Fund does not
+    publish a Vietnam share for a regional project, so adding them would state
+    something the source does not.
+    """
+
+    derived = derive_d018_facts(workbook)
+    observations: list[dict[str, Any]] = []
+    indicators: list[dict[str, Any]] = []
+    for aggregate in D018_AGGREGATES:
+        indicator_id = aggregate["indicatorId"]
+        value = derived["totals"][aggregate["kind"]]
+        indicators.append(
+            {
+                "indicatorId": indicator_id,
+                "labelKo": aggregate["labelKo"],
+                "unit": aggregate["unit"],
+                "loadStatus": "published",
+                "warnings": [],
+                "quantityType": "count" if aggregate["kind"] == "count" else "currency",
+                "statisticType": "sum",
+                "spatialUnit": "nation",
+            }
+        )
+        row_rights = _rights_for_indicator(rights, indicator_id)
+        observations.append(
+            {
+                "recordId": f"v137-d-018-{indicator_id.lower()}",
+                "elementId": "D-018",
+                "indicatorId": indicator_id,
+                "countryIso3": "VNM",
+                "year": None,
+                "period": None,
+                "value": value,
+                "rawValue": None,
+                "unit": aggregate["unit"],
+                "missingReasonCode": None,
+                "note": (
+                    "다국가 사업 2건의 승인액은 전체 사업 기준이며 베트남 귀속분이 "
+                    "분리 게재되지 않는다. 베트남 단독 합계와 다른 수치다."
+                    if aggregate["kind"] == "approved"
+                    else None
+                ),
+                "loadStatus": "published",
+                "warnings": [],
+                "rightsStatus": row_rights["rightsStatus"],
+                "rightsNote": row_rights["rightsNote"],
+                "downloadEligible": row_rights["downloadEligible"],
+                "statisticType": "sum",
+            }
+        )
+    return observations, indicators, derived
+
+
+def _slug_period(period: str) -> str:
+    return re.sub(r"[^0-9a-z]+", "-", str(period).lower()).strip("-") or "period"
 
 
 def _indicators_from_workbook(
@@ -1198,6 +1457,8 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         )
     )
     b034_derivation_summary: dict[str, Any] = {}
+    c016_derivation_summary: dict[str, Any] = {}
+    d018_derivation_summary: dict[str, Any] = {}
     retained_indicator_counts: dict[str, int] = {}
     region_derivation_summary: dict[str, Any] = {}
     source_selection_by_element: dict[str, str] = {}
@@ -1262,9 +1523,11 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         # blocking promotion - visibly incomplete beats silently empty.
         # B-034 has a derivation now, so it is no longer in the pending set.
         # The other elements keep their block until each gets its own contract.
+        # B-034 and C-016 now have their own derivations, so they are no longer
+        # blocked for carrying their values in entity attribute columns.
         spatial_observation_elements = (
             SPATIAL_ELEMENT_IDS
-            - {"B-034"}
+            - {"B-034", "C-016", "D-018"}
             - set(REGION_CONTRACTS)
             - ENTITY_LAYER_ELEMENT_IDS
         )
@@ -1309,6 +1572,51 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
                 entities = _authorized_entities(
                     workbook, base_payload, decision, field_definitions, rights
                 )
+            elif element_id == "D-018" and source_dir is not None:
+                observations, derived_indicators, d018_derived = _d018_projection(
+                    workbook, rights
+                )
+                entities = _authorized_entities(
+                    workbook, base_payload, decision, field_definitions, rights
+                )
+                # The reviewed spatial policy reads the project's coordinates
+                # from this parsed list, which the previous projection had
+                # already built from the same 지점 column. Re-linking it here is
+                # what lets the element leave the previous projection behind
+                # without losing the two verified activity sites.
+                for record in entities:
+                    candidates = site_candidates_for_entity(
+                        record.get("normalizedAttributes") or {}
+                    )
+                    if candidates:
+                        record["normalizedAttributes"]["sourceCoordinateCandidates"] = candidates
+                if not d018_derived["verifiedActivitySitesPresent"]:
+                    raise ValueError(
+                        "D-018: the two reviewed activity sites are no longer in the source"
+                    )
+                d018_derivation_summary = {
+                    "projectCount": len(d018_derived["projects"]),
+                    "sourceCoordinateCount": d018_derived["sourceCoordinateCount"],
+                    "activitySiteCount": d018_derived["activitySiteCount"],
+                    "countryRepresentativePointCount": d018_derived["countryPointCount"],
+                    "verifiedActivitySitesPresent": d018_derived["verifiedActivitySitesPresent"],
+                    "totals": d018_derived["totals"],
+                }
+            elif element_id == "C-016" and source_dir is not None:
+                observations, derived_indicators, c016_derived = _c016_projection(
+                    workbook, adm1_aliases, rights
+                )
+                c016_derivation_summary = {
+                    "provinceFactCount": len(c016_derived["facts"]),
+                    "regionalRowCount": len(c016_derived["regionalRows"]),
+                    "nationalRowCount": len(c016_derived["nationalRows"]),
+                    "skippedCount": len(c016_derived["skipped"]),
+                    "unmatchedRegions": c016_derived["unmatchedRegions"],
+                    "planVersion": c016_derived["planVersion"],
+                }
+                entities = _authorized_entities(
+                    workbook, base_payload, decision, field_definitions, rights
+                )
             elif element_id == "B-034" and source_dir is not None:
                 observations, derived_indicators, b034_derivation = _b034_projection(
                     workbook, adm1_aliases, rights
@@ -1318,6 +1626,8 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
                     "derivedFactCount": len(b034_derivation["facts"]),
                     "provinceAliasRowCount": len(b034_derivation["provinceAliasRows"]),
                     "nationalRowCount": len(b034_derivation["nationalRows"]),
+                    "nationalPublishedCount": len(b034_derivation["nationalFacts"]),
+                    "nationalRestatedCount": len(b034_derivation["nationalAliasRows"]),
                     "skippedCount": len(b034_derivation["skipped"]),
                     "unmatchedRegions": b034_derivation["unmatchedRegions"],
                 }
@@ -2002,7 +2312,12 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
             )
             for value in sorted(set(source_selection_by_element.values()))
         },
+        "toolTruncatedSourceCells": sorted(
+            TOOL_TRUNCATED_CELLS, key=lambda row: (row["elementId"], row["sourceRow"], row["field"])
+        ),
         "b034Derivation": b034_derivation_summary,
+        "c016Derivation": c016_derivation_summary,
+        "d018Derivation": d018_derivation_summary,
         "regionDerivation": region_derivation_summary,
         "retainedMissingIndicatorCounts": retained_indicator_counts,
         "promotionBlockers": promotion_blockers,

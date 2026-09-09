@@ -303,16 +303,102 @@ def derive_b034_facts(
             # nothing counts them twice.
             aliases.append({**record, "aliasOf": "admin1-measure"})
             continue
+        record["classificationText"] = classification
         unresolved.append(record)
+
+    national_facts, national_aliases = _resolve_national_series(unresolved)
 
     return {
         "facts": facts,
         "nationalRows": unresolved,
+        "nationalFacts": national_facts,
+        "nationalAliasRows": national_aliases,
         "provinceAliasRows": aliases,
         "skipped": skipped,
         "unmatchedRegions": sorted(set(unmatched_regions)),
         "entityCount": len(entities),
     }
+
+
+def _normalized_unit(unit: str) -> str:
+    """CO₂ and CO2 are the same unit written two ways in the same sheet."""
+
+    text = unicodedata.normalize("NFKC", _text(unit))
+    return text.replace("₂", "2").replace(" ", "").lower()
+
+
+def _resolve_national_series(
+    rows: list[dict[str, Any]]
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Split the national rows into published facts and re-listings.
+
+    The sheet states the same national figure twice in places - once under
+    "지상부 탄소밀도 — 임계값별 — 수관피복률 ≥50%" and once under "산림탄소
+    임계값별 지상부 탄소밀도 — 50%" - and writes the unit as both ``Mg CO₂e/yr``
+    and ``Mg CO2e/yr``. Two rows are the same fact only when the measure, the
+    value, the unit, the period **and** the threshold all correspond; matching on
+    anything less would fold a 30% figure into an unqualified one.
+
+    Period is taken from what the measure is, not from the 기준연도 column: the
+    flux rows carry 2025 there, which is when the layer was extracted, while the
+    figure itself is the 2001-2024 mean. The 24 rows that carry a real data year
+    stay a real annual series.
+    """
+
+    published: list[dict[str, Any]] = []
+    relisted: list[dict[str, Any]] = []
+    seen: dict[tuple[Any, ...], dict[str, Any]] = {}
+
+    for row in sorted(rows, key=lambda item: item["provenance"]["sourceRow"]):
+        measure = row.get("measure") or {}
+        year_label = row.get("sourceYearLabel")
+        is_flux = measure.get("quantityType") == "flux"
+        annual = is_flux and year_label is not None and int(year_label) <= 2024
+        if annual:
+            period = str(int(year_label))
+            year = int(year_label)
+            statistic = "annual"
+        elif is_flux:
+            # The measure's own period, stated in the sheet's note.
+            period = "2001-2024"
+            year = None
+            statistic = "annual-mean"
+        else:
+            period = "2000"
+            year = 2000
+            statistic = "point-in-time"
+
+        key = (
+            measure.get("measureId"),
+            row.get("value"),
+            _normalized_unit(row.get("unit")),
+            period,
+            row.get("threshold"),
+        )
+        if key in seen:
+            relisted.append(
+                {
+                    **row,
+                    "period": period,
+                    "year": year,
+                    "statisticType": statistic,
+                    "aliasOfSourceRow": seen[key]["provenance"]["sourceRow"],
+                    "reason": "RESTATED_SAME_FACT",
+                }
+            )
+            continue
+        fact = {
+            **row,
+            "period": period,
+            "year": year,
+            "statisticType": statistic,
+            # The vintage the sheet printed in 기준연도, kept apart from the
+            # period the value actually covers.
+            "sourceYearLabel": year_label,
+        }
+        seen[key] = fact
+        published.append(fact)
+    return published, relisted
 
 
 def _matches_label(normalized_key: str, label: str) -> bool:

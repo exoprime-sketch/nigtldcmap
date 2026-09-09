@@ -1,0 +1,163 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:54359/?view=data&element=miga-jeongcijeog-riseukeu-bojeung-peurojegteumyeong-gugga-segteo-bojeung-geumaeg-bojeung-y&country=VNM&from=explorer#element-detail",
+  "title": "정치적 위험 보증사업",
+  "body": "검색 결과로 돌아가기 시장·산업 및 재원 › MIGA 정치적 리스크 보증 정보 데이터 제공 다운로드 가능 정치적 위험 보증사업 베트남 · 정치적 위험 보증사업의 사업 규모와 분야·기관별 구성을 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 목록 14건 이 데이터로 확인할 수 있는 내용 정치적 위험 보증사업의 규모와 분야별 분포 정치적 위험 보증사업의 규모와 분야·기관별 분포를 확인할 수 있습니다. 주 분석 정치적 위험 보증사업 규모와 분포 사업·재원 사업 규모와 구성 공개된 사업을 집계하며, 통화가 확인된 금액만 통화별로 합산합니다. 총 사업 수 14 건 보증금액 합계 41.22억 USD · 9건 회계연도 1999–2018 년 연도별 사업 수 1999 1건 2001 1건 2003 1건 2013 3건 2014 1건 2016 1건 2018 6건 주요 분야·기금 구성 전력 4건 교통 2건 국가·공기업의 무조건부 금융의무 불이행 시 보상(4대 PRI와 별개 상품) 1건 국유화·몰수·인허가 취소 등 투자자산 권리 상실(점진적 수용 포함) 1건 수원국 정부의 계약 파기·불이행에 따른 손실(중재 절차 전제) 1건 정치적 동기의 전쟁·내란으로 인한 자산 멸실·훼손 1건 제조 1건 통신 1건 사업 목록 0건 검색 연도 전체 2018년 2016년 2014년 2013년 2003년 2001년 1999년 분야·기금 전체 교통 국가·공기업의 무조건부 금융의무 불이행 시 보상(4대 PRI와 별개 상품) 국유화·몰수·인허가 취소 등 투자자산 권리 상실(점진적 수용 포함) 수원국 정부의 계약 파기·불이행에 따른 손실(중재 절차 전제) 전력 정치적 동기의 전쟁·내란으로 인한 자산 멸실·훼손 제조 통신 현지통화를 경화로 환전·송금하지 못하는 손실 보상(평가절하는 제외) 화학 선택한 조건에 맞는 공개 목록이 없습니다. 자료정보 상세 데이터 · 목록 14건 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 947,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "D-026",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "정치적 위험 보증사업의 규모와 분야별 분포",
+    "정치적 위험 보증사업 규모와 분포",
+    "사업 규모와 구성",
+    "연도별 사업 수",
+    "주요 분야·기금 구성",
+    "사업 목록",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "연도",
+      "dimensionKey": null,
+      "testId": null,
+      "value": "2018",
+      "shown": "2018년",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "all",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "2018",
+          "label": "2018년",
+          "disabled": false
+        },
+        {
+          "value": "2016",
+          "label": "2016년",
+          "disabled": false
+        },
+        {
+          "value": "2014",
+          "label": "2014년",
+          "disabled": false
+        },
+        {
+          "value": "2013",
+          "label": "2013년",
+          "disabled": false
+        },
+        {
+          "value": "2003",
+          "label": "2003년",
+          "disabled": false
+        },
+        {
+          "value": "2001",
+          "label": "2001년",
+          "disabled": false
+        },
+        {
+          "value": "1999",
+          "label": "1999년",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "분야·기금",
+      "dimensionKey": null,
+      "testId": null,
+      "value": "교통",
+      "shown": "교통",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "all",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "교통",
+          "label": "교통",
+          "disabled": false
+        },
+        {
+          "value": "국가·공기업의 무조건부 금융의무 불이행 시 보상(4대 PRI와 별개 상품)",
+          "label": "국가·공기업의 무조건부 금융의무 불이행 시 보상(4대 PRI와 별개 상품)",
+          "disabled": false
+        },
+        {
+          "value": "국유화·몰수·인허가 취소 등 투자자산 권리 상실(점진적 수용 포함)",
+          "label": "국유화·몰수·인허가 취소 등 투자자산 권리 상실(점진적 수용 포함)",
+          "disabled": false
+        },
+        {
+          "value": "수원국 정부의 계약 파기·불이행에 따른 손실(중재 절차 전제)",
+          "label": "수원국 정부의 계약 파기·불이행에 따른 손실(중재 절차 전제)",
+          "disabled": false
+        },
+        {
+          "value": "전력",
+          "label": "전력",
+          "disabled": false
+        },
+        {
+          "value": "정치적 동기의 전쟁·내란으로 인한 자산 멸실·훼손",
+          "label": "정치적 동기의 전쟁·내란으로 인한 자산 멸실·훼손",
+          "disabled": false
+        },
+        {
+          "value": "제조",
+          "label": "제조",
+          "disabled": false
+        },
+        {
+          "value": "통신",
+          "label": "통신",
+          "disabled": false
+        },
+        {
+          "value": "현지통화를 경화로 환전·송금하지 못하는 손실 보상(평가절하는 제외)",
+          "label": "현지통화를 경화로 환전·송금하지 못하는 손실 보상(평가절하는 제외)",
+          "disabled": false
+        },
+        {
+          "value": "화학",
+          "label": "화학",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [
+    "총 사업 수 14 건",
+    "보증금액 합계 41.22억 USD · 9건",
+    "회계연도 1999–2018 년"
+  ],
+  "chartTexts": [
+    "연도별 사업 수 1999 1건 2001 1건 2003 1건 2013 3건 2014 1건 2016 1건 2018 6건"
+  ],
+  "tableRows": [],
+  "emptyNotices": [
+    "선택한 조건에 맞는 공개 목록이 없습니다."
+  ],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

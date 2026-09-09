@@ -1,0 +1,92 @@
+{
+  "schema": "nigt-evidence-run-1",
+  "runId": "2026-09-08T03-57-17-165Z-290c6887e06b",
+  "startedAt": "2026-09-08T03:57:17.233Z",
+  "sourceSha": "8c9a8ec2c5cdd77295e43516c279ef189f37ec07",
+  "buildRoot": ".verify/candidate/build",
+  "dataFingerprint": "290c6887e06b8f5f5355d529ea2e536e6017cdb7dd82e94ba34f545066fb4ccd",
+  "staticAssets": [
+    {
+      "path": "static/css/412.66a6b27b.chunk.css",
+      "sha256": "f2227b1c369b9059cb3a8a716f078e50a4a597cf49a7948658bc81a1e8940165"
+    },
+    {
+      "path": "static/css/674.175757c8.chunk.css",
+      "sha256": "70a0f5b2575e75d226442336dfd644c55fa7c9c14fc35129f4e52793211a1e7e"
+    },
+    {
+      "path": "static/css/694.6dd808ac.chunk.css",
+      "sha256": "e75ec56f4b64ccbd2eae39b6a38303a1d8d81c456fb70a4a793be48ff2c8ddbf"
+    },
+    {
+      "path": "static/css/809.6dd808ac.chunk.css",
+      "sha256": "9cf661e557a6a610a6b54b5e71e4f7ee0955151c9a89e30de1515f01d757c4a6"
+    },
+    {
+      "path": "static/css/872.25edd82a.chunk.css",
+      "sha256": "10158947bd1fe100b5027eb908b0e02ed975ff4312fe4f81be3d7ada2c6298c4"
+    },
+    {
+      "path": "static/css/900.98320332.chunk.css",
+      "sha256": "315f56ee35bfafd2f79445d5acd11addbd00dc4255c650075d2f359b31053e9b"
+    },
+    {
+      "path": "static/css/main.8d40b935.css",
+      "sha256": "9b7bfa18d1c936396453266e03cba8cb7fd9678125fd79d96a333b9a2dc47907"
+    },
+    {
+      "path": "static/js/412.e0d5d9b7.chunk.js",
+      "sha256": "82ac147ab5a4031b1f028106e5674486949b8cfefa94e2415b83db6faa0e27b3"
+    },
+    {
+      "path": "static/js/674.55dc234d.chunk.js",
+      "sha256": "9c87df0c2c1df1438e384f3ebd2b7838e82512bc4f2d7753238be279e61ca804"
+    },
+    {
+      "path": "static/js/694.149afbc6.chunk.js",
+      "sha256": "adcc8613225c546d2edb798b16486ec4a1a807613e54839507f1a7b37b2ee120"
+    },
+    {
+      "path": "static/js/809.886d1167.chunk.js",
+      "sha256": "d2efa3ace2ef991e86c23cc7ef9eecab33f5709ff69d35688d663bb001420318"
+    },
+    {
+      "path": "static/js/872.def12a5c.chunk.js",
+      "sha256": "6f2b03fdafc69976cd28d8f98d8d69a860bae14f11f2f4cac75c819a3aaa66ba"
+    },
+    {
+      "path": "static/js/900.8e16959e.chunk.js",
+      "sha256": "007556c11b9f3ea9ec929ecefec624949a51e02da5f514a0de705f82f63f9697"
+    },
+    {
+      "path": "static/js/main.a7aabbf9.js",
+      "sha256": "92d7dfec8c04f3e3c48f6b74a07dfadd6875a0fc7a58c76fa456e19a1c3b541d"
+    }
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "requestedElementCount": 4,
+  "catalogElementCount": 152,
+  "mode": "PILOT",
+  "maxSelectorsPerRoute": 2,
+  "productionUpdated": false,
+  "liveProductionQA": "NOT_RUN",
+  "candidatePromotionBlocked": "NOT_DECLARED",
+  "semanticReview": "PENDING",
+  "testMeaning": "Controls and observed content are recorded. No expected-result oracle supplied: data correctness is not passed.",
+  "endedAt": "2026-09-08T03:57:19.527Z",
+  "visited": 4,
+  "completed": 4,
+  "inputObserved": 4,
+  "meaningReviewed": 0,
+  "filterExpectedResultPassed": 0,
+  "evidenceCaptured": 4,
+  "harnessErrors": 0,
+  "pageRuntimeEvents": 0,
+  "fatal": null,
+  "collectorStatus": "COLLECTION_FINISHED",
+  "releaseStatus": "NOT_EVALUATED",
+  "warning": "No unit count, text change, screenshot existence, or input receipt is a semantic PASS."
+}

@@ -541,7 +541,12 @@
     top: 12px;
     right: 12px;
     bottom: auto;
-    max-height: calc(65% - 12px);
+    /* Measured with a dataset selected and a feature chosen - the state a
+       reader is actually in - the panel grew to 595px over a 934px canvas and
+       took 24-26% of it, on top of the legend's 18%. That left 50.1% reachable
+       at 1024 and 45.9% at 958, not the 80% measured on an empty map. The panel
+       scrolls, so a shorter box hides no text, no button and no legend. */
+    max-height: calc(52% - 12px);
     overflow-y: auto;
     width: min(300px, calc(100% - 340px));
     border: 1px solid var(--cdp-line);
@@ -596,4 +601,70 @@
   .cdp-map-panel-separator > span {
     transition: none;
   }
+}
+
+
+/* ------------------------------------------------------------------ *
+ * MAP-002: the legend has to be movable out of the way
+ *
+ * The legend floats over the bottom-left of the map at every width. Measured on
+ * the candidate build, it covered 25 of 25 screen points of the first
+ * transmission segment at 1440, 24 of 24 at 1024 and 26 of 26 at 958 - every
+ * point that landed on that line had the legend above it, so hover and click
+ * never reached the feature. The earlier MAP-001 measurement did not see this
+ * because the legend only renders once a dataset is selected, which is the
+ * first thing a reader does.
+ *
+ * Two changes, no removal: the legend keeps its own scrolling but no longer
+ * runs most of the canvas height, and it gains the collapse control the two
+ * side panels already have. Collapsed it keeps its title and its toggle, so
+ * nothing is cut off and nothing becomes unreachable - and the map underneath
+ * becomes reachable.
+ * ------------------------------------------------------------------ */
+
+/* Scoped above 768 so the stacked layout keeps its own, tighter cap: an
+   unscoped rule here beat it and gave a 375x612 phone canvas a 380px legend. */
+@media (min-width: 769px) {
+  .cdp-map-legend {
+    max-height: min(46vh, 380px);
+  }
+}
+
+@media (max-width: 768px) {
+  .cdp-map-legend {
+    max-height: 40%;
+  }
+}
+
+.cdp-map-legend__header {
+  gap: 8px;
+}
+
+/* The shared toggle is hidden until a breakpoint shows it; the legend's own
+   copy is always available, because the legend floats over the map at every
+   width. */
+.cdp-map-legend__toggle {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  margin-left: auto;
+  min-height: 32px;
+  padding: 5px 9px;
+  white-space: nowrap;
+}
+
+.cdp-map-legend.is-collapsed {
+  width: auto;
+  max-width: min(280px, calc(100% - 32px));
+  max-height: none;
+  overflow: visible;
+}
+
+.cdp-map-legend.is-collapsed > :not(.cdp-map-legend__header) {
+  display: none;
+}
+
+.cdp-map-legend.is-collapsed .cdp-map-legend__header {
+  border-bottom: 0;
+  padding-bottom: 0;
 }

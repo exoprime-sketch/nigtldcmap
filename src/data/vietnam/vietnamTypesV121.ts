@@ -457,6 +457,19 @@ export type VietnamSpatialReadinessV123 =
   | "non-spatial"
   | "not-applicable";
 
+export interface VietnamMapFactFieldV137 {
+  key: string;
+  label: string;
+  sources: string[];
+  unit?: string;
+  filterable?: boolean;
+  /** Shared vocabulary the delivery itself paired, e.g. hydro -> 수력. */
+  valueMap?: Record<string, string>;
+  note?: string;
+  filledRecordCount?: number;
+  recordCount?: number;
+}
+
 export interface VietnamMapLayerV121 {
   layerId: string;
   elementId: string;
@@ -479,6 +492,18 @@ export interface VietnamMapLayerV121 {
   sourceOrganizations: string[];
   latestYear?: number | string | null;
   tooltipFields: string[];
+  /**
+   * Which source attribute holds each fact this layer puts on the map.
+   *
+   * The delivery names its columns per element - Korean headers for B-048,
+   * World Resources Institute and OpenStreetMap names side by side for A-023,
+   * positional 속성N_ headers for C-025 - so a single fixed field name resolves
+   * against none of them. Each entry names the public key, its label and the
+   * source keys that can carry it, in preference order.
+   */
+  factFields?: VietnamMapFactFieldV137[];
+  /** Public label for each fact key, so the panel never prints a raw column name. */
+  fieldLabels?: Record<string, string>;
   defaultPrimary: boolean;
   defaultOverlay: boolean;
   cluster: boolean;
