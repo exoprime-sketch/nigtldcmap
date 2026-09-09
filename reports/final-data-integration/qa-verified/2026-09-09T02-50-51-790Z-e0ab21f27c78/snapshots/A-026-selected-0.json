@@ -1,0 +1,140 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:51655/?view=data&element=geonmul-puspeurinteu-footprint&country=VNM&from=explorer&measure=measure-efb82ef7ad6f&year=2023#element-detail",
+  "title": "건물 분포",
+  "body": "검색 결과로 돌아가기 국가 기본 정보 › 인프라 GIS 공간정보 데이터 제공 다운로드 가능 건물 분포 베트남 · 건물 분포의 최근 수준과 항목별 차이를 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 3종 · 관측기간 2023년 이 데이터로 확인할 수 있는 내용 건물 분포의 지역별 차이와 범위 건물 분포의 지역 차이와 공개된 공간 범위를 확인할 수 있습니다. 항목 건물 풋프린트 · EPSG 코드 건물 풋프린트 · m2 건물 풋프린트 · score 건물 풋프린트 · 개 건물 풋프린트 · 건 분류 전체 속성 필드 수 수록 신뢰도 하한 신뢰도 0.80 이상 피처 수 좌표계 총 건물바닥면적 평균 건물바닥면적 피처 수 연도 2023 결측 2건 일부 세부항목은 아직 수집되지 않음 현재 선택 조건에 표시할 값이 없습니다 다른 항목이나 기간을 선택해 확인해 주세요. 자료정보 상세 데이터 · 전체 7행 · 값 있음 3행 · 결측 4행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 492,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "A-026",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "건물 분포의 지역별 차이와 범위",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목 선택",
+      "dimensionKey": null,
+      "testId": "v125-measure-select",
+      "value": "measure-efb82ef7ad6f",
+      "shown": "건물 풋프린트 · m2",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-80b527a8f546",
+          "label": "건물 풋프린트 · EPSG 코드",
+          "disabled": false
+        },
+        {
+          "value": "measure-efb82ef7ad6f",
+          "label": "건물 풋프린트 · m2",
+          "disabled": false
+        },
+        {
+          "value": "measure-3b05385433c5",
+          "label": "건물 풋프린트 · score",
+          "disabled": false
+        },
+        {
+          "value": "measure-781972ab4e75",
+          "label": "건물 풋프린트 · 개",
+          "disabled": false
+        },
+        {
+          "value": "measure-a8518d9b1c64",
+          "label": "건물 풋프린트 · 건",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "분류 선택",
+      "dimensionKey": "category",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "속성 필드 수",
+          "label": "속성 필드 수",
+          "disabled": false
+        },
+        {
+          "value": "수록 신뢰도 하한",
+          "label": "수록 신뢰도 하한",
+          "disabled": false
+        },
+        {
+          "value": "신뢰도 0.80 이상 피처 수",
+          "label": "신뢰도 0.80 이상 피처 수",
+          "disabled": false
+        },
+        {
+          "value": "좌표계",
+          "label": "좌표계",
+          "disabled": false
+        },
+        {
+          "value": "총 건물바닥면적",
+          "label": "총 건물바닥면적",
+          "disabled": false
+        },
+        {
+          "value": "평균 건물바닥면적",
+          "label": "평균 건물바닥면적",
+          "disabled": false
+        },
+        {
+          "value": "피처 수",
+          "label": "피처 수",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "연도 선택",
+      "dimensionKey": null,
+      "testId": "v125-year-select",
+      "value": "2023",
+      "shown": "2023",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "2023",
+          "label": "2023",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [],
+  "chartTexts": [],
+  "tableRows": [],
+  "emptyNotices": [
+    "현재 선택 조건에 표시할 값이 없습니다 다른 항목이나 기간을 선택해 확인해 주세요."
+  ],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

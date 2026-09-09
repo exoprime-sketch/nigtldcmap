@@ -1,0 +1,72 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:51655/?view=data&element=ghg-baeculryang-co2-ch4-n2o-f-gas&country=VNM&from=explorer&measure=measure-a8662d9267c1#element-detail",
+  "title": "온실가스 종류별 배출량",
+  "body": "검색 결과로 돌아가기 국가 기본 정보 › GHG 배출 현황 데이터 제공 다운로드 가능 온실가스 종류별 배출량 베트남 · 온실가스 종류별 배출량의 항목별 구성과 연도별 변화를 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 8종 · 관측기간 1970~2024년 이 데이터로 확인할 수 있는 내용 온실가스 종류별 배출량의 항목별 비중과 연도별 흐름 온실가스 종류별 배출량의 구성과 연도별 변화를 확인할 수 있습니다. 핵심현황 배출량 변화와 구성 같은 단위의 계열만 비교하며, 공개되지 않은 값은 합계에 포함하지 않습니다. 측정 기준 가스별 CO₂ 환산 배출량 · Mt CO2eq 가스별 질량 · Gg 선택 기준 가스별 질량 서로 다른 가스 질량은 합산하지 않음 최신 비교연도 2024년 35개 완전연도 가장 큰 가스 이산화탄소(CO₂) 430,819 Gg 비교 계열 4개 동일 단위 기준 가스별 질량은 합산하지 않습니다 Gg 단위의 CO₂·CH₄·N₂O·불소계 가스는 온난화 영향이 서로 달라 하나의 총량이나 구성비로 만들지 않습니다. 구성 분석 가스별 배출량 변화 범례에서 계열을 켜고 끄며 같은 단위 안에서 장기 변화를 비교할 수 있습니다. 가스별 질량 단위: Gg 메탄(CH₄(메탄)) 불소계 온실가스 아산화질소(N₂O(아산화질소)) 이산화탄소(CO₂(이산화탄소)) 표시기간 전체 축소 확대 전체 465,285 372,228 279,171 186,114 93,057 0 1970 1978 1985 1993 2001 2009 2016 2024 연도 가스별 질량(Gg) 자료정보 상세 데이터 · 전체 400행 · 값 있음 400행 · 결측 0행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 836,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "A-010",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "온실가스 종류별 배출량의 항목별 비중과 연도별 흐름",
+    "배출량 변화와 구성",
+    "가스별 배출량 변화",
+    "가스별 질량",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(2) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "측정 기준",
+      "dimensionKey": null,
+      "testId": "emissions-measure-selector-v132",
+      "value": "measure-a8662d9267c1|Gg",
+      "shown": "가스별 질량 · Gg",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-165d8811fba3|Mt CO2eq",
+          "label": "가스별 CO₂ 환산 배출량 · Mt CO2eq",
+          "disabled": false
+        },
+        {
+          "value": "measure-a8662d9267c1|Gg",
+          "label": "가스별 질량 · Gg",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [],
+  "chartTexts": [
+    "465,285",
+    "372,228",
+    "279,171",
+    "186,114",
+    "93,057",
+    "0",
+    "1970",
+    "1978",
+    "1985",
+    "1993",
+    "2001",
+    "2009",
+    "2016",
+    "2024",
+    "연도",
+    "가스별 질량(Gg)"
+  ],
+  "tableRows": [],
+  "emptyNotices": [],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

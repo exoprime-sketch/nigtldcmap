@@ -1,0 +1,246 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:51655/?view=data&element=haeun-yeongyeolseong-lsci&country=VNM&from=explorer&measure=measure-a8b5f1ca1a7a&year=2026&dim.category=Q1&dim.detail=%EC%A0%95%EA%B8%B0%EC%84%A0+%ED%95%B4%EC%9A%B4+%EC%97%B0%EA%B2%B0%EC%84%B1+%EC%A7%80%EC%88%98%28Q1+%EB%B6%84%EA%B8%B0%EA%B0%92%29#element-detail",
+  "title": "해운 연결성",
+  "body": "검색 결과로 돌아가기 국가 기본 정보 › 공급망 데이터 제공 다운로드 가능 해운 연결성 베트남 · 해운 연결성의 항목별 구성과 연도별 변화를 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 4종 · 관측기간 2006~2026년 이 데이터로 확인할 수 있는 내용 해운 연결성의 수준과 장기 변화 해운 연결성의 현재 수준과 기준시점별 변화를 확인할 수 있습니다. i 지표 읽는 법 정기선 해운 연결성 지수 국제 정기선 해운망에 얼마나 잘 연결되어 있는지 항만 기항과 서비스 여건을 종합합니다. 값이 높을수록 국제 해운 연결성이 높으며 같은 산출 기준의 분기값끼리 비교합니다. 단위 지수 높고 낮음의 의미 높을수록 국제 해운 연결성이 높음 분류 전체 Q1 Q2 Q3 Q4 세부 분류 전체 정기선 해운 연결성 지수(Q1 분기값) 정기선 해운 연결성 지수(Q2 분기값) 정기선 해운 연결성 지수(Q3 분기값) 정기선 해운 연결성 지수(Q4 분기값) 연도 2026 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 2014 2013 2012 2011 2010 2009 2008 2007 2006 용어 도움말 ? LSCI 설명 해운 연결성 지수(LSCI) 478.82 지수 · 2026 · 정기선 해운 연결성 지수(Q1 분기값) 주 분석 해운 연결성 수준과 변화 연도별 항목 추세 2006~2026년 추세 단위: 지수 해운 연결성 지수(LSCI(정기선 해운연결성지수)) · Q1 — 정기선 해운 연결성 지수(Q1 분기값) 표시기간 전체 축소 확대 전체 506.324 426.5624 346.8008 267.0392 187.2776 107.516 2006 2009 2012 2015 2017 2020 2023 2026 연도 측정값(지수) 자료정보 상세 데이터 · 전체 82행 · 값 있음 82행 · 결측 0행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 948,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "A-033",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "해운 연결성의 수준과 장기 변화",
+    "지표 읽는 법",
+    "해운 연결성 수준과 변화",
+    "항목 추세",
+    "2006~2026년 추세",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "분류 선택",
+      "dimensionKey": "category",
+      "testId": null,
+      "value": "Q1",
+      "shown": "Q1",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "Q1",
+          "label": "Q1",
+          "disabled": false
+        },
+        {
+          "value": "Q2",
+          "label": "Q2",
+          "disabled": false
+        },
+        {
+          "value": "Q3",
+          "label": "Q3",
+          "disabled": false
+        },
+        {
+          "value": "Q4",
+          "label": "Q4",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "세부 분류 선택",
+      "dimensionKey": "detail",
+      "testId": null,
+      "value": "정기선 해운 연결성 지수(Q1 분기값)",
+      "shown": "정기선 해운 연결성 지수(Q1 분기값)",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "정기선 해운 연결성 지수(Q1 분기값)",
+          "label": "정기선 해운 연결성 지수(Q1 분기값)",
+          "disabled": false
+        },
+        {
+          "value": "정기선 해운 연결성 지수(Q2 분기값)",
+          "label": "정기선 해운 연결성 지수(Q2 분기값)",
+          "disabled": false
+        },
+        {
+          "value": "정기선 해운 연결성 지수(Q3 분기값)",
+          "label": "정기선 해운 연결성 지수(Q3 분기값)",
+          "disabled": false
+        },
+        {
+          "value": "정기선 해운 연결성 지수(Q4 분기값)",
+          "label": "정기선 해운 연결성 지수(Q4 분기값)",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "연도 선택",
+      "dimensionKey": null,
+      "testId": "v125-year-select",
+      "value": "2026",
+      "shown": "2026",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "2026",
+          "label": "2026",
+          "disabled": false
+        },
+        {
+          "value": "2025",
+          "label": "2025",
+          "disabled": false
+        },
+        {
+          "value": "2024",
+          "label": "2024",
+          "disabled": false
+        },
+        {
+          "value": "2023",
+          "label": "2023",
+          "disabled": false
+        },
+        {
+          "value": "2022",
+          "label": "2022",
+          "disabled": false
+        },
+        {
+          "value": "2021",
+          "label": "2021",
+          "disabled": false
+        },
+        {
+          "value": "2020",
+          "label": "2020",
+          "disabled": false
+        },
+        {
+          "value": "2019",
+          "label": "2019",
+          "disabled": false
+        },
+        {
+          "value": "2018",
+          "label": "2018",
+          "disabled": false
+        },
+        {
+          "value": "2017",
+          "label": "2017",
+          "disabled": false
+        },
+        {
+          "value": "2016",
+          "label": "2016",
+          "disabled": false
+        },
+        {
+          "value": "2015",
+          "label": "2015",
+          "disabled": false
+        },
+        {
+          "value": "2014",
+          "label": "2014",
+          "disabled": false
+        },
+        {
+          "value": "2013",
+          "label": "2013",
+          "disabled": false
+        },
+        {
+          "value": "2012",
+          "label": "2012",
+          "disabled": false
+        },
+        {
+          "value": "2011",
+          "label": "2011",
+          "disabled": false
+        },
+        {
+          "value": "2010",
+          "label": "2010",
+          "disabled": false
+        },
+        {
+          "value": "2009",
+          "label": "2009",
+          "disabled": false
+        },
+        {
+          "value": "2008",
+          "label": "2008",
+          "disabled": false
+        },
+        {
+          "value": "2007",
+          "label": "2007",
+          "disabled": false
+        },
+        {
+          "value": "2006",
+          "label": "2006",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [
+    "해운 연결성 지수(LSCI) 478.82 지수 · 2026 · 정기선 해운 연결성 지수(Q1 분기값)"
+  ],
+  "chartTexts": [
+    "506.324",
+    "426.5624",
+    "346.8008",
+    "267.0392",
+    "187.2776",
+    "107.516",
+    "2006",
+    "2009",
+    "2012",
+    "2015",
+    "2017",
+    "2020",
+    "2023",
+    "2026",
+    "연도",
+    "측정값(지수)"
+  ],
+  "tableRows": [],
+  "emptyNotices": [],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

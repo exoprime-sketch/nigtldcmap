@@ -2,18 +2,20 @@
   "schemaVersion": "v132-public-visualization-audit-1",
   "generatedAt": "2026-09-01T00:00:00.000Z",
   "audit": "portfolio-analysis:v132",
-  "status": "PASS",
+  "status": "FAIL",
   "summary": {
     "type": "summary",
     "audit": "portfolio-analysis:v132",
-    "status": "PASS",
-    "passed": 10,
-    "failed": 0,
+    "status": "FAIL",
+    "passed": 9,
+    "failed": 1,
     "total": 10,
-    "failedChecks": [],
+    "failedChecks": [
+      "PORTFOLIO_LIST_BEFORE_SUMMARY"
+    ],
     "portfolioElementCount": 19,
     "entityBearingPortfolioElementCount": 18,
-    "portfolioListBeforeSummaryCount": 0,
+    "portfolioListBeforeSummaryCount": 3,
     "researchListBeforeAnalysisCount": 0,
     "e008Result": "PASS",
     "runtimeFailure": null
@@ -55,11 +57,48 @@
       "type": "check",
       "audit": "portfolio-analysis:v132",
       "name": "PORTFOLIO_LIST_BEFORE_SUMMARY",
-      "status": "PASS",
+      "status": "FAIL",
       "actual": {
         "runtimeFailure": null,
         "checked": 19,
-        "failures": []
+        "failures": [
+          {
+            "elementId": "C-007",
+            "summary": true,
+            "list": true,
+            "summaryBeforeList": true,
+            "kpiCount": 2,
+            "categorySummary": true,
+            "yearTrend": true,
+            "filterCount": 3,
+            "filters": true,
+            "alert": ""
+          },
+          {
+            "elementId": "E-018",
+            "summary": true,
+            "list": true,
+            "summaryBeforeList": true,
+            "kpiCount": 1,
+            "categorySummary": false,
+            "yearTrend": false,
+            "filterCount": 3,
+            "filters": true,
+            "alert": ""
+          },
+          {
+            "elementId": "E-020",
+            "summary": true,
+            "list": true,
+            "summaryBeforeList": true,
+            "kpiCount": 1,
+            "categorySummary": true,
+            "yearTrend": false,
+            "filterCount": 3,
+            "filters": true,
+            "alert": ""
+          }
+        ]
       },
       "expected": {
         "runtimeFailure": null,
@@ -138,7 +177,7 @@
   ],
   "portfolioElementCount": 19,
   "entityBearingPortfolioElementCount": 18,
-  "portfolioListBeforeSummaryCount": 0,
+  "portfolioListBeforeSummaryCount": 3,
   "researchListBeforeAnalysisCount": 0,
   "e008Result": "PASS",
   "runtimeFailure": null

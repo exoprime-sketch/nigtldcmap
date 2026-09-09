@@ -1,17 +1,18 @@
 {
   "schemaVersion": "v136-public-copy-acceptance-1",
-  "generatedAt": "2026-09-07T04:37:13.084Z",
+  "generatedAt": "2026-09-09T06:18:27.474Z",
   "audit": "release:v136",
   "status": "FAIL",
   "summary": {
     "type": "summary",
     "audit": "release:v136",
     "status": "FAIL",
-    "passed": 61,
-    "failed": 2,
-    "total": 63,
+    "passed": 46,
+    "failed": 3,
+    "total": 49,
     "failedChecks": [
-      "V135_MAP_GUIDE",
+      "V132_PORTFOLIO",
+      "V132_REGRESSION",
       "REMAINING_BLOCKERS"
     ],
     "commandResults": [
@@ -81,104 +82,6 @@
       {
         "name": "V132_PORTFOLIO",
         "command": "npm run audit:portfolio-analysis:v132",
-        "exitCode": 0,
-        "signal": null,
-        "error": null
-      },
-      {
-        "name": "V132_MAP_TOOLTIP",
-        "command": "npm run audit:map-tooltip:v132",
-        "exitCode": 0,
-        "signal": null,
-        "error": null
-      },
-      {
-        "name": "V132_BENCHMARK_FIT",
-        "command": "npm run audit:benchmark-fit:v132",
-        "exitCode": 0,
-        "signal": null,
-        "error": null
-      },
-      {
-        "name": "V133_MAP_FOCUS",
-        "command": "npm run audit:map-focus:v133",
-        "exitCode": 0,
-        "signal": null,
-        "error": null
-      },
-      {
-        "name": "V133_MAP_POPUP",
-        "command": "npm run audit:map-popup:v133",
-        "exitCode": 0,
-        "signal": null,
-        "error": null
-      },
-      {
-        "name": "V133_LAYER_DISTINCTION",
-        "command": "npm run audit:map-layer-distinction:v133",
-        "exitCode": 0,
-        "signal": null,
-        "error": null
-      },
-      {
-        "name": "V134_GLOSSARY",
-        "command": "npm run audit:glossary:v134",
-        "exitCode": 0,
-        "signal": null,
-        "error": null
-      },
-      {
-        "name": "V134_ODA_ANALYSIS",
-        "command": "npm run audit:oda-analysis:v134",
-        "exitCode": 0,
-        "signal": null,
-        "error": null
-      },
-      {
-        "name": "V134_DROUGHT_ANALYSIS",
-        "command": "npm run audit:drought-analysis:v134",
-        "exitCode": 0,
-        "signal": null,
-        "error": null
-      },
-      {
-        "name": "V134_PUBLIC_COPY",
-        "command": "npm run audit:public-copy:v134",
-        "exitCode": 0,
-        "signal": null,
-        "error": null
-      },
-      {
-        "name": "V134_VISUAL_QA_CONTRACT",
-        "command": "npm run audit:visual-qa-contract:v134",
-        "exitCode": 0,
-        "signal": null,
-        "error": null
-      },
-      {
-        "name": "V135_FINDER_CARD",
-        "command": "npm run audit:finder-card:v135",
-        "exitCode": 0,
-        "signal": null,
-        "error": null
-      },
-      {
-        "name": "V135_TEMPORAL_DEPTH",
-        "command": "npm run audit:temporal-depth:v135",
-        "exitCode": 0,
-        "signal": null,
-        "error": null
-      },
-      {
-        "name": "V135_DETAIL_HIERARCHY",
-        "command": "npm run audit:detail-hierarchy:v135",
-        "exitCode": 0,
-        "signal": null,
-        "error": null
-      },
-      {
-        "name": "V135_MAP_GUIDE",
-        "command": "npm run audit:map-guide:v135",
         "exitCode": 1,
         "signal": null,
         "error": null
@@ -191,7 +94,7 @@
       "v131Naming": "PASS",
       "v131Cards": "PASS",
       "v132Composition": "PASS",
-      "v132Portfolio": "PASS",
+      "v132Portfolio": "FAIL",
       "v132MapTooltip": "PASS",
       "v132Benchmark": "PASS",
       "v133MapFocus": "PASS",
@@ -380,234 +283,10 @@
       "type": "check",
       "audit": "release:v136",
       "name": "V132_PORTFOLIO",
-      "status": "PASS",
+      "status": "FAIL",
       "actual": {
         "name": "V132_PORTFOLIO",
         "command": "npm run audit:portfolio-analysis:v132",
-        "exitCode": 0,
-        "signal": null,
-        "error": null
-      },
-      "expected": {
-        "exitCode": 0
-      }
-    },
-    {
-      "type": "check",
-      "audit": "release:v136",
-      "name": "V132_MAP_TOOLTIP",
-      "status": "PASS",
-      "actual": {
-        "name": "V132_MAP_TOOLTIP",
-        "command": "npm run audit:map-tooltip:v132",
-        "exitCode": 0,
-        "signal": null,
-        "error": null
-      },
-      "expected": {
-        "exitCode": 0
-      }
-    },
-    {
-      "type": "check",
-      "audit": "release:v136",
-      "name": "V132_BENCHMARK_FIT",
-      "status": "PASS",
-      "actual": {
-        "name": "V132_BENCHMARK_FIT",
-        "command": "npm run audit:benchmark-fit:v132",
-        "exitCode": 0,
-        "signal": null,
-        "error": null
-      },
-      "expected": {
-        "exitCode": 0
-      }
-    },
-    {
-      "type": "check",
-      "audit": "release:v136",
-      "name": "V133_MAP_FOCUS",
-      "status": "PASS",
-      "actual": {
-        "name": "V133_MAP_FOCUS",
-        "command": "npm run audit:map-focus:v133",
-        "exitCode": 0,
-        "signal": null,
-        "error": null
-      },
-      "expected": {
-        "exitCode": 0
-      }
-    },
-    {
-      "type": "check",
-      "audit": "release:v136",
-      "name": "V133_MAP_POPUP",
-      "status": "PASS",
-      "actual": {
-        "name": "V133_MAP_POPUP",
-        "command": "npm run audit:map-popup:v133",
-        "exitCode": 0,
-        "signal": null,
-        "error": null
-      },
-      "expected": {
-        "exitCode": 0
-      }
-    },
-    {
-      "type": "check",
-      "audit": "release:v136",
-      "name": "V133_LAYER_DISTINCTION",
-      "status": "PASS",
-      "actual": {
-        "name": "V133_LAYER_DISTINCTION",
-        "command": "npm run audit:map-layer-distinction:v133",
-        "exitCode": 0,
-        "signal": null,
-        "error": null
-      },
-      "expected": {
-        "exitCode": 0
-      }
-    },
-    {
-      "type": "check",
-      "audit": "release:v136",
-      "name": "V134_GLOSSARY",
-      "status": "PASS",
-      "actual": {
-        "name": "V134_GLOSSARY",
-        "command": "npm run audit:glossary:v134",
-        "exitCode": 0,
-        "signal": null,
-        "error": null
-      },
-      "expected": {
-        "exitCode": 0
-      }
-    },
-    {
-      "type": "check",
-      "audit": "release:v136",
-      "name": "V134_ODA_ANALYSIS",
-      "status": "PASS",
-      "actual": {
-        "name": "V134_ODA_ANALYSIS",
-        "command": "npm run audit:oda-analysis:v134",
-        "exitCode": 0,
-        "signal": null,
-        "error": null
-      },
-      "expected": {
-        "exitCode": 0
-      }
-    },
-    {
-      "type": "check",
-      "audit": "release:v136",
-      "name": "V134_DROUGHT_ANALYSIS",
-      "status": "PASS",
-      "actual": {
-        "name": "V134_DROUGHT_ANALYSIS",
-        "command": "npm run audit:drought-analysis:v134",
-        "exitCode": 0,
-        "signal": null,
-        "error": null
-      },
-      "expected": {
-        "exitCode": 0
-      }
-    },
-    {
-      "type": "check",
-      "audit": "release:v136",
-      "name": "V134_PUBLIC_COPY",
-      "status": "PASS",
-      "actual": {
-        "name": "V134_PUBLIC_COPY",
-        "command": "npm run audit:public-copy:v134",
-        "exitCode": 0,
-        "signal": null,
-        "error": null
-      },
-      "expected": {
-        "exitCode": 0
-      }
-    },
-    {
-      "type": "check",
-      "audit": "release:v136",
-      "name": "V134_VISUAL_QA_CONTRACT",
-      "status": "PASS",
-      "actual": {
-        "name": "V134_VISUAL_QA_CONTRACT",
-        "command": "npm run audit:visual-qa-contract:v134",
-        "exitCode": 0,
-        "signal": null,
-        "error": null
-      },
-      "expected": {
-        "exitCode": 0
-      }
-    },
-    {
-      "type": "check",
-      "audit": "release:v136",
-      "name": "V135_FINDER_CARD",
-      "status": "PASS",
-      "actual": {
-        "name": "V135_FINDER_CARD",
-        "command": "npm run audit:finder-card:v135",
-        "exitCode": 0,
-        "signal": null,
-        "error": null
-      },
-      "expected": {
-        "exitCode": 0
-      }
-    },
-    {
-      "type": "check",
-      "audit": "release:v136",
-      "name": "V135_TEMPORAL_DEPTH",
-      "status": "PASS",
-      "actual": {
-        "name": "V135_TEMPORAL_DEPTH",
-        "command": "npm run audit:temporal-depth:v135",
-        "exitCode": 0,
-        "signal": null,
-        "error": null
-      },
-      "expected": {
-        "exitCode": 0
-      }
-    },
-    {
-      "type": "check",
-      "audit": "release:v136",
-      "name": "V135_DETAIL_HIERARCHY",
-      "status": "PASS",
-      "actual": {
-        "name": "V135_DETAIL_HIERARCHY",
-        "command": "npm run audit:detail-hierarchy:v135",
-        "exitCode": 0,
-        "signal": null,
-        "error": null
-      },
-      "expected": {
-        "exitCode": 0
-      }
-    },
-    {
-      "type": "check",
-      "audit": "release:v136",
-      "name": "V135_MAP_GUIDE",
-      "status": "FAIL",
-      "actual": {
-        "name": "V135_MAP_GUIDE",
-        "command": "npm run audit:map-guide:v135",
         "exitCode": 1,
         "signal": null,
         "error": null
@@ -785,10 +464,10 @@
       "type": "check",
       "audit": "release:v136",
       "name": "V132_REGRESSION",
-      "status": "PASS",
+      "status": "FAIL",
       "actual": {
         "composition": "PASS",
-        "portfolio": "PASS",
+        "portfolio": "FAIL",
         "mapTooltip": "PASS",
         "benchmark": "PASS"
       },
@@ -1027,8 +706,8 @@
       "status": "FAIL",
       "actual": [
         {
-          "name": "V135_MAP_GUIDE",
-          "command": "npm run audit:map-guide:v135",
+          "name": "V132_PORTFOLIO",
+          "command": "npm run audit:portfolio-analysis:v132",
           "exitCode": 1,
           "signal": null,
           "error": null
@@ -1104,104 +783,6 @@
     {
       "name": "V132_PORTFOLIO",
       "command": "npm run audit:portfolio-analysis:v132",
-      "exitCode": 0,
-      "signal": null,
-      "error": null
-    },
-    {
-      "name": "V132_MAP_TOOLTIP",
-      "command": "npm run audit:map-tooltip:v132",
-      "exitCode": 0,
-      "signal": null,
-      "error": null
-    },
-    {
-      "name": "V132_BENCHMARK_FIT",
-      "command": "npm run audit:benchmark-fit:v132",
-      "exitCode": 0,
-      "signal": null,
-      "error": null
-    },
-    {
-      "name": "V133_MAP_FOCUS",
-      "command": "npm run audit:map-focus:v133",
-      "exitCode": 0,
-      "signal": null,
-      "error": null
-    },
-    {
-      "name": "V133_MAP_POPUP",
-      "command": "npm run audit:map-popup:v133",
-      "exitCode": 0,
-      "signal": null,
-      "error": null
-    },
-    {
-      "name": "V133_LAYER_DISTINCTION",
-      "command": "npm run audit:map-layer-distinction:v133",
-      "exitCode": 0,
-      "signal": null,
-      "error": null
-    },
-    {
-      "name": "V134_GLOSSARY",
-      "command": "npm run audit:glossary:v134",
-      "exitCode": 0,
-      "signal": null,
-      "error": null
-    },
-    {
-      "name": "V134_ODA_ANALYSIS",
-      "command": "npm run audit:oda-analysis:v134",
-      "exitCode": 0,
-      "signal": null,
-      "error": null
-    },
-    {
-      "name": "V134_DROUGHT_ANALYSIS",
-      "command": "npm run audit:drought-analysis:v134",
-      "exitCode": 0,
-      "signal": null,
-      "error": null
-    },
-    {
-      "name": "V134_PUBLIC_COPY",
-      "command": "npm run audit:public-copy:v134",
-      "exitCode": 0,
-      "signal": null,
-      "error": null
-    },
-    {
-      "name": "V134_VISUAL_QA_CONTRACT",
-      "command": "npm run audit:visual-qa-contract:v134",
-      "exitCode": 0,
-      "signal": null,
-      "error": null
-    },
-    {
-      "name": "V135_FINDER_CARD",
-      "command": "npm run audit:finder-card:v135",
-      "exitCode": 0,
-      "signal": null,
-      "error": null
-    },
-    {
-      "name": "V135_TEMPORAL_DEPTH",
-      "command": "npm run audit:temporal-depth:v135",
-      "exitCode": 0,
-      "signal": null,
-      "error": null
-    },
-    {
-      "name": "V135_DETAIL_HIERARCHY",
-      "command": "npm run audit:detail-hierarchy:v135",
-      "exitCode": 0,
-      "signal": null,
-      "error": null
-    },
-    {
-      "name": "V135_MAP_GUIDE",
-      "command": "npm run audit:map-guide:v135",
       "exitCode": 1,
       "signal": null,
       "error": null
@@ -1214,7 +795,7 @@
     "v131Naming": "PASS",
     "v131Cards": "PASS",
     "v132Composition": "PASS",
-    "v132Portfolio": "PASS",
+    "v132Portfolio": "FAIL",
     "v132MapTooltip": "PASS",
     "v132Benchmark": "PASS",
     "v133MapFocus": "PASS",

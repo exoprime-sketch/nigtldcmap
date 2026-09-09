@@ -1,0 +1,195 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:51655/?view=data&element=gihu-gwanryeon-jose-suib&country=VNM&from=explorer&measure=measure-3dbf90693340&dim.category=%ED%99%98%EA%B2%BD%EB%B3%B4%ED%98%B8%EC%84%B8+%EC%8B%A4%EC%A0%9C+%EC%A0%81%EC%9A%A9%EC%84%B8%EC%9C%A8#element-detail",
+  "title": "기후 관련 조세 수입",
+  "body": "검색 결과로 돌아가기 시장·산업 및 재원 › 기후대응·기후기술 관련 정부 예산 데이터 제공 다운로드 가능 기후 관련 조세 수입 베트남 · 기후 관련 조세 수입의 사업 규모와 분야·기관별 구성을 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 16종 · 관측기간 2019~2026년 이 데이터로 확인할 수 있는 내용 기후 관련 조세 수입의 항목별 공개 현황 기후 관련 조세 수입의 공개 값과 항목별 차이를 확인할 수 있습니다. 항목 기후 관련 조세 수입 · % 기후 관련 조세 수입 · USD/tCO2e 기후 관련 조세 수입 · VND 기후 관련 조세 수입 · VND/L 기후 관련 조세 수입 · VND/t 분류 전체 환경보호세 실제 적용세율 환경보호세 탄소환산 세율 환경보호세 표준세율 환경보호세(EPT) 환경보호세의 연료 기준가 대비 비중 세부 분류 전체 경유 계획 대비 결산 이행률 국가예산 결산액(quyết toán) 연도별 국가예산 계획액(dự toán) 연도별 기타 석탄 등유 디젤 무연탄 석탄 연료 기준가 대비 세액 비중 항공유 휘발유 휘발유(에탄올 제외) 용어 도움말 ? USD 설명 ? tCO2e 설명 현재 선택 조건에 표시할 값이 없습니다 다른 항목이나 기간을 선택해 확인해 주세요. 자료정보 상세 데이터 · 전체 45행 · 값 있음 42행 · 결측 3행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 684,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "D-006",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "기후 관련 조세 수입의 항목별 공개 현황",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목 선택",
+      "dimensionKey": null,
+      "testId": "v125-measure-select",
+      "value": "measure-3dbf90693340",
+      "shown": "기후 관련 조세 수입 · USD/tCO2e",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-f93ae924549f",
+          "label": "기후 관련 조세 수입 · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-3dbf90693340",
+          "label": "기후 관련 조세 수입 · USD/tCO2e",
+          "disabled": false
+        },
+        {
+          "value": "measure-d4d5bb18840e",
+          "label": "기후 관련 조세 수입 · VND",
+          "disabled": false
+        },
+        {
+          "value": "measure-aeb05f2c0287",
+          "label": "기후 관련 조세 수입 · VND/L",
+          "disabled": false
+        },
+        {
+          "value": "measure-4848d46b379a",
+          "label": "기후 관련 조세 수입 · VND/t",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "분류 선택",
+      "dimensionKey": "category",
+      "testId": null,
+      "value": "환경보호세 실제 적용세율",
+      "shown": "환경보호세 실제 적용세율",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "환경보호세 실제 적용세율",
+          "label": "환경보호세 실제 적용세율",
+          "disabled": false
+        },
+        {
+          "value": "환경보호세 탄소환산 세율",
+          "label": "환경보호세 탄소환산 세율",
+          "disabled": false
+        },
+        {
+          "value": "환경보호세 표준세율",
+          "label": "환경보호세 표준세율",
+          "disabled": false
+        },
+        {
+          "value": "환경보호세(EPT)",
+          "label": "환경보호세(EPT)",
+          "disabled": false
+        },
+        {
+          "value": "환경보호세의 연료 기준가 대비 비중",
+          "label": "환경보호세의 연료 기준가 대비 비중",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "세부 분류 선택",
+      "dimensionKey": "detail",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "경유",
+          "label": "경유",
+          "disabled": false
+        },
+        {
+          "value": "계획 대비 결산 이행률",
+          "label": "계획 대비 결산 이행률",
+          "disabled": false
+        },
+        {
+          "value": "국가예산 결산액(quyết toán) 연도별",
+          "label": "국가예산 결산액(quyết toán) 연도별",
+          "disabled": false
+        },
+        {
+          "value": "국가예산 계획액(dự toán) 연도별",
+          "label": "국가예산 계획액(dự toán) 연도별",
+          "disabled": false
+        },
+        {
+          "value": "기타 석탄",
+          "label": "기타 석탄",
+          "disabled": false
+        },
+        {
+          "value": "등유",
+          "label": "등유",
+          "disabled": false
+        },
+        {
+          "value": "디젤",
+          "label": "디젤",
+          "disabled": false
+        },
+        {
+          "value": "무연탄",
+          "label": "무연탄",
+          "disabled": false
+        },
+        {
+          "value": "석탄",
+          "label": "석탄",
+          "disabled": false
+        },
+        {
+          "value": "연료 기준가 대비 세액 비중",
+          "label": "연료 기준가 대비 세액 비중",
+          "disabled": false
+        },
+        {
+          "value": "항공유",
+          "label": "항공유",
+          "disabled": false
+        },
+        {
+          "value": "휘발유",
+          "label": "휘발유",
+          "disabled": false
+        },
+        {
+          "value": "휘발유(에탄올 제외)",
+          "label": "휘발유(에탄올 제외)",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [],
+  "chartTexts": [],
+  "tableRows": [],
+  "emptyNotices": [
+    "현재 선택 조건에 표시할 값이 없습니다 다른 항목이나 기간을 선택해 확인해 주세요."
+  ],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

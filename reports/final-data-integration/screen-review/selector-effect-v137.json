@@ -1,0 +1,324 @@
+{
+  "schema": "nigt-selector-effect-1",
+  "generatedAt": "2026-09-09T03:08:50.266Z",
+  "rows": [
+    {
+      "elementId": "C-016",
+      "ready": true,
+      "controls": [
+        {
+          "index": 0,
+          "label": "항목 선택",
+          "testId": "v125-measure-select",
+          "optionCount": 8
+        },
+        {
+          "index": 1,
+          "label": "세부 분류 선택",
+          "testId": null,
+          "optionCount": 64
+        },
+        {
+          "index": 2,
+          "label": "기간 선택",
+          "testId": "v125-period-select",
+          "optionCount": 2
+        }
+      ],
+      "change": {
+        "result": "SELECTED_BY_KEYBOARD",
+        "option": "소수력(thủy điện nhỏ) 계획용량 · MW",
+        "value": "measure-18754d8a9e77",
+        "keyPresses": 1
+      },
+      "control": "항목 선택",
+      "option": "소수력(thủy điện nhỏ) 계획용량 · MW",
+      "changed": false,
+      "beforeLength": 1335,
+      "afterLength": 1335,
+      "verdict": "SELECTOR_CHANGES_NOTHING"
+    },
+    {
+      "elementId": "B-031",
+      "ready": true,
+      "controls": [
+        {
+          "index": 0,
+          "label": "항목 선택",
+          "testId": "v125-measure-select",
+          "optionCount": 3
+        },
+        {
+          "index": 1,
+          "label": "세부 분류 선택",
+          "testId": null,
+          "optionCount": 64
+        },
+        {
+          "index": 2,
+          "label": "연도 선택",
+          "testId": "v125-year-select",
+          "optionCount": 1
+        }
+      ],
+      "change": {
+        "result": "SELECTED_BY_KEYBOARD",
+        "option": "성(省)별 수관 면적(2000) · ha",
+        "value": "measure-f359324070f1",
+        "keyPresses": 1
+      },
+      "control": "항목 선택",
+      "option": "성(省)별 수관 면적(2000) · ha",
+      "changed": false,
+      "beforeLength": 2179,
+      "afterLength": 2179,
+      "verdict": "SELECTOR_CHANGES_NOTHING"
+    },
+    {
+      "elementId": "E-004",
+      "ready": true,
+      "controls": [
+        {
+          "index": 0,
+          "label": "도시 선택",
+          "testId": null,
+          "optionCount": 3
+        },
+        {
+          "index": 1,
+          "label": "자료 상태 선택",
+          "testId": null,
+          "optionCount": 4
+        },
+        {
+          "index": 2,
+          "label": "연락 유형 선택",
+          "testId": null,
+          "optionCount": 4
+        },
+        {
+          "index": 3,
+          "label": "기관 유형 선택",
+          "testId": null,
+          "optionCount": 7
+        },
+        {
+          "index": 4,
+          "label": "상태 선택",
+          "testId": null,
+          "optionCount": 4
+        }
+      ],
+      "change": {
+        "result": "SELECTED_BY_KEYBOARD",
+        "option": "Hanoi",
+        "value": "Hanoi",
+        "keyPresses": 1
+      },
+      "control": "도시 선택",
+      "option": "Hanoi",
+      "changed": false,
+      "beforeLength": 1502,
+      "afterLength": 1502,
+      "verdict": "SELECTOR_CHANGES_NOTHING"
+    },
+    {
+      "elementId": "E-005",
+      "ready": true,
+      "controls": [
+        {
+          "index": 0,
+          "label": "도시 선택",
+          "testId": null,
+          "optionCount": 6
+        },
+        {
+          "index": 1,
+          "label": "기관 유형 선택",
+          "testId": null,
+          "optionCount": 12
+        }
+      ],
+      "change": {
+        "result": "SELECTED_BY_KEYBOARD",
+        "option": "Can Tho",
+        "value": "Can Tho",
+        "keyPresses": 1
+      },
+      "control": "도시 선택",
+      "option": "Can Tho",
+      "changed": false,
+      "beforeLength": 1871,
+      "afterLength": 1871,
+      "verdict": "SELECTOR_CHANGES_NOTHING"
+    },
+    {
+      "elementId": "E-006",
+      "ready": true,
+      "controls": [
+        {
+          "index": 0,
+          "label": "금액 구분 선택",
+          "testId": null,
+          "optionCount": 6
+        },
+        {
+          "index": 1,
+          "label": "금액 유형 선택",
+          "testId": null,
+          "optionCount": 13
+        },
+        {
+          "index": 2,
+          "label": "도시 선택",
+          "testId": null,
+          "optionCount": 9
+        },
+        {
+          "index": 3,
+          "label": "자료 상태 선택",
+          "testId": null,
+          "optionCount": 4
+        },
+        {
+          "index": 4,
+          "label": "기금·소속기관 선택",
+          "testId": null,
+          "optionCount": 12
+        },
+        {
+          "index": 5,
+          "label": "본부 소재국 선택",
+          "testId": null,
+          "optionCount": 8
+        },
+        {
+          "index": 6,
+          "label": "투자 분야 선택",
+          "testId": null,
+          "optionCount": 16
+        },
+        {
+          "index": 7,
+          "label": "출처 유형 선택",
+          "testId": null,
+          "optionCount": 8
+        }
+      ],
+      "change": {
+        "result": "SELECTED_BY_KEYBOARD",
+        "option": "목표",
+        "value": "목표",
+        "keyPresses": 1
+      },
+      "control": "금액 구분 선택",
+      "option": "목표",
+      "changed": false,
+      "beforeLength": 2133,
+      "afterLength": 2133,
+      "verdict": "SELECTOR_CHANGES_NOTHING"
+    },
+    {
+      "elementId": "E-007",
+      "ready": true,
+      "controls": [
+        {
+          "index": 0,
+          "label": "분류 선택",
+          "testId": null,
+          "optionCount": 8
+        }
+      ],
+      "change": {
+        "result": "SELECTED_BY_KEYBOARD",
+        "option": "검증",
+        "value": "검증",
+        "keyPresses": 1
+      },
+      "control": "분류 선택",
+      "option": "검증",
+      "changed": false,
+      "beforeLength": 2293,
+      "afterLength": 2293,
+      "verdict": "SELECTOR_CHANGES_NOTHING"
+    },
+    {
+      "elementId": "E-016",
+      "ready": true,
+      "controls": [
+        {
+          "index": 0,
+          "label": "기준연도 선택",
+          "testId": null,
+          "optionCount": 3
+        },
+        {
+          "index": 1,
+          "label": "부문 선택",
+          "testId": null,
+          "optionCount": 5
+        }
+      ],
+      "change": {
+        "result": "SELECTED_BY_KEYBOARD",
+        "option": "2020",
+        "value": "2020",
+        "keyPresses": 1
+      },
+      "control": "기준연도 선택",
+      "option": "2020",
+      "changed": false,
+      "beforeLength": 366,
+      "afterLength": 366,
+      "verdict": "SELECTOR_CHANGES_NOTHING"
+    },
+    {
+      "elementId": "E-019",
+      "ready": true,
+      "controls": [
+        {
+          "index": 0,
+          "label": "도시 선택",
+          "testId": null,
+          "optionCount": 3
+        }
+      ],
+      "change": {
+        "result": "SELECTED_BY_KEYBOARD",
+        "option": "Hanoi",
+        "value": "Hanoi",
+        "keyPresses": 1
+      },
+      "control": "도시 선택",
+      "option": "Hanoi",
+      "changed": false,
+      "beforeLength": 917,
+      "afterLength": 917,
+      "verdict": "SELECTOR_CHANGES_NOTHING"
+    },
+    {
+      "elementId": "D-019",
+      "ready": true,
+      "controls": [
+        {
+          "index": 0,
+          "label": "기술분야_Sectors 선택",
+          "testId": null,
+          "optionCount": 8
+        }
+      ],
+      "change": {
+        "result": "SELECTED_BY_KEYBOARD",
+        "option": "Agriculture",
+        "value": "Agriculture",
+        "keyPresses": 1
+      },
+      "control": "기술분야_Sectors 선택",
+      "option": "Agriculture",
+      "changed": false,
+      "beforeLength": 1731,
+      "afterLength": 1731,
+      "verdict": "SELECTOR_CHANGES_NOTHING"
+    }
+  ]
+}

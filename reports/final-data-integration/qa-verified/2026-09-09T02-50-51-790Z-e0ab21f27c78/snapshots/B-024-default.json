@@ -1,0 +1,270 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:51655/?view=data&element=nongeob-yongsu-bijung&country=VNM&from=explorer#element-detail",
+  "title": "농업 용수 비중",
+  "body": "검색 결과로 돌아가기 기후 환경 › 수문학 데이터 제공 다운로드 가능 농업 용수 비중 베트남 · 농업 용수 비중의 항목별 구성과 연도별 변화를 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 6종 · 관측기간 1990~2023년 이 데이터로 확인할 수 있는 내용 농업 용수 비중(%)의 항목별 비중과 연도별 흐름 농업 용수 비중(%)의 구성과 연도별 변화를 확인할 수 있습니다. 주 분석 연도별 구성 변화 동일한 항목과 단위의 계열만 한 축에서 비교합니다. 항목 용수생산성 · US$/m³ 관개농업 용수생산성 (SDG 6.4.1) · US$/m³ 농업 용수 취수 비중 · % 농업 용수 취수 비중(총 재생가능 수자원 대비) · % 농업 용수 비중 · % 용수생산성 추이 전체·합계 계열은 구성항목에 더하지 않고 독립된 비교 계열로 표시합니다. 단위: US$/m³ 서비스 (SDG(지속가능발전목표) 6.4.1) 산업 (SDG(지속가능발전목표) 6.4.1) 전체 (SDG(지속가능발전목표) 6.4.1) 표시기간 전체 축소 확대 전체 162.51 130.01 97.51 65 32.5 0 1990 1995 1999 2004 2009 2014 2018 2023 연도 용수생산성(US$/m³) 보조 분석 선택연도 상세 기준연도 2023년 2022년 2021년 2020년 2019년 2018년 2017년 2016년 2015년 2014년 2013년 2012년 2011년 2010년 2009년 2008년 2007년 2006년 2005년 2004년 2003년 2002년 2001년 2000년 1999년 1998년 1997년 1996년 1995년 1994년 1993년 1992년 1991년 1990년 서비스 (SDG 6.4.1) 150.52 US$/m³ 산업 (SDG 6.4.1) 40.97 US$/m³ 전체 (SDG 6.4.1) 4.05 US$/m³ 전체·합계 지표 전체·합계와 세부항목은 포함관계가 있으므로 막대 길이를 100% 구성비로 합산하지 않습니다. 자료정보 상세 데이터 · 전체 205행 · 값 있음 204행 · 결측 1행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 1046,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "B-024",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "농업 용수 비중(%)의 항목별 비중과 연도별 흐름",
+    "연도별 구성 변화",
+    "용수생산성 추이",
+    "선택연도 상세",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(2) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목",
+      "dimensionKey": null,
+      "testId": null,
+      "value": "measure-b106b0e28ac3|US$/m³",
+      "shown": "용수생산성 · US$/m³",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-b106b0e28ac3|US$/m³",
+          "label": "용수생산성 · US$/m³",
+          "disabled": false
+        },
+        {
+          "value": "measure-6d7408256783|US$/m³",
+          "label": "관개농업 용수생산성 (SDG 6.4.1) · US$/m³",
+          "disabled": false
+        },
+        {
+          "value": "measure-357fd35f6277|%",
+          "label": "농업 용수 취수 비중 · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-531231004ae8|%",
+          "label": "농업 용수 취수 비중(총 재생가능 수자원 대비) · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-ec7e036da091|%",
+          "label": "농업 용수 비중 · %",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > header:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "기준연도",
+      "dimensionKey": null,
+      "testId": null,
+      "value": "2023",
+      "shown": "2023년",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "2023",
+          "label": "2023년",
+          "disabled": false
+        },
+        {
+          "value": "2022",
+          "label": "2022년",
+          "disabled": false
+        },
+        {
+          "value": "2021",
+          "label": "2021년",
+          "disabled": false
+        },
+        {
+          "value": "2020",
+          "label": "2020년",
+          "disabled": false
+        },
+        {
+          "value": "2019",
+          "label": "2019년",
+          "disabled": false
+        },
+        {
+          "value": "2018",
+          "label": "2018년",
+          "disabled": false
+        },
+        {
+          "value": "2017",
+          "label": "2017년",
+          "disabled": false
+        },
+        {
+          "value": "2016",
+          "label": "2016년",
+          "disabled": false
+        },
+        {
+          "value": "2015",
+          "label": "2015년",
+          "disabled": false
+        },
+        {
+          "value": "2014",
+          "label": "2014년",
+          "disabled": false
+        },
+        {
+          "value": "2013",
+          "label": "2013년",
+          "disabled": false
+        },
+        {
+          "value": "2012",
+          "label": "2012년",
+          "disabled": false
+        },
+        {
+          "value": "2011",
+          "label": "2011년",
+          "disabled": false
+        },
+        {
+          "value": "2010",
+          "label": "2010년",
+          "disabled": false
+        },
+        {
+          "value": "2009",
+          "label": "2009년",
+          "disabled": false
+        },
+        {
+          "value": "2008",
+          "label": "2008년",
+          "disabled": false
+        },
+        {
+          "value": "2007",
+          "label": "2007년",
+          "disabled": false
+        },
+        {
+          "value": "2006",
+          "label": "2006년",
+          "disabled": false
+        },
+        {
+          "value": "2005",
+          "label": "2005년",
+          "disabled": false
+        },
+        {
+          "value": "2004",
+          "label": "2004년",
+          "disabled": false
+        },
+        {
+          "value": "2003",
+          "label": "2003년",
+          "disabled": false
+        },
+        {
+          "value": "2002",
+          "label": "2002년",
+          "disabled": false
+        },
+        {
+          "value": "2001",
+          "label": "2001년",
+          "disabled": false
+        },
+        {
+          "value": "2000",
+          "label": "2000년",
+          "disabled": false
+        },
+        {
+          "value": "1999",
+          "label": "1999년",
+          "disabled": false
+        },
+        {
+          "value": "1998",
+          "label": "1998년",
+          "disabled": false
+        },
+        {
+          "value": "1997",
+          "label": "1997년",
+          "disabled": false
+        },
+        {
+          "value": "1996",
+          "label": "1996년",
+          "disabled": false
+        },
+        {
+          "value": "1995",
+          "label": "1995년",
+          "disabled": false
+        },
+        {
+          "value": "1994",
+          "label": "1994년",
+          "disabled": false
+        },
+        {
+          "value": "1993",
+          "label": "1993년",
+          "disabled": false
+        },
+        {
+          "value": "1992",
+          "label": "1992년",
+          "disabled": false
+        },
+        {
+          "value": "1991",
+          "label": "1991년",
+          "disabled": false
+        },
+        {
+          "value": "1990",
+          "label": "1990년",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [],
+  "chartTexts": [
+    "162.51",
+    "130.01",
+    "97.51",
+    "65",
+    "32.5",
+    "0",
+    "1990",
+    "1995",
+    "1999",
+    "2004",
+    "2009",
+    "2014",
+    "2018",
+    "2023",
+    "연도",
+    "용수생산성(US$/m³)"
+  ],
+  "tableRows": [],
+  "emptyNotices": [],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

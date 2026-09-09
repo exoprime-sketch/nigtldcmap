@@ -1,0 +1,235 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:51655/?view=data&element=jeonryeog-jeobgeunryul&country=VNM&from=explorer&measure=measure-b6bedc475e56&year=2024#element-detail",
+  "title": "전력 접근률",
+  "body": "검색 결과로 돌아가기 국가 기본 정보 › 에너지·전력 정보 데이터 제공 다운로드 가능 전력 접근률 베트남 · 전력 접근률의 항목별 구성과 연도별 변화를 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 3종 · 관측기간 1997~2024년 이 데이터로 확인할 수 있는 내용 전력 접근률의 추세와 최근 수준 전력 접근률의 현재 수준과 기준시점별 변화를 확인할 수 있습니다. 분류 전체 농촌 도시 전체 연도 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 2014 2013 2012 2011 2010 2009 2008 2007 2006 2005 2004 2003 2002 2001 2000 1999 1998 1997 주 분석 전력 접근률 연도별 변화 연도별 항목 추세 1997~2024년 추세 단위: % 전력 접근률 · 농촌 — 전기를 이용할 수 있는 인구 비율 전력 접근률 · 전체 — 전기를 이용할 수 있는 인구 비율 전력 접근률 · 도시 — 전기를 이용할 수 있는 인구 비율 표시기간 전체 축소 확대 전체 102.2097 95.8015 89.3932 82.9849 76.5767 70.1684 1997 2001 2005 2009 2012 2016 2020 2024 연도 측정값(%) 자료정보 상세 데이터 · 전체 84행 · 값 있음 84행 · 결측 0행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 697,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "A-021",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "전력 접근률의 추세와 최근 수준",
+    "전력 접근률 연도별 변화",
+    "항목 추세",
+    "1997~2024년 추세",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "분류 선택",
+      "dimensionKey": "category",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "농촌",
+          "label": "농촌",
+          "disabled": false
+        },
+        {
+          "value": "도시",
+          "label": "도시",
+          "disabled": false
+        },
+        {
+          "value": "전체",
+          "label": "전체",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "연도 선택",
+      "dimensionKey": null,
+      "testId": "v125-year-select",
+      "value": "2024",
+      "shown": "2024",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "2024",
+          "label": "2024",
+          "disabled": false
+        },
+        {
+          "value": "2023",
+          "label": "2023",
+          "disabled": false
+        },
+        {
+          "value": "2022",
+          "label": "2022",
+          "disabled": false
+        },
+        {
+          "value": "2021",
+          "label": "2021",
+          "disabled": false
+        },
+        {
+          "value": "2020",
+          "label": "2020",
+          "disabled": false
+        },
+        {
+          "value": "2019",
+          "label": "2019",
+          "disabled": false
+        },
+        {
+          "value": "2018",
+          "label": "2018",
+          "disabled": false
+        },
+        {
+          "value": "2017",
+          "label": "2017",
+          "disabled": false
+        },
+        {
+          "value": "2016",
+          "label": "2016",
+          "disabled": false
+        },
+        {
+          "value": "2015",
+          "label": "2015",
+          "disabled": false
+        },
+        {
+          "value": "2014",
+          "label": "2014",
+          "disabled": false
+        },
+        {
+          "value": "2013",
+          "label": "2013",
+          "disabled": false
+        },
+        {
+          "value": "2012",
+          "label": "2012",
+          "disabled": false
+        },
+        {
+          "value": "2011",
+          "label": "2011",
+          "disabled": false
+        },
+        {
+          "value": "2010",
+          "label": "2010",
+          "disabled": false
+        },
+        {
+          "value": "2009",
+          "label": "2009",
+          "disabled": false
+        },
+        {
+          "value": "2008",
+          "label": "2008",
+          "disabled": false
+        },
+        {
+          "value": "2007",
+          "label": "2007",
+          "disabled": false
+        },
+        {
+          "value": "2006",
+          "label": "2006",
+          "disabled": false
+        },
+        {
+          "value": "2005",
+          "label": "2005",
+          "disabled": false
+        },
+        {
+          "value": "2004",
+          "label": "2004",
+          "disabled": false
+        },
+        {
+          "value": "2003",
+          "label": "2003",
+          "disabled": false
+        },
+        {
+          "value": "2002",
+          "label": "2002",
+          "disabled": false
+        },
+        {
+          "value": "2001",
+          "label": "2001",
+          "disabled": false
+        },
+        {
+          "value": "2000",
+          "label": "2000",
+          "disabled": false
+        },
+        {
+          "value": "1999",
+          "label": "1999",
+          "disabled": false
+        },
+        {
+          "value": "1998",
+          "label": "1998",
+          "disabled": false
+        },
+        {
+          "value": "1997",
+          "label": "1997",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [],
+  "chartTexts": [
+    "102.2097",
+    "95.8015",
+    "89.3932",
+    "82.9849",
+    "76.5767",
+    "70.1684",
+    "1997",
+    "2001",
+    "2005",
+    "2009",
+    "2012",
+    "2016",
+    "2020",
+    "2024",
+    "연도",
+    "측정값(%)"
+  ],
+  "tableRows": [],
+  "emptyNotices": [],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

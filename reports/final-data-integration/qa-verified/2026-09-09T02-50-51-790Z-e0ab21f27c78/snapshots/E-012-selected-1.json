@@ -1,0 +1,117 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:51655/?view=data&element=jiggunbyeol-jongsaja-su-jiggunbyeol-imgeum&country=VNM&from=explorer&measure=occupation_employment_share&sex=total&year=2023#element-detail",
+  "title": "기술인력과 임금",
+  "body": "검색 결과로 돌아가기 협력·실행 기반 › 개도국 기술 역량 평가 지표 데이터 제공 다운로드 가능 기술인력과 임금 베트남 · 직군과 성별에 따른 고용 규모, 구성비, 여성 비중과 임금 차이를 확인할 수 있습니다. 다운로드 공개 데이터 데이터 분석 베트남 · 지표 87종 · 관측기간 2023~2024년 이 데이터로 확인할 수 있는 내용 직군·성별에 따른 고용과 임금 직군과 성별에 따른 고용 규모, 구성비, 여성 비중과 임금 차이를 확인할 수 있습니다. 고용·임금 분석 직군별 종사자 수와 월평균 임금 항목, 직군, 성별과 기준연도를 분리해 자료의 분류를 그대로 확인합니다. 자료 92건 총 취업자 수 51,860.3 천명 2024년 · 천명 고용률 71.96 % 2024년 · % 최신 월평균 임금 7,700,000 VND 2024년 · VND 기준연도 2024년 화면에 포함된 최신 원자료 직군별 비교 직군별 측정값 2023년 항목 종사자 수 고용 구성비 직군 내 여성 비중 월평균 임금 성별 전체 · 원자료 없음 남성 · 원자료 없음 여성 · 원자료 없음 기준연도 2024년 2023년 관리자 2023년 — 단위 미기재 · 해당 선택 조합 원자료 없음 전문가 2023년 — 단위 미기재 · 해당 선택 조합 원자료 없음 기술공·준전문가 2023년 — 단위 미기재 · 해당 선택 조합 원자료 없음 사무직 2023년 — 단위 미기재 · 해당 선택 조합 원자료 없음 서비스·판매직 2023년 — 단위 미기재 · 해당 선택 조합 원자료 없음 농림어업 숙련직 2023년 — 단위 미기재 · 해당 선택 조합 원자료 없음 기능원·관련직 2023년 — 단위 미기재 · 해당 선택 조합 원자료 없음 장치·기계 조작·조립원 2023년 — 단위 미기재 · 해당 선택 조합 원자료 없음 단순노무직 2023년 — 단위 미기재 · 해당 선택 조합 원자료 없음 기타·미정의 2023년 — 단위 미기재 · 해당 선택 조합 원자료 없음 선택한 항목·성별·연도 조합의 직군별 값이 원자료에 없습니다. 직군별 막대 표로 보기 두 항목의 관계 종사자 수–임금 관계 전체 · 2023년 X축 종사자 수는 전체 취업자, Y축 임금은 임금근로자 기준이므로 두 항목의 모집단이 다릅니다. 동일 연도·성별에서 종사자 수와 임금이 함께 제공된 직군이 없습니다. 다른 성별 값을 대신 사용하지 않았습니다. 동일 단위 성별 비교 남성·여성 나란히 보기 2023년 남성 여성 고용 구성비에는 동일 직군의 남성·여성 값 쌍이 없습니다. 결측 안내 기타·미정의 직군의 임금은 원천 미제공 자료정보 상세 데이터 · 전체 92행 · 값 있음 89행 · 결측 3행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 1307,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "E-012",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "직군·성별에 따른 고용과 임금",
+    "직군별 종사자 수와 월평균 임금",
+    "직군별 측정값",
+    "종사자 수–임금 관계",
+    "남성·여성 나란히 보기",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#\\:r4n\\:",
+      "id": ":r4n:",
+      "label": "E-012 항목 선택",
+      "dimensionKey": null,
+      "testId": "e012-measure-select",
+      "value": "occupation_employment_share",
+      "shown": "고용 구성비",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "occupation_employment_count",
+          "label": "종사자 수",
+          "disabled": false
+        },
+        {
+          "value": "occupation_employment_share",
+          "label": "고용 구성비",
+          "disabled": false
+        },
+        {
+          "value": "occupation_female_share",
+          "label": "직군 내 여성 비중",
+          "disabled": false
+        },
+        {
+          "value": "occupation_wage",
+          "label": "월평균 임금",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#\\:r4o\\:",
+      "id": ":r4o:",
+      "label": "E-012 성별 선택",
+      "dimensionKey": null,
+      "testId": "e012-sex-select",
+      "value": "total",
+      "shown": "전체 · 원자료 없음",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "total",
+          "label": "전체 · 원자료 없음",
+          "disabled": true
+        },
+        {
+          "value": "male",
+          "label": "남성 · 원자료 없음",
+          "disabled": true
+        },
+        {
+          "value": "female",
+          "label": "여성 · 원자료 없음",
+          "disabled": true
+        }
+      ]
+    },
+    {
+      "selector": "#\\:r4p\\:",
+      "id": ":r4p:",
+      "label": "E-012 기준연도 선택",
+      "dimensionKey": null,
+      "testId": "e012-year-select",
+      "value": "2023",
+      "shown": "2023년",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "2024",
+          "label": "2024년",
+          "disabled": false
+        },
+        {
+          "value": "2023",
+          "label": "2023년",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [],
+  "chartTexts": [],
+  "tableRows": [],
+  "emptyNotices": [],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

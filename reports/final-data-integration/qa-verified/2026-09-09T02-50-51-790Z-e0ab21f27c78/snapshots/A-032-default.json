@@ -1,0 +1,277 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:51655/?view=data&element=jungganjae-gyoyeog-gyumo&country=VNM&from=explorer&measure=measure-2183e07a67f3&year=2020#element-detail",
+  "title": "중간재 교역 규모",
+  "body": "검색 결과로 돌아가기 국가 기본 정보 › 공급망 데이터 제공 다운로드 가능 중간재 교역 규모 베트남 · 중간재 교역 규모의 사업 규모와 분야·기관별 구성을 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 4종 · 관측기간 1995~2023년 이 데이터로 확인할 수 있는 내용 중간재 교역 규모의 항목별 공개 현황 중간재 교역 규모의 공개 값과 항목별 차이를 확인할 수 있습니다. 항목 중간재 교역 · % 중간재 교역 규모 · 천 USD 분류 전체 수입액 수출 중 중간재 국내부가가치 비중 수출액 재수출된 중간재 수입 비중 세부 분류 전체 Trade in Value Added: Domestic value added in gross exports of intermediate products Trade in Value Added: Re-exported intermediate imports UNCTAD 가공단계 분류 중간재 수입 금액 UNCTAD 가공단계 분류 중간재 수출 금액 연도 2020 2019 2018 2017 2016 2015 2014 2013 2012 2011 2010 2009 2008 2007 2006 2005 2004 2003 2002 2001 2000 1999 1998 1997 1996 1995 주 분석 중간재 교역 규모 항목별 현황 항목 항목별 값 단위: % 수출 중 중간재 국내부가가치 비중 29.3 % 재수출된 중간재 수입 비중 60.8 % 자료정보 상세 데이터 · 전체 100행 · 값 있음 100행 · 결측 0행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 779,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "A-032",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "중간재 교역 규모의 항목별 공개 현황",
+    "중간재 교역 규모 항목별 현황",
+    "항목별 값",
+    "단위: %",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목 선택",
+      "dimensionKey": null,
+      "testId": "v125-measure-select",
+      "value": "measure-2183e07a67f3",
+      "shown": "중간재 교역 · %",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-2183e07a67f3",
+          "label": "중간재 교역 · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-c1b0bd519c31",
+          "label": "중간재 교역 규모 · 천 USD",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "분류 선택",
+      "dimensionKey": "category",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "수입액",
+          "label": "수입액",
+          "disabled": false
+        },
+        {
+          "value": "수출 중 중간재 국내부가가치 비중",
+          "label": "수출 중 중간재 국내부가가치 비중",
+          "disabled": false
+        },
+        {
+          "value": "수출액",
+          "label": "수출액",
+          "disabled": false
+        },
+        {
+          "value": "재수출된 중간재 수입 비중",
+          "label": "재수출된 중간재 수입 비중",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "세부 분류 선택",
+      "dimensionKey": "detail",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "Trade in Value Added: Domestic value added in gross exports of intermediate products",
+          "label": "Trade in Value Added: Domestic value added in gross exports of intermediate products",
+          "disabled": false
+        },
+        {
+          "value": "Trade in Value Added: Re-exported intermediate imports",
+          "label": "Trade in Value Added: Re-exported intermediate imports",
+          "disabled": false
+        },
+        {
+          "value": "UNCTAD 가공단계 분류 중간재 수입 금액",
+          "label": "UNCTAD 가공단계 분류 중간재 수입 금액",
+          "disabled": false
+        },
+        {
+          "value": "UNCTAD 가공단계 분류 중간재 수출 금액",
+          "label": "UNCTAD 가공단계 분류 중간재 수출 금액",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(4) > select:nth-of-type(1)",
+      "id": null,
+      "label": "연도 선택",
+      "dimensionKey": null,
+      "testId": "v125-year-select",
+      "value": "2020",
+      "shown": "2020",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "2020",
+          "label": "2020",
+          "disabled": false
+        },
+        {
+          "value": "2019",
+          "label": "2019",
+          "disabled": false
+        },
+        {
+          "value": "2018",
+          "label": "2018",
+          "disabled": false
+        },
+        {
+          "value": "2017",
+          "label": "2017",
+          "disabled": false
+        },
+        {
+          "value": "2016",
+          "label": "2016",
+          "disabled": false
+        },
+        {
+          "value": "2015",
+          "label": "2015",
+          "disabled": false
+        },
+        {
+          "value": "2014",
+          "label": "2014",
+          "disabled": false
+        },
+        {
+          "value": "2013",
+          "label": "2013",
+          "disabled": false
+        },
+        {
+          "value": "2012",
+          "label": "2012",
+          "disabled": false
+        },
+        {
+          "value": "2011",
+          "label": "2011",
+          "disabled": false
+        },
+        {
+          "value": "2010",
+          "label": "2010",
+          "disabled": false
+        },
+        {
+          "value": "2009",
+          "label": "2009",
+          "disabled": false
+        },
+        {
+          "value": "2008",
+          "label": "2008",
+          "disabled": false
+        },
+        {
+          "value": "2007",
+          "label": "2007",
+          "disabled": false
+        },
+        {
+          "value": "2006",
+          "label": "2006",
+          "disabled": false
+        },
+        {
+          "value": "2005",
+          "label": "2005",
+          "disabled": false
+        },
+        {
+          "value": "2004",
+          "label": "2004",
+          "disabled": false
+        },
+        {
+          "value": "2003",
+          "label": "2003",
+          "disabled": false
+        },
+        {
+          "value": "2002",
+          "label": "2002",
+          "disabled": false
+        },
+        {
+          "value": "2001",
+          "label": "2001",
+          "disabled": false
+        },
+        {
+          "value": "2000",
+          "label": "2000",
+          "disabled": false
+        },
+        {
+          "value": "1999",
+          "label": "1999",
+          "disabled": false
+        },
+        {
+          "value": "1998",
+          "label": "1998",
+          "disabled": false
+        },
+        {
+          "value": "1997",
+          "label": "1997",
+          "disabled": false
+        },
+        {
+          "value": "1996",
+          "label": "1996",
+          "disabled": false
+        },
+        {
+          "value": "1995",
+          "label": "1995",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [],
+  "chartTexts": [
+    "수출 중 중간재 국내부가가치 비중 29.3 %",
+    "재수출된 중간재 수입 비중 60.8 %"
+  ],
+  "tableRows": [],
+  "emptyNotices": [],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

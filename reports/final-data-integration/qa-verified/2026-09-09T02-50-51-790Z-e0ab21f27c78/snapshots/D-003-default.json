@@ -1,0 +1,197 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:51655/?view=data&element=yesang-gamcugryang&country=VNM&from=explorer&measure=measure-d3b4eabbfb70&year=2023#element-detail",
+  "title": "예상 감축량",
+  "body": "검색 결과로 돌아가기 시장·산업 및 재원 › 기후기술 분야별 수익성 평가 기초 정보 데이터 제공 다운로드 가능 예상 감축량 베트남 · 예상 감축량의 사업 규모와 분야·기관별 구성을 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 8종 · 관측기간 2023년 이 데이터로 확인할 수 있는 내용 예상 감축량의 항목별 공개 현황 예상 감축량의 공개 값과 항목별 차이를 확인할 수 있습니다. 항목 예상 감축량 · tCO2/20년·MW 예상 감축량 · tCO2/년·MW 분류 전체 바이오에너지 기술 수력 기술 태양광 기술 폐자원 기술 풍력 기술(육상 · 근해) 풍력 기술(해상) 세부 분류 전체 1MW당 20년 누적 온실가스 감축량 1MW당 연간 온실가스 감축량 기술 전체 1 3 5 8 15 연도 2023 용어 도움말 ? MW 설명 주 분석 예상 감축량 항목별 현황 항목 항목별 값 단위: tCO2/20년·MW 바이오에너지 기술 22,500 tCO2/20년·MW 수력 기술 46,640 tCO2/20년·MW 태양광 기술 20,540 tCO2/20년·MW 풍력 기술(육상 · 근해) 29,980 tCO2/20년·MW 결측 2건 출처에서 값을 제공하지 않음 자료정보 상세 데이터 · 전체 12행 · 값 있음 8행 · 결측 4행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 653,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "D-003",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "예상 감축량의 항목별 공개 현황",
+    "예상 감축량 항목별 현황",
+    "항목별 값",
+    "단위: tCO2/20년·MW",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목 선택",
+      "dimensionKey": null,
+      "testId": "v125-measure-select",
+      "value": "measure-d3b4eabbfb70",
+      "shown": "예상 감축량 · tCO2/20년·MW",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-d3b4eabbfb70",
+          "label": "예상 감축량 · tCO2/20년·MW",
+          "disabled": false
+        },
+        {
+          "value": "measure-bc66780056cc",
+          "label": "예상 감축량 · tCO2/년·MW",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "분류 선택",
+      "dimensionKey": "category",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "바이오에너지 기술",
+          "label": "바이오에너지 기술",
+          "disabled": false
+        },
+        {
+          "value": "수력 기술",
+          "label": "수력 기술",
+          "disabled": false
+        },
+        {
+          "value": "태양광 기술",
+          "label": "태양광 기술",
+          "disabled": false
+        },
+        {
+          "value": "폐자원 기술",
+          "label": "폐자원 기술",
+          "disabled": false
+        },
+        {
+          "value": "풍력 기술(육상 · 근해)",
+          "label": "풍력 기술(육상 · 근해)",
+          "disabled": false
+        },
+        {
+          "value": "풍력 기술(해상)",
+          "label": "풍력 기술(해상)",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "세부 분류 선택",
+      "dimensionKey": "detail",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "1MW당 20년 누적 온실가스 감축량",
+          "label": "1MW당 20년 누적 온실가스 감축량",
+          "disabled": false
+        },
+        {
+          "value": "1MW당 연간 온실가스 감축량",
+          "label": "1MW당 연간 온실가스 감축량",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(4) > select:nth-of-type(1)",
+      "id": null,
+      "label": "기술 선택",
+      "dimensionKey": "technology",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "1",
+          "label": "1",
+          "disabled": false
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "disabled": false
+        },
+        {
+          "value": "5",
+          "label": "5",
+          "disabled": false
+        },
+        {
+          "value": "8",
+          "label": "8",
+          "disabled": false
+        },
+        {
+          "value": "15",
+          "label": "15",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(5) > select:nth-of-type(1)",
+      "id": null,
+      "label": "연도 선택",
+      "dimensionKey": null,
+      "testId": "v125-year-select",
+      "value": "2023",
+      "shown": "2023",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "2023",
+          "label": "2023",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [],
+  "chartTexts": [
+    "바이오에너지 기술 22,500 tCO2/20년·MW",
+    "수력 기술 46,640 tCO2/20년·MW",
+    "태양광 기술 20,540 tCO2/20년·MW",
+    "풍력 기술(육상 · 근해) 29,980 tCO2/20년·MW"
+  ],
+  "tableRows": [],
+  "emptyNotices": [],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}
