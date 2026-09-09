@@ -94,9 +94,32 @@ const PORTFOLIO_CONFIG_V132: Record<string, PortfolioConfigV132> = {
     yearLabel: "공고연도",
     categoryKeys: ["sector", "status", "supportType"],
   },
+  "C-007": {
+    amountKeys: [],
+    // The sheet dates each statement, and says nothing about approval.
+    yearKeys: ["statementDate"],
+    yearLabel: "자료 시점",
+    categoryKeys: ["scopeValue"],
+  },
+  "C-008": {
+    amountKeys: [],
+    yearKeys: ["statementDate"],
+    yearLabel: "자료 시점",
+    categoryKeys: ["actorType", "registry", "sectorName"],
+  },
+  "C-025": {
+    // The reductions this element states are tCO2e, not money. Publishing them
+    // under a currency total would put a tonnage in a funding figure.
+    amountKeys: [],
+    yearKeys: ["creditingPeriod", "vintageYear"],
+    yearLabel: "크레딧 기간 시작연도",
+    categoryKeys: ["standard", "technologyField", "status"],
+  },
   "D-018": {
     amountKeys: [{ key: "approvedAmount", currency: "USD" }],
+    amountLabel: "승인액 합계",
     yearKeys: ["approvalDate"],
+    yearLabel: "승인연도",
     categoryKeys: ["sector", "status", "implementingEntity"],
   },
   "D-019": {

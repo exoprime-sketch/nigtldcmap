@@ -32,6 +32,52 @@ const REVIEWED_ENTITY_ALIASES_V132: Record<string, ReviewedAliasV132[]> = {
   // named for what that column says it is rather than for the slot it used to
   // occupy: 기간_시작 stays a period start, 공고일 a notice date, 제출일 a
   // submission date, and none of them is promoted to an approval date.
+  // C~E were left out of the first remap, so six portfolio screens lost their
+  // amount, their date and their category the moment the branch started reading
+  // the final delivery. Each key below is the column that delivery ships,
+  // named for what the column says it is.
+  "C-007": [
+    { publicKey: "recordTitle", sourceKey: "속성1_레코드명" },
+    // The sheet's own 시점 column. It is a statement date, not an approval date.
+    { publicKey: "statementDate", sourceKey: "속성4_시점" },
+    { publicKey: "scopeValue", sourceKey: "속성3_값" },
+    { publicKey: "officialSource", sourceKey: "속성19_원문URL", kind: "url" },
+  ],
+  "C-008": [
+    { publicKey: "recordTitle", sourceKey: "속성1_레코드명" },
+    { publicKey: "statementDate", sourceKey: "속성4_시점" },
+    { publicKey: "registry", sourceKey: "속성5_등록표준_출처" },
+    { publicKey: "actorType", sourceKey: "속성6_분류" },
+    { publicKey: "sectorName", sourceKey: "속성18_업종" },
+    { publicKey: "officialSource", sourceKey: "속성19_원문URL", kind: "url" },
+  ],
+  "C-025": [
+    { publicKey: "recordTitle", sourceKey: "속성1_레코드명" },
+    { publicKey: "recordCode", sourceKey: "속성2_레코드ID" },
+    { publicKey: "standard", sourceKey: "속성5_등록표준_출처" },
+    { publicKey: "technologyField", sourceKey: "속성6_분류" },
+    { publicKey: "status", sourceKey: "속성7_상태" },
+    { publicKey: "proponent", sourceKey: "속성8_사업자_기관" },
+    { publicKey: "methodology", sourceKey: "속성9_방법론" },
+    // The crediting period is the only project-dated field the source states.
+    // It is not an approval date and is not labelled as one.
+    { publicKey: "creditingPeriod", sourceKey: "속성17_크레딧기간" },
+    { publicKey: "vintageYear", sourceKey: "속성15_빈티지_연도" },
+    { publicKey: "officialSource", sourceKey: "속성19_원문URL", kind: "url" },
+  ],
+  "D-018": [
+    { publicKey: "projectName", sourceKey: "명칭" },
+    { publicKey: "approvedAmount", sourceKey: "승인금액" },
+    { publicKey: "disbursementAmount", sourceKey: "집행액" },
+    { publicKey: "approvalDate", sourceKey: "승인일" },
+    { publicKey: "startDate", sourceKey: "착수일" },
+    { publicKey: "sector", sourceKey: "분야" },
+    { publicKey: "status", sourceKey: "상태" },
+    { publicKey: "implementingEntity", sourceKey: "실행기관_IE" },
+    { publicKey: "projectPeriod", sourceKey: "기간" },
+    { publicKey: "vietnamAllocation", sourceKey: "베트남_귀속" },
+    { publicKey: "sourceUrl", sourceKey: "프로젝트_URL", kind: "url" },
+  ],
   "D-012": [
     { publicKey: "entryYear", sourceKey: "확인_연도" },
     { publicKey: "entryCountry", sourceKey: "국적" },

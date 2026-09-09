@@ -941,6 +941,10 @@ def _c016_projection(
                 "statisticType": fact["statisticType"],
                 "planVersion": fact["planVersion"],
                 "provenance": {
+                    "sourcePackage": _text_value(workbook.get("sourcePackage")),
+                    "sourceFile": _text_value(workbook.get("archiveName")),
+                    "sourceSheet": "1.2_entity(레코드형)",
+                    "sourceOrg": "베트남 총리실 (Quyết định 768/QĐ-TTg) / 산업무역부(MOIT)",
                     "sourceRow": fact["sourceRow"],
                     "sourceUrl": fact["sourceUrl"],
                     "sourceTable": fact["tableRef"],
@@ -1007,9 +1011,24 @@ def _d018_projection(
                 "rightsNote": row_rights["rightsNote"],
                 "downloadEligible": row_rights["downloadEligible"],
                 "statisticType": "sum",
+                # Every published record carries a provenance object. The source
+                # panel maps over observations reading provenance.sourceOrg, so
+                # an observation without one crashed the whole detail screen.
+                "provenance": {
+                    "sourcePackage": _text_value(workbook.get("sourcePackage")),
+                    "sourceFile": _text_value(workbook.get("archiveName")),
+                    "sourceSheet": "1.2_entity(레코드형)",
+                    "sourceOrg": "Adaptation Fund Board Secretariat",
+                    "sourceRow": None,
+                    "derivedFrom": "delivered project rows",
+                },
             }
         )
     return observations, indicators, derived
+
+
+def _text_value(value: Any) -> str:
+    return "" if value is None else str(value).strip()
 
 
 def _slug_period(period: str) -> str:
