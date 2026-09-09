@@ -1,0 +1,460 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:57699/?view=data&element=ingu-congingu-dosihwayul&country=VNM&from=explorer&measure=measure-25b4f08199a4&year=2025#element-detail",
+  "title": "인구 및 도시화",
+  "body": "검색 결과로 돌아가기 국가 기본 정보 › 사회·경제 현황 데이터 제공 다운로드 가능 인구 및 도시화 베트남 · 인구 및 도시화의 항목별 구성과 연도별 변화를 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 4종 · 관측기간 1960~2025년 이 데이터로 확인할 수 있는 내용 인구 및 도시화의 추세와 최근 수준 인구 및 도시화의 현재 수준과 기준시점별 변화를 확인할 수 있습니다. 항목 도시인구 · 명 도시인구 증가율 · % 도시화율 · % 총인구 · 명 세부 분류 전체 도시인구 연간 증가율 도시지역 거주 인구 연중 거주 인구 총인구 대비 도시인구 비율 연도 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 2014 2013 2012 2011 2010 2009 2008 2007 2006 2005 2004 2003 2002 2001 2000 1999 1998 1997 1996 1995 1994 1993 1992 1991 1990 1989 1988 1987 1986 1985 1984 1983 1982 1981 1980 1979 1978 1977 1976 1975 1974 1973 1972 1971 1970 1969 1968 1967 1966 1965 1964 1963 1962 1961 도시인구 증가율 1.4821 % · 2025 · 도시인구 연간 증가율 주 분석 인구 및 도시화 연도별 변화 연도별 항목 추세 1961~2025년 추세 단위: % 도시인구 증가율 — 도시인구 연간 증가율 표시기간 전체 축소 확대 전체 7.9118 5.9332 3.9546 1.976 -0.0026 -1.9812 1961 1970 1979 1988 1998 2007 2016 2025 연도 측정값(%) 자료정보 상세 데이터 · 전체 263행 · 값 있음 263행 · 결측 0행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 933,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "A-007",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "인구 및 도시화의 추세와 최근 수준",
+    "인구 및 도시화 연도별 변화",
+    "항목 추세",
+    "1961~2025년 추세",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목 선택",
+      "dimensionKey": null,
+      "testId": "v125-measure-select",
+      "value": "measure-25b4f08199a4",
+      "shown": "도시인구 증가율 · %",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-14243a7a036f",
+          "label": "도시인구 · 명",
+          "disabled": false
+        },
+        {
+          "value": "measure-25b4f08199a4",
+          "label": "도시인구 증가율 · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-3d6a488a45a1",
+          "label": "도시화율 · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-be793786b249",
+          "label": "총인구 · 명",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "세부 분류 선택",
+      "dimensionKey": "detail",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "도시인구 연간 증가율",
+          "label": "도시인구 연간 증가율",
+          "disabled": false
+        },
+        {
+          "value": "도시지역 거주 인구",
+          "label": "도시지역 거주 인구",
+          "disabled": false
+        },
+        {
+          "value": "연중 거주 인구",
+          "label": "연중 거주 인구",
+          "disabled": false
+        },
+        {
+          "value": "총인구 대비 도시인구 비율",
+          "label": "총인구 대비 도시인구 비율",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "연도 선택",
+      "dimensionKey": null,
+      "testId": "v125-year-select",
+      "value": "2025",
+      "shown": "2025",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "2025",
+          "label": "2025",
+          "disabled": false
+        },
+        {
+          "value": "2024",
+          "label": "2024",
+          "disabled": false
+        },
+        {
+          "value": "2023",
+          "label": "2023",
+          "disabled": false
+        },
+        {
+          "value": "2022",
+          "label": "2022",
+          "disabled": false
+        },
+        {
+          "value": "2021",
+          "label": "2021",
+          "disabled": false
+        },
+        {
+          "value": "2020",
+          "label": "2020",
+          "disabled": false
+        },
+        {
+          "value": "2019",
+          "label": "2019",
+          "disabled": false
+        },
+        {
+          "value": "2018",
+          "label": "2018",
+          "disabled": false
+        },
+        {
+          "value": "2017",
+          "label": "2017",
+          "disabled": false
+        },
+        {
+          "value": "2016",
+          "label": "2016",
+          "disabled": false
+        },
+        {
+          "value": "2015",
+          "label": "2015",
+          "disabled": false
+        },
+        {
+          "value": "2014",
+          "label": "2014",
+          "disabled": false
+        },
+        {
+          "value": "2013",
+          "label": "2013",
+          "disabled": false
+        },
+        {
+          "value": "2012",
+          "label": "2012",
+          "disabled": false
+        },
+        {
+          "value": "2011",
+          "label": "2011",
+          "disabled": false
+        },
+        {
+          "value": "2010",
+          "label": "2010",
+          "disabled": false
+        },
+        {
+          "value": "2009",
+          "label": "2009",
+          "disabled": false
+        },
+        {
+          "value": "2008",
+          "label": "2008",
+          "disabled": false
+        },
+        {
+          "value": "2007",
+          "label": "2007",
+          "disabled": false
+        },
+        {
+          "value": "2006",
+          "label": "2006",
+          "disabled": false
+        },
+        {
+          "value": "2005",
+          "label": "2005",
+          "disabled": false
+        },
+        {
+          "value": "2004",
+          "label": "2004",
+          "disabled": false
+        },
+        {
+          "value": "2003",
+          "label": "2003",
+          "disabled": false
+        },
+        {
+          "value": "2002",
+          "label": "2002",
+          "disabled": false
+        },
+        {
+          "value": "2001",
+          "label": "2001",
+          "disabled": false
+        },
+        {
+          "value": "2000",
+          "label": "2000",
+          "disabled": false
+        },
+        {
+          "value": "1999",
+          "label": "1999",
+          "disabled": false
+        },
+        {
+          "value": "1998",
+          "label": "1998",
+          "disabled": false
+        },
+        {
+          "value": "1997",
+          "label": "1997",
+          "disabled": false
+        },
+        {
+          "value": "1996",
+          "label": "1996",
+          "disabled": false
+        },
+        {
+          "value": "1995",
+          "label": "1995",
+          "disabled": false
+        },
+        {
+          "value": "1994",
+          "label": "1994",
+          "disabled": false
+        },
+        {
+          "value": "1993",
+          "label": "1993",
+          "disabled": false
+        },
+        {
+          "value": "1992",
+          "label": "1992",
+          "disabled": false
+        },
+        {
+          "value": "1991",
+          "label": "1991",
+          "disabled": false
+        },
+        {
+          "value": "1990",
+          "label": "1990",
+          "disabled": false
+        },
+        {
+          "value": "1989",
+          "label": "1989",
+          "disabled": false
+        },
+        {
+          "value": "1988",
+          "label": "1988",
+          "disabled": false
+        },
+        {
+          "value": "1987",
+          "label": "1987",
+          "disabled": false
+        },
+        {
+          "value": "1986",
+          "label": "1986",
+          "disabled": false
+        },
+        {
+          "value": "1985",
+          "label": "1985",
+          "disabled": false
+        },
+        {
+          "value": "1984",
+          "label": "1984",
+          "disabled": false
+        },
+        {
+          "value": "1983",
+          "label": "1983",
+          "disabled": false
+        },
+        {
+          "value": "1982",
+          "label": "1982",
+          "disabled": false
+        },
+        {
+          "value": "1981",
+          "label": "1981",
+          "disabled": false
+        },
+        {
+          "value": "1980",
+          "label": "1980",
+          "disabled": false
+        },
+        {
+          "value": "1979",
+          "label": "1979",
+          "disabled": false
+        },
+        {
+          "value": "1978",
+          "label": "1978",
+          "disabled": false
+        },
+        {
+          "value": "1977",
+          "label": "1977",
+          "disabled": false
+        },
+        {
+          "value": "1976",
+          "label": "1976",
+          "disabled": false
+        },
+        {
+          "value": "1975",
+          "label": "1975",
+          "disabled": false
+        },
+        {
+          "value": "1974",
+          "label": "1974",
+          "disabled": false
+        },
+        {
+          "value": "1973",
+          "label": "1973",
+          "disabled": false
+        },
+        {
+          "value": "1972",
+          "label": "1972",
+          "disabled": false
+        },
+        {
+          "value": "1971",
+          "label": "1971",
+          "disabled": false
+        },
+        {
+          "value": "1970",
+          "label": "1970",
+          "disabled": false
+        },
+        {
+          "value": "1969",
+          "label": "1969",
+          "disabled": false
+        },
+        {
+          "value": "1968",
+          "label": "1968",
+          "disabled": false
+        },
+        {
+          "value": "1967",
+          "label": "1967",
+          "disabled": false
+        },
+        {
+          "value": "1966",
+          "label": "1966",
+          "disabled": false
+        },
+        {
+          "value": "1965",
+          "label": "1965",
+          "disabled": false
+        },
+        {
+          "value": "1964",
+          "label": "1964",
+          "disabled": false
+        },
+        {
+          "value": "1963",
+          "label": "1963",
+          "disabled": false
+        },
+        {
+          "value": "1962",
+          "label": "1962",
+          "disabled": false
+        },
+        {
+          "value": "1961",
+          "label": "1961",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [
+    "도시인구 증가율 1.4821 % · 2025 · 도시인구 연간 증가율"
+  ],
+  "chartTexts": [
+    "7.9118",
+    "5.9332",
+    "3.9546",
+    "1.976",
+    "-0.0026",
+    "-1.9812",
+    "1961",
+    "1970",
+    "1979",
+    "1988",
+    "1998",
+    "2007",
+    "2016",
+    "2025",
+    "연도",
+    "측정값(%)"
+  ],
+  "tableRows": [],
+  "emptyNotices": [],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

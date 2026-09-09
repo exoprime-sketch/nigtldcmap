@@ -1,0 +1,77 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:57699/?view=data&element=jihasu-jamjaeryang&country=VNM&from=explorer&measure=measure-34f4236b35f8&year=2026#element-detail",
+  "title": "지하수 잠재량",
+  "body": "검색 결과로 돌아가기 기후 환경 › 수문학 데이터 제공 다운로드 가능 지하수 잠재량 베트남 · 지하수 잠재량의 항목별 구성과 연도별 변화를 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 2종 · 관측기간 1990~2023년 이 데이터로 확인할 수 있는 내용 지하수 잠재량(m³/yr)의 지역별 차이와 범위 지하수 잠재량(m³/yr)의 지역 차이와 공개된 공간 범위를 확인할 수 있습니다. 항목 이용가능(정규 재생) 지하수 · 10⁹ m³/yr 지하수 잠재량 · mm/yr 또는 10⁹ m³/yr 총 재생가능 지하수 자원량 · 10⁹ m³/yr 연도 2026 결측 1건 일부 세부항목은 아직 수집되지 않음 현재 선택 조건에 표시할 값이 없습니다 다른 항목이나 기간을 선택해 확인해 주세요. 자료정보 상세 데이터 · 전체 54행 · 값 있음 53행 · 결측 1행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 454,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "B-027",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "지하수 잠재량(m³/yr)의 지역별 차이와 범위",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목 선택",
+      "dimensionKey": null,
+      "testId": "v125-measure-select",
+      "value": "measure-34f4236b35f8",
+      "shown": "지하수 잠재량 · mm/yr 또는 10⁹ m³/yr",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-551da7ede3b6",
+          "label": "이용가능(정규 재생) 지하수 · 10⁹ m³/yr",
+          "disabled": false
+        },
+        {
+          "value": "measure-34f4236b35f8",
+          "label": "지하수 잠재량 · mm/yr 또는 10⁹ m³/yr",
+          "disabled": false
+        },
+        {
+          "value": "measure-b4eb329a4a57",
+          "label": "총 재생가능 지하수 자원량 · 10⁹ m³/yr",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "연도 선택",
+      "dimensionKey": null,
+      "testId": "v125-year-select",
+      "value": "2026",
+      "shown": "2026",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "2026",
+          "label": "2026",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [],
+  "chartTexts": [],
+  "tableRows": [],
+  "emptyNotices": [
+    "현재 선택 조건에 표시할 값이 없습니다 다른 항목이나 기간을 선택해 확인해 주세요."
+  ],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

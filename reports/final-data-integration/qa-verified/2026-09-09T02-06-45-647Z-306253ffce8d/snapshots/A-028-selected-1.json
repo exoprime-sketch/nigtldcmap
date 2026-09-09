@@ -1,0 +1,230 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:57699/?view=data&element=haean-inpeura-sujaweon-inpeura&country=VNM&from=explorer&measure=measure-779c0f36475c&dim.category=%EB%AA%85%EC%B9%AD+%EA%B2%B0%EC%B8%A1%EB%A5%A0#element-detail",
+  "title": "해안·수자원 인프라",
+  "body": "검색 결과로 돌아가기 국가 기본 정보 › 인프라 GIS 공간정보 데이터 제공 다운로드 가능 해안·수자원 인프라 베트남 · 해안·수자원 인프라의 최근 수준과 항목별 차이를 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 19종 · 관측기간 2026년 이 데이터로 확인할 수 있는 내용 해안·수자원 인프라의 지역별 차이와 범위 해안·수자원 인프라의 지역 차이와 공개된 공간 범위를 확인할 수 있습니다. 항목 수로 레이어 · % 수로 레이어 · EPSG 코드 수로 레이어 · 개 수로 레이어 · 건 자연지형지물 레이어 · % 자연지형지물 레이어 · EPSG 코드 자연지형지물 레이어 · 개 자연지형지물 레이어 · 건 분류 전체 명칭 결측률 분류별 피처 수(beach) 분류별 피처 수(canal) 분류별 피처 수(cave_entrance) 분류별 피처 수(cliff) 분류별 피처 수(drain) 분류별 피처 수(peak) 분류별 피처 수(river) 분류별 피처 수(spring) 분류별 피처 수(stream) 분류별 피처 수(tree) 분류별 피처 수(volcano) 속성 필드 수 좌표계 피처 수 세부 분류 전체 .dbf 속성 테이블의 필드 개수 fclass 분류값별 지물 건수 name 필드 공란 비율 OSM 수로 레이어의 좌표참조체계 OSM 수로 레이어의 지물 건수 OSM 자연지형지물 레이어의 좌표참조체계 OSM 자연지형지물 레이어의 지물 건수 용어 도움말 ? EPSG 설명 현재 선택 조건에 표시할 값이 없습니다 다른 항목이나 기간을 선택해 확인해 주세요. 자료정보 상세 데이터 · 전체 19행 · 값 있음 19행 · 결측 0행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 832,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "A-028",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "해안·수자원 인프라의 지역별 차이와 범위",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목 선택",
+      "dimensionKey": null,
+      "testId": "v125-measure-select",
+      "value": "measure-779c0f36475c",
+      "shown": "수로 레이어 · EPSG 코드",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-9602e7ac77f1",
+          "label": "수로 레이어 · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-779c0f36475c",
+          "label": "수로 레이어 · EPSG 코드",
+          "disabled": false
+        },
+        {
+          "value": "measure-eaa25261705f",
+          "label": "수로 레이어 · 개",
+          "disabled": false
+        },
+        {
+          "value": "measure-db2cea55bbcc",
+          "label": "수로 레이어 · 건",
+          "disabled": false
+        },
+        {
+          "value": "measure-9478d38a72b5",
+          "label": "자연지형지물 레이어 · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-ef7beb813414",
+          "label": "자연지형지물 레이어 · EPSG 코드",
+          "disabled": false
+        },
+        {
+          "value": "measure-98c364f971c0",
+          "label": "자연지형지물 레이어 · 개",
+          "disabled": false
+        },
+        {
+          "value": "measure-1334a70603b8",
+          "label": "자연지형지물 레이어 · 건",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "분류 선택",
+      "dimensionKey": "category",
+      "testId": null,
+      "value": "명칭 결측률",
+      "shown": "명칭 결측률",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "명칭 결측률",
+          "label": "명칭 결측률",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(beach)",
+          "label": "분류별 피처 수(beach)",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(canal)",
+          "label": "분류별 피처 수(canal)",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(cave_entrance)",
+          "label": "분류별 피처 수(cave_entrance)",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(cliff)",
+          "label": "분류별 피처 수(cliff)",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(drain)",
+          "label": "분류별 피처 수(drain)",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(peak)",
+          "label": "분류별 피처 수(peak)",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(river)",
+          "label": "분류별 피처 수(river)",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(spring)",
+          "label": "분류별 피처 수(spring)",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(stream)",
+          "label": "분류별 피처 수(stream)",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(tree)",
+          "label": "분류별 피처 수(tree)",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(volcano)",
+          "label": "분류별 피처 수(volcano)",
+          "disabled": false
+        },
+        {
+          "value": "속성 필드 수",
+          "label": "속성 필드 수",
+          "disabled": false
+        },
+        {
+          "value": "좌표계",
+          "label": "좌표계",
+          "disabled": false
+        },
+        {
+          "value": "피처 수",
+          "label": "피처 수",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "세부 분류 선택",
+      "dimensionKey": "detail",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": ".dbf 속성 테이블의 필드 개수",
+          "label": ".dbf 속성 테이블의 필드 개수",
+          "disabled": false
+        },
+        {
+          "value": "fclass 분류값별 지물 건수",
+          "label": "fclass 분류값별 지물 건수",
+          "disabled": false
+        },
+        {
+          "value": "name 필드 공란 비율",
+          "label": "name 필드 공란 비율",
+          "disabled": false
+        },
+        {
+          "value": "OSM 수로 레이어의 좌표참조체계",
+          "label": "OSM 수로 레이어의 좌표참조체계",
+          "disabled": false
+        },
+        {
+          "value": "OSM 수로 레이어의 지물 건수",
+          "label": "OSM 수로 레이어의 지물 건수",
+          "disabled": false
+        },
+        {
+          "value": "OSM 자연지형지물 레이어의 좌표참조체계",
+          "label": "OSM 자연지형지물 레이어의 좌표참조체계",
+          "disabled": false
+        },
+        {
+          "value": "OSM 자연지형지물 레이어의 지물 건수",
+          "label": "OSM 자연지형지물 레이어의 지물 건수",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [],
+  "chartTexts": [],
+  "tableRows": [],
+  "emptyNotices": [
+    "현재 선택 조건에 표시할 값이 없습니다 다른 항목이나 기간을 선택해 확인해 주세요."
+  ],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

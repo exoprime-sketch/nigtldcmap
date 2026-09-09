@@ -1164,6 +1164,47 @@ def _status_for(
     return "data-entry-planned", "no-populated-record", "explicit-placeholder-only"
 
 
+# Fields never hoisted, however constant they happen to be in one delivery.
+# These identify the row, and a record that does not carry its own id is harder
+# to use than one that repeats a value.
+_NEVER_HOISTED = frozenset(
+    {"recordId", "indicatorId", "elementId", "value", "year", "period", "name"}
+)
+
+
+def _hoist_record_defaults(
+    records: list[Mapping[str, Any]],
+) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+    """Move fields that hold one value across every record into a defaults block.
+
+    Returns the defaults and the records with those keys removed. A record that
+    somehow differs keeps its own value, so merging the defaults reproduces the
+    original rows exactly.
+    """
+
+    if len(records) < 2:
+        return {}, [dict(record) for record in records]
+
+    first = records[0]
+    candidates = {
+        key: value
+        for key, value in first.items()
+        if key not in _NEVER_HOISTED
+    }
+    for record in records[1:]:
+        for key in list(candidates):
+            if key not in record or record[key] != candidates[key]:
+                del candidates[key]
+        if not candidates:
+            return {}, [dict(record) for record in records]
+
+    trimmed = [
+        {key: value for key, value in record.items() if key not in candidates}
+        for record in records
+    ]
+    return candidates, trimmed
+
+
 def _download_rows(payload: Mapping[str, Any]) -> tuple[list[Any], list[Any]]:
     observations = [
         row
@@ -1965,18 +2006,37 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         token = element["elementId"].lower()
         json_path = out / "downloads" / f"{token}.json"
         csv_path = out / "downloads" / f"{token}.csv"
-        _write_json(
-            json_path,
-            {
-                "schemaVersion": SCHEMA_VERSION,
-                "generatedAt": GENERATED_AT,
-                "countryIso3": "VNM",
-                "element": element,
-                "indicators": payload["meta"]["indicators"],
-                "observations": observations,
-                "entities": entities,
-            },
-        )
+        # Compact serialization. Same keys, same order, same values - only the
+        # indentation goes. A 33,232-row download does not become more readable
+        # for having 2-space indents; it becomes 20% larger.
+        #
+        # Then the fields that hold one value for every row in the file are
+        # stated once instead of 33,232 times. On B-004 that is 23 MiB of the
+        # 107 MiB - publicationDecision and rightsNote alone are 17 MiB of
+        # verbatim repetition. Nothing is dropped: recordDefaults carries the
+        # value, and a reader merges it into every record.
+        observation_defaults, observations_out = _hoist_record_defaults(observations)
+        entity_defaults, entities_out = _hoist_record_defaults(entities)
+        document: dict[str, Any] = {
+            "schemaVersion": SCHEMA_VERSION,
+            "generatedAt": GENERATED_AT,
+            "countryIso3": "VNM",
+            "element": element,
+            "indicators": payload["meta"]["indicators"],
+            "observations": observations_out,
+            "entities": entities_out,
+        }
+        if observation_defaults or entity_defaults:
+            document["recordDefaults"] = {
+                "note": (
+                    "이 값들은 파일의 모든 레코드에 동일하게 적용됩니다. "
+                    "레코드마다 반복해 싣지 않고 여기에 한 번만 싣습니다. "
+                    "각 레코드를 읽을 때 그대로 합쳐 사용하세요."
+                ),
+                "observations": observation_defaults,
+                "entities": entity_defaults,
+            }
+        _write_json(json_path, document, pretty=False)
         csv_path.write_bytes(_download_csv(element, observations, entities))
         record_count = int(element.get("downloadableRecordCount") or 0)
         for fmt, media_type, path in (

@@ -1,0 +1,146 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:57699/?view=data&element=han-gaedogug-gyoyeogaeg&country=VNM&from=explorer&measure=measure-fe46d9d1d4c2&year=2024#element-detail",
+  "title": "한국과의 교역 규모",
+  "body": "검색 결과로 돌아가기 국가 기본 정보 › 한·개도국 교역액 및 FTA 체결 현황 데이터 제공 다운로드 가능 한국과의 교역 규모 베트남 · 한국과의 교역 규모의 사업 규모와 분야·기관별 구성을 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 4종 · 관측기간 2021~2024년 이 데이터로 확인할 수 있는 내용 한국과의 교역 규모의 항목별 공개 현황 한국과의 교역 규모의 공개 값과 항목별 차이를 확인할 수 있습니다. 분류 전체 대베트남 수입액 대베트남 수출액 무역수지 총 교역액 세부 분류 전체 한국 기준 대베트남 대베트남 수입액 한국 기준 대베트남 대베트남 수출액 한국 기준 대베트남 무역수지 한국 기준 대베트남 총 교역액 연도 2024 2023 2022 2021 용어 도움말 ? USD 설명 주 분석 한국과의 교역 규모 항목별 현황 항목 항목별 값 단위: 10억 USD 무역수지 29.9 10억 USD 대베트남 수출액 58.3 10억 USD 대베트남 수입액 28.4 10억 USD 총 교역액 86.7 10억 USD 자료정보 상세 데이터 · 전체 16행 · 값 있음 9행 · 결측 7행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 582,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "A-030",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "한국과의 교역 규모의 항목별 공개 현황",
+    "한국과의 교역 규모 항목별 현황",
+    "항목별 값",
+    "단위: 10억 USD",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "분류 선택",
+      "dimensionKey": "category",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "대베트남 수입액",
+          "label": "대베트남 수입액",
+          "disabled": false
+        },
+        {
+          "value": "대베트남 수출액",
+          "label": "대베트남 수출액",
+          "disabled": false
+        },
+        {
+          "value": "무역수지",
+          "label": "무역수지",
+          "disabled": false
+        },
+        {
+          "value": "총 교역액",
+          "label": "총 교역액",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "세부 분류 선택",
+      "dimensionKey": "detail",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "한국 기준 대베트남 대베트남 수입액",
+          "label": "한국 기준 대베트남 대베트남 수입액",
+          "disabled": false
+        },
+        {
+          "value": "한국 기준 대베트남 대베트남 수출액",
+          "label": "한국 기준 대베트남 대베트남 수출액",
+          "disabled": false
+        },
+        {
+          "value": "한국 기준 대베트남 무역수지",
+          "label": "한국 기준 대베트남 무역수지",
+          "disabled": false
+        },
+        {
+          "value": "한국 기준 대베트남 총 교역액",
+          "label": "한국 기준 대베트남 총 교역액",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "연도 선택",
+      "dimensionKey": null,
+      "testId": "v125-year-select",
+      "value": "2024",
+      "shown": "2024",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "2024",
+          "label": "2024",
+          "disabled": false
+        },
+        {
+          "value": "2023",
+          "label": "2023",
+          "disabled": false
+        },
+        {
+          "value": "2022",
+          "label": "2022",
+          "disabled": false
+        },
+        {
+          "value": "2021",
+          "label": "2021",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [],
+  "chartTexts": [
+    "무역수지 29.9 10억 USD",
+    "대베트남 수출액 58.3 10억 USD",
+    "대베트남 수입액 28.4 10억 USD",
+    "총 교역액 86.7 10억 USD"
+  ],
+  "tableRows": [],
+  "emptyNotices": [],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

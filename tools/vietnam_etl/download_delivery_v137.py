@@ -1,26 +1,45 @@
-"""Where each download file is delivered from, and how a reader is told.
+"""What each download file is, and where it is served from.
 
-The all-data publication grew the download tree from 85 MB to 869 MB. Four JSON
-files are over 100 MB each (B-004 137 MB, B-006 130 MB, B-007 128 MB, B-005
-122 MB), which is past GitHub's hard per-file limit, so the repository cannot be
-the delivery path for them - and a 700 MB repository is not a good delivery path
-for the rest either.
+Every asset carries its own facts - element, format, record count, byte size,
+SHA-256 - so a reader, an integrity check and a future uploader all read the
+same record. That is written whether or not the file ships from the repository.
 
-This module separates two things the build used to conflate:
+**Where they ship from, decided by measurement rather than by alarm.**
 
-*   **What the file is** - element, format, record count, byte size, SHA-256.
-    That is a fact about the projection and is written for every asset whether
-    or not it ships from the repository.
-*   **Where it is served from** - a repository path under /data, or an external
-    object store. That is a deployment decision, and it is recorded per asset
-    rather than assumed.
+The all-data projection first produced 869 MB of downloads with four JSON files
+past 100 MiB, and 100 MiB is a hard limit on a single Git object. Two changes
+fixed that without touching a single value:
 
-Nothing here uploads anything by itself. ``ObjectStorageAdapter`` describes what
-an uploader has to provide; ``NullObjectStorageAdapter`` is what runs when no
-credentials are configured, and it reports every oversized asset as
-NOT_UPLOADED rather than pretending a URL exists. A manifest produced without an
-adapter is still complete and still says, per file, exactly what would have to
-be uploaded.
+*   Compact serialization. The download JSON was pretty-printed; the same keys,
+    the same order and the same values without indentation are about 20%
+    smaller.
+*   Row-constant fields stated once. ``publicationDecision`` and ``rightsNote``
+    were byte-identical on all 33,232 rows of B-004 - 17 MiB of verbatim
+    repetition - and ``recordDefaults`` now carries them once for the file.
+
+Measured after both, on the full delivery:
+
+===================  ==========  ==========  ==========
+file                 pretty      compact     + defaults
+===================  ==========  ==========  ==========
+b-004.json           137 MB      106.7 MiB   81.1 MiB
+b-005.json           122 MB       95.6 MiB   75.1 MiB
+b-006.json           130 MB      100.1 MiB   82.3 MiB
+b-007.json           128 MB       98.6 MiB   80.1 MiB
+===================  ==========  ==========  ==========
+
+No file is over 100 MiB, so no Git object limit is in reach. The whole 664 MiB
+tree compresses to **34.2 MiB** as Git objects - this data is repetitive JSON
+and CSV, and deflate takes 95% of it - which is nothing against the 2 GB push
+limit, and takes the repository from 180 MB to about 214 MB against a 10 GB
+guideline. Shipping it as static data in the repository is the simpler thing and
+it is comfortably practical, so that is what happens: ``deliveryMode`` is
+``repository`` for every asset.
+
+``ObjectStorageAdapter`` stays because the threshold is a real rule rather than
+an assumption - if a future delivery does produce a single object over 100 MiB,
+that asset is marked external and reported NOT_UPLOADED rather than silently
+breaking a push. Nothing is uploaded today and nothing needs to be.
 """
 
 from __future__ import annotations
@@ -31,20 +50,11 @@ import pathlib
 from dataclasses import dataclass
 from typing import Any, Iterable, Mapping, Protocol
 
-# Files at or above this size are not delivered from the repository.
-#
-# Chosen so the repository's download tree stays about the size it already is
-# (85 MB committed today, 91 MB at this threshold) rather than merely under
-# GitHub's 100 MB per-file limit. Measured across the all-data projection:
-#
-#     threshold    repository            external
-#         4 MB     275 files /  91 MB    19 files / 777 MB
-#         8 MB     282 files / 132 MB    12 files / 736 MB
-#        40 MB     287 files / 240 MB     7 files / 628 MB
-#
-# A per-file limit alone would still have tripled the repository. The point is
-# the aggregate, so the threshold is set on that.
-REPOSITORY_MAX_BYTES = 4 * 1024 * 1024
+# The actual constraint: a single Git object above 100 MiB cannot be pushed.
+# It is not a limit on the repository or on the tree, and treating it as one led
+# to routing 777 MB out to object storage that never needed to leave. After
+# compaction the largest asset is 82.3 MiB, so nothing crosses this.
+REPOSITORY_MAX_BYTES = 100 * 1024 * 1024
 
 MANIFEST_SCHEMA = "nigt-download-delivery-1"
 

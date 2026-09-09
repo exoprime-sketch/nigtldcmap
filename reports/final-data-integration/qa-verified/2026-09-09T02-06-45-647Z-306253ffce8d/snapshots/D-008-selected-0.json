@@ -1,0 +1,229 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:57699/?view=data&element=jugwan-buceobyeol-gihu-yesan-gyumo&country=VNM&from=explorer&measure=measure-9de10ab2d1fb&year=2013#element-detail",
+  "title": "주관 부처별 기후 예산 규모",
+  "body": "검색 결과로 돌아가기 시장·산업 및 재원 › 기후대응·기후기술 관련 정부 예산 데이터 제공 다운로드 가능 주관 부처별 기후 예산 규모 베트남 · 주관 부처별 기후 예산 규모의 사업 규모와 분야·기관별 구성을 확인할 수 있습니다 지도에서 보기 다운로드 공개 데이터 데이터 분석 베트남 · 지표 14종 · 관측기간 2012~2020년 이 데이터로 확인할 수 있는 내용 주관 부처별 기후 예산 규모의 항목별 공개 현황 주관 부처별 기후 예산 규모의 공개 값과 항목별 차이를 확인할 수 있습니다. 항목 주관 부처별 기후 예산 규모 · % 주관 부처별 기후 예산 규모 · VND 분류 전체 5개 부처 기후예산 비중 6개 부처 기후지출 비중 상한(max) 6개 부처 기후지출 비중 하한(min) MARD(농업농촌개발부) MARD+MOT 합산 비중(CPEIR 2015 기준) MARD+MOT 합산 비중(CPEIR 2022 기준) MOC(건설부) MOIT(산업무역부) MONRE(자연자원환경부) MOST(과학기술부) MOT(교통부) NTP-RCC(국가기후변화대응목표프로그램) 꽝남성(Quang Nam) 박닌성(Bac Ninh) 안장성(An Giang) 세부 분류 전체 6개 부처 합산예산 대비 비중 범위 상한 6개 부처 합산예산 대비 비중 범위 하한 2010~2013 기후변화 지출 누계 부처 총예산 대비 상위 2개 부처 지출 집중도(2010~2012) 상위 2개 부처 지출 집중도(2016~2020) 성 단위 기후변화 지출 누계 연도 2013 용어 도움말 ? VND 설명 주 분석 주관 부처별 기후 예산 규모 항목별 현황 항목 항목별 값 단위: VND MARD(농업농촌개발부) 12,811,000,000,000 VND MOC(건설부) 2,000,000,000 VND MOIT(산업무역부) 228,000,000,000 VND MONRE(자연자원환경부) 1,044,000,000,000 VND MOT(교통부) 2,248,000,000,000 VND NTP-RCC(국가기후변화대응목표프로그램) 663,000,000,000 VND 안장성(An Giang) 179,000,000,000 VND 박닌성(Bac Ninh) 481,000,000,000 VND 꽝남성(Quang Nam) 850,000,000,000 VND 결측 1건 출처에서 값을 제공하지 않음 자료정보 상세 데이터 · 전체 15행 · 값 있음 14행 · 결측 1행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 1195,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "D-008",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "주관 부처별 기후 예산 규모의 항목별 공개 현황",
+    "주관 부처별 기후 예산 규모 항목별 현황",
+    "항목별 값",
+    "단위: VND",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목 선택",
+      "dimensionKey": null,
+      "testId": "v125-measure-select",
+      "value": "measure-9de10ab2d1fb",
+      "shown": "주관 부처별 기후 예산 규모 · VND",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-1658538c67b4",
+          "label": "주관 부처별 기후 예산 규모 · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-9de10ab2d1fb",
+          "label": "주관 부처별 기후 예산 규모 · VND",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "분류 선택",
+      "dimensionKey": "category",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "5개 부처 기후예산 비중",
+          "label": "5개 부처 기후예산 비중",
+          "disabled": false
+        },
+        {
+          "value": "6개 부처 기후지출 비중 상한(max)",
+          "label": "6개 부처 기후지출 비중 상한(max)",
+          "disabled": false
+        },
+        {
+          "value": "6개 부처 기후지출 비중 하한(min)",
+          "label": "6개 부처 기후지출 비중 하한(min)",
+          "disabled": false
+        },
+        {
+          "value": "MARD(농업농촌개발부)",
+          "label": "MARD(농업농촌개발부)",
+          "disabled": false
+        },
+        {
+          "value": "MARD+MOT 합산 비중(CPEIR 2015 기준)",
+          "label": "MARD+MOT 합산 비중(CPEIR 2015 기준)",
+          "disabled": false
+        },
+        {
+          "value": "MARD+MOT 합산 비중(CPEIR 2022 기준)",
+          "label": "MARD+MOT 합산 비중(CPEIR 2022 기준)",
+          "disabled": false
+        },
+        {
+          "value": "MOC(건설부)",
+          "label": "MOC(건설부)",
+          "disabled": false
+        },
+        {
+          "value": "MOIT(산업무역부)",
+          "label": "MOIT(산업무역부)",
+          "disabled": false
+        },
+        {
+          "value": "MONRE(자연자원환경부)",
+          "label": "MONRE(자연자원환경부)",
+          "disabled": false
+        },
+        {
+          "value": "MOST(과학기술부)",
+          "label": "MOST(과학기술부)",
+          "disabled": false
+        },
+        {
+          "value": "MOT(교통부)",
+          "label": "MOT(교통부)",
+          "disabled": false
+        },
+        {
+          "value": "NTP-RCC(국가기후변화대응목표프로그램)",
+          "label": "NTP-RCC(국가기후변화대응목표프로그램)",
+          "disabled": false
+        },
+        {
+          "value": "꽝남성(Quang Nam)",
+          "label": "꽝남성(Quang Nam)",
+          "disabled": false
+        },
+        {
+          "value": "박닌성(Bac Ninh)",
+          "label": "박닌성(Bac Ninh)",
+          "disabled": false
+        },
+        {
+          "value": "안장성(An Giang)",
+          "label": "안장성(An Giang)",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "세부 분류 선택",
+      "dimensionKey": "detail",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "6개 부처 합산예산 대비 비중 범위 상한",
+          "label": "6개 부처 합산예산 대비 비중 범위 상한",
+          "disabled": false
+        },
+        {
+          "value": "6개 부처 합산예산 대비 비중 범위 하한",
+          "label": "6개 부처 합산예산 대비 비중 범위 하한",
+          "disabled": false
+        },
+        {
+          "value": "2010~2013 기후변화 지출 누계",
+          "label": "2010~2013 기후변화 지출 누계",
+          "disabled": false
+        },
+        {
+          "value": "부처 총예산 대비",
+          "label": "부처 총예산 대비",
+          "disabled": false
+        },
+        {
+          "value": "상위 2개 부처 지출 집중도(2010~2012)",
+          "label": "상위 2개 부처 지출 집중도(2010~2012)",
+          "disabled": false
+        },
+        {
+          "value": "상위 2개 부처 지출 집중도(2016~2020)",
+          "label": "상위 2개 부처 지출 집중도(2016~2020)",
+          "disabled": false
+        },
+        {
+          "value": "성 단위 기후변화 지출 누계",
+          "label": "성 단위 기후변화 지출 누계",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(4) > select:nth-of-type(1)",
+      "id": null,
+      "label": "연도 선택",
+      "dimensionKey": null,
+      "testId": "v125-year-select",
+      "value": "2013",
+      "shown": "2013",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "2013",
+          "label": "2013",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [],
+  "chartTexts": [
+    "MARD(농업농촌개발부) 12,811,000,000,000 VND",
+    "MOC(건설부) 2,000,000,000 VND",
+    "MOIT(산업무역부) 228,000,000,000 VND",
+    "MONRE(자연자원환경부) 1,044,000,000,000 VND",
+    "MOT(교통부) 2,248,000,000,000 VND",
+    "NTP-RCC(국가기후변화대응목표프로그램) 663,000,000,000 VND",
+    "안장성(An Giang) 179,000,000,000 VND",
+    "박닌성(Bac Ninh) 481,000,000,000 VND",
+    "꽝남성(Quang Nam) 850,000,000,000 VND"
+  ],
+  "tableRows": [],
+  "emptyNotices": [],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

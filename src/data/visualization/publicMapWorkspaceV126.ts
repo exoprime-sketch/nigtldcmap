@@ -48,6 +48,16 @@ export interface PublicMapPresetLayerV126 {
   elementId: PublicMapPresetElementIdV126;
   variable: string;
   period: string;
+  /**
+   * What the preset means by this variable, in the layer's own words.
+   *
+   * B-034's variable keys are content hashes, and the FOREST_CHANGE preset held
+   * one - 8fca7c8dd189 - that the current delivery no longer produces, together
+   * with a period (2025) the layer does not have. Nothing checked, so the preset
+   * silently selected a layer with no values. A label survives a rekey; the key
+   * stays as the first thing tried.
+   */
+  variableLabel?: string;
 }
 
 export interface PublicMapWorkspacePresetV126 {
@@ -100,7 +110,9 @@ export const PUBLIC_MAP_WORKSPACE_PRESETS_V126: readonly [
     primary: {
       elementId: "B-033",
       variable: "annual-tree-cover-loss",
-      period: "2025",
+      variableLabel: "연간 수관 손실 — 성(省) 단위",
+      // The delivery carries a real annual series; 2025 is not one of its years.
+      period: "2024",
     },
     context: [
       {
@@ -108,7 +120,12 @@ export const PUBLIC_MAP_WORKSPACE_PRESETS_V126: readonly [
         variable: "tree-cover-area-2010",
         period: "2010",
       },
-      { elementId: "B-034", variable: "8fca7c8dd189", period: "2025" },
+      {
+        elementId: "B-034",
+        variable: "6d25ef451c11",
+        variableLabel: "산림탄소 순플럭스(연평균)",
+        period: "2001–2024",
+      },
     ],
   },
   {

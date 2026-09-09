@@ -41,6 +41,7 @@ import {
   semanticDimensionValueLabelV125,
 } from "../data/visualization/mapSelectorBindingsV125";
 import { getElementVisualizationSummaryV125 } from "../data/visualization/elementVisualizationRegistryV125";
+import type { PublicMapPresetLayerV126 } from "../data/visualization/publicMapWorkspaceV126";
 import {
   PUBLIC_MAP_SPATIAL_TYPE_COPY_V126,
   PUBLIC_MAP_WORKSPACE_LIMITS_V126,
@@ -4779,6 +4780,48 @@ export default function RealMapExplorerPage({
     setSelectedSpatial(null);
   }
 
+  /**
+   * The variable and period a preset asks for, checked against the layer.
+   *
+   * A preset used to write its stored key and period straight into the selector
+   * state. When the delivery re-keyed B-034's variables and gave B-033 a real
+   * annual series, the FOREST_CHANGE preset kept asking for a variable and a
+   * year that no longer exist, and the map drew a layer with no values and said
+   * nothing. The label is tried first because it survives a rekey; the layer's
+   * own default is the last resort, and the substitution is reported.
+   */
+  function resolvePresetSelectorV137(
+    request: PublicMapPresetLayerV126
+  ): { variable: string; period: string; adjusted: boolean } {
+    const layer = layers.find((item) => item.elementId === request.elementId);
+    const variables = layer?.selectors?.variables || [];
+    if (!variables.length) {
+      return { variable: request.variable, period: request.period, adjusted: false };
+    }
+    const byKey = variables.find((item) => item.key === request.variable);
+    const byLabel = request.variableLabel
+      ? variables.find((item) => item.label === request.variableLabel)
+      : undefined;
+    const chosen =
+      byKey ||
+      byLabel ||
+      variables.find((item) => item.key === layer?.selectors?.defaultVariable) ||
+      variables[0];
+    const periods = chosen.periods?.length
+      ? chosen.periods
+      : layer?.selectors?.periods || [];
+    const period = periods.includes(request.period)
+      ? request.period
+      : periods.includes(layer?.selectors?.defaultPeriod || "")
+        ? (layer?.selectors?.defaultPeriod as string)
+        : periods[periods.length - 1] || request.period;
+    return {
+      variable: chosen.key,
+      period,
+      adjusted: chosen.key !== request.variable || period !== request.period,
+    };
+  }
+
   function applyPresetV126(presetId: PublicMapWorkspacePresetIdV126) {
     const workspace = createPublicMapWorkspaceStateV126(presetId);
     const contextCandidates = publicMapPresetContextCandidatesV133(presetId);
@@ -4792,14 +4835,20 @@ export default function RealMapExplorerPage({
     const contexts = workspace.context
       .filter((item) => available.has(item.elementId))
       .slice(0, PUBLIC_MAP_WORKSPACE_LIMITS_V126.contextLayers);
+    const primaryChoice = resolvePresetSelectorV137(workspace.primary);
+    const contextChoices = contextCandidates.map((item) => ({
+      elementId: item.elementId,
+      ...resolvePresetSelectorV137(item),
+    }));
+    const adjusted = [primaryChoice, ...contextChoices].some((item) => item.adjusted);
     const nextSelectors = {
       ...selectorByElement,
       [workspace.primary.elementId]: {
-        variable: workspace.primary.variable,
-        period: workspace.primary.period,
+        variable: primaryChoice.variable,
+        period: primaryChoice.period,
       },
       ...Object.fromEntries(
-        contextCandidates.map((item) => [
+        contextChoices.map((item) => [
           item.elementId,
           { variable: item.variable, period: item.period },
         ])
@@ -4820,11 +4869,17 @@ export default function RealMapExplorerPage({
     if (presetId === "CLIMATE_FINANCE_PROJECTS") {
       setFinanceTypeV133("adaptation");
     }
+    const presetLabel =
+      PUBLIC_MAP_WORKSPACE_PRESETS_V126.find((item) => item.id === presetId)?.labelKo ||
+      "분석";
     setRoleNotice(
-      `${
-        PUBLIC_MAP_WORKSPACE_PRESETS_V126.find((item) => item.id === presetId)
-          ?.labelKo || "분석"
-      } 선택 데이터를 표시했습니다. 함께 보기는 꺼진 상태입니다.`
+      adjusted
+        ? // Saying so beats letting a reader believe they are looking at the
+          // period the preset names. This is how the broken FOREST_CHANGE
+          // preset stayed invisible: it asked for a variable and a year the
+          // layer no longer had, and the map simply drew nothing.
+          `${presetLabel} · 이 자료가 제공하는 지표·기간으로 맞췄습니다. 함께 보기는 꺼진 상태입니다.`
+        : `${presetLabel} 선택 데이터를 표시했습니다. 함께 보기는 꺼진 상태입니다.`
     );
     const primaryLayer = layers.find(
       (layer) => layer.elementId === workspace.primary.elementId

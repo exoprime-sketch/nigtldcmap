@@ -1,0 +1,171 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:57699/?view=data&element=world-bank-cbam-yeonghyang-jisu&country=VNM&from=explorer&measure=measure-ac76474890c1&dim.detail=EU+%EC%B5%9C%EA%B3%A0+%ED%83%84%EC%86%8C%EC%A7%91%EC%95%BD+3%EA%B0%9C%EA%B5%AD+%ED%8F%89%EA%B7%A0+%EA%B8%B0%EC%A4%80#element-detail",
+  "title": "탄소국경조정제도 영향",
+  "body": "검색 결과로 돌아가기 기후 환경 › 전환 리스크 데이터 제공 다운로드 가능 탄소국경조정제도 영향 베트남 · 탄소국경조정제도 영향의 최근 수준과 항목별 차이를 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 33종 · 관측기간 2022년 이 데이터로 확인할 수 있는 내용 탄소국경조정제도 영향의 항목별 공개 현황 탄소국경조정제도 영향의 공개 값과 항목별 차이를 확인할 수 있습니다. i 지표 읽는 법 CBAM 영향 지수 탄소국경조정제도에 노출된 산업·무역 영향을 복수 항목으로 보여줍니다. 세부 지표마다 단위와 방향이 다를 수 있어 선택한 항목 기준으로 해석합니다. 높고 낮음의 의미 선택한 영향 지표의 정의에 따라 해석 항목 EU 평균 탄소지불액 · % 경제 노출지수(Economic Exposure Index) · % 대EU 수출비중 · % 대EU 수출액 · % 무역 노출지수(Trade Exposure Index) · % 생산 노출지수(Output Exposure Index) · % 탄소지불액 · % 세부 분류 CBAM 합계 EU 최고 탄소집약 3개국 평균 기준 GDP 대비 비중 비료 산출액 대비 비중 시멘트 알루미늄 철강 분류 전체 비료 시멘트 알루미늄 철강 용어 도움말 ? EU 설명 현재 선택 조건에 표시할 값이 없습니다 다른 항목이나 기간을 선택해 확인해 주세요. 자료정보 상세 데이터 · 전체 35행 · 값 있음 33행 · 결측 2행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 728,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "B-013",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "탄소국경조정제도 영향의 항목별 공개 현황",
+    "지표 읽는 법",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목 선택",
+      "dimensionKey": null,
+      "testId": "v125-measure-select",
+      "value": "measure-ac76474890c1",
+      "shown": "경제 노출지수(Economic Exposure Index) · %",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-b7e803503605",
+          "label": "EU 평균 탄소지불액 · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-ac76474890c1",
+          "label": "경제 노출지수(Economic Exposure Index) · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-e668ecca4da4",
+          "label": "대EU 수출비중 · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-063d6ac24b89",
+          "label": "대EU 수출액 · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-0acf85d72cc7",
+          "label": "무역 노출지수(Trade Exposure Index) · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-1f6cecd0e5f6",
+          "label": "생산 노출지수(Output Exposure Index) · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-aeaf311afb3c",
+          "label": "탄소지불액 · %",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "세부 분류 선택",
+      "dimensionKey": "detail",
+      "testId": null,
+      "value": "EU 최고 탄소집약 3개국 평균 기준",
+      "shown": "EU 최고 탄소집약 3개국 평균 기준",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "CBAM 합계",
+          "label": "CBAM 합계",
+          "disabled": false
+        },
+        {
+          "value": "EU 최고 탄소집약 3개국 평균 기준",
+          "label": "EU 최고 탄소집약 3개국 평균 기준",
+          "disabled": false
+        },
+        {
+          "value": "GDP 대비 비중",
+          "label": "GDP 대비 비중",
+          "disabled": false
+        },
+        {
+          "value": "비료",
+          "label": "비료",
+          "disabled": false
+        },
+        {
+          "value": "산출액 대비 비중",
+          "label": "산출액 대비 비중",
+          "disabled": false
+        },
+        {
+          "value": "시멘트",
+          "label": "시멘트",
+          "disabled": false
+        },
+        {
+          "value": "알루미늄",
+          "label": "알루미늄",
+          "disabled": false
+        },
+        {
+          "value": "철강",
+          "label": "철강",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "분류 선택",
+      "dimensionKey": "detail_2",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "비료",
+          "label": "비료",
+          "disabled": false
+        },
+        {
+          "value": "시멘트",
+          "label": "시멘트",
+          "disabled": false
+        },
+        {
+          "value": "알루미늄",
+          "label": "알루미늄",
+          "disabled": false
+        },
+        {
+          "value": "철강",
+          "label": "철강",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [],
+  "chartTexts": [],
+  "tableRows": [],
+  "emptyNotices": [
+    "현재 선택 조건에 표시할 값이 없습니다 다른 항목이나 기간을 선택해 확인해 주세요."
+  ],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

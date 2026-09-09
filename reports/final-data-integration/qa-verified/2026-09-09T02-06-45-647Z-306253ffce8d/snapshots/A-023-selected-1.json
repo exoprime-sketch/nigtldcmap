@@ -1,0 +1,235 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:57699/?view=data&element=baljeonso-wici-yongryang&country=VNM&from=explorer&measure=measure-abbef01dfb86&dim.capacityBand=10MW+%EB%AF%B8%EB%A7%8C&dim.entityType=entity#element-detail",
+  "title": "발전소 현황",
+  "body": "검색 결과로 돌아가기 국가 기본 정보 › 에너지·전력 GIS 공간정보 데이터 제공 다운로드 가능 발전소 현황 베트남 · 발전소 현황의 지역별 분포와 지역 간 차이를 확인할 수 있습니다 지도에서 보기 다운로드 공개 데이터 데이터 분석 베트남 · 지표 1종 · 관측기간 2021년 이 데이터로 확인할 수 있는 내용 발전소 현황의 지역별 차이와 범위 발전소 현황의 지역 차이와 공개된 공간 범위를 확인할 수 있습니다. 용량 구간 전체 10MW 미만 10~99MW 100~499MW 500MW 이상 자료 유형 전체 entity 발전소 연료 유형 전체 (미표기) 가스 가스·석유 석유 석탄 수력 태양광 폐기물 풍력 연료 유형 전체 (미표기) coal gas gas;oil hydro oil solar waste wind 주 분석 발전소 현황 지역별 현황 목록 상세 데이터 Kon Dao 공식 원문 Ia Drang 2 공식 원문 Ho Nui Coc 공식 원문 Lap Vo Rice Husk Power Plant 공식 원문 Dai Nga 공식 원문 Dak Srong 3A 공식 원문 Nam Mo 3 공식 원문 Mai Sơn 공식 원문 Ngoi Xan 1 공식 원문 Ia Grai 1 공식 원문 Ninh Binh 공식 원문 PleiKrong 공식 원문 대표 12건을 표시합니다. 전체 1,963건은 아래 상세 데이터에서 확인할 수 있습니다. 자료정보 상세 데이터 · 전체 1,964행 · 값 있음 1행 · 결측 0행 · 목록 1,963건 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 757,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "A-023",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "발전소 현황의 지역별 차이와 범위",
+    "발전소 현황 지역별 현황",
+    "상세 데이터",
+    "Kon Dao",
+    "Ia Drang 2",
+    "Ho Nui Coc",
+    "Lap Vo Rice Husk Power Plant",
+    "Dai Nga",
+    "Dak Srong 3A",
+    "Nam Mo 3",
+    "Mai Sơn",
+    "Ngoi Xan 1",
+    "Ia Grai 1",
+    "Ninh Binh",
+    "PleiKrong",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "용량 구간 선택",
+      "dimensionKey": "capacityBand",
+      "testId": null,
+      "value": "10MW 미만",
+      "shown": "10MW 미만",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "10MW 미만",
+          "label": "10MW 미만",
+          "disabled": false
+        },
+        {
+          "value": "10~99MW",
+          "label": "10~99MW",
+          "disabled": false
+        },
+        {
+          "value": "100~499MW",
+          "label": "100~499MW",
+          "disabled": false
+        },
+        {
+          "value": "500MW 이상",
+          "label": "500MW 이상",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "자료 유형 선택",
+      "dimensionKey": "entityType",
+      "testId": null,
+      "value": "entity",
+      "shown": "entity",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "entity",
+          "label": "entity",
+          "disabled": false
+        },
+        {
+          "value": "발전소",
+          "label": "발전소",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "연료 유형 선택",
+      "dimensionKey": "fuelType",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "(미표기)",
+          "label": "(미표기)",
+          "disabled": false
+        },
+        {
+          "value": "가스",
+          "label": "가스",
+          "disabled": false
+        },
+        {
+          "value": "가스·석유",
+          "label": "가스·석유",
+          "disabled": false
+        },
+        {
+          "value": "석유",
+          "label": "석유",
+          "disabled": false
+        },
+        {
+          "value": "석탄",
+          "label": "석탄",
+          "disabled": false
+        },
+        {
+          "value": "수력",
+          "label": "수력",
+          "disabled": false
+        },
+        {
+          "value": "태양광",
+          "label": "태양광",
+          "disabled": false
+        },
+        {
+          "value": "폐기물",
+          "label": "폐기물",
+          "disabled": false
+        },
+        {
+          "value": "풍력",
+          "label": "풍력",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(4) > select:nth-of-type(1)",
+      "id": null,
+      "label": "연료 유형 선택",
+      "dimensionKey": "fuelTypeRaw",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "(미표기)",
+          "label": "(미표기)",
+          "disabled": false
+        },
+        {
+          "value": "coal",
+          "label": "coal",
+          "disabled": false
+        },
+        {
+          "value": "gas",
+          "label": "gas",
+          "disabled": false
+        },
+        {
+          "value": "gas;oil",
+          "label": "gas;oil",
+          "disabled": false
+        },
+        {
+          "value": "hydro",
+          "label": "hydro",
+          "disabled": false
+        },
+        {
+          "value": "oil",
+          "label": "oil",
+          "disabled": false
+        },
+        {
+          "value": "solar",
+          "label": "solar",
+          "disabled": false
+        },
+        {
+          "value": "waste",
+          "label": "waste",
+          "disabled": false
+        },
+        {
+          "value": "wind",
+          "label": "wind",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [],
+  "chartTexts": [],
+  "tableRows": [],
+  "emptyNotices": [],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

@@ -1,10 +1,10 @@
 {
   "schema": "nigt-candidate-fingerprint-1",
-  "generatedAt": "2026-09-09T02:05:55.965Z",
+  "generatedAt": "2026-09-09T02:20:33.903Z",
   "candidateRoot": ".verify/candidate",
   "dataSource": ".staging/final/public/data/vietnam/v2",
   "code": {
-    "commit": "625740f186a9a243590c47aacfa647aa2bea37ca",
+    "commit": "effad58906143039effb1bc2af926dd5fa63e4ee",
     "branch": "fix/existing-screen-usability-v136",
     "dirty": true,
     "dirtyPaths": [
@@ -18,43 +18,31 @@
       "NIGT_STAGE2_SOURCE_PROJECTION_AND_RECONCILIATION.txt",
       "NIGT_STAGE4_CLOSEOUT_20260908.txt",
       "NIGT_STAGE4_FINISH_EXISTING_PLATFORM.txt",
-      "eports/final-data-integration/CANDIDATE_FINGERPRINT_V137.json",
+      "eports/v125/duplicate-visible-label-audit-v125.json",
       "pilot-out.txt",
       "pilot2.txt",
-      "reports/final-data-integration/qa-verified/2026-09-09T01-33-57-316Z-306253ffce8d/",
-      "reports/final-data-integration/screen-review/",
-      "reports/v125/duplicate-visible-label-audit-v125.json",
+      "reports/final-data-integration/qa-verified/2026-09-09T02-06-45-647Z-306253ffce8d/",
+      "reports/final-data-integration/screen-review/VERDICTS_V137.md",
       "reports/v125/element-visualization-audit-v125.csv",
       "reports/v125/mixed-unit-axis-audit-v125.json",
       "reports/v125/semantic-dimension-audit-v125.json",
       "reports/v125/visualization-contract-coverage-v125.json",
-      "scripts/v137/_tmp2.mjs",
-      "scripts/v137/element-source-facts-v137.mjs",
-      "scripts/v137/review-packet-v137.mjs",
-      "scripts/v137/review-triage-v137.mjs",
-      "src/components/data/public/CpiaPolicyCapacityAnalysisV126.tsx",
-      "src/components/data/public/PublicDataAnalysisRouterV126.tsx",
-      "src/components/data/public/PublicEntityCardGridV131.tsx",
-      "src/components/data/public/PublicRegionScenarioSummaryV137.tsx",
-      "src/components/data/public/public-data-analysis-v126.css",
-      "src/components/data/public/public-entity-cards-v131.css",
-      "src/data/countries/publicLabelsV122.ts",
-      "src/data/interpretation/publicIndicatorInterpretationV129.ts",
-      "src/data/visualization/publicAnalysisHeadingsV134.ts",
-      "src/data/visualization/publicEntityTitleV131.ts",
-      "src/data/visualization/publicNumberFormatV126.ts"
+      "src/data/visualization/publicMapWorkspaceV126.ts",
+      "src/pages/RealMapExplorerPage.tsx",
+      "tools/vietnam_etl/build_public_v2.py",
+      "tools/vietnam_etl/download_delivery_v137.py"
     ],
-    "srcTreeSha256": "27ef56ffe769d87c0804171c8bc3b6636567ae9b8f4a9f659d0fd284a42d3a1b",
+    "srcTreeSha256": "0056f4e7695d8a28ea09d538b24af18aa8d0376311416bc3530d97b7a5bfba7c",
     "srcFileCount": 438
   },
   "data": {
     "fileCount": 494,
-    "treeSha256": "00461b43d3ce180ff0aee0bfac2a07390752aee620eb6131efa04f04d4e4aeb2",
-    "manifestSha256": "88c54b676b2cb32f1c0a7fcfcf611c120259906d806b0807935abd8ea7a85a2c",
+    "treeSha256": "c3206b408b1a5070e951e6c1a5272aeb754ff804495464a74a196191e3a3c3e5",
+    "manifestSha256": "fb8b64b4623d3a95f5c55bdb8eafadf4caa22994d068658fda37e961c59faabe",
     "mapIndexSha256": "a70acd595d0e3398e2cb8bd323233a3883d91abfc37b458ace1d6c193fd269f8"
   },
   "appBundle": {
-    "file": "static/js/main.dffc89bc.js",
-    "sha256": "6f3723d845aedfb91bf135189e4d49e280b358b3a222586173f506cb6aca3301"
+    "file": "static/js/main.2847eaaf.js",
+    "sha256": "06280dd9f50525af3acc7a86fc782cba57708975782c19c8a995df561d31823f"
   }
 }
