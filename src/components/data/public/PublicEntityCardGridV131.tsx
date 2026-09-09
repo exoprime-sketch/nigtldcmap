@@ -146,6 +146,12 @@ export default function PublicEntityCardGridV131({
       elementTitle,
     })
   );
+  // A note that applies to every card is a statement about the dataset, not
+  // about each row. Printed per card it appeared twelve times in a row - the
+  // same sentence, filling the screen between the items a reader came to read.
+  const notes = titleResults.map((result) => result.secondaryNote || "");
+  const sharedNote =
+    notes.length > 1 && notes.every((note) => note && note === notes[0]) ? notes[0] : null;
   const titleCounts = new Map<string, number>();
   titleResults.forEach(({ title }) => {
     const normalized = normalizedCardValueV131(title);
@@ -166,13 +172,22 @@ export default function PublicEntityCardGridV131({
             template={template}
             detailTemplate={detailTemplate}
             elementTitle={elementTitle}
-            titleResult={titleResults[index]}
+            titleResult={
+              sharedNote
+                ? { ...titleResults[index], secondaryNote: null }
+                : titleResults[index]
+            }
             disambiguateTitle={
               (titleCounts.get(normalizedCardValueV131(titleResults[index].title)) || 0) > 1
             }
           />
         ))}
       </div>
+      {sharedNote && (
+        <p className="pec131-shared-note" data-testid="public-entity-card-shared-note">
+          <PublicTermTextV134 text={sharedNote} />
+        </p>
+      )}
       {entities.length > shown.length && (
         <p className="pec131-overflow-note">
           대표 {shown.length.toLocaleString("ko-KR")}건을 표시합니다. 전체{" "}
@@ -343,10 +358,32 @@ function badgeValuesV131(
 ): string[] {
   const candidates = CARD_BADGE_KEYS_V131[template].map((key) =>
     key === "entityType"
-      ? compactTextV131(entity.entityType, 34)
+      ? compactTextV131(publicEntityTypeBadgeV137(entity.entityType), 34)
       : compactAttributeV131(attributes[key], 34)
   );
   return uniquePublicValuesV131(candidates, title).slice(0, 3);
+}
+
+/**
+ * entityType is how the pipeline files a row, not something a reader wants.
+ *
+ * Every card on the province-year screens carried a badge reading "entity" -
+ * the record type, printed before the title, twelve times a screen. A value
+ * that only names the storage shape is dropped; anything the source says about
+ * what kind of thing the row is still shows.
+ */
+const STRUCTURAL_ENTITY_TYPES_V137 = new Set([
+  "entity",
+  "observation",
+  "record",
+  "row",
+  "metadata",
+]);
+
+function publicEntityTypeBadgeV137(value: unknown): string | null {
+  const text = typeof value === "string" ? value.trim() : "";
+  if (!text || STRUCTURAL_ENTITY_TYPES_V137.has(text.toLowerCase())) return null;
+  return text;
 }
 
 function factValuesV131(

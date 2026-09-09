@@ -1,0 +1,161 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:65003/?view=data&element=geulrobeol-sunwi&country=VNM&from=explorer&measure=measure-49bb1b5855fe&year=2026&dim.detail=%EB%B3%B4%ED%81%AC%EC%82%AC%EC%9D%B4%ED%8A%B8#element-detail",
+  "title": "광물자원 국제순위",
+  "body": "검색 결과로 돌아가기 기후 환경 › 광물 자원량 데이터 제공 다운로드 가능 광물자원 국제순위 베트남 · 광물자원 국제순위의 최근 수준과 항목별 차이를 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 46종 · 관측기간 2026년 이 데이터로 확인할 수 있는 내용 광물자원 국제순위의 항목별 공개 현황 광물자원 국제순위의 공개 값과 항목별 차이를 확인할 수 있습니다. i 지표 읽는 법 글로벌 순위 국제 평가에서 베트남의 상대적 위치를 보여줍니다. 순위 숫자가 작을수록 상위이며, 평가별 참가국 수가 다를 수 있습니다. 높고 낮음의 의미 순위 숫자가 작을수록 상위 항목 세계 매장량 비중 · % 세계 매장량 순위 · 순위 세계 생산량 비중 · % 세계 생산량 순위 · 순위 원문 위치(광종별 페이지) · 쪽 세부 분류 전체 보크사이트 시멘트 안티모니 알루미나 인광석 주석 텅스텐 형석 흑연 희토류 연도 2026 세계 매장량 순위 3 순위 · 2026 · 보크사이트 주 분석 광물자원 국제순위 항목별 현황 항목 항목별 값 단위: 순위 1 · 3 · 18 · 24 3 순위 자료정보 상세 데이터 · 전체 46행 · 값 있음 46행 · 결측 0행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 610,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "B-045",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "광물자원 국제순위의 항목별 공개 현황",
+    "지표 읽는 법",
+    "광물자원 국제순위 항목별 현황",
+    "항목별 값",
+    "단위: 순위",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목 선택",
+      "dimensionKey": null,
+      "testId": "v125-measure-select",
+      "value": "measure-49bb1b5855fe",
+      "shown": "세계 매장량 순위 · 순위",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-47af40a32a99",
+          "label": "세계 매장량 비중 · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-49bb1b5855fe",
+          "label": "세계 매장량 순위 · 순위",
+          "disabled": false
+        },
+        {
+          "value": "measure-49de79d3637e",
+          "label": "세계 생산량 비중 · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-7048e6eac20b",
+          "label": "세계 생산량 순위 · 순위",
+          "disabled": false
+        },
+        {
+          "value": "measure-1500e0dcbf65",
+          "label": "원문 위치(광종별 페이지) · 쪽",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "세부 분류 선택",
+      "dimensionKey": "detail",
+      "testId": null,
+      "value": "보크사이트",
+      "shown": "보크사이트",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "보크사이트",
+          "label": "보크사이트",
+          "disabled": false
+        },
+        {
+          "value": "시멘트",
+          "label": "시멘트",
+          "disabled": false
+        },
+        {
+          "value": "안티모니",
+          "label": "안티모니",
+          "disabled": false
+        },
+        {
+          "value": "알루미나",
+          "label": "알루미나",
+          "disabled": false
+        },
+        {
+          "value": "인광석",
+          "label": "인광석",
+          "disabled": false
+        },
+        {
+          "value": "주석",
+          "label": "주석",
+          "disabled": false
+        },
+        {
+          "value": "텅스텐",
+          "label": "텅스텐",
+          "disabled": false
+        },
+        {
+          "value": "형석",
+          "label": "형석",
+          "disabled": false
+        },
+        {
+          "value": "흑연",
+          "label": "흑연",
+          "disabled": false
+        },
+        {
+          "value": "희토류",
+          "label": "희토류",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "연도 선택",
+      "dimensionKey": null,
+      "testId": "v125-year-select",
+      "value": "2026",
+      "shown": "2026",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "2026",
+          "label": "2026",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [
+    "세계 매장량 순위 3 순위 · 2026 · 보크사이트"
+  ],
+  "chartTexts": [
+    "1 · 3 · 18 · 24 3 순위"
+  ],
+  "tableRows": [],
+  "emptyNotices": [],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

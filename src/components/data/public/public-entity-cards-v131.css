@@ -150,3 +150,13 @@
     scroll-behavior: auto;
   }
 }
+
+/* One note for the whole grid.
+   A note that is true of every card describes the dataset, not the row; per
+   card it repeated the same sentence twelve times between the items. */
+.pec131-shared-note {
+  margin: 10px 0 0;
+  color: var(--cdp-muted, #55635c);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}

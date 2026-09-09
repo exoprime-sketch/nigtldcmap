@@ -306,3 +306,69 @@
     grid-row: 2;
   }
 }
+
+/* ------------------------------------------------------------------ *
+ * Province x scenario x year summary (V137)
+ *
+ * The scenario deliveries have no observation rows, so these screens used to
+ * fall through to a grid of record-key cards. This is the layout for reading
+ * them as what they are: a measure, a scenario, a period, and the spread of the
+ * province values behind each figure.
+ * ------------------------------------------------------------------ */
+
+.prs137__lede {
+  margin: 0 0 12px;
+  color: var(--cdp-muted, #55635c);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.prs137__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.prs137__controls label {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.prs137__controls span {
+  color: var(--cdp-muted, #55635c);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.prs137__controls select {
+  min-height: 40px;
+  max-width: 100%;
+  border: 1px solid var(--cdp-line, #d8e3de);
+  border-radius: 9px;
+  background: #fff;
+  font: inherit;
+  font-size: 0.88rem;
+  padding: 7px 10px;
+}
+
+.prs137__table caption {
+  caption-side: top;
+  padding-bottom: 8px;
+  color: var(--cdp-muted, #55635c);
+  font-size: 0.82rem;
+  text-align: left;
+}
+
+.prs137__table th[scope="row"] {
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+.prs137__note {
+  margin: 10px 0 0;
+  color: var(--cdp-muted, #55635c);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}

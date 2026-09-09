@@ -1,0 +1,296 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:65003/?view=data&element=global-data-lab-gvi-vulnerability-index&country=VNM&from=explorer&measure=measure-92668c15f12c&dim.detail=1%EC%9D%B8%EB%8B%B9+GDP#element-detail",
+  "title": "취약성지수",
+  "body": "검색 결과로 돌아가기 기후 환경 › 기타 관련 지표 데이터 제공 다운로드 가능 취약성지수 베트남 · 취약성지수의 지역별 분포와 지역 간 차이를 확인할 수 있습니다 지도에서 보기 다운로드 공개 데이터 데이터 분석 베트남 · 지표 117종 · 관측기간 1990~2100년 이 데이터로 확인할 수 있는 내용 취약성지수의 항목별 공개 현황 취약성지수의 공개 값과 항목별 차이를 확인할 수 있습니다. i 지표 읽는 법 GVI 구성지표 GVI를 구성하는 소득·교육·보건·인프라·거버넌스 관련 측정값입니다. 구성지표마다 단위와 높고 낮음의 의미가 달라 선택한 항목을 기준으로 해석합니다. GDL 6개 권역의 값을 해당 성·시에 표시하며, 성 단위 독립 추정값이 아닙니다. 높고 낮음의 의미 선택한 구성지표의 정의와 단위에 따라 해석 비교·공간단위 GDL 6개 권역 · GDL 6개 권역의 값을 해당 성·시에 표시하며, 성 단위 독립 추정값이 아닙니다. 항목 GVI 7개 사회경제 차원 하위지수 · 지수 GVI 장래전망(PGVI, 2020 · 지수 GVI 취약성 지수 · 지수 구성지표 · % 구성지표 · 2017년 구매력평가 기준 미국달러(로그) 구성지표 · 년 구성지표 · 세 구성지표 · 지수 전망 구성지표 · % 전망 구성지표 · USD (2017 PPP) 전망 구성지표 · 건/100명 전망 구성지표 · 년 전망 구성지표 · 세 전망 구성지표 · 지수 세부 분류 전체 1인당 GDP 1인당 GNI(로그) 2100) 국가 기대수명 도시화율 부양비 빈곤 가구 비율(IWI<70) 빈곤율(1일 3.65달러 기준) 상수도 보급 가구 비율 성개발지수(GDI) 세계거버넌스지수(WGI) 이동전화 가입 전기 보급 가구 비율 전기 보급률 종합 지방부패지수(SCI) 지역(6권역) 평균 교육연수(25세 이상) 휴대폰 보유 가구 비율 분류 전체 Central Highlands Mekong River Delta North Central Coast and South Central Coast North East, North West Red River Delta South East SSP1 SSP2 SSP3 전국(Total) 용어 도움말 ? GVI 설명 ? GDP 설명 현재 선택 조건에 표시할 값이 없습니다 다른 항목이나 기간을 선택해 확인해 주세요. 자료정보 상세 데이터 · 전체 2,970행 · 값 있음 2,969행 · 결측 1행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 1198,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "B-021",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "취약성지수의 항목별 공개 현황",
+    "지표 읽는 법",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목 선택",
+      "dimensionKey": null,
+      "testId": "v125-measure-select",
+      "value": "measure-92668c15f12c",
+      "shown": "GVI 7개 사회경제 차원 하위지수 · 지수",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-92668c15f12c",
+          "label": "GVI 7개 사회경제 차원 하위지수 · 지수",
+          "disabled": false
+        },
+        {
+          "value": "measure-41f993872f7b",
+          "label": "GVI 장래전망(PGVI, 2020 · 지수",
+          "disabled": false
+        },
+        {
+          "value": "measure-ab1a3ae58df4",
+          "label": "GVI 취약성 지수 · 지수",
+          "disabled": false
+        },
+        {
+          "value": "measure-6c98c31d75ee",
+          "label": "구성지표 · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-f43b900eeeb1",
+          "label": "구성지표 · 2017년 구매력평가 기준 미국달러(로그)",
+          "disabled": false
+        },
+        {
+          "value": "measure-4dd1d8339506",
+          "label": "구성지표 · 년",
+          "disabled": false
+        },
+        {
+          "value": "measure-86da1cb1a3cb",
+          "label": "구성지표 · 세",
+          "disabled": false
+        },
+        {
+          "value": "measure-41d1c0b7c82f",
+          "label": "구성지표 · 지수",
+          "disabled": false
+        },
+        {
+          "value": "measure-d36cf55e4085",
+          "label": "전망 구성지표 · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-242354d54025",
+          "label": "전망 구성지표 · USD (2017 PPP)",
+          "disabled": false
+        },
+        {
+          "value": "measure-29dce01ad30d",
+          "label": "전망 구성지표 · 건/100명",
+          "disabled": false
+        },
+        {
+          "value": "measure-508e0c010ad2",
+          "label": "전망 구성지표 · 년",
+          "disabled": false
+        },
+        {
+          "value": "measure-39253eb06ce4",
+          "label": "전망 구성지표 · 세",
+          "disabled": false
+        },
+        {
+          "value": "measure-9bc2ce13cec1",
+          "label": "전망 구성지표 · 지수",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "세부 분류 선택",
+      "dimensionKey": "detail",
+      "testId": null,
+      "value": "1인당 GDP",
+      "shown": "1인당 GDP",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "1인당 GDP",
+          "label": "1인당 GDP",
+          "disabled": false
+        },
+        {
+          "value": "1인당 GNI(로그)",
+          "label": "1인당 GNI(로그)",
+          "disabled": false
+        },
+        {
+          "value": "2100)",
+          "label": "2100)",
+          "disabled": false
+        },
+        {
+          "value": "국가",
+          "label": "국가",
+          "disabled": false
+        },
+        {
+          "value": "기대수명",
+          "label": "기대수명",
+          "disabled": false
+        },
+        {
+          "value": "도시화율",
+          "label": "도시화율",
+          "disabled": false
+        },
+        {
+          "value": "부양비",
+          "label": "부양비",
+          "disabled": false
+        },
+        {
+          "value": "빈곤 가구 비율(IWI<70)",
+          "label": "빈곤 가구 비율(IWI<70)",
+          "disabled": false
+        },
+        {
+          "value": "빈곤율(1일 3.65달러 기준)",
+          "label": "빈곤율(1일 3.65달러 기준)",
+          "disabled": false
+        },
+        {
+          "value": "상수도 보급 가구 비율",
+          "label": "상수도 보급 가구 비율",
+          "disabled": false
+        },
+        {
+          "value": "성개발지수(GDI)",
+          "label": "성개발지수(GDI)",
+          "disabled": false
+        },
+        {
+          "value": "세계거버넌스지수(WGI)",
+          "label": "세계거버넌스지수(WGI)",
+          "disabled": false
+        },
+        {
+          "value": "이동전화 가입",
+          "label": "이동전화 가입",
+          "disabled": false
+        },
+        {
+          "value": "전기 보급 가구 비율",
+          "label": "전기 보급 가구 비율",
+          "disabled": false
+        },
+        {
+          "value": "전기 보급률",
+          "label": "전기 보급률",
+          "disabled": false
+        },
+        {
+          "value": "종합 지방부패지수(SCI)",
+          "label": "종합 지방부패지수(SCI)",
+          "disabled": false
+        },
+        {
+          "value": "지역(6권역)",
+          "label": "지역(6권역)",
+          "disabled": false
+        },
+        {
+          "value": "평균 교육연수(25세 이상)",
+          "label": "평균 교육연수(25세 이상)",
+          "disabled": false
+        },
+        {
+          "value": "휴대폰 보유 가구 비율",
+          "label": "휴대폰 보유 가구 비율",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "분류 선택",
+      "dimensionKey": "detail_2",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "Central Highlands",
+          "label": "Central Highlands",
+          "disabled": false
+        },
+        {
+          "value": "Mekong River Delta",
+          "label": "Mekong River Delta",
+          "disabled": false
+        },
+        {
+          "value": "North Central Coast and South Central Coast",
+          "label": "North Central Coast and South Central Coast",
+          "disabled": false
+        },
+        {
+          "value": "North East, North West",
+          "label": "North East, North West",
+          "disabled": false
+        },
+        {
+          "value": "Red River Delta",
+          "label": "Red River Delta",
+          "disabled": false
+        },
+        {
+          "value": "South East",
+          "label": "South East",
+          "disabled": false
+        },
+        {
+          "value": "SSP1",
+          "label": "SSP1",
+          "disabled": false
+        },
+        {
+          "value": "SSP2",
+          "label": "SSP2",
+          "disabled": false
+        },
+        {
+          "value": "SSP3",
+          "label": "SSP3",
+          "disabled": false
+        },
+        {
+          "value": "전국(Total)",
+          "label": "전국(Total)",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [],
+  "chartTexts": [],
+  "tableRows": [],
+  "emptyNotices": [
+    "현재 선택 조건에 표시할 값이 없습니다 다른 항목이나 기간을 선택해 확인해 주세요."
+  ],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

@@ -1,0 +1,120 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:65003/?view=data&element=cong-ghg-baeculryang-lulucf-jeoe&country=VNM&from=explorer&measure=measure-a124860d68fb&dim.category=LULUCF+%EC%A0%9C%EC%99%B8#element-detail",
+  "title": "온실가스 총배출량",
+  "body": "검색 결과로 돌아가기 국가 기본 정보 › GHG 배출 현황 데이터 제공 다운로드 가능 온실가스 총배출량 베트남 · 온실가스 총배출량의 항목별 구성과 연도별 변화를 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 3종 · 관측기간 1970~2024년 이 데이터로 확인할 수 있는 내용 온실가스 총배출량의 추세와 최근 수준 온실가스 총배출량의 현재 수준과 기준시점별 변화를 확인할 수 있습니다. 항목 LULUCF 순플럭스 · Mt CO2eq 순 GHG 배출량 · Mt CO2eq 총 GHG 배출량 · Mt CO2eq 분류 전체 LULUCF 제외 LULUCF 포함 세부 분류 전체 국가 전체 온실가스 총배출량 토지이용·토지이용변화·임업 부문 CO2 순배출(흡수는 음수) 흡수원 반영 순배출량 용어 도움말 ? GHG 설명 ? CO2eq 설명 ? LULUCF 설명 현재 선택 조건에 표시할 값이 없습니다 다른 항목이나 기간을 선택해 확인해 주세요. 자료정보 상세 데이터 · 전체 103행 · 값 있음 103행 · 결측 0행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 540,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "A-012",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "온실가스 총배출량의 추세와 최근 수준",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목 선택",
+      "dimensionKey": null,
+      "testId": "v125-measure-select",
+      "value": "measure-a124860d68fb",
+      "shown": "순 GHG 배출량 · Mt CO2eq",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-cd14fd155b2e",
+          "label": "LULUCF 순플럭스 · Mt CO2eq",
+          "disabled": false
+        },
+        {
+          "value": "measure-a124860d68fb",
+          "label": "순 GHG 배출량 · Mt CO2eq",
+          "disabled": false
+        },
+        {
+          "value": "measure-31c014917117",
+          "label": "총 GHG 배출량 · Mt CO2eq",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "분류 선택",
+      "dimensionKey": "category",
+      "testId": null,
+      "value": "LULUCF 제외",
+      "shown": "LULUCF 제외",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "LULUCF 제외",
+          "label": "LULUCF 제외",
+          "disabled": false
+        },
+        {
+          "value": "LULUCF 포함",
+          "label": "LULUCF 포함",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "세부 분류 선택",
+      "dimensionKey": "detail",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "국가 전체 온실가스 총배출량",
+          "label": "국가 전체 온실가스 총배출량",
+          "disabled": false
+        },
+        {
+          "value": "토지이용·토지이용변화·임업 부문 CO2 순배출(흡수는 음수)",
+          "label": "토지이용·토지이용변화·임업 부문 CO2 순배출(흡수는 음수)",
+          "disabled": false
+        },
+        {
+          "value": "흡수원 반영 순배출량",
+          "label": "흡수원 반영 순배출량",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [],
+  "chartTexts": [],
+  "tableRows": [],
+  "emptyNotices": [
+    "현재 선택 조건에 표시할 값이 없습니다 다른 항목이나 기간을 선택해 확인해 주세요."
+  ],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

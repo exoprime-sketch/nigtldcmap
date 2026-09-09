@@ -1,0 +1,196 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:65003/?view=data&element=undesa-sdg-index-score&country=VNM&from=explorer&measure=measure-87fffae7373e&dim.category=SDG1+%EB%B9%88%EA%B3%A4+%EC%A2%85%EC%8B%9D#element-detail",
+  "title": "지속가능발전목표 지수",
+  "body": "검색 결과로 돌아가기 국가 기본 정보 › SDG 데이터 제공 다운로드 가능 지속가능발전목표 지수 베트남 · 지속가능발전목표 지수의 항목별 구성과 연도별 변화를 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 19종 · 관측기간 2000~2025년 이 데이터로 확인할 수 있는 내용 지속가능발전목표 지수의 수준과 장기 변화 지속가능발전목표 지수의 현재 수준과 기준시점별 변화를 확인할 수 있습니다. i 지표 읽는 법 SDG 지수 점수 지속가능발전목표 달성 성과를 여러 지표로 종합한 점수입니다. 점수가 높을수록 전체 SDG 달성 수준이 높음을 뜻합니다. 단위 점 척도 0(낮음)–100(높음) 높고 낮음의 의미 높을수록 SDG 달성 수준이 높음 항목 SDG Index 종합순위 · 위 SDG Index 종합점수 · 점 목표별 달성도 · 점 분류 전체 SDG1 빈곤 종식 SDG2 기아 종식 SDG3 건강과 웰빙 SDG4 양질의 교육 SDG5 성평등 SDG6 물과 위생 SDG7 깨끗한 에너지 SDG8 양질의 일자리와 경제성장 SDG9 산업 · 혁신 · 인프라 SDG10 불평등 완화 SDG11 지속가능한 도시 SDG12 책임있는 소비 · 생산 SDG13 기후변화 대응 SDG14 해양 생태계 SDG15 육상 생태계 SDG16 평화 · 정의 · 제도 SDG17 글로벌 파트너십 세부 분류 전체 17개 목표 평균 달성도(0~100) 목표 단위 달성도 점수(0~100) 조사대상국 중 순위 용어 도움말 ? SDG 설명 ? SDG1 설명 현재 선택 조건에 표시할 값이 없습니다 다른 항목이나 기간을 선택해 확인해 주세요. 자료정보 상세 데이터 · 전체 494행 · 값 있음 479행 · 결측 15행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 862,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "A-014",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "지속가능발전목표 지수의 수준과 장기 변화",
+    "지표 읽는 법",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목 선택",
+      "dimensionKey": null,
+      "testId": "v125-measure-select",
+      "value": "measure-87fffae7373e",
+      "shown": "SDG Index 종합점수 · 점",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-24b846901416",
+          "label": "SDG Index 종합순위 · 위",
+          "disabled": false
+        },
+        {
+          "value": "measure-87fffae7373e",
+          "label": "SDG Index 종합점수 · 점",
+          "disabled": false
+        },
+        {
+          "value": "measure-599d35373f35",
+          "label": "목표별 달성도 · 점",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "분류 선택",
+      "dimensionKey": "category",
+      "testId": null,
+      "value": "SDG1 빈곤 종식",
+      "shown": "SDG1 빈곤 종식",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "SDG1 빈곤 종식",
+          "label": "SDG1 빈곤 종식",
+          "disabled": false
+        },
+        {
+          "value": "SDG2 기아 종식",
+          "label": "SDG2 기아 종식",
+          "disabled": false
+        },
+        {
+          "value": "SDG3 건강과 웰빙",
+          "label": "SDG3 건강과 웰빙",
+          "disabled": false
+        },
+        {
+          "value": "SDG4 양질의 교육",
+          "label": "SDG4 양질의 교육",
+          "disabled": false
+        },
+        {
+          "value": "SDG5 성평등",
+          "label": "SDG5 성평등",
+          "disabled": false
+        },
+        {
+          "value": "SDG6 물과 위생",
+          "label": "SDG6 물과 위생",
+          "disabled": false
+        },
+        {
+          "value": "SDG7 깨끗한 에너지",
+          "label": "SDG7 깨끗한 에너지",
+          "disabled": false
+        },
+        {
+          "value": "SDG8 양질의 일자리와 경제성장",
+          "label": "SDG8 양질의 일자리와 경제성장",
+          "disabled": false
+        },
+        {
+          "value": "SDG9 산업 · 혁신 · 인프라",
+          "label": "SDG9 산업 · 혁신 · 인프라",
+          "disabled": false
+        },
+        {
+          "value": "SDG10 불평등 완화",
+          "label": "SDG10 불평등 완화",
+          "disabled": false
+        },
+        {
+          "value": "SDG11 지속가능한 도시",
+          "label": "SDG11 지속가능한 도시",
+          "disabled": false
+        },
+        {
+          "value": "SDG12 책임있는 소비 · 생산",
+          "label": "SDG12 책임있는 소비 · 생산",
+          "disabled": false
+        },
+        {
+          "value": "SDG13 기후변화 대응",
+          "label": "SDG13 기후변화 대응",
+          "disabled": false
+        },
+        {
+          "value": "SDG14 해양 생태계",
+          "label": "SDG14 해양 생태계",
+          "disabled": false
+        },
+        {
+          "value": "SDG15 육상 생태계",
+          "label": "SDG15 육상 생태계",
+          "disabled": false
+        },
+        {
+          "value": "SDG16 평화 · 정의 · 제도",
+          "label": "SDG16 평화 · 정의 · 제도",
+          "disabled": false
+        },
+        {
+          "value": "SDG17 글로벌 파트너십",
+          "label": "SDG17 글로벌 파트너십",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "세부 분류 선택",
+      "dimensionKey": "detail",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "17개 목표 평균 달성도(0~100)",
+          "label": "17개 목표 평균 달성도(0~100)",
+          "disabled": false
+        },
+        {
+          "value": "목표 단위 달성도 점수(0~100)",
+          "label": "목표 단위 달성도 점수(0~100)",
+          "disabled": false
+        },
+        {
+          "value": "조사대상국 중 순위",
+          "label": "조사대상국 중 순위",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [],
+  "chartTexts": [],
+  "tableRows": [],
+  "emptyNotices": [
+    "현재 선택 조건에 표시할 값이 없습니다 다른 항목이나 기간을 선택해 확인해 주세요."
+  ],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

@@ -1,0 +1,211 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:65003/?view=data&element=ssp-ingu-jeonmang-ssp1-ssp2-ssp3-ssp4-ssp5&country=VNM&from=explorer&measure=measure-03a2515adf3e&year=2020#element-detail",
+  "title": "장기 인구 전망",
+  "body": "검색 결과로 돌아가기 기후 환경 › SSP(공유 사회 경제 경로)기반 사회경제적 리스크 데이터 제공 다운로드 가능 장기 인구 전망 베트남 · 장기 인구 전망의 시나리오별 전망과 기간별 차이를 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 11종 · 관측기간 1950~2100년 이 데이터로 확인할 수 있는 내용 장기 인구 전망의 시나리오·기간별 변화 장기 인구 전망이 시나리오와 기간에 따라 어떻게 달라지는지 확인할 수 있습니다. i 지표 읽는 법 SSP 인구 전망 공유사회경제경로(SSP)별 미래 인구 가정값을 보여줍니다. 인구 증감은 좋고 나쁨을 단독으로 판정하는 점수가 아닙니다. 높고 낮음의 의미 높고 낮음에 가치 판단을 부여하지 않음 항목 인구 과거 실적(참고) · 백만명 인구 전 구간 · 백만명 인구 전망 · 백만명 세부 분류 전체 SSP1 SSP2 SSP3 SSP4 SSP5 연도 2020 2015 2010 2005 2000 1995 1990 1985 1980 1975 1970 1965 1960 1955 1950 인구 과거 실적(참고) 96.2036 백만명 · 2020 주 분석 장기 인구 전망 시나리오별 전망 연도별 항목 추세 1950~2020년 추세 단위: 백만명 인구 과거 실적(참고) 표시기간 전체 축소 확대 전체 101.9135 85.3548 68.7961 52.2375 35.6788 19.1201 1950 1960 1970 1980 1990 2000 2010 2020 연도 측정값(백만명) 자료정보 상세 데이터 · 전체 110행 · 값 있음 110행 · 결측 0행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 809,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "B-019",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "장기 인구 전망의 시나리오·기간별 변화",
+    "지표 읽는 법",
+    "장기 인구 전망 시나리오별 전망",
+    "항목 추세",
+    "1950~2020년 추세",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목 선택",
+      "dimensionKey": null,
+      "testId": "v125-measure-select",
+      "value": "measure-03a2515adf3e",
+      "shown": "인구 과거 실적(참고) · 백만명",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-03a2515adf3e",
+          "label": "인구 과거 실적(참고) · 백만명",
+          "disabled": false
+        },
+        {
+          "value": "measure-1a16449ec4ae",
+          "label": "인구 전 구간 · 백만명",
+          "disabled": false
+        },
+        {
+          "value": "measure-443491e8ce3c",
+          "label": "인구 전망 · 백만명",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "세부 분류 선택",
+      "dimensionKey": "detail",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "SSP1",
+          "label": "SSP1",
+          "disabled": false
+        },
+        {
+          "value": "SSP2",
+          "label": "SSP2",
+          "disabled": false
+        },
+        {
+          "value": "SSP3",
+          "label": "SSP3",
+          "disabled": false
+        },
+        {
+          "value": "SSP4",
+          "label": "SSP4",
+          "disabled": false
+        },
+        {
+          "value": "SSP5",
+          "label": "SSP5",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "연도 선택",
+      "dimensionKey": null,
+      "testId": "v125-year-select",
+      "value": "2020",
+      "shown": "2020",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "2020",
+          "label": "2020",
+          "disabled": false
+        },
+        {
+          "value": "2015",
+          "label": "2015",
+          "disabled": false
+        },
+        {
+          "value": "2010",
+          "label": "2010",
+          "disabled": false
+        },
+        {
+          "value": "2005",
+          "label": "2005",
+          "disabled": false
+        },
+        {
+          "value": "2000",
+          "label": "2000",
+          "disabled": false
+        },
+        {
+          "value": "1995",
+          "label": "1995",
+          "disabled": false
+        },
+        {
+          "value": "1990",
+          "label": "1990",
+          "disabled": false
+        },
+        {
+          "value": "1985",
+          "label": "1985",
+          "disabled": false
+        },
+        {
+          "value": "1980",
+          "label": "1980",
+          "disabled": false
+        },
+        {
+          "value": "1975",
+          "label": "1975",
+          "disabled": false
+        },
+        {
+          "value": "1970",
+          "label": "1970",
+          "disabled": false
+        },
+        {
+          "value": "1965",
+          "label": "1965",
+          "disabled": false
+        },
+        {
+          "value": "1960",
+          "label": "1960",
+          "disabled": false
+        },
+        {
+          "value": "1955",
+          "label": "1955",
+          "disabled": false
+        },
+        {
+          "value": "1950",
+          "label": "1950",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [
+    "인구 과거 실적(참고) 96.2036 백만명 · 2020"
+  ],
+  "chartTexts": [
+    "101.9135",
+    "85.3548",
+    "68.7961",
+    "52.2375",
+    "35.6788",
+    "19.1201",
+    "1950",
+    "1960",
+    "1970",
+    "1980",
+    "1990",
+    "2000",
+    "2010",
+    "2020",
+    "연도",
+    "측정값(백만명)"
+  ],
+  "tableRows": [],
+  "emptyNotices": [],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

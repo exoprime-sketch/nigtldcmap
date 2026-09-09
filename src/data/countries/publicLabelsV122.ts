@@ -2,7 +2,9 @@ import type { VietnamCatalogElementV121 } from "../vietnam/vietnamTypesV121";
 
 const CURATED_TITLES: Record<string, { title: string; short: string }> = {
   "A-001": { title: "부패인식지수(CPI)", short: "부패인식지수" },
-  "A-002": { title: "국가 정책·제도 평가(CPIA)", short: "국가 정책·제도 평가" },
+  // The delivery ships WGI, not CPIA. Naming the screen after the framework it
+  // does not carry sent a reader looking for a 1-6 CPIA score that is not here.
+  "A-002": { title: "국가 거버넌스 지표(WGI)", short: "국가 거버넌스 지표" },
   "A-003": { title: "국내총생산 및 경제성장", short: "국내총생산" },
   "A-004": { title: "빈곤율 및 극빈곤율", short: "빈곤율" },
   "A-005": { title: "산업구조", short: "산업구조" },
@@ -149,7 +151,7 @@ function removeFieldInventory(value: string): string {
 function normalizeAcronymTitle(value: string): string {
   const raw = compactWhitespace(value);
   if (/^CPI\s*\(/i.test(raw)) return "부패인식지수(CPI)";
-  if (/^CPIA\s*\(/i.test(raw)) return "국가 정책·제도 평가(CPIA)";
+  if (/^CPIA\s*\(/i.test(raw)) return "국가 거버넌스 지표(WGI)";
   if (/^GDP(?:\b|\[)/i.test(raw)) return "국내총생산 및 경제성장";
   return raw;
 }

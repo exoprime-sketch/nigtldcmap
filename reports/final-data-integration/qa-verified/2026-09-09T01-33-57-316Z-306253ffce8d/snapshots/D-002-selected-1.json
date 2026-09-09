@@ -1,0 +1,137 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:65003/?view=data&element=sijang-seongjangryul&country=VNM&from=explorer&measure=measure-62de91e6eba5&dim.category=%EB%B0%94%EC%9D%B4%EC%98%A4%EC%97%90%EB%84%88%EC%A7%80+%EA%B8%B0%EC%88%A0&dim.technology=1#element-detail",
+  "title": "시장 성장률",
+  "body": "검색 결과로 돌아가기 시장·산업 및 재원 › 기후기술 분야별 수익성 평가 기초 정보 데이터 제공 다운로드 가능 시장 성장률 베트남 · 시장 성장률의 사업 규모와 분야·기관별 구성을 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 6종 · 관측기간 2030년 이 데이터로 확인할 수 있는 내용 시장 성장률의 항목별 공개 현황 시장 성장률의 공개 값과 항목별 차이를 확인할 수 있습니다. 분류 전체 바이오에너지 기술 수력 기술 전력 통합 기술(BESS) 전력 통합 기술(양수) 태양광 기술 폐자원 기술 풍력 기술(육상 · 근해) 풍력 기술(해상) 기술 전체 1 3 5 8 15 24 현재 선택 조건에 표시할 값이 없습니다 다른 항목이나 기간을 선택해 확인해 주세요. 자료정보 상세 데이터 · 전체 8행 · 값 있음 6행 · 결측 2행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 437,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "D-002",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "시장 성장률의 항목별 공개 현황",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "분류 선택",
+      "dimensionKey": "category",
+      "testId": null,
+      "value": "바이오에너지 기술",
+      "shown": "바이오에너지 기술",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "바이오에너지 기술",
+          "label": "바이오에너지 기술",
+          "disabled": false
+        },
+        {
+          "value": "수력 기술",
+          "label": "수력 기술",
+          "disabled": false
+        },
+        {
+          "value": "전력 통합 기술(BESS)",
+          "label": "전력 통합 기술(BESS)",
+          "disabled": false
+        },
+        {
+          "value": "전력 통합 기술(양수)",
+          "label": "전력 통합 기술(양수)",
+          "disabled": false
+        },
+        {
+          "value": "태양광 기술",
+          "label": "태양광 기술",
+          "disabled": false
+        },
+        {
+          "value": "폐자원 기술",
+          "label": "폐자원 기술",
+          "disabled": false
+        },
+        {
+          "value": "풍력 기술(육상 · 근해)",
+          "label": "풍력 기술(육상 · 근해)",
+          "disabled": false
+        },
+        {
+          "value": "풍력 기술(해상)",
+          "label": "풍력 기술(해상)",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "기술 선택",
+      "dimensionKey": "technology",
+      "testId": null,
+      "value": "1",
+      "shown": "1",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "1",
+          "label": "1",
+          "disabled": false
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "disabled": false
+        },
+        {
+          "value": "5",
+          "label": "5",
+          "disabled": false
+        },
+        {
+          "value": "8",
+          "label": "8",
+          "disabled": false
+        },
+        {
+          "value": "15",
+          "label": "15",
+          "disabled": false
+        },
+        {
+          "value": "24",
+          "label": "24",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [],
+  "chartTexts": [],
+  "tableRows": [],
+  "emptyNotices": [
+    "현재 선택 조건에 표시할 값이 없습니다 다른 항목이나 기간을 선택해 확인해 주세요."
+  ],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

@@ -16,6 +16,9 @@ import {
   publicElementCopyV126,
 } from "../../../data/visualization/publicCopyRegistryV126";
 import { getPublicAnalysisHeadingsV134 } from "../../../data/visualization/publicAnalysisHeadingsV134";
+import PublicRegionScenarioSummaryV137, {
+  regionScenarioShapeV137,
+} from "./PublicRegionScenarioSummaryV137";
 import { getPublicIndicatorInterpretationV129 } from "../../../data/interpretation/publicIndicatorInterpretationV129";
 import type {
   VietnamEntityV124,
@@ -130,6 +133,23 @@ export default function PublicDataAnalysisRouterV126({
     () => publicAggregationBasisV136_2(semanticRows.map((row) => row.dimensionLabels)),
     [semanticRows]
   );
+  // Province-by-scenario-by-year deliveries arrive as entity attribute columns,
+  // so the observation-driven renderers find nothing and the page falls through
+  // to a card grid of record keys. Where that shape is present and the element
+  // has no observations of its own to draw, read the rows for what they are.
+  const regionScenarioSummary = useMemo(() => {
+    if (semanticRows.length > 0) return null;
+    if (!regionScenarioShapeV137(entities)) return null;
+    return (
+      <PublicRegionScenarioSummaryV137
+        elementId={elementId}
+        entities={entities}
+        elementTitle={copy.title}
+        selectorState={selectorState}
+        onSelectorStateChange={onSelectorStateChange}
+      />
+    );
+  }, [copy.title, elementId, entities, onSelectorStateChange, selectorState, semanticRows.length]);
   const adapterContract = useMemo<ElementVisualizationContractV125>(
     () => ({
       ...contract,
@@ -212,7 +232,7 @@ export default function PublicDataAnalysisRouterV126({
               secondaryTitle={headings?.secondaryChartTitle}
             />
           </Suspense>
-        ) : elementId === "B-005" ? (
+        ) : elementId === "B-005" && semanticRows.length > 0 ? (
           <Suspense fallback={<div className="pav126-empty" role="status" data-testid="public-analysis-pending">가뭄 전망을 불러오는 중입니다</div>}>
             <SpeiDroughtScenarioAnalysisV134
               rows={semanticRows}
@@ -283,7 +303,7 @@ export default function PublicDataAnalysisRouterV126({
             selectorState={selectorState}
             onSelectorStateChange={onSelectorStateChange}
           />
-        ) : (
+        ) : regionScenarioSummary ?? (
           <SemanticArchetypePreviewV125
             contract={adapterContract}
             semantics={semantics}

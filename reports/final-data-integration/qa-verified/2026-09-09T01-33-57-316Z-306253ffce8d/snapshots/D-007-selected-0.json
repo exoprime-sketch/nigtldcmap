@@ -1,0 +1,117 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:65003/?view=data&element=gihuyesantaeging-cbt-climate-budget-tagging-doib-yeobu-mic-sujun&country=VNM&from=explorer&measure=measure-f23fdc3a02fd&year=2015&dim.category=%EB%8F%84%EC%9E%85+%EC%97%AC%EB%B6%80#element-detail",
+  "title": "기후예산태깅(CBT, Climate Budget Tagging) 도입 여부 및 수준",
+  "body": "검색 결과로 돌아가기 시장·산업 및 재원 › 기후대응·기후기술 관련 정부 예산 데이터 제공 다운로드 가능 기후예산태깅(CBT, Climate Budget Tagging) 도입 여부 및 수준 베트남 · 기후예산태깅(CBT, Climate Budget Tagging) 도입 여부 및 수준의 사업 규모와 분야·기관별 구성을 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 3종 · 관측기간 2015~2022년 이 데이터로 확인할 수 있는 내용 기후예산태깅(CBT, Climate Budget Tagging) 도입 여부 및 수준의 항목별 공개 현황 기후예산태깅(CBT, Climate Budget Tagging) 도입 여부 및 수준의 공개 값과 항목별 차이를 확인할 수 있습니다. 분류 전체 도입 여부 제도화 수준 태깅 분류체계 구조 세부 분류 전체 기둥·범주 구성 상시 예산과정 내장 정도 제도 도입 형태 연도 2015 용어 도움말 ? CBT 설명 기후예산태깅(CBT) 부분 도입 — TCCRE 유형분류 기반 사후 태깅 구분 · 2015 · 도입 여부 · 제도 도입 형태 주 분석 기후예산태깅(CBT, Climate Budget Tagging) 도입 여부 및 수준 항목별 현황 연대기 정책·협정 타임라인 2015 기후예산태깅(CBT) · 도입 여부 — 제도 도입 형태 부분 도입 — TCCRE 유형분류 기반 사후 태깅 원문 보기 자료정보 상세 데이터 · 전체 3행 · 값 있음 3행 · 결측 0행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 751,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "D-007",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "기후예산태깅(CBT, Climate Budget Tagging) 도입 여부 및 수준의 항목별 공개 현황",
+    "기후예산태깅(CBT, Climate Budget Tagging) 도입 여부 및 수준 항목별 현황",
+    "정책·협정 타임라인",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "분류 선택",
+      "dimensionKey": "category",
+      "testId": null,
+      "value": "도입 여부",
+      "shown": "도입 여부",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "도입 여부",
+          "label": "도입 여부",
+          "disabled": false
+        },
+        {
+          "value": "제도화 수준",
+          "label": "제도화 수준",
+          "disabled": false
+        },
+        {
+          "value": "태깅 분류체계 구조",
+          "label": "태깅 분류체계 구조",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "세부 분류 선택",
+      "dimensionKey": "detail",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "기둥·범주 구성",
+          "label": "기둥·범주 구성",
+          "disabled": false
+        },
+        {
+          "value": "상시 예산과정 내장 정도",
+          "label": "상시 예산과정 내장 정도",
+          "disabled": false
+        },
+        {
+          "value": "제도 도입 형태",
+          "label": "제도 도입 형태",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "연도 선택",
+      "dimensionKey": null,
+      "testId": "v125-year-select",
+      "value": "2015",
+      "shown": "2015",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "2015",
+          "label": "2015",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [
+    "기후예산태깅(CBT) 부분 도입 — TCCRE 유형분류 기반 사후 태깅 구분 · 2015 · 도입 여부 · 제도 도입 형태"
+  ],
+  "chartTexts": [],
+  "tableRows": [],
+  "emptyNotices": [],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

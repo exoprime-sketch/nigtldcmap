@@ -182,6 +182,60 @@ function titleFromFieldsV131(
   return null;
 }
 
+/**
+ * A GADM record key is an identifier, not a name.
+ *
+ * The province-year deliveries (CMIP6 climate, heat, flood, drought, forest,
+ * resource potential) key each row as ``VNM.1_1_ssp370_2096``. That string was
+ * reaching the screen as the card title, so nineteen detail screens listed
+ * twelve of them as headings - the reader saw the internal key and learned
+ * nothing. The delivery states the three things that key encodes in columns of
+ * their own, so the card is titled with those instead.
+ */
+const RECORD_KEY_TITLE_V137 = /^[A-Z]{3}\.\d+_\d+(?:_[A-Za-z0-9]+)*$/u;
+
+const SCENARIO_LABELS_V137: Record<string, string> = {
+  historical: "과거 관측",
+  ssp119: "SSP1-1.9",
+  ssp126: "SSP1-2.6",
+  ssp245: "SSP2-4.5",
+  ssp370: "SSP3-7.0",
+  ssp460: "SSP4-6.0",
+  ssp585: "SSP5-8.5",
+};
+
+function regionYearCompositeV137(
+  entity: VietnamEntityV124
+): FactualTitleV131 | null {
+  const attributes = entity.normalizedAttributes || {};
+  const region =
+    titleTextV131(attributes["지역명_로마자"]) ||
+    titleTextV131(attributes["지역명_베트남어"]) ||
+    titleTextV131(attributes["2025_개편_후_소속_34개_체계"]);
+  const rawScenario = titleTextV131(attributes["시나리오"]);
+  const scenario = rawScenario
+    ? SCENARIO_LABELS_V137[rawScenario.toLowerCase()] || rawScenario
+    : null;
+  const year = titleTextV131(attributes["연도"]) || titleTextV131(attributes["기준연도"]);
+  const parts = factualPartsV131([
+    region,
+    scenario,
+    year ? `${year}년` : null,
+  ]);
+  if (!region || parts.length < 2) return null;
+  // Names the dimensions, not this row's values, so the sentence is the same on
+  // every card of the element and an element without a scenario column does not
+  // claim one.
+  const dimensions = ["지역", scenario ? "시나리오" : null, year ? "연도" : null].filter(
+    Boolean
+  );
+  return {
+    title: parts.join(" · "),
+    nameAvailability: "not-provided",
+    secondaryNote: `원천이 개별 명칭 대신 ${dimensions.join("·")}로 행을 구분합니다.`,
+  };
+}
+
 function publicSourceIdentifierV131(entity: VietnamEntityV124): string | null {
   const attributes = entity.normalizedAttributes || {};
   const projectId = titleTextV131(attributes.projectId);
@@ -463,6 +517,20 @@ export function resolvePublicEntityTitleV131(
   }
 
   const directTitle = titleTextV131(entity.name);
+  // A name that is really the row's own key tells a reader nothing. Where the
+  // delivery separates the dimensions that key encodes, use those.
+  if (!directTitle || RECORD_KEY_TITLE_V137.test(directTitle)) {
+    const composite = regionYearCompositeV137(entity);
+    if (composite) {
+      return {
+        title: composite.title,
+        strategy: "factual-composite",
+        nameAvailability: composite.nameAvailability,
+        secondaryNote: composite.secondaryNote,
+        identifierFacts: [],
+      };
+    }
+  }
   if (directTitle) {
     return {
       title: directTitle,
