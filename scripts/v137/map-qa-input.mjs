@@ -126,6 +126,20 @@ export async function elementPoint(cdp, evaluateValue, selector) {
 }
 
 export async function clickSelector(cdp, evaluateValue, selector, timeoutMs = 6000) {
+  // A control below the fold is reachable - a reader scrolls to it - but a
+  // pointer aimed at page coordinates is not. A-002's year control sits 2,100px
+  // down its page and every attempt to drive it reported the control as dead.
+  await evaluateValue(
+    cdp,
+    `(() => {
+      const el = document.querySelector(${json(selector)});
+      if (!el) return false;
+      const rect = el.getBoundingClientRect();
+      if (rect.top >= 0 && rect.bottom <= window.innerHeight) return true;
+      el.scrollIntoView({ block: "center" });
+      return true;
+    })()`
+  );
   // A control that is still being laid out is not the same as one that is not
   // there. Waiting for a rectangle is waiting for the thing itself, so the
   // timeout stays a real failure rather than a race the run loses at random.

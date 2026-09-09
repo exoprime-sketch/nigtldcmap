@@ -140,6 +140,15 @@ function main() {
     if (EXCLUDED_PUBLIC.has(entry.name)) continue;
     copyEntry(resolve(ROOT, "public", entry.name), join(publicTo, entry.name));
   }
+  // Everything else the app fetches from public/data. Excluding the whole
+  // directory dropped public/data/world-countries.geojson from every candidate,
+  // so the map's world outline requested a file that was not there, the static
+  // server answered with index.html, and MapLibre logged a parse error on every
+  // run - which no CDP audit was reading.
+  for (const entry of readdirSync(resolve(ROOT, "public/data"), { withFileTypes: true })) {
+    if (entry.name === "vietnam") continue;
+    copyEntry(resolve(ROOT, "public/data", entry.name), join(publicTo, "data", entry.name));
+  }
   // v1 stays as the repository ships it: the ETL reads it as the previous
   // projection, and the app never fetches it.
   mirrorDirectory(resolve(ROOT, "public/data/vietnam/v1"), join(publicTo, "data/vietnam/v1"));

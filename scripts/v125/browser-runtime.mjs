@@ -79,7 +79,10 @@ export async function startStaticBuildServer(buildRoot, options = {}) {
   });
   await new Promise((resolveListen, reject) => {
     server.once("error", reject);
-    server.listen(0, "127.0.0.1", resolveListen);
+    // A caller that has to name the address in advance - Playwright's webServer
+    // config, which starts the process and then waits on a URL - can ask for a
+    // fixed port. Everyone else keeps the ephemeral one.
+    server.listen(Number(options.port) || 0, "127.0.0.1", resolveListen);
   });
   const address = server.address();
   if (!address || typeof address === "string") throw new Error("static server address unavailable");
