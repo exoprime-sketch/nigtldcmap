@@ -818,7 +818,6 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "dimensionLabels": [
       "세부 분류",
       "detail_2",
-      "detail_3",
       "연도"
     ],
     "downloadAvailable": true,
@@ -1029,7 +1028,6 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "dimensionLabels": [
       "세부 분류",
       "detail_2",
-      "detail_3",
       "연도"
     ],
     "downloadAvailable": true,
@@ -1297,7 +1295,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "measureLabels": [
       "INFORM Risk",
       "INFORM Risk 세계 순위",
-      "INFORM Risk 시계열(2017",
+      "INFORM Risk 시계열(2017–2026)",
       "INFORM Risk 위험등급",
       "INFORM 결측 지표 수",
       "INFORM 신뢰도 부족 지수",
@@ -1325,7 +1323,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "elementId": "B-021",
     "measureLabels": [
       "GVI 7개 사회경제 차원 하위지수",
-      "GVI 장래전망(PGVI, 2020",
+      "GVI 장래전망(PGVI, 2020–2100)",
       "GVI 취약성 지수",
       "구성지표",
       "전망 구성지표"
@@ -1573,7 +1571,6 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "dataPresenceStatus": "actual-records",
     "dimensionLabels": [
       "세부 분류",
-      "detail_2",
       "레코드 유형",
       "기간",
       "연도"
@@ -1599,7 +1596,6 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "dataPresenceStatus": "actual-records",
     "dimensionLabels": [
       "세부 분류",
-      "detail_2",
       "레코드 유형",
       "기간",
       "연도"
@@ -1624,7 +1620,6 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "dimensionLabels": [
       "세부 분류",
       "detail_2",
-      "detail_3",
       "레코드 유형",
       "기간",
       "연도"
@@ -1661,9 +1656,8 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "산림탄소 총배출(연평균)",
       "산림탄소 총흡수(연평균)",
       "수관 면적",
-      "지상부 바이오매스 탄소저장량",
-      "지상부 탄소 밀도",
-      "지상부 탄소밀도"
+      "지상부 탄소밀도",
+      "지상부 탄소저장량"
     ],
     "noDataReason": null,
     "populatedRecordCount": 608,
@@ -2447,7 +2441,6 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "dataPresenceStatus": "actual-records",
     "dimensionLabels": [
       "세부 분류",
-      "detail_2",
       "레코드 유형",
       "기간"
     ],

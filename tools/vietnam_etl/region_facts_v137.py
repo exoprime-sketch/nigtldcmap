@@ -17,12 +17,12 @@ from typing import Any, Mapping
 
 from .b034_facts_v137 import (
     THRESHOLD_RE,
-    _matches_label,
     _number,
     _resolve_region,
     _text,
     _unit_from_label,
     build_region_crosswalk,
+    resolve_attribute_key,
 )
 
 # Each entry binds one printed column label to a measure. Nothing is positional.
@@ -134,9 +134,7 @@ def derive_region_facts(
         threshold = f"{threshold_match.group(1)}%" if threshold_match else None
 
         for measure in contract["measures"]:
-            key = next(
-                (k for k in attributes if _matches_label(k, measure["sourceLabel"])), None
-            )
+            key = resolve_attribute_key(workbook, attributes, measure["sourceLabel"])
             if key is None:
                 skipped.append(
                     {"elementId": element_id, "reason": "SOURCE_FIELD_ABSENT",

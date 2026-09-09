@@ -172,7 +172,58 @@ def _resolve_region(
 
 def _unit_from_label(label: str) -> str:
     inner = re.findall(r"\(([^()]*)\)", label)
-    return inner[-1].strip() if inner else ""
+    return normalize_unit(inner[-1]) if inner else ""
+
+
+def attribute_key_by_label(
+    workbook: Mapping[str, Any], attributes: Mapping[str, Any]
+) -> dict[str, str]:
+    """Map each printed column label to the attribute key the parser emitted.
+
+    ``semantic_attribute_name`` lets a Latin parenthetical win over the rest of
+    a label, so 분석대상 면적(ha), 수관 면적 2000(ha) and 수관 면적 2010(ha) all fold
+    to ``ha`` and the parser disambiguates them into ``ha``, ``ha_2``, ``ha_3``.
+    A binding that only compares folded forms therefore matched all three of
+    B-031's measures to the first column, and the element published the province
+    polygon area three times under three different measure names.
+
+    The parser writes attributes in column order and ``entityAttributeLabels`` is
+    keyed by the same column, so zipping the two recovers the binding the parser
+    actually made - which is what ``_authorized_entities`` already relies on when
+    it names the published attributes.
+    """
+
+    labels = workbook.get("entityAttributeLabels") or {}
+    ordered = sorted(
+        labels,
+        key=lambda field: int(re.search(r"\d+", field).group())
+        if re.search(r"\d+", field)
+        else 9999,
+    )
+    keys = list(attributes)
+    mapping: dict[str, str] = {}
+    for index, field in enumerate(ordered):
+        if index >= len(keys):
+            break
+        # A repeated printed label keeps its first column, matching the order
+        # the contracts are read in.
+        mapping.setdefault(_text(labels[field]), keys[index])
+    return mapping
+
+
+def resolve_attribute_key(
+    workbook: Mapping[str, Any], attributes: Mapping[str, Any], source_label: str
+) -> str | None:
+    """The attribute key ``source_label`` was printed over, or None."""
+
+    key = attribute_key_by_label(workbook, attributes).get(_text(source_label))
+    if key is not None and key in attributes:
+        return key
+    # A delivery that renames or drops the label row still binds by folded form.
+    for candidate in attributes:
+        if _matches_label(candidate, source_label):
+            return candidate
+    return None
 
 
 def derive_b034_facts(
@@ -220,11 +271,9 @@ def derive_b034_facts(
                 attr_key = labels.get(contract["sourceLabel"])
                 # Bind by printed label; a column that is absent is absent, not
                 # the next column along.
-                normalized_key = None
-                for key in attributes:
-                    if _matches_label(key, contract["sourceLabel"]):
-                        normalized_key = key
-                        break
+                normalized_key = resolve_attribute_key(
+                    workbook, attributes, contract["sourceLabel"]
+                )
                 if normalized_key is None:
                     skipped.append(
                         {
@@ -273,7 +322,7 @@ def derive_b034_facts(
 
         # National indicator: one value per row, unit printed beside it.
         value_raw = attributes.get("값_전국_계열")
-        unit = _text(attributes.get("단위_전국_계열"))
+        unit = normalize_unit(attributes.get("단위_전국_계열"))
         year_raw = attributes.get("기준연도")
         record = {
             "elementId": ELEMENT_ID,
@@ -417,6 +466,20 @@ def _matches_label(normalized_key: str, label: str) -> bool:
     return folded_key == folded_label or folded_label.endswith(folded_key)
 
 
+_SUBSCRIPT_DIGITS = str.maketrans("₀₁₂₃₄₅₆₇₈₉", "0123456789")
+
+
+def normalize_unit(value: Any) -> str:
+    """One spelling per unit.
+
+    The sheet writes "Mg CO2e/yr" on the province rows and "Mg CO₂e/yr" on the
+    national ones. They are the same unit, but the two spellings became two
+    entries in the 항목 list for the same measure, each holding half the series.
+    """
+
+    return " ".join(_text(value).translate(_SUBSCRIPT_DIGITS).split())
+
+
 def _number(value: Any) -> Any:
     if value is None:
         return None
@@ -445,9 +508,27 @@ _NATIONAL_MEASURES = (
 )
 
 
+# One public name per measure, whichever spelling the row happens to print.
+# The sheet writes both "지상부 탄소밀도" and "지상부 탄소 밀도", and both reached the
+# screen as separate items in the 항목 list for the same series.
+_NATIONAL_PUBLIC_LABELS = {
+    "b034-forest-carbon-net-flux": "산림탄소 순플럭스",
+    "b034-forest-carbon-gross-emissions": "산림탄소 총배출",
+    "b034-forest-carbon-gross-removals": "산림탄소 총흡수",
+    "b034-agb-carbon-density": "지상부 탄소밀도",
+    "b034-agb-carbon-stock": "지상부 탄소저장량",
+    "b034-bgb-soil-carbon-stock": "지하부·토양 탄소저장량",
+    "b034-tree-cover-area": "수관 면적",
+}
+
+
 def _national_measure(classification: str) -> dict[str, Any] | None:
     """Identify a national row's measure from its printed 구분 text."""
     for label, measure_id, quantity in _NATIONAL_MEASURES:
         if label in classification:
-            return {"measureId": measure_id, "publicLabel": label, "quantityType": quantity}
+            return {
+                "measureId": measure_id,
+                "publicLabel": _NATIONAL_PUBLIC_LABELS.get(measure_id, label),
+                "quantityType": quantity,
+            }
     return None

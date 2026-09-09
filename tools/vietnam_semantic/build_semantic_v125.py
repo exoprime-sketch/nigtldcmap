@@ -486,7 +486,11 @@ def deduplicate_indicators(
 
 def generic_indicator_structure(indicator: dict[str, Any]) -> tuple[str, dict[str, str], dict[str, str]]:
     label = nfc(indicator.get("labelKo")) or indicator["indicatorId"]
-    dash_parts = [nfc(part) for part in re.split(r"\s*[—–]\s*", label) if nfc(part)]
+    # Only the em dash separates a measure from its qualifiers. An en dash is
+    # part of a name here - "Bà Rịa–Vũng Tàu" is one province, and splitting on
+    # it truncated the province to "Bà Rịa" and invented a detail_2 dimension
+    # whose single value was "Vũng Tàu".
+    dash_parts = [nfc(part) for part in re.split(r"\s*—\s*", label) if nfc(part)]
     lead_parts = [nfc(part) for part in re.split(r"\s*·\s*", dash_parts[0]) if nfc(part)]
     measure_label = lead_parts[0] if lead_parts else label
     dimensions: dict[str, str] = {}

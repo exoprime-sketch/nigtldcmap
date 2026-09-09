@@ -475,6 +475,11 @@ def _authorized_observations(
     return result
 
 
+def _slot_order(source_field: str) -> int:
+    match = re.search(r"\d+", source_field)
+    return int(match.group()) if match else 9999
+
+
 def _safe_field_definitions(
     workbook: Mapping[str, Any], base_payload: Mapping[str, Any]
 ) -> list[dict[str, str]]:
@@ -483,16 +488,47 @@ def _safe_field_definitions(
         item.get("sourceField"): item
         for item in base_payload.get("meta", {}).get("fieldDefinitions", [])
     }
+    # The published key for a column came from whatever V1 held in the same
+    # slot. When the final delivery inserts a column, every slot after it moves
+    # and that positional carry-over renames the data: E-014 published 체결국 as
+    # signedDate, 서명일 as scope, 적용범위 as status and 현행 여부 as sourceUrl -
+    # four fields, each labelled as its neighbour. E-008 was shifted by two from
+    # attr_3 on, and E-018 by one from attr_6.
+    #
+    # A shift shows itself: a delivery label that V1 also has, but in a
+    # different slot. Where that happens the V1 keys are re-bound by label, so a
+    # column keeps the key it has always published and a column V1 never had
+    # gets a key of its own. Nothing is re-bound when no such move is present -
+    # the A-series shares one legend across five elements ("속성1(A-013:… /
+    # A-024:전압_kV / …)") which matches no V1 label at all, and there the V1
+    # slot names are the accurate ones.
+    base_label_slot: dict[str, str] = {}
+    for field, item in base_defs.items():
+        label = nfc_text(str(item.get("label") or "")).strip()
+        if label:
+            base_label_slot.setdefault(label, field)
+    ordered_fields = sorted(labels, key=_slot_order)
+
+    def delivery_label(field: str) -> str:
+        return nfc_text(str(labels.get(field) or "")).strip()
+
+    def base_label(field: str) -> str:
+        return nfc_text(str((base_defs.get(field) or {}).get("label") or "")).strip()
+
+    columns_shifted = any(
+        delivery_label(field)
+        and delivery_label(field) != base_label(field)
+        and base_label_slot.get(delivery_label(field), field) != field
+        for field in ordered_fields
+    )
     used: set[str] = set()
     definitions: list[dict[str, str]] = []
-    for source_field in sorted(
-        labels,
-        key=lambda value: int(re.search(r"\d+", value).group())
-        if re.search(r"\d+", value)
-        else 9999,
-    ):
+    for source_field in ordered_fields:
+        binding_field = source_field
+        if columns_shifted:
+            binding_field = base_label_slot.get(delivery_label(source_field), "")
         base_key = str(
-            base_defs.get(source_field, {}).get("normalizedKey")
+            (base_defs.get(binding_field) or {}).get("normalizedKey")
             or re.sub(r"[^A-Za-z0-9가-힣]+", "_", labels[source_field]).strip("_")
             or source_field
         )
@@ -508,7 +544,15 @@ def _safe_field_definitions(
     return definitions
 
 
-_NOTE_NAME_RE = re.compile(r"명칭\s*[:：]\s*([^·\n]+)")
+# The deliveries state a row name in the note under more than one heading;
+# A-029 writes the treaty name as 국문명, which left all 19 rows titled by
+# their signing date. The clause ends at a spaced separator: 'ASEAN-호주·뉴질랜드
+# FTA' carries a middle dot inside the name itself.
+_NOTE_NAME_RE = re.compile(
+    r"(?:국문명|명칭)\s*[:：]\s*(.+?)(?=\s+·\s+|$)",
+    # `.` stops at a line break; MULTILINE lets `$` end the clause there too.
+    re.MULTILINE,
+)
 
 
 def _name_from_note(note: Any) -> str:
@@ -546,6 +590,11 @@ def _entity_name(attributes: Mapping[str, Any], fallback: str, note: Any = None)
         "기관명",
         "속성1_레코드명",
         "레코드명",
+        # B-023 and B-028 name what each row measures in its own column; without
+        # it both screens listed their record keys as headings
+        # ("discharge_redriver_min_2010").
+        "지표명",
+        "전국_지표명",
     )
     for key in preferred:
         value = attributes.get(key)
@@ -741,7 +790,11 @@ def _b034_projection(
                 "reorganised2025Parent": fact["reorganised2025Parent"],
                 "threshold": fact["threshold"],
                 "statisticType": fact["statisticType"],
-                "provenance": fact["provenance"],
+                "provenance": {
+                    **fact["provenance"],
+                    "sourceOrg": fact["provenance"].get("sourceOrg")
+                    or _workbook_source_org(workbook),
+                },
             }
         )
 
@@ -809,10 +862,31 @@ def _b034_projection(
                 "threshold": threshold,
                 "statisticType": fact["statisticType"],
                 "sourceYearLabel": fact.get("sourceYearLabel"),
-                "provenance": fact["provenance"],
+                "provenance": {
+                    **fact["provenance"],
+                    "sourceOrg": fact["provenance"].get("sourceOrg")
+                    or _workbook_source_org(workbook),
+                },
             }
         )
     return observations, list(indicators.values()), derived
+
+
+def _workbook_source_org(workbook: Mapping[str, Any]) -> str | None:
+    """The organisations the workbook's own metadata names.
+
+    The derived province facts carry a provenance object built from the sheet
+    coordinates alone, so the source panel found no organisation and B-031,
+    B-032, B-033 and B-034 told a reader "공개 자료에 기관명이 명시되지 않음" while
+    their own metadata named Global Forest Watch.
+    """
+
+    names = [
+        _text_value(item)
+        for item in (workbook.get("sourceOrganizations") or [])
+        if _text_value(item)
+    ]
+    return " · ".join(dict.fromkeys(names)) or None
 
 
 def _region_projection(
@@ -883,7 +957,11 @@ def _region_projection(
                 "threshold": fact["threshold"],
                 "denominatorBasis": fact.get("denominatorBasis"),
                 "statisticType": fact["statisticType"],
-                "provenance": fact["provenance"],
+                "provenance": {
+                    **fact["provenance"],
+                    "sourceOrg": fact["provenance"].get("sourceOrg")
+                    or _workbook_source_org(workbook),
+                },
             }
         )
     return observations, list(indicators.values()), derived
