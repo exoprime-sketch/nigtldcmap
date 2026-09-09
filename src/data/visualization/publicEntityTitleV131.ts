@@ -192,7 +192,20 @@ function titleFromFieldsV131(
  * nothing. The delivery states the three things that key encodes in columns of
  * their own, so the card is titled with those instead.
  */
+/** A column that holds a row key rather than a name. */
+const IDENTIFIER_COLUMN_V137 = /레코드[_\s]*키|번호|코드|ID|_id/iu;
+
+const NON_NAME_TITLE_V137 = /^(?:[\d]+(?:[.,]\d+)*|\d{4}-\d{2}-\d{2})$/u;
+
 const RECORD_KEY_TITLE_V137 = /^[A-Z]{3}\.\d+_\d+(?:_[A-Za-z0-9]+)*$/u;
+
+/**
+ * A composed key rather than a name. B-017's rows are keyed
+ * "<HydroBASINS>-<GADM GID_1>-<aquifer>", and where the source has no value
+ * the key carries a literal "None": the screen listed twelve cards titled
+ * "None-VNM.33_1-None".
+ */
+const COMPOSED_RECORD_KEY_V137 = /(?:^|[-_])[A-Z]{3}\.\d+_\d+(?:[-_]|$)/u;
 
 const SCENARIO_LABELS_V137: Record<string, string> = {
   historical: "과거 관측",
@@ -204,6 +217,16 @@ const SCENARIO_LABELS_V137: Record<string, string> = {
   ssp585: "SSP5-8.5",
 };
 
+/** "지역으로" / "연도로" - the instrumental particle follows the final jamo. */
+function koreanInstrumentalV137(text: string): string {
+  const last = text.trim().slice(-1);
+  const code = last.charCodeAt(0);
+  if (Number.isNaN(code) || code < 0xac00 || code > 0xd7a3) return "로";
+  const finalJamo = (code - 0xac00) % 28;
+  // ㄹ takes the bare 로, like a syllable with no final consonant at all.
+  return finalJamo === 0 || finalJamo === 8 ? "로" : "으로";
+}
+
 function regionYearCompositeV137(
   entity: VietnamEntityV124
 ): FactualTitleV131 | null {
@@ -211,28 +234,47 @@ function regionYearCompositeV137(
   const region =
     titleTextV131(attributes["지역명_로마자"]) ||
     titleTextV131(attributes["지역명_베트남어"]) ||
-    titleTextV131(attributes["2025_개편_후_소속_34개_체계"]);
+    titleTextV131(attributes["2025_개편_후_소속_34개_체계"]) ||
+    // B-008's rows are tide-gauge stations, not provinces.
+    titleTextV131(attributes["관측소명_PSMSL"]) ||
+    titleTextV131(attributes["관측소명"]);
+  // Several deliveries carry a national series alongside the province rows and
+  // name what each row measures in its own column. Without it B-029 listed six
+  // different forest and mangrove areas for 2001 as six cards reading
+  // "Viet Nam · 2001년".
+  const nationalMeasure = titleTextV131(attributes["전국_지표명"]);
   const rawScenario = titleTextV131(attributes["시나리오"]);
   const scenario = rawScenario
     ? SCENARIO_LABELS_V137[rawScenario.toLowerCase()] || rawScenario
     : null;
   const year = titleTextV131(attributes["연도"]) || titleTextV131(attributes["기준연도"]);
+  const quantile = titleTextV131(attributes["분위수"]);
   const parts = factualPartsV131([
-    region,
-    scenario,
+    nationalMeasure || region,
+    nationalMeasure ? null : scenario,
+    quantile ? `${quantile}분위` : null,
     year ? `${year}년` : null,
   ]);
-  if (!region || parts.length < 2) return null;
+  // The region alone is enough. B-017, B-026, B-030, B-031, B-032, B-041 and
+  // B-042 deliver one row per province with no scenario and no year column, and
+  // requiring a second part left every card titled "VNM.1_1".
+  if (!region && !nationalMeasure) return null;
   // Names the dimensions, not this row's values, so the sentence is the same on
   // every card of the element and an element without a scenario column does not
   // claim one.
-  const dimensions = ["지역", scenario ? "시나리오" : null, year ? "연도" : null].filter(
-    Boolean
-  );
+  const dimensions = [
+    nationalMeasure ? "지표" : "지역",
+    !nationalMeasure && scenario ? "시나리오" : null,
+    quantile ? "분위수" : null,
+    year ? "연도" : null,
+  ].filter(Boolean);
+  const dimensionText = dimensions.join("·");
   return {
     title: parts.join(" · "),
     nameAvailability: "not-provided",
-    secondaryNote: `원천이 개별 명칭 대신 ${dimensions.join("·")}로 행을 구분합니다.`,
+    secondaryNote: `원천이 개별 명칭 대신 ${dimensionText}${koreanInstrumentalV137(
+      dimensionText
+    )} 행을 구분합니다.`,
   };
 }
 
@@ -342,6 +384,56 @@ function factualCompositeV131(
         secondaryNote: "원문 시설명이 없어 공개된 발전원과 용량으로 구분합니다.",
       };
     }
+    case "B-012": {
+      // EM-DAT names each row by its disaster number. What it is, and when, are
+      // in columns of their own.
+      const kind =
+        normalizedFieldV131(entity, "재해세부유형") ||
+        normalizedFieldV131(entity, "재해유형");
+      const started = normalizedFieldV131(entity, "시작일");
+      const place =
+        normalizedFieldV131(entity, "발생지역_원문") ||
+        normalizedFieldV131(entity, "IBTrACS_태풍명_SID");
+      const parts = factualPartsV131([kind, started, place]);
+      if (!parts.length) return null;
+      return {
+        title: parts.join(" · "),
+        nameAvailability: "identifier-only",
+        secondaryNote: "원천의 재해번호(EM-DAT DisNo)로 식별합니다.",
+        identifierFacts: factualIdentifierRowsV131([
+          ["EM-DAT 재해번호", normalizedFieldV131(entity, "EM_DAT_재해번호_DisNo")],
+        ]),
+      };
+    }
+    case "B-017": {
+      // The delivery's unit is a HydroBASINS level-6 basin crossed with a
+      // province, and it says both in columns of its own.
+      const region =
+        normalizedFieldV131(entity, "2025_개편_후_소속_34개_체계") ||
+        normalizedFieldV131(entity, "지역명_로마자");
+      const basin = normalizedFieldV131(entity, "HydroBASINS_lvl6_코드_pfaf_id");
+      // -9999 is Aqueduct's no-data code, not a basin. Those rows are told
+      // apart by the area of the polygon the delivery measured for them.
+      const unitArea = publicDecimalV131(
+        entity.normalizedAttributes?.["Aqueduct_단위면적_km"],
+        3
+      );
+      // The delivery's unit is basin × province × aquifer, and it ships no
+      // aquifer name, so one basin can appear several times in a province. The
+      // area it measured for each is what separates them.
+      const parts = factualPartsV131([
+        region,
+        basin && basin !== "-9999" ? `HydroBASINS ${basin}` : "유역 코드 미기재",
+        unitArea ? `${unitArea} km²` : null,
+      ]);
+      if (!parts.length) return null;
+      return {
+        title: parts.join(" · "),
+        nameAvailability: "not-provided",
+        secondaryNote:
+          "원천이 개별 명칭 대신 성(省)과 HydroBASINS 유역 코드로 행을 구분합니다.",
+      };
+    }
     case "A-024": {
       const voltage = publicDecimalV131(
         entity.normalizedAttributes?.voltageKv ?? entity.normalizedAttributes?.kv,
@@ -351,13 +443,18 @@ function factualCompositeV131(
         entity.normalizedAttributes?.lengthKm ?? entity.normalizedAttributes?.km,
         3
       );
-      const sequence = normalizedFieldV131(entity, "lineSequence");
+      // The delivery numbers each segment in its own note. Without it every
+      // 220 kV segment with no stated length reads as the same card.
+      const sequence =
+        normalizedFieldV131(entity, "lineSequence") ||
+        (String(entity.note || "").match(/구간\s*일련번호\s*[:：]\s*(\d+)/u) || [])[1] ||
+        null;
       return {
         title: factualPartsV131([
           "송전망 구간",
+          sequence ? `구간 ${sequence}` : null,
           voltage ? `${voltage} kV` : null,
           length ? `${length} km` : null,
-          !voltage && !length && sequence ? `구간 ${sequence}` : null,
         ]).join(" · "),
         nameAvailability: "not-provided",
         secondaryNote: "원문 선로명이 없어 공개된 전압과 연장으로 구분합니다.",
@@ -517,9 +614,47 @@ export function resolvePublicEntityTitleV131(
   }
 
   const directTitle = titleTextV131(entity.name);
+  // A bare number or a bare date is a measurement, not a name. The ETL falls
+  // back to the row's first stated attribute when the delivery gives no name
+  // column, which titled A-024's 722 line segments "220" and A-013's 365 NDC
+  // rows "1.2". Where the element has a reviewed composite, it says more.
+  if (directTitle && NON_NAME_TITLE_V137.test(directTitle)) {
+    const composite = factualCompositeV131(entity);
+    if (composite) {
+      return {
+        title: composite.title,
+        strategy: "factual-composite",
+        nameAvailability: composite.nameAvailability,
+        secondaryNote: composite.secondaryNote,
+        identifierFacts: composite.identifierFacts || [],
+      };
+    }
+  }
   // A name that is really the row's own key tells a reader nothing. Where the
   // delivery separates the dimensions that key encodes, use those.
-  if (!directTitle || RECORD_KEY_TITLE_V137.test(directTitle)) {
+  // A name that is literally the value of the row's own identifier column is an
+  // identifier. B-008 names its rows "1475_low_ssp126_q17_2020" (레코드_키) and
+  // B-012 names them "1952-0008-VNM" (EM-DAT 재해번호).
+  const recordKeyValue = Object.entries(entity.normalizedAttributes || {}).some(
+    ([key, value]) =>
+      IDENTIFIER_COLUMN_V137.test(key) && titleTextV131(value) === directTitle
+  );
+  if (
+    !directTitle ||
+    recordKeyValue ||
+    RECORD_KEY_TITLE_V137.test(directTitle) ||
+    COMPOSED_RECORD_KEY_V137.test(directTitle)
+  ) {
+    const elementComposite = factualCompositeV131(entity);
+    if (elementComposite) {
+      return {
+        title: elementComposite.title,
+        strategy: "factual-composite",
+        nameAvailability: elementComposite.nameAvailability,
+        secondaryNote: elementComposite.secondaryNote,
+        identifierFacts: elementComposite.identifierFacts || [],
+      };
+    }
     const composite = regionYearCompositeV137(entity);
     if (composite) {
       return {

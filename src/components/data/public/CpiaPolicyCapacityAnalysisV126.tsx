@@ -216,6 +216,75 @@ export default function CpiaPolicyCapacityAnalysisV126({
 
   return (
     <div className="cpia126" data-testid="a002-cpia-analysis">
+      {/*
+        The year and the displayed value drive the cards and the chart above,
+        so they are read before them. Sitting in the third section they were
+        2,100px down the page: a reader met six cards and a trend for a year
+        nothing on screen let them choose.
+      */}
+      <div className="cpia126__selectors" data-testid="public-selector">
+        <label>
+          <span>기준연도</span>
+          <select
+            aria-label={wgiMode ? "거버넌스 지표 기준연도 선택" : "CPIA 기준연도 선택"}
+            value={selectedYear}
+            onChange={(event) =>
+              onSelectorStateChange({
+                ...selectorState,
+                year: Number(event.target.value),
+              })
+            }
+          >
+            {availableYears.map((year) => (
+              <option key={year} value={year}>{year}</option>
+            ))}
+          </select>
+        </label>
+        {wgiMode ? (
+          <label>
+            <span>표시 값</span>
+            <select
+              aria-label="거버넌스 지표 표시 값 선택"
+              value={wgiMeasure.key}
+              onChange={(event) =>
+                onSelectorStateChange({
+                  ...selectorState,
+                  dimensions: {
+                    ...selectorState.dimensions,
+                    wgiMeasure: event.target.value,
+                  },
+                })
+              }
+            >
+              {WGI_MEASURES_V137.map((measure) => (
+                <option key={measure.key} value={measure.key}>{measure.label}</option>
+              ))}
+            </select>
+          </label>
+        ) : (
+          <label>
+            <span>세부항목 클러스터</span>
+            <select
+              aria-label="CPIA 세부항목 클러스터 선택"
+              value={selectedCluster.key}
+              onChange={(event) =>
+                onSelectorStateChange({
+                  ...selectorState,
+                  dimensions: {
+                    ...selectorState.dimensions,
+                    cpiaCluster: event.target.value,
+                  },
+                })
+              }
+            >
+              {CPIA_CLUSTERS_V126.map((cluster) => (
+                <option key={cluster.key} value={cluster.key}>{cluster.label}</option>
+              ))}
+            </select>
+          </label>
+        )}
+      </div>
+
       <section
         className="cpia126__kpis"
         aria-label={wgiMode ? "거버넌스 지표 핵심현황" : "CPIA 핵심현황"}
@@ -262,68 +331,6 @@ export default function CpiaPolicyCapacityAnalysisV126({
             {selectedYear}년{" "}
             {wgiMode ? "부문별 비교" : "클러스터와 세부항목"}
           </h3>
-        </div>
-        <div className="cpia126__selectors" data-testid="public-selector">
-          <label>
-            <span>기준연도</span>
-            <select
-              aria-label={wgiMode ? "거버넌스 지표 기준연도 선택" : "CPIA 기준연도 선택"}
-              value={selectedYear}
-              onChange={(event) =>
-                onSelectorStateChange({
-                  ...selectorState,
-                  year: Number(event.target.value),
-                })
-              }
-            >
-              {availableYears.map((year) => (
-                <option key={year} value={year}>{year}</option>
-              ))}
-            </select>
-          </label>
-          {wgiMode ? (
-            <label>
-              <span>표시 값</span>
-              <select
-                aria-label="거버넌스 지표 표시 값 선택"
-                value={wgiMeasure.key}
-                onChange={(event) =>
-                  onSelectorStateChange({
-                    ...selectorState,
-                    dimensions: {
-                      ...selectorState.dimensions,
-                      wgiMeasure: event.target.value,
-                    },
-                  })
-                }
-              >
-                {WGI_MEASURES_V137.map((measure) => (
-                  <option key={measure.key} value={measure.key}>{measure.label}</option>
-                ))}
-              </select>
-            </label>
-          ) : (
-            <label>
-              <span>세부항목 클러스터</span>
-              <select
-                aria-label="CPIA 세부항목 클러스터 선택"
-                value={selectedCluster.key}
-                onChange={(event) =>
-                  onSelectorStateChange({
-                    ...selectorState,
-                    dimensions: {
-                      ...selectorState.dimensions,
-                      cpiaCluster: event.target.value,
-                    },
-                  })
-                }
-              >
-                {CPIA_CLUSTERS_V126.map((cluster) => (
-                  <option key={cluster.key} value={cluster.key}>{cluster.label}</option>
-                ))}
-              </select>
-            </label>
-          )}
         </div>
 
         <div

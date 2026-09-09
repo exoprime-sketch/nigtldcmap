@@ -105,12 +105,33 @@
   padding: 4px 10px 8px;
 }
 
-.cdp-map-compare-pane-v135__selectors label > span {
+.cdp-map-compare-pane-v135__selectors label > span,
+.cdp-map-compare-pane-v135__fixed > span {
   display: block;
   margin-bottom: 3px;
   color: #5b7168;
   font-size: 0.62rem;
   font-weight: 700;
+}
+
+/* A value the layer fixes, shown where its selector would have been. */
+.cdp-map-compare-pane-v135__fixed {
+  margin: 0;
+  min-width: 0;
+}
+
+.cdp-map-compare-pane-v135__fixed > strong {
+  display: block;
+  overflow: hidden;
+  border: 1px solid #d7e5e1;
+  border-radius: 7px;
+  background: #fbfdfc;
+  padding: 5px 7px;
+  color: #163d35;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .cdp-map-compare-pane-v135__canvas-wrap {

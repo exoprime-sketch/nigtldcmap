@@ -137,9 +137,10 @@ export default function ResearchPatentAnalysisV132({
       <div className="rpa132-kpis" data-testid="e008-kpis" aria-label="논문·특허 핵심현황">
         <KpiV132 label="공개 논문 목록" value={paperCount} unit="건" />
         <KpiV132 label="공개 특허 목록" value={patentCount} unit="건" />
+        {/* A year is not a quantity: grouping printed 2026 as "2,026". */}
         <KpiV132
           label="목록 최신연도"
-          value={Number.isFinite(latestYear) ? latestYear : "—"}
+          value={Number.isFinite(latestYear) ? String(latestYear) : "—"}
           unit={Number.isFinite(latestYear) ? "년" : ""}
         />
         <KpiV132 label="확인된 기관 범위" value={institutions.size} unit="개" />

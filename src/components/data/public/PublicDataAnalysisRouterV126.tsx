@@ -150,6 +150,16 @@ export default function PublicDataAnalysisRouterV126({
       />
     );
   }, [copy.title, elementId, entities, onSelectorStateChange, selectorState, semanticRows.length]);
+  // Rows the province distribution cannot describe: the delivery states what
+  // each one measures in a column of its own rather than per province.
+  const nationalSeriesEntities = useMemo(
+    () =>
+      entities.filter((entity) =>
+        Boolean((entity.normalizedAttributes || {})["전국_지표명"])
+      ),
+    [entities]
+  );
+  const hasNationalSeriesRows = nationalSeriesEntities.length > 0;
   const adapterContract = useMemo<ElementVisualizationContractV125>(
     () => ({
       ...contract,
@@ -218,7 +228,13 @@ export default function PublicDataAnalysisRouterV126({
       )}
 
       <section className="pav126-primary" data-testid="public-analysis-primary">
-        {elementId === "C-002" ? (
+        {/*
+          The BTR delivery now ships its 82 rows as entity records, so the
+          emissions component received an empty series and the whole analysis
+          section rendered nothing at all. Where the specialised view has no
+          observations to draw, the archetype shows the records that are there.
+        */}
+        {elementId === "C-002" && semanticRows.length > 0 ? (
           <Suspense fallback={<div className="pav126-empty" role="status" data-testid="public-analysis-pending">배출량 분석을 불러오는 중입니다</div>}>
             <GhgSectorGasAnalysisV135 elementId={elementId} rows={semanticRows} />
           </Suspense>
@@ -303,6 +319,26 @@ export default function PublicDataAnalysisRouterV126({
             selectorState={selectorState}
             onSelectorStateChange={onSelectorStateChange}
           />
+        ) : regionScenarioSummary && hasNationalSeriesRows ? (
+          // The distribution describes the province rows. B-029, B-037, B-039
+          // and B-040 also carry a national series - mangrove area, land use,
+          // hydro potential - in rows the distribution cannot describe, and
+          // showing only the distribution would have hidden them.
+          <>
+            {regionScenarioSummary}
+            <SemanticArchetypePreviewV125
+              contract={adapterContract}
+              semantics={semantics}
+              observations={observations}
+              entities={nationalSeriesEntities}
+              countryNameKo={countryNameKo}
+              detailTemplate={detailTemplate}
+              elementTitle={copy.title}
+              selectorState={selectorState}
+              onSelectorStateChange={onSelectorStateChange}
+              showRawTable={false}
+            />
+          </>
         ) : regionScenarioSummary ?? (
           <SemanticArchetypePreviewV125
             contract={adapterContract}

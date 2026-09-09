@@ -56,12 +56,20 @@ const CARD_FACT_KEYS_V131: Record<
       label: "규모",
       keys: ["budgetScale", "approvedAmount", "primaryFinanceAmount", "commitmentAmount"],
     },
+    { label: "집행액", keys: ["disbursedAmount"] },
     { label: "지원 한도", keys: ["supportLimit"] },
     { label: "지원 대상", keys: ["eligibleRecipients", "targetGroup"] },
     {
       label: "기간",
       keys: ["applicationPeriod", "projectPeriod", "approvalDate", "entryTiming"],
     },
+    { label: "투자 라운드", keys: ["investmentRound"] },
+    { label: "투자 연도", keys: ["investmentYear"] },
+    { label: "투자 금액", keys: ["investmentAmount"] },
+    { label: "투자자", keys: ["investorName"] },
+    { label: "보고연도", keys: ["reportingPeriod"] },
+    { label: "사업번호", keys: ["projectNumber"] },
+    { label: "원조·자금 형태", keys: ["aidType", "financeType"] },
   ],
   directory: [
     {
@@ -91,10 +99,19 @@ const CARD_FACT_KEYS_V131: Record<
     { label: "DOI", keys: ["doi"] },
   ],
   generic: [
-    { label: "유형", keys: ["organizationType", "orgType", "orgCategory", "sector"] },
+    { label: "유형", keys: ["organizationType", "orgType", "orgCategory", "recordCategory", "sector", "businessSector"] },
+    { label: "값", keys: ["statedValue", "nationalMeasureValue"] },
+    { label: "단위", keys: ["nationalMeasureUnit", "statedUnit"] },
+    { label: "지점·유역", keys: ["siteName"] },
+    { label: "위치", keys: ["siteDescription"], maxLength: 120 },
+    { label: "시점", keys: ["statedPeriod", "creditingPeriod"] },
     { label: "상태", keys: ["status"] },
+    { label: "기관·사업자", keys: ["supportingOrganization", "implementingEntity"] },
+    { label: "등록표준·출처", keys: ["registryStandard", "methodology"] },
+    { label: "발행량(tCO2e)", keys: ["issuedVolume"] },
     { label: "지역", keys: ["city", "regionName"] },
-    { label: "기준연도", keys: ["referenceYear", "year"] },
+    { label: "기준연도", keys: ["referenceYear", "vintageYear", "year"] },
+    { label: "설명", keys: ["recordDescription"], maxLength: 120 },
   ],
 };
 
@@ -152,11 +169,14 @@ export default function PublicEntityCardGridV131({
   const notes = titleResults.map((result) => result.secondaryNote || "");
   const sharedNote =
     notes.length > 1 && notes.every((note) => note && note === notes[0]) ? notes[0] : null;
-  const titleCounts = new Map<string, number>();
-  titleResults.forEach(({ title }) => {
-    const normalized = normalizedCardValueV131(title);
-    titleCounts.set(normalized, (titleCounts.get(normalized) || 0) + 1);
-  });
+  const approvedByCard = shown.map((entity) =>
+    approvedCardAttributesV131(entity, template, detailTemplate)
+  );
+  const titleSuffixes = titleDisambiguationSuffixesV137(
+    shown,
+    titleResults.map((result) => result.title),
+    approvedByCard
+  );
 
   return (
     <>
@@ -177,9 +197,7 @@ export default function PublicEntityCardGridV131({
                 ? { ...titleResults[index], secondaryNote: null }
                 : titleResults[index]
             }
-            disambiguateTitle={
-              (titleCounts.get(normalizedCardValueV131(titleResults[index].title)) || 0) > 1
-            }
+            titleSuffix={titleSuffixes[index]}
           />
         ))}
       </div>
@@ -205,21 +223,19 @@ function PublicEntityCardV131({
   detailTemplate,
   elementTitle,
   titleResult,
-  disambiguateTitle,
+  titleSuffix,
 }: {
   entity: VietnamEntityV124;
   template: PublicEntityCardTemplateV131;
   detailTemplate?: string;
   elementTitle?: string;
   titleResult: ReturnType<typeof resolvePublicEntityTitleV131>;
-  disambiguateTitle: boolean;
+  titleSuffix: string | null;
 }) {
   const approved = approvedCardAttributesV131(entity, template, detailTemplate);
   const title =
     compactTextV131(
-      disambiguateTitle
-        ? disambiguatedCardTitleV131(entity, titleResult.title)
-        : titleResult.title,
+      titleSuffix ? `${titleResult.title} · ${titleSuffix}` : titleResult.title,
       220
     ) || "공개 데이터 항목";
   const secondaryNote = compactTextV131(titleResult.secondaryNote, 112);
@@ -284,6 +300,101 @@ function PublicEntityCardV131({
       )}
     </article>
   );
+}
+
+/**
+ * What separates two cards that arrived with the same title.
+ *
+ * Repeated titles are not a fault in themselves - three "Stride" cards are
+ * three funding rounds, three "꽝빈성 태양광 발전사업" cards are three years of the
+ * same project - but a reader cannot tell which is which. The reviewed fields
+ * for an element are used first; where an element has none, the first approved
+ * attribute whose value actually differs across the group is appended. Only
+ * fields already cleared for public display are read, so this never surfaces
+ * anything the card could not already show.
+ */
+function titleDisambiguationSuffixesV137(
+  entities: VietnamEntityV124[],
+  titles: string[],
+  approved: Array<Record<string, PublicAttributeValueV126>>
+): Array<string | null> {
+  const suffixes: Array<string | null> = entities.map(() => null);
+  const groups = new Map<string, number[]>();
+  titles.forEach((title, index) => {
+    const key = normalizedCardValueV131(title);
+    const bucket = groups.get(key);
+    if (bucket) bucket.push(index);
+    else groups.set(key, [index]);
+  });
+
+  groups.forEach((indexes) => {
+    if (indexes.length < 2) return;
+    const configured = indexes.map((index) =>
+      compactTextV131(
+        disambiguatedCardTitleV131(entities[index], titles[index]),
+        220
+      )
+    );
+    if (new Set(configured).size > 1) {
+      indexes.forEach((index, position) => {
+        const value = configured[position];
+        if (value && value !== titles[index]) {
+          suffixes[index] = value.startsWith(`${titles[index]} · `)
+            ? value.slice(titles[index].length + 3)
+            : value;
+        }
+      });
+      return;
+    }
+    // A year or a period separates repeated records the way a reader expects;
+    // B-040's eleven "지열 발전량 — 실적(EIA)" cards are eleven years.
+    const preferred = [
+      "referenceYear",
+      "statedPeriod",
+      "reportingPeriod",
+      "projectPeriod",
+      "investmentYear",
+      "vintageYear",
+      "investmentRound",
+    ];
+    const allKeys = Array.from(
+      new Set(indexes.flatMap((index) => Object.keys(approved[index])))
+    );
+    const keys = [
+      ...preferred.filter((key) => allKeys.includes(key)),
+      ...allKeys.filter((key) => !preferred.includes(key)),
+    ];
+    let best: { key: string; values: string[]; distinct: number } | null = null;
+    for (const key of keys) {
+      const values = indexes.map((index) =>
+        compactTextV131(approved[index][key], 42)
+      );
+      if (values.some((value) => !value)) continue;
+      const distinct = new Set(values).size;
+      if (distinct < 2) continue;
+      // A value that simply restates the title separates nothing.
+      if (
+        values.some(
+          (value, position) =>
+            normalizedCardValueV131(value as string) ===
+            normalizedCardValueV131(titles[indexes[position]])
+        )
+      ) {
+        continue;
+      }
+      if (!best || distinct > best.distinct) {
+        best = { key, values: values as string[], distinct };
+      }
+      // A preferred key that already tells every card apart is the answer.
+      if (distinct === indexes.length) break;
+    }
+    if (!best) return;
+    indexes.forEach((index, position) => {
+      suffixes[index] = (best as { values: string[] }).values[position];
+    });
+  });
+
+  return suffixes;
 }
 
 function disambiguatedCardTitleV131(

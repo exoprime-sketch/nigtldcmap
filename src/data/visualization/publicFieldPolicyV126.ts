@@ -310,7 +310,148 @@ const PUBLIC_ENTITY_ATTRIBUTE_KEYS_BY_TEMPLATE_V126: Record<string, string[]> = 
   ],
 };
 
+/**
+ * The ODA project sheets label their columns in Korean, so none of them matched
+ * the template key lists and D-014, D-015, D-016 and D-017 printed a project
+ * title, a link, and nothing else - no reporting body, no amount, no period,
+ * for 1,056 records. These are the delivery's own column names, read as they
+ * are printed. The internal columns it also carries (기술매핑_근거, 원지표ID,
+ * 레코드구분, 구분태그) stay out.
+ */
+const ODA_PROJECT_COLUMNS_V137 = [
+  "보고기관",
+  "시행기관",
+  "분야_DAC",
+  "약정액_합계",
+  "지출액_합계",
+  "사업기간",
+  "보고연도",
+  "사업번호",
+  "상태",
+  "원조유형",
+  "자금형태",
+  "38대_기후기술",
+];
+
+/**
+ * C-001 to C-025 are delivered on one shared template whose columns are named
+ * 속성1(레코드명), 속성3(값), 속성4(시점) and so on. None of those matched a
+ * template key list, so twenty-two policy screens showed a card title, a link,
+ * and nothing else. These are the delivery's own columns; the record id, the
+ * P-code and the two 기술코드 reasoning columns are left out.
+ */
+const SHARED_C_TEMPLATE_COLUMNS_V137 = [
+  "속성3_값",
+  "속성4_시점",
+  "속성5_등록표준_출처",
+  "속성6_분류",
+  "속성7_상태",
+  "속성8_사업자_기관",
+  "속성9_방법론",
+  "속성10_건수",
+  "속성11_발행량_tCO2e",
+  "속성12_소각량_tCO2e",
+  "속성13_배분량_tCO2e",
+  "속성14_연간예상감축_tCO2e",
+  "속성15_빈티지_연도",
+  "속성16_발행일",
+  "속성17_크레딧기간",
+  "속성18_업종",
+  "속성20_지역_원문",
+  "속성23_설명",
+];
+
+/**
+ * B-017, B-029, B-037, B-039 and B-040 carry a national series in three columns
+ * of their own - what was measured, the value and its unit - and none of them
+ * reached the card, which showed a region and a year and nothing else.
+ */
+const NATIONAL_SERIES_COLUMNS_V137 = [
+  "전국_지표명",
+  "전국_값",
+  "전국_단위",
+  // Both spellings appear across the deliveries.
+  "연도",
+  "기준연도",
+];
+
+/**
+ * B-023 and B-028 state a measured value, its unit and where it was taken in
+ * columns of their own; the cards showed a record key and nothing else.
+ */
+const POINT_MEASUREMENT_COLUMNS_V137 = [
+  "지표명",
+  "값",
+  "단위",
+  "기준연도",
+  "지점_유역명",
+  "위치_설명",
+  "공간_단위",
+];
+
 const PUBLIC_ENTITY_ATTRIBUTE_KEYS_BY_ELEMENT_V126: Record<string, string[]> = {
+  // E-016 states Korea's technology level, the gap in years and the leading
+  // country in columns of its own; every one of its four rows read "세부 내용은
+  // 상세 데이터에서 확인".
+  "E-016": ["field_8c8721a1", "field_a1c8da40", "field_edf04a1a"],
+  "B-017": NATIONAL_SERIES_COLUMNS_V137,
+  "B-023": POINT_MEASUREMENT_COLUMNS_V137,
+  "B-028": POINT_MEASUREMENT_COLUMNS_V137,
+  "B-029": NATIONAL_SERIES_COLUMNS_V137,
+  "B-037": NATIONAL_SERIES_COLUMNS_V137,
+  "B-039": NATIONAL_SERIES_COLUMNS_V137,
+  "B-040": NATIONAL_SERIES_COLUMNS_V137,
+  "C-001": SHARED_C_TEMPLATE_COLUMNS_V137,
+  "C-002": SHARED_C_TEMPLATE_COLUMNS_V137,
+  "C-003": SHARED_C_TEMPLATE_COLUMNS_V137,
+  "C-004": SHARED_C_TEMPLATE_COLUMNS_V137,
+  "C-005": SHARED_C_TEMPLATE_COLUMNS_V137,
+  "C-006": SHARED_C_TEMPLATE_COLUMNS_V137,
+  "C-007": SHARED_C_TEMPLATE_COLUMNS_V137,
+  "C-008": SHARED_C_TEMPLATE_COLUMNS_V137,
+  "C-009": SHARED_C_TEMPLATE_COLUMNS_V137,
+  "C-010": SHARED_C_TEMPLATE_COLUMNS_V137,
+  "C-011": SHARED_C_TEMPLATE_COLUMNS_V137,
+  "C-012": SHARED_C_TEMPLATE_COLUMNS_V137,
+  "C-013": SHARED_C_TEMPLATE_COLUMNS_V137,
+  "C-014": SHARED_C_TEMPLATE_COLUMNS_V137,
+  "C-015": SHARED_C_TEMPLATE_COLUMNS_V137,
+  "C-016": SHARED_C_TEMPLATE_COLUMNS_V137,
+  "C-017": SHARED_C_TEMPLATE_COLUMNS_V137,
+  "C-018": SHARED_C_TEMPLATE_COLUMNS_V137,
+  "C-019": SHARED_C_TEMPLATE_COLUMNS_V137,
+  "C-022": SHARED_C_TEMPLATE_COLUMNS_V137,
+  "C-024": SHARED_C_TEMPLATE_COLUMNS_V137,
+  "C-025": SHARED_C_TEMPLATE_COLUMNS_V137,
+  "D-014": ODA_PROJECT_COLUMNS_V137,
+  "D-015": ODA_PROJECT_COLUMNS_V137,
+  "D-016": [...ODA_PROJECT_COLUMNS_V137, "기관유형"],
+  "D-017": [
+    "발주기관",
+    "분야",
+    "예산",
+    "예산유형",
+    "사업기간",
+    "상태",
+    "입찰유형",
+    "공고일",
+    "마감일",
+    "수행기관_자격요건",
+  ],
+  // The venture and impact investment sheet names its columns in Korean; three
+  // "Stride" cards were three funding rounds with nothing on them to say so.
+  "D-024": [
+    "투자_라운드",
+    "투자_연도",
+    "투자_금액",
+    "투자자명",
+    "기후_분야",
+    "기술_사업_내용",
+    "공동투자_형태",
+    "공동투자_가능여부",
+    "국가",
+    "출처",
+  ],
   "E-018": [
     "field_2004eb5a",
     "field_8440b85d",
@@ -322,6 +463,67 @@ const PUBLIC_ENTITY_ATTRIBUTE_KEYS_BY_ELEMENT_V126: Record<string, string[]> = {
 };
 
 const PUBLIC_ENTITY_ATTRIBUTE_OUTPUT_KEYS_V126: Record<string, string> = {
+  field_8c8721a1: "koreaTechnologyLevel",
+  field_a1c8da40: "technologyGapYears",
+  field_edf04a1a: "leadingCountry",
+  지표명: "measureName",
+  값: "statedValue",
+  단위: "statedUnit",
+  기준연도: "referenceYear",
+  지점_유역명: "siteName",
+  위치_설명: "siteDescription",
+  전국_지표명: "nationalMeasureName",
+  전국_값: "nationalMeasureValue",
+  전국_단위: "nationalMeasureUnit",
+  연도: "referenceYear",
+  투자_라운드: "investmentRound",
+  투자_연도: "investmentYear",
+  투자_금액: "investmentAmount",
+  투자자명: "investorName",
+  기후_분야: "technologyField",
+  기술_사업_내용: "businessSector",
+  공동투자_형태: "coInvestmentForm",
+  공동투자_가능여부: "coInvestmentAvailability",
+  국가: "regionName",
+  속성3_값: "statedValue",
+  속성4_시점: "statedPeriod",
+  속성5_등록표준_출처: "registryStandard",
+  속성6_분류: "recordCategory",
+  속성7_상태: "status",
+  속성8_사업자_기관: "supportingOrganization",
+  속성9_방법론: "methodology",
+  속성10_건수: "recordCount",
+  속성11_발행량_tCO2e: "issuedVolume",
+  속성12_소각량_tCO2e: "retiredVolume",
+  속성13_배분량_tCO2e: "allocatedVolume",
+  속성14_연간예상감축_tCO2e: "expectedAnnualReduction",
+  속성15_빈티지_연도: "vintageYear",
+  속성16_발행일: "issuanceDate",
+  속성17_크레딧기간: "creditingPeriod",
+  속성18_업종: "businessSector",
+  속성20_지역_원문: "regionName",
+  속성23_설명: "recordDescription",
+  보고기관: "supportingOrganization",
+  시행기관: "implementingEntity",
+  발주기관: "supportingOrganization",
+  분야_DAC: "sector",
+  분야: "sector",
+  약정액_합계: "commitmentAmount",
+  지출액_합계: "disbursedAmount",
+  예산: "budgetScale",
+  예산유형: "budgetType",
+  사업기간: "projectPeriod",
+  보고연도: "reportingPeriod",
+  사업번호: "projectNumber",
+  상태: "status",
+  원조유형: "aidType",
+  자금형태: "financeType",
+  입찰유형: "supportType",
+  공고일: "announcementDate",
+  마감일: "applicationDeadline",
+  수행기관_자격요건: "eligibleRecipients",
+  기관유형: "organizationType",
+  "38대_기후기술": "technologyField",
   field_2004eb5a: "technologyRelevance",
   field_8440b85d: "entryTiming",
   field_a2123512: "businessSector",
@@ -332,6 +534,43 @@ const PUBLIC_ENTITY_ATTRIBUTE_OUTPUT_KEYS_V126: Record<string, string> = {
 };
 
 const PUBLIC_ENTITY_ATTRIBUTE_LABELS_V126: Record<string, string> = {
+  koreaTechnologyLevel: "한국 기술수준",
+  technologyGapYears: "기술격차(년)",
+  leadingCountry: "최고(선도)국",
+  measureName: "지표",
+  statedUnit: "단위",
+  siteName: "지점·유역",
+  siteDescription: "위치",
+  nationalMeasureName: "전국 지표",
+  nationalMeasureValue: "전국 값",
+  nationalMeasureUnit: "단위",
+  investmentRound: "투자 라운드",
+  investmentYear: "투자 연도",
+  investmentAmount: "투자 금액",
+  investorName: "투자자",
+  coInvestmentForm: "공동투자 형태",
+  coInvestmentAvailability: "공동투자 가능 여부",
+  statedValue: "값",
+  statedPeriod: "시점",
+  registryStandard: "등록표준·출처",
+  recordCategory: "분류",
+  methodology: "방법론",
+  recordCount: "건수",
+  issuedVolume: "발행량(tCO2e)",
+  retiredVolume: "소각량(tCO2e)",
+  allocatedVolume: "배분량(tCO2e)",
+  expectedAnnualReduction: "연간 예상감축(tCO2e)",
+  vintageYear: "빈티지 연도",
+  issuanceDate: "발행일",
+  creditingPeriod: "크레딧 기간",
+  recordDescription: "설명",
+  reportingPeriod: "보고연도",
+  projectNumber: "사업번호",
+  aidType: "원조유형",
+  financeType: "자금형태",
+  budgetType: "예산유형",
+  announcementDate: "공고일",
+  applicationDeadline: "마감일",
   name: "명칭",
   title: "제목",
   projectName: "사업명",
@@ -476,9 +715,78 @@ function normalizeKeyV126(value: string): string {
   return value.replace(/[^a-z0-9]/gi, "").toLowerCase();
 }
 
+/**
+ * A row identifier the compiler put at the head of a note.
+ *
+ * A-013's 365 rows begin "[연계 일련번호: 139] SDG1 · …" and A-024's 722 begin
+ * "[구간 일련번호: 10] …". The number addresses whoever maintains the sheet; the
+ * sentence after it is what a reader came for. The identifier is still carried
+ * on the record and in the download.
+ */
+/**
+ * A series id the builder appended to tell two identical labels apart.
+ *
+ * B-010's two 2024 events carry the same printed label, so the semantic
+ * builder disambiguated them with the indicator id - "· cri_event_2024_01".
+ * The value beside the label already tells the reader which event it is.
+ */
+const TRAILING_SERIES_ID_V137 = /\s*·\s*[a-z0-9]+(?:_[a-z0-9]+)+\s*$/u;
+
+/**
+ * A closing bracket the delivery left without its opener. C-019 ships every
+ * row name as "FIT / FIP / RPS 도입 여부] 풍력 FIT 종료일".
+ */
+/**
+ * Notes the compilers wrote to each other.
+ *
+ * The licence field carried an internal review flag on seventeen screens
+ * ("[DoD S-07 잠정] NIGT 비영리 해당여부 확정 후 재판정(라이선스 전수확인 v1.0)"),
+ * five carried a correction-log entry and a working file name ("raw:
+ * C-024_참여기금_모순해소_원문확인_2026-08-18.md"), and the unit field on the
+ * climate projections read "지표별 상이(속성 열 참조)" - a pointer to a column of
+ * the source workbook. The licence, the correction and the unit all stay; the
+ * internal reference to how they were recorded does not.
+ */
+const INTERNAL_REVIEW_NOTES_V137: readonly RegExp[] = [
+  // the licensing review flag and the sentence it opens
+  /\s*\[\s*DoD\s+S-\d+[^\]]*\][^·/]*/gu,
+  // a working file the compiler cited, however it referenced it. A file
+  // name can hold a middle dot ('C-019_환경보호세·탄소거래소_...md'), so the
+  // no-space form is tried before the separator-bounded one.
+  /\s*raw\s*[:：/]\s*(?:\S+|[^·]+?)\.(?:md|pdf)(?:\s*로컬\s*보관)?/gu,
+  // a correction-log entry
+  /\s*\[\s*\d+차\s*정정\s*\][^·/]*/gu,
+  // a pointer to a source-workbook column
+  /\s*\(\s*속성\s*열\s*참조\s*\)/gu,
+  // the collection sheet's own version
+  /수집현황\s*v[\d.]+/gu,
+  // the sentence that records the transcription rather than the data
+  /\s*수집현황의?\s*요소\s*[A-E]-\d{3}\s*행에[^.]*\.\s*/gu,
+  // the internal sheet name
+  /\s*1\.2_entity\s*/gu,
+];
+
+const UNMATCHED_CLOSING_BRACKET_V137 = /^([^[\]]*)\]\s*/u;
+
+const LEADING_ROW_IDENTIFIER_V137 =
+  /^\s*[[(]\s*(?:OSM\s*ID|[^\][()]*?일련번호|레코드\s*ID|행\s*번호)\s*[:：][^\])]*[\])]\s*/u;
+
 function normalizeTextV126(value: unknown): string | null {
   if (typeof value !== "string") return null;
   const normalized = value
+    .replace(LEADING_ROW_IDENTIFIER_V137, "")
+    .replace(TRAILING_SERIES_ID_V137, "")
+    .replace(UNMATCHED_CLOSING_BRACKET_V137, "$1 ")
+    .replace(INTERNAL_REVIEW_NOTES_V137[0], "")
+    .replace(INTERNAL_REVIEW_NOTES_V137[1], "")
+    .replace(INTERNAL_REVIEW_NOTES_V137[2], "")
+    .replace(INTERNAL_REVIEW_NOTES_V137[3], "")
+    .replace(INTERNAL_REVIEW_NOTES_V137[4], "수집현황")
+    .replace(INTERNAL_REVIEW_NOTES_V137[5], "")
+    .replace(INTERNAL_REVIEW_NOTES_V137[6], "")
+    // "[M01·원자료 결측]" - the code addresses the compiler, the phrase after it
+    // is the reason a reader needs.
+    .replace(/\[\s*M\d{2}\s*·\s*/gu, "[")
     .replace(/\bEDGAR_2025_GHG\b/gu, "EDGAR 온실가스 데이터베이스 2025판")
     .replace(/\bCCI_LC\b/gu, "CCI-LC")
     .replace(/\blog\(USD_2017\s+PPP\)/giu, "2017년 구매력평가 기준 미국달러(로그)")

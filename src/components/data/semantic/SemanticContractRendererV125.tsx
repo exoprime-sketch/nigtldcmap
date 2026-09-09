@@ -208,9 +208,17 @@ function renderObservationPanelV125(
       ) : null;
     case "kpi-trend":
     case "multi-metric-trend":
+      // A trend needs a year axis. Values delivered against a plan period band
+      // ("2025-2030") have none, and C-016 drew nothing at all - 639 published
+      // province capacities under an empty chart. Compare what is actually
+      // there instead of leaving the reader with a heading and no analysis.
       return (
         <>
-          <TrendPanelV125 elementId={elementId} rows={contextRows} />
+          {contextRows.some((row) => typeof row.year === "number") ? (
+            <TrendPanelV125 elementId={elementId} rows={contextRows} />
+          ) : (
+            numericRows.length > 0 && <CategoryComparisonV125 rows={numericRows} />
+          )}
           {textRows.length > 0 && <EvidenceCardsV125 rows={textRows} />}
         </>
       );
@@ -684,8 +692,14 @@ function TwoYearChangeUnitV135({
       const last = ordered[ordered.length - 1];
       if (!first || !last || first.year === last.year) return null;
       const delta = last.value - first.value;
+      // A change in a value that is already a percentage is a percentage-point
+      // change, and dividing it by the starting percentage says nothing: B-014
+      // reported a GDP impact moving from -0.6% to -2.2% as "-266.7%".
+      const isShare = /^\s*(?:%|퍼센트|percent)/iu.test(publicUnit);
       const percent =
-        first.value === 0 ? null : (delta / Math.abs(first.value)) * 100;
+        isShare || first.value === 0
+          ? null
+          : (delta / Math.abs(first.value)) * 100;
       return {
         key,
         label:
@@ -713,7 +727,8 @@ function TwoYearChangeUnitV135({
             </span>
             <b>
               {item.delta > 0 ? "+" : ""}
-              {formatValueV121(item.delta)} {publicUnit}
+              {formatValueV121(item.delta)}{" "}
+              {/^\s*(?:%|퍼센트|percent)/iu.test(publicUnit) ? "%p" : publicUnit}
               {item.percent === null
                 ? ""
                 : " (" + (item.percent > 0 ? "+" : "") + item.percent.toFixed(1) + "%)"}
@@ -835,6 +850,20 @@ function barScaleV137(values: number[]) {
 
 function CategoryComparisonV125({ rows }: { rows: NumericRowV125[] }) {
   if (rows.length === 0) return null;
+  // Rows that share a category label are told apart by the dimension that
+  // differs. D-001 drew four "수력 기술" bars reading 1,156 / 1,961 / 98 / 1,103
+  // USD/kW - the median and the sample's bounds, with nothing to say so.
+  const labelCounts = new Map<string, number>();
+  rows.forEach((row) => {
+    const label = categoryLabelV125(row);
+    labelCounts.set(label, (labelCounts.get(label) || 0) + 1);
+  });
+  const barLabel = (row: NumericRowV125) => {
+    const label = categoryLabelV125(row);
+    if ((labelCounts.get(label) || 0) < 2) return label;
+    const qualifier = comparisonQualifierV137(row, label);
+    return qualifier ? `${label} · ${qualifier}` : label;
+  };
   return (
     <VisualizationFrameV125 eyebrow="항목" title="항목별 값">
       {groupByUnitV125(rows).map(({ unit, rows: unitRows }) => {
@@ -858,11 +887,11 @@ function CategoryComparisonV125({ rows }: { rows: NumericRowV125[] }) {
                 return (
                   <InteractiveValueItemV127
                     key={row.recordId}
-                    label={categoryLabelV125(row)}
+                    label={barLabel(row)}
                     value={formatValueV121(row.value)}
                     unit={unit}
                   >
-                    <strong><PublicTermTextV134 text={categoryLabelV125(row)} /></strong>
+                    <strong><PublicTermTextV134 text={barLabel(row)} /></strong>
                     <span
                       aria-hidden="true"
                       className={scale.signed ? "sv125-contract-track--signed" : undefined}
@@ -995,12 +1024,34 @@ function PolicyTimelineV125({
         "date",
         "year",
         "referenceYear",
+        // The shared C template states the row's own point in time here.
+        "속성4_시점",
+        "속성16_발행일",
+        // A-029 delivers the signing and entry-into-force dates in its first two
+        // columns; every one of its 19 agreements read "시점 미기재".
+        "yyyyMmDd",
+        "yyyyMmDd2",
+        // EM-DAT dates each event by its start day.
+        "시작일",
       ]),
       title: publicEntityTitleV131(entity),
       detail:
-        entityFieldV125(entity, ["status", "scope", "agreementType"]) ||
-        publicTextV126(entity.note) ||
-        "세부 내용은 상세 데이터에서 확인",
+        publicDescriptionNoteV137(
+          entityFieldV125(entity, [
+            "status",
+            "scope",
+            "agreementType",
+            "속성23_설명",
+            "속성7_상태",
+            // EM-DAT states where the event struck in its own column.
+            "발생지역_원문",
+          ])
+        ) ||
+        withoutRestatedTitleV137(
+          publicDescriptionNoteV137(entity.note),
+          publicEntityTitleV131(entity)
+        ) ||
+        "",
       sourceUrl: entityUrlV125(entity),
     })),
   ].sort((left, right) => timelineSortV125(left.date) - timelineSortV125(right.date));
@@ -1013,7 +1064,11 @@ function PolicyTimelineV125({
             <time>{item.date || "시점 미기재"}</time>
             <div>
               <strong><PublicTermTextV134 text={item.title} /></strong>
-              <p><PublicTermTextV134 text={item.detail} /></p>
+              {/* An empty description is empty; sixteen rows repeating a
+                  placeholder sentence told a reader nothing sixteen times. */}
+              {item.detail && (
+                <p><PublicTermTextV134 text={item.detail} /></p>
+              )}
               {safeHttpUrlV125(item.sourceUrl) && (
                 <a href={item.sourceUrl} target="_blank" rel="noreferrer">
                   원문 보기
@@ -1041,19 +1096,7 @@ function EvidenceMatrixV125({
       result: formatValueV121(row.value),
       basis: String(row.year || row.period || row.provenance.referenceYear || "—"),
     })),
-    ...entities.map((entity) => ({
-      key: entity.recordId,
-      area:
-        entityFieldV125(entity, ["category", "item", "topic", "sector"]) ||
-        publicEntityTitleV131(entity),
-      result:
-        entityFieldV125(entity, ["content", "status", "result", "description"]) ||
-        publicTextV126(entity.note) ||
-        "세부 내용은 상세 데이터에서 확인",
-      basis:
-        entityFieldV125(entity, ["legalBasis", "referenceYear", "year"]) ||
-        "—",
-    })),
+    ...entities.map((entity) => entityMatrixRowV137(entity)),
   ];
   if (items.length === 0) return null;
   return (
@@ -1463,6 +1506,21 @@ function observationUnitV125(row: SemanticObservationV125): string {
   return String(row.unit || row.semanticMeasure.unit || "").trim();
 }
 
+/** The first dimension that says something the shared label does not. */
+function comparisonQualifierV137(
+  row: SemanticObservationV125,
+  label: string
+): string | null {
+  for (const key of ["detail", "scenario", "period", "classification", "sex"]) {
+    const value = row.dimensionLabels[key] || row.dimensions[key];
+    if (!value) continue;
+    const text = publicDimensionValueV134(key, value);
+    if (text && text !== label) return text;
+  }
+  const displayed = publicTextV126(row.displayLabel);
+  return displayed && displayed !== label ? displayed : null;
+}
+
 function categoryLabelV125(row: SemanticObservationV125): string {
   for (const key of [
     "category",
@@ -1533,6 +1591,113 @@ function pairGroupLabelV125(row: PresentRowV125, pairKey: string): string {
     .map(([key, value]) => publicDimensionValueV134(key, value))
     .filter(Boolean);
   return labels.join(" · ") || row.semanticMeasure.labelKo;
+}
+
+/**
+ * The note with the clause that merely repeats the heading removed.
+ *
+ * A-029's rows are titled from the note's own 국문명 field, so every timeline
+ * entry read its agreement name twice: once as the heading and again as the
+ * first clause of the description under it.
+ */
+/**
+ * One row of the evidence matrix from an entity record.
+ *
+ * The note is the only place several deliveries state what a bare number is
+ * ("2080~2099년 전망 +1.21°C"), so it travels in the basis column - unless it is
+ * already standing in for the missing value, in which case printing it twice
+ * says nothing new.
+ */
+/** "2,026" is a year the number formatter grouped; "2026" is the year. */
+function plainYearV137(value: string | null): string {
+  if (!value) return "";
+  return /^\s*[12],\d{3}\s*$/u.test(value) ? value.replace(/,/gu, "").trim() : value;
+}
+
+function entityMatrixRowV137(entity: VietnamEntityV124) {
+  const note = publicTextV126(entity.note);
+  const name = publicEntityTitleV131(entity);
+  const rawResult =
+    entityFieldV125(entity, [
+      "content",
+      "status",
+      "result",
+      "description",
+      "속성3_값",
+      "속성23_설명",
+      // E-016 states the level, the gap and the leading country per row.
+      "field_8c8721a1",
+    ]) || note;
+  // A year is not a quantity. C-001's "BAU 목표 기준연도" printed as "2,014" and
+  // the 기준연도 column read "2,026" on every C-series screen.
+  const result = /연도|년도/u.test(name) ? plainYearV137(rawResult) : rawResult;
+  const period = entityFieldV125(entity, [
+    "legalBasis",
+    "referenceYear",
+    "year",
+    "속성4_시점",
+  ]);
+  const extra = entityFieldV125(entity, ["field_a1c8da40"]);
+  const leader = entityFieldV125(entity, ["field_edf04a1a"]);
+  const basis = [
+    plainYearV137(period),
+    extra ? `기술격차 ${extra}` : null,
+    leader ? `최고(선도)국 ${leader}` : null,
+    result === note ? null : note,
+  ]
+    .filter(Boolean)
+    .join(" · ");
+  return {
+    key: entity.recordId,
+    area:
+      name ||
+      entityFieldV125(entity, ["category", "item", "topic", "sector", "속성6_분류"]),
+    // An empty cell reads as empty. C-009 printed "세부 내용은 상세 데이터에서
+    // 확인" forty-three times down one column, which says nothing forty-three
+    // times; the table already leads to the detail below it.
+    result: result || "—",
+    basis: basis || "—",
+  };
+}
+
+/**
+ * A note worth reading as a description, or nothing.
+ *
+ * B-012's notes are coordinate derivations - "[좌표] 행정구역명 매칭 중심좌표(GADM
+ * 4.1 ADM1)" - which belong with the map's accuracy statement, not under the
+ * heading of a disaster in a timeline.
+ */
+function publicDescriptionNoteV137(note: unknown): string | null {
+  const text = publicTextV126(note);
+  if (!text || /^\[\s*좌표/u.test(text)) return null;
+  // The same coordinate derivation sat at the end of thirty-four rows of one
+  // screen. It belongs with the map's accuracy statement, not under every item.
+  const withoutCoordinates = text.replace(/\s*\/\s*좌표\s[^/]*$/u, "").trim();
+  return withoutCoordinates || null;
+}
+
+function withoutRestatedTitleV137(
+  detail: string | null,
+  title: string
+): string | null {
+  if (!detail || !title) return detail;
+  const wanted = title.trim();
+  const kept = detail
+    .split(" · ")
+    // "[협정약칭: ACFTA] 국문명: ASEAN-중국 FTA" keeps the abbreviation and drops
+    // the name the heading already carries.
+    .map((part) => part.split(`국문명: ${wanted}`).join("").trim())
+    .filter((part) => {
+      if (!part) return false;
+      const value = part.includes(":")
+        ? part.slice(part.indexOf(":") + 1).trim()
+        : part;
+      return value !== wanted;
+    })
+    .join(" · ")
+    .replace(/\s*·\s*·\s*/gu, " · ")
+    .replace(/\[\s*\]/gu, "");
+  return kept.trim() || null;
 }
 
 function entityFieldV125(

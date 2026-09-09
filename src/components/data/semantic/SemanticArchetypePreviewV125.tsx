@@ -70,6 +70,55 @@ function publicNoDataReasonV128(reason: string | null): string {
 
 const EMPTY_DIMENSION_KEYS_V129: readonly string[] = Object.freeze([]);
 
+/**
+ * Units that describe the layer rather than the country.
+ *
+ * The OpenStreetMap elements publish the layer's own metadata alongside its
+ * contents - the coordinate reference system, the number of attribute fields, a
+ * confidence floor - and a missing-value rate for every column. A-027 opened on
+ * nine 결측률 percentages, so the first thing a reader met about Viet Nam's road
+ * network was how often OSM leaves a column blank. They stay selectable; they
+ * are just not what the screen opens on.
+ */
+const LAYER_METADATA_UNITS_V137 = new Set(["EPSG 코드", "개", "score"]);
+
+function isLayerMetadataMeasureV137(
+  measure: { key: string; unit: string },
+  rows: SemanticObservationV125[]
+): boolean {
+  if (LAYER_METADATA_UNITS_V137.has((measure.unit || "").trim())) return true;
+  const own = rows.filter((row) => row.semanticMeasure.key === measure.key);
+  return (
+    own.length > 0 &&
+    own.every((row) => /결측\s*(?:률|비율)/u.test(row.displayLabel || ""))
+  );
+}
+
+
+/**
+ * The same normalisation the semantic builder uses when it collects a
+ * dimension's values from entity attributes (tools/vietnam_semantic/
+ * build_semantic_v125.py :: entity_dimension_values). Values have to be
+ * compared in exactly that form or the selector would filter to nothing.
+ */
+function entityDimensionTextV137(value: unknown): string {
+  return String(value || "")
+    .normalize("NFC")
+    .trim();
+}
+
+function entityDimensionValueV137(
+  entity: VietnamEntityV124,
+  key: string
+): string | null {
+  if (key === "entityType") return entityDimensionTextV137(entity.entityType);
+  const value = (entity.normalizedAttributes || {})[key];
+  if (value === null || value === undefined || value === "") return null;
+  if (typeof value === "object") return null;
+  return entityDimensionTextV137(value);
+}
+
+
 export default function SemanticArchetypePreviewV125({
   contract,
   semantics,
@@ -126,14 +175,19 @@ export default function SemanticArchetypePreviewV125({
   const explicitMeasureIsKnown = contract.measures.some(
     (measure) => measure.key === selectorState.measure
   );
-  const populatedDefaultMeasure = measureOptions.find((measure) =>
+  const measureHasPopulatedRow = (measure: { key: string }) =>
     semanticRows.some(
       (row) =>
         row.semanticMeasure.key === measure.key &&
         semanticRowMatchesDimensionsV125(row, explicitDimensions) &&
         isPopulatedSemanticRowV125(row)
-    )
-  );
+    );
+  const populatedDefaultMeasure =
+    measureOptions.find(
+      (measure) =>
+        measureHasPopulatedRow(measure) &&
+        !isLayerMetadataMeasureV137(measure, semanticRows)
+    ) || measureOptions.find(measureHasPopulatedRow);
   const preferredMeasureKey =
     getPublicVisualizationSummaryV126(contract.elementId)?.defaultMeasureKey;
   const preferredDefaultMeasure = preferredMeasureKey
@@ -186,6 +240,39 @@ export default function SemanticArchetypePreviewV125({
       singleDenominatorDimensionKeys,
     ]
   );
+  /**
+   * Directory and scorecard screens show the entity list, not observations, and
+   * their dimension selectors are built partly from entity attributes. Filtering
+   * only the observation rows left those selectors changing nothing on screen:
+   * a reader picked a city and the identical list came back. A dimension the
+   * entities do not carry is left alone - it belongs to the observations.
+   */
+  const entityDimensionKeys = useMemo(() => {
+    const keys = new Set<string>();
+    if (entities.length > 0) keys.add("entityType");
+    for (const entity of entities) {
+      for (const [key, value] of Object.entries(
+        entity.normalizedAttributes || {}
+      )) {
+        if (value === null || value === undefined || value === "") continue;
+        if (typeof value === "object") continue;
+        keys.add(key);
+      }
+    }
+    return keys;
+  }, [entities]);
+  const visibleEntities = useMemo(() => {
+    const active = Object.entries(dimensions).filter(([key]) =>
+      entityDimensionKeys.has(key)
+    );
+    if (active.length === 0) return entities;
+    return entities.filter((entity) =>
+      active.every(
+        ([key, value]) => entityDimensionValueV137(entity, key) === value
+      )
+    );
+  }, [dimensions, entities, entityDimensionKeys]);
+
   const sexDimension = contract.dimensions.find(
     (dimension) => dimension.key === "sex"
   );
@@ -352,7 +439,13 @@ export default function SemanticArchetypePreviewV125({
             </select>
           </label>
         )}
-        {sexValues.length > 0 && (
+        {sexValues.length === 1 && (
+          <p className="sv125-fixed-value" data-testid="v125-fixed-sex">
+            <span>성별</span>
+            <strong>{dimensionValueLabelV125("sex", sexValues[0])}</strong>
+          </p>
+        )}
+        {sexValues.length > 1 && (
           <label>
             <span>성별</span>
             <select
@@ -406,6 +499,12 @@ export default function SemanticArchetypePreviewV125({
             </select>
           </label>
         ))}
+        {periods.length === 1 && (
+          <p className="sv125-fixed-value" data-testid="v125-fixed-period">
+            <span>기간</span>
+            <strong>{periods[0]}</strong>
+          </p>
+        )}
         {periods.length > 1 && (
           <label>
             <span>기간</span>
@@ -428,7 +527,19 @@ export default function SemanticArchetypePreviewV125({
             </select>
           </label>
         )}
-        {years.length > 0 && (
+        {/*
+          One year is not a choice. Thirty-two screens offered a 연도 selector
+          holding a single option, which a reader can open and close without
+          anything happening. The year still has to be stated - it is what the
+          values are for - so it is stated as a value.
+        */}
+        {years.length === 1 && (
+          <p className="sv125-fixed-value" data-testid="v125-fixed-year">
+            <span>연도</span>
+            <strong>{years[0]}</strong>
+          </p>
+        )}
+        {years.length > 1 && (
           <label>
             <span>연도</span>
             <select
@@ -471,12 +582,14 @@ export default function SemanticArchetypePreviewV125({
         selectedMeasureKey={measureKey}
       />
 
-      {(numericRows.length > 0 || textRows.length > 0 || entities.length > 0) && (
+      {(numericRows.length > 0 ||
+        textRows.length > 0 ||
+        visibleEntities.length > 0) && (
         <SemanticContractRendererV125
           contract={contract}
           rows={selectedRows}
           contextRows={dimensionFilteredRows}
-          entities={entities}
+          entities={visibleEntities}
           countryNameKo={countryNameKo}
           detailTemplate={detailTemplate}
           elementTitle={elementTitle}
@@ -508,7 +621,7 @@ export default function SemanticArchetypePreviewV125({
 
       {numericRows.length === 0 &&
         textRows.length === 0 &&
-        entities.length === 0 && (
+        visibleEntities.length === 0 && (
           <div
             className="sv125-empty"
             role="status"

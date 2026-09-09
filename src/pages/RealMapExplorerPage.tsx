@@ -4889,8 +4889,11 @@ export default function RealMapExplorerPage({
           // period the preset names. This is how the broken FOREST_CHANGE
           // preset stayed invisible: it asked for a variable and a year the
           // layer no longer had, and the map simply drew nothing.
-          `${presetLabel} · 이 자료가 제공하는 지표·기간으로 맞췄습니다. 함께 보기는 꺼진 상태입니다.`
-        : `${presetLabel} 선택 데이터를 표시했습니다. 함께 보기는 꺼진 상태입니다.`
+          `${presetLabel} · 이 자료가 제공하는 지표·기간으로 맞췄습니다. 나머지 자료는 아래 '함께 보기'에서 켜세요.`
+        : // The card promises two or three layers and the preset draws one, so
+          // the notice says where the others are rather than leaving a reader
+          // to find the toggle.
+          `${presetLabel} 선택 데이터를 표시했습니다. 나머지 자료는 아래 '함께 보기'에서 켜세요.`
     );
     const primaryLayer = layers.find(
       (layer) => layer.elementId === workspace.primary.elementId
@@ -6640,6 +6643,11 @@ export default function RealMapExplorerPage({
                     <button
                       type="button"
                       data-map-element={choice.elementId}
+                      // Which feature this choice stands for. The panel already
+                      // publishes the selected key; the picker did not, so the
+                      // only way to choose a known feature was to count list
+                      // positions.
+                      data-selection-key={choice.selectionKey}
                       data-layer-role={choice.role}
                       data-hit-priority={choice.priority}
                       onClick={() => selectOverlapChoiceV133(choice)}

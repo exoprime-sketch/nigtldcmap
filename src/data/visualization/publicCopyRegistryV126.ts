@@ -356,7 +356,16 @@ export function publicAggregationBasisV136_2(
       seen.add(value);
     }
   }
-  return [...seen].slice(0, 3);
+  // A dimension often states the same basis twice, once on its own and once
+  // with the measure appended: A-016 read "1차에너지 공급 총계 · 1차에너지 공급
+  // 총계 1차에너지 소비량". The longer form says nothing the shorter does not.
+  const values = [...seen];
+  return values
+    .filter(
+      (value) =>
+        !values.some((other) => other !== value && value.includes(other))
+    )
+    .slice(0, 3);
 }
 
 /**

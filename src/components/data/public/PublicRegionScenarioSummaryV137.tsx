@@ -57,6 +57,17 @@ const NON_MEASURE = new Set([
   "구분_손실_원인_등",
 ]);
 
+/**
+ * Columns that describe the province's geometry or how the grid was sampled.
+ *
+ * With one delivered year per province the "does it move within a region"
+ * test cannot separate these from a measurement - every column has exactly one
+ * value everywhere - so they are named. A boundary area and a grid-cell count
+ * are facts about the extraction, not about the country.
+ */
+const NON_MEASURE_PATTERN =
+  /경계[_\s]*면적|격자[_\s]*수|격자점|유효[_\s]*격자|좌표|폴리곤|파일|격자[_\s]*원천|기준기간|^단위$|코드|pfaf|aqid|_id$/u;
+
 const SCENARIO_LABELS: Record<string, string> = {
   historical: "과거 관측",
   ssp119: "SSP1-1.9",
@@ -68,6 +79,9 @@ const SCENARIO_LABELS: Record<string, string> = {
 };
 
 const ALL_REGIONS = "__all__";
+
+/** Stands for "the delivery states no year for this row". */
+const UNSTATED_YEAR = -1;
 
 /**
  * The delivery includes a national row alongside the provinces.
@@ -159,12 +173,15 @@ export function regionScenarioShapeV137(
     else if (region) regions.add(region);
     const scenario = text(attributes[SCENARIO_KEY]);
     if (scenario) scenarios.add(scenario);
-    const year = numeric(firstKey(attributes, YEAR_KEYS));
-    if (year !== null) years.add(year);
-    if (isNational || !region || year === null) continue;
+    // B-026, B-041 and B-042 state no year at all. The province values are
+    // still there, so they are read as one unnamed period rather than dropped.
+    const statedYear = numeric(firstKey(attributes, YEAR_KEYS));
+    const year = statedYear === null ? UNSTATED_YEAR : statedYear;
+    if (statedYear !== null) years.add(statedYear);
+    if (isNational || !region) continue;
 
     for (const [key, value] of Object.entries(attributes)) {
-      if (NON_MEASURE.has(key)) continue;
+      if (NON_MEASURE.has(key) || NON_MEASURE_PATTERN.test(key)) continue;
       const parsed = numeric(value);
       if (parsed === null) continue;
       const seenYears = provinceYearsByMeasure.get(key) || new Set<number>();
@@ -183,16 +200,31 @@ export function regionScenarioShapeV137(
   // A column holding one value per region in every year describes the region.
   // B-003 offered 경계_면적_km_GADM - the province's own boundary area - as its
   // default measure simply because it was the most-filled numeric column.
+  // Several deliveries state one year per province - land cover, solar and wind
+  // potential, geothermal gradient, flow direction - while a national series in
+  // the same sheet runs across decades. Judging the year axis for the element as
+  // a whole therefore rejected every province column it had, and seven screens
+  // showed a list of province names and nothing else. Each measure is judged on
+  // its own: across years, the value has to move within a province; within one
+  // year, it has to differ between provinces.
   const measures = [...provinceYearsByMeasure]
     .filter(([key, seenYears]) => {
-      if (seenYears.size < 2) return false;
       const byRegion = valuesByMeasureRegion.get(key);
-      return Boolean(byRegion) && [...byRegion!.values()].some((set) => set.size > 1);
+      if (!byRegion) return false;
+      if (seenYears.size >= 2) {
+        return [...byRegion.values()].some((set) => set.size > 1);
+      }
+      const seen = new Set<number>();
+      for (const values of byRegion.values()) {
+        for (const value of values) seen.add(value);
+        if (seen.size > 1) return true;
+      }
+      return false;
     })
     .sort((a, b) => b[1].size - a[1].size)
     .map(([key]) => key);
 
-  if (regions.size < 2 || years.size < 2 || !measures.length) return null;
+  if (regions.size < 2 || !measures.length) return null;
   return {
     measures,
     scenarios: [...scenarios].sort(),
@@ -236,8 +268,8 @@ export default function PublicRegionScenarioSummaryV137({
       const attributes = (entity.normalizedAttributes || {}) as Record<string, unknown>;
       const value = numeric(attributes[measure]);
       if (value === null) continue;
-      const year = numeric(firstKey(attributes, YEAR_KEYS));
-      if (year === null) continue;
+      const statedYear = numeric(firstKey(attributes, YEAR_KEYS));
+      const year = statedYear === null ? UNSTATED_YEAR : statedYear;
       const rowRegion = firstKey(attributes, REGION_KEYS);
       const isNational = NATIONAL_REGION.test(rowRegion);
       if (region === ALL_REGIONS) {
@@ -283,8 +315,14 @@ export default function PublicRegionScenarioSummaryV137({
       : region === NATIONAL_KEY
         ? "전국"
         : region;
-  const latestYear = shape.years[shape.years.length - 1];
-  const firstYear = shape.years[0];
+  // The years this measure actually has, so a province column delivered for one
+  // year is not captioned with the national series' range.
+  const shownYears = series
+    .flatMap((row) => row.points.map((point) => point.year))
+    .filter((year) => year !== UNSTATED_YEAR)
+    .sort((left, right) => left - right);
+  const latestYear = shownYears[shownYears.length - 1];
+  const firstYear = shownYears[0];
   const regionCount = shape.regions.length;
 
   const update = (key: string, value: string) =>
@@ -303,7 +341,13 @@ export default function PublicRegionScenarioSummaryV137({
       </div>
       <p className="prs137__lede">
         {distribution
-          ? `${shape.scenarios.length > 1 ? "각 시나리오와 연도마다 " : "각 연도마다 "}` +
+          ? `${
+              shape.scenarios.length > 1
+                ? "각 시나리오와 연도마다 "
+                : shownYears.length > 1
+                  ? "각 연도마다 "
+                  : ""
+            }` +
             `${regionCount}개 성·시가 가진 값의 분포입니다. 성·시 값을 평균한 전국값은 만들지 않고, ` +
             "중앙값과 10~90 분위로 보여줍니다."
           : `${regionLabel}의 원천값입니다. 계산하지 않은 값 그대로입니다.`}
@@ -348,7 +392,12 @@ export default function PublicRegionScenarioSummaryV137({
         <table className="cdp-table prs137__table">
           <caption>
             {measureLabel(measure)}
-            {unitHint ? ` (${unitHint})` : ""} · {firstYear}~{latestYear}년 ·{" "}
+            {unitHint ? ` (${unitHint})` : ""} ·{" "}
+            {shownYears.length === 0
+              ? "기준연도 미기재"
+              : firstYear === latestYear
+                ? `${latestYear}년`
+                : `${firstYear}~${latestYear}년`} ·{" "}
             {distribution ? "성·시 값의 분위" : "원천값"}
           </caption>
           <thead>
@@ -370,7 +419,9 @@ export default function PublicRegionScenarioSummaryV137({
                 .map((point) => (
                   <tr key={`${row.scenario}-${point.year}`}>
                     <th scope="row">{scenarioLabel(row.scenario)}</th>
-                    <td>{point.year}년</td>
+                    <td>
+                      {point.year === UNSTATED_YEAR ? "기준연도 미기재" : `${point.year}년`}
+                    </td>
                     <td>{point.median === null ? "자료 없음" : formatPublicNumberV126(point.median, unitHint)}</td>
                     {distribution && (
                       <td>{point.low === null ? "자료 없음" : formatPublicNumberV126(point.low, unitHint)}</td>
@@ -386,8 +437,9 @@ export default function PublicRegionScenarioSummaryV137({
         </table>
       </div>
       <p className="prs137__note">
-        시나리오별로 관측기간의 처음과 마지막 연도를 나란히 둡니다. 연도별 전체 값은 아래 상세
-        데이터와 다운로드에서 확인할 수 있습니다.
+        {shownYears.length > 1
+          ? "시나리오별로 관측기간의 처음과 마지막 연도를 나란히 둡니다. 연도별 전체 값은 아래 상세 데이터와 다운로드에서 확인할 수 있습니다."
+          : "원천이 제공하는 기준연도는 한 해입니다. 성·시별 값은 아래 상세 데이터와 다운로드에서 확인할 수 있습니다."}
       </p>
     </div>
   );
