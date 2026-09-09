@@ -32,3 +32,9 @@ reports/v128/production-smoke-v128.json
 
 # Isolated verification worktree for candidate data builds.
 /.verify/
+
+# Playwright keeps traces, videos and screenshots only for failures; they are
+# evidence for the run that produced them, not something to carry in the repo.
+/reports/final-data-integration/playwright-artifacts/
+/reports/final-data-integration/playwright-report/
+/test-results/

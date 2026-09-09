@@ -17,6 +17,7 @@
     "react-scripts": "5.0.1"
   },
   "devDependencies": {
+    "@playwright/test": "^1.63.0",
     "@types/react": "18.2.38",
     "@types/react-dom": "18.2.15",
     "typescript": "^4.9.5"
@@ -173,7 +174,11 @@
     "test:unit": "react-scripts test --env=jsdom --watchAll=false",
     "audit:screen-usability:v136-4": "node scripts/audit-vietnam-screen-usability-v136-4.mjs",
     "capture:screen-usability:v136-4": "node scripts/capture-vietnam-screen-usability-v136-4.mjs",
-    "report:screen-review:v136-4": "node scripts/build-screen-review-record-v136-4.mjs"
+    "report:screen-review:v136-4": "node scripts/build-screen-review-record-v136-4.mjs",
+    "e2e": "playwright test",
+    "e2e:detail": "playwright test e2e/detail-all.spec.ts",
+    "e2e:update-visual": "playwright test e2e/visual.spec.ts --update-snapshots",
+    "build:candidate:v137": "node scripts/v137/build-candidate-v137.mjs"
   },
   "browserslist": [
     ">0.2%",
