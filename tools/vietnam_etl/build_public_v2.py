@@ -23,6 +23,12 @@ from typing import Any, Iterable, Mapping
 
 from .b034_facts_v137 import derive_b034_facts
 from .c016_facts_v137 import derive_c016_facts
+from .download_delivery_v137 import (
+    DELIVERY_EXTERNAL,
+    NullObjectStorageAdapter,
+    build_manifest as build_download_manifest,
+    describe_asset as describe_download_asset,
+)
 from .d018_facts_v137 import (
     AGGREGATES as D018_AGGREGATES,
     derive_d018_facts,
@@ -1399,6 +1405,19 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
             catalog_path=v1_root / "catalog.json",
             include_records=True,
         )
+        # A named source directory that holds no workbook is a wrong path, not
+        # an empty delivery. The carry-forward below would then adopt every
+        # workbook from the previous ZIP and build a different tree without
+        # saying so - which is exactly what happened when VIETNAM_SOURCE_DIR was
+        # pointed at 베트남데이터 instead of 베트남데이터/file. The analyzer globs
+        # *.xlsx in the named directory only; it does not descend.
+        if not analysis["workbooks"]:
+            raise ValueError(
+                "SOURCE_DIR_HAS_NO_WORKBOOK: "
+                f"{source_dir} contains no *.xlsx directly inside it. "
+                "Name the directory that holds the workbooks (for this delivery, "
+                "베트남데이터/file). Refusing to fall back to the previous ZIP."
+            )
         # Elements the replacement delivery omits keep their previous workbook
         # rather than dropping to the much older V1 projection. Without this,
         # E-011/E-013/E-016/E-017 - present in the V124 ZIP but not in the final
@@ -1937,14 +1956,17 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         element["mapMode"] = layer.get("mapMode", element.get("mapMode"))
 
     # Static download assets are built from the exact public projection.
+    download_assets = []
     for element in catalog:
         if not element["downloadAssets"]:
             continue
         payload = payloads[element["elementId"]]
         observations, entities = _download_rows(payload)
         token = element["elementId"].lower()
+        json_path = out / "downloads" / f"{token}.json"
+        csv_path = out / "downloads" / f"{token}.csv"
         _write_json(
-            out / "downloads" / f"{token}.json",
+            json_path,
             {
                 "schemaVersion": SCHEMA_VERSION,
                 "generatedAt": GENERATED_AT,
@@ -1955,9 +1977,48 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
                 "entities": entities,
             },
         )
-        (out / "downloads" / f"{token}.csv").write_bytes(
-            _download_csv(element, observations, entities)
-        )
+        csv_path.write_bytes(_download_csv(element, observations, entities))
+        record_count = int(element.get("downloadableRecordCount") or 0)
+        for fmt, media_type, path in (
+            ("JSON", "application/json", json_path),
+            ("CSV", "text/csv; charset=utf-8", csv_path),
+        ):
+            download_assets.append(
+                describe_download_asset(
+                    element["elementId"],
+                    fmt,
+                    media_type,
+                    record_count,
+                    path,
+                    f"/data/vietnam/v2/downloads/{path.name}",
+                )
+            )
+
+    # Where each of those files is served from. Size, digest and record count
+    # are recorded for every asset; an asset too large for the repository is
+    # marked external and, with no adapter configured, reported NOT_UPLOADED
+    # rather than given a URL that serves nothing.
+    download_manifest = build_download_manifest(
+        download_assets, out / "downloads", NullObjectStorageAdapter()
+    )
+    _write_json(out / "downloads" / "delivery-manifest.json", download_manifest)
+    delivery_by_asset = {
+        (row["elementId"], row["format"]): row for row in download_manifest["assets"]
+    }
+    for element in catalog:
+        for asset in element.get("downloadAssets") or []:
+            row = delivery_by_asset.get((element["elementId"], asset["format"]))
+            if not row:
+                continue
+            # The catalog carries the URL a reader should actually fetch, and
+            # says when that file is not being served yet.
+            asset["deliveryMode"] = row["deliveryMode"]
+            asset["byteSize"] = row["byteSize"]
+            asset["sha256"] = row["sha256"]
+            asset["uploadState"] = row["uploadState"]
+            if row["deliveryMode"] == DELIVERY_EXTERNAL:
+                asset["url"] = row["url"]
+                asset["repositoryUrl"] = row["repositoryUrl"]
 
     # Element shards: exactly 19 deterministic packs of eight framework elements.
     bundle_elements: dict[str, Any] = {}
@@ -2245,6 +2306,19 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         "mapLayerCount": spatial_build["mapLayerCount"],
         "mapFeatureCount": spatial_build["mapFeatureCount"],
         "downloadableElementCount": sum(bool(row.get("downloadAssets")) for row in catalog),
+        "downloadDelivery": {
+            key: download_manifest[key]
+            for key in (
+                "assetCount",
+                "repositoryAssetCount",
+                "externalAssetCount",
+                "externalByteTotal",
+                "uploadedCount",
+                "pendingUploadCount",
+                "adapter",
+                "adapterConfigured",
+            )
+        },
         "bundleIndexElements": len(bundle_elements),
         "packCount": len(bundle_packs),
         "shardCount": len(bundle_packs),

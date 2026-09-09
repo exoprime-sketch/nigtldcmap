@@ -1,10 +1,10 @@
 {
   "schema": "nigt-candidate-fingerprint-1",
-  "generatedAt": "2026-09-09T01:04:08.116Z",
+  "generatedAt": "2026-09-09T01:32:28.798Z",
   "candidateRoot": ".verify/candidate",
   "dataSource": ".staging/final/public/data/vietnam/v2",
   "code": {
-    "commit": "7bab3dccd5a646b05eae090441462cd697eb6d42",
+    "commit": "9ae16f6f389ec887ee40461fdfb59343f9fdb9c0",
     "branch": "fix/existing-screen-usability-v136",
     "dirty": true,
     "dirtyPaths": [
@@ -18,30 +18,24 @@
       "NIGT_STAGE2_SOURCE_PROJECTION_AND_RECONCILIATION.txt",
       "NIGT_STAGE4_CLOSEOUT_20260908.txt",
       "NIGT_STAGE4_FINISH_EXISTING_PLATFORM.txt",
-      "build.repo/",
-      "eports/final-data-integration/CANDIDATE_FINGERPRINT_V137.json",
+      "eports/v125/duplicate-visible-label-audit-v125.json",
       "pilot-out.txt",
       "pilot2.txt",
-      "reports/v125/duplicate-visible-label-audit-v125.json",
       "reports/v125/element-visualization-audit-v125.csv",
+      "reports/v125/mixed-unit-axis-audit-v125.json",
       "reports/v125/semantic-dimension-audit-v125.json",
       "reports/v125/visualization-contract-coverage-v125.json",
-      "reports/v131/entity-card-audit-v131.json",
-      "reports/v131/public-naming-audit-v131.json",
-      "reports/v132/portfolio-analysis-audit-v132.json",
-      "reports/v136/release-audit-v136.json",
-      "src/components/data/public/PublicPortfolioSummaryV132.tsx",
-      "src/data/visualization/generatedVisualizationContractsV125.ts",
-      "src/data/visualization/publicEntityFieldPolicyV132.ts",
-      "tools/vietnam_etl/build_public_v2.py"
+      "scripts/v137/check-download-delivery-v137.mjs",
+      "tools/vietnam_etl/build_public_v2.py",
+      "tools/vietnam_etl/download_delivery_v137.py"
     ],
     "srcTreeSha256": "f5ae351e675488eed60fbb2f7597db909c3da846ee392a0ecd1da036039a4ea3",
     "srcFileCount": 437
   },
   "data": {
-    "fileCount": 493,
-    "treeSha256": "510e20ba27cec509e1ea0af3cdb9e1fb13839ba691b427c1b8cd37b007fc6912",
-    "manifestSha256": "02281bf79ede31d1f2fdacd34f3404e38d0253ec0eabc84392a31b79c5e1f32a",
+    "fileCount": 494,
+    "treeSha256": "00461b43d3ce180ff0aee0bfac2a07390752aee620eb6131efa04f04d4e4aeb2",
+    "manifestSha256": "88c54b676b2cb32f1c0a7fcfcf611c120259906d806b0807935abd8ea7a85a2c",
     "mapIndexSha256": "a70acd595d0e3398e2cb8bd323233a3883d91abfc37b458ace1d6c193fd269f8"
   },
   "appBundle": {
