@@ -49,6 +49,12 @@ from tools.vietnam_spatial.spatial_semantics_v130 import (
 
 
 SCHEMA_VERSION = "v124"
+
+# The download JSON's own representation version, separate from the data schema.
+#   1  every record carried every field
+#   2  fields constant across a file move to recordDefaults; merge to restore
+# The CSV is unversioned here because its flat schema did not change.
+DOWNLOAD_SCHEMA_VERSION = 2
 RUNTIME_VERSION = "v124-gzip-json-envelope-v1"
 GENERATED_AT = "2026-08-27T00:00:00Z"
 PACK_ELEMENT_COUNT = 8
@@ -2019,6 +2025,13 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         entity_defaults, entities_out = _hoist_record_defaults(entities)
         document: dict[str, Any] = {
             "schemaVersion": SCHEMA_VERSION,
+            # The logical records are unchanged, but their JSON representation
+            # is not: fields constant across a file now live in recordDefaults
+            # instead of on every record. A consumer reading records[].rightsNote
+            # has to merge the defaults, so the change is versioned rather than
+            # left to be discovered. The CSV keeps its flat one-row-per-record
+            # schema untouched.
+            "downloadSchemaVersion": DOWNLOAD_SCHEMA_VERSION,
             "generatedAt": GENERATED_AT,
             "countryIso3": "VNM",
             "element": element,
@@ -2033,6 +2046,8 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
                     "레코드마다 반복해 싣지 않고 여기에 한 번만 싣습니다. "
                     "각 레코드를 읽을 때 그대로 합쳐 사용하세요."
                 ),
+                "appliesTo": "observations, entities",
+                "mergeRule": "record = { ...recordDefaults[section], ...record }",
                 "observations": observation_defaults,
                 "entities": entity_defaults,
             }

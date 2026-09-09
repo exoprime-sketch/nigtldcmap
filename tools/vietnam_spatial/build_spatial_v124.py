@@ -180,6 +180,36 @@ def _normalized_name(value: str) -> str:
     return " ".join(re.findall(r"[a-z0-9]+", text))
 
 
+def _measure_id_from_indicators(element_id: str, indicator_ids: set[str]) -> str | None:
+    """The measure token shared by every indicator behind one variable.
+
+    Indicator ids are ``<element>_<measure>_<region>``. Stripping the element
+    prefix and the differing region suffix leaves the measure, which is stable
+    across relabelling because it comes from the derivation contract rather than
+    from the display text. Returns None when the ids do not agree, so a caller
+    never gets a guess.
+    """
+
+    if not indicator_ids:
+        return None
+    prefix = f"{element_id}_"
+    stems: set[str] = set()
+    for indicator_id in indicator_ids:
+        body = indicator_id[len(prefix):] if indicator_id.startswith(prefix) else indicator_id
+        parts = body.split("_")
+        # Region suffixes are the verified adm1 code, "vn_01" or "vn_ct".
+        if len(parts) >= 2 and parts[-2].lower() == "vn":
+            parts = parts[:-2]
+        elif parts and re.fullmatch(r"vn[_-]?[0-9a-z]{2}", parts[-1], re.IGNORECASE):
+            parts = parts[:-1]
+        stem = "_".join(parts).strip("_")
+        if stem:
+            stems.add(stem)
+    if len(stems) != 1:
+        return None
+    return stems.pop()
+
+
 def _slug(value: str) -> str:
     key = _normalized_name(value).replace(" ", "-")
     if key:
@@ -453,11 +483,15 @@ def _spatial_document(
     units: dict[str, set[str]] = defaultdict(set)
     periods_by_variable: dict[str, set[str]] = defaultdict(set)
     series_codes: dict[tuple[str, str], set[str]] = defaultdict(set)
+    indicator_ids: dict[str, set[str]] = defaultdict(set)
     for row in values:
         if row.get("unit"):
             units[str(row["variable"])].add(str(row["unit"]))
         periods_by_variable[str(row["variable"])].add(str(row["period"]))
         series_codes[(str(row["variable"]), str(row["period"]))].add(str(row["adm1Code"]))
+        source_indicator = str(row.get("sourceIndicatorId") or "")
+        if source_indicator:
+            indicator_ids[str(row["variable"])].add(source_indicator)
 
     variables = []
     for variable in sorted(labels, key=lambda item: labels[item]):
@@ -465,6 +499,19 @@ def _spatial_document(
         variables.append(
             {
                 "key": variable,
+                # A stable name for this measure, independent of the display
+                # label and of the key.
+                #
+                # `key` is a slug of the Korean label, and the slugger falls back
+                # to a SHA-256 prefix for anything non-ASCII - so every Korean
+                # variable is keyed by a hash that changes whenever the label
+                # does. A map preset held one of those hashes and broke silently
+                # when the delivery relabelled. The indicator ids behind the
+                # values already carry a stable measure token, so it is lifted
+                # out and published rather than invented.
+                "measureId": _measure_id_from_indicators(
+                    element_id, indicator_ids.get(variable, set())
+                ),
                 "label": labels[variable],
                 "unit": " · ".join(sorted(units[variable])) or "미표기",
                 "periods": periods,

@@ -4798,11 +4798,22 @@ export default function RealMapExplorerPage({
     if (!variables.length) {
       return { variable: request.variable, period: request.period, adjusted: false };
     }
-    const byKey = variables.find((item) => item.key === request.variable);
-    const byLabel = request.variableLabel
-      ? variables.find((item) => item.label === request.variableLabel)
+    // The stable id first. The key is a slug of the label and becomes a hash
+    // for anything non-ASCII, so it moves whenever the label does; measureId
+    // comes from the derivation contract and does not.
+    const byMeasureId = request.measureId
+      ? variables.find((item) => item.measureId === request.measureId)
       : undefined;
+    const byKey = variables.find((item) => item.key === request.variable);
+    // A label identifies a variable only when exactly one carries it. Two
+    // variables sharing a label is not an identification, and picking the first
+    // would be a guess.
+    const labelMatches = request.variableLabel
+      ? variables.filter((item) => item.label === request.variableLabel)
+      : [];
+    const byLabel = labelMatches.length === 1 ? labelMatches[0] : undefined;
     const chosen =
+      byMeasureId ||
       byKey ||
       byLabel ||
       variables.find((item) => item.key === layer?.selectors?.defaultVariable) ||

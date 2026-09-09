@@ -1,10 +1,10 @@
 {
   "schema": "nigt-candidate-fingerprint-1",
-  "generatedAt": "2026-09-09T02:20:33.903Z",
+  "generatedAt": "2026-09-09T02:49:32.921Z",
   "candidateRoot": ".verify/candidate",
   "dataSource": ".staging/final/public/data/vietnam/v2",
   "code": {
-    "commit": "effad58906143039effb1bc2af926dd5fa63e4ee",
+    "commit": "a84e00c9c8c1c356f662a441f35a25a13837a8b9",
     "branch": "fix/existing-screen-usability-v136",
     "dirty": true,
     "dirtyPaths": [
@@ -21,28 +21,29 @@
       "eports/v125/duplicate-visible-label-audit-v125.json",
       "pilot-out.txt",
       "pilot2.txt",
-      "reports/final-data-integration/qa-verified/2026-09-09T02-06-45-647Z-306253ffce8d/",
-      "reports/final-data-integration/screen-review/VERDICTS_V137.md",
+      "reports/final-data-integration/download-roundtrip-v137.json",
       "reports/v125/element-visualization-audit-v125.csv",
       "reports/v125/mixed-unit-axis-audit-v125.json",
       "reports/v125/semantic-dimension-audit-v125.json",
       "reports/v125/visualization-contract-coverage-v125.json",
+      "scripts/v137/verify-download-roundtrip-v137.mjs",
+      "src/data/vietnam/vietnamTypesV124.ts",
       "src/data/visualization/publicMapWorkspaceV126.ts",
       "src/pages/RealMapExplorerPage.tsx",
       "tools/vietnam_etl/build_public_v2.py",
-      "tools/vietnam_etl/download_delivery_v137.py"
+      "tools/vietnam_spatial/build_spatial_v124.py"
     ],
-    "srcTreeSha256": "0056f4e7695d8a28ea09d538b24af18aa8d0376311416bc3530d97b7a5bfba7c",
+    "srcTreeSha256": "80d93e054350c610e0def1e097d3907d55edbbd655cc655f49f444eb7b5cdbe6",
     "srcFileCount": 438
   },
   "data": {
     "fileCount": 494,
-    "treeSha256": "c3206b408b1a5070e951e6c1a5272aeb754ff804495464a74a196191e3a3c3e5",
+    "treeSha256": "c9e80c393e44a81d74780d15d269c90c3794799ec42814b02edb66dd0b83d9ba",
     "manifestSha256": "fb8b64b4623d3a95f5c55bdb8eafadf4caa22994d068658fda37e961c59faabe",
-    "mapIndexSha256": "a70acd595d0e3398e2cb8bd323233a3883d91abfc37b458ace1d6c193fd269f8"
+    "mapIndexSha256": "79a910494aa5760ef3f60c5b7ce61b6bae8f5e2a604dfdc2b4bb3f41cd659729"
   },
   "appBundle": {
-    "file": "static/js/main.2847eaaf.js",
-    "sha256": "06280dd9f50525af3acc7a86fc782cba57708975782c19c8a995df561d31823f"
+    "file": "static/js/main.049ab6af.js",
+    "sha256": "8bd89b4b86eb695322c7e82dc26f7b6d52851d9cee5502165a8094ddfa32a42c"
   }
 }
