@@ -1,11 +1,13 @@
 #!/usr/bin/env node
 
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 import {
   AuditV125,
   PROJECT_ROOT,
+  V2_ROOT,
+  fileSha256,
   loadPackPayloads,
   payloadRecords,
   readJson,
@@ -30,7 +32,52 @@ const portfolioRendererIds = fitRows
   .filter((row) => row.primaryRenderer === "portfolio-dashboard")
   .map((row) => row.elementId);
 const portfolioIds = [...new Set(["D-012", ...portfolioRendererIds])];
-const pack = loadPackPayloads();
+// The screens are driven from the served build, so the expectations are read
+// from the data that build holds. Reading public/data while driving build/ made
+// this audit compare two different trees: it counted C-007 as having no entities
+// in the older tree and then reported the screen that draws 32 of them.
+const BUILD_ROOT = resolve(PROJECT_ROOT, "build");
+const BUILD_DATA_ROOT = resolve(BUILD_ROOT, "data/vietnam/v2");
+const pack = loadPackPayloads(BUILD_DATA_ROOT);
+
+/** The build's data and the repository's data have to be the same bytes. */
+const dataDifferences = ["packs/bundle-index-v124.json", "catalog.json", "manifest.json"]
+  .map((file) => {
+    const built = resolve(BUILD_DATA_ROOT, file);
+    const published = resolve(V2_ROOT, file);
+    if (!existsSync(built) || !existsSync(published)) {
+      return { file, built: existsSync(built), published: existsSync(published) };
+    }
+    return fileSha256(built) === fileSha256(published) ? null : { file, sha: "differs" };
+  })
+  .filter(Boolean);
+
+/**
+ * Every four-digit year the element's own records contain.
+ *
+ * This answers one question: is a year the screen shows a year the source
+ * states? A screen with no year trend is not failed for it - E-018 writes
+ * "1999 설립 / 2020 진출" in a single cell and E-020 says only "연 1회 공모", and a
+ * trend drawn from either would be a year the platform picked rather than one
+ * the source reported. What must never happen is the opposite: a year on screen
+ * that appears nowhere in the data.
+ */
+const yearsInRecords = new Map(
+  portfolioIds.map((elementId) => {
+    const payload = pack.elements.get(elementId);
+    const years = new Set();
+    for (const record of [
+      ...payloadRecords(payload?.entities),
+      ...payloadRecords(payload?.observations),
+    ]) {
+      for (const value of JSON.stringify(record).match(/(?:19|20)\d{2}/gu) || []) {
+        years.add(value);
+      }
+    }
+    return [elementId, years];
+  })
+);
+
 const dataSummary = portfolioIds.map((elementId) => {
   const payload = pack.elements.get(elementId);
   return {
@@ -52,7 +99,7 @@ const routeResults = [];
 const routeFailures = [];
 let e008Result = null;
 try {
-  server = await startStaticBuildServer(resolve(PROJECT_ROOT, "build"));
+  server = await startStaticBuildServer(BUILD_ROOT);
   browser = await launchHeadlessBrowser();
   await setViewport(browser.cdp, 1440, 1100);
   for (const elementId of portfolioIds) {
@@ -79,6 +126,18 @@ try {
             kpiCount: summary?.querySelectorAll('[data-portfolio-kpi]').length || 0,
             categorySummary: Boolean(summary?.querySelector('[data-portfolio-distribution]')),
             yearTrend: Boolean(summary?.querySelector('[data-testid="portfolio-year-trend-v132"]')),
+            yearRangeKpi: Boolean(summary?.querySelector('[data-portfolio-kpi="year-range"]')),
+            // No backslash escapes here: this expression travels through a
+            // template literal and a CDP payload, and a regex class did not
+            // survive the trip - the check quietly matched nothing.
+            shownYears: [...new Set([
+              ...[...(summary?.querySelector('[data-testid="portfolio-year-trend-v132"]')?.querySelectorAll('*') || [])]
+                .map((node) => (node.textContent || '').trim())
+                .filter((text) => text.length === 4 && (text.startsWith('19') || text.startsWith('20')) && Number.isFinite(Number(text))),
+              ...((summary?.querySelector('[data-portfolio-kpi="year-range"] strong')?.textContent || '')
+                .split(/[^0-9]+/u)
+                .filter((text) => text.length === 4 && (text.startsWith('19') || text.startsWith('20')) && Number.isFinite(Number(text)))),
+            ])],
             filterCount: list?.querySelectorAll('input, select').length || 0,
             filters: Boolean(list?.querySelector('[data-testid="portfolio-list-filters-v132"]')),
             alert: root?.querySelector('[role="alert"]')?.textContent || '',
@@ -87,18 +146,24 @@ try {
       );
       routeResults.push(result);
       const requiresEntitySummary = entityBearingIds.has(elementId);
+      // A year trend is required where the delivery dates its records and
+      // forbidden where it does not. The two are the same derivation, so the
+      // trend and the 확인 기간 KPI have to agree with each other; a screen
+      // showing one without the other is describing a year it does not have.
+      const inconsistentYearSummary =
+        Boolean(result?.yearTrend) !== Boolean(result?.yearRangeKpi);
       if (
         result?.alert ||
         (requiresEntitySummary && (
           !result?.summary ||
           !result?.summaryBeforeList ||
-          !result?.yearTrend ||
           !result?.filters ||
-          Number(result?.filterCount || 0) < 3
+          Number(result?.filterCount || 0) < 3 ||
+          inconsistentYearSummary
         )) ||
         (!requiresEntitySummary && result?.list)
       ) {
-        routeFailures.push(result);
+        routeFailures.push({ ...result, inconsistentYearSummary });
       }
     } catch (error) {
       routeFailures.push({
@@ -144,6 +209,26 @@ audit.check(
   "PORTFOLIO_DATA_ACCOUNTED",
   dataSummary.every((item) => item.observationCount > 0 || item.entityCount > 0),
   dataSummary.filter((item) => item.observationCount === 0 && item.entityCount === 0),
+  []
+);
+audit.check(
+  "PORTFOLIO_DATA_SOURCE_MATCHES_BUILD",
+  dataDifferences.length === 0,
+  dataDifferences,
+  []
+);
+const inventedYears = routeResults
+  .map((result) => ({
+    elementId: result.elementId,
+    invented: (result.shownYears || []).filter(
+      (year) => !(yearsInRecords.get(result.elementId) || new Set()).has(year)
+    ),
+  }))
+  .filter((row) => row.invented.length > 0);
+audit.check(
+  "PORTFOLIO_YEAR_NOT_INVENTED",
+  inventedYears.length === 0,
+  inventedYears,
   []
 );
 audit.check(

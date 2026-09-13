@@ -511,10 +511,16 @@ function factualCompositeV131(
     }
     case "D-022": {
       const donor = normalizedFieldV131(entity, "donorOrganization");
+      // The delivery prints these columns by name now (링크, 섹터_DAC_5자리)
+      // where it used to hash them. Both spellings are read so a card keeps its
+      // verified official name across either shape of the source.
       const activityId = publicIatiActivityIdV131(
-        normalizedFieldV131(entity, "field_87a4b6ef")
+        normalizedFieldV131(entity, "링크") ||
+          normalizedFieldV131(entity, "field_87a4b6ef")
       );
-      const sector = normalizedFieldV131(entity, "field_a9a17396");
+      const sector =
+        normalizedFieldV131(entity, "섹터_DAC_5자리") ||
+        normalizedFieldV131(entity, "field_a9a17396");
       if (!donor && !activityId && !sector) return null;
 
       // The identifiers move out of the heading and into the card's detail
@@ -614,6 +620,22 @@ export function resolvePublicEntityTitleV131(
   }
 
   const directTitle = titleTextV131(entity.name);
+  // A verified official name outranks the row's own name column. The delivery
+  // now prints a name for these rows, and it is the English title the
+  // institution publishes; the reviewed screen name is Korean, and the English
+  // title belongs on the card as an identifier fact rather than as its
+  // heading. Only a composite that resolved against the verified registry
+  // reports "available", so every other element keeps its source name.
+  const verifiedComposite = factualCompositeV131(entity);
+  if (verifiedComposite && verifiedComposite.nameAvailability === "available") {
+    return {
+      title: verifiedComposite.title,
+      strategy: "factual-composite",
+      nameAvailability: verifiedComposite.nameAvailability,
+      secondaryNote: verifiedComposite.secondaryNote,
+      identifierFacts: verifiedComposite.identifierFacts || [],
+    };
+  }
   // A bare number or a bare date is a measurement, not a name. The ETL falls
   // back to the row's first stated attribute when the delivery gives no name
   // column, which titled A-024's 722 line segments "220" and A-013's 365 NDC

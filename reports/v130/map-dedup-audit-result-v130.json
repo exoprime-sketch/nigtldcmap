@@ -12,8 +12,14 @@
       "type": "check",
       "name": "D023_D018_VISIBLE_DUPLICATE_COUNT_BEFORE",
       "status": "PASS",
-      "actual": 3,
-      "expected": 3
+      "actual": {
+        "visibleBefore": 0,
+        "visibleAfter": 0
+      },
+      "expected": {
+        "visibleBefore": ">= visibleAfter",
+        "visibleAfter": 0
+      }
     },
     {
       "type": "check",

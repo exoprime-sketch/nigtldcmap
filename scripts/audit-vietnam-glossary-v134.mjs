@@ -108,9 +108,22 @@ function classifyNonGlossaryToken(token) {
 }
 
 const aliases = glossary.flatMap((entry) => [entry.term, ...(entry.aliases || [])]);
-const aliasByNormalized = new Map(
-  aliases.map((alias) => [glossaryModule.normalizePublicTermAliasV134(alias).toLocaleUpperCase("en-US"), alias])
+// A unit symbol is case-sensitive. Folding case here re-resolved INFORM's
+// hazard dimension code "HA" to the hectare after the tokenizer had correctly
+// refused it, so unit aliases are indexed as they are written.
+const unitAliases = new Set(
+  glossary
+    .filter((entry) => entry.category === "unit")
+    .flatMap((entry) => [entry.term, ...(entry.aliases || [])])
 );
+const aliasByNormalized = new Map(
+  aliases
+    .filter((alias) => !unitAliases.has(alias))
+    .map((alias) => [glossaryModule.normalizePublicTermAliasV134(alias).toLocaleUpperCase("en-US"), alias])
+);
+for (const alias of unitAliases) {
+  aliasByNormalized.set(glossaryModule.normalizePublicTermAliasV134(alias), alias);
+}
 const aliasIdsByNormalized = {};
 for (const entry of glossary) {
   for (const alias of [entry.term, ...(entry.aliases || [])]) {
@@ -229,12 +242,19 @@ const snapshotExpression = `(() => {
           const visibleExpansion = carrier?.querySelector(
             '[data-public-term-expansion-v134="true"]'
           );
+          // A term is covered when the reader can find out what it means: a
+          // help trigger, a rendered expansion, or - marked by the renderer -
+          // a label that already states the meaning beside the abbreviation,
+          // as "해운 연결성 지수(LSCI)" does. Appending a second gloss there
+          // produced "해운 연결성 지수(LSCI(정기선 해운연결성지수))".
+          const statedInPlace = carrier?.getAttribute('data-public-term-stated-v134') === 'true';
           const wrapped = Boolean(
             carrier &&
             ((mode === 'tooltip' && carrier.tagName === 'BUTTON' && carrier.getAttribute('aria-label')) ||
               (mode === 'visible-expansion' &&
-                visibleExpansion &&
-                (visibleExpansion.textContent || '').trim().length > 2))
+                (statedInPlace ||
+                  (visibleExpansion &&
+                    (visibleExpansion.textContent || '').trim().length > 2))))
           );
           const matches = value.match(candidatePattern) || [];
           matches.forEach((token) => {

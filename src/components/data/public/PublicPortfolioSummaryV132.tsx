@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { publicTextV126 } from "../../../data/visualization/publicFieldPolicyV126";
+import { isNumericCodeListV136_2 } from "../../../data/visualization/publicCategoryLabelV136_2";
 import { publicCategoryRowsV136_3 } from "../../../utils/publicCategoryGroupingV136_3";
 import { reviewedEntityAttributesV132 } from "../../../data/visualization/publicEntityFieldPolicyV132";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
@@ -350,10 +351,17 @@ export function publicPortfolioFacetV132(
     config.yearKeys
       .map((key) => extractYearV132(attributes[key]))
       .find((candidate): candidate is number => candidate !== null) ?? null;
+  // D-021 files its sector as a bare DAC purpose code ("21023", "74020"), and
+  // grouping by it labelled every bar with a number no reader can read. A code
+  // is not a name, so the next reviewed column is used; if every one of them is
+  // a code, the first is still shown rather than nothing.
+  const categoryCandidates = config.categoryKeys
+    .map((key) => publicTextV126(attributes[key]))
+    .filter((candidate): candidate is string => Boolean(candidate));
   const category =
-    config.categoryKeys
-      .map((key) => publicTextV126(attributes[key]))
-      .find((candidate): candidate is string => Boolean(candidate)) || null;
+    categoryCandidates.find((candidate) => !isNumericCodeListV136_2(candidate)) ||
+    categoryCandidates[0] ||
+    null;
   const amount =
     config.amountKeys
       .map(({ key, currency }) => ({

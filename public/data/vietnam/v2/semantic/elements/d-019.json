@@ -1,38 +1,16 @@
 {
   "dimensions": [
     {
-      "key": "category",
-      "labelKo": "분류",
-      "valueCount": 3,
-      "values": [
-        "단계별 요청 건수",
-        "예산 합계",
-        "요청 건수"
-      ]
-    },
-    {
-      "key": "detail",
-      "labelKo": "세부 분류",
-      "valueCount": 5,
-      "values": [
-        "Completed",
-        "Design",
-        "Implementation",
-        "베트남 기술지원 요청 총 건수",
-        "요청건 예산 총액"
-      ]
-    },
-    {
       "key": "entityType",
       "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
-        "사업·재원"
+        "entity"
       ]
     },
     {
-      "key": "sectors",
-      "labelKo": "sectors",
+      "key": "기술분야_Sectors",
+      "labelKo": "기술분야_Sectors",
       "valueCount": 7,
       "values": [
         "Agriculture",
@@ -42,22 +20,6 @@
         "Industry",
         "Waste management",
         "Water"
-      ]
-    },
-    {
-      "key": "technology",
-      "labelKo": "기술",
-      "valueCount": 1,
-      "values": [
-        "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
-      ]
-    },
-    {
-      "key": "year",
-      "labelKo": "연도",
-      "valueCount": 1,
-      "values": [
-        "2025"
       ]
     }
   ],
@@ -276,7 +238,7 @@
       "indicatorCount": 1,
       "key": "measure-5bc9cf65db2a",
       "labelKo": "CTCN 기술지원 요청",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "USD",
       "unitFamily": "currency"
     },
@@ -284,12 +246,12 @@
       "indicatorCount": 5,
       "key": "measure-646a4a09318f",
       "labelKo": "CTCN 기술지원 요청",
-      "recordCount": 4,
+      "recordCount": 0,
       "unit": "건",
       "unitFamily": "text"
     }
   ],
-  "observationCount": 5,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

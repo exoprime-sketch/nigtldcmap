@@ -2652,7 +2652,8 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "contractStatus": "archetype",
     "dataPresenceStatus": "actual-records",
     "dimensionLabels": [
-      "레코드 유형"
+      "레코드 유형",
+      "status"
     ],
     "downloadAvailable": true,
     "elementId": "C-025",

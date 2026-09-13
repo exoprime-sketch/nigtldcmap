@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v131-public-content-audit-1",
-  "generatedAt": "2026-09-01T07:00:44.241Z",
+  "generatedAt": "2026-09-09T07:47:07.355Z",
   "audit": "map-copy:v131",
   "status": "PASS",
   "summary": {
@@ -12,10 +12,14 @@
     "total": 12,
     "failedChecks": [],
     "finalMapLayerCount": 12,
-    "finalMapFeatureOrScopeCount": 2900,
+    "finalMapFeatureOrScopeCount": 3144,
     "mapTooltipPlaceholderCount": 0,
     "mapSelectedPanelPlaceholderCount": 0,
     "v130RegressionResult": "PASS",
+    "overlapPickerResult": {
+      "count": 2,
+      "selectionKey": "v124-c-025-entity-00146"
+    },
     "runtimeFailure": null
   },
   "checks": [
@@ -40,8 +44,14 @@
       "audit": "map-copy:v131",
       "name": "FINAL_MAP_FEATURE_OR_SCOPE_COUNT",
       "status": "PASS",
-      "actual": 2900,
-      "expected": 2900
+      "actual": {
+        "declared": 3144,
+        "actual": 3144
+      },
+      "expected": {
+        "declared": "equal to actual",
+        "actual": ">= 2900"
+      }
     },
     {
       "type": "check",
@@ -93,13 +103,13 @@
       "status": "PASS",
       "actual": {
         "mapSelectedElements": 12,
-        "mapFeatureOrScopeCount": 2900,
+        "mapFeatureOrScopeCount": 3144,
         "projectScope": "PASS",
         "greaterMekong": "regional-scope"
       },
       "expected": {
         "mapSelectedElements": 12,
-        "mapFeatureOrScopeCount": 2900,
+        "mapFeatureOrScopeCount": 3144,
         "projectScope": "PASS",
         "greaterMekong": "regional-scope"
       }
@@ -153,24 +163,24 @@
             "name": "map-point-tooltip.png",
             "width": 1425,
             "height": 1034,
-            "byteSize": 253465,
-            "sha256": "52884573aa92dd71a40e0efcebcf262705437f27d9fca5836dd60f894821733e",
+            "byteSize": 270798,
+            "sha256": "731231352390d2fb4d440c7f4a9904e3efb97e436c5548d370ed452d284b0423",
             "error": null
           },
           {
             "name": "map-regional-project.png",
             "width": 1425,
             "height": 1034,
-            "byteSize": 295724,
-            "sha256": "0b3e11a3dcb799a910f34a86ea786c59dfe342d2543f1f9a1e4e92261377d477",
+            "byteSize": 274617,
+            "sha256": "33d018214308082c6074601eeada5315e4d3cf86add3c9ede49c2cceafdbaec3",
             "error": null
           },
           {
             "name": "map-selected-feature.png",
             "width": 1425,
             "height": 1034,
-            "byteSize": 258517,
-            "sha256": "9b1c333afaceb673a2a5ac18fc47d86c5e945f2b70c4f5bea704f39419233c91",
+            "byteSize": 262602,
+            "sha256": "e5d69c59e2a17c8ff572370339415b64e5b178e8531bd87da3ca5640bbaff16a",
             "error": null
           }
         ],
@@ -188,9 +198,13 @@
     }
   ],
   "finalMapLayerCount": 12,
-  "finalMapFeatureOrScopeCount": 2900,
+  "finalMapFeatureOrScopeCount": 3144,
   "mapTooltipPlaceholderCount": 0,
   "mapSelectedPanelPlaceholderCount": 0,
   "v130RegressionResult": "PASS",
+  "overlapPickerResult": {
+    "count": 2,
+    "selectionKey": "v124-c-025-entity-00146"
+  },
   "runtimeFailure": null
 }

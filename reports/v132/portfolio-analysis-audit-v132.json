@@ -2,20 +2,18 @@
   "schemaVersion": "v132-public-visualization-audit-1",
   "generatedAt": "2026-09-01T00:00:00.000Z",
   "audit": "portfolio-analysis:v132",
-  "status": "FAIL",
+  "status": "PASS",
   "summary": {
     "type": "summary",
     "audit": "portfolio-analysis:v132",
-    "status": "FAIL",
-    "passed": 9,
-    "failed": 1,
-    "total": 10,
-    "failedChecks": [
-      "PORTFOLIO_LIST_BEFORE_SUMMARY"
-    ],
+    "status": "PASS",
+    "passed": 12,
+    "failed": 0,
+    "total": 12,
+    "failedChecks": [],
     "portfolioElementCount": 19,
-    "entityBearingPortfolioElementCount": 18,
-    "portfolioListBeforeSummaryCount": 3,
+    "entityBearingPortfolioElementCount": 19,
+    "portfolioListBeforeSummaryCount": 0,
     "researchListBeforeAnalysisCount": 0,
     "e008Result": "PASS",
     "runtimeFailure": null
@@ -56,49 +54,28 @@
     {
       "type": "check",
       "audit": "portfolio-analysis:v132",
+      "name": "PORTFOLIO_DATA_SOURCE_MATCHES_BUILD",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "portfolio-analysis:v132",
+      "name": "PORTFOLIO_YEAR_NOT_INVENTED",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "portfolio-analysis:v132",
       "name": "PORTFOLIO_LIST_BEFORE_SUMMARY",
-      "status": "FAIL",
+      "status": "PASS",
       "actual": {
         "runtimeFailure": null,
         "checked": 19,
-        "failures": [
-          {
-            "elementId": "C-007",
-            "summary": true,
-            "list": true,
-            "summaryBeforeList": true,
-            "kpiCount": 2,
-            "categorySummary": true,
-            "yearTrend": true,
-            "filterCount": 3,
-            "filters": true,
-            "alert": ""
-          },
-          {
-            "elementId": "E-018",
-            "summary": true,
-            "list": true,
-            "summaryBeforeList": true,
-            "kpiCount": 1,
-            "categorySummary": false,
-            "yearTrend": false,
-            "filterCount": 3,
-            "filters": true,
-            "alert": ""
-          },
-          {
-            "elementId": "E-020",
-            "summary": true,
-            "list": true,
-            "summaryBeforeList": true,
-            "kpiCount": 1,
-            "categorySummary": true,
-            "yearTrend": false,
-            "filterCount": 3,
-            "filters": true,
-            "alert": ""
-          }
-        ]
+        "failures": []
       },
       "expected": {
         "runtimeFailure": null,
@@ -176,8 +153,8 @@
     }
   ],
   "portfolioElementCount": 19,
-  "entityBearingPortfolioElementCount": 18,
-  "portfolioListBeforeSummaryCount": 3,
+  "entityBearingPortfolioElementCount": 19,
+  "portfolioListBeforeSummaryCount": 0,
   "researchListBeforeAnalysisCount": 0,
   "e008Result": "PASS",
   "runtimeFailure": null

@@ -1,38 +1,25 @@
 {
   "dimensions": [
     {
-      "key": "detail",
-      "labelKo": "세부 분류",
-      "valueCount": 1,
-      "values": [
-        "Approved Projects(REGISTERED) 전수 계수"
-      ]
-    },
-    {
       "key": "entityType",
       "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
-        "탄소크레딧"
-      ]
-    },
-    {
-      "key": "period",
-      "labelKo": "기간",
-      "valueCount": 1,
-      "values": [
-        "—"
+        "entity"
       ]
     },
     {
       "key": "status",
       "labelKo": "status",
-      "valueCount": 11,
+      "valueCount": 14,
       "values": [
+        "Gold Standard Certified Design",
+        "Gold Standard Certified Project",
         "GOLD_STANDARD_CERTIFIED_DESIGN",
         "GOLD_STANDARD_CERTIFIED_PROJECT",
         "Late to verify",
         "LISTED",
+        "Listed",
         "Registered",
         "Registration requested",
         "Under development",
@@ -41,55 +28,12 @@
         "Verification approval requested",
         "Withdrawn"
       ]
-    },
-    {
-      "key": "technology",
-      "labelKo": "기술",
-      "valueCount": 1,
-      "values": [
-        "CTIS-01,CTIS-02,CTIS-03,CTIS-05,CTIS-07,CTIS-08,CTIS-14,CTIS-15,CTIS-17,CTIS-19,CTIS-21,CTIS-23,CTIS-34,CTIS-35"
-      ]
-    },
-    {
-      "key": "technologyField",
-      "labelKo": "technologyField",
-      "valueCount": 11,
-      "values": [
-        "CTIS-01 태양광 기술",
-        "CTIS-02 태양열 기술",
-        "CTIS-03 풍력 기술",
-        "CTIS-05 수력 기술",
-        "CTIS-08 바이오에너지 기술",
-        "CTIS-15 폐자원 기술",
-        "CTIS-17 산업효율 기술",
-        "CTIS-18 수송효율 기술",
-        "CTIS-19 건물효율 기술",
-        "CTIS-23 탄소흡수원 기술",
-        "CTIS-34 농축수산 부문 기술"
-      ]
-    },
-    {
-      "key": "technologyMappingBasis",
-      "labelKo": "technologyMappingBasis",
-      "valueCount": 1,
-      "values": [
-        "Excel 수록 기술매핑값; AI가 새로 추론하지 않음"
-      ]
-    },
-    {
-      "key": "year",
-      "labelKo": "연도",
-      "valueCount": 2,
-      "values": [
-        "2025",
-        "2026"
-      ]
     }
   ],
   "elementId": "C-025",
-  "entityCount": 146,
+  "entityCount": 388,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 16,
+  "indicatorCount": 21,
   "indicators": [
     {
       "axisGroupKey": "measure-fc3208a87cfa|—",
@@ -456,6 +400,106 @@
       }
     },
     {
+      "axisGroupKey": "measure-a737ef4cdda0|건",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "프로젝트명 · project_name_cdm_unfccc",
+      "indicatorId": "C-025_project_name_cdm_unfccc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a737ef4cdda0",
+        "labelKo": "프로젝트명",
+        "unit": "건",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-a737ef4cdda0|건||C-025_project_name_cdm_unfccc",
+      "sourceCaveat": null,
+      "sourceLabel": "프로젝트명",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-58c98474b1f2|tCO₂e",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "프로젝트명 · project_name_cdm_unfccc_2",
+      "indicatorId": "C-025_project_name_cdm_unfccc_2",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-58c98474b1f2",
+        "labelKo": "프로젝트명",
+        "unit": "tCO₂e",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-58c98474b1f2|tCO₂e||C-025_project_name_cdm_unfccc_2",
+      "sourceCaveat": null,
+      "sourceLabel": "프로젝트명",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-a737ef4cdda0|건",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "프로젝트명 · project_name_gspp_berkeley",
+      "indicatorId": "C-025_project_name_gspp_berkeley",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a737ef4cdda0",
+        "labelKo": "프로젝트명",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-a737ef4cdda0|건||C-025_project_name_gspp_berkeley",
+      "sourceCaveat": null,
+      "sourceLabel": "프로젝트명",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-58c98474b1f2|tCO₂e",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "프로젝트명 · project_name_jcm_jp",
+      "indicatorId": "C-025_project_name_jcm_jp",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-58c98474b1f2",
+        "labelKo": "프로젝트명",
+        "unit": "tCO₂e",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-58c98474b1f2|tCO₂e||C-025_project_name_jcm_jp",
+      "sourceCaveat": null,
+      "sourceLabel": "프로젝트명",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-a737ef4cdda0|건",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "프로젝트명 · project_name_projects_globalcarbonc",
+      "indicatorId": "C-025_project_name_projects_globalcarbonc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a737ef4cdda0",
+        "labelKo": "프로젝트명",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-a737ef4cdda0|건||C-025_project_name_projects_globalcarbonc",
+      "sourceCaveat": null,
+      "sourceLabel": "프로젝트명",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-a84ace6c3b56|건",
       "dimensionLabels": {
         "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-05 · CTIS-07 · CTIS-08 · CTIS-14 · CTIS-15 · CTIS-17 · CTIS-19 · CTIS-21 · CTIS-23 · CTIS-34 · CTIS-35"
@@ -581,7 +625,7 @@
       "indicatorCount": 1,
       "key": "measure-1a91ca84909f",
       "labelKo": "CDM 크레딧 소각량",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "tCO₂e",
       "unitFamily": "emissions"
     },
@@ -589,7 +633,7 @@
       "indicatorCount": 1,
       "key": "measure-299c9675e303",
       "labelKo": "GCC 등록 심사중 프로젝트 수",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "건",
       "unitFamily": "count"
     },
@@ -597,7 +641,7 @@
       "indicatorCount": 1,
       "key": "measure-6725944a1f3c",
       "labelKo": "GCC 등록 프로젝트 검증 연간 감축량 합계",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "tCO₂e/년",
       "unitFamily": "emissions"
     },
@@ -605,7 +649,7 @@
       "indicatorCount": 1,
       "key": "measure-5150cc33038a",
       "labelKo": "GCC 등록 프로젝트 수",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "건",
       "unitFamily": "count"
     },
@@ -613,7 +657,7 @@
       "indicatorCount": 1,
       "key": "measure-76c6c3c0d1f1",
       "labelKo": "Gold Standard 등록 프로젝트 수",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "건",
       "unitFamily": "count"
     },
@@ -621,7 +665,7 @@
       "indicatorCount": 1,
       "key": "measure-19abac6bdf7b",
       "labelKo": "Gold Standard 연간 예상 크레딧 합계",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "tCO₂e/yr",
       "unitFamily": "emissions"
     },
@@ -629,7 +673,7 @@
       "indicatorCount": 1,
       "key": "measure-caab166a6513",
       "labelKo": "Gold Standard 인증 완료",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "건",
       "unitFamily": "count"
     },
@@ -637,7 +681,7 @@
       "indicatorCount": 1,
       "key": "measure-3293209f94d0",
       "labelKo": "JCM 등록 프로젝트 수",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "건",
       "unitFamily": "count"
     },
@@ -645,7 +689,7 @@
       "indicatorCount": 1,
       "key": "measure-51dfc6fef535",
       "labelKo": "JCM 베트남 배분량",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "tCO₂e",
       "unitFamily": "emissions"
     },
@@ -653,7 +697,7 @@
       "indicatorCount": 1,
       "key": "measure-1f7a1f8b818a",
       "labelKo": "JCM 크레딧 발행량",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "tCO₂e",
       "unitFamily": "emissions"
     },
@@ -661,7 +705,7 @@
       "indicatorCount": 1,
       "key": "measure-fedab6cf324f",
       "labelKo": "JCM 크레딧 소각량",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "tCO₂e",
       "unitFamily": "emissions"
     },
@@ -669,7 +713,7 @@
       "indicatorCount": 1,
       "key": "measure-a84ace6c3b56",
       "labelKo": "VCM 프로젝트 총계(Verra+GS)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "건",
       "unitFamily": "count"
     },
@@ -677,7 +721,7 @@
       "indicatorCount": 1,
       "key": "measure-09e20b230faf",
       "labelKo": "Verra VCS 등록 프로젝트 수",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "건",
       "unitFamily": "count"
     },
@@ -685,7 +729,7 @@
       "indicatorCount": 1,
       "key": "measure-9357335aacb1",
       "labelKo": "Verra VCS 등록완료(Registered)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "건",
       "unitFamily": "count"
     },
@@ -693,7 +737,7 @@
       "indicatorCount": 1,
       "key": "measure-3c703d3fa737",
       "labelKo": "Verra VCS 연간 예상 감축량 합계",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "tCO₂e/yr",
       "unitFamily": "emissions"
     },
@@ -704,9 +748,25 @@
       "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-58c98474b1f2",
+      "labelKo": "프로젝트명",
+      "recordCount": 0,
+      "unit": "tCO₂e",
+      "unitFamily": "emissions"
+    },
+    {
+      "indicatorCount": 3,
+      "key": "measure-a737ef4cdda0",
+      "labelKo": "프로젝트명",
+      "recordCount": 0,
+      "unit": "건",
+      "unitFamily": "text"
     }
   ],
-  "observationCount": 15,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

@@ -14,7 +14,16 @@ import { fileURLToPath } from "node:url";
 const SCRIPT_DIR = dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = resolve(SCRIPT_DIR, "..");
 const PUBLIC_ROOT = resolve(PROJECT_ROOT, "public");
-const V2_ROOT = resolve(PUBLIC_ROOT, "data/vietnam/v2");
+// The tree to describe. It defaults to the published one; a staging tree can be
+// named so its integrity file is complete before it is promoted. Writing this
+// file only after promotion left the semantic and interpretation assets - 157 of
+// them - undeclared in whatever was published in between.
+const argv = process.argv.slice(2);
+const dataOption = (() => {
+  const index = argv.indexOf("--data");
+  return index < 0 ? null : argv[index + 1];
+})();
+const V2_ROOT = resolve(PROJECT_ROOT, dataOption || "public/data/vietnam/v2");
 const INTEGRITY_PATH = resolve(V2_ROOT, "asset-integrity.json");
 const WORLD_COUNTRIES_PATH = resolve(PUBLIC_ROOT, "data/world-countries.geojson");
 const REPORT_PATH = resolve(
@@ -35,7 +44,19 @@ function walkFiles(root) {
   return files;
 }
 
+/**
+ * The URL this file will be served at once published.
+ *
+ * A staging tree lives outside public/, so a plain relative path produced
+ * "/../.staging/..." and the integrity file described URLs no deployment would
+ * ever request. The published prefix is what the manifest and the runtime use,
+ * so it is what gets recorded whichever tree is being described.
+ */
 function publicUrl(path) {
+  const fromData = relative(V2_ROOT, path);
+  if (!fromData.startsWith("..")) {
+    return `/data/vietnam/v2/${fromData.split(sep).join("/")}`;
+  }
   return `/${relative(PUBLIC_ROOT, path).split(sep).join("/")}`;
 }
 

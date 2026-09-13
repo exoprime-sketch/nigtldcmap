@@ -3,9 +3,24 @@
     {
       "key": "detail",
       "labelKo": "세부 분류",
-      "valueCount": 1,
+      "valueCount": 6,
       "values": [
-        "CRI 2026 본문"
+        "2024-10-20~23 홍수",
+        "2024년 3월말~5월 폭염",
+        "CRI 2026 본문",
+        "HDI 보정",
+        "태풍 Yagi",
+        "태풍 Yagi(2024-09-07 상륙)"
+      ]
+    },
+    {
+      "key": "detail_2",
+      "labelKo": "detail_2",
+      "valueCount": 3,
+      "values": [
+        "1995–2024년 누적",
+        "2024년 단년",
+        "북부 피해"
       ]
     },
     {
@@ -261,13 +276,11 @@
       "axisGroupKey": "measure-292f961bb3ac|순위",
       "dimensionLabels": {
         "detail": "HDI 보정",
-        "detail_2": "1995",
-        "detail_3": "2024년 누적"
+        "detail_2": "1995–2024년 누적"
       },
       "dimensions": {
         "detail": "HDI 보정",
-        "detail_2": "1995",
-        "detail_3": "2024년 누적"
+        "detail_2": "1995–2024년 누적"
       },
       "displayLabel": "CRI 순위 — HDI 보정 — 1995–2024년 누적",
       "indicatorId": "B-010_cri_rank_hdi_1995_2024",
@@ -278,7 +291,7 @@
         "unit": "순위",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-292f961bb3ac|순위|detail=HDI 보정|detail_2=1995|detail_3=2024년 누적|B-010_cri_rank_hdi_1995_2024",
+      "seriesKey": "measure-292f961bb3ac|순위|detail=HDI 보정|detail_2=1995–2024년 누적|B-010_cri_rank_hdi_1995_2024",
       "sourceCaveat": "[신규 수록] 보유 [raw] CRI 2026 보고서 본문 Figure 11·12에 있으나 미수록이던 값. 보정 전 순위와 함께 보면 베트남의 피해가 절대 규모로는 상위권이나 개발 수준을 감안한 상대 피해는 다소 완화된다는 해석이 가능함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간",
       "sourceLabel": "CRI 순위 — HDI 보정 — 1995–2024년 누적",
       "sourceLabelEn": "Climate Risk Index rank (HDI-corrected)",
@@ -345,7 +358,7 @@
       "indicatorCount": 4,
       "key": "measure-9eab64683e5b",
       "labelKo": "CRI 본문 수록 피해통계(2024년)",
-      "recordCount": 0,
+      "recordCount": 4,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -353,7 +366,7 @@
       "indicatorCount": 2,
       "key": "measure-292f961bb3ac",
       "labelKo": "CRI 순위",
-      "recordCount": 0,
+      "recordCount": 2,
       "unit": "순위",
       "unitFamily": "other"
     },
@@ -366,7 +379,7 @@
       "unitFamily": "other"
     }
   ],
-  "observationCount": 6,
+  "observationCount": 12,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

@@ -356,18 +356,39 @@ writeFileSync(
 
 function amount(entity) {
   const attrs = entity.normalizedAttributes || {};
-  const value = attrs.primaryFinanceAmount || attrs.approvedAmount || attrs.usd;
+  const value =
+    attrs.primaryFinanceAmount ||
+    attrs.approvedAmount ||
+    attrs.usd ||
+    // The delivery labels these columns in Korean now.
+    attrs["승인금액"] ||
+    attrs["대표금액"];
   return Number(String(value || "0").replace(/[^0-9.]+/gu, ""));
 }
 
+/**
+ * The fields that identify one project, under either name the sheet gives them.
+ *
+ * D-018 and D-023 now label their columns in Korean - 명칭, 프로젝트_URL, 승인일,
+ * 승인금액, 기금 - and reading only the English names made every field null. The
+ * four projects both datasets carry then looked like no duplicates at all, and
+ * the finding that made D-023 panel-only stopped being visible in its own report.
+ */
 function duplicateIdentity(entity, fundFallback) {
   const attrs = entity.normalizedAttributes || {};
+  const first = (...keys) => {
+    for (const key of keys) {
+      const value = attrs[key];
+      if (value !== null && value !== undefined && String(value).trim()) return value;
+    }
+    return null;
+  };
   return {
-    officialProjectId: attrs.projectId || null,
-    sourceUrl: String(attrs.sourceUrl || "").trim().toLowerCase(),
-    normalizedTitle: normalizedTitle(attrs.projectName || entity.name),
-    fund: String(attrs.fund || fundFallback || "").trim().toLowerCase(),
-    approvalDate: String(attrs.approvalDate || "").trim(),
+    officialProjectId: first("projectId", "Ref_No", "GEF_ID"),
+    sourceUrl: String(first("sourceUrl", "프로젝트_URL") || "").trim().toLowerCase(),
+    normalizedTitle: normalizedTitle(first("projectName", "명칭") || entity.name),
+    fund: String(first("fund", "기금") || fundFallback || "").trim().toLowerCase(),
+    approvalDate: String(first("approvalDate", "승인일") || "").trim(),
     approvedAmountUsd: amount(entity),
   };
 }

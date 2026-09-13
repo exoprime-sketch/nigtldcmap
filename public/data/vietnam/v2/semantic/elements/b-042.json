@@ -1,106 +1,18 @@
 {
   "dimensions": [
     {
-      "key": "detail",
-      "labelKo": "세부 분류",
-      "valueCount": 16,
-      "values": [
-        "남(S)",
-        "남남동(SSE)",
-        "남남서(SSW)",
-        "동(E)",
-        "동남동(ESE)",
-        "동북동(ENE)",
-        "면적 백분위 전 구간",
-        "북(N)",
-        "북북동(NNE)",
-        "북북서(NNW)",
-        "상위 2%",
-        "상위 6%",
-        "서(W)",
-        "서남서(WSW)",
-        "서북서(WNW)",
-        "전역(100%)"
-      ]
-    },
-    {
-      "key": "detail_2",
-      "labelKo": "detail_2",
-      "valueCount": 50,
-      "values": [
-        "상위 2%",
-        "상위 4%",
-        "상위 6%",
-        "상위 8%",
-        "상위 10%",
-        "상위 12%",
-        "상위 14%",
-        "상위 16%",
-        "상위 18%",
-        "상위 20%",
-        "상위 22%",
-        "상위 24%",
-        "상위 26%",
-        "상위 28%",
-        "상위 30%",
-        "상위 32%",
-        "상위 34%",
-        "상위 36%",
-        "상위 38%",
-        "상위 40%",
-        "상위 42%",
-        "상위 44%",
-        "상위 46%",
-        "상위 48%",
-        "상위 50%",
-        "상위 52%",
-        "상위 54%",
-        "상위 56%",
-        "상위 58%",
-        "상위 60%",
-        "상위 62%",
-        "상위 64%",
-        "상위 66%",
-        "상위 68%",
-        "상위 70%",
-        "상위 72%",
-        "상위 74%",
-        "상위 76%",
-        "상위 78%",
-        "상위 80%",
-        "상위 82%",
-        "상위 84%",
-        "상위 86%",
-        "상위 88%",
-        "상위 90%",
-        "상위 92%",
-        "상위 94%",
-        "상위 96%",
-        "상위 98%",
-        "상위 100%"
-      ]
-    },
-    {
-      "key": "technology",
-      "labelKo": "기술",
+      "key": "entityType",
+      "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
-        "3"
-      ]
-    },
-    {
-      "key": "year",
-      "labelKo": "연도",
-      "valueCount": 1,
-      "values": [
-        "2017"
+        "entity"
       ]
     }
   ],
   "elementId": "B-042",
-  "entityCount": 0,
+  "entityCount": 205,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 142,
+  "indicatorCount": 144,
   "indicators": [
     {
       "axisGroupKey": "measure-c1e63408b2bc|W/m²",
@@ -1897,6 +1809,46 @@
         "sourceRow": 124,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-8f51eb34e396|m/s · W/m²",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "풍력 자원(성 단위 개체 목록)",
+      "indicatorId": "B-042_wind_adm1",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8f51eb34e396",
+        "labelKo": "풍력 자원(성 단위 개체 목록)",
+        "unit": "m/s · W/m²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-8f51eb34e396|m/s · W/m²||B-042_wind_adm1",
+      "sourceCaveat": null,
+      "sourceLabel": "풍력 자원(성 단위 개체 목록)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-797049975044|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "풍력 자원(전국)",
+      "indicatorId": "B-042_wind_national",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-797049975044",
+        "labelKo": "풍력 자원(전국)",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-797049975044|지표별 상이(속성 열 참조)||B-042_wind_national",
+      "sourceCaveat": null,
+      "sourceLabel": "풍력 자원(전국)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-46a9bbc12321|%",
@@ -4852,7 +4804,7 @@
       "indicatorCount": 53,
       "key": "measure-d042edbf9452",
       "labelKo": "평균 풍속(100m)",
-      "recordCount": 53,
+      "recordCount": 0,
       "unit": "m/s",
       "unitFamily": "other"
     },
@@ -4860,7 +4812,7 @@
       "indicatorCount": 12,
       "key": "measure-36d5d073716a",
       "labelKo": "풍력 에너지 장미도(방위별 에너지 비중)",
-      "recordCount": 12,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -4868,15 +4820,31 @@
       "indicatorCount": 53,
       "key": "measure-c1e63408b2bc",
       "labelKo": "풍력 에너지밀도(100m)",
-      "recordCount": 53,
+      "recordCount": 0,
       "unit": "W/m²",
       "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-8f51eb34e396",
+      "labelKo": "풍력 자원(성 단위 개체 목록)",
+      "recordCount": 0,
+      "unit": "m/s · W/m²",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-797049975044",
+      "labelKo": "풍력 자원(전국)",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
+      "unitFamily": "other"
     },
     {
       "indicatorCount": 12,
       "key": "measure-c0e651fae45c",
       "labelKo": "풍속 장미도(방위별 평균풍속 비중)",
-      "recordCount": 12,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -4884,12 +4852,12 @@
       "indicatorCount": 12,
       "key": "measure-46a9bbc12321",
       "labelKo": "풍향 빈도 장미도",
-      "recordCount": 12,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     }
   ],
-  "observationCount": 142,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

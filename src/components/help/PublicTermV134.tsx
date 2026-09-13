@@ -315,6 +315,18 @@ export function PublicTermExpandedTextV134({
             className={className}
             data-public-term-v134={token.entry.id}
             data-public-term-mode="visible-expansion"
+            // "해운 연결성 지수(LSCI)" needs no second gloss. Say so on the
+            // element, so a reader-facing check can tell a suppressed
+            // expansion apart from a missing one.
+            data-public-term-stated-v134={
+              expansionAlreadyStatedV137(
+                plain,
+                token.value,
+                token.entry.koreanName
+              )
+                ? "true"
+                : undefined
+            }
             key={`term-${token.entry.id}-${index}`}
           >
             {token.value}

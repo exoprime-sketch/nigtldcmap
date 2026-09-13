@@ -1,23 +1,11 @@
 {
   "dimensions": [
     {
-      "key": "category",
-      "labelKo": "분류",
-      "valueCount": 3,
-      "values": [
-        "발효",
-        "한국 관련(직접)",
-        "협상중"
-      ]
-    },
-    {
       "key": "detail",
       "labelKo": "세부 분류",
-      "valueCount": 3,
+      "valueCount": 1,
       "values": [
-        "발효 자유무역협정 건수",
-        "한국 관련(직접) 자유무역협정 건수",
-        "협상중 자유무역협정 건수"
+        "체결·협상 중 협정 총 건수"
       ]
     },
     {
@@ -25,16 +13,7 @@
       "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
-        "개체"
-      ]
-    },
-    {
-      "key": "status",
-      "labelKo": "status",
-      "valueCount": 2,
-      "values": [
-        "발효",
-        "협상중"
+        "entity"
       ]
     },
     {
@@ -49,8 +28,32 @@
   "elementId": "A-029",
   "entityCount": 19,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 4,
+  "indicatorCount": 5,
   "indicators": [
+    {
+      "axisGroupKey": "measure-1c87d29d26f9|건",
+      "dimensionLabels": {
+        "detail": "체결·협상 중 협정 총 건수"
+      },
+      "dimensions": {
+        "detail": "체결·협상 중 협정 총 건수"
+      },
+      "displayLabel": "무역협정 건수 — 체결·협상 중 협정 총 건수",
+      "indicatorId": "A-029_fta_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1c87d29d26f9",
+        "labelKo": "무역협정 건수",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-1c87d29d26f9|건|detail=체결·협상 중 협정 총 건수|A-029_fta_count",
+      "sourceCaveat": null,
+      "sourceLabel": "무역협정 건수 — 체결·협상 중 협정 총 건수",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
     {
       "axisGroupKey": "measure-daaf99925122|건",
       "dimensionLabels": {
@@ -183,7 +186,7 @@
       "indicatorCount": 3,
       "key": "measure-daaf99925122",
       "labelKo": "FTA 건수",
-      "recordCount": 3,
+      "recordCount": 0,
       "unit": "건",
       "unitFamily": "count"
     },
@@ -194,9 +197,17 @@
       "recordCount": 0,
       "unit": "건",
       "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-1c87d29d26f9",
+      "labelKo": "무역협정 건수",
+      "recordCount": 1,
+      "unit": "건",
+      "unitFamily": "count"
     }
   ],
-  "observationCount": 3,
+  "observationCount": 1,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

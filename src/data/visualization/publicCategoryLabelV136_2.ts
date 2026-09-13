@@ -36,7 +36,10 @@ export function isNumericCodeListV136_2(value: string): boolean {
  */
 export function publicCategoryLabelV136_2(value: string): string {
   const text = String(value ?? "").trim();
-  const match = text.match(/^\d{2,}\s*[—–-]\s*(.+)$/u);
+  // A spaced dash separates a code from the name it maps to ("23110 — 에너지
+  // 기타"). An unspaced hyphen joins the parts of a date, and treating
+  // "2025-05-13" as a code in front of a name printed a bar labelled "05-13".
+  const match = text.match(/^\d{2,}(?:\s*[—–]\s*|\s+-\s+)(.+)$/u);
   if (!match) return text;
   const label = match[1].trim();
   if (!label || isNumericCodeListV136_2(label)) return text;

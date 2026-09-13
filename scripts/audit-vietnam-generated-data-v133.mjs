@@ -410,12 +410,20 @@ const mapFeatureCount = mapLayers.reduce(
   (sum, layer) => sum + Number(layer?.featureCount || 0),
   0
 );
+// The integrity property is that the index declares what the layers hold, that
+// all twelve are active, and that none of them invented a geometry. The absolute
+// feature count is a property of the delivery: publishing every authorised
+// carbon-credit project took C-025 from 18 features to 262, and pinning the old
+// total would have failed a correct publication. A floor still catches a layer
+// silently losing its features.
+const MAP_FEATURE_FLOOR = 2900;
 check(
   "MAP_INTEGRITY",
   mapIndex?.activeMapLayerCount === 12 &&
     mapLayers.length === 12 &&
-    mapIndex?.mapFeatureCount === 2900 &&
-    mapFeatureCount === 2900 &&
+    Number.isFinite(Number(mapIndex?.mapFeatureCount)) &&
+    mapIndex?.mapFeatureCount === mapFeatureCount &&
+    mapFeatureCount >= MAP_FEATURE_FLOOR &&
     mapLayers.every(
       (layer) => layer?.active === true && Number(layer?.fakeGeometryCount || 0) === 0
     ),
@@ -424,8 +432,14 @@ check(
     layers: mapLayers.length,
     declaredFeatures: mapIndex?.mapFeatureCount ?? null,
     features: mapFeatureCount,
+    declaredMatchesActual: mapIndex?.mapFeatureCount === mapFeatureCount,
   },
-  { layers: 12, features: 2900, fakeGeometry: 0 }
+  {
+    layers: 12,
+    features: `>= ${MAP_FEATURE_FLOOR}`,
+    declaredMatchesActual: true,
+    fakeGeometry: 0,
+  }
 );
 
 const semanticElementFiles = walkFiles(resolve(V2_ROOT, "semantic/elements")).filter(

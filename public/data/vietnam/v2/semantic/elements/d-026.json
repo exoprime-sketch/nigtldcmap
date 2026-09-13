@@ -1,55 +1,11 @@
 {
   "dimensions": [
     {
-      "key": "category",
-      "labelKo": "분류",
-      "valueCount": 1,
-      "values": [
-        "보증금액 합계"
-      ]
-    },
-    {
-      "key": "detail",
-      "labelKo": "세부 분류",
-      "valueCount": 3,
-      "values": [
-        "상태 제안",
-        "상태 종료·비활성",
-        "상태 진행중"
-      ]
-    },
-    {
       "key": "entityType",
       "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
-        "사업·재원"
-      ]
-    },
-    {
-      "key": "status",
-      "labelKo": "status",
-      "valueCount": 3,
-      "values": [
-        "제안(Proposed)",
-        "종료/비활성(Not Active)",
-        "진행중(Active)"
-      ]
-    },
-    {
-      "key": "technology",
-      "labelKo": "기술",
-      "valueCount": 1,
-      "values": [
-        "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
-      ]
-    },
-    {
-      "key": "year",
-      "labelKo": "연도",
-      "valueCount": 1,
-      "values": [
-        "2018"
+        "entity"
       ]
     }
   ],
@@ -200,7 +156,7 @@
       "indicatorCount": 3,
       "key": "measure-1f378f456269",
       "labelKo": "MIGA 정치적 리스크 보증",
-      "recordCount": 3,
+      "recordCount": 0,
       "unit": "USD",
       "unitFamily": "currency"
     },
@@ -213,7 +169,7 @@
       "unitFamily": "text"
     }
   ],
-  "observationCount": 3,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

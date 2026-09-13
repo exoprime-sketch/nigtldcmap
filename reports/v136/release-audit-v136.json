@@ -1,20 +1,16 @@
 {
   "schemaVersion": "v136-public-copy-acceptance-1",
-  "generatedAt": "2026-09-09T06:18:27.474Z",
+  "generatedAt": "2026-09-13T23:38:19.704Z",
   "audit": "release:v136",
-  "status": "FAIL",
+  "status": "PASS",
   "summary": {
     "type": "summary",
     "audit": "release:v136",
-    "status": "FAIL",
-    "passed": 46,
-    "failed": 3,
-    "total": 49,
-    "failedChecks": [
-      "V132_PORTFOLIO",
-      "V132_REGRESSION",
-      "REMAINING_BLOCKERS"
-    ],
+    "status": "PASS",
+    "passed": 77,
+    "failed": 0,
+    "total": 77,
+    "failedChecks": [],
     "commandResults": [
       {
         "name": "PRODUCTION_BUILD_FOR_RUNTIME",
@@ -82,7 +78,203 @@
       {
         "name": "V132_PORTFOLIO",
         "command": "npm run audit:portfolio-analysis:v132",
-        "exitCode": 1,
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V132_MAP_TOOLTIP",
+        "command": "npm run audit:map-tooltip:v132",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V132_BENCHMARK_FIT",
+        "command": "npm run audit:benchmark-fit:v132",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V133_MAP_FOCUS",
+        "command": "npm run audit:map-focus:v133",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V133_MAP_POPUP",
+        "command": "npm run audit:map-popup:v133",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V133_LAYER_DISTINCTION",
+        "command": "npm run audit:map-layer-distinction:v133",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V134_GLOSSARY",
+        "command": "npm run audit:glossary:v134",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V134_ODA_ANALYSIS",
+        "command": "npm run audit:oda-analysis:v134",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V134_DROUGHT_ANALYSIS",
+        "command": "npm run audit:drought-analysis:v134",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V134_PUBLIC_COPY",
+        "command": "npm run audit:public-copy:v134",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V134_VISUAL_QA_CONTRACT",
+        "command": "npm run audit:visual-qa-contract:v134",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V135_FINDER_CARD",
+        "command": "npm run audit:finder-card:v135",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V135_TEMPORAL_DEPTH",
+        "command": "npm run audit:temporal-depth:v135",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V135_DETAIL_HIERARCHY",
+        "command": "npm run audit:detail-hierarchy:v135",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V135_MAP_GUIDE",
+        "command": "npm run audit:map-guide:v135",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V135_MAP_ACCESS",
+        "command": "npm run audit:map-access:v135",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V135_MAP_COMPARE",
+        "command": "npm run audit:map-compare:v135",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V135_PUBLIC_SCREEN",
+        "command": "npm run audit:public-screen:v135",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V136_PUBLIC_TEXT",
+        "command": "npm run audit:public-text:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V136_DUPLICATE_COPY",
+        "command": "npm run audit:duplicate-copy:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V136_MAP_LIST_UI",
+        "command": "npm run audit:map-list-ui:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V136_MAP_COPY",
+        "command": "npm run audit:map-copy:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V136_PUBLIC_CONTROLS",
+        "command": "npm run audit:public-controls:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V136_FINDER_SCROLL",
+        "command": "npm run audit:finder-scroll:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V136_3_UNIT_TESTS",
+        "command": "npm run test:unit",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V136_2_GENERIC_DETAIL_PUBLIC",
+        "command": "npm run audit:generic-detail-public:v136-2",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V136_4_SCREEN_USABILITY",
+        "command": "npm run audit:screen-usability:v136-4",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V136_HUMAN_REVIEW",
+        "command": "npm run audit:human-review:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
+        "name": "V136_WORKFLOW",
+        "command": "npm run audit:workflow:v136",
+        "exitCode": 0,
         "signal": null,
         "error": null
       }
@@ -94,7 +286,7 @@
       "v131Naming": "PASS",
       "v131Cards": "PASS",
       "v132Composition": "PASS",
-      "v132Portfolio": "FAIL",
+      "v132Portfolio": "PASS",
       "v132MapTooltip": "PASS",
       "v132Benchmark": "PASS",
       "v133MapFocus": "PASS",
@@ -126,13 +318,13 @@
     },
     "frameworkElements": 152,
     "accountedElements": 152,
-    "publicTextInventoryCount": 55549,
+    "publicTextInventoryCount": 81501,
     "publicRouteCount": 158,
     "internalPublicTokenCount": 0,
     "duplicateVisibleCopyCount": 0,
     "mapDataItemCount": 12,
     "screenshotCaptureIsReleaseBlocker": false,
-    "remainingBlockers": 1
+    "remainingBlockers": 0
   },
   "checks": [
     {
@@ -283,11 +475,459 @@
       "type": "check",
       "audit": "release:v136",
       "name": "V132_PORTFOLIO",
-      "status": "FAIL",
+      "status": "PASS",
       "actual": {
         "name": "V132_PORTFOLIO",
         "command": "npm run audit:portfolio-analysis:v132",
-        "exitCode": 1,
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V132_MAP_TOOLTIP",
+      "status": "PASS",
+      "actual": {
+        "name": "V132_MAP_TOOLTIP",
+        "command": "npm run audit:map-tooltip:v132",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V132_BENCHMARK_FIT",
+      "status": "PASS",
+      "actual": {
+        "name": "V132_BENCHMARK_FIT",
+        "command": "npm run audit:benchmark-fit:v132",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V133_MAP_FOCUS",
+      "status": "PASS",
+      "actual": {
+        "name": "V133_MAP_FOCUS",
+        "command": "npm run audit:map-focus:v133",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V133_MAP_POPUP",
+      "status": "PASS",
+      "actual": {
+        "name": "V133_MAP_POPUP",
+        "command": "npm run audit:map-popup:v133",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V133_LAYER_DISTINCTION",
+      "status": "PASS",
+      "actual": {
+        "name": "V133_LAYER_DISTINCTION",
+        "command": "npm run audit:map-layer-distinction:v133",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V134_GLOSSARY",
+      "status": "PASS",
+      "actual": {
+        "name": "V134_GLOSSARY",
+        "command": "npm run audit:glossary:v134",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V134_ODA_ANALYSIS",
+      "status": "PASS",
+      "actual": {
+        "name": "V134_ODA_ANALYSIS",
+        "command": "npm run audit:oda-analysis:v134",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V134_DROUGHT_ANALYSIS",
+      "status": "PASS",
+      "actual": {
+        "name": "V134_DROUGHT_ANALYSIS",
+        "command": "npm run audit:drought-analysis:v134",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V134_PUBLIC_COPY",
+      "status": "PASS",
+      "actual": {
+        "name": "V134_PUBLIC_COPY",
+        "command": "npm run audit:public-copy:v134",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V134_VISUAL_QA_CONTRACT",
+      "status": "PASS",
+      "actual": {
+        "name": "V134_VISUAL_QA_CONTRACT",
+        "command": "npm run audit:visual-qa-contract:v134",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V135_FINDER_CARD",
+      "status": "PASS",
+      "actual": {
+        "name": "V135_FINDER_CARD",
+        "command": "npm run audit:finder-card:v135",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V135_TEMPORAL_DEPTH",
+      "status": "PASS",
+      "actual": {
+        "name": "V135_TEMPORAL_DEPTH",
+        "command": "npm run audit:temporal-depth:v135",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V135_DETAIL_HIERARCHY",
+      "status": "PASS",
+      "actual": {
+        "name": "V135_DETAIL_HIERARCHY",
+        "command": "npm run audit:detail-hierarchy:v135",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V135_MAP_GUIDE",
+      "status": "PASS",
+      "actual": {
+        "name": "V135_MAP_GUIDE",
+        "command": "npm run audit:map-guide:v135",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V135_MAP_ACCESS",
+      "status": "PASS",
+      "actual": {
+        "name": "V135_MAP_ACCESS",
+        "command": "npm run audit:map-access:v135",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V135_MAP_COMPARE",
+      "status": "PASS",
+      "actual": {
+        "name": "V135_MAP_COMPARE",
+        "command": "npm run audit:map-compare:v135",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V135_PUBLIC_SCREEN",
+      "status": "PASS",
+      "actual": {
+        "name": "V135_PUBLIC_SCREEN",
+        "command": "npm run audit:public-screen:v135",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V136_PUBLIC_TEXT",
+      "status": "PASS",
+      "actual": {
+        "name": "V136_PUBLIC_TEXT",
+        "command": "npm run audit:public-text:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V136_DUPLICATE_COPY",
+      "status": "PASS",
+      "actual": {
+        "name": "V136_DUPLICATE_COPY",
+        "command": "npm run audit:duplicate-copy:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V136_MAP_LIST_UI",
+      "status": "PASS",
+      "actual": {
+        "name": "V136_MAP_LIST_UI",
+        "command": "npm run audit:map-list-ui:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V136_MAP_COPY",
+      "status": "PASS",
+      "actual": {
+        "name": "V136_MAP_COPY",
+        "command": "npm run audit:map-copy:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V136_PUBLIC_CONTROLS",
+      "status": "PASS",
+      "actual": {
+        "name": "V136_PUBLIC_CONTROLS",
+        "command": "npm run audit:public-controls:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V136_FINDER_SCROLL",
+      "status": "PASS",
+      "actual": {
+        "name": "V136_FINDER_SCROLL",
+        "command": "npm run audit:finder-scroll:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V136_3_UNIT_TESTS",
+      "status": "PASS",
+      "actual": {
+        "name": "V136_3_UNIT_TESTS",
+        "command": "npm run test:unit",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V136_2_GENERIC_DETAIL_PUBLIC",
+      "status": "PASS",
+      "actual": {
+        "name": "V136_2_GENERIC_DETAIL_PUBLIC",
+        "command": "npm run audit:generic-detail-public:v136-2",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V136_4_SCREEN_USABILITY",
+      "status": "PASS",
+      "actual": {
+        "name": "V136_4_SCREEN_USABILITY",
+        "command": "npm run audit:screen-usability:v136-4",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V136_HUMAN_REVIEW",
+      "status": "PASS",
+      "actual": {
+        "name": "V136_HUMAN_REVIEW",
+        "command": "npm run audit:human-review:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V136_WORKFLOW",
+      "status": "PASS",
+      "actual": {
+        "name": "V136_WORKFLOW",
+        "command": "npm run audit:workflow:v136",
+        "exitCode": 0,
         "signal": null,
         "error": null
       },
@@ -464,10 +1104,10 @@
       "type": "check",
       "audit": "release:v136",
       "name": "V132_REGRESSION",
-      "status": "FAIL",
+      "status": "PASS",
       "actual": {
         "composition": "PASS",
-        "portfolio": "FAIL",
+        "portfolio": "PASS",
         "mapTooltip": "PASS",
         "benchmark": "PASS"
       },
@@ -703,16 +1343,8 @@
       "type": "check",
       "audit": "release:v136",
       "name": "REMAINING_BLOCKERS",
-      "status": "FAIL",
-      "actual": [
-        {
-          "name": "V132_PORTFOLIO",
-          "command": "npm run audit:portfolio-analysis:v132",
-          "exitCode": 1,
-          "signal": null,
-          "error": null
-        }
-      ],
+      "status": "PASS",
+      "actual": [],
       "expected": []
     }
   ],
@@ -783,7 +1415,203 @@
     {
       "name": "V132_PORTFOLIO",
       "command": "npm run audit:portfolio-analysis:v132",
-      "exitCode": 1,
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V132_MAP_TOOLTIP",
+      "command": "npm run audit:map-tooltip:v132",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V132_BENCHMARK_FIT",
+      "command": "npm run audit:benchmark-fit:v132",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V133_MAP_FOCUS",
+      "command": "npm run audit:map-focus:v133",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V133_MAP_POPUP",
+      "command": "npm run audit:map-popup:v133",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V133_LAYER_DISTINCTION",
+      "command": "npm run audit:map-layer-distinction:v133",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V134_GLOSSARY",
+      "command": "npm run audit:glossary:v134",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V134_ODA_ANALYSIS",
+      "command": "npm run audit:oda-analysis:v134",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V134_DROUGHT_ANALYSIS",
+      "command": "npm run audit:drought-analysis:v134",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V134_PUBLIC_COPY",
+      "command": "npm run audit:public-copy:v134",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V134_VISUAL_QA_CONTRACT",
+      "command": "npm run audit:visual-qa-contract:v134",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V135_FINDER_CARD",
+      "command": "npm run audit:finder-card:v135",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V135_TEMPORAL_DEPTH",
+      "command": "npm run audit:temporal-depth:v135",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V135_DETAIL_HIERARCHY",
+      "command": "npm run audit:detail-hierarchy:v135",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V135_MAP_GUIDE",
+      "command": "npm run audit:map-guide:v135",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V135_MAP_ACCESS",
+      "command": "npm run audit:map-access:v135",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V135_MAP_COMPARE",
+      "command": "npm run audit:map-compare:v135",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V135_PUBLIC_SCREEN",
+      "command": "npm run audit:public-screen:v135",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V136_PUBLIC_TEXT",
+      "command": "npm run audit:public-text:v136",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V136_DUPLICATE_COPY",
+      "command": "npm run audit:duplicate-copy:v136",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V136_MAP_LIST_UI",
+      "command": "npm run audit:map-list-ui:v136",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V136_MAP_COPY",
+      "command": "npm run audit:map-copy:v136",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V136_PUBLIC_CONTROLS",
+      "command": "npm run audit:public-controls:v136",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V136_FINDER_SCROLL",
+      "command": "npm run audit:finder-scroll:v136",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V136_3_UNIT_TESTS",
+      "command": "npm run test:unit",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V136_2_GENERIC_DETAIL_PUBLIC",
+      "command": "npm run audit:generic-detail-public:v136-2",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V136_4_SCREEN_USABILITY",
+      "command": "npm run audit:screen-usability:v136-4",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V136_HUMAN_REVIEW",
+      "command": "npm run audit:human-review:v136",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "V136_WORKFLOW",
+      "command": "npm run audit:workflow:v136",
+      "exitCode": 0,
       "signal": null,
       "error": null
     }
@@ -795,7 +1623,7 @@
     "v131Naming": "PASS",
     "v131Cards": "PASS",
     "v132Composition": "PASS",
-    "v132Portfolio": "FAIL",
+    "v132Portfolio": "PASS",
     "v132MapTooltip": "PASS",
     "v132Benchmark": "PASS",
     "v133MapFocus": "PASS",
@@ -827,11 +1655,11 @@
   },
   "frameworkElements": 152,
   "accountedElements": 152,
-  "publicTextInventoryCount": 55549,
+  "publicTextInventoryCount": 81501,
   "publicRouteCount": 158,
   "internalPublicTokenCount": 0,
   "duplicateVisibleCopyCount": 0,
   "mapDataItemCount": 12,
   "screenshotCaptureIsReleaseBlocker": false,
-  "remainingBlockers": 1
+  "remainingBlockers": 0
 }

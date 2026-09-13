@@ -247,7 +247,10 @@ function findingsFor(elementId, state, reading) {
   // A composition bar is labelled with what it counts. A bare code, or a code
   // still carried in front of the name it maps to, is the store's key.
   for (const label of reading.portfolioCategoryLabels || []) {
-    if (isNumericCodeList(label) || /^\d{2,}\s*[—–-]\s*\S/u.test(label)) {
+    // A spaced dash is what separates a code from the name it maps to. An
+    // unspaced hyphen joins the parts of a date, and "2025-05-13" is a date the
+    // source states, not a code carried in front of a name.
+    if (isNumericCodeList(label) || /^\d{2,}(?:\s*[—–]\s*|\s+-\s+)\S/u.test(label)) {
       push("portfolio-raw-code-list", label);
     }
   }
@@ -361,9 +364,14 @@ audit.check("PORTFOLIO_RAW_CODE_LIST_COUNT", countOf("portfolio-raw-code-list") 
 
 const packs = loadPackPayloads();
 const d022Records = payloadRecords(packs.elements.get("D-022")?.entities);
+// The delivery prints this column by name (섹터_DAC_5자리) where it used to hash
+// it (field_a9a17396). Both spellings are read, so the reconciliation follows
+// the source rather than one delivery's column naming.
+const D022_CATEGORY_KEYS = ["섹터_DAC_5자리", "field_a9a17396"];
 const sourceCategoryCounts = new Map();
 for (const record of d022Records) {
-  const category = record?.normalizedAttributes?.field_a9a17396;
+  const attributes = record?.normalizedAttributes || {};
+  const category = D022_CATEGORY_KEYS.map((key) => attributes[key]).find(Boolean);
   if (!category) continue;
   sourceCategoryCounts.set(category, (sourceCategoryCounts.get(category) || 0) + 1);
 }

@@ -18,22 +18,12 @@
     {
       "key": "detail_2",
       "labelKo": "detail_2",
-      "valueCount": 3,
-      "values": [
-        "1901",
-        "1991",
-        "2071"
-      ]
-    },
-    {
-      "key": "detail_3",
-      "labelKo": "detail_3",
       "valueCount": 4,
       "values": [
-        "1930 관측",
-        "2020 관측",
-        "2099 SSP2-4.5",
-        "2099 SSP5-8.5"
+        "1901–1930 관측",
+        "1991–2020 관측",
+        "2071–2099 SSP2-4.5",
+        "2071–2099 SSP5-8.5"
       ]
     },
     {
@@ -502,13 +492,11 @@
       "axisGroupKey": "measure-cbe45ba5c300|%",
       "dimensionLabels": {
         "detail": "시기·시나리오별",
-        "detail_2": "1901",
-        "detail_3": "1930 관측"
+        "detail_2": "1901–1930 관측"
       },
       "dimensions": {
         "detail": "시기·시나리오별",
-        "detail_2": "1901",
-        "detail_3": "1930 관측"
+        "detail_2": "1901–1930 관측"
       },
       "displayLabel": "열대기후(A군) 국토 점유 비율 — 시기·시나리오별 — 1901–1930 관측",
       "indicatorId": "B-002_koppen_tropical_share_1901_1930",
@@ -519,7 +507,7 @@
         "unit": "%",
         "unitFamily": "percent"
       },
-      "seriesKey": "measure-cbe45ba5c300|%|detail=시기·시나리오별|detail_2=1901|detail_3=1930 관측|B-002_koppen_tropical_share_1901_1930",
+      "seriesKey": "measure-cbe45ba5c300|%|detail=시기·시나리오별|detail_2=1901–1930 관측|B-002_koppen_tropical_share_1901_1930",
       "sourceCaveat": "[기후대 이동 근거] 동일 원천의 4개 시기를 같은 절차로 산출한 결과입니다. **관측 구간에서 이미 열대화가 진행** — 1901–1930년 48.98% → 1991–2020년 51.70%(+2.7%p). 전망 구간에서는 2071–2099년 SSP2-4.5 71.41% · SSP5-8.5 82.98%로, 고배출 시나리오에서는 현재 최대 클래스인 Cwa가 43.17% → 16.21%로 축소됩니다. [주의] 1901–1930·1991–2020은 관측 기반 실적치이고 2071–2099는 CMIP6 제약 전망치이므로 value_type을 분리 표기했습니다. 두 구간을 하나의 추세선으로 연결하지 마십시오. [활용] B-004·B-005 기후 전망 요소와 연계 가능하며, 농업·산림 적지 이동 분석의 근거로 사용할 수 있습니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] Beck et al.(2023) Köppen-Geiger v2",
       "sourceLabel": "열대기후(A군) 국토 점유 비율 — 시기·시나리오별 — 1901–1930 관측",
       "sourceLabelEn": "Tropical (A) climate share",
@@ -536,13 +524,11 @@
       "axisGroupKey": "measure-cbe45ba5c300|%",
       "dimensionLabels": {
         "detail": "시기·시나리오별",
-        "detail_2": "1991",
-        "detail_3": "2020 관측"
+        "detail_2": "1991–2020 관측"
       },
       "dimensions": {
         "detail": "시기·시나리오별",
-        "detail_2": "1991",
-        "detail_3": "2020 관측"
+        "detail_2": "1991–2020 관측"
       },
       "displayLabel": "열대기후(A군) 국토 점유 비율 — 시기·시나리오별 — 1991–2020 관측",
       "indicatorId": "B-002_koppen_tropical_share_1991_2020",
@@ -553,7 +539,7 @@
         "unit": "%",
         "unitFamily": "percent"
       },
-      "seriesKey": "measure-cbe45ba5c300|%|detail=시기·시나리오별|detail_2=1991|detail_3=2020 관측|B-002_koppen_tropical_share_1991_2020",
+      "seriesKey": "measure-cbe45ba5c300|%|detail=시기·시나리오별|detail_2=1991–2020 관측|B-002_koppen_tropical_share_1991_2020",
       "sourceCaveat": "[기후대 이동 근거] 동일 원천의 4개 시기를 같은 절차로 산출한 결과입니다. **관측 구간에서 이미 열대화가 진행** — 1901–1930년 48.98% → 1991–2020년 51.70%(+2.7%p). 전망 구간에서는 2071–2099년 SSP2-4.5 71.41% · SSP5-8.5 82.98%로, 고배출 시나리오에서는 현재 최대 클래스인 Cwa가 43.17% → 16.21%로 축소됩니다. [주의] 1901–1930·1991–2020은 관측 기반 실적치이고 2071–2099는 CMIP6 제약 전망치이므로 value_type을 분리 표기했습니다. 두 구간을 하나의 추세선으로 연결하지 마십시오. [활용] B-004·B-005 기후 전망 요소와 연계 가능하며, 농업·산림 적지 이동 분석의 근거로 사용할 수 있습니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] Beck et al.(2023) Köppen-Geiger v2",
       "sourceLabel": "열대기후(A군) 국토 점유 비율 — 시기·시나리오별 — 1991–2020 관측",
       "sourceLabelEn": "Tropical (A) climate share",
@@ -570,13 +556,11 @@
       "axisGroupKey": "measure-cbe45ba5c300|%",
       "dimensionLabels": {
         "detail": "시기·시나리오별",
-        "detail_2": "2071",
-        "detail_3": "2099 SSP2-4.5"
+        "detail_2": "2071–2099 SSP2-4.5"
       },
       "dimensions": {
         "detail": "시기·시나리오별",
-        "detail_2": "2071",
-        "detail_3": "2099 SSP2-4.5"
+        "detail_2": "2071–2099 SSP2-4.5"
       },
       "displayLabel": "열대기후(A군) 국토 점유 비율 — 시기·시나리오별 — 2071–2099 SSP2-4.5",
       "indicatorId": "B-002_koppen_tropical_share_2071_2099_ssp2_4_5",
@@ -587,7 +571,7 @@
         "unit": "%",
         "unitFamily": "percent"
       },
-      "seriesKey": "measure-cbe45ba5c300|%|detail=시기·시나리오별|detail_2=2071|detail_3=2099 SSP2-4.5|B-002_koppen_tropical_share_2071_2099_ssp2_4_5",
+      "seriesKey": "measure-cbe45ba5c300|%|detail=시기·시나리오별|detail_2=2071–2099 SSP2-4.5|B-002_koppen_tropical_share_2071_2099_ssp2_4_5",
       "sourceCaveat": "[기후대 이동 근거] 동일 원천의 4개 시기를 같은 절차로 산출한 결과입니다. **관측 구간에서 이미 열대화가 진행** — 1901–1930년 48.98% → 1991–2020년 51.70%(+2.7%p). 전망 구간에서는 2071–2099년 SSP2-4.5 71.41% · SSP5-8.5 82.98%로, 고배출 시나리오에서는 현재 최대 클래스인 Cwa가 43.17% → 16.21%로 축소됩니다. [주의] 1901–1930·1991–2020은 관측 기반 실적치이고 2071–2099는 CMIP6 제약 전망치이므로 value_type을 분리 표기했습니다. 두 구간을 하나의 추세선으로 연결하지 마십시오. [활용] B-004·B-005 기후 전망 요소와 연계 가능하며, 농업·산림 적지 이동 분석의 근거로 사용할 수 있습니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] Beck et al.(2023) Köppen-Geiger v2",
       "sourceLabel": "열대기후(A군) 국토 점유 비율 — 시기·시나리오별 — 2071–2099 SSP2-4.5",
       "sourceLabelEn": "Tropical (A) climate share",
@@ -604,13 +588,11 @@
       "axisGroupKey": "measure-cbe45ba5c300|%",
       "dimensionLabels": {
         "detail": "시기·시나리오별",
-        "detail_2": "2071",
-        "detail_3": "2099 SSP5-8.5"
+        "detail_2": "2071–2099 SSP5-8.5"
       },
       "dimensions": {
         "detail": "시기·시나리오별",
-        "detail_2": "2071",
-        "detail_3": "2099 SSP5-8.5"
+        "detail_2": "2071–2099 SSP5-8.5"
       },
       "displayLabel": "열대기후(A군) 국토 점유 비율 — 시기·시나리오별 — 2071–2099 SSP5-8.5",
       "indicatorId": "B-002_koppen_tropical_share_2071_2099_ssp5_8_5",
@@ -621,7 +603,7 @@
         "unit": "%",
         "unitFamily": "percent"
       },
-      "seriesKey": "measure-cbe45ba5c300|%|detail=시기·시나리오별|detail_2=2071|detail_3=2099 SSP5-8.5|B-002_koppen_tropical_share_2071_2099_ssp5_8_5",
+      "seriesKey": "measure-cbe45ba5c300|%|detail=시기·시나리오별|detail_2=2071–2099 SSP5-8.5|B-002_koppen_tropical_share_2071_2099_ssp5_8_5",
       "sourceCaveat": "[기후대 이동 근거] 동일 원천의 4개 시기를 같은 절차로 산출한 결과입니다. **관측 구간에서 이미 열대화가 진행** — 1901–1930년 48.98% → 1991–2020년 51.70%(+2.7%p). 전망 구간에서는 2071–2099년 SSP2-4.5 71.41% · SSP5-8.5 82.98%로, 고배출 시나리오에서는 현재 최대 클래스인 Cwa가 43.17% → 16.21%로 축소됩니다. [주의] 1901–1930·1991–2020은 관측 기반 실적치이고 2071–2099는 CMIP6 제약 전망치이므로 value_type을 분리 표기했습니다. 두 구간을 하나의 추세선으로 연결하지 마십시오. [활용] B-004·B-005 기후 전망 요소와 연계 가능하며, 농업·산림 적지 이동 분석의 근거로 사용할 수 있습니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] Beck et al.(2023) Köppen-Geiger v2",
       "sourceLabel": "열대기후(A군) 국토 점유 비율 — 시기·시나리오별 — 2071–2099 SSP5-8.5",
       "sourceLabelEn": "Tropical (A) climate share",

@@ -1,61 +1,63 @@
 {
   "dimensions": [
     {
-      "key": "technology",
-      "labelKo": "기술",
+      "key": "entityType",
+      "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
-        "23,35"
-      ]
-    },
-    {
-      "key": "year",
-      "labelKo": "연도",
-      "valueCount": 35,
-      "values": [
-        "1991",
-        "1992",
-        "1993",
-        "1994",
-        "1995",
-        "1996",
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024",
-        "2025"
+        "entity"
       ]
     }
   ],
   "elementId": "B-030",
-  "entityCount": 0,
+  "entityCount": 100,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 3,
+  "indicatorCount": 5,
   "indicators": [
+    {
+      "axisGroupKey": "measure-97af82a8ed3d|ha",
+      "dimensionLabels": {
+        "category": "순변화(성 단위 개체 목록)"
+      },
+      "dimensions": {
+        "category": "순변화(성 단위 개체 목록)"
+      },
+      "displayLabel": "산림 이득·순변화(성 단위 개체 목록)",
+      "indicatorId": "B-030_forest_change_adm1",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-97af82a8ed3d",
+        "labelKo": "산림 이득",
+        "unit": "ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-97af82a8ed3d|ha|category=순변화(성 단위 개체 목록)|B-030_forest_change_adm1",
+      "sourceCaveat": null,
+      "sourceLabel": "산림 이득·순변화(성 단위 개체 목록)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-5a655c87d8f9|ha",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "산림 이득(전국)",
+      "indicatorId": "B-030_forest_gain_national",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5a655c87d8f9",
+        "labelKo": "산림 이득(전국)",
+        "unit": "ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-5a655c87d8f9|ha||B-030_forest_gain_national",
+      "sourceCaveat": null,
+      "sourceLabel": "산림 이득(전국)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
     {
       "axisGroupKey": "measure-b6c75c665cdc|1000 ha/yr",
       "dimensionLabels": {
@@ -146,9 +148,25 @@
   "measures": [
     {
       "indicatorCount": 1,
+      "key": "measure-97af82a8ed3d",
+      "labelKo": "산림 이득",
+      "recordCount": 0,
+      "unit": "ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-5a655c87d8f9",
+      "labelKo": "산림 이득(전국)",
+      "recordCount": 0,
+      "unit": "ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
       "key": "measure-c981eed64655",
       "labelKo": "수관 이득(누적)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "ha",
       "unitFamily": "area"
     },
@@ -156,7 +174,7 @@
       "indicatorCount": 1,
       "key": "measure-8eddf2cf249c",
       "labelKo": "수관 이득(연도별)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "ha/yr",
       "unitFamily": "area"
     },
@@ -164,12 +182,12 @@
       "indicatorCount": 1,
       "key": "measure-b6c75c665cdc",
       "labelKo": "조림지 연간 순증(대리지표)",
-      "recordCount": 35,
+      "recordCount": 0,
       "unit": "1000 ha/yr",
       "unitFamily": "area"
     }
   ],
-  "observationCount": 37,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

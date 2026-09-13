@@ -98,6 +98,9 @@ function cardSnapshotExpression(elementId) {
     const columns = grid ? getComputedStyle(grid).gridTemplateColumns.split(' ').filter(Boolean).length : 0;
     return {
       elementId: ${JSON.stringify(elementId)},
+      // Some elements show their records as a province distribution instead of
+      // a card grid: 63 values per scenario-year is a table, not 33,000 cards.
+      distributionSummary: Boolean(document.querySelector('[data-testid="region-scenario-summary-v137"]')),
       cardCount: cards.length,
       contextTitleCount: rows.filter((row) => ['source-identifier', 'factual-composite', 'record-type'].includes(row.strategy)).length,
       invalid: rows.filter((row) => !row.title || row.title === '명칭 미기재' || row.title === '자료 없음' || row.factCount > 6 || row.badgeCount > 4 || row.longParagraphs.length > 0 || row.pipeText || row.textLength > 760 || row.titleClamp !== '2'),
@@ -179,7 +182,12 @@ const longTextCount = routeResults.reduce(
   (sum, row) => sum + (row?.invalid || []).filter((item) => item.pipeText || item.longParagraphs?.length > 0 || item.textLength > 760).length,
   0
 );
-const missingCardRoutes = routeResults.filter((row) => Number(row?.cardCount || 0) === 0);
+// An element that holds entities has to show them. Cards are one way; the
+// province distribution is the other, and it is the right one where the records
+// are 63 province values per scenario-year rather than 63 things to list.
+const missingCardRoutes = routeResults.filter(
+  (row) => Number(row?.cardCount || 0) === 0 && row?.distributionSummary !== true
+);
 const duplicateCardTitleCount = routeResults.reduce(
   (sum, row) => sum + (row?.duplicates || []).length,
   0
@@ -192,6 +200,16 @@ audit.check("ENTITY_CARD_RESPONSIVE", responsiveFailures.length === 0, responsiv
 audit.check("ENTITY_CARD_COLUMNS_MAX", routeResults.every((row) => Number(row?.columns || 0) <= 4), Math.max(0, ...routeResults.map((row) => Number(row?.columns || 0))), "<= 4");
 audit.check("ENTITY_CARD_FACT_LIMIT", routeResults.every((row) => (row?.invalid || []).every((item) => Number(item.factCount || 0) <= 6)), routeResults.flatMap((row) => row?.invalid || []).filter((item) => Number(item.factCount || 0) > 6).length, 0);
 audit.check("ENTITY_CARD_ROUTE_RENDERING", missingCardRoutes.length === 0, missingCardRoutes.length, 0, missingCardRoutes);
+audit.check(
+  "ENTITY_RECORDS_SHOWN_SOMEHOW",
+  routeResults.every(
+    (row) => Number(row?.cardCount || 0) > 0 || row?.distributionSummary === true
+  ),
+  routeResults.filter(
+    (row) => !(Number(row?.cardCount || 0) > 0 || row?.distributionSummary === true)
+  ).map((row) => row?.elementId),
+  []
+);
 audit.check("ENTITY_CARD_DUPLICATE_PRIMARY_TITLE_COUNT", duplicateCardTitleCount === 0, duplicateCardTitleCount, 0, routeResults.filter((row) => row?.duplicates?.length));
 audit.check("ENTITY_CARD_PUBLIC_TITLE_RESOLVER", cardSource.includes("resolvePublicEntityTitleV131") && !cardSource.includes('|| "명칭 미기재"'), true, true);
 audit.check("ENTITY_CARD_PUBLIC_DOM_POLICY", !cardSource.includes("data-title-strategy") && !cardSource.includes("data-name-availability"), true, true);

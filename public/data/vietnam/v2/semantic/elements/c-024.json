@@ -1,55 +1,18 @@
 {
   "dimensions": [
     {
-      "key": "category",
-      "labelKo": "분류",
-      "valueCount": 6,
-      "values": [
-        "FCPF 계약 물량",
-        "FCPF 계약 초과 검증량",
-        "FCPF 단가",
-        "FCPF 잉여분 추가 이전량",
-        "FCPF 지급액",
-        "GCF FP294 지급 규모"
-      ]
-    },
-    {
-      "key": "detail",
-      "labelKo": "세부 분류",
-      "valueCount": 4,
-      "values": [
-        "BioCF",
-        "FCPF",
-        "FCPF 탄소기금(2018-02-01~2019-12-31, 북중부 6개 성)",
-        "GCF"
-      ]
-    },
-    {
-      "key": "technology",
-      "labelKo": "기술",
+      "key": "entityType",
+      "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
-        "CTIS-23,CTIS-35"
-      ]
-    },
-    {
-      "key": "year",
-      "labelKo": "연도",
-      "valueCount": 6,
-      "values": [
-        "2016",
-        "2017",
-        "2019",
-        "2020",
-        "2024",
-        "2026"
+        "entity"
       ]
     }
   ],
   "elementId": "C-024",
-  "entityCount": 0,
+  "entityCount": 20,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 14,
+  "indicatorCount": 23,
   "indicators": [
     {
       "axisGroupKey": "measure-d34419e26e01|tCO₂e/yr",
@@ -110,6 +73,86 @@
         "sourceRow": 6,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-2415ff195c13|tCO₂e/yr",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "FREL 제출 여부/제출년",
+      "indicatorId": "C-024_frel_submission",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2415ff195c13",
+        "labelKo": "FREL 제출 여부/제출년",
+        "unit": "tCO₂e/yr",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-2415ff195c13|tCO₂e/yr||C-024_frel_submission",
+      "sourceCaveat": null,
+      "sourceLabel": "FREL 제출 여부/제출년",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-854e7f284ea1|여부",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "참여 기금(GCF/FCPF/BioCF) · participating_fund_biocarbonfundisfl",
+      "indicatorId": "C-024_participating_fund_biocarbonfundisfl",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-854e7f284ea1",
+        "labelKo": "참여 기금(GCF/FCPF/BioCF)",
+        "unit": "여부",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-854e7f284ea1|여부||C-024_participating_fund_biocarbonfundisfl",
+      "sourceCaveat": null,
+      "sourceLabel": "참여 기금(GCF/FCPF/BioCF)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-854e7f284ea1|여부",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "참여 기금(GCF/FCPF/BioCF) · participating_fund_en_baochinhphu",
+      "indicatorId": "C-024_participating_fund_en_baochinhphu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-854e7f284ea1",
+        "labelKo": "참여 기금(GCF/FCPF/BioCF)",
+        "unit": "여부",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-854e7f284ea1|여부||C-024_participating_fund_en_baochinhphu",
+      "sourceCaveat": null,
+      "sourceLabel": "참여 기금(GCF/FCPF/BioCF)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-854e7f284ea1|여부",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "참여 기금(GCF/FCPF/BioCF) · participating_fund_worldbank",
+      "indicatorId": "C-024_participating_fund_worldbank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-854e7f284ea1",
+        "labelKo": "참여 기금(GCF/FCPF/BioCF)",
+        "unit": "여부",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-854e7f284ea1|여부||C-024_participating_fund_worldbank",
+      "sourceCaveat": null,
+      "sourceLabel": "참여 기금(GCF/FCPF/BioCF)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-cca85d431886|—",
@@ -206,6 +249,66 @@
         "sourceRow": 11,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-0470bdacb7f5|백만 USD",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "결과기반지불(RBP) 수혜 실적(tCO₂e/USD) · 결과기반지불(RBP) 수혜 실적(tCO₂e/USD) [백만 USD]",
+      "indicatorId": "C-024_rbp_result_en_baochinhphu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0470bdacb7f5",
+        "labelKo": "결과기반지불(RBP) 수혜 실적(tCO₂e/USD)",
+        "unit": "백만 USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-0470bdacb7f5|백만 USD||C-024_rbp_result_en_baochinhphu",
+      "sourceCaveat": null,
+      "sourceLabel": "결과기반지불(RBP) 수혜 실적(tCO₂e/USD)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-6dd786115a8f|지역",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "결과기반지불(RBP) 수혜 실적(tCO₂e/USD) · 결과기반지불(RBP) 수혜 실적(tCO₂e/USD) [지역]",
+      "indicatorId": "C-024_rbp_result_vanban_chinhphu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6dd786115a8f",
+        "labelKo": "결과기반지불(RBP) 수혜 실적(tCO₂e/USD)",
+        "unit": "지역",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-6dd786115a8f|지역||C-024_rbp_result_vanban_chinhphu",
+      "sourceCaveat": null,
+      "sourceLabel": "결과기반지불(RBP) 수혜 실적(tCO₂e/USD)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-8322c8b4beeb|MtCO₂e",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "결과기반지불(RBP) 수혜 실적(tCO₂e/USD) · 결과기반지불(RBP) 수혜 실적(tCO₂e/USD) [MtCO₂e]",
+      "indicatorId": "C-024_rbp_result_worldbank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8322c8b4beeb",
+        "labelKo": "결과기반지불(RBP) 수혜 실적(tCO₂e/USD)",
+        "unit": "MtCO₂e",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-8322c8b4beeb|MtCO₂e||C-024_rbp_result_worldbank",
+      "sourceCaveat": null,
+      "sourceLabel": "결과기반지불(RBP) 수혜 실적(tCO₂e/USD)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-963d69cff1d4|MtCO₂e",
@@ -462,6 +565,26 @@
       }
     },
     {
+      "axisGroupKey": "measure-91f432be32b3|여부",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "REDD+ 전략 수립 여부",
+      "indicatorId": "C-024_redd_strategy",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-91f432be32b3",
+        "labelKo": "REDD+ 전략 수립 여부",
+        "unit": "여부",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-91f432be32b3|여부||C-024_redd_strategy",
+      "sourceCaveat": null,
+      "sourceLabel": "REDD+ 전략 수립 여부",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-c09742d0f4b4|—",
       "dimensionLabels": {
         "technology": "CTIS-23 · CTIS-35"
@@ -490,14 +613,42 @@
         "sourceRow": 9,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-0d1111107dc4|여부",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "세이프가드 정보 시스템 구축 여부",
+      "indicatorId": "C-024_safeguard_system",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0d1111107dc4",
+        "labelKo": "세이프가드 정보 시스템 구축 여부",
+        "unit": "여부",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-0d1111107dc4|여부||C-024_safeguard_system",
+      "sourceCaveat": null,
+      "sourceLabel": "세이프가드 정보 시스템 구축 여부",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     }
   ],
   "measures": [
     {
       "indicatorCount": 1,
+      "key": "measure-2415ff195c13",
+      "labelKo": "FREL 제출 여부/제출년",
+      "recordCount": 0,
+      "unit": "tCO₂e/yr",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
       "key": "measure-381e69461a36",
       "labelKo": "FREL/FRL 제출 여부",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -505,7 +656,7 @@
       "indicatorCount": 1,
       "key": "measure-963d69cff1d4",
       "labelKo": "RBP 검증 배출감축량",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "MtCO₂e",
       "unitFamily": "emissions"
     },
@@ -513,7 +664,7 @@
       "indicatorCount": 3,
       "key": "measure-e11e1041c3ca",
       "labelKo": "REDD+ 결과기반지불",
-      "recordCount": 3,
+      "recordCount": 0,
       "unit": "MtCO₂e",
       "unitFamily": "emissions"
     },
@@ -521,7 +672,7 @@
       "indicatorCount": 1,
       "key": "measure-e734e0c6ee09",
       "labelKo": "REDD+ 결과기반지불",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "USD/tCO₂e",
       "unitFamily": "emissions"
     },
@@ -529,7 +680,7 @@
       "indicatorCount": 2,
       "key": "measure-8d8615a3d6dd",
       "labelKo": "REDD+ 결과기반지불",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "백만 USD",
       "unitFamily": "currency"
     },
@@ -537,15 +688,55 @@
       "indicatorCount": 1,
       "key": "measure-a50c7dfd9256",
       "labelKo": "REDD+ 국가전략 수립 여부",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "—",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-91f432be32b3",
+      "labelKo": "REDD+ 전략 수립 여부",
+      "recordCount": 0,
+      "unit": "여부",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-8322c8b4beeb",
+      "labelKo": "결과기반지불(RBP) 수혜 실적(tCO₂e/USD)",
+      "recordCount": 0,
+      "unit": "MtCO₂e",
+      "unitFamily": "emissions"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-0470bdacb7f5",
+      "labelKo": "결과기반지불(RBP) 수혜 실적(tCO₂e/USD)",
+      "recordCount": 0,
+      "unit": "백만 USD",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-6dd786115a8f",
+      "labelKo": "결과기반지불(RBP) 수혜 실적(tCO₂e/USD)",
+      "recordCount": 0,
+      "unit": "지역",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-0d1111107dc4",
+      "labelKo": "세이프가드 정보 시스템 구축 여부",
+      "recordCount": 0,
+      "unit": "여부",
       "unitFamily": "text"
     },
     {
       "indicatorCount": 1,
       "key": "measure-c09742d0f4b4",
       "labelKo": "세이프가드 정보시스템(SIS) 구축 여부",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -553,7 +744,7 @@
       "indicatorCount": 1,
       "key": "measure-d34419e26e01",
       "labelKo": "수정 FRL 값",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "tCO₂e/yr",
       "unitFamily": "emissions"
     },
@@ -561,12 +752,20 @@
       "indicatorCount": 3,
       "key": "measure-cca85d431886",
       "labelKo": "참여 기금",
-      "recordCount": 3,
+      "recordCount": 0,
       "unit": "—",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 3,
+      "key": "measure-854e7f284ea1",
+      "labelKo": "참여 기금(GCF/FCPF/BioCF)",
+      "recordCount": 0,
+      "unit": "여부",
       "unitFamily": "text"
     }
   ],
-  "observationCount": 14,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

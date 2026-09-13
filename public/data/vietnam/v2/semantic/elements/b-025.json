@@ -1,53 +1,18 @@
 {
   "dimensions": [
     {
-      "key": "detail",
-      "labelKo": "세부 분류",
-      "valueCount": 10,
-      "values": [
-        "8대 유역 합계",
-        "Bằng Giang",
-        "Cả",
-        "Cửu Long(메콩델타)",
-        "Hồng",
-        "Mã",
-        "Srêpốk",
-        "Sê San",
-        "Đồng Nai",
-        "전국 유역면적"
-      ]
-    },
-    {
-      "key": "detail_2",
-      "labelKo": "detail_2",
-      "valueCount": 2,
-      "values": [
-        "Kỳ Cùng",
-        "Thái Bình(홍강)"
-      ]
-    },
-    {
-      "key": "technology",
-      "labelKo": "기술",
+      "key": "entityType",
+      "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
-        "5,32"
-      ]
-    },
-    {
-      "key": "year",
-      "labelKo": "연도",
-      "valueCount": 2,
-      "values": [
-        "2024",
-        "2026"
+        "entity"
       ]
     }
   ],
   "elementId": "B-025",
-  "entityCount": 0,
+  "entityCount": 9,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 19,
+  "indicatorCount": 21,
   "indicators": [
     {
       "axisGroupKey": "measure-46c98029faf3|km²",
@@ -74,6 +39,26 @@
         "sourceRow": 22,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-e6ec7a61b431|km²",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "전국 유역면적 집계",
+      "indicatorId": "B-025_basin_area_national",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e6ec7a61b431",
+        "labelKo": "전국 유역면적 집계",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-e6ec7a61b431|km²||B-025_basin_area_national",
+      "sourceCaveat": null,
+      "sourceLabel": "전국 유역면적 집계",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-e6ec7a61b431|km²",
@@ -138,13 +123,11 @@
     {
       "axisGroupKey": "measure-d4d13686f27c|km²",
       "dimensionLabels": {
-        "detail": "Bằng Giang",
-        "detail_2": "Kỳ Cùng",
+        "detail": "Bằng Giang–Kỳ Cùng",
         "technology": "5 · 32"
       },
       "dimensions": {
-        "detail": "Bằng Giang",
-        "detail_2": "Kỳ Cùng",
+        "detail": "Bằng Giang–Kỳ Cùng",
         "technology": "5,32"
       },
       "displayLabel": "유역 총면적(국경 포함) — Bằng Giang–Kỳ Cùng",
@@ -156,7 +139,7 @@
         "unit": "km²",
         "unitFamily": "area"
       },
-      "seriesKey": "measure-d4d13686f27c|km²|detail=Bằng Giang|detail_2=Kỳ Cùng|technology=5,32|B-025_basin_area_total_bang_giang_ky_cung",
+      "seriesKey": "measure-d4d13686f27c|km²|detail=Bằng Giang–Kỳ Cùng|technology=5,32|B-025_basin_area_total_bang_giang_ky_cung",
       "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 유역(basin) 단위 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
       "sourceLabel": "유역 총면적(국경 포함) — Bằng Giang–Kỳ Cùng",
       "sourceLabelEn": "River basin total area",
@@ -268,13 +251,11 @@
     {
       "axisGroupKey": "measure-d4d13686f27c|km²",
       "dimensionLabels": {
-        "detail": "Hồng",
-        "detail_2": "Thái Bình(홍강)",
+        "detail": "Hồng–Thái Bình(홍강)",
         "technology": "5 · 32"
       },
       "dimensions": {
-        "detail": "Hồng",
-        "detail_2": "Thái Bình(홍강)",
+        "detail": "Hồng–Thái Bình(홍강)",
         "technology": "5,32"
       },
       "displayLabel": "유역 총면적(국경 포함) — Hồng–Thái Bình(홍강)",
@@ -286,7 +267,7 @@
         "unit": "km²",
         "unitFamily": "area"
       },
-      "seriesKey": "measure-d4d13686f27c|km²|detail=Hồng|detail_2=Thái Bình(홍강)|technology=5,32|B-025_basin_area_total_hong_thai_binh",
+      "seriesKey": "measure-d4d13686f27c|km²|detail=Hồng–Thái Bình(홍강)|technology=5,32|B-025_basin_area_total_hong_thai_binh",
       "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 유역(basin) 단위 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
       "sourceLabel": "유역 총면적(국경 포함) — Hồng–Thái Bình(홍강)",
       "sourceLabelEn": "River basin total area",
@@ -398,12 +379,10 @@
     {
       "axisGroupKey": "measure-1494e5d64f51|km²",
       "dimensionLabels": {
-        "detail": "Bằng Giang",
-        "detail_2": "Kỳ Cùng"
+        "detail": "Bằng Giang–Kỳ Cùng"
       },
       "dimensions": {
-        "detail": "Bằng Giang",
-        "detail_2": "Kỳ Cùng"
+        "detail": "Bằng Giang–Kỳ Cùng"
       },
       "displayLabel": "유역 면적(베트남 국내분) — Bằng Giang–Kỳ Cùng",
       "indicatorId": "B-025_basin_area_vn_bang_giang_ky_cung",
@@ -414,7 +393,7 @@
         "unit": "km²",
         "unitFamily": "area"
       },
-      "seriesKey": "measure-1494e5d64f51|km²|detail=Bằng Giang|detail_2=Kỳ Cùng|B-025_basin_area_vn_bang_giang_ky_cung",
+      "seriesKey": "measure-1494e5d64f51|km²|detail=Bằng Giang–Kỳ Cùng|B-025_basin_area_vn_bang_giang_ky_cung",
       "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
       "sourceLabel": "유역 면적(베트남 국내분) — Bằng Giang–Kỳ Cùng",
       "sourceLabelEn": "River basin area within Vietnam",
@@ -520,12 +499,10 @@
     {
       "axisGroupKey": "measure-1494e5d64f51|km²",
       "dimensionLabels": {
-        "detail": "Hồng",
-        "detail_2": "Thái Bình(홍강)"
+        "detail": "Hồng–Thái Bình(홍강)"
       },
       "dimensions": {
-        "detail": "Hồng",
-        "detail_2": "Thái Bình(홍강)"
+        "detail": "Hồng–Thái Bình(홍강)"
       },
       "displayLabel": "유역 면적(베트남 국내분) — Hồng–Thái Bình(홍강)",
       "indicatorId": "B-025_basin_area_vn_hong_thai_binh",
@@ -536,7 +513,7 @@
         "unit": "km²",
         "unitFamily": "area"
       },
-      "seriesKey": "measure-1494e5d64f51|km²|detail=Hồng|detail_2=Thái Bình(홍강)|B-025_basin_area_vn_hong_thai_binh",
+      "seriesKey": "measure-1494e5d64f51|km²|detail=Hồng–Thái Bình(홍강)|B-025_basin_area_vn_hong_thai_binh",
       "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
       "sourceLabel": "유역 면적(베트남 국내분) — Hồng–Thái Bình(홍강)",
       "sourceLabelEn": "River basin area within Vietnam",
@@ -638,6 +615,26 @@
         "sourceRow": 17,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-b246d68ca058|km²",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "유역 면적(유역 개체 목록)",
+      "indicatorId": "B-025_river_basin",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b246d68ca058",
+        "labelKo": "유역 면적(유역 개체 목록)",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-b246d68ca058|km²||B-025_river_basin",
+      "sourceCaveat": null,
+      "sourceLabel": "유역 면적(유역 개체 목록)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     }
   ],
   "measures": [
@@ -645,7 +642,7 @@
       "indicatorCount": 1,
       "key": "measure-46c98029faf3",
       "labelKo": "유역 면적(HydroBASINS 기반 산출)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "km²",
       "unitFamily": "area"
     },
@@ -653,7 +650,15 @@
       "indicatorCount": 8,
       "key": "measure-1494e5d64f51",
       "labelKo": "유역 면적(베트남 국내분)",
-      "recordCount": 8,
+      "recordCount": 0,
+      "unit": "km²",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-b246d68ca058",
+      "labelKo": "유역 면적(유역 개체 목록)",
+      "recordCount": 0,
       "unit": "km²",
       "unitFamily": "area"
     },
@@ -661,20 +666,20 @@
       "indicatorCount": 8,
       "key": "measure-d4d13686f27c",
       "labelKo": "유역 총면적(국경 포함)",
-      "recordCount": 8,
+      "recordCount": 0,
       "unit": "km²",
       "unitFamily": "area"
     },
     {
-      "indicatorCount": 2,
+      "indicatorCount": 3,
       "key": "measure-e6ec7a61b431",
       "labelKo": "전국 유역면적 집계",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "km²",
       "unitFamily": "area"
     }
   ],
-  "observationCount": 19,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

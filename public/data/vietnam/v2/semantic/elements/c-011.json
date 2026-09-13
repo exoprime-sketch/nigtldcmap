@@ -1,122 +1,18 @@
 {
   "dimensions": [
     {
-      "key": "category",
-      "labelKo": "분류",
-      "valueCount": 39,
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
       "values": [
-        "1단계",
-        "1심 형사재판 지표",
-        "2단계",
-        "3단계",
-        "4단계",
-        "OSAC Vietnam Country Security Report",
-        "UNODC 고의살인율 데이터포털",
-        "고의살인율(Intentional Homicide Rate)",
-        "공공데이터포털 여행경보 오픈API",
-        "공안부 공표 최소 공간단위",
-        "교통사고 지표",
-        "납치 위험",
-        "다발 범죄 유형",
-        "도시별 위협도",
-        "미 국무부 베트남 여행경보",
-        "미국 국무부 여행경보",
-        "발령 개시",
-        "범죄신고",
-        "베트남 푸꾸옥 해상 관광시 안전 유의 안내",
-        "실행 가능한 수집 경로",
-        "외교부 여행경보 4단계 정의 페이지",
-        "외교부 해외안전여행 베트남 국가페이지",
-        "응급환자(앰뷸런스)",
-        "인접국 캄보디아 여행경보 조정내용",
-        "전반 위협도",
-        "종합 범죄지수",
-        "종합 판정",
-        "주다낭 대한민국총영사관",
-        "주베트남 대한민국대사관(하노이)",
-        "주점 요금 시비 관련 안전공지",
-        "주호치민 대한민국총영사관",
-        "지역별 차등",
-        "최근 조정 관련 공지",
-        "치안 구조적 이슈",
-        "테러 위협",
-        "특별경보",
-        "폭력범죄",
-        "현재 등급",
-        "화재신고"
-      ]
-    },
-    {
-      "key": "detail",
-      "labelKo": "세부 분류",
-      "valueCount": 26,
-      "values": [
-        "Country Security Report 종합평가",
-        "Intentional Homicide",
-        "Travel Advisory",
-        "Travel Advisory Level",
-        "全 국가·지역 여행경보 1단계 발령 공지",
-        "각국 안전여행 위험도에 따른 여행경보 단계 조정",
-        "경찰 예산 부족·부패 문제",
-        "긴급연락처(사건사고 등, 24시간)",
-        "대표번호(근무시간 중)",
-        "등급 체계",
-        "발생 통계 기반 범죄지수",
-        "베트남 내 지역별 경보 차등 여부",
-        "안전공지",
-        "여행경보·현지연락처",
-        "여행금지(흑색경보)",
-        "여행유의(남색경보)",
-        "여행자제(황색경보)",
-        "외교부_여행경보제도",
-        "음료 변조·마약담배·간헐적 무장강도",
-        "인구 10만명당 발생건수",
-        "전 지역",
-        "출국권고(적색경보)",
-        "특별여행주의보·특별여행경보(비정기 발령)",
-        "하노이·호치민",
-        "현지 치안 상황",
-        "휴대폰 절도·오토바이 날치기(2인조)·소매치기·주거침입(교민지역)·카드 스키밍"
-      ]
-    },
-    {
-      "key": "detail_2",
-      "labelKo": "detail_2",
-      "valueCount": 2,
-      "values": [
-        "상한(max)",
-        "하한(min)"
-      ]
-    },
-    {
-      "key": "period",
-      "labelKo": "기간",
-      "valueCount": 6,
-      "values": [
-        "2020-03",
-        "2023-11",
-        "2026-07",
-        "2026-07(조회시점)",
-        "2026-07-13",
-        "—"
-      ]
-    },
-    {
-      "key": "year",
-      "labelKo": "연도",
-      "valueCount": 4,
-      "values": [
-        "2011",
-        "2020",
-        "2023",
-        "2026"
+        "entity"
       ]
     }
   ],
   "elementId": "C-011",
-  "entityCount": 0,
+  "entityCount": 44,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 44,
+  "indicatorCount": 53,
   "indicators": [
     {
       "axisGroupKey": "measure-0b829adb9c34|지수",
@@ -149,6 +45,106 @@
         "sourceRow": 24,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-3da14475172e|건/10만명",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "범죄 통계 · 범죄 통계 [건/10만명]",
+      "indicatorId": "C-011_crime_statistics_api_worldbank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3da14475172e",
+        "labelKo": "범죄 통계",
+        "unit": "건/10만명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-3da14475172e|건/10만명||C-011_crime_statistics_api_worldbank",
+      "sourceCaveat": null,
+      "sourceLabel": "범죄 통계",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-9ad53885a53c|URL",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "범죄 통계 · 범죄 통계 [URL]",
+      "indicatorId": "C-011_crime_statistics_dataunodc_un",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9ad53885a53c",
+        "labelKo": "범죄 통계",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-9ad53885a53c|URL||C-011_crime_statistics_dataunodc_un",
+      "sourceCaveat": null,
+      "sourceLabel": "범죄 통계",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-0787fe2bcdd8|지수",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "범죄 통계 · 범죄 통계 [지수]",
+      "indicatorId": "C-011_crime_statistics_gso",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0787fe2bcdd8",
+        "labelKo": "범죄 통계",
+        "unit": "지수",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-0787fe2bcdd8|지수||C-011_crime_statistics_gso",
+      "sourceCaveat": null,
+      "sourceLabel": "범죄 통계",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-8e669c8b3ef9|전화",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "현지 치안 상황 · 현지 치안 상황 [전화]",
+      "indicatorId": "C-011_local_security_status_0404",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8e669c8b3ef9",
+        "labelKo": "현지 치안 상황",
+        "unit": "전화",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-8e669c8b3ef9|전화||C-011_local_security_status_0404",
+      "sourceCaveat": null,
+      "sourceLabel": "현지 치안 상황",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-1b5da2e33136|구분",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "현지 치안 상황 · 현지 치안 상황 [구분]",
+      "indicatorId": "C-011_local_security_status_bocongan",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1b5da2e33136",
+        "labelKo": "현지 치안 상황",
+        "unit": "구분",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-1b5da2e33136|구분||C-011_local_security_status_bocongan",
+      "sourceCaveat": null,
+      "sourceLabel": "현지 치안 상황",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-296f3bc77dbf|OSAC 대미기준 등급",
@@ -243,6 +239,26 @@
         "sourceRow": 22,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-87a21a377335|URL",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "현지 치안 상황 · 현지 치안 상황 [URL]",
+      "indicatorId": "C-011_local_security_status_osac",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-87a21a377335",
+        "labelKo": "현지 치안 상황",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-87a21a377335|URL||C-011_local_security_status_osac",
+      "sourceCaveat": null,
+      "sourceLabel": "현지 치안 상황",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-bf5054fe17d3|위협등급",
@@ -1001,6 +1017,46 @@
       }
     },
     {
+      "axisGroupKey": "measure-47c9abf1f47f|등급",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지) · 경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지) [등급]",
+      "indicatorId": "C-011_travel_alert_level_0404",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-47c9abf1f47f",
+        "labelKo": "경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지)",
+        "unit": "등급",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-47c9abf1f47f|등급||C-011_travel_alert_level_0404",
+      "sourceCaveat": null,
+      "sourceLabel": "경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-eb2f81aefa15|경보색상",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지) · 경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지) [경보색상]",
+      "indicatorId": "C-011_travel_alert_level_0404_2",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-eb2f81aefa15",
+        "labelKo": "경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지)",
+        "unit": "경보색상",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-eb2f81aefa15|경보색상||C-011_travel_alert_level_0404_2",
+      "sourceCaveat": null,
+      "sourceLabel": "경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-d9959d757656|경보색상",
       "dimensionLabels": {
         "category": "1단계",
@@ -1159,6 +1215,26 @@
         "sourceRow": 9,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-ed718bd51999|등급(1~4)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지) · 경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지) [등급(1~4)]",
+      "indicatorId": "C-011_travel_alert_level_travel_state",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ed718bd51999",
+        "labelKo": "경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지)",
+        "unit": "등급(1~4)",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-ed718bd51999|등급(1~4)||C-011_travel_alert_level_travel_state",
+      "sourceCaveat": null,
+      "sourceLabel": "경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-23da34bf5a89|전화번호",
@@ -1518,9 +1594,57 @@
   "measures": [
     {
       "indicatorCount": 1,
+      "key": "measure-eb2f81aefa15",
+      "labelKo": "경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지)",
+      "recordCount": 0,
+      "unit": "경보색상",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-47c9abf1f47f",
+      "labelKo": "경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지)",
+      "recordCount": 0,
+      "unit": "등급",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-ed718bd51999",
+      "labelKo": "경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지)",
+      "recordCount": 0,
+      "unit": "등급(1~4)",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-9ad53885a53c",
+      "labelKo": "범죄 통계",
+      "recordCount": 0,
+      "unit": "URL",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-3da14475172e",
+      "labelKo": "범죄 통계",
+      "recordCount": 0,
+      "unit": "건/10만명",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-0787fe2bcdd8",
+      "labelKo": "범죄 통계",
+      "recordCount": 0,
+      "unit": "지수",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
       "key": "measure-fdace1319db9",
       "labelKo": "범죄 통계 (정량지표)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "건/10만명",
       "unitFamily": "count"
     },
@@ -1528,7 +1652,7 @@
       "indicatorCount": 1,
       "key": "measure-0b829adb9c34",
       "labelKo": "범죄 통계 (정량지표)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "지수",
       "unitFamily": "other"
     },
@@ -1536,7 +1660,7 @@
       "indicatorCount": 1,
       "key": "measure-d3d49ef728fb",
       "labelKo": "베트남 여행경보 현황 및 해외 비교",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -1544,7 +1668,7 @@
       "indicatorCount": 4,
       "key": "measure-eaac28c27d4f",
       "labelKo": "베트남 여행경보 현황 및 해외 비교",
-      "recordCount": 4,
+      "recordCount": 0,
       "unit": "년월",
       "unitFamily": "other"
     },
@@ -1552,7 +1676,7 @@
       "indicatorCount": 1,
       "key": "measure-b4d78579f827",
       "labelKo": "베트남 여행경보 현황 및 해외 비교",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "등급",
       "unitFamily": "text"
     },
@@ -1560,7 +1684,7 @@
       "indicatorCount": 1,
       "key": "measure-10725a77f90a",
       "labelKo": "베트남 여행경보 현황 및 해외 비교",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "등급(1~4)",
       "unitFamily": "text"
     },
@@ -1568,7 +1692,7 @@
       "indicatorCount": 3,
       "key": "measure-23da34bf5a89",
       "labelKo": "베트남 현지 긴급신고 번호",
-      "recordCount": 3,
+      "recordCount": 0,
       "unit": "전화번호",
       "unitFamily": "other"
     },
@@ -1576,7 +1700,7 @@
       "indicatorCount": 4,
       "key": "measure-b42a728448e2",
       "labelKo": "성 단위 치안지표",
-      "recordCount": 4,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -1584,7 +1708,7 @@
       "indicatorCount": 1,
       "key": "measure-88bd77245715",
       "labelKo": "성 단위 치안지표 공표 여부",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -1592,7 +1716,7 @@
       "indicatorCount": 1,
       "key": "measure-bbe0dbc094d4",
       "labelKo": "여행경보 등급 체계 (외교부 4단계 정의)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -1600,7 +1724,7 @@
       "indicatorCount": 4,
       "key": "measure-d9959d757656",
       "labelKo": "여행경보 등급 체계 (외교부 4단계 정의)",
-      "recordCount": 4,
+      "recordCount": 0,
       "unit": "경보색상",
       "unitFamily": "text"
     },
@@ -1608,7 +1732,7 @@
       "indicatorCount": 6,
       "key": "measure-a2c3c0328922",
       "labelKo": "원본 링크 (URL)",
-      "recordCount": 6,
+      "recordCount": 0,
       "unit": "URL",
       "unitFamily": "text"
     },
@@ -1616,7 +1740,7 @@
       "indicatorCount": 6,
       "key": "measure-5eb9e4cf6c29",
       "labelKo": "재외공관 연락처",
-      "recordCount": 6,
+      "recordCount": 0,
       "unit": "전화",
       "unitFamily": "text"
     },
@@ -1624,15 +1748,39 @@
       "indicatorCount": 3,
       "key": "measure-10857c0c1446",
       "labelKo": "최근 안전공지 (2026-07 기준)",
-      "recordCount": 3,
+      "recordCount": 0,
       "unit": "공지일",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-87a21a377335",
+      "labelKo": "현지 치안 상황",
+      "recordCount": 0,
+      "unit": "URL",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-1b5da2e33136",
+      "labelKo": "현지 치안 상황",
+      "recordCount": 0,
+      "unit": "구분",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-8e669c8b3ef9",
+      "labelKo": "현지 치안 상황",
+      "recordCount": 0,
+      "unit": "전화",
       "unitFamily": "text"
     },
     {
       "indicatorCount": 1,
       "key": "measure-296f3bc77dbf",
       "labelKo": "현지 치안 상황 서술 (OSAC/미 국무부)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "OSAC 대미기준 등급",
       "unitFamily": "text"
     },
@@ -1640,7 +1788,7 @@
       "indicatorCount": 5,
       "key": "measure-798dc5a7591c",
       "labelKo": "현지 치안 상황 서술 (OSAC/미 국무부)",
-      "recordCount": 5,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -1648,12 +1796,12 @@
       "indicatorCount": 1,
       "key": "measure-bf5054fe17d3",
       "labelKo": "현지 치안 상황 서술 (OSAC/미 국무부)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "위협등급",
       "unitFamily": "text"
     }
   ],
-  "observationCount": 44,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

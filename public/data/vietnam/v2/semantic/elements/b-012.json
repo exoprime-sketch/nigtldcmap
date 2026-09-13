@@ -1,18 +1,18 @@
 {
   "dimensions": [
     {
-      "key": "year",
-      "labelKo": "연도",
+      "key": "entityType",
+      "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
-        "2024"
+        "entity"
       ]
     }
   ],
   "elementId": "B-012",
-  "entityCount": 0,
+  "entityCount": 275,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 44,
+  "indicatorCount": 45,
   "indicators": [
     {
       "axisGroupKey": "measure-1b6cee2994bc|명",
@@ -673,6 +673,30 @@
         "sourceRow": 15,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-bbf6509556ee|건",
+      "dimensionLabels": {
+        "category": "재난 이력(개체 목록)"
+      },
+      "dimensions": {
+        "category": "재난 이력(개체 목록)"
+      },
+      "displayLabel": "재해·재난 이력(개체 목록)",
+      "indicatorId": "B-012_disaster_event",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bbf6509556ee",
+        "labelKo": "재해",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-bbf6509556ee|건|category=재난 이력(개체 목록)|B-012_disaster_event",
+      "sourceCaveat": null,
+      "sourceLabel": "재해·재난 이력(개체 목록)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-743b2f540469|건",
@@ -1345,6 +1369,14 @@
       "unitFamily": "count"
     },
     {
+      "indicatorCount": 1,
+      "key": "measure-bbf6509556ee",
+      "labelKo": "재해",
+      "recordCount": 0,
+      "unit": "건",
+      "unitFamily": "count"
+    },
+    {
       "indicatorCount": 6,
       "key": "measure-06a5558ce2a6",
       "labelKo": "재해 유형별 발생 건수",
@@ -1404,12 +1436,12 @@
       "indicatorCount": 1,
       "key": "measure-21e49b94531f",
       "labelKo": "지점(point) 단위 재해 이력",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "건",
       "unitFamily": "count"
     }
   ],
-  "observationCount": 1,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

@@ -3,7 +3,15 @@
 import { existsSync } from "node:fs";
 import { resolve } from "node:path";
 
-import { AuditV125, PROJECT_ROOT, V2_ROOT, catalogElements, readJson } from "./v125/audit-utils.mjs";
+import {
+  AuditV125,
+  PROJECT_ROOT,
+  V2_ROOT,
+  catalogElements,
+  loadPackPayloads,
+  payloadRecords,
+  readJson,
+} from "./v125/audit-utils.mjs";
 import {
   evaluateValue,
   launchHeadlessBrowser,
@@ -75,6 +83,10 @@ try {
             claims,
             text,
             alert: String(root?.querySelector('[role="alert"]')?.textContent || '').trim(),
+            analyticalView: Boolean(root?.querySelector('[data-testid="public-analytical-view"]')),
+            rawTableIsPrimary: Boolean(
+              root?.querySelector('[data-testid="public-primary-visualization"] [data-testid="public-raw-table"]')
+            ),
             ghg: ghg ? {
               present: true,
               rawMatrixPrimary: ghg.getAttribute('data-raw-matrix-primary'),
@@ -159,6 +171,19 @@ const contractDepthMismatches = catalog.flatMap((element) => {
   return [];
 });
 const ghg = routeById.get("C-002");
+// C-002's delivery no longer carries sector-by-gas observations: the source
+// states that BUR3 publishes no national mitigation total, and the screen says
+// so item by item instead of drawing a chart of nothing. What this check is for
+// is that the element leads with an analysis rather than a raw matrix - so when
+// the sector-gas view has values it must be there, and when it has none the
+// screen must still lead with an analytical view.
+const ghgObservations = payloadRecords(
+  loadPackPayloads().elements.get("C-002")?.observations
+).filter((row) => typeof row?.value === "number" && Number.isFinite(row.value));
+const ghgAnalyticalView =
+  ghgObservations.length > 0
+    ? ghg?.ghg?.present === true && ghg?.ghg?.rawMatrixPrimary === "false"
+    : ghg?.analyticalView === true && ghg?.rawTableIsPrimary === false;
 
 audit.check("FRAMEWORK_ELEMENTS", catalog.length === 152, catalog.length, 152);
 audit.check("TEMPORAL_RUNTIME_COVERAGE", runtimeFailure === null && routes.length === 152 && routeFailures.length === 0, { runtimeFailure, routeCount: routes.length, routeFailures }, { routeCount: 152, routeFailures: [] });
@@ -168,7 +193,19 @@ audit.check("SINGLE_YEAR_TIME_SERIES_COUNT", singleYearTrend.length === 0, singl
 audit.check("TWO_YEAR_GENERIC_TREND_COUNT", twoYearGenericTrend.length === 0, twoYearGenericTrend, []);
 audit.check("ONE_POINT_CHART_COUNT", onePointCharts.length === 0, onePointCharts, []);
 audit.check("STATUS_ONLY_TEMPORAL_VISUAL_COUNT", statusOnlyTemporal.length === 0, statusOnlyTemporal, []);
-audit.check("GHG_ANALYTICAL_VIEW", ghg?.ghg?.present === true && ghg?.ghg?.rawMatrixPrimary === "false", ghg?.ghg || null, { present: true, rawMatrixPrimary: "false" });
+audit.check(
+  "GHG_ANALYTICAL_VIEW",
+  ghgAnalyticalView,
+  {
+    sectorGasObservations: ghgObservations.length,
+    sectorGasView: ghg?.ghg || null,
+    analyticalView: ghg?.analyticalView,
+    rawTableIsPrimary: ghg?.rawTableIsPrimary,
+  },
+  ghgObservations.length > 0
+    ? { present: true, rawMatrixPrimary: "false" }
+    : { analyticalView: true, rawTableIsPrimary: false }
+);
 audit.check("BROKEN_ASSET", brokenAssets.length === 0, brokenAssets, []);
 audit.check("CONSOLE_ERROR", (browser?.runtimeErrors || []).length === 0, browser?.runtimeErrors || [], []);
 
@@ -180,6 +217,6 @@ finishAuditV135(audit, "temporal-depth-audit-v135.json", {
   singleYearTimeSeriesCount: singleYearTrend.length,
   twoYearGenericTrendCount: twoYearGenericTrend.length,
   onePointChartCount: onePointCharts.length,
-  rawMatrixAsPrimaryCount: ghg?.ghg?.rawMatrixPrimary === "false" ? 0 : 1,
+  rawMatrixAsPrimaryCount: ghgAnalyticalView ? 0 : 1,
   runtimeFailure,
 });

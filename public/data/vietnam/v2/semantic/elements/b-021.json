@@ -3,11 +3,13 @@
     {
       "key": "detail",
       "labelKo": "세부 분류",
-      "valueCount": 19,
+      "valueCount": 21,
       "values": [
         "1인당 GDP",
         "1인당 GNI(로그)",
-        "2100)",
+        "SSP1",
+        "SSP2",
+        "SSP3",
         "국가",
         "기대수명",
         "도시화율",
@@ -2601,25 +2603,23 @@
       }
     },
     {
-      "axisGroupKey": "measure-41f993872f7b|지수",
+      "axisGroupKey": "measure-ca2bd9d09bcc|지수",
       "dimensionLabels": {
-        "detail": "2100)",
-        "detail_2": "SSP1"
+        "detail": "SSP1"
       },
       "dimensions": {
-        "detail": "2100)",
-        "detail_2": "SSP1"
+        "detail": "SSP1"
       },
       "displayLabel": "GVI 장래전망(PGVI, 2020–2100) — SSP1",
       "indicatorId": "B-021_gvi_projection_ssp1",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-41f993872f7b",
-        "labelKo": "GVI 장래전망(PGVI, 2020",
+        "key": "measure-ca2bd9d09bcc",
+        "labelKo": "GVI 장래전망(PGVI, 2020–2100)",
         "unit": "지수",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-41f993872f7b|지수|detail=2100)|detail_2=SSP1|B-021_gvi_projection_ssp1",
+      "seriesKey": "measure-ca2bd9d09bcc|지수|detail=SSP1|B-021_gvi_projection_ssp1",
       "sourceCaveat": "[장래전망 수집 완료] 발주처 검토의견 「취약성지수 장래전망(2100년까지) 수집 여부」에 대한 조치. GDL이 별도 배포하는 GVIP Database(180개국 · SSP1·2·3 × 2020–2100년 5년 간격)를 취득하여 수록. GDL은 SSP1·SSP2·SSP3 3개 경로만 산출하며 SSP4·SSP5는 제공하지 않음. [중요 · 접속 금지] PGVI는 관측 GVI를 연장한 값이 아니라 구성지표 전망값을 회귀식에 대입해 산출한 모형 출력이므로, 기준연도 2020년에도 관측 GVI 37.3 vs PGVI 39.9로 2.6점 차이가 존재함. 따라서 관측 계열(gvi_national, 2000–2023)과 전망 계열을 하나의 시계열로 이어 붙이면 안 되며, 별도 지표로 분리 관리함. [시나리오별 경로] SSP1은 2075년 25.5까지 개선 후 소폭 반등하여 2100년 27.8, SSP2는 완만히 개선되어 2100년 26.9, SSP3은 2060년 38.4에서 정체하여 2100년 36.4로 개선폭이 가장 작음. 2020년 기준값은 세 시나리오 모두 39.9로 동일. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 국가 단위 — 성(省) 단위 전망은 원천 미제공 / [원천 갱신일 근거] GDL GVI (Huisman et al., 2025)",
       "sourceLabel": "GVI 장래전망(PGVI, 2020–2100) — SSP1",
       "sourceLabelEn": "Projected GDL Vulnerability Index",
@@ -2633,25 +2633,23 @@
       }
     },
     {
-      "axisGroupKey": "measure-41f993872f7b|지수",
+      "axisGroupKey": "measure-ca2bd9d09bcc|지수",
       "dimensionLabels": {
-        "detail": "2100)",
-        "detail_2": "SSP2"
+        "detail": "SSP2"
       },
       "dimensions": {
-        "detail": "2100)",
-        "detail_2": "SSP2"
+        "detail": "SSP2"
       },
       "displayLabel": "GVI 장래전망(PGVI, 2020–2100) — SSP2",
       "indicatorId": "B-021_gvi_projection_ssp2",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-41f993872f7b",
-        "labelKo": "GVI 장래전망(PGVI, 2020",
+        "key": "measure-ca2bd9d09bcc",
+        "labelKo": "GVI 장래전망(PGVI, 2020–2100)",
         "unit": "지수",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-41f993872f7b|지수|detail=2100)|detail_2=SSP2|B-021_gvi_projection_ssp2",
+      "seriesKey": "measure-ca2bd9d09bcc|지수|detail=SSP2|B-021_gvi_projection_ssp2",
       "sourceCaveat": "[장래전망 수집 완료] 발주처 검토의견 「취약성지수 장래전망(2100년까지) 수집 여부」에 대한 조치. GDL이 별도 배포하는 GVIP Database(180개국 · SSP1·2·3 × 2020–2100년 5년 간격)를 취득하여 수록. GDL은 SSP1·SSP2·SSP3 3개 경로만 산출하며 SSP4·SSP5는 제공하지 않음. [중요 · 접속 금지] PGVI는 관측 GVI를 연장한 값이 아니라 구성지표 전망값을 회귀식에 대입해 산출한 모형 출력이므로, 기준연도 2020년에도 관측 GVI 37.3 vs PGVI 39.9로 2.6점 차이가 존재함. 따라서 관측 계열(gvi_national, 2000–2023)과 전망 계열을 하나의 시계열로 이어 붙이면 안 되며, 별도 지표로 분리 관리함. [시나리오별 경로] SSP1은 2075년 25.5까지 개선 후 소폭 반등하여 2100년 27.8, SSP2는 완만히 개선되어 2100년 26.9, SSP3은 2060년 38.4에서 정체하여 2100년 36.4로 개선폭이 가장 작음. 2020년 기준값은 세 시나리오 모두 39.9로 동일. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 국가 단위 — 성(省) 단위 전망은 원천 미제공 / [원천 갱신일 근거] GDL GVI (Huisman et al., 2025)",
       "sourceLabel": "GVI 장래전망(PGVI, 2020–2100) — SSP2",
       "sourceLabelEn": "Projected GDL Vulnerability Index",
@@ -2665,25 +2663,23 @@
       }
     },
     {
-      "axisGroupKey": "measure-41f993872f7b|지수",
+      "axisGroupKey": "measure-ca2bd9d09bcc|지수",
       "dimensionLabels": {
-        "detail": "2100)",
-        "detail_2": "SSP3"
+        "detail": "SSP3"
       },
       "dimensions": {
-        "detail": "2100)",
-        "detail_2": "SSP3"
+        "detail": "SSP3"
       },
       "displayLabel": "GVI 장래전망(PGVI, 2020–2100) — SSP3",
       "indicatorId": "B-021_gvi_projection_ssp3",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-41f993872f7b",
-        "labelKo": "GVI 장래전망(PGVI, 2020",
+        "key": "measure-ca2bd9d09bcc",
+        "labelKo": "GVI 장래전망(PGVI, 2020–2100)",
         "unit": "지수",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-41f993872f7b|지수|detail=2100)|detail_2=SSP3|B-021_gvi_projection_ssp3",
+      "seriesKey": "measure-ca2bd9d09bcc|지수|detail=SSP3|B-021_gvi_projection_ssp3",
       "sourceCaveat": "[장래전망 수집 완료] 발주처 검토의견 「취약성지수 장래전망(2100년까지) 수집 여부」에 대한 조치. GDL이 별도 배포하는 GVIP Database(180개국 · SSP1·2·3 × 2020–2100년 5년 간격)를 취득하여 수록. GDL은 SSP1·SSP2·SSP3 3개 경로만 산출하며 SSP4·SSP5는 제공하지 않음. [중요 · 접속 금지] PGVI는 관측 GVI를 연장한 값이 아니라 구성지표 전망값을 회귀식에 대입해 산출한 모형 출력이므로, 기준연도 2020년에도 관측 GVI 37.3 vs PGVI 39.9로 2.6점 차이가 존재함. 따라서 관측 계열(gvi_national, 2000–2023)과 전망 계열을 하나의 시계열로 이어 붙이면 안 되며, 별도 지표로 분리 관리함. [시나리오별 경로] SSP1은 2075년 25.5까지 개선 후 소폭 반등하여 2100년 27.8, SSP2는 완만히 개선되어 2100년 26.9, SSP3은 2060년 38.4에서 정체하여 2100년 36.4로 개선폭이 가장 작음. 2020년 기준값은 세 시나리오 모두 39.9로 동일. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 국가 단위 — 성(省) 단위 전망은 원천 미제공 / [원천 갱신일 근거] GDL GVI (Huisman et al., 2025)",
       "sourceLabel": "GVI 장래전망(PGVI, 2020–2100) — SSP3",
       "sourceLabelEn": "Projected GDL Vulnerability Index",
@@ -3886,8 +3882,8 @@
     },
     {
       "indicatorCount": 3,
-      "key": "measure-41f993872f7b",
-      "labelKo": "GVI 장래전망(PGVI, 2020",
+      "key": "measure-ca2bd9d09bcc",
+      "labelKo": "GVI 장래전망(PGVI, 2020–2100)",
       "recordCount": 51,
       "unit": "지수",
       "unitFamily": "other"

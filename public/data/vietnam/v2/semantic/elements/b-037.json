@@ -1,72 +1,59 @@
 {
   "dimensions": [
     {
-      "key": "detail",
-      "labelKo": "세부 분류",
-      "valueCount": 14,
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
       "values": [
-        "관목지",
-        "나지",
-        "내륙 수역",
-        "다층 작물",
-        "맹그로브",
-        "목본 작물",
-        "수목 피복지(산림지)",
-        "습지 또는 정기 침수 관목/초본 식생",
-        "시가화지역(인공지표)",
-        "연안 수체 및 조간대",
-        "영구설 및 빙하",
-        "자연 식생 희소 지역",
-        "초본 작물(농경지)",
-        "초지"
-      ]
-    },
-    {
-      "key": "year",
-      "labelKo": "연도",
-      "valueCount": 33,
-      "values": [
-        "1992",
-        "1993",
-        "1994",
-        "1995",
-        "1996",
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024"
+        "entity"
       ]
     }
   ],
   "elementId": "B-037",
-  "entityCount": 0,
+  "entityCount": 747,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 56,
+  "indicatorCount": 58,
   "indicators": [
+    {
+      "axisGroupKey": "measure-6e0e78899b02|km²",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "토지피복 분류별 면적(성 단위 개체 목록)",
+      "indicatorId": "B-037_landcover_adm1",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6e0e78899b02",
+        "labelKo": "토지피복 분류별 면적(성 단위 개체 목록)",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-6e0e78899b02|km²||B-037_landcover_adm1",
+      "sourceCaveat": null,
+      "sourceLabel": "토지피복 분류별 면적(성 단위 개체 목록)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-e59e55078705|1000 ha",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "토지피복 분류별 면적(전국)",
+      "indicatorId": "B-037_landcover_national",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e59e55078705",
+        "labelKo": "토지피복 분류별 면적(전국)",
+        "unit": "1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-e59e55078705|1000 ha||B-037_landcover_national",
+      "sourceCaveat": null,
+      "sourceLabel": "토지피복 분류별 면적(전국)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
     {
       "axisGroupKey": "measure-4c0d2e8182fc|1000 ha",
       "dimensionLabels": {
@@ -1753,7 +1740,7 @@
       "indicatorCount": 14,
       "key": "measure-4c0d2e8182fc",
       "labelKo": "토지피복 면적",
-      "recordCount": 374,
+      "recordCount": 0,
       "unit": "1000 ha",
       "unitFamily": "area"
     },
@@ -1761,7 +1748,7 @@
       "indicatorCount": 14,
       "key": "measure-83654f27fc7a",
       "labelKo": "토지피복 면적(CGLS)",
-      "recordCount": 42,
+      "recordCount": 0,
       "unit": "1000 ha",
       "unitFamily": "area"
     },
@@ -1769,7 +1756,7 @@
       "indicatorCount": 14,
       "key": "measure-08c6d6285cee",
       "labelKo": "토지피복 면적(MODIS)",
-      "recordCount": 244,
+      "recordCount": 0,
       "unit": "1000 ha",
       "unitFamily": "area"
     },
@@ -1777,12 +1764,28 @@
       "indicatorCount": 14,
       "key": "measure-baf2173085f9",
       "labelKo": "토지피복 면적(WorldCover)",
-      "recordCount": 24,
+      "recordCount": 0,
+      "unit": "1000 ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-6e0e78899b02",
+      "labelKo": "토지피복 분류별 면적(성 단위 개체 목록)",
+      "recordCount": 0,
+      "unit": "km²",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-e59e55078705",
+      "labelKo": "토지피복 분류별 면적(전국)",
+      "recordCount": 0,
       "unit": "1000 ha",
       "unitFamily": "area"
     }
   ],
-  "observationCount": 684,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

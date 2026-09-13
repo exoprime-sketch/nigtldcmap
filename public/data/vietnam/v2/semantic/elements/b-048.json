@@ -1,65 +1,18 @@
 {
   "dimensions": [
     {
-      "key": "detail",
-      "labelKo": "세부 분류",
-      "valueCount": 8,
-      "values": [
-        "Ban Phuc",
-        "Sin Quyen",
-        "구리",
-        "니켈",
-        "보크사이트/알루미나",
-        "텅스텐",
-        "티타늄",
-        "희토류"
-      ]
-    },
-    {
       "key": "entityType",
       "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
-        "광산"
-      ]
-    },
-    {
-      "key": "regionName",
-      "labelKo": "regionName",
-      "valueCount": 8,
-      "values": [
-        "Binh Thuan",
-        "Dak Nong",
-        "Lai Chau",
-        "Lam Dong",
-        "Lao Cai",
-        "Son La",
-        "Thai Nguyen",
-        "Yen Bai"
-      ]
-    },
-    {
-      "key": "technology",
-      "labelKo": "기술",
-      "valueCount": 1,
-      "values": [
-        "1,3,18,24"
-      ]
-    },
-    {
-      "key": "year",
-      "labelKo": "연도",
-      "valueCount": 2,
-      "values": [
-        "2016",
-        "2022"
+        "entity"
       ]
     }
   ],
   "elementId": "B-048",
   "entityCount": 8,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 10,
+  "indicatorCount": 11,
   "indicators": [
     {
       "axisGroupKey": "measure-75c152288655|도(decimal degrees)",
@@ -380,6 +333,26 @@
         "sourceRow": 7,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-b8ca5739f7f0|개소",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "주요 광산 위치(개체 목록)",
+      "indicatorId": "B-048_mine_site",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b8ca5739f7f0",
+        "labelKo": "주요 광산 위치(개체 목록)",
+        "unit": "개소",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-b8ca5739f7f0|개소||B-048_mine_site",
+      "sourceCaveat": null,
+      "sourceLabel": "주요 광산 위치(개체 목록)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     }
   ],
   "measures": [
@@ -387,7 +360,7 @@
       "indicatorCount": 2,
       "key": "measure-1e1281d8c1da",
       "labelKo": "광산 경도",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "도(decimal degrees)",
       "unitFamily": "other"
     },
@@ -395,7 +368,7 @@
       "indicatorCount": 2,
       "key": "measure-75c152288655",
       "labelKo": "광산 위도",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "도(decimal degrees)",
       "unitFamily": "other"
     },
@@ -403,12 +376,20 @@
       "indicatorCount": 6,
       "key": "measure-9553d9fda232",
       "labelKo": "광종별 주요 광산 수",
-      "recordCount": 6,
+      "recordCount": 0,
+      "unit": "개소",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-b8ca5739f7f0",
+      "labelKo": "주요 광산 위치(개체 목록)",
+      "recordCount": 0,
       "unit": "개소",
       "unitFamily": "count"
     }
   ],
-  "observationCount": 10,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

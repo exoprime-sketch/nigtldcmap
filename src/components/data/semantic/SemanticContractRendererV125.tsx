@@ -1061,7 +1061,12 @@ function PolicyTimelineV125({
       <ol className="sv125-policy-timeline">
         {items.map((item) => (
           <li key={item.key}>
-            <time>{item.date || "시점 미기재"}</time>
+            {/* The delivery writes the milestone into the date cell -
+                "2022-12-14 서명 / 자원동원계획(RMP) 2023-11 승인" - so this
+                is public copy and carries terms like the rest. */}
+            <time>
+              <PublicTermTextV134 text={item.date || "시점 미기재"} />
+            </time>
             <div>
               <strong><PublicTermTextV134 text={item.title} /></strong>
               {/* An empty description is empty; sixteen rows repeating a

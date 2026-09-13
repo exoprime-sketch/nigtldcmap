@@ -1,46 +1,18 @@
 {
   "dimensions": [
     {
-      "key": "category",
-      "labelKo": "분류",
+      "key": "entityType",
+      "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
-        "우기 유량비"
-      ]
-    },
-    {
-      "key": "detail",
-      "labelKo": "세부 분류",
-      "valueCount": 2,
-      "values": [
-        "Kratie(메콩)",
-        "Sơn Tây(홍강)"
-      ]
-    },
-    {
-      "key": "technology",
-      "labelKo": "기술",
-      "valueCount": 1,
-      "values": [
-        "5,32"
-      ]
-    },
-    {
-      "key": "year",
-      "labelKo": "연도",
-      "valueCount": 4,
-      "values": [
-        "2004",
-        "2009",
-        "2010",
-        "2026"
+        "entity"
       ]
     }
   ],
   "elementId": "B-023",
-  "entityCount": 0,
+  "entityCount": 11,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 11,
+  "indicatorCount": 12,
   "indicators": [
     {
       "axisGroupKey": "measure-61dfb5ce7b23|m³/s",
@@ -221,6 +193,30 @@
       }
     },
     {
+      "axisGroupKey": "measure-36c823fbd96b|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {
+        "category": "유역 개체 목록)"
+      },
+      "dimensions": {
+        "category": "유역 개체 목록)"
+      },
+      "displayLabel": "건기／우기 유량 차이(지점·유역 개체 목록)",
+      "indicatorId": "B-023_hydro_site",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c823fbd96b",
+        "labelKo": "건기／우기 유량 차이(지점",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-36c823fbd96b|지표별 상이(속성 열 참조)|category=유역 개체 목록)|B-023_hydro_site",
+      "sourceCaveat": null,
+      "sourceLabel": "건기／우기 유량 차이(지점·유역 개체 목록)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-f31c0abfffa9|m³/s",
       "dimensionLabels": {
         "detail": "Kratie(메콩)",
@@ -368,15 +364,23 @@
       "indicatorCount": 2,
       "key": "measure-61dfb5ce7b23",
       "labelKo": "건기 최저유량",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "m³/s",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-36c823fbd96b",
+      "labelKo": "건기／우기 유량 차이(지점",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
       "unitFamily": "other"
     },
     {
       "indicatorCount": 1,
       "key": "measure-80a279a67d48",
       "labelKo": "메콩(Kratie) 건기",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "비(倍)",
       "unitFamily": "other"
     },
@@ -384,7 +388,7 @@
       "indicatorCount": 1,
       "key": "measure-405ef3e60942",
       "labelKo": "메콩델타 건기 유량 비중",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -392,7 +396,7 @@
       "indicatorCount": 1,
       "key": "measure-4adbec7164cd",
       "labelKo": "메콩델타 우기 유량 비중",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -400,7 +404,7 @@
       "indicatorCount": 2,
       "key": "measure-f31c0abfffa9",
       "labelKo": "우기 최고유량",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "m³/s",
       "unitFamily": "other"
     },
@@ -408,7 +412,7 @@
       "indicatorCount": 1,
       "key": "measure-03ad762ba305",
       "labelKo": "유역 단위 건우기 유량차(GIS 기반 산출)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "비(倍)",
       "unitFamily": "other"
     },
@@ -416,7 +420,7 @@
       "indicatorCount": 1,
       "key": "measure-7701ab79f2b3",
       "labelKo": "홍강(Sơn Tây) 건기",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "비(倍)",
       "unitFamily": "other"
     },
@@ -424,7 +428,7 @@
       "indicatorCount": 1,
       "key": "measure-5a44abd234c0",
       "labelKo": "홍강(Sơn Tây) 우기 유량 비중 (범위 상한)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -432,12 +436,12 @@
       "indicatorCount": 1,
       "key": "measure-bee2b74d282f",
       "labelKo": "홍강(Sơn Tây) 우기 유량 비중 (범위 하한)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     }
   ],
-  "observationCount": 11,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

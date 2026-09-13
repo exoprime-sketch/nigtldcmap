@@ -12,7 +12,7 @@
     "total": 8,
     "failedChecks": [],
     "mapLayerCount": 12,
-    "mapFeatureOrScopeCount": 2900,
+    "mapFeatureOrScopeCount": 3144,
     "mapPlaceholderPrimaryTitleCount": 0,
     "mapTooltipMissingKeyFactsCount": 0,
     "a023TooltipResult": "PASS",
@@ -34,8 +34,14 @@
       "audit": "map-tooltip:v132",
       "name": "FINAL_MAP_FEATURE_OR_SCOPE_COUNT",
       "status": "PASS",
-      "actual": 2900,
-      "expected": 2900
+      "actual": {
+        "declared": 3144,
+        "actual": 3144
+      },
+      "expected": {
+        "declared": "equal to actual",
+        "actual": ">= 2900"
+      }
     },
     {
       "type": "check",
@@ -51,15 +57,19 @@
         "total": 12,
         "failedChecks": [],
         "finalMapLayerCount": 12,
-        "finalMapFeatureOrScopeCount": 2900,
+        "finalMapFeatureOrScopeCount": 3144,
         "mapTooltipPlaceholderCount": 0,
         "mapSelectedPanelPlaceholderCount": 0,
         "v130RegressionResult": "PASS",
+        "overlapPickerResult": {
+          "count": 2,
+          "selectionKey": "v124-c-025-entity-00146"
+        },
         "runtimeFailure": null
       },
       "expected": {
         "finalMapLayerCount": 12,
-        "finalMapFeatureOrScopeCount": 2900,
+        "finalMapFeatureOrScopeCount": 3144,
         "v130RegressionResult": "PASS"
       }
     },
@@ -87,8 +97,8 @@
       "actual": {
         "runtimeFailure": null,
         "a023Result": {
-          "title": "A Luoi",
-          "text": "발전원수력용량170 MW자료연도2021",
+          "title": "Kon Dao",
+          "text": "발전원Hydro용량1 MW자료연도2021",
           "meaningfulTitle": true,
           "fuel": true,
           "capacity": true,
@@ -107,8 +117,8 @@
       "name": "MAP_TOOLTIP_MISSING_KEY_FACTS",
       "status": "PASS",
       "actual": {
-        "title": "A Luoi",
-        "text": "발전원수력용량170 MW자료연도2021",
+        "title": "Kon Dao",
+        "text": "발전원Hydro용량1 MW자료연도2021",
         "meaningfulTitle": true,
         "fuel": true,
         "capacity": true,
@@ -132,18 +142,19 @@
         "runtimeFailure": null,
         "b033Result": {
           "region": "Lai Châu",
-          "count": 25,
-          "unit": "ha/yr",
+          "count": 24,
+          "unit": "ha",
           "chart": true,
-          "tableRows": 25
-        }
+          "tableRows": 24
+        },
+        "sourceYearCount": 24
       },
       "expected": {
         "region": "named ADM1",
-        "count": 25,
+        "count": "every year the source holds for that region",
         "unit": "source unit",
         "chart": true,
-        "tableRows": 25
+        "tableRows": "same as count"
       }
     },
     {
@@ -156,7 +167,7 @@
     }
   ],
   "mapLayerCount": 12,
-  "mapFeatureOrScopeCount": 2900,
+  "mapFeatureOrScopeCount": 3144,
   "mapPlaceholderPrimaryTitleCount": 0,
   "mapTooltipMissingKeyFactsCount": 0,
   "a023TooltipResult": "PASS",

@@ -1,81 +1,18 @@
 {
   "dimensions": [
     {
-      "key": "category",
-      "labelKo": "분류",
-      "valueCount": 20,
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
       "values": [
-        "Bắc Ninh Nghị quyết 56/2017",
-        "Bắc Ninh Nghị quyết 129/2014",
-        "Lạng Sơn Nghị quyết 16/2022/NQ-HĐND (2022-07-07)",
-        "경로",
-        "데이터센터 클라우드) 지분 한도",
-        "물류 광고 지분 제한 근거",
-        "성의 비조세 투자 지원권",
-        "성의 조세 인센티브 창설권",
-        "수면 임대료 면제",
-        "시 특별메커니즘 결의 Hải Phòng",
-        "시 특별메커니즘 결의 Khánh Hòa",
-        "시 특별메커니즘 결의 Nghệ An",
-        "시 특별메커니즘 결의 Thanh Hóa",
-        "시 특별메커니즘 결의 · Hồ Chí Minh City",
-        "시 특별메커니즘 결의 · Hồ Chí Minh City 전략투자자 우대",
-        "시 특별메커니즘 결의 · Hồ Chí Minh City 전략투자자 우선업종 최소 투자규모",
-        "시 특별메커니즘 결의 · Hồ Chí Minh City 전략투자자 의무",
-        "시 특별메커니즘 결의 Đà Nẵng",
-        "재편 시 한도",
-        "특별메커니즘 부여 성 시 수"
-      ]
-    },
-    {
-      "key": "detail",
-      "labelKo": "세부 분류",
-      "valueCount": 14,
-      "values": [
-        "11년 구간",
-        "15년 구간",
-        "Cần Giờ 국제환적항 건설",
-        "R&D 비용 손금산입률",
-        "R&D·혁신센터 및 고급기술 이전(IT·바이오·자동화·신소재·청정에너지)",
-        "건설기간",
-        "공시 지수",
-        "국회 결의 98/2023/QH15",
-        "반도체 집적회로·IC·플렉시블전자(PE)·칩·신기술 배터리·신소재·청정에너지 산업",
-        "이사 책임 지수",
-        "종합점수",
-        "주주 권리 지수",
-        "통관·세무 우선절차",
-        "투자금 집행 기한"
-      ]
-    },
-    {
-      "key": "period",
-      "labelKo": "기간",
-      "valueCount": 2,
-      "values": [
-        "2022-06-16",
-        "2024-06-26"
-      ]
-    },
-    {
-      "key": "year",
-      "labelKo": "연도",
-      "valueCount": 7,
-      "values": [
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024",
-        "2025",
-        "2026"
+        "entity"
       ]
     }
   ],
   "elementId": "C-013",
-  "entityCount": 0,
+  "entityCount": 64,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 50,
+  "indicatorCount": 61,
   "indicators": [
     {
       "axisGroupKey": "measure-f1b3224ec942|—",
@@ -158,6 +95,46 @@
         "sourceRow": 5,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-6825c9342817|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "외국인 지분 제한 · foreign_equity_cap_state",
+      "indicatorId": "C-013_foreign_equity_cap_state",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6825c9342817",
+        "labelKo": "외국인 지분 제한",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-6825c9342817|%||C-013_foreign_equity_cap_state",
+      "sourceCaveat": null,
+      "sourceLabel": "외국인 지분 제한",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-6825c9342817|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "외국인 지분 제한 · foreign_equity_cap_vanban_chinhphu",
+      "indicatorId": "C-013_foreign_equity_cap_vanban_chinhphu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6825c9342817",
+        "labelKo": "외국인 지분 제한",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-6825c9342817|%||C-013_foreign_equity_cap_vanban_chinhphu",
+      "sourceCaveat": null,
+      "sourceLabel": "외국인 지분 제한",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-daaf99925122|건",
@@ -480,6 +457,166 @@
         "sourceRow": 25,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-c671cab6bdd2|절차",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "투자 인센티브(세제 혜택/경제특구) · 투자 인센티브(세제 혜택/경제특구) [절차]",
+      "indicatorId": "C-013_investment_incentive_archive_doingbusiness",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-c671cab6bdd2",
+        "labelKo": "투자 인센티브(세제 혜택/경제특구)",
+        "unit": "절차",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-c671cab6bdd2|절차||C-013_investment_incentive_archive_doingbusiness",
+      "sourceCaveat": null,
+      "sourceLabel": "투자 인센티브(세제 혜택/경제특구)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-0e598f6c5359|법령번호",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "투자 인센티브(세제 혜택/경제특구) · 투자 인센티브(세제 혜택/경제특구) [법령번호]",
+      "indicatorId": "C-013_investment_incentive_hotropldn_thainguyen",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0e598f6c5359",
+        "labelKo": "투자 인센티브(세제 혜택/경제특구)",
+        "unit": "법령번호",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-0e598f6c5359|법령번호||C-013_investment_incentive_hotropldn_thainguyen",
+      "sourceCaveat": null,
+      "sourceLabel": "투자 인센티브(세제 혜택/경제특구)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-5192499b0f2a|년",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "투자 인센티브(세제 혜택/경제특구) · 투자 인센티브(세제 혜택/경제특구) [년]",
+      "indicatorId": "C-013_investment_incentive_vanban_chinhphu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5192499b0f2a",
+        "labelKo": "투자 인센티브(세제 혜택/경제특구)",
+        "unit": "년",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-5192499b0f2a|년||C-013_investment_incentive_vanban_chinhphu",
+      "sourceCaveat": null,
+      "sourceLabel": "투자 인센티브(세제 혜택/경제특구)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-46bd28e94649|개",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "투자 인센티브(세제 혜택/경제특구) · 투자 인센티브(세제 혜택/경제특구) [개]",
+      "indicatorId": "C-013_investment_incentive_vanban_chinhphu_2",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-46bd28e94649",
+        "labelKo": "투자 인센티브(세제 혜택/경제특구)",
+        "unit": "개",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-46bd28e94649|개||C-013_investment_incentive_vanban_chinhphu_2",
+      "sourceCaveat": null,
+      "sourceLabel": "투자 인센티브(세제 혜택/경제특구)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-5c80adde0f89|십억 VND(tỷ đồng)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "투자 인센티브(세제 혜택/경제특구) · 투자 인센티브(세제 혜택/경제특구) [십억 VND(tỷ đồng)]",
+      "indicatorId": "C-013_investment_incentive_xaydungchinhsach_chinh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5c80adde0f89",
+        "labelKo": "투자 인센티브(세제 혜택/경제특구)",
+        "unit": "십억 VND(tỷ đồng)",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-5c80adde0f89|십억 VND(tỷ đồng)||C-013_investment_incentive_xaydungchinhsach_chinh",
+      "sourceCaveat": null,
+      "sourceLabel": "투자 인센티브(세제 혜택/경제특구)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-8b98af471975|점",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "투자 보호 협정(BIT)",
+      "indicatorId": "C-013_investment_treaty_archive_doingbusiness",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8b98af471975",
+        "labelKo": "투자 보호 협정(BIT)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-8b98af471975|점||C-013_investment_treaty_archive_doingbusiness",
+      "sourceCaveat": null,
+      "sourceLabel": "투자 보호 협정(BIT)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-16f4fff3c939|건",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "투자 보호 협정(BIT) · investment_treaty_investmentpolicy_uncta",
+      "indicatorId": "C-013_investment_treaty_investmentpolicy_uncta",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-16f4fff3c939",
+        "labelKo": "투자 보호 협정(BIT)",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-16f4fff3c939|건||C-013_investment_treaty_investmentpolicy_uncta",
+      "sourceCaveat": null,
+      "sourceLabel": "투자 보호 협정(BIT)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-16f4fff3c939|건",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "투자 보호 협정(BIT) · investment_treaty_state",
+      "indicatorId": "C-013_investment_treaty_state",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-16f4fff3c939",
+        "labelKo": "투자 보호 협정(BIT)",
+        "unit": "건",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-16f4fff3c939|건||C-013_investment_treaty_state",
+      "sourceCaveat": null,
+      "sourceLabel": "투자 보호 협정(BIT)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-08d4065f7514|%",
@@ -956,6 +1093,26 @@
         "sourceRow": 27,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-b527348ad20d|영업일",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "수익 송금 규정",
+      "indicatorId": "C-013_profit_remittance",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b527348ad20d",
+        "labelKo": "수익 송금 규정",
+        "unit": "영업일",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-b527348ad20d|영업일||C-013_profit_remittance",
+      "sourceCaveat": null,
+      "sourceLabel": "수익 송금 규정",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-896beb7f66bf|—",
@@ -1519,7 +1676,7 @@
       "indicatorCount": 4,
       "key": "measure-f18e40858e38",
       "labelKo": "(참고) 소액투자자 보호",
-      "recordCount": 4,
+      "recordCount": 0,
       "unit": "점",
       "unitFamily": "score"
     },
@@ -1527,7 +1684,7 @@
       "indicatorCount": 1,
       "key": "measure-3e5f71fb5409",
       "labelKo": "(참고) 창업 소요일수",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "일",
       "unitFamily": "other"
     },
@@ -1535,7 +1692,7 @@
       "indicatorCount": 1,
       "key": "measure-2a5eb75afdf2",
       "labelKo": "(참고) 창업 절차 수",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "절차",
       "unitFamily": "other"
     },
@@ -1543,7 +1700,7 @@
       "indicatorCount": 1,
       "key": "measure-daaf99925122",
       "labelKo": "FTA 건수",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "건",
       "unitFamily": "count"
     },
@@ -1551,7 +1708,7 @@
       "indicatorCount": 1,
       "key": "measure-42e98011b73d",
       "labelKo": "미-베트남 BIT 체결 여부",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -1559,7 +1716,7 @@
       "indicatorCount": 1,
       "key": "measure-f18207535da5",
       "labelKo": "발효 BIT 건수",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "건",
       "unitFamily": "count"
     },
@@ -1567,7 +1724,7 @@
       "indicatorCount": 1,
       "key": "measure-8c7b5f1d1078",
       "labelKo": "법인세 50% 감면기간",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "년",
       "unitFamily": "other"
     },
@@ -1575,7 +1732,7 @@
       "indicatorCount": 1,
       "key": "measure-a7e5340cfc3f",
       "labelKo": "법인세 면제기간",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "년",
       "unitFamily": "other"
     },
@@ -1583,7 +1740,7 @@
       "indicatorCount": 1,
       "key": "measure-34e20ad7744a",
       "labelKo": "법인세 우대세율",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -1591,7 +1748,7 @@
       "indicatorCount": 1,
       "key": "measure-b33270491d19",
       "labelKo": "법인세 표준세율",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -1599,7 +1756,7 @@
       "indicatorCount": 1,
       "key": "measure-532f9c16f4f6",
       "labelKo": "부실은행 인수",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -1607,7 +1764,7 @@
       "indicatorCount": 1,
       "key": "measure-dff1715e6f39",
       "labelKo": "성",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -1615,7 +1772,7 @@
       "indicatorCount": 7,
       "key": "measure-896beb7f66bf",
       "labelKo": "성",
-      "recordCount": 7,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -1623,7 +1780,7 @@
       "indicatorCount": 1,
       "key": "measure-9aa8ee8792e4",
       "labelKo": "성",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "년",
       "unitFamily": "other"
     },
@@ -1631,7 +1788,7 @@
       "indicatorCount": 3,
       "key": "measure-b8996ff5d8f6",
       "labelKo": "성",
-      "recordCount": 3,
+      "recordCount": 0,
       "unit": "십억 VND(tỷ đồng)",
       "unitFamily": "currency"
     },
@@ -1639,7 +1796,7 @@
       "indicatorCount": 3,
       "key": "measure-80a122b31d3c",
       "labelKo": "성 비조세 투자지원 실례",
-      "recordCount": 3,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -1647,7 +1804,7 @@
       "indicatorCount": 1,
       "key": "measure-160524dd537d",
       "labelKo": "송금 전 SBV 사전통지 기한",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "영업일",
       "unitFamily": "other"
     },
@@ -1655,15 +1812,23 @@
       "indicatorCount": 1,
       "key": "measure-a1decfff7e06",
       "labelKo": "송금 통화",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "—",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-b527348ad20d",
+      "labelKo": "수익 송금 규정",
+      "recordCount": 0,
+      "unit": "영업일",
       "unitFamily": "text"
     },
     {
       "indicatorCount": 1,
       "key": "measure-29b5bd247c6c",
       "labelKo": "수익 송금 조건",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -1671,7 +1836,7 @@
       "indicatorCount": 1,
       "key": "measure-c5f0b8628b66",
       "labelKo": "수입관세 면제 여부",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -1679,15 +1844,23 @@
       "indicatorCount": 1,
       "key": "measure-70ed857217df",
       "labelKo": "시장접근 조건부 업종 수",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "개 업종",
       "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-6825c9342817",
+      "labelKo": "외국인 지분 제한",
+      "recordCount": 0,
+      "unit": "%",
+      "unitFamily": "percent"
     },
     {
       "indicatorCount": 1,
       "key": "measure-a8f0cd816841",
       "labelKo": "외국인 지분 한도(일반 원칙)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -1695,7 +1868,7 @@
       "indicatorCount": 1,
       "key": "measure-8b7811736503",
       "labelKo": "은행업 개인 외국인투자자 한도",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -1703,7 +1876,7 @@
       "indicatorCount": 1,
       "key": "measure-08d4065f7514",
       "labelKo": "은행업 기관 외국인투자자 한도",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -1711,7 +1884,7 @@
       "indicatorCount": 1,
       "key": "measure-d316f79172d7",
       "labelKo": "은행업 외국인 지분 총한도",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -1719,7 +1892,7 @@
       "indicatorCount": 1,
       "key": "measure-b377a7686759",
       "labelKo": "은행업 전략적 투자자 한도",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -1727,7 +1900,7 @@
       "indicatorCount": 1,
       "key": "measure-813f46a87130",
       "labelKo": "인센티브 우대 분야",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -1735,7 +1908,7 @@
       "indicatorCount": 1,
       "key": "measure-912033dc99e7",
       "labelKo": "인센티브 우대 지역",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -1743,7 +1916,7 @@
       "indicatorCount": 2,
       "key": "measure-5dc6fd11c9bb",
       "labelKo": "지방 인센티브 권한",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -1751,7 +1924,7 @@
       "indicatorCount": 1,
       "key": "measure-c04795c983c7",
       "labelKo": "지방 인센티브 권한",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "개",
       "unitFamily": "count"
     },
@@ -1759,7 +1932,7 @@
       "indicatorCount": 3,
       "key": "measure-d68b6ce2ff33",
       "labelKo": "토지",
-      "recordCount": 3,
+      "recordCount": 0,
       "unit": "년",
       "unitFamily": "other"
     },
@@ -1767,15 +1940,71 @@
       "indicatorCount": 1,
       "key": "measure-073a13a3eea9",
       "labelKo": "통신(OTT",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-16f4fff3c939",
+      "labelKo": "투자 보호 협정(BIT)",
+      "recordCount": 0,
+      "unit": "건",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-8b98af471975",
+      "labelKo": "투자 보호 협정(BIT)",
+      "recordCount": 0,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-46bd28e94649",
+      "labelKo": "투자 인센티브(세제 혜택/경제특구)",
+      "recordCount": 0,
+      "unit": "개",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-5192499b0f2a",
+      "labelKo": "투자 인센티브(세제 혜택/경제특구)",
+      "recordCount": 0,
+      "unit": "년",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-0e598f6c5359",
+      "labelKo": "투자 인센티브(세제 혜택/경제특구)",
+      "recordCount": 0,
+      "unit": "법령번호",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-5c80adde0f89",
+      "labelKo": "투자 인센티브(세제 혜택/경제특구)",
+      "recordCount": 0,
+      "unit": "십억 VND(tỷ đồng)",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-c671cab6bdd2",
+      "labelKo": "투자 인센티브(세제 혜택/경제특구)",
+      "recordCount": 0,
+      "unit": "절차",
+      "unitFamily": "other"
     },
     {
       "indicatorCount": 1,
       "key": "measure-af1ddc199626",
       "labelKo": "투자조항 포함 협정(TIP) 건수",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "건",
       "unitFamily": "count"
     },
@@ -1783,12 +2012,12 @@
       "indicatorCount": 1,
       "key": "measure-f1b3224ec942",
       "labelKo": "항공",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     }
   ],
-  "observationCount": 50,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

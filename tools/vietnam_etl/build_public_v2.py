@@ -475,6 +475,26 @@ def _authorized_observations(
     return result
 
 
+# Public names for columns the delivery renamed.
+#
+# C-025 used to ship its own English column labels, which folded to standard,
+# projectId, proponent, methodology and status - the names the map contract and
+# the release audits know it by. The final delivery moved it onto the shared C
+# template, so those labels became 속성5(등록표준·출처) and 속성2(레코드ID), and the
+# same columns would have been published under new names. The V1 payload carries
+# no field definitions for this element, so there was nothing to fall back to.
+# The column and its meaning are unchanged; only the sheet's label moved.
+_REVIEWED_PUBLIC_KEYS_V137: dict[str, dict[str, str]] = {
+    "C-025": {
+        "속성2(레코드ID)": "projectId",
+        "속성5(등록표준·출처)": "standard",
+        "속성7(상태)": "status",
+        "속성8(사업자·기관)": "proponent",
+        "속성9(방법론)": "methodology",
+    },
+}
+
+
 def _slot_order(source_field: str) -> int:
     match = re.search(r"\d+", source_field)
     return int(match.group()) if match else 9999
@@ -527,8 +547,12 @@ def _safe_field_definitions(
         binding_field = source_field
         if columns_shifted:
             binding_field = base_label_slot.get(delivery_label(source_field), "")
+        reviewed = _REVIEWED_PUBLIC_KEYS_V137.get(
+            str(workbook.get("elementId") or ""), {}
+        ).get(nfc_text(str(labels[source_field] or "")).strip())
         base_key = str(
-            (base_defs.get(binding_field) or {}).get("normalizedKey")
+            reviewed
+            or (base_defs.get(binding_field) or {}).get("normalizedKey")
             or re.sub(r"[^A-Za-z0-9가-힣]+", "_", labels[source_field]).strip("_")
             or source_field
         )
@@ -760,6 +784,13 @@ def _b034_projection(
                 "threshold": fact["threshold"],
                 "geographyVersion": fact["geographyVersion"],
                 "signConvention": fact.get("signConvention"),
+                # The derived indicators describe themselves, so they also have
+                # to carry the provider - the map layer reads its 출처 from
+                # meta.indicators and was publishing an empty one.
+                "sourceOrg": fact["provenance"].get("sourceOrg")
+                or _workbook_source_org(workbook),
+                "sourceUrl": fact["provenance"].get("sourceUrl")
+                or _workbook_source_url(workbook),
             },
         )
         row_rights = _rights_for_indicator(rights, indicator_id)
@@ -838,6 +869,10 @@ def _b034_projection(
                 # What the sheet printed in 기준연도. For a 24-year mean that is
                 # the extraction vintage, not the period the value covers.
                 "sourceYearLabel": fact.get("sourceYearLabel"),
+                "sourceOrg": fact["provenance"].get("sourceOrg")
+                or _workbook_source_org(workbook),
+                "sourceUrl": fact["provenance"].get("sourceUrl")
+                or _workbook_source_url(workbook),
             },
         )
         row_rights = _rights_for_indicator(rights, indicator_id)
@@ -889,6 +924,22 @@ def _workbook_source_org(workbook: Mapping[str, Any]) -> str | None:
     return " · ".join(dict.fromkeys(names)) or None
 
 
+def _workbook_source_url(workbook: Mapping[str, Any]) -> str | None:
+    """The workbook's source link, when it names exactly one.
+
+    A workbook that lists several links does not say which row came from which,
+    so no link is attached rather than one picked arbitrarily.
+    """
+
+    urls = [
+        _text_value(item)
+        for item in (workbook.get("sourceUrls") or [])
+        if _text_value(item)
+    ]
+    unique = list(dict.fromkeys(urls))
+    return unique[0] if len(unique) == 1 else None
+
+
 def _region_projection(
     element_id: str,
     workbook: Mapping[str, Any],
@@ -928,6 +979,10 @@ def _region_projection(
                 "threshold": fact["threshold"],
                 "denominatorBasis": fact.get("denominatorBasis"),
                 "geographyVersion": fact["geographyVersion"],
+                "sourceOrg": fact["provenance"].get("sourceOrg")
+                or _workbook_source_org(workbook),
+                "sourceUrl": fact["provenance"].get("sourceUrl")
+                or _workbook_source_url(workbook),
             },
         )
         row_rights = _rights_for_indicator(rights, indicator_id)
@@ -1002,6 +1057,8 @@ def _c016_projection(
                 "geographyVersion": fact["geographyVersion"],
                 "planVersion": fact["planVersion"],
                 "sourceTable": fact["tableRef"],
+                "sourceOrg": "베트남 총리실 (Quyết định 768/QĐ-TTg) / 산업무역부(MOIT)",
+                "sourceUrl": fact["sourceUrl"],
             },
         )
         row_rights = _rights_for_indicator(rights, indicator_id)
@@ -1916,11 +1973,14 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
             ),
             "normalizedEntityRows": int(workbook.get("entityRowCount", 0) if workbook else 0),
             "metadataRows": int(workbook.get("metadataRowCount", 0) if workbook else 0),
+            # From this delivery, not from the V1 baseline. Reading the old
+            # payload made the per-element totals describe the previous source
+            # while manifest.rowBalance described the current one, and the two
+            # stopped reconciling: 129 against 309.
             "nonstandardRows": int(
-                base_payload.get("meta", {})
-                .get("rowAccounting", {})
-                .get("nonstandardRows", 0)
-            ),
+                (workbook.get("supplementalSourceRowCount", 0) if workbook else 0)
+            )
+            + int(workbook.get("placeholderRowCount", 0) if workbook else 0),
             "templateRows": int(workbook.get("templateRowCount", 0) if workbook else 0),
             "placeholderRows": int(
                 workbook.get("placeholderRowCount", 0) if workbook else 0

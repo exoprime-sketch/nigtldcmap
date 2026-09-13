@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v133-ci-map-analysis-audit-1",
-  "generatedAt": "2026-09-07T04:34:35.458Z",
+  "generatedAt": "2026-09-13T23:26:59.204Z",
   "audit": "map-focus:v133",
   "status": "PASS",
   "summary": {
@@ -12,7 +12,7 @@
     "total": 13,
     "failedChecks": [],
     "mapLayerCount": 12,
-    "mapFeatureOrScopeCount": 2900,
+    "mapFeatureOrScopeCount": 3144,
     "presetDefaultContextCount": 0,
     "primaryLayerMax": 1,
     "contextLayerMax": 1,
@@ -45,7 +45,7 @@
             "elementId": "C-016",
             "role": "primary",
             "shape": "area",
-            "text": "재생에너지 지역계획선택 데이터 · 옥상태양광(ĐMT mái nhà) · MW숨기기"
+            "text": "재생에너지 지역계획선택 데이터 · 옥상태양광(ĐMT mái nhà) 계획용량 · MW숨기기"
           }
         ]
       },
@@ -60,7 +60,7 @@
             "elementId": "B-033",
             "role": "primary",
             "shape": "area",
-            "text": "연간 산림손실선택 데이터 · 연간 수관 손실 — 성(省) 단위 · ha/yr숨기기"
+            "text": "연간 산림손실선택 데이터 · 연간 수관 손실 — 성(省) 단위 · ha숨기기"
           }
         ]
       },
@@ -623,7 +623,7 @@
           "shape": "area",
           "fill": "none",
           "fillOpacity": 1,
-          "label": "적응기금 사업 · Mekong EbA South: Enhancing Climate Resilience in the Greater Mekong Sub-region through Ecosystem-based Adaptation in the Context of South-South Cooperation (Thailand, Viet Nam) · 7,000,000 USD"
+          "label": "적응기금 사업 · Mekong EbA South: Enhancing Climate Resilience in the Greater Mekong Sub-region through Ecosystem-based Adaptation in the Context of South-South Cooperation (Thailand, Viet Nam) · 결측"
         },
         {
           "elementId": "D-018",
@@ -631,7 +631,7 @@
           "shape": "area",
           "fill": "none",
           "fillOpacity": 1,
-          "label": "적응기금 사업 · Groundwater resources in the Greater Mekong Subregion: Collaborative management to increase resilience (Cambodia, Lao People’s Democratic Republic, Thailand, Viet Nam) · 4,898,775 USD"
+          "label": "적응기금 사업 · Groundwater resources in the Greater Mekong Subregion: Collaborative management to increase resilience (Cambodia, Lao People’s Democratic Republic, Thailand, Viet Nam) · 결측"
         },
         {
           "elementId": "D-018",
@@ -668,7 +668,7 @@
         "width": 1024,
         "horizontalOverflow": 0,
         "rootExists": true,
-        "canvasWidth": 749
+        "canvasWidth": 789
       },
       {
         "width": 1440,
@@ -707,8 +707,14 @@
       "audit": "map-focus:v133",
       "name": "MAP_FEATURE_OR_SCOPE_COUNT",
       "status": "PASS",
-      "actual": 2900,
-      "expected": 2900
+      "actual": {
+        "declared": 3144,
+        "actual": 3144
+      },
+      "expected": {
+        "declared": "equal to actual",
+        "actual": ">= 2900"
+      }
     },
     {
       "type": "check",
@@ -1292,7 +1298,7 @@
             "shape": "area",
             "fill": "none",
             "fillOpacity": 1,
-            "label": "적응기금 사업 · Mekong EbA South: Enhancing Climate Resilience in the Greater Mekong Sub-region through Ecosystem-based Adaptation in the Context of South-South Cooperation (Thailand, Viet Nam) · 7,000,000 USD"
+            "label": "적응기금 사업 · Mekong EbA South: Enhancing Climate Resilience in the Greater Mekong Sub-region through Ecosystem-based Adaptation in the Context of South-South Cooperation (Thailand, Viet Nam) · 결측"
           },
           {
             "elementId": "D-018",
@@ -1300,7 +1306,7 @@
             "shape": "area",
             "fill": "none",
             "fillOpacity": 1,
-            "label": "적응기금 사업 · Groundwater resources in the Greater Mekong Subregion: Collaborative management to increase resilience (Cambodia, Lao People’s Democratic Republic, Thailand, Viet Nam) · 4,898,775 USD"
+            "label": "적응기금 사업 · Groundwater resources in the Greater Mekong Subregion: Collaborative management to increase resilience (Cambodia, Lao People’s Democratic Republic, Thailand, Viet Nam) · 결측"
           },
           {
             "elementId": "D-018",
@@ -1362,7 +1368,7 @@
           "width": 1024,
           "horizontalOverflow": 0,
           "rootExists": true,
-          "canvasWidth": 749
+          "canvasWidth": 789
         },
         {
           "width": 1440,
@@ -1405,7 +1411,7 @@
     }
   ],
   "mapLayerCount": 12,
-  "mapFeatureOrScopeCount": 2900,
+  "mapFeatureOrScopeCount": 3144,
   "presetDefaultContextCount": 0,
   "primaryLayerMax": 1,
   "contextLayerMax": 1,
@@ -1438,7 +1444,7 @@
           "elementId": "C-016",
           "role": "primary",
           "shape": "area",
-          "text": "재생에너지 지역계획선택 데이터 · 옥상태양광(ĐMT mái nhà) · MW숨기기"
+          "text": "재생에너지 지역계획선택 데이터 · 옥상태양광(ĐMT mái nhà) 계획용량 · MW숨기기"
         }
       ]
     },
@@ -1453,7 +1459,7 @@
           "elementId": "B-033",
           "role": "primary",
           "shape": "area",
-          "text": "연간 산림손실선택 데이터 · 연간 수관 손실 — 성(省) 단위 · ha/yr숨기기"
+          "text": "연간 산림손실선택 데이터 · 연간 수관 손실 — 성(省) 단위 · ha숨기기"
         }
       ]
     },
@@ -2016,7 +2022,7 @@
         "shape": "area",
         "fill": "none",
         "fillOpacity": 1,
-        "label": "적응기금 사업 · Mekong EbA South: Enhancing Climate Resilience in the Greater Mekong Sub-region through Ecosystem-based Adaptation in the Context of South-South Cooperation (Thailand, Viet Nam) · 7,000,000 USD"
+        "label": "적응기금 사업 · Mekong EbA South: Enhancing Climate Resilience in the Greater Mekong Sub-region through Ecosystem-based Adaptation in the Context of South-South Cooperation (Thailand, Viet Nam) · 결측"
       },
       {
         "elementId": "D-018",
@@ -2024,7 +2030,7 @@
         "shape": "area",
         "fill": "none",
         "fillOpacity": 1,
-        "label": "적응기금 사업 · Groundwater resources in the Greater Mekong Subregion: Collaborative management to increase resilience (Cambodia, Lao People’s Democratic Republic, Thailand, Viet Nam) · 4,898,775 USD"
+        "label": "적응기금 사업 · Groundwater resources in the Greater Mekong Subregion: Collaborative management to increase resilience (Cambodia, Lao People’s Democratic Republic, Thailand, Viet Nam) · 결측"
       },
       {
         "elementId": "D-018",
@@ -2061,7 +2067,7 @@
       "width": 1024,
       "horizontalOverflow": 0,
       "rootExists": true,
-      "canvasWidth": 749
+      "canvasWidth": 789
     },
     {
       "width": 1440,

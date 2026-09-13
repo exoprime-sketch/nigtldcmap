@@ -11,44 +11,46 @@
     {
       "key": "supportType",
       "labelKo": "supportType",
-      "valueCount": 28,
+      "valueCount": 4,
       "values": [
-        "FS/기술이전/역량강화",
-        "FS/역량강화",
-        "FS/역량강화/수출지원",
-        "국제공동R&D",
-        "국제협력 R&D·기술지원",
+        "FS·기초조사",
+        "FS·마스터플랜 수립",
         "금융·투자",
-        "기금",
-        "기술이전/역량강화/FS",
-        "기술이전/역량강화/R&D",
-        "기술이전/역량강화/금융·투자",
-        "마스터플랜",
-        "사업개발",
-        "설비투자 보조",
-        "수주지원·마케팅",
-        "수출지원/FS/실증",
-        "수출지원/역량강화/FS",
-        "실증/금융·투자",
-        "실증/수출지원",
-        "실증/역량강화/금융·투자",
-        "역량강화/금융·투자/FS",
-        "역량강화/수출지원/FS",
-        "유상원조 차관",
-        "인증비용 보조",
-        "제안서 개발",
-        "컨설팅",
-        "타당성조사",
-        "현지실증·사업화",
-        "협력센터·공동R&D"
+        "현지사업화·수주지원"
       ]
     }
   ],
   "elementId": "E-020",
-  "entityCount": 33,
+  "entityCount": 7,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 2,
+  "indicatorCount": 3,
   "indicators": [
+    {
+      "axisGroupKey": "measure-8c390968933d|건(프로그램)",
+      "dimensionLabels": {
+        "category": "민간 지원체계",
+        "detail": "베트남 지원 실적 확인분"
+      },
+      "dimensions": {
+        "category": "민간 지원체계",
+        "detail": "베트남 지원 실적 확인분"
+      },
+      "displayLabel": "한국 공공·민간 지원체계 — 베트남 지원 실적 확인분",
+      "indicatorId": "E-020_kr_support",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8c390968933d",
+        "labelKo": "한국 공공",
+        "unit": "건(프로그램)",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-8c390968933d|건(프로그램)|category=민간 지원체계|detail=베트남 지원 실적 확인분|E-020_kr_support",
+      "sourceCaveat": null,
+      "sourceLabel": "한국 공공·민간 지원체계 — 베트남 지원 실적 확인분",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
     {
       "axisGroupKey": "measure-e4b3b50682e0|건(사업)",
       "dimensionLabels": {},
@@ -108,7 +110,7 @@
   ],
   "measures": [
     {
-      "indicatorCount": 1,
+      "indicatorCount": 2,
       "key": "measure-8c390968933d",
       "labelKo": "한국 공공",
       "recordCount": 0,

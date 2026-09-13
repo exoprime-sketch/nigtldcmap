@@ -5,7 +5,10 @@ import { resolve } from "node:path";
 
 import {
   AuditV125,
+  MAP_FEATURE_FLOOR_V125,
   PROJECT_ROOT,
+  V2_ROOT,
+  mapFeatureCountIsSound,
   readJson,
 } from "./v125/audit-utils.mjs";
 import { finishAuditV131 } from "./v131/audit-helpers.mjs";
@@ -76,15 +79,27 @@ audit.check(
     fail: 0,
   }
 );
+// The exact feature count is a property of the delivery, not of the platform:
+// publishing every authorised carbon-credit project took C-025 from 18 features
+// to 262. What is asserted is that the index declares what its layers hold and
+// that the total has not collapsed.
+const releaseMapFeatureOrScopeCount = (
+  readJson(resolve(V2_ROOT, "map-index.json")).value?.layers || []
+)
+  .filter((layer) => layer?.active !== false && layer?.enabled !== false)
+  .reduce((sum, layer) => sum + Number(layer.featureCount || 0), 0);
 audit.check(
   "FINAL_MAP_CONTRACT",
   spatial.value?.mapSelectedElements === 12 &&
-    spatial.value?.mapFeatureOrScopeCount === 2900,
+    mapFeatureCountIsSound(
+      spatial.value?.mapFeatureOrScopeCount,
+      releaseMapFeatureOrScopeCount
+    ),
   {
     layers: spatial.value?.mapSelectedElements,
     featureOrScopeCount: spatial.value?.mapFeatureOrScopeCount,
   },
-  { layers: 12, featureOrScopeCount: 2900 }
+  { layers: 12, featureOrScopeCount: releaseMapFeatureOrScopeCount }
 );
 audit.check(
   "REMAINING_BLOCKER",
@@ -103,7 +118,7 @@ finishAuditV131(audit, "release-audit-v131.json", {
   visualizationFit: "152/152",
   statusOnlyElements: 5,
   finalMapLayers: 12,
-  finalMapFeatureOrScopeCount: 2900,
+  finalMapFeatureOrScopeCount: releaseMapFeatureOrScopeCount,
   remainingBlockers: commandResults.every((result) => result.exitCode === 0)
     ? 0
     : 1,

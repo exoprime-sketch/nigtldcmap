@@ -795,6 +795,12 @@ function normalizeTextV126(value: unknown): string | null {
     .replace(/\bUSD_PPP\/ha\b/giu, "구매력평가 기준 미국달러/ha")
     .replace(/\bUSD_2017\b/giu, "2017년 기준 미국달러")
     .replace(/\bUSD_PPP\b/giu, "구매력평가 기준 미국달러")
+    // "레코드" is how the store names one of its rows, and the same decision
+    // publicNoticeWordingV136_1 already made for the map notices applies to
+    // every public string: the licence memos on E-001 and E-004 ("자료는
+    // 기관명·소재지·연락처 ... 사실 정보로 구성되며"), C-012's "원본 자료 수",
+    // and the record-type dimension all reach a reader.
+    .replace(/레코드/gu, "자료")
     .replace(/\bIP\s+not\s+published\b/giu, "세부 이행정보 미공개")
     .replace(/\bGOLD_STANDARD_CERTIFIED_DESIGN\b/gu, "Gold Standard 설계 인증")
     .replace(/\bGOLD_STANDARD_CERTIFIED_PROJECT\b/gu, "Gold Standard 사업 인증")

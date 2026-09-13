@@ -1,44 +1,18 @@
 {
   "dimensions": [
     {
-      "key": "detail",
-      "labelKo": "세부 분류",
-      "valueCount": 11,
-      "values": [
-        "남(S)",
-        "남동(SE)",
-        "남서(SW)",
-        "동(E)",
-        "메콩·중부고원",
-        "북(N)",
-        "북동(NE)",
-        "북서(NW)",
-        "서(W)",
-        "중부 하천",
-        "홍강(북부)"
-      ]
-    },
-    {
-      "key": "technology",
-      "labelKo": "기술",
+      "key": "entityType",
+      "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
-        "5,32"
-      ]
-    },
-    {
-      "key": "year",
-      "labelKo": "연도",
-      "valueCount": 1,
-      "values": [
-        "2022"
+        "entity"
       ]
     }
   ],
   "elementId": "B-026",
-  "entityCount": 0,
+  "entityCount": 74,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 11,
+  "indicatorCount": 13,
   "indicators": [
     {
       "axisGroupKey": "measure-eec8d0d27c64|%",
@@ -375,6 +349,50 @@
         "sourceRow": 6,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-4bcdf0e2decb|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "유향 D8 분포(성 단위 개체 목록)",
+      "indicatorId": "B-026_flowdir_adm1",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4bcdf0e2decb",
+        "labelKo": "유향 D8 분포(성 단위 개체 목록)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-4bcdf0e2decb|%||B-026_flowdir_adm1",
+      "sourceCaveat": null,
+      "sourceLabel": "유향 D8 분포(성 단위 개체 목록)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-476b68c2b0d7|%",
+      "dimensionLabels": {
+        "category": "대권역)"
+      },
+      "dimensions": {
+        "category": "대권역)"
+      },
+      "displayLabel": "유향(전국·대권역)",
+      "indicatorId": "B-026_flowdir_national",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-476b68c2b0d7",
+        "labelKo": "유향(전국",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-476b68c2b0d7|%|category=대권역)|B-026_flowdir_national",
+      "sourceCaveat": null,
+      "sourceLabel": "유향(전국·대권역)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     }
   ],
   "measures": [
@@ -382,7 +400,7 @@
       "indicatorCount": 8,
       "key": "measure-eec8d0d27c64",
       "labelKo": "D8 유향 분포(격자 비율)",
-      "recordCount": 8,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -390,12 +408,28 @@
       "indicatorCount": 3,
       "key": "measure-ea7536562a69",
       "labelKo": "대권역 우세 유향",
-      "recordCount": 3,
+      "recordCount": 0,
       "unit": "방위",
       "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-4bcdf0e2decb",
+      "labelKo": "유향 D8 분포(성 단위 개체 목록)",
+      "recordCount": 0,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-476b68c2b0d7",
+      "labelKo": "유향(전국",
+      "recordCount": 0,
+      "unit": "%",
+      "unitFamily": "percent"
     }
   ],
-  "observationCount": 11,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

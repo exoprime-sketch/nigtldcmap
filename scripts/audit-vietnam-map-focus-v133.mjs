@@ -3,7 +3,14 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
-import { AuditV125, PROJECT_ROOT, V2_ROOT, readJson } from "./v125/audit-utils.mjs";
+import {
+  AuditV125,
+  MAP_FEATURE_FLOOR_V125,
+  PROJECT_ROOT,
+  V2_ROOT,
+  mapFeatureCountIsSound,
+  readJson,
+} from "./v125/audit-utils.mjs";
 import {
   evaluateValue,
   launchHeadlessBrowser,
@@ -237,7 +244,16 @@ const renderedPolygonFillContextCount = new Set(
 
 audit.check("MAP_INDEX_JSON", mapResult.error === null, mapResult.error, null);
 audit.check("MAP_LAYERS", layers.length === 12, layers.length, 12);
-audit.check("MAP_FEATURE_OR_SCOPE_COUNT", featureOrScopeCount === 2900, featureOrScopeCount, 2900);
+// The exact feature count is a property of the delivery, not of the platform:
+// publishing every authorised carbon-credit project took C-025 from 18 features
+// to 262. What is asserted is that the index declares what its layers hold and
+// that the total has not collapsed.
+audit.check(
+  "MAP_FEATURE_OR_SCOPE_COUNT",
+  mapFeatureCountIsSound(mapResult.value?.mapFeatureCount, featureOrScopeCount),
+  { declared: mapResult.value?.mapFeatureCount ?? null, actual: featureOrScopeCount },
+  { declared: "equal to actual", actual: `>= ${MAP_FEATURE_FLOOR_V125}` }
+);
 audit.check(
   "PRESET_COUNT",
   presetSnapshots.length === 5 && new Set(presetSnapshots.map((item) => item.presetId)).size === 5,

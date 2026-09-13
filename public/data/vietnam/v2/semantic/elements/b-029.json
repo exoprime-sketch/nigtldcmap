@@ -1,62 +1,39 @@
 {
   "dimensions": [
     {
-      "key": "technology",
-      "labelKo": "기술",
+      "key": "entityType",
+      "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
-        "23,35"
-      ]
-    },
-    {
-      "key": "year",
-      "labelKo": "연도",
-      "valueCount": 36,
-      "values": [
-        "1990",
-        "1991",
-        "1992",
-        "1993",
-        "1994",
-        "1995",
-        "1996",
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024",
-        "2025"
+        "entity"
       ]
     }
   ],
   "elementId": "B-029",
-  "entityCount": 0,
+  "entityCount": 231,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 9,
+  "indicatorCount": 11,
   "indicators": [
+    {
+      "axisGroupKey": "measure-0473db465754|1000 ha / ha",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "산림 유형별 면적(전국)",
+      "indicatorId": "B-029_forest_type_national",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0473db465754",
+        "labelKo": "산림 유형별 면적(전국)",
+        "unit": "1000 ha / ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-0473db465754|1000 ha / ha||B-029_forest_type_national",
+      "sourceCaveat": null,
+      "sourceLabel": "산림 유형별 면적(전국)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
     {
       "axisGroupKey": "measure-980a5def086b|ha",
       "dimensionLabels": {
@@ -234,6 +211,26 @@
       }
     },
     {
+      "axisGroupKey": "measure-9ef6d84f95c0|km² / 1000 ha",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "이탄지 면적(성 단위 개체 목록)",
+      "indicatorId": "B-029_peatland_adm1",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9ef6d84f95c0",
+        "labelKo": "이탄지 면적(성 단위 개체 목록)",
+        "unit": "km² / 1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-9ef6d84f95c0|km² / 1000 ha||B-029_peatland_adm1",
+      "sourceCaveat": null,
+      "sourceLabel": "이탄지 면적(성 단위 개체 목록)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-d6fbee3cc540|1000 ha",
       "dimensionLabels": {
         "detail": "모자이크 포함(상한)"
@@ -329,7 +326,7 @@
       "indicatorCount": 1,
       "key": "measure-8d3ddba38d09",
       "labelKo": "맹그로브 면적",
-      "recordCount": 31,
+      "recordCount": 0,
       "unit": "1000 ha",
       "unitFamily": "area"
     },
@@ -337,7 +334,7 @@
       "indicatorCount": 1,
       "key": "measure-cc106cca15c2",
       "labelKo": "맹그로브 면적(MODIS)",
-      "recordCount": 24,
+      "recordCount": 0,
       "unit": "1000 ha",
       "unitFamily": "area"
     },
@@ -345,15 +342,23 @@
       "indicatorCount": 1,
       "key": "measure-bc49a0cbc1c1",
       "labelKo": "맹그로브 면적(WorldCover)",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "1000 ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-0473db465754",
+      "labelKo": "산림 유형별 면적(전국)",
+      "recordCount": 0,
+      "unit": "1000 ha / ha",
       "unitFamily": "area"
     },
     {
       "indicatorCount": 1,
       "key": "measure-980a5def086b",
       "labelKo": "습윤열대 1차림 면적(위성 기준)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "ha",
       "unitFamily": "area"
     },
@@ -361,7 +366,7 @@
       "indicatorCount": 1,
       "key": "measure-92cdbada6989",
       "labelKo": "원시림 면적",
-      "recordCount": 36,
+      "recordCount": 0,
       "unit": "1000 ha",
       "unitFamily": "area"
     },
@@ -375,9 +380,17 @@
     },
     {
       "indicatorCount": 1,
+      "key": "measure-9ef6d84f95c0",
+      "labelKo": "이탄지 면적(성 단위 개체 목록)",
+      "recordCount": 0,
+      "unit": "km² / 1000 ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
       "key": "measure-d907bd3ae7d5",
       "labelKo": "자연재생림 면적",
-      "recordCount": 36,
+      "recordCount": 0,
       "unit": "1000 ha",
       "unitFamily": "area"
     },
@@ -385,12 +398,12 @@
       "indicatorCount": 1,
       "key": "measure-da5947305341",
       "labelKo": "조림지 면적",
-      "recordCount": 36,
+      "recordCount": 0,
       "unit": "1000 ha",
       "unitFamily": "area"
     }
   ],
-  "observationCount": 166,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

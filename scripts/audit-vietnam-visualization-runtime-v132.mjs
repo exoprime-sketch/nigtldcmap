@@ -248,7 +248,7 @@ try {
             ready: root?.getAttribute('data-analysis-state') === 'ready',
             primary: Boolean(primary) && String(primary.textContent || '').trim().length > 0,
             alert: String(root?.querySelector('[role="alert"]')?.textContent || ''),
-            chartOrAnalysis: Boolean(primary?.querySelector('[data-testid="public-primary-visualization"],[data-testid="d005-specialized-renderer"],svg[role="img"],[data-testid*="analysis"],[data-testid*="trend"],[data-testid*="timeline"],[data-testid*="scorecard"],[data-testid*="portfolio"]')),
+            chartOrAnalysis: Boolean(primary?.querySelector('[data-testid="public-primary-visualization"],[data-testid="d005-specialized-renderer"],[data-testid="region-scenario-summary-v137"],svg[role="img"],[data-testid*="analysis"],[data-testid*="trend"],[data-testid*="timeline"],[data-testid*="scorecard"],[data-testid*="portfolio"]')),
           };
         })()`
       );

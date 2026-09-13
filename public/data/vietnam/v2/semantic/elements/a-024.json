@@ -1,23 +1,11 @@
 {
   "dimensions": [
     {
-      "key": "category",
-      "labelKo": "분류",
-      "valueCount": 4,
-      "values": [
-        "농촌",
-        "도시",
-        "미공급률",
-        "전국"
-      ]
-    },
-    {
       "key": "detail",
       "labelKo": "세부 분류",
-      "valueCount": 2,
+      "valueCount": 1,
       "values": [
-        "전력 미공급 인구 비율",
-        "전력 접근 인구 비율"
+        "수록 선로 구간 총 건수"
       ]
     },
     {
@@ -25,39 +13,22 @@
       "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
-        "전력망·전력시설"
-      ]
-    },
-    {
-      "key": "technology",
-      "labelKo": "기술",
-      "valueCount": 1,
-      "values": [
-        "24"
+        "entity"
       ]
     },
     {
       "key": "year",
       "labelKo": "연도",
-      "valueCount": 10,
+      "valueCount": 1,
       "values": [
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024"
+        "2016"
       ]
     }
   ],
   "elementId": "A-024",
   "entityCount": 722,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 6,
+  "indicatorCount": 7,
   "indicators": [
     {
       "axisGroupKey": "measure-3c0cd69b4d6b|%",
@@ -160,6 +131,30 @@
         "sourceRow": 9,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-2c7e5539cfaf|건",
+      "dimensionLabels": {
+        "detail": "수록 선로 구간 총 건수"
+      },
+      "dimensions": {
+        "detail": "수록 선로 구간 총 건수"
+      },
+      "displayLabel": "송전 선로 구간 수 — 수록 선로 구간 총 건수",
+      "indicatorId": "A-024_transmission_line_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2c7e5539cfaf",
+        "labelKo": "송전 선로 구간 수",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-2c7e5539cfaf|건|detail=수록 선로 구간 총 건수|A-024_transmission_line_count",
+      "sourceCaveat": null,
+      "sourceLabel": "송전 선로 구간 수 — 수록 선로 구간 총 건수",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-d30e19e20b62|kV",
@@ -269,9 +264,17 @@
       "indicatorCount": 4,
       "key": "measure-3c0cd69b4d6b",
       "labelKo": "미공급 지역",
-      "recordCount": 40,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-2c7e5539cfaf",
+      "labelKo": "송전 선로 구간 수",
+      "recordCount": 1,
+      "unit": "건",
+      "unitFamily": "count"
     },
     {
       "indicatorCount": 2,
@@ -282,7 +285,7 @@
       "unitFamily": "other"
     }
   ],
-  "observationCount": 40,
+  "observationCount": 1,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

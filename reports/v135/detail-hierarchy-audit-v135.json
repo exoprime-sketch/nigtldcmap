@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v135-final-public-screen-audit-1",
-  "generatedAt": "2026-09-07T04:38:15.317Z",
+  "generatedAt": "2026-09-13T23:31:02.526Z",
   "audit": "detail-hierarchy:v135",
   "status": "PASS",
   "summary": {
@@ -103,23 +103,27 @@
       "name": "GHG_ANALYTICAL_HIERARCHY",
       "status": "PASS",
       "actual": {
-        "elementId": "C-002",
-        "title": "격년투명성보고서(BTR)의 항목별 공개 현황",
-        "primary": true,
-        "metadata": true,
-        "primaryBeforeMetadata": true,
-        "primaryBeforeRaw": true,
-        "portfolioSummary": false,
-        "portfolioList": false,
-        "portfolioSummaryBeforeList": true,
-        "ghgPresent": true,
-        "rawMatrixPrimary": "false",
-        "genericRawMatrixHeading": false,
-        "alert": ""
+        "sectorGasObservations": 0,
+        "route": {
+          "elementId": "C-002",
+          "title": "격년투명성보고서(BTR)의 항목별 공개 현황",
+          "primary": true,
+          "metadata": true,
+          "primaryBeforeMetadata": true,
+          "primaryBeforeRaw": true,
+          "portfolioSummary": false,
+          "portfolioList": false,
+          "portfolioSummaryBeforeList": true,
+          "ghgPresent": false,
+          "rawMatrixPrimary": null,
+          "genericRawMatrixHeading": false,
+          "alert": ""
+        }
       },
       "expected": {
-        "ghgPresent": true,
-        "rawMatrixPrimary": "false"
+        "primary": true,
+        "primaryBeforeRaw": true,
+        "genericRawMatrixHeading": false
       }
     },
     {

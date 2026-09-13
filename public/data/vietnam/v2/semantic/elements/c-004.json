@@ -1,165 +1,18 @@
 {
   "dimensions": [
     {
-      "key": "category",
-      "labelKo": "분류",
-      "valueCount": 49,
-      "values": [
-        "2030 감축의무 대상시설",
-        "2030 총배출 감축률",
-        "2050 감축의무 대상시설",
-        "Climate Action Tracker",
-        "Global Coal to Clean Power Transition Statement",
-        "JETP RMP 기술지원(TA)",
-        "JETP 전체 공약액(참고)",
-        "NCCS 2050(Decision 896/QĐ-TTg)",
-        "PDP8 개정(Decision 768/QĐ-TTg)",
-        "UNFCCC LT-LEDS",
-        "UNFCCC LT-LEDS 포털",
-        "World Bank Vietnam CCDR(2022)",
-        "개정 검토 절차",
-        "건물",
-        "관계부처 역할분담",
-        "국내 상응 전략",
-        "넷제로 목표연도",
-        "농업",
-        "배출 정점(peak) 연도",
-        "산림 토지이용",
-        "산림 토지이용(LULUCF)",
-        "산림피복률(2030)",
-        "산림피복률(2050)",
-        "산업(공정)",
-        "산업공정(IPPU)",
-        "석탄 원자력 CCS) 2050 발전원별 세부 믹스",
-        "석탄 원자력 CCS) 석탄화력 정책",
-        "석탄 원자력 CCS) 원자력",
-        "석탄 원자력 CCS) 재생에너지 비중(2030)",
-        "석탄 원자력 CCS) 재생에너지 비중(2050)",
-        "석탄 원자력 CCS) 탄소포집저장(CCS)",
-        "수송",
-        "승인 주체",
-        "에너지",
-        "에너지공급",
-        "연료원별 발전량 구성비(태양광/풍력/석탄/가스 등)",
-        "재원 소요 (World Bank CCDR 2022 보완) 공공 재원",
-        "재원 소요 (World Bank CCDR 2022 보완) 민간 재원",
-        "재원 소요 (World Bank CCDR 2022 보완) 보완 근거",
-        "재원 소요 (World Bank CCDR 2022 보완) 총 재원소요(탈탄소+회복력)",
-        "재원 소요 (World Bank CCDR 2022 보완) 탈탄소 경로 총 투자소요",
-        "재원 소요 (World Bank CCDR 2022 보완) 해외 재원",
-        "재원 소요 (World Bank CCDR 2022 보완) 회복력 경로 총 투자소요",
-        "점검 주기",
-        "주요 감축기술 목록",
-        "총 발전량+수입 전망(2030)",
-        "총 발전량+수입 전망(2050)",
-        "총괄기관",
-        "폐기물"
-      ]
-    },
-    {
-      "key": "detail",
-      "labelKo": "세부 분류",
-      "valueCount": 46,
-      "values": [
-        "2022",
-        "2030 발전설비 목표(에너지믹스 참고)",
-        "2030 배출 상한(BAU 대비)",
-        "2050 배출 상한",
-        "BAU 시나리오 대비",
-        "COP26 성명 참여·이행계획",
-        "Just Energy Transition Partnership 총 공약(2022)",
-        "NCCS 원문 정량 미제시 → 공식 1차 출처 보완",
-        "Resource Mobilization Plan 기술지원 규모",
-        "개발 가능성 검토",
-        "건물부문 탈탄소 조치",
-        "결정권자·발의부처",
-        "교통부문 탈탄소 조치",
-        "국가 전체 온실가스 순배출 0",
-        "국가 총배출 최고점 후 감소 전환",
-        "국가기후변화전략 2050 정본(FAOLEX)",
-        "국가기후변화전략 2050(NCCS 2050)",
-        "농업부문 탈탄소 조치",
-        "당사국 제출 LT-LEDS 목록",
-        "발전·산업시설 적용",
-        "발전부문 탈탄소 조치",
-        "베트남 넷제로 목표 평가",
-        "부문별 소관부처",
-        "산림부문 탈탄소 조치",
-        "산업공정 탈탄소 조치",
-        "상한(max)",
-        "순배출·흡수(하한, 흡수우위)",
-        "신규 건설·기존 설비 축소 로드맵",
-        "연간 배출량 기준",
-        "연간 배출량 기준(2030 대비 강화)",
-        "연료원별(석탄·가스·태양광·풍력 등) 발전비중 수치",
-        "원문 명시 핵심 기술군",
-        "이행상황 보고·중간평가 주기",
-        "장기 투자소요 보완 출처",
-        "장기전략 포털 제출 여부",
-        "적응·감축 공통 목표",
-        "적응·감축 공통 목표(유지)",
-        "전략 이행 총괄·부처간 조정",
-        "전력 생산량 기준",
-        "전력 생산량 기준(수력·풍력·태양광·바이오매스)",
-        "중간점검 및 개정 근거",
-        "총 재원소요 중 공공 부담분",
-        "총 재원소요 중 민간 부담분",
-        "총 재원소요 중 해외 부담분",
-        "폐기물부문 탈탄소 조치",
-        "하한(min)"
-      ]
-    },
-    {
-      "key": "detail_2",
-      "labelKo": "detail_2",
-      "valueCount": 3,
-      "values": [
-        "2040 누적(참고, 적응측)",
-        "2040 누적, LT-LEDS(넷제로) 직결 항목",
-        "2040 누적, 순현재가치(할인율 6%)"
-      ]
-    },
-    {
-      "key": "period",
-      "labelKo": "기간",
-      "valueCount": 8,
-      "values": [
-        "2022-2040",
-        "2022~",
-        "2026(확인시점)",
-        "2026-08-04",
-        "2030-2035",
-        "2030·2050",
-        "2035~(제철)",
-        "—"
-      ]
-    },
-    {
-      "key": "technology",
-      "labelKo": "기술",
+      "key": "entityType",
+      "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
-        "CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08,CTIS-13,CTIS-16,CTIS-17,CTIS-18,CTIS-19,CTIS-20,CTIS-23"
-      ]
-    },
-    {
-      "key": "year",
-      "labelKo": "연도",
-      "valueCount": 6,
-      "values": [
-        "2022",
-        "2025",
-        "2026",
-        "2030",
-        "2035",
-        "2050"
+        "entity"
       ]
     }
   ],
   "elementId": "C-004",
-  "entityCount": 0,
+  "entityCount": 58,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 58,
+  "indicatorCount": 69,
   "indicators": [
     {
       "axisGroupKey": "measure-34cf97707ad1|tCO2e/년 이상",
@@ -808,6 +661,46 @@
       }
     },
     {
+      "axisGroupKey": "measure-f60f3652fae3|%(이상)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "탄소 흡수/제거 목표(MtCO₂e)",
+      "indicatorId": "C-004_carbon_removal_target",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f60f3652fae3",
+        "labelKo": "탄소 흡수/제거 목표(MtCO₂e)",
+        "unit": "%(이상)",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f60f3652fae3|%(이상)||C-004_carbon_removal_target",
+      "sourceCaveat": null,
+      "sourceLabel": "탄소 흡수/제거 목표(MtCO₂e)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-758c1cfab934|십억kWh",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "에너지 믹스 전망(2050, RE/화석/원자력 %)",
+      "indicatorId": "C-004_energy_mix_projection",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-758c1cfab934",
+        "labelKo": "에너지 믹스 전망(2050, RE/화석/원자력 %)",
+        "unit": "십억kWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-758c1cfab934|십억kWh||C-004_energy_mix_projection",
+      "sourceCaveat": null,
+      "sourceLabel": "에너지 믹스 전망(2050, RE/화석/원자력 %)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-a103c4930c54|—",
       "dimensionLabels": {
         "category": "연료원별 발전량 구성비(태양광/풍력/석탄/가스 등)",
@@ -1350,6 +1243,26 @@
       }
     },
     {
+      "axisGroupKey": "measure-302d34a37e8c|백만 USD",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "공정전환 전략",
+      "indicatorId": "C-004_just_transition",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-302d34a37e8c",
+        "labelKo": "공정전환 전략",
+        "unit": "백만 USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-302d34a37e8c|백만 USD||C-004_just_transition",
+      "sourceCaveat": null,
+      "sourceLabel": "공정전환 전략",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-adfee22e6598|—",
       "dimensionLabels": {
         "category": "Global Coal to Clean Power Transition Statement",
@@ -1452,6 +1365,26 @@
       }
     },
     {
+      "axisGroupKey": "measure-682d8b46101e|개",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "핵심 감축 기술 목록",
+      "indicatorId": "C-004_key_mitigation_tech",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-682d8b46101e",
+        "labelKo": "핵심 감축 기술 목록",
+        "unit": "개",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-682d8b46101e|개||C-004_key_mitigation_tech",
+      "sourceCaveat": null,
+      "sourceLabel": "핵심 감축 기술 목록",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-9e94e7ff850b|—",
       "dimensionLabels": {
         "category": "주요 감축기술 목록",
@@ -1486,17 +1419,35 @@
       }
     },
     {
+      "axisGroupKey": "measure-33ab719af134|십억 USD",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "장기 투자 소요(USD)",
+      "indicatorId": "C-004_long_term_investment",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-33ab719af134",
+        "labelKo": "장기 투자 소요(USD)",
+        "unit": "십억 USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-33ab719af134|십억 USD||C-004_long_term_investment",
+      "sourceCaveat": null,
+      "sourceLabel": "장기 투자 소요(USD)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-288b8c1bf9f7|십억 USD",
       "dimensionLabels": {
         "category": "재원 소요 (World Bank CCDR 2022 보완) 탈탄소 경로 총 투자소요",
-        "detail": "2022",
-        "detail_2": "2040 누적, LT-LEDS(넷제로) 직결 항목",
+        "detail": "2022–2040 누적, LT-LEDS(넷제로) 직결 항목",
         "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-04 · CTIS-05 · CTIS-06 · CTIS-07 · CTIS-08 · CTIS-13 · CTIS-16 · CTIS-17 · CTIS-18 · CTIS-19 · CTIS-20 · CTIS-23"
       },
       "dimensions": {
         "category": "재원 소요 (World Bank CCDR 2022 보완) 탈탄소 경로 총 투자소요",
-        "detail": "2022",
-        "detail_2": "2040 누적, LT-LEDS(넷제로) 직결 항목",
+        "detail": "2022–2040 누적, LT-LEDS(넷제로) 직결 항목",
         "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08,CTIS-13,CTIS-16,CTIS-17,CTIS-18,CTIS-19,CTIS-20,CTIS-23"
       },
       "displayLabel": "장기 투자 · 재원 소요 (World Bank CCDR 2022 보완) 탈탄소 경로 총 투자소요 — 2022–2040 누적, LT-LEDS(넷제로) 직결 항목",
@@ -1508,7 +1459,7 @@
         "unit": "십억 USD",
         "unitFamily": "currency"
       },
-      "seriesKey": "measure-288b8c1bf9f7|십억 USD|category=재원 소요 (World Bank CCDR 2022 보완) 탈탄소 경로 총 투자소요|detail=2022|detail_2=2040 누적, LT-LEDS(넷제로) 직결 항목|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08,CTIS-13,CTIS-16,CTIS-17,CTIS-18,CTIS-19,CTIS-20,CTIS-23|C-004_long_term_investment_finance_need_decarbonization_pathway",
+      "seriesKey": "measure-288b8c1bf9f7|십억 USD|category=재원 소요 (World Bank CCDR 2022 보완) 탈탄소 경로 총 투자소요|detail=2022–2040 누적, LT-LEDS(넷제로) 직결 항목|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08,CTIS-13,CTIS-16,CTIS-17,CTIS-18,CTIS-19,CTIS-20,CTIS-23|C-004_long_term_investment_finance_need_decarbonization_pathway",
       "sourceCaveat": "GDP대비 약 2.1%/yr. 이 중 재생에너지 신규투자 약 64십억USD",
       "sourceLabel": "장기 투자 · 재원 소요 (World Bank CCDR 2022 보완) 탈탄소 경로 총 투자소요 — 2022–2040 누적, LT-LEDS(넷제로) 직결 항목",
       "sourceLabelEn": "Long Term Investment Finance Need Decarbonization Pathway",
@@ -1627,14 +1578,12 @@
       "axisGroupKey": "measure-288b8c1bf9f7|십억 USD",
       "dimensionLabels": {
         "category": "재원 소요 (World Bank CCDR 2022 보완) 회복력 경로 총 투자소요",
-        "detail": "2022",
-        "detail_2": "2040 누적(참고, 적응측)",
+        "detail": "2022–2040 누적(참고, 적응측)",
         "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-04 · CTIS-05 · CTIS-06 · CTIS-07 · CTIS-08 · CTIS-13 · CTIS-16 · CTIS-17 · CTIS-18 · CTIS-19 · CTIS-20 · CTIS-23"
       },
       "dimensions": {
         "category": "재원 소요 (World Bank CCDR 2022 보완) 회복력 경로 총 투자소요",
-        "detail": "2022",
-        "detail_2": "2040 누적(참고, 적응측)",
+        "detail": "2022–2040 누적(참고, 적응측)",
         "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08,CTIS-13,CTIS-16,CTIS-17,CTIS-18,CTIS-19,CTIS-20,CTIS-23"
       },
       "displayLabel": "장기 투자 · 재원 소요 (World Bank CCDR 2022 보완) 회복력 경로 총 투자소요 — 2022–2040 누적(참고, 적응측)",
@@ -1646,7 +1595,7 @@
         "unit": "십억 USD",
         "unitFamily": "currency"
       },
-      "seriesKey": "measure-288b8c1bf9f7|십억 USD|category=재원 소요 (World Bank CCDR 2022 보완) 회복력 경로 총 투자소요|detail=2022|detail_2=2040 누적(참고, 적응측)|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08,CTIS-13,CTIS-16,CTIS-17,CTIS-18,CTIS-19,CTIS-20,CTIS-23|C-004_long_term_investment_finance_need_resilience",
+      "seriesKey": "measure-288b8c1bf9f7|십억 USD|category=재원 소요 (World Bank CCDR 2022 보완) 회복력 경로 총 투자소요|detail=2022–2040 누적(참고, 적응측)|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08,CTIS-13,CTIS-16,CTIS-17,CTIS-18,CTIS-19,CTIS-20,CTIS-23|C-004_long_term_investment_finance_need_resilience",
       "sourceCaveat": "GDP대비 약 4.7%/yr, 총 재원소요의 약 2/3 차지(NAP 적응재원과 별도 계열)",
       "sourceLabel": "장기 투자 · 재원 소요 (World Bank CCDR 2022 보완) 회복력 경로 총 투자소요 — 2022–2040 누적(참고, 적응측)",
       "sourceLabelEn": "Long Term Investment Finance Need Resilience",
@@ -1697,14 +1646,12 @@
       "axisGroupKey": "measure-288b8c1bf9f7|십억 USD",
       "dimensionLabels": {
         "category": "재원 소요 (World Bank CCDR 2022 보완) 총 재원소요(탈탄소+회복력)",
-        "detail": "2022",
-        "detail_2": "2040 누적, 순현재가치(할인율 6%)",
+        "detail": "2022–2040 누적, 순현재가치(할인율 6%)",
         "technology": "CTIS-01 · CTIS-02 · CTIS-03 · CTIS-04 · CTIS-05 · CTIS-06 · CTIS-07 · CTIS-08 · CTIS-13 · CTIS-16 · CTIS-17 · CTIS-18 · CTIS-19 · CTIS-20 · CTIS-23"
       },
       "dimensions": {
         "category": "재원 소요 (World Bank CCDR 2022 보완) 총 재원소요(탈탄소+회복력)",
-        "detail": "2022",
-        "detail_2": "2040 누적, 순현재가치(할인율 6%)",
+        "detail": "2022–2040 누적, 순현재가치(할인율 6%)",
         "technology": "CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08,CTIS-13,CTIS-16,CTIS-17,CTIS-18,CTIS-19,CTIS-20,CTIS-23"
       },
       "displayLabel": "장기 투자 · 재원 소요 (World Bank CCDR 2022 보완) 총 재원소요(탈탄소+회복력) — 2022–2040 누적, 순현재가치(할인율 6%)",
@@ -1716,7 +1663,7 @@
         "unit": "십억 USD",
         "unitFamily": "currency"
       },
-      "seriesKey": "measure-288b8c1bf9f7|십억 USD|category=재원 소요 (World Bank CCDR 2022 보완) 총 재원소요(탈탄소+회복력)|detail=2022|detail_2=2040 누적, 순현재가치(할인율 6%)|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08,CTIS-13,CTIS-16,CTIS-17,CTIS-18,CTIS-19,CTIS-20,CTIS-23|C-004_long_term_investment_finance_need_total_finance",
+      "seriesKey": "measure-288b8c1bf9f7|십억 USD|category=재원 소요 (World Bank CCDR 2022 보완) 총 재원소요(탈탄소+회복력)|detail=2022–2040 누적, 순현재가치(할인율 6%)|technology=CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08,CTIS-13,CTIS-16,CTIS-17,CTIS-18,CTIS-19,CTIS-20,CTIS-23|C-004_long_term_investment_finance_need_total_finance",
       "sourceCaveat": "GDP대비 약 6.8%/yr",
       "sourceLabel": "장기 투자 · 재원 소요 (World Bank CCDR 2022 보완) 총 재원소요(탈탄소+회복력) — 2022–2040 누적, 순현재가치(할인율 6%)",
       "sourceLabelEn": "Long Term Investment Finance Need Total Finance",
@@ -1728,6 +1675,46 @@
         "sourceRow": 46,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-97cc397e342c|MtCO2e",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "장기 배출 경로(2050, BAU/감축/넷제로 시나리오별 MtCO₂e)",
+      "indicatorId": "C-004_long_term_pathway",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-97cc397e342c",
+        "labelKo": "장기 배출 경로(2050, BAU/감축/넷제로 시나리오별 MtCO₂e)",
+        "unit": "MtCO2e",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-97cc397e342c|MtCO2e||C-004_long_term_pathway",
+      "sourceCaveat": null,
+      "sourceLabel": "장기 배출 경로(2050, BAU/감축/넷제로 시나리오별 MtCO₂e)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-ebb93151549e|년",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "넷제로 목표 연도/범위",
+      "indicatorId": "C-004_net_zero_target",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ebb93151549e",
+        "labelKo": "넷제로 목표 연도/범위",
+        "unit": "년",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-ebb93151549e|년||C-004_net_zero_target",
+      "sourceCaveat": null,
+      "sourceLabel": "넷제로 목표 연도/범위",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-15b7289b1661|%",
@@ -1832,6 +1819,26 @@
       }
     },
     {
+      "axisGroupKey": "measure-39ca0bf78d19|정성 목표",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "부문별 탈탄소 경로",
+      "indicatorId": "C-004_sector_decarbonization",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-39ca0bf78d19",
+        "labelKo": "부문별 탈탄소 경로",
+        "unit": "정성 목표",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-39ca0bf78d19|정성 목표||C-004_sector_decarbonization",
+      "sourceCaveat": null,
+      "sourceLabel": "부문별 탈탄소 경로",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-a2c3c0328922|URL",
       "dimensionLabels": {
         "category": "Climate Action Tracker",
@@ -1866,6 +1873,26 @@
       }
     },
     {
+      "axisGroupKey": "measure-92ed3a9b9108|URL",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "원본 링크(URL) · source_link_faolex_fao",
+      "indicatorId": "C-004_source_link_faolex_fao",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-92ed3a9b9108",
+        "labelKo": "원본 링크(URL)",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-92ed3a9b9108|URL||C-004_source_link_faolex_fao",
+      "sourceCaveat": null,
+      "sourceLabel": "원본 링크(URL)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-a2c3c0328922|URL",
       "dimensionLabels": {
         "category": "NCCS 2050(Decision 896/QĐ-TTg)",
@@ -1898,6 +1925,26 @@
         "sourceRow": 53,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-92ed3a9b9108|URL",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "원본 링크(URL) · source_link_openknowledge_worldban",
+      "indicatorId": "C-004_source_link_openknowledge_worldban",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-92ed3a9b9108",
+        "labelKo": "원본 링크(URL)",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-92ed3a9b9108|URL||C-004_source_link_openknowledge_worldban",
+      "sourceCaveat": null,
+      "sourceLabel": "원본 링크(URL)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-a2c3c0328922|URL",
@@ -1966,6 +2013,26 @@
         "sourceRow": 54,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-92ed3a9b9108|URL",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "원본 링크(URL) · source_link_vanban_chinhphu",
+      "indicatorId": "C-004_source_link_vanban_chinhphu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-92ed3a9b9108",
+        "labelKo": "원본 링크(URL)",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-92ed3a9b9108|URL||C-004_source_link_vanban_chinhphu",
+      "sourceCaveat": null,
+      "sourceLabel": "원본 링크(URL)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-a2c3c0328922|URL",
@@ -2143,7 +2210,7 @@
       "indicatorCount": 4,
       "key": "measure-9cc2a7393dcd",
       "labelKo": "2030년 부문별 감축 경로 (NCCS 중간목표)",
-      "recordCount": 4,
+      "recordCount": 0,
       "unit": "MtCO2e",
       "unitFamily": "emissions"
     },
@@ -2151,7 +2218,7 @@
       "indicatorCount": 1,
       "key": "measure-81ba82e66f39",
       "labelKo": "2030년 부문별 감축 경로 (NCCS 중간목표)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "MtCO2e(순)",
       "unitFamily": "emissions"
     },
@@ -2159,7 +2226,7 @@
       "indicatorCount": 1,
       "key": "measure-34cf97707ad1",
       "labelKo": "2030년 부문별 감축 경로 (NCCS 중간목표)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "tCO2e/년 이상",
       "unitFamily": "emissions"
     },
@@ -2167,7 +2234,7 @@
       "indicatorCount": 4,
       "key": "measure-332c1a882dd4",
       "labelKo": "2050년 부문별 감축 경로 (넷제로 경로)",
-      "recordCount": 4,
+      "recordCount": 0,
       "unit": "MtCO2e",
       "unitFamily": "emissions"
     },
@@ -2175,7 +2242,7 @@
       "indicatorCount": 1,
       "key": "measure-d7023d674386",
       "labelKo": "2050년 부문별 감축 경로 (넷제로 경로)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "MtCO2e(순)",
       "unitFamily": "emissions"
     },
@@ -2183,15 +2250,23 @@
       "indicatorCount": 1,
       "key": "measure-765df00dd6c2",
       "labelKo": "2050년 부문별 감축 경로 (넷제로 경로)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "tCO2e/년 이상",
       "unitFamily": "emissions"
     },
     {
       "indicatorCount": 1,
+      "key": "measure-302d34a37e8c",
+      "labelKo": "공정전환 전략",
+      "recordCount": 0,
+      "unit": "백만 USD",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 1,
       "key": "measure-adfee22e6598",
       "labelKo": "공정전환(Just Transition) 및 국제 이니셔티브",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -2199,7 +2274,7 @@
       "indicatorCount": 1,
       "key": "measure-6393713b2e2d",
       "labelKo": "공정전환(Just Transition) 및 국제 이니셔티브",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "백만 USD",
       "unitFamily": "currency"
     },
@@ -2207,7 +2282,7 @@
       "indicatorCount": 1,
       "key": "measure-c6e71c6974b1",
       "labelKo": "공정전환(Just Transition) 및 국제 이니셔티브",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "십억 USD",
       "unitFamily": "currency"
     },
@@ -2215,7 +2290,7 @@
       "indicatorCount": 1,
       "key": "measure-15b7289b1661",
       "labelKo": "넷제로 목표 및 배출 정점",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -2223,15 +2298,31 @@
       "indicatorCount": 2,
       "key": "measure-181bebe8c462",
       "labelKo": "넷제로 목표 및 배출 정점",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "년",
       "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-ebb93151549e",
+      "labelKo": "넷제로 목표 연도/범위",
+      "recordCount": 0,
+      "unit": "년",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-39ca0bf78d19",
+      "labelKo": "부문별 탈탄소 경로",
+      "recordCount": 0,
+      "unit": "정성 목표",
+      "unitFamily": "text"
     },
     {
       "indicatorCount": 7,
       "key": "measure-a43023108a4a",
       "labelKo": "부문별 탈탄소 전략 (7대 부문 주요 조치)",
-      "recordCount": 7,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -2239,7 +2330,7 @@
       "indicatorCount": 1,
       "key": "measure-81c54884690a",
       "labelKo": "산림피복 목표",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "%(유지)",
       "unitFamily": "percent"
     },
@@ -2247,15 +2338,23 @@
       "indicatorCount": 1,
       "key": "measure-e6a4b3462272",
       "labelKo": "산림피복 목표",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "%(이상)",
       "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-758c1cfab934",
+      "labelKo": "에너지 믹스 전망(2050, RE/화석/원자력 %)",
+      "recordCount": 0,
+      "unit": "십억kWh",
+      "unitFamily": "energy"
     },
     {
       "indicatorCount": 2,
       "key": "measure-dde5f6b9b039",
       "labelKo": "에너지 전환 목표 (재생에너지",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "%(이상)",
       "unitFamily": "percent"
     },
@@ -2263,7 +2362,7 @@
       "indicatorCount": 4,
       "key": "measure-c3524e0f3db1",
       "labelKo": "에너지 전환 목표 (재생에너지",
-      "recordCount": 4,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -2271,7 +2370,7 @@
       "indicatorCount": 1,
       "key": "measure-a103c4930c54",
       "labelKo": "에너지믹스 전망 세부",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -2279,7 +2378,7 @@
       "indicatorCount": 4,
       "key": "measure-ac00b15de05a",
       "labelKo": "에너지믹스 전망 세부",
-      "recordCount": 4,
+      "recordCount": 0,
       "unit": "십억kWh",
       "unitFamily": "energy"
     },
@@ -2287,7 +2386,15 @@
       "indicatorCount": 5,
       "key": "measure-a2c3c0328922",
       "labelKo": "원본 링크 (URL)",
-      "recordCount": 5,
+      "recordCount": 0,
+      "unit": "URL",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 3,
+      "key": "measure-92ed3a9b9108",
+      "labelKo": "원본 링크(URL)",
+      "recordCount": 0,
       "unit": "URL",
       "unitFamily": "text"
     },
@@ -2295,15 +2402,23 @@
       "indicatorCount": 3,
       "key": "measure-b8e24fecab57",
       "labelKo": "이행체계 및 모니터링(MRV)",
-      "recordCount": 3,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
     {
       "indicatorCount": 1,
+      "key": "measure-97cc397e342c",
+      "labelKo": "장기 배출 경로(2050, BAU/감축/넷제로 시나리오별 MtCO₂e)",
+      "recordCount": 0,
+      "unit": "MtCO2e",
+      "unitFamily": "emissions"
+    },
+    {
+      "indicatorCount": 1,
       "key": "measure-9085fb5c141e",
       "labelKo": "장기 투자",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -2311,7 +2426,15 @@
       "indicatorCount": 6,
       "key": "measure-288b8c1bf9f7",
       "labelKo": "장기 투자",
-      "recordCount": 6,
+      "recordCount": 0,
+      "unit": "십억 USD",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-33ab719af134",
+      "labelKo": "장기 투자 소요(USD)",
+      "recordCount": 0,
       "unit": "십억 USD",
       "unitFamily": "currency"
     },
@@ -2319,7 +2442,7 @@
       "indicatorCount": 3,
       "key": "measure-c39d3fa6f9c6",
       "labelKo": "제출 이력 및 법적 지위",
-      "recordCount": 3,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -2327,20 +2450,36 @@
       "indicatorCount": 1,
       "key": "measure-869d9fa48a85",
       "labelKo": "제출 이력 및 법적 지위",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "공포일",
       "unitFamily": "text"
     },
     {
       "indicatorCount": 1,
+      "key": "measure-f60f3652fae3",
+      "labelKo": "탄소 흡수/제거 목표(MtCO₂e)",
+      "recordCount": 0,
+      "unit": "%(이상)",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
       "key": "measure-9e94e7ff850b",
       "labelKo": "핵심 감축 기술",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "—",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-682d8b46101e",
+      "labelKo": "핵심 감축 기술 목록",
+      "recordCount": 0,
+      "unit": "개",
       "unitFamily": "text"
     }
   ],
-  "observationCount": 58,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

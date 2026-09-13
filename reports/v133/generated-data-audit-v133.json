@@ -51,32 +51,32 @@
       "name": "ROW_BALANCE",
       "status": "PASS",
       "actual": {
-        "sourceRows": 45582,
-        "processedRows": 45582,
-        "publicPopulatedRows": 37375,
-        "catalogProcessedRows": 45582,
-        "catalogPublicPopulatedRows": 37375,
+        "sourceRows": 171846,
+        "processedRows": 171846,
+        "publicPopulatedRows": 168850,
+        "catalogProcessedRows": 171846,
+        "catalogPublicPopulatedRows": 168850,
         "catalogRowBreakdown": {
-          "metadataRows": 7390,
-          "nonstandardRows": 129,
-          "observationRows": 32416,
-          "entityRows": 5647,
-          "publicPopulatedRows": 37375
+          "metadataRows": 2225,
+          "nonstandardRows": 309,
+          "observationRows": 16236,
+          "entityRows": 153076,
+          "publicPopulatedRows": 168850
         }
       },
       "expected": {
         "matches": true,
-        "catalogProcessedRows": 45582,
-        "catalogPublicPopulatedRows": 37375
+        "catalogProcessedRows": 171846,
+        "catalogPublicPopulatedRows": 168850
       }
     },
     {
       "name": "ASSET_INTEGRITY_COVERAGE",
       "status": "PASS",
       "actual": {
-        "declared": 427,
-        "recorded": 427,
-        "expected": 427,
+        "declared": 494,
+        "recorded": 494,
+        "expected": 494,
         "missing": 0,
         "unexpected": 0,
         "duplicate": 0
@@ -100,7 +100,7 @@
       "actual": 0,
       "expected": 0,
       "details": {
-        "checked": 428,
+        "checked": 495,
         "broken": []
       }
     },
@@ -108,7 +108,7 @@
       "name": "DOWNLOAD_INTEGRITY",
       "status": "PASS",
       "actual": {
-        "checked": 228,
+        "checked": 294,
         "invalid": 0
       },
       "expected": {
@@ -121,7 +121,7 @@
       "name": "DOWNLOAD_ROW_RECONCILIATION",
       "status": "PASS",
       "actual": {
-        "checked": 114,
+        "checked": 147,
         "failed": 0
       },
       "expected": {
@@ -136,12 +136,14 @@
       "actual": {
         "declaredLayers": 12,
         "layers": 12,
-        "declaredFeatures": 2900,
-        "features": 2900
+        "declaredFeatures": 3144,
+        "features": 3144,
+        "declaredMatchesActual": true
       },
       "expected": {
         "layers": 12,
-        "features": 2900,
+        "features": ">= 2900",
+        "declaredMatchesActual": true,
         "fakeGeometry": 0
       }
     },

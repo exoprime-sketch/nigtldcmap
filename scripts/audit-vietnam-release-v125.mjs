@@ -6,9 +6,11 @@ import { resolve } from "node:path";
 import { gzipSync } from "node:zlib";
 import {
   AuditV125,
+  MAP_FEATURE_FLOOR_V125,
   PROJECT_ROOT,
   SEMANTIC_ROOT,
   V2_ROOT,
+  mapFeatureCountIsSound,
   readJson,
   visualizationContracts,
 } from "./v125/audit-utils.mjs";
@@ -139,11 +141,15 @@ audit.check(
   { calculated: activeLayers.length, declared: mapIndex.activeMapLayerCount ?? null },
   { calculated: 12, declared: 12 }
 );
+// The exact feature count is a property of the delivery, not of the platform:
+// publishing every authorised carbon-credit project took C-025 from 18 features
+// to 262. What is asserted is that the index declares what its layers hold and
+// that the total has not collapsed.
 audit.check(
   "MAP_FEATURE_COUNT",
-  mapFeatureCount === 2900 && Number(mapIndex.mapFeatureCount) === 2900,
+  mapFeatureCountIsSound(mapIndex.mapFeatureCount, mapFeatureCount),
   { calculated: mapFeatureCount, declared: mapIndex.mapFeatureCount ?? null },
-  { calculated: 2900, declared: 2900 }
+  { calculated: `>= ${MAP_FEATURE_FLOOR_V125}`, declared: "equal to calculated" }
 );
 const adm1FeatureCount = Array.isArray(adm1Result.value?.features)
   ? adm1Result.value.features.length

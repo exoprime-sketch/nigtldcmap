@@ -1,79 +1,16 @@
 {
   "dimensions": [
     {
-      "key": "category",
-      "labelKo": "분류",
-      "valueCount": 1,
-      "values": [
-        "특허"
-      ]
-    },
-    {
-      "key": "detail",
-      "labelKo": "세부 분류",
-      "valueCount": 20,
-      "values": [
-        "Scimago H지수(1996",
-        "Scimago 논문 수",
-        "Scimago 누적 기준 세계 순위",
-        "Scimago 누적 논문 수(1996",
-        "Scimago 누적 인용 수(1996",
-        "Scimago 문헌당 인용 수",
-        "Scimago 세계 순위",
-        "Scimago 인용 수",
-        "Scimago 인용가능 문헌 수",
-        "WIPO 디자인 출원",
-        "WIPO 디자인 출원 총계",
-        "WIPO 상표 출원",
-        "WIPO 상표 출원 총계",
-        "WIPO 특허 출원",
-        "WIPO 특허 출원 총계",
-        "표본 국제공저 논문 건수",
-        "표본 논문 건수",
-        "표본 논문 국제공저 비율",
-        "표본 총 건수",
-        "표본 특허 건수"
-      ]
-    },
-    {
-      "key": "detail_2",
-      "labelKo": "detail_2",
-      "valueCount": 3,
-      "values": [
-        "2025)",
-        "거주자",
-        "해외출원"
-      ]
-    },
-    {
       "key": "entityType",
       "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
         "entity"
       ]
-    },
-    {
-      "key": "technology",
-      "labelKo": "기술",
-      "valueCount": 1,
-      "values": [
-        "확인필요"
-      ]
-    },
-    {
-      "key": "year",
-      "labelKo": "연도",
-      "valueCount": 3,
-      "values": [
-        "2024",
-        "2025",
-        "2026"
-      ]
     }
   ],
   "elementId": "E-008",
-  "entityCount": 13,
+  "entityCount": 144,
   "generatedAt": "2026-08-27T00:00:00Z",
   "indicatorCount": 26,
   "indicators": [
@@ -451,14 +388,12 @@
       "axisGroupKey": "measure-bb2c50075d03|건",
       "dimensionLabels": {
         "category": "특허",
-        "detail": "Scimago 누적 인용 수(1996",
-        "detail_2": "2025)",
+        "detail": "Scimago 누적 인용 수(1996–2025)",
         "technology": "확인필요"
       },
       "dimensions": {
         "category": "특허",
-        "detail": "Scimago 누적 인용 수(1996",
-        "detail_2": "2025)",
+        "detail": "Scimago 누적 인용 수(1996–2025)",
         "technology": "확인필요"
       },
       "displayLabel": "논문·특허 — Scimago 누적 인용 수(1996–2025)",
@@ -470,7 +405,7 @@
         "unit": "건",
         "unitFamily": "count"
       },
-      "seriesKey": "measure-bb2c50075d03|건|category=특허|detail=Scimago 누적 인용 수(1996|detail_2=2025)|technology=확인필요|E-008_scimago_cum_citations",
+      "seriesKey": "measure-bb2c50075d03|건|category=특허|detail=Scimago 누적 인용 수(1996–2025)|technology=확인필요|E-008_scimago_cum_citations",
       "sourceCaveat": "전 학문분야 합계이며 기후기술 분야로 한정된 값이 아님.",
       "sourceLabel": "논문·특허 — Scimago 누적 인용 수(1996–2025)",
       "sourceLabelEn": "Publications and patents (climate technology)",
@@ -487,14 +422,12 @@
       "axisGroupKey": "measure-bb2c50075d03|건",
       "dimensionLabels": {
         "category": "특허",
-        "detail": "Scimago 누적 논문 수(1996",
-        "detail_2": "2025)",
+        "detail": "Scimago 누적 논문 수(1996–2025)",
         "technology": "확인필요"
       },
       "dimensions": {
         "category": "특허",
-        "detail": "Scimago 누적 논문 수(1996",
-        "detail_2": "2025)",
+        "detail": "Scimago 누적 논문 수(1996–2025)",
         "technology": "확인필요"
       },
       "displayLabel": "논문·특허 — Scimago 누적 논문 수(1996–2025)",
@@ -506,7 +439,7 @@
         "unit": "건",
         "unitFamily": "count"
       },
-      "seriesKey": "measure-bb2c50075d03|건|category=특허|detail=Scimago 누적 논문 수(1996|detail_2=2025)|technology=확인필요|E-008_scimago_cum_publications",
+      "seriesKey": "measure-bb2c50075d03|건|category=특허|detail=Scimago 누적 논문 수(1996–2025)|technology=확인필요|E-008_scimago_cum_publications",
       "sourceCaveat": "전 학문분야 합계이며 기후기술 분야로 한정된 값이 아님.",
       "sourceLabel": "논문·특허 — Scimago 누적 논문 수(1996–2025)",
       "sourceLabelEn": "Publications and patents (climate technology)",
@@ -557,14 +490,12 @@
       "axisGroupKey": "measure-c2e8bb7681e5|지수",
       "dimensionLabels": {
         "category": "특허",
-        "detail": "Scimago H지수(1996",
-        "detail_2": "2025)",
+        "detail": "Scimago H지수(1996–2025)",
         "technology": "확인필요"
       },
       "dimensions": {
         "category": "특허",
-        "detail": "Scimago H지수(1996",
-        "detail_2": "2025)",
+        "detail": "Scimago H지수(1996–2025)",
         "technology": "확인필요"
       },
       "displayLabel": "논문·특허 — Scimago H지수(1996–2025)",
@@ -576,7 +507,7 @@
         "unit": "지수",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-c2e8bb7681e5|지수|category=특허|detail=Scimago H지수(1996|detail_2=2025)|technology=확인필요|E-008_scimago_h_index",
+      "seriesKey": "measure-c2e8bb7681e5|지수|category=특허|detail=Scimago H지수(1996–2025)|technology=확인필요|E-008_scimago_h_index",
       "sourceCaveat": "전 학문분야 합계이며 기후기술 분야로 한정된 값이 아님.",
       "sourceLabel": "논문·특허 — Scimago H지수(1996–2025)",
       "sourceLabelEn": "Publications and patents (climate technology)",
@@ -981,7 +912,7 @@
       "indicatorCount": 21,
       "key": "measure-bb2c50075d03",
       "labelKo": "논문",
-      "recordCount": 22,
+      "recordCount": 0,
       "unit": "건",
       "unitFamily": "text"
     },
@@ -989,7 +920,7 @@
       "indicatorCount": 1,
       "key": "measure-033cb9320d59",
       "labelKo": "논문",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "건/문헌",
       "unitFamily": "count"
     },
@@ -997,7 +928,7 @@
       "indicatorCount": 1,
       "key": "measure-db6ee34b72d2",
       "labelKo": "논문",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "비율(0-1)",
       "unitFamily": "other"
     },
@@ -1005,7 +936,7 @@
       "indicatorCount": 2,
       "key": "measure-b5875e256867",
       "labelKo": "논문",
-      "recordCount": 3,
+      "recordCount": 0,
       "unit": "위",
       "unitFamily": "other"
     },
@@ -1013,12 +944,12 @@
       "indicatorCount": 1,
       "key": "measure-c2e8bb7681e5",
       "labelKo": "논문",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "지수",
       "unitFamily": "other"
     }
   ],
-  "observationCount": 28,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

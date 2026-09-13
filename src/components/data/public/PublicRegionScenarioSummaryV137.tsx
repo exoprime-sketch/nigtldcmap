@@ -4,6 +4,7 @@ import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { publicTextV126 } from "../../../data/visualization/publicFieldPolicyV126";
 import { formatPublicNumberV126 } from "../../../data/visualization/publicNumberFormatV126";
 import type { DataFinderSelectorStateV125 } from "../../../types/dataFinderV125";
+import { PublicTermTextV134 } from "../../help/PublicTermV134";
 
 /**
  * The scenario datasets, read as what they are.
@@ -332,7 +333,15 @@ export default function PublicRegionScenarioSummaryV137({
     });
 
   return (
-    <div className="prs137" data-testid="region-scenario-summary-v137" data-element-id={elementId}>
+    // The measure and scenario names the delivery prints carry acronyms - CDD,
+    // GWh, SSP2-4.5 - so the term help for the selected option has to live in
+    // this card, not somewhere else on the route.
+    <div
+      className="prs137"
+      data-testid="region-scenario-summary-v137"
+      data-element-id={elementId}
+      data-public-selector-scope-v134="true"
+    >
       <div className="pav126-section-heading">
         <span>주 분석</span>
         {/* The section above already carries the element's analysis title;
@@ -391,7 +400,7 @@ export default function PublicRegionScenarioSummaryV137({
       <div className="cdp-table-wrap">
         <table className="cdp-table prs137__table">
           <caption>
-            {measureLabel(measure)}
+            <PublicTermTextV134 text={measureLabel(measure)} />
             {unitHint ? ` (${unitHint})` : ""} ·{" "}
             {shownYears.length === 0
               ? "기준연도 미기재"
@@ -418,7 +427,9 @@ export default function PublicRegionScenarioSummaryV137({
                 .filter((point, index, all) => point && all.indexOf(point) === index)
                 .map((point) => (
                   <tr key={`${row.scenario}-${point.year}`}>
-                    <th scope="row">{scenarioLabel(row.scenario)}</th>
+                    <th scope="row">
+                      <PublicTermTextV134 text={scenarioLabel(row.scenario)} />
+                    </th>
                     <td>
                       {point.year === UNSTATED_YEAR ? "기준연도 미기재" : `${point.year}년`}
                     </td>

@@ -178,7 +178,9 @@
     "e2e": "playwright test",
     "e2e:detail": "playwright test e2e/detail-all.spec.ts",
     "e2e:update-visual": "playwright test e2e/visual.spec.ts --update-snapshots",
-    "build:candidate:v137": "node scripts/v137/build-candidate-v137.mjs"
+    "build:candidate:v137": "node scripts/v137/build-candidate-v137.mjs",
+    "data:final:v137": "node scripts/v137/build-final-data-v137.mjs",
+    "promote:public-data:v137": "node scripts/v137/promote-public-data-v137.mjs"
   },
   "browserslist": [
     ">0.2%",
