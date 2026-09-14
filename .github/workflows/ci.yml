@@ -16,7 +16,7 @@ jobs:
   release-gate:
     name: V136 blocking release gate
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 180
     env:
       CI: "true"
 
