@@ -343,6 +343,7 @@ let keyboardPass = false;
 let mobilePass = false;
 let mapInteractionPass = false;
 const brokenAssets = [];
+const progress = (route, phase) => console.log(JSON.stringify({ type: "progress", audit: "glossary:v134", route, phase, time: new Date().toISOString(), inspectedRoutes }));
 
 async function exerciseActiveGviMapV134(cdp) {
   const target = await evaluateValue(cdp, `(() => {
@@ -427,24 +428,29 @@ try {
     ["guide", `${server.url}/?guide=glossary#guide`, "Boolean(document.querySelector('[data-v134-glossary-directory]'))"],
   ];
   for (const [name, url, readyExpression] of staticRoutes) {
+    progress(name, "start");
     await navigate(browser.cdp, url);
     await waitForValue(browser.cdp, readyExpression, { timeoutMs: 30_000 });
     recordCandidates(name, await evaluateValue(browser.cdp, snapshotExpression));
     inspectedRoutes += 1;
+    progress(name, "complete");
   }
 
   // The map must be audited in an active analysis state as well as its empty
   // first-entry state. Trigger the GVI preset, then exercise hover and click on
   // a real selectable region so popup and selected-panel copy are included.
+  progress("map:active-gvi", "start");
   await navigate(browser.cdp, mapUrlV134(server.url));
   await waitForValue(browser.cdp, `document.querySelectorAll('.cdp-layer-card[data-map-element]').length >= 12`, { timeoutMs: 30_000 });
   await evaluateValue(browser.cdp, `document.querySelector('[data-testid="map-analysis-preset"][data-preset-id="CLIMATE_VULNERABILITY"]')?.click()`);
   await waitForValue(browser.cdp, `document.querySelector('[data-testid="map-public-content"]')?.getAttribute('data-primary-element') === 'B-021' && Boolean(document.querySelector('[data-testid="map-selectable-adm1-feature"][data-element-id="B-021"]'))`, { timeoutMs: 35_000 });
   mapInteractionPass = await exerciseActiveGviMapV134(browser.cdp);
   recordCandidates("map:active-gvi", await evaluateValue(browser.cdp, snapshotExpression));
+  progress("map:active-gvi", "complete");
 
   for (const element of catalog) {
     const elementId = String(element.elementId || "");
+    progress(elementId, "start");
     try {
       await navigate(browser.cdp, detailUrlV134(server.url, elementId));
       await waitForValue(
@@ -454,8 +460,11 @@ try {
       );
       recordCandidates(`detail:${elementId}`, await evaluateValue(browser.cdp, snapshotExpression));
       inspectedRoutes += 1;
+      progress(elementId, "complete");
     } catch (error) {
       routeFailures.push({ elementId, error: error instanceof Error ? error.message : String(error) });
+      progress(elementId, "failed");
+      if (/DevTools command timeout|DevTools socket closed/.test(String(error))) throw error;
     }
   }
 

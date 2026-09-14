@@ -16,7 +16,9 @@ jobs:
   release-gate:
     name: V136 blocking release gate
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    # Historical successful runs took 7-20 minutes. A stalled audit now fails
+    # individually; do not leave the whole job waiting for three hours.
+    timeout-minutes: 45
     env:
       CI: "true"
 
@@ -50,6 +52,7 @@ jobs:
         run: npm ci
 
       - name: Run V136 blocking release gate
+        timeout-minutes: 30
         run: npm run finalize:v136
 
       - name: Verify deployment and security contracts

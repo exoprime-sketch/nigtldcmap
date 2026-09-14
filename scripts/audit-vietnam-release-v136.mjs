@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
-import { spawnSync } from "node:child_process";
+import { mkdirSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { runAuditCommand } from "./ci/run-audit-command.mjs";
 
 import { AuditV125, PROJECT_ROOT, readJson } from "./v125/audit-utils.mjs";
 import { finishAuditV136, reportStatusV136 } from "./v136/audit-helpers.mjs";
@@ -11,6 +12,7 @@ const audit = new AuditV125("release:v136");
 // V136 keeps the V134 boundary: functional data, DOM and build gates block the
 // release, screenshot capture stays in the separate non-blocking visual QA job.
 const commands = [
+  { name: "CI_PROCESS_GUARDS", command: "node --test scripts/ci/browser-timeout.test.mjs" },
   { name: "PRODUCTION_BUILD_FOR_RUNTIME", command: "npm run build" },
   { name: "V133_GENERATED_DATA", command: "npm run audit:generated-data:v133" },
   { name: "V133_CI_CONTRACT", command: "npm run audit:ci-contract:v133" },
@@ -55,24 +57,30 @@ const commands = [
 ];
 
 const commandResults = [];
+const timingPath = resolve(PROJECT_ROOT, "reports/v136/ci-command-timings.json");
+mkdirSync(resolve(timingPath, ".."), { recursive: true });
+const runStartedAt = new Date().toISOString();
+function saveTimings(status, activeCommand = null) {
+  writeFileSync(timingPath, JSON.stringify({ status, runStartedAt, updatedAt: new Date().toISOString(), platform: process.platform, expectedCommandCount: commands.length, activeCommand, commandResults }, null, 2));
+}
+saveTimings("running");
 for (const entry of commands) {
-  const result = spawnSync(entry.command, {
+  saveTimings("running", entry.name);
+  const result = await runAuditCommand(entry.command, {
     cwd: PROJECT_ROOT,
-    encoding: "utf8",
-    maxBuffer: 256 * 1024 * 1024,
-    shell: true,
-    stdio: ["ignore", "pipe", "pipe"],
+    timeoutMs: entry.name === "PRODUCTION_BUILD_FOR_RUNTIME" ? 900_000 : 600_000,
   });
-  if (result.stdout) process.stdout.write(result.stdout);
-  if (result.stderr) process.stderr.write(result.stderr);
   const record = {
     name: entry.name,
     command: entry.command,
     exitCode: result.status,
     signal: result.signal,
     error: result.error?.message || null,
+    elapsedMs: result.elapsedMs,
+    timedOut: result.timedOut,
   };
   commandResults.push(record);
+  saveTimings(result.status !== 0 ? "failed" : commandResults.length === commands.length ? "passed" : "running");
   audit.check(entry.name, result.status === 0, record, { exitCode: 0 });
   if (result.status !== 0) break;
 }
