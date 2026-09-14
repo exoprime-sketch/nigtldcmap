@@ -261,6 +261,15 @@ function findingsFor(elementId, state, reading) {
 let server = null;
 let browser = null;
 let runtimeFailure = null;
+let currentRoute = "initialization";
+const runtimeErrors = [];
+const routeTimings = [];
+async function closeBrowser() {
+  if (!browser) return;
+  runtimeErrors.push(...browser.runtimeErrors.map((error) => ({ ...error, route: currentRoute })));
+  await browser.close();
+  browser = null;
+}
 const findings = [];
 const census = [];
 let inspectedRoutes = 0;
@@ -273,11 +282,17 @@ try {
     throw new Error("production build missing; run npm run build first");
   }
   server = await startStaticBuildServer(resolve(PROJECT_ROOT, "build"));
-  browser = await launchHeadlessBrowser();
-  const cdp = browser.cdp;
-  await setViewport(cdp, 1440, 1050);
-
   for (const elementId of ELEMENT_IDS) {
+    // Keep all selector interactions for one screen in the same browser, but
+    // release decoded data and renderer state before inspecting another screen.
+    await closeBrowser();
+    currentRoute = elementId;
+    const started = Date.now();
+    console.log(JSON.stringify({ type: "route-start", audit: audit.name, elementId }));
+    browser = await launchHeadlessBrowser();
+    const cdp = browser.cdp;
+    await setViewport(cdp, 1440, 1050);
+    try {
     await navigate(cdp, detailUrlV135(server.url, elementId));
     await waitForValue(cdp, ANALYSIS_READY, { timeoutMs: 45_000 });
     inspectedRoutes += 1;
@@ -327,11 +342,15 @@ try {
         if (elementId === "D-022") portfolioReadings.push({ state, reading: next });
       }
     }
+    } finally {
+      routeTimings.push({ elementId, elapsedMs: Date.now() - started });
+      console.log(JSON.stringify({ type: "route-finish", ...routeTimings.at(-1) }));
+    }
   }
 } catch (error) {
-  runtimeFailure = error instanceof Error ? error.message : String(error);
+  runtimeFailure = `${currentRoute}: ${error instanceof Error ? error.message : String(error)}`;
 } finally {
-  if (browser) await browser.close();
+  await closeBrowser();
   if (server) await server.close();
 }
 
@@ -455,7 +474,7 @@ audit.check(
   { sourceCategoryTotal, records: d022Records.length },
   { sourceCategoryTotal: d022Records.length, records: d022Records.length }
 );
-audit.check("CONSOLE_ERROR", (browser?.runtimeErrors || []).length === 0, browser?.runtimeErrors || [], []);
+audit.check("CONSOLE_ERROR", runtimeErrors.length === 0, runtimeErrors, []);
 
 writeCsvV136(
   "generic-detail-census-v136-2.csv",
@@ -482,4 +501,5 @@ finishAuditV136(audit, "generic-detail-public-audit-v136-2.json", {
     [...new Set(findings.map((item) => item.kind))].map((kind) => [kind, countOf(kind)])
   ),
   runtimeFailure,
+  routeTimings,
 });
