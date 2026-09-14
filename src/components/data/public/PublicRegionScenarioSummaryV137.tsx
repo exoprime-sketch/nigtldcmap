@@ -67,7 +67,7 @@ const NON_MEASURE = new Set([
  * are facts about the extraction, not about the country.
  */
 const NON_MEASURE_PATTERN =
-  /경계[_\s]*면적|격자[_\s]*수|격자점|유효[_\s]*격자|좌표|폴리곤|파일|격자[_\s]*원천|기준기간|^단위$|코드|pfaf|aqid|_id$/u;
+  /경계[_\s]*면적|단위면적|격자[_\s]*수|격자점|유효[_\s]*격자|좌표|폴리곤|파일|격자[_\s]*원천|기준기간|^단위$|코드|pfaf|aqid|_id$/u;
 
 const SCENARIO_LABELS: Record<string, string> = {
   historical: "과거 관측",
@@ -80,6 +80,19 @@ const SCENARIO_LABELS: Record<string, string> = {
 };
 
 const ALL_REGIONS = "__all__";
+
+/**
+ * The columns that identify the row's own area, where that is finer than the
+ * province the row is filed under.
+ *
+ * B-017 delivers 2,032 Aqueduct assessment zones - a HydroBASINS level-6 basin
+ * crossed with an aquifer - and files each one under the province it falls in.
+ * Reading the province column alone made every row look like a province, so a
+ * measure carried by 443 zones was printed as "성·시 수 443" beside 63 province
+ * names. The zone is the unit the values describe; the province is where it is.
+ */
+const ROW_UNIT_KEYS = ["HydroBASINS_lvl6_코드_pfaf_id", "대수층_코드_aqid"];
+const ROW_UNIT_LABEL = "평가구역";
 
 /** Stands for "the delivery states no year for this row". */
 const UNSTATED_YEAR = -1;
@@ -143,6 +156,8 @@ export interface RegionScenarioShapeV137 {
   years: number[];
   rowCount: number;
   hasNationalRow: boolean;
+  /** True when a province holds more than one delivered row per scenario-year. */
+  rowIsSubRegion: boolean;
 }
 
 /**
@@ -164,6 +179,9 @@ export function regionScenarioShapeV137(
   const scenarios = new Set<string>();
   const regions = new Set<string>();
   const years = new Set<number>();
+  // region|scenario|year -> how many rows the delivery filed under it, so a
+  // sub-region row can be told apart from a province row.
+  const rowsPerRegionSlice = new Map<string, number>();
   let national = false;
 
   for (const entity of entities) {
@@ -180,6 +198,8 @@ export function regionScenarioShapeV137(
     const year = statedYear === null ? UNSTATED_YEAR : statedYear;
     if (statedYear !== null) years.add(statedYear);
     if (isNational || !region) continue;
+    const sliceKey = `${region}|${scenario}|${year}`;
+    rowsPerRegionSlice.set(sliceKey, (rowsPerRegionSlice.get(sliceKey) || 0) + 1);
 
     for (const [key, value] of Object.entries(attributes)) {
       if (NON_MEASURE.has(key) || NON_MEASURE_PATTERN.test(key)) continue;
@@ -233,10 +253,56 @@ export function regionScenarioShapeV137(
     years: [...years].sort((a, b) => a - b),
     rowCount: entities.length,
     hasNationalRow: national,
+    rowIsSubRegion: [...rowsPerRegionSlice.values()].some((count) => count > 1),
   };
 }
 
 const measureLabel = (key: string) => key.replace(/_/gu, " ").trim();
+
+/** Comparable form of a column key or a title: no spaces, no separators. */
+const compactKey = (value: string) =>
+  value.normalize("NFC").replace(/[\s_·(),/-]/gu, "").toLowerCase();
+
+/**
+ * Korean words in a public title, long enough to identify a column.
+ *
+ * Trailing particles are dropped so "기온과" matches a 기온 column.
+ */
+function titleTokensV138(title: string): string[] {
+  return title
+    .normalize("NFC")
+    .split(/[\s·,()/[\]-]+/u)
+    .map((word) => word.replace(/(?:과|와|의|및|별|은|는|이|가|을|를)$/u, ""))
+    .filter((word) => word.length >= 2);
+}
+
+/**
+ * The measure a screen named after one indicator should open on.
+ *
+ * The list is ordered by how many years each column spans, which says nothing
+ * when every column has one year: B-017, titled 물 스트레스, opened on a drought
+ * risk column because it happened to come first. A column whose name carries the
+ * screen's own subject is the one the reader came for, and a raw value is
+ * preferred over the same indicator's banded score.
+ *
+ * No match leaves the order exactly as it was.
+ */
+function preferredMeasureV138(measures: string[], elementTitle: string): string {
+  const tokens = titleTokensV138(elementTitle).map(compactKey).filter(Boolean);
+  if (!tokens.length) return measures[0] || "";
+  const scored = measures
+    .map((key, index) => {
+      const compact = compactKey(key);
+      const matches = tokens.some((token) => compact.includes(token));
+      if (!matches) return null;
+      // 원값 is the source number; 점수/등급 are the publisher's banding of it.
+      const rank = /원값/u.test(key) ? 0 : /점수|등급/u.test(key) ? 2 : 1;
+      return { key, rank, index };
+    })
+    .filter((entry): entry is { key: string; rank: number; index: number } => Boolean(entry))
+    .sort((a, b) => a.rank - b.rank || a.index - b.index);
+  return scored.length ? scored[0].key : measures[0] || "";
+}
 
 const scenarioLabel = (key: string) => SCENARIO_LABELS[key.toLowerCase()] || key;
 
@@ -252,7 +318,9 @@ export default function PublicRegionScenarioSummaryV137({
   const measure =
     shape && shape.measures.includes(selectorState.dimensions.regionMeasure || "")
       ? (selectorState.dimensions.regionMeasure as string)
-      : shape?.measures[0] || "";
+      : shape
+        ? preferredMeasureV138(shape.measures, elementTitle)
+        : "";
   const requestedRegion = selectorState.dimensions.regionName || "";
   const region =
     shape &&
@@ -263,8 +331,11 @@ export default function PublicRegionScenarioSummaryV137({
 
   const series = useMemo(() => {
     if (!shape || !measure) return [];
-    // scenario -> year -> the province values delivered for it
+    // scenario -> year -> the values delivered for it, and which regions they
+    // came from. The count of values and the count of regions are different
+    // numbers whenever a province holds more than one row.
     const buckets = new Map<string, Map<number, number[]>>();
+    const regionsSeen = new Map<string, Map<number, Set<string>>>();
     for (const entity of entities) {
       const attributes = (entity.normalizedAttributes || {}) as Record<string, unknown>;
       const value = numeric(attributes[measure]);
@@ -286,6 +357,11 @@ export default function PublicRegionScenarioSummaryV137({
       const byYear = buckets.get(scenario) || new Map<number, number[]>();
       byYear.set(year, (byYear.get(year) || []).concat(value));
       buckets.set(scenario, byYear);
+      const regionsByYear = regionsSeen.get(scenario) || new Map<number, Set<string>>();
+      const forYear = regionsByYear.get(year) || new Set<string>();
+      if (rowRegion) forYear.add(rowRegion);
+      regionsByYear.set(year, forYear);
+      regionsSeen.set(scenario, regionsByYear);
     }
     return [...buckets]
       .sort((a, b) => a[0].localeCompare(b[0], "en"))
@@ -298,6 +374,7 @@ export default function PublicRegionScenarioSummaryV137({
             return {
               year,
               count: sorted.length,
+              regionCount: regionsSeen.get(scenario)?.get(year)?.size || 0,
               low: quantile(sorted, 0.1),
               median: quantile(sorted, 0.5),
               high: quantile(sorted, 0.9),
@@ -310,9 +387,15 @@ export default function PublicRegionScenarioSummaryV137({
 
   const unitHint = /_일$/u.test(measure) ? "일" : /_mm$/iu.test(measure) ? "mm" : "";
   const distribution = region === ALL_REGIONS;
+  // What one delivered value describes. Where a province holds several rows the
+  // value is a zone's, not a province's, and saying "성·시 분포" over it reported
+  // a zone count as a province count.
+  const rowUnitLabel = shape.rowIsSubRegion ? ROW_UNIT_LABEL : "성·시";
   const regionLabel =
     region === ALL_REGIONS
-      ? `${shape.regions.length}개 성·시 분포`
+      ? shape.rowIsSubRegion
+        ? `${shape.regions.length}개 성·시 · ${rowUnitLabel}별 분포`
+        : `${shape.regions.length}개 성·시 분포`
       : region === NATIONAL_KEY
         ? "전국"
         : region;
@@ -357,7 +440,10 @@ export default function PublicRegionScenarioSummaryV137({
                   ? "각 연도마다 "
                   : ""
             }` +
-            `${regionCount}개 성·시가 가진 값의 분포입니다. 성·시 값을 평균한 전국값은 만들지 않고, ` +
+            (shape.rowIsSubRegion
+              ? `${regionCount}개 성·시에 걸친 ${rowUnitLabel}별 값의 분포입니다. 값은 ${rowUnitLabel} 단위로 제공되며 ` +
+                `성·시 값으로 합치지 않습니다. `
+              : `${regionCount}개 성·시가 가진 값의 분포입니다. 성·시 값을 평균한 전국값은 만들지 않고, `) +
             "중앙값과 10~90 분위로 보여줍니다."
           : `${regionLabel}의 원천값입니다. 계산하지 않은 값 그대로입니다.`}
       </p>
@@ -386,7 +472,11 @@ export default function PublicRegionScenarioSummaryV137({
             value={region}
             onChange={(event) => update("regionName", event.target.value)}
           >
-            <option value={ALL_REGIONS}>{regionCount}개 성·시 전체 분포</option>
+            <option value={ALL_REGIONS}>
+              {shape.rowIsSubRegion
+                ? `${regionCount}개 성·시 · ${rowUnitLabel} 전체 분포`
+                : `${regionCount}개 성·시 전체 분포`}
+            </option>
             {shape.hasNationalRow && <option value={NATIONAL_KEY}>전국 값</option>}
             {shape.regions.map((name) => (
               <option key={name} value={name}>
@@ -407,7 +497,7 @@ export default function PublicRegionScenarioSummaryV137({
               : firstYear === latestYear
                 ? `${latestYear}년`
                 : `${firstYear}~${latestYear}년`} ·{" "}
-            {distribution ? "성·시 값의 분위" : "원천값"}
+            {distribution ? `${rowUnitLabel} 값의 분위` : "원천값"}
           </caption>
           <thead>
             <tr>
@@ -417,6 +507,7 @@ export default function PublicRegionScenarioSummaryV137({
               {distribution && <th scope="col">10분위</th>}
               {distribution && <th scope="col">90분위</th>}
               <th scope="col">성·시 수</th>
+              {shape.rowIsSubRegion && <th scope="col">{rowUnitLabel} 수</th>}
             </tr>
           </thead>
           <tbody>
@@ -440,7 +531,10 @@ export default function PublicRegionScenarioSummaryV137({
                     {distribution && (
                       <td>{point.high === null ? "자료 없음" : formatPublicNumberV126(point.high, unitHint)}</td>
                     )}
-                    <td>{point.count.toLocaleString("ko-KR")}</td>
+                    <td>{point.regionCount.toLocaleString("ko-KR")}</td>
+                    {shape.rowIsSubRegion && (
+                      <td>{point.count.toLocaleString("ko-KR")}</td>
+                    )}
                   </tr>
                 ));
             })}
@@ -450,7 +544,7 @@ export default function PublicRegionScenarioSummaryV137({
       <p className="prs137__note">
         {shownYears.length > 1
           ? "시나리오별로 관측기간의 처음과 마지막 연도를 나란히 둡니다. 연도별 전체 값은 아래 상세 데이터와 다운로드에서 확인할 수 있습니다."
-          : "원천이 제공하는 기준연도는 한 해입니다. 성·시별 값은 아래 상세 데이터와 다운로드에서 확인할 수 있습니다."}
+          : `원천이 제공하는 기준연도는 한 해입니다. ${rowUnitLabel}별 값은 아래 상세 데이터와 다운로드에서 확인할 수 있습니다.`}
       </p>
     </div>
   );

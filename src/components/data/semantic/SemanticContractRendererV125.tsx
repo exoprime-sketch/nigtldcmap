@@ -853,19 +853,39 @@ function CategoryComparisonV125({ rows }: { rows: NumericRowV125[] }) {
   // Rows that share a category label are told apart by the dimension that
   // differs. D-001 drew four "수력 기술" bars reading 1,156 / 1,961 / 98 / 1,103
   // USD/kW - the median and the sample's bounds, with nothing to say so.
+  const comparisonKey = comparisonKeyV138(rows);
+  const rowLabel = (row: NumericRowV125) => {
+    if (comparisonKey) {
+      const value =
+        row.dimensionLabels?.[comparisonKey] || row.dimensions?.[comparisonKey];
+      if (value) return publicDimensionValueV134(comparisonKey, value);
+    }
+    return categoryLabelV125(row);
+  };
   const labelCounts = new Map<string, number>();
   rows.forEach((row) => {
-    const label = categoryLabelV125(row);
+    const label = rowLabel(row);
     labelCounts.set(label, (labelCounts.get(label) || 0) + 1);
   });
   const barLabel = (row: NumericRowV125) => {
-    const label = categoryLabelV125(row);
+    const label = rowLabel(row);
     if ((labelCounts.get(label) || 0) < 2) return label;
     const qualifier = comparisonQualifierV137(row, label);
     return qualifier ? `${label} · ${qualifier}` : label;
   };
+  // "항목별 값" says nothing about what is on the chart. Where every bar carries
+  // the same measure and the same period, those are the title.
+  const measures = new Set(rows.map((row) => row.semanticMeasure.labelKo).filter(Boolean));
+  const periods = new Set(rows.map((row) => row.period).filter(Boolean));
+  const measureTitle = measures.size === 1 ? [...measures][0] : "";
+  const periodTitle = periods.size === 1 ? [...periods][0] : "";
+  const frameTitle = measureTitle
+    ? periodTitle
+      ? `${measureTitle} · ${periodTitle}`
+      : measureTitle
+    : "항목별 값";
   return (
-    <VisualizationFrameV125 eyebrow="항목" title="항목별 값">
+    <VisualizationFrameV125 eyebrow="항목" title={frameTitle}>
       {groupByUnitV125(rows).map(({ unit, rows: unitRows }) => {
         const scale = barScaleV137(unitRows.map((row) => row.value));
         return (
@@ -1524,6 +1544,47 @@ function comparisonQualifierV137(
   }
   const displayed = publicTextV126(row.displayLabel);
   return displayed && displayed !== label ? displayed : null;
+}
+
+/**
+ * The dimension that actually tells a set of rows apart.
+ *
+ * A dimension holding one value cannot label a comparison. B-033 states
+ * "세부 분류 = 성(省) 단위" on all 63 province rows and carries the province name in
+ * a second dimension, so every bar was captioned "성(省) 단위 · 2001" and the
+ * province - the only thing that differed - never appeared. Where the preferred
+ * label repeats, the key taking the most distinct values across these rows is
+ * what is being compared.
+ *
+ * Returns null when the preferred label is already unique, so screens that read
+ * correctly today keep the label they have.
+ */
+function comparisonKeyV138(rows: SemanticObservationV125[]): string | null {
+  const preferred = new Set(rows.map((row) => categoryLabelV125(row)));
+  if (preferred.size === rows.length) return null;
+  const values = new Map<string, Set<string>>();
+  for (const row of rows) {
+    const keys = new Set([
+      ...Object.keys(row.dimensionLabels || {}),
+      ...Object.keys(row.dimensions || {}),
+    ]);
+    for (const key of keys) {
+      const value = row.dimensionLabels?.[key] || row.dimensions?.[key];
+      if (!value) continue;
+      const seen = values.get(key) || new Set<string>();
+      seen.add(String(value));
+      values.set(key, seen);
+    }
+  }
+  let best: string | null = null;
+  let bestSize = preferred.size;
+  for (const [key, seen] of values) {
+    if (seen.size > bestSize) {
+      best = key;
+      bestSize = seen.size;
+    }
+  }
+  return best;
 }
 
 function categoryLabelV125(row: SemanticObservationV125): string {
