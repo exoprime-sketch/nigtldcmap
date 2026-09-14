@@ -77,18 +77,24 @@ async function hitPointFor(page: Page, elementId: string): Promise<Hit | null> {
     const observer = (window as any).__nigtMapObserverV137;
     if (!observer?.ready()) return null;
     const rendered = observer.renderedFeatures(id);
-    for (const feature of rendered.slice(0, 12)) {
+    let covered = null;
+    // Query order differs across GPU/OS implementations. The first line may
+    // sit under a control even though hundreds of other lines are clickable.
+    // Select a genuinely exposed target, without hiding UI or bypassing input.
+    for (const feature of rendered) {
       const point = observer.hitPointFor(id, feature.selectionKey);
       if (point) {
-        return {
+        const hit = {
           x: point.x,
           y: point.y,
           selectionKey: feature.selectionKey,
           label: feature.label ?? null,
         };
+        if (document.elementFromPoint(hit.x, hit.y)?.classList.contains("maplibregl-canvas")) return hit;
+        covered ??= hit;
       }
     }
-    return null;
+    return covered;
   }, elementId);
 }
 
