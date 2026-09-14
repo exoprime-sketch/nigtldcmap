@@ -18,6 +18,7 @@ import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync,
 import { createHash } from "node:crypto";
 import { execFileSync, spawnSync } from "node:child_process";
 import { join, relative, resolve, sep } from "node:path";
+import { ensureCandidateDependencies } from "./candidate-dependencies.mjs";
 
 const ROOT = resolve(import.meta.dirname, "../..");
 const argv = process.argv.slice(2);
@@ -162,10 +163,7 @@ function main() {
     rmSync(resolve(CANDIDATE, "build"), { recursive: true, force: true });
     // Call the CLI's entry script with this Node rather than going through
     // npx.cmd, which spawnSync cannot launch without a shell on Windows.
-    const reactScripts = resolve(CANDIDATE, "node_modules/react-scripts/bin/react-scripts.js");
-    if (!existsSync(reactScripts)) {
-      throw new Error(`REACT_SCRIPTS_MISSING: ${reactScripts}`);
-    }
+    const reactScripts = ensureCandidateDependencies(ROOT, CANDIDATE);
     execFileSync(process.execPath, [reactScripts, "build"], {
       cwd: CANDIDATE,
       stdio: "inherit",

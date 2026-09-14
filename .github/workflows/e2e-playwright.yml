@@ -44,6 +44,9 @@ jobs:
       - name: Install Playwright's Chromium
         run: npx playwright install --with-deps chromium
 
+      - name: Verify candidate dependency setup
+        run: node --test scripts/v137/candidate-dependencies.test.mjs
+
       - name: Build the candidate
         # The suite tests the build the release QA measures, assembled by the
         # same script, from the data the repository ships.
