@@ -116,3 +116,20 @@ passed in 644,102 ms (10 minutes 44 seconds). All 29 React unit tests passed.
 The new large-table production probe passed separately and is also included in
 the next CI command list (40 commands). The first local run used Edge, so the
 two local durations are not a controlled browser-to-browser speed comparison.
+
+## CI #35: isolate the public-text screen sweep
+
+Run 34811051163 built successfully and passed the large-table probe, generated
+data checks and preceding audits. `audit:public-text:v136` stopped after 45
+recorded routes with `Runtime.evaluate` unanswered for 29,159 ms. The report
+therefore correctly failed route coverage (45 instead of at least 157). This
+is not an upload-artifact failure. E2E on the same commit passed 214 tests.
+
+The public-text sweep now starts a fresh Chromium process for each detail
+screen. This bounds retained renderer/decoded-pack state across visits without
+relaxing timeouts, retrying failed routes, skipping data or changing the app.
+It retains console/network errors across all processes and logs each route's
+start, completion and duration. A failure identifies the active element.
+Browser non-response is proven by the log; an OS-level OOM cause is not proven.
+Fresh-process text coverage is not a substitute for E2E navigation tests, which
+remain enabled separately.
