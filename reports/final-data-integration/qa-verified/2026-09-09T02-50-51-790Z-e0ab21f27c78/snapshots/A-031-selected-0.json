@@ -1,0 +1,205 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:51655/?view=data&element=mulryuseonggwajisu-lpi&country=VNM&from=explorer&measure=measure-9ee6e8638d12&year=2022&dim.category=%EA%B5%AD%EC%A0%9C%EC%9A%B4%EC%86%A1#element-detail",
+  "title": "물류성과지수",
+  "body": "검색 결과로 돌아가기 국가 기본 정보 › 공급망 데이터 제공 다운로드 가능 물류성과지수 베트남 · 물류성과지수의 항목별 구성과 연도별 변화를 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 7종 · 관측기간 2007~2022년 이 데이터로 확인할 수 있는 내용 물류성과지수의 수준과 장기 변화 물류성과지수의 현재 수준과 기준시점별 변화를 확인할 수 있습니다. i 지표 읽는 법 물류성과지수(LPI) 통관, 인프라, 국제운송, 물류역량, 추적성, 정시성을 종합합니다. 1–5점 척도에서 점수가 높을수록 물류 성과가 좋음을 뜻합니다. 단위 점 척도 1(낮음)–5(높음) 높고 낮음의 의미 높을수록 물류 성과가 좋음 분류 전체 국제운송 물류서비스 역량 인프라 정시성 종합 추적가능성 통관 세부 분류 전체 국제운송 부문 점수(1=낮음 ~ 5=높음) 물류서비스 역량 부문 점수(1=낮음 ~ 5=높음) 인프라 부문 점수(1=낮음 ~ 5=높음) 정시성 부문 점수(1=낮음 ~ 5=높음) 종합 부문 점수(1=낮음 ~ 5=높음) 추적가능성 부문 점수(1=낮음 ~ 5=높음) 통관 부문 점수(1=낮음 ~ 5=높음) 연도 2022 2018 2016 2014 2012 2010 2007 용어 도움말 ? LPI 설명 물류성과지수(LPI) 3.3 점 · 2022 · 국제운송 · 국제운송 부문 점수(1=낮음 ~ 5=높음) 주 분석 물류성과지수 수준과 변화 연도별 항목 추세 2007~2022년 추세 단위: 점 물류성과지수(LPI(물류성과지수)) · 국제운송 — 국제운송 부문 점수(1=낮음 ~ 5=높음) 표시기간 전체 축소 확대 전체 3.324 3.2544 3.1848 3.1152 3.0456 2.976 2007 2010 2012 2014 2016 2018 2022 연도 측정값(점) 자료정보 상세 데이터 · 전체 49행 · 값 있음 49행 · 결측 0행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 942,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "A-031",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "물류성과지수의 수준과 장기 변화",
+    "지표 읽는 법",
+    "물류성과지수 수준과 변화",
+    "항목 추세",
+    "2007~2022년 추세",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "분류 선택",
+      "dimensionKey": "category",
+      "testId": null,
+      "value": "국제운송",
+      "shown": "국제운송",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "국제운송",
+          "label": "국제운송",
+          "disabled": false
+        },
+        {
+          "value": "물류서비스 역량",
+          "label": "물류서비스 역량",
+          "disabled": false
+        },
+        {
+          "value": "인프라",
+          "label": "인프라",
+          "disabled": false
+        },
+        {
+          "value": "정시성",
+          "label": "정시성",
+          "disabled": false
+        },
+        {
+          "value": "종합",
+          "label": "종합",
+          "disabled": false
+        },
+        {
+          "value": "추적가능성",
+          "label": "추적가능성",
+          "disabled": false
+        },
+        {
+          "value": "통관",
+          "label": "통관",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "세부 분류 선택",
+      "dimensionKey": "detail",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "국제운송 부문 점수(1=낮음 ~ 5=높음)",
+          "label": "국제운송 부문 점수(1=낮음 ~ 5=높음)",
+          "disabled": false
+        },
+        {
+          "value": "물류서비스 역량 부문 점수(1=낮음 ~ 5=높음)",
+          "label": "물류서비스 역량 부문 점수(1=낮음 ~ 5=높음)",
+          "disabled": false
+        },
+        {
+          "value": "인프라 부문 점수(1=낮음 ~ 5=높음)",
+          "label": "인프라 부문 점수(1=낮음 ~ 5=높음)",
+          "disabled": false
+        },
+        {
+          "value": "정시성 부문 점수(1=낮음 ~ 5=높음)",
+          "label": "정시성 부문 점수(1=낮음 ~ 5=높음)",
+          "disabled": false
+        },
+        {
+          "value": "종합 부문 점수(1=낮음 ~ 5=높음)",
+          "label": "종합 부문 점수(1=낮음 ~ 5=높음)",
+          "disabled": false
+        },
+        {
+          "value": "추적가능성 부문 점수(1=낮음 ~ 5=높음)",
+          "label": "추적가능성 부문 점수(1=낮음 ~ 5=높음)",
+          "disabled": false
+        },
+        {
+          "value": "통관 부문 점수(1=낮음 ~ 5=높음)",
+          "label": "통관 부문 점수(1=낮음 ~ 5=높음)",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "연도 선택",
+      "dimensionKey": null,
+      "testId": "v125-year-select",
+      "value": "2022",
+      "shown": "2022",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "2022",
+          "label": "2022",
+          "disabled": false
+        },
+        {
+          "value": "2018",
+          "label": "2018",
+          "disabled": false
+        },
+        {
+          "value": "2016",
+          "label": "2016",
+          "disabled": false
+        },
+        {
+          "value": "2014",
+          "label": "2014",
+          "disabled": false
+        },
+        {
+          "value": "2012",
+          "label": "2012",
+          "disabled": false
+        },
+        {
+          "value": "2010",
+          "label": "2010",
+          "disabled": false
+        },
+        {
+          "value": "2007",
+          "label": "2007",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [
+    "물류성과지수(LPI) 3.3 점 · 2022 · 국제운송 · 국제운송 부문 점수(1=낮음 ~ 5=높음)"
+  ],
+  "chartTexts": [
+    "3.324",
+    "3.2544",
+    "3.1848",
+    "3.1152",
+    "3.0456",
+    "2.976",
+    "2007",
+    "2010",
+    "2012",
+    "2014",
+    "2016",
+    "2018",
+    "2022",
+    "연도",
+    "측정값(점)"
+  ],
+  "tableRows": [],
+  "emptyNotices": [],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

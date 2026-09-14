@@ -1,175 +1,18 @@
 {
   "dimensions": [
     {
-      "key": "category",
-      "labelKo": "분류",
-      "valueCount": 30,
-      "values": [
-        "2030 (수력 제외)",
-        "2030 배출 전망",
-        "2030→2050 CAGR",
-        "2030→2050 연평균 증가율(CAGR)",
-        "2050 (수력 제외)",
-        "2050 배출 전망",
-        "DPPA 표준계약서",
-        "GDP 성장률 가정 (2026-2030)",
-        "GDP 성장률 가정 (2031-2050)",
-        "LNG 복합화력 발전가격 상한",
-        "공표 주기 · 형식",
-        "구조화 데이터 제공 여부",
-        "상업전력 판매량",
-        "소규모 재생에너지 표준 PPA",
-        "수입",
-        "수입 정책 방향",
-        "수입전력 발전가격 상한",
-        "수출",
-        "수출 조건",
-        "육상 근해 풍력 발전 상한가",
-        "재생에너지 발전가격 산정 통칙",
-        "전력 생산+수입량",
-        "전망 문서 시나리오 전망 기관",
-        "전망 문서 시나리오 전망 시나리오",
-        "최대전력(피크수요)",
-        "태양광(부유식) 발전 상한가",
-        "태양광(지상형) 발전 상한가",
-        "평균 소매전력가격",
-        "평균 소매전력가격 밴드",
-        "해상풍력 발전 상한가"
-      ]
-    },
-    {
-      "key": "detail",
-      "labelKo": "세부 분류",
-      "valueCount": 65,
-      "values": [
-        "2030 (전 전원, 국내 수요용·수출 제외) · LNG 화력",
-        "2030 (전 전원, 국내 수요용·수출 제외) · 국내가스 화력",
-        "2030 (전 전원, 국내 수요용·수출 제외) · 바이오매스",
-        "2030 (전 전원, 국내 수요용·수출 제외) · 석탄화력",
-        "2030 (전 전원, 국내 수요용·수출 제외) · 수력",
-        "2030 (전 전원, 국내 수요용·수출 제외) · 수입 전력",
-        "2030 (전 전원, 국내 수요용·수출 제외) · 양수발전",
-        "2030 (전 전원, 국내 수요용·수출 제외) · 원자력",
-        "2030 (전 전원, 국내 수요용·수출 제외) · 유연성 전원",
-        "2030 (전 전원, 국내 수요용·수출 제외) · 육상·근해 풍력",
-        "2030 (전 전원, 국내 수요용·수출 제외) · 저장장치(BESS)",
-        "2030 (전 전원, 국내 수요용·수출 제외) · 지열·기타 신에너지",
-        "2030 (전 전원, 국내 수요용·수출 제외) · 총 설비",
-        "2030 (전 전원, 국내 수요용·수출 제외) · 태양광",
-        "2030 (전 전원, 국내 수요용·수출 제외) · 폐기물발전",
-        "2030 (전 전원, 국내 수요용·수출 제외) · 해상 풍력",
-        "2030 전망",
-        "2050 (전 전원, 국내 수요용·수출 제외) · LNG 수소 전소",
-        "2050 (전 전원, 국내 수요용·수출 제외) · LNG 수소 혼소",
-        "2050 (전 전원, 국내 수요용·수출 제외) · LNG 화력 + CCS(신설)",
-        "2050 (전 전원, 국내 수요용·수출 제외) · 국내가스 화력(LNG 전환)",
-        "2050 (전 전원, 국내 수요용·수출 제외) · 국내가스 화력(수소 전소 전환)",
-        "2050 (전 전원, 국내 수요용·수출 제외) · 바이오매스",
-        "2050 (전 전원, 국내 수요용·수출 제외) · 바이오매스·암모니아 혼소 화력",
-        "2050 (전 전원, 국내 수요용·수출 제외) · 석탄화력",
-        "2050 (전 전원, 국내 수요용·수출 제외) · 수력",
-        "2050 (전 전원, 국내 수요용·수출 제외) · 수입 전력",
-        "2050 (전 전원, 국내 수요용·수출 제외) · 양수발전",
-        "2050 (전 전원, 국내 수요용·수출 제외) · 원자력",
-        "2050 (전 전원, 국내 수요용·수출 제외) · 유연성 전원",
-        "2050 (전 전원, 국내 수요용·수출 제외) · 육상·근해 풍력",
-        "2050 (전 전원, 국내 수요용·수출 제외) · 저장장치(BESS)",
-        "2050 (전 전원, 국내 수요용·수출 제외) · 지열·기타 신에너지",
-        "2050 (전 전원, 국내 수요용·수출 제외) · 총 설비",
-        "2050 (전 전원, 국내 수요용·수출 제외) · 태양광",
-        "2050 (전 전원, 국내 수요용·수출 제외) · 폐기물발전",
-        "2050 (전 전원, 국내 수요용·수출 제외) · 해상 풍력",
-        "2050 유지 규모",
-        "2050 전망",
-        "Quyết định 1313/QĐ-BCT (2025)",
-        "Thông tư 21/2024/TT-BCT 제84조·제12조",
-        "개정 PDP8 전망치 기반 자체 산출",
-        "남부 해역(Nam bộ)",
-        "남중부 해역(Nam Trung bộ)",
-        "라오스 수입 수력 (Quyết định 2647/QĐ-BCT)",
-        "라오스 수입 풍력 (Quyết định 2647/QĐ-BCT)",
-        "라오스·중국",
-        "북부 해역(Bắc bộ)",
-        "상업전력 판매량(상한)",
-        "상업전력 판매량(하한)",
-        "상한(max)",
-        "상향 가능 조건",
-        "시나리오 표기 방식",
-        "싱가포르·말레이시아 등",
-        "역내 전력 연계",
-        "전력 생산+수입량(상한)",
-        "전력 생산+수입량(하한)",
-        "전력부문 온실가스 배출",
-        "전력수요 전망의 전제",
-        "전망을 수립·공표한 주체",
-        "총 발전설비 대비 재생에너지 비중",
-        "최대전력(피크)(상한)",
-        "최대전력(피크)(하한)",
-        "캄보디아",
-        "하한(min)"
-      ]
-    },
-    {
-      "key": "detail_2",
-      "labelKo": "detail_2",
-      "valueCount": 8,
-      "values": [
-        "2030년 수입 규모",
-        "2030년 수출 규모 확대 목표",
-        "2035년 역내 파트너 수출 규모",
-        "2050년 수입 규모",
-        "2050년까지 유지 목표",
-        "상한(max)",
-        "설비용량(범위)",
-        "하한(min)"
-      ]
-    },
-    {
-      "key": "detail_3",
-      "labelKo": "detail_3",
-      "valueCount": 2,
-      "values": [
-        "상한(max)",
-        "하한(min)"
-      ]
-    },
-    {
-      "key": "period",
-      "labelKo": "기간",
-      "valueCount": 3,
-      "values": [
-        "2026-2030",
-        "2031-2050",
-        "—"
-      ]
-    },
-    {
-      "key": "technology",
-      "labelKo": "기술",
+      "key": "entityType",
+      "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
-        "CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08"
-      ]
-    },
-    {
-      "key": "year",
-      "labelKo": "연도",
-      "valueCount": 7,
-      "values": [
-        "2024",
-        "2025",
-        "2026",
-        "2030",
-        "2031",
-        "2035",
-        "2050"
+        "entity"
       ]
     }
   ],
   "elementId": "C-018",
-  "entityCount": 0,
+  "entityCount": 121,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 121,
+  "indicatorCount": 130,
   "indicators": [
     {
       "axisGroupKey": "measure-3660fada7a99|VND/kWh",
@@ -612,6 +455,26 @@
       }
     },
     {
+      "axisGroupKey": "measure-3ed63dbbc930|VND/kWh",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "에너지원별 수요 전망(TWh/Mtoe, 연도별) · energy_demand_projection_baochinhphu",
+      "indicatorId": "C-018_energy_demand_projection_baochinhphu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3ed63dbbc930",
+        "labelKo": "에너지원별 수요 전망(TWh/Mtoe, 연도별)",
+        "unit": "VND/kWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-3ed63dbbc930|VND/kWh||C-018_energy_demand_projection_baochinhphu",
+      "sourceCaveat": null,
+      "sourceLabel": "에너지원별 수요 전망(TWh/Mtoe, 연도별)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-9dcbb2727ad8|십억kWh",
       "dimensionLabels": {
         "category": "상업전력 판매량",
@@ -754,6 +617,46 @@
         "sourceRow": 7,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-d279dc82c5f5|UScent/kWh",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "에너지원별 수요 전망(TWh/Mtoe, 연도별) · 에너지원별 수요 전망(TWh/Mtoe, 연도별) [UScent/kWh]",
+      "indicatorId": "C-018_energy_demand_projection_datafiles_chinhphu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d279dc82c5f5",
+        "labelKo": "에너지원별 수요 전망(TWh/Mtoe, 연도별)",
+        "unit": "UScent/kWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-d279dc82c5f5|UScent/kWh||C-018_energy_demand_projection_datafiles_chinhphu",
+      "sourceCaveat": null,
+      "sourceLabel": "에너지원별 수요 전망(TWh/Mtoe, 연도별)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-fa42cd9a461a|MW",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "에너지원별 수요 전망(TWh/Mtoe, 연도별) · 에너지원별 수요 전망(TWh/Mtoe, 연도별) [MW]",
+      "indicatorId": "C-018_energy_demand_projection_datafiles_chinhphu_2",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-fa42cd9a461a",
+        "labelKo": "에너지원별 수요 전망(TWh/Mtoe, 연도별)",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-fa42cd9a461a|MW||C-018_energy_demand_projection_datafiles_chinhphu_2",
+      "sourceCaveat": null,
+      "sourceLabel": "에너지원별 수요 전망(TWh/Mtoe, 연도별)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-6cfe29d5b954|MW",
@@ -1042,6 +945,26 @@
         "sourceRow": 11,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-3ed63dbbc930|VND/kWh",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "에너지원별 수요 전망(TWh/Mtoe, 연도별) · energy_demand_projection_vanban_chinhphu",
+      "indicatorId": "C-018_energy_demand_projection_vanban_chinhphu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3ed63dbbc930",
+        "labelKo": "에너지원별 수요 전망(TWh/Mtoe, 연도별)",
+        "unit": "VND/kWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-3ed63dbbc930|VND/kWh||C-018_energy_demand_projection_vanban_chinhphu",
+      "sourceCaveat": null,
+      "sourceLabel": "에너지원별 수요 전망(TWh/Mtoe, 연도별)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-9c3d5b71d6bc|MW",
@@ -3256,6 +3179,26 @@
       }
     },
     {
+      "axisGroupKey": "measure-2f171c974d5c|MW",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "발전 설비 확충 계획(기술별 MW)",
+      "indicatorId": "C-018_generation_capacity_plan",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2f171c974d5c",
+        "labelKo": "발전 설비 확충 계획(기술별 MW)",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-2f171c974d5c|MW||C-018_generation_capacity_plan",
+      "sourceCaveat": null,
+      "sourceLabel": "발전 설비 확충 계획(기술별 MW)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-99096e796ae4|UScent/kWh",
       "dimensionLabels": {
         "category": "수입전력 발전가격 상한",
@@ -3628,6 +3571,26 @@
         "sourceRow": 120,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-14d4d72006b4|%/년",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "전력 수요 성장률(%)",
+      "indicatorId": "C-018_power_demand_growth",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-14d4d72006b4",
+        "labelKo": "전력 수요 성장률(%)",
+        "unit": "%/년",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-14d4d72006b4|%/년||C-018_power_demand_growth",
+      "sourceCaveat": null,
+      "sourceLabel": "전력 수요 성장률(%)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-7d299deac441|MW",
@@ -4064,6 +4027,26 @@
       }
     },
     {
+      "axisGroupKey": "measure-160bbcc77f74|기관",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "전망 기관(IEA/현지 정부)",
+      "indicatorId": "C-018_projection_agency",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-160bbcc77f74",
+        "labelKo": "전망 기관(IEA/현지 정부)",
+        "unit": "기관",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-160bbcc77f74|기관||C-018_projection_agency",
+      "sourceCaveat": null,
+      "sourceLabel": "전망 기관(IEA/현지 정부)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-42bda4eb3c1d|기관",
       "dimensionLabels": {
         "category": "전망 문서 시나리오 전망 기관",
@@ -4130,6 +4113,46 @@
         "sourceRow": 6,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-7c71de7bb7f4|십억kWh",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "전망 시나리오명",
+      "indicatorId": "C-018_projection_scenario",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7c71de7bb7f4",
+        "labelKo": "전망 시나리오명",
+        "unit": "십억kWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-7c71de7bb7f4|십억kWh||C-018_projection_scenario",
+      "sourceCaveat": null,
+      "sourceLabel": "전망 시나리오명",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-1edf97d90176|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "RE 비중 목표(%)",
+      "indicatorId": "C-018_re_share_target",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1edf97d90176",
+        "labelKo": "RE 비중 목표(%)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-1edf97d90176|%||C-018_re_share_target",
+      "sourceCaveat": null,
+      "sourceLabel": "RE 비중 목표(%)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-985acb673555|%",
@@ -4443,7 +4466,15 @@
       "indicatorCount": 4,
       "key": "measure-985acb673555",
       "labelKo": "RE 비중 목표",
-      "recordCount": 4,
+      "recordCount": 0,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-1edf97d90176",
+      "labelKo": "RE 비중 목표(%)",
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -4451,7 +4482,7 @@
       "indicatorCount": 2,
       "key": "measure-8a1287739f9a",
       "labelKo": "도매 전력시장 가격 공표",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -4459,15 +4490,23 @@
       "indicatorCount": 62,
       "key": "measure-9c3d5b71d6bc",
       "labelKo": "발전 설비 확충 계획",
-      "recordCount": 62,
+      "recordCount": 0,
       "unit": "MW",
       "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-2f171c974d5c",
+      "labelKo": "발전 설비 확충 계획(기술별 MW)",
+      "recordCount": 0,
+      "unit": "MW",
+      "unitFamily": "capacity"
     },
     {
       "indicatorCount": 2,
       "key": "measure-99096e796ae4",
       "labelKo": "실적 전력가격",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "UScent/kWh",
       "unitFamily": "energy"
     },
@@ -4475,7 +4514,7 @@
       "indicatorCount": 12,
       "key": "measure-3660fada7a99",
       "labelKo": "실적 전력가격",
-      "recordCount": 12,
+      "recordCount": 0,
       "unit": "VND/kWh",
       "unitFamily": "energy"
     },
@@ -4483,7 +4522,7 @@
       "indicatorCount": 1,
       "key": "measure-d9d7075551a9",
       "labelKo": "실적 전력가격",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "đồng/kWh",
       "unitFamily": "energy"
     },
@@ -4491,7 +4530,7 @@
       "indicatorCount": 4,
       "key": "measure-6cfe29d5b954",
       "labelKo": "에너지 수요 전망",
-      "recordCount": 4,
+      "recordCount": 0,
       "unit": "MW",
       "unitFamily": "capacity"
     },
@@ -4499,15 +4538,47 @@
       "indicatorCount": 8,
       "key": "measure-9dcbb2727ad8",
       "labelKo": "에너지 수요 전망",
-      "recordCount": 8,
+      "recordCount": 0,
       "unit": "십억kWh",
+      "unitFamily": "energy"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-fa42cd9a461a",
+      "labelKo": "에너지원별 수요 전망(TWh/Mtoe, 연도별)",
+      "recordCount": 0,
+      "unit": "MW",
+      "unitFamily": "capacity"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-d279dc82c5f5",
+      "labelKo": "에너지원별 수요 전망(TWh/Mtoe, 연도별)",
+      "recordCount": 0,
+      "unit": "UScent/kWh",
+      "unitFamily": "energy"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-3ed63dbbc930",
+      "labelKo": "에너지원별 수요 전망(TWh/Mtoe, 연도별)",
+      "recordCount": 0,
+      "unit": "VND/kWh",
       "unitFamily": "energy"
     },
     {
       "indicatorCount": 9,
       "key": "measure-780da5934061",
       "labelKo": "전력 수요 성장률",
-      "recordCount": 9,
+      "recordCount": 0,
+      "unit": "%/년",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-14d4d72006b4",
+      "labelKo": "전력 수요 성장률(%)",
+      "recordCount": 0,
       "unit": "%/년",
       "unitFamily": "percent"
     },
@@ -4515,7 +4586,7 @@
       "indicatorCount": 7,
       "key": "measure-7d299deac441",
       "labelKo": "전력 수출입 계획",
-      "recordCount": 7,
+      "recordCount": 0,
       "unit": "MW",
       "unitFamily": "text"
     },
@@ -4523,7 +4594,7 @@
       "indicatorCount": 2,
       "key": "measure-9a14876bcbdb",
       "labelKo": "전력 수출입 계획",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -4531,7 +4602,7 @@
       "indicatorCount": 3,
       "key": "measure-610b53bdf15d",
       "labelKo": "전력부문 온실가스(GHG) 배출 전망",
-      "recordCount": 3,
+      "recordCount": 0,
       "unit": "백만톤CO₂",
       "unitFamily": "emissions"
     },
@@ -4539,7 +4610,7 @@
       "indicatorCount": 1,
       "key": "measure-ba5ff802437d",
       "labelKo": "전망 기관",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -4547,20 +4618,36 @@
       "indicatorCount": 1,
       "key": "measure-42bda4eb3c1d",
       "labelKo": "전망 기관",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "기관",
       "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-160bbcc77f74",
+      "labelKo": "전망 기관(IEA/현지 정부)",
+      "recordCount": 0,
+      "unit": "기관",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-7c71de7bb7f4",
+      "labelKo": "전망 시나리오명",
+      "recordCount": 0,
+      "unit": "십억kWh",
+      "unitFamily": "energy"
     },
     {
       "indicatorCount": 3,
       "key": "measure-62abdfc9f3d5",
       "labelKo": "표준 PPA 근거",
-      "recordCount": 3,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     }
   ],
-  "observationCount": 121,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

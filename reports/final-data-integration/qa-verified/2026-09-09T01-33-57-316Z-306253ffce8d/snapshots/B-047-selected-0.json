@@ -1,0 +1,193 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:65003/?view=data&element=yeongan-saengsanryang&country=VNM&from=explorer&measure=measure-018560d0bcaf&year=2025#element-detail",
+  "title": "광물 생산량",
+  "body": "검색 결과로 돌아가기 기후 환경 › 광물 자원량 데이터 제공 다운로드 가능 광물 생산량 베트남 · 광물 생산량의 최근 수준과 항목별 차이를 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 10종 · 관측기간 2024~2025년 이 데이터로 확인할 수 있는 내용 광물 생산량의 항목별 공개 현황 광물 생산량의 공개 값과 항목별 차이를 확인할 수 있습니다. 항목 광산 생산량 · t (Sn 함량) 광산 생산량 · t (W 함량) 광산 생산량 · t (천연) 광산 생산량 · t REO 광산 생산량 · 천 t 광산 생산량 · 천 t (건조) 광산 생산량 · 천 t (아파타이트) 광산 생산량 · 천 t (정제) 생산량 미수록(구리 · t 희토류 생산 급감(2024→2025) 사유 · 단위 미기재 세부 분류 전체 구리 망간 보크사이트 시멘트 알루미나 인광석 주석 텅스텐 형석 흑연 희토류 연도 2025 2024 광산 생산량 3,000 t (W 함량) · 2025 · 텅스텐 주 분석 광물 생산량 항목별 현황 기간 비교 기준연도 대비 변화 단위: t (W 함량) 광산 생산량 — 텅스텐 2024년 3,400 → 2025년 3,000 t (W 함량) -400 t (W 함량) (-11.8%) 자료정보 상세 데이터 · 전체 21행 · 값 있음 19행 · 결측 2행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 674,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "B-047",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "광물 생산량의 항목별 공개 현황",
+    "광물 생산량 항목별 현황",
+    "기준연도 대비 변화",
+    "단위: t (W 함량)",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목 선택",
+      "dimensionKey": null,
+      "testId": "v125-measure-select",
+      "value": "measure-018560d0bcaf",
+      "shown": "광산 생산량 · t (W 함량)",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-3fda9946012e",
+          "label": "광산 생산량 · t (Sn 함량)",
+          "disabled": false
+        },
+        {
+          "value": "measure-018560d0bcaf",
+          "label": "광산 생산량 · t (W 함량)",
+          "disabled": false
+        },
+        {
+          "value": "measure-a0b89d4f4c72",
+          "label": "광산 생산량 · t (천연)",
+          "disabled": false
+        },
+        {
+          "value": "measure-d093490b24b3",
+          "label": "광산 생산량 · t REO",
+          "disabled": false
+        },
+        {
+          "value": "measure-8379792883fd",
+          "label": "광산 생산량 · 천 t",
+          "disabled": false
+        },
+        {
+          "value": "measure-6c271f260dc0",
+          "label": "광산 생산량 · 천 t (건조)",
+          "disabled": false
+        },
+        {
+          "value": "measure-e8c62da3f955",
+          "label": "광산 생산량 · 천 t (아파타이트)",
+          "disabled": false
+        },
+        {
+          "value": "measure-21febf21fabf",
+          "label": "광산 생산량 · 천 t (정제)",
+          "disabled": false
+        },
+        {
+          "value": "measure-6ed8768ea117",
+          "label": "생산량 미수록(구리 · t",
+          "disabled": false
+        },
+        {
+          "value": "measure-a3e629cf6486",
+          "label": "희토류 생산 급감(2024→2025) 사유 · 단위 미기재",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "세부 분류 선택",
+      "dimensionKey": "detail",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "구리",
+          "label": "구리",
+          "disabled": false
+        },
+        {
+          "value": "망간",
+          "label": "망간",
+          "disabled": false
+        },
+        {
+          "value": "보크사이트",
+          "label": "보크사이트",
+          "disabled": false
+        },
+        {
+          "value": "시멘트",
+          "label": "시멘트",
+          "disabled": false
+        },
+        {
+          "value": "알루미나",
+          "label": "알루미나",
+          "disabled": false
+        },
+        {
+          "value": "인광석",
+          "label": "인광석",
+          "disabled": false
+        },
+        {
+          "value": "주석",
+          "label": "주석",
+          "disabled": false
+        },
+        {
+          "value": "텅스텐",
+          "label": "텅스텐",
+          "disabled": false
+        },
+        {
+          "value": "형석",
+          "label": "형석",
+          "disabled": false
+        },
+        {
+          "value": "흑연",
+          "label": "흑연",
+          "disabled": false
+        },
+        {
+          "value": "희토류",
+          "label": "희토류",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "연도 선택",
+      "dimensionKey": null,
+      "testId": "v125-year-select",
+      "value": "2025",
+      "shown": "2025",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "2025",
+          "label": "2025",
+          "disabled": false
+        },
+        {
+          "value": "2024",
+          "label": "2024",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [
+    "광산 생산량 3,000 t (W 함량) · 2025 · 텅스텐"
+  ],
+  "chartTexts": [],
+  "tableRows": [],
+  "emptyNotices": [],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

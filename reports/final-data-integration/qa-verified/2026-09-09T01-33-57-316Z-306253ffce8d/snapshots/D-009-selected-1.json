@@ -1,0 +1,140 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:65003/?view=data&element=gihudaeeung-gihugisul-gwanryeon-jeongbu-yesan-cong-jicul-gyumo-yeondobyeol-cui&country=VNM&from=explorer&measure=measure-f45c91e9977d&dim.category=GDP+%EB%8C%80%EB%B9%84+%EA%B8%B0%ED%9B%84%EC%A7%80%EC%B6%9C+%EB%B9%84%EC%A4%91#element-detail",
+  "title": "기후대응·기후기술 관련 정부 예산",
+  "body": "검색 결과로 돌아가기 시장·산업 및 재원 › 기후대응·기후기술 관련 정부 예산 데이터 제공 다운로드 가능 기후대응·기후기술 관련 정부 예산 베트남 · 기후대응·기후기술 관련 정부 예산의 사업 규모와 분야·기관별 구성을 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 5종 · 관측기간 2013~2020년 이 데이터로 확인할 수 있는 내용 총 지출 규모, 연도별 추이의 항목별 공개 현황 총 지출 규모, 연도별 추이의 공개 값과 항목별 차이를 확인할 수 있습니다. 항목 기후대응 정부 예산 · % 기후대응 정부 예산 · USD 기후대응 정부 예산 · VND 분류 전체 GDP 대비 기후지출 비중 성 단위 기후예산(USD 기준) 성 단위 기후예산(VND 기준) 중앙부처 기후지출 총액(2010~2013 누계) 총 지출 규모 세부 분류 전체 5개 부처 기후지출의 GDP 대비 비중 5개 부처+NTP 4년 누계 2016~2020 누계 연도별 용어 도움말 ? USD 설명 ? GDP 설명 현재 선택 조건에 표시할 값이 없습니다 다른 항목이나 기간을 선택해 확인해 주세요. 자료정보 상세 데이터 · 전체 7행 · 값 있음 7행 · 결측 0행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 605,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "D-009",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "총 지출 규모, 연도별 추이의 항목별 공개 현황",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목 선택",
+      "dimensionKey": null,
+      "testId": "v125-measure-select",
+      "value": "measure-f45c91e9977d",
+      "shown": "기후대응 정부 예산 · USD",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-ec76b1280745",
+          "label": "기후대응 정부 예산 · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-f45c91e9977d",
+          "label": "기후대응 정부 예산 · USD",
+          "disabled": false
+        },
+        {
+          "value": "measure-2ad1ffad839d",
+          "label": "기후대응 정부 예산 · VND",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "분류 선택",
+      "dimensionKey": "category",
+      "testId": null,
+      "value": "GDP 대비 기후지출 비중",
+      "shown": "GDP 대비 기후지출 비중",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "GDP 대비 기후지출 비중",
+          "label": "GDP 대비 기후지출 비중",
+          "disabled": false
+        },
+        {
+          "value": "성 단위 기후예산(USD 기준)",
+          "label": "성 단위 기후예산(USD 기준)",
+          "disabled": false
+        },
+        {
+          "value": "성 단위 기후예산(VND 기준)",
+          "label": "성 단위 기후예산(VND 기준)",
+          "disabled": false
+        },
+        {
+          "value": "중앙부처 기후지출 총액(2010~2013 누계)",
+          "label": "중앙부처 기후지출 총액(2010~2013 누계)",
+          "disabled": false
+        },
+        {
+          "value": "총 지출 규모",
+          "label": "총 지출 규모",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "세부 분류 선택",
+      "dimensionKey": "detail",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "5개 부처 기후지출의 GDP 대비 비중",
+          "label": "5개 부처 기후지출의 GDP 대비 비중",
+          "disabled": false
+        },
+        {
+          "value": "5개 부처+NTP 4년 누계",
+          "label": "5개 부처+NTP 4년 누계",
+          "disabled": false
+        },
+        {
+          "value": "2016~2020 누계",
+          "label": "2016~2020 누계",
+          "disabled": false
+        },
+        {
+          "value": "연도별",
+          "label": "연도별",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [],
+  "chartTexts": [],
+  "tableRows": [],
+  "emptyNotices": [
+    "현재 선택 조건에 표시할 값이 없습니다 다른 항목이나 기간을 선택해 확인해 주세요."
+  ],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

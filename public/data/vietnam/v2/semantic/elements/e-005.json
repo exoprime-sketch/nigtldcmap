@@ -23,10 +23,11 @@
     {
       "key": "orgType",
       "labelKo": "orgType",
-      "valueCount": 10,
+      "valueCount": 11,
       "values": [
         "NGO",
         "NGO(국제)",
+        "국제 NGO 대표사무소",
         "네트워크(NGO 연합)",
         "대학",
         "대학 부설 연구소",
@@ -58,7 +59,7 @@
         "key": "measure-1cf59fec9fbd",
         "labelKo": "대학",
         "unit": "기관(건)",
-        "unitFamily": "text"
+        "unitFamily": "count"
       },
       "seriesKey": "measure-1cf59fec9fbd|기관(건)|category=연구기관 · NGO|E-005_partner_org",
       "sourceCaveat": null,
@@ -81,7 +82,7 @@
       "labelKo": "대학",
       "recordCount": 0,
       "unit": "기관(건)",
-      "unitFamily": "text"
+      "unitFamily": "count"
     }
   ],
   "observationCount": 0,

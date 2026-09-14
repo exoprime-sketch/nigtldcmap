@@ -1,185 +1,18 @@
 {
   "dimensions": [
     {
-      "key": "category",
-      "labelKo": "분류",
-      "valueCount": 45,
-      "values": [
-        "AFOLU(농업 임업 기타토지이용) - CH4",
-        "AFOLU(농업 임업 기타토지이용) - CO2",
-        "AFOLU(농업 임업 기타토지이용) - HFCs",
-        "AFOLU(농업 임업 기타토지이용) - N2O",
-        "AR5 적용, BUR3 수행) 2010 재산정",
-        "AR5 적용, BUR3 수행) 2014 재산정",
-        "BUR1 (2014)",
-        "BUR1 BUR2 공표분(1994 2000 2010 2013 2014)",
-        "BUR2 (2017)",
-        "BUR3 (2016 인벤토리)",
-        "BUR3 (2021, 최신)",
-        "BUR3 재계산분(2010 2014)",
-        "BUR3(2016년 인벤토리)",
-        "CH4",
-        "CO2",
-        "Energy(에너지) - CH4",
-        "Energy(에너지) - CO2",
-        "Energy(에너지) - HFCs",
-        "Energy(에너지) - N2O",
-        "GEF BTR1 준비사업",
-        "HFC-23",
-        "HFC-125",
-        "HFC-227ea",
-        "IPPU(산업공정 제품사용) - CH4",
-        "IPPU(산업공정 제품사용) - CO2",
-        "IPPU(산업공정 제품사용) - HFCs",
-        "IPPU(산업공정 제품사용) - N2O",
-        "N2O",
-        "UNFCCC BTR1 포털",
-        "Waste(폐기물) - CH4",
-        "Waste(폐기물) - CO2",
-        "Waste(폐기물) - HFCs",
-        "Waste(폐기물) - N2O",
-        "국가 통합 감축 실적",
-        "기후변화 대응 사업 건수",
-        "수혜) GCF 지원",
-        "수혜) GEF 지원",
-        "수혜) NDC 이행 국제 재정수요",
-        "연안 관측소 평균 수위",
-        "인벤토리 기준연도) BTR1 (제1차 격년투명성보고서)",
-        "인벤토리 기준연도) BUR1 (제1차 격년갱신보고서)",
-        "인벤토리 기준연도) BUR2 (제2차 격년갱신보고서)",
-        "인벤토리 기준연도) BUR3 (제3차 격년갱신보고서 최신)",
-        "인벤토리 기준연도) GEF/UNEP 지원사업",
-        "전국 7개 기후지역 평균"
-      ]
-    },
-    {
-      "key": "detail",
-      "labelKo": "세부 분류",
-      "valueCount": 37,
-      "values": [
-        "3개 사업",
-        "1958~2018년 관측",
-        "2017년 이후 추진·약정 사업",
-        "2030년까지 총 소요",
-        "BTR1 작성 준비사업(GEF ID 10963)",
-        "BUR1 (2010 인벤토리, 1996 IPCC) · BUR1 (2010 인벤토리)",
-        "BUR1 공표치(246,830.65) 대비",
-        "BUR2 (2013 인벤토리, 1996 IPCC) · BUR2 (2013 인벤토리)",
-        "BUR2/TNC 공표치(283,965.53) 대비",
-        "BUR3 (2016 인벤토리, 2006 IPCC·AR5) · BUR3 (2016 인벤토리)",
-        "CH₄",
-        "CO₂",
-        "GEF ID 10963",
-        "HFCs",
-        "LULUCF 흡수 제외 · BUR1 (2010 인벤토리)",
-        "LULUCF 흡수 제외 · BUR2 (2013 인벤토리)",
-        "LULUCF 흡수 제외 · BUR3 (2016 인벤토리)",
-        "N₂O",
-        "UNFCCC 등록 원문",
-        "UNFCCC 등록 원문 PDF",
-        "관측 기반 평균",
-        "기후변화 대응 사업",
-        "보고서별 공표 인벤토리 · BUR1 (2010 인벤토리)",
-        "보고서별 공표 인벤토리 · BUR2 (2013 인벤토리)",
-        "보고서별 공표 인벤토리 · BUR3 (2016 인벤토리)",
-        "보완출처: WB CCDR 2022 · 총 경제손실(적응 부재 시)",
-        "보완출처: WB CCKP CMIP6 · SSP1-2.6 (저배출)",
-        "보완출처: WB CCKP CMIP6 · SSP2-4.5 (중배출)",
-        "보완출처: WB CCKP CMIP6 · SSP5-8.5 (고배출)",
-        "보완출처: WB CCKP CMIP6 · 연평균 강수량",
-        "보완출처: WB CCKP CMIP6 · 연평균 기온",
-        "부문별 달성량(ktCO₂e)",
-        "인벤토리 기준연도 2010",
-        "인벤토리 기준연도 2013",
-        "인벤토리 기준연도 2016",
-        "지정 출처(수집현황 v5.29)",
-        "파리협정 ETF 신 체계"
-      ]
-    },
-    {
-      "key": "detail_2",
-      "labelKo": "detail_2",
-      "valueCount": 16,
-      "values": [
-        "1995~2014 평균",
-        "2040~2059 기간평균 변화",
-        "2050년 기준",
-        "AFOLU(농업+LULUCF)",
-        "AFOLU(순)",
-        "LULUCF 흡수 반영",
-        "LULUCF(3B Land, 흡수)",
-        "LULUCF(흡수)",
-        "농업(단독)",
-        "산업공정(IP)",
-        "산업공정(IPPU)",
-        "순배출 + LULUCF 흡수 19,218.59",
-        "순배출 + LULUCF 흡수 34,239.83",
-        "순배출 + LULUCF(3B Land) 흡수 39,491.24",
-        "에너지",
-        "폐기물"
-      ]
-    },
-    {
-      "key": "detail_3",
-      "labelKo": "detail_3",
-      "valueCount": 2,
-      "values": [
-        "상한(max)",
-        "하한(min)"
-      ]
-    },
-    {
-      "key": "period",
-      "labelKo": "기간",
-      "valueCount": 10,
-      "values": [
-        "1958-2018",
-        "1994-2014",
-        "1995-2014",
-        "2010·2014",
-        "2017~2020",
-        "2023-2026",
-        "2023.8~2026.4",
-        "2026-07 기준",
-        "2040-2059",
-        "—"
-      ]
-    },
-    {
-      "key": "technology",
-      "labelKo": "기술",
+      "key": "entityType",
+      "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
-        "CTIS-15,CTIS-16,CTIS-17,CTIS-18,CTIS-19,CTIS-21,CTIS-23,CTIS-34"
-      ]
-    },
-    {
-      "key": "year",
-      "labelKo": "연도",
-      "valueCount": 15,
-      "values": [
-        "1958",
-        "1994",
-        "1995",
-        "2010",
-        "2013",
-        "2014",
-        "2016",
-        "2017",
-        "2020",
-        "2021",
-        "2023",
-        "2026",
-        "2030",
-        "2040",
-        "2050"
+        "entity"
       ]
     }
   ],
   "elementId": "C-002",
-  "entityCount": 0,
+  "entityCount": 82,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 81,
+  "indicatorCount": 92,
   "indicators": [
     {
       "axisGroupKey": "measure-a3fe9251e4bd|ktCO2e",
@@ -760,6 +593,26 @@
         "sourceRow": 52,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-19a7bbc6617f|건",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "적응 이행 프로그램 수",
+      "indicatorId": "C-002_adaptation_program_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-19a7bbc6617f",
+        "labelKo": "적응 이행 프로그램 수",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-19a7bbc6617f|건||C-002_adaptation_program_count",
+      "sourceCaveat": null,
+      "sourceLabel": "적응 이행 프로그램 수",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-b2fca25c019d|—",
@@ -1700,6 +1553,26 @@
       }
     },
     {
+      "axisGroupKey": "measure-491ee3a6f236|백만 USD",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "재정 지원 수요/수혜(USD)",
+      "indicatorId": "C-002_climate_finance",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-491ee3a6f236",
+        "labelKo": "재정 지원 수요/수혜(USD)",
+        "unit": "백만 USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-491ee3a6f236|백만 USD||C-002_climate_finance",
+      "sourceCaveat": null,
+      "sourceLabel": "재정 지원 수요/수혜(USD)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-7fce475be7c9|백만 USD",
       "dimensionLabels": {
         "category": "수혜) GCF 지원",
@@ -1800,6 +1673,26 @@
         "sourceRow": 53,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-67c802caa7dc|°C",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "SSP별 기온/강수 전망",
+      "indicatorId": "C-002_climate_projection_ssp",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-67c802caa7dc",
+        "labelKo": "SSP별 기온/강수 전망",
+        "unit": "°C",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-67c802caa7dc|°C||C-002_climate_projection_ssp",
+      "sourceCaveat": null,
+      "sourceLabel": "SSP별 기온/강수 전망",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-ceebc35693c1|°C",
@@ -2074,6 +1967,26 @@
       }
     },
     {
+      "axisGroupKey": "measure-1c4429ee3a8f|°C/10년",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "극한기후지수 변화",
+      "indicatorId": "C-002_extreme_climate_index",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1c4429ee3a8f",
+        "labelKo": "극한기후지수 변화",
+        "unit": "°C/10년",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-1c4429ee3a8f|°C/10년||C-002_extreme_climate_index",
+      "sourceCaveat": null,
+      "sourceLabel": "극한기후지수 변화",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-5b6200592f50|ktCO₂e",
       "dimensionLabels": {
         "category": "BUR3 (2016 인벤토리)",
@@ -2210,6 +2123,46 @@
       }
     },
     {
+      "axisGroupKey": "measure-4eabab3378a3|% of GDP/yr",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "GDP 손실 추정(%)",
+      "indicatorId": "C-002_gdp_loss_estimate",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4eabab3378a3",
+        "labelKo": "GDP 손실 추정(%)",
+        "unit": "% of GDP/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-4eabab3378a3|% of GDP/yr||C-002_gdp_loss_estimate",
+      "sourceCaveat": null,
+      "sourceLabel": "GDP 손실 추정(%)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-99bfdc702ac6|ktCO₂e",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "부문별 배출량 (에너지/IPPU/농업/FOLU/폐기물)",
+      "indicatorId": "C-002_ghg_sector_emission",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-99bfdc702ac6",
+        "labelKo": "부문별 배출량 (에너지/IPPU/농업/FOLU/폐기물)",
+        "unit": "ktCO₂e",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-99bfdc702ac6|ktCO₂e||C-002_ghg_sector_emission",
+      "sourceCaveat": null,
+      "sourceLabel": "부문별 배출량 (에너지/IPPU/농업/FOLU/폐기물)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-e8e8aa100cca|ktCO₂e",
       "dimensionLabels": {
         "detail": "보고서별 공표 인벤토리 · BUR1 (2010 인벤토리)",
@@ -2312,29 +2265,25 @@
       }
     },
     {
-      "axisGroupKey": "measure-b9c330345638|ktCO₂e",
+      "axisGroupKey": "measure-6c3aecb00d97|ktCO₂e",
       "dimensionLabels": {
-        "detail": "LULUCF 흡수 제외 · BUR1 (2010 인벤토리)",
-        "detail_2": "순배출 + LULUCF 흡수 19,218.59",
         "technology": "CTIS-15 · CTIS-16 · CTIS-17 · CTIS-18 · CTIS-19 · CTIS-21 · CTIS-23 · CTIS-34"
       },
       "dimensions": {
-        "detail": "LULUCF 흡수 제외 · BUR1 (2010 인벤토리)",
-        "detail_2": "순배출 + LULUCF 흡수 19,218.59",
         "technology": "CTIS-15,CTIS-16,CTIS-17,CTIS-18,CTIS-19,CTIS-21,CTIS-23,CTIS-34"
       },
-      "displayLabel": "GHG 총배출량 (excl. LULUCF) — LULUCF 흡수 제외 · BUR1 (2010 인벤토리) — 순배출 + LULUCF 흡수 19,218.59",
+      "displayLabel": "GHG 총배출량(incl./excl. LULUCF, MtCO₂e, 시계열)",
       "indicatorId": "C-002_ghg_total_emission",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-b9c330345638",
-        "labelKo": "GHG 총배출량 (excl. LULUCF)",
+        "key": "measure-6c3aecb00d97",
+        "labelKo": "GHG 총배출량(incl./excl. LULUCF, MtCO₂e, 시계열)",
         "unit": "ktCO₂e",
         "unitFamily": "emissions"
       },
-      "seriesKey": "measure-b9c330345638|ktCO₂e|detail=LULUCF 흡수 제외 · BUR1 (2010 인벤토리)|detail_2=순배출 + LULUCF 흡수 19,218.59|technology=CTIS-15,CTIS-16,CTIS-17,CTIS-18,CTIS-19,CTIS-21,CTIS-23,CTIS-34|C-002_ghg_total_emission",
+      "seriesKey": "measure-6c3aecb00d97|ktCO₂e|technology=CTIS-15,CTIS-16,CTIS-17,CTIS-18,CTIS-19,CTIS-21,CTIS-23,CTIS-34|C-002_ghg_total_emission",
       "sourceCaveat": "246,830.65 + 19,218.59 = 266,049.24",
-      "sourceLabel": "GHG 총배출량 (excl. LULUCF) — LULUCF 흡수 제외 · BUR1 (2010 인벤토리) — 순배출 + LULUCF 흡수 19,218.59",
+      "sourceLabel": "GHG 총배출량(incl./excl. LULUCF, MtCO₂e, 시계열)",
       "sourceLabelEn": "Ghg Total Emission",
       "sourceNote": "246,830.65 + 19,218.59 = 266,049.24",
       "sourceProvenance": {
@@ -2548,6 +2497,26 @@
         "sourceRow": 34,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-2b002b9dc4c9|ktCO2e",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "NDC 감축 달성량(부문별 ktCO₂e)",
+      "indicatorId": "C-002_ndc_achievement",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2b002b9dc4c9",
+        "labelKo": "NDC 감축 달성량(부문별 ktCO₂e)",
+        "unit": "ktCO2e",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-2b002b9dc4c9|ktCO2e||C-002_ndc_achievement",
+      "sourceCaveat": null,
+      "sourceLabel": "NDC 감축 달성량(부문별 ktCO₂e)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-a64706b88070|—",
@@ -2856,6 +2825,46 @@
       }
     },
     {
+      "axisGroupKey": "measure-92ed3a9b9108|URL",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "원본 링크(URL) · source_link_thegef",
+      "indicatorId": "C-002_source_link_thegef",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-92ed3a9b9108",
+        "labelKo": "원본 링크(URL)",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-92ed3a9b9108|URL||C-002_source_link_thegef",
+      "sourceCaveat": null,
+      "sourceLabel": "원본 링크(URL)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-92ed3a9b9108|URL",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "원본 링크(URL) · source_link_unfccc",
+      "indicatorId": "C-002_source_link_unfccc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-92ed3a9b9108",
+        "labelKo": "원본 링크(URL)",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-92ed3a9b9108|URL||C-002_source_link_unfccc",
+      "sourceCaveat": null,
+      "sourceLabel": "원본 링크(URL)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-a2c3c0328922|URL",
       "dimensionLabels": {
         "category": "UNFCCC BTR1 포털",
@@ -2888,6 +2897,46 @@
         "sourceRow": 59,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-f2c987592795|USD",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "제출 이력(제출년도/문서 링크) · 제출 이력(제출년도/문서 링크) [USD]",
+      "indicatorId": "C-002_submission_history_thegef",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f2c987592795",
+        "labelKo": "제출 이력(제출년도/문서 링크)",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-f2c987592795|USD||C-002_submission_history_thegef",
+      "sourceCaveat": null,
+      "sourceLabel": "제출 이력(제출년도/문서 링크)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-0f9116697d13|년",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "제출 이력(제출년도/문서 링크) · 제출 이력(제출년도/문서 링크) [년]",
+      "indicatorId": "C-002_submission_history_unfccc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0f9116697d13",
+        "labelKo": "제출 이력(제출년도/문서 링크)",
+        "unit": "년",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-0f9116697d13|년||C-002_submission_history_unfccc",
+      "sourceCaveat": null,
+      "sourceLabel": "제출 이력(제출년도/문서 링크)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     }
   ],
   "measures": [
@@ -2895,31 +2944,63 @@
       "indicatorCount": 16,
       "key": "measure-a3fe9251e4bd",
       "labelKo": "2016년 부문×가스별 GHG 배출량",
-      "recordCount": 16,
+      "recordCount": 0,
       "unit": "ktCO2e",
       "unitFamily": "emissions"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-4eabab3378a3",
+      "labelKo": "GDP 손실 추정(%)",
+      "recordCount": 0,
+      "unit": "% of GDP/yr",
+      "unitFamily": "percent"
     },
     {
       "indicatorCount": 3,
       "key": "measure-e8e8aa100cca",
       "labelKo": "GHG 순배출량 (incl. LULUCF)",
-      "recordCount": 3,
+      "recordCount": 0,
       "unit": "ktCO₂e",
       "unitFamily": "emissions"
     },
     {
-      "indicatorCount": 3,
+      "indicatorCount": 2,
       "key": "measure-b9c330345638",
       "labelKo": "GHG 총배출량 (excl. LULUCF)",
-      "recordCount": 3,
+      "recordCount": 0,
       "unit": "ktCO₂e",
       "unitFamily": "emissions"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-6c3aecb00d97",
+      "labelKo": "GHG 총배출량(incl./excl. LULUCF, MtCO₂e, 시계열)",
+      "recordCount": 0,
+      "unit": "ktCO₂e",
+      "unitFamily": "emissions"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-2b002b9dc4c9",
+      "labelKo": "NDC 감축 달성량(부문별 ktCO₂e)",
+      "recordCount": 0,
+      "unit": "ktCO2e",
+      "unitFamily": "emissions"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-67c802caa7dc",
+      "labelKo": "SSP별 기온/강수 전망",
+      "recordCount": 0,
+      "unit": "°C",
+      "unitFamily": "other"
     },
     {
       "indicatorCount": 4,
       "key": "measure-5b6200592f50",
       "labelKo": "가스 종류별 배출량 (2016, 순배출 기준)",
-      "recordCount": 4,
+      "recordCount": 0,
       "unit": "ktCO₂e",
       "unitFamily": "emissions"
     },
@@ -2927,7 +3008,7 @@
       "indicatorCount": 1,
       "key": "measure-8dc8c2ae4077",
       "labelKo": "관측 기후변화 추세 (실측)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "mm/yr",
       "unitFamily": "other"
     },
@@ -2935,7 +3016,15 @@
       "indicatorCount": 1,
       "key": "measure-4e05f124c6ae",
       "labelKo": "관측 기후변화 추세 (실측)",
-      "recordCount": 1,
+      "recordCount": 0,
+      "unit": "°C/10년",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-1c4429ee3a8f",
+      "labelKo": "극한기후지수 변화",
+      "recordCount": 0,
       "unit": "°C/10년",
       "unitFamily": "other"
     },
@@ -2943,7 +3032,7 @@
       "indicatorCount": 3,
       "key": "measure-046719c0d86c",
       "labelKo": "기후 시나리오 전망 (SSP)",
-      "recordCount": 3,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -2951,7 +3040,7 @@
       "indicatorCount": 1,
       "key": "measure-10bfa972bfc3",
       "labelKo": "기후 시나리오 전망 (SSP)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "mm/yr",
       "unitFamily": "other"
     },
@@ -2959,7 +3048,7 @@
       "indicatorCount": 4,
       "key": "measure-ceebc35693c1",
       "labelKo": "기후 시나리오 전망 (SSP)",
-      "recordCount": 4,
+      "recordCount": 0,
       "unit": "°C",
       "unitFamily": "other"
     },
@@ -2967,7 +3056,7 @@
       "indicatorCount": 2,
       "key": "measure-13c0b78abeb8",
       "labelKo": "기후변화 경제적 손실 전망",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "% of GDP/yr",
       "unitFamily": "percent"
     },
@@ -2975,7 +3064,7 @@
       "indicatorCount": 3,
       "key": "measure-7fce475be7c9",
       "labelKo": "기후재원 (수요",
-      "recordCount": 3,
+      "recordCount": 0,
       "unit": "백만 USD",
       "unitFamily": "currency"
     },
@@ -2983,7 +3072,7 @@
       "indicatorCount": 1,
       "key": "measure-91df52fce09f",
       "labelKo": "보고서 제출 이력 (제출연도",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "USD",
       "unitFamily": "currency"
     },
@@ -2991,7 +3080,7 @@
       "indicatorCount": 1,
       "key": "measure-a64706b88070",
       "labelKo": "보고서 제출 이력 (제출연도",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -2999,7 +3088,7 @@
       "indicatorCount": 2,
       "key": "measure-7f4a34f9c1cc",
       "labelKo": "보고서 제출 이력 (제출연도",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "년",
       "unitFamily": "other"
     },
@@ -3007,7 +3096,7 @@
       "indicatorCount": 1,
       "key": "measure-d0bc312bd49f",
       "labelKo": "보고서 제출 이력 (제출연도",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "년월일",
       "unitFamily": "text"
     },
@@ -3015,7 +3104,15 @@
       "indicatorCount": 17,
       "key": "measure-a5e940a1bb05",
       "labelKo": "부문별 배출량",
-      "recordCount": 17,
+      "recordCount": 0,
+      "unit": "ktCO₂e",
+      "unitFamily": "emissions"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-99bfdc702ac6",
+      "labelKo": "부문별 배출량 (에너지/IPPU/농업/FOLU/폐기물)",
+      "recordCount": 0,
       "unit": "ktCO₂e",
       "unitFamily": "emissions"
     },
@@ -3023,7 +3120,15 @@
       "indicatorCount": 5,
       "key": "measure-a2c3c0328922",
       "labelKo": "원본 링크 (URL)",
-      "recordCount": 5,
+      "recordCount": 0,
+      "unit": "URL",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-92ed3a9b9108",
+      "labelKo": "원본 링크(URL)",
+      "recordCount": 0,
       "unit": "URL",
       "unitFamily": "text"
     },
@@ -3031,15 +3136,23 @@
       "indicatorCount": 2,
       "key": "measure-bc0de29d912d",
       "labelKo": "인벤토리 재산정 (2006 IPCC",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "ktCO₂e",
       "unitFamily": "emissions"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-491ee3a6f236",
+      "labelKo": "재정 지원 수요/수혜(USD)",
+      "recordCount": 0,
+      "unit": "백만 USD",
+      "unitFamily": "currency"
     },
     {
       "indicatorCount": 3,
       "key": "measure-b2fca25c019d",
       "labelKo": "적용 GWP(100년) 및 인벤토리 가이드라인 판",
-      "recordCount": 3,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -3047,7 +3160,7 @@
       "indicatorCount": 6,
       "key": "measure-d41268faa59a",
       "labelKo": "적용 GWP(100년) 및 인벤토리 가이드라인 판",
-      "recordCount": 6,
+      "recordCount": 0,
       "unit": "배수",
       "unitFamily": "other"
     },
@@ -3055,7 +3168,7 @@
       "indicatorCount": 1,
       "key": "measure-cdbf2c38afde",
       "labelKo": "적응 이행 및 NDC 감축 실적",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -3063,12 +3176,36 @@
       "indicatorCount": 1,
       "key": "measure-9d4399c7d3f9",
       "labelKo": "적응 이행 및 NDC 감축 실적",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "건",
       "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-19a7bbc6617f",
+      "labelKo": "적응 이행 프로그램 수",
+      "recordCount": 0,
+      "unit": "건",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-f2c987592795",
+      "labelKo": "제출 이력(제출년도/문서 링크)",
+      "recordCount": 0,
+      "unit": "USD",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-0f9116697d13",
+      "labelKo": "제출 이력(제출년도/문서 링크)",
+      "recordCount": 0,
+      "unit": "년",
+      "unitFamily": "other"
     }
   ],
-  "observationCount": 81,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

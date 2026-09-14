@@ -1,0 +1,26 @@
+{
+  "schema": "nigt-public-data-promotion-1",
+  "generatedAt": "2026-09-09T07:45:04.639Z",
+  "from": ".staging/final/public/data/vietnam/v2",
+  "to": "public/data/vietnam/v2",
+  "reviewedFingerprint": "db2808a8e45a09e373539c88d32ce5b1378ff8f7eaafa6590a569b7ec681161c",
+  "reviewedFileCount": 494,
+  "sourceFingerprint": "db2808a8e45a09e373539c88d32ce5b1378ff8f7eaafa6590a569b7ec681161c",
+  "sourceFileCount": 494,
+  "matchesReviewedCandidate": true,
+  "before": {
+    "fingerprint": "d0f420fd9a902e5704148903a9741be5239eb545a7012fc7bfbb55a288401e77",
+    "fileCount": 494
+  },
+  "applied": true,
+  "after": {
+    "fingerprint": "db2808a8e45a09e373539c88d32ce5b1378ff8f7eaafa6590a569b7ec681161c",
+    "fileCount": 494
+  },
+  "status": "PASS",
+  "largestFile": {
+    "rel": "downloads/b-006.json",
+    "bytes": 86305614
+  },
+  "largestFileUnder100MiB": true
+}

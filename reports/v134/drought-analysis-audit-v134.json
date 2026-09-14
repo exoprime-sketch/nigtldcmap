@@ -1,19 +1,29 @@
 {
   "schemaVersion": "v134-context-glossary-analysis-audit-1",
-  "generatedAt": "2026-09-06T23:37:04.592Z",
+  "generatedAt": "2026-09-13T23:28:14.781Z",
   "audit": "drought-analysis:v134",
   "status": "PASS",
   "summary": {
     "type": "summary",
     "audit": "drought-analysis:v134",
     "status": "PASS",
-    "passed": 19,
+    "passed": 17,
     "failed": 0,
-    "total": 19,
+    "total": 17,
     "failedChecks": [],
     "speiYearRange": "1951–2100",
-    "scenarioYearRange": "2015–2100",
-    "speiScenarioCount": 2,
+    "cddYearRange": "1950–2100",
+    "speiScenarioCount": 6,
+    "speiScenarioLabels": [
+      "과거 관측",
+      "SSP1-1.9",
+      "SSP1-2.6",
+      "SSP2-4.5",
+      "SSP3-7.0",
+      "SSP5-8.5"
+    ],
+    "speiRegionCount": 64,
+    "publishedRows": 31688,
     "runtimeFailure": null
   },
   "checks": [
@@ -32,40 +42,46 @@
       "status": "PASS",
       "actual": {
         "errors": [],
-        "rows": 503
+        "rows": 31688
       },
       "expected": {
         "errors": [],
-        "rows": 503
+        "rows": 31688
       }
     },
     {
       "type": "check",
       "audit": "drought-analysis:v134",
-      "name": "B005_SPEI_YEAR_RANGE",
+      "name": "B005_SPEI_DELIVERED",
       "status": "PASS",
-      "actual": [
-        1951,
-        2100
-      ],
-      "expected": [
-        1951,
-        2100
-      ]
+      "actual": {
+        "rows": 30877,
+        "years": [
+          1951,
+          2100
+        ]
+      },
+      "expected": {
+        "rows": "> 0",
+        "years": "stated by the delivery"
+      }
     },
     {
       "type": "check",
       "audit": "drought-analysis:v134",
-      "name": "B005_SCENARIO_YEAR_RANGE",
+      "name": "B005_CDD_DELIVERED",
       "status": "PASS",
-      "actual": [
-        2015,
-        2100
-      ],
-      "expected": [
-        2015,
-        2100
-      ]
+      "actual": {
+        "rows": 26004,
+        "years": [
+          1950,
+          2100
+        ]
+      },
+      "expected": {
+        "rows": "> 0",
+        "years": "stated by the delivery"
+      }
     },
     {
       "type": "check",
@@ -73,42 +89,30 @@
       "name": "B005_SCENARIO_COUNT",
       "status": "PASS",
       "actual": [
-        "B-005_spei12_ssp245",
-        "B-005_spei12_ssp585"
+        "historical",
+        "ssp119",
+        "ssp126",
+        "ssp245",
+        "ssp370",
+        "ssp585"
       ],
-      "expected": [
-        "B-005_spei12_ssp245",
-        "B-005_spei12_ssp585"
-      ]
+      "expected": {
+        "historical": true,
+        "projections": ">= 2"
+      }
     },
     {
       "type": "check",
       "audit": "drought-analysis:v134",
-      "name": "B005_COMPARISON_VALUES",
+      "name": "B005_SCENARIO_RENDERER",
       "status": "PASS",
-      "actual": [],
-      "expected": []
-    },
-    {
-      "type": "check",
-      "audit": "drought-analysis:v134",
-      "name": "B005_SPECIALIZED_RENDERER",
-      "status": "PASS",
-      "actual": "SpeiDroughtScenarioAnalysisV134 + B-005",
+      "actual": "PublicRegionScenarioSummaryV137 wired",
       "expected": "wired"
     },
     {
       "type": "check",
       "audit": "drought-analysis:v134",
-      "name": "B005_NO_ARBITRARY_BAND",
-      "status": "PASS",
-      "actual": true,
-      "expected": true
-    },
-    {
-      "type": "check",
-      "audit": "drought-analysis:v134",
-      "name": "B005_ZERO_REFERENCE_CONTRACT",
+      "name": "B005_NO_DERIVED_NATIONAL_MEAN",
       "status": "PASS",
       "actual": true,
       "expected": true
@@ -120,29 +124,22 @@
       "status": "PASS",
       "actual": {
         "runtimeFailure": null,
-        "snapshot": {
-          "mounted": true,
-          "meaning": true,
-          "zeroReference": true,
-          "scenarioTrend": true,
-          "scenarioCount": 2,
-          "yearButtons": [
-            "2050년",
-            "2075년",
-            "2100년",
-            "SSP2-4.5",
-            "SSP5-8.5"
-          ],
-          "comparisonRows": 2,
-          "zeroImputationCopy": false,
-          "arbitraryQualitative": false,
-          "internalCodeVisible": false
-        }
+        "mounted": true,
+        "emptyClaim": false
       },
       "expected": {
         "runtimeFailure": null,
-        "mounted": true
+        "mounted": true,
+        "emptyClaim": false
       }
+    },
+    {
+      "type": "check",
+      "audit": "drought-analysis:v134",
+      "name": "B005_SPEI_MEASURE_ON_SCREEN",
+      "status": "PASS",
+      "actual": "표준강수증발산지수 SPEI12 · 1951~2100년 · 성·시 값의 분위",
+      "expected": "SPEI with 1951~2100"
     },
     {
       "type": "check",
@@ -155,47 +152,48 @@
     {
       "type": "check",
       "audit": "drought-analysis:v134",
-      "name": "B005_ZERO_REFERENCE",
-      "status": "PASS",
-      "actual": true,
-      "expected": true
-    },
-    {
-      "type": "check",
-      "audit": "drought-analysis:v134",
       "name": "B005_SCENARIO_TREND",
       "status": "PASS",
       "actual": {
-        "trend": true,
-        "scenarioCount": 2
+        "shown": [
+          "과거 관측",
+          "SSP1-1.9",
+          "SSP1-2.6",
+          "SSP2-4.5",
+          "SSP3-7.0",
+          "SSP5-8.5"
+        ],
+        "missing": []
       },
       "expected": {
-        "trend": true,
-        "scenarioCount": 2
+        "shown": [
+          "과거 관측",
+          "SSP1-1.9",
+          "SSP1-2.6",
+          "SSP2-4.5",
+          "SSP3-7.0",
+          "SSP5-8.5"
+        ],
+        "missing": []
       }
     },
     {
       "type": "check",
       "audit": "drought-analysis:v134",
-      "name": "B005_SELECTED_YEAR_COMPARISON",
+      "name": "B005_REGION_DISTRIBUTION",
       "status": "PASS",
       "actual": {
-        "rows": 2,
-        "buttons": [
-          "2050년",
-          "2075년",
-          "2100년",
-          "SSP2-4.5",
-          "SSP5-8.5"
-        ]
+        "shown": [
+          63,
+          62,
+          60,
+          61
+        ],
+        "delivered": 64
       },
       "expected": {
-        "rows": 2,
-        "buttons": [
-          "2050년",
-          "2075년",
-          "2100년"
-        ]
+        "shown": "<= 64",
+        "delivered": 64
       }
     },
     {
@@ -240,7 +238,17 @@
     }
   ],
   "speiYearRange": "1951–2100",
-  "scenarioYearRange": "2015–2100",
-  "speiScenarioCount": 2,
+  "cddYearRange": "1950–2100",
+  "speiScenarioCount": 6,
+  "speiScenarioLabels": [
+    "과거 관측",
+    "SSP1-1.9",
+    "SSP1-2.6",
+    "SSP2-4.5",
+    "SSP3-7.0",
+    "SSP5-8.5"
+  ],
+  "speiRegionCount": 64,
+  "publishedRows": 31688,
   "runtimeFailure": null
 }

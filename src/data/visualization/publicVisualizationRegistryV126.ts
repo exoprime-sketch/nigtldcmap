@@ -64,9 +64,34 @@ const SPECIALIZED_ELEMENTS_V126 = new Set([
   "E-012",
 ]);
 
+/**
+ * Which series a reader meets first, where the alphabetical default is not the
+ * one the element is named for. A-007 opened on 도시인구 and A-012 on the LULUCF
+ * net flux - a negative series - under the heading "온실가스 총배출량".
+ */
 const PUBLIC_DEFAULT_MEASURE_KEYS_V127: Readonly<Record<string, string>> =
   Object.freeze({
     "A-001": "measure-ffa3eb23fb73",
+    // 총인구
+    "A-007": "measure-be793786b249",
+    // 총 GHG 배출량 · LULUCF 제외
+    "A-012": "measure-31c014917117",
+    // 월 평년강수 - a seasonality screen opened on the single annual normal
+    "B-001": "measure-706a7683fa04",
+    // 기후대별 점유 면적 - the screen opened on the one-row dominant zone
+    "B-002": "measure-095dc03abb8f",
+    // 인구 전 구간 - a long-term projection screen opened on the historical
+    // reference series, which the source itself marks "(참고)"
+    "B-019": "measure-1a16449ec4ae",
+    // GDP(PPP) 전 구간 - the same shape as B-019: seventeen projected years
+    // exist, and the screen opened on a series that holds one
+    "B-018": "measure-42d427ed0568",
+    // INFORM Risk 시계열(2017–2026) - the headline score is published as a
+    // single current value; the ten-year series is a separate measure
+    "B-020": "measure-f22e839fa61b",
+    // 화석연료 보조금 규모(USD) - the only one of the three units the source
+    // gives more than one year for
+    "D-010": "measure-465d4d66c9ba",
   });
 
 const PUBLIC_SINGLE_DENOMINATOR_DIMENSIONS_V129: Readonly<

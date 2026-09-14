@@ -42,6 +42,28 @@ let browser = null;
 let runtimeFailure = null;
 const inventory = [];
 const brokenAssets = [];
+const runtimeErrors = [];
+const routeTimings = [];
+let currentRoute = "shell";
+
+async function closeBrowser() {
+  if (!browser) return;
+  runtimeErrors.push(...browser.runtimeErrors.map((error) => ({ ...error, route: currentRoute })));
+  await browser.close();
+  browser = null;
+}
+
+async function openBrowser() {
+  await closeBrowser();
+  browser = await launchHeadlessBrowser();
+  await setViewport(browser.cdp, 1440, 1000);
+  await browser.cdp.send("Network.enable");
+  browser.cdp.on("Network.responseReceived", ({ response }) => {
+    if (response?.url?.startsWith(server.origin) && Number(response.status) >= 400) {
+      brokenAssets.push({ route: currentRoute, url: response.url, status: response.status });
+    }
+  });
+}
 
 function record(route, pageType, rows) {
   rows.forEach((row) => {
@@ -60,14 +82,7 @@ try {
     throw new Error("production build missing; run npm run build first");
   }
   server = await startStaticBuildServer(resolve(PROJECT_ROOT, "build"));
-  browser = await launchHeadlessBrowser();
-  await setViewport(browser.cdp, 1440, 1000);
-  await browser.cdp.send("Network.enable");
-  browser.cdp.on("Network.responseReceived", ({ response }) => {
-    if (response?.url?.startsWith(server.origin) && Number(response.status) >= 400) {
-      brokenAssets.push({ url: response.url, status: response.status });
-    }
-  });
+  await openBrowser();
 
   const shellRoutes = [
     { key: "home", hash: "home", pageType: "home" },
@@ -107,14 +122,24 @@ try {
 
   for (const element of catalog) {
     const elementId = String(element.elementId || "");
+    // Text coverage tests individual screens, not a 152-navigation session.
+    // Release the previous renderer/decoded shards instead of accumulating
+    // multi-hundred-MB climate packs in one Chromium process. No retries/skips.
+    await closeBrowser();
+    currentRoute = elementId;
+    const started = Date.now();
+    console.log(JSON.stringify({ type: "route-start", audit: audit.name, elementId }));
+    await openBrowser();
     await navigate(browser.cdp, detailUrlV135(server.url, elementId));
     await waitForValue(browser.cdp, ANALYSIS_READY, { timeoutMs: 30_000 });
     record(elementId, "detail", await evaluateValue(browser.cdp, visibleTextInventoryExpressionV136()));
+    routeTimings.push({ elementId, elapsedMs: Date.now() - started });
+    console.log(JSON.stringify({ type: "route-end", ...routeTimings.at(-1) }));
   }
 } catch (error) {
-  runtimeFailure = error instanceof Error ? error.message : String(error);
+  runtimeFailure = `${currentRoute}: ${error instanceof Error ? error.message : String(error)}`;
 } finally {
-  if (browser) await browser.close();
+  await closeBrowser();
   if (server) await server.close();
 }
 
@@ -153,7 +178,7 @@ audit.check("INTERNAL_PUBLIC_TOKEN_COUNT", internalHits.length === 0, internalHi
 audit.check("AWKWARD_GENERIC_COPY_COUNT", awkwardHits.length === 0, awkwardHits.slice(0, 25), []);
 audit.check("PUBLIC_VERSION_TOKEN_COUNT", versionTokens.length === 0, versionTokens.slice(0, 25), []);
 audit.check("BROKEN_ASSET", brokenAssets.length === 0, brokenAssets, []);
-audit.check("CONSOLE_ERROR", (browser?.runtimeErrors || []).length === 0, browser?.runtimeErrors || [], []);
+audit.check("CONSOLE_ERROR", runtimeErrors.length === 0, runtimeErrors, []);
 
 finishAuditV136(audit, "public-text-audit-v136.json", {
   publicTextInventoryCount: inventory.length,
@@ -163,4 +188,5 @@ finishAuditV136(audit, "public-text-audit-v136.json", {
   internalPublicTokenCount: internalHits.length,
   awkwardGenericCopyCount: awkwardHits.length,
   runtimeFailure,
+  routeTimings,
 });

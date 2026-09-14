@@ -1,107 +1,16 @@
 {
   "dimensions": [
     {
-      "key": "category",
-      "labelKo": "분류",
-      "valueCount": 1,
-      "values": [
-        "베트남"
-      ]
-    },
-    {
-      "key": "detail",
-      "labelKo": "세부 분류",
-      "valueCount": 2,
-      "values": [
-        "국가 포트폴리오 게재 GCF 승인 재원 총액",
-        "국가 포트폴리오 게재 승인 프로젝트 총 건수"
-      ]
-    },
-    {
       "key": "entityType",
       "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
-        "사업·재원"
-      ]
-    },
-    {
-      "key": "financingType",
-      "labelKo": "financingType",
-      "valueCount": 7,
-      "values": [
-        "Equity",
-        "Equity, Grants, in-kind",
-        "Grants",
-        "Grants, in-kind",
-        "Grants, Senior Loans, in-kind",
-        "Guarantees, Grants, Senior Loans, Equity",
-        "Results-Based Payment"
-      ]
-    },
-    {
-      "key": "sector",
-      "labelKo": "부문",
-      "valueCount": 3,
-      "values": [
-        "Adaptation",
-        "Cross-cutting",
-        "Mitigation"
-      ]
-    },
-    {
-      "key": "status",
-      "labelKo": "status",
-      "valueCount": 3,
-      "values": [
-        "Approved",
-        "Completed (완료 2024-07-11)",
-        "Under implementation"
-      ]
-    },
-    {
-      "key": "targetCountry",
-      "labelKo": "targetCountry",
-      "valueCount": 3,
-      "values": [
-        "Cambodia, Indonesia, Lao People's Democratic Republic (the), Philippines (the), Viet Nam",
-        "Lao People's Democratic Republic (the), Viet Nam",
-        "Viet Nam"
-      ]
-    },
-    {
-      "key": "targetRegion",
-      "labelKo": "targetRegion",
-      "valueCount": 7,
-      "values": [
-        "28개 연안 성(省)",
-        "Phu Tho·Son La·Dien Bien·Lai Chau·Lao Cai·Tuyen Quang 6개 성",
-        "Thua Thien Hue 성",
-        "라오스·베트남(하부 메콩)",
-        "전국",
-        "중부고원·남중부해안",
-        "캄보디아·인도네시아·라오스·필리핀·베트남"
-      ]
-    },
-    {
-      "key": "technology",
-      "labelKo": "기술",
-      "valueCount": 1,
-      "values": [
-        "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
-      ]
-    },
-    {
-      "key": "year",
-      "labelKo": "연도",
-      "valueCount": 1,
-      "values": [
-        "2026"
+        "entity"
       ]
     }
   ],
   "elementId": "D-020",
-  "entityCount": 8,
+  "entityCount": 9,
   "generatedAt": "2026-08-27T00:00:00Z",
   "indicatorCount": 3,
   "indicators": [
@@ -213,7 +122,7 @@
       "indicatorCount": 1,
       "key": "measure-ba2b045ce04e",
       "labelKo": "GCF 승인 프로젝트 건수",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "건",
       "unitFamily": "count"
     },
@@ -229,12 +138,12 @@
       "indicatorCount": 1,
       "key": "measure-fd66d4602473",
       "labelKo": "GCF 승인액 총계",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "USD",
       "unitFamily": "currency"
     }
   ],
-  "observationCount": 2,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

@@ -1,0 +1,236 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:51655/?view=data&element=jeongjeonbindo-saidi-saifi&country=VNM&from=explorer&measure=measure-24815c640251&year=2026#element-detail",
+  "title": "정전 빈도와 지속시간",
+  "body": "검색 결과로 돌아가기 국가 기본 정보 › 에너지·전력 정보 데이터 제공 다운로드 가능 정전 빈도와 지속시간 베트남 · 정전 빈도와 지속시간의 항목별 구성과 연도별 변화를 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 14종 · 관측기간 2015~2026년 이 데이터로 확인할 수 있는 내용 정전 빈도와 지속시간의 추세와 최근 수준 정전 빈도와 지속시간의 현재 수준과 기준시점별 변화를 확인할 수 있습니다. 항목 MAIFI · 회/고객 SAIDI · 분/고객 SAIFI · 회/고객 분류 전체 EVN 그룹 전체 EVNCPC(중부) EVNHANOI(하노이) EVNHCMC(호치민, 구 시가지 관할) EVNHCMC(호치민, 현행 확대 관할) EVNNPC(북부) EVNSPC(남부) 세부 분류 전체 연간 고객당 순간정전 횟수 연간 고객당 지속정전 횟수 연간 고객당 총 정전시간 연도 2026 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 용어 도움말 ? SAIDI 설명 주 분석 정전 빈도와 지속시간 연도별 변화 연도별 항목 추세 2015~2026년 추세 단위: 분/고객 SAIDI(고객 평균 정전시간 지수) · EVN(베트남전력공사) 그룹 전체 — 연간 고객당 총 정전시간 SAIDI(고객 평균 정전시간 지수) · EVNCPC(중부) — 연간 고객당 총 정전시간 SAIDI(고객 평균 정전시간 지수) · EVNHANOI(하노이전력공사)(하노이) — 연간 고객당 총 정전시간 SAIDI(고객 평균 정전시간 지수) · EVNHCMC(호치민, 현행 확대 관할) — 연간 고객당 총 정전시간 SAIDI(고객 평균 정전시간 지수) · EVNHCMC(호치민, 구 시가지 관할) — 연간 고객당 총 정전시간 SAIDI(고객 평균 정전시간 지수) · EVNSPC(남부전력공사)(남부) — 연간 고객당 총 정전시간 표시기간 전체 축소 확대 전체 2,461.44 1,969.152 1,476.864 984.576 492.288 0 2015 2016 2018 2020 2022 2023 2025 2026 연도 측정값(분/고객) 결측 2건 원천 기관이 공개하지 않음 자료정보 상세 데이터 · 전체 54행 · 값 있음 39행 · 결측 15행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 1129,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "A-022",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "정전 빈도와 지속시간의 추세와 최근 수준",
+    "정전 빈도와 지속시간 연도별 변화",
+    "항목 추세",
+    "2015~2026년 추세",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목 선택",
+      "dimensionKey": null,
+      "testId": "v125-measure-select",
+      "value": "measure-24815c640251",
+      "shown": "SAIDI · 분/고객",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-12b77d48a0f1",
+          "label": "MAIFI · 회/고객",
+          "disabled": false
+        },
+        {
+          "value": "measure-24815c640251",
+          "label": "SAIDI · 분/고객",
+          "disabled": false
+        },
+        {
+          "value": "measure-36db0aadc092",
+          "label": "SAIFI · 회/고객",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "분류 선택",
+      "dimensionKey": "category",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "EVN 그룹 전체",
+          "label": "EVN 그룹 전체",
+          "disabled": false
+        },
+        {
+          "value": "EVNCPC(중부)",
+          "label": "EVNCPC(중부)",
+          "disabled": false
+        },
+        {
+          "value": "EVNHANOI(하노이)",
+          "label": "EVNHANOI(하노이)",
+          "disabled": false
+        },
+        {
+          "value": "EVNHCMC(호치민, 구 시가지 관할)",
+          "label": "EVNHCMC(호치민, 구 시가지 관할)",
+          "disabled": false
+        },
+        {
+          "value": "EVNHCMC(호치민, 현행 확대 관할)",
+          "label": "EVNHCMC(호치민, 현행 확대 관할)",
+          "disabled": false
+        },
+        {
+          "value": "EVNNPC(북부)",
+          "label": "EVNNPC(북부)",
+          "disabled": false
+        },
+        {
+          "value": "EVNSPC(남부)",
+          "label": "EVNSPC(남부)",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "세부 분류 선택",
+      "dimensionKey": "detail",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "연간 고객당 순간정전 횟수",
+          "label": "연간 고객당 순간정전 횟수",
+          "disabled": false
+        },
+        {
+          "value": "연간 고객당 지속정전 횟수",
+          "label": "연간 고객당 지속정전 횟수",
+          "disabled": false
+        },
+        {
+          "value": "연간 고객당 총 정전시간",
+          "label": "연간 고객당 총 정전시간",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(4) > select:nth-of-type(1)",
+      "id": null,
+      "label": "연도 선택",
+      "dimensionKey": null,
+      "testId": "v125-year-select",
+      "value": "2026",
+      "shown": "2026",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "2026",
+          "label": "2026",
+          "disabled": false
+        },
+        {
+          "value": "2025",
+          "label": "2025",
+          "disabled": false
+        },
+        {
+          "value": "2024",
+          "label": "2024",
+          "disabled": false
+        },
+        {
+          "value": "2023",
+          "label": "2023",
+          "disabled": false
+        },
+        {
+          "value": "2022",
+          "label": "2022",
+          "disabled": false
+        },
+        {
+          "value": "2021",
+          "label": "2021",
+          "disabled": false
+        },
+        {
+          "value": "2020",
+          "label": "2020",
+          "disabled": false
+        },
+        {
+          "value": "2019",
+          "label": "2019",
+          "disabled": false
+        },
+        {
+          "value": "2018",
+          "label": "2018",
+          "disabled": false
+        },
+        {
+          "value": "2017",
+          "label": "2017",
+          "disabled": false
+        },
+        {
+          "value": "2016",
+          "label": "2016",
+          "disabled": false
+        },
+        {
+          "value": "2015",
+          "label": "2015",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [],
+  "chartTexts": [
+    "2,461.44",
+    "1,969.152",
+    "1,476.864",
+    "984.576",
+    "492.288",
+    "0",
+    "2015",
+    "2016",
+    "2018",
+    "2020",
+    "2022",
+    "2023",
+    "2025",
+    "2026",
+    "연도",
+    "측정값(분/고객)"
+  ],
+  "tableRows": [],
+  "emptyNotices": [],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

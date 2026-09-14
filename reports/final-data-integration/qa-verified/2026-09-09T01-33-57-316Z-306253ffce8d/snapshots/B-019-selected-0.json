@@ -1,0 +1,219 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:65003/?view=data&element=ssp-ingu-jeonmang-ssp1-ssp2-ssp3-ssp4-ssp5&country=VNM&from=explorer&measure=measure-1a16449ec4ae&year=2100#element-detail",
+  "title": "장기 인구 전망",
+  "body": "검색 결과로 돌아가기 기후 환경 › SSP(공유 사회 경제 경로)기반 사회경제적 리스크 데이터 제공 다운로드 가능 장기 인구 전망 베트남 · 장기 인구 전망의 시나리오별 전망과 기간별 차이를 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 11종 · 관측기간 1950~2100년 이 데이터로 확인할 수 있는 내용 장기 인구 전망의 시나리오·기간별 변화 장기 인구 전망이 시나리오와 기간에 따라 어떻게 달라지는지 확인할 수 있습니다. i 지표 읽는 법 SSP 인구 전망 공유사회경제경로(SSP)별 미래 인구 가정값을 보여줍니다. 인구 증감은 좋고 나쁨을 단독으로 판정하는 점수가 아닙니다. 높고 낮음의 의미 높고 낮음에 가치 판단을 부여하지 않음 항목 인구 과거 실적(참고) · 백만명 인구 전 구간 · 백만명 인구 전망 · 백만명 세부 분류 전체 SSP1 SSP2 SSP3 SSP4 SSP5 연도 2100 2095 2090 2085 2080 2075 2070 2065 2060 2055 2050 2045 2040 2035 2030 2025 2020 주 분석 장기 인구 전망 시나리오별 전망 연도별 항목 추세 2020~2100년 추세 단위: 백만명 인구 전 구간 — SSP1(공통사회경제경로 1) 인구 전 구간 — SSP2(공통사회경제경로 2) 인구 전 구간 — SSP3(공통사회경제경로 3) 인구 전 구간 — SSP4(공통사회경제경로 4) 인구 전 구간 — SSP5(공통사회경제경로 5) 표시기간 전체 축소 확대 전체 123.911 114.1095 104.308 94.5066 84.7051 74.9036 2020 2030 2045 2055 2065 2075 2090 2100 연도 측정값(백만명) 자료정보 상세 데이터 · 전체 110행 · 값 있음 110행 · 결측 0행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 909,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "B-019",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "장기 인구 전망의 시나리오·기간별 변화",
+    "지표 읽는 법",
+    "장기 인구 전망 시나리오별 전망",
+    "항목 추세",
+    "2020~2100년 추세",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목 선택",
+      "dimensionKey": null,
+      "testId": "v125-measure-select",
+      "value": "measure-1a16449ec4ae",
+      "shown": "인구 전 구간 · 백만명",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-03a2515adf3e",
+          "label": "인구 과거 실적(참고) · 백만명",
+          "disabled": false
+        },
+        {
+          "value": "measure-1a16449ec4ae",
+          "label": "인구 전 구간 · 백만명",
+          "disabled": false
+        },
+        {
+          "value": "measure-443491e8ce3c",
+          "label": "인구 전망 · 백만명",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "세부 분류 선택",
+      "dimensionKey": "detail",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "SSP1",
+          "label": "SSP1",
+          "disabled": false
+        },
+        {
+          "value": "SSP2",
+          "label": "SSP2",
+          "disabled": false
+        },
+        {
+          "value": "SSP3",
+          "label": "SSP3",
+          "disabled": false
+        },
+        {
+          "value": "SSP4",
+          "label": "SSP4",
+          "disabled": false
+        },
+        {
+          "value": "SSP5",
+          "label": "SSP5",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "연도 선택",
+      "dimensionKey": null,
+      "testId": "v125-year-select",
+      "value": "2100",
+      "shown": "2100",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "2100",
+          "label": "2100",
+          "disabled": false
+        },
+        {
+          "value": "2095",
+          "label": "2095",
+          "disabled": false
+        },
+        {
+          "value": "2090",
+          "label": "2090",
+          "disabled": false
+        },
+        {
+          "value": "2085",
+          "label": "2085",
+          "disabled": false
+        },
+        {
+          "value": "2080",
+          "label": "2080",
+          "disabled": false
+        },
+        {
+          "value": "2075",
+          "label": "2075",
+          "disabled": false
+        },
+        {
+          "value": "2070",
+          "label": "2070",
+          "disabled": false
+        },
+        {
+          "value": "2065",
+          "label": "2065",
+          "disabled": false
+        },
+        {
+          "value": "2060",
+          "label": "2060",
+          "disabled": false
+        },
+        {
+          "value": "2055",
+          "label": "2055",
+          "disabled": false
+        },
+        {
+          "value": "2050",
+          "label": "2050",
+          "disabled": false
+        },
+        {
+          "value": "2045",
+          "label": "2045",
+          "disabled": false
+        },
+        {
+          "value": "2040",
+          "label": "2040",
+          "disabled": false
+        },
+        {
+          "value": "2035",
+          "label": "2035",
+          "disabled": false
+        },
+        {
+          "value": "2030",
+          "label": "2030",
+          "disabled": false
+        },
+        {
+          "value": "2025",
+          "label": "2025",
+          "disabled": false
+        },
+        {
+          "value": "2020",
+          "label": "2020",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [],
+  "chartTexts": [
+    "123.911",
+    "114.1095",
+    "104.308",
+    "94.5066",
+    "84.7051",
+    "74.9036",
+    "2020",
+    "2030",
+    "2045",
+    "2055",
+    "2065",
+    "2075",
+    "2090",
+    "2100",
+    "연도",
+    "측정값(백만명)"
+  ],
+  "tableRows": [],
+  "emptyNotices": [],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

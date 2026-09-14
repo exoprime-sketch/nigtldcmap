@@ -1,0 +1,71 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:51655/?view=data&element=gamcug-jeogeung-gubunbyeol-yesan-baebun-biyul&country=VNM&from=explorer&dim.budgetBasis=recurrent#element-detail",
+  "title": "감축/적응 구분별 예산 배분 비율",
+  "body": "검색 결과로 돌아가기 시장·산업 및 재원 › 기후대응·기후기술 관련 정부 예산 데이터 제공 다운로드 가능 감축/적응 구분별 예산 배분 비율 베트남 · 기후변화 대응 지출이 적응·감축·동시기여에 어떻게 배분됐는지 확인할 수 있습니다. 다운로드 공개 데이터 데이터 분석 베트남 · 지표 7종 · 관측기간 2010~2020년 이 데이터로 확인할 수 있는 내용 기후예산의 적응·감축 배분 구조 기후변화 대응 지출이 적응·감축·동시기여에 어떻게 배분됐는지 확인할 수 있습니다. i 지표 읽는 법 기후예산 배분 비율 기후변화 대응 지출이 적응·감축·동시기여에 어떻게 배분됐는지 보여줍니다. 각 비율은 선택한 예산 범위를 분모로 사용합니다. 분모와 보고서 판이 다른 값은 하나의 추세로 연결하지 않습니다. 단위 % 높고 낮음의 의미 선택한 예산 분모 안에서 배분 구조를 해석 이 데이터로 확인할 수 있는 내용 기후변화 대응 지출이 적응·감축·동시기여에 어떻게 배분됐는지 확인할 수 있습니다. 각 비율은 화면에 적힌 예산범위를 분모로 사용합니다. 서로 다른 분모와 보고서의 값은 직접 비교하지 않습니다. 주 분석 대표 예산 배분 구조 2010–2013년 총 기후변화 대응 지출 기준 적응 88% 감축 2% 동시기여 10% 적응 88% 감축 2% 동시기여 10% CPEIR 2015의 동일한 총 기후변화 대응 지출 분모에서 세 구분의 합이 100%가 되는 공개값입니다. 보조 분석 다른 예산 기준의 공개값 예산 기준 총 기후변화 지출 경상예산 공공 자본지출 부처 기후예산 성 단위 기후예산 보고서 CPEIR 2015 기준기간 2010–2013 분모 경상예산 적응 미공개 감축 2010년 7% · 2013년 22% 동시기여 미공개 보고서에 공개되지 않은 구분은 미공개로 표시하며 임의 값으로 바꾸지 않습니다. 자료정보 상세 데이터 · 전체 10행 · 값 있음 8행 · 결측 2행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 946,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "D-005",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "기후예산의 적응·감축 배분 구조",
+    "지표 읽는 법",
+    "이 데이터로 확인할 수 있는 내용",
+    "대표 예산 배분 구조",
+    "다른 예산 기준의 공개값",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(3) > header:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "예산 기준",
+      "dimensionKey": null,
+      "testId": "d005-budget-basis-selector",
+      "value": "recurrent",
+      "shown": "경상예산",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "total-climate",
+          "label": "총 기후변화 지출",
+          "disabled": false
+        },
+        {
+          "value": "recurrent",
+          "label": "경상예산",
+          "disabled": false
+        },
+        {
+          "value": "capital",
+          "label": "공공 자본지출",
+          "disabled": false
+        },
+        {
+          "value": "ministry",
+          "label": "부처 기후예산",
+          "disabled": false
+        },
+        {
+          "value": "province",
+          "label": "성 단위 기후예산",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [],
+  "chartTexts": [],
+  "tableRows": [],
+  "emptyNotices": [],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

@@ -1,0 +1,425 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:51655/?view=data&element=pogyeom-pogyeomilsu-tx35-pogyeomilsu-tx40-yeoldaeya-tr20-yeoldaeya-tr25-heat-index-hi35&country=VNM&from=explorer#element-detail",
+  "title": "폭염 위험",
+  "body": "검색 결과로 돌아가기 기후 환경 › 기후 영향 인자 데이터 제공 다운로드 가능 폭염 위험 베트남 · 폭염 위험의 항목별 구성과 연도별 변화를 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 목록 32,608건 이 데이터로 확인할 수 있는 내용 폭염 위험의 지역별 차이와 범위 폭염 위험의 지역 차이와 공개된 공간 범위를 확인할 수 있습니다. i 지표 읽는 법 폭염·열대야 전망 기온·체감온도 임계값을 넘는 폭염일과 열대야 일수를 보여줍니다. 미래 값은 온실가스 시나리오를 가정한 전망이므로 관측값과 구분합니다. 임계값이 다른 지표는 같은 계열로 연결하지 않습니다. 단위 일 높고 낮음의 의미 일수가 많을수록 해당 폭염·열대야 조건에 노출되는 기간이 김 주 분석 63개 성·시 분포 각 시나리오와 연도마다 63개 성·시가 가진 값의 분포입니다. 성·시 값을 평균한 전국값은 만들지 않고, 중앙값과 10~90 분위로 보여줍니다. 표시 항목 Heat Index 35 일 열대야 TR 23 일 열대야 TR 26 일 폭염일수 TX 35 일 열대야 TR 29 일 폭염일수 TX 40 일 지역 63개 성·시 전체 분포 전국 값 AnGiang BacGiang BacKan BacLieu BacNinh BaRia-VungTau BenTre BinhDinh BinhDuong BinhPhuoc BinhThuan CaMau CanTho CaoBang DakLak DakNong DaNang DienBien DongNai DongThap GiaLai HaGiang HaiDuong HaiPhong HaNam HaNoi HaTinh HauGiang HoaBinh HoChiMinh HungYen KhanhHoa KienGiang KonTum LaiChau LamDong LangSon LaoCai LongAn NamDinh NgheAn NinhBinh NinhThuan PhuTho PhuYen QuangBinh QuangNam QuangNgai QuangNinh QuangTri SocTrang SonLa TayNinh ThaiBinh ThaiNguyen ThanhHoa ThuaThienHue TienGiang TraVinh TuyenQuang VinhLong VinhPhuc YenBai Heat Index 35 일 (일) · 1950~2100년 · 성·시 값의 분위 시나리오 기간 중앙값 10분위 90분위 성·시 수 과거 관측 1950년 9.77 0.37 65.41 56 과거 관측 2014년 33.14 1.16 91.36 61 SSP1-1.9 2015년 41.98 2.42 95.73 61 SSP1-1.9 2100년 71.01 17.4 113 63 SSP1-2.6 2015년 38.26 2.26 98.7 61 SSP1-2.6 2100년 86.31 9.78 147.1 63 SSP2-4.5 2015년 42.93 2.7 94.81 61 SSP2-4.5 2100년 143.3 41.15 258.8 63 SSP3-7.0 2015년 42.96 2.34 95.25 61 SSP3-7.0 2100년 188.8 83.11 310 63 SSP5-8.5 2015년 40.47 2.59 96.71 61 SSP5-8.5 2100년 199.4 124 343.7 63 시나리오별로 관측기간의 처음과 마지막 연도를 나란히 둡니다. 연도별 전체 값은 아래 상세 데이터와 다운로드에서 확인할 수 있습니다. 자료정보 상세 데이터 · 목록 32,608건 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 1708,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "B-006",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "폭염 위험의 지역별 차이와 범위",
+    "지표 읽는 법",
+    "63개 성·시 분포",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "표시 항목 선택",
+      "dimensionKey": null,
+      "testId": null,
+      "value": "Heat_Index_35_일",
+      "shown": "Heat Index 35 일",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "Heat_Index_35_일",
+          "label": "Heat Index 35 일",
+          "disabled": false
+        },
+        {
+          "value": "열대야_TR_23_일",
+          "label": "열대야 TR 23 일",
+          "disabled": false
+        },
+        {
+          "value": "열대야_TR_26_일",
+          "label": "열대야 TR 26 일",
+          "disabled": false
+        },
+        {
+          "value": "폭염일수_TX_35_일",
+          "label": "폭염일수 TX 35 일",
+          "disabled": false
+        },
+        {
+          "value": "열대야_TR_29_일",
+          "label": "열대야 TR 29 일",
+          "disabled": false
+        },
+        {
+          "value": "폭염일수_TX_40_일",
+          "label": "폭염일수 TX 40 일",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "지역 선택",
+      "dimensionKey": null,
+      "testId": null,
+      "value": "__all__",
+      "shown": "63개 성·시 전체 분포",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "__all__",
+          "label": "63개 성·시 전체 분포",
+          "disabled": false
+        },
+        {
+          "value": "__national__",
+          "label": "전국 값",
+          "disabled": false
+        },
+        {
+          "value": "AnGiang",
+          "label": "AnGiang",
+          "disabled": false
+        },
+        {
+          "value": "BacGiang",
+          "label": "BacGiang",
+          "disabled": false
+        },
+        {
+          "value": "BacKan",
+          "label": "BacKan",
+          "disabled": false
+        },
+        {
+          "value": "BacLieu",
+          "label": "BacLieu",
+          "disabled": false
+        },
+        {
+          "value": "BacNinh",
+          "label": "BacNinh",
+          "disabled": false
+        },
+        {
+          "value": "BaRia-VungTau",
+          "label": "BaRia-VungTau",
+          "disabled": false
+        },
+        {
+          "value": "BenTre",
+          "label": "BenTre",
+          "disabled": false
+        },
+        {
+          "value": "BinhDinh",
+          "label": "BinhDinh",
+          "disabled": false
+        },
+        {
+          "value": "BinhDuong",
+          "label": "BinhDuong",
+          "disabled": false
+        },
+        {
+          "value": "BinhPhuoc",
+          "label": "BinhPhuoc",
+          "disabled": false
+        },
+        {
+          "value": "BinhThuan",
+          "label": "BinhThuan",
+          "disabled": false
+        },
+        {
+          "value": "CaMau",
+          "label": "CaMau",
+          "disabled": false
+        },
+        {
+          "value": "CanTho",
+          "label": "CanTho",
+          "disabled": false
+        },
+        {
+          "value": "CaoBang",
+          "label": "CaoBang",
+          "disabled": false
+        },
+        {
+          "value": "DakLak",
+          "label": "DakLak",
+          "disabled": false
+        },
+        {
+          "value": "DakNong",
+          "label": "DakNong",
+          "disabled": false
+        },
+        {
+          "value": "DaNang",
+          "label": "DaNang",
+          "disabled": false
+        },
+        {
+          "value": "DienBien",
+          "label": "DienBien",
+          "disabled": false
+        },
+        {
+          "value": "DongNai",
+          "label": "DongNai",
+          "disabled": false
+        },
+        {
+          "value": "DongThap",
+          "label": "DongThap",
+          "disabled": false
+        },
+        {
+          "value": "GiaLai",
+          "label": "GiaLai",
+          "disabled": false
+        },
+        {
+          "value": "HaGiang",
+          "label": "HaGiang",
+          "disabled": false
+        },
+        {
+          "value": "HaiDuong",
+          "label": "HaiDuong",
+          "disabled": false
+        },
+        {
+          "value": "HaiPhong",
+          "label": "HaiPhong",
+          "disabled": false
+        },
+        {
+          "value": "HaNam",
+          "label": "HaNam",
+          "disabled": false
+        },
+        {
+          "value": "HaNoi",
+          "label": "HaNoi",
+          "disabled": false
+        },
+        {
+          "value": "HaTinh",
+          "label": "HaTinh",
+          "disabled": false
+        },
+        {
+          "value": "HauGiang",
+          "label": "HauGiang",
+          "disabled": false
+        },
+        {
+          "value": "HoaBinh",
+          "label": "HoaBinh",
+          "disabled": false
+        },
+        {
+          "value": "HoChiMinh",
+          "label": "HoChiMinh",
+          "disabled": false
+        },
+        {
+          "value": "HungYen",
+          "label": "HungYen",
+          "disabled": false
+        },
+        {
+          "value": "KhanhHoa",
+          "label": "KhanhHoa",
+          "disabled": false
+        },
+        {
+          "value": "KienGiang",
+          "label": "KienGiang",
+          "disabled": false
+        },
+        {
+          "value": "KonTum",
+          "label": "KonTum",
+          "disabled": false
+        },
+        {
+          "value": "LaiChau",
+          "label": "LaiChau",
+          "disabled": false
+        },
+        {
+          "value": "LamDong",
+          "label": "LamDong",
+          "disabled": false
+        },
+        {
+          "value": "LangSon",
+          "label": "LangSon",
+          "disabled": false
+        },
+        {
+          "value": "LaoCai",
+          "label": "LaoCai",
+          "disabled": false
+        },
+        {
+          "value": "LongAn",
+          "label": "LongAn",
+          "disabled": false
+        },
+        {
+          "value": "NamDinh",
+          "label": "NamDinh",
+          "disabled": false
+        },
+        {
+          "value": "NgheAn",
+          "label": "NgheAn",
+          "disabled": false
+        },
+        {
+          "value": "NinhBinh",
+          "label": "NinhBinh",
+          "disabled": false
+        },
+        {
+          "value": "NinhThuan",
+          "label": "NinhThuan",
+          "disabled": false
+        },
+        {
+          "value": "PhuTho",
+          "label": "PhuTho",
+          "disabled": false
+        },
+        {
+          "value": "PhuYen",
+          "label": "PhuYen",
+          "disabled": false
+        },
+        {
+          "value": "QuangBinh",
+          "label": "QuangBinh",
+          "disabled": false
+        },
+        {
+          "value": "QuangNam",
+          "label": "QuangNam",
+          "disabled": false
+        },
+        {
+          "value": "QuangNgai",
+          "label": "QuangNgai",
+          "disabled": false
+        },
+        {
+          "value": "QuangNinh",
+          "label": "QuangNinh",
+          "disabled": false
+        },
+        {
+          "value": "QuangTri",
+          "label": "QuangTri",
+          "disabled": false
+        },
+        {
+          "value": "SocTrang",
+          "label": "SocTrang",
+          "disabled": false
+        },
+        {
+          "value": "SonLa",
+          "label": "SonLa",
+          "disabled": false
+        },
+        {
+          "value": "TayNinh",
+          "label": "TayNinh",
+          "disabled": false
+        },
+        {
+          "value": "ThaiBinh",
+          "label": "ThaiBinh",
+          "disabled": false
+        },
+        {
+          "value": "ThaiNguyen",
+          "label": "ThaiNguyen",
+          "disabled": false
+        },
+        {
+          "value": "ThanhHoa",
+          "label": "ThanhHoa",
+          "disabled": false
+        },
+        {
+          "value": "ThuaThienHue",
+          "label": "ThuaThienHue",
+          "disabled": false
+        },
+        {
+          "value": "TienGiang",
+          "label": "TienGiang",
+          "disabled": false
+        },
+        {
+          "value": "TraVinh",
+          "label": "TraVinh",
+          "disabled": false
+        },
+        {
+          "value": "TuyenQuang",
+          "label": "TuyenQuang",
+          "disabled": false
+        },
+        {
+          "value": "VinhLong",
+          "label": "VinhLong",
+          "disabled": false
+        },
+        {
+          "value": "VinhPhuc",
+          "label": "VinhPhuc",
+          "disabled": false
+        },
+        {
+          "value": "YenBai",
+          "label": "YenBai",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [],
+  "chartTexts": [],
+  "tableRows": [
+    "과거 관측 1950년 9.77 0.37 65.41 56",
+    "과거 관측 2014년 33.14 1.16 91.36 61",
+    "SSP1-1.9 2015년 41.98 2.42 95.73 61",
+    "SSP1-1.9 2100년 71.01 17.4 113 63",
+    "SSP1-2.6 2015년 38.26 2.26 98.7 61",
+    "SSP1-2.6 2100년 86.31 9.78 147.1 63",
+    "SSP2-4.5 2015년 42.93 2.7 94.81 61",
+    "SSP2-4.5 2100년 143.3 41.15 258.8 63",
+    "SSP3-7.0 2015년 42.96 2.34 95.25 61",
+    "SSP3-7.0 2100년 188.8 83.11 310 63",
+    "SSP5-8.5 2015년 40.47 2.59 96.71 61",
+    "SSP5-8.5 2100년 199.4 124 343.7 63"
+  ],
+  "emptyNotices": [],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

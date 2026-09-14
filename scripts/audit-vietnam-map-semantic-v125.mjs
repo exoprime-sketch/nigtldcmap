@@ -5,11 +5,13 @@ import { resolve } from "node:path";
 import ts from "typescript";
 import {
   AuditV125,
+  MAP_FEATURE_FLOOR_V125,
   PROJECT_ROOT,
   SEMANTIC_ROOT,
   V2_ROOT,
   catalogElements,
   isNonEmptyString,
+  mapFeatureCountIsSound,
   publicUrlToPath,
   readJson,
   readText,
@@ -87,11 +89,15 @@ audit.check(
   { count: activeLayers.length, missing: missingRequiredLayers },
   { count: 12, missing: [] }
 );
+// The exact feature count is a property of the delivery, not of the platform:
+// publishing every authorised carbon-credit project took C-025 from 18 features
+// to 262. What is asserted is that the index declares what its layers hold and
+// that the total has not collapsed.
 audit.check(
   "MAP_FEATURE_COUNT",
-  mapFeatureCount === 2900 && Number(mapIndex.mapFeatureCount) === 2900,
+  mapFeatureCountIsSound(mapIndex.mapFeatureCount, mapFeatureCount),
   { calculated: mapFeatureCount, declared: mapIndex.mapFeatureCount ?? null },
-  { calculated: 2900, declared: 2900 }
+  { calculated: `>= ${MAP_FEATURE_FLOOR_V125}`, declared: "equal to calculated" }
 );
 
 const adm1Features = Array.isArray(adm1Result.value?.features)

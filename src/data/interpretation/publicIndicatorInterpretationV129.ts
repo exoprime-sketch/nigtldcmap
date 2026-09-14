@@ -132,23 +132,29 @@ export const PUBLIC_INDICATOR_INTERPRETATIONS_V129: readonly PublicIndicatorInte
     {
       elementId: "A-002",
       explanationRequired: true,
-      publicName: "정책·제도 역량(CPIA)",
-      publicUnit: "점",
+      // The final delivery ships this element as the Worldwide Governance
+      // Indicators, not CPIA: six dimensions, each with an Estimate and a
+      // Percentile Rank, 1996-2024. The page was explaining CPIA's 1-6 scale
+      // over data that is on neither scale - an Estimate runs about -2.5 to 2.5
+      // and a Percentile Rank 0 to 100 - while showing no values at all.
+      publicName: "국가 거버넌스 지표(WGI)",
+      publicUnit: "백분위",
       meaningBullets: [
-        "경제관리, 구조정책, 사회적 포용, 공공부문 관리 역량을 평가합니다.",
-        "1–6점 척도이며 점수가 높을수록 정책·제도 수준이 높음을 뜻합니다.",
-        "종합점수와 클러스터·세부항목은 같은 척도이지만 평가 수준이 다릅니다.",
+        "시민 자유·참여·책임성, 정치안정, 정부 효과성, 규제의 질, 법치, 부패 통제 여섯 부문을 평가합니다.",
+        "백분위는 같은 해 조사대상국 가운데 위치를 0~100으로 나타내며, 값이 클수록 상위입니다.",
+        "표준값(Estimate)은 약 -2.5~2.5 범위의 별도 척도이므로 백분위와 같은 축에 놓지 않습니다.",
       ],
       scale: {
-        minimum: 1,
-        maximum: 6,
-        minimumLabel: "낮음",
-        maximumLabel: "높음",
+        minimum: 0,
+        maximum: 100,
+        minimumLabel: "하위",
+        maximumLabel: "상위",
       },
       direction: "higher-better",
-      directionLabel: "점수가 높을수록 정책·제도 역량이 높음",
+      directionLabel: "백분위가 높을수록 같은 해 조사대상국 중 상위",
       officialBands: null,
-      benchmarkType: "none",
+      benchmarkType: "group-rank",
+      benchmarkScope: "동일 연도 조사 대상국",
       sourceOrganization: "World Bank",
     },
     {

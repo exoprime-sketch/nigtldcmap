@@ -1,65 +1,11 @@
 {
   "dimensions": [
     {
-      "key": "category",
-      "labelKo": "분류",
-      "valueCount": 5,
-      "values": [
-        "사업 건수",
-        "상태별 사업 건수",
-        "시행기관별 약정액 합계",
-        "약정액 합계",
-        "지출액 합계"
-      ]
-    },
-    {
-      "key": "detail",
-      "labelKo": "세부 분류",
-      "valueCount": 9,
-      "values": [
-        "EDCF",
-        "KOICA",
-        "미상",
-        "사업번호 기준 고유 사업 수",
-        "완료",
-        "전 보고연도 약정액 단순합",
-        "전 보고연도 지출액 단순합",
-        "정부부처·지자체 등",
-        "집행중"
-      ]
-    },
-    {
       "key": "entityType",
       "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
-        "사업·재원"
-      ]
-    },
-    {
-      "key": "status",
-      "labelKo": "status",
-      "valueCount": 3,
-      "values": [
-        "미상",
-        "완료",
-        "집행중"
-      ]
-    },
-    {
-      "key": "technology",
-      "labelKo": "기술",
-      "valueCount": 1,
-      "values": [
-        "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
-      ]
-    },
-    {
-      "key": "year",
-      "labelKo": "연도",
-      "valueCount": 1,
-      "values": [
-        "2024"
+        "entity"
       ]
     }
   ],
@@ -414,7 +360,7 @@
       "indicatorCount": 5,
       "key": "measure-a7fab541fc17",
       "labelKo": "ODA Korea 프로젝트",
-      "recordCount": 5,
+      "recordCount": 0,
       "unit": "USD",
       "unitFamily": "currency"
     },
@@ -422,12 +368,12 @@
       "indicatorCount": 5,
       "key": "measure-42fea0427a59",
       "labelKo": "ODA Korea 프로젝트",
-      "recordCount": 4,
+      "recordCount": 0,
       "unit": "건",
       "unitFamily": "text"
     }
   ],
-  "observationCount": 9,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

@@ -1,0 +1,167 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:65003/?view=data&element=geongi-ugi&country=VNM&from=explorer&measure=measure-38d1f991bf44&year=1991#element-detail",
+  "title": "건기와 우기",
+  "body": "검색 결과로 돌아가기 기후 환경 › 기후 기초 정보 데이터 제공 다운로드 가능 건기와 우기 베트남 · 건기와 우기의 최근 수준과 항목별 차이를 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 38종 · 관측기간 1991년 이 데이터로 확인할 수 있는 내용 건기와 우기의 최근 수준과 항목별 차이 건기와 우기의 현재 수준과 기준시점별 변화를 확인할 수 있습니다. 항목 연 평년강수 · mm 연 평년기온 · ℃ 월 평년강수 · mm 월 평년기온 · ℃ 월별 건기/우기 구분(전국) · 구분 세부 분류 전체 1월 2월 3월 4월 5월 6월 7월 8월 9월 10월 11월 12월 연도 1991 연 평년기온 24.8 ℃ · 1991 주 분석 건기와 우기 연도별 변화 기간 순서 계절·월별 패턴 연 평년기온 24.8 ℃ · 1991 자료정보 상세 데이터 · 전체 38행 · 값 있음 38행 · 결측 0행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 472,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "B-001",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "건기와 우기의 최근 수준과 항목별 차이",
+    "건기와 우기 연도별 변화",
+    "계절·월별 패턴",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목 선택",
+      "dimensionKey": null,
+      "testId": "v125-measure-select",
+      "value": "measure-38d1f991bf44",
+      "shown": "연 평년기온 · ℃",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-007153a24949",
+          "label": "연 평년강수 · mm",
+          "disabled": false
+        },
+        {
+          "value": "measure-38d1f991bf44",
+          "label": "연 평년기온 · ℃",
+          "disabled": false
+        },
+        {
+          "value": "measure-706a7683fa04",
+          "label": "월 평년강수 · mm",
+          "disabled": false
+        },
+        {
+          "value": "measure-765f6791d931",
+          "label": "월 평년기온 · ℃",
+          "disabled": false
+        },
+        {
+          "value": "measure-7659cb58032f",
+          "label": "월별 건기/우기 구분(전국) · 구분",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "세부 분류 선택",
+      "dimensionKey": "detail",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "1월",
+          "label": "1월",
+          "disabled": false
+        },
+        {
+          "value": "2월",
+          "label": "2월",
+          "disabled": false
+        },
+        {
+          "value": "3월",
+          "label": "3월",
+          "disabled": false
+        },
+        {
+          "value": "4월",
+          "label": "4월",
+          "disabled": false
+        },
+        {
+          "value": "5월",
+          "label": "5월",
+          "disabled": false
+        },
+        {
+          "value": "6월",
+          "label": "6월",
+          "disabled": false
+        },
+        {
+          "value": "7월",
+          "label": "7월",
+          "disabled": false
+        },
+        {
+          "value": "8월",
+          "label": "8월",
+          "disabled": false
+        },
+        {
+          "value": "9월",
+          "label": "9월",
+          "disabled": false
+        },
+        {
+          "value": "10월",
+          "label": "10월",
+          "disabled": false
+        },
+        {
+          "value": "11월",
+          "label": "11월",
+          "disabled": false
+        },
+        {
+          "value": "12월",
+          "label": "12월",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "연도 선택",
+      "dimensionKey": null,
+      "testId": "v125-year-select",
+      "value": "1991",
+      "shown": "1991",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "1991",
+          "label": "1991",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [
+    "연 평년기온 24.8 ℃ · 1991"
+  ],
+  "chartTexts": [],
+  "tableRows": [],
+  "emptyNotices": [],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

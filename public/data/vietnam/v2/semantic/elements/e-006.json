@@ -49,9 +49,10 @@
     {
       "key": "collectionStatus",
       "labelKo": "collectionStatus",
-      "valueCount": 2,
+      "valueCount": 3,
       "values": [
         "보완(2026-08-14)",
+        "부분수집",
         "수집현황"
       ]
     },
@@ -98,8 +99,9 @@
     {
       "key": "investSector",
       "labelKo": "investSector",
-      "valueCount": 14,
+      "valueCount": 15,
       "values": [
+        "금융서비스, 저렴주택, 헬스케어, 교육, 농업, 중소상공인 디지털화, 기후행동(재생에너지·탄소저감·지속가능기술)",
         "기후테크·청정에너지 스타트업(인큐베이션·초기투자)",
         "동남아 청정에너지(소규모 재생에너지)",
         "부동산·기업·벤처, C&I 옥상태양광",
@@ -119,37 +121,35 @@
     {
       "key": "recordSourceType",
       "labelKo": "recordSourceType",
-      "valueCount": 9,
+      "valueCount": 7,
       "values": [
+        "국제기구 공시",
         "국제기구 공시(CIF)",
-        "국제기구 공시(IFC disclosure)",
-        "기관 공식(DFI)",
-        "기관 공식(DFI) 보도자료",
+        "기관 공식 사이트",
         "기관 공식(국제기구)",
         "기관 공식(민간)",
-        "기관 공식(민간) 보도자료",
-        "언론(DealStreetAsia)",
-        "정부 보도자료(주베트남 호주대사관)"
+        "기업 공식",
+        "언론(DealStreetAsia)"
       ]
     }
   ],
   "elementId": "E-006",
-  "entityCount": 14,
+  "entityCount": 15,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 2,
+  "indicatorCount": 4,
   "indicators": [
     {
       "axisGroupKey": "measure-5f64c524f78d|USD(백만)",
       "dimensionLabels": {},
       "dimensions": {},
-      "displayLabel": "현지 투자자 네트워크 · 베트남 기후금융 관련 개발금융기관 4곳 · dfi",
+      "displayLabel": "현지 투자자 네트워크",
       "indicatorId": "E-006_dfi",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
         "key": "measure-5f64c524f78d",
         "labelKo": "현지 투자자 네트워크",
         "unit": "USD(백만)",
-        "unitFamily": "text"
+        "unitFamily": "currency"
       },
       "seriesKey": "measure-5f64c524f78d|USD(백만)||E-006_dfi",
       "sourceCaveat": null,
@@ -166,20 +166,24 @@
     },
     {
       "axisGroupKey": "measure-5f64c524f78d|USD(백만)",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "현지 투자자 네트워크 · 베트남 기후금융 민간 투자자 10곳 · private_investor",
+      "dimensionLabels": {
+        "detail": "민간 운용사(기관 공식 웹사이트)"
+      },
+      "dimensions": {
+        "detail": "민간 운용사(기관 공식 웹사이트)"
+      },
+      "displayLabel": "현지 투자자 네트워크 — 민간 운용사(기관 공식 웹사이트)",
       "indicatorId": "E-006_private_investor",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
         "key": "measure-5f64c524f78d",
         "labelKo": "현지 투자자 네트워크",
         "unit": "USD(백만)",
-        "unitFamily": "text"
+        "unitFamily": "currency"
       },
-      "seriesKey": "measure-5f64c524f78d|USD(백만)||E-006_private_investor",
+      "seriesKey": "measure-5f64c524f78d|USD(백만)|detail=민간 운용사(기관 공식 웹사이트)|E-006_private_investor",
       "sourceCaveat": "① 원본 '투자 규모(AUM)' 열에 성격이 다른 값이 혼재하여 attr_9~attr_13으로 분해함",
-      "sourceLabel": "현지 투자자 네트워크",
+      "sourceLabel": "현지 투자자 네트워크 — 민간 운용사(기관 공식 웹사이트)",
       "sourceLabelEn": "Local investor network (climate finance)",
       "sourceNote": "전화번호 7건, 이메일 4건, 도시 1건 미확보(M07). VinaCapital·Mekong Capital은 AUM 미공개(M02). Mekong Capital은 기후실적 서술이 원본 내에서 상충하여 M10(확인중).",
       "sourceProvenance": {
@@ -189,16 +193,64 @@
         "sourceRow": 5,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-5f64c524f78d|USD(백만)",
+      "dimensionLabels": {
+        "detail": "민간 운용사(국제기구 공시)"
+      },
+      "dimensions": {
+        "detail": "민간 운용사(국제기구 공시)"
+      },
+      "displayLabel": "현지 투자자 네트워크 — 민간 운용사(국제기구 공시)",
+      "indicatorId": "E-006_private_investor_intl",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5f64c524f78d",
+        "labelKo": "현지 투자자 네트워크",
+        "unit": "USD(백만)",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-5f64c524f78d|USD(백만)|detail=민간 운용사(국제기구 공시)|E-006_private_investor_intl",
+      "sourceCaveat": null,
+      "sourceLabel": "현지 투자자 네트워크 — 민간 운용사(국제기구 공시)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-5f64c524f78d|USD(백만)",
+      "dimensionLabels": {
+        "detail": "민간 운용사(언론 보도)"
+      },
+      "dimensions": {
+        "detail": "민간 운용사(언론 보도)"
+      },
+      "displayLabel": "현지 투자자 네트워크 — 민간 운용사(언론 보도)",
+      "indicatorId": "E-006_private_investor_media",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5f64c524f78d",
+        "labelKo": "현지 투자자 네트워크",
+        "unit": "USD(백만)",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-5f64c524f78d|USD(백만)|detail=민간 운용사(언론 보도)|E-006_private_investor_media",
+      "sourceCaveat": null,
+      "sourceLabel": "현지 투자자 네트워크 — 민간 운용사(언론 보도)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     }
   ],
   "measures": [
     {
-      "indicatorCount": 2,
+      "indicatorCount": 4,
       "key": "measure-5f64c524f78d",
       "labelKo": "현지 투자자 네트워크",
       "recordCount": 0,
       "unit": "USD(백만)",
-      "unitFamily": "text"
+      "unitFamily": "currency"
     }
   ],
   "observationCount": 0,

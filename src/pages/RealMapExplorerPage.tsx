@@ -27,6 +27,7 @@ import {
 import type {
   VietnamMapGeoJsonV124,
 } from "../data/vietnam/vietnamDataLoaderV124";
+import type { VietnamMapFactFieldV137 } from "../data/vietnam/vietnamTypesV121";
 import type {
   VietnamSpatialLayerAssetV124,
 } from "../data/vietnam/vietnamTypesV124";
@@ -40,6 +41,7 @@ import {
   semanticDimensionValueLabelV125,
 } from "../data/visualization/mapSelectorBindingsV125";
 import { getElementVisualizationSummaryV125 } from "../data/visualization/elementVisualizationRegistryV125";
+import type { PublicMapPresetLayerV126 } from "../data/visualization/publicMapWorkspaceV126";
 import {
   PUBLIC_MAP_SPATIAL_TYPE_COPY_V126,
   PUBLIC_MAP_WORKSPACE_LIMITS_V126,
@@ -486,6 +488,195 @@ function runtimeKey(countryIso3: string, elementId: string): string {
   return `${countryIso3}:${elementId}`;
 }
 
+/**
+ * Read-only observation handle for the candidate QA harness.
+ *
+ * Attached only when the page is served from the local verification server, so
+ * it cannot appear on the deployed site, and it is not reachable from any menu.
+ * Everything it exposes is a read of what MapLibre has already rendered:
+ * queryRenderedFeatures and project. It holds no setter, touches no React
+ * state, and cannot put the page into a "selected" or "loaded" state - a test
+ * that wants a selection has to drive the real control like a user would.
+ *
+ * It exists because asserting that the thing under the pointer is the thing the
+ * panel then describes needs the renderer's own idea of what is on screen and
+ * where. Without it a map test can only confirm that a click was dispatched.
+ */
+function attachMapObserverV137(map: MapLibreMap, countryIso3: string): void {
+  const host =
+    typeof window === "undefined" ? "" : String(window.location.hostname || "");
+  if (host !== "localhost" && host !== "127.0.0.1" && host !== "[::1]") return;
+
+  const hitLayerIds = (elementId: string): string[] => {
+    const ids = layerRuntimeIds(countryIso3, elementId);
+    return [ids.pointHit, ids.lineHit, ids.fill, ids.cluster].filter((layerId) =>
+      Boolean(map.getLayer(layerId))
+    );
+  };
+  const identify = (feature: maplibregl.MapGeoJSONFeature) => {
+    const properties = (feature.properties || {}) as Record<string, unknown>;
+    return {
+      layerId: feature.layer.id,
+      geometryType: feature.geometry?.type ?? null,
+      selectionKey: String(
+        properties.selectionKey ??
+          properties.recordId ??
+          properties.adm1Code ??
+          properties.cluster_id ??
+          feature.id ??
+          ""
+      ),
+      name: String(properties.name ?? properties.label ?? properties.title ?? ""),
+      adm1Code: String(properties.adm1Code ?? ""),
+      isCluster: Boolean(properties.cluster),
+      properties,
+    };
+  };
+
+  const observer = {
+    ready: () => map.isStyleLoaded() && map.areTilesLoaded(),
+    /**
+     * Where the camera is, and whether it is still moving.
+     *
+     * Tiles can be loaded while a fitBounds is still easing, so a probe taken
+     * on ready() alone can resolve a screen point that the camera then moves
+     * out from under - which is how a run hovered a point it had resolved for
+     * Lai Châu and read Lào Cai.
+     */
+    camera: () => {
+      const center = map.getCenter();
+      return {
+        lng: center.lng,
+        lat: center.lat,
+        zoom: map.getZoom(),
+        bearing: map.getBearing(),
+        pitch: map.getPitch(),
+        moving: map.isMoving(),
+      };
+    },
+    canvasRect: () => {
+      const rect = map.getCanvas().getBoundingClientRect();
+      return { left: rect.left, top: rect.top, width: rect.width, height: rect.height };
+    },
+    layersFor: hitLayerIds,
+    /** Where a source coordinate currently lands on screen. Read-only. */
+    project: (lng: number, lat: number) => {
+      const rect = map.getCanvas().getBoundingClientRect();
+      const point = map.project([lng, lat]);
+      return {
+        x: rect.left + point.x,
+        y: rect.top + point.y,
+        insideCanvas:
+          point.x >= 0 && point.y >= 0 && point.x <= rect.width && point.y <= rect.height,
+      };
+    },
+    /** Every feature of this element MapLibre currently has rendered. */
+    renderedFeatures: (elementId: string) => {
+      const layers = hitLayerIds(elementId);
+      if (!layers.length) return [];
+      const seen = new Set<string>();
+      return map
+        .queryRenderedFeatures({ layers })
+        .map(identify)
+        .filter((item) => {
+          if (!item.selectionKey || seen.has(item.selectionKey)) return false;
+          seen.add(item.selectionKey);
+          return true;
+        });
+    },
+    /** What is actually under this viewport CSS point. */
+    queryAt: (x: number, y: number, elementId?: string) => {
+      const rect = map.getCanvas().getBoundingClientRect();
+      const point: [number, number] = [x - rect.left, y - rect.top];
+      const layers = elementId ? hitLayerIds(elementId) : undefined;
+      if (elementId && !layers?.length) return [];
+      return map
+        .queryRenderedFeatures(point, layers ? { layers } : undefined)
+        .map(identify);
+    },
+    /**
+     * A viewport point that genuinely lands on the named feature, found by
+     * probing the renderer rather than by trusting a centroid: a centroid can
+     * fall in a hole, outside a concave province, or off a line entirely.
+     * Returns null when the feature is on the map but no probed point hits it.
+     */
+    hitPointFor: (elementId: string, selectionKey: string, step = 12) => {
+      const layers = hitLayerIds(elementId);
+      if (!layers.length) return null;
+      const rect = map.getCanvas().getBoundingClientRect();
+      const describe = (element: Element | null) =>
+        element
+          ? element.tagName.toLowerCase() +
+            (element.className && typeof element.className === "string"
+              ? `.${element.className.split(/\s+/)[0]}`
+              : "")
+          : null;
+      let covered: { x: number; y: number; occludedBy: string | null } | null = null;
+      const topmostAt = (x: number, y: number) => {
+        const under = map.queryRenderedFeatures([x, y], { layers }).map(identify);
+        return Boolean(under.length && under[0].selectionKey === selectionKey);
+      };
+      const describeAt = (x: number, y: number) => {
+        const viewportX = rect.left + x;
+        const viewportY = rect.top + y;
+        const topmost =
+          typeof document === "undefined"
+            ? null
+            : document.elementFromPoint(viewportX, viewportY);
+        return {
+          x: viewportX,
+          y: viewportY,
+          occludedBy:
+            !topmost || topmost === map.getCanvas() ? null : describe(topmost),
+        };
+      };
+      // A point feature is a few pixels across, so a grid scan can step right
+      // over it. Ask the renderer where this feature is and try that first;
+      // the scan below stays as the fallback for lines and polygons.
+      const drawn = map
+        .queryRenderedFeatures({ layers })
+        .find((feature) => identify(feature).selectionKey === selectionKey);
+      const geometry = drawn?.geometry;
+      if (geometry && geometry.type === "Point") {
+        const [lng, lat] = geometry.coordinates as [number, number];
+        const projected = map.project([lng, lat]);
+        if (
+          projected.x >= 0 &&
+          projected.y >= 0 &&
+          projected.x <= rect.width &&
+          projected.y <= rect.height &&
+          topmostAt(projected.x, projected.y)
+        ) {
+          const at = describeAt(projected.x, projected.y);
+          if (!at.occludedBy) return at;
+          covered = at;
+        }
+      }
+      for (let y = 4; y < rect.height - 4; y += step) {
+        for (let x = 4; x < rect.width - 4; x += step) {
+          // The target has to be the feature the renderer puts on top here,
+          // not merely one of several under the pointer. On a province border
+          // several polygons answer the same point, and the app - like any
+          // reader - gets the topmost one; probing for mere presence handed
+          // back border pixels where the neighbour wins, so a run hovered
+          // Lai Châu's outline and read Lào Cai's value.
+          if (!topmostAt(x, y)) continue;
+          const at = describeAt(x, y);
+          if (!at.occludedBy) return at;
+          // Keep the first covered hit, but carry on looking. A feature is only
+          // genuinely unreachable when every point that lands on it is behind
+          // some panel or header - reporting the first covered point as an
+          // occlusion defect would flag a province merely because its northern
+          // tip happens to sit under the legend.
+          if (!covered) covered = at;
+        }
+      }
+      return covered;
+    },
+  };
+  (window as unknown as Record<string, unknown>).__nigtMapObserverV137 = observer;
+}
+
 function layerRuntimeIds(countryIso3: string, elementId: string) {
   const suffix = `${countryIso3}-${elementId}`
     .toLowerCase()
@@ -549,6 +740,51 @@ function isTopmostActiveFeatureV129(
   return !candidates.length || candidates[0].elementId === elementId;
 }
 
+/**
+ * What tells one overlapping feature from another in the picker.
+ *
+ * Line features carry no name, so the old label fell back to the layer title -
+ * and four transmission segments crossing at one pixel all read "베트남 송전망",
+ * beside a popup that had already printed that title. A reader could not tell
+ * the four choices apart, let alone pick the right one. Voltage and length are
+ * what the source distinguishes these by; the feature id is the last resort,
+ * and it is still an answer rather than the same words four times.
+ */
+function overlapChoiceLabelV137(
+  elementId: string,
+  properties: Record<string, unknown>,
+  selectionKey: string
+): string {
+  // The most specific thing first. A project's activity site and its
+  // participation range are two different choices at the same spot, and both
+  // carry the project title - listing that title three times gave the reader
+  // three identical rows to choose between.
+  const role = publicTextV126(properties.displayLabel);
+  const site = publicTextV126(properties.activitySiteLabel);
+  if (site) return role ? `${role} · ${site}` : site;
+  const named = publicTextV126(
+    properties.name || properties.projectTitle || properties.adm1Name
+  );
+  if (named) return role && role !== named ? `${role} · ${named}` : named;
+  if (role) return role;
+  // The source stores voltage as a number, and publicTextV126 returns null for
+  // anything that is not a string - which is why the voltage silently vanished
+  // from these labels and left four segments distinguished only by length.
+  const rawVoltage = properties.voltageKv ?? properties.voltage;
+  const voltage =
+    rawVoltage === null || rawVoltage === undefined || rawVoltage === ""
+      ? ""
+      : String(rawVoltage);
+  const rawLength = properties.lengthKm ?? properties.length;
+  const length = Number(rawLength);
+  const parts = [
+    voltage ? `${voltage} kV` : "",
+    Number.isFinite(length) ? `${formatPublicNumberV126(length, "km")} km` : "",
+  ].filter(Boolean);
+  if (parts.length) return parts.join(" · ");
+  return selectionKey || publicMapLayerTitleV126(elementId);
+}
+
 function mapHitCandidatesV133(
   map: MapLibreMap,
   point: MapLayerMouseEvent["point"],
@@ -598,13 +834,7 @@ function mapHitCandidatesV133(
         : elementId === priority?.lastContextElementId
         ? 200
         : 300 + (contextIndex < 0 ? 99 : contextIndex);
-      const label =
-        publicTextV126(
-          properties.name ||
-            properties.projectTitle ||
-            properties.adm1Name ||
-            properties.activitySiteLabel
-        ) || publicMapLayerTitleV126(elementId);
+      const label = overlapChoiceLabelV137(elementId, properties, selectionKey);
       return [
         {
           elementId,
@@ -866,6 +1096,74 @@ function lineFeatureCollection(
   };
 }
 
+/**
+ * The facts a layer publishes, and where each one lives in the source.
+ *
+ * The map index carries this contract per element because the delivery names
+ * its columns differently for every one of them. Layers built before the
+ * contract existed fall back to their tooltipFields, so nothing regresses while
+ * the rest of the tree catches up.
+ */
+function layerFactFieldsV137(
+  layer: CountryMapLayerV122
+): VietnamMapFactFieldV137[] {
+  const declared = layer.factFields;
+  if (declared && declared.length) return declared;
+  return layer.tooltipFields
+    .filter((field) => field !== "name")
+    .map((field) => ({ key: field, label: fieldLabelV121(field), sources: [field] }));
+}
+
+/** The first value the source actually delivers for this fact. */
+function factValueV137(
+  fact: VietnamMapFactFieldV137,
+  attributes: Record<string, unknown>
+): unknown {
+  for (const key of fact.sources) {
+    const value = attributes[key];
+    if (value === null || value === undefined) continue;
+    if (typeof value === "string" && value.trim() === "") continue;
+    const mapped = fact.valueMap?.[String(value).trim().toLowerCase()];
+    return mapped ?? value;
+  }
+  return null;
+}
+
+/** The label a reader sees for a fact key, never a raw source column name. */
+function factLabelV137(layer: CountryMapLayerV122, key: string): string {
+  return layer.fieldLabels?.[key] || fieldLabelV121(key);
+}
+
+/**
+ * The first few facts a popup states about one feature, in contract order.
+ *
+ * A mine's popup used to carry only its name, so the reader had to open the
+ * panel to learn it is a nickel mine - the one thing the source leads with.
+ * Two facts is what fits beside the name without turning the popup into a
+ * second panel; the rest stay in 자료정보 on the right.
+ */
+function popupFactLinesV137(
+  layer: CountryMapLayerV122,
+  properties: Record<string, unknown>,
+  limit = 2
+): string[] {
+  const lines: string[] = [];
+  for (const fact of layerFactFieldsV137(layer)) {
+    if (lines.length >= limit) break;
+    const value = properties[fact.key];
+    if (value === null || value === undefined) continue;
+    if (typeof value === "string" && value.trim() === "") continue;
+    const numeric = Number(value);
+    const shown =
+      fact.unit && Number.isFinite(numeric)
+        ? `${formatPublicNumberV126(numeric, fact.unit)} ${fact.unit}`
+        : publicTextV126(formatValueV121(value));
+    if (!shown) continue;
+    lines.push(`${factLabelV137(layer, fact.key)} ${shown}`);
+  }
+  return lines;
+}
+
 function featureCollection(
   records: CountryEntityV122[],
   layer: CountryMapLayerV122
@@ -899,13 +1197,25 @@ function featureCollection(
           sourceOrg: record.provenance.sourceOrg || null,
           selectionKey: record.recordId,
         };
+        // Facts come from the layer's own contract, which names the source key
+        // each one lives under. Reading a fixed field name instead is what left
+        // Ban Phuc's popup with no 광종: the mineral is in attrs["광종"], while
+        // the layer asked for attrs["mineral"].
+        layerFactFieldsV137(layer).forEach((fact) => {
+          const value = factValueV137(fact, attrs);
+          if (["string", "number", "boolean"].includes(typeof value)) {
+            properties[fact.key] = value as string | number | boolean;
+          }
+        });
         layer.tooltipFields.forEach((field) => {
           const value = field === "name" ? properties.name : attrs[field];
+          if (properties[field] !== undefined) return;
           if (["string", "number", "boolean"].includes(typeof value)) {
             properties[field] = value as string | number | boolean;
           }
         });
         layer.filters.forEach((filter) => {
+          if (properties[filter.field] !== undefined) return;
           const value = attrs[filter.field];
           if (["string", "number", "boolean"].includes(typeof value)) {
             properties[filter.field] = value as string | number | boolean;
@@ -1060,9 +1370,11 @@ function publicPowerPlantTooltipLinesV132(
 function publicTransmissionSegmentTitleV131(
   properties: Record<string, unknown>
 ): string {
-  const voltage = publicTextV126(
-    properties.voltageKv ?? properties.voltage
-  );
+  // Same numeric-voltage trap as the overlap label: the asset stores 110, 220
+  // and 500 as numbers, so a text-only normalizer dropped every one of them and
+  // every segment was titled "송전망 구간".
+  const raw = properties.voltageKv ?? properties.voltage;
+  const voltage = raw === null || raw === undefined || raw === "" ? "" : String(raw);
   return voltage ? `${voltage} kV 송전선로` : "송전망 구간";
 }
 
@@ -1307,6 +1619,13 @@ export default function RealMapExplorerPage({
     () => typeof window === "undefined" || window.innerWidth > 768
   );
   const [analysisPanelOpen, setAnalysisPanelOpen] = useState(true);
+  // The legend floats over the map, and at 1440 it sits on top of every point
+  // of the first transmission segment (MAP-002): 25 of 25 of that line's screen
+  // points had the legend above them, so hover and click never reached it. It
+  // stays open by default - a map coloured by fuel or by value is unreadable
+  // without it - but a reader can now put it away, the way the two side panels
+  // already allow.
+  const [legendOpen, setLegendOpen] = useState(true);
   const resizeMapAfterPanelChangeV129 = useCallback(() => {
     mapRef.current?.resize();
   }, []);
@@ -1991,6 +2310,7 @@ export default function RealMapExplorerPage({
     if (!pendingMap) return;
     const map = pendingMap;
     mapRef.current = map;
+    attachMapObserverV137(map, countryIso3);
 
     let ready = false;
     const markReady = () => {
@@ -2917,7 +3237,18 @@ export default function RealMapExplorerPage({
                         ? "선택 데이터"
                         : "함께 보기",
                     ],
-                { testId: "map-hover-popup-v133" }
+                {
+                  attributes: {
+                    "element-id": elementId,
+                    "selection-key": String(
+                      properties.selectionKey ??
+                        properties.adm1Code ??
+                        properties.featureId ??
+                        ""
+                    ),
+                  },
+                  testId: "map-hover-popup-v133",
+                }
               )
             )
             .addTo(map);
@@ -3240,21 +3571,41 @@ export default function RealMapExplorerPage({
                   )
                 : [
                     name,
+                    ...popupFactLinesV137(
+                      layer,
+                      (feature.properties || {}) as Record<string, unknown>
+                    ),
                     publicTextV126(feature.properties?.nameNote) || "",
                     isPrimary ? "선택 데이터" : "보조 데이터",
                   ],
               isPowerPlant
                 ? {
                     attributes: {
+                      "element-id": elementId,
                       "feature-title": name,
                       "key-facts": "fuel,capacity,status,year",
                       "layer-role": isPrimary ? "primary" : "context",
+                      "selection-key": String(
+                        feature.properties?.selectionKey ??
+                          feature.properties?.recordId ??
+                          ""
+                      ),
                     },
                     // V132 regression contract: testId: "a023-map-tooltip-v132"
                     legacyTestId: "a023-map-tooltip-v132",
                     testId: "map-hover-popup-v133",
                   }
-                : { testId: "map-hover-popup-v133" }
+                : {
+                    attributes: {
+                      "element-id": elementId,
+                      "selection-key": String(
+                        feature.properties?.selectionKey ??
+                          feature.properties?.recordId ??
+                          ""
+                      ),
+                    },
+                    testId: "map-hover-popup-v133",
+                  }
             )
           )
           .addTo(map);
@@ -3951,7 +4302,9 @@ export default function RealMapExplorerPage({
       filters
     ).filter((row) => row.mapEligible);
     summaryRows.push({
-      label: focusedLayer.elementId === "A-023" ? "총 발전소" : `총 ${publicTitle}`,
+      // A-023 carries two registries that share no identifier, so the number of
+      // records is not the number of power plants. "총 발전소" claimed it was.
+      label: focusedLayer.elementId === "A-023" ? "표시 자료 건수" : `총 ${publicTitle}`,
       value: `${records.length.toLocaleString()}건`,
     });
     const primaryGroupField =
@@ -4427,6 +4780,59 @@ export default function RealMapExplorerPage({
     setSelectedSpatial(null);
   }
 
+  /**
+   * The variable and period a preset asks for, checked against the layer.
+   *
+   * A preset used to write its stored key and period straight into the selector
+   * state. When the delivery re-keyed B-034's variables and gave B-033 a real
+   * annual series, the FOREST_CHANGE preset kept asking for a variable and a
+   * year that no longer exist, and the map drew a layer with no values and said
+   * nothing. The label is tried first because it survives a rekey; the layer's
+   * own default is the last resort, and the substitution is reported.
+   */
+  function resolvePresetSelectorV137(
+    request: PublicMapPresetLayerV126
+  ): { variable: string; period: string; adjusted: boolean } {
+    const layer = layers.find((item) => item.elementId === request.elementId);
+    const variables = layer?.selectors?.variables || [];
+    if (!variables.length) {
+      return { variable: request.variable, period: request.period, adjusted: false };
+    }
+    // The stable id first. The key is a slug of the label and becomes a hash
+    // for anything non-ASCII, so it moves whenever the label does; measureId
+    // comes from the derivation contract and does not.
+    const byMeasureId = request.measureId
+      ? variables.find((item) => item.measureId === request.measureId)
+      : undefined;
+    const byKey = variables.find((item) => item.key === request.variable);
+    // A label identifies a variable only when exactly one carries it. Two
+    // variables sharing a label is not an identification, and picking the first
+    // would be a guess.
+    const labelMatches = request.variableLabel
+      ? variables.filter((item) => item.label === request.variableLabel)
+      : [];
+    const byLabel = labelMatches.length === 1 ? labelMatches[0] : undefined;
+    const chosen =
+      byMeasureId ||
+      byKey ||
+      byLabel ||
+      variables.find((item) => item.key === layer?.selectors?.defaultVariable) ||
+      variables[0];
+    const periods = chosen.periods?.length
+      ? chosen.periods
+      : layer?.selectors?.periods || [];
+    const period = periods.includes(request.period)
+      ? request.period
+      : periods.includes(layer?.selectors?.defaultPeriod || "")
+        ? (layer?.selectors?.defaultPeriod as string)
+        : periods[periods.length - 1] || request.period;
+    return {
+      variable: chosen.key,
+      period,
+      adjusted: chosen.key !== request.variable || period !== request.period,
+    };
+  }
+
   function applyPresetV126(presetId: PublicMapWorkspacePresetIdV126) {
     const workspace = createPublicMapWorkspaceStateV126(presetId);
     const contextCandidates = publicMapPresetContextCandidatesV133(presetId);
@@ -4440,14 +4846,20 @@ export default function RealMapExplorerPage({
     const contexts = workspace.context
       .filter((item) => available.has(item.elementId))
       .slice(0, PUBLIC_MAP_WORKSPACE_LIMITS_V126.contextLayers);
+    const primaryChoice = resolvePresetSelectorV137(workspace.primary);
+    const contextChoices = contextCandidates.map((item) => ({
+      elementId: item.elementId,
+      ...resolvePresetSelectorV137(item),
+    }));
+    const adjusted = [primaryChoice, ...contextChoices].some((item) => item.adjusted);
     const nextSelectors = {
       ...selectorByElement,
       [workspace.primary.elementId]: {
-        variable: workspace.primary.variable,
-        period: workspace.primary.period,
+        variable: primaryChoice.variable,
+        period: primaryChoice.period,
       },
       ...Object.fromEntries(
-        contextCandidates.map((item) => [
+        contextChoices.map((item) => [
           item.elementId,
           { variable: item.variable, period: item.period },
         ])
@@ -4468,11 +4880,20 @@ export default function RealMapExplorerPage({
     if (presetId === "CLIMATE_FINANCE_PROJECTS") {
       setFinanceTypeV133("adaptation");
     }
+    const presetLabel =
+      PUBLIC_MAP_WORKSPACE_PRESETS_V126.find((item) => item.id === presetId)?.labelKo ||
+      "분석";
     setRoleNotice(
-      `${
-        PUBLIC_MAP_WORKSPACE_PRESETS_V126.find((item) => item.id === presetId)
-          ?.labelKo || "분석"
-      } 선택 데이터를 표시했습니다. 함께 보기는 꺼진 상태입니다.`
+      adjusted
+        ? // Saying so beats letting a reader believe they are looking at the
+          // period the preset names. This is how the broken FOREST_CHANGE
+          // preset stayed invisible: it asked for a variable and a year the
+          // layer no longer had, and the map simply drew nothing.
+          `${presetLabel} · 이 자료가 제공하는 지표·기간으로 맞췄습니다. 나머지 자료는 아래 '함께 보기'에서 켜세요.`
+        : // The card promises two or three layers and the preset draws one, so
+          // the notice says where the others are rather than leaving a reader
+          // to find the toggle.
+          `${presetLabel} 선택 데이터를 표시했습니다. 나머지 자료는 아래 '함께 보기'에서 켜세요.`
     );
     const primaryLayer = layers.find(
       (layer) => layer.elementId === workspace.primary.elementId
@@ -4503,11 +4924,16 @@ export default function RealMapExplorerPage({
     setOverlapChoicesV133([]);
     setLastEnabledContextIdV133(null);
     setRoleNotice(
-      `${publicMapLayerTitleV126(
-        elementId,
-        layer.publicShortTitle
-      )}을(를) 선택 데이터로 표시했습니다.`
+      `선택 데이터: ${publicMapLayerTitleV126(elementId, layer.publicShortTitle)}`
     );
+    // At 768 and below the dataset list is a drawer over the whole workspace,
+    // so choosing a dataset used to leave the map completely behind it - a
+    // measurement on the candidate build found 0% of the canvas reachable until
+    // the reader pressed 접기. Picking something is the moment to hand the map
+    // back; the toggle still reopens the list.
+    if (typeof window !== "undefined" && window.innerWidth <= 768) {
+      setLayerPanelOpen(false);
+    }
     onSelectorStateChange(semanticStateForLayerV125(layer));
   }
 
@@ -6217,6 +6643,11 @@ export default function RealMapExplorerPage({
                     <button
                       type="button"
                       data-map-element={choice.elementId}
+                      // Which feature this choice stands for. The panel already
+                      // publishes the selected key; the picker did not, so the
+                      // only way to choose a known feature was to count list
+                      // positions.
+                      data-selection-key={choice.selectionKey}
                       data-layer-role={choice.role}
                       data-hit-priority={choice.priority}
                       onClick={() => selectOverlapChoiceV133(choice)}
@@ -6237,12 +6668,25 @@ export default function RealMapExplorerPage({
             </section>
           )}
           {focusedLayer && (
-            <div className="cdp-map-legend" data-testid="map-dynamic-legend">
+            <div
+              className={`cdp-map-legend ${legendOpen ? "is-open" : "is-collapsed"}`}
+              data-testid="map-dynamic-legend"
+            >
               <div className="cdp-map-legend__header">
                 <strong>
                   <PublicTermTextV134 text={focusedPublicCopy?.titleKo || ""} />
                 </strong>
                 <span>주 분석</span>
+                <button
+                  type="button"
+                  className="cdp-map-panel-toggle cdp-map-legend__toggle"
+                  data-testid="map-legend-toggle-v137"
+                  aria-expanded={legendOpen}
+                  aria-label={legendOpen ? "범례 접기" : "범례 펼치기"}
+                  onClick={() => setLegendOpen((current) => !current)}
+                >
+                  {legendOpen ? "범례 접기" : "범례"}
+                </button>
               </div>
               <div
                 className="cdp-map-active-legend"
@@ -6615,11 +7059,20 @@ export default function RealMapExplorerPage({
                 )}
               </section>
 
+              {/* The panel names which record it is describing, so a second
+                  facility sharing a name is never read as the one that was
+                  clicked. Identity only - nothing writes these back. */}
               <section
                 data-testid="map-selected-feature-panel"
                 className="cdp-map-selected-panel"
                 data-selected-layer-role={selectedFeatureRoleV129 || "none"}
                 data-selected-detail-contract="map-selected-detail-v133"
+                data-selected-element-id={
+                  selectedOwningLayer?.elementId || ""
+                }
+                data-selected-key={
+                  selectedSpatial?.selectionKey || selected?.recordId || ""
+                }
               >
                 <h3>
                   {selectedOwningLayer
@@ -7069,28 +7522,31 @@ export default function RealMapExplorerPage({
                         </>
                       )}
                       {!selectedPowerPlantFactsV132 &&
-                        selectedLayer.tooltipFields.map((field) => {
-                        if (field === "name") return null;
-                        const value = selected.normalizedAttributes?.[field];
-                        const hasSourceValue =
-                          value !== null &&
-                          value !== undefined &&
-                          !(typeof value === "string" && value.trim() === "");
-                        if (!hasSourceValue) return null;
+                        layerFactFieldsV137(selectedLayer).map((fact) => {
+                        // The value is read through the layer's own contract,
+                        // which names the source column each fact lives in. The
+                        // old lookup used one fixed field name per layer, so a
+                        // mine's 광종 - present in every record - rendered as
+                        // nothing and the row below reported it as 원천 미제공.
+                        const value = factValueV137(
+                          fact,
+                          (selected.normalizedAttributes || {}) as Record<string, unknown>
+                        );
+                        if (value === null || value === undefined) return null;
                         const hasNumericValue =
                           (typeof value === "number" && Number.isFinite(value)) ||
                           (typeof value === "string" &&
                             value.trim() !== "" &&
                             Number.isFinite(Number(value)));
                         const safeValue =
-                          field === "capacityMw" && hasNumericValue
-                            ? `${formatPublicNumberV126(Number(value), "MW")} MW`
+                          fact.unit && hasNumericValue
+                            ? `${formatPublicNumberV126(Number(value), fact.unit)} ${fact.unit}`
                             : publicTextV126(formatValueV121(value));
                         if (!safeValue) return null;
                         return (
                           <Evidence
-                            key={field}
-                            label={fieldLabelV121(field)}
+                            key={fact.key}
+                            label={factLabelV137(selectedLayer, fact.key)}
                             value={safeValue}
                           />
                         );
@@ -7114,21 +7570,16 @@ export default function RealMapExplorerPage({
                       <Evidence
                         label="값 제공 여부"
                         value={(() => {
-                          const missingLabels = selectedLayer.tooltipFields
-                            .filter((field) => field !== "name")
-                            .filter((field) => {
-                              const fieldValue =
-                                field === "referenceYear"
-                                  ? selected.provenance.referenceYear ??
-                                    selected.normalizedAttributes?.[field]
-                                  : selected.normalizedAttributes?.[field];
-                              return (
-                                fieldValue === null ||
-                                fieldValue === undefined ||
-                                (typeof fieldValue === "string" && fieldValue.trim() === "")
-                              );
+                          const attributes = (selected.normalizedAttributes ||
+                            {}) as Record<string, unknown>;
+                          const missingLabels = layerFactFieldsV137(selectedLayer)
+                            .filter((fact) => {
+                              if (fact.key === "referenceYear") {
+                                return !selected.provenance.referenceYear;
+                              }
+                              return factValueV137(fact, attributes) === null;
                             })
-                            .map((field) => fieldLabelV121(field));
+                            .map((fact) => factLabelV137(selectedLayer, fact.key));
                           return missingLabels.length > 0
                             ? `원천 미제공: ${missingLabels.join(" · ")}`
                             : "표시 항목 모두 값 있음";

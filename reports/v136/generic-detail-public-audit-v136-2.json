@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v136-public-copy-acceptance-1",
-  "generatedAt": "2026-09-06T23:42:28.335Z",
+  "generatedAt": "2026-09-13T23:36:18.131Z",
   "audit": "generic-detail-public:v136-2",
   "status": "PASS",
   "summary": {
@@ -12,12 +12,12 @@
     "total": 20,
     "failedChecks": [],
     "detailRouteCount": 152,
-    "genericDetailRouteCount": 134,
-    "selectorStatesVisited": 1292,
+    "genericDetailRouteCount": 127,
+    "selectorStatesVisited": 720,
     "findingCount": 0,
     "d022SourceRecordCount": 15,
     "d022SourceCategoryCount": 10,
-    "d022PortfolioStates": 11,
+    "d022PortfolioStates": 1,
     "d022TitlesWithInternalIdentifiers": 0,
     "categoryGroupingMismatches": 0,
     "findingsByKind": {},
@@ -49,7 +49,7 @@
       "audit": "generic-detail-public:v136-2",
       "name": "GENERIC_DETAIL_ROUTE_COUNT",
       "status": "PASS",
-      "actual": 134,
+      "actual": 127,
       "expected": ">0"
     },
     {
@@ -162,12 +162,12 @@
       "name": "D022_OFFICIAL_TITLE_FACT_PRESENT",
       "status": "PASS",
       "actual": {
-        "states": 11,
-        "withOfficialTitle": 11
+        "states": 1,
+        "withOfficialTitle": 1
       },
       "expected": {
-        "states": 11,
-        "withOfficialTitle": 11
+        "states": 1,
+        "withOfficialTitle": 1
       }
     },
     {
@@ -202,12 +202,12 @@
     }
   ],
   "detailRouteCount": 152,
-  "genericDetailRouteCount": 134,
-  "selectorStatesVisited": 1292,
+  "genericDetailRouteCount": 127,
+  "selectorStatesVisited": 720,
   "findingCount": 0,
   "d022SourceRecordCount": 15,
   "d022SourceCategoryCount": 10,
-  "d022PortfolioStates": 11,
+  "d022PortfolioStates": 1,
   "d022TitlesWithInternalIdentifiers": 0,
   "categoryGroupingMismatches": 0,
   "findingsByKind": {},

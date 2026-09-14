@@ -26,14 +26,94 @@
       "downloadableRecordCount": 236,
       "elementId": "A-023",
       "enabled": true,
+      "factFields": [
+        {
+          "filledRecordCount": 1884,
+          "filterable": true,
+          "key": "fuelType",
+          "label": "발전원",
+          "recordCount": 1889,
+          "sources": [
+            "fuelType",
+            "primaryFuel"
+          ],
+          "valueMap": {
+            "biomass": "바이오매스",
+            "coal": "석탄",
+            "gas": "가스",
+            "gas;oil": "가스·석유",
+            "hydro": "수력",
+            "oil": "석유",
+            "solar": "태양광",
+            "waste": "폐기물",
+            "wind": "풍력"
+          }
+        },
+        {
+          "filledRecordCount": 475,
+          "key": "capacityMw",
+          "label": "설비용량",
+          "recordCount": 1889,
+          "sources": [
+            "capacityMw",
+            "mw"
+          ],
+          "unit": "MW"
+        },
+        {
+          "filledRecordCount": 239,
+          "filterable": true,
+          "key": "capacityBand",
+          "label": "용량구간",
+          "recordCount": 1889,
+          "sources": [
+            "capacityBand"
+          ]
+        },
+        {
+          "filledRecordCount": 169,
+          "key": "operator",
+          "label": "운영자",
+          "recordCount": 1889,
+          "sources": [
+            "field_4cf75655"
+          ]
+        },
+        {
+          "filledRecordCount": 27,
+          "key": "commissionedOn",
+          "label": "가동 시작",
+          "recordCount": 1889,
+          "sources": [
+            "startDate"
+          ]
+        },
+        {
+          "filledRecordCount": 1653,
+          "key": "osmObjectId",
+          "label": "OSM 객체 ID",
+          "note": "OpenStreetMap object type and id, preserved verbatim.",
+          "recordCount": 1889,
+          "sources": [
+            "field_33702ec7"
+          ]
+        }
+      ],
       "fakeGeometryCount": 0,
       "featureCount": 1889,
+      "fieldLabels": {
+        "capacityBand": "용량구간",
+        "capacityMw": "설비용량",
+        "commissionedOn": "가동 시작",
+        "fuelType": "발전원",
+        "operator": "운영자",
+        "osmObjectId": "OSM 객체 ID"
+      },
       "filters": [
         {
           "field": "fuelType",
           "label": "발전원",
           "values": [
-            "(미표기)",
             "가스",
             "가스·석유",
             "바이오매스",
@@ -80,7 +160,7 @@
       "mapMode": "cluster",
       "missingRegions": [],
       "publicShortTitle": "발전소",
-      "publicSpatialNotice": "원천 좌표가 있는 개별 발전소만 표시합니다.",
+      "publicSpatialNotice": "원천 좌표가 있는 자료를 그대로 표시합니다. WRI 등록부와 OpenStreetMap 자료가 함께 들어 있어 같은 발전소가 두 건으로 실릴 수 있으며, 표시 건수는 고유 발전소 수가 아닙니다.",
       "rawLabel": "발전소",
       "regionalProject": false,
       "renderer": "cluster",
@@ -112,14 +192,16 @@
       ],
       "sourceYear": 2026,
       "spatialCoverage": "출처 좌표가 있는 1,889개 피처",
-      "spatialLimitation": "원천 좌표가 있는 개별 발전소만 표시합니다.",
+      "spatialLimitation": "원천 좌표가 있는 자료를 그대로 표시합니다. WRI 등록부와 OpenStreetMap 자료가 함께 들어 있어 같은 발전소가 두 건으로 실릴 수 있으며, 표시 건수는 고유 발전소 수가 아닙니다.",
       "spatialScopeType": "facility-site",
       "tooltipFields": [
         "name",
         "fuelType",
         "capacityMw",
-        "status",
-        "referenceYear"
+        "capacityBand",
+        "operator",
+        "commissionedOn",
+        "osmObjectId"
       ],
       "totalEntityCount": 1963,
       "unit": "source-provided location",
@@ -143,11 +225,57 @@
       "detailUrl": "/?element=a-024&country=VNM#element-detail",
       "displayedCoordinateCount": 6693,
       "downloadStatus": "available",
-      "downloadableRecordCount": 762,
+      "downloadableRecordCount": 723,
       "elementId": "A-024",
       "enabled": true,
+      "factFields": [
+        {
+          "filledRecordCount": 606,
+          "filterable": true,
+          "key": "voltageKv",
+          "label": "전압",
+          "recordCount": 606,
+          "sources": [
+            "voltageKv",
+            "voltage"
+          ],
+          "unit": "kV"
+        },
+        {
+          "filledRecordCount": 606,
+          "key": "lengthKm",
+          "label": "확인된 길이",
+          "recordCount": 606,
+          "sources": [
+            "lengthKm",
+            "length"
+          ],
+          "unit": "km"
+        },
+        {
+          "filledRecordCount": 606,
+          "filterable": true,
+          "key": "status",
+          "label": "선로 상태",
+          "recordCount": 606,
+          "sources": [
+            "status"
+          ],
+          "valueMap": {
+            "existing": "운영",
+            "planned": "계획",
+            "under construction": "건설 중"
+          }
+        }
+      ],
       "fakeGeometryCount": 0,
       "featureCount": 606,
+      "fieldLabels": {
+        "lengthKm": "확인된 길이",
+        "sourceYear": "자료연도",
+        "status": "선로 상태",
+        "voltageKv": "전압"
+      },
       "filters": [
         {
           "field": "voltageKv",
@@ -156,13 +284,6 @@
             "110",
             "220",
             "500"
-          ]
-        },
-        {
-          "field": "status",
-          "label": "상태",
-          "values": [
-            "existing"
           ]
         }
       ],
@@ -248,9 +369,10 @@
       "spatialLimitation": "지오리퍼런싱 오차가 있어 정밀 설계용 위치가 아닙니다.",
       "spatialScopeType": "network",
       "tooltipFields": [
+        "name",
         "voltageKv",
-        "status",
         "lengthKm",
+        "status",
         "sourceYear"
       ],
       "totalEntityCount": 722,
@@ -276,7 +398,7 @@
       "detailUrl": "/?element=c-016&country=VNM#element-detail",
       "displayedCoordinateCount": 0,
       "downloadStatus": "available",
-      "downloadableRecordCount": 808,
+      "downloadableRecordCount": 1456,
       "elementId": "C-016",
       "enabled": true,
       "fakeGeometryCount": 0,
@@ -298,15 +420,9 @@
       "layerId": "vnm-v124-c-016",
       "legend": {
         "note": "단위 MW · 결측 0개 성·시",
-        "title": "옥상태양광(ĐMT mái nhà)"
+        "title": "옥상태양광(ĐMT mái nhà) 계획용량"
       },
-      "licenses": [
-        "INCOM(LuatVietnam) 이용약관 — 서면 허가 필요",
-        "베트남 법령 원문 — 지식재산법 제15조상 저작권 비보호",
-        "베트남 정부 공보 이용약관",
-        "베트남 지식재산법 제15조 — 법률규범문서 저작권 비보호",
-        "언론 보도 — 사실 정보 인용"
-      ],
+      "licenses": [],
       "mapBenefit": "공개된 성·시별 재생에너지 계획의 공간 차이를 비교할 수 있습니다.",
       "mapMode": "choropleth",
       "missingRegions": [],
@@ -328,8 +444,9 @@
         "variables": [
           {
             "key": "dien-sinh-khoi",
-            "label": "바이오매스발전(điện sinh khối)",
+            "label": "바이오매스발전(điện sinh khối) 계획용량",
             "maxFeatureCount": 44,
+            "measureId": "re_capacity_dien_sinh_khoi_prov",
             "periods": [
               "2025-2030",
               "2031-2035"
@@ -338,8 +455,9 @@
           },
           {
             "key": "thuy-dien-nho",
-            "label": "소수력(thủy điện nhỏ)",
+            "label": "소수력(thủy điện nhỏ) 계획용량",
             "maxFeatureCount": 42,
+            "measureId": "re_capacity_thuy_dien_nho_prov",
             "periods": [
               "2025-2030",
               "2031-2035"
@@ -348,8 +466,9 @@
           },
           {
             "key": "30mw-50mw",
-            "label": "수력 30MW초과~50MW미만",
+            "label": "수력 30MW초과~50MW미만 계획용량",
             "maxFeatureCount": 9,
+            "measureId": "re_capacity_30mw_50mw_prov",
             "periods": [
               "2025-2030"
             ],
@@ -357,8 +476,9 @@
           },
           {
             "key": "thuy-dien-tich-nang",
-            "label": "양수발전(thủy điện tích năng)",
+            "label": "양수발전(thủy điện tích năng) 계획용량",
             "maxFeatureCount": 9,
+            "measureId": "re_capacity_thuy_dien_tich_nang_prov",
             "periods": [
               "2025-2030",
               "2031-2035"
@@ -367,8 +487,9 @@
           },
           {
             "key": "dmt-mai-nha",
-            "label": "옥상태양광(ĐMT mái nhà)",
+            "label": "옥상태양광(ĐMT mái nhà) 계획용량",
             "maxFeatureCount": 63,
+            "measureId": "re_capacity_dmt_mai_nha_prov",
             "periods": [
               "2025-2030",
               "2031-2035"
@@ -377,8 +498,9 @@
           },
           {
             "key": "dien-gio-tren-bo-va-gan-bo",
-            "label": "육상 근해 풍력(điện gió trên bờ và gần bờ)",
+            "label": "육상 근해 풍력(điện gió trên bờ và gần bờ) 계획용량",
             "maxFeatureCount": 63,
+            "measureId": "re_capacity_dien_gio_tren_bo_va_gan_bo_prov",
             "periods": [
               "2025-2030",
               "2031-2035"
@@ -387,8 +509,9 @@
           },
           {
             "key": "dmt-tap-trung",
-            "label": "집중형 태양광(ĐMT tập trung)",
+            "label": "집중형 태양광(ĐMT tập trung) 계획용량",
             "maxFeatureCount": 63,
+            "measureId": "re_capacity_dmt_tap_trung_prov",
             "periods": [
               "2025-2030",
               "2031-2035"
@@ -397,8 +520,9 @@
           },
           {
             "key": "dien-rac",
-            "label": "폐기물발전(điện rác)",
+            "label": "폐기물발전(điện rác) 계획용량",
             "maxFeatureCount": 44,
+            "measureId": "re_capacity_dien_rac_prov",
             "periods": [
               "2025-2030",
               "2031-2035"
@@ -407,21 +531,13 @@
           }
         ]
       },
-      "source": "개정 PDP8 부록Ⅱ(768/QĐ-TTg) 원문 자체 검산 · 베트남 국회·정부 — 전력법 61/2024/QH15 및 Nghị định 58/2025/NĐ-CP · 베트남 산업무역부(의견수렴 공고) · 베트남 총리실 (Quyết định 768/QĐ-TTg) / 산업무역부(MOIT)",
+      "source": "베트남 총리실 (Quyết định 768/QĐ-TTg) / 산업무역부(MOIT)",
       "sourceCoordinateCount": 0,
       "sourceOrganizations": [
-        "개정 PDP8 부록Ⅱ(768/QĐ-TTg) 원문 자체 검산",
-        "베트남 국회·정부 — 전력법 61/2024/QH15 및 Nghị định 58/2025/NĐ-CP",
-        "베트남 산업무역부(의견수렴 공고)",
         "베트남 총리실 (Quyết định 768/QĐ-TTg) / 산업무역부(MOIT)"
       ],
       "sourceUrls": [
-        "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/4/768-ttg.signed.pdf",
-        "https://luatvietnam.vn/",
-        "https://moit.gov.vn/",
-        "https://tuoitre.vn/bo-cong-thuong-lay-y-kien-khung-gia-dien-gio-dien-mat-troi-nam-2026-do-evn-tinh-toan-100260717122110667.htm",
-        "https://vanban.chinhphu.vn/?pageid=27160&docid=213388",
-        "https://xaydungchinhsach.chinhphu.vn/toan-van-luat-dien-luc-119241225130808137.htm"
+        "https://vanban.chinhphu.vn/?pageid=27160&docid=213388"
       ],
       "sourceYear": "2025-2030",
       "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개",
@@ -457,7 +573,7 @@
       "detailUrl": "/?element=b-031&country=VNM#element-detail",
       "displayedCoordinateCount": 0,
       "downloadStatus": "available",
-      "downloadableRecordCount": 208,
+      "downloadableRecordCount": 260,
       "elementId": "B-031",
       "enabled": true,
       "fakeGeometryCount": 0,
@@ -481,10 +597,7 @@
         "note": "단위 ha · 결측 0개 성·시",
         "title": "성(省)별 수관 면적(2010)"
       },
-      "licenses": [
-        "CC-BY-4.0",
-        "기관 이용약관"
-      ],
+      "licenses": [],
       "mapBenefit": "성·시별 산림면적 차이를 비교할 수 있습니다.",
       "mapMode": "choropleth",
       "missingRegions": [],
@@ -508,6 +621,7 @@
             "key": "analysis-area",
             "label": "성(省)별 분석대상 면적",
             "maxFeatureCount": 63,
+            "measureId": "prov_area",
             "periods": [
               "2000"
             ],
@@ -517,6 +631,7 @@
             "key": "tree-cover-area-2000",
             "label": "성(省)별 수관 면적(2000)",
             "maxFeatureCount": 63,
+            "measureId": "prov_ext2000",
             "periods": [
               "2000"
             ],
@@ -526,6 +641,7 @@
             "key": "tree-cover-area-2010",
             "label": "성(省)별 수관 면적(2010)",
             "maxFeatureCount": 63,
+            "measureId": "prov_ext2010",
             "periods": [
               "2010"
             ],
@@ -533,15 +649,12 @@
           }
         ]
       },
-      "source": "Global Forest Watch (UMD/WRI) · Global Forest Watch / Hansen et al.(2013) · Global Forest Watch / Hansen et al.(2013), UMD",
+      "source": "Global Forest Watch (UMD/WRI, Hansen et al. 2013) · 경계 GADM 4.1 ADM1 · Global Forest Watch / Hansen et al.(2013), UMD",
       "sourceCoordinateCount": 0,
       "sourceOrganizations": [
-        "Global Forest Watch (UMD/WRI)",
-        "Global Forest Watch / Hansen et al.(2013)",
-        "Global Forest Watch / Hansen et al.(2013), UMD"
+        "Global Forest Watch (UMD/WRI, Hansen et al. 2013) · 경계 GADM 4.1 ADM1 · Global Forest Watch / Hansen et al.(2013), UMD"
       ],
       "sourceUrls": [
-        "https://data-api.globalforestwatch.org/dataset/umd_tree_cover_loss",
         "https://www.globalforestwatch.org/dashboards/country/VNM/"
       ],
       "sourceYear": "2010",
@@ -578,7 +691,7 @@
       "detailUrl": "/?element=b-032&country=VNM#element-detail",
       "displayedCoordinateCount": 0,
       "downloadStatus": "available",
-      "downloadableRecordCount": 136,
+      "downloadableRecordCount": 131,
       "elementId": "B-032",
       "enabled": true,
       "fakeGeometryCount": 0,
@@ -602,10 +715,7 @@
         "note": "단위 % · 결측 0개 성·시",
         "title": "성(省)별 수관 피복률 — 임계 30%"
       },
-      "licenses": [
-        "CC-BY-4.0",
-        "기관 이용약관"
-      ],
+      "licenses": [],
       "mapBenefit": "성·시별 수관 피복 차이를 비교할 수 있습니다.",
       "mapMode": "choropleth",
       "missingRegions": [],
@@ -621,7 +731,6 @@
         "defaultPeriod": "2010",
         "defaultVariable": "canopy-cover-30",
         "periods": [
-          "2000",
           "2010"
         ],
         "variables": [
@@ -629,23 +738,20 @@
             "key": "canopy-cover-30",
             "label": "성(省)별 수관 피복률 — 임계 30%",
             "maxFeatureCount": 63,
+            "measureId": "canopy_cover_prov_30",
             "periods": [
-              "2000",
               "2010"
             ],
             "unit": "%"
           }
         ]
       },
-      "source": "Global Forest Watch (UMD/WRI) · Global Forest Watch (분자) / FAOSTAT Land Use (분모) · Global Forest Watch / Hansen et al.(2013)",
+      "source": "Global Forest Watch / Hansen et al.(2013)",
       "sourceCoordinateCount": 0,
       "sourceOrganizations": [
-        "Global Forest Watch (UMD/WRI)",
-        "Global Forest Watch (분자) / FAOSTAT Land Use (분모)",
         "Global Forest Watch / Hansen et al.(2013)"
       ],
       "sourceUrls": [
-        "https://data-api.globalforestwatch.org/dataset/umd_tree_cover_loss",
         "https://www.globalforestwatch.org/dashboards/country/VNM/"
       ],
       "sourceYear": "2010",
@@ -659,7 +765,7 @@
         "unit",
         "period"
       ],
-      "totalEntityCount": 126,
+      "totalEntityCount": 63,
       "unit": "%",
       "zeroImputationCount": 0
     },
@@ -682,7 +788,7 @@
       "detailUrl": "/?element=b-033&country=VNM#element-detail",
       "displayedCoordinateCount": 0,
       "downloadStatus": "available",
-      "downloadableRecordCount": 2142,
+      "downloadableRecordCount": 3545,
       "elementId": "B-033",
       "enabled": true,
       "fakeGeometryCount": 0,
@@ -700,15 +806,13 @@
         "requiredCount": 63
       },
       "label": "연간 산림 손실",
-      "latestYear": "2025",
+      "latestYear": "2024",
       "layerId": "vnm-v124-b-033",
       "legend": {
-        "note": "단위 ha/yr · 결측 0개 성·시",
+        "note": "단위 ha · 결측 0개 성·시",
         "title": "연간 수관 손실 — 성(省) 단위"
       },
-      "licenses": [
-        "CC-BY-4.0"
-      ],
+      "licenses": [],
       "mapBenefit": "성·시별 산림손실의 공간 분포를 비교할 수 있습니다.",
       "mapMode": "choropleth",
       "missingRegions": [],
@@ -721,7 +825,7 @@
         "VNM"
       ],
       "selectors": {
-        "defaultPeriod": "2025",
+        "defaultPeriod": "2024",
         "defaultVariable": "annual-tree-cover-loss",
         "periods": [
           "2001",
@@ -747,14 +851,14 @@
           "2021",
           "2022",
           "2023",
-          "2024",
-          "2025"
+          "2024"
         ],
         "variables": [
           {
             "key": "annual-tree-cover-loss",
             "label": "연간 수관 손실 — 성(省) 단위",
             "maxFeatureCount": 63,
+            "measureId": "tree_cover_loss_prov",
             "periods": [
               "2001",
               "2002",
@@ -779,26 +883,19 @@
               "2021",
               "2022",
               "2023",
-              "2024",
-              "2025"
+              "2024"
             ],
-            "unit": "ha/yr"
+            "unit": "ha"
           }
         ]
       },
-      "source": "Global Forest Watch (UMD/WRI) · Global Forest Watch (UMD/WRI, Curtis et al. 2018 drivers) · Global Forest Watch / Curtis et al.(2018) drivers · Global Forest Watch / Hansen (UMD)",
+      "source": "Global Forest Watch (UMD/WRI, Hansen et al. 2013) · 경계 GADM 4.1 ADM1 · Global Forest Watch / Hansen (UMD)",
       "sourceCoordinateCount": 0,
       "sourceOrganizations": [
-        "Global Forest Watch (UMD/WRI)",
-        "Global Forest Watch (UMD/WRI, Curtis et al. 2018 drivers)",
-        "Global Forest Watch / Curtis et al.(2018) drivers",
-        "Global Forest Watch / Hansen (UMD)"
+        "Global Forest Watch (UMD/WRI, Hansen et al. 2013) · 경계 GADM 4.1 ADM1 · Global Forest Watch / Hansen (UMD)"
       ],
-      "sourceUrls": [
-        "https://data-api.globalforestwatch.org/dataset/umd_tree_cover_loss",
-        "https://www.globalforestwatch.org/dashboards/country/VNM/"
-      ],
-      "sourceYear": "2025",
+      "sourceUrls": [],
+      "sourceYear": "2024",
       "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개",
       "spatialLimitation": "개편 전 63개 성·시 통계 경계를 사용합니다.",
       "spatialScopeType": "admin1",
@@ -809,8 +906,8 @@
         "unit",
         "period"
       ],
-      "totalEntityCount": 1575,
-      "unit": "ha/yr",
+      "totalEntityCount": 1489,
+      "unit": "ha",
       "zeroImputationCount": 0
     },
     {
@@ -832,7 +929,7 @@
       "detailUrl": "/?element=b-034&country=VNM#element-detail",
       "displayedCoordinateCount": 0,
       "downloadStatus": "available",
-      "downloadableRecordCount": 498,
+      "downloadableRecordCount": 608,
       "elementId": "B-034",
       "enabled": true,
       "fakeGeometryCount": 0,
@@ -850,16 +947,13 @@
         "requiredCount": 63
       },
       "label": "탄소 저장량",
-      "latestYear": "2025",
+      "latestYear": "2001–2024",
       "layerId": "vnm-v124-b-034",
       "legend": {
-        "note": "단위 Mg CO₂e/yr · 결측 0개 성·시",
-        "title": "성(省)별 산림탄소 순플럭스(연평균)"
+        "note": "단위 Mg CO2e/yr · 결측 0개 성·시",
+        "title": "산림탄소 순플럭스(연평균)"
       },
-      "licenses": [
-        "CC-BY-4.0",
-        "기관 이용약관"
-      ],
+      "licenses": [],
       "mapBenefit": "성·시별 산림 탄소의 공간 차이를 비교할 수 있습니다.",
       "mapMode": "choropleth",
       "missingRegions": [],
@@ -872,71 +966,58 @@
         "VNM"
       ],
       "selectors": {
-        "defaultPeriod": "2025",
-        "defaultVariable": "8fca7c8dd189",
+        "defaultPeriod": "2001–2024",
+        "defaultVariable": "6d25ef451c11",
         "periods": [
           "2000",
-          "2025"
+          "2001–2024"
         ],
         "variables": [
           {
-            "key": "e9c042582276",
-            "label": "산림탄소 순플럭스 — 성(省) 단위",
+            "key": "6d25ef451c11",
+            "label": "산림탄소 순플럭스(연평균)",
             "maxFeatureCount": 63,
+            "measureId": "prov_forest_carbon_net_flux",
             "periods": [
-              "2025"
+              "2001–2024"
             ],
             "unit": "Mg CO2e/yr"
           },
           {
-            "key": "8fca7c8dd189",
-            "label": "성(省)별 산림탄소 순플럭스(연평균)",
+            "key": "262e9db923b3",
+            "label": "산림탄소 총배출(연평균)",
             "maxFeatureCount": 63,
+            "measureId": "prov_forest_carbon_gross_emissions",
             "periods": [
-              "2025"
+              "2001–2024"
             ],
-            "unit": "Mg CO₂e/yr"
+            "unit": "Mg CO2e/yr"
           },
           {
-            "key": "5547c8507ecb",
-            "label": "성(省)별 산림탄소 총배출(연평균)",
+            "key": "e92733a63c5a",
+            "label": "산림탄소 총흡수(연평균)",
             "maxFeatureCount": 63,
+            "measureId": "prov_forest_carbon_gross_removals",
             "periods": [
-              "2025"
+              "2001–2024"
             ],
-            "unit": "Mg CO₂e/yr"
+            "unit": "Mg CO2/yr"
           },
           {
-            "key": "7f74ea9db7ec",
-            "label": "성(省)별 산림탄소 총흡수(연평균)",
+            "key": "88477334b35c",
+            "label": "지상부 탄소밀도",
             "maxFeatureCount": 63,
-            "periods": [
-              "2025"
-            ],
-            "unit": "Mg CO₂/yr"
-          },
-          {
-            "key": "eec89b0aa34e",
-            "label": "성(省)별 지상부 탄소밀도",
-            "maxFeatureCount": 63,
+            "measureId": "prov_agb_carbon_density",
             "periods": [
               "2000"
             ],
             "unit": "Mg C/ha"
           },
           {
-            "key": "ffa9327918a4",
-            "label": "성(省)별 지상부 탄소저장량",
+            "key": "d3147553bdff",
+            "label": "지상부 탄소저장량",
             "maxFeatureCount": 63,
-            "periods": [
-              "2000"
-            ],
-            "unit": "Mg C"
-          },
-          {
-            "key": "53b551c16b5c",
-            "label": "지상부 탄소저장량 — 성(省) 단위",
-            "maxFeatureCount": 63,
+            "measureId": "prov_agb_carbon_stock",
             "periods": [
               "2000"
             ],
@@ -944,18 +1025,15 @@
           }
         ]
       },
-      "source": "Global Forest Watch · Global Forest Watch (Harris et al. 2021) · Global Forest Watch (UMD/WRI)",
+      "source": "Global Forest Watch (Harris et al. 2021)",
       "sourceCoordinateCount": 0,
       "sourceOrganizations": [
-        "Global Forest Watch",
-        "Global Forest Watch (Harris et al. 2021)",
-        "Global Forest Watch (UMD/WRI)"
+        "Global Forest Watch (Harris et al. 2021)"
       ],
       "sourceUrls": [
-        "https://data-api.globalforestwatch.org/dataset/umd_tree_cover_loss",
         "https://www.globalforestwatch.org/dashboards/country/VNM/"
       ],
-      "sourceYear": "2025",
+      "sourceYear": "2001–2024",
       "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개",
       "spatialLimitation": "개편 전 63개 성·시 통계 경계를 사용합니다.",
       "spatialScopeType": "admin1",
@@ -966,8 +1044,8 @@
         "unit",
         "period"
       ],
-      "totalEntityCount": 441,
-      "unit": "Mg CO₂e/yr",
+      "totalEntityCount": 315,
+      "unit": "Mg CO2e/yr",
       "zeroImputationCount": 0
     },
     {
@@ -1014,7 +1092,7 @@
         "title": "GVI 취약성 지수 — 지역(6권역)"
       },
       "licenses": [
-        "기관 이용약관"
+        "기관 이용약관(비영리 한정)"
       ],
       "mapBenefit": "6개 권역의 취약성 차이를 행정경계 위에서 비교할 수 있습니다.",
       "mapMode": "region-choropleth",
@@ -1071,6 +1149,7 @@
             "key": "gvi-6",
             "label": "GVI 취약성 지수 — 지역(6권역)",
             "maxFeatureCount": 63,
+            "measureId": null,
             "periods": [
               "2000",
               "2001",
@@ -1103,6 +1182,7 @@
             "key": "1-gni",
             "label": "구성지표 — 1인당 GNI(로그)",
             "maxFeatureCount": 63,
+            "measureId": null,
             "periods": [
               "1990",
               "1991",
@@ -1145,6 +1225,7 @@
             "key": "361901f103f6",
             "label": "구성지표 — 기대수명",
             "maxFeatureCount": 63,
+            "measureId": null,
             "periods": [
               "1990",
               "1991",
@@ -1187,6 +1268,7 @@
             "key": "e7f52a81c079",
             "label": "구성지표 — 도시화율",
             "maxFeatureCount": 63,
+            "measureId": null,
             "periods": [
               "1994",
               "1995",
@@ -1225,6 +1307,7 @@
             "key": "c823a6adab58",
             "label": "구성지표 — 부양비",
             "maxFeatureCount": 63,
+            "measureId": null,
             "periods": [
               "1994",
               "1995",
@@ -1263,6 +1346,7 @@
             "key": "iwi-70",
             "label": "구성지표 — 빈곤 가구 비율(IWI<70)",
             "maxFeatureCount": 63,
+            "measureId": null,
             "periods": [
               "1994",
               "1995",
@@ -1301,6 +1385,7 @@
             "key": "b9e9fdabb2df",
             "label": "구성지표 — 상수도 보급 가구 비율",
             "maxFeatureCount": 63,
+            "measureId": null,
             "periods": [
               "2003",
               "2004",
@@ -1330,6 +1415,7 @@
             "key": "gdi",
             "label": "구성지표 — 성개발지수(GDI)",
             "maxFeatureCount": 63,
+            "measureId": null,
             "periods": [
               "1992",
               "1993",
@@ -1370,6 +1456,7 @@
             "key": "ac9d19fb3b52",
             "label": "구성지표 — 전기 보급 가구 비율",
             "maxFeatureCount": 63,
+            "measureId": null,
             "periods": [
               "1994",
               "1995",
@@ -1408,6 +1495,7 @@
             "key": "sci",
             "label": "구성지표 — 종합 지방부패지수(SCI)",
             "maxFeatureCount": 63,
+            "measureId": null,
             "periods": [
               "1995",
               "1996",
@@ -1444,6 +1532,7 @@
             "key": "25",
             "label": "구성지표 — 평균 교육연수(25세 이상)",
             "maxFeatureCount": 63,
+            "measureId": null,
             "periods": [
               "1994",
               "1995",
@@ -1482,6 +1571,7 @@
             "key": "5d51cd2a3a0c",
             "label": "구성지표 — 휴대폰 보유 가구 비율",
             "maxFeatureCount": 63,
+            "measureId": null,
             "periods": [
               "2003",
               "2004",
@@ -1556,8 +1646,54 @@
       "downloadableRecordCount": 18,
       "elementId": "B-048",
       "enabled": true,
+      "factFields": [
+        {
+          "filledRecordCount": 2,
+          "filterable": true,
+          "key": "mineral",
+          "label": "광종",
+          "recordCount": 2,
+          "sources": [
+            "광종"
+          ]
+        },
+        {
+          "filledRecordCount": 2,
+          "filterable": true,
+          "key": "regionName",
+          "label": "소재 성·시",
+          "recordCount": 2,
+          "sources": [
+            "소재_행정구역_성"
+          ]
+        },
+        {
+          "filledRecordCount": 2,
+          "key": "climateTechBasis",
+          "label": "기후기술 연계 근거",
+          "recordCount": 2,
+          "sources": [
+            "기후기술_연계_근거"
+          ]
+        },
+        {
+          "filledRecordCount": 2,
+          "key": "coordinateBasis",
+          "label": "좌표 산출근거",
+          "recordCount": 2,
+          "sources": [
+            "좌표_산출근거"
+          ]
+        }
+      ],
       "fakeGeometryCount": 0,
       "featureCount": 2,
+      "fieldLabels": {
+        "climateTechBasis": "기후기술 연계 근거",
+        "coordinateBasis": "좌표 산출근거",
+        "mineral": "광종",
+        "regionName": "소재 성·시"
+      },
       "filters": [
         {
           "field": "mineral",
@@ -1569,7 +1705,7 @@
         },
         {
           "field": "regionName",
-          "label": "지역",
+          "label": "소재 성·시",
           "values": [
             "Lao Cai",
             "Son La"
@@ -1637,7 +1773,8 @@
         "name",
         "mineral",
         "regionName",
-        "referenceYear"
+        "climateTechBasis",
+        "coordinateBasis"
       ],
       "totalEntityCount": 8,
       "unit": "source-provided location",
@@ -1659,36 +1796,121 @@
       "defaultPrimary": false,
       "detailElementId": "C-025",
       "detailUrl": "/?element=c-025&country=VNM#element-detail",
-      "displayedCoordinateCount": 18,
+      "displayedCoordinateCount": 262,
       "downloadStatus": "available",
       "downloadableRecordCount": 5,
       "elementId": "C-025",
       "enabled": true,
-      "fakeGeometryCount": 0,
-      "featureCount": 18,
-      "filters": [
+      "factFields": [
         {
-          "field": "standard",
-          "label": "표준",
-          "values": [
-            "Gold Standard"
+          "filledRecordCount": 261,
+          "filterable": true,
+          "key": "technologyField",
+          "label": "기술분야",
+          "recordCount": 262,
+          "sources": [
+            "속성6_분류"
           ]
         },
+        {
+          "filledRecordCount": 47,
+          "key": "creditingPeriod",
+          "label": "크레딧 기간",
+          "recordCount": 262,
+          "sources": [
+            "속성17_크레딧기간"
+          ]
+        },
+        {
+          "filledRecordCount": 262,
+          "filterable": true,
+          "key": "regionName",
+          "label": "소재 지역",
+          "recordCount": 262,
+          "sources": [
+            "속성21_지역_현행",
+            "속성20_지역_원문"
+          ]
+        },
+        {
+          "filledRecordCount": 47,
+          "key": "annualReduction",
+          "label": "연간 예상감축량",
+          "recordCount": 262,
+          "sources": [
+            "속성14_연간예상감축_tCO2e"
+          ],
+          "unit": "tCO2e"
+        },
+        {
+          "filledRecordCount": 262,
+          "key": "officialSource",
+          "label": "공식 원문",
+          "recordCount": 262,
+          "sources": [
+            "속성19_원문URL"
+          ]
+        }
+      ],
+      "fakeGeometryCount": 0,
+      "featureCount": 262,
+      "fieldLabels": {
+        "annualReduction": "연간 예상감축량",
+        "creditingPeriod": "크레딧 기간",
+        "officialSource": "공식 원문",
+        "regionName": "소재 지역",
+        "technologyField": "기술분야"
+      },
+      "filters": [
         {
           "field": "technologyField",
           "label": "기술분야",
           "values": [
+            "CTIS-01 태양광 기술",
             "CTIS-03 풍력 기술",
             "CTIS-05 수력 기술",
-            "CTIS-08 바이오에너지 기술"
+            "CTIS-08 바이오에너지 기술",
+            "CTIS-15 폐자원 기술",
+            "CTIS-17 산업효율 기술",
+            "CTIS-19 건물효율 기술",
+            "CTIS-34 농축수산 부문 기술"
           ]
         },
         {
-          "field": "status",
-          "label": "상태",
+          "field": "regionName",
+          "label": "소재 지역",
           "values": [
-            "GOLD_STANDARD_CERTIFIED_DESIGN",
-            "GOLD_STANDARD_CERTIFIED_PROJECT"
+            "An Giang",
+            "Bac Ninh",
+            "Ca Mau",
+            "Can Tho city",
+            "Cao Bang",
+            "Da Nang city",
+            "Dak Lak",
+            "Dien Bien",
+            "Dong Nai",
+            "Dong Thap",
+            "Gia Lai",
+            "Ha Noi",
+            "Ha Tinh",
+            "Ho Chi Minh city",
+            "Hue",
+            "Khanh Hoa",
+            "Lai Chau",
+            "Lam Dong",
+            "Lang Son",
+            "Lao Cai",
+            "Nghe An",
+            "Ninh Binh",
+            "Phu Tho",
+            "Quang Ngai",
+            "Quang Tri",
+            "Son La",
+            "Tay Ninh",
+            "Thai Nguyen",
+            "Thanh Hoa",
+            "Tuyen Quang",
+            "Vinh Long"
           ]
         }
       ],
@@ -1697,8 +1919,8 @@
       ],
       "join": {
         "failures": [],
-        "matchedCount": 18,
-        "requiredCount": 18
+        "matchedCount": 262,
+        "requiredCount": 262
       },
       "label": "탄소크레딧 사업",
       "latestYear": 2026,
@@ -1743,7 +1965,7 @@
         ]
       },
       "source": "Global Carbon Council (GCC) · UNFCCC CDM Insights · Verra Registry / Gold Standard Registry / CarbonPlan offsets-db · Verra VCS Registry · Gold Standard Registry",
-      "sourceCoordinateCount": 22,
+      "sourceCoordinateCount": 262,
       "sourceOrganizations": [
         "Global Carbon Council (GCC)",
         "UNFCCC CDM Insights",
@@ -1751,16 +1973,16 @@
         "Verra VCS Registry · Gold Standard Registry"
       ],
       "sourceYear": 2026,
-      "spatialCoverage": "출처 좌표가 있는 18개 피처",
+      "spatialCoverage": "출처 좌표가 있는 262개 피처",
       "spatialLimitation": "전국 프로그램 대표좌표 2건과 베트남 밖 잘못된 좌표 2건은 표시하지 않습니다.",
       "spatialScopeType": "project-site",
       "tooltipFields": [
         "name",
-        "standard",
         "technologyField",
-        "status",
+        "creditingPeriod",
+        "regionName",
         "annualReduction",
-        "creditingPeriod"
+        "officialSource"
       ],
       "totalEntityCount": 146,
       "unit": "source-provided location",
@@ -1784,8 +2006,8 @@
       "detailElementId": "D-008",
       "detailUrl": "/?element=d-008&country=VNM#element-detail",
       "displayedCoordinateCount": 0,
-      "downloadStatus": "source-restricted",
-      "downloadableRecordCount": 0,
+      "downloadStatus": "available",
+      "downloadableRecordCount": 15,
       "elementId": "D-008",
       "enabled": true,
       "fakeGeometryCount": 0,
@@ -1837,6 +2059,7 @@
             "key": "provincial-climate-budget",
             "label": "성 단위 기후변화 지출 누계",
             "maxFeatureCount": 3,
+            "measureId": null,
             "periods": [
               "2010-2013"
             ],
@@ -1896,7 +2119,7 @@
       "detailElementId": "D-018",
       "detailUrl": "/?element=d-018&country=VNM#element-detail",
       "displayedCoordinateCount": 2,
-      "downloadStatus": "source-restricted",
+      "downloadStatus": "available",
       "downloadableRecordCount": 0,
       "elementId": "D-018",
       "enabled": true,
@@ -1990,7 +2213,7 @@
       "zeroImputationCount": 0
     }
   ],
-  "mapFeatureCount": 2900,
+  "mapFeatureCount": 3144,
   "platformRelease": "v130",
   "schemaVersion": "v124"
 }

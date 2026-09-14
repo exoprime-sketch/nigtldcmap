@@ -155,7 +155,9 @@ export function publicDownloadStatusV128(
 export function publicReferencePeriodV128(
   item: CountryCatalogItemV122
 ): string {
-  if (item.elementId === "A-002") return "2005–2015년";
+  // A-002 used to carry CPIA, which stopped in 2015. It now carries the World
+  // Bank's Worldwide Governance Indicators, 1996-2024, and the card was still
+  // telling a reader the data ended nine years before it does.
   const summary = getElementVisualizationSummaryV125(item.elementId);
   if (summary?.yearRange.start !== null && summary?.yearRange.start !== undefined) {
     return summary.yearRange.start === summary.yearRange.end

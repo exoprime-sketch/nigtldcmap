@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
-import { spawnSync } from "node:child_process";
+import { mkdirSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { runAuditCommand } from "./ci/run-audit-command.mjs";
 
 import { AuditV125, PROJECT_ROOT, readJson } from "./v125/audit-utils.mjs";
 import { finishAuditV136, reportStatusV136 } from "./v136/audit-helpers.mjs";
@@ -11,8 +12,10 @@ const audit = new AuditV125("release:v136");
 // V136 keeps the V134 boundary: functional data, DOM and build gates block the
 // release, screenshot capture stays in the separate non-blocking visual QA job.
 const commands = [
+  { name: "CI_PROCESS_GUARDS", command: "node --test scripts/ci/browser-timeout.test.mjs" },
   { name: "PRODUCTION_BUILD_FOR_RUNTIME", command: "npm run build" },
   { name: "V133_GENERATED_DATA", command: "npm run audit:generated-data:v133" },
+  { name: "LARGE_SOURCE_TABLE", command: "node scripts/ci/audit-large-source-table.mjs" },
   { name: "V133_CI_CONTRACT", command: "npm run audit:ci-contract:v133" },
   { name: "V130_PROJECT_SCOPE", command: "npm run audit:project-scope:v130" },
   { name: "V130_MAP_DEDUP", command: "npm run audit:map-dedup:v130" },
@@ -49,29 +52,36 @@ const commands = [
   // catalogue today - so it is held by a unit test, and the gate runs it.
   { name: "V136_3_UNIT_TESTS", command: "npm run test:unit" },
   { name: "V136_2_GENERIC_DETAIL_PUBLIC", command: "npm run audit:generic-detail-public:v136-2" },
+  { name: "V136_4_SCREEN_USABILITY", command: "npm run audit:screen-usability:v136-4" },
   { name: "V136_HUMAN_REVIEW", command: "npm run audit:human-review:v136" },
   { name: "V136_WORKFLOW", command: "npm run audit:workflow:v136" },
 ];
 
 const commandResults = [];
+const timingPath = resolve(PROJECT_ROOT, "reports/v136/ci-command-timings.json");
+mkdirSync(resolve(timingPath, ".."), { recursive: true });
+const runStartedAt = new Date().toISOString();
+function saveTimings(status, activeCommand = null) {
+  writeFileSync(timingPath, JSON.stringify({ status, runStartedAt, updatedAt: new Date().toISOString(), platform: process.platform, expectedCommandCount: commands.length, activeCommand, commandResults }, null, 2));
+}
+saveTimings("running");
 for (const entry of commands) {
-  const result = spawnSync(entry.command, {
+  saveTimings("running", entry.name);
+  const result = await runAuditCommand(entry.command, {
     cwd: PROJECT_ROOT,
-    encoding: "utf8",
-    maxBuffer: 256 * 1024 * 1024,
-    shell: true,
-    stdio: ["ignore", "pipe", "pipe"],
+    timeoutMs: entry.name === "PRODUCTION_BUILD_FOR_RUNTIME" ? 900_000 : 600_000,
   });
-  if (result.stdout) process.stdout.write(result.stdout);
-  if (result.stderr) process.stderr.write(result.stderr);
   const record = {
     name: entry.name,
     command: entry.command,
     exitCode: result.status,
     signal: result.signal,
     error: result.error?.message || null,
+    elapsedMs: result.elapsedMs,
+    timedOut: result.timedOut,
   };
   commandResults.push(record);
+  saveTimings(result.status !== 0 ? "failed" : commandResults.length === commands.length ? "passed" : "running");
   audit.check(entry.name, result.status === 0, record, { exitCode: 0 });
   if (result.status !== 0) break;
 }

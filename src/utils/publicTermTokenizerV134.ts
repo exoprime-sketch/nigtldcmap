@@ -206,8 +206,10 @@ function resolvePmcV134(
   if (normalizePublicTermAliasV134(value) !== "PMC") return null;
   const literatureContext =
     /(?:PubMed|논문|학술|Microbiol|Biotechnol|저널|MDPI)/iu.test(context);
+  // 입찰·조달 wording is what names PMC on the procurement screens; without it
+  // "PMC(일반경쟁)" matched neither meaning and resolved to nothing.
   const projectContext =
-    /(?:용역|사업관리|프로젝트|공사|건립|지원사업)/iu.test(context);
+    /(?:용역|사업관리|프로젝트|공사|건립|지원사업|입찰|조달|경쟁)/iu.test(context);
   if (literatureContext === projectContext) return null;
   const entry = PUBLIC_GLOSSARY_BY_ID_V134.get(
     literatureContext ? "pmc-literature" : "pmc-project"
@@ -220,7 +222,10 @@ function resolveIpV134(
   context: string
 ): ResolvedPublicTermV134 | null {
   if (normalizePublicTermAliasV134(value) !== "IP") return null;
-  const industryContext = /(?:산업공정|온실가스|배출|공정)/iu.test(context);
+  // The inventory breakdown names its sectors side by side - 에너지, 농업,
+  // 폐기물, LULUCF - and IP sits among them without the word 배출 nearby.
+  const industryContext =
+    /(?:산업공정|온실가스|배출|공정|폐기물|LULUCF|MtCO)/iu.test(context);
   const intellectualPropertyContext = /(?:지식재산|특허|상표|WIPO|Statistics|혁신)/iu.test(context);
   if (industryContext === intellectualPropertyContext) return null;
   const entry = PUBLIC_GLOSSARY_BY_ID_V134.get(
@@ -243,7 +248,17 @@ export function resolvePublicTermV134(
     resolveIpV134(value, context) ??
     (() => {
       const entry = getPublicGlossaryByAliasV134(value);
-      return entry ? { ...entry, displayTerm: value } : null;
+      if (!entry) return null;
+      // A unit symbol is case-sensitive: "ha" is a hectare and "HA" is not.
+      // B-020 prints INFORM's dimension codes - 위험·노출(HA), 취약성(VU) - and
+      // the case-insensitive alias made the hazard dimension a unit of area.
+      if (
+        entry.category === "unit" &&
+        !entry.aliases.some((alias) => alias === value.trim())
+      ) {
+        return null;
+      }
+      return { ...entry, displayTerm: value };
     })()
   );
 }

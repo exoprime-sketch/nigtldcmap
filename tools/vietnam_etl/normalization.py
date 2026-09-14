@@ -88,6 +88,31 @@ def nfc_text(value: str) -> str:
     return text.strip()
 
 
+# Two cells of the delivered C-025 workbook carry an AI tool's own truncation
+# message inside the value - a project name and an official-source URL, both cut
+# off mid-content and then followed by "[output truncated at 50000 of 66108
+# characters. Pass a larger max_chars ...]". Published verbatim, that message
+# became a project name on the map and a link in 공식 원문.
+#
+# The source file is never edited. What is published keeps the text the source
+# states before the marker and drops the marker, and the affected cells are
+# counted so the damage is visible rather than silently tidied away. The missing
+# characters are not guessed at.
+_TOOL_TRUNCATION_MARKER = re.compile(
+    r"\s*\[?\s*output truncated at \d[\d,]*\s+of\s+\d[\d,]*\s+characters.*$",
+    re.IGNORECASE | re.DOTALL,
+)
+
+
+def strip_tool_truncation_marker(value: Any) -> tuple[Any, bool]:
+    """Remove a tool truncation message from a delivered cell, if present."""
+
+    if not isinstance(value, str) or "output truncated at" not in value.lower():
+        return value, False
+    cleaned = _TOOL_TRUNCATION_MARKER.sub("", value).strip()
+    return (cleaned or None), True
+
+
 def normalize_value(value: Any) -> Any:
     """Convert an Excel cell to a deterministic JSON-compatible value."""
 

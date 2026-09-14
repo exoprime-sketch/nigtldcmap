@@ -1,0 +1,217 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:65003/?view=data&element=gihudae-climate-zone&country=VNM&from=explorer&measure=measure-095dc03abb8f&year=2020&dim.detail=Af+%28%EC%97%B4%EB%8C%80%EC%9A%B0%EB%A6%BC%29#element-detail",
+  "title": "기후대",
+  "body": "검색 결과로 돌아가기 기후 환경 › 기후 기초 정보 데이터 제공 다운로드 가능 기후대 베트남 · 기후대의 최근 수준과 항목별 차이를 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 19종 · 관측기간 1930~2099년 이 데이터로 확인할 수 있는 내용 기후대의 지역별 차이와 범위 기후대의 지역 차이와 공개된 공간 범위를 확인할 수 있습니다. i 지표 읽는 법 기후대 변화 시나리오 기간과 온실가스 경로에 따라 열대기후가 차지하는 국토 비율을 비교합니다. 미래 시나리오는 관측값이 아니라 각 배출경로를 가정한 전망입니다. 단위 % 높고 낮음의 의미 같은 기간·시나리오 안에서 국토 비율을 해석 항목 국가 우세 기후대 · 구분 기후대별 점유 면적 · km² 기후대별 점유 비율 · % 열대기후(A군) 국토 점유 비율 · % 세부 분류 전체 Af (열대우림) Am (열대몬순) Aw (열대사바나) Cfa (온대·연중습윤·고온하계) Cfb (온대·연중습윤·온난하계) Cwa (온대·동계건조·고온하계) Cwb (온대·동계건조·온난하계) 시기·시나리오별 분류 전체 1901 1991 2071 분류 전체 1930 관측 2020 관측 2099 SSP2-4.5 2099 SSP5-8.5 연도 2020 기후대별 점유 면적 2,497 km² · 2020 · Af (열대우림) 주 분석 기후대 지역별 현황 항목 항목별 값 단위: km² Af (열대우림) 2,497 km² 자료정보 상세 데이터 · 전체 19행 · 값 있음 19행 · 결측 0행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 770,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "B-002",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "기후대의 지역별 차이와 범위",
+    "지표 읽는 법",
+    "기후대 지역별 현황",
+    "항목별 값",
+    "단위: km²",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목 선택",
+      "dimensionKey": null,
+      "testId": "v125-measure-select",
+      "value": "measure-095dc03abb8f",
+      "shown": "기후대별 점유 면적 · km²",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-dc9435ecb81e",
+          "label": "국가 우세 기후대 · 구분",
+          "disabled": false
+        },
+        {
+          "value": "measure-095dc03abb8f",
+          "label": "기후대별 점유 면적 · km²",
+          "disabled": false
+        },
+        {
+          "value": "measure-f886ea70efa0",
+          "label": "기후대별 점유 비율 · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-cbe45ba5c300",
+          "label": "열대기후(A군) 국토 점유 비율 · %",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "세부 분류 선택",
+      "dimensionKey": "detail",
+      "testId": null,
+      "value": "Af (열대우림)",
+      "shown": "Af (열대우림)",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "Af (열대우림)",
+          "label": "Af (열대우림)",
+          "disabled": false
+        },
+        {
+          "value": "Am (열대몬순)",
+          "label": "Am (열대몬순)",
+          "disabled": false
+        },
+        {
+          "value": "Aw (열대사바나)",
+          "label": "Aw (열대사바나)",
+          "disabled": false
+        },
+        {
+          "value": "Cfa (온대·연중습윤·고온하계)",
+          "label": "Cfa (온대·연중습윤·고온하계)",
+          "disabled": false
+        },
+        {
+          "value": "Cfb (온대·연중습윤·온난하계)",
+          "label": "Cfb (온대·연중습윤·온난하계)",
+          "disabled": false
+        },
+        {
+          "value": "Cwa (온대·동계건조·고온하계)",
+          "label": "Cwa (온대·동계건조·고온하계)",
+          "disabled": false
+        },
+        {
+          "value": "Cwb (온대·동계건조·온난하계)",
+          "label": "Cwb (온대·동계건조·온난하계)",
+          "disabled": false
+        },
+        {
+          "value": "시기·시나리오별",
+          "label": "시기·시나리오별",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "분류 선택",
+      "dimensionKey": "detail_2",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "1901",
+          "label": "1901",
+          "disabled": false
+        },
+        {
+          "value": "1991",
+          "label": "1991",
+          "disabled": false
+        },
+        {
+          "value": "2071",
+          "label": "2071",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(4) > select:nth-of-type(1)",
+      "id": null,
+      "label": "분류 선택",
+      "dimensionKey": "detail_3",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "1930 관측",
+          "label": "1930 관측",
+          "disabled": false
+        },
+        {
+          "value": "2020 관측",
+          "label": "2020 관측",
+          "disabled": false
+        },
+        {
+          "value": "2099 SSP2-4.5",
+          "label": "2099 SSP2-4.5",
+          "disabled": false
+        },
+        {
+          "value": "2099 SSP5-8.5",
+          "label": "2099 SSP5-8.5",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(5) > select:nth-of-type(1)",
+      "id": null,
+      "label": "연도 선택",
+      "dimensionKey": null,
+      "testId": "v125-year-select",
+      "value": "2020",
+      "shown": "2020",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "2020",
+          "label": "2020",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [
+    "기후대별 점유 면적 2,497 km² · 2020 · Af (열대우림)"
+  ],
+  "chartTexts": [
+    "Af (열대우림) 2,497 km²"
+  ],
+  "tableRows": [],
+  "emptyNotices": [],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

@@ -24,11 +24,13 @@ export function formatPublicNumberV126(
   }).format(value);
 }
 
-export function formatPublicDeltaV126(value: number | null): string {
+export function formatPublicDeltaV126(
+  value: number | null,
+  // The unit of the thing being compared. It used to be hard-coded to 점, so a
+  // percentile change read "전년 대비 +0.12점" on a screen measured 0-100.
+  unit = "점"
+): string {
   if (value === null || !Number.isFinite(value)) return "비교 불가";
   if (Math.abs(value) < 0.005) return "전년과 동일";
-  return `전년 대비 ${value > 0 ? "+" : ""}${formatPublicNumberV126(
-    value,
-    "점"
-  )}점`;
+  return `전년 대비 ${value > 0 ? "+" : ""}${formatPublicNumberV126(value, unit)}${unit}`;
 }

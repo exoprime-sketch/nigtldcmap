@@ -1,0 +1,132 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:51655/?view=data&element=hwaseogyeonryo-yijondo-fossil-fuel-energy-consumption&country=VNM&from=explorer&measure=measure-98a19c41d3d6&year=2023#element-detail",
+  "title": "화석연료 의존도",
+  "body": "검색 결과로 돌아가기 기후 환경 › 전환 리스크 데이터 제공 다운로드 가능 화석연료 의존도 베트남 · 화석연료 의존도의 항목별 구성과 연도별 변화를 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 2종 · 관측기간 1990~2024년 이 데이터로 확인할 수 있는 내용 화석연료 의존도의 추세와 최근 수준 화석연료 의존도의 현재 수준과 기준시점별 변화를 확인할 수 있습니다. 항목 화석연료 소비 비중 · % 화석연료 소비 비중(EI 기반 보완 산출) · % 연도 2024 2023 2022 2021 2020 2019 2018 2017 2016 용어 도움말 ? EI 설명 화석연료 소비 비중(EI 기반 보완 산출) 89.85 % · 2023 주 분석 화석연료 의존도 연도별 변화 연도별 항목 추세 2016~2024년 추세 단위: % 화석연료 소비 비중(EI(에너지연구협회) 기반 보완 산출) 표시기간 전체 축소 확대 전체 93.7708 92.4925 91.2142 89.9358 88.6575 87.3792 2016 2017 2018 2019 2021 2022 2023 2024 연도 측정값(%) 자료정보 상세 데이터 · 전체 45행 · 값 있음 35행 · 결측 10행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 625,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "B-016",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "화석연료 의존도의 추세와 최근 수준",
+    "화석연료 의존도 연도별 변화",
+    "항목 추세",
+    "2016~2024년 추세",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목 선택",
+      "dimensionKey": null,
+      "testId": "v125-measure-select",
+      "value": "measure-98a19c41d3d6",
+      "shown": "화석연료 소비 비중(EI 기반 보완 산출) · %",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-877ad0f1aa8d",
+          "label": "화석연료 소비 비중 · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-98a19c41d3d6",
+          "label": "화석연료 소비 비중(EI 기반 보완 산출) · %",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "연도 선택",
+      "dimensionKey": null,
+      "testId": "v125-year-select",
+      "value": "2023",
+      "shown": "2023",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "2024",
+          "label": "2024",
+          "disabled": false
+        },
+        {
+          "value": "2023",
+          "label": "2023",
+          "disabled": false
+        },
+        {
+          "value": "2022",
+          "label": "2022",
+          "disabled": false
+        },
+        {
+          "value": "2021",
+          "label": "2021",
+          "disabled": false
+        },
+        {
+          "value": "2020",
+          "label": "2020",
+          "disabled": false
+        },
+        {
+          "value": "2019",
+          "label": "2019",
+          "disabled": false
+        },
+        {
+          "value": "2018",
+          "label": "2018",
+          "disabled": false
+        },
+        {
+          "value": "2017",
+          "label": "2017",
+          "disabled": false
+        },
+        {
+          "value": "2016",
+          "label": "2016",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [
+    "화석연료 소비 비중(EI 기반 보완 산출) 89.85 % · 2023"
+  ],
+  "chartTexts": [
+    "93.7708",
+    "92.4925",
+    "91.2142",
+    "89.9358",
+    "88.6575",
+    "87.3792",
+    "2016",
+    "2017",
+    "2018",
+    "2019",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "연도",
+    "측정값(%)"
+  ],
+  "tableRows": [],
+  "emptyNotices": [],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

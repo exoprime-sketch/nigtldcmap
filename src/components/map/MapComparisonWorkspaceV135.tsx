@@ -386,35 +386,57 @@ function MapComparisonPaneV135({
           </select>
         </label>
       </header>
+      {/*
+        Most layers publish one 지표 and one 자료연도, and a select holding a
+        single option is a control a reader can open and close with nothing
+        happening. The value still has to be stated - it is what the pane is
+        showing - so it is stated.
+      */}
       <div className="cdp-map-compare-pane-v135__selectors">
-        <label>
-          <span>지표</span>
-          <select
-            disabled={!dataset}
-            onChange={(event) => onVariableChange(event.target.value)}
-            value={dataset?.selector.variable || ""}
-          >
-            {(dataset?.variableOptions || []).map((option) => (
-              <option key={option.key} value={option.key}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label>
-          <span>자료연도</span>
-          <select
-            disabled={!dataset}
-            onChange={(event) => onPeriodChange(event.target.value)}
-            value={dataset?.selector.period || ""}
-          >
-            {periods.map((period) => (
-              <option key={period} value={period}>
-                {period}
-              </option>
-            ))}
-          </select>
-        </label>
+        {(dataset?.variableOptions || []).length > 1 ? (
+          <label>
+            <span>지표</span>
+            <select
+              disabled={!dataset}
+              onChange={(event) => onVariableChange(event.target.value)}
+              value={dataset?.selector.variable || ""}
+            >
+              {(dataset?.variableOptions || []).map((option) => (
+                <option key={option.key} value={option.key}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </label>
+        ) : (
+          <p className="cdp-map-compare-pane-v135__fixed">
+            <span>지표</span>
+            <strong>
+              {(dataset?.variableOptions || [])[0]?.label || "지표 미기재"}
+            </strong>
+          </p>
+        )}
+        {periods.length > 1 ? (
+          <label>
+            <span>자료연도</span>
+            <select
+              disabled={!dataset}
+              onChange={(event) => onPeriodChange(event.target.value)}
+              value={dataset?.selector.period || ""}
+            >
+              {periods.map((period) => (
+                <option key={period} value={period}>
+                  {period}
+                </option>
+              ))}
+            </select>
+          </label>
+        ) : (
+          <p className="cdp-map-compare-pane-v135__fixed">
+            <span>자료연도</span>
+            <strong>{periods[0] || dataset?.selector.period || "미기재"}</strong>
+          </p>
+        )}
       </div>
       <div className="cdp-map-compare-pane-v135__canvas-wrap">
         <div className="cdp-map-compare-pane-v135__canvas" ref={containerRef} />

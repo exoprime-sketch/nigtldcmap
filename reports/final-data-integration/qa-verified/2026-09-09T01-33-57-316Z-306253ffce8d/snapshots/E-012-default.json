@@ -1,0 +1,134 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:65003/?view=data&element=jiggunbyeol-jongsaja-su-jiggunbyeol-imgeum&country=VNM&from=explorer#element-detail",
+  "title": "기술인력과 임금",
+  "body": "검색 결과로 돌아가기 협력·실행 기반 › 개도국 기술 역량 평가 지표 데이터 제공 다운로드 가능 기술인력과 임금 베트남 · 직군과 성별에 따른 고용 규모, 구성비, 여성 비중과 임금 차이를 확인할 수 있습니다. 다운로드 공개 데이터 데이터 분석 베트남 · 지표 87종 · 관측기간 2023~2024년 이 데이터로 확인할 수 있는 내용 직군·성별에 따른 고용과 임금 직군과 성별에 따른 고용 규모, 구성비, 여성 비중과 임금 차이를 확인할 수 있습니다. 고용·임금 분석 직군별 종사자 수와 월평균 임금 항목, 직군, 성별과 기준연도를 분리해 자료의 분류를 그대로 확인합니다. 자료 92건 총 취업자 수 51,860.3 천명 2024년 · 천명 고용률 71.96 % 2024년 · % 최신 월평균 임금 7,700,000 VND 2024년 · VND 기준연도 2024년 화면에 포함된 최신 원자료 직군별 비교 직군별 측정값 2024년 항목 종사자 수 고용 구성비 직군 내 여성 비중 월평균 임금 성별 전체 남성 · 원자료 없음 여성 · 원자료 없음 기준연도 2024년 2023년 단순노무직 2024년 13,287.5 천명 서비스·판매직 2024년 10,411 천명 장치·기계 조작·조립원 2024년 7,626 천명 기능원·관련직 2024년 7,325 천명 농림어업 숙련직 2024년 5,600.7 천명 전문가 2024년 3,902.2 천명 기술공·준전문가 2024년 1,602.7 천명 사무직 2024년 1,317 천명 관리자 2024년 477.1 천명 기타·미정의 2024년 311.2 천명 직군별 막대 표로 보기 두 항목의 관계 종사자 수–임금 관계 전체 · 2024년 X축 종사자 수는 전체 취업자, Y축 임금은 임금근로자 기준이므로 두 항목의 모집단이 다릅니다. 0 3,578 7,156.1 1.1만 1.4만 관리자 전문가 기술공 사무직 서비스 농림어업 기능원 기계조작 단순노무 직군별 종사자 수 (천명) 월평균 임금 세로축 단위: 천VND 산점도 표로 보기 동일 단위 성별 비교 남성·여성 나란히 보기 2024년 남성 여성 종사자 수에는 동일 직군의 남성·여성 값 쌍이 없습니다. 결측 안내 기타·미정의 직군의 임금은 원천 미제공 자료정보 상세 데이터 · 전체 92행 · 값 있음 89행 · 결측 3행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 1139,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "E-012",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "직군·성별에 따른 고용과 임금",
+    "직군별 종사자 수와 월평균 임금",
+    "직군별 측정값",
+    "종사자 수–임금 관계",
+    "남성·여성 나란히 보기",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#\\:r4n\\:",
+      "id": ":r4n:",
+      "label": "E-012 항목 선택",
+      "dimensionKey": null,
+      "testId": "e012-measure-select",
+      "value": "occupation_employment_count",
+      "shown": "종사자 수",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "occupation_employment_count",
+          "label": "종사자 수",
+          "disabled": false
+        },
+        {
+          "value": "occupation_employment_share",
+          "label": "고용 구성비",
+          "disabled": false
+        },
+        {
+          "value": "occupation_female_share",
+          "label": "직군 내 여성 비중",
+          "disabled": false
+        },
+        {
+          "value": "occupation_wage",
+          "label": "월평균 임금",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#\\:r4o\\:",
+      "id": ":r4o:",
+      "label": "E-012 성별 선택",
+      "dimensionKey": null,
+      "testId": "e012-sex-select",
+      "value": "total",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "total",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "male",
+          "label": "남성 · 원자료 없음",
+          "disabled": true
+        },
+        {
+          "value": "female",
+          "label": "여성 · 원자료 없음",
+          "disabled": true
+        }
+      ]
+    },
+    {
+      "selector": "#\\:r4p\\:",
+      "id": ":r4p:",
+      "label": "E-012 기준연도 선택",
+      "dimensionKey": null,
+      "testId": "e012-year-select",
+      "value": "2024",
+      "shown": "2024년",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "2024",
+          "label": "2024년",
+          "disabled": false
+        },
+        {
+          "value": "2023",
+          "label": "2023년",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [],
+  "chartTexts": [
+    "0",
+    "3,578",
+    "7,156.1",
+    "1.1만",
+    "1.4만",
+    "관리자",
+    "전문가",
+    "기술공",
+    "사무직",
+    "서비스",
+    "농림어업",
+    "기능원",
+    "기계조작",
+    "단순노무",
+    "직군별 종사자 수 (천명)",
+    "월평균 임금"
+  ],
+  "tableRows": [],
+  "emptyNotices": [],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

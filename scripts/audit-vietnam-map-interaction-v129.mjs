@@ -3,9 +3,11 @@
 import { resolve } from "node:path";
 import {
   AuditV125,
+  MAP_FEATURE_FLOOR_V125,
   PROJECT_ROOT,
   V2_ROOT,
   loadPackPayloads,
+  mapFeatureCountIsSound,
   payloadRecords,
   readJson,
 } from "./v125/audit-utils.mjs";
@@ -786,7 +788,16 @@ const keyboardSelectionPass =
   /지역 기후예산/u.test(keyboardSelection?.context?.detail || "");
 
 audit.check("ACTIVE_MAP_LAYERS", layers.length === 12, layers.length, 12);
-audit.check("MAP_FEATURE_COUNT", featureCount === 2900, featureCount, 2900);
+// The exact feature count is a property of the delivery, not of the platform:
+// publishing every authorised carbon-credit project took C-025 from 18 features
+// to 262. What is asserted is that the index declares what its layers hold and
+// that the total has not collapsed.
+audit.check(
+  "MAP_FEATURE_COUNT",
+  mapFeatureCountIsSound(mapResult.value?.mapFeatureCount, featureCount),
+  { declared: mapResult.value?.mapFeatureCount ?? null, actual: featureCount },
+  { declared: "equal to actual", actual: `>= ${MAP_FEATURE_FLOOR_V125}` }
+);
 audit.check("ADM1_FEATURE_COUNT", adm1Codes.size === 63, adm1Codes.size, 63);
 audit.check(
   "MAP_SELECTOR_PUBLIC_CONTRACT",

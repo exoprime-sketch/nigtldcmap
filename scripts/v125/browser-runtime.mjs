@@ -79,7 +79,10 @@ export async function startStaticBuildServer(buildRoot, options = {}) {
   });
   await new Promise((resolveListen, reject) => {
     server.once("error", reject);
-    server.listen(0, "127.0.0.1", resolveListen);
+    // A caller that has to name the address in advance - Playwright's webServer
+    // config, which starts the process and then waits on a URL - can ask for a
+    // fixed port. Everyone else keeps the ephemeral one.
+    server.listen(Number(options.port) || 0, "127.0.0.1", resolveListen);
   });
   const address = server.address();
   if (!address || typeof address === "string") throw new Error("static server address unavailable");
@@ -109,7 +112,7 @@ async function pollJson(url, timeoutMs = 15_000) {
   let lastError = null;
   while (Date.now() < deadline) {
     try {
-      const response = await fetch(url, { cache: "no-store" });
+      const response = await fetch(url, { cache: "no-store", signal: AbortSignal.timeout(Math.max(1, deadline - Date.now())) });
       if (response.ok) return await response.json();
       lastError = new Error(`HTTP ${response.status}`);
     } catch (error) {
@@ -122,7 +125,7 @@ async function pollJson(url, timeoutMs = 15_000) {
   );
 }
 
-class CdpConnection {
+export class CdpConnection {
   constructor(socket) {
     this.socket = socket;
     this.nextId = 1;
@@ -134,6 +137,7 @@ class CdpConnection {
         const pending = this.pending.get(message.id);
         if (!pending) return;
         this.pending.delete(message.id);
+        clearTimeout(pending.timer);
         if (message.error) pending.reject(new Error(message.error.message));
         else pending.resolve(message.result || {});
         return;
@@ -143,17 +147,29 @@ class CdpConnection {
     });
     socket.addEventListener("close", () => {
       for (const pending of this.pending.values()) {
+        clearTimeout(pending.timer);
         pending.reject(new Error("DevTools socket closed"));
       }
       this.pending.clear();
     });
+    socket.addEventListener("error", () => this.close());
   }
 
-  send(method, params = {}) {
+  send(method, params = {}, { timeoutMs = 30_000 } = {}) {
     const id = this.nextId++;
     return new Promise((resolveCommand, reject) => {
-      this.pending.set(id, { resolve: resolveCommand, reject });
-      this.socket.send(JSON.stringify({ id, method, params }));
+      const timer = setTimeout(() => {
+        this.pending.delete(id);
+        reject(new Error(`DevTools command timeout after ${timeoutMs}ms: ${method}`));
+      }, timeoutMs);
+      this.pending.set(id, { resolve: resolveCommand, reject, timer });
+      try {
+        this.socket.send(JSON.stringify({ id, method, params }));
+      } catch (error) {
+        clearTimeout(timer);
+        this.pending.delete(id);
+        reject(error);
+      }
     });
   }
 
@@ -164,6 +180,11 @@ class CdpConnection {
   }
 
   close() {
+    for (const pending of this.pending.values()) {
+      clearTimeout(pending.timer);
+      pending.reject(new Error("DevTools socket closed"));
+    }
+    this.pending.clear();
     this.socket.close();
   }
 }
@@ -216,8 +237,12 @@ export async function launchHeadlessBrowser() {
     if (!target) throw new Error("page DevTools target missing");
     const socket = new WebSocket(target.webSocketDebuggerUrl);
     await new Promise((resolveOpen, reject) => {
-      socket.addEventListener("open", resolveOpen, { once: true });
-      socket.addEventListener("error", reject, { once: true });
+      const timer = setTimeout(() => {
+        reject(new Error("DevTools socket connection timeout"));
+        socket.close();
+      }, 15_000);
+      socket.addEventListener("open", () => { clearTimeout(timer); resolveOpen(); }, { once: true });
+      socket.addEventListener("error", (error) => { clearTimeout(timer); reject(error); }, { once: true });
     });
     const cdp = new CdpConnection(socket);
     const runtimeErrors = [];
@@ -275,7 +300,7 @@ export async function launchHeadlessBrowser() {
       executable,
       async close() {
         try {
-          await cdp.send("Browser.close");
+          await cdp.send("Browser.close", {}, { timeoutMs: 3_000 });
         } catch {
           browser.kill();
         }
@@ -301,13 +326,13 @@ export async function launchHeadlessBrowser() {
   }
 }
 
-export async function evaluateValue(cdp, expression) {
+export async function evaluateValue(cdp, expression, options = {}) {
   const result = await cdp.send("Runtime.evaluate", {
     expression,
     awaitPromise: true,
     returnByValue: true,
     userGesture: true,
-  });
+  }, options);
   if (result.exceptionDetails) {
     throw new Error(
       result.exceptionDetails.exception?.description || result.exceptionDetails.text || "evaluation failed"
@@ -324,7 +349,7 @@ export async function waitForValue(cdp, expression, options = {}) {
   let lastError = null;
   while (Date.now() < deadline) {
     try {
-      lastValue = await evaluateValue(cdp, expression);
+      lastValue = await evaluateValue(cdp, expression, { timeoutMs: Math.max(1, deadline - Date.now()) });
       lastError = null;
       if (lastValue) return lastValue;
     } catch (error) {
@@ -334,7 +359,7 @@ export async function waitForValue(cdp, expression, options = {}) {
       lastError = error instanceof Error ? error.message : String(error);
       lastValue = undefined;
     }
-    await new Promise((resolveWait) => setTimeout(resolveWait, intervalMs));
+    await new Promise((resolveWait) => setTimeout(resolveWait, Math.max(0, Math.min(intervalMs, deadline - Date.now()))));
   }
   throw new Error(
     `condition timeout; last value: ${JSON.stringify(lastValue)}${

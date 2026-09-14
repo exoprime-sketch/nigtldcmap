@@ -80,9 +80,11 @@ export default function PublicPortfolioListV132({
       data-filtered-entity-count={filtered.length}
     >
       <header className="ppl132-heading">
+        {/* One heading, naming what the list holds. "개별 목록" over
+            "사업·재원 찾아보기" was two labels for the same thing, under a
+            section already called the same again. */}
         <div>
-          <span>개별 목록</span>
-          <h4>사업·재원 찾아보기</h4>
+          <h4>사업 목록</h4>
         </div>
         <strong aria-live="polite">{filtered.length.toLocaleString("ko-KR")}건</strong>
       </header>

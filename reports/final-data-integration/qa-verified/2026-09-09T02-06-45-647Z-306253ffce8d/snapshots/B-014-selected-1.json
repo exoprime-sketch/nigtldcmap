@@ -1,0 +1,102 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:57699/?view=data&element=ccdr-tansose-simyulreisyeon-gyeolgwa-baeculgamsoyul-gdp-yeonghyang-sesu-hyogwa&country=VNM&from=explorer&measure=measure-f3fb8b4b017f&dim.detail=NZP-no-reforms#element-detail",
+  "title": "탄소세 도입 효과 전망",
+  "body": "검색 결과로 돌아가기 기후 환경 › 전환 리스크 데이터 제공 다운로드 가능 탄소세 도입 효과 전망 베트남 · 탄소세 도입 효과 전망의 시나리오별 전망과 기간별 차이를 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 8종 · 관측기간 2030~2040년 이 데이터로 확인할 수 있는 내용 탄소세 도입 효과 전망의 시나리오·기간별 변화 탄소세 도입 효과 전망이 시나리오와 기간에 따라 어떻게 달라지는지 확인할 수 있습니다. 항목 GDP 영향 · % 권고 탄소가격 경로 · USD/tCO₂e 누적 추가 세수 · 십억 USD 배출 감소율 · % 연간 세수(GDP 대비) (범위 상한) · % of GDP/yr 연간 세수(GDP 대비) (범위 하한) · % of GDP/yr 세부 분류 전체 NZP-no-reforms NZP-with-measures 용어 도움말 ? USD 설명 ? tCO₂e 설명 ? NZP 설명 현재 선택 조건에 표시할 값이 없습니다 다른 항목이나 기간을 선택해 확인해 주세요. 자료정보 상세 데이터 · 전체 13행 · 값 있음 13행 · 결측 0행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 566,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "B-014",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "탄소세 도입 효과 전망의 시나리오·기간별 변화",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목 선택",
+      "dimensionKey": null,
+      "testId": "v125-measure-select",
+      "value": "measure-f3fb8b4b017f",
+      "shown": "권고 탄소가격 경로 · USD/tCO₂e",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-bf20bb336833",
+          "label": "GDP 영향 · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-f3fb8b4b017f",
+          "label": "권고 탄소가격 경로 · USD/tCO₂e",
+          "disabled": false
+        },
+        {
+          "value": "measure-2ff22836a17a",
+          "label": "누적 추가 세수 · 십억 USD",
+          "disabled": false
+        },
+        {
+          "value": "measure-195d31a84a4c",
+          "label": "배출 감소율 · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-3a9a86388734",
+          "label": "연간 세수(GDP 대비) (범위 상한) · % of GDP/yr",
+          "disabled": false
+        },
+        {
+          "value": "measure-ca151feccf73",
+          "label": "연간 세수(GDP 대비) (범위 하한) · % of GDP/yr",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "세부 분류 선택",
+      "dimensionKey": "detail",
+      "testId": null,
+      "value": "NZP-no-reforms",
+      "shown": "NZP-no-reforms",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "NZP-no-reforms",
+          "label": "NZP-no-reforms",
+          "disabled": false
+        },
+        {
+          "value": "NZP-with-measures",
+          "label": "NZP-with-measures",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [],
+  "chartTexts": [],
+  "tableRows": [],
+  "emptyNotices": [
+    "현재 선택 조건에 표시할 값이 없습니다 다른 항목이나 기간을 선택해 확인해 주세요."
+  ],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

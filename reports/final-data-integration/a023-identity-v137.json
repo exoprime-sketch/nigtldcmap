@@ -1,0 +1,412 @@
+{
+  "schema": "nigt-a023-identity-1",
+  "generatedAt": "2026-09-09T00:48:43.950Z",
+  "dataRoot": ".staging/final/public/data/vietnam/v2",
+  "sourceRecordCount": 1963,
+  "bySource": {
+    "World Resources Institute": 236,
+    "OpenStreetMap contributors": 1727
+  },
+  "recordsWithCoordinates": 1889,
+  "mapEligibleRecordCount": 1889,
+  "identifiers": {
+    "osmObjectIds": 1727,
+    "wriPlantIds": 236,
+    "sharedIdentifierSystem": null,
+    "note": "The two deliveries use different identifier systems and share none, so an identifier join is impossible in either direction. That is a reason to measure the overlap on other evidence, not to declare it zero."
+  },
+  "sameFacilityRule": {
+    "metres": 150,
+    "capacityTolerance": 0.02,
+    "requires": [
+      "distance",
+      "same fuel",
+      "capacity within tolerance"
+    ]
+  },
+  "sameFacilityByThreshold": [
+    {
+      "metres": 50,
+      "wriRowsWithAnyNeighbour": 38,
+      "confirmedSameFacility": 7,
+      "sameFuelCapacityNotComparable": 30,
+      "proximityOnlyDifferentFuel": 1
+    },
+    {
+      "metres": 150,
+      "wriRowsWithAnyNeighbour": 75,
+      "confirmedSameFacility": 31,
+      "sameFuelCapacityNotComparable": 43,
+      "proximityOnlyDifferentFuel": 1
+    },
+    {
+      "metres": 500,
+      "wriRowsWithAnyNeighbour": 112,
+      "confirmedSameFacility": 50,
+      "sameFuelCapacityNotComparable": 60,
+      "proximityOnlyDifferentFuel": 2
+    },
+    {
+      "metres": 1000,
+      "wriRowsWithAnyNeighbour": 138,
+      "confirmedSameFacility": 59,
+      "sameFuelCapacityNotComparable": 72,
+      "proximityOnlyDifferentFuel": 7
+    }
+  ],
+  "confirmedPairs": [
+    {
+      "wriRecordId": "v124-a-023-entity-00012",
+      "wriPlantId": "WRI1030838",
+      "wriName": "PleiKrong ",
+      "osmRecordId": "vnm-v121-a-023-ent-495-af31911c01c04d66",
+      "osmObjectId": "way/1271285969",
+      "osmName": "Nhà máy thủy điện Plei Krông",
+      "fuel": "hydro",
+      "capacityMw": 100,
+      "metresApart": 147
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00013",
+      "wriPlantId": "WRI1030830",
+      "wriName": "Se San 3A ",
+      "osmRecordId": "vnm-v121-a-023-ent-287-f37d5505bf193e21",
+      "osmObjectId": "way/636253159",
+      "osmName": "Thủy điện Sê San 3A",
+      "fuel": "hydro",
+      "capacityMw": 108,
+      "metresApart": 84
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00024",
+      "wriPlantId": "WRI1030773",
+      "wriName": "An Khanh I ",
+      "osmRecordId": "vnm-v121-a-023-ent-372-85cecf2073dd6240",
+      "osmObjectId": "way/925373605",
+      "osmName": "Nhà máy Nhiệt điện An Khánh I",
+      "fuel": "coal",
+      "capacityMw": 120,
+      "metresApart": 140
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00025",
+      "wriPlantId": "WRI1030906",
+      "wriName": "Thac Ba ",
+      "osmRecordId": "vnm-v121-a-023-ent-488-4021085d3845d367",
+      "osmObjectId": "way/1263839734",
+      "osmName": "Đập Thủy Điện Thác Bà",
+      "fuel": "hydro",
+      "capacityMw": 120,
+      "metresApart": 9
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00048",
+      "wriPlantId": "WRI1030857",
+      "wriName": "Song Bung 4 ",
+      "osmRecordId": "vnm-v121-a-023-ent-324-12dc9cad20be87dd",
+      "osmObjectId": "way/827889682",
+      "osmName": "Thủy điện Sông Bung 4",
+      "fuel": "hydro",
+      "capacityMw": 156,
+      "metresApart": 6
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00058",
+      "wriPlantId": "WRI1030807",
+      "wriName": "Krong No 3 ",
+      "osmRecordId": "vnm-v121-a-023-ent-392-e47b779752764e26",
+      "osmObjectId": "way/996228846",
+      "osmName": "Nhà máy Điện mặt trời Krông Nô 3",
+      "fuel": "hydro",
+      "capacityMw": 18,
+      "metresApart": 99
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00061",
+      "wriPlantId": "WRI1030856",
+      "wriName": "Dak Mi 4C ",
+      "osmRecordId": "vnm-v121-a-023-ent-351-90719c6d1408ee01",
+      "osmObjectId": "way/878175633",
+      "osmName": "Nhà máy thủy điện Đăk Mi 4C",
+      "fuel": "hydro",
+      "capacityMw": 18,
+      "metresApart": 46
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00084",
+      "wriPlantId": "WRI1030945",
+      "wriName": "Tra Xom ",
+      "osmRecordId": "vnm-v121-a-023-ent-309-38c4a718d4bd9532",
+      "osmObjectId": "way/827889628",
+      "osmName": "Nhà máy thủy điện Trà Xom",
+      "fuel": "hydro",
+      "capacityMw": 20,
+      "metresApart": 27
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00095",
+      "wriPlantId": "WRI1030772",
+      "wriName": "Son Dong ",
+      "osmRecordId": "vnm-v121-a-023-ent-279-44e2f6ef55207de4",
+      "osmObjectId": "way/549956787",
+      "osmName": "Nhà máy Nhiệt điện Sơn Động",
+      "fuel": "coal",
+      "capacityMw": 220,
+      "metresApart": 99
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00099",
+      "wriPlantId": "WRI1030910",
+      "wriName": "Ban Chat ",
+      "osmRecordId": "vnm-v121-a-023-ent-394-43aaa890d4846d56",
+      "osmObjectId": "way/1009757710",
+      "osmName": "Thủy điện Bản Chát",
+      "fuel": "hydro",
+      "capacityMw": 220,
+      "metresApart": 137
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00103",
+      "wriPlantId": "WRI1030899",
+      "wriName": "Son La ",
+      "osmRecordId": "vnm-v121-a-023-ent-272-9e7f25446a52168d",
+      "osmObjectId": "way/485543356",
+      "osmName": "Nhà máy thủy điện Sơn La",
+      "fuel": "hydro",
+      "capacityMw": 2400,
+      "metresApart": 118
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00104",
+      "wriPlantId": "WRI1030834",
+      "wriName": "Se San 3 ",
+      "osmRecordId": "vnm-v121-a-023-ent-330-ffa04ac5ef304da2",
+      "osmObjectId": "way/827889694",
+      "osmName": "Thủy điện Sê San 3",
+      "fuel": "hydro",
+      "capacityMw": 260,
+      "metresApart": 141
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00111",
+      "wriPlantId": "WRI1030861",
+      "wriName": "Song Bung 6 ",
+      "osmRecordId": "vnm-v121-a-023-ent-493-bc05f9fdf011e86b",
+      "osmObjectId": "way/1270939020",
+      "osmName": "Nhà máy thủy điện Sông Bung 6",
+      "fuel": "hydro",
+      "capacityMw": 29,
+      "metresApart": 104
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00122",
+      "wriPlantId": "WRI1030756",
+      "wriName": "Nong Son ",
+      "osmRecordId": "vnm-v121-a-023-ent-1889-8ddba46ed44f50e3",
+      "osmObjectId": "way/1522241570",
+      "osmName": "Nhà máy Nhiệt điện Nông Sơn",
+      "fuel": "coal",
+      "capacityMw": 30,
+      "metresApart": 133
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00135",
+      "wriPlantId": "WRI1030872",
+      "wriName": "Ban Ve ",
+      "osmRecordId": "vnm-v121-a-023-ent-318-918b84878e43c3ef",
+      "osmObjectId": "way/827889673",
+      "osmName": "Thủy điện Bản Vẽ",
+      "fuel": "hydro",
+      "capacityMw": 320,
+      "metresApart": 101
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00140",
+      "wriPlantId": "WRI1030917",
+      "wriName": "Su Pan 2 ",
+      "osmRecordId": "vnm-v121-a-023-ent-613-ec93123bb262adb9",
+      "osmObjectId": "way/1320783913",
+      "osmName": "Nhà máy thủy điện Sử Pán 2",
+      "fuel": "hydro",
+      "capacityMw": 34.5,
+      "metresApart": 60
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00154",
+      "wriPlantId": "WRI1030908",
+      "wriName": "Nam Muc ",
+      "osmRecordId": "vnm-v121-a-023-ent-620-f4f42e285df35161",
+      "osmObjectId": "way/1320783947",
+      "osmName": "Nhà máy thủy điện Nậm Mức",
+      "fuel": "hydro",
+      "capacityMw": 44,
+      "metresApart": 87
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00161",
+      "wriPlantId": "WRI1030858",
+      "wriName": "Song Bung 4A ",
+      "osmRecordId": "vnm-v121-a-023-ent-314-506d815da8d6105b",
+      "osmObjectId": "way/827889669",
+      "osmName": "Nhà máy thủy điện Sông Bung 4A",
+      "fuel": "hydro",
+      "capacityMw": 49,
+      "metresApart": 122
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00163",
+      "wriPlantId": "WKS0073964",
+      "wriName": "Ham Kiem ",
+      "osmRecordId": "vnm-v121-a-023-ent-361-73a14ca9a45a218d",
+      "osmObjectId": "way/892125519",
+      "osmName": "Nhà máy điện mặt trời Hàm Kiệm",
+      "fuel": "solar",
+      "capacityMw": 49,
+      "metresApart": 94
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00173",
+      "wriPlantId": "WRI1030784",
+      "wriName": "Srok Phu Mieng ",
+      "osmRecordId": "vnm-v121-a-023-ent-264-2577041588928890",
+      "osmObjectId": "way/481433552",
+      "osmName": "Nhà máy thủy điện Srok Phu Miêng",
+      "fuel": "hydro",
+      "capacityMw": 51,
+      "metresApart": 42
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00175",
+      "wriPlantId": "WRI1030860",
+      "wriName": "Song Bung 5 ",
+      "osmRecordId": "vnm-v121-a-023-ent-576-a665cc0556e30f3b",
+      "osmObjectId": "way/1318145156",
+      "osmName": "Nhà máy thủy điện Sông Bung 5",
+      "fuel": "hydro",
+      "capacityMw": 57,
+      "metresApart": 101
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00192",
+      "wriPlantId": "WRI1030854",
+      "wriName": "Song Tranh 3 ",
+      "osmRecordId": "vnm-v121-a-023-ent-494-1cb3c0202b874b89",
+      "osmObjectId": "way/1270939023",
+      "osmName": "Nhà máy thủy điện Sông Tranh 3",
+      "fuel": "hydro",
+      "capacityMw": 62,
+      "metresApart": 103
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00198",
+      "wriPlantId": "WRI1030817",
+      "wriName": "Sre Pok 4a ",
+      "osmRecordId": "vnm-v121-a-023-ent-311-534c1caddbdf149c",
+      "osmObjectId": "way/827889639",
+      "osmName": "Thủy điện Sêrêpôk 4A",
+      "fuel": "hydro",
+      "capacityMw": 64,
+      "metresApart": 36
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00200",
+      "wriPlantId": "WRI1030928",
+      "wriName": "Nam Na 2 ",
+      "osmRecordId": "vnm-v121-a-023-ent-567-0cc08a823dd9a872",
+      "osmObjectId": "way/1318145113",
+      "osmName": "Nhà máy thủy điện Nậm Na 2",
+      "fuel": "hydro",
+      "capacityMw": 66,
+      "metresApart": 67
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00202",
+      "wriPlantId": "WRI1030788",
+      "wriName": "Song Pha ",
+      "osmRecordId": "vnm-v121-a-023-ent-328-4f6d42e3eee06773",
+      "osmObjectId": "way/827889689",
+      "osmName": "Thủy điện Sông Pha",
+      "fuel": "hydro",
+      "capacityMw": 7.5,
+      "metresApart": 14
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00210",
+      "wriPlantId": "WRI1030782",
+      "wriName": "Dong Nai 2 ",
+      "osmRecordId": "vnm-v121-a-023-ent-446-11112e8a46b150c6",
+      "osmObjectId": "way/1206376098",
+      "osmName": "Nhà mày Thuỷ điện Đồng Nai 2",
+      "fuel": "hydro",
+      "capacityMw": 70,
+      "metresApart": 126
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00218",
+      "wriPlantId": "WRI1030798",
+      "wriName": "Can Don ",
+      "osmRecordId": "vnm-v121-a-023-ent-265-bc9301acf4fb04b7",
+      "osmObjectId": "way/481521526",
+      "osmName": "Nhà máy Thủy điện Cần Đơn",
+      "fuel": "hydro",
+      "capacityMw": 77,
+      "metresApart": 63
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00225",
+      "wriPlantId": "WRI1030816",
+      "wriName": "SrePok 4 ",
+      "osmRecordId": "vnm-v121-a-023-ent-327-8075e9b0ff4e9cef",
+      "osmObjectId": "way/827889687",
+      "osmName": "Thủy điện Sêrêpôk 4",
+      "fuel": "hydro",
+      "capacityMw": 80,
+      "metresApart": 129
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00226",
+      "wriPlantId": "WRI1030880",
+      "wriName": "Ba Thuoc 2 ",
+      "osmRecordId": "vnm-v121-a-023-ent-562-9bd4a55ad790dd86",
+      "osmObjectId": "way/1318145088",
+      "osmName": "Nhà máy thủy điện Bá Thước 2",
+      "fuel": "hydro",
+      "capacityMw": 80,
+      "metresApart": 95
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00227",
+      "wriPlantId": "WRI1030867",
+      "wriName": "Huong Dien ",
+      "osmRecordId": "vnm-v121-a-023-ent-244-5a004eb6b8d3b362",
+      "osmObjectId": "way/242071581",
+      "osmName": "Nhà máy thủy điện Hương Điền",
+      "fuel": "hydro",
+      "capacityMw": 81,
+      "metresApart": 144
+    },
+    {
+      "wriRecordId": "v124-a-023-entity-00228",
+      "wriPlantId": "WRI1030919",
+      "wriName": "Nam Na 3 ",
+      "osmRecordId": "vnm-v121-a-023-ent-565-fb1c409dc5d6f2c9",
+      "osmObjectId": "way/1318145107",
+      "osmName": "Nhà máy thủy điện Nậm Na 3",
+      "fuel": "hydro",
+      "capacityMw": 84,
+      "metresApart": 90
+    }
+  ],
+  "uniqueFacilityCount": {
+    "sourceRecords": 1963,
+    "confirmedDuplicatePairs": 31,
+    "lowerBoundDistinctFacilities": 1932,
+    "meaning": "A lower bound on how many records describe distinct plants, not a verified national plant count. Overlap that the two deliveries do not both describe cannot be confirmed from what they publish."
+  },
+  "capacity": {
+    "recordsStatingCapacity": 475,
+    "recordsWithoutCapacity": 1414,
+    "sumOfStatedCapacityMw": 103339.7,
+    "doNotUseAs": "국가 총설비용량. Fewer than a third of the records state a capacity, and the confirmed duplicate pairs are counted twice in this sum."
+  }
+}

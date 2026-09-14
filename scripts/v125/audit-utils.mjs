@@ -173,8 +173,38 @@ export function parseCsv(text) {
   );
 }
 
-export function loadPackPayloads() {
-  const indexPath = resolve(V2_ROOT, "packs/bundle-index-v124.json");
+/**
+ * The published packs, read from a data root.
+ *
+ * The root is a parameter because an audit that drives a served build has to
+ * read the data that build holds. Reading public/data while driving build/ is
+ * a comparison between two different trees, and it produced element-level
+ * failures that described neither of them.
+ */
+/**
+ * The floor the published map has to stay above.
+ *
+ * The audits used to pin the exact feature count - 2,900 - which is a property
+ * of the delivery, not of the platform. Publishing every authorised carbon
+ * credit project took C-025 from 18 features to 262, and eight gates failed a
+ * correct publication. What is worth asserting is that the index declares what
+ * its layers actually hold, and that the total has not collapsed; the exact
+ * number belongs in the manifest, where it is recorded rather than expected.
+ */
+export const MAP_FEATURE_FLOOR_V125 = 2900;
+
+/** True when the index's declared total matches its layers and clears the floor. */
+export function mapFeatureCountIsSound(declared, actual) {
+  return (
+    Number.isFinite(Number(declared)) &&
+    Number(declared) === Number(actual) &&
+    Number(actual) >= MAP_FEATURE_FLOOR_V125
+  );
+}
+
+export function loadPackPayloads(dataRoot = V2_ROOT) {
+  const root = resolve(dataRoot);
+  const indexPath = resolve(root, "packs/bundle-index-v124.json");
   const indexResult = readJson(indexPath);
   if (indexResult.error) {
     return { index: null, elements: new Map(), errors: [indexResult.error] };
@@ -191,7 +221,11 @@ export function loadPackPayloads() {
   ].sort((left, right) => left.localeCompare(right, "en"));
 
   for (const url of urls) {
-    const path = publicUrlToPath(url);
+    // A pack URL is public-root relative; resolve it inside the root being
+    // read so an audit can point at the data its served build actually holds.
+    const path = url.startsWith("/data/vietnam/v2/")
+      ? resolve(root, url.replace("/data/vietnam/v2/", ""))
+      : publicUrlToPath(url);
     if (!path || !existsSync(path)) {
       errors.push({ url, error: "pack missing" });
       continue;

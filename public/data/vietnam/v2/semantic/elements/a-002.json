@@ -3,33 +3,26 @@
     {
       "key": "category",
       "labelKo": "분류",
-      "valueCount": 10,
+      "valueCount": 5,
       "values": [
-        "관리 · 베트남",
-        "노동 · 베트남",
-        "법치 거버넌스 · 베트남",
         "베트남",
-        "재정관리의 질 · 베트남",
-        "제도 · 베트남",
-        "제도 클러스터 평균 · 베트남",
-        "책임성 · 부패 · 베트남",
-        "형평 클러스터 평균 · 베트남",
-        "환율 정책 · 베트남"
-      ]
-    },
-    {
-      "key": "detail",
-      "labelKo": "세부 분류",
-      "valueCount": 1,
-      "values": [
-        "1(낮음)~6(높음) 등급"
+        "참여 · 책임성(Estimate) · 베트남",
+        "참여 · 책임성(Percentile Rank) · 베트남",
+        "폭력부재(Estimate) · 베트남",
+        "폭력부재(Percentile Rank) · 베트남"
       ]
     },
     {
       "key": "year",
       "labelKo": "연도",
-      "valueCount": 20,
+      "valueCount": 26,
       "values": [
+        "1996",
+        "1998",
+        "2000",
+        "2002",
+        "2003",
+        "2004",
         "2005",
         "2006",
         "2007",
@@ -56,7 +49,7 @@
   "elementId": "A-002",
   "entityCount": 0,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 21,
+  "indicatorCount": 33,
   "indicators": [
     {
       "axisGroupKey": "measure-d60df4643277|점",
@@ -729,6 +722,294 @@
         "sourceRow": 14,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-82e51db38ba2|점",
+      "dimensionLabels": {
+        "category": "베트남"
+      },
+      "dimensions": {
+        "category": "베트남"
+      },
+      "displayLabel": "WGI 부패 통제(Estimate) · 베트남",
+      "indicatorId": "A-002_wgi_cc_est",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-82e51db38ba2",
+        "labelKo": "WGI 부패 통제(Estimate)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-82e51db38ba2|점|category=베트남|A-002_wgi_cc_est",
+      "sourceCaveat": null,
+      "sourceLabel": "WGI 부패 통제(Estimate) · 베트남",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-1a405c7f6c35|백분위",
+      "dimensionLabels": {
+        "category": "베트남"
+      },
+      "dimensions": {
+        "category": "베트남"
+      },
+      "displayLabel": "WGI 부패 통제(Percentile Rank) · 베트남",
+      "indicatorId": "A-002_wgi_cc_pctrank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1a405c7f6c35",
+        "labelKo": "WGI 부패 통제(Percentile Rank)",
+        "unit": "백분위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-1a405c7f6c35|백분위|category=베트남|A-002_wgi_cc_pctrank",
+      "sourceCaveat": null,
+      "sourceLabel": "WGI 부패 통제(Percentile Rank) · 베트남",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-98f4060173d2|점",
+      "dimensionLabels": {
+        "category": "베트남"
+      },
+      "dimensions": {
+        "category": "베트남"
+      },
+      "displayLabel": "WGI 정부 효과성(Estimate) · 베트남",
+      "indicatorId": "A-002_wgi_ge_est",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-98f4060173d2",
+        "labelKo": "WGI 정부 효과성(Estimate)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-98f4060173d2|점|category=베트남|A-002_wgi_ge_est",
+      "sourceCaveat": null,
+      "sourceLabel": "WGI 정부 효과성(Estimate) · 베트남",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-42f2b67fa2d6|백분위",
+      "dimensionLabels": {
+        "category": "베트남"
+      },
+      "dimensions": {
+        "category": "베트남"
+      },
+      "displayLabel": "WGI 정부 효과성(Percentile Rank) · 베트남",
+      "indicatorId": "A-002_wgi_ge_pctrank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-42f2b67fa2d6",
+        "labelKo": "WGI 정부 효과성(Percentile Rank)",
+        "unit": "백분위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-42f2b67fa2d6|백분위|category=베트남|A-002_wgi_ge_pctrank",
+      "sourceCaveat": null,
+      "sourceLabel": "WGI 정부 효과성(Percentile Rank) · 베트남",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-d2702081e365|점",
+      "dimensionLabels": {
+        "category": "폭력부재(Estimate) · 베트남"
+      },
+      "dimensions": {
+        "category": "폭력부재(Estimate) · 베트남"
+      },
+      "displayLabel": "WGI 정치안정·폭력부재(Estimate) · 베트남",
+      "indicatorId": "A-002_wgi_pv_est",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d2702081e365",
+        "labelKo": "WGI 정치안정",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-d2702081e365|점|category=폭력부재(Estimate) · 베트남|A-002_wgi_pv_est",
+      "sourceCaveat": null,
+      "sourceLabel": "WGI 정치안정·폭력부재(Estimate) · 베트남",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-7e78df2044a7|백분위",
+      "dimensionLabels": {
+        "category": "폭력부재(Percentile Rank) · 베트남"
+      },
+      "dimensions": {
+        "category": "폭력부재(Percentile Rank) · 베트남"
+      },
+      "displayLabel": "WGI 정치안정·폭력부재(Percentile Rank) · 베트남",
+      "indicatorId": "A-002_wgi_pv_pctrank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7e78df2044a7",
+        "labelKo": "WGI 정치안정",
+        "unit": "백분위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-7e78df2044a7|백분위|category=폭력부재(Percentile Rank) · 베트남|A-002_wgi_pv_pctrank",
+      "sourceCaveat": null,
+      "sourceLabel": "WGI 정치안정·폭력부재(Percentile Rank) · 베트남",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-02cda10ce296|점",
+      "dimensionLabels": {
+        "category": "베트남"
+      },
+      "dimensions": {
+        "category": "베트남"
+      },
+      "displayLabel": "WGI 법치(Estimate) · 베트남",
+      "indicatorId": "A-002_wgi_rl_est",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-02cda10ce296",
+        "labelKo": "WGI 법치(Estimate)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-02cda10ce296|점|category=베트남|A-002_wgi_rl_est",
+      "sourceCaveat": null,
+      "sourceLabel": "WGI 법치(Estimate) · 베트남",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-cb0740b0ced0|백분위",
+      "dimensionLabels": {
+        "category": "베트남"
+      },
+      "dimensions": {
+        "category": "베트남"
+      },
+      "displayLabel": "WGI 법치(Percentile Rank) · 베트남",
+      "indicatorId": "A-002_wgi_rl_pctrank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-cb0740b0ced0",
+        "labelKo": "WGI 법치(Percentile Rank)",
+        "unit": "백분위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-cb0740b0ced0|백분위|category=베트남|A-002_wgi_rl_pctrank",
+      "sourceCaveat": null,
+      "sourceLabel": "WGI 법치(Percentile Rank) · 베트남",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-34f4b461769c|점",
+      "dimensionLabels": {
+        "category": "베트남"
+      },
+      "dimensions": {
+        "category": "베트남"
+      },
+      "displayLabel": "WGI 규제의 질(Estimate) · 베트남",
+      "indicatorId": "A-002_wgi_rq_est",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-34f4b461769c",
+        "labelKo": "WGI 규제의 질(Estimate)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-34f4b461769c|점|category=베트남|A-002_wgi_rq_est",
+      "sourceCaveat": null,
+      "sourceLabel": "WGI 규제의 질(Estimate) · 베트남",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f8468d700d5e|백분위",
+      "dimensionLabels": {
+        "category": "베트남"
+      },
+      "dimensions": {
+        "category": "베트남"
+      },
+      "displayLabel": "WGI 규제의 질(Percentile Rank) · 베트남",
+      "indicatorId": "A-002_wgi_rq_pctrank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f8468d700d5e",
+        "labelKo": "WGI 규제의 질(Percentile Rank)",
+        "unit": "백분위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-f8468d700d5e|백분위|category=베트남|A-002_wgi_rq_pctrank",
+      "sourceCaveat": null,
+      "sourceLabel": "WGI 규제의 질(Percentile Rank) · 베트남",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-0370d137cdde|점",
+      "dimensionLabels": {
+        "category": "참여 · 책임성(Estimate) · 베트남"
+      },
+      "dimensions": {
+        "category": "참여 · 책임성(Estimate) · 베트남"
+      },
+      "displayLabel": "WGI 시민 자유·참여·책임성(Estimate) · 베트남",
+      "indicatorId": "A-002_wgi_va_est",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0370d137cdde",
+        "labelKo": "WGI 시민 자유",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-0370d137cdde|점|category=참여 · 책임성(Estimate) · 베트남|A-002_wgi_va_est",
+      "sourceCaveat": null,
+      "sourceLabel": "WGI 시민 자유·참여·책임성(Estimate) · 베트남",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-bdf1eceffd26|백분위",
+      "dimensionLabels": {
+        "category": "참여 · 책임성(Percentile Rank) · 베트남"
+      },
+      "dimensions": {
+        "category": "참여 · 책임성(Percentile Rank) · 베트남"
+      },
+      "displayLabel": "WGI 시민 자유·참여·책임성(Percentile Rank) · 베트남",
+      "indicatorId": "A-002_wgi_va_pctrank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bdf1eceffd26",
+        "labelKo": "WGI 시민 자유",
+        "unit": "백분위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-bdf1eceffd26|백분위|category=참여 · 책임성(Percentile Rank) · 베트남|A-002_wgi_va_pctrank",
+      "sourceCaveat": null,
+      "sourceLabel": "WGI 시민 자유·참여·책임성(Percentile Rank) · 베트남",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     }
   ],
   "measures": [
@@ -736,7 +1017,7 @@
       "indicatorCount": 1,
       "key": "measure-5dd7fe5bbc51",
       "labelKo": "CPIA A. 경제관리 클러스터 평균",
-      "recordCount": 20,
+      "recordCount": 0,
       "unit": "점",
       "unitFamily": "score"
     },
@@ -744,7 +1025,7 @@
       "indicatorCount": 1,
       "key": "measure-aeafb0097967",
       "labelKo": "CPIA B. 구조정책 클러스터 평균",
-      "recordCount": 20,
+      "recordCount": 0,
       "unit": "점",
       "unitFamily": "score"
     },
@@ -752,7 +1033,7 @@
       "indicatorCount": 1,
       "key": "measure-7769a1c828bb",
       "labelKo": "CPIA C. 사회적 포용",
-      "recordCount": 20,
+      "recordCount": 0,
       "unit": "점",
       "unitFamily": "score"
     },
@@ -760,7 +1041,7 @@
       "indicatorCount": 1,
       "key": "measure-bdb15fdd3c61",
       "labelKo": "CPIA D. 공공부문 관리",
-      "recordCount": 20,
+      "recordCount": 0,
       "unit": "점",
       "unitFamily": "score"
     },
@@ -768,7 +1049,7 @@
       "indicatorCount": 1,
       "key": "measure-5c4bc8f2bd62",
       "labelKo": "CPIA IRAI 종합점수",
-      "recordCount": 20,
+      "recordCount": 0,
       "unit": "점",
       "unitFamily": "score"
     },
@@ -776,7 +1057,7 @@
       "indicatorCount": 1,
       "key": "measure-f70e242d5e1a",
       "labelKo": "CPIA 공공부문 투명성",
-      "recordCount": 20,
+      "recordCount": 0,
       "unit": "점",
       "unitFamily": "score"
     },
@@ -784,7 +1065,7 @@
       "indicatorCount": 1,
       "key": "measure-d76eda4d50f1",
       "labelKo": "CPIA 공공재원 배분의 형평성",
-      "recordCount": 20,
+      "recordCount": 0,
       "unit": "점",
       "unitFamily": "score"
     },
@@ -792,7 +1073,7 @@
       "indicatorCount": 1,
       "key": "measure-ef73a32f2796",
       "labelKo": "CPIA 공공행정의 질",
-      "recordCount": 20,
+      "recordCount": 0,
       "unit": "점",
       "unitFamily": "score"
     },
@@ -800,7 +1081,7 @@
       "indicatorCount": 1,
       "key": "measure-e6bb0c69250f",
       "labelKo": "CPIA 금융부문",
-      "recordCount": 20,
+      "recordCount": 0,
       "unit": "점",
       "unitFamily": "score"
     },
@@ -808,7 +1089,7 @@
       "indicatorCount": 1,
       "key": "measure-d60df4643277",
       "labelKo": "CPIA 기업규제 환경",
-      "recordCount": 20,
+      "recordCount": 0,
       "unit": "점",
       "unitFamily": "score"
     },
@@ -816,7 +1097,7 @@
       "indicatorCount": 1,
       "key": "measure-db7a756c9475",
       "labelKo": "CPIA 무역",
-      "recordCount": 20,
+      "recordCount": 0,
       "unit": "점",
       "unitFamily": "score"
     },
@@ -824,7 +1105,7 @@
       "indicatorCount": 1,
       "key": "measure-4670af9300cb",
       "labelKo": "CPIA 부채 정책",
-      "recordCount": 20,
+      "recordCount": 0,
       "unit": "점",
       "unitFamily": "score"
     },
@@ -832,7 +1113,7 @@
       "indicatorCount": 1,
       "key": "measure-1ade02992237",
       "labelKo": "CPIA 사회보호",
-      "recordCount": 20,
+      "recordCount": 0,
       "unit": "점",
       "unitFamily": "score"
     },
@@ -840,7 +1121,7 @@
       "indicatorCount": 1,
       "key": "measure-c6e4f4a8060a",
       "labelKo": "CPIA 성평등",
-      "recordCount": 20,
+      "recordCount": 0,
       "unit": "점",
       "unitFamily": "score"
     },
@@ -848,7 +1129,7 @@
       "indicatorCount": 1,
       "key": "measure-bb217cc98da2",
       "labelKo": "CPIA 세입동원 효율성",
-      "recordCount": 20,
+      "recordCount": 0,
       "unit": "점",
       "unitFamily": "score"
     },
@@ -856,7 +1137,7 @@
       "indicatorCount": 1,
       "key": "measure-5ab2820b461e",
       "labelKo": "CPIA 예산",
-      "recordCount": 20,
+      "recordCount": 0,
       "unit": "점",
       "unitFamily": "score"
     },
@@ -864,7 +1145,7 @@
       "indicatorCount": 1,
       "key": "measure-bf490540274c",
       "labelKo": "CPIA 인적자원 형성",
-      "recordCount": 20,
+      "recordCount": 0,
       "unit": "점",
       "unitFamily": "score"
     },
@@ -872,7 +1153,7 @@
       "indicatorCount": 1,
       "key": "measure-22ab29bb9aa1",
       "labelKo": "CPIA 재산권",
-      "recordCount": 20,
+      "recordCount": 0,
       "unit": "점",
       "unitFamily": "score"
     },
@@ -880,7 +1161,7 @@
       "indicatorCount": 1,
       "key": "measure-0b97a8ac9dcf",
       "labelKo": "CPIA 재정 정책",
-      "recordCount": 20,
+      "recordCount": 0,
       "unit": "점",
       "unitFamily": "score"
     },
@@ -888,7 +1169,7 @@
       "indicatorCount": 1,
       "key": "measure-e0f7ca3ec951",
       "labelKo": "CPIA 통화",
-      "recordCount": 20,
+      "recordCount": 0,
       "unit": "점",
       "unitFamily": "score"
     },
@@ -896,12 +1177,108 @@
       "indicatorCount": 1,
       "key": "measure-2b684737516a",
       "labelKo": "CPIA 환경지속가능성 정책",
-      "recordCount": 20,
+      "recordCount": 0,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-34f4b461769c",
+      "labelKo": "WGI 규제의 질(Estimate)",
+      "recordCount": 26,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-f8468d700d5e",
+      "labelKo": "WGI 규제의 질(Percentile Rank)",
+      "recordCount": 26,
+      "unit": "백분위",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-02cda10ce296",
+      "labelKo": "WGI 법치(Estimate)",
+      "recordCount": 26,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-cb0740b0ced0",
+      "labelKo": "WGI 법치(Percentile Rank)",
+      "recordCount": 26,
+      "unit": "백분위",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-82e51db38ba2",
+      "labelKo": "WGI 부패 통제(Estimate)",
+      "recordCount": 26,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-1a405c7f6c35",
+      "labelKo": "WGI 부패 통제(Percentile Rank)",
+      "recordCount": 26,
+      "unit": "백분위",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-bdf1eceffd26",
+      "labelKo": "WGI 시민 자유",
+      "recordCount": 26,
+      "unit": "백분위",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-0370d137cdde",
+      "labelKo": "WGI 시민 자유",
+      "recordCount": 26,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-98f4060173d2",
+      "labelKo": "WGI 정부 효과성(Estimate)",
+      "recordCount": 26,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-42f2b67fa2d6",
+      "labelKo": "WGI 정부 효과성(Percentile Rank)",
+      "recordCount": 26,
+      "unit": "백분위",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-7e78df2044a7",
+      "labelKo": "WGI 정치안정",
+      "recordCount": 26,
+      "unit": "백분위",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-d2702081e365",
+      "labelKo": "WGI 정치안정",
+      "recordCount": 26,
       "unit": "점",
       "unitFamily": "score"
     }
   ],
-  "observationCount": 420,
+  "observationCount": 312,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

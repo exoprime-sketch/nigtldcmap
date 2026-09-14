@@ -1,0 +1,81 @@
+{
+  "workbook": "베트남데이터/file/B-034.xlsx",
+  "reconciliation": {
+    "expectedCellCount": 315,
+    "derivedFactCount": 315,
+    "unaccountedSourceCells": [],
+    "orphanDerivedFacts": [],
+    "duplicateKeys": [],
+    "mismatches": [],
+    "pass": true
+  },
+  "geography": {
+    "boundaryFeatureCount": 63,
+    "boundarySystem": "pre-2025-63",
+    "featuresWithGeometry": 63,
+    "joinedRegionCount": 63,
+    "unjoinedFacts": 0,
+    "codesMissingFromBoundary": [],
+    "gadmKeysMappingToSeveralCodes": {},
+    "codesClaimedBySeveralGadmKeys": {},
+    "pass": true
+  },
+  "negativeControls": [
+    {
+      "case": "value removed",
+      "kind": "detect",
+      "ok": true,
+      "detail": "unaccounted=1 orphan=0 dup=0 mismatch=0"
+    },
+    {
+      "case": "sign flipped",
+      "kind": "detect",
+      "ok": true,
+      "detail": "unaccounted=0 orphan=0 dup=0 mismatch=2"
+    },
+    {
+      "case": "unit changed",
+      "kind": "detect",
+      "ok": true,
+      "detail": "unaccounted=63 orphan=0 dup=0 mismatch=0"
+    },
+    {
+      "case": "region key swapped",
+      "kind": "detect",
+      "ok": true,
+      "detail": "unaccounted=5 orphan=0 dup=5 mismatch=0"
+    },
+    {
+      "case": "observation duplicated",
+      "kind": "detect",
+      "ok": true,
+      "detail": "unaccounted=0 orphan=0 dup=5 mismatch=315"
+    },
+    {
+      "case": "middle column removed",
+      "kind": "detect",
+      "ok": true,
+      "detail": "unaccounted=63 orphan=0 dup=0 mismatch=0"
+    },
+    {
+      "case": "column order changed",
+      "kind": "invariant",
+      "ok": true,
+      "detail": "unaccounted=0 orphan=0 dup=0 mismatch=0"
+    },
+    {
+      "case": "기준연도 column overwritten with 2000",
+      "kind": "invariant",
+      "ok": true,
+      "detail": "unaccounted=0 orphan=0 dup=0 mismatch=0"
+    },
+    {
+      "case": "flux period wrongly set to 2000 in the contract",
+      "kind": "detect",
+      "ok": true,
+      "detail": "mismatch=189"
+    }
+  ],
+  "negativeControlsAllOk": true,
+  "pass": true
+}

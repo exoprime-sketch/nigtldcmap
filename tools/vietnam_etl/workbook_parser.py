@@ -29,7 +29,8 @@ OBSERVATION_SHEET = "1.1_observation(측정값)"
 ENTITY_SHEET = "1.2_entity(레코드형)"
 METADATA_SHEET = "2_meta_info"
 FRAMEWORK_SHEET = "db_framework"
-CORE_SHEETS = (OBSERVATION_SHEET, ENTITY_SHEET, METADATA_SHEET, FRAMEWORK_SHEET)
+DATA_SHEETS = (OBSERVATION_SHEET, ENTITY_SHEET, METADATA_SHEET)
+CORE_SHEETS = (*DATA_SHEETS, FRAMEWORK_SHEET)
 
 MAX_RELEVANT_COLUMNS = 128
 MAX_RELEVANT_ROWS = 250_000
@@ -419,9 +420,16 @@ def parse_workbook_bytes(
             "errors": [f"workbook-load-error:{type(exc).__name__}:{exc}"],
         }
     try:
-        missing_sheets = [sheet for sheet in CORE_SHEETS if sheet not in workbook.sheetnames]
+        # The three data sheets are required; without them there is nothing to
+        # normalize. `db_framework` only restates the element framework, which
+        # every workbook used to repeat and the catalog already carries, so its
+        # absence is recorded and the workbook still normalizes. Treating it as
+        # a missing core sheet quarantined 112 elements that had complete data.
+        missing_sheets = [sheet for sheet in DATA_SHEETS if sheet not in workbook.sheetnames]
         if missing_sheets:
             errors.extend(f"missing-sheet:{sheet}" for sheet in missing_sheets)
+        if FRAMEWORK_SHEET not in workbook.sheetnames:
+            warnings.append(f"missing-optional-sheet:{FRAMEWORK_SHEET}")
 
         sheet_data: dict[str, list[list[Any]]] = {}
         for sheet_name in CORE_SHEETS:

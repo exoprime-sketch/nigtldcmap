@@ -298,6 +298,15 @@ export type VietnamMapRendererV124 =
 
 export interface VietnamMapSelectorOptionV124 {
   key: string;
+  /**
+   * A stable name for the measure, independent of the label and the key.
+   *
+   * `key` is a slug of the label and falls back to a hash for non-ASCII, so it
+   * moves whenever the label does. This comes from the derivation contract and
+   * is what a preset or a saved view should reference. Absent where the
+   * indicator ids behind a variable do not agree on one measure.
+   */
+  measureId?: string | null;
   label: string;
   unit: string;
   periods: string[];

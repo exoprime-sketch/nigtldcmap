@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v135-final-public-screen-audit-1",
-  "generatedAt": "2026-09-06T23:38:09.622Z",
+  "generatedAt": "2026-09-13T23:30:08.577Z",
   "audit": "temporal-depth:v135",
   "status": "PASS",
   "summary": {
@@ -13,11 +13,11 @@
     "failedChecks": [],
     "inspectedRoutes": 152,
     "temporalDepthCounts": {
-      "single-year": 64,
-      "two-year": 11,
-      "time-series": 47,
-      "scenario": 8,
-      "non-temporal": 22
+      "single-year": 26,
+      "two-year": 9,
+      "time-series": 38,
+      "scenario": 3,
+      "non-temporal": 76
     },
     "singleYearTimeSeriesCount": 0,
     "twoYearGenericTrendCount": 0,
@@ -103,12 +103,17 @@
       "name": "GHG_ANALYTICAL_VIEW",
       "status": "PASS",
       "actual": {
-        "present": true,
-        "rawMatrixPrimary": "false"
+        "sectorGasObservations": 0,
+        "sectorGasView": {
+          "present": false,
+          "rawMatrixPrimary": null
+        },
+        "analyticalView": true,
+        "rawTableIsPrimary": false
       },
       "expected": {
-        "present": true,
-        "rawMatrixPrimary": "false"
+        "analyticalView": true,
+        "rawTableIsPrimary": false
       }
     },
     {
@@ -130,11 +135,11 @@
   ],
   "inspectedRoutes": 152,
   "temporalDepthCounts": {
-    "single-year": 64,
-    "two-year": 11,
-    "time-series": 47,
-    "scenario": 8,
-    "non-temporal": 22
+    "single-year": 26,
+    "two-year": 9,
+    "time-series": 38,
+    "scenario": 3,
+    "non-temporal": 76
   },
   "singleYearTimeSeriesCount": 0,
   "twoYearGenericTrendCount": 0,

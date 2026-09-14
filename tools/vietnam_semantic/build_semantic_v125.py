@@ -13,6 +13,7 @@ import csv
 import gzip
 import hashlib
 import json
+import os
 import re
 import unicodedata
 from collections import Counter, defaultdict
@@ -21,7 +22,13 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[2]
-DATA_ROOT = ROOT / "public" / "data" / "vietnam" / "v2"
+# A candidate build runs the whole pipeline against a staging tree, so every
+# stage has to be pointed at the same root. Unset, this is the published path.
+DATA_ROOT = (
+    Path(os.environ["VIETNAM_DATA_ROOT"]).resolve()
+    if os.environ.get("VIETNAM_DATA_ROOT")
+    else ROOT / "public" / "data" / "vietnam" / "v2"
+)
 SEMANTIC_ROOT = DATA_ROOT / "semantic"
 SEMANTIC_ELEMENT_ROOT = SEMANTIC_ROOT / "elements"
 REPORT_ROOT = ROOT / "reports" / "v125"
@@ -479,7 +486,11 @@ def deduplicate_indicators(
 
 def generic_indicator_structure(indicator: dict[str, Any]) -> tuple[str, dict[str, str], dict[str, str]]:
     label = nfc(indicator.get("labelKo")) or indicator["indicatorId"]
-    dash_parts = [nfc(part) for part in re.split(r"\s*[—–]\s*", label) if nfc(part)]
+    # Only the em dash separates a measure from its qualifiers. An en dash is
+    # part of a name here - "Bà Rịa–Vũng Tàu" is one province, and splitting on
+    # it truncated the province to "Bà Rịa" and invented a detail_2 dimension
+    # whose single value was "Vũng Tàu".
+    dash_parts = [nfc(part) for part in re.split(r"\s*—\s*", label) if nfc(part)]
     lead_parts = [nfc(part) for part in re.split(r"\s*·\s*", dash_parts[0]) if nfc(part)]
     measure_label = lead_parts[0] if lead_parts else label
     dimensions: dict[str, str] = {}

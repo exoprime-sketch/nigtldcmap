@@ -1,0 +1,171 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:65003/?view=data&element=gihu-riseukeu-jisu-cri&country=VNM&from=explorer&measure=measure-e19a3da06ed0&year=2024#element-detail",
+  "title": "기후위험지수",
+  "body": "검색 결과로 돌아가기 기후 환경 › 물리적 리스크 일부 데이터 제공 다운로드 가능 기후위험지수 베트남 · 기후위험지수의 최근 수준과 항목별 차이를 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 10종 · 관측기간 2023~2024년 이 데이터로 확인할 수 있는 내용 기후위험지수의 항목별 공개 현황 기후위험지수의 공개 값과 항목별 차이를 확인할 수 있습니다. i 지표 읽는 법 기후리스크지수(CRI) 극한기상으로 인한 피해 수준을 점수와 순위로 보여줍니다. 점수와 순위는 방향이 다르므로 화면에서 선택한 항목을 확인해야 합니다. 높고 낮음의 의미 점수·순위를 구분해 해석 항목 2024년 최대 피해 극한기상 사건 · 사건 CRI 30년 누적 순위 · 순위 CRI 본문 수록 피해통계(2024년) · 단위 미기재 CRI 순위 · 순위 CRI 종합 순위 · 순위 세부 분류 전체 2024-10-20~23 홍수 2024년 3월말~5월 폭염 CRI 2026 본문 HDI 보정 태풍 Yagi 태풍 Yagi(2024-09-07 상륙) 분류 전체 1995 2024년 단년 북부 피해 연도 2024 2024년 최대 피해 극한기상 사건 Typhoon Yagi (태풍 야기) — 가옥·인프라 대규모 손실 사건 · 2024 · CRI 2026 본문 주 분석 기후위험지수 항목별 현황 근거 구조화된 확인 내용 2024년 최대 피해 극한기상 사건 — CRI 2026 본문 · CRI 2026 full report · cri_event_2024_01 Typhoon Yagi (태풍 야기) — 가옥·인프라 대규모 손실 2024 · Germanwatch Climate Risk Index 2026 2024년 최대 피해 극한기상 사건 — CRI 2026 본문 · CRI 2026 full report · cri_event_2024_02 2024년 3–5월 장기 폭염 2024 · Germanwatch Climate Risk Index 2026 자료정보 상세 데이터 · 전체 12행 · 값 있음 12행 · 결측 0행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 1028,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "B-010",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "기후위험지수의 항목별 공개 현황",
+    "지표 읽는 법",
+    "기후위험지수 항목별 현황",
+    "구조화된 확인 내용",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목 선택",
+      "dimensionKey": null,
+      "testId": "v125-measure-select",
+      "value": "measure-e19a3da06ed0",
+      "shown": "2024년 최대 피해 극한기상 사건 · 사건",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-e19a3da06ed0",
+          "label": "2024년 최대 피해 극한기상 사건 · 사건",
+          "disabled": false
+        },
+        {
+          "value": "measure-c58378d6d03f",
+          "label": "CRI 30년 누적 순위 · 순위",
+          "disabled": false
+        },
+        {
+          "value": "measure-9eab64683e5b",
+          "label": "CRI 본문 수록 피해통계(2024년) · 단위 미기재",
+          "disabled": false
+        },
+        {
+          "value": "measure-292f961bb3ac",
+          "label": "CRI 순위 · 순위",
+          "disabled": false
+        },
+        {
+          "value": "measure-f20de2f62bc7",
+          "label": "CRI 종합 순위 · 순위",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "세부 분류 선택",
+      "dimensionKey": "detail",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "2024-10-20~23 홍수",
+          "label": "2024-10-20~23 홍수",
+          "disabled": false
+        },
+        {
+          "value": "2024년 3월말~5월 폭염",
+          "label": "2024년 3월말~5월 폭염",
+          "disabled": false
+        },
+        {
+          "value": "CRI 2026 본문",
+          "label": "CRI 2026 본문",
+          "disabled": false
+        },
+        {
+          "value": "HDI 보정",
+          "label": "HDI 보정",
+          "disabled": false
+        },
+        {
+          "value": "태풍 Yagi",
+          "label": "태풍 Yagi",
+          "disabled": false
+        },
+        {
+          "value": "태풍 Yagi(2024-09-07 상륙)",
+          "label": "태풍 Yagi(2024-09-07 상륙)",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "분류 선택",
+      "dimensionKey": "detail_2",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "1995",
+          "label": "1995",
+          "disabled": false
+        },
+        {
+          "value": "2024년 단년",
+          "label": "2024년 단년",
+          "disabled": false
+        },
+        {
+          "value": "북부 피해",
+          "label": "북부 피해",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(4) > select:nth-of-type(1)",
+      "id": null,
+      "label": "연도 선택",
+      "dimensionKey": null,
+      "testId": "v125-year-select",
+      "value": "2024",
+      "shown": "2024",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "2024",
+          "label": "2024",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [
+    "2024년 최대 피해 극한기상 사건 Typhoon Yagi (태풍 야기) — 가옥·인프라 대규모 손실 사건 · 2024 · CRI 2026 본문"
+  ],
+  "chartTexts": [],
+  "tableRows": [],
+  "emptyNotices": [],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

@@ -1,0 +1,313 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:57699/?view=data&element=hwaseogyeonryo-jaweonryang-seogtan-seogyu-lng-deung&country=VNM&from=explorer&measure=measure-03f6751ef99e&dim.detail=10%EA%B0%9C%EA%B5%AD+%EB%8C%80%EC%A1%B0#element-detail",
+  "title": "화석연료 자원량",
+  "body": "검색 결과로 돌아가기 기후 환경 › 에너지 자원량 데이터 제공 다운로드 가능 화석연료 자원량 베트남 · 화석연료 자원량의 항목별 구성과 연도별 변화를 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 37종 · 관측기간 1980~2025년 이 데이터로 확인할 수 있는 내용 화석연료 자원량의 지역별 차이와 범위 화석연료 자원량의 지역 차이와 공개된 공간 범위를 확인할 수 있습니다. 항목 가채연수(R/P ratio) · 년 가채연수(R/P) · 년 석유 확인매장량 · 십억 배럴 석유 확인매장량(질량 기준) · 백만 톤 석탄 생산량 · 1000 t 석탄 확인매장량 · 백만 단수톤 석탄 확인매장량 · 백만 톤 세계 확인매장량 비중 · % 원유 생산량 · 천 배럴/일 천연가스 생산량 · 십억 ft³ 천연가스 확인매장량 · 조 m³ (tcm) 천연가스 확인매장량(tcf 기준) · 조 ft³ (tcf) 확인매장량 · 단위 미기재 세부 분류 전체 10개국 대조 기준시점 대조 대체 최신 출처(석유·가스) 석유 석탄 시계열(EIA) 연도별 시계열 연도별(EIA) 원자료 단위(단수톤) 천연가스 최신 생산량 기준 탄종별 분류 전체 2000년말 2010년말 2019년말 라오스 말레이시아 무연탄·역청탄 미얀마 베트남 석유 석탄 아역청탄·갈탄 인도네시아 천연가스 캄보디아 태국 필리핀 기술 전체 2,10,20 10 현재 선택 조건에 표시할 값이 없습니다 다른 항목이나 기간을 선택해 확인해 주세요. 자료정보 상세 데이터 · 전체 274행 · 값 있음 273행 · 결측 1행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 790,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "B-043",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "화석연료 자원량의 지역별 차이와 범위",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목 선택",
+      "dimensionKey": null,
+      "testId": "v125-measure-select",
+      "value": "measure-03f6751ef99e",
+      "shown": "가채연수(R/P) · 년",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-961575bc9f6b",
+          "label": "가채연수(R/P ratio) · 년",
+          "disabled": false
+        },
+        {
+          "value": "measure-03f6751ef99e",
+          "label": "가채연수(R/P) · 년",
+          "disabled": false
+        },
+        {
+          "value": "measure-0a2e42185af7",
+          "label": "석유 확인매장량 · 십억 배럴",
+          "disabled": false
+        },
+        {
+          "value": "measure-be382b23dd3b",
+          "label": "석유 확인매장량(질량 기준) · 백만 톤",
+          "disabled": false
+        },
+        {
+          "value": "measure-99f0f3aaf4d2",
+          "label": "석탄 생산량 · 1000 t",
+          "disabled": false
+        },
+        {
+          "value": "measure-c37150d75436",
+          "label": "석탄 확인매장량 · 백만 단수톤",
+          "disabled": false
+        },
+        {
+          "value": "measure-91a3be638e79",
+          "label": "석탄 확인매장량 · 백만 톤",
+          "disabled": false
+        },
+        {
+          "value": "measure-43cfef48a4d9",
+          "label": "세계 확인매장량 비중 · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-7f488068380b",
+          "label": "원유 생산량 · 천 배럴/일",
+          "disabled": false
+        },
+        {
+          "value": "measure-c99dbe8afc3f",
+          "label": "천연가스 생산량 · 십억 ft³",
+          "disabled": false
+        },
+        {
+          "value": "measure-e9183711b748",
+          "label": "천연가스 확인매장량 · 조 m³ (tcm)",
+          "disabled": false
+        },
+        {
+          "value": "measure-ad563fe23b39",
+          "label": "천연가스 확인매장량(tcf 기준) · 조 ft³ (tcf)",
+          "disabled": false
+        },
+        {
+          "value": "measure-4f7c01428411",
+          "label": "확인매장량 · 단위 미기재",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "세부 분류 선택",
+      "dimensionKey": "detail",
+      "testId": null,
+      "value": "10개국 대조",
+      "shown": "10개국 대조",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "10개국 대조",
+          "label": "10개국 대조",
+          "disabled": false
+        },
+        {
+          "value": "기준시점 대조",
+          "label": "기준시점 대조",
+          "disabled": false
+        },
+        {
+          "value": "대체 최신 출처(석유·가스)",
+          "label": "대체 최신 출처(석유·가스)",
+          "disabled": false
+        },
+        {
+          "value": "석유",
+          "label": "석유",
+          "disabled": false
+        },
+        {
+          "value": "석탄",
+          "label": "석탄",
+          "disabled": false
+        },
+        {
+          "value": "시계열(EIA)",
+          "label": "시계열(EIA)",
+          "disabled": false
+        },
+        {
+          "value": "연도별 시계열",
+          "label": "연도별 시계열",
+          "disabled": false
+        },
+        {
+          "value": "연도별(EIA)",
+          "label": "연도별(EIA)",
+          "disabled": false
+        },
+        {
+          "value": "원자료 단위(단수톤)",
+          "label": "원자료 단위(단수톤)",
+          "disabled": false
+        },
+        {
+          "value": "천연가스",
+          "label": "천연가스",
+          "disabled": false
+        },
+        {
+          "value": "최신 생산량 기준",
+          "label": "최신 생산량 기준",
+          "disabled": false
+        },
+        {
+          "value": "탄종별",
+          "label": "탄종별",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "분류 선택",
+      "dimensionKey": "detail_2",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "2000년말",
+          "label": "2000년말",
+          "disabled": false
+        },
+        {
+          "value": "2010년말",
+          "label": "2010년말",
+          "disabled": false
+        },
+        {
+          "value": "2019년말",
+          "label": "2019년말",
+          "disabled": false
+        },
+        {
+          "value": "라오스",
+          "label": "라오스",
+          "disabled": false
+        },
+        {
+          "value": "말레이시아",
+          "label": "말레이시아",
+          "disabled": false
+        },
+        {
+          "value": "무연탄·역청탄",
+          "label": "무연탄·역청탄",
+          "disabled": false
+        },
+        {
+          "value": "미얀마",
+          "label": "미얀마",
+          "disabled": false
+        },
+        {
+          "value": "베트남",
+          "label": "베트남",
+          "disabled": false
+        },
+        {
+          "value": "석유",
+          "label": "석유",
+          "disabled": false
+        },
+        {
+          "value": "석탄",
+          "label": "석탄",
+          "disabled": false
+        },
+        {
+          "value": "아역청탄·갈탄",
+          "label": "아역청탄·갈탄",
+          "disabled": false
+        },
+        {
+          "value": "인도네시아",
+          "label": "인도네시아",
+          "disabled": false
+        },
+        {
+          "value": "천연가스",
+          "label": "천연가스",
+          "disabled": false
+        },
+        {
+          "value": "캄보디아",
+          "label": "캄보디아",
+          "disabled": false
+        },
+        {
+          "value": "태국",
+          "label": "태국",
+          "disabled": false
+        },
+        {
+          "value": "필리핀",
+          "label": "필리핀",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(4) > select:nth-of-type(1)",
+      "id": null,
+      "label": "기술 선택",
+      "dimensionKey": "technology",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "2,10,20",
+          "label": "2,10,20",
+          "disabled": false
+        },
+        {
+          "value": "10",
+          "label": "10",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [],
+  "chartTexts": [],
+  "tableRows": [],
+  "emptyNotices": [
+    "현재 선택 조건에 표시할 값이 없습니다 다른 항목이나 기간을 선택해 확인해 주세요."
+  ],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

@@ -1,3 +1,4 @@
+import { useEffect, useMemo, useState } from "react";
 import { publicDimensionValueV134 } from "../../../data/visualization/publicCopyRegistryV126";
 import type { SemanticObservationV125 } from "../../../data/visualization/semanticTypesV125";
 import {
@@ -39,11 +40,29 @@ export default function PublicRawDataTablesV126({
   entities,
   detailTemplate,
 }: Props) {
-  const entityColumns = publicEntityAttributeKeysV126(
-    entities,
-    detailTemplate
-  );
   const total = observations.length + entities.length;
+  const paginated = total > 500;
+  const [open, setOpen] = useState(false);
+  const [page, setPage] = useState(0);
+  useEffect(() => { setPage(0); }, [observations, entities]);
+  useEffect(() => { setOpen(false); }, [elementId]);
+  const pageCount = paginated ? Math.ceil(total / 200) : 1;
+  const currentPage = Math.min(page, pageCount - 1);
+  const start = paginated ? Math.max(0, currentPage) * 200 : 0;
+  const end = paginated ? Math.min(total, start + 200) : total;
+  const renderRows = !paginated || open;
+  const shownObservations = observations.slice(start, end);
+  const shownEntities = entities.slice(
+    Math.max(0, start - observations.length),
+    Math.max(0, end - observations.length)
+  );
+  // A closed details element still builds all its React children. Large source
+  // tables must not allocate tens of thousands of rows before the user opens it.
+  // Columns are based on the whole delivery, not on just the current page.
+  const entityColumns = useMemo(
+    () => renderRows ? publicEntityAttributeKeysV126(entities, detailTemplate) : [],
+    [entities, detailTemplate, renderRows]
+  );
   const populatedObservationCount = observations.filter(
     (row) =>
       row.value !== null &&
@@ -70,12 +89,24 @@ export default function PublicRawDataTablesV126({
 
   return (
     <details
+      key={elementId}
       className="pav126-raw-table"
       data-testid="public-raw-table"
+      onToggle={(event) => setOpen(event.currentTarget.open)}
     >
       <summary data-testid="public-raw-table-summary">{rawTableSummary}</summary>
-
-      {observations.length > 0 && (
+      {renderRows && <>
+      {paginated && (
+        <nav aria-label="상세 데이터 페이지" className="pav126-raw-pagination">
+          <button type="button" disabled={currentPage === 0} onClick={() => setPage(currentPage - 1)} style={{ minHeight: 44 }}>이전</button>
+          <span role="status">{start + 1}–{end}행 / 전체 {total.toLocaleString("ko-KR")}행 · {currentPage + 1}/{pageCount}페이지</span>
+          <label>페이지 <select aria-label="상세 데이터 페이지 선택" value={currentPage} onChange={(event) => setPage(Number(event.target.value))} style={{ minHeight: 44 }}>
+            {Array.from({ length: pageCount }, (_, index) => <option key={index} value={index}>{index + 1}</option>)}
+          </select></label>
+          <button type="button" disabled={currentPage >= pageCount - 1} onClick={() => setPage(currentPage + 1)} style={{ minHeight: 44 }}>다음</button>
+        </nav>
+      )}
+      {shownObservations.length > 0 && (
         <div className="cdp-table-wrap">
           <table
             className="cdp-table"
@@ -95,7 +126,7 @@ export default function PublicRawDataTablesV126({
               </tr>
             </thead>
             <tbody>
-              {observations.map((row) => {
+              {shownObservations.map((row) => {
                 const dimensions = Object.entries(row.dimensionLabels);
                 const category = dimensions
                   .filter(
@@ -146,7 +177,7 @@ export default function PublicRawDataTablesV126({
         </div>
       )}
 
-      {entities.length > 0 && (
+      {shownEntities.length > 0 && (
         <div className="cdp-table-wrap" data-testid="v125-entity-table-fallback">
           <table className="cdp-table">
             <thead>
@@ -162,7 +193,7 @@ export default function PublicRawDataTablesV126({
               </tr>
             </thead>
             <tbody>
-              {entities.map((row) => {
+              {shownEntities.map((row) => {
                 const attributes = approvedEntityAttributesV126(
                   row,
                   detailTemplate
@@ -203,6 +234,7 @@ export default function PublicRawDataTablesV126({
           </table>
         </div>
       )}
+      </>}
     </details>
   );
 }

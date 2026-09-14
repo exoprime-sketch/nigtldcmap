@@ -1,18 +1,18 @@
 {
   "schemaVersion": "v131-public-content-audit-1",
-  "generatedAt": "2026-09-06T23:36:07.821Z",
+  "generatedAt": "2026-09-13T23:26:37.125Z",
   "audit": "entity-cards:v131",
   "status": "PASS",
   "summary": {
     "type": "summary",
     "audit": "entity-cards:v131",
     "status": "PASS",
-    "passed": 14,
+    "passed": 15,
     "failed": 0,
-    "total": 14,
+    "total": 15,
     "failedChecks": [],
-    "entityElementRouteCount": 30,
-    "entityCardCount": 303,
+    "entityElementRouteCount": 56,
+    "entityCardCount": 505,
     "entityContextTitleCount": 0,
     "entityCardLongTextCount": 0,
     "entityCardDuplicatePrimaryTitleCount": 0,
@@ -50,8 +50,8 @@
       "audit": "entity-cards:v131",
       "name": "ENTITY_CARD_ROUTE_COVERAGE",
       "status": "PASS",
-      "actual": 30,
-      "expected": 30,
+      "actual": 56,
+      "expected": 56,
       "details": {
         "runtimeFailure": null
       }
@@ -110,6 +110,14 @@
     {
       "type": "check",
       "audit": "entity-cards:v131",
+      "name": "ENTITY_RECORDS_SHOWN_SOMEHOW",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "entity-cards:v131",
       "name": "ENTITY_CARD_DUPLICATE_PRIMARY_TITLE_COUNT",
       "status": "PASS",
       "actual": 0,
@@ -141,8 +149,8 @@
       "expected": []
     }
   ],
-  "entityElementRouteCount": 30,
-  "entityCardCount": 303,
+  "entityElementRouteCount": 56,
+  "entityCardCount": 505,
   "entityContextTitleCount": 0,
   "entityCardLongTextCount": 0,
   "entityCardDuplicatePrimaryTitleCount": 0,

@@ -1,67 +1,11 @@
 {
   "dimensions": [
     {
-      "key": "category",
-      "labelKo": "분류",
-      "valueCount": 41,
-      "values": [
-        "SDG1 빈곤 종식 연계 건수",
-        "SDG2 기아 종식 연계 건수",
-        "SDG3 건강과 웰빙 연계 건수",
-        "SDG4 양질의 교육 연계 건수",
-        "SDG5 성평등 연계 건수",
-        "SDG6 물과 위생 연계 건수",
-        "SDG7 깨끗한 에너지 연계 건수",
-        "SDG8 양질의 일자리와 경제성장 연계 건수",
-        "SDG9 산업 · 혁신 · 인프라 연계 건수",
-        "SDG10 불평등 완화 연계 건수",
-        "SDG11 지속가능한 도시 연계 건수",
-        "SDG12 책임있는 소비 · 생산 연계 건수",
-        "SDG13 기후변화 대응 연계 건수",
-        "SDG14 해양 생태계 연계 건수",
-        "SDG15 육상 생태계 연계 건수",
-        "SDG16 평화 · 정의 · 제도 연계 건수",
-        "SDG17 글로벌 파트너십 연계 건수",
-        "기후대응 유형별 건수(감축)",
-        "기후대응 유형별 건수(적응 · 감축 병행)",
-        "기후대응 유형별 건수(적응)",
-        "부문별 건수(Agriculture)",
-        "부문별 건수(Cities and Urban Development)",
-        "부문별 건수(Education)",
-        "부문별 건수(Energy Efficiency)",
-        "부문별 건수(Forest and land use)",
-        "부문별 건수(Industry)",
-        "부문별 건수(Infrastructure)",
-        "부문별 건수(Oceans and Fisheries)",
-        "부문별 건수(Renewable Energy)",
-        "부문별 건수(Rural Development)",
-        "부문별 건수(Transport)",
-        "부문별 건수(Waste)",
-        "부문별 건수(Water)",
-        "연계 SDG 목표 수",
-        "연계 SDG 세부목표 수",
-        "연계 대상 NDC 문안 수",
-        "이행 상태별 건수(기시행)",
-        "이행 상태별 건수(향후 계획)",
-        "정보 유형별 건수(수요 · 격차)",
-        "정보 유형별 건수(조치)",
-        "총 연계 건수"
-      ]
-    },
-    {
       "key": "detail",
       "labelKo": "세부 분류",
-      "valueCount": 9,
+      "valueCount": 1,
       "values": [
-        "Climate response 분류별 연계 건수",
-        "NDC 문안과 SDG 세부목표의 연결 건수",
-        "NDC가 연결되는 SDG 목표(1~17) 개수",
-        "NDC가 연결되는 SDG 세부목표 개수",
-        "SDG에 연결된 NDC 원문 문안의 고유 건수",
-        "Sector 분류별 연계 건수",
-        "Status 분류별 연계 건수",
-        "Type of information 분류별 연계 건수",
-        "해당 SDG에 연결된 NDC 문안 건수"
+        "Climate Watch 연계 레코드 총 건수"
       ]
     },
     {
@@ -69,16 +13,7 @@
       "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
-        "개체"
-      ]
-    },
-    {
-      "key": "status",
-      "labelKo": "status",
-      "valueCount": 2,
-      "values": [
-        "Existing",
-        "Future"
+        "entity"
       ]
     },
     {
@@ -1289,27 +1224,25 @@
       }
     },
     {
-      "axisGroupKey": "measure-f334755992dd|건",
+      "axisGroupKey": "measure-688e21a19b14|건",
       "dimensionLabels": {
-        "category": "총 연계 건수",
-        "detail": "NDC 문안과 SDG 세부목표의 연결 건수"
+        "detail": "Climate Watch 연계 레코드 총 건수"
       },
       "dimensions": {
-        "category": "총 연계 건수",
-        "detail": "NDC 문안과 SDG 세부목표의 연결 건수"
+        "detail": "Climate Watch 연계 레코드 총 건수"
       },
-      "displayLabel": "NDC-SDG 연계 · 총 연계 건수 — NDC 문안과 SDG 세부목표의 연결 건수",
+      "displayLabel": "NDC-SDG 연계 건수 — Climate Watch 연계 레코드 총 건수",
       "indicatorId": "A-013_ndc_sdg_linkage_count",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-f334755992dd",
-        "labelKo": "NDC-SDG 연계",
+        "key": "measure-688e21a19b14",
+        "labelKo": "NDC-SDG 연계 건수",
         "unit": "건",
         "unitFamily": "count"
       },
-      "seriesKey": "measure-f334755992dd|건|category=총 연계 건수|detail=NDC 문안과 SDG 세부목표의 연결 건수|A-013_ndc_sdg_linkage_count",
+      "seriesKey": "measure-688e21a19b14|건|detail=Climate Watch 연계 레코드 총 건수|A-013_ndc_sdg_linkage_count",
       "sourceCaveat": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [원천 확보] 검토의견 1·2·3번 반영. Climate Watch NDC-SDG Linkages 모듈의 원자료(ndc_sdg.csv, sources.csv)를 확보하여 베트남(ISO=VNM) 연계 365건을 전건 수록함. 종전 A-013 폴더에 있던 SDR-2026-vietnam.pdf는 Climate Watch 자료가 아니라 Sustainable Development Report 2026 국가 프로파일이므로 본 요소에서 제외하고 참고자료로만 둠. [정의 명확화] 검토의견 3번 확답 — 원자료의 분류 열은 세 가지이며 모두 Climate Watch 원본 용어임(용역사 자체 생성 용어 아님). ① Climate response: Adaptation / Mitigation / Both, ② Type of information: Action / Needs & Gaps, ③ Status: Existing / Future. 종전 산출물의 \"연계유형\"·\"조치유형\"은 각각 ①·②에 대응하므로, 국문 표기를 쓰려면 위 원본 용어의 번역임을 병기해야 함. [딥링크] 검토의견 1번 반영 — source_url을 Climate Watch NDC-SDG 모듈 주소로, citation_locator를 원자료 파일·행 단위로 기재함. [출처 표기] 검토의견 2번 반영 — 원천은 World Resources Institute이며 원문 인용은 \"Northrop, E., H. Biru, S. Lima, M. Bouye, and R. Song. 2016. \"Examining the Alignment between the Intended Nationally Determined Contributions and Sustainable Development Goals.\" Working Paper. Washington, DC: World reso\"임. [시점 한계] 원자료의 Date of Content가 2016년이고 열 이름이 \"Indc text\"인 데서 보듯, 본 분석의 대상은 베트남의 2015년 INDC (Intended NDC)이며 2020년·2022년 갱신 NDC가 아님. 원천 스스로 \"The analysis covers NDCs submitted prior to May 2021\"과 \"A certain degree of subjectivity is admitted for this study\"를 명시함. 최신 NDC 기준 연계가 필요하면 별도 분석이 필요함. 원천이 갱신일을 연도(2016)로만 표기하여 last_updated는 해당 연도 말일로 기재함. [라이선스 원문 모순] sources.csv의 \"Summary of License\"는 Creative Commons Attribution-NonCommercial 4.0(CC BY-NC 4.0)이라고 기재되어 있으나 같은 파일의 라이선스 링크는 CC BY 4.0을 가리켜 서로 어긋남. 보수적으로 비상업 조건이 붙은 CC BY-NC 4.0으로 보아 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
-      "sourceLabel": "NDC-SDG 연계 · 총 연계 건수 — NDC 문안과 SDG 세부목표의 연결 건수",
+      "sourceLabel": "NDC-SDG 연계 건수 — Climate Watch 연계 레코드 총 건수",
       "sourceLabelEn": "Total number of NDC-SDG linkages",
       "sourceNote": "[원천 확인] 폴더명은 UNDESA·Climate Watch로 되어 있으나 raw 3종(database_2026.xlsx, Backdated SDG Index.xlsx, SDR-2026-vietnam.pdf)은 모두 UNDESA 산출물이 아니라 SDSN·Dublin University Press의 「Sustainable Development Report 2026」임. 원천 표기를 실제 발행 주체로 정정함. [원천 확보] 검토의견 1·2·3번 반영. Climate Watch NDC-SDG Linkages 모듈의 원자료(ndc_sdg.csv, sources.csv)를 확보하여 베트남(ISO=VNM) 연계 365건을 전건 수록함. 종전 A-013 폴더에 있던 SDR-2026-vietnam.pdf는 Climate Watch 자료가 아니라 Sustainable Development Report 2026 국가 프로파일이므로 본 요소에서 제외하고 참고자료로만 둠. [정의 명확화] 검토의견 3번 확답 — 원자료의 분류 열은 세 가지이며 모두 Climate Watch 원본 용어임(용역사 자체 생성 용어 아님). ① Climate response: Adaptation / Mitigation / Both, ② Type of information: Action / Needs & Gaps, ③ Status: Existing / Future. 종전 산출물의 \"연계유형\"·\"조치유형\"은 각각 ①·②에 대응하므로, 국문 표기를 쓰려면 위 원본 용어의 번역임을 병기해야 함. [딥링크] 검토의견 1번 반영 — source_url을 Climate Watch NDC-SDG 모듈 주소로, citation_locator를 원자료 파일·행 단위로 기재함. [출처 표기] 검토의견 2번 반영 — 원천은 World Resources Institute이며 원문 인용은 \"Northrop, E., H. Biru, S. Lima, M. Bouye, and R. Song. 2016. \"Examining the Alignment between the Intended Nationally Determined Contributions and Sustainable Development Goals.\" Working Paper. Washington, DC: World reso\"임. [시점 한계] 원자료의 Date of Content가 2016년이고 열 이름이 \"Indc text\"인 데서 보듯, 본 분석의 대상은 베트남의 2015년 INDC (Intended NDC)이며 2020년·2022년 갱신 NDC가 아님. 원천 스스로 \"The analysis covers NDCs submitted prior to May 2021\"과 \"A certain degree of subjectivity is admitted for this study\"를 명시함. 최신 NDC 기준 연계가 필요하면 별도 분석이 필요함. 원천이 갱신일을 연도(2016)로만 표기하여 last_updated는 해당 연도 말일로 기재함. [라이선스 원문 모순] sources.csv의 \"Summary of License\"는 Creative Commons Attribution-NonCommercial 4.0(CC BY-NC 4.0)이라고 기재되어 있으나 같은 파일의 라이선스 링크는 CC BY 4.0을 가리켜 서로 어긋남. 보수적으로 비상업 조건이 붙은 CC BY-NC 4.0으로 보아 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
       "sourceProvenance": {
@@ -1449,10 +1382,18 @@
   ],
   "measures": [
     {
-      "indicatorCount": 41,
+      "indicatorCount": 40,
       "key": "measure-f334755992dd",
       "labelKo": "NDC-SDG 연계",
-      "recordCount": 41,
+      "recordCount": 0,
+      "unit": "건",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-688e21a19b14",
+      "labelKo": "NDC-SDG 연계 건수",
+      "recordCount": 1,
       "unit": "건",
       "unitFamily": "count"
     },
@@ -1465,7 +1406,7 @@
       "unitFamily": "text"
     }
   ],
-  "observationCount": 41,
+  "observationCount": 1,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

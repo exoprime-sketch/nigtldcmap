@@ -14,10 +14,11 @@ const SPECIALIZED_HEADINGS_V134: Readonly<
   Record<string, Omit<PublicAnalysisHeadingsV134, "elementId">>
 > = Object.freeze({
   "A-002": {
-    publicAnalysisTitle: "정책·제도 역량의 수준과 장기 변화",
-    primaryChartTitle: "정책·제도 역량의 장기 변화",
-    secondaryChartTitle: "최신연도 부문별 역량",
-    publicQuestion: "경제관리·구조정책·사회적 포용·공공부문 관리 역량이 어떻게 변했는지 확인할 수 있습니다.",
+    publicAnalysisTitle: "거버넌스 여섯 부문의 수준과 장기 변화",
+    primaryChartTitle: "부문별 백분위의 장기 변화",
+    secondaryChartTitle: "최신연도 부문별 비교",
+    publicQuestion:
+      "시민 자유·참여, 정치안정, 정부 효과성, 규제의 질, 법치, 부패 통제가 어떻게 변했는지 확인할 수 있습니다.",
   },
   "B-005": {
     publicAnalysisTitle: "가뭄 위험의 시나리오별 장기 전망",

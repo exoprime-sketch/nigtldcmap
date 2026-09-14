@@ -7,8 +7,10 @@ import { inflateSync } from "node:zlib";
 import ts from "typescript";
 import {
   AuditV125,
+  MAP_FEATURE_FLOOR_V125,
   PROJECT_ROOT,
   V2_ROOT,
+  mapFeatureCountIsSound,
   readJson,
   readText,
 } from "./v125/audit-utils.mjs";
@@ -196,7 +198,16 @@ const adm1ManifestAsset = (geometryManifestResult.value?.assets || []).find(
 );
 
 audit.check("ACTIVE_MAP_LAYERS", activeLayers.length === 12, activeLayers.length, 12);
-audit.check("MAP_FEATURE_COUNT", mapFeatureCount === 2900, mapFeatureCount, 2900);
+// The exact feature count is a property of the delivery, not of the platform:
+// publishing every authorised carbon-credit project took C-025 from 18 features
+// to 262. What is asserted is that the index declares what its layers hold and
+// that the total has not collapsed.
+audit.check(
+  "MAP_FEATURE_COUNT",
+  mapFeatureCountIsSound(mapResult.value?.mapFeatureCount, mapFeatureCount),
+  { declared: mapResult.value?.mapFeatureCount ?? null, actual: mapFeatureCount },
+  { declared: "equal to actual", actual: `>= ${MAP_FEATURE_FLOOR_V125}` }
+);
 audit.check("ADM1_FEATURE_COUNT", adm1FeatureCount === 63, adm1FeatureCount, 63);
 const adm1SourceContract = {
   canonicalUrl:

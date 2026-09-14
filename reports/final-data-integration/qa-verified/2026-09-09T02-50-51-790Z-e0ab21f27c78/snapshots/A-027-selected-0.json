@@ -1,0 +1,350 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:51655/?view=data&element=gyotong-inpeura-railway-road&country=VNM&from=explorer&measure=measure-3ddde7efded5&year=2026#element-detail",
+  "title": "육상교통 인프라",
+  "body": "검색 결과로 돌아가기 국가 기본 정보 › 인프라 GIS 공간정보 데이터 제공 다운로드 가능 육상교통 인프라 베트남 · 육상교통 인프라의 최근 수준과 항목별 차이를 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 35종 · 관측기간 2026년 이 데이터로 확인할 수 있는 내용 육상교통 인프라의 지역별 차이와 범위 육상교통 인프라의 지역 차이와 공개된 공간 범위를 확인할 수 있습니다. 항목 도로 레이어 · % 도로 레이어 · EPSG 코드 도로 레이어 · 개 도로 레이어 · 건 철도 레이어 · % 철도 레이어 · EPSG 코드 철도 레이어 · 개 철도 레이어 · 건 분류 전체 교량(bridge) 결측률 노면(surface) 결측률 노선번호(ref) 결측률 레이어(layer) 결측률 명칭 결측률 명칭(name) 결측률 분류별 피처 수(construction) 분류별 피처 수(footway) 분류별 피처 수(funicular) 분류별 피처 수(light_rail) 분류별 피처 수(miniature_railway) 분류별 피처 수(monorail) 분류별 피처 수(motorway) 분류별 피처 수(narrow_gauge) 분류별 피처 수(path) 분류별 피처 수(primary) 분류별 피처 수(rail) 분류별 피처 수(residential) 분류별 피처 수(secondary) 분류별 피처 수(service) 분류별 피처 수(subway) 분류별 피처 수(tertiary) 분류별 피처 수(track) 분류별 피처 수(trunk) 분류별 피처 수(unclassified) 속성 필드 수 일방통행(oneway) 결측률 제한속도(maxspeed) 결측률 좌표계 차로수(lanes) 결측률 터널(tunnel) 결측률 피처 수 세부 분류 전체 .dbf 속성 테이블의 필드 개수 fclass 분류값별 지물 건수 highway 분류값별 지물 건수 name 필드 공란 비율 OSM 도로 레이어의 좌표참조체계 OSM 도로 레이어의 지물 건수 OSM 철도 레이어의 좌표참조체계 OSM 철도 레이어의 지물 건수 결측률을 측정한 속성 필드 개수 속성 태그 미보유 비율 연도 2026 용어 도움말 ? EPSG 설명 도로 레이어 EPSG:4326 EPSG 코드 · 2026 · 좌표계 · OSM 도로 레이어의 좌표참조체계 주 분석 육상교통 인프라 지역별 현황 근거 구조화된 확인 내용 도로 레이어 · 좌표계 — OSM 도로 레이어의 좌표참조체계 EPSG:4326 2026 · OpenStreetMap contributors 자료정보 상세 데이터 · 전체 35행 · 값 있음 35행 · 결측 0행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 1306,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "A-027",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "육상교통 인프라의 지역별 차이와 범위",
+    "육상교통 인프라 지역별 현황",
+    "구조화된 확인 내용",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목 선택",
+      "dimensionKey": null,
+      "testId": "v125-measure-select",
+      "value": "measure-3ddde7efded5",
+      "shown": "도로 레이어 · EPSG 코드",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-8f35104be85d",
+          "label": "도로 레이어 · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-3ddde7efded5",
+          "label": "도로 레이어 · EPSG 코드",
+          "disabled": false
+        },
+        {
+          "value": "measure-bd9e985f5e92",
+          "label": "도로 레이어 · 개",
+          "disabled": false
+        },
+        {
+          "value": "measure-7d9609ecb1c8",
+          "label": "도로 레이어 · 건",
+          "disabled": false
+        },
+        {
+          "value": "measure-0ff4ec179e3f",
+          "label": "철도 레이어 · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-22c73ee94b33",
+          "label": "철도 레이어 · EPSG 코드",
+          "disabled": false
+        },
+        {
+          "value": "measure-9f2522bf8637",
+          "label": "철도 레이어 · 개",
+          "disabled": false
+        },
+        {
+          "value": "measure-277ea4d09a7b",
+          "label": "철도 레이어 · 건",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "분류 선택",
+      "dimensionKey": "category",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "교량(bridge) 결측률",
+          "label": "교량(bridge) 결측률",
+          "disabled": false
+        },
+        {
+          "value": "노면(surface) 결측률",
+          "label": "노면(surface) 결측률",
+          "disabled": false
+        },
+        {
+          "value": "노선번호(ref) 결측률",
+          "label": "노선번호(ref) 결측률",
+          "disabled": false
+        },
+        {
+          "value": "레이어(layer) 결측률",
+          "label": "레이어(layer) 결측률",
+          "disabled": false
+        },
+        {
+          "value": "명칭 결측률",
+          "label": "명칭 결측률",
+          "disabled": false
+        },
+        {
+          "value": "명칭(name) 결측률",
+          "label": "명칭(name) 결측률",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(construction)",
+          "label": "분류별 피처 수(construction)",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(footway)",
+          "label": "분류별 피처 수(footway)",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(funicular)",
+          "label": "분류별 피처 수(funicular)",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(light_rail)",
+          "label": "분류별 피처 수(light_rail)",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(miniature_railway)",
+          "label": "분류별 피처 수(miniature_railway)",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(monorail)",
+          "label": "분류별 피처 수(monorail)",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(motorway)",
+          "label": "분류별 피처 수(motorway)",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(narrow_gauge)",
+          "label": "분류별 피처 수(narrow_gauge)",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(path)",
+          "label": "분류별 피처 수(path)",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(primary)",
+          "label": "분류별 피처 수(primary)",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(rail)",
+          "label": "분류별 피처 수(rail)",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(residential)",
+          "label": "분류별 피처 수(residential)",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(secondary)",
+          "label": "분류별 피처 수(secondary)",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(service)",
+          "label": "분류별 피처 수(service)",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(subway)",
+          "label": "분류별 피처 수(subway)",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(tertiary)",
+          "label": "분류별 피처 수(tertiary)",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(track)",
+          "label": "분류별 피처 수(track)",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(trunk)",
+          "label": "분류별 피처 수(trunk)",
+          "disabled": false
+        },
+        {
+          "value": "분류별 피처 수(unclassified)",
+          "label": "분류별 피처 수(unclassified)",
+          "disabled": false
+        },
+        {
+          "value": "속성 필드 수",
+          "label": "속성 필드 수",
+          "disabled": false
+        },
+        {
+          "value": "일방통행(oneway) 결측률",
+          "label": "일방통행(oneway) 결측률",
+          "disabled": false
+        },
+        {
+          "value": "제한속도(maxspeed) 결측률",
+          "label": "제한속도(maxspeed) 결측률",
+          "disabled": false
+        },
+        {
+          "value": "좌표계",
+          "label": "좌표계",
+          "disabled": false
+        },
+        {
+          "value": "차로수(lanes) 결측률",
+          "label": "차로수(lanes) 결측률",
+          "disabled": false
+        },
+        {
+          "value": "터널(tunnel) 결측률",
+          "label": "터널(tunnel) 결측률",
+          "disabled": false
+        },
+        {
+          "value": "피처 수",
+          "label": "피처 수",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "세부 분류 선택",
+      "dimensionKey": "detail",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": ".dbf 속성 테이블의 필드 개수",
+          "label": ".dbf 속성 테이블의 필드 개수",
+          "disabled": false
+        },
+        {
+          "value": "fclass 분류값별 지물 건수",
+          "label": "fclass 분류값별 지물 건수",
+          "disabled": false
+        },
+        {
+          "value": "highway 분류값별 지물 건수",
+          "label": "highway 분류값별 지물 건수",
+          "disabled": false
+        },
+        {
+          "value": "name 필드 공란 비율",
+          "label": "name 필드 공란 비율",
+          "disabled": false
+        },
+        {
+          "value": "OSM 도로 레이어의 좌표참조체계",
+          "label": "OSM 도로 레이어의 좌표참조체계",
+          "disabled": false
+        },
+        {
+          "value": "OSM 도로 레이어의 지물 건수",
+          "label": "OSM 도로 레이어의 지물 건수",
+          "disabled": false
+        },
+        {
+          "value": "OSM 철도 레이어의 좌표참조체계",
+          "label": "OSM 철도 레이어의 좌표참조체계",
+          "disabled": false
+        },
+        {
+          "value": "OSM 철도 레이어의 지물 건수",
+          "label": "OSM 철도 레이어의 지물 건수",
+          "disabled": false
+        },
+        {
+          "value": "결측률을 측정한 속성 필드 개수",
+          "label": "결측률을 측정한 속성 필드 개수",
+          "disabled": false
+        },
+        {
+          "value": "속성 태그 미보유 비율",
+          "label": "속성 태그 미보유 비율",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(4) > select:nth-of-type(1)",
+      "id": null,
+      "label": "연도 선택",
+      "dimensionKey": null,
+      "testId": "v125-year-select",
+      "value": "2026",
+      "shown": "2026",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "2026",
+          "label": "2026",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [
+    "도로 레이어 EPSG:4326 EPSG 코드 · 2026 · 좌표계 · OSM 도로 레이어의 좌표참조체계"
+  ],
+  "chartTexts": [],
+  "tableRows": [],
+  "emptyNotices": [],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

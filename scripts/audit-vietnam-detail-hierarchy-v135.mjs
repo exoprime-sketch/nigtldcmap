@@ -3,7 +3,15 @@
 import { existsSync } from "node:fs";
 import { resolve } from "node:path";
 
-import { AuditV125, PROJECT_ROOT, V2_ROOT, catalogElements, readJson } from "./v125/audit-utils.mjs";
+import {
+  AuditV125,
+  PROJECT_ROOT,
+  V2_ROOT,
+  catalogElements,
+  loadPackPayloads,
+  payloadRecords,
+  readJson,
+} from "./v125/audit-utils.mjs";
 import {
   evaluateValue,
   launchHeadlessBrowser,
@@ -99,6 +107,21 @@ const portfolioListBeforeSummary = routes.filter(
   (row) => /^D-(?:0(?:1[2-9]|2[0-6]))$/u.test(row.elementId) && row.portfolioList && !row.portfolioSummaryBeforeList
 );
 const ghg = routes.find((row) => row.elementId === "C-002");
+// C-002's delivery carries no sector-by-gas observations any more: the source
+// states that BUR3 publishes no national mitigation total, and the screen lists
+// each item's status instead of drawing a chart of nothing. What this check
+// guards is the hierarchy - an analysis first, the raw matrix never first - so
+// the sector-gas view is required only while the delivery has values for it.
+const ghgObservations = payloadRecords(
+  loadPackPayloads().elements.get("C-002")?.observations
+).filter((row) => typeof row?.value === "number" && Number.isFinite(row.value));
+const ghgHierarchy =
+  ghgObservations.length > 0
+    ? ghg?.ghgPresent === true && ghg?.rawMatrixPrimary === "false"
+    : ghg?.primary === true &&
+      ghg?.primaryBeforeRaw === true &&
+      ghg?.primaryBeforeMetadata === true &&
+      ghg?.genericRawMatrixHeading === false;
 
 audit.check("FRAMEWORK_ELEMENTS", catalog.length === 152, catalog.length, 152);
 audit.check("DETAIL_ROUTE_RUNTIME_COVERAGE", runtimeFailure === null && routes.length === 152 && routeFailures.length === 0, { runtimeFailure, routeCount: routes.length, routeFailures }, { routeCount: 152, routeFailures: [] });
@@ -109,7 +132,14 @@ audit.check("DETAIL_METADATA_BEFORE_ANALYSIS_COUNT", metadataBeforeAnalysis.leng
 audit.check("RAW_TABLE_BEFORE_ANALYSIS_COUNT", rawBeforeAnalysis.length === 0, rawBeforeAnalysis, []);
 audit.check("RAW_MATRIX_AS_PRIMARY_COUNT", rawMatrixAsPrimary.length === 0, rawMatrixAsPrimary, []);
 audit.check("PORTFOLIO_LIST_BEFORE_SUMMARY_COUNT", portfolioListBeforeSummary.length === 0, portfolioListBeforeSummary, []);
-audit.check("GHG_ANALYTICAL_HIERARCHY", ghg?.ghgPresent === true && ghg?.rawMatrixPrimary === "false", ghg || null, { ghgPresent: true, rawMatrixPrimary: "false" });
+audit.check(
+  "GHG_ANALYTICAL_HIERARCHY",
+  ghgHierarchy,
+  { sectorGasObservations: ghgObservations.length, route: ghg || null },
+  ghgObservations.length > 0
+    ? { ghgPresent: true, rawMatrixPrimary: "false" }
+    : { primary: true, primaryBeforeRaw: true, genericRawMatrixHeading: false }
+);
 audit.check("BROKEN_ASSET", brokenAssets.length === 0, brokenAssets, []);
 audit.check("CONSOLE_ERROR", (browser?.runtimeErrors || []).length === 0, browser?.runtimeErrors || [], []);
 

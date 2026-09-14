@@ -1,110 +1,18 @@
 {
   "dimensions": [
     {
-      "key": "category",
-      "labelKo": "분류",
+      "key": "entityType",
+      "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
-        "개소수"
-      ]
-    },
-    {
-      "key": "detail",
-      "labelKo": "세부 분류",
-      "valueCount": 8,
-      "values": [
-        "EI 계열",
-        "EIA 계열",
-        "GIS 기반 산출",
-        "개발 완료분",
-        "개발 완료분 (범위 상한)",
-        "개발 완료분 (범위 하한)",
-        "개소수(개)",
-        "연도별(EIA)"
-      ]
-    },
-    {
-      "key": "technology",
-      "labelKo": "기술",
-      "valueCount": 1,
-      "values": [
-        "5"
-      ]
-    },
-    {
-      "key": "year",
-      "labelKo": "연도",
-      "valueCount": 62,
-      "values": [
-        "1965",
-        "1966",
-        "1967",
-        "1968",
-        "1969",
-        "1970",
-        "1971",
-        "1972",
-        "1973",
-        "1974",
-        "1975",
-        "1976",
-        "1977",
-        "1978",
-        "1979",
-        "1980",
-        "1981",
-        "1982",
-        "1983",
-        "1984",
-        "1985",
-        "1986",
-        "1987",
-        "1988",
-        "1989",
-        "1990",
-        "1991",
-        "1992",
-        "1993",
-        "1994",
-        "1995",
-        "1996",
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024",
-        "2026",
-        "2030"
+        "entity"
       ]
     }
   ],
   "elementId": "B-039",
-  "entityCount": 0,
+  "entityCount": 228,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 18,
+  "indicatorCount": 20,
   "indicators": [
     {
       "axisGroupKey": "measure-6bd0c5a1b0ce|MW",
@@ -487,6 +395,46 @@
       }
     },
     {
+      "axisGroupKey": "measure-9b457cc4f86b|TWh/yr · GWh/yr",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "수력 이론 총잠재량(성 단위 개체 목록)",
+      "indicatorId": "B-039_gross_potential_adm1",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9b457cc4f86b",
+        "labelKo": "수력 이론 총잠재량(성 단위 개체 목록)",
+        "unit": "TWh/yr · GWh/yr",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-9b457cc4f86b|TWh/yr · GWh/yr||B-039_gross_potential_adm1",
+      "sourceCaveat": null,
+      "sourceLabel": "수력 이론 총잠재량(성 단위 개체 목록)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-a49f99f25ada|MW / TWh/yr / 백만 kW",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "수력 잠재량(전국)",
+      "indicatorId": "B-039_hydropower_national",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a49f99f25ada",
+        "labelKo": "수력 잠재량(전국)",
+        "unit": "MW / TWh/yr / 백만 kW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-a49f99f25ada|MW / TWh/yr / 백만 kW||B-039_hydropower_national",
+      "sourceCaveat": null,
+      "sourceLabel": "수력 잠재량(전국)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-6c4981e34947|MW",
       "dimensionLabels": {
         "technology": "5"
@@ -674,7 +622,7 @@
       "indicatorCount": 1,
       "key": "measure-01cbfe08ecae",
       "labelKo": "PDP8 개정 2030 목표 (범위 상한)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "MW",
       "unitFamily": "capacity"
     },
@@ -682,7 +630,7 @@
       "indicatorCount": 1,
       "key": "measure-37be095495ae",
       "labelKo": "PDP8 개정 2030 목표 (범위 하한)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "MW",
       "unitFamily": "capacity"
     },
@@ -690,7 +638,7 @@
       "indicatorCount": 4,
       "key": "measure-6bd0c5a1b0ce",
       "labelKo": "개발 완료 잠재량",
-      "recordCount": 4,
+      "recordCount": 0,
       "unit": "MW",
       "unitFamily": "capacity"
     },
@@ -698,7 +646,7 @@
       "indicatorCount": 1,
       "key": "measure-fd5354090a43",
       "labelKo": "개발가능 잠재량(EVN 기준) (범위 상한)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "MW",
       "unitFamily": "capacity"
     },
@@ -706,7 +654,7 @@
       "indicatorCount": 1,
       "key": "measure-ee8624c7ce80",
       "labelKo": "개발가능 잠재량(EVN 기준) (범위 하한)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "MW",
       "unitFamily": "capacity"
     },
@@ -714,7 +662,7 @@
       "indicatorCount": 1,
       "key": "measure-6e81cfb5b8a2",
       "labelKo": "경제적 잠재량 (범위 상한)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "MW",
       "unitFamily": "capacity"
     },
@@ -722,7 +670,7 @@
       "indicatorCount": 1,
       "key": "measure-f9c79eecb641",
       "labelKo": "경제적 잠재량 (범위 하한)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "MW",
       "unitFamily": "capacity"
     },
@@ -730,7 +678,7 @@
       "indicatorCount": 1,
       "key": "measure-7ebe342ddcdb",
       "labelKo": "기술적 잠재량",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "MW",
       "unitFamily": "capacity"
     },
@@ -738,7 +686,7 @@
       "indicatorCount": 1,
       "key": "measure-9af330fd5257",
       "labelKo": "설비용량",
-      "recordCount": 45,
+      "recordCount": 0,
       "unit": "백만 kW",
       "unitFamily": "capacity"
     },
@@ -746,7 +694,7 @@
       "indicatorCount": 1,
       "key": "measure-6c4981e34947",
       "labelKo": "설비용량(참고)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "MW",
       "unitFamily": "capacity"
     },
@@ -754,23 +702,39 @@
       "indicatorCount": 1,
       "key": "measure-e1009ff62390",
       "labelKo": "소수력 잠재량(<30MW)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "MW",
       "unitFamily": "capacity"
     },
     {
       "indicatorCount": 1,
+      "key": "measure-9b457cc4f86b",
+      "labelKo": "수력 이론 총잠재량(성 단위 개체 목록)",
+      "recordCount": 0,
+      "unit": "TWh/yr · GWh/yr",
+      "unitFamily": "energy"
+    },
+    {
+      "indicatorCount": 1,
       "key": "measure-d374a50706e3",
       "labelKo": "수력 잠재량",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "MW / GWh/yr",
       "unitFamily": "energy"
     },
     {
       "indicatorCount": 1,
+      "key": "measure-a49f99f25ada",
+      "labelKo": "수력 잠재량(전국)",
+      "recordCount": 0,
+      "unit": "MW / TWh/yr / 백만 kW",
+      "unitFamily": "capacity"
+    },
+    {
+      "indicatorCount": 1,
       "key": "measure-5c7695e4d3ca",
       "labelKo": "연간 수력 발전량",
-      "recordCount": 60,
+      "recordCount": 0,
       "unit": "TWh/yr",
       "unitFamily": "energy"
     },
@@ -778,7 +742,7 @@
       "indicatorCount": 1,
       "key": "measure-7f536c14a409",
       "labelKo": "연간 수력 발전량",
-      "recordCount": 45,
+      "recordCount": 0,
       "unit": "십억 kWh/yr",
       "unitFamily": "energy"
     },
@@ -786,12 +750,12 @@
       "indicatorCount": 1,
       "key": "measure-36c55f1265c9",
       "labelKo": "연간 수력 발전량(참고)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "TWh/yr",
       "unitFamily": "energy"
     }
   ],
-  "observationCount": 165,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

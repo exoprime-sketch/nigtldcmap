@@ -48,6 +48,24 @@ export interface PublicMapPresetLayerV126 {
   elementId: PublicMapPresetElementIdV126;
   variable: string;
   period: string;
+  /**
+   * The measure this preset means, by its stable id.
+   *
+   * `variable` is a slug of the Korean label, and the slugger falls back to a
+   * SHA-256 prefix for anything non-ASCII - so a Korean-labelled variable is
+   * keyed by a hash that changes whenever the label does. FOREST_CHANGE held
+   * one of those hashes (8fca7c8dd189) that the delivery no longer produces,
+   * with a period the layer does not have, and silently selected a layer with
+   * no values. measureId comes from the derivation contract and survives both a
+   * relabel and a rekey, so it is what a preset should name.
+   */
+  measureId?: string;
+  /**
+   * The label, as a fallback when no measureId is published for a layer. Only
+   * accepted on a unique match: two variables sharing a label is not an
+   * identification.
+   */
+  variableLabel?: string;
 }
 
 export interface PublicMapWorkspacePresetV126 {
@@ -85,6 +103,7 @@ export const PUBLIC_MAP_WORKSPACE_PRESETS_V126: readonly [
     descriptionKo: "지역별 계획 + 송전망·발전소",
     primary: {
       elementId: "C-016",
+      measureId: "re_capacity_dmt_mai_nha_prov",
       variable: "dmt-mai-nha",
       period: "2025-2030",
     },
@@ -99,16 +118,26 @@ export const PUBLIC_MAP_WORKSPACE_PRESETS_V126: readonly [
     descriptionKo: "산림손실 + 산림면적·탄소",
     primary: {
       elementId: "B-033",
+      measureId: "tree_cover_loss_prov",
       variable: "annual-tree-cover-loss",
-      period: "2025",
+      variableLabel: "연간 수관 손실 — 성(省) 단위",
+      // The delivery carries a real annual series; 2025 is not one of its years.
+      period: "2024",
     },
     context: [
       {
         elementId: "B-031",
+        measureId: "prov_ext2010",
         variable: "tree-cover-area-2010",
         period: "2010",
       },
-      { elementId: "B-034", variable: "8fca7c8dd189", period: "2025" },
+      {
+        elementId: "B-034",
+        measureId: "prov_forest_carbon_net_flux",
+        variable: "6d25ef451c11",
+        variableLabel: "산림탄소 순플럭스(연평균)",
+        period: "2001–2024",
+      },
     ],
   },
   {

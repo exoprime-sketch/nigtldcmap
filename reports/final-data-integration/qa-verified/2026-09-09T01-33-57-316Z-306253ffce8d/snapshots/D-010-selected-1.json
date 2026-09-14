@@ -1,0 +1,161 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:65003/?view=data&element=hwaseogyeonryo-bojogeum-gyumo&country=VNM&from=explorer&measure=measure-465d4d66c9ba&year=2024&dim.category=GDP+%EB%8C%80%EB%B9%84+%EB%B9%84%EC%A4%91#element-detail",
+  "title": "화석연료 보조금 규모",
+  "body": "검색 결과로 돌아가기 시장·산업 및 재원 › 기후대응·기후기술 관련 정부 예산 데이터 제공 다운로드 가능 화석연료 보조금 규모 베트남 · 화석연료 보조금 규모의 사업 규모와 분야·기관별 구성을 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 8종 · 관측기간 2020~2024년 이 데이터로 확인할 수 있는 내용 화석연료 보조금 규모의 항목별 공개 현황 화석연료 보조금 규모의 공개 값과 항목별 차이를 확인할 수 있습니다. i 지표 읽는 법 화석연료 보조금 규모 보조금 총액, GDP 대비 비중, 연료별 구성비와 외부효과를 반영한 효율가격을 구분해 보여줍니다. 총액·비중·리터당 가격은 단위와 분모가 달라 같은 축에서 직접 비교하지 않습니다. 비율은 선택한 GDP·연료 구성 등 화면에 표시된 기준 안에서 해석합니다. 높고 낮음의 의미 선택한 보조금 항목과 분모 안에서 해석 항목 화석연료 보조금 규모 · % 화석연료 보조금 규모 · USD 화석연료 보조금 규모 · USD/L 분류 GDP 대비 비중 IMF 국가군 GDP 대비 구간 상한(max) IMF 국가군 GDP 대비 구간 하한(min) 가솔린 효율가격(외부효과 반영) 연료별 구성비 총액 세부 분류 전체 IMF 국가군 분류 구간 상한 IMF 국가군 분류 구간 하한 기타(디젤 등) 명시적+암묵적 보조금의 GDP 대비 비중 석탄 연도별 외부효과 반영 리터당 효율가격 휘발유 용어 도움말 ? USD 설명 ? GDP 설명 현재 선택 조건에 표시할 값이 없습니다 다른 항목이나 기간을 선택해 확인해 주세요. 자료정보 상세 데이터 · 전체 10행 · 값 있음 10행 · 결측 0행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 828,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "D-010",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "화석연료 보조금 규모의 항목별 공개 현황",
+    "지표 읽는 법",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목 선택",
+      "dimensionKey": null,
+      "testId": "v125-measure-select",
+      "value": "measure-465d4d66c9ba",
+      "shown": "화석연료 보조금 규모 · USD",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-f89153b46866",
+          "label": "화석연료 보조금 규모 · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-465d4d66c9ba",
+          "label": "화석연료 보조금 규모 · USD",
+          "disabled": false
+        },
+        {
+          "value": "measure-f8ee4fcb7553",
+          "label": "화석연료 보조금 규모 · USD/L",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "분류 선택",
+      "dimensionKey": "category",
+      "testId": null,
+      "value": "GDP 대비 비중",
+      "shown": "GDP 대비 비중",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "GDP 대비 비중",
+          "label": "GDP 대비 비중",
+          "disabled": false
+        },
+        {
+          "value": "IMF 국가군 GDP 대비 구간 상한(max)",
+          "label": "IMF 국가군 GDP 대비 구간 상한(max)",
+          "disabled": false
+        },
+        {
+          "value": "IMF 국가군 GDP 대비 구간 하한(min)",
+          "label": "IMF 국가군 GDP 대비 구간 하한(min)",
+          "disabled": false
+        },
+        {
+          "value": "가솔린 효율가격(외부효과 반영)",
+          "label": "가솔린 효율가격(외부효과 반영)",
+          "disabled": false
+        },
+        {
+          "value": "연료별 구성비",
+          "label": "연료별 구성비",
+          "disabled": false
+        },
+        {
+          "value": "총액",
+          "label": "총액",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "세부 분류 선택",
+      "dimensionKey": "detail",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "IMF 국가군 분류 구간 상한",
+          "label": "IMF 국가군 분류 구간 상한",
+          "disabled": false
+        },
+        {
+          "value": "IMF 국가군 분류 구간 하한",
+          "label": "IMF 국가군 분류 구간 하한",
+          "disabled": false
+        },
+        {
+          "value": "기타(디젤 등)",
+          "label": "기타(디젤 등)",
+          "disabled": false
+        },
+        {
+          "value": "명시적+암묵적 보조금의 GDP 대비 비중",
+          "label": "명시적+암묵적 보조금의 GDP 대비 비중",
+          "disabled": false
+        },
+        {
+          "value": "석탄",
+          "label": "석탄",
+          "disabled": false
+        },
+        {
+          "value": "연도별",
+          "label": "연도별",
+          "disabled": false
+        },
+        {
+          "value": "외부효과 반영 리터당 효율가격",
+          "label": "외부효과 반영 리터당 효율가격",
+          "disabled": false
+        },
+        {
+          "value": "휘발유",
+          "label": "휘발유",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [],
+  "chartTexts": [],
+  "tableRows": [],
+  "emptyNotices": [
+    "현재 선택 조건에 표시할 값이 없습니다 다른 항목이나 기간을 선택해 확인해 주세요."
+  ],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

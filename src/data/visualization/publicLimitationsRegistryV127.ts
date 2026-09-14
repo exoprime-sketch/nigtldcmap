@@ -17,21 +17,24 @@ export type PublicLimitationV127 = {
  * caveats are intentionally not accepted as inputs so internal review text can
  * never flow into the public view by accident.
  */
+/**
+ * A-002 now carries the World Bank's Worldwide Governance Indicators, not CPIA.
+ * The three CPIA caveats that used to sit here told a reader the values stopped
+ * in 2015 while the screen drew a series to 2024, and named a cluster the data
+ * no longer contains. What is true of the delivered series is stated instead.
+ */
 const A002_PUBLIC_LIMITATIONS_V127: readonly PublicLimitationV127[] =
   Object.freeze<PublicLimitationV127[]>([
     {
       kind: "coverage-gap",
-      message: "공개된 CPIA 값은 2005~2015년까지 제공됩니다",
-      chartSummary: "2016~2024년은 원천자료에서 값이 제공되지 않았습니다",
-    },
-    {
-      kind: "coverage-gap",
-      message: "2016~2024년은 원천자료에서 값이 제공되지 않았습니다",
-    },
-    {
-      kind: "source-inconsistency",
       message:
-        "2014년 공공부문 관리 클러스터 값은 원천 기재값과 하위항목 평균이 일치하지 않아 플랫폼에서는 원천 기재값을 표시합니다",
+        "1996~2002년은 격년(1996·1998·2000·2002)으로만 제공되며, 2003년부터 매년 제공됩니다",
+      chartSummary: "1996~2002년은 격년 값만 제공됩니다",
+    },
+    {
+      kind: "methodology-change",
+      message:
+        "백분위(0~100)는 해당 연도 조사대상국 중 상대적 위치이므로 연도 간 비교 시 대상국 구성 변화를 함께 고려해야 합니다",
     },
   ]);
 

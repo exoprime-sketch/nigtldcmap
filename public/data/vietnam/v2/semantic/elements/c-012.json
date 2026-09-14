@@ -1,238 +1,18 @@
 {
   "dimensions": [
     {
-      "key": "category",
-      "labelKo": "분류",
-      "valueCount": 67,
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
       "values": [
-        "BLT(Build-Lease-Transfer)",
-        "BOO(Build-Own-Operate)",
-        "BOT(Build-Operate-Transfer)",
-        "BT(Build-Transfer)",
-        "BTL(Build-Transfer-Lease)",
-        "BTO(Build-Transfer-Operate)",
-        "King & Wood Mallesons Vietnam PPP Guide 2025",
-        "Law 64/2020/QH14 서명본",
-        "Nghị định 243/2025/NĐ-CP",
-        "O&M(Operate-Maintain)",
-        "PPP 대상 분야(제4조 제1항)",
-        "PPP 사업 현황 발표(2023-07-11)",
-        "thuvienphapluat.vn 영문 법령 DB",
-        "WB PPP Legal Framework Snapshot",
-        "WB PPP Resource Center",
-        "World Bank PPI",
-        "World Bank PPI Database",
-        "★ 두 출처의 집계 기준 차이",
-        "舊 전담기관",
-        "개정 이력 Luật số 03/2022/QH15",
-        "개정 이력 Luật số 57/2024/QH15",
-        "개정 이력 Luật số 90/2025/QH15",
-        "개정 이력 Luật Tài nguyên nước 28/2023/QH15(수자원법)",
-        "개정 이력 Luật Đường bộ 35/2024/QH15(도로법)",
-        "개정 이력 Nghị định 28/2021/NĐ-CP",
-        "개정 이력 Nghị định 35/2021/NĐ-CP",
-        "개정 이력 Nghị định 71/2025/NĐ-CP",
-        "개정 이력 Nghị định 125/2025/NĐ-CP 제8조",
-        "개정 이력 Nghị định 243/2025/NĐ-CP",
-        "경쟁협상(Đàm phán cạnh tranh)",
-        "계약 세부유형별 건수",
-        "공개입찰(Đấu thầu rộng rãi)",
-        "국가자본 참여 수익공유) 국가자본 참여 상한(원칙)",
-        "국가자본 참여 수익공유) 국가자본 참여 상한(특례)",
-        "국가자본 참여 수익공유) 부족수익 국가보전",
-        "국가자본 참여 수익공유) 초과수익 국가공유",
-        "국가자본 참여 수익공유) 최소 자기자본 비율",
-        "국가자본 참여 수익공유) 컨소시엄 자기자본 조달능력",
-        "국내투자자 관련 분쟁",
-        "권한기관 정의",
-        "기간별 건수",
-        "낙찰방식별 건수",
-        "누적 총투자액",
-        "명칭 시행령",
-        "명칭 시행일",
-        "명칭 현행 PPP 기본법",
-        "명칭 현행 통합본",
-        "법 조항 존재 여부",
-        "부문별 건수",
-        "상태별 건수",
-        "시행령 확인 필요",
-        "외국인 당사자 간 분쟁",
-        "외국인투자자-당국 분쟁",
-        "원본 레코드 수",
-        "정부 PPP 사업 통계 공표 페이지",
-        "정부 통계",
-        "참여유형별 건수",
-        "총 프로젝트 건수 (지정 출처 기준)",
-        "최대 규모 사업",
-        "통합본 123/VBHN-VPQH(2025)",
-        "투자보장 세제 토지사용료 인센티브(제79조)",
-        "투자보장 토지접근권 공공서비스 제공 보장(제80조)",
-        "투자자 지명(Chỉ định nhà đầu tư)",
-        "투자정책결정 권한별 분류(제4조 제2항)",
-        "특별사례 투자자 선정(Trường hợp đặc biệt)",
-        "폐지 여부",
-        "현행 전담기관"
-      ]
-    },
-    {
-      "key": "detail",
-      "labelKo": "세부 분류",
-      "valueCount": 89,
-      "values": [
-        "57/2024 개정 후 현행 (보완항목)",
-        "57/2024로 재도입, 지급방식 3종 규정",
-        "1994-2000",
-        "2001-2010",
-        "2011-2020",
-        "2021-2024",
-        "2022년말 기준 집계",
-        "2025년 정부조직 개편 이후",
-        "Active(운영·건설 중)",
-        "BOO(Build, own, and operate)",
-        "BOT(Build, operate, and transfer)",
-        "BROT(Build, rehabilitate, operate, and transfer)",
-        "Brownfield(기존시설 개보수)",
-        "Cancelled(중단)",
-        "Competitive bidding(경쟁입찰)",
-        "Competitive negotiation(경쟁협상)",
-        "Concluded(종료)",
-        "Custom Query",
-        "Custom Query 추출 행 수",
-        "Cơ quan có thẩm quyền(제5조 제1항)",
-        "Direct negotiation(직접협상)",
-        "Divestiture(지분매각)",
-        "Energy(에너지)",
-        "Greenfield project(신규건설)",
-        "Hai Lang LNG-to-power project phase 1(2022)",
-        "ICT(정보통신)",
-        "Law 64/2020 영문본",
-        "License scheme(면허 방식)",
-        "Merchant",
-        "Municipal Solid Waste(생활폐기물)",
-        "Nghị định 243/2025/NĐ-CP",
-        "Nghị định 243/2025/NĐ-CP상 VfM 규정 유무",
-        "Not Available(미기재)",
-        "Partial(부분 지분매각)",
-        "PPP Laws Vietnam",
-        "PPP Unit Vietnam",
-        "PPP 관련 조항 (보완항목)",
-        "PPP 사업 재무관리 메커니즘 (보완항목)",
-        "PPP법 시행 세부 시행령(최초) (보완항목)",
-        "PPP법 시행 세부규정(현행) (보완항목)",
-        "PPP법 시행령",
-        "PPP법 시행령 (보완항목)",
-        "ROT(Rehabilitate, operate, and transfer)",
-        "TotalInvestment 합계",
-        "Transport(수송)",
-        "Vietnam 국가 스냅숏",
-        "Vietnam(2016)",
-        "Water and sewerage(상하수)",
-        "WB PPI vs 베트남 정부 통계",
-        "舊 최소투자기준 조항 삭제 (보완항목)",
-        "건설 후 국가 이전, 이후 서비스 제공하고 정부가 대금 지급",
-        "건설 후 즉시 이전, 이후 일정기간 운영권 보유",
-        "건설·서비스제공(정부대금지급) 후 기간만료시 국가에 이전",
-        "건설·소유·운영, 기간만료시 계약종료(이전 없음)",
-        "건설·운영 후 기간만료시 국가에 이전",
-        "계획법·투자법·PPP법·입찰법 일괄개정 (보완항목)",
-        "공표 항목 부재 확인",
-        "국방·안보, 긴급 대체투자자 선정 등",
-        "국회·총리·장관/중앙기관장·성인민의회·성인민위원회 (보완항목)",
-        "권한기관/계약체결기관-국내투자자, 국내투자자간 분쟁 (보완항목)",
-        "권한기관/계약체결기관-외국인투자자·외투기업 (보완항목)",
-        "기존 인프라 일부·전부 운영·관리",
-        "기획투자부(MPI) 공공조달청(Public Procurement Agency)",
-        "누적 체결 (2010~2020)",
-        "대표사·구성사 각각 최소비율 (보완항목)",
-        "법령포털 공식 통합본(Văn bản hợp nhất)",
-        "베트남 법령포털(정부 데이터파일)",
-        "사업기간 중 토지용도 불변경 등 (보완항목)",
-        "세법·토지법·투자법 등 관계법령에 따른 우대 (보완항목)",
-        "신규 사업 (2021~2024)",
-        "실적수익이 재무계획 대비 90%미만~75%미만 구간 (보완항목)",
-        "실적수익이 재무계획 대비 110%초과~125%초과 구간 (보완항목)",
-        "용지보상비 과다·낙후지역 사업 등 (보완항목)",
-        "원칙적 방식, 참여자 수 제한 없음",
-        "일괄개정 조항 포함 (보완항목)",
-        "입찰법·PPP법 등 9개 법률 일괄개정 (보완항목)",
-        "재무종결(financial closure) 기준 등재 사업",
-        "적격투자자 3인 이하 응모 / 첨단·신기술 적용사업",
-        "전력부문 BOT 발전소",
-        "제37~39조 적용 불가시 총리 결정",
-        "제100조(Hiệu lực thi hành) 제1항",
-        "제정 여부·법률번호",
-        "중앙경제위원회 워크숍 발표",
-        "총사업비 대비 (보완항목)",
-        "총사업비(국가자본 제외) 대비 (보완항목)",
-        "최근 개정·시행령 보완용 2차출처",
-        "최소 1인 이상 외국인투자자가 관련된 투자자간·외국조직 관련 분쟁 (보완항목)",
-        "키워드 'giá trị đồng tiền'(화폐가치/VfM) 원문 전수검색",
-        "투자법·PPP법 등 8개 법률 일괄개정 (보완항목)"
-      ]
-    },
-    {
-      "key": "detail_2",
-      "labelKo": "detail_2",
-      "valueCount": 16,
-      "values": [
-        "BOT 방식 화력발전 이행 실적",
-        "MPI가 재무부(MoF)로 통합·기능 승계",
-        "WB PPI Primary sector",
-        "WB PPI Project status",
-        "WB PPI Subtype of PPI",
-        "WB PPI Type of PPI",
-        "WB PPI 등재 사업의 AwardMethod 집계",
-        "구법 체계 하 체결된 PPP 사업",
-        "신규 승인 10건 + 투자준비 14건",
-        "재무종결연도 기준",
-        "지정 출처 PDF, 폐지 체계라 미사용",
-        "지정 출처 법령 목록",
-        "지정 출처 요약 페이지",
-        "지정 출처 원데이터 추출(Vietnam 전체·1990~2024)",
-        "지정 출처 페이지",
-        "현행 PPP법 시행 후 신규"
-      ]
-    },
-    {
-      "key": "period",
-      "labelKo": "기간",
-      "valueCount": 11,
-      "values": [
-        "1994-2000",
-        "1994-2024",
-        "2001-2010",
-        "2010-2020",
-        "2011-2020",
-        "2021-2024",
-        "2022년말",
-        "2026-08-10",
-        "~2023",
-        "~2024",
-        "—"
-      ]
-    },
-    {
-      "key": "year",
-      "labelKo": "연도",
-      "valueCount": 10,
-      "values": [
-        "1994",
-        "2001",
-        "2010",
-        "2011",
-        "2020",
-        "2021",
-        "2022",
-        "2024",
-        "2025",
-        "2026"
+        "entity"
       ]
     }
   ],
   "elementId": "C-012",
-  "entityCount": 0,
+  "entityCount": 120,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 92,
+  "indicatorCount": 103,
   "indicators": [
     {
       "axisGroupKey": "measure-944723321d79|단계",
@@ -329,6 +109,26 @@
         "sourceRow": 72,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-ae200ca9a65d|계약유형",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "계약 유형(BOT/BOO/Concession",
+      "indicatorId": "C-012_contract_type",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ae200ca9a65d",
+        "labelKo": "계약 유형(BOT/BOO/Concession",
+        "unit": "계약유형",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-ae200ca9a65d|계약유형||C-012_contract_type",
+      "sourceCaveat": null,
+      "sourceLabel": "계약 유형(BOT/BOO/Concession",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-afaee2afe91a|계약유형",
@@ -1227,6 +1027,26 @@
       }
     },
     {
+      "axisGroupKey": "measure-1dd64351befb|기관",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "PPP 전담 기관",
+      "indicatorId": "C-012_ppp_agency",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1dd64351befb",
+        "labelKo": "PPP 전담 기관",
+        "unit": "기관",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-1dd64351befb|기관||C-012_ppp_agency",
+      "sourceCaveat": null,
+      "sourceLabel": "PPP 전담 기관",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-fe5c3d2985c7|—",
       "dimensionLabels": {
         "category": "권한기관 정의",
@@ -1323,6 +1143,26 @@
         "sourceRow": 9,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-30aee682e4a1|시행일",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "PPP 법률 유무/명칭 · PPP 법률 유무/명칭 [시행일]",
+      "indicatorId": "C-012_ppp_law_datafiles_chinhphu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-30aee682e4a1",
+        "labelKo": "PPP 법률 유무/명칭",
+        "unit": "시행일",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-30aee682e4a1|시행일||C-012_ppp_law_datafiles_chinhphu",
+      "sourceCaveat": null,
+      "sourceLabel": "PPP 법률 유무/명칭",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-c593e9b1a643|문서번호",
@@ -1451,6 +1291,26 @@
         "sourceRow": 6,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-f2106450bf18|URL",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "PPP 법률 유무/명칭 · PPP 법률 유무/명칭 [URL]",
+      "indicatorId": "C-012_ppp_law_vanban_chinhphu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f2106450bf18",
+        "labelKo": "PPP 법률 유무/명칭",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-f2106450bf18|URL||C-012_ppp_law_vanban_chinhphu",
+      "sourceCaveat": null,
+      "sourceLabel": "PPP 법률 유무/명칭",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-398a6bd9a586|건",
@@ -2093,6 +1953,26 @@
       }
     },
     {
+      "axisGroupKey": "measure-00810e21485d|건",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "PPP 프로젝트 이력(건수) · ppp_project_history_mof",
+      "indicatorId": "C-012_ppp_project_history_mof",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-00810e21485d",
+        "labelKo": "PPP 프로젝트 이력(건수)",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-00810e21485d|건||C-012_ppp_project_history_mof",
+      "sourceCaveat": null,
+      "sourceLabel": "PPP 프로젝트 이력(건수)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-398a6bd9a586|건",
       "dimensionLabels": {
         "category": "참여유형별 건수",
@@ -2331,6 +2211,26 @@
       }
     },
     {
+      "axisGroupKey": "measure-00810e21485d|건",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "PPP 프로젝트 이력(건수) · ppp_project_history_ppi_worldbank",
+      "indicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-00810e21485d",
+        "labelKo": "PPP 프로젝트 이력(건수)",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-00810e21485d|건||C-012_ppp_project_history_ppi_worldbank",
+      "sourceCaveat": null,
+      "sourceLabel": "PPP 프로젝트 이력(건수)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-398a6bd9a586|건",
       "dimensionLabels": {
         "category": "상태별 건수",
@@ -2495,6 +2395,26 @@
         "sourceRow": 60,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-711375e465e9|URL",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "PPP 프로젝트 이력(건수)",
+      "indicatorId": "C-012_ppp_project_history_vanban_chinhphu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-711375e465e9",
+        "labelKo": "PPP 프로젝트 이력(건수)",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-711375e465e9|URL||C-012_ppp_project_history_vanban_chinhphu",
+      "sourceCaveat": null,
+      "sourceLabel": "PPP 프로젝트 이력(건수)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-df3de83c1b9e|건",
@@ -2699,6 +2619,26 @@
       }
     },
     {
+      "axisGroupKey": "measure-b41018923233|방식",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "조달 방식(경쟁입찰/협상/비공개) · 조달 방식(경쟁입찰/협상/비공개) [방식]",
+      "indicatorId": "C-012_procurement_method_datafiles_chinhphu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b41018923233",
+        "labelKo": "조달 방식(경쟁입찰/협상/비공개)",
+        "unit": "방식",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-b41018923233|방식||C-012_procurement_method_datafiles_chinhphu",
+      "sourceCaveat": null,
+      "sourceLabel": "조달 방식(경쟁입찰/협상/비공개)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-6d1466fe7df6|방식",
       "dimensionLabels": {
         "category": "투자자 지명(Chỉ định nhà đầu tư)",
@@ -2761,6 +2701,26 @@
         "sourceRow": 12,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-95b75be551f1|건",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "조달 방식(경쟁입찰/협상/비공개) · 조달 방식(경쟁입찰/협상/비공개) [건]",
+      "indicatorId": "C-012_procurement_method_ppi_worldbank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-95b75be551f1",
+        "labelKo": "조달 방식(경쟁입찰/협상/비공개)",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-95b75be551f1|건||C-012_procurement_method_ppi_worldbank",
+      "sourceCaveat": null,
+      "sourceLabel": "조달 방식(경쟁입찰/협상/비공개)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-6d1466fe7df6|방식",
@@ -3021,14 +2981,12 @@
     {
       "axisGroupKey": "measure-a2c3c0328922|URL",
       "dimensionLabels": {
-        "category": "WB PPP Legal Framework Snapshot",
-        "detail": "Vietnam(2016)",
-        "detail_2": "지정 출처 PDF, 폐지 체계라 미사용"
+        "category": "WB PPP Legal Framework Snapshot – Vietnam(2016)",
+        "detail": "지정 출처 PDF, 폐지 체계라 미사용"
       },
       "dimensions": {
-        "category": "WB PPP Legal Framework Snapshot",
-        "detail": "Vietnam(2016)",
-        "detail_2": "지정 출처 PDF, 폐지 체계라 미사용"
+        "category": "WB PPP Legal Framework Snapshot – Vietnam(2016)",
+        "detail": "지정 출처 PDF, 폐지 체계라 미사용"
       },
       "displayLabel": "원본 링크 (URL) · WB PPP Legal Framework Snapshot – Vietnam(2016) — 지정 출처 PDF, 폐지 체계라 미사용",
       "indicatorId": "C-012_source_link_wb_ppp_legal_framework",
@@ -3039,7 +2997,7 @@
         "unit": "URL",
         "unitFamily": "text"
       },
-      "seriesKey": "measure-a2c3c0328922|URL|category=WB PPP Legal Framework Snapshot|detail=Vietnam(2016)|detail_2=지정 출처 PDF, 폐지 체계라 미사용|C-012_source_link_wb_ppp_legal_framework",
+      "seriesKey": "measure-a2c3c0328922|URL|category=WB PPP Legal Framework Snapshot – Vietnam(2016)|detail=지정 출처 PDF, 폐지 체계라 미사용|C-012_source_link_wb_ppp_legal_framework",
       "sourceCaveat": "[지정 출처 대조] 수집현황 v5.29 지정 DB: WB PPP Resource Center / 지정 URL: https://ppp.worldbank.org/ / 지정 수집방법: 웹 다운로드 → 판정: 사용+보완. 지정 URL(WB PPP Resource Center)에서 베트남 PPP 법제 스냅샷을 확보하여 raw에 보관. 프로젝트 이력은 같은 World Bank의 PPI Database에서 별도 추출(raw CustomQuery.xlsx). PPP법·시행령 본문은 베트남 정부 공보 서명 원문·공식 통합본으로 대조. ‖ Decree 15/2015·30/2015, 舊공공투자법(2014)·舊공공조달법(2013) 체계 기준 — 현행 Law 64/2020으로 전면 대체. raw 보관용",
       "sourceLabel": "원본 링크 (URL) · WB PPP Legal Framework Snapshot – Vietnam(2016) — 지정 출처 PDF, 폐지 체계라 미사용",
       "sourceLabelEn": "Source Link Wb Ppp Legal Framework",
@@ -3251,6 +3209,46 @@
         "sourceRow": 28,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-ac679f966ff9|여부",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "VfM 평가 의무 여부 · vfm_requirement_datafiles_chinhphu",
+      "indicatorId": "C-012_vfm_requirement_datafiles_chinhphu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ac679f966ff9",
+        "labelKo": "VfM 평가 의무 여부",
+        "unit": "여부",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-ac679f966ff9|여부||C-012_vfm_requirement_datafiles_chinhphu",
+      "sourceCaveat": null,
+      "sourceLabel": "VfM 평가 의무 여부",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-ac679f966ff9|여부",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "VfM 평가 의무 여부 · vfm_requirement_vanban_chinhphu",
+      "indicatorId": "C-012_vfm_requirement_vanban_chinhphu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ac679f966ff9",
+        "labelKo": "VfM 평가 의무 여부",
+        "unit": "여부",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-ac679f966ff9|여부||C-012_vfm_requirement_vanban_chinhphu",
+      "sourceCaveat": null,
+      "sourceLabel": "VfM 평가 의무 여부",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     }
   ],
   "measures": [
@@ -3258,7 +3256,7 @@
       "indicatorCount": 1,
       "key": "measure-c593e9b1a643",
       "labelKo": "PPP 법률 유무",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "문서번호",
       "unitFamily": "text"
     },
@@ -3266,7 +3264,7 @@
       "indicatorCount": 1,
       "key": "measure-71dc95da5feb",
       "labelKo": "PPP 법률 유무",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "법률",
       "unitFamily": "text"
     },
@@ -3274,7 +3272,7 @@
       "indicatorCount": 1,
       "key": "measure-ac16d11015f0",
       "labelKo": "PPP 법률 유무",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "시행령번호",
       "unitFamily": "text"
     },
@@ -3282,23 +3280,39 @@
       "indicatorCount": 1,
       "key": "measure-0085707b91a8",
       "labelKo": "PPP 법률 유무",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "일자",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-f2106450bf18",
+      "labelKo": "PPP 법률 유무/명칭",
+      "recordCount": 0,
+      "unit": "URL",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-30aee682e4a1",
+      "labelKo": "PPP 법률 유무/명칭",
+      "recordCount": 0,
+      "unit": "시행일",
       "unitFamily": "text"
     },
     {
       "indicatorCount": 1,
       "key": "measure-fe5c3d2985c7",
       "labelKo": "PPP 전담 기관",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
     {
-      "indicatorCount": 2,
+      "indicatorCount": 3,
       "key": "measure-1dd64351befb",
       "labelKo": "PPP 전담 기관",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "기관",
       "unitFamily": "text"
     },
@@ -3306,7 +3320,7 @@
       "indicatorCount": 1,
       "key": "measure-502f65437241",
       "labelKo": "PPP 프로젝트 이력 (건수)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -3314,7 +3328,7 @@
       "indicatorCount": 27,
       "key": "measure-398a6bd9a586",
       "labelKo": "PPP 프로젝트 이력 (건수)",
-      "recordCount": 27,
+      "recordCount": 0,
       "unit": "건",
       "unitFamily": "count"
     },
@@ -3322,7 +3336,7 @@
       "indicatorCount": 2,
       "key": "measure-b8309177c644",
       "labelKo": "PPP 프로젝트 이력 (건수)",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "백만 USD",
       "unitFamily": "currency"
     },
@@ -3330,15 +3344,39 @@
       "indicatorCount": 1,
       "key": "measure-e63282567e79",
       "labelKo": "PPP 프로젝트 이력 (건수)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "행",
       "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-711375e465e9",
+      "labelKo": "PPP 프로젝트 이력(건수)",
+      "recordCount": 0,
+      "unit": "URL",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-00810e21485d",
+      "labelKo": "PPP 프로젝트 이력(건수)",
+      "recordCount": 0,
+      "unit": "건",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-ac679f966ff9",
+      "labelKo": "VfM 평가 의무 여부",
+      "recordCount": 0,
+      "unit": "여부",
+      "unitFamily": "text"
     },
     {
       "indicatorCount": 2,
       "key": "measure-f34970bf649a",
       "labelKo": "VfM(Value for Money) 평가 의무 여부",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -3346,7 +3384,7 @@
       "indicatorCount": 6,
       "key": "measure-afaee2afe91a",
       "labelKo": "계약 유형 (BOT / BOO / Concession 등)",
-      "recordCount": 6,
+      "recordCount": 0,
       "unit": "계약유형",
       "unitFamily": "text"
     },
@@ -3354,15 +3392,23 @@
       "indicatorCount": 1,
       "key": "measure-7cbf79ea9ca9",
       "labelKo": "계약 유형 (BOT / BOO / Concession 등)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "종",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-ae200ca9a65d",
+      "labelKo": "계약 유형(BOT/BOO/Concession",
+      "recordCount": 0,
+      "unit": "계약유형",
       "unitFamily": "text"
     },
     {
       "indicatorCount": 5,
       "key": "measure-e3e0ed6bca60",
       "labelKo": "법령 제",
-      "recordCount": 5,
+      "recordCount": 0,
       "unit": "시행일",
       "unitFamily": "text"
     },
@@ -3370,7 +3416,7 @@
       "indicatorCount": 5,
       "key": "measure-956dec15150b",
       "labelKo": "법령 제",
-      "recordCount": 5,
+      "recordCount": 0,
       "unit": "일자",
       "unitFamily": "text"
     },
@@ -3378,7 +3424,7 @@
       "indicatorCount": 3,
       "key": "measure-5ac64128e77c",
       "labelKo": "분쟁해결",
-      "recordCount": 3,
+      "recordCount": 0,
       "unit": "관할",
       "unitFamily": "text"
     },
@@ -3386,7 +3432,7 @@
       "indicatorCount": 12,
       "key": "measure-a2c3c0328922",
       "labelKo": "원본 링크 (URL)",
-      "recordCount": 12,
+      "recordCount": 0,
       "unit": "URL",
       "unitFamily": "text"
     },
@@ -3394,7 +3440,7 @@
       "indicatorCount": 4,
       "key": "measure-4c42670cb7ac",
       "labelKo": "재무 요건 (자기자본",
-      "recordCount": 4,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "text"
     },
@@ -3402,7 +3448,7 @@
       "indicatorCount": 2,
       "key": "measure-9c07cd725d77",
       "labelKo": "재무 요건 (자기자본",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "비율",
       "unitFamily": "text"
     },
@@ -3410,7 +3456,7 @@
       "indicatorCount": 2,
       "key": "measure-59eea0e12d05",
       "labelKo": "적용대상 분야 및 프로젝트 분류",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     },
@@ -3418,7 +3464,7 @@
       "indicatorCount": 1,
       "key": "measure-944723321d79",
       "labelKo": "적용대상 분야 및 프로젝트 분류",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "단계",
       "unitFamily": "other"
     },
@@ -3426,7 +3472,7 @@
       "indicatorCount": 5,
       "key": "measure-df3de83c1b9e",
       "labelKo": "조달 방식 (경쟁입찰 / 협상 / 지명)",
-      "recordCount": 5,
+      "recordCount": 0,
       "unit": "건",
       "unitFamily": "count"
     },
@@ -3434,7 +3480,23 @@
       "indicatorCount": 4,
       "key": "measure-6d1466fe7df6",
       "labelKo": "조달 방식 (경쟁입찰 / 협상 / 지명)",
-      "recordCount": 4,
+      "recordCount": 0,
+      "unit": "방식",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-95b75be551f1",
+      "labelKo": "조달 방식(경쟁입찰/협상/비공개)",
+      "recordCount": 0,
+      "unit": "건",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-b41018923233",
+      "labelKo": "조달 방식(경쟁입찰/협상/비공개)",
+      "recordCount": 0,
       "unit": "방식",
       "unitFamily": "text"
     },
@@ -3442,12 +3504,12 @@
       "indicatorCount": 2,
       "key": "measure-b3228b4d0123",
       "labelKo": "투자자 인센티브",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     }
   ],
-  "observationCount": 92,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

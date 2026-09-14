@@ -193,7 +193,10 @@ function EmissionsCompositionBarV132({
                 data-pattern={PATTERNS_V132[item.colorIndex % PATTERNS_V132.length]}
                 style={{ backgroundColor: EMISSION_COLORS_V132[item.colorIndex % EMISSION_COLORS_V132.length] }}
               />
-              <span>{item.label}</span>
+              {/* The component names carry the gas and sector acronyms the
+                  delivery prints - CH₄, N₂O, IPPU - so the legend is where a
+                  reader meets them and has to be able to ask what they are. */}
+              <span><PublicTermTextV134 text={item.label} /></span>
               <strong>{formatPublicNumberV126(item.value, unit)} {unit}</strong>
               <small>{formatPublicNumberV126((item.value / total) * 100, "%")}%</small>
             </li>

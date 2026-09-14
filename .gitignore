@@ -22,3 +22,28 @@ reports/v128/deployment-audit-v128.json
 reports/v128/security-audit-v128.json
 reports/v128/production-performance-v128.json
 reports/v128/production-smoke-v128.json
+
+# Final Vietnam source archive (read-only input, never published or tracked).
+/베트남데이터/
+
+
+# Data-integration staging tree: a full mirror of public/, never shipped.
+/.staging/
+
+# Isolated verification worktree for candidate data builds.
+/.verify/
+
+# Playwright keeps traces, videos and screenshots only for failures; they are
+# evidence for the run that produced them, not something to carry in the repo.
+/reports/final-data-integration/playwright-artifacts/
+/reports/final-data-integration/playwright-report/
+/test-results/
+
+# Stage 4 task prompts and the QA harness patch they arrived in. The harness
+# scripts themselves live under scripts/; this is the delivery envelope and the
+# notes beside it, which describe the work rather than being part of it.
+/NIGT_*.txt
+/NIGT_QA_HARNESS_PATCH_STAGE4/
+/NIGT_QA_HARNESS_PATCH_STAGE4.zip
+/pilot-out.txt
+/pilot2.txt

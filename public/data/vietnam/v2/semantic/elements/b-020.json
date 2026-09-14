@@ -3,10 +3,9 @@
     {
       "key": "detail",
       "labelKo": "세부 분류",
-      "valueCount": 258,
+      "valueCount": 261,
       "values": [
         "5세 미만 아동",
-        "2026)",
         "Access to electricity",
         "Access to Health Care",
         "Access to improved sanitation facilities",
@@ -77,6 +76,7 @@
         "Inequality",
         "INFORM RISK",
         "INFORM Risk Index",
+        "INFORM 종합",
         "Infrastructure",
         "Institutional",
         "Internet users",
@@ -253,6 +253,7 @@
         "개발·결핍",
         "경제적 의존도",
         "기타 취약계층",
+        "대응역량 부족(CC)",
         "물리적 인프라",
         "보건 여건",
         "보건의료 접근성",
@@ -260,7 +261,9 @@
         "식량 안보",
         "실향민",
         "예상 분쟁 발생확률",
+        "위험·노출(HA)",
         "최근 충격",
+        "취약성(VU)",
         "통신 접근성",
         "현재 분쟁 강도"
       ]
@@ -268,11 +271,8 @@
     {
       "key": "detail_2",
       "labelKo": "detail_2",
-      "valueCount": 14,
+      "valueCount": 10,
       "values": [
-        "INFORM 종합",
-        "대응역량 부족(CC)",
-        "위험·노출(HA)",
         "자료 기준연도 2016",
         "자료 기준연도 2017",
         "자료 기준연도 2018",
@@ -282,8 +282,7 @@
         "자료 기준연도 2022",
         "자료 기준연도 2023",
         "자료 기준연도 2024",
-        "자료 기준연도 2025",
-        "취약성(VU)"
+        "자료 기준연도 2025"
       ]
     },
     {
@@ -1246,25 +1245,23 @@
       }
     },
     {
-      "axisGroupKey": "measure-c6e9d63bdd56|지수",
+      "axisGroupKey": "measure-f22e839fa61b|지수",
       "dimensionLabels": {
-        "detail": "2026)",
-        "detail_2": "대응역량 부족(CC)"
+        "detail": "대응역량 부족(CC)"
       },
       "dimensions": {
-        "detail": "2026)",
-        "detail_2": "대응역량 부족(CC)"
+        "detail": "대응역량 부족(CC)"
       },
       "displayLabel": "INFORM Risk 시계열(2017–2026) — 대응역량 부족(CC)",
       "indicatorId": "B-020_risk_trend_cc",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-c6e9d63bdd56",
-        "labelKo": "INFORM Risk 시계열(2017",
+        "key": "measure-f22e839fa61b",
+        "labelKo": "INFORM Risk 시계열(2017–2026)",
         "unit": "지수",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-c6e9d63bdd56|지수|detail=2026)|detail_2=대응역량 부족(CC)|B-020_risk_trend_cc",
+      "seriesKey": "measure-f22e839fa61b|지수|detail=대응역량 부족(CC)|B-020_risk_trend_cc",
       "sourceCaveat": "[시계열 확보] 검토의견대로 INFORM은 매년 판본이 발간되며, JRC가 동일 방법론을 소급 적용한 TREND 파일(2017–2026, 10개년)을 별도 제공함. 해당 파일을 확보했으며 연도별 값을 추출하여 시계열로 회신 예정. 현재 수록된 2026 값은 2026판 기준 단일 연도이며 소급 적용값이 아님. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] INFORM Risk 2026 v0.7.2 판",
       "sourceLabel": "INFORM Risk 시계열(2017–2026) — 대응역량 부족(CC)",
       "sourceLabelEn": "INFORM Risk trend 2017-2026",
@@ -1278,25 +1275,23 @@
       }
     },
     {
-      "axisGroupKey": "measure-c6e9d63bdd56|지수",
+      "axisGroupKey": "measure-f22e839fa61b|지수",
       "dimensionLabels": {
-        "detail": "2026)",
-        "detail_2": "위험·노출(HA)"
+        "detail": "위험·노출(HA)"
       },
       "dimensions": {
-        "detail": "2026)",
-        "detail_2": "위험·노출(HA)"
+        "detail": "위험·노출(HA)"
       },
       "displayLabel": "INFORM Risk 시계열(2017–2026) — 위험·노출(HA)",
       "indicatorId": "B-020_risk_trend_ha",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-c6e9d63bdd56",
-        "labelKo": "INFORM Risk 시계열(2017",
+        "key": "measure-f22e839fa61b",
+        "labelKo": "INFORM Risk 시계열(2017–2026)",
         "unit": "지수",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-c6e9d63bdd56|지수|detail=2026)|detail_2=위험·노출(HA)|B-020_risk_trend_ha",
+      "seriesKey": "measure-f22e839fa61b|지수|detail=위험·노출(HA)|B-020_risk_trend_ha",
       "sourceCaveat": "[시계열 확보] 검토의견대로 INFORM은 매년 판본이 발간되며, JRC가 동일 방법론을 소급 적용한 TREND 파일(2017–2026, 10개년)을 별도 제공함. 해당 파일을 확보했으며 연도별 값을 추출하여 시계열로 회신 예정. 현재 수록된 2026 값은 2026판 기준 단일 연도이며 소급 적용값이 아님. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] INFORM Risk 2026 v0.7.2 판",
       "sourceLabel": "INFORM Risk 시계열(2017–2026) — 위험·노출(HA)",
       "sourceLabelEn": "INFORM Risk trend 2017-2026",
@@ -1310,25 +1305,23 @@
       }
     },
     {
-      "axisGroupKey": "measure-c6e9d63bdd56|지수",
+      "axisGroupKey": "measure-f22e839fa61b|지수",
       "dimensionLabels": {
-        "detail": "2026)",
-        "detail_2": "INFORM 종합"
+        "detail": "INFORM 종합"
       },
       "dimensions": {
-        "detail": "2026)",
-        "detail_2": "INFORM 종합"
+        "detail": "INFORM 종합"
       },
       "displayLabel": "INFORM Risk 시계열(2017–2026) — INFORM 종합",
       "indicatorId": "B-020_risk_trend_inform",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-c6e9d63bdd56",
-        "labelKo": "INFORM Risk 시계열(2017",
+        "key": "measure-f22e839fa61b",
+        "labelKo": "INFORM Risk 시계열(2017–2026)",
         "unit": "지수",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-c6e9d63bdd56|지수|detail=2026)|detail_2=INFORM 종합|B-020_risk_trend_inform",
+      "seriesKey": "measure-f22e839fa61b|지수|detail=INFORM 종합|B-020_risk_trend_inform",
       "sourceCaveat": "[시계열 확보] 검토의견대로 INFORM은 매년 판본이 발간되며, JRC가 동일 방법론을 소급 적용한 TREND 파일(2017–2026, 10개년)을 별도 제공함. 해당 파일을 확보했으며 연도별 값을 추출하여 시계열로 회신 예정. 현재 수록된 2026 값은 2026판 기준 단일 연도이며 소급 적용값이 아님. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] INFORM Risk 2026 v0.7.2 판",
       "sourceLabel": "INFORM Risk 시계열(2017–2026) — INFORM 종합",
       "sourceLabelEn": "INFORM Risk trend 2017-2026",
@@ -1342,25 +1335,23 @@
       }
     },
     {
-      "axisGroupKey": "measure-c6e9d63bdd56|지수",
+      "axisGroupKey": "measure-f22e839fa61b|지수",
       "dimensionLabels": {
-        "detail": "2026)",
-        "detail_2": "취약성(VU)"
+        "detail": "취약성(VU)"
       },
       "dimensions": {
-        "detail": "2026)",
-        "detail_2": "취약성(VU)"
+        "detail": "취약성(VU)"
       },
       "displayLabel": "INFORM Risk 시계열(2017–2026) — 취약성(VU)",
       "indicatorId": "B-020_risk_trend_vu",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-c6e9d63bdd56",
-        "labelKo": "INFORM Risk 시계열(2017",
+        "key": "measure-f22e839fa61b",
+        "labelKo": "INFORM Risk 시계열(2017–2026)",
         "unit": "지수",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-c6e9d63bdd56|지수|detail=2026)|detail_2=취약성(VU)|B-020_risk_trend_vu",
+      "seriesKey": "measure-f22e839fa61b|지수|detail=취약성(VU)|B-020_risk_trend_vu",
       "sourceCaveat": "[시계열 확보] 검토의견대로 INFORM은 매년 판본이 발간되며, JRC가 동일 방법론을 소급 적용한 TREND 파일(2017–2026, 10개년)을 별도 제공함. 해당 파일을 확보했으며 연도별 값을 추출하여 시계열로 회신 예정. 현재 수록된 2026 값은 2026판 기준 단일 연도이며 소급 적용값이 아님. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] INFORM Risk 2026 v0.7.2 판",
       "sourceLabel": "INFORM Risk 시계열(2017–2026) — 취약성(VU)",
       "sourceLabelEn": "INFORM Risk trend 2017-2026",
@@ -10073,8 +10064,8 @@
     },
     {
       "indicatorCount": 4,
-      "key": "measure-c6e9d63bdd56",
-      "labelKo": "INFORM Risk 시계열(2017",
+      "key": "measure-f22e839fa61b",
+      "labelKo": "INFORM Risk 시계열(2017–2026)",
       "recordCount": 40,
       "unit": "지수",
       "unitFamily": "other"

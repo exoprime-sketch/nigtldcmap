@@ -39,17 +39,42 @@ export default function PublicSourcePanelV126({
       ...entities.map((item) => item.provenance.sourceOrg),
     ].map((value) => publicSourceOrganizationV136_1(value))
   );
-  const urls = Array.from(
-    new Set(
-      [
-        ...indicators.map((item) => item.sourceUrl),
-        ...observations.map((item) => item.provenance.sourceUrl),
-        ...entities.map((item) => item.provenance.sourceUrl),
-      ]
-        .map((value) => publicSourceUrlV126(value))
-        .filter((value): value is string => Boolean(value))
-    )
+  // One organisation publishing four pages produced four links all reading
+  // "World Bank 확인", with nothing to say which page each one opened. Each link
+  // keeps the indicator it was cited for, and names it when the organisation
+  // alone does not tell the two apart.
+  const seenUrlsV137 = new Set<string>();
+  const sourceLinks: Array<{ url: string; organization: string; title: string }> = [];
+  const addSourceLinkV137 = (
+    rawUrl: unknown,
+    rawOrganization: unknown,
+    rawTitle: unknown
+  ) => {
+    const url = publicSourceUrlV126(rawUrl);
+    if (!url || seenUrlsV137.has(url)) return;
+    seenUrlsV137.add(url);
+    sourceLinks.push({
+      url,
+      organization: publicSourceOrganizationV136_1(rawOrganization) || "",
+      title: publicTextV126(String(rawTitle ?? "")) || "",
+    });
+  };
+  indicators.forEach((item) =>
+    addSourceLinkV137(item.sourceUrl, item.sourceOrg, item.labelKo)
   );
+  observations.forEach((item) =>
+    addSourceLinkV137(item.provenance.sourceUrl, item.provenance.sourceOrg, "")
+  );
+  entities.forEach((item) =>
+    addSourceLinkV137(item.provenance.sourceUrl, item.provenance.sourceOrg, "")
+  );
+  const organizationLinkCounts = new Map<string, number>();
+  sourceLinks.forEach((link) => {
+    organizationLinkCounts.set(
+      link.organization,
+      (organizationLinkCounts.get(link.organization) || 0) + 1
+    );
+  });
   const populatedYears = uniquePublicValuesV126(
     observations
       .filter(
@@ -129,20 +154,40 @@ export default function PublicSourcePanelV126({
           </div>
         )}
         </dl>
-        {urls.length > 0 && (
+        {sourceLinks.length > 0 && (
           <div className="pav126-source__links">
-          {urls.slice(0, 4).map((url, index) => (
-            <a key={url} href={url} target="_blank" rel="noreferrer">
+          {sourceLinks.slice(0, 4).map((link) => (
+            <a key={link.url} href={link.url} target="_blank" rel="noreferrer">
               <PublicTermExpandedTextV134
-                text={`${organizations[index] || organizations[0] || "공식 원문"} 확인`}
+                text={publicSourceLinkLabelV137(
+                  link,
+                  organizationLinkCounts.get(link.organization) || 1
+                )}
               />
             </a>
           ))}
+          {sourceLinks.length > 4 && (
+            <span className="pav126-source__links-more">
+              공식 원문 {sourceLinks.length.toLocaleString("ko-KR")}건 중 4건을
+              표시합니다
+            </span>
+          )}
           </div>
         )}
       </section>
     </details>
   );
+}
+
+/** "World Bank 확인", or "World Bank · 도시화율 확인" when one body has several. */
+function publicSourceLinkLabelV137(
+  link: { organization: string; title: string },
+  linksForOrganization: number
+): string {
+  const organization = link.organization || "공식 원문";
+  if (linksForOrganization < 2 || !link.title) return `${organization} 확인`;
+  const measure = link.title.split(/\s+[—·]\s+/u)[0].trim();
+  return `${organization} · ${measure || link.title} 확인`;
 }
 
 function publicSpatialUnitLabelV135(value: string): string {

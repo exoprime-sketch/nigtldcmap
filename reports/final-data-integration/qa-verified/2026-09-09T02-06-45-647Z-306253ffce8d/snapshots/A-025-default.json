@@ -1,0 +1,103 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:57699/?view=data&element=ccs-siseol&country=VNM&from=explorer&measure=measure-06d3a0fc6345&year=2026#element-detail",
+  "title": "탄소포집·저장 시설",
+  "body": "검색 결과로 돌아가기 국가 기본 정보 › 인프라 GIS 공간정보 데이터 제공 다운로드 가능 탄소포집·저장 시설 베트남 · 탄소포집·저장 시설의 최근 수준과 항목별 차이를 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 1종 · 관측기간 2026년 이 데이터로 확인할 수 있는 내용 탄소포집·저장 시설의 지역별 차이와 범위 탄소포집·저장 시설의 지역 차이와 공개된 공간 범위를 확인할 수 있습니다. 유형 전체 CO2 주입(EOR) 고농도 CO2 가스전(CO2 분리·재주입 잠재) 연구 연구/타당성 지중 저장 후보(Storage) 연도 2026 용어 도움말 ? CCS 설명 CCS 시설 수 5 건 · 2026 · 수록 CCS 시설·프로젝트 총 건수 주 분석 탄소포집·저장 시설 지역별 현황 항목 항목별 값 단위: 건 수록 CCS 시설·프로젝트 총 건수 5 건 목록 상세 데이터 CO2 주입(EOR) 공식 원문 고농도 CO2 가스전(CO2 분리·재주입 잠재) 공식 원문 연구 공식 원문 연구/타당성 공식 원문 지중 저장 후보(Storage) 공식 원문 자료정보 상세 데이터 · 전체 6행 · 값 있음 1행 · 결측 0행 · 목록 5건 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 604,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "A-025",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "탄소포집·저장 시설의 지역별 차이와 범위",
+    "탄소포집·저장 시설 지역별 현황",
+    "항목별 값",
+    "단위: 건",
+    "상세 데이터",
+    "CO2 주입(EOR)",
+    "고농도 CO2 가스전(CO2 분리·재주입 잠재)",
+    "연구",
+    "연구/타당성",
+    "지중 저장 후보(Storage)",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "유형 선택",
+      "dimensionKey": "type",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "CO2 주입(EOR)",
+          "label": "CO2 주입(EOR)",
+          "disabled": false
+        },
+        {
+          "value": "고농도 CO2 가스전(CO2 분리·재주입 잠재)",
+          "label": "고농도 CO2 가스전(CO2 분리·재주입 잠재)",
+          "disabled": false
+        },
+        {
+          "value": "연구",
+          "label": "연구",
+          "disabled": false
+        },
+        {
+          "value": "연구/타당성",
+          "label": "연구/타당성",
+          "disabled": false
+        },
+        {
+          "value": "지중 저장 후보(Storage)",
+          "label": "지중 저장 후보(Storage)",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "연도 선택",
+      "dimensionKey": null,
+      "testId": "v125-year-select",
+      "value": "2026",
+      "shown": "2026",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "2026",
+          "label": "2026",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [
+    "CCS 시설 수 5 건 · 2026 · 수록 CCS 시설·프로젝트 총 건수"
+  ],
+  "chartTexts": [
+    "수록 CCS 시설·프로젝트 총 건수 5 건"
+  ],
+  "tableRows": [],
+  "emptyNotices": [],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

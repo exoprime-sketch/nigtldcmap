@@ -1,64 +1,11 @@
 {
   "dimensions": [
     {
-      "key": "category",
-      "labelKo": "분류",
-      "valueCount": 7,
-      "values": [
-        "MDB 프로젝트 · DAC 5자리 섹터코드 보유 활동 건수",
-        "MDB 프로젝트 · IATI 상세정보 확보 활동 건수",
-        "MDB 프로젝트 · 기관유형별 약정액 합계",
-        "MDB 프로젝트 · 기후 정책마커(Rio Marker) 부여 활동 건수",
-        "MDB 프로젝트 · 약정액 합계",
-        "MDB 프로젝트 · 집행액 합계",
-        "MDB 프로젝트 · 활동 건수"
-      ]
-    },
-    {
-      "key": "detail",
-      "labelKo": "세부 분류",
-      "valueCount": 5,
-      "values": [
-        "MDB(World Bank·ADB·IFC)",
-        "UN 계열 기구",
-        "수록 기준 충족 활동 총 건수",
-        "수록 활동 약정액 단순합",
-        "수록 활동 집행액 단순합"
-      ]
-    },
-    {
       "key": "entityType",
       "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
-        "국제기구·MDB 사업"
-      ]
-    },
-    {
-      "key": "status",
-      "labelKo": "status",
-      "valueCount": 4,
-      "values": [
-        "Closed",
-        "Finalisation",
-        "Implementation",
-        "Pipeline/Identification"
-      ]
-    },
-    {
-      "key": "technology",
-      "labelKo": "기술",
-      "valueCount": 1,
-      "values": [
-        "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
-      ]
-    },
-    {
-      "key": "year",
-      "labelKo": "연도",
-      "valueCount": 1,
-      "values": [
-        "2026"
+        "entity"
       ]
     }
   ],
@@ -373,7 +320,7 @@
       "indicatorCount": 4,
       "key": "measure-877800bb9c2d",
       "labelKo": "주요 국제기구",
-      "recordCount": 4,
+      "recordCount": 0,
       "unit": "USD",
       "unitFamily": "currency"
     },
@@ -381,12 +328,12 @@
       "indicatorCount": 5,
       "key": "measure-6567f7354984",
       "labelKo": "주요 국제기구",
-      "recordCount": 4,
+      "recordCount": 0,
       "unit": "건",
       "unitFamily": "count"
     }
   ],
-  "observationCount": 8,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

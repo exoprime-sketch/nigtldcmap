@@ -1,0 +1,150 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:57699/?view=data&element=ccdr-gihu-pihae-gyeongjejeog-biyong&country=VNM&from=explorer&measure=measure-d3df35520c94&year=2050#element-detail",
+  "title": "기후피해의 경제적 비용",
+  "body": "검색 결과로 돌아가기 기후 환경 › 기타 관련 지표 데이터 제공 다운로드 가능 기후피해의 경제적 비용 베트남 · 기후피해의 경제적 비용의 최근 수준과 항목별 차이를 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 11종 · 관측기간 2030~2050년 이 데이터로 확인할 수 있는 내용 기후피해의 경제적 비용의 항목별 공개 현황 기후피해의 경제적 비용의 공개 값과 항목별 차이를 확인할 수 있습니다. 항목 기후 투자 재원 구성 · 십억 US$ 기후 피해 경제손실(적응 부재 시) (범위 상한) · % of GDP/yr 기후 피해 경제손실(적응 부재 시) (범위 하한) · % of GDP/yr 적응 투자 필요액 · 십억 USD 총 투자 필요액(적응+탈탄소) · 십억 USD 추가 극빈곤 인구 · 명 탈탄소 경로 투자 구성 · 십억 US$ 세부 분류 전체 공공 민간 사회 지원 프로그램 산업·수송·농업 에너지 전환 외부(대외) 지원 연도 2050 용어 도움말 ? GDP 설명 기후 피해 경제손실(적응 부재 시) (범위 상한) 14.5 % of GDP/yr · 2050 주 분석 기후피해의 경제적 비용 항목별 현황 항목 항목별 값 단위: % of GDP/yr 기후 피해 경제손실(적응 부재 시) (범위 상한) 14.5 % of GDP/yr 자료정보 상세 데이터 · 전체 11행 · 값 있음 11행 · 결측 0행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 704,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "B-022",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "기후피해의 경제적 비용의 항목별 공개 현황",
+    "기후피해의 경제적 비용 항목별 현황",
+    "항목별 값",
+    "단위: % of GDP/yr",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목 선택",
+      "dimensionKey": null,
+      "testId": "v125-measure-select",
+      "value": "measure-d3df35520c94",
+      "shown": "기후 피해 경제손실(적응 부재 시) (범위 상한) · % of GDP/yr",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-165518c98ba5",
+          "label": "기후 투자 재원 구성 · 십억 US$",
+          "disabled": false
+        },
+        {
+          "value": "measure-d3df35520c94",
+          "label": "기후 피해 경제손실(적응 부재 시) (범위 상한) · % of GDP/yr",
+          "disabled": false
+        },
+        {
+          "value": "measure-bb28582e989e",
+          "label": "기후 피해 경제손실(적응 부재 시) (범위 하한) · % of GDP/yr",
+          "disabled": false
+        },
+        {
+          "value": "measure-82708b28b15c",
+          "label": "적응 투자 필요액 · 십억 USD",
+          "disabled": false
+        },
+        {
+          "value": "measure-23352841c3ec",
+          "label": "총 투자 필요액(적응+탈탄소) · 십억 USD",
+          "disabled": false
+        },
+        {
+          "value": "measure-5a69d68b924a",
+          "label": "추가 극빈곤 인구 · 명",
+          "disabled": false
+        },
+        {
+          "value": "measure-ec462d18fe1e",
+          "label": "탈탄소 경로 투자 구성 · 십억 US$",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "세부 분류 선택",
+      "dimensionKey": "detail",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "공공",
+          "label": "공공",
+          "disabled": false
+        },
+        {
+          "value": "민간",
+          "label": "민간",
+          "disabled": false
+        },
+        {
+          "value": "사회 지원 프로그램",
+          "label": "사회 지원 프로그램",
+          "disabled": false
+        },
+        {
+          "value": "산업·수송·농업",
+          "label": "산업·수송·농업",
+          "disabled": false
+        },
+        {
+          "value": "에너지 전환",
+          "label": "에너지 전환",
+          "disabled": false
+        },
+        {
+          "value": "외부(대외) 지원",
+          "label": "외부(대외) 지원",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "연도 선택",
+      "dimensionKey": null,
+      "testId": "v125-year-select",
+      "value": "2050",
+      "shown": "2050",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "2050",
+          "label": "2050",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [
+    "기후 피해 경제손실(적응 부재 시) (범위 상한) 14.5 % of GDP/yr · 2050"
+  ],
+  "chartTexts": [
+    "기후 피해 경제손실(적응 부재 시) (범위 상한) 14.5 % of GDP/yr"
+  ],
+  "tableRows": [],
+  "emptyNotices": [],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

@@ -12,56 +12,30 @@
       ]
     },
     {
-      "key": "commissioningYear",
-      "labelKo": "commissioningYear",
-      "valueCount": 27,
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 1,
       "values": [
-        "1945.0",
-        "1964.0",
-        "1971.0",
-        "1973.0",
-        "1984.0",
-        "1988.0",
-        "1990.0",
-        "1991.0",
-        "1995.0",
-        "2001.0",
-        "2002.0",
-        "2003.0",
-        "2004.0",
-        "2005.0",
-        "2006.0",
-        "2007.0",
-        "2008.0",
-        "2009.0",
-        "2010.0",
-        "2011.0",
-        "2012.0",
-        "2013.0",
-        "2014.0",
-        "2015.0",
-        "2016.0",
-        "2017.0",
-        "미기재"
+        "GPPD 수록 발전소 총 기수"
       ]
     },
     {
       "key": "entityType",
       "labelKo": "레코드 유형",
-      "valueCount": 1,
+      "valueCount": 2,
       "values": [
+        "entity",
         "발전소"
       ]
     },
     {
       "key": "fuelType",
       "labelKo": "fuelType",
-      "valueCount": 10,
+      "valueCount": 9,
       "values": [
         "(미표기)",
         "가스",
         "가스·석유",
-        "바이오매스",
         "석유",
         "석탄",
         "수력",
@@ -73,32 +47,57 @@
     {
       "key": "fuelTypeRaw",
       "labelKo": "fuelTypeRaw",
-      "valueCount": 16,
+      "valueCount": 9,
       "values": [
         "(미표기)",
-        "Biomass",
-        "Coal",
         "coal",
-        "Gas",
         "gas",
         "gas;oil",
-        "Hydro",
         "hydro",
-        "Oil",
         "oil",
-        "Solar",
         "solar",
         "waste",
-        "Wind",
         "wind"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2021"
       ]
     }
   ],
   "elementId": "A-023",
   "entityCount": 1963,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 2,
+  "indicatorCount": 3,
   "indicators": [
+    {
+      "axisGroupKey": "measure-abbef01dfb86|건",
+      "dimensionLabels": {
+        "detail": "GPPD 수록 발전소 총 기수"
+      },
+      "dimensions": {
+        "detail": "GPPD 수록 발전소 총 기수"
+      },
+      "displayLabel": "발전소 개체 수 — GPPD 수록 발전소 총 기수",
+      "indicatorId": "A-023_power_plant_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-abbef01dfb86",
+        "labelKo": "발전소 개체 수",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-abbef01dfb86|건|detail=GPPD 수록 발전소 총 기수|A-023_power_plant_count",
+      "sourceCaveat": null,
+      "sourceLabel": "발전소 개체 수 — GPPD 수록 발전소 총 기수",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
     {
       "axisGroupKey": "measure-e5647010075d|MW",
       "dimensionLabels": {
@@ -170,6 +169,14 @@
   ],
   "measures": [
     {
+      "indicatorCount": 1,
+      "key": "measure-abbef01dfb86",
+      "labelKo": "발전소 개체 수",
+      "recordCount": 1,
+      "unit": "건",
+      "unitFamily": "count"
+    },
+    {
       "indicatorCount": 2,
       "key": "measure-e5647010075d",
       "labelKo": "발전소 목록",
@@ -178,7 +185,7 @@
       "unitFamily": "capacity"
     }
   ],
-  "observationCount": 0,
+  "observationCount": 1,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

@@ -10,26 +10,30 @@
     }
   ],
   "elementId": "E-018",
-  "entityCount": 21,
+  "entityCount": 24,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 1,
+  "indicatorCount": 3,
   "indicators": [
     {
       "axisGroupKey": "measure-9c0ba3e8a503|개사(기업)",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "국내 기업 개도국 진출 현황",
+      "dimensionLabels": {
+        "detail": "기업 공식 웹사이트"
+      },
+      "dimensions": {
+        "detail": "기업 공식 웹사이트"
+      },
+      "displayLabel": "국내 기업 개도국 진출 현황 — 기업 공식 웹사이트",
       "indicatorId": "E-018_kr_company_entry",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
         "key": "measure-9c0ba3e8a503",
         "labelKo": "국내 기업 개도국 진출 현황",
         "unit": "개사(기업)",
-        "unitFamily": "text"
+        "unitFamily": "count"
       },
-      "seriesKey": "measure-9c0ba3e8a503|개사(기업)||E-018_kr_company_entry",
+      "seriesKey": "measure-9c0ba3e8a503|개사(기업)|detail=기업 공식 웹사이트|E-018_kr_company_entry",
       "sourceCaveat": null,
-      "sourceLabel": "국내 기업 개도국 진출 현황",
+      "sourceLabel": "국내 기업 개도국 진출 현황 — 기업 공식 웹사이트",
       "sourceLabelEn": "Korean companies operating in developing countries",
       "sourceNote": null,
       "sourceProvenance": {
@@ -39,16 +43,64 @@
         "sourceRow": 5,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-9c0ba3e8a503|개사(기업)",
+      "dimensionLabels": {
+        "detail": "언론 보도"
+      },
+      "dimensions": {
+        "detail": "언론 보도"
+      },
+      "displayLabel": "국내 기업 개도국 진출 현황 — 언론 보도",
+      "indicatorId": "E-018_kr_company_entry_media",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9c0ba3e8a503",
+        "labelKo": "국내 기업 개도국 진출 현황",
+        "unit": "개사(기업)",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-9c0ba3e8a503|개사(기업)|detail=언론 보도|E-018_kr_company_entry_media",
+      "sourceCaveat": null,
+      "sourceLabel": "국내 기업 개도국 진출 현황 — 언론 보도",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-9c0ba3e8a503|개사(기업)",
+      "dimensionLabels": {
+        "detail": "공공기관 자료"
+      },
+      "dimensions": {
+        "detail": "공공기관 자료"
+      },
+      "displayLabel": "국내 기업 개도국 진출 현황 — 공공기관 자료",
+      "indicatorId": "E-018_kr_company_entry_public",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9c0ba3e8a503",
+        "labelKo": "국내 기업 개도국 진출 현황",
+        "unit": "개사(기업)",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-9c0ba3e8a503|개사(기업)|detail=공공기관 자료|E-018_kr_company_entry_public",
+      "sourceCaveat": null,
+      "sourceLabel": "국내 기업 개도국 진출 현황 — 공공기관 자료",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     }
   ],
   "measures": [
     {
-      "indicatorCount": 1,
+      "indicatorCount": 3,
       "key": "measure-9c0ba3e8a503",
       "labelKo": "국내 기업 개도국 진출 현황",
       "recordCount": 0,
       "unit": "개사(기업)",
-      "unitFamily": "text"
+      "unitFamily": "count"
     }
   ],
   "observationCount": 0,

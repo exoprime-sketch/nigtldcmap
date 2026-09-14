@@ -5,7 +5,7 @@
       "labelKo": "세부 분류",
       "valueCount": 1,
       "values": [
-        "상업 운전 중인 CCS 시설 개소"
+        "수록 CCS 시설·프로젝트 총 건수"
       ]
     },
     {
@@ -13,39 +13,7 @@
       "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
-        "CCS 시설"
-      ]
-    },
-    {
-      "key": "facilityType",
-      "labelKo": "facilityType",
-      "valueCount": 5,
-      "values": [
-        "CO2 주입(EOR)",
-        "고농도 CO2 가스전(CO2 분리·재주입 잠재)",
-        "연구",
-        "연구/타당성",
-        "지중 저장 후보(Storage)"
-      ]
-    },
-    {
-      "key": "status",
-      "labelKo": "status",
-      "valueCount": 5,
-      "values": [
-        "Black & Veatch 등",
-        "계획(FID~2025, 생산~2030 목표)",
-        "계획·법제화 단계",
-        "완료(2011.6 주입, 2012.2 종료)",
-        "학계/산업"
-      ]
-    },
-    {
-      "key": "technology",
-      "labelKo": "기술",
-      "valueCount": 1,
-      "values": [
-        "20"
+        "entity"
       ]
     },
     {
@@ -72,8 +40,32 @@
   "elementId": "A-025",
   "entityCount": 5,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 2,
+  "indicatorCount": 3,
   "indicators": [
+    {
+      "axisGroupKey": "measure-06d3a0fc6345|건",
+      "dimensionLabels": {
+        "detail": "수록 CCS 시설·프로젝트 총 건수"
+      },
+      "dimensions": {
+        "detail": "수록 CCS 시설·프로젝트 총 건수"
+      },
+      "displayLabel": "CCS 시설 수 — 수록 CCS 시설·프로젝트 총 건수",
+      "indicatorId": "A-025_ccs_facility_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-06d3a0fc6345",
+        "labelKo": "CCS 시설 수",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-06d3a0fc6345|건|detail=수록 CCS 시설·프로젝트 총 건수|A-025_ccs_facility_count",
+      "sourceCaveat": null,
+      "sourceLabel": "CCS 시설 수 — 수록 CCS 시설·프로젝트 총 건수",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
     {
       "axisGroupKey": "measure-b3485f17df75|건",
       "dimensionLabels": {
@@ -150,9 +142,17 @@
     },
     {
       "indicatorCount": 1,
+      "key": "measure-06d3a0fc6345",
+      "labelKo": "CCS 시설 수",
+      "recordCount": 1,
+      "unit": "건",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
       "key": "measure-305e39a21a64",
       "labelKo": "상용 가동 CCS 시설 수",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "건",
       "unitFamily": "count"
     }

@@ -182,6 +182,23 @@ function mapBehavior(contract) {
   return `${contract.mapLinkage.mapMode || "공간 분석"} · ${count}개 feature/scope · 지도 선택 연계`;
 }
 
+/**
+ * The year a row can be compared on, resolved the way the screen resolves it.
+ *
+ * `Number(null)` is 0 and `Number.isFinite(0)` is true, so a row with no year
+ * used to count as the year zero: C-016 publishes 639 plan rows dated by period
+ * ("2025-2030", "2031-2035") and no year at all, and the contract recorded one
+ * comparable year for it while the screen read two periods. Both now read the
+ * period when the row has no year, and neither counts a row that has neither.
+ */
+function comparableYearV132(row) {
+  if (typeof row.year === "number" && Number.isFinite(row.year)) return row.year;
+  const match = String(row.period || "").match(/\d{4}/u);
+  if (!match) return null;
+  const parsed = Number.parseInt(match[0], 10);
+  return Number.isFinite(parsed) ? parsed : null;
+}
+
 function listBehavior(renderer, entityCount) {
   if (Number(entityCount || 0) <= 0) return "접힌 원자료 표";
   if (renderer === "portfolio-dashboard") return "요약 뒤 필터 가능한 카드·표";
@@ -212,14 +229,12 @@ const elementRows = catalog.map((element) => {
   const payload = pack.elements.get(element.elementId);
   const numericYearsBySeries = new Map();
   payloadRecords(payload?.observations).forEach((row) => {
-    if (
-      typeof row.value !== "number" ||
-      !Number.isFinite(row.value) ||
-      !Number.isFinite(Number(row.year))
-    ) return;
+    if (typeof row.value !== "number" || !Number.isFinite(row.value)) return;
+    const year = comparableYearV132(row);
+    if (year === null) return;
     const key = `${row.indicatorId || "measure"}|${row.unit || ""}`;
     const bucket = numericYearsBySeries.get(key) || new Set();
-    bucket.add(Number(row.year));
+    bucket.add(year);
     numericYearsBySeries.set(key, bucket);
   });
   const maxComparableYearCount = Math.max(

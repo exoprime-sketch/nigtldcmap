@@ -1,126 +1,18 @@
 {
   "dimensions": [
     {
-      "key": "category",
-      "labelKo": "분류",
-      "valueCount": 19,
-      "values": [
-        "C-016 C-018 설비목표",
-        "IRENA IRENASTAT(지정 DB)",
-        "IRENA IRENASTAT(지정 DB, 참고용)",
-        "MOIT(산업무역부)",
-        "raw 스캔본 OCR 재추출",
-        "개정 PDP8",
-        "개정령",
-        "법인세법",
-        "법인세법 시행령",
-        "수출입관세법",
-        "원안 PDP8",
-        "전력법",
-        "전력법 시행령",
-        "전환기 발전가격",
-        "직접전력거래",
-        "태양광 FIT 1차",
-        "태양광 FIT 2차",
-        "토지 시행령",
-        "풍력 FIT"
-      ]
-    },
-    {
-      "key": "detail",
-      "labelKo": "세부 분류",
-      "valueCount": 21,
-      "values": [
-        "768-ttg.signed.pdf 본문 24p OCR(300dpi)",
-        "Decision 11/2017/QĐ-TTg",
-        "Decision 13/2020/QĐ-TTg",
-        "Decision 39/2018/QĐ-TTg",
-        "Decision 500/QĐ-TTg",
-        "Decision 768/QĐ-TTg",
-        "Decree 57/2025(DPPA) 및 Decree 58/2025(재생에너지 개발) 개정",
-        "Decree 57/2025/NĐ-CP",
-        "Decree 103/2024/NĐ-CP",
-        "Decree 320/2025/NĐ-CP",
-        "Law 61/2024/QH15",
-        "Law 67/2025/QH15",
-        "Law 107/2016/QH13",
-        "Quyết định 21/QĐ-BCT",
-        "설비·발전량 실적 통계",
-        "원안(500/2023) 수치 오기재를 개정(768/2025)으로 정정",
-        "재생에너지·신에너지 개발(phát triển điện năng lượng tái tạo, điện năng lượng mới)",
-        "전력사업 허가(giấy phép hoạt động điện lực)",
-        "전원개발계획 운영·입찰 공고",
-        "정부 포털 게시",
-        "통계 DB"
-      ]
-    },
-    {
-      "key": "detail_2",
-      "labelKo": "detail_2",
-      "valueCount": 17,
-      "values": [
-        "CIT 우대 대상·기간 세부",
-        "CIT 우대세율·면제감면 근거",
-        "Decision 768 정부 포털 게시 위치",
-        "Decree 58/2025/NĐ-CP",
-        "Decree 61/2025/NĐ-CP",
-        "Decree 243/2026/NĐ-CP",
-        "대체됨(2025.4 개정본으로 대체)",
-        "수입관세 면제 근거",
-        "적용 중(FIT 종료~경쟁입찰 시행 전 과도기)",
-        "정책요소 미수록",
-        "종료(2019.6 이후 COD 미적용)",
-        "종료(2021.1 이후 신규 COD 미적용)",
-        "종료(2021.11 이후 신규 COD 미적용)",
-        "토지·수면 임대료 면제 근거",
-        "현행 DPPA 시행령",
-        "현행 전력 기본법",
-        "현행 전력개발계획8(2030·2050 전원구성·용량 목표)"
-      ]
-    },
-    {
-      "key": "period",
-      "labelKo": "기간",
-      "valueCount": 8,
-      "values": [
-        "2016-09-01",
-        "2024-08-01",
-        "2025-04-15",
-        "2025-10-01",
-        "2025-12-15",
-        "2026-07",
-        "2026-08-10",
-        "—"
-      ]
-    },
-    {
-      "key": "technology",
-      "labelKo": "기술",
+      "key": "entityType",
+      "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
-        "CTIS-01,CTIS-02,CTIS-03,CTIS-04,CTIS-05,CTIS-06,CTIS-07,CTIS-08"
-      ]
-    },
-    {
-      "key": "year",
-      "labelKo": "연도",
-      "valueCount": 8,
-      "values": [
-        "2016",
-        "2017",
-        "2018",
-        "2020",
-        "2023",
-        "2024",
-        "2025",
-        "2026"
+        "entity"
       ]
     }
   ],
   "elementId": "C-015",
-  "entityCount": 0,
+  "entityCount": 21,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 21,
+  "indicatorCount": 26,
   "indicators": [
     {
       "axisGroupKey": "measure-1a8991448f45|—",
@@ -225,6 +117,106 @@
         "sourceRow": 22,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-f9effe27b94e|URL",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "상기 문서들의 원본 링크(URL) · policy_document_link_datafiles_chinhphu",
+      "indicatorId": "C-015_policy_document_link_datafiles_chinhphu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f9effe27b94e",
+        "labelKo": "상기 문서들의 원본 링크(URL)",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-f9effe27b94e|URL||C-015_policy_document_link_datafiles_chinhphu",
+      "sourceCaveat": null,
+      "sourceLabel": "상기 문서들의 원본 링크(URL)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f9effe27b94e|URL",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "상기 문서들의 원본 링크(URL) · policy_document_link_datafiles_chinhphu_2",
+      "indicatorId": "C-015_policy_document_link_datafiles_chinhphu_2",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f9effe27b94e",
+        "labelKo": "상기 문서들의 원본 링크(URL)",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-f9effe27b94e|URL||C-015_policy_document_link_datafiles_chinhphu_2",
+      "sourceCaveat": null,
+      "sourceLabel": "상기 문서들의 원본 링크(URL)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f9effe27b94e|URL",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "상기 문서들의 원본 링크(URL) · policy_document_link_erea",
+      "indicatorId": "C-015_policy_document_link_erea",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f9effe27b94e",
+        "labelKo": "상기 문서들의 원본 링크(URL)",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-f9effe27b94e|URL||C-015_policy_document_link_erea",
+      "sourceCaveat": null,
+      "sourceLabel": "상기 문서들의 원본 링크(URL)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f9effe27b94e|URL",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "상기 문서들의 원본 링크(URL) · policy_document_link_moit",
+      "indicatorId": "C-015_policy_document_link_moit",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f9effe27b94e",
+        "labelKo": "상기 문서들의 원본 링크(URL)",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-f9effe27b94e|URL||C-015_policy_document_link_moit",
+      "sourceCaveat": null,
+      "sourceLabel": "상기 문서들의 원본 링크(URL)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f9effe27b94e|URL",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "상기 문서들의 원본 링크(URL) · policy_document_link_vanban_chinhphu",
+      "indicatorId": "C-015_policy_document_link_vanban_chinhphu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f9effe27b94e",
+        "labelKo": "상기 문서들의 원본 링크(URL)",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-f9effe27b94e|URL||C-015_policy_document_link_vanban_chinhphu",
+      "sourceCaveat": null,
+      "sourceLabel": "상기 문서들의 원본 링크(URL)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-af1eb5f40c48|URL",
@@ -873,10 +865,18 @@
   ],
   "measures": [
     {
+      "indicatorCount": 5,
+      "key": "measure-f9effe27b94e",
+      "labelKo": "상기 문서들의 원본 링크(URL)",
+      "recordCount": 0,
+      "unit": "URL",
+      "unitFamily": "text"
+    },
+    {
       "indicatorCount": 18,
       "key": "measure-af1eb5f40c48",
       "labelKo": "정책 문서 원본 링크 레지스트리",
-      "recordCount": 18,
+      "recordCount": 0,
       "unit": "URL",
       "unitFamily": "text"
     },
@@ -884,12 +884,12 @@
       "indicatorCount": 3,
       "key": "measure-1a8991448f45",
       "labelKo": "지정 출처 상태 및 데이터 보완 이력",
-      "recordCount": 3,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     }
   ],
-  "observationCount": 21,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

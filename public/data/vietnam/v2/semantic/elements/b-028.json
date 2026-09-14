@@ -1,70 +1,18 @@
 {
   "dimensions": [
     {
-      "key": "dam_period",
-      "labelKo": "댐 건설 시기",
-      "valueCount": 2,
-      "values": [
-        "post_dam",
-        "pre_dam"
-      ]
-    },
-    {
-      "key": "detail",
-      "labelKo": "세부 분류",
-      "valueCount": 3,
-      "values": [
-        "m³/s 기준",
-        "격자/유역 단위(GIS)",
-        "타이빈 수계 연유량"
-      ]
-    },
-    {
-      "key": "detail_2",
-      "labelKo": "detail_2",
-      "valueCount": 5,
-      "values": [
-        "메콩강(해양 유출 기준)",
-        "메콩강(해양 유출 기준) (범위 상한)",
-        "메콩강(해양 유출 기준) (범위 하한)",
-        "홍-타이빈 수계 전체",
-        "홍강(Son Tay 지점)"
-      ]
-    },
-    {
-      "key": "detail_3",
-      "labelKo": "detail_3",
+      "key": "entityType",
+      "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
-        "댐 건설 후"
-      ]
-    },
-    {
-      "key": "technology",
-      "labelKo": "기술",
-      "valueCount": 1,
-      "values": [
-        "5,32"
-      ]
-    },
-    {
-      "key": "year",
-      "labelKo": "연도",
-      "valueCount": 6,
-      "values": [
-        "2004",
-        "2009",
-        "2010",
-        "2022",
-        "2023",
-        "2026"
+        "entity"
       ]
     }
   ],
   "elementId": "B-028",
-  "entityCount": 0,
+  "entityCount": 16,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 15,
+  "indicatorCount": 16,
   "indicators": [
     {
       "axisGroupKey": "measure-8c63feed7431|%",
@@ -389,23 +337,19 @@
       }
     },
     {
-      "axisGroupKey": "measure-d742d86dd108|km³/yr",
-      "dimensionLabels": {
-        "detail": "타이빈 수계 연유량"
-      },
-      "dimensions": {
-        "detail": "타이빈 수계 연유량"
-      },
+      "axisGroupKey": "measure-88361c01a72c|km³/yr",
+      "dimensionLabels": {},
+      "dimensions": {},
       "displayLabel": "홍강–타이빈 수계 연유량",
       "indicatorId": "B-028_discharge_redriver_system",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-d742d86dd108",
-        "labelKo": "홍강",
+        "key": "measure-88361c01a72c",
+        "labelKo": "홍강–타이빈 수계 연유량",
         "unit": "km³/yr",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-d742d86dd108|km³/yr|detail=타이빈 수계 연유량|B-028_discharge_redriver_system",
+      "seriesKey": "measure-88361c01a72c|km³/yr||B-028_discharge_redriver_system",
       "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
       "sourceLabel": "홍강–타이빈 수계 연유량",
       "sourceLabelEn": "Red–Thai Binh river system annual flow",
@@ -443,6 +387,30 @@
         "sourceRow": 11,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-13123e8ee1dc|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {
+        "category": "유역 개체 목록)"
+      },
+      "dimensions": {
+        "category": "유역 개체 목록)"
+      },
+      "displayLabel": "하천 유량(지점·유역 개체 목록)",
+      "indicatorId": "B-028_hydro_site",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-13123e8ee1dc",
+        "labelKo": "하천 유량(지점",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-13123e8ee1dc|지표별 상이(속성 열 참조)|category=유역 개체 목록)|B-028_hydro_site",
+      "sourceCaveat": null,
+      "sourceLabel": "하천 유량(지점·유역 개체 목록)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-ebf490ca9705|km³/yr",
@@ -510,7 +478,7 @@
       "indicatorCount": 1,
       "key": "measure-ebf490ca9705",
       "labelKo": "내부 재생가능 수자원(IRWR)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "km³/yr",
       "unitFamily": "other"
     },
@@ -518,7 +486,7 @@
       "indicatorCount": 1,
       "key": "measure-f581706c90b2",
       "labelKo": "메콩 연평균 유량 (범위 상한)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "km³/yr",
       "unitFamily": "other"
     },
@@ -526,7 +494,7 @@
       "indicatorCount": 1,
       "key": "measure-5a65202b0e6e",
       "labelKo": "메콩 연평균 유량 (범위 하한)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "km³/yr",
       "unitFamily": "other"
     },
@@ -534,7 +502,7 @@
       "indicatorCount": 1,
       "key": "measure-8c63feed7431",
       "labelKo": "수자원 국외 의존율",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -542,7 +510,7 @@
       "indicatorCount": 1,
       "key": "measure-4a6a136722a4",
       "labelKo": "외부 유입 수자원",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "km³/yr",
       "unitFamily": "other"
     },
@@ -550,7 +518,7 @@
       "indicatorCount": 1,
       "key": "measure-7150170a2d4c",
       "labelKo": "총 재생가능 수자원(TRWR)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "km³/yr",
       "unitFamily": "other"
     },
@@ -558,23 +526,23 @@
       "indicatorCount": 6,
       "key": "measure-a5bb9f20399d",
       "labelKo": "하천 유량",
-      "recordCount": 7,
+      "recordCount": 0,
       "unit": "m³/s",
       "unitFamily": "other"
     },
     {
       "indicatorCount": 1,
-      "key": "measure-d742d86dd108",
-      "labelKo": "홍강",
-      "recordCount": 1,
-      "unit": "km³/yr",
+      "key": "measure-13123e8ee1dc",
+      "labelKo": "하천 유량(지점",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
       "unitFamily": "other"
     },
     {
       "indicatorCount": 1,
       "key": "measure-5a24e942b976",
       "labelKo": "홍강(Sơn Tây) 연평균 유량 (범위 상한)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "km³/yr",
       "unitFamily": "other"
     },
@@ -582,40 +550,21 @@
       "indicatorCount": 1,
       "key": "measure-89ae90c21531",
       "labelKo": "홍강(Sơn Tây) 연평균 유량 (범위 하한)",
-      "recordCount": 1,
+      "recordCount": 0,
+      "unit": "km³/yr",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-88361c01a72c",
+      "labelKo": "홍강–타이빈 수계 연유량",
+      "recordCount": 0,
       "unit": "km³/yr",
       "unitFamily": "other"
     }
   ],
-  "observationCount": 16,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
-  "records": [
-    {
-      "dimensionLabels": {
-        "dam_period": "댐 건설 전"
-      },
-      "dimensions": {
-        "dam_period": "pre_dam"
-      },
-      "displayLabel": "하천 유량 · 홍강(Son Tay 지점) · 댐 건설 전 [m³/s]",
-      "indicatorId": "B-028_discharge_cumecs_son_tay",
-      "recordId": "vnm-v121-b-028-obs-18-b6fa2cae53fdf66c",
-      "seriesKey": "measure-a5bb9f20399d|m³/s|detail=m³/s 기준|detail_2=홍강(Son Tay 지점)|detail_3=댐 건설 후|B-028_discharge_cumecs_son_tay|dam_period=pre_dam",
-      "sourceLabel": "하천 유량 — m³/s 기준 — 홍강(Son Tay 지점) — 댐 건설 전"
-    },
-    {
-      "dimensionLabels": {
-        "dam_period": "댐 건설 후"
-      },
-      "dimensions": {
-        "dam_period": "post_dam"
-      },
-      "displayLabel": "하천 유량 · 홍강(Son Tay 지점) · 댐 건설 후 [m³/s]",
-      "indicatorId": "B-028_discharge_cumecs_son_tay",
-      "recordId": "vnm-v121-b-028-obs-19-dd8297a0b66a2774",
-      "seriesKey": "measure-a5bb9f20399d|m³/s|detail=m³/s 기준|detail_2=홍강(Son Tay 지점)|detail_3=댐 건설 후|B-028_discharge_cumecs_son_tay|dam_period=post_dam",
-      "sourceLabel": "하천 유량 — m³/s 기준 — 홍강(Son Tay 지점) — 댐 건설 후"
-    }
-  ],
+  "records": [],
   "schemaVersion": "v125"
 }

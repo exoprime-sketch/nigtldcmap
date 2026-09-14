@@ -1,22 +1,7 @@
 {
   "contractCount": 152,
-  "duplicateIndicatorDecisions": [
-    {
-      "elementId": "B-028",
-      "indicatorId": "B-028_discharge_cumecs_son_tay",
-      "recordDimensionPolicy": "explicit-pre-post-dam-phase",
-      "semanticIndicatorPolicy": "last-v124-metadata-row",
-      "sourceLabels": [
-        "하천 유량 — m³/s 기준 — 홍강(Son Tay 지점) — 댐 건설 전",
-        "하천 유량 — m³/s 기준 — 홍강(Son Tay 지점) — 댐 건설 후"
-      ],
-      "sourceRows": [
-        18,
-        19
-      ]
-    }
-  ],
-  "duplicateIndicatorMetadataCount": 1,
+  "duplicateIndicatorDecisions": [],
+  "duplicateIndicatorMetadataCount": 0,
   "duplicateVisibleLabelCount": 0,
   "e012": {
     "idNoteMismatchCount": 0,
@@ -32,7 +17,7 @@
     ],
     "missingOtherWageCount": 3,
     "missingOtherWageLabelled": true,
-    "observationCount": 91,
+    "observationCount": 92,
     "occupationOptions": [
       {
         "labelKo": "전체 직군",
@@ -193,13 +178,13 @@
   "recordReconciliation": "PASS",
   "schemaVersion": "v125",
   "semanticDimensionLossCount": 0,
-  "semanticIndicatorCount": 7389,
-  "semanticObservationCount": 32312,
+  "semanticIndicatorCount": 7072,
+  "semanticObservationCount": 18976,
   "separatedMixedUnitMeasureGroupCount": 1,
-  "sourceDuplicateLabelGroupCount": 54,
-  "sourceIndicatorMetadataRowCount": 7390,
-  "sourceObservationCount": 32312,
-  "sourceUniqueIndicatorCount": 7389,
+  "sourceDuplicateLabelGroupCount": 106,
+  "sourceIndicatorMetadataRowCount": 7072,
+  "sourceObservationCount": 18976,
+  "sourceUniqueIndicatorCount": 7072,
   "unassignedContractCount": 0,
   "zeroImputationCount": 0
 }

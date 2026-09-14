@@ -270,12 +270,39 @@ export function PublicTermTextV134({
  * The Korean meaning is rendered in the public text itself; native `title`
  * is deliberately not used as the only explanation.
  */
+/**
+ * True when the text already says what the expansion would say.
+ *
+ * A chart legend that reads "메탄(CH₄ 환산)" states the Korean name before the
+ * symbol, and appending the expansion made it "메탄(CH₄(메탄) 환산)". The label
+ * is checked against the head of the Korean name, so "산업공정(IPPU)" is left
+ * alone as well even though IPPU's full name is "산업공정·제품사용".
+ */
+function expansionAlreadyStatedV137(text: string, term: string, koreanName: string) {
+  // "해운 연결성 지수(LSCI)" and "EVNHANOI(하노이)" already gloss themselves: the
+  // source put the abbreviation in brackets after the words it stands for, or
+  // put the words in brackets after it. Expanding either produced a second
+  // bracket inside the first.
+  const index = text.indexOf(term);
+  if (index >= 0) {
+    const before = text[index - 1];
+    const after = text[index + term.length];
+    if (before === "(" && after === ")") return true;
+    if (after === "(") return true;
+  }
+  const head = koreanName.split(/[·(（]/u)[0].trim();
+  if (!head) return true;
+  const withoutTerm = text.split(term).join(" ");
+  return withoutTerm.includes(head);
+}
+
 export function PublicTermExpandedTextV134({
   text,
   className,
   firstOccurrenceOnly = false,
 }: PublicTermTextV134Props) {
-  const tokens = tokenizePublicTermsV134(publicTextV126(text) || "", {
+  const plain = publicTextV126(text) || "";
+  const tokens = tokenizePublicTermsV134(plain, {
     firstOccurrenceOnly,
   });
   return (
@@ -288,15 +315,33 @@ export function PublicTermExpandedTextV134({
             className={className}
             data-public-term-v134={token.entry.id}
             data-public-term-mode="visible-expansion"
+            // "해운 연결성 지수(LSCI)" needs no second gloss. Say so on the
+            // element, so a reader-facing check can tell a suppressed
+            // expansion apart from a missing one.
+            data-public-term-stated-v134={
+              expansionAlreadyStatedV137(
+                plain,
+                token.value,
+                token.entry.koreanName
+              )
+                ? "true"
+                : undefined
+            }
             key={`term-${token.entry.id}-${index}`}
           >
             {token.value}
-            <span
-              className="public-term-visible-expansion-v134"
-              data-public-term-expansion-v134="true"
-            >
-              ({token.entry.koreanName})
-            </span>
+            {!expansionAlreadyStatedV137(
+              plain,
+              token.value,
+              token.entry.koreanName
+            ) && (
+              <span
+                className="public-term-visible-expansion-v134"
+                data-public-term-expansion-v134="true"
+              >
+                ({token.entry.koreanName})
+              </span>
+            )}
           </span>
         )
       )}

@@ -1,15 +1,15 @@
 {
   "schemaVersion": "v136-public-copy-acceptance-1",
-  "generatedAt": "2026-09-06T23:43:04.924Z",
+  "generatedAt": "2026-09-13T23:38:19.704Z",
   "audit": "release:v136",
   "status": "PASS",
   "summary": {
     "type": "summary",
     "audit": "release:v136",
     "status": "PASS",
-    "passed": 76,
+    "passed": 77,
     "failed": 0,
-    "total": 76,
+    "total": 77,
     "failedChecks": [],
     "commandResults": [
       {
@@ -258,6 +258,13 @@
         "error": null
       },
       {
+        "name": "V136_4_SCREEN_USABILITY",
+        "command": "npm run audit:screen-usability:v136-4",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      {
         "name": "V136_HUMAN_REVIEW",
         "command": "npm run audit:human-review:v136",
         "exitCode": 0,
@@ -311,7 +318,7 @@
     },
     "frameworkElements": 152,
     "accountedElements": 152,
-    "publicTextInventoryCount": 55712,
+    "publicTextInventoryCount": 81501,
     "publicRouteCount": 158,
     "internalPublicTokenCount": 0,
     "duplicateVisibleCopyCount": 0,
@@ -883,6 +890,22 @@
     {
       "type": "check",
       "audit": "release:v136",
+      "name": "V136_4_SCREEN_USABILITY",
+      "status": "PASS",
+      "actual": {
+        "name": "V136_4_SCREEN_USABILITY",
+        "command": "npm run audit:screen-usability:v136-4",
+        "exitCode": 0,
+        "signal": null,
+        "error": null
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
       "name": "V136_HUMAN_REVIEW",
       "status": "PASS",
       "actual": {
@@ -1310,6 +1333,7 @@
         "npm run audit:finder-scroll:v136",
         "npm run test:unit",
         "npm run audit:generic-detail-public:v136-2",
+        "npm run audit:screen-usability:v136-4",
         "npm run audit:human-review:v136",
         "npm run audit:workflow:v136"
       ],
@@ -1571,6 +1595,13 @@
       "error": null
     },
     {
+      "name": "V136_4_SCREEN_USABILITY",
+      "command": "npm run audit:screen-usability:v136-4",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
       "name": "V136_HUMAN_REVIEW",
       "command": "npm run audit:human-review:v136",
       "exitCode": 0,
@@ -1624,7 +1655,7 @@
   },
   "frameworkElements": 152,
   "accountedElements": 152,
-  "publicTextInventoryCount": 55712,
+  "publicTextInventoryCount": 81501,
   "publicRouteCount": 158,
   "internalPublicTokenCount": 0,
   "duplicateVisibleCopyCount": 0,

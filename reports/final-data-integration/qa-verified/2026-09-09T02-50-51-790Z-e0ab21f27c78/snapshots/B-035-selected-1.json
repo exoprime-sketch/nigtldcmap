@@ -1,0 +1,310 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:51655/?view=data&element=lulucf-gwanryeon-myeonjeog-byeonhwa&country=VNM&from=explorer&measure=measure-9139f0cab73e&dim.category=%EB%AA%A9%EC%B4%88%EC%A7%80#element-detail",
+  "title": "LULUCF 관련 면적 변화",
+  "body": "검색 결과로 돌아가기 기후 환경 › 토지이용 데이터 제공 다운로드 가능 LULUCF 관련 면적 변화 베트남 · LULUCF 관련 면적 변화의 항목별 구성과 연도별 변화를 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 40종 · 관측기간 1961~2025년 이 데이터로 확인할 수 있는 내용 LULUCF 관련 면적 변화의 지역별 차이와 범위 LULUCF 관련 면적 변화의 지역 차이와 공개된 공간 범위를 확인할 수 있습니다. 항목 1인당 경작지 면적 · ha/cap 가경지 비율(농지 대비) · % 경작지 비율(농지 대비) · % 경작지 비율(육지면적 대비) · % 관개 정비면적 비율(경작지 대비) · % 농업 총면적(Agriculture) · 1000 ha 농지 단위면적당 농업생산액 · 구매력평가 기준 미국달러/ha 농지 비율(육지면적 대비) · % 산림 비율(육지면적 대비) · % 산림 탄소저장량(FAO) · 백만 톤 C 양식 · 1000 ha 영구 초지 · % 영년생 작물 비율(농지 대비) · % 유기농 경작지 · 1000 ha 유기농 농지 비율(농지 대비) · % 유기농 인증 완료 경작지 · 1000 ha 유기농 인증 완료 농지 · 1000 ha 유기농 인증 완료 영구 초지 · 1000 ha 유기농 전환 · 1000 ha 유기농 전환 영구 초지 · 1000 ha 일년생 작물 재배면적 · 1000 ha 일년생 초지 · 1000 ha 일년생 휴경지 · 1000 ha 자연재생림 비율(산림 대비) · % 조림지 비율(산림 대비) · % 토지이용 면적 · 1000 ha 분류 전체 목초지 목초지 비율(농지 대비) 목초지 비율(육지면적 대비) 수산 이용 내수면 면적 인증 농지 세부 분류 전체 가경지 경작지 관개 정비 면적 국토면적 기타 토지 내수면 농지 산림지 영구 초지·목초지 영년생 작물 원시림 육지면적 자연재생림 정주지(Settlements) 조림지 현재 선택 조건에 표시할 값이 없습니다 다른 항목이나 기간을 선택해 확인해 주세요. 자료정보 상세 데이터 · 전체 1,764행 · 값 있음 1,763행 · 결측 1행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 1055,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "B-035",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "LULUCF 관련 면적 변화의 지역별 차이와 범위",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목 선택",
+      "dimensionKey": null,
+      "testId": "v125-measure-select",
+      "value": "measure-9139f0cab73e",
+      "shown": "가경지 비율(농지 대비) · %",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-a6dff20f1447",
+          "label": "1인당 경작지 면적 · ha/cap",
+          "disabled": false
+        },
+        {
+          "value": "measure-9139f0cab73e",
+          "label": "가경지 비율(농지 대비) · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-899e90e642b5",
+          "label": "경작지 비율(농지 대비) · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-348afe547071",
+          "label": "경작지 비율(육지면적 대비) · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-a739c3d98df3",
+          "label": "관개 정비면적 비율(경작지 대비) · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-eafd5c26ff28",
+          "label": "농업 총면적(Agriculture) · 1000 ha",
+          "disabled": false
+        },
+        {
+          "value": "measure-c1b2a46c5be3",
+          "label": "농지 단위면적당 농업생산액 · 구매력평가 기준 미국달러/ha",
+          "disabled": false
+        },
+        {
+          "value": "measure-df239d17fd03",
+          "label": "농지 비율(육지면적 대비) · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-e3b498437c70",
+          "label": "산림 비율(육지면적 대비) · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-84f0524edc52",
+          "label": "산림 탄소저장량(FAO) · 백만 톤 C",
+          "disabled": false
+        },
+        {
+          "value": "measure-9128b876c656",
+          "label": "양식 · 1000 ha",
+          "disabled": false
+        },
+        {
+          "value": "measure-56417bcafa62",
+          "label": "영구 초지 · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-bf751bc8d2fb",
+          "label": "영년생 작물 비율(농지 대비) · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-34937bef6cba",
+          "label": "유기농 경작지 · 1000 ha",
+          "disabled": false
+        },
+        {
+          "value": "measure-42fcaa1c42d0",
+          "label": "유기농 농지 비율(농지 대비) · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-a07e6988294f",
+          "label": "유기농 인증 완료 경작지 · 1000 ha",
+          "disabled": false
+        },
+        {
+          "value": "measure-35a897bf926d",
+          "label": "유기농 인증 완료 농지 · 1000 ha",
+          "disabled": false
+        },
+        {
+          "value": "measure-35b25cbbef34",
+          "label": "유기농 인증 완료 영구 초지 · 1000 ha",
+          "disabled": false
+        },
+        {
+          "value": "measure-dc32b56e29b0",
+          "label": "유기농 전환 · 1000 ha",
+          "disabled": false
+        },
+        {
+          "value": "measure-8953c3193a3d",
+          "label": "유기농 전환 영구 초지 · 1000 ha",
+          "disabled": false
+        },
+        {
+          "value": "measure-6d5f4f832ce1",
+          "label": "일년생 작물 재배면적 · 1000 ha",
+          "disabled": false
+        },
+        {
+          "value": "measure-b1491740e170",
+          "label": "일년생 초지 · 1000 ha",
+          "disabled": false
+        },
+        {
+          "value": "measure-e11419f2bbf2",
+          "label": "일년생 휴경지 · 1000 ha",
+          "disabled": false
+        },
+        {
+          "value": "measure-5df309b3dea3",
+          "label": "자연재생림 비율(산림 대비) · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-d7653481c93d",
+          "label": "조림지 비율(산림 대비) · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-6cc58a4ad1bf",
+          "label": "토지이용 면적 · 1000 ha",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "분류 선택",
+      "dimensionKey": "category",
+      "testId": null,
+      "value": "목초지",
+      "shown": "목초지",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "목초지",
+          "label": "목초지",
+          "disabled": false
+        },
+        {
+          "value": "목초지 비율(농지 대비)",
+          "label": "목초지 비율(농지 대비)",
+          "disabled": false
+        },
+        {
+          "value": "목초지 비율(육지면적 대비)",
+          "label": "목초지 비율(육지면적 대비)",
+          "disabled": false
+        },
+        {
+          "value": "수산 이용 내수면 면적",
+          "label": "수산 이용 내수면 면적",
+          "disabled": false
+        },
+        {
+          "value": "인증 농지",
+          "label": "인증 농지",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(3) > select:nth-of-type(1)",
+      "id": null,
+      "label": "세부 분류 선택",
+      "dimensionKey": "detail",
+      "testId": null,
+      "value": "",
+      "shown": "전체",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "",
+          "label": "전체",
+          "disabled": false
+        },
+        {
+          "value": "가경지",
+          "label": "가경지",
+          "disabled": false
+        },
+        {
+          "value": "경작지",
+          "label": "경작지",
+          "disabled": false
+        },
+        {
+          "value": "관개 정비 면적",
+          "label": "관개 정비 면적",
+          "disabled": false
+        },
+        {
+          "value": "국토면적",
+          "label": "국토면적",
+          "disabled": false
+        },
+        {
+          "value": "기타 토지",
+          "label": "기타 토지",
+          "disabled": false
+        },
+        {
+          "value": "내수면",
+          "label": "내수면",
+          "disabled": false
+        },
+        {
+          "value": "농지",
+          "label": "농지",
+          "disabled": false
+        },
+        {
+          "value": "산림지",
+          "label": "산림지",
+          "disabled": false
+        },
+        {
+          "value": "영구 초지·목초지",
+          "label": "영구 초지·목초지",
+          "disabled": false
+        },
+        {
+          "value": "영년생 작물",
+          "label": "영년생 작물",
+          "disabled": false
+        },
+        {
+          "value": "원시림",
+          "label": "원시림",
+          "disabled": false
+        },
+        {
+          "value": "육지면적",
+          "label": "육지면적",
+          "disabled": false
+        },
+        {
+          "value": "자연재생림",
+          "label": "자연재생림",
+          "disabled": false
+        },
+        {
+          "value": "정주지(Settlements)",
+          "label": "정주지(Settlements)",
+          "disabled": false
+        },
+        {
+          "value": "조림지",
+          "label": "조림지",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [],
+  "chartTexts": [],
+  "tableRows": [],
+  "emptyNotices": [
+    "현재 선택 조건에 표시할 값이 없습니다 다른 항목이나 기간을 선택해 확인해 주세요."
+  ],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}

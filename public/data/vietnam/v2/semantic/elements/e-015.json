@@ -1,24 +1,44 @@
 {
   "dimensions": [
     {
-      "key": "year",
-      "labelKo": "연도",
+      "key": "entityType",
+      "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
-        "2026"
+        "entity"
       ]
     }
   ],
   "elementId": "E-015",
-  "entityCount": 0,
+  "entityCount": 4,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 1,
+  "indicatorCount": 2,
   "indicators": [
+    {
+      "axisGroupKey": "measure-21a0b685904b|해당없음",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "NDC Partnership 회원 여부 · NDC Partnership 회원 여부 [해당없음]",
+      "indicatorId": "E-015_coop_framework",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-21a0b685904b",
+        "labelKo": "NDC Partnership 회원 여부",
+        "unit": "해당없음",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-21a0b685904b|해당없음||E-015_coop_framework",
+      "sourceCaveat": null,
+      "sourceLabel": "NDC Partnership 회원 여부",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
     {
       "axisGroupKey": "measure-b1136b8f8947|회원 여부(Y/N)",
       "dimensionLabels": {},
       "dimensions": {},
-      "displayLabel": "NDC Partnership 회원 여부",
+      "displayLabel": "NDC Partnership 회원 여부 · NDC Partnership 회원 여부 [회원 여부(Y/N)]",
       "indicatorId": "E-015_ndcp_membership",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
@@ -44,14 +64,22 @@
   "measures": [
     {
       "indicatorCount": 1,
+      "key": "measure-21a0b685904b",
+      "labelKo": "NDC Partnership 회원 여부",
+      "recordCount": 0,
+      "unit": "해당없음",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
       "key": "measure-b1136b8f8947",
       "labelKo": "NDC Partnership 회원 여부",
-      "recordCount": 8,
+      "recordCount": 0,
       "unit": "회원 여부(Y/N)",
       "unitFamily": "boolean"
     }
   ],
-  "observationCount": 8,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

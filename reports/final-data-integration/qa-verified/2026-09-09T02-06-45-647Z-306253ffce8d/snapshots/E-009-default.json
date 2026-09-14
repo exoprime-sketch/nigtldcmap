@@ -1,0 +1,97 @@
+{
+  "schema": "nigt-screen-snapshot-1",
+  "url": "http://127.0.0.1:57699/?view=data&element=stem-joleobja-su-yeonguja-su&country=VNM&from=explorer&measure=measure-33733e6335a3&year=2016#element-detail",
+  "title": "과학기술 인력",
+  "body": "검색 결과로 돌아가기 협력·실행 기반 › 개도국 기술 역량 평가 지표 데이터 제공 다운로드 가능 과학기술 인력 베트남 · 과학기술 인력의 최근 수준과 항목별 차이를 확인할 수 있습니다 다운로드 공개 데이터 데이터 분석 베트남 · 지표 5종 · 관측기간 2016~2023년 이 데이터로 확인할 수 있는 내용 과학기술 인력의 최근 수준과 항목별 차이 과학기술 인력의 현재 수준과 기준시점별 변화를 확인할 수 있습니다. 항목 STEM 졸업 비중(남성) · % STEM 졸업 비중(여성) · % STEM 졸업 비중(전체) · % STEM 졸업자 수(절대수) · 명 연구자 수(백만명당) · 명/백만명 연구자 수(절대수) · 명 연도 2016 용어 도움말 ? STEM 설명 STEM 졸업 비중(남성) 31.19 % · 2016 주 분석 과학기술 인력 연도별 변화 항목 항목별 값 단위: % STEM 졸업 비중(남성) 31.19 % 자료정보 상세 데이터 · 전체 6행 · 값 있음 5행 · 결측 1행 다운로드 전체 데이터 다운로드",
+  "bodyTruncated": false,
+  "bodyLength": 514,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "analysisState": "ready",
+  "analysisElementId": "E-009",
+  "pendingCount": 0,
+  "busyCount": 0,
+  "headings": [
+    "데이터 분석",
+    "과학기술 인력의 최근 수준과 항목별 차이",
+    "과학기술 인력 연도별 변화",
+    "항목별 값",
+    "단위: %",
+    "다운로드"
+  ],
+  "selects": [
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1) > select:nth-of-type(1)",
+      "id": null,
+      "label": "항목 선택",
+      "dimensionKey": null,
+      "testId": "v125-measure-select",
+      "value": "measure-33733e6335a3",
+      "shown": "STEM 졸업 비중(남성) · %",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "measure-33733e6335a3",
+          "label": "STEM 졸업 비중(남성) · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-e67e1496b556",
+          "label": "STEM 졸업 비중(여성) · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-0aaf37a2b769",
+          "label": "STEM 졸업 비중(전체) · %",
+          "disabled": false
+        },
+        {
+          "value": "measure-52b24a618d30",
+          "label": "STEM 졸업자 수(절대수) · 명",
+          "disabled": false
+        },
+        {
+          "value": "measure-9c5bcab6c9a9",
+          "label": "연구자 수(백만명당) · 명/백만명",
+          "disabled": false
+        },
+        {
+          "value": "measure-6bee104be284",
+          "label": "연구자 수(절대수) · 명",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "selector": "#root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > section:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(2) > select:nth-of-type(1)",
+      "id": null,
+      "label": "연도 선택",
+      "dimensionKey": null,
+      "testId": "v125-year-select",
+      "value": "2016",
+      "shown": "2016",
+      "disabled": false,
+      "multiple": false,
+      "options": [
+        {
+          "value": "2016",
+          "label": "2016",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "kpis": [
+    "STEM 졸업 비중(남성) 31.19 % · 2016"
+  ],
+  "chartTexts": [
+    "STEM 졸업 비중(남성) 31.19 %"
+  ],
+  "tableRows": [],
+  "emptyNotices": [],
+  "canvasCount": 0,
+  "horizontalOverflow": false
+}
