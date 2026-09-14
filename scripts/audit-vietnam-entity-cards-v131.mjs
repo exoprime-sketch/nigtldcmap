@@ -126,6 +126,7 @@ try {
   await setViewport(browser.cdp, 1440, 1100);
 
   for (const elementId of entityElementIds) {
+    console.log(JSON.stringify({ type: "progress", audit: "entity-cards:v131", elementId, phase: "start" }));
     try {
       await navigate(browser.cdp, detailUrlV129(server.url, elementId));
       await waitForValue(
@@ -134,6 +135,7 @@ try {
         { timeoutMs: 25_000 }
       );
       const result = await evaluateValue(browser.cdp, cardSnapshotExpression(elementId));
+      console.log(JSON.stringify({ type: "progress", audit: "entity-cards:v131", elementId, phase: "complete" }));
       routeResults.push(result);
       entityCardCount += Number(result?.cardCount || 0);
       entityContextTitleCount += Number(result?.contextTitleCount || 0);
@@ -147,6 +149,8 @@ try {
       }
     } catch (error) {
       routeFailures.push({ elementId, error: error instanceof Error ? error.message : String(error) });
+      console.error(JSON.stringify({ type: "route-error", elementId, error: String(error), browserStderr: browser.stderr() }));
+      if (/DevTools command timeout|DevTools socket closed/.test(String(error))) throw error;
     }
   }
 
@@ -193,7 +197,7 @@ const duplicateCardTitleCount = routeResults.reduce(
   0
 );
 
-audit.check("ENTITY_CARD_ROUTE_COVERAGE", runtimeFailure === null && routeResults.length === entityElementIds.length, routeResults.length, entityElementIds.length, { runtimeFailure });
+audit.check("ENTITY_CARD_ROUTE_COVERAGE", runtimeFailure === null && routeResults.length === entityElementIds.length, routeResults.length, entityElementIds.length, { runtimeFailure, routeFailures });
 audit.check("ENTITY_CARD_WITHOUT_MEANINGFUL_PRIMARY_TITLE", routeFailures.flatMap((row) => row?.invalid || []).length === 0, routeFailures.flatMap((row) => row?.invalid || []).length, 0, routeFailures.slice(0, 30));
 audit.check("ENTITY_CARD_LONG_UNSTRUCTURED_TEXT_COUNT", longTextCount === 0, longTextCount, 0);
 audit.check("ENTITY_CARD_RESPONSIVE", responsiveFailures.length === 0, responsiveFailures.length, 0, responsiveFailures.slice(0, 20));

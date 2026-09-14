@@ -63,7 +63,7 @@ unmeasured optimization. Screenshot capture remains outside the blocking suite.
 timer cleanup, socket closure, polling deadlines, nonzero exit propagation and
 process watchdog termination. It is included in `finalize:v136`.
 
-No production data, map geometry, public UI, or acceptance assertions are removed.
+No production data, map geometry, or acceptance assertions are removed.
 
 ## Local measurement (2026-09-14)
 
@@ -79,3 +79,40 @@ The previously stuck glossary audit took 58.4 s. These measurements exclude
 dependency installation and the later CI deployment/security/artifact stages.
 They establish that three hours is not a necessary local release-suite duration;
 GitHub runner duration must still be measured independently.
+
+## CI #31: memory-intensive closed source tables
+
+The first patched GitHub run (34807344417) failed instead of hanging indefinitely.
+Build and guard tests passed. Entity-card coverage was 45/56; the first stalled
+route was B-006, followed by timed-out navigation/evaluation commands. The audit
+now logs route progress and reports route failures with browser stderr.
+
+Inspection found that closed `details` tables still rendered every source row.
+An actual Chrome probe on the prior build measured B-005 at 31,688 closed table
+rows / 308,725 DOM nodes / about 1.37 GB JS heap. After navigation to B-006 the
+same probe measured 32,608 closed rows / 317,497 nodes / about 2.04 GB JS heap.
+This is concrete rendering/memory pressure, not merely a slow test assertion.
+It does not prove the exact internal Chromium failure mechanism.
+
+Tables over 500 rows now create rows only while expanded, with 200-row pages,
+previous/next controls and direct page selection. Totals, source order, every
+record and the existing safe downloads are preserved. Small tables keep their
+existing complete representation. No data files are modified.
+
+Chrome production probes after this change found B-005/B-006/B-007 closed DOM
+sizes of 343/379/339 nodes, zero closed table rows, correct first-page counts,
+correct final-page counts (88/8/170) and all 31,688/32,608/32,370 source rows
+accounted for by the pagination. A unit test reconciles all 501 fixture rows
+across the page boundary without duplicates or omissions.
+
+The source pack shared by these elements expands to 446,713,428 bytes. Its
+remaining parsing/memory cost should not be confused with the removed DOM cost;
+browser memory readings fluctuate with garbage collection. No browser feature
+is disabled to make the checks pass. A production large-table regression probe
+is included as an additional release command.
+
+The second complete local run used Chrome: 39 commands / 78 aggregate checks
+passed in 644,102 ms (10 minutes 44 seconds). All 29 React unit tests passed.
+The new large-table production probe passed separately and is also included in
+the next CI command list (40 commands). The first local run used Edge, so the
+two local durations are not a controlled browser-to-browser speed comparison.

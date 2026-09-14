@@ -15,6 +15,7 @@ const commands = [
   { name: "CI_PROCESS_GUARDS", command: "node --test scripts/ci/browser-timeout.test.mjs" },
   { name: "PRODUCTION_BUILD_FOR_RUNTIME", command: "npm run build" },
   { name: "V133_GENERATED_DATA", command: "npm run audit:generated-data:v133" },
+  { name: "LARGE_SOURCE_TABLE", command: "node scripts/ci/audit-large-source-table.mjs" },
   { name: "V133_CI_CONTRACT", command: "npm run audit:ci-contract:v133" },
   { name: "V130_PROJECT_SCOPE", command: "npm run audit:project-scope:v130" },
   { name: "V130_MAP_DEDUP", command: "npm run audit:map-dedup:v130" },
