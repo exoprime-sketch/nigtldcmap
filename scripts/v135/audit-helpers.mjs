@@ -1,8 +1,9 @@
 import { createHash } from "node:crypto";
-import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, statSync } from "node:fs";
 import { resolve } from "node:path";
 
 import { PROJECT_ROOT, pngDimensions } from "../v125/audit-utils.mjs";
+import { writeReportFileV138 } from "../v125/write-report.mjs";
 
 export const V135_REPORT_ROOT = resolve(PROJECT_ROOT, "reports/v135");
 export const V135_SCREENSHOT_ROOT = resolve(V135_REPORT_ROOT, "screenshots");
@@ -29,7 +30,7 @@ export function normalizeTextV135(value) {
 
 export function writeJsonV135(path, value) {
   mkdirSync(resolve(path, ".."), { recursive: true });
-  writeFileSync(path, `${JSON.stringify(value, null, 2)}\n`, "utf8");
+  writeReportFileV138(path, `${JSON.stringify(value, null, 2)}\n`);
 }
 
 export function finishAuditV135(audit, fileName, extra = {}) {

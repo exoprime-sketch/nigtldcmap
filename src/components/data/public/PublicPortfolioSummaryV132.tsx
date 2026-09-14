@@ -29,7 +29,35 @@ type PortfolioConfigV132 = {
    */
   amountLabel?: string;
   yearLabel?: string;
+  /**
+   * What one row is.
+   *
+   * The summary called every row a 사업. E-018 delivers 24 Korean companies,
+   * E-020 seven support programmes, and C-007 and C-008 statements about a
+   * mechanism - "대상 분야(1)", "참여당사국 등재 NMA 건수" - none of which is a
+   * project. Counting them under 총 사업 수 asserted a project count that the
+   * source never stated. Unset keeps 사업, which is what the D-0xx portfolios
+   * actually hold.
+   */
+  recordLabel?: string;
+  /**
+   * The heading over the summary and the list.
+   *
+   * "사업 규모와 구성" over seven support programmes described neither their
+   * scale nor their composition, because neither is what E-020 states.
+   */
+  sectionTitle?: string;
 };
+
+/** What one row of this element is, for headings outside this module. */
+export function publicPortfolioRecordLabelV138(elementId: string): string {
+  return PORTFOLIO_CONFIG_V132[elementId]?.recordLabel || "사업";
+}
+
+/** The heading this element's portfolio block should carry. */
+export function publicPortfolioSectionTitleV138(elementId: string): string {
+  return PORTFOLIO_CONFIG_V132[elementId]?.sectionTitle || "사업 규모와 구성";
+}
 
 const COMMON_AMOUNT_KEYS_V132 = [
   { key: "primaryFinanceAmount", currency: "USD" },
@@ -101,12 +129,43 @@ const PORTFOLIO_CONFIG_V132: Record<string, PortfolioConfigV132> = {
     yearKeys: ["statementDate"],
     yearLabel: "자료 시점",
     categoryKeys: ["scopeValue"],
+    recordLabel: "확인 항목",
+    sectionTitle: "확인 항목과 대상 범위",
   },
   "C-008": {
     amountKeys: [],
     yearKeys: ["statementDate"],
     yearLabel: "자료 시점",
     categoryKeys: ["actorType", "registry", "sectorName"],
+    recordLabel: "확인 항목",
+    sectionTitle: "확인 항목과 참여 주체",
+  },
+  // 24 Korean companies, not 24 projects.
+  //
+  // No year: the only column carrying one states two at once - "1999 설립 /
+  // 2020 진출" - so reading a year off it published a company's founding date
+  // as the year it entered the market. No reviewed column states the entry year
+  // on its own, so none is claimed.
+  //
+  // No 진출_상태 either: its values are 존치 and the like, the retention verdict
+  // from the source's own review, not whether the company operates there. The
+  // entry status a reader wants ("미진출(확인)", "현지법인") sits in the mode
+  // column, which is already grouped.
+  "E-018": {
+    amountKeys: [],
+    yearKeys: [],
+    categoryKeys: ["technologyField", "entryMode"],
+    recordLabel: "수록 기업",
+    sectionTitle: "진출 기업의 분야와 진출 형태",
+  },
+  // Seven support programmes: an offer a reader can apply to, not a project.
+  "E-020": {
+    amountKeys: [],
+    yearKeys: ["applicationPeriod"],
+    yearLabel: "신청 시기",
+    categoryKeys: ["supportType", "supportingOrganization", "eligibleRecipients"],
+    recordLabel: "지원제도",
+    sectionTitle: "지원 분야와 신청 대상",
   },
   "C-025": {
     // The reductions this element states are tCO2e, not money. Publishing them
@@ -223,15 +282,15 @@ export default function PublicPortfolioSummaryV132({
           note survives, because how the totals were reached is something the
           reader cannot infer from the figures. */}
       <header className="pps132-heading">
-        <p>공개된 사업을 집계하며, 통화가 확인된 금액만 통화별로 합산합니다.</p>
+        <p>{`공개된 ${config?.recordLabel || "사업"}을 집계하며, 통화가 확인된 금액만 통화별로 합산합니다.`}</p>
         {analysis.aggregateCount > 0 && (
           <p data-portfolio-note="aggregate-excluded">
-            {`원천이 집계·설명 행으로 표시한 ${analysis.aggregateCount.toLocaleString("ko-KR")}건은 개별 사업이 아니므로 합계와 건수에서 제외했습니다. 해당 행은 목록과 상세, 다운로드에서 그대로 확인할 수 있습니다.`}
+            {`원천이 집계·설명 행으로 표시한 ${analysis.aggregateCount.toLocaleString("ko-KR")}건은 개별 ${config?.recordLabel || "사업"}이 아니므로 합계와 건수에서 제외했습니다. 해당 행은 목록과 상세, 다운로드에서 그대로 확인할 수 있습니다.`}
           </p>
         )}
       </header>
       <div className="pps132-kpis">
-        <article data-portfolio-kpi="record-count"><span>총 사업 수</span><strong>{analysis.individualCount.toLocaleString("ko-KR")}</strong><small>건</small></article>
+        <article data-portfolio-kpi="record-count"><span>{`총 ${config?.recordLabel || "사업"} 수`}</span><strong>{analysis.individualCount.toLocaleString("ko-KR")}</strong><small>건</small></article>
         {analysis.amounts.map((amount) => (
           <article data-portfolio-kpi="funding-total" key={amount.currency}>
             <span>{config?.amountLabel || "확인 금액 합계"}</span>
@@ -250,7 +309,7 @@ export default function PublicPortfolioSummaryV132({
       <div className="pps132-distributions">
         {analysis.years.length > 0 && (
           <DistributionV132
-            title="연도별 사업 수"
+            title={`연도별 ${config?.recordLabel || "사업"} 수`}
             rows={analysis.years}
             testId="portfolio-year-trend-v132"
           />

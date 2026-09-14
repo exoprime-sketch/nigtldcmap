@@ -32,7 +32,10 @@ import {
 } from "../../../data/visualization/publicCopyRegistryV126";
 import PublicEntityCardGridV131 from "../public/PublicEntityCardGridV131";
 import PublicPortfolioListV132 from "../public/PublicPortfolioListV132";
-import PublicPortfolioSummaryV132 from "../public/PublicPortfolioSummaryV132";
+import PublicPortfolioSummaryV132, {
+  publicPortfolioRecordLabelV138,
+  publicPortfolioSectionTitleV138,
+} from "../public/PublicPortfolioSummaryV132";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 
 import "./semantic-contract-renderer-v125.css";
@@ -856,9 +859,8 @@ function CategoryComparisonV125({ rows }: { rows: NumericRowV125[] }) {
   const comparisonKey = comparisonKeyV138(rows);
   const rowLabel = (row: NumericRowV125) => {
     if (comparisonKey) {
-      const value =
-        row.dimensionLabels?.[comparisonKey] || row.dimensions?.[comparisonKey];
-      if (value) return publicDimensionValueV134(comparisonKey, value);
+      const value = rowSubjectValuesV138(row).get(comparisonKey);
+      if (value) return subjectLabelV138(comparisonKey, value);
     }
     return categoryLabelV125(row);
   };
@@ -1114,10 +1116,24 @@ function EvidenceMatrixV125({
   rows: PresentRowV125[];
   entities: VietnamEntityV124[];
 }) {
+  // The same repeated-label trap as the bar comparison: E-017 listed five rows
+  // of "기후기술 수준 순위" against 5/2/3/4/1 and never named a country.
+  const comparisonKey = comparisonKeyV138(rows);
+  const rowArea = (row: PresentRowV125) => {
+    if (comparisonKey) {
+      const value = rowSubjectValuesV138(row).get(comparisonKey);
+      if (value) {
+        const subject = subjectLabelV138(comparisonKey, value);
+        const measure = row.semanticMeasure.labelKo;
+        return measure && measure !== subject ? `${subject} · ${measure}` : subject;
+      }
+    }
+    return categoryLabelV125(row);
+  };
   const items = [
     ...rows.map((row) => ({
       key: row.recordId,
-      area: categoryLabelV125(row),
+      area: rowArea(row),
       result: formatValueV121(row.value),
       basis: String(row.year || row.period || row.provenance.referenceYear || "—"),
     })),
@@ -1168,7 +1184,10 @@ function PortfolioEntitiesV125({
   elementTitle?: string;
 }) {
   return (
-    <VisualizationFrameV125 eyebrow="사업·재원" title="사업 규모와 구성">
+    <VisualizationFrameV125
+      eyebrow="사업·재원"
+      title={publicPortfolioSectionTitleV138(elementId)}
+    >
       <PublicPortfolioSummaryV132
         elementId={elementId}
         entities={entities}
@@ -1294,7 +1313,15 @@ function publicCollectionEyebrowV136_2(detailTemplate?: string): string {
   }
 }
 
-function publicCollectionTitleV136_2(detailTemplate?: string): string {
+function publicCollectionTitleV136_2(
+  detailTemplate?: string,
+  elementId?: string
+): string {
+  // A partner-template element whose rows are companies or support programmes
+  // should not head its list "기관 목록"; the configured record label says what
+  // the rows are.
+  const recordLabel = elementId ? publicPortfolioRecordLabelV138(elementId) : "사업";
+  if (recordLabel !== "사업") return `${recordLabel} 목록`;
   switch (detailTemplate) {
     case "project":
       return "사업 목록";
@@ -1547,32 +1574,71 @@ function comparisonQualifierV137(
 }
 
 /**
+ * The subject codes that appear as a row's own country.
+ *
+ * E-017 compares Korea against its competitors and states each row's subject in
+ * countryIso3 alone - CHN, EUU, JPN, KOR, USA - which the semantic projection
+ * does not carry as a dimension. Unlisted codes print as delivered rather than
+ * being guessed at.
+ */
+const SUBJECT_COUNTRY_LABELS_V138: Record<string, string> = {
+  CHN: "중국",
+  EUU: "유럽연합",
+  JPN: "일본",
+  KOR: "한국",
+  USA: "미국",
+  VNM: "베트남",
+};
+
+const COUNTRY_SUBJECT_KEY_V138 = "__countryIso3__";
+
+/** Every value that could tell one row from another, keyed by where it came from. */
+function rowSubjectValuesV138(row: SemanticObservationV125): Map<string, string> {
+  const values = new Map<string, string>();
+  const keys = new Set([
+    ...Object.keys(row.dimensionLabels || {}),
+    ...Object.keys(row.dimensions || {}),
+  ]);
+  for (const key of keys) {
+    const value = row.dimensionLabels?.[key] || row.dimensions?.[key];
+    if (value) values.set(key, String(value));
+  }
+  // Almost every element delivers one country, so this only ever distinguishes
+  // the handful that compare several.
+  if (row.countryIso3) values.set(COUNTRY_SUBJECT_KEY_V138, String(row.countryIso3));
+  return values;
+}
+
+/** How a distinguishing value should read on screen. */
+function subjectLabelV138(key: string, value: string): string {
+  if (key === COUNTRY_SUBJECT_KEY_V138) {
+    return SUBJECT_COUNTRY_LABELS_V138[value] || value;
+  }
+  return publicDimensionValueV134(key, value);
+}
+
+/**
  * The dimension that actually tells a set of rows apart.
  *
  * A dimension holding one value cannot label a comparison. B-033 states
  * "세부 분류 = 성(省) 단위" on all 63 province rows and carries the province name in
  * a second dimension, so every bar was captioned "성(省) 단위 · 2001" and the
- * province - the only thing that differed - never appeared. Where the preferred
- * label repeats, the key taking the most distinct values across these rows is
- * what is being compared.
+ * province - the only thing that differed - never appeared. E-017 prints five
+ * rows of "기후기술 수준 순위" reading 5/2/3/4/1 with no country anywhere, because
+ * the only thing separating them is countryIso3.
  *
- * Returns null when the preferred label is already unique, so screens that read
- * correctly today keep the label they have.
+ * Where the preferred label repeats, the key taking the most distinct values
+ * across these rows is what is being compared. Returns null when the preferred
+ * label is already unique, so screens that read correctly today are untouched.
  */
 function comparisonKeyV138(rows: SemanticObservationV125[]): string | null {
   const preferred = new Set(rows.map((row) => categoryLabelV125(row)));
   if (preferred.size === rows.length) return null;
   const values = new Map<string, Set<string>>();
   for (const row of rows) {
-    const keys = new Set([
-      ...Object.keys(row.dimensionLabels || {}),
-      ...Object.keys(row.dimensions || {}),
-    ]);
-    for (const key of keys) {
-      const value = row.dimensionLabels?.[key] || row.dimensions?.[key];
-      if (!value) continue;
+    for (const [key, value] of rowSubjectValuesV138(row)) {
       const seen = values.get(key) || new Set<string>();
-      seen.add(String(value));
+      seen.add(value);
       values.set(key, seen);
     }
   }

@@ -225,6 +225,24 @@ const REQUIRED_PUBLIC_GLOSSARY_V134: PublicGlossaryEntryV134[] = [
     category: "climate-risk",
   }),
   seedV134({
+    id: "tx",
+    term: "TX",
+    englishName: "Daily maximum temperature",
+    koreanName: "일 최고기온",
+    definition:
+      "하루 중 가장 높은 기온입니다. 폭염일수처럼 기준 온도를 넘은 날을 셀 때 그 기준이 되는 값으로, TX 35는 일 최고기온이 35도 이상인 날을 뜻합니다.",
+    category: "climate-risk",
+  }),
+  seedV134({
+    id: "tn",
+    term: "TN",
+    englishName: "Daily minimum temperature",
+    koreanName: "일 최저기온",
+    definition:
+      "하루 중 가장 낮은 기온입니다. 열대야처럼 밤사이 기온이 내려가지 않은 날을 셀 때 기준이 되는 값입니다.",
+    category: "climate-risk",
+  }),
+  seedV134({
     id: "spi",
     term: "SPI",
     englishName: "Standardised Precipitation Index",
@@ -1048,6 +1066,8 @@ const LEGACY_CATEGORY_BY_TERM_V134: Partial<
   DNI: "climate-risk",
   PVOUT: "energy-technology",
   CDD: "climate-risk",
+  TX: "climate-risk",
+  TN: "climate-risk",
   TX35: "climate-risk",
   TX40: "climate-risk",
   TR20: "climate-risk",
