@@ -62,6 +62,18 @@ const TECHNICAL_PUBLIC_TITLE_V131 = [
  */
 const ELEMENT_TITLE_FIELDS_V131: Record<string, EntityTitleFieldV131[]> = {
   "A-029": [{ key: "field_09972978" }],
+  // V138 map targets: the row's own subject, not its record key. A sea-level
+  // row is filed as "1003_medium_ssp126_q5_2060"; the station is the subject.
+  "B-008": [{ key: "관측소명_베트남어" }, { key: "관측소명_PSMSL" }],
+  "B-023": [{ key: "지점_유역명" }],
+  "B-028": [{ key: "지점_유역명" }],
+  "B-025": [{ key: "유역명_국문" }, { key: "유역명_영문" }],
+  "B-012": [{ key: "재해세부유형" }, { key: "재해유형" }],
+  "E-004": [{ key: "orgName" }],
+  "E-005": [{ key: "orgName" }],
+  "E-006": [{ key: "orgName" }],
+  "E-018": [{ key: "companyName" }],
+  "E-019": [{ key: "organizationName" }],
   "E-008": [{ key: "field_98c97d76" }],
   "E-001": [{ key: "field_7b638c0f" }],
   "D-014": [{ key: "attr_1", source: "raw" }],
@@ -88,6 +100,16 @@ const ELEMENT_RECORD_TYPE_V131: Record<string, string> = {
   "D-022": "개발금융 투자사업",
   "D-024": "임팩트 투자",
   "E-020": "지원 프로그램",
+  "B-008": "조위 관측소",
+  "B-012": "재해 사건",
+  "B-023": "관측지점·유역",
+  "B-025": "하천 유역",
+  "B-028": "관측지점·유역",
+  "E-004": "현지사무소",
+  "E-005": "기관",
+  "E-006": "투자기관",
+  "E-018": "한국 기업",
+  "E-019": "한국 기관 사무소",
 };
 
 const TEMPLATE_RECORD_TYPE_V131: Record<string, string> = {

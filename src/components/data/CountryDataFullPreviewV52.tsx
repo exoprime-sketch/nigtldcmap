@@ -199,9 +199,32 @@ function buildPublicDataSummaryV127(
       const lastYear = populatedYears[populatedYears.length - 1];
       const yearRange =
         firstYear === lastYear ? `${firstYear}년` : `${firstYear}~${lastYear}년`;
-      return `${countryNameKo} · 지표 ${indicatorCount.toLocaleString(
+      // A province series is one indicator per province in the delivery, so
+      // B-033 counted "지표 63종" for one measure over 63 provinces. The
+      // region suffix is stripped before counting; the provinces are named as
+      // what they are.
+      const families = new Set(
+        populatedObservations
+          .map((row) => row.indicatorId)
+          .filter(Boolean)
+          .map((id) =>
+            String(id)
+              // Province suffixes: numeric ISO-like codes and the five
+              // municipality abbreviations; national series suffixed by a year
+              // or a canopy threshold are one series each, not one per year.
+              .replace(/_vn_(?:\d{2}|ct|hn|hp|sg|dn)$/u, "")
+              .replace(/_y\d{4}$/u, "")
+              .replace(/_t(?:30|50|75)$/u, "")
+              .replace(
+                /_(?:central_highlands|mekong_river_delta|north_central_coast_and_south_central_coast|north_east_north_west|red_river_delta|south_east|total)$/u,
+                ""
+              )
+          )
+      ).size;
+      const regionalIndicators = families > 0 && families < indicatorCount;
+      return `${countryNameKo} · 지표 ${(regionalIndicators ? families : indicatorCount).toLocaleString(
         "ko-KR"
-      )}종 · 관측기간 ${yearRange}`;
+      )}종${regionalIndicators ? " · 성·시 단위" : ""} · 관측기간 ${yearRange}`;
     }
 
     const observationSummary = [

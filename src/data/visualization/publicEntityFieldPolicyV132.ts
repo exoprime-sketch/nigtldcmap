@@ -228,6 +228,9 @@ const REVIEWED_ENTITY_ALIASES_V132: Record<string, ReviewedAliasV132[]> = {
     { publicKey: "publicationYear", sourceKey: "field_d7e5fb05" },
     { publicKey: "documentUrl", sourceKey: "field_efec870d", kind: "url" },
     { publicKey: "doi", sourceKey: "field_f108b738" },
+    // The source's own justification for the CTIS technology code it assigned
+    // to the row; the 38-class names on the screen are read from its codes.
+    { publicKey: "technologyBasis", sourceKey: "기술코드_근거문구" },
   ],
 };
 
