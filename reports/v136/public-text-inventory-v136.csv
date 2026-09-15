@@ -1,88 +1,158 @@
 route,pageType,section,visibleText,component
-home,home,,개도국 전략지도,STRONG
+home,home,,개도국 기후기술 협력 플랫폼,STRONG
 home,home,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 home,home,,데이터 찾기,BUTTON
 home,home,,데이터 지도,BUTTON
 home,home,,데이터 다운로드,BUTTON
 home,home,,⌕,SPAN
 home,home,,검색,STRONG
-home,home,,기후기술 협력 데이터,SPAN
+home,home,,국가별 기후기술 협력 데이터,SPAN
 home,home,,개도국 기후기술 협력 플랫폼,H1
-home,home,,기후기술 협력에 필요한 정책·에너지·기후·사업·재원 데이터를 검색하고 지도와 차트로 확인하세요.,P
+home,home,,"베트남의 정책·에너지·기후위험·사업·협력기관 정보를 검색하고, 지역별 분포와 변화를 확인하세요.",P
 home,home,,현재 제공 국가 · 베트남,P
-home,home,,"데이터명, 항목, 기술, 기관, 사업 또는 지역 검색",LABEL
-home,home,,빠른 검색,SPAN
-home,home,,GDP,SPAN
-home,home,,( 국내총생산 ),SPAN
-home,home,,송전망,BUTTON
+home,home,,데이터명·지역·기술·기관 검색,LABEL
+home,home,,검색,BUTTON
+home,home,,검색 예시,SPAN
+home,home,,국내총생산,BUTTON
+home,home,,가뭄,BUTTON
 home,home,,산림손실,BUTTON
-home,home,,재생에너지,BUTTON
-home,home,,기후재원,BUTTON
-home,home,,주제·기관·기술별 데이터 검색,SPAN
-home,home,,지역·시설·사업 위치와 분포 비교,SPAN
-home,home,,필요한 데이터를 · 으로 다운로드,SPAN
-home,home,,CSV,BUTTON
-home,home,,JSON,BUTTON
+home,home,,송전망,BUTTON
+home,home,home-hero-map-v139,베트남 송전망,STRONG
+home,home,home-hero-map-v139,전압별 송전선 분포 · 2016년,SPAN
+home,home,home-hero-map-v139,500 · 32구간,LI
+home,home,home-hero-map-v139,kV,BUTTON
+home,home,home-hero-map-v139,220 · 143구간,LI
+home,home,home-hero-map-v139,110 · 431구간,LI
+home,home,home-hero-map-v139,출처 World Bank (ENERGYDATA.INFO),SMALL
+home,home,home-hero-map-link-v139,이 자료 지도에서 보기 →,BUTTON
+home,home,,전체 데이터 항목,DT
+home,home,,152개,DD
+home,home,,지도 제공 항목,DT
+home,home,,42개,DD
+home,home,,다운로드 가능 항목,DT
+home,home,,147개,DD
+home,home,,데이터 기준일,DT
+home,home,,2026.08.27,DD
+home,home,,주요 데이터,H2
+home,home,,전체 데이터 보기 →,BUTTON
+home,home,,국가 거버넌스 지표( ),H3
+home,home,,WGI,SPAN
+home,home,,여섯 거버넌스 영역의 추정치를 비교하고 1996년부터의 변화를 확인할 수 있습니다.,P
+home,home,,기간,DT
+home,home,,2024년 값 · 1996–2024년 제공,DD
+home,home,,단위,DT
+home,home,,추정치(−2.5 약함 ~ +2.5 강함),DD
+home,home,,제공,DT
+home,home,,World Bank · 세계 거버넌스 지표( ),DD
+home,home,,WGI,BUTTON
+home,home,,백분위 순위는 다른 척도이므로 함께 그리지 않습니다.,P
+home,home,,상세보기 →,BUTTON
+home,home,,국내총생산 및 경제성장,H3
+home,home,,국내총생산의 연도별 추이와 성장률을 확인할 수 있습니다.,P
+home,home,,1985–2025년,DD
+home,home,,"10억 미국달러(명목, 현재 가격)",DD
+home,home,,World Bank 국가 통계,DD
+home,home,,명목 달러 계열 하나만 그립니다. 실질·구매력평가 계열은 상세에서 따로 제공합니다.,P
+home,home,,온실가스 종류별 배출량,H3
+home,home,,온실가스 종류별 배출량의 구성과 1970년부터의 변화를 확인할 수 있습니다.,P
+home,home,,CO₂,BUTTON
+home,home,,430.8,STRONG
+home,home,,74 %,SMALL
+home,home,,CH₄,BUTTON
+home,home,,114.9,STRONG
+home,home,,20 %,SMALL
+home,home,,N₂O,BUTTON
+home,home,,26.1,STRONG
+home,home,,4 %,SMALL
+home,home,,F-gas,SPAN
+home,home,,10.9,STRONG
+home,home,,2 %,SMALL
+home,home,,2024년 구성 · 1970–2024년 제공,DD
+home,home,,"Mt ( -100, )",DD
+home,home,,CO₂eq,BUTTON
+home,home,,GWP,BUTTON
+home,home,,AR5,BUTTON
+home,home,,European Commission ·,DD
+home,home,,JRC,BUTTON
+home,home,,EDGAR,BUTTON
+home,home,,네 가스를 같은 환산 단위로 나란히 둔 구성입니다. 원천은 별도 총계 행을 제공하지 않습니다.,P
+home,home,,발전소 현황,H3
+home,home,,"발전소 위치와 발전원별 분포, 설비용량을 지도와 목록으로 확인할 수 있습니다.",P
+home,home,,WRI,BUTTON
+home,home,,236 행,STRONG
+home,home,,OSM,BUTTON
+home,home,,"1,727 행",STRONG
+home,home,,v1.3.0(2021) · 2026년 추출,DD
+home,home,,GPPD,BUTTON
+home,home,,원천 수록 행(곳),DD
+home,home,,World Resources Institute · OpenStreetMap 기여자,DD
+home,home,,"두 원천( 236행 · 1,727행)은 공통 식별자가 없어 고유 발전소 수로 합치지 않습니다.",P
+home,home,,베트남 송전망,H3
+home,home,,송전선 경로와 전압별 분포를 지도에서 확인할 수 있습니다.,P
+home,home,,500,SPAN
+home,home,,32 구간,STRONG
+home,home,,"4,092 km",SMALL
+home,home,,220,SPAN
+home,home,,143 구간,STRONG
+home,home,,"7,201 km",SMALL
+home,home,,110,SPAN
+home,home,,431 구간,STRONG
+home,home,,"12,314 km",SMALL
+home,home,,2016년 선로(경로 있음) · 계획 선로는 목록,DD
+home,home,,· 구간 수 · km,DD
+home,home,,World Bank (ENERGYDATA.INFO),DD
+home,home,,개정 선로 116행(계획 68행 포함)은 경로 좌표가 없어 이 지도에는 없고 상세 목록에만 있습니다.,P
+home,home,,PDP8,BUTTON
+home,home,,연간 산림손실,H3
+home,home,,성·시별 연간 산림(수관) 손실과 누적 변화를 확인할 수 있습니다.,P
+home,home,,Quảng Ninh · 2024년 손실이 가장 큰 성·시,P
+home,home,,2001–2024년,DD
+home,home,,/년 · 수관 밀도 30% 기준,DD
+home,home,,ha,BUTTON
+home,home,,Global Forest Watch ( / ),DD
+home,home,,UMD,BUTTON
+home,home,,"63개 성·시 계열 중 한 곳입니다. 원천은 전국 계열을 제공하지 않으며, 성·시 값을 더해 전국값으로 만들지 않습니다.",P
+home,home,,재생에너지 발주·확대계획,H3
+home,home,,재생에너지 기술별·기간별 성·시 계획용량을 비교할 수 있습니다.,P
+home,home,,"63개 성·시 중 상위 6곳 · 합계 27,385",P
+home,home,,MW,BUTTON
+home,home,,2025–2030년 · 집중형 태양광,DD
+home,home,,(계획 용량),DD
+home,home,,"베트남 총리실 · 산업무역부( ), 개정 부록 II",DD
+home,home,,MOIT,BUTTON
+home,home,,Quyết định 768/QĐ-TTg (2025-04-15)의 계획 용량이며 설치 실적이 아닙니다.,P
+home,home,,국제협력·기후재원 사업,H3
+home,home,,"기후재원 기금별 사업 수와 사업 유형, 기간을 확인할 수 있습니다.",P
+home,home,,GEF,BUTTON
+home,home,,53,STRONG
+home,home,,75 %,SMALL
+home,home,,GCF,BUTTON
+home,home,,8,STRONG
+home,home,,11 %,SMALL
+home,home,,( ),SPAN
+home,home,,CIF,BUTTON
+home,home,,CTF,BUTTON
+home,home,,6,STRONG
+home,home,,8 %,SMALL
+home,home,,적응기금,SPAN
+home,home,,4,STRONG
+home,home,,6 %,SMALL
+home,home,,1991–2026년 승인·등록 사업,DD
+home,home,,사업 수(건),DD
+home,home,,· · 적응기금 · 공개 사업 목록,DD
+home,home,,같은 기준(개별 사업 행 수)으로 센 구성입니다. 승인액은 통화·기간·집행 단계가 달라 합산하지 않습니다.,P
+home,home,,주제별 데이터,H2
+home,home,,주제를 고르면 데이터 찾기에 그 분류 필터가 적용됩니다.,P
 home,home,,국가 기본정보,BUTTON
 home,home,,기후·환경,BUTTON
 home,home,,정책·제도,BUTTON
 home,home,,시장·산업·재원,BUTTON
 home,home,,협력사업·이행,BUTTON
-home,home,,주요 데이터,STRONG
-home,home,,데이터 목록 →,BUTTON
-home,home,,01,SPAN
-home,home,,국가 거버넌스 지표( ),STRONG
-home,home,,WGI,SPAN
-home,home,,World Bank · 1996–2024년,SMALL
-home,home,,02,SPAN
-home,home,,국내총생산 및 경제성장,STRONG
-home,home,,World Bank · 1985–2025년,SMALL
-home,home,,03,SPAN
-home,home,,온실가스 종류별 배출량,STRONG
-home,home,,"European Commission, Joint Research Centre ( ) — · 1970–2024년",SMALL
-home,home,,JRC,SPAN
-home,home,,EDGAR,SPAN
-home,home,,( 세계 대기연구 배출 데이터베이스 ),SPAN
-home,home,,04,SPAN
-home,home,,발전소 현황,STRONG
-home,home,,OpenStreetMap contributors · 2021년,SMALL
-home,home,,05,SPAN
-home,home,,베트남 송전망,STRONG
-home,home,,World Bank (ENERGYDATA.INFO) · 2016년,SMALL
-home,home,,06,SPAN
-home,home,,연간 산림손실,STRONG
-home,home,,Global Forest Watch ( / ) · 2001–2024년,SMALL
-home,home,,UMD,SPAN
-home,home,,( 메릴랜드대학교 ),SPAN
-home,home,,WRI,SPAN
-home,home,,( 세계자원연구소 ),SPAN
-home,home,,07,SPAN
-home,home,,재생에너지 발주·확대계획,STRONG
-home,home,,개정 부록Ⅱ(768/QĐ-TTg) 원문 자체 검산 · 2021–2050년,SMALL
-home,home,,PDP8,SPAN
-home,home,,( 베트남 제8차 국가전력개발계획 ),SPAN
-home,home,,08,SPAN
-home,home,,국제협력·기후재원 사업,STRONG
-home,home,,Climate Investment Funds ( ) — Clean Technology Fund ( ) Trust Fund Committee · 2013–2026년,SMALL
-home,home,,CIF,SPAN
-home,home,,CTF,SPAN
-home,home,,데이터 현황,H2
-home,home,,데이터 이용안내 →,BUTTON
-home,home,,데이터,DT
-home,home,,152개,DD
-home,home,,지도 데이터,DT
-home,home,,42개,DD
-home,home,,다운로드 가능,DT
-home,home,,147개,DD
-home,home,,데이터 기준일,DT
-home,home,,2026.08.27,DD
-home,home,,개도국 기후기술 협력 플랫폼,STRONG
 home,home,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-home,home,,지도,BUTTON
 home,home,,데이터 이용안내,BUTTON
 home,home,,© 2026 국가녹색기술연구소,SPAN
 home,home,,문의,A
-finder,finder,,개도국 전략지도,STRONG
+finder,finder,,개도국 기후기술 협력 플랫폼,STRONG
 finder,finder,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 finder,finder,,데이터 찾기,BUTTON
 finder,finder,,데이터 지도,BUTTON
@@ -329,13 +399,11 @@ finder,finder,public-finder-card-v135,CIF,BUTTON
 finder,finder,public-finder-card-v135,CTF,BUTTON
 finder,finder,public-finder-card-v135,GEF,BUTTON
 finder,finder,finder-card-tags-v135,및 기후기금 재원,SPAN
-finder,finder,,개도국 기후기술 협력 플랫폼,STRONG
 finder,finder,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-finder,finder,,지도,BUTTON
 finder,finder,,데이터 이용안내,BUTTON
 finder,finder,,© 2026 국가녹색기술연구소,SPAN
 finder,finder,,문의,A
-download,download,,개도국 전략지도,STRONG
+download,download,,개도국 기후기술 협력 플랫폼,STRONG
 download,download,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 download,download,,데이터 찾기,BUTTON
 download,download,,데이터 지도,BUTTON
@@ -997,13 +1065,11 @@ download,download,,CSV,LABEL
 download,download,,JSON,LABEL
 download,download,,다운로드할 데이터를 선택해 주세요,SPAN
 download,download,,다운로드,BUTTON
-download,download,,개도국 기후기술 협력 플랫폼,STRONG
 download,download,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-download,download,,지도,BUTTON
 download,download,,데이터 이용안내,BUTTON
 download,download,,© 2026 국가녹색기술연구소,SPAN
 download,download,,문의,A
-guide,guide,,개도국 전략지도,STRONG
+guide,guide,,개도국 기후기술 협력 플랫폼,STRONG
 guide,guide,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 guide,guide,,데이터 찾기,BUTTON
 guide,guide,,데이터 지도,BUTTON
@@ -2906,13 +2972,11 @@ guide,guide,,MW,BUTTON
 guide,guide,,문의 또는 오류 제보,H2
 guide,guide,,"데이터명, 화면 주소, 확인한 값과 문제 상황을 함께 보내 주시면 확인에 도움이 됩니다.",P
 guide,guide,,이메일로 문의하기,A
-guide,guide,,개도국 기후기술 협력 플랫폼,STRONG
 guide,guide,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-guide,guide,,지도,BUTTON
 guide,guide,,데이터 이용안내,BUTTON
 guide,guide,,© 2026 국가녹색기술연구소,SPAN
 guide,guide,,문의,A
-finder-cards,finder,,개도국 전략지도,STRONG
+finder-cards,finder,,개도국 기후기술 협력 플랫폼,STRONG
 finder-cards,finder,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 finder-cards,finder,,데이터 찾기,BUTTON
 finder-cards,finder,,데이터 지도,BUTTON
@@ -3159,13 +3223,11 @@ finder-cards,finder,public-finder-card-v135,CIF,BUTTON
 finder-cards,finder,public-finder-card-v135,CTF,BUTTON
 finder-cards,finder,public-finder-card-v135,GEF,BUTTON
 finder-cards,finder,finder-card-tags-v135,및 기후기금 재원,SPAN
-finder-cards,finder,,개도국 기후기술 협력 플랫폼,STRONG
 finder-cards,finder,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-finder-cards,finder,,지도,BUTTON
 finder-cards,finder,,데이터 이용안내,BUTTON
 finder-cards,finder,,© 2026 국가녹색기술연구소,SPAN
 finder-cards,finder,,문의,A
-map,map,,개도국 전략지도,STRONG
+map,map,,개도국 기후기술 협력 플랫폼,STRONG
 map,map,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 map,map,,데이터 찾기,BUTTON
 map,map,,데이터 지도,BUTTON
@@ -3420,7 +3482,7 @@ map,map,map-analysis-panel,지도 분석,H2
 map,map,map-analysis-panel,전국 현황과 선택한 항목을 함께 확인하세요.,P
 map,map,map-analysis-panel,분석을 시작하세요,H3
 map,map,map-analysis-panel,추천 분석이나 지도 데이터를 선택하면 전국 요약과 상세정보가 여기에 표시됩니다.,P
-A-001,detail,,개도국 전략지도,STRONG
+A-001,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-001,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-001,detail,,데이터 찾기,BUTTON
 A-001,detail,,데이터 지도,BUTTON
@@ -3623,13 +3685,11 @@ A-001,detail,public-raw-table,1.5804,TD
 A-001,detail,public-raw-table,1.7167,TD
 A-001,detail,,다운로드,H3
 A-001,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-001,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-001,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-001,detail,,지도,BUTTON
 A-001,detail,,데이터 이용안내,BUTTON
 A-001,detail,,© 2026 국가녹색기술연구소,SPAN
 A-001,detail,,문의,A
-A-002,detail,,개도국 전략지도,STRONG
+A-002,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-002,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-002,detail,,데이터 찾기,BUTTON
 A-002,detail,,데이터 지도,BUTTON
@@ -4092,13 +4152,11 @@ A-002,detail,public-raw-table,37.5104,TD
 A-002,detail,public-raw-table,37.6261,TD
 A-002,detail,,다운로드,H3
 A-002,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-002,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-002,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-002,detail,,지도,BUTTON
 A-002,detail,,데이터 이용안내,BUTTON
 A-002,detail,,© 2026 국가녹색기술연구소,SPAN
 A-002,detail,,문의,A
-A-003,detail,,개도국 전략지도,STRONG
+A-003,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-003,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-003,detail,,데이터 찾기,BUTTON
 A-003,detail,,데이터 지도,BUTTON
@@ -4506,13 +4564,11 @@ A-003,detail,public-raw-table,"1,600,452,078,876.743",TD
 A-003,detail,public-raw-table,"1,786,022,723,580.501",TD
 A-003,detail,,다운로드,H3
 A-003,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-003,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-003,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-003,detail,,지도,BUTTON
 A-003,detail,,데이터 이용안내,BUTTON
 A-003,detail,,© 2026 국가녹색기술연구소,SPAN
 A-003,detail,,문의,A
-A-004,detail,,개도국 전략지도,STRONG
+A-004,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-004,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-004,detail,,데이터 찾기,BUTTON
 A-004,detail,,데이터 지도,BUTTON
@@ -4651,13 +4707,11 @@ A-004,detail,public-raw-table,4.4,TD
 A-004,detail,public-raw-table,4.2,TD
 A-004,detail,,다운로드,H3
 A-004,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-004,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-004,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-004,detail,,지도,BUTTON
 A-004,detail,,데이터 이용안내,BUTTON
 A-004,detail,,© 2026 국가녹색기술연구소,SPAN
 A-004,detail,,문의,A
-A-005,detail,,개도국 전략지도,STRONG
+A-005,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-005,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-005,detail,,데이터 찾기,BUTTON
 A-005,detail,,데이터 지도,BUTTON
@@ -4917,13 +4971,11 @@ A-005,detail,public-raw-table,42.3542,TD
 A-005,detail,public-raw-table,42.7438,TD
 A-005,detail,,다운로드,H3
 A-005,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-005,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-005,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-005,detail,,지도,BUTTON
 A-005,detail,,데이터 이용안내,BUTTON
 A-005,detail,,© 2026 국가녹색기술연구소,SPAN
 A-005,detail,,문의,A
-A-006,detail,,개도국 전략지도,STRONG
+A-006,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-006,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-006,detail,,데이터 찾기,BUTTON
 A-006,detail,,데이터 지도,BUTTON
@@ -5134,13 +5186,11 @@ A-006,detail,public-raw-table,6.421,TD
 A-006,detail,public-raw-table,6.41,TD
 A-006,detail,,다운로드,H3
 A-006,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-006,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-006,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-006,detail,,지도,BUTTON
 A-006,detail,,데이터 이용안내,BUTTON
 A-006,detail,,© 2026 국가녹색기술연구소,SPAN
 A-006,detail,,문의,A
-A-007,detail,,개도국 전략지도,STRONG
+A-007,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-007,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-007,detail,,데이터 찾기,BUTTON
 A-007,detail,,데이터 지도,BUTTON
@@ -5550,13 +5600,11 @@ A-007,detail,public-raw-table,38.4901,TD
 A-007,detail,public-raw-table,38.8299,TD
 A-007,detail,,다운로드,H3
 A-007,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-007,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-007,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-007,detail,,지도,BUTTON
 A-007,detail,,데이터 이용안내,BUTTON
 A-007,detail,,© 2026 국가녹색기술연구소,SPAN
 A-007,detail,,문의,A
-A-008,detail,,개도국 전략지도,STRONG
+A-008,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-008,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-008,detail,,데이터 찾기,BUTTON
 A-008,detail,,데이터 지도,BUTTON
@@ -5678,13 +5726,11 @@ A-008,detail,public-raw-table,36.1,TD
 A-008,detail,public-raw-table,2022,TD
 A-008,detail,,다운로드,H3
 A-008,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-008,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-008,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-008,detail,,지도,BUTTON
 A-008,detail,,데이터 이용안내,BUTTON
 A-008,detail,,© 2026 국가녹색기술연구소,SPAN
 A-008,detail,,문의,A
-A-009,detail,,개도국 전략지도,STRONG
+A-009,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-009,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-009,detail,,데이터 찾기,BUTTON
 A-009,detail,,데이터 지도,BUTTON
@@ -5921,13 +5967,11 @@ A-009,detail,public-raw-table,5.4102,TD
 A-009,detail,public-raw-table,5.7854,TD
 A-009,detail,,다운로드,H3
 A-009,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-009,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-009,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-009,detail,,지도,BUTTON
 A-009,detail,,데이터 이용안내,BUTTON
 A-009,detail,,© 2026 국가녹색기술연구소,SPAN
 A-009,detail,,문의,A
-A-010,detail,,개도국 전략지도,STRONG
+A-010,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-010,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-010,detail,,데이터 찾기,BUTTON
 A-010,detail,,데이터 지도,BUTTON
@@ -6514,13 +6558,11 @@ A-010,detail,public-raw-table,94.5918,TD
 A-010,detail,public-raw-table,98.4551,TD
 A-010,detail,,다운로드,H3
 A-010,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-010,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-010,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-010,detail,,지도,BUTTON
 A-010,detail,,데이터 이용안내,BUTTON
 A-010,detail,,© 2026 국가녹색기술연구소,SPAN
 A-010,detail,,문의,A
-A-011,detail,,개도국 전략지도,STRONG
+A-011,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-011,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-011,detail,,데이터 찾기,BUTTON
 A-011,detail,,데이터 지도,BUTTON
@@ -7203,13 +7245,11 @@ A-011,detail,public-raw-table,18.5149,TD
 A-011,detail,public-raw-table,19.0564,TD
 A-011,detail,,다운로드,H3
 A-011,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-011,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-011,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-011,detail,,지도,BUTTON
 A-011,detail,,데이터 이용안내,BUTTON
 A-011,detail,,© 2026 국가녹색기술연구소,SPAN
 A-011,detail,,문의,A
-A-012,detail,,개도국 전략지도,STRONG
+A-012,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-012,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-012,detail,,데이터 찾기,BUTTON
 A-012,detail,,데이터 지도,BUTTON
@@ -7439,13 +7479,11 @@ A-012,detail,public-raw-table,-39.4913,TD
 A-012,detail,public-raw-table,World Bank,TD
 A-012,detail,,다운로드,H3
 A-012,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-012,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-012,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-012,detail,,지도,BUTTON
 A-012,detail,,데이터 이용안내,BUTTON
 A-012,detail,,© 2026 국가녹색기술연구소,SPAN
 A-012,detail,,문의,A
-A-013,detail,,개도국 전략지도,STRONG
+A-013,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-013,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-013,detail,,데이터 찾기,BUTTON
 A-013,detail,,데이터 지도,BUTTON
@@ -7603,13 +7641,11 @@ A-013,detail,v125-entity-table-fallback,– 연계 · 9.1 · 행동,TD
 A-013,detail,v125-entity-table-fallback,– 연계 · 9.4 · 행동,TD
 A-013,detail,,다운로드,H3
 A-013,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-013,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-013,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-013,detail,,지도,BUTTON
 A-013,detail,,데이터 이용안내,BUTTON
 A-013,detail,,© 2026 국가녹색기술연구소,SPAN
 A-013,detail,,문의,A
-A-014,detail,,개도국 전략지도,STRONG
+A-014,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-014,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-014,detail,,데이터 찾기,BUTTON
 A-014,detail,,데이터 지도,BUTTON
@@ -8199,13 +8235,11 @@ A-014,detail,public-raw-table,73.6386,TD
 A-014,detail,public-raw-table,73.843,TD
 A-014,detail,,다운로드,H3
 A-014,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-014,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-014,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-014,detail,,지도,BUTTON
 A-014,detail,,데이터 이용안내,BUTTON
 A-014,detail,,© 2026 국가녹색기술연구소,SPAN
 A-014,detail,,문의,A
-A-015,detail,,개도국 전략지도,STRONG
+A-015,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-015,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-015,detail,,데이터 찾기,BUTTON
 A-015,detail,,데이터 지도,BUTTON
@@ -8521,13 +8555,11 @@ A-015,detail,public-raw-table,THE 상위 3개 대학 점수 · 정규화 달성�
 A-015,detail,public-raw-table,84.9,TD
 A-015,detail,,다운로드,H3
 A-015,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-015,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-015,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-015,detail,,지도,BUTTON
 A-015,detail,,데이터 이용안내,BUTTON
 A-015,detail,,© 2026 국가녹색기술연구소,SPAN
 A-015,detail,,문의,A
-A-016,detail,,개도국 전략지도,STRONG
+A-016,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-016,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-016,detail,,데이터 찾기,BUTTON
 A-016,detail,,데이터 지도,BUTTON
@@ -8991,13 +9023,11 @@ A-016,detail,public-raw-table,4.5308,TD
 A-016,detail,public-raw-table,4.699,TD
 A-016,detail,,다운로드,H3
 A-016,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-016,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-016,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-016,detail,,지도,BUTTON
 A-016,detail,,데이터 이용안내,BUTTON
 A-016,detail,,© 2026 국가녹색기술연구소,SPAN
 A-016,detail,,문의,A
-A-017,detail,,개도국 전략지도,STRONG
+A-017,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-017,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-017,detail,,데이터 찾기,BUTTON
 A-017,detail,,데이터 지도,BUTTON
@@ -9174,13 +9204,11 @@ A-017,detail,public-raw-table,29,TD
 A-017,detail,public-raw-table,18,TD
 A-017,detail,,다운로드,H3
 A-017,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-017,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-017,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-017,detail,,지도,BUTTON
 A-017,detail,,데이터 이용안내,BUTTON
 A-017,detail,,© 2026 국가녹색기술연구소,SPAN
 A-017,detail,,문의,A
-A-018,detail,,개도국 전략지도,STRONG
+A-018,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-018,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-018,detail,,데이터 찾기,BUTTON
 A-018,detail,,데이터 지도,BUTTON
@@ -9286,13 +9314,11 @@ A-018,detail,public-source-panel,IRENA,SPAN
 A-018,detail,public-raw-table-summary,상세 데이터 · 전체 676행 · 값 있음 472행 · 결측 204행,SUMMARY
 A-018,detail,,다운로드,H3
 A-018,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-018,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-018,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-018,detail,,지도,BUTTON
 A-018,detail,,데이터 이용안내,BUTTON
 A-018,detail,,© 2026 국가녹색기술연구소,SPAN
 A-018,detail,,문의,A
-A-019,detail,,개도국 전략지도,STRONG
+A-019,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-019,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-019,detail,,데이터 찾기,BUTTON
 A-019,detail,,데이터 지도,BUTTON
@@ -9430,13 +9456,11 @@ A-019,detail,public-raw-table,6.5832,TD
 A-019,detail,public-raw-table,2023,TD
 A-019,detail,,다운로드,H3
 A-019,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-019,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-019,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-019,detail,,지도,BUTTON
 A-019,detail,,데이터 이용안내,BUTTON
 A-019,detail,,© 2026 국가녹색기술연구소,SPAN
 A-019,detail,,문의,A
-A-020,detail,,개도국 전략지도,STRONG
+A-020,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-020,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-020,detail,,데이터 찾기,BUTTON
 A-020,detail,,데이터 지도,BUTTON
@@ -9588,13 +9612,11 @@ A-020,detail,public-raw-table,44.89,TD
 A-020,detail,public-raw-table,출처에서 값을 제공하지 않음,TD
 A-020,detail,,다운로드,H3
 A-020,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-020,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-020,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-020,detail,,지도,BUTTON
 A-020,detail,,데이터 이용안내,BUTTON
 A-020,detail,,© 2026 국가녹색기술연구소,SPAN
 A-020,detail,,문의,A
-A-021,detail,,개도국 전략지도,STRONG
+A-021,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-021,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-021,detail,,데이터 찾기,BUTTON
 A-021,detail,,데이터 지도,BUTTON
@@ -9739,13 +9761,11 @@ A-021,detail,public-raw-table,99.6,TD
 A-021,detail,public-raw-table,99.9,TD
 A-021,detail,,다운로드,H3
 A-021,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-021,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-021,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-021,detail,,지도,BUTTON
 A-021,detail,,데이터 이용안내,BUTTON
 A-021,detail,,© 2026 국가녹색기술연구소,SPAN
 A-021,detail,,문의,A
-A-022,detail,,개도국 전략지도,STRONG
+A-022,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-022,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-022,detail,,데이터 찾기,BUTTON
 A-022,detail,,데이터 지도,BUTTON
@@ -9906,13 +9926,11 @@ A-022,detail,public-raw-table,(남부) · 연간 고객당 지속정전 횟수,T
 A-022,detail,public-raw-table,1.64,TD
 A-022,detail,,다운로드,H3
 A-022,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-022,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-022,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-022,detail,,지도,BUTTON
 A-022,detail,,데이터 이용안내,BUTTON
 A-022,detail,,© 2026 국가녹색기술연구소,SPAN
 A-022,detail,,문의,A
-A-023,detail,,개도국 전략지도,STRONG
+A-023,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-023,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-023,detail,,데이터 찾기,BUTTON
 A-023,detail,,데이터 지도,BUTTON
@@ -10023,13 +10041,11 @@ A-023,detail,public-source-panel,OpenStreetMap contributors 확인,A
 A-023,detail,public-raw-table-summary,"상세 데이터 · 전체 1,964행 · 값 있음 1행 · 결측 0행 · 목록 1,963건",SUMMARY
 A-023,detail,,다운로드,H3
 A-023,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-023,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-023,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-023,detail,,지도,BUTTON
 A-023,detail,,데이터 이용안내,BUTTON
 A-023,detail,,© 2026 국가녹색기술연구소,SPAN
 A-023,detail,,문의,A
-A-024,detail,,개도국 전략지도,STRONG
+A-024,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-024,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-024,detail,,데이터 찾기,BUTTON
 A-024,detail,,데이터 지도,BUTTON
@@ -10102,13 +10118,11 @@ A-024,detail,public-source-panel,World Bank (ENERGYDATA.INFO) · 송전망 선�
 A-024,detail,public-raw-table-summary,상세 데이터 · 전체 723행 · 값 있음 1행 · 결측 0행 · 목록 722건,SUMMARY
 A-024,detail,,다운로드,H3
 A-024,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-024,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-024,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-024,detail,,지도,BUTTON
 A-024,detail,,데이터 이용안내,BUTTON
 A-024,detail,,© 2026 국가녹색기술연구소,SPAN
 A-024,detail,,문의,A
-A-025,detail,,개도국 전략지도,STRONG
+A-025,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-025,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-025,detail,,데이터 찾기,BUTTON
 A-025,detail,,데이터 지도,BUTTON
@@ -10149,14 +10163,15 @@ A-025,detail,public-primary-visualization,단위: 건,H5
 A-025,detail,public-primary-visualization,수록 시설·프로젝트 총 건수,STRONG
 A-025,detail,public-primary-visualization,목록,SPAN
 A-025,detail,public-primary-visualization,상세 데이터,H4
-A-025,detail,public-entity-card-title,주입( ),H5
-A-025,detail,public-entity-card-title,CO2,BUTTON
-A-025,detail,public-entity-card-title,EOR,BUTTON
+A-025,detail,public-entity-card-title,Rang Dong 유전 파일럿,H5
+A-025,detail,public-entity-card-title,CO2-EOR,BUTTON
 A-025,detail,public-entity-card-v131,공식 원문,A
-A-025,detail,public-entity-card-title,고농도 가스전( 분리·재주입 잠재),H5
-A-025,detail,public-entity-card-title,연구,H5
-A-025,detail,public-entity-card-title,연구/타당성,H5
-A-025,detail,public-entity-card-title,지중 저장 후보(Storage),H5
+A-025,detail,public-entity-card-title,Ca Voi Xanh(Blue Whale) 가스전,H5
+A-025,detail,public-entity-card-title,포집(Capture) 연구 (시멘트 생산 탈탄소화 연구),H5
+A-025,detail,public-entity-card-title,포집(Capture) 연구 (베트남 최초 석탄화력 flue-gas 개발 모색),H5
+A-025,detail,public-entity-card-title,CCUS,BUTTON
+A-025,detail,public-entity-card-title,고갈 유·가스전 저장(개념),H5
+A-025,detail,public-entity-card-title,CO2,BUTTON
 A-025,detail,detail-metadata-v135,자료정보,SUMMARY
 A-025,detail,public-source-panel,자료정보,SPAN
 A-025,detail,public-source-panel,출처와 이용조건,H3
@@ -10189,24 +10204,22 @@ A-025,detail,public-raw-table,2026,TD
 A-025,detail,v125-entity-table-fallback,명칭,TH
 A-025,detail,v125-entity-table-fallback,유형,TH
 A-025,detail,v125-entity-table-fallback,자료 제공기관,TH
-A-025,detail,v125-entity-table-fallback,주입( ),TD
+A-025,detail,v125-entity-table-fallback,Rang Dong 유전 파일럿,TD
 A-025,detail,v125-entity-table-fallback,entity,TD
 A-025,detail,v125-entity-table-fallback,STADT(공개 1차 출처 정리),TD
 A-025,detail,v125-entity-table-fallback,원문 확인,A
-A-025,detail,v125-entity-table-fallback,고농도 가스전( 분리·재주입 잠재),TD
-A-025,detail,v125-entity-table-fallback,연구,TD
+A-025,detail,v125-entity-table-fallback,Ca Voi Xanh(Blue Whale) 가스전,TD
+A-025,detail,v125-entity-table-fallback,포집(Capture) 연구 (시멘트 생산 탈탄소화 연구),TD
 A-025,detail,v125-entity-table-fallback,출처에서 값을 제공하지 않음,TD
-A-025,detail,v125-entity-table-fallback,연구/타당성,TD
-A-025,detail,v125-entity-table-fallback,지중 저장 후보(Storage),TD
+A-025,detail,v125-entity-table-fallback,포집(Capture) 연구 (베트남 최초 석탄화력 flue-gas 개발 모색),TD
+A-025,detail,v125-entity-table-fallback,고갈 유·가스전 저장(개념),TD
 A-025,detail,,다운로드,H3
 A-025,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-025,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-025,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-025,detail,,지도,BUTTON
 A-025,detail,,데이터 이용안내,BUTTON
 A-025,detail,,© 2026 국가녹색기술연구소,SPAN
 A-025,detail,,문의,A
-A-026,detail,,개도국 전략지도,STRONG
+A-026,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-026,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-026,detail,,데이터 찾기,BUTTON
 A-026,detail,,데이터 지도,BUTTON
@@ -10292,13 +10305,11 @@ A-026,detail,public-raw-table,m2,TD
 A-026,detail,public-raw-table,총 건물바닥면적,TD
 A-026,detail,,다운로드,H3
 A-026,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-026,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-026,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-026,detail,,지도,BUTTON
 A-026,detail,,데이터 이용안내,BUTTON
 A-026,detail,,© 2026 국가녹색기술연구소,SPAN
 A-026,detail,,문의,A
-A-027,detail,,개도국 전략지도,STRONG
+A-027,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-027,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-027,detail,,데이터 찾기,BUTTON
 A-027,detail,,데이터 지도,BUTTON
@@ -10451,13 +10462,11 @@ A-027,detail,public-raw-table,분류별 피처 수(motorway) · highway 분류�
 A-027,detail,public-raw-table,"6,508",TD
 A-027,detail,,다운로드,H3
 A-027,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-027,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-027,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-027,detail,,지도,BUTTON
 A-027,detail,,데이터 이용안내,BUTTON
 A-027,detail,,© 2026 국가녹색기술연구소,SPAN
 A-027,detail,,문의,A
-A-028,detail,,개도국 전략지도,STRONG
+A-028,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-028,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-028,detail,,데이터 찾기,BUTTON
 A-028,detail,,데이터 지도,BUTTON
@@ -10568,13 +10577,11 @@ A-028,detail,public-raw-table,분류별 피처 수(drain) · fclass 분류값별
 A-028,detail,public-raw-table,"1,675",TD
 A-028,detail,,다운로드,H3
 A-028,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-028,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-028,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-028,detail,,지도,BUTTON
 A-028,detail,,데이터 이용안내,BUTTON
 A-028,detail,,© 2026 국가녹색기술연구소,SPAN
 A-028,detail,,문의,A
-A-029,detail,,개도국 전략지도,STRONG
+A-029,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-029,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-029,detail,,데이터 찾기,BUTTON
 A-029,detail,,데이터 지도,BUTTON
@@ -10731,13 +10738,11 @@ A-029,detail,v125-entity-table-fallback,-캐나다,TD
 A-029,detail,v125-entity-table-fallback,해당 제도·현상이 존재하지 않음,TD
 A-029,detail,,다운로드,H3
 A-029,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-029,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-029,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-029,detail,,지도,BUTTON
 A-029,detail,,데이터 이용안내,BUTTON
 A-029,detail,,© 2026 국가녹색기술연구소,SPAN
 A-029,detail,,문의,A
-A-030,detail,,개도국 전략지도,STRONG
+A-030,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-030,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-030,detail,,데이터 찾기,BUTTON
 A-030,detail,,데이터 지도,BUTTON
@@ -10825,13 +10830,11 @@ A-030,detail,public-raw-table,87.7,TD
 A-030,detail,public-raw-table,86.7,TD
 A-030,detail,,다운로드,H3
 A-030,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-030,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-030,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-030,detail,,지도,BUTTON
 A-030,detail,,데이터 이용안내,BUTTON
 A-030,detail,,© 2026 국가녹색기술연구소,SPAN
 A-030,detail,,문의,A
-A-031,detail,,개도국 전략지도,STRONG
+A-031,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-031,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-031,detail,,데이터 찾기,BUTTON
 A-031,detail,,데이터 지도,BUTTON
@@ -10971,13 +10974,11 @@ A-031,detail,public-raw-table,2.8429,TD
 A-031,detail,public-raw-table,3.45,TD
 A-031,detail,,다운로드,H3
 A-031,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-031,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-031,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-031,detail,,지도,BUTTON
 A-031,detail,,데이터 이용안내,BUTTON
 A-031,detail,,© 2026 국가녹색기술연구소,SPAN
 A-031,detail,,문의,A
-A-032,detail,,개도국 전략지도,STRONG
+A-032,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-032,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-032,detail,,데이터 찾기,BUTTON
 A-032,detail,,데이터 지도,BUTTON
@@ -11183,13 +11184,11 @@ A-032,detail,public-raw-table,60.2,TD
 A-032,detail,public-raw-table,60.8,TD
 A-032,detail,,다운로드,H3
 A-032,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-032,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-032,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-032,detail,,지도,BUTTON
 A-032,detail,,데이터 이용안내,BUTTON
 A-032,detail,,© 2026 국가녹색기술연구소,SPAN
 A-032,detail,,문의,A
-A-033,detail,,개도국 전략지도,STRONG
+A-033,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-033,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 A-033,detail,,데이터 찾기,BUTTON
 A-033,detail,,데이터 지도,BUTTON
@@ -11381,13 +11380,11 @@ A-033,detail,public-raw-table,414.68,TD
 A-033,detail,public-raw-table,463.83,TD
 A-033,detail,,다운로드,H3
 A-033,detail,public-download-link,전체 데이터 다운로드,BUTTON
-A-033,detail,,개도국 기후기술 협력 플랫폼,STRONG
 A-033,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-A-033,detail,,지도,BUTTON
 A-033,detail,,데이터 이용안내,BUTTON
 A-033,detail,,© 2026 국가녹색기술연구소,SPAN
 A-033,detail,,문의,A
-B-001,detail,,개도국 전략지도,STRONG
+B-001,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-001,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-001,detail,,데이터 찾기,BUTTON
 B-001,detail,,데이터 지도,BUTTON
@@ -11525,13 +11522,11 @@ B-001,detail,public-raw-table,25.14,TD
 B-001,detail,public-raw-table,26.54,TD
 B-001,detail,,다운로드,H3
 B-001,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-001,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-001,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-001,detail,,지도,BUTTON
 B-001,detail,,데이터 이용안내,BUTTON
 B-001,detail,,© 2026 국가녹색기술연구소,SPAN
 B-001,detail,,문의,A
-B-002,detail,,개도국 전략지도,STRONG
+B-002,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-002,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-002,detail,,데이터 찾기,BUTTON
 B-002,detail,,데이터 지도,BUTTON
@@ -11645,13 +11640,11 @@ B-002,detail,public-raw-table,SSP5-8.5,BUTTON
 B-002,detail,public-raw-table,85.06,TD
 B-002,detail,,다운로드,H3
 B-002,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-002,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-002,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-002,detail,,지도,BUTTON
 B-002,detail,,데이터 이용안내,BUTTON
 B-002,detail,,© 2026 국가녹색기술연구소,SPAN
 B-002,detail,,문의,A
-B-003,detail,,개도국 전략지도,STRONG
+B-003,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-003,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-003,detail,,데이터 찾기,BUTTON
 B-003,detail,,데이터 지도,BUTTON
@@ -11752,13 +11745,11 @@ B-003,detail,public-source-panel,World Bank ( TS 4.09) 확인,A
 B-003,detail,public-raw-table-summary,"상세 데이터 · 목록 8,371건",SUMMARY
 B-003,detail,,다운로드,H3
 B-003,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-003,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-003,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-003,detail,,지도,BUTTON
 B-003,detail,,데이터 이용안내,BUTTON
 B-003,detail,,© 2026 국가녹색기술연구소,SPAN
 B-003,detail,,문의,A
-B-004,detail,,개도국 전략지도,STRONG
+B-004,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-004,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-004,detail,,데이터 찾기,BUTTON
 B-004,detail,,데이터 지도,BUTTON
@@ -11917,13 +11908,11 @@ B-004,detail,public-source-panel,공식 원문 10 건 중 4건을 표시합니�
 B-004,detail,public-raw-table-summary,"상세 데이터 · 목록 33,232건",SUMMARY
 B-004,detail,,다운로드,H3
 B-004,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-004,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-004,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-004,detail,,지도,BUTTON
 B-004,detail,,데이터 이용안내,BUTTON
 B-004,detail,,© 2026 국가녹색기술연구소,SPAN
 B-004,detail,,문의,A
-B-005,detail,,개도국 전략지도,STRONG
+B-005,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-005,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-005,detail,,데이터 찾기,BUTTON
 B-005,detail,,데이터 지도,BUTTON
@@ -12077,13 +12066,11 @@ B-005,detail,public-source-panel,공식 원문 8 건 중 4건을 표시합니다
 B-005,detail,public-raw-table-summary,"상세 데이터 · 목록 31,688건",SUMMARY
 B-005,detail,,다운로드,H3
 B-005,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-005,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-005,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-005,detail,,지도,BUTTON
 B-005,detail,,데이터 이용안내,BUTTON
 B-005,detail,,© 2026 국가녹색기술연구소,SPAN
 B-005,detail,,문의,A
-B-006,detail,,개도국 전략지도,STRONG
+B-006,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-006,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-006,detail,,데이터 찾기,BUTTON
 B-006,detail,,데이터 지도,BUTTON
@@ -12254,13 +12241,11 @@ B-006,detail,public-source-panel,( 일최고기온 35°C 이상 일수 ),SPAN
 B-006,detail,public-raw-table-summary,"상세 데이터 · 목록 32,608건",SUMMARY
 B-006,detail,,다운로드,H3
 B-006,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-006,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-006,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-006,detail,,지도,BUTTON
 B-006,detail,,데이터 이용안내,BUTTON
 B-006,detail,,© 2026 국가녹색기술연구소,SPAN
 B-006,detail,,문의,A
-B-007,detail,,개도국 전략지도,STRONG
+B-007,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-007,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-007,detail,,데이터 찾기,BUTTON
 B-007,detail,,데이터 지도,BUTTON
@@ -12421,13 +12406,11 @@ B-007,detail,public-source-panel,CWD,SPAN
 B-007,detail,public-raw-table-summary,"상세 데이터 · 목록 32,370건",SUMMARY
 B-007,detail,,다운로드,H3
 B-007,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-007,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-007,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-007,detail,,지도,BUTTON
 B-007,detail,,데이터 이용안내,BUTTON
 B-007,detail,,© 2026 국가녹색기술연구소,SPAN
 B-007,detail,,문의,A
-B-008,detail,,개도국 전략지도,STRONG
+B-008,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-008,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-008,detail,,데이터 찾기,BUTTON
 B-008,detail,,데이터 지도,BUTTON
@@ -12535,13 +12518,11 @@ B-008,detail,public-source-panel,( 미국 항공우주국 ),SPAN
 B-008,detail,public-raw-table-summary,"상세 데이터 · 목록 1,575건",SUMMARY
 B-008,detail,,다운로드,H3
 B-008,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-008,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-008,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-008,detail,,지도,BUTTON
 B-008,detail,,데이터 이용안내,BUTTON
 B-008,detail,,© 2026 국가녹색기술연구소,SPAN
 B-008,detail,,문의,A
-B-009,detail,,개도국 전략지도,STRONG
+B-009,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-009,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-009,detail,,데이터 찾기,BUTTON
 B-009,detail,,데이터 지도,BUTTON
@@ -13144,13 +13125,11 @@ B-009,detail,public-raw-table,2.75,TD
 B-009,detail,public-raw-table,Scape Reputational Risk,TD
 B-009,detail,,다운로드,H3
 B-009,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-009,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-009,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-009,detail,,지도,BUTTON
 B-009,detail,,데이터 이용안내,BUTTON
 B-009,detail,,© 2026 국가녹색기술연구소,SPAN
 B-009,detail,,문의,A
-B-010,detail,,개도국 전략지도,STRONG
+B-010,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-010,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-010,detail,,데이터 찾기,BUTTON
 B-010,detail,,데이터 지도,BUTTON
@@ -13254,13 +13233,11 @@ B-010,detail,public-raw-table,보정 · 2024년 단년,TD
 B-010,detail,public-raw-table,12,TD
 B-010,detail,,다운로드,H3
 B-010,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-010,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-010,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-010,detail,,지도,BUTTON
 B-010,detail,,데이터 이용안내,BUTTON
 B-010,detail,,© 2026 국가녹색기술연구소,SPAN
 B-010,detail,,문의,A
-B-011,detail,,개도국 전략지도,STRONG
+B-011,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-011,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-011,detail,,데이터 찾기,BUTTON
 B-011,detail,,데이터 지도,BUTTON
@@ -13329,13 +13306,11 @@ B-011,detail,public-source-panel,Country Index 2026 확인,A
 B-011,detail,public-raw-table-summary,"상세 데이터 · 전체 1,500행 · 값 있음 1,500행 · 결측 0행",SUMMARY
 B-011,detail,,다운로드,H3
 B-011,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-011,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-011,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-011,detail,,지도,BUTTON
 B-011,detail,,데이터 이용안내,BUTTON
 B-011,detail,,© 2026 국가녹색기술연구소,SPAN
 B-011,detail,,문의,A
-B-012,detail,,개도국 전략지도,STRONG
+B-012,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-012,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-012,detail,,데이터 찾기,BUTTON
 B-012,detail,,데이터 지도,BUTTON
@@ -13701,13 +13676,11 @@ B-012,detail,v125-entity-table-fallback,Storm surge,TD
 B-012,detail,v125-entity-table-fallback,Heat wave,TD
 B-012,detail,,다운로드,H3
 B-012,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-012,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-012,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-012,detail,,지도,BUTTON
 B-012,detail,,데이터 이용안내,BUTTON
 B-012,detail,,© 2026 국가녹색기술연구소,SPAN
 B-012,detail,,문의,A
-B-013,detail,,개도국 전략지도,STRONG
+B-013,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-013,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-013,detail,,데이터 찾기,BUTTON
 B-013,detail,,데이터 지도,BUTTON
@@ -13847,13 +13820,11 @@ B-013,detail,public-raw-table,0.0079,TD
 B-013,detail,public-raw-table,0.071,TD
 B-013,detail,,다운로드,H3
 B-013,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-013,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-013,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-013,detail,,지도,BUTTON
 B-013,detail,,데이터 이용안내,BUTTON
 B-013,detail,,© 2026 국가녹색기술연구소,SPAN
 B-013,detail,,문의,A
-B-014,detail,,개도국 전략지도,STRONG
+B-014,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-014,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-014,detail,,데이터 찾기,BUTTON
 B-014,detail,,데이터 지도,BUTTON
@@ -13952,13 +13923,11 @@ B-014,detail,public-raw-table,연간 세수( 대비) (범위 하한),TD
 B-014,detail,public-raw-table,1.4,TD
 B-014,detail,,다운로드,H3
 B-014,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-014,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-014,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-014,detail,,지도,BUTTON
 B-014,detail,,데이터 이용안내,BUTTON
 B-014,detail,,© 2026 국가녹색기술연구소,SPAN
 B-014,detail,,문의,A
-B-015,detail,,개도국 전략지도,STRONG
+B-015,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-015,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-015,detail,,데이터 찾기,BUTTON
 B-015,detail,,데이터 지도,BUTTON
@@ -14081,13 +14050,11 @@ B-015,detail,public-raw-table,"2026-06-29 개장, 시범단계 2028년말",TD
 B-015,detail,public-raw-table,국내 탄소거래소 공식 출범 — 하노이증권거래소( ) 운영,TD
 B-015,detail,,다운로드,H3
 B-015,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-015,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-015,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-015,detail,,지도,BUTTON
 B-015,detail,,데이터 이용안내,BUTTON
 B-015,detail,,© 2026 국가녹색기술연구소,SPAN
 B-015,detail,,문의,A
-B-016,detail,,개도국 전략지도,STRONG
+B-016,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-016,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-016,detail,,데이터 찾기,BUTTON
 B-016,detail,,데이터 지도,BUTTON
@@ -14236,13 +14203,11 @@ B-016,detail,public-raw-table,89.85,TD
 B-016,detail,public-raw-table,89.76,TD
 B-016,detail,,다운로드,H3
 B-016,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-016,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-016,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-016,detail,,지도,BUTTON
 B-016,detail,,데이터 이용안내,BUTTON
 B-016,detail,,© 2026 국가녹색기술연구소,SPAN
 B-016,detail,,문의,A
-B-017,detail,,개도국 전략지도,STRONG
+B-017,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-017,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-017,detail,,데이터 찾기,BUTTON
 B-017,detail,,데이터 지도,BUTTON
@@ -15185,13 +15150,11 @@ B-017,detail,public-source-panel,( 지속가능발전목표 ),SPAN
 B-017,detail,public-raw-table-summary,"상세 데이터 · 목록 2,032건",SUMMARY
 B-017,detail,,다운로드,H3
 B-017,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-017,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-017,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-017,detail,,지도,BUTTON
 B-017,detail,,데이터 이용안내,BUTTON
 B-017,detail,,© 2026 국가녹색기술연구소,SPAN
 B-017,detail,,문의,A
-B-018,detail,,개도국 전략지도,STRONG
+B-018,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-018,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-018,detail,,데이터 찾기,BUTTON
 B-018,detail,,데이터 지도,BUTTON
@@ -15595,13 +15558,11 @@ B-018,detail,public-raw-table,"4,788",TD
 B-018,detail,public-raw-table,"10,295",TD
 B-018,detail,,다운로드,H3
 B-018,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-018,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-018,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-018,detail,,지도,BUTTON
 B-018,detail,,데이터 이용안내,BUTTON
 B-018,detail,,© 2026 국가녹색기술연구소,SPAN
 B-018,detail,,문의,A
-B-019,detail,,개도국 전략지도,STRONG
+B-019,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-019,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-019,detail,,데이터 찾기,BUTTON
 B-019,detail,,데이터 지도,BUTTON
@@ -15834,13 +15795,11 @@ B-019,detail,public-raw-table,103.6,TD
 B-019,detail,public-raw-table,78.3,TD
 B-019,detail,,다운로드,H3
 B-019,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-019,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-019,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-019,detail,,지도,BUTTON
 B-019,detail,,데이터 이용안내,BUTTON
 B-019,detail,,© 2026 국가녹색기술연구소,SPAN
 B-019,detail,,문의,A
-B-020,detail,,개도국 전략지도,STRONG
+B-020,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-020,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-020,detail,,데이터 찾기,BUTTON
 B-020,detail,,데이터 지도,BUTTON
@@ -15923,13 +15882,11 @@ B-020,detail,public-source-panel,( 유엔 인도주의업무조정국 ),SPAN
 B-020,detail,public-raw-table-summary,"상세 데이터 · 전체 2,696행 · 값 있음 2,695행 · 결측 1행",SUMMARY
 B-020,detail,,다운로드,H3
 B-020,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-020,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-020,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-020,detail,,지도,BUTTON
 B-020,detail,,데이터 이용안내,BUTTON
 B-020,detail,,© 2026 국가녹색기술연구소,SPAN
 B-020,detail,,문의,A
-B-021,detail,,개도국 전략지도,STRONG
+B-021,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-021,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-021,detail,,데이터 찾기,BUTTON
 B-021,detail,,데이터 지도,BUTTON
@@ -16016,13 +15973,11 @@ B-021,detail,public-source-panel,( 글로벌데이터랩 ),SPAN
 B-021,detail,public-raw-table-summary,"상세 데이터 · 전체 2,970행 · 값 있음 2,969행 · 결측 1행",SUMMARY
 B-021,detail,,다운로드,H3
 B-021,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-021,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-021,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-021,detail,,지도,BUTTON
 B-021,detail,,데이터 이용안내,BUTTON
 B-021,detail,,© 2026 국가녹색기술연구소,SPAN
 B-021,detail,,문의,A
-B-022,detail,,개도국 전략지도,STRONG
+B-022,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-022,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-022,detail,,데이터 찾기,BUTTON
 B-022,detail,,데이터 지도,BUTTON
@@ -16122,13 +16077,11 @@ B-022,detail,public-raw-table,총 투자 필요액(적응+탈탄소),TD
 B-022,detail,public-raw-table,368,TD
 B-022,detail,,다운로드,H3
 B-022,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-022,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-022,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-022,detail,,지도,BUTTON
 B-022,detail,,데이터 이용안내,BUTTON
 B-022,detail,,© 2026 국가녹색기술연구소,SPAN
 B-022,detail,,문의,A
-B-023,detail,,개도국 전략지도,STRONG
+B-023,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-023,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-023,detail,,데이터 찾기,BUTTON
 B-023,detail,,데이터 지도,BUTTON
@@ -16279,13 +16232,11 @@ B-023,detail,v125-entity-table-fallback,GIS,BUTTON
 B-023,detail,v125-entity-table-fallback,일부 세부항목은 아직 수집되지 않음,TD
 B-023,detail,,다운로드,H3
 B-023,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-023,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-023,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-023,detail,,지도,BUTTON
 B-023,detail,,데이터 이용안내,BUTTON
 B-023,detail,,© 2026 국가녹색기술연구소,SPAN
 B-023,detail,,문의,A
-B-024,detail,,개도국 전략지도,STRONG
+B-024,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-024,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-024,detail,,데이터 찾기,BUTTON
 B-024,detail,,데이터 지도,BUTTON
@@ -16597,13 +16548,11 @@ B-024,detail,public-raw-table,3.849,TD
 B-024,detail,public-raw-table,4.0508,TD
 B-024,detail,,다운로드,H3
 B-024,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-024,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-024,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-024,detail,,지도,BUTTON
 B-024,detail,,데이터 이용안내,BUTTON
 B-024,detail,,© 2026 국가녹색기술연구소,SPAN
 B-024,detail,,문의,A
-B-025,detail,,개도국 전략지도,STRONG
+B-025,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-025,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-025,detail,,데이터 찾기,BUTTON
 B-025,detail,,데이터 지도,BUTTON
@@ -16687,13 +16636,11 @@ B-025,detail,v125-entity-table-fallback,동나이,TD
 B-025,detail,v125-entity-table-fallback,마,TD
 B-025,detail,,다운로드,H3
 B-025,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-025,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-025,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-025,detail,,지도,BUTTON
 B-025,detail,,데이터 이용안내,BUTTON
 B-025,detail,,© 2026 국가녹색기술연구소,SPAN
 B-025,detail,,문의,A
-B-026,detail,,개도국 전략지도,STRONG
+B-026,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-026,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-026,detail,,데이터 찾기,BUTTON
 B-026,detail,,데이터 지도,BUTTON
@@ -16994,13 +16941,11 @@ B-026,detail,v125-entity-table-fallback,TienGiang,TD
 B-026,detail,v125-entity-table-fallback,Viet Nam,TD
 B-026,detail,,다운로드,H3
 B-026,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-026,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-026,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-026,detail,,지도,BUTTON
 B-026,detail,,데이터 이용안내,BUTTON
 B-026,detail,,© 2026 국가녹색기술연구소,SPAN
 B-026,detail,,문의,A
-B-027,detail,,개도국 전략지도,STRONG
+B-027,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-027,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-027,detail,,데이터 찾기,BUTTON
 B-027,detail,,데이터 지도,BUTTON
@@ -17131,13 +17076,11 @@ B-027,detail,public-raw-table,2003,TD
 B-027,detail,public-raw-table,2004,TD
 B-027,detail,,다운로드,H3
 B-027,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-027,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-027,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-027,detail,,지도,BUTTON
 B-027,detail,,데이터 이용안내,BUTTON
 B-027,detail,,© 2026 국가녹색기술연구소,SPAN
 B-027,detail,,문의,A
-B-028,detail,,개도국 전략지도,STRONG
+B-028,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-028,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-028,detail,,데이터 찾기,BUTTON
 B-028,detail,,데이터 지도,BUTTON
@@ -17320,13 +17263,11 @@ B-028,detail,v125-entity-table-fallback,GIS,BUTTON
 B-028,detail,v125-entity-table-fallback,일부 세부항목은 아직 수집되지 않음,TD
 B-028,detail,,다운로드,H3
 B-028,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-028,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-028,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-028,detail,,지도,BUTTON
 B-028,detail,,데이터 이용안내,BUTTON
 B-028,detail,,© 2026 국가녹색기술연구소,SPAN
 B-028,detail,,문의,A
-B-029,detail,,개도국 전략지도,STRONG
+B-029,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-029,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-029,detail,,데이터 찾기,BUTTON
 B-029,detail,,데이터 지도,BUTTON
@@ -17905,13 +17846,11 @@ B-029,detail,v125-entity-table-fallback,TienGiang · 2022년,TD
 B-029,detail,v125-entity-table-fallback,DongThap · 2022년,TD
 B-029,detail,,다운로드,H3
 B-029,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-029,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-029,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-029,detail,,지도,BUTTON
 B-029,detail,,데이터 이용안내,BUTTON
 B-029,detail,,© 2026 국가녹색기술연구소,SPAN
 B-029,detail,,문의,A
-B-030,detail,,개도국 전략지도,STRONG
+B-030,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-030,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-030,detail,,데이터 찾기,BUTTON
 B-030,detail,,데이터 지도,BUTTON
@@ -18262,13 +18201,11 @@ B-030,detail,v125-entity-table-fallback,Viet Nam,TD
 B-030,detail,v125-entity-table-fallback,출처에서 값을 제공하지 않음,TD
 B-030,detail,,다운로드,H3
 B-030,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-030,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-030,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-030,detail,,지도,BUTTON
 B-030,detail,,데이터 이용안내,BUTTON
 B-030,detail,,© 2026 국가녹색기술연구소,SPAN
 B-030,detail,,문의,A
-B-031,detail,,개도국 전략지도,STRONG
+B-031,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-031,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-031,detail,,데이터 찾기,BUTTON
 B-031,detail,,데이터 지도,BUTTON
@@ -18744,13 +18681,11 @@ B-031,detail,v125-entity-table-fallback,TienGiang,TD
 B-031,detail,v125-entity-table-fallback,Viet Nam,TD
 B-031,detail,,다운로드,H3
 B-031,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-031,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-031,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-031,detail,,지도,BUTTON
 B-031,detail,,데이터 이용안내,BUTTON
 B-031,detail,,© 2026 국가녹색기술연구소,SPAN
 B-031,detail,,문의,A
-B-032,detail,,개도국 전략지도,STRONG
+B-032,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-032,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-032,detail,,데이터 찾기,BUTTON
 B-032,detail,,데이터 지도,BUTTON
@@ -19083,13 +19018,11 @@ B-032,detail,v125-entity-table-fallback,DongThap,TD
 B-032,detail,v125-entity-table-fallback,Viet Nam,TD
 B-032,detail,,다운로드,H3
 B-032,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-032,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-032,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-032,detail,,지도,BUTTON
 B-032,detail,,데이터 이용안내,BUTTON
 B-032,detail,,© 2026 국가녹색기술연구소,SPAN
 B-032,detail,,문의,A
-B-033,detail,,개도국 전략지도,STRONG
+B-033,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-033,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-033,detail,,데이터 찾기,BUTTON
 B-033,detail,,데이터 지도,BUTTON
@@ -19220,13 +19153,11 @@ B-033,detail,public-source-panel,국가,DD
 B-033,detail,public-raw-table-summary,"상세 데이터 · 전체 3,545행 · 값 있음 1,489행 · 결측 0행 · 목록 2,056건",SUMMARY
 B-033,detail,,다운로드,H3
 B-033,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-033,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-033,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-033,detail,,지도,BUTTON
 B-033,detail,,데이터 이용안내,BUTTON
 B-033,detail,,© 2026 국가녹색기술연구소,SPAN
 B-033,detail,,문의,A
-B-034,detail,,개도국 전략지도,STRONG
+B-034,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-034,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-034,detail,,데이터 찾기,BUTTON
 B-034,detail,,데이터 지도,BUTTON
@@ -19357,13 +19288,11 @@ B-034,detail,public-source-panel,Global Forest Watch (Harris et al. 2021) 확인
 B-034,detail,public-raw-table-summary,상세 데이터 · 전체 608행 · 값 있음 362행 · 결측 0행 · 목록 246건,SUMMARY
 B-034,detail,,다운로드,H3
 B-034,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-034,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-034,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-034,detail,,지도,BUTTON
 B-034,detail,,데이터 이용안내,BUTTON
 B-034,detail,,© 2026 국가녹색기술연구소,SPAN
 B-034,detail,,문의,A
-B-035,detail,,개도국 전략지도,STRONG
+B-035,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-035,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-035,detail,,데이터 찾기,BUTTON
 B-035,detail,,데이터 지도,BUTTON
@@ -19431,13 +19360,11 @@ B-035,detail,public-source-panel,( FAO 통계 데이터베이스 ),SPAN
 B-035,detail,public-raw-table-summary,"상세 데이터 · 전체 1,764행 · 값 있음 1,763행 · 결측 1행",SUMMARY
 B-035,detail,,다운로드,H3
 B-035,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-035,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-035,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-035,detail,,지도,BUTTON
 B-035,detail,,데이터 이용안내,BUTTON
 B-035,detail,,© 2026 국가녹색기술연구소,SPAN
 B-035,detail,,문의,A
-B-036,detail,,개도국 전략지도,STRONG
+B-036,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-036,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-036,detail,,데이터 찾기,BUTTON
 B-036,detail,,데이터 지도,BUTTON
@@ -19617,13 +19544,11 @@ B-036,detail,public-raw-table,-4.4756,TD
 B-036,detail,public-raw-table,0.1845,TD
 B-036,detail,,다운로드,H3
 B-036,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-036,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-036,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-036,detail,,지도,BUTTON
 B-036,detail,,데이터 이용안내,BUTTON
 B-036,detail,,© 2026 국가녹색기술연구소,SPAN
 B-036,detail,,문의,A
-B-037,detail,,개도국 전략지도,STRONG
+B-037,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-037,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-037,detail,,데이터 찾기,BUTTON
 B-037,detail,,데이터 지도,BUTTON
@@ -19952,13 +19877,11 @@ B-037,detail,public-source-panel,( 코페르니쿠스 전지구 토지서비스 
 B-037,detail,public-raw-table-summary,상세 데이터 · 목록 747건,SUMMARY
 B-037,detail,,다운로드,H3
 B-037,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-037,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-037,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-037,detail,,지도,BUTTON
 B-037,detail,,데이터 이용안내,BUTTON
 B-037,detail,,© 2026 국가녹색기술연구소,SPAN
 B-037,detail,,문의,A
-B-038,detail,,개도국 전략지도,STRONG
+B-038,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-038,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-038,detail,,데이터 찾기,BUTTON
 B-038,detail,,데이터 지도,BUTTON
@@ -20263,13 +20186,11 @@ B-038,detail,public-raw-table,"457,221,000",TD
 B-038,detail,public-raw-table,"481,033,000",TD
 B-038,detail,,다운로드,H3
 B-038,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-038,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-038,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-038,detail,,지도,BUTTON
 B-038,detail,,데이터 이용안내,BUTTON
 B-038,detail,,© 2026 국가녹색기술연구소,SPAN
 B-038,detail,,문의,A
-B-039,detail,,개도국 전략지도,STRONG
+B-039,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-039,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-039,detail,,데이터 찾기,BUTTON
 B-039,detail,,데이터 지도,BUTTON
@@ -20903,13 +20824,11 @@ B-039,detail,v125-entity-table-fallback,개정 2030 목표 (범위 하한),TD
 B-039,detail,v125-entity-table-fallback,33294,TD
 B-039,detail,,다운로드,H3
 B-039,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-039,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-039,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-039,detail,,지도,BUTTON
 B-039,detail,,데이터 이용안내,BUTTON
 B-039,detail,,© 2026 국가녹색기술연구소,SPAN
 B-039,detail,,문의,A
-B-040,detail,,개도국 전략지도,STRONG
+B-040,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-040,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-040,detail,,데이터 찾기,BUTTON
 B-040,detail,,데이터 지도,BUTTON
@@ -21412,13 +21331,11 @@ B-040,detail,v125-entity-table-fallback,℃ /,TD
 B-040,detail,v125-entity-table-fallback,일부 세부항목은 아직 수집되지 않음,TD
 B-040,detail,,다운로드,H3
 B-040,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-040,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-040,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-040,detail,,지도,BUTTON
 B-040,detail,,데이터 이용안내,BUTTON
 B-040,detail,,© 2026 국가녹색기술연구소,SPAN
 B-040,detail,,문의,A
-B-041,detail,,개도국 전략지도,STRONG
+B-041,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-041,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-041,detail,,데이터 찾기,BUTTON
 B-041,detail,,데이터 지도,BUTTON
@@ -21750,13 +21667,11 @@ B-041,detail,v125-entity-table-fallback,DongThap,TD
 B-041,detail,v125-entity-table-fallback,Viet Nam,TD
 B-041,detail,,다운로드,H3
 B-041,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-041,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-041,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-041,detail,,지도,BUTTON
 B-041,detail,,데이터 이용안내,BUTTON
 B-041,detail,,© 2026 국가녹색기술연구소,SPAN
 B-041,detail,,문의,A
-B-042,detail,,개도국 전략지도,STRONG
+B-042,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-042,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-042,detail,,데이터 찾기,BUTTON
 B-042,detail,,데이터 지도,BUTTON
@@ -22078,13 +21993,11 @@ B-042,detail,v125-entity-table-fallback,TienGiang,TD
 B-042,detail,v125-entity-table-fallback,Viet Nam,TD
 B-042,detail,,다운로드,H3
 B-042,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-042,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-042,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-042,detail,,지도,BUTTON
 B-042,detail,,데이터 이용안내,BUTTON
 B-042,detail,,© 2026 국가녹색기술연구소,SPAN
 B-042,detail,,문의,A
-B-043,detail,,개도국 전략지도,STRONG
+B-043,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-043,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-043,detail,,데이터 찾기,BUTTON
 B-043,detail,,데이터 지도,BUTTON
@@ -22438,13 +22351,11 @@ B-043,detail,public-raw-table,0.313,TD
 B-043,detail,public-raw-table,0.343,TD
 B-043,detail,,다운로드,H3
 B-043,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-043,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-043,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-043,detail,,지도,BUTTON
 B-043,detail,,데이터 이용안내,BUTTON
 B-043,detail,,© 2026 국가녹색기술연구소,SPAN
 B-043,detail,,문의,A
-B-044,detail,,개도국 전략지도,STRONG
+B-044,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-044,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-044,detail,,데이터 찾기,BUTTON
 B-044,detail,,데이터 지도,BUTTON
@@ -22549,13 +22460,11 @@ B-044,detail,public-raw-table,연구진 설정(발주처 협의 예정),TD
 B-044,detail,public-raw-table,일부 세부항목은 아직 수집되지 않음,TD
 B-044,detail,,다운로드,H3
 B-044,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-044,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-044,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-044,detail,,지도,BUTTON
 B-044,detail,,데이터 이용안내,BUTTON
 B-044,detail,,© 2026 국가녹색기술연구소,SPAN
 B-044,detail,,문의,A
-B-045,detail,,개도국 전략지도,STRONG
+B-045,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-045,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-045,detail,,데이터 찾기,BUTTON
 B-045,detail,,데이터 지도,BUTTON
@@ -22688,13 +22597,11 @@ B-045,detail,public-raw-table,195,TD
 B-045,detail,public-raw-table,201,TD
 B-045,detail,,다운로드,H3
 B-045,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-045,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-045,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-045,detail,,지도,BUTTON
 B-045,detail,,데이터 이용안내,BUTTON
 B-045,detail,,© 2026 국가녹색기술연구소,SPAN
 B-045,detail,,문의,A
-B-046,detail,,개도국 전략지도,STRONG
+B-046,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-046,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-046,detail,,데이터 찾기,BUTTON
 B-046,detail,,데이터 지도,BUTTON
@@ -22794,13 +22701,11 @@ B-046,detail,public-raw-table,코발트 · 니켈 · 구리 · 망간) · 망간
 B-046,detail,public-raw-table,코발트 · 니켈 · 구리 · 망간) · 니켈,TD
 B-046,detail,,다운로드,H3
 B-046,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-046,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-046,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-046,detail,,지도,BUTTON
 B-046,detail,,데이터 이용안내,BUTTON
 B-046,detail,,© 2026 국가녹색기술연구소,SPAN
 B-046,detail,,문의,A
-B-047,detail,,개도국 전략지도,STRONG
+B-047,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-047,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-047,detail,,데이터 찾기,BUTTON
 B-047,detail,,데이터 지도,BUTTON
@@ -22909,13 +22814,11 @@ B-047,detail,public-raw-table,2024년 300 t → 2025년 150 t (50% 감소) — �
 B-047,detail,public-raw-table,Mineral Commodity Summaries 2026 / 언론·산업 보고,TD
 B-047,detail,,다운로드,H3
 B-047,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-047,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-047,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-047,detail,,지도,BUTTON
 B-047,detail,,데이터 이용안내,BUTTON
 B-047,detail,,© 2026 국가녹색기술연구소,SPAN
 B-047,detail,,문의,A
-B-048,detail,,개도국 전략지도,STRONG
+B-048,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-048,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 B-048,detail,,데이터 찾기,BUTTON
 B-048,detail,,데이터 지도,BUTTON
@@ -22989,13 +22892,11 @@ B-048,detail,v125-entity-table-fallback,Tan Rai,TD
 B-048,detail,v125-entity-table-fallback,Yen Phu,TD
 B-048,detail,,다운로드,H3
 B-048,detail,public-download-link,전체 데이터 다운로드,BUTTON
-B-048,detail,,개도국 기후기술 협력 플랫폼,STRONG
 B-048,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-B-048,detail,,지도,BUTTON
 B-048,detail,,데이터 이용안내,BUTTON
 B-048,detail,,© 2026 국가녹색기술연구소,SPAN
 B-048,detail,,문의,A
-C-001,detail,,개도국 전략지도,STRONG
+C-001,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-001,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 C-001,detail,,데이터 찾기,BUTTON
 C-001,detail,,데이터 지도,BUTTON
@@ -23087,7 +22988,6 @@ C-001,detail,evidence-matrix-v138,916.5,TD
 C-001,detail,evidence-matrix-v138,2021-2030 · [상한(max)] 54.99~91.65 billion,TD
 C-001,detail,evidence-matrix-v138,2030 대비,TH
 C-001,detail,evidence-matrix-v138,GDP,BUTTON
-C-001,detail,evidence-matrix-v138,3,TD
 C-001,detail,evidence-matrix-v138,2030 · [하한(min)] 2020 대비 비율 추정,TD
 C-001,detail,evidence-matrix-v138,5,TD
 C-001,detail,evidence-matrix-v138,2030 · [상한(max)] 2020 대비 비율 추정,TD
@@ -23152,7 +23052,6 @@ C-001,detail,evidence-matrix-v138,국가 단위 이행점검,TH
 C-001,detail,evidence-matrix-v138,2,TD
 C-001,detail,evidence-matrix-v138,"가 총괄, 부처·지방정부와 공동 모니터링·평가",TD
 C-001,detail,evidence-matrix-v138,정부령 06/2022/ND-CP,TH
-C-001,detail,evidence-matrix-v138,06/2022/ND-CP,TD
 C-001,detail,evidence-matrix-v138,2022 · 지방(성인민위원회)·부문(소관부처)·국가( ) 3단계 체계,TD
 C-001,detail,public-primary-visualization,대표 40건을 표시합니다. 전체 49 건은 상세 데이터에서 확인할 수 있습니다.,P
 C-001,detail,detail-metadata-v135,자료정보,SUMMARY
@@ -23204,6 +23103,7 @@ C-001,detail,v125-entity-table-fallback,에너지,TD
 C-001,detail,v125-entity-table-fallback,폐기물,TD
 C-001,detail,v125-entity-table-fallback,2021-2030 누적( ),TD
 C-001,detail,v125-entity-table-fallback,2030 대비,TD
+C-001,detail,v125-entity-table-fallback,3,TD
 C-001,detail,v125-entity-table-fallback,대안 추정( 1.5% 지출 기준),TD
 C-001,detail,v125-entity-table-fallback,재원 조달 유형,TD
 C-001,detail,v125-entity-table-fallback,총량 감축량,TD
@@ -23214,6 +23114,7 @@ C-001,detail,v125-entity-table-fallback,86834.7,TD
 C-001,detail,v125-entity-table-fallback,감축 적응 공동편익,TD
 C-001,detail,v125-entity-table-fallback,국가 단위 이행점검,TD
 C-001,detail,v125-entity-table-fallback,정부령 06/2022/ND-CP,TD
+C-001,detail,v125-entity-table-fallback,06/2022/ND-CP,TD
 C-001,detail,v125-entity-table-fallback,2022,TD
 C-001,detail,v125-entity-table-fallback,등록부 포털,TD
 C-001,detail,v125-entity-table-fallback,NDCREG,TD
@@ -23232,13 +23133,11 @@ C-001,detail,v125-entity-table-fallback,4종,TD
 C-001,detail,v125-entity-table-fallback,5개 부문,TD
 C-001,detail,,다운로드,H3
 C-001,detail,public-download-link,전체 데이터 다운로드,BUTTON
-C-001,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-001,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-C-001,detail,,지도,BUTTON
 C-001,detail,,데이터 이용안내,BUTTON
 C-001,detail,,© 2026 국가녹색기술연구소,SPAN
 C-001,detail,,문의,A
-C-002,detail,,개도국 전략지도,STRONG
+C-002,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-002,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 C-002,detail,,데이터 찾기,BUTTON
 C-002,detail,,데이터 지도,BUTTON
@@ -23600,13 +23499,11 @@ C-002,detail,v125-entity-table-fallback,2026-07 기준,TD
 C-002,detail,v125-entity-table-fallback,(제1차 격년갱신보고서),TD
 C-002,detail,,다운로드,H3
 C-002,detail,public-download-link,전체 데이터 다운로드,BUTTON
-C-002,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-002,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-C-002,detail,,지도,BUTTON
 C-002,detail,,데이터 이용안내,BUTTON
 C-002,detail,,© 2026 국가녹색기술연구소,SPAN
 C-002,detail,,문의,A
-C-003,detail,,개도국 전략지도,STRONG
+C-003,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-003,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 C-003,detail,,데이터 찾기,BUTTON
 C-003,detail,,데이터 지도,BUTTON
@@ -23930,13 +23827,11 @@ C-003,detail,v125-entity-table-fallback,2020-07-20,TD
 C-003,detail,v125-entity-table-fallback,2020,TD
 C-003,detail,,다운로드,H3
 C-003,detail,public-download-link,전체 데이터 다운로드,BUTTON
-C-003,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-003,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-C-003,detail,,지도,BUTTON
 C-003,detail,,데이터 이용안내,BUTTON
 C-003,detail,,© 2026 국가녹색기술연구소,SPAN
 C-003,detail,,문의,A
-C-004,detail,,개도국 전략지도,STRONG
+C-004,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-004,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 C-004,detail,,데이터 찾기,BUTTON
 C-004,detail,,데이터 지도,BUTTON
@@ -24230,13 +24125,11 @@ C-004,detail,v125-entity-table-fallback,개정 요약(DFDL),TD
 C-004,detail,v125-entity-table-fallback,2025,TD
 C-004,detail,,다운로드,H3
 C-004,detail,public-download-link,전체 데이터 다운로드,BUTTON
-C-004,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-004,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-C-004,detail,,지도,BUTTON
 C-004,detail,,데이터 이용안내,BUTTON
 C-004,detail,,© 2026 국가녹색기술연구소,SPAN
 C-004,detail,,문의,A
-C-005,detail,,개도국 전략지도,STRONG
+C-005,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-005,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 C-005,detail,,데이터 찾기,BUTTON
 C-005,detail,,데이터 지도,BUTTON
@@ -24655,13 +24548,11 @@ C-005,detail,v125-entity-table-fallback,·DMHCC,TD
 C-005,detail,v125-entity-table-fallback,National Supervising Agency / Coordination·Executing Agency,TD
 C-005,detail,,다운로드,H3
 C-005,detail,public-download-link,전체 데이터 다운로드,BUTTON
-C-005,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-005,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-C-005,detail,,지도,BUTTON
 C-005,detail,,데이터 이용안내,BUTTON
 C-005,detail,,© 2026 국가녹색기술연구소,SPAN
 C-005,detail,,문의,A
-C-006,detail,,개도국 전략지도,STRONG
+C-006,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-006,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 C-006,detail,,데이터 찾기,BUTTON
 C-006,detail,,데이터 지도,BUTTON
@@ -24731,7 +24622,6 @@ C-006,detail,evidence-matrix-v138,MTI,BUTTON
 C-006,detail,evidence-matrix-v138,"[구조적 부존] 시행령 119/2025·29/2026 전수 확인 결과 산업무역부( , Bộ Công Thương)에 배정된 소관은 존재하지 않음. 농업환경부( )의 상대 부처는 재무부(MoF, Bộ Tài chính)이며 시행령 29/2026에서 거래 모니터링 지침·금융 감독을 담당함. 원본 자료의 「 / 」 병기는 재무부의 오기로 판단되나, 확정 정정 여부는 확인 요청 대상으로 남겨 둠.",TD
 C-006,detail,evidence-matrix-v138,2026,TD
 C-006,detail,evidence-matrix-v138,"승인 기관 체계 MoF (Ministry of Finance, 재무부)",TH
-C-006,detail,evidence-matrix-v138,MoF,TD
 C-006,detail,evidence-matrix-v138,2026 · 거래 모니터링 지침 제공 및 광범위한 금융 감독 담당. 산하 국가증권위원회( )가 거래소 개설 준비를 주관,TD
 C-006,detail,evidence-matrix-v138,SSC,BUTTON
 C-006,detail,evidence-matrix-v138,bilateral date,TD
@@ -24770,7 +24660,6 @@ C-006,detail,evidence-matrix-v138,2025-06-09,TD
 C-006,detail,evidence-matrix-v138,2025 · 승인기관( ) 지정·상응조정( ) 체계(이중계상 방지)의 법적 근거,TD
 C-006,detail,evidence-matrix-v138,ITMO,BUTTON
 C-006,detail,evidence-matrix-v138,체계 구축 여부,TH
-C-006,detail,evidence-matrix-v138,구축,TD
 C-006,detail,evidence-matrix-v138,"2025~2026 · Decree 119/2025가 이중계상 방지 원칙을, Decree 112/2026(2026.5.19 시행)이 국제 이전 시 의 상응조정 실행 절차를 구체화",TD
 C-006,detail,evidence-matrix-v138,2026-05-19,TD
 C-006,detail,evidence-matrix-v138,2026 · 공포(2026.4.1)와 시행(2026.5.19)이 분리됨. 제6.2조 협정·제6.4조 메커니즘 참여의 국내 절차를 규정,TD
@@ -24893,6 +24782,7 @@ C-006,detail,v125-entity-table-fallback,Decree 29/2026/NĐ-CP(베트남 정부 �
 C-006,detail,v125-entity-table-fallback,승인 기관 체계 역할분담,TD
 C-006,detail,v125-entity-table-fallback,해당 제도·현상이 존재하지 않음,TD
 C-006,detail,v125-entity-table-fallback,"승인 기관 체계 MoF (Ministry of Finance, 재무부)",TD
+C-006,detail,v125-entity-table-fallback,MoF,TD
 C-006,detail,v125-entity-table-fallback,2025,TD
 C-006,detail,v125-entity-table-fallback,한국,TD
 C-006,detail,v125-entity-table-fallback,2023,TD
@@ -24903,6 +24793,7 @@ C-006,detail,v125-entity-table-fallback,Decree 112/2026/NĐ-CP,TD
 C-006,detail,v125-entity-table-fallback,Decision 232/QD-TTg,TD
 C-006,detail,v125-entity-table-fallback,Decree 119/2025/ND-CP,TD
 C-006,detail,v125-entity-table-fallback,체계 구축 여부,TD
+C-006,detail,v125-entity-table-fallback,구축,TD
 C-006,detail,v125-entity-table-fallback,2025~2026,TD
 C-006,detail,v125-entity-table-fallback,Decree 29/2026/NĐ-CP,TD
 C-006,detail,v125-entity-table-fallback,일본( ) 배분비율,TD
@@ -24941,13 +24832,11 @@ C-006,detail,v125-entity-table-fallback,거래소 구축 현황 결제 예탁 �
 C-006,detail,v125-entity-table-fallback,거래소 구축 현황 국가 레지스트리 구축 여부,TD
 C-006,detail,,다운로드,H3
 C-006,detail,public-download-link,전체 데이터 다운로드,BUTTON
-C-006,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-006,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-C-006,detail,,지도,BUTTON
 C-006,detail,,데이터 이용안내,BUTTON
 C-006,detail,,© 2026 국가녹색기술연구소,SPAN
 C-006,detail,,문의,A
-C-007,detail,,개도국 전략지도,STRONG
+C-007,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-007,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 C-007,detail,,데이터 찾기,BUTTON
 C-007,detail,,데이터 지도,BUTTON
@@ -25117,13 +25006,11 @@ C-007,detail,v125-entity-table-fallback,GCNMA-8 사무국 업데이트(PDF),TD
 C-007,detail,v125-entity-table-fallback,GCNMA8_Secretariat_Update_2025-11-12.pdf,TD
 C-007,detail,,다운로드,H3
 C-007,detail,public-download-link,전체 데이터 다운로드,BUTTON
-C-007,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-007,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-C-007,detail,,지도,BUTTON
 C-007,detail,,데이터 이용안내,BUTTON
 C-007,detail,,© 2026 국가녹색기술연구소,SPAN
 C-007,detail,,문의,A
-C-008,detail,,개도국 전략지도,STRONG
+C-008,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-008,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 C-008,detail,,데이터 찾기,BUTTON
 C-008,detail,,데이터 지도,BUTTON
@@ -25674,13 +25561,11 @@ C-008,detail,v125-entity-table-fallback,이행목표 — 전력부문 배출 정
 C-008,detail,v125-entity-table-fallback,전력부문 배출 정점 시기 (보완항목),TD
 C-008,detail,,다운로드,H3
 C-008,detail,public-download-link,전체 데이터 다운로드,BUTTON
-C-008,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-008,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-C-008,detail,,지도,BUTTON
 C-008,detail,,데이터 이용안내,BUTTON
 C-008,detail,,© 2026 국가녹색기술연구소,SPAN
 C-008,detail,,문의,A
-C-009,detail,,개도국 전략지도,STRONG
+C-009,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-009,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 C-009,detail,,데이터 찾기,BUTTON
 C-009,detail,,데이터 지도,BUTTON
@@ -26199,13 +26084,11 @@ C-009,detail,v125-entity-table-fallback,17,TD
 C-009,detail,v125-entity-table-fallback,6,TD
 C-009,detail,,다운로드,H3
 C-009,detail,public-download-link,전체 데이터 다운로드,BUTTON
-C-009,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-009,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-C-009,detail,,지도,BUTTON
 C-009,detail,,데이터 이용안내,BUTTON
 C-009,detail,,© 2026 국가녹색기술연구소,SPAN
 C-009,detail,,문의,A
-C-010,detail,,개도국 전략지도,STRONG
+C-010,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-010,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 C-010,detail,,데이터 찾기,BUTTON
 C-010,detail,,데이터 지도,BUTTON
@@ -26539,13 +26422,11 @@ C-010,detail,v125-entity-table-fallback,( ) 영문 PDF 원문(raw 폴더 보관)
 C-010,detail,v125-entity-table-fallback,원문 PDF,TD
 C-010,detail,,다운로드,H3
 C-010,detail,public-download-link,전체 데이터 다운로드,BUTTON
-C-010,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-010,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-C-010,detail,,지도,BUTTON
 C-010,detail,,데이터 이용안내,BUTTON
 C-010,detail,,© 2026 국가녹색기술연구소,SPAN
 C-010,detail,,문의,A
-C-011,detail,,개도국 전략지도,STRONG
+C-011,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-011,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 C-011,detail,,데이터 찾기,BUTTON
 C-011,detail,,데이터 지도,BUTTON
@@ -26729,13 +26610,11 @@ C-011,detail,v125-entity-table-fallback,미국 국무부 여행경보,TD
 C-011,detail,v125-entity-table-fallback,Level 1,TD
 C-011,detail,,다운로드,H3
 C-011,detail,public-download-link,전체 데이터 다운로드,BUTTON
-C-011,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-011,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-C-011,detail,,지도,BUTTON
 C-011,detail,,데이터 이용안내,BUTTON
 C-011,detail,,© 2026 국가녹색기술연구소,SPAN
 C-011,detail,,문의,A
-C-012,detail,,개도국 전략지도,STRONG
+C-012,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-012,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 C-012,detail,,데이터 찾기,BUTTON
 C-012,detail,,데이터 지도,BUTTON
@@ -27163,13 +27042,11 @@ C-012,detail,v125-entity-table-fallback,명시 조항 확인 안 됨,TD
 C-012,detail,v125-entity-table-fallback,시행령 확인 필요,TD
 C-012,detail,,다운로드,H3
 C-012,detail,public-download-link,전체 데이터 다운로드,BUTTON
-C-012,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-012,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-C-012,detail,,지도,BUTTON
 C-012,detail,,데이터 이용안내,BUTTON
 C-012,detail,,© 2026 국가녹색기술연구소,SPAN
 C-012,detail,,문의,A
-C-013,detail,,개도국 전략지도,STRONG
+C-013,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-013,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 C-013,detail,,데이터 찾기,BUTTON
 C-013,detail,,데이터 지도,BUTTON
@@ -27391,13 +27268,11 @@ C-013,detail,v125-entity-table-fallback,경로,TD
 C-013,detail,v125-entity-table-fallback,국내거래 의무·대외송금 인가 외환기관 경유,TD
 C-013,detail,,다운로드,H3
 C-013,detail,public-download-link,전체 데이터 다운로드,BUTTON
-C-013,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-013,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-C-013,detail,,지도,BUTTON
 C-013,detail,,데이터 이용안내,BUTTON
 C-013,detail,,© 2026 국가녹색기술연구소,SPAN
 C-013,detail,,문의,A
-C-014,detail,,개도국 전략지도,STRONG
+C-014,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-014,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 C-014,detail,,데이터 찾기,BUTTON
 C-014,detail,,데이터 지도,BUTTON
@@ -27446,7 +27321,6 @@ C-014,detail,evidence-matrix-v138,"242,943",TD
 C-014,detail,evidence-matrix-v138,소요기간 비용 (10단계) ② 건축허가 취득(건설국),TH
 C-014,detail,evidence-matrix-v138,"150,000",TD
 C-014,detail,evidence-matrix-v138,소요기간 비용 (10단계) ③ 착공 신고(건설국),TH
-C-014,detail,evidence-matrix-v138,0,TD
 C-014,detail,evidence-matrix-v138,2020 · 무료(비용 발생 없음),TD
 C-014,detail,evidence-matrix-v138,소요기간 비용 (10단계) ④ 기초공사 완료 후 검사,TH
 C-014,detail,evidence-matrix-v138,소요기간 비용 (10단계) ⑤ 건물 주변 완료 검사,TH
@@ -27543,6 +27417,7 @@ C-014,detail,v125-entity-table-fallback,242943,TD
 C-014,detail,v125-entity-table-fallback,소요기간 비용 (10단계) ② 건축허가 취득(건설국),TD
 C-014,detail,v125-entity-table-fallback,150000,TD
 C-014,detail,v125-entity-table-fallback,소요기간 비용 (10단계) ③ 착공 신고(건설국),TD
+C-014,detail,v125-entity-table-fallback,0,TD
 C-014,detail,v125-entity-table-fallback,소요기간 비용 (10단계) ④ 기초공사 완료 후 검사,TD
 C-014,detail,v125-entity-table-fallback,소요기간 비용 (10단계) ⑤ 건물 주변 완료 검사,TD
 C-014,detail,v125-entity-table-fallback,소요기간 비용 (10단계) ⑥ 상 하수도 연결 신청,TD
@@ -27638,13 +27513,11 @@ C-014,detail,v125-entity-table-fallback,제18조 제2항,TD
 C-014,detail,v125-entity-table-fallback,제18조 제1항,TD
 C-014,detail,,다운로드,H3
 C-014,detail,public-download-link,전체 데이터 다운로드,BUTTON
-C-014,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-014,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-C-014,detail,,지도,BUTTON
 C-014,detail,,데이터 이용안내,BUTTON
 C-014,detail,,© 2026 국가녹색기술연구소,SPAN
 C-014,detail,,문의,A
-C-015,detail,,개도국 전략지도,STRONG
+C-015,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-015,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 C-015,detail,,데이터 찾기,BUTTON
 C-015,detail,,데이터 지도,BUTTON
@@ -27829,13 +27702,11 @@ C-015,detail,v125-entity-table-fallback,2025-12-15,TD
 C-015,detail,v125-entity-table-fallback,Decree 320/2025/NĐ-CP — 우대 대상·기간 세부,TD
 C-015,detail,,다운로드,H3
 C-015,detail,public-download-link,전체 데이터 다운로드,BUTTON
-C-015,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-015,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-C-015,detail,,지도,BUTTON
 C-015,detail,,데이터 이용안내,BUTTON
 C-015,detail,,© 2026 국가녹색기술연구소,SPAN
 C-015,detail,,문의,A
-C-016,detail,,개도국 전략지도,STRONG
+C-016,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-016,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 C-016,detail,,데이터 찾기,BUTTON
 C-016,detail,,데이터 지도,BUTTON
@@ -27973,13 +27844,11 @@ C-016,detail,public-source-panel,MOIT,SPAN
 C-016,detail,public-raw-table-summary,"상세 데이터 · 전체 1,456행 · 값 있음 639행 · 결측 0행 · 목록 817건",SUMMARY
 C-016,detail,,다운로드,H3
 C-016,detail,public-download-link,전체 데이터 다운로드,BUTTON
-C-016,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-016,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-C-016,detail,,지도,BUTTON
 C-016,detail,,데이터 이용안내,BUTTON
 C-016,detail,,© 2026 국가녹색기술연구소,SPAN
 C-016,detail,,문의,A
-C-017,detail,,개도국 전략지도,STRONG
+C-017,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-017,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 C-017,detail,,데이터 찾기,BUTTON
 C-017,detail,,데이터 지도,BUTTON
@@ -28244,13 +28113,11 @@ C-017,detail,v125-entity-table-fallback,2091.74,TD
 C-017,detail,v125-entity-table-fallback,2025년 기술별 발전가격 상한 · 바이오매스 — 상한(max),TD
 C-017,detail,,다운로드,H3
 C-017,detail,public-download-link,전체 데이터 다운로드,BUTTON
-C-017,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-017,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-C-017,detail,,지도,BUTTON
 C-017,detail,,데이터 이용안내,BUTTON
 C-017,detail,,© 2026 국가녹색기술연구소,SPAN
 C-017,detail,,문의,A
-C-018,detail,,개도국 전략지도,STRONG
+C-018,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-018,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 C-018,detail,,데이터 찾기,BUTTON
 C-018,detail,,데이터 지도,BUTTON
@@ -28534,13 +28401,11 @@ C-018,detail,v125-entity-table-fallback,74,TD
 C-018,detail,v125-entity-table-fallback,75,TD
 C-018,detail,,다운로드,H3
 C-018,detail,public-download-link,전체 데이터 다운로드,BUTTON
-C-018,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-018,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-C-018,detail,,지도,BUTTON
 C-018,detail,,데이터 이용안내,BUTTON
 C-018,detail,,© 2026 국가녹색기술연구소,SPAN
 C-018,detail,,문의,A
-C-019,detail,,개도국 전략지도,STRONG
+C-019,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-019,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 C-019,detail,,데이터 찾기,BUTTON
 C-019,detail,,데이터 지도,BUTTON
@@ -29068,13 +28933,11 @@ C-019,detail,v125-entity-table-fallback,/ / 도입 여부 직접전력구매제�
 C-019,detail,v125-entity-table-fallback,57/2025/ND-CP,TD
 C-019,detail,,다운로드,H3
 C-019,detail,public-download-link,전체 데이터 다운로드,BUTTON
-C-019,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-019,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-C-019,detail,,지도,BUTTON
 C-019,detail,,데이터 이용안내,BUTTON
 C-019,detail,,© 2026 국가녹색기술연구소,SPAN
 C-019,detail,,문의,A
-C-020,detail,,개도국 전략지도,STRONG
+C-020,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-020,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 C-020,detail,,데이터 찾기,BUTTON
 C-020,detail,,데이터 지도,BUTTON
@@ -29111,13 +28974,11 @@ C-020,detail,,공식 자료를 확보하고 확인한 뒤 데이터를 제공합
 C-020,detail,,다운로드,H3
 C-020,detail,,다운로드 자료 없음,STRONG
 C-020,detail,,자료가 아직 수집되지 않아 다운로드 파일을 제공하지 않습니다,P
-C-020,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-020,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-C-020,detail,,지도,BUTTON
 C-020,detail,,데이터 이용안내,BUTTON
 C-020,detail,,© 2026 국가녹색기술연구소,SPAN
 C-020,detail,,문의,A
-C-021,detail,,개도국 전략지도,STRONG
+C-021,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-021,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 C-021,detail,,데이터 찾기,BUTTON
 C-021,detail,,데이터 지도,BUTTON
@@ -29154,13 +29015,11 @@ C-021,detail,,공식 자료를 확보하고 확인한 뒤 데이터를 제공합
 C-021,detail,,다운로드,H3
 C-021,detail,,다운로드 자료 없음,STRONG
 C-021,detail,,자료가 아직 수집되지 않아 다운로드 파일을 제공하지 않습니다,P
-C-021,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-021,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-C-021,detail,,지도,BUTTON
 C-021,detail,,데이터 이용안내,BUTTON
 C-021,detail,,© 2026 국가녹색기술연구소,SPAN
 C-021,detail,,문의,A
-C-022,detail,,개도국 전략지도,STRONG
+C-022,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-022,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 C-022,detail,,데이터 찾기,BUTTON
 C-022,detail,,데이터 지도,BUTTON
@@ -29199,18 +29058,14 @@ C-022,detail,evidence-matrix-v138,항목,TH
 C-022,detail,evidence-matrix-v138,확인 결과,TH
 C-022,detail,evidence-matrix-v138,단위,TH
 C-022,detail,evidence-matrix-v138,기준연도·대상·근거,TH
-C-022,detail,evidence-matrix-v138,carbon market readiness,TD
-C-022,detail,evidence-matrix-v138,수집현황 분류,TH
-C-022,detail,evidence-matrix-v138,이미 확보한 제도 데이터를 근거로 준비도를 산출하는 방식을 채택함.,TD
-C-022,detail,evidence-matrix-v138,ETS,BUTTON
-C-022,detail,evidence-matrix-v138,—,TD
-C-022,detail,evidence-matrix-v138,2026 · 이미 확보한 제도 데이터를 근거로 준비도를 산출하는 방식을 채택함.,TD
+C-022,detail,evidence-matrix-v138,탄소시장 준비도,TD
 C-022,detail,evidence-matrix-v138,종합 점수,TH
 C-022,detail,evidence-matrix-v138,82.1,TD
+C-022,detail,evidence-matrix-v138,—,TD
 C-022,detail,evidence-matrix-v138,2026 · 자체 산출 — 체크리스트 14개 항목 기준,TD
 C-022,detail,evidence-matrix-v138,준비도 지표 정의,TH
 C-022,detail,evidence-matrix-v138,"준비도 측정 기준을 체크리스트 방식으로 확정함. 정성 등급은 평가자 주관이 개입하고 국가 간 비교가 어려운 반면, 체크리스트는 각 항목이 수록된 법령·수치 행에 직접 연결되어 근거 추적이 가능함.",TD
-C-022,detail,evidence-matrix-v138,"2026 · 준비도 측정 기준을 체크리스트 방식으로 확정함. 정성 등급은 평가자 주관이 개입하고 국가 간 비교가 어려운 반면, 체크리스트는 각 항목이 수록된 법령·수치 행에 직접 연결되어 근거 추적이 가능함.",TD
+C-022,detail,evidence-matrix-v138,2026,TD
 C-022,detail,evidence-matrix-v138,프로젝트 파이프라인 원자료,TH
 C-022,detail,evidence-matrix-v138,VCM,BUTTON
 C-022,detail,evidence-matrix-v138,"https://gspp.berkeley.edu/berkeley-carbon-trading-project/offsets-database (PROJECTS · Registry=GOLD · Country=Viet Nam, 79건)",TD
@@ -29230,7 +29085,7 @@ C-022,detail,evidence-matrix-v138,"2025-2026 · 수치적 배출량·연료사�
 C-022,detail,evidence-matrix-v138,MAE,BUTTON
 C-022,detail,evidence-matrix-v138,부문별 시설수,TH
 C-022,detail,evidence-matrix-v138,25,TD
-C-022,detail,evidence-matrix-v138,2025-2026,TD
+C-022,detail,evidence-matrix-v138,2025-2026 · 원천 행에 부문명이 없어 값만 제공 · 같은 자료의 적용대상 근거문: 발전 34·철강 25·시멘트 51,TD
 C-022,detail,evidence-matrix-v138,34,TD
 C-022,detail,evidence-matrix-v138,51,TD
 C-022,detail,evidence-matrix-v138,상쇄 사용 한도(Offset limit),TH
@@ -29245,7 +29100,7 @@ C-022,detail,evidence-matrix-v138,충족,TD
 C-022,detail,evidence-matrix-v138,2026 · 제도 구축 체크리스트 항목 「배출허용총량 설정」 — 판정 충족(1.0). 근거: 2025년 243.1 · 2026년 268.4,TD
 C-022,detail,evidence-matrix-v138,2026 · 제도 구축 체크리스트 항목 「적용대상 확정」 — 판정 충족(1.0). 근거: 시범 1단계 110개 시설(발전 34·철강 25·시멘트 51),TD
 C-022,detail,evidence-matrix-v138,시범단계,TH
-C-022,detail,evidence-matrix-v138,"2,028",TD
+C-022,detail,evidence-matrix-v138,2028,TD
 C-022,detail,evidence-matrix-v138,"2025-2028 · [상한(max)] 무상할당·산출물기반 벤치마크 적용, 규제프레임 검토·평가 기간",TD
 C-022,detail,evidence-matrix-v138,이월(Banking),TH
 C-022,detail,evidence-matrix-v138,허용(2030까지),TD
@@ -29303,7 +29158,8 @@ C-022,detail,evidence-matrix-v138,의무 인벤토리 대상 시설 — Lai Châ
 C-022,detail,evidence-matrix-v138,3,TD
 C-022,detail,evidence-matrix-v138,의무 인벤토리 대상 시설 — Lào Cai,TH
 C-022,detail,evidence-matrix-v138,22,TD
-C-022,detail,public-primary-visualization,대표 40건을 표시합니다. 전체 98 건은 상세 데이터에서 확인할 수 있습니다.,P
+C-022,detail,evidence-matrix-v138,의무 인벤토리 대상 시설 — Lâm Đồng,TH
+C-022,detail,public-primary-visualization,대표 40건을 표시합니다. 전체 97 건은 상세 데이터에서 확인할 수 있습니다.,P
 C-022,detail,detail-metadata-v135,자료정보,SUMMARY
 C-022,detail,public-source-panel,자료정보,SPAN
 C-022,detail,public-source-panel,출처와 이용조건,H3
@@ -29344,7 +29200,6 @@ C-022,detail,v125-entity-table-fallback,결측 사유,TH
 C-022,detail,v125-entity-table-fallback,공식 원문,TH
 C-022,detail,v125-entity-table-fallback,수집현황 분류,TD
 C-022,detail,v125-entity-table-fallback,entity,TD
-C-022,detail,v125-entity-table-fallback,2026,TD
 C-022,detail,v125-entity-table-fallback,출처에서 값을 제공하지 않음,TD
 C-022,detail,v125-entity-table-fallback,종합 점수,TD
 C-022,detail,v125-entity-table-fallback,자체 산출 — 체크리스트 14개 항목 기준,TD
@@ -29356,6 +29211,7 @@ C-022,detail,v125-entity-table-fallback,2025~,TD
 C-022,detail,v125-entity-table-fallback,요건 제3자 검증(Third-party verification),TD
 C-022,detail,v125-entity-table-fallback,2027~,TD
 C-022,detail,v125-entity-table-fallback,Phase1 대상 시설 총수,TD
+C-022,detail,v125-entity-table-fallback,2025-2026,TD
 C-022,detail,v125-entity-table-fallback,부문별 시설수,TD
 C-022,detail,v125-entity-table-fallback,상쇄 사용 한도(Offset limit),TD
 C-022,detail,v125-entity-table-fallback,제도적 근거 및 관련 법령 시범 배출예산 승인,TD
@@ -29363,7 +29219,6 @@ C-022,detail,v125-entity-table-fallback,체크리스트 항목,TD
 C-022,detail,v125-entity-table-fallback,배출허용총량 설정,TD
 C-022,detail,v125-entity-table-fallback,적용대상 확정,TD
 C-022,detail,v125-entity-table-fallback,시범단계,TD
-C-022,detail,v125-entity-table-fallback,2028,TD
 C-022,detail,v125-entity-table-fallback,2025-2028,TD
 C-022,detail,v125-entity-table-fallback,이월(Banking),TD
 C-022,detail,v125-entity-table-fallback,이행단위 제출(Surrender),TD
@@ -29507,6 +29362,7 @@ C-022,detail,v125-entity-table-fallback,요건 활동자료 상시 모니터링,
 C-022,detail,v125-entity-table-fallback,상시 모니터링,TD
 C-022,detail,v125-entity-table-fallback,2024~,TD
 C-022,detail,v125-entity-table-fallback,제도적 근거 및 관련 법령 기본설계 시행령,TD
+C-022,detail,v125-entity-table-fallback,ETS,BUTTON
 C-022,detail,v125-entity-table-fallback,Decree 06/2022/NĐ-CP,TD
 C-022,detail,v125-entity-table-fallback,2022,TD
 C-022,detail,v125-entity-table-fallback,체계,TD
@@ -29562,13 +29418,11 @@ C-022,detail,v125-entity-table-fallback,50,TD
 C-022,detail,v125-entity-table-fallback,World Bank,TD
 C-022,detail,,다운로드,H3
 C-022,detail,public-download-link,전체 데이터 다운로드,BUTTON
-C-022,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-022,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-C-022,detail,,지도,BUTTON
 C-022,detail,,데이터 이용안내,BUTTON
 C-022,detail,,© 2026 국가녹색기술연구소,SPAN
 C-022,detail,,문의,A
-C-023,detail,,개도국 전략지도,STRONG
+C-023,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-023,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 C-023,detail,,데이터 찾기,BUTTON
 C-023,detail,,데이터 지도,BUTTON
@@ -29605,13 +29459,11 @@ C-023,detail,,공식 자료를 확보하고 확인한 뒤 데이터를 제공합
 C-023,detail,,다운로드,H3
 C-023,detail,,다운로드 자료 없음,STRONG
 C-023,detail,,자료가 아직 수집되지 않아 다운로드 파일을 제공하지 않습니다,P
-C-023,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-023,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-C-023,detail,,지도,BUTTON
 C-023,detail,,데이터 이용안내,BUTTON
 C-023,detail,,© 2026 국가녹색기술연구소,SPAN
 C-023,detail,,문의,A
-C-024,detail,,개도국 전략지도,STRONG
+C-024,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-024,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 C-024,detail,,데이터 찾기,BUTTON
 C-024,detail,,데이터 지도,BUTTON
@@ -29778,13 +29630,11 @@ C-024,detail,v125-entity-table-fallback,지급액,TD
 C-024,detail,v125-entity-table-fallback,구축 여부,TD
 C-024,detail,,다운로드,H3
 C-024,detail,public-download-link,전체 데이터 다운로드,BUTTON
-C-024,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-024,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-C-024,detail,,지도,BUTTON
 C-024,detail,,데이터 이용안내,BUTTON
 C-024,detail,,© 2026 국가녹색기술연구소,SPAN
 C-024,detail,,문의,A
-C-025,detail,,개도국 전략지도,STRONG
+C-025,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-025,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 C-025,detail,,데이터 찾기,BUTTON
 C-025,detail,,데이터 지도,BUTTON
@@ -30745,13 +30595,11 @@ C-025,detail,v125-entity-table-fallback,등록 프로젝트 검증 연간 감축
 C-025,detail,v125-entity-table-fallback,3205906,TD
 C-025,detail,,다운로드,H3
 C-025,detail,public-download-link,전체 데이터 다운로드,BUTTON
-C-025,detail,,개도국 기후기술 협력 플랫폼,STRONG
 C-025,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-C-025,detail,,지도,BUTTON
 C-025,detail,,데이터 이용안내,BUTTON
 C-025,detail,,© 2026 국가녹색기술연구소,SPAN
 C-025,detail,,문의,A
-D-001,detail,,개도국 전략지도,STRONG
+D-001,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-001,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 D-001,detail,,데이터 찾기,BUTTON
 D-001,detail,,데이터 지도,BUTTON
@@ -30863,13 +30711,11 @@ D-001,detail,public-raw-table,풍력 기술 (Wind) · 표본 하한(min),TD
 D-001,detail,public-raw-table,913,TD
 D-001,detail,,다운로드,H3
 D-001,detail,public-download-link,전체 데이터 다운로드,BUTTON
-D-001,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-001,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-D-001,detail,,지도,BUTTON
 D-001,detail,,데이터 이용안내,BUTTON
 D-001,detail,,© 2026 국가녹색기술연구소,SPAN
 D-001,detail,,문의,A
-D-002,detail,,개도국 전략지도,STRONG
+D-002,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-002,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 D-002,detail,,데이터 찾기,BUTTON
 D-002,detail,,데이터 지도,BUTTON
@@ -30965,13 +30811,11 @@ D-002,detail,public-raw-table,풍력 기술(육상 · 근해) · 2023→2030 설
 D-002,detail,public-raw-table,30.4,TD
 D-002,detail,,다운로드,H3
 D-002,detail,public-download-link,전체 데이터 다운로드,BUTTON
-D-002,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-002,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-D-002,detail,,지도,BUTTON
 D-002,detail,,데이터 이용안내,BUTTON
 D-002,detail,,© 2026 국가녹색기술연구소,SPAN
 D-002,detail,,문의,A
-D-003,detail,,개도국 전략지도,STRONG
+D-003,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-003,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 D-003,detail,,데이터 찾기,BUTTON
 D-003,detail,,데이터 지도,BUTTON
@@ -31075,13 +30919,11 @@ D-003,detail,public-raw-table,풍력 기술(육상 · 근해) · 1MW당 연간 �
 D-003,detail,public-raw-table,"1,499",TD
 D-003,detail,,다운로드,H3
 D-003,detail,public-download-link,전체 데이터 다운로드,BUTTON
-D-003,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-003,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-D-003,detail,,지도,BUTTON
 D-003,detail,,데이터 이용안내,BUTTON
 D-003,detail,,© 2026 국가녹색기술연구소,SPAN
 D-003,detail,,문의,A
-D-004,detail,,개도국 전략지도,STRONG
+D-004,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-004,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 D-004,detail,,데이터 찾기,BUTTON
 D-004,detail,,데이터 지도,BUTTON
@@ -31206,13 +31048,11 @@ D-004,detail,public-raw-table,풍력 기술(육상)(중 시나리오) · 20년 �
 D-004,detail,public-raw-table,24.8,TD
 D-004,detail,,다운로드,H3
 D-004,detail,public-download-link,전체 데이터 다운로드,BUTTON
-D-004,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-004,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-D-004,detail,,지도,BUTTON
 D-004,detail,,데이터 이용안내,BUTTON
 D-004,detail,,© 2026 국가녹색기술연구소,SPAN
 D-004,detail,,문의,A
-D-005,detail,,개도국 전략지도,STRONG
+D-005,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-005,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 D-005,detail,,데이터 찾기,BUTTON
 D-005,detail,,데이터 지도,BUTTON
@@ -31333,13 +31173,11 @@ D-005,detail,public-raw-table,감축 · 총 기후변화 지출 대비 비중(�
 D-005,detail,public-raw-table,2,TD
 D-005,detail,,다운로드,H3
 D-005,detail,public-download-link,전체 데이터 다운로드,BUTTON
-D-005,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-005,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-D-005,detail,,지도,BUTTON
 D-005,detail,,데이터 이용안내,BUTTON
 D-005,detail,,© 2026 국가녹색기술연구소,SPAN
 D-005,detail,,문의,A
-D-006,detail,,개도국 전략지도,STRONG
+D-006,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-006,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 D-006,detail,,데이터 찾기,BUTTON
 D-006,detail,,데이터 지도,BUTTON
@@ -31482,13 +31320,11 @@ D-006,detail,public-raw-table,"3,000",TD
 D-006,detail,public-raw-table,환경보호세 표준세율 · 등유,TD
 D-006,detail,,다운로드,H3
 D-006,detail,public-download-link,전체 데이터 다운로드,BUTTON
-D-006,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-006,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-D-006,detail,,지도,BUTTON
 D-006,detail,,데이터 이용안내,BUTTON
 D-006,detail,,© 2026 국가녹색기술연구소,SPAN
 D-006,detail,,문의,A
-D-007,detail,,개도국 전략지도,STRONG
+D-007,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-007,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 D-007,detail,,데이터 찾기,BUTTON
 D-007,detail,,데이터 지도,BUTTON
@@ -31574,13 +31410,11 @@ D-007,detail,public-raw-table,태깅 분류체계 구조 · 기둥·범주 구�
 D-007,detail,public-raw-table,3대 기둥(PG·ST·CCD) / 5개 범주,TD
 D-007,detail,,다운로드,H3
 D-007,detail,public-download-link,전체 데이터 다운로드,BUTTON
-D-007,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-007,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-D-007,detail,,지도,BUTTON
 D-007,detail,,데이터 이용안내,BUTTON
 D-007,detail,,© 2026 국가녹색기술연구소,SPAN
 D-007,detail,,문의,A
-D-008,detail,,개도국 전략지도,STRONG
+D-008,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-008,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 D-008,detail,,데이터 찾기,BUTTON
 D-008,detail,,데이터 지도,BUTTON
@@ -31698,13 +31532,11 @@ D-008,detail,public-raw-table,80,TD
 D-008,detail,public-raw-table,United Nations Development Programme 베트남사무소 · 베트남 기획투자부( ) — 2022,TD
 D-008,detail,,다운로드,H3
 D-008,detail,public-download-link,전체 데이터 다운로드,BUTTON
-D-008,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-008,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-D-008,detail,,지도,BUTTON
 D-008,detail,,데이터 이용안내,BUTTON
 D-008,detail,,© 2026 국가녹색기술연구소,SPAN
 D-008,detail,,문의,A
-D-009,detail,,개도국 전략지도,STRONG
+D-009,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-009,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 D-009,detail,,데이터 찾기,BUTTON
 D-009,detail,,데이터 지도,BUTTON
@@ -31797,13 +31629,11 @@ D-009,detail,public-raw-table,총 지출 규모 · 2016~2020 누계,TD
 D-009,detail,public-raw-table,"6,500,000,000",TD
 D-009,detail,,다운로드,H3
 D-009,detail,public-download-link,전체 데이터 다운로드,BUTTON
-D-009,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-009,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-D-009,detail,,지도,BUTTON
 D-009,detail,,데이터 이용안내,BUTTON
 D-009,detail,,© 2026 국가녹색기술연구소,SPAN
 D-009,detail,,문의,A
-D-010,detail,,개도국 전략지도,STRONG
+D-010,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-010,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 D-010,detail,,데이터 찾기,BUTTON
 D-010,detail,,데이터 지도,BUTTON
@@ -31921,13 +31751,11 @@ D-010,detail,public-raw-table,연료별 구성비 · 기타(디젤 등),TD
 D-010,detail,public-raw-table,35,TD
 D-010,detail,,다운로드,H3
 D-010,detail,public-download-link,전체 데이터 다운로드,BUTTON
-D-010,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-010,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-D-010,detail,,지도,BUTTON
 D-010,detail,,데이터 이용안내,BUTTON
 D-010,detail,,© 2026 국가녹색기술연구소,SPAN
 D-010,detail,,문의,A
-D-011,detail,,개도국 전략지도,STRONG
+D-011,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-011,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 D-011,detail,,데이터 찾기,BUTTON
 D-011,detail,,데이터 지도,BUTTON
@@ -32560,13 +32388,11 @@ D-011,detail,public-source-panel,Organisation for Economic Co-operation and Deve
 D-011,detail,public-source-panel,CRS,SPAN
 D-011,detail,,다운로드,H3
 D-011,detail,public-download-link,전체 데이터 다운로드,BUTTON
-D-011,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-011,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-D-011,detail,,지도,BUTTON
 D-011,detail,,데이터 이용안내,BUTTON
 D-011,detail,,© 2026 국가녹색기술연구소,SPAN
 D-011,detail,,문의,A
-D-012,detail,,개도국 전략지도,STRONG
+D-012,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-012,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 D-012,detail,,데이터 찾기,BUTTON
 D-012,detail,,데이터 지도,BUTTON
@@ -32689,13 +32515,11 @@ D-012,detail,v125-entity-table-fallback,Equinor - 해상풍력 진출 검토,TD
 D-012,detail,v125-entity-table-fallback,B.Grimm Power - Quang Tri 풍력,TD
 D-012,detail,,다운로드,H3
 D-012,detail,public-download-link,전체 데이터 다운로드,BUTTON
-D-012,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-012,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-D-012,detail,,지도,BUTTON
 D-012,detail,,데이터 이용안내,BUTTON
 D-012,detail,,© 2026 국가녹색기술연구소,SPAN
 D-012,detail,,문의,A
-D-013,detail,,개도국 전략지도,STRONG
+D-013,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-013,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 D-013,detail,,데이터 찾기,BUTTON
 D-013,detail,,데이터 지도,BUTTON
@@ -32837,13 +32661,11 @@ D-013,detail,public-raw-table,지속가능한 토지 이용 · 부문(pillar) �
 D-013,detail,public-raw-table,55.49,TD
 D-013,detail,,다운로드,H3
 D-013,detail,public-download-link,전체 데이터 다운로드,BUTTON
-D-013,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-013,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-D-013,detail,,지도,BUTTON
 D-013,detail,,데이터 이용안내,BUTTON
 D-013,detail,,© 2026 국가녹색기술연구소,SPAN
 D-013,detail,,문의,A
-D-014,detail,,개도국 전략지도,STRONG
+D-014,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-014,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 D-014,detail,,데이터 찾기,BUTTON
 D-014,detail,,데이터 지도,BUTTON
@@ -33658,13 +33480,11 @@ D-014,detail,v125-entity-table-fallback,"67,099,000",TD
 D-014,detail,v125-entity-table-fallback,22ED00025,TD
 D-014,detail,,다운로드,H3
 D-014,detail,public-download-link,전체 데이터 다운로드,BUTTON
-D-014,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-014,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-D-014,detail,,지도,BUTTON
 D-014,detail,,데이터 이용안내,BUTTON
 D-014,detail,,© 2026 국가녹색기술연구소,SPAN
 D-014,detail,,문의,A
-D-015,detail,,개도국 전략지도,STRONG
+D-015,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-015,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 D-015,detail,,데이터 찾기,BUTTON
 D-015,detail,,데이터 지도,BUTTON
@@ -33866,13 +33686,11 @@ D-015,detail,public-source-panel,KOICA,SPAN
 D-015,detail,public-raw-table-summary,상세 데이터 · 목록 650건,SUMMARY
 D-015,detail,,다운로드,H3
 D-015,detail,public-download-link,전체 데이터 다운로드,BUTTON
-D-015,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-015,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-D-015,detail,,지도,BUTTON
 D-015,detail,,데이터 이용안내,BUTTON
 D-015,detail,,© 2026 국가녹색기술연구소,SPAN
 D-015,detail,,문의,A
-D-016,detail,,개도국 전략지도,STRONG
+D-016,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-016,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 D-016,detail,,데이터 찾기,BUTTON
 D-016,detail,,데이터 지도,BUTTON
@@ -35144,13 +34962,11 @@ D-016,detail,v125-entity-table-fallback,"37,497",TD
 D-016,detail,v125-entity-table-fallback,1240000_2023_001,TD
 D-016,detail,,다운로드,H3
 D-016,detail,public-download-link,전체 데이터 다운로드,BUTTON
-D-016,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-016,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-D-016,detail,,지도,BUTTON
 D-016,detail,,데이터 이용안내,BUTTON
 D-016,detail,,© 2026 국가녹색기술연구소,SPAN
 D-016,detail,,문의,A
-D-017,detail,,개도국 전략지도,STRONG
+D-017,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-017,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 D-017,detail,,데이터 찾기,BUTTON
 D-017,detail,,데이터 지도,BUTTON
@@ -35392,13 +35208,11 @@ D-017,detail,v125-entity-table-fallback,상시,TD
 D-017,detail,v125-entity-table-fallback,기관별 상이,TD
 D-017,detail,,다운로드,H3
 D-017,detail,public-download-link,전체 데이터 다운로드,BUTTON
-D-017,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-017,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-D-017,detail,,지도,BUTTON
 D-017,detail,,데이터 이용안내,BUTTON
 D-017,detail,,© 2026 국가녹색기술연구소,SPAN
 D-017,detail,,문의,A
-D-018,detail,,개도국 전략지도,STRONG
+D-018,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-018,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 D-018,detail,,데이터 찾기,BUTTON
 D-018,detail,,데이터 지도,BUTTON
@@ -35517,13 +35331,11 @@ D-018,detail,v125-entity-table-fallback,Enhancing the resilience inclusive and s
 D-018,detail,v125-entity-table-fallback,Innovative Financial Incentives for Adaptation in Wetland Livelihoods ( ),TD
 D-018,detail,,다운로드,H3
 D-018,detail,public-download-link,전체 데이터 다운로드,BUTTON
-D-018,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-018,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-D-018,detail,,지도,BUTTON
 D-018,detail,,데이터 이용안내,BUTTON
 D-018,detail,,© 2026 국가녹색기술연구소,SPAN
 D-018,detail,,문의,A
-D-019,detail,,개도국 전략지도,STRONG
+D-019,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-019,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 D-019,detail,,데이터 찾기,BUTTON
 D-019,detail,,데이터 지도,BUTTON
@@ -35633,13 +35445,11 @@ D-019,detail,v125-entity-table-fallback,Strengthening salinity intrusion data sh
 D-019,detail,v125-entity-table-fallback,Cost-benefit assessment of mitigation options in rice production for Vietnam,TD
 D-019,detail,,다운로드,H3
 D-019,detail,public-download-link,전체 데이터 다운로드,BUTTON
-D-019,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-019,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-D-019,detail,,지도,BUTTON
 D-019,detail,,데이터 이용안내,BUTTON
 D-019,detail,,© 2026 국가녹색기술연구소,SPAN
 D-019,detail,,문의,A
-D-020,detail,,개도국 전략지도,STRONG
+D-020,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-020,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 D-020,detail,,데이터 찾기,BUTTON
 D-020,detail,,데이터 지도,BUTTON
@@ -35743,13 +35553,11 @@ D-020,detail,v125-entity-table-fallback,Collaborative R&DB Programme for Promoti
 D-020,detail,v125-entity-table-fallback,승인액 총계 · 베트남 — 국가 포트폴리오 게재 승인 재원 총액,TD
 D-020,detail,,다운로드,H3
 D-020,detail,public-download-link,전체 데이터 다운로드,BUTTON
-D-020,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-020,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-D-020,detail,,지도,BUTTON
 D-020,detail,,데이터 이용안내,BUTTON
 D-020,detail,,© 2026 국가녹색기술연구소,SPAN
 D-020,detail,,문의,A
-D-021,detail,,개도국 전략지도,STRONG
+D-021,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-021,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 D-021,detail,,데이터 찾기,BUTTON
 D-021,detail,,데이터 지도,BUTTON
@@ -35923,13 +35731,11 @@ D-021,detail,public-source-panel,Datastore ( Secretariat) — 국제기구· 보
 D-021,detail,public-raw-table-summary,상세 데이터 · 목록 640건,SUMMARY
 D-021,detail,,다운로드,H3
 D-021,detail,public-download-link,전체 데이터 다운로드,BUTTON
-D-021,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-021,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-D-021,detail,,지도,BUTTON
 D-021,detail,,데이터 이용안내,BUTTON
 D-021,detail,,© 2026 국가녹색기술연구소,SPAN
 D-021,detail,,문의,A
-D-022,detail,,개도국 전략지도,STRONG
+D-022,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-022,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 D-022,detail,,데이터 찾기,BUTTON
 D-022,detail,,데이터 지도,BUTTON
@@ -36105,13 +35911,11 @@ D-022,detail,v125-entity-table-fallback,기후변화·녹색성장 개발정책 
 D-022,detail,v125-entity-table-fallback,베트남 기후변화·녹색성장 사업,TD
 D-022,detail,,다운로드,H3
 D-022,detail,public-download-link,전체 데이터 다운로드,BUTTON
-D-022,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-022,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-D-022,detail,,지도,BUTTON
 D-022,detail,,데이터 이용안내,BUTTON
 D-022,detail,,© 2026 국가녹색기술연구소,SPAN
 D-022,detail,,문의,A
-D-023,detail,,개도국 전략지도,STRONG
+D-023,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-023,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 D-023,detail,,데이터 찾기,BUTTON
 D-023,detail,,데이터 지도,BUTTON
@@ -36328,13 +36132,11 @@ D-023,detail,v125-entity-table-fallback,ODA,BUTTON
 D-023,detail,v125-entity-table-fallback,및 기후기금 재원 · 전체 사업 건수 — 베트남(전 초점분야),TD
 D-023,detail,,다운로드,H3
 D-023,detail,public-download-link,전체 데이터 다운로드,BUTTON
-D-023,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-023,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-D-023,detail,,지도,BUTTON
 D-023,detail,,데이터 이용안내,BUTTON
 D-023,detail,,© 2026 국가녹색기술연구소,SPAN
 D-023,detail,,문의,A
-D-024,detail,,개도국 전략지도,STRONG
+D-024,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-024,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 D-024,detail,,데이터 찾기,BUTTON
 D-024,detail,,데이터 지도,BUTTON
@@ -36553,13 +36355,11 @@ D-024,detail,v125-entity-table-fallback,누적(2018~2026),TD
 D-024,detail,v125-entity-table-fallback,51000000,TD
 D-024,detail,,다운로드,H3
 D-024,detail,public-download-link,전체 데이터 다운로드,BUTTON
-D-024,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-024,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-D-024,detail,,지도,BUTTON
 D-024,detail,,데이터 이용안내,BUTTON
 D-024,detail,,© 2026 국가녹색기술연구소,SPAN
 D-024,detail,,문의,A
-D-025,detail,,개도국 전략지도,STRONG
+D-025,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-025,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 D-025,detail,,데이터 찾기,BUTTON
 D-025,detail,,데이터 지도,BUTTON
@@ -36810,13 +36610,11 @@ D-025,detail,v125-entity-table-fallback,LNG,BUTTON
 D-025,detail,v125-entity-table-fallback,Nhon Trach 3&4 Gas-fired power plants (1.5GW),TD
 D-025,detail,,다운로드,H3
 D-025,detail,public-download-link,전체 데이터 다운로드,BUTTON
-D-025,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-025,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-D-025,detail,,지도,BUTTON
 D-025,detail,,데이터 이용안내,BUTTON
 D-025,detail,,© 2026 국가녹색기술연구소,SPAN
 D-025,detail,,문의,A
-D-026,detail,,개도국 전략지도,STRONG
+D-026,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-026,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 D-026,detail,,데이터 찾기,BUTTON
 D-026,detail,,데이터 지도,BUTTON
@@ -36940,13 +36738,11 @@ D-026,detail,v125-entity-table-fallback,Transfer Restriction / Currency Inconver
 D-026,detail,v125-entity-table-fallback,War and Civil Disturbance,TD
 D-026,detail,,다운로드,H3
 D-026,detail,public-download-link,전체 데이터 다운로드,BUTTON
-D-026,detail,,개도국 기후기술 협력 플랫폼,STRONG
 D-026,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-D-026,detail,,지도,BUTTON
 D-026,detail,,데이터 이용안내,BUTTON
 D-026,detail,,© 2026 국가녹색기술연구소,SPAN
 D-026,detail,,문의,A
-E-001,detail,,개도국 전략지도,STRONG
+E-001,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-001,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 E-001,detail,,데이터 찾기,BUTTON
 E-001,detail,,데이터 지도,BUTTON
@@ -37145,13 +36941,11 @@ E-001,detail,v125-entity-table-fallback,HCMC,BUTTON
 E-001,detail,v125-entity-table-fallback,제안기관(회원 아님),TD
 E-001,detail,,다운로드,H3
 E-001,detail,public-download-link,전체 데이터 다운로드,BUTTON
-E-001,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-001,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-E-001,detail,,지도,BUTTON
 E-001,detail,,데이터 이용안내,BUTTON
 E-001,detail,,© 2026 국가녹색기술연구소,SPAN
 E-001,detail,,문의,A
-E-002,detail,,개도국 전략지도,STRONG
+E-002,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-002,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 E-002,detail,,데이터 찾기,BUTTON
 E-002,detail,,데이터 지도,BUTTON
@@ -37221,13 +37015,11 @@ E-002,detail,v125-entity-table-fallback,United Nations Framework Convention on C
 E-002,detail,v125-entity-table-fallback,원문 확인,A
 E-002,detail,,다운로드,H3
 E-002,detail,public-download-link,전체 데이터 다운로드,BUTTON
-E-002,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-002,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-E-002,detail,,지도,BUTTON
 E-002,detail,,데이터 이용안내,BUTTON
 E-002,detail,,© 2026 국가녹색기술연구소,SPAN
 E-002,detail,,문의,A
-E-003,detail,,개도국 전략지도,STRONG
+E-003,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-003,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 E-003,detail,,데이터 찾기,BUTTON
 E-003,detail,,데이터 지도,BUTTON
@@ -37338,13 +37130,11 @@ E-003,detail,v125-entity-table-fallback,hoanghai@mof.gov.vn,TD
 E-003,detail,v125-entity-table-fallback,hoangthuykieutrang@mof.gov.vn,TD
 E-003,detail,,다운로드,H3
 E-003,detail,public-download-link,전체 데이터 다운로드,BUTTON
-E-003,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-003,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-E-003,detail,,지도,BUTTON
 E-003,detail,,데이터 이용안내,BUTTON
 E-003,detail,,© 2026 국가녹색기술연구소,SPAN
 E-003,detail,,문의,A
-E-004,detail,,개도국 전략지도,STRONG
+E-004,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-004,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 E-004,detail,,데이터 찾기,BUTTON
 E-004,detail,,데이터 지도,BUTTON
@@ -37605,13 +37395,11 @@ E-004,detail,v125-entity-table-fallback,vietnam@worldbank.org,TD
 E-004,detail,v125-entity-table-fallback,+84-24-3934-6600,TD
 E-004,detail,,다운로드,H3
 E-004,detail,public-download-link,전체 데이터 다운로드,BUTTON
-E-004,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-004,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-E-004,detail,,지도,BUTTON
 E-004,detail,,데이터 이용안내,BUTTON
 E-004,detail,,© 2026 국가녹색기술연구소,SPAN
 E-004,detail,,문의,A
-E-005,detail,,개도국 전략지도,STRONG
+E-005,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-005,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 E-005,detail,,데이터 찾기,BUTTON
 E-005,detail,,데이터 지도,BUTTON
@@ -37785,13 +37573,11 @@ E-005,detail,v125-entity-table-fallback,Live & Learn Vietnam (Thế Hệ Xanh),T
 E-005,detail,v125-entity-table-fallback,thehexanh@livelearn.org,TD
 E-005,detail,,다운로드,H3
 E-005,detail,public-download-link,전체 데이터 다운로드,BUTTON
-E-005,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-005,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-E-005,detail,,지도,BUTTON
 E-005,detail,,데이터 이용안내,BUTTON
 E-005,detail,,© 2026 국가녹색기술연구소,SPAN
 E-005,detail,,문의,A
-E-006,detail,,개도국 전략지도,STRONG
+E-006,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-006,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 E-006,detail,,데이터 찾기,BUTTON
 E-006,detail,,데이터 지도,BUTTON
@@ -37962,13 +37748,11 @@ E-006,detail,v125-entity-table-fallback,Beacon Fund,TD
 E-006,detail,v125-entity-table-fallback,info@beaconfund.com,TD
 E-006,detail,,다운로드,H3
 E-006,detail,public-download-link,전체 데이터 다운로드,BUTTON
-E-006,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-006,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-E-006,detail,,지도,BUTTON
 E-006,detail,,데이터 이용안내,BUTTON
 E-006,detail,,© 2026 국가녹색기술연구소,SPAN
 E-006,detail,,문의,A
-E-007,detail,,개도국 전략지도,STRONG
+E-007,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-007,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 E-007,detail,,데이터 찾기,BUTTON
 E-007,detail,,데이터 지도,BUTTON
@@ -38136,13 +37920,11 @@ E-007,detail,v125-entity-table-fallback,탄소거래소 운영 상태,TD
 E-007,detail,v125-entity-table-fallback,로드맵,TD
 E-007,detail,,다운로드,H3
 E-007,detail,public-download-link,전체 데이터 다운로드,BUTTON
-E-007,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-007,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-E-007,detail,,지도,BUTTON
 E-007,detail,,데이터 이용안내,BUTTON
 E-007,detail,,© 2026 국가녹색기술연구소,SPAN
 E-007,detail,,문의,A
-E-008,detail,,개도국 전략지도,STRONG
+E-008,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-008,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 E-008,detail,,데이터 찾기,BUTTON
 E-008,detail,,데이터 지도,BUTTON
@@ -38188,8 +37970,50 @@ E-008,detail,e008-national-change,WIPO,BUTTON
 E-008,detail,e008-breakdown,"기후기술 분류(38대 기술, 원천 부여)",H3
 E-008,detail,e008-breakdown,공개 목록 144건에 원천이 제목·초록 근거로 부여한 분류입니다. 두 분류를 받은 문헌은 각각에 한 번씩 셉니다.,P
 E-008,detail,e008-breakdown,CTIS,BUTTON
-E-008,detail,e008-breakdown,분야 미분류,SPAN
-E-008,detail,e008-breakdown,144 건,STRONG
+E-008,detail,e008-breakdown,기후변화 영향 평가 기술,SPAN
+E-008,detail,e008-breakdown,11 건,STRONG
+E-008,detail,e008-breakdown,기후변화 감시 및 진단 기술,SPAN
+E-008,detail,e008-breakdown,9 건,STRONG
+E-008,detail,e008-breakdown,건물효율 기술,SPAN
+E-008,detail,e008-breakdown,8 건,STRONG
+E-008,detail,e008-breakdown,건강 부문 기술,SPAN
+E-008,detail,e008-breakdown,폐자원 기술,SPAN
+E-008,detail,e008-breakdown,7 건,STRONG
+E-008,detail,e008-breakdown,태양광 기술,SPAN
+E-008,detail,e008-breakdown,6 건,STRONG
+E-008,detail,e008-breakdown,풍력 기술,SPAN
+E-008,detail,e008-breakdown,수소·암모니아 발전 기술,SPAN
+E-008,detail,e008-breakdown,5 건,STRONG
+E-008,detail,e008-breakdown,수소 기술,SPAN
+E-008,detail,e008-breakdown,수송효율 기술,SPAN
+E-008,detail,e008-breakdown,전력 통합 기술,SPAN
+E-008,detail,e008-breakdown,열 통합 기술,SPAN
+E-008,detail,e008-breakdown,농축수산 부문 기술,SPAN
+E-008,detail,e008-breakdown,기후변화 예측 기술,SPAN
+E-008,detail,e008-breakdown,지열 기술,SPAN
+E-008,detail,e008-breakdown,4 건,STRONG
+E-008,detail,e008-breakdown,바이오에너지 기술,SPAN
+E-008,detail,e008-breakdown,원자력 기술,SPAN
+E-008,detail,e008-breakdown,바이오매스 기술,SPAN
+E-008,detail,e008-breakdown,메탄 처리 기술,SPAN
+E-008,detail,e008-breakdown,기타 온실가스 처리 및 대체 기술,SPAN
+E-008,detail,e008-breakdown,산림·생태계 부문 기술,SPAN
+E-008,detail,e008-breakdown,기후변화 취약성 및 위험성 평가 기술,SPAN
+E-008,detail,e008-breakdown,태양열 기술,SPAN
+E-008,detail,e008-breakdown,3 건,STRONG
+E-008,detail,e008-breakdown,해양에너지 기술,SPAN
+E-008,detail,e008-breakdown,물 부문 기술,SPAN
+E-008,detail,e008-breakdown,수력 기술,SPAN
+E-008,detail,e008-breakdown,2 건,STRONG
+E-008,detail,e008-breakdown,발전효율 기술,SPAN
+E-008,detail,e008-breakdown,산업효율 기술,SPAN
+E-008,detail,e008-breakdown,탄소 흡수원 기술,SPAN
+E-008,detail,e008-breakdown,국토·연안 부문 기술,SPAN
+E-008,detail,e008-breakdown,이산화탄소 포집·저장·활용 기술,SPAN
+E-008,detail,e008-breakdown,수열 기술,SPAN
+E-008,detail,e008-breakdown,1 건,STRONG
+E-008,detail,e008-breakdown,전력-비전력 부문 간 결합 기술,SPAN
+E-008,detail,e008-breakdown,기후변화 적응기반 기술,SPAN
 E-008,detail,e008-collaboration,협력구조,H3
 E-008,detail,e008-collaboration,자료의 공저·공동출원 구분을 공개 목록 단위로 집계합니다.,P
 E-008,detail,e008-collaboration,국내 중심,SPAN
@@ -38210,39 +38034,31 @@ E-008,detail,e008-collaboration-countries,영국,SPAN
 E-008,detail,e008-collaboration-countries,10 건,STRONG
 E-008,detail,e008-collaboration-countries,프랑스,SPAN
 E-008,detail,e008-collaboration-countries,독일,SPAN
-E-008,detail,e008-collaboration-countries,9 건,STRONG
 E-008,detail,e008-collaboration-countries,말레이시아,SPAN
 E-008,detail,e008-collaboration-countries,인도,SPAN
 E-008,detail,e008-collaboration-countries,대한민국,SPAN
-E-008,detail,e008-collaboration-countries,8 건,STRONG
 E-008,detail,e008-collaboration-countries,사우디아라비아,SPAN
 E-008,detail,e008-collaboration-countries,이탈리아,SPAN
 E-008,detail,e008-collaboration-countries,이란,SPAN
-E-008,detail,e008-collaboration-countries,7 건,STRONG
 E-008,detail,e008-collaboration-countries,대만,SPAN
-E-008,detail,e008-collaboration-countries,6 건,STRONG
 E-008,detail,e008-collaboration-countries,러시아,SPAN
 E-008,detail,e008-collaboration-countries,네덜란드,SPAN
-E-008,detail,e008-collaboration-countries,5 건,STRONG
 E-008,detail,e008-collaboration-countries,스웨덴,SPAN
 E-008,detail,e008-collaboration-countries,이라크,SPAN
 E-008,detail,e008-collaboration-countries,캐나다,SPAN
 E-008,detail,e008-collaboration-countries,폴란드,SPAN
 E-008,detail,e008-collaboration-countries,덴마크,SPAN
-E-008,detail,e008-collaboration-countries,4 건,STRONG
 E-008,detail,e008-collaboration-countries,루마니아,SPAN
 E-008,detail,e008-collaboration-countries,벨기에,SPAN
 E-008,detail,e008-collaboration-countries,브라질,SPAN
 E-008,detail,e008-collaboration-countries,스페인,SPAN
 E-008,detail,e008-collaboration-countries,아랍에미리트,SPAN
 E-008,detail,e008-collaboration-countries,방글라데시,SPAN
-E-008,detail,e008-collaboration-countries,3 건,STRONG
 E-008,detail,e008-collaboration-countries,이집트,SPAN
 E-008,detail,e008-collaboration-countries,인도네시아,SPAN
 E-008,detail,e008-collaboration-countries,콜롬비아,SPAN
 E-008,detail,e008-collaboration-countries,튀르키예,SPAN
 E-008,detail,e008-collaboration-countries,그리스,SPAN
-E-008,detail,e008-collaboration-countries,2 건,STRONG
 E-008,detail,e008-collaboration-countries,노르웨이,SPAN
 E-008,detail,e008-collaboration-countries,모로코,SPAN
 E-008,detail,e008-collaboration-countries,수단,SPAN
@@ -38251,7 +38067,6 @@ E-008,detail,e008-collaboration-countries,파키스탄,SPAN
 E-008,detail,e008-collaboration-countries,페루,SPAN
 E-008,detail,e008-collaboration-countries,홍콩,SPAN
 E-008,detail,e008-collaboration-countries,나이지리아,SPAN
-E-008,detail,e008-collaboration-countries,1 건,STRONG
 E-008,detail,e008-collaboration-countries,남아프리카공화국,SPAN
 E-008,detail,e008-collaboration-countries,뉴질랜드,SPAN
 E-008,detail,e008-collaboration-countries,라오스,SPAN
@@ -38288,6 +38103,7 @@ E-008,detail,e008-institution-breakdown,University of Science,SPAN
 E-008,detail,e008-institution-breakdown,VNU,BUTTON
 E-008,detail,e008-list,개별 목록,SPAN
 E-008,detail,e008-list,논문·특허 찾아보기,H3
+E-008,detail,e008-list,144 건,STRONG
 E-008,detail,e008-list,검색,SPAN
 E-008,detail,e008-list,유형,SPAN
 E-008,detail,e008-list,연도,SPAN
@@ -38510,13 +38326,11 @@ E-008,detail,v125-entity-table-fallback,Multipurpose Fertilizer Composition and 
 E-008,detail,v125-entity-table-fallback,Metal Organic Frameworks (MOFs) and Methods of Synthesizing and Using the Same,TD
 E-008,detail,,다운로드,H3
 E-008,detail,public-download-link,전체 데이터 다운로드,BUTTON
-E-008,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-008,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-E-008,detail,,지도,BUTTON
 E-008,detail,,데이터 이용안내,BUTTON
 E-008,detail,,© 2026 국가녹색기술연구소,SPAN
 E-008,detail,,문의,A
-E-009,detail,,개도국 전략지도,STRONG
+E-009,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-009,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 E-009,detail,,데이터 찾기,BUTTON
 E-009,detail,,데이터 지도,BUTTON
@@ -38610,13 +38424,11 @@ E-009,detail,public-raw-table,졸업 비중(남성),TD
 E-009,detail,public-raw-table,31.19,TD
 E-009,detail,,다운로드,H3
 E-009,detail,public-download-link,전체 데이터 다운로드,BUTTON
-E-009,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-009,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-E-009,detail,,지도,BUTTON
 E-009,detail,,데이터 이용안내,BUTTON
 E-009,detail,,© 2026 국가녹색기술연구소,SPAN
 E-009,detail,,문의,A
-E-010,detail,,개도국 전략지도,STRONG
+E-010,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-010,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 E-010,detail,,데이터 찾기,BUTTON
 E-010,detail,,데이터 지도,BUTTON
@@ -38782,13 +38594,11 @@ E-010,detail,public-raw-table,지역(동남아·동아시아·오세아니아) �
 E-010,detail,public-raw-table,9,TD
 E-010,detail,,다운로드,H3
 E-010,detail,public-download-link,전체 데이터 다운로드,BUTTON
-E-010,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-010,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-E-010,detail,,지도,BUTTON
 E-010,detail,,데이터 이용안내,BUTTON
 E-010,detail,,© 2026 국가녹색기술연구소,SPAN
 E-010,detail,,문의,A
-E-011,detail,,개도국 전략지도,STRONG
+E-011,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-011,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 E-011,detail,,데이터 찾기,BUTTON
 E-011,detail,,데이터 지도,BUTTON
@@ -38838,13 +38648,11 @@ E-011,detail,,현장조사와 검증을 거쳐 실제 값을 입력할 예정입
 E-011,detail,,다운로드,H3
 E-011,detail,,다운로드 자료 없음,STRONG
 E-011,detail,,입력 예정 항목으로 다운로드할 실제 값이 없습니다,P
-E-011,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-011,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-E-011,detail,,지도,BUTTON
 E-011,detail,,데이터 이용안내,BUTTON
 E-011,detail,,© 2026 국가녹색기술연구소,SPAN
 E-011,detail,,문의,A
-E-012,detail,,개도국 전략지도,STRONG
+E-012,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-012,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 E-012,detail,,데이터 찾기,BUTTON
 E-012,detail,,데이터 지도,BUTTON
@@ -39122,13 +38930,11 @@ E-012,detail,e012-raw-table,"11,321.8",TD
 E-012,detail,e012-raw-table,"10,123",TD
 E-012,detail,,다운로드,H3
 E-012,detail,public-download-link,전체 데이터 다운로드,BUTTON
-E-012,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-012,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-E-012,detail,,지도,BUTTON
 E-012,detail,,데이터 이용안내,BUTTON
 E-012,detail,,© 2026 국가녹색기술연구소,SPAN
 E-012,detail,,문의,A
-E-013,detail,,개도국 전략지도,STRONG
+E-013,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-013,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 E-013,detail,,데이터 찾기,BUTTON
 E-013,detail,,데이터 지도,BUTTON
@@ -39174,13 +38980,11 @@ E-013,detail,,공개 자료에는 입력 항목만 있고 실제 값은 아직 �
 E-013,detail,,다운로드,H3
 E-013,detail,,다운로드 자료 없음,STRONG
 E-013,detail,,입력 양식만 제공되어 다운로드할 실제 값이 없습니다,P
-E-013,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-013,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-E-013,detail,,지도,BUTTON
 E-013,detail,,데이터 이용안내,BUTTON
 E-013,detail,,© 2026 국가녹색기술연구소,SPAN
 E-013,detail,,문의,A
-E-014,detail,,개도국 전략지도,STRONG
+E-014,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-014,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 E-014,detail,,데이터 찾기,BUTTON
 E-014,detail,,데이터 지도,BUTTON
@@ -39291,13 +39095,11 @@ E-014,detail,v125-entity-table-fallback,파리협정 제6.2조 이행 ( ),TD
 E-014,detail,v125-entity-table-fallback,한-베트남 포괄적 전략 동반자 관계 심화를 위한 공동성명,TD
 E-014,detail,,다운로드,H3
 E-014,detail,public-download-link,전체 데이터 다운로드,BUTTON
-E-014,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-014,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-E-014,detail,,지도,BUTTON
 E-014,detail,,데이터 이용안내,BUTTON
 E-014,detail,,© 2026 국가녹색기술연구소,SPAN
 E-014,detail,,문의,A
-E-015,detail,,개도국 전략지도,STRONG
+E-015,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-015,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 E-015,detail,,데이터 찾기,BUTTON
 E-015,detail,,데이터 지도,BUTTON
@@ -39376,13 +39178,11 @@ E-015,detail,v125-entity-table-fallback,Global Methane Pledge ( ),TD
 E-015,detail,v125-entity-table-fallback,출처에서 값을 제공하지 않음,TD
 E-015,detail,,다운로드,H3
 E-015,detail,public-download-link,전체 데이터 다운로드,BUTTON
-E-015,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-015,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-E-015,detail,,지도,BUTTON
 E-015,detail,,데이터 이용안내,BUTTON
 E-015,detail,,© 2026 국가녹색기술연구소,SPAN
 E-015,detail,,문의,A
-E-016,detail,,개도국 전략지도,STRONG
+E-016,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-016,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 E-016,detail,,데이터 찾기,BUTTON
 E-016,detail,,데이터 지도,BUTTON
@@ -39419,6 +39219,7 @@ E-016,detail,evidence-matrix-v138,기후기술:전체 - 5년 후 전망(2025),TH
 E-016,detail,evidence-matrix-v138,80.8%,TD
 E-016,detail,evidence-matrix-v138,2025 전망 · 기술격차 3.4년 · 최고(선도)국 미국(98.6),TD
 E-016,detail,evidence-matrix-v138,기후기술: 감축(Mitigation),TH
+E-016,detail,evidence-matrix-v138,—,TD
 E-016,detail,evidence-matrix-v138,2020,TD
 E-016,detail,evidence-matrix-v138,기후기술: 융복합(Convergence),TH
 E-016,detail,evidence-matrix-v138,기후기술: 적응(Adaptation),TH
@@ -39455,13 +39256,11 @@ E-016,detail,v125-entity-table-fallback,기후기술: 융복합(Convergence),TD
 E-016,detail,v125-entity-table-fallback,기후기술: 적응(Adaptation),TD
 E-016,detail,,다운로드,H3
 E-016,detail,public-download-link,전체 데이터 다운로드,BUTTON
-E-016,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-016,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-E-016,detail,,지도,BUTTON
 E-016,detail,,데이터 이용안내,BUTTON
 E-016,detail,,© 2026 국가녹색기술연구소,SPAN
 E-016,detail,,문의,A
-E-017,detail,,개도국 전략지도,STRONG
+E-017,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-017,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 E-017,detail,,데이터 찾기,BUTTON
 E-017,detail,,데이터 지도,BUTTON
@@ -39550,13 +39349,11 @@ E-017,detail,public-raw-table,98.4,TD
 E-017,detail,public-raw-table,기후기술 수준 순위,TD
 E-017,detail,,다운로드,H3
 E-017,detail,public-download-link,전체 데이터 다운로드,BUTTON
-E-017,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-017,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-E-017,detail,,지도,BUTTON
 E-017,detail,,데이터 이용안내,BUTTON
 E-017,detail,,© 2026 국가녹색기술연구소,SPAN
 E-017,detail,,문의,A
-E-018,detail,,개도국 전략지도,STRONG
+E-018,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-018,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 E-018,detail,,데이터 찾기,BUTTON
 E-018,detail,,데이터 지도,BUTTON
@@ -39824,13 +39621,11 @@ E-018,detail,v125-entity-table-fallback,2026-05 착공,TD
 E-018,detail,v125-entity-table-fallback,컨소시엄,TD
 E-018,detail,,다운로드,H3
 E-018,detail,public-download-link,전체 데이터 다운로드,BUTTON
-E-018,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-018,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-E-018,detail,,지도,BUTTON
 E-018,detail,,데이터 이용안내,BUTTON
 E-018,detail,,© 2026 국가녹색기술연구소,SPAN
 E-018,detail,,문의,A
-E-019,detail,,개도국 전략지도,STRONG
+E-019,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-019,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 E-019,detail,,데이터 찾기,BUTTON
 E-019,detail,,데이터 지도,BUTTON
@@ -39955,13 +39750,11 @@ E-019,detail,v125-entity-table-fallback,+84-24-3203-3335,TD
 E-019,detail,v125-entity-table-fallback,환경산업 해외진출 지원·환경프로젝트 발굴,TD
 E-019,detail,,다운로드,H3
 E-019,detail,public-download-link,전체 데이터 다운로드,BUTTON
-E-019,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-019,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-E-019,detail,,지도,BUTTON
 E-019,detail,,데이터 이용안내,BUTTON
 E-019,detail,,© 2026 국가녹색기술연구소,SPAN
 E-019,detail,,문의,A
-E-020,detail,,개도국 전략지도,STRONG
+E-020,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-020,detail,,국가녹색기술연구소 · 기후기술 협력 데이터,SMALL
 E-020,detail,,데이터 찾기,BUTTON
 E-020,detail,,데이터 지도,BUTTON
@@ -40111,9 +39904,7 @@ E-020,detail,v125-entity-table-fallback,개도국 환경개선 마스터플랜 �
 E-020,detail,v125-entity-table-fallback,기업(㈜유신),TD
 E-020,detail,,다운로드,H3
 E-020,detail,public-download-link,전체 데이터 다운로드,BUTTON
-E-020,detail,,개도국 기후기술 협력 플랫폼,STRONG
 E-020,detail,,국가·기술별 근거자료 탐색·비교·협력 검토,P
-E-020,detail,,지도,BUTTON
 E-020,detail,,데이터 이용안내,BUTTON
 E-020,detail,,© 2026 국가녹색기술연구소,SPAN
 E-020,detail,,문의,A
