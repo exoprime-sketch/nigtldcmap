@@ -203,10 +203,18 @@ function titleFromFieldsV131(
 ): string | null {
   for (const field of fields) {
     if (field.source === "note-facility") {
-      const match = String(entity.note || "").match(/\[\s*시설명\s*[:：]\s*([^\]]+)\]/u);
+      const note = String(entity.note || "");
+      const match = note.match(/\[\s*시설명\s*[:：]\s*([^\]]+)\]/u);
       const value = match ? titleTextV131(match[1]) : null;
-      if (value) return value;
-      continue;
+      if (!value) continue;
+      // Two research rows share the source's placeholder "포집(Capture) 연구";
+      // what tells them apart is the subject the note states after 위치.
+      if (/연구/u.test(value)) {
+        const subject = note.match(/위치\s*[:：]\s*([^·/\[]+)/u);
+        const detail = subject ? titleTextV131(subject[1]) : null;
+        return detail && detail !== value ? `${value} (${detail})` : value;
+      }
+      return value;
     }
     const value = fieldValueV131(entity, field);
     if (value) return value;

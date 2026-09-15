@@ -101,6 +101,8 @@ npm run qa:map:v138            # 지도 42개 레이어 전수 표시·다중선
 npm run review:screens:v138    # 152개 상세 화면 초기 상태 검토표
 npm run compare:downloads:v138 # 다운로드 파일 재계산값과 화면 캡처 문구 대조
 npm run report:map-targets:v138
+npm run build:home-preview:v139  # 홈 미리보기 자산(8개 카드 계열 + 송전망 정적 SVG) 재생성 + asset-integrity
+npm run qa:home:v139             # 홈 5개 폭 캡처·측정, 검색 예시·카드·지도 링크 동작
 ```
 
 ## 배포
