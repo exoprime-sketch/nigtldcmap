@@ -54,8 +54,10 @@ async function selectClimatePreset(cdp) {
     cdp,
     `(() => {
       const root = document.querySelector('[data-testid="map-public-content"]');
+      // V138: the preset draws the combination its card names, so its two
+      // companions are on from the start.
       return root?.getAttribute('data-primary-element') === 'B-021' &&
-        root?.getAttribute('data-context-layer-count') === '0' &&
+        (root?.getAttribute('data-context-elements') || '').split(',').includes('D-008') &&
         Boolean(document.querySelector('[data-testid="map-selectable-adm1-feature"][data-element-id="B-021"]'));
     })()`,
     { timeoutMs: 35_000 }
@@ -75,7 +77,7 @@ try {
   await navigate(browser.cdp, mapUrlV133(server.url));
   await waitForValue(
     browser.cdp,
-    `document.querySelectorAll('.cdp-layer-card[data-map-element]').length === 12`,
+    `document.querySelectorAll('.cdp-map-catalog-v138__item[data-map-available="true"]').length >= 12`,
     { timeoutMs: 35_000 }
   );
   await selectClimatePreset(browser.cdp);
@@ -149,19 +151,11 @@ try {
     })()`
   );
 
-  const contextEnabled = await evaluateValue(
-    browser.cdp,
-    `(() => {
-      const button = document.querySelector('[data-testid="map-context-toggle-v133"][data-map-element="D-008"]');
-      if (!(button instanceof HTMLButtonElement)) return false;
-      button.click();
-      return true;
-    })()`
-  );
-  if (!contextEnabled) throw new Error("D-008 comparison toggle unavailable");
+  // D-008 is already a companion of the preset; what has to be true is that
+  // it is drawn as statistical points beside the coloured GVI map.
   await waitForValue(
     browser.cdp,
-    `document.querySelector('[data-testid="map-public-content"]')?.getAttribute('data-context-layer-count') === '1' && Boolean(document.querySelector('[data-testid="map-budget-statistical-point-v133"]'))`,
+    `(document.querySelector('[data-testid="map-public-content"]')?.getAttribute('data-context-elements') || '').split(',').includes('D-008') && Boolean(document.querySelector('[data-testid="map-budget-statistical-point-v133"]'))`,
     { timeoutMs: 35_000 }
   );
   const overlapOpened = await evaluateValue(

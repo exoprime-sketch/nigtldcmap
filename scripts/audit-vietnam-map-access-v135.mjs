@@ -19,13 +19,15 @@ import {
   hoverMapFeatureForTooltipV135,
   mapUrlV135,
   normalizeTextV135,
+  mapIndexV138,
+  toggleMapCompanionV138,
 } from "./v135/audit-helpers.mjs";
 
 const audit = new AuditV125("map-access:v135");
-const expectedLayers = [
-  "A-023", "A-024", "B-021", "B-031", "B-032", "B-033",
-  "B-034", "B-048", "C-016", "C-025", "D-008", "D-018",
-];
+// Every active layer the index publishes has to be reachable from the list.
+const expectedLayers = mapIndexV138()
+  .layers.filter((layer) => layer.active !== false && layer.enabled !== false)
+  .map((layer) => layer.elementId);
 const mapSource = readFileSync(resolve(PROJECT_ROOT, "src/pages/RealMapExplorerPage.tsx"), "utf8");
 const panelSource = readFileSync(resolve(PROJECT_ROOT, "src/hooks/useResizableMapPanelsV129.ts"), "utf8");
 
@@ -73,18 +75,23 @@ try {
   await navigate(browser.cdp, mapUrlV135(server.url));
   await waitForValue(
     browser.cdp,
-    `document.querySelectorAll('[data-testid="map-all-data-layer-v135"]').length === 12`,
+    `document.querySelectorAll('.cdp-map-catalog-v138__item[data-map-available="true"]').length === ${expectedLayers.length}`,
     { timeoutMs: 35_000 }
   );
   inventory = await evaluateValue(
     browser.cdp,
     `(() => {
       const root = document.querySelector('[data-testid="map-all-data-v135"]');
-      const layers = [...document.querySelectorAll('[data-testid="map-all-data-layer-v135"]')].map((node) => ({
-        elementId: node.getAttribute('data-element-id') || node.getAttribute('data-map-element') || '',
-        text: String(node.textContent || '').normalize('NFC').replace(/\\s+/gu, ' ').trim(),
-        interactive: Boolean(node.matches('button, a') || node.querySelector('button, a')),
-      }));
+      // V138: each dataset is a checkbox with a label; a disabled box is a
+      // target without a layer and is not counted as an accessible layer.
+      const layers = [...document.querySelectorAll('.cdp-map-catalog-v138__item[data-map-available="true"]')].map((node) => {
+        const input = node.querySelector('[data-testid="map-all-data-layer-v135"]');
+        return {
+          elementId: node.getAttribute('data-map-element') || '',
+          text: String(node.querySelector('.cdp-map-catalog-v138__label')?.textContent || '').normalize('NFC').replace(/\\s+/gu, ' ').trim(),
+          interactive: input instanceof HTMLInputElement && !input.disabled && Boolean(input.labels?.length),
+        };
+      });
       const groups = [...(root?.querySelectorAll('[data-map-group-v135], h3') || [])]
         .map((node) => String(node.textContent || '').normalize('NFC').replace(/\\s+/gu, ' ').trim())
         .filter(Boolean);
@@ -125,24 +132,9 @@ try {
     timeoutMs: 35_000,
   });
   if (!contextActivationDiagnostics.failure) {
-    const contextButtons = await evaluateValue(
-      browser.cdp,
-      `(() => [...document.querySelectorAll('[data-testid="map-context-toggle-v133"]')]
-        .filter((node) => node instanceof HTMLButtonElement && !node.disabled)
-        .slice(0, 2)
-        .map((node) => node.getAttribute('data-map-element') || ''))()`
-    );
-    for (const elementId of Array.isArray(contextButtons) ? contextButtons : []) {
-      await evaluateValue(
-        browser.cdp,
-        `(() => {
-          const button = [...document.querySelectorAll('[data-testid="map-context-toggle-v133"]')]
-            .find((node) => node.getAttribute('data-map-element') === ${JSON.stringify(elementId)});
-          if (!(button instanceof HTMLButtonElement)) return false;
-          button.click(); return true;
-        })()`
-      );
-      await new Promise((resolveWait) => setTimeout(resolveWait, 100));
+    // V138: two more datasets ticked beside the power plants must both stay.
+    for (const elementId of ["B-031", "C-016"]) {
+      await toggleMapCompanionV138(browser.cdp, { elementId, evaluateValue, waitForValue });
       const count = await evaluateValue(browser.cdp, `Number(document.querySelector('[data-testid="map-public-content"]')?.getAttribute('data-context-layer-count') || 0)`);
       contextMaximumObserved = Math.max(contextMaximumObserved, Number(count || 0));
     }
@@ -186,13 +178,13 @@ const resizePass = Boolean(
 const staticResizeContract = /map\.resize\(\)/u.test(`${mapSource}\n${panelSource}`) && /localStorage/u.test(panelSource) && /setPointerCapture/u.test(panelSource);
 const tooltipUiLabels = tooltipText.match(/주\s*분석\s*데이터|함께\s*보기|보조\s*데이터/gu) || [];
 
-audit.check("MAP_LAYER_COUNT", actualLayerIds.length === 12, actualLayerIds.length, 12);
-audit.check("ALL_MAP_LAYER_ACCESS_COUNT", missingLayers.length === 0 && nonInteractive.length === 0, { actualLayerIds, missingLayers, nonInteractive }, { count: 12, missingLayers: [], nonInteractive: [] });
+audit.check("MAP_LAYER_COUNT", actualLayerIds.length === expectedLayers.length && expectedLayers.length >= 12, actualLayerIds.length, expectedLayers.length);
+audit.check("ALL_MAP_LAYER_ACCESS_COUNT", missingLayers.length === 0 && nonInteractive.length === 0, { actualLayerIds, missingLayers, nonInteractive }, { count: expectedLayers.length, missingLayers: [], nonInteractive: [] });
 audit.check("MAP_PRESET_COUNT", inventory?.presetCount === 5, inventory?.presetCount ?? 0, 5);
 audit.check("MAP_ALL_DATA_GROUP_COUNT", (inventory?.groups?.length || 0) >= 5, inventory?.groups || [], ">=5");
 audit.check("LEFT_PANEL_POINTER_RESIZE_PASS", resizePass, resize, "left >=420px, map width changed, persisted");
 audit.check("MAP_RESIZE_CALL_CONTRACT", staticResizeContract, { staticResizeContract }, true);
-audit.check("NORMAL_CONTEXT_LAYER_MAX", contextMaximumObserved <= 1, contextMaximumObserved, 1);
+audit.check("MULTI_SELECT_KEEPS_COMPANIONS", contextMaximumObserved >= 2, contextMaximumObserved, ">= 2 companions kept");
 audit.check("MAP_COUNTRY_INFO_BUTTON_COUNT", inventory?.countryActionCount === 0, inventory?.countryActionCount ?? null, 0);
 audit.check("MAP_TOOLTIP_UI_STATE_LABEL_COUNT", tooltipUiLabels.length === 0, tooltipUiLabels, []);
 audit.check(
@@ -230,7 +222,7 @@ finishAuditV135(audit, "map-access-audit-v135.json", {
   allMapLayerAccessCount: actualLayerIds.length - missingLayers.length,
   mapPresetCount: inventory?.presetCount || 0,
   leftPanelPointerResizePass: resizePass,
-  normalContextLayerMaxObserved: contextMaximumObserved,
+  companionsObserved: contextMaximumObserved,
   mapTooltipUiStateLabelCount: tooltipUiLabels.length,
   mineActivationDiagnostics,
   contextActivationDiagnostics,

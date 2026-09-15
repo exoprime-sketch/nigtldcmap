@@ -18,7 +18,9 @@ import {
   startStaticBuildServer,
   waitForValue,
 } from "./v125/browser-runtime.mjs";
-import { detailUrlV135, finderUrlV135, mapUrlV135 } from "./v135/audit-helpers.mjs";
+import { detailUrlV135, finderUrlV135, mapUrlV135,
+  mapLayerCountV138,
+} from "./v135/audit-helpers.mjs";
 import {
   AWKWARD_GENERIC_COPY_V136,
   INTERNAL_PUBLIC_TOKENS_V136,
@@ -115,7 +117,7 @@ try {
   await navigate(browser.cdp, mapUrlV135(server.url));
   await waitForValue(
     browser.cdp,
-    `document.querySelectorAll('[data-testid="map-all-data-layer-v135"]').length === 12`,
+    `document.querySelectorAll('.cdp-map-catalog-v138__item[data-map-available="true"]').length === ${mapLayerCountV138()}`,
     { timeoutMs: 35_000 }
   );
   record("map", "map", await evaluateValue(browser.cdp, visibleTextInventoryExpressionV136()));

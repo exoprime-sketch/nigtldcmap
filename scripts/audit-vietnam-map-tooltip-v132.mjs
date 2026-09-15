@@ -23,6 +23,7 @@ import {
 } from "./v125/browser-runtime.mjs";
 import { mapUrlV129 } from "./v129/audit-helpers.mjs";
 import { finishAuditV132 } from "./v132/audit-helpers.mjs";
+import { activateMapDatasetV135 } from "./v135/audit-helpers.mjs";
 
 const audit = new AuditV125("map-tooltip:v132");
 const b033RegionYearCounts = (() => {
@@ -65,17 +66,9 @@ function layerReadyExpression(elementId) {
 }
 
 async function activateLayer(cdp, elementId) {
-  const clicked = await evaluateValue(
-    cdp,
-    `(() => {
-      const card = document.querySelector('.cdp-layer-card[data-map-element=${JSON.stringify(elementId)}]');
-      const button = [...(card?.querySelectorAll('button') || [])].find((node) => ['분석하기', '분석 중'].includes(node.textContent?.trim()));
-      if (!(button instanceof HTMLButtonElement) || button.disabled) return false;
-      button.click();
-      return true;
-    })()`
-  );
-  if (!clicked) throw new Error(`${elementId} layer action unavailable`);
+  // V138: the dataset is ticked in the catalogue and promoted to the analysis.
+  const diagnostics = await activateMapDatasetV135(cdp, { elementId, evaluateValue, waitForValue, timeoutMs: 35_000 });
+  if (diagnostics.failure) throw new Error(`${elementId} layer action unavailable: ${diagnostics.failure}`);
   await waitForValue(cdp, layerReadyExpression(elementId), { timeoutMs: 35_000 });
   await waitForValue(
     cdp,
@@ -96,7 +89,7 @@ try {
   await navigate(browser.cdp, mapUrlV129(server.url));
   await waitForValue(
     browser.cdp,
-    `document.querySelectorAll('.cdp-layer-card[data-map-element]').length === 12`,
+    `document.querySelectorAll('.cdp-map-catalog-v138__item[data-map-available="true"]').length === ${layers.length}`,
     { timeoutMs: 35_000 }
   );
 
@@ -174,7 +167,12 @@ const a023KeyFactsComplete = Boolean(
   (!selectedA023StatusAvailable || a023Result?.status)
 );
 
-audit.check("FINAL_MAP_LAYERS", layers.length === 12, layers.length, 12);
+audit.check(
+  "FINAL_MAP_LAYERS",
+  layers.length === mapResult.value?.activeMapLayerCount && layers.length >= 12,
+  { active: layers.length, declared: mapResult.value?.activeMapLayerCount ?? null },
+  "declared active count, at least the twelve ETL layers"
+);
 // The exact feature count is a property of the delivery, not of the platform:
 // publishing every authorised carbon-credit project took C-025 from 18 features
 // to 262. What is asserted is that the index declares what its layers hold and
@@ -185,18 +183,19 @@ audit.check(
   { declared: mapResult.value?.mapFeatureCount ?? null, actual: mapFeatureOrScopeCount },
   { declared: "equal to actual", actual: `>= ${MAP_FEATURE_FLOOR_V125}` }
 );
+// The V131 map-copy report is a committed record of the pre-V138 map (twelve
+// ETL layers). It is checked as that record - its own regression result and
+// its own counts - not against today's index, which V138 extended.
 audit.check(
   "V130_MAP_REGRESSION",
-  Number(mapCopySummary.finalMapLayerCount || 0) === 12 &&
-    mapFeatureCountIsSound(
-      mapCopySummary.finalMapFeatureOrScopeCount,
-      mapFeatureOrScopeCount
-    ) &&
+  Number(mapCopySummary.finalMapLayerCount || 0) >= 12 &&
+    Number(mapCopySummary.finalMapLayerCount || 0) <= layers.length &&
+    Number(mapCopySummary.finalMapFeatureOrScopeCount || 0) >= MAP_FEATURE_FLOOR_V125 &&
     mapCopySummary.v130RegressionResult === "PASS",
   mapCopySummary,
   {
-    finalMapLayerCount: 12,
-    finalMapFeatureOrScopeCount: mapFeatureOrScopeCount,
+    finalMapLayerCount: `12..${layers.length}`,
+    finalMapFeatureOrScopeCount: `>= ${MAP_FEATURE_FLOOR_V125}`,
     v130RegressionResult: "PASS",
   }
 );
