@@ -1,0 +1,413 @@
+/* V138 map dataset catalogue.
+   One list, seven folding categories, a checkbox per dataset. The two lists the
+   panel used to carry - a compact list and a card list of the same twelve
+   datasets - are gone; every one of the 43 targets sits here once, with its
+   availability, its role (colour map / drawn beside it / drawing off) and its
+   contract facts behind the ⓘ control. */
+.cdp-map-catalog-v138 {
+  margin-top: 14px;
+  padding-top: 13px;
+  border-top: 1px solid #d6e2dc;
+}
+
+.cdp-map-catalog-v138__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.cdp-map-catalog-v138__header h2 {
+  margin: 0;
+  color: #214b3c;
+  font-size: 0.92rem;
+}
+
+.cdp-map-catalog-v138__lede {
+  margin: 4px 0 0;
+  color: #61766e;
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+
+.cdp-map-catalog-v138__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cdp-map-catalog-v138__colour {
+  display: grid;
+  gap: 6px;
+  margin: 0 0 10px;
+  padding: 8px 10px;
+  border: 1px solid #e3c98a;
+  border-radius: 9px;
+  background: #fff8e8;
+  color: #5a4a1c;
+  font-size: 0.7rem;
+  line-height: 1.45;
+}
+
+.cdp-map-catalog-v138__colour .cdp-field {
+  margin: 0;
+}
+
+.cdp-map-catalog-v138__group {
+  margin-bottom: 6px;
+  border: 1px solid #d6e2dc;
+  border-radius: 9px;
+  background: #ffffff;
+}
+
+.cdp-map-catalog-v138__group.is-open {
+  border-color: #b7ccc2;
+}
+
+.cdp-map-catalog-v138__group-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: #24483c;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.cdp-map-catalog-v138__group-toggle::before {
+  content: "▸";
+  flex: 0 0 auto;
+  color: #5f8474;
+  font-size: 0.7rem;
+  transition: transform 120ms ease;
+}
+
+.cdp-map-catalog-v138__group.is-open .cdp-map-catalog-v138__group-toggle::before {
+  transform: rotate(90deg);
+}
+
+.cdp-map-catalog-v138__group-toggle:focus-visible {
+  outline: 2px solid #176a4b;
+  outline-offset: -2px;
+}
+
+.cdp-map-catalog-v138__group-name {
+  flex: 1 1 auto;
+  font-size: 0.76rem;
+  font-weight: 750;
+}
+
+.cdp-map-catalog-v138__group-count {
+  flex: 0 0 auto;
+  color: #61766e;
+  font-size: 0.68rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.cdp-map-catalog-v138__group[data-map-group-selected]:not([data-map-group-selected="0"])
+  .cdp-map-catalog-v138__group-count {
+  color: #176a4b;
+}
+
+.cdp-map-catalog-v138__list {
+  display: grid;
+  gap: 4px;
+  /* The inset is a margin: public-controls:v136 reads left padding on a list
+     as a user-agent bullet indent. */
+  margin: 0 8px 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.cdp-map-catalog-v138__list[hidden] {
+  display: none;
+}
+
+.cdp-map-catalog-v138__item {
+  margin: 0;
+  padding: 6px 6px 6px 4px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  list-style: none;
+}
+
+.cdp-map-catalog-v138__item.is-primary {
+  border-color: #176a4b;
+  background: #eaf4ef;
+}
+
+.cdp-map-catalog-v138__item.is-context {
+  border-color: #cddbd4;
+  background: #f7faf8;
+}
+
+.cdp-map-catalog-v138__item.is-hidden {
+  background: #f3f4f3;
+}
+
+.cdp-map-catalog-v138__item.is-unavailable {
+  color: #7d8a85;
+}
+
+.cdp-map-catalog-v138__row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 6px;
+}
+
+.cdp-map-catalog-v138__check {
+  width: 18px;
+  height: 18px;
+  margin: 3px 0 0;
+  accent-color: #176a4b;
+  cursor: pointer;
+}
+
+.cdp-map-catalog-v138__check:disabled {
+  cursor: not-allowed;
+}
+
+.cdp-map-catalog-v138__label {
+  display: grid;
+  gap: 1px;
+  min-height: 24px;
+  cursor: pointer;
+}
+
+.cdp-map-catalog-v138__label > strong {
+  color: #24483c;
+  font-size: 0.75rem;
+  font-weight: 750;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.cdp-map-catalog-v138__item.is-unavailable .cdp-map-catalog-v138__label > strong {
+  color: #7d8a85;
+}
+
+.cdp-map-catalog-v138__label > small {
+  color: #61766e;
+  font-size: 0.66rem;
+  font-weight: 500;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.cdp-map-catalog-v138__info {
+  width: 26px;
+  height: 26px;
+  border: 1px solid #b7ccc2;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #275443;
+  font: inherit;
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.cdp-map-catalog-v138__info[aria-expanded="true"] {
+  border-color: #176a4b;
+  background: #176a4b;
+  color: #ffffff;
+}
+
+.cdp-map-catalog-v138__info:focus-visible,
+.cdp-map-catalog-v138__check:focus-visible {
+  outline: 2px solid #176a4b;
+  outline-offset: 2px;
+}
+
+.cdp-map-catalog-v138__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  margin: 6px 0 0 24px;
+}
+
+.cdp-map-catalog-v138__controls .cdp-button--compact {
+  min-height: 30px;
+  padding: 4px 8px;
+  font-size: 0.66rem;
+}
+
+.cdp-map-catalog-v138__hidden {
+  color: #61766e;
+  font-size: 0.64rem;
+  font-weight: 600;
+}
+
+.cdp-map-catalog-v138__facts {
+  display: grid;
+  gap: 5px;
+  margin: 8px 0 2px 24px;
+  padding: 8px 9px;
+  border: 1px solid #d6e2dc;
+  border-radius: 8px;
+  background: #fbfdfc;
+  font-size: 0.66rem;
+  line-height: 1.45;
+}
+
+.cdp-map-catalog-v138__facts > div {
+  display: grid;
+  gap: 1px;
+}
+
+.cdp-map-catalog-v138__facts dt {
+  color: #61766e;
+  font-weight: 700;
+}
+
+.cdp-map-catalog-v138__facts dd {
+  margin: 0;
+  color: #24483c;
+  overflow-wrap: anywhere;
+}
+
+.cdp-map-catalog-v138 .cdp-link-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #176a4b;
+  font: inherit;
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .cdp-map-catalog-v138__group-toggle,
+  .cdp-map-catalog-v138__controls .cdp-button--compact {
+    min-height: 44px;
+  }
+
+  .cdp-map-catalog-v138__check {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* V138 member records behind a province count (local documents, PPP projects). */
+.cdp-map-member-records-v138 {
+  margin-top: 10px;
+  padding: 8px 10px;
+  border: 1px solid #d6e2dc;
+  border-radius: 9px;
+  background: #fbfdfc;
+}
+
+.cdp-map-member-records-v138 h5 {
+  margin: 0 0 6px;
+  color: #214b3c;
+  font-size: 0.74rem;
+}
+
+.cdp-map-member-records-v138 ul {
+  display: grid;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cdp-map-member-records-v138 li {
+  color: #24483c;
+  font-size: 0.68rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.cdp-map-member-records-v138 a {
+  color: #176a4b;
+  font-weight: 700;
+}
+
+/* V138 mobile drawer and overlays.
+   Measured at 390px: the collapsed list drawer clipped its own title, the
+   status card and the legend together covered most of the canvas, and the
+   list description ran under the drawer edge. */
+@media (max-width: 768px) {
+  .cdp-map-sidebar.is-collapsed .cdp-map-panel-header > div p {
+    display: none;
+  }
+
+  .cdp-map-sidebar.is-collapsed .cdp-map-panel-header {
+    align-items: center;
+    min-height: 64px;
+  }
+
+  .cdp-map-sidebar.is-open {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .cdp-map-overlay-card {
+    max-width: calc(100% - 20px);
+    padding: 7px 9px;
+  }
+
+  /* The status sentence repeats what the panel header says; on a phone the
+     title and the feature navigation are what earn the space. */
+  .cdp-map-overlay-card > div:not(.cdp-map-keyboard-feature-nav) {
+    display: none;
+  }
+
+  .cdp-map-overlay-card > strong {
+    font-size: 0.8rem;
+  }
+
+  /* On a phone the attribution strip spans the canvas bottom; a legend
+     anchored 14px up sat under it, and its last row read as cut off. */
+  .cdp-map-legend {
+    bottom: 34px;
+    max-height: 34%;
+  }
+
+  /* The status badge and the zoom control both sat at the top-right corner
+     at 390px, and the badge hid the zoom-in button. */
+  .cdp-map-status-badge {
+    right: 56px;
+  }
+
+  .cdp-map-catalog-v138__facts,
+  .cdp-map-catalog-v138__controls {
+    margin-left: 0;
+  }
+}
+
+.cdp-map-active-legend li.is-hidden,
+[data-testid="map-compact-legend-v133"] li.is-hidden {
+  opacity: 0.62;
+}
+
+@media (max-width: 768px) {
+  /* The collapsed drawer holds a two-line title row; 64px clipped its bottom
+     edge behind the canvas at 768. */
+  .cdp-map-layout {
+    padding-top: 72px;
+  }
+
+  .cdp-map-sidebar.is-collapsed {
+    max-height: 72px;
+  }
+
+  .cdp-map-sidebar.is-collapsed .cdp-map-panel-header {
+    min-height: 72px;
+  }
+}

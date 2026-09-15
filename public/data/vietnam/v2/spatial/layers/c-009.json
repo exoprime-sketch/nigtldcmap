@@ -1,0 +1,216 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "VNM",
+  "elementId": "C-009",
+  "generatedAt": "2026-09-01T00:00:00Z",
+  "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+  "joinKey": "adm1Code",
+  "boundarySystem": "pre-2025-63",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2021–2025",
+    "defaultVariable": "local-document-count",
+    "periods": [
+      "2021–2025"
+    ],
+    "variables": [
+      {
+        "key": "local-document-count",
+        "measureId": "c009-local-docs",
+        "measureKey": "local-document-count",
+        "scenario": null,
+        "label": "지방 기후 법제도 문서 수",
+        "unit": "건",
+        "periods": [
+          "2021–2025"
+        ],
+        "maxFeatureCount": 4
+      }
+    ]
+  },
+  "values": [
+    {
+      "adm1Code": "VN-DN",
+      "adm1Name": "Đà Nẵng",
+      "variable": "local-document-count",
+      "variableLabel": "지방 기후 법제도 문서 수",
+      "period": "2021–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-009_law_name_danang",
+      "sourceRecordId": "v124-c-009-entity-00022",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "variable": "local-document-count",
+      "variableLabel": "지방 기후 법제도 문서 수",
+      "period": "2021–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-009_law_name_faolex_fao_2",
+      "sourceRecordId": "v124-c-009-entity-00031",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-13",
+      "adm1Name": "Quảng Ninh",
+      "variable": "local-document-count",
+      "variableLabel": "지방 기후 법제도 문서 수",
+      "period": "2021–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-009_law_name_faolex_fao_2",
+      "sourceRecordId": "v124-c-009-entity-00032",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "variable": "local-document-count",
+      "variableLabel": "지방 기후 법제도 문서 수",
+      "period": "2021–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-009_law_name_faolex_fao_2",
+      "sourceRecordId": "v124-c-009-entity-00033",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    }
+  ],
+  "memberRecords": {
+    "VN-DN": [
+      {
+        "recordId": "v124-c-009-entity-00022",
+        "label": "Đà Nẵng Quyết định 2609/QĐ-UBND",
+        "date": "2021-07-30",
+        "status": "",
+        "value": "",
+        "url": "https://danang.gov.vn/vi/w/quyet-dinh-2609qd-ubnd-vv-phe-duyet-ke-hoach-hanh-dong-ung-pho-voi-bien-doi-khi-hau-thanh-pho-da-nang-giai-doan-2021-2030-tam-nhin-den-nam-2050-i",
+        "indicatorId": "C-009_law_name_danang"
+      }
+    ],
+    "VN-30": [
+      {
+        "recordId": "v124-c-009-entity-00031",
+        "label": "Gia Lai Kế hoạch 2810/KH-UBND",
+        "date": "2022",
+        "status": "",
+        "value": "",
+        "url": "https://thuvienphapluat.vn/van-ban/Tai-nguyen-Moi-truong/Ke-hoach-2810-KH-UBND-2022-thuc-hien-Quyet-dinh-896-QD-TTg-Chien-luoc-ve-bien-doi-khi-hau-Gia-Lai-542600.aspx",
+        "indicatorId": "C-009_law_name_faolex_fao_2"
+      }
+    ],
+    "VN-13": [
+      {
+        "recordId": "v124-c-009-entity-00032",
+        "label": "Quảng Ninh Quyết định 1318/QĐ-UBND",
+        "date": "2024-06-05",
+        "status": "",
+        "value": "",
+        "url": "https://thuvienphapluat.vn/van-ban/Thuong-mai/Quyet-dinh-1318-QD-UBND-2024-phe-duyet-Ke-hoach-hanh-dong-tang-truong-xanh-Quang-Ninh-610666.aspx",
+        "indicatorId": "C-009_law_name_faolex_fao_2"
+      }
+    ],
+    "VN-22": [
+      {
+        "recordId": "v124-c-009-entity-00033",
+        "label": "Nghệ An Quyết định 3560/QĐ-UBND",
+        "date": "2023-11-01",
+        "status": "",
+        "value": "",
+        "url": "https://thuvienphapluat.vn/van-ban/Thuong-mai/Quyet-dinh-3560-QD-UBND-2023-Ke-hoach-hanh-dong-tang-truong-xanh-Nghe-An-2021-2030-584956.aspx",
+        "indicatorId": "C-009_law_name_faolex_fao_2"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "local-document-count",
+      "period": "2021–2025",
+      "expectedCount": 63,
+      "matchedCount": 4,
+      "missingCount": 59,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "attribution": [
+      "Analysis reference: law firm publication. Factual citation only.",
+      "Legal document reference: LuatVietnam (INCOM). Factual citation only.",
+      "Legal document reference: ThuVienPhapLuat / LawNet. Factual citation only.",
+      "Press/industry publication reference. Factual citation only.",
+      "Source: FAO FAOLEX",
+      "Source: International Carbon Action Partnership (ICAP). Copyright © ICAP. All rights reserved.",
+      "Source: 베트남 정부 공보 / Climate Policy Database",
+      "Source: 베트남 정부 공보(vanban.chinhphu.vn)",
+      "Source: 베트남 정부 공보(vanban.chinhphu.vn) / 정부 정책포털(xaydungchinhsach.chinhphu.vn)",
+      "Sourced from 'Climate Change Laws of the World' interface for the Climate Policy Radar Database, https://climate-laws.org and made available under the Creative Commons CC-BY licence."
+    ],
+    "licenses": [
+      "CC-BY-4.0",
+      "FAO FAOLEX 공개자료 — 출처 표기 조건",
+      "ICAP 저작권 표기 조건부 배포 허용",
+      "INCOM(LuatVietnam) 이용약관 — 서면 허가 필요",
+      "로펌 간행물 저작권 유보 — 인용 시 출처 표기",
+      "베트남 법령 원문 — 지식재산법 제15조상 저작권 비보호",
+      "베트남 정부 공보 이용약관",
+      "베트남 지식재산법 제15조 — 법률규범문서 저작권 비보호",
+      "상업 법령DB 이용약관 — 재배포 서면 허가 필요",
+      "언론·전문지 저작권 유보 — 인용 시 출처 표기"
+    ],
+    "organizations": [
+      "FAO FAOLEX — Electricity Law 28/2004/QH11 영문본",
+      "베트남 정부 — Nghị định 119/2025/NĐ-CP",
+      "베트남 정부 — Nghị định 57/2025/NĐ-CP (Nghị định 243/2026/NĐ-CP 개정)",
+      "베트남 정부 공보 / Climate Policy Database",
+      "베트남 정부 공보(vanban.chinhphu.vn)",
+      "베트남 정부 정책포털 — TOÀN VĂN: Luật Điện lực",
+      "베트남 총리 — Quyết định 500/QĐ-TTg (2023-05-15)",
+      "베트남 총리 — Quyết định 768/QĐ-TTg (2025-04-15)",
+      "베트남 총리실 — Quyết định 13/2024/QĐ-TTg"
+    ],
+    "urls": [
+      "https://climate-laws.org/document/decision-no-232-qd-ttg_4679",
+      "https://climate-laws.org/document/decision-no-942-qd-ttg-on-approving-action-plan-for-methane-emissions-reduction-by-2030_9e42",
+      "https://climate-laws.org/document/decree-no-06-2022-nd-cp-on-mitigation-of-green-house-gas-ghg-emissions-and-protection-of-ozone-layer_d8ff",
+      "https://climatepolicydatabase.org/policies",
+      "https://danang.gov.vn/vi/w/quyet-dinh-2609qd-ubnd-vv-phe-duyet-ke-hoach-hanh-dong-ung-pho-voi-bien-doi-khi-hau-thanh-pho-da-nang-giai-doan-2021-2030-tam-nhin-den-nam-2050-i",
+      "https://datafiles.chinhphu.vn/cpp/files/vbpq/2024/8/13-ttg.signed.pdf",
+      "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/4/768-ttg.signed.pdf",
+      "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/119-nd.signed.pdf",
+      "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/6/243-ndcp.signed.pdf",
+      "https://english.luatvietnam.vn/cong-nghiep/decision-13-2024-qd-ttg-sectors-and-establishments-subject-to-greenhouse-gas-inventory-363497-d1.html",
+      "https://english.luatvietnam.vn/cong-nghiep/electricity-law-no-61-2024-qh15-380161-d1.html",
+      "https://english.luatvietnam.vn/law-on-environmental-protection-no-72-2020-qh14-dated-november-17-2020-of-the-national-assembly-195564-doc1.html",
+      "https://english.luatvietnam.vn/tai-nguyen/decree-119-2025-nd-cp-mitigation-of-greenhouse-gas-emissions-402540-d1.html",
+      "https://faolex.fao.org/docs/pdf/vie212245.pdf",
+      "https://faolex.fao.org/docs/pdf/vie50740.pdf",
+      "https://icapcarbonaction.com/en/news/vietnam-approves-carbon-market-roadmap-pilot-ets-launch-june-2025",
+      "https://luatvietnam.vn/",
+      "https://thuvienphapluat.vn/phap-luat/ho-tro-phap-luat/sap-nhap-tinh-co-hieu-luc-khi-nao-nam-2025-viet-nam-sau-sap-nhap-con-bao-nhieu-tinh-63-tinh-gop-lai-950580-221296.html",
+      "https://thuvienphapluat.vn/van-ban/Tai-nguyen-Moi-truong/Ke-hoach-2810-KH-UBND-2022-thuc-hien-Quyet-dinh-896-QD-TTg-Chien-luoc-ve-bien-doi-khi-hau-Gia-Lai-542600.aspx",
+      "https://thuvienphapluat.vn/van-ban/Thuong-mai/Quyet-dinh-1318-QD-UBND-2024-phe-duyet-Ke-hoach-hanh-dong-tang-truong-xanh-Quang-Ninh-610666.aspx"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 63,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 4,
+    "maxSeriesFeatureCount": 4,
+    "missingAdm1Count": 59,
+    "providedZeroCount": 0,
+    "publishedValueCount": 4,
+    "sourceValueCount": 4,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0
+  }
+}

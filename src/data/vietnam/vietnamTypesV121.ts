@@ -415,6 +415,8 @@ export interface VietnamMapFilterV121 {
   field: string;
   label: string;
   values: string[];
+  /** Public label per raw value, where the source vocabulary is not readable as-is. */
+  valueLabels?: Record<string, string>;
 }
 
 export type VietnamMapVisualizationKindV123 =

@@ -38,6 +38,9 @@ const STEPS = [
   ["semantic", "python", ["tools/vietnam_semantic/build_semantic_v125.py"]],
   ["interpretation", process.execPath, ["scripts/build-vietnam-interpretation-v129.mjs"]],
   ["temporal", process.execPath, ["scripts/build-public-temporal-contract-v135.mjs"]],
+  // V138: the 43 map targets, joined from the packs the ETL just wrote. It
+  // rewrites map-index, catalog and manifest, so it precedes the hash step.
+  ["map-targets", process.execPath, ["scripts/v138/build-map-layers-v138.mjs", "--data", DATA]],
   // Last: it hashes everything the steps above produced.
   ["asset-integrity", process.execPath, [
     "scripts/generate-vietnam-asset-integrity-v133.mjs",

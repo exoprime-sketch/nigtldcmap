@@ -1,0 +1,1616 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "VNM",
+  "elementId": "C-012",
+  "generatedAt": "2026-09-01T00:00:00Z",
+  "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+  "joinKey": "adm1Code",
+  "boundarySystem": "pre-2025-63",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "1997–2024",
+    "defaultVariable": "ppp-project-count",
+    "periods": [
+      "1997–2024"
+    ],
+    "variables": [
+      {
+        "key": "ppp-project-count",
+        "measureId": "c012-ppi-count",
+        "measureKey": "ppp-project-count",
+        "scenario": null,
+        "label": "PPP 사업 수(PPI 수록)",
+        "unit": "건",
+        "periods": [
+          "1997–2024"
+        ],
+        "maxFeatureCount": 56
+      }
+    ]
+  },
+  "values": [
+    {
+      "adm1Code": "VN-56",
+      "adm1Name": "Bắc Ninh",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00050",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Bắc Ninh",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-54",
+      "adm1Name": "Bắc Giang",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00050",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Bắc Ninh",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00051",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Cà Mau",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-59",
+      "adm1Name": "Cà Mau",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00051",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Cà Mau",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-CT",
+      "adm1Name": "Cần Thơ",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00052",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Cần Thơ",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-73",
+      "adm1Name": "Hậu Giang",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00052",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Cần Thơ",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-52",
+      "adm1Name": "Sóc Trăng",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00052",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Cần Thơ",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-DN",
+      "adm1Name": "Đà Nẵng",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00053",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đà Nẵng",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00053",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đà Nẵng",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-32",
+      "adm1Name": "Phú Yên",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00054",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đắk Lắk",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00054",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đắk Lắk",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-71",
+      "adm1Name": "Điện Biên",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00055",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Điện Biên",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-58",
+      "adm1Name": "Bình Phước",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 6,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00056",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đồng Nai",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-39",
+      "adm1Name": "Đồng Nai",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 6,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00056",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đồng Nai",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-45",
+      "adm1Name": "Đồng Tháp",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00057",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đồng Tháp",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-46",
+      "adm1Name": "Tiền Giang",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00057",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đồng Tháp",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 11,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00058",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Gia Lai",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 11,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00058",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Gia Lai",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00059",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hà Nội",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-23",
+      "adm1Name": "Hà Tĩnh",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00060",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hà Tĩnh",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-HP",
+      "adm1Name": "Hải Phòng",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 6,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00061",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hải Phòng",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-61",
+      "adm1Name": "Hải Dương",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 6,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00061",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hải Phòng",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-57",
+      "adm1Name": "Bình Dương",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 24,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00062",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hồ Chí Minh",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-43",
+      "adm1Name": "Bà Rịa–Vũng Tàu",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 24,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00062",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hồ Chí Minh",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-SG",
+      "adm1Name": "Hồ Chí Minh",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 24,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00062",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hồ Chí Minh",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 12,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00063",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Khánh Hòa",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 12,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00063",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Khánh Hòa",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-01",
+      "adm1Name": "Lai Châu",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 5,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00064",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lai Châu",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 11,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00065",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lâm Đồng",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 11,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00065",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lâm Đồng",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 11,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00065",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lâm Đồng",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 10,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00066",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lào Cai",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-06",
+      "adm1Name": "Yên Bái",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 10,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00066",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lào Cai",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00067",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Nghệ An",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-67",
+      "adm1Name": "Nam Định",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00068",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Ninh Bình",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-63",
+      "adm1Name": "Hà Nam",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00068",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Ninh Bình",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-18",
+      "adm1Name": "Ninh Bình",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00068",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Ninh Bình",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-70",
+      "adm1Name": "Vĩnh Phúc",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00069",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Phú Thọ",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-68",
+      "adm1Name": "Phú Thọ",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00069",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Phú Thọ",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00069",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Phú Thọ",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00070",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Quảng Ngãi",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-29",
+      "adm1Name": "Quảng Ngãi",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00070",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Quảng Ngãi",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-13",
+      "adm1Name": "Quảng Ninh",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00071",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Quảng Ninh",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 8,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00072",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Quảng Trị",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-25",
+      "adm1Name": "Quảng Trị",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 8,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00072",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Quảng Trị",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00073",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Sơn La",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00074",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Tây Ninh",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-41",
+      "adm1Name": "Long An",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00074",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Tây Ninh",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-53",
+      "adm1Name": "Bắc Kạn",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00075",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Thái Nguyên",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-69",
+      "adm1Name": "Thái Nguyên",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00075",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Thái Nguyên",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00076",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Thanh Hóa",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 5,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00077",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Tuyên Quang",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 5,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00077",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Tuyên Quang",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-49",
+      "adm1Name": "Vĩnh Long",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 5,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00078",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Vĩnh Long",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-50",
+      "adm1Name": "Bến Tre",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 5,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00078",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Vĩnh Long",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-51",
+      "adm1Name": "Trà Vinh",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1997–2024",
+      "value": 5,
+      "unit": "건",
+      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
+      "sourceRecordId": "v124-c-012-entity-00078",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Vĩnh Long",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    }
+  ],
+  "memberRecords": {
+    "VN-56": [
+      {
+        "recordId": "v124-c-012-entity-00050",
+        "label": "Energy 2건",
+        "date": "2010-2021",
+        "status": "Active 2건 / 전체 2건",
+        "value": "",
+        "url": "",
+        "region": "Bắc Ninh",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-54": [
+      {
+        "recordId": "v124-c-012-entity-00050",
+        "label": "Energy 2건",
+        "date": "2010-2021",
+        "status": "Active 2건 / 전체 2건",
+        "value": "",
+        "url": "",
+        "region": "Bắc Ninh",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-55": [
+      {
+        "recordId": "v124-c-012-entity-00051",
+        "label": "Energy 4건",
+        "date": "2012-2021",
+        "status": "Active 4건 / 전체 4건",
+        "value": "",
+        "url": "",
+        "region": "Cà Mau",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-59": [
+      {
+        "recordId": "v124-c-012-entity-00051",
+        "label": "Energy 4건",
+        "date": "2012-2021",
+        "status": "Active 4건 / 전체 4건",
+        "value": "",
+        "url": "",
+        "region": "Cà Mau",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-CT": [
+      {
+        "recordId": "v124-c-012-entity-00052",
+        "label": "Energy 2건; Water and sewerage 1건; Municipal Solid Waste 1건",
+        "date": "2016-2020",
+        "status": "Active 4건 / 전체 4건",
+        "value": "",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-73": [
+      {
+        "recordId": "v124-c-012-entity-00052",
+        "label": "Energy 2건; Water and sewerage 1건; Municipal Solid Waste 1건",
+        "date": "2016-2020",
+        "status": "Active 4건 / 전체 4건",
+        "value": "",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-52": [
+      {
+        "recordId": "v124-c-012-entity-00052",
+        "label": "Energy 2건; Water and sewerage 1건; Municipal Solid Waste 1건",
+        "date": "2016-2020",
+        "status": "Active 4건 / 전체 4건",
+        "value": "",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-DN": [
+      {
+        "recordId": "v124-c-012-entity-00053",
+        "label": "Energy 3건; Municipal Solid Waste 1건",
+        "date": "2008-2012",
+        "status": "Active 4건 / 전체 4건",
+        "value": "",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-27": [
+      {
+        "recordId": "v124-c-012-entity-00053",
+        "label": "Energy 3건; Municipal Solid Waste 1건",
+        "date": "2008-2012",
+        "status": "Active 4건 / 전체 4건",
+        "value": "",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-32": [
+      {
+        "recordId": "v124-c-012-entity-00054",
+        "label": "Energy 2건",
+        "date": "2010-2020",
+        "status": "Active 2건 / 전체 2건",
+        "value": "",
+        "url": "",
+        "region": "Đắk Lắk",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-33": [
+      {
+        "recordId": "v124-c-012-entity-00054",
+        "label": "Energy 2건",
+        "date": "2010-2020",
+        "status": "Active 2건 / 전체 2건",
+        "value": "",
+        "url": "",
+        "region": "Đắk Lắk",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-71": [
+      {
+        "recordId": "v124-c-012-entity-00055",
+        "label": "Energy 1건",
+        "date": "2021-2021",
+        "status": "Active 1건 / 전체 1건",
+        "value": "",
+        "url": "",
+        "region": "Điện Biên",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-58": [
+      {
+        "recordId": "v124-c-012-entity-00056",
+        "label": "Energy 5건; Transport 1건",
+        "date": "1997-2024",
+        "status": "Active 6건 / 전체 6건",
+        "value": "",
+        "url": "",
+        "region": "Đồng Nai",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-39": [
+      {
+        "recordId": "v124-c-012-entity-00056",
+        "label": "Energy 5건; Transport 1건",
+        "date": "1997-2024",
+        "status": "Active 6건 / 전체 6건",
+        "value": "",
+        "url": "",
+        "region": "Đồng Nai",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-45": [
+      {
+        "recordId": "v124-c-012-entity-00057",
+        "label": "Transport 1건",
+        "date": "2019-2019",
+        "status": "Active 1건 / 전체 1건",
+        "value": "",
+        "url": "",
+        "region": "Đồng Tháp",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-46": [
+      {
+        "recordId": "v124-c-012-entity-00057",
+        "label": "Transport 1건",
+        "date": "2019-2019",
+        "status": "Active 1건 / 전체 1건",
+        "value": "",
+        "url": "",
+        "region": "Đồng Tháp",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-30": [
+      {
+        "recordId": "v124-c-012-entity-00058",
+        "label": "Energy 11건",
+        "date": "2005-2020",
+        "status": "Active 11건 / 전체 11건",
+        "value": "",
+        "url": "",
+        "region": "Gia Lai",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-31": [
+      {
+        "recordId": "v124-c-012-entity-00058",
+        "label": "Energy 11건",
+        "date": "2005-2020",
+        "status": "Active 11건 / 전체 11건",
+        "value": "",
+        "url": "",
+        "region": "Gia Lai",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-HN": [
+      {
+        "recordId": "v124-c-012-entity-00059",
+        "label": "Water and sewerage 1건",
+        "date": "2019-2019",
+        "status": "Active 1건 / 전체 1건",
+        "value": "",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-23": [
+      {
+        "recordId": "v124-c-012-entity-00060",
+        "label": "Energy 1건; Transport 1건",
+        "date": "2021-2022",
+        "status": "Active 2건 / 전체 2건",
+        "value": "",
+        "url": "",
+        "region": "Hà Tĩnh",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-HP": [
+      {
+        "recordId": "v124-c-012-entity-00061",
+        "label": "Energy 5건; Water and sewerage 1건",
+        "date": "1996-2024",
+        "status": "Active 6건 / 전체 6건",
+        "value": "",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-61": [
+      {
+        "recordId": "v124-c-012-entity-00061",
+        "label": "Energy 5건; Water and sewerage 1건",
+        "date": "1996-2024",
+        "status": "Active 6건 / 전체 6건",
+        "value": "",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-57": [
+      {
+        "recordId": "v124-c-012-entity-00062",
+        "label": "Energy 9건; Transport 8건; Water and sewerage 6건; Municipal Solid Waste 1건",
+        "date": "1996-2022",
+        "status": "Active 23건 / 전체 24건",
+        "value": "",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-43": [
+      {
+        "recordId": "v124-c-012-entity-00062",
+        "label": "Energy 9건; Transport 8건; Water and sewerage 6건; Municipal Solid Waste 1건",
+        "date": "1996-2022",
+        "status": "Active 23건 / 전체 24건",
+        "value": "",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-SG": [
+      {
+        "recordId": "v124-c-012-entity-00062",
+        "label": "Energy 9건; Transport 8건; Water and sewerage 6건; Municipal Solid Waste 1건",
+        "date": "1996-2022",
+        "status": "Active 23건 / 전체 24건",
+        "value": "",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-34": [
+      {
+        "recordId": "v124-c-012-entity-00063",
+        "label": "Energy 12건",
+        "date": "2005-2022",
+        "status": "Active 12건 / 전체 12건",
+        "value": "",
+        "url": "",
+        "region": "Khánh Hòa",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-36": [
+      {
+        "recordId": "v124-c-012-entity-00063",
+        "label": "Energy 12건",
+        "date": "2005-2022",
+        "status": "Active 12건 / 전체 12건",
+        "value": "",
+        "url": "",
+        "region": "Khánh Hòa",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-01": [
+      {
+        "recordId": "v124-c-012-entity-00064",
+        "label": "Energy 5건",
+        "date": "2010-2012",
+        "status": "Active 5건 / 전체 5건",
+        "value": "",
+        "url": "",
+        "region": "Lai Châu",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-40": [
+      {
+        "recordId": "v124-c-012-entity-00065",
+        "label": "Energy 11건",
+        "date": "2005-2023",
+        "status": "Active 11건 / 전체 11건",
+        "value": "",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-72": [
+      {
+        "recordId": "v124-c-012-entity-00065",
+        "label": "Energy 11건",
+        "date": "2005-2023",
+        "status": "Active 11건 / 전체 11건",
+        "value": "",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-35": [
+      {
+        "recordId": "v124-c-012-entity-00065",
+        "label": "Energy 11건",
+        "date": "2005-2023",
+        "status": "Active 11건 / 전체 11건",
+        "value": "",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-02": [
+      {
+        "recordId": "v124-c-012-entity-00066",
+        "label": "Energy 10건",
+        "date": "2005-2024",
+        "status": "Active 10건 / 전체 10건",
+        "value": "",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-06": [
+      {
+        "recordId": "v124-c-012-entity-00066",
+        "label": "Energy 10건",
+        "date": "2005-2024",
+        "status": "Active 10건 / 전체 10건",
+        "value": "",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-22": [
+      {
+        "recordId": "v124-c-012-entity-00067",
+        "label": "Energy 2건",
+        "date": "2011-2012",
+        "status": "Active 2건 / 전체 2건",
+        "value": "",
+        "url": "",
+        "region": "Nghệ An",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-67": [
+      {
+        "recordId": "v124-c-012-entity-00068",
+        "label": "Energy 1건",
+        "date": "2007-2007",
+        "status": "Active 1건 / 전체 1건",
+        "value": "",
+        "url": "",
+        "region": "Ninh Bình",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-63": [
+      {
+        "recordId": "v124-c-012-entity-00068",
+        "label": "Energy 1건",
+        "date": "2007-2007",
+        "status": "Active 1건 / 전체 1건",
+        "value": "",
+        "url": "",
+        "region": "Ninh Bình",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-18": [
+      {
+        "recordId": "v124-c-012-entity-00068",
+        "label": "Energy 1건",
+        "date": "2007-2007",
+        "status": "Active 1건 / 전체 1건",
+        "value": "",
+        "url": "",
+        "region": "Ninh Bình",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-70": [
+      {
+        "recordId": "v124-c-012-entity-00069",
+        "label": "Energy 3건",
+        "date": "2012-2020",
+        "status": "Active 2건 / 전체 3건",
+        "value": "",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-68": [
+      {
+        "recordId": "v124-c-012-entity-00069",
+        "label": "Energy 3건",
+        "date": "2012-2020",
+        "status": "Active 2건 / 전체 3건",
+        "value": "",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-14": [
+      {
+        "recordId": "v124-c-012-entity-00069",
+        "label": "Energy 3건",
+        "date": "2012-2020",
+        "status": "Active 2건 / 전체 3건",
+        "value": "",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-28": [
+      {
+        "recordId": "v124-c-012-entity-00070",
+        "label": "Energy 2건",
+        "date": "2011-2022",
+        "status": "Active 2건 / 전체 2건",
+        "value": "",
+        "url": "",
+        "region": "Quảng Ngãi",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-29": [
+      {
+        "recordId": "v124-c-012-entity-00070",
+        "label": "Energy 2건",
+        "date": "2011-2022",
+        "status": "Active 2건 / 전체 2건",
+        "value": "",
+        "url": "",
+        "region": "Quảng Ngãi",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-13": [
+      {
+        "recordId": "v124-c-012-entity-00071",
+        "label": "Transport 1건; Energy 1건",
+        "date": "2010-2011",
+        "status": "Active 2건 / 전체 2건",
+        "value": "",
+        "url": "",
+        "region": "Quảng Ninh",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-24": [
+      {
+        "recordId": "v124-c-012-entity-00072",
+        "label": "Energy 8건",
+        "date": "2008-2022",
+        "status": "Active 8건 / 전체 8건",
+        "value": "",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-25": [
+      {
+        "recordId": "v124-c-012-entity-00072",
+        "label": "Energy 8건",
+        "date": "2008-2022",
+        "status": "Active 8건 / 전체 8건",
+        "value": "",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-05": [
+      {
+        "recordId": "v124-c-012-entity-00073",
+        "label": "Energy 3건",
+        "date": "2007-2010",
+        "status": "Active 3건 / 전체 3건",
+        "value": "",
+        "url": "",
+        "region": "Sơn La",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-37": [
+      {
+        "recordId": "v124-c-012-entity-00074",
+        "label": "Energy 3건",
+        "date": "1996-2020",
+        "status": "Active 3건 / 전체 3건",
+        "value": "",
+        "url": "",
+        "region": "Tây Ninh",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-41": [
+      {
+        "recordId": "v124-c-012-entity-00074",
+        "label": "Energy 3건",
+        "date": "1996-2020",
+        "status": "Active 3건 / 전체 3건",
+        "value": "",
+        "url": "",
+        "region": "Tây Ninh",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-53": [
+      {
+        "recordId": "v124-c-012-entity-00075",
+        "label": "Energy 1건",
+        "date": "2011-2011",
+        "status": "Active 1건 / 전체 1건",
+        "value": "",
+        "url": "",
+        "region": "Thái Nguyên",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-69": [
+      {
+        "recordId": "v124-c-012-entity-00075",
+        "label": "Energy 1건",
+        "date": "2011-2011",
+        "status": "Active 1건 / 전체 1건",
+        "value": "",
+        "url": "",
+        "region": "Thái Nguyên",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-21": [
+      {
+        "recordId": "v124-c-012-entity-00076",
+        "label": "Energy 3건",
+        "date": "2011-2018",
+        "status": "Active 3건 / 전체 3건",
+        "value": "",
+        "url": "",
+        "region": "Thanh Hóa",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-03": [
+      {
+        "recordId": "v124-c-012-entity-00077",
+        "label": "Energy 5건",
+        "date": "2009-2024",
+        "status": "Active 5건 / 전체 5건",
+        "value": "",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-07": [
+      {
+        "recordId": "v124-c-012-entity-00077",
+        "label": "Energy 5건",
+        "date": "2009-2024",
+        "status": "Active 5건 / 전체 5건",
+        "value": "",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-49": [
+      {
+        "recordId": "v124-c-012-entity-00078",
+        "label": "Energy 5건",
+        "date": "2017-2021",
+        "status": "Active 5건 / 전체 5건",
+        "value": "",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-50": [
+      {
+        "recordId": "v124-c-012-entity-00078",
+        "label": "Energy 5건",
+        "date": "2017-2021",
+        "status": "Active 5건 / 전체 5건",
+        "value": "",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ],
+    "VN-51": [
+      {
+        "recordId": "v124-c-012-entity-00078",
+        "label": "Energy 5건",
+        "date": "2017-2021",
+        "status": "Active 5건 / 전체 5건",
+        "value": "",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "ppp-project-count",
+      "period": "1997–2024",
+      "expectedCount": 63,
+      "matchedCount": 56,
+      "missingCount": 7,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "attribution": [
+      "Analysis reference: law firm publication. Factual citation only.",
+      "Legal document reference: LuatVietnam (INCOM). Factual citation only.",
+      "Legal document reference: ThuVienPhapLuat / LawNet. Factual citation only.",
+      "Press/industry publication reference. Factual citation only.",
+      "Source: 베트남 국회·정부 공보 / World Bank PPP Legal Framework",
+      "Source: 베트남 재무부(Bộ Tài chính)"
+    ],
+    "licenses": [
+      "INCOM(LuatVietnam) 이용약관 — 서면 허가 필요",
+      "로펌 간행물 저작권 유보 — 인용 시 출처 표기",
+      "베트남 정부 공보 이용약관",
+      "베트남 정부 포털 공개정보 — 출처 표기 조건",
+      "상업 법령DB 이용약관 — 재배포 서면 허가 필요",
+      "언론·전문지 저작권 유보 — 인용 시 출처 표기"
+    ],
+    "organizations": [
+      "베트남 국회·정부 공보 / World Bank PPP Legal Framework",
+      "베트남 재무부(Bộ Tài chính) 투자 포털",
+      "베트남 정부 — Nghị định 243/2025/NĐ-CP"
+    ],
+    "urls": [
+      "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/07/64.signed.pdf",
+      "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/9/123-vbhn-vpqh.pdf",
+      "https://luatnguyen.vn/van-ban-phap-luat/nghi-dinh-243-2025-nd-cp-1921.html",
+      "https://luatvietnam.vn/dau-tu/nghi-dinh-243-2025-nd-cp-quy-dinh-chi-tiet-luat-dau-tu-theo-phuong-thuc-doi-tac-cong-tu-411082-d1.html",
+      "https://ppi.worldbank.org/en/customquery",
+      "https://ppi.worldbank.org/en/methodology/ppi-methodology",
+      "https://ppi.worldbank.org/en/snapshots/country/vietnam",
+      "https://ppp.worldbank.org/library/ppp-laws-concessions-laws-vietnam",
+      "https://ppp.worldbank.org/library/ppp-unit-vietnam",
+      "https://ppp.worldbank.org/sites/default/files/2024-08/PPP_Legal_Framework_Snapshot_Vietnam_EN_Aug2016_0.pdf",
+      "https://tapchicongthuong.vn/cac-du-an-ppp-moi-deu-la-cac-du-an-trong-diem--quy-mo-lon-cua-quoc-gia-107378.htm",
+      "https://thuvienphapluat.vn/van-ban/Dau-tu/Van-ban-hop-nhat-123-VBHN-VPQH-2025-Luat-Dau-tu-theo-phuong-thuc-doi-tac-cong-tu-672449.aspx",
+      "https://thuvienphapluat.vn/van-ban/EN/Dau-tu/Law-64-2020-QH14-on-Public-Private-Partnership-Investment/449829/tieng-anh.aspx",
+      "https://vanban.chinhphu.vn/?docid=215319&pageid=27160",
+      "https://www.kingandwood.com/global/en/insights/latest-thinking/public-private-partnerships-in-asia-vietnam-guide-2025.html",
+      "https://www.mof.gov.vn/bo-tai-chinh/dau-tu"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 63,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 56,
+    "maxSeriesFeatureCount": 56,
+    "missingAdm1Count": 7,
+    "providedZeroCount": 0,
+    "publishedValueCount": 56,
+    "sourceValueCount": 29,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0,
+    "mappingMethod": "explicit-2025-34-unit-membership",
+    "sourceRegionCount": 29
+  }
+}

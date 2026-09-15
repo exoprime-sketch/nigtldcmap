@@ -71,8 +71,13 @@ export interface MapViewState {
   focusLayerKey: string | null;
   /** V126 public workspace: at most one dataset drives analysis and legend. */
   primaryLayerId: string | null;
-  /** V126 public workspace: at most two lower-priority reference datasets. */
+  /**
+   * Every other selected dataset. V126 held at most two; V138 lets a reader keep
+   * as many as they tick, so the list is bounded only by the map index.
+   */
   contextLayerIds: string[];
+  /** Selected datasets whose map drawing is switched off but kept in the selection. */
+  hiddenLayerIds: string[];
   /** Optional deterministic public workspace preset restored from the URL. */
   mapPresetId: string | null;
   /** V135 dedicated two-map comparison workspace. */
@@ -103,6 +108,7 @@ export const DEFAULT_MAP_VIEW_STATE: MapViewState = {
   focusLayerKey: null,
   primaryLayerId: null,
   contextLayerIds: [],
+  hiddenLayerIds: [],
   mapPresetId: null,
   comparisonMode: false,
   comparisonLayerIds: [],
@@ -340,12 +346,14 @@ export function parseMapViewState(params: URLSearchParams): MapViewState {
     params.has("contextLayers")
       ? explicitContextIds
       : normalizedActiveKeys.filter((key) => key !== primaryLayerId)
-  )
-    .filter((key) => key !== primaryLayerId)
-    .slice(0, 2);
+  ).filter((key) => key !== primaryLayerId);
   const roleActiveLayerKeys = primaryLayerId
     ? [primaryLayerId, ...contextLayerIds]
-    : [];
+    : contextLayerIds;
+  const hiddenLayerIds = uniqueValidKeys(
+    (params.get("hiddenLayers") || "").split(","),
+    countryIso3
+  ).filter((key) => roleActiveLayerKeys.includes(key));
   const mapPresetParam = params.get("mapPreset");
   const mapPresetId = new Set([
     "POWER_INFRASTRUCTURE",
@@ -421,6 +429,7 @@ export function parseMapViewState(params: URLSearchParams): MapViewState {
     focusLayerKey: primaryLayerId,
     primaryLayerId,
     contextLayerIds,
+    hiddenLayerIds,
     mapPresetId,
     comparisonMode:
       comparisonMode && comparisonLayerIds.length === 2,

@@ -3,13 +3,81 @@ import {
   publicNoticeWordingV136_1,
   publicTextV126,
 } from "./publicFieldPolicyV126";
+import publicMapTargetsContractV138 from "./publicMapTargetsV138.json";
 
+/**
+ * V138: one dataset colours the map; every other ticked dataset is drawn as
+ * outline, points or lines beside it. The old contract quietly dropped the
+ * second companion a reader ticked; the limit now only bounds the map index.
+ */
 export const PUBLIC_MAP_WORKSPACE_LIMITS_V126 = {
   primaryLayers: 1,
-  contextLayers: 1,
-  activeLayers: 2,
+  contextLayers: 64,
+  activeLayers: 65,
   selectedFeatures: 1,
 } as const;
+
+export interface PublicMapTargetMeasureV138 {
+  key: string;
+  sourceKey?: string;
+  label: string;
+  unit: string;
+  measureId?: string;
+  aggregate?: "count";
+  parse?: string;
+  sector?: string;
+}
+
+export interface PublicMapTargetV138 {
+  elementId: string;
+  category: string;
+  publicName: string;
+  sourceFields: string[];
+  sourceSpatialUnit: string;
+  displaySpatialUnit: string;
+  representation:
+    | "point"
+    | "line"
+    | "admin1-choropleth"
+    | "region-choropleth"
+    | "regional-scope"
+    | "none";
+  build: {
+    kind: "existing" | "admin1-attributes" | "region-membership" | "entities" | "none";
+    reason?: string;
+    requiredAsset?: string;
+    forbidden?: string;
+    measures?: PublicMapTargetMeasureV138[];
+    [key: string]: unknown;
+  };
+  selectableVariables: string;
+  unit: string;
+  period: string;
+  representativeItem: string;
+  evidence: string;
+  limitation: string;
+}
+
+/** The seven categories the map list is folded into, in panel order. */
+export const PUBLIC_MAP_TARGET_CATEGORIES_V138: readonly string[] =
+  publicMapTargetsContractV138.categories;
+
+export const PUBLIC_MAP_TARGETS_V138: readonly PublicMapTargetV138[] =
+  publicMapTargetsContractV138.targets as PublicMapTargetV138[];
+
+const PUBLIC_MAP_TARGET_BY_ELEMENT_V138 = new Map(
+  PUBLIC_MAP_TARGETS_V138.map((target) => [target.elementId, target])
+);
+
+export function publicMapTargetV138(
+  elementId: string
+): PublicMapTargetV138 | null {
+  return PUBLIC_MAP_TARGET_BY_ELEMENT_V138.get(elementId) || null;
+}
+
+export function isPublicMapTargetV138(elementId: string): boolean {
+  return PUBLIC_MAP_TARGET_BY_ELEMENT_V138.has(elementId);
+}
 
 /**
  * A preset can recommend two different companion datasets even though the
@@ -356,7 +424,7 @@ const PUBLIC_MAP_LAYER_TITLES_V126: Record<string, string> = {
 
 export const PUBLIC_MAP_DATA_FUNCTION_V135: Readonly<Record<string, string>> = {
   "A-023": "발전소 입지·설비 분포 비교",
-  "A-024": "송전망 연결구조·전압별 분포 확인",
+  "A-024": "송전선 경로·전압별 분포 확인",
   "C-016": "성·시별 재생에너지 계획용량 비교",
   "B-021": "권역별 취약성 수준 비교",
   "B-031": "성·시별 산림면적 비교",
@@ -421,6 +489,7 @@ export function publicMapLayerTitleV126(
 ): string {
   return (
     PUBLIC_MAP_LAYER_TITLES_V126[elementId] ||
+    publicMapTargetV138(elementId)?.publicName ||
     publicTextV126(fallback) ||
     "공간자료"
   );
@@ -486,7 +555,7 @@ export const PUBLIC_MAP_DATA_ITEM_SUMMARY_V136: Readonly<
   Record<string, string>
 > = Object.freeze({
   "A-023": "입지·발전원·설비용량 분포",
-  "A-024": "연결구조·전압별 분포",
+  "A-024": "선로 경로·전압별 분포",
   "C-016": "성·시별 계획용량",
   "B-021": "권역별 취약성 수준",
   "B-031": "성·시별 산림면적",
@@ -500,5 +569,8 @@ export const PUBLIC_MAP_DATA_ITEM_SUMMARY_V136: Readonly<
 });
 
 export function publicMapDataItemSummaryV136(elementId: string): string {
-  return PUBLIC_MAP_DATA_ITEM_SUMMARY_V136[elementId] || "지도 표시 범위";
+  const explicit = PUBLIC_MAP_DATA_ITEM_SUMMARY_V136[elementId];
+  if (explicit) return explicit;
+  const target = publicMapTargetV138(elementId);
+  return target?.displaySpatialUnit || "지도 표시 범위";
 }

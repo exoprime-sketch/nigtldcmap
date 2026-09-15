@@ -178,6 +178,7 @@ function mapViewStatesEqual(a: MapViewState, b: MapViewState): boolean {
     a.comparisonMode !== b.comparisonMode ||
     a.comparisonLayerIds.length !== b.comparisonLayerIds.length ||
     a.contextLayerIds.length !== b.contextLayerIds.length ||
+    a.hiddenLayerIds.length !== b.hiddenLayerIds.length ||
     a.activeLayerKeys.length !== b.activeLayerKeys.length
   ) {
     return false;
@@ -196,6 +197,10 @@ function mapViewStatesEqual(a: MapViewState, b: MapViewState): boolean {
 
   for (let index = 0; index < a.contextLayerIds.length; index += 1) {
     if (a.contextLayerIds[index] !== b.contextLayerIds[index]) return false;
+  }
+
+  for (let index = 0; index < a.hiddenLayerIds.length; index += 1) {
+    if (a.hiddenLayerIds[index] !== b.hiddenLayerIds[index]) return false;
   }
 
   for (let index = 0; index < a.comparisonLayerIds.length; index += 1) {
@@ -264,6 +269,14 @@ function appendMapViewParams(
           .join(",")
       : "none"
   );
+  if (state.hiddenLayerIds.length) {
+    params.set(
+      "hiddenLayers",
+      state.hiddenLayerIds
+        .map((key) => publicMapStateKeyV122(key, state.countryIso3))
+        .join(",")
+    );
+  }
   if (state.mapPresetId) params.set("mapPreset", state.mapPresetId);
   if (state.comparisonMode && state.comparisonLayerIds.length === 2) {
     params.set("mapMode", "compare");
@@ -784,6 +797,7 @@ export default function App() {
         focusLayerKey: null,
         primaryLayerId: null,
         contextLayerIds: [],
+        hiddenLayerIds: [],
         mapPresetId: null,
         comparisonMode: false,
         comparisonLayerIds: [],
@@ -884,6 +898,7 @@ export default function App() {
       focusLayerKey: elementId,
       primaryLayerId: elementId,
       contextLayerIds: [],
+      hiddenLayerIds: [],
       mapPresetId: null,
       comparisonMode: false,
       comparisonLayerIds: [],

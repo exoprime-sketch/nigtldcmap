@@ -625,7 +625,39 @@ export async function loadVietnamSpatialLayerV124(
       { dataUrl }
     );
   }
-  return payload;
+  return expandSpatialValueTableV138(payload);
+}
+
+/**
+ * A climate layer states 63 provinces x 30 variables x 30 periods. As rows that
+ * is a 12MB file; as a table of numbers it is under 1MB, and the runtime reads
+ * rows. The table is expanded here, once, so every consumer keeps seeing rows.
+ */
+function expandSpatialValueTableV138(
+  payload: VietnamSpatialLayerAssetV124
+): VietnamSpatialLayerAssetV124 {
+  const table = payload.valueTable;
+  if (!table || payload.values.length > 0) return payload;
+  const values: VietnamSpatialLayerAssetV124["values"] = [];
+  for (const series of table.series) {
+    series.values.forEach((value, index) => {
+      if (value === null || !Number.isFinite(value)) return;
+      values.push({
+        adm1Code: table.adm1Codes[index],
+        adm1Name: table.adm1Names[index],
+        variable: series.variable,
+        variableLabel: series.variableLabel,
+        period: series.period,
+        value,
+        unit: series.unit,
+        sourceIndicatorId: series.sourceIndicatorId,
+        sourceRecordId: null,
+        sourceSpatialUnit: table.sourceSpatialUnit,
+        imputed: false,
+      });
+    });
+  }
+  return { ...payload, values };
 }
 
 export async function loadVietnamSpatialGeoJsonV124(
