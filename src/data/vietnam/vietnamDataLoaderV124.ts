@@ -39,6 +39,36 @@ const elementCache = new Map<
   string,
   Promise<VietnamElementShardPayloadV124>
 >();
+/**
+ * How many decoded element shards stay resident.
+ *
+ * One shard (pack-005: B-003~B-007, the province-year climate series)
+ * decompresses to 447 MB of JSON and parses to a comparable object graph.
+ * Keeping every shard a session has opened - and, until V139, the decompressed
+ * bytes of each as well - let a route sweep across the 152 screens grow the
+ * tab past the point where the CI browser answered a DevTools call within its
+ * timeout. A shard not among the four most recently used is released together
+ * with the element payloads that point into it; opening one of those elements
+ * again decodes the shard again (about a second for the largest).
+ */
+const RESIDENT_SHARD_LIMIT_V139 = 4;
+const packUrlByElementId = new Map<string, string>();
+
+function touchResidentShard(packUrl: string): void {
+  const pending = packCache.get(packUrl);
+  if (!pending) return;
+  // Re-insert to mark as most recently used (Map preserves insertion order).
+  packCache.delete(packUrl);
+  packCache.set(packUrl, pending);
+  while (packCache.size > RESIDENT_SHARD_LIMIT_V139) {
+    const oldest = packCache.keys().next().value as string | undefined;
+    if (!oldest || oldest === packUrl) break;
+    packCache.delete(oldest);
+    for (const [elementId, url] of packUrlByElementId) {
+      if (url === oldest) elementCache.delete(elementId);
+    }
+  }
+}
 let manifestCache: Promise<VietnamManifestV124> | null = null;
 let bundleIndexCache: Promise<VietnamBundleIndexV124> | null = null;
 
@@ -479,6 +509,9 @@ async function loadVerifiedPack(
       );
     }
     const payload = parseContentJson<VietnamShardV124>(bytes, entry.packUrl);
+    // The verified, decompressed bytes served their purpose; the parsed
+    // payload is what the runtime reads. Nothing re-reads a shard's bytes.
+    envelopeCache.delete(entry.packUrl);
     if (
       payload.schemaVersion !== "v124" ||
       payload.assetLayoutVersion !== "sharded-element-bundles-v2" ||
@@ -506,7 +539,11 @@ async function loadElementPayload(
 ): Promise<VietnamElementShardPayloadV124> {
   assertElementId(elementId);
   const existing = elementCache.get(elementId);
-  if (existing) return existing;
+  if (existing) {
+    const packUrl = packUrlByElementId.get(elementId);
+    if (packUrl) touchResidentShard(packUrl);
+    return existing;
+  }
   const pending = (async () => {
     const index = await loadVietnamBundleIndexV124();
     const entry = index.elements[elementId];
@@ -517,7 +554,9 @@ async function loadElementPayload(
         { elementId }
       );
     }
+    packUrlByElementId.set(elementId, entry.packUrl);
     const pack = await loadVerifiedPack(entry);
+    touchResidentShard(entry.packUrl);
     const payload = pack.elements[elementId];
     if (!payload) {
       throw new VietnamAssetErrorV124(
@@ -790,6 +829,7 @@ export function clearVietnamDataCacheV124(): void {
   envelopeCache.clear();
   packCache.clear();
   elementCache.clear();
+  packUrlByElementId.clear();
   manifestCache = null;
   bundleIndexCache = null;
 }
