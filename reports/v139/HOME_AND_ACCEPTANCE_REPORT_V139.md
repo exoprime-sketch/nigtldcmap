@@ -10,8 +10,8 @@
 | 지도·상세 잔여 수용조건(§6) | C-019/C-022·B-025·A-025·D-018·E-008·C-022 표 반영. **B-017 평가구역 경계와 B-023/B-025/B-028 유역 경계는 미해결 목록으로 유지**(대표점 표시는 경계 제공이 아님) |
 | 브랜치 정리 | 완료 — `origin/main`(`16b3ada`) 트리는 이전 브랜치의 `1f09450`과 동일(`git diff 16b3ada 1f09450` 없음). 그 뒤 커밋 `181a305`·`12e56f7`(main 미포함, 14파일 +417/−47)와 V138·V139 커밋 7개를 개수 기준이 아니라 diff 기준으로 확인해 origin/main 위로 rebase. 결과 트리는 이전 브랜치 HEAD와 동일(`git diff` 없음) |
 | 전체 gate | `finalize:v136` 최종 실행 결과는 `reports/v136/release-audit-v136.json`(이 보고서의 커밋과 같은 트리) |
-| Preview URL | push 전 — 아래 '다음 단계' |
-| production | 미반영 — `nigtldcmap.vercel.app`은 12개 레이어 데이터(main `16b3ada`)를 제공 중이며 후보 42개와 섞어 적지 않음 |
+| Preview URL | **생성됨** — `feat/home-map-analysis-v139` push(비강제) 후 GitHub Deployments #6452206950(environment Preview, sha `4a33749`, 2026-09-15T05:14:19Z, Vercel 상태 success): https://nigtldcmap-fcdcnrjep-exoprime-5142s-projects.vercel.app . **익명 접근 시 Vercel SSO(`vercel.com/sso-api`)로 302** — Deployment Protection이 켜져 있어 이 세션에서는 자산 내용·QA를 확인하지 못함. 확인하려면 Vercel 로그인 세션 또는 Protection Bypass 토큰이 필요 |
+| production | 미반영 — GitHub Deployments의 Production 항목은 sha `16b3ada`(2026-09-14T06:47:04Z)이며, `nigtldcmap.vercel.app`은 그 트리의 12개 레이어 데이터를 제공 중. 후보 42개와 섞어 적지 않음 |
 
 ## 2. 홈 수용기준 확인 (`reports/v139/home-runtime-qa-v139.json`, 로컬 build, 390/768/1024/1440/1920)
 
@@ -64,5 +64,5 @@
 
 ## 6. 다음 단계(승인 필요 항목 표시)
 
-1. `feat/home-map-analysis-v139` push(비강제) → Vercel Preview 생성. **PR 생성·main 병합은 별도 승인 전 하지 않음.**
-2. Preview에서 구현 SHA(`git rev-parse HEAD`)·`data/vietnam/v2/manifest.json`(`mapLayerCount` 42)·`home/home-preview-v139.json` 응답·Linux E2E 확인.
+1. Preview 검증 — Deployment Protection 때문에 로그인된 브라우저(또는 bypass 토큰)로 다음을 확인: `/data/vietnam/v2/manifest.json`의 `mapLayerCount` 42·`generatedAt` 2026-08-27, `/data/vietnam/v2/home/home-preview-v139.json`(schema `v139-home-preview-1`, 카드 8), `/data/vietnam/v2/home/transmission-preview-v139.svg`, 홈·지도·상세 화면, Linux E2E(`npm run e2e` against Preview).
+2. **PR 생성·main 병합·강제 push는 별도 승인 전 하지 않음.** 승인 시 PR 대상은 `feat/home-map-analysis-v139` → `main`(origin/main 위 미반영 커밋만 포함, 중복 diff 없음).
