@@ -185,7 +185,9 @@
     "report:map-targets:v138": "node scripts/v138/report-map-targets-v138.mjs",
     "qa:map:v138": "node scripts/v138/map-runtime-qa-v138.mjs",
     "review:screens:v138": "node scripts/v138/screen-review-v138.mjs",
-    "compare:downloads:v138": "node scripts/v138/download-sample-compare-v138.mjs"
+    "compare:downloads:v138": "node scripts/v138/download-sample-compare-v138.mjs",
+    "build:home-preview:v139": "node scripts/v139/build-home-preview-v139.mjs && node scripts/generate-vietnam-asset-integrity-v133.mjs --data public/data/vietnam/v2",
+    "qa:home:v139": "node scripts/v139/home-runtime-qa-v139.mjs"
   },
   "browserslist": [
     ">0.2%",

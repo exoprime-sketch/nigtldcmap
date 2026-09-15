@@ -1098,8 +1098,10 @@ export default function App() {
             query={query}
             onQueryChange={setQuery}
             onSubmit={submitSearch}
+            onSearchExample={(words) => openExplorerFromGlobalSearch(words, null, null)}
             onSelectCategory={selectCategory}
             onOpenElement={openElement}
+            onOpenMapElement={openElementOnMap}
             onNavigate={navigate}
           />
         )}

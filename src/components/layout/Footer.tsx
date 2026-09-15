@@ -29,7 +29,7 @@ export default function Footer({ onNavigate }: FooterProps) {
             데이터 찾기
           </button>
           <button type="button" onClick={() => onNavigate("map")}>
-            지도
+            데이터 지도
           </button>
           <button type="button" onClick={() => onNavigate("download")}>
             데이터 다운로드
