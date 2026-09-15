@@ -80,6 +80,21 @@ async function selectPreset(cdp, presetId, expectedPrimary) {
     `(() => (document.querySelector('[data-testid="map-public-content"]')?.getAttribute('data-rendered-map-symbols') || '').split(',').some((item) => item.startsWith(${JSON.stringify(`${expectedPrimary}|`)})))()`,
     { timeoutMs: 35_000 }
   );
+  // The companions the card names load their own assets after the primary
+  // (C-025 is 262 points). On the CI runner the legend snapshot was taken
+  // between the primary's symbols and the companion's, and the check that
+  // asks for both then read a half-drawn preset. Wait for every companion the
+  // page itself lists to be among the rendered symbols before returning.
+  await waitForValue(
+    cdp,
+    `(() => {
+      const root = document.querySelector('[data-testid="map-public-content"]');
+      const contexts = (root?.getAttribute('data-context-elements') || '').split(',').filter((id) => id && id !== 'none');
+      const rendered = (root?.getAttribute('data-rendered-map-symbols') || '').split(',');
+      return contexts.every((id) => rendered.some((item) => item.startsWith(id + '|')));
+    })()`,
+    { timeoutMs: 35_000 }
+  );
 }
 
 async function toggleContext(cdp, elementId) {

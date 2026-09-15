@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v136-public-copy-acceptance-1",
-  "generatedAt": "2026-09-15T05:07:03.320Z",
+  "generatedAt": "2026-09-15T06:48:23.654Z",
   "audit": "finder-scroll:v136",
   "status": "PASS",
   "summary": {
@@ -42,13 +42,13 @@
         "savedScrollY": 15287,
         "restoreState": "settled"
       },
-      "restoreDurationMs": 245,
+      "restoreDurationMs": 251,
       "savedScrollY": 15287,
       "finalScrollY": 15287,
       "scrollDrift": 0,
       "maxScrollY": 20330,
       "restoreState": "settled",
-      "restoreDuration": 245
+      "restoreDuration": 251
     },
     "ariaContract": {
       "busyAttributePresent": true,
@@ -217,7 +217,7 @@
           "savedScrollY": 15287,
           "restoreState": "settled"
         },
-        "restoreDurationMs": 245
+        "restoreDurationMs": 251
       },
       "expected": "restored revealed rows"
     },
@@ -239,7 +239,7 @@
           "savedScrollY": 15287,
           "restoreState": "settled"
         },
-        "restoreDurationMs": 245,
+        "restoreDurationMs": 251,
         "scrollDrift": 0
       },
       "expected": "settled within 200px of the previous offset"
@@ -317,13 +317,13 @@
       "savedScrollY": 15287,
       "restoreState": "settled"
     },
-    "restoreDurationMs": 245,
+    "restoreDurationMs": 251,
     "savedScrollY": 15287,
     "finalScrollY": 15287,
     "scrollDrift": 0,
     "maxScrollY": 20330,
     "restoreState": "settled",
-    "restoreDuration": 245
+    "restoreDuration": 251
   },
   "ariaContract": {
     "busyAttributePresent": true,
