@@ -70,8 +70,15 @@ export default function ResearchPatentAnalysisV132({
     () => uniqueSortedV132(records.flatMap((record) => record.year ? [String(record.year)] : []), true),
     [records]
   );
+  // One option per class the source assigned; a document with two classes
+  // is listed under each, the same way the breakdown above counts it.
   const fields = useMemo(
-    () => uniqueSortedV132(records.map((record) => record.field).filter(Boolean)),
+    () =>
+      uniqueSortedV132(
+        records.flatMap((record) =>
+          record.technologyClasses.length ? record.technologyClasses : [record.field]
+        ).filter(Boolean)
+      ),
     [records]
   );
   const filtered = useMemo(() => {
@@ -79,7 +86,12 @@ export default function ResearchPatentAnalysisV132({
     return records.filter((record) => {
       if (type !== "all" && record.type !== type) return false;
       if (year !== "all" && String(record.year || "") !== year) return false;
-      if (field !== "all" && record.field !== field) return false;
+      if (
+        field !== "all" &&
+        !(record.technologyClasses.length ? record.technologyClasses.includes(field) : record.field === field)
+      ) {
+        return false;
+      }
       if (!needle) return true;
       return [record.title, record.field, record.institution, record.collaboration]
         .join(" ")
@@ -411,8 +423,12 @@ function sourceTechnologyClassesV138(
   entity: VietnamEntityV124,
   attributes: Record<string, unknown> = reviewedEntityAttributesV132(entity)
 ): string[] {
+  const projected = attributes.technologyCodes;
+  const codes = new Set<string>(
+    Array.isArray(projected) ? projected.map((code) => String(code)) : []
+  );
+  // Older projections carried the prose only; read any code still in it.
   const basis = publicTextV126(attributes.technologyBasis) || "";
-  const codes = new Set<string>();
   for (const match of basis.matchAll(CTIS_CODE_PATTERN)) codes.add(match[1]);
   return [...codes]
     .sort()

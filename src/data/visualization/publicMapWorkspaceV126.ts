@@ -456,6 +456,14 @@ const PUBLIC_MAP_LAYER_ACCURACY_V126: Record<string, string> = {
     "개편 전 63개 성·시 중 실제 계획값이 공개된 지역만 표시하며, 미제공 지역은 0으로 바꾸지 않습니다.",
   "D-008":
     "개편 전 63개 성·시 중 실제 예산값이 공개된 3개 지역만 표시하며, 나머지 지역은 0으로 바꾸지 않습니다.",
+  // Basin rows: the source's own representative point, not a facility and not
+  // a boundary. The HydroSHEDS basin polygons the rows cite were not delivered.
+  "B-025":
+    "유역 대표점만 표시합니다. 원자료가 참조하는 HydroSHEDS 8대 유역 경계 폴리곤은 전달되지 않아 표시하지 않으며, 대표점 하나가 유역 전체 범위를 뜻하지 않습니다.",
+  "B-023":
+    "관측지점은 원천 좌표로, 유역 행은 유역 대표점(속 빈 기호)으로 표시합니다. 유역 경계 폴리곤은 원자료 파일이 전달되지 않아 표시하지 않습니다.",
+  "B-028":
+    "관측지점은 원천 좌표로, 유역 행은 유역 대표점(속 빈 기호)으로 표시합니다. 유역 경계 폴리곤은 원자료 파일이 전달되지 않아 표시하지 않습니다.",
 };
 
 export interface PublicMapLayerCopyInputV126 {

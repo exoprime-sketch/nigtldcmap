@@ -9,7 +9,12 @@ import type { PublicAttributeValueV126 } from "./publicFieldPolicyV126";
 type ReviewedAliasV132 = {
   publicKey: string;
   sourceKey: string;
-  kind?: "text" | "url";
+  /**
+   * "technology-codes": the CTIS-NN codes in the cell, as a list. The public
+   * text policy strips a bare code from prose, so a screen that names the
+   * 38-technology classes reads the codes through this projection instead.
+   */
+  kind?: "text" | "url" | "technology-codes";
   /**
    * Source values that stand for "no value" and must not be read as data. Listed
    * per alias rather than filtered globally, so each exclusion names the column
@@ -231,6 +236,7 @@ const REVIEWED_ENTITY_ALIASES_V132: Record<string, ReviewedAliasV132[]> = {
     // The source's own justification for the CTIS technology code it assigned
     // to the row; the 38-class names on the screen are read from its codes.
     { publicKey: "technologyBasis", sourceKey: "기술코드_근거문구" },
+    { publicKey: "technologyCodes", sourceKey: "기술코드_근거문구", kind: "technology-codes" },
   ],
 };
 
@@ -266,6 +272,10 @@ function reviewedValueV132(
   kind: ReviewedAliasV132["kind"]
 ): PublicAttributeValueV126 | undefined {
   if (kind === "url") return publicSourceUrlV126(value) || undefined;
+  if (kind === "technology-codes") {
+    const codes = [...new Set([...String(value ?? "").matchAll(/CTIS-(\d{2})/gu)].map((match) => match[1]))].sort();
+    return codes.length > 0 ? codes : undefined;
+  }
   if (typeof value === "number" || typeof value === "boolean") return value;
   if (Array.isArray(value)) {
     const values = value

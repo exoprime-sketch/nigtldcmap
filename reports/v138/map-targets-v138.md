@@ -1,6 +1,6 @@
 # 지도 표출 대상 43개 — 구현 상태표 (V138)
 
-생성: 2026-09-15T01:35:21.272Z · 자료: src/data/visualization/publicMapTargetsV138.json, public/data/vietnam/v2/map-index.json, reports/v138/map-targets-build-v138.json, reports/v138/map-runtime-qa-v138.json
+생성: 2026-09-15T04:51:31.533Z · 자료: src/data/visualization/publicMapTargetsV138.json, public/data/vietnam/v2/map-index.json, reports/v138/map-targets-build-v138.json, reports/v138/map-runtime-qa-v138.json
 
 - 구현 완료 28 · 부분 구현 14 · 미연결 1 · 합계 43
 - 활성 지도 레이어 42개 · 지도 객체·값 합계 4,463

@@ -38,7 +38,7 @@ export interface PublicEntityTitleResolutionV131 {
   identifierFacts: PublicEntityIdentifierFactV131[];
 }
 
-type EntityTitleFieldSourceV131 = "normalized" | "raw";
+type EntityTitleFieldSourceV131 = "normalized" | "raw" | "note-facility";
 
 interface EntityTitleFieldV131 {
   key: string;
@@ -62,6 +62,9 @@ const TECHNICAL_PUBLIC_TITLE_V131 = [
  */
 const ELEMENT_TITLE_FIELDS_V131: Record<string, EntityTitleFieldV131[]> = {
   "A-029": [{ key: "field_09972978" }],
+  // A-025 names its rows by kind ("CO2 주입(EOR)"); the facility the source
+  // means is stated in its own note as "[시설명: Rang Dong 유전 CO2-EOR 파일럿]".
+  "A-025": [{ key: "시설명", source: "note-facility" }],
   // V138 map targets: the row's own subject, not its record key. A sea-level
   // row is filed as "1003_medium_ssp126_q5_2060"; the station is the subject.
   "B-008": [{ key: "관측소명_베트남어" }, { key: "관측소명_PSMSL" }],
@@ -87,6 +90,7 @@ const ELEMENT_TITLE_FIELDS_V131: Record<string, EntityTitleFieldV131[]> = {
 const ELEMENT_RECORD_TYPE_V131: Record<string, string> = {
   "A-013": "NDC–SDG 연계 항목",
   "A-023": "발전시설",
+  "A-025": "CCS 시설·후보지",
   "A-024": "송전망 구간",
   "A-029": "무역협정",
   "C-008": "기후행동 참여 항목",
@@ -198,6 +202,12 @@ function titleFromFieldsV131(
   fields: EntityTitleFieldV131[]
 ): string | null {
   for (const field of fields) {
+    if (field.source === "note-facility") {
+      const match = String(entity.note || "").match(/\[\s*시설명\s*[:：]\s*([^\]]+)\]/u);
+      const value = match ? titleTextV131(match[1]) : null;
+      if (value) return value;
+      continue;
+    }
     const value = fieldValueV131(entity, field);
     if (value) return value;
   }

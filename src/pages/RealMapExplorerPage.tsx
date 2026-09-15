@@ -347,6 +347,29 @@ const VIETNAM_SOURCE_REGION_LABELS_V126: Record<string, string> = {
 };
 
 /** What one value of a region-level layer describes: a GDL region, or a post-2025 province. */
+/**
+ * What one clicked point on this layer is. "선택 시설" on B-025 called a river
+ * basin's representative point a facility; the noun follows the dataset.
+ */
+function selectedFeatureNounV139(layer: CountryMapLayerV122): string {
+  const nouns: Record<string, string> = {
+    "B-025": "유역",
+    "B-023": "관측지점",
+    "B-028": "관측지점",
+    "B-008": "관측소",
+    "B-012": "재해",
+    "B-048": "광산",
+    "A-023": "발전소",
+    "A-025": "시설·후보지",
+    "E-004": "기관",
+    "E-005": "기관",
+    "E-006": "기관",
+    "E-019": "기관",
+    "E-018": "사업지",
+  };
+  return nouns[layer.elementId] || layer.featureIdentity?.label || "시설";
+}
+
 function regionUnitLabelV138(layer: CountryMapLayerV122): string {
   if (layer.elementId === "B-021") return "권역";
   if (layer.aggregationLevel === "post-2025-34-unit") return "개편 후 성·시";
@@ -4309,7 +4332,10 @@ export default function RealMapExplorerPage({
       ? "발전소 위치 1,889곳"
       : focusedSeriesCoverage
       ? focusedLayer.spatialScopeType === "region"
-        ? `${regionUnitLabelV138(focusedLayer)} 값을 63개 성·시 경계 중 ${focusedSeriesCoverage.matchedCount}개에 표시`
+        // The value's own unit is the 34 reorganised provinces (or six
+        // regions); the 63 boundaries only show which of them each value
+        // belongs to. "63/63" would claim a resolution the data lacks.
+        ? `${regionUnitLabelV138(focusedLayer)} 단위 값 · 소속 63개 성·시 경계 중 ${focusedSeriesCoverage.matchedCount}개에 대응 표시`
         : `63개 성·시 중 ${focusedSeriesCoverage.matchedCount}개에 값 있음`
       : focusedLayer.countNoun
       ? `${focusedLayer.mapTargetV138?.displaySpatialUnit || publicMapLayerTitleV126(focusedLayer.elementId, focusedLayer.publicShortTitle)} ${focusedLayer.featureCount.toLocaleString()}${focusedLayer.countNoun}`
@@ -4775,9 +4801,22 @@ export default function RealMapExplorerPage({
       : selectedOwningLayer.elementId === "A-023"
       ? "발전소 위치 1,889개"
       : selectedOwningSeriesCoverage
-      ? `63개 성·시 중 ${selectedOwningSeriesCoverage.matchedCount}개에 값 있음`
+      ? selectedOwningLayer.spatialScopeType === "region"
+        ? `${regionUnitLabelV138(selectedOwningLayer)} 단위 값 · 소속 63개 성·시 경계 중 ${selectedOwningSeriesCoverage.matchedCount}개에 대응 표시`
+        : `63개 성·시 중 ${selectedOwningSeriesCoverage.matchedCount}개에 값 있음`
       : publicMapCoverageTextV126(selectedOwningLayer)
     : "";
+  // Points of the selected regional project (its verified activity sites).
+  const selectedProjectSitePointsV139 = (() => {
+    if (!selectedSpatial || !selectedOwningLayer) return 0;
+    const features = spatialByElement[selectedOwningLayer.elementId]?.geometry?.features;
+    if (!Array.isArray(features)) return 0;
+    const name = String(selectedSpatial.properties.name || "");
+    return features.filter(
+      (feature) =>
+        feature?.geometry?.type === "Point" && String(feature?.properties?.name || "") === name
+    ).length;
+  })();
   const selectedFeatureRoleV129: PublicMapLayerRoleV129 | null =
     selectedOwningLayer?.elementId === primaryLayerId
       ? "primary"
@@ -7878,7 +7917,7 @@ export default function RealMapExplorerPage({
                       ? "선택 지역"
                       : selectedOwningLayer.elementId === "A-024"
                       ? "선택 선로"
-                      : "선택 시설"
+                      : `선택 ${selectedFeatureNounV139(selectedOwningLayer)}`
                     : "지도에서 자료를 선택하세요"}
                 </h3>
                 {selectedFeatureRoleV129 === "context" && (
@@ -7942,19 +7981,22 @@ export default function RealMapExplorerPage({
                           "미표기"
                         )}
                       />
+                      {/* The fund states the amount with its currency
+                          ("7,000,000 USD"); a text amount is shown as stated,
+                          a bare number as USD. */}
                       <Evidence
                         label="승인액"
                         value={
                           optionalFiniteNumberV130(
                             selectedSpatial.properties.approvedAmount
-                          ) === null
-                            ? "미표기"
-                            : `USD ${formatPublicNumberV126(
+                          ) !== null
+                            ? `USD ${formatPublicNumberV126(
                                 optionalFiniteNumberV130(
                                   selectedSpatial.properties.approvedAmount
                                 ) as number,
                                 "USD"
                               )}`
+                            : publicMapFactV132(selectedSpatial.properties.approvedAmount) || "미표기"
                         }
                       />
                       <Evidence
@@ -7978,17 +8020,16 @@ export default function RealMapExplorerPage({
                           "참여국의 지역 협력범위"
                         )}
                       />
+                      {/* The scope polygon carries no point of its own; the
+                          project's verified activity sites are the points
+                          drawn beside it, and that is what is counted. */}
                       <Evidence
                         label="좌표 처리"
-                        value={`원천 ${
+                        value={`원천 좌표 ${
                           optionalFiniteNumberV130(
                             selectedSpatial.properties.sourceCoordinateCount
                           ) ?? "미표기"
-                        }개 · 지점 표시 ${
-                          optionalFiniteNumberV130(
-                            selectedSpatial.properties.displayedCoordinateCount
-                          ) ?? "미표기"
-                        }개`}
+                        }개 · 검증된 세부 활동지역 점 ${selectedProjectSitePointsV139}개 표시`}
                       />
                       <Evidence
                         label="공간 해석 유의"
@@ -8103,11 +8144,17 @@ export default function RealMapExplorerPage({
                             label="자료 설명"
                             value={
                               selectedOwningLayer?.aggregationLevel === "post-2025-34-unit"
-                                ? `${selectedSpatial.adm1Name}은(는) 2025년 개편으로 ${publicVietnamSourceRegionV126(
-                                    publicTextV126(selectedSpatial.properties.sourceRegion) || undefined
-                                  )}에 속합니다. 값은 개편 후 ${publicVietnamSourceRegionV126(
-                                    publicTextV126(selectedSpatial.properties.sourceRegion) || undefined
-                                  )} 전체의 값이며 소속 성·시에 같은 값을 표시합니다.`
+                                ? (() => {
+                                    const unit = publicVietnamSourceRegionV126(
+                                      publicTextV126(selectedSpatial.properties.sourceRegion) || undefined
+                                    );
+                                    // "Lai Châu은(는) 2025년 개편으로 Lai Châu에 속합니다" said
+                                    // nothing: a province the reorganisation left alone is its
+                                    // own unit.
+                                    return unit === selectedSpatial.adm1Name
+                                      ? `${selectedSpatial.adm1Name}은(는) 2025년 개편 후에도 같은 이름의 성·시로 유지됩니다. 값은 개편 후 단위 기준입니다.`
+                                      : `${selectedSpatial.adm1Name}은(는) 2025년 개편으로 ${unit}에 속합니다. 값은 개편 후 ${unit} 전체의 값이며 소속 성·시에 같은 값을 표시합니다.`;
+                                  })()
                                 : `${selectedSpatial.adm1Name}의 개별 추정값이 아니라 ${publicVietnamSourceRegionV126(
                                     publicTextV126(
                                       selectedSpatial.properties.sourceRegion

@@ -1178,7 +1178,9 @@ function EvidenceMatrixV125({
       unit: publicTextV126(row.unit) || null,
       basis: String(row.year || row.period || row.provenance.referenceYear || "—"),
     })),
-    ...entities.map((entity) => entityMatrixRowV137(entity, emissionUnit)),
+    ...entities
+      .filter((entity) => !isCompilerMethodRowV139(entity))
+      .map((entity) => entityMatrixRowV137(entity, emissionUnit, entities)),
   ];
   if (items.length === 0) return null;
   const hasGroups = items.some((item) => item.group);
@@ -1210,7 +1212,7 @@ function EvidenceMatrixV125({
                     </td>
                   )}
                   <th scope="row"><PublicTermTextV134 text={item.area} /></th>
-                  <td><PublicTermTextV134 text={item.result} /></td>
+                  <td>{item.result === "—" ? "—" : <PublicTermTextV134 text={item.result} />}</td>
                   {hasUnits && <td>{item.unit ? <PublicTermTextV134 text={item.unit} /> : "—"}</td>}
                   <td><PublicTermTextV134 text={item.basis} /></td>
                 </tr>
@@ -1891,6 +1893,7 @@ const INDICATOR_GROUP_LABELS_V138: Record<string, string> = {
   frel_submission: "FREL 제출",
   participating_fund: "참여 기금",
   rbp_result: "결과기반지불(RBP)",
+  carbon_market_readiness: "탄소시장 준비도",
 };
 
 function indicatorGroupLabelV138(entity: VietnamEntityV124): string | null {
@@ -1982,7 +1985,44 @@ function publicPolicyTextV138(value: string): string {
     .trim();
 }
 
-function entityMatrixRowV137(entity: VietnamEntityV124, elementEmissionUnit: string | null = null) {
+/**
+ * Rows that describe how the sheet was compiled, not what the source says.
+ *
+ * C-022 carried a row named "수집현황 분류" whose value was the compiler's own
+ * method sentence ("이미 확보한 ETS 제도 데이터를 근거로 준비도를 산출하는 방식을
+ * 채택함"). That is a note to the sheet's maintainer; the public table keeps
+ * the source's findings and the stated constraints, not the compilation log.
+ */
+function isCompilerMethodRowV139(entity: VietnamEntityV124): boolean {
+  // The raw row name carries the sheet's own version ("수집현황 v5.29 분류");
+  // the public title policy drops the version, so the raw name is tested too.
+  const names = [publicEntityTitleV131(entity), entity.name, entity.normalizedAttributes?.["속성1_레코드명"]]
+    .map((value) => String(value || "").trim())
+    .filter(Boolean);
+  return names.some((name) => /^수집현황(?:\s*v[\d.]+)?(?:\s*분류)?$/u.test(name));
+}
+
+/**
+ * C-022's three "부문별 시설수" rows (25 · 34 · 51) name no sector in any
+ * column; the same sheet's checklist row states the split ("발전 34·철강
+ * 25·시멘트 51"). The row keeps its value and says the sector is not on the
+ * row, citing that sentence rather than guessing which number is which.
+ */
+function sectorlessCountNoteV139(entities: VietnamEntityV124[]): string | null {
+  for (const entity of entities) {
+    const attributes = entity.normalizedAttributes || {};
+    const text = `${attributes["속성23_설명"] || ""} ${entity.note || ""}`;
+    const match = text.match(/(발전\s*\d+\s*·\s*철강\s*\d+\s*·\s*시멘트\s*\d+)/u);
+    if (match) return match[1];
+  }
+  return null;
+}
+
+function entityMatrixRowV137(
+  entity: VietnamEntityV124,
+  elementEmissionUnit: string | null = null,
+  siblings: VietnamEntityV124[] = []
+) {
   const note = publicTextV126(entity.note);
   const name = publicEntityTitleV131(entity);
   const rawResult =
@@ -1998,8 +2038,11 @@ function entityMatrixRowV137(entity: VietnamEntityV124, elementEmissionUnit: str
     ]) || note;
   // A year is not a quantity. C-001's "BAU 목표 기준연도" printed as "2,014" and
   // the 기준연도 column read "2,026" on every C-series screen.
+  // "시범단계 2028" and "정식전환단계 2029~" are years too; a stage, a start
+  // or an end named in the row makes a 1900-2100 integer a year, not a count.
+  const yearNamed = /연도|년도|단계|시점|시작|종료|예정/u.test(name);
   const result = publicPolicyTextV138(
-    (/연도|년도/u.test(name) ? plainYearV137(rawResult) : rawResult) || ""
+    (yearNamed ? plainYearV137(rawResult) : rawResult) || ""
   );
   const period = entityFieldV125(entity, [
     "legalBasis",
@@ -2009,17 +2052,33 @@ function entityMatrixRowV137(entity: VietnamEntityV124, elementEmissionUnit: str
   ]);
   const extra = entityFieldV125(entity, ["field_a1c8da40"]);
   const leader = entityFieldV125(entity, ["field_edf04a1a"]);
-  const description = publicPolicyTextV138(
+  const rawDescription = publicPolicyTextV138(
     entityFieldV125(entity, ["속성23_설명"]) || (result === note ? "" : note || "")
   );
+  // The same sentence printed as the finding and again as its basis says
+  // nothing twice ("준비도 지표 정의" on C-022).
+  const description = rawDescription === result ? "" : rawDescription;
+  const sectorNote =
+    /^부문별\s*시설수$/u.test(name || "") && !entityFieldV125(entity, ["sector", "속성18_업종", "속성6_분류"])
+      ? `원천 행에 부문명이 없어 값만 제공${(() => {
+          const stated = sectorlessCountNoteV139(siblings);
+          return stated ? ` · 같은 자료의 적용대상 근거문: ${stated}` : "";
+        })()}`
+      : null;
   const basis = [
     plainYearV137(period),
     extra ? `기술격차 ${extra}` : null,
     leader ? `최고(선도)국 ${leader}` : null,
     description || null,
+    sectorNote,
   ]
     .filter(Boolean)
     .join(" · ");
+  // "MAE(농업환경부 …) — MAE": a row whose value is the abbreviation its own
+  // name already carries states nothing in the result column; the role is in
+  // the basis.
+  const restatedAbbreviation =
+    Boolean(result) && result.length <= 24 && (name || "").includes(result) && Boolean(description);
   return {
     key: entity.recordId,
     group: indicatorGroupLabelV138(entity),
@@ -2029,7 +2088,7 @@ function entityMatrixRowV137(entity: VietnamEntityV124, elementEmissionUnit: str
     // An empty cell reads as empty. C-009 printed "세부 내용은 상세 데이터에서
     // 확인" forty-three times down one column, which says nothing forty-three
     // times; the table already leads to the detail below it.
-    result: result || "—",
+    result: restatedAbbreviation ? "—" : result || "—",
     unit: unitFromDescriptionV138(
       name || "",
       indicatorGroupLabelV138(entity),
