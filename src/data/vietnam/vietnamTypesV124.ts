@@ -298,6 +298,10 @@ export type VietnamMapRendererV124 =
 
 export interface VietnamMapSelectorOptionV124 {
   key: string;
+  /** V138: the measure this option carries when a layer crosses measures with scenarios. */
+  measureKey?: string;
+  /** V138: the scenario this option carries, or null for a single-track layer. */
+  scenario?: string | null;
   /**
    * A stable name for the measure, independent of the label and the key.
    *
@@ -318,6 +322,32 @@ export interface VietnamMapSelectorsV124 {
   periods: string[];
   defaultVariable: string;
   defaultPeriod: string;
+  /**
+   * V138: a layer whose variables are measure x scenario states both axes, so
+   * the controls can offer two short lists instead of one long one.
+   */
+  variableGroups?: {
+    measures: Array<{ key: string; label: string; unit: string; measureId?: string }>;
+    scenarios: Array<{ key: string; label: string }>;
+    measureLabel: string;
+    scenarioLabel: string;
+  };
+}
+
+/** V138: how several source rows become one map feature. */
+export interface VietnamMapFeatureIdentityV138 {
+  sources: string[];
+  label: string;
+  memberLabel?: string;
+}
+
+/** V138: the 43-target contract facts carried on a layer for the panel. */
+export interface VietnamMapTargetFactsV138 {
+  sourceSpatialUnit: string;
+  displaySpatialUnit: string;
+  limitation: string;
+  evidence: string;
+  representativeItem: string;
 }
 
 export interface VietnamMapJoinV124 {
@@ -380,6 +410,32 @@ export type VietnamMapLayerV124 = Omit<VietnamMapLayerV121, "assetRef"> & {
   publicSpatialNotice: string;
   mapBenefit?: string;
   spatialLimitation?: string;
+  /** V138 point layers: the noun a count of features takes (곳, 건, 개 기관). */
+  countNoun?: string;
+  /** V138 point layers: what the 항목 row of the analysis panel names. */
+  analysisItemLabel?: string;
+  featureIdentity?: VietnamMapFeatureIdentityV138;
+  displayScope?: {
+    withinCountryOnly: boolean;
+    bbox: { west: number; east: number; south: number; north: number };
+  };
+  excludeWhere?: Record<string, string>;
+  approximateLocation?: { sourceKey?: string; pattern?: string; always?: boolean; label?: string };
+  memberSeries?: {
+    valueKey: string;
+    unit: string;
+    scenarioKey: string;
+    quantileKey: string;
+    periodKey: string;
+    confidenceKey?: string;
+  };
+  memberFacts?: { labelKey: string; valueKey: string; unitKey: string };
+  symbolByFact?: { key: string; approxPattern?: string };
+  memberRowCount?: number;
+  memberRecordsInAsset?: boolean;
+  sharedObjectsWith?: string;
+  sharedObjectKind?: "document" | "facility-register";
+  mapTargetV138?: VietnamMapTargetFactsV138;
 };
 
 export interface VietnamSpatialValueV124 {
@@ -409,6 +465,37 @@ export interface VietnamSpatialLayerAssetV124 {
   coverageKind: "full" | "partial";
   selectors: VietnamMapSelectorsV124;
   values: VietnamSpatialValueV124[];
+  /**
+   * V138: the same values as a table, for layers whose row form would be
+   * tens of thousands of objects. The loader expands it into `values`.
+   */
+  valueTable?: {
+    adm1Codes: string[];
+    adm1Names: string[];
+    sourceSpatialUnit: "admin1" | "region";
+    series: Array<{
+      variable: string;
+      variableLabel: string;
+      unit: string | null;
+      period: string;
+      sourceIndicatorId: string | null;
+      values: Array<number | null>;
+    }>;
+  };
+  /** V138: the source rows behind a province value - local documents, PPP projects. */
+  memberRecords?: Record<
+    string,
+    Array<{
+      recordId: string;
+      label: string;
+      date?: string;
+      status?: string;
+      value?: string;
+      url?: string;
+      region?: string;
+      indicatorId?: string;
+    }>
+  >;
   seriesCoverage: Array<{
     variable: string;
     period: string;
@@ -421,10 +508,12 @@ export interface VietnamSpatialLayerAssetV124 {
     publishedValueCount: number;
     matchedAdm1Count: number;
     joinFailureCount: 0;
-    duplicateValueCount: 0;
+    duplicateValueCount: number;
     fakeGeometryCount: 0;
     zeroImputationCount: 0;
     maxSeriesFeatureCount: number;
+    mappingMethod?: string;
+    sourceRegionCount?: number;
   };
 }
 

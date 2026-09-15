@@ -76,6 +76,11 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+/* V140: four advanced fields (year, provider, delivery type, technology). */
+.cdp-filter-grid--secondary {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .cdp-field {
   display: grid;
   gap: 7px;
@@ -1759,6 +1764,10 @@
 @media (max-width: 1060px) {
   .cdp-page {
     width: min(100% - 32px, 960px);
+  }
+
+  .cdp-filter-grid--secondary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .cdp-card-grid,

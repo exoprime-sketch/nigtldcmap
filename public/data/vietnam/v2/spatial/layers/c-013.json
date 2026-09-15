@@ -1,0 +1,485 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "VNM",
+  "elementId": "C-013",
+  "generatedAt": "2026-09-01T00:00:00Z",
+  "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+  "joinKey": "adm1Code",
+  "boundarySystem": "pre-2025-63",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2014–2025",
+    "defaultVariable": "special-incentive-provision-count",
+    "periods": [
+      "2014–2025"
+    ],
+    "variables": [
+      {
+        "key": "special-incentive-provision-count",
+        "measureId": "c013-provisions",
+        "measureKey": "special-incentive-provision-count",
+        "scenario": null,
+        "label": "지역 특별 인센티브 근거 행 수",
+        "unit": "건",
+        "periods": [
+          "2014–2025"
+        ],
+        "maxFeatureCount": 14
+      }
+    ]
+  },
+  "values": [
+    {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "variable": "special-incentive-provision-count",
+      "variableLabel": "지역 특별 인센티브 근거 행 수",
+      "period": "2014–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-013_investment_incentive_hotropldn_thainguyen",
+      "sourceRecordId": "v124-c-013-entity-00012",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Khánh Hòa",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "variable": "special-incentive-provision-count",
+      "variableLabel": "지역 특별 인센티브 근거 행 수",
+      "period": "2014–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-013_investment_incentive_hotropldn_thainguyen",
+      "sourceRecordId": "v124-c-013-entity-00012",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Khánh Hòa",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-56",
+      "adm1Name": "Bắc Ninh",
+      "variable": "special-incentive-provision-count",
+      "variableLabel": "지역 특별 인센티브 근거 행 수",
+      "period": "2014–2025",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "C-013_investment_incentive_hotropldn_thainguyen",
+      "sourceRecordId": "v124-c-013-entity-00013",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Bắc Ninh",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-54",
+      "adm1Name": "Bắc Giang",
+      "variable": "special-incentive-provision-count",
+      "variableLabel": "지역 특별 인센티브 근거 행 수",
+      "period": "2014–2025",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "C-013_investment_incentive_hotropldn_thainguyen",
+      "sourceRecordId": "v124-c-013-entity-00013",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Bắc Ninh",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-09",
+      "adm1Name": "Lạng Sơn",
+      "variable": "special-incentive-provision-count",
+      "variableLabel": "지역 특별 인센티브 근거 행 수",
+      "period": "2014–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-013_investment_incentive_hotropldn_thainguyen",
+      "sourceRecordId": "v124-c-013-entity-00015",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lạng Sơn",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "variable": "special-incentive-provision-count",
+      "variableLabel": "지역 특별 인센티브 근거 행 수",
+      "period": "2014–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-013_investment_incentive_vanban_chinhphu",
+      "sourceRecordId": "v124-c-013-entity-00021",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Nghệ An",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-HP",
+      "adm1Name": "Hải Phòng",
+      "variable": "special-incentive-provision-count",
+      "variableLabel": "지역 특별 인센티브 근거 행 수",
+      "period": "2014–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-013_investment_incentive_vanban_chinhphu",
+      "sourceRecordId": "v124-c-013-entity-00022",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hải Phòng",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-61",
+      "adm1Name": "Hải Dương",
+      "variable": "special-incentive-provision-count",
+      "variableLabel": "지역 특별 인센티브 근거 행 수",
+      "period": "2014–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-013_investment_incentive_vanban_chinhphu",
+      "sourceRecordId": "v124-c-013-entity-00022",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hải Phòng",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "variable": "special-incentive-provision-count",
+      "variableLabel": "지역 특별 인센티브 근거 행 수",
+      "period": "2014–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-013_investment_incentive_vanban_chinhphu",
+      "sourceRecordId": "v124-c-013-entity-00023",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Thanh Hóa",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-DN",
+      "adm1Name": "Đà Nẵng",
+      "variable": "special-incentive-provision-count",
+      "variableLabel": "지역 특별 인센티브 근거 행 수",
+      "period": "2014–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-013_investment_incentive_vanban_chinhphu",
+      "sourceRecordId": "v124-c-013-entity-00024",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đà Nẵng",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "variable": "special-incentive-provision-count",
+      "variableLabel": "지역 특별 인센티브 근거 행 수",
+      "period": "2014–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-013_investment_incentive_vanban_chinhphu",
+      "sourceRecordId": "v124-c-013-entity-00024",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đà Nẵng",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-57",
+      "adm1Name": "Bình Dương",
+      "variable": "special-incentive-provision-count",
+      "variableLabel": "지역 특별 인센티브 근거 행 수",
+      "period": "2014–2025",
+      "value": 7,
+      "unit": "건",
+      "sourceIndicatorId": "C-013_investment_incentive_xaydungchinhsach_chinh",
+      "sourceRecordId": "v124-c-013-entity-00041",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hồ Chí Minh",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-43",
+      "adm1Name": "Bà Rịa–Vũng Tàu",
+      "variable": "special-incentive-provision-count",
+      "variableLabel": "지역 특별 인센티브 근거 행 수",
+      "period": "2014–2025",
+      "value": 7,
+      "unit": "건",
+      "sourceIndicatorId": "C-013_investment_incentive_xaydungchinhsach_chinh",
+      "sourceRecordId": "v124-c-013-entity-00041",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hồ Chí Minh",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-SG",
+      "adm1Name": "Hồ Chí Minh",
+      "variable": "special-incentive-provision-count",
+      "variableLabel": "지역 특별 인센티브 근거 행 수",
+      "period": "2014–2025",
+      "value": 7,
+      "unit": "건",
+      "sourceIndicatorId": "C-013_investment_incentive_xaydungchinhsach_chinh",
+      "sourceRecordId": "v124-c-013-entity-00041",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hồ Chí Minh",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    }
+  ],
+  "memberRecords": {
+    "VN-34": [
+      {
+        "recordId": "v124-c-013-entity-00012",
+        "label": "성·시 특별메커니즘",
+        "date": "",
+        "status": "",
+        "value": "Nghị quyết 55/2022/QH15",
+        "url": "https://ipa.khanhhoa.gov.vn/co-che-chinh-sach-uu-dai-dac-thu",
+        "region": "Khánh Hòa",
+        "indicatorId": "C-013_investment_incentive_hotropldn_thainguyen"
+      }
+    ],
+    "VN-36": [
+      {
+        "recordId": "v124-c-013-entity-00012",
+        "label": "성·시 특별메커니즘",
+        "date": "",
+        "status": "",
+        "value": "Nghị quyết 55/2022/QH15",
+        "url": "https://ipa.khanhhoa.gov.vn/co-che-chinh-sach-uu-dai-dac-thu",
+        "region": "Khánh Hòa",
+        "indicatorId": "C-013_investment_incentive_hotropldn_thainguyen"
+      }
+    ],
+    "VN-56": [
+      {
+        "recordId": "v124-c-013-entity-00014",
+        "label": "성 비조세 투자지원",
+        "date": "",
+        "status": "",
+        "value": "Nghị quyết 56/2017",
+        "url": "https://itpc.bacninh.gov.vn/chinh-sach-ho-tro-cua-ubnd-tinh",
+        "region": "Bắc Ninh",
+        "indicatorId": "C-013_investment_incentive_hotropldn_thainguyen"
+      }
+    ],
+    "VN-54": [
+      {
+        "recordId": "v124-c-013-entity-00014",
+        "label": "성 비조세 투자지원",
+        "date": "",
+        "status": "",
+        "value": "Nghị quyết 56/2017",
+        "url": "https://itpc.bacninh.gov.vn/chinh-sach-ho-tro-cua-ubnd-tinh",
+        "region": "Bắc Ninh",
+        "indicatorId": "C-013_investment_incentive_hotropldn_thainguyen"
+      }
+    ],
+    "VN-09": [
+      {
+        "recordId": "v124-c-013-entity-00015",
+        "label": "성 비조세 투자지원",
+        "date": "",
+        "status": "",
+        "value": "Nghị quyết 16/2022/NQ-HĐND (2022-07-07)",
+        "url": "https://langson.gov.vn/tin-moi/hop-xem-xet-du-thao-nghi-quyet-cu-a-hoi-dong-nhan-dan-ti-nh-ve-mot-so-chinh-sach-ho-tro-dau-tu-tren-dia-ban-ti-nh.html",
+        "region": "Lạng Sơn",
+        "indicatorId": "C-013_investment_incentive_hotropldn_thainguyen"
+      }
+    ],
+    "VN-22": [
+      {
+        "recordId": "v124-c-013-entity-00021",
+        "label": "성·시 특별메커니즘",
+        "date": "",
+        "status": "",
+        "value": "Nghị quyết 137/2024/QH15",
+        "url": "https://vanban.chinhphu.vn/?classid=1&docid=210617&orggroupid=1&pageid=27160",
+        "region": "Nghệ An",
+        "indicatorId": "C-013_investment_incentive_vanban_chinhphu"
+      }
+    ],
+    "VN-HP": [
+      {
+        "recordId": "v124-c-013-entity-00022",
+        "label": "성·시 특별메커니즘",
+        "date": "",
+        "status": "",
+        "value": "Nghị quyết 226/2025/QH15",
+        "url": "https://vanban.chinhphu.vn/?docid=214382&pageid=27160",
+        "region": "Hải Phòng",
+        "indicatorId": "C-013_investment_incentive_vanban_chinhphu"
+      }
+    ],
+    "VN-61": [
+      {
+        "recordId": "v124-c-013-entity-00022",
+        "label": "성·시 특별메커니즘",
+        "date": "",
+        "status": "",
+        "value": "Nghị quyết 226/2025/QH15",
+        "url": "https://vanban.chinhphu.vn/?docid=214382&pageid=27160",
+        "region": "Hải Phòng",
+        "indicatorId": "C-013_investment_incentive_vanban_chinhphu"
+      }
+    ],
+    "VN-21": [
+      {
+        "recordId": "v124-c-013-entity-00023",
+        "label": "성·시 특별메커니즘",
+        "date": "",
+        "status": "",
+        "value": "Nghị quyết 37/2021/QH15",
+        "url": "https://vanban.chinhphu.vn/?pageid=27160&docid=204568&classid=1&orggroupid=1",
+        "region": "Thanh Hóa",
+        "indicatorId": "C-013_investment_incentive_vanban_chinhphu"
+      }
+    ],
+    "VN-DN": [
+      {
+        "recordId": "v124-c-013-entity-00024",
+        "label": "성·시 특별메커니즘",
+        "date": "",
+        "status": "",
+        "value": "Nghị quyết 136/2024/QH15",
+        "url": "https://vanban.chinhphu.vn/?pageid=27160&docid=210674&classid=1&orggroupid=1",
+        "region": "Đà Nẵng",
+        "indicatorId": "C-013_investment_incentive_vanban_chinhphu"
+      }
+    ],
+    "VN-27": [
+      {
+        "recordId": "v124-c-013-entity-00024",
+        "label": "성·시 특별메커니즘",
+        "date": "",
+        "status": "",
+        "value": "Nghị quyết 136/2024/QH15",
+        "url": "https://vanban.chinhphu.vn/?pageid=27160&docid=210674&classid=1&orggroupid=1",
+        "region": "Đà Nẵng",
+        "indicatorId": "C-013_investment_incentive_vanban_chinhphu"
+      }
+    ],
+    "VN-57": [
+      {
+        "recordId": "v124-c-013-entity-00047",
+        "label": "성·시 특별메커니즘",
+        "date": "",
+        "status": "",
+        "value": "5",
+        "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-quyet-thi-diem-co-che-chinh-sach-dac-thu-phat-trien-tp-hcm-119230707074903999.htm",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "C-013_investment_incentive_xaydungchinhsach_chinh"
+      }
+    ],
+    "VN-43": [
+      {
+        "recordId": "v124-c-013-entity-00047",
+        "label": "성·시 특별메커니즘",
+        "date": "",
+        "status": "",
+        "value": "5",
+        "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-quyet-thi-diem-co-che-chinh-sach-dac-thu-phat-trien-tp-hcm-119230707074903999.htm",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "C-013_investment_incentive_xaydungchinhsach_chinh"
+      }
+    ],
+    "VN-SG": [
+      {
+        "recordId": "v124-c-013-entity-00047",
+        "label": "성·시 특별메커니즘",
+        "date": "",
+        "status": "",
+        "value": "5",
+        "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-quyet-thi-diem-co-che-chinh-sach-dac-thu-phat-trien-tp-hcm-119230707074903999.htm",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "C-013_investment_incentive_xaydungchinhsach_chinh"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "special-incentive-provision-count",
+      "period": "2014–2025",
+      "expectedCount": 63,
+      "matchedCount": 14,
+      "missingCount": 49,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "attribution": [
+      "Legal document reference: LuatVietnam (INCOM). Factual citation only.",
+      "Legal document reference: ThuVienPhapLuat / LawNet. Factual citation only.",
+      "Source: Nghị quyết 98/2023/QH15, Quốc hội Việt Nam",
+      "Source: 베트남 국회·정부 공보 / LuatVietnam"
+    ],
+    "licenses": [
+      "INCOM(LuatVietnam) 이용약관 — 서면 허가 필요",
+      "국제기구 공개 발간물 — 출처 표기 조건",
+      "미 17 U.S.C. §105 퍼블릭 도메인 / 공공누리 출처표시",
+      "베트남 법령 원문 — 지식재산법 제15조상 저작권 비보호",
+      "베트남 정부 공보 이용약관",
+      "베트남 지식재산법 제15조 — 법률규범문서 저작권 비보호",
+      "상업 법령DB 이용약관 — 재배포 서면 허가 필요"
+    ],
+    "organizations": [
+      "베트남 국회 (Quốc hội) — 투자법 143/2025/QH15",
+      "베트남 국회 — Nghị quyết 98/2023/QH15 (정부 정책포털 전문)",
+      "베트남 국회·정부 공보 / LuatVietnam"
+    ],
+    "urls": [
+      "https://archive.doingbusiness.org/content/dam/doingBusiness/country/v/vietnam/VNM.pdf",
+      "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/luat143-2025.pdf",
+      "https://english.luatvietnam.vn/dat-dai/decree-103-2024-nd-cp-land-use-levy-and-land-rental-361937-d1.html",
+      "https://english.luatvietnam.vn/law-no-107-2016-qh13-on-export-and-import-duties-104851-doc1.html",
+      "https://english.luatvietnam.vn/lawoncorporateincometaxno67-2025-qh15datedjune142025ofthenationalassembly-404386-doc1.html",
+      "https://hotropldn.thainguyen.gov.vn/news/phap-luat-va-doanh-nghiep/quy-dinh-ve-uu-dai-va-ho-tro-dau-tu-theo-luat-dau-tu-nam-2025-2027.html",
+      "https://investmentpolicy.unctad.org/international-investment-agreements/countries/229/viet-nam",
+      "https://ipa.khanhhoa.gov.vn/co-che-chinh-sach-uu-dai-dac-thu",
+      "https://itpc.bacninh.gov.vn/chinh-sach-ho-tro-cua-ubnd-tinh",
+      "https://langson.gov.vn/tin-moi/hop-xem-xet-du-thao-nghi-quyet-cu-a-hoi-dong-nhan-dan-ti-nh-ve-mot-so-chinh-sach-ho-tro-dau-tu-tren-dia-ban-ti-nh.html",
+      "https://luatvietnam.vn/chinh-sach/nghi-quyet-226-2025-qh15-co-che-chinh-sach-dac-thu-phat-trien-hai-phong-404209-d1.html",
+      "https://thuvienphapluat.vn/",
+      "https://thuvienphapluat.vn/van-ban/Bo-may-hanh-chinh/Nghi-quyet-136-2024-QH15-to-chuc-chinh-quyen-do-thi-thanh-pho-Da-Nang-617422.aspx",
+      "https://thuvienphapluat.vn/van-ban/Bo-may-hanh-chinh/Nghi-quyet-37-2021-QH15-thi-diem-co-che-dac-thu-phat-trien-Thanh-Hoa-495735.aspx",
+      "https://thuvienphapluat.vn/van-ban/Doanh-nghiep/Nghi-dinh-320-2025-ND-CP-huong-dan-Luat-Thue-thu-nhap-doanh-nghiep-665051.aspx",
+      "https://thuvienphapluat.vn/van-ban/Tai-chinh-nha-nuoc/Nghi-quyet-137-2024-QH15-bo-sung-chinh-sach-dac-thu-phat-trien-Nghe-An-616693.aspx",
+      "https://vanban.chinhphu.vn/?pageid=27160&docid=216524",
+      "https://vpcp.chinhphu.vn/thu-tuong-chinh-phu-ban-hanh-quy-dinh-ve-uu-dai-dau-tu-dac-biet-11526563.htm",
+      "https://www.state.gov/reports/2025-investment-climate-statements/vietnam",
+      "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-quyet-thi-diem-co-che-chinh-sach-dac-thu-phat-trien-tp-hcm-119230707074903999.htm"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 63,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 14,
+    "maxSeriesFeatureCount": 14,
+    "missingAdm1Count": 49,
+    "providedZeroCount": 0,
+    "publishedValueCount": 14,
+    "sourceValueCount": 15,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0,
+    "mappingMethod": "explicit-2025-34-unit-membership",
+    "sourceRegionCount": 8
+  }
+}

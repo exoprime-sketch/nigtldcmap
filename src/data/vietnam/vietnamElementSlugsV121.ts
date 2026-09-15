@@ -1,8 +1,7 @@
 /** Public, human-readable URL slugs for the 152 Vietnam data elements. */
 export const VIETNAM_ELEMENT_PUBLIC_SLUG_BY_ID_V121 = {
   "A-001": "cpi-corruption-perceptions-index-bupaeinsigjisu",
-  "A-002":
-    "cpia-country-policy-and-institutional-assessment-gugga-sinyongdo-geobeoneonseu-sujun-jipyo",
+  "A-002": "wgi-worldwide-governance-indicators-gugga-geobeoneonseu-jipyo",
   "A-003": "gdp-hyeonjaega-ppp-seongjangryul-1indang",
   "A-004": "bingonyul-geugbingonyul",
   "A-005": "saneobgujo-nongeob-jejo-seobiseu",
@@ -242,13 +241,31 @@ export function publicElementSlugV121(
   return VIETNAM_ELEMENT_PUBLIC_SLUG_BY_ID_V121[elementId];
 }
 
+/**
+ * Slugs an element used to be published under. A-002 carried CPIA until the
+ * V139 refresh replaced it with the Worldwide Governance Indicators; the
+ * download file and the share link were still named after CPIA. Links that
+ * were shared with the old slug keep opening the element.
+ */
+const VIETNAM_LEGACY_PUBLIC_SLUG_BY_SLUG_V140: ReadonlyMap<string, VietnamElementIdV121> =
+  new Map([
+    [
+      "cpia-country-policy-and-institutional-assessment-gugga-sinyongdo-geobeoneonseu-sujun-jipyo",
+      "A-002",
+    ],
+  ]);
+
 export function elementIdFromPublicSlugV121(
   value: string | null | undefined
 ): VietnamElementIdV121 | null {
   if (!value) return null;
   // Legacy internal-code URLs remain readable but are never emitted by the current UI.
   if (isVietnamElementIdV121(value)) return value;
-  return VIETNAM_ELEMENT_ID_BY_PUBLIC_SLUG_V121.get(value) ?? null;
+  return (
+    VIETNAM_ELEMENT_ID_BY_PUBLIC_SLUG_V121.get(value) ??
+    VIETNAM_LEGACY_PUBLIC_SLUG_BY_SLUG_V140.get(value) ??
+    null
+  );
 }
 
 export function publicElementPathTokenV121(

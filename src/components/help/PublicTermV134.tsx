@@ -1,4 +1,5 @@
 import {
+  Fragment,
   useCallback,
   useEffect,
   useId,
@@ -249,7 +250,10 @@ export function PublicTermTextV134({
     <>
       {tokens.map((token, index) =>
         token.type === "text" ? (
-          <span key={`text-${index}`}>{token.value}</span>
+          // Plain text, not a span: descendant rules such as
+          // `.cdp-evidence-row span { display: block }` turned each text
+          // token into its own line around the term.
+          <Fragment key={`text-${index}`}>{token.value}</Fragment>
         ) : (
           <PublicTermV134
             className={className}
@@ -309,7 +313,10 @@ export function PublicTermExpandedTextV134({
     <>
       {tokens.map((token, index) =>
         token.type === "text" ? (
-          <span key={`text-${index}`}>{token.value}</span>
+          // Plain text, not a span: descendant rules such as
+          // `.cdp-evidence-row span { display: block }` turned each text
+          // token into its own line around the term.
+          <Fragment key={`text-${index}`}>{token.value}</Fragment>
         ) : (
           <span
             className={className}

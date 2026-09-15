@@ -19,6 +19,7 @@ import {
   normalizeTextV133,
   readSourceV133,
 } from "./v133/audit-helpers.mjs";
+import { toggleMapCompanionV138 } from "./v135/audit-helpers.mjs";
 
 const audit = new AuditV125("map-layer-distinction:v133");
 const mapResult = readJson(resolve(V2_ROOT, "map-index.json"));
@@ -63,8 +64,9 @@ async function selectPreset(cdp, presetId, expectedPrimary) {
     cdp,
     `(() => {
       const root = document.querySelector('[data-testid="map-public-content"]');
+      // V138: a preset switches on the companions its card names.
       return root?.getAttribute('data-primary-element') === ${JSON.stringify(expectedPrimary)} &&
-        root?.getAttribute('data-context-layer-count') === '0';
+        root?.getAttribute('data-map-preset') === ${JSON.stringify(presetId)};
     })()`,
     { timeoutMs: 35_000 }
   );
@@ -78,22 +80,33 @@ async function selectPreset(cdp, presetId, expectedPrimary) {
     `(() => (document.querySelector('[data-testid="map-public-content"]')?.getAttribute('data-rendered-map-symbols') || '').split(',').some((item) => item.startsWith(${JSON.stringify(`${expectedPrimary}|`)})))()`,
     { timeoutMs: 35_000 }
   );
+  // The companions the card names load their own assets after the primary
+  // (C-025 is 262 points). On the CI runner the legend snapshot was taken
+  // between the primary's symbols and the companion's, and the check that
+  // asks for both then read a half-drawn preset. Wait for every companion the
+  // page itself lists to be among the rendered symbols before returning.
+  await waitForValue(
+    cdp,
+    `(() => {
+      const root = document.querySelector('[data-testid="map-public-content"]');
+      const contexts = (root?.getAttribute('data-context-elements') || '').split(',').filter((id) => id && id !== 'none');
+      const rendered = (root?.getAttribute('data-rendered-map-symbols') || '').split(',');
+      return contexts.every((id) => rendered.some((item) => item.startsWith(id + '|')));
+    })()`,
+    { timeoutMs: 35_000 }
+  );
 }
 
 async function toggleContext(cdp, elementId) {
-  const clicked = await evaluateValue(
+  // V138: the preset already draws its companions; a companion not yet on is
+  // ticked in the catalogue. Either way the layer has to end up drawn.
+  const isContext = await evaluateValue(
     cdp,
-    `(() => {
-      const explicit = document.querySelector('[data-testid="map-context-toggle-v133"][data-map-element=${JSON.stringify(elementId)}]');
-      const card = document.querySelector('.cdp-layer-card[data-map-element=${JSON.stringify(elementId)}]');
-      const fallback = [...(card?.querySelectorAll('button') || [])].find((node) => /함께 보기|보조 표시/u.test(node.textContent || ''));
-      const button = explicit || fallback;
-      if (!(button instanceof HTMLButtonElement) || button.disabled) return false;
-      button.click();
-      return true;
-    })()`
+    `(document.querySelector('[data-testid="map-public-content"]')?.getAttribute('data-context-elements') || '').split(',').includes(${JSON.stringify(elementId)})`
   );
-  if (!clicked) throw new Error(`context unavailable: ${elementId}`);
+  if (!isContext) {
+    await toggleMapCompanionV138(cdp, { elementId, evaluateValue, waitForValue });
+  }
   await waitForValue(
     cdp,
     `(() => (document.querySelector('[data-testid="map-public-content"]')?.getAttribute('data-context-elements') || '').split(',').includes(${JSON.stringify(elementId)}))()`,
@@ -209,7 +222,7 @@ try {
   browser = await launchHeadlessBrowser();
   await setViewport(browser.cdp, 1440, 1100);
   await navigate(browser.cdp, mapUrlV133(server.url));
-  await waitForValue(browser.cdp, `document.querySelectorAll('.cdp-layer-card[data-map-element]').length === 12`, {
+  await waitForValue(browser.cdp, `document.querySelectorAll('.cdp-map-catalog-v138__item[data-map-available="true"]').length === ${layers.length}`, {
     timeoutMs: 35_000,
   });
 
@@ -313,21 +326,27 @@ const climateShapesPass =
   climateById.get("D-008")?.shape === "circle" &&
   climateById.get("D-018")?.role === "context" &&
   ["diamond", "regional-scope"].includes(climateById.get("D-018")?.shape);
+// V138: the finance preset card reads "적응기금 지역 협력범위 + 검증된
+// 탄소사업지", and the preset draws both - D-018 as the analysis with its
+// diamond, C-025 beside it as squares - with nothing of the previous climate
+// preset left behind.
+const financeItemsById = new Map((financeAdaptation?.items || []).map((item) => [item.elementId, item]));
 const adaptationOnly =
   financeAdaptation?.primaryElement === "D-018" &&
-  !financeAdaptation?.contextElements?.includes("C-025") &&
-  financeAdaptation?.items?.length === 1 &&
-  financeAdaptation.items[0]?.elementId === "D-018" &&
-  financeAdaptation.items[0]?.role === "primary" &&
-  financeAdaptation.items[0]?.shape === "diamond" &&
+  financeAdaptation?.contextElements?.includes("C-025") &&
+  financeAdaptation?.items?.length === 2 &&
+  financeItemsById.get("D-018")?.role === "primary" &&
+  financeItemsById.get("D-018")?.shape === "diamond" &&
+  financeItemsById.get("C-025")?.role === "context" &&
+  financeItemsById.get("C-025")?.shape === "square" &&
   !/GVI|지역 취약성|Quảng Bình/u.test(financeAdaptation?.hoverPopupText || "") &&
   financeAdaptation?.renderedMapSymbols?.some(
     (item) => item.elementId === "D-018" && item.role === "primary" && item.shape === "diamond"
   ) &&
-  financeAdaptation?.renderedPointSymbols?.length === 1 &&
-  financeAdaptation.renderedPointSymbols[0]?.elementId === "D-018" &&
-  financeAdaptation.renderedPointSymbols[0]?.role === "primary" &&
-  financeAdaptation.renderedPointSymbols[0]?.shape === "diamond";
+  financeAdaptation?.renderedMapSymbols?.some(
+    (item) => item.elementId === "C-025" && item.role === "context" && item.shape === "square"
+  ) &&
+  !financeAdaptation?.renderedMapSymbols?.some((item) => item.elementId === "B-021");
 const carbonOnly =
   financeCarbon?.primaryElement === "C-025" &&
   !financeCarbon?.contextElements?.includes("D-018") &&
@@ -362,7 +381,12 @@ const financeSummaryPass = /사업 수/u.test(financeAdaptation?.summaryText || 
   /위치|참여범위/u.test(financeAdaptation?.summaryText || "");
 
 audit.check("MAP_INDEX_JSON", mapResult.error === null, mapResult.error, null);
-audit.check("MAP_LAYER_COUNT", layers.length === 12, layers.length, 12);
+audit.check(
+  "MAP_LAYER_COUNT",
+  layers.length === mapResult.value?.activeMapLayerCount && layers.length >= 12,
+  { active: layers.length, declared: mapResult.value?.activeMapLayerCount ?? null },
+  "declared active count, at least the twelve ETL layers"
+);
 audit.check("MAP_LAYER_PUBLIC_CONTRACT", layerContractFailures.length === 0, layerContractFailures, []);
 audit.check("D023_DUPLICATE_MAP_FEATURE", !layers.some((layer) => layer.elementId === "D-023"), layers.filter((layer) => layer.elementId === "D-023").length, 0);
 audit.check(
@@ -377,8 +401,10 @@ audit.check(
     visibleSymbolWithoutLegend === 0 &&
     liveSymbolsWithoutLegend.length === 0 &&
     legendWithoutLiveSymbol.length === 0 &&
-    climateSnapshot?.items?.length === 2 &&
-    new Set(climateRenderedIdentities.map((item) => item.elementId)).size === 2,
+    // V138: the preset's two companions both stay drawn, so the legend and the
+    // live symbols name three datasets, one per selected layer.
+    climateSnapshot?.items?.length === 1 + (climateSnapshot?.contextElements || "").split(",").filter(Boolean).length &&
+    new Set(climateRenderedIdentities.map((item) => item.elementId)).size === climateSnapshot?.items?.length,
   {
     runtimeFailure,
     visibleSymbolWithoutLegend,
@@ -393,12 +419,12 @@ audit.check(
 );
 audit.check(
   "COMPACT_LEGEND_PUBLIC_COPY",
-  /선택 데이터/u.test(climateSnapshot?.legendText || "") && /함께 보기/u.test(climateSnapshot?.legendText || "") &&
+  /분석 기준/u.test(climateSnapshot?.legendText || "") && /함께 보기/u.test(climateSnapshot?.legendText || "") &&
     containsForbiddenPublicMapTokenV133(climateSnapshot?.legendText || "").length === 0,
   { text: climateSnapshot?.legendText, tokens: containsForbiddenPublicMapTokenV133(climateSnapshot?.legendText || "") },
   "Korean primary/compare legend without developer tokens"
 );
-audit.check("FINANCE_ADAPTATION_ONLY_DEFAULT", adaptationOnly, financeAdaptation, "D-018 only");
+audit.check("FINANCE_PRESET_DRAWS_BOTH", adaptationOnly, financeAdaptation, "D-018 primary + C-025 companion, nothing from the previous preset");
 audit.check("FINANCE_CARBON_ONLY_SELECTION", carbonOnly, financeCarbon, "C-025 only");
 audit.check("FINANCE_COMPARE_DISTINCT_SYMBOLS", comparePass, financeCompare, "two comparison panes with distinct colours and legends");
 audit.check("FINANCE_PORTFOLIO_SUMMARY", financeSummaryPass, financeAdaptation?.summaryText || "", "project count, amount, verified location/scope count");

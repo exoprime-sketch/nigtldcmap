@@ -6,7 +6,7 @@
 
 - 공개 데이터 프레임워크 152개 항목
 - 데이터 찾기와 요소별 분석 상세화면
-- 검증된 공간자료 13개 레이어와 베트남 63개 성·시 경계
+- 사용자 선정 지도 대상 43개 계약(`docs/MAP_TARGET_CONTRACT_V138.md`)과 베트남 63개 성·시 경계. 연결된 레이어 수는 `map-index.json`의 `activeMapLayerCount`에서 파생
 - 공개 CSV/JSON 선택 다운로드
 - 공통 의미 모델에 따른 측정항목·분류·단위·기간 표시
 - 접근 가능한 interactive 시계열 chart와 데이터별 유의사항
@@ -94,6 +94,17 @@ npm run audit:release:v128
 
 Release audit는 V127 회귀, 152개 데이터 수용, 홈 수치, 공개 경로, 다운로드 reconciliation, production browser 화면과 build를 순차 검증합니다. 감사 조건을 삭제하거나 고정값으로 바꾸어 통과시키지 않습니다.
 
+V138 지도·상세 브라우저 검증(전체 gate `npm run finalize:v136`과 별도로 실행):
+
+```powershell
+npm run qa:map:v138            # 지도 42개 레이어 전수 표시·다중선택·크기조절·반응형
+npm run review:screens:v138    # 152개 상세 화면 초기 상태 검토표
+npm run compare:downloads:v138 # 다운로드 파일 재계산값과 화면 캡처 문구 대조
+npm run report:map-targets:v138
+npm run build:home-preview:v139  # 홈 미리보기 자산(8개 카드 계열 + 송전망 정적 SVG) 재생성 + asset-integrity
+npm run qa:home:v139             # 홈 5개 폭 캡처·측정, 검색 예시·카드·지도 링크 동작
+```
+
 ## 배포
 
 공개 asset은 `publicAssetUrlV128` 단일 resolver를 통과합니다. root domain, custom root domain과 GitHub Pages project path `/nigtldcmap/`에서 같은 source code로 manifest, catalog, pack, semantic, download, 지도 JSON·GeoJSON을 요청합니다. `PUBLIC_URL`은 build 환경에서만 지정하며 resolver가 중복 prefix를 방지합니다.
@@ -110,10 +121,12 @@ npm run smoke:production:v128
 ## 운영 문서
 
 - [배포](docs/DEPLOYMENT_V128.md)
+- [Vercel Deployment Storage](docs/VERCEL_DEPLOYMENT_STORAGE_V140.md)
 - [운영 점검](docs/OPERATIONS_V128.md)
 - [데이터 갱신](docs/DATA_REFRESH_V128.md)
 - [롤백](docs/ROLLBACK_V128.md)
 - [공개 정보구조](docs/VIETNAM_PILOT_PUBLIC_INFORMATION_ARCHITECTURE_V128.md)
+- [지도 대상 43개 계약과 다중선택 지도](docs/MAP_TARGET_CONTRACT_V138.md)
 - [데이터 상태 정책](docs/VIETNAM_DATA_STATUS_POLICY_V128.md)
 - [릴리스 수용 기준](docs/VIETNAM_RELEASE_ACCEPTANCE_V128.md)
 

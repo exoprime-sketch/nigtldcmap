@@ -12,13 +12,17 @@ import type {
   PublicAnalyticalRendererV126,
 } from "../../../data/visualization/publicVisualizationRegistryV126";
 import {
+  hasReviewedElementCopyV126,
   publicAggregationBasisV136_2,
   publicElementCopyV126,
 } from "../../../data/visualization/publicCopyRegistryV126";
 import { getPublicAnalysisHeadingsV134 } from "../../../data/visualization/publicAnalysisHeadingsV134";
-import PublicRegionScenarioSummaryV137, {
-  regionScenarioShapeV137,
-} from "./PublicRegionScenarioSummaryV137";
+import PublicRegionScenarioSummaryV138, {
+  regionScenarioShapeV138,
+} from "./PublicRegionScenarioSummaryV138";
+import SeaLevelStationAnalysisV138, {
+  isSeaLevelStationDeliveryV138,
+} from "./SeaLevelStationAnalysisV138";
 import { getPublicIndicatorInterpretationV129 } from "../../../data/interpretation/publicIndicatorInterpretationV129";
 import type {
   VietnamEntityV124,
@@ -38,6 +42,7 @@ import PublicEmissionsAnalysisV132 from "./PublicEmissionsAnalysisV132";
 import PublicCompositionTrendAnalysisV132 from "./PublicCompositionTrendAnalysisV132";
 import ResearchPatentAnalysisV132 from "./ResearchPatentAnalysisV132";
 import PublicDataLimitationsV126 from "./PublicDataLimitationsV126";
+import PowerPlantRegistrySummaryV138 from "./PowerPlantRegistrySummaryV138";
 import PublicIndicatorMeaningV129 from "./PublicIndicatorMeaningV129";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import PublicRawDataTablesV126 from "./PublicRawDataTablesV126";
@@ -139,9 +144,18 @@ export default function PublicDataAnalysisRouterV126({
   // has no observations of its own to draw, read the rows for what they are.
   const regionScenarioSummary = useMemo(() => {
     if (semanticRows.length > 0) return null;
-    if (!regionScenarioShapeV137(entities)) return null;
+    if (elementId === "B-008" && isSeaLevelStationDeliveryV138(entities)) {
+      return (
+        <SeaLevelStationAnalysisV138
+          entities={entities}
+          selectorState={selectorState}
+          onSelectorStateChange={onSelectorStateChange}
+        />
+      );
+    }
+    if (!regionScenarioShapeV138(entities)) return null;
     return (
-      <PublicRegionScenarioSummaryV137
+      <PublicRegionScenarioSummaryV138
         elementId={elementId}
         entities={entities}
         elementTitle={copy.title}
@@ -210,9 +224,14 @@ export default function PublicDataAnalysisRouterV126({
         <h2 data-testid="public-data-title">
           <PublicTermTextV134 text={headings?.publicAnalysisTitle || copy.title} />
         </h2>
-        <p>
-          <PublicTermTextV134 text={headings?.publicQuestion || copy.description} />
-        </p>
+        {/* A reviewed question is worth a sentence. The generated fallback
+            ("공개된 측정값과 분류를 선택해 …") said the same thing on every
+            unreviewed screen, under a page subtitle that had already said it. */}
+        {hasReviewedElementCopyV126(elementId) && (
+          <p>
+            <PublicTermTextV134 text={headings?.publicQuestion || copy.description} />
+          </p>
+        )}
       </header>
 
       {elementId !== "B-005" && (
@@ -331,6 +350,22 @@ export default function PublicDataAnalysisRouterV126({
               semantics={semantics}
               observations={observations}
               entities={nationalSeriesEntities}
+              countryNameKo={countryNameKo}
+              detailTemplate={detailTemplate}
+              elementTitle={copy.title}
+              selectorState={selectorState}
+              onSelectorStateChange={onSelectorStateChange}
+              showRawTable={false}
+            />
+          </>
+        ) : elementId === "A-023" ? (
+          <>
+            <PowerPlantRegistrySummaryV138 entities={entities} />
+            <SemanticArchetypePreviewV125
+              contract={adapterContract}
+              semantics={semantics}
+              observations={observations}
+              entities={entities}
               countryNameKo={countryNameKo}
               detailTemplate={detailTemplate}
               elementTitle={copy.title}

@@ -50,6 +50,17 @@ type MapSelectorBindingV125 = {
 export const A024_LINE_MEASURE_V125 = "measure-d30e19e20b62";
 
 /**
+ * A-024's one measure with nothing on the map.
+ *
+ * The element carries three: the line list, the count of delivered segments and
+ * 미공급 지역, a share of unserved area. The first two describe the transmission
+ * lines the map draws; only the third has no spatial counterpart. The detail
+ * page used to warn whenever the measure was not the line list, which made the
+ * default - the segment count - announce that a mapped element was not mapped.
+ */
+export const A024_UNSERVED_AREA_MEASURE_V138 = "measure-3c0cd69b4d6b";
+
+/**
  * This is the checked, map-facing projection of the generated V125 semantic
  * contract. Keys are the immutable semantic measure keys used by Data Finder;
  * values are the same Korean labels published in that contract. The map never

@@ -139,6 +139,11 @@ const CPIA_LABELS_V126: Record<string, string> = {
 const PUBLIC_FORBIDDEN_COPY_V126 =
   /\.xlsx|SDMX\s*flat|INDICATOR=|COMP_BREAKDOWN|REF_AREA=|sourceFile|sourceSheet|sourceRow|recordId|indicatorId|apiParams|packUrl|shardId|sha256|publicationDecisionId|MultiLineString|MapLibre|technical provenance/iu;
 
+/** True when the element's analysis copy was reviewed rather than generated from its renderer. */
+export function hasReviewedElementCopyV126(elementId: string): boolean {
+  return Boolean(ELEMENT_COPY_V126[elementId] || getPublicAnalysisHeadingsV134(elementId));
+}
+
 export function publicElementCopyV126(
   elementId: string,
   renderer: PublicAnalyticalRendererV126

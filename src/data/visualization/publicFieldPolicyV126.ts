@@ -457,6 +457,7 @@ const PUBLIC_ENTITY_ATTRIBUTE_KEYS_BY_ELEMENT_V126: Record<string, string[]> = {
     "field_8440b85d",
     "field_a2123512",
     "field_aea118f0",
+    "진출_상태",
   ],
   "E-019": ["field_6b3e1e90", "field_8d39bebf"],
   "E-020": ["field_01856451"],
@@ -528,6 +529,7 @@ const PUBLIC_ENTITY_ATTRIBUTE_OUTPUT_KEYS_V126: Record<string, string> = {
   field_8440b85d: "entryTiming",
   field_a2123512: "businessSector",
   field_aea118f0: "entryMode",
+  진출_상태: "entryStatus",
   field_6b3e1e90: "primaryResponsibilities",
   field_8d39bebf: "additionalContact",
   field_01856451: "programName",
@@ -614,6 +616,7 @@ const PUBLIC_ENTITY_ATTRIBUTE_LABELS_V126: Record<string, string> = {
   entryTiming: "진출 시점",
   businessSector: "사업 분야",
   entryMode: "진출 형태",
+  entryStatus: "진출 상태",
   primaryResponsibilities: "주요 업무",
   additionalContact: "추가 연락 정보",
   programName: "지원 프로그램명",
@@ -764,6 +767,9 @@ const INTERNAL_REVIEW_NOTES_V137: readonly RegExp[] = [
   /\s*수집현황의?\s*요소\s*[A-E]-\d{3}\s*행에[^.]*\.\s*/gu,
   // the internal sheet name
   /\s*1\.2_entity\s*/gu,
+  // which element's boundary file a location was drawn from ("8대 하천유역 —
+  // B-025 폴리곤 재사용"): a note to the compiler, the place name stays
+  /\s*[-—–]\s*[A-E]-\d{3}\s*폴리곤\s*재사용\s*/gu,
 ];
 
 const UNMATCHED_CLOSING_BRACKET_V137 = /^([^[\]]*)\]\s*/u;
@@ -784,6 +790,7 @@ function normalizeTextV126(value: unknown): string | null {
     .replace(INTERNAL_REVIEW_NOTES_V137[4], "수집현황")
     .replace(INTERNAL_REVIEW_NOTES_V137[5], "")
     .replace(INTERNAL_REVIEW_NOTES_V137[6], "")
+    .replace(INTERNAL_REVIEW_NOTES_V137[7], "")
     // "[M01·원자료 결측]" - the code addresses the compiler, the phrase after it
     // is the reason a reader needs.
     .replace(/\[\s*M\d{2}\s*·\s*/gu, "[")

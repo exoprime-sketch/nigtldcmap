@@ -1,8 +1,10 @@
 import { createHash } from "node:crypto";
-import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, statSync } from "node:fs";
+
 import { resolve } from "node:path";
 
 import { PROJECT_ROOT, pngDimensions } from "../v125/audit-utils.mjs";
+import { writeReportFileV138 } from "../v125/write-report.mjs";
 
 export const V133_REPORT_ROOT = resolve(PROJECT_ROOT, "reports/v133");
 export const V133_SCREENSHOT_ROOT = resolve(V133_REPORT_ROOT, "screenshots");
@@ -37,7 +39,7 @@ export function readSourceV133(paths) {
 
 export function writeJsonV133(path, value) {
   mkdirSync(resolve(path, ".."), { recursive: true });
-  writeFileSync(path, `${JSON.stringify(value, null, 2)}\n`, "utf8");
+  writeReportFileV138(path, `${JSON.stringify(value, null, 2)}\n`);
 }
 
 export function finishAuditV133(audit, fileName, extra = {}) {

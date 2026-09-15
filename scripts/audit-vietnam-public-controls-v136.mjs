@@ -12,7 +12,9 @@ import {
   startStaticBuildServer,
   waitForValue,
 } from "./v125/browser-runtime.mjs";
-import { finderUrlV135, mapUrlV135 } from "./v135/audit-helpers.mjs";
+import { finderUrlV135, mapUrlV135,
+  mapLayerCountV138,
+} from "./v135/audit-helpers.mjs";
 import { finishAuditV136 } from "./v136/audit-helpers.mjs";
 
 const audit = new AuditV125("public-controls:v136");
@@ -86,7 +88,7 @@ try {
   await navigate(browser.cdp, mapUrlV135(server.url));
   await waitForValue(
     browser.cdp,
-    `document.querySelectorAll('[data-testid="map-all-data-layer-v135"]').length === 12`,
+    `document.querySelectorAll('.cdp-map-catalog-v138__item[data-map-available="true"]').length === ${mapLayerCountV138()}`,
     { timeoutMs: 35_000 }
   );
   mapPanel = await evaluateValue(browser.cdp, controlsExpression('[data-testid="map-layer-panel"]'));

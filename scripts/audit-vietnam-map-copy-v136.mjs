@@ -12,7 +12,10 @@ import {
   startStaticBuildServer,
   waitForValue,
 } from "./v125/browser-runtime.mjs";
-import { mapUrlV135 } from "./v135/audit-helpers.mjs";
+import { mapLayerCountV138, mapTargetCountV138, mapUrlV135 } from "./v135/audit-helpers.mjs";
+
+const EXPECTED_LAYERS = mapLayerCountV138();
+const EXPECTED_TARGETS = mapTargetCountV138();
 import { finishAuditV136, normalizeTextV136 } from "./v136/audit-helpers.mjs";
 
 const audit = new AuditV125("map-copy:v136");
@@ -23,7 +26,9 @@ const mapSource = readFileSync(
 
 // V136 map vocabulary: the panel names what the reader chose and what the data
 // shows, never the system's role for a layer.
-const REQUIRED_PANEL_COPY_V136 = ["추천 분석", "지도 데이터", "지도에서 확인할 데이터를 선택하세요"];
+// V138: the list lede states the target and selected counts instead of a
+// prompt, and the guide names how many targets are connected.
+const REQUIRED_PANEL_COPY_V136 = ["추천 분석", "지도 데이터", "개 자료 · 선택"];
 const RETIRED_PANEL_COPY_V136 = ["분석 프리셋", "전체 지도 데이터", "주 분석 데이터", "기준연도·기간", "공간표현"];
 
 let server = null;
@@ -42,7 +47,7 @@ try {
   await navigate(browser.cdp, mapUrlV135(server.url));
   await waitForValue(
     browser.cdp,
-    `document.querySelectorAll('[data-testid="map-all-data-layer-v135"]').length === 12`,
+    `document.querySelectorAll('.cdp-map-catalog-v138__item[data-map-available="true"]').length === ${EXPECTED_LAYERS}`,
     { timeoutMs: 35_000 }
   );
   panel = await evaluateValue(
@@ -97,9 +102,9 @@ audit.check("MAP_PANEL_RETIRED_COPY", retiredCopy.length === 0, retiredCopy, [])
 audit.check("MAP_SOURCE_RETIRED_COPY", retiredInSource.length === 0, retiredInSource, []);
 audit.check("MAP_PANEL_SECTION_ORDER", orderCorrect, order, "추천 분석 before 지도 데이터");
 audit.check("MAP_PRESET_COUNT", panel?.presetCount === 5, panel?.presetCount ?? null, 5);
-audit.check("MAP_DATA_ITEM_COUNT", panel?.itemCount === 12, panel?.itemCount ?? null, 12);
+audit.check("MAP_DATA_ITEM_COUNT", panel?.itemCount === EXPECTED_TARGETS, panel?.itemCount ?? null, EXPECTED_TARGETS);
 audit.check("MAP_GUIDE_DEFAULT_OPEN", guide?.defaultOpen === false, guide?.defaultOpen ?? null, false);
-audit.check("MAP_GUIDE_ROW_COUNT", guide?.rowCount === 12, guide?.rowCount ?? null, 12);
+audit.check("MAP_GUIDE_ROW_COUNT", guide?.rowCount === EXPECTED_LAYERS, guide?.rowCount ?? null, EXPECTED_LAYERS);
 audit.check("MAP_GUIDE_READER_COLUMNS", (guide?.headings || []).includes("지도 표시") && !(guide?.headings || []).includes("공간 표현"), guide?.headings || [], "지도 표시 replaces 공간 표현");
 audit.check("CONSOLE_ERROR", (browser?.runtimeErrors || []).length === 0, browser?.runtimeErrors || [], []);
 

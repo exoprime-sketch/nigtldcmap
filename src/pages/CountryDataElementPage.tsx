@@ -24,7 +24,7 @@ import type { DataFinderSelectorStateV125 } from "../types/dataFinderV125";
 import {
   formatValueV121,
 } from "../utils/vietnamActualV121";
-import { A024_LINE_MEASURE_V125 } from "../data/visualization/mapSelectorBindingsV125";
+import { A024_UNSERVED_AREA_MEASURE_V138 } from "../data/visualization/mapSelectorBindingsV125";
 import CountryElementVisualizationV123 from "../components/data/CountryDataFullPreviewV52";
 import { PublicTermTextV134 } from "../components/help/PublicTermV134";
 import "../styles/country-data-platform-v122.css";
@@ -709,9 +709,22 @@ export default function CountryDataElementPage({
 
   const observations = hasPopulatedRows ? bundle?.observations || [] : [];
   const entities = hasPopulatedRows ? bundle?.entities || [] : [];
+  // The warning used to fire for every measure except the line list, so the
+  // default - the count of delivered segments - opened a mapped screen by
+  // announcing it was not mapped, and named an electricity-access indicator the
+  // reader had not chosen. Only 미공급 지역 has no spatial counterpart.
   const mapSelectionUnavailableReason =
-    elementId === "A-024" && selectorState.measure !== A024_LINE_MEASURE_V125
-      ? "선택한 전력 접근성 지표에는 공개 공간자료가 없어 지도에 연결하지 않습니다. 데이터 지도에서 베트남 송전망을 별도로 분석할 수 있습니다."
+    elementId === "A-024" &&
+    selectorState.measure === A024_UNSERVED_AREA_MEASURE_V138
+      ? "선택한 미공급 지역 지표에는 공개 공간자료가 없어 지도에 연결하지 않습니다. 데이터 지도에서 베트남 송전망을 별도로 분석할 수 있습니다."
+      : "";
+
+  // 722 rows, 606 lines on the map. The difference is a fact about the sources:
+  // the World Bank 2016 network is delivered with its own line geometry, and the
+  // existing/planned segments stated in the plan table carry no coordinates.
+  const mapCoverageNote =
+    elementId === "A-024" && !mapSelectionUnavailableReason
+      ? "수록 선로 구간 722건 중 원천이 좌표를 제공한 606건을 지도에 표시합니다. 나머지 116건은 계획표에 기재된 구간으로 좌표가 없어 지도에 나타나지 않습니다."
       : "";
 
   if (!elementId) {
@@ -875,6 +888,7 @@ export default function CountryDataElementPage({
                   {mapSelectionUnavailableReason && (
                     <span role="note">{mapSelectionUnavailableReason}</span>
                   )}
+                  {mapCoverageNote && <span role="note">{mapCoverageNote}</span>}
                 </div>
               )}
               {downloadStatus?.key === "downloadable" && (

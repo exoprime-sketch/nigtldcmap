@@ -1,0 +1,229 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "VNM",
+  "elementId": "C-024",
+  "generatedAt": "2026-09-01T00:00:00Z",
+  "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+  "joinKey": "adm1Code",
+  "boundarySystem": "pre-2025-63",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2022",
+    "defaultVariable": "fcpf-erpa-participation",
+    "periods": [
+      "2022"
+    ],
+    "variables": [
+      {
+        "key": "fcpf-erpa-participation",
+        "measureId": "c024-erpa",
+        "measureKey": "fcpf-erpa-participation",
+        "scenario": null,
+        "label": "FCPF ERPA(북중부 6개 성) 참여",
+        "unit": "참여 프로그램 수",
+        "periods": [
+          "2022"
+        ],
+        "maxFeatureCount": 6
+      }
+    ]
+  },
+  "values": [
+    {
+      "adm1Code": "VN-23",
+      "adm1Name": "Hà Tĩnh",
+      "variable": "fcpf-erpa-participation",
+      "variableLabel": "FCPF ERPA(북중부 6개 성) 참여",
+      "period": "2022",
+      "value": 1,
+      "unit": "참여 프로그램 수",
+      "sourceIndicatorId": "C-024_rbp_result_vanban_chinhphu",
+      "sourceRecordId": "v124-c-024-entity-00007",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "variable": "fcpf-erpa-participation",
+      "variableLabel": "FCPF ERPA(북중부 6개 성) 참여",
+      "period": "2022",
+      "value": 1,
+      "unit": "참여 프로그램 수",
+      "sourceIndicatorId": "C-024_rbp_result_vanban_chinhphu",
+      "sourceRecordId": "v124-c-024-entity-00008",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "variable": "fcpf-erpa-participation",
+      "variableLabel": "FCPF ERPA(북중부 6개 성) 참여",
+      "period": "2022",
+      "value": 1,
+      "unit": "참여 프로그램 수",
+      "sourceIndicatorId": "C-024_rbp_result_vanban_chinhphu",
+      "sourceRecordId": "v124-c-024-entity-00009",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-25",
+      "adm1Name": "Quảng Trị",
+      "variable": "fcpf-erpa-participation",
+      "variableLabel": "FCPF ERPA(북중부 6개 성) 참여",
+      "period": "2022",
+      "value": 1,
+      "unit": "참여 프로그램 수",
+      "sourceIndicatorId": "C-024_rbp_result_vanban_chinhphu",
+      "sourceRecordId": "v124-c-024-entity-00010",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "variable": "fcpf-erpa-participation",
+      "variableLabel": "FCPF ERPA(북중부 6개 성) 참여",
+      "period": "2022",
+      "value": 1,
+      "unit": "참여 프로그램 수",
+      "sourceIndicatorId": "C-024_rbp_result_vanban_chinhphu",
+      "sourceRecordId": "v124-c-024-entity-00011",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-26",
+      "adm1Name": "Thừa Thiên Huế",
+      "variable": "fcpf-erpa-participation",
+      "variableLabel": "FCPF ERPA(북중부 6개 성) 참여",
+      "period": "2022",
+      "value": 1,
+      "unit": "참여 프로그램 수",
+      "sourceIndicatorId": "C-024_rbp_result_vanban_chinhphu",
+      "sourceRecordId": "v124-c-024-entity-00012",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    }
+  ],
+  "memberRecords": {
+    "VN-23": [
+      {
+        "recordId": "v124-c-024-entity-00007",
+        "label": "FCPF ERPA 대상 성 — Hà Tĩnh",
+        "date": "2022-12-28",
+        "status": "",
+        "value": "",
+        "url": "",
+        "indicatorId": "C-024_rbp_result_vanban_chinhphu"
+      }
+    ],
+    "VN-22": [
+      {
+        "recordId": "v124-c-024-entity-00008",
+        "label": "FCPF ERPA 대상 성 — Nghệ An",
+        "date": "2022-12-28",
+        "status": "",
+        "value": "",
+        "url": "",
+        "indicatorId": "C-024_rbp_result_vanban_chinhphu"
+      }
+    ],
+    "VN-24": [
+      {
+        "recordId": "v124-c-024-entity-00009",
+        "label": "FCPF ERPA 대상 성 — Quảng Bình",
+        "date": "2022-12-28",
+        "status": "",
+        "value": "",
+        "url": "",
+        "indicatorId": "C-024_rbp_result_vanban_chinhphu"
+      }
+    ],
+    "VN-25": [
+      {
+        "recordId": "v124-c-024-entity-00010",
+        "label": "FCPF ERPA 대상 성 — Quảng Trị",
+        "date": "2022-12-28",
+        "status": "",
+        "value": "",
+        "url": "",
+        "indicatorId": "C-024_rbp_result_vanban_chinhphu"
+      }
+    ],
+    "VN-21": [
+      {
+        "recordId": "v124-c-024-entity-00011",
+        "label": "FCPF ERPA 대상 성 — Thanh Hóa",
+        "date": "2022-12-28",
+        "status": "",
+        "value": "",
+        "url": "",
+        "indicatorId": "C-024_rbp_result_vanban_chinhphu"
+      }
+    ],
+    "VN-26": [
+      {
+        "recordId": "v124-c-024-entity-00012",
+        "label": "FCPF ERPA 대상 성 — Thừa Thiên Huế",
+        "date": "2022-12-28",
+        "status": "",
+        "value": "",
+        "url": "",
+        "indicatorId": "C-024_rbp_result_vanban_chinhphu"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "fcpf-erpa-participation",
+      "period": "2022",
+      "expectedCount": 63,
+      "matchedCount": 6,
+      "missingCount": 57,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "attribution": [
+      "Source: Green Climate Fund (GCF)",
+      "Source: UNFCCC REDD+ Web Platform / 베트남 농업환경부(MAE)",
+      "Source: World Bank / Forest Carbon Partnership Facility (FCPF)",
+      "Source: World Bank BioCarbon Fund ISFL"
+    ],
+    "licenses": [
+      "UNFCCC 문서 이용약관",
+      "국제기구 공개자료 — 출처 표기 조건"
+    ],
+    "organizations": [
+      "Green Climate Fund (GCF)",
+      "UNFCCC REDD+ Web Platform / 베트남 농업환경부(MAE)",
+      "World Bank",
+      "World Bank — Forest Carbon Partnership Facility (FCPF)"
+    ],
+    "urls": [
+      "https://unfccc.int/",
+      "https://www.biocarbonfund-isfl.org/programs",
+      "https://www.greenclimate.fund/countries/viet-nam",
+      "https://www.worldbank.org/en/news/press-release/2024/03/21/viet-nam-receives-51-5m-world-bank-payment-for-reducing-emissions-through-forest-preservation"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 63,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 6,
+    "maxSeriesFeatureCount": 6,
+    "missingAdm1Count": 57,
+    "providedZeroCount": 0,
+    "publishedValueCount": 6,
+    "sourceValueCount": 6,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0
+  }
+}

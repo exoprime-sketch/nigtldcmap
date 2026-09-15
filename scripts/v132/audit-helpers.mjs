@@ -1,7 +1,8 @@
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 import { PROJECT_ROOT } from "../v125/audit-utils.mjs";
+import { writeReportFileV138 } from "../v125/write-report.mjs";
 
 export const V132_REPORT_ROOT = resolve(PROJECT_ROOT, "reports/v132");
 export const V132_SCREENSHOT_ROOT = resolve(V132_REPORT_ROOT, "screenshots");
@@ -42,12 +43,12 @@ export function writeCsvV132(path, columns, rows) {
     ...rows.map((row) => columns.map((column) => csvCellV132(row[column])).join(",")),
   ];
   mkdirSync(resolve(path, ".."), { recursive: true });
-  writeFileSync(path, `${lines.join("\n")}\n`, "utf8");
+  writeReportFileV138(path, `${lines.join("\n")}\n`);
 }
 
 export function writeJsonV132(path, value) {
   mkdirSync(resolve(path, ".."), { recursive: true });
-  writeFileSync(path, `${JSON.stringify(value, null, 2)}\n`, "utf8");
+  writeReportFileV138(path, `${JSON.stringify(value, null, 2)}\n`);
 }
 
 export function writeAuditV132(fileName, audit, summary, extra = {}) {

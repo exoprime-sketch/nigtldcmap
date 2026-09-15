@@ -57,3 +57,24 @@ export const realPageErrors = (errors: string[]) =>
 /** Internal shapes that must never reach a public screen. */
 export const INTERNAL_TOKEN =
   /\battr_\d+\b|\bfield_[0-9a-f]{8}\b|\bmeasure-[0-9a-f]{12}\b|속성\d+_|VNM\.\d+_\d+/u;
+
+/**
+ * V138 map catalogue: bring a dataset's checkbox into reach. The list is a
+ * drawer at phone widths and its seven categories fold, so the row may be
+ * hidden twice over before a reader can tick it.
+ */
+export async function revealMapDataset(page: Page, elementId: string) {
+  const panel = page.getByTestId("map-layer-panel");
+  const collapsed = await panel.evaluate((el) => el.classList.contains("is-collapsed"));
+  if (collapsed) await page.locator('[data-testid="map-layer-panel"] .cdp-map-panel-toggle').click();
+  const input = page.locator(
+    `[data-testid="map-all-data-layer-v135"][data-element-id="${elementId}"]`
+  );
+  await expect(input).toHaveCount(1);
+  const toggle = input
+    .locator("xpath=ancestor::*[@data-map-group-v135]")
+    .locator('[data-testid="map-catalog-group-toggle-v138"]');
+  if ((await toggle.getAttribute("aria-expanded")) !== "true") await toggle.click();
+  await input.scrollIntoViewIfNeeded();
+  return input;
+}

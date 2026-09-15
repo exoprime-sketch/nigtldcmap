@@ -29,7 +29,44 @@ type PortfolioConfigV132 = {
    */
   amountLabel?: string;
   yearLabel?: string;
+  /**
+   * What one row is.
+   *
+   * The summary called every row a 사업. E-018 delivers 24 Korean companies,
+   * E-020 seven support programmes, and C-007 and C-008 statements about a
+   * mechanism - "대상 분야(1)", "참여당사국 등재 NMA 건수" - none of which is a
+   * project. Counting them under 총 사업 수 asserted a project count that the
+   * source never stated. Unset keeps 사업, which is what the D-0xx portfolios
+   * actually hold.
+   */
+  recordLabel?: string;
+  /**
+   * The heading over the summary and the list.
+   *
+   * "사업 규모와 구성" over seven support programmes described neither their
+   * scale nor their composition, because neither is what E-020 states.
+   */
+  sectionTitle?: string;
+  /** V138: the source's own status split, counted separately from the record count. */
+  statusGroups?: {
+    label: string;
+    rules: Array<{ label: string; test: (attrs: Record<string, unknown>) => boolean }>;
+  };
+  /** V138: the attribute that identifies one real-world thing behind several rows. */
+  identityKey?: string;
+  identityNormalize?: (value: string) => string;
+  identityLabel?: string;
 };
+
+/** What one row of this element is, for headings outside this module. */
+export function publicPortfolioRecordLabelV138(elementId: string): string {
+  return PORTFOLIO_CONFIG_V132[elementId]?.recordLabel || "사업";
+}
+
+/** The heading this element's portfolio block should carry. */
+export function publicPortfolioSectionTitleV138(elementId: string): string {
+  return PORTFOLIO_CONFIG_V132[elementId]?.sectionTitle || "사업 규모와 구성";
+}
 
 const COMMON_AMOUNT_KEYS_V132 = [
   { key: "primaryFinanceAmount", currency: "USD" },
@@ -101,12 +138,61 @@ const PORTFOLIO_CONFIG_V132: Record<string, PortfolioConfigV132> = {
     yearKeys: ["statementDate"],
     yearLabel: "자료 시점",
     categoryKeys: ["scopeValue"],
+    recordLabel: "확인 항목",
+    sectionTitle: "확인 항목과 대상 범위",
   },
   "C-008": {
     amountKeys: [],
     yearKeys: ["statementDate"],
     yearLabel: "자료 시점",
     categoryKeys: ["actorType", "registry", "sectorName"],
+    recordLabel: "확인 항목",
+    sectionTitle: "확인 항목과 참여 주체",
+  },
+  // 24 Korean companies, not 24 projects.
+  //
+  // No year: the only column carrying one states two at once - "1999 설립 /
+  // 2020 진출" - so reading a year off it published a company's founding date
+  // as the year it entered the market. No reviewed column states the entry year
+  // on its own, so none is claimed.
+  //
+  // No 진출_상태 either: its values are 존치 and the like, the retention verdict
+  // from the source's own review, not whether the company operates there. The
+  // entry status a reader wants ("미진출(확인)", "현지법인") sits in the mode
+  // column, which is already grouped.
+  "E-018": {
+    amountKeys: [],
+    yearKeys: [],
+    categoryKeys: ["businessSector", "entryMode"],
+    recordLabel: "수록 기업",
+    sectionTitle: "진출 기업의 분야와 진출 형태",
+    // The delivery's own verdicts: 진출_상태 says 존치 or 철수, and the mode
+    // column says 미진출(확인) where a company was checked and found absent.
+    // Counting all 24 as "진출" asserted an entry the source denies for some.
+    statusGroups: {
+      label: "진출 상태",
+      rules: [
+        { label: "미진출(확인)", test: (attrs) => /미진출/u.test(String(attrs.entryMode || "")) },
+        { label: "철수", test: (attrs) => /철수/u.test(String(attrs.entryStatus || "")) },
+        { label: "진출·활동 확인", test: () => true },
+      ],
+    },
+    identityKey: "companyName",
+    identityNormalize: (value) => value.replace(/\s*\(상태 변경\)\s*$/u, "").trim(),
+    identityLabel: "고유 기업",
+  },
+  // Seven support programmes: an offer a reader can apply to, not a project.
+  "E-020": {
+    amountKeys: [],
+    yearKeys: [],
+    categoryKeys: ["supportType", "supportingOrganization", "eligibleRecipients"],
+    // Each row is one use of a programme - "마스터플랜 수립지원(ODA) — 동나이성
+    // 고형폐기물 조사" - so seven rows are seven cases under three programmes.
+    recordLabel: "활용 사례",
+    sectionTitle: "지원제도와 활용 사례",
+    identityKey: "programName",
+    identityNormalize: (value) => value.split(/\s+—\s+/u)[0].trim(),
+    identityLabel: "지원제도",
   },
   "C-025": {
     // The reductions this element states are tCO2e, not money. Publishing them
@@ -211,6 +297,10 @@ export default function PublicPortfolioSummaryV132({
     [detailTemplate, elementId, entities]
   );
   const config = PORTFOLIO_CONFIG_V132[elementId];
+  const identity = useMemo(
+    () => portfolioIdentityV138(elementId, entities, detailTemplate),
+    [detailTemplate, elementId, entities]
+  );
   return (
     <section
       className="pps132"
@@ -223,15 +313,29 @@ export default function PublicPortfolioSummaryV132({
           note survives, because how the totals were reached is something the
           reader cannot infer from the figures. */}
       <header className="pps132-heading">
-        <p>공개된 사업을 집계하며, 통화가 확인된 금액만 통화별로 합산합니다.</p>
+        <p>{`공개된 ${config?.recordLabel || "사업"}을 집계하며, 통화가 확인된 금액만 통화별로 합산합니다.`}</p>
         {analysis.aggregateCount > 0 && (
           <p data-portfolio-note="aggregate-excluded">
-            {`원천이 집계·설명 행으로 표시한 ${analysis.aggregateCount.toLocaleString("ko-KR")}건은 개별 사업이 아니므로 합계와 건수에서 제외했습니다. 해당 행은 목록과 상세, 다운로드에서 그대로 확인할 수 있습니다.`}
+            {`원천이 집계·설명 행으로 표시한 ${analysis.aggregateCount.toLocaleString("ko-KR")}건은 개별 ${config?.recordLabel || "사업"}이 아니므로 합계와 건수에서 제외했습니다. 해당 행은 목록과 상세, 다운로드에서 그대로 확인할 수 있습니다.`}
           </p>
         )}
       </header>
       <div className="pps132-kpis">
-        <article data-portfolio-kpi="record-count"><span>총 사업 수</span><strong>{analysis.individualCount.toLocaleString("ko-KR")}</strong><small>건</small></article>
+        {identity.identityCount !== null && (
+          <article data-portfolio-kpi="identity-count">
+            <span>{`${config?.identityLabel || "고유 항목"} 수`}</span>
+            <strong>{identity.identityCount.toLocaleString("ko-KR")}</strong>
+            <small>{config?.identityLabel === "지원제도" ? "개" : "곳"}</small>
+          </article>
+        )}
+        <article data-portfolio-kpi="record-count"><span>{`총 ${config?.recordLabel || "사업"} 수`}</span><strong>{analysis.individualCount.toLocaleString("ko-KR")}</strong><small>건</small></article>
+        {identity.statusRows.map((row) => (
+          <article data-portfolio-kpi="status-count" key={row.label}>
+            <span>{`${config?.statusGroups?.label || "상태"} · ${row.label}`}</span>
+            <strong>{row.value.toLocaleString("ko-KR")}</strong>
+            <small>건</small>
+          </article>
+        ))}
         {analysis.amounts.map((amount) => (
           <article data-portfolio-kpi="funding-total" key={amount.currency}>
             <span>{config?.amountLabel || "확인 금액 합계"}</span>
@@ -250,7 +354,7 @@ export default function PublicPortfolioSummaryV132({
       <div className="pps132-distributions">
         {analysis.years.length > 0 && (
           <DistributionV132
-            title="연도별 사업 수"
+            title={`연도별 ${config?.recordLabel || "사업"} 수`}
             rows={analysis.years}
             testId="portfolio-year-trend-v132"
           />
@@ -261,6 +365,46 @@ export default function PublicPortfolioSummaryV132({
       </div>
     </section>
   );
+}
+
+/** V138: distinct things and the source's status split, from reviewed attributes. */
+function portfolioIdentityV138(
+  elementId: string,
+  entities: VietnamEntityV124[],
+  detailTemplate?: string
+): {
+  identityCount: number | null;
+  statusRows: CountRowV132[];
+} {
+  const config = PORTFOLIO_CONFIG_V132[elementId];
+  if (!config) return { identityCount: null, statusRows: [] };
+  const templates = detailTemplate ? [detailTemplate] : [];
+  const identities = new Set<string>();
+  const statusCounts = new Map<string, number>();
+  entities.forEach((entity) => {
+    const attrs = reviewedEntityAttributesV132(entity, templates) as Record<string, unknown>;
+    if (publicTextV126(attrs.recordScope) === "집계") return;
+    if (config.identityKey) {
+      const raw =
+        publicTextV126(attrs[config.identityKey]) ||
+        publicTextV126(entity.name) ||
+        "";
+      const value = config.identityNormalize ? config.identityNormalize(raw) : raw;
+      if (value) identities.add(value);
+    }
+    if (config.statusGroups) {
+      const match = config.statusGroups.rules.find((rule) => rule.test(attrs));
+      if (match) statusCounts.set(match.label, (statusCounts.get(match.label) || 0) + 1);
+    }
+  });
+  return {
+    identityCount: config.identityKey ? identities.size : null,
+    statusRows: config.statusGroups
+      ? config.statusGroups.rules
+          .map((rule) => ({ label: rule.label, value: statusCounts.get(rule.label) || 0 }))
+          .filter((row) => row.value > 0)
+      : [],
+  };
 }
 
 function portfolioAnalysisV132(

@@ -141,12 +141,19 @@ export default function SemanticArchetypePreviewV125({
     [observations, semantics]
   );
   const additionalDimensions = useMemo(
-    () =>
-      contract.dimensions.filter(
+    () => {
+      const keys = new Set(contract.dimensions.map((dimension) => dimension.key));
+      return contract.dimensions.filter(
         (dimension) =>
           !["year", "period", "sex"].includes(dimension.key) &&
+          // 레코드 유형(entity / 발전소) is the delivery's own row classifier, not a
+          // reader's filter; and a raw-vocabulary twin ("coal", "hydro") of a
+          // translated dimension ("석탄", "수력") is the same filter twice.
+          dimension.key !== "entityType" &&
+          !(dimension.key.endsWith("Raw") && keys.has(dimension.key.replace(/Raw$/u, ""))) &&
           dimension.values.length > 1
-      ),
+      );
+    },
     [contract.dimensions]
   );
   const explicitDimensions = useMemo(
@@ -305,7 +312,9 @@ export default function SemanticArchetypePreviewV125({
         .filter((value): value is string => Boolean(value && value.trim()))
     )
   ).sort((left, right) => left.localeCompare(right, "ko"));
-  const populatedDefaultPeriod = periods.find((value) =>
+  // The newest period with a value opens the screen. B-033 delivers 2001-2024
+  // and opened on 2001, so a reader met the oldest year of the series first.
+  const populatedDefaultPeriod = [...periods].reverse().find((value) =>
     measureContextRows.some(
       (row) => row.period === value && isPopulatedSemanticRowV125(row)
     )
@@ -589,6 +598,7 @@ export default function SemanticArchetypePreviewV125({
           contract={contract}
           rows={selectedRows}
           contextRows={dimensionFilteredRows}
+          seriesRows={measureContextRows}
           entities={visibleEntities}
           countryNameKo={countryNameKo}
           detailTemplate={detailTemplate}

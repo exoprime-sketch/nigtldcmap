@@ -1,5 +1,5 @@
 import { publicScaledNumberV136_2 } from "../../../utils/publicNumberScaleV136_2";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties, ReactNode } from "react";
 import type {
   ElementVisualizationContractV125,
@@ -32,7 +32,10 @@ import {
 } from "../../../data/visualization/publicCopyRegistryV126";
 import PublicEntityCardGridV131 from "../public/PublicEntityCardGridV131";
 import PublicPortfolioListV132 from "../public/PublicPortfolioListV132";
-import PublicPortfolioSummaryV132 from "../public/PublicPortfolioSummaryV132";
+import PublicPortfolioSummaryV132, {
+  publicPortfolioRecordLabelV138,
+  publicPortfolioSectionTitleV138,
+} from "../public/PublicPortfolioSummaryV132";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 
 import "./semantic-contract-renderer-v125.css";
@@ -47,6 +50,12 @@ interface Props {
   contract: ElementVisualizationContractV125;
   rows: SemanticObservationV125[];
   contextRows: SemanticObservationV125[];
+  /**
+   * V138: the selected measure's rows across every period, before the period
+   * filter. A single selected category (one province) with several periods is
+   * a time series, and is drawn as one instead of as a one-bar comparison.
+   */
+  seriesRows?: SemanticObservationV125[];
   entities: VietnamEntityV124[];
   countryNameKo: string;
   detailTemplate?: string;
@@ -79,6 +88,7 @@ export default function SemanticContractRendererV125({
   contract,
   rows,
   contextRows,
+  seriesRows,
   entities,
   countryNameKo,
   detailTemplate,
@@ -93,6 +103,19 @@ export default function SemanticContractRendererV125({
     (row) => typeof row.value !== "number"
   );
   const publicHeadings = getPublicAnalysisHeadingsV134(contract.elementId);
+  // One selected category over many periods: B-033 with a province chosen
+  // showed a single bar for the chosen year, not the 2001-2024 series the
+  // delivery holds for that province.
+  const selectedCategoryTrendRows = useMemo(() => {
+    if (!seriesRows || renderer !== "category-comparison") return null;
+    const numeric = seriesRows.filter(
+      (row): row is NumericRowV125 => isNumericRowV125(row) && typeof row.year === "number"
+    );
+    const categories = new Set(numeric.map((row) => categoryLabelV125(row)));
+    const years = new Set(numeric.map((row) => row.year));
+    if (categories.size !== 1 || years.size < 3) return null;
+    return numeric;
+  }, [renderer, seriesRows]);
 
   return (
     <section
@@ -116,6 +139,17 @@ export default function SemanticContractRendererV125({
         <EvidenceMatrixV125 rows={presentRows} entities={entities} />
       ) : (
         <>
+          {selectedCategoryTrendRows && (
+            <>
+              <TrendPanelV125
+                elementId={contract.elementId}
+                rows={selectedCategoryTrendRows}
+              />
+              <p className="sv125-contract-help" data-testid="selected-category-trend-v138">
+                선택한 {categoryLabelV125(selectedCategoryTrendRows[0])}의 전체 연도 값입니다. 기간 선택은 아래 지역 비교에만 적용됩니다.
+              </p>
+            </>
+          )}
           {renderObservationPanelV125(
             contract.elementId,
             renderer,
@@ -853,19 +887,38 @@ function CategoryComparisonV125({ rows }: { rows: NumericRowV125[] }) {
   // Rows that share a category label are told apart by the dimension that
   // differs. D-001 drew four "수력 기술" bars reading 1,156 / 1,961 / 98 / 1,103
   // USD/kW - the median and the sample's bounds, with nothing to say so.
+  const comparisonKey = comparisonKeyV138(rows);
+  const rowLabel = (row: NumericRowV125) => {
+    if (comparisonKey) {
+      const value = rowSubjectValuesV138(row).get(comparisonKey);
+      if (value) return subjectLabelV138(comparisonKey, value);
+    }
+    return categoryLabelV125(row);
+  };
   const labelCounts = new Map<string, number>();
   rows.forEach((row) => {
-    const label = categoryLabelV125(row);
+    const label = rowLabel(row);
     labelCounts.set(label, (labelCounts.get(label) || 0) + 1);
   });
   const barLabel = (row: NumericRowV125) => {
-    const label = categoryLabelV125(row);
+    const label = rowLabel(row);
     if ((labelCounts.get(label) || 0) < 2) return label;
     const qualifier = comparisonQualifierV137(row, label);
     return qualifier ? `${label} · ${qualifier}` : label;
   };
+  // "항목별 값" says nothing about what is on the chart. Where every bar carries
+  // the same measure and the same period, those are the title.
+  const measures = new Set(rows.map((row) => row.semanticMeasure.labelKo).filter(Boolean));
+  const periods = new Set(rows.map((row) => row.period).filter(Boolean));
+  const measureTitle = measures.size === 1 ? [...measures][0] : "";
+  const periodTitle = periods.size === 1 ? [...periods][0] : "";
+  const frameTitle = measureTitle
+    ? periodTitle
+      ? `${measureTitle} · ${periodTitle}`
+      : measureTitle
+    : "항목별 값";
   return (
-    <VisualizationFrameV125 eyebrow="항목" title="항목별 값">
+    <VisualizationFrameV125 eyebrow="항목" title={frameTitle}>
       {groupByUnitV125(rows).map(({ unit, rows: unitRows }) => {
         const scale = barScaleV137(unitRows.map((row) => row.value));
         return (
@@ -1094,35 +1147,77 @@ function EvidenceMatrixV125({
   rows: PresentRowV125[];
   entities: VietnamEntityV124[];
 }) {
-  const items = [
+  // The same repeated-label trap as the bar comparison: E-017 listed five rows
+  // of "기후기술 수준 순위" against 5/2/3/4/1 and never named a country.
+  const comparisonKey = comparisonKeyV138(rows);
+  const emissionUnit = elementEmissionUnitV138(entities);
+  const rowArea = (row: PresentRowV125) => {
+    if (comparisonKey) {
+      const value = rowSubjectValuesV138(row).get(comparisonKey);
+      if (value) {
+        const subject = subjectLabelV138(comparisonKey, value);
+        const measure = row.semanticMeasure.labelKo;
+        return measure && measure !== subject ? `${subject} · ${measure}` : subject;
+      }
+    }
+    return categoryLabelV125(row);
+  };
+  const items: Array<{
+    key: string;
+    group: string | null;
+    area: string;
+    result: string;
+    unit: string | null;
+    basis: string;
+  }> = [
     ...rows.map((row) => ({
       key: row.recordId,
-      area: categoryLabelV125(row),
+      group: null,
+      area: rowArea(row),
       result: formatValueV121(row.value),
+      unit: publicTextV126(row.unit) || null,
       basis: String(row.year || row.period || row.provenance.referenceYear || "—"),
     })),
-    ...entities.map((entity) => entityMatrixRowV137(entity)),
+    ...entities
+      .filter((entity) => !isCompilerMethodRowV139(entity))
+      .map((entity) => entityMatrixRowV137(entity, emissionUnit, entities)),
   ];
   if (items.length === 0) return null;
+  const hasGroups = items.some((item) => item.group);
+  const hasUnits = items.some((item) => item.unit);
+  // Rows stay in source order; a group is named once, on its first row.
+  let lastGroup: string | null = null;
   return (
     <VisualizationFrameV125 eyebrow="확인 결과" title="항목별 확인 결과와 기준연도">
       <div className="sv125-matrix-wrap">
-        <table className="sv125-evidence-matrix">
+        <table className="sv125-evidence-matrix" data-testid="evidence-matrix-v138" data-has-units={hasUnits ? "true" : "false"}>
           <thead>
             <tr>
+              {hasGroups && <th scope="col">구분</th>}
               <th scope="col">항목</th>
               <th scope="col">확인 결과</th>
-              <th scope="col">기준연도·근거</th>
+              {hasUnits && <th scope="col">단위</th>}
+              <th scope="col">기준연도·대상·근거</th>
             </tr>
           </thead>
           <tbody>
-            {items.slice(0, 40).map((item) => (
-              <tr key={item.key}>
-                <th scope="row"><PublicTermTextV134 text={item.area} /></th>
-                <td><PublicTermTextV134 text={item.result} /></td>
-                <td><PublicTermTextV134 text={item.basis} /></td>
-              </tr>
-            ))}
+            {items.slice(0, 40).map((item) => {
+              const groupCell = item.group && item.group !== lastGroup ? item.group : "";
+              lastGroup = item.group;
+              return (
+                <tr key={item.key}>
+                  {hasGroups && (
+                    <td className="sv125-evidence-matrix__group">
+                      {groupCell ? <PublicTermTextV134 text={groupCell} /> : ""}
+                    </td>
+                  )}
+                  <th scope="row"><PublicTermTextV134 text={item.area} /></th>
+                  <td>{item.result === "—" ? "—" : <PublicTermTextV134 text={item.result} />}</td>
+                  {hasUnits && <td>{item.unit ? <PublicTermTextV134 text={item.unit} /> : "—"}</td>}
+                  <td><PublicTermTextV134 text={item.basis} /></td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
@@ -1148,7 +1243,10 @@ function PortfolioEntitiesV125({
   elementTitle?: string;
 }) {
   return (
-    <VisualizationFrameV125 eyebrow="사업·재원" title="사업 규모와 구성">
+    <VisualizationFrameV125
+      eyebrow="사업·재원"
+      title={publicPortfolioSectionTitleV138(elementId)}
+    >
       <PublicPortfolioSummaryV132
         elementId={elementId}
         entities={entities}
@@ -1164,6 +1262,24 @@ function PortfolioEntitiesV125({
   );
 }
 
+/**
+ * An office the source checked and found not to exist is not an office. The
+ * directory used to give K-water "사무소 미설치" a card equal to KOICA's, and
+ * repeated "무(공개된 정보 없음)" on every one. Installed offices come first;
+ * the rest are named once, in a short list, with the source's own verdict.
+ */
+const NOT_INSTALLED_PATTERN = /사무소 미설치|미운영|업무 종료|대상 아님|미설치/u;
+
+function isNotInstalledEntityV138(entity: VietnamEntityV124): boolean {
+  const attributes = entity.normalizedAttributes || {};
+  const verdictFields = [
+    attributes["좌표_정밀도_출처"],
+    attributes["recordStatus"],
+    attributes["field_6b3e1e90"],
+  ];
+  return verdictFields.some((value) => NOT_INSTALLED_PATTERN.test(String(value ?? "")));
+}
+
 function DirectoryEntitiesV125({
   entities,
   detailTemplate,
@@ -1173,14 +1289,42 @@ function DirectoryEntitiesV125({
   detailTemplate?: string;
   elementTitle?: string;
 }) {
+  const installed = entities.filter((entity) => !isNotInstalledEntityV138(entity));
+  const notInstalled = entities.filter(isNotInstalledEntityV138);
   return (
-    <VisualizationFrameV125 eyebrow="기관·연락망" title="기관 디렉터리">
+    <VisualizationFrameV125
+      eyebrow="기관·연락망"
+      title={
+        notInstalled.length
+          ? `기관 디렉터리 · 현지 사무소 ${installed.length.toLocaleString("ko-KR")}곳`
+          : "기관 디렉터리"
+      }
+    >
       <PublicEntityCardGridV131
-        entities={entities}
+        entities={installed.length ? installed : entities}
         template="directory"
         detailTemplate={detailTemplate}
         elementTitle={elementTitle}
       />
+      {notInstalled.length > 0 && (
+        <div className="sv125-contract-note" role="note" data-testid="directory-not-installed-v138">
+          <strong>현지 사무소가 없는 기관 {notInstalled.length.toLocaleString("ko-KR")}곳</strong>
+          <span>
+            <PublicTermTextV134
+              text={notInstalled
+                .map((entity) => {
+                  const attributes = entity.normalizedAttributes || {};
+                  const verdict = [attributes["recordStatus"], attributes["field_6b3e1e90"]]
+                    .map((value) => publicTextV126(value) || "")
+                    .find((value) => NOT_INSTALLED_PATTERN.test(value));
+                  return `${publicEntityTitleV131(entity)}${verdict ? ` — ${verdict}` : ""}`;
+                })
+                .join(" · ")}
+            />
+          </span>
+          <span>지도에는 표시하지 않으며, 본부·공식 안내 페이지는 상세 데이터의 출처 링크로 확인합니다.</span>
+        </div>
+      )}
     </VisualizationFrameV125>
   );
 }
@@ -1274,7 +1418,15 @@ function publicCollectionEyebrowV136_2(detailTemplate?: string): string {
   }
 }
 
-function publicCollectionTitleV136_2(detailTemplate?: string): string {
+function publicCollectionTitleV136_2(
+  detailTemplate?: string,
+  elementId?: string
+): string {
+  // A partner-template element whose rows are companies or support programmes
+  // should not head its list "기관 목록"; the configured record label says what
+  // the rows are.
+  const recordLabel = elementId ? publicPortfolioRecordLabelV138(elementId) : "사업";
+  if (recordLabel !== "사업") return `${recordLabel} 목록`;
   switch (detailTemplate) {
     case "project":
       return "사업 목록";
@@ -1526,6 +1678,86 @@ function comparisonQualifierV137(
   return displayed && displayed !== label ? displayed : null;
 }
 
+/**
+ * The subject codes that appear as a row's own country.
+ *
+ * E-017 compares Korea against its competitors and states each row's subject in
+ * countryIso3 alone - CHN, EUU, JPN, KOR, USA - which the semantic projection
+ * does not carry as a dimension. Unlisted codes print as delivered rather than
+ * being guessed at.
+ */
+const SUBJECT_COUNTRY_LABELS_V138: Record<string, string> = {
+  CHN: "중국",
+  EUU: "유럽연합",
+  JPN: "일본",
+  KOR: "한국",
+  USA: "미국",
+  VNM: "베트남",
+};
+
+const COUNTRY_SUBJECT_KEY_V138 = "__countryIso3__";
+
+/** Every value that could tell one row from another, keyed by where it came from. */
+function rowSubjectValuesV138(row: SemanticObservationV125): Map<string, string> {
+  const values = new Map<string, string>();
+  const keys = new Set([
+    ...Object.keys(row.dimensionLabels || {}),
+    ...Object.keys(row.dimensions || {}),
+  ]);
+  for (const key of keys) {
+    const value = row.dimensionLabels?.[key] || row.dimensions?.[key];
+    if (value) values.set(key, String(value));
+  }
+  // Almost every element delivers one country, so this only ever distinguishes
+  // the handful that compare several.
+  if (row.countryIso3) values.set(COUNTRY_SUBJECT_KEY_V138, String(row.countryIso3));
+  return values;
+}
+
+/** How a distinguishing value should read on screen. */
+function subjectLabelV138(key: string, value: string): string {
+  if (key === COUNTRY_SUBJECT_KEY_V138) {
+    return SUBJECT_COUNTRY_LABELS_V138[value] || value;
+  }
+  return publicDimensionValueV134(key, value);
+}
+
+/**
+ * The dimension that actually tells a set of rows apart.
+ *
+ * A dimension holding one value cannot label a comparison. B-033 states
+ * "세부 분류 = 성(省) 단위" on all 63 province rows and carries the province name in
+ * a second dimension, so every bar was captioned "성(省) 단위 · 2001" and the
+ * province - the only thing that differed - never appeared. E-017 prints five
+ * rows of "기후기술 수준 순위" reading 5/2/3/4/1 with no country anywhere, because
+ * the only thing separating them is countryIso3.
+ *
+ * Where the preferred label repeats, the key taking the most distinct values
+ * across these rows is what is being compared. Returns null when the preferred
+ * label is already unique, so screens that read correctly today are untouched.
+ */
+function comparisonKeyV138(rows: SemanticObservationV125[]): string | null {
+  const preferred = new Set(rows.map((row) => categoryLabelV125(row)));
+  if (preferred.size === rows.length) return null;
+  const values = new Map<string, Set<string>>();
+  for (const row of rows) {
+    for (const [key, value] of rowSubjectValuesV138(row)) {
+      const seen = values.get(key) || new Set<string>();
+      seen.add(value);
+      values.set(key, seen);
+    }
+  }
+  let best: string | null = null;
+  let bestSize = preferred.size;
+  for (const [key, seen] of values) {
+    if (seen.size > bestSize) {
+      best = key;
+      bestSize = seen.size;
+    }
+  }
+  return best;
+}
+
 function categoryLabelV125(row: SemanticObservationV125): string {
   for (const key of [
     "category",
@@ -1619,7 +1851,178 @@ function plainYearV137(value: string | null): string {
   return /^\s*[12],\d{3}\s*$/u.test(value) ? value.replace(/,/gu, "").trim() : value;
 }
 
-function entityMatrixRowV137(entity: VietnamEntityV124) {
+/**
+ * V138: what a policy row is about, and in what unit, from the row itself.
+ *
+ * The C-series sheets carry a value column and a free-text description; the
+ * unit and the target sit inside that description ("BAU 대비 3.5%·소요재원
+ * 3,927.4 백만 USD", "(단위 MtCO₂e)") and the indicator group in the row's
+ * indicator id ("C-001_mitigation_target"). Both are read out so a figure has a
+ * group and a unit beside it instead of "확인 결과 927.9".
+ */
+const INDICATOR_GROUP_LABELS_V138: Record<string, string> = {
+  mitigation_target: "감축 목표",
+  adaptation_target: "적응 목표",
+  bau_projection: "BAU 배출 전망",
+  base_year: "기준연도",
+  implementation_finance: "이행 재원",
+  ndc_sdg_linkage: "NDC–SDG 연계",
+  sector_mitigation_measures: "부문별 감축조치",
+  submission_history: "제출 이력",
+  target_ghg: "대상 온실가스",
+  target_sector: "대상 부문",
+  source_link: "원문 링크",
+  mrv_system: "MRV 체계",
+  verification_body: "검증기관",
+  readiness_checklist: "준비도 체크리스트",
+  ets_scope: "ETS 대상 범위",
+  ets_phase: "ETS 단계",
+  carbon_tax: "탄소세",
+  carbon_price: "탄소가격",
+  carbon_market_budget: "탄소시장 예산",
+  law_name: "법령·문서",
+  effective_year: "시행연도",
+  contract_type: "계약 유형",
+  ppp_agency: "PPP 전담기관",
+  ppp_law: "PPP 법령",
+  ppp_project_history: "PPP 사업 이력",
+  foreign_equity_cap: "외국인 지분 제한",
+  investment_incentive: "투자 인센티브",
+  auction_schedule: "입찰 일정",
+  investor_selection: "사업자 선정",
+  frel_submission: "FREL 제출",
+  participating_fund: "참여 기금",
+  rbp_result: "결과기반지불(RBP)",
+  carbon_market_readiness: "탄소시장 준비도",
+};
+
+function indicatorGroupLabelV138(entity: VietnamEntityV124): string | null {
+  const id = String(entity.indicatorId || "");
+  const suffix = id.replace(/^[A-E]-\d{3}_/u, "");
+  if (!suffix) return null;
+  const known = Object.keys(INDICATOR_GROUP_LABELS_V138)
+    .sort((a, b) => b.length - a.length)
+    .find((key) => suffix === key || suffix.startsWith(`${key}_`));
+  if (known) return INDICATOR_GROUP_LABELS_V138[known];
+  // Source-suffixed groups ("law_name_faolex_fao") fall back to the readable part.
+  return suffix
+    .replace(/_(?:vanban_chinhphu|datafiles_chinhphu|congbao_chinhphu|faolex_fao(?:_\d+)?|climatelaws|informea|worldbank|mof|moit|state|archive_doingbusiness|hotropldn_thainguyen|xaydungchinhsach_chinh\w*|carbonpricingdashboard|gspp_berkeley|pmiclimate|mae|vea_mae|danang|en_baochinhphu|biocarbonfundisfl|documents\d*_\w+)$/u, "")
+    .replace(/_/gu, " ");
+}
+
+const UNIT_IN_TEXT_V138 =
+  /(MtCO₂e|MtCO2e|tCO₂e|tCO2e|십억\s*USD|백만\s*USD|억\s*USD|USD\s*billion|USD\s*million|USD|VND|MW|GW|GWh|TWh|ha|km²|%p|%)/u;
+
+function unitFromDescriptionV138(
+  name: string,
+  group: string | null,
+  description: string,
+  value: string,
+  elementEmissionUnit: string | null
+): string | null {
+  const numericValue = Number(String(value).replace(/,/gu, ""));
+  if (!Number.isFinite(numericValue)) return null;
+  // A year-named row whose value is a year has no unit; "2014(기준연도) 284" is
+  // an amount filed under a year and keeps the unit search.
+  if (
+    /연도|년도|일자|날짜/u.test(name) &&
+    Number.isInteger(numericValue) &&
+    numericValue >= 1900 &&
+    numericValue <= 2100
+  ) {
+    return null;
+  }
+  const explicit = description.match(/단위\s*[:：]?\s*([^)\s,·]+)/u);
+  if (explicit) return explicit[1];
+  // The same number restated in the description with its unit after it.
+  const escaped = String(value).replace(/[.*+?^${}()|[\]\\]/gu, "\\$&");
+  const restated = description.match(
+    new RegExp(`(?:^|[^\\d.])${escaped}\\s*(${UNIT_IN_TEXT_V138.source.slice(1, -1)})`, "u")
+  );
+  if (restated) return restated[1];
+  if (/률|비율|비중|점유율/u.test(name)) return "%";
+  if (/재원|금액|예산|투자|비용|지출/u.test(name)) {
+    const money = description.match(/(십억\s*USD|백만\s*USD|억\s*USD|USD\s*billion|USD\s*million|USD|VND)/u);
+    return money ? money[1] : null;
+  }
+  if (
+    elementEmissionUnit &&
+    (group === "감축 목표" || group === "BAU 배출 전망" || /감축량|배출량|배출|흡수/u.test(name))
+  ) {
+    return elementEmissionUnit;
+  }
+  return null;
+}
+
+/** The emissions unit an element's rows state anywhere, or null. */
+function elementEmissionUnitV138(entities: VietnamEntityV124[]): string | null {
+  for (const entity of entities) {
+    const attributes = entity.normalizedAttributes || {};
+    const text = `${attributes["속성23_설명"] || ""} ${entity.note || ""}`;
+    const match = text.match(/(MtCO₂e|MtCO2e|tCO₂e|tCO2e)/u);
+    if (match) return match[1];
+  }
+  return null;
+}
+
+/**
+ * Compiler notes inside a public description. The sheet keeps its own review
+ * state in the same cell as the finding - "(CF/M02 유지)", "검토의견 「…」에 대응하여",
+ * "발주처 확인 필요", "재산출 가능" - and those address whoever maintains the
+ * sheet. Only those clauses are dropped; the finding they were attached to, and
+ * any stated conflict between sources, stays.
+ */
+function publicPolicyTextV138(value: string): string {
+  return value
+    .replace(/\s*\((?:CF|M)\/?M?\d{2}[^)]*\)/gu, "")
+    .replace(/\s*—?\s*(?:CF|M)\/M\d{2}\s*유지/gu, "")
+    .replace(/검토의견의?\s*「[^」]*」에\s*대응하여\s*/gu, "")
+    .replace(/\s*[—–-]\s*검토의견\s*"[^"]*"\s*해소/gu, "")
+    .replace(/\s*[—–·]\s*발주처 확인 필요/gu, "")
+    .replace(/\s*항목 구성·가중치 변경 요청 시 동일 원자료로 재산출 가능\.?/gu, "")
+    .replace(/지정 출처가 없으므로 신규 수집 대신,?\s*/gu, "")
+    .replace(/\s{2,}/gu, " ")
+    .trim();
+}
+
+/**
+ * Rows that describe how the sheet was compiled, not what the source says.
+ *
+ * C-022 carried a row named "수집현황 분류" whose value was the compiler's own
+ * method sentence ("이미 확보한 ETS 제도 데이터를 근거로 준비도를 산출하는 방식을
+ * 채택함"). That is a note to the sheet's maintainer; the public table keeps
+ * the source's findings and the stated constraints, not the compilation log.
+ */
+function isCompilerMethodRowV139(entity: VietnamEntityV124): boolean {
+  // The raw row name carries the sheet's own version ("수집현황 v5.29 분류");
+  // the public title policy drops the version, so the raw name is tested too.
+  const names = [publicEntityTitleV131(entity), entity.name, entity.normalizedAttributes?.["속성1_레코드명"]]
+    .map((value) => String(value || "").trim())
+    .filter(Boolean);
+  return names.some((name) => /^수집현황(?:\s*v[\d.]+)?(?:\s*분류)?$/u.test(name));
+}
+
+/**
+ * C-022's three "부문별 시설수" rows (25 · 34 · 51) name no sector in any
+ * column; the same sheet's checklist row states the split ("발전 34·철강
+ * 25·시멘트 51"). The row keeps its value and says the sector is not on the
+ * row, citing that sentence rather than guessing which number is which.
+ */
+function sectorlessCountNoteV139(entities: VietnamEntityV124[]): string | null {
+  for (const entity of entities) {
+    const attributes = entity.normalizedAttributes || {};
+    const text = `${attributes["속성23_설명"] || ""} ${entity.note || ""}`;
+    const match = text.match(/(발전\s*\d+\s*·\s*철강\s*\d+\s*·\s*시멘트\s*\d+)/u);
+    if (match) return match[1];
+  }
+  return null;
+}
+
+function entityMatrixRowV137(
+  entity: VietnamEntityV124,
+  elementEmissionUnit: string | null = null,
+  siblings: VietnamEntityV124[] = []
+) {
   const note = publicTextV126(entity.note);
   const name = publicEntityTitleV131(entity);
   const rawResult =
@@ -1635,7 +2038,12 @@ function entityMatrixRowV137(entity: VietnamEntityV124) {
     ]) || note;
   // A year is not a quantity. C-001's "BAU 목표 기준연도" printed as "2,014" and
   // the 기준연도 column read "2,026" on every C-series screen.
-  const result = /연도|년도/u.test(name) ? plainYearV137(rawResult) : rawResult;
+  // "시범단계 2028" and "정식전환단계 2029~" are years too; a stage, a start
+  // or an end named in the row makes a 1900-2100 integer a year, not a count.
+  const yearNamed = /연도|년도|단계|시점|시작|종료|예정/u.test(name);
+  const result = publicPolicyTextV138(
+    (yearNamed ? plainYearV137(rawResult) : rawResult) || ""
+  );
   const period = entityFieldV125(entity, [
     "legalBasis",
     "referenceYear",
@@ -1644,23 +2052,50 @@ function entityMatrixRowV137(entity: VietnamEntityV124) {
   ]);
   const extra = entityFieldV125(entity, ["field_a1c8da40"]);
   const leader = entityFieldV125(entity, ["field_edf04a1a"]);
+  const rawDescription = publicPolicyTextV138(
+    entityFieldV125(entity, ["속성23_설명"]) || (result === note ? "" : note || "")
+  );
+  // The same sentence printed as the finding and again as its basis says
+  // nothing twice ("준비도 지표 정의" on C-022).
+  const description = rawDescription === result ? "" : rawDescription;
+  const sectorNote =
+    /^부문별\s*시설수$/u.test(name || "") && !entityFieldV125(entity, ["sector", "속성18_업종", "속성6_분류"])
+      ? `원천 행에 부문명이 없어 값만 제공${(() => {
+          const stated = sectorlessCountNoteV139(siblings);
+          return stated ? ` · 같은 자료의 적용대상 근거문: ${stated}` : "";
+        })()}`
+      : null;
   const basis = [
     plainYearV137(period),
     extra ? `기술격차 ${extra}` : null,
     leader ? `최고(선도)국 ${leader}` : null,
-    result === note ? null : note,
+    description || null,
+    sectorNote,
   ]
     .filter(Boolean)
     .join(" · ");
+  // "MAE(농업환경부 …) — MAE": a row whose value is the abbreviation its own
+  // name already carries states nothing in the result column; the role is in
+  // the basis.
+  const restatedAbbreviation =
+    Boolean(result) && result.length <= 24 && (name || "").includes(result) && Boolean(description);
   return {
     key: entity.recordId,
+    group: indicatorGroupLabelV138(entity),
     area:
       name ||
       entityFieldV125(entity, ["category", "item", "topic", "sector", "속성6_분류"]),
     // An empty cell reads as empty. C-009 printed "세부 내용은 상세 데이터에서
     // 확인" forty-three times down one column, which says nothing forty-three
     // times; the table already leads to the detail below it.
-    result: result || "—",
+    result: restatedAbbreviation ? "—" : result || "—",
+    unit: unitFromDescriptionV138(
+      name || "",
+      indicatorGroupLabelV138(entity),
+      `${description} ${note || ""}`,
+      result,
+      elementEmissionUnit
+    ),
     basis: basis || "—",
   };
 }

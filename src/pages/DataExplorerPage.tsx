@@ -125,6 +125,14 @@ function maxScrollYV136(): number {
 }
 type FinderSortModeV128 = "relevance" | "latest" | "title";
 
+/**
+ * V140: the finder is where a reader finds the datasets the map draws and the
+ * files they can take away; the home only points here. The filter reads the
+ * same catalogue flags the card buttons read, so "지도 제공" lists exactly the
+ * cards with a 지도에서 보기 button.
+ */
+type FinderDeliveryFilterV140 = "all" | "map" | "download";
+
 function unique(values: Array<string | null | undefined>): string[] {
   return Array.from(
     new Set(values.filter((value): value is string => Boolean(value?.trim())))
@@ -205,6 +213,8 @@ export default function DataExplorerPage({
   const [yearFilter, setYearFilter] = useState("all");
   const [sortMode, setSortMode] =
     useState<FinderSortModeV128>("relevance");
+  const [deliveryFilter, setDeliveryFilter] =
+    useState<FinderDeliveryFilterV140>("all");
   const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE_COUNT);
   const [autoLoading, setAutoLoading] = useState(false);
   const sentinelRefV136 = useRef<HTMLDivElement | null>(null);
@@ -354,6 +364,13 @@ export default function DataExplorerPage({
       ) {
         return false;
       }
+      if (deliveryFilter === "map" && !item.hasMapData) return false;
+      if (
+        deliveryFilter === "download" &&
+        publicDownloadStatusV128(item).key !== "downloadable"
+      ) {
+        return false;
+      }
       if (normalizedQuery) {
         const indexed = searchIndex.get(
           countryCatalogKeyV122(item.providerId, item.elementId)
@@ -408,6 +425,7 @@ export default function DataExplorerPage({
   }, [
     availableCatalog,
     category,
+    deliveryFilter,
     normalizedQuery,
     searchIndex,
     selectedGroup,
@@ -426,6 +444,7 @@ export default function DataExplorerPage({
     sortMode,
     technologyId,
     yearFilter,
+    deliveryFilter,
   ].join("|");
 
   useEffect(() => {
@@ -599,6 +618,7 @@ export default function DataExplorerPage({
     onTechnologyChange("all");
     setYearFilter("all");
     setSortMode("relevance");
+    setDeliveryFilter("all");
   }
 
   return (
@@ -723,6 +743,23 @@ export default function DataExplorerPage({
                     {source}
                   </option>
                 ))}
+              </select>
+            </label>
+            <label className="cdp-field">
+              <span className="cdp-field__label">제공 형태</span>
+              <select
+                className="cdp-select"
+                data-testid="finder-delivery-filter-v140"
+                value={deliveryFilter}
+                onChange={(event) =>
+                  setDeliveryFilter(
+                    event.target.value as FinderDeliveryFilterV140
+                  )
+                }
+              >
+                <option value="all">전체</option>
+                <option value="map">지도 제공</option>
+                <option value="download">다운로드 가능</option>
               </select>
             </label>
             <label className="cdp-field">

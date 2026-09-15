@@ -1,0 +1,265 @@
+{
+  "label": "production-before",
+  "base": "https://nigtldcmap.vercel.app",
+  "generatedAt": "2026-09-15T22:59:04.111Z",
+  "checks": [
+    {
+      "id": "MANIFEST_OK",
+      "pass": true,
+      "actual": 200,
+      "expected": 200
+    },
+    {
+      "id": "MAP_INDEX_OK",
+      "pass": true,
+      "actual": 200,
+      "expected": 200
+    },
+    {
+      "id": "HOME_PREVIEW_SCHEMA",
+      "pass": false,
+      "actual": null,
+      "expected": "v139-home-preview-2"
+    },
+    {
+      "id": "HOME_PREVIEW_FIELDS",
+      "pass": false,
+      "actual": [],
+      "expected": "question and headline on all eight cards"
+    },
+    {
+      "id": "MAP_COUNT_MANIFEST_EQUALS_INDEX",
+      "pass": true,
+      "actual": {
+        "manifestMapLayerCount": 12,
+        "manifestGeneratedAt": "2026-08-27T00:00:00Z",
+        "indexActiveMapLayerCount": 12,
+        "indexActiveLayers": 12,
+        "indexTargetContract": null,
+        "homePreviewSchema": null,
+        "homePreviewCards": 0
+      },
+      "expected": "manifest.mapLayerCount = map-index.activeMapLayerCount = active layers"
+    },
+    {
+      "id": "B017_NOT_IN_MAP_INDEX",
+      "pass": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "id": "ROUTE /",
+      "pass": true,
+      "actual": 200,
+      "expected": 200
+    },
+    {
+      "id": "SECTION_HOME_RUNTIME",
+      "pass": false,
+      "actual": "page.waitForSelector: Timeout 60000ms exceeded.",
+      "expected": "section completes"
+    },
+    {
+      "id": "HOME_MAP_COUNT_EQUALS_INDEX",
+      "pass": false,
+      "actual": 0,
+      "expected": 12
+    },
+    {
+      "id": "ROUTE /#explorer",
+      "pass": true,
+      "actual": 200,
+      "expected": 200
+    },
+    {
+      "id": "SECTION_FINDER_RUNTIME",
+      "pass": false,
+      "actual": "page.selectOption: Timeout 30000ms exceeded.",
+      "expected": "section completes"
+    },
+    {
+      "id": "ROUTE /#map",
+      "pass": true,
+      "actual": 200,
+      "expected": 200
+    },
+    {
+      "id": "SECTION_MAP_RUNTIME",
+      "pass": false,
+      "actual": "page.waitForSelector: Timeout 60000ms exceeded.",
+      "expected": "section completes"
+    },
+    {
+      "id": "ROUTE /?view=data&country=VNM&element=A-002#element-detail",
+      "pass": true,
+      "actual": 200,
+      "expected": 200
+    },
+    {
+      "id": "DETAIL_A002_TITLE_EQUALS_HOME",
+      "pass": false,
+      "actual": "국가 거버넌스 지표(WGI)",
+      "expected": null
+    },
+    {
+      "id": "DETAIL_A002_ANALYSIS",
+      "pass": true,
+      "actual": {
+        "title": "국가 거버넌스 지표(WGI)",
+        "analysisMounted": true,
+        "chartCount": 4,
+        "limitationItems": [
+          "1996~2002년은 격년(1996·1998·2000·2002)으로만 제공되며, 2003년부터 매년 제공됩니다",
+          "백분위(0~100)는 해당 연도 조사대상국 중 상대적 위치이므로 연도 간 비교 시 대상국 구성 변화를 함께 고려해야 합니다"
+        ]
+      },
+      "expected": "analysis root with charts"
+    },
+    {
+      "id": "ROUTE /?view=data&country=VNM&element=A-010#element-detail",
+      "pass": true,
+      "actual": 200,
+      "expected": 200
+    },
+    {
+      "id": "ROUTE /?view=data&country=VNM&element=A-024#element-detail",
+      "pass": true,
+      "actual": 200,
+      "expected": 200
+    },
+    {
+      "id": "ROUTE /?view=data&country=VNM&element=B-033#element-detail",
+      "pass": true,
+      "actual": 200,
+      "expected": 200
+    },
+    {
+      "id": "ROUTE /?view=data&country=VNM&element=C-016#element-detail",
+      "pass": true,
+      "actual": 200,
+      "expected": 200
+    },
+    {
+      "id": "ROUTE /?view=data&country=VNM&element=D-023#element-detail",
+      "pass": true,
+      "actual": 200,
+      "expected": 200
+    },
+    {
+      "id": "DETAIL_CARRIES_MOVED_CAVEATS",
+      "pass": false,
+      "actual": {
+        "A-010": false,
+        "A-024": false,
+        "B-033": false,
+        "C-016": false,
+        "D-023": false
+      },
+      "expected": "every caveat taken off the home is on its detail screen"
+    },
+    {
+      "id": "ROUTE /?country=VNM&element=A-002#download",
+      "pass": true,
+      "actual": 200,
+      "expected": 200
+    },
+    {
+      "id": "DOWNLOAD_A002_PRESELECTED",
+      "pass": true,
+      "actual": "선택한 데이터 1개 · 최대 312행",
+      "expected": "선택한 데이터 1개 · …"
+    },
+    {
+      "id": "DOWNLOAD_A002_FILE",
+      "pass": true,
+      "actual": {
+        "name": "vietnam_cpia-country-policy-and-institutional-assessment-gugga-sinyongdo-geobeoneonseu-sujun-jipyo_2026-09-16.csv",
+        "bytes": 164497
+      },
+      "expected": "a file is produced"
+    },
+    {
+      "id": "DOWNLOAD_A002_STATIC_ASSET",
+      "pass": true,
+      "actual": 200,
+      "expected": 200
+    },
+    {
+      "id": "ROUTE /?view=data&country=VNM&element=B-017#element-detail",
+      "pass": true,
+      "actual": 200,
+      "expected": 200
+    },
+    {
+      "id": "B017_DETAIL_NO_LOCATION_CLAIM",
+      "pass": false,
+      "actual": {
+        "mapLinks": 0,
+        "mapEngine": false,
+        "statesNotOnMap": false
+      },
+      "expected": "no map link, no map, states it is not on the map"
+    },
+    {
+      "id": "CONSOLE_ERRORS",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "id": "HTTP_FAILURES",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "consoleErrors": [],
+  "httpFailures": [],
+  "assets": {
+    "manifestMapLayerCount": 12,
+    "manifestGeneratedAt": "2026-08-27T00:00:00Z",
+    "indexActiveMapLayerCount": 12,
+    "indexActiveLayers": 12,
+    "indexTargetContract": null,
+    "homePreviewSchema": null,
+    "homePreviewCards": 0
+  },
+  "home": null,
+  "finder": null,
+  "map": null,
+  "detail": {
+    "title": "국가 거버넌스 지표(WGI)",
+    "analysisMounted": true,
+    "chartCount": 4,
+    "limitationItems": [
+      "1996~2002년은 격년(1996·1998·2000·2002)으로만 제공되며, 2003년부터 매년 제공됩니다",
+      "백분위(0~100)는 해당 연도 조사대상국 중 상대적 위치이므로 연도 간 비교 시 대상국 구성 변화를 함께 고려해야 합니다"
+    ]
+  },
+  "movedCaveats": {
+    "A-010": false,
+    "A-024": false,
+    "B-033": false,
+    "C-016": false,
+    "D-023": false
+  },
+  "download": {
+    "summary": "선택한 데이터 1개 · 최대 312행",
+    "file": {
+      "name": "vietnam_cpia-country-policy-and-institutional-assessment-gugga-sinyongdo-geobeoneonseu-sujun-jipyo_2026-09-16.csv",
+      "bytes": 164497
+    },
+    "staticCsvStatus": 200,
+    "staticCsvBytes": null
+  },
+  "b017Detail": {
+    "mapLinks": 0,
+    "mapEngine": false,
+    "statesNotOnMap": false
+  },
+  "summary": {
+    "passed": 21,
+    "failed": 9,
+    "total": 30
+  }
+}

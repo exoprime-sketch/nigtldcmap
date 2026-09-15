@@ -25,6 +25,15 @@ import {
   mapFeatureOrScopeCountV133,
   mapUrlV133,
 } from "./v133/audit-helpers.mjs";
+import { mapTargetCountV138, toggleMapCompanionV138 } from "./v135/audit-helpers.mjs";
+
+/**
+ * V138 contract. A preset draws the combination its card names, so its
+ * companions are on from the start; the reader's own selection is unbounded by
+ * a companion limit; and still exactly one dataset colours the map, with every
+ * other area dataset drawn as outline only.
+ */
+const EXPECTED_TARGETS = mapTargetCountV138();
 
 const audit = new AuditV125("map-focus:v133");
 const mapResult = readJson(resolve(V2_ROOT, "map-index.json"));
@@ -50,10 +59,21 @@ function presetReadyExpression(presetId) {
   return `(() => {
     const root = document.querySelector('[data-testid="map-public-content"]');
     const loading = document.querySelector('.cdp-map-overlay-card')?.textContent || '';
+    const rendered = (root?.getAttribute('data-rendered-map-elements') || '').split(',').filter((id) => id && id !== 'none');
+    const wanted = [root?.getAttribute('data-primary-element'), ...(root?.getAttribute('data-context-elements') || '').split(',')].filter((id) => id && id !== 'none');
     return root?.getAttribute('data-map-preset') === ${JSON.stringify(presetId)} &&
       root?.getAttribute('data-primary-layer-count') === '1' &&
+      wanted.every((id) => rendered.includes(id)) &&
       !/불러오는 중/u.test(loading);
   })()`;
+}
+
+/** The companions each preset card names, read from the workspace source. */
+function presetCompanionsFromSource(presetId) {
+  const block = workspaceSource.slice(workspaceSource.indexOf(`id: "${presetId}"`));
+  const start = block.indexOf("context: [");
+  const contextBlock = block.slice(start, block.indexOf("],", start));
+  return [...contextBlock.matchAll(/elementId:\s*"([A-E]-\d{3})"/gu)].map((match) => match[1]);
 }
 
 async function selectPreset(cdp, presetId) {
@@ -91,24 +111,19 @@ async function selectPreset(cdp, presetId) {
 }
 
 async function toggleContext(cdp, elementId) {
-  const clicked = await evaluateValue(
+  const isContext = await evaluateValue(
     cdp,
-    `(() => {
-      const explicit = document.querySelector('[data-testid="map-focus-summary-v133"] [data-testid="map-context-toggle-v133"][data-map-element=${JSON.stringify(elementId)}]');
-      const card = document.querySelector('.cdp-layer-card[data-map-element=${JSON.stringify(elementId)}]');
-      const fallback = [...(card?.querySelectorAll('button') || [])].find((node) => /함께 보기|보조 표시/u.test(node.textContent || ''));
-      const button = explicit || fallback;
-      if (!(button instanceof HTMLButtonElement) || button.disabled) return false;
-      button.click();
-      return true;
-    })()`
+    `(document.querySelector('[data-testid="map-public-content"]')?.getAttribute('data-context-elements') || '').split(',').includes(${JSON.stringify(elementId)})`
   );
-  if (!clicked) throw new Error(`context action unavailable: ${elementId}`);
+  if (!isContext) {
+    await toggleMapCompanionV138(cdp, { elementId, evaluateValue, waitForValue });
+  }
   await waitForValue(
     cdp,
     `(() => {
       const root = document.querySelector('[data-testid="map-public-content"]');
-      return (root?.getAttribute('data-context-elements') || '').split(',').includes(${JSON.stringify(elementId)});
+      return (root?.getAttribute('data-context-elements') || '').split(',').includes(${JSON.stringify(elementId)}) &&
+        (root?.getAttribute('data-rendered-map-elements') || '').split(',').includes(${JSON.stringify(elementId)});
     })()`,
     { timeoutMs: 35_000 }
   );
@@ -141,7 +156,7 @@ try {
   await navigate(browser.cdp, mapUrlV133(server.url));
   await waitForValue(
     browser.cdp,
-    `document.querySelectorAll('.cdp-layer-card[data-map-element]').length === 12`,
+    `document.querySelectorAll('.cdp-map-catalog-v138__item[data-map-available="true"]').length === ${layers.length}`,
     { timeoutMs: 35_000 }
   );
 
@@ -215,9 +230,19 @@ try {
   if (server) await server.close();
 }
 
-const defaultContextFailures = presetSnapshots.filter(
-  (snapshot) => snapshot.primaryCount !== 1 || snapshot.contextCount !== 0
-);
+// A preset must draw what its card names: the primary and every companion
+// that has a layer. Nothing more (no stray dataset) and nothing less.
+const defaultContextFailures = presetSnapshots.filter((snapshot) => {
+  const expected = presetCompanionsFromSource(snapshot.presetId).filter((id) =>
+    layers.some((layer) => layer.elementId === id)
+  );
+  const actual = (snapshot.contextElements || "").split(",").filter((id) => id && id !== "none");
+  return (
+    snapshot.primaryCount !== 1 ||
+    expected.length !== actual.length ||
+    !expected.every((id) => actual.includes(id))
+  );
+});
 const contextShapes = new Map(
   [
     ...companionShapeSnapshots.flatMap((snapshot) => snapshot?.items || []),
@@ -243,7 +268,12 @@ const renderedPolygonFillContextCount = new Set(
 ).size;
 
 audit.check("MAP_INDEX_JSON", mapResult.error === null, mapResult.error, null);
-audit.check("MAP_LAYERS", layers.length === 12, layers.length, 12);
+audit.check(
+  "MAP_LAYERS",
+  layers.length === mapResult.value?.activeMapLayerCount && layers.length >= 12 && layers.length <= EXPECTED_TARGETS,
+  { active: layers.length, declared: mapResult.value?.activeMapLayerCount ?? null, targets: EXPECTED_TARGETS },
+  `declared count, between 12 and ${EXPECTED_TARGETS}`
+);
 // The exact feature count is a property of the delivery, not of the platform:
 // publishing every authorised carbon-credit project took C-025 from 18 features
 // to 262. What is asserted is that the index declares what its layers hold and
@@ -261,7 +291,7 @@ audit.check(
   presetIds
 );
 audit.check(
-  "PRESET_DEFAULT_CONTEXT_COUNT",
+  "PRESET_DRAWS_NAMED_COMBINATION",
   runtimeFailure === null && defaultContextFailures.length === 0,
   { runtimeFailure, failures: defaultContextFailures },
   { runtimeFailure: null, failures: [] }
@@ -278,11 +308,17 @@ audit.check(
   Math.max(0, ...presetSnapshots.map((item) => item.primaryCount)),
   1
 );
+// V138: the reader's selection is not trimmed to one companion. After the
+// preset's own companions and both explicit toggles, every ticked dataset is
+// still there.
+const companionLimit = Number((workspaceSource.match(/contextLayers\s*:\s*(\d+)/u) || [])[1] || 0);
 audit.check(
-  "CONTEXT_LAYER_MAX",
-  /contextLayers\s*:\s*1/u.test(workspaceSource) && Number(distinctionSnapshot?.contextCount || 0) <= 1,
-  distinctionSnapshot?.contextCount ?? null,
-  1
+  "CONTEXT_SELECTION_KEPT",
+  companionLimit >= EXPECTED_TARGETS - 1 &&
+    Number(distinctionSnapshot?.contextCount || 0) >= 2 &&
+    (distinctionSnapshot?.items || []).filter((item) => item.role === "context").length === Number(distinctionSnapshot?.contextCount || 0),
+  { companionLimit, contextCount: distinctionSnapshot?.contextCount ?? null },
+  { companionLimit: `>= ${EXPECTED_TARGETS - 1}`, contextCount: ">= 2, all in legend" }
 );
 audit.check(
   "SIMULTANEOUS_POLYGON_FILL_CONTEXT_COUNT",
@@ -323,9 +359,9 @@ audit.check("CONSOLE_ERROR", (browser?.runtimeErrors || []).length === 0, browse
 finishAuditV133(audit, "map-focus-audit-v133.json", {
   mapLayerCount: layers.length,
   mapFeatureOrScopeCount: featureOrScopeCount,
-  presetDefaultContextCount: defaultContextFailures.length === 0 ? 0 : null,
+  presetCombinationFailures: defaultContextFailures.length,
   primaryLayerMax: 1,
-  contextLayerMax: 1,
+  companionLimit,
   simultaneousPolygonFillContextCount: polygonFillContextCount,
   renderedPolygonFillContextCount,
   presetSnapshots,

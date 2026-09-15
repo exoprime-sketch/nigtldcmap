@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v135-final-public-screen-audit-1",
-  "generatedAt": "2026-09-13T23:31:04.065Z",
+  "generatedAt": "2026-09-15T23:26:14.826Z",
   "audit": "map-guide:v135",
   "status": "PASS",
   "summary": {
@@ -12,7 +12,7 @@
     "total": 13,
     "failedChecks": [],
     "mapGuideDefaultOpen": false,
-    "mapGuideRowCount": 12,
+    "mapGuideRowCount": 42,
     "mapPolicyParagraphCount": 0,
     "mapCountryInfoButtonCount": 0,
     "runtimeFailure": null
@@ -44,8 +44,8 @@
       "audit": "map-guide:v135",
       "name": "MAP_GUIDE_ROW_COUNT",
       "status": "PASS",
-      "actual": 12,
-      "expected": 12
+      "actual": 42,
+      "expected": 42
     },
     {
       "type": "check",
@@ -53,6 +53,16 @@
       "name": "MAP_GUIDE_COLUMN_DATA_FUNCTION",
       "status": "PASS",
       "actual": [
+        "데이터명",
+        "지도 표시",
+        "기준기간",
+        "데이터 기능",
+        "참고사항",
+        "데이터명",
+        "지도 표시",
+        "기준기간",
+        "데이터 기능",
+        "참고사항",
         "데이터명",
         "지도 표시",
         "기준기간",
@@ -111,6 +121,16 @@
         "지도 표시",
         "기준기간",
         "데이터 기능",
+        "참고사항",
+        "데이터명",
+        "지도 표시",
+        "기준기간",
+        "데이터 기능",
+        "참고사항",
+        "데이터명",
+        "지도 표시",
+        "기준기간",
+        "데이터 기능",
         "참고사항"
       ],
       "expected": "참고사항"
@@ -121,6 +141,16 @@
       "name": "MAP_GUIDE_LEGACY_COLUMNS",
       "status": "PASS",
       "actual": [
+        "데이터명",
+        "지도 표시",
+        "기준기간",
+        "데이터 기능",
+        "참고사항",
+        "데이터명",
+        "지도 표시",
+        "기준기간",
+        "데이터 기능",
+        "참고사항",
         "데이터명",
         "지도 표시",
         "기준기간",
@@ -207,7 +237,7 @@
     }
   ],
   "mapGuideDefaultOpen": false,
-  "mapGuideRowCount": 12,
+  "mapGuideRowCount": 42,
   "mapPolicyParagraphCount": 0,
   "mapCountryInfoButtonCount": 0,
   "runtimeFailure": null

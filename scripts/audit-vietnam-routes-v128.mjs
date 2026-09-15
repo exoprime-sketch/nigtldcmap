@@ -40,7 +40,9 @@ const PUBLIC_ROUTE_CASES = [
     name: "element-detail",
     suffix: "/?view=data&country=VNM&element=A-002#element-detail",
     selector: "[data-testid='public-analysis-root']",
-    text: "정책",
+    // A-002 carried CPIA ("정책") when this case was written; it now carries
+    // the Worldwide Governance Indicators.
+    text: "거버넌스",
   },
   { name: "map", suffix: "/?country=VNM#map", selector: ".cdp-map-page", text: "지도" },
   { name: "download", suffix: "/?country=VNM#download", selector: ".cdp-download-list", text: "다운로드" },

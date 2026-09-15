@@ -1,8 +1,9 @@
 import { createHash } from "node:crypto";
-import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, statSync } from "node:fs";
 import { resolve } from "node:path";
 
 import { PROJECT_ROOT, pngDimensions } from "../v125/audit-utils.mjs";
+import { writeReportFileV138 } from "../v125/write-report.mjs";
 
 export const V135_REPORT_ROOT = resolve(PROJECT_ROOT, "reports/v135");
 export const V135_SCREENSHOT_ROOT = resolve(V135_REPORT_ROOT, "screenshots");
@@ -29,7 +30,7 @@ export function normalizeTextV135(value) {
 
 export function writeJsonV135(path, value) {
   mkdirSync(resolve(path, ".."), { recursive: true });
-  writeFileSync(path, `${JSON.stringify(value, null, 2)}\n`, "utf8");
+  writeReportFileV138(path, `${JSON.stringify(value, null, 2)}\n`);
 }
 
 export function finishAuditV135(audit, fileName, extra = {}) {
@@ -275,6 +276,76 @@ export function mapDatasetControlSelectorV135(elementId) {
   return `[data-testid="map-all-data-layer-v135"][data-element-id="${elementId}"]`;
 }
 
+/**
+ * V138: the map index states how many layers the build published. Audits
+ * that waited for exactly twelve list items were asserting a past snapshot;
+ * they now read the number the data itself declares, and the runtime check
+ * compares the list to that.
+ */
+export function mapIndexV138() {
+  return JSON.parse(
+    readFileSync(resolve(PROJECT_ROOT, "public/data/vietnam/v2/map-index.json"), "utf8")
+  );
+}
+
+export function mapLayerCountV138() {
+  const index = mapIndexV138();
+  return index.layers.filter((layer) => layer.active !== false && layer.enabled !== false).length;
+}
+
+export function mapTargetCountV138() {
+  return JSON.parse(
+    readFileSync(resolve(PROJECT_ROOT, "src/data/visualization/publicMapTargetsV138.json"), "utf8")
+  ).targets.length;
+}
+
+/** The catalogue row (li) that carries the dataset's role and availability. */
+export function mapDatasetRowSelectorV138(elementId) {
+  return `.cdp-map-catalog-v138__item[data-map-element="${elementId}"]`;
+}
+
+/**
+ * Browser-side expression: make the catalogue row of a dataset visible - the
+ * list drawer open and its category unfolded - so a click lands on it.
+ */
+export function revealMapDatasetExpressionV138(elementId) {
+  return `(() => {
+    const drawer = document.querySelector('[data-testid="map-layer-panel"] .cdp-map-panel-toggle');
+    if (drawer && drawer.getAttribute('aria-expanded') === 'false') drawer.click();
+    const input = document.querySelector(${JSON.stringify(mapDatasetControlSelectorV135(elementId))});
+    const group = input?.closest('[data-map-group-v135]');
+    const toggle = group?.querySelector('[data-testid="map-catalog-group-toggle-v138"]');
+    if (toggle && toggle.getAttribute('aria-expanded') !== 'true') toggle.click();
+    input?.scrollIntoView?.({ block: 'center' });
+    return Boolean(input);
+  })()`;
+}
+
+/**
+ * V138 companion toggle. Ticking a dataset while another is the colour map
+ * adds it beside that map; ticking it again removes only it. Returns the
+ * companion list afterwards.
+ */
+export async function toggleMapCompanionV138(cdp, { elementId, evaluateValue, waitForValue, timeoutMs = 35_000 }) {
+  await evaluateValue(cdp, revealMapDatasetExpressionV138(elementId));
+  const wasChecked = Boolean(
+    await evaluateValue(cdp, `document.querySelector(${JSON.stringify(mapDatasetControlSelectorV135(elementId))})?.checked === true`)
+  );
+  await evaluateValue(
+    cdp,
+    `(() => { const node = document.querySelector(${JSON.stringify(mapDatasetControlSelectorV135(elementId))}); if (node instanceof HTMLElement && !node.disabled) node.click(); return true; })()`
+  );
+  await waitForValue(
+    cdp,
+    `document.querySelector(${JSON.stringify(mapDatasetControlSelectorV135(elementId))})?.checked === ${wasChecked ? "false" : "true"}`,
+    { timeoutMs }
+  );
+  return evaluateValue(
+    cdp,
+    `(document.querySelector('[data-testid="map-public-content"]')?.getAttribute('data-context-elements') || 'none').split(',').filter((id) => id !== 'none')`
+  );
+}
+
 export async function activateMapDatasetV135(
   cdp,
   {
@@ -324,6 +395,23 @@ export async function activateMapDatasetV135(
 
   try {
     // The dataset list, not the panel shell, is what makes activation possible.
+    await waitForValue(cdp, `document.querySelector(${JSON.stringify(selector)}) !== null`, { timeoutMs });
+    // V138: activation means "this dataset, on its own, as the analysis" -
+    // what the single-dataset audits mean by it. The selection is cleared
+    // first, otherwise every earlier dataset of a sweep stays drawn beside it
+    // and the SVG fallback renders dozens of layers for each step.
+    await evaluateValue(
+      cdp,
+      `(() => {
+        const root = document.querySelector('[data-testid="map-public-content"]');
+        if ((root?.getAttribute('data-primary-element') || 'none') === ${JSON.stringify(elementId)}) return false;
+        const clear = [...document.querySelectorAll('.cdp-map-catalog-v138__actions button')].find((button) => button.textContent?.trim() === '선택 해제');
+        if (clear instanceof HTMLButtonElement && !clear.disabled) clear.click();
+        return true;
+      })()`
+    );
+    // The row may sit in a folded category or behind the phone drawer.
+    await evaluateValue(cdp, revealMapDatasetExpressionV138(elementId));
     await waitForValue(
       cdp,
       `(() => {
@@ -357,16 +445,48 @@ export async function activateMapDatasetV135(
     let activated = false;
     for (let attempt = 1; attempt <= 2 && !activated; attempt += 1) {
       diagnostics.clickAttempts = attempt;
+      // V138: the control is a checkbox. Unchecked, ticking it selects the
+      // dataset; if another dataset already holds the colour map, the row's
+      // "색상 지도로 / 분석 기준으로" control makes this one the analysis.
       diagnostics.clickDispatched = Boolean(
         await evaluateValue(
           cdp,
           `(() => {
             const node = document.querySelector(${JSON.stringify(selector)});
             if (!(node instanceof HTMLElement) || node.disabled === true) return false;
-            node.click();
+            const root = document.querySelector('[data-testid="map-public-content"]');
+            const primary = root?.getAttribute('data-primary-element') || 'none';
+            if (primary === ${JSON.stringify(elementId)}) return true;
+            const checked = node instanceof HTMLInputElement ? node.checked : node.getAttribute('aria-pressed') === 'true';
+            if (!checked) node.click();
             return true;
           })()`
         )
+      );
+      // The row's promote control renders on the commit after the tick, so it
+      // is awaited rather than clicked on a timer. A dataset ticked with no
+      // colour map yet becomes the analysis by the tick alone.
+      const promoteSelector = `${mapDatasetRowSelectorV138(elementId)} [data-testid="map-context-toggle-v133"]`;
+      try {
+        await waitForValue(
+          cdp,
+          `document.querySelector('[data-testid="map-public-content"]')?.getAttribute('data-primary-element') === ${JSON.stringify(
+            elementId
+          )} || Boolean(document.querySelector(${JSON.stringify(promoteSelector)}))`,
+          { timeoutMs: 10_000 }
+        );
+      } catch {
+        // Fall through to the primary wait below, which records the failure.
+      }
+      await evaluateValue(
+        cdp,
+        `(() => {
+          const root = document.querySelector('[data-testid="map-public-content"]');
+          if ((root?.getAttribute('data-primary-element') || 'none') === ${JSON.stringify(elementId)}) return true;
+          const promote = document.querySelector(${JSON.stringify(promoteSelector)});
+          if (promote instanceof HTMLElement) promote.click();
+          return Boolean(promote);
+        })()`
       );
       try {
         await waitForValue(

@@ -616,3 +616,11 @@
     width: 2px;
   }
 }
+
+/* V138: the indicator group a policy row belongs to, named once per group. */
+.sv125-evidence-matrix__group {
+  color: var(--cdp-muted, #55635c);
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}

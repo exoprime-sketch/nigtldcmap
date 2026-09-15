@@ -23,6 +23,8 @@ import {
   detailUrlV135,
   finderUrlV135,
   mapUrlV135,
+  mapIndexV138,
+  mapLayerCountV138,
 } from "./v135/audit-helpers.mjs";
 import {
   AWKWARD_GENERIC_COPY_V136,
@@ -35,10 +37,11 @@ import {
 const audit = new AuditV125("human-review:v136");
 const catalog = catalogElements(readJson(resolve(V2_ROOT, "catalog.json")).value);
 
-const MAP_DATASETS = [
-  "A-023", "A-024", "C-016", "B-021", "B-031", "B-032",
-  "B-033", "B-034", "B-048", "C-025", "D-008", "D-018",
-];
+// Every active layer the index publishes is reviewed, not a typed list of
+// twelve: V138 connected thirty more targets and each needs the same pass.
+const MAP_DATASETS = mapIndexV138()
+  .layers.filter((layer) => layer.active !== false && layer.enabled !== false)
+  .map((layer) => layer.elementId);
 
 const ANALYSIS_READY = `(() => {
   const root = document.querySelector('[data-testid="public-analysis-root"]');
@@ -209,7 +212,7 @@ try {
   await navigate(browser.cdp, mapUrlV135(server.url));
   await waitForValue(
     browser.cdp,
-    `document.querySelectorAll('[data-testid="map-all-data-layer-v135"]').length === 12`,
+    `document.querySelectorAll('.cdp-map-catalog-v138__item[data-map-available="true"]').length === ${mapLayerCountV138()}`,
     { timeoutMs: 35_000 }
   );
   for (const elementId of MAP_DATASETS) {
@@ -217,11 +220,10 @@ try {
       browser.cdp,
       `(() => {
         const clean = (value) => String(value || '').normalize('NFC').replace(/\\s+/gu, ' ').trim();
-        const node = [...document.querySelectorAll('[data-testid="map-all-data-layer-v135"]')]
-          .find((item) => item.getAttribute('data-element-id') === ${JSON.stringify(elementId)});
+        const node = document.querySelector('.cdp-map-catalog-v138__item[data-map-element=' + ${JSON.stringify(JSON.stringify(elementId))} + ']');
         return {
-          title: clean(node?.querySelector('strong')?.textContent),
-          summary: clean(node?.querySelector('span')?.textContent),
+          title: clean(node?.querySelector('.cdp-map-catalog-v138__label strong')?.textContent),
+          summary: clean(node?.querySelector('.cdp-map-catalog-v138__label small')?.textContent),
         };
       })()`
     );
@@ -344,7 +346,7 @@ const mapActivationFailures = mapRows.filter((row) => row.activationFailure);
 audit.check("HUMAN_REVIEW_RUNTIME", runtimeFailure === null, { runtimeFailure }, { runtimeFailure: null });
 audit.check("FINDER_HUMAN_REVIEW_COUNT", finderRows.length === 152, finderRows.length, 152);
 audit.check("DETAIL_HUMAN_REVIEW_COUNT", detailRows.length === 152, detailRows.length, 152);
-audit.check("MAP_DATASET_HUMAN_REVIEW_COUNT", new Set(mapRows.map((row) => row.elementId)).size === 12, new Set(mapRows.map((row) => row.elementId)).size, 12);
+audit.check("MAP_DATASET_HUMAN_REVIEW_COUNT", new Set(mapRows.map((row) => row.elementId)).size === MAP_DATASETS.length && MAP_DATASETS.length === mapLayerCountV138(), new Set(mapRows.map((row) => row.elementId)).size, mapLayerCountV138());
 audit.check("MAP_REVIEW_ACTIVATION", mapActivationFailures.length === 0, mapActivationFailures.slice(0, 5), []);
 audit.check("DOWNLOAD_HUMAN_REVIEW", downloadRows.length > 0, downloadRows.length, ">0");
 audit.check("GUIDE_HUMAN_REVIEW", guideRows.length > 0, guideRows.length, ">0");

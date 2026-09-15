@@ -3,6 +3,7 @@ import InteractiveTimeSeriesChartV127 from "../../charts/InteractiveTimeSeriesCh
 import type { TimeSeriesV127 } from "../../../types/chartInteractionV127";
 import type { SemanticObservationV125 } from "../../../data/visualization/semanticTypesV125";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
+import { CLIMATE_TECHNOLOGIES } from "../../../data/climateTechnologyCatalog";
 import {
   publicSourceUrlV126,
   publicTextV126,
@@ -28,6 +29,8 @@ type ResearchRecordV132 = {
   title: string;
   year: number | null;
   field: string;
+  /** V138: the CTIS technology classes the source itself assigned, by code. */
+  technologyClasses: string[];
   institution: string;
   collaboration: string;
   sourceUrl: string | null;
@@ -67,8 +70,15 @@ export default function ResearchPatentAnalysisV132({
     () => uniqueSortedV132(records.flatMap((record) => record.year ? [String(record.year)] : []), true),
     [records]
   );
+  // One option per class the source assigned; a document with two classes
+  // is listed under each, the same way the breakdown above counts it.
   const fields = useMemo(
-    () => uniqueSortedV132(records.map((record) => record.field).filter(Boolean)),
+    () =>
+      uniqueSortedV132(
+        records.flatMap((record) =>
+          record.technologyClasses.length ? record.technologyClasses : [record.field]
+        ).filter(Boolean)
+      ),
     [records]
   );
   const filtered = useMemo(() => {
@@ -76,7 +86,12 @@ export default function ResearchPatentAnalysisV132({
     return records.filter((record) => {
       if (type !== "all" && record.type !== type) return false;
       if (year !== "all" && String(record.year || "") !== year) return false;
-      if (field !== "all" && record.field !== field) return false;
+      if (
+        field !== "all" &&
+        !(record.technologyClasses.length ? record.technologyClasses.includes(field) : record.field === field)
+      ) {
+        return false;
+      }
       if (!needle) return true;
       return [record.title, record.field, record.institution, record.collaboration]
         .join(" ")
@@ -106,7 +121,17 @@ export default function ResearchPatentAnalysisV132({
       Math.max(maximum, new Set(series.points.map((point) => point.x)).size),
     0
   );
-  const technologyBreakdown = countByV132(records, (record) => record.field);
+  // V138: the delivery classifies every row into the 38 CTIS technologies in
+  // its own evidence column ("(CTIS-30 취약성·위험성 평가)"), with the basis
+  // stated beside it. That is the source's classification, not an estimate
+  // made here; a row assigned two classes counts once in each. The
+  // technologyField alias pointed at a column the delivery does not carry, so
+  // all 144 rows read "분야 미분류".
+  const technologyBreakdown = countValuesV132(
+    records.flatMap((record) =>
+      record.technologyClasses.length ? record.technologyClasses : ["분야 미분류"]
+    )
+  );
   const collaborationBreakdown = countByV132(records, (record) =>
     !record.collaboration
       ? "협력구조 미제공"
@@ -146,6 +171,12 @@ export default function ResearchPatentAnalysisV132({
         <KpiV132 label="확인된 기관 범위" value={institutions.size} unit="개" />
       </div>
 
+      {nationalTrend.length === 0 && (
+        <p className="rpa132-note" data-testid="e008-no-national-statistics">
+          연도별 공개 통계(Scimago 문헌 수·WIPO 출원 총계)는 이 자료에 포함되지 않았습니다. 아래 연도 분포는 공개 목록 {records.length.toLocaleString("ko-KR")}건의 발행연도 분포이며 국가 통계가 아닙니다.
+        </p>
+      )}
+      {nationalTrend.length > 0 && (
       <section className="rpa132-panel" data-testid="e008-trend">
         {nationalTrendDepthV135 < 3 ? (
           <div
@@ -201,11 +232,12 @@ export default function ResearchPatentAnalysisV132({
         />
         )}
       </section>
+      )}
 
       <div className="rpa132-analysis-grid">
         <BreakdownV132
-          title="기술·연구분야 구성"
-          description={`아래 공개 목록 ${records.length.toLocaleString("ko-KR")}건을 분야별로 집계한 값입니다.`}
+          title="기후기술 분류(38대 기술, 원천 부여)"
+          description={`공개 목록 ${records.length.toLocaleString("ko-KR")}건에 원천이 제목·초록 근거로 부여한 CTIS 분류입니다. 두 분류를 받은 문헌은 각각에 한 번씩 셉니다.`}
           rows={technologyBreakdown}
           testId="e008-breakdown"
         />
@@ -337,7 +369,11 @@ function researchRecordV132(
     type,
     title: titleResult.title,
     year: Number.isFinite(numericYear) ? numericYear : null,
-    field: publicTextV126(attributes[ENTITY_FIELDS_V132.field]) || "분야 미분류",
+    field:
+      publicTextV126(attributes[ENTITY_FIELDS_V132.field]) ||
+      sourceTechnologyClassesV138(entity, attributes).join(" · ") ||
+      "분야 미분류",
+    technologyClasses: sourceTechnologyClassesV138(entity, attributes),
     institution: publicTextV126(attributes[ENTITY_FIELDS_V132.institution]) || "",
     collaboration: publicTextV126(attributes[ENTITY_FIELDS_V132.collaboration]) || "",
     sourceUrl: publicSourceUrlV126(attributes[ENTITY_FIELDS_V132.sourceUrl]) || publicSourceUrlV126(entity.provenance.sourceUrl),
@@ -368,11 +404,38 @@ function countValuesV132(values: string[]): Array<{ label: string; value: number
   );
 }
 
+/**
+ * Institutions are separated by ";" or " / " in the delivery; a comma is part
+ * of a name ("Institute of Meteorology, Hydrology and Climate Change"), and
+ * splitting on it turned "Ho Chi Minh City" and "Hanoi" into institutions.
+ */
 function splitPublicListV132(value: string): string[] {
   return value
-    .split(/\s*[;,]\s*/u)
-    .map((item) => item.trim())
+    .split(/\s*(?:;|\s\/\s)\s*/u)
+    .map((item) => item.replace(/\s*\([A-Z]{2}\)\s*$/u, "").trim())
     .filter((item) => Boolean(item) && !/^(?:Y|N)$/iu.test(item));
+}
+
+const CTIS_CODE_PATTERN = /CTIS-(\d{2})/gu;
+
+/** The 38-technology classes the source assigned to a row, named from the catalogue. */
+function sourceTechnologyClassesV138(
+  entity: VietnamEntityV124,
+  attributes: Record<string, unknown> = reviewedEntityAttributesV132(entity)
+): string[] {
+  const projected = attributes.technologyCodes;
+  const codes = new Set<string>(
+    Array.isArray(projected) ? projected.map((code) => String(code)) : []
+  );
+  // Older projections carried the prose only; read any code still in it.
+  const basis = publicTextV126(attributes.technologyBasis) || "";
+  for (const match of basis.matchAll(CTIS_CODE_PATTERN)) codes.add(match[1]);
+  return [...codes]
+    .sort()
+    .map((code) => {
+      const definition = CLIMATE_TECHNOLOGIES[Number(code) - 1];
+      return definition ? `CTIS-${code} ${definition.nameKo}` : `CTIS-${code}`;
+    });
 }
 
 function BreakdownV132({
@@ -389,7 +452,7 @@ function BreakdownV132({
   const maximum = Math.max(1, ...rows.map((row) => row.value));
   return (
     <section className="rpa132-breakdown" data-testid={testId}>
-      <header><h3>{title}</h3><p>{description}</p></header>
+      <header><h3><PublicTermTextV134 text={title} /></h3><p><PublicTermTextV134 text={description} /></p></header>
       <ul>
         {rows.map((row) => (
           <li key={row.label} tabIndex={0} aria-label={`${row.label} ${row.value}건`}>

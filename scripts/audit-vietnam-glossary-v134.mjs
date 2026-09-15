@@ -401,7 +401,21 @@ async function exerciseActiveGviMapV134(cdp) {
     await cdp.send("Input.dispatchMouseEvent", { type: "mousePressed", x: found.x, y: found.y, button: "left", buttons: 1, clickCount: 1 });
     await cdp.send("Input.dispatchMouseEvent", { type: "mouseReleased", x: found.x, y: found.y, button: "left", buttons: 0, clickCount: 1 });
   }
-  await waitForValue(cdp, popupVisibleExpression, { timeoutMs: 10_000 });
+  // V138 presets draw the card's whole combination, so the click on a GVI
+  // region also hits the adaptation-fund participation scope (D-018) and the
+  // map opens its overlap picker instead of selecting. The picker's copy is
+  // part of the audited DOM; the GVI choice is then taken so the selected
+  // panel is audited too.
+  await waitForValue(
+    cdp,
+    `Boolean(document.querySelector('[data-testid="map-overlap-picker-v133"] button[data-map-element="B-021"]')) || Boolean(document.querySelector('[data-testid="map-feature-detail"], [data-testid="map-selected-detail-v133"]'))`,
+    { timeoutMs: 10_000 }
+  );
+  await evaluateValue(cdp, `(() => {
+    const choice = document.querySelector('[data-testid="map-overlap-picker-v133"] button[data-map-element="B-021"]');
+    if (choice instanceof HTMLButtonElement) choice.click();
+    return Boolean(choice);
+  })()`);
   await waitForValue(cdp, `Boolean(document.querySelector('[data-testid="map-feature-detail"], [data-testid="map-selected-detail-v133"]'))`, { timeoutMs: 10_000 });
   return true;
 }
@@ -423,7 +437,7 @@ try {
   const staticRoutes = [
     ["home", `${server.url}/#home`, "document.querySelectorAll('.home-featured-list button').length >= 4"],
     ["finder", `${server.url}/?country=VNM#explorer`, "document.querySelectorAll('.cdp-dataset-card').length > 0"],
-    ["map", mapUrlV134(server.url), "document.querySelectorAll('[data-map-element]').length >= 12"],
+    ["map", mapUrlV134(server.url), "document.querySelectorAll('.cdp-map-catalog-v138__item[data-map-available=\"true\"]').length >= 12"],
     ["download", `${server.url}/?country=VNM#download`, "document.querySelectorAll('.cdp-download-item').length > 0"],
     ["guide", `${server.url}/?guide=glossary#guide`, "Boolean(document.querySelector('[data-v134-glossary-directory]'))"],
   ];
@@ -441,7 +455,7 @@ try {
   // a real selectable region so popup and selected-panel copy are included.
   progress("map:active-gvi", "start");
   await navigate(browser.cdp, mapUrlV134(server.url));
-  await waitForValue(browser.cdp, `document.querySelectorAll('.cdp-layer-card[data-map-element]').length >= 12`, { timeoutMs: 30_000 });
+  await waitForValue(browser.cdp, `document.querySelectorAll('.cdp-map-catalog-v138__item[data-map-available="true"]').length >= 12`, { timeoutMs: 30_000 });
   await evaluateValue(browser.cdp, `document.querySelector('[data-testid="map-analysis-preset"][data-preset-id="CLIMATE_VULNERABILITY"]')?.click()`);
   await waitForValue(browser.cdp, `document.querySelector('[data-testid="map-public-content"]')?.getAttribute('data-primary-element') === 'B-021' && Boolean(document.querySelector('[data-testid="map-selectable-adm1-feature"][data-element-id="B-021"]'))`, { timeoutMs: 35_000 });
   mapInteractionPass = await exerciseActiveGviMapV134(browser.cdp);

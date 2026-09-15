@@ -5,6 +5,7 @@ import { resolve } from "node:path";
 import { runAuditCommand } from "./ci/run-audit-command.mjs";
 
 import { AuditV125, PROJECT_ROOT, readJson } from "./v125/audit-utils.mjs";
+import { mapLayerCountV138, mapTargetCountV138 } from "./v135/audit-helpers.mjs";
 import { finishAuditV136, reportStatusV136 } from "./v136/audit-helpers.mjs";
 
 const audit = new AuditV125("release:v136");
@@ -154,10 +155,15 @@ audit.check("INTERNAL_PUBLIC_TOKEN_COUNT", text.internalPublicTokenCount === 0, 
 audit.check("DUPLICATE_VISIBLE_COPY_COUNT", duplicate.duplicateVisibleCopyCount === 0, duplicate.duplicateVisibleCopyCount ?? null, 0);
 audit.check("AWKWARD_GENERIC_COPY_COUNT", text.awkwardGenericCopyCount === 0, text.awkwardGenericCopyCount ?? null, 0);
 
-audit.check("MAP_LAYER_COUNT", mapAccess.mapLayerCount === 12, mapAccess.mapLayerCount ?? null, 12);
-audit.check("ALL_MAP_LAYER_ACCESS_COUNT", mapAccess.allMapLayerAccessCount === 12, mapAccess.allMapLayerAccessCount ?? null, 12);
+// V138: the map's expected counts are read from map-index.json (active
+// layers) and the 43-target contract (catalogue rows), not fixed at the twelve
+// ETL layers. The twelve remain the floor.
+const expectedMapLayers = mapLayerCountV138();
+const expectedMapTargets = mapTargetCountV138();
+audit.check("MAP_LAYER_COUNT", mapAccess.mapLayerCount === expectedMapLayers && expectedMapLayers >= 12, mapAccess.mapLayerCount ?? null, expectedMapLayers);
+audit.check("ALL_MAP_LAYER_ACCESS_COUNT", mapAccess.allMapLayerAccessCount === expectedMapLayers, mapAccess.allMapLayerAccessCount ?? null, expectedMapLayers);
 audit.check("MAP_PRESET_COUNT", mapAccess.mapPresetCount === 5, mapAccess.mapPresetCount ?? null, 5);
-audit.check("MAP_DATA_ITEM_COUNT", listUi.mapDataItemCount === 12, listUi.mapDataItemCount ?? null, 12);
+audit.check("MAP_DATA_ITEM_COUNT", listUi.mapDataItemCount === expectedMapTargets && expectedMapTargets >= expectedMapLayers, listUi.mapDataItemCount ?? null, expectedMapTargets);
 audit.check("MAP_NATIVE_BULLET_COUNT", listUi.mapNativeBulletCount === 0 && controls.mapNativeBulletCount === 0, { list: listUi.mapNativeBulletCount, controls: controls.mapNativeBulletCount }, 0);
 audit.check("MAP_NATIVE_BUTTON_STYLE_COUNT", listUi.mapNativeButtonStyleCount === 0 && controls.mapNativeButtonStyleCount === 0, { list: listUi.mapNativeButtonStyleCount, controls: controls.mapNativeButtonStyleCount }, 0);
 audit.check("MAP_ITEM_DUPLICATE_TITLE_COUNT", listUi.mapItemDuplicateTitleCount === 0, listUi.mapItemDuplicateTitleCount ?? null, 0);
@@ -179,7 +185,7 @@ audit.check("FINDER_AUTO_LOAD_SEQUENCE", JSON.stringify(scroll.autoLoadSequence)
 audit.check("FINDER_DUPLICATE_CARD_COUNT", scroll.duplicateCardCount === 0, scroll.duplicateCardCount ?? null, 0);
 audit.check("FINDER_HUMAN_REVIEW_COUNT", review.finderHumanReviewCount === 152, review.finderHumanReviewCount ?? null, 152);
 audit.check("DETAIL_HUMAN_REVIEW_COUNT", review.detailHumanReviewCount === 152, review.detailHumanReviewCount ?? null, 152);
-audit.check("MAP_DATASET_HUMAN_REVIEW_COUNT", review.mapDatasetHumanReviewCount === 12, review.mapDatasetHumanReviewCount ?? null, 12);
+audit.check("MAP_DATASET_HUMAN_REVIEW_COUNT", review.mapDatasetHumanReviewCount === expectedMapLayers, review.mapDatasetHumanReviewCount ?? null, expectedMapLayers);
 audit.check("UNRESOLVED_REWRITE_COUNT", review.unresolvedRewriteCount === 0, review.unresolvedRewriteCount ?? null, 0);
 audit.check("UNRESOLVED_REMOVE_COUNT", review.unresolvedRemoveCount === 0, review.unresolvedRemoveCount ?? null, 0);
 audit.check("V136_1_REGRESSION", statuses.finderScroll === "PASS" && statuses.humanReview === "PASS", { finderScroll: statuses.finderScroll, humanReview: statuses.humanReview }, "PASS");

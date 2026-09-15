@@ -1,0 +1,202 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "VNM",
+  "elementId": "C-010",
+  "generatedAt": "2026-09-01T00:00:00Z",
+  "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+  "joinKey": "adm1Code",
+  "boundarySystem": "pre-2025-63",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2021–2025",
+    "defaultVariable": "local-document-count",
+    "periods": [
+      "2021–2025"
+    ],
+    "variables": [
+      {
+        "key": "local-document-count",
+        "measureId": "c010-local-docs",
+        "measureKey": "local-document-count",
+        "scenario": null,
+        "label": "지방 환경 법제도 문서 수",
+        "unit": "건",
+        "periods": [
+          "2021–2025"
+        ],
+        "maxFeatureCount": 4
+      }
+    ]
+  },
+  "values": [
+    {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "variable": "local-document-count",
+      "variableLabel": "지방 환경 법제도 문서 수",
+      "period": "2021–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-010_law_name_vanban_chinhphu",
+      "sourceRecordId": "v124-c-010-entity-00016",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "variable": "local-document-count",
+      "variableLabel": "지방 환경 법제도 문서 수",
+      "period": "2021–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-010_law_name_vanban_chinhphu",
+      "sourceRecordId": "v124-c-010-entity-00017",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-13",
+      "adm1Name": "Quảng Ninh",
+      "variable": "local-document-count",
+      "variableLabel": "지방 환경 법제도 문서 수",
+      "period": "2021–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-010_law_name_vanban_chinhphu",
+      "sourceRecordId": "v124-c-010-entity-00018",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-DN",
+      "adm1Name": "Đà Nẵng",
+      "variable": "local-document-count",
+      "variableLabel": "지방 환경 법제도 문서 수",
+      "period": "2021–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-010_law_name_vea_mae",
+      "sourceRecordId": "v124-c-010-entity-00030",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    }
+  ],
+  "memberRecords": {
+    "VN-30": [
+      {
+        "recordId": "v124-c-010-entity-00016",
+        "label": "Gia Lai Kế hoạch 2810/KH-UBND",
+        "date": "2022",
+        "status": "",
+        "value": "",
+        "url": "https://vanban.chinhphu.vn/?pageid=27160&docid=212284",
+        "indicatorId": "C-010_law_name_vanban_chinhphu"
+      }
+    ],
+    "VN-22": [
+      {
+        "recordId": "v124-c-010-entity-00017",
+        "label": "Nghệ An Quyết định 3560/QĐ-UBND",
+        "date": "2023-11-01",
+        "status": "",
+        "value": "",
+        "url": "https://vanban.chinhphu.vn/?pageid=27160&docid=212284",
+        "indicatorId": "C-010_law_name_vanban_chinhphu"
+      }
+    ],
+    "VN-13": [
+      {
+        "recordId": "v124-c-010-entity-00018",
+        "label": "Quảng Ninh Quyết định 1318/QĐ-UBND",
+        "date": "2024-06-05",
+        "status": "",
+        "value": "",
+        "url": "https://vanban.chinhphu.vn/?pageid=27160&docid=212284",
+        "indicatorId": "C-010_law_name_vanban_chinhphu"
+      }
+    ],
+    "VN-DN": [
+      {
+        "recordId": "v124-c-010-entity-00030",
+        "label": "Đà Nẵng Quyết định 2609/QĐ-UBND",
+        "date": "2021-07-30",
+        "status": "",
+        "value": "",
+        "url": "https://danang.gov.vn/vi/w/quyet-dinh-2609qd-ubnd-vv-phe-duyet-ke-hoach-hanh-dong-ung-pho-voi-bien-doi-khi-hau-thanh-pho-da-nang-giai-doan-2021-2030-tam-nhin-den-nam-2050-i",
+        "indicatorId": "C-010_law_name_vea_mae"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "local-document-count",
+      "period": "2021–2025",
+      "expectedCount": 63,
+      "matchedCount": 4,
+      "missingCount": 59,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "attribution": [
+      "Legal document reference: LuatVietnam (INCOM). Factual citation only.",
+      "Legal document reference: ThuVienPhapLuat / LawNet. Factual citation only.",
+      "Press/industry publication reference. Factual citation only.",
+      "Source: 베트남 정부 공보 / LuatVietnam",
+      "Source: 베트남 정부 공보(vanban.chinhphu.vn)"
+    ],
+    "licenses": [
+      "INCOM(LuatVietnam) 이용약관 — 서면 허가 필요",
+      "국제기구·공공기관 공개자료 — 출처 표기 조건",
+      "베트남 법령 원문 — 지식재산법 제15조상 저작권 비보호",
+      "베트남 정부 공보 이용약관",
+      "베트남 지식재산법 제15조 — 법률규범문서 저작권 비보호",
+      "상업 법령DB 이용약관 — 재배포 서면 허가 필요",
+      "언론·전문지 저작권 유보 — 인용 시 출처 표기"
+    ],
+    "organizations": [
+      "베트남 정부 — Nghị định 05/2025/NĐ-CP (환경보호법 시행령 08/2022 개정)",
+      "베트남 정부 공보 / LuatVietnam",
+      "베트남 정부 공보(vanban.chinhphu.vn)"
+    ],
+    "urls": [
+      "https://danang.gov.vn/vi/w/quyet-dinh-2609qd-ubnd-vv-phe-duyet-ke-hoach-hanh-dong-ung-pho-voi-bien-doi-khi-hau-thanh-pho-da-nang-giai-doan-2021-2030-tam-nhin-den-nam-2050-i",
+      "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/146-qh15-2025.signed.pdf",
+      "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/48-cp.signed.pdf",
+      "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/4/110-ndcp.signed.pdf",
+      "https://english.luatvietnam.vn/decree-no-08-2022-nd-cp-detailing-a-number-of-articles-of-the-law-on-environmental-protection-215632-doc1.html",
+      "https://enviliance.com/regions/southeast-asia/vn/report_13103",
+      "https://enviliance.com/regions/southeast-asia/vn/report_9904",
+      "https://lawnet.vn/en/vb/Decision-149-QD-TTg-2022-Approving-the-national-strategy-for-biodiversity-until-2030-7CCE6.html",
+      "https://luatvietnam.vn/",
+      "https://thuvienphapluat.vn/phap-luat/ho-tro-phap-luat/sap-nhap-tinh-co-hieu-luc-khi-nao-nam-2025-viet-nam-sau-sap-nhap-con-bao-nhieu-tinh-63-tinh-gop-lai-950580-221296.html",
+      "https://thuvienphapluat.vn/van-ban/EN/Tai-nguyen-Moi-truong/Law-28-2023-QH15-Water-Resources/594492/tieng-anh.aspx",
+      "https://thuvienphapluat.vn/van-ban/EN/Tai-nguyen-Moi-truong/Law-No-20-2008-QH12-of-November-13-2008-on-biodiversity/88506/tieng-anh.aspx",
+      "https://thuvienphapluat.vn/van-ban/Tai-nguyen-Moi-truong/Ke-hoach-2810-KH-UBND-2022-thuc-hien-Quyet-dinh-896-QD-TTg-Chien-luoc-ve-bien-doi-khi-hau-Gia-Lai-542600.aspx",
+      "https://thuvienphapluat.vn/van-ban/Thuong-mai/Quyet-dinh-1318-QD-UBND-2024-phe-duyet-Ke-hoach-hanh-dong-tang-truong-xanh-Quang-Ninh-610666.aspx",
+      "https://thuvienphapluat.vn/van-ban/Thuong-mai/Quyet-dinh-3560-QD-UBND-2023-Ke-hoach-hanh-dong-tang-truong-xanh-Nghe-An-2021-2030-584956.aspx",
+      "https://thuvienphapluat.vn/van-ban/Xay-dung-Do-thi/Quyet-dinh-219-QD-TTg-2022-phe-duyet-Quy-hoach-tinh-Bac-Giang-thoi-ky-2021-2030-503751.aspx",
+      "https://vanban.chinhphu.vn/?pageid=27160&docid=212294",
+      "https://vbpl.vn/van-ban/dia-phuong",
+      "https://vea.mae.gov.vn/Data/files/2025/DECREE%2005_2025_ND_CP.pdf",
+      "https://www.informea.org/en/content/legislation/national-technical-regulation-ambient-air-quality-qcvn-05-2023btnmt"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 63,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 4,
+    "maxSeriesFeatureCount": 4,
+    "missingAdm1Count": 59,
+    "providedZeroCount": 0,
+    "publishedValueCount": 4,
+    "sourceValueCount": 4,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0
+  }
+}

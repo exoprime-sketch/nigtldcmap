@@ -1,4 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
+import { revealMapDataset } from "./helpers";
 
 /**
  * The five widths the service has to work at.
@@ -78,7 +79,7 @@ for (const width of WIDTHS) {
       const panel = page.getByTestId("map-layer-panel");
       const collapsed = await panel.evaluate((el) => el.classList.contains("is-collapsed"));
       if (collapsed) await page.locator('[data-testid="map-layer-panel"] .cdp-map-panel-toggle').click();
-      const layer = page.locator('[data-testid="map-all-data-layer-v135"]').first();
+      const layer = await revealMapDataset(page, "A-023");
       await expect(layer).toBeVisible();
       // The list scrolls; a reader scrolls it. What matters is that the button
       // can be brought into view and pressed, not where it starts.
@@ -95,13 +96,7 @@ for (const width of WIDTHS) {
         undefined,
         { timeout: 60_000 }
       );
-      const panel = page.getByTestId("map-layer-panel");
-      const collapsed = await panel.evaluate((el) => el.classList.contains("is-collapsed"));
-      if (collapsed) await page.locator('[data-testid="map-layer-panel"] .cdp-map-panel-toggle').click();
-      const button = page.locator(
-        '[data-testid="map-all-data-layer-v135"][data-element-id="A-024"]'
-      );
-      await button.scrollIntoViewIfNeeded();
+      const button = await revealMapDataset(page, "A-024");
       await button.click();
       await expect(page.getByTestId("map-public-content")).toHaveAttribute(
         "data-primary-element",

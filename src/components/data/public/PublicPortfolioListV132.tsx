@@ -2,7 +2,10 @@ import { useMemo, useState } from "react";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { resolvePublicEntityTitleV131 } from "../../../data/visualization/publicEntityTitleV131";
 import PublicEntityCardGridV131 from "./PublicEntityCardGridV131";
-import { publicPortfolioFacetV132 } from "./PublicPortfolioSummaryV132";
+import {
+  publicPortfolioFacetV132,
+  publicPortfolioRecordLabelV138,
+} from "./PublicPortfolioSummaryV132";
 
 import "./public-portfolio-list-v132.css";
 
@@ -84,7 +87,7 @@ export default function PublicPortfolioListV132({
             "사업·재원 찾아보기" was two labels for the same thing, under a
             section already called the same again. */}
         <div>
-          <h4>사업 목록</h4>
+          <h4>{`${publicPortfolioRecordLabelV138(elementId)} 목록`}</h4>
         </div>
         <strong aria-live="polite">{filtered.length.toLocaleString("ko-KR")}건</strong>
       </header>
@@ -92,7 +95,7 @@ export default function PublicPortfolioListV132({
       <div
         className="ppl132-filters"
         role="search"
-        aria-label="사업·재원 목록 필터"
+        aria-label={`${publicPortfolioRecordLabelV138(elementId)} 목록 필터`}
         data-testid="portfolio-list-filters-v132"
       >
         <label>

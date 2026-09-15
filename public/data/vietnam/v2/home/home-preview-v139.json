@@ -1,0 +1,592 @@
+{
+  "schemaVersion": "v139-home-preview-2",
+  "dataSnapshot": "2026-08-27T00:00:00Z",
+  "generatedFrom": "public packs (bundle-index-v124) and geometry/*.geojson",
+  "map": {
+    "elementId": "A-024",
+    "svgUrl": "/data/vietnam/v2/home/transmission-preview-v139.svg",
+    "title": "베트남 송전망",
+    "subtitle": "전압별 송전선 분포 · 2016년",
+    "provider": "World Bank (ENERGYDATA.INFO)",
+    "attribution": "World Bank Group / ENERGYDATA.INFO, Vietnam - Electricity Transmission Network (2016), CC BY 4.0 · 경계 geoBoundaries (William & Mary geoLab), VNM ADM1, boundary year 2008, build 2023-12-12 (CC BY 4.0)",
+    "segments": 606,
+    "totalLengthKm": 23608,
+    "legend": [
+      {
+        "kv": 500,
+        "color": "#c2410c",
+        "segments": 32,
+        "lengthKm": 4092
+      },
+      {
+        "kv": 220,
+        "color": "#0f766e",
+        "segments": 143,
+        "lengthKm": 7201
+      },
+      {
+        "kv": 110,
+        "color": "#7aa8a0",
+        "segments": 431,
+        "lengthKm": 12314
+      }
+    ],
+    "accuracy": "원천 PDF를 좌표화한 자료로 2–10 km 위치 오차가 있을 수 있습니다. 선의 교차는 전기적 접속을 뜻하지 않습니다.",
+    "plannedNote": "개정 PDP8 선로 116행(계획 68행 포함)은 경로 좌표가 없어 이 지도에는 없고 상세 목록에만 있습니다."
+  },
+  "cards": [
+    {
+      "elementId": "A-002",
+      "kind": "signed-bars",
+      "lead": "여섯 거버넌스 영역의 추정치를 비교하고 1996년부터의 변화를 확인할 수 있습니다.",
+      "question": "베트남의 거버넌스 여섯 영역은 각각 어느 수준인가?",
+      "headline": {
+        "value": "−1.10 ~ +0.01",
+        "label": "2024년 여섯 영역 추정치 범위 · −2.5 약함 ~ +2.5 강함"
+      },
+      "unit": "추정치(−2.5 약함 ~ +2.5 강함)",
+      "period": "2024년 값 · 1996–2024년 제공",
+      "provider": "World Bank · 세계 거버넌스 지표(WGI)",
+      "domain": [
+        -2.5,
+        2.5
+      ],
+      "bars": [
+        {
+          "label": "시민참여·책임성",
+          "value": -1.1
+        },
+        {
+          "label": "정치 안정",
+          "value": 0.01
+        },
+        {
+          "label": "정부 효과성",
+          "value": -0.09
+        },
+        {
+          "label": "규제의 질",
+          "value": -0.27
+        },
+        {
+          "label": "법치",
+          "value": -0.31
+        },
+        {
+          "label": "부패 통제",
+          "value": -0.25
+        }
+      ],
+      "note": "백분위 순위는 다른 척도이므로 함께 그리지 않습니다."
+    },
+    {
+      "elementId": "A-003",
+      "kind": "line",
+      "lead": "국내총생산의 연도별 추이와 성장률을 확인할 수 있습니다.",
+      "question": "국내총생산은 어떻게 변해왔나?",
+      "headline": {
+        "value": "514.7",
+        "label": "10억 미국달러 · 2025년 명목 국내총생산"
+      },
+      "unit": "10억 미국달러(명목, 현재 가격)",
+      "period": "1985–2025년",
+      "provider": "World Bank 국가 통계",
+      "series": [
+        {
+          "year": 1985,
+          "value": 14.1
+        },
+        {
+          "year": 1986,
+          "value": 26.3
+        },
+        {
+          "year": 1987,
+          "value": 36.7
+        },
+        {
+          "year": 1988,
+          "value": 25.4
+        },
+        {
+          "year": 1989,
+          "value": 6.3
+        },
+        {
+          "year": 1990,
+          "value": 6.5
+        },
+        {
+          "year": 1991,
+          "value": 9.6
+        },
+        {
+          "year": 1992,
+          "value": 9.9
+        },
+        {
+          "year": 1993,
+          "value": 13.2
+        },
+        {
+          "year": 1994,
+          "value": 16.3
+        },
+        {
+          "year": 1995,
+          "value": 20.7
+        },
+        {
+          "year": 1996,
+          "value": 24.7
+        },
+        {
+          "year": 1997,
+          "value": 26.8
+        },
+        {
+          "year": 1998,
+          "value": 27.2
+        },
+        {
+          "year": 1999,
+          "value": 28.7
+        },
+        {
+          "year": 2000,
+          "value": 31.2
+        },
+        {
+          "year": 2001,
+          "value": 32.7
+        },
+        {
+          "year": 2002,
+          "value": 35.1
+        },
+        {
+          "year": 2003,
+          "value": 39.6
+        },
+        {
+          "year": 2004,
+          "value": 45.4
+        },
+        {
+          "year": 2005,
+          "value": 57.6
+        },
+        {
+          "year": 2006,
+          "value": 66.4
+        },
+        {
+          "year": 2007,
+          "value": 77.4
+        },
+        {
+          "year": 2008,
+          "value": 99.1
+        },
+        {
+          "year": 2009,
+          "value": 106
+        },
+        {
+          "year": 2010,
+          "value": 147.2
+        },
+        {
+          "year": 2011,
+          "value": 172.6
+        },
+        {
+          "year": 2012,
+          "value": 195.6
+        },
+        {
+          "year": 2013,
+          "value": 213.7
+        },
+        {
+          "year": 2014,
+          "value": 233.5
+        },
+        {
+          "year": 2015,
+          "value": 239.3
+        },
+        {
+          "year": 2016,
+          "value": 257.1
+        },
+        {
+          "year": 2017,
+          "value": 281.4
+        },
+        {
+          "year": 2018,
+          "value": 310.1
+        },
+        {
+          "year": 2019,
+          "value": 334.4
+        },
+        {
+          "year": 2020,
+          "value": 346.6
+        },
+        {
+          "year": 2021,
+          "value": 366.5
+        },
+        {
+          "year": 2022,
+          "value": 413.4
+        },
+        {
+          "year": 2023,
+          "value": 433.8
+        },
+        {
+          "year": 2024,
+          "value": 476.3
+        },
+        {
+          "year": 2025,
+          "value": 514.7
+        }
+      ],
+      "latest": {
+        "year": 2025,
+        "value": 514.7
+      },
+      "note": "명목 달러 계열 하나만 그립니다. 실질·구매력평가 계열은 상세에서 따로 제공합니다."
+    },
+    {
+      "elementId": "A-010",
+      "kind": "composition",
+      "lead": "온실가스 종류별 배출량의 구성과 1970년부터의 변화를 확인할 수 있습니다.",
+      "question": "온실가스는 어떤 가스에서 얼마나 배출되나?",
+      "headline": {
+        "value": "582.7",
+        "label": "Mt CO₂eq · 2024년 네 가스 합계"
+      },
+      "unit": "Mt CO₂eq (GWP-100, AR5)",
+      "period": "2024년 구성 · 1970–2024년 제공",
+      "provider": "European Commission JRC · EDGAR",
+      "parts": [
+        {
+          "label": "CO₂",
+          "value": 430.8
+        },
+        {
+          "label": "CH₄",
+          "value": 114.9
+        },
+        {
+          "label": "N₂O",
+          "value": 26.1
+        },
+        {
+          "label": "F-gas",
+          "value": 10.9
+        }
+      ],
+      "total": 582.7,
+      "note": "네 가스를 같은 환산 단위로 나란히 둔 구성입니다. 원천은 별도 총계 행을 제공하지 않습니다."
+    },
+    {
+      "elementId": "A-023",
+      "kind": "grouped-bars",
+      "lead": "발전소 위치와 발전원별 분포, 설비용량을 지도와 목록으로 확인할 수 있습니다.",
+      "question": "발전소는 어떤 발전원으로 얼마나 있나?",
+      "headline": {
+        "value": "41,350 MW",
+        "label": "WRI 수록 발전소 설비용량 합계 · 2021년"
+      },
+      "unit": "원천 수록 행(곳)",
+      "period": "WRI GPPD v1.3.0(2021) · OSM 2026년 추출",
+      "provider": "World Resources Institute · OpenStreetMap 기여자",
+      "seriesLabels": [
+        "WRI",
+        "OSM"
+      ],
+      "groups": [
+        {
+          "label": "태양광",
+          "values": [
+            16,
+            1213
+          ]
+        },
+        {
+          "label": "수력",
+          "values": [
+            174,
+            422
+          ]
+        },
+        {
+          "label": "석탄",
+          "values": [
+            24,
+            36
+          ]
+        },
+        {
+          "label": "풍력",
+          "values": [
+            5,
+            38
+          ]
+        },
+        {
+          "label": "가스",
+          "values": [
+            9,
+            9
+          ]
+        },
+        {
+          "label": "석유",
+          "values": [
+            6,
+            2
+          ]
+        }
+      ],
+      "rowsBySource": {
+        "WRI": 236,
+        "OSM": 1727
+      },
+      "note": "두 원천(WRI 236행 · OSM 1,727행)은 공통 식별자가 없어 고유 발전소 수로 합치지 않습니다."
+    },
+    {
+      "elementId": "A-024",
+      "kind": "map",
+      "lead": "송전선 경로와 전압별 분포를 지도에서 확인할 수 있습니다.",
+      "question": "송전선은 어디에, 어떤 전압으로 놓여 있나?",
+      "headline": {
+        "value": "23,608 km",
+        "label": "2016년 송전선 606구간 총연장"
+      },
+      "unit": "kV · 구간 수 · km",
+      "period": "2016년 선로(경로 있음) · 계획 선로는 목록",
+      "provider": "World Bank (ENERGYDATA.INFO)",
+      "svgUrl": "/data/vietnam/v2/home/transmission-preview-v139.svg",
+      "legend": [
+        {
+          "kv": 500,
+          "color": "#c2410c",
+          "segments": 32,
+          "lengthKm": 4092
+        },
+        {
+          "kv": 220,
+          "color": "#0f766e",
+          "segments": 143,
+          "lengthKm": 7201
+        },
+        {
+          "kv": 110,
+          "color": "#7aa8a0",
+          "segments": 431,
+          "lengthKm": 12314
+        }
+      ],
+      "note": "개정 PDP8 선로 116행(계획 68행 포함)은 경로 좌표가 없어 이 지도에는 없고 상세 목록에만 있습니다."
+    },
+    {
+      "elementId": "B-033",
+      "kind": "line",
+      "lead": "성·시별 연간 산림(수관) 손실과 누적 변화를 확인할 수 있습니다.",
+      "question": "산림손실은 어디에서 얼마나 큰가?",
+      "headline": {
+        "value": "11,728 ha",
+        "label": "Quảng Ninh · 2024년 손실이 가장 큰 성·시"
+      },
+      "unit": "ha/년 · 수관 밀도 30% 기준",
+      "period": "2001–2024년",
+      "provider": "Global Forest Watch (UMD/WRI)",
+      "seriesLabel": "Quảng Ninh · 2024년 손실이 가장 큰 성·시",
+      "series": [
+        {
+          "year": 2001,
+          "value": 1343
+        },
+        {
+          "year": 2002,
+          "value": 474
+        },
+        {
+          "year": 2003,
+          "value": 861
+        },
+        {
+          "year": 2004,
+          "value": 1743
+        },
+        {
+          "year": 2005,
+          "value": 1811
+        },
+        {
+          "year": 2006,
+          "value": 1987
+        },
+        {
+          "year": 2007,
+          "value": 3977
+        },
+        {
+          "year": 2008,
+          "value": 2082
+        },
+        {
+          "year": 2009,
+          "value": 3749
+        },
+        {
+          "year": 2010,
+          "value": 2912
+        },
+        {
+          "year": 2011,
+          "value": 2278
+        },
+        {
+          "year": 2012,
+          "value": 4839
+        },
+        {
+          "year": 2013,
+          "value": 8047
+        },
+        {
+          "year": 2014,
+          "value": 10980
+        },
+        {
+          "year": 2015,
+          "value": 6165
+        },
+        {
+          "year": 2016,
+          "value": 13535
+        },
+        {
+          "year": 2017,
+          "value": 12955
+        },
+        {
+          "year": 2018,
+          "value": 12714
+        },
+        {
+          "year": 2019,
+          "value": 11232
+        },
+        {
+          "year": 2020,
+          "value": 12718
+        },
+        {
+          "year": 2021,
+          "value": 10491
+        },
+        {
+          "year": 2022,
+          "value": 10459
+        },
+        {
+          "year": 2023,
+          "value": 7635
+        },
+        {
+          "year": 2024,
+          "value": 11728
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "value": 11728
+      },
+      "note": "63개 성·시 계열 중 한 곳입니다. 원천은 전국 계열을 제공하지 않으며, 성·시 값을 더해 전국값으로 만들지 않습니다."
+    },
+    {
+      "elementId": "C-016",
+      "kind": "bars",
+      "lead": "재생에너지 기술별·기간별 성·시 계획용량을 비교할 수 있습니다.",
+      "question": "재생에너지 계획용량은 어느 성·시에 집중되나?",
+      "headline": {
+        "value": "27,385 MW",
+        "label": "63개 성·시 합계 · 집중형 태양광 2025–2030년 계획"
+      },
+      "unit": "MW(계획 용량)",
+      "period": "2025–2030년 · 집중형 태양광",
+      "provider": "베트남 총리실 · 산업무역부(MOIT), 개정 PDP8 부록 II",
+      "bars": [
+        {
+          "label": "Sơn La",
+          "value": 3674
+        },
+        {
+          "label": "Đắk Lắk",
+          "value": 3349
+        },
+        {
+          "label": "Ninh Thuận",
+          "value": 1974
+        },
+        {
+          "label": "Yên Bái",
+          "value": 1656
+        },
+        {
+          "label": "Đắk Nông",
+          "value": 1294
+        },
+        {
+          "label": "Lai Châu",
+          "value": 1086
+        }
+      ],
+      "scope": "63개 성·시 중 상위 6곳 · 합계 27,385 MW",
+      "note": "Quyết định 768/QĐ-TTg (2025-04-15)의 계획 용량이며 설치 실적이 아닙니다."
+    },
+    {
+      "elementId": "D-023",
+      "kind": "composition",
+      "lead": "기후재원 기금별 사업 수와 사업 유형, 기간을 확인할 수 있습니다.",
+      "question": "기후재원 사업은 어느 기금에 얼마나 있나?",
+      "headline": {
+        "value": "71건",
+        "label": "4개 기금의 개별 사업 · 1991–2026년 승인·등록 사업"
+      },
+      "unit": "사업 수(건)",
+      "period": "1991–2026년 승인·등록 사업",
+      "provider": "GCF · GEF · 적응기금 · CIF 공개 사업 목록",
+      "parts": [
+        {
+          "label": "GEF",
+          "value": 53
+        },
+        {
+          "label": "GCF",
+          "value": 8
+        },
+        {
+          "label": "CIF(CTF)",
+          "value": 6
+        },
+        {
+          "label": "적응기금",
+          "value": 4
+        }
+      ],
+      "total": 71,
+      "note": "같은 기준(개별 사업 행 수)으로 센 구성입니다. 승인액은 통화·기간·집행 단계가 달라 합산하지 않습니다."
+    }
+  ]
+}

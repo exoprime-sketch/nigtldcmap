@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v134-context-glossary-analysis-audit-1",
-  "generatedAt": "2026-09-13T23:28:14.781Z",
+  "generatedAt": "2026-09-15T23:21:50.222Z",
   "audit": "drought-analysis:v134",
   "status": "PASS",
   "summary": {
@@ -15,7 +15,7 @@
     "cddYearRange": "1950–2100",
     "speiScenarioCount": 6,
     "speiScenarioLabels": [
-      "과거 관측",
+      "과거 모형(historical)",
       "SSP1-1.9",
       "SSP1-2.6",
       "SSP2-4.5",
@@ -106,7 +106,7 @@
       "audit": "drought-analysis:v134",
       "name": "B005_SCENARIO_RENDERER",
       "status": "PASS",
-      "actual": "PublicRegionScenarioSummaryV137 wired",
+      "actual": "PublicRegionScenarioSummaryV138 wired",
       "expected": "wired"
     },
     {
@@ -138,7 +138,7 @@
       "audit": "drought-analysis:v134",
       "name": "B005_SPEI_MEASURE_ON_SCREEN",
       "status": "PASS",
-      "actual": "표준강수증발산지수 SPEI12 · 1951~2100년 · 성·시 값의 분위",
+      "actual": "표준강수증발산지수(SPEI-12) (지수) · 1951~2100년 · 성·시 값의 분위 · 처음·마지막 연도와 변화",
       "expected": "SPEI with 1951~2100"
     },
     {
@@ -156,7 +156,7 @@
       "status": "PASS",
       "actual": {
         "shown": [
-          "과거 관측",
+          "과거 모형(historical)",
           "SSP1-1.9",
           "SSP1-2.6",
           "SSP2-4.5",
@@ -167,7 +167,7 @@
       },
       "expected": {
         "shown": [
-          "과거 관측",
+          "과거 모형(historical)",
           "SSP1-1.9",
           "SSP1-2.6",
           "SSP2-4.5",
@@ -241,7 +241,7 @@
   "cddYearRange": "1950–2100",
   "speiScenarioCount": 6,
   "speiScenarioLabels": [
-    "과거 관측",
+    "과거 모형(historical)",
     "SSP1-1.9",
     "SSP1-2.6",
     "SSP2-4.5",
