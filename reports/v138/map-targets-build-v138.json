@@ -1,0 +1,1070 @@
+{
+  "schema": "map-targets-build-v138",
+  "generatedAt": "2026-09-14T22:56:01.457Z",
+  "dataRoot": "/public/data/vietnam/v2",
+  "targetCount": 43,
+  "counts": {
+    "implemented": 28,
+    "partial": 14,
+    "notConnected": 1
+  },
+  "activeMapLayerCount": 42,
+  "mapFeatureCount": 4463,
+  "crosswalk34": [
+    {
+      "region": "An Giang",
+      "key": "an giang",
+      "memberAdm1Codes": [
+        "VN-44",
+        "VN-47"
+      ]
+    },
+    {
+      "region": "Bắc Ninh",
+      "key": "bac ninh",
+      "memberAdm1Codes": [
+        "VN-54",
+        "VN-56"
+      ]
+    },
+    {
+      "region": "Cao Bằng",
+      "key": "cao bang",
+      "memberAdm1Codes": [
+        "VN-04"
+      ]
+    },
+    {
+      "region": "Cà Mau",
+      "key": "ca mau",
+      "memberAdm1Codes": [
+        "VN-55",
+        "VN-59"
+      ]
+    },
+    {
+      "region": "Cần Thơ",
+      "key": "can tho",
+      "memberAdm1Codes": [
+        "VN-52",
+        "VN-73",
+        "VN-CT"
+      ]
+    },
+    {
+      "region": "Gia Lai",
+      "key": "gia lai",
+      "memberAdm1Codes": [
+        "VN-30",
+        "VN-31"
+      ]
+    },
+    {
+      "region": "Huế",
+      "key": "hue",
+      "memberAdm1Codes": [
+        "VN-26"
+      ]
+    },
+    {
+      "region": "Hà Nội",
+      "key": "ha noi",
+      "memberAdm1Codes": [
+        "VN-HN"
+      ]
+    },
+    {
+      "region": "Hà Tĩnh",
+      "key": "ha",
+      "memberAdm1Codes": [
+        "VN-23"
+      ]
+    },
+    {
+      "region": "Hưng Yên",
+      "key": "hung yen",
+      "memberAdm1Codes": [
+        "VN-20",
+        "VN-66"
+      ]
+    },
+    {
+      "region": "Hải Phòng",
+      "key": "hai phong",
+      "memberAdm1Codes": [
+        "VN-61",
+        "VN-HP"
+      ]
+    },
+    {
+      "region": "Hồ Chí Minh",
+      "key": "ho chi minh",
+      "memberAdm1Codes": [
+        "VN-43",
+        "VN-57",
+        "VN-SG"
+      ]
+    },
+    {
+      "region": "Khánh Hòa",
+      "key": "khanh hoa",
+      "memberAdm1Codes": [
+        "VN-34",
+        "VN-36"
+      ]
+    },
+    {
+      "region": "Lai Châu",
+      "key": "lai chau",
+      "memberAdm1Codes": [
+        "VN-01"
+      ]
+    },
+    {
+      "region": "Lào Cai",
+      "key": "lao cai",
+      "memberAdm1Codes": [
+        "VN-02",
+        "VN-06"
+      ]
+    },
+    {
+      "region": "Lâm Đồng",
+      "key": "lam dong",
+      "memberAdm1Codes": [
+        "VN-35",
+        "VN-40",
+        "VN-72"
+      ]
+    },
+    {
+      "region": "Lạng Sơn",
+      "key": "lang son",
+      "memberAdm1Codes": [
+        "VN-09"
+      ]
+    },
+    {
+      "region": "Nghệ An",
+      "key": "nghe an",
+      "memberAdm1Codes": [
+        "VN-22"
+      ]
+    },
+    {
+      "region": "Ninh Bình",
+      "key": "ninh binh",
+      "memberAdm1Codes": [
+        "VN-18",
+        "VN-63",
+        "VN-67"
+      ]
+    },
+    {
+      "region": "Phú Thọ",
+      "key": "phu tho",
+      "memberAdm1Codes": [
+        "VN-14",
+        "VN-68",
+        "VN-70"
+      ]
+    },
+    {
+      "region": "Quảng Ngãi",
+      "key": "quang ngai",
+      "memberAdm1Codes": [
+        "VN-28",
+        "VN-29"
+      ]
+    },
+    {
+      "region": "Quảng Ninh",
+      "key": "quang ninh",
+      "memberAdm1Codes": [
+        "VN-13"
+      ]
+    },
+    {
+      "region": "Quảng Trị",
+      "key": "quang tri",
+      "memberAdm1Codes": [
+        "VN-24",
+        "VN-25"
+      ]
+    },
+    {
+      "region": "Sơn La",
+      "key": "son la",
+      "memberAdm1Codes": [
+        "VN-05"
+      ]
+    },
+    {
+      "region": "Thanh Hóa",
+      "key": "thanh hoa",
+      "memberAdm1Codes": [
+        "VN-21"
+      ]
+    },
+    {
+      "region": "Thái Nguyên",
+      "key": "thai nguyen",
+      "memberAdm1Codes": [
+        "VN-53",
+        "VN-69"
+      ]
+    },
+    {
+      "region": "Tuyên Quang",
+      "key": "tuyen quang",
+      "memberAdm1Codes": [
+        "VN-03",
+        "VN-07"
+      ]
+    },
+    {
+      "region": "Tây Ninh",
+      "key": "tay ninh",
+      "memberAdm1Codes": [
+        "VN-37",
+        "VN-41"
+      ]
+    },
+    {
+      "region": "Vĩnh Long",
+      "key": "vinh long",
+      "memberAdm1Codes": [
+        "VN-49",
+        "VN-50",
+        "VN-51"
+      ]
+    },
+    {
+      "region": "Điện Biên",
+      "key": "dien bien",
+      "memberAdm1Codes": [
+        "VN-71"
+      ]
+    },
+    {
+      "region": "Đà Nẵng",
+      "key": "da nang",
+      "memberAdm1Codes": [
+        "VN-27",
+        "VN-DN"
+      ]
+    },
+    {
+      "region": "Đắk Lắk",
+      "key": "dak lak",
+      "memberAdm1Codes": [
+        "VN-32",
+        "VN-33"
+      ]
+    },
+    {
+      "region": "Đồng Nai",
+      "key": "dong nai",
+      "memberAdm1Codes": [
+        "VN-39",
+        "VN-58"
+      ]
+    },
+    {
+      "region": "Đồng Tháp",
+      "key": "dong thap",
+      "memberAdm1Codes": [
+        "VN-45",
+        "VN-46"
+      ]
+    }
+  ],
+  "targets": [
+    {
+      "elementId": "A-023",
+      "status": "implemented",
+      "representation": "point",
+      "build": "existing",
+      "featureCount": 1889,
+      "patched": [
+        "analysisItemLabel",
+        "countNoun"
+      ]
+    },
+    {
+      "elementId": "A-024",
+      "status": "implemented",
+      "representation": "line",
+      "build": "existing",
+      "featureCount": 606,
+      "patched": []
+    },
+    {
+      "elementId": "A-025",
+      "status": "implemented",
+      "representation": "point",
+      "build": "entities",
+      "sourceRowCount": 5,
+      "sourceCoordinateCount": 3,
+      "featureCount": 3,
+      "memberRowCount": 3,
+      "approximateCount": 0,
+      "excludedCount": 2,
+      "excluded": [
+        {
+          "recordId": "v124-a-025-entity-00003",
+          "reason": "no-coordinate"
+        },
+        {
+          "recordId": "v124-a-025-entity-00004",
+          "reason": "no-coordinate"
+        }
+      ],
+      "filters": [
+        "구분(3)"
+      ]
+    },
+    {
+      "elementId": "B-003",
+      "status": "implemented",
+      "representation": "admin1-choropleth",
+      "build": "admin1-attributes",
+      "sourceRowCount": 7875,
+      "publishedValueCount": 6552,
+      "seriesCount": 104,
+      "variableCount": 4,
+      "periodCount": 26,
+      "matchedAdm1Count": 63,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 0,
+      "duplicateValueCount": 0,
+      "valueTable": true,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/b-003.json"
+    },
+    {
+      "elementId": "B-004",
+      "status": "implemented",
+      "representation": "admin1-choropleth",
+      "build": "admin1-attributes",
+      "sourceRowCount": 31185,
+      "publishedValueCount": 30492,
+      "seriesCount": 520,
+      "variableCount": 30,
+      "periodCount": 32,
+      "matchedAdm1Count": 63,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 0,
+      "duplicateValueCount": 0,
+      "valueTable": true,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/b-004.json"
+    },
+    {
+      "elementId": "B-005",
+      "status": "implemented",
+      "representation": "admin1-choropleth",
+      "build": "admin1-attributes",
+      "sourceRowCount": 31185,
+      "publishedValueCount": 11807,
+      "seriesCount": 208,
+      "variableCount": 12,
+      "periodCount": 32,
+      "matchedAdm1Count": 63,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 0,
+      "duplicateValueCount": 0,
+      "valueTable": true,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/b-005.json"
+    },
+    {
+      "elementId": "B-006",
+      "status": "implemented",
+      "representation": "admin1-choropleth",
+      "build": "admin1-attributes",
+      "sourceRowCount": 31185,
+      "publishedValueCount": 30241,
+      "seriesCount": 624,
+      "variableCount": 36,
+      "periodCount": 32,
+      "matchedAdm1Count": 63,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 0,
+      "duplicateValueCount": 0,
+      "valueTable": true,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/b-006.json"
+    },
+    {
+      "elementId": "B-007",
+      "status": "implemented",
+      "representation": "admin1-choropleth",
+      "build": "admin1-attributes",
+      "sourceRowCount": 31185,
+      "publishedValueCount": 30473,
+      "seriesCount": 520,
+      "variableCount": 30,
+      "periodCount": 32,
+      "matchedAdm1Count": 63,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 0,
+      "duplicateValueCount": 0,
+      "valueTable": true,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/b-007.json"
+    },
+    {
+      "elementId": "B-008",
+      "status": "implemented",
+      "representation": "point",
+      "build": "entities",
+      "sourceRowCount": 1575,
+      "sourceCoordinateCount": 1575,
+      "featureCount": 5,
+      "memberRowCount": 1575,
+      "approximateCount": 0,
+      "excludedCount": 0,
+      "excluded": [],
+      "filters": []
+    },
+    {
+      "elementId": "B-012",
+      "status": "partial",
+      "representation": "point",
+      "build": "entities",
+      "sourceRowCount": 275,
+      "sourceCoordinateCount": 265,
+      "featureCount": 265,
+      "memberRowCount": 265,
+      "approximateCount": 233,
+      "excludedCount": 10,
+      "excluded": [
+        {
+          "recordId": "v124-b-012-entity-00006",
+          "reason": "no-coordinate"
+        },
+        {
+          "recordId": "v124-b-012-entity-00007",
+          "reason": "no-coordinate"
+        },
+        {
+          "recordId": "v124-b-012-entity-00015",
+          "reason": "no-coordinate"
+        },
+        {
+          "recordId": "v124-b-012-entity-00031",
+          "reason": "no-coordinate"
+        },
+        {
+          "recordId": "v124-b-012-entity-00076",
+          "reason": "no-coordinate"
+        },
+        {
+          "recordId": "v124-b-012-entity-00078",
+          "reason": "no-coordinate"
+        },
+        {
+          "recordId": "v124-b-012-entity-00143",
+          "reason": "no-coordinate"
+        },
+        {
+          "recordId": "v124-b-012-entity-00206",
+          "reason": "no-coordinate"
+        },
+        {
+          "recordId": "v124-b-012-entity-00244",
+          "reason": "no-coordinate"
+        },
+        {
+          "recordId": "v124-b-012-entity-00267",
+          "reason": "no-coordinate"
+        }
+      ],
+      "filters": [
+        "재해유형(6)"
+      ]
+    },
+    {
+      "elementId": "B-017",
+      "status": "not-connected",
+      "representation": "none",
+      "build": "none",
+      "reason": "원천 레코드의 좌표는 소속 성(GADM)의 대표점이며 평가구역 자체의 위치가 아닙니다. 평가구역 경계는 Aqueduct 4.0 GDB(Aq40_Y2023D07M05.gdb)에만 있으며 이 저장소의 파이프라인(GDAL 미설치)으로는 GeoJSON을 추출하지 못했습니다.",
+      "requiredAsset": "Aqueduct 4.0 baseline annual 폴리곤(string_id 기준)을 베트남 범위로 추출한 GeoJSON",
+      "forbidden": "443개 평가구역 값을 성·시 값으로 합치거나 성 대표점에 찍는 표현"
+    },
+    {
+      "elementId": "B-021",
+      "status": "implemented",
+      "representation": "region-choropleth",
+      "build": "existing",
+      "featureCount": 63,
+      "patched": []
+    },
+    {
+      "elementId": "B-023",
+      "status": "partial",
+      "representation": "point",
+      "build": "entities",
+      "sourceRowCount": 11,
+      "sourceCoordinateCount": 11,
+      "featureCount": 3,
+      "memberRowCount": 11,
+      "approximateCount": 1,
+      "excludedCount": 0,
+      "excluded": [],
+      "filters": [
+        "공간 단위(2)"
+      ]
+    },
+    {
+      "elementId": "B-025",
+      "status": "partial",
+      "representation": "point",
+      "build": "entities",
+      "sourceRowCount": 9,
+      "sourceCoordinateCount": 8,
+      "featureCount": 8,
+      "memberRowCount": 8,
+      "approximateCount": 8,
+      "excludedCount": 1,
+      "excluded": [],
+      "filters": [
+        "수계 구분(6)"
+      ]
+    },
+    {
+      "elementId": "B-028",
+      "status": "partial",
+      "representation": "point",
+      "build": "entities",
+      "sourceRowCount": 16,
+      "sourceCoordinateCount": 12,
+      "featureCount": 4,
+      "memberRowCount": 12,
+      "approximateCount": 2,
+      "excludedCount": 4,
+      "excluded": [
+        {
+          "recordId": "v124-b-028-entity-00008",
+          "reason": "no-coordinate"
+        },
+        {
+          "recordId": "v124-b-028-entity-00013",
+          "reason": "no-coordinate"
+        },
+        {
+          "recordId": "v124-b-028-entity-00014",
+          "reason": "no-coordinate"
+        },
+        {
+          "recordId": "v124-b-028-entity-00015",
+          "reason": "no-coordinate"
+        }
+      ],
+      "filters": [
+        "공간 단위(2)"
+      ]
+    },
+    {
+      "elementId": "B-029",
+      "status": "implemented",
+      "representation": "admin1-choropleth",
+      "build": "admin1-attributes",
+      "sourceRowCount": 63,
+      "publishedValueCount": 189,
+      "seriesCount": 3,
+      "variableCount": 3,
+      "periodCount": 1,
+      "matchedAdm1Count": 63,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 0,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/b-029.json"
+    },
+    {
+      "elementId": "B-030",
+      "status": "implemented",
+      "representation": "admin1-choropleth",
+      "build": "admin1-attributes",
+      "sourceRowCount": 63,
+      "publishedValueCount": 315,
+      "seriesCount": 5,
+      "variableCount": 5,
+      "periodCount": 1,
+      "matchedAdm1Count": 63,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 0,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/b-030.json"
+    },
+    {
+      "elementId": "B-031",
+      "status": "implemented",
+      "representation": "admin1-choropleth",
+      "build": "existing",
+      "featureCount": 63,
+      "patched": [
+        "defaultVariableMeasureId",
+        "defaultVariableLabelPattern"
+      ]
+    },
+    {
+      "elementId": "B-032",
+      "status": "implemented",
+      "representation": "admin1-choropleth",
+      "build": "existing",
+      "featureCount": 63,
+      "patched": []
+    },
+    {
+      "elementId": "B-033",
+      "status": "implemented",
+      "representation": "admin1-choropleth",
+      "build": "existing",
+      "featureCount": 63,
+      "patched": []
+    },
+    {
+      "elementId": "B-034",
+      "status": "implemented",
+      "representation": "admin1-choropleth",
+      "build": "existing",
+      "featureCount": 63,
+      "patched": []
+    },
+    {
+      "elementId": "B-037",
+      "status": "implemented",
+      "representation": "admin1-choropleth",
+      "build": "admin1-attributes",
+      "sourceRowCount": 63,
+      "publishedValueCount": 567,
+      "seriesCount": 9,
+      "variableCount": 9,
+      "periodCount": 1,
+      "matchedAdm1Count": 63,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 0,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/b-037.json"
+    },
+    {
+      "elementId": "B-039",
+      "status": "implemented",
+      "representation": "admin1-choropleth",
+      "build": "admin1-attributes",
+      "sourceRowCount": 63,
+      "publishedValueCount": 189,
+      "seriesCount": 3,
+      "variableCount": 3,
+      "periodCount": 1,
+      "matchedAdm1Count": 63,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 0,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/b-039.json"
+    },
+    {
+      "elementId": "B-040",
+      "status": "implemented",
+      "representation": "admin1-choropleth",
+      "build": "admin1-attributes",
+      "sourceRowCount": 63,
+      "publishedValueCount": 315,
+      "seriesCount": 5,
+      "variableCount": 5,
+      "periodCount": 1,
+      "matchedAdm1Count": 63,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 0,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/b-040.json"
+    },
+    {
+      "elementId": "B-041",
+      "status": "implemented",
+      "representation": "admin1-choropleth",
+      "build": "admin1-attributes",
+      "sourceRowCount": 63,
+      "publishedValueCount": 252,
+      "seriesCount": 4,
+      "variableCount": 4,
+      "periodCount": 1,
+      "matchedAdm1Count": 63,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 0,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/b-041.json"
+    },
+    {
+      "elementId": "B-042",
+      "status": "implemented",
+      "representation": "admin1-choropleth",
+      "build": "admin1-attributes",
+      "sourceRowCount": 63,
+      "publishedValueCount": 315,
+      "seriesCount": 5,
+      "variableCount": 5,
+      "periodCount": 1,
+      "matchedAdm1Count": 63,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 0,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/b-042.json"
+    },
+    {
+      "elementId": "B-048",
+      "status": "implemented",
+      "representation": "point",
+      "build": "existing",
+      "featureCount": 2,
+      "patched": [
+        "analysisItemLabel",
+        "countNoun"
+      ]
+    },
+    {
+      "elementId": "C-009",
+      "status": "partial",
+      "representation": "admin1-choropleth",
+      "build": "admin1-attributes",
+      "sourceRowCount": 4,
+      "publishedValueCount": 4,
+      "seriesCount": 1,
+      "variableCount": 1,
+      "periodCount": 1,
+      "matchedAdm1Count": 4,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 0,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/c-009.json"
+    },
+    {
+      "elementId": "C-010",
+      "status": "partial",
+      "representation": "admin1-choropleth",
+      "build": "admin1-attributes",
+      "sourceRowCount": 4,
+      "publishedValueCount": 4,
+      "seriesCount": 1,
+      "variableCount": 1,
+      "periodCount": 1,
+      "matchedAdm1Count": 4,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 0,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/c-010.json"
+    },
+    {
+      "elementId": "C-012",
+      "status": "partial",
+      "representation": "region-choropleth",
+      "build": "region-membership",
+      "sourceRowCount": 57,
+      "publishedValueCount": 56,
+      "seriesCount": 1,
+      "variableCount": 1,
+      "periodCount": 1,
+      "matchedAdm1Count": 56,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 28,
+      "sourceRegionCount": 29,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/c-012.json"
+    },
+    {
+      "elementId": "C-013",
+      "status": "partial",
+      "representation": "region-choropleth",
+      "build": "region-membership",
+      "sourceRowCount": 15,
+      "publishedValueCount": 14,
+      "seriesCount": 1,
+      "variableCount": 1,
+      "periodCount": 1,
+      "matchedAdm1Count": 14,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 0,
+      "sourceRegionCount": 8,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/c-013.json"
+    },
+    {
+      "elementId": "C-016",
+      "status": "implemented",
+      "representation": "admin1-choropleth",
+      "build": "existing",
+      "featureCount": 63,
+      "patched": []
+    },
+    {
+      "elementId": "C-019",
+      "status": "implemented",
+      "representation": "region-choropleth",
+      "build": "region-membership",
+      "sourceRowCount": 36,
+      "publishedValueCount": 63,
+      "seriesCount": 1,
+      "variableCount": 1,
+      "periodCount": 1,
+      "matchedAdm1Count": 63,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 2,
+      "sourceRegionCount": 34,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/c-019.json"
+    },
+    {
+      "elementId": "C-022",
+      "status": "implemented",
+      "representation": "region-choropleth",
+      "build": "region-membership",
+      "sourceRowCount": 58,
+      "publishedValueCount": 252,
+      "seriesCount": 4,
+      "variableCount": 4,
+      "periodCount": 1,
+      "matchedAdm1Count": 63,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 24,
+      "sourceRegionCount": 34,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/c-022.json"
+    },
+    {
+      "elementId": "C-024",
+      "status": "partial",
+      "representation": "admin1-choropleth",
+      "build": "admin1-attributes",
+      "sourceRowCount": 6,
+      "publishedValueCount": 6,
+      "seriesCount": 1,
+      "variableCount": 1,
+      "periodCount": 1,
+      "matchedAdm1Count": 6,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 0,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/c-024.json"
+    },
+    {
+      "elementId": "C-025",
+      "status": "implemented",
+      "representation": "point",
+      "build": "existing",
+      "featureCount": 262,
+      "patched": [
+        "analysisItemLabel",
+        "countNoun"
+      ]
+    },
+    {
+      "elementId": "D-008",
+      "status": "implemented",
+      "representation": "admin1-choropleth",
+      "build": "existing",
+      "featureCount": 3,
+      "patched": []
+    },
+    {
+      "elementId": "D-018",
+      "status": "implemented",
+      "representation": "regional-scope",
+      "build": "existing",
+      "featureCount": 4,
+      "patched": []
+    },
+    {
+      "elementId": "E-004",
+      "status": "partial",
+      "representation": "point",
+      "build": "entities",
+      "sourceRowCount": 19,
+      "sourceCoordinateCount": 17,
+      "featureCount": 17,
+      "memberRowCount": 17,
+      "approximateCount": 1,
+      "excludedCount": 2,
+      "excluded": [
+        {
+          "recordId": "v124-e-004-entity-00009",
+          "reason": "no-coordinate"
+        },
+        {
+          "recordId": "v124-e-004-entity-00018",
+          "reason": "no-coordinate"
+        }
+      ],
+      "filters": [
+        "기관 유형(6)",
+        "도시(2)"
+      ]
+    },
+    {
+      "elementId": "E-005",
+      "status": "partial",
+      "representation": "point",
+      "build": "entities",
+      "sourceRowCount": 20,
+      "sourceCoordinateCount": 20,
+      "featureCount": 20,
+      "memberRowCount": 20,
+      "approximateCount": 11,
+      "excludedCount": 0,
+      "excluded": [],
+      "filters": [
+        "기관 유형(11)",
+        "도시(5)"
+      ]
+    },
+    {
+      "elementId": "E-006",
+      "status": "partial",
+      "representation": "point",
+      "build": "entities",
+      "sourceRowCount": 15,
+      "sourceCoordinateCount": 15,
+      "featureCount": 8,
+      "memberRowCount": 8,
+      "approximateCount": 5,
+      "excludedCount": 7,
+      "excluded": [
+        {
+          "recordId": "v124-e-006-entity-00001",
+          "reason": "outside-country",
+          "name": "International Finance Corporation (IFC)"
+        },
+        {
+          "recordId": "v124-e-006-entity-00002",
+          "reason": "outside-country",
+          "name": "Asian Development Bank (ADB)"
+        },
+        {
+          "recordId": "v124-e-006-entity-00003",
+          "reason": "outside-country",
+          "name": "Emerging Africa & Asia Infrastructure Fund (EAAIF)"
+        },
+        {
+          "recordId": "v124-e-006-entity-00004",
+          "reason": "outside-country",
+          "name": "Proparco"
+        },
+        {
+          "recordId": "v124-e-006-entity-00007",
+          "reason": "outside-country",
+          "name": "Clime Capital Management"
+        },
+        {
+          "recordId": "v124-e-006-entity-00009",
+          "reason": "outside-country",
+          "name": "responsAbility Investments AG"
+        },
+        {
+          "recordId": "v124-e-006-entity-00014",
+          "reason": "outside-country",
+          "name": "Armstrong Asset Management"
+        }
+      ],
+      "filters": [
+        "베트남 내 거점 도시(2)"
+      ]
+    },
+    {
+      "elementId": "E-018",
+      "status": "partial",
+      "representation": "point",
+      "build": "entities",
+      "sourceRowCount": 24,
+      "sourceCoordinateCount": 15,
+      "featureCount": 14,
+      "memberRowCount": 14,
+      "approximateCount": 9,
+      "excludedCount": 10,
+      "excluded": [
+        {
+          "recordId": "v124-e-018-entity-00001",
+          "reason": "no-coordinate"
+        },
+        {
+          "recordId": "v124-e-018-entity-00002",
+          "reason": "no-coordinate"
+        },
+        {
+          "recordId": "v124-e-018-entity-00004",
+          "reason": "no-coordinate"
+        },
+        {
+          "recordId": "v124-e-018-entity-00005",
+          "reason": "no-coordinate"
+        },
+        {
+          "recordId": "v124-e-018-entity-00011",
+          "reason": "no-coordinate"
+        },
+        {
+          "recordId": "v124-e-018-entity-00013",
+          "reason": "excluded:진출_상태=철수 — 2025-08 현지법인 매각 완료",
+          "name": "두산에너빌리티 (상태 변경)"
+        },
+        {
+          "recordId": "v124-e-018-entity-00018",
+          "reason": "no-coordinate"
+        },
+        {
+          "recordId": "v124-e-018-entity-00019",
+          "reason": "no-coordinate"
+        },
+        {
+          "recordId": "v124-e-018-entity-00021",
+          "reason": "no-coordinate"
+        },
+        {
+          "recordId": "v124-e-018-entity-00023",
+          "reason": "no-coordinate"
+        }
+      ],
+      "filters": []
+    },
+    {
+      "elementId": "E-019",
+      "status": "partial",
+      "representation": "point",
+      "build": "entities",
+      "sourceRowCount": 9,
+      "sourceCoordinateCount": 6,
+      "featureCount": 6,
+      "memberRowCount": 6,
+      "approximateCount": 1,
+      "excludedCount": 3,
+      "excluded": [
+        {
+          "recordId": "v124-e-019-entity-00005",
+          "reason": "no-coordinate"
+        },
+        {
+          "recordId": "v124-e-019-entity-00007",
+          "reason": "no-coordinate"
+        },
+        {
+          "recordId": "v124-e-019-entity-00008",
+          "reason": "no-coordinate"
+        }
+      ],
+      "filters": [
+        "도시(2)"
+      ]
+    }
+  ],
+  "mapIndexSha256": "c41f617e809aeeb011cdd8450fad3c02d0f7a950324f4d63549a4f87a0a52873"
+}

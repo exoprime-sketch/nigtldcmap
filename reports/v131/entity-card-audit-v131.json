@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v131-public-content-audit-1",
-  "generatedAt": "2026-09-13T23:26:37.125Z",
+  "generatedAt": "2026-09-15T01:53:38.450Z",
   "audit": "entity-cards:v131",
   "status": "PASS",
   "summary": {
@@ -12,7 +12,7 @@
     "total": 15,
     "failedChecks": [],
     "entityElementRouteCount": 56,
-    "entityCardCount": 505,
+    "entityCardCount": 490,
     "entityContextTitleCount": 0,
     "entityCardLongTextCount": 0,
     "entityCardDuplicatePrimaryTitleCount": 0,
@@ -53,7 +53,8 @@
       "actual": 56,
       "expected": 56,
       "details": {
-        "runtimeFailure": null
+        "runtimeFailure": null,
+        "routeFailures": []
       }
     },
     {
@@ -150,7 +151,7 @@
     }
   ],
   "entityElementRouteCount": 56,
-  "entityCardCount": 505,
+  "entityCardCount": 490,
   "entityContextTitleCount": 0,
   "entityCardLongTextCount": 0,
   "entityCardDuplicatePrimaryTitleCount": 0,

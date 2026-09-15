@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v136-public-copy-acceptance-1",
-  "generatedAt": "2026-09-13T23:34:38.482Z",
+  "generatedAt": "2026-09-15T02:03:17.072Z",
   "audit": "finder-scroll:v136",
   "status": "PASS",
   "summary": {
@@ -33,22 +33,22 @@
       "beforeLeave": {
         "count": 96,
         "scrollY": 15287,
-        "maxScrollY": 20329
+        "maxScrollY": 20330
       },
       "afterBack": {
         "count": 96,
         "scrollY": 15287,
-        "maxScrollY": 20329,
+        "maxScrollY": 20330,
         "savedScrollY": 15287,
         "restoreState": "settled"
       },
-      "restoreDurationMs": 147,
+      "restoreDurationMs": 254,
       "savedScrollY": 15287,
       "finalScrollY": 15287,
       "scrollDrift": 0,
-      "maxScrollY": 20329,
+      "maxScrollY": 20330,
       "restoreState": "settled",
-      "restoreDuration": 147
+      "restoreDuration": 254
     },
     "ariaContract": {
       "busyAttributePresent": true,
@@ -208,16 +208,16 @@
         "beforeLeave": {
           "count": 96,
           "scrollY": 15287,
-          "maxScrollY": 20329
+          "maxScrollY": 20330
         },
         "afterBack": {
           "count": 96,
           "scrollY": 15287,
-          "maxScrollY": 20329,
+          "maxScrollY": 20330,
           "savedScrollY": 15287,
           "restoreState": "settled"
         },
-        "restoreDurationMs": 147
+        "restoreDurationMs": 254
       },
       "expected": "restored revealed rows"
     },
@@ -230,16 +230,16 @@
         "beforeLeave": {
           "count": 96,
           "scrollY": 15287,
-          "maxScrollY": 20329
+          "maxScrollY": 20330
         },
         "afterBack": {
           "count": 96,
           "scrollY": 15287,
-          "maxScrollY": 20329,
+          "maxScrollY": 20330,
           "savedScrollY": 15287,
           "restoreState": "settled"
         },
-        "restoreDurationMs": 147,
+        "restoreDurationMs": 254,
         "scrollDrift": 0
       },
       "expected": "settled within 200px of the previous offset"
@@ -308,22 +308,22 @@
     "beforeLeave": {
       "count": 96,
       "scrollY": 15287,
-      "maxScrollY": 20329
+      "maxScrollY": 20330
     },
     "afterBack": {
       "count": 96,
       "scrollY": 15287,
-      "maxScrollY": 20329,
+      "maxScrollY": 20330,
       "savedScrollY": 15287,
       "restoreState": "settled"
     },
-    "restoreDurationMs": 147,
+    "restoreDurationMs": 254,
     "savedScrollY": 15287,
     "finalScrollY": 15287,
     "scrollDrift": 0,
-    "maxScrollY": 20329,
+    "maxScrollY": 20330,
     "restoreState": "settled",
-    "restoreDuration": 147
+    "restoreDuration": 254
   },
   "ariaContract": {
     "busyAttributePresent": true,
