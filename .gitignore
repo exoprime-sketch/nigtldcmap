@@ -47,3 +47,8 @@ reports/v128/production-smoke-v128.json
 /NIGT_QA_HARNESS_PATCH_STAGE4.zip
 /pilot-out.txt
 /pilot2.txt
+
+# Local review captures and scratch: browser reviews, PDFs, E2E bundles. None
+# of it is source, and none of it belongs in the checkout Vercel builds from.
+/output/
+/tmp/

@@ -15,6 +15,12 @@
 - A-002 공개 slug를 `wgi-worldwide-governance-indicators-…`로 바꿔 다운로드 파일명과 공유 링크가 CPIA가 아닌 WGI를 말하도록 함. 이전 CPIA slug는 legacy alias로 계속 열림
 - 검증 스크립트 `npm run qa:role-split:v140` (`--base-url`로 Preview·production에도 동일 검사)
 
+### Deployment
+
+- Vercel Deployment Storage 점검(`docs/VERCEL_DEPLOYMENT_STORAGE_V140.md`): 배포 산출물은 `public/` 복사본 705 MB + 번들 12 MB(소스맵 8.9 MB 포함)이며 reports·스크린샷·원본·ZIP은 들어가지 않음을 재확인. 기준선 67개 배포·보존 추정 17.3 GB를 `reports/v140/deployment-storage-ledger-v140.json`에 기록(`npm run storage:ledger:v140`)
+- `vercel.json` `ignoreCommand`: 빌드 입력(`public/ src/ package*.json tsconfig .eslintrc .gitattributes vercel.json .env*`)이 바뀌지 않은 커밋은 Preview 빌드를 만들지 않음. production은 항상 빌드. 최근 40개 커밋 재생 검증 8 생략·32 빌드·결함 0(`npm run verify:ignore-command:v140`)
+- `.gitignore`에 `/output/`, `/tmp/` 추가. `GENERATE_SOURCEMAP=false` 환경변수와 Preview 7일 보존 정책은 설정안으로 문서화(대시보드 적용 필요). `downloads/` 외부 이전은 별도 설계 전까지 보류
+
 ## Unreleased — V139 홈 개선 (후보, production 미반영)
 
 ### Changed

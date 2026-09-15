@@ -121,6 +121,7 @@ npm run smoke:production:v128
 ## 운영 문서
 
 - [배포](docs/DEPLOYMENT_V128.md)
+- [Vercel Deployment Storage](docs/VERCEL_DEPLOYMENT_STORAGE_V140.md)
 - [운영 점검](docs/OPERATIONS_V128.md)
 - [데이터 갱신](docs/DATA_REFRESH_V128.md)
 - [롤백](docs/ROLLBACK_V128.md)
