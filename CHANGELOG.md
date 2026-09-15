@@ -2,6 +2,19 @@
 
 이 문서는 공개 플랫폼의 주요 변경을 기록합니다. 아직 merge·배포·tag가 확인되지 않은 작업은 `Unreleased`에 둡니다.
 
+## Unreleased — V140 홈·데이터 찾기 역할 분리 (후보, production 미반영)
+
+### Changed
+
+- 홈 주요 데이터 8개 카드는 제목 → 핵심 질문 → 핵심 수치(값 + 산출 규칙) → 미리보기 → 기간·제공기관 → 상세보기만 표시. 단위 행, 유의사항 문단, 원자료 행 수(A-023 'WRI 236행 · OSM 1,727행'), 다운로드·지도 버튼을 카드에서 제거. 카드 제목은 데이터 찾기 카드와 같은 catalogue `publicTitle`을 같은 컴포넌트(`PublicTermTextV134`)로 그림
+- 요약자산 `home-preview-v139.json`(schema `v139-home-preview-2`)에 카드별 `question`·`headline` 추가. A-023의 핵심 수치는 WRI GPPD 수록 발전소 설비용량 합계(상세 화면의 같은 집계)
+- 홈에서 뺀 유의사항은 상세 화면 '자료 이용 시 유의사항'으로 이동(A-010 총계 행 없음, A-024 계획 선로 경로 없음·좌표 오차, B-033 전국 계열 없음, C-016 계획 용량, D-023 승인액 통화별 합산)
+- 데이터 찾기: 상세검색에 '제공 형태'(지도 제공 / 다운로드 가능) 필터 추가. 152개 전체 목록·정렬·필터·지도에서 보기·다운로드는 데이터 찾기가 담당
+- 지도 자료 수는 한 기준(`map-index.json`의 활성 레이어 = `manifest.mapLayerCount`)으로 통일(`src/data/map/mapAvailabilityV140.ts`). 지도 목록 머리글은 '43개 자료'가 아니라 '42개 자료 · 선택 N개 · 준비 중 1개', 지도 데이터 안내도 같은 수
+- 지도 목록에서 위치자료가 없는 대상(B-017 물 스트레스)은 '준비 중' 배지·점선 테두리·'위치자료 없음 · 지도에 표시하지 않음'으로 연결된 자료와 구분하고, 분류 머리글에 '준비 중 1'을 표기. 체크해도 그려지지 않음
+- A-002 공개 slug를 `wgi-worldwide-governance-indicators-…`로 바꿔 다운로드 파일명과 공유 링크가 CPIA가 아닌 WGI를 말하도록 함. 이전 CPIA slug는 legacy alias로 계속 열림
+- 검증 스크립트 `npm run qa:role-split:v140` (`--base-url`로 Preview·production에도 동일 검사)
+
 ## Unreleased — V139 홈 개선 (후보, production 미반영)
 
 ### Changed

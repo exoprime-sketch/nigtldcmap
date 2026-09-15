@@ -11,10 +11,7 @@ import { loadHomePreviewV139, homePreviewSvgUrlV139 } from "../data/homePreviewV
 import type { HomePreviewCardV139, HomePreviewV139 } from "../data/homePreviewV139";
 import type { CategoryCode } from "../data/publicTaxonomy";
 import HomePreviewChartV139 from "../components/home/HomePreviewChartV139";
-import {
-  PublicTermExpandedTextV134,
-  PublicTermTextV134,
-} from "../components/help/PublicTermV134";
+import { PublicTermTextV134 } from "../components/help/PublicTermV134";
 import "../styles/home-final-v13.css";
 
 interface HomePageProps {
@@ -215,18 +212,22 @@ export default function HomePage({
                     data-preview-kind={card?.kind ?? "none"}
                     aria-labelledby={`home-card-${item.elementId}`}
                   >
+                    {/* V140: the same title, from the same catalogue field and
+                        the same component, as the finder card - so a reader
+                        who leaves the home finds the dataset under the name
+                        they saw. */}
                     <h3 id={`home-card-${item.elementId}`}>
-                      <PublicTermExpandedTextV134 text={item.publicTitle} />
+                      <PublicTermTextV134 text={item.publicTitle} />
                     </h3>
                     {card ? (
                       <>
-                        <p className="home-featured-v139__lead"><PublicTermTextV134 text={card.lead} /></p>
-                        {card.kind === "line" && card.seriesLabel && (
-                          <p className="home-featured-v139__series"><PublicTermTextV134 text={card.seriesLabel} /></p>
-                        )}
-                        {card.kind === "bars" && (
-                          <p className="home-featured-v139__series"><PublicTermTextV134 text={card.scope} /></p>
-                        )}
+                        <p className="home-featured-v139__question">
+                          <PublicTermTextV134 text={card.question} />
+                        </p>
+                        <p className="home-featured-v139__headline" data-testid="home-card-headline-v140">
+                          <strong><PublicTermTextV134 text={card.headline.value} /></strong>
+                          <span><PublicTermTextV134 text={card.headline.label} /></span>
+                        </p>
                         <div className="home-featured-v139__chart">
                           <HomePreviewChartV139 card={card} />
                         </div>
@@ -236,23 +237,26 @@ export default function HomePage({
                             <dd><PublicTermTextV134 text={card.period} /></dd>
                           </div>
                           <div>
-                            <dt>단위</dt>
-                            <dd><PublicTermTextV134 text={card.unit} /></dd>
-                          </div>
-                          <div>
                             <dt>제공</dt>
                             <dd>
                               <PublicTermTextV134 text={card.provider} />
                             </dd>
                           </div>
                         </dl>
-                        <p className="home-featured-v139__note"><PublicTermTextV134 text={card.note} /></p>
                       </>
                     ) : (
                       <dl className="home-featured-v139__meta">
                         <div>
                           <dt>기간</dt>
                           <dd>{publicReferencePeriodV128(item)}</dd>
+                        </div>
+                        <div>
+                          <dt>제공</dt>
+                          <dd>
+                            <PublicTermTextV134
+                              text={item.sourceOrganizations.slice(0, 2).join(" · ") || "제공기관 확인"}
+                            />
+                          </dd>
                         </div>
                       </dl>
                     )}

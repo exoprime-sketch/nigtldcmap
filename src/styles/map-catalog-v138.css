@@ -155,15 +155,35 @@
   background: #f3f4f3;
 }
 
+/* V140: a target still waiting for spatial data is told apart from a
+   connected one at a glance - a dashed border, muted text and a "준비 중"
+   badge - not only by a greyed checkbox. */
 .cdp-map-catalog-v138__item.is-unavailable {
   color: #7d8a85;
+  border-style: dashed;
+  border-color: #cfd8d4;
+  background: #f8f9f8;
 }
 
 .cdp-map-catalog-v138__row {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
   align-items: start;
   gap: 6px;
+}
+
+.cdp-map-catalog-v138__pending {
+  align-self: start;
+  margin-top: 3px;
+  padding: 2px 7px;
+  border: 1px solid #d9c8a3;
+  border-radius: 999px;
+  background: #fbf5e6;
+  color: #7a5a12;
+  font-size: 0.62rem;
+  font-weight: 800;
+  line-height: 1.3;
+  white-space: nowrap;
 }
 
 .cdp-map-catalog-v138__check {

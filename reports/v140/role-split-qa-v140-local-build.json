@@ -1,0 +1,898 @@
+{
+  "label": "local-build",
+  "base": "http://127.0.0.1:63804",
+  "generatedAt": "2026-09-15T22:58:40.562Z",
+  "checks": [
+    {
+      "id": "MANIFEST_OK",
+      "pass": true,
+      "actual": 200,
+      "expected": 200
+    },
+    {
+      "id": "MAP_INDEX_OK",
+      "pass": true,
+      "actual": 200,
+      "expected": 200
+    },
+    {
+      "id": "HOME_PREVIEW_SCHEMA",
+      "pass": true,
+      "actual": "v139-home-preview-2",
+      "expected": "v139-home-preview-2"
+    },
+    {
+      "id": "HOME_PREVIEW_FIELDS",
+      "pass": true,
+      "actual": [
+        [
+          "A-002",
+          true,
+          true
+        ],
+        [
+          "A-003",
+          true,
+          true
+        ],
+        [
+          "A-010",
+          true,
+          true
+        ],
+        [
+          "A-023",
+          true,
+          true
+        ],
+        [
+          "A-024",
+          true,
+          true
+        ],
+        [
+          "B-033",
+          true,
+          true
+        ],
+        [
+          "C-016",
+          true,
+          true
+        ],
+        [
+          "D-023",
+          true,
+          true
+        ]
+      ],
+      "expected": "question and headline on all eight cards"
+    },
+    {
+      "id": "MAP_COUNT_MANIFEST_EQUALS_INDEX",
+      "pass": true,
+      "actual": {
+        "manifestMapLayerCount": 42,
+        "manifestGeneratedAt": "2026-08-27T00:00:00Z",
+        "indexActiveMapLayerCount": 42,
+        "indexActiveLayers": 42,
+        "indexTargetContract": {
+          "schemaVersion": "public-map-targets-v138",
+          "targetCount": 43,
+          "connectedCount": 42,
+          "notConnected": [
+            {
+              "elementId": "B-017",
+              "reason": "원천 레코드의 좌표는 소속 성(GADM)의 대표점이며 평가구역 자체의 위치가 아닙니다. 평가구역 경계는 Aqueduct 4.0 GDB(Aq40_Y2023D07M05.gdb)에만 있으며 이 저장소의 파이프라인(GDAL 미설치)으로는 GeoJSON을 추출하지 못했습니다."
+            }
+          ]
+        },
+        "homePreviewSchema": "v139-home-preview-2",
+        "homePreviewCards": 8
+      },
+      "expected": "manifest.mapLayerCount = map-index.activeMapLayerCount = active layers"
+    },
+    {
+      "id": "B017_NOT_IN_MAP_INDEX",
+      "pass": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "id": "ROUTE /",
+      "pass": true,
+      "actual": 200,
+      "expected": 200
+    },
+    {
+      "id": "HOME_FEATURED_EIGHT",
+      "pass": true,
+      "actual": [
+        "A-002",
+        "A-003",
+        "A-010",
+        "A-023",
+        "A-024",
+        "B-033",
+        "C-016",
+        "D-023"
+      ],
+      "expected": [
+        "A-002",
+        "A-003",
+        "A-010",
+        "A-023",
+        "A-024",
+        "B-033",
+        "C-016",
+        "D-023"
+      ]
+    },
+    {
+      "id": "HOME_CARD_QUESTION",
+      "pass": true,
+      "actual": [
+        "베트남의 거버넌스 여섯 영역은 각각 어느 수준인가?",
+        "국내총생산은 어떻게 변해왔나?",
+        "온실가스는 어떤 가스에서 얼마나 배출되나?",
+        "발전소는 어떤 발전원으로 얼마나 있나?",
+        "송전선은 어디에, 어떤 전압으로 놓여 있나?",
+        "산림손실은 어디에서 얼마나 큰가?",
+        "재생에너지 계획용량은 어느 성·시에 집중되나?",
+        "기후재원 사업은 어느 기금에 얼마나 있나?"
+      ],
+      "expected": "every card asks its question"
+    },
+    {
+      "id": "HOME_CARD_HEADLINE",
+      "pass": true,
+      "actual": [
+        "−1.10 ~ +0.01 — 2024년 여섯 영역 추정치 범위 · −2.5 약함 ~ +2.5 강함",
+        "514.7 — 10억 미국달러 · 2025년 명목 국내총생산",
+        "582.7 — Mt CO₂eq · 2024년 네 가스 합계",
+        "41,350 MW — WRI 수록 발전소 설비용량 합계 · 2021년",
+        "23,608 km — 2016년 송전선 606구간 총연장",
+        "11,728 ha — Quảng Ninh · 2024년 손실이 가장 큰 성·시",
+        "27,385 MW — 63개 성·시 합계 · 집중형 태양광 2025–2030년 계획",
+        "71건 — 4개 기금의 개별 사업 · 1991–2026년 승인·등록 사업"
+      ],
+      "expected": "one figure with its rule on every card"
+    },
+    {
+      "id": "HOME_CARD_PREVIEW",
+      "pass": true,
+      "actual": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "expected": "a chart or map on every card"
+    },
+    {
+      "id": "HOME_CARD_FACTS_PERIOD_PROVIDER_ONLY",
+      "pass": true,
+      "actual": [
+        [
+          "기간",
+          "제공"
+        ],
+        [
+          "기간",
+          "제공"
+        ],
+        [
+          "기간",
+          "제공"
+        ],
+        [
+          "기간",
+          "제공"
+        ],
+        [
+          "기간",
+          "제공"
+        ],
+        [
+          "기간",
+          "제공"
+        ],
+        [
+          "기간",
+          "제공"
+        ],
+        [
+          "기간",
+          "제공"
+        ]
+      ],
+      "expected": [
+        "기간",
+        "제공"
+      ]
+    },
+    {
+      "id": "HOME_CARD_SINGLE_DETAIL_CONTROL",
+      "pass": true,
+      "actual": [
+        [
+          "상세보기 →"
+        ],
+        [
+          "상세보기 →"
+        ],
+        [
+          "상세보기 →"
+        ],
+        [
+          "상세보기 →"
+        ],
+        [
+          "상세보기 →"
+        ],
+        [
+          "상세보기 →"
+        ],
+        [
+          "상세보기 →"
+        ],
+        [
+          "상세보기 →"
+        ]
+      ],
+      "expected": [
+        "상세보기 →"
+      ]
+    },
+    {
+      "id": "HOME_CARD_NO_MAP_OR_DOWNLOAD_CONTROL",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "id": "HOME_CARD_NO_ROW_COUNT",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "id": "HOME_CARD_NO_CAVEAT_PARAGRAPH",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "id": "HOME_NO_OVERFLOW",
+      "pass": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "id": "HOME_MAP_COUNT_EQUALS_INDEX",
+      "pass": true,
+      "actual": 42,
+      "expected": 42
+    },
+    {
+      "id": "ROUTE /#explorer",
+      "pass": true,
+      "actual": 200,
+      "expected": 200
+    },
+    {
+      "id": "FINDER_TOTAL_152",
+      "pass": true,
+      "actual": {
+        "totalAll": 152,
+        "homeTotalCount": 152
+      },
+      "expected": 152
+    },
+    {
+      "id": "FINDER_HAS_SORT_AND_FILTERS",
+      "pass": true,
+      "actual": [
+        "검색",
+        "국가",
+        "정렬",
+        "대분류",
+        "데이터 그룹",
+        "자료연도",
+        "제공기관",
+        "제공 형태",
+        "기후기술"
+      ],
+      "expected": "정렬·대분류·제공기관·제공 형태·기후기술·자료연도"
+    },
+    {
+      "id": "FINDER_MAP_FILTER_EQUALS_INDEX",
+      "pass": true,
+      "actual": {
+        "totalMap": 42,
+        "index": 42,
+        "homeMapCount": 42
+      },
+      "expected": "one count"
+    },
+    {
+      "id": "FINDER_MAP_FILTER_CARDS_HAVE_MAP_BUTTON",
+      "pass": true,
+      "actual": {
+        "cards": 24,
+        "withMapButton": 24
+      },
+      "expected": "every listed card opens the map"
+    },
+    {
+      "id": "FINDER_DOWNLOAD_FILTER_EQUALS_HOME",
+      "pass": true,
+      "actual": {
+        "totalDownload": 147,
+        "homeDownloadCount": 147
+      },
+      "expected": "one count"
+    },
+    {
+      "id": "FINDER_TITLES_EQUAL_HOME",
+      "pass": true,
+      "actual": [
+        {
+          "id": "A-002",
+          "home": "국가 거버넌스 지표(WGI)",
+          "finder": "국가 거버넌스 지표(WGI)"
+        },
+        {
+          "id": "A-003",
+          "home": "국내총생산 및 경제성장",
+          "finder": "국내총생산 및 경제성장"
+        },
+        {
+          "id": "A-010",
+          "home": "온실가스 종류별 배출량",
+          "finder": "온실가스 종류별 배출량"
+        },
+        {
+          "id": "A-023",
+          "home": "발전소 현황",
+          "finder": "발전소 현황"
+        },
+        {
+          "id": "A-024",
+          "home": "베트남 송전망",
+          "finder": "베트남 송전망"
+        },
+        {
+          "id": "B-033",
+          "home": "연간 산림손실",
+          "finder": "연간 산림손실"
+        },
+        {
+          "id": "C-016",
+          "home": "재생에너지 발주·확대계획",
+          "finder": "재생에너지 발주·확대계획"
+        },
+        {
+          "id": "D-023",
+          "home": "국제협력·기후재원 사업",
+          "finder": "국제협력·기후재원 사업"
+        }
+      ],
+      "expected": "same public title"
+    },
+    {
+      "id": "FINDER_B017_NO_MAP_BUTTON",
+      "pass": true,
+      "actual": [
+        "FAO",
+        "AQUASTAT",
+        "SDG",
+        "WRI",
+        "데이터 보기",
+        "다운로드"
+      ],
+      "expected": "no 지도에서 보기 on B-017"
+    },
+    {
+      "id": "ROUTE /#map",
+      "pass": true,
+      "actual": 200,
+      "expected": 200
+    },
+    {
+      "id": "MAP_LEDE_COUNT_EQUALS_INDEX",
+      "pass": true,
+      "actual": "42개 자료 · 선택 0개 · 준비 중 1개",
+      "expected": "42개 자료 · 선택 …"
+    },
+    {
+      "id": "MAP_GUIDE_COUNT_EQUALS_INDEX",
+      "pass": true,
+      "actual": "지도 자료 42개 · 준비 중 1개 (지도 대상 43개 중 위치·경계가 확인된 자료만 지도에 표시)",
+      "expected": 42
+    },
+    {
+      "id": "MAP_COUNT_ONE_NUMBER_EVERYWHERE",
+      "pass": true,
+      "actual": {
+        "home": 42,
+        "mapLede": 42,
+        "mapGuide": 42,
+        "finderMapFilter": 42,
+        "mapIndex": 42,
+        "manifest": 42
+      },
+      "expected": "one number"
+    },
+    {
+      "id": "MAP_PENDING_STATED",
+      "pass": true,
+      "actual": {
+        "lede": "42개 자료 · 선택 0개 · 준비 중 1개",
+        "ledePending": 1,
+        "rows": 43,
+        "available": 42
+      },
+      "expected": "the lede states how many targets are pending"
+    },
+    {
+      "id": "MAP_PENDING_ROWS_MARKED",
+      "pass": true,
+      "actual": [
+        {
+          "id": "B-017",
+          "badge": "준비 중",
+          "summary": "위치자료 없음 · 지도에 표시하지 않음",
+          "disabled": true,
+          "checked": false,
+          "dashed": true
+        }
+      ],
+      "expected": "badge, disabled checkbox, dashed border, 위치자료 없음"
+    },
+    {
+      "id": "MAP_B017_PENDING",
+      "pass": true,
+      "actual": [
+        "B-017"
+      ],
+      "expected": [
+        "B-017"
+      ]
+    },
+    {
+      "id": "MAP_B017_NEVER_DRAWN",
+      "pass": true,
+      "actual": {
+        "found": true,
+        "checked": false,
+        "drawn": "false"
+      },
+      "expected": "clicking B-017 draws nothing"
+    },
+    {
+      "id": "MAP_GROUP_COUNTS_NAME_PENDING",
+      "pass": true,
+      "actual": [
+        "8개",
+        "8개",
+        "5개 · 준비 중 1",
+        "8개",
+        "6개",
+        "3개",
+        "5개"
+      ],
+      "expected": "the group holding a pending target says so"
+    },
+    {
+      "id": "ROUTE /?view=data&country=VNM&element=A-002#element-detail",
+      "pass": true,
+      "actual": 200,
+      "expected": 200
+    },
+    {
+      "id": "DETAIL_A002_TITLE_EQUALS_HOME",
+      "pass": true,
+      "actual": "국가 거버넌스 지표(WGI)",
+      "expected": "국가 거버넌스 지표(WGI)"
+    },
+    {
+      "id": "DETAIL_A002_ANALYSIS",
+      "pass": true,
+      "actual": {
+        "title": "국가 거버넌스 지표(WGI)",
+        "analysisMounted": true,
+        "chartCount": 4,
+        "limitationItems": [
+          "1996~2002년은 격년(1996·1998·2000·2002)으로만 제공되며, 2003년부터 매년 제공됩니다",
+          "백분위(0~100)는 해당 연도 조사대상국 중 상대적 위치이므로 연도 간 비교 시 대상국 구성 변화를 함께 고려해야 합니다"
+        ]
+      },
+      "expected": "analysis root with charts"
+    },
+    {
+      "id": "ROUTE /?view=data&country=VNM&element=A-010#element-detail",
+      "pass": true,
+      "actual": 200,
+      "expected": 200
+    },
+    {
+      "id": "ROUTE /?view=data&country=VNM&element=A-024#element-detail",
+      "pass": true,
+      "actual": 200,
+      "expected": 200
+    },
+    {
+      "id": "ROUTE /?view=data&country=VNM&element=B-033#element-detail",
+      "pass": true,
+      "actual": 200,
+      "expected": 200
+    },
+    {
+      "id": "ROUTE /?view=data&country=VNM&element=C-016#element-detail",
+      "pass": true,
+      "actual": 200,
+      "expected": 200
+    },
+    {
+      "id": "ROUTE /?view=data&country=VNM&element=D-023#element-detail",
+      "pass": true,
+      "actual": 200,
+      "expected": 200
+    },
+    {
+      "id": "DETAIL_CARRIES_MOVED_CAVEATS",
+      "pass": true,
+      "actual": {
+        "A-010": true,
+        "A-024": true,
+        "B-033": true,
+        "C-016": true,
+        "D-023": true
+      },
+      "expected": "every caveat taken off the home is on its detail screen"
+    },
+    {
+      "id": "ROUTE /?country=VNM&element=A-002#download",
+      "pass": true,
+      "actual": 200,
+      "expected": 200
+    },
+    {
+      "id": "DOWNLOAD_A002_PRESELECTED",
+      "pass": true,
+      "actual": "선택한 데이터 1개 · 최대 312행",
+      "expected": "선택한 데이터 1개 · …"
+    },
+    {
+      "id": "DOWNLOAD_A002_FILE",
+      "pass": true,
+      "actual": {
+        "name": "vietnam_wgi-worldwide-governance-indicators-gugga-geobeoneonseu-jipyo_2026-09-16.csv",
+        "bytes": 164497
+      },
+      "expected": "a file is produced"
+    },
+    {
+      "id": "DOWNLOAD_A002_STATIC_ASSET",
+      "pass": true,
+      "actual": 200,
+      "expected": 200
+    },
+    {
+      "id": "ROUTE /?view=data&country=VNM&element=B-017#element-detail",
+      "pass": true,
+      "actual": 200,
+      "expected": 200
+    },
+    {
+      "id": "B017_DETAIL_NO_LOCATION_CLAIM",
+      "pass": true,
+      "actual": {
+        "mapLinks": 0,
+        "mapEngine": false,
+        "statesNotOnMap": true
+      },
+      "expected": "no map link, no map, states it is not on the map"
+    },
+    {
+      "id": "CONSOLE_ERRORS",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "id": "HTTP_FAILURES",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "consoleErrors": [],
+  "httpFailures": [],
+  "assets": {
+    "manifestMapLayerCount": 42,
+    "manifestGeneratedAt": "2026-08-27T00:00:00Z",
+    "indexActiveMapLayerCount": 42,
+    "indexActiveLayers": 42,
+    "indexTargetContract": {
+      "schemaVersion": "public-map-targets-v138",
+      "targetCount": 43,
+      "connectedCount": 42,
+      "notConnected": [
+        {
+          "elementId": "B-017",
+          "reason": "원천 레코드의 좌표는 소속 성(GADM)의 대표점이며 평가구역 자체의 위치가 아닙니다. 평가구역 경계는 Aqueduct 4.0 GDB(Aq40_Y2023D07M05.gdb)에만 있으며 이 저장소의 파이프라인(GDAL 미설치)으로는 GeoJSON을 추출하지 못했습니다."
+        }
+      ]
+    },
+    "homePreviewSchema": "v139-home-preview-2",
+    "homePreviewCards": 8
+  },
+  "home": {
+    "stats": {
+      "전체 데이터 항목": "152개",
+      "지도 제공 항목": "42개",
+      "다운로드 가능 항목": "147개",
+      "데이터 기준일": "2026.08.27"
+    },
+    "cards": [
+      {
+        "id": "A-002",
+        "kind": "signed-bars",
+        "title": "국가 거버넌스 지표(WGI)",
+        "question": "베트남의 거버넌스 여섯 영역은 각각 어느 수준인가?",
+        "headlineValue": "−1.10 ~ +0.01",
+        "headlineLabel": "2024년 여섯 영역 추정치 범위 · −2.5 약함 ~ +2.5 강함",
+        "hasPreview": true,
+        "factLabels": [
+          "기간",
+          "제공"
+        ],
+        "controls": [
+          "상세보기 →"
+        ],
+        "text": "국가 거버넌스 지표(WGI) 베트남의 거버넌스 여섯 영역은 각각 어느 수준인가? −1.10 ~ +0.01 2024년 여섯 영역 추정치 범위 · −2.5 약함 ~ +2.5 강함 시민참여·책임성 -1.10 정치 안정 +0.01 정부 효과성 -0.09 규제의 질 -0.27 법치 -0.31 부패 통제 -0.25 기간 2024년 값 · 1996–2024년 제공 제공 World Bank · 세계 거버넌스 지표(WGI) 상세보기 →",
+        "height": 369
+      },
+      {
+        "id": "A-003",
+        "kind": "line",
+        "title": "국내총생산 및 경제성장",
+        "question": "국내총생산은 어떻게 변해왔나?",
+        "headlineValue": "514.7",
+        "headlineLabel": "10억 미국달러 · 2025년 명목 국내총생산",
+        "hasPreview": true,
+        "factLabels": [
+          "기간",
+          "제공"
+        ],
+        "controls": [
+          "상세보기 →"
+        ],
+        "text": "국내총생산 및 경제성장 국내총생산은 어떻게 변해왔나? 514.7 10억 미국달러 · 2025년 명목 국내총생산 515 0 1985 2025 기간 1985–2025년 제공 World Bank 국가 통계 상세보기 →",
+        "height": 343
+      },
+      {
+        "id": "A-010",
+        "kind": "composition",
+        "title": "온실가스 종류별 배출량",
+        "question": "온실가스는 어떤 가스에서 얼마나 배출되나?",
+        "headlineValue": "582.7",
+        "headlineLabel": "Mt CO₂eq · 2024년 네 가스 합계",
+        "hasPreview": true,
+        "factLabels": [
+          "기간",
+          "제공"
+        ],
+        "controls": [
+          "상세보기 →"
+        ],
+        "text": "온실가스 종류별 배출량 온실가스는 어떤 가스에서 얼마나 배출되나? 582.7 Mt CO₂eq · 2024년 네 가스 합계 CO₂ 430.8 74% CH₄ 114.9 20% N₂O 26.1 4% F-gas 10.9 2% 기간 2024년 구성 · 1970–2024년 제공 제공 European Commission JRC · EDGAR 상세보기 →",
+        "height": 360
+      },
+      {
+        "id": "A-023",
+        "kind": "grouped-bars",
+        "title": "발전소 현황",
+        "question": "발전소는 어떤 발전원으로 얼마나 있나?",
+        "headlineValue": "41,350 MW",
+        "headlineLabel": "WRI 수록 발전소 설비용량 합계 · 2021년",
+        "hasPreview": true,
+        "factLabels": [
+          "기간",
+          "제공"
+        ],
+        "controls": [
+          "상세보기 →"
+        ],
+        "text": "발전소 현황 발전소는 어떤 발전원으로 얼마나 있나? 41,350 MW WRI 수록 발전소 설비용량 합계 · 2021년 태양광 16 1,213 수력 174 422 석탄 24 36 풍력 5 38 가스 9 9 석유 6 2 WRI OSM 기간 WRI GPPD v1.3.0(2021) · OSM 2026년 추출 제공 World Resources Institute · OpenStreetMap 기여자 상세보기 →",
+        "height": 421
+      },
+      {
+        "id": "A-024",
+        "kind": "map",
+        "title": "베트남 송전망",
+        "question": "송전선은 어디에, 어떤 전압으로 놓여 있나?",
+        "headlineValue": "23,608 km",
+        "headlineLabel": "2016년 송전선 606구간 총연장",
+        "hasPreview": true,
+        "factLabels": [
+          "기간",
+          "제공"
+        ],
+        "controls": [
+          "상세보기 →"
+        ],
+        "text": "베트남 송전망 송전선은 어디에, 어떤 전압으로 놓여 있나? 23,608 km 2016년 송전선 606구간 총연장 500 kV 32구간 4,092 km 220 kV 143구간 7,201 km 110 kV 431구간 12,314 km 기간 2016년 선로(경로 있음) · 계획 선로는 목록 제공 World Bank (ENERGYDATA.INFO) 상세보기 →",
+        "height": 499
+      },
+      {
+        "id": "B-033",
+        "kind": "line",
+        "title": "연간 산림손실",
+        "question": "산림손실은 어디에서 얼마나 큰가?",
+        "headlineValue": "11,728 ha",
+        "headlineLabel": "Quảng Ninh · 2024년 손실이 가장 큰 성·시",
+        "hasPreview": true,
+        "factLabels": [
+          "기간",
+          "제공"
+        ],
+        "controls": [
+          "상세보기 →"
+        ],
+        "text": "연간 산림손실 산림손실은 어디에서 얼마나 큰가? 11,728 ha Quảng Ninh · 2024년 손실이 가장 큰 성·시 13,535 0 2001 2024 기간 2001–2024년 제공 Global Forest Watch (UMD/WRI) 상세보기 →",
+        "height": 345
+      },
+      {
+        "id": "C-016",
+        "kind": "bars",
+        "title": "재생에너지 발주·확대계획",
+        "question": "재생에너지 계획용량은 어느 성·시에 집중되나?",
+        "headlineValue": "27,385 MW",
+        "headlineLabel": "63개 성·시 합계 · 집중형 태양광 2025–2030년 계획",
+        "hasPreview": true,
+        "factLabels": [
+          "기간",
+          "제공"
+        ],
+        "controls": [
+          "상세보기 →"
+        ],
+        "text": "재생에너지 발주·확대계획 재생에너지 계획용량은 어느 성·시에 집중되나? 27,385 MW 63개 성·시 합계 · 집중형 태양광 2025–2030년 계획 Sơn La 3,674 Đắk Lắk 3,349 Ninh Thuận 1,974 Yên Bái 1,656 Đắk Nông 1,294 Lai Châu 1,086 기간 2025–2030년 · 집중형 태양광 제공 베트남 총리실 · 산업무역부(MOIT), 개정 PDP8 부록 II 상세보기 →",
+        "height": 385
+      },
+      {
+        "id": "D-023",
+        "kind": "composition",
+        "title": "국제협력·기후재원 사업",
+        "question": "기후재원 사업은 어느 기금에 얼마나 있나?",
+        "headlineValue": "71건",
+        "headlineLabel": "4개 기금의 개별 사업 · 1991–2026년 승인·등록 사업",
+        "hasPreview": true,
+        "factLabels": [
+          "기간",
+          "제공"
+        ],
+        "controls": [
+          "상세보기 →"
+        ],
+        "text": "국제협력·기후재원 사업 기후재원 사업은 어느 기금에 얼마나 있나? 71건 4개 기금의 개별 사업 · 1991–2026년 승인·등록 사업 GEF 53 75% GCF 8 11% CIF(CTF) 6 8% 적응기금 4 6% 기간 1991–2026년 승인·등록 사업 제공 GCF · GEF · 적응기금 · CIF 공개 사업 목록 상세보기 →",
+        "height": 395
+      }
+    ],
+    "heroMapLink": "이 자료 지도에서 보기 →",
+    "overflow": false
+  },
+  "finder": {
+    "totalAll": 152,
+    "totalMap": 42,
+    "totalDownload": 147,
+    "visibleCards": {
+      "cards": 24,
+      "withMapButton": 24
+    },
+    "finderTitles": {
+      "A-002": "국가 거버넌스 지표(WGI)",
+      "A-003": "국내총생산 및 경제성장",
+      "A-010": "온실가스 종류별 배출량",
+      "A-023": "발전소 현황",
+      "A-024": "베트남 송전망",
+      "B-033": "연간 산림손실",
+      "C-016": "재생에너지 발주·확대계획",
+      "D-023": "국제협력·기후재원 사업"
+    },
+    "labels": [
+      "검색",
+      "국가",
+      "정렬",
+      "대분류",
+      "데이터 그룹",
+      "자료연도",
+      "제공기관",
+      "제공 형태",
+      "기후기술"
+    ],
+    "b017Buttons": [
+      "FAO",
+      "AQUASTAT",
+      "SDG",
+      "WRI",
+      "데이터 보기",
+      "다운로드"
+    ]
+  },
+  "map": {
+    "lede": "42개 자료 · 선택 0개 · 준비 중 1개",
+    "ledeConnected": 42,
+    "ledePending": 1,
+    "rowCount": 43,
+    "availableCount": 42,
+    "groupCounts": [
+      "8개",
+      "8개",
+      "5개 · 준비 중 1",
+      "8개",
+      "6개",
+      "3개",
+      "5개"
+    ],
+    "pendingRows": [
+      {
+        "id": "B-017",
+        "badge": "준비 중",
+        "summary": "위치자료 없음 · 지도에 표시하지 않음",
+        "disabled": true,
+        "checked": false,
+        "dashed": true
+      }
+    ],
+    "drawn": [],
+    "guideCount": "지도 자료 42개 · 준비 중 1개 (지도 대상 43개 중 위치·경계가 확인된 자료만 지도에 표시)",
+    "b017Click": {
+      "found": true,
+      "checked": false,
+      "drawn": "false"
+    }
+  },
+  "detail": {
+    "title": "국가 거버넌스 지표(WGI)",
+    "analysisMounted": true,
+    "chartCount": 4,
+    "limitationItems": [
+      "1996~2002년은 격년(1996·1998·2000·2002)으로만 제공되며, 2003년부터 매년 제공됩니다",
+      "백분위(0~100)는 해당 연도 조사대상국 중 상대적 위치이므로 연도 간 비교 시 대상국 구성 변화를 함께 고려해야 합니다"
+    ]
+  },
+  "movedCaveats": {
+    "A-010": true,
+    "A-024": true,
+    "B-033": true,
+    "C-016": true,
+    "D-023": true
+  },
+  "download": {
+    "summary": "선택한 데이터 1개 · 최대 312행",
+    "file": {
+      "name": "vietnam_wgi-worldwide-governance-indicators-gugga-geobeoneonseu-jipyo_2026-09-16.csv",
+      "bytes": 164497
+    },
+    "staticCsvStatus": 200,
+    "staticCsvBytes": null
+  },
+  "b017Detail": {
+    "mapLinks": 0,
+    "mapEngine": false,
+    "statesNotOnMap": true
+  },
+  "summary": {
+    "passed": 52,
+    "failed": 0,
+    "total": 52
+  }
+}

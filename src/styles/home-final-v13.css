@@ -335,18 +335,35 @@
   letter-spacing: -0.02em;
 }
 
-.home-featured-v139__lead {
+/* V140: a card reads title → question → one figure → preview → period ·
+   provider → 상세보기. Caveats, units tables and row counts moved to the
+   detail screen. */
+.home-featured-v139__question {
   margin: 0;
   color: var(--slate-600);
   font-size: 13px;
-  line-height: 1.55;
+  line-height: 1.5;
 }
 
-.home-featured-v139__series {
+.home-featured-v139__headline {
   margin: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.home-featured-v139__headline strong {
   color: #0f766e;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.home-featured-v139__headline span {
+  color: var(--slate-600);
   font-size: 12px;
-  font-weight: 700;
+  line-height: 1.45;
 }
 
 .home-featured-v139__chart {
@@ -422,13 +439,6 @@
 .home-featured-v139__meta dd {
   margin: 0;
   color: var(--slate-900);
-}
-
-.home-featured-v139__note {
-  margin: 0;
-  color: var(--slate-600);
-  font-size: 11.5px;
-  line-height: 1.5;
 }
 
 .home-featured-v139__open {

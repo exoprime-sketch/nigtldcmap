@@ -36,25 +36,26 @@ home,home,,2026.08.27,DD
 home,home,,주요 데이터,H2
 home,home,,전체 데이터 보기 →,BUTTON
 home,home,,국가 거버넌스 지표( ),H3
-home,home,,WGI,SPAN
-home,home,,여섯 거버넌스 영역의 추정치를 비교하고 1996년부터의 변화를 확인할 수 있습니다.,P
+home,home,,WGI,BUTTON
+home,home,,베트남의 거버넌스 여섯 영역은 각각 어느 수준인가?,P
+home,home,home-card-headline-v140,−1.10 ~ +0.01,STRONG
+home,home,home-card-headline-v140,2024년 여섯 영역 추정치 범위 · −2.5 약함 ~ +2.5 강함,SPAN
 home,home,,기간,DT
 home,home,,2024년 값 · 1996–2024년 제공,DD
-home,home,,단위,DT
-home,home,,추정치(−2.5 약함 ~ +2.5 강함),DD
 home,home,,제공,DT
 home,home,,World Bank · 세계 거버넌스 지표( ),DD
-home,home,,WGI,BUTTON
-home,home,,백분위 순위는 다른 척도이므로 함께 그리지 않습니다.,P
 home,home,,상세보기 →,BUTTON
 home,home,,국내총생산 및 경제성장,H3
-home,home,,국내총생산의 연도별 추이와 성장률을 확인할 수 있습니다.,P
+home,home,,국내총생산은 어떻게 변해왔나?,P
+home,home,home-card-headline-v140,514.7,STRONG
+home,home,home-card-headline-v140,10억 미국달러 · 2025년 명목 국내총생산,SPAN
 home,home,,1985–2025년,DD
-home,home,,"10억 미국달러(명목, 현재 가격)",DD
 home,home,,World Bank 국가 통계,DD
-home,home,,명목 달러 계열 하나만 그립니다. 실질·구매력평가 계열은 상세에서 따로 제공합니다.,P
 home,home,,온실가스 종류별 배출량,H3
-home,home,,온실가스 종류별 배출량의 구성과 1970년부터의 변화를 확인할 수 있습니다.,P
+home,home,,온실가스는 어떤 가스에서 얼마나 배출되나?,P
+home,home,home-card-headline-v140,582.7,STRONG
+home,home,home-card-headline-v140,Mt · 2024년 네 가스 합계,SPAN
+home,home,home-card-headline-v140,CO₂eq,BUTTON
 home,home,,CO₂,BUTTON
 home,home,,430.8,STRONG
 home,home,,74 %,SMALL
@@ -68,27 +69,22 @@ home,home,,F-gas,SPAN
 home,home,,10.9,STRONG
 home,home,,2 %,SMALL
 home,home,,2024년 구성 · 1970–2024년 제공,DD
-home,home,,"Mt ( -100, )",DD
-home,home,,CO₂eq,BUTTON
-home,home,,GWP,BUTTON
-home,home,,AR5,BUTTON
 home,home,,European Commission ·,DD
 home,home,,JRC,BUTTON
 home,home,,EDGAR,BUTTON
-home,home,,네 가스를 같은 환산 단위로 나란히 둔 구성입니다. 원천은 별도 총계 행을 제공하지 않습니다.,P
 home,home,,발전소 현황,H3
-home,home,,"발전소 위치와 발전원별 분포, 설비용량을 지도와 목록으로 확인할 수 있습니다.",P
-home,home,,WRI,BUTTON
-home,home,,236 행,STRONG
+home,home,,발전소는 어떤 발전원으로 얼마나 있나?,P
+home,home,home-card-headline-v140,"41,350 MW",STRONG
+home,home,home-card-headline-v140,수록 발전소 설비용량 합계 · 2021년,SPAN
+home,home,home-card-headline-v140,WRI,BUTTON
 home,home,,OSM,BUTTON
-home,home,,"1,727 행",STRONG
 home,home,,v1.3.0(2021) · 2026년 추출,DD
 home,home,,GPPD,BUTTON
-home,home,,원천 수록 행(곳),DD
 home,home,,World Resources Institute · OpenStreetMap 기여자,DD
-home,home,,"두 원천( 236행 · 1,727행)은 공통 식별자가 없어 고유 발전소 수로 합치지 않습니다.",P
 home,home,,베트남 송전망,H3
-home,home,,송전선 경로와 전압별 분포를 지도에서 확인할 수 있습니다.,P
+home,home,,"송전선은 어디에, 어떤 전압으로 놓여 있나?",P
+home,home,home-card-headline-v140,"23,608 km",STRONG
+home,home,home-card-headline-v140,2016년 송전선 606구간 총연장,SPAN
 home,home,,500,SPAN
 home,home,,32 구간,STRONG
 home,home,,"4,092 km",SMALL
@@ -99,30 +95,26 @@ home,home,,110,SPAN
 home,home,,431 구간,STRONG
 home,home,,"12,314 km",SMALL
 home,home,,2016년 선로(경로 있음) · 계획 선로는 목록,DD
-home,home,,· 구간 수 · km,DD
 home,home,,World Bank (ENERGYDATA.INFO),DD
-home,home,,개정 선로 116행(계획 68행 포함)은 경로 좌표가 없어 이 지도에는 없고 상세 목록에만 있습니다.,P
-home,home,,PDP8,BUTTON
 home,home,,연간 산림손실,H3
-home,home,,성·시별 연간 산림(수관) 손실과 누적 변화를 확인할 수 있습니다.,P
-home,home,,Quảng Ninh · 2024년 손실이 가장 큰 성·시,P
+home,home,,산림손실은 어디에서 얼마나 큰가?,P
+home,home,home-card-headline-v140,"11,728 ha",STRONG
+home,home,home-card-headline-v140,Quảng Ninh · 2024년 손실이 가장 큰 성·시,SPAN
 home,home,,2001–2024년,DD
-home,home,,/년 · 수관 밀도 30% 기준,DD
-home,home,,ha,BUTTON
 home,home,,Global Forest Watch ( / ),DD
 home,home,,UMD,BUTTON
-home,home,,"63개 성·시 계열 중 한 곳입니다. 원천은 전국 계열을 제공하지 않으며, 성·시 값을 더해 전국값으로 만들지 않습니다.",P
 home,home,,재생에너지 발주·확대계획,H3
-home,home,,재생에너지 기술별·기간별 성·시 계획용량을 비교할 수 있습니다.,P
-home,home,,"63개 성·시 중 상위 6곳 · 합계 27,385",P
-home,home,,MW,BUTTON
+home,home,,재생에너지 계획용량은 어느 성·시에 집중되나?,P
+home,home,home-card-headline-v140,"27,385 MW",STRONG
+home,home,home-card-headline-v140,63개 성·시 합계 · 집중형 태양광 2025–2030년 계획,SPAN
 home,home,,2025–2030년 · 집중형 태양광,DD
-home,home,,(계획 용량),DD
 home,home,,"베트남 총리실 · 산업무역부( ), 개정 부록 II",DD
 home,home,,MOIT,BUTTON
-home,home,,Quyết định 768/QĐ-TTg (2025-04-15)의 계획 용량이며 설치 실적이 아닙니다.,P
+home,home,,PDP8,BUTTON
 home,home,,국제협력·기후재원 사업,H3
-home,home,,"기후재원 기금별 사업 수와 사업 유형, 기간을 확인할 수 있습니다.",P
+home,home,,기후재원 사업은 어느 기금에 얼마나 있나?,P
+home,home,home-card-headline-v140,71건,STRONG
+home,home,home-card-headline-v140,4개 기금의 개별 사업 · 1991–2026년 승인·등록 사업,SPAN
 home,home,,GEF,BUTTON
 home,home,,53,STRONG
 home,home,,75 %,SMALL
@@ -138,9 +130,7 @@ home,home,,적응기금,SPAN
 home,home,,4,STRONG
 home,home,,6 %,SMALL
 home,home,,1991–2026년 승인·등록 사업,DD
-home,home,,사업 수(건),DD
 home,home,,· · 적응기금 · 공개 사업 목록,DD
-home,home,,같은 기준(개별 사업 행 수)으로 센 구성입니다. 승인액은 통화·기간·집행 단계가 달라 합산하지 않습니다.,P
 home,home,,주제별 데이터,H2
 home,home,,주제를 고르면 데이터 찾기에 그 분류 필터가 적용됩니다.,P
 home,home,,국가 기본정보,BUTTON
@@ -169,6 +159,7 @@ finder,finder,,데이터 그룹,SPAN
 finder,finder,,상세검색,SUMMARY
 finder,finder,,자료연도,SPAN
 finder,finder,,제공기관,SPAN
+finder,finder,,제공 형태,SPAN
 finder,finder,,기후기술,SPAN
 finder,finder,,검색조건 초기화,BUTTON
 finder,finder,,현재 152개의 데이터가 있습니다,SPAN
@@ -2993,6 +2984,7 @@ finder-cards,finder,,데이터 그룹,SPAN
 finder-cards,finder,,상세검색,SUMMARY
 finder-cards,finder,,자료연도,SPAN
 finder-cards,finder,,제공기관,SPAN
+finder-cards,finder,,제공 형태,SPAN
 finder-cards,finder,,기후기술,SPAN
 finder-cards,finder,,검색조건 초기화,BUTTON
 finder-cards,finder,,현재 152개의 데이터가 있습니다,SPAN
@@ -3253,7 +3245,7 @@ map,map,map-analysis-preset,권역 위험도 + 기후예산·적응사업,SPAN
 map,map,map-analysis-preset,기후재원 사업,STRONG
 map,map,map-analysis-preset,적응기금 지역 협력범위 + 검증된 탄소사업지,SPAN
 map,map,map-all-data-v135,지도 데이터,H2
-map,map,map-catalog-status-v138,43 개 자료 · 선택 0 개,P
+map,map,map-catalog-status-v138,42개 자료 · 선택 0개 · 준비 중 1개,P
 map,map,map-all-data-v135,모두 펼치기,BUTTON
 map,map,map-all-data-v135,선택 해제,BUTTON
 map,map,map-catalog-group-toggle-v138,에너지·인프라,SPAN
@@ -3282,19 +3274,20 @@ map,map,map-all-data-v135,재생에너지 지역계획,STRONG
 map,map,map-all-data-v135,성·시별 계획용량 · 2025-2030,SMALL
 map,map,map-catalog-group-toggle-v138,기후·위험,SPAN
 map,map,map-catalog-group-toggle-v138,물·자원,SPAN
-map,map,map-catalog-group-toggle-v138,5 개,SPAN
+map,map,map-catalog-group-toggle-v138,5 개 · 준비 중 1,SPAN
 map,map,map-catalog-group-toggle-v138,산림·토지,SPAN
 map,map,map-catalog-group-toggle-v138,정책·사업여건,SPAN
 map,map,map-catalog-group-toggle-v138,6 개,SPAN
 map,map,map-catalog-group-toggle-v138,국제사업·재원,SPAN
 map,map,map-catalog-group-toggle-v138,3 개,SPAN
 map,map,map-catalog-group-toggle-v138,협력기관·기업,SPAN
+map,map,map-catalog-group-toggle-v138,5 개,SPAN
 map,map,map-compare-open-v135,비교해서 보기,BUTTON
 map,map,map-data-guide-details-v135,지도 데이터 안내,SUMMARY
 map,map,map-data-guide-details-v135,전체 데이터,STRONG
 map,map,map-data-guide-details-v135,152개,SPAN
 map,map,map-data-guide-details-v135,지도,STRONG
-map,map,map-data-guide-details-v135,지도 대상 43 개 중 위치·경계가 확인되어 연결된 42 개 데이터,SPAN
+map,map,map-data-guide-count-v140,지도 자료 42 개 · 준비 중 1개 (지도 대상 43개 중 위치·경계가 확인된 자료만 지도에 표시),SPAN
 map,map,map-data-guide-details-v135,에너지·인프라,H3
 map,map,map-data-guide-details-v135,데이터명,TH
 map,map,map-data-guide-details-v135,지도 표시,TH
@@ -3378,7 +3371,7 @@ map,map,map-data-guide-details-v135,2023,TD
 map,map,map-data-guide-details-v135,권역별 취약성 수준 비교,TD
 map,map,map-data-guide-details-v135,권역값을 소속 성·시에 동일 표시하며 성·시 독립 추정값이 아닙니다.,TD
 map,map,map-data-guide-details-v135,물·자원,H3
-map,map,map-data-guide-missing-v138,지도 미연결: 물 스트레스 — 원천 레코드의 좌표는 소속 성(GADM)의 대표점이며 평가구역 자체의 위치가 아닙니다. 평가구역 경계는 Aqueduct 4.0 GDB(Aq40_Y2023D07M05.gdb)에만 있으며 이 저장소의 파이프라인(GDAL 미설치)으로는 GeoJSON을 추출하지 못했습니다.,P
+map,map,map-data-guide-missing-v138,"준비 중 (위치자료 없음, 지도에 표시하지 않음): 물 스트레스 — 원천 레코드의 좌표는 소속 성(GADM)의 대표점이며 평가구역 자체의 위치가 아닙니다. 평가구역 경계는 Aqueduct 4.0 GDB(Aq40_Y2023D07M05.gdb)에만 있으며 이 저장소의 파이프라인(GDAL 미설치)으로는 GeoJSON을 추출하지 못했습니다.",P
 map,map,map-data-guide-details-v135,건기·우기 유량 차이,TH
 map,map,map-data-guide-details-v135,"지점 클릭 → 건기·우기 유량, 유량비, 비중 등 지표값",TD
 map,map,map-data-guide-details-v135,국외 상류 관측소(Kratie)는 실제 위치(캄보디아)에 표시. 유역 폴리곤( 8대 유역)은 원자료에 미포함이라 대표점만 표시.,TD
@@ -6053,6 +6046,8 @@ A-010,detail,emissions-latest-composition-v132,26.09 Mt CO2eq,STRONG
 A-010,detail,emissions-latest-composition-v132,4.5 %,SMALL
 A-010,detail,emissions-latest-composition-v132,10.87 Mt CO2eq,STRONG
 A-010,detail,emissions-latest-composition-v132,1.9 %,SMALL
+A-010,detail,public-limitations-panel,자료 이용 시 유의사항,STRONG
+A-010,detail,public-limitation-item,"가스별 배출량은 같은 환산 단위(CO₂eq, GWP-100·AR5)로 제공되며, 원천은 별도의 총계 행을 제공하지 않습니다. 화면의 합계는 네 가스 값을 더한 것입니다",LI
 A-010,detail,detail-metadata-v135,자료정보,SUMMARY
 A-010,detail,public-source-panel,자료정보,SPAN
 A-010,detail,public-source-panel,출처와 이용조건,H3
@@ -10099,6 +10094,9 @@ A-024,detail,public-entity-card-title,송전망 구간 · 구간 19 · 220,H5
 A-024,detail,public-entity-card-title,송전망 구간 · 구간 20 · 220,H5
 A-024,detail,public-entity-card-shared-note,원문 선로명이 없어 공개된 전압과 연장으로 구분합니다.,P
 A-024,detail,public-primary-visualization,대표 12 건을 표시합니다. 전체 722 건은 아래 상세 데이터에서 확인할 수 있습니다.,P
+A-024,detail,public-limitations-panel,자료 이용 시 유의사항,STRONG
+A-024,detail,public-limitation-item,지도에 그리는 경로는 2016년 송전선뿐입니다. 개정 PDP8 선로(계획 선로 포함)는 경로 좌표가 없어 목록에만 있으며 지도에는 없습니다,LI
+A-024,detail,public-limitation-item,"원천 PDF를 좌표화한 자료로 2~10 km 위치 오차가 있을 수 있으며, 선의 교차는 전기적 접속을 뜻하지 않습니다",LI
 A-024,detail,detail-metadata-v135,자료정보,SUMMARY
 A-024,detail,public-source-panel,자료정보,SPAN
 A-024,detail,public-source-panel,출처와 이용조건,H3
@@ -19136,6 +19134,8 @@ B-033,detail,public-entity-card-title,KienGiang · 2004년,H5
 B-033,detail,public-entity-card-title,AnGiang · 2021년,H5
 B-033,detail,public-entity-card-shared-note,원천이 개별 명칭 대신 지역·연도로 행을 구분합니다.,P
 B-033,detail,public-primary-visualization,"대표 12 건을 표시합니다. 전체 2,056 건은 아래 상세 데이터에서 확인할 수 있습니다.",P
+B-033,detail,public-limitations-panel,자료 이용 시 유의사항,STRONG
+B-033,detail,public-limitation-item,원천은 63개 성·시 계열만 제공하고 전국 계열은 제공하지 않습니다. 성·시 값을 더해 전국값으로 만들지 않습니다,LI
 B-033,detail,detail-metadata-v135,자료정보,SUMMARY
 B-033,detail,public-source-panel,자료정보,SPAN
 B-033,detail,public-source-panel,출처와 이용조건,H3
@@ -27828,6 +27828,8 @@ C-016,detail,public-entity-card-title,민간 직접전력거래( ),H5
 C-016,detail,public-entity-card-facts,~25,DD
 C-016,detail,public-entity-card-facts,대형 전력수용가 대상 병행 확대,DD
 C-016,detail,public-primary-visualization,대표 12 건을 표시합니다. 전체 817 건은 아래 상세 데이터에서 확인할 수 있습니다.,P
+C-016,detail,public-limitations-panel,자료 이용 시 유의사항,STRONG
+C-016,detail,public-limitation-item,"표시된 용량은 개정 PDP8(Quyết định 768/QĐ-TTg, 2025-04-15)의 계획 용량이며 설치 실적이 아닙니다",LI
 C-016,detail,detail-metadata-v135,자료정보,SUMMARY
 C-016,detail,public-source-panel,자료정보,SPAN
 C-016,detail,public-source-panel,출처와 이용조건,H3
@@ -36019,6 +36021,8 @@ D-023,detail,public-entity-card-title,Ho Chi Minh City Sustainable Urban Transpo
 D-023,detail,portfolio-entity-list-v132,이전,BUTTON
 D-023,detail,portfolio-entity-list-v132,1 / 7,SPAN
 D-023,detail,portfolio-entity-list-v132,다음,BUTTON
+D-023,detail,public-limitations-panel,자료 이용 시 유의사항,STRONG
+D-023,detail,public-limitation-item,사업 수는 네 기금의 개별 사업 행을 같은 기준으로 센 값입니다. 승인액은 통화·기간·집행 단계가 기금마다 달라 통화가 확인된 금액만 통화별로 합산합니다,LI
 D-023,detail,detail-metadata-v135,자료정보,SUMMARY
 D-023,detail,public-source-panel,자료정보,SPAN
 D-023,detail,public-source-panel,출처와 이용조건,H3

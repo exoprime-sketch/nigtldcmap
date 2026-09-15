@@ -1,11 +1,14 @@
 import type { CountryMapLayerV122 } from "../../data/countries/countryDataTypesV122";
 import {
   PUBLIC_MAP_TARGET_CATEGORIES_V138,
-  PUBLIC_MAP_TARGETS_V138,
   publicMapDataFunctionV135,
   publicMapLayerTitleV126,
 } from "../../data/visualization/publicMapWorkspaceV126";
 import { PublicTermTextV134 } from "../help/PublicTermV134";
+import {
+  MAP_PENDING_LABEL_V140,
+  summarizeMapAvailabilityV140,
+} from "../../data/map/mapAvailabilityV140";
 
 // V138: the seven categories the catalogue uses, in the same order.
 const GROUP_ORDER = PUBLIC_MAP_TARGET_CATEGORIES_V138;
@@ -34,20 +37,14 @@ export default function MapDataGuideV130({
   layers,
   onOpenDataFinder,
 }: MapDataGuideV130Props) {
+  // V140: the same count the home and the list state, from the map index.
+  const availability = summarizeMapAvailabilityV140(layers);
   const groups = GROUP_ORDER.map((group) => ({
     group,
     layers: layers.filter((layer) => layer.category === group),
     // Targets the contract names but no layer carries: listed with the reason.
-    missing: PUBLIC_MAP_TARGETS_V138.filter(
-      (target) =>
-        target.category === group &&
-        !layers.some((layer) => layer.elementId === target.elementId && layer.enabled !== false)
-    ),
+    missing: availability.pending.filter((target) => target.category === group),
   }));
-  const targetCount = PUBLIC_MAP_TARGETS_V138.length;
-  const connectedCount = layers.filter((layer) =>
-    PUBLIC_MAP_TARGETS_V138.some((target) => target.elementId === layer.elementId)
-  ).length;
 
   return (
     <section className="cdp-map-data-guide-v130" data-testid="map-data-guide-v130">
@@ -60,8 +57,11 @@ export default function MapDataGuideV130({
           </div>
           <div>
             <strong>지도</strong>
-            <span>
-              지도 대상 {targetCount}개 중 위치·경계가 확인되어 연결된 {connectedCount}개 데이터
+            <span data-testid="map-data-guide-count-v140">
+              지도 자료 {availability.connectedCount}개
+              {availability.pendingCount > 0
+                ? ` · ${MAP_PENDING_LABEL_V140} ${availability.pendingCount}개 (지도 대상 ${availability.targetCount}개 중 위치·경계가 확인된 자료만 지도에 표시)`
+                : ` (지도 대상 ${availability.targetCount}개 모두 연결)`}
             </span>
           </div>
         </div>
@@ -71,13 +71,11 @@ export default function MapDataGuideV130({
               <h3>{group}</h3>
               {missing.length > 0 && (
                 <p className="cdp-muted" data-testid="map-data-guide-missing-v138">
-                  지도 미연결:{" "}
+                  {MAP_PENDING_LABEL_V140}(위치자료 없음, 지도에 표시하지 않음):{" "}
                   {missing
                     .map(
                       (target) =>
-                        `${publicMapLayerTitleV126(target.elementId, target.publicName)} — ${
-                          target.build.reason || "위치·경계 자료 미확인"
-                        }`
+                        `${publicMapLayerTitleV126(target.elementId, target.publicName)} — ${target.reason}`
                     )
                     .join(" / ")}
                 </p>

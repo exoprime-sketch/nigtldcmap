@@ -144,12 +144,13 @@ function GroupedBars({ card }: { card: Extract<HomePreviewCardV139, { kind: "gro
           );
         })}
       </svg>
-      <ul className="home-chart-v139__legend home-chart-v139__legend--inline">
+      {/* V140: the legend names the two registries only. How many rows each
+          holds is a fact for the detail screen, not the home card. */}
+      <ul className="home-chart-v139__legend home-chart-v139__legend--inline" aria-label="원천">
         {card.seriesLabels.map((label, i) => (
           <li key={label}>
             <i style={{ background: SERIES[i] }} aria-hidden="true" />
             <span><PublicTermTextV134 text={label} /></span>
-            <strong>{fmt(card.rowsBySource[label] ?? 0)}행</strong>
           </li>
         ))}
       </ul>

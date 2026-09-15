@@ -187,7 +187,8 @@
     "review:screens:v138": "node scripts/v138/screen-review-v138.mjs",
     "compare:downloads:v138": "node scripts/v138/download-sample-compare-v138.mjs",
     "build:home-preview:v139": "node scripts/v139/build-home-preview-v139.mjs && node scripts/generate-vietnam-asset-integrity-v133.mjs --data public/data/vietnam/v2",
-    "qa:home:v139": "node scripts/v139/home-runtime-qa-v139.mjs"
+    "qa:home:v139": "node scripts/v139/home-runtime-qa-v139.mjs",
+    "qa:role-split:v140": "node scripts/v140/role-split-qa-v140.mjs"
   },
   "browserslist": [
     ">0.2%",

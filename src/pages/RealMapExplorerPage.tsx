@@ -58,6 +58,11 @@ import {
   publicMapTargetV138,
 } from "../data/visualization/publicMapWorkspaceV126";
 import type { PublicMapWorkspacePresetIdV126 } from "../data/visualization/publicMapWorkspaceV126";
+import {
+  MAP_PENDING_LABEL_V140,
+  MAP_PENDING_SUMMARY_V140,
+  summarizeMapAvailabilityV140,
+} from "../data/map/mapAvailabilityV140";
 import { formatPublicNumberV126 } from "../data/visualization/publicNumberFormatV126";
 import {
   publicSourceOrganizationV136_1,
@@ -4071,6 +4076,13 @@ export default function RealMapExplorerPage({
       ),
     })).filter((group) => group.rows.length > 0);
   }, [layers]);
+  // V140: the list's counts come from the map index, the same file the home
+  // counts from, so "지도 자료 N개" is one number on every screen. Targets
+  // the contract names but the index does not carry are counted as pending.
+  const mapAvailabilityV140 = useMemo(
+    () => summarizeMapAvailabilityV140(layers),
+    [layers]
+  );
   const [openCategoriesV138, setOpenCategoriesV138] = useState<Set<string>>(
     () => new Set<string>()
   );
@@ -5886,8 +5898,18 @@ export default function RealMapExplorerPage({
             <header className="cdp-map-catalog-v138__header">
               <div>
                 <h2 id="map-all-data-title-v135">지도 데이터</h2>
-                <p className="cdp-map-catalog-v138__lede" data-testid="map-catalog-status-v138">
-                  {PUBLIC_MAP_TARGETS_V138.length}개 자료 · 선택 {activeIds.length}개
+                <p
+                  className="cdp-map-catalog-v138__lede"
+                  data-testid="map-catalog-status-v138"
+                  data-map-connected-count={mapAvailabilityV140.connectedCount}
+                  data-map-pending-count={mapAvailabilityV140.pendingCount}
+                >
+                  {mapIndexStatus === "ready"
+                    ? `${mapAvailabilityV140.connectedCount}개 자료 · 선택 ${activeIds.length}개`
+                    : `지도 자료 · 선택 ${activeIds.length}개`}
+                  {mapIndexStatus === "ready" && mapAvailabilityV140.pendingCount > 0
+                    ? ` · ${MAP_PENDING_LABEL_V140} ${mapAvailabilityV140.pendingCount}개`
+                    : ""}
                   {primaryLayerId
                     ? ` · 색상·분석 기준: ${publicMapLayerTitleV126(
                         primaryLayerId,
@@ -5955,6 +5977,10 @@ export default function RealMapExplorerPage({
               const selectedCount = rows.filter((row) =>
                 activeIds.includes(row.target.elementId)
               ).length;
+              const pendingCount =
+                mapIndexStatus === "ready"
+                  ? rows.filter((row) => !row.layer || row.layer.enabled === false).length
+                  : 0;
               const groupId = `map-catalog-group-${category.replace(/[^0-9A-Za-z가-힣]+/gu, "-")}`;
               return (
                 <div
@@ -5981,6 +6007,7 @@ export default function RealMapExplorerPage({
                     <span className="cdp-map-catalog-v138__group-name">{category}</span>
                     <span className="cdp-map-catalog-v138__group-count">
                       {rows.length}개
+                      {pendingCount > 0 ? ` · ${MAP_PENDING_LABEL_V140} ${pendingCount}` : ""}
                       {selectedCount > 0 ? ` · 선택 ${selectedCount}` : ""}
                     </span>
                   </button>
@@ -6047,12 +6074,20 @@ export default function RealMapExplorerPage({
                                         }`
                                       : indexPending
                                         ? "지도 목록을 불러오는 중"
-                                        : "지도 미연결"
+                                        : MAP_PENDING_SUMMARY_V140
                                   }
                                   firstOccurrenceOnly
                                 />
                               </small>
                             </label>
+                            {!available && !indexPending && (
+                              <span
+                                className="cdp-map-catalog-v138__pending"
+                                data-testid="map-catalog-pending-v140"
+                              >
+                                {MAP_PENDING_LABEL_V140}
+                              </span>
+                            )}
                             <button
                               type="button"
                               className="cdp-map-catalog-v138__info"
@@ -6128,7 +6163,7 @@ export default function RealMapExplorerPage({
                               </div>
                               {!available && (
                                 <div>
-                                  <dt>미연결 사유</dt>
+                                  <dt>{MAP_PENDING_LABEL_V140} 사유</dt>
                                   <dd data-testid="map-catalog-unavailable-reason-v138">
                                     {layer?.disabledReason || target.build.reason || "위치·경계 자료가 확인되지 않았습니다."}
                                     {target.build.requiredAsset

@@ -38,6 +38,7 @@ const SVG_URL = "/data/vietnam/v2/home/transmission-preview-v139.svg";
 
 const readJson = (path) => JSON.parse(readFileSync(path, "utf8"));
 const round = (value, digits = 2) => Number(Number(value).toFixed(digits));
+const signed = (value) => `${value > 0 ? "+" : value < 0 ? "−" : ""}${Math.abs(value).toFixed(2)}`;
 
 function loadPacks() {
   const index = readJson(resolve(DATA, "packs/bundle-index-v124.json"));
@@ -86,6 +87,11 @@ function cardA002() {
     elementId: "A-002",
     kind: "signed-bars",
     lead: "여섯 거버넌스 영역의 추정치를 비교하고 1996년부터의 변화를 확인할 수 있습니다.",
+    question: "베트남의 거버넌스 여섯 영역은 각각 어느 수준인가?",
+    headline: {
+      value: `${signed(Math.min(...bars.map((bar) => bar.value)))} ~ ${signed(Math.max(...bars.map((bar) => bar.value)))}`,
+      label: `${latest}년 여섯 영역 추정치 범위 · −2.5 약함 ~ +2.5 강함`,
+    },
     unit: "추정치(−2.5 약함 ~ +2.5 강함)",
     period: `${latest}년 값 · ${years[0]}–${years[years.length - 1]}년 제공`,
     provider: "World Bank · 세계 거버넌스 지표(WGI)",
@@ -107,6 +113,11 @@ function cardA003() {
     elementId: "A-003",
     kind: "line",
     lead: "국내총생산의 연도별 추이와 성장률을 확인할 수 있습니다.",
+    question: "국내총생산은 어떻게 변해왔나?",
+    headline: {
+      value: `${last.value.toLocaleString("en-US", { maximumFractionDigits: 1 })}`,
+      label: `10억 미국달러 · ${last.year}년 명목 국내총생산`,
+    },
     unit: "10억 미국달러(명목, 현재 가격)",
     period: `${first.year}–${last.year}년`,
     provider: "World Bank 국가 통계",
@@ -136,6 +147,11 @@ function cardA010() {
     elementId: "A-010",
     kind: "composition",
     lead: "온실가스 종류별 배출량의 구성과 1970년부터의 변화를 확인할 수 있습니다.",
+    question: "온실가스는 어떤 가스에서 얼마나 배출되나?",
+    headline: {
+      value: `${total.toLocaleString("en-US", { maximumFractionDigits: 1 })}`,
+      label: `Mt CO₂eq · ${latest}년 네 가스 합계`,
+    },
     unit: "Mt CO₂eq (GWP-100, AR5)",
     period: `${latest}년 구성 · ${years[0]}–${years[years.length - 1]}년 제공`,
     provider: "European Commission JRC · EDGAR",
@@ -181,10 +197,21 @@ function cardA023() {
   const groups = [...counts.values()]
     .sort((a, b) => b.WRI + b.OSM - (a.WRI + a.OSM))
     .slice(0, 6);
+  // The card's one number: WRI GPPD states a capacity for every one of its
+  // rows, so their sum is a sum of the registry, not of two sources.
+  const wriRows = entities("A-023").filter((row) => row.indicatorId === sources[0][0]);
+  const wriCapacities = wriRows.map((row) => Number(row.normalizedAttributes?.mw ?? row.normalizedAttributes?.capacityMw));
+  if (wriCapacities.some((value) => !Number.isFinite(value))) warn("A-023: a WRI row has no capacity; the headline sums only the stated ones");
+  const wriCapacityMw = Math.round(wriCapacities.filter(Number.isFinite).reduce((sum, value) => sum + value, 0));
   return {
     elementId: "A-023",
     kind: "grouped-bars",
     lead: "발전소 위치와 발전원별 분포, 설비용량을 지도와 목록으로 확인할 수 있습니다.",
+    question: "발전소는 어떤 발전원으로 얼마나 있나?",
+    headline: {
+      value: `${wriCapacityMw.toLocaleString("en-US")} MW`,
+      label: "WRI 수록 발전소 설비용량 합계 · 2021년",
+    },
     unit: "원천 수록 행(곳)",
     period: "WRI GPPD v1.3.0(2021) · OSM 2026년 추출",
     provider: "World Resources Institute · OpenStreetMap 기여자",
@@ -324,6 +351,11 @@ function cardB033() {
     elementId: "B-033",
     kind: "line",
     lead: "성·시별 연간 산림(수관) 손실과 누적 변화를 확인할 수 있습니다.",
+    question: "산림손실은 어디에서 얼마나 큰가?",
+    headline: {
+      value: `${Math.round(top.value).toLocaleString("en-US")} ha`,
+      label: `${top.regionLabel} · ${latestYear}년 손실이 가장 큰 성·시`,
+    },
     unit: `ha/년${threshold}`,
     period: `${years[0]}–${latestYear}년`,
     provider: "Global Forest Watch (UMD/WRI)",
@@ -352,6 +384,11 @@ function cardC016() {
     elementId: "C-016",
     kind: "bars",
     lead: "재생에너지 기술별·기간별 성·시 계획용량을 비교할 수 있습니다.",
+    question: "재생에너지 계획용량은 어느 성·시에 집중되나?",
+    headline: {
+      value: `${total.toLocaleString("en-US")} MW`,
+      label: `${regionCount}개 성·시 합계 · 집중형 태양광 ${period.replace("-", "–")}년 계획`,
+    },
     unit: "MW(계획 용량)",
     period: `${period.replace("-", "–")}년 · 집중형 태양광`,
     provider: "베트남 총리실 · 산업무역부(MOIT), 개정 PDP8 부록 II",
@@ -397,6 +434,11 @@ function cardD023() {
     elementId: "D-023",
     kind: "composition",
     lead: "기후재원 기금별 사업 수와 사업 유형, 기간을 확인할 수 있습니다.",
+    question: "기후재원 사업은 어느 기금에 얼마나 있나?",
+    headline: {
+      value: `${rows.length.toLocaleString("en-US")}건`,
+      label: `${parts.length}개 기금의 개별 사업 · ${span}`,
+    },
     unit: "사업 수(건)",
     period: span,
     provider: "GCF · GEF · 적응기금 · CIF 공개 사업 목록",
@@ -412,6 +454,11 @@ cards[4] = {
   elementId: "A-024",
   kind: "map",
   lead: "송전선 경로와 전압별 분포를 지도에서 확인할 수 있습니다.",
+  question: "송전선은 어디에, 어떤 전압으로 놓여 있나?",
+  headline: {
+    value: `${map.totalLengthKm.toLocaleString("en-US")} km`,
+    label: `2016년 송전선 ${map.segments.toLocaleString("en-US")}구간 총연장`,
+  },
   unit: "kV · 구간 수 · km",
   period: "2016년 선로(경로 있음) · 계획 선로는 목록",
   provider: map.provider,
@@ -421,7 +468,7 @@ cards[4] = {
 };
 
 const output = {
-  schemaVersion: "v139-home-preview-1",
+  schemaVersion: "v139-home-preview-2",
   dataSnapshot: manifest.generatedAt,
   generatedFrom: "public packs (bundle-index-v124) and geometry/*.geojson",
   map,

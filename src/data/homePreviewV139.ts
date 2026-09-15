@@ -29,12 +29,26 @@ export interface HomePreviewMapV139 {
   plannedNote: string;
 }
 
+/** The one figure a card leads with, and the rule that produced it. */
+export interface HomePreviewHeadlineV139 {
+  value: string;
+  label: string;
+}
+
 interface HomePreviewCardBaseV139 {
   elementId: string;
+  /** What the dataset answers, as the question a reader would ask. */
+  question: string;
+  headline: HomePreviewHeadlineV139;
+  /** One-sentence description; kept for the chart's accessible name. */
   lead: string;
   unit: string;
   period: string;
   provider: string;
+  /**
+   * The rule behind the preview. Not shown on the home card (V140): the
+   * caveats a reader needs live on the detail screen's 유의사항 panel.
+   */
   note: string;
 }
 
@@ -103,7 +117,7 @@ export function loadHomePreviewV139(): Promise<HomePreviewV139> {
         return response.json() as Promise<HomePreviewV139>;
       })
       .then((value) => {
-        if (value.schemaVersion !== "v139-home-preview-1" || !Array.isArray(value.cards)) {
+        if (value.schemaVersion !== "v139-home-preview-2" || !Array.isArray(value.cards)) {
           throw new Error("home preview schema mismatch");
         }
         return value;
