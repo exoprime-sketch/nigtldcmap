@@ -45,42 +45,44 @@ Vercel은 보존 중인 배포마다 그 산출물을 저장하고 GB-month로 �
 ### 3.2 `vercel.json` — `ignoreCommand`
 
 ```
-[ "$VERCEL_ENV" = "production" ] && exit 1; git diff --quiet HEAD^ HEAD -- public src package.json package-lock.json tsconfig.json .eslintrc.json .gitattributes vercel.json '.env*'
+[ "$VERCEL_ENV" = "preview" ] || exit 1; [ -n "$VERCEL_GIT_PREVIOUS_SHA" ] || exit 1; git diff --quiet "$VERCEL_GIT_PREVIOUS_SHA" HEAD -- public src package.json package-lock.json tsconfig.json .eslintrc.json .gitattributes vercel.json '.env*'
 ```
 
 - exit 0이면 Vercel이 빌드를 취소하고, 그 외에는 빌드한다. `git diff --quiet`는 나열한 경로에 변경이 없을 때 0을 돌려준다.
-- **production은 항상 빌드한다.** 생략은 Preview에만 적용된다.
+- **production은 항상 빌드한다.** 생략은 Preview에만 적용된다. 환경을 알 수 없으면 빌드한다.
 - 나열한 경로는 `react-scripts build`가 읽는 전부다: `public/`, `src/`, 의존성·TS·ESLint 설정, checkout 바이트를 정하는 `.gitattributes`, 이 규칙 자체(`vercel.json`), `.env*`. `reports/`, `docs/`, `scripts/`, `e2e/`, `.github/`만 바꾼 커밋은 산출물이 바이트 단위로 같으므로 Preview를 만들지 않는다.
-- `HEAD^`가 없는 경우(첫 커밋, depth 1 clone)는 git이 128로 실패하고 → 빌드. 안전한 방향으로 실패한다.
+- 마지막 커밋의 부모(`HEAD^`) 대신 **같은 브랜치의 마지막 성공 배포 SHA**와 비교한다. 코드 커밋 뒤 보고서 커밋을 묶어 push해도 미배포 코드 변경을 놓치지 않는다. `VERCEL_GIT_PREVIOUS_SHA`가 없거나 얕은 clone에 그 커밋이 없으면 빌드한다.
 - 대시보드의 Ignored Build Step 설정이 따로 있어도 `vercel.json`이 우선한다.
 
-검증: `npm run verify:ignore-command:v140`이 실제 명령 문자열을 `sh`로, 각 커밋을 HEAD로 둔 detached worktree에서 재생한다. 최근 40개 커밋 결과(`reports/v140/ignore-command-verification-v140.json`): Preview 생략 8, 빌드 32, **빌드 입력을 바꾼 커밋을 생략한 사례 0**, production 40/40 빌드, 루트 커밋 exit 128 → 빌드. 생략된 8개는 모두 reports/docs/scripts/e2e/.github만 바꾼 커밋이다.
+검증: `npm run verify:ignore-command:v140 -- --count 40`이 실제 명령 문자열을 각 커밋을 HEAD로 둔 detached worktree에서 재생한다(Windows는 Git Bash). 직전 커밋이 성공 배포였다는 가정의 40개 사례 외에 2·5개 커밋을 묶은 push, 이전 SHA 누락·조회 불가, 알 수 없는 환경을 검사한다. 현재 결과는 `reports/v140/ignore-command-verification-v140.json`에 기록한다.
 
-이 규칙으로 최근 40개 커밋 기준 Preview 배포가 20% 준다. 규칙은 Preview에 push된 커밋에만 작용하므로 production 이력·rollback에는 영향이 없다.
+이전 규칙의 40개 단일 커밋 시뮬레이션에서는 8개가 생략 대상이었다. 실제 절감률은 push 묶음과 마지막 성공 배포에 따라 달라진다. 프로젝트 환경변수만 바꾼 경우에는 Vercel 재배포 창에서 `Use project's Ignore Build Step`을 해제해 새 설정으로 빌드한다.
 
-## 4. 설정안 — Vercel 환경변수 `GENERATE_SOURCEMAP=false` (미적용, 대시보드 권한 필요)
+## 4. 적용 완료 — Vercel 환경변수 `GENERATE_SOURCEMAP=false`
 
-production `main.842a6201.js.map` 요청이 404가 아닌 **403**으로 응답한다. 소스맵 파일이 산출물에 올라간 채 Vercel이 차단하는 상태로, 배포당 8.9 MB(static의 74%)가 저장만 되고 있다. CI(`ci.yml`, `pages.yml`, `visual-qa.yml`)는 이미 `GENERATE_SOURCEMAP: "false"`로 빌드하므로 Vercel만 다르다.
+2026-09-16 대시보드에서 Production·Preview에 `GENERATE_SOURCEMAP=false`를 저장했다. HTTP 403만으로는 파일 존재를 판정할 수 없으므로, 배포 Resources에서 파일 목록으로 검증했다. 이전 Preview `FdtXc7NJSFmNbG2TQCfB5JTHFyTN`에는 JS·CSS 소스맵이 있었고, 동일 커밋(`0ef6d69`)을 새 환경설정으로 재배포한 `8jpuQbMppCBoJdZqHi4cwf3cwdD1`은 1분 31초에 Ready가 됐다. `.js.map`, `.css.map` 검색 결과 모두 0건, 전체 정적 파일 **619 → 605개**. `.map`만 검색하면 지도 JSON까지 유사검색되므로 그 결과 수를 소스맵 수로 해석하지 않는다. 로컬 측정 기준 배포당 약 8.9 MB가 줄어든다. Production은 다음 빌드부터 적용된다.
 
-적용 절차(둘 중 하나):
+재설정이 필요한 경우의 절차:
 
 1. 대시보드: 프로젝트 **Settings → Environment Variables → Add** — Key `GENERATE_SOURCEMAP`, Value `false`, Environments **Production, Preview** 체크, Save. 다음 배포부터 적용.
 2. CLI(로그인 필요): `vercel env add GENERATE_SOURCEMAP production` / `vercel env add GENERATE_SOURCEMAP preview`에 `false` 입력.
 
 대안으로 저장소에 `.env.production`(`GENERATE_SOURCEMAP=false`)을 두면 Vercel과 로컬 `npm run build`가 모두 소스맵을 만들지 않는다. 로컬 디버깅에서 소스맵을 쓰는 경우가 있어 환경변수 쪽을 우선한다. 적용 뒤 확인: 새 배포의 **Resources → Static Assets**에 `.map`이 없고, `<preview-url>/static/js/main.*.js.map`이 404.
 
-## 5. 설정안 — Deployment Retention (미적용, 대시보드 권한 필요)
+## 5. 적용 상태 확인 — Deployment Retention
 
-프로젝트 **Settings → Security → Deployment Retention Policy**. 제안값:
+2026-09-16 실제 대시보드 **Settings → Build and Deployment → Deployment Retention Policy**에서 아래 저장값을 확인했다. 이번 작업에서는 이미 적용된 값을 변경하지 않았다. **Security → Recently Deleted Deployments**에는 과거 Preview가 복구 가능 기간 29일로 표시되어 정리가 시작된 상태다.
 
-| 상태 | 제안 | 근거 |
+| 상태 | 확인값 | 근거 |
 | --- | --- | --- |
-| Canceled | 7일 | ignoreCommand로 취소되는 배포는 산출물이 없으나 기록은 남음 |
-| Errored | 7일 | 빌드 디버깅 창 |
+| Canceled | 1일 | 기존 적용값 |
+| Errored | 1일 | 기존 적용값 |
 | Pre-Production(Preview) | **7일** | PR 검토·`qa:role-split:v140` 재실행 창. 열린 브랜치의 최신 Preview는 예외로 보존됨 |
-| Production | 기본값 유지(30일/1년) | rollback·release audit 창(`docs/ROLLBACK_V128.md`) |
+| Production | 30일 | rollback·release audit 창(`docs/ROLLBACK_V128.md`) |
 
-시뮬레이션(적용 전, 기록하지 않음): Preview 7일이면 오늘 기준 보존 67 → 32개, 17.3 → 11.7 GB. 예외 규칙(환경별 최근 20개)이 가장 큰 최신 배포들을 남기므로 **보존 정책만으로는 3분의 1가량만 줄고, 나머지는 배포당 산출물(§6)과 배포 횟수(§3.2)에서 나온다.**
+이전 시뮬레이션: Preview 7일이면 보존 67 → 32개, 17.3 → 11.7 GB로 추정했다. 이는 Vercel 청구·중복저장 내부 집계를 확인한 값이 아니다. 2026-09-16 실제 팀 대시보드는 여전히 **18.72 GB / 10 GB**를 표시한다. 따라서 한도 초과 해결은 아직 확인되지 않았다. 보존 예외가 있으며 정책 적용·삭제 반영이 즉시 끝나지 않으므로, 이 설정만으로 10 GB 미만이 된다고 보장하지 않는다.
+
+공식 근거: [시스템 환경변수](https://vercel.com/docs/environment-variables/system-environment-variables), [배포 보존정책](https://vercel.com/docs/deployment-retention), [보존정책 처리 시점](https://vercel.com/academy/optimize-your-vercel-account/retention-policies).
 
 ## 6. 하지 않은 것 — `downloads/` 외부 이전
 

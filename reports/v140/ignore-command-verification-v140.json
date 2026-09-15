@@ -1,9 +1,9 @@
 {
   "schema": "nigt-ignore-command-verification-1",
-  "generatedAt": "2026-09-15T23:22:28.621Z",
+  "generatedAt": "2026-09-15T23:43:58.425Z",
   "ref": "HEAD",
-  "headSha": "8d8299ba374ad2f2f9d5ccbe24bfc1321574e26f",
-  "ignoreCommand": "[ \"$VERCEL_ENV\" = \"production\" ] && exit 1; git diff --quiet HEAD^ HEAD -- public src package.json package-lock.json tsconfig.json .eslintrc.json .gitattributes vercel.json '.env*'",
+  "headSha": "a2a31523e1f4944e0135bb8e6eec23152bf0d563",
+  "ignoreCommand": "[ \"$VERCEL_ENV\" = \"preview\" ] || exit 1; [ -n \"$VERCEL_GIT_PREVIOUS_SHA\" ] || exit 1; git diff --quiet \"$VERCEL_GIT_PREVIOUS_SHA\" HEAD -- public src package.json package-lock.json tsconfig.json .eslintrc.json .gitattributes vercel.json '.env*'",
   "buildInputs": [
     "public/",
     "src/",
@@ -15,20 +15,212 @@
     "vercel.json",
     ".env"
   ],
-  "semantics": "exit 0 = Vercel cancels the build; any other exit = build. Production always builds.",
+  "semantics": "exit 0 = skip only an unchanged Preview since its last successful deployment. Production, missing baseline and unknown environment always build.",
   "commitsReplayed": 40,
-  "previewSkipped": 8,
-  "previewBuilt": 32,
+  "previewSkipped": 9,
+  "previewBuilt": 31,
   "defects": 0,
+  "multiCommitCases": [
+    {
+      "sha": "a2a3152",
+      "previousSha": "8d8299b",
+      "distance": 2,
+      "affectsBuild": true,
+      "decision": "build",
+      "ok": true
+    },
+    {
+      "sha": "a2a3152",
+      "previousSha": "6b1de71",
+      "distance": 5,
+      "affectsBuild": true,
+      "decision": "build",
+      "ok": true
+    },
+    {
+      "sha": "0ef6d69",
+      "previousSha": "203d2ec",
+      "distance": 2,
+      "affectsBuild": true,
+      "decision": "build",
+      "ok": true
+    },
+    {
+      "sha": "0ef6d69",
+      "previousSha": "3ff37ca",
+      "distance": 5,
+      "affectsBuild": true,
+      "decision": "build",
+      "ok": true
+    },
+    {
+      "sha": "8d8299b",
+      "previousSha": "2763cb3",
+      "distance": 2,
+      "affectsBuild": true,
+      "decision": "build",
+      "ok": true
+    },
+    {
+      "sha": "8d8299b",
+      "previousSha": "4a33749",
+      "distance": 5,
+      "affectsBuild": true,
+      "decision": "build",
+      "ok": true
+    },
+    {
+      "sha": "203d2ec",
+      "previousSha": "6b1de71",
+      "distance": 2,
+      "affectsBuild": true,
+      "decision": "build",
+      "ok": true
+    },
+    {
+      "sha": "203d2ec",
+      "previousSha": "42a9d26",
+      "distance": 5,
+      "affectsBuild": true,
+      "decision": "build",
+      "ok": true
+    },
+    {
+      "sha": "2763cb3",
+      "previousSha": "3ff37ca",
+      "distance": 2,
+      "affectsBuild": true,
+      "decision": "build",
+      "ok": true
+    },
+    {
+      "sha": "2763cb3",
+      "previousSha": "42e69d1",
+      "distance": 5,
+      "affectsBuild": true,
+      "decision": "build",
+      "ok": true
+    },
+    {
+      "sha": "6b1de71",
+      "previousSha": "4a33749",
+      "distance": 2,
+      "affectsBuild": false,
+      "decision": "skip",
+      "ok": true
+    },
+    {
+      "sha": "6b1de71",
+      "previousSha": "4b4a4ae",
+      "distance": 5,
+      "affectsBuild": true,
+      "decision": "build",
+      "ok": true
+    },
+    {
+      "sha": "3ff37ca",
+      "previousSha": "42a9d26",
+      "distance": 2,
+      "affectsBuild": false,
+      "decision": "skip",
+      "ok": true
+    },
+    {
+      "sha": "3ff37ca",
+      "previousSha": "6eb371d",
+      "distance": 5,
+      "affectsBuild": true,
+      "decision": "build",
+      "ok": true
+    },
+    {
+      "sha": "4a33749",
+      "previousSha": "42e69d1",
+      "distance": 2,
+      "affectsBuild": true,
+      "decision": "build",
+      "ok": true
+    },
+    {
+      "sha": "4a33749",
+      "previousSha": "3c329ed",
+      "distance": 5,
+      "affectsBuild": true,
+      "decision": "build",
+      "ok": true
+    }
+  ],
+  "failSafeCases": [
+    {
+      "name": "missing-previous-deployment",
+      "exitCode": 1,
+      "ok": true
+    },
+    {
+      "name": "previous-sha-unavailable-in-shallow-clone",
+      "exitCode": 128,
+      "ok": true
+    },
+    {
+      "name": "unknown-environment",
+      "exitCode": 1,
+      "ok": true
+    }
+  ],
   "rootCommit": {
     "sha": "9940b21",
-    "previewExitCode": 128,
+    "previewExitCode": 1,
     "decision": "build",
     "ok": true,
-    "stderr": "fatal: bad revision 'HEAD^'"
+    "stderr": ""
   },
   "status": "PASS",
   "commits": [
+    {
+      "sha": "a2a3152",
+      "subject": "chore(reports): gate results for the V140 role split (release 79/79)",
+      "changedFiles": 32,
+      "changedTopLevel": [
+        "reports"
+      ],
+      "affectsBuild": false,
+      "preview": {
+        "exitCode": 0,
+        "decision": "skip",
+        "expected": "skip"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "0ef6d69",
+      "subject": "chore(deploy): reduce Vercel preview storage churn",
+      "changedFiles": 10,
+      "changedTopLevel": [
+        ".gitignore",
+        "CHANGELOG.md",
+        "README.md",
+        "docs",
+        "package.json",
+        "reports",
+        "scripts",
+        "vercel.json"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
     {
       "sha": "8d8299b",
       "subject": "feat(home,finder,map): split the home from the finder, and count map datasets from one file",
@@ -819,51 +1011,6 @@
       "changedFiles": 8,
       "changedTopLevel": [
         "src"
-      ],
-      "affectsBuild": true,
-      "preview": {
-        "exitCode": 1,
-        "decision": "build",
-        "expected": "build"
-      },
-      "production": {
-        "exitCode": 1,
-        "decision": "build"
-      },
-      "verdict": "OK"
-    },
-    {
-      "sha": "785303a",
-      "subject": "Merge pull request #6 from exoprime-sketch/fix/public-naming-content-v131",
-      "changedFiles": 42,
-      "changedTopLevel": [
-        "docs",
-        "package.json",
-        "reports",
-        "scripts",
-        "src"
-      ],
-      "affectsBuild": true,
-      "preview": {
-        "exitCode": 1,
-        "decision": "build",
-        "expected": "build"
-      },
-      "production": {
-        "exitCode": 1,
-        "decision": "build"
-      },
-      "verdict": "OK"
-    },
-    {
-      "sha": "5245c15",
-      "subject": "test(release): add v131 public content gates",
-      "changedFiles": 30,
-      "changedTopLevel": [
-        "docs",
-        "package.json",
-        "reports",
-        "scripts"
       ],
       "affectsBuild": true,
       "preview": {

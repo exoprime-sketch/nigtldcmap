@@ -81,7 +81,7 @@ const touchesBuildInput = (paths) =>
   );
 
 /** Runs the ignore command exactly as Vercel would, with HEAD at `sha`. */
-function replay(sha, env) {
+function replay(sha, env, previousSha = "") {
   const dir = mkdtempSync(join(tmpdir(), "ignore-cmd-"));
   rmSync(dir, { recursive: true, force: true });
   git(["worktree", "add", "--detach", "--no-checkout", dir, sha]);
@@ -90,7 +90,7 @@ function replay(sha, env) {
     // checkout the pathspecs still resolve because diff reads the trees.
     const result = spawnSync(shellPath, shellArgs, {
       cwd: dir,
-      env: { ...process.env, VERCEL_ENV: env, VERCEL: "1" },
+      env: { ...process.env, VERCEL_ENV: env, VERCEL: "1", VERCEL_GIT_PREVIOUS_SHA: previousSha },
       encoding: "utf8",
     });
     return {
@@ -117,8 +117,8 @@ for (const sha of shas) {
     : git(["ls-tree", "-r", "--name-only", sha]).split("\n").filter(Boolean);
   const affectsBuild = touchesBuildInput(changed);
 
-  const preview = replay(sha, "preview");
-  const production = replay(sha, "production");
+  const preview = replay(sha, "preview", parents[0] ?? "");
+  const production = replay(sha, "production", parents[0] ?? "");
   const previewDecision = preview.exitCode === 0 ? "skip" : "build";
 
   // A skip is only correct when no build input changed. Production must build.
@@ -142,11 +142,38 @@ for (const sha of shas) {
   });
 }
 
-// Edge: the root commit has no HEAD^. git diff must fail (exit 128), which
-// Vercel treats as "build" - the safe direction.
+// A branch without a successful prior deployment must build.
 const rootPreview = replay(rootSha, "preview");
 const rootOk = rootPreview.exitCode !== 0;
 if (!rootOk) defects += 1;
+
+// Real multi-commit pushes: the last commit may only update a report while
+// earlier, not-yet-deployed commits changed public assets or source code.
+const multiCommitCases = [];
+for (const sha of shas.filter((_, index) => index < 8)) {
+  const history = git(["rev-list", "--first-parent", "-n", "6", sha]).split("\n").filter(Boolean);
+  for (const distance of [2, 5]) {
+    const previousSha = history[distance];
+    if (!previousSha) continue;
+    const changed = git(["diff", "--name-only", previousSha, sha]).split("\n").filter(Boolean);
+    const affectsBuild = touchesBuildInput(changed);
+    const result = replay(sha, "preview", previousSha);
+    const decision = result.exitCode === 0 ? "skip" : "build";
+    const ok = decision === (affectsBuild ? "build" : "skip");
+    if (!ok) defects += 1;
+    multiCommitCases.push({ sha: sha.slice(0, 7), previousSha: previousSha.slice(0, 7), distance, affectsBuild, decision, ok });
+  }
+}
+const failSafeCases = [
+  { name: "missing-previous-deployment", environment: "preview", previousSha: "" },
+  { name: "previous-sha-unavailable-in-shallow-clone", environment: "preview", previousSha: "f".repeat(40) },
+  { name: "unknown-environment", environment: "", previousSha: shas[1] ?? "" },
+].map((test) => {
+  const result = replay(shas[0], test.environment, test.previousSha);
+  const ok = result.exitCode !== 0;
+  if (!ok) defects += 1;
+  return { name: test.name, exitCode: result.exitCode, ok };
+});
 
 const report = {
   schema: "nigt-ignore-command-verification-1",
@@ -155,11 +182,13 @@ const report = {
   headSha: git(["rev-parse", REF]),
   ignoreCommand,
   buildInputs: BUILD_INPUTS,
-  semantics: "exit 0 = Vercel cancels the build; any other exit = build. Production always builds.",
+  semantics: "exit 0 = skip only an unchanged Preview since its last successful deployment. Production, missing baseline and unknown environment always build.",
   commitsReplayed: rows.length,
   previewSkipped: skipped,
   previewBuilt: rows.length - skipped,
   defects,
+  multiCommitCases,
+  failSafeCases,
   rootCommit: { sha: rootSha.slice(0, 7), previewExitCode: rootPreview.exitCode, decision: rootOk ? "build" : "skip", ok: rootOk, stderr: rootPreview.stderr },
   status: defects === 0 ? "PASS" : "FAIL",
   commits: rows,
@@ -178,5 +207,6 @@ for (const r of rows) {
 }
 console.log(`\nroot commit ${report.rootCommit.sha}: exit ${rootPreview.exitCode} -> ${report.rootCommit.decision}${rootPreview.stderr ? ` (${rootPreview.stderr.split("\n")[0]})` : ""}`);
 console.log(`\n${rows.length} commits: ${skipped} preview skips, ${rows.length - skipped} builds, ${defects} defects -> ${report.status}`);
+console.log(`Multi-commit cases: ${multiCommitCases.length}; fail-safe cases: ${failSafeCases.length}`);
 console.log(`report: ${REPORT}`);
 process.exit(defects === 0 ? 0 : 1);
