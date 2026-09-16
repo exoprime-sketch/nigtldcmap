@@ -2710,3 +2710,48 @@
   font-size: 0.82rem;
   text-align: center;
 }
+
+/* V140: the right panel leads with the selected target and the national
+   summary; the analysis metadata is the last block, as 자료정보. */
+.cdp-map-analysis-sections > [data-testid="map-selected-feature-panel"] {
+  order: -3;
+}
+
+.cdp-map-analysis-sections > [data-testid="map-national-summary"] {
+  order: -2;
+}
+
+.cdp-map-analysis-sections > [data-testid="map-indicator-meaning-v129"] {
+  order: -1;
+}
+
+.cdp-map-analysis-sections > .cdp-map-current-analysis-v140 {
+  order: 10;
+}
+
+.cdp-map-current-analysis-v140 summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+}
+
+.cdp-map-current-analysis-v140 summary::before {
+  content: "▸";
+  color: #3e584f;
+  font-size: 0.8rem;
+}
+
+.cdp-map-current-analysis-v140 details[open] summary::before {
+  content: "▾";
+}
+
+.cdp-map-current-analysis-v140 summary h3 {
+  margin: 0;
+}
+
+.cdp-map-current-analysis-v140 details[open] summary {
+  margin-bottom: 8px;
+}

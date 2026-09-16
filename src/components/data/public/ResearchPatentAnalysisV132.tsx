@@ -237,7 +237,7 @@ export default function ResearchPatentAnalysisV132({
       <div className="rpa132-analysis-grid">
         <BreakdownV132
           title="기후기술 분류(38대 기술, 원천 부여)"
-          description={`공개 목록 ${records.length.toLocaleString("ko-KR")}건에 원천이 제목·초록 근거로 부여한 CTIS 분류입니다. 두 분류를 받은 문헌은 각각에 한 번씩 셉니다.`}
+          description={`공개 목록 ${records.length.toLocaleString("ko-KR")}건(국가 전체 통계가 아닌 선별 목록)에 원천이 제목·초록 근거로 부여한 CTIS 분류입니다. 두 분류를 받은 문헌은 각각에 한 번씩 세므로 분류별 건수의 합은 ${records.length.toLocaleString("ko-KR")}건을 넘을 수 있고, 구성비(100%)로 읽지 않습니다.`}
           rows={technologyBreakdown}
           testId="e008-breakdown"
         />

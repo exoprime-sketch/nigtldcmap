@@ -668,3 +668,43 @@
   border-bottom: 0;
   padding-bottom: 0;
 }
+
+/* V140: the recommended analyses are a short list of rows above the data
+   list, not a stack of cards that pushed the catalogue below the fold. Each
+   row keeps its name, its dataset combination and a 44px target. */
+.cdp-map-preset-scroll {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+  overflow: visible;
+  padding: 0 0 6px;
+}
+
+.cdp-map-preset-card {
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+  align-items: center;
+  gap: 2px 8px;
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 7px 10px;
+}
+
+.cdp-map-preset-card strong,
+.cdp-map-preset-card span {
+  display: block;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cdp-map-preset-card span {
+  color: var(--cdp-muted);
+  font-size: 0.72rem;
+}
+
+.cdp-map-preset-guide {
+  margin-bottom: 8px;
+}

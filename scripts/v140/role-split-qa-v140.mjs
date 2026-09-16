@@ -47,7 +47,7 @@ const SHOTS = resolve(OUT, `screenshots/${label}`);
 mkdirSync(SHOTS, { recursive: true });
 
 const FEATURED = ["A-002", "A-003", "A-010", "A-023", "A-024", "B-033", "C-016", "D-023"];
-const HOME_CARD_FACT_LABELS = ["기간", "제공"];
+const HOME_CARD_FACT_LABELS = ["자료기간", "제공기관"];
 const MOVED_CAVEATS = [
   ["A-010", "총계 행"],
   ["A-024", "경로 좌표"],

@@ -33,6 +33,12 @@ interface Props {
 }
 
 const ALL_REGIONS = "";
+/**
+ * Where the province values may be added into one figure: planned capacity
+ * is a sum of plans (C-016). A loss, a share, a flux per hectare or a rate
+ * is compared and ranked, never totalled here.
+ */
+const SUM_ALLOWED = new Set(["C-016"]);
 const TOTAL_LIKE = /^(전국|합계|총계|total)$/iu;
 const TOP_COUNT = 15;
 
@@ -165,6 +171,7 @@ export default function ProvinceSeriesAnalysisV140({
   );
   const values = comparison.map((entry) => entry.row.value);
   const median = values.length ? [...values].sort((a, b) => a - b)[Math.floor((values.length - 1) / 2)] : null;
+  const total = SUM_ALLOWED.has(elementId) && values.length ? values.reduce((sum, value) => sum + value, 0) : null;
 
   // One province, every time: the series.
   const regionSeries = useMemo(
@@ -276,10 +283,17 @@ export default function ProvinceSeriesAnalysisV140({
             <small><PublicTermTextV134 text={`${unit} · ${timeLabel} · ${comparison[0]?.region || ""}`} /></small>
           </article>
         )}
+        {total !== null && (
+          <article data-testid="psa140-kpi-total">
+            <span>{comparison.length}개 성·시 합계</span>
+            <strong>{format(total)}</strong>
+            <small><PublicTermTextV134 text={`${unit} · ${timeLabel} · 계획 용량의 합 · 설치 실적 아님`} /></small>
+          </article>
+        )}
         <article>
           <span>{comparison.length}개 성·시 중앙값</span>
           <strong>{median !== null ? format(median) : "—"}</strong>
-          <small><PublicTermTextV134 text={`${unit} · ${timeLabel} · 성·시 값을 더하지 않음`} /></small>
+          <small><PublicTermTextV134 text={`${unit} · ${timeLabel}${total === null ? " · 성·시 값을 더하지 않음" : ""}`} /></small>
         </article>
         {region && yearPoints.length >= 2 && (
           <article>

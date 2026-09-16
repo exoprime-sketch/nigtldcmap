@@ -869,7 +869,10 @@ export default function CountryDataElementPage({
                   </select>
                 </label>
               )}
-              {meta.element.mapFeatureCount > 0 && (
+              {/* The catalogue is rebuilt with the map layers; the pack's own
+                  meta still says 0 for the V138 province layers (B-003 to
+                  B-007), which hid 지도에서 보기 on five map datasets (V140). */}
+              {(catalogItem?.hasMapData || meta.element.mapFeatureCount > 0) && (
                 <div className="cdp-detail-map-action">
                   <button
                     type="button"

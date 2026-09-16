@@ -238,11 +238,11 @@ export default function HomePage({
                         </div>
                         <dl className="home-featured-v139__meta">
                           <div>
-                            <dt>기간</dt>
+                            <dt>자료기간</dt>
                             <dd><PublicTermTextV134 text={card.period} /></dd>
                           </div>
                           <div>
-                            <dt>제공</dt>
+                            <dt>제공기관</dt>
                             <dd>
                               <PublicTermTextV134 text={card.provider} />
                             </dd>
@@ -252,11 +252,11 @@ export default function HomePage({
                     ) : (
                       <dl className="home-featured-v139__meta">
                         <div>
-                          <dt>기간</dt>
+                          <dt>자료기간</dt>
                           <dd>{publicReferencePeriodV128(item)}</dd>
                         </div>
                         <div>
-                          <dt>제공</dt>
+                          <dt>제공기관</dt>
                           <dd>
                             <PublicTermTextV134
                               text={item.sourceOrganizations.slice(0, 2).join(" · ") || "제공기관 확인"}

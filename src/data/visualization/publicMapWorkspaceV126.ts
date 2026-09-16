@@ -411,6 +411,12 @@ const PUBLIC_MAP_LAYER_TITLES_V126: Record<string, string> = {
   "A-023": "발전소",
   "A-024": A024_PUBLIC_TITLE_V126,
   "B-021": "지역 취약성",
+  // V140: the layer names what its province values measure. B-029's map
+  // column is peatland, not every forest type; B-039 is the theoretical
+  // hydro potential; B-040 is subsurface temperature by depth.
+  "B-029": "이탄지 면적(산림 유형별 면적 중)",
+  "B-039": "수력 이론 잠재량",
+  "B-040": "지열 자원(심도별 지온)",
   "B-031": "산림 총면적",
   "B-032": "수관 피복률",
   "B-033": "연간 산림손실",

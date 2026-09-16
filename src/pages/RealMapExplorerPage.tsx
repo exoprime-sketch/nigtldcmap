@@ -7815,8 +7815,12 @@ export default function RealMapExplorerPage({
 
           {focusedLayer && focusedSelector ? (
             <div className="cdp-map-analysis-sections">
-              <section data-testid="map-current-analysis">
-                <h3>현재 분석</h3>
+              {/* V140: what the reader selected comes first (CSS order on
+                  the grid); this metadata block is the 자료정보 of the
+                  analysis and sits last, folded once a feature is selected. */}
+              <section data-testid="map-current-analysis" className="cdp-map-current-analysis-v140">
+                <details open={!selectedSpatial && !selected}>
+                  <summary><h3>자료정보 · 현재 분석</h3></summary>
                 <div className="cdp-evidence-grid">
                   <Evidence label="데이터명" value={focusedPublicCopy?.titleKo || ""} />
                   <Evidence
@@ -7880,6 +7884,7 @@ export default function RealMapExplorerPage({
                   )}
                   <Evidence label="지도 표시 범위" value={focusedCoverage} />
                 </div>
+                </details>
               </section>
 
               {focusedInterpretationV129?.explanationRequired &&

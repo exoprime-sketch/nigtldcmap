@@ -476,7 +476,24 @@ export default function SemanticArchetypePreviewV125({
             </select>
           </label>
         )}
-        {additionalDimensions.map((dimension) => (
+        {additionalDimensions.map((dimension) => {
+          // Only the values the chosen measure actually has. B-021 files its
+          // regions and its SSP scenarios in one dimension; the current-GVI
+          // measure has regions, the projection has scenarios, and one list
+          // holding both offered choices that select nothing (V140).
+          const valuesForMeasure = dimension.values.filter((value) =>
+            measureRows.some((row) => row.dimensions[dimension.key] === value)
+          );
+          const values = valuesForMeasure.length > 0 ? valuesForMeasure : dimension.values;
+          if (values.length === 1 && !dimensions[dimension.key]) {
+            return (
+              <p className="sv125-fixed-value" key={dimension.key} data-public-dimension-key={dimension.key}>
+                <span>{publicDimensionLabelV126(dimension.key, dimension.labelKo)}</span>
+                <strong><PublicTermTextV134 text={dimensionValueLabelV125(dimension.key, values[0])} /></strong>
+              </p>
+            );
+          }
+          return (
           <label key={dimension.key}>
             <span>{publicDimensionLabelV126(dimension.key, dimension.labelKo)}</span>
             <select
@@ -500,14 +517,15 @@ export default function SemanticArchetypePreviewV125({
               {!singleDenominatorDimensionKeys.includes(dimension.key) && (
                 <option value="">전체</option>
               )}
-              {dimension.values.map((value) => (
+              {values.map((value) => (
                 <option key={value} value={value}>
                   {dimensionValueLabelV125(dimension.key, value)}
                 </option>
               ))}
             </select>
           </label>
-        ))}
+          );
+        })}
         {periods.length === 1 && (
           <p className="sv125-fixed-value" data-testid="v125-fixed-period">
             <span>기간</span>
