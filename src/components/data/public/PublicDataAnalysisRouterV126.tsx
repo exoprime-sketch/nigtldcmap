@@ -43,6 +43,9 @@ import PublicCompositionTrendAnalysisV132 from "./PublicCompositionTrendAnalysis
 import ResearchPatentAnalysisV132 from "./ResearchPatentAnalysisV132";
 import PublicDataLimitationsV126 from "./PublicDataLimitationsV126";
 import PowerPlantRegistrySummaryV138 from "./PowerPlantRegistrySummaryV138";
+import ProvinceSeriesAnalysisV140, {
+  provinceSeriesShapeV140,
+} from "./ProvinceSeriesAnalysisV140";
 import PublicIndicatorMeaningV129 from "./PublicIndicatorMeaningV129";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import PublicRawDataTablesV126 from "./PublicRawDataTablesV126";
@@ -174,6 +177,10 @@ export default function PublicDataAnalysisRouterV126({
     [entities]
   );
   const hasNationalSeriesRows = nationalSeriesEntities.length > 0;
+  // Observations keyed by province (B-033, C-016, B-031, B-032, B-034): the
+  // province's own series, the same-year comparison and the table, instead
+  // of one bar for the chosen province and a grid of record keys (V140).
+  const provinceSeries = useMemo(() => provinceSeriesShapeV140(semanticRows), [semanticRows]);
   const adapterContract = useMemo<ElementVisualizationContractV125>(
     () => ({
       ...contract,
@@ -324,6 +331,15 @@ export default function PublicDataAnalysisRouterV126({
               showRawTable={false}
             />
           </Suspense>
+        ) : provinceSeries ? (
+          <ProvinceSeriesAnalysisV140
+            elementId={elementId}
+            rows={semanticRows}
+            selectorState={selectorState}
+            onSelectorStateChange={onSelectorStateChange}
+            elementTitle={copy.title}
+            primaryTitle={headings?.primaryChartTitle}
+          />
         ) : publicRenderer === "stacked-emissions" ? (
           <PublicEmissionsAnalysisV132
             elementId={elementId}

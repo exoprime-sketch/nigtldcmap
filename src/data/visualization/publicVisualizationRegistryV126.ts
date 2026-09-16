@@ -78,6 +78,11 @@ const PUBLIC_DEFAULT_MEASURE_KEYS_V127: Readonly<Record<string, string>> =
     // GVI 취약성 지수 (current) - the screen opened on the 2020–2100 projection
     // while the reader's question is the present vulnerability (V140)
     "B-021": "measure-ab1a3ae58df4",
+    // 집중형 태양광 계획용량 - the home card's technology; the screen opened
+    // on 소수력, the first measure alphabetically (V140)
+    "C-016": "measure-1f93f6946b11",
+    // 산림탄소 순플럭스(연평균) - the headline flux, not 지상부 탄소저장량 (V140)
+    "B-034": "measure-ef59b2b71a01",
     // 총인구
     "A-007": "measure-be793786b249",
     // 총 GHG 배출량 · LULUCF 제외
