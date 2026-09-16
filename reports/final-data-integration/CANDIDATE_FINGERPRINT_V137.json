@@ -1,26 +1,33 @@
 {
   "schema": "nigt-candidate-fingerprint-1",
-  "generatedAt": "2026-09-15T23:51:21.816Z",
+  "generatedAt": "2026-09-16T02:20:57.102Z",
   "candidateRoot": ".verify/candidate",
   "dataSource": "public/data/vietnam/v2",
   "code": {
-    "commit": "e1138c489261f24448fe68c90c611b0604613a9a",
+    "commit": "88880f9f5fc823e9dadd392fe7ac665fe0382540",
     "branch": "feat/home-map-analysis-v139",
     "dirty": true,
     "dirtyPaths": [
-      "cripts/v140/role-split-qa-v140.mjs"
+      "eports/v131/entity-card-audit-v131.json",
+      "reports/v131/public-naming-audit-v131.json",
+      "reports/v133/generated-data-audit-v133.json",
+      "reports/v133/map-focus-audit-v133.json",
+      "reports/v133/map-layer-distinction-audit-v133.json",
+      "reports/v133/map-popup-audit-v133.json",
+      "reports/v136/ci-command-timings.json",
+      "reports/v140/CARD_AND_DETAIL_ANALYSIS_REPORT_V140.md"
     ],
-    "srcTreeSha256": "5f0872a1abe8d5597e0095aaf6d139cbdab85e07f0103d9b8541626f4c267f2e",
-    "srcFileCount": 447
+    "srcTreeSha256": "659fb7fb49b04bf8f13552053f433af78318f9fa79b29429bc427a2daea3e66d",
+    "srcFileCount": 453
   },
   "data": {
-    "fileCount": 515,
-    "treeSha256": "e74e497d692de026fdc312ecbede282d7d0f4d53ef38bc18cf724e65a7e6b0b2",
+    "fileCount": 516,
+    "treeSha256": "bdd0a8b98547603301daca7979924f4b4beef6d66ada24eb1af1dad1b6fd9fb6",
     "manifestSha256": "7390536d7135288b61ab9ae224fb2819326cc5d9b8aacfdb7864d43b09265f13",
     "mapIndexSha256": "eb8463faf60961a01a37d1f9c4d3b036864ca809b991c35c75475efd7e703ce5"
   },
   "appBundle": {
-    "file": "static/js/main.dd6ad057.js",
-    "sha256": "69772767374716b176d1f15d160e96ef5e6ba4f7cb130eb703a61219a4058ac7"
+    "file": "static/js/main.84162bc4.js",
+    "sha256": "9985cccaff122ac75fcfae01bfd5ddd751b1fbddb933ad4bfb04755dd0d27311"
   }
 }
