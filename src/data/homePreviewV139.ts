@@ -1,4 +1,5 @@
 import { publicAssetUrlV128 } from "../utils/publicAssetUrlV128";
+import type { DataFinderSelectorStateV125 } from "../types/dataFinderV125";
 
 /**
  * The home page's pre-built preview asset (scripts/v139/build-home-preview-v139.mjs).
@@ -37,6 +38,12 @@ export interface HomePreviewHeadlineV139 {
 
 interface HomePreviewCardBaseV139 {
   elementId: string;
+  /**
+   * The selection the card summarised, in the detail screen's own selector
+   * keys (V140). Handing it over opens the detail on the same measure, year
+   * and region the reader just saw, not on a default that may differ.
+   */
+  selection: DataFinderSelectorStateV125;
   /** What the dataset answers, as the question a reader would ask. */
   question: string;
   headline: HomePreviewHeadlineV139;

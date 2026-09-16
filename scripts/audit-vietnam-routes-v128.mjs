@@ -35,7 +35,7 @@ audit.check("ELEMENT_ROUTE_CONTRACT", catalog.length === 152, catalog.length, 15
 
 const PUBLIC_ROUTE_CASES = [
   { name: "home", suffix: "/#home", selector: "[data-v128-home]", text: "베트남" },
-  { name: "explorer", suffix: "/?country=VNM#explorer", selector: ".cdp-card-grid", text: "데이터" },
+  { name: "explorer", suffix: "/?country=VNM#explorer", selector: ".cdp-card-grid", text: "상세보기" },
   {
     name: "element-detail",
     suffix: "/?view=data&country=VNM&element=A-002#element-detail",
@@ -222,7 +222,7 @@ try {
     `(() => {
       const card = document.querySelector('.cdp-dataset-card');
       const button = [...(card?.querySelectorAll('button') || [])]
-        .find((node) => node.textContent?.trim() === '데이터 보기');
+        .find((node) => /^(데이터 보기|상세보기)$/u.test(node.textContent?.trim() || ''));
       if (!button) return false;
       button.click();
       return true;

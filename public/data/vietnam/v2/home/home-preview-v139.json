@@ -47,6 +47,15 @@
       "unit": "추정치(−2.5 약함 ~ +2.5 강함)",
       "period": "2024년 값 · 1996–2024년 제공",
       "provider": "World Bank · 세계 거버넌스 지표(WGI)",
+      "selection": {
+        "measure": null,
+        "sex": null,
+        "year": 2024,
+        "period": null,
+        "dimensions": {
+          "wgiMeasure": "est"
+        }
+      },
       "domain": [
         -2.5,
         2.5
@@ -91,6 +100,13 @@
       "unit": "10억 미국달러(명목, 현재 가격)",
       "period": "1985–2025년",
       "provider": "World Bank 국가 통계",
+      "selection": {
+        "measure": "measure-82dc14f247b2",
+        "sex": null,
+        "year": 2025,
+        "period": null,
+        "dimensions": {}
+      },
       "series": [
         {
           "year": 1985,
@@ -275,6 +291,13 @@
       "unit": "Mt CO₂eq (GWP-100, AR5)",
       "period": "2024년 구성 · 1970–2024년 제공",
       "provider": "European Commission JRC · EDGAR",
+      "selection": {
+        "measure": "measure-165d8811fba3",
+        "sex": null,
+        "year": 2024,
+        "period": null,
+        "dimensions": {}
+      },
       "parts": [
         {
           "label": "CO₂",
@@ -308,6 +331,13 @@
       "unit": "원천 수록 행(곳)",
       "period": "WRI GPPD v1.3.0(2021) · OSM 2026년 추출",
       "provider": "World Resources Institute · OpenStreetMap 기여자",
+      "selection": {
+        "measure": null,
+        "sex": null,
+        "year": null,
+        "period": null,
+        "dimensions": {}
+      },
       "seriesLabels": [
         "WRI",
         "OSM"
@@ -374,6 +404,13 @@
       "unit": "kV · 구간 수 · km",
       "period": "2016년 선로(경로 있음) · 계획 선로는 목록",
       "provider": "World Bank (ENERGYDATA.INFO)",
+      "selection": {
+        "measure": null,
+        "sex": null,
+        "year": 2016,
+        "period": null,
+        "dimensions": {}
+      },
       "svgUrl": "/data/vietnam/v2/home/transmission-preview-v139.svg",
       "legend": [
         {
@@ -409,6 +446,15 @@
       "unit": "ha/년 · 수관 밀도 30% 기준",
       "period": "2001–2024년",
       "provider": "Global Forest Watch (UMD/WRI)",
+      "selection": {
+        "measure": "measure-3ac8acb37269",
+        "sex": null,
+        "year": 2024,
+        "period": null,
+        "dimensions": {
+          "detail_2": "Quảng Ninh"
+        }
+      },
       "seriesLabel": "Quảng Ninh · 2024년 손실이 가장 큰 성·시",
       "series": [
         {
@@ -526,6 +572,13 @@
       "unit": "MW(계획 용량)",
       "period": "2025–2030년 · 집중형 태양광",
       "provider": "베트남 총리실 · 산업무역부(MOIT), 개정 PDP8 부록 II",
+      "selection": {
+        "measure": "measure-1f93f6946b11",
+        "sex": null,
+        "year": null,
+        "period": "2025-2030",
+        "dimensions": {}
+      },
       "bars": [
         {
           "label": "Sơn La",
@@ -567,6 +620,13 @@
       "unit": "사업 수(건)",
       "period": "1991–2026년 승인·등록 사업",
       "provider": "GCF · GEF · 적응기금 · CIF 공개 사업 목록",
+      "selection": {
+        "measure": null,
+        "sex": null,
+        "year": null,
+        "period": null,
+        "dimensions": {}
+      },
       "parts": [
         {
           "label": "GEF",

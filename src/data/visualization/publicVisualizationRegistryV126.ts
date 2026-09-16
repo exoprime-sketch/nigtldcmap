@@ -72,6 +72,12 @@ const SPECIALIZED_ELEMENTS_V126 = new Set([
 const PUBLIC_DEFAULT_MEASURE_KEYS_V127: Readonly<Record<string, string>> =
   Object.freeze({
     "A-001": "measure-ffa3eb23fb73",
+    // GDP 총액(명목 USD) - the home card leads with the total; the screen used
+    // to open on 1인당 GDP, a different quantity in a different unit (V140)
+    "A-003": "measure-82dc14f247b2",
+    // GVI 취약성 지수 (current) - the screen opened on the 2020–2100 projection
+    // while the reader's question is the present vulnerability (V140)
+    "B-021": "measure-ab1a3ae58df4",
     // 총인구
     "A-007": "measure-be793786b249",
     // 총 GHG 배출량 · LULUCF 제외

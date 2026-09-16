@@ -10,6 +10,7 @@ import type { VietnamPublicOverviewV128 } from "../data/publicPlatformV128";
 import { loadHomePreviewV139, homePreviewSvgUrlV139 } from "../data/homePreviewV139";
 import type { HomePreviewCardV139, HomePreviewV139 } from "../data/homePreviewV139";
 import type { CategoryCode } from "../data/publicTaxonomy";
+import type { DataFinderSelectorStateV125 } from "../types/dataFinderV125";
 import HomePreviewChartV139 from "../components/home/HomePreviewChartV139";
 import { PublicTermTextV134 } from "../components/help/PublicTermV134";
 import "../styles/home-final-v13.css";
@@ -21,7 +22,11 @@ interface HomePageProps {
   /** Runs a search for the given words and opens the results. */
   onSearchExample: (query: string) => void;
   onSelectCategory: (category: CategoryCode) => void;
-  onOpenElement: (elementId: string, countryIso3: string) => void;
+  onOpenElement: (
+    elementId: string,
+    countryIso3: string,
+    selection?: DataFinderSelectorStateV125
+  ) => void;
   onOpenMapElement: (elementId: string, countryIso3: string) => void;
   onNavigate: (view: View) => void;
 }
@@ -263,7 +268,8 @@ export default function HomePage({
                     <button
                       type="button"
                       className="home-featured-v139__open"
-                      onClick={() => onOpenElement(item.elementId, "VNM")}
+                      data-testid="home-card-open-v140"
+                      onClick={() => onOpenElement(item.elementId, "VNM", card?.selection)}
                       aria-label={`${item.publicTitle} 상세보기`}
                     >
                       상세보기 →

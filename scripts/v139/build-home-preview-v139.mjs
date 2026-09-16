@@ -59,6 +59,15 @@ function loadPacks() {
 
 const packs = loadPacks();
 const manifest = readJson(resolve(DATA, "manifest.json"));
+// The detail screen's measure keys, so a card can hand the detail the exact
+// selection it summarised (V140).
+const visualizationContracts = readJson(resolve(DATA, "semantic/element-visualization-contracts-v125.json")).contracts;
+function measureKeyV140(elementId, labelPattern, unit) {
+  const contract = visualizationContracts.find((entry) => entry.elementId === elementId);
+  const measure = (contract?.measures || []).find((entry) => labelPattern.test(entry.labelKo) && (!unit || entry.unit === unit));
+  if (!measure) throw new Error(`${elementId}: measure ${labelPattern} ${unit || ""} not in the contract`);
+  return measure.key;
+}
 const observations = (id) => packs.get(id)?.observations?.records || [];
 const entities = (id) => packs.get(id)?.entities?.records || [];
 const report = { generatedAt: new Date().toISOString(), cards: [], map: null, warnings: [] };
@@ -95,6 +104,7 @@ function cardA002() {
     unit: "추정치(−2.5 약함 ~ +2.5 강함)",
     period: `${latest}년 값 · ${years[0]}–${years[years.length - 1]}년 제공`,
     provider: "World Bank · 세계 거버넌스 지표(WGI)",
+    selection: { measure: null, sex: null, year: latest, period: null, dimensions: { wgiMeasure: "est" } },
     domain: [-2.5, 2.5],
     bars,
     note: "백분위 순위는 다른 척도이므로 함께 그리지 않습니다.",
@@ -121,6 +131,7 @@ function cardA003() {
     unit: "10억 미국달러(명목, 현재 가격)",
     period: `${first.year}–${last.year}년`,
     provider: "World Bank 국가 통계",
+    selection: { measure: measureKeyV140("A-003", /^GDP 총액$/u, "USD"), sex: null, year: last.year, period: null, dimensions: {} },
     series: points,
     latest: { year: last.year, value: last.value },
     note: "명목 달러 계열 하나만 그립니다. 실질·구매력평가 계열은 상세에서 따로 제공합니다.",
@@ -155,6 +166,7 @@ function cardA010() {
     unit: "Mt CO₂eq (GWP-100, AR5)",
     period: `${latest}년 구성 · ${years[0]}–${years[years.length - 1]}년 제공`,
     provider: "European Commission JRC · EDGAR",
+    selection: { measure: measureKeyV140("A-010", /^가스별 배출량$/u, "Mt CO2eq"), sex: null, year: latest, period: null, dimensions: {} },
     parts,
     total,
     note: "네 가스를 같은 환산 단위로 나란히 둔 구성입니다. 원천은 별도 총계 행을 제공하지 않습니다.",
@@ -215,6 +227,7 @@ function cardA023() {
     unit: "원천 수록 행(곳)",
     period: "WRI GPPD v1.3.0(2021) · OSM 2026년 추출",
     provider: "World Resources Institute · OpenStreetMap 기여자",
+    selection: { measure: null, sex: null, year: null, period: null, dimensions: {} },
     seriesLabels: ["WRI", "OSM"],
     groups: groups.map((group) => ({ label: group.label, values: [group.WRI, group.OSM] })),
     rowsBySource,
@@ -359,6 +372,7 @@ function cardB033() {
     unit: `ha/년${threshold}`,
     period: `${years[0]}–${latestYear}년`,
     provider: "Global Forest Watch (UMD/WRI)",
+    selection: { measure: measureKeyV140("B-033", /^연간 수관 손실$/u, "ha"), sex: null, year: latestYear, period: null, dimensions: { detail_2: top.regionLabel } },
     seriesLabel: `${top.regionLabel} · ${latestYear}년 손실이 가장 큰 성·시`,
     series,
     latest: { year: latestYear, value: Math.round(top.value) },
@@ -392,6 +406,7 @@ function cardC016() {
     unit: "MW(계획 용량)",
     period: `${period.replace("-", "–")}년 · 집중형 태양광`,
     provider: "베트남 총리실 · 산업무역부(MOIT), 개정 PDP8 부록 II",
+    selection: { measure: measureKeyV140("C-016", /집중형 태양광/u, "MW"), sex: null, year: null, period, dimensions: {} },
     bars,
     scope: `${regionCount}개 성·시 중 상위 6곳 · 합계 ${total.toLocaleString("en-US")} MW`,
     note: `${version.split("·")[0].trim()}의 계획 용량이며 설치 실적이 아닙니다.`,
@@ -442,6 +457,7 @@ function cardD023() {
     unit: "사업 수(건)",
     period: span,
     provider: "GCF · GEF · 적응기금 · CIF 공개 사업 목록",
+    selection: { measure: null, sex: null, year: null, period: null, dimensions: {} },
     parts,
     total: rows.length,
     note: "같은 기준(개별 사업 행 수)으로 센 구성입니다. 승인액은 통화·기간·집행 단계가 달라 합산하지 않습니다.",
@@ -462,6 +478,7 @@ cards[4] = {
   unit: "kV · 구간 수 · km",
   period: "2016년 선로(경로 있음) · 계획 선로는 목록",
   provider: map.provider,
+  selection: { measure: null, sex: null, year: 2016, period: null, dimensions: {} },
   svgUrl: SVG_URL,
   legend: map.legend,
   note: map.plannedNote,

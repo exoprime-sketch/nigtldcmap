@@ -20,6 +20,7 @@
  *            answers
  *
  * Usage: node scripts/v140/role-split-qa-v140.mjs [--base-url URL] [--label name]
+ *        VERCEL_AUTOMATION_BYPASS_SECRET=… for a protected Preview (or --bypass-secret)
  */
 import { chromium } from "playwright";
 import { mkdirSync, statSync, writeFileSync } from "node:fs";
@@ -33,6 +34,13 @@ const opt = (flag, fallback = null) => {
   return index < 0 ? fallback : argv[index + 1];
 };
 const externalBase = opt("--base-url");
+// A protected Vercel Preview (Deployment Protection) admits automation with
+// the project's bypass secret, sent as a header on every request. Read from
+// the environment so the secret never lands in a shell history or a report.
+const bypassSecret = opt("--bypass-secret", process.env.VERCEL_AUTOMATION_BYPASS_SECRET || null);
+const bypassHeaders = bypassSecret
+  ? { "x-vercel-protection-bypass": bypassSecret, "x-vercel-set-bypass-cookie": "true" }
+  : {};
 const label = opt("--label", externalBase ? "deployed" : "local-build");
 const OUT = resolve(PROJECT_ROOT, "reports/v140");
 const SHOTS = resolve(OUT, `screenshots/${label}`);
@@ -53,7 +61,7 @@ const count = (text) => Number(String(text || "").replace(/[^0-9]/gu, ""));
 const server = externalBase ? null : await startStaticBuildServer(resolve(PROJECT_ROOT, "build"));
 const base = (externalBase || server.url).replace(/\/$/u, "");
 const browser = await chromium.launch();
-const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, acceptDownloads: true });
+const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, acceptDownloads: true, extraHTTPHeaders: bypassHeaders });
 const report = {
   label,
   base,
@@ -92,7 +100,7 @@ async function open(path, ready) {
 async function fetchJson(path) {
   // A deployment without the file answers the SPA shell with 200, not JSON.
   try {
-    const response = await fetch(`${base}${path}`);
+    const response = await fetch(`${base}${path}`, { headers: bypassHeaders });
     const text = await response.text();
     try {
       return { status: response.status, body: response.ok ? JSON.parse(text) : null };
@@ -447,7 +455,7 @@ await section("DOWNLOAD", async () => {
   } catch (error) {
     file = { error: error instanceof Error ? error.message : String(error) };
   }
-  const head = await fetch(`${base}/data/vietnam/v2/downloads/a-002.csv`, { method: "HEAD" });
+  const head = await fetch(`${base}/data/vietnam/v2/downloads/a-002.csv`, { method: "HEAD", headers: bypassHeaders });
   report.download = { summary, file, staticCsvStatus: head.status, staticCsvBytes: head.headers.get("content-length") };
   check("DOWNLOAD_A002_PRESELECTED", /선택한 데이터 1개/u.test(summary), summary, "선택한 데이터 1개 · …");
   check("DOWNLOAD_A002_FILE", Boolean(file?.name) && (file.bytes ?? 1) > 0, file, "a file is produced");
