@@ -143,7 +143,7 @@ export default function SemanticArchetypePreviewV125({
   const additionalDimensions = useMemo(
     () => {
       const keys = new Set(contract.dimensions.map((dimension) => dimension.key));
-      return contract.dimensions.filter(
+      const candidates = contract.dimensions.filter(
         (dimension) =>
           !["year", "period", "sex"].includes(dimension.key) &&
           // 레코드 유형(entity / 발전소) is the delivery's own row classifier, not a
@@ -153,6 +153,7 @@ export default function SemanticArchetypePreviewV125({
           !(dimension.key.endsWith("Raw") && keys.has(dimension.key.replace(/Raw$/u, ""))) &&
           dimension.values.length > 1
       );
+      return candidates;
     },
     [contract.dimensions]
   );
@@ -485,6 +486,28 @@ export default function SemanticArchetypePreviewV125({
             measureRows.some((row) => row.dimensions[dimension.key] === value)
           );
           const values = valuesForMeasure.length > 0 ? valuesForMeasure : dimension.values;
+          // Two dimensions that always travel together within the measure -
+          // A-006's 분류 "ILO 모델추정" and 세부 분류 "경제활동인구 대비 실업자
+          // 비율(ILO 모형 보정 추정치)" - are one choice written twice; the one
+          // with the longer labels describes the other and is not offered.
+          const pairsWithShorter = additionalDimensions.some((other) => {
+            if (other.key === dimension.key || dimensions[dimension.key]) return false;
+            const otherValues = other.values.filter((value) => measureRows.some((row) => row.dimensions[other.key] === value));
+            if (otherValues.length !== values.length || otherValues.length < 2) return false;
+            const otherLength = otherValues.reduce((sum, value) => sum + value.length, 0);
+            const ownLength = values.reduce((sum, value) => sum + value.length, 0);
+            if (otherLength >= ownLength) return false;
+            const forward = new Map<string, string>();
+            for (const row of measureRows) {
+              const left = row.dimensions[other.key];
+              const right = row.dimensions[dimension.key];
+              if (!left || !right) continue;
+              if (forward.has(left) && forward.get(left) !== right) return false;
+              forward.set(left, right);
+            }
+            return forward.size === values.length;
+          });
+          if (pairsWithShorter) return null;
           if (values.length === 1 && !dimensions[dimension.key]) {
             return (
               <p className="sv125-fixed-value" key={dimension.key} data-public-dimension-key={dimension.key}>

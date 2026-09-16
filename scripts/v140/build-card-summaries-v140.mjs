@@ -88,6 +88,7 @@ const OVERRIDES = {
   "A-014": { measure: { label: "SDG Index 종합점수" } },
   "A-017": { kind: "bars", series: { match: /\(기준값\)/u }, year: "first", note: "기준값 · 상한·하한은 상세" },
   "B-002": { kind: "bars" },
+  "B-010": { measure: { label: "CRI 종합 순위" } },
   "B-013": { kind: "bars", excludeTotal: true },
   "B-015": { kind: "bars", excludeTotal: true },
   "B-018": { series: { match: /^SSP2$/u } },
@@ -394,9 +395,15 @@ function textFactsCard(elementId, item, measure, rows) {
   const facts = populated
     .slice(0, 3)
     .map((row) => ({ label: seriesLabel({ labels: row.dimensionLabels }) || row.displayLabel, value: String(row.value).slice(0, 60) }));
+  // A register of a few stated facts leads with the first statement, which
+  // the detail prints as it is; a count of statements is not on the detail.
+  const lead = facts[0];
+  const leadIsStatement = Boolean(lead) && !/^EPSG|^[\d.,\s]+$/u.test(lead.value);
   return {
     kind: "facts",
-    headline: { value: `${populated.length}개 항목`, label: `${measure.labelKo} · 값이 문장으로 기재된 자료` },
+    headline: lead && leadIsStatement && populated.length <= 3
+      ? { value: lead.value.length > 28 ? `${lead.value.slice(0, 27)}…` : lead.value, label: `${lead.label || measure.labelKo} · 기재 항목 ${populated.length}개` }
+      : { value: `${populated.length}개 항목`, label: `${measure.labelKo} · 값이 문장으로 기재된 자료` },
     preview: { facts, more: Math.max(0, populated.length - facts.length) },
     period: periodOf(item),
     selection: selectionFor(measure.key, null, null, null, null),

@@ -147,6 +147,15 @@ const PUBLIC_CARD_ELEMENT_ATTRIBUTE_ALIASES_V131: Record<
     documentUrl: "field_efec870d",
     doi: "field_f108b738",
   },
+  // B-025's nine basins showed a name and nothing else; the area inside
+  // Viet Nam (GIS) and the river system are what the row states (V140). A
+  // "literal:" source is a constant the delivery does not carry as a column.
+  "B-025": {
+    statedValue: "베트남_내_면적_km_GIS_산출",
+    statedUnit: "literal:km² (베트남 내 면적, GIS 산출)",
+    siteDescription: "수계_구분",
+    siteName: "유역명_영문",
+  },
 };
 
 export default function PublicEntityCardGridV131({
@@ -450,6 +459,10 @@ function reviewedElementCardAttributesV131(
   if (!aliases) return {};
   const entries: Array<[string, PublicAttributeValueV126]> = [];
   Object.entries(aliases).forEach(([publicKey, sourceKey]) => {
+    if (sourceKey.startsWith("literal:")) {
+      entries.push([publicKey, sourceKey.slice("literal:".length)]);
+      return;
+    }
     const value = entity.normalizedAttributes[sourceKey];
     if (typeof value === "number" || typeof value === "boolean") {
       entries.push([publicKey, value]);

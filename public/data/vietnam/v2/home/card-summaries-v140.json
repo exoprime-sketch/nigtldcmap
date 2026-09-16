@@ -1,7 +1,7 @@
 {
  "schemaVersion": "v140-card-summaries-1",
  "dataSnapshot": "2026-08-27T00:00:00Z",
- "generatedAt": "2026-09-16T01:46:39.764Z",
+ "generatedAt": "2026-09-16T01:56:04.034Z",
  "generatedFrom": {
   "bundleIndex": "packs/bundle-index-v124.json",
   "semantics": "semantic/element-visualization-contracts-v125.json",
@@ -4941,40 +4941,38 @@
   {
    "elementId": "B-010",
    "title": "기후 리스크 지수(CRI)",
-   "kind": "facts",
    "headline": {
-    "value": "2개 항목",
-    "label": "2024년 최대 피해 극한기상 사건 · 값이 문장으로 기재된 자료"
+    "value": "10 순위",
+    "label": "CRI 종합 순위 · 2024년"
    },
-   "preview": {
-    "facts": [
-     {
-      "label": "CRI 2026 본문",
-      "value": "Typhoon Yagi (태풍 야기) — 가옥·인프라 대규모 손실"
-     },
-     {
-      "label": "CRI 2026 본문",
-      "value": "2024년 3–5월 장기 폭염"
-     }
-    ],
-    "more": 0
-   },
-   "period": "2024년",
+   "period": "2023–2024년",
    "selection": {
-    "measure": "measure-e19a3da06ed0",
+    "measure": "measure-f20de2f62bc7",
     "sex": null,
-    "year": null,
+    "year": 2024,
     "period": null,
     "dimensions": {}
    },
-   "basis": {
-    "unit": "항목",
-    "rule": "수치가 아닌 기재 내용을 그대로 보임"
-   },
    "measure": {
-    "key": "measure-e19a3da06ed0",
-    "label": "2024년 최대 피해 극한기상 사건",
-    "unit": "사건"
+    "key": "measure-f20de2f62bc7",
+    "label": "CRI 종합 순위",
+    "unit": "순위"
+   },
+   "kind": "level",
+   "preview": {
+    "unit": "순위",
+    "seriesLabel": "",
+    "others": [
+     {
+      "label": "2023년",
+      "value": 61
+     }
+    ],
+    "note": "두 시점 값 · 추이로 그리지 않음"
+   },
+   "basis": {
+    "unit": "관측값",
+    "rule": "CRI 종합 순위(순위) 두 시점이므로 추이를 그리지 않음"
    },
    "provider": "Germanwatch Climate Risk Index 2026",
    "mapConnected": false,
@@ -4984,8 +4982,7 @@
     "observationCount": 12,
     "entityCount": 0,
     "indicatorIds": [
-     "B-010_cri_event_2024_01",
-     "B-010_cri_event_2024_02"
+     "B-010_cri_rank"
     ]
    }
   },
@@ -7988,8 +7985,8 @@
    "title": "광물명[리튬, 코발트, 니켈, 망간, 흑연, 주석, 납, 아연, 마그네슘화합물, 텅스텐, 바나듐, 크롬, 나이오븀, 탄탈럼, 티타늄광물, 지르코늄하프늄, 안티모니, 희토류, 백금족, 형석]",
    "kind": "facts",
    "headline": {
-    "value": "1개 항목",
-    "label": "원광 수출규제 대상 광종 · 값이 문장으로 기재된 자료"
+    "value": "수출금지(원광) 대상",
+    "label": "납-아연 · 기재 항목 1개"
    },
    "preview": {
     "facts": [
@@ -9747,8 +9744,8 @@
    "title": "기후예산태깅(CBT, Climate Budget Tagging) 도입 여부 및 수준",
    "kind": "facts",
    "headline": {
-    "value": "1개 항목",
-    "label": "기후예산태깅(CBT) · 값이 문장으로 기재된 자료"
+    "value": "부분 도입 — TCCRE 유형분류 기반 사후 태깅",
+    "label": "도입 여부 · 제도 도입 형태 · 기재 항목 1개"
    },
    "preview": {
     "facts": [
