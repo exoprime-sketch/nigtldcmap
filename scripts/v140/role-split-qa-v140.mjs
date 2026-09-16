@@ -60,7 +60,8 @@ const count = (text) => Number(String(text || "").replace(/[^0-9]/gu, ""));
 
 const server = externalBase ? null : await startStaticBuildServer(resolve(PROJECT_ROOT, "build"));
 const base = (externalBase || server.url).replace(/\/$/u, "");
-const browser = await chromium.launch();
+// CI resolves Chrome into V125_BROWSER_EXECUTABLE (no bundled Playwright browser there).
+const browser = await chromium.launch(process.env.V125_BROWSER_EXECUTABLE ? { executablePath: process.env.V125_BROWSER_EXECUTABLE } : {});
 const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, acceptDownloads: true, extraHTTPHeaders: bypassHeaders });
 const report = {
   label,

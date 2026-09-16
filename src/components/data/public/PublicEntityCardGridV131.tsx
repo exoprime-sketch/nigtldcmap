@@ -510,6 +510,15 @@ function publicEntityTypeBadgeV137(value: unknown): string | null {
   return text;
 }
 
+function groupedNumberV140(value: string): string {
+  const trimmed = value.trim();
+  if (!/^-?\d+(?:\.\d+)?$/u.test(trimmed)) return value;
+  const number = Number(trimmed);
+  if (!Number.isFinite(number) || Math.abs(number) < 1000) return value;
+  const decimals = (trimmed.split(".")[1] || "").length;
+  return number.toLocaleString("en-US", { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+}
+
 function factValuesV131(
   attributes: Record<string, PublicAttributeValueV126>,
   template: PublicEntityCardTemplateV131,
@@ -527,7 +536,9 @@ function factValuesV131(
     const normalized = normalizedCardValueV131(value);
     if (seenValues.has(normalized)) return;
     seenValues.add(normalized);
-    facts.push({ label, value });
+    // A stated number reads with digit grouping ("86,253", not "86253"),
+    // the same way the summary card prints it.
+    facts.push({ label, value: label === "값" ? groupedNumberV140(value) : value });
   });
   return facts.slice(0, 6);
 }

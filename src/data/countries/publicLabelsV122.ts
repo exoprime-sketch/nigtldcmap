@@ -145,6 +145,10 @@ function removeFieldInventory(value: string): string {
       .replace(/\[[\s\S]*$/u, "")
       .replace(/;[\s\S]*$/u, "")
       .replace(/\((?:프로젝트명|위치|용량|국가|기관|지표|변수)[\s\S]*$/u, "")
+      // "경쟁국 민간기업의 개도국 진출 현황: 기업명, 국적, 진출 대상국, …" -
+      // a colon followed by a comma list is the workbook's column inventory,
+      // not part of the name (V140).
+      .replace(/:\s+[^:]*,[^:]*,[\s\S]*$/u, "")
   );
 }
 

@@ -27,7 +27,9 @@
 
 대표 지표: 검토된 기본 측정항목(`publicVisualizationRegistryV126.ts`의 `PUBLIC_DEFAULT_MEASURE_KEYS_V127`; V140에서 A-003 GDP 총액, B-021 GVI 취약성 지수, C-016 집중형 태양광, B-034 순플럭스 추가) → 없으면 상세와 같은 첫 번째 값 있는 측정항목. 계열은 총액·전체 계열을 우선하고, 없으면 연도가 가장 많은 계열.
 
-`selection`에는 상세가 실제 선택지로 제공하는 차원만 넣는다(값이 1개인 차원, `technology` 제외). 연도로 쓰인 period는 year로 넘긴다.
+`selection`에는 상세가 실제 선택지로 제공하는 차원만 넣는다(값이 1개인 차원, `technology` 제외). 연도로 쓰인 period는 year로 넘긴다. 부분끼리 비교하는 카드(bars/composition)는 부분마다 다른 범주를 넘기지 않고 모든 부분이 공유하는 차원만 넘긴다. 전용 컴포넌트 요소는 그 컴포넌트가 읽는 키만 넘긴다(`SPECIALISED_SELECTION`: D-005 `budgetBasis`, D-011·A-016·E-012는 measure·year). 성·시 분포·시나리오 카드는 `dim.regionMeasure`(+`dim.scenario`)로 넘긴다.
+
+등록부(entity) 카드는 상세와 같은 행 기준을 쓴다: 원천의 집계·설명 행(`레코드구분=집계`)과 취합 방법 행('수집현황 v… 분류')은 세지 않고 `basis.rule`에 제외 수를 밝힌다. `basis.count`에 행 수(`rows`)·원천 행 수(`sourceRows`)·중복 제거 수(`distinct`)를 둔다. 카드가 어떤 행에서 대표값을 얻었는지는 `provenance.headlineIndicatorIds`(대표 지표, 선택 차원으로 좁힘)로 남겨 독립 재계산이 같은 계열을 읽게 한다.
 
 ## 상세 화면 진입 규칙
 
@@ -39,6 +41,7 @@
 
 ## 검증
 
-- `node scripts/v140/analysis-qa-v140.mjs [--base-url URL] [--only IDs]` → `reports/v140/analysis-qa-v140-<label>.{json,md}`: 152개별 `screenLoaded`·`cardSummaryVerified`·`detailAnalysisFit`·`controlsVerified`·`tableValuesVerified`·`mapHandoffVerified`·`remainingIssue`·`evidence`.
+- `npm run qa:analysis:v140` (`node scripts/v140/analysis-qa-v140.mjs [--base-url URL] [--only IDs] [--bypass-secret …] [--allow-version-mismatch]`) → `reports/v140/analysis-qa-v140-<label>.{json,md}`: 152개별 `cardClicked`(finder 카드 실제 클릭, 홈 8개는 `homeCardClicked`)·`selectionUrlPreserved`·`screenLoaded`(ready + 지연 로딩 0 + 세션 전체 콘솔 오류·필수 자산 실패·HTML-for-JSON 0)·`cardValueVerified`(같은 의미 수치: 정수 정확, 소수는 표시 자릿수, 조·억·만·B/M/K 환산 명시, 두 화면 자릿수가 다르면 굵은 쪽 반올림 단위의 절반 이내, 단위·연도/기간·지역 동반)·`recomputed`(다운로드 파일 독립 재계산)·`detailAnalysisFit`(선택기 표시값·제목·KPI)·`controlsVerified`(새 페이지에서 라벨로 찾은 select를 실제 선택, 주 분석 수치·주제 변화)·`tableValuesVerified`(분류 match/no-table/no-derived-row/mismatch/not-applicable)·`mapHandoffVerified`(목록 행 primary·표시 상태 3회 연속)·`remainingIssue`·`evidence`. 배포판은 `card-summaries` 해시·manifest 버전이 로컬 계약과 같을 때만 검사(불일치 exit 2). 필수 실패가 있으면 exit 1.
 - `npm run qa:role-split:v140` — 홈·finder·지도 역할 분리 52개 검사.
-- 값이 있는 147개와 상태 안내 5개를 구분해 센다. `ready`만으로 semantic PASS를 대신하지 않는다.
+- `npm run finalize:v140` — `finalize:v136`(79) + role-split(52) + analysis QA(152). CI(`ci.yml`)도 같은 순서로 실행하고 보고서를 artifact로 올린다.
+- 값이 있는 147개와 상태 안내 5개를 구분해 센다. `ready`만으로 semantic PASS를 대신하지 않으며, 미검증(해당 없음)은 PASS로 세지 않는다.

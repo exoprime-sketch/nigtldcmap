@@ -347,7 +347,9 @@ export default function PublicRegionScenarioSummaryV138({
       (requestedRegion === NATIONAL_KEY && shape.hasNationalRow))
       ? requestedRegion
       : ALL_REGIONS;
-  const [scenarioChoice, setScenarioChoice] = useState<string>(ALL_SCENARIOS);
+  // A card that summarised one scenario (SSP2-4.5 median trend) opens the
+  // screen on that scenario; otherwise every scenario is shown.
+  const [scenarioChoice, setScenarioChoice] = useState<string>(selectorState.dimensions.scenario || ALL_SCENARIOS);
   const scenario =
     shape && shape.scenarios.includes(scenarioChoice) ? scenarioChoice : ALL_SCENARIOS;
 

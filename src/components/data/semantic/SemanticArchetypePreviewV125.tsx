@@ -700,13 +700,18 @@ export default function SemanticArchetypePreviewV125({
  * representative than any other.
  */
 function singleSubjectV136_4(
-  rows: ReadonlyArray<{ dimensions: Record<string, unknown> }>
+  rows: ReadonlyArray<{ dimensions: Record<string, unknown>; countryIso3?: string }>
 ): boolean {
   if (rows.length <= 1) return true;
-  const signature = (row: { dimensions: Record<string, unknown> }) =>
-    Object.entries(row.dimensions || {})
-      .filter(([key]) => !["year", "period"].includes(key))
-      .map(([key, value]) => `${key}=${String(value)}`)
+  // E-017 ranks five countries in rows that differ only by country: the
+  // first of them (China, 5위) is not the measure's headline (V140).
+  const signature = (row: { dimensions: Record<string, unknown>; countryIso3?: string }) =>
+    [
+      ...Object.entries(row.dimensions || {})
+        .filter(([key]) => !["year", "period"].includes(key))
+        .map(([key, value]) => `${key}=${String(value)}`),
+      `country=${row.countryIso3 || ""}`,
+    ]
       .sort()
       .join("|");
   const first = signature(rows[0]);

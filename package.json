@@ -189,6 +189,9 @@
     "build:home-preview:v139": "node scripts/v139/build-home-preview-v139.mjs && node scripts/generate-vietnam-asset-integrity-v133.mjs --data public/data/vietnam/v2",
     "qa:home:v139": "node scripts/v139/home-runtime-qa-v139.mjs",
     "qa:role-split:v140": "node scripts/v140/role-split-qa-v140.mjs",
+    "build:card-summaries:v140": "node scripts/v140/build-card-summaries-v140.mjs && node scripts/generate-vietnam-asset-integrity-v133.mjs --data public/data/vietnam/v2",
+    "qa:analysis:v140": "node scripts/v140/analysis-qa-v140.mjs",
+    "finalize:v140": "npm run finalize:v136 && npm run qa:role-split:v140 && npm run qa:analysis:v140",
     "verify:ignore-command:v140": "node scripts/v140/verify-ignore-command-v140.mjs",
     "storage:ledger:v140": "node scripts/v140/deployment-storage-ledger-v140.mjs"
   },

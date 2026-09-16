@@ -202,7 +202,7 @@ export default function PrimaryEnergyCompositionAnalysisV132({
     >
       <section className="pec132__kpis" aria-label="최신 핵심현황" data-testid="a016-kpis">
         <article>
-          <span>총 1차 에너지 공급량</span>
+          <span>총 1차 에너지 소비량</span>
           <strong>
             {latest.total === null ? (
               "미공개"
@@ -555,7 +555,7 @@ function EnergyStackedAreaV132({
           <line className="pec132__crosshair" x1={activeX} x2={activeX} y1={padding.top} y2={height - padding.bottom} />
         ) : null}
         <text className="pec132__axis-title" textAnchor="middle" x={padding.left + plotWidth / 2} y={height - 10}>연도</text>
-        <text className="pec132__axis-title" textAnchor="middle" transform={`translate(17 ${padding.top + plotHeight / 2}) rotate(-90)`}>{mode === "share" ? "구성비(%)" : `1차 에너지 공급량(${unit})`}</text>
+        <text className="pec132__axis-title" textAnchor="middle" transform={`translate(17 ${padding.top + plotHeight / 2}) rotate(-90)`}>{mode === "share" ? "구성비(%)" : `1차 에너지 소비량(${unit})`}</text>
       </svg>
       {active ? (
         <div

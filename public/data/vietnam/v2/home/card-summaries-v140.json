@@ -1,7 +1,7 @@
 {
  "schemaVersion": "v140-card-summaries-1",
  "dataSnapshot": "2026-08-27T00:00:00Z",
- "generatedAt": "2026-09-16T01:56:04.034Z",
+ "generatedAt": "2026-09-16T04:56:42.038Z",
  "generatedFrom": {
   "bundleIndex": "packs/bundle-index-v124.json",
   "semantics": "semantic/element-visualization-contracts-v125.json",
@@ -113,6 +113,9 @@
     "entityCount": 0,
     "indicatorIds": [
      "A-001_cpi_score"
+    ],
+    "headlineIndicatorIds": [
+     "A-001_cpi_score"
     ]
    }
   },
@@ -143,14 +146,27 @@
    },
    "measure": null,
    "fromHome": true,
-   "provider": "World Bank",
+   "provider": "World Bank · 세계 거버넌스 지표(WGI)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-001-52f51a94.json",
     "observationCount": 312,
     "entityCount": 0,
-    "indicatorIds": []
+    "indicatorIds": [
+     "A-002_wgi_cc_est",
+     "A-002_wgi_cc_pctrank",
+     "A-002_wgi_ge_est",
+     "A-002_wgi_ge_pctrank",
+     "A-002_wgi_pv_est",
+     "A-002_wgi_pv_pctrank",
+     "A-002_wgi_rl_est",
+     "A-002_wgi_rl_pctrank",
+     "A-002_wgi_rq_est",
+     "A-002_wgi_rq_pctrank",
+     "A-002_wgi_va_est",
+     "A-002_wgi_va_pctrank"
+    ]
    }
   },
   {
@@ -176,16 +192,25 @@
     "unit": "홈과 동일",
     "rule": "홈 주요 데이터와 같은 요약자산(home-preview-v139)"
    },
-   "measure": null,
+   "measure": {
+    "key": "measure-82dc14f247b2",
+    "label": "GDP 총액",
+    "unit": "USD"
+   },
    "fromHome": true,
-   "provider": "World Bank",
+   "provider": "World Bank 국가 통계",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-001-52f51a94.json",
     "observationCount": 272,
     "entityCount": 0,
-    "indicatorIds": []
+    "indicatorIds": [
+     "A-003_gdp_current_usd"
+    ],
+    "headlineIndicatorIds": [
+     "A-003_gdp_current_usd"
+    ]
    }
   },
   {
@@ -300,6 +325,9 @@
     "entityCount": 0,
     "indicatorIds": [
      "A-004_poverty_rate_national"
+    ],
+    "headlineIndicatorIds": [
+     "A-004_poverty_rate_national"
     ]
    }
   },
@@ -364,6 +392,12 @@
      "A-005_va_share_industry",
      "A-005_va_share_manufacturing",
      "A-005_va_share_services"
+    ],
+    "headlineIndicatorIds": [
+     "A-005_va_share_services",
+     "A-005_va_share_industry",
+     "A-005_va_share_manufacturing",
+     "A-005_va_share_agriculture"
     ]
    }
   },
@@ -559,6 +593,9 @@
     "indicatorIds": [
      "A-006_unemp_total_ilo",
      "A-006_unemp_total_national"
+    ],
+    "headlineIndicatorIds": [
+     "A-006_unemp_total_ilo"
     ]
    }
   },
@@ -874,6 +911,9 @@
     "entityCount": 0,
     "indicatorIds": [
      "A-007_population_total"
+    ],
+    "headlineIndicatorIds": [
+     "A-007_population_total"
     ]
    }
   },
@@ -976,6 +1016,9 @@
     "observationCount": 31,
     "entityCount": 0,
     "indicatorIds": [
+     "A-008_gini_index"
+    ],
+    "headlineIndicatorIds": [
      "A-008_gini_index"
     ]
    }
@@ -1168,6 +1211,9 @@
     "entityCount": 0,
     "indicatorIds": [
      "A-009_ghg_intensity_gdp_ppp"
+    ],
+    "headlineIndicatorIds": [
+     "A-009_ghg_intensity_gdp_ppp"
     ]
    }
   },
@@ -1194,16 +1240,31 @@
     "unit": "홈과 동일",
     "rule": "홈 주요 데이터와 같은 요약자산(home-preview-v139)"
    },
-   "measure": null,
+   "measure": {
+    "key": "measure-165d8811fba3",
+    "label": "가스별 배출량",
+    "unit": "Mt CO2eq"
+   },
    "fromHome": true,
-   "provider": "European Commission, Joint Research Centre (JRC) — EDGAR · European Commission, Joint Research Centre (JRC) — IEA-EDGAR CO2",
+   "provider": "European Commission JRC · EDGAR",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-002-08b197a0.json",
     "observationCount": 400,
     "entityCount": 0,
-    "indicatorIds": []
+    "indicatorIds": [
+     "A-010_emissions_ch4_co2eq",
+     "A-010_emissions_co2_co2eq",
+     "A-010_emissions_fgas_co2eq",
+     "A-010_emissions_n2o_co2eq"
+    ],
+    "headlineIndicatorIds": [
+     "A-010_emissions_ch4_co2eq",
+     "A-010_emissions_co2_co2eq",
+     "A-010_emissions_fgas_co2eq",
+     "A-010_emissions_n2o_co2eq"
+    ]
    }
   },
   {
@@ -1278,7 +1339,19 @@
      "A-011_emissions_sector_industrial_processes",
      "A-011_emissions_sector_other_indirect_n2o",
      "A-011_emissions_sector_power_industry",
-     "A-011_emissions_sector_transport"
+     "A-011_emissions_sector_transport",
+     "A-011_emissions_sector_waste"
+    ],
+    "headlineIndicatorIds": [
+     "A-011_emissions_sector_power_industry",
+     "A-011_emissions_sector_industrial_combustion",
+     "A-011_emissions_sector_agriculture",
+     "A-011_emissions_sector_industrial_processes",
+     "A-011_emissions_sector_transport",
+     "A-011_emissions_sector_fuel_exploitation",
+     "A-011_emissions_sector_waste",
+     "A-011_emissions_sector_buildings",
+     "A-011_emissions_sector_other_indirect_n2o"
     ]
    }
   },
@@ -1541,7 +1614,7 @@
     "unit": "관측값",
     "rule": "총 GHG 배출량(Mt CO2eq) LULUCF 제외 · 국가 전체 온실가스 총배출량 계열 · 55개 연도 · 최신 2024년 값을 대표값으로"
    },
-   "provider": "European Commission, Joint Research Centre (JRC) — EDGAR · World Bank",
+   "provider": "European Commission, Joint Research Centre (JRC) — EDGAR",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -1549,6 +1622,9 @@
     "observationCount": 103,
     "entityCount": 0,
     "indicatorIds": [
+     "A-012_ghg_total_excl_lulucf"
+    ],
+    "headlineIndicatorIds": [
      "A-012_ghg_total_excl_lulucf"
     ]
    }
@@ -1592,6 +1668,9 @@
     "observationCount": 1,
     "entityCount": 365,
     "indicatorIds": [
+     "A-013_ndc_sdg_linkage_count"
+    ],
+    "headlineIndicatorIds": [
      "A-013_ndc_sdg_linkage_count"
     ]
    }
@@ -1748,6 +1827,9 @@
     "entityCount": 0,
     "indicatorIds": [
      "A-014_sdg_index_score"
+    ],
+    "headlineIndicatorIds": [
+     "A-014_sdg_index_score"
     ]
    }
   },
@@ -1795,6 +1877,9 @@
     "indicatorIds": [
      "A-015_sdg1_lmicpov",
      "A-015_sdg1_wpc"
+    ],
+    "headlineIndicatorIds": [
+     "A-015_sdg1_lmicpov"
     ]
    }
   },
@@ -1870,6 +1955,14 @@
      "A-016_primary_energy_oil",
      "A-016_primary_energy_renewables",
      "A-016_primary_energy_total_primary_energy"
+    ],
+    "headlineIndicatorIds": [
+     "A-016_primary_energy_coal",
+     "A-016_primary_energy_oil",
+     "A-016_primary_energy_hydro",
+     "A-016_primary_energy_natural_gas",
+     "A-016_primary_energy_renewables",
+     "A-016_primary_energy_nuclear"
     ]
    }
   },
@@ -1919,9 +2012,7 @@
     "sex": null,
     "year": 2023,
     "period": null,
-    "dimensions": {
-     "category": "가스복합화력(CCGT)(기준값)"
-    }
+    "dimensions": {}
    },
    "basis": {
     "unit": "관측값",
@@ -1947,7 +2038,33 @@
      "A-017_lcoe_coal_max",
      "A-017_lcoe_coal_min",
      "A-017_lcoe_floating_solar_benchmark",
-     "A-017_lcoe_floating_solar_max"
+     "A-017_lcoe_floating_solar_max",
+     "A-017_lcoe_floating_solar_min",
+     "A-017_lcoe_offshore_wind_benchmark",
+     "A-017_lcoe_offshore_wind_max",
+     "A-017_lcoe_offshore_wind_min",
+     "A-017_lcoe_onshore_wind_battery_benchmark",
+     "A-017_lcoe_onshore_wind_battery_max",
+     "A-017_lcoe_onshore_wind_battery_min",
+     "A-017_lcoe_onshore_wind_benchmark",
+     "A-017_lcoe_onshore_wind_max",
+     "A-017_lcoe_onshore_wind_min",
+     "A-017_lcoe_solar_battery_benchmark",
+     "A-017_lcoe_solar_battery_max",
+     "A-017_lcoe_solar_battery_min",
+     "A-017_lcoe_solar_benchmark",
+     "A-017_lcoe_solar_max",
+     "A-017_lcoe_solar_min"
+    ],
+    "headlineIndicatorIds": [
+     "A-017_lcoe_offshore_wind_benchmark",
+     "A-017_lcoe_onshore_wind_battery_benchmark",
+     "A-017_lcoe_solar_battery_benchmark",
+     "A-017_lcoe_onshore_wind_benchmark",
+     "A-017_lcoe_ccgt_benchmark",
+     "A-017_lcoe_coal_benchmark",
+     "A-017_lcoe_floating_solar_benchmark",
+     "A-017_lcoe_solar_benchmark"
     ]
    }
   },
@@ -2023,7 +2140,43 @@
      "A-018_capacity_gas_biofuels_offgrid",
      "A-018_capacity_gas_biofuels_ongrid",
      "A-018_capacity_natural_gas_ongrid",
-     "A-018_capacity_offshore_wind_energy_ongrid"
+     "A-018_capacity_offshore_wind_energy_ongrid",
+     "A-018_capacity_oil_ongrid",
+     "A-018_capacity_onshore_wind_energy_offgrid",
+     "A-018_capacity_onshore_wind_energy_ongrid",
+     "A-018_capacity_other_non_renewable_energy_ongrid",
+     "A-018_capacity_renewable_hydropower_offgrid",
+     "A-018_capacity_renewable_hydropower_ongrid",
+     "A-018_capacity_renewable_waste_ongrid",
+     "A-018_capacity_solar_energy_offgrid",
+     "A-018_capacity_solar_energy_ongrid",
+     "A-018_capacity_solar_photovoltaic_offgrid",
+     "A-018_capacity_solar_photovoltaic_ongrid",
+     "A-018_capacity_solid_biofuels_offgrid",
+     "A-018_capacity_solid_biofuels_ongrid",
+     "A-018_capacity_total_non_renewable_energy_ongrid",
+     "A-018_capacity_total_renewable_energy_offgrid",
+     "A-018_capacity_total_renewable_energy_ongrid",
+     "A-018_capacity_wind_energy_offgrid",
+     "A-018_capacity_wind_energy_ongrid"
+    ],
+    "headlineIndicatorIds": [
+     "A-018_capacity_coal_ongrid",
+     "A-018_capacity_renewable_hydropower_ongrid",
+     "A-018_capacity_solar_photovoltaic_ongrid",
+     "A-018_capacity_natural_gas_ongrid",
+     "A-018_capacity_onshore_wind_energy_ongrid",
+     "A-018_capacity_oil_ongrid",
+     "A-018_capacity_offshore_wind_energy_ongrid",
+     "A-018_capacity_solid_biofuels_ongrid",
+     "A-018_capacity_other_non_renewable_energy_ongrid",
+     "A-018_capacity_renewable_waste_ongrid",
+     "A-018_capacity_renewable_hydropower_offgrid",
+     "A-018_capacity_gas_biofuels_ongrid",
+     "A-018_capacity_solid_biofuels_offgrid",
+     "A-018_capacity_onshore_wind_energy_offgrid",
+     "A-018_capacity_solar_photovoltaic_offgrid",
+     "A-018_capacity_gas_biofuels_offgrid"
     ]
    }
   },
@@ -2211,6 +2364,9 @@
     "entityCount": 0,
     "indicatorIds": [
      "A-019_td_loss_rate"
+    ],
+    "headlineIndicatorIds": [
+     "A-019_td_loss_rate"
     ]
    }
   },
@@ -2369,6 +2525,9 @@
     "indicatorIds": [
      "A-020_renewable_share_capacity",
      "A-020_renewable_share_generation"
+    ],
+    "headlineIndicatorIds": [
+     "A-020_renewable_share_capacity"
     ]
    }
   },
@@ -2536,6 +2695,9 @@
      "A-021_electricity_access_rural",
      "A-021_electricity_access_total",
      "A-021_electricity_access_urban"
+    ],
+    "headlineIndicatorIds": [
+     "A-021_electricity_access_total"
     ]
    }
   },
@@ -2632,6 +2794,9 @@
      "A-022_maifi_evnhcmc_former",
      "A-022_maifi_evnnpc",
      "A-022_maifi_evnspc"
+    ],
+    "headlineIndicatorIds": [
+     "A-022_maifi_evn_group"
     ]
    }
   },
@@ -2660,14 +2825,18 @@
    },
    "measure": null,
    "fromHome": true,
-   "provider": "OpenStreetMap contributors · World Resources Institute",
+   "provider": "World Resources Institute · OpenStreetMap 기여자",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-003-890d06ed.json",
     "observationCount": 1,
     "entityCount": 1963,
-    "indicatorIds": []
+    "indicatorIds": [
+     "A-023_power_plant_count",
+     "A-023_power_plant_registry",
+     "A-023_power_plant_registry_osm2026"
+    ]
    }
   },
   {
@@ -2702,7 +2871,11 @@
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-003-890d06ed.json",
     "observationCount": 1,
     "entityCount": 722,
-    "indicatorIds": []
+    "indicatorIds": [
+     "A-024_transmission_line_count",
+     "A-024_transmission_line_pdp8",
+     "A-024_transmission_line_wb2016"
+    ]
    }
   },
   {
@@ -2745,6 +2918,9 @@
     "entityCount": 5,
     "indicatorIds": [
      "A-025_ccs_facility_count"
+    ],
+    "headlineIndicatorIds": [
+     "A-025_ccs_facility_count"
     ]
    }
   },
@@ -2753,8 +2929,8 @@
    "title": "건물 풋프린트(Footprint)",
    "kind": "facts",
    "headline": {
-    "value": "1개 항목",
-    "label": "건물 풋프린트 · 값이 문장으로 기재된 자료"
+    "value": "EPSG:4326",
+    "label": "좌표계 · 기재 항목 1개"
    },
    "preview": {
     "facts": [
@@ -2782,7 +2958,7 @@
     "label": "건물 풋프린트",
     "unit": "EPSG 코드"
    },
-   "provider": "OpenStreetMap contributors",
+   "provider": "Google Research (Open Buildings)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -2790,6 +2966,9 @@
     "observationCount": 7,
     "entityCount": 0,
     "indicatorIds": [
+     "A-026_building_footprint_crs"
+    ],
+    "headlineIndicatorIds": [
      "A-026_building_footprint_crs"
     ]
    }
@@ -2843,7 +3022,15 @@
      "A-027_roads_fclass_footway_count",
      "A-027_roads_fclass_unclassified_count",
      "A-027_roads_fclass_path_count",
-     "A-027_roads_fclass_tertiary_count"
+     "A-027_roads_fclass_tertiary_count",
+     "A-027_roads_fclass_secondary_count",
+     "A-027_roads_fclass_trunk_count",
+     "A-027_roads_fclass_primary_count",
+     "A-027_roads_fclass_construction_count",
+     "A-027_roads_fclass_motorway_count"
+    ],
+    "headlineIndicatorIds": [
+     "A-027_roads_feature_count"
     ]
    }
   },
@@ -2894,6 +3081,9 @@
      "A-028_waterways_fclass_canal_count",
      "A-028_waterways_fclass_river_count",
      "A-028_waterways_fclass_drain_count"
+    ],
+    "headlineIndicatorIds": [
+     "A-028_waterways_feature_count"
     ]
    }
   },
@@ -2936,6 +3126,9 @@
     "observationCount": 1,
     "entityCount": 19,
     "indicatorIds": [
+     "A-029_fta_count"
+    ],
+    "headlineIndicatorIds": [
      "A-029_fta_count"
     ]
    }
@@ -3005,6 +3198,9 @@
      "A-030_trade_balance",
      "A-030_trade_korea_exports",
      "A-030_trade_korea_imports",
+     "A-030_trade_total"
+    ],
+    "headlineIndicatorIds": [
      "A-030_trade_total"
     ]
    }
@@ -3094,6 +3290,9 @@
      "A-031_lpi_overall",
      "A-031_lpi_timeliness",
      "A-031_lpi_tracking_and_tracing"
+    ],
+    "headlineIndicatorIds": [
+     "A-031_lpi_customs"
     ]
    }
   },
@@ -3243,7 +3442,7 @@
     "unit": "관측값",
     "rule": "중간재 교역(%) 수출 중 중간재 국내부가가치 비중 계열 · 26개 연도 · 최신 2020년 값을 대표값으로"
    },
-   "provider": "OECD · World Bank WITS (원자료: UN Comtrade)",
+   "provider": "OECD",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -3253,6 +3452,9 @@
     "indicatorIds": [
      "A-032_intermediate_dva_share_in_exports",
      "A-032_reexported_intermediate_import_share"
+    ],
+    "headlineIndicatorIds": [
+     "A-032_intermediate_dva_share_in_exports"
     ]
    }
   },
@@ -3394,6 +3596,9 @@
      "A-033_lsci_q2",
      "A-033_lsci_q3",
      "A-033_lsci_q4"
+    ],
+    "headlineIndicatorIds": [
+     "A-033_lsci_q1"
     ]
    }
   },
@@ -3469,7 +3674,25 @@
      "B-001_pr_month_norm_jan",
      "B-001_pr_month_norm_jul",
      "B-001_pr_month_norm_jun",
-     "B-001_pr_month_norm_mar"
+     "B-001_pr_month_norm_mar",
+     "B-001_pr_month_norm_may",
+     "B-001_pr_month_norm_nov",
+     "B-001_pr_month_norm_oct",
+     "B-001_pr_month_norm_sep"
+    ],
+    "headlineIndicatorIds": [
+     "B-001_pr_month_norm_aug",
+     "B-001_pr_month_norm_jul",
+     "B-001_pr_month_norm_sep",
+     "B-001_pr_month_norm_oct",
+     "B-001_pr_month_norm_jun",
+     "B-001_pr_month_norm_nov",
+     "B-001_pr_month_norm_may",
+     "B-001_pr_month_norm_dec",
+     "B-001_pr_month_norm_apr",
+     "B-001_pr_month_norm_mar",
+     "B-001_pr_month_norm_jan",
+     "B-001_pr_month_norm_feb"
     ]
    }
   },
@@ -3545,6 +3768,15 @@
      "B-002_koppen_area_cfb",
      "B-002_koppen_area_cwa",
      "B-002_koppen_area_cwb"
+    ],
+    "headlineIndicatorIds": [
+     "B-002_koppen_area_cwa",
+     "B-002_koppen_area_aw_tropical_savanna",
+     "B-002_koppen_area_am_tropical_monsoon",
+     "B-002_koppen_area_cwb",
+     "B-002_koppen_area_af",
+     "B-002_koppen_area_cfa",
+     "B-002_koppen_area_cfb"
     ]
    }
   },
@@ -3748,7 +3980,7 @@
     "year": 2025,
     "period": null,
     "dimensions": {
-     "mapVariable": "연평균_기온"
+     "regionMeasure": "연평균_기온"
     }
    },
    "basis": {
@@ -3760,14 +3992,17 @@
     "label": "연평균 기온",
     "unit": "°C"
    },
-   "provider": "World Bank CCKP (CRU TS 4.09)",
+   "provider": "World Bank CCKP (CRU TS 4.10) · World Bank CCKP (CRU TS 4.09)",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-005-88fbb447.json",
     "observationCount": 0,
     "entityCount": 8371,
-    "indicatorIds": []
+    "indicatorIds": [
+     "B-003_climate_adm1_year",
+     "B-003_climate_national_year"
+    ]
    }
   },
   {
@@ -3974,7 +4209,7 @@
     "year": 2100,
     "period": null,
     "dimensions": {
-     "mapVariable": "연평균_기온",
+     "regionMeasure": "연평균_기온",
      "scenario": "ssp245"
     }
    },
@@ -3987,14 +4222,17 @@
     "label": "연평균 기온",
     "unit": "°C"
    },
-   "provider": "Global Solar Atlas 2.0 (World Bank/ESMAP, Solargis) · Global Wind Atlas 3.x (DTU/World Bank ESMAP)",
+   "provider": "World Bank CCKP (CMIP6 x0.25)",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-005-88fbb447.json",
     "observationCount": 0,
     "entityCount": 33232,
-    "indicatorIds": []
+    "indicatorIds": [
+     "B-004_climate_adm1_year",
+     "B-004_climate_national_year"
+    ]
    }
   },
   {
@@ -4201,7 +4439,7 @@
     "year": 2100,
     "period": null,
     "dimensions": {
-     "mapVariable": "연속_건조일수_CDD_일",
+     "regionMeasure": "연속_건조일수_CDD_일",
      "scenario": "ssp245"
     }
    },
@@ -4214,14 +4452,17 @@
     "label": "연속 건조일수(CDD)",
     "unit": "일"
    },
-   "provider": "Copernicus ERA5-Land · World Bank CCKP (CMIP6 x0.25)",
+   "provider": "World Bank CCKP (CMIP6 x0.25)",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-005-88fbb447.json",
     "observationCount": 0,
     "entityCount": 31688,
-    "indicatorIds": []
+    "indicatorIds": [
+     "B-005_climate_adm1_year",
+     "B-005_climate_national_year"
+    ]
    }
   },
   {
@@ -4428,7 +4669,7 @@
     "year": 2100,
     "period": null,
     "dimensions": {
-     "mapVariable": "폭염일수_TX_35_일",
+     "regionMeasure": "폭염일수_TX_35_일",
      "scenario": "ssp245"
     }
    },
@@ -4448,7 +4689,10 @@
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-005-88fbb447.json",
     "observationCount": 0,
     "entityCount": 32608,
-    "indicatorIds": []
+    "indicatorIds": [
+     "B-006_climate_adm1_year",
+     "B-006_climate_national_year"
+    ]
    }
   },
   {
@@ -4655,7 +4899,7 @@
     "year": 2100,
     "period": null,
     "dimensions": {
-     "mapVariable": "최대_1일_강수_mm",
+     "regionMeasure": "최대_1일_강수_mm",
      "scenario": "ssp245"
     }
    },
@@ -4675,7 +4919,10 @@
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-005-88fbb447.json",
     "observationCount": 0,
     "entityCount": 32370,
-    "indicatorIds": []
+    "indicatorIds": [
+     "B-007_climate_adm1_year",
+     "B-007_climate_national_year"
+    ]
    }
   },
   {
@@ -4757,7 +5004,9 @@
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-006-3359672c.json",
     "observationCount": 0,
     "entityCount": 1575,
-    "indicatorIds": []
+    "indicatorIds": [
+     "B-008_sea_level_station"
+    ]
    }
   },
   {
@@ -4921,7 +5170,7 @@
     "unit": "관측값",
     "rule": "ND-GAIN 취약성(지수) 생태계 부문 계열 · 30개 연도 · 최신 2024년 값을 대표값으로"
    },
-   "provider": "University of Notre Dame ND-GAIN Country Index 2026 · WWF Biodiversity Risk Filter",
+   "provider": "University of Notre Dame ND-GAIN Country Index 2026",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -4935,6 +5184,9 @@
      "B-009_ndgain_health",
      "B-009_ndgain_infrastructure",
      "B-009_ndgain_water"
+    ],
+    "headlineIndicatorIds": [
+     "B-009_ndgain_ecosystems"
     ]
    }
   },
@@ -4982,6 +5234,9 @@
     "observationCount": 12,
     "entityCount": 0,
     "indicatorIds": [
+     "B-010_cri_rank"
+    ],
+    "headlineIndicatorIds": [
      "B-010_cri_rank"
     ]
    }
@@ -5145,7 +5400,7 @@
     "unit": "관측값",
     "rule": "ND-GAIN 종합점수(점) 30개 연도 · 최신 2024년 값을 대표값으로"
    },
-   "provider": "ND-GAIN Country Index 2026 · University of Notre Dame (ND-GAIN)",
+   "provider": "University of Notre Dame ND-GAIN Country Index 2026",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -5153,6 +5408,9 @@
     "observationCount": 1500,
     "entityCount": 0,
     "indicatorIds": [
+     "B-011_ndgain_score"
+    ],
+    "headlineIndicatorIds": [
      "B-011_ndgain_score"
     ]
    }
@@ -5193,7 +5451,7 @@
      }
     ],
     "unit": "재해 사건 수",
-    "scope": "재해유형별",
+    "scope": "재해 유형별",
     "omitted": 2,
     "unlabelled": 0
    },
@@ -5207,17 +5465,23 @@
    },
    "basis": {
     "unit": "재해 사건",
-    "rule": "재해 사건 1건 = 원천 1행 · 재해유형별 건수"
+    "rule": "재해 사건 1건 = 원천 1행 · 재해 유형별 건수",
+    "count": {
+     "rows": 275,
+     "sourceRows": 275
+    }
    },
    "measure": null,
-   "provider": "EM-DAT Archive v2026-04-30 · EM-DAT Archive v2026-04-30 (CRED/UCLouvain)",
+   "provider": "EM-DAT Archive v2026-04-30 (CRED/UCLouvain, Brussels) · 좌표보정 GADM 4.1",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-006-3359672c.json",
     "observationCount": 0,
     "entityCount": 275,
-    "indicatorIds": []
+    "indicatorIds": [
+     "B-012_disaster_event"
+    ]
    }
   },
   {
@@ -5269,7 +5533,7 @@
     "label": "EU 평균 탄소지불액",
     "unit": "%"
    },
-   "provider": "World Bank Relative CBAM Exposure Index · World Bank — EU CBAM Exposure Index",
+   "provider": "World Bank Relative CBAM Exposure Index",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -5282,6 +5546,12 @@
      "B-013_eu_avg_carbon_payment_fertilizers",
      "B-013_eu_avg_carbon_payment_iron_steel",
      "B-013_eu_avg_carbon_payment_total_cbam"
+    ],
+    "headlineIndicatorIds": [
+     "B-013_eu_avg_carbon_payment_fertilizers",
+     "B-013_eu_avg_carbon_payment_cement",
+     "B-013_eu_avg_carbon_payment_iron_steel",
+     "B-013_eu_avg_carbon_payment_aluminium"
     ]
    }
   },
@@ -5333,6 +5603,9 @@
     "indicatorIds": [
      "B-014_gdp_impact_nzp_no_reforms",
      "B-014_gdp_impact_nzp_with_measures"
+    ],
+    "headlineIndicatorIds": [
+     "B-014_gdp_impact_nzp_no_reforms"
     ]
    }
   },
@@ -5381,7 +5654,7 @@
     "label": "ETS 대상 시설 수",
     "unit": "개소"
    },
-   "provider": "World Bank Carbon Pricing Dashboard · World Bank Carbon Pricing Dashboard; 베트남 정부 Decree 29/2026/ND-CP",
+   "provider": "베트남 정부 Decree 29/2026/ND-CP 및 할당계획",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -5393,6 +5666,11 @@
      "B-015_covered_facilities_02",
      "B-015_covered_facilities_03",
      "B-015_covered_facilities_04"
+    ],
+    "headlineIndicatorIds": [
+     "B-015_covered_facilities_03",
+     "B-015_covered_facilities_01",
+     "B-015_covered_facilities_02"
     ]
    }
   },
@@ -5539,7 +5817,7 @@
     "unit": "관측값",
     "rule": "화석연료 소비 비중(%) 26개 연도 · 최신 2015년 값을 대표값으로"
    },
-   "provider": "Energy Institute Statistical Review of World Energy · World Bank WDI (원자료 IEA)",
+   "provider": "World Bank WDI (원자료 IEA)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -5547,6 +5825,9 @@
     "observationCount": 45,
     "entityCount": 0,
     "indicatorIds": [
+     "B-016_fossil_share"
+    ],
+    "headlineIndicatorIds": [
      "B-016_fossil_share"
     ]
    }
@@ -5603,14 +5884,17 @@
     "rule": "평가구역(유역×성×대수층) 1행 = 1구역 · 등급별 구역 수 · 성·시로 합치지 않음"
    },
    "measure": null,
-   "provider": "FAO AQUASTAT (SDG 6.4.2) · WRI Aqueduct 4.0",
+   "provider": "WRI Aqueduct 4.0 (Kuzma et al., 2023) · WRI Aqueduct 4.0 (2023)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-007-d6b69247.json",
     "observationCount": 0,
     "entityCount": 2032,
-    "indicatorIds": []
+    "indicatorIds": [
+     "B-017_aqueduct40_basin_adm1",
+     "B-017_country_ranking_national"
+    ]
    }
   },
   {
@@ -5722,7 +6006,7 @@
     "unit": "관측값",
     "rule": "GDP(PPP) 전 구간(십억 USD_2017/yr) SSP2 계열 · 17개 연도 · 최신 2100년 값을 대표값으로"
    },
-   "provider": "IIASA SSP Database v3.1 · IIASA SSP Database v3.1 (IIASA GDP 2023)",
+   "provider": "IIASA SSP Database v3.1 (OECD ENV-Growth 2023)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -5735,6 +6019,9 @@
      "B-018_gdp_ppp_full_ssp3",
      "B-018_gdp_ppp_full_ssp4",
      "B-018_gdp_ppp_full_ssp5"
+    ],
+    "headlineIndicatorIds": [
+     "B-018_gdp_ppp_full_ssp2"
     ]
    }
   },
@@ -5860,6 +6147,9 @@
      "B-019_pop_full_ssp3",
      "B-019_pop_full_ssp4",
      "B-019_pop_full_ssp5"
+    ],
+    "headlineIndicatorIds": [
+     "B-019_pop_full_ssp2"
     ]
    }
   },
@@ -5944,7 +6234,7 @@
     "unit": "관측값",
     "rule": "INFORM Risk 시계열(2017–2026)(지수) INFORM 종합 계열 · 10개 연도 · 최신 2026년 값을 대표값으로"
    },
-   "provider": "EU JRC INFORM Risk 2026 TREND · EU JRC INFORM Risk Index 2026 (v0.7.2)",
+   "provider": "EU JRC INFORM Risk 2026 TREND",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -5956,6 +6246,9 @@
      "B-020_risk_trend_ha",
      "B-020_risk_trend_inform",
      "B-020_risk_trend_vu"
+    ],
+    "headlineIndicatorIds": [
+     "B-020_risk_trend_inform"
     ]
    }
   },
@@ -6096,7 +6389,7 @@
     "unit": "관측값",
     "rule": "GVI 취약성 지수(지수) 국가 계열 · 24개 연도 · 최신 2023년 값을 대표값으로"
    },
-   "provider": "Global Data Lab (GDL Area Database) · Global Data Lab GVI",
+   "provider": "Global Data Lab GVI (Huisman et al., 2025)",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
@@ -6111,6 +6404,9 @@
      "B-021_gvi_subnational_north_east_north_west",
      "B-021_gvi_subnational_red_river_delta",
      "B-021_gvi_subnational_south_east"
+    ],
+    "headlineIndicatorIds": [
+     "B-021_gvi_national"
     ]
    }
   },
@@ -6159,7 +6455,7 @@
     "label": "기후 투자 재원 구성",
     "unit": "십억 US$"
    },
-   "provider": "World Bank Vietnam CCDR (2022) · World Bank Vietnam CCDR 2022",
+   "provider": "World Bank Vietnam Country Climate and Development Report (CCDR) 2022",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -6169,6 +6465,11 @@
     "indicatorIds": [
      "B-022_financing_source_g01",
      "B-022_financing_source_g02",
+     "B-022_financing_source_g03"
+    ],
+    "headlineIndicatorIds": [
+     "B-022_financing_source_g02",
+     "B-022_financing_source_g01",
      "B-022_financing_source_g03"
     ]
    }
@@ -6208,17 +6509,24 @@
    },
    "basis": {
     "unit": "관측지점",
-    "rule": "관측지점 1건 = 원천 1행 · 지점 유역명 기준 중복 제거"
+    "rule": "관측지점 1건 = 원천 1행 · 지점 유역명 기준 중복 제거",
+    "count": {
+     "rows": 11,
+     "distinct": 3,
+     "sourceRows": 11
+    }
    },
    "measure": null,
-   "provider": "GRDC / HydroBASINS / GloFAS · Le et al. (2014), HESS",
+   "provider": "MRC (2009) / Le et al. (2014)",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-007-d6b69247.json",
     "observationCount": 0,
     "entityCount": 11,
-    "indicatorIds": []
+    "indicatorIds": [
+     "B-023_hydro_site"
+    ]
    }
   },
   {
@@ -6396,7 +6704,7 @@
     "unit": "관측값",
     "rule": "관개농업 용수생산성 (SDG 6.4.1)(US$/m³) 34개 연도 · 최신 2023년 값을 대표값으로"
    },
-   "provider": "FAO AQUASTAT · 베트남 통계청(GSO) 관개면적·수확면적 통계",
+   "provider": "FAO AQUASTAT",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -6404,6 +6712,9 @@
     "observationCount": 205,
     "entityCount": 0,
     "indicatorIds": [
+     "B-024_wue_irrigated_agri"
+    ],
+    "headlineIndicatorIds": [
      "B-024_wue_irrigated_agri"
     ]
    }
@@ -6460,40 +6771,60 @@
     "rule": "유역 9개의 베트남 내 면적 km GIS 산출 비교"
    },
    "measure": null,
-   "provider": "HydroSHEDS / HydroBASINS v1.c · MONRE via WEPA (2024)",
+   "provider": "MONRE via WEPA (2024) / VNMC · MONRE Table 2.13.2 via WEPA Outlook 2024 · VNMC · HydroSHEDS DIR 15s(v1.1) · OSM admin0",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-008-15447fb0.json",
     "observationCount": 0,
     "entityCount": 9,
-    "indicatorIds": []
+    "indicatorIds": [
+     "B-025_basin_area_national",
+     "B-025_river_basin"
+    ]
    }
   },
   {
    "elementId": "B-026",
    "title": "유향(flow direction)",
-   "kind": "facts",
+   "kind": "spatial",
    "headline": {
-    "value": "74건",
-    "label": "행 · 2022년"
+    "value": "23.3 %",
+    "label": "우세 유향 비율 최대 · Vĩnh Phúc · 63개 성·시 중 · 2022년"
    },
    "preview": {
-    "facts": [
+    "parts": [
      {
-      "label": "VNM.33_1",
-      "value": ""
+      "label": "Vĩnh Phúc",
+      "value": 23.28
      },
      {
-      "label": "VNM.1_1",
-      "value": ""
+      "label": "Hậu Giang",
+      "value": 22.41
      },
      {
-      "label": "VNM.3_1",
-      "value": ""
+      "label": "Bình Định",
+      "value": 22.39
+     },
+     {
+      "label": "Bắc Ninh",
+      "value": 22.13
+     },
+     {
+      "label": "Bình Phước",
+      "value": 21.98
      }
     ],
-    "more": 71
+    "unit": "%",
+    "scope": "우세 유향 비율 상위 5개 성·시",
+    "median": 18.6,
+    "range": {
+     "min": 16.37,
+     "p10": 17.34,
+     "p90": 21.258000000000003,
+     "max": 23.28
+    },
+    "provinces": 63
    },
    "period": "2022년",
    "selection": {
@@ -6501,13 +6832,19 @@
     "sex": null,
     "year": null,
     "period": null,
-    "dimensions": {}
+    "dimensions": {
+     "regionMeasure": "우세_유향_비율"
+    }
    },
    "basis": {
-    "unit": "행",
-    "rule": "행 1건 = 원천 1행"
+    "unit": "성·시 값",
+    "rule": "우세 유향 비율(%) 63개 성·시 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만"
    },
-   "measure": null,
+   "measure": {
+    "key": "우세_유향_비율",
+    "label": "우세 유향 비율",
+    "unit": "%"
+   },
    "provider": "HydroSHEDS v1 Flow Direction (DIR 15s)",
    "mapConnected": false,
    "downloadable": true,
@@ -6515,7 +6852,10 @@
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-008-15447fb0.json",
     "observationCount": 0,
     "entityCount": 74,
-    "indicatorIds": []
+    "indicatorIds": [
+     "B-026_flowdir_adm1",
+     "B-026_flowdir_national"
+    ]
    }
   },
   {
@@ -6633,7 +6973,7 @@
     "unit": "관측값",
     "rule": "이용가능(정규 재생) 지하수(10⁹ m³/yr) 19개 연도 · 최신 2023년 값을 대표값으로"
    },
-   "provider": "FAO AQUASTAT · IGRAC GGIS / PCR-GLOBWB2 · WaterGAP / NASA GRACE-FO",
+   "provider": "FAO AQUASTAT",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -6641,6 +6981,9 @@
     "observationCount": 54,
     "entityCount": 0,
     "indicatorIds": [
+     "B-027_exploitable_gw"
+    ],
+    "headlineIndicatorIds": [
      "B-027_exploitable_gw"
     ]
    }
@@ -6680,17 +7023,24 @@
    },
    "basis": {
     "unit": "관측지점",
-    "rule": "관측지점 1건 = 원천 1행 · 지점 유역명 기준 중복 제거"
+    "rule": "관측지점 1건 = 원천 1행 · 지점 유역명 기준 중복 제거",
+    "count": {
+     "rows": 16,
+     "distinct": 5,
+     "sourceRows": 16
+    }
    },
    "measure": null,
-   "provider": "FAO AQUASTAT · GloFAS (Copernicus EMS) / GRDC / HydroSHEDS",
+   "provider": "FAO AQUASTAT",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-008-15447fb0.json",
     "observationCount": 0,
     "entityCount": 16,
-    "indicatorIds": []
+    "indicatorIds": [
+     "B-028_hydro_site"
+    ]
    }
   },
   {
@@ -6699,28 +7049,28 @@
    "kind": "spatial",
    "headline": {
     "value": "884 km²",
-    "label": "이탄지 면적 합계 최대 · CaMau · 63개 성·시 중 · 2022"
+    "label": "이탄지 면적 합계 최대 · Cà Mau · 63개 성·시 중 · 2022"
    },
    "preview": {
     "parts": [
      {
-      "label": "CaMau",
+      "label": "Cà Mau",
       "value": 884.08
      },
      {
-      "label": "KienGiang",
+      "label": "Kiên Giang",
       "value": 406.77
      },
      {
-      "label": "HaTinh",
+      "label": "Hà Tĩnh",
       "value": 318.23
      },
      {
-      "label": "ThanhHoa",
+      "label": "Thanh Hóa",
       "value": 186.48
      },
      {
-      "label": "ThuaThienHue",
+      "label": "Thừa Thiên Huế",
       "value": 160.68
      }
     ],
@@ -6742,7 +7092,7 @@
     "year": null,
     "period": null,
     "dimensions": {
-     "mapVariable": "이탄지_면적_합계_km"
+     "regionMeasure": "이탄지_면적_합계_km"
     }
    },
    "basis": {
@@ -6754,14 +7104,17 @@
     "label": "이탄지 면적 합계",
     "unit": "km²"
    },
-   "provider": "FAO FAOSTAT Land Cover (LC), CCI_LC · FAO FAOSTAT Land Cover (LC), MODIS",
+   "provider": "FAO FAOSTAT Land Use(RL)·Land Cover(LC) · Global Forest Watch (UMD/WRI) · Greifswald Mire Centre — Global Peatland Map 2.0 (UNEP Global Peatlands Assessment 2022 기반자료)",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-008-15447fb0.json",
     "observationCount": 0,
     "entityCount": 231,
-    "indicatorIds": []
+    "indicatorIds": [
+     "B-029_forest_type_national",
+     "B-029_peatland_adm1"
+    ]
    }
   },
   {
@@ -6770,28 +7123,28 @@
    "kind": "spatial",
    "headline": {
     "value": "123,227 ha",
-    "label": "수관 이득(2000–2020 누적) 최대 · BinhPhuoc · 63개 성·시 중 · 2000–2020"
+    "label": "수관 이득(2000–2020 누적) 최대 · Bình Phước · 63개 성·시 중 · 2000–2020"
    },
    "preview": {
     "parts": [
      {
-      "label": "BinhPhuoc",
+      "label": "Bình Phước",
       "value": 123227.18
      },
      {
-      "label": "DakLak",
+      "label": "Đắk Lắk",
       "value": 88988.43
      },
      {
-      "label": "GiaLai",
+      "label": "Gia Lai",
       "value": 76643.79
      },
      {
-      "label": "TayNinh",
+      "label": "Tây Ninh",
       "value": 59238.56
      },
      {
-      "label": "DakNong",
+      "label": "Đắk Nông",
       "value": 45223.33
      }
     ],
@@ -6813,7 +7166,7 @@
     "year": null,
     "period": null,
     "dimensions": {
-     "mapVariable": "이득_ha"
+     "regionMeasure": "이득_ha"
     }
    },
    "basis": {
@@ -6825,14 +7178,17 @@
     "label": "수관 이득(2000–2020 누적)",
     "unit": "ha"
    },
-   "provider": "FAO FAOSTAT Land Use (RL) · Global Forest Watch / UMD",
+   "provider": "Global Forest Watch / UMD (Potapov et al. 2022)",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-008-15447fb0.json",
     "observationCount": 0,
     "entityCount": 100,
-    "indicatorIds": []
+    "indicatorIds": [
+     "B-030_forest_change_adm1",
+     "B-030_forest_gain_national"
+    ]
    }
   },
   {
@@ -6896,7 +7252,7 @@
     "label": "성(省)별 분석대상 면적",
     "unit": "ha"
    },
-   "provider": "Global Forest Watch (UMD/WRI) · Global Forest Watch / Hansen et al.(2013)",
+   "provider": "Global Forest Watch (UMD/WRI, Hansen et al. 2013)",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
@@ -6911,7 +7267,65 @@
      "B-031_prov_area_vn_04",
      "B-031_prov_area_vn_59",
      "B-031_prov_area_vn_55",
-     "B-031_prov_area_vn_ct"
+     "B-031_prov_area_vn_ct",
+     "B-031_prov_area_vn_73",
+     "B-031_prov_area_vn_52",
+     "B-031_prov_area_vn_30",
+     "B-031_prov_area_vn_31",
+     "B-031_prov_area_vn_26",
+     "B-031_prov_area_vn_hn",
+     "B-031_prov_area_vn_23",
+     "B-031_prov_area_vn_66",
+     "B-031_prov_area_vn_20",
+     "B-031_prov_area_vn_61",
+     "B-031_prov_area_vn_hp",
+     "B-031_prov_area_vn_sg",
+     "B-031_prov_area_vn_43",
+     "B-031_prov_area_vn_57",
+     "B-031_prov_area_vn_34",
+     "B-031_prov_area_vn_36",
+     "B-031_prov_area_vn_01",
+     "B-031_prov_area_vn_02",
+     "B-031_prov_area_vn_06",
+     "B-031_prov_area_vn_40",
+     "B-031_prov_area_vn_72",
+     "B-031_prov_area_vn_35",
+     "B-031_prov_area_vn_09",
+     "B-031_prov_area_vn_22",
+     "B-031_prov_area_vn_63",
+     "B-031_prov_area_vn_67",
+     "B-031_prov_area_vn_18",
+     "B-031_prov_area_vn_14",
+     "B-031_prov_area_vn_68",
+     "B-031_prov_area_vn_70",
+     "B-031_prov_area_vn_28",
+     "B-031_prov_area_vn_29",
+     "B-031_prov_area_vn_13",
+     "B-031_prov_area_vn_24",
+     "B-031_prov_area_vn_25",
+     "B-031_prov_area_vn_05",
+     "B-031_prov_area_vn_21",
+     "B-031_prov_area_vn_53",
+     "B-031_prov_area_vn_69",
+     "B-031_prov_area_vn_03",
+     "B-031_prov_area_vn_07",
+     "B-031_prov_area_vn_41",
+     "B-031_prov_area_vn_37",
+     "B-031_prov_area_vn_51",
+     "B-031_prov_area_vn_49",
+     "B-031_prov_area_vn_50",
+     "B-031_prov_area_vn_71",
+     "B-031_prov_area_vn_dn",
+     "B-031_prov_area_vn_27",
+     "B-031_prov_area_vn_33",
+     "B-031_prov_area_vn_32",
+     "B-031_prov_area_vn_58",
+     "B-031_prov_area_vn_39",
+     "B-031_prov_area_vn_45",
+     "B-031_prov_area_vn_46"
+    ],
+    "headlineIndicatorIds": [
+     "B-031_prov_area_vn_22"
     ]
    }
   },
@@ -6976,7 +7390,7 @@
     "label": "성(省)별 수관 피복률",
     "unit": "%"
    },
-   "provider": "Global Forest Watch (UMD/WRI) · Global Forest Watch (분자) / FAOSTAT Land Use (분모)",
+   "provider": "Global Forest Watch / Hansen et al.(2013)",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
@@ -6991,7 +7405,65 @@
      "B-032_canopy_cover_prov_30_vn_04",
      "B-032_canopy_cover_prov_30_vn_55",
      "B-032_canopy_cover_prov_30_vn_59",
-     "B-032_canopy_cover_prov_30_vn_ct"
+     "B-032_canopy_cover_prov_30_vn_ct",
+     "B-032_canopy_cover_prov_30_vn_73",
+     "B-032_canopy_cover_prov_30_vn_52",
+     "B-032_canopy_cover_prov_30_vn_30",
+     "B-032_canopy_cover_prov_30_vn_31",
+     "B-032_canopy_cover_prov_30_vn_26",
+     "B-032_canopy_cover_prov_30_vn_hn",
+     "B-032_canopy_cover_prov_30_vn_23",
+     "B-032_canopy_cover_prov_30_vn_20",
+     "B-032_canopy_cover_prov_30_vn_66",
+     "B-032_canopy_cover_prov_30_vn_hp",
+     "B-032_canopy_cover_prov_30_vn_61",
+     "B-032_canopy_cover_prov_30_vn_43",
+     "B-032_canopy_cover_prov_30_vn_sg",
+     "B-032_canopy_cover_prov_30_vn_57",
+     "B-032_canopy_cover_prov_30_vn_36",
+     "B-032_canopy_cover_prov_30_vn_34",
+     "B-032_canopy_cover_prov_30_vn_01",
+     "B-032_canopy_cover_prov_30_vn_02",
+     "B-032_canopy_cover_prov_30_vn_06",
+     "B-032_canopy_cover_prov_30_vn_72",
+     "B-032_canopy_cover_prov_30_vn_40",
+     "B-032_canopy_cover_prov_30_vn_35",
+     "B-032_canopy_cover_prov_30_vn_09",
+     "B-032_canopy_cover_prov_30_vn_22",
+     "B-032_canopy_cover_prov_30_vn_18",
+     "B-032_canopy_cover_prov_30_vn_67",
+     "B-032_canopy_cover_prov_30_vn_63",
+     "B-032_canopy_cover_prov_30_vn_70",
+     "B-032_canopy_cover_prov_30_vn_68",
+     "B-032_canopy_cover_prov_30_vn_14",
+     "B-032_canopy_cover_prov_30_vn_29",
+     "B-032_canopy_cover_prov_30_vn_28",
+     "B-032_canopy_cover_prov_30_vn_13",
+     "B-032_canopy_cover_prov_30_vn_25",
+     "B-032_canopy_cover_prov_30_vn_24",
+     "B-032_canopy_cover_prov_30_vn_05",
+     "B-032_canopy_cover_prov_30_vn_21",
+     "B-032_canopy_cover_prov_30_vn_69",
+     "B-032_canopy_cover_prov_30_vn_53",
+     "B-032_canopy_cover_prov_30_vn_07",
+     "B-032_canopy_cover_prov_30_vn_03",
+     "B-032_canopy_cover_prov_30_vn_37",
+     "B-032_canopy_cover_prov_30_vn_41",
+     "B-032_canopy_cover_prov_30_vn_49",
+     "B-032_canopy_cover_prov_30_vn_51",
+     "B-032_canopy_cover_prov_30_vn_50",
+     "B-032_canopy_cover_prov_30_vn_71",
+     "B-032_canopy_cover_prov_30_vn_27",
+     "B-032_canopy_cover_prov_30_vn_dn",
+     "B-032_canopy_cover_prov_30_vn_33",
+     "B-032_canopy_cover_prov_30_vn_32",
+     "B-032_canopy_cover_prov_30_vn_39",
+     "B-032_canopy_cover_prov_30_vn_58",
+     "B-032_canopy_cover_prov_30_vn_46",
+     "B-032_canopy_cover_prov_30_vn_45"
+    ],
+    "headlineIndicatorIds": [
+     "B-032_canopy_cover_prov_30_vn_53"
     ]
    }
   },
@@ -7020,16 +7492,87 @@
     "unit": "홈과 동일",
     "rule": "홈 주요 데이터와 같은 요약자산(home-preview-v139)"
    },
-   "measure": null,
+   "measure": {
+    "key": "measure-3ac8acb37269",
+    "label": "연간 수관 손실",
+    "unit": "ha"
+   },
    "fromHome": true,
-   "provider": "Global Forest Watch (UMD/WRI) · Global Forest Watch (UMD/WRI, Curtis et al. 2018 drivers)",
+   "provider": "Global Forest Watch (UMD/WRI)",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-009-b81b2540.json",
     "observationCount": 1489,
     "entityCount": 2056,
-    "indicatorIds": []
+    "indicatorIds": [
+     "B-033_tree_cover_loss_prov_vn_44",
+     "B-033_tree_cover_loss_prov_vn_47",
+     "B-033_tree_cover_loss_prov_vn_56",
+     "B-033_tree_cover_loss_prov_vn_54",
+     "B-033_tree_cover_loss_prov_vn_04",
+     "B-033_tree_cover_loss_prov_vn_55",
+     "B-033_tree_cover_loss_prov_vn_59",
+     "B-033_tree_cover_loss_prov_vn_ct",
+     "B-033_tree_cover_loss_prov_vn_52",
+     "B-033_tree_cover_loss_prov_vn_73",
+     "B-033_tree_cover_loss_prov_vn_30",
+     "B-033_tree_cover_loss_prov_vn_31",
+     "B-033_tree_cover_loss_prov_vn_26",
+     "B-033_tree_cover_loss_prov_vn_hn",
+     "B-033_tree_cover_loss_prov_vn_23",
+     "B-033_tree_cover_loss_prov_vn_66",
+     "B-033_tree_cover_loss_prov_vn_20",
+     "B-033_tree_cover_loss_prov_vn_61",
+     "B-033_tree_cover_loss_prov_vn_hp",
+     "B-033_tree_cover_loss_prov_vn_57",
+     "B-033_tree_cover_loss_prov_vn_43",
+     "B-033_tree_cover_loss_prov_vn_sg",
+     "B-033_tree_cover_loss_prov_vn_36",
+     "B-033_tree_cover_loss_prov_vn_34",
+     "B-033_tree_cover_loss_prov_vn_01",
+     "B-033_tree_cover_loss_prov_vn_02",
+     "B-033_tree_cover_loss_prov_vn_06",
+     "B-033_tree_cover_loss_prov_vn_40",
+     "B-033_tree_cover_loss_prov_vn_35",
+     "B-033_tree_cover_loss_prov_vn_72",
+     "B-033_tree_cover_loss_prov_vn_09",
+     "B-033_tree_cover_loss_prov_vn_22",
+     "B-033_tree_cover_loss_prov_vn_67",
+     "B-033_tree_cover_loss_prov_vn_63",
+     "B-033_tree_cover_loss_prov_vn_18",
+     "B-033_tree_cover_loss_prov_vn_68",
+     "B-033_tree_cover_loss_prov_vn_14",
+     "B-033_tree_cover_loss_prov_vn_70",
+     "B-033_tree_cover_loss_prov_vn_29",
+     "B-033_tree_cover_loss_prov_vn_28",
+     "B-033_tree_cover_loss_prov_vn_13",
+     "B-033_tree_cover_loss_prov_vn_24",
+     "B-033_tree_cover_loss_prov_vn_25",
+     "B-033_tree_cover_loss_prov_vn_05",
+     "B-033_tree_cover_loss_prov_vn_21",
+     "B-033_tree_cover_loss_prov_vn_69",
+     "B-033_tree_cover_loss_prov_vn_53",
+     "B-033_tree_cover_loss_prov_vn_03",
+     "B-033_tree_cover_loss_prov_vn_07",
+     "B-033_tree_cover_loss_prov_vn_37",
+     "B-033_tree_cover_loss_prov_vn_41",
+     "B-033_tree_cover_loss_prov_vn_50",
+     "B-033_tree_cover_loss_prov_vn_49",
+     "B-033_tree_cover_loss_prov_vn_51",
+     "B-033_tree_cover_loss_prov_vn_71",
+     "B-033_tree_cover_loss_prov_vn_27",
+     "B-033_tree_cover_loss_prov_vn_dn",
+     "B-033_tree_cover_loss_prov_vn_32",
+     "B-033_tree_cover_loss_prov_vn_33",
+     "B-033_tree_cover_loss_prov_vn_58",
+     "B-033_tree_cover_loss_prov_vn_39",
+     "B-033_tree_cover_loss_prov_vn_45",
+     "B-033_tree_cover_loss_prov_vn_46"
+    ],
+    "headlineIndicatorIds": [
+     "B-033_tree_cover_loss_prov_vn_13"
+    ]
    }
   },
   {
@@ -7093,7 +7636,7 @@
     "label": "산림탄소 순플럭스(연평균)",
     "unit": "Mg CO2e/yr"
    },
-   "provider": "Global Forest Watch · Global Forest Watch (Harris et al. 2021)",
+   "provider": "Global Forest Watch (Harris et al. 2021)",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
@@ -7108,7 +7651,69 @@
      "B-034_prov_forest_carbon_net_flux_vn_04",
      "B-034_prov_forest_carbon_net_flux_vn_55",
      "B-034_prov_forest_carbon_net_flux_vn_59",
-     "B-034_prov_forest_carbon_net_flux_vn_ct"
+     "B-034_prov_forest_carbon_net_flux_vn_ct",
+     "B-034_prov_forest_carbon_net_flux_vn_52",
+     "B-034_prov_forest_carbon_net_flux_vn_73",
+     "B-034_prov_forest_carbon_net_flux_vn_31",
+     "B-034_prov_forest_carbon_net_flux_vn_30",
+     "B-034_prov_forest_carbon_net_flux_vn_26",
+     "B-034_prov_forest_carbon_net_flux_vn_hn",
+     "B-034_prov_forest_carbon_net_flux_vn_23",
+     "B-034_prov_forest_carbon_net_flux_vn_20",
+     "B-034_prov_forest_carbon_net_flux_vn_66",
+     "B-034_prov_forest_carbon_net_flux_vn_hp",
+     "B-034_prov_forest_carbon_net_flux_vn_61",
+     "B-034_prov_forest_carbon_net_flux_vn_sg",
+     "B-034_prov_forest_carbon_net_flux_vn_43",
+     "B-034_prov_forest_carbon_net_flux_vn_57",
+     "B-034_prov_forest_carbon_net_flux_vn_36",
+     "B-034_prov_forest_carbon_net_flux_vn_34",
+     "B-034_prov_forest_carbon_net_flux_vn_01",
+     "B-034_prov_forest_carbon_net_flux_vn_02",
+     "B-034_prov_forest_carbon_net_flux_vn_06",
+     "B-034_prov_forest_carbon_net_flux_vn_40",
+     "B-034_prov_forest_carbon_net_flux_vn_72",
+     "B-034_prov_forest_carbon_net_flux_vn_35",
+     "B-034_prov_forest_carbon_net_flux_vn_09",
+     "B-034_prov_forest_carbon_net_flux_vn_22",
+     "B-034_prov_forest_carbon_net_flux_vn_67",
+     "B-034_prov_forest_carbon_net_flux_vn_18",
+     "B-034_prov_forest_carbon_net_flux_vn_63",
+     "B-034_prov_forest_carbon_net_flux_vn_68",
+     "B-034_prov_forest_carbon_net_flux_vn_70",
+     "B-034_prov_forest_carbon_net_flux_vn_14",
+     "B-034_prov_forest_carbon_net_flux_vn_29",
+     "B-034_prov_forest_carbon_net_flux_vn_28",
+     "B-034_prov_forest_carbon_net_flux_vn_13",
+     "B-034_prov_forest_carbon_net_flux_vn_25",
+     "B-034_prov_forest_carbon_net_flux_vn_24",
+     "B-034_prov_forest_carbon_net_flux_vn_05",
+     "B-034_prov_forest_carbon_net_flux_vn_21",
+     "B-034_prov_forest_carbon_net_flux_vn_69",
+     "B-034_prov_forest_carbon_net_flux_vn_53",
+     "B-034_prov_forest_carbon_net_flux_vn_07",
+     "B-034_prov_forest_carbon_net_flux_vn_03",
+     "B-034_prov_forest_carbon_net_flux_vn_41",
+     "B-034_prov_forest_carbon_net_flux_vn_37",
+     "B-034_prov_forest_carbon_net_flux_vn_50",
+     "B-034_prov_forest_carbon_net_flux_vn_51",
+     "B-034_prov_forest_carbon_net_flux_vn_49",
+     "B-034_prov_forest_carbon_net_flux_vn_71",
+     "B-034_prov_forest_carbon_net_flux_vn_dn",
+     "B-034_prov_forest_carbon_net_flux_vn_27",
+     "B-034_prov_forest_carbon_net_flux_vn_32",
+     "B-034_prov_forest_carbon_net_flux_vn_33",
+     "B-034_prov_forest_carbon_net_flux_vn_39",
+     "B-034_prov_forest_carbon_net_flux_vn_58",
+     "B-034_prov_forest_carbon_net_flux_vn_46",
+     "B-034_prov_forest_carbon_net_flux_vn_45",
+     "B-034_national_forest_carbon_net_flux_t30",
+     "B-034_national_forest_carbon_net_flux_t50",
+     "B-034_national_forest_carbon_net_flux_t75",
+     "B-034_national_forest_carbon_net_flux"
+    ],
+    "headlineIndicatorIds": [
+     "B-034_prov_forest_carbon_net_flux_vn_28"
     ]
    }
   },
@@ -7407,7 +8012,7 @@
     "unit": "관측값",
     "rule": "1인당 경작지 면적(ha/cap) 64개 연도 · 최신 2024년 값을 대표값으로"
    },
-   "provider": "FAO FAOSTAT Land Use (RL) · FAOSTAT Land Use (RL)",
+   "provider": "FAO FAOSTAT Land Use (RL)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -7415,6 +8020,9 @@
     "observationCount": 1764,
     "entityCount": 0,
     "indicatorIds": [
+     "B-035_lu_cropland_area_per_capita"
+    ],
+    "headlineIndicatorIds": [
      "B-035_lu_cropland_area_per_capita"
     ]
    }
@@ -7476,7 +8084,7 @@
     "label": "토지이용 변화율",
     "unit": "%/yr"
    },
-   "provider": "FAO FAOSTAT Land Cover (LC), CCI_LC · FAO FAOSTAT Land Cover (LC), MODIS",
+   "provider": "FAO FAOSTAT Land Use (RL)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -7491,7 +8099,29 @@
      "B-036_cagr_lu_forest_land",
      "B-036_cagr_lu_inland_waters",
      "B-036_cagr_lu_land_area",
-     "B-036_cagr_lu_land_area_equipped_for_irrigation"
+     "B-036_cagr_lu_land_area_equipped_for_irrigation",
+     "B-036_cagr_lu_naturally_regenerating_forest",
+     "B-036_cagr_lu_other_land",
+     "B-036_cagr_lu_permanent_crops",
+     "B-036_cagr_lu_permanent_meadows_and_pastures",
+     "B-036_cagr_lu_planted_forest",
+     "B-036_cagr_lu_primary_forest"
+    ],
+    "headlineIndicatorIds": [
+     "B-036_cagr_lu_planted_forest",
+     "B-036_cagr_lu_permanent_crops",
+     "B-036_cagr_lu_inland_waters",
+     "B-036_cagr_lu_permanent_meadows_and_pastures",
+     "B-036_cagr_lu_agricultural_land",
+     "B-036_cagr_lu_cropland",
+     "B-036_cagr_lu_land_area_equipped_for_irrigation",
+     "B-036_cagr_lu_forest_land",
+     "B-036_cagr_lu_naturally_regenerating_forest",
+     "B-036_cagr_lu_arable_land",
+     "B-036_cagr_lu_country_area",
+     "B-036_cagr_lu_land_area",
+     "B-036_cagr_lu_primary_forest",
+     "B-036_cagr_lu_other_land"
     ]
    }
   },
@@ -7501,28 +8131,28 @@
    "kind": "spatial",
    "headline": {
     "value": "3,578 km²",
-    "label": "경작지 면적 최대 · KienGiang · 63개 성·시 중 · 2021"
+    "label": "경작지 면적 최대 · Kiên Giang · 63개 성·시 중 · 2021"
    },
    "preview": {
     "parts": [
      {
-      "label": "KienGiang",
+      "label": "Kiên Giang",
       "value": 3578.034
      },
      {
-      "label": "GiaLai",
+      "label": "Gia Lai",
       "value": 2985.094
      },
      {
-      "label": "LongAn",
+      "label": "Long An",
       "value": 2823.023
      },
      {
-      "label": "AnGiang",
+      "label": "An Giang",
       "value": 2574.979
      },
      {
-      "label": "DongThap",
+      "label": "Đồng Tháp",
       "value": 2196.186
      }
     ],
@@ -7544,7 +8174,7 @@
     "year": null,
     "period": null,
     "dimensions": {
-     "mapVariable": "경작지_면적_km"
+     "regionMeasure": "경작지_면적_km"
     }
    },
    "basis": {
@@ -7556,14 +8186,17 @@
     "label": "경작지 면적",
     "unit": "km²"
    },
-   "provider": "FAO FAOSTAT Land Cover (LC), CCI_LC · FAO FAOSTAT Land Cover (LC), CGLS",
+   "provider": "ESA WorldCover 10 m v200 (2021) · FAO FAOSTAT Land Cover (LC) — CCI_LC · MODIS · CGLS · WorldCover 국가 집계",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-009-b81b2540.json",
     "observationCount": 0,
     "entityCount": 747,
-    "indicatorIds": []
+    "indicatorIds": [
+     "B-037_landcover_adm1",
+     "B-037_landcover_national"
+    ]
    }
   },
   {
@@ -7625,7 +8258,7 @@
     "unit": "관측값",
     "rule": "1인당 도시폐기물 발생량(kg/인/일) 5개 연도 · 최신 2050년 값을 대표값으로"
    },
-   "provider": "FAO — FAOSTAT Crops and livestock products (QCL), Live Animals / Stocks · FAOSTAT 임산물 생산량 기반 산출 / 현지조사",
+   "provider": "World Bank Group — What a Waste 3.0: Global Snapshot of Solid Waste Management Toward Circularity until 2050 (2026-03)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -7633,6 +8266,9 @@
     "observationCount": 190,
     "entityCount": 0,
     "indicatorIds": [
+     "B-038_msw_percap"
+    ],
+    "headlineIndicatorIds": [
      "B-038_msw_percap"
     ]
    }
@@ -7643,28 +8279,28 @@
    "kind": "spatial",
    "headline": {
     "value": "16,904 GWh/년",
-    "label": "이론 총잠재량 최대 · GiaLai · 63개 성·시 중 · 2017(Hoes et al.)"
+    "label": "이론 총잠재량 최대 · Gia Lai · 63개 성·시 중 · 2017(Hoes et al.)"
    },
    "preview": {
     "parts": [
      {
-      "label": "GiaLai",
+      "label": "Gia Lai",
       "value": 16904.09
      },
      {
-      "label": "LaiChau",
+      "label": "Lai Châu",
       "value": 16401.82
      },
      {
-      "label": "QuangNam",
+      "label": "Quảng Nam",
       "value": 15148.67
      },
      {
-      "label": "HaGiang",
+      "label": "Hà Giang",
       "value": 14296.54
      },
      {
-      "label": "KonTum",
+      "label": "Kon Tum",
       "value": 12990.26
      }
     ],
@@ -7686,7 +8322,7 @@
     "year": null,
     "period": null,
     "dimensions": {
-     "mapVariable": "이론_총잠재량_GWh_yr"
+     "regionMeasure": "이론_총잠재량_GWh_yr"
     }
    },
    "basis": {
@@ -7698,14 +8334,17 @@
     "label": "이론 총잠재량",
     "unit": "GWh/년"
    },
-   "provider": "Energy Institute Statistical Review of World Energy · Global Gross Hydropower Potential Dataset (Hoes et al. 2017) / Gernaat et al.(2017)",
+   "provider": "Global Gross Hydropower Potential Dataset (Hoes et al. 2017) · IHA · EVN · Energy Institute · U.S. EIA · World Bank/ESMAP · 베트남 총리 Decision 768/QĐ-TTg",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-009-b81b2540.json",
     "observationCount": 0,
     "entityCount": 228,
-    "indicatorIds": []
+    "indicatorIds": [
+     "B-039_gross_potential_adm1",
+     "B-039_hydropower_national"
+    ]
    }
   },
   {
@@ -7714,28 +8353,28 @@
    "kind": "spatial",
    "headline": {
     "value": "69.5 °C",
-    "label": "심도 1km 지온(평균) 최대 · CaMau · 63개 성·시 중 · 2026 기준(격자 집계)"
+    "label": "심도 1km 지온(평균) 최대 · Cà Mau · 63개 성·시 중 · 2026 기준(격자 집계)"
    },
    "preview": {
     "parts": [
      {
-      "label": "CaMau",
+      "label": "Cà Mau",
       "value": 69.49
      },
      {
-      "label": "BacLieu",
+      "label": "Bạc Liêu",
       "value": 68.09
      },
      {
-      "label": "SocTrang",
+      "label": "Sóc Trăng",
       "value": 65.05
      },
      {
-      "label": "TraVinh",
+      "label": "Trà Vinh",
       "value": 62.85
      },
      {
-      "label": "HauGiang",
+      "label": "Hậu Giang",
       "value": 62.08
      }
     ],
@@ -7757,7 +8396,7 @@
     "year": null,
     "period": null,
     "dimensions": {
-     "mapVariable": "심도_1km_지온_평균"
+     "regionMeasure": "심도_1km_지온_평균"
     }
    },
    "basis": {
@@ -7769,14 +8408,17 @@
     "label": "심도 1km 지온(평균)",
     "unit": "°C"
    },
-   "provider": "DGGV (2021) · IRENA Global Atlas (HDR Subsurface Thermal Profiles)",
+   "provider": "IRENA Global Atlas (HDR Subsurface Thermal Profiles) · Institute of Energy (IoE, MOIT) · DGGV · U.S. EIA · World Geothermal Congress · IRENA Global Atlas",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-010-a713b817.json",
     "observationCount": 0,
     "entityCount": 165,
-    "indicatorIds": []
+    "indicatorIds": [
+     "B-040_geotemp_adm1",
+     "B-040_geothermal_national"
+    ]
    }
   },
   {
@@ -7785,28 +8427,28 @@
    "kind": "spatial",
    "headline": {
     "value": "5.23 kWh/m²/일",
-    "label": "수평면 전일사량(GHI, 평균) 최대 · BinhThuan · 63개 성·시 중 · 1999–2018 장기평균"
+    "label": "수평면 전일사량(GHI, 평균) 최대 · Bình Thuận · 63개 성·시 중 · 1999–2018 장기평균"
    },
    "preview": {
     "parts": [
      {
-      "label": "BinhThuan",
+      "label": "Bình Thuận",
       "value": 5.23
      },
      {
-      "label": "NinhThuan",
+      "label": "Ninh Thuận",
       "value": 5.225
      },
      {
-      "label": "TayNinh",
+      "label": "Tây Ninh",
       "value": 5.18
      },
      {
-      "label": "BinhPhuoc",
+      "label": "Bình Phước",
       "value": 5.102
      },
      {
-      "label": "BaRia-VungTau",
+      "label": "Bà Rịa-Vũng Tàu",
       "value": 5.086
      }
     ],
@@ -7828,7 +8470,7 @@
     "year": null,
     "period": null,
     "dimensions": {
-     "mapVariable": "수평면_전일사량_GHI_평균"
+     "regionMeasure": "수평면_전일사량_GHI_평균"
     }
    },
    "basis": {
@@ -7840,14 +8482,17 @@
     "label": "수평면 전일사량(GHI, 평균)",
     "unit": "kWh/m²/일"
    },
-   "provider": "Global Solar Atlas 2.0 · Global Solar Atlas 2.0 (World Bank/ESMAP, Solargis)",
+   "provider": "Global Solar Atlas 2.0 (World Bank/ESMAP, Solargis)",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-010-a713b817.json",
     "observationCount": 0,
     "entityCount": 113,
-    "indicatorIds": []
+    "indicatorIds": [
+     "B-041_solar_adm1",
+     "B-041_solar_national"
+    ]
    }
   },
   {
@@ -7856,28 +8501,28 @@
    "kind": "spatial",
    "headline": {
     "value": "5.68 m/s",
-    "label": "풍속 평균(고도 100m) 최대 · QuangBinh · 63개 성·시 중 · 2008–2017 장기평균"
+    "label": "풍속 평균(고도 100m) 최대 · Quảng Bình · 63개 성·시 중 · 2008–2017 장기평균"
    },
    "preview": {
     "parts": [
      {
-      "label": "QuangBinh",
+      "label": "Quảng Bình",
       "value": 5.683
      },
      {
-      "label": "BacLieu",
+      "label": "Bạc Liêu",
       "value": 5.615
      },
      {
-      "label": "NinhThuan",
+      "label": "Ninh Thuận",
       "value": 5.561
      },
      {
-      "label": "QuangTri",
+      "label": "Quảng Trị",
       "value": 5.512
      },
      {
-      "label": "GiaLai",
+      "label": "Gia Lai",
       "value": 5.486
      }
     ],
@@ -7899,7 +8544,7 @@
     "year": null,
     "period": null,
     "dimensions": {
-     "mapVariable": "풍속_평균_m_s"
+     "regionMeasure": "풍속_평균_m_s"
     }
    },
    "basis": {
@@ -7911,14 +8556,17 @@
     "label": "풍속 평균(고도 100m)",
     "unit": "m/s"
    },
-   "provider": "Global Wind Atlas 3.x · Global Wind Atlas 3.x (DTU/World Bank ESMAP)",
+   "provider": "Global Wind Atlas 3.x",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-010-a713b817.json",
     "observationCount": 0,
     "entityCount": 205,
-    "indicatorIds": []
+    "indicatorIds": [
+     "B-042_wind_adm1",
+     "B-042_wind_national"
+    ]
    }
   },
   {
@@ -7966,7 +8614,7 @@
     "label": "가채연수(R/P ratio)",
     "unit": "년"
    },
-   "provider": "EI Statistical Review(매장량) / U.S. EIA(생산량) · Energy Institute Statistical Review of World Energy",
+   "provider": "Energy Institute Statistical Review of World Energy",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -7977,6 +8625,11 @@
      "B-043_rp_ratio_g01",
      "B-043_rp_ratio_g02",
      "B-043_rp_ratio_g03"
+    ],
+    "headlineIndicatorIds": [
+     "B-043_rp_ratio_g03",
+     "B-043_rp_ratio_g02",
+     "B-043_rp_ratio_g01"
     ]
    }
   },
@@ -8014,7 +8667,7 @@
     "label": "원광 수출규제 대상 광종",
     "unit": "해당 여부"
    },
-   "provider": "USGS Mineral Commodity Summaries 2026 · USGS Mineral Commodity Summaries 2026; USGS Minerals Yearbook Vietnam 2022",
+   "provider": "USGS Mineral Commodity Summaries 2026",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -8022,6 +8675,15 @@
     "observationCount": 26,
     "entityCount": 0,
     "indicatorIds": [
+     "B-044_export_ban_minerals_g01",
+     "B-044_export_ban_minerals_g03",
+     "B-044_export_ban_minerals_g04",
+     "B-044_export_ban_minerals_g05",
+     "B-044_export_ban_minerals_g06",
+     "B-044_export_ban_minerals_manganese",
+     "B-044_export_ban_minerals_rare_earths"
+    ],
+    "headlineIndicatorIds": [
      "B-044_export_ban_minerals_g01",
      "B-044_export_ban_minerals_g03",
      "B-044_export_ban_minerals_g04",
@@ -8105,6 +8767,16 @@
      "B-045_reserve_share_rare_earths",
      "B-045_reserve_share_tin",
      "B-045_reserve_share_tungsten"
+    ],
+    "headlineIndicatorIds": [
+     "B-045_reserve_share_bauxite",
+     "B-045_reserve_share_fluorspar",
+     "B-045_reserve_share_rare_earths",
+     "B-045_reserve_share_tungsten",
+     "B-045_reserve_share_graphite",
+     "B-045_reserve_share_antimony",
+     "B-045_reserve_share_tin",
+     "B-045_reserve_share_phosphate"
     ]
    }
   },
@@ -8148,6 +8820,9 @@
     "entityCount": 0,
     "indicatorIds": [
      "B-046_reserves_4"
+    ],
+    "headlineIndicatorIds": [
+     "B-046_reserves_4"
     ]
    }
   },
@@ -8187,7 +8862,7 @@
     "unit": "관측값",
     "rule": "광산 생산량(t) 주석 · 두 시점이므로 추이를 그리지 않음"
    },
-   "provider": "USGS Mineral Commodity Summaries 2026 · USGS Mineral Commodity Summaries 2026 / 언론·산업 보고",
+   "provider": "USGS Mineral Commodity Summaries 2026",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -8195,6 +8870,9 @@
     "observationCount": 21,
     "entityCount": 0,
     "indicatorIds": [
+     "B-047_production_3"
+    ],
+    "headlineIndicatorIds": [
      "B-047_production_3"
     ]
    }
@@ -8234,17 +8912,24 @@
    },
    "basis": {
     "unit": "광산",
-    "rule": "광산 1건 = 원천 1행"
+    "rule": "광산 1건 = 원천 1행",
+    "count": {
+     "rows": 8,
+     "distinct": 8,
+     "sourceRows": 8
+    }
    },
    "measure": null,
-   "provider": "USGS MRDS (Mineral Resources Data System) · USGS Minerals Yearbook Vietnam 2022 (Table 2); USGS MRDS",
+   "provider": "USGS Minerals Yearbook Vietnam 2022 (Table 2); USGS MRDS",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-011-001b32a0.json",
     "observationCount": 0,
     "entityCount": 8,
-    "indicatorIds": []
+    "indicatorIds": [
+     "B-048_mine_site"
+    ]
    }
   },
   {
@@ -8282,7 +8967,12 @@
    },
    "basis": {
     "unit": "항목",
-    "rule": "항목 1건 = 원천 1행"
+    "rule": "항목 1건 = 원천 1행",
+    "count": {
+     "rows": 49,
+     "distinct": 49,
+     "sourceRows": 49
+    }
    },
    "measure": null,
    "provider": "UNFCCC NDC Registry / 베트남 천연자원환경부(MONRE)",
@@ -8292,7 +8982,19 @@
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-011-001b32a0.json",
     "observationCount": 0,
     "entityCount": 49,
-    "indicatorIds": []
+    "indicatorIds": [
+     "C-001_adaptation_target",
+     "C-001_base_year",
+     "C-001_bau_projection",
+     "C-001_implementation_finance",
+     "C-001_mitigation_target",
+     "C-001_ndc_sdg_linkage",
+     "C-001_sector_mitigation_measures",
+     "C-001_source_link",
+     "C-001_submission_history",
+     "C-001_target_ghg",
+     "C-001_target_sector"
+    ]
    }
   },
   {
@@ -8330,17 +9032,35 @@
    },
    "basis": {
     "unit": "항목",
-    "rule": "항목 1건 = 원천 1행"
+    "rule": "항목 1건 = 원천 1행",
+    "count": {
+     "rows": 82,
+     "distinct": 82,
+     "sourceRows": 82
+    }
    },
    "measure": null,
-   "provider": "UNFCCC / 베트남 천연자원환경부(MONRE)",
+   "provider": "UNFCCC / 베트남 천연자원환경부(MONRE) · UNFCCC BTR/BUR (Viet Nam) · Global Environment Facility (GEF)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-011-001b32a0.json",
     "observationCount": 0,
     "entityCount": 82,
-    "indicatorIds": []
+    "indicatorIds": [
+     "C-002_adaptation_program_count",
+     "C-002_climate_finance",
+     "C-002_climate_projection_ssp",
+     "C-002_extreme_climate_index",
+     "C-002_gdp_loss_estimate",
+     "C-002_ghg_sector_emission",
+     "C-002_ghg_total_emission",
+     "C-002_ndc_achievement",
+     "C-002_source_link_thegef",
+     "C-002_source_link_unfccc",
+     "C-002_submission_history_thegef",
+     "C-002_submission_history_unfccc"
+    ]
    }
   },
   {
@@ -8378,7 +9098,12 @@
    },
    "basis": {
     "unit": "항목",
-    "rule": "항목 1건 = 원천 1행"
+    "rule": "항목 1건 = 원천 1행",
+    "count": {
+     "rows": 96,
+     "distinct": 96,
+     "sourceRows": 96
+    }
    },
    "measure": null,
    "provider": "UNFCCC NAP Central / 베트남 농업환경부(MAE)",
@@ -8388,7 +9113,18 @@
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-011-001b32a0.json",
     "observationCount": 0,
     "entityCount": 96,
-    "indicatorIds": []
+    "indicatorIds": [
+     "C-003_adaptation_finance_need",
+     "C-003_adaptation_governance",
+     "C-003_adaptation_measure_list",
+     "C-003_adaptation_priority_sector",
+     "C-003_me_framework",
+     "C-003_sector_vulnerability",
+     "C-003_source_link",
+     "C-003_stakeholder_gender",
+     "C-003_submission_history_en_mae",
+     "C-003_submission_history_vanban_chinhphu"
+    ]
    }
   },
   {
@@ -8426,17 +9162,34 @@
    },
    "basis": {
     "unit": "항목",
-    "rule": "항목 1건 = 원천 1행"
+    "rule": "항목 1건 = 원천 1행",
+    "count": {
+     "rows": 58,
+     "distinct": 58,
+     "sourceRows": 58
+    }
    },
    "measure": null,
-   "provider": "베트남 총리실 (Quyết định 896/QĐ-TTg) / World Bank",
+   "provider": "베트남 총리실 (Quyết định 896/QĐ-TTg) / World Bank · Quyết định số 896/QĐ-TTg — Phê duyệt Chiến lược quốc gia về biến đổi khí hậu giai đoạn đến năm 2050",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-011-001b32a0.json",
     "observationCount": 0,
     "entityCount": 58,
-    "indicatorIds": []
+    "indicatorIds": [
+     "C-004_carbon_removal_target",
+     "C-004_energy_mix_projection",
+     "C-004_just_transition",
+     "C-004_key_mitigation_tech",
+     "C-004_long_term_investment",
+     "C-004_long_term_pathway",
+     "C-004_net_zero_target",
+     "C-004_sector_decarbonization",
+     "C-004_source_link_faolex_fao",
+     "C-004_source_link_openknowledge_worldban",
+     "C-004_source_link_vanban_chinhphu"
+    ]
    }
   },
   {
@@ -8474,17 +9227,29 @@
    },
    "basis": {
     "unit": "항목",
-    "rule": "항목 1건 = 원천 1행"
+    "rule": "항목 1건 = 원천 1행",
+    "count": {
+     "rows": 135,
+     "distinct": 135,
+     "sourceRows": 135
+    }
    },
    "measure": null,
-   "provider": "UNEP CCC / 베트남 천연자원환경부(MONRE)",
+   "provider": "베트남 천연자원환경부(MONRE) 기상수문기후변화국 — Viet Nam Technology Needs Assessment (Ha Noi, 2012.6), UNFCCC TT:CLEAR 수록 · 베트남 천연자원환경부(MONRE) — Viet Nam TNA (2012.6), UNFCCC TT:CLEAR 수록",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-011-001b32a0.json",
     "observationCount": 0,
     "entityCount": 135,
-    "indicatorIds": []
+    "indicatorIds": [
+     "C-005_barrier_analysis",
+     "C-005_priority_sector",
+     "C-005_priority_tech_list",
+     "C-005_source_link",
+     "C-005_tap_status",
+     "C-005_tna_status"
+    ]
    }
   },
   {
@@ -8522,17 +9287,38 @@
    },
    "basis": {
     "unit": "항목",
-    "rule": "항목 1건 = 원천 1행"
+    "rule": "항목 1건 = 원천 1행",
+    "count": {
+     "rows": 50,
+     "distinct": 50,
+     "sourceRows": 50
+    }
    },
    "measure": null,
-   "provider": "UNEP-CCC (UNEP Copenhagen Climate Centre) — Article 6 Pipeline · UNFCCC / 베트남 정부 공보",
+   "provider": "기관별 공식 출처 7개(상세 자료정보 참조)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-011-001b32a0.json",
     "observationCount": 0,
     "entityCount": 50,
-    "indicatorIds": []
+    "indicatorIds": [
+     "C-006_authorization_body_a6partnership",
+     "C-006_authorization_body_baochinhphu",
+     "C-006_authorization_body_vanban_chinhphu",
+     "C-006_authorization_body_vanban_chinhphu_2",
+     "C-006_bilateral_date",
+     "C-006_bilateral_party",
+     "C-006_bilateral_scope",
+     "C-006_corresponding_adjustment_baochinhphu",
+     "C-006_corresponding_adjustment_vanban_chinhphu",
+     "C-006_corresponding_adjustment_vanban_chinhphu_2",
+     "C-006_itmo_transfer_jcm_jp",
+     "C-006_itmo_transfer_unfccc",
+     "C-006_national_registry_a6partnership",
+     "C-006_national_registry_unfccc",
+     "C-006_national_registry_vanban_chinhphu"
+    ]
    }
   },
   {
@@ -8570,7 +9356,12 @@
    },
    "basis": {
     "unit": "활동",
-    "rule": "활동 1건 = 원천 1행"
+    "rule": "활동 1건 = 원천 1행",
+    "count": {
+     "rows": 32,
+     "distinct": 32,
+     "sourceRows": 32
+    }
    },
    "measure": null,
    "provider": "UNFCCC NMA Platform · UNFCCC — Article 6.8 NMA Platform",
@@ -8580,7 +9371,14 @@
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-011-001b32a0.json",
     "observationCount": 0,
     "entityCount": 32,
-    "indicatorIds": []
+    "indicatorIds": [
+     "C-007_activity_scope",
+     "C-007_participating_body",
+     "C-007_participation_status",
+     "C-007_registered_activity",
+     "C-007_registration_date",
+     "C-007_source_link"
+    ]
    }
   },
   {
@@ -8618,17 +9416,44 @@
    },
    "basis": {
     "unit": "이니셔티브",
-    "rule": "이니셔티브 1건 = 원천 1행"
+    "rule": "이니셔티브 1건 = 원천 1행",
+    "count": {
+     "rows": 235,
+     "distinct": 235,
+     "sourceRows": 235
+    }
    },
    "measure": null,
-   "provider": "Global Methane Pledge (EU·US 공동 주도) · UNFCCC Global Climate Action Portal (NAZCA)",
+   "provider": "기관별 공식 출처 7개(상세 자료정보 참조)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-012-b3621b21.json",
     "observationCount": 0,
     "entityCount": 235,
-    "indicatorIds": []
+    "indicatorIds": [
+     "C-008_climate_field",
+     "C-008_initiative_name_ccacoalition",
+     "C-008_initiative_name_climateaction_unfccc",
+     "C-008_initiative_name_climatelaws",
+     "C-008_initiative_name_ec_europa",
+     "C-008_initiative_name_en_baochinhphu",
+     "C-008_initiative_name_govuk",
+     "C-008_participant_list_ccacoalition",
+     "C-008_participant_list_climateaction_unfccc",
+     "C-008_participant_list_climateaction_unfccc_2",
+     "C-008_participant_list_govuk",
+     "C-008_participation_status",
+     "C-008_participation_year_baochinhphu",
+     "C-008_participation_year_climateaction_unfccc",
+     "C-008_participation_year_govuk",
+     "C-008_theme_caselaw",
+     "C-008_theme_climateaction_unfccc",
+     "C-008_theme_climatelaws",
+     "C-008_theme_ec_europa",
+     "C-008_theme_en_baochinhphu",
+     "C-008_theme_govuk"
+    ]
    }
   },
   {
@@ -8669,14 +9494,41 @@
     "rule": "문서명이 같은 행을 1건으로 셈 · 행 수는 제도 수가 아님"
    },
    "measure": null,
-   "provider": "FAO FAOLEX — Electricity Law 28/2004/QH11 영문본 · 베트남 정부 — Nghị định 119/2025/NĐ-CP",
+   "provider": "기관별 공식 출처 10개(상세 자료정보 참조)",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-012-b3621b21.json",
     "observationCount": 0,
     "entityCount": 182,
-    "indicatorIds": []
+    "indicatorIds": [
+     "C-009_effective_year_climatelaws",
+     "C-009_effective_year_faolex_fao",
+     "C-009_effective_year_vanban_chinhphu",
+     "C-009_law_name_climatelaws",
+     "C-009_law_name_danang",
+     "C-009_law_name_datafiles_chinhphu",
+     "C-009_law_name_faolex_fao",
+     "C-009_law_name_faolex_fao_2",
+     "C-009_law_name_vanban_chinhphu",
+     "C-009_law_status_climatelaws",
+     "C-009_law_status_faolex_fao",
+     "C-009_law_status_vanban_chinhphu",
+     "C-009_law_type_climatelaws",
+     "C-009_law_type_faolex_fao",
+     "C-009_law_type_vanban_chinhphu",
+     "C-009_lead_ministry_climatelaws",
+     "C-009_lead_ministry_faolex_fao",
+     "C-009_lead_ministry_vanban_chinhphu",
+     "C-009_source_link_climatelaws",
+     "C-009_source_link_climatepolicydatabase",
+     "C-009_source_link_datafiles_chinhphu",
+     "C-009_source_link_vanban_chinhphu",
+     "C-009_target_sector_climatelaws",
+     "C-009_target_sector_datafiles_chinhphu",
+     "C-009_target_sector_faolex_fao",
+     "C-009_target_sector_vanban_chinhphu"
+    ]
    }
   },
   {
@@ -8717,14 +9569,28 @@
     "rule": "문서명이 같은 행을 1건으로 셈 · 행 수는 제도 수가 아님"
    },
    "measure": null,
-   "provider": "베트남 정부 — Nghị định 05/2025/NĐ-CP (환경보호법 시행령 08/2022 개정) · 베트남 정부 공보 / LuatVietnam",
+   "provider": "기관별 공식 출처 6개(상세 자료정보 참조)",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-012-b3621b21.json",
     "observationCount": 0,
     "entityCount": 59,
-    "indicatorIds": []
+    "indicatorIds": [
+     "C-010_law_name_datafiles_chinhphu",
+     "C-010_law_name_informea",
+     "C-010_law_name_vanban_chinhphu",
+     "C-010_law_name_vanban_chinhphu_2",
+     "C-010_law_name_vea_mae",
+     "C-010_law_status_datafiles_chinhphu",
+     "C-010_law_status_vbpl",
+     "C-010_law_type_vanban_chinhphu",
+     "C-010_law_type_vbpl",
+     "C-010_lead_ministry",
+     "C-010_source_link_vanban_chinhphu",
+     "C-010_source_link_vanban_chinhphu_2",
+     "C-010_source_link_vea_mae"
+    ]
    }
   },
   {
@@ -8762,17 +9628,32 @@
    },
    "basis": {
     "unit": "항목",
-    "rule": "항목 1건 = 원천 1행"
+    "rule": "항목 1건 = 원천 1행",
+    "count": {
+     "rows": 44,
+     "distinct": 44,
+     "sourceRows": 44
+    }
    },
    "measure": null,
-   "provider": "UN Office on Drugs and Crime (UNODC) — World Bank Open Data 경유 · 대한민국 외교부 해외안전여행",
+   "provider": "기관별 공식 출처 4개(상세 자료정보 참조)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-012-b3621b21.json",
     "observationCount": 0,
     "entityCount": 44,
-    "indicatorIds": []
+    "indicatorIds": [
+     "C-011_crime_statistics_api_worldbank",
+     "C-011_crime_statistics_dataunodc_un",
+     "C-011_crime_statistics_gso",
+     "C-011_local_security_status_0404",
+     "C-011_local_security_status_bocongan",
+     "C-011_local_security_status_osac",
+     "C-011_travel_alert_level_0404",
+     "C-011_travel_alert_level_0404_2",
+     "C-011_travel_alert_level_travel_state"
+    ]
    }
   },
   {
@@ -8810,17 +9691,34 @@
    },
    "basis": {
     "unit": "항목",
-    "rule": "항목 1건 = 원천 1행 · 개편 후 34개 성·시 단위 값 · 63개로 합산·순위화하지 않음"
+    "rule": "항목 1건 = 원천 1행 · 개편 후 34개 성·시 단위 값 · 63개로 합산·순위화하지 않음",
+    "count": {
+     "rows": 120,
+     "distinct": 120,
+     "sourceRows": 120
+    }
    },
    "measure": null,
-   "provider": "베트남 국회·정부 공보 / World Bank PPP Legal Framework · 베트남 재무부(Bộ Tài chính) 투자 포털",
+   "provider": "기관별 공식 출처 4개(상세 자료정보 참조)",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-012-b3621b21.json",
     "observationCount": 0,
     "entityCount": 120,
-    "indicatorIds": []
+    "indicatorIds": [
+     "C-012_contract_type",
+     "C-012_ppp_agency",
+     "C-012_ppp_law_datafiles_chinhphu",
+     "C-012_ppp_law_vanban_chinhphu",
+     "C-012_ppp_project_history_mof",
+     "C-012_ppp_project_history_ppi_worldbank",
+     "C-012_ppp_project_history_vanban_chinhphu",
+     "C-012_procurement_method_datafiles_chinhphu",
+     "C-012_procurement_method_ppi_worldbank",
+     "C-012_vfm_requirement_datafiles_chinhphu",
+     "C-012_vfm_requirement_vanban_chinhphu"
+    ]
    }
   },
   {
@@ -8858,17 +9756,34 @@
    },
    "basis": {
     "unit": "항목",
-    "rule": "항목 1건 = 원천 1행"
+    "rule": "항목 1건 = 원천 1행",
+    "count": {
+     "rows": 64,
+     "distinct": 64,
+     "sourceRows": 64
+    }
    },
    "measure": null,
-   "provider": "베트남 국회 (Quốc hội) — 투자법 143/2025/QH15 · 베트남 국회 — Nghị quyết 98/2023/QH15 (정부 정책포털 전문)",
+   "provider": "베트남 국회·정부 공보 / LuatVietnam · Nghị định số 103/2024/NĐ-CP — Quy định về tiền sử dụng đất, tiền thuê đất · 베트남 국회 — Nghị quyết 98/2023/QH15 (정부 정책포털 전문)",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-012-b3621b21.json",
     "observationCount": 0,
     "entityCount": 64,
-    "indicatorIds": []
+    "indicatorIds": [
+     "C-013_foreign_equity_cap_state",
+     "C-013_foreign_equity_cap_vanban_chinhphu",
+     "C-013_investment_incentive_archive_doingbusiness",
+     "C-013_investment_incentive_hotropldn_thainguyen",
+     "C-013_investment_incentive_vanban_chinhphu",
+     "C-013_investment_incentive_vanban_chinhphu_2",
+     "C-013_investment_incentive_xaydungchinhsach_chinh",
+     "C-013_investment_treaty_archive_doingbusiness",
+     "C-013_investment_treaty_investmentpolicy_uncta",
+     "C-013_investment_treaty_state",
+     "C-013_profit_remittance"
+    ]
    }
   },
   {
@@ -8906,17 +9821,39 @@
    },
    "basis": {
     "unit": "항목",
-    "rule": "항목 1건 = 원천 1행"
+    "rule": "항목 1건 = 원천 1행",
+    "count": {
+     "rows": 93,
+     "distinct": 93,
+     "sourceRows": 93
+    }
    },
    "measure": null,
-   "provider": "World Bank Doing Business 2020 / 베트남 정부 공보 · 베트남 농업환경부 — Thông tư 09/2026/TT-BNNMT",
+   "provider": "기관별 공식 출처 4개(상세 자료정보 참조)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-012-b3621b21.json",
     "observationCount": 0,
     "entityCount": 93,
-    "indicatorIds": []
+    "indicatorIds": [
+     "C-014_construction_permit",
+     "C-014_construction_permit_cost",
+     "C-014_construction_permit_duration_archive_doingbusiness",
+     "C-014_construction_permit_duration_congbao_chinhphu",
+     "C-014_construction_permit_duration_thuvienphapluat",
+     "C-014_eia_procedure_archive_doingbusiness",
+     "C-014_eia_procedure_congbao_chinhphu",
+     "C-014_eia_procedure_thuvienphapluat",
+     "C-014_land_acquisition",
+     "C-014_land_acquisition_cost",
+     "C-014_land_acquisition_duration",
+     "C-014_power_permit_archive_doingbusiness",
+     "C-014_power_permit_congbao_chinhphu",
+     "C-014_power_permit_cost",
+     "C-014_power_permit_duration_archive_doingbusiness",
+     "C-014_power_permit_duration_congbao_chinhphu"
+    ]
    }
   },
   {
@@ -8954,17 +9891,28 @@
    },
    "basis": {
     "unit": "원문 링크",
-    "rule": "원문 링크 1건 = 원천 1행"
+    "rule": "원문 링크 1건 = 원천 1행",
+    "count": {
+     "rows": 21,
+     "distinct": 21,
+     "sourceRows": 21
+    }
    },
    "measure": null,
-   "provider": "베트남 산업무역부 전력·재생에너지국(EREA) · 베트남 정부 공보 / 산업무역부(MOIT)",
+   "provider": "기관별 공식 출처 4개(상세 자료정보 참조)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-012-b3621b21.json",
     "observationCount": 0,
     "entityCount": 21,
-    "indicatorIds": []
+    "indicatorIds": [
+     "C-015_policy_document_link_datafiles_chinhphu",
+     "C-015_policy_document_link_datafiles_chinhphu_2",
+     "C-015_policy_document_link_erea",
+     "C-015_policy_document_link_moit",
+     "C-015_policy_document_link_vanban_chinhphu"
+    ]
    }
   },
   {
@@ -8990,16 +9938,149 @@
     "unit": "홈과 동일",
     "rule": "홈 주요 데이터와 같은 요약자산(home-preview-v139)"
    },
-   "measure": null,
+   "measure": {
+    "key": "measure-1f93f6946b11",
+    "label": "집중형 태양광(ĐMT tập trung) 계획용량",
+    "unit": "MW"
+   },
    "fromHome": true,
-   "provider": "개정 PDP8 부록Ⅱ(768/QĐ-TTg) 원문 자체 검산 · 베트남 국회·정부 — 전력법 61/2024/QH15 및 Nghị định 58/2025/NĐ-CP",
+   "provider": "베트남 총리실 · 산업무역부(MOIT), 개정 PDP8 부록 II",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-013-e8abb582.json",
     "observationCount": 639,
     "entityCount": 817,
-    "indicatorIds": []
+    "indicatorIds": [
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_44",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_43",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_57",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_58",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_40",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_31",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_55",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_54",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_53",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_56",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_50",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_04",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_59",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_30",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_03",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_63",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_hn",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_23",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_14",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_66",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_61",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_73",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_34",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_47",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_28",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_01",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_41",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_02",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_35",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_09",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_67",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_22",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_18",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_36",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_68",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_32",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_24",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_27",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_29",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_13",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_25",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_52",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_05",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_26",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_ct",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_hp",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_sg",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_dn",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_21",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_20",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_69",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_46",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_51",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_07",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_37",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_49",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_70",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_06",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_71",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_33",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_72",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_39",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_45"
+    ],
+    "headlineIndicatorIds": [
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_44",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_43",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_57",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_58",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_40",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_31",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_55",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_54",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_53",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_56",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_50",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_04",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_59",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_30",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_03",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_63",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_hn",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_23",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_14",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_66",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_61",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_73",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_34",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_47",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_28",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_01",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_41",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_02",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_35",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_09",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_67",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_22",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_18",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_36",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_68",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_32",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_24",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_27",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_29",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_13",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_25",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_52",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_05",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_26",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_ct",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_hp",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_sg",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_dn",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_21",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_20",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_69",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_46",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_51",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_07",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_37",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_49",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_70",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_06",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_71",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_33",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_72",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_39",
+     "C-016_re_capacity_dmt_tap_trung_prov_vn_45"
+    ]
    }
   },
   {
@@ -9037,17 +10118,33 @@
    },
    "basis": {
     "unit": "항목",
-    "rule": "항목 1건 = 원천 1행"
+    "rule": "항목 1건 = 원천 1행",
+    "count": {
+     "rows": 52,
+     "distinct": 52,
+     "sourceRows": 52
+    }
    },
    "measure": null,
-   "provider": "베트남 산업무역부 — Quyết định 1008/QĐ-BCT · 베트남 산업무역부 — Quyết định 1251/QĐ-BCT",
+   "provider": "기관별 공식 출처 10개(상세 자료정보 참조)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-013-e8abb582.json",
     "observationCount": 0,
     "entityCount": 52,
-    "indicatorIds": []
+    "indicatorIds": [
+     "C-017_implementing_agency_vanban_chinhphu",
+     "C-017_implementing_agency_vanban_chinhphu_2",
+     "C-017_implementing_agency_xaydungchinhsach_chinh",
+     "C-017_incentive_condition",
+     "C-017_incentive_status_datafiles_chinhphu",
+     "C-017_incentive_status_vanban_chinhphu",
+     "C-017_incentive_type_erea",
+     "C-017_incentive_type_vanban_chinhphu",
+     "C-017_target_technology_moit",
+     "C-017_target_technology_thuvienphapluat"
+    ]
    }
   },
   {
@@ -9085,17 +10182,32 @@
    },
    "basis": {
     "unit": "항목",
-    "rule": "항목 1건 = 원천 1행"
+    "rule": "항목 1건 = 원천 1행",
+    "count": {
+     "rows": 121,
+     "distinct": 121,
+     "sourceRows": 121
+    }
    },
    "measure": null,
-   "provider": "베트남 산업무역부 — Quyết định 1313/QĐ-BCT · 베트남 산업무역부 — Quyết định 2647/QĐ-BCT",
+   "provider": "기관별 공식 출처 4개(상세 자료정보 참조)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-013-e8abb582.json",
     "observationCount": 0,
     "entityCount": 121,
-    "indicatorIds": []
+    "indicatorIds": [
+     "C-018_energy_demand_projection_baochinhphu",
+     "C-018_energy_demand_projection_datafiles_chinhphu",
+     "C-018_energy_demand_projection_datafiles_chinhphu_2",
+     "C-018_energy_demand_projection_vanban_chinhphu",
+     "C-018_generation_capacity_plan",
+     "C-018_power_demand_growth",
+     "C-018_projection_agency",
+     "C-018_projection_scenario",
+     "C-018_re_share_target"
+    ]
    }
   },
   {
@@ -9133,17 +10245,43 @@
    },
    "basis": {
     "unit": "항목",
-    "rule": "항목 1건 = 원천 1행 · 명부의 시설 수는 34개 단위 · 성·시로 합산하지 않음"
+    "rule": "항목 1건 = 원천 1행 · 명부의 시설 수는 34개 단위 · 성·시로 합산하지 않음",
+    "count": {
+     "rows": 128,
+     "distinct": 128,
+     "sourceRows": 128
+    }
    },
    "measure": null,
-   "provider": "베트남 국회상임위원회 — Nghị quyết 109/2025/UBTVQH15 · 베트남 국회상임위원회 — Nghị quyết 579/2018/UBTVQH14",
+   "provider": "기관별 공식 출처 15개(상세 자료정보 참조)",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-013-e8abb582.json",
     "observationCount": 0,
     "entityCount": 128,
-    "indicatorIds": []
+    "indicatorIds": [
+     "C-019_carbon_market_budget",
+     "C-019_carbon_price",
+     "C-019_carbon_tax_congbao_chinhphu",
+     "C-019_carbon_tax_datafiles_chinhphu",
+     "C-019_carbon_tax_documents1_worldbank",
+     "C-019_carbon_tax_mae",
+     "C-019_carbon_tax_vanban_chinhphu",
+     "C-019_ets_scope_mae",
+     "C-019_ets_scope_vanban_chinhphu",
+     "C-019_ets_status_carbonpricingdashboard",
+     "C-019_ets_status_hnx",
+     "C-019_ets_status_hnx_2",
+     "C-019_ets_status_mae",
+     "C-019_ets_status_vanban_chinhphu",
+     "C-019_ets_status_vanban_chinhphu_2",
+     "C-019_ets_status_vanban_chinhphu_3",
+     "C-019_re_support_scheme_carbonpricingdashboard",
+     "C-019_re_support_scheme_erea",
+     "C-019_re_support_scheme_vanban_chinhphu",
+     "C-019_re_support_scheme_vanban_chinhphu_2"
+    ]
    }
   },
   {
@@ -9207,15 +10345,11 @@
    "title": "탄소시장 준비도",
    "kind": "facts",
    "headline": {
-    "value": "98건",
+    "value": "97건",
     "label": "항목 · 2020–2030년"
    },
    "preview": {
     "facts": [
-     {
-      "label": "수집현황 v5.29 분류",
-      "value": ""
-     },
      {
       "label": "종합 점수",
       "value": ""
@@ -9223,9 +10357,13 @@
      {
       "label": "준비도 지표 정의",
       "value": ""
+     },
+     {
+      "label": "VCM 프로젝트 파이프라인 원자료",
+      "value": ""
      }
     ],
-    "more": 73
+    "more": 72
    },
    "period": "2020–2030년",
    "selection": {
@@ -9237,17 +10375,31 @@
    },
    "basis": {
     "unit": "항목",
-    "rule": "항목 1건 = 원천 1행 · 같은 명부의 업종별 수 · 합산하지 않음"
+    "rule": "항목 1건 = 원천 1행 · 원천의 집계·설명 행 1건 제외 · 같은 명부의 업종별 수 · 합산하지 않음",
+    "count": {
+     "rows": 97,
+     "distinct": 97,
+     "sourceRows": 98
+    }
    },
    "measure": null,
-   "provider": "ICAP / World Bank PMI / 베트남 정부 공보 · 베트남 정부 — Nghị định 29/2026/NĐ-CP (국내 탄소거래소)",
+   "provider": "기관별 공식 출처 6개(상세 자료정보 참조)",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-013-e8abb582.json",
     "observationCount": 0,
     "entityCount": 98,
-    "indicatorIds": []
+    "indicatorIds": [
+     "C-022_carbon_market_readiness_carbonpricingdashboard",
+     "C-022_carbon_market_readiness_gspp_berkeley",
+     "C-022_carbon_market_readiness_mae",
+     "C-022_carbon_market_readiness_pmiclimate",
+     "C-022_carbon_market_readiness_vanban_chinhphu",
+     "C-022_carbon_market_readiness_vanban_chinhphu_2",
+     "C-022_carbon_market_readiness_vanban_chinhphu_3",
+     "C-022_carbon_market_readiness_worldbank"
+    ]
    }
   },
   {
@@ -9313,17 +10465,32 @@
    },
    "basis": {
     "unit": "항목",
-    "rule": "항목 1건 = 원천 1행"
+    "rule": "항목 1건 = 원천 1행",
+    "count": {
+     "rows": 20,
+     "distinct": 20,
+     "sourceRows": 20
+    }
    },
    "measure": null,
-   "provider": "Green Climate Fund (GCF) · UNFCCC REDD+ Web Platform / 베트남 농업환경부(MAE)",
+   "provider": "기관별 공식 출처 4개(상세 자료정보 참조)",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-014-ad156c11.json",
     "observationCount": 0,
     "entityCount": 20,
-    "indicatorIds": []
+    "indicatorIds": [
+     "C-024_frel_submission",
+     "C-024_participating_fund_biocarbonfundisfl",
+     "C-024_participating_fund_en_baochinhphu",
+     "C-024_participating_fund_worldbank",
+     "C-024_rbp_result_en_baochinhphu",
+     "C-024_rbp_result_vanban_chinhphu",
+     "C-024_rbp_result_worldbank",
+     "C-024_redd_strategy",
+     "C-024_safeguard_system"
+    ]
    }
   },
   {
@@ -9362,7 +10529,7 @@
      }
     ],
     "unit": "프로젝트 수",
-    "scope": "standard별",
+    "scope": "등록 표준별",
     "omitted": 0,
     "unlabelled": 0
    },
@@ -9376,17 +10543,27 @@
    },
    "basis": {
     "unit": "프로젝트",
-    "rule": "프로젝트 1건 = 원천 1행 · standard별 건수"
+    "rule": "프로젝트 1건 = 원천 1행 · 등록 표준별 건수",
+    "count": {
+     "rows": 388,
+     "sourceRows": 388
+    }
    },
    "measure": null,
-   "provider": "Global Carbon Council (GCC) · UNFCCC CDM Insights",
+   "provider": "기관별 공식 출처 5개(상세 자료정보 참조)",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-014-ad156c11.json",
     "observationCount": 0,
     "entityCount": 388,
-    "indicatorIds": []
+    "indicatorIds": [
+     "C-025_project_name_cdm_unfccc",
+     "C-025_project_name_cdm_unfccc_2",
+     "C-025_project_name_gspp_berkeley",
+     "C-025_project_name_jcm_jp",
+     "C-025_project_name_projects_globalcarbonc"
+    ]
    }
   },
   {
@@ -9438,7 +10615,16 @@
      "D-001_capex_hydro_small",
      "D-001_capex_hydro_small_max",
      "D-001_capex_hydro_small_min",
-     "D-001_capex_solar_pv"
+     "D-001_capex_solar_pv",
+     "D-001_capex_solar_pv_max",
+     "D-001_capex_solar_pv_min",
+     "D-001_capex_waste_to_energy",
+     "D-001_capex_wind",
+     "D-001_capex_wind_max",
+     "D-001_capex_wind_min"
+    ],
+    "headlineIndicatorIds": [
+     "D-001_capex_biomass"
     ]
    }
   },
@@ -9491,6 +10677,9 @@
      "D-002_market_cagr_waste_to_energy",
      "D-002_market_cagr_wind_offshore",
      "D-002_market_cagr_wind_onshore"
+    ],
+    "headlineIndicatorIds": [
+     "D-002_market_cagr_biomass"
     ]
    }
   },
@@ -9542,6 +10731,9 @@
      "D-003_expected_reduction_20yr_waste_to_energy",
      "D-003_expected_reduction_20yr_wind_offshore",
      "D-003_expected_reduction_20yr_wind_onshore"
+    ],
+    "headlineIndicatorIds": [
+     "D-003_expected_reduction_20yr_biomass"
     ]
    }
   },
@@ -9593,7 +10785,17 @@
      "D-004_capex_recovery_hydro_large_low",
      "D-004_capex_recovery_hydro_large_mid",
      "D-004_capex_recovery_hydro_small_high",
-     "D-004_capex_recovery_hydro_small_low"
+     "D-004_capex_recovery_hydro_small_low",
+     "D-004_capex_recovery_hydro_small_mid",
+     "D-004_capex_recovery_solar_pv_high",
+     "D-004_capex_recovery_solar_pv_low",
+     "D-004_capex_recovery_solar_pv_mid",
+     "D-004_capex_recovery_wind_onshore_high",
+     "D-004_capex_recovery_wind_onshore_low",
+     "D-004_capex_recovery_wind_onshore_mid"
+    ],
+    "headlineIndicatorIds": [
+     "D-004_capex_recovery_biomass_high"
     ]
    }
   },
@@ -9632,8 +10834,7 @@
     "year": 2013,
     "period": null,
     "dimensions": {
-     "category": "적응",
-     "detail": "총 기후변화 지출 대비 비중(대표값)"
+     "budgetBasis": "total-climate"
     }
    },
    "basis": {
@@ -9642,10 +10843,10 @@
    },
    "measure": {
     "key": "measure-a7c43c49fe43",
-    "label": "감축/적응 구분별 예산 배분 비율",
+    "label": "예산 배분 구조",
     "unit": "%"
    },
-   "provider": "United Nations Development Programme · 베트남 기획투자부(MPI) — Viet Nam Climate Public Expenditure and Investment Review (CPEIR) 2015 · United Nations Development Programme 베트남사무소 · 베트남 기획투자부(MPI) — CPEIR 2022",
+   "provider": "World Bank — Viet Nam Country Climate and Development Report (CCDR) 2022 · United Nations Development Programme 베트남사무소 · 베트남 기획투자부(MPI) — CPEIR 2022 · United Nations Development Programme · 베트남 기획투자부(MPI) — Viet Nam Climate Public Expenditure and Investment Review (CPEIR) 2015",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -9660,7 +10861,13 @@
      "D-005_dual_benefit_share_total_cc",
      "D-005_mitigation_share_ministry_budget",
      "D-005_mitigation_share_province_budget",
-     "D-005_mitigation_share_recurrent_budget"
+     "D-005_mitigation_share_recurrent_budget",
+     "D-005_mitigation_share_total_cc"
+    ],
+    "headlineIndicatorIds": [
+     "D-005_adaptation_share_total_cc",
+     "D-005_dual_benefit_share_total_cc",
+     "D-005_mitigation_share_total_cc"
     ]
    }
   },
@@ -9726,7 +10933,7 @@
     "unit": "관측값",
     "rule": "기후 관련 조세 수입(%) 환경보호세(EPT) · 계획 대비 결산 이행률 계열 · 5개 연도 · 최신 2024년 값을 대표값으로"
    },
-   "provider": "World Bank — Viet Nam Country Climate and Development Report (CCDR) 2022 · 베트남 재정부(Ministry of Finance) 국가예산계획 — CEIC Data 재게시",
+   "provider": "베트남 재정부(Bộ Tài chính) 국가예산 결산 공개 결정 · 베트남 국회(Quốc hội) 국가예산 결산 승인 결의 · 베트남 재정부(Ministry of Finance) 국가예산계획 — CEIC Data 재게시",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -9736,6 +10943,9 @@
     "indicatorIds": [
      "D-006_ept_settlement_rate",
      "D-006_ept_share_fuel_price"
+    ],
+    "headlineIndicatorIds": [
+     "D-006_ept_settlement_rate"
     ]
    }
   },
@@ -9781,6 +10991,11 @@
     "observationCount": 3,
     "entityCount": 0,
     "indicatorIds": [
+     "D-007_cbt_adoption_status",
+     "D-007_cbt_institutionalization_level",
+     "D-007_cbt_taxonomy_structure"
+    ],
+    "headlineIndicatorIds": [
      "D-007_cbt_adoption_status",
      "D-007_cbt_institutionalization_level",
      "D-007_cbt_taxonomy_structure"
@@ -9832,7 +11047,7 @@
     "label": "주관 부처별 기후 예산 규모",
     "unit": "%"
    },
-   "provider": "United Nations Development Programme · 베트남 기획투자부(MPI) — Viet Nam Climate Public Expenditure and Investment Review (CPEIR) 2015 · United Nations Development Programme 베트남사무소 · 베트남 기획투자부(MPI) — CPEIR 2022",
+   "provider": "United Nations Development Programme · 베트남 기획투자부(MPI) — Viet Nam Climate Public Expenditure and Investment Review (CPEIR) 2015 · World Bank — Viet Nam Country Climate and Development Report (CCDR) 2022 · United Nations Development Programme 베트남사무소 · 베트남 기획투자부(MPI) — CPEIR 2022",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
@@ -9845,6 +11060,11 @@
      "D-008_climate_budget_share_six_ministries_min",
      "D-008_climate_budget_share_top2_ministries_early",
      "D-008_climate_budget_share_top2_ministries_recent"
+    ],
+    "headlineIndicatorIds": [
+     "D-008_climate_budget_share_top2_ministries_recent",
+     "D-008_climate_budget_share_six_ministries_max",
+     "D-008_climate_budget_share_six_ministries_min"
     ]
    }
   },
@@ -9879,7 +11099,7 @@
     "unit": "관측값",
     "rule": "기후대응 정부 예산(%) GDP 대비 기후지출 비중 · 5개 부처 기후지출의 GDP 대비 비중 · 단일 시점이므로 추이를 그리지 않음"
    },
-   "provider": "United Nations Development Programme · 베트남 기획투자부(MPI) — Viet Nam Climate Public Expenditure and Investment Review (CPEIR) 2015 · United Nations Development Programme 베트남사무소 · 베트남 기획투자부(MPI) — CPEIR 2022",
+   "provider": "United Nations Development Programme · 베트남 기획투자부(MPI) — Viet Nam Climate Public Expenditure and Investment Review (CPEIR) 2015",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -9887,6 +11107,9 @@
     "observationCount": 7,
     "entityCount": 0,
     "indicatorIds": [
+     "D-009_climate_expenditure_gdp_share"
+    ],
+    "headlineIndicatorIds": [
      "D-009_climate_expenditure_gdp_share"
     ]
    }
@@ -9942,7 +11165,7 @@
     "unit": "관측값",
     "rule": "화석연료 보조금 규모(USD) 총액 · 연도별 계열 · 3개 연도 · 최신 2024년 값을 대표값으로"
    },
-   "provider": "Institute for Energy Economics and Financial Analysis (IEEFA) · International Monetary Fund — Fossil Fuel Subsidies Database / Data for a Greener World",
+   "provider": "Institute for Energy Economics and Financial Analysis (IEEFA)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -9950,6 +11173,9 @@
     "observationCount": 10,
     "entityCount": 0,
     "indicatorIds": [
+     "D-010_fossil_fuel_subsidy_total"
+    ],
+    "headlineIndicatorIds": [
      "D-010_fossil_fuel_subsidy_total"
     ]
    }
@@ -9959,7 +11185,7 @@
    "title": "개도국 내 각국별 ODA 규모",
    "headline": {
     "value": "16.65억 USD",
-    "label": "개도국 내 각국별 ODA 규모 · Official donors · 대베트남 ODA 총지출액(총계) · 2024년"
+    "label": "공식 공여자 총계 · 지출액 · 2024년 불변가격 · 2024년"
    },
    "period": "2020–2024년",
    "selection": {
@@ -9967,14 +11193,11 @@
     "sex": null,
     "year": 2024,
     "period": null,
-    "dimensions": {
-     "category": "Official donors",
-     "detail": "대베트남 ODA 총지출액(총계)"
-    }
+    "dimensions": {}
    },
    "measure": {
     "key": "measure-8149e560b53b",
-    "label": "개도국 내 각국별 ODA 규모",
+    "label": "총 ODA",
     "unit": "USD"
    },
    "kind": "line",
@@ -10031,7 +11254,82 @@
      "D-011_oda_disbursement_belgium",
      "D-011_oda_disbursement_bulgaria",
      "D-011_oda_disbursement_canada",
-     "D-011_oda_disbursement_cerf"
+     "D-011_oda_disbursement_cerf",
+     "D-011_oda_disbursement_chinese_taipei",
+     "D-011_oda_disbursement_cif",
+     "D-011_oda_disbursement_croatia",
+     "D-011_oda_disbursement_czechia",
+     "D-011_oda_disbursement_dac_countries",
+     "D-011_oda_disbursement_denmark",
+     "D-011_oda_disbursement_eu_institutions",
+     "D-011_oda_disbursement_fao",
+     "D-011_oda_disbursement_finland",
+     "D-011_oda_disbursement_france",
+     "D-011_oda_disbursement_gavi",
+     "D-011_oda_disbursement_gcf",
+     "D-011_oda_disbursement_gef",
+     "D-011_oda_disbursement_germany",
+     "D-011_oda_disbursement_gggi",
+     "D-011_oda_disbursement_global_fund",
+     "D-011_oda_disbursement_greece",
+     "D-011_oda_disbursement_hungary",
+     "D-011_oda_disbursement_iaea",
+     "D-011_oda_disbursement_iceland",
+     "D-011_oda_disbursement_icgeb",
+     "D-011_oda_disbursement_ifad",
+     "D-011_oda_disbursement_ilo",
+     "D-011_oda_disbursement_ireland",
+     "D-011_oda_disbursement_israel",
+     "D-011_oda_disbursement_italy",
+     "D-011_oda_disbursement_itc",
+     "D-011_oda_disbursement_japan",
+     "D-011_oda_disbursement_joint_sdg_fund",
+     "D-011_oda_disbursement_kazakhstan",
+     "D-011_oda_disbursement_korea",
+     "D-011_oda_disbursement_kuwait",
+     "D-011_oda_disbursement_latvia",
+     "D-011_oda_disbursement_lithuania",
+     "D-011_oda_disbursement_luxembourg",
+     "D-011_oda_disbursement_multilaterals_organisations",
+     "D-011_oda_disbursement_ndf",
+     "D-011_oda_disbursement_netherlands",
+     "D-011_oda_disbursement_new_zealand",
+     "D-011_oda_disbursement_non_dac_countries",
+     "D-011_oda_disbursement_norway",
+     "D-011_oda_disbursement_official_donors",
+     "D-011_oda_disbursement_opec_fund",
+     "D-011_oda_disbursement_other_multilateral_organisations",
+     "D-011_oda_disbursement_poland",
+     "D-011_oda_disbursement_portugal",
+     "D-011_oda_disbursement_private_infrastructure_development_group",
+     "D-011_oda_disbursement_qatar",
+     "D-011_oda_disbursement_regional_development_banks",
+     "D-011_oda_disbursement_romania",
+     "D-011_oda_disbursement_saudi_arabia",
+     "D-011_oda_disbursement_slovak_republic",
+     "D-011_oda_disbursement_spain",
+     "D-011_oda_disbursement_sprp",
+     "D-011_oda_disbursement_sweden",
+     "D-011_oda_disbursement_switzerland",
+     "D-011_oda_disbursement_thailand",
+     "D-011_oda_disbursement_turkiye",
+     "D-011_oda_disbursement_un_covid_19_mptf",
+     "D-011_oda_disbursement_un_development_coordination_office",
+     "D-011_oda_disbursement_un_women",
+     "D-011_oda_disbursement_unaids",
+     "D-011_oda_disbursement_undp",
+     "D-011_oda_disbursement_unfpa",
+     "D-011_oda_disbursement_unicef",
+     "D-011_oda_disbursement_unido",
+     "D-011_oda_disbursement_united_arab_emirates",
+     "D-011_oda_disbursement_united_kingdom",
+     "D-011_oda_disbursement_united_nations",
+     "D-011_oda_disbursement_united_states",
+     "D-011_oda_disbursement_who",
+     "D-011_oda_disbursement_world_bank_group"
+    ],
+    "headlineIndicatorIds": [
+     "D-011_oda_disbursement_official_donors"
     ]
    }
   },
@@ -10067,7 +11365,7 @@
      }
     ],
     "unit": "기업 수",
-    "scope": "기술분야별",
+    "scope": "기술 분야별",
     "omitted": 0,
     "unlabelled": 0
    },
@@ -10081,7 +11379,11 @@
    },
    "basis": {
     "unit": "기업",
-    "rule": "기업 1건 = 원천 1행 · 기술분야별 건수"
+    "rule": "기업 1건 = 원천 1행 · 기술 분야별 건수",
+    "count": {
+     "rows": 22,
+     "sourceRows": 22
+    }
    },
    "measure": null,
    "provider": "업계 전문지·로펌 분석·기업 공시 종합(IEEFA, Akin Gump, Lexology, Enerdata, Vietnam Briefing, Maritime Executive 등)",
@@ -10091,7 +11393,9 @@
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-015-af2b8261.json",
     "observationCount": 0,
     "entityCount": 22,
-    "indicatorIds": []
+    "indicatorIds": [
+     "D-012_company_entry_registry"
+    ]
    }
   },
   {
@@ -10133,7 +11437,6 @@
     "year": 2024,
     "period": null,
     "dimensions": {
-     "category": "효율 · 지속가능 자원이용(ESRU)",
      "detail": "차원(dimension) 점수"
     }
    },
@@ -10161,7 +11464,26 @@
      "D-013_green_growth_index",
      "D-013_pillar_score_access_to_basic_services",
      "D-013_pillar_score_biodiversity_ecosystem_protection",
-     "D-013_pillar_score_cultural_social_value"
+     "D-013_pillar_score_cultural_social_value",
+     "D-013_pillar_score_efficient_sustainable_energy",
+     "D-013_pillar_score_efficient_sustainable_water",
+     "D-013_pillar_score_environmental_quality",
+     "D-013_pillar_score_gender_balance",
+     "D-013_pillar_score_ghg_emission_reduction",
+     "D-013_pillar_score_green_employment",
+     "D-013_pillar_score_green_innovation",
+     "D-013_pillar_score_green_investment",
+     "D-013_pillar_score_green_trade",
+     "D-013_pillar_score_material_use_efficiency",
+     "D-013_pillar_score_social_equity",
+     "D-013_pillar_score_social_protection",
+     "D-013_pillar_score_sustainable_land_use"
+    ],
+    "headlineIndicatorIds": [
+     "D-013_dimension_score_si",
+     "D-013_dimension_score_ncp",
+     "D-013_dimension_score_esru",
+     "D-013_dimension_score_geo"
     ]
    }
   },
@@ -10189,7 +11511,7 @@
      }
     ],
     "unit": "사업 수",
-    "scope": "원조유형별",
+    "scope": "원조 유형별",
     "omitted": 0,
     "unlabelled": 0
    },
@@ -10203,7 +11525,11 @@
    },
    "basis": {
     "unit": "사업",
-    "rule": "사업 1건 = 원천 1행(레코드구분=개별) · 원조유형별 건수"
+    "rule": "사업 1건 = 원천 1행(레코드구분=개별) · 원조 유형별 건수",
+    "count": {
+     "rows": 164,
+     "sourceRows": 164
+    }
    },
    "measure": null,
    "provider": "국무조정실 ODA Korea 통합 통계(OECD CRS 보고 원자료) — 한국수출입은행(EDCF)·한국국제협력단(KOICA)·정부부처·지방자치단체 제출분",
@@ -10213,7 +11539,9 @@
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-015-af2b8261.json",
     "observationCount": 0,
     "entityCount": 164,
-    "indicatorIds": []
+    "indicatorIds": [
+     "D-014_edcf_project_registry"
+    ]
    }
   },
   {
@@ -10254,7 +11582,11 @@
    },
    "basis": {
     "unit": "사업",
-    "rule": "사업 1건 = 원천 1행(레코드구분=개별) · 상태별 건수"
+    "rule": "사업 1건 = 원천 1행(레코드구분=개별) · 상태별 건수",
+    "count": {
+     "rows": 650,
+     "sourceRows": 650
+    }
    },
    "measure": null,
    "provider": "국무조정실 ODA Korea 통합 통계(OECD CRS 보고 원자료) — 한국수출입은행(EDCF)·한국국제협력단(KOICA)·정부부처·지방자치단체 제출분",
@@ -10264,7 +11596,9 @@
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-016-ddd1bbae.json",
     "observationCount": 0,
     "entityCount": 650,
-    "indicatorIds": []
+    "indicatorIds": [
+     "D-015_oda_korea_project_registry"
+    ]
    }
   },
   {
@@ -10287,7 +11621,7 @@
      }
     ],
     "unit": "사업 수",
-    "scope": "기관유형별",
+    "scope": "기관 유형별",
     "omitted": 0,
     "unlabelled": 0
    },
@@ -10301,7 +11635,11 @@
    },
    "basis": {
     "unit": "사업",
-    "rule": "사업 1건 = 원천 1행(레코드구분=개별) · 기관유형별 건수"
+    "rule": "사업 1건 = 원천 1행(레코드구분=개별) · 기관 유형별 건수",
+    "count": {
+     "rows": 232,
+     "sourceRows": 232
+    }
    },
    "measure": null,
    "provider": "국무조정실 ODA Korea 통합 통계(OECD CRS 보고 원자료) — 한국수출입은행(EDCF)·한국국제협력단(KOICA)·정부부처·지방자치단체 제출분",
@@ -10311,7 +11649,9 @@
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-016-ddd1bbae.json",
     "observationCount": 0,
     "entityCount": 232,
-    "indicatorIds": []
+    "indicatorIds": [
+     "D-016_ministry_local_project_registry"
+    ]
    }
   },
   {
@@ -10349,7 +11689,12 @@
    },
    "basis": {
     "unit": "공고",
-    "rule": "공고 1건 = 원천 1행"
+    "rule": "공고 1건 = 원천 1행",
+    "count": {
+     "rows": 10,
+     "distinct": 10,
+     "sourceRows": 10
+    }
    },
    "measure": null,
    "provider": "KOICA 전자조달시스템 · 조달청 나라장터(G2B) · ODA Korea 통합 입찰공고",
@@ -10359,7 +11704,9 @@
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-016-ddd1bbae.json",
     "observationCount": 0,
     "entityCount": 10,
-    "indicatorIds": []
+    "indicatorIds": [
+     "D-017_pcp_tender_registry"
+    ]
    }
   },
   {
@@ -10367,21 +11714,21 @@
    "title": "Adaptation Fund 프로젝트[프로젝트명, 국가, 실행기관(NIE/MIE 구분, 기관명), 승인 금액, 분야(수자원/농업/재난관리/해안/생태계), 상태(Under Implementation/Completed), 기간, 수혜자 수]",
    "kind": "bars",
    "headline": {
-    "value": "2,324만 USD",
-    "label": "Adaptation Fund 프로젝트 · 전 사업 승인액 단순합 · 2026년"
+    "value": "1,135만 USD",
+    "label": "Adaptation Fund 프로젝트 · 베트남 단독사업 승인액 합계 · 2026년"
    },
    "preview": {
     "parts": [
      {
-      "label": "전 사업 승인액 단순합",
+      "label": "승인액 합계",
       "value": 23244067
      },
      {
-      "label": "",
+      "label": "베트남 단독사업 승인액 합계",
       "value": 11345292
      },
      {
-      "label": "전 사업 집행액 단순합",
+      "label": "집행액 합계",
       "value": 10503442
      }
     ],
@@ -10418,6 +11765,9 @@
      "D-018_approved_amount_sum",
      "D-018_disbursed_amount_sum",
      "D-018_approved_amount_sum_single_country"
+    ],
+    "headlineIndicatorIds": [
+     "D-018_approved_amount_sum_single_country"
     ]
    }
   },
@@ -10449,7 +11799,7 @@
      }
     ],
     "unit": "기술지원 요청 수",
-    "scope": "기술유형별",
+    "scope": "기술 유형별",
     "omitted": 0,
     "unlabelled": 0
    },
@@ -10463,7 +11813,11 @@
    },
    "basis": {
     "unit": "기술지원 요청",
-    "rule": "기술지원 요청 1건 = 원천 1행 · 기술유형별 건수"
+    "rule": "기술지원 요청 1건 = 원천 1행 · 기술 유형별 건수",
+    "count": {
+     "rows": 10,
+     "sourceRows": 10
+    }
    },
    "measure": null,
    "provider": "Climate Technology Centre and Network (CTCN)",
@@ -10473,7 +11827,9 @@
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-016-ddd1bbae.json",
     "observationCount": 0,
     "entityCount": 10,
-    "indicatorIds": []
+    "indicatorIds": [
+     "D-019_ctcn_technical_assistance_registry"
+    ]
    }
   },
   {
@@ -10481,7 +11837,7 @@
    "title": "GCF 프로젝트[프로젝트명(Ref No.), 국가, 인가기관(AE), GCF 승인 금액, 공동재원, 분야(mitigation/adaptation/cross-cutting), 결과영역(Result Area), 상태(Approved/Under Implementation/Completed), 이사회 승인일, 예상 수혜자 수, 예상 감축량]",
    "kind": "facts",
    "headline": {
-    "value": "9건",
+    "value": "8건",
     "label": "사업 · 2026년"
    },
    "preview": {
@@ -10499,7 +11855,7 @@
       "value": ""
      }
     ],
-    "more": 6
+    "more": 5
    },
    "period": "2026년",
    "selection": {
@@ -10511,7 +11867,12 @@
    },
    "basis": {
     "unit": "사업",
-    "rule": "사업 1건 = 원천 1행"
+    "rule": "사업 1건 = 원천 1행 · 원천의 집계·설명 행 1건 제외",
+    "count": {
+     "rows": 8,
+     "distinct": 8,
+     "sourceRows": 9
+    }
    },
    "measure": null,
    "provider": "Green Climate Fund",
@@ -10521,7 +11882,9 @@
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-016-ddd1bbae.json",
     "observationCount": 0,
     "entityCount": 9,
-    "indicatorIds": []
+    "indicatorIds": [
+     "D-020_project_registry"
+    ]
    }
   },
   {
@@ -10552,7 +11915,7 @@
      }
     ],
     "unit": "사업 수",
-    "scope": "활동상태별",
+    "scope": "활동 상태별",
     "omitted": 0,
     "unlabelled": 0
    },
@@ -10566,17 +11929,23 @@
    },
    "basis": {
     "unit": "사업",
-    "rule": "사업 1건 = 원천 1행(레코드구분=개별) · 활동상태별 건수"
+    "rule": "사업 1건 = 원천 1행(레코드구분=개별) · 활동 상태별 건수",
+    "count": {
+     "rows": 640,
+     "sourceRows": 640
+    }
    },
    "measure": null,
-   "provider": "IATI Datastore (IATI Secretariat) — 국제기구·MDB 보고 활동 원자료 · IATI Registry — d-portal 집계(World Bank, ADB, IFC, UNDP, FAO, UNESCO, UNICEF, UN-Habitat, UNEP, IFAD, UNIDO, WHO, ILO 등 보고분)",
+   "provider": "IATI Registry — d-portal 집계(World Bank, ADB, IFC, UNDP, FAO, UNESCO, UNICEF, UN-Habitat, UNEP, IFAD, UNIDO, WHO, ILO 등 보고분)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-016-ddd1bbae.json",
     "observationCount": 0,
     "entityCount": 640,
-    "indicatorIds": []
+    "indicatorIds": [
+     "D-021_international_org_mdb_project_registry"
+    ]
    }
   },
   {
@@ -10613,7 +11982,11 @@
    },
    "basis": {
     "unit": "사업",
-    "rule": "사업 1건 = 원천 1행 · 투자 유형별 건수"
+    "rule": "사업 1건 = 원천 1행 · 투자 유형별 건수",
+    "count": {
+     "rows": 15,
+     "sourceRows": 15
+    }
    },
    "measure": null,
    "provider": "IATI Registry — d-portal 집계(World Bank·ADB·IFC 등 MDB·DFI 보고분)",
@@ -10623,7 +11996,9 @@
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-016-ddd1bbae.json",
     "observationCount": 0,
     "entityCount": 15,
-    "indicatorIds": []
+    "indicatorIds": [
+     "D-022_mdb_dfi_ppp_investment_registry"
+    ]
    }
   },
   {
@@ -10651,14 +12026,16 @@
    },
    "measure": null,
    "fromHome": true,
-   "provider": "Climate Investment Funds (CIF) — Clean Technology Fund (CTF) Trust Fund Committee · Global Environment Facility (GEF) Secretariat",
+   "provider": "GCF · GEF · 적응기금 · CIF 공개 사업 목록",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-017-f1698fa8.json",
     "observationCount": 0,
     "entityCount": 73,
-    "indicatorIds": []
+    "indicatorIds": [
+     "D-023_climate_fund_finance_registry"
+    ]
    }
   },
   {
@@ -10696,17 +12073,24 @@
    },
    "basis": {
     "unit": "투자 건",
-    "rule": "투자 건 1건 = 원천 1행"
+    "rule": "투자 건 1건 = 원천 1행(레코드구분=개별) · 원천의 집계·설명 행 5건 제외",
+    "count": {
+     "rows": 7,
+     "distinct": 7,
+     "sourceRows": 12
+    }
    },
    "measure": null,
-   "provider": "New Energy Nexus · RMIT University — Vietnam Climate Tech Funding Ecosystem 2025 · New Energy Nexus · RMIT University — Vietnam Climate Tech Funding Ecosystem 2025 (DealStreetAsia·Tracxn 병용)",
+   "provider": "New Energy Nexus · RMIT University — Vietnam Climate Tech Funding Ecosystem 2025 (DealStreetAsia·Tracxn 병용)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-017-f1698fa8.json",
     "observationCount": 0,
     "entityCount": 12,
-    "indicatorIds": []
+    "indicatorIds": [
+     "D-024_vc_impact_investment_deal_registry"
+    ]
    }
   },
   {
@@ -10745,7 +12129,7 @@
      }
     ],
     "unit": "사업 수",
-    "scope": "투자유형별",
+    "scope": "투자 유형별",
     "omitted": 0,
     "unlabelled": 0
    },
@@ -10759,7 +12143,11 @@
    },
    "basis": {
     "unit": "사업",
-    "rule": "사업 1건 = 원천 1행 · 투자유형별 건수"
+    "rule": "사업 1건 = 원천 1행 · 투자 유형별 건수",
+    "count": {
+     "rows": 132,
+     "sourceRows": 132
+    }
    },
    "measure": null,
    "provider": "World Bank Private Participation in Infrastructure (PPI) Database",
@@ -10769,7 +12157,9 @@
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-017-f1698fa8.json",
     "observationCount": 0,
     "entityCount": 132,
-    "indicatorIds": []
+    "indicatorIds": [
+     "D-025_ppi_project_registry"
+    ]
    }
   },
   {
@@ -10818,7 +12208,11 @@
    },
    "basis": {
     "unit": "보증",
-    "rule": "보증 1건 = 원천 1행 · 보증 유형별 건수 · 보증 유형 미기재 5건"
+    "rule": "보증 1건 = 원천 1행 · 보증 유형별 건수 · 보증 유형 미기재 5건",
+    "count": {
+     "rows": 14,
+     "sourceRows": 14
+    }
    },
    "measure": null,
    "provider": "Multilateral Investment Guarantee Agency (MIGA), World Bank Group",
@@ -10828,7 +12222,9 @@
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-017-f1698fa8.json",
     "observationCount": 0,
     "entityCount": 14,
-    "indicatorIds": []
+    "indicatorIds": [
+     "D-026_miga_guarantee_registry"
+    ]
    }
   },
   {
@@ -10866,17 +12262,26 @@
    },
    "basis": {
     "unit": "기관",
-    "rule": "기관 1건 = 원천 1행"
+    "rule": "기관 1건 = 원천 1행",
+    "count": {
+     "rows": 15,
+     "distinct": 15,
+     "sourceRows": 15
+    }
    },
    "measure": null,
-   "provider": "Climate Technology Centre and Network (CTCN)",
+   "provider": "Climate Technology Centre and Network (CTCN) / 현지 컨설턴트 현지조사(Field Survey Items_vIDGcmt_260408_v2.0)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-017-f1698fa8.json",
     "observationCount": 0,
     "entityCount": 15,
-    "indicatorIds": []
+    "indicatorIds": [
+     "E-001_ctcn_nde",
+     "E-001_ctcn_network_member",
+     "E-001_ctcn_ta_proponent"
+    ]
    }
   },
   {
@@ -10906,17 +12311,24 @@
    },
    "basis": {
     "unit": "기관",
-    "rule": "기관 1건 = 원천 1행"
+    "rule": "기관 1건 = 원천 1행",
+    "count": {
+     "rows": 1,
+     "distinct": 1,
+     "sourceRows": 1
+    }
    },
    "measure": null,
-   "provider": "United Nations Framework Convention on Climate Change (UNFCCC)",
+   "provider": "United Nations Framework Convention on Climate Change (UNFCCC) / 현지 컨설턴트 현지조사(Field Survey Items_vIDGcmt_260408_v2.0)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-017-f1698fa8.json",
     "observationCount": 0,
     "entityCount": 1,
-    "indicatorIds": []
+    "indicatorIds": [
+     "E-002_dna"
+    ]
    }
   },
   {
@@ -10954,17 +12366,25 @@
    },
    "basis": {
     "unit": "기관",
-    "rule": "기관 1건 = 원천 1행 · orgName 기준 중복 제거"
+    "rule": "기관 1건 = 원천 1행 · orgName 기준 중복 제거",
+    "count": {
+     "rows": 8,
+     "distinct": 3,
+     "sourceRows": 8
+    }
    },
    "measure": null,
-   "provider": "Green Climate Fund (GCF)",
+   "provider": "Green Climate Fund (GCF) / 현지 컨설턴트 현지조사(Field Survey Items_vIDGcmt_260408_v2.0)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-017-f1698fa8.json",
     "observationCount": 0,
     "entityCount": 8,
-    "indicatorIds": []
+    "indicatorIds": [
+     "E-003_gcf_dae",
+     "E-003_gcf_nda"
+    ]
    }
   },
   {
@@ -11003,7 +12423,7 @@
      }
     ],
     "unit": "현지사무소 수",
-    "scope": "orgType별",
+    "scope": "기관 유형별",
     "omitted": 0,
     "unlabelled": 0
    },
@@ -11017,17 +12437,41 @@
    },
    "basis": {
     "unit": "현지사무소",
-    "rule": "현지사무소 1건 = 원천 1행(현행 행만) · orgType별 건수"
+    "rule": "현지사무소 1건 = 원천 1행(현행 행만) · 기관 유형별 건수",
+    "count": {
+     "rows": 17,
+     "sourceRows": 19
+    }
    },
    "measure": null,
-   "provider": "ABC News (언론 보도 — 기관 공식 출처 아님) · Agence Française de Développement (AFD)",
+   "provider": "기관별 공식 출처 19개(상세 자료정보 참조)",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-017-f1698fa8.json",
     "observationCount": 0,
     "entityCount": 19,
-    "indicatorIds": []
+    "indicatorIds": [
+     "E-004_adb",
+     "E-004_afd",
+     "E-004_denmark",
+     "E-004_eu",
+     "E-004_fao",
+     "E-004_gggi",
+     "E-004_giz",
+     "E-004_ifc",
+     "E-004_irena",
+     "E-004_jica",
+     "E-004_kfw",
+     "E-004_koica",
+     "E-004_netherlands",
+     "E-004_undp",
+     "E-004_unep",
+     "E-004_unesco",
+     "E-004_unido",
+     "E-004_usaid",
+     "E-004_worldbank"
+    ]
    }
   },
   {
@@ -11062,7 +12506,7 @@
      }
     ],
     "unit": "기관 수",
-    "scope": "city별",
+    "scope": "도시별",
     "omitted": 0,
     "unlabelled": 0
    },
@@ -11076,17 +12520,23 @@
    },
    "basis": {
     "unit": "기관",
-    "rule": "기관 1건 = 원천 1행 · city별 건수"
+    "rule": "기관 1건 = 원천 1행 · 도시별 건수",
+    "count": {
+     "rows": 20,
+     "sourceRows": 20
+    }
    },
    "measure": null,
-   "provider": "각 기관 공식 웹사이트 및 CTCN 네트워크 회원 정보(용역사 취합)",
+   "provider": "각 기관 공식 웹사이트 및 CTCN 네트워크 회원 정보(용역사 취합) / 현지 컨설턴트 현지조사(Field Survey Items_vIDGcmt_260408_v2.0)",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-018-14c8d22f.json",
     "observationCount": 0,
     "entityCount": 20,
-    "indicatorIds": []
+    "indicatorIds": [
+     "E-005_partner_org"
+    ]
    }
   },
   {
@@ -11125,7 +12575,7 @@
      }
     ],
     "unit": "기관 수",
-    "scope": "city별",
+    "scope": "도시별",
     "omitted": 2,
     "unlabelled": 0
    },
@@ -11139,17 +12589,26 @@
    },
    "basis": {
     "unit": "기관",
-    "rule": "기관 1건 = 원천 1행 · city별 건수"
+    "rule": "기관 1건 = 원천 1행 · 도시별 건수",
+    "count": {
+     "rows": 15,
+     "sourceRows": 15
+    }
    },
    "measure": null,
-   "provider": "Climate Investment Funds, IFC, EAAIF(PIDG), Proparco (레코드별 상이 — attr_19 참조) · 각 운용사·투자사 공식 웹사이트 및 언론(레코드별 상이 — attr_19·attr_20 참조)",
+   "provider": "기관별 공식 출처 4개(상세 자료정보 참조)",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-018-14c8d22f.json",
     "observationCount": 0,
     "entityCount": 15,
-    "indicatorIds": []
+    "indicatorIds": [
+     "E-006_dfi",
+     "E-006_private_investor",
+     "E-006_private_investor_intl",
+     "E-006_private_investor_media"
+    ]
    }
   },
   {
@@ -11188,7 +12647,7 @@
      }
     ],
     "unit": "항목 수",
-    "scope": "category별",
+    "scope": "분류별",
     "omitted": 1,
     "unlabelled": 0
    },
@@ -11202,17 +12661,23 @@
    },
    "basis": {
     "unit": "항목",
-    "rule": "항목 1건 = 원천 1행 · category별 건수"
+    "rule": "항목 1건 = 원천 1행 · 분류별 건수",
+    "count": {
+     "rows": 19,
+     "sourceRows": 19
+    }
    },
    "measure": null,
-   "provider": "Global Environment Facility (GEF) · United Nations Framework Convention on Climate Change (UNFCCC)",
+   "provider": "베트남 정부 법령(Decree·Decision·Circular) 및 UNFCCC 문서(용역사 취합) / 현지 컨설턴트 현지조사(Field Survey Items_vIDGcmt_260408_v2.0)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-018-14c8d22f.json",
     "observationCount": 0,
     "entityCount": 19,
-    "indicatorIds": []
+    "indicatorIds": [
+     "E-007_mrv_institution"
+    ]
    }
   },
   {
@@ -11246,17 +12711,25 @@
    },
    "basis": {
     "unit": "논문·특허",
-    "rule": "논문·특허 1건 = 원천 1행"
+    "rule": "논문·특허 1건 = 원천 1행",
+    "count": {
+     "rows": 144,
+     "distinct": 144,
+     "sourceRows": 144
+    }
    },
    "measure": null,
-   "provider": "MDPI 및 J. Microbiol. Biotechnol. (PMC) — 레코드별 상이, 1.2_entity attr_14 참조 · Scimago Journal & Country Rank (Scimago Lab / Elsevier Scopus 기반)",
+   "provider": "각 게재 학술지 — MDPI · Elsevier · Springer Nature · IEEE · Frontiers · PLOS 등 국제저널, Journal of Climate Change Science(IMHEN), Vietnam Journal of Science and Technology / Earth Sciences(VAST) (레코드별 상이 — 1.2_entity attr_10 참조) · USPTO (United States Patent and Trademark Office) Patent Public Search",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-018-14c8d22f.json",
     "observationCount": 0,
     "entityCount": 144,
-    "indicatorIds": []
+    "indicatorIds": [
+     "E-008_paper",
+     "E-008_patent"
+    ]
    }
   },
   {
@@ -11290,7 +12763,7 @@
     "unit": "관측값",
     "rule": "STEM 졸업 비중(남성)(%) 단일 시점이므로 추이를 그리지 않음"
    },
-   "provider": "UNESCO Institute for Statistics (UIS) · World Bank (원자료: UNESCO Institute for Statistics)",
+   "provider": "UNESCO Institute for Statistics (UIS)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -11298,6 +12771,9 @@
     "observationCount": 6,
     "entityCount": 0,
     "indicatorIds": [
+     "E-009_stem_grad_share_male"
+    ],
+    "headlineIndicatorIds": [
      "E-009_stem_grad_share_male"
     ]
    }
@@ -11369,7 +12845,7 @@
     "unit": "관측값",
     "rule": "GERD(%) GDP 대비 R&D 총지출 비율 계열 · 7개 연도 · 최신 2023년 값을 대표값으로"
    },
-   "provider": "World Bank (UNESCO Institute for Statistics 원자료) · World Intellectual Property Organization (WIPO)",
+   "provider": "World Bank (UNESCO Institute for Statistics 원자료)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -11377,6 +12853,9 @@
     "observationCount": 30,
     "entityCount": 0,
     "indicatorIds": [
+     "E-010_gerd_pct_gdp"
+    ],
+    "headlineIndicatorIds": [
      "E-010_gerd_pct_gdp"
     ]
    }
@@ -11413,34 +12892,34 @@
    "elementId": "E-012",
    "title": "직군별 종사자 수; 직군별 임금",
    "headline": {
-    "value": "51.7 백만명",
-    "label": "총 취업자 수 · 2023년"
+    "value": "51,860 천명",
+    "label": "총 취업자 수 · 전체 직군 · 전체 성별 · 2024년"
    },
-   "period": "2023년",
+   "period": "2024년",
    "selection": {
-    "measure": "employed_persons",
-    "sex": null,
-    "year": 2023,
+    "measure": "occupation_employment_count",
+    "sex": "total",
+    "year": 2024,
     "period": null,
     "dimensions": {}
    },
    "measure": {
-    "key": "employed_persons",
+    "key": "occupation_employment_count",
     "label": "총 취업자 수",
-    "unit": "백만명"
+    "unit": "천명"
    },
    "kind": "level",
    "preview": {
-    "unit": "백만명",
-    "seriesLabel": "",
+    "unit": "천명",
+    "seriesLabel": "전체 직군 · 전체",
     "others": [],
     "note": "단일 시점 값"
    },
    "basis": {
     "unit": "관측값",
-    "rule": "총 취업자 수(백만명) 단일 시점이므로 추이를 그리지 않음"
+    "rule": "직군별 종사자 수(천명) 전체 직군 · 전체 · 단일 시점이므로 추이를 그리지 않음"
    },
-   "provider": "International Labour Organization (ILOSTAT) · 베트남 통계청 National Statistics Office of Viet Nam (NSO)",
+   "provider": "베트남 통계청 National Statistics Office of Viet Nam (NSO)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -11448,7 +12927,20 @@
     "observationCount": 92,
     "entityCount": 0,
     "indicatorIds": [
-     "E-012_employed_persons"
+     "E-012_occupation_employment_agri_total",
+     "E-012_occupation_employment_all_total",
+     "E-012_occupation_employment_clerk_total",
+     "E-012_occupation_employment_craft_total",
+     "E-012_occupation_employment_elem_total",
+     "E-012_occupation_employment_mgr_total",
+     "E-012_occupation_employment_operator_total",
+     "E-012_occupation_employment_other_total",
+     "E-012_occupation_employment_prof_total",
+     "E-012_occupation_employment_service_total",
+     "E-012_occupation_employment_tech_total"
+    ],
+    "headlineIndicatorIds": [
+     "E-012_occupation_employment_all_total"
     ]
    }
   },
@@ -11515,17 +13007,24 @@
    },
    "basis": {
     "unit": "협정",
-    "rule": "협정 1건 = 원천 1행"
+    "rule": "협정 1건 = 원천 1행",
+    "count": {
+     "rows": 10,
+     "distinct": 10,
+     "sourceRows": 10
+    }
    },
    "measure": null,
-   "provider": "대한민국 외교부(MOFA) / 2050 탄소중립녹색성장위원회 등 공식 발표자료(용역사 취합)",
+   "provider": "대한민국 외교부(MOFA)·2050 탄소중립녹색성장위원회, 일본 JCM 사무국, 스위스 연방환경청(BAFU), 싱가포르 통상산업부(MTI), 베트남 JETP 사무국 / 현지 컨설턴트 현지조사(Field Survey Items_vIDGcmt_260408_v2.0)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-019-0bca8c85.json",
     "observationCount": 0,
     "entityCount": 10,
-    "indicatorIds": []
+    "indicatorIds": [
+     "E-014_bilateral_agreement"
+    ]
    }
   },
   {
@@ -11563,17 +13062,24 @@
    },
    "basis": {
     "unit": "협력체계",
-    "rule": "협력체계 1건 = 원천 1행"
+    "rule": "협력체계 1건 = 원천 1행",
+    "count": {
+     "rows": 4,
+     "distinct": 4,
+     "sourceRows": 4
+    }
    },
    "measure": null,
-   "provider": "NDC Partnership",
+   "provider": "NDC Partnership, Global Green Growth Institute (GGGI), Global Methane Pledge, IRENA — 각 기구 공식 회원·참여국 정보",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-019-0bca8c85.json",
     "observationCount": 0,
     "entityCount": 4,
-    "indicatorIds": []
+    "indicatorIds": [
+     "E-015_coop_framework"
+    ]
    }
   },
   {
@@ -11611,7 +13117,12 @@
    },
    "basis": {
     "unit": "부문",
-    "rule": "부문 1건 = 원천 1행"
+    "rule": "부문 1건 = 원천 1행",
+    "count": {
+     "rows": 4,
+     "distinct": 4,
+     "sourceRows": 4
+    }
    },
    "measure": null,
    "provider": "국가녹색기술연구소(NIGT) / 기후기술정보시스템(CTis)",
@@ -11621,15 +13132,45 @@
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-019-0bca8c85.json",
     "observationCount": 0,
     "entityCount": 4,
-    "indicatorIds": []
+    "indicatorIds": [
+     "E-016_kr_climate_tech_trl"
+    ]
    }
   },
   {
    "elementId": "E-017",
    "title": "한국-경쟁국 기후기술 비교우위",
+   "kind": "bars",
    "headline": {
-    "value": "5 위",
-    "label": "기후기술 수준 순위 · 2020년"
+    "value": "4 위",
+    "label": "한국 · 기후기술 수준 순위 · 5개국 중 · 2020년 · 값이 작을수록 우수"
+   },
+   "preview": {
+    "parts": [
+     {
+      "label": "미국",
+      "value": 1
+     },
+     {
+      "label": "유럽연합",
+      "value": 2
+     },
+     {
+      "label": "일본",
+      "value": 3
+     },
+     {
+      "label": "한국",
+      "value": 4
+     },
+     {
+      "label": "중국",
+      "value": 5
+     }
+    ],
+    "unit": "위",
+    "scope": "5개국 비교 · 2020년",
+    "omitted": 0
    },
    "period": "2020년",
    "selection": {
@@ -11639,31 +13180,16 @@
     "period": null,
     "dimensions": {}
    },
+   "basis": {
+    "unit": "관측값",
+    "rule": "기후기술 수준 순위(위) 2020년 5개국 값 비교 · 대표값은 한국"
+   },
    "measure": {
     "key": "measure-21b0eed49d22",
     "label": "기후기술 수준 순위",
     "unit": "위"
    },
-   "kind": "level",
-   "preview": {
-    "unit": "위",
-    "seriesLabel": "",
-    "others": [
-     {
-      "label": "2020년",
-      "value": 2
-     },
-     {
-      "label": "2020년",
-      "value": 3
-     }
-    ],
-    "note": "단일 시점 값"
-   },
-   "basis": {
-    "unit": "관측값",
-    "rule": "기후기술 수준 순위(위) 단일 시점이므로 추이를 그리지 않음"
-   },
+   "leadCountry": "KOR",
    "provider": "국가녹색기술연구소(NIGT) / 기후기술정보시스템(CTis)",
    "mapConnected": false,
    "downloadable": true,
@@ -11672,6 +13198,9 @@
     "observationCount": 10,
     "entityCount": 0,
     "indicatorIds": [
+     "E-017_tech_rank"
+    ],
+    "headlineIndicatorIds": [
      "E-017_tech_rank"
     ]
    }
@@ -11714,17 +13243,25 @@
    },
    "basis": {
     "unit": "기업",
-    "rule": "기업 1건 = 원천 1행 · 진출 상태별 건수"
+    "rule": "기업 1건 = 원천 1행 · 진출 상태별 건수",
+    "count": {
+     "rows": 24,
+     "sourceRows": 24
+    }
    },
    "measure": null,
-   "provider": "각 기업 공식 웹사이트 및 언론 보도(용역사 취합)",
+   "provider": "각 기업 공식 웹사이트(레코드별 상이 — 1.2_entity 참조) · 각 언론사 보도(레코드별 상이 — 1.2_entity 참조) · 한국에너지기술평가원(KETEP) 글로벌에너지정보",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-019-0bca8c85.json",
     "observationCount": 0,
     "entityCount": 24,
-    "indicatorIds": []
+    "indicatorIds": [
+     "E-018_kr_company_entry",
+     "E-018_kr_company_entry_media",
+     "E-018_kr_company_entry_public"
+    ]
    }
   },
   {
@@ -11732,8 +13269,8 @@
    "title": "한국 기관 사무소[기관명(KOTRA무역관/KOICA사무소/에너지공단/KEPCO/한수원 등), 소재국, 도시, 주소, 기후·에너지 담당자 유무, 연락처, 담당 업무 범위]",
    "kind": "facts",
    "headline": {
-    "value": "9곳",
-    "label": "사무소 · 2026년"
+    "value": "6곳",
+    "label": "현지 사무소 · 사무소 없는 기관 3곳은 별도 · 2026년"
    },
    "preview": {
     "facts": [
@@ -11750,7 +13287,8 @@
       "value": ""
      }
     ],
-    "more": 6
+    "more": 3,
+    "note": "사무소 없는 기관: 한국수자원공사(K-water), 한국에너지공단, 한국전력공사(KEPCO)"
    },
    "period": "2026년",
    "selection": {
@@ -11761,8 +13299,13 @@
     "dimensions": {}
    },
    "basis": {
-    "unit": "사무소",
-    "rule": "사무소 1건 = 원천 1행"
+    "unit": "현지 사무소",
+    "rule": "원천이 '사무소 미설치'로 표시한 기관은 사무소로 세지 않음 · 사무소 6곳 + 없는 기관 3곳 = 원천 9행",
+    "count": {
+     "installed": 6,
+     "notInstalled": 3,
+     "rows": 9
+    }
    },
    "measure": null,
    "provider": "각 기관 공식 웹사이트(용역사 취합)",
@@ -11772,7 +13315,9 @@
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-019-0bca8c85.json",
     "observationCount": 0,
     "entityCount": 9,
-    "indicatorIds": []
+    "indicatorIds": [
+     "E-019_kr_agency_office"
+    ]
    }
   },
   {
@@ -11780,18 +13325,22 @@
    "title": "한국 공공·민간 지원체계[지원기관명(NIGT/GTC/KOTRA/KIAT/에너지공단 등), 지원 프로그램명, 지원 유형(실증/FS/기술이전/금융), 지원 대상(기업/연구기관), 예산 규모, 신청 시기, 원본 링크]",
    "kind": "facts",
    "headline": {
-    "value": "7건",
-    "label": "지원제도 · 2026년"
+    "value": "3개",
+    "label": "지원제도 · 활용 사례 7건 · 2026년"
    },
    "preview": {
     "facts": [
      {
-      "label": "한국에너지공단(KEA)",
-      "value": ""
+      "label": "온실가스 국제감축사업(투자지원)",
+      "value": "1건"
      },
      {
-      "label": "한국환경산업기술원(KEITI)",
-      "value": ""
+      "label": "개도국 환경개선 마스터플랜 수립지원(ODA)",
+      "value": "5건"
+     },
+     {
+      "label": "환경기술 국제공동 현지사업화 지원",
+      "value": "1건"
      }
     ],
     "more": 0
@@ -11806,17 +13355,23 @@
    },
    "basis": {
     "unit": "지원제도",
-    "rule": "지원제도 1건 = 원천 1행"
+    "rule": "지원제도 1개 = 같은 제도명(' — ' 앞) · 원천 7행은 활용 사례로 셈",
+    "count": {
+     "identities": 3,
+     "rows": 7
+    }
    },
    "measure": null,
-   "provider": "NIGT·과기정통부·한국에너지공단·KIAT·KEITI·KOICA·KOTRA·한국수출입은행 등 각 기관 공식 웹사이트(용역사 취합) · 한국에너지공단·KOTRA·KEITI·KIAT·한국수출입은행·기후에너지환경부 등 공식 공고 및 언론 보도(용역사 취합)",
+   "provider": "한국환경산업기술원(KEITI) 해외진출지원 실적표 / 한국수출입은행 EDCF 승인현황 / CTCN 기술지원 프로젝트 / 국가녹색기술연구소(NIGT) 실적 / 한국에너지공단 — 레코드별 상이",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-019-0bca8c85.json",
     "observationCount": 0,
     "entityCount": 7,
-    "indicatorIds": []
+    "indicatorIds": [
+     "E-020_kr_support"
+    ]
    }
   }
  ]

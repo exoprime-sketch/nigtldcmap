@@ -99,17 +99,36 @@ const OVERRIDES = {
   "B-036": { kind: "bars" },
   "B-043": { kind: "bars" },
   "B-045": { kind: "bars" },
-  "D-005": { kind: "composition", series: { match: /대표값/u } },
+  "D-005": { measureLabel: "예산 배분 구조", kind: "composition", series: { match: /대표값/u } },
   "D-008": { kind: "bars" },
-  "D-011": { series: { match: TOTAL_LIKE } },
+  "D-011": { series: { match: TOTAL_LIKE }, measureLabel: "총 ODA", headlineLabel: "공식 공여자 총계 · 지출액 · 2024년 불변가격" },
   "D-013": { kind: "bars", series: { match: /차원\(dimension\) 점수/u } },
   "D-018": { kind: "bars", headlineSeries: /베트남 단독/u },
   "E-010": { measure: { label: "GERD" } },
-  "E-012": { measure: { label: "총 취업자 수" } },
+  // The detail's 총 취업자 수 KPI is the all-occupation total (2024, 천명); the
+  // 백만명 series stops at 2023 and would open the detail on a year with no
+  // occupation rows.
+  // Five countries' ranks in rows that differ only by country: the card
+  // compares them and leads with Korea's place (lower rank is better).
+  "E-017": { kind: "countries", measure: { label: "기후기술 수준 순위" }, lead: "KOR", ascending: true },
+  "E-012": { measure: { label: "직군별 종사자 수" }, series: { match: /^전체 직군$/u }, headlineLabel: "총 취업자 수 · 전체 직군 · 전체 성별", measureLabel: "총 취업자 수" },
 };
 
 /** Parts of one denominator, reviewed: composition is drawn only here. */
 const COMPOSITION_ALLOWED = new Set(["A-011", "A-016", "D-005"]);
+
+/**
+ * Elements whose detail is a specialised component with its own selection
+ * keys (PublicDataAnalysisRouterV126): the generic contract dimensions
+ * (category/detail) mean nothing there, so the card hands over only what the
+ * component reads.
+ */
+const SPECIALISED_SELECTION = {
+  "A-016": (selection) => ({ ...selection, dimensions: {} }),
+  "D-005": (selection) => ({ ...selection, dimensions: { budgetBasis: "total-climate" } }),
+  "D-011": (selection) => ({ ...selection, dimensions: {} }),
+  "E-012": (selection) => ({ ...selection, dimensions: {} }),
+};
 
 /** Entity registers: what one row is, and the attribute the card compares across. */
 const ENTITY_RULES = {
@@ -121,7 +140,6 @@ const ENTITY_RULES = {
   "B-017": { unit: "평가구역", kind: "grades", gradeKey: "기준_물스트레스_Baseline_Water_Stress_등급" },
   "B-023": { unit: "관측지점", kind: "facts", distinctBy: "지점_유역명" },
   "B-025": { unit: "유역", kind: "bars", valueKey: "베트남_내_면적_km_GIS_산출", labelKey: "유역명_국문", valueUnit: "km²" },
-  "B-026": { unit: "행", kind: "facts" },
   "B-028": { unit: "관측지점", kind: "facts", distinctBy: "지점_유역명" },
   "B-048": { unit: "광산", kind: "facts", nameFrom: (row) => `${row.normalizedAttributes?.광산명 || row.name} (${row.normalizedAttributes?.광종 || ""})` },
   "C-001": { unit: "항목", kind: "facts" },
@@ -169,20 +187,76 @@ const ENTITY_RULES = {
   "E-015": { unit: "협력체계", kind: "facts" },
   "E-016": { unit: "부문", kind: "facts" },
   "E-018": { unit: "기업", groupBy: "진출_상태", kind: "bars" },
-  "E-019": { unit: "사무소", kind: "facts" },
-  "E-020": { unit: "지원제도", kind: "facts" },
+  // The detail lists installed offices and, apart, the organisations the
+  // source found to have none; the same verdict fields decide here.
+  "E-019": { unit: "현지 사무소", kind: "facts", notInstalled: { keys: ["좌표_정밀도_출처", "recordStatus", "field_6b3e1e90"], pattern: /사무소 미설치|미운영|업무 종료|대상 아님|미설치/u }, notInstalledLabel: "사무소 없는 기관" },
+  // Seven rows are seven uses of three programmes (the detail's identity
+  // rule: the programme name before " — ").
+  "E-020": { unit: "활용 사례", kind: "facts", identity: { key: "field_01856451", split: /\s+—\s+/u, label: "지원제도" } },
 };
 
 /** Province-value layers whose card is a distribution across the 63 provinces. */
-const REGIONAL_LAYERS = new Set(["B-029", "B-030", "B-037", "B-039", "B-040", "B-041", "B-042"]);
+// The detail's subject-country labels (SUBJECT_COUNTRY_LABELS_V138).
+const COUNTRY_KO = { KOR: "한국", CHN: "중국", JPN: "일본", USA: "미국", EUU: "유럽연합", VNM: "베트남" };
+
+const REGIONAL_LAYERS = new Set(["B-026", "B-029", "B-030", "B-037", "B-039", "B-040", "B-041", "B-042"]);
+// Province-attribute deliveries the detail shows as a 63-province distribution
+// (PublicRegionScenarioSummaryV138) but whose map target names no measure:
+// the attribute the detail opens on.
+const REGIONAL_ENTITY_MEASURE = {
+  "B-026": { sourceKey: "우세_유향_비율", label: "우세 유향 비율", unit: "%" },
+};
 const REGION_SCENARIO = { "B-003": { observed: true }, "B-004": {}, "B-005": {}, "B-006": {}, "B-007": {} };
 
 // ------------------------------------------------------------------ helpers
 const catalogById = new Map(catalog.map((item) => [item.elementId, item]));
 const mapTargetById = new Map(mapTargets.map((target) => [target.elementId, target]));
 
-function providerOf(item) {
-  return (item.sourceOrganizations || []).slice(0, 2).join(" · ") || "제공기관 확인";
+/**
+ * The provider of what the card shows: the source organisation the pack's
+ * indicator metadata states for the rows the card used, not the first two
+ * names of the catalogue's organisation list (which put Global Solar Atlas
+ * on the CMIP6 temperature card).
+ */
+function providerFor(pack, indicatorIds, item) {
+  const metas = (pack?.meta?.indicators || []).filter((indicator) => indicatorIds.includes(indicator.indicatorId));
+  const names = [...new Set(metas.map((indicator) => text(indicator.sourceOrg).split(/\s+·\s+경계\s+/u)[0]).filter(Boolean))];
+  const catalogue = item.sourceOrganizations || [];
+  // A register with one indicator per organisation (E-004: 19 offices) names
+  // its collector, the catalogue's organisation, not "ADB 외 18개".
+  if (names.length === 0) {
+    return catalogue.length > 2 ? `${catalogue.slice(0, 2).join(" · ")} 외 ${catalogue.length - 2}개 기관` : catalogue.join(" · ") || "제공기관 확인";
+  }
+  if (names.length > 3) return `기관별 공식 출처 ${names.length}개(상세 자료정보 참조)`;
+  return names.join(" · ");
+}
+
+/** Korean names for the attributes a card compares across; a key is never shown. */
+const GROUP_LABELS = {
+  orgType: "기관 유형",
+  orgCategory: "기관 구분",
+  city: "도시",
+  category: "분류",
+  recordStatus: "자료 상태",
+  standard: "등록 표준",
+  status: "상태",
+  재해유형: "재해 유형",
+  기술유형: "기술 유형",
+  원조유형: "원조 유형",
+  기관유형: "기관 유형",
+  기술분야: "기술 분야",
+  투자유형: "투자 유형",
+  투자_유형: "투자 유형",
+  진출_상태: "진출 상태",
+  보증_유형: "보증 유형",
+  활동상태: "활동 상태",
+  상태: "상태",
+};
+function groupLabelOf(contract, key) {
+  const fromContract = contract.dimensions.find((dimension) => dimension.key === key)?.label;
+  const candidate = GROUP_LABELS[key] || (fromContract && fromContract !== key ? fromContract : null) || key.replace(/_/gu, " ");
+  if (/^[a-z]+[A-Z]|^[a-z_]+$/u.test(candidate)) warn(contract.elementId, `group label still a key: ${candidate}`);
+  return candidate;
 }
 
 function periodOf(item, years) {
@@ -270,6 +344,28 @@ function observationCard(elementId, item, pack, contract, override) {
   const unit = unitShort(measure.unit);
   const kind = override?.kind;
 
+  // A comparison across countries (rows told apart by countryIso3, not by a
+  // dimension), leading with the platform's own country.
+  if (kind === "countries") {
+    const year = yearsOf(numericRows).at(-1);
+    const parts = numericRows
+      .filter((row) => row.year === year)
+      .map((row) => ({ label: COUNTRY_KO[row.countryIso3] || row.countryIso3, value: row.value, iso3: row.countryIso3 }))
+      .sort((a, b) => (override.ascending ? a.value - b.value : b.value - a.value));
+    const lead = parts.find((part) => part.iso3 === override.lead) || parts[0];
+    return {
+      kind: "bars",
+      headline: { value: `${formatNumber(lead.value)} ${unit}`, label: `${lead.label} · ${measure.labelKo} · ${parts.length}개국 중 · ${year}년${override.ascending ? " · 값이 작을수록 우수" : ""}` },
+      preview: { parts: parts.map(({ label, value }) => ({ label, value })), unit, scope: `${parts.length}개국 비교 · ${year}년`, omitted: 0 },
+      period: periodOf(item, yearsOf(numericRows)),
+      selection: selectionFor(measureKey, null, year ?? null, null, contract),
+      basis: { unit: "관측값", rule: `${measure.labelKo}(${unit}) ${year}년 ${parts.length}개국 값 비교 · 대표값은 한국` },
+      measure: { key: measureKey, label: measure.labelKo, unit },
+      headlineIndicatorIds: [...new Set(numericRows.map((row) => row.indicatorId))],
+      leadCountry: override.lead,
+    };
+  }
+
   // A composition or a comparison across the series at one year.
   if (kind === "composition" || kind === "bars") {
     const candidates = override?.series?.match ? series.filter((s) => Object.values(s.labels).some((label) => override.series.match.test(label))) : series;
@@ -291,7 +387,10 @@ function observationCard(elementId, item, pack, contract, override) {
     );
     // When both a short category and its long description vary, the short
     // one is the name; the description repeats it.
-    const shortest = [...varyingKeys].sort(
+    // …but only a key every part carries: D-018's 베트남 단독사업 series has no
+    // "detail", so choosing it would leave that part unnamed.
+    const complete = varyingKeys.filter((key) => usable.every((s) => String(s.labels[key] || "").trim()));
+    const shortest = [...(complete.length ? complete : varyingKeys)].sort(
       (a, b) => usable.reduce((sum, s) => sum + String(s.labels[a] || "").length, 0) - usable.reduce((sum, s) => sum + String(s.labels[b] || "").length, 0)
     )[0];
     const varying = new Set(shortest ? [shortest] : []);
@@ -299,7 +398,7 @@ function observationCard(elementId, item, pack, contract, override) {
       .map((s) => {
         const row = s.rows.find((r) => isNumeric(r) && (Number.isFinite(year) ? r.year === year : true));
         const labels = Object.fromEntries(Object.entries(s.labels).filter(([key]) => varying.size === 0 || varying.has(key)));
-        return row ? { label: partLabel({ ...s, labels }, override), value: row.value } : null;
+        return row ? { label: partLabel({ ...s, labels }, override), value: row.value, indicatorIds: [...new Set(s.rows.map((r) => r.indicatorId))] } : null;
       })
       .filter(Boolean)
       .sort((a, b) => b.value - a.value);
@@ -313,11 +412,23 @@ function observationCard(elementId, item, pack, contract, override) {
       headline: kind === "composition" && COMPOSITION_ALLOWED.has(elementId)
         ? { value: `${formatNumber(top.value)} ${unit}`, label: `${top.label} · ${scope}${parts.length > 1 ? ` · ${parts.length}개 부분 합계 ${formatNumber(total)} ${unit}` : ""}` }
         : { value: `${formatNumber(top.value)} ${unit}`, label: `${measure.labelKo}${override?.headlineSeries ? "" : " 최대"} · ${top.label} · ${scope}` },
-      preview: { parts: shown, unit, scope, omitted: parts.length - shown.length, total: kind === "composition" ? total : null },
+      preview: { parts: shown.map(({ label, value }) => ({ label, value })), unit, scope, omitted: parts.length - shown.length, total: kind === "composition" ? total : null },
+      // The rows behind the headline: the named part when one is named, else
+      // every compared part (the headline is their maximum).
+      headlineIndicatorIds: override?.headlineSeries ? top.indicatorIds : [...new Set(parts.flatMap((part) => part.indicatorIds))],
       period: periodOf(item, yearsOf(numericRows)),
-      selection: selectionFor(measureKey, override?.series?.match ? usable[0] : null, Number.isFinite(year) ? year : null, null, contract),
+      // A comparison across parts hands over only what every part shares
+      // (the "(기준값)" bound, the "차원 점수" level), never the category that
+      // varies between them: fixing it would open the detail on one part.
+      selection: selectionFor(
+        measureKey,
+        override?.series?.match ? { dimensions: Object.fromEntries(Object.entries(usable[0]?.dimensions || {}).filter(([key, value]) => usable.every((s) => s.dimensions?.[key] === value))) } : null,
+        Number.isFinite(year) ? year : null,
+        null,
+        contract
+      ),
       basis: { unit: "관측값", rule: `${measure.labelKo}(${unit})을 ${scope} 기준으로 ${parts.length}개 항목에서 비교${override?.excludeTotal ? " · 합계 행 제외" : ""}${override?.note ? ` · ${override.note}` : ""}` },
-      measure: { key: measureKey, label: measure.labelKo, unit },
+      measure: { key: measureKey, label: override?.measureLabel || measure.labelKo, unit },
     };
   }
   return levelOrLine(elementId, item, contract, measure, series, override, rows);
@@ -365,11 +476,12 @@ function levelOrLine(elementId, item, contract, measure, series, override, rows)
   const label = seriesLabel(chosen);
   const scopeYear = Number.isFinite(latest.year) ? `${latest.year}년` : latest.period || "";
   const selection = selectionFor(measure.key, series.length > 1 ? chosen : null, Number.isFinite(latest.year) ? latest.year : null, latest.period || null, contract);
+  const measureLabel = override?.measureLabel || measure.labelKo;
   const base = {
-    headline: { value: `${formatNumber(latest.value)} ${unit}`, label: [measure.labelKo !== label ? measure.labelKo : null, label, scopeYear].filter(Boolean).join(" · ") },
+    headline: { value: `${formatNumber(latest.value)} ${unit}`, label: override?.headlineLabel ? `${override.headlineLabel} · ${scopeYear}` : [measureLabel !== label ? measureLabel : null, label, scopeYear].filter(Boolean).join(" · ") },
     period: periodOf(item, years),
     selection,
-    measure: { key: measure.key, label: measure.labelKo, unit },
+    measure: { key: measure.key, label: measureLabel, unit },
   };
   if (years.length >= 3) {
     const points = years.map((year) => ({ year, value: numeric.find((row) => row.year === year).value }));
@@ -398,7 +510,7 @@ function textFactsCard(elementId, item, measure, rows) {
   // A register of a few stated facts leads with the first statement, which
   // the detail prints as it is; a count of statements is not on the detail.
   const lead = facts[0];
-  const leadIsStatement = Boolean(lead) && !/^EPSG|^[\d.,\s]+$/u.test(lead.value);
+  const leadIsStatement = Boolean(lead) && !/^[\d.,\s]+$/u.test(lead.value);
   return {
     kind: "facts",
     headline: lead && leadIsStatement && populated.length <= 3
@@ -414,7 +526,14 @@ function textFactsCard(elementId, item, measure, rows) {
 
 // ------------------------------------------------------------------ entity cards
 function entityCard(elementId, item, pack, contract, rule) {
-  const entities = pack.entities.records;
+  // The detail excludes the source's total/explanatory rows (레코드구분=집계)
+  // from every list and sum; the card counts the same base.
+  // …and the sheet's own "수집현황 v5.29 분류" method row, which the detail's
+  // evidence matrix drops (isCompilerMethodRowV139).
+  const isMethodRow = (row) => [row.name, row.normalizedAttributes?.["속성1_레코드명"]].some((name) => /^수집현황(?:\s*v[\d.]+)?(?:\s*분류)?$/u.test(text(name)));
+  const entities = pack.entities.records.filter((row) => text(row.normalizedAttributes?.레코드구분) !== "집계" && !isMethodRow(row));
+  const aggregateRows = pack.entities.records.length - entities.length;
+  const aggregateNote = aggregateRows ? ` · 원천의 집계·설명 행 ${aggregateRows}건 제외` : "";
   let rows = entities;
   if (rule.individualOnly) {
     const individual = entities.filter((row) => text(row.normalizedAttributes?.레코드구분) === "개별");
@@ -426,6 +545,33 @@ function entityCard(elementId, item, pack, contract, rule) {
   }
   const nameOf = rule.nameFrom || ((row) => row.name);
   const distinct = rule.distinctBy ? new Set(rows.map((row) => text(row.normalizedAttributes?.[rule.distinctBy] || row.name))).size : rows.length;
+  // Installed offices vs. organisations the source found to have none (E-019).
+  if (rule.notInstalled) {
+    const notInstalled = rows.filter((row) => rule.notInstalled.keys.some((key) => rule.notInstalled.pattern.test(String(row.normalizedAttributes?.[key] ?? ""))));
+    const installed = rows.filter((row) => !notInstalled.includes(row));
+    return {
+      kind: "facts",
+      headline: { value: `${formatNumber(installed.length)}곳`, label: `${rule.unit} · ${rule.notInstalledLabel} ${notInstalled.length}곳은 별도 · ${periodOf(item, yearsFromEntities(rows))}` },
+      preview: { facts: installed.slice(0, 3).map((row) => ({ label: text(nameOf(row)), value: "" })), more: Math.max(0, installed.length - 3), note: notInstalled.length ? `${rule.notInstalledLabel}: ${notInstalled.map((row) => text(nameOf(row))).join(", ")}` : undefined },
+      period: periodOf(item, yearsFromEntities(rows)),
+      selection: { measure: null, sex: null, year: null, period: null, dimensions: {} },
+      basis: { unit: rule.unit, rule: `원천이 '사무소 미설치'로 표시한 기관은 사무소로 세지 않음 · 사무소 ${installed.length}곳 + 없는 기관 ${notInstalled.length}곳 = 원천 ${rows.length}행`, count: { installed: installed.length, notInstalled: notInstalled.length, rows: rows.length } },
+      measure: null,
+    };
+  }
+  // Rows are uses of a smaller set of programmes (E-020).
+  if (rule.identity) {
+    const identities = [...new Set(rows.map((row) => text(row.normalizedAttributes?.[rule.identity.key]).split(rule.identity.split)[0].trim()).filter(Boolean))];
+    return {
+      kind: "facts",
+      headline: { value: `${formatNumber(identities.length)}개`, label: `${rule.identity.label} · ${rule.unit} ${rows.length}건 · ${periodOf(item, yearsFromEntities(rows))}` },
+      preview: { facts: identities.slice(0, 3).map((name) => ({ label: name, value: `${rows.filter((row) => text(row.normalizedAttributes?.[rule.identity.key]).split(rule.identity.split)[0].trim() === name).length}건` })), more: Math.max(0, identities.length - 3) },
+      period: periodOf(item, yearsFromEntities(rows)),
+      selection: { measure: null, sex: null, year: null, period: null, dimensions: {} },
+      basis: { unit: rule.identity.label, rule: `${rule.identity.label} 1개 = 같은 제도명(' — ' 앞) · 원천 ${rows.length}행은 ${rule.unit}로 셈`, count: { identities: identities.length, rows: rows.length } },
+      measure: null,
+    };
+  }
   const period = periodOf(item, yearsFromEntities(rows));
   const selection = { measure: null, sex: null, year: null, period: null, dimensions: {} };
 
@@ -438,7 +584,7 @@ function entityCard(elementId, item, pack, contract, rule) {
       counts.set(value, (counts.get(value) || 0) + 1);
     }
     const parts = [...counts.entries()].map(([label, value]) => ({ label, value })).sort((a, b) => b.value - a.value);
-    const groupLabel = contract.dimensions.find((dimension) => dimension.key === rule.groupBy)?.label || rule.groupBy.replace(/_/gu, " ");
+    const groupLabel = groupLabelOf(contract, rule.groupBy);
     if (parts.length >= 2) {
       return {
         kind: "bars",
@@ -446,7 +592,7 @@ function entityCard(elementId, item, pack, contract, rule) {
         preview: { parts: parts.slice(0, 6), unit: `${rule.unit} 수`, scope: `${groupLabel}별`, omitted: parts.length - Math.min(parts.length, 6), unlabelled },
         period,
         selection: { ...selection, dimensions: {} },
-        basis: { unit: rule.unit, rule: `${rule.unit} 1건 = 원천 1행${rule.individualOnly ? "(레코드구분=개별)" : ""}${rule.currentOnly ? "(현행 행만)" : ""} · ${groupLabel}별 건수${unlabelled ? ` · ${groupLabel} 미기재 ${unlabelled}건` : ""}` },
+        basis: { unit: rule.unit, rule: `${rule.unit} 1건 = 원천 1행${rule.individualOnly ? "(레코드구분=개별)" : ""}${rule.currentOnly ? "(현행 행만)" : ""}${aggregateNote} · ${groupLabel}별 건수${unlabelled ? ` · ${groupLabel} 미기재 ${unlabelled}건` : ""}`, count: { rows: rows.length, sourceRows: pack.entities.records.length } },
         measure: null,
       };
     }
@@ -527,7 +673,7 @@ function entityCard(elementId, item, pack, contract, rule) {
     preview: { facts: names.slice(0, 3).map((name) => ({ label: name, value: "" })), more: Math.max(0, names.length - 3) },
     period,
     selection,
-    basis: { unit: rule.unit, rule: `${rule.unit} 1건 = 원천 1행${rule.distinctBy ? ` · ${rule.distinctBy.replace(/_/gu, " ")} 기준 중복 제거` : ""}${rule.note ? ` · ${rule.note}` : ""}` },
+    basis: { unit: rule.unit, rule: `${rule.unit} 1건 = 원천 1행${rule.individualOnly ? "(레코드구분=개별)" : ""}${rule.currentOnly ? "(현행 행만)" : ""}${aggregateNote}${rule.distinctBy ? ` · ${rule.distinctBy.replace(/_/gu, " ")} 기준 중복 제거` : ""}${rule.note ? ` · ${rule.note}` : ""}`, count: { rows: rows.length, distinct, sourceRows: pack.entities.records.length } },
     measure: null,
   };
 }
@@ -553,7 +699,7 @@ function yearsFromEntities(rows) {
 // ------------------------------------------------------------------ provinces
 function regionalCard(elementId, item, pack, contract) {
   const target = mapTargetById.get(elementId);
-  const measures = (target?.build?.measures || []).filter((measure) => measure.sourceKey);
+  const measures = REGIONAL_ENTITY_MEASURE[elementId] ? [REGIONAL_ENTITY_MEASURE[elementId]] : (target?.build?.measures || []).filter((measure) => measure.sourceKey);
   const all = pack.entities.records;
   const rows = all.filter((row) => !/^(전국|country)$/iu.test(text(row.normalizedAttributes?.행정단위)));
   const chosen = measures.find((measure) => rows.some((row) => numberOf(row.normalizedAttributes?.[measure.sourceKey]) !== null));
@@ -562,7 +708,9 @@ function regionalCard(elementId, item, pack, contract) {
   for (const row of rows) {
     const value = numberOf(row.normalizedAttributes?.[chosen.sourceKey]);
     if (value === null) continue;
-    const name = text(row.normalizedAttributes?.["지역명_로마자"] || row.normalizedAttributes?.["2025_개편_후_소속_34개_체계"] || row.name);
+    // The detail names a province by its Vietnamese name, else the romanised
+    // name split at case changes ("BinhThuan" → "Binh Thuan").
+    const name = (text(row.normalizedAttributes?.["지역명_베트남어"]) || text(row.normalizedAttributes?.["지역명_로마자"] || row.normalizedAttributes?.["2025_개편_후_소속_34개_체계"] || row.name)).replace(/(\p{Ll})(\p{Lu})/gu, "$1 $2");
     if (!byProvince.has(name)) byProvince.set(name, value);
   }
   const values = [...byProvince.values()];
@@ -578,7 +726,9 @@ function regionalCard(elementId, item, pack, contract) {
     headline: { value: `${formatNumber(top.value)} ${unit}`, label: `${chosen.label} 최대 · ${top.label} · ${byProvince.size}개 성·시 중 · ${period}` },
     preview: { parts: parts.slice(0, 5), unit, scope: `${chosen.label} 상위 5개 성·시`, median: median(values), range: { min: quantile(values, 0), p10: quantile(values, 0.1), p90: quantile(values, 0.9), max: quantile(values, 1) }, provinces: byProvince.size },
     period,
-    selection: { measure: null, sex: null, year: null, period: null, dimensions: { mapVariable: chosen.sourceKey } },
+    // The province screen (PublicRegionScenarioSummaryV138) reads its measure
+    // from dim.regionMeasure; B-040 opened on 심도 2km while the card showed 1km.
+    selection: { measure: null, sex: null, year: null, period: null, dimensions: { regionMeasure: chosen.sourceKey } },
     basis: { unit: "성·시 값", rule: `${chosen.label}(${unit}) ${byProvince.size}개 성·시 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만` },
     measure: { key: chosen.sourceKey, label: chosen.label, unit },
   };
@@ -622,7 +772,7 @@ function regionScenarioCard(elementId, item, pack, contract, options) {
       const maxYear = Math.max(...allYears);
       return options.observed ? `${minYear}–${maxYear}년` : `${minYear}–${maxYear}년 (과거 모형 ${minYear}–2014 · 전망 2015–${maxYear})`;
     })(),
-    selection: { measure: null, sex: null, year: anchor.year, period: null, dimensions: scenario ? { mapVariable: chosen.sourceKey, scenario } : { mapVariable: chosen.sourceKey } },
+    selection: { measure: null, sex: null, year: anchor.year, period: null, dimensions: scenario ? { regionMeasure: chosen.sourceKey, scenario } : { regionMeasure: chosen.sourceKey } },
     basis: { unit: "성·시 값", rule: `${chosen.label} ${scenario ? `${scenarioLabel} 시나리오의 ` : ""}63개 성·시 값 중앙값 추이 · 10~90분위는 지역 간 분포이며 모형 불확실성이 아님${scenario ? " · 과거(historical)와 SSP 구간은 잇지 않음" : ""}` },
     measure: { key: chosen.sourceKey, label: chosen.label, unit },
   };
@@ -650,7 +800,11 @@ for (const item of [...catalog].sort((a, b) => a.elementId.localeCompare(b.eleme
         period: homeCard.period,
         selection: homeCard.selection || null,
         basis: { unit: "홈과 동일", rule: "홈 주요 데이터와 같은 요약자산(home-preview-v139)" },
-        measure: null,
+        // The measure the home card summarised, so the provenance names its
+        // indicators rather than every indicator of the element.
+        measure: homeCard.selection?.measure
+          ? { key: homeCard.selection.measure, label: contract.measures.find((m) => m.key === homeCard.selection.measure)?.labelKo || "", unit: contract.measures.find((m) => m.key === homeCard.selection.measure)?.unit || "" }
+          : null,
         fromHome: true,
       };
     } else if (REGION_SCENARIO[elementId]) {
@@ -658,7 +812,7 @@ for (const item of [...catalog].sort((a, b) => a.elementId.localeCompare(b.eleme
     } else if (observations.length && !(ENTITY_RULES[elementId] && !observations.some(isNumeric))) {
       card = observationCard(elementId, item, pack, contract, OVERRIDES[elementId]);
       if (!card && entities.length && ENTITY_RULES[elementId]) card = entityCard(elementId, item, pack, contract, ENTITY_RULES[elementId]);
-    } else if (REGIONAL_LAYERS.has(elementId) && mapConnected.has(elementId)) {
+    } else if (REGIONAL_LAYERS.has(elementId)) {
       card = regionalCard(elementId, item, pack, contract) || (ENTITY_RULES[elementId] ? entityCard(elementId, item, pack, contract, ENTITY_RULES[elementId]) : null);
     } else if (ENTITY_RULES[elementId]) {
       card = entityCard(elementId, item, pack, contract, ENTITY_RULES[elementId]);
@@ -673,7 +827,22 @@ for (const item of [...catalog].sort((a, b) => a.elementId.localeCompare(b.eleme
     warn(elementId, "no card could be built");
     card = { kind: "facts", headline: { value: "—", label: "요약 없음" }, preview: { facts: [] }, period: periodOf(item), selection: null, basis: { unit: "—", rule: "규칙 없음" }, measure: null };
   }
-  const provider = providerOf(item);
+  const measureRows = card.measure?.key ? semanticRows(observations, semanticByElement.get(elementId)).filter((row) => row.measure?.key === card.measure.key) : [];
+  const measureIndicatorIds = [...new Set(measureRows.map((row) => row.indicatorId))];
+  // The rows the headline figure came from: the measure narrowed by every
+  // dimension the card handed over, so a re-count from the download file
+  // has one series to read.
+  const handed = Object.entries(card.selection?.dimensions || {});
+  const headlineRows = handed.length
+    ? measureRows.filter((row) => handed.every(([key, value]) => row.dimensions?.[key] === value || row.dimensionLabels?.[key] === value))
+    : measureRows;
+  const headlineIndicatorIds = card.headlineIndicatorIds || [...new Set(headlineRows.map((row) => row.indicatorId))];
+  delete card.headlineIndicatorIds;
+  if (SPECIALISED_SELECTION[elementId] && card.selection) card.selection = SPECIALISED_SELECTION[elementId](card.selection);
+  const usedIndicatorIds = measureIndicatorIds.length
+    ? measureIndicatorIds
+    : [...new Set([...observations.map((row) => row.indicatorId), ...entities.map((row) => row.indicatorId)].filter(Boolean))];
+  const provider = homeCard ? homeCard.provider : providerFor(pack, usedIndicatorIds, item);
   const entry = {
     elementId,
     title: item.elementLabel,
@@ -681,7 +850,7 @@ for (const item of [...catalog].sort((a, b) => a.elementId.localeCompare(b.eleme
     provider,
     mapConnected: mapConnected.has(elementId),
     downloadable: Boolean(item.downloadAllowed && (item.downloadableRecordCount || 0) > 0),
-    provenance: { packUrl: pack?.packUrl || null, observationCount: observations.length, entityCount: entities.length, indicatorIds: card.measure?.key ? [...new Set(observations.filter((row) => (semanticRows([row], semanticByElement.get(elementId))[0]?.measure?.key) === card.measure.key).map((row) => row.indicatorId))].slice(0, 8) : [] },
+    provenance: { packUrl: pack?.packUrl || null, observationCount: observations.length, entityCount: entities.length, indicatorIds: usedIndicatorIds, headlineIndicatorIds: headlineIndicatorIds.length ? headlineIndicatorIds : undefined },
   };
   cards.push(entry);
   review.push(`| ${elementId} | ${card.kind} | ${card.headline.value} | ${card.headline.label} | ${card.period} | ${card.basis.rule} |`);

@@ -9,6 +9,13 @@ import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import { publicScaledNumberV136_2 } from "../../../utils/publicNumberScaleV136_2";
 import "./public-portfolio-summary-v132.css";
 
+/** 을/를 by the final syllable of a Korean word (Hangul with no final consonant takes 를). */
+function objectParticleV140(word: string): string {
+  const code = word.charCodeAt(word.length - 1);
+  if (code < 0xac00 || code > 0xd7a3) return "을";
+  return (code - 0xac00) % 28 === 0 ? "를" : "을";
+}
+
 interface Props {
   elementId: string;
   entities: VietnamEntityV124[];
@@ -313,7 +320,7 @@ export default function PublicPortfolioSummaryV132({
           note survives, because how the totals were reached is something the
           reader cannot infer from the figures. */}
       <header className="pps132-heading">
-        <p>{`공개된 ${config?.recordLabel || "사업"}을 집계하며, 통화가 확인된 금액만 통화별로 합산합니다.`}</p>
+        <p>{`공개된 ${config?.recordLabel || "사업"}${objectParticleV140(config?.recordLabel || "사업")} 집계하며, 통화가 확인된 금액만 통화별로 합산합니다.`}</p>
         {analysis.aggregateCount > 0 && (
           <p data-portfolio-note="aggregate-excluded">
             {`원천이 집계·설명 행으로 표시한 ${analysis.aggregateCount.toLocaleString("ko-KR")}건은 개별 ${config?.recordLabel || "사업"}이 아니므로 합계와 건수에서 제외했습니다. 해당 행은 목록과 상세, 다운로드에서 그대로 확인할 수 있습니다.`}

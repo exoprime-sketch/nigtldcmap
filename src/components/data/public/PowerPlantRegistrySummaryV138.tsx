@@ -81,18 +81,18 @@ export default function PowerPlantRegistrySummaryV138({ entities }: Props) {
     };
     // Per registry and per fuel: how many rows, and the capacity those rows
     // state. Kept apart because the registries overlap by an unknown amount.
-    const byFuel = new Map<string, { wri: number; osm: number; wriMw: number; osmMw: number }>();
+    const byFuel = new Map<string, { wri: number; osm: number; wriMw: number; osmMw: number; wriStated: number; osmStated: number }>();
     entities.forEach((entity) => {
       const attributes = (entity.normalizedAttributes || {}) as Record<string, unknown>;
       const label = fuelOf(attributes);
-      const entry = byFuel.get(label) || { wri: 0, osm: 0, wriMw: 0, osmMw: 0 };
-      const capacity = capacityOf(attributes) || 0;
+      const entry = byFuel.get(label) || { wri: 0, osm: 0, wriMw: 0, osmMw: 0, wriStated: 0, osmStated: 0 };
+      const capacity = capacityOf(attributes);
       if (entity.indicatorId === WRI_INDICATOR) {
         entry.wri += 1;
-        entry.wriMw += capacity;
+        if (capacity !== null) { entry.wriMw += capacity; entry.wriStated += 1; }
       } else {
         entry.osm += 1;
-        entry.osmMw += capacity;
+        if (capacity !== null) { entry.osmMw += capacity; entry.osmStated += 1; }
       }
       byFuel.set(label, entry);
     });
@@ -162,9 +162,9 @@ export default function PowerPlantRegistrySummaryV138({ entities }: Props) {
                 <tr>
                   <th scope="col">발전원</th>
                   <th scope="col">WRI 발전소(기)</th>
-                  <th scope="col">WRI 설비용량(MW)</th>
+                  <th scope="col">WRI 설비용량(MW) · 용량 기재</th>
                   <th scope="col">OSM 시설(곳)</th>
-                  <th scope="col">OSM 설비용량(MW)</th>
+                  <th scope="col">OSM 설비용량(MW) · 용량 기재</th>
                 </tr>
               </thead>
               <tbody>
@@ -172,11 +172,20 @@ export default function PowerPlantRegistrySummaryV138({ entities }: Props) {
                   <tr key={label} data-fuel={label}>
                     <th scope="row"><PublicTermTextV134 text={label} /></th>
                     <td>{entry.wri.toLocaleString("ko-KR")}</td>
-                    <td>{entry.wriMw > 0 ? formatPublicNumberV126(entry.wriMw, "MW") : "—"}</td>
+                    <td>{entry.wriStated > 0 ? `${formatPublicNumberV126(entry.wriMw, "MW")} · ${entry.wriStated.toLocaleString("ko-KR")}기` : "—"}</td>
                     <td>{entry.osm.toLocaleString("ko-KR")}</td>
-                    <td>{entry.osmMw > 0 ? formatPublicNumberV126(entry.osmMw, "MW") : "—"}</td>
+                    <td>{entry.osmStated > 0 ? `${formatPublicNumberV126(entry.osmMw, "MW")} · ${entry.osmStated.toLocaleString("ko-KR")}곳` : "—"}</td>
                   </tr>
                 ))}
+                {/* Each registry's own total, on the same rows as the fuel
+                    lines above; the two totals are never added together. */}
+                <tr className="pps132-total-row" data-testid="power-plant-fuel-total-v140">
+                  <th scope="row">합계(원천별)</th>
+                  <td>{summary.wri.toLocaleString("ko-KR")}</td>
+                  <td>{summary.wriCapacity.count > 0 ? `${formatPublicNumberV126(summary.wriCapacity.total, "MW")} · ${summary.wriCapacity.count.toLocaleString("ko-KR")}기 (미기재 ${(summary.wri - summary.wriCapacity.count).toLocaleString("ko-KR")}기)` : "—"}</td>
+                  <td>{summary.osm.toLocaleString("ko-KR")}</td>
+                  <td>{summary.osmCapacity.count > 0 ? `${formatPublicNumberV126(summary.osmCapacity.total, "MW")} · ${summary.osmCapacity.count.toLocaleString("ko-KR")}곳 (미기재 ${(summary.osm - summary.osmCapacity.count).toLocaleString("ko-KR")}곳)` : "—"}</td>
+                </tr>
               </tbody>
             </table>
           </div>

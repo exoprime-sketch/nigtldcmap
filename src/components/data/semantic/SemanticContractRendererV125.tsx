@@ -134,7 +134,15 @@ export default function SemanticContractRendererV125({
         </header>
       )}
       {renderer === "policy-timeline" ? (
-        <PolicyTimelineV125 rows={presentRows} entities={entities} />
+        <>
+          {/* A numeric measure with several categories at one time (B-015's
+              ETS facility counts by sector) is a comparison; the timeline
+              alone listed "51" with no unit and no ranking (V140). */}
+          {numericRows.length >= 2 && new Set(numericRows.map((row) => categoryLabelV125(row))).size >= 2 && (
+            <CategoryComparisonV125 rows={numericRows} />
+          )}
+          <PolicyTimelineV125 rows={presentRows} entities={entities} />
+        </>
       ) : renderer === "evidence-matrix" ? (
         <EvidenceMatrixV125 rows={presentRows} entities={entities} />
       ) : (
@@ -246,10 +254,26 @@ function renderObservationPanelV125(
       // ("2025-2030") have none, and C-016 drew nothing at all - 639 published
       // province capacities under an empty chart. Compare what is actually
       // there instead of leaving the reader with a heading and no analysis.
+      // Two delivered years (B-036: 2020 and 2024): the reader's year choice
+      // decides the primary comparison across categories, and the change
+      // between the two years follows as the second panel; the year selector
+      // used to change nothing on the screen (V140).
       return (
         <>
           {contextRows.some((row) => typeof row.year === "number") ? (
-            <TrendPanelV125 elementId={elementId} rows={contextRows} />
+            comparableYearCountV135(contextRows.filter((row): row is NumericRowV125 => isNumericRowV125(row) && typeof row.year === "number")) === 2 && numericRows.length > 0 ? (
+              <>
+                {typeof numericRows[0]?.year === "number" && numericRows.every((row) => row.year === numericRows[0].year) && (
+                  <p className="sv125-contract-help" data-testid="selected-year-statement-v140">
+                    선택한 {numericRows[0].year}년 값을 항목별로 비교합니다. 연도 선택기로 다른 시점을 볼 수 있으며, 두 시점의 변화는 아래 추이에서 확인합니다.
+                  </p>
+                )}
+                <CategoryComparisonV125 rows={numericRows} />
+                <TrendPanelV125 elementId={elementId} rows={contextRows} />
+              </>
+            ) : (
+              <TrendPanelV125 elementId={elementId} rows={contextRows} />
+            )
           ) : (
             numericRows.length > 0 && <CategoryComparisonV125 rows={numericRows} />
           )}
@@ -1217,7 +1241,8 @@ function PolicyTimelineV125({
       key: row.recordId,
       date: String(row.year || row.period || row.provenance.referenceYear || ""),
       title: row.displayLabel,
-      detail: formatValueV121(row.value),
+      // A value states its unit ("51 개소", not "51").
+      detail: typeof row.value === "number" && publicTextV126(row.unit) ? `${formatValueV121(row.value)} ${publicTextV126(row.unit)}` : formatValueV121(row.value),
       sourceUrl: row.provenance.sourceUrl || "",
     })),
     ...entities.map((entity) => ({
@@ -1261,7 +1286,7 @@ function PolicyTimelineV125({
   ].sort((left, right) => timelineSortV125(left.date) - timelineSortV125(right.date));
   if (items.length === 0) return null;
   return (
-    <VisualizationFrameV125 eyebrow="연대기" title="정책·협정 타임라인">
+    <VisualizationFrameV125 eyebrow="연대기" title={`시점별 기록 · ${items.length.toLocaleString("ko-KR")}건`}>
       <ol className="sv125-policy-timeline">
         {items.map((item) => (
           <li key={item.key}>
@@ -1339,7 +1364,7 @@ function EvidenceMatrixV125({
   // Rows stay in source order; a group is named once, on its first row.
   let lastGroup: string | null = null;
   return (
-    <VisualizationFrameV125 eyebrow="확인 결과" title="항목별 확인 결과와 기준연도">
+    <VisualizationFrameV125 eyebrow="확인 결과" title={`항목별 확인 결과와 기준연도 · ${items.length.toLocaleString("ko-KR")}건`}>
       <div className="sv125-matrix-wrap">
         <table className="sv125-evidence-matrix" data-testid="evidence-matrix-v138" data-has-units={hasUnits ? "true" : "false"}>
           <thead>
@@ -1448,7 +1473,7 @@ function DirectoryEntitiesV125({
       title={
         notInstalled.length
           ? `기관 디렉터리 · 현지 사무소 ${installed.length.toLocaleString("ko-KR")}곳`
-          : "기관 디렉터리"
+          : `기관 디렉터리 · ${entities.length.toLocaleString("ko-KR")}곳`
       }
     >
       <PublicEntityCardGridV131
@@ -1608,7 +1633,7 @@ function GenericEntitiesV125({
   return (
     <VisualizationFrameV125
       eyebrow={publicCollectionEyebrowV136_2(detailTemplate)}
-      title={publicCollectionTitleV136_2(detailTemplate)}
+      title={`${publicCollectionTitleV136_2(detailTemplate)} · ${entities.length.toLocaleString("ko-KR")}건`}
     >
       <PublicEntityCardGridV131
         entities={entities}

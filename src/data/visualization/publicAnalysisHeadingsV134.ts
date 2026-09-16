@@ -216,9 +216,17 @@ function publicQuestionForSpecV134(spec: ElementPresentationSpecV100): string {
 const DEPTH_CORRECTED_ANALYSIS_TITLES_V135: Readonly<Record<string, string>> =
   Object.freeze({
     "B-001": "건기와 우기의 최근 수준과 항목별 차이",
+    // B-036 is filed as spatial, but its rows are land-use types at two
+    // years, not provinces (V140).
+    "B-036": "토지 유형별 이용·피복 변화율과 두 시점 변화",
     "B-023": "건기/우기 유량 차이의 최근 수준과 항목별 차이",
     "E-009": "과학기술 인력의 최근 수준과 항목별 차이",
   });
+
+/** Primary chart titles that name the dimension the chart actually compares (V140). */
+const PRIMARY_TITLE_CORRECTIONS_V140: Readonly<Record<string, string>> = Object.freeze({
+  "B-036": "선택연도 토지 유형별 변화율 비교",
+});
 
 /** Elements whose public copy was authored and verified individually. */
 export const SPECIALIZED_PUBLIC_HEADING_ELEMENT_IDS_V134: ReadonlySet<string> =
@@ -234,10 +242,12 @@ export const PUBLIC_ANALYSIS_HEADINGS_V134: readonly PublicAnalysisHeadingsV134[
         publicQuestion: publicQuestionForSpecV134(spec),
       };
       const corrected = DEPTH_CORRECTED_ANALYSIS_TITLES_V135[spec.elementId];
+      const primaryCorrected = PRIMARY_TITLE_CORRECTIONS_V140[spec.elementId];
       return {
         elementId: spec.elementId,
         ...base,
         ...(corrected ? { publicAnalysisTitle: corrected } : {}),
+        ...(primaryCorrected ? { primaryChartTitle: primaryCorrected } : {}),
       };
     })
   );
