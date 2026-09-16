@@ -46,6 +46,9 @@ import PowerPlantRegistrySummaryV138 from "./PowerPlantRegistrySummaryV138";
 import ProvinceSeriesAnalysisV140, {
   provinceSeriesShapeV140,
 } from "./ProvinceSeriesAnalysisV140";
+import TransmissionNetworkSummaryV140, {
+  isTransmissionDeliveryV140,
+} from "./TransmissionNetworkSummaryV140";
 import PublicIndicatorMeaningV129 from "./PublicIndicatorMeaningV129";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import PublicRawDataTablesV126 from "./PublicRawDataTablesV126";
@@ -366,6 +369,25 @@ export default function PublicDataAnalysisRouterV126({
               semantics={semantics}
               observations={observations}
               entities={nationalSeriesEntities}
+              countryNameKo={countryNameKo}
+              detailTemplate={detailTemplate}
+              elementTitle={copy.title}
+              selectorState={selectorState}
+              onSelectorStateChange={onSelectorStateChange}
+              showRawTable={false}
+            />
+          </>
+        ) : elementId === "A-024" && isTransmissionDeliveryV140(entities) ? (
+          // The 2016 network and the PDP8 plan rows are counted apart; the
+          // archetype's own "722건 · 2016" KPI came from a source row that
+          // counts both, so the archetype gets only the list.
+          <>
+            <TransmissionNetworkSummaryV140 entities={entities} />
+            <SemanticArchetypePreviewV125
+              contract={adapterContract}
+              semantics={semantics}
+              observations={[]}
+              entities={entities}
               countryNameKo={countryNameKo}
               detailTemplate={detailTemplate}
               elementTitle={copy.title}

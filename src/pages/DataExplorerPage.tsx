@@ -864,7 +864,7 @@ export default function DataExplorerPage({
             <dl className="cdp-card__facts cdp-card__facts--public-v135">
               <div>
                 <dt>자료기간</dt>
-                <dd>{semanticYearRange}</dd>
+                <dd>{summary?.period && summary.kind !== "status" ? <PublicTermTextV134 text={summary.period} /> : semanticYearRange}</dd>
               </div>
               <div>
                 <dt>제공기관</dt>

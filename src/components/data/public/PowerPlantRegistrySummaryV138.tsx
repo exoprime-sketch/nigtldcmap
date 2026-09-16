@@ -25,6 +25,33 @@ const WRI_INDICATOR = "A-023_power_plant_registry";
 
 const text = (value: unknown): string => publicTextV126(value) || "";
 
+/**
+ * WRI rows name their fuel in `primaryFuel` (English), OSM rows in
+ * `fuelType` (Korean). Reading only `fuelType` put every WRI plant under
+ * "미표기" (V140).
+ */
+const FUEL_LABELS: Record<string, string> = {
+  hydro: "수력",
+  solar: "태양광",
+  wind: "풍력",
+  coal: "석탄",
+  gas: "가스",
+  oil: "석유",
+  biomass: "바이오매스",
+  waste: "폐기물",
+  nuclear: "원자력",
+  geothermal: "지열",
+};
+
+function fuelOf(attributes: Record<string, unknown>): string {
+  const typed = text(attributes.fuelType);
+  if (typed && typed !== "(미표기)") return typed;
+  const primary = text(attributes.primaryFuel).toLowerCase();
+  if (primary && FUEL_LABELS[primary]) return FUEL_LABELS[primary];
+  if (primary) return text(attributes.primaryFuel);
+  return "미표기";
+}
+
 function capacityOf(attributes: Record<string, unknown>): number | null {
   for (const key of ["capacityMw", "mw"]) {
     const raw = attributes[key];
@@ -52,11 +79,22 @@ export default function PowerPlantRegistrySummaryV138({ entities }: Props) {
       });
       return { total, count };
     };
-    const fuel = new Map<string, number>();
+    // Per registry and per fuel: how many rows, and the capacity those rows
+    // state. Kept apart because the registries overlap by an unknown amount.
+    const byFuel = new Map<string, { wri: number; osm: number; wriMw: number; osmMw: number }>();
     entities.forEach((entity) => {
       const attributes = (entity.normalizedAttributes || {}) as Record<string, unknown>;
-      const label = text(attributes.fuelType) || "미표기";
-      fuel.set(label, (fuel.get(label) || 0) + 1);
+      const label = fuelOf(attributes);
+      const entry = byFuel.get(label) || { wri: 0, osm: 0, wriMw: 0, osmMw: 0 };
+      const capacity = capacityOf(attributes) || 0;
+      if (entity.indicatorId === WRI_INDICATOR) {
+        entry.wri += 1;
+        entry.wriMw += capacity;
+      } else {
+        entry.osm += 1;
+        entry.osmMw += capacity;
+      }
+      byFuel.set(label, entry);
     });
     return {
       total: entities.length,
@@ -65,7 +103,7 @@ export default function PowerPlantRegistrySummaryV138({ entities }: Props) {
       located: located.length,
       wriCapacity: sumCapacity(wri),
       osmCapacity: sumCapacity(osm),
-      fuel: [...fuel].sort((a, b) => b[1] - a[1]),
+      fuel: [...byFuel].sort((a, b) => b[1].wri + b[1].osm - (a[1].wri + a[1].osm)),
     };
   }, [entities]);
 
@@ -84,11 +122,6 @@ export default function PowerPlantRegistrySummaryV138({ entities }: Props) {
         </p>
       </header>
       <div className="pps132-kpis">
-        <article data-portfolio-kpi="record-count">
-          <span><PublicTermTextV134 text="원천 수록 행(WRI + OSM)" /></span>
-          <strong>{summary.total.toLocaleString("ko-KR")}</strong>
-          <small>행</small>
-        </article>
         <article data-portfolio-kpi="wri-rows">
           <span>WRI GPPD 수록 발전소</span>
           <strong>{summary.wri.toLocaleString("ko-KR")}</strong>
@@ -115,25 +148,41 @@ export default function PowerPlantRegistrySummaryV138({ entities }: Props) {
           <article data-portfolio-kpi="osm-capacity">
             <span><PublicTermTextV134 text="OSM 설비용량 합계" /></span>
             <strong>{formatPublicNumberV126(summary.osmCapacity.total, "MW")}</strong>
-            <small><PublicTermTextV134 text={`MW · 용량 있는 ${summary.osmCapacity.count.toLocaleString("ko-KR")}곳`} /></small>
+            <small><PublicTermTextV134 text={`MW · 용량 있는 ${summary.osmCapacity.count.toLocaleString("ko-KR")}곳 · OSM 시설 ${summary.osm.toLocaleString("ko-KR")}곳 중`} /></small>
           </article>
         )}
       </div>
       <div className="pps132-distributions">
-        <section className="pps132-distribution" data-portfolio-distribution="true" data-testid="power-plant-fuel-distribution-v138">
-          <h5>발전원별 수록 행</h5>
-          <ul>
-            {summary.fuel.map(([label, count]) => {
-              const maximum = Math.max(1, ...summary.fuel.map(([, value]) => value));
-              return (
-                <li key={label} tabIndex={0} aria-label={`${label} ${count}행`}>
-                  <span title={label}>{label}</span>
-                  <i aria-hidden="true"><b style={{ width: `${Math.max(4, (count / maximum) * 100)}%` }} /></i>
-                  <strong>{count.toLocaleString("ko-KR")}행</strong>
-                </li>
-              );
-            })}
-          </ul>
+        <section className="pps132-distribution pps132-distribution--table" data-portfolio-distribution="true" data-testid="power-plant-fuel-distribution-v138">
+          <h5>발전원별 시설 수와 설비용량 · 원천별</h5>
+          <div className="pps132-table-wrap">
+            <table>
+              <caption>WRI GPPD(2021)와 OpenStreetMap(2026 추출)의 발전원별 시설 수와 그 시설이 기재한 설비용량 합계. 두 원천은 합치지 않습니다.</caption>
+              <thead>
+                <tr>
+                  <th scope="col">발전원</th>
+                  <th scope="col">WRI 발전소(기)</th>
+                  <th scope="col">WRI 설비용량(MW)</th>
+                  <th scope="col">OSM 시설(곳)</th>
+                  <th scope="col">OSM 설비용량(MW)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {summary.fuel.map(([label, entry]) => (
+                  <tr key={label} data-fuel={label}>
+                    <th scope="row"><PublicTermTextV134 text={label} /></th>
+                    <td>{entry.wri.toLocaleString("ko-KR")}</td>
+                    <td>{entry.wriMw > 0 ? formatPublicNumberV126(entry.wriMw, "MW") : "—"}</td>
+                    <td>{entry.osm.toLocaleString("ko-KR")}</td>
+                    <td>{entry.osmMw > 0 ? formatPublicNumberV126(entry.osmMw, "MW") : "—"}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="pps132-note">
+            원천 수록 행은 WRI {summary.wri.toLocaleString("ko-KR")}행 · OSM {summary.osm.toLocaleString("ko-KR")}행(합계 {summary.total.toLocaleString("ko-KR")}행)이며, OSM 시설 대부분은 설비용량이 기재되지 않아 용량 합계는 기재된 시설만 더한 값입니다.
+          </p>
         </section>
       </div>
     </section>

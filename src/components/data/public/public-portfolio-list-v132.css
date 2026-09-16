@@ -102,3 +102,20 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* V140: the source's aggregate/explanatory rows, apart from the register. */
+.ppl132-aggregates {
+  margin-top: 14px;
+  color: #52635f;
+  font-size: 0.86rem;
+}
+
+.ppl132-aggregates summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.ppl132-aggregates ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}

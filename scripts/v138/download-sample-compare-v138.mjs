@@ -57,7 +57,10 @@ function compare(id, label, computed, needle, surface) {
   const wri = d.entities.filter((row) => row.indicatorId === "A-023_power_plant_registry").length;
   const osm = d.entities.filter((row) => row.indicatorId === "A-023_power_plant_registry_osm2026").length;
   const located = d.entities.filter((row) => finite(row.latitude) && finite(row.longitude)).length;
-  compare("A-023", "원천 수록 행", d.entities.length, `${number(d.entities.length)} 행`, "detail");
+  // V140: the detail states the row total in its source note ("합계 1,963행"),
+  // under the per-registry facility counts.
+  compare("A-023", "원천 수록 행", d.entities.length, `합계 ${number(d.entities.length)}행`, "detail");
+  compare("A-023", "WRI 발전소", wri, `WRI GPPD 수록 발전소 ${number(wri)}`, "detail");
   compare("A-023", "원천 수록 행(지도)", d.entities.length, `${number(d.entities.length)}행`, "map");
   compare("A-023", "WRI 행", wri, `WRI GPPD 수록 ${number(wri)}행`, "map");
   compare("A-023", "OSM 행", osm, `OSM 추출 ${number(osm)}행`, "map");

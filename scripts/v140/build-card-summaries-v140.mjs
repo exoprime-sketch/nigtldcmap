@@ -185,7 +185,14 @@ function providerOf(item) {
 }
 
 function periodOf(item, years) {
-  if (years && years.length) return years[0] === years[years.length - 1] ? `${years[0]}년` : `${years[0]}–${years[years.length - 1]}년`;
+  if (years && years.length) {
+    if (years[0] === years[years.length - 1]) return `${years[0]}년`;
+    // A few scattered years are named, not written as a span a reader
+    // would take for a continuous series (D-005: 2010·2013·2020).
+    const consecutive = years.every((year, index) => index === 0 || year - years[index - 1] <= 1);
+    if (years.length <= 4 && !consecutive) return `${years.join("·")}년`;
+    return `${years[0]}–${years[years.length - 1]}년`;
+  }
   const reference = (item.referenceYears || []).map(Number).filter(Number.isFinite).sort((a, b) => a - b);
   if (reference.length > 1) return `${reference[0]}–${reference[reference.length - 1]}년`;
   if (item.latestYear) return `${item.latestYear}년`;
@@ -578,7 +585,12 @@ function regionScenarioCard(elementId, item, pack, contract, options) {
     kind: "spatial-trend",
     headline: { value: `${formatNumber(anchor.value, 1)} ${unit}`, label: `${chosen.label} · 63개 성·시 중앙값 · ${anchor.year}년${scenario ? ` · ${scenarioLabel}` : ""}` },
     preview: { points: points.filter((point, index) => index % Math.max(1, Math.floor(points.length / 40)) === 0 || point === anchor), unit, seriesLabel: `${scenarioLabel} · 성·시 중앙값`, range: { p10: quantile(anchorValues, 0.1), p90: quantile(anchorValues, 0.9) }, scenarios: scenarios.length, provinces: new Set(scenarioRows.map((row) => row.normalizedAttributes?.지역명_로마자 || row.name)).size, historicalUntil: options.observed ? null : 2014 },
-    period: `${years[0]}–${years[years.length - 1]}년`,
+    period: (() => {
+      const allYears = rows.map(yearOf).filter(Number.isFinite);
+      const minYear = Math.min(...allYears);
+      const maxYear = Math.max(...allYears);
+      return options.observed ? `${minYear}–${maxYear}년` : `${minYear}–${maxYear}년 (과거 모형 ${minYear}–2014 · 전망 2015–${maxYear})`;
+    })(),
     selection: { measure: null, sex: null, year: anchor.year, period: null, dimensions: scenario ? { mapVariable: chosen.sourceKey, scenario } : { mapVariable: chosen.sourceKey } },
     basis: { unit: "성·시 값", rule: `${chosen.label} ${scenario ? `${scenarioLabel} 시나리오의 ` : ""}63개 성·시 값 중앙값 추이 · 10~90분위는 지역 간 분포이며 모형 불확실성이 아님${scenario ? " · 과거(historical)와 SSP 구간은 잇지 않음" : ""}` },
     measure: { key: chosen.sourceKey, label: chosen.label, unit },
