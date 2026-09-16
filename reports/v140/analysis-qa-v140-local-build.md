@@ -1,169 +1,172 @@
 # 카드 → 상세 분석 QA (V140) · local-build
 
-실행 2026-09-16T02:00:29.353Z · http://127.0.0.1:51767 · 152개
+실행 2026-09-16T05:49:59.235Z · http://127.0.0.1:50598 · 152개(값 보유 147 · 상태 안내 5) · 배포 버전 일치 예
 
 | 항목 | 통과 | 실패 | 해당 없음 |
 | --- | ---: | ---: | ---: |
+| cardClicked | 152 | 0 | 0 |
+| homeCardClicked | 8 | 0 | 144 |
+| selectionUrlPreserved | 92 | 0 | 60 |
 | screenLoaded | 152 | 0 | 0 |
-| cardSummaryVerified | 150 | 0 | 2 |
-| detailAnalysisFit | 91 | 0 | 61 |
-| controlsVerified | 118 | 2 | 32 |
-| tableValuesVerified | 59 | 86 | 7 |
+| cardValueVerified | 150 | 0 | 2 |
+| detailAnalysisFit | 92 | 0 | 60 |
+| controlsVerified | 120 | 0 | 32 |
+| tableValuesVerified | 130 | 15 | 7 |
 | mapHandoffVerified | 42 | 0 | 110 |
 
-잔여 문제가 있는 요소: 2개
+독립 재계산(다운로드 파일): {"match":144,"not-recomputed":1,"not-applicable":7} · 컨트롤 시도 281회 · 표 분류 {"match":130,"no-derived-row":6,"row-count-differs":8,"mismatch":1,"not-applicable":7} · 필수 실패 0건
 
-| 요소 | 종류 | loaded | card | fit | controls | table | map | 잔여 문제 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| A-001 | line | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| A-002 | signed-bars | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| A-003 | line | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| A-004 | line | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| A-005 | bars | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| A-006 | line | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| A-007 | line | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| A-008 | line | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| A-009 | line | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| A-010 | composition | ✓ | ✓ | ✓ | ✓ | ✗ | – |  |
-| A-011 | composition | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| A-012 | line | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| A-013 | level | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| A-014 | line | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| A-015 | level | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| A-016 | composition | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| A-017 | bars | ✓ | ✓ | ✓ | ✓ | ✗ | – |  |
-| A-018 | bars | ✓ | ✓ | ✓ | ✓ | ✗ | – |  |
-| A-019 | line | ✓ | ✓ | ✓ | ✓ | ✗ | – |  |
-| A-020 | line | ✓ | ✓ | ✓ | ✓ | ✗ | – |  |
-| A-021 | line | ✓ | ✓ | ✓ | ✓ | ✗ | – |  |
-| A-022 | line | ✓ | ✓ | ✓ | ✗ | ✗ | – | control without effect: 세부 분류 |
-| A-023 | grouped-bars | ✓ | ✓ | – | ✓ | ✗ | ✓ |  |
-| A-024 | map | ✓ | ✓ | ✓ | – | ✗ | ✓ |  |
-| A-025 | level | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
-| A-026 | facts | ✓ | ✓ | ✓ | ✓ | ✗ | – |  |
-| A-027 | level | ✓ | ✓ | ✓ | ✓ | ✗ | – |  |
-| A-028 | level | ✓ | ✓ | ✓ | ✓ | ✗ | – |  |
-| A-029 | level | ✓ | ✓ | ✓ | – | ✓ | – |  |
-| A-030 | line | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| A-031 | line | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| A-032 | line | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| A-033 | line | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| B-001 | bars | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| B-002 | bars | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| B-003 | spatial-trend | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
-| B-004 | spatial-trend | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
-| B-005 | spatial-trend | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
-| B-006 | spatial-trend | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
-| B-007 | spatial-trend | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
-| B-008 | bars | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
-| B-009 | line | ✓ | ✓ | ✓ | ✓ | ✗ | – |  |
-| B-010 | level | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| B-011 | line | ✓ | ✓ | ✓ | ✓ | ✗ | – |  |
-| B-012 | bars | ✓ | ✓ | – | – | ✗ | ✓ |  |
-| B-013 | bars | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| B-014 | level | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| B-015 | bars | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| B-016 | line | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| B-017 | bars | ✓ | ✓ | – | ✓ | ✗ | – |  |
-| B-018 | line | ✓ | ✓ | ✓ | ✓ | ✗ | – |  |
-| B-019 | line | ✓ | ✓ | ✓ | ✓ | ✗ | – |  |
-| B-020 | line | ✓ | ✓ | ✓ | ✓ | ✗ | – |  |
-| B-021 | line | ✓ | ✓ | ✓ | ✓ | ✗ | ✓ |  |
-| B-022 | bars | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| B-023 | facts | ✓ | ✓ | – | – | ✗ | ✓ |  |
-| B-024 | line | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| B-025 | bars | ✓ | ✓ | – | – | ✗ | ✓ |  |
-| B-026 | facts | ✓ | ✓ | – | ✓ | ✗ | – |  |
-| B-027 | line | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| B-028 | facts | ✓ | ✓ | – | – | ✗ | ✓ |  |
-| B-029 | spatial | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
-| B-030 | spatial | ✓ | ✓ | ✓ | ✓ | ✗ | ✓ |  |
-| B-031 | spatial | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
-| B-032 | spatial | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
-| B-033 | line | ✓ | ✓ | ✓ | ✓ | ✗ | ✓ |  |
-| B-034 | spatial | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
-| B-035 | line | ✓ | ✓ | ✓ | ✓ | ✗ | – |  |
-| B-036 | bars | ✓ | ✓ | ✓ | ✗ | ✓ | – | control without effect: 연도 |
-| B-037 | spatial | ✓ | ✓ | ✓ | ✓ | ✗ | ✓ |  |
-| B-038 | line | ✓ | ✓ | ✓ | ✓ | ✗ | – |  |
-| B-039 | spatial | ✓ | ✓ | ✓ | ✓ | ✗ | ✓ |  |
-| B-040 | spatial | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
-| B-041 | spatial | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
-| B-042 | spatial | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
-| B-043 | bars | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| B-044 | facts | ✓ | – | ✓ | ✓ | – | – |  |
-| B-045 | bars | ✓ | ✓ | ✓ | ✓ | ✗ | – |  |
-| B-046 | level | ✓ | ✓ | ✓ | ✓ | ✗ | – |  |
-| B-047 | level | ✓ | ✓ | ✓ | ✓ | ✗ | – |  |
-| B-048 | facts | ✓ | ✓ | – | – | ✗ | ✓ |  |
-| C-001 | facts | ✓ | ✓ | – | – | ✗ | – |  |
-| C-002 | facts | ✓ | ✓ | – | – | ✗ | – |  |
-| C-003 | facts | ✓ | ✓ | – | – | ✗ | – |  |
-| C-004 | facts | ✓ | ✓ | – | – | ✗ | – |  |
-| C-005 | facts | ✓ | ✓ | – | – | ✗ | – |  |
-| C-006 | facts | ✓ | ✓ | – | – | ✗ | – |  |
-| C-007 | facts | ✓ | ✓ | – | ✓ | ✗ | – |  |
-| C-008 | facts | ✓ | ✓ | – | ✓ | ✗ | – |  |
-| C-009 | facts | ✓ | ✓ | – | – | ✗ | ✓ |  |
-| C-010 | facts | ✓ | ✓ | – | – | ✗ | ✓ |  |
-| C-011 | facts | ✓ | ✓ | – | – | ✗ | – |  |
-| C-012 | facts | ✓ | ✓ | – | – | ✗ | ✓ |  |
-| C-013 | facts | ✓ | ✓ | – | – | ✗ | ✓ |  |
-| C-014 | facts | ✓ | ✓ | – | – | ✗ | – |  |
-| C-015 | facts | ✓ | ✓ | – | – | ✓ | – |  |
-| C-016 | bars | ✓ | ✓ | ✓ | ✓ | ✗ | ✓ |  |
-| C-017 | facts | ✓ | ✓ | – | – | ✗ | – |  |
-| C-018 | facts | ✓ | ✓ | – | – | ✗ | – |  |
-| C-019 | facts | ✓ | ✓ | – | – | ✗ | ✓ |  |
-| C-020 | status | ✓ | ✓ | – | – | – | – |  |
-| C-021 | status | ✓ | ✓ | – | – | – | – |  |
-| C-022 | facts | ✓ | ✓ | – | – | ✗ | ✓ |  |
-| C-023 | status | ✓ | ✓ | – | – | – | – |  |
-| C-024 | facts | ✓ | ✓ | – | – | ✗ | ✓ |  |
-| C-025 | bars | ✓ | ✓ | – | ✓ | ✗ | ✓ |  |
-| D-001 | level | ✓ | ✓ | ✓ | ✓ | ✗ | – |  |
-| D-002 | level | ✓ | ✓ | ✓ | ✓ | ✗ | – |  |
-| D-003 | level | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| D-004 | level | ✓ | ✓ | ✓ | ✓ | ✗ | – |  |
-| D-005 | composition | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| D-006 | line | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| D-007 | facts | ✓ | – | ✓ | ✓ | – | – |  |
-| D-008 | bars | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
-| D-009 | level | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| D-010 | line | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| D-011 | line | ✓ | ✓ | ✓ | ✓ | ✗ | – |  |
-| D-012 | bars | ✓ | ✓ | – | ✓ | ✗ | – |  |
-| D-013 | bars | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| D-014 | bars | ✓ | ✓ | – | ✓ | ✗ | – |  |
-| D-015 | bars | ✓ | ✓ | – | ✓ | ✗ | – |  |
-| D-016 | bars | ✓ | ✓ | – | ✓ | ✗ | – |  |
-| D-017 | facts | ✓ | ✓ | – | ✓ | ✗ | – |  |
-| D-018 | bars | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
-| D-019 | bars | ✓ | ✓ | – | ✓ | ✗ | – |  |
-| D-020 | facts | ✓ | ✓ | – | ✓ | ✗ | – |  |
-| D-021 | bars | ✓ | ✓ | – | ✓ | ✗ | – |  |
-| D-022 | bars | ✓ | ✓ | – | ✓ | ✗ | – |  |
-| D-023 | composition | ✓ | ✓ | – | ✓ | ✗ | – |  |
-| D-024 | facts | ✓ | ✓ | – | ✓ | ✗ | – |  |
-| D-025 | bars | ✓ | ✓ | – | ✓ | ✗ | – |  |
-| D-026 | bars | ✓ | ✓ | – | ✓ | ✗ | – |  |
-| E-001 | facts | ✓ | ✓ | – | ✓ | ✗ | – |  |
-| E-002 | facts | ✓ | ✓ | – | – | ✗ | – |  |
-| E-003 | facts | ✓ | ✓ | – | ✓ | ✗ | – |  |
-| E-004 | bars | ✓ | ✓ | – | ✓ | ✗ | ✓ |  |
-| E-005 | bars | ✓ | ✓ | – | ✓ | ✗ | ✓ |  |
-| E-006 | bars | ✓ | ✓ | – | ✓ | ✗ | ✓ |  |
-| E-007 | bars | ✓ | ✓ | – | ✓ | ✗ | – |  |
-| E-008 | facts | ✓ | ✓ | – | ✓ | ✗ | – |  |
-| E-009 | level | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| E-010 | line | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| E-011 | status | ✓ | ✓ | – | – | – | – |  |
-| E-012 | level | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| E-013 | status | ✓ | ✓ | – | – | – | – |  |
-| E-014 | facts | ✓ | ✓ | – | ✓ | ✗ | – |  |
-| E-015 | facts | ✓ | ✓ | – | – | ✗ | – |  |
-| E-016 | facts | ✓ | ✓ | – | ✓ | ✗ | – |  |
-| E-017 | level | ✓ | ✓ | ✓ | ✓ | ✓ | – |  |
-| E-018 | bars | ✓ | ✓ | – | ✓ | ✗ | ✓ |  |
-| E-019 | facts | ✓ | ✓ | – | ✓ | ✗ | ✓ |  |
-| E-020 | facts | ✓ | ✓ | – | ✓ | ✗ | – |  |
+| 요소 | 종류 | click | url | loaded | value | recomp | fit | controls | table | map | 잔여 문제 / 해당 없음 사유 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| A-001 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| A-002 | signed-bars | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| A-003 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| A-004 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| A-005 | bars | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| A-006 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| A-007 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| A-008 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| A-009 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| A-010 | composition | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✗ | – | mapHandoffVerified: not a map dataset |
+| A-011 | composition | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| A-012 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| A-013 | level | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| A-014 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| A-015 | level | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| A-016 | composition | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| A-017 | bars | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| A-018 | bars | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| A-019 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| A-020 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| A-021 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| A-022 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| A-023 | grouped-bars | ✓ | – | ✓ | ✓ | match | – | ✓ | ✓ | ✓ | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection |
+| A-024 | map | ✓ | ✓ | ✓ | ✓ | match | ✓ | – | ✗ | ✓ | controlsVerified: no selectable control in the primary analysis |
+| A-025 | level | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | ✓ |  |
+| A-026 | facts | ✓ | ✓ | ✓ | ✓ | not-recomputed | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| A-027 | level | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| A-028 | level | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| A-029 | level | ✓ | ✓ | ✓ | ✓ | match | ✓ | – | ✓ | – | controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |
+| A-030 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| A-031 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| A-032 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| A-033 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| B-001 | bars | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| B-002 | bars | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| B-003 | spatial-trend | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | ✓ |  |
+| B-004 | spatial-trend | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | ✓ |  |
+| B-005 | spatial-trend | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | ✓ |  |
+| B-006 | spatial-trend | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | ✓ |  |
+| B-007 | spatial-trend | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | ✓ |  |
+| B-008 | bars | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | ✓ |  |
+| B-009 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| B-010 | level | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| B-011 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| B-012 | bars | ✓ | – | ✓ | ✓ | match | – | – | ✓ | ✓ | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis |
+| B-013 | bars | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| B-014 | level | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| B-015 | bars | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| B-016 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| B-017 | bars | ✓ | – | ✓ | ✓ | match | – | ✓ | ✗ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; mapHandoffVerified: not a map dataset |
+| B-018 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| B-019 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| B-020 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| B-021 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✗ | ✓ |  |
+| B-022 | bars | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| B-023 | facts | ✓ | – | ✓ | ✓ | match | – | – | ✓ | ✓ | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis |
+| B-024 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| B-025 | bars | ✓ | – | ✓ | ✓ | match | – | – | ✗ | ✓ | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis |
+| B-026 | spatial | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| B-027 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| B-028 | facts | ✓ | – | ✓ | ✓ | match | – | – | ✓ | ✓ | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis |
+| B-029 | spatial | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | ✓ |  |
+| B-030 | spatial | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | ✓ |  |
+| B-031 | spatial | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | ✓ |  |
+| B-032 | spatial | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | ✓ |  |
+| B-033 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | ✓ |  |
+| B-034 | spatial | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | ✓ |  |
+| B-035 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✗ | – | mapHandoffVerified: not a map dataset |
+| B-036 | bars | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| B-037 | spatial | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | ✓ |  |
+| B-038 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| B-039 | spatial | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | ✓ |  |
+| B-040 | spatial | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | ✓ |  |
+| B-041 | spatial | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | ✓ |  |
+| B-042 | spatial | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | ✓ |  |
+| B-043 | bars | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| B-044 | facts | ✓ | ✓ | ✓ | – | not-applicable | ✓ | ✓ | – | – | cardValueVerified: card headline "수출금지(원광) 대상" has no number; tableValuesVerified: no number on the card; mapHandoffVerified: not a map dataset |
+| B-045 | bars | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| B-046 | level | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| B-047 | level | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| B-048 | facts | ✓ | – | ✓ | ✓ | match | – | – | ✓ | ✓ | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis |
+| C-001 | facts | ✓ | – | ✓ | ✓ | match | – | – | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |
+| C-002 | facts | ✓ | – | ✓ | ✓ | match | – | – | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |
+| C-003 | facts | ✓ | – | ✓ | ✓ | match | – | – | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |
+| C-004 | facts | ✓ | – | ✓ | ✓ | match | – | – | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |
+| C-005 | facts | ✓ | – | ✓ | ✓ | match | – | – | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |
+| C-006 | facts | ✓ | – | ✓ | ✓ | match | – | – | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |
+| C-007 | facts | ✓ | – | ✓ | ✓ | match | – | ✓ | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; mapHandoffVerified: not a map dataset |
+| C-008 | facts | ✓ | – | ✓ | ✓ | match | – | ✓ | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; mapHandoffVerified: not a map dataset |
+| C-009 | facts | ✓ | – | ✓ | ✓ | match | – | – | ✗ | ✓ | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis |
+| C-010 | facts | ✓ | – | ✓ | ✓ | match | – | – | ✗ | ✓ | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis |
+| C-011 | facts | ✓ | – | ✓ | ✓ | match | – | – | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |
+| C-012 | facts | ✓ | – | ✓ | ✓ | match | – | – | ✓ | ✓ | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis |
+| C-013 | facts | ✓ | – | ✓ | ✓ | match | – | – | ✓ | ✓ | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis |
+| C-014 | facts | ✓ | – | ✓ | ✓ | match | – | – | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |
+| C-015 | facts | ✓ | – | ✓ | ✓ | match | – | – | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |
+| C-016 | bars | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✗ | ✓ |  |
+| C-017 | facts | ✓ | – | ✓ | ✓ | match | – | – | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |
+| C-018 | facts | ✓ | – | ✓ | ✓ | match | – | – | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |
+| C-019 | facts | ✓ | – | ✓ | ✓ | match | – | – | ✓ | ✓ | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis |
+| C-020 | status | ✓ | – | ✓ | ✓ | not-applicable | – | – | – | – | cardValueVerified: status screen (checked for the status wording only); detailAnalysisFit: card carries no selection; tableValuesVerified: status screen, no values; controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |
+| C-021 | status | ✓ | – | ✓ | ✓ | not-applicable | – | – | – | – | cardValueVerified: status screen (checked for the status wording only); detailAnalysisFit: card carries no selection; tableValuesVerified: status screen, no values; controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |
+| C-022 | facts | ✓ | – | ✓ | ✓ | match | – | – | ✓ | ✓ | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis |
+| C-023 | status | ✓ | – | ✓ | ✓ | not-applicable | – | – | – | – | cardValueVerified: status screen (checked for the status wording only); detailAnalysisFit: card carries no selection; tableValuesVerified: status screen, no values; controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |
+| C-024 | facts | ✓ | – | ✓ | ✓ | match | – | – | ✓ | ✓ | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis |
+| C-025 | bars | ✓ | – | ✓ | ✓ | match | – | ✓ | ✓ | ✓ | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection |
+| D-001 | level | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| D-002 | level | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| D-003 | level | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| D-004 | level | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| D-005 | composition | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| D-006 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| D-007 | facts | ✓ | ✓ | ✓ | – | not-applicable | ✓ | ✓ | – | – | cardValueVerified: card headline "부분 도입 — TCCRE 유형분류 기반 사후 태깅" has no number; tableValuesVerified: no number on the card; mapHandoffVerified: not a map dataset |
+| D-008 | bars | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | ✓ |  |
+| D-009 | level | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| D-010 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| D-011 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| D-012 | bars | ✓ | – | ✓ | ✓ | match | – | ✓ | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; mapHandoffVerified: not a map dataset |
+| D-013 | bars | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| D-014 | bars | ✓ | – | ✓ | ✓ | match | – | ✓ | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; mapHandoffVerified: not a map dataset |
+| D-015 | bars | ✓ | – | ✓ | ✓ | match | – | ✓ | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; mapHandoffVerified: not a map dataset |
+| D-016 | bars | ✓ | – | ✓ | ✓ | match | – | ✓ | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; mapHandoffVerified: not a map dataset |
+| D-017 | facts | ✓ | – | ✓ | ✓ | match | – | ✓ | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; mapHandoffVerified: not a map dataset |
+| D-018 | bars | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | ✓ |  |
+| D-019 | bars | ✓ | – | ✓ | ✓ | match | – | ✓ | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; mapHandoffVerified: not a map dataset |
+| D-020 | facts | ✓ | – | ✓ | ✓ | match | – | ✓ | ✗ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; mapHandoffVerified: not a map dataset |
+| D-021 | bars | ✓ | – | ✓ | ✓ | match | – | ✓ | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; mapHandoffVerified: not a map dataset |
+| D-022 | bars | ✓ | – | ✓ | ✓ | match | – | ✓ | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; mapHandoffVerified: not a map dataset |
+| D-023 | composition | ✓ | – | ✓ | ✓ | match | – | ✓ | ✗ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; mapHandoffVerified: not a map dataset |
+| D-024 | facts | ✓ | – | ✓ | ✓ | match | – | ✓ | ✗ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; mapHandoffVerified: not a map dataset |
+| D-025 | bars | ✓ | – | ✓ | ✓ | match | – | ✓ | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; mapHandoffVerified: not a map dataset |
+| D-026 | bars | ✓ | – | ✓ | ✓ | match | – | ✓ | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; mapHandoffVerified: not a map dataset |
+| E-001 | facts | ✓ | – | ✓ | ✓ | match | – | ✓ | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; mapHandoffVerified: not a map dataset |
+| E-002 | facts | ✓ | – | ✓ | ✓ | match | – | – | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |
+| E-003 | facts | ✓ | – | ✓ | ✓ | match | – | ✓ | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; mapHandoffVerified: not a map dataset |
+| E-004 | bars | ✓ | – | ✓ | ✓ | match | – | ✓ | ✗ | ✓ | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection |
+| E-005 | bars | ✓ | – | ✓ | ✓ | match | – | ✓ | ✓ | ✓ | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection |
+| E-006 | bars | ✓ | – | ✓ | ✓ | match | – | ✓ | ✓ | ✓ | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection |
+| E-007 | bars | ✓ | – | ✓ | ✓ | match | – | ✓ | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; mapHandoffVerified: not a map dataset |
+| E-008 | facts | ✓ | – | ✓ | ✓ | match | – | ✓ | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; mapHandoffVerified: not a map dataset |
+| E-009 | level | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| E-010 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| E-011 | status | ✓ | – | ✓ | ✓ | not-applicable | – | – | – | – | cardValueVerified: status screen (checked for the status wording only); detailAnalysisFit: card carries no selection; tableValuesVerified: status screen, no values; controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |
+| E-012 | level | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| E-013 | status | ✓ | – | ✓ | ✓ | not-applicable | – | – | – | – | cardValueVerified: status screen (checked for the status wording only); detailAnalysisFit: card carries no selection; tableValuesVerified: status screen, no values; controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |
+| E-014 | facts | ✓ | – | ✓ | ✓ | match | – | ✓ | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; mapHandoffVerified: not a map dataset |
+| E-015 | facts | ✓ | – | ✓ | ✓ | match | – | – | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |
+| E-016 | facts | ✓ | – | ✓ | ✓ | match | – | ✓ | ✓ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; mapHandoffVerified: not a map dataset |
+| E-017 | bars | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | – | mapHandoffVerified: not a map dataset |
+| E-018 | bars | ✓ | – | ✓ | ✓ | match | – | ✓ | ✓ | ✓ | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection |
+| E-019 | facts | ✓ | – | ✓ | ✓ | match | – | ✓ | ✗ | ✓ | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection |
+| E-020 | facts | ✓ | – | ✓ | ✓ | match | – | ✓ | ✗ | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; mapHandoffVerified: not a map dataset |
