@@ -32,12 +32,36 @@ export async function openDetail(page: Page, elementId: string) {
   return root;
 }
 
-/** Runtime errors the page threw while the test was driving it. */
+/** Assets the application cannot run without: its bundles and its data. */
+const REQUIRED_ASSET = /\/static\/(?:js|css)\/|\/data\/|\.(?:json|geojson)(?:\?|$)/u;
+
+/**
+ * Runtime errors the page threw while the test was driving it, and every
+ * required asset that did not arrive.
+ *
+ * The console's own "Failed to load resource … 404" line carries no URL, so
+ * it used to be filtered out wholesale and a missing shard, geometry or
+ * summary file passed unnoticed (V140). Required assets are now watched on
+ * the response itself: a 4xx/5xx, or an HTML page answered where JSON was
+ * asked for, is recorded with its URL and is never ignored.
+ */
 export function collectPageErrors(page: Page): string[] {
   const errors: string[] = [];
   page.on("pageerror", (error) => errors.push(String(error?.message || error)));
   page.on("console", (message) => {
     if (message.type() === "error") errors.push(message.text());
+  });
+  page.on("response", (response) => {
+    const url = response.url();
+    if (!REQUIRED_ASSET.test(url)) return;
+    if (response.status() >= 400) {
+      errors.push(`asset ${response.status()}: ${url}`);
+      return;
+    }
+    const contentType = response.headers()["content-type"] || "";
+    if (/\.(?:json|geojson)(?:\?|$)/u.test(url) && contentType.includes("text/html")) {
+      errors.push(`html-for-json: ${url}`);
+    }
   });
   return errors;
 }

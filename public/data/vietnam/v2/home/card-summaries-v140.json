@@ -1,7 +1,7 @@
 {
  "schemaVersion": "v140-card-summaries-1",
  "dataSnapshot": "2026-08-27T00:00:00Z",
- "generatedAt": "2026-09-16T01:02:14.705Z",
+ "generatedAt": "2026-09-16T01:46:39.764Z",
  "generatedFrom": {
   "bundleIndex": "packs/bundle-index-v124.json",
   "semantics": "semantic/element-visualization-contracts-v125.json",
@@ -1920,9 +1920,7 @@
     "year": 2023,
     "period": null,
     "dimensions": {
-     "category": "가스복합화력(CCGT)(기준값)",
-     "detail": "신규 발전설비 균등화 발전비용",
-     "technology": "16"
+     "category": "가스복합화력(CCGT)(기준값)"
     }
    },
    "basis": {
@@ -2230,9 +2228,7 @@
     "year": 2025,
     "period": null,
     "dimensions": {
-     "category": "설비용량 기준",
-     "detail": "전력 부문 재생에너지 비중",
-     "technology": "1,2,3,4,5,7,8"
+     "category": "설비용량 기준"
     }
    },
    "measure": {
@@ -2390,9 +2386,7 @@
     "year": 2024,
     "period": null,
     "dimensions": {
-     "category": "전체",
-     "detail": "전기를 이용할 수 있는 인구 비율",
-     "technology": "24"
+     "category": "전체"
     }
    },
    "measure": {
@@ -2560,8 +2554,7 @@
     "period": null,
     "dimensions": {
      "category": "EVN 그룹 전체",
-     "detail": "연간 고객당 순간정전 횟수",
-     "technology": "24"
+     "detail": "연간 고객당 순간정전 횟수"
     }
    },
    "measure": {
@@ -2769,7 +2762,8 @@
       "label": "좌표계",
       "value": "EPSG:4326"
      }
-    ]
+    ],
+    "more": 0
    },
    "period": "2026년",
    "selection": {
@@ -2815,8 +2809,7 @@
     "period": null,
     "dimensions": {
      "category": "피처 수",
-     "detail": "OSM 도로 레이어의 지물 건수",
-     "technology": "18"
+     "detail": "OSM 도로 레이어의 지물 건수"
     }
    },
    "measure": {
@@ -2869,8 +2862,7 @@
     "period": null,
     "dimensions": {
      "category": "피처 수",
-     "detail": "OSM 수로 레이어의 지물 건수",
-     "technology": "32,33"
+     "detail": "OSM 수로 레이어의 지물 건수"
     }
    },
    "measure": {
@@ -4782,8 +4774,7 @@
     "year": 2024,
     "period": null,
     "dimensions": {
-     "detail": "생태계 부문",
-     "technology": "30"
+     "detail": "생태계 부문"
     }
    },
    "measure": {
@@ -4965,7 +4956,8 @@
       "label": "CRI 2026 본문",
       "value": "2024년 3–5월 장기 폭염"
      }
-    ]
+    ],
+    "more": 0
    },
    "period": "2024년",
    "selection": {
@@ -6189,8 +6181,8 @@
    "title": "건기/우기 유량 차이",
    "kind": "facts",
    "headline": {
-    "value": "3곳",
-    "label": "관측지점 · 2004·2009·2010·2026년"
+    "value": "11건",
+    "label": "관측지점 3곳의 수록 행 · 2004·2009·2010·2026년"
    },
    "preview": {
     "facts": [
@@ -6661,8 +6653,8 @@
    "title": "하천 유량",
    "kind": "facts",
    "headline": {
-    "value": "5곳",
-    "label": "관측지점 · 2004–2026년"
+    "value": "16건",
+    "label": "관측지점 5곳의 수록 행 · 2004–2026년"
    },
    "preview": {
     "facts": [
@@ -6893,7 +6885,7 @@
     "measure": "measure-8dab1a416248",
     "sex": null,
     "year": 2000,
-    "period": "2000",
+    "period": null,
     "dimensions": {
      "detail": "Nghệ An"
     }
@@ -6973,7 +6965,7 @@
     "measure": "measure-15d5f8e7a89f",
     "sex": null,
     "year": 2010,
-    "period": "2010",
+    "period": null,
     "dimensions": {
      "detail": "Bắc Kạn"
     }
@@ -8005,7 +7997,8 @@
       "label": "납-아연",
       "value": "수출금지(원광) 대상"
      }
-    ]
+    ],
+    "more": 0
    },
    "period": "2026년",
    "selection": {
@@ -8646,7 +8639,7 @@
    "title": "기후 법제도[법령명, 유형(법률/시행령/규제/인센티브), 대상 분야(감축/적응/에너지/산업), 시행 연도, 상태(시행중/폐지/계류), 주관 부처, 원본 링크]",
    "kind": "facts",
    "headline": {
-    "value": "65건",
+    "value": "54건",
     "label": "법령·문서 · 조항·속성 182행을 문서 단위로 묶음"
    },
    "preview": {
@@ -8664,7 +8657,7 @@
       "value": ""
      }
     ],
-    "more": 62
+    "more": 51
    },
    "period": "2005–2050년",
    "selection": {
@@ -8694,7 +8687,7 @@
    "title": "기타 환경 법제도[법령명, 유형(EIA법/대기질/수질/폐기물/생물다양성), 시행 연도, 상태, 주관 부처, 원본 링크]",
    "kind": "facts",
    "headline": {
-    "value": "53건",
+    "value": "41건",
     "label": "법령·문서 · 조항·속성 59행을 문서 단위로 묶음"
    },
    "preview": {
@@ -8712,7 +8705,7 @@
       "value": ""
      }
     ],
-    "more": 50
+    "more": 38
    },
    "period": "2008–2030년",
    "selection": {
@@ -9414,8 +9407,7 @@
     "period": null,
     "dimensions": {
      "category": "바이오에너지 기술 (Biomass)",
-     "detail": "총투자액÷설비용량 중앙값",
-     "technology": "8"
+     "detail": "총투자액÷설비용량 중앙값"
     }
    },
    "measure": {
@@ -9467,9 +9459,7 @@
     "year": 2030,
     "period": null,
     "dimensions": {
-     "category": "바이오에너지 기술",
-     "detail": "2023→2030 설비용량 연평균성장률(CAGR)",
-     "technology": "8"
+     "category": "바이오에너지 기술"
     }
    },
    "measure": {
@@ -9522,8 +9512,7 @@
     "period": null,
     "dimensions": {
      "category": "바이오에너지 기술",
-     "detail": "1MW당 20년 누적 온실가스 감축량",
-     "technology": "8"
+     "detail": "1MW당 20년 누적 온실가스 감축량"
     }
    },
    "measure": {
@@ -9573,9 +9562,7 @@
     "year": 2026,
     "period": null,
     "dimensions": {
-     "category": "바이오에너지 기술(고 시나리오)",
-     "detail": "20년 누적 크레딧 수익의 CAPEX 대비 회수율",
-     "technology": "8"
+     "category": "바이오에너지 기술(고 시나리오)"
     }
    },
    "measure": {
@@ -9769,7 +9756,8 @@
       "label": "도입 여부 · 제도 도입 형태",
       "value": "부분 도입 — TCCRE 유형분류 기반 사후 태깅"
      }
-    ]
+    ],
+    "more": 0
    },
    "period": "2015–2022년",
    "selection": {
@@ -9984,8 +9972,7 @@
     "period": null,
     "dimensions": {
      "category": "Official donors",
-     "detail": "대베트남 ODA 총지출액(총계)",
-     "technology": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38"
+     "detail": "대베트남 ODA 총지출액(총계)"
     }
    },
    "measure": {
@@ -10940,8 +10927,8 @@
    "title": "GCF NDA(국가지정기관)[국가, 기관명, 소속 부처, 담당자명, 직함, 이메일, 전화번호]",
    "kind": "facts",
    "headline": {
-    "value": "3곳",
-    "label": "기관 · 2026년"
+    "value": "8건",
+    "label": "기관 3곳의 수록 행 · 2026년"
    },
    "preview": {
     "facts": [

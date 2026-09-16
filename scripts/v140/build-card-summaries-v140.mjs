@@ -225,11 +225,29 @@ function seriesLabel(series) {
   return [...new Set(labels)].join(" · ");
 }
 
-function selectionFor(measureKey, series, year, period) {
-  const dimensions = Object.fromEntries(
-    Object.entries(series?.dimensions || {}).filter(([key]) => !["entityType", "year", "period"].includes(key))
+/**
+ * The selection in the detail's own keys. Only dimensions the detail offers
+ * as a choice are handed over: the archetype drops a dimension with a single
+ * value and never offers `technology`, so passing them would read as "not
+ * kept". A period that is just the year is the year.
+ */
+function selectionFor(measureKey, series, year, period, contract) {
+  const selectable = new Set(
+    (contract?.dimensions || [])
+      .filter((dimension) => !["entityType", "year", "period", "sex", "technology"].includes(dimension.key) && dimension.values.length > 1)
+      .map((dimension) => dimension.key)
   );
-  return { measure: measureKey, sex: dimensions.sex || null, year: year ?? null, period: period ?? null, dimensions };
+  const dimensions = Object.fromEntries(
+    Object.entries(series?.dimensions || {}).filter(([key]) => selectable.has(key))
+  );
+  const yearLike = period && /^\d{4}$/u.test(String(period)) ? Number(period) : null;
+  return {
+    measure: measureKey,
+    sex: series?.dimensions?.sex || null,
+    year: year ?? yearLike ?? null,
+    period: period && yearLike === null ? period : null,
+    dimensions,
+  };
 }
 
 // ------------------------------------------------------------------ observation cards
@@ -296,7 +314,7 @@ function observationCard(elementId, item, pack, contract, override) {
         : { value: `${formatNumber(top.value)} ${unit}`, label: `${measure.labelKo}${override?.headlineSeries ? "" : " 최대"} · ${top.label} · ${scope}` },
       preview: { parts: shown, unit, scope, omitted: parts.length - shown.length, total: kind === "composition" ? total : null },
       period: periodOf(item, yearsOf(numericRows)),
-      selection: selectionFor(measureKey, override?.series?.match ? usable[0] : null, Number.isFinite(year) ? year : null, null),
+      selection: selectionFor(measureKey, override?.series?.match ? usable[0] : null, Number.isFinite(year) ? year : null, null, contract),
       basis: { unit: "관측값", rule: `${measure.labelKo}(${unit})을 ${scope} 기준으로 ${parts.length}개 항목에서 비교${override?.excludeTotal ? " · 합계 행 제외" : ""}${override?.note ? ` · ${override.note}` : ""}` },
       measure: { key: measureKey, label: measure.labelKo, unit },
     };
@@ -329,7 +347,7 @@ function levelOrLine(elementId, item, contract, measure, series, override, rows)
       headline: { value: `${formatNumber(parts[0].value)} ${unit}`, label: `${measure.labelKo} 최대 · ${parts[0].label} · ${parts.length}개 성·시 중 · ${scope}` },
       preview: { parts: parts.slice(0, 5).map(({ label, value }) => ({ label, value })), unit, scope: `${measure.labelKo} 상위 5개 성·시`, median: median(values), range: { min: quantile(values, 0), p10: quantile(values, 0.1), p90: quantile(values, 0.9), max: quantile(values, 1) }, provinces: parts.length },
       period: periodOf(item, yearsOf(provinceSeries.flatMap((s) => s.rows))),
-      selection: selectionFor(measure.key, parts[0].series, Number.isFinite(point?.year) ? point.year : null, point?.period || null),
+      selection: selectionFor(measure.key, parts[0].series, Number.isFinite(point?.year) ? point.year : null, point?.period || null, contract),
       basis: { unit: "성·시 값", rule: `${measure.labelKo}(${unit}) ${parts.length}개 성·시 값 · ${scope} · 최대값과 중앙값·10~90분위 · 합산하지 않음` },
       measure: { key: measure.key, label: measure.labelKo, unit },
     };
@@ -345,7 +363,7 @@ function levelOrLine(elementId, item, contract, measure, series, override, rows)
   const latest = latestPoint(numeric) || numeric[numeric.length - 1];
   const label = seriesLabel(chosen);
   const scopeYear = Number.isFinite(latest.year) ? `${latest.year}년` : latest.period || "";
-  const selection = selectionFor(measure.key, series.length > 1 ? chosen : null, Number.isFinite(latest.year) ? latest.year : null, latest.period || null);
+  const selection = selectionFor(measure.key, series.length > 1 ? chosen : null, Number.isFinite(latest.year) ? latest.year : null, latest.period || null, contract);
   const base = {
     headline: { value: `${formatNumber(latest.value)} ${unit}`, label: [measure.labelKo !== label ? measure.labelKo : null, label, scopeYear].filter(Boolean).join(" · ") },
     period: periodOf(item, years),
@@ -372,16 +390,16 @@ function levelOrLine(elementId, item, contract, measure, series, override, rows)
 }
 
 function textFactsCard(elementId, item, measure, rows) {
-  const facts = rows
-    .filter((row) => row.value !== null && row.value !== undefined && row.value !== "")
+  const populated = rows.filter((row) => row.value !== null && row.value !== undefined && row.value !== "");
+  const facts = populated
     .slice(0, 3)
     .map((row) => ({ label: seriesLabel({ labels: row.dimensionLabels }) || row.displayLabel, value: String(row.value).slice(0, 60) }));
   return {
     kind: "facts",
-    headline: { value: `${facts.length}개 항목`, label: `${measure.labelKo} · 값이 문장으로 기재된 자료` },
-    preview: { facts },
+    headline: { value: `${populated.length}개 항목`, label: `${measure.labelKo} · 값이 문장으로 기재된 자료` },
+    preview: { facts, more: Math.max(0, populated.length - facts.length) },
     period: periodOf(item),
-    selection: selectionFor(measure.key, null, null, null),
+    selection: selectionFor(measure.key, null, null, null, null),
     basis: { unit: "항목", rule: "수치가 아닌 기재 내용을 그대로 보임" },
     measure: { key: measure.key, label: measure.labelKo, unit: measure.unit },
   };
@@ -442,7 +460,9 @@ function entityCard(elementId, item, pack, contract, rule) {
     };
   }
   if (rule.kind === "documents") {
-    const names = [...new Set(rows.map((row) => text(row.name)).filter(Boolean))];
+    // The same grouping the detail's document timeline uses: the source's
+    // record-name column, falling back to the row name.
+    const names = [...new Set(rows.map((row) => text(row.normalizedAttributes?.["속성1_레코드명"]) || text(row.name)).filter((name) => name && !/^[—–-]\s*/u.test(name)))];
     const years = yearsFromEntities(rows);
     const recent = names.slice(0, 3);
     return {
@@ -488,11 +508,15 @@ function entityCard(elementId, item, pack, contract, rule) {
       measure: null,
     };
   }
-  // facts: what the register holds
+  // facts: what the register holds. When rows are grouped (3 sites in 11
+  // observation rows) the detail lists the rows, so the card leads with the
+  // rows and states the group count beside them.
   const names = [...new Set(rows.map(nameOf).map(text).filter(Boolean))];
   return {
     kind: "facts",
-    headline: { value: `${formatNumber(distinct)}${countSuffix(rule.unit)}`, label: `${rule.unit} · ${period}` },
+    headline: rule.distinctBy
+      ? { value: `${formatNumber(rows.length)}건`, label: `${rule.unit} ${formatNumber(distinct)}${countSuffix(rule.unit)}의 수록 행 · ${period}` }
+      : { value: `${formatNumber(distinct)}${countSuffix(rule.unit)}`, label: `${rule.unit} · ${period}` },
     preview: { facts: names.slice(0, 3).map((name) => ({ label: name, value: "" })), more: Math.max(0, names.length - 3) },
     period,
     selection,

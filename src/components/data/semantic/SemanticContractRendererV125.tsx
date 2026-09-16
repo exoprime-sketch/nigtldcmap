@@ -1054,6 +1054,154 @@ function EvidenceCardsV125({
   );
 }
 
+/**
+ * The shared C template files one law as several rows - its title, its
+ * effective date, its issuing authority, its rank, whether it is in force -
+ * each with 속성23_설명 naming the attribute and 속성3_값 holding it. A
+ * timeline of those rows repeated every law five times under a cryptic
+ * "규율 대상 분야" or "보완항목". Where that shape is present, the timeline is
+ * one entry per document, dated by its effective date, with the attributes
+ * as a short list (V140).
+ */
+const DOCUMENT_NAME_KEY = "속성1_레코드명";
+const DOCUMENT_ATTRIBUTE_KEY = "속성23_설명";
+const DOCUMENT_VALUE_KEY = "속성3_값";
+const DOCUMENT_YEAR_KEY = "속성4_시점";
+const EFFECTIVE_DATE_LABEL = /시행\s*\(발효\)일|시행일|발효일/u;
+
+interface DocumentTimelineEntryV140 {
+  key: string;
+  name: string;
+  description: string;
+  effectiveDate: string;
+  year: string;
+  attributes: Array<{ label: string; value: string }>;
+  sourceUrl: string;
+  rowCount: number;
+}
+
+function documentTimelineShapeV140(entities: VietnamEntityV124[]): boolean {
+  if (entities.length < 4) return false;
+  // Every row names its document; the national laws also carry one
+  // attribute per row, while a provincial plan is a single row whose
+  // subject is in the note.
+  const named = entities.filter((entity) => Boolean(publicTextV126((entity.normalizedAttributes || {})[DOCUMENT_NAME_KEY])));
+  const attributed = entities.filter((entity) => Boolean(publicTextV126((entity.normalizedAttributes || {})[DOCUMENT_ATTRIBUTE_KEY])));
+  return named.length >= entities.length * 0.8 && attributed.length >= entities.length * 0.3;
+}
+
+/** "Decision 942/QĐ-TTg" and "Decision 942/QD-TTg" name the same act. */
+const documentCodeV140 = (value: string): string =>
+  value.normalize("NFD").replace(/[̀-ͯ]/gu, "").replace(/Đ/gu, "D").replace(/đ/gu, "d").toLowerCase().match(/\d+\/[a-z]+(?:-[a-z]+)*/u)?.[0] || "";
+
+function documentTimelineEntriesV140(entities: VietnamEntityV124[]): DocumentTimelineEntryV140[] {
+  const byName = new Map<string, DocumentTimelineEntryV140>();
+  // A row named "— FAOLEX 원문 PDF" is a source link for the act its value
+  // names, not an act; it is attached to that act after the acts are read.
+  const sourceRows: Array<{ label: string; target: string; url: string }> = [];
+  entities.forEach((entity) => {
+    const attributes = entity.normalizedAttributes || {};
+    const name = publicTextV126(attributes[DOCUMENT_NAME_KEY]) || publicTextV126(entity.name) || "";
+    if (!name) return;
+    // The public normaliser drops the leading dash, so the raw value is read.
+    if (/^\s*[—–-]/u.test(String(attributes[DOCUMENT_NAME_KEY] ?? entity.name ?? ""))) {
+      sourceRows.push({ label: name, target: publicTextV126(attributes[DOCUMENT_VALUE_KEY]) || "", url: entityUrlV125(entity) });
+      return;
+    }
+    const label = publicTextV126(attributes[DOCUMENT_ATTRIBUTE_KEY]) || "";
+    const value = publicTextV126(attributes[DOCUMENT_VALUE_KEY]) || "";
+    const entry = byName.get(name) || {
+      key: entity.recordId,
+      name,
+      description: "",
+      effectiveDate: "",
+      year: publicTextV126(attributes[DOCUMENT_YEAR_KEY]) || "",
+      attributes: [],
+      sourceUrl: "",
+      rowCount: 0,
+    };
+    entry.rowCount += 1;
+    if (!entry.sourceUrl) entry.sourceUrl = entityUrlV125(entity);
+    const region = publicTextV126(attributes["속성21_지역_현행"]) || publicTextV126(attributes["속성20_지역_원문"]);
+    if (region && !entry.attributes.some((attribute) => attribute.label === "지역")) {
+      entry.attributes.push({ label: "지역", value: region });
+    }
+    if (!label) {
+      // A single-row document (a provincial plan): its subject is the note,
+      // its date the statement date.
+      const note = (withoutRestatedTitleV137(publicDescriptionNoteV137(entity.note), name) || "").split(/\s\/\s/u)[0].trim();
+      if (note && !entry.description) entry.description = note;
+      if (!entry.effectiveDate && /^\d{4}-\d{2}-\d{2}$/u.test(entry.year)) entry.effectiveDate = entry.year;
+    } else if (EFFECTIVE_DATE_LABEL.test(label)) {
+      entry.effectiveDate = value || entry.effectiveDate;
+    } else if (label.includes(name) || /\s[—–-]\s/u.test(label)) {
+      // The row that restates the document's own title carries its subject
+      // after a dash; the code before the dash is already the name.
+      const subject = label.split(/\s[—–-]\s/u).slice(1).join(" — ").trim();
+      entry.description = subject || entry.description;
+    } else if (label && value) {
+      entry.attributes.push({ label: label.replace(/\s*\(보완항목\)\s*/u, "").trim(), value });
+    }
+    byName.set(name, entry);
+  });
+  sourceRows.forEach((row) => {
+    const code = documentCodeV140(row.target);
+    const target = [...byName.values()].find((entry) => (code && documentCodeV140(entry.name) === code) || (row.target && entry.name === row.target));
+    if (!target) return;
+    target.attributes.push({ label: "원문 출처", value: row.label });
+    if (!target.sourceUrl) target.sourceUrl = row.url;
+  });
+  // Full dates sort as dates; a bare year sorts as a year.
+  const sortKey = (entry: DocumentTimelineEntryV140) => {
+    const date = entry.effectiveDate || entry.year;
+    const iso = date.match(/^(\d{4})-(\d{2})-(\d{2})/u);
+    return iso ? Number(iso[1]) * 10000 + Number(iso[2]) * 100 + Number(iso[3]) : timelineSortV125(date) * 10000;
+  };
+  return [...byName.values()].sort((left, right) => sortKey(left) - sortKey(right));
+}
+
+function DocumentTimelineV140({ entities }: { entities: VietnamEntityV124[] }) {
+  const entries = documentTimelineEntriesV140(entities);
+  if (entries.length === 0) return null;
+  return (
+    <VisualizationFrameV125 eyebrow="연대기" title="법령·문서별 시행 시점과 핵심 사항">
+      <p className="sv125-document-count" data-testid="document-timeline-count-v140">
+        법령·문서 {entries.length.toLocaleString("ko-KR")}건 · 원천 {entities.length.toLocaleString("ko-KR")}행을 문서 단위로 묶음 · 시행(발효)일 순
+      </p>
+      <ol className="sv125-policy-timeline sv125-policy-timeline--documents" data-testid="document-timeline-v140">
+        {entries.map((entry) => (
+          <li key={entry.key} data-document-rows={entry.rowCount}>
+            <time>
+              <PublicTermTextV134 text={entry.effectiveDate || entry.year || "시점 미기재"} />
+            </time>
+            <div>
+              <strong><PublicTermTextV134 text={entry.name} /></strong>
+              {entry.description && (
+                <p><PublicTermTextV134 text={entry.description} /></p>
+              )}
+              {entry.attributes.length > 0 && (
+                <dl className="sv125-document-attributes">
+                  {entry.attributes.map((attribute) => (
+                    <div key={`${attribute.label}:${attribute.value}`}>
+                      <dt><PublicTermTextV134 text={attribute.label} /></dt>
+                      <dd><PublicTermTextV134 text={attribute.value} /></dd>
+                    </div>
+                  ))}
+                </dl>
+              )}
+              {safeHttpUrlV125(entry.sourceUrl) && (
+                <a href={entry.sourceUrl} target="_blank" rel="noreferrer">
+                  원문 보기
+                </a>
+              )}
+            </div>
+          </li>
+        ))}
+      </ol>
+    </VisualizationFrameV125>
+  );
+}
+
 function PolicyTimelineV125({
   rows,
   entities,
@@ -1061,6 +1209,9 @@ function PolicyTimelineV125({
   rows: PresentRowV125[];
   entities: VietnamEntityV124[];
 }) {
+  if (documentTimelineShapeV140(entities)) {
+    return <DocumentTimelineV140 entities={entities} />;
+  }
   const items = [
     ...rows.map((row) => ({
       key: row.recordId,

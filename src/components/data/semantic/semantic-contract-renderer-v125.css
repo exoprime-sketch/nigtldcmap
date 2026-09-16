@@ -624,3 +624,33 @@
   font-weight: 700;
   white-space: nowrap;
 }
+
+/* V140: one timeline entry per law, with its attributes as a short list. */
+.sv125-document-count {
+  margin: 0 0 12px;
+  color: #52645f;
+  font-size: 0.82rem;
+}
+
+.sv125-document-attributes {
+  margin: 0.2rem 0 0;
+  display: grid;
+  gap: 3px;
+  font-size: 0.8rem;
+}
+
+.sv125-document-attributes > div {
+  display: grid;
+  grid-template-columns: minmax(90px, 30%) minmax(0, 1fr);
+  gap: 8px;
+}
+
+.sv125-document-attributes dt {
+  color: #60706c;
+}
+
+.sv125-document-attributes dd {
+  margin: 0;
+  color: #173b34;
+  overflow-wrap: anywhere;
+}

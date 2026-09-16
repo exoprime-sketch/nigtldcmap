@@ -60,13 +60,13 @@ const clean = (value) => String(value || "").normalize("NFC").replace(/\s+/gu, "
 /** Every number a Korean/English formatted text holds, expanded from 억/만/천/10억/백만. */
 function numbersIn(text) {
   const out = [];
-  const re = /(-|−)?(\d[\d,]*(?:\.\d+)?)\s*(억|만|천|십억|10억|백만)?/gu;
+  const re = /(-|−)?(\d[\d,]*(?:\.\d+)?)\s*(조|억|만|천|십억|10억|백만)?/gu;
   let match;
   while ((match = re.exec(text))) {
     const raw = Number(match[2].replace(/,/gu, ""));
     if (!Number.isFinite(raw)) continue;
     const sign = match[1] ? -1 : 1;
-    const scale = { 억: 1e8, 만: 1e4, 천: 1e3, 십억: 1e9, "10억": 1e9, 백만: 1e6 }[match[3]] || 1;
+    const scale = { 억: 1e8, 만: 1e4, 천: 1e3, 십억: 1e9, "10억": 1e9, 백만: 1e6, 조: 1e12 }[match[3]] || 1;
     out.push(sign * raw * scale);
     if (scale !== 1) out.push(sign * raw);
   }
@@ -80,7 +80,9 @@ function headlineNumber(card) {
   if (!nums.length) return null;
   // A range ("−1.10 ~ +0.01") is verified by its first bound.
   const first = nums[0];
-  const candidates = new Set([first]);
+  // Both the scaled and the plain reading of "7,364 십억": the detail may
+  // print either.
+  const candidates = new Set(nums.slice(0, 2));
   // 10억 USD on the card is USD on the detail; MW/ha/km stay as they are.
   if (/10억/u.test(card.headline.label || "") || /10억/u.test(value)) candidates.add(first * 1e9);
   if (/백만/u.test(card.headline.label || "") || /백만/u.test(value)) candidates.add(first * 1e6);
@@ -252,6 +254,20 @@ async function checkElement(context, item) {
     const controls = screen.selects.filter((select) => select.options > 1).slice(0, 4);
     if (controls.length) {
       const results = [];
+      // Each control is tried from the same starting state: the previous
+      // control is put back before the next one is moved, so a filter that
+      // emptied a list cannot make the next control look inert.
+      const baseline = await page.evaluate(() => [...(document.querySelector('[data-testid="public-analysis-primary"]')?.querySelectorAll("select") || [])].map((select) => select.value));
+      const restore = async (index) => {
+        await page.evaluate(([i, value]) => {
+          const select = document.querySelector('[data-testid="public-analysis-primary"]')?.querySelectorAll("select")[i];
+          if (!select || select.value === value) return;
+          const setter = Object.getOwnPropertyDescriptor(HTMLSelectElement.prototype, "value").set;
+          setter.call(select, value);
+          select.dispatchEvent(new Event("change", { bubbles: true }));
+        }, [index, baseline[index]]);
+        await page.waitForTimeout(400);
+      };
       for (const control of controls) {
         const before = clean(await page.$eval(PRIMARY, (node) => node.innerText).catch(() => ""));
         const changed = await page.evaluate((index) => {
@@ -271,6 +287,7 @@ async function checkElement(context, item) {
         await page.waitForTimeout(700);
         const after = clean(await page.$eval(PRIMARY, (node) => node.innerText).catch(() => ""));
         results.push({ control: control.label, to: clean(changed).slice(0, 40), changed: before !== after });
+        await restore(control.index);
       }
       const tested = results.filter((r) => r.tested !== false);
       record.controlsVerified = tested.length > 0 && tested.every((r) => r.changed);
