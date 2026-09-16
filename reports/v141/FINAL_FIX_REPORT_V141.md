@@ -65,7 +65,7 @@
 | 검사 | 결과 | 근거 |
 | --- | --- | --- |
 | 단위·표적 재현 | A-023 지도(WRI/OSM/함께, 수력 필터, Kon Dao), C-007/C-008/C-018/B-021/B-012/B-025 화면, 1024/768/1440 지도 스크린샷 | `reports/v141/screenshots/` |
-| `finalize:v140` 1회 | finalize:v136 **79/79** · role-split **52/52** · analysis QA **152개 필수 실패 0** (exit 0) | `reports/v136/release-audit-v136.json`, `reports/v140/role-split-qa-v140-local-build.json`, `reports/v140/analysis-qa-v140-local-build.{json,md}` |
+| `finalize:v140` (최종 소스에서 통과 1회) | finalize:v136 **79/79** · role-split **52/52** · analysis QA **152개 필수 실패 0** (exit 0). 그 전 3회는 기존 감사가 새 화면을 인식하지 못해 중단(entity-cards 화면 인식 → portfolio 대상 목록 → glossary 약어 등록·generic-detail 분포 읽기); 각각 해당 감사만 단독 재실행해 고친 뒤 전체를 다시 돌렸다 | `reports/v136/release-audit-v136.json`, `reports/v140/role-split-qa-v140-local-build.json`, `reports/v140/analysis-qa-v140-local-build.{json,md}` |
 | analysis QA 세부 | 카드 클릭 152 · 홈 8 · 선택 URL 93 · 수치 대조 150(+2 문장값) · 재계산 144 일치/0 불일치 · 선택 문구 93 · **analysisFit 152** · 컨트롤 119(278회, 시험 불가 3) · 표 131 match(위 재분류) · 지도 42 · **대표 기호 42** · 내부 문구 0 | 같은 파일 |
 | Playwright(후보 build) | 214/214 | `reports/final-data-integration/` |
 | 검증하지 않은 항목 | Preview·운영(§0), Linux 시각 baseline(CI diff 검토 후), 모든 tooltip 조합(대표 기호 1개/레이어만 검사), 390/768/1024/1920 전 화면 육안 검토(지도 3폭만 캡처) |
