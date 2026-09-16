@@ -1,0 +1,5436 @@
+{
+  "summary": {
+    "label": "local-build",
+    "base": "http://127.0.0.1:51767",
+    "generatedAt": "2026-09-16T02:00:29.353Z",
+    "elements": 152,
+    "screenLoaded": 152,
+    "cardSummaryVerified": {
+      "pass": 150,
+      "fail": 0,
+      "notApplicable": 2
+    },
+    "detailAnalysisFit": {
+      "pass": 91,
+      "fail": 0,
+      "notApplicable": 61
+    },
+    "controlsVerified": {
+      "pass": 118,
+      "fail": 2,
+      "notApplicable": 32
+    },
+    "tableValuesVerified": {
+      "pass": 59,
+      "fail": 86,
+      "notApplicable": 7
+    },
+    "mapHandoffVerified": {
+      "pass": 42,
+      "fail": 0,
+      "notApplicable": 110
+    },
+    "withRemainingIssues": 2
+  },
+  "results": [
+    {
+      "elementId": "A-001",
+      "title": "CPI(Corruption Perceptions Index, 부패인식지수)",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "부패인식지수(CPI)",
+        "url": "?view=data&element=cpi-corruption-perceptions-index-bupaeinsigjisu&country=VNM&from=explorer&measure=measure-ffa3eb23fb73&year=2025",
+        "selects": [
+          "항목(8)",
+          "연도(14)"
+        ],
+        "cardSummary": "41 점 → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "CPI 산출 원천 수 · 건",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2024",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "A-002",
+      "title": "CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표)",
+      "kind": "signed-bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "국가 거버넌스 지표(WGI)",
+        "url": "?view=data&element=wgi-worldwide-governance-indicators-gugga-geobeoneonseu-jipyo&country=VNM&from=explorer&year=2024&dim.cpiaCluster=economic&dim.wgiMeasure=est",
+        "selects": [
+          "기준연도(26)",
+          "표시 값(2)"
+        ],
+        "cardSummary": "−1.10 ~ +0.01 → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "기준연도",
+            "to": "2023",
+            "changed": true
+          },
+          {
+            "control": "표시 값",
+            "to": "백분위(같은 해 조사대상국 중 위치)",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "A-003",
+      "title": "GDP[현재가, PPP, 성장률, 1인당]",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "국내총생산 및 경제성장",
+        "url": "?view=data&element=gdp-hyeonjaega-ppp-seongjangryul-1indang&country=VNM&from=explorer&measure=measure-82dc14f247b2&year=2025",
+        "selects": [
+          "항목(7)",
+          "연도(41)"
+        ],
+        "cardSummary": "514.7 → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "1인당 GDP · USD",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2024",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "A-004",
+      "title": "빈곤율; 극빈곤율",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "빈곤율 및 극빈곤율",
+        "url": "?view=data&element=bingonyul-geugbingonyul&country=VNM&from=explorer&measure=measure-33137a759a42&year=2022",
+        "selects": [
+          "항목(2)",
+          "연도(31)"
+        ],
+        "cardSummary": "4.2 % → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "극빈곤율 · %",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2021",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "A-005",
+      "title": "산업구조[농업, 제조, 서비스]",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "산업구조",
+        "url": "?view=data&element=saneobgujo-nongeob-jejo-seobiseu&country=VNM&from=explorer&measure=measure-398b8bde8064&year=2025",
+        "selects": [
+          "select-0(40)"
+        ],
+        "cardSummary": "42.7 % → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "select-0",
+            "to": "2024년",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "A-006",
+      "title": "실업률; 청년실업률",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "고용 및 실업",
+        "url": "?view=data&element=sileobryul-ceongnyeonsileobryul&country=VNM&from=explorer&measure=measure-93ccf6a5d485&year=2025&dim.category=ILO+모델추정&dim.detail=경제활동인구+대비+실업자+비율(ILO+모형+보정+추정치)",
+        "selects": [
+          "항목(2)",
+          "분류(3)",
+          "세부 분류(3)",
+          "연도(35)"
+        ],
+        "cardSummary": "1.52 % → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "청년 실업률 · %",
+            "changed": true
+          },
+          {
+            "control": "분류",
+            "to": "ILO 모델추정",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "2024",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "tested": false
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "A-007",
+      "title": "인구[총인구, 도시화율]",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "인구 및 도시화",
+        "url": "?view=data&element=ingu-congingu-dosihwayul&country=VNM&from=explorer&measure=measure-be793786b249&year=2025",
+        "selects": [
+          "항목(4)",
+          "연도(66)"
+        ],
+        "cardSummary": "1.02억 명 → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "도시인구 · 명",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2024",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "A-008",
+      "title": "지니계수",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "소득 불평등(지니계수)",
+        "url": "?view=data&element=jinigyesu&country=VNM&from=explorer&measure=measure-a6e5b6b4f25f&year=2022",
+        "selects": [
+          "연도(31)"
+        ],
+        "cardSummary": "36.1 지수 → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "연도",
+            "to": "2021",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "A-009",
+      "title": "GHG 배출 강도[GDP 대비, 1인당]",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "온실가스 배출집약도",
+        "url": "?view=data&element=ghg-baecul-gangdo-gdp-daebi-1indang&country=VNM&from=explorer&measure=measure-90f520e15b99&year=2024",
+        "selects": [
+          "항목(2)",
+          "연도(35)"
+        ],
+        "cardSummary": "0.402 tCO2eq/1,000 국제달러 → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "GHG 배출 강도 · tCO2eq/인",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2023",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "A-010",
+      "title": "GHG 배출량[CO₂, CH₄, N₂O, F-gas]",
+      "kind": "composition",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "온실가스 종류별 배출량",
+        "url": "?view=data&element=ghg-baeculryang-co2-ch4-n2o-f-gas&country=VNM&from=explorer&measure=measure-165d8811fba3&year=2024",
+        "selects": [
+          "emissions-measure-selector-v132(2)",
+          "emissions-year-selector-v132(35)"
+        ],
+        "cardSummary": "582.7 → primary",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "emissions-measure-selector-v132",
+            "to": "가스별 질량 · Gg",
+            "changed": true
+          },
+          {
+            "control": "emissions-year-selector-v132",
+            "to": "2023년",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "A-011",
+      "title": "GHG 배출량[에너지, 산업공정, 농업, 폐기물]",
+      "kind": "composition",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "부문별 온실가스 배출량",
+        "url": "?view=data&element=ghg-baeculryang-eneoji-saneobgongjeong-nongeob-pyegimul&country=VNM&from=explorer&measure=measure-8f3f26173c00&year=2024",
+        "selects": [
+          "emissions-year-selector-v132(55)"
+        ],
+        "cardSummary": "202 Mt CO2eq → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "emissions-year-selector-v132",
+            "to": "2023년",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "A-012",
+      "title": "총 GHG 배출량(LULUCF 제외)",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "온실가스 총배출량",
+        "url": "?view=data&element=cong-ghg-baeculryang-lulucf-jeoe&country=VNM&from=explorer&measure=measure-31c014917117&year=2024",
+        "selects": [
+          "항목(3)",
+          "연도(55)"
+        ],
+        "cardSummary": "584 Mt CO2eq → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "LULUCF 순플럭스 · Mt CO2eq",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2023",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "A-013",
+      "title": "Climate Watch NDC-SDG linkage",
+      "kind": "level",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "NDC와 지속가능발전목표 연계",
+        "url": "?view=data&element=climate-watch-ndc-sdg-linkage&country=VNM&from=explorer&measure=measure-688e21a19b14&year=2016",
+        "selects": [
+          "정보 유형(3)"
+        ],
+        "cardSummary": "365 건 → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "정보 유형",
+            "to": "Action",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "A-014",
+      "title": "UNDESA SDG Index Score",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "지속가능발전목표 지수",
+        "url": "?view=data&element=undesa-sdg-index-score&country=VNM&from=explorer&measure=measure-87fffae7373e&year=2025",
+        "selects": [
+          "항목(3)",
+          "분류(18)",
+          "연도(26)"
+        ],
+        "cardSummary": "73.8 점 → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "SDG Index 종합순위 · 위",
+            "changed": true
+          },
+          {
+            "control": "분류",
+            "to": "SDG1 빈곤 종식",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2024",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "A-015",
+      "title": "UNDESA SDG 세부목표별 달성도",
+      "kind": "level",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "지속가능발전목표 세부 달성도",
+        "url": "?view=data&element=undesa-sdg-sebumogpyobyeol-dalseongdo&country=VNM&from=explorer&measure=measure-5ea01ce732be&year=2026&dim.category=1일+4.20달러+미만+빈곤율&dim.detail=정규화+달성도+점수(0~100)",
+        "selects": [
+          "항목(17)",
+          "분류(3)",
+          "세부 분류(2)"
+        ],
+        "cardSummary": "93.9 점 → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "SDG10 세부지표 달성도 · 점",
+            "changed": true
+          },
+          {
+            "control": "분류",
+            "to": "1일 3.00달러 미만 빈곤율",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "tested": false
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "A-016",
+      "title": "1차 에너지 소비 구조",
+      "kind": "composition",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "1차 에너지 소비구조",
+        "url": "?view=data&element=1ca-eneoji-sobi-gujo&country=VNM&from=explorer&measure=measure-d79799fd97aa&year=2025",
+        "selects": [
+          "상세 구성 기준연도(61)"
+        ],
+        "cardSummary": "2.57 EJ → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "상세 구성 기준연도",
+            "to": "2024년",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "A-017",
+      "title": "LCOE(균등화 발전비용)",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "발전원별 균등화 발전비용",
+        "url": "?view=data&element=lcoe-gyundeunghwa-baljeonbiyong&country=VNM&from=explorer&measure=measure-353011f9421d&year=2023&dim.category=가스복합화력(CCGT)(기준값)",
+        "selects": [
+          "분류(25)",
+          "기술(6)",
+          "연도(3)"
+        ],
+        "cardSummary": "155 USD/MWh → screen",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "분류",
+            "to": "가스복합화력(CCGT)(상한)",
+            "changed": true
+          },
+          {
+            "control": "기술",
+            "to": "1",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2030",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "A-018",
+      "title": "기술별 발전 설비용량",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "발전설비 용량",
+        "url": "?view=data&element=gisulbyeol-baljeon-seolbiyongryang&country=VNM&from=explorer&measure=measure-0487be6ab6ec&year=2025",
+        "selects": [
+          "select-0(27)",
+          "select-1(26)"
+        ],
+        "cardSummary": "28,100 MW → primary",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "select-0",
+            "to": "재생에너지 합계(계통연계)",
+            "changed": true
+          },
+          {
+            "control": "select-1",
+            "to": "2024년",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "A-019",
+      "title": "송배전 손실률(T&D Loss)",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "송배전 손실률",
+        "url": "?view=data&element=songbaejeon-sonsilryul-t-d-loss&country=VNM&from=explorer&measure=measure-2afa1823a80c&year=2023",
+        "selects": [
+          "연도(34)"
+        ],
+        "cardSummary": "6.58 % → primary",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "연도",
+            "to": "2022",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "A-020",
+      "title": "재생에너지 비중",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "재생에너지 비중",
+        "url": "?view=data&element=jaesaengeneoji-bijung&country=VNM&from=explorer&measure=measure-3923e88a8f1a&year=2025&dim.category=설비용량+기준",
+        "selects": [
+          "분류(3)",
+          "연도(26)"
+        ],
+        "cardSummary": "57.8 % → primary",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "분류",
+            "to": "발전량 기준",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2024",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "A-021",
+      "title": "전력 접근률",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "전력 접근률",
+        "url": "?view=data&element=jeonryeog-jeobgeunryul&country=VNM&from=explorer&measure=measure-b6bedc475e56&year=2024&dim.category=전체",
+        "selects": [
+          "분류(4)",
+          "연도(28)"
+        ],
+        "cardSummary": "100 % → primary",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "분류",
+            "to": "농촌",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2023",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "A-022",
+      "title": "정전빈도[SAIDI, SAIFI]",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": false,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [
+        "control without effect: 세부 분류"
+      ],
+      "evidence": {
+        "state": "ready",
+        "title": "정전 빈도와 지속시간",
+        "url": "?view=data&element=jeongjeonbindo-saidi-saifi&country=VNM&from=explorer&measure=measure-12b77d48a0f1&year=2024&dim.category=EVN+그룹+전체&dim.detail=연간+고객당+순간정전+횟수",
+        "selects": [
+          "항목(3)",
+          "분류(8)",
+          "세부 분류(2)",
+          "연도(12)"
+        ],
+        "cardSummary": "1.25 회/고객 → primary",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "SAIDI · 분/고객",
+            "changed": true
+          },
+          {
+            "control": "분류",
+            "to": "EVN 그룹 전체",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "2025",
+            "changed": false
+          },
+          {
+            "control": "연도",
+            "tested": false
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "A-023",
+      "title": "발전소[위치, 용량]",
+      "kind": "grouped-bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "발전소 현황",
+        "url": "?view=data&element=baljeonso-wici-yongryang&country=VNM&from=explorer&measure=measure-abbef01dfb86&year=2021",
+        "selects": [
+          "용량 구간(5)",
+          "연료 유형(10)"
+        ],
+        "cardSummary": "41,350 MW → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "용량 구간",
+            "to": "10MW 미만",
+            "changed": true
+          },
+          {
+            "control": "연료 유형",
+            "to": "(미표기)",
+            "changed": true
+          }
+        ],
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "A-024",
+      "title": "전력망[위치, 미공급 지역]",
+      "kind": "map",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": null,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "베트남 송전망",
+        "url": "?view=data&element=jeonryeogmang-wici-migonggeub-jiyeog&country=VNM&from=explorer&year=2016",
+        "selects": [],
+        "cardSummary": "23,608 km → primary",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": "no selectable control in the primary analysis",
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "A-025",
+      "title": "CCS 시설",
+      "kind": "level",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "탄소포집·저장 시설",
+        "url": "?view=data&element=ccs-siseol&country=VNM&from=explorer&measure=measure-06d3a0fc6345&year=2026",
+        "selects": [
+          "유형(6)"
+        ],
+        "cardSummary": "5 건 → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "유형",
+            "to": "CO2 주입(EOR)",
+            "changed": true
+          }
+        ],
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "A-026",
+      "title": "건물 풋프린트(Footprint)",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "건물 분포",
+        "url": "?view=data&element=geonmul-puspeurinteu-footprint&country=VNM&from=explorer&measure=measure-80b527a8f546&year=2023",
+        "selects": [
+          "항목(5)"
+        ],
+        "cardSummary": "1개 항목 → screen",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "건물 풋프린트 · m2",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "A-027",
+      "title": "교통 인프라[railway, road]",
+      "kind": "level",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "육상교통 인프라",
+        "url": "?view=data&element=gyotong-inpeura-railway-road&country=VNM&from=explorer&measure=measure-7d9609ecb1c8&year=2026&dim.category=피처+수&dim.detail=OSM+도로+레이어의+지물+건수",
+        "selects": [
+          "항목(8)",
+          "분류(14)",
+          "세부 분류(3)"
+        ],
+        "cardSummary": "312만 건 → primary",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "도로 레이어 · %",
+            "changed": true
+          },
+          {
+            "control": "분류",
+            "to": "분류별 피처 수(construction)",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "highway 분류값별 지물 건수",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "A-028",
+      "title": "해안 인프라; 수자원 인프라",
+      "kind": "level",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "해안·수자원 인프라",
+        "url": "?view=data&element=haean-inpeura-sujaweon-inpeura&country=VNM&from=explorer&measure=measure-db2cea55bbcc&year=2026&dim.category=피처+수&dim.detail=OSM+수로+레이어의+지물+건수",
+        "selects": [
+          "항목(8)",
+          "분류(6)",
+          "세부 분류(3)"
+        ],
+        "cardSummary": "38,001 건 → primary",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "수로 레이어 · %",
+            "changed": true
+          },
+          {
+            "control": "분류",
+            "to": "분류별 피처 수(canal)",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "fclass 분류값별 지물 건수",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "A-029",
+      "title": "FTA 체결 현황",
+      "kind": "level",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": null,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "자유무역협정 체결 현황",
+        "url": "?view=data&element=fta-cegyeol-hyeonhwang&country=VNM&from=explorer&measure=measure-1c87d29d26f9&year=2026",
+        "selects": [],
+        "cardSummary": "19 건 → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": "no selectable control in the primary analysis",
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "A-030",
+      "title": "한-개도국 교역액",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "한국과의 교역 규모",
+        "url": "?view=data&element=han-gaedogug-gyoyeogaeg&country=VNM&from=explorer&measure=measure-fe46d9d1d4c2&year=2024&dim.category=총+교역액&dim.detail=한국+기준+대베트남+총+교역액",
+        "selects": [
+          "분류(5)",
+          "세부 분류(5)",
+          "연도(4)"
+        ],
+        "cardSummary": "86.7 10억 USD → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "분류",
+            "to": "대베트남 수입액",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "한국 기준 대베트남 대베트남 수입액",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2023",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "A-031",
+      "title": "물류성과지수(LPI)",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "물류성과지수",
+        "url": "?view=data&element=mulryuseonggwajisu-lpi&country=VNM&from=explorer&measure=measure-9ee6e8638d12&year=2022&dim.category=통관&dim.detail=통관+부문+점수(1=낮음+~+5=높음)",
+        "selects": [
+          "분류(8)",
+          "세부 분류(8)",
+          "연도(7)"
+        ],
+        "cardSummary": "3.1 점 → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "분류",
+            "to": "국제운송",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "국제운송 부문 점수(1=낮음 ~ 5=높음)",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2018",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "A-032",
+      "title": "중간재 교역 규모",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "중간재 교역 규모",
+        "url": "?view=data&element=jungganjae-gyoyeog-gyumo&country=VNM&from=explorer&measure=measure-2183e07a67f3&year=2020&dim.category=수출+중+중간재+국내부가가치+비중&dim.detail=Trade+in+Value+Added:+Domestic+value+added+in+gross+exports+of+inter",
+        "selects": [
+          "항목(2)",
+          "분류(3)",
+          "세부 분류(3)",
+          "연도(26)"
+        ],
+        "cardSummary": "29.3 % → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "중간재 교역 규모 · 천 USD",
+            "changed": true
+          },
+          {
+            "control": "분류",
+            "to": "수출 중 중간재 국내부가가치 비중",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "2019",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "tested": false
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "A-033",
+      "title": "해운 연결성(LSCI)",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "해운 연결성",
+        "url": "?view=data&element=haeun-yeongyeolseong-lsci&country=VNM&from=explorer&measure=measure-a8b5f1ca1a7a&year=2026&dim.category=Q1&dim.detail=정기선+해운+연결성+지수(Q1+분기값)",
+        "selects": [
+          "분류(5)",
+          "세부 분류(5)",
+          "연도(21)"
+        ],
+        "cardSummary": "479 지수 → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "분류",
+            "to": "Q2",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "정기선 해운 연결성 지수(Q2 분기값)",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2025",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "B-001",
+      "title": "건기/우기",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "건기와 우기",
+        "url": "?view=data&element=geongi-ugi&country=VNM&from=explorer&measure=measure-706a7683fa04&year=1991",
+        "selects": [
+          "항목(5)",
+          "세부 분류(13)"
+        ],
+        "cardSummary": "263 mm → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "연 평년강수 · mm",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "1월",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "B-002",
+      "title": "기후대(Climate zone)",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "기후대",
+        "url": "?view=data&element=gihudae-climate-zone&country=VNM&from=explorer&measure=measure-095dc03abb8f&year=2020",
+        "selects": [
+          "항목(4)",
+          "세부 분류(8)",
+          "분류(5)"
+        ],
+        "cardSummary": "138,159 km² → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "국가 우세 기후대 · 구분",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "Af (열대우림)",
+            "changed": true
+          },
+          {
+            "control": "분류",
+            "to": "1901–1930 관측",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "B-003",
+      "title": "연평균 기온; 연평균 강수",
+      "kind": "spatial-trend",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "평균 기온과 강수량",
+        "url": "?view=data&element=yeonpyeonggyun-gion-yeonpyeonggyun-gangsu&country=VNM&from=explorer&year=2025&dim.mapVariable=연평균_기온",
+        "selects": [
+          "표시 항목용어 도움말?°C 설명(4)",
+          "지역(65)"
+        ],
+        "cardSummary": "24.9 °C → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "표시 항목용어 도움말?°C 설명",
+            "to": "연평균 최고기온 — °C",
+            "changed": true
+          },
+          {
+            "control": "지역",
+            "to": "전국 값",
+            "changed": true
+          }
+        ],
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "B-004",
+      "title": "CMIP6 기반 과거/미래 기후[기온(tas), 최고기온(tasmax), 최저기온(tasmin), 강수(pr), 풍속(sfcWind), 일사량(rsds), 상대습도(hurs)]",
+      "kind": "spatial-trend",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "과거·미래 기후전망(CMIP6)",
+        "url": "?view=data&element=cmip6-giban-gwageo-mirae-gihu-gion-tas-coegogion-tasmax-coejeogion-tasmin-gangsu-pr-pungso&country=VNM&from=explorer&year=2100&dim.mapVariable=연평균_기온&dim.scenario=ssp245",
+        "selects": [
+          "표시 항목용어 도움말?°C 설명(5)",
+          "지역(65)",
+          "시나리오(7)"
+        ],
+        "cardSummary": "26.8 °C → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "표시 항목용어 도움말?°C 설명",
+            "to": "연평균 최고기온 — °C",
+            "changed": true
+          },
+          {
+            "control": "지역",
+            "to": "전국 값",
+            "changed": true
+          },
+          {
+            "control": "시나리오",
+            "to": "과거 모형(historical)",
+            "changed": true
+          }
+        ],
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "B-005",
+      "title": "가뭄[연속 건조일수(CDD), 표준강수지수(SPEI12), 토양수분]",
+      "kind": "spatial-trend",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "가뭄 위험",
+        "url": "?view=data&element=gamum-yeonsog-geonjoilsu-cdd-pyojungangsujisu-spei12-toyangsubun&country=VNM&from=explorer&year=2100&dim.mapVariable=연속_건조일수_CDD_일&dim.scenario=ssp245",
+        "selects": [
+          "표시 항목용어 도움말?CDD 설명(2)",
+          "지역(65)",
+          "시나리오(7)"
+        ],
+        "cardSummary": "18.2 일 → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "표시 항목용어 도움말?CDD 설명",
+            "to": "표준강수증발산지수(SPEI-12) — 지수",
+            "changed": true
+          },
+          {
+            "control": "지역",
+            "to": "전국 값",
+            "changed": true
+          },
+          {
+            "control": "시나리오",
+            "to": "과거 모형(historical)",
+            "changed": true
+          }
+        ],
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "B-006",
+      "title": "폭염[폭염일수(TX35), 폭염일수(TX40), 열대야(TR20), 열대야(TR25), Heat Index(HI35)]",
+      "kind": "spatial-trend",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "폭염 위험",
+        "url": "?view=data&element=pogyeom-pogyeomilsu-tx35-pogyeomilsu-tx40-yeoldaeya-tr20-yeoldaeya-tr25-heat-index-hi35&country=VNM&from=explorer&year=2100&dim.mapVariable=폭염일수_TX_35_일&dim.scenario=ssp245",
+        "selects": [
+          "표시 항목(6)",
+          "지역(65)",
+          "시나리오(7)"
+        ],
+        "cardSummary": "33.3 일 → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "표시 항목",
+            "to": "폭염일수(최고기온 40°C 이상) — 일",
+            "changed": true
+          },
+          {
+            "control": "지역",
+            "to": "전국 값",
+            "changed": true
+          },
+          {
+            "control": "시나리오",
+            "to": "과거 모형(historical)",
+            "changed": true
+          }
+        ],
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "B-007",
+      "title": "홍수[최대 1일 강수(RX1day), 최대 5일 강수(RX5day), 호우일수(R20mm), 호우일수(R50mm), 연속 습윤일수(CWD)]",
+      "kind": "spatial-trend",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "홍수·호우 위험",
+        "url": "?view=data&element=hongsu-coedae-1il-gangsu-rx1day-coedae-5il-gangsu-rx5day-houilsu-r20mm-houilsu-r50mm-yeons&country=VNM&from=explorer&year=2100&dim.mapVariable=최대_1일_강수_mm&dim.scenario=ssp245",
+        "selects": [
+          "표시 항목용어 도움말?RX1day 설명(5)",
+          "지역(65)",
+          "시나리오(7)"
+        ],
+        "cardSummary": "71.1 mm → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "표시 항목용어 도움말?RX1day 설명",
+            "to": "최대 5일 강수량(RX5day) — mm",
+            "changed": true
+          },
+          {
+            "control": "지역",
+            "to": "전국 값",
+            "changed": true
+          },
+          {
+            "control": "시나리오",
+            "to": "과거 모형(historical)",
+            "changed": true
+          }
+        ],
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "B-008",
+      "title": "NASA 해수면 상승 전망[SSP1, SSP2, SSP3, SSP4, SSP5]",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "해수면 상승 전망",
+        "url": "?view=data&element=nasa-haesumyeon-sangseung-jeonmang-ssp1-ssp2-ssp3-ssp4-ssp5&country=VNM&from=explorer&dim.scenario=SSP2-4.5",
+        "selects": [
+          "관측소(5)",
+          "분위(불확실성 범위)(5)"
+        ],
+        "cardSummary": "0.63 m → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "관측소",
+            "to": "Hòn Dấu · 북부 — 하이퐁",
+            "changed": true
+          },
+          {
+            "control": "분위(불확실성 범위)",
+            "to": "5분위",
+            "changed": true
+          }
+        ],
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "B-009",
+      "title": "WWF 생물다양성·기후 리스크",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "생물다양성·기후 위험",
+        "url": "?view=data&element=wwf-saengmuldayangseong-gihu-riseukeu&country=VNM&from=explorer&measure=measure-f7305839da3a&year=2024&dim.detail=생태계+부문",
+        "selects": [
+          "항목(6)",
+          "세부 분류(7)",
+          "분류(64)",
+          "연도(30)"
+        ],
+        "cardSummary": "0.592 지수 → primary",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "WWF BRF · 지수",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "물 부문",
+            "changed": true
+          },
+          {
+            "control": "분류",
+            "to": "An Giang",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2023",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "B-010",
+      "title": "기후 리스크 지수(CRI)",
+      "kind": "level",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "기후위험지수",
+        "url": "?view=data&element=gihu-riseukeu-jisu-cri&country=VNM&from=explorer&measure=measure-f20de2f62bc7&year=2024",
+        "selects": [
+          "항목(5)",
+          "세부 분류(7)",
+          "분류(4)",
+          "연도(2)"
+        ],
+        "cardSummary": "10 순위 → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "2024년 최대 피해 극한기상 사건 · 사건",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "2024-10-20~23 홍수",
+            "changed": true
+          },
+          {
+            "control": "분류",
+            "to": "1995–2024년 누적",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2023",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "B-011",
+      "title": "기후 취약성 지수(ND-GAIN)",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "기후취약성지수",
+        "url": "?view=data&element=gihu-cwiyagseong-jisu-nd-gain&country=VNM&from=explorer&measure=measure-6afe5ec8b669&year=2024",
+        "selects": [
+          "항목(12)",
+          "세부 분류(48)",
+          "연도(30)"
+        ],
+        "cardSummary": "45.9 점 → primary",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "ND-GAIN 준비도 · 지수",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "개선된 위생시설 접근성",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2023",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "B-012",
+      "title": "재해·재난 이력(EM-DAT)",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "재해·재난 이력",
+        "url": "?view=data&element=jaehae-jaenan-iryeog-em-dat&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "275건 → screen",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": "no selectable control in the primary analysis",
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "B-013",
+      "title": "World Bank CBAM 영향 지수",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "탄소국경조정제도 영향",
+        "url": "?view=data&element=world-bank-cbam-yeonghyang-jisu&country=VNM&from=explorer&measure=measure-b7e803503605&year=2022&dim.detail=비료",
+        "selects": [
+          "항목(7)",
+          "세부 분류(5)",
+          "분류(5)"
+        ],
+        "cardSummary": "52.3 % → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "경제 노출지수(Economic Exposure Index) · %",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "CBAM 합계",
+            "changed": true
+          },
+          {
+            "control": "분류",
+            "to": "비료",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "B-014",
+      "title": "CCDR 탄소세 시뮬레이션 결과[배출감소율, GDP 영향, 세수 효과]",
+      "kind": "level",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "탄소세 도입 효과 전망",
+        "url": "?view=data&element=ccdr-tansose-simyulreisyeon-gyeolgwa-baeculgamsoyul-gdp-yeonghyang-sesu-hyogwa&country=VNM&from=explorer&measure=measure-bf20bb336833&year=2040&dim.detail=NZP-no-reforms",
+        "selects": [
+          "항목(6)",
+          "세부 분류(3)",
+          "연도(2)"
+        ],
+        "cardSummary": "-2.2 % → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "권고 탄소가격 경로 · USD/tCO₂e",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "NZP-no-reforms",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2030",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "B-015",
+      "title": "탄소 가격 수준[ETS, Carbon Tax]",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "탄소가격 수준",
+        "url": "?view=data&element=tanso-gagyeog-sujun-ets-carbon-tax&country=VNM&from=explorer&measure=measure-e7c7cd02a63b&year=2026",
+        "selects": [
+          "항목(7)",
+          "세부 분류(5)"
+        ],
+        "cardSummary": "51 개소 → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "국가 크레딧 메커니즘 상태 · 상태",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "시멘트 공장",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "B-016",
+      "title": "화석연료 의존도(Fossil fuel energy consumption)",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "화석연료 의존도",
+        "url": "?view=data&element=hwaseogyeonryo-yijondo-fossil-fuel-energy-consumption&country=VNM&from=explorer&measure=measure-877ad0f1aa8d&year=2015",
+        "selects": [
+          "항목(2)",
+          "연도(36)"
+        ],
+        "cardSummary": "72.5 % → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "화석연료 소비 비중(EI 기반 보완 산출) · %",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2025",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "B-017",
+      "title": "WRI Aqueduct 물 스트레스 지수",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "물 스트레스",
+        "url": "?view=data&element=wri-aqueduct-mul-seuteureseu-jisu&country=VNM&from=explorer",
+        "selects": [
+          "표시 항목(18)",
+          "지역(65)"
+        ],
+        "cardSummary": "443개 평가구역 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "표시 항목",
+            "to": "기준 물 스트레스 · 점수(0~5) — 점(0~5)",
+            "changed": true
+          },
+          {
+            "control": "지역",
+            "to": "전국 값",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "B-018",
+      "title": "SSP GDP 전망[SSP1, SSP2, SSP3, SSP4, SSP5]",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "장기 국내총생산 전망",
+        "url": "?view=data&element=ssp-gdp-jeonmang-ssp1-ssp2-ssp3-ssp4-ssp5&country=VNM&from=explorer&measure=measure-42d427ed0568&year=2100&dim.detail=SSP2",
+        "selects": [
+          "항목(7)",
+          "세부 분류(6)",
+          "연도(17)"
+        ],
+        "cardSummary": "7,364 십억 USD_2017/yr → primary",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "1인당 GDP(PPP) · 2017년 구매력평가 기준 미국달러/인",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "SSP1",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2095",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "B-019",
+      "title": "SSP 인구 전망[SSP1, SSP2, SSP3, SSP4, SSP5]",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "장기 인구 전망",
+        "url": "?view=data&element=ssp-ingu-jeonmang-ssp1-ssp2-ssp3-ssp4-ssp5&country=VNM&from=explorer&measure=measure-1a16449ec4ae&year=2100&dim.detail=SSP2",
+        "selects": [
+          "항목(3)",
+          "세부 분류(6)",
+          "연도(17)"
+        ],
+        "cardSummary": "92.5 백만명 → primary",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "인구 과거 실적(참고) · 백만명",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "SSP1",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2095",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "B-020",
+      "title": "EU/UN INFORM Risk Index(복합 리스크 지수)",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "복합 위험지수",
+        "url": "?view=data&element=eu-un-inform-risk-index-boghab-riseukeu-jisu&country=VNM&from=explorer&measure=measure-f22e839fa61b&year=2026&dim.detail=INFORM+종합",
+        "selects": [
+          "항목(11)",
+          "세부 분류(5)",
+          "분류(11)",
+          "연도(10)"
+        ],
+        "cardSummary": "4 지수 → primary",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "INFORM Risk · 지수",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "INFORM 종합",
+            "changed": true
+          },
+          {
+            "control": "분류",
+            "to": "자료 기준연도 2016",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2025",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "B-021",
+      "title": "Global Data Lab GVI(Vulnerability Index)",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "취약성지수",
+        "url": "?view=data&element=global-data-lab-gvi-vulnerability-index&country=VNM&from=explorer&measure=measure-ab1a3ae58df4&year=2023&dim.detail=국가",
+        "selects": [
+          "항목(14)",
+          "세부 분류(3)",
+          "분류(7)",
+          "연도(24)"
+        ],
+        "cardSummary": "37.1 지수 → primary",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "GVI 7개 사회경제 차원 하위지수 · 지수",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "국가",
+            "changed": true
+          },
+          {
+            "control": "분류",
+            "to": "Central Highlands",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2022",
+            "changed": true
+          }
+        ],
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "B-022",
+      "title": "CCDR 기후 피해 경제적 비용",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "기후피해의 경제적 비용",
+        "url": "?view=data&element=ccdr-gihu-pihae-gyeongjejeog-biyong&country=VNM&from=explorer&measure=measure-165518c98ba5&year=2040",
+        "selects": [
+          "항목(7)",
+          "세부 분류(4)"
+        ],
+        "cardSummary": "184 십억 US$ → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "기후 피해 경제손실(적응 부재 시) (범위 상한) · % of GDP/y",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "공공",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "B-023",
+      "title": "건기/우기 유량 차이",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "건기/우기 유량 차이",
+        "url": "?view=data&element=geongi-ugi-yuryang-cai&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "11건 → screen",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": "no selectable control in the primary analysis",
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "B-024",
+      "title": "농업 용수 비중",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "농업 용수 비중",
+        "url": "?view=data&element=nongeob-yongsu-bijung&country=VNM&from=explorer&measure=measure-6d7408256783&year=2023",
+        "selects": [
+          "select-0(5)",
+          "select-1(34)"
+        ],
+        "cardSummary": "0.319 US$/m³ → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "select-0",
+            "to": "용수생산성 · US$/m³",
+            "changed": true
+          },
+          {
+            "control": "select-1",
+            "to": "2022년",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "B-025",
+      "title": "유역 면적",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "유역 면적",
+        "url": "?view=data&element=yuyeog-myeonjeog&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "86,253 km² → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": "no selectable control in the primary analysis",
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "B-026",
+      "title": "유향(flow direction)",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "유향(flow direction)",
+        "url": "?view=data&element=yuhyang-flow-direction&country=VNM&from=explorer",
+        "selects": [
+          "표시 항목(9)",
+          "지역(65)"
+        ],
+        "cardSummary": "74건 → screen",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "표시 항목",
+            "to": "동 비율(E) — %",
+            "changed": true
+          },
+          {
+            "control": "지역",
+            "to": "전국 값",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "B-027",
+      "title": "지하수 잠재량",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "지하수 잠재량",
+        "url": "?view=data&element=jihasu-jamjaeryang&country=VNM&from=explorer&measure=measure-551da7ede3b6&year=2023",
+        "selects": [
+          "항목(3)",
+          "연도(19)"
+        ],
+        "cardSummary": "4.67 10⁹ m³/yr → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "지하수 잠재량 · mm/yr 또는 10⁹ m³/yr",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2022",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "B-028",
+      "title": "하천 유량",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "하천 유량",
+        "url": "?view=data&element=haceon-yuryang&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "16건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": "no selectable control in the primary analysis",
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "B-029",
+      "title": "산림 유형별 면적[열대우림, 맹그로브, 이탄지 등]",
+      "kind": "spatial",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "산림 유형별 면적",
+        "url": "?view=data&element=sanrim-yuhyeongbyeol-myeonjeog-yeoldaeurim-maenggeurobeu-itanji-deung&country=VNM&from=explorer&dim.mapVariable=이탄지_면적_합계_km",
+        "selects": [
+          "표시 항목(5)",
+          "지역(65)"
+        ],
+        "cardSummary": "884 km² → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "표시 항목",
+            "to": "이탄 우세 면적 — km²",
+            "changed": true
+          },
+          {
+            "control": "지역",
+            "to": "전국 값",
+            "changed": true
+          }
+        ],
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "B-030",
+      "title": "산림 이득",
+      "kind": "spatial",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "산림 이득",
+        "url": "?view=data&element=sanrim-ideug&country=VNM&from=explorer&dim.mapVariable=이득_ha",
+        "selects": [
+          "표시 항목용어 도움말?ha 설명(8)",
+          "지역(65)"
+        ],
+        "cardSummary": "123,227 ha → screen",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "표시 항목용어 도움말?ha 설명",
+            "to": "수관 손실(2000–2020 누적) — ha",
+            "changed": true
+          },
+          {
+            "control": "지역",
+            "to": "전국 값",
+            "changed": true
+          }
+        ],
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "B-031",
+      "title": "산림 총 면적",
+      "kind": "spatial",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "산림 총면적",
+        "url": "?view=data&element=sanrim-cong-myeonjeog&country=VNM&from=explorer&measure=measure-8dab1a416248&year=2000&dim.detail=Nghệ+An",
+        "selects": [
+          "항목 선택(3)",
+          "지역 선택(64)"
+        ],
+        "cardSummary": "165만 ha → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목 선택",
+            "to": "성(省)별 수관 면적(2000) · ha",
+            "changed": true
+          },
+          {
+            "control": "지역 선택",
+            "to": "An Giang",
+            "changed": true
+          }
+        ],
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "B-032",
+      "title": "수관 피복률",
+      "kind": "spatial",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "수관 피복률",
+        "url": "?view=data&element=sugwan-pibogryul&country=VNM&from=explorer&measure=measure-15d5f8e7a89f&year=2010&dim.detail=Bắc+Kạn",
+        "selects": [
+          "지역 선택(64)"
+        ],
+        "cardSummary": "85.1 % → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "지역 선택",
+            "to": "An Giang",
+            "changed": true
+          }
+        ],
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "B-033",
+      "title": "연간 산림 손실",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "연간 산림손실",
+        "url": "?view=data&element=yeongan-sanrim-sonsil&country=VNM&from=explorer&measure=measure-3ac8acb37269&year=2024&dim.detail_2=Quảng+Ninh",
+        "selects": [
+          "지역 선택(64)",
+          "기준연도(24)"
+        ],
+        "cardSummary": "11,728 ha → primary",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "지역 선택",
+            "to": "An Giang",
+            "changed": true
+          },
+          {
+            "control": "기준연도",
+            "to": "2023년",
+            "changed": true
+          }
+        ],
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "B-034",
+      "title": "탄소 저장량",
+      "kind": "spatial",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "탄소 저장량",
+        "url": "?view=data&element=tanso-jeojangryang&country=VNM&from=explorer&measure=measure-ef59b2b71a01&period=2001–2024&dim.detail=Kon+Tum",
+        "selects": [
+          "항목 선택(7)",
+          "지역 선택(67)",
+          "기간(2)"
+        ],
+        "cardSummary": "292만 Mg CO2e/yr → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목 선택",
+            "to": "지상부 탄소저장량 · Mg C",
+            "changed": true
+          },
+          {
+            "control": "지역 선택",
+            "to": "An Giang",
+            "changed": true
+          },
+          {
+            "control": "기간",
+            "to": "2001-2024",
+            "changed": true
+          }
+        ],
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "B-035",
+      "title": "LULUCF 관련 면적 변화",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "LULUCF 관련 면적 변화",
+        "url": "?view=data&element=lulucf-gwanryeon-myeonjeog-byeonhwa&country=VNM&from=explorer&measure=measure-a6dff20f1447&year=2024",
+        "selects": [
+          "항목(26)",
+          "분류(6)",
+          "세부 분류(16)",
+          "연도(64)"
+        ],
+        "cardSummary": "0.12 ha/cap → primary",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "가경지 비율(농지 대비) · %",
+            "changed": true
+          },
+          {
+            "control": "분류",
+            "to": "목초지",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "가경지",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2023",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "B-036",
+      "title": "토지이용 변화율",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": false,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [
+        "control without effect: 연도"
+      ],
+      "evidence": {
+        "state": "ready",
+        "title": "토지이용 변화율",
+        "url": "?view=data&element=tojiiyong-byeonhwayul&country=VNM&from=explorer&measure=measure-9c9a9d42a47b&year=2024",
+        "selects": [
+          "항목(3)",
+          "세부 분류(15)",
+          "연도(2)"
+        ],
+        "cardSummary": "4.98 %/yr → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "토지피복 변화율 · %/yr",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "가경지",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2020",
+            "changed": false
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "B-037",
+      "title": "토지피복 분류별 면적[경작지, 산림, 초지, 건물, 수체, 나지]",
+      "kind": "spatial",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "토지피복 구성",
+        "url": "?view=data&element=tojipibog-bunryubyeol-myeonjeog-gyeongjagji-sanrim-coji-geonmul-suce-naji&country=VNM&from=explorer&dim.mapVariable=경작지_면적_km",
+        "selects": [
+          "표시 항목(10)",
+          "지역(65)"
+        ],
+        "cardSummary": "3,578 km² → screen",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "표시 항목",
+            "to": "수목 면적 — km²",
+            "changed": true
+          },
+          {
+            "control": "지역",
+            "to": "전국 값",
+            "changed": true
+          }
+        ],
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "B-038",
+      "title": "바이오매스 자원 가용량[농업잔재, 임업잔재, 도시폐기물, 축산폐기물]",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "바이오매스 자원 가용량",
+        "url": "?view=data&element=baiomaeseu-jaweon-gayongryang-nongeobjanjae-imeobjanjae-dosipyegimul-cugsanpyegimul&country=VNM&from=explorer&measure=measure-13e56f3e0776&year=2050",
+        "selects": [
+          "항목(16)",
+          "분류(4)",
+          "세부 분류(12)",
+          "연도(5)"
+        ],
+        "cardSummary": "0.82 kg/인/일 → primary",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "농업잔재 자원량 · Mt/yr",
+            "changed": true
+          },
+          {
+            "control": "분류",
+            "to": "유기성 비중",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "기타",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2040",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "B-039",
+      "title": "수력 잠재량",
+      "kind": "spatial",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "수력 잠재량",
+        "url": "?view=data&element=suryeog-jamjaeryang&country=VNM&from=explorer&dim.mapVariable=이론_총잠재량_GWh_yr",
+        "selects": [
+          "표시 항목용어 도움말?GWh 설명(5)",
+          "지역(65)"
+        ],
+        "cardSummary": "16,904 GWh/년 → screen",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "표시 항목용어 도움말?GWh 설명",
+            "to": "전국 대비 비중 — %",
+            "changed": true
+          },
+          {
+            "control": "지역",
+            "to": "전국 값",
+            "changed": true
+          }
+        ],
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "B-040",
+      "title": "지열 잠재량",
+      "kind": "spatial",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "지열 잠재량",
+        "url": "?view=data&element=jiyeol-jamjaeryang&country=VNM&from=explorer&dim.mapVariable=심도_1km_지온_평균",
+        "selects": [
+          "표시 항목용어 도움말?°C 설명(11)",
+          "지역(65)"
+        ],
+        "cardSummary": "69.5 °C → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "표시 항목용어 도움말?°C 설명",
+            "to": "심도 1km 지온(평균) — °C",
+            "changed": true
+          },
+          {
+            "control": "지역",
+            "to": "전국 값",
+            "changed": true
+          }
+        ],
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "B-041",
+      "title": "태양광 관련 지표[GHI, DNI]",
+      "kind": "spatial",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "태양광 자원",
+        "url": "?view=data&element=taeyanggwang-gwanryeon-jipyo-ghi-dni&country=VNM&from=explorer&dim.mapVariable=수평면_전일사량_GHI_평균",
+        "selects": [
+          "표시 항목용어 도움말?GHI 설명?kWh 설명(15)",
+          "지역(65)"
+        ],
+        "cardSummary": "5.23 kWh/m²/일 → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "표시 항목용어 도움말?GHI 설명?kWh 설명",
+            "to": "직달 일사량(DNI, 평균) — kWh/m²/일",
+            "changed": true
+          },
+          {
+            "control": "지역",
+            "to": "전국 값",
+            "changed": true
+          }
+        ],
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "B-042",
+      "title": "풍력 자원[풍속, 에너지밀도]",
+      "kind": "spatial",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "풍력 자원",
+        "url": "?view=data&element=pungryeog-jaweon-pungsog-eneojimildo&country=VNM&from=explorer&dim.mapVariable=풍속_평균_m_s",
+        "selects": [
+          "표시 항목(9)",
+          "지역(65)"
+        ],
+        "cardSummary": "5.68 m/s → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "표시 항목",
+            "to": "풍속 상위 10%(고도 100m) — m/s",
+            "changed": true
+          },
+          {
+            "control": "지역",
+            "to": "전국 값",
+            "changed": true
+          }
+        ],
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "B-043",
+      "title": "화석연료 자원량[석탄, 석유, LNG 등]",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "화석연료 자원량",
+        "url": "?view=data&element=hwaseogyeonryo-jaweonryang-seogtan-seogyu-lng-deung&country=VNM&from=explorer&measure=measure-961575bc9f6b&year=2020",
+        "selects": [
+          "항목(13)",
+          "세부 분류(4)",
+          "분류(17)",
+          "기술(3)"
+        ],
+        "cardSummary": "74.1 년 → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "가채연수(R/P) · 년",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "석유",
+            "changed": true
+          },
+          {
+            "control": "분류",
+            "to": "2000년말",
+            "changed": true
+          },
+          {
+            "control": "기술",
+            "to": "2,10,20",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "B-044",
+      "title": "광물명[리튬, 코발트, 니켈, 망간, 흑연, 주석, 납, 아연, 마그네슘화합물, 텅스텐, 바나듐, 크롬, 나이오븀, 탄탈럼, 티타늄광물, 지르코늄하프늄, 안티모니, 희토류, 백금족, 형석]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": null,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": null,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "핵심 광물 종류",
+        "url": "?view=data&element=gwangmulmyeong-rityum-kobalteu-nikel-manggan-heugyeon-juseog-nab-ayeon-mageunesyumhwahabmu&country=VNM&from=explorer&measure=measure-befc79f3731c&year=2026",
+        "selects": [
+          "항목(4)",
+          "세부 분류(8)"
+        ],
+        "cardSummary": "headline has no number",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "10개국 기준광물 목록 · 단위 미기재",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "납-아연",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "B-045",
+      "title": "글로벌 순위",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "광물자원 국제순위",
+        "url": "?view=data&element=geulrobeol-sunwi&country=VNM&from=explorer&measure=measure-47af40a32a99&year=2026",
+        "selects": [
+          "항목(5)",
+          "세부 분류(9)"
+        ],
+        "cardSummary": "10.7 % → primary",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "세계 매장량 순위 · 순위",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "보크사이트",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "B-046",
+      "title": "매장량[확인, 추정]",
+      "kind": "level",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "광물 매장량",
+        "url": "?view=data&element=maejangryang-hwagin-cujeong&country=VNM&from=explorer&measure=measure-080d04348d93&year=2026",
+        "selects": [
+          "항목(9)"
+        ],
+        "cardSummary": "54,000 t → primary",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "핵심광물 매장량 미수록(리튬 · t",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "B-047",
+      "title": "연간 생산량",
+      "kind": "level",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "광물 생산량",
+        "url": "?view=data&element=yeongan-saengsanryang&country=VNM&from=explorer&measure=measure-3fda9946012e&year=2025",
+        "selects": [
+          "항목(10)",
+          "연도(2)"
+        ],
+        "cardSummary": "11,000 t → primary",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "광산 생산량 · t (W 함량)",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2024",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "B-048",
+      "title": "주요 광산 위치",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "주요 광산 위치",
+        "url": "?view=data&element=juyo-gwangsan-wici&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "8곳 → screen",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": "no selectable control in the primary analysis",
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "C-001",
+      "title": "NDC[제출년도, 버전, BAU 배출 전망, 감축 목표(무조건부/조건부), 부문별 감축 전략·수단 목록, NDC-SDG 연계 매핑, 적응 부문 목표, 이행 재원 소요, 기준연도, 대상 GHG, 대상 부문, 원본 링크]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "국가 온실가스 감축목표(NDC)",
+        "url": "?view=data&element=ndc-jeculnyeondo-beojeon-bau-baecul-jeonmang-gamcug-mogpyo-mujogeonbu-jogeonbu-bumunbyeol&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "49건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": "no selectable control in the primary analysis",
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "C-002",
+      "title": "BTR[제출년도, 문서 링크, GHG 총배출량(incl./excl. LULUCF), 부문별 NDC 감축 달성량, SSP별 기온 전망, SSP별 강수 전망, 극한기후지수 변화, GDP 손실 추정, 적응 이행 프로그램 수, 재정 지원 수요/수혜, 원본 링크]; 부문별 배출량[에너지, IPPU, 농업, FOLU, 폐기물]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "격년투명성보고서(BTR)",
+        "url": "?view=data&element=btr-jeculnyeondo-munseo-ringkeu-ghg-congbaeculryang-incl-excl-lulucf-bumunbyeol-ndc-gamcug&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "82건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": "no selectable control in the primary analysis",
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "C-003",
+      "title": "NAP[제출년도, 문서 링크, 부문별 취약성 평가, 적응 우선 분야, 적응 우선 조치 목록(단기/중기/장기), 부문별 적응 투자 소요, 적응 거버넌스 체계, M&E 지표 체계, 이해관계자·젠더 분석, 원본 링크]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "국가적응계획(NAP)",
+        "url": "?view=data&element=nap-jeculnyeondo-munseo-ringkeu-bumunbyeol-cwiyagseong-pyeongga-jeogeung-useon-bunya-jeoge&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "96건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": "no selectable control in the primary analysis",
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "C-004",
+      "title": "LT-LEDS[장기 배출 경로(BAU/감축/넷제로 시나리오별), 넷제로 목표 연도, 넷제로 목표 범위, 부문별 탈탄소 경로, 핵심 감축 기술 목록, 공정전환 전략, 탄소 흡수/제거 목표, 장기 투자 소요, 원본 링크]; 에너지 믹스 전망[RE, 화석, 원자력]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "장기 저탄소 발전전략",
+        "url": "?view=data&element=lt-leds-janggi-baecul-gyeongro-bau-gamcug-nesjero-sinariobyeol-nesjero-mogpyo-yeondo-nesje&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "58건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": "no selectable control in the primary analysis",
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "C-005",
+      "title": "TNA[수행 여부, 수행 연도, 기술 이전 장벽(Barrier Analysis 결과), TAP(기술실행계획) 유무, 우선 섹터, 원본 링크]; 감축/적응 우선순위 기술 목록[기술명, 부문, 우선순위 순위]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "기후기술 수요 및 우선기술",
+        "url": "?view=data&element=tna-suhaeng-yeobu-suhaeng-yeondo-gisul-ijeon-jangbyeog-barrier-analysis-gyeolgwa-tap-gisul&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "135건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": "no selectable control in the primary analysis",
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "C-006",
+      "title": "ITMO 양자 협정[체결국, 체결 일자, 대상 부문, 대상 기술, 승인 기관(Authorization Body)]; 파리협정 제6.2조/제6.4조 이행 체계[ITMO 이전 실적, 상응조정(Corresponding Adjustment) 체계 구축 여부, 국가 레지스트리 존재 여부, UNFCCC 연동 상태]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "파리협정 제6조 양자협력 체계",
+        "url": "?view=data&element=itmo-yangja-hyeobjeong-cegyeolgug-cegyeol-ilja-daesang-bumun-daesang-gisul-seungin-gigwan&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "50건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": "no selectable control in the primary analysis",
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "C-007",
+      "title": "파리협정 제6.8조 비시장 접근법[참여 여부, 등록된 활동명, 대상 분야(감축/적응/재정/기술/역량), 참여 기관, 등록 일자, 원본 링크]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "파리협정 비시장 접근",
+        "url": "?view=data&element=parihyeobjeong-je6-8jo-bisijang-jeobgeunbeob-camyeo-yeobu-deungrogdoen-hwaldongmyeong-daes&country=VNM&from=explorer",
+        "selects": [
+          "연도(3)",
+          "분야·기금(23)"
+        ],
+        "cardSummary": "32건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "연도",
+            "to": "2026년",
+            "changed": true
+          },
+          {
+            "control": "분야·기금",
+            "to": "2025-05-13",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "C-008",
+      "title": "Cooperative Climate Initiative[이니셔티브 명, 참여 상태(Active/Completed), 참여 연도, 기후 분야(감축/적응), 주제(에너지/산림/수송/도시 등), 참여 국가·기관 목록]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "국제 기후협력 이니셔티브",
+        "url": "?view=data&element=cooperative-climate-initiative-inisyeotibeu-myeong-camyeo-sangtae-active-completed-camyeo&country=VNM&from=explorer",
+        "selects": [
+          "연도(15)",
+          "분야·기금(5)"
+        ],
+        "cardSummary": "235건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "연도",
+            "to": "2050년",
+            "changed": true
+          },
+          {
+            "control": "분야·기금",
+            "to": "국가(Country)",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "C-009",
+      "title": "기후 법제도[법령명, 유형(법률/시행령/규제/인센티브), 대상 분야(감축/적응/에너지/산업), 시행 연도, 상태(시행중/폐지/계류), 주관 부처, 원본 링크]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "기후변화 법·제도",
+        "url": "?view=data&element=gihu-beobjedo-beobryeongmyeong-yuhyeong-beobryul-sihaengryeong-gyuje-insentibeu-daesang-bu&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "54건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": "no selectable control in the primary analysis",
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "C-010",
+      "title": "기타 환경 법제도[법령명, 유형(EIA법/대기질/수질/폐기물/생물다양성), 시행 연도, 상태, 주관 부처, 원본 링크]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "환경 법·제도",
+        "url": "?view=data&element=gita-hwangyeong-beobjedo-beobryeongmyeong-yuhyeong-eiabeob-daegijil-sujil-pyegimul-saengmu&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "41건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": "no selectable control in the primary analysis",
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "C-011",
+      "title": "치안·안전 정보[경보 등급(여행유의/자제/철수권고/여행금지), 현지 치안 상황, 범죄 통계]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "치안·안전 정보",
+        "url": "?view=data&element=cian-anjeon-jeongbo-gyeongbo-deunggeub-yeohaengyuyi-jaje-ceolsugweongo-yeohaenggeumji-hyeo&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "44건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": "no selectable control in the primary analysis",
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "C-012",
+      "title": "PPP 법제도·조달 체계[PPP 법률 유무, PPP 법률 명칭, PPP 전담 기관, 조달 방식(경쟁입찰/협상/비공개), 계약 유형(BOT/BOO/Concession), VfM 평가 의무 여부, PPP 프로젝트 이력]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "민관협력·조달 제도",
+        "url": "?view=data&element=ppp-beobjedo-jodal-cegye-ppp-beobryul-yumu-ppp-beobryul-myeongcing-ppp-jeondam-gigwan-joda&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "120건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": "no selectable control in the primary analysis",
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "C-013",
+      "title": "외국인 투자 규정[외국인 지분 제한, 투자 인센티브(세제 혜택/경제특구), 투자 보호 협정(BIT), 수익 송금 규정]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "외국인 투자제도",
+        "url": "?view=data&element=oegugin-tuja-gyujeong-oegugin-jibun-jehan-tuja-insentibeu-seje-hyetaeg-gyeongjeteuggu-tuja&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "64건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": "no selectable control in the primary analysis",
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "C-014",
+      "title": "인허가 프로세스[환경영향평가(EIA) 절차, 건축 허가 절차, 건축 허가 소요 기간, 건축 허가 비용, 전력 사업 허가 절차, 전력 사업 허가 소요 기간, 전력 사업 허가 비용, 토지 취득 절차, 토지 취득 소요 기간, 토지 취득 비용]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "사업 인허가 절차",
+        "url": "?view=data&element=inheoga-peuroseseu-hwangyeongyeonghyangpyeongga-eia-jeolca-geoncug-heoga-jeolca-geoncug-he&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "93건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": "no selectable control in the primary analysis",
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "C-015",
+      "title": "상기 문서들의 원본 링크",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "정책·제도 원문자료",
+        "url": "?view=data&element=sanggi-munseodeulyi-weonbon-ringkeu&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "21건 → primary",
+        "table": "headline in a table",
+        "selection": "card carries no selection",
+        "controls": "no selectable control in the primary analysis",
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "C-016",
+      "title": "재생에너지 발주 및 확대 계획[국가 RE 용량 목표, 입찰 일정(예정/진행/완료), 대상 기술, 사업자 선정 방식(경쟁입찰/FIT), 발주 기관]",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "재생에너지 발주·확대계획",
+        "url": "?view=data&element=jaesaengeneoji-balju-mic-hwagdae-gyehoeg-gugga-re-yongryang-mogpyo-ibcal-iljeong-yejeong-j&country=VNM&from=explorer&measure=measure-1f93f6946b11&period=2025-2030",
+        "selects": [
+          "항목 선택(8)",
+          "지역 선택(64)",
+          "기간(2)"
+        ],
+        "cardSummary": "27,385 MW → primary",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목 선택",
+            "to": "소수력(thủy điện nhỏ) 계획용량 · MW",
+            "changed": true
+          },
+          {
+            "control": "지역 선택",
+            "to": "An Giang",
+            "changed": true
+          },
+          {
+            "control": "기간",
+            "to": "2031-2035",
+            "changed": true
+          }
+        ],
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "C-017",
+      "title": "재생에너지 투자 인센티브[인센티브 유형(FIT/FIP/RPS/세제/보조금/넷미터링), 대상 기술(태양광/풍력/수력/바이오), 시행 기관, 시행 연도, 상태]; 인센티브 조건[가격, 기간, 용량]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "재생에너지 투자 인센티브",
+        "url": "?view=data&element=jaesaengeneoji-tuja-insentibeu-insentibeu-yuhyeong-fit-fip-rps-seje-bojogeum-nesmiteoring&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "52건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": "no selectable control in the primary analysis",
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "C-018",
+      "title": "중장기 에너지 전망[전망 기관(IEA/현지 정부), 전망 시나리오명, 에너지원별 수요 전망, 기술별 발전 설비 확충 계획, RE 비중 목표, 전력 수요 성장률]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "중장기 에너지 전망",
+        "url": "?view=data&element=jungjanggi-eneoji-jeonmang-jeonmang-gigwan-iea-hyeonji-jeongbu-jeonmang-sinariomyeong-eneo&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "121건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": "no selectable control in the primary analysis",
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "C-019",
+      "title": "탄소 시장 법률·예산[탄소세 도입 여부, 탄소세 세율, ETS 도입 여부, ETS 대상 부문, ETS 가격, FIT 도입 여부, FIP 도입 여부, RPS 도입 여부, 탄소시장 관련 예산 규모]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "탄소시장 법·제도와 예산",
+        "url": "?view=data&element=tanso-sijang-beobryul-yesan-tansose-doib-yeobu-tansose-seyul-ets-doib-yeobu-ets-daesang-bu&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "128건 → screen",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": "no selectable control in the primary analysis",
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "C-020",
+      "title": "GHG 감축 사업 타당성 기초 정보",
+      "kind": "status",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": null,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "온실가스 감축사업 기초정보",
+        "url": "?view=data&element=ghg-gamcug-saeob-tadangseong-gico-jeongbo&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "status screen",
+        "controls": "no selectable control in the primary analysis",
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "C-021",
+      "title": "VCM 프로젝트 파이프라인",
+      "kind": "status",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": null,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "자발적 탄소시장 사업목록",
+        "url": "?view=data&element=vcm-peurojegteu-paipeurain&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "status screen",
+        "controls": "no selectable control in the primary analysis",
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "C-022",
+      "title": "탄소시장 준비도",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "탄소시장 준비도",
+        "url": "?view=data&element=tansosijang-junbido&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "98건 → screen",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": "no selectable control in the primary analysis",
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "C-023",
+      "title": "한계저감비용(MAC)",
+      "kind": "status",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": null,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "한계저감비용",
+        "url": "?view=data&element=hangyejeogambiyong-mac&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "status screen",
+        "controls": "no selectable control in the primary analysis",
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "C-024",
+      "title": "REDD+ 현황[REDD+ 전략 수립 여부, FREL 제출 여부, FREL 제출년, 결과기반지불(RBP) 수혜 실적, 세이프가드 정보 시스템 구축 여부, 참여 기금(GCF/FCPF/BioCF)]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "산림전용 방지 및 산림보전(REDD+)",
+        "url": "?view=data&element=redd-hyeonhwang-redd-jeonryag-surib-yeobu-frel-jecul-yeobu-frel-jeculnyeon-gyeolgwagibanji&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "20건 → screen",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": "no selectable control in the primary analysis",
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "C-025",
+      "title": "탄소크레딧 발행·소각 실적[프로젝트명, 등록 표준(VCS/GS), 국가, 기술 분야, 발행량, 소각량, 빈티지, 발행일]",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "탄소크레딧 사업 및 발행실적",
+        "url": "?view=data&element=tansokeuredis-balhaeng-sogag-siljeog-peurojegteumyeong-deungrog-pyojun-vcs-gs-gugga-gisul&country=VNM&from=explorer",
+        "selects": [
+          "상태(15)",
+          "연도(18)",
+          "등록 표준·분야(11)"
+        ],
+        "cardSummary": "388건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "상태",
+            "to": "Gold Standard Certified Design",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2025년",
+            "changed": true
+          },
+          {
+            "control": "등록 표준·분야",
+            "to": "건물효율 기술",
+            "changed": true
+          }
+        ],
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "D-001",
+      "title": "단위 사업당 CAPEX",
+      "kind": "level",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "단위 사업당 CAPEX",
+        "url": "?view=data&element=danwi-saeobdang-capex&country=VNM&from=explorer&measure=measure-f941a0397abc&year=2024&dim.category=바이오에너지+기술+(Biomass)&dim.detail=총투자액÷설비용량+중앙값",
+        "selects": [
+          "분류(6)",
+          "세부 분류(6)",
+          "분류(4)",
+          "기술(6)"
+        ],
+        "cardSummary": "2,400 USD/kW → primary",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "분류",
+            "to": "수력 기술",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "대수력 >50MW",
+            "changed": true
+          },
+          {
+            "control": "분류",
+            "to": "총투자액÷설비용량 중앙값",
+            "changed": true
+          },
+          {
+            "control": "기술",
+            "to": "1",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "D-002",
+      "title": "시장 성장률",
+      "kind": "level",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "시장 성장률",
+        "url": "?view=data&element=sijang-seongjangryul&country=VNM&from=explorer&measure=measure-62de91e6eba5&year=2030&dim.category=바이오에너지+기술",
+        "selects": [
+          "분류(9)",
+          "기술(7)"
+        ],
+        "cardSummary": "22.8 % → primary",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "분류",
+            "to": "수력 기술",
+            "changed": true
+          },
+          {
+            "control": "기술",
+            "to": "1",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "D-003",
+      "title": "예상 감축량",
+      "kind": "level",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "예상 감축량",
+        "url": "?view=data&element=yesang-gamcugryang&country=VNM&from=explorer&measure=measure-d3b4eabbfb70&year=2023&dim.category=바이오에너지+기술&dim.detail=1MW당+20년+누적+온실가스+감축량",
+        "selects": [
+          "항목(2)",
+          "분류(7)",
+          "세부 분류(2)",
+          "기술(6)"
+        ],
+        "cardSummary": "22,500 tCO2/20년·MW → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "예상 감축량 · tCO2/년·MW",
+            "changed": true
+          },
+          {
+            "control": "분류",
+            "to": "바이오에너지 기술",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "1",
+            "changed": true
+          },
+          {
+            "control": "기술",
+            "tested": false
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "D-004",
+      "title": "크레딧 가격 연동 수익성",
+      "kind": "level",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "크레딧 가격 연동 수익성",
+        "url": "?view=data&element=keuredis-gagyeog-yeondong-suigseong&country=VNM&from=explorer&measure=measure-efd3a678cdd8&year=2026&dim.category=바이오에너지+기술(고+시나리오)",
+        "selects": [
+          "분류(16)",
+          "기술(5)"
+        ],
+        "cardSummary": "24.4 % → primary",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "분류",
+            "to": "바이오에너지 기술(저 시나리오)",
+            "changed": true
+          },
+          {
+            "control": "기술",
+            "to": "1",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "D-005",
+      "title": "감축/적응 구분별 예산 배분 비율",
+      "kind": "composition",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "감축/적응 구분별 예산 배분 비율",
+        "url": "?view=data&element=gamcug-jeogeung-gubunbyeol-yesan-baebun-biyul&country=VNM&from=explorer&measure=measure-a7c43c49fe43&year=2013&dim.category=적응&dim.detail=총+기후변화+지출+대비+비중(대표값)",
+        "selects": [
+          "d005-budget-basis-selector(5)"
+        ],
+        "cardSummary": "88 % → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "d005-budget-basis-selector",
+            "to": "경상예산",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "D-006",
+      "title": "기후 관련 조세 수입",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "기후 관련 조세 수입",
+        "url": "?view=data&element=gihu-gwanryeon-jose-suib&country=VNM&from=explorer&measure=measure-f93ae924549f&year=2024&dim.category=환경보호세(EPT)&dim.detail=계획+대비+결산+이행률",
+        "selects": [
+          "항목(5)",
+          "분류(3)",
+          "세부 분류(3)",
+          "연도(6)"
+        ],
+        "cardSummary": "109 % → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "기후 관련 조세 수입 · USD/tCO2e",
+            "changed": true
+          },
+          {
+            "control": "분류",
+            "to": "계획 대비 결산 이행률",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "2026",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "tested": false
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "D-007",
+      "title": "기후예산태깅(CBT, Climate Budget Tagging) 도입 여부 및 수준",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": null,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": null,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "기후예산태깅(CBT, Climate Budget Tagging) 도입 여부 및 수준",
+        "url": "?view=data&element=gihuyesantaeging-cbt-climate-budget-tagging-doib-yeobu-mic-sujun&country=VNM&from=explorer&measure=measure-f23fdc3a02fd&year=2022",
+        "selects": [
+          "분류(4)",
+          "연도(2)"
+        ],
+        "cardSummary": "headline has no number",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "분류",
+            "to": "도입 여부",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2022",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "D-008",
+      "title": "주관 부처별 기후 예산 규모",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "주관 부처별 기후 예산 규모",
+        "url": "?view=data&element=jugwan-buceobyeol-gihu-yesan-gyumo&country=VNM&from=explorer&measure=measure-1658538c67b4&year=2020",
+        "selects": [
+          "항목(2)",
+          "세부 분류(6)",
+          "연도(3)"
+        ],
+        "cardSummary": "80 % → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "주관 부처별 기후 예산 규모 · VND",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "6개 부처 합산예산 대비 비중 범위 상한",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2013",
+            "changed": true
+          }
+        ],
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "D-009",
+      "title": "기후대응·기후기술 관련 정부 예산[총 지출 규모, 연도별 추이]",
+      "kind": "level",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "기후대응·기후기술 관련 정부 예산",
+        "url": "?view=data&element=gihudaeeung-gihugisul-gwanryeon-jeongbu-yesan-cong-jicul-gyumo-yeondobyeol-cui&country=VNM&from=explorer&measure=measure-ec76b1280745&year=2013",
+        "selects": [
+          "항목(3)"
+        ],
+        "cardSummary": "0.1 % → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "기후대응 정부 예산 · USD",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "D-010",
+      "title": "화석연료 보조금 규모",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "화석연료 보조금 규모",
+        "url": "?view=data&element=hwaseogyeonryo-bojogeum-gyumo&country=VNM&from=explorer&measure=measure-465d4d66c9ba&year=2024&dim.category=총액",
+        "selects": [
+          "항목(3)",
+          "분류(1)",
+          "연도(3)"
+        ],
+        "cardSummary": "387억 USD → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "화석연료 보조금 규모 · %",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2022",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "D-011",
+      "title": "개도국 내 각국별 ODA 규모",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "개도국 내 각국별 ODA 규모",
+        "url": "?view=data&element=gaedogug-nae-gaggugbyeol-oda-gyumo&country=VNM&from=explorer&measure=measure-8149e560b53b&year=2024&dim.category=Official+donors&dim.detail=대베트남+ODA+총지출액(총계)",
+        "selects": [
+          "d011-provider-selector(48)"
+        ],
+        "cardSummary": "16.65억 USD → screen",
+        "table": "headline not in any table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "d011-provider-selector",
+            "to": "일본",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "D-012",
+      "title": "경쟁국 민간기업의 개도국 진출 현황[기업명, 국적, 진출 대상국, 기술 분야(RE/효율/폐기물), 프로젝트명, 용량, 투자액, 진출 형태(EPC/투자/라이선스)]",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "경쟁국 민간기업의 개도국 진출 현황",
+        "url": "?view=data&element=gyeongjaenggug-mingangieobyi-gaedogug-jincul-hyeonhwang-gieobmyeong-gugjeog-jincul-daesang&country=VNM&from=explorer",
+        "selects": [
+          "연도(4)",
+          "기술분야·진출국(6)"
+        ],
+        "cardSummary": "22곳 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "연도",
+            "to": "2021년",
+            "changed": true
+          },
+          {
+            "control": "기술분야·진출국",
+            "to": "효율(모듈)",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "D-013",
+      "title": "GGGI Green Growth Index(녹색성장지수)",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "녹색성장지수",
+        "url": "?view=data&element=gggi-green-growth-index-nogsaegseongjangjisu&country=VNM&from=explorer&measure=measure-36c8b59e695d&year=2024&dim.category=효율+·+지속가능+자원이용(ESRU)&dim.detail=차원(dimension)+점수",
+        "selects": [
+          "분류(22)",
+          "세부 분류(4)"
+        ],
+        "cardSummary": "72.1 점 → screen",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "분류",
+            "to": "기초 서비스 · 자원 접근성",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "부문(pillar) 점수",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "D-014",
+      "title": "EDCF 프로젝트[프로젝트명, 수원국, 섹터, 승인 금액, 금리, 상환 기간, 거치 기간, 사업 기간, 시행기관, 상태(승인/집행/완료)]",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "대외경제협력기금 사업",
+        "url": "?view=data&element=edcf-peurojegteu-peurojegteumyeong-suweongug-segteo-seungin-geumaeg-geumri-sanghwan-gigan&country=VNM&from=explorer",
+        "selects": [
+          "연도(26)",
+          "분야·원조유형(24)"
+        ],
+        "cardSummary": "164건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "연도",
+            "to": "2023년",
+            "changed": true
+          },
+          {
+            "control": "분야·원조유형",
+            "to": "고급기술 및 관리자 교육(11430)",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "D-015",
+      "title": "ODA Korea 프로젝트[사업명, 수원국, 시행기관(KOICA/EDCF/부처), 사업 유형(프로젝트/기술협력/연수), 사업 기간, 사업비, 분야(DAC 섹터코드), 상태]",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "한국 공적개발원조 사업",
+        "url": "?view=data&element=oda-korea-peurojegteu-saeobmyeong-suweongug-sihaenggigwan-koica-edcf-buceo-saeob-yuhyeong&country=VNM&from=explorer",
+        "selects": [
+          "연도(29)",
+          "분야·원조유형(105)"
+        ],
+        "cardSummary": "650건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "연도",
+            "to": "2024년",
+            "changed": true
+          },
+          {
+            "control": "분야·원조유형",
+            "to": "가내공업 및 수공업(32140)",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "D-016",
+      "title": "지자체·정부부처 프로젝트[사업명, 수원국, 시행기관(부처/지자체명), 사업 유형, 사업 기간, 사업비, 분야]",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "정부·지방자치단체 협력사업",
+        "url": "?view=data&element=jijace-jeongbubuceo-peurojegteu-saeobmyeong-suweongug-sihaenggigwan-buceo-jijacemyeong-sae&country=VNM&from=explorer",
+        "selects": [
+          "연도(15)",
+          "분야·원조유형(67)"
+        ],
+        "cardSummary": "232건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "연도",
+            "to": "2023년",
+            "changed": true
+          },
+          {
+            "control": "분야·원조유형",
+            "to": "건설정책 및 행정관리(32310)",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "D-017",
+      "title": "한국 ODA 기관 PCP/입찰 현황[사업명, 대상국, 발주기관(KOICA/EDCF/부처), 분야, 예산 규모, 입찰 유형(PCP/RFP/경쟁), 입찰 일정(공고일/마감일), 수행기관 자격 요건]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "한국 ODA 사업기획·입찰",
+        "url": "?view=data&element=hangug-oda-gigwan-pcp-ibcal-hyeonhwang-saeobmyeong-daesanggug-baljugigwan-koica-edcf-buceo&country=VNM&from=explorer",
+        "selects": [
+          "연도(5)",
+          "분야·입찰유형(11)"
+        ],
+        "cardSummary": "10건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "연도",
+            "to": "2026년",
+            "changed": true
+          },
+          {
+            "control": "분야·입찰유형",
+            "to": "공공행정·디지털",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "D-018",
+      "title": "Adaptation Fund 프로젝트[프로젝트명, 국가, 실행기관(NIE/MIE 구분, 기관명), 승인 금액, 분야(수자원/농업/재난관리/해안/생태계), 상태(Under Implementation/Completed), 기간, 수혜자 수]",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "적응기금 사업",
+        "url": "?view=data&element=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye&country=VNM&from=explorer&measure=measure-2aa34c218045",
+        "selects": [
+          "항목(2)",
+          "분류(4)",
+          "세부 분류(3)",
+          "연도(5)",
+          "분야·기금(4)"
+        ],
+        "cardSummary": "2,324만 USD → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "Adaptation Fund 프로젝트 · 건",
+            "changed": true
+          },
+          {
+            "control": "분류",
+            "to": "베트남 단독사업 승인액 합계",
+            "changed": true
+          },
+          {
+            "control": "세부 분류",
+            "to": "전 사업 승인액 단순합",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2023년",
+            "changed": true
+          }
+        ],
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "D-019",
+      "title": "CTCN 기술지원 요청[요청 국가, NDE 기관명, 기술 분야(Sectors), 지원 단계(Phase: Scoping/TA Delivery/Completed), 예산, 기술 유형(Technologies), 기간, TA 결과 요약]",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "CTCN 기술지원",
+        "url": "?view=data&element=ctcn-gisuljiweon-yoceong-yoceong-gugga-nde-gigwanmyeong-gisul-bunya-sectors-jiweon-dangye&country=VNM&from=explorer",
+        "selects": [
+          "기술분야_Sectors(8)",
+          "연도(9)",
+          "기술분야(5)"
+        ],
+        "cardSummary": "10건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "기술분야_Sectors",
+            "to": "Agriculture",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2025년",
+            "changed": true
+          },
+          {
+            "control": "기술분야",
+            "to": "원천 미기재",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "D-020",
+      "title": "GCF 프로젝트[프로젝트명(Ref No.), 국가, 인가기관(AE), GCF 승인 금액, 공동재원, 분야(mitigation/adaptation/cross-cutting), 결과영역(Result Area), 상태(Approved/Under Implementation/Completed), 이사회 승인일, 예상 수혜자 수, 예상 감축량]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "녹색기후기금 사업",
+        "url": "?view=data&element=gcf-peurojegteu-peurojegteumyeong-ref-no-gugga-ingagigwan-ae-gcf-seungin-geumaeg-gongdongj&country=VNM&from=explorer",
+        "selects": [
+          "연도(6)",
+          "분야·기금(4)"
+        ],
+        "cardSummary": "9건 → screen",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "연도",
+            "to": "2026년",
+            "changed": true
+          },
+          {
+            "control": "분야·기금",
+            "to": "Adaptation",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "D-021",
+      "title": "주요 국제기구·MDB 프로젝트[프로젝트명, 수원국, 공여기관(WB/ADB/UNDP/FAO/UNCCD 등), 섹터(DAC 코드), 금액(commitment/disbursement), 기간, 상태, 실행기관, Rio Marker]",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "국제기구·개발은행 사업",
+        "url": "?view=data&element=juyo-gugjegigu-mdb-peurojegteu-peurojegteumyeong-suweongug-gongyeogigwan-wb-adb-undp-fao-u&country=VNM&from=explorer",
+        "selects": [
+          "연도(37)",
+          "분야·공여기관(13)"
+        ],
+        "cardSummary": "640건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "연도",
+            "to": "2026년",
+            "changed": true
+          },
+          {
+            "control": "분야·공여기관",
+            "to": "Asian Development Bank",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "D-022",
+      "title": "MDB/DFI/PPP 투자 프로젝트[프로젝트명, 수원국, 공여기관(WB/ADB/IFC 등), 섹터(DAC 5자리 코드), 투자액(commitment/disbursement), 프로젝트 상태, 기간(시작/종료), 실행기관, Rio Marker(기후 태깅), 투자 유형(grant/loan/equity), 공동투자 참여 가능 여부 및 형태]",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "개발금융·민관협력 투자사업",
+        "url": "?view=data&element=mdb-dfi-ppp-tuja-peurojegteu-peurojegteumyeong-suweongug-gongyeogigwan-wb-adb-ifc-deung-se&country=VNM&from=explorer",
+        "selects": [
+          "연도(10)",
+          "분야·투자유형(11)"
+        ],
+        "cardSummary": "15건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "연도",
+            "to": "2025년",
+            "changed": true
+          },
+          {
+            "control": "분야·투자유형",
+            "to": "14020 — 상하수도 기타",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "D-023",
+      "title": "ODA 및 기후기금(GCF, GEF, AF) 재원[프로젝트명, 수원국, 기금명(GCF/GEF/AF/CIF), 승인 금액, 공동재원(co-financing), 분야(mitigation/adaptation/cross-cutting), 결과영역(Result Area), 인가기관(AE/Agency), 상태(Approved/Implementing/Completed), Readiness 구분, 공동투자 참여 가능 여부 및 형태]",
+      "kind": "composition",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "국제협력·기후재원 사업",
+        "url": "?view=data&element=oda-mic-gihugigeum-gcf-gef-af-jaeweon-peurojegteumyeong-suweongug-gigeummyeong-gcf-gef-af&country=VNM&from=explorer",
+        "selects": [
+          "연도(27)",
+          "기금·분야(5)"
+        ],
+        "cardSummary": "71건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "연도",
+            "to": "2026년",
+            "changed": true
+          },
+          {
+            "control": "기금·분야",
+            "to": "Adaptation Fund",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "D-024",
+      "title": "VC·임팩트 투자 현황[투자 라운드(Seed/Series A-C), 투자자명, 투자 금액, 대상 기업/기술, 국가, 투자 연도, 기후 분야(RE/효율/모빌리티/AgTech), 공동투자 참여 가능 여부 및 형태]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "벤처·임팩트 투자",
+        "url": "?view=data&element=vc-impaegteu-tuja-hyeonhwang-tuja-raundeu-seed-series-a-c-tujajamyeong-tuja-geumaeg-daesan&country=VNM&from=explorer",
+        "selects": [
+          "연도(5)",
+          "기후 분야·투자 라운드(4)"
+        ],
+        "cardSummary": "7건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "연도",
+            "to": "2026년",
+            "changed": true
+          },
+          {
+            "control": "기후 분야·투자 라운드",
+            "to": "모빌리티(EV)",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "D-025",
+      "title": "민간 인프라 투자(PPI)[프로젝트명, 국가, 섹터(전력/수도/교통/통신), 투자 유형(Greenfield/Concession/Divestiture), 총 투자액, 민간 투자액, 계약 기간, 상태(Active/Cancelled/Distressed), Financial Close 연도, 스폰서/개발사, IDA 지위, 공동투자 참여 가능 여부 및 형태]",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "민간 인프라 투자",
+        "url": "?view=data&element=mingan-inpeura-tuja-ppi-peurojegteumyeong-gugga-segteo-jeonryeog-sudo-gyotong-tongsin-tuja&country=VNM&from=explorer",
+        "selects": [
+          "연도(21)",
+          "섹터·투자유형(3)"
+        ],
+        "cardSummary": "132건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "연도",
+            "to": "2024년",
+            "changed": true
+          },
+          {
+            "control": "섹터·투자유형",
+            "to": "Energy/Electricity/Electricity generatio",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "D-026",
+      "title": "MIGA 정치적 리스크 보증[프로젝트명, 국가, 섹터, 보증 금액, 보증 유형(수용/이전제한/계약위반/전쟁내란), 보증 기간, 투자자, 상태]",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "정치적 위험 보증사업",
+        "url": "?view=data&element=miga-jeongcijeog-riseukeu-bojeung-peurojegteumyeong-gugga-segteo-bojeung-geumaeg-bojeung-y&country=VNM&from=explorer",
+        "selects": [
+          "연도(8)",
+          "섹터·보증유형(11)"
+        ],
+        "cardSummary": "14건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "연도",
+            "to": "2018년",
+            "changed": true
+          },
+          {
+            "control": "섹터·보증유형",
+            "to": "교통",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "E-001",
+      "title": "CTCN NDE(국가지정기구)[국가, 기관명, 소속 부처, 담당자명(Focal Point), 직함, 이메일, 전화번호]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "CTCN 국가지정기구",
+        "url": "?view=data&element=ctcn-nde-guggajijeonggigu-gugga-gigwanmyeong-sosog-buceo-damdangjamyeong-focal-point-jigha&country=VNM&from=explorer",
+        "selects": [
+          "기관 구분(11)"
+        ],
+        "cardSummary": "15곳 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "기관 구분",
+            "to": "NDE(국가지정기구)",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "E-002",
+      "title": "DNA(국가지정기관)[국가, 기관명, 소속 부처, 담당자명, 직함, 이메일, 승인 절차 개요, 제6.4조 전환 상태]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "파리협정 국가지정기관",
+        "url": "?view=data&element=dna-guggajijeonggigwan-gugga-gigwanmyeong-sosog-buceo-damdangjamyeong-jigham-imeil-seungin&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "1곳 → screen",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": "no selectable control in the primary analysis",
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "E-003",
+      "title": "GCF NDA(국가지정기관)[국가, 기관명, 소속 부처, 담당자명, 직함, 이메일, 전화번호]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "녹색기후기금 국가지정기관",
+        "url": "?view=data&element=gcf-nda-guggajijeonggigwan-gugga-gigwanmyeong-sosog-buceo-damdangjamyeong-jigham-imeil-jeo&country=VNM&from=explorer",
+        "selects": [
+          "역할(5)"
+        ],
+        "cardSummary": "8건 → screen",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "역할",
+            "to": "NDA 대표(National Designated Authority)",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "E-004",
+      "title": "국제기구 현지사무소 담당자[기관명(UNDP/UNEP/UNIDO/FAO/WB/ADB/GIZ/JICA/KOICA 등), 소재국, 도시, 사무소 주소, 기후·에너지 담당자명, 직함, 이메일]",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "국제기구 현지사무소",
+        "url": "?view=data&element=gugjegigu-hyeonjisamuso-damdangja-gigwanmyeong-undp-unep-unido-fao-wb-adb-giz-jica-koica-d&country=VNM&from=explorer",
+        "selects": [
+          "도시(3)",
+          "자료 상태(4)",
+          "연락 유형(4)",
+          "기관 유형(7)",
+          "상태(4)"
+        ],
+        "cardSummary": "17곳 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "도시",
+            "to": "Hanoi",
+            "changed": true
+          },
+          {
+            "control": "자료 상태",
+            "to": "보완(2026-08-14)",
+            "changed": true
+          },
+          {
+            "control": "연락 유형",
+            "to": "기관장·대표",
+            "changed": true
+          },
+          {
+            "control": "기관 유형",
+            "to": "국제기구(기타)",
+            "changed": true
+          }
+        ],
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "E-005",
+      "title": "대학·연구기관·NGO[기관명, 기관 유형(대학/연구소/싱크탱크/NGO), 소재국, 도시, 전문 분야(기후/에너지/환경/농업), 주요 연구역량 또는 활동 범위, 국제 협력 실적 유무, 연락처]",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "대학·연구기관·시민사회",
+        "url": "?view=data&element=daehag-yeongugigwan-ngo-gigwanmyeong-gigwan-yuhyeong-daehag-yeonguso-singkeutaengkeu-ngo-s&country=VNM&from=explorer",
+        "selects": [
+          "도시(6)",
+          "기관 유형(12)"
+        ],
+        "cardSummary": "20곳 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "도시",
+            "to": "Can Tho",
+            "changed": true
+          },
+          {
+            "control": "기관 유형",
+            "to": "NGO",
+            "changed": true
+          }
+        ],
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "E-006",
+      "title": "현지 투자자 네트워크[기관명, 기관 유형(VC/PE/DFI/상업은행/임팩트투자/AC), 투자 분야(기후/에너지/인프라/AgTech), 투자 규모(AUM), 소재국, 도시, 연락처, 기후기술 투자 실적 유무]",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "현지 투자자 네트워크",
+        "url": "?view=data&element=hyeonji-tujaja-neteuweokeu-gigwanmyeong-gigwan-yuhyeong-vc-pe-dfi-sangeobeunhaeng-impaegte&country=VNM&from=explorer",
+        "selects": [
+          "금액 구분(6)",
+          "금액 유형(13)",
+          "도시(9)",
+          "자료 상태(4)",
+          "기금·소속기관(12)",
+          "본부 소재국(8)",
+          "투자 분야(16)",
+          "출처 유형(8)"
+        ],
+        "cardSummary": "15곳 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "금액 구분",
+            "to": "목표",
+            "changed": true
+          },
+          {
+            "control": "금액 유형",
+            "to": "AUM",
+            "changed": true
+          },
+          {
+            "control": "도시",
+            "to": "Ho Chi Minh City",
+            "changed": true
+          },
+          {
+            "control": "자료 상태",
+            "to": "보완(2026-08-14)",
+            "changed": true
+          }
+        ],
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "E-007",
+      "title": "온실가스 산정 MRV 체계[GHG 인벤토리 작성 역량(Tier 1/2/3), 국가 레지스트리 유무, 제3자 검증 체계 유무, BTR 제출 이력(제출/미제출), CBIT 지원 수혜 여부]",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "온실가스 산정·보고·검증 체계",
+        "url": "?view=data&element=onsilgaseu-sanjeong-mrv-cegye-ghg-inbentori-jagseong-yeogryang-tier-1-2-3-gugga-rejiseuteu&country=VNM&from=explorer",
+        "selects": [
+          "분류(8)"
+        ],
+        "cardSummary": "19건 → screen",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "분류",
+            "to": "검증",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "E-008",
+      "title": "논문·특허[논문·특허명, 기후기술 분야, 특허 출원인 국적, 특허 출원 연구기관·대학명, 논문 국제 공저 비율, 한국과의 공동 출원·공저 여부]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "기후기술 논문·특허",
+        "url": "?view=data&element=nonmun-teugheo-nonmun-teugheomyeong-gihugisul-bunya-teugheo-culweonin-gugjeog-teugheo-culw&country=VNM&from=explorer",
+        "selects": [
+          "유형(3)",
+          "연도(7)",
+          "분야(35)"
+        ],
+        "cardSummary": "144건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "유형",
+            "to": "논문",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2026년",
+            "changed": true
+          },
+          {
+            "control": "분야",
+            "to": "CTIS-01 태양광 기술",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "E-009",
+      "title": "STEM 졸업자 수; 연구자 수",
+      "kind": "level",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "과학기술 인력",
+        "url": "?view=data&element=stem-joleobja-su-yeonguja-su&country=VNM&from=explorer&measure=measure-33733e6335a3&year=2016",
+        "selects": [
+          "항목(6)"
+        ],
+        "cardSummary": "31.2 % → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "STEM 졸업 비중(여성) · %",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "E-010",
+      "title": "UNESCO UIS R&D 지출(GERD); WIPO 혁신지수(GII)",
+      "kind": "line",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "연구개발·혁신 역량",
+        "url": "?view=data&element=unesco-uis-r-d-jicul-gerd-wipo-hyeogsinjisu-gii&country=VNM&from=explorer&measure=measure-6f94f67e75e4&year=2023",
+        "selects": [
+          "항목(4)",
+          "연도(7)"
+        ],
+        "cardSummary": "0.415 % → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "GERD · USD",
+            "changed": true
+          },
+          {
+            "control": "연도",
+            "to": "2021",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "E-011",
+      "title": "기술준비수준(TRL)",
+      "kind": "status",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": null,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "기술준비수준",
+        "url": "?view=data&element=gisuljunbisujun-trl&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "status screen",
+        "controls": "no selectable control in the primary analysis",
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "E-012",
+      "title": "직군별 종사자 수; 직군별 임금",
+      "kind": "level",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "기술인력과 임금",
+        "url": "?view=data&element=jiggunbyeol-jongsaja-su-jiggunbyeol-imgeum&country=VNM&from=explorer&measure=employed_persons&year=2023",
+        "selects": [
+          "E-012 항목 선택(4)",
+          "E-012 성별 선택(3)",
+          "E-012 기준연도 선택(2)"
+        ],
+        "cardSummary": "51.7 백만명 → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "E-012 항목 선택",
+            "to": "고용 구성비",
+            "changed": true
+          },
+          {
+            "control": "E-012 성별 선택",
+            "to": "남성 · 원자료 없음",
+            "changed": true
+          },
+          {
+            "control": "E-012 기준연도 선택",
+            "to": "2024년",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "E-013",
+      "title": "운영·유지보수 역량[숙련 기술인력 가용성, 부품 조달 가능성(국내생산/수입의존), 예방정비 체계 수준, A/S 인프라(서비스센터/원격모니터링 유무), 과거 유사시설 O&M 실적]",
+      "kind": "status",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": null,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "운영·유지보수 역량",
+        "url": "?view=data&element=unyeong-yujibosu-yeogryang-sugryeon-gisulinryeog-gayongseong-bupum-jodal-ganeungseong-gugn&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "status screen",
+        "controls": "no selectable control in the primary analysis",
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "E-014",
+      "title": "양자협정[협정 유형(제6.2조 양자/기후변화 공동위/녹색성장 MOU), 체결국, 체결 일자, 대상 분야, 이행 상태(발효/만료/갱신), 원본 링크]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "기후·녹색성장 양자협정",
+        "url": "?view=data&element=yangjahyeobjeong-hyeobjeong-yuhyeong-je6-2jo-yangja-gihubyeonhwa-gongdongwi-nogsaegseongja&country=VNM&from=explorer",
+        "selects": [
+          "협정 유형(11)",
+          "상태(11)"
+        ],
+        "cardSummary": "10건 → screen",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "협정 유형",
+            "to": "공동크레딧제도(JCM) — 양자 탄소상쇄 협정(파리협정 6.2조 ITMO",
+            "changed": true
+          },
+          {
+            "control": "상태",
+            "to": "발효",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "E-015",
+      "title": "NDC Partnership[참여 여부(Y/N), Country Page 링크]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": null,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "NDC 파트너십 참여",
+        "url": "?view=data&element=ndc-partnership-camyeo-yeobu-y-n-country-page-ringkeu&country=VNM&from=explorer",
+        "selects": [],
+        "cardSummary": "4건 → screen",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": "no selectable control in the primary analysis",
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "E-016",
+      "title": "한국 기후기술 TRL",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "한국 기후기술 성숙도",
+        "url": "?view=data&element=hangug-gihugisul-trl&country=VNM&from=explorer",
+        "selects": [
+          "기준연도(3)",
+          "부문(5)"
+        ],
+        "cardSummary": "4건 → screen",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "기준연도",
+            "to": "2020",
+            "changed": true
+          },
+          {
+            "control": "부문",
+            "to": "기후기술: 감축(Mitigation)",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "E-017",
+      "title": "한국-경쟁국 기후기술 비교우위",
+      "kind": "level",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "한국 기후기술 비교우위",
+        "url": "?view=data&element=hangug-gyeongjaenggug-gihugisul-bigyouwi&country=VNM&from=explorer&measure=measure-21b0eed49d22&year=2020",
+        "selects": [
+          "항목(2)"
+        ],
+        "cardSummary": "5 위 → primary",
+        "table": "headline in a table",
+        "selection": "kept",
+        "controls": [
+          {
+            "control": "항목",
+            "to": "기후기술 수준(최고국 대비) · %",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    },
+    {
+      "elementId": "E-018",
+      "title": "국내 기업 개도국 진출[기업명, 진출국, 업종(RE/에너지효율/폐기물/수처리), 진출 형태(법인/지사/프로젝트), 설립연도, 연락처, 38대 기후기술 매칭]",
+      "kind": "bars",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "한국 기업의 현지 진출",
+        "url": "?view=data&element=gugnae-gieob-gaedogug-jincul-gieobmyeong-jinculgug-eobjong-re-eneojihyoyul-pyegimul-suceor&country=VNM&from=explorer",
+        "selects": [
+          "연도(1)",
+          "업종·진출형태(22)"
+        ],
+        "cardSummary": "24곳 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "업종·진출형태",
+            "to": "바이오매스 발전·옥상태양광·탄소크레딧",
+            "changed": true
+          }
+        ],
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "E-019",
+      "title": "한국 기관 사무소[기관명(KOTRA무역관/KOICA사무소/에너지공단/KEPCO/한수원 등), 소재국, 도시, 주소, 기후·에너지 담당자 유무, 연락처, 담당 업무 범위]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "한국 기관 현지사무소",
+        "url": "?view=data&element=hangug-gigwan-samuso-gigwanmyeong-kotramuyeoggwan-koicasamuso-eneojigongdan-kepco-hansuweo&country=VNM&from=explorer",
+        "selects": [
+          "도시(3)"
+        ],
+        "cardSummary": "9곳 → screen",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "도시",
+            "to": "Hanoi",
+            "changed": true
+          }
+        ],
+        "map": "layer drawn on the map"
+      }
+    },
+    {
+      "elementId": "E-020",
+      "title": "한국 공공·민간 지원체계[지원기관명(NIGT/GTC/KOTRA/KIAT/에너지공단 등), 지원 프로그램명, 지원 유형(실증/FS/기술이전/금융), 지원 대상(기업/연구기관), 예산 규모, 신청 시기, 원본 링크]",
+      "kind": "facts",
+      "screenLoaded": true,
+      "cardSummaryVerified": true,
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "evidence": {
+        "state": "ready",
+        "title": "한국의 공공·민간 지원제도",
+        "url": "?view=data&element=hangug-gonggong-mingan-jiweoncegye-jiweongigwanmyeong-nigt-gtc-kotra-kiat-eneojigongdan-de&country=VNM&from=explorer",
+        "selects": [
+          "지원 유형(5)",
+          "연도(1)",
+          "지원유형·지원기관(5)"
+        ],
+        "cardSummary": "7건 → primary",
+        "table": "headline not in any table",
+        "selection": "card carries no selection",
+        "controls": [
+          {
+            "control": "지원 유형",
+            "to": "FS·기초조사",
+            "changed": true
+          },
+          {
+            "control": "지원유형·지원기관",
+            "to": "금융·투자",
+            "changed": true
+          }
+        ],
+        "map": "not a map dataset"
+      }
+    }
+  ]
+}

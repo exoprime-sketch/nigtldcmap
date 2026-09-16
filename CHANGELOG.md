@@ -2,6 +2,30 @@
 
 이 문서는 공개 플랫폼의 주요 변경을 기록합니다. 아직 merge·배포·tag가 확인되지 않은 작업은 `Unreleased`에 둡니다.
 
+## Unreleased — V140 분석 요약 카드와 상세 분석 (후보, production 미반영)
+
+### Added
+
+- 152개 카드 모델: `scripts/v140/build-card-summaries-v140.mjs`가 팩과 semantic 계약을 한 번 읽어 `card-summaries-v140.json`(요소별 종류·핵심값과 산출 규칙·미리보기·자료기간·제공기관·상세로 넘길 선택·집계 단위·출처)을 생성. 종류는 자료 형태에 따라 line/level/composition(허용 목록)/bars/spatial/spatial-trend/facts/status. 검토표 `reports/v140/card-summaries-review-v140.md`, 계약 문서 `docs/PUBLIC_CARD_ANALYSIS_CONTRACT_V140.md`
+- 데이터 찾기 카드: 제목 → 확인 내용 한 문장 → 핵심값 → 미리보기 → 자료기간·제공기관 → 상세보기/지도에서 보기/다운로드. 1240px 이상 3열. 측정항목 태그 제거
+- 카드 → 상세 선택 전달: 홈·finder 카드의 상세보기가 요약한 선택(measure·year·period·dim.*)을 `openElement`에 넘김. A-002 Estimate, A-003 GDP 총액, B-033 Quảng Ninh 2024, C-016 집중형 태양광 2025–2030으로 진입
+- 성·시별 관측 분석 `ProvinceSeriesAnalysisV140`(B-031·B-032·B-033·B-034·C-016): 항목·지역·기준연도 선택, 지역 추이, 같은 시점 성·시 비교, 표로 보기, C-016 항목 비교와 계획용량 합계
+- A-024 송전망 요약 `TransmissionNetworkSummaryV140`: 2016년 실재 선로 606구간·23,608 km(전압별)와 개정 PDP8 목록 116행(기존 48·계획 68, 경로 없음) 분리
+- 공유 C 템플릿(C-009·C-010) 문서 단위 연대기 `DocumentTimelineV140`: 법령·문서 54·41건, 시행(발효)일 순, 속성은 짧은 목록, 원문 링크 행은 해당 문서에 부착
+- 검증 `scripts/v140/analysis-qa-v140.mjs`: 152개별 screenLoaded·cardSummaryVerified·detailAnalysisFit·controlsVerified·tableValuesVerified·mapHandoffVerified·remainingIssue·evidence
+
+### Changed
+
+- 상세 기본값: A-003 GDP 총액(명목 USD), B-021 GVI 취약성 지수(현재), C-016 집중형 태양광, B-034 산림탄소 순플럭스
+- A-023: WRI `primaryFuel`를 읽어 '미표기 236행' 해소, 발전원별 시설 수·설비용량을 원천별 표로(합산 없음)
+- 차원 선택기는 선택한 측정항목이 실제 가진 값만 제공(B-021 권역/SSP 분리), 같은 측정항목 안에서 항상 짝지어 움직이는 두 차원은 하나만 제공(A-006 분류/세부 분류)
+- 포트폴리오 목록: 원천 집계·설명 행(D-023 2건)을 목록 건수에서 분리해 따로 표시, 필터 이름을 자료 유형별로(E-018 업종·진출형태, E-020 지원유형·지원기관, D-012 기술분야·진출국 등)
+- 상세 '지도에서 보기'는 catalogue의 지도 플래그를 읽어 B-003~B-007에도 표시
+- 지도 우측 패널: 선택 대상 → 전국 요약 → 지표 읽는 법 → 자료정보(현재 분석 메타, 선택 후 접힘). 추천 분석은 목록 위의 짧은 행. 레이어명 B-029 '이탄지 면적(산림 유형별 면적 중)', B-039 '수력 이론 잠재량', B-040 '지열 자원(심도별 지온)'
+- B-025 유역 카드에 베트남 내 면적(km², GIS)·수계 표시. E-008 분류 집계에 모집단·중복 계산 설명
+- 홈 카드 사실 표기를 자료기간·제공기관으로. finder 카드 자료기간은 요약자산 기준(D-005 2010·2013·2020년, 기후 전망 '과거 모형 1950–2014 · 전망 2015–2100')
+- E2E helper가 필수 자산(bundle·data·JSON) 실패와 JSON 대신 HTML 응답을 기록(404 일괄 무시 제거)
+
 ## Unreleased — V140 홈·데이터 찾기 역할 분리 (후보, production 미반영)
 
 ### Changed

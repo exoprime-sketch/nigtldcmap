@@ -1,61 +1,26 @@
 {
   "schema": "nigt-candidate-fingerprint-1",
-  "generatedAt": "2026-09-14T05:41:25.335Z",
-  "candidateRoot": ".verify/ci-dependency-check",
+  "generatedAt": "2026-09-15T23:51:21.816Z",
+  "candidateRoot": ".verify/candidate",
   "dataSource": "public/data/vietnam/v2",
   "code": {
-    "commit": "0442d52a4d9ce50c124744da8191d1edd31a21c6",
-    "branch": "fix/existing-screen-usability-v136",
+    "commit": "e1138c489261f24448fe68c90c611b0604613a9a",
+    "branch": "feat/home-map-analysis-v139",
     "dirty": true,
     "dirtyPaths": [
-      "github/workflows/e2e-playwright.yml",
-      "output/",
-      "reports/v131/entity-card-audit-v131.json",
-      "reports/v131/public-naming-audit-v131.json",
-      "reports/v133/map-focus-audit-v133.json",
-      "reports/v133/map-layer-distinction-audit-v133.json",
-      "reports/v133/map-popup-audit-v133.json",
-      "reports/v134/drought-analysis-audit-v134.json",
-      "reports/v134/glossary-audit-v134.json",
-      "reports/v134/oda-analysis-audit-v134.json",
-      "reports/v134/public-copy-audit-v134.json",
-      "reports/v134/visual-qa-contract-v134.json",
-      "reports/v135/detail-hierarchy-audit-v135.json",
-      "reports/v135/finder-card-audit-v135.json",
-      "reports/v135/map-access-audit-v135.json",
-      "reports/v135/map-compare-audit-v135.json",
-      "reports/v135/map-guide-audit-v135.json",
-      "reports/v135/public-screen-audit-v135.json",
-      "reports/v135/temporal-depth-audit-v135.json",
-      "reports/v136/ci-command-timings.json",
-      "reports/v136/duplicate-copy-audit-v136.json",
-      "reports/v136/finder-scroll-audit-v136.json",
-      "reports/v136/generic-detail-public-audit-v136-2.json",
-      "reports/v136/human-review-audit-v136.json",
-      "reports/v136/map-copy-audit-v136.json",
-      "reports/v136/map-list-ui-audit-v136.json",
-      "reports/v136/public-controls-audit-v136.json",
-      "reports/v136/public-text-audit-v136.json",
-      "reports/v136/public-text-inventory-v136.csv",
-      "reports/v136/release-audit-v136.json",
-      "reports/v136/screen-usability-audit-v136-4.json",
-      "reports/v136/workflow-audit-v136.json",
-      "scripts/v137/build-candidate-v137.mjs",
-      "scripts/v137/candidate-dependencies.mjs",
-      "scripts/v137/candidate-dependencies.test.mjs",
-      "tmp/"
+      "cripts/v140/role-split-qa-v140.mjs"
     ],
-    "srcTreeSha256": "7e449a92f63457f7c524b53b9e85081f032550c5ee38babea3268de04e653b2a",
-    "srcFileCount": 439
+    "srcTreeSha256": "5f0872a1abe8d5597e0095aaf6d139cbdab85e07f0103d9b8541626f4c267f2e",
+    "srcFileCount": 447
   },
   "data": {
-    "fileCount": 494,
-    "treeSha256": "db2808a8e45a09e373539c88d32ce5b1378ff8f7eaafa6590a569b7ec681161c",
-    "manifestSha256": "21859139f6298947187da589e9aba10dcb025adbef81e497b09c851bf77a59bc",
-    "mapIndexSha256": "d3d0e9708e218ba816ec82f00b38ce35c64eeca8299c2fc4f354407b88905fe2"
+    "fileCount": 515,
+    "treeSha256": "e74e497d692de026fdc312ecbede282d7d0f4d53ef38bc18cf724e65a7e6b0b2",
+    "manifestSha256": "7390536d7135288b61ab9ae224fb2819326cc5d9b8aacfdb7864d43b09265f13",
+    "mapIndexSha256": "eb8463faf60961a01a37d1f9c4d3b036864ca809b991c35c75475efd7e703ce5"
   },
   "appBundle": {
-    "file": "static/js/main.3a9d3625.js",
-    "sha256": "adb73004cdff1e710d501939ba0ce751e0b034bc11a255c5982f82ecffa2892b"
+    "file": "static/js/main.dd6ad057.js",
+    "sha256": "69772767374716b176d1f15d160e96ef5e6ba4f7cb130eb703a61219a4058ac7"
   }
 }
