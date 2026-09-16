@@ -99,7 +99,9 @@ function screenReadingExpression() {
       portfolioCategoryLabels: [
         ...document.querySelectorAll('[data-portfolio-distribution="true"]'),
       ]
-        .filter((section) => section.getAttribute('data-testid') !== 'portfolio-year-trend-v132')
+        // The primary 분야 grouping only: V141 adds per-key distributions
+        // (원조 유형·상태 …) in their own sections beside it.
+        .filter((section) => section.getAttribute('data-testid') !== 'portfolio-year-trend-v132' && !String(section.getAttribute('data-testid') || '').startsWith('portfolio-category-'))
         .flatMap((section) => [...section.querySelectorAll('li > span')])
         .filter(visible)
         .map((node) => clean(node.textContent))
@@ -109,7 +111,7 @@ function screenReadingExpression() {
       portfolioCategoryBars: [
         ...document.querySelectorAll('[data-portfolio-distribution="true"]'),
       ]
-        .filter((section) => section.getAttribute('data-testid') !== 'portfolio-year-trend-v132')
+        .filter((section) => section.getAttribute('data-testid') !== 'portfolio-year-trend-v132' && !String(section.getAttribute('data-testid') || '').startsWith('portfolio-category-'))
         .flatMap((section) => [...section.querySelectorAll('li')])
         .filter(visible)
         .map((node) => ({

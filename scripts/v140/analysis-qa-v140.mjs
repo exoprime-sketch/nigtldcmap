@@ -302,6 +302,21 @@ function recompute(card) {
     const individual = entities.filter((row) => clean(attr(row, "레코드구분")) === "개별");
     return finish(individual.length, entities.length, "rows with 레코드구분=개별");
   }
+  if (card.elementId === "C-007" && entities.length) {
+    const row = entities.find((entity) => /등재 NMA 건수/u.test(clean(attr(entity, "속성1_레코드명"))));
+    const value = numberOf(attr(row, "속성3_값"));
+    return value === null ? { status: "no-matching-row", note: "no 등재 NMA 건수 row" } : finish(value, entities.length, "the 참여당사국 등재 NMA 건수 row");
+  }
+  if (card.elementId === "C-018" && entities.length) {
+    const rows = entities.filter((entity) => entity.indicatorId === "C-018_generation_capacity_plan" && Number(attr(entity, "속성4_시점")) === 2050 && !/배출|^총 설비/u.test(clean(attr(entity, "속성1_레코드명"))));
+    const byTech = new Map();
+    rows.forEach((entity) => { const name = clean(attr(entity, "속성1_레코드명")); const value = numberOf(attr(entity, "속성3_값")); if (value === null) return; const entry = byTech.get(name) || []; entry.push(value); byTech.set(name, entry); });
+    const top = [...byTech.entries()].map(([name, values]) => ({ name, min: Math.min(...values), max: Math.max(...values) })).sort((a, b) => b.max - a.max)[0];
+    if (!top) return { status: "no-matching-row" };
+    const [low, high] = claim.numbers.filter((n) => !n.derived);
+    const ok = low && high && within(low.value, top.min, low.decimals) && within(high.value, top.max, high.decimals);
+    return { status: ok ? "match" : "mismatch", computed: [top.min, top.max], expected: [low?.value, high?.value], rows: rows.length, note: `2050 capacity bounds of ${top.name}` };
+  }
   if (card.elementId === "A-002" && observations.length) {
     const measureKey = card.selection?.dimensions?.wgiMeasure || "est";
     const rows = observations.filter((row) => Number(row.year) === Number(claim.year) && new RegExp(`_${measureKey}$`, "u").test(row.indicatorId) && typeof row.value === "number");
@@ -340,7 +355,7 @@ function recompute(card) {
   }
   // Register cards: the same row base the detail lists (aggregate/explanatory rows out).
   if (entities.length && (basis.count || /1건 = 원천 1행|1행 = 1구역|문서명이 같은 행/u.test(rule))) {
-    let rows = entities.filter((row) => clean(attr(row, "레코드구분")) !== "집계" && ![row.name, attr(row, "속성1_레코드명")].some((name) => /^수집현황(?:\s*v[\d.]+)?(?:\s*분류)?$/u.test(clean(name))));
+    let rows = entities.filter((row) => clean(attr(row, "레코드구분")) !== "집계" && ![row.name, attr(row, "속성1_레코드명")].some((name) => /^수집현황(?:\s*v[\d.]+)?(?:\s*분류)?$/u.test(clean(name)) || /^raw\s|OCR 재추출|스캔본/u.test(clean(name))));
     if (/레코드구분=개별/u.test(rule)) rows = rows.filter((row) => clean(attr(row, "레코드구분")) === "개별");
     if (/현행 행만/u.test(rule)) rows = rows.filter((row) => Object.values(row.normalizedAttributes || {}).some((v) => clean(v) === "현행"));
     if (/1행 = 1구역/u.test(rule)) {
@@ -426,6 +441,144 @@ async function readScreen(page) {
   });
 }
 
+/**
+ * The analysis a data kind needs, and whether the primary shows it:
+ *   line/level   a trend or comparison of the same measure with a table of
+ *                the drawn rows, the unit stated
+ *   composition  every card part named and a total kept apart from the parts
+ *   spatial-trend variable, scenario and year selectors; observed/projected named
+ *   spatial      region selector and a province distribution or ranking
+ *   bars         the compared categories named (at least two card parts)
+ *   facts        the register's count stated with a list, table, timeline or
+ *                directory; policy registers show a time column
+ *   status       the status wording only
+ * Recorded for all 152; a missing expectation is a required failure.
+ */
+/** Words that address the compiler, not the reader, and must not appear on the primary analysis. */
+const INTERNAL_WORDING = /원 wide파일|서술 재검증|검토의견|\braw:\s*\S+|[\w-]+\.(?:pdf|xlsx?|csv|md)\b|\[M\d{2}[·\]]|field_[0-9a-f]{6,}|속성\d+_|\battr_\d+|tech_id|레코드구분=/gu;
+
+const COUNT_LIKE_UNIT = /(?:^|\s)수$|^(?:건|곳|개|명|기)$|(?:행|건|곳|개소|명)\)?$/u;
+async function analysisFitOf(page, card, screen, claim) {
+  if (!card) return { kind: null, pass: null, expected: [], missing: ["no card"] };
+  // Home-copied cards keep their parts in the home asset.
+  const homeCard = HOME_IDS.has(card.elementId) ? homePreview.cards.find((entry) => entry.elementId === card.elementId) : null;
+  const cardParts = (card.preview?.parts || homeCard?.parts || homeCard?.bars || []).map((part) => clean(part.label));
+  const dom = await page.evaluate(() => {
+    const primary = document.querySelector('[data-testid="public-analysis-primary"]');
+    const tidy = (value) => String(value || "").normalize("NFC").replace(/\s+/gu, " ").trim();
+    const text = tidy(primary?.innerText);
+    return {
+      text,
+      hasChart: Boolean(primary?.querySelector("svg, canvas, [role='img'], [class*='chart'], [class*='bars'], [class*='stack'], [class*='distribution'], [class*='composition'], .sv125-group-counts")),
+      hasTable: Boolean(primary?.querySelector("table")),
+      hasChartTable: Boolean(primary?.querySelector('[data-testid="trend-chart-table-v141"], [data-testid*="table"], .psa140__table, table')) || [...(primary?.querySelectorAll("button, summary") || [])].some((node) => /표로 보기/u.test(node.textContent || "")),
+      hasList: Boolean(primary?.querySelector("ol, ul, table, article, dl, .sv125-policy-timeline, [data-testid*='directory'], [data-testid*='list'], [data-testid*='grid']")),
+      selectLabels: [...(primary?.querySelectorAll("select") || [])].map((select) => tidy(select.closest("label")?.querySelector("span")?.textContent || select.getAttribute("aria-label") || "")),
+      headings: [...(primary?.querySelectorAll("h3, h4, h5") || [])].map((node) => tidy(node.textContent)),
+    };
+  });
+  const expected = [];
+  const found = [];
+  const missing = [];
+  const want = (label, ok) => { expected.push(label); (ok ? found : missing).push(label); };
+  const rawUnit = clean(card.measure?.unit || card.preview?.unit || homeCard?.unit || "");
+  // A scale description ("추정치(−2.5 약함 ~ +2.5 강함)") is stated by its
+  // name; a count noun is verified by the count itself.
+  const unit = COUNT_LIKE_UNIT.test(rawUnit) ? "" : rawUnit.includes("(") ? rawUnit.split("(")[0].trim() : rawUnit;
+  const kind = card.kind;
+  const unitStated = (value) => {
+    const aliases = [value, ...(UNIT_ALIASES[value] || []), ...(claim?.unitAliases || [])];
+    return aliases.some((alias) => alias && (dom.text.includes(alias) || screen.selectorsText.includes(alias)));
+  };
+  if (kind === "status") {
+    want("status wording", /상태|미제공|수집|준비|없음|확보|공개된 값/u.test(dom.text));
+  } else if ((kind === "line" || kind === "level") && COUNT_LIKE_UNIT.test(rawUnit) && dom.hasList) {
+    // A count of register rows whose detail lists them (A-029: 19 agreements in a timeline).
+    want("register count with its list", dom.hasList);
+  } else if (kind === "line" || kind === "level") {
+    want("trend or comparison drawn", dom.hasChart || dom.hasTable);
+    want("table of the drawn rows", dom.hasChartTable);
+    if (unit) want(`unit "${unit}" stated`, unitStated(unit));
+    if (kind === "line") want("years shown on the axis or a period selector", dom.selectLabels.some((label) => /연도|기간/u.test(label)) || /(?:19|20|21)\d{2}/u.test(dom.text));
+  } else if (kind === "composition") {
+    const parts = cardParts;
+    const shown = parts.filter((label) => dom.text.includes(label));
+    want(`parts named (${shown.length}/${parts.length})`, parts.length > 0 && shown.length === parts.length);
+    want("total kept apart from the parts", /합계|총|전체/u.test(dom.text));
+    want("composition drawn", dom.hasChart);
+  } else if (kind === "spatial-trend") {
+    want("variable selector", dom.selectLabels.some((label) => /표시 항목|항목|변수/u.test(label)));
+    want("scenario stated", /시나리오|SSP|관측/u.test(dom.text));
+    want("years shown on the axis or table", /(?:19|20|21)\d{2}/u.test(dom.text));
+    want("observed vs projected named", /과거|관측|전망|모의|historical/u.test(dom.text));
+  } else if (kind === "spatial") {
+    want("region selector", dom.selectLabels.some((label) => /지역|성·시|권역/u.test(label)));
+    want("distribution or ranking of regions", /분포|순위|중앙값|성·시/u.test(dom.text) && (dom.hasChart || dom.hasTable || dom.hasList));
+    if (unit) want(`unit "${unit}" stated`, unitStated(unit));
+  } else if (kind === "bars" || kind === "signed-bars" || kind === "grouped-bars") {
+    const parts = cardParts;
+    const shown = parts.filter((label) => dom.text.includes(label));
+    want(`compared categories named (${shown.length}/${parts.length})`, parts.length === 0 || shown.length >= Math.min(2, parts.length));
+    want("comparison drawn or tabled", dom.hasChart || dom.hasTable || dom.hasList);
+    if (unit) want(`unit "${unit}" stated`, unitStated(unit));
+  } else if (kind === "map") {
+    want("network or facility summary", dom.hasTable || dom.hasList);
+  } else {
+    // facts: a register
+    const count = numbersIn(card.headline?.value || "")[0];
+    want("register count stated", !count || dom.text.includes(String(count.raw).replace(/\B(?=(\d{3})+(?!\d))/gu, ",")) || dom.text.includes(String(count.raw)));
+    want("list, table, timeline or directory", dom.hasList);
+    if (/정책|법|제도|협정|문서/u.test(card.basis?.unit || "") || /policy/u.test(card.basis?.rule || "")) want("time column (시행/확인 시점)", /시점|시행|발효|확인|연도|일자/u.test(dom.text));
+  }
+  return { kind, expected, found, missing, pass: missing.length === 0, headings: dom.headings.slice(0, 4) };
+}
+
+/** Words each of the review's five map cases must state in the selection panel or 자료정보. */
+const MAP_SEMANTIC_EXPECTATIONS = {
+  "A-023": { pattern: /WRI|OSM|OpenStreetMap|World Resources/u, note: "the source registry of the selected plant" },
+  "D-018": { pattern: /참여국|활동|범위|대표/u, note: "region-of-participation vs activity point" },
+  "B-021": { pattern: /6\s*개?\s*권역|GDL|권역/u, note: "six GDL regions shown on provinces" },
+  "C-019": { pattern: /34|신행정|기존 경계|단위/u, note: "34-unit values mapped onto the older boundaries" },
+  "C-022": { pattern: /34|신행정|기존 경계|단위|시설/u, note: "same facility population as C-019" },
+};
+
+async function mapSymbolSemanticsOf(page, elementId) {
+  const result = { selected: false, panel: null, checks: {}, pass: false };
+  try {
+    const button = await page.$('[data-testid="map-keyboard-feature-select"]');
+    if (!button) { result.reason = "no keyboard feature to select"; return result; }
+    await button.click();
+    await page.waitForSelector('[data-testid="map-selected-feature-panel"]', { timeout: 15_000 });
+    await page.waitForTimeout(400);
+    const panel = await page.evaluate(() => {
+      const tidy = (value) => String(value || "").normalize("NFC").replace(/\s+/gu, " ").trim();
+      const node = document.querySelector('[data-testid="map-selected-feature-panel"]');
+      const rows = [...(node?.querySelectorAll(".cdp-evidence-row") || [])].map((row) => `${tidy(row.querySelector("span")?.textContent)}: ${tidy(row.querySelector("strong")?.textContent)}`);
+      const info = tidy(document.querySelector(".cdp-map-layer-info, [data-testid='map-layer-info']")?.innerText || "");
+      const coverage = tidy([...document.querySelectorAll("dt")].find((dt) => /지도 표시 범위|공간 단위|표시 단위/u.test(dt.textContent || ""))?.nextElementSibling?.textContent || "");
+      return { elementId: node?.getAttribute("data-selected-element-id") || "", title: tidy(node?.querySelector("h3")?.textContent), rows, text: tidy(node?.innerText), info, coverage, body: tidy(document.body.innerText).slice(0, 20000) };
+    });
+    result.selected = panel.elementId === elementId;
+    result.panel = { title: panel.title, rows: panel.rows.slice(0, 12), coverage: panel.coverage };
+    const text = `${panel.text} ${panel.coverage}`;
+    result.checks = {
+      ownLayer: panel.elementId === elementId,
+      valueOrFact: panel.rows.length > 0 && panel.rows.some((row) => /\d/u.test(row) || /:\s*\S/u.test(row)),
+      unitOrMeasure: /단위|MW|km|ha|%|°C|mm|명|건|곳|개|USD|VND|지수|점|위|tCO|t\b|m³|kWh|GWh|kV/u.test(text),
+      time: /기준연도|자료연도|연도|시점|기간|\b(?:19|20|21)\d{2}\b/u.test(text),
+      source: /출처|제공기관|원천|자료 제공|WRI|OSM|World Bank|FAO|GFW|UNFCCC|Global|Atlas|EM-DAT|OECD|GADM|IRENA|PSMSL|MONRE|EVN|USGS|ESA|UMD|Aqueduct|GDL|IPCC|CCKP/u.test(text) || /출처|제공기관/u.test(panel.body),
+      spatialMeaning: Boolean(panel.coverage) || /좌표|대표점|경계|성·시|권역|유역|지점|시설|위치|범위/u.test(text),
+    };
+    const expectation = MAP_SEMANTIC_EXPECTATIONS[elementId];
+    if (expectation) result.checks.reviewCase = expectation.pattern.test(`${text} ${panel.body}`);
+    result.pass = Object.values(result.checks).every(Boolean);
+    result.missing = Object.entries(result.checks).filter(([, ok]) => !ok).map(([key]) => key);
+  } catch (error) {
+    result.reason = String(error?.message || error).split("\n")[0].slice(0, 120);
+  }
+  return result;
+}
+
 async function openTablesAndRead(page) {
   await page.evaluate(() => {
     document.querySelectorAll("details").forEach((details) => { details.open = true; });
@@ -436,7 +589,10 @@ async function openTablesAndRead(page) {
     const tidy = (value) => String(value || "").normalize("NFC").replace(/\s+/gu, " ").trim();
     return [...document.querySelectorAll("table")].map((table) => ({
       caption: tidy(table.caption?.textContent) || tidy(table.closest("section, details")?.querySelector("h3, h4, h5, summary")?.textContent),
+      header: tidy(table.querySelector("thead")?.innerText || ""),
+      inPrimary: Boolean(table.closest('[data-testid="public-analysis-primary"]')),
       cells: [...table.querySelectorAll("td, th")].map((cell) => tidy(cell.textContent)).filter(Boolean),
+      rows: [...table.querySelectorAll("tbody tr")].slice(0, 400).map((row) => [...row.querySelectorAll("th, td")].map((cell) => tidy(cell.textContent))),
       rowCount: table.querySelectorAll("tbody tr").length,
     }));
   });
@@ -446,32 +602,65 @@ async function openTablesAndRead(page) {
   return tables;
 }
 
+/**
+ * The card's figure in a table row, identified by its keys — not by a number
+ * that happens to be near. A row states the figure when the row (with its
+ * table's caption and header) carries the number, the unit, the card's year
+ * or period, its region, and the series/measure label. Register cards are
+ * counted by rows. Derived figures (a sum, a median, a maximum over rows) are
+ * expected in a derived-row table; when none exists the case is named, not
+ * passed.
+ */
 function classifyTables(claim, tables, kind, card) {
   if (kind === "status") return { status: "not-applicable", reason: "status screen, no values" };
   const need = claim.numbers.filter((n) => !n.derived)[0];
   if (!need) return { status: "not-applicable", reason: "no number on the card" };
   if (!tables.length) return { status: "no-table", reason: "the screen has no table" };
-  // A register count is the number of rows, not a cell: the raw table's
-  // stated row count is the figure to compare (C-001 "49건" ↔ "전체 49행").
   const isRowCount = /^(건|곳|개|명|기)$/u.test(claim.unit) && (card?.basis?.count || /1건 = 원천 1행|1행 = 1구역|문서명이 같은 행/u.test(card?.basis?.rule || ""));
   if (isRowCount) {
     const counted = tables.map((table) => ({ table, stated: numbersIn(table.caption || "").map((n) => n.raw), rows: table.rowCount }));
     const hit = counted.find((entry) => entry.stated.includes(need.value) || entry.rows === need.value);
-    if (hit) return { status: "match", table: hit.table.caption || "(무제 표)", cell: `row count ${need.value}` };
-    return { status: "row-count-differs", reason: `no table states or holds ${need.value} rows (${counted.map((entry) => `${entry.rows} rows`).join(", ")})`, note: "the detail lists the rows it counts differently (e.g. documents grouped from attribute rows); the count itself is verified on screen" };
+    if (hit) return { status: "match", table: hit.table.caption || "(무제 표)", cell: `row count ${need.value}`, key: "row-count" };
+    return { status: "row-count-differs", reason: `no table states or holds ${need.value} rows (${counted.map((entry) => `${entry.rows} rows`).join(", ")})`, note: "the detail groups rows (documents, organisations, zones); the count is verified on screen" };
   }
+  const labels = [card?.measure?.label, (card?.headline?.label || "").split(" · ")[0].replace(/\s*(?:최대|최소|합계|중앙값)$/u, ""), ...(card?.preview?.seriesLabel ? [card.preview.seriesLabel] : [])].map((v) => clean(v || "")).filter((v) => v && !/^\d/u.test(v));
+  const headlineLabel = clean(card?.headline?.label || "");
+  const tokensOf = (label) => label.split(/[\s·()（）,]+/u).filter((token) => token.length >= 2 && !/^\d/u.test(token));
+  const labelStated = (row, both) => {
+    if (labels.length === 0) return true;
+    if (labels.some((label) => both.includes(label))) return true;
+    if (labels.some((label) => { const tokens = tokensOf(label); return tokens.length > 0 && tokens.filter((token) => both.includes(token)).length >= Math.min(2, tokens.length); })) return true;
+    // The card's own label names the row's subject ("… · 전체 직군 · …").
+    return row.some((cell) => cell && !/^[\d.,\s%-]+$/u.test(cell) && cell.length >= 2 && headlineLabel.includes(cell));
+  };
   const alternatives = claim.numbers.filter((n) => n.derived);
+  const numberInRow = (row) => row.some((cell) => numbersIn(cell).some((n) => numberMatches(need, n) || alternatives.some((alt) => derivedMatches(alt, n))));
+  const keyCheck = (table, row) => {
+    const rowText = row.join(" | ");
+    const context = `${table.caption} ${table.header}`;
+    const both = `${rowText} ${context}`;
+    return {
+      unit: claim.unitAliases.length === 0 || claim.unitAliases.some((alias) => both.includes(alias)),
+      year: !claim.year || rowText.includes(String(claim.year)) || context.includes(String(claim.year)),
+      period: !claim.period || both.includes(claim.period),
+      region: !claim.region || rowText.includes(claim.region) || context.includes(claim.region),
+      label: labelStated(row, both),
+    };
+  };
+  let valueOnly = null;
   for (const table of tables) {
-    for (const cell of table.cells) {
-      if (numbersIn(cell).some((n) => numberMatches(need, n) || alternatives.some((alt) => derivedMatches(alt, n)))) {
-        return { status: "match", table: table.caption || "(무제 표)", cell };
-      }
+    for (const row of table.rows) {
+      if (!numberInRow(row)) continue;
+      const keys = keyCheck(table, row);
+      const missing = Object.entries(keys).filter(([, ok]) => !ok).map(([key]) => key);
+      if (!missing.length) return { status: "match", table: table.caption || "(무제 표)", cell: row.join(" | ").slice(0, 160), key: "indicator+region+time+unit" };
+      if (!valueOnly) valueOnly = { table: table.caption || "(무제 표)", cell: row.join(" | ").slice(0, 160), missing };
     }
   }
-  const near = tables.flatMap((table) => table.cells.flatMap((cell) => numbersIn(cell).map((n) => n.scaled))).filter((n) => need.scaled && Math.abs(n - need.scaled) / Math.abs(need.scaled) < 0.05);
-  if (near.length) return { status: "no-derived-row", reason: `a cell within 5% (${near[0]}) is another row (other year/region), not the card's ${need.value}; the card's figure is a derived value` };
-  if (kind === "facts") return { status: "not-applicable", reason: "a register count is not a table cell; the rows are the table" };
-  return { status: "no-derived-row", reason: "tables hold raw rows; the card's derived figure (sum/median/latest) is not a row" };
+  const derived = /합계|중앙값|최대|최소|중복 제거|범위|하한~상한/u.test(card?.basis?.rule || "") || ["spatial", "spatial-trend", "composition"].includes(kind) || /최대|합계|중앙값/u.test(card?.headline?.label || "");
+  if (valueOnly) return { status: "value-without-keys", reason: `a row holds the number but not its keys (${valueOnly.missing.join(", ")} missing): ${valueOnly.cell}`, table: valueOnly.table };
+  if (derived) return { status: "no-derived-row", reason: "the card's figure is derived (sum/median/max/range) and no table states the derived row; the figure is checked on screen and recomputed from the download" };
+  return { status: "no-matching-row", reason: "no table row states the figure with its keys" };
 }
 
 async function checkElement(context, item) {
@@ -488,9 +677,11 @@ async function checkElement(context, item) {
     cardValueVerified: null,
     recomputed: null,
     detailAnalysisFit: null,
+    analysisFit: null,
     controlsVerified: null,
     tableValuesVerified: null,
     mapHandoffVerified: null,
+    mapSymbolVerified: null,
     remainingIssue: [],
     notApplicable: [],
     evidence: {},
@@ -632,6 +823,15 @@ async function checkElement(context, item) {
       record.notApplicable.push("detailAnalysisFit: card carries no selection");
     }
 
+    // ---- 4a. no compiler wording on the public screen (file names, review memos, raw keys)
+    const internal = (screen.primaryText.match(INTERNAL_WORDING) || []).slice(0, 5);
+    record.internalWording = internal.length ? internal : null;
+    if (internal.length) record.remainingIssue.push(`internal wording on screen: ${internal.join(", ")}`);
+
+    // ---- 4b. does the primary analysis fit the data kind? (every element)
+    record.analysisFit = await analysisFitOf(page, card, screen, claim);
+    record.evidence.analysisFit = record.analysisFit;
+
     // ---- 5. tables
     const tables = await openTablesAndRead(page);
     const tableResult = claim ? classifyTables(claim, tables, card.kind, card) : { status: "not-applicable", reason: "no card" };
@@ -712,6 +912,9 @@ async function checkElement(context, item) {
           stable = named.drawn && named.checked && named.role === "primary" ? stable + 1 : 0;
         }
         record.mapHandoffVerified = drawn && stable >= 3;
+        // The representative symbol: select it through the keyboard navigation
+        // and read what the panel says it is (value·unit, time, source, space).
+        if (record.mapHandoffVerified) record.mapSymbolVerified = await mapSymbolSemanticsOf(page, elementId);
         record.evidence.map = drawn ? `layer drawn as ${named?.role} (${named?.title})` : "layer not drawn within 60s";
         if (!record.mapHandoffVerified) record.remainingIssue.push(`map hand-off: ${record.evidence.map}`);
       }
@@ -744,7 +947,7 @@ await Promise.all(
       const item = queue.shift();
       const record = await checkElement(context, item);
       results.push(record);
-      process.stdout.write(`${record.elementId} ${record.screenLoaded ? "ok" : "FAIL"} click=${record.cardClicked} url=${record.selectionUrlPreserved} value=${record.cardValueVerified} recomp=${record.recomputed?.status} fit=${record.detailAnalysisFit} ctrl=${record.controlsVerified} table=${record.tableValuesVerified} map=${record.mapHandoffVerified}${record.remainingIssue.length ? ` | ${record.remainingIssue.join("; ").slice(0, 140)}` : ""}\n`);
+      process.stdout.write(`${record.elementId} ${record.screenLoaded ? "ok" : "FAIL"} click=${record.cardClicked} url=${record.selectionUrlPreserved} value=${record.cardValueVerified} recomp=${record.recomputed?.status} fit=${record.detailAnalysisFit} afit=${record.analysisFit?.pass} ctrl=${record.controlsVerified} table=${record.evidence.table?.status} map=${record.mapHandoffVerified} sym=${record.mapSymbolVerified ? record.mapSymbolVerified.pass : null}${record.remainingIssue.length ? ` | ${record.remainingIssue.join("; ").slice(0, 140)}` : ""}${record.analysisFit?.missing?.length ? ` | afit missing: ${record.analysisFit.missing.join(", ")}` : ""}${record.mapSymbolVerified && record.mapSymbolVerified.pass === false ? ` | map symbol: ${(record.mapSymbolVerified.missing || [record.mapSymbolVerified.reason]).join(", ")}` : ""}\n`);
     }
     await context.close();
   })
@@ -755,7 +958,7 @@ if (server) await server.close();
 results.sort((a, b) => a.elementId.localeCompare(b.elementId));
 const tally = (key) => ({ pass: results.filter((r) => r[key] === true).length, fail: results.filter((r) => r[key] === false).length, notApplicable: results.filter((r) => r[key] === null).length });
 const countBy = (pick) => results.reduce((acc, r) => { const key = pick(r) || "none"; acc[key] = (acc[key] || 0) + 1; return acc; }, {});
-const requiredFailures = results.filter((r) => !r.screenLoaded || r.cardClicked === false || r.homeCardClicked === false || r.selectionUrlPreserved === false || r.cardValueVerified === false || r.detailAnalysisFit === false || r.controlsVerified === false || r.mapHandoffVerified === false || r.recomputed?.status === "mismatch");
+const requiredFailures = results.filter((r) => !r.screenLoaded || r.cardClicked === false || r.homeCardClicked === false || r.selectionUrlPreserved === false || r.cardValueVerified === false || r.detailAnalysisFit === false || r.analysisFit?.pass === false || r.controlsVerified === false || r.mapHandoffVerified === false || (r.mapSymbolVerified && r.mapSymbolVerified.pass === false) || r.recomputed?.status === "mismatch" || r.evidence.table?.status === "value-without-keys" || Boolean(r.internalWording));
 const summary = {
   label,
   base,
@@ -771,6 +974,9 @@ const summary = {
   cardValueVerified: tally("cardValueVerified"),
   recomputed: countBy((r) => r.recomputed?.status),
   detailAnalysisFit: tally("detailAnalysisFit"),
+  analysisFit: { pass: results.filter((r) => r.analysisFit?.pass === true).length, fail: results.filter((r) => r.analysisFit?.pass === false).length, notApplicable: results.filter((r) => !r.analysisFit || r.analysisFit.pass === null).length, byKind: countBy((r) => `${r.analysisFit?.kind}:${r.analysisFit?.pass}`) },
+  internalWording: results.filter((r) => r.internalWording).map((r) => r.elementId),
+  mapSymbolVerified: { pass: results.filter((r) => r.mapSymbolVerified?.pass === true).length, fail: results.filter((r) => r.mapSymbolVerified && r.mapSymbolVerified.pass === false).length, notApplicable: results.filter((r) => !r.mapSymbolVerified).length },
   controlsVerified: tally("controlsVerified"),
   controlsTried: results.reduce((sum, r) => sum + (Array.isArray(r.evidence.controls) ? r.evidence.controls.filter((c) => c.tested !== false).length : 0), 0),
   tableValuesVerified: tally("tableValuesVerified"),
@@ -789,13 +995,15 @@ const md = [
   "",
   "| 항목 | 통과 | 실패 | 해당 없음 |",
   "| --- | ---: | ---: | ---: |",
-  ...["cardClicked", "homeCardClicked", "selectionUrlPreserved", "screenLoaded", "cardValueVerified", "detailAnalysisFit", "controlsVerified", "tableValuesVerified", "mapHandoffVerified"].map((key) => `| ${key} | ${summary[key].pass} | ${summary[key].fail} | ${summary[key].notApplicable} |`),
+  ...["cardClicked", "homeCardClicked", "selectionUrlPreserved", "screenLoaded", "cardValueVerified", "detailAnalysisFit", "analysisFit", "controlsVerified", "tableValuesVerified", "mapHandoffVerified", "mapSymbolVerified"].map((key) => `| ${key} | ${summary[key].pass} | ${summary[key].fail} | ${summary[key].notApplicable} |`),
   "",
-  `독립 재계산(다운로드 파일): ${JSON.stringify(summary.recomputed)} · 컨트롤 시도 ${summary.controlsTried}회 · 표 분류 ${JSON.stringify(summary.tableClassification)} · 필수 실패 ${summary.requiredFailures}건`,
+  "detailAnalysisFit = 넘긴 선택(측정항목·연도·차원)이 선택기·제목·KPI에 있는지 · analysisFit = 자료 유형에 맞는 주 분석(추세/비교/구성/분포/등록부 목록과 표·단위·시점)이 있는지(152개 전부) · mapSymbolVerified = 지도 대표 기호 선택 후 값·단위·시점·출처·공간 의미가 패널에 있는지(42개)",
   "",
-  "| 요소 | 종류 | click | url | loaded | value | recomp | fit | controls | table | map | 잔여 문제 / 해당 없음 사유 |",
-  "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
-  ...results.map((r) => `| ${r.elementId} | ${r.kind || ""} | ${mark(r.cardClicked)} | ${mark(r.selectionUrlPreserved)} | ${mark(r.screenLoaded)} | ${mark(r.cardValueVerified)} | ${r.recomputed?.status || ""} | ${mark(r.detailAnalysisFit)} | ${mark(r.controlsVerified)} | ${mark(r.tableValuesVerified)} | ${mark(r.mapHandoffVerified)} | ${[...r.remainingIssue, ...r.notApplicable].join("; ").replace(/\|/gu, "/")} |`),
+  `독립 재계산(다운로드 파일): ${JSON.stringify(summary.recomputed)} · 컨트롤 시도 ${summary.controlsTried}회 · 표 분류(키: 지표+지역+연도/기간+단위) ${JSON.stringify(summary.tableClassification)} · 필수 실패 ${summary.requiredFailures}건`,
+  "",
+  "| 요소 | 종류 | click | url | loaded | value | recomp | fit | afit | controls | table | map | symbol | 잔여 문제 / 해당 없음 사유 |",
+  "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
+  ...results.map((r) => `| ${r.elementId} | ${r.kind || ""} | ${mark(r.cardClicked)} | ${mark(r.selectionUrlPreserved)} | ${mark(r.screenLoaded)} | ${mark(r.cardValueVerified)} | ${r.recomputed?.status || ""} | ${mark(r.detailAnalysisFit)} | ${mark(r.analysisFit?.pass ?? null)} | ${mark(r.controlsVerified)} | ${r.evidence.table?.status || ""} | ${mark(r.mapHandoffVerified)} | ${mark(r.mapSymbolVerified ? r.mapSymbolVerified.pass : null)} | ${[...r.remainingIssue, ...r.notApplicable, ...(r.analysisFit?.missing?.length ? [`analysisFit: ${r.analysisFit.missing.join(", ")}`] : []), ...(r.mapSymbolVerified && r.mapSymbolVerified.pass === false ? [`map symbol: ${(r.mapSymbolVerified.missing || [r.mapSymbolVerified.reason]).join(", ")}`] : [])].join("; ").replace(/\|/gu, "/")} |`),
   "",
 ].join("\n");
 writeFileSync(resolve(OUT, `analysis-qa-v140-${label}.md`), md);

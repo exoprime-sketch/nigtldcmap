@@ -1040,6 +1040,21 @@ function patchExistingLayer(layer, target, report) {
     };
   }
   if (patch.countNoun) next.countNoun = patch.countNoun;
+  // Filters and facts the ETL layer lacks (A-023's source filter): appended
+  // once, never duplicated on a rebuild.
+  if (patch.filtersAppend) {
+    next.filters = [
+      ...(layer.filters || []).filter((filter) => !patch.filtersAppend.some((added) => added.field === filter.field)),
+      ...patch.filtersAppend,
+    ];
+  }
+  if (patch.factFieldsAppend && layer.factFields) {
+    next.factFields = [
+      ...layer.factFields.filter((fact) => !patch.factFieldsAppend.some((added) => added.key === fact.key)),
+      ...patch.factFieldsAppend,
+    ];
+  }
+  if (patch.periodLabel) next.periodLabel = patch.periodLabel;
   if (patch.defaultVariableMeasureId) {
     const wanted = layer.selectors.variables.find((option) => option.measureId === patch.defaultVariableMeasureId);
     const current = layer.selectors.variables.find((option) => option.key === layer.selectors.defaultVariable);

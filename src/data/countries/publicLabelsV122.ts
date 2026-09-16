@@ -91,7 +91,10 @@ const CURATED_TITLES: Record<string, { title: string; short: string }> = {
   "C-015": { title: "정책·제도 원문자료", short: "정책 원문" },
   "C-016": { title: "재생에너지 발주·확대계획", short: "재생에너지 발주" },
   "C-017": { title: "재생에너지 투자 인센티브", short: "재생에너지 인센티브" },
-  "C-018": { title: "중장기 에너지 전망", short: "에너지 전망" },
+  // The delivery is the revised PDP8 plan (capacity, demand, RE share) with the
+  // 2024-25 power price regulations; "전망" alone promised scenario lines it
+  // does not hold (V141).
+  "C-018": { title: "중장기 전력 계획·전망(개정 PDP8)", short: "전력 계획·전망" },
   "C-019": { title: "탄소시장 법·제도와 예산", short: "탄소시장 제도" },
   "C-020": { title: "온실가스 감축사업 기초정보", short: "감축사업 기초정보" },
   "C-021": { title: "자발적 탄소시장 사업목록", short: "VCM 사업목록" },

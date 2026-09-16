@@ -95,13 +95,14 @@ function cardA002() {
   return {
     elementId: "A-002",
     kind: "signed-bars",
-    lead: "여섯 거버넌스 영역의 추정치를 비교하고 1996년부터의 변화를 확인할 수 있습니다.",
+    lead: "여섯 거버넌스 영역의 표준값(Estimate)을 비교하고 1996년부터의 변화를 확인할 수 있습니다.",
     question: "베트남의 거버넌스 여섯 영역은 각각 어느 수준인가?",
     headline: {
       value: `${signed(Math.min(...bars.map((bar) => bar.value)))} ~ ${signed(Math.max(...bars.map((bar) => bar.value)))}`,
-      label: `${latest}년 여섯 영역 추정치 범위 · −2.5 약함 ~ +2.5 강함`,
+      label: `${latest}년 여섯 영역 표준값(Estimate) 범위 · 점 · 약 −2.5~+2.5, 값이 클수록 양호`,
     },
-    unit: "추정치(−2.5 약함 ~ +2.5 강함)",
+    // The detail's own wording: 표준값(Estimate), 점, 약 -2.5~2.5 (V141).
+    unit: "점(표준값 Estimate, 약 −2.5~+2.5)",
     period: `${latest}년 값 · ${years[0]}–${years[years.length - 1]}년 제공`,
     provider: "World Bank · 세계 거버넌스 지표(WGI)",
     selection: { measure: null, sex: null, year: latest, period: null, dimensions: { wgiMeasure: "est" } },
@@ -144,7 +145,9 @@ function cardA010() {
     ["co2", "CO₂"],
     ["ch4", "CH₄"],
     ["n2o", "N₂O"],
-    ["fgas", "F-gas"],
+    // Named as the detail names the series (불소계 온실가스), so the card's
+    // part is found on the screen by the same words (V141).
+    ["fgas", "불소계 온실가스"],
   ];
   const rows = observations("A-010").filter((row) => /_co2eq$/u.test(row.indicatorId) && Number.isFinite(row.value));
   const years = [...new Set(rows.map((row) => row.year))].sort((a, b) => a - b);
@@ -420,8 +423,9 @@ function cardD023() {
     const value = String(raw || "").trim();
     if (/^GEF/u.test(value)) return "GEF";
     if (/^GCF/u.test(value)) return "GCF";
-    if (/CIF|Clean Technology/u.test(value)) return "CIF(CTF)";
-    if (/Adaptation Fund/u.test(value)) return "적응기금";
+    // The fund names as the detail's portfolio states them (V141).
+    if (/CIF|Clean Technology/u.test(value)) return "CIF(Clean Technology Fund)";
+    if (/Adaptation Fund/u.test(value)) return "Adaptation Fund";
     return value || "미표기";
   };
   const counts = new Map();

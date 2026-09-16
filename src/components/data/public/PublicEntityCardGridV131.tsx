@@ -432,6 +432,27 @@ function FactV131({ fact }: { fact: PublicCardFactV131 }) {
   );
 }
 
+/**
+ * The stated numeric value of each entity with its unit, for a comparison
+ * across a register whose rows each state one figure (B-025's basin areas,
+ * B-023's flow ratios). Only rows sharing one unit are comparable (V141).
+ */
+export function publicEntityStatedValuesV141(
+  entities: VietnamEntityV124[],
+  template: PublicEntityCardTemplateV131,
+  detailTemplate?: string,
+  elementTitle?: string
+): Array<{ recordId: string; title: string; value: number; unit: string }> {
+  return entities.flatMap((entity) => {
+    const attributes = approvedCardAttributesV131(entity, template, detailTemplate);
+    const raw = attributes.statedValue ?? attributes.nationalMeasureValue;
+    const value = typeof raw === "number" ? raw : Number(String(raw ?? "").replace(/,/gu, ""));
+    if (raw === null || raw === undefined || raw === "" || !Number.isFinite(value)) return [];
+    const unit = String(attributes.statedUnit ?? attributes.nationalMeasureUnit ?? "").trim();
+    return [{ recordId: entity.recordId, title: resolvePublicEntityTitleV131(entity, { template: detailTemplate, elementTitle }).title, value, unit }];
+  });
+}
+
 function approvedCardAttributesV131(
   entity: VietnamEntityV124,
   template: PublicEntityCardTemplateV131,

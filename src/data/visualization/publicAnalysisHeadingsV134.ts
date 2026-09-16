@@ -26,6 +26,26 @@ const SPECIALIZED_HEADINGS_V134: Readonly<
     secondaryChartTitle: "선택연도 시나리오 비교",
     publicQuestion: "기후 시나리오에 따라 장기적인 건조·습윤 상태가 어떻게 달라지는지 확인할 수 있습니다.",
   },
+  // V141: the shared C template's attribute rows read as what a reader asks
+  // (participation, initiatives, the plan), not as a project portfolio.
+  "C-007": {
+    publicAnalysisTitle: "파리협정 6.8조 비시장접근법(NMA) 참여 현황",
+    primaryChartTitle: "베트남 참여 지위·등록 현황",
+    secondaryChartTitle: "확인된 접근법·담당기관·협력 분야",
+    publicQuestion: "베트남이 UNFCCC 비시장접근법(NMA) 플랫폼에 어떤 지위로 참여하고 어떤 접근법이 등록됐는지 확인할 수 있습니다.",
+  },
+  "C-008": {
+    publicAnalysisTitle: "국제 기후협력 이니셔티브의 베트남 참여",
+    primaryChartTitle: "이니셔티브별 베트남 참여 비교",
+    secondaryChartTitle: "NAZCA 등재 행위자의 유형·업종",
+    publicQuestion: "베트남이 어떤 국제 기후협력 이니셔티브에 어떤 형태로 참여하고, 어떤 기업·기관·도시가 기후행동 포털에 등재됐는지 확인할 수 있습니다.",
+  },
+  "C-018": {
+    publicAnalysisTitle: "개정 PDP8의 전력 계획·전망과 전력가격 규정",
+    primaryChartTitle: "전원별 설비용량 계획(2030·2050 하한~상한)",
+    secondaryChartTitle: "수요 전망·목표와 전력가격 규정",
+    publicQuestion: "개정 전력개발계획(PDP8)의 2030·2050년 전원 구성과 수요 전망, 재생에너지 비중 목표, 현행 전력가격 규정을 확인할 수 있습니다.",
+  },
   "D-005": {
     publicAnalysisTitle: "기후예산의 적응·감축 배분 구조",
     primaryChartTitle: "대표 예산 배분 구조",

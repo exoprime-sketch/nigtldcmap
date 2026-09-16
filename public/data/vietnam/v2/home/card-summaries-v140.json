@@ -1,7 +1,7 @@
 {
  "schemaVersion": "v140-card-summaries-1",
  "dataSnapshot": "2026-08-27T00:00:00Z",
- "generatedAt": "2026-09-16T04:56:42.038Z",
+ "generatedAt": "2026-09-16T07:40:38.636Z",
  "generatedFrom": {
   "bundleIndex": "packs/bundle-index-v124.json",
   "semantics": "semantic/element-visualization-contracts-v125.json",
@@ -125,7 +125,7 @@
    "kind": "signed-bars",
    "headline": {
     "value": "−1.10 ~ +0.01",
-    "label": "2024년 여섯 영역 추정치 범위 · −2.5 약함 ~ +2.5 강함"
+    "label": "2024년 여섯 영역 표준값(Estimate) 범위 · 점 · 약 −2.5~+2.5, 값이 클수록 양호"
    },
    "preview": {
     "home": true
@@ -2074,32 +2074,32 @@
    "kind": "bars",
    "headline": {
     "value": "28,100 MW",
-    "label": "발전 설비용량 최대 · Coal(계통연계) · 2025년"
+    "label": "발전 설비용량 최대 · 석탄(계통연계) · 2025년"
    },
    "preview": {
     "parts": [
      {
-      "label": "Coal(계통연계)",
+      "label": "석탄(계통연계)",
       "value": 28100
      },
      {
-      "label": "Renewable hydropower(계통연계)",
+      "label": "재생 수력(계통연계)",
       "value": 24640
      },
      {
-      "label": "Solar photovoltaic(계통연계)",
+      "label": "태양광(계통연계)",
       "value": 19247.85
      },
      {
-      "label": "Natural gas(계통연계)",
+      "label": "천연가스(계통연계)",
       "value": 7527
      },
      {
-      "label": "Onshore wind energy(계통연계)",
+      "label": "육상풍력(계통연계)",
       "value": 5129.3
      },
      {
-      "label": "Oil(계통연계)",
+      "label": "석유(계통연계)",
       "value": 1291
      }
     ],
@@ -9326,27 +9326,27 @@
    "title": "파리협정 제6.8조 비시장 접근법[참여 여부, 등록된 활동명, 대상 분야(감축/적응/재정/기술/역량), 참여 기관, 등록 일자, 원본 링크]",
    "kind": "facts",
    "headline": {
-    "value": "32건",
-    "label": "활동 · 2025–2026년"
+    "value": "1건",
+    "label": "베트남 참여 NMA(SUBARU) · 플랫폼 등록 6건 중 · 참여당사국(host Party) · 2026년"
    },
    "preview": {
     "facts": [
      {
-      "label": "대상 분야(1)",
-      "value": ""
+      "label": "참여 지위",
+      "value": "참여당사국(host Party)"
      },
      {
-      "label": "대상 분야(2)",
-      "value": ""
+      "label": "제출당사국",
+      "value": "일본 (경제산업성 METI)"
      },
      {
-      "label": "참여당사국 등재 NMA 건수",
-      "value": ""
+      "label": "대상 분야",
+      "value": "감축(mitigation) · 적응(adaptation)"
      }
     ],
-    "more": 26
+    "more": 0
    },
-   "period": "2025–2026년",
+   "period": "2025–2026년 확인",
    "selection": {
     "measure": null,
     "sex": null,
@@ -9355,12 +9355,12 @@
     "dimensions": {}
    },
    "basis": {
-    "unit": "활동",
-    "rule": "활동 1건 = 원천 1행",
+    "unit": "확인 사항",
+    "rule": "확인 사항 28건과 자료 출처 4건을 구분 · 대표값은 참여당사국으로 등재된 NMA 건수",
     "count": {
-     "rows": 32,
-     "distinct": 32,
-     "sourceRows": 32
+     "registered": 1,
+     "statements": 28,
+     "rows": 32
     }
    },
    "measure": null,
@@ -9384,29 +9384,35 @@
   {
    "elementId": "C-008",
    "title": "Cooperative Climate Initiative[이니셔티브 명, 참여 상태(Active/Completed), 참여 연도, 기후 분야(감축/적응), 주제(에너지/산림/수송/도시 등), 참여 국가·기관 목록]",
-   "kind": "facts",
+   "kind": "bars",
    "headline": {
-    "value": "235건",
-    "label": "이니셔티브 · 1994–2050년"
+    "value": "32개",
+    "label": "이니셔티브 · NAZCA 등재 행위자 98곳 · 2026년 확인"
    },
    "preview": {
-    "facts": [
+    "parts": [
      {
-      "label": "JETP — 감축·적응 구분",
-      "value": ""
+      "label": "기업(Company)",
+      "value": 73
      },
      {
-      "label": "Cool Coalition — NAZCA 표기 기후분야",
-      "value": ""
+      "label": "기관(Organization)",
+      "value": 12
      },
      {
-      "label": "CCAC — 감축·적응 구분",
-      "value": ""
+      "label": "도시(City)",
+      "value": 12
+     },
+     {
+      "label": "국가(Country)",
+      "value": 1
      }
     ],
-    "more": 232
+    "unit": "행위자 수",
+    "scope": "NAZCA 등재 행위자 유형별",
+    "omitted": 0
    },
-   "period": "1994–2050년",
+   "period": "2026년 확인",
    "selection": {
     "measure": null,
     "sex": null,
@@ -9416,11 +9422,11 @@
    },
    "basis": {
     "unit": "이니셔티브",
-    "rule": "이니셔티브 1건 = 원천 1행",
+    "rule": "이니셔티브 1개 = 속성 행의 주제(' — ' 앞) 또는 협력 이니셔티브 행 · 행위자 1곳 = NAZCA 등재 행 · 원천 235행 중 자료 출처 14건은 세지 않음",
     "count": {
-     "rows": 235,
-     "distinct": 235,
-     "sourceRows": 235
+     "identities": 32,
+     "actors": 98,
+     "rows": 235
     }
    },
    "measure": null,
@@ -9861,7 +9867,7 @@
    "title": "상기 문서들의 원본 링크",
    "kind": "facts",
    "headline": {
-    "value": "21건",
+    "value": "20건",
     "label": "원문 링크 · 2016–2026년"
    },
    "preview": {
@@ -9879,7 +9885,7 @@
       "value": ""
      }
     ],
-    "more": 16
+    "more": 15
    },
    "period": "2016–2026년",
    "selection": {
@@ -9891,10 +9897,10 @@
    },
    "basis": {
     "unit": "원문 링크",
-    "rule": "원문 링크 1건 = 원천 1행",
+    "rule": "원문 링크 1건 = 원천 1행 · 원천의 집계·설명 행 1건 제외",
     "count": {
-     "rows": 21,
-     "distinct": 21,
+     "rows": 20,
+     "distinct": 20,
      "sourceRows": 21
     }
    },
@@ -10150,43 +10156,56 @@
   {
    "elementId": "C-018",
    "title": "중장기 에너지 전망[전망 기관(IEA/현지 정부), 전망 시나리오명, 에너지원별 수요 전망, 기술별 발전 설비 확충 계획, RE 비중 목표, 전력 수요 성장률]",
-   "kind": "facts",
+   "kind": "bars",
    "headline": {
-    "value": "121건",
-    "label": "항목 · 2024–2050년"
+    "value": "293,088~295,646 MW",
+    "label": "2050년 전원별 설비용량 계획 최대 · 태양광 · 개정 PDP8 하한~상한"
    },
    "preview": {
-    "facts": [
+    "parts": [
      {
-      "label": "소규모 재생에너지 표준 PPA",
-      "value": ""
+      "label": "태양광",
+      "value": 295646
      },
      {
-      "label": "재생에너지 발전가격 산정 통칙",
-      "value": ""
+      "label": "해상 풍력",
+      "value": 139097
      },
      {
-      "label": "평균 소매전력가격 밴드",
-      "value": ""
+      "label": "저장장치(BESS)",
+      "value": 96120
+     },
+     {
+      "label": "육상·근해 풍력",
+      "value": 91400
+     },
+     {
+      "label": "수력",
+      "value": 40624
+     },
+     {
+      "label": "유연성 전원",
+      "value": 38641
      }
     ],
-    "more": 49
+    "unit": "MW",
+    "scope": "2050년 계획 상한 · 상위 6개 전원",
+    "omitted": 13
    },
-   "period": "2024–2050년",
+   "period": "계획 2030·2050년 · 가격 규정 2024–2025년",
    "selection": {
     "measure": null,
     "sex": null,
-    "year": null,
+    "year": 2050,
     "period": null,
     "dimensions": {}
    },
    "basis": {
-    "unit": "항목",
-    "rule": "항목 1건 = 원천 1행",
+    "unit": "계획값",
+    "rule": "개정 PDP8(Quyết định 768/QĐ-TTg) 2050년 전원별 설비용량 계획 19개 전원 · 하한~상한 범위 · 총 설비·배출 전망 행 제외 · 합산하지 않음",
     "count": {
-     "rows": 121,
-     "distinct": 121,
-     "sourceRows": 121
+     "planItems": 19,
+     "rows": 121
     }
    },
    "measure": null,
@@ -10207,6 +10226,9 @@
      "C-018_projection_agency",
      "C-018_projection_scenario",
      "C-018_re_share_target"
+    ],
+    "headlineIndicatorIds": [
+     "C-018_generation_capacity_plan"
     ]
    }
   },
@@ -13216,16 +13238,12 @@
    "preview": {
     "parts": [
      {
-      "label": "존치",
+      "label": "진출·활동 확인",
       "value": 22
      },
      {
-      "label": "철수 — 2025-08 현지법인 매각 완료",
-      "value": 1
-     },
-     {
-      "label": "철수 — 2025-04 지분 매각",
-      "value": 1
+      "label": "철수",
+      "value": 2
      }
     ],
     "unit": "기업 수",

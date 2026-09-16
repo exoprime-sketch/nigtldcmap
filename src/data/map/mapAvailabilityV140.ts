@@ -76,4 +76,4 @@ function describePendingTargetV140(
 
 /** The list's short status for a target that has no layer yet. */
 export const MAP_PENDING_LABEL_V140 = "준비 중";
-export const MAP_PENDING_SUMMARY_V140 = "위치자료 없음 · 지도에 표시하지 않음";
+export const MAP_PENDING_SUMMARY_V140 = "위치자료 미확보 · 지도 표시 제외";

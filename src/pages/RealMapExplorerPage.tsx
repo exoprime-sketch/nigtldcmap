@@ -27,7 +27,8 @@ import {
 import type {
   VietnamMapGeoJsonV124,
 } from "../data/vietnam/vietnamDataLoaderV124";
-import type { VietnamMapFactFieldV137 } from "../data/vietnam/vietnamTypesV121";
+import type { VietnamMapFactFieldV137, VietnamMapFilterV121 } from "../data/vietnam/vietnamTypesV121";
+import { normalisedPowerPlantAttributesV141, POWER_PLANT_SOURCES_V141 } from "../data/map/powerPlantFactsV141";
 import type {
   VietnamSpatialLayerAssetV124,
 } from "../data/vietnam/vietnamTypesV124";
@@ -259,7 +260,20 @@ function prepareLayerRecordsV138(
 
   const kept: CountryEntityV122[] = [];
   let excludedCount = 0;
-  records.forEach((record) => {
+  records.forEach((source) => {
+    // A-023: both registries read through one normaliser, so the map's
+    // filters, symbols, tooltips and counts see 수력 · 1 MW for a WRI row.
+    const record: CountryEntityV122 =
+      layer.elementId === "A-023"
+        ? {
+            ...source,
+            normalizedAttributes: normalisedPowerPlantAttributesV141(
+              source.normalizedAttributes || {},
+              source.indicatorId,
+              source.provenance?.referenceYear
+            ) as CountryEntityV122["normalizedAttributes"],
+          }
+        : source;
     const attributes = record.normalizedAttributes || {};
     if (
       bbox &&
@@ -1291,7 +1305,7 @@ function lineFeatureCollection(
     }
     return layer.filters.every((filter) => {
       if (filter.field === "voltageKv") return true;
-      const selected = filters[`${layer.elementId}:${filter.field}`] || "all";
+      const selected = selectedFilterValueV141(layer, filter, filters);
       return (
         selected === "all" ||
         String(feature.properties?.[filter.field] ?? "") === selected
@@ -1454,6 +1468,34 @@ function featureCollection(
   };
 }
 
+/** The filter's current value: the reader's choice, else the contract's default, else all. */
+function selectedFilterValueV141(
+  layer: CountryMapLayerV122,
+  filter: VietnamMapFilterV121,
+  filters: Record<string, string>
+): string {
+  return filters[`${layer.elementId}:${filter.field}`] || filter.defaultValue || "all";
+}
+
+/**
+ * The period a layer's values refer to, as shown beside its title and in
+ * 자료정보. A-023 carries two registries with different reference years, so
+ * one "2026" would date the 2021 WRI rows wrongly; the label follows the
+ * source filter.
+ */
+function layerPeriodLabelV141(
+  layer: CountryMapLayerV122,
+  filters: Record<string, string>,
+  fallback: string,
+  short = false
+): string {
+  if (layer.elementId !== "A-023") return fallback;
+  const sourceFilter = layer.filters.find((filter) => filter.field === "sourceKey");
+  const choice = sourceFilter ? selectedFilterValueV141(layer, sourceFilter, filters) : "all";
+  if (choice === "wri" || choice === "osm") return short ? POWER_PLANT_SOURCES_V141[choice].shortLabel : POWER_PLANT_SOURCES_V141[choice].label;
+  return `${POWER_PLANT_SOURCES_V141.wri.shortLabel} · ${POWER_PLANT_SOURCES_V141.osm.shortLabel} 추출`;
+}
+
 function filterRecords(
   records: CountryEntityV122[],
   layer: CountryMapLayerV122,
@@ -1461,7 +1503,7 @@ function filterRecords(
 ): CountryEntityV122[] {
   return prepareLayerRecordsV138(records, layer).records.filter((record) =>
     layer.filters.every((filter) => {
-      const selected = filters[`${layer.elementId}:${filter.field}`] || "all";
+      const selected = selectedFilterValueV141(layer, filter, filters);
       if (selected === "all") return true;
       const value = record.normalizedAttributes?.[filter.field];
       return String(value ?? "") === selected;
@@ -1476,8 +1518,11 @@ function selectedFilterDimensionsV125(
   return Object.fromEntries(
     layer.filters.flatMap((filter) => {
       if (filter.field === "voltageKv") return [];
-      const selected = filters[`${layer.elementId}:${filter.field}`] || "all";
-      return selected === "all" ? [] : [[filter.field, selected]];
+      const selected = selectedFilterValueV141(layer, filter, filters);
+      // A filter with a default keeps an explicit "all" (A-023's both-source
+      // view), otherwise restoring the state would fall back to the default.
+      if (selected === "all") return filter.defaultValue ? [[filter.field, "all"]] : [];
+      return [[filter.field, selected]];
     })
   );
 }
@@ -1869,7 +1914,11 @@ export default function RealMapExplorerPage({
   // stays open by default - a map coloured by fuel or by value is unreadable
   // without it - but a reader can now put it away, the way the two side panels
   // already allow.
-  const [legendOpen, setLegendOpen] = useState(true);
+  // The legend opens by itself only where it does not cover the map: below
+  // 1200px it starts folded and the reader opens it (V141).
+  const [legendOpen, setLegendOpen] = useState(
+    () => typeof window === "undefined" || window.innerWidth >= 1200
+  );
   const resizeMapAfterPanelChangeV129 = useCallback(() => {
     mapRef.current?.resize();
   }, []);
@@ -2366,7 +2415,7 @@ export default function RealMapExplorerPage({
         layers.flatMap((layer) =>
           layer.filters.flatMap((filter) => {
             const selected = sharedSelectorState.dimensions[filter.field];
-            return selected && filter.values.includes(selected)
+            return selected && (filter.values.includes(selected) || (selected === "all" && filter.defaultValue))
               ? [[`${layer.elementId}:${filter.field}`, selected]]
               : [];
           })
@@ -4341,7 +4390,7 @@ export default function RealMapExplorerPage({
     ? focusedLayer.elementId === "A-024"
       ? "송전망 구간 606개"
       : focusedLayer.elementId === "A-023"
-      ? "발전소 위치 1,889곳"
+      ? `표시 ${filterRecords(recordsByElement["A-023"] || [], focusedLayer, filters).filter((row) => row.mapEligible).length.toLocaleString()}곳 · ${layerPeriodLabelV141(focusedLayer, filters, "")} · 좌표 보유 1,889곳 중`
       : focusedSeriesCoverage
       ? focusedLayer.spatialScopeType === "region"
         // The value's own unit is the 34 reorganised provinces (or six
@@ -4662,17 +4711,31 @@ export default function RealMapExplorerPage({
       // prove one plant.
       const wriRows = allRecords.filter((row) => row.indicatorId === "A-023_power_plant_registry");
       const osmRows = allRecords.filter((row) => row.indicatorId !== "A-023_power_plant_registry");
+      const sourceFilter = focusedLayer.filters.find((filter) => filter.field === "sourceKey");
+      const sourceChoice = sourceFilter ? selectedFilterValueV141(focusedLayer, sourceFilter, filters) : "all";
+      const shownSource =
+        sourceChoice === "wri" || sourceChoice === "osm"
+          ? `${POWER_PLANT_SOURCES_V141[sourceChoice].label} 기준`
+          : "두 출처 함께 · 같은 시설이 두 번 표시될 수 있음";
       summaryRows.push(
-        { label: "원천 수록 행(WRI+OSM)", value: `${allRecords.length.toLocaleString()}행` },
-        { label: "위치자료 보유(지도 표시)", value: `${allRecords.filter((row) => row.mapEligible).length.toLocaleString()}곳` },
-        { label: "WRI GPPD 수록", value: `${wriRows.length.toLocaleString()}행` },
-        { label: "OSM 추출", value: `${osmRows.length.toLocaleString()}행` },
-        { label: "현재 필터 표시", value: `${records.length.toLocaleString()}곳` }
+        { label: "표시 출처", value: shownSource },
+        { label: "현재 표시(필터 적용)", value: `${records.length.toLocaleString()}곳` },
+        { label: "WRI GPPD 2021 수록", value: `${wriRows.length.toLocaleString()}행 (좌표 ${wriRows.filter((row) => row.mapEligible).length.toLocaleString()})` },
+        { label: "OSM 2026 추출", value: `${osmRows.length.toLocaleString()}행 (좌표 ${osmRows.filter((row) => row.mapEligible).length.toLocaleString()})` }
       );
-      countByPublicFieldV126(records, "fuelType").forEach(([label, count]) =>
+      // Fuel and capacity read through the shared A-023 normaliser (records
+      // are the prepared rows): a WRI plant is 수력 · 1 MW here as on the detail.
+      const unstatedFuel = records.filter((row) => !row.normalizedAttributes?.fuelType).length;
+      countByPublicFieldV126(records.filter((row) => row.normalizedAttributes?.fuelType), "fuelType").forEach(([label, count]) =>
         summaryRows.push({ label: `발전원 ${label}`, value: `${count.toLocaleString()}곳` })
       );
-      countByPublicFieldV126(records, "capacityBand").forEach(([label, count]) =>
+      if (unstatedFuel) summaryRows.push({ label: "발전원 미기재", value: `${unstatedFuel.toLocaleString()}곳` });
+      const withCapacity = records.filter((row) => typeof row.normalizedAttributes?.capacityMw === "number");
+      summaryRows.push({
+        label: "설비용량 기재",
+        value: `${withCapacity.length.toLocaleString()}곳 · 미기재 ${(records.length - withCapacity.length).toLocaleString()}곳`,
+      });
+      countByPublicFieldV126(withCapacity, "capacityBand").forEach(([label, count]) =>
         summaryRows.push({
           label: `용량 ${label}`,
           value: `${count.toLocaleString()}곳`,
@@ -4680,7 +4743,7 @@ export default function RealMapExplorerPage({
       );
       summaryRows.push({
         label: "고유 시설 통합",
-        value: "원천 ID·명칭·좌표가 일치하는 경우만 동일 시설로 검토 · 자동 합산 없음",
+        value: "두 원천은 공통 식별자가 없어 합산하지 않음 · 명칭 유사만으로 합치지 않음",
       });
       return { ...empty, summaryRows, unit: "곳" };
     }
@@ -4713,7 +4776,7 @@ export default function RealMapExplorerPage({
     const eligible = prepared.records.filter((row) => row.mapEligible);
     if (eligible.length < prepared.records.length) {
       summaryRows.push({
-        label: "위치자료 없음(지도 미표시)",
+        label: "위치자료 미확보(지도 표시 제외)",
         value: `${(prepared.records.length - eligible.length).toLocaleString()}${noun}`,
       });
     }
@@ -5000,7 +5063,7 @@ export default function RealMapExplorerPage({
         const numericValue = typeof rawValue === "number" ? rawValue : Number(rawValue);
         const value =
           rawValue === null || rawValue === undefined || rawValue === ""
-            ? "자료 없음"
+            ? "자료 미제공"
             : Number.isFinite(numericValue)
               ? `${formatPublicNumberV126(numericValue, unit)} ${unit}`.trim()
               : `${publicTextV126(formatValueV121(rawValue)) || ""} ${unit}`.trim();
@@ -6070,7 +6133,9 @@ export default function RealMapExplorerPage({
                                   text={
                                     available
                                       ? `${publicMapDataItemSummaryV136(elementId)} · ${
-                                          layer?.latestYear || layer?.sourceYear || target.period
+                                          layer
+                                            ? layerPeriodLabelV141(layer, filters, String(layer.latestYear || layer.sourceYear || target.period), true)
+                                            : target.period
                                         }`
                                       : indexPending
                                         ? "지도 목록을 불러오는 중"
@@ -6618,10 +6683,7 @@ export default function RealMapExplorerPage({
                   <select
                     className="cdp-select"
                     data-testid={`map-layer-filter-${filter.field}`}
-                    value={
-                      filters[`${focusedLayer.elementId}:${filter.field}`] ||
-                      "all"
-                    }
+                    value={selectedFilterValueV141(focusedLayer, filter, filters)}
                     onChange={(event) =>
                       changeLayerFilterV125(
                         focusedLayer,
@@ -6630,7 +6692,7 @@ export default function RealMapExplorerPage({
                       )
                     }
                   >
-                    <option value="all">전체</option>
+                    <option value="all">{filter.allLabel || "전체"}</option>
                     {filter.values.map((value) => (
                       <option key={value} value={value}>
                         {filter.valueLabels?.[value] ||
@@ -7536,6 +7598,41 @@ export default function RealMapExplorerPage({
                   {legendOpen ? "범례 접기" : "범례"}
                 </button>
               </div>
+              <dl className="cdp-map-legend__facts">
+                <div>
+                  <dt>항목</dt>
+                  <dd>
+                    <PublicTermTextV134
+                      text={
+                        focusedVariablePresentationV129?.label ||
+                        focusedSemantic?.measureLabel ||
+                        focusedLayer.legend.title
+                      }
+                    />
+                  </dd>
+                </div>
+                <div>
+                  <dt>단위</dt>
+                  <dd data-testid="map-legend-unit">
+                    <PublicTermTextV134
+                      text={
+                        focusedVariablePresentationV129?.unit ||
+                        focusedSemantic?.unit ||
+                        focusedVariable?.unit ||
+                        focusedLayer.unit
+                      }
+                    />
+                  </dd>
+                </div>
+                <div>
+                  <dt>자료연도</dt>
+                  <dd>{layerPeriodLabelV141(focusedLayer, filters, String(focusedSelector?.period || focusedLayer.sourceYear || "미기재"))}</dd>
+                </div>
+                <div>
+                  <dt>지도 표시 범위</dt>
+                  <dd>{focusedCoverage}</dd>
+                </div>
+              </dl>
               <div
                 className="cdp-map-active-legend"
                 data-testid="map-compact-legend-v133"
@@ -7613,41 +7710,6 @@ export default function RealMapExplorerPage({
                   </p>
                 )}
               </div>
-              <dl className="cdp-map-legend__facts">
-                <div>
-                  <dt>항목</dt>
-                  <dd>
-                    <PublicTermTextV134
-                      text={
-                        focusedVariablePresentationV129?.label ||
-                        focusedSemantic?.measureLabel ||
-                        focusedLayer.legend.title
-                      }
-                    />
-                  </dd>
-                </div>
-                <div>
-                  <dt>단위</dt>
-                  <dd data-testid="map-legend-unit">
-                    <PublicTermTextV134
-                      text={
-                        focusedVariablePresentationV129?.unit ||
-                        focusedSemantic?.unit ||
-                        focusedVariable?.unit ||
-                        focusedLayer.unit
-                      }
-                    />
-                  </dd>
-                </div>
-                <div>
-                  <dt>자료연도</dt>
-                  <dd>{focusedSelector?.period || focusedLayer.sourceYear || "미표기"}</dd>
-                </div>
-                <div>
-                  <dt>지도 표시 범위</dt>
-                  <dd>{focusedCoverage}</dd>
-                </div>
-              </dl>
               {focusedLayer.elementId === "A-024" ? (
                 <div className="cdp-map-legend__network" aria-label="전압별 선 표현">
                   {focusedAnalysisV126.summaryRows
@@ -8020,6 +8082,29 @@ export default function RealMapExplorerPage({
                           selectedSpatial.properties.status,
                           "미표기"
                         )}
+                      />
+                      {/* When the project was approved and how long it runs:
+                          the scope polygon carried no time at all (V141). */}
+                      <Evidence
+                        label="승인일·사업기간"
+                        value={[
+                          publicMapFactV132(
+                            (recordsByElement["D-018"] || []).find(
+                              (row) => row.recordId === selectedSpatial.properties.recordId
+                            )?.normalizedAttributes?.["승인일"]
+                          )
+                            ? `승인 ${publicMapFactV132(
+                                (recordsByElement["D-018"] || []).find(
+                                  (row) => row.recordId === selectedSpatial.properties.recordId
+                                )?.normalizedAttributes?.["승인일"]
+                              )}`
+                            : "",
+                          publicMapFactV132(selectedSpatial.properties.projectPeriod)
+                            ? `기간 ${publicMapFactV132(selectedSpatial.properties.projectPeriod)}`
+                            : "",
+                        ]
+                          .filter(Boolean)
+                          .join(" · ")}
                       />
                       {/* The fund states the amount with its currency
                           ("7,000,000 USD"); a text amount is shown as stated,

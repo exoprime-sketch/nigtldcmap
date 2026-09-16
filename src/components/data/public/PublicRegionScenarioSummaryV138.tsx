@@ -745,9 +745,9 @@ export default function PublicRegionScenarioSummaryV138({
                       <PublicTermTextV134 text={scenarioLabel(row.scenario)} />
                     </th>
                     <td>{point.year === UNSTATED_YEAR ? periodText : `${point.year}년`}</td>
-                    <td>{point.median === null ? "자료 없음" : formatValue(point.median)}</td>
-                    {distribution && <td>{point.low === null ? "자료 없음" : formatValue(point.low)}</td>}
-                    {distribution && <td>{point.high === null ? "자료 없음" : formatValue(point.high)}</td>}
+                    <td>{point.median === null ? "자료 미제공" : formatValue(point.median)}</td>
+                    {distribution && <td>{point.low === null ? "자료 미제공" : formatValue(point.low)}</td>}
+                    {distribution && <td>{point.high === null ? "자료 미제공" : formatValue(point.high)}</td>}
                     <td>{point.regionCount.toLocaleString("ko-KR")}</td>
                     {rowIsSubRegion && <td>{point.count.toLocaleString("ko-KR")}</td>}
                   </tr>

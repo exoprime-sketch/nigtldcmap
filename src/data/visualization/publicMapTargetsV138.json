@@ -30,10 +30,24 @@
         "kind": "existing",
         "patch": {
           "analysisItemLabel": "발전소 위치·발전원",
-          "countNoun": "곳"
+          "countNoun": "곳",
+          "filtersAppend": [
+            {
+              "field": "sourceKey",
+              "label": "출처",
+              "values": ["wri", "osm"],
+              "valueLabels": { "wri": "WRI GPPD (2021)", "osm": "OSM 추출 (2026)" },
+              "defaultValue": "wri",
+              "allLabel": "두 출처 함께 · 같은 시설 중복 미통합"
+            }
+          ],
+          "factFieldsAppend": [
+            { "key": "sourceLabel", "label": "출처", "sources": ["sourceLabel"] }
+          ],
+          "periodLabel": "WRI GPPD 2021 · OSM 2026 추출"
         }
       },
-      "selectableVariables": "발전원 필터(1개), 용량구간 필터",
+      "selectableVariables": "출처 필터(WRI 2021 기본 · OSM 2026 · 두 출처 함께), 발전원 필터, 용량구간 필터(기재 용량에서 파생)",
       "unit": "MW(설비용량)",
       "period": "2026(OSM 추출)·WRI v1.3.0",
       "representativeItem": "발전소 위치 1,889곳",

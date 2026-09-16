@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
-import { publicTextV126 } from "../../../data/visualization/publicFieldPolicyV126";
+import { powerPlantCapacityMwV141, powerPlantFuelV141 } from "../../../data/map/powerPlantFactsV141";
 import { formatPublicNumberV126 } from "../../../data/visualization/publicNumberFormatV126";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import "./public-portfolio-summary-v132.css";
@@ -23,42 +23,17 @@ interface Props {
 
 const WRI_INDICATOR = "A-023_power_plant_registry";
 
-const text = (value: unknown): string => publicTextV126(value) || "";
-
 /**
- * WRI rows name their fuel in `primaryFuel` (English), OSM rows in
- * `fuelType` (Korean). Reading only `fuelType` put every WRI plant under
- * "미표기" (V140).
+ * Fuel and capacity are read by the shared A-023 reading
+ * (`powerPlantFactsV141`), the same one the map's symbols, filters and
+ * counts use, so a WRI plant is 수력 · 1 MW on every screen.
  */
-const FUEL_LABELS: Record<string, string> = {
-  hydro: "수력",
-  solar: "태양광",
-  wind: "풍력",
-  coal: "석탄",
-  gas: "가스",
-  oil: "석유",
-  biomass: "바이오매스",
-  waste: "폐기물",
-  nuclear: "원자력",
-  geothermal: "지열",
-};
-
 function fuelOf(attributes: Record<string, unknown>): string {
-  const typed = text(attributes.fuelType);
-  if (typed && typed !== "(미표기)") return typed;
-  const primary = text(attributes.primaryFuel).toLowerCase();
-  if (primary && FUEL_LABELS[primary]) return FUEL_LABELS[primary];
-  if (primary) return text(attributes.primaryFuel);
-  return "미표기";
+  return powerPlantFuelV141(attributes) || "미기재";
 }
 
 function capacityOf(attributes: Record<string, unknown>): number | null {
-  for (const key of ["capacityMw", "mw"]) {
-    const raw = attributes[key];
-    const value = typeof raw === "number" ? raw : Number(text(raw));
-    if (Number.isFinite(value) && text(raw) !== "") return value;
-  }
-  return null;
+  return powerPlantCapacityMwV141(attributes);
 }
 
 export default function PowerPlantRegistrySummaryV138({ entities }: Props) {

@@ -148,8 +148,6 @@ const ENTITY_RULES = {
   "C-004": { unit: "항목", kind: "facts" },
   "C-005": { unit: "항목", kind: "facts" },
   "C-006": { unit: "항목", kind: "facts" },
-  "C-007": { unit: "활동", kind: "facts" },
-  "C-008": { unit: "이니셔티브", kind: "facts" },
   "C-009": { unit: "법령·문서", kind: "documents" },
   "C-010": { unit: "법령·문서", kind: "documents" },
   "C-011": { unit: "항목", kind: "facts" },
@@ -158,7 +156,6 @@ const ENTITY_RULES = {
   "C-014": { unit: "항목", kind: "facts" },
   "C-015": { unit: "원문 링크", kind: "facts" },
   "C-017": { unit: "항목", kind: "facts" },
-  "C-018": { unit: "항목", kind: "facts" },
   "C-019": { unit: "항목", kind: "facts", note: "명부의 시설 수는 34개 단위 · 성·시로 합산하지 않음" },
   "C-022": { unit: "항목", kind: "facts", note: "같은 명부의 업종별 수 · 합산하지 않음" },
   "C-024": { unit: "항목", kind: "facts" },
@@ -186,7 +183,9 @@ const ENTITY_RULES = {
   "E-014": { unit: "협정", kind: "facts" },
   "E-015": { unit: "협력체계", kind: "facts" },
   "E-016": { unit: "부문", kind: "facts" },
-  "E-018": { unit: "기업", groupBy: "진출_상태", kind: "bars" },
+  // The detail's own status groups (PublicPortfolioSummaryV132 statusGroups):
+  // a "철수 — 2025-08 …" raw value is a status with a note, not a category.
+  "E-018": { unit: "기업", kind: "bars", groupLabel: "진출 상태", groupBy: (attributes) => (/미진출/u.test(text(attributes["진출형태"])) ? "미진출(확인)" : /철수/u.test(text(attributes["진출_상태"])) ? "철수" : "진출·활동 확인") },
   // The detail lists installed offices and, apart, the organisations the
   // source found to have none; the same verdict fields decide here.
   "E-019": { unit: "현지 사무소", kind: "facts", notInstalled: { keys: ["좌표_정밀도_출처", "recordStatus", "field_6b3e1e90"], pattern: /사무소 미설치|미운영|업무 종료|대상 아님|미설치/u }, notInstalledLabel: "사무소 없는 기관" },
@@ -434,8 +433,35 @@ function observationCard(elementId, item, pack, contract, override) {
   return levelOrLine(elementId, item, contract, measure, series, override, rows);
 }
 
+// The detail's own Korean names for IRENA's English technology categories
+// (PublicCompositionTrendAnalysisV132.localizedEnergyCategoryV132); the card
+// names a part the way the screen does (V141).
+const ENERGY_CATEGORY_KO = [
+  [/^Total non-renewable energy/iu, "비재생에너지 합계"],
+  [/^Total renewable energy/iu, "재생에너지 합계"],
+  [/^Other non-renewable energy/iu, "기타 비재생에너지"],
+  [/^Renewable hydropower/iu, "재생 수력"],
+  [/^Renewable waste/iu, "폐기물에너지"],
+  [/^Solar photovoltaic/iu, "태양광"],
+  [/^Solar energy/iu, "태양에너지"],
+  [/^Offshore wind energy/iu, "해상풍력"],
+  [/^Onshore wind energy/iu, "육상풍력"],
+  [/^Wind energy/iu, "풍력"],
+  [/^Natural gas/iu, "천연가스"],
+  [/^Gas biofuels/iu, "바이오가스"],
+  [/^Solid biofuels/iu, "고체 바이오연료"],
+  [/^Bioenergy/iu, "바이오에너지"],
+  [/^Fossil fuels/iu, "화석연료"],
+  [/^Coal/iu, "석탄"],
+  [/^Oil/iu, "석유"],
+];
+function localizedEnergyCategory(value) {
+  const hit = ENERGY_CATEGORY_KO.find(([pattern]) => pattern.test(value));
+  return hit ? value.replace(hit[0], hit[1]) : value;
+}
+
 function partLabel(series, override) {
-  const label = seriesLabel(series);
+  const label = localizedEnergyCategory(seriesLabel(series));
   const cleaned = override?.series?.match
     ? label.replace(override.series.match, "").replace(/\(\s*\)/gu, "").replace(/\s*·\s*$/u, "").replace(/^\s*·\s*/u, "").trim()
     : label;
@@ -524,13 +550,123 @@ function textFactsCard(elementId, item, measure, rows) {
   };
 }
 
+
+// ------------------------------------------------------------------ shared C template cards
+// The C deliveries store a wide sheet as one row per stated attribute; a row's
+// name carries its subject and attribute ("JETP — 공식 참여 여부"), the bound
+// of a range sits in the note ("[하한(min)] …"). The same reading as
+// src/data/visualization/cTemplateRowsV141.ts, so the card and the detail
+// count the same things.
+function cTemplateRow(entity) {
+  const attributes = entity.normalizedAttributes || {};
+  const name = text(attributes["속성1_레코드명"]) || text(entity.name);
+  const separator = name.indexOf(" — ");
+  const rawValue = attributes["속성3_값"];
+  const valueText = typeof rawValue === "number" ? String(rawValue) : text(rawValue);
+  const bare = valueText.replace(/^약\s*/u, "").replace(/,/gu, "");
+  const numeric = typeof rawValue === "number" ? rawValue : /^[-+]?\d+(?:\.\d+)?$/u.test(bare) ? Number(bare) : null;
+  const note = text(entity.note);
+  const timeText = text(attributes["속성4_시점"]);
+  return {
+    name,
+    subject: separator >= 0 ? name.slice(0, separator).trim() : name,
+    attribute: separator >= 0 ? name.slice(separator + 3).trim() : null,
+    valueText,
+    value: numeric,
+    year: Number((timeText.match(/(?:19|20|21)\d{2}/u) || [])[0]) || null,
+    timeText,
+    category: text(attributes["속성6_분류"]),
+    description: text(attributes["속성23_설명"]),
+    bound: /^\[하한\(min\)\]/u.test(note) ? "min" : /^\[상한\(max\)\]/u.test(note) ? "max" : null,
+    indicatorId: entity.indicatorId,
+  };
+}
+
+const C_SOURCE_NAME = /^(?:기관 목록|UNFCCC .*(?:플랫폼|Portal|포털)|NAZCA 국가 API|Grantham|.*정치선언문|baochinhphu|.*\(PDF\)|.*파트너 페이지|원 wide파일)/u;
+const C_URL_LIKE = /^(?:https?:\/\/|[a-z0-9.-]+\.(?:org|int|vn|gov|com)\b)/iu;
+const C_ACTOR = /기관\(|기업\(|도시\(|국가\(|지역\(|투자자\(|Organization|Company|City|Country|Region|Investor/iu;
+
+const C_TEMPLATE_CARDS = {
+  // Article 6.8 NMAs: the card states Viet Nam's place, not a count of statements.
+  "C-007": (entities, item) => {
+    const rows = entities.map(cTemplateRow);
+    const facts = rows.filter((row) => !row.attribute && !C_SOURCE_NAME.test(row.name) && !C_URL_LIKE.test(row.valueText));
+    const registered = facts.find((row) => /등재 NMA 건수/u.test(row.name));
+    const platform = facts.find((row) => /Recorded NMAs|플랫폼 등록/u.test(row.name));
+    const status = facts.find((row) => /참여 지위\(2\)/u.test(row.name)) || facts.find((row) => /참여 지위/u.test(row.name));
+    const submitter = facts.find((row) => /제출당사국.*\(1\)/u.test(row.name));
+    const fields = facts.filter((row) => /대상 분야/u.test(row.name)).map((row) => row.valueText);
+    const year = registered?.year || status?.year || null;
+    return {
+      kind: "facts",
+      headline: { value: `${formatNumber(Number(registered?.valueText) || 0)}건`, label: `베트남 참여 NMA(SUBARU) · 플랫폼 등록 ${platform?.valueText || "?"}건 중 · ${status?.valueText || "참여 지위 미확인"} · ${year || ""}년` },
+      preview: { facts: [
+        { label: "참여 지위", value: status?.valueText || "미확인" },
+        { label: "제출당사국", value: submitter?.valueText || "미확인" },
+        { label: "대상 분야", value: fields.join(" · ") || "미확인" },
+      ], more: 0 },
+      period: `${[...new Set(rows.map((row) => row.year).filter(Boolean))].sort().join("–").replace(/^(\d{4})–(?:\d{4}–)*(\d{4})$/u, "$1–$2")}년 확인`,
+      selection: { measure: null, sex: null, year: null, period: null, dimensions: {} },
+      basis: { unit: "확인 사항", rule: `확인 사항 ${facts.length}건과 자료 출처 ${rows.length - facts.length}건을 구분 · 대표값은 참여당사국으로 등재된 NMA 건수`, count: { registered: Number(registered?.valueText) || 0, statements: facts.length, rows: rows.length } },
+      measure: null,
+    };
+  },
+  // Cooperation initiatives: initiatives are subjects, NAZCA actors are counted by type.
+  "C-008": (entities, item) => {
+    const rows = entities.map(cTemplateRow);
+    const kindOf = (row) => row.attribute ? "attribute" : (C_SOURCE_NAME.test(row.name) || C_URL_LIKE.test(row.valueText)) ? "source" : C_ACTOR.test(row.category) ? "actor" : (row.description === "협력 이니셔티브" || (row.valueText && row.valueText === row.name && !row.description)) ? "initiative" : "fact";
+    const subjects = new Set();
+    rows.forEach((row) => { const kind = kindOf(row); if (kind === "attribute") subjects.add(row.subject); if (kind === "initiative") subjects.add(row.name); });
+    const actors = rows.filter((row) => kindOf(row) === "actor");
+    const byType = new Map();
+    actors.forEach((row) => byType.set(row.category || "미기재", (byType.get(row.category || "미기재") || 0) + 1));
+    const parts = [...byType.entries()].map(([label, value]) => ({ label, value })).sort((a, b) => b.value - a.value);
+    const sources = rows.filter((row) => kindOf(row) === "source").length;
+    const checkedYear = Math.max(...rows.filter((row) => /^\d{4}-\d{2}-\d{2}$/u.test(row.timeText)).map((row) => row.year).filter(Boolean), 0) || Math.max(...rows.map((row) => row.year || 0));
+    return {
+      kind: "bars",
+      headline: { value: `${formatNumber(subjects.size)}개`, label: `이니셔티브 · NAZCA 등재 행위자 ${formatNumber(actors.length)}곳 · ${checkedYear}년 확인` },
+      preview: { parts: parts.slice(0, 6), unit: "행위자 수", scope: "NAZCA 등재 행위자 유형별", omitted: Math.max(0, parts.length - 6) },
+      // Dates in the rows are check dates, signing dates and target years; the
+      // card states the year the register was checked, not their span.
+      period: `${checkedYear}년 확인`,
+      selection: { measure: null, sex: null, year: null, period: null, dimensions: {} },
+      basis: { unit: "이니셔티브", rule: `이니셔티브 1개 = 속성 행의 주제(' — ' 앞) 또는 협력 이니셔티브 행 · 행위자 1곳 = NAZCA 등재 행 · 원천 ${rows.length}행 중 자료 출처 ${sources}건은 세지 않음`, count: { identities: subjects.size, actors: actors.length, rows: rows.length } },
+      measure: null,
+    };
+  },
+  // Revised PDP8: the 2050 capacity plan by technology, as the plan's bounds.
+  "C-018": (entities, item) => {
+    const rows = entities.map(cTemplateRow).filter((row) => row.indicatorId === "C-018_generation_capacity_plan" && !/배출|^총 설비/u.test(row.name) && row.value !== null && row.year === 2050);
+    const byTech = new Map();
+    rows.forEach((row) => { const entry = byTech.get(row.name) || []; entry.push(row); byTech.set(row.name, entry); });
+    const ranges = [...byTech.entries()].map(([label, group]) => {
+      const values = group.map((row) => row.value);
+      const min = group.find((row) => row.bound === "min")?.value ?? Math.min(...values);
+      const max = group.find((row) => row.bound === "max")?.value ?? Math.max(...values);
+      return { label, min: Math.min(min, max), max: Math.max(min, max) };
+    }).sort((a, b) => b.max - a.max);
+    const top = ranges[0];
+    return {
+      kind: "bars",
+      headline: { value: `${formatNumber(top.min)}~${formatNumber(top.max)} MW`, label: `2050년 전원별 설비용량 계획 최대 · ${top.label} · 개정 PDP8 하한~상한` },
+      preview: { parts: ranges.slice(0, 6).map((range) => ({ label: range.label, value: range.max })), unit: "MW", scope: "2050년 계획 상한 · 상위 6개 전원", omitted: Math.max(0, ranges.length - 6) },
+      period: "계획 2030·2050년 · 가격 규정 2024–2025년",
+      selection: { measure: null, sex: null, year: 2050, period: null, dimensions: {} },
+      basis: { unit: "계획값", rule: `개정 PDP8(Quyết định 768/QĐ-TTg) 2050년 전원별 설비용량 계획 ${ranges.length}개 전원 · 하한~상한 범위 · 총 설비·배출 전망 행 제외 · 합산하지 않음`, count: { planItems: ranges.length, rows: entities.length } },
+      measure: null,
+      headlineIndicatorIds: ["C-018_generation_capacity_plan"],
+    };
+  },
+};
+
 // ------------------------------------------------------------------ entity cards
 function entityCard(elementId, item, pack, contract, rule) {
   // The detail excludes the source's total/explanatory rows (레코드구분=집계)
   // from every list and sum; the card counts the same base.
   // …and the sheet's own "수집현황 v5.29 분류" method row, which the detail's
   // evidence matrix drops (isCompilerMethodRowV139).
-  const isMethodRow = (row) => [row.name, row.normalizedAttributes?.["속성1_레코드명"]].some((name) => /^수집현황(?:\s*v[\d.]+)?(?:\s*분류)?$/u.test(text(name)));
+  const isMethodRow = (row) => [row.name, row.normalizedAttributes?.["속성1_레코드명"]].some((name) => /^수집현황(?:\s*v[\d.]+)?(?:\s*분류)?$/u.test(text(name)) || /^raw\s|OCR 재추출|스캔본/u.test(text(name)));
   const entities = pack.entities.records.filter((row) => text(row.normalizedAttributes?.레코드구분) !== "집계" && !isMethodRow(row));
   const aggregateRows = pack.entities.records.length - entities.length;
   const aggregateNote = aggregateRows ? ` · 원천의 집계·설명 행 ${aggregateRows}건 제외` : "";
@@ -579,12 +715,12 @@ function entityCard(elementId, item, pack, contract, rule) {
     const counts = new Map();
     let unlabelled = 0;
     for (const row of rows) {
-      const value = text(row.normalizedAttributes?.[rule.groupBy]);
+      const value = typeof rule.groupBy === "function" ? text(rule.groupBy(row.normalizedAttributes || {})) : text(row.normalizedAttributes?.[rule.groupBy]);
       if (!value) { unlabelled += 1; continue; }
       counts.set(value, (counts.get(value) || 0) + 1);
     }
     const parts = [...counts.entries()].map(([label, value]) => ({ label, value })).sort((a, b) => b.value - a.value);
-    const groupLabel = groupLabelOf(contract, rule.groupBy);
+    const groupLabel = rule.groupLabel || groupLabelOf(contract, rule.groupBy);
     if (parts.length >= 2) {
       return {
         kind: "bars",
@@ -814,6 +950,8 @@ for (const item of [...catalog].sort((a, b) => a.elementId.localeCompare(b.eleme
       if (!card && entities.length && ENTITY_RULES[elementId]) card = entityCard(elementId, item, pack, contract, ENTITY_RULES[elementId]);
     } else if (REGIONAL_LAYERS.has(elementId)) {
       card = regionalCard(elementId, item, pack, contract) || (ENTITY_RULES[elementId] ? entityCard(elementId, item, pack, contract, ENTITY_RULES[elementId]) : null);
+    } else if (C_TEMPLATE_CARDS[elementId]) {
+      card = C_TEMPLATE_CARDS[elementId](pack.entities.records, item);
     } else if (ENTITY_RULES[elementId]) {
       card = entityCard(elementId, item, pack, contract, ENTITY_RULES[elementId]);
     } else if (entities.length) {

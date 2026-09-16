@@ -127,7 +127,7 @@ const PORTFOLIO_CONFIG_V132: Record<string, PortfolioConfigV132> = {
     ],
     amountLabel: "약정액 합계",
     yearKeys: ["projectPeriod", "periodSummary", "referenceYear"],
-    categoryKeys: ["portfolioCategory", "aidType", "status"],
+    categoryKeys: ["portfolioCategory", "agencyType", "aidType", "status"],
   },
   "D-017": {
     amountKeys: [
@@ -369,6 +369,12 @@ export default function PublicPortfolioSummaryV132({
         {analysis.categories.length > 0 && (
           <DistributionV132 title="주요 분야·기금 구성" rows={analysis.categories.slice(0, 8)} />
         )}
+        {analysis.categoriesByKey
+          .filter((entry) => entry.rows.map((row) => `${row.label}:${row.value}`).join("|") !== analysis.categories.map((row) => `${row.label}:${row.value}`).join("|"))
+          .slice(0, 3)
+          .map((entry) => (
+            <DistributionV132 key={entry.key} title={`${entry.label}별 ${config?.recordLabel || "사업"} 수`} rows={entry.rows.slice(0, 8)} testId={`portfolio-category-${entry.key}-v141`} />
+          ))}
       </div>
     </section>
   );
@@ -421,6 +427,9 @@ function portfolioAnalysisV132(
 ) {
   const years = new Map<string, number>();
   const categories = new Map<string, number>();
+  // One count per reviewed category key (분야, 원조 유형, 상태 …): the card
+  // compares the second or third of these, so the screen shows each (V141).
+  const categoriesByKey = new Map<string, Map<string, number>>();
   const amounts = new Map<string, { value: number; count: number }>();
 
   // Rows the source itself marks 집계 are totals or explanatory lines, not
@@ -446,6 +455,13 @@ function portfolioAnalysisV132(
       // reader recognises happens later, on the way to the screen.
       categories.set(category, (categories.get(category) || 0) + 1);
     }
+    (PORTFOLIO_CONFIG_V132[elementId]?.categoryKeys || []).forEach((key) => {
+      const value = publicTextV126(facet.attributes?.[key]);
+      if (!value || isNumericCodeListV136_2(value)) return;
+      const bucket = categoriesByKey.get(key) || new Map<string, number>();
+      bucket.set(value, (bucket.get(value) || 0) + 1);
+      categoriesByKey.set(key, bucket);
+    });
 
     const amountCandidate = facet.amount;
     if (amountCandidate?.amount !== null && amountCandidate?.amount !== undefined) {
@@ -463,6 +479,7 @@ function portfolioAnalysisV132(
     aggregateCount,
     years: yearRows,
     categories: categoryRowsV136_3(categories),
+    categoriesByKey: Array.from(categoriesByKey, ([key, counts]) => ({ key, label: PORTFOLIO_CATEGORY_KEY_LABELS_V141[key] || key, rows: categoryRowsV136_3(counts) })).filter((entry) => entry.rows.length >= 2),
     amounts: Array.from(amounts, ([currency, value]) => ({ currency, ...value })),
     yearRange: parsedYears.length
       ? `${Math.min(...parsedYears)}–${Math.max(...parsedYears)}`
@@ -476,6 +493,8 @@ export type PublicPortfolioFacetV132 = {
   category: string | null;
   amount: { currency: string; amount: number } | null;
   searchText: string;
+  /** The reviewed public attributes the facet was read from (V141). */
+  attributes: Record<string, unknown>;
 };
 
 export function publicPortfolioFacetV132(
@@ -534,6 +553,7 @@ export function publicPortfolioFacetV132(
     category,
     amount,
     searchText,
+    attributes,
   };
 }
 
@@ -562,6 +582,28 @@ function compactCategoryV132(value: string): string {
 }
 
 /** Composition bars, keyed by source value and labelled for the reader. */
+/** Reader-facing names for the reviewed category keys. */
+const PORTFOLIO_CATEGORY_KEY_LABELS_V141: Readonly<Record<string, string>> = Object.freeze({
+  portfolioCategory: "분야(DAC)",
+  aidType: "원조 유형",
+  agencyType: "기관 유형",
+  status: "상태",
+  standard: "등록 표준",
+  technologyField: "기술 분야",
+  fund: "기금",
+  sector: "분야",
+  sectorName: "업종",
+  supportType: "지원 유형",
+  supportingOrganization: "지원기관",
+  eligibleRecipients: "지원 대상",
+  entryMode: "진출 형태",
+  entryCountry: "진출국",
+  businessSector: "업종",
+  actorType: "행위자 유형",
+  registry: "등재 출처",
+  scopeValue: "대상 범위",
+});
+
 function categoryRowsV136_3(counts: Map<string, number>): CountRowV132[] {
   return publicCategoryRowsV136_3(counts, compactCategoryV132).map((row) => ({
     label: row.displayLabel,

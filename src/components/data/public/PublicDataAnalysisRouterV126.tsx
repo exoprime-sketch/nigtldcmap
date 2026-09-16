@@ -43,6 +43,8 @@ import PublicCompositionTrendAnalysisV132 from "./PublicCompositionTrendAnalysis
 import ResearchPatentAnalysisV132 from "./ResearchPatentAnalysisV132";
 import PublicDataLimitationsV126 from "./PublicDataLimitationsV126";
 import PowerPlantRegistrySummaryV138 from "./PowerPlantRegistrySummaryV138";
+import CooperationChecklistAnalysisV141 from "./CooperationChecklistAnalysisV141";
+import EnergyOutlookPlanAnalysisV141 from "./EnergyOutlookPlanAnalysisV141";
 import ProvinceSeriesAnalysisV140, {
   provinceSeriesShapeV140,
 } from "./ProvinceSeriesAnalysisV140";
@@ -396,6 +398,13 @@ export default function PublicDataAnalysisRouterV126({
               showRawTable={false}
             />
           </>
+        ) : elementId === "C-007" || elementId === "C-008" ? (
+          // Attribute rows read as participation statements, initiatives and
+          // actors, not as a portfolio of projects (V141).
+          <CooperationChecklistAnalysisV141 elementId={elementId} entities={entities} />
+        ) : elementId === "C-018" ? (
+          // The revised PDP8 plan is the outlook; prices state their unit (V141).
+          <EnergyOutlookPlanAnalysisV141 entities={entities} initialYear={selectorState.year} />
         ) : elementId === "A-023" ? (
           <>
             <PowerPlantRegistrySummaryV138 entities={entities} />

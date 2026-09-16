@@ -388,9 +388,9 @@ await section("MAP", async () => {
   );
   check(
     "MAP_PENDING_ROWS_MARKED",
-    map.pendingRows.every((row) => row.badge === "준비 중" && row.disabled && !row.checked && /위치자료 없음/u.test(row.summary) && row.dashed),
+    map.pendingRows.every((row) => row.badge === "준비 중" && row.disabled && !row.checked && /위치자료 (?:없음|미확보)/u.test(row.summary) && row.dashed),
     map.pendingRows,
-    "badge, disabled checkbox, dashed border, 위치자료 없음"
+    "badge, disabled checkbox, dashed border, 위치자료 미확보"
   );
   check("MAP_B017_PENDING", map.pendingRows.some((row) => row.id === "B-017"), map.pendingRows.map((row) => row.id), ["B-017"]);
   check(

@@ -71,7 +71,7 @@ export default function MapDataGuideV130({
               <h3>{group}</h3>
               {missing.length > 0 && (
                 <p className="cdp-muted" data-testid="map-data-guide-missing-v138">
-                  {MAP_PENDING_LABEL_V140}(위치자료 없음, 지도에 표시하지 않음):{" "}
+                  {MAP_PENDING_LABEL_V140}(위치자료 미확보, 지도 표시 제외):{" "}
                   {missing
                     .map(
                       (target) =>

@@ -60,6 +60,10 @@ const REVIEWED_ENTITY_ALIASES_V132: Record<string, ReviewedAliasV132[]> = {
     { publicKey: "recordTitle", sourceKey: "속성1_레코드명" },
     { publicKey: "recordCode", sourceKey: "속성2_레코드ID" },
     { publicKey: "standard", sourceKey: "속성5_등록표준_출처" },
+    // The delivery also states the registry in its own `standard` column; the
+    // 속성5 column is empty for most rows, which hid the registry from the
+    // portfolio's category counts (V141).
+    { publicKey: "standard", sourceKey: "standard" },
     { publicKey: "technologyField", sourceKey: "속성6_분류" },
     { publicKey: "status", sourceKey: "속성7_상태" },
     { publicKey: "proponent", sourceKey: "속성8_사업자_기관" },
@@ -118,6 +122,7 @@ const REVIEWED_ENTITY_ALIASES_V132: Record<string, ReviewedAliasV132[]> = {
     { publicKey: "projectPeriod", sourceKey: "사업기간" },
     { publicKey: "portfolioCategory", sourceKey: "분야_DAC" },
     { publicKey: "aidType", sourceKey: "원조유형" },
+    { publicKey: "agencyType", sourceKey: "기관유형" },
     { publicKey: "status", sourceKey: "상태" },
   ],
   "D-017": [

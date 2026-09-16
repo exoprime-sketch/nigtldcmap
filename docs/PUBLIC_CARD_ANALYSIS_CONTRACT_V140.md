@@ -39,9 +39,27 @@
 - 공유 C 템플릿(C-009·C-010): 문서 단위 연대기(`DocumentTimelineV140`), 원천 링크 행은 해당 문서에 붙임, 문서 수는 카드와 같은 규칙.
 - 포트폴리오 목록: 원천의 집계·설명 행을 목록 건수에서 분리, 필터 이름은 자료 유형별(업종·진출형태, 지원유형·지원기관, 기금·분야 등).
 
+## 자료 유형별 상세 분석 (V141)
+
+| 자료 유형 | 상세가 제공해야 하는 것 | 예 |
+| --- | --- | --- |
+| 시계열 | 같은 지표·단위의 기간 변화, 선택 시점/구간, 차트에 쓴 값의 표(표로 보기) | A-003, B-021, E-012 |
+| 구성 | 총계와 독립 구성요소 분리(중복 포함관계 제외), 여러 해면 구성 변화 | A-010, A-016, D-005 |
+| 기후 전망 | 변수·시나리오·기간·공간단위 선택, 관측/모의/전망 구분 | B-003~B-007 |
+| 지역자료 | 선택 지역의 추이 또는 같은 시점 지역 비교, 단일연도는 추세 없음 | B-033, B-041, B-026 |
+| 사업·재원 | 고유 사업 수와 거래·연차 수 구분, 같은 통화·금액 성격별 집계, 검토된 분류 키별 분포 | D-014, D-023, C-025 |
+| 정책·기관 | 문서/기관 단위 비교표, 시행/확인 시점, 역할·기술분야·대상 조건, 검색 가능한 목록 | C-007, C-008, C-009, E-004 |
+| 계획·규정(속성 행) | 계획값은 하한~상한 범위와 표, 가격은 같은 단위·가격 종류 안에서만 비교 | C-018 |
+| 실제값 없는 5개 | 상태와 이유만 | C-020·C-021·C-023·E-011·E-013 |
+
+공통 C 템플릿(속성N 열)은 `cTemplateRowsV141.ts`가 주제 — 속성, 값, 시점, [하한/상한] 태그, 근거 문서를 읽고 파일명·검토의견을 제거한다. 카드 빌더의 `C_TEMPLATE_CARDS`는 같은 규칙으로 C-007(참여 NMA 건수)·C-008(이니셔티브 수·행위자 유형)·C-018(2050년 전원 계획 범위)을 만든다.
+
+A-023은 `powerPlantFactsV141.ts` 한 정규화를 카드·상세·지도가 공유한다: 발전원 `fuelType`/`primaryFuel`, 용량 `capacityMw`/`mw`, 용량구간은 기재 용량에서 파생, 출처 `sourceKey`(wri/osm). 지도는 기본 WRI GPPD 2021, OSM 2026 추출, 두 출처 함께(중복 미통합)를 필터로 두며 두 출처를 더한 고유시설 수를 주장하지 않는다.
+
 ## 검증
 
 - `npm run qa:analysis:v140` (`node scripts/v140/analysis-qa-v140.mjs [--base-url URL] [--only IDs] [--bypass-secret …] [--allow-version-mismatch]`) → `reports/v140/analysis-qa-v140-<label>.{json,md}`: 152개별 `cardClicked`(finder 카드 실제 클릭, 홈 8개는 `homeCardClicked`)·`selectionUrlPreserved`·`screenLoaded`(ready + 지연 로딩 0 + 세션 전체 콘솔 오류·필수 자산 실패·HTML-for-JSON 0)·`cardValueVerified`(같은 의미 수치: 정수 정확, 소수는 표시 자릿수, 조·억·만·B/M/K 환산 명시, 두 화면 자릿수가 다르면 굵은 쪽 반올림 단위의 절반 이내, 단위·연도/기간·지역 동반)·`recomputed`(다운로드 파일 독립 재계산)·`detailAnalysisFit`(선택기 표시값·제목·KPI)·`controlsVerified`(새 페이지에서 라벨로 찾은 select를 실제 선택, 주 분석 수치·주제 변화)·`tableValuesVerified`(분류 match/no-table/no-derived-row/mismatch/not-applicable)·`mapHandoffVerified`(목록 행 primary·표시 상태 3회 연속)·`remainingIssue`·`evidence`. 배포판은 `card-summaries` 해시·manifest 버전이 로컬 계약과 같을 때만 검사(불일치 exit 2). 필수 실패가 있으면 exit 1.
 - `npm run qa:role-split:v140` — 홈·finder·지도 역할 분리 52개 검사.
 - `npm run finalize:v140` — `finalize:v136`(79) + role-split(52) + analysis QA(152). CI(`ci.yml`)도 같은 순서로 실행하고 보고서를 artifact로 올린다.
+- V141 추가 판정: `analysisFit`(152개 전부, 자료 유형별 기대 요소가 주 분석에 있는지), `mapSymbolVerified`(42개 레이어의 대표 기호 선택 후 값·단위·시점·출처·공간 의미), `internalWording`(파일명·검토의견·raw 키가 화면에 없음), 분석표 검산은 지표+지역+연도/기간+단위 키로 행을 식별하며 `value-without-keys`는 필수 실패, `no-derived-row`/`row-count-differs`는 사유와 함께 기록(합격 아님).
 - 값이 있는 147개와 상태 안내 5개를 구분해 센다. `ready`만으로 semantic PASS를 대신하지 않으며, 미검증(해당 없음)은 PASS로 세지 않는다.

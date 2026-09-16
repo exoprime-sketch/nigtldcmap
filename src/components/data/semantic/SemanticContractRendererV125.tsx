@@ -30,7 +30,7 @@ import {
   publicDimensionValueV134,
   publicMetricLabelV136_2,
 } from "../../../data/visualization/publicCopyRegistryV126";
-import PublicEntityCardGridV131 from "../public/PublicEntityCardGridV131";
+import PublicEntityCardGridV131, { publicEntityStatedValuesV141 } from "../public/PublicEntityCardGridV131";
 import PublicPortfolioListV132 from "../public/PublicPortfolioListV132";
 import PublicPortfolioSummaryV132, {
   publicPortfolioRecordLabelV138,
@@ -141,7 +141,7 @@ export default function SemanticContractRendererV125({
           {numericRows.length >= 2 && new Set(numericRows.map((row) => categoryLabelV125(row))).size >= 2 && (
             <CategoryComparisonV125 rows={numericRows} />
           )}
-          <PolicyTimelineV125 rows={presentRows} entities={entities} />
+          <PolicyTimelineV125 rows={presentRows} entities={entities} elementId={contract.elementId} />
         </>
       ) : renderer === "evidence-matrix" ? (
         <EvidenceMatrixV125 rows={presentRows} entities={entities} />
@@ -341,7 +341,7 @@ function renderEntityPanelV125(
         />
       );
     case "policy-timeline":
-      return <PolicyTimelineV125 rows={[]} entities={entities} />;
+      return <PolicyTimelineV125 rows={[]} entities={entities} elementId={entities[0]?.elementId} />;
     case "evidence-matrix":
     case "capability-scorecard":
       return <EvidenceMatrixV125 rows={[]} entities={entities} />;
@@ -794,6 +794,15 @@ function TwoYearChangeUnitV135({
           </div>
         ))}
       </div>
+      <ChartRowsTableV141
+        rows={series.flatMap((item) => [
+          { recordId: `${item.key}-first`, label: item.label, time: `${item.first.year}`, value: item.first.value },
+          { recordId: `${item.key}-last`, label: item.label, time: `${item.last.year}`, value: item.last.value },
+        ])}
+        unit={publicUnit}
+        label="기준연도 대비 변화"
+        testId="two-year-chart-table-v141"
+      />
     </article>
   );
 }
@@ -857,6 +866,7 @@ function TrendUnitV125({
     elementId,
     Array.from(new Set(rows.map((row) => row.semanticMeasure.key)))
   );
+  const measureLabel = publicTextV126(rows[0]?.semanticMeasure.labelKo) || "";
 
   return (
     <article className="sv125-contract-axis">
@@ -878,6 +888,37 @@ function TrendUnitV125({
           minimumSpan: Math.max(1, Math.floor((maxYear - minYear) / 5)),
         }}
       />
+      {/* The rows the chart draws, as a table: the reader (and the QA) finds
+          a value by indicator, series, year and unit here, instead of hunting
+          through the 200-row raw table below (V141). */}
+      <details className="sv125-chart-table" data-testid="trend-chart-table-v141">
+        <summary>표로 보기 · {measureLabel ? `${measureLabel} · ` : ""}{sourceSeries.length}개 계열 · {rows.length.toLocaleString("ko-KR")}행</summary>
+        <div className="sv125-matrix-wrap">
+          <table data-testid="trend-chart-table-rows-v141">
+            <caption>차트에 사용한 값 · {minYear}~{maxYear}년 · 단위 <PublicTermTextV134 text={publicUnit} /></caption>
+            <thead>
+              <tr>
+                <th scope="col">계열</th>
+                <th scope="col">연도</th>
+                <th scope="col">값</th>
+                <th scope="col">단위</th>
+              </tr>
+            </thead>
+            <tbody>
+              {sourceSeries.flatMap((item) =>
+                item.rows.map((row) => (
+                  <tr key={row.recordId} data-year={row.year ?? undefined} data-series={item.key}>
+                    <th scope="row"><PublicTermTextV134 text={item.label} /></th>
+                    <td>{row.year}</td>
+                    <td>{formatValueV121(row.value)}</td>
+                    <td><PublicTermTextV134 text={publicUnit} /></td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
+        </div>
+      </details>
     </article>
   );
 }
@@ -904,6 +945,53 @@ function barScaleV137(values: number[]) {
     zeroPercent: (negMax / span) * 100,
     spanFor: (value: number) => (Math.abs(value) / span) * 100,
   };
+}
+
+/**
+ * The rows a panel draws, as a table: series, year/period, value, unit. A
+ * reader (and the QA) identifies a figure by these keys instead of hunting
+ * through the raw table (V141).
+ */
+function ChartRowsTableV141({
+  rows,
+  unit,
+  label,
+  testId,
+}: {
+  rows: Array<{ recordId: string; label: string; time: string; value: number }>;
+  unit: string;
+  label: string;
+  testId: string;
+}) {
+  if (rows.length === 0) return null;
+  return (
+    <details className="sv125-chart-table" data-testid={testId}>
+      <summary>표로 보기 · {label} · {rows.length.toLocaleString("ko-KR")}행</summary>
+      <div className="sv125-matrix-wrap">
+        <table data-testid={`${testId}-rows`}>
+          <caption>차트에 사용한 값 · 단위 <PublicTermTextV134 text={unit || "미기재"} /></caption>
+          <thead>
+            <tr>
+              <th scope="col">항목</th>
+              <th scope="col">시점</th>
+              <th scope="col">값</th>
+              <th scope="col">단위</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row) => (
+              <tr key={row.recordId}>
+                <th scope="row"><PublicTermTextV134 text={row.label} /></th>
+                <td>{row.time || "—"}</td>
+                <td>{formatValueV121(row.value)}</td>
+                <td><PublicTermTextV134 text={unit || "미기재"} /></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </details>
+  );
 }
 
 function CategoryComparisonV125({ rows }: { rows: NumericRowV125[] }) {
@@ -992,6 +1080,12 @@ function CategoryComparisonV125({ rows }: { rows: NumericRowV125[] }) {
                 );
               })}
             </div>
+            <ChartRowsTableV141
+              rows={unitRows.map((row) => ({ recordId: row.recordId, label: barLabel(row), time: String(row.year || row.period || ""), value: row.value }))}
+              unit={publicTextV126(unit) || ""}
+              label={frameTitle}
+              testId="comparison-chart-table-v141"
+            />
           </article>
         );
       })}
@@ -1226,12 +1320,53 @@ function DocumentTimelineV140({ entities }: { entities: VietnamEntityV124[] }) {
   );
 }
 
+/**
+ * A register whose rows carry a category worth counting before the entries
+ * are listed (B-012: 275 disaster events by type). The card compares these
+ * counts; the detail used to list events only, so the comparison the card
+ * promised was nowhere on the screen (V141).
+ */
+const TIMELINE_GROUP_FIELD_V141: Readonly<Record<string, { key: string; label: string; noun: string }>> = Object.freeze({
+  "B-012": { key: "재해유형", label: "재해 유형별 사건 수", noun: "건" },
+});
+
+function TimelineGroupCountsV141({ entities, elementId }: { entities: VietnamEntityV124[]; elementId: string }) {
+  const rule = TIMELINE_GROUP_FIELD_V141[elementId];
+  if (!rule) return null;
+  const counts = new Map<string, number>();
+  let unstated = 0;
+  entities.forEach((entity) => {
+    const value = publicTextV126(entity.normalizedAttributes?.[rule.key]);
+    if (!value) { unstated += 1; return; }
+    counts.set(value, (counts.get(value) || 0) + 1);
+  });
+  const items = [...counts].sort((a, b) => b[1] - a[1]);
+  if (items.length < 2) return null;
+  const max = items[0][1];
+  return (
+    <VisualizationFrameV125 eyebrow="유형별" title={`${rule.label} · ${entities.length.toLocaleString("ko-KR")}${rule.noun}`}>
+      <ol className="sv125-group-counts" data-testid="timeline-group-counts-v141">
+        {items.map(([label, count]) => (
+          <li key={label}>
+            <span><PublicTermTextV134 text={label} /></span>
+            <i aria-hidden="true" style={{ width: `${(count / max) * 100}%` }} />
+            <strong>{count.toLocaleString("ko-KR")}{rule.noun}</strong>
+          </li>
+        ))}
+      </ol>
+      {unstated > 0 && <p className="sv125-contract-help">유형 미기재 {unstated.toLocaleString("ko-KR")}{rule.noun}</p>}
+    </VisualizationFrameV125>
+  );
+}
+
 function PolicyTimelineV125({
   rows,
   entities,
+  elementId,
 }: {
   rows: PresentRowV125[];
   entities: VietnamEntityV124[];
+  elementId?: string;
 }) {
   if (documentTimelineShapeV140(entities)) {
     return <DocumentTimelineV140 entities={entities} />;
@@ -1286,6 +1421,8 @@ function PolicyTimelineV125({
   ].sort((left, right) => timelineSortV125(left.date) - timelineSortV125(right.date));
   if (items.length === 0) return null;
   return (
+    <>
+    {elementId && <TimelineGroupCountsV141 entities={entities} elementId={elementId} />}
     <VisualizationFrameV125 eyebrow="연대기" title={`시점별 기록 · ${items.length.toLocaleString("ko-KR")}건`}>
       <ol className="sv125-policy-timeline">
         {items.map((item) => (
@@ -1313,6 +1450,7 @@ function PolicyTimelineV125({
         ))}
       </ol>
     </VisualizationFrameV125>
+    </>
   );
 }
 
@@ -1630,7 +1768,36 @@ function GenericEntitiesV125({
   detailTemplate?: string;
   elementTitle?: string;
 }) {
+  // A register whose rows each state one figure in one unit is compared
+  // before it is listed (B-025's nine basin areas): the card promised the
+  // comparison, the screen listed cards (V141).
+  // The national aggregate row is a different thing from the basins it sums
+  // over; it is named below the comparison, not drawn as the longest bar.
+  const stated = publicEntityStatedValuesV141(
+    entities.filter((entity) => !/national/iu.test(entity.indicatorId || "") && !/^(?:전국|National)/u.test(String(entity.name || ""))),
+    "generic",
+    detailTemplate,
+    elementTitle || countryNameKo
+  );
+  const units = new Set(stated.map((item) => item.unit));
+  const comparable = stated.length >= 3 && units.size === 1 ? [...stated].sort((a, b) => b.value - a.value) : [];
+  const comparableMax = Math.max(...comparable.map((item) => Math.abs(item.value)), 1e-9);
   return (
+    <>
+    {comparable.length > 0 && (
+      <VisualizationFrameV125 eyebrow="비교" title={`항목별 값 비교 · ${comparable.length.toLocaleString("ko-KR")}건 · ${comparable[0].unit || "단위 미기재"}`}>
+        <ol className="sv125-group-counts" data-testid="entity-value-comparison-v141">
+          {comparable.slice(0, 20).map((item) => (
+            <li key={item.recordId}>
+              <span><PublicTermTextV134 text={item.title} /></span>
+              <i aria-hidden="true" style={{ width: `${(Math.abs(item.value) / comparableMax) * 100}%` }} />
+              <strong>{formatValueV121(item.value)} <PublicTermTextV134 text={item.unit} /></strong>
+            </li>
+          ))}
+        </ol>
+        <p className="sv125-contract-help">각 행이 밝힌 값을 같은 단위에서 비교합니다. 전국 집계 행은 비교에서 제외하고 아래 목록에 그대로 둡니다.</p>
+      </VisualizationFrameV125>
+    )}
     <VisualizationFrameV125
       eyebrow={publicCollectionEyebrowV136_2(detailTemplate)}
       title={`${publicCollectionTitleV136_2(detailTemplate)} · ${entities.length.toLocaleString("ko-KR")}건`}
@@ -1642,6 +1809,7 @@ function GenericEntitiesV125({
         elementTitle={elementTitle || countryNameKo}
       />
     </VisualizationFrameV125>
+    </>
   );
 }
 
@@ -2175,7 +2343,8 @@ function isCompilerMethodRowV139(entity: VietnamEntityV124): boolean {
   const names = [publicEntityTitleV131(entity), entity.name, entity.normalizedAttributes?.["속성1_레코드명"]]
     .map((value) => String(value || "").trim())
     .filter(Boolean);
-  return names.some((name) => /^수집현황(?:\s*v[\d.]+)?(?:\s*분류)?$/u.test(name));
+  // "raw 스캔본 OCR 재추출" is likewise the compiler's method, not a finding.
+  return names.some((name) => /^수집현황(?:\s*v[\d.]+)?(?:\s*분류)?$/u.test(name) || /^raw\s|OCR 재추출|스캔본/u.test(name));
 }
 
 /**

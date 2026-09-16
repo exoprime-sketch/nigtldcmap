@@ -417,6 +417,10 @@ export interface VietnamMapFilterV121 {
   values: string[];
   /** Public label per raw value, where the source vocabulary is not readable as-is. */
   valueLabels?: Record<string, string>;
+  /** The value selected before the reader touches the filter (A-023 opens on one registry). */
+  defaultValue?: string;
+  /** What the "all" option means for this filter, when "전체" would overstate it. */
+  allLabel?: string;
 }
 
 export type VietnamMapVisualizationKindV123 =

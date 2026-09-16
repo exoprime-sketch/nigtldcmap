@@ -654,3 +654,54 @@
   color: #173b34;
   overflow-wrap: anywhere;
 }
+
+/* V141: the chart's own rows as a table, folded under the chart. */
+.sv125-chart-table {
+  margin-top: 10px;
+  border: 1px solid #d8e5e0;
+  border-radius: 10px;
+  padding: 6px 12px;
+  background: #fbfdfc;
+}
+
+.sv125-chart-table > summary {
+  cursor: pointer;
+  font-size: 0.86rem;
+  font-weight: 640;
+  color: #126d51;
+}
+
+.sv125-chart-table .sv125-matrix-wrap {
+  margin-top: 8px;
+  max-height: 360px;
+  overflow: auto;
+}
+
+/* V141: category counts before a timeline's entries. */
+.sv125-group-counts {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sv125-group-counts li {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.8fr) minmax(0, 2fr) auto;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.86rem;
+}
+
+.sv125-group-counts i {
+  display: block;
+  height: 10px;
+  min-width: 3px;
+  border-radius: 5px;
+  background: #2f8fc1;
+}
+
+.sv125-group-counts strong {
+  font-variant-numeric: tabular-nums;
+}
