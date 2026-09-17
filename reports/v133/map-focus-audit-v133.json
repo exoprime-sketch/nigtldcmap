@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v133-ci-map-analysis-audit-1",
-  "generatedAt": "2026-09-13T23:26:59.204Z",
+  "generatedAt": "2026-09-16T08:42:36.753Z",
   "audit": "map-focus:v133",
   "status": "PASS",
   "summary": {
@@ -11,105 +11,159 @@
     "failed": 0,
     "total": 13,
     "failedChecks": [],
-    "mapLayerCount": 12,
-    "mapFeatureOrScopeCount": 3144,
-    "presetDefaultContextCount": 0,
+    "mapLayerCount": 42,
+    "mapFeatureOrScopeCount": 4463,
+    "presetCombinationFailures": 0,
     "primaryLayerMax": 1,
-    "contextLayerMax": 1,
+    "companionLimit": 64,
     "simultaneousPolygonFillContextCount": 0,
     "renderedPolygonFillContextCount": 0,
     "presetSnapshots": [
       {
         "presetId": "POWER_INFRASTRUCTURE",
         "primaryCount": 1,
-        "contextCount": 0,
+        "contextCount": 1,
         "primaryElement": "A-024",
-        "contextElements": "none",
+        "contextElements": "A-023",
         "legend": [
           {
             "elementId": "A-024",
             "role": "primary",
             "shape": "line",
-            "text": "베트남 송전망선택 데이터 · 전체 전압 · kV숨기기"
+            "text": "베트남 송전망분석 기준 · 전체 전압 · kV표시 끄기"
+          },
+          {
+            "elementId": "A-023",
+            "role": "context",
+            "shape": "circle",
+            "text": "발전소함께 보기 · 발전소 위치·발전원 · 곳표시 끄기"
           }
         ]
       },
       {
         "presetId": "RENEWABLE_PLANNING",
         "primaryCount": 1,
-        "contextCount": 0,
+        "contextCount": 2,
         "primaryElement": "C-016",
-        "contextElements": "none",
+        "contextElements": "A-024,A-023",
         "legend": [
           {
             "elementId": "C-016",
             "role": "primary",
             "shape": "area",
-            "text": "재생에너지 지역계획선택 데이터 · 옥상태양광(ĐMT mái nhà) 계획용량 · MW숨기기"
+            "text": "재생에너지 지역계획색상 지도 · 분석 기준 · 옥상태양광(ĐMT mái nhà) 계획용량 · MW표시 끄기"
+          },
+          {
+            "elementId": "A-024",
+            "role": "context",
+            "shape": "line",
+            "text": "베트남 송전망함께 보기 · 전체 전압 · kV표시 끄기"
+          },
+          {
+            "elementId": "A-023",
+            "role": "context",
+            "shape": "circle",
+            "text": "발전소함께 보기 · 발전소 위치·발전원 · 곳표시 끄기"
           }
         ]
       },
       {
         "presetId": "FOREST_CHANGE",
         "primaryCount": 1,
-        "contextCount": 0,
+        "contextCount": 2,
         "primaryElement": "B-033",
-        "contextElements": "none",
+        "contextElements": "B-031,B-034",
         "legend": [
           {
             "elementId": "B-033",
             "role": "primary",
             "shape": "area",
-            "text": "연간 산림손실선택 데이터 · 연간 수관 손실 — 성(省) 단위 · ha숨기기"
+            "text": "연간 산림손실색상 지도 · 분석 기준 · 연간 수관 손실 — 성(省) 단위 · ha표시 끄기"
+          },
+          {
+            "elementId": "B-031",
+            "role": "context",
+            "shape": "area",
+            "text": "산림 총면적함께 보기 · 외곽선·클릭값 · 성(省)별 수관 면적(2010) · ha표시 끄기"
+          },
+          {
+            "elementId": "B-034",
+            "role": "context",
+            "shape": "area",
+            "text": "산림 탄소함께 보기 · 외곽선·클릭값 · 산림탄소 순플럭스(연평균) · Mg CO2e/yr표시 끄기"
           }
         ]
       },
       {
         "presetId": "CLIMATE_VULNERABILITY",
         "primaryCount": 1,
-        "contextCount": 0,
+        "contextCount": 2,
         "primaryElement": "B-021",
-        "contextElements": "none",
+        "contextElements": "D-008,D-018",
         "legend": [
           {
             "elementId": "B-021",
             "role": "primary",
             "shape": "area",
-            "text": "지역 취약성선택 데이터 · GVI 취약성 지수 · 0–100 지수숨기기"
+            "text": "지역 취약성색상 지도 · 분석 기준 · GVI 취약성 지수 · 0–100 지수표시 끄기"
+          },
+          {
+            "elementId": "D-008",
+            "role": "context",
+            "shape": "circle",
+            "text": "지역 기후예산함께 보기 · 성 단위 기후변화 지출 누계 · VND · 원 크기 = 예산표시 끄기"
+          },
+          {
+            "elementId": "D-018",
+            "role": "context",
+            "shape": "diamond",
+            "text": "적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업표시 끄기"
           }
         ]
       },
       {
         "presetId": "CLIMATE_FINANCE_PROJECTS",
         "primaryCount": 1,
-        "contextCount": 0,
+        "contextCount": 1,
         "primaryElement": "D-018",
-        "contextElements": "none",
+        "contextElements": "C-025",
         "legend": [
           {
             "elementId": "D-018",
             "role": "primary",
             "shape": "diamond",
-            "text": "적응기금 사업선택 데이터 · 지역 협력범위·세부 활동지역 · 사업숨기기"
+            "text": "적응기금 사업분석 기준 · 지역 협력범위·세부 활동지역 · 사업표시 끄기"
+          },
+          {
+            "elementId": "C-025",
+            "role": "context",
+            "shape": "square",
+            "text": "탄소크레딧 사업함께 보기 · 사업 위치·유형 · 건표시 끄기"
           }
         ]
       }
     ],
     "distinctionSnapshot": {
       "primaryCount": 1,
-      "contextCount": 1,
+      "contextCount": 2,
       "items": [
         {
           "elementId": "B-021",
           "role": "primary",
           "shape": "area",
-          "text": "지역 취약성선택 데이터 · GVI 취약성 지수 · 0–100 지수숨기기"
+          "text": "지역 취약성색상 지도 · 분석 기준 · GVI 취약성 지수 · 0–100 지수표시 끄기"
+        },
+        {
+          "elementId": "D-008",
+          "role": "context",
+          "shape": "circle",
+          "text": "지역 기후예산함께 보기 · 성 단위 기후변화 지출 누계 · VND · 원 크기 = 예산표시 끄기"
         },
         {
           "elementId": "D-018",
           "role": "context",
           "shape": "diamond",
-          "text": "적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업숨기기"
+          "text": "적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업표시 끄기"
         }
       ],
       "rendered": [
@@ -648,6 +702,30 @@
           "fill": "rgb(0, 0, 0)",
           "fillOpacity": 1,
           "label": "적응기금 사업 · surrounding Tram Chim National Park,Vietnam · Mekong EbA South: Enhancing Climate Resilience in the Greater Mekong Sub-region through Ecosystem-based Adaptation in the Context of South-South Cooperation (Thailand, Viet Nam)"
+        },
+        {
+          "elementId": "D-008",
+          "role": "context",
+          "shape": "circle",
+          "fill": "rgb(0, 0, 0)",
+          "fillOpacity": 1,
+          "label": "지역 기후예산 · Quảng Nam · 850,000,000,000 VND · 성·시 단위 통계"
+        },
+        {
+          "elementId": "D-008",
+          "role": "context",
+          "shape": "circle",
+          "fill": "rgb(0, 0, 0)",
+          "fillOpacity": 1,
+          "label": "지역 기후예산 · An Giang · 179,000,000,000 VND · 성·시 단위 통계"
+        },
+        {
+          "elementId": "D-008",
+          "role": "context",
+          "shape": "circle",
+          "fill": "rgb(0, 0, 0)",
+          "fillOpacity": 1,
+          "label": "지역 기후예산 · Bắc Ninh · 481,000,000,000 VND · 성·시 단위 통계"
         }
       ]
     },
@@ -699,8 +777,12 @@
       "audit": "map-focus:v133",
       "name": "MAP_LAYERS",
       "status": "PASS",
-      "actual": 12,
-      "expected": 12
+      "actual": {
+        "active": 42,
+        "declared": 42,
+        "targets": 43
+      },
+      "expected": "declared count, between 12 and 43"
     },
     {
       "type": "check",
@@ -708,8 +790,8 @@
       "name": "MAP_FEATURE_OR_SCOPE_COUNT",
       "status": "PASS",
       "actual": {
-        "declared": 3144,
-        "actual": 3144
+        "declared": 4463,
+        "actual": 4463
       },
       "expected": {
         "declared": "equal to actual",
@@ -739,7 +821,7 @@
     {
       "type": "check",
       "audit": "map-focus:v133",
-      "name": "PRESET_DEFAULT_CONTEXT_COUNT",
+      "name": "PRESET_DRAWS_NAMED_COMBINATION",
       "status": "PASS",
       "actual": {
         "runtimeFailure": null,
@@ -769,10 +851,16 @@
     {
       "type": "check",
       "audit": "map-focus:v133",
-      "name": "CONTEXT_LAYER_MAX",
+      "name": "CONTEXT_SELECTION_KEPT",
       "status": "PASS",
-      "actual": 1,
-      "expected": 1
+      "actual": {
+        "companionLimit": 64,
+        "contextCount": 2
+      },
+      "expected": {
+        "companionLimit": ">= 42",
+        "contextCount": ">= 2, all in legend"
+      }
     },
     {
       "type": "check",
@@ -1323,6 +1411,30 @@
             "fill": "rgb(0, 0, 0)",
             "fillOpacity": 1,
             "label": "적응기금 사업 · surrounding Tram Chim National Park,Vietnam · Mekong EbA South: Enhancing Climate Resilience in the Greater Mekong Sub-region through Ecosystem-based Adaptation in the Context of South-South Cooperation (Thailand, Viet Nam)"
+          },
+          {
+            "elementId": "D-008",
+            "role": "context",
+            "shape": "circle",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": 1,
+            "label": "지역 기후예산 · Quảng Nam · 850,000,000,000 VND · 성·시 단위 통계"
+          },
+          {
+            "elementId": "D-008",
+            "role": "context",
+            "shape": "circle",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": 1,
+            "label": "지역 기후예산 · An Giang · 179,000,000,000 VND · 성·시 단위 통계"
+          },
+          {
+            "elementId": "D-008",
+            "role": "context",
+            "shape": "circle",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": 1,
+            "label": "지역 기후예산 · Bắc Ninh · 481,000,000,000 VND · 성·시 단위 통계"
           }
         ]
       },
@@ -1410,105 +1522,159 @@
       "expected": []
     }
   ],
-  "mapLayerCount": 12,
-  "mapFeatureOrScopeCount": 3144,
-  "presetDefaultContextCount": 0,
+  "mapLayerCount": 42,
+  "mapFeatureOrScopeCount": 4463,
+  "presetCombinationFailures": 0,
   "primaryLayerMax": 1,
-  "contextLayerMax": 1,
+  "companionLimit": 64,
   "simultaneousPolygonFillContextCount": 0,
   "renderedPolygonFillContextCount": 0,
   "presetSnapshots": [
     {
       "presetId": "POWER_INFRASTRUCTURE",
       "primaryCount": 1,
-      "contextCount": 0,
+      "contextCount": 1,
       "primaryElement": "A-024",
-      "contextElements": "none",
+      "contextElements": "A-023",
       "legend": [
         {
           "elementId": "A-024",
           "role": "primary",
           "shape": "line",
-          "text": "베트남 송전망선택 데이터 · 전체 전압 · kV숨기기"
+          "text": "베트남 송전망분석 기준 · 전체 전압 · kV표시 끄기"
+        },
+        {
+          "elementId": "A-023",
+          "role": "context",
+          "shape": "circle",
+          "text": "발전소함께 보기 · 발전소 위치·발전원 · 곳표시 끄기"
         }
       ]
     },
     {
       "presetId": "RENEWABLE_PLANNING",
       "primaryCount": 1,
-      "contextCount": 0,
+      "contextCount": 2,
       "primaryElement": "C-016",
-      "contextElements": "none",
+      "contextElements": "A-024,A-023",
       "legend": [
         {
           "elementId": "C-016",
           "role": "primary",
           "shape": "area",
-          "text": "재생에너지 지역계획선택 데이터 · 옥상태양광(ĐMT mái nhà) 계획용량 · MW숨기기"
+          "text": "재생에너지 지역계획색상 지도 · 분석 기준 · 옥상태양광(ĐMT mái nhà) 계획용량 · MW표시 끄기"
+        },
+        {
+          "elementId": "A-024",
+          "role": "context",
+          "shape": "line",
+          "text": "베트남 송전망함께 보기 · 전체 전압 · kV표시 끄기"
+        },
+        {
+          "elementId": "A-023",
+          "role": "context",
+          "shape": "circle",
+          "text": "발전소함께 보기 · 발전소 위치·발전원 · 곳표시 끄기"
         }
       ]
     },
     {
       "presetId": "FOREST_CHANGE",
       "primaryCount": 1,
-      "contextCount": 0,
+      "contextCount": 2,
       "primaryElement": "B-033",
-      "contextElements": "none",
+      "contextElements": "B-031,B-034",
       "legend": [
         {
           "elementId": "B-033",
           "role": "primary",
           "shape": "area",
-          "text": "연간 산림손실선택 데이터 · 연간 수관 손실 — 성(省) 단위 · ha숨기기"
+          "text": "연간 산림손실색상 지도 · 분석 기준 · 연간 수관 손실 — 성(省) 단위 · ha표시 끄기"
+        },
+        {
+          "elementId": "B-031",
+          "role": "context",
+          "shape": "area",
+          "text": "산림 총면적함께 보기 · 외곽선·클릭값 · 성(省)별 수관 면적(2010) · ha표시 끄기"
+        },
+        {
+          "elementId": "B-034",
+          "role": "context",
+          "shape": "area",
+          "text": "산림 탄소함께 보기 · 외곽선·클릭값 · 산림탄소 순플럭스(연평균) · Mg CO2e/yr표시 끄기"
         }
       ]
     },
     {
       "presetId": "CLIMATE_VULNERABILITY",
       "primaryCount": 1,
-      "contextCount": 0,
+      "contextCount": 2,
       "primaryElement": "B-021",
-      "contextElements": "none",
+      "contextElements": "D-008,D-018",
       "legend": [
         {
           "elementId": "B-021",
           "role": "primary",
           "shape": "area",
-          "text": "지역 취약성선택 데이터 · GVI 취약성 지수 · 0–100 지수숨기기"
+          "text": "지역 취약성색상 지도 · 분석 기준 · GVI 취약성 지수 · 0–100 지수표시 끄기"
+        },
+        {
+          "elementId": "D-008",
+          "role": "context",
+          "shape": "circle",
+          "text": "지역 기후예산함께 보기 · 성 단위 기후변화 지출 누계 · VND · 원 크기 = 예산표시 끄기"
+        },
+        {
+          "elementId": "D-018",
+          "role": "context",
+          "shape": "diamond",
+          "text": "적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업표시 끄기"
         }
       ]
     },
     {
       "presetId": "CLIMATE_FINANCE_PROJECTS",
       "primaryCount": 1,
-      "contextCount": 0,
+      "contextCount": 1,
       "primaryElement": "D-018",
-      "contextElements": "none",
+      "contextElements": "C-025",
       "legend": [
         {
           "elementId": "D-018",
           "role": "primary",
           "shape": "diamond",
-          "text": "적응기금 사업선택 데이터 · 지역 협력범위·세부 활동지역 · 사업숨기기"
+          "text": "적응기금 사업분석 기준 · 지역 협력범위·세부 활동지역 · 사업표시 끄기"
+        },
+        {
+          "elementId": "C-025",
+          "role": "context",
+          "shape": "square",
+          "text": "탄소크레딧 사업함께 보기 · 사업 위치·유형 · 건표시 끄기"
         }
       ]
     }
   ],
   "distinctionSnapshot": {
     "primaryCount": 1,
-    "contextCount": 1,
+    "contextCount": 2,
     "items": [
       {
         "elementId": "B-021",
         "role": "primary",
         "shape": "area",
-        "text": "지역 취약성선택 데이터 · GVI 취약성 지수 · 0–100 지수숨기기"
+        "text": "지역 취약성색상 지도 · 분석 기준 · GVI 취약성 지수 · 0–100 지수표시 끄기"
+      },
+      {
+        "elementId": "D-008",
+        "role": "context",
+        "shape": "circle",
+        "text": "지역 기후예산함께 보기 · 성 단위 기후변화 지출 누계 · VND · 원 크기 = 예산표시 끄기"
       },
       {
         "elementId": "D-018",
         "role": "context",
         "shape": "diamond",
-        "text": "적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업숨기기"
+        "text": "적응기금 사업함께 보기 · 지역 협력범위·세부 활동지역 · 사업표시 끄기"
       }
     ],
     "rendered": [
@@ -2047,6 +2213,30 @@
         "fill": "rgb(0, 0, 0)",
         "fillOpacity": 1,
         "label": "적응기금 사업 · surrounding Tram Chim National Park,Vietnam · Mekong EbA South: Enhancing Climate Resilience in the Greater Mekong Sub-region through Ecosystem-based Adaptation in the Context of South-South Cooperation (Thailand, Viet Nam)"
+      },
+      {
+        "elementId": "D-008",
+        "role": "context",
+        "shape": "circle",
+        "fill": "rgb(0, 0, 0)",
+        "fillOpacity": 1,
+        "label": "지역 기후예산 · Quảng Nam · 850,000,000,000 VND · 성·시 단위 통계"
+      },
+      {
+        "elementId": "D-008",
+        "role": "context",
+        "shape": "circle",
+        "fill": "rgb(0, 0, 0)",
+        "fillOpacity": 1,
+        "label": "지역 기후예산 · An Giang · 179,000,000,000 VND · 성·시 단위 통계"
+      },
+      {
+        "elementId": "D-008",
+        "role": "context",
+        "shape": "circle",
+        "fill": "rgb(0, 0, 0)",
+        "fillOpacity": 1,
+        "label": "지역 기후예산 · Bắc Ninh · 481,000,000,000 VND · 성·시 단위 통계"
       }
     ]
   },

@@ -12,3 +12,11 @@ the previously missing Linux reference, not an automatic update on each run.
 
 Keep screenshot comparisons enabled. Review actual/diff images before accepting
 any future update; never update snapshots unconditionally in CI.
+
+The Linux home baseline was replaced after the V139 home redesign (short
+search hero, static transmission map, eight preview cards). It was reviewed
+from GitHub Actions run 34936592005, artifact 10383374988 (job 104275738620,
+commit 3ff37cae): the actual image shows the loaded home at 1440x1000 with the
+title, search, map preview, status strip and the first card row, with no
+loading or error overlay. The Windows home baseline was regenerated locally
+from the same source tree. The other four baselines are unchanged.

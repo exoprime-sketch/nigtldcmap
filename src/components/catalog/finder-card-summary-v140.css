@@ -1,0 +1,252 @@
+/* Finder card analysis summary (V140). Sizes are the card's own text sizes:
+   the value is the largest thing on the card after the title, and no label
+   or axis drops below 12px. */
+.fcs140 {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 14px;
+  min-width: 0;
+}
+
+/* Grid items default to min-width:auto, which lets a long name widen the
+   card past its column; everything inside shrinks instead. */
+.fcs140 > *,
+.fcs140-preview > * {
+  min-width: 0;
+}
+
+.fcs140-headline {
+  margin: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.fcs140-headline strong {
+  color: #0f766e;
+  font-size: 1.45rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.fcs140-headline span {
+  color: var(--cdp-muted, #5f6f6a);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.fcs140-preview {
+  min-width: 0;
+}
+
+.fcs140-chart {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.fcs140-chart--strip {
+  margin-bottom: 6px;
+}
+
+.fcs140-caption {
+  margin: 0 0 4px;
+  color: #0f766e;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.fcs140-note {
+  margin: 6px 0 0;
+  color: var(--cdp-muted, #5f6f6a);
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.fcs140-bars {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 5px;
+}
+
+.fcs140-bars li {
+  display: grid;
+  grid-template-columns: minmax(64px, 34%) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  line-height: 1.3;
+}
+
+.fcs140-bars__label {
+  min-width: 0;
+  color: #173a4d;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fcs140-bars__label .public-term-v134,
+.fcs140-facts .public-term-v134 {
+  white-space: normal;
+}
+
+.fcs140-bars__track {
+  display: block;
+  height: 9px;
+  background: #eef2f1;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.fcs140-bars__track i {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+}
+
+.fcs140-bars__value {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  color: #173a4d;
+}
+
+.fcs140-legend {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 3px;
+  font-size: 0.8rem;
+}
+
+.fcs140-legend li {
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 8px;
+}
+
+.fcs140-legend i {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.fcs140-legend small {
+  color: var(--cdp-muted, #5f6f6a);
+}
+
+.fcs140-level {
+  margin: 0;
+  display: grid;
+  gap: 4px;
+  font-size: 0.8rem;
+}
+
+.fcs140-level div {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 8px;
+}
+
+.fcs140-level dt {
+  color: var(--cdp-muted, #5f6f6a);
+}
+
+.fcs140-level dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.fcs140-facts {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 4px;
+  font-size: 0.8rem;
+}
+
+.fcs140-facts li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 4px 0;
+  border-bottom: 1px solid #edf1f0;
+}
+
+.fcs140-facts li span {
+  min-width: 0;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.fcs140-facts li strong {
+  flex: none;
+  max-width: 45%;
+  overflow-wrap: anywhere;
+}
+
+.fcs140-facts__more {
+  color: var(--cdp-muted, #5f6f6a);
+  border-bottom: 0 !important;
+}
+
+.fcs140-status {
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px dashed #cfd8d4;
+  border-radius: 8px;
+  color: var(--cdp-muted, #5f6f6a);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.fcs140-pending {
+  color: var(--cdp-muted, #5f6f6a);
+  font-size: 0.78rem;
+}
+
+/* Home-derived previews reuse the home chart styles at the card's scale. */
+.fcs140 .home-chart-v139 {
+  width: 100%;
+  height: auto;
+}
+
+.fcs140 .home-chart-v139__legend {
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 3px;
+  font-size: 0.8rem;
+}
+
+.fcs140 .home-chart-v139__legend li {
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 8px;
+}
+
+.fcs140 .home-chart-v139__legend li i {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.fcs140 .home-chart-v139__map img {
+  width: 100%;
+  max-height: 150px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}

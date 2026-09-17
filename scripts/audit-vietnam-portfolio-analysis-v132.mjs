@@ -31,7 +31,11 @@ const fitRows = Array.isArray(fitResult.value?.elements) ? fitResult.value.eleme
 const portfolioRendererIds = fitRows
   .filter((row) => row.primaryRenderer === "portfolio-dashboard")
   .map((row) => row.elementId);
-const portfolioIds = [...new Set(["D-012", ...portfolioRendererIds])];
+// C-007 and C-008 left the portfolio renderer in V141: their attribute rows
+// are read as participation statements, initiatives and actors
+// (CooperationChecklistAnalysisV141), not as a project portfolio.
+const NOT_PORTFOLIO_V141 = new Set(["C-007", "C-008"]);
+const portfolioIds = [...new Set(["D-012", ...portfolioRendererIds])].filter((id) => !NOT_PORTFOLIO_V141.has(id));
 // The screens are driven from the served build, so the expectations are read
 // from the data that build holds. Reading public/data while driving build/ made
 // this audit compare two different trees: it counted C-007 as having no entities

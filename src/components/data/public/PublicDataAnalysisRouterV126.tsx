@@ -16,9 +16,12 @@ import {
   publicElementCopyV126,
 } from "../../../data/visualization/publicCopyRegistryV126";
 import { getPublicAnalysisHeadingsV134 } from "../../../data/visualization/publicAnalysisHeadingsV134";
-import PublicRegionScenarioSummaryV137, {
-  regionScenarioShapeV137,
-} from "./PublicRegionScenarioSummaryV137";
+import PublicRegionScenarioSummaryV138, {
+  regionScenarioShapeV138,
+} from "./PublicRegionScenarioSummaryV138";
+import SeaLevelStationAnalysisV138, {
+  isSeaLevelStationDeliveryV138,
+} from "./SeaLevelStationAnalysisV138";
 import { getPublicIndicatorInterpretationV129 } from "../../../data/interpretation/publicIndicatorInterpretationV129";
 import type {
   VietnamEntityV124,
@@ -38,10 +41,22 @@ import PublicEmissionsAnalysisV132 from "./PublicEmissionsAnalysisV132";
 import PublicCompositionTrendAnalysisV132 from "./PublicCompositionTrendAnalysisV132";
 import ResearchPatentAnalysisV132 from "./ResearchPatentAnalysisV132";
 import PublicDataLimitationsV126 from "./PublicDataLimitationsV126";
+import PowerPlantRegistrySummaryV138 from "./PowerPlantRegistrySummaryV138";
+import CooperationChecklistAnalysisV141 from "./CooperationChecklistAnalysisV141";
+import EnergyOutlookPlanAnalysisV141 from "./EnergyOutlookPlanAnalysisV141";
+import SecuritySafetyInfoV142 from "./SecuritySafetyInfoV142";
+import HydroStationObservationsV142 from "./HydroStationObservationsV142";
+import ProvinceSeriesAnalysisV140, {
+  provinceSeriesShapeV140,
+} from "./ProvinceSeriesAnalysisV140";
+import TransmissionNetworkSummaryV140, {
+  isTransmissionDeliveryV140,
+} from "./TransmissionNetworkSummaryV140";
 import PublicIndicatorMeaningV129 from "./PublicIndicatorMeaningV129";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import PublicRawDataTablesV126 from "./PublicRawDataTablesV126";
 import PublicSourcePanelV126 from "./PublicSourcePanelV126";
+import { metadataOnlyBuildingsV144 } from "../../../data/visualization/publicIndicatorCopyV144";
 import "./public-data-analysis-v126.css";
 
 const OccupationEmploymentWagePreviewV125 = lazy(
@@ -139,9 +154,18 @@ export default function PublicDataAnalysisRouterV126({
   // has no observations of its own to draw, read the rows for what they are.
   const regionScenarioSummary = useMemo(() => {
     if (semanticRows.length > 0) return null;
-    if (!regionScenarioShapeV137(entities)) return null;
+    if (elementId === "B-008" && isSeaLevelStationDeliveryV138(entities)) {
+      return (
+        <SeaLevelStationAnalysisV138
+          entities={entities}
+          selectorState={selectorState}
+          onSelectorStateChange={onSelectorStateChange}
+        />
+      );
+    }
+    if (!regionScenarioShapeV138(entities)) return null;
     return (
-      <PublicRegionScenarioSummaryV137
+      <PublicRegionScenarioSummaryV138
         elementId={elementId}
         entities={entities}
         elementTitle={copy.title}
@@ -160,15 +184,19 @@ export default function PublicDataAnalysisRouterV126({
     [entities]
   );
   const hasNationalSeriesRows = nationalSeriesEntities.length > 0;
+  // Observations keyed by province (B-033, C-016, B-031, B-032, B-034): the
+  // province's own series, the same-year comparison and the table, instead
+  // of one bar for the chosen province and a grid of record keys (V140).
+  const provinceSeries = useMemo(() => provinceSeriesShapeV140(semanticRows), [semanticRows]);
   const adapterContract = useMemo<ElementVisualizationContractV125>(
     () => ({
       ...contract,
-      primaryRenderer: ADAPTER_RENDERER_V126[publicRenderer],
+      primaryRenderer: ["A-030", "A-032"].includes(elementId) ? "kpi-trend" : ADAPTER_RENDERER_V126[publicRenderer],
       secondaryRenderer:
         publicRenderer === "status-only" ? "status-only" : "structured-table",
       currentVisualizationIssue: "",
     }),
-    [contract, publicRenderer]
+    [contract, publicRenderer, elementId]
   );
   const meaningIndicatorId = useMemo(() => {
     const dimensionEntries = Object.entries(selectorState.dimensions).filter(
@@ -206,26 +234,10 @@ export default function PublicDataAnalysisRouterV126({
   return (
     <>
       <header className="pav126-heading">
-        <span>이 데이터로 확인할 수 있는 내용</span>
         <h2 data-testid="public-data-title">
           <PublicTermTextV134 text={headings?.publicAnalysisTitle || copy.title} />
         </h2>
-        <p>
-          <PublicTermTextV134 text={headings?.publicQuestion || copy.description} />
-        </p>
       </header>
-
-      {elementId !== "B-005" && (
-        <PublicIndicatorMeaningV129
-          elementId={elementId}
-          indicatorId={meaningIndicatorId}
-          variableKey={
-            selectorState.dimensions.variable ||
-            selectorState.dimensions.mapVariable ||
-            (selectorState.measure ? "semantic-selection" : undefined)
-          }
-        />
-      )}
 
       <section className="pav126-primary" data-testid="public-analysis-primary">
         {/*
@@ -234,7 +246,17 @@ export default function PublicDataAnalysisRouterV126({
           section rendered nothing at all. Where the specialised view has no
           observations to draw, the archetype shows the records that are there.
         */}
-        {elementId === "C-002" && semanticRows.length > 0 ? (
+        {elementId === "A-026" && metadataOnlyBuildingsV144(semanticRows) ? (
+          <section className="pav126-empty" data-testid="building-data-availability-v144">
+            <h3>건물 수·면적 자료 미제공</h3>
+            <p>현재 자료에는 건물 수·면적과 개별 건물 경계가 포함되어 있지 않습니다. 자료의 좌표계와 파일 구성 정보만 확인할 수 있습니다.</p>
+            <details><summary>파일 구성 정보</summary>
+              <ul>{semanticRows.filter((row) => row.value !== null && row.value !== undefined && row.value !== "").map((row) =>
+                <li key={row.recordId}>{row.semanticMeasure.labelKo}: {String(row.value)}</li>
+              )}</ul>
+            </details>
+          </section>
+        ) : elementId === "C-002" && semanticRows.length > 0 ? (
           <Suspense fallback={<div className="pav126-empty" role="status" data-testid="public-analysis-pending">배출량 분석을 불러오는 중입니다</div>}>
             <GhgSectorGasAnalysisV135 elementId={elementId} rows={semanticRows} />
           </Suspense>
@@ -305,6 +327,15 @@ export default function PublicDataAnalysisRouterV126({
               showRawTable={false}
             />
           </Suspense>
+        ) : provinceSeries ? (
+          <ProvinceSeriesAnalysisV140
+            elementId={elementId}
+            rows={semanticRows}
+            selectorState={selectorState}
+            onSelectorStateChange={onSelectorStateChange}
+            elementTitle={copy.title}
+            primaryTitle={headings?.primaryChartTitle}
+          />
         ) : publicRenderer === "stacked-emissions" ? (
           <PublicEmissionsAnalysisV132
             elementId={elementId}
@@ -339,6 +370,56 @@ export default function PublicDataAnalysisRouterV126({
               showRawTable={false}
             />
           </>
+        ) : elementId === "A-024" && isTransmissionDeliveryV140(entities) ? (
+          // The 2016 network and the PDP8 plan rows are counted apart; the
+          // archetype's own "722건 · 2016" KPI came from a source row that
+          // counts both, so the archetype gets only the list.
+          <>
+            <TransmissionNetworkSummaryV140 entities={entities} />
+            <SemanticArchetypePreviewV125
+              contract={adapterContract}
+              semantics={semantics}
+              observations={[]}
+              entities={entities}
+              countryNameKo={countryNameKo}
+              detailTemplate={detailTemplate}
+              elementTitle={copy.title}
+              selectorState={selectorState}
+              onSelectorStateChange={onSelectorStateChange}
+              showRawTable={false}
+            />
+          </>
+        ) : elementId === "C-007" || elementId === "C-008" ? (
+          // Attribute rows read as participation statements, initiatives and
+          // actors, not as a portfolio of projects (V141).
+          <CooperationChecklistAnalysisV141 elementId={elementId} entities={entities} />
+        ) : elementId === "B-023" || elementId === "B-028" ? (
+          // Station observations: dry/wet pairs where one station, unit and
+          // year hold both; otherwise a table per station (V142).
+          <HydroStationObservationsV142 elementId={elementId} entities={entities} />
+        ) : elementId === "C-011" ? (
+          // Phone numbers, notice dates, alert grades and one rate: tables by
+          // use, never one bar axis (V142).
+          <SecuritySafetyInfoV142 entities={entities} semantics={semantics} />
+        ) : elementId === "C-018" ? (
+          // The revised PDP8 plan is the outlook; prices state their unit (V141).
+          <EnergyOutlookPlanAnalysisV141 entities={entities} initialYear={selectorState.year} />
+        ) : elementId === "A-023" ? (
+          <>
+            <PowerPlantRegistrySummaryV138 entities={entities} />
+            <SemanticArchetypePreviewV125
+              contract={adapterContract}
+              semantics={semantics}
+              observations={observations}
+              entities={entities}
+              countryNameKo={countryNameKo}
+              detailTemplate={detailTemplate}
+              elementTitle={copy.title}
+              selectorState={selectorState}
+              onSelectorStateChange={onSelectorStateChange}
+              showRawTable={false}
+            />
+          </>
         ) : regionScenarioSummary ?? (
           <SemanticArchetypePreviewV125
             contract={adapterContract}
@@ -355,6 +436,16 @@ export default function PublicDataAnalysisRouterV126({
         )}
       </section>
 
+      {!['B-005', 'E-008'].includes(elementId) && !(elementId === 'A-026' && metadataOnlyBuildingsV144(semanticRows)) && (
+        <details className="pav144-reading-notes" data-testid="public-reading-notes-v144">
+          <summary>자료 해석 안내</summary>
+          <PublicIndicatorMeaningV129
+            elementId={elementId}
+            indicatorId={meaningIndicatorId}
+            variableKey={selectorState.dimensions.variable || selectorState.dimensions.mapVariable || (selectorState.measure ? "semantic-selection" : undefined)}
+          />
+        </details>
+      )}
       <PublicDataLimitationsV126 elementId={elementId} />
       <PublicSourcePanelV126
         indicators={indicators}

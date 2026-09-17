@@ -11,8 +11,8 @@
     "failed": 0,
     "total": 8,
     "failedChecks": [],
-    "mapLayerCount": 12,
-    "mapFeatureOrScopeCount": 3144,
+    "mapLayerCount": 42,
+    "mapFeatureOrScopeCount": 4463,
     "mapPlaceholderPrimaryTitleCount": 0,
     "mapTooltipMissingKeyFactsCount": 0,
     "a023TooltipResult": "PASS",
@@ -26,8 +26,11 @@
       "audit": "map-tooltip:v132",
       "name": "FINAL_MAP_LAYERS",
       "status": "PASS",
-      "actual": 12,
-      "expected": 12
+      "actual": {
+        "active": 42,
+        "declared": 42
+      },
+      "expected": "declared active count, at least the twelve ETL layers"
     },
     {
       "type": "check",
@@ -35,8 +38,8 @@
       "name": "FINAL_MAP_FEATURE_OR_SCOPE_COUNT",
       "status": "PASS",
       "actual": {
-        "declared": 3144,
-        "actual": 3144
+        "declared": 4463,
+        "actual": 4463
       },
       "expected": {
         "declared": "equal to actual",
@@ -68,8 +71,8 @@
         "runtimeFailure": null
       },
       "expected": {
-        "finalMapLayerCount": 12,
-        "finalMapFeatureOrScopeCount": 3144,
+        "finalMapLayerCount": "12..42",
+        "finalMapFeatureOrScopeCount": ">= 2900",
         "v130RegressionResult": "PASS"
       }
     },
@@ -98,7 +101,7 @@
         "runtimeFailure": null,
         "a023Result": {
           "title": "Kon Dao",
-          "text": "발전원Hydro용량1 MW자료연도2021",
+          "text": "발전원수력용량1 MW자료연도2021",
           "meaningfulTitle": true,
           "fuel": true,
           "capacity": true,
@@ -118,7 +121,7 @@
       "status": "PASS",
       "actual": {
         "title": "Kon Dao",
-        "text": "발전원Hydro용량1 MW자료연도2021",
+        "text": "발전원수력용량1 MW자료연도2021",
         "meaningfulTitle": true,
         "fuel": true,
         "capacity": true,
@@ -166,8 +169,8 @@
       "expected": []
     }
   ],
-  "mapLayerCount": 12,
-  "mapFeatureOrScopeCount": 3144,
+  "mapLayerCount": 42,
+  "mapFeatureOrScopeCount": 4463,
   "mapPlaceholderPrimaryTitleCount": 0,
   "mapTooltipMissingKeyFactsCount": 0,
   "a023TooltipResult": "PASS",

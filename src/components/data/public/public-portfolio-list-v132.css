@@ -102,3 +102,67 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* V140: the source's aggregate/explanatory rows, apart from the register. */
+.ppl132-aggregates {
+  margin-top: 14px;
+  color: #52635f;
+  font-size: 0.86rem;
+}
+
+.ppl132-aggregates summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.ppl132-aggregates ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+
+/* V142: category descriptions the register uses (D-026's guarantee covers), kept
+   as the explanation of the type column, apart from the record count. */
+.ppl132-definitions {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border: 1px solid #dbe5e1;
+  border-radius: 10px;
+  background: #f7faf9;
+  font-size: 0.88rem;
+}
+
+.ppl132-definitions h5 {
+  margin: 0 0 8px;
+  font-size: 0.92rem;
+  color: #1f3d36;
+}
+
+.ppl132-definitions dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: minmax(160px, 260px) 1fr;
+  gap: 6px 14px;
+}
+
+.ppl132-definitions dl > div {
+  display: contents;
+}
+
+.ppl132-definitions dt {
+  font-weight: 700;
+  color: #26403a;
+}
+
+.ppl132-definitions dd {
+  margin: 0;
+  color: #47565f;
+}
+
+@media (max-width: 640px) {
+  .ppl132-definitions dl {
+    grid-template-columns: 1fr;
+  }
+  .ppl132-definitions dd {
+    margin-bottom: 6px;
+  }
+}

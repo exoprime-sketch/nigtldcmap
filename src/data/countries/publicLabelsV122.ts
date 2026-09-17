@@ -59,6 +59,9 @@ const CURATED_TITLES: Record<string, { title: string; short: string }> = {
   "B-021": { title: "취약성지수", short: "취약성" },
   "B-022": { title: "기후피해의 경제적 비용", short: "기후피해 비용" },
   "B-029": { title: "산림 유형별 면적", short: "산림 유형" },
+  // The delivery is the 2000–2020 cumulative tree-cover gain per province;
+  // the registry's "(ha/yr)" named a rate the source does not state (V142).
+  "B-030": { title: "산림 이득(2000–2020 누적)", short: "산림 이득" },
   "B-031": { title: "산림 총면적", short: "산림 면적" },
   "B-033": { title: "연간 산림손실", short: "산림손실" },
   "B-034": { title: "탄소 저장량", short: "탄소 저장량" },
@@ -91,7 +94,10 @@ const CURATED_TITLES: Record<string, { title: string; short: string }> = {
   "C-015": { title: "정책·제도 원문자료", short: "정책 원문" },
   "C-016": { title: "재생에너지 발주·확대계획", short: "재생에너지 발주" },
   "C-017": { title: "재생에너지 투자 인센티브", short: "재생에너지 인센티브" },
-  "C-018": { title: "중장기 에너지 전망", short: "에너지 전망" },
+  // The delivery is the revised PDP8 plan (capacity, demand, RE share) with the
+  // 2024-25 power price regulations; "전망" alone promised scenario lines it
+  // does not hold (V141).
+  "C-018": { title: "중장기 전력 계획·전망(개정 PDP8)", short: "전력 계획·전망" },
   "C-019": { title: "탄소시장 법·제도와 예산", short: "탄소시장 제도" },
   "C-020": { title: "온실가스 감축사업 기초정보", short: "감축사업 기초정보" },
   "C-021": { title: "자발적 탄소시장 사업목록", short: "VCM 사업목록" },
@@ -145,6 +151,10 @@ function removeFieldInventory(value: string): string {
       .replace(/\[[\s\S]*$/u, "")
       .replace(/;[\s\S]*$/u, "")
       .replace(/\((?:프로젝트명|위치|용량|국가|기관|지표|변수)[\s\S]*$/u, "")
+      // "경쟁국 민간기업의 개도국 진출 현황: 기업명, 국적, 진출 대상국, …" -
+      // a colon followed by a comma list is the workbook's column inventory,
+      // not part of the name (V140).
+      .replace(/:\s+[^:]*,[^:]*,[\s\S]*$/u, "")
   );
 }
 

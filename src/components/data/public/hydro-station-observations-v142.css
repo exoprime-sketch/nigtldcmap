@@ -1,0 +1,14 @@
+.hso142__pairs { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+.hso142 .hso142__pairs > li { display: block; border: 1px solid #d7e3e6; border-radius: 8px; padding: 12px; min-width: 0; }
+.hso142__pairs strong, .hso142__pairs small { display: block; overflow-wrap: anywhere; margin-bottom: 8px; }
+.hso142__bar-row { display: grid; grid-template-columns: 5rem minmax(32px, 1fr) 5rem; gap: 8px; align-items: center; margin: 6px 0; }
+.hso142__bar-row > :last-child { text-align: right; font-variant-numeric: tabular-nums; }
+.hso142__track { background: #edf2f4; height: 14px; border-radius: 2px; overflow: hidden; }
+.hso142 .hso142__track i { display: block; height: 100%; }
+.hso142__fill--dry { background: #b45b17; }
+.hso142__fill--wet { background: #087e8b; }
+.hso142 .pps132-table-wrap { overflow-x: auto; }
+.hso142 table { min-width: 540px; }
+@media (max-width: 480px) {
+  .hso142__bar-row { grid-template-columns: 4.3rem minmax(20px, 1fr) 4.2rem; gap: 5px; font-size: 12px; }
+}

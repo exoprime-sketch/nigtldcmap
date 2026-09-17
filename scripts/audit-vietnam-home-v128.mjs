@@ -132,9 +132,17 @@ try {
           vietnamScopePresent:
             /현재\\s*베트남\\s*파일럿\\s*데이터를\\s*제공/u.test(text) ||
             /현재\\s*제공\\s*국가\\s*[·ㆍ]?\\s*베트남/u.test(text),
+          // V139: the three functions are reached from the header menu; the
+          // home no longer repeats them as cards. The entry points are read
+          // from the main menu, and a repeat inside the home is a defect.
           featureEntryPoints: ['데이터 찾기', '데이터 지도', '데이터 다운로드'].filter((label) =>
-            interactive.some((node) => normalize(node.textContent).includes(label))
+            [...document.querySelectorAll('nav[aria-label="주 메뉴"] button, nav[aria-label="주 메뉴"] a')].some((node) => normalize(node.textContent).trim() === label)
           ),
+          duplicateFunctionCards: interactive.filter((node) =>
+            /^(데이터 찾기|데이터 지도|데이터 다운로드)$/u.test(normalize(node.textContent).trim())
+          ).length,
+          featuredChartCount: (root?.querySelectorAll('.home-featured-v139__card svg[role="img"], .home-featured-v139__card img') || []).length,
+          mapEngineLoaded: Boolean(document.querySelector('.maplibregl-map, .maplibregl-canvas')),
           featuredIds,
           featuredTitles: [...(root?.querySelectorAll('[data-element-id]') || [])]
             .map((node) => node.textContent?.trim() || '').filter(Boolean),
@@ -232,6 +240,14 @@ audit.check(
   browserResult?.featureEntryPoints || [],
   ["데이터 찾기", "데이터 지도", "데이터 다운로드"]
 );
+audit.check("HOME_DUPLICATE_FUNCTION_CARDS", browserResult?.duplicateFunctionCards === 0, browserResult?.duplicateFunctionCards ?? null, 0);
+audit.check(
+  "HOME_FEATURED_PREVIEWS",
+  featuredIdSet.size > 0 && (browserResult?.featuredChartCount || 0) >= featuredIdSet.size,
+  { featured: featuredIdSet.size, charts: browserResult?.featuredChartCount ?? null },
+  "one chart or map image per featured dataset"
+);
+audit.check("HOME_MAP_ENGINE_NOT_LOADED", browserResult?.mapEngineLoaded === false, browserResult?.mapEngineLoaded ?? null, false);
 audit.check("HOME_RESPONSIVE_ACCESSIBILITY", responsiveFailures.length === 0, responsiveFailures.length, 0, responsiveFailures);
 audit.check("HOME_ASSET_RESPONSES", networkFailures.length === 0, networkFailures.length, 0, networkFailures);
 audit.check("HOME_UNCAUGHT_RUNTIME_ERROR", (browser?.runtimeErrors?.length || 0) === 0, browser?.runtimeErrors || [], []);

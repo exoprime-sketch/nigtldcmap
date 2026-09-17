@@ -1,0 +1,1029 @@
+{
+  "summary": {
+    "label": "review-targets",
+    "base": "http://127.0.0.1:62684",
+    "generatedAt": "2026-09-16T05:55:22.819Z",
+    "version": {
+      "local": {
+        "cardSummaries": "39fbabf1d3279c6c",
+        "cardGeneratedAt": "2026-09-16T04:56:42.038Z",
+        "sourceHash": "127546f478e3bd49",
+        "manifestGeneratedAt": "2026-08-27T00:00:00Z",
+        "mapLayerCount": 42
+      },
+      "remote": {
+        "cardSummaries": "39fbabf1d3279c6c",
+        "cardGeneratedAt": "2026-09-16T04:56:42.038Z",
+        "manifestGeneratedAt": "2026-08-27T00:00:00Z",
+        "mapLayerCount": 42
+      },
+      "match": true
+    },
+    "elements": 14,
+    "valueBearing": 14,
+    "statusOnly": 0,
+    "cardClicked": {
+      "pass": 14,
+      "fail": 0,
+      "notApplicable": 0
+    },
+    "homeCardClicked": {
+      "pass": 1,
+      "fail": 0,
+      "notApplicable": 13
+    },
+    "selectionUrlPreserved": {
+      "pass": 9,
+      "fail": 0,
+      "notApplicable": 5
+    },
+    "screenLoaded": {
+      "pass": 14,
+      "fail": 0,
+      "notApplicable": 0
+    },
+    "cardValueVerified": {
+      "pass": 14,
+      "fail": 0,
+      "notApplicable": 0
+    },
+    "recomputed": {
+      "match": 14
+    },
+    "detailAnalysisFit": {
+      "pass": 9,
+      "fail": 0,
+      "notApplicable": 5
+    },
+    "controlsVerified": {
+      "pass": 14,
+      "fail": 0,
+      "notApplicable": 0
+    },
+    "controlsTried": 38,
+    "tableValuesVerified": {
+      "pass": 10,
+      "fail": 4,
+      "notApplicable": 0
+    },
+    "tableClassification": {
+      "match": 10,
+      "no-derived-row": 1,
+      "row-count-differs": 3
+    },
+    "mapHandoffVerified": {
+      "pass": 7,
+      "fail": 0,
+      "notApplicable": 7
+    },
+    "withRemainingIssues": 0,
+    "requiredFailures": 0,
+    "requiredFailureIds": []
+  },
+  "results": [
+    {
+      "elementId": "A-022",
+      "title": "정전빈도[SAIDI, SAIFI]",
+      "kind": "line",
+      "cardClicked": true,
+      "homeCardClicked": null,
+      "selectionUrlPreserved": true,
+      "screenLoaded": true,
+      "cardValueVerified": true,
+      "recomputed": {
+        "status": "match",
+        "computed": 1.25,
+        "expected": 1.25,
+        "expectedScale": null,
+        "rows": 1
+      },
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "notApplicable": [
+        "mapHandoffVerified: not a map dataset"
+      ],
+      "evidence": {
+        "finderHeadline": "1.25 회/고객",
+        "title": "정전 빈도와 지속시간",
+        "heading": "정전 빈도와 지속시간 연도별 변화",
+        "selectors": [
+          "항목=MAIFI · 회/고객",
+          "분류=EVN 그룹 전체",
+          "세부 분류=연간 고객당 순간정전 횟수",
+          "연도=2024"
+        ],
+        "url": "?view=data&element=jeongjeonbindo-saidi-saifi&country=VNM&from=explorer&measure=measure-12b77d48a0f1&year=2024&dim.category=EVN+그룹+전체&dim.detail=연간+고객당+순간정전+횟수",
+        "cardValue": "1.25 회/고객 = kpi-0:public-context-kpis: MAIFI 1.25 회/고객 · 2024 · EVN 그룹 전체 · 연간 고객당 순간정전 횟수",
+        "fit": "selectors, heading and KPI state the selection",
+        "table": {
+          "status": "match",
+          "table": "상세 데이터 · 전체 54행 · 값 있음 39행 · 결측 15행",
+          "cell": "1.25"
+        },
+        "controls": [
+          {
+            "control": "항목",
+            "from": "MAIFI · 회/고객",
+            "to": "SAIDI · 분/고객",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          },
+          {
+            "control": "분류",
+            "from": "EVN 그룹 전체",
+            "to": "EVNCPC(중부)",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          },
+          {
+            "control": "세부 분류",
+            "tested": false,
+            "reason": "no alternative option"
+          },
+          {
+            "control": "연도",
+            "from": "2024",
+            "to": "2026",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          }
+        ]
+      }
+    },
+    {
+      "elementId": "A-023",
+      "title": "발전소[위치, 용량]",
+      "kind": "grouped-bars",
+      "cardClicked": true,
+      "homeCardClicked": true,
+      "selectionUrlPreserved": null,
+      "screenLoaded": true,
+      "cardValueVerified": true,
+      "recomputed": {
+        "status": "match",
+        "computed": 41350.490000000005,
+        "expected": 41350,
+        "expectedScale": null,
+        "rows": 236,
+        "note": "sum of WRI capacity_mw"
+      },
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "notApplicable": [
+        "selectionUrlPreserved: card carries no selection",
+        "detailAnalysisFit: card carries no selection"
+      ],
+      "evidence": {
+        "finderHeadline": "41,350 MW",
+        "title": "발전소 현황",
+        "heading": "발전소 현황 지역별 현황",
+        "selectors": [
+          "용량 구간=전체",
+          "연료 유형=전체"
+        ],
+        "url": "?view=data&element=baljeonso-wici-yongryang&country=VNM&from=explorer&measure=measure-abbef01dfb86&year=2021",
+        "cardValue": "41,350 MW = kpi-3:wri-capacity: WRI 설비용량 합계 41,350 MW · 용량 있는 236기",
+        "table": {
+          "status": "match",
+          "table": "WRI GPPD(2021)와 OpenStreetMap(2026 추출)의 발전원별 시설 수와 그 시설이 기재한 설비용량 합계. 두 원천은 합치지 않습니다.",
+          "cell": "41,350 · 236기 (미기재 0기)"
+        },
+        "controls": [
+          {
+            "control": "용량 구간",
+            "from": "전체",
+            "to": "10MW 미만",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": false
+          },
+          {
+            "control": "연료 유형",
+            "from": "전체",
+            "to": "(미표기)",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": false
+          }
+        ],
+        "map": "layer drawn as primary (발전소)"
+      }
+    },
+    {
+      "elementId": "B-004",
+      "title": "CMIP6 기반 과거/미래 기후[기온(tas), 최고기온(tasmax), 최저기온(tasmin), 강수(pr), 풍속(sfcWind), 일사량(rsds), 상대습도(hurs)]",
+      "kind": "spatial-trend",
+      "cardClicked": true,
+      "homeCardClicked": null,
+      "selectionUrlPreserved": true,
+      "screenLoaded": true,
+      "cardValueVerified": true,
+      "recomputed": {
+        "status": "match",
+        "computed": 26.77,
+        "expected": 26.8,
+        "expectedScale": null,
+        "rows": 63,
+        "note": "median of 63 province values (ssp245, 2100)"
+      },
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "notApplicable": [],
+      "evidence": {
+        "finderHeadline": "26.8 °C",
+        "title": "과거·미래 기후전망(CMIP6)",
+        "heading": "",
+        "selectors": [
+          "표시 항목용어 도움말?°C 설명=연평균 기온 — °C",
+          "지역=63개 성·시 전체 분포",
+          "시나리오=SSP2-4.5"
+        ],
+        "url": "?view=data&element=cmip6-giban-gwageo-mirae-gihu-gion-tas-coegogion-tasmax-coejeogion-tasmin-gangsu-pr-pungso&country=VNM&from=explorer&year=2100&dim.regionMeasure=연평균_기온&dim.scenario=ssp245",
+        "cardValue": "26.8 °C = text-8:TR: SSP2-4.5 2015년 24.83 21.84 28.16 63 SSP2-4.5 2100년 26.77 23.98 29.71 63 SSP2-4.5 변화 2015→2100 +1.94 °C (중앙값 기준) 63 연평균 기온 (°C) · 2015~2100년 · 성·시 값의 분위 · 처음·마지막",
+        "fit": "selectors, heading and KPI state the selection",
+        "table": {
+          "status": "match",
+          "table": "연평균 기온 (°C) · 2015~2100년 · 성·시 값의 분위 · 처음·마지막 연도와 변화",
+          "cell": "26.77"
+        },
+        "controls": [
+          {
+            "control": "표시 항목용어 도움말?°C 설명",
+            "from": "연평균 기온 — °C",
+            "to": "연평균 최고기온 — °C",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          },
+          {
+            "control": "지역",
+            "from": "63개 성·시 전체 분포",
+            "to": "전국 값",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          },
+          {
+            "control": "시나리오",
+            "from": "SSP2-4.5",
+            "to": "모든 시나리오",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          }
+        ],
+        "map": "layer drawn as primary (미래기후 전망(CMIP6))"
+      }
+    },
+    {
+      "elementId": "B-021",
+      "title": "Global Data Lab GVI(Vulnerability Index)",
+      "kind": "line",
+      "cardClicked": true,
+      "homeCardClicked": null,
+      "selectionUrlPreserved": true,
+      "screenLoaded": true,
+      "cardValueVerified": true,
+      "recomputed": {
+        "status": "match",
+        "computed": 37.1,
+        "expected": 37.1,
+        "expectedScale": null,
+        "rows": 1
+      },
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "notApplicable": [],
+      "evidence": {
+        "finderHeadline": "37.1 지수",
+        "title": "취약성지수",
+        "heading": "취약성지수 항목별 현황",
+        "selectors": [
+          "항목=GVI 취약성 지수 · 지수",
+          "세부 분류=국가",
+          "분류=전체",
+          "연도=2023"
+        ],
+        "url": "?view=data&element=global-data-lab-gvi-vulnerability-index&country=VNM&from=explorer&measure=measure-ab1a3ae58df4&year=2023&dim.detail=국가",
+        "cardValue": "37.1 지수 = kpi-0:public-context-kpis: GVI 취약성 지수 37.1 지수 · 2023 · 국가",
+        "fit": "selectors, heading and KPI state the selection",
+        "table": {
+          "status": "no-derived-row",
+          "reason": "a cell within 5% (37.8) is another row (other year/region), not the card's 37.1; the card's figure is a derived value"
+        },
+        "controls": [
+          {
+            "control": "항목",
+            "from": "GVI 취약성 지수 · 지수",
+            "to": "GVI 7개 사회경제 차원 하위지수 · 지수",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          },
+          {
+            "control": "세부 분류",
+            "from": "국가",
+            "to": "지역(6권역)",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          },
+          {
+            "control": "분류",
+            "from": "전체",
+            "to": "Central Highlands",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          },
+          {
+            "control": "연도",
+            "from": "2023",
+            "to": "2022",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          }
+        ],
+        "map": "layer drawn as primary (지역 취약성)"
+      }
+    },
+    {
+      "elementId": "B-026",
+      "title": "유향(flow direction)",
+      "kind": "spatial",
+      "cardClicked": true,
+      "homeCardClicked": null,
+      "selectionUrlPreserved": true,
+      "screenLoaded": true,
+      "cardValueVerified": true,
+      "recomputed": {
+        "status": "match",
+        "computed": 23.28,
+        "expected": 23.3,
+        "expectedScale": null,
+        "rows": 63,
+        "note": "max of 우세_유향_비율 across province entities"
+      },
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "notApplicable": [
+        "mapHandoffVerified: not a map dataset"
+      ],
+      "evidence": {
+        "finderHeadline": "23.3 %",
+        "title": "유향(flow direction)",
+        "heading": "",
+        "selectors": [
+          "표시 항목=우세 유향 비율 — %",
+          "지역=63개 성·시 전체 분포"
+        ],
+        "url": "?view=data&element=yuhyang-flow-direction&country=VNM&from=explorer&dim.regionMeasure=우세_유향_비율",
+        "cardValue": "23.3 % = text-13:TR: 1 Vĩnh Phúc 23.3 2 Hậu Giang 22.4 3 Bình Định 22.4 4 Bắc Ninh 22.1 5 Bình Phước 22 6 Quảng Ninh 21.4 7 Bình Thuận 21.3 8 Bà Rịa-Vũng Tàu 21.1 9 Bắc Giang 21 10 ",
+        "fit": "selectors, heading and KPI state the selection",
+        "table": {
+          "status": "match",
+          "table": "우세 유향 비율 (%) · 값이 큰 순서",
+          "cell": "23.3"
+        },
+        "controls": [
+          {
+            "control": "표시 항목",
+            "from": "우세 유향 비율 — %",
+            "to": "동 비율(E) — %",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          },
+          {
+            "control": "지역",
+            "from": "63개 성·시 전체 분포",
+            "to": "전국 값",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          }
+        ]
+      }
+    },
+    {
+      "elementId": "B-036",
+      "title": "토지이용 변화율",
+      "kind": "bars",
+      "cardClicked": true,
+      "homeCardClicked": null,
+      "selectionUrlPreserved": true,
+      "screenLoaded": true,
+      "cardValueVerified": true,
+      "recomputed": {
+        "status": "match",
+        "computed": 4.9754,
+        "expected": 4.98,
+        "expectedScale": null,
+        "rows": 14,
+        "note": "largest part at the card's year"
+      },
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "notApplicable": [
+        "mapHandoffVerified: not a map dataset"
+      ],
+      "evidence": {
+        "finderHeadline": "4.98 %/yr",
+        "title": "토지이용 변화율",
+        "heading": "선택연도 토지 유형별 변화율 비교",
+        "selectors": [
+          "항목=토지이용 변화율 · %/yr",
+          "세부 분류=전체",
+          "연도=2024"
+        ],
+        "url": "?view=data&element=tojiiyong-byeonhwayul&country=VNM&from=explorer&measure=measure-9c9a9d42a47b&year=2024",
+        "cardValue": "4.98 %/yr = text-1:P: 단위: %/yr 0을 기준으로 왼쪽은 음수, 오른쪽은 양수입니다. 막대 길이는 0에서 떨어진 크기입니다. 농지 1.789 %/yr 가경지 0.6826 %/yr 국토면적 0.0027 %/yr 경작지 1.7846 %/yr 산림지 1.3451 %/yr 내수면 3.5112 %/yr 육지면적 -",
+        "fit": "selectors, heading and KPI state the selection",
+        "table": {
+          "status": "match",
+          "table": "상세 데이터 · 전체 48행 · 값 있음 48행 · 결측 0행",
+          "cell": "4.9754"
+        },
+        "controls": [
+          {
+            "control": "항목",
+            "from": "토지이용 변화율 · %/yr",
+            "to": "토지피복 변화율 · %/yr",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          },
+          {
+            "control": "세부 분류",
+            "from": "전체",
+            "to": "가경지",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          },
+          {
+            "control": "연도",
+            "from": "2024",
+            "to": "2020",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": false
+          }
+        ]
+      }
+    },
+    {
+      "elementId": "B-040",
+      "title": "지열 잠재량",
+      "kind": "spatial",
+      "cardClicked": true,
+      "homeCardClicked": null,
+      "selectionUrlPreserved": true,
+      "screenLoaded": true,
+      "cardValueVerified": true,
+      "recomputed": {
+        "status": "match",
+        "computed": 69.49,
+        "expected": 69.5,
+        "expectedScale": null,
+        "rows": 63,
+        "note": "max of 심도_1km_지온_평균 across province entities"
+      },
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "notApplicable": [],
+      "evidence": {
+        "finderHeadline": "69.5 °C",
+        "title": "지열 잠재량",
+        "heading": "지열 잠재량 지역별 현황",
+        "selectors": [
+          "표시 항목용어 도움말?°C 설명=심도 1km 지온(평균) — °C",
+          "지역=63개 성·시 전체 분포"
+        ],
+        "url": "?view=data&element=jiyeol-jamjaeryang&country=VNM&from=explorer&dim.regionMeasure=심도_1km_지온_평균",
+        "cardValue": "69.5 °C = text-13:TR: 1 Cà Mau 69.49 2 Bạc Liêu 68.09 3 Sóc Trăng 65.05 4 Trà Vinh 62.85 5 Hậu Giang 62.08 6 Vĩnh Long 60.71 7 Kiên Giang 60.06 8 Cần Thơ 59.32 9 Bến Tre 59.13 10 Bà ",
+        "fit": "selectors, heading and KPI state the selection",
+        "table": {
+          "status": "match",
+          "table": "심도 1km 지온(평균) (°C) · 값이 큰 순서",
+          "cell": "69.49"
+        },
+        "controls": [
+          {
+            "control": "표시 항목용어 도움말?°C 설명",
+            "from": "심도 1km 지온(평균) — °C",
+            "to": "심도 2km 지온(평균) — °C",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": false
+          },
+          {
+            "control": "지역",
+            "from": "63개 성·시 전체 분포",
+            "to": "",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          }
+        ],
+        "map": "layer drawn as primary (지열 자원(심도별 지온))"
+      }
+    },
+    {
+      "elementId": "D-012",
+      "title": "경쟁국 민간기업의 개도국 진출 현황[기업명, 국적, 진출 대상국, 기술 분야(RE/효율/폐기물), 프로젝트명, 용량, 투자액, 진출 형태(EPC/투자/라이선스)]",
+      "kind": "bars",
+      "cardClicked": true,
+      "homeCardClicked": null,
+      "selectionUrlPreserved": null,
+      "screenLoaded": true,
+      "cardValueVerified": true,
+      "recomputed": {
+        "status": "match",
+        "computed": 22,
+        "expected": 22,
+        "expectedScale": null,
+        "rows": 22,
+        "note": "entity rows"
+      },
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "notApplicable": [
+        "selectionUrlPreserved: card carries no selection",
+        "detailAnalysisFit: card carries no selection",
+        "mapHandoffVerified: not a map dataset"
+      ],
+      "evidence": {
+        "finderHeadline": "22곳",
+        "title": "경쟁국 민간기업의 개도국 진출 현황",
+        "heading": "경쟁국 민간기업의 개도국 진출 현황 항목별 현황",
+        "selectors": [
+          "연도=전체",
+          "기술분야·진출국=전체"
+        ],
+        "url": "?view=data&element=gyeongjaenggug-mingangieobyi-gaedogug-jincul-hyeonhwang-gieobmyeong-gugjeog-jincul-daesang&country=VNM&from=explorer",
+        "cardValue": "22곳 = kpi-3:record-count: 총 사업 수 22 건",
+        "table": {
+          "status": "match",
+          "table": "상세 데이터 · 목록 22건",
+          "cell": "row count 22"
+        },
+        "controls": [
+          {
+            "control": "연도",
+            "from": "전체",
+            "to": "2021년",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": false
+          },
+          {
+            "control": "기술분야·진출국",
+            "from": "전체",
+            "to": "효율(모듈)",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": false
+          }
+        ]
+      }
+    },
+    {
+      "elementId": "D-018",
+      "title": "Adaptation Fund 프로젝트[프로젝트명, 국가, 실행기관(NIE/MIE 구분, 기관명), 승인 금액, 분야(수자원/농업/재난관리/해안/생태계), 상태(Under Implementation/Completed), 기간, 수혜자 수]",
+      "kind": "bars",
+      "cardClicked": true,
+      "homeCardClicked": null,
+      "selectionUrlPreserved": true,
+      "screenLoaded": true,
+      "cardValueVerified": true,
+      "recomputed": {
+        "status": "match",
+        "computed": 11345292,
+        "expected": 1135,
+        "expectedScale": 10000,
+        "rows": 1,
+        "note": "sum of the rows at the card's year"
+      },
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "notApplicable": [],
+      "evidence": {
+        "finderHeadline": "1,135만 USD",
+        "title": "적응기금 사업",
+        "heading": "적응기금 사업 규모와 분포",
+        "selectors": [
+          "항목=Adaptation Fund 프로젝트 · USD",
+          "분류=전체",
+          "세부 분류=전체",
+          "연도=전체",
+          "분야·기금=전체"
+        ],
+        "url": "?view=data&element=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye&country=VNM&from=explorer&measure=measure-2aa34c218045",
+        "cardValue": "1,135만 USD = text-2:STRONG: Adaptation Fund 프로젝트 · 베트남 단독사업 승인액 합계 1,135만 USD",
+        "fit": "selectors, heading and KPI state the selection",
+        "table": {
+          "status": "match",
+          "table": "상세 데이터 · 전체 8행 · 값 있음 4행 · 결측 0행 · 목록 4건",
+          "cell": "11,345,292"
+        },
+        "controls": [
+          {
+            "control": "항목",
+            "from": "Adaptation Fund 프로젝트 · USD",
+            "to": "Adaptation Fund 프로젝트 · 건",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          },
+          {
+            "control": "분류",
+            "from": "전체",
+            "to": "베트남 단독사업 승인액 합계",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          },
+          {
+            "control": "세부 분류",
+            "from": "전체",
+            "to": "전 사업 승인액 단순합",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          },
+          {
+            "control": "연도",
+            "from": "전체",
+            "to": "2023년",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": false
+          },
+          {
+            "control": "분야·기금",
+            "from": "전체",
+            "to": "Multi-sector",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": false
+          }
+        ],
+        "map": "layer drawn as primary (적응기금 사업)"
+      }
+    },
+    {
+      "elementId": "E-004",
+      "title": "국제기구 현지사무소 담당자[기관명(UNDP/UNEP/UNIDO/FAO/WB/ADB/GIZ/JICA/KOICA 등), 소재국, 도시, 사무소 주소, 기후·에너지 담당자명, 직함, 이메일]",
+      "kind": "bars",
+      "cardClicked": true,
+      "homeCardClicked": null,
+      "selectionUrlPreserved": null,
+      "screenLoaded": true,
+      "cardValueVerified": true,
+      "recomputed": {
+        "status": "match",
+        "computed": 17,
+        "expected": 17,
+        "expectedScale": null,
+        "rows": 19,
+        "note": "entity rows (2 excluded as the rule states)"
+      },
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "notApplicable": [
+        "selectionUrlPreserved: card carries no selection",
+        "detailAnalysisFit: card carries no selection"
+      ],
+      "evidence": {
+        "finderHeadline": "17곳",
+        "title": "국제기구 현지사무소",
+        "heading": "국제기구 현지사무소 기관별 현황",
+        "selectors": [
+          "도시=전체",
+          "자료 상태=전체",
+          "연락 유형=전체",
+          "기관 유형=전체",
+          "상태=전체"
+        ],
+        "url": "?view=data&element=gugjegigu-hyeonjisamuso-damdangja-gigwanmyeong-undp-unep-unido-fao-wb-adb-giz-jica-koica-d&country=VNM&from=explorer",
+        "cardValue": "17곳 = kpi-1:HEADER: 기관·연락망 기관 디렉터리 · 현지 사무소 17곳",
+        "table": {
+          "status": "row-count-differs",
+          "reason": "no table states or holds 17 rows (19 rows)",
+          "note": "the detail lists the rows it counts differently (e.g. documents grouped from attribute rows); the count itself is verified on screen"
+        },
+        "controls": [
+          {
+            "control": "도시",
+            "from": "전체",
+            "to": "Hanoi",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          },
+          {
+            "control": "자료 상태",
+            "from": "전체",
+            "to": "보완(2026-08-14)",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          },
+          {
+            "control": "연락 유형",
+            "from": "전체",
+            "to": "기관장·대표",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          },
+          {
+            "control": "기관 유형",
+            "from": "전체",
+            "to": "국제기구(기타)",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          },
+          {
+            "control": "상태",
+            "from": "전체",
+            "to": "미설치",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          }
+        ],
+        "map": "layer drawn as primary (국제기구 현지사무소)"
+      }
+    },
+    {
+      "elementId": "E-012",
+      "title": "직군별 종사자 수; 직군별 임금",
+      "kind": "level",
+      "cardClicked": true,
+      "homeCardClicked": null,
+      "selectionUrlPreserved": true,
+      "screenLoaded": true,
+      "cardValueVerified": true,
+      "recomputed": {
+        "status": "match",
+        "computed": 51860.3,
+        "expected": 51860,
+        "expectedScale": 1000,
+        "rows": 1
+      },
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "notApplicable": [
+        "mapHandoffVerified: not a map dataset"
+      ],
+      "evidence": {
+        "finderHeadline": "51,860 천명",
+        "title": "기술인력과 임금",
+        "heading": "",
+        "selectors": [
+          "E-012 항목 선택=종사자 수",
+          "E-012 성별 선택=전체",
+          "E-012 기준연도 선택=2024년"
+        ],
+        "url": "?view=data&element=jiggunbyeol-jongsaja-su-jiggunbyeol-imgeum&country=VNM&from=explorer&measure=occupation_employment_count&sex=total&year=2024",
+        "cardValue": "51,860 천명 = kpi-1:e012-kpis: 총 취업자 수 51,860.3 천명 2024년 · 천명 고용률 71.96 % 2024년 · % 최신 월평균 임금 7,700,000 VND 2024년 · VND 기준연도 2024년 화면에 포함된 최신 원자료",
+        "fit": "selectors, heading and KPI state the selection",
+        "table": {
+          "status": "match",
+          "table": "상세 데이터 · 전체 92행 · 값 있음 89행 · 결측 3행",
+          "cell": "51,860.3"
+        },
+        "controls": [
+          {
+            "control": "E-012 항목 선택",
+            "from": "종사자 수",
+            "to": "고용 구성비",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": false
+          },
+          {
+            "control": "E-012 성별 선택",
+            "from": "전체",
+            "to": "남성 · 원자료 없음",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          },
+          {
+            "control": "E-012 기준연도 선택",
+            "from": "2024년",
+            "to": "2023년",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          }
+        ]
+      }
+    },
+    {
+      "elementId": "E-017",
+      "title": "한국-경쟁국 기후기술 비교우위",
+      "kind": "bars",
+      "cardClicked": true,
+      "homeCardClicked": null,
+      "selectionUrlPreserved": true,
+      "screenLoaded": true,
+      "cardValueVerified": true,
+      "recomputed": {
+        "status": "match",
+        "computed": 4,
+        "expected": 4,
+        "expectedScale": null,
+        "rows": 5,
+        "note": "the KOR row"
+      },
+      "detailAnalysisFit": true,
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "notApplicable": [
+        "mapHandoffVerified: not a map dataset"
+      ],
+      "evidence": {
+        "finderHeadline": "4 위",
+        "title": "한국 기후기술 비교우위",
+        "heading": "한국 기후기술 비교우위 항목별 현황",
+        "selectors": [
+          "항목=기후기술 수준 순위 · 위"
+        ],
+        "url": "?view=data&element=hangug-gyeongjaenggug-gihugisul-bigyouwi&country=VNM&from=explorer&measure=measure-21b0eed49d22&year=2020",
+        "cardValue": "4 위 = text-4:TR: 중국 · 기후기술 수준 순위 5 위 2020 유럽연합 · 기후기술 수준 순위 2 위 2020 일본 · 기후기술 수준 순위 3 위 2020 한국 · 기후기술 수준 순위 4 위 2020 미국 · 기후기술 수준 순위 1 위 2020 항목 확인 결과 단위 기준연도·대상·근거 항목별 확인 결과와",
+        "fit": "selectors, heading and KPI state the selection",
+        "table": {
+          "status": "match",
+          "table": "항목별 확인 결과와 기준연도 · 5건",
+          "cell": "4"
+        },
+        "controls": [
+          {
+            "control": "항목",
+            "from": "기후기술 수준 순위 · 위",
+            "to": "기후기술 수준(최고국 대비) · %",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          }
+        ]
+      }
+    },
+    {
+      "elementId": "E-019",
+      "title": "한국 기관 사무소[기관명(KOTRA무역관/KOICA사무소/에너지공단/KEPCO/한수원 등), 소재국, 도시, 주소, 기후·에너지 담당자 유무, 연락처, 담당 업무 범위]",
+      "kind": "facts",
+      "cardClicked": true,
+      "homeCardClicked": null,
+      "selectionUrlPreserved": null,
+      "screenLoaded": true,
+      "cardValueVerified": true,
+      "recomputed": {
+        "status": "match",
+        "computed": 9,
+        "expected": 9,
+        "note": "row base recomputed; the installed/identity split follows the stated rule and is checked on screen"
+      },
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": true,
+      "remainingIssue": [],
+      "notApplicable": [
+        "selectionUrlPreserved: card carries no selection",
+        "detailAnalysisFit: card carries no selection"
+      ],
+      "evidence": {
+        "finderHeadline": "6곳",
+        "title": "한국 기관 현지사무소",
+        "heading": "한국 기관 현지사무소 기관별 현황",
+        "selectors": [
+          "도시=전체"
+        ],
+        "url": "?view=data&element=hangug-gigwan-samuso-gigwanmyeong-kotramuyeoggwan-koicasamuso-eneojigongdan-kepco-hansuweo&country=VNM&from=explorer",
+        "cardValue": "6곳 = kpi-1:HEADER: 기관·연락망 기관 디렉터리 · 현지 사무소 6곳",
+        "table": {
+          "status": "row-count-differs",
+          "reason": "no table states or holds 6 rows (9 rows)",
+          "note": "the detail lists the rows it counts differently (e.g. documents grouped from attribute rows); the count itself is verified on screen"
+        },
+        "controls": [
+          {
+            "control": "도시",
+            "from": "전체",
+            "to": "Hanoi",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          }
+        ],
+        "map": "layer drawn as primary (한국 기관 사무소)"
+      }
+    },
+    {
+      "elementId": "E-020",
+      "title": "한국 공공·민간 지원체계[지원기관명(NIGT/GTC/KOTRA/KIAT/에너지공단 등), 지원 프로그램명, 지원 유형(실증/FS/기술이전/금융), 지원 대상(기업/연구기관), 예산 규모, 신청 시기, 원본 링크]",
+      "kind": "facts",
+      "cardClicked": true,
+      "homeCardClicked": null,
+      "selectionUrlPreserved": null,
+      "screenLoaded": true,
+      "cardValueVerified": true,
+      "recomputed": {
+        "status": "match",
+        "computed": 7,
+        "expected": 7,
+        "note": "row base recomputed; the installed/identity split follows the stated rule and is checked on screen"
+      },
+      "detailAnalysisFit": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
+      "mapHandoffVerified": null,
+      "remainingIssue": [],
+      "notApplicable": [
+        "selectionUrlPreserved: card carries no selection",
+        "detailAnalysisFit: card carries no selection",
+        "mapHandoffVerified: not a map dataset"
+      ],
+      "evidence": {
+        "finderHeadline": "3개",
+        "title": "한국의 공공·민간 지원제도",
+        "heading": "한국의 공공·민간 지원제도 규모와 분포",
+        "selectors": [
+          "지원 유형=전체",
+          "연도=전체",
+          "지원유형·지원기관=전체"
+        ],
+        "url": "?view=data&element=hangug-gonggong-mingan-jiweoncegye-jiweongigwanmyeong-nigt-gtc-kotra-kiat-eneojigongdan-de&country=VNM&from=explorer",
+        "cardValue": "3개 = kpi-3:identity-count: 지원제도 수 3 개",
+        "table": {
+          "status": "row-count-differs",
+          "reason": "no table states or holds 3 rows (7 rows)",
+          "note": "the detail lists the rows it counts differently (e.g. documents grouped from attribute rows); the count itself is verified on screen"
+        },
+        "controls": [
+          {
+            "control": "지원 유형",
+            "from": "전체",
+            "to": "FS·기초조사",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          },
+          {
+            "control": "지원유형·지원기관",
+            "from": "전체",
+            "to": "금융·투자",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": false
+          }
+        ]
+      }
+    }
+  ]
+}

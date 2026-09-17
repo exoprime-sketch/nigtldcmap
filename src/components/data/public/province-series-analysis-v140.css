@@ -1,0 +1,211 @@
+/* Province series analysis (V140). */
+.psa140 {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+
+.psa140__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 10px 14px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: #f1f6f4;
+}
+
+.psa140__controls label {
+  display: grid;
+  gap: 5px;
+  color: #52645f;
+  font-size: 0.78rem;
+  font-weight: 750;
+  min-width: 0;
+}
+
+.psa140__controls select {
+  background: #fff;
+  border: 1px solid #b9cbc6;
+  border-radius: 9px;
+  color: #173b34;
+  font-size: 0.9rem;
+  max-width: min(340px, 70vw);
+  min-height: 44px;
+  padding: 7px 10px;
+}
+
+.psa140__table-toggle {
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid #b9cbc6;
+  border-radius: 9px;
+  background: #fff;
+  color: #173b34;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.psa140__table-toggle[aria-pressed="true"] {
+  background: #173b34;
+  border-color: #173b34;
+  color: #fff;
+}
+
+.psa140__controls select:focus-visible,
+.psa140__table-toggle:focus-visible {
+  outline: 3px solid #f0a54a;
+  outline-offset: 2px;
+}
+
+.psa140__kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.psa140__kpis article {
+  border: 1px solid #dbe7e3;
+  border-radius: 16px;
+  background: #f9fcfb;
+  min-width: 0;
+  padding: 16px;
+}
+
+.psa140__kpis span,
+.psa140__kpis small {
+  display: block;
+  color: #60706c;
+}
+
+.psa140__kpis strong {
+  display: block;
+  color: #123b34;
+  font-size: 1.6rem;
+  margin: 8px 0 5px;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.psa140__kpis small {
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.psa140__panel {
+  background: #fff;
+  border: 1px solid #dbe7e3;
+  border-radius: 18px;
+  min-width: 0;
+  padding: 22px;
+}
+
+.psa140__heading {
+  margin-bottom: 14px;
+}
+
+.psa140__heading span {
+  color: #0f766e;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.psa140__heading h3 {
+  color: #173b34;
+  margin: 4px 0 0;
+  font-size: 1.05rem;
+}
+
+.psa140__bars {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 7px;
+}
+
+.psa140__bars li {
+  display: grid;
+  grid-template-columns: minmax(120px, 28%) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.86rem;
+  color: #173b34;
+}
+
+.psa140__bars li.is-selected {
+  font-weight: 800;
+}
+
+.psa140__bars li span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.psa140__bars li i {
+  display: block;
+  height: 12px;
+  border-radius: 4px;
+  background: #eef2f1;
+  overflow: hidden;
+}
+
+.psa140__bars li i b {
+  display: block;
+  height: 100%;
+  background: #0f766e;
+  border-radius: 4px;
+}
+
+.psa140__bars li.is-selected i b {
+  background: #c2410c;
+}
+
+.psa140__bars li strong {
+  font-variant-numeric: tabular-nums;
+}
+
+.psa140__notice {
+  margin: 12px 0 0;
+  color: #60706c;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.psa140__table-wrap {
+  overflow-x: auto;
+}
+
+.psa140__table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+}
+
+.psa140__table-wrap caption {
+  text-align: left;
+  color: #60706c;
+  padding-bottom: 8px;
+}
+
+.psa140__table-wrap th,
+.psa140__table-wrap td {
+  padding: 7px 10px;
+  border-bottom: 1px solid #e3ebe8;
+  text-align: left;
+}
+
+.psa140__table-wrap td {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 640px) {
+  .psa140__bars li {
+    grid-template-columns: minmax(90px, 36%) minmax(0, 1fr) auto;
+  }
+}

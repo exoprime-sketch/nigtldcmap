@@ -1,0 +1,107 @@
+{
+  "schema": "nigt-deployment-storage-ledger-1",
+  "repository": "exoprime-sketch/nigtldcmap",
+  "unit": "GB = 1024 MB of retained static output; the dashboard figure is Vercel's own",
+  "entries": [
+    {
+      "recordedAt": "2026-09-15T23:10:30.748Z",
+      "note": "baseline before retention change; default 30-day policy; sourcemaps still shipped",
+      "policy": {
+        "previewDays": 30,
+        "productionDays": 30,
+        "staticMbPerDeployment": 12
+      },
+      "deployments": {
+        "total": 67,
+        "byEnvironment": {
+          "Preview": 55,
+          "Production": 12
+        },
+        "oldest": "2026-08-28T06:26:21Z",
+        "newest": "2026-09-15T07:44:38Z",
+        "last7Days": 17,
+        "last30Days": 67,
+        "shaNotLocal": 0
+      },
+      "outputMbPerDeployment": {
+        "latest": 715.9980268478394,
+        "min": 156.67844772338867,
+        "max": 715.9980268478394
+      },
+      "estimatedRetainedGb": {
+        "allRecorded": 17.32480359915644,
+        "underPolicy": 17.32480359915644,
+        "underPolicyCount": 67,
+        "proListPriceUsdPerMonth": 1.732480359915644
+      },
+      "dashboardDeploymentStorageGb": null,
+      "perDay": [
+        {
+          "day": "2026-08-28",
+          "deployments": 1,
+          "outputMb": 157
+        },
+        {
+          "day": "2026-08-31",
+          "deployments": 5,
+          "outputMb": 783
+        },
+        {
+          "day": "2026-09-01",
+          "deployments": 8,
+          "outputMb": 1255
+        },
+        {
+          "day": "2026-09-02",
+          "deployments": 5,
+          "outputMb": 785
+        },
+        {
+          "day": "2026-09-03",
+          "deployments": 12,
+          "outputMb": 1883
+        },
+        {
+          "day": "2026-09-04",
+          "deployments": 4,
+          "outputMb": 628
+        },
+        {
+          "day": "2026-09-06",
+          "deployments": 2,
+          "outputMb": 314
+        },
+        {
+          "day": "2026-09-07",
+          "deployments": 2,
+          "outputMb": 314
+        },
+        {
+          "day": "2026-09-08",
+          "deployments": 11,
+          "outputMb": 1726
+        },
+        {
+          "day": "2026-09-09",
+          "deployments": 4,
+          "outputMb": 628
+        },
+        {
+          "day": "2026-09-13",
+          "deployments": 1,
+          "outputMb": 712
+        },
+        {
+          "day": "2026-09-14",
+          "deployments": 8,
+          "outputMb": 5694
+        },
+        {
+          "day": "2026-09-15",
+          "deployments": 4,
+          "outputMb": 2864
+        }
+      ]
+    }
+  ]
+}

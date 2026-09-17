@@ -1,7 +1,9 @@
-import { mkdirSync, writeFileSync } from "node:fs";
+import { mkdirSync } from "node:fs";
+
 import { resolve } from "node:path";
 
 import { PROJECT_ROOT } from "../v125/audit-utils.mjs";
+import { writeReportFileV138 } from "../v125/write-report.mjs";
 
 export const V136_REPORT_ROOT = resolve(PROJECT_ROOT, "reports/v136");
 export const V136_SCREENSHOT_ROOT = resolve(V136_REPORT_ROOT, "screenshots");
@@ -12,11 +14,9 @@ export function normalizeTextV136(value) {
 
 export function writeJsonV136(fileName, value) {
   mkdirSync(V136_REPORT_ROOT, { recursive: true });
-  writeFileSync(
+  writeReportFileV138(
     resolve(V136_REPORT_ROOT, fileName),
-    `${JSON.stringify(value, null, 2)}\n`,
-    "utf8"
-  );
+    `${JSON.stringify(value, null, 2)}\n`);
 }
 
 export function writeCsvV136(fileName, header, rows) {
@@ -28,11 +28,9 @@ export function writeCsvV136(fileName, header, rows) {
   const body = rows
     .map((row) => header.map((key) => escape(row[key])).join(","))
     .join("\n");
-  writeFileSync(
+  writeReportFileV138(
     resolve(V136_REPORT_ROOT, fileName),
-    `${header.join(",")}\n${body}\n`,
-    "utf8"
-  );
+    `${header.join(",")}\n${body}\n`);
 }
 
 export function finishAuditV136(audit, fileName, extra = {}) {

@@ -411,16 +411,33 @@ const mapFeatureCount = mapLayers.reduce(
   0
 );
 // The integrity property is that the index declares what the layers hold, that
-// all twelve are active, and that none of them invented a geometry. The absolute
-// feature count is a property of the delivery: publishing every authorised
-// carbon-credit project took C-025 from 18 features to 262, and pinning the old
-// total would have failed a correct publication. A floor still catches a layer
-// silently losing its features.
+// every layer it lists is active, that each of the 43 map targets whose build
+// reported a layer is present, and that none of them invented a geometry. The
+// absolute counts are properties of the delivery: publishing every authorised
+// carbon-credit project took C-025 from 18 features to 262, and V138 connected
+// thirty more targets, so pinning a layer total would fail a correct
+// publication. A floor still catches a layer silently losing its features, and
+// the target contract catches a layer silently dropping out.
 const MAP_FEATURE_FLOOR = 2900;
+const mapTargets = readJson(
+  resolve(PROJECT_ROOT, "src/data/visualization/publicMapTargetsV138.json")
+).targets;
+const mapTargetBuild = existsSync(resolve(PROJECT_ROOT, "reports/v138/map-targets-build-v138.json"))
+  ? readJson(resolve(PROJECT_ROOT, "reports/v138/map-targets-build-v138.json"))
+  : null;
+const connectedTargetIds = (mapTargetBuild?.targets || [])
+  .filter((row) => row.status !== "not-connected")
+  .map((row) => row.elementId);
+const missingTargetLayers = connectedTargetIds.filter(
+  (elementId) => !mapLayers.some((layer) => layer.elementId === elementId)
+);
+const activeLayerCount = mapLayers.filter((layer) => layer?.active === true).length;
 check(
   "MAP_INTEGRITY",
-  mapIndex?.activeMapLayerCount === 12 &&
-    mapLayers.length === 12 &&
+  mapIndex?.activeMapLayerCount === activeLayerCount &&
+    activeLayerCount > 0 &&
+    mapLayers.length <= mapTargets.length &&
+    missingTargetLayers.length === 0 &&
     Number.isFinite(Number(mapIndex?.mapFeatureCount)) &&
     mapIndex?.mapFeatureCount === mapFeatureCount &&
     mapFeatureCount >= MAP_FEATURE_FLOOR &&
@@ -430,12 +447,14 @@ check(
   {
     declaredLayers: mapIndex?.activeMapLayerCount ?? null,
     layers: mapLayers.length,
+    connectedTargets: connectedTargetIds.length,
+    missingTargetLayers,
     declaredFeatures: mapIndex?.mapFeatureCount ?? null,
     features: mapFeatureCount,
     declaredMatchesActual: mapIndex?.mapFeatureCount === mapFeatureCount,
   },
   {
-    layers: 12,
+    layers: `declared count, <= ${mapTargets.length} targets, every connected target present`,
     features: `>= ${MAP_FEATURE_FLOOR}`,
     declaredMatchesActual: true,
     fakeGeometry: 0,

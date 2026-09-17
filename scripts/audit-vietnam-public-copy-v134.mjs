@@ -127,24 +127,49 @@ const genericHits = [];
 const titleMismatches = [];
 const repeatedRuntimeHeadings = [];
 const brokenAssets = [];
+const runtimeErrors = [];
+let currentRoute = "shell";
 let inspectedRoutes = 0;
-try {
-  if (!existsSync(resolve(PROJECT_ROOT, "build/index.html"))) {
-    throw new Error("production build missing; run npm run build before public copy audit");
-  }
-  server = await startStaticBuildServer(resolve(PROJECT_ROOT, "build"));
+
+// Same isolation the public-text sweep has had since CI #35: one Chromium
+// process per detail screen. PR #14's gate (job 104283283133) saw this
+// sweep's single renderer stop answering Runtime.evaluate at B-007 after the
+// V138 province-year climate screens (B-003~B-007, a 447 MB decoded shard
+// each) had been visited in turn, and the next eight Page.navigate calls
+// timed out while it recovered. A fresh process per route bounds what the
+// renderer retains; timeouts, routes and checks are unchanged, and console
+// and network errors are kept across processes.
+async function closeBrowser() {
+  if (!browser) return;
+  runtimeErrors.push(...(browser.runtimeErrors || []).map((error) => ({ ...error, route: currentRoute })));
+  await browser.close();
+  browser = null;
+}
+
+async function openBrowser() {
+  await closeBrowser();
   browser = await launchHeadlessBrowser();
   await setViewport(browser.cdp, 1440, 1000);
   await browser.cdp.send("Network.enable");
   browser.cdp.on("Network.responseReceived", ({ response }) => {
     if (response?.url?.startsWith(server.origin) && Number(response.status) >= 400) {
-      brokenAssets.push({ url: response.url, status: response.status });
+      brokenAssets.push({ route: currentRoute, url: response.url, status: response.status });
     }
   });
+}
+
+try {
+  if (!existsSync(resolve(PROJECT_ROOT, "build/index.html"))) {
+    throw new Error("production build missing; run npm run build before public copy audit");
+  }
+  server = await startStaticBuildServer(resolve(PROJECT_ROOT, "build"));
   for (const element of catalog) {
     const elementId = String(element.elementId || "");
     const expected = headingById.get(elementId);
     try {
+      currentRoute = elementId;
+      const started = Date.now();
+      await openBrowser();
       await navigate(browser.cdp, detailUrlV134(server.url, elementId));
       await waitForValue(
         browser.cdp,
@@ -179,14 +204,15 @@ try {
       if (snapshot?.title && snapshot.title === snapshot.pageTitle) {
         repeatedRuntimeHeadings.push({ elementId, title: snapshot.title });
       }
+      console.log(JSON.stringify({ type: "progress", audit: audit.name, route: elementId, elapsedMs: Date.now() - started }));
     } catch (error) {
       routeFailures.push({ elementId, error: error instanceof Error ? error.message : String(error) });
     }
   }
 } catch (error) {
-  runtimeFailure = error instanceof Error ? error.message : String(error);
+  runtimeFailure = `${currentRoute}: ${error instanceof Error ? error.message : String(error)}`;
 } finally {
-  if (browser) await browser.close();
+  await closeBrowser();
   if (server) await server.close();
 }
 
@@ -195,7 +221,7 @@ audit.check("GENERIC_ANALYSIS_COPY_COUNT", genericHits.length === 0, genericHits
 audit.check("DATA_SPECIFIC_TITLE_MATCH", titleMismatches.length === 0, titleMismatches, []);
 audit.check("PAGE_AND_ANALYSIS_HEADING_DISTINCT", repeatedRuntimeHeadings.length === 0, repeatedRuntimeHeadings, []);
 audit.check("BROKEN_ASSET", brokenAssets.length === 0, brokenAssets, []);
-audit.check("CONSOLE_ERROR", (browser?.runtimeErrors || []).length === 0, browser?.runtimeErrors || [], []);
+audit.check("CONSOLE_ERROR", runtimeErrors.length === 0, runtimeErrors, []);
 
 finishAuditV134(audit, "public-copy-audit-v134.json", {
   headingCount: headings.length,

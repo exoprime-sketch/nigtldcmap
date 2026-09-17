@@ -1,0 +1,1028 @@
+{
+  "schema": "nigt-ignore-command-verification-1",
+  "generatedAt": "2026-09-15T23:43:58.425Z",
+  "ref": "HEAD",
+  "headSha": "a2a31523e1f4944e0135bb8e6eec23152bf0d563",
+  "ignoreCommand": "[ \"$VERCEL_ENV\" = \"preview\" ] || exit 1; [ -n \"$VERCEL_GIT_PREVIOUS_SHA\" ] || exit 1; git diff --quiet \"$VERCEL_GIT_PREVIOUS_SHA\" HEAD -- public src package.json package-lock.json tsconfig.json .eslintrc.json .gitattributes vercel.json '.env*'",
+  "buildInputs": [
+    "public/",
+    "src/",
+    "package.json",
+    "package-lock.json",
+    "tsconfig.json",
+    ".eslintrc.json",
+    ".gitattributes",
+    "vercel.json",
+    ".env"
+  ],
+  "semantics": "exit 0 = skip only an unchanged Preview since its last successful deployment. Production, missing baseline and unknown environment always build.",
+  "commitsReplayed": 40,
+  "previewSkipped": 9,
+  "previewBuilt": 31,
+  "defects": 0,
+  "multiCommitCases": [
+    {
+      "sha": "a2a3152",
+      "previousSha": "8d8299b",
+      "distance": 2,
+      "affectsBuild": true,
+      "decision": "build",
+      "ok": true
+    },
+    {
+      "sha": "a2a3152",
+      "previousSha": "6b1de71",
+      "distance": 5,
+      "affectsBuild": true,
+      "decision": "build",
+      "ok": true
+    },
+    {
+      "sha": "0ef6d69",
+      "previousSha": "203d2ec",
+      "distance": 2,
+      "affectsBuild": true,
+      "decision": "build",
+      "ok": true
+    },
+    {
+      "sha": "0ef6d69",
+      "previousSha": "3ff37ca",
+      "distance": 5,
+      "affectsBuild": true,
+      "decision": "build",
+      "ok": true
+    },
+    {
+      "sha": "8d8299b",
+      "previousSha": "2763cb3",
+      "distance": 2,
+      "affectsBuild": true,
+      "decision": "build",
+      "ok": true
+    },
+    {
+      "sha": "8d8299b",
+      "previousSha": "4a33749",
+      "distance": 5,
+      "affectsBuild": true,
+      "decision": "build",
+      "ok": true
+    },
+    {
+      "sha": "203d2ec",
+      "previousSha": "6b1de71",
+      "distance": 2,
+      "affectsBuild": true,
+      "decision": "build",
+      "ok": true
+    },
+    {
+      "sha": "203d2ec",
+      "previousSha": "42a9d26",
+      "distance": 5,
+      "affectsBuild": true,
+      "decision": "build",
+      "ok": true
+    },
+    {
+      "sha": "2763cb3",
+      "previousSha": "3ff37ca",
+      "distance": 2,
+      "affectsBuild": true,
+      "decision": "build",
+      "ok": true
+    },
+    {
+      "sha": "2763cb3",
+      "previousSha": "42e69d1",
+      "distance": 5,
+      "affectsBuild": true,
+      "decision": "build",
+      "ok": true
+    },
+    {
+      "sha": "6b1de71",
+      "previousSha": "4a33749",
+      "distance": 2,
+      "affectsBuild": false,
+      "decision": "skip",
+      "ok": true
+    },
+    {
+      "sha": "6b1de71",
+      "previousSha": "4b4a4ae",
+      "distance": 5,
+      "affectsBuild": true,
+      "decision": "build",
+      "ok": true
+    },
+    {
+      "sha": "3ff37ca",
+      "previousSha": "42a9d26",
+      "distance": 2,
+      "affectsBuild": false,
+      "decision": "skip",
+      "ok": true
+    },
+    {
+      "sha": "3ff37ca",
+      "previousSha": "6eb371d",
+      "distance": 5,
+      "affectsBuild": true,
+      "decision": "build",
+      "ok": true
+    },
+    {
+      "sha": "4a33749",
+      "previousSha": "42e69d1",
+      "distance": 2,
+      "affectsBuild": true,
+      "decision": "build",
+      "ok": true
+    },
+    {
+      "sha": "4a33749",
+      "previousSha": "3c329ed",
+      "distance": 5,
+      "affectsBuild": true,
+      "decision": "build",
+      "ok": true
+    }
+  ],
+  "failSafeCases": [
+    {
+      "name": "missing-previous-deployment",
+      "exitCode": 1,
+      "ok": true
+    },
+    {
+      "name": "previous-sha-unavailable-in-shallow-clone",
+      "exitCode": 128,
+      "ok": true
+    },
+    {
+      "name": "unknown-environment",
+      "exitCode": 1,
+      "ok": true
+    }
+  ],
+  "rootCommit": {
+    "sha": "9940b21",
+    "previewExitCode": 1,
+    "decision": "build",
+    "ok": true,
+    "stderr": ""
+  },
+  "status": "PASS",
+  "commits": [
+    {
+      "sha": "a2a3152",
+      "subject": "chore(reports): gate results for the V140 role split (release 79/79)",
+      "changedFiles": 32,
+      "changedTopLevel": [
+        "reports"
+      ],
+      "affectsBuild": false,
+      "preview": {
+        "exitCode": 0,
+        "decision": "skip",
+        "expected": "skip"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "0ef6d69",
+      "subject": "chore(deploy): reduce Vercel preview storage churn",
+      "changedFiles": 10,
+      "changedTopLevel": [
+        ".gitignore",
+        "CHANGELOG.md",
+        "README.md",
+        "docs",
+        "package.json",
+        "reports",
+        "scripts",
+        "vercel.json"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "8d8299b",
+      "subject": "feat(home,finder,map): split the home from the finder, and count map datasets from one file",
+      "changedFiles": 53,
+      "changedTopLevel": [
+        "CHANGELOG.md",
+        "docs",
+        "package.json",
+        "public",
+        "reports",
+        "scripts",
+        "src"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "203d2ec",
+      "subject": "chore(reports): gate results after the CI fixes (release 79/79)",
+      "changedFiles": 72,
+      "changedTopLevel": [
+        "reports"
+      ],
+      "affectsBuild": false,
+      "preview": {
+        "exitCode": 0,
+        "decision": "skip",
+        "expected": "skip"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "2763cb3",
+      "subject": "fix(ci): isolate the public-copy sweep per screen, and stop retaining decoded shard bytes",
+      "changedFiles": 3,
+      "changedTopLevel": [
+        "docs",
+        "scripts",
+        "src"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "6b1de71",
+      "subject": "fix(ci): wait for a preset's companions before reading its legend, and refresh two stale E2E expectations",
+      "changedFiles": 34,
+      "changedTopLevel": [
+        "e2e",
+        "reports",
+        "scripts"
+      ],
+      "affectsBuild": false,
+      "preview": {
+        "exitCode": 0,
+        "decision": "skip",
+        "expected": "skip"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "3ff37ca",
+      "subject": "docs(v139): record the Preview deployment and its access protection",
+      "changedFiles": 1,
+      "changedTopLevel": [
+        "reports"
+      ],
+      "affectsBuild": false,
+      "preview": {
+        "exitCode": 0,
+        "decision": "skip",
+        "expected": "skip"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "4a33749",
+      "subject": "chore(reports): regenerated gate results for the V139 candidate (release 79/79)",
+      "changedFiles": 37,
+      "changedTopLevel": [
+        "reports"
+      ],
+      "affectsBuild": false,
+      "preview": {
+        "exitCode": 0,
+        "decision": "skip",
+        "expected": "skip"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "42a9d26",
+      "subject": "fix(detail): tell A-025's two research rows apart by their stated subject",
+      "changedFiles": 3,
+      "changedTopLevel": [
+        "README.md",
+        "reports",
+        "src"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "42e69d1",
+      "subject": "fix(map,detail): state the unit a value has, and name what a click selects",
+      "changedFiles": 182,
+      "changedTopLevel": [
+        "CHANGELOG.md",
+        "reports",
+        "src"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "4b4a4ae",
+      "subject": "feat(home): a short search hero, one verified map, and eight real previews",
+      "changedFiles": 30,
+      "changedTopLevel": [
+        "CHANGELOG.md",
+        "package.json",
+        "public",
+        "reports",
+        "scripts",
+        "src"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "6eb371d",
+      "subject": "chore(reports): V138 map, screen and download evidence and the regenerated gate results",
+      "changedFiles": 219,
+      "changedTopLevel": [
+        "reports"
+      ],
+      "affectsBuild": false,
+      "preview": {
+        "exitCode": 0,
+        "decision": "skip",
+        "expected": "skip"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "3c329ed",
+      "subject": "docs(v138): record the map target contract and the verification commands",
+      "changedFiles": 3,
+      "changedTopLevel": [
+        "CHANGELOG.md",
+        "README.md",
+        "docs"
+      ],
+      "affectsBuild": false,
+      "preview": {
+        "exitCode": 0,
+        "decision": "skip",
+        "expected": "skip"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "c17b235",
+      "subject": "test(audit): read map expectations from the index and the target contract",
+      "changedFiles": 27,
+      "changedTopLevel": [
+        "e2e",
+        "package.json",
+        "scripts"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "0286c99",
+      "subject": "feat(detail): read each region, station and registry screen from its own columns",
+      "changedFiles": 18,
+      "changedTopLevel": [
+        "src"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "83859b0",
+      "subject": "feat(map): connect the 43 map targets and make the catalogue multi-select",
+      "changedFiles": 38,
+      "changedTopLevel": [
+        "public",
+        "scripts",
+        "src"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "1e1b0c8",
+      "subject": "fix(detail): name the record a screen counts, and the subject a row compares",
+      "changedFiles": 13,
+      "changedTopLevel": [
+        "scripts",
+        "src"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "1105e92",
+      "subject": "fix(detail): count the unit the values describe, and name the row that differs",
+      "changedFiles": 2,
+      "changedTopLevel": [
+        "src"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "16b3ada",
+      "subject": "Stage 4 — final Vietnam data snapshot and 152-screen acceptance (#13)",
+      "changedFiles": 3273,
+      "changedTopLevel": [
+        ".github",
+        ".gitignore",
+        "config",
+        "docs",
+        "e2e",
+        "package-lock.json",
+        "package.json",
+        "playwright.config.ts",
+        "public",
+        "reports",
+        "scripts",
+        "src",
+        "tools"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "5ca33de",
+      "subject": "Fix/final launch polish v136-1 (#12)",
+      "changedFiles": 98,
+      "changedTopLevel": [
+        "package.json",
+        "reports",
+        "scripts",
+        "src"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "07ca8a1",
+      "subject": "Fix/final public copy map ux v136 (#11)",
+      "changedFiles": 85,
+      "changedTopLevel": [
+        ".github",
+        "package.json",
+        "reports",
+        "scripts",
+        "src"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "848fca5",
+      "subject": "Fix/final public screen ux v135 (#10)",
+      "changedFiles": 84,
+      "changedTopLevel": [
+        ".github",
+        "package.json",
+        "reports",
+        "scripts",
+        "src"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "ce339d5",
+      "subject": "Merge pull request #9 from exoprime-sketch/fix/context-glossary-analysis-v134",
+      "changedFiles": 75,
+      "changedTopLevel": [
+        ".github",
+        "docs",
+        "package.json",
+        "reports",
+        "scripts",
+        "src"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "0fdae2d",
+      "subject": "test(release): add v134 comprehension gates",
+      "changedFiles": 27,
+      "changedTopLevel": [
+        "package.json",
+        "reports",
+        "scripts"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "fefa089",
+      "subject": "refactor(copy): replace generic analysis headings",
+      "changedFiles": 8,
+      "changedTopLevel": [
+        "src"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "a75947c",
+      "subject": "feat(data): clarify drought scenario interpretation",
+      "changedFiles": 1,
+      "changedTopLevel": [
+        "src"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "b747b66",
+      "subject": "feat(data): add ODA provider analysis",
+      "changedFiles": 2,
+      "changedTopLevel": [
+        "src"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "90bc7ee",
+      "subject": "feat(help): add platform-wide acronym glossary",
+      "changedFiles": 29,
+      "changedTopLevel": [
+        "src"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "cf601ee",
+      "subject": "fix(ci): separate visual artifacts from release blockers",
+      "changedFiles": 8,
+      "changedTopLevel": [
+        ".github",
+        "docs",
+        "scripts"
+      ],
+      "affectsBuild": false,
+      "preview": {
+        "exitCode": 0,
+        "decision": "skip",
+        "expected": "skip"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "701dfad",
+      "subject": "Merge pull request #8 from exoprime-sketch/fix/ci-map-analysis-ux-v133",
+      "changedFiles": 41,
+      "changedTopLevel": [
+        ".gitattributes",
+        ".github",
+        "docs",
+        "package.json",
+        "public",
+        "reports",
+        "scripts",
+        "src"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "af8b158",
+      "subject": "test(release): add v133 CI and map UX gates",
+      "changedFiles": 23,
+      "changedTopLevel": [
+        "docs",
+        "reports",
+        "scripts"
+      ],
+      "affectsBuild": false,
+      "preview": {
+        "exitCode": 0,
+        "decision": "skip",
+        "expected": "skip"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "0ee4327",
+      "subject": "feat(map): separate hover summaries from selected analysis",
+      "changedFiles": 1,
+      "changedTopLevel": [
+        "src"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "96da518",
+      "subject": "feat(map): simplify primary and comparison layers",
+      "changedFiles": 3,
+      "changedTopLevel": [
+        "src"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "9b07de5",
+      "subject": "fix(ci): refresh generated asset integrity",
+      "changedFiles": 4,
+      "changedTopLevel": [
+        ".gitattributes",
+        "public",
+        "reports",
+        "scripts"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "65d6e7d",
+      "subject": "fix(ci): separate source audits from deployment gates",
+      "changedFiles": 11,
+      "changedTopLevel": [
+        ".github",
+        "docs",
+        "package.json",
+        "reports",
+        "scripts"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "5178b42",
+      "subject": "Merge pull request #7 from exoprime-sketch/fix/final-visualization-ux-v132",
+      "changedFiles": 51,
+      "changedTopLevel": [
+        "docs",
+        "package.json",
+        "reports",
+        "scripts",
+        "src"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "feaba81",
+      "subject": "test(release): add v132 visualization runtime gates",
+      "changedFiles": 32,
+      "changedTopLevel": [
+        "docs",
+        "package.json",
+        "reports",
+        "scripts"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "2d8d961",
+      "subject": "fix(map): show meaningful contextual feature summaries",
+      "changedFiles": 2,
+      "changedTopLevel": [
+        "src"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "ee1e4c4",
+      "subject": "feat(data): promote trend and distribution analysis over raw lists",
+      "changedFiles": 9,
+      "changedTopLevel": [
+        "src"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    },
+    {
+      "sha": "79e72ca",
+      "subject": "feat(visualization): align public charts with external benchmarks",
+      "changedFiles": 8,
+      "changedTopLevel": [
+        "src"
+      ],
+      "affectsBuild": true,
+      "preview": {
+        "exitCode": 1,
+        "decision": "build",
+        "expected": "build"
+      },
+      "production": {
+        "exitCode": 1,
+        "decision": "build"
+      },
+      "verdict": "OK"
+    }
+  ]
+}

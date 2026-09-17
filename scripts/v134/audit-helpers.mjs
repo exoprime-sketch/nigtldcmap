@@ -1,8 +1,9 @@
 import { createHash } from "node:crypto";
-import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, statSync } from "node:fs";
 import { resolve } from "node:path";
 
 import { PROJECT_ROOT, pngDimensions } from "../v125/audit-utils.mjs";
+import { writeReportFileV138 } from "../v125/write-report.mjs";
 
 export const V134_REPORT_ROOT = resolve(PROJECT_ROOT, "reports/v134");
 export const V134_SCREENSHOT_ROOT = resolve(V134_REPORT_ROOT, "screenshots");
@@ -34,7 +35,7 @@ export function readSourceV134(paths) {
 
 export function writeJsonV134(path, value) {
   mkdirSync(resolve(path, ".."), { recursive: true });
-  writeFileSync(path, `${JSON.stringify(value, null, 2)}\n`, "utf8");
+  writeReportFileV138(path, `${JSON.stringify(value, null, 2)}\n`);
 }
 
 export function writeCsvV134(path, rows, columns) {
@@ -44,7 +45,7 @@ export function writeCsvV134(path, rows, columns) {
   };
   mkdirSync(resolve(path, ".."), { recursive: true });
   const body = [columns.join(","), ...rows.map((row) => columns.map((key) => quote(row[key])).join(","))];
-  writeFileSync(path, `${body.join("\n")}\n`, "utf8");
+  writeReportFileV138(path, `${body.join("\n")}\n`);
 }
 
 export function finishAuditV134(audit, fileName, extra = {}) {

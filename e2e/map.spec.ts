@@ -1,5 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
-import { collectPageErrors, realPageErrors } from "./helpers";
+import { collectPageErrors, realPageErrors, revealMapDataset } from "./helpers";
 
 /**
  * The map, driven with real pointer input.
@@ -24,10 +24,7 @@ async function openMap(page: Page, elementId?: string) {
   if (!elementId) return;
   // A reader picks the dataset from the list, which is also the only thing that
   // sets the layer's own variable and period.
-  const button = page.locator(
-    `[data-testid="map-all-data-layer-v135"][data-element-id="${elementId}"]`
-  );
-  await button.scrollIntoViewIfNeeded();
+  const button = await revealMapDataset(page, elementId);
   await button.click();
   await expect(page.getByTestId("map-public-content")).toHaveAttribute(
     "data-primary-element",

@@ -48,7 +48,7 @@ export default function Header({
             type="button"
             className="brand brand-v15"
             onClick={() => onNavigate("home")}
-            aria-label="개도국 전략지도 홈"
+            aria-label="개도국 기후기술 협력 플랫폼 홈"
           >
             <img
               className="brand-symbol-v15"
@@ -57,7 +57,7 @@ export default function Header({
               aria-hidden="true"
             />
             <span className="brand-copy">
-              <strong>개도국 전략지도</strong>
+              <strong>개도국 기후기술 협력 플랫폼</strong>
               <small>국가녹색기술연구소 · 기후기술 협력 데이터</small>
             </span>
           </button>

@@ -133,3 +133,26 @@ start, completion and duration. A failure identifies the active element.
 Browser non-response is proven by the log; an OS-level OOM cause is not proven.
 Fresh-process text coverage is not a substitute for E2E navigation tests, which
 remain enabled separately.
+
+## PR #14 (V139), gate run 34936592147 → 34938…: two blocking failures, one at a time
+
+Commit 3ff37ca: `audit:map-layer-distinction:v133` failed `FINANCE_PRESET_DRAWS_BOTH`
+(3.8 s into the audit). The preset helper waited for the primary layer's
+symbols and then read the legend; on the runner the companion C-025 (262
+points) had not been drawn yet. The helper now also waits for every companion
+the page lists in `data-context-elements` to appear in
+`data-rendered-map-symbols`. The check is unchanged. Playwright on the same
+commit failed two stale expectations (B-005 "과거 관측" → "과거 모형(historical)",
+the redesigned home's visual baseline), fixed in the same commit.
+
+Commit 6b1de71: the gate advanced to `audit:public-copy:v134` and its single
+renderer stopped answering `Runtime.evaluate` at B-007 (24 s) after the
+V138 province-year climate screens B-003~B-007 had been visited in turn; the
+next eight `Page.navigate` calls timed out (30 s each) while it recovered, and
+the sweep ended with 141 of 152 routes. E2E on the same commit passed 214
+tests. This is the CI #35 pattern on a sweep that had not been isolated: the
+public-copy sweep now starts a fresh Chromium process per detail screen, keeps
+console and network errors across processes, and logs each route's duration.
+Timeouts, routes and checks are unchanged. Separately, the runtime loader no
+longer retains a shard's decompressed bytes after parsing (pack-005 is 447 MB
+decoded) and keeps at most four decoded shards resident.

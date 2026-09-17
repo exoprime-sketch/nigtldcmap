@@ -1,0 +1,1599 @@
+{
+  "schema": "map-runtime-qa-v138",
+  "generatedAt": "2026-09-15T07:20:55.434Z",
+  "build": ".\\build",
+  "layers": [
+    {
+      "elementId": "A-023",
+      "title": "발전소",
+      "renderer": "cluster",
+      "featureCount": 1889,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 518,
+      "primary": "A-023",
+      "analysis": "현재 분석 데이터명 발전소 항목 발전소 위치·발전원 선택 변수 발전소 위치·발전원 자료연도 2026 단위 곳(개수) · 값 단위는 항목별 공간 단위 시설 좌표(WRI GPPD·OSM) → 시설 점 지도 표시 범위 발전소 위치 1,889곳",
+      "summary": "전국 요약 원천 수록 행(WRI+OSM) 1,963행 위치자료 보유(지도 표시) 1,889곳 WRI GPPD 수록 236행 OSM 추출 1,727행 현재 필터 표시 1,889곳 발전원 태양광 1,184곳 발전원 수력 420곳 발전원 미표기 236곳 발전원 석탄 34곳 발전원 (미표기) 5곳 발전원 가스 5곳 발전원 석유 2곳 발전원 가스·석유 1곳 발전원 폐기물 1곳 발전원 풍력 1곳 용량 미표기 1,650곳 용량 10~99MW 131곳 용량 100~499MW 58곳 용량 500MW 이상 35곳 용량 10MW 미만 15곳 고유 시설 통합 원천 ID·명칭·좌표가 일치하는 경우만 동일 시설로 검토 · 자동 합산 없음",
+      "featureSelected": true,
+      "selectedTitle": "Kon Dao",
+      "selectedPanel": "선택 발전소 Kon Dao 데이터명 발전소 발전원 Hydro 용량 1 MW 자료연도 2021 출처 World Resources Institute 공간 정확도 원천이 제공한 좌표만 표시하며 좌표가 없는 자료는 지도에 투영하지 않습니다. 지도 표시 범위 발전소 위치 1,889개 값 제공 여부 원천 미제공: 용량구간 · 운영자 · 가동 시작 · OSM 객체 ID",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "locations",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2026",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "A-024",
+      "title": "송전망",
+      "renderer": "line",
+      "featureCount": 606,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 510,
+      "primary": "A-024",
+      "analysis": "현재 분석 데이터명 베트남 송전망 항목 송전망 선로 목록 선택 변수 전체 전압 자료연도 2016 단위 kV 공간 단위 지도 표시 범위 송전망 구간 606개",
+      "summary": "전국 요약 총 송전망 구간 606개 500 kV 32개 구간 220 kV 143개 구간 110 kV 431개 구간 기준연도 2016",
+      "featureSelected": true,
+      "selectedTitle": "110 kV 송전선로",
+      "selectedPanel": "선택 선로 110 kV 송전선로 데이터명 베트남 송전망 항목 송전망 선로 값 116.9 단위 km 자료연도 2016 구간 길이 116.878 km 운영 상태 운영 중 전압 110 kV 출처 World Bank Group / ENERGYDATA.INFO 공간 정확도 원천 지도는 지오리퍼런싱된 자료를 기반으로 하며 일부 선로 위치가 약 2~10km 어긋날 수 있습니다. 정밀 설계보다 국가 단위 송전망 분포 확인에 적합합니다. 지도 표시 범위 송전망 구간 606개 값 제공 여부 값 있음",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "all",
+          "options": 4
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2016",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "A-025",
+      "title": "CCS 시설·실증 및 후보지역",
+      "renderer": "point",
+      "featureCount": 3,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 506,
+      "primary": "A-025",
+      "analysis": "현재 분석 데이터명 CCS 시설·실증 및 후보지역 항목 CCS 시설·실증·후보지 선택 변수 CCS 시설·실증·후보지 자료연도 2026 단위 건(개수) · 값 단위는 항목별 공간 단위 시설·광구 대표 좌표 → 시설·후보지 점 지도 표시 범위 시설·후보지 점 3건",
+      "summary": "전국 요약 CCS 시설·실증 및 후보지역 수(지도 표시) 3건 위치자료 없음(지도 미표시) 2건 고농도 CO2 가스전(CO2 분리·재주입 잠재) 1건 지중 저장 후보(Storage) 1건 CO2 주입(EOR) 1건",
+      "featureSelected": true,
+      "selectedTitle": "Rang Dong 유전 CO2-EOR 파일럿",
+      "selectedPanel": "선택 시설·후보지 Rang Dong 유전 CO2-EOR 파일럿 데이터명 CCS 시설·실증 및 후보지역 항목 CCS 시설·실증·후보지 기준연도 2026 구분 CO2 주입(EOR) 단계 완료(2011.6 주입, 2012.2 종료) 출처 STADT(공개 1차 출처 정리) 공간 정확도 원천이 제공한 좌표만 표시하며 좌표가 없는 자료는 지도에 투영하지 않습니다. 지도 표시 범위 시설·후보지 점 3건 값 제공 여부 표시 항목 모두 값 있음",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "locations",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2026",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-003",
+      "title": "연평균 기온·강수",
+      "renderer": "admin1-choropleth",
+      "featureCount": 63,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 525,
+      "primary": "B-003",
+      "analysis": "현재 분석 데이터명 연평균 기온·강수 항목 연평균 기온 선택 변수 연평균 기온 자료연도 2025 단위 °C 공간 단위 GADM 4.1 ADM1(63개 성·시) → 성·시 경계(개편 전 63) 지도 표시 범위 63개 성·시 중 63개에 값 있음",
+      "summary": "전국 요약 자료가 있는 지역 63/63개 성·시 최솟값 21.85 °C 중앙값(파생) 24.9 °C 최댓값 28.19 °C 하위 지역 Cao Bằng · 21.85 °C 상위 지역 Sóc Trăng · 28.19 °C 미제공 지역 0개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "Lai Châu",
+      "selectedPanel": "선택 지역 Lai Châu 데이터명 연평균 기온·강수 항목 연평균 기온 값 22.4 단위 °C 자료연도 2025 지역 Lai Châu 출처 World Bank CCKP (CRU TS 4.09) 공간 정확도 누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다. 지도 표시 범위 63개 성·시 중 63개에 값 있음 값 제공 여부 값 있음 Lai Châu 연평균 기온 추이 단위: °C 연평균 기온 표시기간 전체 축소 확대 전체 23.18 22.75 22.32 21.89 21.46 1901 1940 1985 2025 연도 연평균 기온 (°C) 지도에서 선택한 지역의 공개 관측값만 연결해 표시합니다. 연도별 값 표",
+      "regionTrend": true,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "annual-mean-temperature",
+          "options": 4
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2025",
+          "options": 26
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-004",
+      "title": "미래기후 전망(CMIP6)",
+      "renderer": "admin1-choropleth",
+      "featureCount": 63,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 509,
+      "primary": "B-004",
+      "analysis": "현재 분석 데이터명 미래기후 전망(CMIP6) 항목 연평균 기온 · SSP2-4.5 선택 변수 연평균 기온 · SSP2-4.5 자료연도 2025 단위 °C 공간 단위 GADM 4.1 ADM1(63개 성·시) → 성·시 경계(개편 전 63) 지도 표시 범위 63개 성·시 중 63개에 값 있음",
+      "summary": "전국 요약 자료가 있는 지역 63/63개 성·시 최솟값 21.09 °C 중앙값(파생) 25.12 °C 최댓값 28.99 °C 하위 지역 Lai Châu · 21.09 °C 상위 지역 Tây Ninh · 28.99 °C 미제공 지역 0개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "Lai Châu",
+      "selectedPanel": "선택 지역 Lai Châu 데이터명 미래기후 전망(CMIP6) 항목 연평균 기온 · SSP2-4.5 값 21.09 단위 °C 자료연도 2025 지역 Lai Châu 출처 Global Solar Atlas 2.0 (World Bank/ESMAP, Solargis) · Global Wind Atlas 3.x (DTU/World Bank ESMAP) · World Bank CCKP (CMIP6 x0.25) 공간 정확도 누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다. 지도 표시 범위 63개 성·시 중 63개에 값 있음 값 제공 여부 값 있음 Lai Châu 연평균 기온 추이 단위: °C SSP3-7.0(공통사회경제경로 3–7.0) 과거 모형(historical) SSP5-8.5(공통사회경제경로 5–8.5) SSP2-4.5(공통사회경제경로 2–4.5) SSP1-1.9(공통사회경제경로 1–1.9) SSP1-2.6(공통사회경제경로 1–2.6) 표시기간 전체 축소 확대 전체 25.68 24.15 22.63 21.1 19.57 1950 2000 2050 2100 연도 연평균 기온 (°C) 지도에서 선택한 성·시의 값을 시나리오별로 잇습",
+      "regionTrend": true,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "annual-mean-temperature",
+          "options": 5
+        },
+        {
+          "id": "map-layer-scenario-select",
+          "value": "ssp245",
+          "options": 6
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2025",
+          "options": 18
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-005",
+      "title": "가뭄",
+      "renderer": "admin1-choropleth",
+      "featureCount": 63,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 513,
+      "primary": "B-005",
+      "analysis": "현재 분석 데이터명 가뭄 항목 연속 건조일수(CDD) · SSP2-4.5 선택 변수 연속 건조일수(CDD) · SSP2-4.5 자료연도 2025 단위 일 공간 단위 GADM 4.1 ADM1(63개 성·시) → 성·시 경계(개편 전 63) 지도 표시 범위 63개 성·시 중 63개에 값 있음",
+      "summary": "전국 요약 자료가 있는 지역 63/63개 성·시 최솟값 8.82 일 중앙값(파생) 20 일 최댓값 54.15 일 하위 지역 Thừa Thiên Huế · 8.82 일 상위 지역 Bà Rịa–Vũng Tàu · 54.15 일 미제공 지역 0개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "Lai Châu",
+      "selectedPanel": "선택 지역 Lai Châu 데이터명 가뭄 항목 연속 건조일수(CDD) · SSP2-4.5 값 16.87 단위 일 자료연도 2025 지역 Lai Châu 출처 Copernicus ERA5-Land · World Bank CCKP (CMIP6 x0.25) 공간 정확도 누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다. 지도 표시 범위 63개 성·시 중 63개에 값 있음 값 제공 여부 값 있음 Lai Châu 연속 건조일수(CDD) 추이 단위: 일 과거 모형(historical) SSP1-2.6(공통사회경제경로 1–2.6) SSP2-4.5(공통사회경제경로 2–4.5) SSP3-7.0(공통사회경제경로 3–7.0) SSP5-8.5(공통사회경제경로 5–8.5) 표시기간 전체 축소 확대 전체 22.14 19.57 17.01 14.44 11.87 1950 2000 2050 2100 연도 연속 건조일수(CDD) (일) 지도에서 선택한 성·시의 값을 시나리오별로 잇습니다. 과거 모형(historical, 점선)과 SSP 전망은 서로 잇지 않습니다. 지도는 5년 간격 연도이며 전체 연도는 데이터 상세에서 확인합니다. 연도별 값 표",
+      "regionTrend": true,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "consecutive-dry-days",
+          "options": 2
+        },
+        {
+          "id": "map-layer-scenario-select",
+          "value": "ssp245",
+          "options": 6
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2025",
+          "options": 18
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-006",
+      "title": "폭염",
+      "renderer": "admin1-choropleth",
+      "featureCount": 63,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 509,
+      "primary": "B-006",
+      "analysis": "현재 분석 데이터명 폭염 항목 폭염·열대야 전망 자료연도 2025 단위 일 공간 단위 GADM 4.1 ADM1(63개 성·시) → 성·시 경계(개편 전 63) 값 해석 일수가 많을수록 해당 폭염·열대야 조건에 노출되는 기간이 김 지도 표시 범위 63개 성·시 중 59개에 값 있음",
+      "summary": "전국 요약 자료가 있는 지역 59/63개 성·시 최솟값 0.01 일 중앙값(파생) 7.1 일 최댓값 63.55 일 하위 지역 Đà Nẵng · 0.01 일 상위 지역 Tây Ninh · 63.55 일 미제공 지역 4개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "Lai Châu",
+      "selectedPanel": "선택 지역 Lai Châu 데이터명 폭염 항목 폭염·열대야 전망 값 원천 미제공 단위 일 자료연도 2025 값 해석 일수가 많을수록 해당 폭염·열대야 조건에 노출되는 기간이 김 지역 Lai Châu 출처 World Bank CCKP (CMIP6 x0.25) 공간 정확도 누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다. 지도 표시 범위 63개 성·시 중 59개에 값 있음 값 제공 여부 원천 미제공 · 4개 성·시 원천 미제공 Lai Châu 폭염일수(최고기온 35°C 이상) 추이 단위: 일 SSP1-1.9(공통사회경제경로 1–1.9) SSP3-7.0(공통사회경제경로 3–7.0) SSP1-2.6(공통사회경제경로 1–2.6) SSP5-8.5(공통사회경제경로 5–8.5) SSP2-4.5(공통사회경제경로 2–4.5) 표시기간 전체 축소 확대 전체 26.3 19.72 13.15 6.57 0 2040 2060 2080 2100 연도 폭염일수(최고기온 35°C 이상) (일) 지도에서 선택한 성·시의 값을 시나리오별로 잇습니다. 과거 모형(historical, 점선)과 SSP 전망은 서로 잇지 않습니다. 지도는 5년 간격 연도이며 전체 ",
+      "regionTrend": true,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "hot-days-tx35",
+          "options": 6
+        },
+        {
+          "id": "map-layer-scenario-select",
+          "value": "ssp245",
+          "options": 6
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2025",
+          "options": 18
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-007",
+      "title": "극한강수",
+      "renderer": "admin1-choropleth",
+      "featureCount": 63,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 516,
+      "primary": "B-007",
+      "analysis": "현재 분석 데이터명 극한강수 항목 최대 1일 강수량(RX1day) · SSP2-4.5 선택 변수 최대 1일 강수량(RX1day) · SSP2-4.5 자료연도 2025 단위 mm 공간 단위 GADM 4.1 ADM1(63개 성·시) → 성·시 경계(개편 전 63) 지도 표시 범위 63개 성·시 중 63개에 값 있음",
+      "summary": "전국 요약 자료가 있는 지역 63/63개 성·시 최솟값 32.9 mm 중앙값(파생) 58.03 mm 최댓값 126.1 mm 하위 지역 Tây Ninh · 32.9 mm 상위 지역 Hà Tĩnh · 126.1 mm 미제공 지역 0개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "Lai Châu",
+      "selectedPanel": "선택 지역 Lai Châu 데이터명 극한강수 항목 최대 1일 강수량(RX1day) · SSP2-4.5 값 66.14 단위 mm 자료연도 2025 지역 Lai Châu 출처 World Bank CCKP (CMIP6 x0.25) 공간 정확도 누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다. 지도 표시 범위 63개 성·시 중 63개에 값 있음 값 제공 여부 값 있음 Lai Châu 최대 1일 강수량(RX1day) 추이 단위: mm 과거 모형(historical) SSP3-7.0(공통사회경제경로 3–7.0) SSP1-2.6(공통사회경제경로 1–2.6) SSP5-8.5(공통사회경제경로 5–8.5) SSP2-4.5(공통사회경제경로 2–4.5) SSP1-1.9(공통사회경제경로 1–1.9) 표시기간 전체 축소 확대 전체 89.37 80.59 71.81 63.03 54.25 1950 2000 2050 2100 연도 최대 1일 강수량(RX1day) (mm) 지도에서 선택한 성·시의 값을 시나리오별로 잇습니다. 과거 모형(historical, 점선)과 SSP 전망은 서로 잇지 않습니다. 지도는 5년 간격 연도이며 전체 연도는 데이터 상세에서",
+      "regionTrend": true,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "rx1day",
+          "options": 5
+        },
+        {
+          "id": "map-layer-scenario-select",
+          "value": "ssp245",
+          "options": 6
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2025",
+          "options": 18
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-008",
+      "title": "해수면 상승 전망",
+      "renderer": "point",
+      "featureCount": 5,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 509,
+      "primary": "B-008",
+      "analysis": "현재 분석 데이터명 해수면 상승 전망 항목 조위 관측소·해수면 전망 선택 변수 조위 관측소·해수면 전망 자료연도 2100 단위 곳(개수) · 값 단위는 항목별 공간 단위 PSMSL 조위 관측소 좌표 → 관측소 점 지도 표시 범위 관측소 점 5곳",
+      "summary": "전국 요약 관측소 수(지도 표시) 5곳 시나리오·분위·연도 전망값 행 1,575행",
+      "featureSelected": true,
+      "selectedTitle": "Đà Nẵng",
+      "selectedPanel": "선택 관측소 Đà Nẵng 데이터명 해수면 상승 전망 항목 조위 관측소·해수면 전망 기준연도 2100 시나리오·분위·연도 전망값 315행을 이 관측소 하나로 묶어 표시 관측소(베트남어) Đà Nẵng 소재 중부 — 다낭 PSMSL 관측소 ID 1,475 좌표 출처 PSMSL 관측소 원장 공간 정확도 원천이 제공한 좌표만 표시하며 좌표가 없는 자료는 지도에 투영하지 않습니다. 지도 표시 범위 관측소 점 5곳 값 제공 여부 표시 항목 모두 값 있음 분위(불확실성 범위) 5분위 17분위 중앙값(50분위) 83분위 95분위 Đà Nẵng · 시나리오별 상대해수면 상승(2005년 기준) 단위: m SSP1-1.9(공통사회경제경로 1–1.9) SSP1-2.6(공통사회경제경로 1–2.6) SSP2-4.5(공통사회경제경로 2–4.5) SSP3-7.0(공통사회경제경로 3–7.0) SSP5-8.5(공통사회경제경로 5–8.5) 1.05 0.78 0.52 0.26 0 2020 2050 2070 2100 연도 상대해수면 상승(2005년 기준) (m) 관측소별 상대해수면 전망입니다. 기준면은 1995–2014 평균(2005년 기준)이며 침수 범위가 아닙니다. 분위는 모형 불확실성 범",
+      "regionTrend": false,
+      "memberSeries": true,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "locations",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2100",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-012",
+      "title": "재해 이력",
+      "renderer": "cluster",
+      "featureCount": 265,
+      "rendered": true,
+      "renderAttempts": 1,
+      "renderMs": 9,
+      "primary": "B-012",
+      "analysis": "현재 분석 데이터명 재해 이력 항목 재해 사건 위치 선택 변수 재해 사건 위치 자료연도 2024 단위 건(개수) · 값 단위는 항목별 공간 단위 EM-DAT 사건 대표점(상륙점·영향지역 대표) → 사건 점 지도 표시 범위 사건 점 265건",
+      "summary": "전국 요약 재해 사건 수(지도 표시) 265건 원천 행 265행 위치자료 없음(지도 미표시) 10건 근사 위치(속 빈 기호) 233건 폭풍·태풍 139건 홍수 105건 가뭄 8건 사면이동(습윤) 7건 전염병 5건 산불 1건",
+      "featureSelected": true,
+      "selectedTitle": "Tropical cyclone",
+      "selectedPanel": "선택 재해 Tropical cyclone 데이터명 재해 이력 항목 재해 사건 위치 기준연도 2024 재해유형 폭풍·태풍 세부유형 Tropical cyclone 시작일 1952-10-15 종료일 1952-10-26 좌표 산출근거 IBTrACS v04r01(WP) Trix [1952287N09148] 상륙점 공간 정확도 좌표가 있는 자료만 표시합니다. 233건은 도시·행정구역 대표점 등 근사 위치이며 속이 빈 기호로 구분합니다. 지도 표시 범위 사건 점 265건 값 제공 여부 원천 미제공: 발생지역(원문) · 영향 행정구역 수 · 사망자 · 총피해인구 · 총피해액(2024년 실질)",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "locations",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2024",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-021",
+      "title": "Global Data Lab GVI(Vulnerability Index)",
+      "renderer": "admin1-choropleth",
+      "featureCount": 63,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 508,
+      "primary": "B-021",
+      "analysis": "현재 분석 데이터명 지역 취약성 항목 GVI 취약성 지수 자료연도 2023 단위 0–100 지수 공간 단위 GDL 6개 권역 → 권역 소속 성·시 경계(권역값 동일 표시) 값 해석 높을수록 사회경제적 취약성이 큼 비교·공간단위 GDL 6개 권역의 값을 해당 성·시에 표시하며, 성 단위 독립 추정값이 아닙니다. 지도 표시 범위 권역 단위 값 · 소속 63개 성·시 경계 중 63개에 대응 표시",
+      "summary": "전국 요약 자료가 있는 권역 6/6개 권역 최솟값 31.4 0–100 지수 중앙값(파생) 39.1 0–100 지수 최댓값 44.7 0–100 지수 하위 권역 동남부 · 31.4 0–100 지수 상위 권역 동북부·서북부 · 44.7 0–100 지수 미제공 권역 0개 권역 중앙값은 값이 있는 권역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "Lai Châu",
+      "selectedPanel": "선택 지역 Lai Châu 데이터명 지역 취약성 항목 GVI 취약성 지수 값 44.7 / 100 단위 0–100 지수 자료연도 2023 값 해석 높을수록 사회경제적 취약성이 큼 지역 Lai Châu 비교·공간단위 동북부·서북부 권역의 값 · 개편 전 성·시 단위 독립값이 아님 자료 설명 Lai Châu의 개별 추정값이 아니라 동북부·서북부 권역의 값을 표시합니다. 권역 비교 베트남 6개 권역 중 1위 · 현재 값이 큰 순서 출처 Global Data Lab (GDL Area Database) · Global Data Lab GVI · Global Data Lab GVI (Huisman et al., 2025) · Global Data Lab — GVIP Database (Huisman et al., 2025) 공간 정확도 공개된 권역값을 명시된 소속 성·시에 표시합니다. 개별 성·시에서 별도로 추정한 값은 아닙니다. 지도 표시 범위 권역 단위 값 · 소속 63개 성·시 경계 중 63개에 대응 표시 값 제공 여부 값 있음 Lai Châu GVI 취약성 지수 추이 단위: 지수 GVI(글로벌데이터랩 취약성지수) 취약성 지수 표시기간 전체 축소 확대 전체 72.9 ",
+      "regionTrend": true,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "gvi-6",
+          "options": 12
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2023",
+          "options": 24
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-023",
+      "title": "건기·우기 유량 차이",
+      "renderer": "point",
+      "featureCount": 3,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 517,
+      "primary": "B-023",
+      "analysis": "현재 분석 데이터명 건기·우기 유량 차이 항목 관측지점·유역 대표점 유량 선택 변수 관측지점·유역 대표점 유량 자료연도 2026 단위 곳(개수) · 값 단위는 항목별 공간 단위 수문관측지점 좌표(MRC·VNMC) 및 8대 유역 대표점 → 관측지점 점 · 유역 대표점 지도 표시 범위 관측지점 점 · 유역 대표점 3곳",
+      "summary": "전국 요약 관측지점·유역 수(지도 표시) 3곳 지표값 행 11행 근사 위치(속 빈 기호) 1곳 관측지점 2곳 유역 대표점 1곳",
+      "featureSelected": true,
+      "selectedTitle": "끄우롱(메콩 델타)",
+      "selectedPanel": "선택 관측지점 끄우롱(메콩 델타) 데이터명 건기·우기 유량 차이 항목 관측지점·유역 대표점 유량 기준연도 2026 위치 정밀도 도시·행정구역 대표점(건물 위치 아님) 지표값 3행을 이 관측지점·유역 하나로 묶어 표시 공간 단위 유역 대표점 위치 설명 8대 하천유역 기준연도 2004 좌표·경계 산출근거 유역 경계는 B-025 에서 HydroSHEDS 흐름방향 격자로 산출한 8대 유역 폴리곤을 재사용하고, 대표좌표는 해당 유역의 내부 보장 대표점. 좌표계 EPSG:4326. 메콩델타 건기 유량 비중 10 % 메콩델타 우기 유량 비중 90 % 유역 단위 건우기 유량차(GIS 기반 산출) 자료 없음 공간 정확도 관측지점은 원천 좌표로, 유역 행은 유역 대표점(속 빈 기호)으로 표시합니다. 유역 경계 폴리곤은 원자료 파일이 전달되지 않아 표시하지 않습니다. 지도 표시 범위 관측지점 점 · 유역 대표점 3곳 값 제공 여부 원천 미제공: 기준연도",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "locations",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2026",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-025",
+      "title": "유역면적",
+      "renderer": "point",
+      "featureCount": 8,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 504,
+      "primary": "B-025",
+      "analysis": "현재 분석 데이터명 유역면적 항목 유역 대표점·면적 선택 변수 유역 대표점·면적 자료연도 2026 단위 곳(개수) · 값 단위는 항목별 공간 단위 HydroSHEDS 8대 유역 폴리곤(원자료 파일 미포함) 대표점 → 유역 대표점 지도 표시 범위 유역 대표점 8곳",
+      "summary": "전국 요약 유역면적 수(지도 표시) 8곳 위치자료 없음(지도 미표시) 1곳 근사 위치(속 빈 기호) 9곳 메콩 지류(중부고원) 2곳 북중부 독립 수계 2곳 남부 독립 수계 1곳 메콩 수계 — 델타부 1곳 북부 국경 수계 1곳 홍강 수계 1곳",
+      "featureSelected": true,
+      "selectedTitle": "홍–타이빈",
+      "selectedPanel": "선택 유역 홍–타이빈 데이터명 유역면적 항목 유역 대표점·면적 기준연도 2026 위치 정밀도 유역 대표점 유역명(영문) Hong – Thai Binh (Red River) 총 유역면적 169,000 km² 베트남 내 면적(문헌) 88,860 km² 베트남 내 면적(GIS 산출) 86,253 km² 베트남 내 비중 53 % 국경 공유 중국 약 48% · 라오스 약 1% 수계 구분 홍강 수계 공간 정확도 유역 대표점만 표시합니다. 원자료가 참조하는 HydroSHEDS 8대 유역 경계 폴리곤은 전달되지 않아 표시하지 않으며, 대표점 하나가 유역 전체 범위를 뜻하지 않습니다. 지도 표시 범위 유역 대표점 8곳 값 제공 여부 표시 항목 모두 값 있음",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "locations",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2026",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-028",
+      "title": "하천유량",
+      "renderer": "point",
+      "featureCount": 4,
+      "rendered": true,
+      "renderAttempts": 1,
+      "renderMs": 1,
+      "primary": "B-028",
+      "analysis": "현재 분석 데이터명 하천유량 항목 관측지점·유역 유량 선택 변수 관측지점·유역 유량 자료연도 2026 단위 곳(개수) · 값 단위는 항목별 공간 단위 수문관측지점 좌표 · 유역 대표점 → 관측지점 점 · 유역 대표점 지도 표시 범위 관측지점 점 · 유역 대표점 4곳",
+      "summary": "전국 요약 관측지점·유역 수(지도 표시) 4곳 지표값 행 12행 위치자료 없음(지도 미표시) 1곳 근사 위치(속 빈 기호) 2곳 유역 대표점 2곳 관측지점 2곳",
+      "featureSelected": true,
+      "selectedTitle": "Sơn Tây",
+      "selectedPanel": "선택 관측지점 Sơn Tây 데이터명 하천유량 항목 관측지점·유역 유량 기준연도 2026 지표값 4행을 이 관측지점·유역 하나로 묶어 표시 공간 단위 관측지점 위치 설명 홍강 본류 · 하노이 서부 · VNMC/MONRE 상설 수문관측소. 홍강 삼각주 진입 직전 기준지점 기준연도 2010 홍강(Sơn Tây) 연평균 유량 (범위 하한) 106 km³/yr 홍강(Sơn Tây) 연평균 유량 (범위 상한) 116 km³/yr 하천 유량 — m³/s 기준 — 홍강(Son Tay 지점) — 댐 건설 후 3,350 m³/s 하천 유량 — m³/s 기준 — 홍강(Son Tay 지점) — 댐 건설 전 3,740 m³/s 공간 정확도 관측지점은 원천 좌표로, 유역 행은 유역 대표점(속 빈 기호)으로 표시합니다. 유역 경계 폴리곤은 원자료 파일이 전달되지 않아 표시하지 않습니다. 지도 표시 범위 관측지점 점 · 유역 대표점 4곳 값 제공 여부 원천 미제공: 기준연도",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "locations",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2026",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-029",
+      "title": "산림 유형별 면적",
+      "renderer": "admin1-choropleth",
+      "featureCount": 63,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 529,
+      "primary": "B-029",
+      "analysis": "현재 분석 데이터명 산림 유형별 면적 항목 이탄지 면적 합계 선택 변수 이탄지 면적 합계 자료연도 2022 단위 km² 공간 단위 GADM 4.1 ADM1(63개 성·시) — 이탄지(Global Peatland Map 2022) → 성·시 경계(개편 전 63) 지도 표시 범위 63개 성·시 중 63개에 값 있음",
+      "summary": "전국 요약 자료가 있는 지역 63/63개 성·시 최솟값 0 km² 중앙값(파생) 0 km² 최댓값 884.1 km² 하위 지역 An Giang · 0 km² 상위 지역 Cà Mau · 884.1 km² 미제공 지역 0개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "Lai Châu",
+      "selectedPanel": "선택 지역 Lai Châu 데이터명 산림 유형별 면적 항목 이탄지 면적 합계 값 0 단위 km² 자료연도 2022 지역 Lai Châu 출처 FAO FAOSTAT Land Cover (LC), CCI-LC · FAO FAOSTAT Land Cover (LC), MODIS · FAO FAOSTAT Land Cover (LC), WorldCover · FAO FAOSTAT Land Use (RL) · Global Forest Watch (UMD/WRI) · Greifswald Mire Centre — Global Peatland Map 2.0 (UNEP Global Peatlands Assessment 기반자료) 공간 정확도 누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다. 지도 표시 범위 63개 성·시 중 63개에 값 있음 값 제공 여부 값 있음",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "peatland-area-total",
+          "options": 3
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2022",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-030",
+      "title": "산림 이득",
+      "renderer": "admin1-choropleth",
+      "featureCount": 63,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 513,
+      "primary": "B-030",
+      "analysis": "현재 분석 데이터명 산림 이득 항목 수관 이득(2000–2020 누적) 선택 변수 수관 이득(2000–2020 누적) 자료연도 2000–2020 단위 ha 공간 단위 GADM 4.1 ADM1(63개 성·시) → 성·시 경계(개편 전 63) 지도 표시 범위 63개 성·시 중 63개에 값 있음",
+      "summary": "전국 요약 자료가 있는 지역 63/63개 성·시 최솟값 596.9 ha 중앙값(파생) 8,679 ha 최댓값 123,227 ha 하위 지역 Bạc Liêu · 596.9 ha 상위 지역 Bình Phước · 123,227 ha 미제공 지역 0개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "Lai Châu",
+      "selectedPanel": "선택 지역 Lai Châu 데이터명 산림 이득 항목 수관 이득(2000–2020 누적) 값 16,043 단위 ha 자료연도 2000–2020 지역 Lai Châu 출처 FAO FAOSTAT Land Use (RL) · Global Forest Watch / UMD · Global Forest Watch / UMD (Potapov et al. 2022) 공간 정확도 누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다. 지도 표시 범위 63개 성·시 중 63개에 값 있음 값 제공 여부 값 있음",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "tree-cover-gain",
+          "options": 5
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2000–2020",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-031",
+      "title": "산림 총 면적",
+      "renderer": "admin1-choropleth",
+      "featureCount": 63,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 517,
+      "primary": "B-031",
+      "analysis": "현재 분석 데이터명 산림 총면적 항목 성(省)별 수관 면적(2010) 자료연도 2010 단위 ha 공간 단위 GADM 4.1 ADM1(63개 성·시) → 성·시 경계(개편 전 63) 지도 표시 범위 63개 성·시 중 63개에 값 있음",
+      "summary": "전국 요약 자료가 있는 지역 63/63개 성·시 최솟값 748 ha 중앙값(파생) 193,660 ha 최댓값 1,067,116 ha 하위 지역 Hưng Yên · 748 ha 상위 지역 Nghệ An · 1,067,116 ha 미제공 지역 0개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "Lai Châu",
+      "selectedPanel": "선택 지역 Lai Châu 데이터명 산림 총면적 항목 성(省)별 수관 면적(2010) 값 563,212 단위 ha 자료연도 2010 지역 Lai Châu 출처 Global Forest Watch (UMD/WRI, Hansen et al. 2013) · 경계 GADM 4.1 ADM1 · Global Forest Watch / Hansen et al.(2013), UMD 공간 정확도 누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다. 지도 표시 범위 63개 성·시 중 63개에 값 있음 값 제공 여부 값 있음",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "tree-cover-area-2010",
+          "options": 3
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2010",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-032",
+      "title": "수관 피복률",
+      "renderer": "admin1-choropleth",
+      "featureCount": 63,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 523,
+      "primary": "B-032",
+      "analysis": "현재 분석 데이터명 수관 피복률 항목 성(省)별 수관 피복률 선택 변수 성(省)별 수관 피복률 — 임계 30% 자료연도 2010 단위 % 공간 단위 GADM 4.1 ADM1(63개 성·시) → 성·시 경계(개편 전 63) 지도 표시 범위 63개 성·시 중 63개에 값 있음",
+      "summary": "전국 요약 자료가 있는 지역 63/63개 성·시 최솟값 0.1 % 중앙값(파생) 41.8 % 최댓값 85.1 % 하위 지역 Hưng Yên · 0.1 % 상위 지역 Bắc Kạn · 85.1 % 미제공 지역 0개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "Lai Châu",
+      "selectedPanel": "선택 지역 Lai Châu 데이터명 수관 피복률 항목 성(省)별 수관 피복률 — 임계 30% 값 61.7 단위 % 자료연도 2010 지역 Lai Châu 출처 Global Forest Watch / Hansen et al.(2013) 공간 정확도 누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다. 지도 표시 범위 63개 성·시 중 63개에 값 있음 값 제공 여부 값 있음",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "canopy-cover-30",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2010",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-033",
+      "title": "연간 산림 손실",
+      "renderer": "admin1-choropleth",
+      "featureCount": 63,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 505,
+      "primary": "B-033",
+      "analysis": "현재 분석 데이터명 연간 산림손실 항목 연간 수관 손실 선택 변수 연간 수관 손실 — 성(省) 단위 자료연도 2024 단위 ha 공간 단위 GADM 4.1 ADM1(63개 성·시) → 성·시 경계(개편 전 63) 지도 표시 범위 63개 성·시 중 62개에 값 있음",
+      "summary": "전국 요약 자료가 있는 지역 62/63개 성·시 최솟값 0 ha 중앙값(파생) 1,363 ha 최댓값 11,728 ha 하위 지역 Thái Bình · 0 ha 상위 지역 Quảng Ninh · 11,728 ha 미제공 지역 1개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "Lai Châu",
+      "selectedPanel": "선택 지역 Lai Châu 데이터명 연간 산림손실 항목 연간 수관 손실 — 성(省) 단위 값 937.7 단위 ha 자료연도 2024 지역 Lai Châu 출처 Global Forest Watch (UMD/WRI, Hansen et al. 2013) · 경계 GADM 4.1 ADM1 · Global Forest Watch / Hansen (UMD) 공간 정확도 누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다. 지도 표시 범위 63개 성·시 중 62개에 값 있음 값 제공 여부 값 있음 Lai Châu 연간 수관 손실 — 성(省) 단위 추이 단위: ha 연간 수관 손실 — 성(省) 단위 표시기간 전체 축소 확대 전체 4,164 3,123 2,082 1,041 0 2001 2009 2016 2024 연도 연간 수관 손실 — 성(省) 단위 (ha) 지도에서 선택한 지역의 공개 관측값만 연결해 표시합니다. 연도별 값 표",
+      "regionTrend": true,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "annual-tree-cover-loss",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2024",
+          "options": 24
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-034",
+      "title": "탄소 저장량",
+      "renderer": "admin1-choropleth",
+      "featureCount": 63,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 516,
+      "primary": "B-034",
+      "analysis": "현재 분석 데이터명 산림 탄소 항목 산림탄소 순플럭스(연평균) 자료연도 2001–2024 단위 Mg CO2e/yr 공간 단위 GADM 4.1 ADM1(63개 성·시) → 성·시 경계(개편 전 63) 지도 표시 범위 63개 성·시 중 63개에 값 있음",
+      "summary": "전국 요약 자료가 있는 지역 63/63개 성·시 최솟값 -3,261,471 Mg CO2e/yr 중앙값(파생) -83,747 Mg CO2e/yr 최댓값 2,923,480 Mg CO2e/yr 하위 지역 Yên Bái · -3,261,471 Mg CO2e/yr 상위 지역 Kon Tum · 2,923,480 Mg CO2e/yr 미제공 지역 0개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "Lai Châu",
+      "selectedPanel": "선택 지역 Lai Châu 데이터명 산림 탄소 항목 산림탄소 순플럭스(연평균) 값 -822,213 단위 Mg CO2e/yr 자료연도 2001–2024 지역 Lai Châu 출처 Global Forest Watch (Harris et al. 2021) 공간 정확도 누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다. 지도 표시 범위 63개 성·시 중 63개에 값 있음 값 제공 여부 값 있음",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "6d25ef451c11",
+          "options": 5
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2001–2024",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-037",
+      "title": "토지피복 분류별 면적",
+      "renderer": "admin1-choropleth",
+      "featureCount": 63,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 516,
+      "primary": "B-037",
+      "analysis": "현재 분석 데이터명 토지피복 분류별 면적 항목 경작지 면적 선택 변수 경작지 면적 자료연도 2021 단위 km² 공간 단위 GADM 4.1 ADM1(63개 성·시) → 성·시 경계(개편 전 63) 지도 표시 범위 63개 성·시 중 63개에 값 있음",
+      "summary": "전국 요약 자료가 있는 지역 63/63개 성·시 최솟값 34.78 km² 중앙값(파생) 523.9 km² 최댓값 3,578 km² 하위 지역 Đà Nẵng · 34.78 km² 상위 지역 Kiên Giang · 3,578 km² 미제공 지역 0개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "Lai Châu",
+      "selectedPanel": "선택 지역 Lai Châu 데이터명 토지피복 분류별 면적 항목 경작지 면적 값 327.7 단위 km² 자료연도 2021 지역 Lai Châu 출처 FAO FAOSTAT Land Cover (LC), CCI-LC · FAO FAOSTAT Land Cover (LC), CGLS · FAO FAOSTAT Land Cover (LC), MODIS · FAO FAOSTAT Land Cover (LC), WorldCover 공간 정확도 누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다. 지도 표시 범위 63개 성·시 중 63개에 값 있음 값 제공 여부 값 있음",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "cropland-area",
+          "options": 9
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2021",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-039",
+      "title": "수력 잠재량",
+      "renderer": "admin1-choropleth",
+      "featureCount": 63,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 506,
+      "primary": "B-039",
+      "analysis": "현재 분석 데이터명 수력 잠재량 항목 이론 총잠재량 선택 변수 이론 총잠재량 자료연도 2017 단위 GWh/년 공간 단위 GADM 4.1 ADM1(63개 성·시) — 격자 집계 → 성·시 경계(개편 전 63) 지도 표시 범위 63개 성·시 중 63개에 값 있음",
+      "summary": "전국 요약 자료가 있는 지역 63/63개 성·시 최솟값 1.44 GWh/년 중앙값(파생) 1,210 GWh/년 최댓값 16,904 GWh/년 하위 지역 Hưng Yên · 1.44 GWh/년 상위 지역 Gia Lai · 16,904 GWh/년 미제공 지역 0개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "Lai Châu",
+      "selectedPanel": "선택 지역 Lai Châu 데이터명 수력 잠재량 항목 이론 총잠재량 값 16,402 단위 GWh/년 자료연도 2017 지역 Lai Châu 출처 Energy Institute Statistical Review of World Energy · Global Gross Hydropower Potential Dataset (Hoes et al. 2017) / Gernaat et al.(2017) · IHA / EVN · International Hydropower Association (IHA 2024) · International Hydropower Association (IHA) · International Hydropower Association (IHA) / EVN · U.S. EIA International Energy Statistics (Bulk File INTL.txt) · Vietnam Electricity (EVN) · World Bank / ESMAP (2017) · 베트남 총리 Decision 768/QĐ-TTg (2025) — 개정 PDP8 공간 정확도 누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다. 지",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "gross-theoretical-potential",
+          "options": 3
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2017",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-040",
+      "title": "지열 자원",
+      "renderer": "admin1-choropleth",
+      "featureCount": 63,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 516,
+      "primary": "B-040",
+      "analysis": "현재 분석 데이터명 지열 자원 항목 심도 2km 지온(평균) 선택 변수 심도 2km 지온(평균) 자료연도 2026 단위 °C 공간 단위 GADM 4.1 ADM1(63개 성·시) — 격자 집계 → 성·시 경계(개편 전 63) 지도 표시 범위 63개 성·시 중 63개에 값 있음",
+      "summary": "전국 요약 자료가 있는 지역 63/63개 성·시 최솟값 62.73 °C 중앙값(파생) 77.46 °C 최댓값 110.6 °C 하위 지역 Điện Biên · 62.73 °C 상위 지역 Cà Mau · 110.6 °C 미제공 지역 0개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "Lai Châu",
+      "selectedPanel": "선택 지역 Lai Châu 데이터명 지열 자원 항목 심도 2km 지온(평균) 값 66.03 단위 °C 자료연도 2026 지역 Lai Châu 출처 DGGV (2021) · IRENA Global Atlas (HDR Subsurface Thermal Profiles) · IRENA Global Atlas — Subsurface Thermal Profiles; Global Geothermal Power Plant Map; UNFC 유망지역 분류 · Institute of Energy (IoE, MOIT) 2013 · IoE (MOIT) / DGGV · U.S. EIA International Energy Statistics (Bulk File INTL.txt) · World Geothermal Congress 2005 · World Geothermal Congress 2005 / Nguyen (2010) 공간 정확도 누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다. 지도 표시 범위 63개 성·시 중 63개에 값 있음 값 제공 여부 값 있음",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "geotemp-2km-mean",
+          "options": 5
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2026",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-041",
+      "title": "태양광 자원",
+      "renderer": "admin1-choropleth",
+      "featureCount": 63,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 509,
+      "primary": "B-041",
+      "analysis": "현재 분석 데이터명 태양광 자원 항목 수평면 전일사량(GHI, 평균) 선택 변수 수평면 전일사량(GHI, 평균) 자료연도 1999–2018 장기평균(LTA) 단위 kWh/m²/일 공간 단위 GADM 4.1 ADM1(63개 성·시) — Global Solar Atlas 격자 집계 → 성·시 경계(개편 전 63) 지도 표시 범위 63개 성·시 중 63개에 값 있음",
+      "summary": "전국 요약 자료가 있는 지역 63/63개 성·시 최솟값 3.34 kWh/m²/일 중앙값(파생) 4.33 kWh/m²/일 최댓값 5.23 kWh/m²/일 하위 지역 Hà Giang · 3.34 kWh/m²/일 상위 지역 Bình Thuận · 5.23 kWh/m²/일 미제공 지역 0개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "Lai Châu",
+      "selectedPanel": "선택 지역 Lai Châu 데이터명 태양광 자원 항목 수평면 전일사량(GHI, 평균) 값 3.77 단위 kWh/m²/일 자료연도 1999–2018 장기평균(LTA) 지역 Lai Châu 출처 Global Solar Atlas 2.0 · Global Solar Atlas 2.0 (World Bank/ESMAP, Solargis) 공간 정확도 누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다. 지도 표시 범위 63개 성·시 중 63개에 값 있음 값 제공 여부 값 있음",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "ghi-mean",
+          "options": 4
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "1999–2018 장기평균(LTA)",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-042",
+      "title": "풍력 자원",
+      "renderer": "admin1-choropleth",
+      "featureCount": 63,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 511,
+      "primary": "B-042",
+      "analysis": "현재 분석 데이터명 풍력 자원 항목 풍속 평균(고도 100m) 선택 변수 풍속 평균(고도 100m) 자료연도 2008–2017 장기평균(ERA5 기반) 단위 m/s 공간 단위 GADM 4.1 ADM1(63개 성·시) — Global Wind Atlas 100m 격자 집계 → 성·시 경계(개편 전 63) 지도 표시 범위 63개 성·시 중 63개에 값 있음",
+      "summary": "전국 요약 자료가 있는 지역 63/63개 성·시 최솟값 2.54 m/s 중앙값(파생) 4.56 m/s 최댓값 5.68 m/s 하위 지역 Lai Châu · 2.54 m/s 상위 지역 Quảng Bình · 5.68 m/s 미제공 지역 0개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "Lai Châu",
+      "selectedPanel": "선택 지역 Lai Châu 데이터명 풍력 자원 항목 풍속 평균(고도 100m) 값 2.54 단위 m/s 자료연도 2008–2017 장기평균(ERA5 기반) 지역 Lai Châu 출처 Global Wind Atlas 3.x · Global Wind Atlas 3.x (DTU/World Bank ESMAP) 공간 정확도 누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다. 지도 표시 범위 63개 성·시 중 63개에 값 있음 값 제공 여부 값 있음",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "wind-speed-mean-100m",
+          "options": 5
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2008–2017 장기평균(ERA5 기반)",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-048",
+      "title": "주요 광산",
+      "renderer": "point",
+      "featureCount": 2,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 511,
+      "primary": "B-048",
+      "analysis": "현재 분석 데이터명 주요 광산 항목 광산 위치·광종 선택 변수 광산 위치·광종 자료연도 2022 단위 곳(개수) · 값 단위는 항목별 공간 단위 광산 좌표(USGS MRDS) → 광산 점 지도 표시 범위 광산 점 2곳",
+      "summary": "전국 요약 주요 광산 수(지도 표시) 2곳 위치자료 없음(지도 미표시) 6곳 미표기 2곳",
+      "featureSelected": true,
+      "selectedTitle": "Ban Phuc",
+      "selectedPanel": "선택 광산 Ban Phuc 데이터명 주요 광산 항목 광산 위치·광종 기준연도 2022 광종 니켈 소재 성·시 Son La 기후기술 연계 근거 이차전지 양극재 — 수송효율(전기차) 기술 소재 좌표 산출근거 USGS MRDS(Edition 20160315) 지점 좌표 — 명칭·광종·성 일치 매칭 공간 정확도 원천이 제공한 좌표만 표시하며 좌표가 없는 자료는 지도에 투영하지 않습니다. 지도 표시 범위 위치자료 2건 값 제공 여부 표시 항목 모두 값 있음",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "locations",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2022",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "C-009",
+      "title": "기후 법제도(지방 문서)",
+      "renderer": "partial-choropleth",
+      "featureCount": 4,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 509,
+      "primary": "C-009",
+      "analysis": "현재 분석 데이터명 기후 법제도(지방 문서) 항목 지방 기후 법제도 문서 수 선택 변수 지방 기후 법제도 문서 수 자료연도 2021–2025 단위 건 공간 단위 지방 결정문의 적용 성·시(원문 지역명) → 성·시 경계(개편 전 63) 지도 표시 범위 63개 성·시 중 4개에 값 있음",
+      "summary": "전국 요약 자료가 있는 지역 4/63개 성·시 최솟값 1 건 중앙값(파생) 1 건 최댓값 1 건 하위 지역 Đà Nẵng · 1 건 상위 지역 Nghệ An · 1 건 미제공 지역 59개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "Lai Châu",
+      "selectedPanel": "선택 지역 Lai Châu 데이터명 기후 법제도(지방 문서) 항목 지방 기후 법제도 문서 수 값 원천 미제공 단위 건 자료연도 2021–2025 지역 Lai Châu 출처 FAO FAOLEX — Electricity Law 28/2004/QH11 영문본 · 베트남 정부 — Nghị định 119/2025/NĐ-CP · 베트남 정부 — Nghị định 57/2025/NĐ-CP (Nghị định 243/2026/NĐ-CP 개정) · 베트남 정부 공보 / Climate Policy Database · 베트남 정부 공보(vanban.chinhphu.vn) · 베트남 정부 정책포털 — TOÀN VĂN: Luật Điện lực · 베트남 총리 — Quyết định 500/QĐ-TTg (2023-05-15) · 베트남 총리 — Quyết định 768/QĐ-TTg (2025-04-15) · 베트남 총리실 — Quyết định 13/2024/QĐ-TTg 공간 정확도 누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다. 지도 표시 범위 63개 성·시 중 4개에 값 있음 값 제공 여부 원천 미제공 · 59개 성·시 원천 미제공",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "local-document-count",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2021–2025",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "C-010",
+      "title": "환경 법제도(지방 문서)",
+      "renderer": "partial-choropleth",
+      "featureCount": 4,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 511,
+      "primary": "C-010",
+      "analysis": "현재 분석 데이터명 환경 법제도(지방 문서) 항목 지방 환경 법제도 문서 수 선택 변수 지방 환경 법제도 문서 수 자료연도 2021–2025 단위 건 공간 단위 지방 환경규정의 적용 성·시(원문 지역명) → 성·시 경계(개편 전 63) 지도 표시 범위 63개 성·시 중 4개에 값 있음",
+      "summary": "전국 요약 자료가 있는 지역 4/63개 성·시 최솟값 1 건 중앙값(파생) 1 건 최댓값 1 건 하위 지역 Gia Lai · 1 건 상위 지역 Đà Nẵng · 1 건 미제공 지역 59개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "Lai Châu",
+      "selectedPanel": "선택 지역 Lai Châu 데이터명 환경 법제도(지방 문서) 항목 지방 환경 법제도 문서 수 값 원천 미제공 단위 건 자료연도 2021–2025 지역 Lai Châu 출처 베트남 정부 — Nghị định 05/2025/NĐ-CP (환경보호법 시행령 08/2022 개정) · 베트남 정부 공보 / LuatVietnam · 베트남 정부 공보(vanban.chinhphu.vn) 공간 정확도 누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다. 지도 표시 범위 63개 성·시 중 4개에 값 있음 값 제공 여부 원천 미제공 · 59개 성·시 원천 미제공 같은 문서가 기후 법제도(지방 문서)에도 수록되어 있으며 두 자료를 함께 켜도 문서 수를 더하지 않습니다.",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "local-document-count",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2021–2025",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "C-012",
+      "title": "PPP 사업 이력",
+      "renderer": "partial-choropleth",
+      "featureCount": 56,
+      "rendered": true,
+      "renderAttempts": 1,
+      "renderMs": 18,
+      "primary": "C-012",
+      "analysis": "현재 분석 데이터명 PPP 사업 이력 항목 PPP 사업 수(PPI 수록) 선택 변수 PPP 사업 수(PPI 수록) 자료연도 1997–2024 단위 건 공간 단위 2025년 개편 후 34개 성·시(World Bank PPI 사업을 지역별 집계) → 34개 성·시 값을 소속 63개 경계에 동일 표시 지도 표시 범위 개편 후 성·시 단위 값 · 소속 63개 성·시 경계 중 56개에 대응 표시",
+      "summary": "전국 요약 자료가 있는 개편 후 성·시 29/29개 개편 후 성·시 최솟값 1 건 중앙값(파생) 3 건 최댓값 24 건 하위 개편 후 성·시 Điện Biên · 1 건 상위 개편 후 성·시 Hồ Chí Minh · 24 건 미제공 개편 후 성·시 0개 개편 후 성·시 중앙값은 값이 있는 개편 후 성·시의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "Lai Châu",
+      "selectedPanel": "선택 지역 Lai Châu 데이터명 PPP 사업 이력 항목 PPP 사업 수(PPI 수록) 값 5 단위 건 자료연도 1997–2024 지역 Lai Châu 비교·공간단위 Lai Châu 개편 후 성·시의 값 · 개편 전 성·시 단위 독립값이 아님 자료 설명 Lai Châu은(는) 2025년 개편 후에도 같은 이름의 성·시로 유지됩니다. 값은 개편 후 단위 기준입니다. 출처 베트남 국회·정부 공보 / World Bank PPP Legal Framework · 베트남 재무부(Bộ Tài chính) 투자 포털 · 베트남 정부 — Nghị định 243/2025/NĐ-CP 공간 정확도 개편 후 34개 성·시 값을 소속 63개 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다. 지도 표시 범위 개편 후 성·시 단위 값 · 소속 63개 성·시 경계 중 56개에 대응 표시 값 제공 여부 값 있음 이 지역의 원천 행 1건 Energy 5건 · Lai Châu · 2010-2012 · Active 5건 / 전체 5건",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": true,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "ppp-project-count",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "1997–2024",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "C-013",
+      "title": "외국인 투자 규정(지역 특별 인센티브)",
+      "renderer": "partial-choropleth",
+      "featureCount": 14,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 529,
+      "primary": "C-013",
+      "analysis": "현재 분석 데이터명 외국인 투자 규정(지역 특별 인센티브) 항목 지역 특별 인센티브 근거 행 수 선택 변수 지역 특별 인센티브 근거 행 수 자료연도 2014–2025 단위 건 공간 단위 특정 성·시가 명시된 특별메커니즘·지방 인센티브(개편 후 34개 체계) → 34개 성·시 값을 소속 63개 경계에 동일 표시 지도 표시 범위 개편 후 성·시 단위 값 · 소속 63개 성·시 경계 중 14개에 대응 표시",
+      "summary": "전국 요약 자료가 있는 개편 후 성·시 8/8개 개편 후 성·시 최솟값 1 건 중앙값(파생) 1 건 최댓값 7 건 하위 개편 후 성·시 Khánh Hòa · 1 건 상위 개편 후 성·시 Hồ Chí Minh · 7 건 미제공 개편 후 성·시 0개 개편 후 성·시 중앙값은 값이 있는 개편 후 성·시의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "Lai Châu",
+      "selectedPanel": "선택 지역 Lai Châu 데이터명 외국인 투자 규정(지역 특별 인센티브) 항목 지역 특별 인센티브 근거 행 수 값 원천 미제공 단위 건 자료연도 2014–2025 지역 Lai Châu 출처 베트남 국회 (Quốc hội) — 투자법 143/2025/QH15 · 베트남 국회 — Nghị quyết 98/2023/QH15 (정부 정책포털 전문) · 베트남 국회·정부 공보 / LuatVietnam 공간 정확도 개편 후 34개 성·시 값을 소속 63개 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다. 지도 표시 범위 개편 후 성·시 단위 값 · 소속 63개 성·시 경계 중 14개에 대응 표시 값 제공 여부 원천 미제공 · 49개 성·시 원천 미제공",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "special-incentive-provision-count",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2014–2025",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "C-016",
+      "title": "재생에너지 발주 및 확대 계획[국가 RE 용량 목표, 입찰 일정(예정/진행/완료), 대상 기술, 사업자 선정 방식(경쟁입찰/FIT), 발주 기관]",
+      "renderer": "partial-choropleth",
+      "featureCount": 63,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 518,
+      "primary": "C-016",
+      "analysis": "현재 분석 데이터명 재생에너지 지역계획 항목 개정 PDP8 부록II 지역별 재생에너지 배분 선택 변수 옥상태양광(ĐMT mái nhà) 계획용량 자료연도 2025-2030 단위 MW 공간 단위 성·시(총리 결정 768/QĐ-TTg 부속표) → 성·시 경계(개편 전 63) 지도 표시 범위 63개 성·시 중 63개에 값 있음",
+      "summary": "전국 요약 자료가 있는 지역 63/63개 성·시 최솟값 50 MW 중앙값(파생) 123 MW 최댓값 2,092 MW 하위 지역 Lai Châu · 50 MW 상위 지역 Hải Phòng · 2,092 MW 미제공 지역 0개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "Lai Châu",
+      "selectedPanel": "선택 지역 Lai Châu 데이터명 재생에너지 지역계획 항목 옥상태양광(ĐMT mái nhà) 계획용량 값 50 단위 MW 자료연도 2025-2030 지역 Lai Châu 출처 베트남 총리실 (Quyết định 768/QĐ-TTg) / 산업무역부(MOIT) 공간 정확도 개편 전 63개 성·시 중 실제 계획값이 공개된 지역만 표시하며, 미제공 지역은 0으로 바꾸지 않습니다. 지도 표시 범위 63개 성·시 중 63개에 값 있음 값 제공 여부 값 있음",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "dmt-mai-nha",
+          "options": 8
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2025-2030",
+          "options": 2
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "C-019",
+      "title": "탄소시장 대상시설(인벤토리 의무)",
+      "renderer": "admin1-choropleth",
+      "featureCount": 63,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 513,
+      "primary": "C-019",
+      "analysis": "현재 분석 데이터명 탄소시장 대상시설(인벤토리 의무) 항목 온실가스 인벤토리 의무 대상 시설 수 선택 변수 온실가스 인벤토리 의무 대상 시설 수 자료연도 2026 단위 개 공간 단위 2025년 개편 후 34개 성·시(Quyết định 2026-08-10 대상시설 명부 집계) → 34개 성·시 값을 소속 63개 경계에 동일 표시 지도 표시 범위 개편 후 성·시 단위 값 · 소속 63개 성·시 경계 중 63개에 대응 표시",
+      "summary": "전국 요약 자료가 있는 개편 후 성·시 34/34개 개편 후 성·시 최솟값 3 개 중앙값(파생) 36.5 개 최댓값 479 개 하위 개편 후 성·시 Lai Châu · 3 개 상위 개편 후 성·시 Hồ Chí Minh · 479 개 미제공 개편 후 성·시 0개 개편 후 성·시 중앙값은 값이 있는 개편 후 성·시의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "Lai Châu",
+      "selectedPanel": "선택 지역 Lai Châu 데이터명 탄소시장 대상시설(인벤토리 의무) 항목 온실가스 인벤토리 의무 대상 시설 수 값 3 단위 개 자료연도 2026 지역 Lai Châu 비교·공간단위 Lai Châu 개편 후 성·시의 값 · 개편 전 성·시 단위 독립값이 아님 자료 설명 Lai Châu은(는) 2025년 개편 후에도 같은 이름의 성·시로 유지됩니다. 값은 개편 후 단위 기준입니다. 출처 베트남 국회상임위원회 — Nghị quyết 109/2025/UBTVQH15 · 베트남 국회상임위원회 — Nghị quyết 579/2018/UBTVQH14 · 베트남 정부 — Nghị định 06/2022/NĐ-CP (119/2025/NĐ-CP 개정) · 베트남 정부 — Nghị định 29/2026/NĐ-CP · 베트남 정부 — Nghị định 29/2026/NĐ-CP / 하노이증권거래소(HNX) · 베트남 정부 공보 / ICAP / World Bank Carbon Pricing Dashboard 공간 정확도 개편 후 34개 성·시 값을 소속 63개 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다. 지도 표시",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "ghg-inventory-facility-count",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2026",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "C-022",
+      "title": "탄소시장 대상시설 업종 구성",
+      "renderer": "admin1-choropleth",
+      "featureCount": 63,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 512,
+      "primary": "C-022",
+      "analysis": "현재 분석 데이터명 탄소시장 대상시설 업종 구성 항목 대상시설 수 — 공상(산업·무역) 선택 변수 대상시설 수 — 공상(산업·무역) 자료연도 2026 단위 개 공간 단위 2025년 개편 후 34개 성·시(동일 대상시설 명부의 업종 구성) → 34개 성·시 값을 소속 63개 경계에 동일 표시 지도 표시 범위 개편 후 성·시 단위 값 · 소속 63개 성·시 경계 중 63개에 대응 표시",
+      "summary": "전국 요약 자료가 있는 개편 후 성·시 34/34개 개편 후 성·시 최솟값 0 개 중앙값(파생) 25 개 최댓값 430 개 하위 개편 후 성·시 Sơn La · 0 개 상위 개편 후 성·시 Hồ Chí Minh · 430 개 미제공 개편 후 성·시 0개 개편 후 성·시 중앙값은 값이 있는 개편 후 성·시의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "Lai Châu",
+      "selectedPanel": "선택 지역 Lai Châu 데이터명 탄소시장 대상시설 업종 구성 항목 대상시설 수 — 공상(산업·무역) 값 2 단위 개 자료연도 2026 지역 Lai Châu 비교·공간단위 Lai Châu 개편 후 성·시의 값 · 개편 전 성·시 단위 독립값이 아님 자료 설명 Lai Châu은(는) 2025년 개편 후에도 같은 이름의 성·시로 유지됩니다. 값은 개편 후 단위 기준입니다. 출처 ICAP / World Bank PMI / 베트남 정부 공보 · 베트남 정부 — Nghị định 29/2026/NĐ-CP (국내 탄소거래소) · 베트남 정부 — Nghị định 45/2022/NĐ-CP · 베트남 정부 — Nghị định 45/2022/NĐ-CP · Nghị định 29/2026/NĐ-CP 공간 정확도 개편 후 34개 성·시 값을 소속 63개 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다. 지도 표시 범위 개편 후 성·시 단위 값 · 소속 63개 성·시 경계 중 63개에 대응 표시 값 제공 여부 값 있음 탄소시장 대상시설(인벤토리 의무)와(과) 같은 대상시설 명부를 다른 기준(지역별·업종별)으로 본 값",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "facilities-industry-trade",
+          "options": 4
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2026",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "C-024",
+      "title": "REDD+ 사업 참여지역",
+      "renderer": "partial-choropleth",
+      "featureCount": 6,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 515,
+      "primary": "C-024",
+      "analysis": "현재 분석 데이터명 REDD+ 사업 참여지역 항목 FCPF ERPA(북중부 6개 성) 참여 선택 변수 FCPF ERPA(북중부 6개 성) 참여 자료연도 2022 단위 참여 프로그램 수 공간 단위 FCPF ERPA 대상 성(개편 전 63개 성 이름) → 성·시 경계(개편 전 63) 지도 표시 범위 63개 성·시 중 6개에 값 있음",
+      "summary": "전국 요약 자료가 있는 지역 6/63개 성·시 최솟값 1 참여 프로그램 수 중앙값(파생) 1 참여 프로그램 수 최댓값 1 참여 프로그램 수 하위 지역 Hà Tĩnh · 1 참여 프로그램 수 상위 지역 Thừa Thiên Huế · 1 참여 프로그램 수 미제공 지역 57개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "Lai Châu",
+      "selectedPanel": "선택 지역 Lai Châu 데이터명 REDD+ 사업 참여지역 항목 FCPF ERPA(북중부 6개 성) 참여 값 원천 미제공 단위 참여 프로그램 수 자료연도 2022 지역 Lai Châu 출처 Green Climate Fund (GCF) · UNFCCC REDD+ Web Platform / 베트남 농업환경부(MAE) · World Bank · World Bank — Forest Carbon Partnership Facility (FCPF) 공간 정확도 누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다. 지도 표시 범위 63개 성·시 중 6개에 값 있음 값 제공 여부 원천 미제공 · 57개 성·시 원천 미제공",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "fcpf-erpa-participation",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2022",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "C-025",
+      "title": "탄소크레딧 사업",
+      "renderer": "point",
+      "featureCount": 262,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 512,
+      "primary": "C-025",
+      "analysis": "현재 분석 데이터명 탄소크레딧 사업 항목 사업 위치·유형 선택 변수 사업 위치·유형 자료연도 2026 단위 건(개수) · 값 단위는 항목별 공간 단위 사업 좌표(등록부·지오코딩) → 사업 점 지도 표시 범위 사업 점 262건",
+      "summary": "전국 요약 탄소크레딧 사업 수(지도 표시) 262건 위치자료 없음(지도 미표시) 126건 미표기 262건",
+      "featureSelected": true,
+      "selectedTitle": "Dak Srong 3A Hydr",
+      "selectedPanel": "선택 사업 Dak Srong 3A Hydr 데이터명 탄소크레딧 사업 항목 사업 위치·유형 기준연도 2026 소재 지역 Gia Lai 공식 원문 https://cdm.unfccc.int/Projects/redirector?ref=7956 공간 정확도 원천이 제공한 좌표만 표시하며 좌표가 없는 자료는 지도에 투영하지 않습니다. 지도 표시 범위 위치자료 262건 값 제공 여부 원천 미제공: 기술분야 · 크레딧 기간 · 연간 예상감축량",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "locations",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2026",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "D-008",
+      "title": "성·시 기후변화 지출",
+      "renderer": "partial-choropleth",
+      "featureCount": 3,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 510,
+      "primary": "D-008",
+      "analysis": "현재 분석 데이터명 지역 기후예산 항목 주관 부처별 기후 예산 규모 선택 변수 성 단위 기후변화 지출 누계 자료연도 2010-2013 단위 VND 공간 단위 자료가 있는 3개 성·시 → 성·시 경계(3개, 나머지 미표시) 지도 표시 범위 63개 성·시 중 3개에 값 있음",
+      "summary": "전국 요약 자료가 있는 지역 3/63개 성·시 최솟값 179,000,000,000 VND 중앙값(파생) 481,000,000,000 VND 최댓값 850,000,000,000 VND 하위 지역 An Giang · 179,000,000,000 VND 상위 지역 Quảng Nam · 850,000,000,000 VND 미제공 지역 60개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "Lai Châu",
+      "selectedPanel": "선택 지역 Lai Châu 데이터명 지역 기후예산 항목 성 단위 기후변화 지출 누계 값 원천 미제공 단위 VND 자료연도 2010-2013 지역 Lai Châu 출처 United Nations Development Programme · 베트남 기획투자부(MPI) — Viet Nam Climate Public Expenditure and Investment Review (CPEIR) 2015 · United Nations Development Programme 베트남사무소 · 베트남 기획투자부(MPI) — CPEIR 2022 · World Bank — Viet Nam Country Climate and Development Report (CCDR) 2022 공간 정확도 개편 전 63개 성·시 중 실제 예산값이 공개된 3개 지역만 표시하며, 나머지 지역은 0으로 바꾸지 않습니다. 지도 표시 범위 63개 성·시 중 3개에 값 있음 값 제공 여부 원천 미제공 · 60개 성·시 원천 미제공",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "provincial-climate-budget",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2010-2013",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "D-018",
+      "title": "적응기금 지역 협력사업",
+      "renderer": "regional-scope",
+      "featureCount": 4,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 515,
+      "primary": "D-018",
+      "analysis": "현재 분석 데이터명 적응기금 사업 항목 Adaptation Fund 프로젝트 선택 변수 지역 협력범위·세부 활동지역 자료연도 2026 단위 사업 공간 단위 검증된 활동지역 점 · 참여국 범위 → 활동지역 점 · 참여국 범위 지도 표시 범위 지역 협력사업 2건의 참여국 범위 2개와 검증된 세부 활동지역 2곳",
+      "summary": "전국 요약 지역 협력사업 2건 참여국 범위 2개 범위 검증된 세부 활동지역 2곳 베트남 참여 2개 사업 모두 포함",
+      "featureSelected": true,
+      "selectedTitle": "Mekong EbA South: Enhancing Climate Resilience in the Greater Mekong Sub-region through Ecosystem-based Adaptation in the Context of South-South Cooperation (Thailand, Viet Nam)",
+      "selectedPanel": "선택 사업 지역 협력사업 Mekong EbA South: Enhancing Climate Resilience in the Greater Mekong Sub-region through Ecosystem-based Adaptation in the Context of South-South Cooperation (Thailand, Viet Nam) 데이터명 적응기금 사업 사업 참여지역 Thailand · Viet Nam 사업분야 초국경 수자원 관리 베트남 참여 포함 상태 Project Under Implementation 승인액 7,000,000 USD 수행기관 UN Environment Programme (MIE) 세부 활동지역 Young Basin (Thailand) · Tram Chim National Park 주변 (Viet Nam) 공간 표현 태국·베트남의 지역 협력범위입니다. 두 점은 공식 제안서에 명시된 세부 활동지역입니다. 좌표 처리 원천 좌표 2개 · 검증된 세부 활동지역 점 2개 표시 공간 해석 유의 태국·베트남의 지역 협력범위와 원문 제안서에서 확인된 세부 활동지역 2곳을 함께 표시합니다. 공식 출처",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "regional-scope",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2026",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "E-004",
+      "title": "국제기구 현지사무소",
+      "renderer": "point",
+      "featureCount": 17,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 504,
+      "primary": "E-004",
+      "analysis": "현재 분석 데이터명 국제기구 현지사무소 항목 국제기구 현지사무소 선택 변수 국제기구 현지사무소 자료연도 2026 단위 곳(개수) · 값 단위는 항목별 공간 단위 사무소 주소 지오코딩(OSM Nominatim) → 사무소 점(정밀도 표시) 지도 표시 범위 사무소 점(정밀도 표시) 17곳",
+      "summary": "전국 요약 국제기구 현지사무소 수(지도 표시) 17곳 지도 미표시 행 2행 (좌표 없음·범위 밖·제외 상태) 근사 위치(속 빈 기호) 1곳 유엔기구 5곳 양자개발협력기관 4곳 다자개발은행 3곳 외교공관 3곳 국제기구(기타) 1곳 양자 원조기관 1곳",
+      "featureSelected": true,
+      "selectedTitle": "ADB",
+      "selectedPanel": "선택 기관 ADB 데이터명 국제기구 현지사무소 항목 국제기구 현지사무소 기준연도 2026 기관 유형 다자개발은행 도시 Hanoi 사무소 주소 3rd Floor, Cornerstone Building, 16 Phan Chu Trinh Street, Cua Nam Ward, Ha Noi 협력분야·업무 Viet Nam Resident Mission 사무소 상태 현행 위치 정밀도 건물·시설 단위 — 조회기준: 주소 / OpenStreetMap(Nominatim) 지오코딩, ODbL 1.0 출처 Asian Development Bank (ADB) 공간 정확도 좌표가 있는 자료만 표시합니다. 1건은 도시·행정구역 대표점 등 근사 위치이며 속이 빈 기호로 구분합니다. 지도 표시 범위 사무소 점(정밀도 표시) 17곳 값 제공 여부 표시 항목 모두 값 있음",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "locations",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2026",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "E-005",
+      "title": "대학·연구기관·NGO",
+      "renderer": "point",
+      "featureCount": 20,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 507,
+      "primary": "E-005",
+      "analysis": "현재 분석 데이터명 대학·연구기관·NGO 항목 대학·연구기관·NGO 선택 변수 대학·연구기관·NGO 자료연도 2026 단위 개 기관(개수) · 값 단위는 항목별 공간 단위 기관 소재지 지오코딩 → 기관 점(정밀도 표시) 지도 표시 범위 기관 점(정밀도 표시) 20개 기관",
+      "summary": "전국 요약 기관 수(지도 표시) 20개 기관 원천 행 20행 근사 위치(속 빈 기호) 11개 기관 NGO 5개 기관 대학 3개 기관 연구소 3개 기관 대학 부설 연구소 2개 기관 국제 NGO 대표사무소 1개 기관 네트워크(NGO 연합) 1개 기관 대학(연구그룹) 1개 기관 대학(학부) 1개 기관 싱크탱크 1개 기관 연구기관(국가 아카데미) 1개 기관 NGO(국제) 1개 기관",
+      "featureSelected": true,
+      "selectedTitle": "Faculty of Environment, University of Science (VNU-HCM)",
+      "selectedPanel": "선택 기관 Faculty of Environment, University of Science (VNU-HCM) 데이터명 대학·연구기관·NGO 항목 대학·연구기관·NGO 기준연도 2026 기관 유형 대학(학부) 도시 Ho Chi Minh City 전문 분야 환경 연구·실행 역량 2000년 설립. 환경과학·환경공학기술·자원환경관리 3개 전공, 교원 48명 위치 정밀도 건물·시설 단위 — 조회기준: 기관명+도시 / OpenStreetMap(Nominatim) 지오코딩, ODbL 1.0 출처 각 기관 공식 웹사이트 및 CTCN 네트워크 회원 정보(용역사 취합) 공간 정확도 좌표가 있는 자료만 표시합니다. 11건은 도시·행정구역 대표점 등 근사 위치이며 속이 빈 기호로 구분합니다. 지도 표시 범위 기관 점(정밀도 표시) 20개 기관 값 제공 여부 원천 미제공: 국제협력 실적",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "locations",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2026",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "E-006",
+      "title": "현지 투자자 네트워크",
+      "renderer": "point",
+      "featureCount": 8,
+      "rendered": true,
+      "renderAttempts": 1,
+      "renderMs": 1,
+      "primary": "E-006",
+      "analysis": "현재 분석 데이터명 현지 투자자 네트워크 항목 베트남 내 투자자 거점 선택 변수 베트남 내 투자자 거점 자료연도 2026 단위 곳(개수) · 값 단위는 항목별 공간 단위 베트남 내 거점 지오코딩(해외 본부 제외) → 거점 점(정밀도 표시) 지도 표시 범위 거점 점(정밀도 표시) 8곳",
+      "summary": "전국 요약 기관 수(지도 표시) 8곳 원천 행 8행 지도 미표시 행 7행 (좌표 없음·범위 밖·제외 상태) 근사 위치(속 빈 기호) 5곳 Ho Chi Minh City 7곳 Ho Chi Minh City; Hanoi 1곳",
+      "featureSelected": true,
+      "selectedTitle": "Touchstone Partners",
+      "selectedPanel": "선택 기관 Touchstone Partners 데이터명 현지 투자자 네트워크 항목 베트남 내 투자자 거점 기준연도 2026 위치 정밀도 도시·행정구역 대표점(건물 위치 아님) 베트남 내 거점 도시 Ho Chi Minh City 본부 국가 VNM 투자 분야 지속가능농업·순환경제·폐기물·신에너지 펀드·계열 Green Transition Fund 위치 정밀도 행정구역(시·성) 중심점 — 조회기준: 기관명+도시 / OpenStreetMap(Nominatim) 지오코딩, ODbL 1.0 출처 각 운용사·투자사 공식 웹사이트 및 언론 공간 정확도 좌표가 있는 자료만 표시합니다. 5건은 도시·행정구역 대표점 등 근사 위치이며 속이 빈 기호로 구분합니다. 지도 표시 범위 거점 점(정밀도 표시) 8곳 값 제공 여부 표시 항목 모두 값 있음",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "locations",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2026",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "E-018",
+      "title": "한국 기업 진출",
+      "renderer": "point",
+      "featureCount": 14,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 514,
+      "primary": "E-018",
+      "analysis": "현재 분석 데이터명 한국 기업 진출 항목 한국 기업 사업지·법인 선택 변수 한국 기업 사업지·법인 자료연도 2026 단위 곳(개수) · 값 단위는 항목별 공간 단위 현지 사업지·법인 소재지 지오코딩 → 사업지 점(진출 상태·정밀도 표시) 지도 표시 범위 사업지 점(진출 상태·정밀도 표시) 14곳",
+      "summary": "전국 요약 한국 기업 진출 수(지도 표시) 14곳 지도 미표시 행 2행 (좌표 없음·범위 밖·제외 상태) 위치자료 없음(지도 미표시) 8곳 근사 위치(속 빈 기호) 9곳",
+      "featureSelected": true,
+      "selectedTitle": "LX인터내셔널 (LX International)",
+      "selectedPanel": "선택 사업지 LX인터내셔널 (LX International) 데이터명 한국 기업 진출 항목 한국 기업 사업지·법인 기준연도 2026 위치 정밀도 도시·행정구역 대표점(건물 위치 아님) 진출 상태 존치 업종·기술 1953 설립 / 2018 진출 진출 형태 바이오매스 발전·옥상태양광·탄소크레딧 설립·진출 연도 합작투자 및 프로젝트 지분투자, 오프그리드 C&I 태양광 전력공급계약 위치 정밀도 행정구역(시·성) 중심점 — 조회기준: 사업지(자료 명시) / OpenStreetMap(Nominatim) 지오코딩, ODbL 1.0 출처 각 기업 공식 웹사이트 및 언론 보도(용역사 취합) 공간 정확도 좌표가 있는 자료만 표시합니다. 9건은 도시·행정구역 대표점 등 근사 위치이며 속이 빈 기호로 구분합니다. 지도 표시 범위 사업지 점(진출 상태·정밀도 표시) 14곳 값 제공 여부 표시 항목 모두 값 있음",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "locations",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2026",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "E-019",
+      "title": "한국 기관 사무소",
+      "renderer": "point",
+      "featureCount": 6,
+      "rendered": true,
+      "renderAttempts": 1,
+      "renderMs": 2,
+      "primary": "E-019",
+      "analysis": "현재 분석 데이터명 한국 기관 사무소 항목 한국 기관 사무소 선택 변수 한국 기관 사무소 자료연도 2026 단위 곳(개수) · 값 단위는 항목별 공간 단위 사무소 주소 지오코딩 → 사무소 점(정밀도 표시) 지도 표시 범위 사무소 점(정밀도 표시) 6곳",
+      "summary": "전국 요약 한국 기관 사무소 수(지도 표시) 6곳 위치자료 없음(지도 미표시) 3곳 근사 위치(속 빈 기호) 1곳 Hanoi 4곳 Ho Chi Minh City 2곳",
+      "featureSelected": true,
+      "selectedTitle": "KOICA 베트남사무소",
+      "selectedPanel": "선택 기관 KOICA 베트남사무소 데이터명 한국 기관 사무소 항목 한국 기관 사무소 기준연도 2026 도시 Hanoi 주소 18F, Lotte Center Hanoi, 54 Lieu Giai Street, Ba Dinh District, Hanoi 담당 업무 무(공개된 정보 없음) 위치 정밀도 건물·시설 단위 — 조회기준: 주소 / OpenStreetMap(Nominatim) 지오코딩, ODbL 1.0 출처 각 기관 공식 웹사이트(용역사 취합) 공간 정확도 좌표가 있는 자료만 표시합니다. 1건은 도시·행정구역 대표점 등 근사 위치이며 속이 빈 기호로 구분합니다. 지도 표시 범위 사무소 점(정밀도 표시) 6곳 값 제공 여부 표시 항목 모두 값 있음",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "locations",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2026",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    }
+  ],
+  "interactions": {
+    "multiSelect": {
+      "primary": "B-004",
+      "contexts": [
+        "A-023",
+        "B-008",
+        "C-019"
+      ],
+      "rendered": [
+        "B-004",
+        "C-019",
+        "A-023",
+        "B-008"
+      ],
+      "colourSourceShown": true,
+      "catalog": "43개 자료 · 선택 4개 · 색상·분석 기준: 미래기후 전망(CMIP6)",
+      "legendCount": 4
+    },
+    "colourSwitch": {
+      "primary": "C-019",
+      "contexts": [
+        "B-004",
+        "A-023",
+        "B-008"
+      ],
+      "rendered": [
+        "C-019",
+        "B-004",
+        "A-023",
+        "B-008"
+      ]
+    },
+    "hide": {
+      "contexts": [
+        "B-004",
+        "A-023",
+        "B-008"
+      ],
+      "rendered": [
+        "C-019",
+        "B-004",
+        "B-008"
+      ],
+      "legend": [
+        {
+          "element": "C-019",
+          "drawn": "true",
+          "role": "primary"
+        },
+        {
+          "element": "B-004",
+          "drawn": "true",
+          "role": "context"
+        },
+        {
+          "element": "A-023",
+          "drawn": "false",
+          "role": "context"
+        },
+        {
+          "element": "B-008",
+          "drawn": "true",
+          "role": "context"
+        }
+      ],
+      "hiddenInUrl": true
+    },
+    "fold": {
+      "ariaExpandedAfterFold": "false",
+      "contextsAfterFold": [
+        "B-004",
+        "A-023",
+        "B-008"
+      ],
+      "primaryAfterFold": "C-019"
+    },
+    "untick": {
+      "primary": "C-019",
+      "contexts": [
+        "B-004",
+        "A-023"
+      ]
+    },
+    "reload": {
+      "urlBefore": "http://127.0.0.1:4331/?layer=electricityGap&layers=tanso-sijang-beobryul-yesan-tansose-doib-yeobu-tansose-seyul-ets-doib-yeobu-ets-daesang-bu%2Ccmip6-giban-gwageo-mirae-gihu-gion-tas-coegogion-tasmax-coejeogion-tasmin-gangsu-pr-pungso%2Cbaljeonso-wici-yongryang&layerOpacities=0.78%2C0.78%2C0.78&focusLayer=tanso-sijang-beobryul-yesan-tansose-doib-yeobu-tansose-seyul-ets-doib-yeobu-ets-daesang-bu&primaryLayer=tanso-sijang-beobryul-yesan-tansose-doib-yeobu-tansose-seyul-ets-doib-yeobu-ets-daesang-bu&contextLayers=cmip6-giban-gwageo-mirae-gihu-gion-tas-coegogion-tasmax-coejeogion-tasmin-gangsu-pr-pungso%2Cbaljeonso-wici-yongryang&mapSelectors=%7B%22tanso-sijang-beobryul-yesan-tansose-doib-yeobu-tansose-seyul-ets-doib-yeobu-ets-daesang-bu%22%3A%7B%22variable%22%3A%22ghg-inventory-facility-count%22%2C%22period%22%3A%222026%22%7D%2C%22cmip6-giban-gwageo-mirae-gihu-gion-tas-coegogion-tasmax-coejeogion-tasmin-gangsu-pr-pungso%22%3A%7B%22variable%22%3A%22annual-mean-temperature--ssp245%22%2C%22period%22%3A%222050%22%7D%2C%22baljeonso-wici-yongryang%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222026%22%7D%7D&layerYears=2026%2C2050%2C2026&scope=priority&country=VNM&baseOpacity=0.58&element=tanso-sijang-beobryul-yesan-tansose-doib-yeobu-tansose-seyul-ets-doib-yeobu-ets-daesang-bu&year=2026&period=2026#map",
+      "primaryBefore": "C-019",
+      "contextsBefore": [
+        "B-004",
+        "A-023"
+      ],
+      "primaryAfter": "C-019",
+      "contextsAfter": [
+        "B-004",
+        "A-023"
+      ],
+      "renderedAfter": [
+        "C-019",
+        "B-004",
+        "A-023"
+      ],
+      "restored": true
+    },
+    "resize": {
+      "widthBefore": 320,
+      "widthAfterKeys": 336,
+      "widthAfterDrag": 396,
+      "widthAfterReload": 396,
+      "storedValue": "396",
+      "canvasWidthAfterDrag": 660,
+      "keyboardWorks": true,
+      "dragWorks": true,
+      "persisted": true,
+      "widthAfterReset": 320
+    },
+    "preset": {
+      "id": "POWER_INFRASTRUCTURE",
+      "card": "송전망 + 발전소",
+      "primary": "A-024",
+      "contexts": [
+        "A-023"
+      ],
+      "rendered": [
+        "A-023",
+        "A-024"
+      ],
+      "matchesCard": true,
+      "notice": "전력 인프라: 베트남 송전망 + 발전소을(를) 표시했습니다. 색상 지도는 첫 번째 자료입니다."
+    },
+    "climate": {
+      "before": {
+        "measure": "hot-days-tx35",
+        "scenario": "ssp245",
+        "period": "2050"
+      },
+      "after": {
+        "measure": "tropical-nights-tr26",
+        "scenario": "ssp585",
+        "period": "2050",
+        "legend": "폭염 색상 지도 · 분석 기준 · 열대야(최저기온 26°C 이상) · SSP5-8.5 · 일 표시 끄기"
+      },
+      "trend": {
+        "region": "Lai Châu",
+        "rows": 12,
+        "unit": "일",
+        "series": 0,
+        "text": "Lai Châu 열대야(최저기온 26°C 이상) 추이 단위: 일 SSP1-1.9(공통사회경제경로 1–1.9) SSP3-7.0(공통사회경제경로 3–7.0) SSP2-4.5(공통사회경제경로 2–4.5) SSP5-8.5(공통사회경제경로 5–8.5) 표시기간 전체 축소 확대 전체 66.95 50.21 33.47 16.74 0 2045 2065 2080 2100 연도 열대야(최저기온 26°C 이상) (일) 지도에서 선택한 성·시의 값을 시나리오별로 잇습니다. 과거 모형(historical, 점선)과 SSP 전망은 서로 잇지 않습니다. 지도는"
+      },
+      "periodKeptOnMeasureChange": true
+    }
+  },
+  "widths": [
+    {
+      "width": 390,
+      "documentOverflow": false,
+      "clipped": [],
+      "headerVisible": true,
+      "panelOpen": false,
+      "canvas": {
+        "width": 390,
+        "height": 574
+      },
+      "overlayShareOfCanvas": 0.4,
+      "collapsedHeaderVisible": true
+    },
+    {
+      "width": 768,
+      "documentOverflow": false,
+      "clipped": [],
+      "headerVisible": true,
+      "panelOpen": false,
+      "canvas": {
+        "width": 768,
+        "height": 523
+      },
+      "overlayShareOfCanvas": 0.21,
+      "collapsedHeaderVisible": true
+    },
+    {
+      "width": 1024,
+      "documentOverflow": false,
+      "clipped": [],
+      "headerVisible": false,
+      "panelOpen": true,
+      "canvas": {
+        "width": 804,
+        "height": 934
+      },
+      "overlayShareOfCanvas": 0.21
+    },
+    {
+      "width": 1440,
+      "documentOverflow": false,
+      "clipped": [],
+      "headerVisible": false,
+      "panelOpen": true,
+      "canvas": {
+        "width": 736,
+        "height": 934
+      },
+      "overlayShareOfCanvas": 0.23
+    },
+    {
+      "width": 1920,
+      "documentOverflow": false,
+      "clipped": [],
+      "headerVisible": false,
+      "panelOpen": true,
+      "canvas": {
+        "width": 1216,
+        "height": 934
+      },
+      "overlayShareOfCanvas": 0.14
+    }
+  ],
+  "consoleErrors": [],
+  "httpFailures": [],
+  "retries": [],
+  "summary": {
+    "activeLayers": 42,
+    "renderedLayers": 42,
+    "featureSelectedLayers": 42,
+    "internalPhraseLayers": [],
+    "consoleErrorCount": 0,
+    "httpFailureCount": 0,
+    "retryCount": 0,
+    "widthsWithClippedText": [],
+    "widthsWithDocumentOverflow": []
+  }
+}

@@ -55,6 +55,26 @@ jobs:
         timeout-minutes: 30
         run: npm run finalize:v136
 
+      # Home/finder/map role split (52 checks) and the 152 card→detail
+      # analysis QA (real card clicks, same-meaning value checks, selector
+      # effects, map hand-off). Both exit 1 on a required failure.
+      - name: Run V140 card and detail analysis gates
+        timeout-minutes: 60
+        run: |
+          npm run qa:role-split:v140
+          npm run qa:analysis:v140
+
+      - name: Upload V140 QA reports
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: v140-qa-reports
+          path: |
+            reports/v140/role-split-qa-v140*.json
+            reports/v140/analysis-qa-v140-*.json
+            reports/v140/analysis-qa-v140-*.md
+          if-no-files-found: ignore
+
       - name: Verify deployment and security contracts
         run: |
           npm run audit:deployment:v128

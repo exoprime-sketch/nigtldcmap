@@ -25,4 +25,10 @@ describe("publicTextV126 separator trimming", () => {
     expect(publicTextV126("-")).toBeNull();
     expect(publicTextV126("--")).toBeNull();
   });
+
+  // B-023 and B-028 basin rows record which element's boundary file the
+  // compiler reused; the reader needs the basin, not the file note.
+  it("drops the boundary-file reuse note and keeps the place", () => {
+    expect(publicTextV126("8대 하천유역 — B-025 폴리곤 재사용")).toBe("8대 하천유역");
+  });
 });

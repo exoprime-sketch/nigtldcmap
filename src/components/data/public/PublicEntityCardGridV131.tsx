@@ -5,6 +5,8 @@ import {
 } from "../../../data/visualization/publicFieldPolicyV126";
 import type { PublicAttributeValueV126 } from "../../../data/visualization/publicFieldPolicyV126";
 import { resolvePublicEntityTitleV131 } from "../../../data/visualization/publicEntityTitleV131";
+import { classifyStatedValueV142 } from "../../../data/visualization/statedValueRoleV142";
+import type { StatedValueRoleV142 } from "../../../data/visualization/statedValueRoleV142";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 
@@ -146,6 +148,15 @@ const PUBLIC_CARD_ELEMENT_ATTRIBUTE_ALIASES_V131: Record<
     publicationYear: "field_d7e5fb05",
     documentUrl: "field_efec870d",
     doi: "field_f108b738",
+  },
+  // B-025's nine basins showed a name and nothing else; the area inside
+  // Viet Nam (GIS) and the river system are what the row states (V140). A
+  // "literal:" source is a constant the delivery does not carry as a column.
+  "B-025": {
+    statedValue: "베트남_내_면적_km_GIS_산출",
+    statedUnit: "literal:km² (베트남 내 면적, GIS 산출)",
+    siteDescription: "수계_구분",
+    siteName: "유역명_영문",
   },
 };
 
@@ -423,6 +434,58 @@ function FactV131({ fact }: { fact: PublicCardFactV131 }) {
   );
 }
 
+export interface PublicEntityStatedValueV142 {
+  recordId: string;
+  title: string;
+  /** The stated value as delivered (a number, a phone number, a date, a link …). */
+  raw: PublicAttributeValueV126 | undefined;
+  /** The numeric value when the row is a measurement; null for every other role. */
+  value: number | null;
+  unit: string;
+  measureKey: string | null;
+  period: string | null;
+  role: StatedValueRoleV142;
+  reason: string;
+}
+
+/**
+ * The stated value of each entity with the role it plays (V142).
+ *
+ * A register whose rows each state one figure (B-025's basin areas) can be
+ * compared; a register whose 값 column holds phone numbers, notice dates and
+ * one rate (C-011) cannot, and used to be. Each row is classified from its own
+ * unit, its indicator's unit and the shape of the value; only rows whose role
+ * is `measure` carry a numeric `value`. The indicator units come from the
+ * element's semantics when the caller has them.
+ */
+export function publicEntityStatedValuesV141(
+  entities: VietnamEntityV124[],
+  template: PublicEntityCardTemplateV131,
+  detailTemplate?: string,
+  elementTitle?: string,
+  indicatorUnits: Record<string, { unit: string | null; unitFamily: string | null }> = {}
+): PublicEntityStatedValueV142[] {
+  return entities.flatMap((entity) => {
+    const attributes = approvedCardAttributesV131(entity, template, detailTemplate);
+    const raw = attributes.statedValue ?? attributes.nationalMeasureValue;
+    if (raw === null || raw === undefined || raw === "") return [];
+    const indicator = indicatorUnits[entity.indicatorId || ""] || { unit: null, unitFamily: null };
+    const title = resolvePublicEntityTitleV131(entity, { template: detailTemplate, elementTitle }).title;
+    const classified = classifyStatedValueV142({
+      raw,
+      unit: publicTextV126(attributes.statedUnit ?? attributes.nationalMeasureUnit) || "",
+      measureName: publicTextV126(attributes.measureName ?? attributes.nationalMeasureName) ||
+        (entity.elementId === "B-025" ? "베트남 내 유역 면적(GIS 산출)" : null),
+      indicatorUnit: indicator.unit,
+      indicatorUnitFamily: indicator.unitFamily,
+      period: attributes.statedPeriod ?? attributes.referenceYear ?? null,
+      title: `${entity.name || ""} ${title}`,
+      elementId: entity.elementId,
+    });
+    return [{ recordId: entity.recordId, title, raw, ...classified }];
+  });
+}
+
 function approvedCardAttributesV131(
   entity: VietnamEntityV124,
   template: PublicEntityCardTemplateV131,
@@ -450,6 +513,10 @@ function reviewedElementCardAttributesV131(
   if (!aliases) return {};
   const entries: Array<[string, PublicAttributeValueV126]> = [];
   Object.entries(aliases).forEach(([publicKey, sourceKey]) => {
+    if (sourceKey.startsWith("literal:")) {
+      entries.push([publicKey, sourceKey.slice("literal:".length)]);
+      return;
+    }
     const value = entity.normalizedAttributes[sourceKey];
     if (typeof value === "number" || typeof value === "boolean") {
       entries.push([publicKey, value]);
@@ -497,6 +564,15 @@ function publicEntityTypeBadgeV137(value: unknown): string | null {
   return text;
 }
 
+function groupedNumberV140(value: string): string {
+  const trimmed = value.trim();
+  if (!/^-?\d+(?:\.\d+)?$/u.test(trimmed)) return value;
+  const number = Number(trimmed);
+  if (!Number.isFinite(number) || Math.abs(number) < 1000) return value;
+  const decimals = (trimmed.split(".")[1] || "").length;
+  return number.toLocaleString("en-US", { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+}
+
 function factValuesV131(
   attributes: Record<string, PublicAttributeValueV126>,
   template: PublicEntityCardTemplateV131,
@@ -514,7 +590,9 @@ function factValuesV131(
     const normalized = normalizedCardValueV131(value);
     if (seenValues.has(normalized)) return;
     seenValues.add(normalized);
-    facts.push({ label, value });
+    // A stated number reads with digit grouping ("86,253", not "86253"),
+    // the same way the summary card prints it.
+    facts.push({ label, value: label === "값" ? groupedNumberV140(value) : value });
   });
   return facts.slice(0, 6);
 }

@@ -1,10 +1,11 @@
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 import {
   PROJECT_ROOT,
   pngDimensions,
 } from "../v125/audit-utils.mjs";
+import { writeReportFileV138 } from "../v125/write-report.mjs";
 
 export const V131_REPORT_ROOT = resolve(PROJECT_ROOT, "reports/v131");
 export const V131_SCREENSHOT_ROOT = resolve(V131_REPORT_ROOT, "screenshots");
@@ -76,7 +77,7 @@ export function writeAuditReportV131(fileName, audit, summary, extra = {}) {
     checks: audit.checks,
     ...extra,
   };
-  writeFileSync(path, `${JSON.stringify(report, null, 2)}\n`, "utf8");
+  writeReportFileV138(path, `${JSON.stringify(report, null, 2)}\n`);
   return path;
 }
 

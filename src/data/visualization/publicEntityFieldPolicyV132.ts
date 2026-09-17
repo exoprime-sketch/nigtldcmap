@@ -9,7 +9,12 @@ import type { PublicAttributeValueV126 } from "./publicFieldPolicyV126";
 type ReviewedAliasV132 = {
   publicKey: string;
   sourceKey: string;
-  kind?: "text" | "url";
+  /**
+   * "technology-codes": the CTIS-NN codes in the cell, as a list. The public
+   * text policy strips a bare code from prose, so a screen that names the
+   * 38-technology classes reads the codes through this projection instead.
+   */
+  kind?: "text" | "url" | "technology-codes";
   /**
    * Source values that stand for "no value" and must not be read as data. Listed
    * per alias rather than filtered globally, so each exclusion names the column
@@ -55,6 +60,10 @@ const REVIEWED_ENTITY_ALIASES_V132: Record<string, ReviewedAliasV132[]> = {
     { publicKey: "recordTitle", sourceKey: "속성1_레코드명" },
     { publicKey: "recordCode", sourceKey: "속성2_레코드ID" },
     { publicKey: "standard", sourceKey: "속성5_등록표준_출처" },
+    // The delivery also states the registry in its own `standard` column; the
+    // 속성5 column is empty for most rows, which hid the registry from the
+    // portfolio's category counts (V141).
+    { publicKey: "standard", sourceKey: "standard" },
     { publicKey: "technologyField", sourceKey: "속성6_분류" },
     { publicKey: "status", sourceKey: "속성7_상태" },
     { publicKey: "proponent", sourceKey: "속성8_사업자_기관" },
@@ -113,6 +122,7 @@ const REVIEWED_ENTITY_ALIASES_V132: Record<string, ReviewedAliasV132[]> = {
     { publicKey: "projectPeriod", sourceKey: "사업기간" },
     { publicKey: "portfolioCategory", sourceKey: "분야_DAC" },
     { publicKey: "aidType", sourceKey: "원조유형" },
+    { publicKey: "agencyType", sourceKey: "기관유형" },
     { publicKey: "status", sourceKey: "상태" },
   ],
   "D-017": [
@@ -228,6 +238,10 @@ const REVIEWED_ENTITY_ALIASES_V132: Record<string, ReviewedAliasV132[]> = {
     { publicKey: "publicationYear", sourceKey: "field_d7e5fb05" },
     { publicKey: "documentUrl", sourceKey: "field_efec870d", kind: "url" },
     { publicKey: "doi", sourceKey: "field_f108b738" },
+    // The source's own justification for the CTIS technology code it assigned
+    // to the row; the 38-class names on the screen are read from its codes.
+    { publicKey: "technologyBasis", sourceKey: "기술코드_근거문구" },
+    { publicKey: "technologyCodes", sourceKey: "기술코드_근거문구", kind: "technology-codes" },
   ],
 };
 
@@ -263,6 +277,10 @@ function reviewedValueV132(
   kind: ReviewedAliasV132["kind"]
 ): PublicAttributeValueV126 | undefined {
   if (kind === "url") return publicSourceUrlV126(value) || undefined;
+  if (kind === "technology-codes") {
+    const codes = [...new Set([...String(value ?? "").matchAll(/CTIS-(\d{2})/gu)].map((match) => match[1]))].sort();
+    return codes.length > 0 ? codes : undefined;
+  }
   if (typeof value === "number" || typeof value === "boolean") return value;
   if (Array.isArray(value)) {
     const values = value

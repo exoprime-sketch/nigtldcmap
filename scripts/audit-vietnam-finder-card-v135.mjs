@@ -105,7 +105,7 @@ try {
           blankTitle: !title,
           duplicateTitleTag: tags.some((tag) => tag === title),
           invalidAction: actions.some((action) => /undefined|null|#undefined|#null/iu.test(action.href)),
-          dataAction: actions.some((action) => /데이터\\s*보기/u.test(action.label)),
+          dataAction: actions.some((action) => /데이터\\s*보기|상세보기/u.test(action.label)),
         };
       });
       return {

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "v142",
+  "description": "What a delivered row is, beyond the workbook's own 레코드구분. A rule names the element, the role its matching rows play, the reader-facing label for that role, the conditions read from the row's own columns, and the source basis. Cards (scripts/v140/card-model-v140.mjs), the detail summary and list (PublicPortfolioSummaryV132 / PublicPortfolioListV132) and the analysis QA read this same file.",
+  "roles": {
+    "individual": "one record of the register (a project, a guarantee, a company)",
+    "aggregate": "a total or explanatory line the source marks 레코드구분=집계",
+    "definition": "a description of a category the register uses (a product, a type), not a record"
+  },
+  "rules": [
+    {
+      "elementId": "D-026",
+      "role": "definition",
+      "label": "보증 유형 안내",
+      "basis": "MIGA project DB export (D-026.xlsx, 1.2 레코드형): 14 rows marked 레코드구분=개별. Nine carry a numeric MIGA Project_ID, a guarantee holder, an amount, a fiscal year and a guarantee type. Five (Breach of Contract, Non-Honoring of Sovereign Financial Obligations, Expropriation, Transfer Restriction / Currency Inconvertibility, War and Civil Disturbance) describe MIGA's four political-risk covers and the NHSFO product: their 국가 column reads '4대 PRI' or '신용보강', their 섹터 column holds the product description, and they state no amount, holder, fiscal year or guarantee type. They explain the 보증_유형 values of the nine projects and stay on the screen as that explanation.",
+      "when": {
+        "fieldIn": { "field": "국가", "values": ["4대 PRI", "신용보강"] },
+        "allEmpty": ["보증_금액", "회계연도_FY", "보증_유형", "보증_보유자_Guarantee_Holder"]
+      },
+      "expected": { "matches": 5, "sourceRows": 14 }
+    }
+  ]
+}

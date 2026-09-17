@@ -1,0 +1,2375 @@
+{
+  "schemaVersion": "public-map-targets-v138",
+  "countryIso3": "VNM",
+  "categories": [
+    "에너지·인프라",
+    "기후·위험",
+    "물·자원",
+    "산림·토지",
+    "정책·사업여건",
+    "국제사업·재원",
+    "협력기관·기업"
+  ],
+  "targets": [
+    {
+      "elementId": "A-023",
+      "category": "에너지·인프라",
+      "publicName": "발전소",
+      "sourceFields": [
+        "name",
+        "fuelType/primaryFuel",
+        "capacityMw/mw",
+        "field_4cf75655(운영자)",
+        "startDate",
+        "field_33702ec7(OSM id)"
+      ],
+      "sourceSpatialUnit": "시설 좌표(WRI GPPD·OSM)",
+      "displaySpatialUnit": "시설 점",
+      "representation": "point",
+      "build": {
+        "kind": "existing",
+        "patch": {
+          "analysisItemLabel": "발전소 위치·발전원",
+          "countNoun": "곳",
+          "filtersAppend": [
+            {
+              "field": "sourceKey",
+              "label": "출처",
+              "values": ["wri", "osm"],
+              "valueLabels": { "wri": "WRI GPPD (2021)", "osm": "OSM 추출 (2026)" },
+              "defaultValue": "wri",
+              "allLabel": "두 출처 함께 · 같은 시설 중복 미통합"
+            }
+          ],
+          "factFieldsAppend": [
+            { "key": "sourceLabel", "label": "출처", "sources": ["sourceLabel"] }
+          ],
+          "periodLabel": "WRI GPPD 2021 · OSM 2026 추출"
+        }
+      },
+      "selectableVariables": "출처 필터(WRI 2021 기본 · OSM 2026 · 두 출처 함께), 발전원 필터, 용량구간 필터(기재 용량에서 파생)",
+      "unit": "MW(설비용량)",
+      "period": "2026(OSM 추출)·WRI v1.3.0",
+      "representativeItem": "발전소 위치 1,889곳",
+      "evidence": "원천 좌표 1,889건(WRI 236 + OSM 1,653); 좌표 없는 74행 미표시",
+      "limitation": "WRI·OSM 동일시설은 원천 ID·명칭·좌표로 후보만 표시하고 자동 통합하지 않음. 용량은 값이 있는 475건만 합산 가능."
+    },
+    {
+      "elementId": "A-024",
+      "category": "에너지·인프라",
+      "publicName": "송전망",
+      "sourceFields": [
+        "kv",
+        "km",
+        "속성3_A_024_선로상태_기존_계획"
+      ],
+      "sourceSpatialUnit": "선로 구간 geometry(World Bank 2016)",
+      "displaySpatialUnit": "선로",
+      "representation": "line",
+      "build": {
+        "kind": "existing"
+      },
+      "selectableVariables": "전압(kV) 필터",
+      "unit": "kV·km",
+      "period": "2016",
+      "representativeItem": "송전 선로 606구간",
+      "evidence": "지도 606구간은 World Bank 2016 geometry, 상세 722행은 PDP8 계획선로 116행 포함",
+      "limitation": "선로 교차는 전기적 접속을 뜻하지 않음. 변전소·접속 정보는 원천에 없음."
+    },
+    {
+      "elementId": "A-025",
+      "category": "에너지·인프라",
+      "publicName": "CCS 시설·실증 및 후보지역",
+      "sourceFields": [
+        "type",
+        "field_b25998a0(단계)"
+      ],
+      "sourceSpatialUnit": "시설·광구 대표 좌표",
+      "displaySpatialUnit": "시설·후보지 점",
+      "representation": "point",
+      "build": {
+        "kind": "entities",
+        "indicatorIds": [
+          "A-025_ccs_facility_registry"
+        ],
+        "factFields": [
+          {
+            "key": "facilityType",
+            "label": "구분",
+            "sources": [
+              "type"
+            ],
+            "filterable": true
+          },
+          {
+            "key": "stage",
+            "label": "단계",
+            "sources": [
+              "field_b25998a0"
+            ]
+          }
+        ],
+        "symbolByFact": {
+          "key": "facilityType",
+          "approxPattern": "후보|잠재"
+        },
+        "analysisItemLabel": "CCS 시설·실증·후보지",
+        "countNoun": "건"
+      },
+      "selectableVariables": "구분(주입 실증·가스전·저장 후보) 필터",
+      "unit": "건",
+      "period": "2011~2030(단계별)",
+      "representativeItem": "Rạng Đông CO2 주입(EOR) 실증",
+      "evidence": "좌표 있는 3건(주입 실증 1, 고농도 CO2 가스전 1, 지중 저장 후보 1)",
+      "limitation": "연구·타당성 2건은 위치 없음(지도 미표시). 저장 후보 광구는 운영시설이 아니라 후보 구역의 대표점."
+    },
+    {
+      "elementId": "B-003",
+      "category": "기후·위험",
+      "publicName": "연평균 기온·강수",
+      "sourceFields": [
+        "연평균_기온",
+        "연평균_최고기온",
+        "연평균_최저기온",
+        "연강수량_mm",
+        "연도",
+        "레코드_키(GADM GID_1)"
+      ],
+      "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
+      "displaySpatialUnit": "성·시 경계(개편 전 63)",
+      "representation": "admin1-choropleth",
+      "build": {
+        "kind": "admin1-attributes",
+        "indicatorIds": [
+          "B-003_climate_adm1_year"
+        ],
+        "periodKey": "연도",
+        "periodStep": 5,
+        "measures": [
+          {
+            "key": "annual-mean-temperature",
+            "sourceKey": "연평균_기온",
+            "label": "연평균 기온",
+            "unit": "°C",
+            "measureId": "b003-tas"
+          },
+          {
+            "key": "annual-max-temperature",
+            "sourceKey": "연평균_최고기온",
+            "label": "연평균 최고기온",
+            "unit": "°C",
+            "measureId": "b003-tasmax"
+          },
+          {
+            "key": "annual-min-temperature",
+            "sourceKey": "연평균_최저기온",
+            "label": "연평균 최저기온",
+            "unit": "°C",
+            "measureId": "b003-tasmin"
+          },
+          {
+            "key": "annual-precipitation",
+            "sourceKey": "연강수량_mm",
+            "label": "연강수량",
+            "unit": "mm",
+            "measureId": "b003-pr"
+          }
+        ],
+        "defaultMeasure": "annual-mean-temperature"
+      },
+      "selectableVariables": "기온(평균·최고·최저)·연강수량, 연도(1901~2025, 5년 간격 + 최신)",
+      "unit": "°C·mm",
+      "period": "1901~2025",
+      "representativeItem": "성·시별 연평균 기온(최신연도)",
+      "evidence": "성·시 63개 × 연도, GADM GID_1 키를 검증된 63개 경계에 이름 대응표로 연결",
+      "limitation": "지도는 5년 간격 연도만 제공. 전체 연도는 상세 화면 추이와 다운로드에서 확인."
+    },
+    {
+      "elementId": "B-004",
+      "category": "기후·위험",
+      "publicName": "미래기후 전망(CMIP6)",
+      "sourceFields": [
+        "연평균_기온",
+        "연평균_최고기온",
+        "연평균_최저기온",
+        "연강수량_mm",
+        "상대습도",
+        "시나리오",
+        "연도"
+      ],
+      "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
+      "displaySpatialUnit": "성·시 경계(개편 전 63)",
+      "representation": "admin1-choropleth",
+      "build": {
+        "kind": "admin1-attributes",
+        "indicatorIds": [
+          "B-004_climate_adm1_year"
+        ],
+        "periodKey": "연도",
+        "scenarioKey": "시나리오",
+        "periodStep": 5,
+        "measures": [
+          {
+            "key": "annual-mean-temperature",
+            "sourceKey": "연평균_기온",
+            "label": "연평균 기온",
+            "unit": "°C",
+            "measureId": "b004-tas"
+          },
+          {
+            "key": "annual-max-temperature",
+            "sourceKey": "연평균_최고기온",
+            "label": "연평균 최고기온",
+            "unit": "°C",
+            "measureId": "b004-tasmax"
+          },
+          {
+            "key": "annual-min-temperature",
+            "sourceKey": "연평균_최저기온",
+            "label": "연평균 최저기온",
+            "unit": "°C",
+            "measureId": "b004-tasmin"
+          },
+          {
+            "key": "annual-precipitation",
+            "sourceKey": "연강수량_mm",
+            "label": "연강수량",
+            "unit": "mm",
+            "measureId": "b004-pr"
+          },
+          {
+            "key": "relative-humidity",
+            "sourceKey": "상대습도",
+            "label": "상대습도",
+            "unit": "%",
+            "measureId": "b004-hurs"
+          }
+        ],
+        "defaultMeasure": "annual-mean-temperature",
+        "defaultScenario": "ssp245"
+      },
+      "selectableVariables": "기후변수 5종 × 시나리오(과거 모형·SSP1-1.9·1-2.6·2-4.5·3-7.0·5-8.5), 연도(1950~2100, 5년 간격)",
+      "unit": "°C·mm·%",
+      "period": "1950~2100",
+      "representativeItem": "SSP2-4.5 연평균 기온 2050",
+      "evidence": "성·시 63개 × 6 시나리오 × 연도(31,185행)",
+      "limitation": "과거 모형값(historical)은 관측이 아님. 지역 간 분포와 모형 불확실성은 별개(원천은 앙상블 중앙값 1개 계열만 제공)."
+    },
+    {
+      "elementId": "B-005",
+      "category": "기후·위험",
+      "publicName": "가뭄",
+      "sourceFields": [
+        "연속_건조일수_CDD_일",
+        "표준강수증발산지수_SPEI12",
+        "시나리오",
+        "연도"
+      ],
+      "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
+      "displaySpatialUnit": "성·시 경계(개편 전 63)",
+      "representation": "admin1-choropleth",
+      "build": {
+        "kind": "admin1-attributes",
+        "indicatorIds": [
+          "B-005_climate_adm1_year"
+        ],
+        "periodKey": "연도",
+        "scenarioKey": "시나리오",
+        "periodStep": 5,
+        "measures": [
+          {
+            "key": "consecutive-dry-days",
+            "sourceKey": "연속_건조일수_CDD_일",
+            "label": "연속 건조일수(CDD)",
+            "unit": "일",
+            "measureId": "b005-cdd"
+          },
+          {
+            "key": "spei-12",
+            "sourceKey": "표준강수증발산지수_SPEI12",
+            "label": "표준강수증발산지수(SPEI-12)",
+            "unit": "지수",
+            "measureId": "b005-spei12"
+          }
+        ],
+        "defaultMeasure": "consecutive-dry-days",
+        "defaultScenario": "ssp245"
+      },
+      "selectableVariables": "CDD·SPEI-12 × 시나리오, 연도(5년 간격)",
+      "unit": "일·지수",
+      "period": "1950~2100",
+      "representativeItem": "SSP2-4.5 연속 건조일수 2050",
+      "evidence": "성·시 63개 × 6 시나리오 × 연도",
+      "limitation": "CDD(일수, 클수록 건조)와 SPEI(지수, 음수일수록 건조)는 방향과 단위가 다름. 토양수분은 전국 계열만 제공."
+    },
+    {
+      "elementId": "B-006",
+      "category": "기후·위험",
+      "publicName": "폭염",
+      "sourceFields": [
+        "폭염일수_TX_35_일",
+        "폭염일수_TX_40_일",
+        "열대야_TR_23_일",
+        "열대야_TR_26_일",
+        "열대야_TR_29_일",
+        "Heat_Index_35_일",
+        "시나리오",
+        "연도"
+      ],
+      "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
+      "displaySpatialUnit": "성·시 경계(개편 전 63)",
+      "representation": "admin1-choropleth",
+      "build": {
+        "kind": "admin1-attributes",
+        "indicatorIds": [
+          "B-006_climate_adm1_year"
+        ],
+        "periodKey": "연도",
+        "scenarioKey": "시나리오",
+        "periodStep": 5,
+        "measures": [
+          {
+            "key": "hot-days-tx35",
+            "sourceKey": "폭염일수_TX_35_일",
+            "label": "폭염일수(최고기온 35°C 이상)",
+            "unit": "일",
+            "measureId": "b006-tx35"
+          },
+          {
+            "key": "hot-days-tx40",
+            "sourceKey": "폭염일수_TX_40_일",
+            "label": "폭염일수(최고기온 40°C 이상)",
+            "unit": "일",
+            "measureId": "b006-tx40"
+          },
+          {
+            "key": "tropical-nights-tr23",
+            "sourceKey": "열대야_TR_23_일",
+            "label": "열대야(최저기온 23°C 이상)",
+            "unit": "일",
+            "measureId": "b006-tr23"
+          },
+          {
+            "key": "tropical-nights-tr26",
+            "sourceKey": "열대야_TR_26_일",
+            "label": "열대야(최저기온 26°C 이상)",
+            "unit": "일",
+            "measureId": "b006-tr26"
+          },
+          {
+            "key": "tropical-nights-tr29",
+            "sourceKey": "열대야_TR_29_일",
+            "label": "열대야(최저기온 29°C 이상)",
+            "unit": "일",
+            "measureId": "b006-tr29"
+          },
+          {
+            "key": "heat-index-35",
+            "sourceKey": "Heat_Index_35_일",
+            "label": "체감온도(Heat Index) 35°C 이상 일수",
+            "unit": "일",
+            "measureId": "b006-hi35"
+          }
+        ],
+        "defaultMeasure": "hot-days-tx35",
+        "defaultScenario": "ssp245"
+      },
+      "selectableVariables": "폭염·열대야·Heat Index 지표 6종(임계온도 명시) × 시나리오, 연도(5년 간격)",
+      "unit": "일",
+      "period": "1950~2100",
+      "representativeItem": "SSP2-4.5 폭염일수(TX35) 2050",
+      "evidence": "성·시 63개 × 6 시나리오 × 연도",
+      "limitation": "임계온도별 지표는 서로 더하지 않음. TX40은 대부분 지역에서 0 또는 미제공."
+    },
+    {
+      "elementId": "B-007",
+      "category": "기후·위험",
+      "publicName": "극한강수",
+      "sourceFields": [
+        "최대_1일_강수_mm",
+        "최대_5일_강수_mm",
+        "호우일수_20mm_일",
+        "호우일수_50mm_일",
+        "연속_습윤일수_CWD_일",
+        "시나리오",
+        "연도"
+      ],
+      "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
+      "displaySpatialUnit": "성·시 경계(개편 전 63)",
+      "representation": "admin1-choropleth",
+      "build": {
+        "kind": "admin1-attributes",
+        "indicatorIds": [
+          "B-007_climate_adm1_year"
+        ],
+        "periodKey": "연도",
+        "scenarioKey": "시나리오",
+        "periodStep": 5,
+        "measures": [
+          {
+            "key": "rx1day",
+            "sourceKey": "최대_1일_강수_mm",
+            "label": "최대 1일 강수량(RX1day)",
+            "unit": "mm",
+            "measureId": "b007-rx1day"
+          },
+          {
+            "key": "rx5day",
+            "sourceKey": "최대_5일_강수_mm",
+            "label": "최대 5일 강수량(RX5day)",
+            "unit": "mm",
+            "measureId": "b007-rx5day"
+          },
+          {
+            "key": "heavy-rain-days-20mm",
+            "sourceKey": "호우일수_20mm_일",
+            "label": "호우일수(20mm 이상)",
+            "unit": "일",
+            "measureId": "b007-r20mm"
+          },
+          {
+            "key": "heavy-rain-days-50mm",
+            "sourceKey": "호우일수_50mm_일",
+            "label": "호우일수(50mm 이상)",
+            "unit": "일",
+            "measureId": "b007-r50mm"
+          },
+          {
+            "key": "consecutive-wet-days",
+            "sourceKey": "연속_습윤일수_CWD_일",
+            "label": "연속 습윤일수(CWD)",
+            "unit": "일",
+            "measureId": "b007-cwd"
+          }
+        ],
+        "defaultMeasure": "rx1day",
+        "defaultScenario": "ssp245"
+      },
+      "selectableVariables": "극한강수 지표 5종 × 시나리오, 연도(5년 간격)",
+      "unit": "mm·일",
+      "period": "1950~2100",
+      "representativeItem": "SSP2-4.5 최대 1일 강수량 2050",
+      "evidence": "성·시 63개 × 6 시나리오 × 연도",
+      "limitation": "강수 극값 지표이며 침수면적·홍수 발생확률이 아님."
+    },
+    {
+      "elementId": "B-008",
+      "category": "기후·위험",
+      "publicName": "해수면 상승 전망",
+      "sourceFields": [
+        "PSMSL_관측소_ID",
+        "관측소명_PSMSL",
+        "관측소명_베트남어",
+        "소재",
+        "시나리오",
+        "분위수",
+        "신뢰수준",
+        "연도",
+        "상대해수면_상승_m_2005년_기준"
+      ],
+      "sourceSpatialUnit": "PSMSL 조위 관측소 좌표",
+      "displaySpatialUnit": "관측소 점",
+      "representation": "point",
+      "build": {
+        "kind": "entities",
+        "indicatorIds": [
+          "B-008_sea_level_station"
+        ],
+        "identity": {
+          "sources": [
+            "PSMSL_관측소_ID"
+          ],
+          "label": "관측소",
+          "memberLabel": "시나리오·분위·연도 전망값"
+        },
+        "factFields": [
+          {
+            "key": "stationNameVi",
+            "label": "관측소(베트남어)",
+            "sources": [
+              "관측소명_베트남어"
+            ]
+          },
+          {
+            "key": "location",
+            "label": "소재",
+            "sources": [
+              "소재"
+            ]
+          },
+          {
+            "key": "psmslId",
+            "label": "PSMSL 관측소 ID",
+            "sources": [
+              "PSMSL_관측소_ID"
+            ]
+          },
+          {
+            "key": "coordinateBasis",
+            "label": "좌표 출처",
+            "sources": [
+              "좌표_출처"
+            ]
+          }
+        ],
+        "memberSeries": {
+          "valueKey": "상대해수면_상승_m_2005년_기준",
+          "unit": "m",
+          "scenarioKey": "시나리오",
+          "quantileKey": "분위수",
+          "periodKey": "연도",
+          "confidenceKey": "신뢰수준"
+        },
+        "analysisItemLabel": "조위 관측소·해수면 전망",
+        "countNoun": "곳"
+      },
+      "selectableVariables": "관측소 클릭 → 시나리오(SSP1-1.9~5-8.5)·분위(5·17·50·83·95)별 연도 전망",
+      "unit": "m(2005년 기준 상대해수면)",
+      "period": "2020~2100",
+      "representativeItem": "Hòn Dấu(PSMSL) SSP2-4.5 중앙값 2100",
+      "evidence": "관측소별 1,575행을 PSMSL ID로 묶어 관측소 점으로 표시",
+      "limitation": "관측소별 상대해수면 전망이며 침수 범위가 아님. 기준면은 1995–2014 평균(2005년 기준)."
+    },
+    {
+      "elementId": "B-012",
+      "category": "기후·위험",
+      "publicName": "재해 이력",
+      "sourceFields": [
+        "EM_DAT_재해번호_DisNo",
+        "재해유형",
+        "재해세부유형",
+        "시작일",
+        "종료일",
+        "발생지역_원문",
+        "영향_행정구역_수",
+        "사망자_명",
+        "총피해인구_명",
+        "총피해액_천USD_2024실질",
+        "좌표_산출근거"
+      ],
+      "sourceSpatialUnit": "EM-DAT 사건 대표점(상륙점·영향지역 대표)",
+      "displaySpatialUnit": "사건 점",
+      "representation": "point",
+      "build": {
+        "kind": "entities",
+        "indicatorIds": [
+          "B-012_disaster_event"
+        ],
+        "identity": {
+          "sources": [
+            "EM_DAT_재해번호_DisNo"
+          ],
+          "label": "재해 사건"
+        },
+        "factFields": [
+          {
+            "key": "disasterType",
+            "label": "재해유형",
+            "sources": [
+              "재해유형"
+            ],
+            "filterable": true
+          },
+          {
+            "key": "disasterSubtype",
+            "label": "세부유형",
+            "sources": [
+              "재해세부유형"
+            ]
+          },
+          {
+            "key": "startDate",
+            "label": "시작일",
+            "sources": [
+              "시작일"
+            ]
+          },
+          {
+            "key": "endDate",
+            "label": "종료일",
+            "sources": [
+              "종료일"
+            ]
+          },
+          {
+            "key": "affectedRegions",
+            "label": "발생지역(원문)",
+            "sources": [
+              "발생지역_원문"
+            ]
+          },
+          {
+            "key": "affectedAdminCount",
+            "label": "영향 행정구역 수",
+            "sources": [
+              "영향_행정구역_수"
+            ],
+            "unit": "개"
+          },
+          {
+            "key": "deaths",
+            "label": "사망자",
+            "sources": [
+              "사망자_명"
+            ],
+            "unit": "명"
+          },
+          {
+            "key": "affectedPeople",
+            "label": "총피해인구",
+            "sources": [
+              "총피해인구_명"
+            ],
+            "unit": "명"
+          },
+          {
+            "key": "damageUsd2024",
+            "label": "총피해액(2024년 실질)",
+            "sources": [
+              "총피해액_천USD_2024실질"
+            ],
+            "unit": "천 USD"
+          },
+          {
+            "key": "coordinateBasis",
+            "label": "좌표 산출근거",
+            "sources": [
+              "좌표_산출근거"
+            ]
+          }
+        ],
+        "approximate": {
+          "sourceKey": "좌표_산출근거",
+          "pattern": "중심|대표|평균|centroid"
+        },
+        "periodFromKey": "시작일",
+        "analysisItemLabel": "재해 사건 위치",
+        "countNoun": "건"
+      },
+      "selectableVariables": "재해유형 필터",
+      "unit": "건·명·천 USD",
+      "period": "1953~2025",
+      "representativeItem": "태풍 Yagi(2024)",
+      "evidence": "좌표 있는 사건 265건(전체 275건)",
+      "limitation": "대표점은 상륙점 또는 영향지역 대표좌표이며 피해 범위가 아님. 좌표 없는 10건은 지도 미표시."
+    },
+    {
+      "elementId": "B-017",
+      "category": "물·자원",
+      "publicName": "물 스트레스",
+      "sourceFields": [
+        "레코드_키_string_id",
+        "HydroBASINS_lvl6_코드_pfaf_id",
+        "대수층_코드_aqid",
+        "기준_물스트레스_Baseline_Water_Stress_원값·등급·점수",
+        "Aqueduct_단위면적_km"
+      ],
+      "sourceSpatialUnit": "Aqueduct 4.0 평가구역(HydroBASINS lvl6 유역 × 성 × 대수층 교차 폴리곤) 443개",
+      "displaySpatialUnit": "평가구역 경계(미확보)",
+      "representation": "none",
+      "build": {
+        "kind": "none",
+        "reason": "원천 레코드의 좌표는 소속 성(GADM)의 대표점이며 평가구역 자체의 위치가 아닙니다. 평가구역 경계는 Aqueduct 4.0 GDB(Aq40_Y2023D07M05.gdb)에만 있으며 이 저장소의 파이프라인(GDAL 미설치)으로는 GeoJSON을 추출하지 못했습니다.",
+        "requiredAsset": "Aqueduct 4.0 baseline annual 폴리곤(string_id 기준)을 베트남 범위로 추출한 GeoJSON",
+        "forbidden": "443개 평가구역 값을 성·시 값으로 합치거나 성 대표점에 찍는 표현"
+      },
+      "selectableVariables": "(상세 화면) 물 스트레스 원값·등급·점수 등 19개 항목, 평가구역·성별 보기",
+      "unit": "비율(원값)·등급·0~5 점수",
+      "period": "2023 기준선(Aqueduct 4.0)",
+      "representativeItem": "평가구역 443개 중 물 스트레스 등급 분포",
+      "evidence": "평가구역 443개(값 있음) · 2,032행(등급·점수·원값 3열 × 지표)",
+      "limitation": "지도 미연결. 상세 화면은 평가구역 단위로 표시하고 성·시로 집계하지 않음."
+    },
+    {
+      "elementId": "B-021",
+      "category": "기후·위험",
+      "publicName": "지역 취약성(GVI)",
+      "sourceFields": [
+        "GVI 권역 지수·구성지표(GDL 6권역)"
+      ],
+      "sourceSpatialUnit": "GDL 6개 권역",
+      "displaySpatialUnit": "권역 소속 성·시 경계(권역값 동일 표시)",
+      "representation": "region-choropleth",
+      "build": {
+        "kind": "existing"
+      },
+      "selectableVariables": "GVI 지수·구성지표, 연도(1990~2023)",
+      "unit": "지수",
+      "period": "1990~2023",
+      "representativeItem": "GVI 종합지수 2023",
+      "evidence": "6개 권역값을 명시적 소속표로 63개 경계에 표시",
+      "limitation": "성·시별 독립 추정값이 아님."
+    },
+    {
+      "elementId": "B-023",
+      "category": "물·자원",
+      "publicName": "건기·우기 유량 차이",
+      "sourceFields": [
+        "지점_유역명",
+        "공간_단위",
+        "지표명",
+        "값",
+        "단위",
+        "기준연도",
+        "위치_설명",
+        "좌표_경계_산출근거"
+      ],
+      "sourceSpatialUnit": "수문관측지점 좌표(MRC·VNMC) 및 8대 유역 대표점",
+      "displaySpatialUnit": "관측지점 점 · 유역 대표점",
+      "representation": "point",
+      "build": {
+        "kind": "entities",
+        "indicatorIds": [
+          "B-023_hydro_site"
+        ],
+        "identity": {
+          "sources": [
+            "지점_유역명"
+          ],
+          "label": "관측지점·유역",
+          "memberLabel": "지표값"
+        },
+        "factFields": [
+          {
+            "key": "spatialUnit",
+            "label": "공간 단위",
+            "sources": [
+              "공간_단위"
+            ],
+            "valueMap": {
+              "point": "관측지점",
+              "basin": "유역 대표점"
+            },
+            "filterable": true
+          },
+          {
+            "key": "locationNote",
+            "label": "위치 설명",
+            "sources": [
+              "위치_설명"
+            ]
+          },
+          {
+            "key": "referenceYear",
+            "label": "기준연도",
+            "sources": [
+              "기준연도"
+            ]
+          },
+          {
+            "key": "coordinateBasis",
+            "label": "좌표·경계 산출근거",
+            "sources": [
+              "좌표_경계_산출근거"
+            ]
+          }
+        ],
+        "memberFacts": {
+          "labelKey": "지표명",
+          "valueKey": "값",
+          "unitKey": "단위"
+        },
+        "approximate": {
+          "sourceKey": "공간_단위",
+          "pattern": "^basin$"
+        },
+        "analysisItemLabel": "관측지점·유역 대표점 유량",
+        "countNoun": "곳"
+      },
+      "selectableVariables": "지점 클릭 → 건기·우기 유량, 유량비, 비중 등 지표값",
+      "unit": "m³/s · 비(倍) · %",
+      "period": "지표별 기준연도",
+      "representativeItem": "Kratie(캄보디아) 건기 최저유량 2,290 m³/s",
+      "evidence": "지점·유역 11행, 좌표 11건(관측소 2곳 + 메콩델타 유역 대표점)",
+      "limitation": "국외 상류 관측소(Kratie)는 실제 위치(캄보디아)에 표시. 유역 폴리곤(HydroSHEDS 8대 유역)은 원자료에 미포함이라 대표점만 표시."
+    },
+    {
+      "elementId": "B-025",
+      "category": "물·자원",
+      "publicName": "유역면적",
+      "sourceFields": [
+        "유역명_국문·영문·베트남어",
+        "총_유역면적_km",
+        "베트남_내_면적_km_문헌",
+        "베트남_내_면적_km_GIS_산출",
+        "베트남_내_비중",
+        "국경_공유",
+        "수계_구분"
+      ],
+      "sourceSpatialUnit": "HydroSHEDS 8대 유역 폴리곤(원자료 파일 미포함) 대표점",
+      "displaySpatialUnit": "유역 대표점",
+      "representation": "point",
+      "build": {
+        "kind": "entities",
+        "indicatorIds": [
+          "B-025_river_basin"
+        ],
+        "factFields": [
+          {
+            "key": "basinNameEn",
+            "label": "유역명(영문)",
+            "sources": [
+              "유역명_영문"
+            ]
+          },
+          {
+            "key": "totalBasinArea",
+            "label": "총 유역면적",
+            "sources": [
+              "총_유역면적_km"
+            ],
+            "unit": "km²"
+          },
+          {
+            "key": "areaInVietnamLiterature",
+            "label": "베트남 내 면적(문헌)",
+            "sources": [
+              "베트남_내_면적_km_문헌"
+            ],
+            "unit": "km²"
+          },
+          {
+            "key": "areaInVietnamGis",
+            "label": "베트남 내 면적(GIS 산출)",
+            "sources": [
+              "베트남_내_면적_km_GIS_산출"
+            ],
+            "unit": "km²"
+          },
+          {
+            "key": "shareInVietnam",
+            "label": "베트남 내 비중",
+            "sources": [
+              "베트남_내_비중"
+            ],
+            "unit": "%"
+          },
+          {
+            "key": "transboundary",
+            "label": "국경 공유",
+            "sources": [
+              "국경_공유"
+            ]
+          },
+          {
+            "key": "riverSystem",
+            "label": "수계 구분",
+            "sources": [
+              "수계_구분"
+            ],
+            "filterable": true
+          }
+        ],
+        "approximate": {
+          "always": true,
+          "label": "유역 대표점"
+        },
+        "analysisItemLabel": "유역 대표점·면적",
+        "countNoun": "곳"
+      },
+      "selectableVariables": "유역 클릭 → 총면적·베트남 내 면적·비중",
+      "unit": "km²",
+      "period": "MONRE/WEPA 2024 · HydroSHEDS v1.1",
+      "representativeItem": "메콩(끄우롱) 총 유역면적 795,000 km², 베트남 내 36,226 km²",
+      "evidence": "유역 8개 대표점 + 전국 합계 1행(좌표 없음)",
+      "limitation": "유역 경계 폴리곤은 원자료 파일([공통]VNM_river_basins_8_HydroSHEDS.geojson)이 전달되지 않아 대표점만 표시. 전체면적·베트남 내 면적·전국 합계는 서로 다른 값."
+    },
+    {
+      "elementId": "B-028",
+      "category": "물·자원",
+      "publicName": "하천유량",
+      "sourceFields": [
+        "지점_유역명",
+        "공간_단위",
+        "지표명",
+        "값",
+        "단위",
+        "기준연도",
+        "위치_설명"
+      ],
+      "sourceSpatialUnit": "수문관측지점 좌표 · 유역 대표점",
+      "displaySpatialUnit": "관측지점 점 · 유역 대표점",
+      "representation": "point",
+      "build": {
+        "kind": "entities",
+        "indicatorIds": [
+          "B-028_hydro_site"
+        ],
+        "identity": {
+          "sources": [
+            "지점_유역명"
+          ],
+          "label": "관측지점·유역",
+          "memberLabel": "지표값"
+        },
+        "factFields": [
+          {
+            "key": "spatialUnit",
+            "label": "공간 단위",
+            "sources": [
+              "공간_단위"
+            ],
+            "valueMap": {
+              "point": "관측지점",
+              "basin": "유역 대표점",
+              "country": "전국"
+            },
+            "filterable": true
+          },
+          {
+            "key": "locationNote",
+            "label": "위치 설명",
+            "sources": [
+              "위치_설명"
+            ]
+          },
+          {
+            "key": "referenceYear",
+            "label": "기준연도",
+            "sources": [
+              "기준연도"
+            ]
+          }
+        ],
+        "memberFacts": {
+          "labelKey": "지표명",
+          "valueKey": "값",
+          "unitKey": "단위"
+        },
+        "approximate": {
+          "sourceKey": "공간_단위",
+          "pattern": "^basin$"
+        },
+        "analysisItemLabel": "관측지점·유역 유량",
+        "countNoun": "곳"
+      },
+      "selectableVariables": "지점 클릭 → 유량(m³/s)·연간 유출량(km³/년) 지표값",
+      "unit": "m³/s · km³/년",
+      "period": "지표별 기준연도",
+      "representativeItem": "Sơn Tây(홍강) 관측소 유량",
+      "evidence": "좌표 12건(전체 16행)",
+      "limitation": "m³/s(순간 유량)와 km³/년(연간 유출량)은 별도 지표로 비교. 전국 합계 행은 지도 미표시."
+    },
+    {
+      "elementId": "B-029",
+      "category": "산림·토지",
+      "publicName": "산림 유형별 면적",
+      "sourceFields": [
+        "이탄지_면적_합계_km",
+        "이탄지_면적_이탄_우세_km",
+        "이탄지_면적_모자이크_km",
+        "연도"
+      ],
+      "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시) — 이탄지(Global Peatland Map 2022)",
+      "displaySpatialUnit": "성·시 경계(개편 전 63)",
+      "representation": "admin1-choropleth",
+      "build": {
+        "kind": "admin1-attributes",
+        "indicatorIds": [
+          "B-029_peatland_adm1"
+        ],
+        "periodKey": "연도",
+        "measures": [
+          {
+            "key": "peatland-area-total",
+            "sourceKey": "이탄지_면적_합계_km",
+            "label": "이탄지 면적 합계",
+            "unit": "km²",
+            "measureId": "b029-peat-total"
+          },
+          {
+            "key": "peatland-area-dominant",
+            "sourceKey": "이탄지_면적_이탄_우세_km",
+            "label": "이탄 우세 면적",
+            "unit": "km²",
+            "measureId": "b029-peat-dominant"
+          },
+          {
+            "key": "peatland-area-mosaic",
+            "sourceKey": "이탄지_면적_모자이크_km",
+            "label": "이탄 모자이크 면적",
+            "unit": "km²",
+            "measureId": "b029-peat-mosaic"
+          }
+        ],
+        "defaultMeasure": "peatland-area-total"
+      },
+      "selectableVariables": "이탄지 면적(합계·우세·모자이크)",
+      "unit": "km²",
+      "period": "2022",
+      "representativeItem": "성·시별 이탄지 면적 합계 2022",
+      "evidence": "성·시 63개 이탄지 값(GPM 2022). 열대우림·맹그로브 유형별 면적은 전국 계열만 있어 지도 미표시",
+      "limitation": "성·시 단위로 제공된 산림 유형은 이탄지뿐. 다른 유형은 상세 화면 전국 계열 참고."
+    },
+    {
+      "elementId": "B-030",
+      "category": "산림·토지",
+      "publicName": "산림 이득",
+      "sourceFields": [
+        "이득_ha",
+        "손실_ha",
+        "순변화_ha",
+        "순변화율",
+        "교란_후_회복_ha",
+        "유지_ha",
+        "2000년_수관_면적_ha",
+        "분석대상_면적_ha_GFW",
+        "기간"
+      ],
+      "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
+      "displaySpatialUnit": "성·시 경계(개편 전 63)",
+      "representation": "admin1-choropleth",
+      "build": {
+        "kind": "admin1-attributes",
+        "indicatorIds": [
+          "B-030_forest_change_adm1"
+        ],
+        "periodKey": "기간",
+        "measures": [
+          {
+            "key": "tree-cover-gain",
+            "sourceKey": "이득_ha",
+            "label": "수관 이득(2000–2020 누적)",
+            "unit": "ha",
+            "measureId": "b030-gain"
+          },
+          {
+            "key": "tree-cover-loss",
+            "sourceKey": "손실_ha",
+            "label": "수관 손실(2000–2020 누적)",
+            "unit": "ha",
+            "measureId": "b030-loss"
+          },
+          {
+            "key": "tree-cover-net-change",
+            "sourceKey": "순변화_ha",
+            "label": "수관 순변화(2000–2020)",
+            "unit": "ha",
+            "measureId": "b030-net"
+          },
+          {
+            "key": "tree-cover-net-change-rate",
+            "sourceKey": "순변화율",
+            "label": "수관 순변화율(2000–2020)",
+            "unit": "%",
+            "measureId": "b030-net-rate"
+          },
+          {
+            "key": "recovery-after-disturbance",
+            "sourceKey": "교란_후_회복_ha",
+            "label": "교란 후 회복(2000–2020)",
+            "unit": "ha",
+            "measureId": "b030-recovery"
+          }
+        ],
+        "defaultMeasure": "tree-cover-gain"
+      },
+      "selectableVariables": "이득·손실·순변화·순변화율·교란 후 회복(모두 2000–2020 누적)",
+      "unit": "ha·%",
+      "period": "2000–2020",
+      "representativeItem": "성·시별 수관 이득 2000–2020",
+      "evidence": "성·시 63개 값(GFW)",
+      "limitation": "기간 누적값이며 연간 증가량이 아님."
+    },
+    {
+      "elementId": "B-031",
+      "category": "산림·토지",
+      "publicName": "산림 총면적",
+      "sourceFields": [
+        "수관_면적_2000_ha",
+        "수관_면적_2010_ha",
+        "분석대상_면적_ha",
+        "수관밀도_임계"
+      ],
+      "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
+      "displaySpatialUnit": "성·시 경계(개편 전 63)",
+      "representation": "admin1-choropleth",
+      "build": {
+        "kind": "existing",
+        "patch": {
+          "defaultVariableMeasureId": "b031-tree-cover-area-2010",
+          "defaultVariableLabelPattern": "수관 면적"
+        }
+      },
+      "selectableVariables": "수관 면적 2000·2010, 분석대상 면적",
+      "unit": "ha",
+      "period": "2000·2010",
+      "representativeItem": "성·시별 수관 면적 2010",
+      "evidence": "성·시 63개 값(GFW, 임계 30%)",
+      "limitation": "기본 항목은 분석대상 국토면적이 아니라 수관 면적."
+    },
+    {
+      "elementId": "B-032",
+      "category": "산림·토지",
+      "publicName": "수관피복률",
+      "sourceFields": [
+        "수관_피복률",
+        "분모_기준",
+        "수관밀도_임계"
+      ],
+      "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
+      "displaySpatialUnit": "성·시 경계(개편 전 63)",
+      "representation": "admin1-choropleth",
+      "build": {
+        "kind": "existing"
+      },
+      "selectableVariables": "수관 피복률(임계 30%)",
+      "unit": "%",
+      "period": "2010",
+      "representativeItem": "성·시별 수관 피복률 2010",
+      "evidence": "성·시 63개 값",
+      "limitation": "분모는 성별 분석대상 면적, 임계 피복률 30%."
+    },
+    {
+      "elementId": "B-033",
+      "category": "산림·토지",
+      "publicName": "산림손실",
+      "sourceFields": [
+        "수관_손실_ha",
+        "연도",
+        "수관밀도_임계"
+      ],
+      "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
+      "displaySpatialUnit": "성·시 경계(개편 전 63)",
+      "representation": "admin1-choropleth",
+      "build": {
+        "kind": "existing"
+      },
+      "selectableVariables": "연간 수관 손실, 연도(2001~2024)",
+      "unit": "ha",
+      "period": "2001~2024",
+      "representativeItem": "성·시별 연간 수관 손실 2024",
+      "evidence": "성·시 63개 × 24개 연도(1,489값)",
+      "limitation": "지역 선택 시 해당 성·시 2001–2024 추이 표시."
+    },
+    {
+      "elementId": "B-034",
+      "category": "산림·토지",
+      "publicName": "산림탄소",
+      "sourceFields": [
+        "지상부_탄소저장량_Mg_C",
+        "지상부_탄소밀도_Mg_C_ha",
+        "산림탄소_총배출_Mg_CO2e_yr",
+        "산림탄소_총흡수_Mg_CO2_yr",
+        "산림탄소_순플럭스_Mg_CO2e_yr"
+      ],
+      "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
+      "displaySpatialUnit": "성·시 경계(개편 전 63)",
+      "representation": "admin1-choropleth",
+      "build": {
+        "kind": "existing"
+      },
+      "selectableVariables": "저장량·밀도·연간 배출·흡수·순플럭스(단위별 분리)",
+      "unit": "Mg C · Mg C/ha · Mg CO2e/yr",
+      "period": "2000 저장량 · 2001–2023 연평균 플럭스",
+      "representativeItem": "성·시별 지상부 탄소저장량",
+      "evidence": "성·시 63개 × 5 지표",
+      "limitation": "저장량(재고)과 연간 플럭스는 단위와 시점이 달라 같은 축에 두지 않음."
+    },
+    {
+      "elementId": "B-037",
+      "category": "산림·토지",
+      "publicName": "토지피복 분류별 면적",
+      "sourceFields": [
+        "경작지_면적_km",
+        "수목_면적_km",
+        "초지_면적_km",
+        "관목_면적_km",
+        "건물_인공지표_면적_km",
+        "영구수체_면적_km",
+        "맹그로브_면적_km",
+        "초본습지_면적_km",
+        "나지_희박식생_면적_km",
+        "합계_km",
+        "연도"
+      ],
+      "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
+      "displaySpatialUnit": "성·시 경계(개편 전 63)",
+      "representation": "admin1-choropleth",
+      "build": {
+        "kind": "admin1-attributes",
+        "indicatorIds": [
+          "B-037_landcover_adm1"
+        ],
+        "periodKey": "연도",
+        "measures": [
+          {
+            "key": "cropland-area",
+            "sourceKey": "경작지_면적_km",
+            "label": "경작지 면적",
+            "unit": "km²",
+            "measureId": "b037-cropland"
+          },
+          {
+            "key": "tree-area",
+            "sourceKey": "수목_면적_km",
+            "label": "수목 면적",
+            "unit": "km²",
+            "measureId": "b037-trees"
+          },
+          {
+            "key": "grassland-area",
+            "sourceKey": "초지_면적_km",
+            "label": "초지 면적",
+            "unit": "km²",
+            "measureId": "b037-grass"
+          },
+          {
+            "key": "shrub-area",
+            "sourceKey": "관목_면적_km",
+            "label": "관목 면적",
+            "unit": "km²",
+            "measureId": "b037-shrub"
+          },
+          {
+            "key": "built-area",
+            "sourceKey": "건물_인공지표_면적_km",
+            "label": "건물·인공지표 면적",
+            "unit": "km²",
+            "measureId": "b037-built"
+          },
+          {
+            "key": "water-area",
+            "sourceKey": "영구수체_면적_km",
+            "label": "영구수체 면적",
+            "unit": "km²",
+            "measureId": "b037-water"
+          },
+          {
+            "key": "mangrove-area",
+            "sourceKey": "맹그로브_면적_km",
+            "label": "맹그로브 면적",
+            "unit": "km²",
+            "measureId": "b037-mangrove"
+          },
+          {
+            "key": "herbaceous-wetland-area",
+            "sourceKey": "초본습지_면적_km",
+            "label": "초본습지 면적",
+            "unit": "km²",
+            "measureId": "b037-wetland"
+          },
+          {
+            "key": "bare-area",
+            "sourceKey": "나지_희박식생_면적_km",
+            "label": "나지·희박식생 면적",
+            "unit": "km²",
+            "measureId": "b037-bare"
+          }
+        ],
+        "defaultMeasure": "cropland-area"
+      },
+      "selectableVariables": "토지피복 9개 분류 면적(같은 분류체계)",
+      "unit": "km²",
+      "period": "2021",
+      "representativeItem": "성·시별 경작지 면적 2021",
+      "evidence": "성·시 63개 × 9 분류(합계 열 별도)",
+      "limitation": "구성비는 같은 분류체계의 배타적 항목 합계(합계_km) 대비로만 계산."
+    },
+    {
+      "elementId": "B-039",
+      "category": "에너지·인프라",
+      "publicName": "수력 잠재량",
+      "sourceFields": [
+        "이론_총잠재량_GWh_yr",
+        "이론_총잠재량_TWh_yr",
+        "전국_대비_비중",
+        "최대_단일격자_GWh_yr",
+        "90분위_격자_GWh_yr",
+        "격자점_수_개",
+        "기준연도"
+      ],
+      "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시) — 격자 집계",
+      "displaySpatialUnit": "성·시 경계(개편 전 63)",
+      "representation": "admin1-choropleth",
+      "build": {
+        "kind": "admin1-attributes",
+        "indicatorIds": [
+          "B-039_gross_potential_adm1"
+        ],
+        "periodKey": "기준연도",
+        "measures": [
+          {
+            "key": "gross-theoretical-potential",
+            "sourceKey": "이론_총잠재량_GWh_yr",
+            "label": "이론 총잠재량",
+            "unit": "GWh/년",
+            "measureId": "b039-gross-gwh"
+          },
+          {
+            "key": "share-of-national",
+            "sourceKey": "전국_대비_비중",
+            "label": "전국 대비 비중",
+            "unit": "%",
+            "measureId": "b039-share"
+          },
+          {
+            "key": "max-single-cell",
+            "sourceKey": "최대_단일격자_GWh_yr",
+            "label": "최대 단일격자 잠재량",
+            "unit": "GWh/년",
+            "measureId": "b039-max-cell"
+          }
+        ],
+        "defaultMeasure": "gross-theoretical-potential"
+      },
+      "selectableVariables": "이론 총잠재량·전국 대비 비중·최대 단일격자",
+      "unit": "GWh/년·%",
+      "period": "2017(Hoes et al.)",
+      "representativeItem": "성·시별 이론 수력 총잠재량",
+      "evidence": "성·시 63개 값",
+      "limitation": "이론 잠재량이며 개발가능량·발전설비 용량이 아님."
+    },
+    {
+      "elementId": "B-040",
+      "category": "에너지·인프라",
+      "publicName": "지열 자원",
+      "sourceFields": [
+        "심도_1km_지온_평균",
+        "심도_2km_지온_평균",
+        "심도_3km_지온_평균",
+        "지온경사_1_2km_km",
+        "지온경사_2_3km_km",
+        "유효격자_수_1km_레이어",
+        "기준연도"
+      ],
+      "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시) — 격자 집계",
+      "displaySpatialUnit": "성·시 경계(개편 전 63)",
+      "representation": "admin1-choropleth",
+      "build": {
+        "kind": "admin1-attributes",
+        "indicatorIds": [
+          "B-040_geotemp_adm1"
+        ],
+        "periodKey": "기준연도",
+        "measures": [
+          {
+            "key": "geotemp-1km-mean",
+            "sourceKey": "심도_1km_지온_평균",
+            "label": "심도 1km 지온(평균)",
+            "unit": "°C",
+            "measureId": "b040-t1km"
+          },
+          {
+            "key": "geotemp-2km-mean",
+            "sourceKey": "심도_2km_지온_평균",
+            "label": "심도 2km 지온(평균)",
+            "unit": "°C",
+            "measureId": "b040-t2km"
+          },
+          {
+            "key": "geotemp-3km-mean",
+            "sourceKey": "심도_3km_지온_평균",
+            "label": "심도 3km 지온(평균)",
+            "unit": "°C",
+            "measureId": "b040-t3km"
+          },
+          {
+            "key": "geothermal-gradient-1-2km",
+            "sourceKey": "지온경사_1_2km_km",
+            "label": "지온경사(1~2km)",
+            "unit": "°C/km",
+            "measureId": "b040-grad12"
+          },
+          {
+            "key": "geothermal-gradient-2-3km",
+            "sourceKey": "지온경사_2_3km_km",
+            "label": "지온경사(2~3km)",
+            "unit": "°C/km",
+            "measureId": "b040-grad23"
+          }
+        ],
+        "defaultMeasure": "geotemp-2km-mean"
+      },
+      "selectableVariables": "심도(1·2·3km) 지온 평균, 지온경사",
+      "unit": "°C · °C/km",
+      "period": "2026 기준(격자 집계)",
+      "representativeItem": "성·시별 심도 2km 지온",
+      "evidence": "성·시 63개 값",
+      "limitation": "지온(온도)이며 확인 매장량·발전 잠재량이 아님."
+    },
+    {
+      "elementId": "B-041",
+      "category": "에너지·인프라",
+      "publicName": "태양광 자원",
+      "sourceFields": [
+        "수평면_전일사량_GHI_평균",
+        "직달_일사량_DNI_평균",
+        "실용_발전량_PVOUT_평균",
+        "최적_경사각_OPTA_평균",
+        "기온_TEMP_평균",
+        "기준기간"
+      ],
+      "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시) — Global Solar Atlas 격자 집계",
+      "displaySpatialUnit": "성·시 경계(개편 전 63)",
+      "representation": "admin1-choropleth",
+      "build": {
+        "kind": "admin1-attributes",
+        "indicatorIds": [
+          "B-041_solar_adm1"
+        ],
+        "periodKey": "기준기간",
+        "measures": [
+          {
+            "key": "ghi-mean",
+            "sourceKey": "수평면_전일사량_GHI_평균",
+            "label": "수평면 전일사량(GHI, 평균)",
+            "unit": "kWh/m²/일",
+            "measureId": "b041-ghi"
+          },
+          {
+            "key": "dni-mean",
+            "sourceKey": "직달_일사량_DNI_평균",
+            "label": "직달 일사량(DNI, 평균)",
+            "unit": "kWh/m²/일",
+            "measureId": "b041-dni"
+          },
+          {
+            "key": "pvout-mean",
+            "sourceKey": "실용_발전량_PVOUT_평균",
+            "label": "실용 발전량(PVOUT, 평균)",
+            "unit": "kWh/kWp/일",
+            "measureId": "b041-pvout"
+          },
+          {
+            "key": "opta-mean",
+            "sourceKey": "최적_경사각_OPTA_평균",
+            "label": "최적 경사각(평균)",
+            "unit": "°",
+            "measureId": "b041-opta"
+          }
+        ],
+        "defaultMeasure": "ghi-mean"
+      },
+      "selectableVariables": "GHI·DNI·PVOUT·최적 경사각(성·시 평균)",
+      "unit": "kWh/m²/일 · kWh/kWp/일 · °",
+      "period": "1999–2018 장기평균",
+      "representativeItem": "성·시별 GHI 평균",
+      "evidence": "성·시 63개 값",
+      "limitation": "성·시 평균값이며 지점별 일사량이 아님. 기준기간은 장기평균(LTA)."
+    },
+    {
+      "elementId": "B-042",
+      "category": "에너지·인프라",
+      "publicName": "풍력 자원",
+      "sourceFields": [
+        "풍속_평균_m_s",
+        "풍속_상위10_m_s",
+        "에너지밀도_평균_W_m",
+        "에너지밀도_상위10_W_m",
+        "풍속_6m_s_면적비율",
+        "기준기간",
+        "격자_원천"
+      ],
+      "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시) — Global Wind Atlas 100m 격자 집계",
+      "displaySpatialUnit": "성·시 경계(개편 전 63)",
+      "representation": "admin1-choropleth",
+      "build": {
+        "kind": "admin1-attributes",
+        "indicatorIds": [
+          "B-042_wind_adm1"
+        ],
+        "periodKey": "기준기간",
+        "measures": [
+          {
+            "key": "wind-speed-mean-100m",
+            "sourceKey": "풍속_평균_m_s",
+            "label": "풍속 평균(고도 100m)",
+            "unit": "m/s",
+            "measureId": "b042-ws-mean"
+          },
+          {
+            "key": "wind-speed-top10-100m",
+            "sourceKey": "풍속_상위10_m_s",
+            "label": "풍속 상위 10%(고도 100m)",
+            "unit": "m/s",
+            "measureId": "b042-ws-top10"
+          },
+          {
+            "key": "wind-power-density-mean-100m",
+            "sourceKey": "에너지밀도_평균_W_m",
+            "label": "풍력밀도 평균(고도 100m)",
+            "unit": "W/m²",
+            "measureId": "b042-wpd-mean"
+          },
+          {
+            "key": "wind-power-density-top10-100m",
+            "sourceKey": "에너지밀도_상위10_W_m",
+            "label": "풍력밀도 상위 10%(고도 100m)",
+            "unit": "W/m²",
+            "measureId": "b042-wpd-top10"
+          },
+          {
+            "key": "area-share-over-6ms",
+            "sourceKey": "풍속_6m_s_면적비율",
+            "label": "풍속 6m/s 이상 면적비율",
+            "unit": "%",
+            "measureId": "b042-share6"
+          }
+        ],
+        "defaultMeasure": "wind-speed-mean-100m"
+      },
+      "selectableVariables": "풍속·풍력밀도(평균·상위 10%), 6m/s 이상 면적비율 — 모두 고도 100m",
+      "unit": "m/s · W/m² · %",
+      "period": "2008–2017 장기평균",
+      "representativeItem": "성·시별 풍속 평균(100m)",
+      "evidence": "성·시 63개 값",
+      "limitation": "단일 고도(100m) 자료이며 다른 고도와 직접 비교하지 않음."
+    },
+    {
+      "elementId": "B-048",
+      "category": "물·자원",
+      "publicName": "주요 광산",
+      "sourceFields": [
+        "광산명",
+        "광종",
+        "소재_행정구역_성",
+        "좌표_산출근거",
+        "특이사항"
+      ],
+      "sourceSpatialUnit": "광산 좌표(USGS MRDS)",
+      "displaySpatialUnit": "광산 점",
+      "representation": "point",
+      "build": {
+        "kind": "existing",
+        "patch": {
+          "analysisItemLabel": "광산 위치·광종",
+          "countNoun": "곳"
+        }
+      },
+      "selectableVariables": "광종·소재 성 필터",
+      "unit": "곳",
+      "period": "2022",
+      "representativeItem": "Bản Phúc 니켈 광산",
+      "evidence": "좌표 검증 2곳(전체 목록 8곳)",
+      "limitation": "지도는 좌표가 검증된 2곳만 표시. 나머지 6곳은 상세 목록에서 광종·지역 제공."
+    },
+    {
+      "elementId": "C-009",
+      "category": "정책·사업여건",
+      "publicName": "기후 법제도(지방 문서)",
+      "sourceFields": [
+        "속성1_레코드명",
+        "속성20_지역_원문",
+        "속성4_시점",
+        "속성19_원문URL"
+      ],
+      "sourceSpatialUnit": "지방 결정문의 적용 성·시(원문 지역명)",
+      "displaySpatialUnit": "성·시 경계(개편 전 63)",
+      "representation": "admin1-choropleth",
+      "build": {
+        "kind": "admin1-attributes",
+        "indicatorIds": [
+          "C-009_law_name_danang",
+          "C-009_law_name_faolex_fao_2"
+        ],
+        "requireCoordinates": true,
+        "regionKeys": [
+          "속성20_지역_원문"
+        ],
+        "periodFixed": "2021–2025",
+        "measures": [
+          {
+            "key": "local-document-count",
+            "aggregate": "count",
+            "label": "지방 기후 법제도 문서 수",
+            "unit": "건",
+            "measureId": "c009-local-docs"
+          }
+        ],
+        "defaultMeasure": "local-document-count",
+        "coverageKind": "partial",
+        "memberRecords": {
+          "labelKey": "속성1_레코드명",
+          "dateKey": "속성4_시점",
+          "urlKey": "속성19_원문URL"
+        }
+      },
+      "selectableVariables": "성·시 클릭 → 해당 지방 문서 목록(문서번호·시행일·원문)",
+      "unit": "건",
+      "period": "2021~2025",
+      "representativeItem": "Đà Nẵng Quyết định 2609/QĐ-UBND(2021)",
+      "evidence": "지방 문서 4건(전국 법령 행과 거래소 소재 행은 지역 객체 없음)",
+      "limitation": "전국 법령은 지도 객체를 만들지 않음. C-010과 같은 지방문서는 문서번호로 한 번만 집계."
+    },
+    {
+      "elementId": "C-010",
+      "category": "정책·사업여건",
+      "publicName": "환경 법제도(지방 문서)",
+      "sourceFields": [
+        "속성1_레코드명",
+        "속성20_지역_원문",
+        "속성4_시점",
+        "속성19_원문URL"
+      ],
+      "sourceSpatialUnit": "지방 환경규정의 적용 성·시(원문 지역명)",
+      "displaySpatialUnit": "성·시 경계(개편 전 63)",
+      "representation": "admin1-choropleth",
+      "build": {
+        "kind": "admin1-attributes",
+        "indicatorIds": [
+          "C-010_law_name_vanban_chinhphu",
+          "C-010_law_name_vea_mae"
+        ],
+        "requireCoordinates": true,
+        "regionKeys": [
+          "속성20_지역_원문"
+        ],
+        "periodFixed": "2021–2025",
+        "measures": [
+          {
+            "key": "local-document-count",
+            "aggregate": "count",
+            "label": "지방 환경 법제도 문서 수",
+            "unit": "건",
+            "measureId": "c010-local-docs"
+          }
+        ],
+        "defaultMeasure": "local-document-count",
+        "coverageKind": "partial",
+        "memberRecords": {
+          "labelKey": "속성1_레코드명",
+          "dateKey": "속성4_시점",
+          "urlKey": "속성19_원문URL"
+        },
+        "sharedDocumentsWith": "C-009"
+      },
+      "selectableVariables": "성·시 클릭 → 지방 문서 목록",
+      "unit": "건",
+      "period": "2021~2025",
+      "representativeItem": "Quảng Ninh Quyết định 1318/QĐ-UBND(2024)",
+      "evidence": "지방 문서 4건(C-009와 동일 문서 4건 공유)",
+      "limitation": "C-009와 문서번호가 같은 지방문서는 같은 객체이며 두 자료를 함께 켜도 문서 수를 더하지 않음."
+    },
+    {
+      "elementId": "C-012",
+      "category": "정책·사업여건",
+      "publicName": "PPP 사업 이력",
+      "sourceFields": [
+        "속성21_지역_현행",
+        "속성3_값(사업 수)",
+        "속성6_분류(분야별 건수)",
+        "속성7_상태",
+        "속성4_시점(기간)"
+      ],
+      "sourceSpatialUnit": "2025년 개편 후 34개 성·시(World Bank PPI 사업을 지역별 집계)",
+      "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
+      "representation": "region-choropleth",
+      "build": {
+        "kind": "region-membership",
+        "indicatorIds": [
+          "C-012_ppp_project_history_ppi_worldbank"
+        ],
+        "regionNameKey": "속성21_지역_현행",
+        "regionSystem": "post-2025-34",
+        "periodFixed": "1997–2024",
+        "measures": [
+          {
+            "key": "ppp-project-count",
+            "sourceKey": "속성3_값",
+            "parse": "number",
+            "label": "PPP 사업 수(PPI 수록)",
+            "unit": "건",
+            "measureId": "c012-ppi-count"
+          }
+        ],
+        "defaultMeasure": "ppp-project-count",
+        "coverageKind": "partial",
+        "memberRecords": {
+          "labelKey": "속성6_분류",
+          "statusKey": "속성7_상태",
+          "dateKey": "속성4_시점"
+        }
+      },
+      "selectableVariables": "성·시(34개 체계) 클릭 → 분야별 건수·상태·기간",
+      "unit": "건",
+      "period": "1997~2024",
+      "representativeItem": "Đồng Nai PPP 사업 6건",
+      "evidence": "지역 집계행 29건(개편 후 34개 체계). 계약방식·법령 행은 집계하지 않음",
+      "limitation": "지역값은 개편 후 34개 성·시 단위이며 소속 63개 성·시 경계에 같은 값을 표시함(성·시별 독립값 아님)."
+    },
+    {
+      "elementId": "C-013",
+      "category": "정책·사업여건",
+      "publicName": "외국인 투자 규정(지역 특별 인센티브)",
+      "sourceFields": [
+        "속성21_지역_현행",
+        "속성6_분류",
+        "속성3_값(근거 결의)",
+        "속성19_원문URL"
+      ],
+      "sourceSpatialUnit": "특정 성·시가 명시된 특별메커니즘·지방 인센티브(개편 후 34개 체계)",
+      "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
+      "representation": "region-choropleth",
+      "build": {
+        "kind": "region-membership",
+        "indicatorIds": [
+          "C-013_investment_incentive_hotropldn_thainguyen",
+          "C-013_investment_incentive_vanban_chinhphu",
+          "C-013_investment_incentive_xaydungchinhsach_chinh"
+        ],
+        "requireCoordinates": true,
+        "regionNameKey": "속성21_지역_현행",
+        "regionSystem": "post-2025-34",
+        "periodFixed": "2014–2025",
+        "measures": [
+          {
+            "key": "special-incentive-provision-count",
+            "aggregate": "count",
+            "label": "지역 특별 인센티브 근거 행 수",
+            "unit": "건",
+            "measureId": "c013-provisions"
+          }
+        ],
+        "defaultMeasure": "special-incentive-provision-count",
+        "coverageKind": "partial",
+        "memberRecords": {
+          "labelKey": "속성6_분류",
+          "valueKey": "속성3_값",
+          "urlKey": "속성19_원문URL"
+        }
+      },
+      "selectableVariables": "성·시 클릭 → 특별메커니즘·비조세 지원 근거 목록",
+      "unit": "건",
+      "period": "2014~2025",
+      "representativeItem": "Hồ Chí Minh 특별메커니즘(Nghị quyết 98/2023/QH15)",
+      "evidence": "지역이 명시된 15행(전국 규정 49행은 지도 객체 없음)",
+      "limitation": "행 수는 근거 항목 수이며 인센티브 금액·건수가 아님. 전국 적용 규정은 지도화하지 않음."
+    },
+    {
+      "elementId": "C-016",
+      "category": "에너지·인프라",
+      "publicName": "재생에너지 지역계획",
+      "sourceFields": [
+        "기술별 계획용량(성·시)",
+        "기간"
+      ],
+      "sourceSpatialUnit": "성·시(총리 결정 768/QĐ-TTg 부속표)",
+      "displaySpatialUnit": "성·시 경계(개편 전 63)",
+      "representation": "admin1-choropleth",
+      "build": {
+        "kind": "existing"
+      },
+      "selectableVariables": "기술(태양광·풍력·수력 등) × 기간(2030·2050)",
+      "unit": "MW",
+      "period": "2030·2050 목표",
+      "representativeItem": "성·시별 태양광 계획용량 2030",
+      "evidence": "지역 관측 639건",
+      "limitation": "원문 0(계획 없음)과 미제공을 구분. 목표·추가·기존 용량은 기술 라벨로 구분."
+    },
+    {
+      "elementId": "C-019",
+      "category": "정책·사업여건",
+      "publicName": "탄소시장 대상시설(인벤토리 의무)",
+      "sourceFields": [
+        "속성21_지역_현행",
+        "속성3_값(시설 수)",
+        "속성4_시점"
+      ],
+      "sourceSpatialUnit": "2025년 개편 후 34개 성·시(Quyết định 2026-08-10 대상시설 명부 집계)",
+      "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
+      "representation": "region-choropleth",
+      "build": {
+        "kind": "region-membership",
+        "indicatorIds": [
+          "C-019_ets_scope_vanban_chinhphu"
+        ],
+        "regionNameKey": "속성21_지역_현행",
+        "regionSystem": "post-2025-34",
+        "periodKey": "속성4_시점",
+        "measures": [
+          {
+            "key": "ghg-inventory-facility-count",
+            "sourceKey": "속성3_값",
+            "parse": "number",
+            "label": "온실가스 인벤토리 의무 대상 시설 수",
+            "unit": "개",
+            "measureId": "c019-facility-count"
+          }
+        ],
+        "defaultMeasure": "ghg-inventory-facility-count",
+        "sharedFacilityRegisterWith": "C-022"
+      },
+      "selectableVariables": "성·시(34개 체계) 클릭 → 대상시설 수",
+      "unit": "개",
+      "period": "2026-08-10 명부",
+      "representativeItem": "Hồ Chí Minh 479개 시설",
+      "evidence": "34개 지역 × 시설 수(합계 2,166)",
+      "limitation": "C-022와 같은 시설 명부를 지역별(C-019)·업종별(C-022)로 보는 것이며 두 자료를 함께 켜도 시설 수를 더하지 않음."
+    },
+    {
+      "elementId": "C-022",
+      "category": "정책·사업여건",
+      "publicName": "탄소시장 대상시설 업종 구성",
+      "sourceFields": [
+        "속성21_지역_현행",
+        "속성6_분류(업종별 시설 수)",
+        "속성4_시점"
+      ],
+      "sourceSpatialUnit": "2025년 개편 후 34개 성·시(동일 대상시설 명부의 업종 구성)",
+      "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
+      "representation": "region-choropleth",
+      "build": {
+        "kind": "region-membership",
+        "indicatorIds": [
+          "C-022_carbon_market_readiness_vanban_chinhphu"
+        ],
+        "regionNameKey": "속성21_지역_현행",
+        "regionSystem": "post-2025-34",
+        "periodKey": "속성4_시점",
+        "measures": [
+          {
+            "key": "facilities-industry-trade",
+            "sourceKey": "속성6_분류",
+            "parse": "sector-composition",
+            "sector": "공상",
+            "label": "대상시설 수 — 공상(산업·무역)",
+            "unit": "개",
+            "measureId": "c022-industry"
+          },
+          {
+            "key": "facilities-transport",
+            "sourceKey": "속성6_분류",
+            "parse": "sector-composition",
+            "sector": "교통운송",
+            "label": "대상시설 수 — 교통운송",
+            "unit": "개",
+            "measureId": "c022-transport"
+          },
+          {
+            "key": "facilities-construction",
+            "sourceKey": "속성6_분류",
+            "parse": "sector-composition",
+            "sector": "건설",
+            "label": "대상시설 수 — 건설",
+            "unit": "개",
+            "measureId": "c022-construction"
+          },
+          {
+            "key": "facilities-agri-environment",
+            "sourceKey": "속성6_분류",
+            "parse": "sector-composition",
+            "sector": "농업·환경",
+            "label": "대상시설 수 — 농업·환경",
+            "unit": "개",
+            "measureId": "c022-agri-env"
+          }
+        ],
+        "defaultMeasure": "facilities-industry-trade",
+        "sharedFacilityRegisterWith": "C-019"
+      },
+      "selectableVariables": "업종(공상·교통운송·건설·농업·환경)별 시설 수",
+      "unit": "개",
+      "period": "2026-08-10 명부",
+      "representativeItem": "Hồ Chí Minh 공상 430개",
+      "evidence": "34개 지역 × 4 업종",
+      "limitation": "국가 준비도 체크리스트 점수(82.1)는 지역값이 아니므로 지도화하지 않음."
+    },
+    {
+      "elementId": "C-024",
+      "category": "산림·토지",
+      "publicName": "REDD+ 사업 참여지역",
+      "sourceFields": [
+        "속성1_레코드명",
+        "속성20_지역_원문",
+        "속성6_분류",
+        "속성4_시점"
+      ],
+      "sourceSpatialUnit": "FCPF ERPA 대상 성(개편 전 63개 성 이름)",
+      "displaySpatialUnit": "성·시 경계(개편 전 63)",
+      "representation": "admin1-choropleth",
+      "build": {
+        "kind": "admin1-attributes",
+        "indicatorIds": [
+          "C-024_rbp_result_vanban_chinhphu"
+        ],
+        "requireCoordinates": true,
+        "regionKeys": [
+          "속성20_지역_원문"
+        ],
+        "periodFixed": "2022",
+        "measures": [
+          {
+            "key": "fcpf-erpa-participation",
+            "aggregate": "count",
+            "label": "FCPF ERPA(북중부 6개 성) 참여",
+            "unit": "참여 프로그램 수",
+            "measureId": "c024-erpa"
+          }
+        ],
+        "defaultMeasure": "fcpf-erpa-participation",
+        "coverageKind": "partial",
+        "memberRecords": {
+          "labelKey": "속성1_레코드명",
+          "dateKey": "속성4_시점"
+        }
+      },
+      "selectableVariables": "성·시 클릭 → 참여 프로그램",
+      "unit": "참여 프로그램 수",
+      "period": "2022(ERPA 결과기반지불)",
+      "representativeItem": "북중부 6개 성(Thanh Hóa~Thừa Thiên Huế) FCPF ERPA",
+      "evidence": "참여 성 6건",
+      "limitation": "참여 범위이며 개별 사업지가 아님. 같은 프로그램의 범위가 겹쳐도 한 번만 셈."
+    },
+    {
+      "elementId": "C-025",
+      "category": "국제사업·재원",
+      "publicName": "탄소크레딧 사업",
+      "sourceFields": [
+        "속성1_레코드명",
+        "속성6_분류",
+        "속성5_등록표준_출처",
+        "속성21_지역_현행",
+        "속성11_발행량_tCO2e",
+        "속성12_소각량_tCO2e",
+        "속성14_연간예상감축_tCO2e"
+      ],
+      "sourceSpatialUnit": "사업 좌표(등록부·지오코딩)",
+      "displaySpatialUnit": "사업 점",
+      "representation": "point",
+      "build": {
+        "kind": "existing",
+        "patch": {
+          "analysisItemLabel": "사업 위치·유형",
+          "countNoun": "건"
+        }
+      },
+      "selectableVariables": "기술분야·소재 지역 필터; 사업 클릭 → 발행·소각·연간 예상감축",
+      "unit": "건 · tCO2e",
+      "period": "2005~2026",
+      "representativeItem": "검증된 사업 위치 262건",
+      "evidence": "좌표 있는 262건(전체 388행; 발행 거래 행은 사업 수에 포함하지 않음)",
+      "limitation": "사업·설비·발행 거래는 서로 다른 집계단위. 등록부 간 같은 사업은 원천 ID로만 판단."
+    },
+    {
+      "elementId": "D-008",
+      "category": "국제사업·재원",
+      "publicName": "지역 기후예산",
+      "sourceFields": [
+        "성·시 기후변화 지출(CPEIR)"
+      ],
+      "sourceSpatialUnit": "자료가 있는 3개 성·시",
+      "displaySpatialUnit": "성·시 경계(3개, 나머지 미표시)",
+      "representation": "admin1-choropleth",
+      "build": {
+        "kind": "existing"
+      },
+      "selectableVariables": "성·시 지출, 기간",
+      "unit": "억 VND·%",
+      "period": "CPEIR 2015·2022",
+      "representativeItem": "Bắc Ninh 등 3개 성 기후지출",
+      "evidence": "3개 성 값",
+      "limitation": "전국·부처·3개 성 값은 분리. 나머지 60개 성·시는 0이 아니라 미제공."
+    },
+    {
+      "elementId": "D-018",
+      "category": "국제사업·재원",
+      "publicName": "적응기금 사업",
+      "sourceFields": [
+        "명칭",
+        "상태",
+        "승인금액",
+        "실행기관_IE",
+        "분야",
+        "지점",
+        "대상"
+      ],
+      "sourceSpatialUnit": "검증된 활동지역 점 · 참여국 범위",
+      "displaySpatialUnit": "활동지역 점 · 참여국 범위",
+      "representation": "regional-scope",
+      "build": {
+        "kind": "existing"
+      },
+      "selectableVariables": "사업 클릭 → 승인금액·상태·활동지역",
+      "unit": "USD",
+      "period": "승인일 기준",
+      "representativeItem": "메콩 EbA 지역사업",
+      "evidence": "사업 4건(활동지 2, 참여국 범위 2)",
+      "limitation": "지역사업 승인금액은 베트남 배분액이 아님. 사업 수와 활동지·참여범위 수는 다른 수."
+    },
+    {
+      "elementId": "E-004",
+      "category": "협력기관·기업",
+      "publicName": "국제기구 현지사무소",
+      "sourceFields": [
+        "orgName",
+        "orgType",
+        "city",
+        "officeAddress",
+        "officeProgram",
+        "recordStatus",
+        "좌표_정밀도_출처"
+      ],
+      "sourceSpatialUnit": "사무소 주소 지오코딩(OSM Nominatim)",
+      "displaySpatialUnit": "사무소 점(정밀도 표시)",
+      "representation": "point",
+      "build": {
+        "kind": "entities",
+        "withinCountryOnly": true,
+        "excludeWhere": {
+          "recordStatus": "미설치|종료"
+        },
+        "factFields": [
+          {
+            "key": "orgType",
+            "label": "기관 유형",
+            "sources": [
+              "orgType"
+            ],
+            "filterable": true
+          },
+          {
+            "key": "city",
+            "label": "도시",
+            "sources": [
+              "city"
+            ],
+            "filterable": true
+          },
+          {
+            "key": "officeAddress",
+            "label": "사무소 주소",
+            "sources": [
+              "officeAddress"
+            ]
+          },
+          {
+            "key": "officeProgram",
+            "label": "협력분야·업무",
+            "sources": [
+              "officeProgram"
+            ]
+          },
+          {
+            "key": "recordStatus",
+            "label": "사무소 상태",
+            "sources": [
+              "recordStatus"
+            ]
+          },
+          {
+            "key": "locationPrecision",
+            "label": "위치 정밀도",
+            "sources": [
+              "좌표_정밀도_출처"
+            ]
+          }
+        ],
+        "approximate": {
+          "sourceKey": "좌표_정밀도_출처",
+          "pattern": "중심점"
+        },
+        "analysisItemLabel": "국제기구 현지사무소",
+        "countNoun": "곳"
+      },
+      "selectableVariables": "기관 유형·도시 필터",
+      "unit": "개 기관",
+      "period": "2026-08 확인",
+      "representativeItem": "UNDP 하노이 사무소(Green One UN House)",
+      "evidence": "베트남 내 사무소 좌표 17건(전체 19건)",
+      "limitation": "IRENA(미설치)·USAID(종료)는 지도 제외. '중심점' 정밀도 기록은 건물 위치가 아니라 도시·행정구역 대표점."
+    },
+    {
+      "elementId": "E-005",
+      "category": "협력기관·기업",
+      "publicName": "대학·연구기관·NGO",
+      "sourceFields": [
+        "orgName",
+        "orgType",
+        "city",
+        "domain",
+        "capability",
+        "intlCoop",
+        "contact",
+        "좌표_정밀도_출처"
+      ],
+      "sourceSpatialUnit": "기관 소재지 지오코딩",
+      "displaySpatialUnit": "기관 점(정밀도 표시)",
+      "representation": "point",
+      "build": {
+        "kind": "entities",
+        "withinCountryOnly": true,
+        "identity": {
+          "sources": [
+            "orgName"
+          ],
+          "label": "기관"
+        },
+        "factFields": [
+          {
+            "key": "orgType",
+            "label": "기관 유형",
+            "sources": [
+              "orgType"
+            ],
+            "filterable": true
+          },
+          {
+            "key": "city",
+            "label": "도시",
+            "sources": [
+              "city"
+            ],
+            "filterable": true
+          },
+          {
+            "key": "domain",
+            "label": "전문 분야",
+            "sources": [
+              "domain"
+            ]
+          },
+          {
+            "key": "capability",
+            "label": "연구·실행 역량",
+            "sources": [
+              "capability"
+            ]
+          },
+          {
+            "key": "intlCoop",
+            "label": "국제협력 실적",
+            "sources": [
+              "intlCoop"
+            ]
+          },
+          {
+            "key": "locationPrecision",
+            "label": "위치 정밀도",
+            "sources": [
+              "좌표_정밀도_출처"
+            ]
+          }
+        ],
+        "approximate": {
+          "sourceKey": "좌표_정밀도_출처",
+          "pattern": "중심점"
+        },
+        "analysisItemLabel": "대학·연구기관·NGO",
+        "countNoun": "개 기관"
+      },
+      "selectableVariables": "기관 유형·도시 필터",
+      "unit": "개 기관",
+      "period": "2026-08 확인",
+      "representativeItem": "VNU-HUS 등 대학·연구기관",
+      "evidence": "베트남 내 좌표 20건",
+      "limitation": "기관명이 같은 부설조직·주소 중복은 기관명으로 한 객체에 묶음."
+    },
+    {
+      "elementId": "E-006",
+      "category": "협력기관·기업",
+      "publicName": "현지 투자자 네트워크",
+      "sourceFields": [
+        "orgName",
+        "city",
+        "hqCountryIso3",
+        "investSector",
+        "fundOrAffiliate",
+        "amountValue",
+        "좌표_정밀도_출처"
+      ],
+      "sourceSpatialUnit": "베트남 내 거점 지오코딩(해외 본부 제외)",
+      "displaySpatialUnit": "거점 점(정밀도 표시)",
+      "representation": "point",
+      "build": {
+        "kind": "entities",
+        "withinCountryOnly": true,
+        "identity": {
+          "sources": [
+            "orgName"
+          ],
+          "label": "기관"
+        },
+        "factFields": [
+          {
+            "key": "city",
+            "label": "베트남 내 거점 도시",
+            "sources": [
+              "city"
+            ],
+            "filterable": true
+          },
+          {
+            "key": "hqCountry",
+            "label": "본부 국가",
+            "sources": [
+              "hqCountryIso3"
+            ]
+          },
+          {
+            "key": "investSector",
+            "label": "투자 분야",
+            "sources": [
+              "investSector"
+            ]
+          },
+          {
+            "key": "fundOrAffiliate",
+            "label": "펀드·계열",
+            "sources": [
+              "fundOrAffiliate"
+            ]
+          },
+          {
+            "key": "locationPrecision",
+            "label": "위치 정밀도",
+            "sources": [
+              "좌표_정밀도_출처"
+            ]
+          }
+        ],
+        "approximate": {
+          "sourceKey": "좌표_정밀도_출처",
+          "pattern": "중심점"
+        },
+        "analysisItemLabel": "베트남 내 투자자 거점",
+        "countNoun": "곳"
+      },
+      "selectableVariables": "거점 도시 필터",
+      "unit": "개 기관",
+      "period": "2026-08 확인",
+      "representativeItem": "VinaCapital(호치민)",
+      "evidence": "베트남 내 거점 9건(전체 15건 중 해외 본부 6건 제외)",
+      "limitation": "Washington·Manila·London·Paris·Zurich·Singapore 본부는 베트남 지도에 표시하지 않고 상세 목록에서만 제공."
+    },
+    {
+      "elementId": "E-018",
+      "category": "협력기관·기업",
+      "publicName": "한국 기업 진출",
+      "sourceFields": [
+        "companyName",
+        "진출_상태",
+        "field_8440b85d",
+        "field_a2123512",
+        "field_aea118f0",
+        "sourceUrl",
+        "좌표_정밀도_출처"
+      ],
+      "sourceSpatialUnit": "현지 사업지·법인 소재지 지오코딩",
+      "displaySpatialUnit": "사업지 점(진출 상태·정밀도 표시)",
+      "representation": "point",
+      "build": {
+        "kind": "entities",
+        "withinCountryOnly": true,
+        "excludeWhere": {
+          "진출_상태": "철수|미진출"
+        },
+        "factFields": [
+          {
+            "key": "entryStatus",
+            "label": "진출 상태",
+            "sources": [
+              "진출_상태"
+            ],
+            "filterable": true
+          },
+          {
+            "key": "sector",
+            "label": "업종·기술",
+            "sources": [
+              "field_8440b85d"
+            ]
+          },
+          {
+            "key": "entryForm",
+            "label": "진출 형태",
+            "sources": [
+              "field_a2123512"
+            ]
+          },
+          {
+            "key": "establishedYear",
+            "label": "설립·진출 연도",
+            "sources": [
+              "field_aea118f0"
+            ]
+          },
+          {
+            "key": "locationPrecision",
+            "label": "위치 정밀도",
+            "sources": [
+              "좌표_정밀도_출처"
+            ]
+          }
+        ],
+        "approximate": {
+          "sourceKey": "좌표_정밀도_출처",
+          "pattern": "중심점"
+        },
+        "analysisItemLabel": "한국 기업 사업지·법인",
+        "countNoun": "곳"
+      },
+      "selectableVariables": "진출 상태(운영·협약·검토) 필터",
+      "unit": "개 기업·사업지",
+      "period": "2026-08 확인",
+      "representativeItem": "한국 기업 현지 사업지",
+      "evidence": "베트남 내 사업지 좌표 14건(전체 24행; 좌표 없는 9행과 철수 1행 제외)",
+      "limitation": "기업 본사(한국)는 표시하지 않음. 협약·검토·프로젝트 단계는 진출 형태 항목으로 구분하며, 철수·미진출은 지도 제외."
+    },
+    {
+      "elementId": "E-019",
+      "category": "협력기관·기업",
+      "publicName": "한국 기관 사무소",
+      "sourceFields": [
+        "organizationName",
+        "city",
+        "address",
+        "field_6b3e1e90",
+        "field_8d39bebf",
+        "contact",
+        "좌표_정밀도_출처"
+      ],
+      "sourceSpatialUnit": "사무소 주소 지오코딩",
+      "displaySpatialUnit": "사무소 점(정밀도 표시)",
+      "representation": "point",
+      "build": {
+        "kind": "entities",
+        "withinCountryOnly": true,
+        "factFields": [
+          {
+            "key": "city",
+            "label": "도시",
+            "sources": [
+              "city"
+            ],
+            "filterable": true
+          },
+          {
+            "key": "address",
+            "label": "주소",
+            "sources": [
+              "address"
+            ]
+          },
+          {
+            "key": "scope",
+            "label": "담당 업무",
+            "sources": [
+              "field_8d39bebf",
+              "field_6b3e1e90"
+            ]
+          },
+          {
+            "key": "locationPrecision",
+            "label": "위치 정밀도",
+            "sources": [
+              "좌표_정밀도_출처"
+            ]
+          }
+        ],
+        "approximate": {
+          "sourceKey": "좌표_정밀도_출처",
+          "pattern": "중심점"
+        },
+        "analysisItemLabel": "한국 기관 사무소",
+        "countNoun": "곳"
+      },
+      "selectableVariables": "도시 필터",
+      "unit": "개 사무소",
+      "period": "2026-08 확인",
+      "representativeItem": "KOTRA 하노이 무역관",
+      "evidence": "설치 사무소 좌표 6건(전체 9건)",
+      "limitation": "사무소 미설치 기관 3건은 지도 제외, 상세 화면에서만 설명."
+    }
+  ]
+}

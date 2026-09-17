@@ -132,10 +132,6 @@ export default function CountryDataFullPreviewV52({
       data-testid="public-analysis-root"
     >
       <header className="cev123-heading">
-        <div>
-          <span>공개 데이터</span>
-          <h2>{runtime ? "데이터 분석" : "데이터를 준비하는 중"}</h2>
-        </div>
         <small data-testid="public-data-summary">{publicDataSummary}</small>
       </header>
 
@@ -199,9 +195,48 @@ function buildPublicDataSummaryV127(
       const lastYear = populatedYears[populatedYears.length - 1];
       const yearRange =
         firstYear === lastYear ? `${firstYear}년` : `${firstYear}~${lastYear}년`;
-      return `${countryNameKo} · 지표 ${indicatorCount.toLocaleString(
+      // A province series is one indicator per province in the delivery, so
+      // B-033 counted "지표 63종" for one measure over 63 provinces. The
+      // region suffix is stripped before counting; the provinces are named as
+      // what they are.
+      const families = new Set(
+        populatedObservations
+          .map((row) => row.indicatorId)
+          .filter(Boolean)
+          .map((id) =>
+            String(id)
+              // Province suffixes: numeric ISO-like codes and the five
+              // municipality abbreviations; national series suffixed by a year
+              // or a canopy threshold are one series each, not one per year.
+              .replace(/_vn_(?:\d{2}|ct|hn|hp|sg|dn)$/u, "")
+              .replace(/_y\d{4}$/u, "")
+              .replace(/_t(?:30|50|75)$/u, "")
+              .replace(
+                /_(?:central_highlands|mekong_river_delta|north_central_coast_and_south_central_coast|north_east_north_west|red_river_delta|south_east|total)$/u,
+                ""
+              )
+          )
+      ).size;
+      const regionalIndicators = families > 0 && families < indicatorCount;
+      // The regional suffixes say which units the series cover: GDL's six
+      // regions (B-021) are not provinces, and a "성·시 단위" label there
+      // contradicted the screen's own 국가/6권역 selector (V141).
+      const indicatorIds = populatedObservations.map((row) => String(row.indicatorId || ""));
+      const hasGdlRegions = indicatorIds.some((id) =>
+        /_(?:central_highlands|mekong_river_delta|north_central_coast_and_south_central_coast|north_east_north_west|red_river_delta|south_east)$/u.test(id)
+      );
+      const spatialLabel = !regionalIndicators ? "" : hasGdlRegions ? " · 국가·6권역 단위" : " · 성·시 단위";
+      // Years past the current one are projections, not observations; the
+      // period says so instead of calling 2100 an observation year.
+      const currentYear = new Date().getFullYear();
+      const firstProjected = populatedYears.find((year) => year > currentYear);
+      const periodLabel =
+        firstProjected && firstProjected > firstYear
+          ? `자료기간 ${firstYear}~${lastYear}년(${firstProjected}년 이후 전망)`
+          : `자료기간 ${yearRange}`;
+      return `${countryNameKo} · 지표 ${(regionalIndicators ? families : indicatorCount).toLocaleString(
         "ko-KR"
-      )}종 · 관측기간 ${yearRange}`;
+      )}종${spatialLabel} · ${periodLabel}`;
     }
 
     const observationSummary = [

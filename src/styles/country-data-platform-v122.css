@@ -76,6 +76,11 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+/* V140: four advanced fields (year, provider, delivery type, technology). */
+.cdp-filter-grid--secondary {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .cdp-field {
   display: grid;
   gap: 7px;
@@ -90,6 +95,25 @@
   color: #385249;
   font-size: 0.86rem;
   font-weight: 750;
+}
+
+/* V142: a value the field derives rather than lets the reader choose (A-023's year by source). */
+.cdp-field > strong[data-period] {
+  display: block;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--cdp-line-strong);
+  border-radius: 10px;
+  background: #f4f8f6;
+  font-size: 0.94rem;
+}
+
+.cdp-field__hint {
+  display: block;
+  margin-top: 4px;
+  color: #5b6b66;
+  font-size: 0.78rem;
+  line-height: 1.4;
 }
 
 .cdp-input,
@@ -249,6 +273,34 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
+}
+
+/* V140: three cards across once the page is wide enough for a chart per
+   card to keep 12px labels; two below that, one on a phone. A card is as
+   tall as its own summary; a row is not stretched to its tallest card. */
+.cdp-card-grid {
+  align-items: start;
+}
+
+@media (min-width: 1240px) {
+  .cdp-card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* The provider is a fact, not the headline: regular weight, small, and at
+   most three lines. */
+.cdp-card__facts--public-v135 dd {
+  font-weight: 500;
+  font-size: 0.82rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cdp-dataset-card {
+  min-height: 0;
 }
 
 .cdp-dataset-card {
@@ -1761,6 +1813,10 @@
     width: min(100% - 32px, 960px);
   }
 
+  .cdp-filter-grid--secondary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .cdp-card-grid,
   .cdp-download-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2672,4 +2728,49 @@
   color: #5c6b65;
   font-size: 0.82rem;
   text-align: center;
+}
+
+/* V140: the right panel leads with the selected target and the national
+   summary; the analysis metadata is the last block, as 자료정보. */
+.cdp-map-analysis-sections > [data-testid="map-selected-feature-panel"] {
+  order: -3;
+}
+
+.cdp-map-analysis-sections > [data-testid="map-national-summary"] {
+  order: -2;
+}
+
+.cdp-map-analysis-sections > [data-testid="map-indicator-meaning-v129"] {
+  order: -1;
+}
+
+.cdp-map-analysis-sections > .cdp-map-current-analysis-v140 {
+  order: 10;
+}
+
+.cdp-map-current-analysis-v140 summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+}
+
+.cdp-map-current-analysis-v140 summary::before {
+  content: "▸";
+  color: #3e584f;
+  font-size: 0.8rem;
+}
+
+.cdp-map-current-analysis-v140 details[open] summary::before {
+  content: "▾";
+}
+
+.cdp-map-current-analysis-v140 summary h3 {
+  margin: 0;
+}
+
+.cdp-map-current-analysis-v140 details[open] summary {
+  margin-bottom: 8px;
 }

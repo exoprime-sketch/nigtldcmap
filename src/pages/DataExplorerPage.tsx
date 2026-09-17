@@ -8,6 +8,10 @@ import {
 import { listCountryDataProvidersV122 } from "../data/countries/countryDataProviderRegistryV122";
 import type { CountryCatalogItemV122 } from "../data/countries/countryDataTypesV122";
 import { publicDownloadStatusV128 } from "../data/publicPlatformV128";
+import { loadCardSummariesV140 } from "../data/cardSummariesV140";
+import type { CardSummaryV140 } from "../data/cardSummariesV140";
+import type { DataFinderSelectorStateV125 } from "../types/dataFinderV125";
+import FinderCardSummaryV140 from "../components/catalog/FinderCardSummaryV140";
 import { getElementVisualizationSummaryV125 } from "../data/visualization/elementVisualizationRegistryV125";
 import { CATEGORIES } from "../data/publicTaxonomy";
 import type { CategoryCode } from "../data/publicTaxonomy";
@@ -35,7 +39,11 @@ interface DataExplorerPageProps {
   onTechnologyChange: (value: string) => void;
   onGroupChange: (value: string | null) => void;
   onOpenDownload: (elementId: string, countryIso3: string) => void;
-  onOpenElement: (elementId: string, countryIso3: string) => void;
+  onOpenElement: (
+    elementId: string,
+    countryIso3: string,
+    selection?: DataFinderSelectorStateV125
+  ) => void;
   onOpenMapElement?: (elementId: string, countryIso3: string) => void;
 }
 
@@ -125,6 +133,14 @@ function maxScrollYV136(): number {
 }
 type FinderSortModeV128 = "relevance" | "latest" | "title";
 
+/**
+ * V140: the finder is where a reader finds the datasets the map draws and the
+ * files they can take away; the home only points here. The filter reads the
+ * same catalogue flags the card buttons read, so "지도 제공" lists exactly the
+ * cards with a 지도에서 보기 button.
+ */
+type FinderDeliveryFilterV140 = "all" | "map" | "download";
+
 function unique(values: Array<string | null | undefined>): string[] {
   return Array.from(
     new Set(values.filter((value): value is string => Boolean(value?.trim())))
@@ -148,33 +164,6 @@ function referenceYearRangeV125(item: CountryCatalogItemV122): string {
   return years[0] === years[years.length - 1]
     ? String(years[0])
     : `${years[0]}–${years[years.length - 1]}`;
-}
-
-function finderCardTagsV135(
-  item: CountryCatalogItemV122,
-  measureLabels: string[],
-  dimensionLabels: string[]
-): string[] {
-  const titleKey = normalizedSearchV121(item.publicTitle);
-  const candidates = [
-    ...measureLabels.filter((label) => {
-      const key = normalizedSearchV121(label);
-      return key && key !== titleKey && !titleKey.includes(key) && !key.includes(titleKey);
-    }),
-    ...item.technologyIds.map(technologyLabelV121),
-    ...dimensionLabels.filter(
-      (label) => !["분류", "연도", "기간", "세부 분류"].includes(label)
-    ),
-  ];
-  const seen = new Set<string>();
-  return candidates
-    .map((label) => label.trim())
-    .filter((label) => {
-      if (!label || label.length > 34 || seen.has(label)) return false;
-      seen.add(label);
-      return true;
-    })
-    .slice(0, 3);
 }
 
 export default function DataExplorerPage({
@@ -205,6 +194,22 @@ export default function DataExplorerPage({
   const [yearFilter, setYearFilter] = useState("all");
   const [sortMode, setSortMode] =
     useState<FinderSortModeV128>("relevance");
+  const [deliveryFilter, setDeliveryFilter] =
+    useState<FinderDeliveryFilterV140>("all");
+  // V140: one pre-built file summarises all 152 datasets; a card never opens
+  // its pack. Without the file the cards still list, without a summary.
+  const [cardSummaries, setCardSummaries] = useState<Map<string, CardSummaryV140> | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    void loadCardSummariesV140()
+      .then((value) => {
+        if (!cancelled) setCardSummaries(value);
+      })
+      .catch(() => undefined);
+    return () => {
+      cancelled = true;
+    };
+  }, []);
   const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE_COUNT);
   const [autoLoading, setAutoLoading] = useState(false);
   const sentinelRefV136 = useRef<HTMLDivElement | null>(null);
@@ -354,6 +359,13 @@ export default function DataExplorerPage({
       ) {
         return false;
       }
+      if (deliveryFilter === "map" && !item.hasMapData) return false;
+      if (
+        deliveryFilter === "download" &&
+        publicDownloadStatusV128(item).key !== "downloadable"
+      ) {
+        return false;
+      }
       if (normalizedQuery) {
         const indexed = searchIndex.get(
           countryCatalogKeyV122(item.providerId, item.elementId)
@@ -408,6 +420,7 @@ export default function DataExplorerPage({
   }, [
     availableCatalog,
     category,
+    deliveryFilter,
     normalizedQuery,
     searchIndex,
     selectedGroup,
@@ -426,6 +439,7 @@ export default function DataExplorerPage({
     sortMode,
     technologyId,
     yearFilter,
+    deliveryFilter,
   ].join("|");
 
   useEffect(() => {
@@ -599,6 +613,7 @@ export default function DataExplorerPage({
     onTechnologyChange("all");
     setYearFilter("all");
     setSortMode("relevance");
+    setDeliveryFilter("all");
   }
 
   return (
@@ -726,6 +741,23 @@ export default function DataExplorerPage({
               </select>
             </label>
             <label className="cdp-field">
+              <span className="cdp-field__label">제공 형태</span>
+              <select
+                className="cdp-select"
+                data-testid="finder-delivery-filter-v140"
+                value={deliveryFilter}
+                onChange={(event) =>
+                  setDeliveryFilter(
+                    event.target.value as FinderDeliveryFilterV140
+                  )
+                }
+              >
+                <option value="all">전체</option>
+                <option value="map">지도 제공</option>
+                <option value="download">다운로드 가능</option>
+              </select>
+            </label>
+            <label className="cdp-field">
               <span className="cdp-field__label">기후기술</span>
               <select
                 className="cdp-select"
@@ -803,17 +835,14 @@ export default function DataExplorerPage({
               ? String(contract.yearRange.start)
                 : `${contract.yearRange.start}–${contract.yearRange.end}`
             : referenceYearRangeV125(item);
-          const tags = finderCardTagsV135(
-            item,
-            contract?.measureLabels || [],
-            contract?.dimensionLabels || []
-          );
+          const summary = cardSummaries?.get(item.elementId) ?? null;
           return (
           <article
             className="cdp-dataset-card"
             key={countryCatalogKeyV122(item.providerId, item.elementId)}
             data-element-id={item.elementId}
             data-testid="public-finder-card-v135"
+            data-card-kind={summary?.kind ?? "pending"}
           >
             <div className="cdp-card__path">
               <span>
@@ -831,44 +860,39 @@ export default function DataExplorerPage({
             <p className="cdp-card__description">
               <PublicTermTextV134 text={item.publicDescription} />
             </p>
+            {summary && <FinderCardSummaryV140 summary={summary} />}
             <dl className="cdp-card__facts cdp-card__facts--public-v135">
               <div>
                 <dt>자료기간</dt>
-                <dd>{semanticYearRange}</dd>
+                <dd>{summary?.period && summary.kind !== "status" ? <PublicTermTextV134 text={summary.period} /> : semanticYearRange}</dd>
               </div>
               <div>
                 <dt>제공기관</dt>
                 <dd>
                   <PublicTermTextV134
                     text={
-                      item.sourceOrganizations.length > 0
+                      summary?.provider || (item.sourceOrganizations.length > 0
                         ? item.sourceOrganizations.slice(0, 2).join(" · ")
-                        : "—"
+                        : "—")
                     }
                   />
                 </dd>
               </div>
             </dl>
-            {tags.length > 0 && (
-              <div
-                className="cdp-chip-row cdp-card__public-tags-v135"
-                aria-label="주요 내용"
-                data-testid="finder-card-tags-v135"
-              >
-                {tags.map((tag) => (
-                  <span className="cdp-chip" key={tag}>
-                    <PublicTermTextV134 text={tag} />
-                  </span>
-                ))}
-              </div>
-            )}
             <div className="cdp-card__actions">
               <button
                 type="button"
                 className="cdp-button cdp-button--primary"
-                onClick={() => onOpenElement(item.elementId, item.countryIso3)}
+                data-testid="finder-card-open-v140"
+                onClick={() =>
+                  onOpenElement(
+                    item.elementId,
+                    item.countryIso3,
+                    summary?.selection ?? undefined
+                  )
+                }
               >
-                데이터 보기
+                상세보기
               </button>
               {item.hasMapData && onOpenMapElement && (
                 <button

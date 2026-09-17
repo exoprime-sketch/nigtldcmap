@@ -219,10 +219,10 @@ const a002RawSummaryText = String(a002Dom?.rawSummaryText || "");
 audit.check(
   "A002_PUBLIC_SUMMARY_DOM",
   runtimeFailure === null &&
-    /베트남\s*·\s*지표\s*21종\s*·\s*관측기간\s*2005~2015년/u.test(a002SummaryText) &&
+    /베트남\s*·\s*지표\s*21종\s*·\s*(?:관측기간|자료기간)\s*2005~2015년/u.test(a002SummaryText) &&
     !/수치\s*420건/u.test(a002SummaryText),
   { summaryText: a002SummaryText, runtimeFailure },
-  "베트남 · 지표 21종 · 관측기간 2005~2015년; no 수치 420건"
+  "베트남 · 지표 21종 · 자료기간 2005~2015년; no 수치 420건"
 );
 audit.check(
   "A002_RAW_TABLE_SUMMARY_DOM",
@@ -235,7 +235,7 @@ audit.check(
 audit.check(
   "SUMMARY_TERMINOLOGY_USER_FACING",
   a002SummaryText.includes("공개 관측값") ||
-    (a002SummaryText.includes("지표 21종") && a002SummaryText.includes("관측기간")),
+    (a002SummaryText.includes("지표 21종") && /관측기간|자료기간/u.test(a002SummaryText)),
   a002SummaryText,
   "공개 관측값 or semantic 지표/관측기간 summary"
 );

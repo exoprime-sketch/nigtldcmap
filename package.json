@@ -18,6 +18,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",
+    "@types/node": "22.9.0",
     "@types/react": "18.2.38",
     "@types/react-dom": "18.2.15",
     "typescript": "^4.9.5"
@@ -180,7 +181,20 @@
     "e2e:update-visual": "playwright test e2e/visual.spec.ts --update-snapshots",
     "build:candidate:v137": "node scripts/v137/build-candidate-v137.mjs",
     "data:final:v137": "node scripts/v137/build-final-data-v137.mjs",
-    "promote:public-data:v137": "node scripts/v137/promote-public-data-v137.mjs"
+    "promote:public-data:v137": "node scripts/v137/promote-public-data-v137.mjs",
+    "build:map-targets:v138": "node scripts/v138/build-map-layers-v138.mjs && node scripts/generate-vietnam-asset-integrity-v133.mjs --data public/data/vietnam/v2",
+    "report:map-targets:v138": "node scripts/v138/report-map-targets-v138.mjs",
+    "qa:map:v138": "node scripts/v138/map-runtime-qa-v138.mjs",
+    "review:screens:v138": "node scripts/v138/screen-review-v138.mjs",
+    "compare:downloads:v138": "node scripts/v138/download-sample-compare-v138.mjs",
+    "build:home-preview:v139": "node scripts/v139/build-home-preview-v139.mjs && node scripts/generate-vietnam-asset-integrity-v133.mjs --data public/data/vietnam/v2",
+    "qa:home:v139": "node scripts/v139/home-runtime-qa-v139.mjs",
+    "qa:role-split:v140": "node scripts/v140/role-split-qa-v140.mjs",
+    "build:card-summaries:v140": "node scripts/v140/build-card-summaries-v140.mjs && node scripts/generate-vietnam-asset-integrity-v133.mjs --data public/data/vietnam/v2",
+    "qa:analysis:v140": "node scripts/v140/analysis-qa-v140.mjs",
+    "finalize:v140": "npm run finalize:v136 && npm run qa:role-split:v140 && npm run qa:analysis:v140",
+    "verify:ignore-command:v140": "node scripts/v140/verify-ignore-command-v140.mjs",
+    "storage:ledger:v140": "node scripts/v140/deployment-storage-ledger-v140.mjs"
   },
   "browserslist": [
     ">0.2%",

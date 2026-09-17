@@ -39,7 +39,10 @@ test("B-005 shows the province distribution rather than a national average", asy
   // The refusal to average provinces is the point of this screen.
   await expect(analysis).toContainText("성·시 값을 평균한 전국값은 만들지 않고");
   await expect(analysis).toContainText("연속 건조일수");
-  await expect(analysis).toContainText("과거 관측");
+  // The historical run is CMIP6 model output, not observation; the screen
+  // says so and no longer calls it "과거 관측".
+  await expect(analysis).toContainText("과거 모형(historical)");
+  await expect(analysis).toContainText("CMIP6 모형이 재현한 값");
   await expect(analysis).toContainText("SSP1-2.6");
   // 63 provinces per scenario-year, and the table says so.
   await expect(analysis).toContainText("63");

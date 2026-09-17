@@ -61,7 +61,7 @@ const SCENARIO_KEY = "시나리오";
 const YEAR_KEY = "연도";
 const REGION_KEY = "지역명_로마자";
 const SCENARIO_LABELS = {
-  historical: "과거 관측",
+  historical: "과거 모형(historical)",
   ssp119: "SSP1-1.9",
   ssp126: "SSP1-2.6",
   ssp245: "SSP2-4.5",
@@ -136,9 +136,11 @@ const routerPath = resolve(
   PROJECT_ROOT,
   "src/components/data/public/PublicDataAnalysisRouterV126.tsx"
 );
+// V138 replaced the V137 summary with the full-series component; the same
+// data-testid is kept on it so the screen contract does not move.
 const summaryPath = resolve(
   PROJECT_ROOT,
-  "src/components/data/public/PublicRegionScenarioSummaryV137.tsx"
+  "src/components/data/public/PublicRegionScenarioSummaryV138.tsx"
 );
 const source = [routerPath, summaryPath]
   .filter(existsSync)
@@ -146,9 +148,9 @@ const source = [routerPath, summaryPath]
   .join("\n");
 audit.check(
   "B005_SCENARIO_RENDERER",
-  /PublicRegionScenarioSummaryV137/u.test(source) &&
+  /PublicRegionScenarioSummaryV138/u.test(source) &&
     /region-scenario-summary-v137/u.test(source),
-  "PublicRegionScenarioSummaryV137 wired",
+  "PublicRegionScenarioSummaryV138 wired",
   "wired"
 );
 audit.check(
@@ -208,8 +210,11 @@ try {
       const card = document.querySelector('[data-testid="region-scenario-summary-v137"]');
       const text = String(document.querySelector('main')?.innerText || '').normalize('NFC').replace(/\\s+/gu, ' ').trim();
       const caption = String(card?.querySelector('caption')?.textContent || '').normalize('NFC').replace(/\\s+/gu, ' ').trim();
-      const scenarioCells = [...(card?.querySelectorAll('tbody th[scope="row"]') || [])]
-        .map((node) => String(node.textContent || '').normalize('NFC').replace(/\\s+/gu, ' ').trim());
+      // V138 adds a "변화" row per scenario under the first/last rows, and a
+      // grade table above for elements that carry bands.
+      const scenarioCells = [...(card?.querySelectorAll('[data-testid="region-scenario-table-v138"] tbody th[scope="row"]') || card?.querySelectorAll('tbody th[scope="row"]') || [])]
+        .map((node) => String(node.textContent || '').normalize('NFC').replace(/\\s+/gu, ' ').trim())
+        .filter((label) => !/ 변화$/u.test(label));
       const regionCounts = [...(card?.querySelectorAll('tbody tr') || [])]
         .map((row) => Number(String(row.lastElementChild?.textContent || '').replace(/[^0-9]/gu, '')))
         .filter((value) => Number.isFinite(value) && value > 0);

@@ -4,6 +4,12 @@
   min-width: 0;
 }
 
+.sv143-comparison-tools { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: .82rem; color: #4c685d; }
+.sv143-comparison-tools h5 { margin: 0; }
+.sv143-comparison-tools select, .sv143-comparison-tools button { padding: 8px 10px; border: 1px solid #bed2c9; border-radius: 8px; color: #174d39; background: white; font: inherit; }
+.sv143-comparison-tools button { cursor: pointer; }
+.sv143-comparison-tools select:focus-visible, .sv143-comparison-tools button:focus-visible { outline: 3px solid #218273; outline-offset: 2px; }
+
 .sv125-contract-renderer *,
 .sv125-contract-renderer *::before,
 .sv125-contract-renderer *::after {
@@ -616,3 +622,93 @@
     width: 2px;
   }
 }
+
+/* V138: the indicator group a policy row belongs to, named once per group. */
+.sv125-evidence-matrix__group {
+  color: var(--cdp-muted, #55635c);
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* V140: one timeline entry per law, with its attributes as a short list. */
+.sv125-document-count {
+  margin: 0 0 12px;
+  color: #52645f;
+  font-size: 0.82rem;
+}
+
+.sv125-document-attributes {
+  margin: 0.2rem 0 0;
+  display: grid;
+  gap: 3px;
+  font-size: 0.8rem;
+}
+
+.sv125-document-attributes > div {
+  display: grid;
+  grid-template-columns: minmax(90px, 30%) minmax(0, 1fr);
+  gap: 8px;
+}
+
+.sv125-document-attributes dt {
+  color: #60706c;
+}
+
+.sv125-document-attributes dd {
+  margin: 0;
+  color: #173b34;
+  overflow-wrap: anywhere;
+}
+
+/* V141: the chart's own rows as a table, folded under the chart. */
+.sv125-chart-table {
+  margin-top: 10px;
+  border: 1px solid #d8e5e0;
+  border-radius: 10px;
+  padding: 6px 12px;
+  background: #fbfdfc;
+}
+
+.sv125-chart-table > summary {
+  cursor: pointer;
+  font-size: 0.86rem;
+  font-weight: 640;
+  color: #126d51;
+}
+
+.sv125-chart-table .sv125-matrix-wrap {
+  margin-top: 8px;
+  max-height: 360px;
+  overflow: auto;
+}
+
+/* V141: category counts before a timeline's entries. */
+.sv125-group-counts {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sv125-group-counts li {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.8fr) minmax(0, 2fr) auto;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.86rem;
+}
+
+.sv125-group-counts i {
+  display: block;
+  height: 10px;
+  min-width: 3px;
+  border-radius: 5px;
+  background: #2f8fc1;
+}
+
+.sv125-group-counts strong {
+  font-variant-numeric: tabular-nums;
+}
+.sv125-controls:empty { display: none; }

@@ -127,3 +127,47 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* V140: the A-023 fuel table. */
+.pps132-table-wrap {
+  overflow-x: auto;
+}
+
+.pps132-table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+}
+
+.pps132-table-wrap caption {
+  text-align: left;
+  color: #60706c;
+  padding-bottom: 8px;
+  font-size: 0.8rem;
+}
+
+.pps132-table-wrap th,
+.pps132-table-wrap td {
+  padding: 7px 10px;
+  border-bottom: 1px solid #e3ebe8;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.pps132-table-wrap th:first-child,
+.pps132-table-wrap td:first-child {
+  text-align: left;
+}
+
+.pps132-total-row th,
+.pps132-total-row td {
+  font-weight: 800;
+  border-top: 2px solid #b9cbc6;
+}
+
+.pps132-note {
+  margin: 10px 0 0;
+  color: #60706c;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}

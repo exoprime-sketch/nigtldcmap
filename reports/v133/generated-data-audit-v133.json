@@ -74,9 +74,9 @@
       "name": "ASSET_INTEGRITY_COVERAGE",
       "status": "PASS",
       "actual": {
-        "declared": 494,
-        "recorded": 494,
-        "expected": 494,
+        "declared": 516,
+        "recorded": 516,
+        "expected": 516,
         "missing": 0,
         "unexpected": 0,
         "duplicate": 0
@@ -100,7 +100,7 @@
       "actual": 0,
       "expected": 0,
       "details": {
-        "checked": 495,
+        "checked": 517,
         "broken": []
       }
     },
@@ -134,14 +134,16 @@
       "name": "MAP_INTEGRITY",
       "status": "PASS",
       "actual": {
-        "declaredLayers": 12,
-        "layers": 12,
-        "declaredFeatures": 3144,
-        "features": 3144,
+        "declaredLayers": 42,
+        "layers": 42,
+        "connectedTargets": 42,
+        "missingTargetLayers": [],
+        "declaredFeatures": 4463,
+        "features": 4463,
         "declaredMatchesActual": true
       },
       "expected": {
-        "layers": 12,
+        "layers": "declared count, <= 43 targets, every connected target present",
         "features": ">= 2900",
         "declaredMatchesActual": true,
         "fakeGeometry": 0

@@ -32,12 +32,36 @@ export async function openDetail(page: Page, elementId: string) {
   return root;
 }
 
-/** Runtime errors the page threw while the test was driving it. */
+/** Assets the application cannot run without: its bundles and its data. */
+const REQUIRED_ASSET = /\/static\/(?:js|css)\/|\/data\/|\.(?:json|geojson)(?:\?|$)/u;
+
+/**
+ * Runtime errors the page threw while the test was driving it, and every
+ * required asset that did not arrive.
+ *
+ * The console's own "Failed to load resource … 404" line carries no URL, so
+ * it used to be filtered out wholesale and a missing shard, geometry or
+ * summary file passed unnoticed (V140). Required assets are now watched on
+ * the response itself: a 4xx/5xx, or an HTML page answered where JSON was
+ * asked for, is recorded with its URL and is never ignored.
+ */
 export function collectPageErrors(page: Page): string[] {
   const errors: string[] = [];
   page.on("pageerror", (error) => errors.push(String(error?.message || error)));
   page.on("console", (message) => {
     if (message.type() === "error") errors.push(message.text());
+  });
+  page.on("response", (response) => {
+    const url = response.url();
+    if (!REQUIRED_ASSET.test(url)) return;
+    if (response.status() >= 400) {
+      errors.push(`asset ${response.status()}: ${url}`);
+      return;
+    }
+    const contentType = response.headers()["content-type"] || "";
+    if (/\.(?:json|geojson)(?:\?|$)/u.test(url) && contentType.includes("text/html")) {
+      errors.push(`html-for-json: ${url}`);
+    }
   });
   return errors;
 }
@@ -57,3 +81,24 @@ export const realPageErrors = (errors: string[]) =>
 /** Internal shapes that must never reach a public screen. */
 export const INTERNAL_TOKEN =
   /\battr_\d+\b|\bfield_[0-9a-f]{8}\b|\bmeasure-[0-9a-f]{12}\b|속성\d+_|VNM\.\d+_\d+/u;
+
+/**
+ * V138 map catalogue: bring a dataset's checkbox into reach. The list is a
+ * drawer at phone widths and its seven categories fold, so the row may be
+ * hidden twice over before a reader can tick it.
+ */
+export async function revealMapDataset(page: Page, elementId: string) {
+  const panel = page.getByTestId("map-layer-panel");
+  const collapsed = await panel.evaluate((el) => el.classList.contains("is-collapsed"));
+  if (collapsed) await page.locator('[data-testid="map-layer-panel"] .cdp-map-panel-toggle').click();
+  const input = page.locator(
+    `[data-testid="map-all-data-layer-v135"][data-element-id="${elementId}"]`
+  );
+  await expect(input).toHaveCount(1);
+  const toggle = input
+    .locator("xpath=ancestor::*[@data-map-group-v135]")
+    .locator('[data-testid="map-catalog-group-toggle-v138"]');
+  if ((await toggle.getAttribute("aria-expanded")) !== "true") await toggle.click();
+  await input.scrollIntoViewIfNeeded();
+  return input;
+}

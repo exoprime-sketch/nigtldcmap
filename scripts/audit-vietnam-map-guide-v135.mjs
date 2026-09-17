@@ -12,12 +12,14 @@ import {
   startStaticBuildServer,
   waitForValue,
 } from "./v125/browser-runtime.mjs";
-import { finishAuditV135, mapUrlV135 } from "./v135/audit-helpers.mjs";
+import { finishAuditV135, mapLayerCountV138, mapUrlV135 } from "./v135/audit-helpers.mjs";
 
 const audit = new AuditV125("map-guide:v135");
+const EXPECTED_LAYERS = mapLayerCountV138();
+
 const requiredFunctions = [
   "발전소 입지·설비 분포 비교",
-  "송전망 연결구조·전압별 분포 확인",
+  "송전선 경로·전압별 분포 확인",
   "성·시별 재생에너지 계획용량 비교",
   "권역별 취약성 수준 비교",
   "성·시별 산림면적 비교",
@@ -51,7 +53,7 @@ try {
   await navigate(browser.cdp, mapUrlV135(server.url));
   await waitForValue(
     browser.cdp,
-    `document.querySelectorAll('[data-testid="map-data-guide-v130"] tbody tr').length === 12`,
+    `document.querySelectorAll('[data-testid="map-data-guide-v130"] tbody tr').length === ${EXPECTED_LAYERS}`,
     { timeoutMs: 35_000 }
   );
   snapshot = await evaluateValue(
@@ -92,7 +94,7 @@ const verboseFunctionCopy = snapshot?.rows?.filter((row) => /할\s*수\s*있습�
 
 audit.check("MAP_GUIDE_RUNTIME", runtimeFailure === null && Boolean(snapshot), { runtimeFailure, snapshotPresent: Boolean(snapshot) }, { snapshotPresent: true });
 audit.check("MAP_GUIDE_DEFAULT_OPEN", snapshot?.defaultOpen === false, snapshot?.defaultOpen ?? null, false);
-audit.check("MAP_GUIDE_ROW_COUNT", snapshot?.rows?.length === 12, snapshot?.rows?.length ?? 0, 12);
+audit.check("MAP_GUIDE_ROW_COUNT", snapshot?.rows?.length === EXPECTED_LAYERS, snapshot?.rows?.length ?? 0, EXPECTED_LAYERS);
 audit.check("MAP_GUIDE_COLUMN_DATA_FUNCTION", snapshot?.headings?.includes("데이터 기능") === true, snapshot?.headings || [], "데이터 기능");
 audit.check("MAP_GUIDE_COLUMN_REFERENCE", snapshot?.headings?.includes("참고사항") === true, snapshot?.headings || [], "참고사항");
 audit.check("MAP_GUIDE_LEGACY_COLUMNS", !snapshot?.headings?.some((heading) => /지도 표시 이유|공간 한계/u.test(heading)), snapshot?.headings || [], "legacy columns absent");

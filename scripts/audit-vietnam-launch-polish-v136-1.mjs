@@ -224,7 +224,7 @@ try {
         statusBadgeCount: main.querySelectorAll('[data-public-status], [data-download-status]').length,
         statCount: main.querySelectorAll('.home-v128-stats > div').length,
         statLabels: [...main.querySelectorAll('.home-v128-stats dt')].map((n) => n.textContent.trim()),
-        featuredHeading: main.querySelector('.home-featured-heading strong')?.textContent?.trim() || '',
+        featuredHeading: main.querySelector('.home-featured-heading h2, .home-featured-heading strong')?.textContent?.trim() || '',
         searchPlaceholder: main.querySelector('#home-search')?.getAttribute('placeholder') || '',
         quickActions: [...main.querySelectorAll('.home-final-actions button')].map((n) => ({
           title: n.querySelector('strong')?.textContent?.trim() || '',
@@ -452,9 +452,10 @@ audit.check("NEW_PUBLIC_ROUTE_COUNT", viewMatches.length - BASELINE_PUBLIC_VIEWS
 
 audit.check("HOME_INTERNAL_STATUS_BADGE_COUNT", homeEvidence?.statusBadgeCount === 0, homeEvidence?.statusBadgeCount ?? null, 0);
 audit.check("HOME_RELEASE_TERM_COUNT", homeReleaseHits.length === 0, homeReleaseHits, []);
-audit.check("HOME_STAT_TILES", JSON.stringify(homeEvidence?.statLabels || []) === JSON.stringify(["데이터", "지도 데이터", "다운로드 가능", "최근 업데이트"]), homeEvidence?.statLabels ?? null, ["데이터", "지도 데이터", "다운로드 가능", "최근 업데이트"]);
+// V139 home: the four facts are one strip - item count, map items, downloadable items, data snapshot date.
+audit.check("HOME_STAT_TILES", JSON.stringify(homeEvidence?.statLabels || []) === JSON.stringify(["전체 데이터 항목", "지도 제공 항목", "다운로드 가능 항목", "데이터 기준일"]), homeEvidence?.statLabels ?? null, ["전체 데이터 항목", "지도 제공 항목", "다운로드 가능 항목", "데이터 기준일"]);
 audit.check("HOME_SCOPE_MENTION_COUNT", homeEvidence?.scopeMentionCount === 1, homeEvidence?.scopeMentionCount ?? null, 1);
-audit.check("HOME_SEARCH_PLACEHOLDER", homeEvidence?.searchPlaceholder === "어떤 데이터를 찾으시나요?", homeEvidence?.searchPlaceholder ?? null, "어떤 데이터를 찾으시나요?");
+audit.check("HOME_SEARCH_PLACEHOLDER", homeEvidence?.searchPlaceholder === "데이터명·지역·기술·기관 검색", homeEvidence?.searchPlaceholder ?? null, "데이터명·지역·기술·기관 검색");
 audit.check("HOME_FEATURED_HEADING", homeEvidence?.featuredHeading === "주요 데이터", homeEvidence?.featuredHeading ?? null, "주요 데이터");
 
 audit.check("PUBLIC_RELEASE_TERM_COUNT", releaseHits.length === 0, releaseHits, []);

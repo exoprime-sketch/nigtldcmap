@@ -32,6 +32,7 @@ export type PublicDescriptionShapeV135 =
   | "directory"
   | "portfolio"
   | "policy"
+  | "events"
   | "spatial"
   | "scenario"
   | "composition"
@@ -90,7 +91,6 @@ const PORTFOLIO_FAMILIES_V135 = new Set<ElementLayoutFamilyV100>([
 const POLICY_FAMILIES_V135 = new Set<ElementLayoutFamilyV100>([
   "agreement",
   "document_library",
-  "event_timeline",
   "policy_evidence",
   "policy_timeline",
   "process",
@@ -137,6 +137,8 @@ export function publicDescriptionShapeV135(
   if (family && PORTFOLIO_FAMILIES_V135.has(family)) return "portfolio";
   if (PORTFOLIO_TEMPLATES_V135.has(template)) return "portfolio";
 
+  // A disaster archive records events, not institutions (B-012, V142).
+  if (family === "event_timeline") return "events";
   if (family && POLICY_FAMILIES_V135.has(family)) return "policy";
   if (POLICY_TEMPLATES_V135.has(template)) return "policy";
 
@@ -177,6 +179,8 @@ function describeV135(
       return `${title}의 사업 규모와 분야·기관별 구성을 확인할 수 있습니다`;
     case "policy":
       return `${title}의 제도 현황과 시행시점·주요 내용을 확인할 수 있습니다`;
+    case "events":
+      return `${title}의 사건 유형과 발생 시기·피해 규모를 확인할 수 있습니다`;
     case "spatial":
       return `${title}의 지역별 분포와 지역 간 차이를 확인할 수 있습니다`;
     case "scenario":

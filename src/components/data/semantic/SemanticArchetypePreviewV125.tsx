@@ -23,18 +23,19 @@ import {
   publicTextV126,
 } from "../../../data/visualization/publicFieldPolicyV126";
 import {
-  publicDimensionContextV136_2,
   publicDimensionLabelV126,
   publicDimensionValueV134,
   publicMeasureLabelV126,
 } from "../../../data/visualization/publicCopyRegistryV126";
 import { publicScaledNumberV136_2 } from "../../../utils/publicNumberScaleV136_2";
+import { publicIndicatorContextV144, publicIndicatorDimensionV144, previousYearChangeV144, publicPercentHeadlineV144 } from "../../../data/visualization/publicIndicatorCopyV144";
 import { getPublicAnalysisHeadingsV134 } from "../../../data/visualization/publicAnalysisHeadingsV134";
 import {
   PublicTermHelpV134,
   PublicTermTextV134,
 } from "../../help/PublicTermV134";
 import SemanticContractRendererV125 from "./SemanticContractRendererV125";
+import type { IndicatorUnitsV142 } from "./SemanticContractRendererV125";
 import "../../../styles/semantic-visualization-v125.css";
 
 interface Props {
@@ -140,14 +141,38 @@ export default function SemanticArchetypePreviewV125({
       ),
     [observations, semantics]
   );
-  const additionalDimensions = useMemo(
+  // Unit per indicator, so entity rows can tell a phone number from a rate
+  // before anything is compared (V142).
+  const indicatorUnits = useMemo<IndicatorUnitsV142>(
     () =>
-      contract.dimensions.filter(
+      Object.fromEntries(
+        semantics.indicators.map((indicator) => [
+          indicator.indicatorId,
+          { unit: indicator.measure.unit ?? null, unitFamily: indicator.measure.unitFamily ?? null },
+        ])
+      ),
+    [semantics]
+  );
+  const additionalDimensions = useMemo(
+    () => {
+      const keys = new Set(contract.dimensions.map((dimension) => dimension.key));
+      const candidates = contract.dimensions.filter(
         (dimension) =>
           !["year", "period", "sex"].includes(dimension.key) &&
+          // 레코드 유형(entity / 발전소) is the delivery's own row classifier, not a
+          // reader's filter; and a raw-vocabulary twin ("coal", "hydro") of a
+          // translated dimension ("석탄", "수력") is the same filter twice.
+          dimension.key !== "entityType" &&
+          // For unemployment this is the definition of the selected age/source,
+          // not an independent analytical choice. Old card URLs can carry it;
+          // excluding it here also clears that redundant, conflicting filter.
+          !(contract.elementId === "A-006" && dimension.key === "detail") &&
+          !(dimension.key.endsWith("Raw") && keys.has(dimension.key.replace(/Raw$/u, ""))) &&
           dimension.values.length > 1
-      ),
-    [contract.dimensions]
+      );
+      return candidates;
+    },
+    [contract.dimensions, contract.elementId]
   );
   const explicitDimensions = useMemo(
     () =>
@@ -305,7 +330,9 @@ export default function SemanticArchetypePreviewV125({
         .filter((value): value is string => Boolean(value && value.trim()))
     )
   ).sort((left, right) => left.localeCompare(right, "ko"));
-  const populatedDefaultPeriod = periods.find((value) =>
+  // The newest period with a value opens the screen. B-033 delivers 2001-2024
+  // and opened on 2001, so a reader met the oldest year of the series first.
+  const populatedDefaultPeriod = [...periods].reverse().find((value) =>
     measureContextRows.some(
       (row) => row.period === value && isPopulatedSemanticRowV125(row)
     )
@@ -467,7 +494,46 @@ export default function SemanticArchetypePreviewV125({
             </select>
           </label>
         )}
-        {additionalDimensions.map((dimension) => (
+        {additionalDimensions.map((dimension) => {
+          // Only the values the chosen measure actually has. B-021 files its
+          // regions and its SSP scenarios in one dimension; the current-GVI
+          // measure has regions, the projection has scenarios, and one list
+          // holding both offered choices that select nothing (V140).
+          const valuesForMeasure = dimension.values.filter((value) =>
+            measureRows.some((row) => row.dimensions[dimension.key] === value)
+          );
+          const values = valuesForMeasure.length > 0 ? valuesForMeasure : dimension.values;
+          // Two dimensions that always travel together within the measure -
+          // A-006's 분류 "ILO 모델추정" and 세부 분류 "경제활동인구 대비 실업자
+          // 비율(ILO 모형 보정 추정치)" - are one choice written twice; the one
+          // with the longer labels describes the other and is not offered.
+          const pairsWithShorter = additionalDimensions.some((other) => {
+            if (other.key === dimension.key || dimensions[dimension.key]) return false;
+            const otherValues = other.values.filter((value) => measureRows.some((row) => row.dimensions[other.key] === value));
+            if (otherValues.length !== values.length || otherValues.length < 2) return false;
+            const otherLength = otherValues.reduce((sum, value) => sum + value.length, 0);
+            const ownLength = values.reduce((sum, value) => sum + value.length, 0);
+            if (otherLength >= ownLength) return false;
+            const forward = new Map<string, string>();
+            for (const row of measureRows) {
+              const left = row.dimensions[other.key];
+              const right = row.dimensions[dimension.key];
+              if (!left || !right) continue;
+              if (forward.has(left) && forward.get(left) !== right) return false;
+              forward.set(left, right);
+            }
+            return forward.size === values.length;
+          });
+          if (pairsWithShorter) return null;
+          if (values.length === 1 && !dimensions[dimension.key]) {
+            return (
+              <p className="sv125-fixed-value" key={dimension.key} data-public-dimension-key={dimension.key}>
+                <span>{publicDimensionLabelV126(dimension.key, dimension.labelKo)}</span>
+                <strong><PublicTermTextV134 text={dimensionValueLabelV125(dimension.key, values[0])} /></strong>
+              </p>
+            );
+          }
+          return (
           <label key={dimension.key}>
             <span>{publicDimensionLabelV126(dimension.key, dimension.labelKo)}</span>
             <select
@@ -491,14 +557,15 @@ export default function SemanticArchetypePreviewV125({
               {!singleDenominatorDimensionKeys.includes(dimension.key) && (
                 <option value="">전체</option>
               )}
-              {dimension.values.map((value) => (
+              {values.map((value) => (
                 <option key={value} value={value}>
-                  {dimensionValueLabelV125(dimension.key, value)}
+                  {publicIndicatorDimensionV144(contract.elementId, dimensionValueLabelV125(dimension.key, value)) || dimensionValueLabelV125(dimension.key, value)}
                 </option>
               ))}
             </select>
           </label>
-        ))}
+          );
+        })}
         {periods.length === 1 && (
           <p className="sv125-fixed-value" data-testid="v125-fixed-period">
             <span>기간</span>
@@ -578,6 +645,7 @@ export default function SemanticArchetypePreviewV125({
 
       <SemanticKpisV125
         rows={selectedRows}
+        contextRows={measureContextRows}
         contract={contract}
         selectedMeasureKey={measureKey}
       />
@@ -589,14 +657,28 @@ export default function SemanticArchetypePreviewV125({
           contract={contract}
           rows={selectedRows}
           contextRows={dimensionFilteredRows}
+          seriesRows={measureContextRows}
           entities={visibleEntities}
           countryNameKo={countryNameKo}
           detailTemplate={detailTemplate}
           elementTitle={elementTitle}
           markEntityTableAsPublic={showRawTable && visualizationTableRows.length === 0}
           showRawTable={showRawTable}
+          indicatorUnits={indicatorUnits}
         />
       )}
+
+      {(() => {
+        const definitions = Array.from(new Set(measureContextRows.flatMap((row) =>
+          Object.values(row.dimensionLabels).filter((value) =>
+            publicIndicatorDimensionV144(contract.elementId, value) !== value))));
+        return definitions.length > 0 ? (
+          <details className="sv125-indicator-notes-v144" data-testid="indicator-notes-v144">
+            <summary>지표 설명·자료 기준</summary>
+            <ul>{definitions.map((value) => <li key={value}><PublicTermTextV134 text={value} /></li>)}</ul>
+          </details>
+        ) : null;
+      })()}
 
       {missingRows.length > 0 && (
         <div className="sv125-missing" role="note">
@@ -649,13 +731,18 @@ export default function SemanticArchetypePreviewV125({
  * representative than any other.
  */
 function singleSubjectV136_4(
-  rows: ReadonlyArray<{ dimensions: Record<string, unknown> }>
+  rows: ReadonlyArray<{ dimensions: Record<string, unknown>; countryIso3?: string }>
 ): boolean {
   if (rows.length <= 1) return true;
-  const signature = (row: { dimensions: Record<string, unknown> }) =>
-    Object.entries(row.dimensions || {})
-      .filter(([key]) => !["year", "period"].includes(key))
-      .map(([key, value]) => `${key}=${String(value)}`)
+  // E-017 ranks five countries in rows that differ only by country: the
+  // first of them (China, 5위) is not the measure's headline (V140).
+  const signature = (row: { dimensions: Record<string, unknown>; countryIso3?: string }) =>
+    [
+      ...Object.entries(row.dimensions || {})
+        .filter(([key]) => !["year", "period"].includes(key))
+        .map(([key, value]) => `${key}=${String(value)}`),
+      `country=${row.countryIso3 || ""}`,
+    ]
       .sort()
       .join("|");
   const first = signature(rows[0]);
@@ -664,10 +751,12 @@ function singleSubjectV136_4(
 
 function SemanticKpisV125({
   rows,
+  contextRows,
   contract,
   selectedMeasureKey,
 }: {
   rows: SemanticObservationV125[];
+  contextRows: SemanticObservationV125[];
   contract: ElementVisualizationContractV125;
   selectedMeasureKey: string | null;
 }) {
@@ -701,7 +790,7 @@ function SemanticKpisV125({
     // it, which shows every category, is left to answer the question.
     const row = aggregate || (singleSubjectV136_4(candidates) ? candidates[0] : null);
     const dimensionValues = row
-      ? publicDimensionContextV136_2(row.dimensionLabels)
+      ? publicIndicatorContextV144(contract.elementId, row.dimensionLabels)
       : [];
     // A measure with rows but no row that speaks for them is left out
     // entirely; a measure with no rows at all still reports itself missing,
@@ -724,26 +813,36 @@ function SemanticKpisV125({
           row && typeof row.value === "number" && Number.isFinite(row.value)
             ? publicScaledNumberV136_2(row.value, unit)
             : null;
+        const percentHeadline = row && typeof row.value === "number" && unit === "%"
+          ? publicPercentHeadlineV144(row.value)
+          : null;
+        const change = row ? previousYearChangeV144(row, contextRows) : null;
+        const changeDisplay = change ? publicScaledNumberV136_2(change.value, change.unit) : null;
         return (
           <article
             key={`${measure.key}-${measure.unit}`}
             data-public-dimension-count={dimensionValues.length}
             data-public-dimension-values={JSON.stringify(dimensionValues)}
           >
-            <span><PublicTermTextV134 text={publicMeasureLabelV126(measure.labelKo)} /></span>
+            <span><PublicTermTextV134 text={publicIndicatorDimensionV144(contract.elementId, publicMeasureLabelV126(measure.labelKo))} /></span>
             <strong
-              title={scaled?.scaled ? `${scaled.exact}${unit ? ` ${unit}` : ""}` : undefined}
-              data-public-exact-value={scaled?.scaled ? scaled.exact : undefined}
+              className={row && typeof row.value === "string" ? "sv125-kpi-text-v144" : undefined}
+              title={row ? `${row.value}${unit ? ` ${unit}` : ""}` : undefined}
+              data-public-exact-value={row ? String(row.value) : undefined}
             >
-              {scaled ? scaled.display : row ? formatValueV121(row.value) : "미제공"}
+              {percentHeadline ?? (scaled ? scaled.display : row ? formatValueV121(row.value) : "미제공")}
+              {row && typeof row.value === "number" && unit ? <span className="sv125-kpi-unit-v144">{unit === "%" ? "" : " "}{unit}</span> : null}
             </strong>
             <small>
               <PublicTermTextV134 text={row
-                ? [unit, row.year || row.period, ...dimensionValues]
+                ? [row.year ? `${row.year}년` : row.period, ...dimensionValues]
                     .filter(Boolean)
                     .join(" · ")
                 : measure.unit || "단위 미기재"} />
             </small>
+            {change && Number.isFinite(change.value) ? <small data-testid="kpi-change-v144">
+              전년 대비 {change.value > 0 ? "+" : ""}{changeDisplay?.scaled ? changeDisplay.display : publicPercentHeadlineV144(change.value)} {change.unit}
+            </small> : null}
           </article>
         );
       })}

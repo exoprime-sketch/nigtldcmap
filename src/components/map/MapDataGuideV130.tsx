@@ -1,21 +1,26 @@
 import type { CountryMapLayerV122 } from "../../data/countries/countryDataTypesV122";
-import { publicMapDataFunctionV135 } from "../../data/visualization/publicMapWorkspaceV126";
+import {
+  PUBLIC_MAP_TARGET_CATEGORIES_V138,
+  publicMapDataFunctionV135,
+  publicMapLayerTitleV126,
+} from "../../data/visualization/publicMapWorkspaceV126";
 import { PublicTermTextV134 } from "../help/PublicTermV134";
+import {
+  MAP_PENDING_LABEL_V140,
+  summarizeMapAvailabilityV140,
+} from "../../data/map/mapAvailabilityV140";
 
-const GROUP_ORDER = [
-  "에너지·인프라",
-  "산림·토지",
-  "기후·위험",
-  "물·자원",
-  "국제사업·재원",
-] as const;
+// V138: the seven categories the catalogue uses, in the same order.
+const GROUP_ORDER = PUBLIC_MAP_TARGET_CATEGORIES_V138;
 
 function representation(layer: CountryMapLayerV122): string {
   if (layer.renderer === "regional-scope") return "참여국 범위·검증 활동지점";
   if (layer.renderer === "line") return "선형 네트워크";
   if (layer.renderer === "admin1-choropleth") {
     return layer.spatialScopeType === "region"
-      ? "권역값을 연결한 성·시 경계"
+      ? layer.aggregationLevel === "post-2025-34-unit"
+        ? "개편 후 34개 성·시 값을 소속 63개 경계에 표시"
+        : "권역값을 연결한 성·시 경계"
       : "성·시 색상지도";
   }
   if (layer.renderer === "partial-choropleth") return "일부 성·시 색상지도";
@@ -32,9 +37,13 @@ export default function MapDataGuideV130({
   layers,
   onOpenDataFinder,
 }: MapDataGuideV130Props) {
+  // V140: the same count the home and the list state, from the map index.
+  const availability = summarizeMapAvailabilityV140(layers);
   const groups = GROUP_ORDER.map((group) => ({
     group,
     layers: layers.filter((layer) => layer.category === group),
+    // Targets the contract names but no layer carries: listed with the reason.
+    missing: availability.pending.filter((target) => target.category === group),
   }));
 
   return (
@@ -48,13 +57,29 @@ export default function MapDataGuideV130({
           </div>
           <div>
             <strong>지도</strong>
-            <span>공간 의미와 표현 범위가 검증된 {layers.length}개 데이터</span>
+            <span data-testid="map-data-guide-count-v140">
+              지도 자료 {availability.connectedCount}개
+              {availability.pendingCount > 0
+                ? ` · ${MAP_PENDING_LABEL_V140} ${availability.pendingCount}개 (지도 대상 ${availability.targetCount}개 중 위치·경계가 확인된 자료만 지도에 표시)`
+                : ` (지도 대상 ${availability.targetCount}개 모두 연결)`}
+            </span>
           </div>
         </div>
         <div className="cdp-map-data-guide-v130__tables">
-          {groups.map(({ group, layers: groupLayers }) => (
+          {groups.map(({ group, layers: groupLayers, missing }) => (
             <section key={group} data-map-guide-group={group}>
               <h3>{group}</h3>
+              {missing.length > 0 && (
+                <p className="cdp-muted" data-testid="map-data-guide-missing-v138">
+                  {MAP_PENDING_LABEL_V140}(위치자료 미확보, 지도 표시 제외):{" "}
+                  {missing
+                    .map(
+                      (target) =>
+                        `${publicMapLayerTitleV126(target.elementId, target.publicName)} — ${target.reason}`
+                    )
+                    .join(" / ")}
+                </p>
+              )}
               {groupLayers.length ? (
                 <div className="cdp-map-data-guide-v130__table-wrap">
                   <table>

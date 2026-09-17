@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import InteractiveTimeSeriesChartV127 from "../../charts/InteractiveTimeSeriesChartV127";
+import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import type { TimeSeriesV127 } from "../../../types/chartInteractionV127";
 import type { SemanticObservationV125 } from "../../../data/visualization/semanticTypesV125";
 import type { DataFinderSelectorStateV125 } from "../../../types/dataFinderV125";
@@ -135,7 +136,12 @@ export default function PublicCompositionTrendAnalysisV132({
   const requestedMeasure = selectorState.measure
     ? measures.find((measure) => measure.key.startsWith(`${selectorState.measure}|`))
     : null;
-  const selectedMeasure = requestedMeasure || measures[0] || null;
+  // Direct entry must answer the named dataset question; a denser ancillary
+  // productivity series must not silently become the default agricultural share.
+  const titleAlignedMeasure = elementId === "B-024"
+    ? measures.find((measure) => measure.label === "농업 용수 취수 비중" && measure.unit === "%")
+    : null;
+  const selectedMeasure = requestedMeasure || titleAlignedMeasure || measures[0] || null;
   const measureRows = selectedMeasure
     ? rows.filter(
         (row) => `${row.semanticMeasure.key}|${row.semanticMeasure.unit}` === selectedMeasure.key
@@ -288,6 +294,37 @@ export default function PublicCompositionTrendAnalysisV132({
             비교 가능한 연도가 3개 미만이어서 선택연도 구성으로 표시합니다.
           </div>
         )}
+        {hasTimeAnalysis ? (
+          /* The chart's rows as a table: series, year, value, unit (V141). */
+          <details className="sv125-chart-table" data-testid="trend-chart-table-v141">
+            <summary>표로 보기 · {selectedMeasure.label} · {timeSeries.length}개 계열 · {timeSeries.reduce((sum, series) => sum + series.points.length, 0).toLocaleString("ko-KR")}행</summary>
+            <div className="sv125-matrix-wrap">
+              <table data-testid="trend-chart-table-rows-v141">
+                <caption>차트에 사용한 값 · 단위 <PublicTermTextV134 text={selectedMeasure.unit} /></caption>
+                <thead>
+                  <tr>
+                    <th scope="col">계열</th>
+                    <th scope="col">연도</th>
+                    <th scope="col">값</th>
+                    <th scope="col">단위</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {timeSeries.flatMap((series) =>
+                    series.points.map((point) => (
+                      <tr key={point.id}>
+                        <th scope="row"><PublicTermTextV134 text={series.label} /></th>
+                        <td>{point.x}</td>
+                        <td>{compositionNumberV132.format(point.value)}</td>
+                        <td><PublicTermTextV134 text={selectedMeasure.unit} /></td>
+                      </tr>
+                    ))
+                  )}
+                </tbody>
+              </table>
+            </div>
+          </details>
+        ) : null}
       </section>
 
       <section className="pct132__panel" aria-labelledby={`pct132-${elementId}-detail`}>

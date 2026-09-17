@@ -20,7 +20,10 @@
 }
 
 .pav126-heading {
-  background: linear-gradient(135deg, #f4fbf8, #f7f9ff);
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
 }
 
 .pav126-heading > span,
@@ -380,3 +383,76 @@
   gap: 8px;
   margin: 12px 0;
 }
+
+/* V138: the province x scenario x year screens gain the whole series, a
+   ranked region comparison, the publisher's bands and the contract facts. */
+.prs138__facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 8px 14px;
+  margin: 0 0 14px;
+  padding: 10px 12px;
+  border: 1px solid var(--cdp-line, #d8e3de);
+  border-radius: 10px;
+  background: #f7faf8;
+}
+
+.prs138__facts > div {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.prs138__facts dt {
+  color: var(--cdp-muted, #55635c);
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.prs138__facts dd {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.prs138__chart {
+  margin-bottom: 14px;
+}
+
+.prs138__change th,
+.prs138__change td {
+  background: #f3f8f5;
+  font-weight: 700;
+}
+
+.prs138__ranked {
+  margin-top: 12px;
+}
+
+.prs138__ranked > summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+.prs138__ranked .cdp-table-wrap {
+  max-height: 420px;
+  overflow: auto;
+  margin-top: 8px;
+}
+
+.prs138__constraints {
+  margin: 12px 0 0;
+  padding-left: 18px;
+  color: var(--cdp-muted, #55635c);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.prs138__constraints li + li {
+  margin-top: 4px;
+}
+.pav144-reading-notes { margin: 1rem 0; padding: .8rem 1rem; border: 1px solid #dce8e5; border-radius: .6rem; }
+.pav144-reading-notes > summary { cursor: pointer; color: #31564e; font-weight: 600; }
+.pav144-reading-notes > summary:focus-visible { outline: 2px solid #146c5a; outline-offset: 3px; }

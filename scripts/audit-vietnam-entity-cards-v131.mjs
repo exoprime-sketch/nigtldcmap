@@ -100,7 +100,12 @@ function cardSnapshotExpression(elementId) {
       elementId: ${JSON.stringify(elementId)},
       // Some elements show their records as a province distribution instead of
       // a card grid: 63 values per scenario-year is a table, not 33,000 cards.
-      distributionSummary: Boolean(document.querySelector('[data-testid="region-scenario-summary-v137"]')),
+      // A province distribution (V137/V138) or a station analysis (B-008, V138)
+      // reads the rows as what they are instead of printing record cards.
+      // The province-series analysis (V140: B-031..B-034, C-016) reads the
+      // rows as one value per province and year, with the province's own
+      // series, the comparison and a table - not as record cards.
+      distributionSummary: Boolean(document.querySelector('[data-testid="region-scenario-summary-v137"], [data-testid="sea-level-station-analysis-v138"], [data-testid="province-series-analysis-v140"], [data-testid="cooperation-checklist-v141"], [data-testid="energy-outlook-plan-v141"]')),
       cardCount: cards.length,
       contextTitleCount: rows.filter((row) => ['source-identifier', 'factual-composite', 'record-type'].includes(row.strategy)).length,
       invalid: rows.filter((row) => !row.title || row.title === '명칭 미기재' || row.title === '자료 없음' || row.factCount > 6 || row.badgeCount > 4 || row.longParagraphs.length > 0 || row.pipeText || row.textLength > 760 || row.titleClamp !== '2'),
