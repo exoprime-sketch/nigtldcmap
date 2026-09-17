@@ -34,6 +34,8 @@ import {
   PublicTermTextV134,
 } from "../../help/PublicTermV134";
 import SemanticContractRendererV125 from "./SemanticContractRendererV125";
+import PeerComparisonV147 from "../public/PeerComparisonV147";
+import RegionalVulnerabilityV147 from "../public/RegionalVulnerabilityV147";
 import type { IndicatorUnitsV142 } from "./SemanticContractRendererV125";
 import "../../../styles/semantic-visualization-v125.css";
 
@@ -165,7 +167,10 @@ export default function SemanticArchetypePreviewV125({
           // For unemployment this is the definition of the selected age/source,
           // not an independent analytical choice. Old card URLs can carry it;
           // excluding it here also clears that redundant, conflicting filter.
-          !(contract.elementId === "A-006" && dimension.key === "detail") &&
+          !(["A-006", "A-030", "A-031", "A-033"].includes(contract.elementId) && dimension.key === "detail") &&
+          // These delivered numeric technology codes duplicate the category.
+          // Keeping both selected makes a change of category an empty query.
+          !(["D-001", "D-002", "D-003", "D-004"].includes(contract.elementId) && dimension.key === "technology") &&
           !(dimension.key.endsWith("Raw") && keys.has(dimension.key.replace(/Raw$/u, ""))) &&
           dimension.values.length > 1
       );
@@ -398,6 +403,13 @@ export default function SemanticArchetypePreviewV125({
     if (year !== null && row.year !== year) return false;
     return true;
   });
+  // A card may select one technology. Keep that selection, but provide peers
+  // for these reviewed cost/benefit datasets, holding the unit, year, period
+  // and estimate variant constant. Never clear scenario or cost-bound filters.
+  const peerDimensions = Object.fromEntries(Object.entries(dimensions).filter(([key]) => !["category", "technology"].includes(key)));
+  const peerRows = ["A-031", "D-001", "D-002", "D-003", "D-004"].includes(contract.elementId) && (dimensions.category || dimensions.technology)
+    ? measureRows.filter((r) => semanticRowMatchesDimensionsV125(r, peerDimensions) && semanticRowMatchesSexV125(r, sex) && r.year === year && r.period === period)
+    : [];
   const numericRows = selectedRows.filter(
     (row): row is NumericSemanticObservation =>
       typeof row.value === "number" && Number.isFinite(row.value)
@@ -542,16 +554,22 @@ export default function SemanticArchetypePreviewV125({
               )} 선택`}
               data-public-dimension-key={dimension.key}
               value={dimensions[dimension.key] || ""}
-              onChange={(event) =>
+              onChange={(event) => {
+                const next = nextDimensionSelectionsV125(dimensions, dimension.key, event.target.value);
+                // A named green-growth pillar determines its level. Do not keep
+                // the card's "overall" level when the reader chooses a pillar.
+                if (contract.elementId === "D-013" && dimension.key === "category" && event.target.value) {
+                  const levels = Array.from(new Set(measureRows.filter((r) => r.dimensions.category === event.target.value).map((r) => r.dimensions.detail).filter(Boolean)));
+                  if (levels.length === 1) next.detail = levels[0];
+                }
                 onSelectorStateChange({
                   ...selectorState,
-                  dimensions: nextDimensionSelectionsV125(
-                    dimensions,
-                    dimension.key,
-                    event.target.value
-                  ),
-                })
-              }
+                  // Generation and capacity shares have different latest years.
+                  // On a basis change, start at that series' latest supplied year.
+                  year: contract.elementId === "A-020" && dimension.key === "category" ? null : selectorState.year,
+                  dimensions: next,
+                });
+              }}
             >
               {!singleDenominatorDimensionKeys.includes(dimension.key) && (
                 <option value="">전체</option>
@@ -660,6 +678,9 @@ export default function SemanticArchetypePreviewV125({
           indicatorUnits={indicatorUnits}
         />
       )}
+
+      {peerRows.length > selectedRows.length && <PeerComparisonV147 rows={peerRows} selectedIds={selectedRows.map((r) => r.recordId)} />}
+      {contract.elementId === "B-021" && <RegionalVulnerabilityV147 rows={semanticRows} />}
 
       {(() => {
         const definitions = Array.from(new Set(measureContextRows.flatMap((row) =>

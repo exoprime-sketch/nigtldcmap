@@ -103,13 +103,22 @@ function cardSnapshotExpression(elementId) {
       'B-023': '[data-testid="hydro-station-observations-v142"]',
       'B-028': '[data-testid="hydro-station-observations-v142"]',
       'C-011': '[data-testid="security-safety-info-v142"]',
+      'B-025': '[data-testid="basin-area-v147"]',
+      'B-026': '[data-testid="flow-direction-v147"]',
+      'C-002': '[data-testid="reported-inventory-v147"]',
     }[${JSON.stringify(elementId)}];
     const specializedRoot = specializedSelector ? document.querySelector(specializedSelector) : null;
-    const tables = specializedRoot ? [...specializedRoot.querySelectorAll('table')].map((table) => ({
+    const tableSelector = ${JSON.stringify(elementId)} === 'C-002' ? '[data-testid="inventory-matrix-v147"]' : 'table';
+    const tables = specializedRoot ? [...specializedRoot.querySelectorAll(tableSelector)].map((table) => ({
       headers: [...table.querySelectorAll('thead th')].map((node) => normalize(node.textContent)),
       rows: [...table.querySelectorAll('tbody tr')].map((row) => [...row.querySelectorAll('th, td')].map((node) => normalize(node.textContent))),
     })) : [];
-    const requiredHeaders = ${JSON.stringify(elementId)} === 'C-011' ? ['항목', '설명', '원문'] : ['값', '단위', '기준연도'];
+    const requiredHeaders = ({
+      'C-011': ['항목', '설명', '원문'],
+      'B-025': ['유역', '전체 유역 면적(문헌)', '베트남 내 면적(문헌)', '베트남 내 면적(GIS 산출)', '국경 공유'],
+      'B-026': ['방향', '비율(%)'],
+      'C-002': ['부문', '부문 합계', '이산화탄소(CO₂)', '메탄(CH₄)', '아산화질소(N₂O)', '수소불화탄소(HFCs)'],
+    })[${JSON.stringify(elementId)}] || ['값', '단위', '기준연도'];
     const specializedTable = specializedSelector ? {
       heading: normalize(specializedRoot?.querySelector('h3, h4, h5')?.textContent),
       tableCount: tables.length,

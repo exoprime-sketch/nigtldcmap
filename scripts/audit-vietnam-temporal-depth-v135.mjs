@@ -67,6 +67,12 @@ try {
           const temporal = root?.querySelector('[data-temporal-depth-v135]') || root;
           const depth = temporal?.getAttribute('data-temporal-depth-v135') || '';
           const charts = [...(root?.querySelectorAll('[data-testid="interactive-time-series-chart"]') || [])];
+          const monthly = root?.querySelector('[data-testid="monthly-climate-v147"]');
+          const monthlyRows = [...(monthly?.querySelectorAll('tbody tr') || [])];
+          const validMonthlyCycle = monthlyRows.length === 12 && monthlyRows.every((row, index) =>
+            row.querySelector('th')?.textContent.trim() === String(index + 1) + '월' && row.querySelectorAll('td').length === 3
+          ) && String(monthly?.textContent || '').includes('1991~2020년 평년값');
+          const annualChartCount = charts.filter((chart) => !(validMonthlyCycle && monthly.contains(chart))).length;
           const onePointCharts = charts.filter((chart) => {
             const explicit = Number(chart.getAttribute('data-point-count') || chart.getAttribute('data-populated-year-count'));
             return Number.isFinite(explicit) && explicit === 1;
@@ -76,9 +82,14 @@ try {
             .map((node) => String(node.textContent || '').normalize('NFC').replace(/\\s+/gu, ' ').trim())
             .filter(Boolean);
           const ghg = root?.querySelector('[data-testid="ghg-sector-gas-analysis-v135"]');
+          const inventory = root?.querySelector('[data-testid="reported-inventory-v147"]');
+          const inventoryRows = [...(inventory?.querySelectorAll('[data-testid="inventory-matrix-v147"] tbody tr') || [])];
+          const inventoryValid = inventoryRows.length === 4 && inventoryRows.every((row) => row.querySelectorAll('td').length === 5 && /[0-9]/.test(row.querySelector('td')?.textContent || '')) && inventory?.querySelectorAll('figure li').length === 4;
           return {
             depth,
-            chartCount: charts.length,
+            chartCount: annualChartCount,
+            monthlyCycleCount: validMonthlyCycle ? 1 : 0,
+            inventoryValid,
             onePointCharts,
             claims,
             text,
@@ -183,7 +194,7 @@ const ghgObservations = payloadRecords(
 const ghgAnalyticalView =
   ghgObservations.length > 0
     ? ghg?.ghg?.present === true && ghg?.ghg?.rawMatrixPrimary === "false"
-    : ghg?.analyticalView === true && ghg?.rawTableIsPrimary === false;
+    : (ghg?.inventoryValid === true || ghg?.analyticalView === true) && ghg?.rawTableIsPrimary === false;
 
 audit.check("FRAMEWORK_ELEMENTS", catalog.length === 152, catalog.length, 152);
 audit.check("TEMPORAL_RUNTIME_COVERAGE", runtimeFailure === null && routes.length === 152 && routeFailures.length === 0, { runtimeFailure, routeCount: routes.length, routeFailures }, { routeCount: 152, routeFailures: [] });
