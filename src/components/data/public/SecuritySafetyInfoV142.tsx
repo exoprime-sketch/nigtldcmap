@@ -144,28 +144,6 @@ export default function SecuritySafetyInfoV142({ entities, semantics }: Props) {
         </p>
       </header>
 
-      <div className="pps132-kpis" data-testid="security-safety-kpis-v142">
-        <article>
-          <span>자료 기준 여행경보</span>
-          <strong><PublicTermTextV134 text={alertStatus?.valueText || "미확인"} /></strong>
-          <small>{alertStatus?.timeText ? `외교부 · ${alertStatus.timeText}` : "외교부"}</small>
-        </article>
-        <article>
-          <span>긴급 신고 번호</span>
-          <strong>{emergencyCount.toLocaleString("ko-KR")}개</strong>
-          <small>범죄·화재·응급 신고</small>
-        </article>
-        <article>
-          <span>재외공관</span>
-          <strong>{missionNames.length.toLocaleString("ko-KR")}곳</strong>
-          <small>{`대사관 ${embassyCount} · 총영사관 ${consulateCount} · 연락처 행 ${missionRows.length}건`}</small>
-        </article>
-        <article>
-          <span>고의살인율</span>
-          <strong>{homicide ? `${homicide.valueText} 건/10만명` : "자료 미제공"}</strong>
-          <small>{homicide ? `${homicide.timeText}년 · UNODC 수록값` : ""}</small>
-        </article>
-      </div>
 
       {sections.map((section) => (
         <section key={section.key} className="pps132-distribution pps132-distribution--table" data-testid={`security-section-${section.key}-v142`}>

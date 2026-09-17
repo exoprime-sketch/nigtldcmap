@@ -229,6 +229,7 @@ export function publicDimensionLabelV126(
     referenceyear: "기준연도",
     role: "역할",
     sectors: "부문",
+    "기술분야sectors": "기술 분야",
     targetcountry: "대상국",
     targetregion: "대상 지역",
     technologyfield: "기술 분야",

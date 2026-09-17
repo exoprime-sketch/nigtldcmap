@@ -377,8 +377,12 @@ export function InteractiveTimeSeriesChartV127({
     calculatedYDomain[1] - (index / (yTickCount - 1)) * ySpan
   );
   const yTickWidthBudget = chartWidth < 480 ? 76 : 112;
+  // Axis guides need less precision than observations. Keep exact values in
+  // point labels, tooltips and tables; never round the plotted measurements.
+  const tickDigits = Math.max(0, Math.min(8, 1 - Math.floor(Math.log10(ySpan / (yTickCount - 1)))));
+  const formatTick = (value: number) => new Intl.NumberFormat("ko-KR", { maximumFractionDigits: tickDigits }).format(value);
   const yTickLabels = yTicks.map((value) =>
-    formatAxisTickV127(value, formatValue, yTickWidthBudget)
+    formatAxisTickV127(value, formatTick, yTickWidthBudget)
   );
   const yTickLabelsKey = yTickLabels.join("|");
   const estimatedYTickWidth = Math.max(

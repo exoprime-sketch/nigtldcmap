@@ -46,6 +46,7 @@ export default function PublicPortfolioWorkspaceV143(props: Props) {
       <button type="button" onClick={() => setSelection(EMPTY_PORTFOLIO_SELECTION_V143)} disabled={!active}>선택 초기화</button>
     </div>
     <p className="paw143-selection" role="status" data-testid="portfolio-selection-count-v143">{active ? "선택한 조건" : "전체 자료"} · {noun} {model.filtered.length.toLocaleString("ko-KR")}건 / 전체 {model.total.toLocaleString("ko-KR")}건<span>아래 현황·차트·목록에 같은 조건이 적용됩니다.</span></p>
+    {["D-015", "D-016", "D-021"].includes(elementId) && <p className="detail146-note">{elementId === "D-021" ? "국제원조투명성이니셔티브(IATI)에 보고된 활동 단위입니다. 같은 사업에 여러 지원 활동이 포함될 수 있습니다." : "보고기관의 사업 기록 단위입니다. 같은 사업이 다른 사업번호나 보고 기간으로 나뉘어 수록될 수 있어, 서로 다른 사업의 총수와는 구분됩니다."}</p>}
     {model.filtered.length > 0 ? <PublicPortfolioSummaryV132 elementId={props.elementId} entities={active ? model.filtered : props.entities} detailTemplate={props.detailTemplate} /> : <p className="ppl132-empty">조건에 맞는 자료가 없습니다. 검색어 또는 선택 조건을 변경해 주세요.</p>}
     <PublicPortfolioListV132 key={JSON.stringify(selection)} {...props} entities={[...model.filtered, ...model.noteEntities]} hideFilters />
   </section>;

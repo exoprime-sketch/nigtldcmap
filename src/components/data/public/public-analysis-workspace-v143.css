@@ -11,6 +11,7 @@
 .pcd143 { min-width: 0; padding: 20px; border: 1px solid #d8e6e0; border-radius: 14px; background: #fff; }
 .pcd143--time { grid-column: 1 / -1; }
 .pcd143 > header { display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
+.pcd143 > header > button { margin-left: auto; }
 .pcd143 h5 { color: #173f33; margin: 4px 0; font-size: 1rem; }
 .pcd143-bars { list-style: none; display: grid; gap: 16px; padding: 0; margin: 0; }
 .pcd143-bars li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 7px 12px; font-size: .87rem; }

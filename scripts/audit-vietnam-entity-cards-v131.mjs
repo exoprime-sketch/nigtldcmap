@@ -96,8 +96,32 @@ function cardSnapshotExpression(elementId) {
     });
     const grid = document.querySelector('[data-testid="public-entity-card-grid-v131"]');
     const columns = grid ? getComputedStyle(grid).gridTemplateColumns.split(' ').filter(Boolean).length : 0;
+    // V142 renders station observations and safety records as typed tables,
+    // not interchangeable entity cards. Require actual named, populated tables
+    // with the relevant context columns; a container alone is not sufficient.
+    const specializedSelector = {
+      'B-023': '[data-testid="hydro-station-observations-v142"]',
+      'B-028': '[data-testid="hydro-station-observations-v142"]',
+      'C-011': '[data-testid="security-safety-info-v142"]',
+    }[${JSON.stringify(elementId)}];
+    const specializedRoot = specializedSelector ? document.querySelector(specializedSelector) : null;
+    const tables = specializedRoot ? [...specializedRoot.querySelectorAll('table')].map((table) => ({
+      headers: [...table.querySelectorAll('thead th')].map((node) => normalize(node.textContent)),
+      rows: [...table.querySelectorAll('tbody tr')].map((row) => [...row.querySelectorAll('th, td')].map((node) => normalize(node.textContent))),
+    })) : [];
+    const requiredHeaders = ${JSON.stringify(elementId)} === 'C-011' ? ['항목', '설명', '원문'] : ['값', '단위', '기준연도'];
+    const specializedTable = specializedSelector ? {
+      heading: normalize(specializedRoot?.querySelector('h3, h4, h5')?.textContent),
+      tableCount: tables.length,
+      rowCount: tables.reduce((sum, table) => sum + table.rows.length, 0),
+      valid: Boolean(specializedRoot?.querySelector('h3, h4, h5')?.textContent.trim()) && tables.length > 0 && tables.every((table) =>
+        requiredHeaders.every((header) => table.headers.includes(header)) && table.rows.length > 0 &&
+        table.rows.every((cells) => cells.length === table.headers.length && cells[0] && cells[1])
+      ),
+    } : null;
     return {
       elementId: ${JSON.stringify(elementId)},
+      specializedTable,
       // Some elements show their records as a province distribution instead of
       // a card grid: 63 values per scenario-year is a table, not 33,000 cards.
       // A province distribution (V137/V138) or a station analysis (B-008, V138)
@@ -105,7 +129,7 @@ function cardSnapshotExpression(elementId) {
       // The province-series analysis (V140: B-031..B-034, C-016) reads the
       // rows as one value per province and year, with the province's own
       // series, the comparison and a table - not as record cards.
-      distributionSummary: Boolean(document.querySelector('[data-testid="region-scenario-summary-v137"], [data-testid="sea-level-station-analysis-v138"], [data-testid="province-series-analysis-v140"], [data-testid="cooperation-checklist-v141"], [data-testid="energy-outlook-plan-v141"]')),
+      distributionSummary: Boolean(document.querySelector('[data-testid="region-scenario-summary-v137"], [data-testid="sea-level-station-analysis-v138"], [data-testid="province-series-analysis-v140"], [data-testid="cooperation-checklist-v141"], [data-testid="energy-outlook-plan-v141"]')) || specializedTable?.valid === true,
       cardCount: cards.length,
       contextTitleCount: rows.filter((row) => ['source-identifier', 'factual-composite', 'record-type'].includes(row.strategy)).length,
       invalid: rows.filter((row) => !row.title || row.title === '명칭 미기재' || row.title === '자료 없음' || row.factCount > 6 || row.badgeCount > 4 || row.longParagraphs.length > 0 || row.pipeText || row.textLength > 760 || row.titleClamp !== '2'),
@@ -209,6 +233,7 @@ audit.check("ENTITY_CARD_RESPONSIVE", responsiveFailures.length === 0, responsiv
 audit.check("ENTITY_CARD_COLUMNS_MAX", routeResults.every((row) => Number(row?.columns || 0) <= 4), Math.max(0, ...routeResults.map((row) => Number(row?.columns || 0))), "<= 4");
 audit.check("ENTITY_CARD_FACT_LIMIT", routeResults.every((row) => (row?.invalid || []).every((item) => Number(item.factCount || 0) <= 6)), routeResults.flatMap((row) => row?.invalid || []).filter((item) => Number(item.factCount || 0) > 6).length, 0);
 audit.check("ENTITY_CARD_ROUTE_RENDERING", missingCardRoutes.length === 0, missingCardRoutes.length, 0, missingCardRoutes);
+audit.check("SPECIALIZED_ENTITY_TABLES", ["B-023", "B-028", "C-011"].every((id) => routeResults.find((row) => row.elementId === id)?.specializedTable?.valid === true), routeResults.filter((row) => row.specializedTable).map((row) => ({ elementId: row.elementId, ...row.specializedTable })), "three populated, titled tables with value/context columns");
 audit.check(
   "ENTITY_RECORDS_SHOWN_SOMEHOW",
   routeResults.every(

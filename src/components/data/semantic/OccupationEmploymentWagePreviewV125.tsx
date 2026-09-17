@@ -199,7 +199,6 @@ export default function OccupationEmploymentWagePreviewV125({
     () => buildSexComparison(observations, current.measure, current.year),
     [observations, current.measure, current.year]
   );
-  const kpis = useMemo(() => buildKpis(observations), [observations]);
 
   const emitSelection = (
     patch: Partial<E012VisualizationSelectionV125>
@@ -258,7 +257,6 @@ export default function OccupationEmploymentWagePreviewV125({
         </span>
       </header>
 
-      <KpiGrid kpis={kpis} countryNameKo={countryNameKo} />
 
       <section className="e012v125__panel" aria-labelledby="e012v125-rank-title">
         <div className="e012v125__panel-heading">
@@ -378,79 +376,7 @@ export default function OccupationEmploymentWagePreviewV125({
   );
 }
 
-function KpiGrid({
-  kpis,
-  countryNameKo,
-}: {
-  kpis: ReturnType<typeof buildKpis>;
-  countryNameKo: string;
-}) {
-  return (
-    <section
-      className="e012v125__kpis"
-      data-testid="e012-kpis"
-      aria-label={`${countryNameKo} 고용 핵심 지표`}
-    >
-      <KpiCard
-        label="총 취업자 수"
-        observation={kpis.employed}
-        emptyReason="취업자 수 원자료 없음"
-      />
-      <KpiCard
-        label="고용률"
-        observation={kpis.employmentRate}
-        emptyReason="고용률 원자료 없음"
-      />
-      <KpiCard
-        label="최신 월평균 임금"
-        observation={kpis.averageWage}
-        emptyReason="월평균 임금 원자료 없음"
-      />
-      <article className="e012v125__kpi">
-        <span>기준연도</span>
-        <strong>{kpis.latestYear ? `${kpis.latestYear}년` : "미기재"}</strong>
-        <small>화면에 포함된 최신 원자료</small>
-      </article>
-    </section>
-  );
-}
 
-function KpiCard({
-  label,
-  observation,
-  emptyReason,
-}: {
-  label: string;
-  observation?: SemanticObservationV125;
-  emptyReason: string;
-}) {
-  const value = numericValue(observation);
-  const unit = observationUnit(observation);
-  const year = observation ? observationYear(observation) : null;
-  return (
-    <article className="e012v125__kpi">
-      <span>{label}</span>
-      <strong>
-        {value === null ? (
-          "—"
-        ) : (
-          <PublicTermTextV134 text={formatValue(value, unit)} />
-        )}
-      </strong>
-      <small>
-        {value === null ? (
-          emptyReason
-        ) : (
-          <PublicTermTextV134
-            text={[year ? `${year}년` : null, unit || null]
-              .filter(Boolean)
-              .join(" · ")}
-          />
-        )}
-      </small>
-    </article>
-  );
-}
 
 function RankedOccupationBars({
   rows,
@@ -1062,34 +988,6 @@ function buildSexComparison(
   return { rows, invalidUnits };
 }
 
-function buildKpis(observations: SemanticObservationV125[]) {
-  const employed = latestObservation(
-    observations.filter(
-      (row) =>
-        row.semanticMeasure.key === "occupation_employment_count" &&
-        dimensionValue(row, "occupation") === "all" &&
-        dimensionValue(row, "sex") === "total"
-    )
-  ) || latestObservation(
-    observations.filter((row) => row.semanticMeasure.key === "employed_persons")
-  );
-  const employmentRate = latestObservation(
-    observations.filter((row) => row.semanticMeasure.key === "employment_rate")
-  );
-  const averageWage = latestObservation(
-    observations.filter(
-      (row) => row.semanticMeasure.key === "average_monthly_wage"
-    )
-  );
-  return {
-    employed,
-    employmentRate,
-    averageWage,
-    latestYear:
-      availableYears(observations)[0] ||
-      null,
-  };
-}
 
 function latestObservation(
   observations: SemanticObservationV125[]

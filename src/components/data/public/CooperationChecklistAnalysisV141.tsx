@@ -141,28 +141,6 @@ export default function CooperationChecklistAnalysisV141({ elementId, entities }
           <h4><PublicTermTextV134 text="파리협정 6.8조 비시장접근법(NMA)에서 베트남의 참여 현황" /></h4>
           <p><PublicTermTextV134 text={`UNFCCC NMA 플랫폼과 SB61 제출문서에서 확인한 항목별 현황입니다. 사업 건수나 금액이 아닌 확인 사항 ${model.facts.length}건을 질문별로 묶었고, 자료 출처와 검토 메모 ${model.sources.length}건은 아래에 따로 둡니다.`} /></p>
         </header>
-        <div className="pps132-kpis" data-testid="cooperation-status-kpis-v141">
-          <article>
-            <span>베트남 참여 지위</span>
-            <strong><PublicTermTextV134 text={status?.valueText || "미확인"} /></strong>
-            <small>{status?.timeText ? `확인 ${status.timeText}` : ""}</small>
-          </article>
-          <article>
-            <span><PublicTermTextV134 text="참여당사국으로 등재된 NMA" /></span>
-            <strong>{registered?.valueText ? `${registered.valueText}건` : "미확인"}</strong>
-            <small>{platformTotal?.valueText ? `플랫폼 등록 ${platformTotal.valueText}건 중` : ""}</small>
-          </article>
-          <article>
-            <span>제출당사국</span>
-            <strong><PublicTermTextV134 text={submitter?.valueText || "미확인"} /></strong>
-            <small>{fields.length ? `대상 분야 ${fields.map((row) => row.valueText).join(" · ")}` : ""}</small>
-          </article>
-          <article>
-            <span><PublicTermTextV134 text="국가연락창구(NFP) 지정" /></span>
-            <strong>{focalPoint?.valueText || "명단 미공개"}</strong>
-            <small>{focalPoint?.note ? "플랫폼 명단은 직접 조회 필요" : ""}</small>
-          </article>
-        </div>
         {sections.map((section) => (
           <section key={section.title} className="pps132-distribution pps132-distribution--table">
             <h5>{section.title} · {section.rows.length}건</h5>
@@ -235,23 +213,6 @@ export default function CooperationChecklistAnalysisV141({ elementId, entities }
         <h4>국제 기후협력 이니셔티브의 베트남 참여와 참여 주체</h4>
         <p><PublicTermTextV134 text={`이니셔티브 ${initiativeRows.length}개의 참여 형태·시점·분야를 한 표에서 비교하고, UNFCCC 기후행동 포털(NAZCA)에 등재된 베트남 행위자 ${model.actors.length}곳을 유형·업종별로 셉니다. 원천 행 ${model.rows.length}행은 이니셔티브 속성·참여 주체·자료 출처로 나누어 읽으며 사업 수로 세지 않습니다.`} /></p>
       </header>
-      <div className="pps132-kpis" data-testid="cooperation-status-kpis-v141">
-        <article>
-          <span>확인된 이니셔티브</span>
-          <strong>{initiativeRows.length.toLocaleString("ko-KR")}개</strong>
-          <small>속성 행 {model.attributes.length}행에서 묶음</small>
-        </article>
-        <article>
-          <span>NAZCA 등재 행위자</span>
-          <strong>{model.actors.length.toLocaleString("ko-KR")}곳</strong>
-          <small>{actorsByType.map(([label, count]) => `${label} ${count}`).join(" · ")}</small>
-        </article>
-        <article>
-          <span>자료 출처·검토 근거</span>
-          <strong>{model.sources.length.toLocaleString("ko-KR")}건</strong>
-          <small>아래 접힘 목록</small>
-        </article>
-      </div>
 
       <section className="pps132-distribution pps132-distribution--table" data-testid="cooperation-initiatives-v141">
         <h5>이니셔티브별 베트남 참여 비교 · {initiativeRows.length}개</h5>

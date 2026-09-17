@@ -781,7 +781,7 @@ export default function CountryDataElementPage({
     ? publicDownloadStatusV128(catalogItem)
     : null;
   return (
-    <div className="page-shell cdp-page">
+    <div className="page-shell cdp-page cdp-detail-page-v146">
       <button
         type="button"
         className="cdp-button cdp-button--secondary"

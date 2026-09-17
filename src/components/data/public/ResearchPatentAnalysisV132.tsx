@@ -151,17 +151,6 @@ export default function ResearchPatentAnalysisV132({
       data-testid="e008-research-analysis-v132"
       data-analysis-before-list="true"
     >
-      <div className="rpa132-kpis" data-testid="e008-kpis" aria-label="논문·특허 핵심현황">
-        <KpiV132 label="공개 논문 목록" value={paperCount} unit="건" />
-        <KpiV132 label="공개 특허 목록" value={patentCount} unit="건" />
-        {/* A year is not a quantity: grouping printed 2026 as "2,026". */}
-        <KpiV132
-          label="목록 최신연도"
-          value={Number.isFinite(latestYear) ? String(latestYear) : "—"}
-          unit={Number.isFinite(latestYear) ? "년" : ""}
-        />
-        <KpiV132 label="수록 기관명 표기" value={institutions.size} unit="종" />
-      </div>
 
       {nationalTrend.length === 0 && (
         <p className="rpa132-note" data-testid="e008-no-national-statistics">
@@ -329,9 +318,6 @@ export default function ResearchPatentAnalysisV132({
   );
 }
 
-function KpiV132({ label, value, unit }: { label: string; value: number | string; unit: string }) {
-  return <article><span>{label}</span><strong>{typeof value === "number" ? value.toLocaleString("ko-KR") : value}</strong><small>{unit}</small></article>;
-}
 
 export function nationalPublicationTrendV132(rows: SemanticObservationV125[]): TimeSeriesV127[] {
   const definitions = [

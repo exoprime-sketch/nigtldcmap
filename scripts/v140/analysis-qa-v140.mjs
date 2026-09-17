@@ -267,6 +267,19 @@ function recompute(card) {
   const basis = card.basis || {};
   const rule = basis.rule || "";
 
+  if (card.elementId === "C-001" && entities.length) {
+    const matches = entities.filter((row) => row.indicatorId === "C-001_mitigation_target" && clean(attr(row, "속성1_레코드명")) === "총량 감축률" && Number(attr(row, "속성4_시점")) === 2030 && numberOf(attr(row, "속성3_값")) === 15.8 && clean(attr(row, "속성19_원문URL")) === "https://unfccc.int/sites/default/files/NDC/2022-11/Viet%20Nam_NDC_2022_Eng.pdf");
+    return matches.length === 1 ? finish(numberOf(attr(matches[0], "속성3_값")), matches.length, "NDC 2022 Table 3, unconditional target") : { status: "mismatch", reason: "reviewed NDC target not uniquely identified" };
+  }
+  if (["C-019", "C-022"].includes(card.elementId) && entities.length) {
+    const rows = entities.filter((row) => /^VN\d+$/u.test(clean(attr(row, "속성22_행정코드P_code"))) && /시설/u.test(row.name || "") && numberOf(attr(row, "속성3_값")) !== null);
+    const date = [...new Set(rows.map((row) => clean(attr(row, "속성4_시점"))))].sort().at(-1);
+    const selected = rows.filter((row) => clean(attr(row, "속성4_시점")) === date);
+    const regionCode = card.selection?.dimensions?.registryRegion;
+    const target = regionCode ? selected.filter((row) => clean(attr(row, "속성22_행정코드P_code")) === regionCode) : selected.sort((a, b) => numberOf(attr(b, "속성3_값")) - numberOf(attr(a, "속성3_값"))).slice(0, 1);
+    return target.length === 1 ? finish(numberOf(attr(target[0], "속성3_값")), selected.length, `source region ${clean(attr(target[0], "속성20_지역_원문"))}, ${date}`) : { status: "mismatch", reason: "facility region not uniquely identified" };
+  }
+
   // Observation-backed cards: the headline series at the card's year.
   if (["line", "level", "spatial", "bars", "composition"].includes(card.kind) && ids.size && observations.length) {
     let rows = observations.filter((row) => ids.has(row.indicatorId) && typeof row.value === "number");
@@ -402,20 +415,20 @@ async function waitReady(page) {
   await page.waitForTimeout(500);
 }
 
-/** The screen as the checks see it: KPI-like blocks, selectors, heading, tables. */
+/** The screen as the checks see it: chart labels, selected-value tables, selectors. */
 async function readScreen(page) {
   return page.evaluate(() => {
     const tidy = (value) => String(value || "").normalize("NFC").replace(/\s+/gu, " ").trim();
     const primary = document.querySelector('[data-testid="public-analysis-primary"]');
     const selects = [...(primary?.querySelectorAll("select") || [])].map((select) => ({
-      label: tidy(select.closest("label")?.querySelector("span")?.textContent || select.getAttribute("aria-label") || ""),
+      label: tidy(select.getAttribute("aria-label") || select.closest("label")?.querySelector("span")?.textContent || [...(select.closest("label")?.childNodes || [])].filter((node) => node.nodeType === 3).map((node) => node.textContent).join(" ")),
       value: tidy(select.selectedOptions[0]?.textContent),
       options: select.options.length,
     }));
     const fixed = [...(primary?.querySelectorAll(".sv125-fixed-value, .psa140__controls label") || [])].map((node) => tidy(node.textContent));
     const selectorsText = [...selects.map((s) => `${s.label} ${s.value}`), ...fixed].join(" | ");
-    const kpiNodes = [...(primary?.querySelectorAll('[data-portfolio-kpi], .psa140__kpis article, .cpia126__kpis article, .pps132-kpis article, [data-testid="public-context-kpis"] > *, [data-testid*="kpi"], .sv125-contract-panel > header, h3, h4, h5, summary') || [])];
-    const candidates = kpiNodes.map((node, index) => ({ where: `kpi-${index}:${node.getAttribute("data-testid") || node.getAttribute("data-portfolio-kpi") || node.tagName}`, text: tidy(node.innerText), selectorsText }));
+    const analysisNodes = [...(primary?.querySelectorAll('.sv125-contract-panel > header, h3, h4, h5, summary, figcaption, caption') || [])];
+    const candidates = analysisNodes.map((node, index) => ({ where: `analysis-${index}:${node.getAttribute("data-testid") || node.tagName}`, text: tidy(node.innerText), selectorsText }));
     [...(primary?.querySelectorAll("strong, b, li, tr, p, dd, td") || [])].forEach((node, index) => {
       const text = tidy(node.innerText);
       if (!text || text.length > 260 || !/\d/u.test(text)) return;
@@ -424,13 +437,15 @@ async function readScreen(page) {
       const row = node.closest("tr");
       const header = row ? tidy(`${row.closest("table")?.querySelector("caption")?.innerText || ""} ${row.closest("table")?.querySelector("thead")?.innerText || ""} ${row.closest("section, details")?.querySelector("h5, h4")?.innerText || ""}`) : "";
       const block = node.closest("dl, li, article") || node.parentElement;
-      const around = `${tidy(block?.innerText || "").slice(0, 320)} ${header}`.trim();
+      const figure = tidy(node.closest("figure")?.querySelector("figcaption")?.innerText || "");
+      const around = `${tidy(block?.innerText || "").slice(0, 320)} ${header} ${figure}`.trim();
       candidates.push({ where: `text-${index}:${node.tagName}`, text: around.includes(text) ? around : `${text} ${around}`, selectorsText });
     });
     const heading = tidy(document.querySelector('[data-testid="public-analysis-heading-v134"] h3, .psa140__heading h3, .sv125-section-heading h3')?.textContent);
     return {
       state: document.querySelector('[data-testid="public-analysis-root"]')?.getAttribute("data-analysis-state") || null,
       pending: document.querySelectorAll('[data-testid="public-analysis-pending"]').length,
+      headlineTiles: document.querySelectorAll('[data-testid="public-analysis-root"] [class*="kpi"], [data-testid="public-analysis-root"] [data-testid*="kpi"], [data-testid="public-metric-cards"]').length,
       title: tidy(document.querySelector("h1")?.textContent),
       heading,
       selects,
@@ -476,7 +491,7 @@ async function analysisFitOf(page, card, screen, claim) {
       hasTable: Boolean(primary?.querySelector("table")),
       hasChartTable: Boolean(primary?.querySelector('[data-testid="trend-chart-table-v141"], [data-testid*="table"], .psa140__table, table')) || [...(primary?.querySelectorAll("button, summary") || [])].some((node) => /표로 보기/u.test(node.textContent || "")),
       hasList: Boolean(primary?.querySelector("ol, ul, table, article, dl, .sv125-policy-timeline, [data-testid*='directory'], [data-testid*='list'], [data-testid*='grid']")),
-      selectLabels: [...(primary?.querySelectorAll("select") || [])].map((select) => tidy(select.closest("label")?.querySelector("span")?.textContent || select.getAttribute("aria-label") || "")),
+      selectLabels: [...(primary?.querySelectorAll("select") || [])].map((select) => tidy(select.getAttribute("aria-label") || select.closest("label")?.querySelector("span")?.textContent || [...(select.closest("label")?.childNodes || [])].filter((node) => node.nodeType === 3).map((node) => node.textContent).join(" "))),
       headings: [...(primary?.querySelectorAll("h3, h4, h5") || [])].map((node) => tidy(node.textContent)),
     };
   });
@@ -929,6 +944,8 @@ async function checkElement(context, item) {
 
     // ---- 8. the whole session's runtime health
     record.screenLoaded = (screen.state === "ready" || screen.state === "empty") && screen.pending === 0 && consoleErrors.length === 0 && assetFailures.length === 0;
+    record.detailTilesAbsent = screen.headlineTiles === 0;
+    if (!record.detailTilesAbsent) record.remainingIssue.push(`detail headline tiles must not return: ${screen.headlineTiles}`);
     if (consoleErrors.length) record.remainingIssue.push(`console: ${consoleErrors[0]}`);
     if (assetFailures.length) record.remainingIssue.push(`asset: ${JSON.stringify(assetFailures[0])}`);
   } catch (error) {
@@ -961,7 +978,7 @@ if (server) await server.close();
 results.sort((a, b) => a.elementId.localeCompare(b.elementId));
 const tally = (key) => ({ pass: results.filter((r) => r[key] === true).length, fail: results.filter((r) => r[key] === false).length, notApplicable: results.filter((r) => r[key] === null).length });
 const countBy = (pick) => results.reduce((acc, r) => { const key = pick(r) || "none"; acc[key] = (acc[key] || 0) + 1; return acc; }, {});
-const requiredFailures = results.filter((r) => !r.screenLoaded || r.cardClicked === false || r.homeCardClicked === false || r.selectionUrlPreserved === false || r.cardValueVerified === false || r.detailAnalysisFit === false || r.analysisFit?.pass === false || r.controlsVerified === false || r.mapHandoffVerified === false || (r.mapSymbolVerified && r.mapSymbolVerified.pass === false) || r.recomputed?.status === "mismatch" || r.evidence.table?.status === "value-without-keys" || Boolean(r.internalWording));
+const requiredFailures = results.filter((r) => !r.screenLoaded || r.detailTilesAbsent === false || r.cardClicked === false || r.homeCardClicked === false || r.selectionUrlPreserved === false || r.cardValueVerified === false || r.detailAnalysisFit === false || r.analysisFit?.pass === false || r.controlsVerified === false || r.mapHandoffVerified === false || (r.mapSymbolVerified && r.mapSymbolVerified.pass === false) || r.recomputed?.status === "mismatch" || r.evidence.table?.status === "value-without-keys" || Boolean(r.internalWording));
 const summary = {
   label,
   base,
@@ -974,6 +991,7 @@ const summary = {
   homeCardClicked: tally("homeCardClicked"),
   selectionUrlPreserved: tally("selectionUrlPreserved"),
   screenLoaded: tally("screenLoaded"),
+  detailTilesAbsent: tally("detailTilesAbsent"),
   cardValueVerified: tally("cardValueVerified"),
   recomputed: countBy((r) => r.recomputed?.status),
   detailAnalysisFit: tally("detailAnalysisFit"),

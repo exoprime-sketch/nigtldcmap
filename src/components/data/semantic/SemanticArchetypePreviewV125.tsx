@@ -27,8 +27,7 @@ import {
   publicDimensionValueV134,
   publicMeasureLabelV126,
 } from "../../../data/visualization/publicCopyRegistryV126";
-import { publicScaledNumberV136_2 } from "../../../utils/publicNumberScaleV136_2";
-import { publicIndicatorContextV144, publicIndicatorDimensionV144, previousYearChangeV144, publicPercentHeadlineV144 } from "../../../data/visualization/publicIndicatorCopyV144";
+import { publicIndicatorDimensionV144 } from "../../../data/visualization/publicIndicatorCopyV144";
 import { getPublicAnalysisHeadingsV134 } from "../../../data/visualization/publicAnalysisHeadingsV134";
 import {
   PublicTermHelpV134,
@@ -643,12 +642,6 @@ export default function SemanticArchetypePreviewV125({
         />
       </div>
 
-      <SemanticKpisV125
-        rows={selectedRows}
-        contextRows={measureContextRows}
-        contract={contract}
-        selectedMeasureKey={measureKey}
-      />
 
       {(numericRows.length > 0 ||
         textRows.length > 0 ||
@@ -721,134 +714,7 @@ export default function SemanticArchetypePreviewV125({
   );
 }
 
-/**
- * True when every row describes the same subject, so one of them can speak
- * for the measure.
- *
- * Year and period are how one subject is observed over time, not what
- * distinguishes two subjects; anything else keying a row - a sector, a gas, a
- * province - means the rows are a breakdown, and the newest is no more
- * representative than any other.
- */
-function singleSubjectV136_4(
-  rows: ReadonlyArray<{ dimensions: Record<string, unknown>; countryIso3?: string }>
-): boolean {
-  if (rows.length <= 1) return true;
-  // E-017 ranks five countries in rows that differ only by country: the
-  // first of them (China, 5위) is not the measure's headline (V140).
-  const signature = (row: { dimensions: Record<string, unknown>; countryIso3?: string }) =>
-    [
-      ...Object.entries(row.dimensions || {})
-        .filter(([key]) => !["year", "period"].includes(key))
-        .map(([key, value]) => `${key}=${String(value)}`),
-      `country=${row.countryIso3 || ""}`,
-    ]
-      .sort()
-      .join("|");
-  const first = signature(rows[0]);
-  return rows.every((row) => signature(row) === first);
-}
 
-function SemanticKpisV125({
-  rows,
-  contextRows,
-  contract,
-  selectedMeasureKey,
-}: {
-  rows: SemanticObservationV125[];
-  contextRows: SemanticObservationV125[];
-  contract: ElementVisualizationContractV125;
-  selectedMeasureKey: string | null;
-}) {
-  if (!rows.some(isPopulatedSemanticRowV125)) return null;
-
-  const selectedMeasures = selectedMeasureKey
-    ? contract.measures.filter((measure) => measure.key === selectedMeasureKey)
-    : [];
-  const kpis = selectedMeasures.slice(0, 4).map((measure) => {
-    const candidates = rows
-      .filter(
-        (row) =>
-          row.semanticMeasure.key === measure.key &&
-          row.value !== null &&
-          row.value !== undefined &&
-          row.value !== ""
-      )
-      .sort((left, right) => (right.year || -Infinity) - (left.year || -Infinity));
-    const aggregate = candidates.find((row) =>
-      Object.keys(row.dimensions).every((key) =>
-        ["year", "period"].includes(key)
-      )
-    );
-    // Without a total, the newest row was shown as the headline. Where the
-    // rows are one per category that headline is one category's figure wearing
-    // the measure's name - the reader has no way to tell that "감축" is the
-    // first of eleven sectors and not the sum of them. So a single value is
-    // only shown when the rows leave no doubt which one stands for the
-    // measure: either the source totalled them, or they all describe the same
-    // thing over time. Otherwise the card is dropped and the comparison below
-    // it, which shows every category, is left to answer the question.
-    const row = aggregate || (singleSubjectV136_4(candidates) ? candidates[0] : null);
-    const dimensionValues = row
-      ? publicIndicatorContextV144(contract.elementId, row.dimensionLabels)
-      : [];
-    // A measure with rows but no row that speaks for them is left out
-    // entirely; a measure with no rows at all still reports itself missing,
-    // which is a different thing to say.
-    return { measure, row, dimensionValues, ambiguous: !row && candidates.length > 0 };
-  })
-    .filter((kpi) => !kpi.ambiguous);
-  return (
-    <section
-      className="sv125-kpis"
-      aria-label="현재 선택 조건의 핵심 KPI"
-      data-testid="public-context-kpis"
-      data-public-has-values={kpis.some(({ row }) => Boolean(row)) ? "true" : "false"}
-    >
-      {kpis.map(({ measure, row, dimensionValues }) => {
-        const unit = row?.unit || measure.unit;
-        // A headline reads in 억/조; the exact figure stays on the value itself
-        // so hovering, the details table and the download all still carry it.
-        const scaled =
-          row && typeof row.value === "number" && Number.isFinite(row.value)
-            ? publicScaledNumberV136_2(row.value, unit)
-            : null;
-        const percentHeadline = row && typeof row.value === "number" && unit === "%"
-          ? publicPercentHeadlineV144(row.value)
-          : null;
-        const change = row ? previousYearChangeV144(row, contextRows) : null;
-        const changeDisplay = change ? publicScaledNumberV136_2(change.value, change.unit) : null;
-        return (
-          <article
-            key={`${measure.key}-${measure.unit}`}
-            data-public-dimension-count={dimensionValues.length}
-            data-public-dimension-values={JSON.stringify(dimensionValues)}
-          >
-            <span><PublicTermTextV134 text={publicIndicatorDimensionV144(contract.elementId, publicMeasureLabelV126(measure.labelKo))} /></span>
-            <strong
-              className={row && typeof row.value === "string" ? "sv125-kpi-text-v144" : undefined}
-              title={row ? `${row.value}${unit ? ` ${unit}` : ""}` : undefined}
-              data-public-exact-value={row ? String(row.value) : undefined}
-            >
-              {percentHeadline ?? (scaled ? scaled.display : row ? formatValueV121(row.value) : "미제공")}
-              {row && typeof row.value === "number" && unit ? <span className="sv125-kpi-unit-v144">{unit === "%" ? "" : " "}{unit}</span> : null}
-            </strong>
-            <small>
-              <PublicTermTextV134 text={row
-                ? [row.year ? `${row.year}년` : row.period, ...dimensionValues]
-                    .filter(Boolean)
-                    .join(" · ")
-                : measure.unit || "단위 미기재"} />
-            </small>
-            {change && Number.isFinite(change.value) ? <small data-testid="kpi-change-v144">
-              전년 대비 {change.value > 0 ? "+" : ""}{changeDisplay?.scaled ? changeDisplay.display : publicPercentHeadlineV144(change.value)} {change.unit}
-            </small> : null}
-          </article>
-        );
-      })}
-    </section>
-  );
-}
 
 function isPopulatedSemanticRowV125(row: SemanticObservationV125): boolean {
   if (row.value === null || row.value === undefined || row.value === "") return false;

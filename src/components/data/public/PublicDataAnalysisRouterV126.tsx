@@ -46,6 +46,9 @@ import CooperationChecklistAnalysisV141 from "./CooperationChecklistAnalysisV141
 import EnergyOutlookPlanAnalysisV141 from "./EnergyOutlookPlanAnalysisV141";
 import SecuritySafetyInfoV142 from "./SecuritySafetyInfoV142";
 import HydroStationObservationsV142 from "./HydroStationObservationsV142";
+import NdcTargetsAnalysisV146 from "./NdcTargetsAnalysisV146";
+import CarbonMarketRegionsV146 from "./CarbonMarketRegionsV146";
+import LcoeRangeAnalysisV146 from "./LcoeRangeAnalysisV146";
 import ProvinceSeriesAnalysisV140, {
   provinceSeriesShapeV140,
 } from "./ProvinceSeriesAnalysisV140";
@@ -389,6 +392,12 @@ export default function PublicDataAnalysisRouterV126({
               showRawTable={false}
             />
           </>
+        ) : elementId === "A-017" ? (
+          <LcoeRangeAnalysisV146 rows={semanticRows} selectorState={selectorState} onSelectorStateChange={onSelectorStateChange} />
+        ) : elementId === "C-001" ? (
+          <NdcTargetsAnalysisV146 entities={entities} />
+        ) : elementId === "C-019" || elementId === "C-022" ? (
+          <CarbonMarketRegionsV146 elementId={elementId} entities={entities} initialRegion={selectorState.dimensions.registryRegion} />
         ) : elementId === "C-007" || elementId === "C-008" ? (
           // Attribute rows read as participation statements, initiatives and
           // actors, not as a portfolio of projects (V141).

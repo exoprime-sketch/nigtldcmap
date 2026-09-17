@@ -1,7 +1,7 @@
 {
  "schemaVersion": "v140-card-summaries-1",
  "dataSnapshot": "2026-08-27T00:00:00Z",
- "generatedAt": "2026-09-17T01:48:58.242Z",
+ "generatedAt": "2026-09-17T03:58:55.610Z",
  "generatedFrom": {
   "bundleIndex": "packs/bundle-index-v124.json",
   "semantics": "semantic/element-visualization-contracts-v125.json",
@@ -8935,44 +8935,30 @@
   {
    "elementId": "C-001",
    "title": "NDC[제출년도, 버전, BAU 배출 전망, 감축 목표(무조건부/조건부), 부문별 감축 전략·수단 목록, NDC-SDG 연계 매핑, 적응 부문 목표, 이행 재원 소요, 기준연도, 대상 GHG, 대상 부문, 원본 링크]",
-   "kind": "facts",
+   "kind": "bars",
    "headline": {
-    "value": "49건",
-    "label": "항목 · 2014–2030년"
+    "value": "15.8 %",
+    "label": "2030년 자체 이행 감축목표 · 국제지원 시 전체 43.5%"
    },
    "preview": {
-    "facts": [
+    "parts": [
      {
-      "label": "과제1: 회복력 적응역량 강화",
-      "value": ""
+      "label": "자체 이행",
+      "value": 15.8
      },
      {
-      "label": "과제2: 재해위험 손실 저감",
-      "value": ""
-     },
-     {
-      "label": "세부 이행계획 근거",
-      "value": ""
+      "label": "국제지원 시 전체",
+      "value": 43.5
      }
     ],
-    "more": 28
+    "unit": "%",
+    "scope": "2030년 BAU 대비 · 두 목표를 합산하지 않음"
    },
-   "period": "2014–2030년",
-   "selection": {
-    "measure": null,
-    "sex": null,
-    "year": null,
-    "period": null,
-    "dimensions": {}
-   },
+   "period": "2022년 제출 · 2030년 목표",
+   "selection": null,
    "basis": {
-    "unit": "항목",
-    "rule": "항목 1건 = 원천 1행",
-    "count": {
-     "rows": 49,
-     "distinct": 49,
-     "sourceRows": 49
-    }
+    "unit": "감축률",
+    "rule": "NDC 2022 표 3의 무조건부·조건부 감축률"
    },
    "measure": null,
    "provider": "UNFCCC NDC Registry / 베트남 천연자원환경부(MONRE)",
@@ -8994,6 +8980,9 @@
      "C-001_submission_history",
      "C-001_target_ghg",
      "C-001_target_sector"
+    ],
+    "headlineIndicatorIds": [
+     "C-001_mitigation_target"
     ]
    }
   },
@@ -10235,44 +10224,47 @@
   {
    "elementId": "C-019",
    "title": "탄소 시장 법률·예산[탄소세 도입 여부, 탄소세 세율, ETS 도입 여부, ETS 대상 부문, ETS 가격, FIT 도입 여부, FIP 도입 여부, RPS 도입 여부, 탄소시장 관련 예산 규모]",
-   "kind": "facts",
+   "kind": "bars",
    "headline": {
-    "value": "128건",
-    "label": "항목 · 2019–2030년"
+    "value": "479개소",
+    "label": "Hồ Chí Minh · 인벤토리 의무 대상 시설 · 2026-08-10"
    },
    "preview": {
-    "facts": [
+    "parts": [
      {
-      "label": "탄소시장 관련 예산 규모",
-      "value": ""
+      "label": "Hồ Chí Minh",
+      "value": 479
      },
      {
-      "label": "Phase 1 경매",
-      "value": ""
+      "label": "Tây Ninh",
+      "value": 222
      },
      {
-      "label": "탄소세 도입 여부 및 세율] 현행 세율체계",
-      "value": ""
+      "label": "Đồng Nai",
+      "value": 210
+     },
+     {
+      "label": "Bắc Ninh",
+      "value": 199
+     },
+     {
+      "label": "Phú Thọ",
+      "value": 177
+     },
+     {
+      "label": "Hưng Yên",
+      "value": 142
      }
     ],
-    "more": 86
+    "unit": "개소",
+    "scope": "34개 성·시 중 상위 6개",
+    "omitted": 28
    },
-   "period": "2019–2030년",
-   "selection": {
-    "measure": null,
-    "sex": null,
-    "year": null,
-    "period": null,
-    "dimensions": {}
-   },
+   "period": "2026-08-10 기준",
+   "selection": null,
    "basis": {
-    "unit": "항목",
-    "rule": "항목 1건 = 원천 1행 · 명부의 시설 수는 34개 단위 · 성·시로 합산하지 않음",
-    "count": {
-     "rows": 128,
-     "distinct": 128,
-     "sourceRows": 128
-    }
+    "unit": "시설",
+    "rule": "원자료 행정단위·기준일별 시설 수. 63개 경계로 재합산하지 않음."
    },
    "measure": null,
    "provider": "기관별 공식 출처 15개(상세 자료정보 참조)",
@@ -10303,6 +10295,9 @@
      "C-019_re_support_scheme_erea",
      "C-019_re_support_scheme_vanban_chinhphu",
      "C-019_re_support_scheme_vanban_chinhphu_2"
+    ],
+    "headlineIndicatorIds": [
+     "C-019_ets_scope_vanban_chinhphu"
     ]
    }
   },
@@ -10365,44 +10360,47 @@
   {
    "elementId": "C-022",
    "title": "탄소시장 준비도",
-   "kind": "facts",
+   "kind": "bars",
    "headline": {
-    "value": "97건",
-    "label": "항목 · 2020–2030년"
+    "value": "479개소",
+    "label": "Hồ Chí Minh · 인벤토리 의무 대상 시설 · 2026-08-10"
    },
    "preview": {
-    "facts": [
+    "parts": [
      {
-      "label": "종합 점수",
-      "value": ""
+      "label": "산업·통상",
+      "value": 430
      },
      {
-      "label": "준비도 지표 정의",
-      "value": ""
+      "label": "교통운송",
+      "value": 7
      },
      {
-      "label": "VCM 프로젝트 파이프라인 원자료",
-      "value": ""
+      "label": "건설",
+      "value": 35
+     },
+     {
+      "label": "농업·환경",
+      "value": 7
      }
     ],
-    "more": 72
+    "unit": "개소",
+    "scope": "Hồ Chí Minh · 부문별 구성",
+    "omitted": 0
    },
-   "period": "2020–2030년",
+   "period": "2026-08-10 기준",
    "selection": {
     "measure": null,
     "sex": null,
     "year": null,
     "period": null,
-    "dimensions": {}
+    "dimensions": {
+     "registryRegion": "VN79"
+    }
    },
    "basis": {
-    "unit": "항목",
-    "rule": "항목 1건 = 원천 1행 · 원천의 집계·설명 행 1건 제외 · 같은 명부의 업종별 수 · 합산하지 않음",
-    "count": {
-     "rows": 97,
-     "distinct": 97,
-     "sourceRows": 98
-    }
+    "unit": "시설",
+    "rule": "원자료 행정단위·기준일별 시설 수. 63개 경계로 재합산하지 않음."
    },
    "measure": null,
    "provider": "기관별 공식 출처 6개(상세 자료정보 참조)",
@@ -10421,6 +10419,9 @@
      "C-022_carbon_market_readiness_vanban_chinhphu_2",
      "C-022_carbon_market_readiness_vanban_chinhphu_3",
      "C-022_carbon_market_readiness_worldbank"
+    ],
+    "headlineIndicatorIds": [
+     "C-022_carbon_market_readiness_vanban_chinhphu"
     ]
    }
   },
@@ -11576,7 +11577,7 @@
    "kind": "bars",
    "headline": {
     "value": "650건",
-    "label": "사업 수 · 2024년 · 개별 사업 행 기준"
+    "label": "사업 기록 수 · 2024년 · 개별 사업 행 기준"
    },
    "preview": {
     "parts": [
@@ -11593,7 +11594,7 @@
       "value": 12
      }
     ],
-    "unit": "사업 수",
+    "unit": "사업 기록 수",
     "scope": "상태별",
     "omitted": 0,
     "unlabelled": 0
@@ -11607,8 +11608,8 @@
     "dimensions": {}
    },
    "basis": {
-    "unit": "사업",
-    "rule": "사업 1건 = 원천 1행(레코드구분=개별) · 상태별 건수",
+    "unit": "사업 기록",
+    "rule": "사업 기록 1건 = 원천 1행(레코드구분=개별) · 상태별 건수",
     "count": {
      "rows": 650,
      "sourceRows": 650
@@ -11633,7 +11634,7 @@
    "kind": "bars",
    "headline": {
     "value": "232건",
-    "label": "사업 수 · 2024년 · 개별 사업 행 기준"
+    "label": "사업 기록 수 · 2024년 · 개별 사업 행 기준"
    },
    "preview": {
     "parts": [
@@ -11646,7 +11647,7 @@
       "value": 31
      }
     ],
-    "unit": "사업 수",
+    "unit": "사업 기록 수",
     "scope": "기관 유형별",
     "omitted": 0,
     "unlabelled": 0
@@ -11660,8 +11661,8 @@
     "dimensions": {}
    },
    "basis": {
-    "unit": "사업",
-    "rule": "사업 1건 = 원천 1행(레코드구분=개별) · 기관 유형별 건수",
+    "unit": "사업 기록",
+    "rule": "사업 기록 1건 = 원천 1행(레코드구분=개별) · 기관 유형별 건수",
     "count": {
      "rows": 232,
      "sourceRows": 232
@@ -11919,7 +11920,7 @@
    "kind": "bars",
    "headline": {
     "value": "640건",
-    "label": "사업 수 · 2026년 · 개별 사업 행 기준"
+    "label": "지원 활동 수 · 2026년 · 개별 사업 행 기준"
    },
    "preview": {
     "parts": [
@@ -11940,7 +11941,7 @@
       "value": 43
      }
     ],
-    "unit": "사업 수",
+    "unit": "지원 활동 수",
     "scope": "활동 상태별",
     "omitted": 0,
     "unlabelled": 0
@@ -11954,8 +11955,8 @@
     "dimensions": {}
    },
    "basis": {
-    "unit": "사업",
-    "rule": "사업 1건 = 원천 1행(레코드구분=개별) · 활동 상태별 건수",
+    "unit": "지원 활동",
+    "rule": "지원 활동 1건 = 원천 1행(레코드구분=개별) · 활동 상태별 건수",
     "count": {
      "rows": 640,
      "sourceRows": 640

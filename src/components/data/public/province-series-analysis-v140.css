@@ -170,6 +170,10 @@
   font-variant-numeric: tabular-nums;
 }
 
+.psa140__bars li i.psa146-signed-bar { position: relative; }
+.psa140__bars li i.psa146-signed-bar b { position: absolute; }
+.psa140__bars li i.psa146-signed-bar em { position: absolute; width: 1px; top: 0; bottom: 0; z-index: 1; background: #7e9289; }
+
 .psa140__notice {
   margin: 12px 0 0;
   color: #60706c;

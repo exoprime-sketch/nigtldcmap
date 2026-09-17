@@ -120,6 +120,7 @@ try {
           const root = document.querySelector('[data-testid="public-analysis-root"]');
           const summary = root?.querySelector('[data-testid="portfolio-analysis-summary-v132"]');
           const list = root?.querySelector('[data-testid="public-entity-card-grid-v131"], [data-testid="portfolio-entity-list-v132"]');
+          const filters = root?.querySelector('[data-testid="portfolio-workspace-v143"] [role="search"], [data-testid="portfolio-list-filters-v132"]');
           const summaryTop = summary?.getBoundingClientRect().top ?? null;
           const listTop = list?.getBoundingClientRect().top ?? null;
           return {
@@ -127,10 +128,11 @@ try {
             summary: Boolean(summary),
             list: Boolean(list),
             summaryBeforeList: !list || (summaryTop !== null && listTop !== null && summaryTop < listTop),
-            kpiCount: summary?.querySelectorAll('[data-portfolio-kpi]').length || 0,
+            headlineTileCount: summary?.querySelectorAll('[data-portfolio-kpi], [class*="kpi"]').length || 0,
+            summaryTable: Boolean(summary?.querySelector('[data-testid="analysis-summary-table-v146"] table')),
             categorySummary: Boolean(summary?.querySelector('[data-portfolio-distribution]')),
             yearTrend: Boolean(summary?.querySelector('[data-testid="portfolio-year-trend-v132"]')),
-            yearRangeKpi: Boolean(summary?.querySelector('[data-portfolio-kpi="year-range"]')),
+            yearRangeSummary: Boolean(summary?.querySelector('[data-summary-key="year-range"]')),
             // No backslash escapes here: this expression travels through a
             // template literal and a CDP payload, and a regex class did not
             // survive the trip - the check quietly matched nothing.
@@ -138,12 +140,12 @@ try {
               ...[...(summary?.querySelector('[data-testid="portfolio-year-trend-v132"]')?.querySelectorAll('*') || [])]
                 .map((node) => (node.textContent || '').trim())
                 .filter((text) => text.length === 4 && (text.startsWith('19') || text.startsWith('20')) && Number.isFinite(Number(text))),
-              ...((summary?.querySelector('[data-portfolio-kpi="year-range"] strong')?.textContent || '')
+              ...((summary?.querySelector('[data-summary-key="year-range"] [data-summary-value]')?.textContent || '')
                 .split(/[^0-9]+/u)
                 .filter((text) => text.length === 4 && (text.startsWith('19') || text.startsWith('20')) && Number.isFinite(Number(text)))),
             ])],
-            filterCount: list?.querySelectorAll('input, select').length || 0,
-            filters: Boolean(list?.querySelector('[data-testid="portfolio-list-filters-v132"]')),
+            filterCount: filters?.querySelectorAll('input, select').length || 0,
+            filters: Boolean(filters?.querySelector('input[type="search"]')),
             alert: root?.querySelector('[role="alert"]')?.textContent || '',
           };
         })()`
@@ -152,17 +154,21 @@ try {
       const requiresEntitySummary = entityBearingIds.has(elementId);
       // A year trend is required where the delivery dates its records and
       // forbidden where it does not. The two are the same derivation, so the
-      // trend and the 확인 기간 KPI have to agree with each other; a screen
+      // trend and the 자료기간 table row have to agree with each other; a screen
       // showing one without the other is describing a year it does not have.
       const inconsistentYearSummary =
-        Boolean(result?.yearTrend) !== Boolean(result?.yearRangeKpi);
+        Boolean(result?.yearTrend) !== Boolean(result?.yearRangeSummary);
       if (
         result?.alert ||
         (requiresEntitySummary && (
           !result?.summary ||
+          !result?.summaryTable ||
+          result?.headlineTileCount !== 0 ||
           !result?.summaryBeforeList ||
           !result?.filters ||
-          Number(result?.filterCount || 0) < 3 ||
+          // V143 shares conditions between charts and list. Undated records
+          // must not gain a fictitious year selector solely to meet a count.
+          Number(result?.filterCount || 0) < 1 ||
           inconsistentYearSummary
         )) ||
         (!requiresEntitySummary && result?.list)
@@ -187,7 +193,7 @@ try {
     browser.cdp,
     `(() => {
       const root = document.querySelector('[data-testid="e008-research-analysis-v132"]');
-      const ids = ['e008-kpis', 'e008-trend', 'e008-breakdown', 'e008-collaboration', 'e008-list'];
+      const ids = ['e008-trend', 'e008-breakdown', 'e008-collaboration', 'e008-list'];
       const nodes = ids.map((id) => root?.querySelector('[data-testid="' + id + '"]'));
       const tops = nodes.map((node) => node?.getBoundingClientRect().top ?? null);
       return {
@@ -249,7 +255,6 @@ audit.check(
   e008Result,
   {
     sections: {
-      "e008-kpis": true,
       "e008-trend": true,
       "e008-breakdown": true,
       "e008-collaboration": true,

@@ -8,8 +8,8 @@ import { publicRecordRoleV142 } from "../../../data/visualization/publicRecordRo
 import type { PublicRecordRoleV142 } from "../../../data/visualization/publicRecordRoleV142";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import PublicCountDistributionV143 from "./PublicCountDistributionV143";
+import AnalysisSummaryTableV146 from "./AnalysisSummaryTableV146";
 
-import { publicScaledNumberV136_2 } from "../../../utils/publicNumberScaleV136_2";
 import "./public-portfolio-summary-v132.css";
 
 /** 을/를 by the final syllable of a Korean word (Hangul with no final consonant takes 를). */
@@ -117,6 +117,8 @@ const PORTFOLIO_CONFIG_V132: Record<string, PortfolioConfigV132> = {
     categoryKeys: ["portfolioCategory", "aidType", "status"],
   },
   "D-015": {
+    recordLabel: "사업 기록",
+    sectionTitle: "한국 ODA 사업 기록의 분야·기간별 구성",
     amountKeys: [
       { key: "financeAmountUsd", currency: "USD" },
       { key: "financeAmountText", currency: "USD" },
@@ -126,6 +128,8 @@ const PORTFOLIO_CONFIG_V132: Record<string, PortfolioConfigV132> = {
     categoryKeys: ["portfolioCategory", "aidType", "status"],
   },
   "D-016": {
+    recordLabel: "사업 기록",
+    sectionTitle: "기관별 국제협력 사업 기록",
     amountKeys: [
       { key: "financeAmountUsd", currency: "USD" },
       { key: "financeAmountText", currency: "USD" },
@@ -237,6 +241,8 @@ const PORTFOLIO_CONFIG_V132: Record<string, PortfolioConfigV132> = {
     categoryKeys: ["sector", "status", "accreditedEntity"],
   },
   "D-021": {
+    recordLabel: "지원 활동",
+    sectionTitle: "국제기구·개발은행의 지원 활동",
     amountKeys: [{ key: "financeAmountUsd", currency: "USD" }],
     amountLabel: "약정액 합계",
     // 사업기간 reads "2011-10-05~2014-12-31", so the first year in it is the
@@ -345,37 +351,6 @@ export default function PublicPortfolioSummaryV132({
           </p>
         )}
       </header>
-      <div className="pps132-kpis">
-        {identity.identityCount !== null && (
-          <article data-portfolio-kpi="identity-count">
-            <span>{`${config?.identityLabel || "고유 항목"} 수`}</span>
-            <strong>{identity.identityCount.toLocaleString("ko-KR")}</strong>
-            <small>{config?.identityLabel === "지원제도" ? "개" : "곳"}</small>
-          </article>
-        )}
-        <article data-portfolio-kpi="record-count"><span>{`총 ${config?.recordLabel || "사업"} 수`}</span><strong>{analysis.individualCount.toLocaleString("ko-KR")}</strong><small>건</small></article>
-        {identity.statusRows.map((row) => (
-          <article data-portfolio-kpi="status-count" key={row.label}>
-            <span>{`${config?.statusGroups?.label || "상태"} · ${row.label}`}</span>
-            <strong>{row.value.toLocaleString("ko-KR")}</strong>
-            <small>건</small>
-          </article>
-        ))}
-        {analysis.amounts.map((amount) => (
-          <article data-portfolio-kpi="funding-total" key={amount.currency}>
-            <span>{config?.amountLabel || "확인 금액 합계"}</span>
-            <strong
-              title={`${publicScaledNumberV136_2(amount.value, amount.currency).exact} ${amount.currency}`}
-            >
-              {publicScaledNumberV136_2(amount.value, amount.currency).display}
-            </strong>
-            <small><PublicTermTextV134 text={`${amount.currency} · ${amount.count.toLocaleString("ko-KR")}건`} /></small>
-          </article>
-        ))}
-        {analysis.yearRange && (
-          <article data-portfolio-kpi="year-range"><span>{config?.yearLabel || "확인 기간"}</span><strong>{analysis.yearRange}</strong><small>년</small></article>
-        )}
-      </div>
       <div className="pps132-distributions">
         {analysis.years.length > 0 && (
           <PublicCountDistributionV143
@@ -395,6 +370,13 @@ export default function PublicPortfolioSummaryV132({
             <PublicCountDistributionV143 key={entry.key} title={`${entry.label}별 ${config?.recordLabel || "사업"} 수`} rows={entry.rows} testId={`portfolio-category-${entry.key}-v141`} />
           ))}
       </div>
+      <AnalysisSummaryTableV146 title="건수·금액 집계표" rows={[
+        ...(identity.identityCount !== null ? [{ label: `${config?.identityLabel || "고유 항목"} 수`, value: identity.identityCount, unit: config?.identityLabel === "지원제도" ? "개" : "곳" }] : []),
+        { key: "record-count", label: `${config?.recordLabel || "사업"} 수`, value: analysis.individualCount, unit: "건", context: analysis.yearRange || "수록 자료 기준" },
+        ...(analysis.yearRange ? [{ key: "year-range", label: "자료기간", value: analysis.yearRange, context: "수록 자료 기준" }] : []),
+        ...identity.statusRows.map((row) => ({ label: `${config?.statusGroups?.label || "상태"} · ${row.label}`, value: row.value, unit: "건" })),
+        ...analysis.amounts.map((amount) => ({ label: config?.amountLabel || "확인 금액 합계", value: amount.value, unit: amount.currency, context: `금액이 기재된 ${amount.count.toLocaleString("ko-KR")}건` })),
+      ]} />
     </section>
   );
 }

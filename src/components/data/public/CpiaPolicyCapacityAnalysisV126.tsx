@@ -285,33 +285,6 @@ export default function CpiaPolicyCapacityAnalysisV126({
         )}
       </div>
 
-      <section
-        className="cpia126__kpis"
-        aria-label={wgiMode ? "거버넌스 지표 핵심현황" : "CPIA 핵심현황"}
-        data-testid="public-primary-visualization"
-      >
-        {activeSeries.map((series) => {
-          const current = coreRows.find(
-            (row) => row.indicatorId === series.indicatorId && row.year === selectedYear
-          );
-          const previous = [...coreRows]
-            .filter(
-              (row) => row.indicatorId === series.indicatorId && row.year < selectedYear
-            )
-            .sort((left, right) => right.year - left.year)[0];
-          const delta = current && previous ? current.value - previous.value : null;
-          return (
-            <article key={series.indicatorId}>
-              <span>{series.label}</span>
-              <strong>
-                {current ? formatPublicNumberV126(current.value, activeUnit) : "—"}
-              </strong>
-              <small>{selectedYear}년 · {activeUnit} · {activeScaleNote}</small>
-              <small>{formatPublicDeltaV126(delta, activeUnit)}</small>
-            </article>
-          );
-        })}
-      </section>
 
       <section className="cpia126__panel" data-testid="a002-cpia-trend">
         <div className="pav126-section-heading">

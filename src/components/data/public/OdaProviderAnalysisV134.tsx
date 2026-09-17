@@ -233,28 +233,6 @@ export default function OdaProviderAnalysisV134({
       data-raw-category-code-visible="false"
       data-testid="d011-specialized-analysis"
     >
-      <section className="osa134__kpis" aria-label="베트남 ODA 핵심현황">
-        <article>
-          <span><PublicTermTextV134 text="최신 총 ODA" /></span>
-          <strong title={exactUsdV134(latestTotal.value)}><PublicTermTextV134 text={compactUsdV134(latestTotal.value)} /></strong>
-          <small>2024년 불변가격</small>
-        </article>
-        <article>
-          <span>전년 대비</span>
-          <strong>{yearOverYear === null ? "계산 불가" : `${yearOverYear > 0 ? "+" : ""}${percentNumberV134.format(yearOverYear)}%`}</strong>
-          <small>{previousTotal ? `${previousTotal.year}년` : "이전 연도"}과 {latestTotal.year}년 비교</small>
-        </article>
-        <article>
-          <span>기준연도</span>
-          <strong>{latestTotal.year}년</strong>
-          <small>{totalRows[0]?.year}–{latestTotal.year}년 공개값</small>
-        </article>
-        <article>
-          <span>자료 제공기관</span>
-          <strong><PublicTermTextV134 firstOccurrenceOnly={false} text="OECD CRS" /></strong>
-          <small>지출액 기준</small>
-        </article>
-      </section>
 
       <section className="osa134__panel" aria-labelledby="osa134-total-title">
         <header className="osa134__heading">
