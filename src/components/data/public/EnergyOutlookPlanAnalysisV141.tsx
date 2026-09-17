@@ -267,15 +267,29 @@ export default function EnergyOutlookPlanAnalysisV141({ entities, initialYear }:
             </tbody>
           </table>
         </div>
-        {(model.assumptions.length > 0 || model.growth.length > 0) && (
+        {model.assumptions.length > 0 && (
           <p className="pps132-note">
             <PublicTermTextV134
               text={[
                 ...model.assumptions.map((row) => `${row.name} ${row.valueText}%`),
-                model.growth.length ? `2030→2050 연평균 증가율은 원문 미제시 값을 판매량·생산량·피크수요의 두 시점에서 자체 산출한 것(${model.growth.filter((row) => row.value !== null).map((row) => `${row.value}%`).join(" · ")})이며 계획값이 아닙니다.` : "",
               ].filter(Boolean).join(" · ")}
             />
           </p>
+        )}
+        {model.growth.length > 0 && (
+          <div className="pps132-table-wrap" data-testid="energy-outlook-derived-growth-v142">
+            <table>
+              <caption>2030–2050년 연평균 증가율 · 계획값으로 자체 계산</caption>
+              <thead><tr><th scope="col">계산 대상</th><th scope="col">계산에 사용한 범위</th><th scope="col">연평균 증가율</th></tr></thead>
+              <tbody>{model.growth.filter((row) => row.value !== null).map((row) => {
+                const basis = row.note.split(/\s*기준\s*2030/u)[0];
+                const bound = basis.match(/\((하한|상한)\)\s*$/u)?.[1];
+                const subject = bound ? basis.replace(/\((하한|상한)\)\s*$/u, "") : "계산 대상 미기재";
+                return <tr key={row.recordId}><th scope="row">{subject}</th><td>{bound ? `두 시점의 ${bound}값` : "미기재"}</td><td>{row.value}%</td></tr>;
+              })}</tbody>
+            </table>
+            <p className="pps132-note">계산식: [(2050년 값 ÷ 2030년 값)^(1/20) − 1] × 100. 원문에 제시된 증가율이 아니며, 하한·상한은 계산에 사용한 계획값의 구분입니다.</p>
+          </div>
         )}
       </section>
 

@@ -1425,7 +1425,7 @@ export const MAP_ELEMENT_AUDIT_V115: MapElementAuditRowV115[] = [
   },
   {
     elementId: "B-030",
-    label: "산림 이득(ha/yr)",
+    label: "산림 이득(2000–2020 누적 ha)",
     category: "B",
     categoryLabel: "기후·환경",
     dataGroup: "B.4.b.산림",

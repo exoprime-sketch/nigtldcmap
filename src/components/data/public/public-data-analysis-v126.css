@@ -20,7 +20,10 @@
 }
 
 .pav126-heading {
-  background: linear-gradient(135deg, #f4fbf8, #f7f9ff);
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
 }
 
 .pav126-heading > span,
@@ -450,3 +453,6 @@
 .prs138__constraints li + li {
   margin-top: 4px;
 }
+.pav144-reading-notes { margin: 1rem 0; padding: .8rem 1rem; border: 1px solid #dce8e5; border-radius: .6rem; }
+.pav144-reading-notes > summary { cursor: pointer; color: #31564e; font-weight: 600; }
+.pav144-reading-notes > summary:focus-visible { outline: 2px solid #146c5a; outline-offset: 3px; }

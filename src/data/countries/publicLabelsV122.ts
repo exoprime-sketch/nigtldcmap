@@ -59,6 +59,9 @@ const CURATED_TITLES: Record<string, { title: string; short: string }> = {
   "B-021": { title: "취약성지수", short: "취약성" },
   "B-022": { title: "기후피해의 경제적 비용", short: "기후피해 비용" },
   "B-029": { title: "산림 유형별 면적", short: "산림 유형" },
+  // The delivery is the 2000–2020 cumulative tree-cover gain per province;
+  // the registry's "(ha/yr)" named a rate the source does not state (V142).
+  "B-030": { title: "산림 이득(2000–2020 누적)", short: "산림 이득" },
   "B-031": { title: "산림 총면적", short: "산림 면적" },
   "B-033": { title: "연간 산림손실", short: "산림손실" },
   "B-034": { title: "탄소 저장량", short: "탄소 저장량" },

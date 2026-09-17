@@ -132,10 +132,6 @@ export default function CountryDataFullPreviewV52({
       data-testid="public-analysis-root"
     >
       <header className="cev123-heading">
-        <div>
-          <span>공개 데이터</span>
-          <h2>{runtime ? "데이터 분석" : "데이터를 준비하는 중"}</h2>
-        </div>
         <small data-testid="public-data-summary">{publicDataSummary}</small>
       </header>
 

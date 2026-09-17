@@ -5,6 +5,8 @@ import {
 } from "../../../data/visualization/publicFieldPolicyV126";
 import type { PublicAttributeValueV126 } from "../../../data/visualization/publicFieldPolicyV126";
 import { resolvePublicEntityTitleV131 } from "../../../data/visualization/publicEntityTitleV131";
+import { classifyStatedValueV142 } from "../../../data/visualization/statedValueRoleV142";
+import type { StatedValueRoleV142 } from "../../../data/visualization/statedValueRoleV142";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 
@@ -432,24 +434,55 @@ function FactV131({ fact }: { fact: PublicCardFactV131 }) {
   );
 }
 
+export interface PublicEntityStatedValueV142 {
+  recordId: string;
+  title: string;
+  /** The stated value as delivered (a number, a phone number, a date, a link …). */
+  raw: PublicAttributeValueV126 | undefined;
+  /** The numeric value when the row is a measurement; null for every other role. */
+  value: number | null;
+  unit: string;
+  measureKey: string | null;
+  period: string | null;
+  role: StatedValueRoleV142;
+  reason: string;
+}
+
 /**
- * The stated numeric value of each entity with its unit, for a comparison
- * across a register whose rows each state one figure (B-025's basin areas,
- * B-023's flow ratios). Only rows sharing one unit are comparable (V141).
+ * The stated value of each entity with the role it plays (V142).
+ *
+ * A register whose rows each state one figure (B-025's basin areas) can be
+ * compared; a register whose 값 column holds phone numbers, notice dates and
+ * one rate (C-011) cannot, and used to be. Each row is classified from its own
+ * unit, its indicator's unit and the shape of the value; only rows whose role
+ * is `measure` carry a numeric `value`. The indicator units come from the
+ * element's semantics when the caller has them.
  */
 export function publicEntityStatedValuesV141(
   entities: VietnamEntityV124[],
   template: PublicEntityCardTemplateV131,
   detailTemplate?: string,
-  elementTitle?: string
-): Array<{ recordId: string; title: string; value: number; unit: string }> {
+  elementTitle?: string,
+  indicatorUnits: Record<string, { unit: string | null; unitFamily: string | null }> = {}
+): PublicEntityStatedValueV142[] {
   return entities.flatMap((entity) => {
     const attributes = approvedCardAttributesV131(entity, template, detailTemplate);
     const raw = attributes.statedValue ?? attributes.nationalMeasureValue;
-    const value = typeof raw === "number" ? raw : Number(String(raw ?? "").replace(/,/gu, ""));
-    if (raw === null || raw === undefined || raw === "" || !Number.isFinite(value)) return [];
-    const unit = String(attributes.statedUnit ?? attributes.nationalMeasureUnit ?? "").trim();
-    return [{ recordId: entity.recordId, title: resolvePublicEntityTitleV131(entity, { template: detailTemplate, elementTitle }).title, value, unit }];
+    if (raw === null || raw === undefined || raw === "") return [];
+    const indicator = indicatorUnits[entity.indicatorId || ""] || { unit: null, unitFamily: null };
+    const title = resolvePublicEntityTitleV131(entity, { template: detailTemplate, elementTitle }).title;
+    const classified = classifyStatedValueV142({
+      raw,
+      unit: publicTextV126(attributes.statedUnit ?? attributes.nationalMeasureUnit) || "",
+      measureName: publicTextV126(attributes.measureName ?? attributes.nationalMeasureName) ||
+        (entity.elementId === "B-025" ? "베트남 내 유역 면적(GIS 산출)" : null),
+      indicatorUnit: indicator.unit,
+      indicatorUnitFamily: indicator.unitFamily,
+      period: attributes.statedPeriod ?? attributes.referenceYear ?? null,
+      title: `${entity.name || ""} ${title}`,
+      elementId: entity.elementId,
+    });
+    return [{ recordId: entity.recordId, title, raw, ...classified }];
   });
 }
 

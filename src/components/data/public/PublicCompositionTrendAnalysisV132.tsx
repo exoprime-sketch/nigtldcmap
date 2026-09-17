@@ -136,7 +136,12 @@ export default function PublicCompositionTrendAnalysisV132({
   const requestedMeasure = selectorState.measure
     ? measures.find((measure) => measure.key.startsWith(`${selectorState.measure}|`))
     : null;
-  const selectedMeasure = requestedMeasure || measures[0] || null;
+  // Direct entry must answer the named dataset question; a denser ancillary
+  // productivity series must not silently become the default agricultural share.
+  const titleAlignedMeasure = elementId === "B-024"
+    ? measures.find((measure) => measure.label === "농업 용수 취수 비중" && measure.unit === "%")
+    : null;
+  const selectedMeasure = requestedMeasure || titleAlignedMeasure || measures[0] || null;
   const measureRows = selectedMeasure
     ? rows.filter(
         (row) => `${row.semanticMeasure.key}|${row.semanticMeasure.unit}` === selectedMeasure.key

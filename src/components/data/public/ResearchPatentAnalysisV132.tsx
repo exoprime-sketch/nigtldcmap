@@ -3,7 +3,6 @@ import InteractiveTimeSeriesChartV127 from "../../charts/InteractiveTimeSeriesCh
 import type { TimeSeriesV127 } from "../../../types/chartInteractionV127";
 import type { SemanticObservationV125 } from "../../../data/visualization/semanticTypesV125";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
-import { CLIMATE_TECHNOLOGIES } from "../../../data/climateTechnologyCatalog";
 import {
   publicSourceUrlV126,
   publicTextV126,
@@ -132,18 +131,11 @@ export default function ResearchPatentAnalysisV132({
       record.technologyClasses.length ? record.technologyClasses : ["분야 미분류"]
     )
   );
-  const collaborationBreakdown = countByV132(records, (record) =>
-    !record.collaboration
-      ? "협력구조 미제공"
-      : /^(?:Y|국제|대한민국|독일|미국|이탈리아)/iu.test(record.collaboration)
-      ? "국제 협력"
-      : "국내 중심"
-  );
+  const collaborationBreakdown = countByV132(records, (record) => researchCollaborationLabelV144(record.collaboration));
   const collaborationCountryBreakdown = countValuesV132(
     records.flatMap((record) =>
-      /^(?:국내|단독)/u.test(record.collaboration)
-        ? []
-        : splitPublicListV132(record.collaboration)
+      researchCollaborationLabelV144(record.collaboration) !== "해외 협력국 포함"
+        ? [] : [...new Set(splitPublicListV132(record.collaboration).filter((country) => !/^(?:베트남|Vietnam)$/iu.test(country)))]
     )
   );
   const institutionBreakdown = countValuesV132(institutionLabels);
@@ -168,12 +160,12 @@ export default function ResearchPatentAnalysisV132({
           value={Number.isFinite(latestYear) ? String(latestYear) : "—"}
           unit={Number.isFinite(latestYear) ? "년" : ""}
         />
-        <KpiV132 label="확인된 기관 범위" value={institutions.size} unit="개" />
+        <KpiV132 label="수록 기관명 표기" value={institutions.size} unit="종" />
       </div>
 
       {nationalTrend.length === 0 && (
         <p className="rpa132-note" data-testid="e008-no-national-statistics">
-          연도별 공개 통계(Scimago 문헌 수·WIPO 출원 총계)는 이 자료에 포함되지 않았습니다. 아래 연도 분포는 공개 목록 {records.length.toLocaleString("ko-KR")}건의 발행연도 분포이며 국가 통계가 아닙니다.
+          아래 분석은 수록된 논문·특허 {records.length.toLocaleString("ko-KR")}건을 대상으로 합니다. 베트남 전체 논문·특허 통계가 아니며, 연도별 건수 차이가 국가 전체의 증가·감소를 뜻하지는 않습니다.
         </p>
       )}
       {nationalTrend.length > 0 && (
@@ -192,7 +184,8 @@ export default function ResearchPatentAnalysisV132({
                 const points = [...series.points].sort((left, right) => left.x - right.x);
                 const first = points[0];
                 const last = points[points.length - 1];
-                if (!first || !last || first.x === last.x) return null;
+                if (!first || !last) return null;
+                if (first.x === last.x) return <li key={series.id}><strong>{series.label}</strong><span>{first.x}년 {first.value.toLocaleString("ko-KR")}건 · 단일 시점</span></li>;
                 const delta = last.value - first.value;
                 const percent =
                   first.value === 0 ? null : (delta / Math.abs(first.value)) * 100;
@@ -234,23 +227,32 @@ export default function ResearchPatentAnalysisV132({
       </section>
       )}
 
+      <div className="rpa132-analysis-grid" data-testid="e008-publication-years-v144">
+        {(["논문", "특허"] as const).map((kind) => <BreakdownV132
+          key={kind}
+          title={`${kind} 목록의 발행연도별 건수`}
+          description={`수록 ${kind}의 발행연도를 집계했습니다. 자료가 없는 연도를 0으로 채우지 않습니다.`}
+          rows={countByV132(records.filter((record) => record.type === kind && Boolean(record.year)), (record) => String(record.year)).sort((a, b) => Number(a.label) - Number(b.label))}
+          testId={`e008-list-years-${kind === "논문" ? "paper" : "patent"}`}
+        />)}
+      </div>
       <div className="rpa132-analysis-grid">
         <BreakdownV132
-          title="기후기술 분류(38대 기술, 원천 부여)"
-          description={`공개 목록 ${records.length.toLocaleString("ko-KR")}건(국가 전체 통계가 아닌 선별 목록)에 원천이 제목·초록 근거로 부여한 CTIS 분류입니다. 두 분류를 받은 문헌은 각각에 한 번씩 세므로 분류별 건수의 합은 ${records.length.toLocaleString("ko-KR")}건을 넘을 수 있고, 구성비(100%)로 읽지 않습니다.`}
+          title="기술분야별 수록 건수"
+          description="원자료에 지정된 기술분야로 집계합니다. 분류번호가 같아도 다른 분류표의 분야명으로 바꾸지 않습니다. 여러 분야가 실제 지정된 자료는 분야별로 각각 집계합니다."
           rows={technologyBreakdown}
           testId="e008-breakdown"
         />
         <BreakdownV132
-          title="협력구조"
-          description="자료의 공저·공동출원 구분을 공개 목록 단위로 집계합니다."
+          title="공개 목록의 협력국 구분"
+          description="협력국에 해외 국가가 적힌 자료와 국내만 적힌 자료를 구분합니다. 국가 전체의 국제공저 비율은 아닙니다."
           rows={collaborationBreakdown}
           testId="e008-collaboration"
         />
         {collaborationCountryBreakdown.length > 0 && (
           <BreakdownV132
-            title="협력국 표기"
-            description="국제 공저로 분류된 공개 목록의 협력국 표기 빈도입니다."
+            title="해외 협력국별 수록 건수"
+            description="베트남을 제외한 협력국별 수록 건수입니다. 여러 국가가 참여한 자료는 각 국가에 한 번씩 집계하므로 합계를 자료 수로 읽지 않습니다."
             rows={collaborationCountryBreakdown}
             testId="e008-collaboration-countries"
           />
@@ -258,8 +260,8 @@ export default function ResearchPatentAnalysisV132({
         {institutionBreakdown.length > 0 && (
           <BreakdownV132
             title="기관 표기 빈도"
-            description="저자 소속 또는 출원기관으로 공개된 기관을 집계합니다."
-            rows={institutionBreakdown.slice(0, 8)}
+            description="저자 소속·출원기관의 이름이 등장한 횟수입니다. 이름 표기가 다른 동일 기관은 합치지 않았습니다."
+            rows={institutionBreakdown}
             testId="e008-institution-breakdown"
           />
         )}
@@ -331,12 +333,12 @@ function KpiV132({ label, value, unit }: { label: string; value: number | string
   return <article><span>{label}</span><strong>{typeof value === "number" ? value.toLocaleString("ko-KR") : value}</strong><small>{unit}</small></article>;
 }
 
-function nationalPublicationTrendV132(rows: SemanticObservationV125[]): TimeSeriesV127[] {
+export function nationalPublicationTrendV132(rows: SemanticObservationV125[]): TimeSeriesV127[] {
   const definitions = [
     { id: "E-008_scimago_publications", label: "논문 발행 건수", color: "#146c5a" },
     { id: "E-008_wipo_patent_total", label: "특허 출원 건수", color: "#9c4f17" },
   ];
-  return definitions.map((definition, index) => ({
+  return definitions.map<TimeSeriesV127>((definition, index) => ({
     id: definition.id,
     label: definition.label,
     unit: "건",
@@ -347,10 +349,10 @@ function nationalPublicationTrendV132(rows: SemanticObservationV125[]): TimeSeri
     points: rows
       .filter((row) => row.indicatorId === definition.id && typeof row.value === "number" && typeof row.year === "number")
       .map((row) => ({ x: row.year as number, value: row.value as number, xLabel: `${row.year}년` })),
-  }));
+  })).filter((series) => series.points.length > 0);
 }
 
-function researchRecordV132(
+export function researchRecordV132(
   entity: VietnamEntityV124,
   detailTemplate?: string,
   elementTitle?: string
@@ -368,7 +370,7 @@ function researchRecordV132(
     entity,
     type,
     title: titleResult.title,
-    year: Number.isFinite(numericYear) ? numericYear : null,
+    year: Number.isFinite(numericYear) && numericYear >= 1900 && numericYear <= 2100 ? numericYear : null,
     field:
       publicTextV126(attributes[ENTITY_FIELDS_V132.field]) ||
       sourceTechnologyClassesV138(entity, attributes).join(" · ") ||
@@ -416,9 +418,31 @@ function splitPublicListV132(value: string): string[] {
     .filter((item) => Boolean(item) && !/^(?:Y|N)$/iu.test(item));
 }
 
+/** The delivered column states countries or an explicit domestic-only status.
+ * Never infer international collaboration from a whitelist of country prefixes.
+ * These are labels about the supplied country field, not a national statistic. */
+export function researchCollaborationLabelV144(value: string): string {
+  if (!value || /^(?:Y|N|미제공|미상|-)$/iu.test(value.trim())) return "협력국 미제공";
+  if (/^(?:국내|단독)/u.test(value) || /^(?:베트남|Vietnam)$/iu.test(value.trim())) return "국내만 표기";
+  return "해외 협력국 포함";
+}
+
 const CTIS_CODE_PATTERN = /CTIS-(\d{2})/gu;
 
-/** The 38-technology classes the source assigned to a row, named from the catalogue. */
+/** Names reviewed against the delivered E-008 classification evidence.
+ * Its ordering differs from climateTechnologyCatalog, notably codes 20–38.
+ * This is a source-specific label map, NOT a new classification/crosswalk. */
+const RESEARCH_SOURCE_FIELDS_V144: Record<string, string> = {
+  "01": "태양광", "02": "태양열", "03": "풍력", "04": "해양에너지", "05": "수력", "06": "수열",
+  "07": "지열", "08": "바이오에너지", "09": "수소·암모니아 발전", "11": "원자력", "13": "수소",
+  "14": "바이오매스", "15": "폐자원", "16": "발전효율", "17": "산업효율", "18": "수송효율", "19": "건물효율",
+  "20": "CO2 포집·저장·활용", "21": "메탄 처리", "22": "기타 온실가스 처리", "23": "탄소흡수원",
+  "24": "전력 통합", "25": "열 통합", "27": "기후변화 감시·진단", "28": "기후변화 예측",
+  "29": "기후변화 영향 평가", "30": "기후변화 취약성·위험성 평가", "31": "건강", "32": "물",
+  "33": "국토·연안", "34": "농축수산", "35": "산림·생태계", "37": "적응조치 효과평가", "38": "기후변화 적응기반",
+};
+
+/** Keep source classifications; a code mentioned as an alternative is not assigned. */
 function sourceTechnologyClassesV138(
   entity: VietnamEntityV124,
   attributes: Record<string, unknown> = reviewedEntityAttributesV132(entity)
@@ -430,12 +454,11 @@ function sourceTechnologyClassesV138(
   // Older projections carried the prose only; read any code still in it.
   const basis = publicTextV126(attributes.technologyBasis) || "";
   for (const match of basis.matchAll(CTIS_CODE_PATTERN)) codes.add(match[1]);
-  return [...codes]
+  const singleAssignment = basis.match(/(\d{2})\s*로\s*단일\s*부여/u);
+  const assigned = singleAssignment ? [singleAssignment[1]] : [...codes];
+  return assigned
     .sort()
-    .map((code) => {
-      const definition = CLIMATE_TECHNOLOGIES[Number(code) - 1];
-      return definition ? `CTIS-${code} ${definition.nameKo}` : `CTIS-${code}`;
-    });
+    .map((code) => RESEARCH_SOURCE_FIELDS_V144[code] || `원자료 분류 CTIS-${code}`);
 }
 
 function BreakdownV132({
@@ -449,19 +472,25 @@ function BreakdownV132({
   rows: Array<{ label: string; value: number }>;
   testId: string;
 }) {
+  const [expanded, setExpanded] = useState(false);
+  const [table, setTable] = useState(false);
   const maximum = Math.max(1, ...rows.map((row) => row.value));
+  const shown = expanded ? rows : rows.slice(0, 8);
   return (
     <section className="rpa132-breakdown" data-testid={testId}>
       <header><h3><PublicTermTextV134 text={title} /></h3><p><PublicTermTextV134 text={description} /></p></header>
-      <ul>
-        {rows.map((row) => (
+      <div className="rpa144-actions"><button type="button" aria-pressed={table} onClick={() => setTable((value) => !value)}>{table ? "차트로 보기" : "표로 보기"}</button>
+        {!table && rows.length > 8 && <button type="button" aria-expanded={expanded} onClick={() => setExpanded((value) => !value)}>{expanded ? "상위 8개만 보기" : `전체 ${rows.length}개 항목 보기`}</button>}
+      </div>
+      {table ? <div className="rpa144-table"><table><caption>{title}</caption><thead><tr><th scope="col">항목</th><th scope="col">건수</th></tr></thead><tbody>{rows.map((row) => <tr key={row.label}><th scope="row">{row.label}</th><td>{row.value.toLocaleString("ko-KR")}</td></tr>)}</tbody></table></div> : <ul>
+        {shown.map((row) => (
           <li key={row.label} tabIndex={0} aria-label={`${row.label} ${row.value}건`}>
             <span><PublicTermTextV134 text={row.label} /></span>
             <i aria-hidden="true"><b style={{ width: `${(row.value / maximum) * 100}%` }} /></i>
             <strong>{row.value}건</strong>
           </li>
         ))}
-      </ul>
+      </ul>}
     </section>
   );
 }

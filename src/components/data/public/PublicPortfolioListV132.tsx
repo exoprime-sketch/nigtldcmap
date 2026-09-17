@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { resolvePublicEntityTitleV131 } from "../../../data/visualization/publicEntityTitleV131";
+import { publicTextV126 } from "../../../data/visualization/publicFieldPolicyV126";
 import PublicEntityCardGridV131 from "./PublicEntityCardGridV131";
 import {
   publicPortfolioFacetV132,
@@ -14,6 +15,7 @@ interface Props {
   entities: VietnamEntityV124[];
   detailTemplate?: string;
   elementTitle?: string;
+  hideFilters?: boolean;
 }
 const PAGE_SIZE_V132 = 12;
 
@@ -25,7 +27,7 @@ const PAGE_SIZE_V132 = 12;
  */
 const CATEGORY_LABELS_V140: Record<string, string> = {
   "C-025": "등록 표준·분야",
-  "D-012": "기술분야·진출국",
+  "D-012": "기술분야",
   "D-014": "분야·원조유형",
   "D-015": "분야·원조유형",
   "D-016": "분야·원조유형",
@@ -50,6 +52,7 @@ export default function PublicPortfolioListV132({
   entities,
   detailTemplate,
   elementTitle,
+  hideFilters = false,
 }: Props) {
   const [query, setQuery] = useState("");
   const [year, setYear] = useState("all");
@@ -70,8 +73,12 @@ export default function PublicPortfolioListV132({
   // Rows the source marks 집계 are totals or explanations of the register,
   // not members of it (D-023: 71 projects and 2 such rows). They are listed
   // apart so the list's count is the register's count (V140).
-  const records = useMemo(() => allRecords.filter(({ facet }) => facet.recordScope !== "집계"), [allRecords]);
-  const aggregateRecords = useMemo(() => allRecords.filter(({ facet }) => facet.recordScope === "집계"), [allRecords]);
+  const records = useMemo(() => allRecords.filter(({ facet }) => facet.recordRole === "individual"), [allRecords]);
+  const aggregateRecords = useMemo(() => allRecords.filter(({ facet }) => facet.recordRole === "aggregate"), [allRecords]);
+  // Rows that describe a category the register uses (D-026's five guarantee
+  // covers) are kept as that explanation, with what they say (V142).
+  const definitionRecords = useMemo(() => allRecords.filter(({ facet }) => facet.recordRole === "definition"), [allRecords]);
+  const definitionLabel = definitionRecords[0]?.facet.recordRoleLabel || "분류 안내";
   const years = useMemo(
     () =>
       Array.from(
@@ -125,7 +132,7 @@ export default function PublicPortfolioListV132({
         <strong aria-live="polite">{filtered.length.toLocaleString("ko-KR")}건</strong>
       </header>
 
-      <div
+      {!hideFilters && <div
         className="ppl132-filters"
         role="search"
         aria-label={`${publicPortfolioRecordLabelV138(elementId)} 목록 필터`}
@@ -164,7 +171,7 @@ export default function PublicPortfolioListV132({
             ))}
           </select>
         </label>
-      </div>
+      </div>}
 
       {shown.length > 0 ? (
         <PublicEntityCardGridV131
@@ -176,6 +183,20 @@ export default function PublicPortfolioListV132({
         />
       ) : (
         <p className="ppl132-empty" role="status">선택한 조건에 맞는 공개 목록이 없습니다.</p>
+      )}
+
+      {definitionRecords.length > 0 && (
+        <section className="ppl132-definitions" data-testid="portfolio-definition-rows-v142" data-definition-count={definitionRecords.length}>
+          <h5>{definitionLabel} · {definitionRecords.length}건 ({publicPortfolioRecordLabelV138(elementId)} 수에서 제외)</h5>
+          <dl>
+            {definitionRecords.map(({ entity, title, facet }) => (
+              <div key={entity.recordId || title}>
+                <dt>{title}</dt>
+                <dd>{publicTextV126(facet.attributes.portfolioCategory) || publicTextV126(facet.attributes.sector) || ""}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
       )}
 
       {aggregateRecords.length > 0 && (

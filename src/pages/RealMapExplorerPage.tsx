@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { isPublicMapFactV143, publicMapFactSourcesV143, hasPublicMapFactValueV143 } from "../data/visualization/publicMapCopyV143";
 import maplibregl, { Map as MapLibreMap } from "maplibre-gl";
 import type {
   GeoJSONSource,
@@ -29,6 +30,7 @@ import type {
 } from "../data/vietnam/vietnamDataLoaderV124";
 import type { VietnamMapFactFieldV137, VietnamMapFilterV121 } from "../data/vietnam/vietnamTypesV121";
 import { normalisedPowerPlantAttributesV141, POWER_PLANT_SOURCES_V141 } from "../data/map/powerPlantFactsV141";
+import { powerPlantPeriodForSourceV142 } from "../data/visualization/mapSelectorBindingsV125";
 import type {
   VietnamSpatialLayerAssetV124,
 } from "../data/vietnam/vietnamTypesV124";
@@ -513,7 +515,7 @@ function rendererOf(layer: CountryMapLayerV122) {
 }
 
 function publicMapCoverageTextV126(layer: CountryMapLayerV122): string {
-  if (layer.elementId === "A-023") return "발전소 위치 1,889개";
+  if (layer.elementId === "A-023") return "발전소 좌표 레코드(두 출처, 중복 미통합)";
   if (layer.elementId === "A-024") return "송전망 구간 606개";
   const safe = publicTextV126(layer.spatialCoverage) || "";
   if (!safe) return "공개 위치자료 범위";
@@ -1339,9 +1341,9 @@ function layerFactFieldsV137(
   layer: CountryMapLayerV122
 ): VietnamMapFactFieldV137[] {
   const declared = layer.factFields;
-  if (declared && declared.length) return declared;
+  if (declared && declared.length) return declared.filter((fact) => isPublicMapFactV143(fact.label)).map((fact) => publicMapFactSourcesV143(layer.elementId, fact));
   return layer.tooltipFields
-    .filter((field) => field !== "name")
+    .filter((field) => field !== "name" && isPublicMapFactV143(fieldLabelV121(field)))
     .map((field) => ({ key: field, label: fieldLabelV121(field), sources: [field] }));
 }
 
@@ -1352,8 +1354,7 @@ function factValueV137(
 ): unknown {
   for (const key of fact.sources) {
     const value = attributes[key];
-    if (value === null || value === undefined) continue;
-    if (typeof value === "string" && value.trim() === "") continue;
+    if (!hasPublicMapFactValueV143(value)) continue;
     const mapped = fact.valueMap?.[String(value).trim().toLowerCase()];
     return mapped ?? value;
   }
@@ -1382,8 +1383,7 @@ function popupFactLinesV137(
   for (const fact of layerFactFieldsV137(layer)) {
     if (lines.length >= limit) break;
     const value = properties[fact.key];
-    if (value === null || value === undefined) continue;
-    if (typeof value === "string" && value.trim() === "") continue;
+    if (!hasPublicMapFactValueV143(value)) continue;
     const numeric = Number(value);
     const shown =
       fact.unit && Number.isFinite(numeric)
@@ -1494,6 +1494,18 @@ function layerPeriodLabelV141(
   const choice = sourceFilter ? selectedFilterValueV141(layer, sourceFilter, filters) : "all";
   if (choice === "wri" || choice === "osm") return short ? POWER_PLANT_SOURCES_V141[choice].shortLabel : POWER_PLANT_SOURCES_V141[choice].label;
   return `${POWER_PLANT_SOURCES_V141.wri.shortLabel} · ${POWER_PLANT_SOURCES_V141.osm.shortLabel} 추출`;
+}
+
+/** The reference year the layer's displayed values carry; A-023's follows the chosen registry (V142). */
+function layerDisplayedPeriodV142(
+  layer: CountryMapLayerV122,
+  filters: Record<string, string>,
+  fallback: string
+): string {
+  if (layer.elementId !== "A-023") return fallback;
+  const sourceFilter = layer.filters.find((filter) => filter.field === "sourceKey");
+  const choice = sourceFilter ? selectedFilterValueV141(layer, sourceFilter, filters) : "all";
+  return powerPlantPeriodForSourceV142(choice);
 }
 
 function filterRecords(
@@ -4386,22 +4398,6 @@ export default function RealMapExplorerPage({
             row.period === focusedSelector.period
         ) || null
       : null;
-  const focusedCoverage = focusedLayer
-    ? focusedLayer.elementId === "A-024"
-      ? "송전망 구간 606개"
-      : focusedLayer.elementId === "A-023"
-      ? `표시 ${filterRecords(recordsByElement["A-023"] || [], focusedLayer, filters).filter((row) => row.mapEligible).length.toLocaleString()}곳 · ${layerPeriodLabelV141(focusedLayer, filters, "")} · 좌표 보유 1,889곳 중`
-      : focusedSeriesCoverage
-      ? focusedLayer.spatialScopeType === "region"
-        // The value's own unit is the 34 reorganised provinces (or six
-        // regions); the 63 boundaries only show which of them each value
-        // belongs to. "63/63" would claim a resolution the data lacks.
-        ? `${regionUnitLabelV138(focusedLayer)} 단위 값 · 소속 63개 성·시 경계 중 ${focusedSeriesCoverage.matchedCount}개에 대응 표시`
-        : `63개 성·시 중 ${focusedSeriesCoverage.matchedCount}개에 값 있음`
-      : focusedLayer.countNoun
-      ? `${focusedLayer.mapTargetV138?.displaySpatialUnit || publicMapLayerTitleV126(focusedLayer.elementId, focusedLayer.publicShortTitle)} ${focusedLayer.featureCount.toLocaleString()}${focusedLayer.countNoun}`
-      : publicMapCoverageTextV126(focusedLayer)
-    : "";
   const focusedMissingReason = focusedLayer
     ? focusedSeriesCoverage && focusedSeriesCoverage.missingCount > 0
       ? `${focusedSeriesCoverage.missingCount}개 성·시 원천 미제공 · 0으로 대체하지 않음`
@@ -4860,27 +4856,6 @@ export default function RealMapExplorerPage({
             selectedOwningLayer.publicShortTitle
         )
       : null;
-  const selectedOwningSeriesCoverage =
-    selectedOwningLayer && selectedOwningSelector
-      ? spatialByElement[
-          selectedOwningLayer.elementId
-        ]?.data?.seriesCoverage.find(
-          (row) =>
-            row.variable === selectedOwningSelector.variable &&
-            row.period === selectedOwningSelector.period
-        ) || null
-      : null;
-  const selectedOwningCoverage = selectedOwningLayer
-    ? selectedOwningLayer.elementId === "A-024"
-      ? "송전망 구간 606개"
-      : selectedOwningLayer.elementId === "A-023"
-      ? "발전소 위치 1,889개"
-      : selectedOwningSeriesCoverage
-      ? selectedOwningLayer.spatialScopeType === "region"
-        ? `${regionUnitLabelV138(selectedOwningLayer)} 단위 값 · 소속 63개 성·시 경계 중 ${selectedOwningSeriesCoverage.matchedCount}개에 대응 표시`
-        : `63개 성·시 중 ${selectedOwningSeriesCoverage.matchedCount}개에 값 있음`
-      : publicMapCoverageTextV126(selectedOwningLayer)
-    : "";
   // Points of the selected regional project (its verified activity sites).
   const selectedProjectSitePointsV139 = (() => {
     if (!selectedSpatial || !selectedOwningLayer) return 0;
@@ -4898,13 +4873,6 @@ export default function RealMapExplorerPage({
       : selectedOwningLayer && contextLayerIds.includes(selectedOwningLayer.elementId)
       ? "context"
       : null;
-  const selectedOwningMissingReason = selectedOwningLayer
-    ? selectedOwningSeriesCoverage && selectedOwningSeriesCoverage.missingCount > 0
-      ? `${selectedOwningSeriesCoverage.missingCount}개 성·시 원천 미제공`
-      : selectedOwningLayer.missingRegions.length
-      ? selectedOwningLayer.missingRegions.join(" · ")
-      : "없음"
-    : "";
   const selectedB021RegionRankV129 = (() => {
     if (
       selectedOwningLayer?.elementId !== "B-021" ||
@@ -6559,6 +6527,18 @@ export default function RealMapExplorerPage({
                   </select>
                 </label>
               )}
+              {focusedLayer.elementId === "A-023" ? (
+                // The year is the chosen registry's, not a selectable period:
+                // WRI GPPD 2021, OSM 2026, or both. One fixed "2026" dated
+                // the 2021 rows wrongly (V142).
+                <div className="cdp-field" style={{ marginBottom: 9 }}>
+                  <span className="cdp-field__label">자료연도</span>
+                  <strong data-testid="map-layer-period-derived" data-period={layerDisplayedPeriodV142(focusedLayer, filters, focusedSelector.period)}>
+                    {layerDisplayedPeriodV142(focusedLayer, filters, focusedSelector.period)} · {layerPeriodLabelV141(focusedLayer, filters, "")}
+                  </strong>
+                  <small className="cdp-field__hint">출처 필터에 따라 정해집니다. 두 출처를 함께 보면 시설마다 자료연도가 다릅니다.</small>
+                </div>
+              ) : (
               <label className="cdp-field" style={{ marginBottom: 9 }}>
                 <span className="cdp-field__label">
                   {mapPeriodSelectorLabelV125(focusedLayer.elementId)}
@@ -6580,6 +6560,7 @@ export default function RealMapExplorerPage({
                   )}
                 </select>
               </label>
+              )}
               <PublicTermHelpV134
                 text={[
                   focusedVariablePresentationV129?.label ||
@@ -6590,7 +6571,7 @@ export default function RealMapExplorerPage({
                     focusedSemantic?.unit ||
                     focusedVariable?.unit ||
                     focusedLayer.unit,
-                  focusedSelector.period,
+                  layerDisplayedPeriodV142(focusedLayer, filters, focusedSelector.period),
                 ]
                   .filter(Boolean)
                   .join(" · ")}
@@ -6628,24 +6609,8 @@ export default function RealMapExplorerPage({
                   </dd>
                 </div>
                 <div>
-                  <dt>지도 표시 범위</dt>
-                  <dd data-testid="map-primary-coverage">
-                    <PublicTermTextV134 text={focusedCoverage} />
-                  </dd>
-                </div>
-                <div>
-                  <dt>결측지역</dt>
-                  <dd data-testid="map-primary-missing-reason">
-                    {focusedMissingReason}
-                  </dd>
-                </div>
-                <div>
                   <dt>출처</dt>
                   <dd><PublicTermTextV134 text={focusedLayer.source} /></dd>
-                </div>
-                <div>
-                  <dt>정확도 한계</dt>
-                  <dd>{focusedAccuracyNotice}</dd>
                 </div>
               </dl>
               {focusedLayer.elementId === "D-008" && (
@@ -7626,11 +7591,7 @@ export default function RealMapExplorerPage({
                 </div>
                 <div>
                   <dt>자료연도</dt>
-                  <dd>{layerPeriodLabelV141(focusedLayer, filters, String(focusedSelector?.period || focusedLayer.sourceYear || "미기재"))}</dd>
-                </div>
-                <div>
-                  <dt>지도 표시 범위</dt>
-                  <dd>{focusedCoverage}</dd>
+                  <dd>{focusedLayer.elementId === "A-023" ? `${layerDisplayedPeriodV142(focusedLayer, filters, "")} · ${layerPeriodLabelV141(focusedLayer, filters, "")}` : layerPeriodLabelV141(focusedLayer, filters, String(focusedSelector?.period || focusedLayer.sourceYear || "미기재"))}</dd>
                 </div>
               </dl>
               <div
@@ -7914,7 +7875,7 @@ export default function RealMapExplorerPage({
                     if (!variable || variable === item) return null;
                     return <Evidence label="선택 변수" value={variable} />;
                   })()}
-                  <Evidence label="자료연도" value={focusedSelector.period} />
+                  <Evidence label="자료연도" value={layerDisplayedPeriodV142(focusedLayer, filters, focusedSelector.period)} />
                   <Evidence
                     label="단위"
                     value={
@@ -7944,7 +7905,6 @@ export default function RealMapExplorerPage({
                       value={focusedVariablePresentationV129.aggregationNotice}
                     />
                   )}
-                  <Evidence label="지도 표시 범위" value={focusedCoverage} />
                 </div>
                 </details>
               </section>
@@ -8228,9 +8188,11 @@ export default function RealMapExplorerPage({
                       <Evidence
                         label="자료연도"
                         value={
-                          selectedSpatial.period ||
-                          selectedOwningSelector?.period ||
-                          ""
+                          selectedOwningLayer.elementId === "A-023"
+                            ? layerDisplayedPeriodV142(selectedOwningLayer, filters, selectedOwningSelector?.period || "")
+                            : selectedSpatial.period ||
+                              selectedOwningSelector?.period ||
+                              ""
                         }
                       />
                       {selectedOwningVariablePresentationV129?.directionLabel && (
@@ -8332,27 +8294,6 @@ export default function RealMapExplorerPage({
                           />
                         ))}
                       <Evidence label="출처" value={publicSourceOrganizationV136_1(selectedOwningLayer.source) || ""} />
-                      <Evidence
-                        label="공간 정확도"
-                        value={publicMapAccuracyNoticeV126(
-                          selectedOwningLayer.elementId,
-                          rendererOf(selectedOwningLayer),
-                          selectedOwningLayer.accuracyNotice
-                        )}
-                      />
-                      <Evidence
-                        label="지도 표시 범위"
-                        value={selectedOwningCoverage}
-                      />
-                      <Evidence
-                        label="값 제공 여부"
-                        value={
-                          selectedSpatial.value === null ||
-                          selectedSpatial.value === undefined
-                            ? `원천 미제공 · ${selectedOwningMissingReason}`
-                            : "값 있음"
-                        }
-                      />
                     </div>
                     {selectedOwningLayer.sharedObjectsWith && selectedMemberRecordsV138.length === 0 && (
                       <p className="cdp-map-region-trend-v132__notice" data-testid="map-shared-register-note-v138">
@@ -8479,6 +8420,7 @@ export default function RealMapExplorerPage({
                     }
                   >
                     <h4>{selectedEntityTitleResolutionV131?.title}</h4>
+                    {selectedApproximateV138 && <p className="cdp-map-region-trend-v132__notice">소재 지역을 나타내는 점이며, 건물 위치는 아닙니다.</p>}
                     <div className="cdp-evidence-grid">
                       {selectedEntityTitleResolutionV131?.secondaryNote && (
                         <Evidence
@@ -8533,15 +8475,6 @@ export default function RealMapExplorerPage({
                               String(selectedLayer.latestYear || "미표기")
                             }
                           />
-                          {selectedApproximateV138 && (
-                            <Evidence
-                              label="위치 정밀도"
-                              value={
-                                selectedLayer.approximateLocation?.label ||
-                                "도시·행정구역 대표점(건물 위치 아님)"
-                              }
-                            />
-                          )}
                           {selectedMembersV138.length > 1 && (
                             <Evidence
                               label={`${selectedLayer.featureIdentity?.memberLabel || "연결된 원천 행"}`}
@@ -8601,36 +8534,6 @@ export default function RealMapExplorerPage({
                       <Evidence
                         label="출처"
                         value={publicSourceOrganizationV136_1(selected.provenance.sourceOrg) || ""}
-                      />
-                      <Evidence
-                        label="공간 정확도"
-                        value={publicMapAccuracyNoticeV126(
-                          selectedLayer.elementId,
-                          rendererOf(selectedLayer),
-                          selectedLayer.accuracyNotice
-                        )}
-                      />
-                      <Evidence
-                        label="지도 표시 범위"
-                        value={selectedOwningCoverage}
-                      />
-                      <Evidence
-                        label="값 제공 여부"
-                        value={(() => {
-                          const attributes = (selected.normalizedAttributes ||
-                            {}) as Record<string, unknown>;
-                          const missingLabels = layerFactFieldsV137(selectedLayer)
-                            .filter((fact) => {
-                              if (fact.key === "referenceYear") {
-                                return !selected.provenance.referenceYear;
-                              }
-                              return factValueV137(fact, attributes) === null;
-                            })
-                            .map((fact) => factLabelV137(selectedLayer, fact.key));
-                          return missingLabels.length > 0
-                            ? `원천 미제공: ${missingLabels.join(" · ")}`
-                            : "표시 항목 모두 값 있음";
-                        })()}
                       />
                     </div>
                     {selectedMemberSeriesV138 && (

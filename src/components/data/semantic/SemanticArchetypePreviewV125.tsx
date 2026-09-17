@@ -23,18 +23,19 @@ import {
   publicTextV126,
 } from "../../../data/visualization/publicFieldPolicyV126";
 import {
-  publicDimensionContextV136_2,
   publicDimensionLabelV126,
   publicDimensionValueV134,
   publicMeasureLabelV126,
 } from "../../../data/visualization/publicCopyRegistryV126";
 import { publicScaledNumberV136_2 } from "../../../utils/publicNumberScaleV136_2";
+import { publicIndicatorContextV144, publicIndicatorDimensionV144, previousYearChangeV144, publicPercentHeadlineV144 } from "../../../data/visualization/publicIndicatorCopyV144";
 import { getPublicAnalysisHeadingsV134 } from "../../../data/visualization/publicAnalysisHeadingsV134";
 import {
   PublicTermHelpV134,
   PublicTermTextV134,
 } from "../../help/PublicTermV134";
 import SemanticContractRendererV125 from "./SemanticContractRendererV125";
+import type { IndicatorUnitsV142 } from "./SemanticContractRendererV125";
 import "../../../styles/semantic-visualization-v125.css";
 
 interface Props {
@@ -140,6 +141,18 @@ export default function SemanticArchetypePreviewV125({
       ),
     [observations, semantics]
   );
+  // Unit per indicator, so entity rows can tell a phone number from a rate
+  // before anything is compared (V142).
+  const indicatorUnits = useMemo<IndicatorUnitsV142>(
+    () =>
+      Object.fromEntries(
+        semantics.indicators.map((indicator) => [
+          indicator.indicatorId,
+          { unit: indicator.measure.unit ?? null, unitFamily: indicator.measure.unitFamily ?? null },
+        ])
+      ),
+    [semantics]
+  );
   const additionalDimensions = useMemo(
     () => {
       const keys = new Set(contract.dimensions.map((dimension) => dimension.key));
@@ -150,12 +163,16 @@ export default function SemanticArchetypePreviewV125({
           // reader's filter; and a raw-vocabulary twin ("coal", "hydro") of a
           // translated dimension ("석탄", "수력") is the same filter twice.
           dimension.key !== "entityType" &&
+          // For unemployment this is the definition of the selected age/source,
+          // not an independent analytical choice. Old card URLs can carry it;
+          // excluding it here also clears that redundant, conflicting filter.
+          !(contract.elementId === "A-006" && dimension.key === "detail") &&
           !(dimension.key.endsWith("Raw") && keys.has(dimension.key.replace(/Raw$/u, ""))) &&
           dimension.values.length > 1
       );
       return candidates;
     },
-    [contract.dimensions]
+    [contract.dimensions, contract.elementId]
   );
   const explicitDimensions = useMemo(
     () =>
@@ -542,7 +559,7 @@ export default function SemanticArchetypePreviewV125({
               )}
               {values.map((value) => (
                 <option key={value} value={value}>
-                  {dimensionValueLabelV125(dimension.key, value)}
+                  {publicIndicatorDimensionV144(contract.elementId, dimensionValueLabelV125(dimension.key, value)) || dimensionValueLabelV125(dimension.key, value)}
                 </option>
               ))}
             </select>
@@ -628,6 +645,7 @@ export default function SemanticArchetypePreviewV125({
 
       <SemanticKpisV125
         rows={selectedRows}
+        contextRows={measureContextRows}
         contract={contract}
         selectedMeasureKey={measureKey}
       />
@@ -646,8 +664,21 @@ export default function SemanticArchetypePreviewV125({
           elementTitle={elementTitle}
           markEntityTableAsPublic={showRawTable && visualizationTableRows.length === 0}
           showRawTable={showRawTable}
+          indicatorUnits={indicatorUnits}
         />
       )}
+
+      {(() => {
+        const definitions = Array.from(new Set(measureContextRows.flatMap((row) =>
+          Object.values(row.dimensionLabels).filter((value) =>
+            publicIndicatorDimensionV144(contract.elementId, value) !== value))));
+        return definitions.length > 0 ? (
+          <details className="sv125-indicator-notes-v144" data-testid="indicator-notes-v144">
+            <summary>지표 설명·자료 기준</summary>
+            <ul>{definitions.map((value) => <li key={value}><PublicTermTextV134 text={value} /></li>)}</ul>
+          </details>
+        ) : null;
+      })()}
 
       {missingRows.length > 0 && (
         <div className="sv125-missing" role="note">
@@ -720,10 +751,12 @@ function singleSubjectV136_4(
 
 function SemanticKpisV125({
   rows,
+  contextRows,
   contract,
   selectedMeasureKey,
 }: {
   rows: SemanticObservationV125[];
+  contextRows: SemanticObservationV125[];
   contract: ElementVisualizationContractV125;
   selectedMeasureKey: string | null;
 }) {
@@ -757,7 +790,7 @@ function SemanticKpisV125({
     // it, which shows every category, is left to answer the question.
     const row = aggregate || (singleSubjectV136_4(candidates) ? candidates[0] : null);
     const dimensionValues = row
-      ? publicDimensionContextV136_2(row.dimensionLabels)
+      ? publicIndicatorContextV144(contract.elementId, row.dimensionLabels)
       : [];
     // A measure with rows but no row that speaks for them is left out
     // entirely; a measure with no rows at all still reports itself missing,
@@ -780,26 +813,36 @@ function SemanticKpisV125({
           row && typeof row.value === "number" && Number.isFinite(row.value)
             ? publicScaledNumberV136_2(row.value, unit)
             : null;
+        const percentHeadline = row && typeof row.value === "number" && unit === "%"
+          ? publicPercentHeadlineV144(row.value)
+          : null;
+        const change = row ? previousYearChangeV144(row, contextRows) : null;
+        const changeDisplay = change ? publicScaledNumberV136_2(change.value, change.unit) : null;
         return (
           <article
             key={`${measure.key}-${measure.unit}`}
             data-public-dimension-count={dimensionValues.length}
             data-public-dimension-values={JSON.stringify(dimensionValues)}
           >
-            <span><PublicTermTextV134 text={publicMeasureLabelV126(measure.labelKo)} /></span>
+            <span><PublicTermTextV134 text={publicIndicatorDimensionV144(contract.elementId, publicMeasureLabelV126(measure.labelKo))} /></span>
             <strong
-              title={scaled?.scaled ? `${scaled.exact}${unit ? ` ${unit}` : ""}` : undefined}
-              data-public-exact-value={scaled?.scaled ? scaled.exact : undefined}
+              className={row && typeof row.value === "string" ? "sv125-kpi-text-v144" : undefined}
+              title={row ? `${row.value}${unit ? ` ${unit}` : ""}` : undefined}
+              data-public-exact-value={row ? String(row.value) : undefined}
             >
-              {scaled ? scaled.display : row ? formatValueV121(row.value) : "미제공"}
+              {percentHeadline ?? (scaled ? scaled.display : row ? formatValueV121(row.value) : "미제공")}
+              {row && typeof row.value === "number" && unit ? <span className="sv125-kpi-unit-v144">{unit === "%" ? "" : " "}{unit}</span> : null}
             </strong>
             <small>
               <PublicTermTextV134 text={row
-                ? [unit, row.year || row.period, ...dimensionValues]
+                ? [row.year ? `${row.year}년` : row.period, ...dimensionValues]
                     .filter(Boolean)
                     .join(" · ")
                 : measure.unit || "단위 미기재"} />
             </small>
+            {change && Number.isFinite(change.value) ? <small data-testid="kpi-change-v144">
+              전년 대비 {change.value > 0 ? "+" : ""}{changeDisplay?.scaled ? changeDisplay.display : publicPercentHeadlineV144(change.value)} {change.unit}
+            </small> : null}
           </article>
         );
       })}

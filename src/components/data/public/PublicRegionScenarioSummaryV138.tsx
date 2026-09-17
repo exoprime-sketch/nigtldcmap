@@ -823,7 +823,9 @@ export default function PublicRegionScenarioSummaryV138({
       <p className="prs137__note">
         {multiYear
           ? "연도별 전체 값과 원자료 정밀도는 아래 상세 데이터와 다운로드에서 확인할 수 있습니다."
-          : `원천이 제공하는 기준연도는 한 해입니다. ${rowUnitLabel}별 값은 아래 상세 데이터와 다운로드에서 확인할 수 있습니다.`}
+          : shownYears.length === 0 && contract?.periodLabel
+            ? `원천이 제공하는 기간은 ${contract.periodLabel}이며 연도별 값은 제공되지 않습니다. ${rowUnitLabel}별 값은 아래 상세 데이터와 다운로드에서 확인할 수 있습니다.`
+            : `원천이 제공하는 기준연도는 한 해입니다. ${rowUnitLabel}별 값은 아래 상세 데이터와 다운로드에서 확인할 수 있습니다.`}
       </p>
     </div>
   );

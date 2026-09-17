@@ -279,6 +279,9 @@ const CONTRACTS: Record<string, RegionScenarioContractV138> = {
   "B-030": {
     measures: MAP_TARGET_MEASURES.get("B-030") || [],
     defaultMeasure: "이득_ha",
+    // The rows carry 기간 = "2000–2020" and no year; the table used to read
+    // "기준연도 미기재" under a 20-year cumulative value (V142).
+    periodLabel: "2000–2020년 누적",
     constraints: [
       "이득·손실·순변화는 2000–2020년 20년 누적값입니다. 연간 증가량으로 읽지 않습니다.",
       "2000년 수관 면적과 분석대상 면적은 분모 정보이며 산림 변화량이 아닙니다.",

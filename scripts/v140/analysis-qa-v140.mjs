@@ -44,6 +44,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { PROJECT_ROOT } from "../v125/audit-utils.mjs";
 import { startStaticBuildServer } from "../v125/browser-runtime.mjs";
+import { recordRoleOf } from "./card-model-v140.mjs";
 
 const argv = process.argv.slice(2);
 const opt = (flag, fallback = null) => {
@@ -355,7 +356,9 @@ function recompute(card) {
   }
   // Register cards: the same row base the detail lists (aggregate/explanatory rows out).
   if (entities.length && (basis.count || /1건 = 원천 1행|1행 = 1구역|문서명이 같은 행/u.test(rule))) {
-    let rows = entities.filter((row) => clean(attr(row, "레코드구분")) !== "집계" && ![row.name, attr(row, "속성1_레코드명")].some((name) => /^수집현황(?:\s*v[\d.]+)?(?:\s*분류)?$/u.test(clean(name)) || /^raw\s|OCR 재추출|스캔본/u.test(clean(name))));
+    // The same row roles the card builder and the detail apply (V142): 집계
+    // rows and per-element definitions (D-026's guarantee covers) stay out.
+    let rows = entities.filter((row) => recordRoleOf(row).role === "individual" && ![row.name, attr(row, "속성1_레코드명")].some((name) => /^수집현황(?:\s*v[\d.]+)?(?:\s*분류)?$/u.test(clean(name)) || /^raw\s|OCR 재추출|스캔본/u.test(clean(name))));
     if (/레코드구분=개별/u.test(rule)) rows = rows.filter((row) => clean(attr(row, "레코드구분")) === "개별");
     if (/현행 행만/u.test(rule)) rows = rows.filter((row) => Object.values(row.normalizedAttributes || {}).some((v) => clean(v) === "현행"));
     if (/1행 = 1구역/u.test(rule)) {

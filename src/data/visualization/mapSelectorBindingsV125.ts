@@ -45,7 +45,29 @@ type MapSelectorBindingV125 = {
   yearToPeriod?: Record<string, string>;
   allowedPeriods?: readonly string[];
   elementOnly?: boolean;
+  /**
+   * Filter fields the layer itself offers (A-023's 발전원 · 용량구간 · 출처).
+   * A selection on them is the layer's own, not an unsupported one; the
+   * notice "상세 분류 필터는 지원하지 않습니다" used to appear beside the very
+   * filters it denied (V142).
+   */
+  ownFilterFields?: readonly string[];
+  acceptedMeasures?: readonly string[];
+  /**
+   * The period the layer's values refer to, derived from a filter choice.
+   * A-023 dates its rows by source registry: WRI GPPD 2021 or OSM 2026; one
+   * fixed "2026" dated the 2021 rows wrongly (V142).
+   */
+  periodByFilter?: { field: string; periods: Record<string, string>; combined: string; defaultKey?: string };
 };
+
+/** A-023's reference year follows the source registry chosen on the map. */
+export const A023_SOURCE_PERIODS_V142 = { wri: "2021", osm: "2026", all: "2021·2026" } as const;
+
+export function powerPlantPeriodForSourceV142(sourceKey: string | null | undefined): string {
+  if (sourceKey === "wri" || sourceKey === "osm") return A023_SOURCE_PERIODS_V142[sourceKey];
+  return A023_SOURCE_PERIODS_V142.all;
+}
 
 export const A024_LINE_MEASURE_V125 = "measure-d30e19e20b62";
 
@@ -126,7 +148,15 @@ function identityYearToPeriodV125(
  * the V125 semantic shards. These are exact tuples, never fuzzy label matches.
  */
 const MAP_SELECTOR_BINDINGS_V125: MapSelectorBindingV125[] = [
-  { elementId: "A-023", mapVariable: "locations", fixedPeriod: "2026", elementOnly: true },
+  {
+    elementId: "A-023",
+    mapVariable: "locations",
+    fixedPeriod: "2026",
+    elementOnly: true,
+    ownFilterFields: ["fuelType", "capacityBand", "sourceKey"],
+    acceptedMeasures: ["measure-e5647010075d", "measure-abbef01dfb86"],
+    periodByFilter: { field: "sourceKey", periods: { wri: A023_SOURCE_PERIODS_V142.wri, osm: A023_SOURCE_PERIODS_V142.osm }, combined: A023_SOURCE_PERIODS_V142.all, defaultKey: "wri" },
+  },
   {
     elementId: "A-024",
     mapVariable: "all",
@@ -409,17 +439,21 @@ export function resolveMapSelectorBindingV125(
 
   const elementOnly = bindings.find((binding) => binding.elementOnly);
   if (elementOnly) {
+    const ownFields = new Set(elementOnly.ownFilterFields || []);
+    const derivedPeriod = elementOnly.periodByFilter
+      ? elementOnly.periodByFilter.periods[selection.dimensions[elementOnly.periodByFilter.field] || elementOnly.periodByFilter.defaultKey || ""] || elementOnly.periodByFilter.combined
+      : null;
+    const expectedPeriods = new Set([elementOnly.fixedPeriod, derivedPeriod].filter(Boolean));
     const hasUnsupportedFilter = Boolean(
-      selection.measure ||
+      (selection.measure && selection.measure !== ELEMENT_ONLY_MEASURES_V125[elementId] && !elementOnly.acceptedMeasures?.includes(selection.measure)) ||
         selection.sex ||
-        (selection.year !== null &&
-          String(selection.year) !== elementOnly.fixedPeriod) ||
-        (selection.period && selection.period !== elementOnly.fixedPeriod) ||
-        selectedDimensionEntriesV125(selection).length
+        (selection.year !== null && !expectedPeriods.has(String(selection.year)) && !(derivedPeriod && derivedPeriod.includes(String(selection.year)))) ||
+        (selection.period && !expectedPeriods.has(selection.period)) ||
+        selectedDimensionEntriesV125(selection).some(([key]) => !ownFields.has(key))
     );
     return {
       variable: elementOnly.mapVariable,
-      period: elementOnly.fixedPeriod || selection.period || yearPeriodV125(selection.year),
+      period: derivedPeriod || elementOnly.fixedPeriod || selection.period || yearPeriodV125(selection.year),
       status: "element-only",
       reason: hasUnsupportedFilter
         ? "이 공간 레이어는 요소 전체 위치만 제공하며 상세 분류 필터는 지원하지 않습니다."
@@ -501,13 +535,20 @@ export function dataFinderSelectorFromMapV125(
   const dimensions: Record<string, string> = {
     ...(binding?.dimensions || {}),
   };
+  // An explicit "all" on a filter that has a default (A-023's 출처 = 두 출처
+  // 함께) is a choice, and dropping it restored the default (V142).
   Object.entries(filterDimensions).forEach(([key, value]) => {
-    if (value && value !== "all") dimensions[key] = value;
+    if (value) dimensions[key] = value;
   });
-  const year = semanticYearForPeriodV125(binding, mapSelector.period);
-  const period = mapSelector.period && mapSelector.period !== "미표기"
-    ? mapSelector.period
+  const derivedPeriod = binding?.periodByFilter
+    ? binding.periodByFilter.periods[dimensions[binding.periodByFilter.field] || binding.periodByFilter.defaultKey || ""] || binding.periodByFilter.combined
     : null;
+  const year = derivedPeriod ? (/^\d{4}$/u.test(derivedPeriod) ? Number(derivedPeriod) : null) : semanticYearForPeriodV125(binding, mapSelector.period);
+  const period = derivedPeriod
+    ? derivedPeriod
+    : mapSelector.period && mapSelector.period !== "미표기"
+      ? mapSelector.period
+      : null;
   return {
     measure:
       binding?.semanticMeasure || ELEMENT_ONLY_MEASURES_V125[elementId] || null,

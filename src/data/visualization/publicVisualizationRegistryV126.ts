@@ -75,9 +75,19 @@ const PUBLIC_DEFAULT_MEASURE_KEYS_V127: Readonly<Record<string, string>> =
     // GDP 총액(명목 USD) - the home card leads with the total; the screen used
     // to open on 1인당 GDP, a different quantity in a different unit (V140)
     "A-003": "measure-82dc14f247b2",
+    // Direct entry should answer the dataset's question, not pick a rank or
+    // a text event merely because its measure sorts first (V144).
+    "A-014": "measure-87fffae7373e",
+    "B-010": "measure-f20de2f62bc7",
+    // Tax receipts are money. Percentage execution and per-litre rates remain
+    // separate selectable measures, never the default "revenue" headline.
+    "D-006": "measure-d4d5bb18840e",
     // GVI 취약성 지수 (current) - the screen opened on the 2020–2100 projection
     // while the reader's question is the present vulnerability (V140)
     "B-021": "measure-ab1a3ae58df4",
+    // 농업 용수 취수 비중(%, 1990–2023) - the screen is titled 농업 용수 비중
+    // and opened on 관개농업 용수생산성 (US$/m³), a different quantity (V142)
+    "B-024": "measure-357fd35f6277",
     // 집중형 태양광 계획용량 - the home card's technology; the screen opened
     // on 소수력, the first measure alphabetically (V140)
     "C-016": "measure-1f93f6946b11",

@@ -766,7 +766,7 @@ export const AUTHORITATIVE_ELEMENT_SEARCH_V75: AuthoritativeElementSearchItemV75
     },
     {
       elementId: "B-030",
-      displayTitle: "산림 이득(ha/yr)",
+      displayTitle: "산림 이득(2000–2020 누적 ha)",
       category: "B",
       categoryLabel: "기후·환경",
       dataGroup: "B.4.b.산림",

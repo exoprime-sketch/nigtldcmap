@@ -2581,9 +2581,9 @@ export const MAP_VISUAL_ENCODINGS_V116: MapVisualEncodingV116[] = [
   {
     layerId: "v116-element-b-030",
     elementId: "B-030",
-    dataMeaning: "산림 이득(ha/yr)",
+    dataMeaning: "산림 이득(2000–2020 누적 ha)",
     encodingRole: "base",
-    colorMeaning: "산림 이득(ha/yr)의 자원·기술 적용여건 수준",
+    colorMeaning: "산림 이득(2000–2020 누적 ha)의 자원·기술 적용여건 수준",
     sizeMeaning: "사용하지 않음",
     shapeMeaning: "사용하지 않음",
     borderMeaning: "사용하지 않음",
@@ -2595,7 +2595,7 @@ export const MAP_VISUAL_ENCODINGS_V116: MapVisualEncodingV116[] = [
       breaks: [],
       reason: "범위가 지표마다 달라 5분위 기반 상대분포를 사용",
     },
-    legendTitle: "산림 이득(ha/yr)",
+    legendTitle: "산림 이득(2000–2020 누적 ha)",
     legendItems: [
       {
         label: "가장 연한색",

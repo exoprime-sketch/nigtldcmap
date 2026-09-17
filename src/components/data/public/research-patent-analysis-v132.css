@@ -360,3 +360,9 @@
   font-size: 0.82rem;
   line-height: 1.55;
 }
+.rpa144-actions { display: flex; flex-wrap: wrap; gap: .5rem; margin: .75rem 0; }
+.rpa144-actions button { padding: .4rem .7rem; border: 1px solid #ccdcd8; border-radius: .5rem; background: white; color: #125b50; cursor: pointer; }
+.rpa144-actions button:focus-visible { outline: 2px solid #146c5a; outline-offset: 2px; }
+.rpa144-table { overflow-x: auto; }
+.rpa144-table table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+.rpa144-table th, .rpa144-table td { padding: .5rem; border-bottom: 1px solid #dce8e5; text-align: left; }

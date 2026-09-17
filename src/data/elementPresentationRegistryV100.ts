@@ -949,7 +949,7 @@ export const ELEMENT_PRESENTATION_SPECS_V100: ElementPresentationSpecV100[] = [
   {
     elementId: "B-030",
     category: "B",
-    titleKo: "산림 이득(ha/yr)",
+    titleKo: "산림 이득(2000–2020 누적 ha)",
     displayType: "geospatial",
     sourcePrimaryView: "forest_monitor",
     layoutFamily: "forest",

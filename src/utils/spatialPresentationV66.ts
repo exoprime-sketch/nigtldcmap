@@ -209,7 +209,7 @@ const DEFINITIONS: Record<string, SpatialPresentationDefinition> = {
     emptyDescription:
       "연간 산림 이득 공간자료가 연결되면 지역별 이득면적과 최근 추세를 제공합니다",
     layers: ["연간 산림 이득"],
-    columns: ["지역", "산림 이득(ha/yr)", "기간", "최근 추세", "기준", "출처"],
+    columns: ["지역", "산림 이득(2000–2020 누적 ha)", "기간", "최근 추세", "기준", "출처"],
   },
   "B-031": {
     family: "raster",

@@ -1,4 +1,5 @@
 import { publicScaledNumberV136_2 } from "../../../utils/publicNumberScaleV136_2";
+import { publicIndicatorSeriesV144 } from "../../../data/visualization/publicIndicatorCopyV144";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties, ReactNode } from "react";
 import type {
@@ -31,8 +32,9 @@ import {
   publicMetricLabelV136_2,
 } from "../../../data/visualization/publicCopyRegistryV126";
 import PublicEntityCardGridV131, { publicEntityStatedValuesV141 } from "../public/PublicEntityCardGridV131";
-import PublicPortfolioListV132 from "../public/PublicPortfolioListV132";
-import PublicPortfolioSummaryV132, {
+import { comparableStatedValuesV142 } from "../../../data/visualization/statedValueRoleV142";
+import PublicPortfolioWorkspaceV143 from "../public/PublicPortfolioWorkspaceV143";
+import {
   publicPortfolioRecordLabelV138,
   publicPortfolioSectionTitleV138,
 } from "../public/PublicPortfolioSummaryV132";
@@ -62,6 +64,8 @@ interface Props {
   elementTitle?: string;
   markEntityTableAsPublic?: boolean;
   showRawTable?: boolean;
+  /** Unit per indicator id, so entity rows can be classified before comparison (V142). */
+  indicatorUnits?: IndicatorUnitsV142;
 }
 
 const SERIES_PATTERNS = ["solid", "dashed", "dotted", "double"] as const;
@@ -95,6 +99,7 @@ export default function SemanticContractRendererV125({
   elementTitle,
   markEntityTableAsPublic = false,
   showRawTable = true,
+  indicatorUnits = {},
 }: Props) {
   const renderer = contract.primaryRenderer;
   const presentRows = rows.filter(isPresentRowV125);
@@ -172,7 +177,8 @@ export default function SemanticContractRendererV125({
             contract,
             countryNameKo,
             detailTemplate,
-            elementTitle
+            elementTitle,
+            indicatorUnits
           )}
         </>
       )}
@@ -303,13 +309,17 @@ function renderObservationPanelV125(
   }
 }
 
+/** Unit and unit family per indicator id, from the element's semantics (V142). */
+export type IndicatorUnitsV142 = Record<string, { unit: string | null; unitFamily: string | null }>;
+
 function renderEntityPanelV125(
   renderer: RendererV125,
   entities: VietnamEntityV124[],
   contract: ElementVisualizationContractV125,
   countryNameKo: string,
   detailTemplate?: string,
-  elementTitle?: string
+  elementTitle?: string,
+  indicatorUnits: IndicatorUnitsV142 = {}
 ) {
   if (entities.length === 0) return null;
   if (PUBLIC_PORTFOLIO_ELEMENTS_V132.has(contract.elementId)) {
@@ -368,6 +378,7 @@ function renderEntityPanelV125(
           countryNameKo={countryNameKo}
           detailTemplate={detailTemplate}
           elementTitle={elementTitle}
+          indicatorUnits={indicatorUnits}
         />
       );
   }
@@ -826,7 +837,7 @@ function TrendUnitV125({
   ).map(([key, values]) => ({
     key,
     label:
-      publicTextV126(values[0].displayLabel) ||
+      publicTextV126(publicIndicatorSeriesV144(values[0])) ||
       values[0].semanticMeasure.labelKo,
     rows: values.sort((left, right) => (left.year || 0) - (right.year || 0)),
   }));
@@ -1031,18 +1042,29 @@ function CategoryComparisonV125({ rows }: { rows: NumericRowV125[] }) {
     : "항목별 값";
   return (
     <VisualizationFrameV125 eyebrow="항목" title={frameTitle}>
-      {groupByUnitV125(rows).map(({ unit, rows: unitRows }) => {
-        const scale = barScaleV137(unitRows.map((row) => row.value));
-        return (
-          <article className="sv125-contract-axis" key={unit || "no-unit"}>
-            <h5>단위: <PublicTermTextV134 text={unit || "미기재"} /></h5>
+      {groupByUnitV125(rows).map(({ unit, rows: unitRows }) => <CategoryComparisonUnitV143 key={unit || "no-unit"} unit={unit} rows={unitRows} barLabel={barLabel} title={frameTitle} />)}
+    </VisualizationFrameV125>
+  );
+}
+
+function CategoryComparisonUnitV143({ rows, unit, barLabel, title }: { rows: NumericRowV125[]; unit: string; barLabel: (row: NumericRowV125) => string; title: string }) {
+  const [order, setOrder] = useState("source");
+  const [expanded, setExpanded] = useState(false);
+  const ordered = order === "source" ? rows : [...rows].sort((a, b) => order === "desc" ? b.value - a.value : a.value - b.value);
+  const shown = expanded ? ordered : ordered.slice(0, 12);
+  const scale = barScaleV137(rows.map((row) => row.value));
+  return <article className="sv125-contract-axis" data-testid="comparison-workspace-v143">
+            <div className="sv143-comparison-tools">
+              <h5>단위: <PublicTermTextV134 text={unit || "미기재"} /></h5>
+              {rows.length > 1 && <label>정렬 <select aria-label={`${title} ${unit} 정렬`} value={order} onChange={(event) => setOrder(event.target.value)}><option value="source">자료 순서</option><option value="desc">높은 값부터</option><option value="asc">낮은 값부터</option></select></label>}
+            </div>
             {scale.signed && (
               <p className="sv125-contract-help">
                 0을 기준으로 왼쪽은 음수, 오른쪽은 양수입니다. 막대 길이는 0에서 떨어진 크기입니다.
               </p>
             )}
             <div className="sv125-contract-bars" role="list">
-              {unitRows.map((row, index) => {
+              {shown.map((row, index) => {
                 const width = scale.spanFor(row.value);
                 const offset = scale.signed
                   ? row.value < 0
@@ -1080,17 +1102,14 @@ function CategoryComparisonV125({ rows }: { rows: NumericRowV125[] }) {
                 );
               })}
             </div>
+            {rows.length > 12 && <div className="sv143-comparison-tools"><span>{shown.length} / {rows.length}개 항목 표시</span><button type="button" onClick={() => setExpanded((value) => !value)}>{expanded ? "12개만 보기" : `전체 ${rows.length}개 보기`}</button></div>}
             <ChartRowsTableV141
-              rows={unitRows.map((row) => ({ recordId: row.recordId, label: barLabel(row), time: String(row.year || row.period || ""), value: row.value }))}
+              rows={ordered.map((row) => ({ recordId: row.recordId, label: barLabel(row), time: String(row.year || row.period || ""), value: row.value }))}
               unit={publicTextV126(unit) || ""}
-              label={frameTitle}
+              label={title}
               testId="comparison-chart-table-v141"
             />
-          </article>
-        );
-      })}
-    </VisualizationFrameV125>
-  );
+          </article>;
 }
 
 function MetricCardsV125({
@@ -1557,22 +1576,14 @@ function PortfolioEntitiesV125({
   elementTitle?: string;
 }) {
   return (
-    <VisualizationFrameV125
-      eyebrow="사업·재원"
-      title={publicPortfolioSectionTitleV138(elementId)}
-    >
-      <PublicPortfolioSummaryV132
-        elementId={elementId}
-        entities={entities}
-        detailTemplate={detailTemplate}
-      />
-      <PublicPortfolioListV132
+    <section aria-label={publicPortfolioSectionTitleV138(elementId)}>
+      <PublicPortfolioWorkspaceV143 key={elementId}
         elementId={elementId}
         entities={entities}
         detailTemplate={detailTemplate}
         elementTitle={elementTitle}
       />
-    </VisualizationFrameV125>
+    </section>
   );
 }
 
@@ -1594,6 +1605,60 @@ function isNotInstalledEntityV138(entity: VietnamEntityV124): boolean {
   return verdictFields.some((value) => NOT_INSTALLED_PATTERN.test(String(value ?? "")));
 }
 
+/**
+ * A directory row is not always an organisation. E-003 delivers eight contact
+ * persons at three organisations (VDB 2 · BIDV 2 · MOF 4), and the heading
+ * counted "기관 디렉터리 · 8곳". Organisations are counted by their name
+ * column and contacts by their person column; the two are never one number
+ * (V142).
+ */
+const DIRECTORY_ORGANISATION_KEYS_V142 = ["orgName", "organizationName", "field_7b638c0f"];
+const DIRECTORY_PERSON_KEYS_V142 = ["focalPointName", "personName", "contactName", "field_8497efd8"];
+
+function directoryOrganisationV142(entity: VietnamEntityV124): string {
+  const attributes = entity.normalizedAttributes || {};
+  for (const key of DIRECTORY_ORGANISATION_KEYS_V142) {
+    const value = publicTextV126(attributes[key]);
+    if (value) return value;
+  }
+  return publicTextV126(entity.name) || entity.recordId;
+}
+
+function directoryPersonV142(entity: VietnamEntityV124): string | null {
+  const attributes = entity.normalizedAttributes || {};
+  for (const key of DIRECTORY_PERSON_KEYS_V142) {
+    const value = publicTextV126(attributes[key]);
+    if (value) return value;
+  }
+  return null;
+}
+
+export function directoryCountsV142(entities: VietnamEntityV124[]): {
+  organisations: string[];
+  contacts: number;
+  byOrganisation: Array<{ organisation: string; contacts: number; roles: string[] }>;
+} {
+  const byOrganisation = new Map<string, { contacts: number; roles: Set<string> }>();
+  let contacts = 0;
+  entities.forEach((entity) => {
+    const organisation = directoryOrganisationV142(entity);
+    const person = directoryPersonV142(entity);
+    const role = publicTextV126((entity.normalizedAttributes || {})["role"]) || "";
+    const entry = byOrganisation.get(organisation) || { contacts: 0, roles: new Set<string>() };
+    if (person) {
+      entry.contacts += 1;
+      contacts += 1;
+    }
+    if (role) entry.roles.add(role);
+    byOrganisation.set(organisation, entry);
+  });
+  return {
+    organisations: [...byOrganisation.keys()],
+    contacts,
+    byOrganisation: [...byOrganisation.entries()].map(([organisation, entry]) => ({ organisation, contacts: entry.contacts, roles: [...entry.roles] })),
+  };
+}
+
 function DirectoryEntitiesV125({
   entities,
   detailTemplate,
@@ -1605,15 +1670,42 @@ function DirectoryEntitiesV125({
 }) {
   const installed = entities.filter((entity) => !isNotInstalledEntityV138(entity));
   const notInstalled = entities.filter(isNotInstalledEntityV138);
+  const counts = directoryCountsV142(installed.length ? installed : entities);
+  // Rows are contact persons when they outnumber the organisations they belong to.
+  const contactRows = counts.contacts > counts.organisations.length;
+  const title = notInstalled.length
+    ? `기관 디렉터리 · 현지 사무소 ${installed.length.toLocaleString("ko-KR")}곳`
+    : contactRows
+      ? `기관 디렉터리 · 기관 ${counts.organisations.length.toLocaleString("ko-KR")}곳 · 담당자 ${counts.contacts.toLocaleString("ko-KR")}명`
+      : `기관 디렉터리 · ${counts.organisations.length.toLocaleString("ko-KR")}곳`;
   return (
     <VisualizationFrameV125
       eyebrow="기관·연락망"
-      title={
-        notInstalled.length
-          ? `기관 디렉터리 · 현지 사무소 ${installed.length.toLocaleString("ko-KR")}곳`
-          : `기관 디렉터리 · ${entities.length.toLocaleString("ko-KR")}곳`
-      }
+      title={title}
     >
+      {contactRows && (
+        <div className="sv125-matrix-wrap" data-testid="directory-organisations-v142" data-organisation-count={counts.organisations.length} data-contact-count={counts.contacts}>
+          <table>
+            <caption>기관별 담당자 · 기관 {counts.organisations.length.toLocaleString("ko-KR")}곳 · 담당자 정보 {counts.contacts.toLocaleString("ko-KR")}건 (연락처 행은 기관·사무소 수가 아님)</caption>
+            <thead>
+              <tr>
+                <th scope="col">기관</th>
+                <th scope="col">역할</th>
+                <th scope="col">담당자 수</th>
+              </tr>
+            </thead>
+            <tbody>
+              {counts.byOrganisation.map((row) => (
+                <tr key={row.organisation}>
+                  <th scope="row"><PublicTermTextV134 text={row.organisation} /></th>
+                  <td><PublicTermTextV134 text={row.roles.join(" · ") || "—"} /></td>
+                  <td>{row.contacts.toLocaleString("ko-KR")}명</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
       <PublicEntityCardGridV131
         entities={installed.length ? installed : entities}
         template="directory"
@@ -1762,31 +1854,38 @@ function GenericEntitiesV125({
   countryNameKo,
   detailTemplate,
   elementTitle,
+  indicatorUnits = {},
 }: {
   entities: VietnamEntityV124[];
   countryNameKo: string;
   detailTemplate?: string;
   elementTitle?: string;
+  indicatorUnits?: IndicatorUnitsV142;
 }) {
   // A register whose rows each state one figure in one unit is compared
   // before it is listed (B-025's nine basin areas): the card promised the
   // comparison, the screen listed cards (V141).
   // The national aggregate row is a different thing from the basins it sums
   // over; it is named below the comparison, not drawn as the longest bar.
+  // Only measurements are compared, and only with each other: one measure,
+  // one unit, one period. C-011's phone numbers and notice dates used to be
+  // drawn beside its homicide rate under "단위 미기재" (V142).
   const stated = publicEntityStatedValuesV141(
     entities.filter((entity) => !/national/iu.test(entity.indicatorId || "") && !/^(?:전국|National)/u.test(String(entity.name || ""))),
     "generic",
     detailTemplate,
-    elementTitle || countryNameKo
+    elementTitle || countryNameKo,
+    indicatorUnits
   );
-  const units = new Set(stated.map((item) => item.unit));
-  const comparable = stated.length >= 3 && units.size === 1 ? [...stated].sort((a, b) => b.value - a.value) : [];
+  const measured = stated.filter((item): item is typeof item & { value: number } => item.role === "measure" && item.value !== null);
+  const comparable = comparableStatedValuesV142(measured).sort((a, b) => b.value - a.value);
   const comparableMax = Math.max(...comparable.map((item) => Math.abs(item.value)), 1e-9);
+  const excludedRoles = stated.filter((item) => item.role !== "measure").length;
   return (
     <>
     {comparable.length > 0 && (
-      <VisualizationFrameV125 eyebrow="비교" title={`항목별 값 비교 · ${comparable.length.toLocaleString("ko-KR")}건 · ${comparable[0].unit || "단위 미기재"}`}>
-        <ol className="sv125-group-counts" data-testid="entity-value-comparison-v141">
+      <VisualizationFrameV125 eyebrow="비교" title={`항목별 값 비교 · ${comparable.length.toLocaleString("ko-KR")}건 · ${comparable[0].unit}`}>
+        <ol className="sv125-group-counts" data-testid="entity-value-comparison-v141" data-compared-measure={comparable[0].measureKey || comparable[0].unit}>
           {comparable.slice(0, 20).map((item) => (
             <li key={item.recordId}>
               <span><PublicTermTextV134 text={item.title} /></span>
@@ -1795,7 +1894,9 @@ function GenericEntitiesV125({
             </li>
           ))}
         </ol>
-        <p className="sv125-contract-help">각 행이 밝힌 값을 같은 단위에서 비교합니다. 전국 집계 행은 비교에서 제외하고 아래 목록에 그대로 둡니다.</p>
+        <p className="sv125-contract-help">
+          같은 측정항목을 같은 단위{comparable[0].period ? `·같은 시점(${comparable[0].period})` : ""}에서 비교합니다. 전국 집계 행{excludedRoles > 0 ? `과 측정값이 아닌 행(연락처·날짜·등급·링크 ${excludedRoles.toLocaleString("ko-KR")}건)` : ""}은 비교에서 제외하고 아래 목록에 그대로 둡니다.
+        </p>
       </VisualizationFrameV125>
     )}
     <VisualizationFrameV125

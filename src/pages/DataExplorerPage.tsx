@@ -871,9 +871,9 @@ export default function DataExplorerPage({
                 <dd>
                   <PublicTermTextV134
                     text={
-                      item.sourceOrganizations.length > 0
+                      summary?.provider || (item.sourceOrganizations.length > 0
                         ? item.sourceOrganizations.slice(0, 2).join(" · ")
-                        : "—"
+                        : "—")
                     }
                   />
                 </dd>

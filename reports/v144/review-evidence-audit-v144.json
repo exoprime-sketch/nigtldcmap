@@ -1,0 +1,44 @@
+{
+  "generatedAt": "2026-09-17T01:58:52.438Z",
+  "status": "PASS",
+  "scope": "Browser smoke evidence plus A006/E008 independent source checks; NOT 152-element analytical acceptance",
+  "buildScope": {
+    "fullRouteAndFirstSelectorSweep": "main.f5241bad.js",
+    "finalLocalBuild": "main.658256a0.js",
+    "finalDelta": "E008 카드 기간·제공 출처·원자료 기술분류, 기관명 표현과 전체 목록; Finder가 요약자산의 출처를 표시",
+    "qualification": "전수 경로 증거는 f5241bad 기준. 최종 변경은 E008 실제 카드·표·목록으로 추가 검증. 모든 데이터의 분석 적합성 완료를 뜻하지 않음"
+  },
+  "browserEvidenceSha256": "5c9a466297cd53840e7a9d5f00e83d31e5a8edbde0e6d1c76b74b6b2baa76c81",
+  "passed": 7,
+  "total": 7,
+  "checks": [
+    {
+      "name": "152 distinct routes ready",
+      "status": "PASS"
+    },
+    {
+      "name": "118 first-selector smoke checks changed the displayed content",
+      "status": "PASS"
+    },
+    {
+      "name": "30 responsive smoke cases have no horizontal page overflow",
+      "status": "PASS"
+    },
+    {
+      "name": "A006 four displayed selections match exact downloaded observations",
+      "status": "PASS"
+    },
+    {
+      "name": "E008 actual card preserves document count, period and source scope",
+      "status": "PASS"
+    },
+    {
+      "name": "E008 both annual browser tables reconcile to downloaded document years",
+      "status": "PASS"
+    },
+    {
+      "name": "E008 actual patent/year and source-field list filters agree with source rows",
+      "status": "PASS"
+    }
+  ]
+}

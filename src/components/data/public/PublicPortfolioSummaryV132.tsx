@@ -4,7 +4,10 @@ import { publicTextV126 } from "../../../data/visualization/publicFieldPolicyV12
 import { isNumericCodeListV136_2 } from "../../../data/visualization/publicCategoryLabelV136_2";
 import { publicCategoryRowsV136_3 } from "../../../utils/publicCategoryGroupingV136_3";
 import { reviewedEntityAttributesV132 } from "../../../data/visualization/publicEntityFieldPolicyV132";
+import { publicRecordRoleV142 } from "../../../data/visualization/publicRecordRoleV142";
+import type { PublicRecordRoleV142 } from "../../../data/visualization/publicRecordRoleV142";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
+import PublicCountDistributionV143 from "./PublicCountDistributionV143";
 
 import { publicScaledNumberV136_2 } from "../../../utils/publicNumberScaleV136_2";
 import "./public-portfolio-summary-v132.css";
@@ -96,6 +99,8 @@ const COMMON_AMOUNT_KEYS_V132 = [
  */
 const PORTFOLIO_CONFIG_V132: Record<string, PortfolioConfigV132> = {
   "D-012": {
+    recordLabel: "진출 사례",
+    sectionTitle: "기업 국적·기술분야별 진출 사례",
     amountKeys: [],
     yearKeys: ["entryYear", "entryTiming"],
     yearLabel: "진출 확인연도",
@@ -217,6 +222,8 @@ const PORTFOLIO_CONFIG_V132: Record<string, PortfolioConfigV132> = {
     categoryKeys: ["sector", "status", "implementingEntity"],
   },
   "D-019": {
+    recordLabel: "기술지원 요청",
+    sectionTitle: "기술지원 요청과 진행 현황",
     amountKeys: [],
     yearKeys: ["submissionDate", "referenceYear"],
     yearLabel: "요청 제출연도",
@@ -266,6 +273,8 @@ const PORTFOLIO_CONFIG_V132: Record<string, PortfolioConfigV132> = {
     categoryKeys: ["fund", "sector", "status", "implementingEntity"],
   },
   "D-024": {
+    recordLabel: "투자 거래",
+    sectionTitle: "투자 거래 규모와 구성",
     amountKeys: [
       { key: "financeAmountUsd", currency: "USD" },
       { key: "financeAmountText", currency: "USD" },
@@ -288,6 +297,10 @@ const PORTFOLIO_CONFIG_V132: Record<string, PortfolioConfigV132> = {
       { key: "financeAmountText", currency: "USD" },
     ],
     amountLabel: "보증금액 합계",
+    // Nine MIGA guarantees; the five cover descriptions are definitions and
+    // are read out of the count by publicRecordRoleV142 (V142).
+    recordLabel: "보증사업",
+    sectionTitle: "보증사업 규모와 구성",
     yearKeys: ["fiscalYear", "approvalDate"],
     yearLabel: "회계연도",
     categoryKeys: ["portfolioCategory", "guaranteeType", "status"],
@@ -326,6 +339,11 @@ export default function PublicPortfolioSummaryV132({
             {`원천이 집계·설명 행으로 표시한 ${analysis.aggregateCount.toLocaleString("ko-KR")}건은 개별 ${config?.recordLabel || "사업"}이 아니므로 합계와 건수에서 제외했습니다. 해당 행은 목록과 상세, 다운로드에서 그대로 확인할 수 있습니다.`}
           </p>
         )}
+        {analysis.definitionCount > 0 && (
+          <p data-portfolio-note="definition-excluded" data-definition-count={analysis.definitionCount}>
+            {`원천 ${analysis.sourceRowCount.toLocaleString("ko-KR")}행 중 ${analysis.definitionLabel || "분류 안내"} ${analysis.definitionCount.toLocaleString("ko-KR")}건은 ${config?.recordLabel || "사업"}이 아니라 분류의 설명이므로 ${config?.recordLabel || "사업"} 수·금액·연도·분야 집계에서 제외하고, 아래 목록의 '${analysis.definitionLabel || "분류 안내"}'에 그대로 둡니다.`}
+          </p>
+        )}
       </header>
       <div className="pps132-kpis">
         {identity.identityCount !== null && (
@@ -360,20 +378,21 @@ export default function PublicPortfolioSummaryV132({
       </div>
       <div className="pps132-distributions">
         {analysis.years.length > 0 && (
-          <DistributionV132
+          <PublicCountDistributionV143
             title={`연도별 ${config?.recordLabel || "사업"} 수`}
             rows={analysis.years}
             testId="portfolio-year-trend-v132"
+            chronological
           />
         )}
         {analysis.categories.length > 0 && (
-          <DistributionV132 title="주요 분야·기금 구성" rows={analysis.categories.slice(0, 8)} />
+          <PublicCountDistributionV143 title="주요 분야·기금 구성" rows={analysis.categories} />
         )}
         {analysis.categoriesByKey
           .filter((entry) => entry.rows.map((row) => `${row.label}:${row.value}`).join("|") !== analysis.categories.map((row) => `${row.label}:${row.value}`).join("|"))
           .slice(0, 3)
           .map((entry) => (
-            <DistributionV132 key={entry.key} title={`${entry.label}별 ${config?.recordLabel || "사업"} 수`} rows={entry.rows.slice(0, 8)} testId={`portfolio-category-${entry.key}-v141`} />
+            <PublicCountDistributionV143 key={entry.key} title={`${entry.label}별 ${config?.recordLabel || "사업"} 수`} rows={entry.rows} testId={`portfolio-category-${entry.key}-v141`} />
           ))}
       </div>
     </section>
@@ -396,7 +415,7 @@ function portfolioIdentityV138(
   const statusCounts = new Map<string, number>();
   entities.forEach((entity) => {
     const attrs = reviewedEntityAttributesV132(entity, templates) as Record<string, unknown>;
-    if (publicTextV126(attrs.recordScope) === "집계") return;
+    if (publicRecordRoleV142(entity).role !== "individual") return;
     if (config.identityKey) {
       const raw =
         publicTextV126(attrs[config.identityKey]) ||
@@ -438,11 +457,13 @@ function portfolioAnalysisV132(
   // one of D-023's holds a project count (149) in the amount column. They stay
   // in the list, the detail view and the download; they are only kept out of the
   // sums, the counts and the distributions.
-  const individual = entities.filter(
-    (entity) =>
-      publicPortfolioFacetV132(elementId, entity, detailTemplate).recordScope !== "집계"
-  );
-  const aggregateCount = entities.length - individual.length;
+  // A row's role (individual / aggregate / definition) is read once, under
+  // the per-element rule; D-026's five product descriptions are definitions.
+  const roles = entities.map((entity) => publicRecordRoleV142(entity));
+  const individual = entities.filter((_, index) => roles[index].role === "individual");
+  const aggregateCount = roles.filter((role) => role.role === "aggregate").length;
+  const definitionCount = roles.filter((role) => role.role === "definition").length;
+  const definitionLabel = roles.find((role) => role.role === "definition")?.label || null;
 
   individual.forEach((entity) => {
     const facet = publicPortfolioFacetV132(elementId, entity, detailTemplate);
@@ -457,7 +478,7 @@ function portfolioAnalysisV132(
     }
     (PORTFOLIO_CONFIG_V132[elementId]?.categoryKeys || []).forEach((key) => {
       const value = publicTextV126(facet.attributes?.[key]);
-      if (!value || isNumericCodeListV136_2(value)) return;
+      if (!value || isNumericCodeListV136_2(value) || COMPILER_REMARK_VALUE_V142.test(value)) return;
       const bucket = categoriesByKey.get(key) || new Map<string, number>();
       bucket.set(value, (bucket.get(value) || 0) + 1);
       categoriesByKey.set(key, bucket);
@@ -477,18 +498,27 @@ function portfolioAnalysisV132(
   return {
     individualCount: individual.length,
     aggregateCount,
+    definitionCount,
+    definitionLabel,
+    sourceRowCount: entities.length,
     years: yearRows,
     categories: categoryRowsV136_3(categories),
-    categoriesByKey: Array.from(categoriesByKey, ([key, counts]) => ({ key, label: PORTFOLIO_CATEGORY_KEY_LABELS_V141[key] || key, rows: categoryRowsV136_3(counts) })).filter((entry) => entry.rows.length >= 2),
+    categoriesByKey: Array.from(categoriesByKey, ([key, counts]) => ({ key, label: portfolioCategoryKeyLabelV142(elementId, key), rows: categoryRowsV136_3(counts) }))
+      .filter((entry): entry is { key: string; label: string; rows: CountRowV132[] } => entry.label !== null && entry.rows.length >= 2),
     amounts: Array.from(amounts, ([currency, value]) => ({ currency, ...value })),
     yearRange: parsedYears.length
-      ? `${Math.min(...parsedYears)}–${Math.max(...parsedYears)}`
+      ? (Math.min(...parsedYears) === Math.max(...parsedYears)
+        ? String(Math.min(...parsedYears))
+        : `${Math.min(...parsedYears)}–${Math.max(...parsedYears)}`)
       : null,
   };
 }
 
 export type PublicPortfolioFacetV132 = {
   recordScope: string | null;
+  /** individual / aggregate / definition, with the reader-facing label of a non-individual role (V142). */
+  recordRole: PublicRecordRoleV142;
+  recordRoleLabel: string | null;
   year: number | null;
   category: string | null;
   amount: { currency: string; amount: number } | null;
@@ -547,8 +577,11 @@ export function publicPortfolioFacetV132(
     .map((value) => publicTextV126(value))
     .filter((value): value is string => Boolean(value))
     .join(" ");
+  const role = publicRecordRoleV142(entity);
   return {
     recordScope: publicTextV126(attributes.recordScope) || null,
+    recordRole: role.role,
+    recordRoleLabel: role.label,
     year,
     category,
     amount,
@@ -581,8 +614,19 @@ function compactCategoryV132(value: string): string {
   return normalized.length > 54 ? `${normalized.slice(0, 52).trim()}…` : normalized;
 }
 
-/** Composition bars, keyed by source value and labelled for the reader. */
-/** Reader-facing names for the reviewed category keys. */
+/**
+ * Reader-facing names for the reviewed category keys (V142).
+ *
+ * Seven finance screens headed a distribution with the key itself
+ * ("implementingEntity별 사업 수", "guaranteeType별 사업 수") because the
+ * dictionary had no entry and the code fell back to the key (V141). The
+ * dictionary now names every key an element groups by, per element where the
+ * same key carries a different role: D-018's implementing entity is the
+ * Adaptation Fund's IE, D-021's is the executing partner of an MDB activity,
+ * and D-023's is the fund's accredited or GEF agency. A key without a name is
+ * not shown under its key; it is dropped and reported by
+ * unlabelledPortfolioCategoryKeysV142 for the audit.
+ */
 const PORTFOLIO_CATEGORY_KEY_LABELS_V141: Readonly<Record<string, string>> = Object.freeze({
   portfolioCategory: "분야(DAC)",
   aidType: "원조 유형",
@@ -602,7 +646,49 @@ const PORTFOLIO_CATEGORY_KEY_LABELS_V141: Readonly<Record<string, string>> = Obj
   actorType: "행위자 유형",
   registry: "등재 출처",
   scopeValue: "대상 범위",
+  // 공여기관: the organisation reporting the activity to IATI (D-021, D-022).
+  donor: "공여기관",
+  // 실행기관: the partner executing an activity (D-021 실행기관 column).
+  implementingEntity: "실행기관",
+  // 인가기관(AE): the GCF accredited entity that channels the funding (D-020).
+  accreditedEntity: "인가기관(AE)",
+  // 투자_유형: loan or grant, the instrument (D-022).
+  financeType: "투자 유형(차관·무상)",
+  // Rio_Marker: the OECD DAC climate policy marker the reporter assigned.
+  rioMarker: "리우 마커(기후 정책마커)",
+  // 투자_라운드: Seed, Series A … (D-024).
+  fundingRound: "투자 라운드",
+  // 보증_유형: MIGA's covers combined on the guarantee (D-026).
+  guaranteeType: "보증 유형",
 });
+
+/** Where the same key names a different role on one element. */
+const PORTFOLIO_CATEGORY_KEY_LABELS_BY_ELEMENT_V142: Readonly<Record<string, Readonly<Record<string, string>>>> = Object.freeze({
+  // This reviewed alias is sourced from 국적, not a destination country.
+  "D-012": { entryCountry: "기업 국적" },
+  // 실행기관_IE: the Adaptation Fund's implementing entity (MIE/NIE/RIE).
+  "D-018": { implementingEntity: "실행기관(IE · 다자/국가/지역)" },
+  // 인가기관_Agency: GCF accredited entity, GEF agency, AF implementing entity or CIF MDB.
+  "D-023": { implementingEntity: "인가·집행기관(AE/Agency)" },
+});
+
+export function portfolioCategoryKeyLabelV142(elementId: string, key: string): string | null {
+  return PORTFOLIO_CATEGORY_KEY_LABELS_BY_ELEMENT_V142[elementId]?.[key] || PORTFOLIO_CATEGORY_KEY_LABELS_V141[key] || null;
+}
+
+/** Every (element, key) pair a portfolio groups by that the dictionary cannot name. The audit fails on any. */
+export function unlabelledPortfolioCategoryKeysV142(): Array<{ elementId: string; key: string }> {
+  return Object.entries(PORTFOLIO_CONFIG_V132).flatMap(([elementId, config]) =>
+    config.categoryKeys.filter((key) => !portfolioCategoryKeyLabelV142(elementId, key)).map((key) => ({ elementId, key }))
+  );
+}
+
+/**
+ * A value that is the compiler's remark ("참여기관 문자열에 쉼표가 포함되어
+ * 역할 정렬 불가 — 원문 확인 필요") is not a category; the row counts as
+ * unlabelled for that key.
+ */
+const COMPILER_REMARK_VALUE_V142 = /원문 확인 필요|정렬 불가|검토 필요|확인 중$/u;
 
 function categoryRowsV136_3(counts: Map<string, number>): CountRowV132[] {
   return publicCategoryRowsV136_3(counts, compactCategoryV132).map((row) => ({
@@ -616,35 +702,5 @@ function mapToRowsV132(values: Map<string, number>, chronological: boolean): Cou
     chronological
       ? Number(left.label) - Number(right.label)
       : right.value - left.value || left.label.localeCompare(right.label, "ko")
-  );
-}
-
-function DistributionV132({
-  title,
-  rows,
-  testId,
-}: {
-  title: string;
-  rows: CountRowV132[];
-  testId?: string;
-}) {
-  const maximum = Math.max(1, ...rows.map((row) => row.value));
-  return (
-    <section
-      className="pps132-distribution"
-      data-portfolio-distribution="true"
-      data-testid={testId}
-    >
-      <h5>{title}</h5>
-      <ul>
-        {rows.map((row) => (
-          <li key={row.label} tabIndex={0} aria-label={`${row.label} ${row.value}건`}>
-            <span title={row.label}><PublicTermTextV134 text={row.label} /></span>
-            <i aria-hidden="true"><b style={{ width: `${Math.max(4, (row.value / maximum) * 100)}%` }} /></i>
-            <strong>{row.value.toLocaleString("ko-KR")}건</strong>
-          </li>
-        ))}
-      </ul>
-    </section>
   );
 }

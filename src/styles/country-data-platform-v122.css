@@ -97,6 +97,25 @@
   font-weight: 750;
 }
 
+/* V142: a value the field derives rather than lets the reader choose (A-023's year by source). */
+.cdp-field > strong[data-period] {
+  display: block;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--cdp-line-strong);
+  border-radius: 10px;
+  background: #f4f8f6;
+  font-size: 0.94rem;
+}
+
+.cdp-field__hint {
+  display: block;
+  margin-top: 4px;
+  color: #5b6b66;
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
 .cdp-input,
 .cdp-select {
   width: 100%;

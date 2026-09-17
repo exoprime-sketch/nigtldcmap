@@ -21,9 +21,32 @@
 import { readFileSync, readdirSync } from "node:fs";
 import { gunzipSync } from "node:zlib";
 import { resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 
 export const TOTAL_LIKE = /(^|[\s·(])(총액|총계|합계|전체|전국|총량|total|all|overall)([\s·()]|$)/iu;
 export const readJson = (path) => JSON.parse(readFileSync(path, "utf8"));
+
+/**
+ * What a delivered row is: individual / aggregate / definition (V142). The
+ * same JSON rules the detail screen reads (src/data/visualization/
+ * publicRecordRoleV142.ts), so the card, the summary, the list and the QA
+ * exclude the same rows. D-026's five guarantee-cover descriptions are
+ * definitions, not guarantees.
+ */
+const RECORD_ROLE_RULES = readJson(resolve(fileURLToPath(new URL("../../src/data/visualization/publicRecordRoleRulesV142.json", import.meta.url)))).rules;
+const isEmptyValue = (value) => value === null || value === undefined || String(value).trim() === "";
+export function recordRoleOf(row) {
+  const attributes = row.normalizedAttributes || {};
+  if (text(attributes["레코드구분"]) === "집계") return { role: "aggregate", label: "집계·설명 행" };
+  const rule = RECORD_ROLE_RULES.find((candidate) => candidate.elementId === row.elementId);
+  if (rule) {
+    const { fieldIn, allEmpty } = rule.when;
+    const inSet = !fieldIn || fieldIn.values.includes(text(attributes[fieldIn.field]));
+    const empty = !allEmpty || allEmpty.every((field) => isEmptyValue(attributes[field]));
+    if (inSet && empty) return { role: rule.role, label: rule.label };
+  }
+  return { role: "individual", label: null };
+}
 
 export function loadPacks(dataRoot) {
   const index = readJson(resolve(dataRoot, "packs/bundle-index-v124.json"));

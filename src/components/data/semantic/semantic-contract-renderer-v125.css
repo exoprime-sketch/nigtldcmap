@@ -4,6 +4,12 @@
   min-width: 0;
 }
 
+.sv143-comparison-tools { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: .82rem; color: #4c685d; }
+.sv143-comparison-tools h5 { margin: 0; }
+.sv143-comparison-tools select, .sv143-comparison-tools button { padding: 8px 10px; border: 1px solid #bed2c9; border-radius: 8px; color: #174d39; background: white; font: inherit; }
+.sv143-comparison-tools button { cursor: pointer; }
+.sv143-comparison-tools select:focus-visible, .sv143-comparison-tools button:focus-visible { outline: 3px solid #218273; outline-offset: 2px; }
+
 .sv125-contract-renderer *,
 .sv125-contract-renderer *::before,
 .sv125-contract-renderer *::after {
@@ -705,3 +711,4 @@
 .sv125-group-counts strong {
   font-variant-numeric: tabular-nums;
 }
+.sv125-controls:empty { display: none; }

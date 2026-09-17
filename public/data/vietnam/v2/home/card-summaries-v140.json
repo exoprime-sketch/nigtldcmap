@@ -1,7 +1,7 @@
 {
  "schemaVersion": "v140-card-summaries-1",
  "dataSnapshot": "2026-08-27T00:00:00Z",
- "generatedAt": "2026-09-16T07:40:38.636Z",
+ "generatedAt": "2026-09-17T01:48:58.242Z",
  "generatedFrom": {
   "bundleIndex": "packs/bundle-index-v124.json",
   "semantics": "semantic/element-visualization-contracts-v125.json",
@@ -218,7 +218,7 @@
    "title": "빈곤율; 극빈곤율",
    "headline": {
     "value": "4.2 %",
-    "label": "빈곤율 · 국가빈곤선 · 국가 빈곤선 이하 인구 비율 · 2022년"
+    "label": "빈곤율 · 국가빈곤선 · 2022년"
    },
    "period": "1992–2022년",
    "selection": {
@@ -406,7 +406,7 @@
    "title": "실업률; 청년실업률",
    "headline": {
     "value": "1.52 %",
-    "label": "전체 실업률 · ILO 모델추정 · 2025년"
+    "label": "전체 실업률 · ILO 추정치 · 2025년"
    },
    "period": "1991–2025년",
    "selection": {
@@ -604,7 +604,7 @@
    "title": "인구[총인구, 도시화율]",
    "headline": {
     "value": "1.02억 명",
-    "label": "총인구 · 연중 거주 인구 · 2025년"
+    "label": "총인구 · 2025년"
    },
    "period": "1960–2025년",
    "selection": {
@@ -922,7 +922,7 @@
    "title": "지니계수",
    "headline": {
     "value": "36.1 지수",
-    "label": "지니계수 · 소비지출 기준 소득분배 불평등도 · 2022년"
+    "label": "지니계수 · 소비지출 기준 · 2022년"
    },
    "period": "1992–2022년",
    "selection": {
@@ -1360,7 +1360,7 @@
    "title": "총 GHG 배출량(LULUCF 제외)",
    "headline": {
     "value": "584 Mt CO2eq",
-    "label": "총 GHG 배출량 · LULUCF 제외 · 국가 전체 온실가스 총배출량 · 2024년"
+    "label": "총 GHG 배출량 · LULUCF 제외 · 2024년"
    },
    "period": "1970–2024년",
    "selection": {
@@ -1680,7 +1680,7 @@
    "title": "UNDESA SDG Index Score",
    "headline": {
     "value": "73.8 점",
-    "label": "SDG Index 종합점수 · 17개 목표 평균 달성도(0~100) · 2025년"
+    "label": "SDG Index 종합점수 · 0~100점 · 2025년"
    },
    "period": "2000–2025년",
    "selection": {
@@ -2185,7 +2185,7 @@
    "title": "송배전 손실률(T&D Loss)",
    "headline": {
     "value": "6.58 %",
-    "label": "송배전 손실률 · 총 발전량 대비 송·배전 과정 손실 비율 · 2023년"
+    "label": "송배전 손실률 · 2023년"
    },
    "period": "1990–2023년",
    "selection": {
@@ -2375,7 +2375,7 @@
    "title": "재생에너지 비중",
    "headline": {
     "value": "57.8 %",
-    "label": "재생에너지 비중 · 설비용량 기준 · 전력 부문 재생에너지 비중 · 2025년"
+    "label": "재생에너지 비중 · 설비용량 기준 · 2025년"
    },
    "period": "2000–2025년",
    "selection": {
@@ -2536,7 +2536,7 @@
    "title": "전력 접근률",
    "headline": {
     "value": "100 %",
-    "label": "전력 접근률 · 전체 · 전기를 이용할 수 있는 인구 비율 · 2024년"
+    "label": "전력 접근률 · 전체 · 2024년"
    },
    "period": "1997–2024년",
    "selection": {
@@ -2706,7 +2706,7 @@
    "title": "정전빈도[SAIDI, SAIFI]",
    "headline": {
     "value": "1.25 회/고객",
-    "label": "MAIFI · EVN 그룹 전체 · 연간 고객당 순간정전 횟수 · 2024년"
+    "label": "MAIFI · EVN 그룹 전체 · 순간정전 · 2024년"
    },
    "period": "2015–2024년",
    "selection": {
@@ -2883,7 +2883,7 @@
    "title": "CCS 시설",
    "headline": {
     "value": "5 건",
-    "label": "CCS 시설 수 · 수록 CCS 시설·프로젝트 총 건수 · 2026년"
+    "label": "수록 CCS 실증·후보·연구 · 운영시설 수 아님 · 2026년"
    },
    "period": "2026년",
    "selection": {
@@ -2929,35 +2929,28 @@
    "title": "건물 풋프린트(Footprint)",
    "kind": "facts",
    "headline": {
-    "value": "EPSG:4326",
-    "label": "좌표계 · 기재 항목 1개"
+    "value": "건물 수·면적 미제공",
+    "label": "현재는 파일 구성 정보만 제공"
    },
    "preview": {
     "facts": [
      {
-      "label": "좌표계",
-      "value": "EPSG:4326"
+      "label": "건물 수·면적",
+      "value": "미제공"
+     },
+     {
+      "label": "개별 건물 경계",
+      "value": "미제공"
      }
-    ],
-    "more": 0
+    ]
    },
-   "period": "2026년",
-   "selection": {
-    "measure": "measure-80b527a8f546",
-    "sex": null,
-    "year": null,
-    "period": null,
-    "dimensions": {}
-   },
+   "period": "2023년 자료 설명",
+   "selection": null,
    "basis": {
-    "unit": "항목",
-    "rule": "수치가 아닌 기재 내용을 그대로 보임"
+    "unit": "파일 정보",
+    "rule": "좌표계·신뢰도·열 수를 건물 분석 결과로 제시하지 않음"
    },
-   "measure": {
-    "key": "measure-80b527a8f546",
-    "label": "건물 풋프린트",
-    "unit": "EPSG 코드"
-   },
+   "measure": null,
    "provider": "Google Research (Open Buildings)",
    "mapConnected": false,
    "downloadable": true,
@@ -2966,10 +2959,13 @@
     "observationCount": 7,
     "entityCount": 0,
     "indicatorIds": [
-     "A-026_building_footprint_crs"
-    ],
-    "headlineIndicatorIds": [
-     "A-026_building_footprint_crs"
+     "A-026_building_footprint_confidence_min",
+     "A-026_building_footprint_count",
+     "A-026_building_footprint_count_conf_ge_080",
+     "A-026_building_footprint_crs",
+     "A-026_building_footprint_field_count",
+     "A-026_building_footprint_mean_area",
+     "A-026_building_footprint_total_area"
     ]
    }
   },
@@ -3210,7 +3206,7 @@
    "title": "물류성과지수(LPI)",
    "headline": {
     "value": "3.1 점",
-    "label": "물류성과지수(LPI) · 통관 · 통관 부문 점수(1=낮음 ~ 5=높음) · 2022년"
+    "label": "물류성과지수(LPI) · 통관 · 1~5점 · 2022년"
    },
    "period": "2007–2022년",
    "selection": {
@@ -3463,7 +3459,7 @@
    "title": "해운 연결성(LSCI)",
    "headline": {
     "value": "479 지수",
-    "label": "해운 연결성 지수(LSCI) · Q1 · 정기선 해운 연결성 지수(Q1 분기값) · 2026년"
+    "label": "해운 연결성 지수(LSCI) · Q1 · 2026년"
    },
    "period": "2006–2026년",
    "selection": {
@@ -3642,7 +3638,7 @@
     "omitted": 6,
     "total": null
    },
-   "period": "1991년",
+   "period": "1991–2020년 평년값",
    "selection": {
     "measure": "measure-706a7683fa04",
     "sex": null,
@@ -6479,27 +6475,28 @@
    "title": "건기/우기 유량 차이",
    "kind": "facts",
    "headline": {
-    "value": "11건",
-    "label": "관측지점 3곳의 수록 행 · 2004·2009·2010·2026년"
+    "value": "10건",
+    "label": "수록 값 · 관측지점·수계 3곳"
    },
    "preview": {
     "facts": [
      {
-      "label": "메콩델타 건기 유량 비중",
+      "label": "끄우롱(메콩 델타)",
       "value": ""
      },
      {
-      "label": "메콩(Kratie) 건기·우기 유량비",
+      "label": "Kratie (Krâchéh)",
       "value": ""
      },
      {
-      "label": "건기 최저유량 — Kratie(메콩)",
+      "label": "Sơn Tây",
       "value": ""
      }
     ],
-    "more": 8
+    "more": 0,
+    "note": "값 미제공 1행은 관측값에서 제외"
    },
-   "period": "2004·2009·2010·2026년",
+   "period": "2004·2009·2010년",
    "selection": {
     "measure": null,
     "sex": null,
@@ -6508,11 +6505,12 @@
     "dimensions": {}
    },
    "basis": {
-    "unit": "관측지점",
-    "rule": "관측지점 1건 = 원천 1행 · 지점 유역명 기준 중복 제거",
+    "unit": "수록 값",
+    "rule": "값이 있는 원천 행만 셈 · 범위 하한·상한은 별도 행 · 전국 집계를 관측지점으로 세지 않음",
     "count": {
-     "rows": 11,
+     "rows": 10,
      "distinct": 3,
+     "nationalRows": 0,
      "sourceRows": 11
     }
    },
@@ -6533,176 +6531,176 @@
    "elementId": "B-024",
    "title": "농업 용수 비중",
    "headline": {
-    "value": "0.319 US$/m³",
-    "label": "관개농업 용수생산성 (SDG 6.4.1) · 2023년"
+    "value": "94.8 %",
+    "label": "농업 용수 취수 비중 · 2023년"
    },
    "period": "1990–2023년",
    "selection": {
-    "measure": "measure-6d7408256783",
+    "measure": "measure-357fd35f6277",
     "sex": null,
     "year": 2023,
     "period": null,
     "dimensions": {}
    },
    "measure": {
-    "key": "measure-6d7408256783",
-    "label": "관개농업 용수생산성 (SDG 6.4.1)",
-    "unit": "US$/m³"
+    "key": "measure-357fd35f6277",
+    "label": "농업 용수 취수 비중",
+    "unit": "%"
    },
    "kind": "line",
    "preview": {
     "points": [
      {
       "year": 1990,
-      "value": 0.143676
+      "value": 91.2302
      },
      {
       "year": 1991,
-      "value": 0.150681
+      "value": 91.6007
      },
      {
       "year": 1992,
-      "value": 0.130136
+      "value": 91.9442
      },
      {
       "year": 1993,
-      "value": 0.117548
+      "value": 92.2634
      },
      {
       "year": 1994,
-      "value": 0.111701
+      "value": 92.5609
      },
      {
       "year": 1995,
-      "value": 0.159131
+      "value": 92.8388
      },
      {
       "year": 1996,
-      "value": 0.207673
+      "value": 93.0991
      },
      {
       "year": 1997,
-      "value": 0.23008
+      "value": 93.3432
      },
      {
       "year": 1998,
-      "value": 0.236505
+      "value": 93.5727
      },
      {
       "year": 1999,
-      "value": 0.237754
+      "value": 93.7889
      },
      {
       "year": 2000,
-      "value": 0.238411
+      "value": 93.9928
      },
      {
       "year": 2001,
-      "value": 0.235212
+      "value": 94.1682
      },
      {
       "year": 2002,
-      "value": 0.243362
+      "value": 94.3342
      },
      {
       "year": 2003,
-      "value": 0.249537
+      "value": 94.4914
      },
      {
       "year": 2004,
-      "value": 0.232694
+      "value": 94.6406
      },
      {
       "year": 2005,
-      "value": 0.235262
+      "value": 94.7824
      },
      {
       "year": 2006,
-      "value": 0.242043
+      "value": 94.7824
      },
      {
       "year": 2007,
-      "value": 0.254788
+      "value": 94.7824
      },
      {
       "year": 2008,
-      "value": 0.29023
+      "value": 94.7824
      },
      {
       "year": 2009,
-      "value": 0.281236
+      "value": 94.7824
      },
      {
       "year": 2010,
-      "value": 0.287528
+      "value": 94.7824
      },
      {
       "year": 2011,
-      "value": 0.314264
+      "value": 94.7824
      },
      {
       "year": 2012,
-      "value": 0.320064
+      "value": 94.7824
      },
      {
       "year": 2013,
-      "value": 0.306582
+      "value": 94.7824
      },
      {
       "year": 2014,
-      "value": 0.307304
+      "value": 94.7824
      },
      {
       "year": 2015,
-      "value": 0.306882
+      "value": 94.7824
      },
      {
       "year": 2016,
-      "value": 0.297974
+      "value": 94.7824
      },
      {
       "year": 2017,
-      "value": 0.282843
+      "value": 94.7824
      },
      {
       "year": 2018,
-      "value": 0.272832
+      "value": 94.7824
      },
      {
       "year": 2019,
-      "value": 0.262661
+      "value": 94.7824
      },
      {
       "year": 2020,
-      "value": 0.290155
+      "value": 94.7824
      },
      {
       "year": 2021,
-      "value": 0.296334
+      "value": 94.7824
      },
      {
       "year": 2022,
-      "value": 0.303944
+      "value": 94.7824
      },
      {
       "year": 2023,
-      "value": 0.319415
+      "value": 94.7824
      }
     ],
-    "unit": "US$/m³",
+    "unit": "%",
     "seriesLabel": "",
     "first": {
      "year": 1990,
-     "value": 0.143676
+     "value": 91.2302
     },
     "latest": {
      "year": 2023,
-     "value": 0.319415
+     "value": 94.7824
     }
    },
    "basis": {
     "unit": "관측값",
-    "rule": "관개농업 용수생산성 (SDG 6.4.1)(US$/m³) 34개 연도 · 최신 2023년 값을 대표값으로"
+    "rule": "농업 용수 취수 비중(%) 34개 연도 · 최신 2023년 값을 대표값으로"
    },
    "provider": "FAO AQUASTAT",
    "mapConnected": false,
@@ -6712,10 +6710,10 @@
     "observationCount": 205,
     "entityCount": 0,
     "indicatorIds": [
-     "B-024_wue_irrigated_agri"
+     "B-024_agri_water_share"
     ],
     "headlineIndicatorIds": [
-     "B-024_wue_irrigated_agri"
+     "B-024_agri_water_share"
     ]
    }
   },
@@ -6993,27 +6991,28 @@
    "title": "하천 유량",
    "kind": "facts",
    "headline": {
-    "value": "16건",
-    "label": "관측지점 5곳의 수록 행 · 2004–2026년"
+    "value": "15건",
+    "label": "수록 값 · 관측지점·수계 4곳 · 전국 집계 4건 포함"
    },
    "preview": {
     "facts": [
      {
-      "label": "홍강(Sơn Tây) 연평균 유량 (범위 하한)",
+      "label": "Sơn Tây",
       "value": ""
      },
      {
-      "label": "홍강(Sơn Tây) 연평균 유량 (범위 상한)",
+      "label": "끄우롱(메콩 델타)",
       "value": ""
      },
      {
-      "label": "하천 유량 — m³/s 기준 — 메콩강(해양 유출 기준) (범위 하한)",
+      "label": "홍–타이빈",
       "value": ""
      }
     ],
-    "more": 13
+    "more": 1,
+    "note": "값 미제공 1행은 관측값에서 제외"
    },
-   "period": "2004–2026년",
+   "period": "2004–2023년",
    "selection": {
     "measure": null,
     "sex": null,
@@ -7022,11 +7021,12 @@
     "dimensions": {}
    },
    "basis": {
-    "unit": "관측지점",
-    "rule": "관측지점 1건 = 원천 1행 · 지점 유역명 기준 중복 제거",
+    "unit": "수록 값",
+    "rule": "값이 있는 원천 행만 셈 · 범위 하한·상한은 별도 행 · 전국 집계를 관측지점으로 세지 않음",
     "count": {
-     "rows": 16,
-     "distinct": 5,
+     "rows": 15,
+     "distinct": 4,
+     "nationalRows": 4,
      "sourceRows": 16
     }
    },
@@ -10897,65 +10897,69 @@
    "elementId": "D-006",
    "title": "기후 관련 조세 수입",
    "headline": {
-    "value": "109 %",
-    "label": "기후 관련 조세 수입 · 환경보호세(EPT) · 계획 대비 결산 이행률 · 2024년"
+    "value": "371,010억 VND",
+    "label": "기후 관련 조세 수입 · 환경보호세(EPT) · 국가예산 계획액(dự toán) 연도별 · 2024년"
    },
    "period": "2019–2024년",
    "selection": {
-    "measure": "measure-f93ae924549f",
+    "measure": "measure-d4d5bb18840e",
     "sex": null,
     "year": 2024,
     "period": null,
     "dimensions": {
      "category": "환경보호세(EPT)",
-     "detail": "계획 대비 결산 이행률"
+     "detail": "국가예산 계획액(dự toán) 연도별"
     }
    },
    "measure": {
-    "key": "measure-f93ae924549f",
+    "key": "measure-d4d5bb18840e",
     "label": "기후 관련 조세 수입",
-    "unit": "%"
+    "unit": "VND"
    },
    "kind": "line",
    "preview": {
     "points": [
      {
       "year": 2019,
-      "value": 92.4
+      "value": 69758000000000
      },
      {
       "year": 2020,
-      "value": 89.7
+      "value": 67584000000000
      },
      {
       "year": 2021,
-      "value": 91
+      "value": 64391000000000
+     },
+     {
+      "year": 2022,
+      "value": 60840000000000
      },
      {
       "year": 2023,
-      "value": 58.3
+      "value": 63888000000000
      },
      {
       "year": 2024,
-      "value": 108.7
+      "value": 37101000000000
      }
     ],
-    "unit": "%",
-    "seriesLabel": "환경보호세(EPT) · 계획 대비 결산 이행률",
+    "unit": "VND",
+    "seriesLabel": "환경보호세(EPT) · 국가예산 계획액(dự toán) 연도별",
     "first": {
      "year": 2019,
-     "value": 92.4
+     "value": 69758000000000
     },
     "latest": {
      "year": 2024,
-     "value": 108.7
+     "value": 37101000000000
     }
    },
    "basis": {
     "unit": "관측값",
-    "rule": "기후 관련 조세 수입(%) 환경보호세(EPT) · 계획 대비 결산 이행률 계열 · 5개 연도 · 최신 2024년 값을 대표값으로"
+    "rule": "기후 관련 조세 수입(VND) 환경보호세(EPT) · 국가예산 계획액(dự toán) 연도별 계열 · 6개 연도 · 최신 2024년 값을 대표값으로"
    },
-   "provider": "베트남 재정부(Bộ Tài chính) 국가예산 결산 공개 결정 · 베트남 국회(Quốc hội) 국가예산 결산 승인 결의 · 베트남 재정부(Ministry of Finance) 국가예산계획 — CEIC Data 재게시",
+   "provider": "베트남 재정부(Bộ Tài chính) 국가예산 결산 공개 결정 · 베트남 국회(Quốc hội) 국가예산 결산 승인 결의",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -10963,11 +10967,11 @@
     "observationCount": 45,
     "entityCount": 0,
     "indicatorIds": [
-     "D-006_ept_settlement_rate",
-     "D-006_ept_share_fuel_price"
+     "D-006_ept_planned_revenue",
+     "D-006_ept_settled_revenue"
     ],
     "headlineIndicatorIds": [
-     "D-006_ept_settlement_rate"
+     "D-006_ept_planned_revenue"
     ]
    }
   },
@@ -11095,7 +11099,7 @@
    "title": "기후대응·기후기술 관련 정부 예산[총 지출 규모, 연도별 추이]",
    "headline": {
     "value": "0.1 %",
-    "label": "기후대응 정부 예산 · GDP 대비 기후지출 비중 · 5개 부처 기후지출의 GDP 대비 비중 · 2013년"
+    "label": "기후대응 정부 예산 · GDP 대비 · 5개 부처 기준 · 2013년"
    },
    "period": "2013년",
    "selection": {
@@ -12189,8 +12193,8 @@
    "title": "MIGA 정치적 리스크 보증[프로젝트명, 국가, 섹터, 보증 금액, 보증 유형(수용/이전제한/계약위반/전쟁내란), 보증 기간, 투자자, 상태]",
    "kind": "bars",
    "headline": {
-    "value": "14건",
-    "label": "보증 수 · 2018년"
+    "value": "9건",
+    "label": "보증사업 수 · 1999–2018년"
    },
    "preview": {
     "parts": [
@@ -12215,12 +12219,12 @@
       "value": 1
      }
     ],
-    "unit": "보증 수",
+    "unit": "보증사업 수",
     "scope": "보증 유형별",
     "omitted": 0,
-    "unlabelled": 5
+    "unlabelled": 0
    },
-   "period": "2018년",
+   "period": "1999–2018년",
    "selection": {
     "measure": null,
     "sex": null,
@@ -12229,10 +12233,10 @@
     "dimensions": {}
    },
    "basis": {
-    "unit": "보증",
-    "rule": "보증 1건 = 원천 1행 · 보증 유형별 건수 · 보증 유형 미기재 5건",
+    "unit": "보증사업",
+    "rule": "보증사업 1건 = 원천 1행 · 보증 유형 안내 5건 제외 · 보증 유형별 건수",
     "count": {
-     "rows": 14,
+     "rows": 9,
      "sourceRows": 14
     }
    },
@@ -12359,7 +12363,7 @@
    "kind": "facts",
    "headline": {
     "value": "8건",
-    "label": "기관 3곳의 수록 행 · 2026년"
+    "label": "담당자 정보 · 기관 3곳 · 2026년"
    },
    "preview": {
     "facts": [
@@ -12705,35 +12709,31 @@
   {
    "elementId": "E-008",
    "title": "논문·특허[논문·특허명, 기후기술 분야, 특허 출원인 국적, 특허 출원 연구기관·대학명, 논문 국제 공저 비율, 한국과의 공동 출원·공저 여부]",
-   "kind": "facts",
+   "kind": "bars",
    "headline": {
     "value": "144건",
-    "label": "논문·특허 · 2024–2026년"
+    "label": "수록 논문·특허 · 2021–2026년"
    },
    "preview": {
-    "facts": [
+    "parts": [
      {
       "label": "논문",
-      "value": ""
+      "value": 114
      },
      {
       "label": "특허",
-      "value": ""
+      "value": 30
      }
     ],
-    "more": 0
+    "unit": "건",
+    "scope": "수록 자료 유형별",
+    "omitted": 0
    },
-   "period": "2024–2026년",
-   "selection": {
-    "measure": null,
-    "sex": null,
-    "year": null,
-    "period": null,
-    "dimensions": {}
-   },
+   "period": "2021–2026년",
+   "selection": null,
    "basis": {
-    "unit": "논문·특허",
-    "rule": "논문·특허 1건 = 원천 1행",
+    "unit": "수록 논문·특허",
+    "rule": "문서 유형별 수록 행 수 · 발행연도 기준 · 국가 전체 통계 아님",
     "count": {
      "rows": 144,
      "distinct": 144,
@@ -12741,7 +12741,7 @@
     }
    },
    "measure": null,
-   "provider": "각 게재 학술지 — MDPI · Elsevier · Springer Nature · IEEE · Frontiers · PLOS 등 국제저널, Journal of Climate Change Science(IMHEN), Vietnam Journal of Science and Technology / Earth Sciences(VAST) (레코드별 상이 — 1.2_entity attr_10 참조) · USPTO (United States Patent and Trademark Office) Patent Public Search",
+   "provider": "각 논문 출판사·특허 공개 원문(자료별 출처 제공)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -12805,7 +12805,7 @@
    "title": "UNESCO UIS R&D 지출(GERD); WIPO 혁신지수(GII)",
    "headline": {
     "value": "0.415 %",
-    "label": "GERD · GDP 대비 R&D 총지출 비율 · 2023년"
+    "label": "연구개발비 · GDP 대비 · 2023년"
    },
    "period": "2011–2023년",
    "selection": {

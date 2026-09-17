@@ -40,6 +40,7 @@ import {
   text,
   numberOf,
   TOTAL_LIKE,
+  recordRoleOf,
 } from "./card-model-v140.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
@@ -138,9 +139,9 @@ const ENTITY_RULES = {
   "B-008": { unit: "관측소", kind: "stations" },
   "B-012": { unit: "재해 사건", groupBy: "재해유형", kind: "bars" },
   "B-017": { unit: "평가구역", kind: "grades", gradeKey: "기준_물스트레스_Baseline_Water_Stress_등급" },
-  "B-023": { unit: "관측지점", kind: "facts", distinctBy: "지점_유역명" },
+  "B-023": { unit: "관측지점", kind: "facts", distinctBy: "지점_유역명", rowLabel: "관측값" },
   "B-025": { unit: "유역", kind: "bars", valueKey: "베트남_내_면적_km_GIS_산출", labelKey: "유역명_국문", valueUnit: "km²" },
-  "B-028": { unit: "관측지점", kind: "facts", distinctBy: "지점_유역명" },
+  "B-028": { unit: "관측지점", kind: "facts", distinctBy: "지점_유역명", rowLabel: "관측값" },
   "B-048": { unit: "광산", kind: "facts", nameFrom: (row) => `${row.normalizedAttributes?.광산명 || row.name} (${row.normalizedAttributes?.광종 || ""})` },
   "C-001": { unit: "항목", kind: "facts" },
   "C-002": { unit: "항목", kind: "facts" },
@@ -171,10 +172,11 @@ const ENTITY_RULES = {
   "D-022": { unit: "사업", groupBy: "투자_유형", kind: "bars" },
   "D-024": { unit: "투자 건", kind: "facts", individualOnly: true },
   "D-025": { unit: "사업", groupBy: "투자유형", kind: "bars" },
-  "D-026": { unit: "보증", groupBy: "보증_유형", kind: "bars" },
+  "D-026": { unit: "보증사업", groupBy: "보증_유형", kind: "bars" },
   "E-001": { unit: "기관", kind: "facts" },
   "E-002": { unit: "기관", kind: "facts" },
-  "E-003": { unit: "기관", kind: "facts", distinctBy: "orgName" },
+  // Eight contact persons at three organisations: the row is a person, the distinct thing is the organisation (V142).
+  "E-003": { unit: "기관", kind: "facts", distinctBy: "orgName", rowLabel: "담당자 정보" },
   "E-004": { unit: "현지사무소", groupBy: "orgType", kind: "bars", currentOnly: "recordStatus" },
   "E-005": { unit: "기관", groupBy: "city", kind: "bars" },
   "E-006": { unit: "기관", groupBy: "city", kind: "bars" },
@@ -415,7 +417,7 @@ function observationCard(elementId, item, pack, contract, override) {
       // The rows behind the headline: the named part when one is named, else
       // every compared part (the headline is their maximum).
       headlineIndicatorIds: override?.headlineSeries ? top.indicatorIds : [...new Set(parts.flatMap((part) => part.indicatorIds))],
-      period: periodOf(item, yearsOf(numericRows)),
+      period: elementId === "B-001" ? "1991–2020년 평년값" : periodOf(item, yearsOf(numericRows)),
       // A comparison across parts hands over only what every part shares
       // (the "(기준값)" bound, the "차원 점수" level), never the category that
       // varies between them: fixing it would open the detail on one part.
@@ -667,10 +669,30 @@ function entityCard(elementId, item, pack, contract, rule) {
   // …and the sheet's own "수집현황 v5.29 분류" method row, which the detail's
   // evidence matrix drops (isCompilerMethodRowV139).
   const isMethodRow = (row) => [row.name, row.normalizedAttributes?.["속성1_레코드명"]].some((name) => /^수집현황(?:\s*v[\d.]+)?(?:\s*분류)?$/u.test(text(name)) || /^raw\s|OCR 재추출|스캔본/u.test(text(name)));
-  const entities = pack.entities.records.filter((row) => text(row.normalizedAttributes?.레코드구분) !== "집계" && !isMethodRow(row));
-  const aggregateRows = pack.entities.records.length - entities.length;
-  const aggregateNote = aggregateRows ? ` · 원천의 집계·설명 행 ${aggregateRows}건 제외` : "";
+  // …and rows the per-element role rule reads as definitions of a category
+  // (D-026's five guarantee covers), which the detail lists apart (V142).
+  const definitionRows = pack.entities.records.filter((row) => recordRoleOf(row).role === "definition");
+  const definitionLabel = definitionRows.length ? recordRoleOf(definitionRows[0]).label : null;
+  const entities = pack.entities.records.filter((row) => recordRoleOf(row).role === "individual" && !isMethodRow(row));
+  const aggregateRows = pack.entities.records.length - entities.length - definitionRows.length;
+  const aggregateNote = `${aggregateRows ? ` · 원천의 집계·설명 행 ${aggregateRows}건 제외` : ""}${definitionRows.length ? ` · ${definitionLabel} ${definitionRows.length}건 제외` : ""}`;
   let rows = entities;
+  if (elementId === "B-023" || elementId === "B-028") {
+    const observed = rows.filter((row) => numberOf(row.normalizedAttributes?.값) !== null);
+    const national = observed.filter((row) => /^(?:Việt Nam|Viet Nam|베트남|전국|National)/iu.test(text(row.normalizedAttributes?.지점_유역명)));
+    const station = observed.filter((row) => !national.includes(row));
+    const sites = [...new Set(station.map((row) => text(row.normalizedAttributes?.지점_유역명)).filter(Boolean))];
+    const period = periodOf(item, yearsFromEntities(observed));
+    return {
+      kind: "facts",
+      headline: { value: `${observed.length}건`, label: `수록 값 · 관측지점·수계 ${sites.length}곳${national.length ? ` · 전국 집계 ${national.length}건 포함` : ""}` },
+      preview: { facts: sites.slice(0, 3).map((label) => ({ label, value: "" })), more: Math.max(0, sites.length - 3), note: `값 미제공 ${rows.length - observed.length}행은 관측값에서 제외` },
+      period,
+      selection: { measure: null, sex: null, year: null, period: null, dimensions: {} },
+      basis: { unit: "수록 값", rule: "값이 있는 원천 행만 셈 · 범위 하한·상한은 별도 행 · 전국 집계를 관측지점으로 세지 않음", count: { rows: observed.length, distinct: sites.length, nationalRows: national.length, sourceRows: rows.length } },
+      measure: null,
+    };
+  }
   if (rule.individualOnly) {
     const individual = entities.filter((row) => text(row.normalizedAttributes?.레코드구분) === "개별");
     if (individual.length) rows = individual;
@@ -804,7 +826,7 @@ function entityCard(elementId, item, pack, contract, rule) {
   return {
     kind: "facts",
     headline: rule.distinctBy
-      ? { value: `${formatNumber(rows.length)}건`, label: `${rule.unit} ${formatNumber(distinct)}${countSuffix(rule.unit)}의 수록 행 · ${period}` }
+      ? { value: `${formatNumber(rows.length)}건`, label: `${rule.rowLabel || "수록 행"} · ${rule.unit} ${formatNumber(distinct)}${countSuffix(rule.unit)} · ${period}` }
       : { value: `${formatNumber(distinct)}${countSuffix(rule.unit)}`, label: `${rule.unit} · ${period}` },
     preview: { facts: names.slice(0, 3).map((name) => ({ label: name, value: "" })), more: Math.max(0, names.length - 3) },
     period,
@@ -823,7 +845,7 @@ function countSuffix(unit) {
 function yearsFromEntities(rows) {
   const years = new Set();
   for (const row of rows) {
-    const candidates = [row.year, row.normalizedAttributes?.연도, row.normalizedAttributes?.기준연도, row.normalizedAttributes?.확인_연도, row.normalizedAttributes?.referenceYear, row.normalizedAttributes?.시작일, row.normalizedAttributes?.승인일, row.normalizedAttributes?.signedDate];
+    const candidates = [row.year, row.normalizedAttributes?.연도, row.normalizedAttributes?.기준연도, row.normalizedAttributes?.회계연도_FY, row.normalizedAttributes?.확인_연도, row.normalizedAttributes?.referenceYear, row.normalizedAttributes?.시작일, row.normalizedAttributes?.승인일, row.normalizedAttributes?.signedDate];
     for (const candidate of candidates) {
       const match = String(candidate ?? "").match(/(?:^|\D)((?:19|20)\d{2})(?:\D|$)/u);
       if (match) years.add(Number(match[1]));
@@ -915,6 +937,7 @@ function regionScenarioCard(elementId, item, pack, contract, options) {
 }
 
 // ------------------------------------------------------------------ assemble
+const reviewedIndicatorCopyV144 = JSON.parse(readFileSync(resolve("src/data/visualization/publicIndicatorCopyV144.json"), "utf8"));
 const cards = [];
 const review = [];
 for (const item of [...catalog].sort((a, b) => a.elementId.localeCompare(b.elementId))) {
@@ -928,6 +951,22 @@ for (const item of [...catalog].sort((a, b) => a.elementId.localeCompare(b.eleme
   try {
     if (contract.primaryRenderer === "status-only" || (!observations.length && !entities.length)) {
       card = { kind: "status", headline: { value: "값 제공 전", label: item.publicStatus === "schema-only" ? "입력 양식만 있는 자료" : item.publicStatus === "data-entry-planned" ? "입력 예정 자료" : "원자료 미수집" }, preview: { note: ({ "not-collected": "원자료가 아직 수집되지 않아 값을 제공하지 않습니다", "schema-only": "입력 양식만 있어 실제 값이 없습니다", "data-entry-planned": "입력 예정 자료로 아직 값이 없습니다" })[contract.noDataReason] || "현재 값을 제공하지 않습니다" }, period: "—", selection: null, basis: { unit: "없음", rule: "값이 없어 수치·그래프를 만들지 않음" }, measure: null };
+    } else if (elementId === "A-026" && observations.filter((row) => row.value !== null && row.value !== undefined && row.value !== "").every((row) => /^A-026_building_footprint_(confidence_min|crs|field_count)$/u.test(row.indicatorId))) {
+      card = { kind: "facts", headline: { value: "건물 수·면적 미제공", label: "현재는 파일 구성 정보만 제공" }, preview: { facts: [{ label: "건물 수·면적", value: "미제공" }, { label: "개별 건물 경계", value: "미제공" }] }, period: "2023년 자료 설명", selection: null, basis: { unit: "파일 정보", rule: "좌표계·신뢰도·열 수를 건물 분석 결과로 제시하지 않음" }, measure: null };
+    } else if (elementId === "E-008" && !observations.length) {
+      // The register's publication year and document type, not catalogue
+      // reference years or national-statistics metadata with no observations.
+      const records = entities.filter((row) => ["논문", "특허"].includes(text(row.normalizedAttributes?.field_3b639c78)));
+      const years = [...new Set(records.map((row) => Number(row.normalizedAttributes?.field_d7e5fb05)).filter((year) => Number.isInteger(year) && year >= 1900 && year <= 2100))].sort((a, b) => a - b);
+      const period = periodOf(item, years);
+      card = {
+        kind: "bars",
+        headline: { value: `${formatNumber(records.length)}건`, label: `수록 논문·특허 · ${period}` },
+        preview: { parts: ["논문", "특허"].map((label) => ({ label, value: records.filter((row) => row.normalizedAttributes?.field_3b639c78 === label).length })), unit: "건", scope: "수록 자료 유형별", omitted: 0 },
+        period, selection: null,
+        basis: { unit: "수록 논문·특허", rule: "문서 유형별 수록 행 수 · 발행연도 기준 · 국가 전체 통계 아님", count: { rows: records.length, distinct: records.length, sourceRows: entities.length } },
+        measure: null,
+      };
     } else if (homeCard) {
       card = {
         kind: homeCard.kind === "map" ? "map" : homeCard.kind === "signed-bars" ? "signed-bars" : homeCard.kind === "grouped-bars" ? "grouped-bars" : homeCard.kind,
@@ -980,7 +1019,15 @@ for (const item of [...catalog].sort((a, b) => a.elementId.localeCompare(b.eleme
   const usedIndicatorIds = measureIndicatorIds.length
     ? measureIndicatorIds
     : [...new Set([...observations.map((row) => row.indicatorId), ...entities.map((row) => row.indicatorId)].filter(Boolean))];
-  const provider = homeCard ? homeCard.provider : providerFor(pack, usedIndicatorIds, item);
+  const provider = elementId === "E-008" && !observations.length
+    ? "각 논문 출판사·특허 공개 원문(자료별 출처 제공)"
+    : homeCard ? homeCard.provider : providerFor(pack, usedIndicatorIds, item);
+  // The same reviewed source phrases as the detail screen. Do not trim unknown labels.
+  for (const [original, short] of Object.entries(reviewedIndicatorCopyV144[elementId] || {})) {
+    card.headline.label = card.headline.label.split(original).join(short);
+    if (card.preview?.note === original && short) card.preview.note = short;
+  }
+  card.headline.label = card.headline.label.split(" · ").map((part) => part.trim()).filter(Boolean).join(" · ");
   const entry = {
     elementId,
     title: item.elementLabel,
