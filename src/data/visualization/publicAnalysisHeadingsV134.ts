@@ -13,6 +13,42 @@ export type PublicAnalysisHeadingsV134 = {
 const SPECIALIZED_HEADINGS_V134: Readonly<
   Record<string, Omit<PublicAnalysisHeadingsV134, "elementId">>
 > = Object.freeze({
+  "B-001": {
+    publicAnalysisTitle: "월별 강수량·기온과 건기·우기",
+    primaryChartTitle: "1991~2020년 월별 평년값",
+    secondaryChartTitle: "월별 강수·기온 비교표",
+    publicQuestion: "어느 달에 비가 많이 오고 적게 오는지, 월별 기온이 어떻게 다른지 확인할 수 있습니다.",
+  },
+  "B-025": {
+    publicAnalysisTitle: "전체 유역과 베트남 내 면적 비교",
+    primaryChartTitle: "유역별 면적 비교",
+    secondaryChartTitle: "문헌·GIS 산출 면적표",
+    publicQuestion: "8대 유역의 전체 면적과 베트남에 속한 면적을 구분해 확인할 수 있습니다.",
+  },
+  "B-026": {
+    publicAnalysisTitle: "성·시별 물이 흐르는 방향",
+    primaryChartTitle: "8방향별 격자 비율",
+    secondaryChartTitle: "방향별 비율표",
+    publicQuestion: "지역을 선택해 지형 격자의 물 흐름 방향을 비교할 수 있습니다. 하천 유량과는 다른 자료입니다.",
+  },
+  "E-009": {
+    publicAnalysisTitle: "STEM 졸업 비중과 연구자 규모",
+    primaryChartTitle: "성별 STEM 졸업 비중 비교",
+    secondaryChartTitle: "연구자 수와 인구 대비 규모",
+    publicQuestion: "성별 고등교육 졸업자 중 STEM 전공 비중과 연구자 규모를 기준연도별로 확인할 수 있습니다.",
+  },
+  "C-002": {
+    publicAnalysisTitle: "보고서에 수록된 배출량과 이행 정보",
+    primaryChartTitle: "2016년 부문·가스별 배출량",
+    secondaryChartTitle: "보고서 제출 이력·재원·전망",
+    publicQuestion: "BUR3에 수록된 배출량과 흡수량을 부문·가스별로 비교하고, 다른 보고 내용을 찾아볼 수 있습니다.",
+  },
+  "A-025": {
+    publicAnalysisTitle: "CCS 실증·후보·연구 현황",
+    primaryChartTitle: "대상별 유형과 진행상황",
+    secondaryChartTitle: "설명과 원문 근거",
+    publicQuestion: "CCS 실증, 저장 후보지역, 연구·타당성 검토의 대상과 추진 단계를 구분해 확인할 수 있습니다.",
+  },
   "A-017": {
     publicAnalysisTitle: "발전원별 비용 범위와 미래 전망",
     primaryChartTitle: "발전원별 기준값·하한·상한 비교",
@@ -374,7 +410,7 @@ export const PUBLIC_ANALYSIS_HEADINGS_V134: readonly PublicAnalysisHeadingsV134[
         secondaryChartTitle: secondaryTitleForSpecV134(spec),
         publicQuestion: publicQuestionForSpecV134(spec),
       };
-      const corrected = DEPTH_CORRECTED_ANALYSIS_TITLES_V135[spec.elementId];
+      const corrected = ["A-025", "B-001", "B-025", "B-026", "C-002", "E-009"].includes(spec.elementId) ? null : DEPTH_CORRECTED_ANALYSIS_TITLES_V135[spec.elementId];
       const primaryCorrected = PRIMARY_TITLE_CORRECTIONS_V140[spec.elementId];
       return {
         elementId: spec.elementId,

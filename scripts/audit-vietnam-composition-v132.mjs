@@ -162,8 +162,8 @@ audit.check(
 );
 audit.check(
   "A016_PRIMARY_ANALYSIS_STRUCTURE",
-  ["a016-kpis", "a016-absolute-trend", "a016-share-trend", "a016-selected-year"].every((token) => source.includes(token)),
-  ["a016-kpis", "a016-absolute-trend", "a016-share-trend", "a016-selected-year"].filter((token) => !source.includes(token)),
+  ["a016-absolute-trend", "a016-share-trend", "a016-selected-year", "SelectedYearBarsV132"].every((token) => source.includes(token)) && !source.includes('data-testid="a016-kpis"'),
+  ["a016-absolute-trend", "a016-share-trend", "a016-selected-year", "SelectedYearBarsV132"].filter((token) => !source.includes(token)).concat(source.includes('data-testid="a016-kpis"') ? ["removed-KPI-returned"] : []),
   []
 );
 audit.check(

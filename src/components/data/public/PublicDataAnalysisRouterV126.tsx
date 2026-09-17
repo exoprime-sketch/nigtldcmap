@@ -49,6 +49,15 @@ import HydroStationObservationsV142 from "./HydroStationObservationsV142";
 import NdcTargetsAnalysisV146 from "./NdcTargetsAnalysisV146";
 import CarbonMarketRegionsV146 from "./CarbonMarketRegionsV146";
 import LcoeRangeAnalysisV146 from "./LcoeRangeAnalysisV146";
+import MonthlyClimateAnalysisV147 from "./MonthlyClimateAnalysisV147";
+import NationalResourceSeriesV147 from "./NationalResourceSeriesV147";
+import ReportedInventoryAnalysisV147 from "./ReportedInventoryAnalysisV147";
+import ScienceWorkforceAnalysisV147 from "./ScienceWorkforceAnalysisV147";
+import InfrastructureCoverageV147 from "./InfrastructureCoverageV147";
+import CcsStatusAnalysisV147 from "./CcsStatusAnalysisV147";
+import SdgIndicatorsAnalysisV147 from "./SdgIndicatorsAnalysisV147";
+import CapitalCostAnalysisV147 from "./CapitalCostAnalysisV147";
+import { BasinAreaAnalysisV147, FlowDirectionAnalysisV147 } from "./WaterGeographyAnalysisV147";
 import ProvinceSeriesAnalysisV140, {
   provinceSeriesShapeV140,
 } from "./ProvinceSeriesAnalysisV140";
@@ -259,6 +268,24 @@ export default function PublicDataAnalysisRouterV126({
               )}</ul>
             </details>
           </section>
+        ) : elementId === "B-001" ? (
+          <MonthlyClimateAnalysisV147 rows={semanticRows} />
+        ) : elementId === "A-015" ? (
+          <SdgIndicatorsAnalysisV147 rows={semanticRows} selectorState={selectorState} onSelectorStateChange={onSelectorStateChange} />
+        ) : elementId === "D-001" ? (
+          <CapitalCostAnalysisV147 rows={semanticRows} />
+        ) : elementId === "A-025" ? (
+          <CcsStatusAnalysisV147 entities={entities} />
+        ) : elementId === "B-025" ? (
+          <BasinAreaAnalysisV147 entities={entities} />
+        ) : elementId === "B-026" ? (
+          <FlowDirectionAnalysisV147 entities={entities} />
+        ) : elementId === "E-009" ? (
+          <ScienceWorkforceAnalysisV147 rows={semanticRows} />
+        ) : elementId === "A-027" || elementId === "A-028" ? (
+          <InfrastructureCoverageV147 rows={semanticRows} />
+        ) : elementId === "C-002" && entities.length > 0 ? (
+          <ReportedInventoryAnalysisV147 entities={entities} />
         ) : elementId === "C-002" && semanticRows.length > 0 ? (
           <Suspense fallback={<div className="pav126-empty" role="status" data-testid="public-analysis-pending">배출량 분석을 불러오는 중입니다</div>}>
             <GhgSectorGasAnalysisV135 elementId={elementId} rows={semanticRows} />
@@ -360,18 +387,7 @@ export default function PublicDataAnalysisRouterV126({
           // showing only the distribution would have hidden them.
           <>
             {regionScenarioSummary}
-            <SemanticArchetypePreviewV125
-              contract={adapterContract}
-              semantics={semantics}
-              observations={observations}
-              entities={nationalSeriesEntities}
-              countryNameKo={countryNameKo}
-              detailTemplate={detailTemplate}
-              elementTitle={copy.title}
-              selectorState={selectorState}
-              onSelectorStateChange={onSelectorStateChange}
-              showRawTable={false}
-            />
+            <NationalResourceSeriesV147 key={elementId} entities={nationalSeriesEntities} />
           </>
         ) : elementId === "A-024" && isTransmissionDeliveryV140(entities) ? (
           // The 2016 network and the PDP8 plan rows are counted apart; the

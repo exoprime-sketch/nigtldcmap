@@ -1,4 +1,5 @@
 import { publicIndicatorSeriesV144, previousYearChangeV144 } from "../../../data/visualization/publicIndicatorCopyV144";
+import { allowsRelativeChangeV147, changeUnitV147 } from "../../../data/visualization/detailModelsV147";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties, ReactNode } from "react";
 import type {
@@ -752,7 +753,7 @@ function TwoYearChangeUnitV135({
       // reported a GDP impact moving from -0.6% to -2.2% as "-266.7%".
       const isShare = /^\s*(?:%|퍼센트|percent)/iu.test(publicUnit);
       const percent =
-        isShare || first.value === 0
+        isShare || !allowsRelativeChangeV147(unit) || first.value === 0
           ? null
           : (delta / Math.abs(first.value)) * 100;
       return {
@@ -783,7 +784,7 @@ function TwoYearChangeUnitV135({
             <b>
               {item.delta > 0 ? "+" : ""}
               {formatValueV121(item.delta)}{" "}
-              {/^\s*(?:%|퍼센트|percent)/iu.test(publicUnit) ? "%p" : publicUnit}
+              {changeUnitV147(publicUnit)}
               {item.percent === null
                 ? ""
                 : " (" + (item.percent > 0 ? "+" : "") + item.percent.toFixed(1) + "%)"}

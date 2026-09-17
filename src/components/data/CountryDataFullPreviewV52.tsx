@@ -172,6 +172,9 @@ function buildPublicDataSummaryV127(
   observations: VietnamObservationV124[],
   entities: VietnamEntityV124[]
 ): string {
+  if (observations.some((row) => row.indicatorId?.startsWith("B-001_"))) {
+    return `${countryNameKo} · 1991~2020년 월별 평년값`;
+  }
   const populatedObservations = observations.filter(
     isPopulatedObservationV127
   );
