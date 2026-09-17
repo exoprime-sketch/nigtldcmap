@@ -13,6 +13,30 @@ export type PublicAnalysisHeadingsV134 = {
 const SPECIALIZED_HEADINGS_V134: Readonly<
   Record<string, Omit<PublicAnalysisHeadingsV134, "elementId">>
 > = Object.freeze({
+  "A-017": {
+    publicAnalysisTitle: "발전원별 비용 범위와 미래 전망",
+    primaryChartTitle: "발전원별 기준값·하한·상한 비교",
+    secondaryChartTitle: "연도별 발전비용 비교표",
+    publicQuestion: "발전원별 비용 범위를 비교하고 2030·2050년 전망을 확인할 수 있습니다. 실제 전기요금과는 다른 지표입니다.",
+  },
+  "C-001": {
+    publicAnalysisTitle: "NDC 이행 조건별 감축목표",
+    primaryChartTitle: "자체 이행·국제지원 조건별 목표 비교",
+    secondaryChartTitle: "부문별 감축량과 기준 배출량",
+    publicQuestion: "자체적으로 이행할 목표와 국제지원이 있을 때의 전체 목표를 구분하고, 부문별 감축량을 비교할 수 있습니다.",
+  },
+  "C-019": {
+    publicAnalysisTitle: "지역별 온실가스 인벤토리 의무 대상 시설",
+    primaryChartTitle: "기준일별 성·시의 대상 시설 수",
+    secondaryChartTitle: "관련 제도·세율·시행 일정",
+    publicQuestion: "지역별 온실가스 인벤토리 의무 대상 시설 수와 제도 근거를 확인할 수 있습니다. 배출권 거래제 참여 시설 수와는 구분됩니다.",
+  },
+  "C-022": {
+    publicAnalysisTitle: "인벤토리 대상 시설의 지역·부문별 구성",
+    primaryChartTitle: "선택한 지역의 부문별 시설 수",
+    secondaryChartTitle: "탄소시장 준비도 평가와 제도 근거",
+    publicQuestion: "지역별 대상 시설의 부문 구성을 비교하고 탄소시장 준비도 평가의 근거를 확인할 수 있습니다.",
+  },
   "B-027": {
     publicAnalysisTitle: "전국 지하수 자원량의 연도별 변화",
     primaryChartTitle: "선택한 지하수 지표의 추이",

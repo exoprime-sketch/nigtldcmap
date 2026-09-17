@@ -6,6 +6,8 @@ import InteractiveTimeSeriesChartV127 from "../../charts/InteractiveTimeSeriesCh
 import { formatPublicNumberV126 } from "../../../data/visualization/publicNumberFormatV126";
 import { getPublicVisualizationSummaryV126 } from "../../../data/visualization/publicVisualizationRegistryV126";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
+import AnalysisSummaryTableV146 from "./AnalysisSummaryTableV146";
+import { medianV146, signedBarV146 } from "../../../data/visualization/analysisMathV146";
 import "./province-series-analysis-v140.css";
 
 /**
@@ -170,7 +172,7 @@ export default function ProvinceSeriesAnalysisV140({
     [regions, time, valueAt]
   );
   const values = comparison.map((entry) => entry.row.value);
-  const median = values.length ? [...values].sort((a, b) => a - b)[Math.floor((values.length - 1) / 2)] : null;
+  const median = medianV146(values);
   const total = SUM_ALLOWED.has(elementId) && values.length ? values.reduce((sum, value) => sum + value, 0) : null;
 
   // One province, every time: the series.
@@ -215,7 +217,6 @@ export default function ProvinceSeriesAnalysisV140({
   const compareShown = comparison.slice(0, TOP_COUNT);
   const highlightIncluded = !region || compareShown.some((entry) => entry.region === region);
   const compareRows = highlightIncluded ? compareShown : [...compareShown, ...comparison.filter((entry) => entry.region === region)];
-  const maxValue = Math.max(...values.map(Math.abs), 1e-9);
 
   const update = (patch: Partial<{ measure: string; region: string; time: string }>) => {
     const nextTime = patch.time ?? time;
@@ -269,40 +270,6 @@ export default function ProvinceSeriesAnalysisV140({
         </button>
       </div>
 
-      <div className="psa140__kpis" data-testid="psa140-kpis">
-        {region ? (
-          <article data-testid="psa140-kpi-selected">
-            <span><PublicTermTextV134 text={measure.label} /></span>
-            <strong data-testid="psa140-kpi-value">{selectedRow ? format(selectedRow.value) : "값 없음"}</strong>
-            <small><PublicTermTextV134 text={`${unit} · ${timeLabel} · ${region}${rank ? ` · ${comparison.length}개 성·시 중 ${rank}위` : ""}`} /></small>
-          </article>
-        ) : (
-          <article data-testid="psa140-kpi-top">
-            <span><PublicTermTextV134 text={`${measure.label} 최대`} /></span>
-            <strong data-testid="psa140-kpi-value">{comparison[0] ? format(comparison[0].row.value) : "값 없음"}</strong>
-            <small><PublicTermTextV134 text={`${unit} · ${timeLabel} · ${comparison[0]?.region || ""}`} /></small>
-          </article>
-        )}
-        {total !== null && (
-          <article data-testid="psa140-kpi-total">
-            <span>{comparison.length}개 성·시 합계</span>
-            <strong>{format(total)}</strong>
-            <small><PublicTermTextV134 text={`${unit} · ${timeLabel} · 계획 용량의 합 · 설치 실적 아님`} /></small>
-          </article>
-        )}
-        <article>
-          <span>{comparison.length}개 성·시 중앙값</span>
-          <strong>{median !== null ? format(median) : "—"}</strong>
-          <small><PublicTermTextV134 text={`${unit} · ${timeLabel}${total === null ? " · 성·시 값을 더하지 않음" : ""}`} /></small>
-        </article>
-        {region && yearPoints.length >= 2 && (
-          <article>
-            <span>처음 → 최근</span>
-            <strong>{format(yearPoints[yearPoints.length - 1].value)}</strong>
-            <small>{yearPoints[0].time}년 {format(yearPoints[0].value)} → {yearPoints[yearPoints.length - 1].time}년 · {unit}</small>
-          </article>
-        )}
-      </div>
 
       <section className="psa140__panel" aria-labelledby={`psa140-primary-${elementId}`}>
         <header className="psa140__heading">
@@ -365,7 +332,7 @@ export default function ProvinceSeriesAnalysisV140({
             {regionSeries.map((entry) => (
               <li key={entry.time}>
                 <span>{entry.time}</span>
-                <i aria-hidden="true"><b style={{ width: `${Math.max(2, (Math.abs(entry.value) / Math.max(...regionSeries.map((e) => Math.abs(e.value)), 1e-9)) * 100)}%` }} /></i>
+                <SignedBarV146 value={entry.value} values={regionSeries.map((row) => row.value)} />
                 <strong>{format(entry.value)}</strong>
               </li>
             ))}
@@ -375,7 +342,7 @@ export default function ProvinceSeriesAnalysisV140({
             {compareRows.map((entry, index) => (
               <li key={entry.region} className={entry.region === region ? "is-selected" : undefined}>
                 <span>{index + 1}. {entry.region}</span>
-                <i aria-hidden="true"><b style={{ width: `${Math.max(2, (Math.abs(entry.row.value) / maxValue) * 100)}%` }} /></i>
+                <SignedBarV146 value={entry.row.value} values={values} />
                 <strong>{format(entry.row.value)}</strong>
               </li>
             ))}
@@ -398,7 +365,7 @@ export default function ProvinceSeriesAnalysisV140({
               return (
                 <li key={entry.region} className={entry.region === region ? "is-selected" : undefined}>
                   <span>{index + 1}. {entry.region}</span>
-                  <i aria-hidden="true"><b style={{ width: `${Math.max(2, (Math.abs(entry.row.value) / maxValue) * 100)}%` }} /></i>
+                  <SignedBarV146 value={entry.row.value} values={values} />
                   <strong>{format(entry.row.value)}</strong>
                 </li>
               );
@@ -420,13 +387,26 @@ export default function ProvinceSeriesAnalysisV140({
             {acrossMeasures.map((entry) => (
               <li key={entry.key} className={entry.key === measure.key ? "is-selected" : undefined}>
                 <span><PublicTermTextV134 text={entry.label} /></span>
-                <i aria-hidden="true"><b style={{ width: `${Math.max(2, (Math.abs(entry.value) / Math.max(...acrossMeasures.map((e) => Math.abs(e.value)), 1e-9)) * 100)}%` }} /></i>
+                <SignedBarV146 value={entry.value} values={acrossMeasures.map((row) => row.value)} />
                 <strong>{format(entry.value)}</strong>
               </li>
             ))}
           </ul>
         </section>
       )}
+      <AnalysisSummaryTableV146 title={`${timeLabel} · ${measure.label} 비교표`} rows={[
+        ...(selectedRow ? [{ label: region, value: selectedRow.value, unit, context: `${timeLabel} · ${comparison.length}개 성·시 중 ${rank}위` }] : []),
+        ...(total !== null ? [{ label: `${comparison.length}개 성·시 합계`, value: total, unit, context: `${timeLabel} · 계획 용량(설치 실적 아님)` }] : []),
+        ...(median !== null ? [{ label: `${comparison.length}개 성·시 중앙값`, value: median, unit, context: timeLabel }] : []),
+      ]} />
     </div>
   );
+}
+
+function SignedBarV146({ value, values }: { value: number; values: number[] }) {
+  const bar = signedBarV146(value, values);
+  return <i className="psa146-signed-bar" aria-hidden="true">
+    {bar.signed && <em style={{ left: `${bar.zero}%` }} />}
+    <b style={{ left: `${bar.left}%`, width: `${bar.width}%` }} />
+  </i>;
 }

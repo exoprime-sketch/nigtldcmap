@@ -179,32 +179,6 @@ export default function HydroStationObservationsV142({ elementId, entities }: Pr
         </p>
       </header>
 
-      <div className="pps132-kpis" data-testid="hydro-station-kpis-v142">
-        <article>
-          <span>관측지점·수계</span>
-          <strong>{model.sites.length.toLocaleString("ko-KR")}곳</strong>
-          <small>지점 대표점 · 유역 경계 미확보</small>
-        </article>
-        <article>
-          <span>관측값</span>
-          <strong>{model.observed.length.toLocaleString("ko-KR")}건</strong>
-          <small>{`지점 값 ${model.observed.filter((row) => !row.national).length}건${model.nationalRows.length ? ` · 전국 집계 ${model.observed.filter((row) => row.national).length}건` : ""}`}</small>
-        </article>
-        {elementId === "B-023" && (
-          <article>
-            <span>계절별 극값 비교</span>
-            <strong>{model.pairs.length.toLocaleString("ko-KR")}쌍</strong>
-            <small>같은 지점·단위·연도</small>
-          </article>
-        )}
-        {model.placeholders.length > 0 && (
-          <article>
-            <span>원천 미제공</span>
-            <strong>{model.placeholders.length.toLocaleString("ko-KR")}건</strong>
-            <small>격자·유역 단위 산출값 없음</small>
-          </article>
-        )}
-      </div>
 
       {model.pairs.length > 0 && (
         <section className="pps132-distribution" data-testid="hydro-season-pairs-v142">

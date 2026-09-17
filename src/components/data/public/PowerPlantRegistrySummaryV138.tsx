@@ -1,10 +1,11 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { powerPlantCapacityMwV141, powerPlantFuelV141 } from "../../../data/map/powerPlantFactsV141";
 import { formatPublicNumberV126 } from "../../../data/visualization/publicNumberFormatV126";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import "./public-portfolio-summary-v132.css";
+import "./detail-analysis-v146.css";
 
 /**
  * A-023 counts, each named for what it counts.
@@ -37,6 +38,8 @@ function capacityOf(attributes: Record<string, unknown>): number | null {
 }
 
 export default function PowerPlantRegistrySummaryV138({ entities }: Props) {
+  const [registry, setRegistry] = useState<"wri" | "osm">("wri");
+  const [metric, setMetric] = useState<"capacity" | "count">("capacity");
   const summary = useMemo(() => {
     const wri = entities.filter((entity) => entity.indicatorId === WRI_INDICATOR);
     const osm = entities.filter((entity) => entity.indicatorId !== WRI_INDICATOR);
@@ -84,6 +87,15 @@ export default function PowerPlantRegistrySummaryV138({ entities }: Props) {
 
   if (!summary.total) return null;
 
+  const chart = summary.fuel.map(([label, entry]) => ({
+    label,
+    value: metric === "count" ? entry[registry] : entry[registry === "wri" ? "wriMw" : "osmMw"],
+    available: metric === "count" || entry[registry === "wri" ? "wriStated" : "osmStated"] > 0,
+    count: entry[registry],
+  })).filter((row) => row.count > 0).sort((a, b) => b.value - a.value);
+  const maximum = Math.max(1, ...chart.map((row) => row.value));
+  const unit = metric === "capacity" ? "MW" : registry === "wri" ? "기" : "곳";
+
   return (
     <section
       className="pps132"
@@ -96,37 +108,17 @@ export default function PowerPlantRegistrySummaryV138({ entities }: Props) {
           두 원천(WRI GPPD, OpenStreetMap)의 수록 행을 각각 셉니다. 두 원천은 공통 식별자가 없어 같은 발전소가 양쪽에 있을 수 있으므로 고유 시설 수를 합쳐 세지 않습니다.
         </p>
       </header>
-      <div className="pps132-kpis">
-        <article data-portfolio-kpi="wri-rows">
-          <span>WRI GPPD 수록 발전소</span>
-          <strong>{summary.wri.toLocaleString("ko-KR")}</strong>
-          <small>기</small>
-        </article>
-        <article data-portfolio-kpi="osm-rows">
-          <span>OpenStreetMap 추출 시설</span>
-          <strong>{summary.osm.toLocaleString("ko-KR")}</strong>
-          <small>곳</small>
-        </article>
-        <article data-portfolio-kpi="located-rows">
-          <span>위치자료 보유(지도 표시)</span>
-          <strong>{summary.located.toLocaleString("ko-KR")}</strong>
-          <small>곳</small>
-        </article>
-        {summary.wriCapacity.count > 0 && (
-          <article data-portfolio-kpi="wri-capacity">
-            <span><PublicTermTextV134 text="WRI 설비용량 합계" /></span>
-            <strong>{formatPublicNumberV126(summary.wriCapacity.total, "MW")}</strong>
-            <small><PublicTermTextV134 text={`MW · 용량 있는 ${summary.wriCapacity.count.toLocaleString("ko-KR")}기`} /></small>
-          </article>
-        )}
-        {summary.osmCapacity.count > 0 && (
-          <article data-portfolio-kpi="osm-capacity">
-            <span><PublicTermTextV134 text="OSM 설비용량 합계" /></span>
-            <strong>{formatPublicNumberV126(summary.osmCapacity.total, "MW")}</strong>
-            <small><PublicTermTextV134 text={`MW · 용량 있는 ${summary.osmCapacity.count.toLocaleString("ko-KR")}곳 · OSM 시설 ${summary.osm.toLocaleString("ko-KR")}곳 중`} /></small>
-          </article>
-        )}
+      <div className="detail146">
+        <div className="detail146-select">
+          <label>자료 출처 <select value={registry} onChange={(event) => setRegistry(event.target.value as "wri" | "osm")}><option value="wri">WRI GPPD · 2021년</option><option value="osm">OpenStreetMap · 2026년 추출</option></select></label>
+          <label>비교 항목 <select value={metric} onChange={(event) => setMetric(event.target.value as "capacity" | "count")}><option value="capacity">설비용량</option><option value="count">시설 수</option></select></label>
+        </div>
+        <figure className="detail146-chart"><figcaption>발전원별 {metric === "capacity" ? "설비용량" : "시설 수"} · {registry === "wri" ? "WRI GPPD · 2021년" : "OpenStreetMap · 2026년 추출"} · {unit}</figcaption>
+          <ol>{chart.map((row) => <li key={row.label}><span>{row.label}</span><i aria-hidden="true"><b style={{ width: `${row.available ? row.value / maximum * 100 : 0}%` }} /></i><strong>{row.available ? formatPublicNumberV126(row.value, unit) : "미기재"}</strong></li>)}</ol>
+        </figure>
+        <p className="detail146-note">설비용량은 값이 기재된 시설만 합산했습니다. 두 출처는 수록 범위와 기준시점이 달라, 출처를 바꿨을 때의 차이를 증감으로 해석할 수 없습니다.</p>
       </div>
+      <details className="detail146-details"><summary>표로 보기 · 출처별 발전원·시설 수·설비용량</summary>
       <div className="pps132-distributions">
         <section className="pps132-distribution pps132-distribution--table" data-portfolio-distribution="true" data-testid="power-plant-fuel-distribution-v138">
           <h5>발전원별 시설 수와 설비용량 · 원천별</h5>
@@ -169,6 +161,7 @@ export default function PowerPlantRegistrySummaryV138({ entities }: Props) {
           </p>
         </section>
       </div>
+      </details>
     </section>
   );
 }

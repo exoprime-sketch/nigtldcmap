@@ -164,29 +164,6 @@ export default function EnergyOutlookPlanAnalysisV141({ entities, initialYear }:
         </p>
       </header>
 
-      <div className="pps132-kpis" data-testid="energy-outlook-kpis-v141">
-        {totalItem && (
-          <article>
-            <span>총 설비용량 계획 · {year}년</span>
-            <strong>{formatRangeV141(totalItem.range)}</strong>
-            <small><PublicTermTextV134 text="MW" /> · 하한~상한</small>
-          </article>
-        )}
-        {model.reShare[0]?.byYear.get(year) && (
-          <article>
-            <span>재생에너지 비중 목표(수력 제외) · {year}년</span>
-            <strong>{formatRangeV141(model.reShare[0].byYear.get(year)!)}</strong>
-            <small>%</small>
-          </article>
-        )}
-        {model.demand.find((item) => /최대전력/u.test(item.label))?.byYear.get(year) && (
-          <article>
-            <span>최대전력(피크 수요) · {year}년</span>
-            <strong>{formatRangeV141(model.demand.find((item) => /최대전력/u.test(item.label))!.byYear.get(year)!)}</strong>
-            <small><PublicTermTextV134 text="MW" /></small>
-          </article>
-        )}
-      </div>
 
       <section className="eop141__plan" aria-labelledby="eop141-plan-title">
         <div className="eop141__controls">

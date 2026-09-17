@@ -122,7 +122,7 @@ function screenReadingExpression() {
       portfolioRecordCount: Number(
         String(
           clean(
-            document.querySelector('[data-portfolio-kpi="record-count"] strong')?.textContent
+            document.querySelector('[data-summary-key="record-count"] [data-summary-value]')?.textContent
           )
         ).replace(/[^0-9]/gu, '')
       ),

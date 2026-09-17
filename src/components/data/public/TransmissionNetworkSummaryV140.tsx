@@ -74,23 +74,6 @@ export default function TransmissionNetworkSummaryV140({ entities }: Props) {
           2016년 송전선은 경로가 있는 {summary.network.toLocaleString("ko-KR")}개 구간이고, 개정 PDP8 선로 목록 {summary.plan.toLocaleString("ko-KR")}행(계획 {summary.planned}행 포함)은 전압만 있고 경로 좌표가 없어 지도에는 없습니다. 두 목록은 서로 더하지 않습니다.
         </p>
       </header>
-      <div className="pps132-kpis">
-        <article data-portfolio-kpi="network-segments">
-          <span>2016년 송전선 구간</span>
-          <strong>{summary.network.toLocaleString("ko-KR")}</strong>
-          <small>구간 · 경로 있음 · 지도 표시</small>
-        </article>
-        <article data-portfolio-kpi="network-length">
-          <span>2016년 송전선 총연장</span>
-          <strong>{formatPublicNumberV126(Math.round(summary.totalKm), "km")}</strong>
-          <small><PublicTermTextV134 text="km · 원천 PDF 좌표화(2–10 km 오차)" /></small>
-        </article>
-        <article data-portfolio-kpi="plan-rows">
-          <span><PublicTermTextV134 text="개정 PDP8 선로 목록" /></span>
-          <strong>{summary.plan.toLocaleString("ko-KR")}</strong>
-          <small>행 · 기존 {summary.plan - summary.planned} · 계획 {summary.planned} · 경로 없음</small>
-        </article>
-      </div>
       <div className="pps132-distributions">
         <section className="pps132-distribution pps132-distribution--table" data-portfolio-distribution="true" data-testid="transmission-voltage-table-v140">
           <h5>2016년 송전선 · 전압별 구간 수와 연장</h5>
@@ -114,6 +97,7 @@ export default function TransmissionNetworkSummaryV140({ entities }: Props) {
                     <td>{summary.totalKm > 0 ? `${Math.round((entry.km / summary.totalKm) * 100)}%` : "—"}</td>
                   </tr>
                 ))}
+                <tr><th scope="row">합계</th><td>{summary.network.toLocaleString("ko-KR")}</td><td>{formatPublicNumberV126(Math.round(summary.totalKm), "km")}</td><td>100%</td></tr>
               </tbody>
             </table>
           </div>
@@ -138,6 +122,7 @@ export default function TransmissionNetworkSummaryV140({ entities }: Props) {
                     <td>{entry.planned.toLocaleString("ko-KR")}</td>
                   </tr>
                 ))}
+                <tr><th scope="row">합계</th><td>{summary.plan - summary.planned}</td><td>{summary.planned}</td></tr>
               </tbody>
             </table>
           </div>

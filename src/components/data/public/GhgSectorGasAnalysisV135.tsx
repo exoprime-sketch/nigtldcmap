@@ -186,46 +186,6 @@ export default function GhgSectorGasAnalysisV135({ elementId, rows }: Props) {
         </p>
       </header>
 
-      <dl className="ghg-sector-gas-v135__kpis" data-testid="ghg-kpi-strip-v135">
-        <div>
-          <dt>
-            <PublicTermTextV134 text="순 GHG 배출량" />
-          </dt>
-          <dd>
-            {formatPublicNumberV126(net, unit)}{" "}
-            <small>
-              <PublicTermTextV134 text={unit} />
-            </small>
-          </dd>
-        </div>
-        {largestEmittingSector && (
-          <div>
-            <dt>최대 배출 부문</dt>
-            <dd>
-              {largestEmittingSector.label}
-              <small>
-                {formatPublicNumberV126(
-                  largestEmittingSector.positiveTotal,
-                  unit
-                )}{" "}
-                <PublicTermTextV134 text={unit} />
-              </small>
-            </dd>
-          </div>
-        )}
-        {principalGas && (
-          <div>
-            <dt>주요 가스</dt>
-            <dd>
-              <PublicTermTextV134 text={principalGas.label} />
-              <small>
-                {formatPublicNumberV126(principalGas.value, unit)}{" "}
-                <PublicTermTextV134 text={unit} />
-              </small>
-            </dd>
-          </div>
-        )}
-      </dl>
 
       <ul className="ghg-sector-gas-v135__legend" data-testid="ghg-legend-v135">
         {activeGases.map((gas) => (

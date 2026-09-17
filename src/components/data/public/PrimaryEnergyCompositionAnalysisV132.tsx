@@ -200,44 +200,6 @@ export default function PrimaryEnergyCompositionAnalysisV132({
       data-total-included-as-component="false"
       data-zero-imputation="false"
     >
-      <section className="pec132__kpis" aria-label="최신 핵심현황" data-testid="a016-kpis">
-        <article>
-          <span>총 1차 에너지 소비량</span>
-          <strong>
-            {latest.total === null ? (
-              "미공개"
-            ) : (
-              <PublicTermTextV134
-                text={`${formatEnergyV132(latest.total)} ${unit}`}
-              />
-            )}
-          </strong>
-          <small>{latest.year}년</small>
-        </article>
-        <article>
-          <span>가장 큰 에너지원</span>
-          <strong>{largestSource.label}</strong>
-          <small>
-            <PublicTermTextV134
-              text={`${formatEnergyV132(largestSource.value)} ${unit}`}
-            />
-          </small>
-        </article>
-        <article>
-          <span>수력·기타 재생에너지</span>
-          <strong>
-            <PublicTermTextV134
-              text={`${formatEnergyV132(renewableTotal)} ${unit}`}
-            />
-          </strong>
-          <small>두 공개 계열의 합계 · {latest.year}년</small>
-        </article>
-        <article>
-          <span>관측기간</span>
-          <strong>{minimumYear}–{maximumYear}</strong>
-          <small>{allYears.length}개 연도</small>
-        </article>
-      </section>
 
       <section className="pec132__panel" aria-labelledby="pec132-absolute-title" data-testid="a016-absolute-trend">
         <header className="pec132__heading">

@@ -163,12 +163,12 @@ const ENTITY_RULES = {
   "C-025": { unit: "프로젝트", groupBy: "standard", kind: "bars" },
   "D-012": { unit: "기업", groupBy: "기술분야", kind: "bars" },
   "D-014": { unit: "사업", groupBy: "원조유형", kind: "bars", individualOnly: true },
-  "D-015": { unit: "사업", groupBy: "상태", kind: "bars", individualOnly: true },
-  "D-016": { unit: "사업", groupBy: "기관유형", kind: "bars", individualOnly: true },
+  "D-015": { unit: "사업 기록", groupBy: "상태", kind: "bars", individualOnly: true },
+  "D-016": { unit: "사업 기록", groupBy: "기관유형", kind: "bars", individualOnly: true },
   "D-017": { unit: "공고", kind: "facts" },
   "D-019": { unit: "기술지원 요청", groupBy: "기술유형", kind: "bars" },
   "D-020": { unit: "사업", kind: "facts" },
-  "D-021": { unit: "사업", groupBy: "활동상태", kind: "bars", individualOnly: true },
+  "D-021": { unit: "지원 활동", groupBy: "활동상태", kind: "bars", individualOnly: true },
   "D-022": { unit: "사업", groupBy: "투자_유형", kind: "bars" },
   "D-024": { unit: "투자 건", kind: "facts", individualOnly: true },
   "D-025": { unit: "사업", groupBy: "투자유형", kind: "bars" },
@@ -589,6 +589,14 @@ const C_URL_LIKE = /^(?:https?:\/\/|[a-z0-9.-]+\.(?:org|int|vn|gov|com)\b)/iu;
 const C_ACTOR = /기관\(|기업\(|도시\(|국가\(|지역\(|투자자\(|Organization|Company|City|Country|Region|Investor/iu;
 
 const C_TEMPLATE_CARDS = {
+  "C-001": (entities) => {
+    const rows = entities.map(cTemplateRow).filter((row) => row.indicatorId === "C-001_mitigation_target" && row.name === "총량 감축률" && row.year === 2030);
+    // Reviewed NDC 2022 Table 3: conditions are not inferred from magnitude.
+    if (rows.filter((row) => row.value === 15.8).length !== 1 || rows.filter((row) => row.value === 43.5).length !== 1) throw new Error("C-001 reviewed targets changed");
+    return { kind: "bars", headline: { value: "15.8 %", label: "2030년 자체 이행 감축목표 · 국제지원 시 전체 43.5%" }, preview: { parts: [{ label: "자체 이행", value: 15.8 }, { label: "국제지원 시 전체", value: 43.5 }], unit: "%", scope: "2030년 BAU 대비 · 두 목표를 합산하지 않음" }, period: "2022년 제출 · 2030년 목표", selection: null, basis: { unit: "감축률", rule: "NDC 2022 표 3의 무조건부·조건부 감축률" }, measure: null, headlineIndicatorIds: ["C-001_mitigation_target"] };
+  },
+  "C-019": (entities) => carbonFacilityCardV146(entities, false),
+  "C-022": (entities) => carbonFacilityCardV146(entities, true),
   // Article 6.8 NMAs: the card states Viet Nam's place, not a count of statements.
   "C-007": (entities, item) => {
     const rows = entities.map(cTemplateRow);
@@ -663,6 +671,16 @@ const C_TEMPLATE_CARDS = {
 };
 
 // ------------------------------------------------------------------ entity cards
+function carbonFacilityCardV146(entities, sectorMode) {
+  const regions = entities.filter((entity) => entity.normalizedAttributes?.["속성22_행정코드P_code"] && /시설/u.test(entity.name)).map((entity) => ({ ...cTemplateRow(entity), region: text(entity.normalizedAttributes["속성20_지역_원문"]), code: text(entity.normalizedAttributes["속성22_행정코드P_code"]) })).filter((row) => row.value !== null).sort((a, b) => b.value - a.value);
+  const date = [...new Set(regions.map((row) => row.timeText))].sort().at(-1);
+  const dated = regions.filter((row) => row.timeText === date);
+  const top = dated[0];
+  if (!top) throw new Error("No reviewed facility-region rows");
+  const parts = sectorMode ? top.category.split(/\s*\/\s*/u).flatMap((part) => { const match = part.match(/^(.+?)\s+(\d+)$/u); return match ? [{ label: match[1].replace("공상(Công Thương)", "산업·통상"), value: Number(match[2]) }] : []; }) : dated.map((row) => ({ label: row.region, value: row.value }));
+  return { kind: "bars", headline: { value: `${formatNumber(top.value)}개소`, label: `${top.region} · 인벤토리 의무 대상 시설 · ${date}` }, preview: { parts: parts.slice(0, 6), unit: "개소", scope: sectorMode ? `${top.region} · 부문별 구성` : `${dated.length}개 성·시 중 상위 6개`, omitted: Math.max(0, parts.length - 6) }, period: `${date} 기준`, selection: sectorMode ? { measure: null, sex: null, year: null, period: null, dimensions: { registryRegion: top.code } } : null, basis: { unit: "시설", rule: "원자료 행정단위·기준일별 시설 수. 63개 경계로 재합산하지 않음." }, measure: null, headlineIndicatorIds: [entities.find((entity) => entity.normalizedAttributes?.["속성22_행정코드P_code"] === top.code)?.indicatorId].filter(Boolean) };
+}
+
 function entityCard(elementId, item, pack, contract, rule) {
   // The detail excludes the source's total/explanatory rows (레코드구분=집계)
   // from every list and sum; the card counts the same base.

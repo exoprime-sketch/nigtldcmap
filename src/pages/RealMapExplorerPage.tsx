@@ -67,6 +67,8 @@ import {
   summarizeMapAvailabilityV140,
 } from "../data/map/mapAvailabilityV140";
 import { formatPublicNumberV126 } from "../data/visualization/publicNumberFormatV126";
+import { mapOverlapSummariesV145 } from "../data/map/publicMapOverlapV145";
+import { createMapOverlapPopupV145 } from "../components/map/mapOverlapPopupV145";
 import {
   publicSourceOrganizationV136_1,
   publicTextV126,
@@ -106,6 +108,7 @@ import "../styles/country-data-platform-v122.css";
 import "../styles/map-layout-v129.css";
 import "../styles/map-comparison-v135.css";
 import "../styles/map-catalog-v138.css";
+import "../styles/map-overlap-v145.css";
 
 interface RealMapExplorerPageProps {
   onOpenElement: (
@@ -1644,6 +1647,31 @@ function publicPowerPlantTooltipLinesV132(
   ].filter(Boolean);
 }
 
+function summarizeMapHitsV145(hits: MapOverlapChoiceV133[], layers: CountryMapLayerV122[], filters: Record<string, string>) {
+  return mapOverlapSummariesV145(hits.map((hit) => {
+    const layer = layers.find((item) => item.elementId === hit.elementId);
+    const p = hit.properties;
+    const presentation = getPublicIndicatorVariablePresentationV129(hit.elementId, String(p.variable || ""));
+    const sourceRegion = publicTextV126(p.sourceRegion);
+    const facts = hit.elementId === "A-023"
+      ? publicPowerPlantTooltipLinesV132(p, "", true)
+          .filter((line) => !line.startsWith("자료연도 "))
+          .map((line) => line.replace(/ · 자료연도 .+$/u, ""))
+      : layer ? popupFactLinesV137(layer, p, 3) : [];
+    return {
+      ...hit,
+      title: publicMapLayerTitleV126(hit.elementId, layer?.publicShortTitle),
+      facts,
+      unit: presentation?.unit,
+      measure: presentation?.label,
+      period: layer ? layerDisplayedPeriodV142(layer, filters, String(layer.sourceYear || "")) : "",
+      regionNote: sourceRegion && layer
+        ? `${publicVietnamSourceRegionV126(sourceRegion)} · ${regionUnitLabelV138(layer)} 값`
+        : undefined,
+    };
+  }));
+}
+
 function publicTransmissionSegmentTitleV131(
   properties: Record<string, unknown>
 ): string {
@@ -1975,7 +2003,8 @@ export default function RealMapExplorerPage({
     popupRef.current?.remove();
     popupRef.current = null;
     popupOwnerRef.current = null;
-  }, [contextLayerIds, primaryLayerId, selectedPresetId]);
+  }, [contextLayerIds, primaryLayerId, selectedPresetId, selectorByElement, filters]);
+  const overlapSummariesV145 = summarizeMapHitsV145(overlapChoicesV133, layers, filters);
   const renderOrderedActiveIds = useMemo(
     () => {
       const ids = [
@@ -3430,15 +3459,7 @@ export default function RealMapExplorerPage({
             })
               .setLngLat(event.lngLat)
               .setDOMContent(
-                createPublicMapPopupContentV129(
-                  `이 위치에 ${overlapHits.length}개 데이터`,
-                  overlapHits.slice(0, 4).map((hit) =>
-                    `${hit.role === "primary" ? "주 분석" : "함께 보기"} · ${publicMapLayerTitleV126(
-                      hit.elementId
-                    )} · ${hit.label}`
-                  ),
-                  { testId: "map-hover-popup-v133" }
-                )
+                createMapOverlapPopupV145(summarizeMapHitsV145(overlapHits, layers, filters))
               )
               .addTo(map);
             return;
@@ -3873,15 +3894,7 @@ export default function RealMapExplorerPage({
           })
             .setLngLat(coordinates)
             .setDOMContent(
-              createPublicMapPopupContentV129(
-                `이 위치에 ${overlapHits.length}개 데이터`,
-                overlapHits.slice(0, 4).map((hit) =>
-                  `${hit.role === "primary" ? "주 분석" : "함께 보기"} · ${publicMapLayerTitleV126(
-                    hit.elementId
-                  )} · ${hit.label}`
-                ),
-                { testId: "map-hover-popup-v133" }
-              )
+              createMapOverlapPopupV145(summarizeMapHitsV145(overlapHits, layers, filters))
             )
             .addTo(map);
           return;
@@ -7502,7 +7515,7 @@ export default function RealMapExplorerPage({
               aria-label="겹친 지도 데이터 선택"
             >
               <div>
-                <strong>이 위치에 {overlapChoicesV133.length}개 데이터</strong>
+                <strong>이 위치의 데이터</strong>
                 <button
                   type="button"
                   aria-label="선택 목록 닫기"
@@ -7513,7 +7526,9 @@ export default function RealMapExplorerPage({
               </div>
               <p>확인할 데이터를 선택하세요.</p>
               <ul>
-                {overlapChoicesV133.map((choice) => (
+                {overlapSummariesV145.map((summary) => {
+                  const choice = overlapChoicesV133.find((hit) => hit.elementId === summary.elementId && hit.selectionKey === summary.selectionKey)!;
+                  return (
                   <li key={`${choice.elementId}:${choice.selectionKey}`}>
                     <button
                       type="button"
@@ -7533,12 +7548,16 @@ export default function RealMapExplorerPage({
                           : "함께 보기"}
                       </span>
                       <strong>
-                        {publicMapLayerTitleV126(choice.elementId)}
+                        <PublicTermExpandedTextV134 text={summary.title} />
                       </strong>
-                      <small>{choice.label}</small>
+                      {summary.value && <b className="cdp-map-overlap-value-v145"><PublicTermExpandedTextV134 text={summary.value} /></b>}
+                      <small><PublicTermExpandedTextV134 text={summary.place} /></small>
+                      {summary.context && <small><PublicTermExpandedTextV134 text={summary.context} /></small>}
+                      {summary.facts.slice(0, 2).map((fact) => <small key={fact}><PublicTermExpandedTextV134 text={fact} /></small>)}
                     </button>
                   </li>
-                ))}
+                  );
+                })}
               </ul>
             </section>
           )}

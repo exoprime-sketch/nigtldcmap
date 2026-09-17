@@ -1,0 +1,91 @@
+.cdp-map-canvas.is-visible {
+  /* Let popups share the overlay stack instead of trapping them below the
+     legend in the canvas's former z-index:2 stacking context. */
+  z-index: auto;
+}
+
+.cdp-map-canvas.is-visible .maplibregl-canvas {
+  z-index: 2;
+}
+
+.cdp-map-canvas.is-visible .maplibregl-popup {
+  z-index: 12;
+}
+
+.cdp-map-canvas.is-visible .maplibregl-popup-content {
+  /* Moving over a read-only summary must not hide the underlying feature. */
+  pointer-events: none;
+}
+
+.cdp-map-overlap-summary-v145 {
+  width: min(248px, 65vw);
+  color: #24483c;
+  font-family: inherit;
+  overflow-wrap: anywhere;
+}
+
+.cdp-map-overlap-summary-v145 section {
+  display: grid;
+  gap: 3px;
+}
+
+.cdp-map-overlap-summary-v145 section + section {
+  margin-top: 10px;
+  padding-top: 9px;
+  border-top: 1px solid #dce7e2;
+}
+
+.cdp-map-overlap-summary-v145 strong {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.cdp-map-overlap-summary-v145 section > span,
+.cdp-map-overlap-summary-v145 small {
+  color: #52695f;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.cdp-map-overlap-summary-v145 [data-public-term-v134] {
+  display: inline;
+  font: inherit;
+  color: inherit;
+}
+
+.cdp-map-overlap-summary-v145 .public-term-visible-expansion-v134 {
+  font-size: 10px;
+  font-weight: 400;
+  color: #52695f;
+}
+
+.cdp-map-overlap-summary-v145 .cdp-map-overlap-role-v145 {
+  font-weight: 700;
+  color: #176b58;
+}
+
+.cdp-map-overlap-value-v145 {
+  display: block;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #24483c;
+}
+
+[data-layer-role="primary"] > .cdp-map-overlap-value-v145 {
+  font-size: 18px;
+  color: #086c61;
+}
+
+.cdp-map-overlap-summary-v145 section[data-layer-role="primary"] {
+  padding-bottom: 3px;
+}
+
+.cdp-map-overlap-picker-v133 button[data-layer-role="primary"] {
+  border-color: #62a994;
+  background: #eef8f4;
+}
+
+.cdp-map-overlap-picker-v133 li > button:focus-visible {
+  outline: 3px solid #087e77;
+  outline-offset: 2px;
+}

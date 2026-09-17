@@ -1,5 +1,4 @@
-import { publicScaledNumberV136_2 } from "../../../utils/publicNumberScaleV136_2";
-import { publicIndicatorSeriesV144 } from "../../../data/visualization/publicIndicatorCopyV144";
+import { publicIndicatorSeriesV144, previousYearChangeV144 } from "../../../data/visualization/publicIndicatorCopyV144";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties, ReactNode } from "react";
 import type {
@@ -29,7 +28,6 @@ import { publicEntityTitleV131 } from "../../../data/visualization/publicEntityT
 import { getPublicAnalysisHeadingsV134 } from "../../../data/visualization/publicAnalysisHeadingsV134";
 import {
   publicDimensionValueV134,
-  publicMetricLabelV136_2,
 } from "../../../data/visualization/publicCopyRegistryV126";
 import PublicEntityCardGridV131, { publicEntityStatedValuesV141 } from "../public/PublicEntityCardGridV131";
 import { comparableStatedValuesV142 } from "../../../data/visualization/statedValueRoleV142";
@@ -132,12 +130,6 @@ export default function SemanticContractRendererV125({
         publicHeadings?.primaryChartTitle || rendererLabelV125(renderer)
       } 주 분석`}
     >
-      {publicHeadings && (
-        <header className="sv125-section-heading" data-testid="public-analysis-heading-v134">
-          <span>주 분석</span>
-          <h3>{publicHeadings.primaryChartTitle}</h3>
-        </header>
-      )}
       {renderer === "policy-timeline" ? (
         <>
           {/* A numeric measure with several categories at one time (B-015's
@@ -170,6 +162,9 @@ export default function SemanticContractRendererV125({
             numericRows,
             textRows,
             contextRows
+          )}
+          {["kpi-trend", "multi-metric-trend", "score-benchmark"].includes(renderer) && numericRows.length > 0 && (
+            <ObservationValuesTableV146 rows={numericRows} context={contextRows} title={`${numericRows[0].year || numericRows[0].period || "선택 조건"} · 항목별 값`} />
           )}
           {renderEntityPanelV125(
             renderer,
@@ -240,17 +235,17 @@ function renderObservationPanelV125(
       return <EvidenceMatrixV125 rows={presentRows} entities={[]} />;
     case "portfolio":
       return numericRows.length > 0 ? (
-        <MetricCardsV125 rows={numericRows} title="포트폴리오 핵심 수치" />
+        <ObservationValuesTableV146 rows={numericRows} title="사업 관련 통계" />
       ) : textRows.length > 0 ? (
         <EvidenceCardsV125 rows={textRows} />
       ) : null;
     case "document-library":
       return numericRows.length > 0 ? (
-        <MetricCardsV125 rows={numericRows} title="문헌·성과 집계" />
+        <ObservationValuesTableV146 rows={numericRows} title="문헌·성과 집계" />
       ) : null;
     case "spatial-summary":
       return numericRows.length > 0 ? (
-        <MetricCardsV125 rows={numericRows} title="공간 데이터 핵심 수치" />
+        <ObservationValuesTableV146 rows={numericRows} title="지역별 자료" />
       ) : textRows.length > 0 ? (
         <EvidenceCardsV125 rows={textRows} />
       ) : null;
@@ -287,15 +282,7 @@ function renderObservationPanelV125(
         </>
       );
     case "structured-table":
-      return presentRows.length > 0 ? (
-        <section className="sv125-contract-note" role="note">
-          <strong>구조화 표에 적합한 데이터</strong>
-          <span>
-            수치 축으로 변환하지 않고 아래 상세 데이터에서 공개된 값을
-            유지합니다.
-          </span>
-        </section>
-      ) : null;
+      return presentRows.length > 0 ? <ObservationValuesTableV146 rows={presentRows} title="항목별 자료" /> : null;
     case "directory":
       return textRows.length > 0 ? <EvidenceCardsV125 rows={textRows} /> : null;
     case "category-comparison":
@@ -622,7 +609,6 @@ function ScoreBenchmarkPanelV125({
   if (rows.length === 0) return null;
   return (
     <>
-      <MetricCardsV125 rows={rows} title="현재 점수" />
       <TrendPanelV125 elementId={elementId} rows={contextRows} />
     </>
   );
@@ -720,7 +706,7 @@ function TrendPanelV125({
   }
 
   return (
-    <VisualizationFrameV125 eyebrow="연도별" title="항목 추세">
+    <div className="sv146-trend-analysis">
       {unitGroups.map(({ unit, rows: unitRows }) =>
         comparableYearCountV135(unitRows) >= 3 ? (
           <TrendUnitV125
@@ -733,7 +719,7 @@ function TrendPanelV125({
           <CategoryComparisonV125 key={unit || "no-unit"} rows={unitRows} />
         )
       )}
-    </VisualizationFrameV125>
+    </div>
   );
 }
 
@@ -890,10 +876,10 @@ function TrendUnitV125({
         scaleDescription={fixedDomain?.scaleDescription}
         series={series}
         sharedYearTooltip
-        title={`${minYear}~${maxYear}년 추세`}
+        title={`${measureLabel} · ${minYear}~${maxYear}년 추이`}
         unit={publicUnit}
         xAxisTitle="연도"
-        yAxisTitle="측정값"
+        yAxisTitle={measureLabel || "값"}
         zoom={{
           enabled: maxYear > minYear,
           minimumSpan: Math.max(1, Math.floor((maxYear - minYear) / 5)),
@@ -1112,42 +1098,27 @@ function CategoryComparisonUnitV143({ rows, unit, barLabel, title }: { rows: Num
           </article>;
 }
 
-function MetricCardsV125({
-  rows,
-  title,
-}: {
-  rows: NumericRowV125[];
-  title: string;
-}) {
+/** Values without a meaningful shared axis belong in a table, never headline tiles. */
+function ObservationValuesTableV146({ rows, title, context }: { rows: PresentRowV125[]; title: string; context?: SemanticObservationV125[] }) {
+  if (!rows.length) return null;
   return (
-    <VisualizationFrameV125 eyebrow="핵심 수치" title={title}>
-      <div className="sv125-metric-grid" data-testid="public-metric-cards">
-        {rows.map((row) => {
-          const unit = observationUnitV125(row);
-          const scaled = publicScaledNumberV136_2(row.value, unit);
+    <div className="sv125-matrix-wrap sv146-values-table" data-testid="analysis-values-table-v146">
+      <table>
+        <caption>{title}</caption>
+        <thead><tr><th scope="col">항목</th><th scope="col">값</th><th scope="col">단위</th><th scope="col">시점</th>{context && <th scope="col">전년 대비</th>}</tr></thead>
+        <tbody>{rows.map((row) => {
+          const change = context ? previousYearChangeV144(row, context) : null;
           return (
-          <article key={row.recordId}>
-            <span><PublicTermTextV134 text={publicMetricLabelV136_2(row.displayLabel)} /></span>
-            <strong
-              title={scaled.scaled ? `${scaled.exact}${unit ? ` ${unit}` : ""}` : undefined}
-              data-public-exact-value={scaled.scaled ? scaled.exact : undefined}
-            >
-              {scaled.display}
-            </strong>
-            <small>
-              <PublicTermTextV134
-                text={
-                  [observationUnitV125(row), row.year || row.period]
-                    .filter(Boolean)
-                    .join(" · ") || "기준정보 미기재"
-                }
-              />
-            </small>
-          </article>
-          );
-        })}
-      </div>
-    </VisualizationFrameV125>
+          <tr key={row.recordId}>
+            <th scope="row"><PublicTermTextV134 text={publicIndicatorSeriesV144(row)} /></th>
+            <td>{formatValueV121(row.value)}</td>
+            <td><PublicTermTextV134 text={observationUnitV125(row) || "—"} /></td>
+            <td>{row.year || row.period || "미기재"}</td>
+            {context && <td>{change ? `${change.value > 0 ? "+" : ""}${formatValueV121(Number(change.value.toPrecision(10)))} ${change.unit || ""}` : "비교 자료 없음"}</td>}
+          </tr>
+        ); })}</tbody>
+      </table>
+    </div>
   );
 }
 
@@ -1473,13 +1444,16 @@ function PolicyTimelineV125({
   );
 }
 
-function EvidenceMatrixV125({
+export function EvidenceMatrixV125({
   rows,
   entities,
 }: {
   rows: PresentRowV125[];
   entities: VietnamEntityV124[];
 }) {
+  const [query, setQuery] = useState("");
+  const [group, setGroup] = useState("all");
+  const [page, setPage] = useState(0);
   // The same repeated-label trap as the bar comparison: E-017 listed five rows
   // of "기후기술 수준 순위" against 5/2/3/4/1 and never named a country.
   const comparisonKey = comparisonKeyV138(rows);
@@ -1516,25 +1490,35 @@ function EvidenceMatrixV125({
       .map((entity) => entityMatrixRowV137(entity, emissionUnit, entities)),
   ];
   if (items.length === 0) return null;
+  const groups = [...new Set(items.map((item) => item.group).filter((value): value is string => Boolean(value)))];
+  const needle = query.trim().toLocaleLowerCase("ko-KR");
+  const filtered = items.filter((item) => (group === "all" || item.group === group) && (!needle || `${item.area} ${item.result} ${item.basis}`.toLocaleLowerCase("ko-KR").includes(needle)));
+  const pages = Math.max(1, Math.ceil(filtered.length / 20));
+  const currentPage = Math.min(page, pages - 1);
   const hasGroups = items.some((item) => item.group);
   const hasUnits = items.some((item) => item.unit);
   // Rows stay in source order; a group is named once, on its first row.
   let lastGroup: string | null = null;
   return (
-    <VisualizationFrameV125 eyebrow="확인 결과" title={`항목별 확인 결과와 기준연도 · ${items.length.toLocaleString("ko-KR")}건`}>
+    <VisualizationFrameV125 eyebrow="자료 목록" title="항목별 내용과 기준">
+      <div className="detail146-list-controls">
+        <label>검색어 <input type="search" value={query} placeholder="항목·내용 검색" onChange={(event) => { setQuery(event.target.value); setPage(0); }} /></label>
+        {groups.length > 1 && <label>자료 구분 <select value={group} onChange={(event) => { setGroup(event.target.value); setPage(0); }}><option value="all">전체</option>{groups.map((value) => <option key={value}>{value}</option>)}</select></label>}
+        <span role="status">{filtered.length.toLocaleString("ko-KR")}건 / 전체 {items.length.toLocaleString("ko-KR")}건</span>
+      </div>
       <div className="sv125-matrix-wrap">
         <table className="sv125-evidence-matrix" data-testid="evidence-matrix-v138" data-has-units={hasUnits ? "true" : "false"}>
           <thead>
             <tr>
               {hasGroups && <th scope="col">구분</th>}
               <th scope="col">항목</th>
-              <th scope="col">확인 결과</th>
+              <th scope="col">내용·값</th>
               {hasUnits && <th scope="col">단위</th>}
               <th scope="col">기준연도·대상·근거</th>
             </tr>
           </thead>
           <tbody>
-            {items.slice(0, 40).map((item) => {
+            {filtered.slice(currentPage * 20, (currentPage + 1) * 20).map((item) => {
               const groupCell = item.group && item.group !== lastGroup ? item.group : "";
               lastGroup = item.group;
               return (
@@ -1554,12 +1538,8 @@ function EvidenceMatrixV125({
           </tbody>
         </table>
       </div>
-      {items.length > 40 && (
-        <p className="sv125-contract-overflow-note">
-          대표 40건을 표시합니다. 전체 {items.length}건은 상세 데이터에서 확인할 수
-          있습니다.
-        </p>
-      )}
+      {filtered.length === 0 && <p role="status">조건에 맞는 자료가 없습니다. 검색어 또는 자료 구분을 변경해 주세요.</p>}
+      {pages > 1 && <div className="detail146-pagination"><button type="button" disabled={currentPage === 0} onClick={() => setPage(currentPage - 1)}>이전</button><span>{currentPage + 1} / {pages} 페이지</span><button type="button" disabled={currentPage === pages - 1} onClick={() => setPage(currentPage + 1)}>다음</button></div>}
     </VisualizationFrameV125>
   );
 }
@@ -1756,47 +1736,8 @@ function DocumentLibraryV125({
   );
 }
 
-function SpatialSummaryV125({
-  entities,
-  contract,
-  countryNameKo,
-}: {
-  entities: VietnamEntityV124[];
-  contract: ElementVisualizationContractV125;
-  countryNameKo: string;
-}) {
-  const coordinateCount = entities.filter(hasCoordinateV125).length;
-  const geometryCount = entities.filter(
-    (entity) => Boolean(entity.geometry || entity.geometryType)
-  ).length;
-  return (
-    <VisualizationFrameV125 eyebrow="공간" title="공간 표현 가능 범위">
-      <div className="sv125-spatial-kpis">
-        <article><span>전체 개체</span><strong>{entities.length.toLocaleString("ko-KR")}</strong><small>건</small></article>
-        <article><span>유효 좌표</span><strong>{coordinateCount.toLocaleString("ko-KR")}</strong><small>건</small></article>
-        <article><span>공간정보 표기</span><strong>{geometryCount.toLocaleString("ko-KR")}</strong><small>건</small></article>
-        <article><span>지도 연결 피처</span><strong>{contract.mapLinkage.featureCount.toLocaleString("ko-KR")}</strong><small>{contract.mapLinkage.enabled ? "지도 연결" : "공간자료 미확보"}</small></article>
-      </div>
-      <p className="sv125-contract-help">
-        {countryNameKo} 상세 데이터만 요약하며, 이 화면에서 지도 공간자료를 미리
-        내려받지 않습니다.
-      </p>
-      <div className="sv125-spatial-samples">
-        {entities.slice(0, 8).map((entity) => (
-          <article key={entity.recordId}>
-            <strong>{publicEntityTitleV131(entity)}</strong>
-            <span>{publicEntityTypeLabelV126(entity, "공간 자료")}</span>
-            <small>
-              {hasCoordinateV125(entity)
-                ? `${entity.latitude}, ${entity.longitude}`
-                : publicTextV126(entity.mapEligibilityReason) || "좌표·공간정보 미제공"}
-            </small>
-          </article>
-        ))}
-      </div>
-      <PreviewCountNoteV125 shown={8} total={entities.length} />
-    </VisualizationFrameV125>
-  );
+function SpatialSummaryV125({ entities }: { entities: VietnamEntityV124[]; contract: ElementVisualizationContractV125; countryNameKo: string }) {
+  return <PublicEntityCardGridV131 entities={entities} template="generic" />;
 }
 
 
@@ -1914,7 +1855,7 @@ function GenericEntitiesV125({
   );
 }
 
-function EntityTableFallbackV125({
+export function EntityTableFallbackV125({
   entities,
   markAsPublic,
 }: {
@@ -2306,6 +2247,83 @@ function plainYearV137(value: string | null): string {
  * group and a unit beside it instead of "확인 결과 927.9".
  */
 const INDICATOR_GROUP_LABELS_V138: Record<string, string> = {
+  adaptation_program_count: "적응 프로그램 현황",
+  climate_finance: "기후재원",
+  climate_projection_ssp: "기후 시나리오별 전망",
+  extreme_climate_index: "극한기후 지표",
+  gdp_loss_estimate: "경제적 손실 추정",
+  ghg_sector_emission: "부문별 온실가스 배출량",
+  ghg_total_emission: "온실가스 총배출량",
+  ndc_achievement: "NDC 이행 실적",
+  adaptation_finance_need: "적응 재원 수요",
+  adaptation_governance: "적응 추진체계",
+  adaptation_measure_list: "적응 조치",
+  adaptation_priority_sector: "적응 우선 분야",
+  me_framework: "점검·평가 체계",
+  sector_vulnerability: "부문별 취약성",
+  stakeholder_gender: "이해관계자 참여·성평등",
+  carbon_removal_target: "탄소흡수 목표",
+  energy_mix_projection: "에너지 구성 전망",
+  just_transition: "정의로운 전환",
+  key_mitigation_tech: "주요 감축기술",
+  long_term_investment: "장기 투자",
+  long_term_pathway: "장기 감축경로",
+  net_zero_target: "탄소중립 목표",
+  sector_decarbonization: "부문별 탈탄소화",
+  barrier_analysis: "기술 도입 장애요인",
+  priority_sector: "우선 분야",
+  priority_tech_list: "우선 기술",
+  tap_status: "기술행동계획 현황",
+  tna_status: "기술수요평가 현황",
+  authorization_body: "승인기관",
+  bilateral_date: "양자협력 체결일",
+  bilateral_party: "양자협력 당사자",
+  bilateral_scope: "양자협력 범위",
+  corresponding_adjustment: "상응조정",
+  itmo_transfer: "국제감축실적 이전",
+  national_registry: "국가 등록부",
+  activity_scope: "활동 범위",
+  participating_body: "참여기관",
+  participation_status: "참여 현황",
+  registered_activity: "등록 활동",
+  registration_date: "등록일",
+  climate_field: "기후 분야",
+  initiative_name: "협력 이니셔티브",
+  participant_list: "참여 주체",
+  participation_year: "참여연도",
+  theme: "주제",
+  law_status: "법령 시행 상태",
+  law_type: "법령 유형",
+  lead_ministry: "주관부처",
+  investment_treaty: "투자협정",
+  profit_remittance: "이익 송금",
+  construction_permit_cost: "건설허가 비용",
+  construction_permit_duration: "건설허가 소요기간",
+  construction_permit: "건설허가",
+  eia_procedure: "환경영향평가 절차",
+  land_acquisition_cost: "토지 취득 비용",
+  land_acquisition_duration: "토지 취득 소요기간",
+  land_acquisition: "토지 취득",
+  power_permit_cost: "전력사업 허가 비용",
+  power_permit_duration: "전력사업 허가 소요기간",
+  power_permit: "전력사업 허가",
+  policy_document_link: "정책 원문",
+  procuring_entity: "발주기관",
+  re_capacity_target: "재생에너지 설비용량 목표",
+  target_technology: "대상 기술",
+  implementing_agency: "시행기관",
+  incentive_condition: "지원 조건",
+  incentive_status: "지원제도 운영 현황",
+  incentive_type: "지원 유형",
+  energy_demand_projection: "에너지 수요 전망",
+  generation_capacity_plan: "발전설비 계획",
+  power_demand_growth: "전력수요 증가율",
+  projection_agency: "전망 작성기관",
+  projection_scenario: "전망 시나리오",
+  re_share_target: "재생에너지 비중 목표",
+  redd_strategy: "REDD+ 전략",
+  safeguard_system: "환경·사회 보호체계",
+  project_name: "사업",
   mitigation_target: "감축 목표",
   adaptation_target: "적응 목표",
   bau_projection: "BAU 배출 전망",
@@ -2322,6 +2340,8 @@ const INDICATOR_GROUP_LABELS_V138: Record<string, string> = {
   readiness_checklist: "준비도 체크리스트",
   ets_scope: "ETS 대상 범위",
   ets_phase: "ETS 단계",
+  ets_status: "배출권 거래제 도입·운영 현황",
+  re_support_scheme: "재생에너지 지원제도",
   carbon_tax: "탄소세",
   carbon_price: "탄소가격",
   carbon_market_budget: "탄소시장 예산",
@@ -2349,10 +2369,9 @@ function indicatorGroupLabelV138(entity: VietnamEntityV124): string | null {
     .sort((a, b) => b.length - a.length)
     .find((key) => suffix === key || suffix.startsWith(`${key}_`));
   if (known) return INDICATOR_GROUP_LABELS_V138[known];
-  // Source-suffixed groups ("law_name_faolex_fao") fall back to the readable part.
-  return suffix
-    .replace(/_(?:vanban_chinhphu|datafiles_chinhphu|congbao_chinhphu|faolex_fao(?:_\d+)?|climatelaws|informea|worldbank|mof|moit|state|archive_doingbusiness|hotropldn_thainguyen|xaydungchinhsach_chinh\w*|carbonpricingdashboard|gspp_berkeley|pmiclimate|mae|vea_mae|danang|en_baochinhphu|biocarbonfundisfl|documents\d*_\w+)$/u, "")
-    .replace(/_/gu, " ");
+  // Do not expose storage identifiers or source suffixes as public categories.
+  // The record's own title, value and source remain in the table.
+  return "기타 자료";
 }
 
 const UNIT_IN_TEXT_V138 =

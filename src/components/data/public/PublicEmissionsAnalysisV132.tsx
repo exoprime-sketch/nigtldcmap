@@ -349,36 +349,6 @@ export default function PublicEmissionsAnalysisV132({
           ) : null}
         </header>
 
-        <div className="pea132-kpis" data-testid="emissions-kpis-v132">
-          <article>
-            <span>{totalIsMeaningful ? "최신 완전연도 합계" : "선택 기준"}</span>
-            <strong>
-              {totalIsMeaningful && latestComplete
-                ? `${formatPublicNumberV126(latestComplete.total, selectedMeasure.unit)} ${selectedMeasure.unit}`
-                : <PublicTermTextV134 text={selectedMeasure.label} />}
-            </strong>
-            <small>{totalIsMeaningful ? "모든 구성계열이 있는 연도만 산출" : "서로 다른 가스 질량은 합산하지 않음"}</small>
-          </article>
-          <article>
-            <span>최신 비교연도</span>
-            <strong>{latestComplete ? `${latestComplete.year}년` : "—"}</strong>
-            <small>{completeYears.length}개 완전연도</small>
-          </article>
-          <article>
-            <span>가장 큰 {elementId === "A-010" ? "가스" : "부문"}</span>
-            <strong><PublicTermTextV134 text={largestComponent?.label || "—"} /></strong>
-            <small>
-              {largestComponent
-                ? `${formatPublicNumberV126(largestComponent.value, selectedMeasure.unit)} ${selectedMeasure.unit}`
-                : "비교 가능한 값 없음"}
-            </small>
-          </article>
-          <article>
-            <span>비교 계열</span>
-            <strong>{componentSeries.length}개</strong>
-            <small>동일 단위 기준</small>
-          </article>
-        </div>
       </section>
 
       {totalIsMeaningful && totalChartSeries.length > 0 ? (
