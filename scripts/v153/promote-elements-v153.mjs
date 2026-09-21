@@ -98,6 +98,16 @@ if (IDS.length > 0 || argv.includes("--all-packs")) {
     }
   }
   copy("downloads/delivery-manifest.json");
+  // manifest.json names the search index shard; it is copied only when that
+  // is the sole difference (the map builder owns its other fields).
+  const stagingManifest = JSON.parse(readFileSync(join(FROM, "manifest.json"), "utf8"));
+  const publishedManifest = JSON.parse(readFileSync(join(TO, "manifest.json"), "utf8"));
+  const manifestProbe = (manifest) => JSON.stringify({ ...manifest, assets: { ...manifest.assets, searchIndex: null } });
+  if (manifestProbe(stagingManifest) === manifestProbe(publishedManifest)) {
+    copy("manifest.json");
+  } else {
+    actions.push({ action: "manifest-kept", path: "manifest.json", reason: "fields other than assets.searchIndex differ" });
+  }
   // Semantic aggregates derived from the same packs (labels, contracts).
   for (const name of ["element-visualization-contracts-v125.json", "indicator-semantics-v125.json", "semantic-integrity-v125.json"]) {
     copy(`semantic/${name}`);

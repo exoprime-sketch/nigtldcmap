@@ -41,6 +41,7 @@ from .normalization import (
     nfc_text,
     strip_tool_truncation_marker,
 )
+from .enrich_v153 import EnrichmentContextV153
 from .source_zip import analyze_source_dir, analyze_source_zip
 from tools.vietnam_spatial.build_spatial_v124 import build_spatial_assets
 from tools.vietnam_spatial.spatial_semantics_v130 import (
@@ -1503,6 +1504,9 @@ def _download_csv(
                 **_temporal_columns(row),
                 "value": _csv_safe(row.get("value")),
                 "unit": row.get("unit"),
+                # V153: an observation that names its subject (the mineral on
+                # B-046/B-047) carries it in the same column entities use.
+                "name": _csv_safe(row.get("name")),
                 "missing_reason_code": row.get("missingReasonCode"),
                 "note": _csv_safe(row.get("note")),
                 "source_org": provenance.get("sourceOrg"),
@@ -1706,6 +1710,7 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         )
     workbook_by_id = {row["elementId"]: row for row in analysis["workbooks"]}
     v1_payloads, _ = _load_v1_payloads(repo)
+    enrichment = EnrichmentContextV153(repo)
     v1_manifest = json.loads((v1_root / "manifest.json").read_text(encoding="utf-8"))
     if analysis["totals"]["workbookCount"] != expected_workbooks:
         raise ValueError(
@@ -2011,6 +2016,10 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         if is_authorized:
             for indicator in indicators:
                 indicator["publicationDecision"] = decision_ref
+        # V153-D0: mineral names on B-046/B-047 observations, the investor's
+        # location class on E-006, GPPD owner/year/source and the province on
+        # A-023 - all restated from sources already in hand.
+        enrichment.apply(element_id, observations, entities, indicators, field_definitions)
         downloadable_observations = [
             row for row in observations if bool(row.get("downloadEligible"))
         ]
@@ -2690,6 +2699,7 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         "d018Derivation": d018_derivation_summary,
         "regionDerivation": region_derivation_summary,
         "retainedMissingIndicatorCounts": retained_indicator_counts,
+        "enrichmentV153": enrichment.summary,
         "promotionBlockers": promotion_blockers,
         "promotionBlocked": bool(promotion_blockers),
         "derivationStatus": {
