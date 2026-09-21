@@ -1,22 +1,24 @@
 {
   "schemaVersion": "v134-context-glossary-analysis-audit-1",
-  "generatedAt": "2026-09-21T01:25:57.026Z",
+  "generatedAt": "2026-09-21T08:33:34.922Z",
   "audit": "public-copy:v134",
-  "status": "PASS",
+  "status": "FAIL",
   "summary": {
     "type": "summary",
     "audit": "public-copy:v134",
-    "status": "PASS",
-    "passed": 13,
-    "failed": 0,
+    "status": "FAIL",
+    "passed": 12,
+    "failed": 1,
     "total": 13,
-    "failedChecks": [],
+    "failedChecks": [
+      "DETAIL_ROUTE_RUNTIME_COVERAGE"
+    ],
     "headingCount": 152,
     "genericPublicCopyCount": 0,
     "titleMismatchCount": 0,
     "repeatedRuntimeHeadingCount": 0,
-    "inspectedRoutes": 152,
-    "runtimeFailure": null
+    "inspectedRoutes": 0,
+    "runtimeFailure": "shell: production build missing; run npm run build before public copy audit"
   },
   "checks": [
     {
@@ -87,11 +89,11 @@
       "type": "check",
       "audit": "public-copy:v134",
       "name": "DETAIL_ROUTE_RUNTIME_COVERAGE",
-      "status": "PASS",
+      "status": "FAIL",
       "actual": {
-        "inspectedRoutes": 152,
+        "inspectedRoutes": 0,
         "routeFailures": [],
-        "runtimeFailure": null
+        "runtimeFailure": "shell: production build missing; run npm run build before public copy audit"
       },
       "expected": {
         "inspectedRoutes": 152,
@@ -143,6 +145,6 @@
   "genericPublicCopyCount": 0,
   "titleMismatchCount": 0,
   "repeatedRuntimeHeadingCount": 0,
-  "inspectedRoutes": 152,
-  "runtimeFailure": null
+  "inspectedRoutes": 0,
+  "runtimeFailure": "shell: production build missing; run npm run build before public copy audit"
 }

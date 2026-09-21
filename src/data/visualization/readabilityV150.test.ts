@@ -1,7 +1,8 @@
 import { test, expect } from "@jest/globals";
 import descriptions from './datasetDescriptionsV150.json';
 import { fitMapPanelsV150 } from '../../hooks/useResizableMapPanelsV129';
-import { PROVINCE_KO_V150, polygonLabelPointV150 } from '../map/mapBackdropV150';
+import { PROVINCE_KO_V150, labelNameV151, polygonLabelPointV150 } from '../map/mapBackdropV150';
+import { PROVINCE_KO_34_V151 } from '../map/adminBoundaryV151';
 
 test('152 descriptions are concise phrases, with unique dataset coverage', () => {
   expect(Object.keys(descriptions)).toHaveLength(152);
@@ -22,9 +23,15 @@ test('panel widths are not capped at 460/520, but fit the viewport', () => {
   expect(fitMapPanelsV150(1440, 120, 120, true, true)).toEqual({left:120,right:120});
   expect(fitMapPanelsV150(1440, 600, 600, false, false)).toEqual({left:64,right:64});
 });
-test('Korean labels cover the 63-unit geography and use geographic anchors', () => {
+test('Korean labels cover both boundary vintages and use geographic anchors', () => {
   expect(Object.keys(PROVINCE_KO_V150)).toHaveLength(63);
   expect(Object.values(PROVINCE_KO_V150).every(value => /^[가-힣]+$/.test(value))).toBe(true);
+  // V151: the post-2025 vintage carries its own 34 names, keyed by unitCode.
+  expect(Object.keys(PROVINCE_KO_34_V151)).toHaveLength(34);
+  expect(Object.values(PROVINCE_KO_34_V151).every(value => /^[가-힣]+$/.test(value))).toBe(true);
+  expect(labelNameV151({unitCode:'VN34-26'})).toBe('후에');
+  expect(labelNameV151({adm1Code:'VN-26'})).toBe('트어티엔후에');
+  expect(labelNameV151({adm1Code:'VN-999'})).toBeNull();
   expect(polygonLabelPointV150({type:'Polygon', coordinates:[[[0,0],[2,0],[2,2],[0,2],[0,0]]]})).toEqual([1,1]);
   expect(polygonLabelPointV150({type:'Polygon', coordinates:[[]]})).toBeNull();
 });

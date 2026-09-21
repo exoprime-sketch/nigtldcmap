@@ -900,7 +900,7 @@ const CATALOG_PUBLIC_GLOSSARY_V134: PublicGlossaryEntryV134[] = [
   seedV134({ id: "fcpf", term: "FCPF", englishName: "Forest Carbon Partnership Facility", koreanName: "산림탄소파트너십기금", definition: "세계은행이 운영하는 REDD+ 결과기반지불 기금입니다.", category: "climate-policy" }),
   seedV134({ id: "ppi", term: "PPI", englishName: "Private Participation in Infrastructure Database", koreanName: "민간 인프라 참여 데이터베이스", definition: "세계은행이 집계하는 민관협력(PPP) 인프라 사업 목록입니다.", category: "climate-policy" }),
   seedV134({ id: "opta", term: "OPTA", englishName: "Optimum Tilt Angle", koreanName: "최적 경사각", definition: "태양광 모듈의 연간 발전량이 가장 커지는 설치 경사각입니다.", category: "energy-technology" }),
-  seedV134({ id: "gadm", term: "GADM", englishName: "Database of Global Administrative Areas", koreanName: "세계 행정구역 경계 데이터베이스", definition: "국가별 행정구역 경계를 제공하는 공개 자료이며, 이 플랫폼의 63개 성·시 경계 기준입니다.", category: "climate-risk" }),
+  seedV134({ id: "gadm", term: "GADM", englishName: "Database of Global Administrative Areas", koreanName: "세계 행정구역 경계 데이터베이스", definition: "국가별 행정구역 경계를 제공하는 공개 자료이며, 이 플랫폼이 값을 연결하는 개편 전 63개 성·시 경계 기준입니다.", category: "climate-risk" }),
   seedV134({ id: "hydrobasins", term: "HydroBASINS", englishName: "HydroBASINS", koreanName: "하이드로베이슨 유역 단위", definition: "HydroSHEDS 자료에서 나눈 계층적 유역 단위이며, 물 스트레스 평가구역의 기준입니다.", category: "climate-risk" }),
   seedV134({ id: "hydrosheds", term: "HydroSHEDS", englishName: "HydroSHEDS", koreanName: "하이드로셰즈 수문 자료", definition: "위성 지형자료로 만든 전 세계 하천·유역 자료입니다.", category: "climate-risk" }),
   seedV134({ id: "rx1day", term: "RX1day", englishName: "Maximum 1-day precipitation", koreanName: "최대 1일 강수량", definition: "한 해 중 하루에 내린 가장 많은 강수량입니다.", category: "climate-risk" }),

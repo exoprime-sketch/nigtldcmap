@@ -199,7 +199,10 @@
     "qa:analysis:v140:baseline": "node scripts/v140/analysis-qa-v140.mjs --baseline reports/v150/analysis-qa-baseline-v150.json",
     "finalize:v140": "npm run verify:dataset-directory:v150 && npm run finalize:v136 && npm run qa:role-split:v140 && npm run qa:analysis:v140:baseline",
     "verify:ignore-command:v140": "node scripts/v140/verify-ignore-command-v140.mjs",
-    "storage:ledger:v140": "node scripts/v140/deployment-storage-ledger-v140.mjs"
+    "storage:ledger:v140": "node scripts/v140/deployment-storage-ledger-v140.mjs",
+    "audit:boundary-34:v151": "node scripts/v151/audit-boundary-34-v151.mjs",
+    "finalize:v151": "npm run finalize:v140 && npm run audit:boundary-34:v151 -- --skip-browser",
+    "build:adm1-34:v151": "python3 tools/vietnam_spatial/build_adm1_34_v151.py && node scripts/generate-vietnam-asset-integrity-v133.mjs --data public/data/vietnam/v2"
   },
   "browserslist": [
     ">0.2%",

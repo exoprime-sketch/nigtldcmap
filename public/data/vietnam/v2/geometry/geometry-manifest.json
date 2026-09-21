@@ -1,6 +1,59 @@
 {
   "assets": [
     {
+      "attribution": "geoBoundaries (William & Mary geoLab), VNM ADM1, boundary year 2008, build 2023-12-12; Runfola et al. (2020), PLOS ONE 15(4): e0231866. 2025-07-01 34-unit grouping derived under Nghị quyết 202/2025/QH15.",
+      "derivedFrom": {
+        "asset": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+        "method": "shapely.ops.unary_union over crosswalk34 memberAdm1Codes",
+        "sha256": "1985e5dc1f60be511b5e6da9642fbd25fb9e0a19c814e4c141772dd6b858b873"
+      },
+      "effectiveDate": "2025-07-01",
+      "featureCount": 34,
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "kind": "adm1-boundary-34",
+      "legalBasis": "Nghị quyết 202/2025/QH15",
+      "license": {
+        "attributionRequired": true,
+        "geoBoundariesDerivativeLicense": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "sourceBoundaryLicense": "Public Domain"
+      },
+      "sha256": "055fab7e6be311506f7bfcc88564a9b065d2df9ff644bb401ecb43d313e74013",
+      "sourceGapNotice": "원천 경계가 이웃 성 사이에 남긴 틈은 합쳐진 단위 안에서 구멍으로 남깁니다. 메우면 원천에 없는 경계선을 새로 그리는 것이므로 메우지 않습니다.",
+      "url": "/data/vietnam/v2/geometry/vnm-adm1-34.geojson",
+      "validation": {
+        "areaDeltaPpmMax": 0.0,
+        "dissolvedInteriorHoleCount": 1,
+        "featureCount": 34,
+        "geometryValidity": "pass",
+        "invalidGeometryCount": 0,
+        "memberCoverageCount": 63,
+        "mergedUnitCount": 23,
+        "multiPolygonCount": 13,
+        "polygonCount": 21,
+        "sourceFeatureCount": 63,
+        "sourceGapsLeftOpen": [
+          {
+            "areaKm2": 0.1215,
+            "memberAdm1Codes": [
+              "VN-49",
+              "VN-50",
+              "VN-51"
+            ],
+            "region": "Vĩnh Long"
+          }
+        ],
+        "syntheticVertexCount": 0,
+        "validator": "Shapely 2.1.2 (GEOS is_valid) + pyproj Geod area"
+      },
+      "valuesAreAggregated": false,
+      "valuesNotice": "경계 전용 자산입니다. 원자료 값은 개편 전 63개 성·시 기준 그대로 두며 34개 단위로 합산·평균하지 않습니다.",
+      "version": "2025-07-01"
+    },
+    {
       "attribution": "geoBoundaries (William & Mary geoLab), VNM ADM1, boundary year 2008, build 2023-12-12; Runfola et al. (2020), PLOS ONE 15(4): e0231866.",
       "featureCount": 63,
       "geometryTypes": [
@@ -96,6 +149,11 @@
     }
   ],
   "boundarySystem": "pre-2025-63",
+  "boundarySystems": {
+    "default": "post-2025-34",
+    "legacy": "pre-2025-63",
+    "valuesKeyedTo": "pre-2025-63"
+  },
   "countryIso3": "VNM",
   "generatedAt": "2026-09-01T00:00:00Z",
   "regionMappings": {

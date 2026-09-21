@@ -70,7 +70,7 @@ const HOME_CARD_LIMITATIONS_V140: Readonly<
     {
       kind: "coverage-gap",
       message:
-        "원천은 63개 성·시 계열만 제공하고 전국 계열은 제공하지 않습니다. 성·시 값을 더해 전국값으로 만들지 않습니다",
+        "원천은 개편 전 63개 성·시 계열만 제공하고 전국 계열은 제공하지 않습니다. 성·시 값을 더해 전국값으로 만들지 않습니다",
     },
   ]),
   "C-016": Object.freeze<PublicLimitationV127[]>([
