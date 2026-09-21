@@ -1,69 +1,42 @@
 {
   "schemaVersion": "v136-public-copy-acceptance-1",
-  "generatedAt": "2026-09-21T01:32:29.269Z",
+  "generatedAt": "2026-09-21T08:33:34.217Z",
   "audit": "map-copy:v136",
-  "status": "PASS",
+  "status": "FAIL",
   "summary": {
     "type": "summary",
     "audit": "map-copy:v136",
-    "status": "PASS",
-    "passed": 11,
-    "failed": 0,
+    "status": "FAIL",
+    "passed": 3,
+    "failed": 8,
     "total": 11,
-    "failedChecks": [],
-    "panelHeadingOrder": [
-      "데이터 지도",
-      "지도 데이터"
+    "failedChecks": [
+      "MAP_COPY_RUNTIME",
+      "MAP_PANEL_REQUIRED_COPY",
+      "MAP_PANEL_SECTION_ORDER",
+      "MAP_PRESET_COUNT",
+      "MAP_DATA_ITEM_COUNT",
+      "MAP_GUIDE_DEFAULT_OPEN",
+      "MAP_GUIDE_ROW_COUNT",
+      "MAP_GUIDE_READER_COLUMNS"
     ],
-    "guideHeadings": [
-      "데이터명",
-      "지도 표시",
-      "기준기간",
-      "데이터 기능",
-      "참고사항",
-      "데이터명",
-      "지도 표시",
-      "기준기간",
-      "데이터 기능",
-      "참고사항",
-      "데이터명",
-      "지도 표시",
-      "기준기간",
-      "데이터 기능",
-      "참고사항",
-      "데이터명",
-      "지도 표시",
-      "기준기간",
-      "데이터 기능",
-      "참고사항",
-      "데이터명",
-      "지도 표시",
-      "기준기간",
-      "데이터 기능",
-      "참고사항",
-      "데이터명",
-      "지도 표시",
-      "기준기간",
-      "데이터 기능",
-      "참고사항",
-      "데이터명",
-      "지도 표시",
-      "기준기간",
-      "데이터 기능",
-      "참고사항"
+    "panelHeadingOrder": [],
+    "guideHeadings": [],
+    "missingCopy": [
+      "지도 데이터",
+      "개 자료 · 선택"
     ],
-    "missingCopy": [],
     "retiredCopy": [],
-    "runtimeFailure": null
+    "runtimeFailure": "production build missing; run npm run build first"
   },
   "checks": [
     {
       "type": "check",
       "audit": "map-copy:v136",
       "name": "MAP_COPY_RUNTIME",
-      "status": "PASS",
+      "status": "FAIL",
       "actual": {
-        "runtimeFailure": null
+        "runtimeFailure": "production build missing; run npm run build first"
       },
       "expected": {
         "runtimeFailure": null
@@ -73,8 +46,11 @@
       "type": "check",
       "audit": "map-copy:v136",
       "name": "MAP_PANEL_REQUIRED_COPY",
-      "status": "PASS",
-      "actual": [],
+      "status": "FAIL",
+      "actual": [
+        "지도 데이터",
+        "개 자료 · 선택"
+      ],
       "expected": []
     },
     {
@@ -97,87 +73,48 @@
       "type": "check",
       "audit": "map-copy:v136",
       "name": "MAP_PANEL_SECTION_ORDER",
-      "status": "PASS",
-      "actual": [
-        "데이터 지도",
-        "지도 데이터"
-      ],
+      "status": "FAIL",
+      "actual": [],
       "expected": "지도 데이터 present, no 추천 분석 section (V150)"
     },
     {
       "type": "check",
       "audit": "map-copy:v136",
       "name": "MAP_PRESET_COUNT",
-      "status": "PASS",
-      "actual": 0,
+      "status": "FAIL",
+      "actual": null,
       "expected": 0
     },
     {
       "type": "check",
       "audit": "map-copy:v136",
       "name": "MAP_DATA_ITEM_COUNT",
-      "status": "PASS",
-      "actual": 43,
+      "status": "FAIL",
+      "actual": null,
       "expected": 43
     },
     {
       "type": "check",
       "audit": "map-copy:v136",
       "name": "MAP_GUIDE_DEFAULT_OPEN",
-      "status": "PASS",
-      "actual": false,
+      "status": "FAIL",
+      "actual": null,
       "expected": false
     },
     {
       "type": "check",
       "audit": "map-copy:v136",
       "name": "MAP_GUIDE_ROW_COUNT",
-      "status": "PASS",
-      "actual": 42,
+      "status": "FAIL",
+      "actual": null,
       "expected": 42
     },
     {
       "type": "check",
       "audit": "map-copy:v136",
       "name": "MAP_GUIDE_READER_COLUMNS",
-      "status": "PASS",
-      "actual": [
-        "데이터명",
-        "지도 표시",
-        "기준기간",
-        "데이터 기능",
-        "참고사항",
-        "데이터명",
-        "지도 표시",
-        "기준기간",
-        "데이터 기능",
-        "참고사항",
-        "데이터명",
-        "지도 표시",
-        "기준기간",
-        "데이터 기능",
-        "참고사항",
-        "데이터명",
-        "지도 표시",
-        "기준기간",
-        "데이터 기능",
-        "참고사항",
-        "데이터명",
-        "지도 표시",
-        "기준기간",
-        "데이터 기능",
-        "참고사항",
-        "데이터명",
-        "지도 표시",
-        "기준기간",
-        "데이터 기능",
-        "참고사항",
-        "데이터명",
-        "지도 표시",
-        "기준기간",
-        "데이터 기능",
-        "참고사항"
-      ],
+      "status": "FAIL",
+      "actual": [],
       "expected": "지도 표시 replaces 공간 표현"
     },
     {
@@ -189,48 +126,12 @@
       "expected": []
     }
   ],
-  "panelHeadingOrder": [
-    "데이터 지도",
-    "지도 데이터"
+  "panelHeadingOrder": [],
+  "guideHeadings": [],
+  "missingCopy": [
+    "지도 데이터",
+    "개 자료 · 선택"
   ],
-  "guideHeadings": [
-    "데이터명",
-    "지도 표시",
-    "기준기간",
-    "데이터 기능",
-    "참고사항",
-    "데이터명",
-    "지도 표시",
-    "기준기간",
-    "데이터 기능",
-    "참고사항",
-    "데이터명",
-    "지도 표시",
-    "기준기간",
-    "데이터 기능",
-    "참고사항",
-    "데이터명",
-    "지도 표시",
-    "기준기간",
-    "데이터 기능",
-    "참고사항",
-    "데이터명",
-    "지도 표시",
-    "기준기간",
-    "데이터 기능",
-    "참고사항",
-    "데이터명",
-    "지도 표시",
-    "기준기간",
-    "데이터 기능",
-    "참고사항",
-    "데이터명",
-    "지도 표시",
-    "기준기간",
-    "데이터 기능",
-    "참고사항"
-  ],
-  "missingCopy": [],
   "retiredCopy": [],
-  "runtimeFailure": null
+  "runtimeFailure": "production build missing; run npm run build first"
 }
