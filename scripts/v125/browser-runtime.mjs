@@ -125,6 +125,17 @@ async function pollJson(url, timeoutMs = 15_000) {
   );
 }
 
+// V150-1: wait budgets were written for a workstation. A shared CI runner can
+// be several times slower (the 13.5 MB CCKP pack behind B-003..B-007 took
+// >30 s to parse there, so even Page.navigate timed out). The scale
+// multiplies every CDP command and polling budget; what is checked never
+// changes, only how long a slow machine is given to show it.
+export const TIMEOUT_SCALE_V150 = (() => {
+  const raw = Number(process.env.V125_TIMEOUT_SCALE || 1);
+  return Number.isFinite(raw) && raw >= 1 ? raw : 1;
+})();
+export const scaledTimeoutMsV150 = (timeoutMs) => Math.round(timeoutMs * TIMEOUT_SCALE_V150);
+
 export class CdpConnection {
   constructor(socket) {
     this.socket = socket;
@@ -155,7 +166,8 @@ export class CdpConnection {
     socket.addEventListener("error", () => this.close());
   }
 
-  send(method, params = {}, { timeoutMs = 30_000 } = {}) {
+  send(method, params = {}, { timeoutMs: requestedTimeoutMs = 30_000 } = {}) {
+    const timeoutMs = scaledTimeoutMsV150(requestedTimeoutMs);
     const id = this.nextId++;
     return new Promise((resolveCommand, reject) => {
       const timer = setTimeout(() => {
@@ -342,14 +354,15 @@ export async function evaluateValue(cdp, expression, options = {}) {
 }
 
 export async function waitForValue(cdp, expression, options = {}) {
-  const timeoutMs = options.timeoutMs ?? 15_000;
+  const timeoutMs = scaledTimeoutMsV150(options.timeoutMs ?? 15_000);
   const intervalMs = options.intervalMs ?? 100;
   const deadline = Date.now() + timeoutMs;
   let lastValue;
   let lastError = null;
   while (Date.now() < deadline) {
     try {
-      lastValue = await evaluateValue(cdp, expression, { timeoutMs: Math.max(1, deadline - Date.now()) });
+      // send() scales again; hand it the unscaled remainder so the poll deadline holds.
+      lastValue = await evaluateValue(cdp, expression, { timeoutMs: Math.max(1, (deadline - Date.now()) / TIMEOUT_SCALE_V150) });
       lastError = null;
       if (lastValue) return lastValue;
     } catch (error) {

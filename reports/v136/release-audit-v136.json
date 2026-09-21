@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v136-public-copy-acceptance-1",
-  "generatedAt": "2026-09-21T01:37:40.640Z",
+  "generatedAt": "2026-09-21T06:08:18.104Z",
   "audit": "release:v136",
   "status": "PASS",
   "summary": {
@@ -18,8 +18,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 1439,
-        "timedOut": false
+        "elapsedMs": 1371,
+        "timedOut": false,
+        "shard": "static"
       },
       {
         "name": "PRODUCTION_BUILD_FOR_RUNTIME",
@@ -27,8 +28,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 33053,
-        "timedOut": false
+        "elapsedMs": 18778,
+        "timedOut": false,
+        "shard": "static"
       },
       {
         "name": "V133_GENERATED_DATA",
@@ -36,8 +38,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 7923,
-        "timedOut": false
+        "elapsedMs": 7899,
+        "timedOut": false,
+        "shard": "static"
       },
       {
         "name": "LARGE_SOURCE_TABLE",
@@ -45,8 +48,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 12558,
-        "timedOut": false
+        "elapsedMs": 10594,
+        "timedOut": false,
+        "shard": "static"
       },
       {
         "name": "V133_CI_CONTRACT",
@@ -54,8 +58,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 878,
-        "timedOut": false
+        "elapsedMs": 849,
+        "timedOut": false,
+        "shard": "static"
       },
       {
         "name": "V130_PROJECT_SCOPE",
@@ -63,8 +68,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 706,
-        "timedOut": false
+        "elapsedMs": 741,
+        "timedOut": false,
+        "shard": "static"
       },
       {
         "name": "V130_MAP_DEDUP",
@@ -72,8 +78,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 723,
-        "timedOut": false
+        "elapsedMs": 711,
+        "timedOut": false,
+        "shard": "static"
       },
       {
         "name": "V130_SEMANTIC_GEOGRAPHY",
@@ -81,8 +88,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 892,
-        "timedOut": false
+        "elapsedMs": 757,
+        "timedOut": false,
+        "shard": "static"
       },
       {
         "name": "V131_PUBLIC_NAMING",
@@ -90,8 +98,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 5875,
-        "timedOut": false
+        "elapsedMs": 5757,
+        "timedOut": false,
+        "shard": "static"
       },
       {
         "name": "V131_ENTITY_CARDS",
@@ -99,8 +108,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 34433,
-        "timedOut": false
+        "elapsedMs": 30970,
+        "timedOut": false,
+        "shard": "browser-3"
       },
       {
         "name": "V132_COMPOSITION",
@@ -108,8 +118,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 3471,
-        "timedOut": false
+        "elapsedMs": 3408,
+        "timedOut": false,
+        "shard": "static"
       },
       {
         "name": "V132_PORTFOLIO",
@@ -117,8 +128,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 10701,
-        "timedOut": false
+        "elapsedMs": 8704,
+        "timedOut": false,
+        "shard": "browser-2"
       },
       {
         "name": "V132_MAP_TOOLTIP",
@@ -126,8 +138,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 5817,
-        "timedOut": false
+        "elapsedMs": 6315,
+        "timedOut": false,
+        "shard": "browser-4"
       },
       {
         "name": "V132_BENCHMARK_FIT",
@@ -135,8 +148,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 783,
-        "timedOut": false
+        "elapsedMs": 606,
+        "timedOut": false,
+        "shard": "static"
       },
       {
         "name": "V133_MAP_FOCUS",
@@ -144,8 +158,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 6251,
-        "timedOut": false
+        "elapsedMs": 5922,
+        "timedOut": false,
+        "shard": "browser-3"
       },
       {
         "name": "V133_MAP_POPUP",
@@ -153,8 +168,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 3537,
-        "timedOut": false
+        "elapsedMs": 3590,
+        "timedOut": false,
+        "shard": "browser-4"
       },
       {
         "name": "V133_LAYER_DISTINCTION",
@@ -162,8 +178,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 4203,
-        "timedOut": false
+        "elapsedMs": 3880,
+        "timedOut": false,
+        "shard": "browser-4"
       },
       {
         "name": "V134_GLOSSARY",
@@ -171,8 +188,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 64397,
-        "timedOut": false
+        "elapsedMs": 54803,
+        "timedOut": false,
+        "shard": "browser-1"
       },
       {
         "name": "V134_ODA_ANALYSIS",
@@ -180,8 +198,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 5295,
-        "timedOut": false
+        "elapsedMs": 5269,
+        "timedOut": false,
+        "shard": "browser-2"
       },
       {
         "name": "V134_DROUGHT_ANALYSIS",
@@ -189,8 +208,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 23189,
-        "timedOut": false
+        "elapsedMs": 22860,
+        "timedOut": false,
+        "shard": "browser-1"
       },
       {
         "name": "V134_PUBLIC_COPY",
@@ -198,8 +218,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 170008,
-        "timedOut": false
+        "elapsedMs": 163083,
+        "timedOut": false,
+        "shard": "browser-2"
       },
       {
         "name": "V134_VISUAL_QA_CONTRACT",
@@ -207,8 +228,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 738,
-        "timedOut": false
+        "elapsedMs": 652,
+        "timedOut": false,
+        "shard": "static"
       },
       {
         "name": "V135_FINDER_CARD",
@@ -216,8 +238,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 6297,
-        "timedOut": false
+        "elapsedMs": 6224,
+        "timedOut": false,
+        "shard": "browser-3"
       },
       {
         "name": "V135_TEMPORAL_DEPTH",
@@ -225,8 +248,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 49334,
-        "timedOut": false
+        "elapsedMs": 50041,
+        "timedOut": false,
+        "shard": "browser-4"
       },
       {
         "name": "V135_DETAIL_HIERARCHY",
@@ -234,8 +258,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 50649,
-        "timedOut": false
+        "elapsedMs": 49278,
+        "timedOut": false,
+        "shard": "browser-4"
       },
       {
         "name": "V135_MAP_GUIDE",
@@ -243,8 +268,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 2496,
-        "timedOut": false
+        "elapsedMs": 2502,
+        "timedOut": false,
+        "shard": "browser-1"
       },
       {
         "name": "V135_MAP_ACCESS",
@@ -252,8 +278,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 4038,
-        "timedOut": false
+        "elapsedMs": 4208,
+        "timedOut": false,
+        "shard": "browser-2"
       },
       {
         "name": "V135_MAP_COMPARE",
@@ -261,8 +288,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 4542,
-        "timedOut": false
+        "elapsedMs": 19095,
+        "timedOut": false,
+        "shard": "browser-4"
       },
       {
         "name": "V135_PUBLIC_SCREEN",
@@ -270,8 +298,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 51769,
-        "timedOut": false
+        "elapsedMs": 50797,
+        "timedOut": false,
+        "shard": "browser-3"
       },
       {
         "name": "V136_PUBLIC_TEXT",
@@ -279,8 +308,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 164937,
-        "timedOut": false
+        "elapsedMs": 169795,
+        "timedOut": false,
+        "shard": "browser-3"
       },
       {
         "name": "V136_DUPLICATE_COPY",
@@ -288,8 +318,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 49183,
-        "timedOut": false
+        "elapsedMs": 48839,
+        "timedOut": false,
+        "shard": "browser-4"
       },
       {
         "name": "V136_MAP_LIST_UI",
@@ -297,8 +328,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 5641,
-        "timedOut": false
+        "elapsedMs": 5559,
+        "timedOut": false,
+        "shard": "browser-4"
       },
       {
         "name": "V136_MAP_COPY",
@@ -306,8 +338,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 2767,
-        "timedOut": false
+        "elapsedMs": 2639,
+        "timedOut": false,
+        "shard": "browser-1"
       },
       {
         "name": "V136_PUBLIC_CONTROLS",
@@ -315,8 +348,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 2862,
-        "timedOut": false
+        "elapsedMs": 2760,
+        "timedOut": false,
+        "shard": "browser-4"
       },
       {
         "name": "V136_FINDER_SCROLL",
@@ -324,8 +358,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 9856,
-        "timedOut": false
+        "elapsedMs": 9967,
+        "timedOut": false,
+        "shard": "browser-2"
       },
       {
         "name": "V136_3_UNIT_TESTS",
@@ -333,8 +368,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 16013,
-        "timedOut": false
+        "elapsedMs": 9690,
+        "timedOut": false,
+        "shard": "static"
       },
       {
         "name": "V136_2_GENERIC_DETAIL_PUBLIC",
@@ -342,8 +378,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 172432,
-        "timedOut": false
+        "elapsedMs": 176506,
+        "timedOut": false,
+        "shard": "browser-1"
       },
       {
         "name": "V136_4_SCREEN_USABILITY",
@@ -351,8 +388,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 49324,
-        "timedOut": false
+        "elapsedMs": 49397,
+        "timedOut": false,
+        "shard": "browser-4"
       },
       {
         "name": "V136_HUMAN_REVIEW",
@@ -360,8 +398,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 59068,
-        "timedOut": false
+        "elapsedMs": 61891,
+        "timedOut": false,
+        "shard": "browser-2"
       },
       {
         "name": "V136_WORKFLOW",
@@ -369,8 +408,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 711,
-        "timedOut": false
+        "elapsedMs": 654,
+        "timedOut": false,
+        "shard": "static"
       }
     ],
     "reportStatuses": {
@@ -412,7 +452,7 @@
     },
     "frameworkElements": 152,
     "accountedElements": 152,
-    "publicTextInventoryCount": 42981,
+    "publicTextInventoryCount": 43013,
     "publicRouteCount": 158,
     "internalPublicTokenCount": 0,
     "duplicateVisibleCopyCount": 0,
@@ -432,8 +472,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 1439,
-        "timedOut": false
+        "elapsedMs": 1371,
+        "timedOut": false,
+        "shard": "static"
       },
       "expected": {
         "exitCode": 0
@@ -450,8 +491,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 33053,
-        "timedOut": false
+        "elapsedMs": 18778,
+        "timedOut": false,
+        "shard": "static"
       },
       "expected": {
         "exitCode": 0
@@ -468,8 +510,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 7923,
-        "timedOut": false
+        "elapsedMs": 7899,
+        "timedOut": false,
+        "shard": "static"
       },
       "expected": {
         "exitCode": 0
@@ -486,8 +529,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 12558,
-        "timedOut": false
+        "elapsedMs": 10594,
+        "timedOut": false,
+        "shard": "static"
       },
       "expected": {
         "exitCode": 0
@@ -504,8 +548,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 878,
-        "timedOut": false
+        "elapsedMs": 849,
+        "timedOut": false,
+        "shard": "static"
       },
       "expected": {
         "exitCode": 0
@@ -522,8 +567,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 706,
-        "timedOut": false
+        "elapsedMs": 741,
+        "timedOut": false,
+        "shard": "static"
       },
       "expected": {
         "exitCode": 0
@@ -540,8 +586,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 723,
-        "timedOut": false
+        "elapsedMs": 711,
+        "timedOut": false,
+        "shard": "static"
       },
       "expected": {
         "exitCode": 0
@@ -558,8 +605,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 892,
-        "timedOut": false
+        "elapsedMs": 757,
+        "timedOut": false,
+        "shard": "static"
       },
       "expected": {
         "exitCode": 0
@@ -576,8 +624,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 5875,
-        "timedOut": false
+        "elapsedMs": 5757,
+        "timedOut": false,
+        "shard": "static"
       },
       "expected": {
         "exitCode": 0
@@ -594,8 +643,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 34433,
-        "timedOut": false
+        "elapsedMs": 30970,
+        "timedOut": false,
+        "shard": "browser-3"
       },
       "expected": {
         "exitCode": 0
@@ -612,8 +662,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 3471,
-        "timedOut": false
+        "elapsedMs": 3408,
+        "timedOut": false,
+        "shard": "static"
       },
       "expected": {
         "exitCode": 0
@@ -630,8 +681,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 10701,
-        "timedOut": false
+        "elapsedMs": 8704,
+        "timedOut": false,
+        "shard": "browser-2"
       },
       "expected": {
         "exitCode": 0
@@ -648,8 +700,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 5817,
-        "timedOut": false
+        "elapsedMs": 6315,
+        "timedOut": false,
+        "shard": "browser-4"
       },
       "expected": {
         "exitCode": 0
@@ -666,8 +719,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 783,
-        "timedOut": false
+        "elapsedMs": 606,
+        "timedOut": false,
+        "shard": "static"
       },
       "expected": {
         "exitCode": 0
@@ -684,8 +738,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 6251,
-        "timedOut": false
+        "elapsedMs": 5922,
+        "timedOut": false,
+        "shard": "browser-3"
       },
       "expected": {
         "exitCode": 0
@@ -702,8 +757,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 3537,
-        "timedOut": false
+        "elapsedMs": 3590,
+        "timedOut": false,
+        "shard": "browser-4"
       },
       "expected": {
         "exitCode": 0
@@ -720,8 +776,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 4203,
-        "timedOut": false
+        "elapsedMs": 3880,
+        "timedOut": false,
+        "shard": "browser-4"
       },
       "expected": {
         "exitCode": 0
@@ -738,8 +795,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 64397,
-        "timedOut": false
+        "elapsedMs": 54803,
+        "timedOut": false,
+        "shard": "browser-1"
       },
       "expected": {
         "exitCode": 0
@@ -756,8 +814,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 5295,
-        "timedOut": false
+        "elapsedMs": 5269,
+        "timedOut": false,
+        "shard": "browser-2"
       },
       "expected": {
         "exitCode": 0
@@ -774,8 +833,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 23189,
-        "timedOut": false
+        "elapsedMs": 22860,
+        "timedOut": false,
+        "shard": "browser-1"
       },
       "expected": {
         "exitCode": 0
@@ -792,8 +852,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 170008,
-        "timedOut": false
+        "elapsedMs": 163083,
+        "timedOut": false,
+        "shard": "browser-2"
       },
       "expected": {
         "exitCode": 0
@@ -810,8 +871,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 738,
-        "timedOut": false
+        "elapsedMs": 652,
+        "timedOut": false,
+        "shard": "static"
       },
       "expected": {
         "exitCode": 0
@@ -828,8 +890,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 6297,
-        "timedOut": false
+        "elapsedMs": 6224,
+        "timedOut": false,
+        "shard": "browser-3"
       },
       "expected": {
         "exitCode": 0
@@ -846,8 +909,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 49334,
-        "timedOut": false
+        "elapsedMs": 50041,
+        "timedOut": false,
+        "shard": "browser-4"
       },
       "expected": {
         "exitCode": 0
@@ -864,8 +928,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 50649,
-        "timedOut": false
+        "elapsedMs": 49278,
+        "timedOut": false,
+        "shard": "browser-4"
       },
       "expected": {
         "exitCode": 0
@@ -882,8 +947,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 2496,
-        "timedOut": false
+        "elapsedMs": 2502,
+        "timedOut": false,
+        "shard": "browser-1"
       },
       "expected": {
         "exitCode": 0
@@ -900,8 +966,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 4038,
-        "timedOut": false
+        "elapsedMs": 4208,
+        "timedOut": false,
+        "shard": "browser-2"
       },
       "expected": {
         "exitCode": 0
@@ -918,8 +985,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 4542,
-        "timedOut": false
+        "elapsedMs": 19095,
+        "timedOut": false,
+        "shard": "browser-4"
       },
       "expected": {
         "exitCode": 0
@@ -936,8 +1004,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 51769,
-        "timedOut": false
+        "elapsedMs": 50797,
+        "timedOut": false,
+        "shard": "browser-3"
       },
       "expected": {
         "exitCode": 0
@@ -954,8 +1023,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 164937,
-        "timedOut": false
+        "elapsedMs": 169795,
+        "timedOut": false,
+        "shard": "browser-3"
       },
       "expected": {
         "exitCode": 0
@@ -972,8 +1042,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 49183,
-        "timedOut": false
+        "elapsedMs": 48839,
+        "timedOut": false,
+        "shard": "browser-4"
       },
       "expected": {
         "exitCode": 0
@@ -990,8 +1061,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 5641,
-        "timedOut": false
+        "elapsedMs": 5559,
+        "timedOut": false,
+        "shard": "browser-4"
       },
       "expected": {
         "exitCode": 0
@@ -1008,8 +1080,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 2767,
-        "timedOut": false
+        "elapsedMs": 2639,
+        "timedOut": false,
+        "shard": "browser-1"
       },
       "expected": {
         "exitCode": 0
@@ -1026,8 +1099,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 2862,
-        "timedOut": false
+        "elapsedMs": 2760,
+        "timedOut": false,
+        "shard": "browser-4"
       },
       "expected": {
         "exitCode": 0
@@ -1044,8 +1118,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 9856,
-        "timedOut": false
+        "elapsedMs": 9967,
+        "timedOut": false,
+        "shard": "browser-2"
       },
       "expected": {
         "exitCode": 0
@@ -1062,8 +1137,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 16013,
-        "timedOut": false
+        "elapsedMs": 9690,
+        "timedOut": false,
+        "shard": "static"
       },
       "expected": {
         "exitCode": 0
@@ -1080,8 +1156,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 172432,
-        "timedOut": false
+        "elapsedMs": 176506,
+        "timedOut": false,
+        "shard": "browser-1"
       },
       "expected": {
         "exitCode": 0
@@ -1098,8 +1175,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 49324,
-        "timedOut": false
+        "elapsedMs": 49397,
+        "timedOut": false,
+        "shard": "browser-4"
       },
       "expected": {
         "exitCode": 0
@@ -1116,8 +1194,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 59068,
-        "timedOut": false
+        "elapsedMs": 61891,
+        "timedOut": false,
+        "shard": "browser-2"
       },
       "expected": {
         "exitCode": 0
@@ -1134,8 +1213,9 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 711,
-        "timedOut": false
+        "elapsedMs": 654,
+        "timedOut": false,
+        "shard": "static"
       },
       "expected": {
         "exitCode": 0
@@ -1563,8 +1643,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 1439,
-      "timedOut": false
+      "elapsedMs": 1371,
+      "timedOut": false,
+      "shard": "static"
     },
     {
       "name": "PRODUCTION_BUILD_FOR_RUNTIME",
@@ -1572,8 +1653,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 33053,
-      "timedOut": false
+      "elapsedMs": 18778,
+      "timedOut": false,
+      "shard": "static"
     },
     {
       "name": "V133_GENERATED_DATA",
@@ -1581,8 +1663,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 7923,
-      "timedOut": false
+      "elapsedMs": 7899,
+      "timedOut": false,
+      "shard": "static"
     },
     {
       "name": "LARGE_SOURCE_TABLE",
@@ -1590,8 +1673,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 12558,
-      "timedOut": false
+      "elapsedMs": 10594,
+      "timedOut": false,
+      "shard": "static"
     },
     {
       "name": "V133_CI_CONTRACT",
@@ -1599,8 +1683,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 878,
-      "timedOut": false
+      "elapsedMs": 849,
+      "timedOut": false,
+      "shard": "static"
     },
     {
       "name": "V130_PROJECT_SCOPE",
@@ -1608,8 +1693,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 706,
-      "timedOut": false
+      "elapsedMs": 741,
+      "timedOut": false,
+      "shard": "static"
     },
     {
       "name": "V130_MAP_DEDUP",
@@ -1617,8 +1703,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 723,
-      "timedOut": false
+      "elapsedMs": 711,
+      "timedOut": false,
+      "shard": "static"
     },
     {
       "name": "V130_SEMANTIC_GEOGRAPHY",
@@ -1626,8 +1713,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 892,
-      "timedOut": false
+      "elapsedMs": 757,
+      "timedOut": false,
+      "shard": "static"
     },
     {
       "name": "V131_PUBLIC_NAMING",
@@ -1635,8 +1723,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 5875,
-      "timedOut": false
+      "elapsedMs": 5757,
+      "timedOut": false,
+      "shard": "static"
     },
     {
       "name": "V131_ENTITY_CARDS",
@@ -1644,8 +1733,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 34433,
-      "timedOut": false
+      "elapsedMs": 30970,
+      "timedOut": false,
+      "shard": "browser-3"
     },
     {
       "name": "V132_COMPOSITION",
@@ -1653,8 +1743,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 3471,
-      "timedOut": false
+      "elapsedMs": 3408,
+      "timedOut": false,
+      "shard": "static"
     },
     {
       "name": "V132_PORTFOLIO",
@@ -1662,8 +1753,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 10701,
-      "timedOut": false
+      "elapsedMs": 8704,
+      "timedOut": false,
+      "shard": "browser-2"
     },
     {
       "name": "V132_MAP_TOOLTIP",
@@ -1671,8 +1763,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 5817,
-      "timedOut": false
+      "elapsedMs": 6315,
+      "timedOut": false,
+      "shard": "browser-4"
     },
     {
       "name": "V132_BENCHMARK_FIT",
@@ -1680,8 +1773,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 783,
-      "timedOut": false
+      "elapsedMs": 606,
+      "timedOut": false,
+      "shard": "static"
     },
     {
       "name": "V133_MAP_FOCUS",
@@ -1689,8 +1783,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 6251,
-      "timedOut": false
+      "elapsedMs": 5922,
+      "timedOut": false,
+      "shard": "browser-3"
     },
     {
       "name": "V133_MAP_POPUP",
@@ -1698,8 +1793,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 3537,
-      "timedOut": false
+      "elapsedMs": 3590,
+      "timedOut": false,
+      "shard": "browser-4"
     },
     {
       "name": "V133_LAYER_DISTINCTION",
@@ -1707,8 +1803,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 4203,
-      "timedOut": false
+      "elapsedMs": 3880,
+      "timedOut": false,
+      "shard": "browser-4"
     },
     {
       "name": "V134_GLOSSARY",
@@ -1716,8 +1813,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 64397,
-      "timedOut": false
+      "elapsedMs": 54803,
+      "timedOut": false,
+      "shard": "browser-1"
     },
     {
       "name": "V134_ODA_ANALYSIS",
@@ -1725,8 +1823,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 5295,
-      "timedOut": false
+      "elapsedMs": 5269,
+      "timedOut": false,
+      "shard": "browser-2"
     },
     {
       "name": "V134_DROUGHT_ANALYSIS",
@@ -1734,8 +1833,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 23189,
-      "timedOut": false
+      "elapsedMs": 22860,
+      "timedOut": false,
+      "shard": "browser-1"
     },
     {
       "name": "V134_PUBLIC_COPY",
@@ -1743,8 +1843,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 170008,
-      "timedOut": false
+      "elapsedMs": 163083,
+      "timedOut": false,
+      "shard": "browser-2"
     },
     {
       "name": "V134_VISUAL_QA_CONTRACT",
@@ -1752,8 +1853,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 738,
-      "timedOut": false
+      "elapsedMs": 652,
+      "timedOut": false,
+      "shard": "static"
     },
     {
       "name": "V135_FINDER_CARD",
@@ -1761,8 +1863,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 6297,
-      "timedOut": false
+      "elapsedMs": 6224,
+      "timedOut": false,
+      "shard": "browser-3"
     },
     {
       "name": "V135_TEMPORAL_DEPTH",
@@ -1770,8 +1873,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 49334,
-      "timedOut": false
+      "elapsedMs": 50041,
+      "timedOut": false,
+      "shard": "browser-4"
     },
     {
       "name": "V135_DETAIL_HIERARCHY",
@@ -1779,8 +1883,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 50649,
-      "timedOut": false
+      "elapsedMs": 49278,
+      "timedOut": false,
+      "shard": "browser-4"
     },
     {
       "name": "V135_MAP_GUIDE",
@@ -1788,8 +1893,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 2496,
-      "timedOut": false
+      "elapsedMs": 2502,
+      "timedOut": false,
+      "shard": "browser-1"
     },
     {
       "name": "V135_MAP_ACCESS",
@@ -1797,8 +1903,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 4038,
-      "timedOut": false
+      "elapsedMs": 4208,
+      "timedOut": false,
+      "shard": "browser-2"
     },
     {
       "name": "V135_MAP_COMPARE",
@@ -1806,8 +1913,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 4542,
-      "timedOut": false
+      "elapsedMs": 19095,
+      "timedOut": false,
+      "shard": "browser-4"
     },
     {
       "name": "V135_PUBLIC_SCREEN",
@@ -1815,8 +1923,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 51769,
-      "timedOut": false
+      "elapsedMs": 50797,
+      "timedOut": false,
+      "shard": "browser-3"
     },
     {
       "name": "V136_PUBLIC_TEXT",
@@ -1824,8 +1933,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 164937,
-      "timedOut": false
+      "elapsedMs": 169795,
+      "timedOut": false,
+      "shard": "browser-3"
     },
     {
       "name": "V136_DUPLICATE_COPY",
@@ -1833,8 +1943,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 49183,
-      "timedOut": false
+      "elapsedMs": 48839,
+      "timedOut": false,
+      "shard": "browser-4"
     },
     {
       "name": "V136_MAP_LIST_UI",
@@ -1842,8 +1953,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 5641,
-      "timedOut": false
+      "elapsedMs": 5559,
+      "timedOut": false,
+      "shard": "browser-4"
     },
     {
       "name": "V136_MAP_COPY",
@@ -1851,8 +1963,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 2767,
-      "timedOut": false
+      "elapsedMs": 2639,
+      "timedOut": false,
+      "shard": "browser-1"
     },
     {
       "name": "V136_PUBLIC_CONTROLS",
@@ -1860,8 +1973,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 2862,
-      "timedOut": false
+      "elapsedMs": 2760,
+      "timedOut": false,
+      "shard": "browser-4"
     },
     {
       "name": "V136_FINDER_SCROLL",
@@ -1869,8 +1983,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 9856,
-      "timedOut": false
+      "elapsedMs": 9967,
+      "timedOut": false,
+      "shard": "browser-2"
     },
     {
       "name": "V136_3_UNIT_TESTS",
@@ -1878,8 +1993,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 16013,
-      "timedOut": false
+      "elapsedMs": 9690,
+      "timedOut": false,
+      "shard": "static"
     },
     {
       "name": "V136_2_GENERIC_DETAIL_PUBLIC",
@@ -1887,8 +2003,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 172432,
-      "timedOut": false
+      "elapsedMs": 176506,
+      "timedOut": false,
+      "shard": "browser-1"
     },
     {
       "name": "V136_4_SCREEN_USABILITY",
@@ -1896,8 +2013,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 49324,
-      "timedOut": false
+      "elapsedMs": 49397,
+      "timedOut": false,
+      "shard": "browser-4"
     },
     {
       "name": "V136_HUMAN_REVIEW",
@@ -1905,8 +2023,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 59068,
-      "timedOut": false
+      "elapsedMs": 61891,
+      "timedOut": false,
+      "shard": "browser-2"
     },
     {
       "name": "V136_WORKFLOW",
@@ -1914,8 +2033,9 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 711,
-      "timedOut": false
+      "elapsedMs": 654,
+      "timedOut": false,
+      "shard": "static"
     }
   ],
   "reportStatuses": {
@@ -1957,7 +2077,7 @@
   },
   "frameworkElements": 152,
   "accountedElements": 152,
-  "publicTextInventoryCount": 42981,
+  "publicTextInventoryCount": 43013,
   "publicRouteCount": 158,
   "internalPublicTokenCount": 0,
   "duplicateVisibleCopyCount": 0,

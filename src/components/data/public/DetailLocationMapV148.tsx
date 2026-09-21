@@ -14,9 +14,11 @@ import { MAP_PLACES_V150 } from "../../../data/map/mapBackdropV150";
 import "./detail-location-map-v148.css";
 import { displayUnitV150 } from "../../../data/visualization/unitDisplayV150";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
+import { publicAssetUrlV128 } from "../../../utils/publicAssetUrlV128";
 
 type Runtime = { layer: CountryMapLayerV122; base: VietnamMapGeoJsonV124; geometry?: VietnamMapGeoJsonV124; data?: VietnamSpatialLayerAssetV124; records: CountryEntityV122[] };
-const BASE = "/data/vietnam/v2/geometry/vnm-adm1-63.geojson";
+// Resolved against PUBLIC_URL so the GitHub Pages subpath build finds it too.
+const BASE = publicAssetUrlV128("data/vietnam/v2/geometry/vnm-adm1-63.geojson");
 const EMPTY_RECORDS: CountryEntityV122[] = [];
 interface Props {
   compact?: boolean;

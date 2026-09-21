@@ -76,9 +76,17 @@ check(
   scriptMismatches
 );
 
+// V150-1: ci.yml runs the same V136 gate through
+// audit-vietnam-release-v136.mjs --group static (which builds) / --group
+// browser --shard k/4 / --results-dir (summary judgement). The sharded form is
+// the current gate as much as the single `npm run finalize:v136` line.
+const shardedGate =
+  /audit-vietnam-release-v136\.mjs\s+--group\s+static\b/u.test(ci) &&
+  /audit-vietnam-release-v136\.mjs\s+--group\s+browser\s+--shard\b/u.test(ci) &&
+  /audit-vietnam-release-v136\.mjs\s+--results-dir\b/u.test(ci);
 const ciContract = {
-  finalize: /npm run finalize:v136/u.test(ci),
-  build: /npm run build/u.test(ci),
+  finalize: /npm run finalize:v136/u.test(ci) || shardedGate,
+  build: /npm run build/u.test(ci) || shardedGate,
   currentGateName: /Run V136 blocking release gate/u.test(ci),
   currentReports: /reports\/v136\//u.test(ci),
   screenshotCaptureSeparated: !/capture:screenshots:v13[0-9]/u.test(ci),

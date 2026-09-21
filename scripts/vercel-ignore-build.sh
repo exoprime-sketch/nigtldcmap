@@ -8,4 +8,4 @@
 # deployment and an unknown environment always build.
 [ "$VERCEL_ENV" = "preview" ] || exit 1
 [ -n "$VERCEL_GIT_PREVIOUS_SHA" ] || exit 1
-git diff --quiet "$VERCEL_GIT_PREVIOUS_SHA" HEAD -- public src api server scripts/v149 package.json package-lock.json tsconfig.json .eslintrc.json .gitattributes vercel.json '.env*'
+git diff --quiet "$VERCEL_GIT_PREVIOUS_SHA" HEAD -- public src api server scripts/v150-1 package.json package-lock.json tsconfig.json .eslintrc.json .gitattributes vercel.json '.env*'

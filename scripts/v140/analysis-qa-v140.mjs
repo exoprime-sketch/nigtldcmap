@@ -36,6 +36,11 @@
  * recorded with their reason and never counted as passes.
  *
  * Usage: node scripts/v140/analysis-qa-v140.mjs [--base-url URL] [--label name]
+ *        [--baseline reports/v150/analysis-qa-baseline-v150.json]
+ *   --baseline: the known required failures (element id → failing checks)
+ *   handed to PR-D. With it, the exit code fails only on a failure the
+ *   baseline does not list (a new element, or a new check on a listed one);
+ *   every failure is still reported and counted.
  *        [--only A-002,B-033] [--workers 3] [--allow-version-mismatch]
  */
 import { chromium } from "playwright";
@@ -1034,4 +1039,40 @@ const md = [
 ].join("\n");
 writeFileSync(resolve(OUT, `analysis-qa-v140-${label}.md`), md);
 console.log(JSON.stringify(summary));
-process.exitCode = requiredFailures.length ? 1 : 0;
+// Failure classification per element, for the baseline comparison.
+function failureKeys(r) {
+  const keys = [];
+  if (!r.screenLoaded) keys.push("screenLoaded");
+  if (r.detailTilesAbsent === false) keys.push("detailTilesAbsent");
+  if (r.cardClicked === false) keys.push("cardClicked");
+  if (r.homeCardClicked === false) keys.push("homeCardClicked");
+  if (r.selectionUrlPreserved === false) keys.push("selectionUrlPreserved");
+  if (r.cardValueVerified === false) keys.push("cardValueVerified");
+  if (r.detailAnalysisFit === false) keys.push("detailAnalysisFit");
+  if (r.analysisFit?.pass === false) keys.push("analysisFit");
+  if (r.controlsVerified === false) keys.push("controlsVerified");
+  if (r.mapHandoffVerified === false) keys.push("mapHandoffVerified");
+  if (r.mapSymbolVerified && r.mapSymbolVerified.pass === false) keys.push("mapSymbolVerified");
+  if (r.recomputed?.status === "mismatch") keys.push("recomputed");
+  if (r.evidence.table?.status === "value-without-keys") keys.push("tableValueWithoutKeys");
+  if (r.internalWording) keys.push("internalWording");
+  return keys;
+}
+const baselinePath = opt("--baseline", null);
+let baselineVerdict = null;
+if (baselinePath) {
+  const baseline = JSON.parse(readFileSync(resolve(PROJECT_ROOT, baselinePath), "utf8"));
+  const known = new Map((baseline.failures || []).map((row) => [row.elementId, new Set(row.checks || [])]));
+  const newFailures = [];
+  for (const r of requiredFailures) {
+    const keys = failureKeys(r);
+    const listed = known.get(r.elementId);
+    const unlisted = listed ? keys.filter((key) => !listed.has(key)) : keys;
+    if (!listed || unlisted.length) newFailures.push({ elementId: r.elementId, checks: unlisted, listed: Boolean(listed) });
+  }
+  const resolved = [...known.keys()].filter((id) => !requiredFailures.some((r) => r.elementId === id));
+  baselineVerdict = { baseline: baselinePath, baselineCount: known.size, requiredFailures: requiredFailures.length, newFailures, resolved, pass: newFailures.length === 0 };
+  writeFileSync(resolve(OUT, `analysis-qa-v140-${label}-baseline.json`), `${JSON.stringify(baselineVerdict, null, 2)}\n`);
+  console.log(JSON.stringify({ type: "baseline", ...baselineVerdict, newFailures: newFailures.map((row) => `${row.elementId}:${row.checks.join("+")}`), resolved }));
+}
+process.exitCode = baselineVerdict ? (baselineVerdict.pass ? 0 : 1) : requiredFailures.length ? 1 : 0;

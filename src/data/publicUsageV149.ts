@@ -1,13 +1,19 @@
 import { useEffect, useState } from "react";
 import directory from "./datasetDirectoryV149.json";
+import { publicAssetUrlV128 } from "../utils/publicAssetUrlV128";
 
 export type UsageRankV149 = { elementId: string; count: number };
 export type PublicUsageV149 = { status: "ready"; windowDays: number; from: string; through: string; detail: UsageRankV149[]; map: UsageRankV149[] };
 export const datasetDatesV149 = new Map(directory.map(d => [d.elementId, d.updatedAt]));
 export const mapDatasetIdsV149 = new Set(directory.filter(d => d.map).map(d => d.elementId));
+// The usage function exists only on the root-mounted Vercel deployment. A
+// build served under a subpath (GitHub Pages) has no /api, so it neither asks
+// nor reports - a 404 there would be a runtime error, not a signal.
+export const USAGE_API_AVAILABLE_V149 = publicAssetUrlV128("api/usage") === "/api/usage";
 export function usePublicUsageV149() {
   const [usage, setUsage] = useState<PublicUsageV149 | null>(null);
   useEffect(() => {
+    if (!USAGE_API_AVAILABLE_V149) return undefined;
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 6000);
     void fetch("/api/usage", {signal:controller.signal}).then(async r => {
@@ -27,7 +33,7 @@ export function usePublicUsageV149() {
 const sent = new Map<string, number>();
 export function useDatasetUsageV149(kind: "detail" | "map", elementId: string | null, ready: boolean) {
   useEffect(() => {
-    if (!ready || !elementId || navigator.webdriver || navigator.doNotTrack === "1" || (navigator as Navigator & { globalPrivacyControl?: boolean }).globalPrivacyControl) return;
+    if (!USAGE_API_AVAILABLE_V149 || !ready || !elementId || navigator.webdriver || navigator.doNotTrack === "1" || (navigator as Navigator & { globalPrivacyControl?: boolean }).globalPrivacyControl) return;
     const key = `${kind}:${elementId}`;
     const timer = setTimeout(() => {
       if (document.visibilityState !== "visible" || Date.now() - (sent.get(key) || 0) < 1800000) return;

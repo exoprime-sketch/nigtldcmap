@@ -23,7 +23,16 @@ const visualQa = readFileSync(
 const CURRENT = "v136";
 const SUPERSEDED_GATE = /npm\s+run\s+finalize:v1(?:2[0-9]|3[0-5])\b/gu;
 
-const ciGate = /\brun:\s*npm\s+run\s+finalize:v136\s*$/mu.test(ci);
+// V150-1: ci.yml runs the same V136 gate split into a static job, four
+// browser shards and a summary that judges the merged results
+// (`audit-vietnam-release-v136.mjs --group/--shard/--results-dir`). Either the
+// single-command form or the complete sharded form counts as the current gate.
+const ciGateSingle = /\brun:\s*npm\s+run\s+finalize:v136\s*$/mu.test(ci);
+const ciGateSharded =
+  /audit-vietnam-release-v136\.mjs\s+--group\s+static\b/u.test(ci) &&
+  /audit-vietnam-release-v136\.mjs\s+--group\s+browser\s+--shard\s+\$\{\{\s*matrix\.shard\s*\}\}\/4\b/u.test(ci) &&
+  /audit-vietnam-release-v136\.mjs\s+--results-dir\b/u.test(ci);
+const ciGate = ciGateSingle || ciGateSharded;
 const pagesGate = /\brun:\s*npm\s+run\s+finalize:v136\s*$/mu.test(pages);
 const visualCapture = /\brun:\s*npm\s+run\s+capture:screenshots:v136\s*$/mu.test(visualQa);
 
@@ -49,7 +58,7 @@ const supersededGateHits = [
   ...pages.matchAll(SUPERSEDED_GATE),
 ].map((match) => match[0]);
 
-audit.check("CI_CURRENT_RELEASE_GATE", ciGate, { finalize: ciGate }, `finalize:${CURRENT}`);
+audit.check("CI_CURRENT_RELEASE_GATE", ciGate, { finalize: ciGate, single: ciGateSingle, sharded: ciGateSharded }, `finalize:${CURRENT}`);
 audit.check("PAGES_CURRENT_RELEASE_GATE", pagesGate, { finalize: pagesGate }, `finalize:${CURRENT}`);
 audit.check("VISUAL_QA_CURRENT_CAPTURE", visualCapture, { capture: visualCapture }, `capture:screenshots:${CURRENT}`);
 audit.check("CI_REPORT_PATH", ciReportPath, { reportsV136: ciReportPath }, "reports/v136");

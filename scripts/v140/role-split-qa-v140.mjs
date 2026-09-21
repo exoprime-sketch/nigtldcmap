@@ -44,6 +44,22 @@ const bypassHeaders = bypassSecret
 const label = opt("--label", externalBase ? "deployed" : "local-build");
 const OUT = resolve(PROJECT_ROOT, "reports/v140");
 const SHOTS = resolve(OUT, `screenshots/${label}`);
+
+// Evidence screenshots are not judgements. On Windows a scanner or sync client
+// can hold a freshly written png for a moment (EBUSY/UNKNOWN); the capture is
+// retried with the buffer already in hand and, if it still cannot be written,
+// the run continues without that image rather than failing the section.
+async function captureV150(target, path, options = {}) {
+  let buffer = null;
+  try { buffer = await target.screenshot({ ...options }); } catch (error) { console.error(`screenshot capture skipped (${error?.message || error})`); return false; }
+  for (let attempt = 0; attempt < 5; attempt += 1) {
+    try { writeFileSync(path, buffer); return true; } catch (error) {
+      if (attempt === 4) { console.error(`screenshot not written: ${path} (${error?.code || error})`); return false; }
+      await new Promise((resolveWait) => setTimeout(resolveWait, 200 * (attempt + 1)));
+    }
+  }
+  return false;
+}
 mkdirSync(SHOTS, { recursive: true });
 
 let FEATURED = ["A-002", "A-003", "A-010", "A-023", "A-024", "B-033", "C-016", "D-023"];
@@ -199,7 +215,7 @@ await section("HOME", async () => {
     };
   });
   report.home = home;
-  await page.screenshot({ path: resolve(SHOTS, "home-1440.png"), fullPage: true });
+  await captureV150(page, resolve(SHOTS, "home-1440.png"), { fullPage: true });
   const ids = home.cards.map((card) => card.id);
   check("HOME_FEATURED_EIGHT", ids.length === 8 && new Set(ids).size === 8, ids, "eight distinct datasets selected by the active ordering");
   FEATURED = ids;
@@ -282,7 +298,7 @@ await section("FINDER", async () => {
     cards: cards.length,
     withMapButton: cards.filter((card) => [...card.querySelectorAll("button")].some((button) => /지도에서 보기/u.test(button.textContent || ""))).length,
   }));
-  await page.screenshot({ path: resolve(SHOTS, "finder-map-filter-1440.png") });
+  await captureV150(page, resolve(SHOTS, "finder-map-filter-1440.png"));
   await page.selectOption('[data-testid="finder-delivery-filter-v140"]', "download");
   await page.waitForTimeout(400);
   const totalDownload = await total();
@@ -361,8 +377,8 @@ await section("MAP", async () => {
   });
   await page.waitForTimeout(300);
   const waterGroup = await page.$('[data-map-group-v135="물·자원"]');
-  if (waterGroup) await waterGroup.screenshot({ path: resolve(SHOTS, "map-water-group.png") });
-  await page.screenshot({ path: resolve(SHOTS, "map-1440.png") });
+  if (waterGroup) await captureV150(waterGroup, resolve(SHOTS, "map-water-group.png"));
+  await captureV150(page, resolve(SHOTS, "map-1440.png"));
   report.map = map;
   const guideCount = Number((map.guideCount.match(/지도 자료 (\d+)개/u) || [])[1]);
   check(
@@ -422,7 +438,7 @@ await section("DETAIL_A002", async () => {
       limitationItems: [...document.querySelectorAll('[data-testid="public-limitation-item"]')].map((node) => tidy(node.textContent)),
     };
   });
-  await page.screenshot({ path: resolve(SHOTS, "detail-a002-1440.png"), fullPage: true });
+  await captureV150(page, resolve(SHOTS, "detail-a002-1440.png"), { fullPage: true });
   report.detail = detail;
   check("DETAIL_A002_TITLE", homeTitle("A-002") ? detail.title === homeTitle("A-002") : /거버넌스.*WGI/u.test(detail.title), detail.title, homeTitle("A-002") || "국가 거버넌스 지표(WGI)");
   check("DETAIL_A002_ANALYSIS", detail.analysisMounted && detail.chartCount > 0, detail, "analysis root with charts");

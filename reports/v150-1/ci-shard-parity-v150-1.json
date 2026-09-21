@@ -1,0 +1,583 @@
+{
+  "schema": "nigt-ci-shard-parity-v150-1",
+  "generatedAt": "2026-09-21T06:08:51.208Z",
+  "single": {
+    "generatedAt": "2026-09-21T01:37:40.640Z",
+    "status": "PASS",
+    "checks": 79,
+    "passed": 79,
+    "failed": 0
+  },
+  "sharded": {
+    "generatedAt": "2026-09-21T06:08:18.104Z",
+    "status": "PASS",
+    "checks": 79,
+    "passed": 79,
+    "failed": 0
+  },
+  "identicalCheckSet": true,
+  "differingChecks": [],
+  "parity": true,
+  "commandElapsedMs": {
+    "single": {
+      "CI_PROCESS_GUARDS": 1439,
+      "PRODUCTION_BUILD_FOR_RUNTIME": 33053,
+      "V133_GENERATED_DATA": 7923,
+      "LARGE_SOURCE_TABLE": 12558,
+      "V133_CI_CONTRACT": 878,
+      "V130_PROJECT_SCOPE": 706,
+      "V130_MAP_DEDUP": 723,
+      "V130_SEMANTIC_GEOGRAPHY": 892,
+      "V131_PUBLIC_NAMING": 5875,
+      "V131_ENTITY_CARDS": 34433,
+      "V132_COMPOSITION": 3471,
+      "V132_PORTFOLIO": 10701,
+      "V132_MAP_TOOLTIP": 5817,
+      "V132_BENCHMARK_FIT": 783,
+      "V133_MAP_FOCUS": 6251,
+      "V133_MAP_POPUP": 3537,
+      "V133_LAYER_DISTINCTION": 4203,
+      "V134_GLOSSARY": 64397,
+      "V134_ODA_ANALYSIS": 5295,
+      "V134_DROUGHT_ANALYSIS": 23189,
+      "V134_PUBLIC_COPY": 170008,
+      "V134_VISUAL_QA_CONTRACT": 738,
+      "V135_FINDER_CARD": 6297,
+      "V135_TEMPORAL_DEPTH": 49334,
+      "V135_DETAIL_HIERARCHY": 50649,
+      "V135_MAP_GUIDE": 2496,
+      "V135_MAP_ACCESS": 4038,
+      "V135_MAP_COMPARE": 4542,
+      "V135_PUBLIC_SCREEN": 51769,
+      "V136_PUBLIC_TEXT": 164937,
+      "V136_DUPLICATE_COPY": 49183,
+      "V136_MAP_LIST_UI": 5641,
+      "V136_MAP_COPY": 2767,
+      "V136_PUBLIC_CONTROLS": 2862,
+      "V136_FINDER_SCROLL": 9856,
+      "V136_3_UNIT_TESTS": 16013,
+      "V136_2_GENERIC_DETAIL_PUBLIC": 172432,
+      "V136_4_SCREEN_USABILITY": 49324,
+      "V136_HUMAN_REVIEW": 59068,
+      "V136_WORKFLOW": 711
+    },
+    "sharded": {
+      "CI_PROCESS_GUARDS": 1371,
+      "PRODUCTION_BUILD_FOR_RUNTIME": 18778,
+      "V133_GENERATED_DATA": 7899,
+      "LARGE_SOURCE_TABLE": 10594,
+      "V133_CI_CONTRACT": 849,
+      "V130_PROJECT_SCOPE": 741,
+      "V130_MAP_DEDUP": 711,
+      "V130_SEMANTIC_GEOGRAPHY": 757,
+      "V131_PUBLIC_NAMING": 5757,
+      "V131_ENTITY_CARDS": 30970,
+      "V132_COMPOSITION": 3408,
+      "V132_PORTFOLIO": 8704,
+      "V132_MAP_TOOLTIP": 6315,
+      "V132_BENCHMARK_FIT": 606,
+      "V133_MAP_FOCUS": 5922,
+      "V133_MAP_POPUP": 3590,
+      "V133_LAYER_DISTINCTION": 3880,
+      "V134_GLOSSARY": 54803,
+      "V134_ODA_ANALYSIS": 5269,
+      "V134_DROUGHT_ANALYSIS": 22860,
+      "V134_PUBLIC_COPY": 163083,
+      "V134_VISUAL_QA_CONTRACT": 652,
+      "V135_FINDER_CARD": 6224,
+      "V135_TEMPORAL_DEPTH": 50041,
+      "V135_DETAIL_HIERARCHY": 49278,
+      "V135_MAP_GUIDE": 2502,
+      "V135_MAP_ACCESS": 4208,
+      "V135_MAP_COMPARE": 19095,
+      "V135_PUBLIC_SCREEN": 50797,
+      "V136_PUBLIC_TEXT": 169795,
+      "V136_DUPLICATE_COPY": 48839,
+      "V136_MAP_LIST_UI": 5559,
+      "V136_MAP_COPY": 2639,
+      "V136_PUBLIC_CONTROLS": 2760,
+      "V136_FINDER_SCROLL": 9967,
+      "V136_3_UNIT_TESTS": 9690,
+      "V136_2_GENERIC_DETAIL_PUBLIC": 176506,
+      "V136_4_SCREEN_USABILITY": 49397,
+      "V136_HUMAN_REVIEW": 61891,
+      "V136_WORKFLOW": 654
+    }
+  },
+  "checks": [
+    {
+      "name": "CI_PROCESS_GUARDS",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "PRODUCTION_BUILD_FOR_RUNTIME",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V133_GENERATED_DATA",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "LARGE_SOURCE_TABLE",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V133_CI_CONTRACT",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V130_PROJECT_SCOPE",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V130_MAP_DEDUP",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V130_SEMANTIC_GEOGRAPHY",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V131_PUBLIC_NAMING",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V131_ENTITY_CARDS",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V132_COMPOSITION",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V132_PORTFOLIO",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V132_MAP_TOOLTIP",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V132_BENCHMARK_FIT",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V133_MAP_FOCUS",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V133_MAP_POPUP",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V133_LAYER_DISTINCTION",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V134_GLOSSARY",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V134_ODA_ANALYSIS",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V134_DROUGHT_ANALYSIS",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V134_PUBLIC_COPY",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V134_VISUAL_QA_CONTRACT",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V135_FINDER_CARD",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V135_TEMPORAL_DEPTH",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V135_DETAIL_HIERARCHY",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V135_MAP_GUIDE",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V135_MAP_ACCESS",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V135_MAP_COMPARE",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V135_PUBLIC_SCREEN",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V136_PUBLIC_TEXT",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V136_DUPLICATE_COPY",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V136_MAP_LIST_UI",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V136_MAP_COPY",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V136_PUBLIC_CONTROLS",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V136_FINDER_SCROLL",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V136_3_UNIT_TESTS",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V136_2_GENERIC_DETAIL_PUBLIC",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V136_4_SCREEN_USABILITY",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V136_HUMAN_REVIEW",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V136_WORKFLOW",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "FRAMEWORK_ELEMENTS",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "ACCOUNTED_ELEMENTS",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "PUBLIC_ROUTE_COUNT",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "INTERNAL_PUBLIC_TOKEN_COUNT",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "DUPLICATE_VISIBLE_COPY_COUNT",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "AWKWARD_GENERIC_COPY_COUNT",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "MAP_LAYER_COUNT",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "ALL_MAP_LAYER_ACCESS_COUNT",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "MAP_PRESET_COUNT",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "MAP_DATA_ITEM_COUNT",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "MAP_NATIVE_BULLET_COUNT",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "MAP_NATIVE_BUTTON_STYLE_COUNT",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "MAP_ITEM_DUPLICATE_TITLE_COUNT",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "MAP_GUIDE_DEFAULT_OPEN",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "LEFT_PANEL_POINTER_RESIZE_PASS",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "MAP_COMPARE_RESULT",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "VISIBLE_ACRONYM_WITHOUT_GLOSSARY",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V130_REGRESSION",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V131_REGRESSION",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V132_REGRESSION",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V133_REGRESSION",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V134_REGRESSION",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V135_REGRESSION",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V136_REGRESSION",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "FINDER_LOAD_MORE_VISIBLE_COUNT",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "FINDER_AUTO_LOAD_SEQUENCE",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "FINDER_DUPLICATE_CARD_COUNT",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "FINDER_HUMAN_REVIEW_COUNT",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "DETAIL_HUMAN_REVIEW_COUNT",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "MAP_DATASET_HUMAN_REVIEW_COUNT",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "UNRESOLVED_REWRITE_COUNT",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "UNRESOLVED_REMOVE_COUNT",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "V136_1_REGRESSION",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "CI_CURRENT_RELEASE_GATE",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "PAGES_CURRENT_RELEASE_GATE",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "VISUAL_QA_CURRENT_CAPTURE",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "OLD_V135_CURRENT_GATE_COUNT",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "SCREENSHOT_CAPTURE_IS_RELEASE_BLOCKER",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    },
+    {
+      "name": "REMAINING_BLOCKERS",
+      "single": "PASS",
+      "sharded": "PASS",
+      "same": true
+    }
+  ]
+}
