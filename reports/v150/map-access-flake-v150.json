@@ -1,0 +1,704 @@
+{
+  "schema": "nigt-map-access-flake-v150",
+  "phases": [
+    {
+      "label": "baseline-main-2d8d7ee",
+      "generatedAt": "2026-09-21T04:50:40.377Z",
+      "platform": "win32 node v22.19.0",
+      "buildJs": "main.0fcf83ab.js",
+      "runs": 10,
+      "resizePassed": 10,
+      "auditPassed": 10,
+      "results": [
+        {
+          "run": 1,
+          "exitCode": 0,
+          "elapsedMs": 4314,
+          "resize": {
+            "status": "PASS",
+            "before": 320,
+            "after": 465,
+            "restored": 465,
+            "storedAfter": [
+              [
+                "cdp-map-right-panel-width-v150",
+                "360"
+              ],
+              [
+                "cdp-map-backdrop-v150",
+                "on"
+              ],
+              [
+                "cdp-map-left-panel-width-v150",
+                "465"
+              ]
+            ]
+          },
+          "failedChecks": []
+        },
+        {
+          "run": 2,
+          "exitCode": 0,
+          "elapsedMs": 4515,
+          "resize": {
+            "status": "PASS",
+            "before": 320,
+            "after": 465,
+            "restored": 465,
+            "storedAfter": [
+              [
+                "cdp-map-right-panel-width-v150",
+                "360"
+              ],
+              [
+                "cdp-map-backdrop-v150",
+                "on"
+              ],
+              [
+                "cdp-map-left-panel-width-v150",
+                "465"
+              ]
+            ]
+          },
+          "failedChecks": []
+        },
+        {
+          "run": 3,
+          "exitCode": 0,
+          "elapsedMs": 4273,
+          "resize": {
+            "status": "PASS",
+            "before": 320,
+            "after": 465,
+            "restored": 465,
+            "storedAfter": [
+              [
+                "cdp-map-right-panel-width-v150",
+                "360"
+              ],
+              [
+                "cdp-map-backdrop-v150",
+                "on"
+              ],
+              [
+                "cdp-map-left-panel-width-v150",
+                "465"
+              ]
+            ]
+          },
+          "failedChecks": []
+        },
+        {
+          "run": 4,
+          "exitCode": 0,
+          "elapsedMs": 4286,
+          "resize": {
+            "status": "PASS",
+            "before": 320,
+            "after": 465,
+            "restored": 465,
+            "storedAfter": [
+              [
+                "cdp-map-right-panel-width-v150",
+                "360"
+              ],
+              [
+                "cdp-map-backdrop-v150",
+                "on"
+              ],
+              [
+                "cdp-map-left-panel-width-v150",
+                "465"
+              ]
+            ]
+          },
+          "failedChecks": []
+        },
+        {
+          "run": 5,
+          "exitCode": 0,
+          "elapsedMs": 4159,
+          "resize": {
+            "status": "PASS",
+            "before": 320,
+            "after": 465,
+            "restored": 465,
+            "storedAfter": [
+              [
+                "cdp-map-right-panel-width-v150",
+                "360"
+              ],
+              [
+                "cdp-map-backdrop-v150",
+                "on"
+              ],
+              [
+                "cdp-map-left-panel-width-v150",
+                "465"
+              ]
+            ]
+          },
+          "failedChecks": []
+        },
+        {
+          "run": 6,
+          "exitCode": 0,
+          "elapsedMs": 4233,
+          "resize": {
+            "status": "PASS",
+            "before": 320,
+            "after": 465,
+            "restored": 465,
+            "storedAfter": [
+              [
+                "cdp-map-right-panel-width-v150",
+                "360"
+              ],
+              [
+                "cdp-map-backdrop-v150",
+                "on"
+              ],
+              [
+                "cdp-map-left-panel-width-v150",
+                "465"
+              ]
+            ]
+          },
+          "failedChecks": []
+        },
+        {
+          "run": 7,
+          "exitCode": 0,
+          "elapsedMs": 4325,
+          "resize": {
+            "status": "PASS",
+            "before": 320,
+            "after": 465,
+            "restored": 465,
+            "storedAfter": [
+              [
+                "cdp-map-right-panel-width-v150",
+                "360"
+              ],
+              [
+                "cdp-map-backdrop-v150",
+                "on"
+              ],
+              [
+                "cdp-map-left-panel-width-v150",
+                "465"
+              ]
+            ]
+          },
+          "failedChecks": []
+        },
+        {
+          "run": 8,
+          "exitCode": 0,
+          "elapsedMs": 4240,
+          "resize": {
+            "status": "PASS",
+            "before": 320,
+            "after": 465,
+            "restored": 465,
+            "storedAfter": [
+              [
+                "cdp-map-right-panel-width-v150",
+                "360"
+              ],
+              [
+                "cdp-map-backdrop-v150",
+                "on"
+              ],
+              [
+                "cdp-map-left-panel-width-v150",
+                "465"
+              ]
+            ]
+          },
+          "failedChecks": []
+        },
+        {
+          "run": 9,
+          "exitCode": 0,
+          "elapsedMs": 4239,
+          "resize": {
+            "status": "PASS",
+            "before": 320,
+            "after": 465,
+            "restored": 465,
+            "storedAfter": [
+              [
+                "cdp-map-right-panel-width-v150",
+                "360"
+              ],
+              [
+                "cdp-map-backdrop-v150",
+                "on"
+              ],
+              [
+                "cdp-map-left-panel-width-v150",
+                "465"
+              ]
+            ]
+          },
+          "failedChecks": []
+        },
+        {
+          "run": 10,
+          "exitCode": 0,
+          "elapsedMs": 4168,
+          "resize": {
+            "status": "PASS",
+            "before": 320,
+            "after": 465,
+            "restored": 465,
+            "storedAfter": [
+              [
+                "cdp-map-right-panel-width-v150",
+                "360"
+              ],
+              [
+                "cdp-map-backdrop-v150",
+                "on"
+              ],
+              [
+                "cdp-map-left-panel-width-v150",
+                "465"
+              ]
+            ]
+          },
+          "failedChecks": []
+        }
+      ]
+    },
+    {
+      "label": "baseline-main-cpu6",
+      "generatedAt": "2026-09-21T04:52:02.459Z",
+      "platform": "win32 node v22.19.0",
+      "cpuThrottle": 6,
+      "buildJs": "main.0fcf83ab.js",
+      "runs": 3,
+      "resizePassed": 3,
+      "auditPassed": 3,
+      "results": [
+        {
+          "run": 1,
+          "exitCode": 0,
+          "elapsedMs": 16361,
+          "resize": {
+            "status": "PASS",
+            "before": 320,
+            "after": 465,
+            "restored": 465,
+            "storedAfter": [
+              [
+                "cdp-map-right-panel-width-v150",
+                "360"
+              ],
+              [
+                "cdp-map-left-panel-width-v150",
+                "465"
+              ]
+            ]
+          },
+          "failedChecks": []
+        },
+        {
+          "run": 2,
+          "exitCode": 0,
+          "elapsedMs": 16026,
+          "resize": {
+            "status": "PASS",
+            "before": 320,
+            "after": 465,
+            "restored": 465,
+            "storedAfter": [
+              [
+                "cdp-map-right-panel-width-v150",
+                "360"
+              ],
+              [
+                "cdp-map-left-panel-width-v150",
+                "465"
+              ]
+            ]
+          },
+          "failedChecks": []
+        },
+        {
+          "run": 3,
+          "exitCode": 0,
+          "elapsedMs": 15835,
+          "resize": {
+            "status": "PASS",
+            "before": 320,
+            "after": 465,
+            "restored": 465,
+            "storedAfter": [
+              [
+                "cdp-map-right-panel-width-v150",
+                "360"
+              ],
+              [
+                "cdp-map-left-panel-width-v150",
+                "465"
+              ]
+            ]
+          },
+          "failedChecks": []
+        }
+      ]
+    },
+    {
+      "label": "fixed-sync-pointer",
+      "generatedAt": "2026-09-21T04:55:42.686Z",
+      "platform": "win32 node v22.19.0",
+      "cpuThrottle": 0,
+      "buildJs": "main.2ccaced9.js",
+      "runs": 10,
+      "resizePassed": 10,
+      "auditPassed": 10,
+      "results": [
+        {
+          "run": 1,
+          "exitCode": 0,
+          "elapsedMs": 4140,
+          "resize": {
+            "status": "PASS",
+            "before": 320,
+            "after": 465,
+            "restored": 465,
+            "storedAfter": [
+              [
+                "cdp-map-right-panel-width-v150",
+                "360"
+              ],
+              [
+                "cdp-map-backdrop-v150",
+                "on"
+              ],
+              [
+                "cdp-map-left-panel-width-v150",
+                "465"
+              ]
+            ]
+          },
+          "failedChecks": []
+        },
+        {
+          "run": 2,
+          "exitCode": 0,
+          "elapsedMs": 4491,
+          "resize": {
+            "status": "PASS",
+            "before": 320,
+            "after": 465,
+            "restored": 465,
+            "storedAfter": [
+              [
+                "cdp-map-right-panel-width-v150",
+                "360"
+              ],
+              [
+                "cdp-map-backdrop-v150",
+                "on"
+              ],
+              [
+                "cdp-map-left-panel-width-v150",
+                "465"
+              ]
+            ]
+          },
+          "failedChecks": []
+        },
+        {
+          "run": 3,
+          "exitCode": 0,
+          "elapsedMs": 4585,
+          "resize": {
+            "status": "PASS",
+            "before": 320,
+            "after": 465,
+            "restored": 465,
+            "storedAfter": [
+              [
+                "cdp-map-backdrop-v150",
+                "on"
+              ],
+              [
+                "cdp-map-right-panel-width-v150",
+                "360"
+              ],
+              [
+                "cdp-map-left-panel-width-v150",
+                "465"
+              ]
+            ]
+          },
+          "failedChecks": []
+        },
+        {
+          "run": 4,
+          "exitCode": 0,
+          "elapsedMs": 4351,
+          "resize": {
+            "status": "PASS",
+            "before": 320,
+            "after": 465,
+            "restored": 465,
+            "storedAfter": [
+              [
+                "cdp-map-right-panel-width-v150",
+                "360"
+              ],
+              [
+                "cdp-map-backdrop-v150",
+                "on"
+              ],
+              [
+                "cdp-map-left-panel-width-v150",
+                "465"
+              ]
+            ]
+          },
+          "failedChecks": []
+        },
+        {
+          "run": 5,
+          "exitCode": 0,
+          "elapsedMs": 5579,
+          "resize": {
+            "status": "PASS",
+            "before": 320,
+            "after": 465,
+            "restored": 465,
+            "storedAfter": [
+              [
+                "cdp-map-right-panel-width-v150",
+                "360"
+              ],
+              [
+                "cdp-map-backdrop-v150",
+                "on"
+              ],
+              [
+                "cdp-map-left-panel-width-v150",
+                "465"
+              ]
+            ]
+          },
+          "failedChecks": []
+        },
+        {
+          "run": 6,
+          "exitCode": 0,
+          "elapsedMs": 5660,
+          "resize": {
+            "status": "PASS",
+            "before": 320,
+            "after": 465,
+            "restored": 465,
+            "storedAfter": [
+              [
+                "cdp-map-right-panel-width-v150",
+                "360"
+              ],
+              [
+                "cdp-map-backdrop-v150",
+                "on"
+              ],
+              [
+                "cdp-map-left-panel-width-v150",
+                "465"
+              ]
+            ]
+          },
+          "failedChecks": []
+        },
+        {
+          "run": 7,
+          "exitCode": 0,
+          "elapsedMs": 4019,
+          "resize": {
+            "status": "PASS",
+            "before": 320,
+            "after": 465,
+            "restored": 465,
+            "storedAfter": [
+              [
+                "cdp-map-right-panel-width-v150",
+                "360"
+              ],
+              [
+                "cdp-map-backdrop-v150",
+                "on"
+              ],
+              [
+                "cdp-map-left-panel-width-v150",
+                "465"
+              ]
+            ]
+          },
+          "failedChecks": []
+        },
+        {
+          "run": 8,
+          "exitCode": 0,
+          "elapsedMs": 3849,
+          "resize": {
+            "status": "PASS",
+            "before": 320,
+            "after": 465,
+            "restored": 465,
+            "storedAfter": [
+              [
+                "cdp-map-right-panel-width-v150",
+                "360"
+              ],
+              [
+                "cdp-map-backdrop-v150",
+                "on"
+              ],
+              [
+                "cdp-map-left-panel-width-v150",
+                "465"
+              ]
+            ]
+          },
+          "failedChecks": []
+        },
+        {
+          "run": 9,
+          "exitCode": 0,
+          "elapsedMs": 4051,
+          "resize": {
+            "status": "PASS",
+            "before": 320,
+            "after": 465,
+            "restored": 465,
+            "storedAfter": [
+              [
+                "cdp-map-right-panel-width-v150",
+                "360"
+              ],
+              [
+                "cdp-map-backdrop-v150",
+                "on"
+              ],
+              [
+                "cdp-map-left-panel-width-v150",
+                "465"
+              ]
+            ]
+          },
+          "failedChecks": []
+        },
+        {
+          "run": 10,
+          "exitCode": 0,
+          "elapsedMs": 4229,
+          "resize": {
+            "status": "PASS",
+            "before": 320,
+            "after": 465,
+            "restored": 465,
+            "storedAfter": [
+              [
+                "cdp-map-right-panel-width-v150",
+                "360"
+              ],
+              [
+                "cdp-map-backdrop-v150",
+                "on"
+              ],
+              [
+                "cdp-map-left-panel-width-v150",
+                "465"
+              ]
+            ]
+          },
+          "failedChecks": []
+        }
+      ]
+    },
+    {
+      "label": "fixed-sync-pointer-cpu6",
+      "generatedAt": "2026-09-21T04:56:27.026Z",
+      "platform": "win32 node v22.19.0",
+      "cpuThrottle": 6,
+      "buildJs": "main.2ccaced9.js",
+      "runs": 3,
+      "resizePassed": 3,
+      "auditPassed": 3,
+      "results": [
+        {
+          "run": 1,
+          "exitCode": 0,
+          "elapsedMs": 15119,
+          "resize": {
+            "status": "PASS",
+            "before": 320,
+            "after": 465,
+            "restored": 465,
+            "storedAfter": [
+              [
+                "cdp-map-right-panel-width-v150",
+                "360"
+              ],
+              [
+                "cdp-map-left-panel-width-v150",
+                "465"
+              ]
+            ]
+          },
+          "failedChecks": []
+        },
+        {
+          "run": 2,
+          "exitCode": 0,
+          "elapsedMs": 14727,
+          "resize": {
+            "status": "PASS",
+            "before": 320,
+            "after": 465,
+            "restored": 465,
+            "storedAfter": [
+              [
+                "cdp-map-right-panel-width-v150",
+                "360"
+              ],
+              [
+                "cdp-map-left-panel-width-v150",
+                "465"
+              ]
+            ]
+          },
+          "failedChecks": []
+        },
+        {
+          "run": 3,
+          "exitCode": 0,
+          "elapsedMs": 14389,
+          "resize": {
+            "status": "PASS",
+            "before": 320,
+            "after": 465,
+            "restored": 465,
+            "storedAfter": [
+              [
+                "cdp-map-right-panel-width-v150",
+                "360"
+              ],
+              [
+                "cdp-map-left-panel-width-v150",
+                "465"
+              ]
+            ]
+          },
+          "failedChecks": []
+        }
+      ]
+    }
+  ]
+}
