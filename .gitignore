@@ -52,3 +52,7 @@ reports/v128/production-smoke-v128.json
 # of it is source, and none of it belongs in the checkout Vercel builds from.
 /output/
 /tmp/
+
+# V150-1: per-run gate shard outputs (uploaded as CI artifacts)
+reports/v136/release-shards/
+reports/v136/ci-command-timings-*.json

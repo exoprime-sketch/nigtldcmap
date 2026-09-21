@@ -3,7 +3,7 @@
 React 18 / TypeScript 4.9 / CRA 5 / MapLibre GL 5 / 자체 SVG 차트. 공개 provider는 베트남 파일럿(152개 데이터 항목, 지도 대상 43개 중 42개 활성). 배포는 Vercel(nigtldcmap.vercel.app) + GitHub Pages. 사용자와의 대화·보고서·커밋 본문은 한국어(개조식), 코드 주석은 영어 유지.
 
 ## 절대 규칙
-- main 직접 push 금지. 작업은 `origin/main`에서 분기한 브랜치 → PR(squash) → CI 녹색 확인 후 merge.
+- main 직접 push 금지. 작업은 `origin/main`에서 분기한 브랜치 → PR(squash). merge 조건: 로컬 `finalize:v140` 통과(analysis QA는 41건 기준선 이내) + Vercel Preview Ready + 사용자 승인. GitHub CI는 merge를 막지 않되 **main에서 반드시 녹색**이어야 하며, 빨강이면 다음 PR을 시작하기 전에 fix-forward로 먼저 고친다.
 - 게이트·감사 스크립트의 기대값을 현재값으로 바꿔 통과시키지 않는다. 기대값 변경은 사유를 `reports/v15x/`에 기록.
 - 데이터 조작 금지: 결측 0 대체, 임의 경계·좌표 생성, 추정 분야 채움, 출처 간 중복 합산 금지. 원자료에 없는 값은 만들지 않는다.
 - 새 탭·새 사이트 구조 금지. 홈 → 데이터 찾기 → 상세 → 데이터 지도/다운로드/이용안내 안에서 작업.
@@ -37,3 +37,5 @@ npm run release:vietnam-pilot    # PR 전 최종
 - 발전원 분류는 `src/data/map/powerPlantFactsV141.ts`의 12종 라벨이 정본. 아이콘·범례·팝업은 이 라벨 키로만 매핑.
 - 기후기술 ID는 `"7"`과 `"CTIS-07"`이 같은 기술이다. 화면·필터는 정규화 키(`07`)로 비교한다.
 - B-017(물 스트레스)은 Aqueduct 평가구역 경계 미확보로 지도 보류. 임의 경계 생성 금지, 사유 표기 유지.
+- 패널 리사이저·드래그 UI는 pointer와 mouse 입력 모두에서 동일하게 동작하고, 리스너는 pointerdown 안에서 동기 부착하며, 폭 상태는 rAF/디바운스 없이 동기 반영한다(PR #19 `reports/v150/MAP_ACCESS_RESIZE_V150.md` 원인 ①·② 재발 방지). 브라우저 감사는 재시도로 통과시키지 않고, 환경성 실패(Windows 파일 쓰기 UNKNOWN 등)는 스크립트에 재시도 코드를 넣고 기록한다.
+- 자료 갱신일은 커밋된 `public/data/vietnam/v2/dataset-directory.json`(+ `src/data/datasetDirectoryV149.json` 사본)에서 읽는다. 다운로드 파일이 바뀌면 `npm run build:dataset-directory:v150`으로 재생성해 함께 커밋한다. 빌드(prebuild)와 게이트는 검증만 하며 git을 호출하지 않는다.

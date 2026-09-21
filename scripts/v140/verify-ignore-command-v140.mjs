@@ -37,7 +37,7 @@ const BUILD_INPUTS = [
   "src/",
   "api/",
   "server/",
-  "scripts/v149/",
+  "scripts/v150-1/",
   "package.json",
   "package-lock.json",
   "tsconfig.json",
