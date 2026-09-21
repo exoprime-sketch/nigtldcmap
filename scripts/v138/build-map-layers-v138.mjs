@@ -98,10 +98,18 @@ export function normalizePlace(name) {
   return spaced.toLowerCase().split(/\s+/).filter(Boolean).join(" ");
 }
 
-/** "Da Nang city" / "Tỉnh Nghệ An" / "Ho Chi Minh city" -> the bare name. */
+/**
+ * "Da Nang city" / "Tỉnh Nghệ An" / "Ho Chi Minh city" -> the bare name.
+ *
+ * V151: the administrative-type words are only stripped where they actually
+ * occur. Vietnamese writes them as a prefix ("Tỉnh Nghệ An", "TP Hồ Chí Minh")
+ * and English as a suffix ("Da Nang city"). Stripping "tinh" anywhere folded
+ * "Hà Tĩnh" to "ha", because the province's own name ends in that syllable.
+ */
 function normalizeAdministrativeName(name) {
   return normalizePlace(name)
-    .replace(/\b(city|province|tinh|thanh pho|tp)\b/g, " ")
+    .replace(/^(?:city|province|tinh|thanh pho|tp)\b/, " ")
+    .replace(/\b(?:city|province)$/, " ")
     .split(/\s+/)
     .filter(Boolean)
     .join(" ");
