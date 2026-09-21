@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { selectCombinationV150 } from "./v150/map-combinations.mjs";
 
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
@@ -77,15 +78,7 @@ function presetCompanionsFromSource(presetId) {
 }
 
 async function selectPreset(cdp, presetId) {
-  const clicked = await evaluateValue(
-    cdp,
-    `(() => {
-      const button = document.querySelector('[data-testid="map-analysis-preset"][data-preset-id=${JSON.stringify(presetId)}]');
-      if (!(button instanceof HTMLButtonElement) || button.disabled) return false;
-      button.click();
-      return true;
-    })()`
-  );
+  const clicked = await selectCombinationV150(cdp, presetId);
   if (!clicked) throw new Error(`preset action unavailable: ${presetId}`);
   await waitForValue(cdp, presetReadyExpression(presetId), { timeoutMs: 35_000 });
   return evaluateValue(

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v136-public-copy-acceptance-1",
-  "generatedAt": "2026-09-16T08:53:15.428Z",
+  "generatedAt": "2026-09-21T01:32:29.269Z",
   "audit": "map-copy:v136",
   "status": "PASS",
   "summary": {
@@ -13,7 +13,6 @@
     "failedChecks": [],
     "panelHeadingOrder": [
       "데이터 지도",
-      "추천 분석",
       "지도 데이터"
     ],
     "guideHeadings": [
@@ -101,18 +100,17 @@
       "status": "PASS",
       "actual": [
         "데이터 지도",
-        "추천 분석",
         "지도 데이터"
       ],
-      "expected": "추천 분석 before 지도 데이터"
+      "expected": "지도 데이터 present, no 추천 분석 section (V150)"
     },
     {
       "type": "check",
       "audit": "map-copy:v136",
       "name": "MAP_PRESET_COUNT",
       "status": "PASS",
-      "actual": 5,
-      "expected": 5
+      "actual": 0,
+      "expected": 0
     },
     {
       "type": "check",
@@ -193,7 +191,6 @@
   ],
   "panelHeadingOrder": [
     "데이터 지도",
-    "추천 분석",
     "지도 데이터"
   ],
   "guideHeadings": [

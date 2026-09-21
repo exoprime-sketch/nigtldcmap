@@ -20,7 +20,9 @@ test("A-016 states the 2025 supply, its largest source, its unit and its period"
   await expect(analysis).toContainText("2.569");
   await expect(analysis).toContainText("EJ");
   await expect(analysis).toContainText("1965–2025");
-  await expect(analysis).toContainText("61개 연도");
+  // V146: the 61 years are the options of the detail-year selector rather
+  // than a sentence in the panel.
+  await expect(analysis.locator('select[aria-label="상세 구성 기준연도"] option')).toHaveCount(61);
   // The share denominator has to be stated, not implied.
   await expect(analysis).toContainText("여섯 에너지원 합계를 100%");
   // The supply total is not one of the six sources and must not be added in.
@@ -53,7 +55,10 @@ test("D-011 states constant prices, the period and the total it counted", async 
   const analysis = page.getByTestId("public-analysis-primary");
   await expect(analysis).toContainText("2024년 불변가격");
   await expect(analysis).toContainText("USD");
-  await expect(analysis).toContainText("2020–2024");
+  // V146: the period is the chart's x axis (2020 … 2024) and the hero line.
+  await expect(analysis).toContainText("2020");
+  await expect(analysis).toContainText("2024");
+  await expect(page.getByTestId("public-analysis-root")).toContainText("자료기간 2020~2024년");
 
   await page.getByTestId("detail-metadata-v135").evaluate((el: HTMLDetailsElement) => { el.open = true; });
   const source = page.getByTestId("public-source-panel");
@@ -66,13 +71,16 @@ test("A-017 states the year its costs are for, with the unit", async ({ page }) 
   await openDetail(page, "A-017");
   const analysis = page.getByTestId("public-analysis-primary");
   await expect(analysis).toContainText("USD/MWh");
-  // A-017_lcoe_solar_benchmark, 2050 = 21 USD/MWh; the year selector opens on
-  // the last published year and the screen says which one it is.
-  const year = page.locator('[data-testid="public-selector"] select[aria-label="연도 선택"]');
-  await expect(year).toHaveValue("2050");
-  await expect(analysis).toContainText("21 USD/MWh");
-  // A-017_lcoe_coal_benchmark, 2050
-  await expect(analysis).toContainText("79 USD/MWh");
+  // V146: the comparison opens on the reported 2023 costs; 2030 and 2050 are
+  // forecasts the reader selects. A-017_lcoe_solar_benchmark, 2050 = 21 and
+  // A-017_lcoe_coal_benchmark, 2050 = 79 USD/MWh.
+  const year = analysis.locator('select[aria-label="발전비용 비교 연도"]');
+  await expect(year).toHaveValue("2023");
+  await year.selectOption("2050");
+  await expect(analysis).toContainText("2050년 발전원별 균등화 발전비용");
+  const rows = analysis.locator(".detail146-range-chart li");
+  await expect(rows.filter({ hasText: "태양광" }).first()).toContainText("21");
+  await expect(rows.filter({ hasText: "석탄화력" }).first()).toContainText("79");
 });
 
 test("B-034 keeps one item per measure and names its provider", async ({ page }) => {
@@ -92,19 +100,23 @@ test("B-034 keeps one item per measure and names its provider", async ({ page })
 test("D-022 counts what it says it counts", async ({ page }) => {
   await openDetail(page, "D-022");
   const analysis = page.getByTestId("public-analysis-primary");
-  await expect(analysis).toContainText("총 사업 수");
-  await expect(analysis).toContainText("15");
-  await expect(analysis).toContainText("18.76억");
-  await expect(analysis).toContainText("USD · 15건");
+  await expect(analysis).toContainText("사업 15건 / 전체 15건");
   await expect(analysis).toContainText("통화가 확인된 금액만 통화별로 합산합니다");
+  // V146: the totals live in the inspectable summary table.
+  const summary = analysis.getByTestId("analysis-summary-table-v146");
+  await summary.evaluate((el: HTMLDetailsElement) => { el.open = true; });
+  await expect(summary).toContainText("사업 수");
+  await expect(summary).toContainText("1,876,471,402");
+  await expect(summary).toContainText("금액이 기재된 15건");
 });
 
 test("D-025 separates the record count from the amounts it could total", async ({ page }) => {
   await openDetail(page, "D-025");
   const analysis = page.getByTestId("public-analysis-primary");
-  await expect(analysis).toContainText("총 사업 수");
-  await expect(analysis).toContainText("132");
+  await expect(analysis).toContainText("사업 132건 / 전체 132건");
   // 132 projects, of which 125 carry an amount in a stated currency.
-  await expect(analysis).toContainText("289.67억");
-  await expect(analysis).toContainText("USD · 125건");
+  const summary = analysis.getByTestId("analysis-summary-table-v146");
+  await summary.evaluate((el: HTMLDetailsElement) => { el.open = true; });
+  await expect(summary).toContainText("28,967,130,000");
+  await expect(summary).toContainText("금액이 기재된 125건");
 });

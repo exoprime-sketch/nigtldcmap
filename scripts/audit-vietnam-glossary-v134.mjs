@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { selectCombinationV150 } from "./v150/map-combinations.mjs";
 
 import { createRequire } from "node:module";
 import { existsSync, readFileSync } from "node:fs";
@@ -85,6 +86,7 @@ const allowlist = new Map([
   ["CSV", "public download format"],
   ["JSON", "public download format"],
   ["GEOJSON", "public spatial download format"],
+  ["XML", "public data format named beside JSON"],
   ["VNM", "ISO 3166-1 country code"],
   ["KHM", "ISO 3166-1 country code"],
   ["LAO", "ISO 3166-1 country code"],
@@ -456,14 +458,17 @@ try {
   progress("map:active-gvi", "start");
   await navigate(browser.cdp, mapUrlV134(server.url));
   await waitForValue(browser.cdp, `document.querySelectorAll('.cdp-map-catalog-v138__item[data-map-available="true"]').length >= 12`, { timeoutMs: 30_000 });
-  await evaluateValue(browser.cdp, `document.querySelector('[data-testid="map-analysis-preset"][data-preset-id="CLIMATE_VULNERABILITY"]')?.click()`);
+  await selectCombinationV150(browser.cdp, "CLIMATE_VULNERABILITY");
   await waitForValue(browser.cdp, `document.querySelector('[data-testid="map-public-content"]')?.getAttribute('data-primary-element') === 'B-021' && Boolean(document.querySelector('[data-testid="map-selectable-adm1-feature"][data-element-id="B-021"]'))`, { timeoutMs: 35_000 });
   mapInteractionPass = await exerciseActiveGviMapV134(browser.cdp);
   recordCandidates("map:active-gvi", await evaluateValue(browser.cdp, snapshotExpression));
   progress("map:active-gvi", "complete");
 
+  // Debug aid: V134_ONLY_ELEMENTS=A-017,D-001 limits the detail sweep.
+  const onlyElements = new Set(String(process.env.V134_ONLY_ELEMENTS || "").split(",").map((id) => id.trim()).filter(Boolean));
   for (const element of catalog) {
     const elementId = String(element.elementId || "");
+    if (onlyElements.size && !onlyElements.has(elementId)) continue;
     progress(elementId, "start");
     try {
       await navigate(browser.cdp, detailUrlV134(server.url, elementId));

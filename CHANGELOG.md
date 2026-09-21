@@ -2,6 +2,27 @@
 
 이 문서는 공개 플랫폼의 주요 변경을 기록합니다. 아직 merge·배포·tag가 확인되지 않은 작업은 `Unreleased`에 둡니다.
 
+## Unreleased — V150 지도 가독성·패널·축단위·개조식 설명 최종화 (V148·V149 포함, PR 후보)
+
+### Added
+
+- 데이터 지도: 배경지도 토글(OpenFreeMap 벡터 타일 + Natural Earth 지형, 기본 켬, 브라우저에 선택 저장)과 저작권 표기 연동, 한글 지명 심볼 레이어(국가·도시·63개 성·시, `src/data/map/mapBackdropV150.ts`). 배경지도 로딩 실패는 데이터 레이어에 영향을 주지 않고 상태 문구만 표시
+- 차트 축·단위 라벨 `ChartAxesV150`(`data-chart-axes`): 시계열·막대·누적면적·구성·산점도 등 상세 분석 차트와 홈·찾기 카드 미리보기에 가로·세로·단위를 같은 형식으로 표기. 152개 상세의 차트 블록 175/175 적용
+- 152개 데이터 설명을 개조식 한 구절(`datasetDescriptionsV150.json`, 13~26자)로 통일. 찾기 카드·상세 히어로·분석 제목이 같은 문자열을 사용
+- 단위 표시 정규화 `unitDisplayV150`: 같은 크기의 단위만 표시 철자 통일(Mt CO2eq·MtCO2e·백만 tCO₂e → MtCO₂e, 백만 kW → GW, 십억 kWh → TWh). 값·정밀도·다운로드 불변, CO₂-only 단위는 CO₂e로 넓히지 않음
+- 상세보기 작은 지도(42개, V148): 시설 점·송전선·성·시 경계, 항목·기준시점 선택과 큰 지도 인계. 지도 팝업·오른쪽 패널의 중복 문구 제거
+- 홈 조회순·인기 지도 공용 집계 API(`api/usage.js`, `server/usage.cjs`, V149)와 목록 복귀 상태 보관(정렬·연도·제공 형태·상세검색·로딩 수·scrollY)
+- 검증 스크립트 `scripts/v150/`: 런타임 검토(지도·찾기·홈·반응형 42조합·152 축단위·설명 일치), 설명 점검표, 단위 152행 표, 공유 URL 레이어 조합 픽스처
+
+### Changed
+
+- 데이터 지도의 '추천 분석' 버튼 5개 삭제. 같은 레이어 조합은 공유 URL(`mapPreset`·`layers`·`primaryLayer`·`contextLayers`)로 열리며 e2e·감사 스크립트는 이 경로로 전환(`scripts/v150/map-combinations.mjs`)
+- 좌우 패널 리사이저(`useResizableMapPanelsV129`): 최대폭 상한(460/520) 제거, 지도 최소폭 200px과 화면 여유만 제한. 더블클릭 초기화, 화살표(±10, Shift ±40)·Home·End, 새로고침 후 유지(`cdp-map-*-panel-width-v150`)
+- 클러스터 개수 라벨 글꼴을 글리프 서버가 제공하는 Noto Sans로 지정(이전 기본 Open Sans 스택은 404)
+- 홈: '주제별 데이터' 영역 삭제, 조회순/최신순 정렬, 주요 지역 데이터 SVG 지도 가독성. 데이터 이용안내의 '집계 전에는 주요 자료를 안내합니다.' 문장 삭제
+- 게이트 기대값: `audit:map-copy:v136`·`audit:map-access:v135`·`audit:map-guide:v135`·`qa:map:v138`·e2e `smoke`·`map-presets`는 추천 분석 버튼 0개와 공유 URL 조합을 기대(사유 `reports/v150/REVIEW_V150.md`)
+- `vercel.json ignoreCommand`에 `api server scripts/v149` 추가(V149): API·서버 변경도 Preview 빌드 대상. `verify-ignore-command-v140` 동기화
+
 ## Unreleased — V141 마지막 의미 오류 수정 (후보, production 미반영)
 
 ### Fixed

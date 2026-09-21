@@ -118,8 +118,10 @@ const UNIT_ALIASES = {
   ha: ["ha"],
   km: ["km"],
   "km²": ["km²", "km2"],
-  "Mt CO2eq": ["Mt CO2eq", "Mt CO₂eq", "MtCO2eq", "MtCO₂eq"],
-  "Mt CO₂eq": ["Mt CO2eq", "Mt CO₂eq"],
+  "Mt CO2eq": ["Mt CO2eq", "Mt CO₂eq", "MtCO2eq", "MtCO₂eq", "MtCO₂e"],
+  "Mt CO₂eq": ["Mt CO2eq", "Mt CO₂eq", "MtCO₂e"],
+  // V150 display spelling (unitDisplayV150); the source packs still say "Mt CO2eq".
+  "MtCO₂e": ["MtCO₂e", "Mt CO2eq", "Mt CO₂eq", "MtCO2eq", "MtCO₂eq", "MtCO2e"],
   점: ["점"],
   지수: ["지수"],
   건: ["건"],
@@ -871,7 +873,10 @@ async function checkElement(context, item) {
           const primary = document.querySelector('[data-testid="public-analysis-primary"]');
           const tidy = (value) => String(value || "").normalize("NFC").replace(/\s+/gu, " ").trim();
           primary.querySelectorAll("select[data-qa-target]").forEach((node) => node.removeAttribute("data-qa-target"));
-          const select = [...primary.querySelectorAll("select")].find((s) => tidy(s.closest("label")?.querySelector("span")?.textContent || s.getAttribute("aria-label") || "") === labelText);
+          // Same label derivation as readScreen: aria-label, then the label's
+          // span, then the label's own text nodes.
+          const labelOf = (s) => tidy(s.getAttribute("aria-label") || s.closest("label")?.querySelector("span")?.textContent || [...(s.closest("label")?.childNodes || [])].filter((node) => node.nodeType === 3).map((node) => node.textContent).join(" "));
+          const select = [...primary.querySelectorAll("select")].find((s) => labelOf(s) === labelText);
           if (!select) return null;
           const next = [...select.options].find((option, i) => i !== select.selectedIndex && option.value !== "");
           if (!next) return null;

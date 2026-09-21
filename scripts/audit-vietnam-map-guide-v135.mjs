@@ -101,7 +101,8 @@ audit.check("MAP_GUIDE_LEGACY_COLUMNS", !snapshot?.headings?.some((heading) => /
 audit.check("MAP_GUIDE_FUNCTION_COVERAGE", missingFunctions.length === 0, missingFunctions, []);
 audit.check("MAP_GUIDE_FUNCTION_COPY_STYLE", verboseFunctionCopy.length === 0, verboseFunctionCopy, []);
 audit.check("MAP_POLICY_PARAGRAPH_COUNT", policyParagraphs.length === 0, policyParagraphs, []);
-audit.check("MAP_PRESET_COUNT", snapshot?.presetCount === 5, snapshot?.presetCount ?? 0, 5);
+// V150 removed the recommended-analysis buttons; combinations live in the shared URL.
+audit.check("MAP_PRESET_COUNT", snapshot?.presetCount === 0, snapshot?.presetCount ?? 0, 0);
 audit.check("MAP_COUNTRY_INFO_BUTTON_COUNT", snapshot?.countryActions === 0, snapshot?.countryActions ?? null, 0);
 audit.check("BROKEN_ASSET", brokenAssets.length === 0, brokenAssets, []);
 audit.check("CONSOLE_ERROR", (browser?.runtimeErrors || []).length === 0, browser?.runtimeErrors || [], []);

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { selectCombinationV150 } from "./v150/map-combinations.mjs";
 
 import { resolve } from "node:path";
 
@@ -50,15 +51,7 @@ const layerContractFailures = layers
   .map((layer) => layer?.elementId || "unknown");
 
 async function selectPreset(cdp, presetId, expectedPrimary) {
-  const clicked = await evaluateValue(
-    cdp,
-    `(() => {
-      const button = document.querySelector('[data-testid="map-analysis-preset"][data-preset-id=${JSON.stringify(presetId)}]');
-      if (!(button instanceof HTMLButtonElement)) return false;
-      button.click();
-      return true;
-    })()`
-  );
+  const clicked = await selectCombinationV150(cdp, presetId);
   if (!clicked) throw new Error(`preset unavailable: ${presetId}`);
   await waitForValue(
     cdp,

@@ -28,8 +28,12 @@ const mapSource = readFileSync(
 // shows, never the system's role for a layer.
 // V138: the list lede states the target and selected counts instead of a
 // prompt, and the guide names how many targets are connected.
-const REQUIRED_PANEL_COPY_V136 = ["추천 분석", "지도 데이터", "개 자료 · 선택"];
-const RETIRED_PANEL_COPY_V136 = ["분석 프리셋", "전체 지도 데이터", "주 분석 데이터", "기준연도·기간", "공간표현"];
+// V150: the recommended-analysis buttons were removed; the panel goes straight
+// from the country to the data list, and the same layer combinations are
+// reached through the shared URL (scripts/v150/map-combinations.mjs).
+const REQUIRED_PANEL_COPY_V136 = ["지도 데이터", "개 자료 · 선택"];
+const RETIRED_PANEL_COPY_V136 = ["분석 프리셋", "전체 지도 데이터", "주 분석 데이터", "기준연도·기간", "공간표현", "추천 분석"];
+const EXPECTED_PRESET_COUNT_V150 = 0;
 
 let server = null;
 let browser = null;
@@ -90,18 +94,18 @@ const retiredCopy = RETIRED_PANEL_COPY_V136.filter((token) => panelText.includes
 const retiredInSource = ["주 분석 데이터", "분석 프리셋", "전체 지도 데이터"].filter((token) =>
   mapSource.includes(token)
 );
-// 국가 -> 추천 분석 -> 지도 데이터 -> 지도 데이터 안내
+// 국가 -> 지도 데이터 -> 지도 데이터 안내 (V150: 추천 분석 없음)
 const order = panel?.headingOrder || [];
 const presetIndex = order.findIndex((text) => text === "추천 분석");
 const dataIndex = order.findIndex((text) => text === "지도 데이터");
-const orderCorrect = presetIndex >= 0 && dataIndex > presetIndex;
+const orderCorrect = presetIndex < 0 && dataIndex >= 0;
 
 audit.check("MAP_COPY_RUNTIME", runtimeFailure === null, { runtimeFailure }, { runtimeFailure: null });
 audit.check("MAP_PANEL_REQUIRED_COPY", missingCopy.length === 0, missingCopy, []);
 audit.check("MAP_PANEL_RETIRED_COPY", retiredCopy.length === 0, retiredCopy, []);
 audit.check("MAP_SOURCE_RETIRED_COPY", retiredInSource.length === 0, retiredInSource, []);
-audit.check("MAP_PANEL_SECTION_ORDER", orderCorrect, order, "추천 분석 before 지도 데이터");
-audit.check("MAP_PRESET_COUNT", panel?.presetCount === 5, panel?.presetCount ?? null, 5);
+audit.check("MAP_PANEL_SECTION_ORDER", orderCorrect, order, "지도 데이터 present, no 추천 분석 section (V150)");
+audit.check("MAP_PRESET_COUNT", panel?.presetCount === EXPECTED_PRESET_COUNT_V150, panel?.presetCount ?? null, EXPECTED_PRESET_COUNT_V150);
 audit.check("MAP_DATA_ITEM_COUNT", panel?.itemCount === EXPECTED_TARGETS, panel?.itemCount ?? null, EXPECTED_TARGETS);
 audit.check("MAP_GUIDE_DEFAULT_OPEN", guide?.defaultOpen === false, guide?.defaultOpen ?? null, false);
 audit.check("MAP_GUIDE_ROW_COUNT", guide?.rowCount === EXPECTED_LAYERS, guide?.rowCount ?? null, EXPECTED_LAYERS);

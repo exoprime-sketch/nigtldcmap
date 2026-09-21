@@ -116,7 +116,9 @@ function screenReadingExpression() {
         .filter(visible)
         .map((node) => ({
           label: clean(node.querySelector('span')?.textContent),
-          count: Number(String(clean(node.querySelector('strong')?.textContent)).replace(/[^0-9]/gu, '')),
+          // V143 bars print "4건 26.7%": the count is the first number, not
+          // every digit in the cell.
+          count: Number((String(clean(node.querySelector('strong')?.textContent)).split(/[^0-9]+/u).filter(Boolean)[0] || '').replace(/,/gu, '')),
         }))
         .filter((row) => row.label),
       portfolioRecordCount: Number(

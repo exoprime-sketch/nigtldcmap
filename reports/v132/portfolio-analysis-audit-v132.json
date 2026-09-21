@@ -90,12 +90,11 @@
       "status": "PASS",
       "actual": {
         "sections": {
-          "e008-kpis": true,
-          "e008-trend": true,
           "e008-breakdown": true,
           "e008-collaboration": true,
           "e008-list": true
         },
+        "trendOrNote": true,
         "ordered": true,
         "filterCount": 4,
         "listItemCount": 6,
@@ -103,12 +102,11 @@
       },
       "expected": {
         "sections": {
-          "e008-kpis": true,
-          "e008-trend": true,
           "e008-breakdown": true,
           "e008-collaboration": true,
           "e008-list": true
         },
+        "trendOrNote": "a national trend, or the note that none is published",
         "ordered": true,
         "filterCount": ">= 3"
       }

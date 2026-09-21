@@ -139,10 +139,10 @@ try {
             shownYears: [...new Set([
               ...[...(summary?.querySelector('[data-testid="portfolio-year-trend-v132"]')?.querySelectorAll('*') || [])]
                 .map((node) => (node.textContent || '').trim())
-                .filter((text) => text.length === 4 && (text.startsWith('19') || text.startsWith('20')) && Number.isFinite(Number(text))),
+                .filter((text) => text.length === 4 && (text.startsWith('19') || text.startsWith('20')) && [...text].every((ch) => ch >= '0' && ch <= '9')),
               ...((summary?.querySelector('[data-summary-key="year-range"] [data-summary-value]')?.textContent || '')
                 .split(/[^0-9]+/u)
-                .filter((text) => text.length === 4 && (text.startsWith('19') || text.startsWith('20')) && Number.isFinite(Number(text)))),
+                .filter((text) => text.length === 4 && (text.startsWith('19') || text.startsWith('20')) && [...text].every((ch) => ch >= '0' && ch <= '9'))),
             ])],
             filterCount: filters?.querySelectorAll('input, select').length || 0,
             filters: Boolean(filters?.querySelector('input[type="search"]')),
@@ -193,11 +193,18 @@ try {
     browser.cdp,
     `(() => {
       const root = document.querySelector('[data-testid="e008-research-analysis-v132"]');
-      const ids = ['e008-trend', 'e008-breakdown', 'e008-collaboration', 'e008-list'];
+      // V144: E-008 delivers 144 records and no national statistics, so the
+      // national trend panel is absent by design (never two empty series drawn
+      // as a trend) and the screen says so. The analysis sections that read
+      // the delivered records still come before the list.
+      const ids = ['e008-breakdown', 'e008-collaboration', 'e008-list'];
       const nodes = ids.map((id) => root?.querySelector('[data-testid="' + id + '"]'));
       const tops = nodes.map((node) => node?.getBoundingClientRect().top ?? null);
+      const trend = root?.querySelector('[data-testid="e008-trend"]');
+      const noNationalNote = root?.querySelector('[data-testid="e008-no-national-statistics"]');
       return {
         sections: Object.fromEntries(ids.map((id, index) => [id, Boolean(nodes[index])])),
+        trendOrNote: Boolean(trend) !== Boolean(noNationalNote),
         ordered: tops.every((top) => top !== null) && tops.every((top, index) => index === 0 || top >= tops[index - 1]),
         filterCount: root?.querySelectorAll('input, select').length || 0,
         listItemCount: root?.querySelectorAll('[data-testid="e008-public-record"]')?.length || 0,
@@ -250,16 +257,17 @@ audit.check(
 audit.check(
   "E008_ANALYSIS_BEFORE_LIST",
   e008Result?.ordered === true &&
+    e008Result?.trendOrNote === true &&
     Object.values(e008Result?.sections || {}).every(Boolean) &&
     Number(e008Result?.filterCount || 0) >= 3,
   e008Result,
   {
     sections: {
-      "e008-trend": true,
       "e008-breakdown": true,
       "e008-collaboration": true,
       "e008-list": true,
     },
+    trendOrNote: "a national trend, or the note that none is published",
     ordered: true,
     filterCount: ">= 3",
   }
