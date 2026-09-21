@@ -13,7 +13,7 @@ export default function SdgIndicatorsAnalysisV147({ rows, selectorState, onSelec
   const ordered = [...chartRows].sort((a,b) => order === "low" ? a.value-b.value : order === "high" ? b.value-a.value : a.displayLabel.localeCompare(b.displayLabel,"ko"));
   const label = (r: SemanticObservationV125) => r.dimensionLabels.category || r.dimensions.category || r.displayLabel;
   return <section className="detail146" data-testid="sdg-indicators-v147">
-    <h3>목표별 세부지표 달성도</h3>
+    <h3>선택 목표의 세부지표 점수</h3>
     <p className="detail146-note">원자료의 0~100점 환산 점수를 비교합니다. 지표별 기준연도가 다르며, 점수는 빈곤율·농도 같은 원래 측정값이 아닙니다.</p>
     <div className="detail146-list-controls"><label>목표<select aria-label="SDG 목표" value={key} onChange={(e) => onSelectorStateChange({...selectorState, measure:e.target.value, dimensions:{},year:null,period:null})}>{goals.map(([k,title]) => <option key={k} value={k}>{title}</option>)}</select></label><label>정렬<select aria-label="달성도 정렬" value={order} onChange={(e) => setOrder(e.target.value)}><option value="low">점수 낮은 순</option><option value="high">점수 높은 순</option><option value="name">지표명 순</option></select></label></div>
     <AnalysisBarsV147 title={goals.find(([k]) => k === key)?.[1] || "세부지표 점수"} unit="점(0~100)" maximum={100} rows={ordered.map((r) => ({id:r.recordId,label:`${label(r)} · ${r.year}년`,value:r.value}))} />

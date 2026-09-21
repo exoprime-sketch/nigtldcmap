@@ -29,5 +29,6 @@ test("the map draws its base layer and its dataset list", async ({ page }) => {
     { timeout: 60_000 }
   );
   await expect(page.getByTestId("map-adm1-base-outline")).toHaveCount(1);
-  expect(await page.getByTestId("map-analysis-preset").count()).toBe(5);
+  // V150: the recommended-analysis buttons are gone; combinations open from the shared URL.
+  expect(await page.getByTestId("map-analysis-preset").count()).toBe(0);
 });

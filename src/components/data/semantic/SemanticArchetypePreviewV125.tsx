@@ -1,3 +1,4 @@
+import ChartAxesV150 from "../../charts/ChartAxesV150";
 import { useEffect, useMemo } from "react";
 import type {
   ElementIndicatorSemanticsV125,
@@ -471,7 +472,7 @@ export default function SemanticArchetypePreviewV125({
             >
               {measureOptions.map((measure) => (
                 <option key={measure.key} value={measure.key}>
-                  {publicMeasureLabelV126(measure.labelKo)} · {publicTextV126(measure.unit) || "단위 미기재"}
+                  {publicMeasureLabelV126(measure.labelKo)}{publicTextV126(measure.unit) && !/^(미표기|미기재|단위 미기재|단위 없음)$/u.test(measure.unit) ? ` · ${publicTextV126(measure.unit)}` : ""}
                 </option>
               ))}
             </select>
@@ -513,7 +514,12 @@ export default function SemanticArchetypePreviewV125({
           const valuesForMeasure = dimension.values.filter((value) =>
             measureRows.some((row) => row.dimensions[dimension.key] === value)
           );
-          const values = valuesForMeasure.length > 0 ? valuesForMeasure : dimension.values;
+          // Do not offer other measures' categories: a string-valued national
+          // climate class has no Af/Am filter, for example. Entity directories
+          // retain their own city/type filters even without observation rows.
+          const values = valuesForMeasure.length > 0 ? valuesForMeasure
+            : entityDimensionKeys.has(dimension.key) ? dimension.values.filter((value) => entities.some((entity) => entityDimensionValueV137(entity, dimension.key) === value)) : [];
+          if (!values.length) return null;
           // Two dimensions that always travel together within the measure -
           // A-006's 분류 "ILO 모델추정" and 세부 분류 "경제활동인구 대비 실업자
           // 비율(ILO 모형 보정 추정치)" - are one choice written twice; the one
@@ -855,6 +861,7 @@ function TrendAxisGroupV125({
   return (
     <article className="sv125-axis-group">
       <h5>단위: <PublicTermTextV134 text={unit || "미기재"} /></h5>
+      <ChartAxesV150 x="연도" y={rows[0]?.semanticMeasure.labelKo || "값"} unit={unit} />
       <div className="sv125-trend-scroll">
         <svg viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`${unit} 연도별 추세`}>
           <line x1={pad.left} y1={height - pad.bottom} x2={width - pad.right} y2={height - pad.bottom} />

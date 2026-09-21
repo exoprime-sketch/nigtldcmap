@@ -306,6 +306,9 @@ const OFFICIAL_PROJECT_OR_DOCUMENT_CODES_V134 = Object.freeze([
 ]);
 
 const LITERAL_GEOGRAPHIC_OR_ORDINAL_CODES_V134 = Object.freeze([
+  // Lot codes inside two institution addresses (C-011), shown verbatim.
+  "A1-2",
+  "SQ4",
   "DE",
   "HA",
   "VU",

@@ -4,6 +4,7 @@ import { publicTextV126 } from "../../../data/visualization/publicFieldPolicyV12
 import { formatPublicNumberV126 } from "../../../data/visualization/publicNumberFormatV126";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import "./public-portfolio-summary-v132.css";
+import { AnalysisBarsV147 } from "./AnalysisChartsV147";
 
 /**
  * A-024: the 2016 network and the revised-PDP8 plan, apart (V140).
@@ -71,9 +72,11 @@ export default function TransmissionNetworkSummaryV140({ entities }: Props) {
     <section className="pps132" data-testid="transmission-network-summary-v140" data-network-segments={summary.network} data-plan-rows={summary.plan}>
       <header className="pps132-heading">
         <p>
-          2016년 송전선은 경로가 있는 {summary.network.toLocaleString("ko-KR")}개 구간이고, 개정 PDP8 선로 목록 {summary.plan.toLocaleString("ko-KR")}행(계획 {summary.planned}행 포함)은 전압만 있고 경로 좌표가 없어 지도에는 없습니다. 두 목록은 서로 더하지 않습니다.
+          <PublicTermTextV134 text={`2016년 송전선은 경로가 있는 ${summary.network.toLocaleString("ko-KR")}개 구간이고, 개정 PDP8 선로 목록 ${summary.plan.toLocaleString("ko-KR")}행(계획 ${summary.planned}행 포함)은 전압만 있고 경로 좌표가 없어 지도에는 없습니다. 두 목록은 서로 더하지 않습니다.`} />
         </p>
       </header>
+      <AnalysisBarsV147 title="전압별 송전선 길이 · 2016년" unit="km" rows={summary.byVoltage.map(([kv, e]) => ({ id: String(kv), label: `${kv} kV`, value: Math.round(e.km) }))} />
+      <AnalysisBarsV147 title="전압별 송전선 구간 수 · 2016년" unit="구간" rows={summary.byVoltage.map(([kv, e]) => ({ id: String(kv), label: `${kv} kV`, value: e.segments }))} />
       <div className="pps132-distributions">
         <section className="pps132-distribution pps132-distribution--table" data-portfolio-distribution="true" data-testid="transmission-voltage-table-v140">
           <h5>2016년 송전선 · 전압별 구간 수와 연장</h5>
@@ -103,7 +106,7 @@ export default function TransmissionNetworkSummaryV140({ entities }: Props) {
           </div>
         </section>
         <section className="pps132-distribution pps132-distribution--table" data-portfolio-distribution="true" data-testid="transmission-plan-table-v140">
-          <h5>개정 PDP8 선로 목록 · 전압별 기존·계획 행 수</h5>
+          <h5><PublicTermTextV134 text="개정 PDP8 선로 목록 · 전압별 기존·계획 행 수" /></h5>
           <div className="pps132-table-wrap">
             <table>
               <caption><PublicTermTextV134 text="Quyết định 768/QĐ-TTg(2025) 부록의 선로 행 · 경로 좌표 없음 · 지도 미표시" /></caption>

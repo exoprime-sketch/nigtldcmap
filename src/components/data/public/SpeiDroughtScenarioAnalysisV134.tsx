@@ -1,3 +1,4 @@
+import ChartAxesV150 from "../../charts/ChartAxesV150";
 import { useEffect, useMemo, useState } from "react";
 import type { CSSProperties } from "react";
 import type { SemanticObservationV125 } from "../../../data/visualization/semanticTypesV125";
@@ -140,6 +141,7 @@ export default function SpeiDroughtScenarioAnalysisV134({
         </header>
 
         <div className="sda134__chart" data-testid="b005-scenario-trend" onMouseLeave={() => setActiveYear(selectedYear)}>
+          <ChartAxesV150 x="연도" y="표준강수증발산지수" unit="SPEI-12(무차원)" />
           <svg role="img" aria-label={`SPEI-12 ${minimumYear}년부터 ${maximumYear}년까지 시나리오별 전망`} viewBox={`0 0 ${SVG_WIDTH_V134} ${SVG_HEIGHT_V134}`}>
             <rect className="sda134__band sda134__band--wet" x={PLOT_V134.left} y={PLOT_V134.top} width={plotWidth} height={y(0) - PLOT_V134.top} />
             <rect className="sda134__band sda134__band--dry" x={PLOT_V134.left} y={y(0)} width={plotWidth} height={PLOT_V134.top + plotHeight - y(0)} />
@@ -188,6 +190,7 @@ export default function SpeiDroughtScenarioAnalysisV134({
             {COMPARISON_YEARS_V134.map((year) => <button aria-pressed={selectedYear === year} className={selectedYear === year ? "is-selected" : ""} key={year} onClick={() => { setActiveYear(year); onSelectorStateChange({ ...selectorState, year }); }} type="button">{year}년</button>)}
           </div>
         </header>
+        <ChartAxesV150 x="표준강수증발산지수" y="시나리오" unit="SPEI-12(무차원)" />
         <div className="sda134__diverging" role="list" aria-label={`${selectedYear}년 시나리오별 SPEI-12`}>
           {comparison.map((item) => {
             const width = item.value === null ? 0 : (Math.abs(item.value) / comparisonMaximum) * 100;

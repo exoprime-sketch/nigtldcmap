@@ -390,24 +390,7 @@ export default function PublicDataAnalysisRouterV126({
             <NationalResourceSeriesV147 key={elementId} entities={nationalSeriesEntities} />
           </>
         ) : elementId === "A-024" && isTransmissionDeliveryV140(entities) ? (
-          // The 2016 network and the PDP8 plan rows are counted apart; the
-          // archetype's own "722건 · 2016" KPI came from a source row that
-          // counts both, so the archetype gets only the list.
-          <>
-            <TransmissionNetworkSummaryV140 entities={entities} />
-            <SemanticArchetypePreviewV125
-              contract={adapterContract}
-              semantics={semantics}
-              observations={[]}
-              entities={entities}
-              countryNameKo={countryNameKo}
-              detailTemplate={detailTemplate}
-              elementTitle={copy.title}
-              selectorState={selectorState}
-              onSelectorStateChange={onSelectorStateChange}
-              showRawTable={false}
-            />
-          </>
+          <TransmissionNetworkSummaryV140 entities={entities} />
         ) : elementId === "A-017" ? (
           <LcoeRangeAnalysisV146 rows={semanticRows} selectorState={selectorState} onSelectorStateChange={onSelectorStateChange} />
         ) : elementId === "C-001" ? (
@@ -430,21 +413,7 @@ export default function PublicDataAnalysisRouterV126({
           // The revised PDP8 plan is the outlook; prices state their unit (V141).
           <EnergyOutlookPlanAnalysisV141 entities={entities} initialYear={selectorState.year} />
         ) : elementId === "A-023" ? (
-          <>
-            <PowerPlantRegistrySummaryV138 entities={entities} />
-            <SemanticArchetypePreviewV125
-              contract={adapterContract}
-              semantics={semantics}
-              observations={observations}
-              entities={entities}
-              countryNameKo={countryNameKo}
-              detailTemplate={detailTemplate}
-              elementTitle={copy.title}
-              selectorState={selectorState}
-              onSelectorStateChange={onSelectorStateChange}
-              showRawTable={false}
-            />
-          </>
+          <PowerPlantRegistrySummaryV138 entities={entities} selectorState={selectorState} onSelectorStateChange={onSelectorStateChange} />
         ) : regionScenarioSummary ?? (
           <SemanticArchetypePreviewV125
             contract={adapterContract}

@@ -1,12 +1,14 @@
 import { expect, test, type Page } from "@playwright/test";
+import { combinationUrl } from "./helpers";
 
 /**
- * The five recommended analyses, opened the way the page offers them.
+ * The five layer combinations, opened through the shared URL.
  *
- * A preset names a primary dataset and one or two context layers, applies the
- * variable and period each one publishes, and (V138) draws the combination the
- * card names. All of that is checked here: what it draws, and what it says it
- * drew.
+ * V150 removed the recommended-analysis buttons from the panel. The same
+ * combinations (primary dataset + context layers, with the variable and period
+ * each one publishes) are still supported through the shared URL, so this
+ * spec opens each combination that way and checks what it draws and what it
+ * says it drew.
  */
 
 const PRESETS = [
@@ -27,15 +29,21 @@ async function openMap(page: Page) {
   );
 }
 
-test("the page offers exactly the five recommended analyses", async ({ page }) => {
+test("the panel no longer offers recommended-analysis buttons (V150)", async ({ page }) => {
   await openMap(page);
-  await expect(page.getByTestId("map-analysis-preset")).toHaveCount(5);
+  await expect(page.getByTestId("map-analysis-preset")).toHaveCount(0);
+  await expect(page.getByTestId("map-layer-panel")).not.toContainText("추천 분석");
 });
 
 for (const preset of PRESETS) {
-  test(`${preset.id} draws the combination its card names`, async ({ page }) => {
-    await openMap(page);
-    await page.locator(`[data-testid="map-analysis-preset"][data-preset-id="${preset.id}"]`).click();
+  test(`${preset.id} draws the combination its shared URL names`, async ({ page }) => {
+    await page.goto(combinationUrl(preset.id));
+    await expect(page.getByTestId("map-public-content")).toBeVisible();
+    await page.waitForFunction(
+      () => Boolean((window as any).__nigtMapObserverV137?.ready()),
+      undefined,
+      { timeout: 60_000 }
+    );
 
     const content = page.getByTestId("map-public-content");
     await expect(content).toHaveAttribute("data-map-preset", preset.id);
@@ -57,11 +65,8 @@ for (const preset of PRESETS) {
     await expect(analysis).toContainText("자료연도");
     await expect(analysis).toContainText("단위");
 
-    // V138: the card names a combination and the preset draws it. The notice
-    // names what was drawn, and the companion is on the map without a second
-    // press.
-    const notice = page.locator('[role="status"]').filter({ hasText: preset.label });
-    await expect(notice.first()).toBeVisible();
+    // V138/V150: the combination draws its companion layer without a second
+    // step, and the content root names the rendered and context elements.
     await expect(content).toHaveAttribute(
       "data-rendered-map-elements",
       new RegExp(preset.context),

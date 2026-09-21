@@ -13,6 +13,7 @@ import {
 
 import "./occupation-employment-wage-v125.css";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
+import ChartAxesV150 from "../../charts/ChartAxesV150";
 
 export type E012OccupationMeasureKeyV125 =
   | "occupation_employment_count"
@@ -624,9 +625,9 @@ function EmploymentWageScatter({
               월평균 임금
             </text>
           </svg>
-          <p className="e012v125__axis-unit-note">
-            세로축 단위: <PublicTermTextV134 text={wageUnit} />
-          </p>
+          <div className="e012v125__axis-unit-note">
+            <ChartAxesV150 x={`직군별 종사자 수(${employmentUnit})`} y="월평균 임금" unit={wageUnit} />
+          </div>
 
           <details className="e012v125__table-fallback">
             <summary>산점도 표로 보기</summary>

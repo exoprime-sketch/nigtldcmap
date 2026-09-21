@@ -1,3 +1,4 @@
+import ChartAxesV150 from "../../charts/ChartAxesV150";
 import { useMemo, useState } from "react";
 
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
@@ -69,7 +70,7 @@ function countBy(rows: CTemplateRowV141[], key: (row: CTemplateRowV141) => strin
 function Bars({ items, unit }: { items: Array<[string, number]>; unit: string }) {
   const max = Math.max(...items.map(([, count]) => count), 1);
   return (
-    <ol className="eop141__bars" aria-label={`${unit} 비교`}>
+    <><ChartAxesV150 x="값" y="항목" unit={unit} /><ol className="eop141__bars" aria-label={`${unit} 비교`}>
       {items.map(([label, count]) => (
         <li key={label}>
           <span className="eop141__label"><PublicTermTextV134 text={label} /></span>
@@ -79,7 +80,7 @@ function Bars({ items, unit }: { items: Array<[string, number]>; unit: string })
           <span className="eop141__value">{count.toLocaleString("ko-KR")}{unit}</span>
         </li>
       ))}
-    </ol>
+    </ol></>
   );
 }
 

@@ -1,3 +1,4 @@
+import ChartAxesV150 from "../../charts/ChartAxesV150";
 import { useMemo, useState } from "react";
 
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
@@ -176,6 +177,7 @@ export default function EnergyOutlookPlanAnalysisV141({ entities, initialYear }:
             </select>
           </label>
         </div>
+        <ChartAxesV150 x="계획 설비용량" y="전원" unit="MW" />
         <ol className="eop141__bars" aria-label={`${year}년 전원별 설비용량 계획`}>
           {parts.map((item) => (
             <li key={item.label}>

@@ -63,7 +63,22 @@ const timingPath = resolve(PROJECT_ROOT, "reports/v136/ci-command-timings.json")
 mkdirSync(resolve(timingPath, ".."), { recursive: true });
 const runStartedAt = new Date().toISOString();
 function saveTimings(status, activeCommand = null) {
-  writeFileSync(timingPath, JSON.stringify({ status, runStartedAt, updatedAt: new Date().toISOString(), platform: process.platform, expectedCommandCount: commands.length, activeCommand, commandResults }, null, 2));
+  const payload = JSON.stringify({ status, runStartedAt, updatedAt: new Date().toISOString(), platform: process.platform, expectedCommandCount: commands.length, activeCommand, commandResults }, null, 2);
+  // The progress file is rewritten after every command; on Windows a scanner
+  // or sync client can hold it for a moment (EBUSY/UNKNOWN). Progress must
+  // never abort the gate, so the write is retried and then skipped.
+  for (let attempt = 0; attempt < 5; attempt += 1) {
+    try {
+      writeFileSync(timingPath, payload);
+      return;
+    } catch (error) {
+      if (attempt === 4) {
+        console.error(`ci-command-timings.json not written (${error?.code || error}); continuing`);
+        return;
+      }
+      Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 200 * (attempt + 1));
+    }
+  }
 }
 saveTimings("running");
 for (const entry of commands) {
@@ -162,7 +177,8 @@ const expectedMapLayers = mapLayerCountV138();
 const expectedMapTargets = mapTargetCountV138();
 audit.check("MAP_LAYER_COUNT", mapAccess.mapLayerCount === expectedMapLayers && expectedMapLayers >= 12, mapAccess.mapLayerCount ?? null, expectedMapLayers);
 audit.check("ALL_MAP_LAYER_ACCESS_COUNT", mapAccess.allMapLayerAccessCount === expectedMapLayers, mapAccess.allMapLayerAccessCount ?? null, expectedMapLayers);
-audit.check("MAP_PRESET_COUNT", mapAccess.mapPresetCount === 5, mapAccess.mapPresetCount ?? null, 5);
+// V150 removed the recommended-analysis buttons; combinations live in the shared URL.
+audit.check("MAP_PRESET_COUNT", mapAccess.mapPresetCount === 0, mapAccess.mapPresetCount ?? null, 0);
 audit.check("MAP_DATA_ITEM_COUNT", listUi.mapDataItemCount === expectedMapTargets && expectedMapTargets >= expectedMapLayers, listUi.mapDataItemCount ?? null, expectedMapTargets);
 audit.check("MAP_NATIVE_BULLET_COUNT", listUi.mapNativeBulletCount === 0 && controls.mapNativeBulletCount === 0, { list: listUi.mapNativeBulletCount, controls: controls.mapNativeBulletCount }, 0);
 audit.check("MAP_NATIVE_BUTTON_STYLE_COUNT", listUi.mapNativeButtonStyleCount === 0 && controls.mapNativeButtonStyleCount === 0, { list: listUi.mapNativeButtonStyleCount, controls: controls.mapNativeButtonStyleCount }, 0);

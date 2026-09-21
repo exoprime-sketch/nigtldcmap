@@ -61,6 +61,16 @@ const manifest = readJson(resolve(DATA, "manifest.json"));
 const homePreview = readJson(resolve(DATA, "home/home-preview-v139.json"));
 const mapTargets = readJson(resolve(ROOT, "src/data/visualization/publicMapTargetsV138.json")).targets;
 const mapIndex = readJson(resolve(DATA, "map-index.json"));
+// V150: exact-equivalent unit respellings shared with src/data/visualization/unitDisplayV150.ts.
+const UNIT_ALIASES_V150 = readJson(resolve(ROOT, "src/data/visualization/unitDisplayV150.json")).aliases;
+function displayUnitV150(unit) {
+  const raw = String(unit ?? "").trim();
+  if (!raw) return raw;
+  if (UNIT_ALIASES_V150[raw]) return UNIT_ALIASES_V150[raw];
+  const qualified = raw.match(/^(.*?)(\s*\([^)]*\))$/u);
+  if (qualified && UNIT_ALIASES_V150[qualified[1].trim()]) return `${UNIT_ALIASES_V150[qualified[1].trim()]}${qualified[2].trim()}`;
+  return raw;
+}
 const mapConnected = new Set(mapIndex.layers.filter((layer) => layer.active !== false && layer.enabled !== false).map((layer) => layer.elementId));
 
 // The detail screen's reviewed default measures, read from the registry so
@@ -276,7 +286,7 @@ function periodOf(item, years) {
 }
 
 function unitShort(unit) {
-  return text(unit).replace(/\s*\(.*?\)\s*$/u, "");
+  return displayUnitV150(text(unit).replace(/\s*\(.*?\)\s*$/u, ""));
 }
 
 function pickSeries(series, override) {
@@ -548,7 +558,7 @@ function textFactsCard(elementId, item, measure, rows) {
     period: periodOf(item),
     selection: selectionFor(measure.key, null, null, null, null),
     basis: { unit: "항목", rule: "수치가 아닌 기재 내용을 그대로 보임" },
-    measure: { key: measure.key, label: measure.labelKo, unit: measure.unit },
+    measure: { key: measure.key, label: measure.labelKo, unit: unitShort(measure.unit) },
   };
 }
 
@@ -996,7 +1006,7 @@ for (const item of [...catalog].sort((a, b) => a.elementId.localeCompare(b.eleme
         // The measure the home card summarised, so the provenance names its
         // indicators rather than every indicator of the element.
         measure: homeCard.selection?.measure
-          ? { key: homeCard.selection.measure, label: contract.measures.find((m) => m.key === homeCard.selection.measure)?.labelKo || "", unit: contract.measures.find((m) => m.key === homeCard.selection.measure)?.unit || "" }
+          ? { key: homeCard.selection.measure, label: contract.measures.find((m) => m.key === homeCard.selection.measure)?.labelKo || "", unit: unitShort(contract.measures.find((m) => m.key === homeCard.selection.measure)?.unit || "") }
           : null,
         fromHome: true,
       };

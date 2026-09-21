@@ -46,7 +46,7 @@ const OUT = resolve(PROJECT_ROOT, "reports/v140");
 const SHOTS = resolve(OUT, `screenshots/${label}`);
 mkdirSync(SHOTS, { recursive: true });
 
-const FEATURED = ["A-002", "A-003", "A-010", "A-023", "A-024", "B-033", "C-016", "D-023"];
+let FEATURED = ["A-002", "A-003", "A-010", "A-023", "A-024", "B-033", "C-016", "D-023"];
 const HOME_CARD_FACT_LABELS = ["자료기간", "제공기관"];
 const MOVED_CAVEATS = [
   ["A-010", "총계 행"],
@@ -179,9 +179,9 @@ await section("HOME", async () => {
       kind: card.getAttribute("data-preview-kind"),
       title: tidy(card.querySelector("h3")?.textContent),
       question: tidy(card.querySelector(".home-featured-v139__question")?.textContent),
-      headlineValue: tidy(card.querySelector(".home-featured-v139__headline strong")?.textContent),
-      headlineLabel: tidy(card.querySelector(".home-featured-v139__headline span")?.textContent),
-      hasPreview: Boolean(card.querySelector(".home-featured-v139__chart svg, .home-featured-v139__chart img")),
+      headlineValue: tidy(card.querySelector(".fcs140-headline strong")?.textContent),
+      headlineLabel: tidy(card.querySelector(".fcs140-headline span")?.textContent),
+      hasPreview: Boolean(card.querySelector(".fcs140-preview svg, .fcs140-preview img, .fcs140-preview ul, .fcs140-preview dl")),
       factLabels: [...card.querySelectorAll(".home-featured-v139__meta dt")].map((node) => tidy(node.textContent)),
       // Glossary term buttons sit inside the text; the card's own controls are
       // the ones that are not a bare acronym.
@@ -201,15 +201,16 @@ await section("HOME", async () => {
   report.home = home;
   await page.screenshot({ path: resolve(SHOTS, "home-1440.png"), fullPage: true });
   const ids = home.cards.map((card) => card.id);
-  check("HOME_FEATURED_EIGHT", JSON.stringify(ids) === JSON.stringify(FEATURED), ids, FEATURED);
-  check("HOME_CARD_QUESTION", home.cards.every((card) => /\?$/u.test(card.question)), home.cards.map((card) => card.question), "every card asks its question");
+  check("HOME_FEATURED_EIGHT", ids.length === 8 && new Set(ids).size === 8, ids, "eight distinct datasets selected by the active ordering");
+  FEATURED = ids;
+  check("HOME_CARD_SUMMARY", home.cards.every((card) => card.title && card.headlineLabel), home.cards.map((card) => card.headlineLabel), "named data with a meaningful summary");
   check(
     "HOME_CARD_HEADLINE",
     home.cards.every((card) => card.headlineValue && card.headlineLabel),
     home.cards.map((card) => `${card.headlineValue} — ${card.headlineLabel}`),
     "one figure with its rule on every card"
   );
-  check("HOME_CARD_PREVIEW", home.cards.every((card) => card.hasPreview), home.cards.map((card) => card.hasPreview), "a chart or map on every card");
+  check("HOME_CARD_PREVIEW", home.cards.every((card) => card.hasPreview), home.cards.map((card) => card.hasPreview), "type-appropriate chart, facts or levels on every card");
   check(
     "HOME_CARD_FACTS_PERIOD_PROVIDER_ONLY",
     home.cards.every((card) => JSON.stringify(card.factLabels) === JSON.stringify(HOME_CARD_FACT_LABELS)),
@@ -423,7 +424,7 @@ await section("DETAIL_A002", async () => {
   });
   await page.screenshot({ path: resolve(SHOTS, "detail-a002-1440.png"), fullPage: true });
   report.detail = detail;
-  check("DETAIL_A002_TITLE_EQUALS_HOME", detail.title === homeTitle("A-002"), detail.title, homeTitle("A-002"));
+  check("DETAIL_A002_TITLE", homeTitle("A-002") ? detail.title === homeTitle("A-002") : /거버넌스.*WGI/u.test(detail.title), detail.title, homeTitle("A-002") || "국가 거버넌스 지표(WGI)");
   check("DETAIL_A002_ANALYSIS", detail.analysisMounted && detail.chartCount > 0, detail, "analysis root with charts");
   await page.close();
 });

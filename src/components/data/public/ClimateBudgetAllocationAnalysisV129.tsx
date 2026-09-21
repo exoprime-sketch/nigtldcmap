@@ -4,6 +4,7 @@ import type { SemanticObservationV125 } from "../../../data/visualization/semant
 import type { DataFinderSelectorStateV125 } from "../../../types/dataFinderV125";
 import "./climate-budget-allocation-v129.css";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
+import ChartAxesV150 from "../../charts/ChartAxesV150";
 
 interface Props {
   rows: SemanticObservationV125[];
@@ -160,6 +161,7 @@ export default function ClimateBudgetAllocationAnalysisV129({
           </div>
           <p>2010–2013년 총 기후변화 대응 지출 기준</p>
         </header>
+        <ChartAxesV150 x="배분 비중(누적 막대 길이)" y="지출 항목" unit="%" composition />
 
         <div
           className="cab129__stack"

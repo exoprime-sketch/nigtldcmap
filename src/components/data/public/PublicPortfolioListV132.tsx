@@ -9,6 +9,7 @@ import {
 } from "./PublicPortfolioSummaryV132";
 
 import "./public-portfolio-list-v132.css";
+import { PublicTermTextV134 } from "../../help/PublicTermV134";
 
 interface Props {
   elementId: string;
@@ -192,7 +193,7 @@ export default function PublicPortfolioListV132({
             {definitionRecords.map(({ entity, title, facet }) => (
               <div key={entity.recordId || title}>
                 <dt>{title}</dt>
-                <dd>{publicTextV126(facet.attributes.portfolioCategory) || publicTextV126(facet.attributes.sector) || ""}</dd>
+                <dd><PublicTermTextV134 text={publicTextV126(facet.attributes.portfolioCategory) || publicTextV126(facet.attributes.sector) || ""} /></dd>
               </div>
             ))}
           </dl>

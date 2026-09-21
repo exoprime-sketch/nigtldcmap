@@ -1,3 +1,4 @@
+import ChartAxesV150 from "../../charts/ChartAxesV150";
 import { useEffect, useMemo, useState } from "react";
 import type { SemanticObservationV125 } from "../../../data/visualization/semanticTypesV125";
 import type { DataFinderSelectorStateV125 } from "../../../types/dataFinderV125";
@@ -9,6 +10,7 @@ import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import AnalysisSummaryTableV146 from "./AnalysisSummaryTableV146";
 import { medianV146, signedBarV146 } from "../../../data/visualization/analysisMathV146";
 import "./province-series-analysis-v140.css";
+import { displayUnitV150 } from "../../../data/visualization/unitDisplayV150";
 
 /**
  * Province-by-time observations (V140): B-033 annual tree-cover loss, C-016
@@ -93,7 +95,7 @@ export default function ProvinceSeriesAnalysisV140({
     const seen = new Map<string, { key: string; label: string; unit: string }>();
     numeric.forEach((row) => {
       if (!seen.has(row.semanticMeasure.key)) {
-        seen.set(row.semanticMeasure.key, { key: row.semanticMeasure.key, label: row.semanticMeasure.labelKo, unit: row.semanticMeasure.unit });
+        seen.set(row.semanticMeasure.key, { key: row.semanticMeasure.key, label: row.semanticMeasure.labelKo, unit: displayUnitV150(row.semanticMeasure.unit) });
       }
     });
     return [...seen.values()];
@@ -328,7 +330,7 @@ export default function ProvinceSeriesAnalysisV140({
             zoom={{ enabled: yearPoints.length > 8, minimumSpan: 4, showRangeBrush: false }}
           />
         ) : region ? (
-          <ul className="psa140__bars" data-testid="psa140-region-periods" aria-label={`${region} 기간별 값`}>
+          <><ChartAxesV150 x={measure.label} y="기준기간" unit={unit} /><ul className="psa140__bars" data-testid="psa140-region-periods" aria-label={`${region} 기간별 값`}>
             {regionSeries.map((entry) => (
               <li key={entry.time}>
                 <span>{entry.time}</span>
@@ -336,9 +338,9 @@ export default function ProvinceSeriesAnalysisV140({
                 <strong>{format(entry.value)}</strong>
               </li>
             ))}
-          </ul>
+          </ul></>
         ) : (
-          <ul className="psa140__bars" data-testid="psa140-comparison" aria-label={`${timeLabel} 성·시별 ${measure.label}`}>
+          <><ChartAxesV150 x={measure.label} y="성·시" unit={unit} /><ul className="psa140__bars" data-testid="psa140-comparison" aria-label={`${timeLabel} 성·시별 ${measure.label}`}>
             {compareRows.map((entry, index) => (
               <li key={entry.region} className={entry.region === region ? "is-selected" : undefined}>
                 <span>{index + 1}. {entry.region}</span>
@@ -346,7 +348,7 @@ export default function ProvinceSeriesAnalysisV140({
                 <strong>{format(entry.row.value)}</strong>
               </li>
             ))}
-          </ul>
+          </ul></>
         )}
         {!tableOpen && !region && comparison.length > TOP_COUNT && (
           <p className="psa140__notice">상위 {TOP_COUNT}개 성·시입니다. 전체 {comparison.length}개는 '표로 보기'에서 확인할 수 있습니다.</p>
@@ -359,6 +361,7 @@ export default function ProvinceSeriesAnalysisV140({
             <span>보조 비교</span>
             <h3 id={`psa140-secondary-${elementId}`}>{timeLabel} 성·시별 비교 · {region} 위치</h3>
           </header>
+          <ChartAxesV150 x={measure.label} y="성·시" unit={unit} />
           <ul className="psa140__bars" data-testid="psa140-comparison" aria-label={`${timeLabel} 성·시별 ${measure.label}`}>
             {compareRows.map((entry) => {
               const index = comparison.findIndex((candidate) => candidate.region === entry.region);
@@ -383,6 +386,7 @@ export default function ProvinceSeriesAnalysisV140({
             <span>항목 비교</span>
             <h3 id={`psa140-measures-${elementId}`}>{region} · {timeLabel} · 항목별 값</h3>
           </header>
+          <ChartAxesV150 x="값" y="지표" unit={unit} />
           <ul className="psa140__bars" data-testid="psa140-across-measures">
             {acrossMeasures.map((entry) => (
               <li key={entry.key} className={entry.key === measure.key ? "is-selected" : undefined}>

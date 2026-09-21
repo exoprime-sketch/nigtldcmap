@@ -19,6 +19,7 @@ import type {
   TimeSeriesV127,
 } from "../../../types/chartInteractionV127";
 import type { DataFinderSelectorStateV125 } from "../../../types/dataFinderV125";
+import ChartAxesV150 from "../../charts/ChartAxesV150";
 
 interface Props {
   rows: SemanticObservationV125[];
@@ -305,6 +306,7 @@ export default function CpiaPolicyCapacityAnalysisV126({
             {wgiMode ? "부문별 비교" : "클러스터와 세부항목"}
           </h3>
         </div>
+        <ChartAxesV150 x="값(막대 길이)" y={wgiMode ? "부문" : "클러스터"} unit={activeUnit} />
 
         <div
           className="cpia126__cluster-bars"

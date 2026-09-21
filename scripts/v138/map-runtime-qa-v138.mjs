@@ -17,6 +17,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "playwright";
 import { startStaticBuildServer } from "../v125/browser-runtime.mjs";
+import { combinationUrlV150 } from "../v150/map-combinations.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
 const argv = process.argv.slice(2);
@@ -297,7 +298,7 @@ const INTERNAL_PHRASE_PATTERN =
   }
   const widthAfterDrag = Number(await separator.getAttribute("aria-valuenow"));
   const canvasWidth = await page.evaluate(() => document.querySelector(".cdp-map-canvas-wrap")?.getBoundingClientRect().width || null);
-  const stored = await page.evaluate(() => localStorage.getItem("cdp-map-left-panel-width-v129"));
+  const stored = await page.evaluate(() => localStorage.getItem("cdp-map-left-panel-width-v150"));
   await page.reload({ waitUntil: "domcontentloaded" });
   await page.waitForSelector('[data-testid="map-left-panel-separator"]', { timeout: 60000 });
   await page.waitForTimeout(1500);
@@ -317,11 +318,11 @@ const INTERNAL_PHRASE_PATTERN =
   await page.waitForTimeout(300);
   report.interactions.resize.widthAfterReset = Number(await page.locator('[data-testid="map-left-panel-separator"]').getAttribute("aria-valuenow"));
 
-  // Preset: 전력 인프라 draws 송전망 + 발전소 as the card says.
-  await page.goto(`${base}/#map`, { waitUntil: "domcontentloaded" });
-  await page.waitForSelector('[data-testid="map-analysis-preset"]', { timeout: 60000 });
+  // Combination: 전력 인프라 draws 송전망 + 발전소. V150 removed the recommended
+  // analysis buttons, so the combination is opened through the shared URL.
+  await page.goto(combinationUrlV150(`${base}/`, "POWER_INFRASTRUCTURE"), { waitUntil: "domcontentloaded" });
+  await page.waitForSelector('[data-testid="map-public-content"]', { timeout: 60000 });
   await page.waitForTimeout(2000);
-  await page.click('[data-testid="map-analysis-preset"][data-preset-id="POWER_INFRASTRUCTURE"]');
   await waitRendered(page, "A-024", 25000);
   await waitRendered(page, "A-023", 25000);
   state = await rootState(page);

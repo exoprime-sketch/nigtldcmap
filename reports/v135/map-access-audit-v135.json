@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v135-final-public-screen-audit-1",
-  "generatedAt": "2026-09-16T08:48:35.294Z",
+  "generatedAt": "2026-09-21T01:27:50.548Z",
   "audit": "map-access:v135",
   "status": "PASS",
   "summary": {
@@ -13,7 +13,7 @@
     "failedChecks": [],
     "mapLayerCount": 42,
     "allMapLayerAccessCount": 42,
-    "mapPresetCount": 5,
+    "mapPresetCount": 0,
     "leftPanelPointerResizePass": true,
     "companionsObserved": 2,
     "mapTooltipUiStateLabelCount": 0,
@@ -31,7 +31,7 @@
       "primaryAfter": "B-048",
       "renderedMapSymbols": "B-048|primary|diamond",
       "featureControlCount": 2,
-      "url": "http://127.0.0.1:62469/?layer=electricityGap&layers=juyo-gwangsan-wici&layerOpacities=0.78&focusLayer=juyo-gwangsan-wici&primaryLayer=juyo-gwangsan-wici&contextLayers=none&mapSelectors=%7B%22juyo-gwangsan-wici%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222022%22%7D%7D&layerYears=2022&scope=priority&country=VNM&baseOpacity=0.58&element=juyo-gwangsan-wici&year=2022&period=2022#map",
+      "url": "http://127.0.0.1:50321/?layer=electricityGap&layers=juyo-gwangsan-wici&layerOpacities=0.78&focusLayer=juyo-gwangsan-wici&primaryLayer=juyo-gwangsan-wici&contextLayers=none&mapSelectors=%7B%22juyo-gwangsan-wici%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222022%22%7D%7D&layerYears=2022&scope=priority&country=VNM&baseOpacity=0.58&element=juyo-gwangsan-wici&year=2022&period=2022#map",
       "failure": null
     },
     "contextActivationDiagnostics": {
@@ -48,7 +48,7 @@
       "primaryAfter": "A-023",
       "renderedMapSymbols": "A-023|primary|circle",
       "featureControlCount": 0,
-      "url": "http://127.0.0.1:62469/?layer=electricityGap&layers=baljeonso-wici-yongryang&layerOpacities=0.78&focusLayer=baljeonso-wici-yongryang&primaryLayer=baljeonso-wici-yongryang&contextLayers=none&mapSelectors=%7B%22baljeonso-wici-yongryang%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222026%22%7D%7D&layerYears=2026&scope=priority&country=VNM&baseOpacity=0.58&element=baljeonso-wici-yongryang&year=2026&period=2026&dim.sourceKey=wri#map",
+      "url": "http://127.0.0.1:50321/?layer=electricityGap&layers=baljeonso-wici-yongryang&layerOpacities=0.78&focusLayer=baljeonso-wici-yongryang&primaryLayer=baljeonso-wici-yongryang&contextLayers=none&mapSelectors=%7B%22baljeonso-wici-yongryang%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222026%22%7D%7D&layerYears=2026&scope=priority&country=VNM&baseOpacity=0.58&element=baljeonso-wici-yongryang&year=2021&period=2021&dim.sourceKey=wri#map",
       "failure": null
     },
     "mineTooltipDiagnostics": {
@@ -58,8 +58,8 @@
       "targetLabel": "주요 광산 · Ban Phuc",
       "targetName": "Ban Phuc",
       "targetRect": {
-        "x": 649,
-        "y": 324,
+        "x": 653,
+        "y": 326,
         "width": 19,
         "height": 19
       },
@@ -146,8 +146,8 @@
       "audit": "map-access:v135",
       "name": "MAP_PRESET_COUNT",
       "status": "PASS",
-      "actual": 5,
-      "expected": 5
+      "actual": 0,
+      "expected": 0
     },
     {
       "type": "check",
@@ -188,31 +188,48 @@
             "top": 71,
             "height": 1034
           },
-          "stored": [],
+          "stored": [
+            [
+              "cdp-map-right-panel-width-v150",
+              "360"
+            ],
+            [
+              "cdp-map-left-panel-width-v150",
+              "320"
+            ]
+          ],
           "contextCount": 0,
           "primary": "none"
         },
         "after": {
           "left": {
-            "width": 460,
+            "width": 465,
             "left": 0,
-            "right": 460
+            "right": 465
           },
           "map": {
-            "width": 1061,
-            "left": 472,
+            "width": 1056,
+            "left": 477,
             "right": 1533
           },
           "separator": {
             "width": 12,
-            "left": 460,
+            "left": 465,
             "top": 71,
             "height": 1034
           },
           "stored": [
             [
-              "cdp-map-left-panel-width-v129",
-              "460"
+              "cdp-map-right-panel-width-v150",
+              "360"
+            ],
+            [
+              "cdp-map-backdrop-v150",
+              "on"
+            ],
+            [
+              "cdp-map-left-panel-width-v150",
+              "465"
             ]
           ],
           "contextCount": 0,
@@ -220,25 +237,33 @@
         },
         "restored": {
           "left": {
-            "width": 460,
+            "width": 465,
             "left": 0,
-            "right": 460
+            "right": 465
           },
           "map": {
-            "width": 1061,
-            "left": 472,
+            "width": 1056,
+            "left": 477,
             "right": 1533
           },
           "separator": {
             "width": 12,
-            "left": 460,
+            "left": 465,
             "top": 71,
             "height": 1034
           },
           "stored": [
             [
-              "cdp-map-left-panel-width-v129",
-              "460"
+              "cdp-map-right-panel-width-v150",
+              "360"
+            ],
+            [
+              "cdp-map-backdrop-v150",
+              "on"
+            ],
+            [
+              "cdp-map-left-panel-width-v150",
+              "465"
             ]
           ],
           "contextCount": 0,
@@ -300,7 +325,7 @@
         "primaryAfter": "B-048",
         "renderedMapSymbols": "B-048|primary|diamond",
         "featureControlCount": 2,
-        "url": "http://127.0.0.1:62469/?layer=electricityGap&layers=juyo-gwangsan-wici&layerOpacities=0.78&focusLayer=juyo-gwangsan-wici&primaryLayer=juyo-gwangsan-wici&contextLayers=none&mapSelectors=%7B%22juyo-gwangsan-wici%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222022%22%7D%7D&layerYears=2022&scope=priority&country=VNM&baseOpacity=0.58&element=juyo-gwangsan-wici&year=2022&period=2022#map",
+        "url": "http://127.0.0.1:50321/?layer=electricityGap&layers=juyo-gwangsan-wici&layerOpacities=0.78&focusLayer=juyo-gwangsan-wici&primaryLayer=juyo-gwangsan-wici&contextLayers=none&mapSelectors=%7B%22juyo-gwangsan-wici%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222022%22%7D%7D&layerYears=2022&scope=priority&country=VNM&baseOpacity=0.58&element=juyo-gwangsan-wici&year=2022&period=2022#map",
         "failure": null
       },
       "expected": {
@@ -324,8 +349,8 @@
           "targetLabel": "주요 광산 · Ban Phuc",
           "targetName": "Ban Phuc",
           "targetRect": {
-            "x": 649,
-            "y": 324,
+            "x": 653,
+            "y": 326,
             "width": 19,
             "height": 19
           },
@@ -359,7 +384,7 @@
   ],
   "mapLayerCount": 42,
   "allMapLayerAccessCount": 42,
-  "mapPresetCount": 5,
+  "mapPresetCount": 0,
   "leftPanelPointerResizePass": true,
   "companionsObserved": 2,
   "mapTooltipUiStateLabelCount": 0,
@@ -377,7 +402,7 @@
     "primaryAfter": "B-048",
     "renderedMapSymbols": "B-048|primary|diamond",
     "featureControlCount": 2,
-    "url": "http://127.0.0.1:62469/?layer=electricityGap&layers=juyo-gwangsan-wici&layerOpacities=0.78&focusLayer=juyo-gwangsan-wici&primaryLayer=juyo-gwangsan-wici&contextLayers=none&mapSelectors=%7B%22juyo-gwangsan-wici%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222022%22%7D%7D&layerYears=2022&scope=priority&country=VNM&baseOpacity=0.58&element=juyo-gwangsan-wici&year=2022&period=2022#map",
+    "url": "http://127.0.0.1:50321/?layer=electricityGap&layers=juyo-gwangsan-wici&layerOpacities=0.78&focusLayer=juyo-gwangsan-wici&primaryLayer=juyo-gwangsan-wici&contextLayers=none&mapSelectors=%7B%22juyo-gwangsan-wici%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222022%22%7D%7D&layerYears=2022&scope=priority&country=VNM&baseOpacity=0.58&element=juyo-gwangsan-wici&year=2022&period=2022#map",
     "failure": null
   },
   "contextActivationDiagnostics": {
@@ -394,7 +419,7 @@
     "primaryAfter": "A-023",
     "renderedMapSymbols": "A-023|primary|circle",
     "featureControlCount": 0,
-    "url": "http://127.0.0.1:62469/?layer=electricityGap&layers=baljeonso-wici-yongryang&layerOpacities=0.78&focusLayer=baljeonso-wici-yongryang&primaryLayer=baljeonso-wici-yongryang&contextLayers=none&mapSelectors=%7B%22baljeonso-wici-yongryang%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222026%22%7D%7D&layerYears=2026&scope=priority&country=VNM&baseOpacity=0.58&element=baljeonso-wici-yongryang&year=2026&period=2026&dim.sourceKey=wri#map",
+    "url": "http://127.0.0.1:50321/?layer=electricityGap&layers=baljeonso-wici-yongryang&layerOpacities=0.78&focusLayer=baljeonso-wici-yongryang&primaryLayer=baljeonso-wici-yongryang&contextLayers=none&mapSelectors=%7B%22baljeonso-wici-yongryang%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222026%22%7D%7D&layerYears=2026&scope=priority&country=VNM&baseOpacity=0.58&element=baljeonso-wici-yongryang&year=2021&period=2021&dim.sourceKey=wri#map",
     "failure": null
   },
   "mineTooltipDiagnostics": {
@@ -404,8 +429,8 @@
     "targetLabel": "주요 광산 · Ban Phuc",
     "targetName": "Ban Phuc",
     "targetRect": {
-      "x": 649,
-      "y": 324,
+      "x": 653,
+      "y": 326,
       "width": 19,
       "height": 19
     },

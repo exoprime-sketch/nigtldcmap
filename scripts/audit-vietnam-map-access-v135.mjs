@@ -180,7 +180,8 @@ const tooltipUiLabels = tooltipText.match(/주\s*분석\s*데이터|함께\s*보
 
 audit.check("MAP_LAYER_COUNT", actualLayerIds.length === expectedLayers.length && expectedLayers.length >= 12, actualLayerIds.length, expectedLayers.length);
 audit.check("ALL_MAP_LAYER_ACCESS_COUNT", missingLayers.length === 0 && nonInteractive.length === 0, { actualLayerIds, missingLayers, nonInteractive }, { count: expectedLayers.length, missingLayers: [], nonInteractive: [] });
-audit.check("MAP_PRESET_COUNT", inventory?.presetCount === 5, inventory?.presetCount ?? 0, 5);
+// V150 removed the recommended-analysis buttons; combinations live in the shared URL.
+audit.check("MAP_PRESET_COUNT", inventory?.presetCount === 0, inventory?.presetCount ?? 0, 0);
 audit.check("MAP_ALL_DATA_GROUP_COUNT", (inventory?.groups?.length || 0) >= 5, inventory?.groups || [], ">=5");
 audit.check("LEFT_PANEL_POINTER_RESIZE_PASS", resizePass, resize, "left >=420px, map width changed, persisted");
 audit.check("MAP_RESIZE_CALL_CONTRACT", staticResizeContract, { staticResizeContract }, true);

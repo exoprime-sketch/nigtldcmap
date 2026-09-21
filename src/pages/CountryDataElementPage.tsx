@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useState } from "react";
+import { lazy, Suspense, useEffect, useMemo, useState } from "react";
+import { useDatasetUsageV149 } from "../data/publicUsageV149";
 import {
   loadCatalogForCountrySelectionV122,
   loadCountryElementBundleV122,
@@ -26,6 +27,7 @@ import {
 } from "../utils/vietnamActualV121";
 import { A024_UNSERVED_AREA_MEASURE_V138 } from "../data/visualization/mapSelectorBindingsV125";
 import CountryElementVisualizationV123 from "../components/data/CountryDataFullPreviewV52";
+const DetailLocationMapV148 = lazy(() => import("../components/data/public/DetailLocationMapV148"));
 import { PublicTermTextV134 } from "../components/help/PublicTermV134";
 import "../styles/country-data-platform-v122.css";
 
@@ -659,6 +661,7 @@ export default function CountryDataElementPage({
   const [bundle, setBundle] = useState<ElementBundle | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  useDatasetUsageV149("detail", elementId, countryIso3 === "VNM" && !loading && !!bundle && catalogItem?.elementId === elementId);
 
   useEffect(() => {
     if (
@@ -921,6 +924,13 @@ export default function CountryDataElementPage({
                 onSelectorStateChange={onSelectorStateChange}
                 spatialUnit={meta.element.spatialUnits[0]}
               />
+
+              {(catalogItem?.hasMapData || meta.element.mapFeatureCount > 0) && (
+                <Suspense fallback={<p role="status">작은 지도를 불러오는 중입니다.</p>}>
+                  <DetailLocationMapV148 key={`${provider.countryIso3}:${elementId}`} elementId={elementId}
+                    countryIso3={provider.countryIso3} selection={selectorState} onOpenMap={onOpenMapElement} />
+                </Suspense>
+              )}
 
               {observations.length === 0 && entities.length === 0 && (
                 <div className="cdp-empty">

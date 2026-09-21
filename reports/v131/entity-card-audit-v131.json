@@ -1,18 +1,18 @@
 {
   "schemaVersion": "v131-public-content-audit-1",
-  "generatedAt": "2026-09-16T08:42:13.074Z",
+  "generatedAt": "2026-09-21T01:20:59.250Z",
   "audit": "entity-cards:v131",
   "status": "PASS",
   "summary": {
     "type": "summary",
     "audit": "entity-cards:v131",
     "status": "PASS",
-    "passed": 15,
+    "passed": 16,
     "failed": 0,
-    "total": 15,
+    "total": 16,
     "failedChecks": [],
     "entityElementRouteCount": 56,
-    "entityCardCount": 388,
+    "entityCardCount": 257,
     "entityContextTitleCount": 0,
     "entityCardLongTextCount": 0,
     "entityCardDuplicatePrimaryTitleCount": 0,
@@ -111,6 +111,50 @@
     {
       "type": "check",
       "audit": "entity-cards:v131",
+      "name": "SPECIALIZED_ENTITY_TABLES",
+      "status": "PASS",
+      "actual": [
+        {
+          "elementId": "B-023",
+          "heading": "관측지점별 건기 최저·우기 최고유량",
+          "tableCount": 3,
+          "rowCount": 9,
+          "valid": true
+        },
+        {
+          "elementId": "B-025",
+          "heading": "유역 전체 면적과 베트남 내 면적",
+          "tableCount": 1,
+          "rowCount": 8,
+          "valid": true
+        },
+        {
+          "elementId": "B-026",
+          "heading": "선택 성·시의 8방향 비율",
+          "tableCount": 1,
+          "rowCount": 8,
+          "valid": true
+        },
+        {
+          "elementId": "B-028",
+          "heading": "관측지점별 유량 관측값",
+          "tableCount": 5,
+          "rowCount": 11,
+          "valid": true
+        },
+        {
+          "elementId": "C-011",
+          "heading": "여행경보·연락처·범죄 통계를 용도별로 정리한 표",
+          "tableCount": 8,
+          "rowCount": 42,
+          "valid": true
+        }
+      ],
+      "expected": "three populated, titled tables with value/context columns"
+    },
+    {
+      "type": "check",
+      "audit": "entity-cards:v131",
       "name": "ENTITY_RECORDS_SHOWN_SOMEHOW",
       "status": "PASS",
       "actual": [],
@@ -151,7 +195,7 @@
     }
   ],
   "entityElementRouteCount": 56,
-  "entityCardCount": 388,
+  "entityCardCount": 257,
   "entityContextTitleCount": 0,
   "entityCardLongTextCount": 0,
   "entityCardDuplicatePrimaryTitleCount": 0,

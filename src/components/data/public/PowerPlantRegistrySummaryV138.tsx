@@ -1,7 +1,11 @@
 import { useMemo, useState } from "react";
+import type { DataFinderSelectorStateV125 } from "../../../types/dataFinderV125";
+import { AnalysisBarsV147 } from "./AnalysisChartsV147";
 
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
-import { powerPlantCapacityMwV141, powerPlantFuelV141 } from "../../../data/map/powerPlantFactsV141";
+import { powerPlantCapacityMwV141, powerPlantFuelV141, normalisedPowerPlantAttributesV141, POWER_PLANT_CAPACITY_BANDS_V141 } from "../../../data/map/powerPlantFactsV141";
+import { resolvePublicEntityTitleV131 } from "../../../data/visualization/publicEntityTitleV131";
+import { publicSourceUrlV126 } from "../../../data/visualization/publicFieldPolicyV126";
 import { formatPublicNumberV126 } from "../../../data/visualization/publicNumberFormatV126";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import "./public-portfolio-summary-v132.css";
@@ -20,6 +24,8 @@ import "./detail-analysis-v146.css";
  */
 interface Props {
   entities: VietnamEntityV124[];
+  selectorState: DataFinderSelectorStateV125;
+  onSelectorStateChange: (state: DataFinderSelectorStateV125) => void;
 }
 
 const WRI_INDICATOR = "A-023_power_plant_registry";
@@ -37,9 +43,17 @@ function capacityOf(attributes: Record<string, unknown>): number | null {
   return powerPlantCapacityMwV141(attributes);
 }
 
-export default function PowerPlantRegistrySummaryV138({ entities }: Props) {
-  const [registry, setRegistry] = useState<"wri" | "osm">("wri");
-  const [metric, setMetric] = useState<"capacity" | "count">("capacity");
+export default function PowerPlantRegistrySummaryV138({ entities: sourceEntities, selectorState, onSelectorStateChange }: Props) {
+  const registry = selectorState.dimensions.sourceKey === "all" ? "all" : selectorState.dimensions.sourceKey === "osm" ? "osm" : "wri";
+  const fuel = selectorState.dimensions.fuelType || "all";
+  const band = selectorState.dimensions.capacityBand || "all";
+  const [query, setQuery] = useState("");
+  const [page, setPage] = useState(0);
+  const normalized = useMemo(() => sourceEntities.map((r) => ({ ...r, normalizedAttributes: normalisedPowerPlantAttributesV141(r.normalizedAttributes || {}, r.indicatorId, r.provenance?.referenceYear) })), [sourceEntities]);
+  const fuels = useMemo(() => [...new Set(normalized.map((r) => String(r.normalizedAttributes.fuelType || "")).filter(Boolean))].sort(), [normalized]);
+  const entities = useMemo(() => normalized.filter((r) => (fuel === "all" || (r.normalizedAttributes.fuelType || "미기재") === fuel) && (band === "all" || r.normalizedAttributes.capacityBand === band)), [normalized, fuel, band]);
+  const change = (key: string, value: string) => { setPage(0); onSelectorStateChange({ ...selectorState, dimensions: { ...selectorState.dimensions, [key]: value } }); };
+  const plantList = useMemo(() => entities.filter((r) => registry === "all" || r.normalizedAttributes.sourceKey === registry).map((r) => ({ row: r, name: resolvePublicEntityTitleV131(r, { elementTitle: "발전소" }).title })).filter((r) => !query || r.name.toLocaleLowerCase().includes(query.toLocaleLowerCase())).sort((a, b) => a.name.localeCompare(b.name, "vi")), [entities, registry, query]);
   const summary = useMemo(() => {
     const wri = entities.filter((entity) => entity.indicatorId === WRI_INDICATOR);
     const osm = entities.filter((entity) => entity.indicatorId !== WRI_INDICATOR);
@@ -85,16 +99,11 @@ export default function PowerPlantRegistrySummaryV138({ entities }: Props) {
     };
   }, [entities]);
 
-  if (!summary.total) return null;
+  const pageIndex = Math.min(page, Math.max(0, Math.ceil(plantList.length / 20) - 1));
 
-  const chart = summary.fuel.map(([label, entry]) => ({
-    label,
-    value: metric === "count" ? entry[registry] : entry[registry === "wri" ? "wriMw" : "osmMw"],
-    available: metric === "count" || entry[registry === "wri" ? "wriStated" : "osmStated"] > 0,
-    count: entry[registry],
-  })).filter((row) => row.count > 0).sort((a, b) => b.value - a.value);
-  const maximum = Math.max(1, ...chart.map((row) => row.value));
-  const unit = metric === "capacity" ? "MW" : registry === "wri" ? "기" : "곳";
+  const registries: Array<"wri" | "osm"> = registry === "all" ? ["wri", "osm"] : [registry];
+  const sourceName = (key: string) => key === "wri" ? "WRI GPPD · 2021년" : "OpenStreetMap · 2026년 추출";
+  const sourceLabel = registry === "all" ? "두 출처 함께 · 중복 가능" : sourceName(registry);
 
   return (
     <section
@@ -105,17 +114,21 @@ export default function PowerPlantRegistrySummaryV138({ entities }: Props) {
     >
       <header className="pps132-heading">
         <p>
-          두 원천(WRI GPPD, OpenStreetMap)의 수록 행을 각각 셉니다. 두 원천은 공통 식별자가 없어 같은 발전소가 양쪽에 있을 수 있으므로 고유 시설 수를 합쳐 세지 않습니다.
+          발전원별로 시설이 얼마나 많고 설비용량이 얼마나 큰지 비교할 수 있습니다. 같은 발전소가 두 출처에 중복될 수 있어, 출처를 나누어 집계합니다.
         </p>
       </header>
       <div className="detail146">
         <div className="detail146-select">
-          <label>자료 출처 <select value={registry} onChange={(event) => setRegistry(event.target.value as "wri" | "osm")}><option value="wri">WRI GPPD · 2021년</option><option value="osm">OpenStreetMap · 2026년 추출</option></select></label>
-          <label>비교 항목 <select value={metric} onChange={(event) => setMetric(event.target.value as "capacity" | "count")}><option value="capacity">설비용량</option><option value="count">시설 수</option></select></label>
+          <label>자료 출처 <select value={registry} onChange={(event) => change("sourceKey", event.target.value)}><option value="wri">WRI GPPD · 2021년</option><option value="osm">OpenStreetMap · 2026년 추출</option><option value="all">두 출처 함께 · 따로 집계</option></select></label>
+          <label>발전원 <select value={fuel} onChange={(event) => change("fuelType", event.target.value)}><option value="all">전체 발전원</option>{fuels.map((f) => <option key={f}>{f}</option>)}</select></label>
+          <label>설비용량 <select value={band} onChange={(event) => change("capacityBand", event.target.value)}><option value="all">전체 용량</option>{POWER_PLANT_CAPACITY_BANDS_V141.map((b) => <option key={b}>{b}</option>)}</select></label>
         </div>
-        <figure className="detail146-chart"><figcaption>발전원별 {metric === "capacity" ? "설비용량" : "시설 수"} · {registry === "wri" ? "WRI GPPD · 2021년" : "OpenStreetMap · 2026년 추출"} · {unit}</figcaption>
-          <ol>{chart.map((row) => <li key={row.label}><span>{row.label}</span><i aria-hidden="true"><b style={{ width: `${row.available ? row.value / maximum * 100 : 0}%` }} /></i><strong>{row.available ? formatPublicNumberV126(row.value, unit) : "미기재"}</strong></li>)}</ol>
-        </figure>
+        {registries.map((key) => {
+          const rows = summary.fuel.filter(([, e]) => e[key] > 0);
+          const capacityRows = rows.map(([label, e]) => ({ id: label, label, value: e[key === "wri" ? "wriStated" : "osmStated"] ? e[key === "wri" ? "wriMw" : "osmMw"] : null })).sort((a, b) => (b.value || 0) - (a.value || 0));
+          const countRows = rows.map(([label, e]) => ({ id: label, label, value: e[key] })).sort((a, b) => b.value - a.value);
+          return <section key={key}><AnalysisBarsV147 rows={capacityRows} title={`발전원별 설비용량 · ${sourceName(key)}`} unit="MW" /><AnalysisBarsV147 rows={countRows} title={`발전원별 시설 수 · ${sourceName(key)}`} unit={key === "wri" ? "기" : "곳"} />{!rows.length && <p role="status">선택한 조건의 시설이 없습니다. 출처·발전원·설비용량 조건을 바꿔 주세요.</p>}</section>;
+        })}
         <p className="detail146-note">설비용량은 값이 기재된 시설만 합산했습니다. 두 출처는 수록 범위와 기준시점이 달라, 출처를 바꿨을 때의 차이를 증감으로 해석할 수 없습니다.</p>
       </div>
       <details className="detail146-details"><summary>표로 보기 · 출처별 발전원·시설 수·설비용량</summary>
@@ -162,6 +175,16 @@ export default function PowerPlantRegistrySummaryV138({ entities }: Props) {
         </section>
       </div>
       </details>
+      <section className="detail146" data-testid="power-plant-list-v148">
+        <h3>발전소 목록 · {sourceLabel}</h3>
+        <label>시설명 검색 <input type="search" value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }} placeholder="발전소 이름" /></label>
+        <p>{plantList.length.toLocaleString("ko-KR")}곳 · 이름순 · {pageIndex + 1}/{Math.max(1, Math.ceil(plantList.length / 20))}쪽</p>
+        <div className="pps132-table-wrap"><table><caption>선택한 출처·발전원·설비용량 조건의 시설 목록. 위치는 아래 지도에서 확인할 수 있습니다.</caption>
+          <thead><tr><th scope="col">시설명</th><th scope="col">발전원</th><th scope="col">설비용량(MW)</th><th scope="col">운영자</th><th scope="col">원문</th></tr></thead>
+          <tbody>{plantList.slice(pageIndex * 20, (pageIndex + 1) * 20).map(({ row: r, name }) => { const a = r.normalizedAttributes; const url = publicSourceUrlV126(r.provenance.sourceUrl); return <tr key={r.recordId}><th scope="row">{name}</th><td>{String(a.fuelType || "미기재")}</td><td>{capacityOf(a) === null ? "미기재" : formatPublicNumberV126(capacityOf(a)!, "MW")}</td><td>{String(a.field_4cf75655 || a.operator || "미기재")}</td><td>{url ? <a href={url} target="_blank" rel="noreferrer">출처 확인</a> : "—"}</td></tr>; })}</tbody>
+        </table></div>
+        <div className="detail146-select"><button type="button" disabled={pageIndex === 0} onClick={() => setPage(pageIndex - 1)}>이전 시설</button><button type="button" disabled={(pageIndex + 1) * 20 >= plantList.length} onClick={() => setPage(pageIndex + 1)}>다음 시설</button></div>
+      </section>
     </section>
   );
 }

@@ -3,6 +3,7 @@ import { getPublicAnalysisHeadingsV134 } from "./publicAnalysisHeadingsV134";
 import { technologyLabelV121 } from "../../utils/vietnamActualV121";
 import { publicTextV126 } from "./publicFieldPolicyV126";
 import { isNumericCodeListV136_2 } from "./publicCategoryLabelV136_2";
+import descriptionsV150 from "./datasetDescriptionsV150.json";
 
 export { publicCategoryLabelV136_2 } from "./publicCategoryLabelV136_2";
 
@@ -149,6 +150,8 @@ export function publicElementCopyV126(
   renderer: PublicAnalyticalRendererV126
 ): PublicElementCopyV126 {
   const headings = getPublicAnalysisHeadingsV134(elementId);
+  const concise = (descriptionsV150 as Record<string, string>)[elementId];
+  if (concise) return { title: ELEMENT_COPY_V126[elementId]?.title || headings?.publicAnalysisTitle || RENDERER_TITLES_V126[renderer], description: concise };
   return (
     ELEMENT_COPY_V126[elementId] ||
     (headings

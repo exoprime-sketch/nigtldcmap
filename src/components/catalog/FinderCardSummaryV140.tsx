@@ -3,6 +3,7 @@ import type { CardSummaryV140, CardPartV140 } from "../../data/cardSummariesV140
 import { loadHomePreviewV139 } from "../../data/homePreviewV139";
 import type { HomePreviewCardV139 } from "../../data/homePreviewV139";
 import HomePreviewChartV139 from "../home/HomePreviewChartV139";
+import ChartAxesV150 from "../charts/ChartAxesV150";
 import { PublicTermTextV134 } from "../help/PublicTermV134";
 import "./finder-card-summary-v140.css";
 
@@ -133,6 +134,10 @@ export default function FinderCardSummaryV140({ summary }: { summary: CardSummar
         <span><PublicTermTextV134 text={headline.label} /></span>
       </p>
       <div className="fcs140-preview">
+        {!preview.home && ["line", "spatial-trend", "bars", "spatial", "composition"].includes(kind) && <ChartAxesV150
+          x={kind === "line" || kind === "spatial-trend" ? "연도" : kind === "composition" ? undefined : summary.measure?.label || "값"}
+          y={kind === "line" || kind === "spatial-trend" ? summary.measure?.label || "값" : kind === "composition" ? undefined : kind === "spatial" ? "성·시" : "항목"}
+          unit={preview.unit || summary.measure?.unit || ""} composition={kind === "composition"} />}
         {preview.home ? (
           <HomeCardPreview elementId={summary.elementId} />
         ) : kind === "line" && preview.points ? (

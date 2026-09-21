@@ -15,6 +15,7 @@ import { resolvePublicEntityTitleV131 } from "../../../data/visualization/public
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { formatValueV121 } from "../../../utils/vietnamActualV121";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
+import { displayUnitV150 } from "../../../data/visualization/unitDisplayV150";
 
 interface Props {
   elementId: string;
@@ -151,7 +152,7 @@ export default function PublicRawDataTablesV126({
                     <td><PublicTermTextV134 text={category} /></td>
                     <td><PublicTermTextV134 text={context} /></td>
                     <td><PublicTermTextV134 text={publicObservationValueV126(row.value)} /></td>
-                    <td><PublicTermTextV134 text={publicTextV126(row.unit || row.semanticMeasure.unit) || ""} /></td>
+                    <td><PublicTermTextV134 text={publicTextV126(displayUnitV150(row.unit || row.semanticMeasure.unit)) || ""} /></td>
                     <td>{row.year || publicTextV126(row.period) || ""}</td>
                     <td><PublicTermTextV134 text={publicSourceOrganizationV136_1(row.provenance.sourceOrg) || ""} /></td>
                     <td>

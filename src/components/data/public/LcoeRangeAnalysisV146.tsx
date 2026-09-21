@@ -1,8 +1,10 @@
+import ChartAxesV150 from "../../charts/ChartAxesV150";
 import { useMemo } from "react";
 import type { SemanticObservationV125 } from "../../../data/visualization/semanticTypesV125";
 import type { DataFinderSelectorStateV125 } from "../../../types/dataFinderV125";
 import { lcoeRangesV146 } from "../../../data/visualization/lcoeRangesV146";
 import "./detail-analysis-v146.css";
+import { PublicTermTextV134 } from "../../help/PublicTermV134";
 
 interface Props {
   rows: SemanticObservationV125[];
@@ -26,10 +28,11 @@ export default function LcoeRangeAnalysisV146({ rows, selectorState, onSelectorS
     </label>
     <h3>{year}년 발전원별 균등화 발전비용</h3>
     <p className="detail146-note">발전소의 건설·운영 비용을 생산 전력량으로 나눈 비용입니다. 선은 원자료의 하한~상한, 점은 기준값입니다. 전기요금이나 실제 거래가격이 아니며, 2030·2050년은 2023년 보고서의 전망입니다.</p>
+    <ChartAxesV150 x="균등화 발전비용" y="발전원" unit="USD/MWh" />
     <figure className="detail146-range-chart" aria-label={`${year}년 발전원별 비용 범위, 단위 USD/MWh`}>
       <figcaption>비용 범위와 기준값 · USD/MWh · 2022년 불변가격 <span>0 ~ {scale} · 모든 연도에 같은 눈금 적용</span></figcaption>
       <ol>{selected.map((row) => <li key={row.technology} data-selected={row.technology === cardTechnology || undefined}>
-        <span>{row.technology}{row.technology === cardTechnology && <small>목록에서 선택한 발전원</small>}</span>
+        <span><PublicTermTextV134 text={row.technology} />{row.technology === cardTechnology && <small>목록에서 선택한 발전원</small>}</span>
         <span className="detail146-range-track" aria-hidden="true">{row.valid && <><i style={{ left: `${row.min! / scale * 100}%`, width: `${(row.max! - row.min!) / scale * 100}%` }} /><b style={{ left: `${row.benchmark! / scale * 100}%` }} /></>}</span>
         <span className="detail146-range-value">{fmt(row.benchmark)}<small>{fmt(row.min)} ~ {fmt(row.max)}</small></span>
       </li>)}</ol>

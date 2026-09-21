@@ -8,6 +8,7 @@ import {
   getPublicAnalysisHeadingsV134,
 } from "./publicAnalysisHeadingsV134";
 import { publicComparableYearCountV135 } from "./publicTemporalContractV135";
+import descriptionsV150 from "./datasetDescriptionsV150.json";
 
 /**
  * V135 public dataset description.
@@ -200,6 +201,8 @@ function describeV135(
 export function publicDatasetDescriptionV135(
   input: PublicDescriptionInputV135
 ): string {
+  const concise = (descriptionsV150 as Record<string, string>)[input.elementId];
+  if (concise) return concise;
   // The ten separately verified element descriptions are more specific than any
   // template, so they win where they exist.
   if (SPECIALIZED_PUBLIC_HEADING_ELEMENT_IDS_V134.has(input.elementId)) {

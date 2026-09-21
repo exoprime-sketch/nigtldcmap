@@ -1,7 +1,7 @@
 {
   "label": "local-build",
-  "base": "http://127.0.0.1:64458",
-  "generatedAt": "2026-09-16T08:58:28.019Z",
+  "base": "http://127.0.0.1:52690",
+  "generatedAt": "2026-09-21T01:47:33.335Z",
   "checks": [
     {
       "id": "MANIFEST_OK",
@@ -117,31 +117,22 @@
         "C-016",
         "D-023"
       ],
-      "expected": [
-        "A-002",
-        "A-003",
-        "A-010",
-        "A-023",
-        "A-024",
-        "B-033",
-        "C-016",
-        "D-023"
-      ]
+      "expected": "eight distinct datasets selected by the active ordering"
     },
     {
-      "id": "HOME_CARD_QUESTION",
+      "id": "HOME_CARD_SUMMARY",
       "pass": true,
       "actual": [
-        "베트남의 거버넌스 여섯 영역은 각각 어느 수준인가?",
-        "국내총생산은 어떻게 변해왔나?",
-        "온실가스는 어떤 가스에서 얼마나 배출되나?",
-        "발전소는 어떤 발전원으로 얼마나 있나?",
-        "송전선은 어디에, 어떤 전압으로 놓여 있나?",
-        "산림손실은 어디에서 얼마나 큰가?",
-        "재생에너지 계획용량은 어느 성·시에 집중되나?",
-        "기후재원 사업은 어느 기금에 얼마나 있나?"
+        "2024년 여섯 영역 표준값(Estimate) 범위 · 점 · 약 −2.5~+2.5, 값이 클수록 양호",
+        "10억 미국달러 · 2025년 명목 국내총생산",
+        "MtCO₂e · 2024년 네 가스 합계",
+        "WRI 수록 발전소 설비용량 합계 · 2021년",
+        "2016년 송전선 606구간 총연장",
+        "Quảng Ninh · 2024년 손실이 가장 큰 성·시",
+        "63개 성·시 합계 · 집중형 태양광 2025–2030년 계획",
+        "4개 기금의 개별 사업 · 1991–2026년 승인·등록 사업"
       ],
-      "expected": "every card asks its question"
+      "expected": "named data with a meaningful summary"
     },
     {
       "id": "HOME_CARD_HEADLINE",
@@ -149,7 +140,7 @@
       "actual": [
         "−1.10 ~ +0.01 — 2024년 여섯 영역 표준값(Estimate) 범위 · 점 · 약 −2.5~+2.5, 값이 클수록 양호",
         "514.7 — 10억 미국달러 · 2025년 명목 국내총생산",
-        "582.7 — Mt CO₂eq · 2024년 네 가스 합계",
+        "582.7 — MtCO₂e · 2024년 네 가스 합계",
         "41,350 MW — WRI 수록 발전소 설비용량 합계 · 2021년",
         "23,608 km — 2016년 송전선 606구간 총연장",
         "11,728 ha — Quảng Ninh · 2024년 손실이 가장 큰 성·시",
@@ -171,7 +162,7 @@
         true,
         true
       ],
-      "expected": "a chart or map on every card"
+      "expected": "type-appropriate chart, facts or levels on every card"
     },
     {
       "id": "HOME_CARD_FACTS_PERIOD_PROVIDER_ONLY",
@@ -388,9 +379,7 @@
       "id": "FINDER_B017_NO_MAP_BUTTON",
       "pass": true,
       "actual": [
-        "FAO",
-        "AQUASTAT",
-        "SDG",
+        "WRI",
         "WRI",
         "상세보기",
         "다운로드"
@@ -495,7 +484,7 @@
       "expected": 200
     },
     {
-      "id": "DETAIL_A002_TITLE_EQUALS_HOME",
+      "id": "DETAIL_A002_TITLE",
       "pass": true,
       "actual": "국가 거버넌스 지표(WGI)",
       "expected": "국가 거버넌스 지표(WGI)"
@@ -572,7 +561,7 @@
       "id": "DOWNLOAD_A002_FILE",
       "pass": true,
       "actual": {
-        "name": "vietnam_wgi-worldwide-governance-indicators-gugga-geobeoneonseu-jipyo_2026-09-16.csv",
+        "name": "vietnam_wgi-worldwide-governance-indicators-gugga-geobeoneonseu-jipyo_2026-09-21.csv",
         "bytes": 164497
       },
       "expected": "a file is produced"
@@ -643,9 +632,9 @@
     "cards": [
       {
         "id": "A-002",
-        "kind": "signed-bars",
+        "kind": null,
         "title": "국가 거버넌스 지표(WGI)",
-        "question": "베트남의 거버넌스 여섯 영역은 각각 어느 수준인가?",
+        "question": "",
         "headlineValue": "−1.10 ~ +0.01",
         "headlineLabel": "2024년 여섯 영역 표준값(Estimate) 범위 · 점 · 약 −2.5~+2.5, 값이 클수록 양호",
         "hasPreview": true,
@@ -656,14 +645,14 @@
         "controls": [
           "상세보기 →"
         ],
-        "text": "국가 거버넌스 지표(WGI) 베트남의 거버넌스 여섯 영역은 각각 어느 수준인가? −1.10 ~ +0.01 2024년 여섯 영역 표준값(Estimate) 범위 · 점 · 약 −2.5~+2.5, 값이 클수록 양호 시민참여·책임성 -1.10 정치 안정 +0.01 정부 효과성 -0.09 규제의 질 -0.27 법치 -0.31 부패 통제 -0.25 자료기간 2024년 값 · 1996–2024년 제공 제공기관 World Bank · 세계 거버넌스 지표(WGI) 상세보기 →",
-        "height": 388
+        "text": "국가 거버넌스 지표(WGI) −1.10 ~ +0.01 2024년 여섯 영역 표준값(Estimate) 범위 · 점 · 약 −2.5~+2.5, 값이 클수록 양호 가로: 거버넌스 지수 세로: 항목 단위: 점(표준값 Estimate, 약 −2.5~+2.5) 시민참여·책임성 -1.10 정치 안정 +0.01 정부 효과성 -0.09 규제의 질 -0.27 법치 -0.31 부패 통제 -0.25 자료기간 2024년 값 · 1996–2024년 제공 제공기관 World Bank · 세계 거버넌스 지표(WGI) 상세보기 →",
+        "height": 412
       },
       {
         "id": "A-003",
-        "kind": "line",
+        "kind": null,
         "title": "국내총생산 및 경제성장",
-        "question": "국내총생산은 어떻게 변해왔나?",
+        "question": "",
         "headlineValue": "514.7",
         "headlineLabel": "10억 미국달러 · 2025년 명목 국내총생산",
         "hasPreview": true,
@@ -674,16 +663,16 @@
         "controls": [
           "상세보기 →"
         ],
-        "text": "국내총생산 및 경제성장 국내총생산은 어떻게 변해왔나? 514.7 10억 미국달러 · 2025년 명목 국내총생산 515 0 1985 2025 자료기간 1985–2025년 제공기관 World Bank 국가 통계 상세보기 →",
-        "height": 343
+        "text": "국내총생산 및 경제성장 514.7 10억 미국달러 · 2025년 명목 국내총생산 가로: 연도 세로: 국내총생산 단위: 10억 미국달러(명목, 현재 가격) 515 0 1985 2025 자료기간 1985–2025년 제공기관 World Bank 국가 통계 상세보기 →",
+        "height": 386
       },
       {
         "id": "A-010",
-        "kind": "composition",
+        "kind": null,
         "title": "온실가스 종류별 배출량",
-        "question": "온실가스는 어떤 가스에서 얼마나 배출되나?",
+        "question": "",
         "headlineValue": "582.7",
-        "headlineLabel": "Mt CO₂eq · 2024년 네 가스 합계",
+        "headlineLabel": "MtCO₂e · 2024년 네 가스 합계",
         "hasPreview": true,
         "factLabels": [
           "자료기간",
@@ -692,14 +681,14 @@
         "controls": [
           "상세보기 →"
         ],
-        "text": "온실가스 종류별 배출량 온실가스는 어떤 가스에서 얼마나 배출되나? 582.7 Mt CO₂eq · 2024년 네 가스 합계 CO₂ 430.8 74% CH₄ 114.9 20% N₂O 26.1 4% 불소계 온실가스 10.9 2% 자료기간 2024년 구성 · 1970–2024년 제공 제공기관 European Commission JRC · EDGAR 상세보기 →",
-        "height": 380
+        "text": "온실가스 종류별 배출량 582.7 MtCO₂e · 2024년 네 가스 합계 단위: MtCO₂e (GWP-100, AR5) · 구성비 % CO₂ 430.8 74% CH₄ 114.9 20% N₂O 26.1 4% 불소계 온실가스 10.9 2% 자료기간 2024년 구성 · 1970–2024년 제공 제공기관 European Commission JRC · EDGAR 상세보기 →",
+        "height": 408
       },
       {
         "id": "A-023",
-        "kind": "grouped-bars",
+        "kind": null,
         "title": "발전소 현황",
-        "question": "발전소는 어떤 발전원으로 얼마나 있나?",
+        "question": "",
         "headlineValue": "41,350 MW",
         "headlineLabel": "WRI 수록 발전소 설비용량 합계 · 2021년",
         "hasPreview": true,
@@ -710,14 +699,14 @@
         "controls": [
           "상세보기 →"
         ],
-        "text": "발전소 현황 발전소는 어떤 발전원으로 얼마나 있나? 41,350 MW WRI 수록 발전소 설비용량 합계 · 2021년 태양광 16 1,213 수력 174 422 석탄 24 36 풍력 5 38 가스 9 9 석유 6 2 WRI OSM 자료기간 WRI GPPD v1.3.0(2021) · OSM 2026년 추출 제공기관 World Resources Institute · OpenStreetMap 기여자 상세보기 →",
-        "height": 421
+        "text": "발전소 현황 41,350 MW WRI 수록 발전소 설비용량 합계 · 2021년 가로: 수록 시설 수 세로: 발전원 단위: 곳 태양광 16 1,213 수력 174 422 석탄 24 36 풍력 5 38 가스 9 9 석유 6 2 WRI OSM 자료기간 WRI GPPD v1.3.0(2021) · OSM 2026년 추출 제공기관 World Resources Institute · OpenStreetMap 기여자 상세보기 →",
+        "height": 445
       },
       {
         "id": "A-024",
-        "kind": "map",
+        "kind": null,
         "title": "베트남 송전망",
-        "question": "송전선은 어디에, 어떤 전압으로 놓여 있나?",
+        "question": "",
         "headlineValue": "23,608 km",
         "headlineLabel": "2016년 송전선 606구간 총연장",
         "hasPreview": true,
@@ -728,14 +717,14 @@
         "controls": [
           "상세보기 →"
         ],
-        "text": "베트남 송전망 송전선은 어디에, 어떤 전압으로 놓여 있나? 23,608 km 2016년 송전선 606구간 총연장 500 kV 32구간 4,092 km 220 kV 143구간 7,201 km 110 kV 431구간 12,314 km 자료기간 2016년 선로(경로 있음) · 계획 선로는 목록 제공기관 World Bank (ENERGYDATA.INFO) 상세보기 →",
-        "height": 499
+        "text": "베트남 송전망 23,608 km 2016년 송전선 606구간 총연장 500 kV 32구간 4,092 km 220 kV 143구간 7,201 km 110 kV 431구간 12,314 km 자료기간 2016년 선로(경로 있음) · 계획 선로는 목록 제공기관 World Bank (ENERGYDATA.INFO) 상세보기 →",
+        "height": 477
       },
       {
         "id": "B-033",
-        "kind": "line",
+        "kind": null,
         "title": "연간 산림손실",
-        "question": "산림손실은 어디에서 얼마나 큰가?",
+        "question": "",
         "headlineValue": "11,728 ha",
         "headlineLabel": "Quảng Ninh · 2024년 손실이 가장 큰 성·시",
         "hasPreview": true,
@@ -746,14 +735,14 @@
         "controls": [
           "상세보기 →"
         ],
-        "text": "연간 산림손실 산림손실은 어디에서 얼마나 큰가? 11,728 ha Quảng Ninh · 2024년 손실이 가장 큰 성·시 13,535 0 2001 2024 자료기간 2001–2024년 제공기관 Global Forest Watch (UMD/WRI) 상세보기 →",
-        "height": 345
+        "text": "연간 산림손실 11,728 ha Quảng Ninh · 2024년 손실이 가장 큰 성·시 가로: 연도 세로: 산림손실 면적 단위: ha/년 · 수관 밀도 30% 기준 13,535 0 2001 2024 자료기간 2001–2024년 제공기관 Global Forest Watch (UMD/WRI) 상세보기 →",
+        "height": 389
       },
       {
         "id": "C-016",
-        "kind": "bars",
+        "kind": null,
         "title": "재생에너지 발주·확대계획",
-        "question": "재생에너지 계획용량은 어느 성·시에 집중되나?",
+        "question": "",
         "headlineValue": "27,385 MW",
         "headlineLabel": "63개 성·시 합계 · 집중형 태양광 2025–2030년 계획",
         "hasPreview": true,
@@ -764,14 +753,14 @@
         "controls": [
           "상세보기 →"
         ],
-        "text": "재생에너지 발주·확대계획 재생에너지 계획용량은 어느 성·시에 집중되나? 27,385 MW 63개 성·시 합계 · 집중형 태양광 2025–2030년 계획 Sơn La 3,674 Đắk Lắk 3,349 Ninh Thuận 1,974 Yên Bái 1,656 Đắk Nông 1,294 Lai Châu 1,086 자료기간 2025–2030년 · 집중형 태양광 제공기관 베트남 총리실 · 산업무역부(MOIT), 개정 PDP8 부록 II 상세보기 →",
-        "height": 385
+        "text": "재생에너지 발주·확대계획 27,385 MW 63개 성·시 합계 · 집중형 태양광 2025–2030년 계획 가로: 계획 설비용량 세로: 성·시 단위: MW(계획 용량) Sơn La 3,674 Đắk Lắk 3,349 Ninh Thuận 1,974 Yên Bái 1,656 Đắk Nông 1,294 Lai Châu 1,086 자료기간 2025–2030년 · 집중형 태양광 제공기관 베트남 총리실 · 산업무역부(MOIT), 개정 PDP8 부록 II 상세보기 →",
+        "height": 411
       },
       {
         "id": "D-023",
-        "kind": "composition",
+        "kind": null,
         "title": "국제협력·기후재원 사업",
-        "question": "기후재원 사업은 어느 기금에 얼마나 있나?",
+        "question": "",
         "headlineValue": "71건",
         "headlineLabel": "4개 기금의 개별 사업 · 1991–2026년 승인·등록 사업",
         "hasPreview": true,
@@ -782,11 +771,11 @@
         "controls": [
           "상세보기 →"
         ],
-        "text": "국제협력·기후재원 사업 기후재원 사업은 어느 기금에 얼마나 있나? 71건 4개 기금의 개별 사업 · 1991–2026년 승인·등록 사업 GEF 53 75% GCF 8 11% CIF(Clean Technology Fund) 6 8% Adaptation Fund 4 6% 자료기간 1991–2026년 승인·등록 사업 제공기관 GCF · GEF · 적응기금 · CIF 공개 사업 목록 상세보기 →",
-        "height": 395
+        "text": "국제협력·기후재원 사업 71건 4개 기금의 개별 사업 · 1991–2026년 승인·등록 사업 단위: 사업 수(건) · 구성비 % GEF 53 75% GCF 8 11% CIF(Clean Technology Fund) 6 8% Adaptation Fund 4 6% 자료기간 1991–2026년 승인·등록 사업 제공기관 GCF · GEF · 적응기금 · CIF 공개 사업 목록 상세보기 →",
+        "height": 424
       }
     ],
-    "heroMapLink": "이 자료 지도에서 보기 →",
+    "heroMapLink": "큰 지도에서 비교",
     "overflow": false
   },
   "finder": {
@@ -819,9 +808,7 @@
       "기후기술"
     ],
     "b017Buttons": [
-      "FAO",
-      "AQUASTAT",
-      "SDG",
+      "WRI",
       "WRI",
       "상세보기",
       "다운로드"
@@ -879,7 +866,7 @@
   "download": {
     "summary": "선택한 데이터 1개 · 최대 312행",
     "file": {
-      "name": "vietnam_wgi-worldwide-governance-indicators-gugga-geobeoneonseu-jipyo_2026-09-16.csv",
+      "name": "vietnam_wgi-worldwide-governance-indicators-gugga-geobeoneonseu-jipyo_2026-09-21.csv",
       "bytes": 164497
     },
     "staticCsvStatus": 200,

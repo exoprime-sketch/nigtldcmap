@@ -1,5 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { isPublicMapFactV143, publicMapFactSourcesV143, hasPublicMapFactValueV143 } from "../data/visualization/publicMapCopyV143";
+import { useDatasetUsageV149 } from "../data/publicUsageV149";
+import { addKoreanMapLabelsV150, setMapBackdropV150 } from "../data/map/mapBackdropV150";
+import "../styles/map-readability-v150.css";
+import { isPublicMapFactV143, hasPublicMapFactValueV143 } from "../data/visualization/publicMapCopyV143";
 import maplibregl, { Map as MapLibreMap } from "maplibre-gl";
 import type {
   GeoJSONSource,
@@ -29,7 +32,10 @@ import type {
   VietnamMapGeoJsonV124,
 } from "../data/vietnam/vietnamDataLoaderV124";
 import type { VietnamMapFactFieldV137, VietnamMapFilterV121 } from "../data/vietnam/vietnamTypesV121";
-import { normalisedPowerPlantAttributesV141, POWER_PLANT_SOURCES_V141 } from "../data/map/powerPlantFactsV141";
+import { POWER_PLANT_SOURCES_V141 } from "../data/map/powerPlantFactsV141";
+import { prepareLayerRecordsV138, attributeText, type PreparedLayerRecordsV138 } from "../data/map/prepareLayerRecordsV148";
+import { mapFactsV148, mapIndicatorSourceV148, mapSourceLineV148, publicMapFieldsV148, powerCapacitySummaryV148 } from "../data/map/mapPresentationV148";
+import { createMapFeaturePopupV148 } from "../components/map/mapFeaturePopupV148";
 import { powerPlantPeriodForSourceV142 } from "../data/visualization/mapSelectorBindingsV125";
 import type {
   VietnamSpatialLayerAssetV124,
@@ -44,7 +50,6 @@ import {
   semanticDimensionValueLabelV125,
 } from "../data/visualization/mapSelectorBindingsV125";
 import { getElementVisualizationSummaryV125 } from "../data/visualization/elementVisualizationRegistryV125";
-import type { PublicMapPresetLayerV126 } from "../data/visualization/publicMapWorkspaceV126";
 import {
   PUBLIC_MAP_TARGET_CATEGORIES_V138,
   PUBLIC_MAP_TARGETS_V138,
@@ -109,6 +114,7 @@ import "../styles/map-layout-v129.css";
 import "../styles/map-comparison-v135.css";
 import "../styles/map-catalog-v138.css";
 import "../styles/map-overlap-v145.css";
+import "../styles/map-presentation-v148.css";
 
 interface RealMapExplorerPageProps {
   onOpenElement: (
@@ -131,6 +137,7 @@ type LoadStatus = "idle" | "loading" | "ready" | "error";
 
 const MAP_STYLE: any = {
   version: 8,
+  glyphs: "https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf",
   sources: {
     "country-boundaries": {
       type: "geojson",
@@ -224,129 +231,6 @@ const LAYER_COLORS: Record<string, string> = {
  * Applying those rules here, once, keeps the feature count the reader sees
  * equal to the count the build reported.
  */
-interface PreparedLayerRecordsV138 {
-  records: CountryEntityV122[];
-  membersByRecordId: Map<string, CountryEntityV122[]>;
-  approximateRecordIds: Set<string>;
-  excludedCount: number;
-}
-const PREPARED_RECORDS_CACHE_V138 = new WeakMap<
-  CountryEntityV122[],
-  Map<string, PreparedLayerRecordsV138>
->();
-
-function attributeText(value: unknown): string {
-  if (typeof value === "number") return Number.isFinite(value) ? String(value) : "";
-  return publicTextV126(value) || "";
-}
-
-function prepareLayerRecordsV138(
-  records: CountryEntityV122[],
-  layer: CountryMapLayerV122
-): PreparedLayerRecordsV138 {
-  let perLayer = PREPARED_RECORDS_CACHE_V138.get(records);
-  if (!perLayer) {
-    perLayer = new Map();
-    PREPARED_RECORDS_CACHE_V138.set(records, perLayer);
-  }
-  const cached = perLayer.get(layer.layerId);
-  if (cached) return cached;
-
-  const bbox = layer.displayScope?.withinCountryOnly ? layer.displayScope.bbox : null;
-  const exclusions = Object.entries(layer.excludeWhere || {}).map(
-    ([key, pattern]) => [key, new RegExp(pattern, "u")] as const
-  );
-  const approximateRule = layer.approximateLocation;
-  const approximatePattern =
-    approximateRule?.pattern && !approximateRule.always
-      ? new RegExp(approximateRule.pattern, "u")
-      : null;
-  const identitySources = layer.featureIdentity?.sources || [];
-
-  const kept: CountryEntityV122[] = [];
-  let excludedCount = 0;
-  records.forEach((source) => {
-    // A-023: both registries read through one normaliser, so the map's
-    // filters, symbols, tooltips and counts see 수력 · 1 MW for a WRI row.
-    const record: CountryEntityV122 =
-      layer.elementId === "A-023"
-        ? {
-            ...source,
-            normalizedAttributes: normalisedPowerPlantAttributesV141(
-              source.normalizedAttributes || {},
-              source.indicatorId,
-              source.provenance?.referenceYear
-            ) as CountryEntityV122["normalizedAttributes"],
-          }
-        : source;
-    const attributes = record.normalizedAttributes || {};
-    if (
-      bbox &&
-      typeof record.latitude === "number" &&
-      typeof record.longitude === "number" &&
-      (record.longitude < bbox.west ||
-        record.longitude > bbox.east ||
-        record.latitude < bbox.south ||
-        record.latitude > bbox.north)
-    ) {
-      excludedCount += 1;
-      return;
-    }
-    if (exclusions.some(([key, pattern]) => pattern.test(attributeText(attributes[key])))) {
-      excludedCount += 1;
-      return;
-    }
-    kept.push(record);
-  });
-
-  const groups = new Map<string, CountryEntityV122[]>();
-  kept.forEach((record) => {
-    const attributes = record.normalizedAttributes || {};
-    const identity = identitySources
-      .map((key) => attributeText(attributes[key]))
-      .filter(Boolean)
-      .join("|");
-    const groupKey = identity || record.recordId;
-    const group = groups.get(groupKey);
-    if (group) group.push(record);
-    else groups.set(groupKey, [record]);
-  });
-  const membersByRecordId = new Map<string, CountryEntityV122[]>();
-  const representatives: CountryEntityV122[] = [];
-  groups.forEach((group) => {
-    // The representative is the first row with a coordinate; the others are
-    // its members and never become features of their own.
-    const representative =
-      group.find(
-        (record) =>
-          typeof record.latitude === "number" && typeof record.longitude === "number"
-      ) || group[0];
-    representatives.push(representative);
-    membersByRecordId.set(representative.recordId, group);
-  });
-  const approximateRecordIds = new Set<string>();
-  representatives.forEach((record) => {
-    if (!approximateRule) return;
-    if (approximateRule.always) {
-      approximateRecordIds.add(record.recordId);
-      return;
-    }
-    const value = attributeText(
-      (record.normalizedAttributes || {})[approximateRule.sourceKey || ""]
-    );
-    if (approximatePattern && approximatePattern.test(value)) {
-      approximateRecordIds.add(record.recordId);
-    }
-  });
-  const prepared = {
-    records: representatives,
-    membersByRecordId,
-    approximateRecordIds,
-    excludedCount,
-  };
-  perLayer.set(layer.layerId, prepared);
-  return prepared;
-}
 
 const A023_FUEL_COLORS_V126: Record<string, string> = {
   "가스": "#377eb8",
@@ -779,6 +663,22 @@ function attachMapObserverV137(map: MapLibreMap, countryIso3: string): void {
       return { left: rect.left, top: rect.top, width: rect.width, height: rect.height };
     },
     layersFor: hitLayerIds,
+    /**
+     * Style layers with their visibility, so a runner can confirm the V150
+     * backdrop and Korean label layers exist and toggle. Read-only.
+     */
+    styleLayers: () =>
+      (map.getStyle()?.layers || []).map((layer) => ({
+        id: layer.id,
+        type: layer.type,
+        source: "source" in layer ? String(layer.source || "") : "",
+        visibility: map.getLayoutProperty(layer.id, "visibility") || "visible",
+      })),
+    /** Names carried by a GeoJSON source (the V150 Korean place labels). Read-only. */
+    sourceNames: (sourceId: string) =>
+      map.getSource(sourceId)
+        ? map.querySourceFeatures(sourceId).map((feature) => String(feature.properties?.name ?? ""))
+        : [],
     /** Where a source coordinate currently lands on screen. Read-only. */
     project: (lng: number, lat: number) => {
       const rect = map.getCanvas().getBoundingClientRect();
@@ -1267,6 +1167,7 @@ function choroplethFeatureCollection(
                 ?.label ||
               layer.publicShortTitle,
             sourceRegion: value?.sourceRegion || "",
+            sourceIndicatorId: value?.sourceIndicatorId || "",
             sourceSpatialUnit: value?.sourceSpatialUnit || "admin1",
             selectionKey: adm1Code,
           },
@@ -1344,7 +1245,7 @@ function layerFactFieldsV137(
   layer: CountryMapLayerV122
 ): VietnamMapFactFieldV137[] {
   const declared = layer.factFields;
-  if (declared && declared.length) return declared.filter((fact) => isPublicMapFactV143(fact.label)).map((fact) => publicMapFactSourcesV143(layer.elementId, fact));
+  if (declared && declared.length) return publicMapFieldsV148(layer);
   return layer.tooltipFields
     .filter((field) => field !== "name" && isPublicMapFactV143(fieldLabelV121(field)))
     .map((field) => ({ key: field, label: fieldLabelV121(field), sources: [field] }));
@@ -1366,7 +1267,7 @@ function factValueV137(
 
 /** The label a reader sees for a fact key, never a raw source column name. */
 function factLabelV137(layer: CountryMapLayerV122, key: string): string {
-  return layer.fieldLabels?.[key] || fieldLabelV121(key);
+  return layer.factFields?.find((fact) => fact.key === key)?.label || layer.fieldLabels?.[key] || fieldLabelV121(key);
 }
 
 /**
@@ -1428,8 +1329,8 @@ function featureCollection(
           nameNote: titleResolution.secondaryNote,
           entityType: record.entityType,
           referenceYear:
-            record.provenance.referenceYear || layer.latestYear || null,
-          sourceOrg: record.provenance.sourceOrg || null,
+            record.provenance.referenceYear || null,
+          sourceOrg: mapIndicatorSourceV148(record.indicatorId, record.provenance.sourceOrg || "") || null,
           selectionKey: record.recordId,
           approximate: prepared.approximateRecordIds.has(record.recordId),
           memberCount: prepared.membersByRecordId.get(record.recordId)?.length || 1,
@@ -1754,7 +1655,8 @@ function createPublicMapPopupContentV129(
   });
   if (options?.legacyTestId) {
     const legacyContract = document.createElement("span");
-    legacyContract.className = "cdp-sr-only";
+    legacyContract.hidden = true;
+    legacyContract.setAttribute("aria-hidden", "true");
     legacyContract.setAttribute("data-testid", options.legacyTestId);
     Object.entries(options.attributes || {}).forEach(([name, value]) => {
       legacyContract.setAttribute(`data-${name}`, value);
@@ -1839,6 +1741,10 @@ export default function RealMapExplorerPage({
     resolveInitialCountry(initialState.countryIso3)
   );
   const [baseMapStatus, setBaseMapStatus] = useState<LoadStatus>("loading");
+  const [backdropEnabledV150, setBackdropEnabledV150] = useState(() => {
+    try { return localStorage.getItem("cdp-map-backdrop-v150") !== "off"; } catch { return true; }
+  });
+  const [backdropErrorV150, setBackdropErrorV150] = useState(false);
   const [fallbackBoundaryStatus, setFallbackBoundaryStatus] =
     useState<LoadStatus>("loading");
   const [fallbackBoundaryPath, setFallbackBoundaryPath] = useState("");
@@ -2660,6 +2566,10 @@ export default function RealMapExplorerPage({
       window.setTimeout(() => map.resize(), 0);
     };
     const handleError = (event: any) => {
+      if (/cdp-(ofm|terrain)-v150/.test(String(event.sourceId || ""))) {
+        setBackdropErrorV150(true);
+        return; // Optional background failure must not disable local analytical layers.
+      }
       console.error("MapLibre runtime error", event.error || event);
       if (!ready && !map.isStyleLoaded()) setBaseMapStatus("error");
     };
@@ -2693,6 +2603,27 @@ export default function RealMapExplorerPage({
       mapRef.current = null;
     };
   }, []); // one MapLibre instance
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || baseMapStatus !== "ready") return;
+    setBackdropErrorV150(false);
+    setMapBackdropV150(map, backdropEnabledV150);
+    try { localStorage.setItem("cdp-map-backdrop-v150", backdropEnabledV150 ? "on" : "off"); } catch { /* optional preference */ }
+  }, [baseMapStatus, backdropEnabledV150]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || baseMapStatus !== "ready") return;
+    addKoreanMapLabelsV150(map, adm1Boundary);
+    const keepLabelsAboveData = () => {
+      const ids = ["cdp-ko-country", "cdp-ko-city", "cdp-ko-province"];
+      const all = map.getStyle().layers;
+      if (all?.[all.length - 1]?.id !== ids[2]) ids.forEach(id => { if (map.getLayer(id)) map.moveLayer(id); });
+    };
+    map.on("idle", keepLabelsAboveData);
+    return () => { map.off("idle", keepLabelsAboveData); };
+  }, [adm1Boundary, baseMapStatus]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -2779,6 +2710,8 @@ export default function RealMapExplorerPage({
     recordsByElement,
     spatialByElement,
   ]);
+
+  useDatasetUsageV149("map", primaryLayerId, countryIso3 === "VNM" && baseMapStatus === "ready" && externalStateHydrated && !!primaryLayerId && !!(recordsByElement[primaryLayerId] || spatialByElement[primaryLayerId]));
 
   useEffect(() => {
     const activeRuntimeKeys = new Set(
@@ -3670,6 +3603,9 @@ export default function RealMapExplorerPage({
           filter: ["has", "point_count"],
           layout: {
             "text-field": "{point_count_abbreviated}",
+            // The glyph server (V150 backdrop) serves Noto Sans; MapLibre's
+            // default Open Sans stack is not there and would 404 every cluster.
+            "text-font": ["Noto Sans Regular"],
             "text-size": isPrimary ? 12 : 10,
           },
           paint: {
@@ -3883,7 +3819,6 @@ export default function RealMapExplorerPage({
           elementId,
           layer.publicShortTitle
         );
-        const isPowerPlant = elementId === "A-023";
         popupRef.current?.remove();
         popupOwnerRef.current = pointPopupOwnerKey;
         if (overlapHits.length > 1) {
@@ -3906,52 +3841,17 @@ export default function RealMapExplorerPage({
         })
           .setLngLat(coordinates)
           .setDOMContent(
-            createPublicMapPopupContentV129(
-              isPowerPlant ? name : layerTitle,
-              isPowerPlant
-                ? publicPowerPlantTooltipLinesV132(
-                    (feature.properties || {}) as Record<string, unknown>,
-                    layerTitle,
-                    isPrimary
-                  )
-                : [
-                    name,
-                    ...popupFactLinesV137(
-                      layer,
-                      (feature.properties || {}) as Record<string, unknown>
-                    ),
-                    publicTextV126(feature.properties?.nameNote) || "",
-                    isPrimary ? "선택 데이터" : "보조 데이터",
-                  ],
-              isPowerPlant
-                ? {
-                    attributes: {
-                      "element-id": elementId,
-                      "feature-title": name,
-                      "key-facts": "fuel,capacity,status,year",
-                      "layer-role": isPrimary ? "primary" : "context",
-                      "selection-key": String(
-                        feature.properties?.selectionKey ??
-                          feature.properties?.recordId ??
-                          ""
-                      ),
-                    },
-                    // V132 regression contract: testId: "a023-map-tooltip-v132"
-                    legacyTestId: "a023-map-tooltip-v132",
-                    testId: "map-hover-popup-v133",
-                  }
-                : {
-                    attributes: {
-                      "element-id": elementId,
-                      "selection-key": String(
-                        feature.properties?.selectionKey ??
-                          feature.properties?.recordId ??
-                          ""
-                      ),
-                    },
-                    testId: "map-hover-popup-v133",
-                  }
-            )
+            createMapFeaturePopupV148({
+              elementId,
+              selectionKey: String(feature.properties?.selectionKey ?? feature.properties?.recordId ?? ""),
+              title: name,
+              dataset: layerTitle,
+              primary: isPrimary,
+              facts: mapFactsV148(layer, (feature.properties || {}) as Record<string, unknown>)
+                .filter((fact) => fact.key !== "sourceLabel"),
+              source: mapSourceLineV148((feature.properties || {}) as Record<string, unknown>),
+              note: feature.properties?.approximate ? "소재 지역의 대표 위치" : undefined,
+            })
           )
           .addTo(map);
       };
@@ -4541,6 +4441,7 @@ export default function RealMapExplorerPage({
     const summaryRows: PublicMapSummaryRowV126[] = [];
     const empty = {
       summaryRows,
+      capacityRows: [] as ReturnType<typeof powerCapacitySummaryV148>,
       minimum: null as number | null,
       median: null as number | null,
       maximum: null as number | null,
@@ -4627,7 +4528,7 @@ export default function RealMapExplorerPage({
             ).values()
           )
         : values;
-      const ordered = [...analysisValues].sort(
+      const ordered = analysisValues.filter((row) => Number.isFinite(row.value)).sort(
         (left, right) => left.value - right.value
       );
       const numbers = ordered.map((row) => row.value).filter(Number.isFinite);
@@ -4662,7 +4563,7 @@ export default function RealMapExplorerPage({
             value: `${formatPublicNumberV126(maximum, unit)} ${unit}`.trim(),
           },
           {
-            label: sourceIsRegional ? `하위 ${regionUnitLabel}` : "하위 지역",
+            label: "값이 가장 작은 지역",
             value: `${
               sourceIsRegional
                 ? publicVietnamSourceRegionV126(ordered[0]?.sourceRegion)
@@ -4670,7 +4571,7 @@ export default function RealMapExplorerPage({
             } · ${formatPublicNumberV126(ordered[0]?.value, unit)} ${unit}`.trim(),
           },
           {
-            label: sourceIsRegional ? `상위 ${regionUnitLabel}` : "상위 지역",
+            label: "값이 가장 큰 지역",
             value: `${
               sourceIsRegional
                 ? publicVietnamSourceRegionV126(
@@ -4694,6 +4595,7 @@ export default function RealMapExplorerPage({
           : `${missingRegionCount}개 성·시`,
       });
       return {
+        capacityRows: empty.capacityRows,
         summaryRows,
         minimum,
         median: middle,
@@ -4718,42 +4620,29 @@ export default function RealMapExplorerPage({
       // registry contributes. They are not merged into one "발전소 수" because
       // WRI and OSM share no identifier; identical coordinates alone do not
       // prove one plant.
-      const wriRows = allRecords.filter((row) => row.indicatorId === "A-023_power_plant_registry");
-      const osmRows = allRecords.filter((row) => row.indicatorId !== "A-023_power_plant_registry");
       const sourceFilter = focusedLayer.filters.find((filter) => filter.field === "sourceKey");
       const sourceChoice = sourceFilter ? selectedFilterValueV141(focusedLayer, sourceFilter, filters) : "all";
       const shownSource =
         sourceChoice === "wri" || sourceChoice === "osm"
           ? `${POWER_PLANT_SOURCES_V141[sourceChoice].label} 기준`
           : "두 출처 함께 · 같은 시설이 두 번 표시될 수 있음";
-      summaryRows.push(
-        { label: "표시 출처", value: shownSource },
-        { label: "현재 표시(필터 적용)", value: `${records.length.toLocaleString()}곳` },
-        { label: "WRI GPPD 2021 수록", value: `${wriRows.length.toLocaleString()}행 (좌표 ${wriRows.filter((row) => row.mapEligible).length.toLocaleString()})` },
-        { label: "OSM 2026 추출", value: `${osmRows.length.toLocaleString()}행 (좌표 ${osmRows.filter((row) => row.mapEligible).length.toLocaleString()})` }
-      );
-      // Fuel and capacity read through the shared A-023 normaliser (records
-      // are the prepared rows): a WRI plant is 수력 · 1 MW here as on the detail.
-      const unstatedFuel = records.filter((row) => !row.normalizedAttributes?.fuelType).length;
-      countByPublicFieldV126(records.filter((row) => row.normalizedAttributes?.fuelType), "fuelType").forEach(([label, count]) =>
-        summaryRows.push({ label: `발전원 ${label}`, value: `${count.toLocaleString()}곳` })
-      );
-      if (unstatedFuel) summaryRows.push({ label: "발전원 미기재", value: `${unstatedFuel.toLocaleString()}곳` });
+      summaryRows.push({ label: "자료 출처", value: shownSource });
       const withCapacity = records.filter((row) => typeof row.normalizedAttributes?.capacityMw === "number");
-      summaryRows.push({
-        label: "설비용량 기재",
-        value: `${withCapacity.length.toLocaleString()}곳 · 미기재 ${(records.length - withCapacity.length).toLocaleString()}곳`,
-      });
-      countByPublicFieldV126(withCapacity, "capacityBand").forEach(([label, count]) =>
-        summaryRows.push({
-          label: `용량 ${label}`,
-          value: `${count.toLocaleString()}곳`,
-        })
-      );
-      summaryRows.push({
-        label: "고유 시설 통합",
-        value: "두 원천은 공통 식별자가 없어 합산하지 않음 · 명칭 유사만으로 합치지 않음",
-      });
+      if (sourceChoice === "all") {
+        summaryRows.push(
+          { label: "WRI 2021 표시", value: `${records.filter((r) => r.indicatorId === "A-023_power_plant_registry").length.toLocaleString()}곳` },
+          { label: "OSM 2026 표시", value: `${records.filter((r) => r.indicatorId !== "A-023_power_plant_registry").length.toLocaleString()}곳` },
+          { label: "비교 기준", value: "같은 시설이 두 출처에 포함될 수 있어 시설 수와 용량을 합산하지 않습니다." }
+        );
+      } else {
+        const capacityRows = powerCapacitySummaryV148(records);
+        summaryRows.push(
+          { label: "현재 표시 시설", value: `${records.length.toLocaleString()}곳` },
+          { label: "수록 설비용량 합계", value: `${formatPublicNumberV126(capacityRows.reduce((sum, r) => sum + r.capacity, 0), "MW")} MW` },
+          { label: "용량 집계 대상", value: `${withCapacity.length.toLocaleString()}곳 · 용량 미기재 ${records.length - withCapacity.length}곳` }
+        );
+        return { ...empty, summaryRows, unit: "곳", capacityRows };
+      }
       return { ...empty, summaryRows, unit: "곳" };
     }
     summaryRows.push({
@@ -4825,13 +4714,6 @@ export default function RealMapExplorerPage({
   const selectedEntityTitleResolutionV131 =
     selected && selectedLayer
       ? resolvePublicMapEntityTitleV131(selected, selectedLayer)
-      : null;
-  const selectedPowerPlantFactsV132 =
-    selected?.elementId === "A-023"
-      ? publicPowerPlantFactsV132({
-          ...(selected.normalizedAttributes || {}),
-          referenceYear: selected.provenance.referenceYear,
-        })
       : null;
   const selectedOwningLayer = selectedSpatial
     ? layers.find((layer) => layer.elementId === selectedSpatial.elementId) || null
@@ -5048,7 +4930,8 @@ export default function RealMapExplorerPage({
             : Number.isFinite(numericValue)
               ? `${formatPublicNumberV126(numericValue, unit)} ${unit}`.trim()
               : `${publicTextV126(formatValueV121(rawValue)) || ""} ${unit}`.trim();
-        return label ? { label, value } : null;
+        const year = attributes["기준연도"] || record.provenance.referenceYear;
+        return label ? { label: year ? `${label} · ${year}년` : label, value } : null;
       })
       .filter((row): row is { label: string; value: string } => Boolean(row));
   }, [selectedLayer, selectedMembersV138]);
@@ -5440,145 +5323,6 @@ export default function RealMapExplorerPage({
     }
   }
 
-  /**
-   * The variable and period a preset asks for, checked against the layer.
-   *
-   * A preset used to write its stored key and period straight into the selector
-   * state. When the delivery re-keyed B-034's variables and gave B-033 a real
-   * annual series, the FOREST_CHANGE preset kept asking for a variable and a
-   * year that no longer exist, and the map drew a layer with no values and said
-   * nothing. The label is tried first because it survives a rekey; the layer's
-   * own default is the last resort, and the substitution is reported.
-   */
-  function resolvePresetSelectorV137(
-    request: PublicMapPresetLayerV126
-  ): { variable: string; period: string; adjusted: boolean } {
-    const layer = layers.find((item) => item.elementId === request.elementId);
-    const variables = layer?.selectors?.variables || [];
-    if (!variables.length) {
-      return { variable: request.variable, period: request.period, adjusted: false };
-    }
-    // The stable id first. The key is a slug of the label and becomes a hash
-    // for anything non-ASCII, so it moves whenever the label does; measureId
-    // comes from the derivation contract and does not.
-    const byMeasureId = request.measureId
-      ? variables.find((item) => item.measureId === request.measureId)
-      : undefined;
-    const byKey = variables.find((item) => item.key === request.variable);
-    // A label identifies a variable only when exactly one carries it. Two
-    // variables sharing a label is not an identification, and picking the first
-    // would be a guess.
-    const labelMatches = request.variableLabel
-      ? variables.filter((item) => item.label === request.variableLabel)
-      : [];
-    const byLabel = labelMatches.length === 1 ? labelMatches[0] : undefined;
-    const chosen =
-      byMeasureId ||
-      byKey ||
-      byLabel ||
-      variables.find((item) => item.key === layer?.selectors?.defaultVariable) ||
-      variables[0];
-    const periods = chosen.periods?.length
-      ? chosen.periods
-      : layer?.selectors?.periods || [];
-    const period = periods.includes(request.period)
-      ? request.period
-      : periods.includes(layer?.selectors?.defaultPeriod || "")
-        ? (layer?.selectors?.defaultPeriod as string)
-        : periods[periods.length - 1] || request.period;
-    return {
-      variable: chosen.key,
-      period,
-      adjusted: chosen.key !== request.variable || period !== request.period,
-    };
-  }
-
-  function applyPresetV126(presetId: PublicMapWorkspacePresetIdV126) {
-    const workspace = createPublicMapWorkspaceStateV126(presetId);
-    const contextCandidates = publicMapPresetContextCandidatesV133(presetId);
-    const available = new Set(
-      layers.filter((layer) => layer.enabled !== false).map((layer) => layer.elementId)
-    );
-    if (!available.has(workspace.primary.elementId)) {
-      setRoleNotice("이 추천 분석의 데이터를 사용할 수 없습니다.");
-      return;
-    }
-    // V138: a preset card names its combination, and the map draws exactly
-    // that. The card promising "송전망 + 발전소" used to draw the grid alone.
-    const contexts = contextCandidates.filter((item) =>
-      available.has(item.elementId)
-    );
-    const primaryChoice = resolvePresetSelectorV137(workspace.primary);
-    const contextChoices = contexts.map((item) => ({
-      elementId: item.elementId,
-      ...resolvePresetSelectorV137(item),
-    }));
-    const adjusted = [primaryChoice, ...contextChoices].some((item) => item.adjusted);
-    const nextSelectors = {
-      ...selectorByElement,
-      [workspace.primary.elementId]: {
-        variable: primaryChoice.variable,
-        period: primaryChoice.period,
-      },
-      ...Object.fromEntries(
-        contextChoices.map((item) => [
-          item.elementId,
-          { variable: item.variable, period: item.period },
-        ])
-      ),
-    };
-    setSelectorByElement(nextSelectors);
-    setFilters({});
-    setActiveIds([
-      workspace.primary.elementId,
-      ...contexts.map((item) => item.elementId),
-    ]);
-    setHiddenIdsV138([]);
-    setFocusId(workspace.primary.elementId);
-    setSelectedPresetId(presetId);
-    setSelected(null);
-    setSelectedSpatial(null);
-    setOverlapChoicesV133([]);
-    setLastEnabledContextIdV133(
-      contexts.length ? contexts[contexts.length - 1].elementId : null
-    );
-    if (presetId === "CLIMATE_FINANCE_PROJECTS") {
-      setFinanceTypeV133("adaptation");
-    }
-    const presetLabel =
-      PUBLIC_MAP_WORKSPACE_PRESETS_V126.find((item) => item.id === presetId)?.labelKo ||
-      "분석";
-    const drawn = [workspace.primary.elementId, ...contexts.map((item) => item.elementId)]
-      .map((id) =>
-        publicMapLayerTitleV126(
-          id,
-          layers.find((layer) => layer.elementId === id)?.publicShortTitle
-        )
-      )
-      .join(" + ");
-    setRoleNotice(
-      adjusted
-        ? // Saying so beats letting a reader believe they are looking at the
-          // period the preset names. This is how the broken FOREST_CHANGE
-          // preset stayed invisible: it asked for a variable and a year the
-          // layer no longer had, and the map simply drew nothing.
-          `${presetLabel}: ${drawn} · 이 자료가 제공하는 지표·기간으로 맞췄습니다.`
-        : `${presetLabel}: ${drawn}을(를) 표시했습니다. 색상 지도는 첫 번째 자료입니다.`
-    );
-    const primaryLayer = layers.find(
-      (layer) => layer.elementId === workspace.primary.elementId
-    );
-    if (primaryLayer) {
-      onSelectorStateChange(
-        dataFinderSelectorFromMapV125(
-          primaryLayer.elementId,
-          nextSelectors[primaryLayer.elementId],
-          {}
-        )
-      );
-    }
-    fitSelectedCountry();
-  }
 
   function clearWorkspaceV126() {
     setActiveIds([]);
@@ -5589,7 +5333,7 @@ export default function RealMapExplorerPage({
     setSelectedPresetId(null);
     setOverlapChoicesV133([]);
     setLastEnabledContextIdV133(null);
-    setRoleNotice("분석 데이터를 지웠습니다. 추천 분석을 선택해 시작하세요.");
+    setRoleNotice("선택을 해제했습니다. 데이터 목록에서 자료를 선택하세요.");
   }
 
   function applyFinanceTypeV133(type: "adaptation" | "carbon") {
@@ -5903,33 +5647,6 @@ export default function RealMapExplorerPage({
             </button>
           </div>
 
-          <section className="cdp-map-presets" aria-labelledby="map-preset-title">
-            <h2 id="map-preset-title">추천 분석</h2>
-            {!primaryLayerId && (
-              <p className="cdp-map-preset-guide" role="note">
-                배경지도와 63개 성·시 경계가 준비됐습니다. 아래 추천 분석을
-                선택하거나 지도 데이터에서 직접 고르세요.
-              </p>
-            )}
-            <div className="cdp-map-preset-scroll">
-              {PUBLIC_MAP_WORKSPACE_PRESETS_V126.map((preset) => (
-                <button
-                  key={preset.id}
-                  type="button"
-                  className={`cdp-map-preset-card ${
-                    selectedPresetId === preset.id ? "is-active" : ""
-                  }`}
-                  data-testid="map-analysis-preset"
-                  data-preset-id={preset.id}
-                  aria-pressed={selectedPresetId === preset.id}
-                  onClick={() => applyPresetV126(preset.id)}
-                >
-                  <strong>{preset.labelKo}</strong>
-                  <span>{preset.descriptionKo}</span>
-                </button>
-              ))}
-            </div>
-          </section>
 
           <section
             className="cdp-map-catalog-v138"
@@ -7416,6 +7133,7 @@ export default function RealMapExplorerPage({
             </div>
           )}
           <span className="cdp-map-public-attribution">
+            {backdropEnabledV150 && <><a href="https://openfreemap.org/" target="_blank" rel="noreferrer">OpenFreeMap</a> · <a href="https://openmaptiles.org/" target="_blank" rel="noreferrer">© OpenMapTiles</a> · <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap</a> | </>}
             <a
               href="https://www.naturalearthdata.com/"
               target="_blank"
@@ -7433,6 +7151,10 @@ export default function RealMapExplorerPage({
             </a>{" "}
             · 베트남 63개 성·시 (CC BY 4.0)
           </span>
+          <div className="cdp-map-backdrop-v150">
+            <label><input type="checkbox" checked={backdropEnabledV150} onChange={event => setBackdropEnabledV150(event.target.checked)} />배경지도</label>
+            {backdropEnabledV150 && backdropErrorV150 && <span role="status">배경지도를 불러오지 못했습니다. 데이터와 경계는 계속 볼 수 있습니다.</span>}
+          </div>
           <div className="cdp-map-status-badge">
             {baseMapStatus === "ready"
               ? "지도 사용 가능"
@@ -7446,7 +7168,7 @@ export default function RealMapExplorerPage({
                 text={
                   focusedLayer
                     ? focusedPublicCopy?.titleKo || ""
-                    : "추천 분석을 선택하세요"
+                    : "지도 데이터를 선택하세요"
                 }
               />
             </strong>
@@ -7831,7 +7553,7 @@ export default function RealMapExplorerPage({
           <div className="cdp-map-panel-header">
             <div>
               <h2>지도 분석</h2>
-              <p>전국 현황과 선택한 항목을 함께 확인하세요.</p>
+              <p>선택한 대상의 정보와 자료 내 분포를 확인하세요.</p>
             </div>
             <button
               type="button"
@@ -7861,7 +7583,7 @@ export default function RealMapExplorerPage({
                   the grid); this metadata block is the 자료정보 of the
                   analysis and sits last, folded once a feature is selected. */}
               <section data-testid="map-current-analysis" className="cdp-map-current-analysis-v140">
-                <details open={!selectedSpatial && !selected}>
+                <details>
                   <summary><h3>자료정보 · 현재 분석</h3></summary>
                 <div className="cdp-evidence-grid">
                   <Evidence label="데이터명" value={focusedPublicCopy?.titleKo || ""} />
@@ -7883,6 +7605,7 @@ export default function RealMapExplorerPage({
                       row of its own when it says something the item did not. */}
                   {(() => {
                     const item =
+                      focusedLayer.analysisItemLabel ||
                       focusedVariablePresentationV129?.label ||
                       focusedSemantic?.measureLabel ||
                       focusedLayer.legend.title;
@@ -7906,12 +7629,6 @@ export default function RealMapExplorerPage({
                           focusedLayer.unit
                     }
                   />
-                  {focusedLayer.mapTargetV138 && (
-                    <Evidence
-                      label="공간 단위"
-                      value={`${focusedLayer.mapTargetV138.sourceSpatialUnit} → ${focusedLayer.mapTargetV138.displaySpatialUnit}`}
-                    />
-                  )}
                   {focusedVariablePresentationV129?.directionLabel && (
                     <Evidence
                       label="값 해석"
@@ -7951,15 +7668,32 @@ export default function RealMapExplorerPage({
                 )}
 
               <section data-testid="map-national-summary">
-                <h3>전국 요약</h3>
+                <h3>{["admin1-choropleth", "partial-choropleth"].includes(rendererOf(focusedLayer)) ? "지역별 비교" : "현재 표시 자료 요약"}</h3>
+                <p className="map148-summary-context">{focusedPublicCopy?.titleKo} · {layerDisplayedPeriodV142(focusedLayer, filters, focusedSelector.period)}{focusedVariable && focusedVariable.key !== "locations" ? ` · ${focusedVariablePresentationV129?.label || focusedVariable.label}` : ""}</p>
                 <div className="cdp-map-summary-list">
-                  {focusedAnalysisV126.summaryRows.map((row, index) => (
+                  {focusedAnalysisV126.summaryRows.filter((row) => !/행$|지도 미표시|위치자료 미확보|필터로 가려진|근사 위치/u.test(row.label)).map((row, index) => (
                     <div key={`${row.label}:${index}`}>
                       <span>{row.label}</span>
                       <strong>{row.value}</strong>
                     </div>
                   ))}
                 </div>
+                {focusedAnalysisV126.summaryRows.some((row) => /행$|지도 미표시|위치자료 미확보|필터로 가려진|근사 위치/u.test(row.label)) && <details className="map148-secondary">
+                  <summary>자료 범위 확인</summary>
+                  <dl>{focusedAnalysisV126.summaryRows.filter((row) => /행$|지도 미표시|위치자료 미확보|필터로 가려진|근사 위치/u.test(row.label)).map((row) => <div key={row.label}><dt>{row.label}</dt><dd>{row.value}</dd></div>)}</dl>
+                </details>}
+                {focusedAnalysisV126.capacityRows.length > 0 && <figure className="map148-capacity">
+                  <table data-testid="map-fuel-capacity-v148">
+                    <caption>발전원별 시설 수·설비용량</caption>
+                    <thead><tr><th scope="col">발전원</th><th scope="col">시설</th><th scope="col">설비용량(MW)</th></tr></thead>
+                    <tbody>{focusedAnalysisV126.capacityRows.map((row) => <tr key={row.label}>
+                      <th scope="row">{row.label}</th><td>{row.count}</td><td>{row.knownCapacity ? formatPublicNumberV126(row.capacity, "MW") : "미기재"}
+                        <span className="map148-capacity-bar" aria-hidden="true"><b style={{ width: `${row.capacity / Math.max(1, ...focusedAnalysisV126.capacityRows.map((r) => r.capacity)) * 100}%` }} /></span>
+                      </td>
+                    </tr>)}</tbody>
+                  </table>
+                  <p className="map148-summary-context">선택한 출처에 수록된 시설 기준입니다. 국가 전체의 설비용량을 뜻하지는 않습니다.</p>
+                </figure>}
                 {focusedAnalysisV126.summaryRows.some((row) => row.derived) && (
                   <p className="cdp-map-derived-note">
                     중앙값은 값이 있는
@@ -8058,7 +7792,7 @@ export default function RealMapExplorerPage({
                       <Evidence
                         label="상태"
                         value={publicMapFeatureNameV126(
-                          selectedSpatial.properties.status,
+                          selectedSpatial.properties.status === "Project Under Implementation" ? "사업 이행 중" : selectedSpatial.properties.status,
                           "미표기"
                         )}
                       />
@@ -8089,7 +7823,7 @@ export default function RealMapExplorerPage({
                           ("7,000,000 USD"); a text amount is shown as stated,
                           a bare number as USD. */}
                       <Evidence
-                        label="승인액"
+                        label="사업 전체 승인액"
                         value={
                           optionalFiniteNumberV130(
                             selectedSpatial.properties.approvedAmount
@@ -8127,14 +7861,7 @@ export default function RealMapExplorerPage({
                       {/* The scope polygon carries no point of its own; the
                           project's verified activity sites are the points
                           drawn beside it, and that is what is counted. */}
-                      <Evidence
-                        label="좌표 처리"
-                        value={`원천 좌표 ${
-                          optionalFiniteNumberV130(
-                            selectedSpatial.properties.sourceCoordinateCount
-                          ) ?? "미표기"
-                        }개 · 검증된 세부 활동지역 점 ${selectedProjectSitePointsV139}개 표시`}
-                      />
+                      <Evidence label="확인된 활동지역" value={`${selectedProjectSitePointsV139}곳`} />
                       <Evidence
                         label="공간 해석 유의"
                         value={publicMapFeatureNameV126(
@@ -8172,13 +7899,14 @@ export default function RealMapExplorerPage({
                       <Evidence
                         label="항목"
                         value={
-                          selectedOwningVariablePresentationV129?.label ||
+                          publicTextV126(selectedSpatial.properties.variableLabel) ||
                           selectedSpatial.variableLabel ||
+                          selectedOwningVariablePresentationV129?.label ||
                           selectedOwningSemantic?.measureLabel ||
                           selectedOwningLayer.legend.title
                         }
                       />
-                      <Evidence
+                      {selectedOwningLayer.elementId !== "A-024" && <Evidence
                         label="값"
                         value={
                           selectedSpatial.value === null ||
@@ -8193,8 +7921,8 @@ export default function RealMapExplorerPage({
                                 ? " / 100"
                                 : "")
                         }
-                      />
-                      <Evidence
+                      />}
+                      {selectedOwningLayer.elementId !== "A-024" && <Evidence
                         label="단위"
                         value={
                           selectedOwningVariablePresentationV129?.unit ||
@@ -8203,7 +7931,7 @@ export default function RealMapExplorerPage({
                           selectedOwningVariable?.unit ||
                           selectedOwningLayer.unit
                         }
-                      />
+                      />}
                       <Evidence
                         label="자료연도"
                         value={
@@ -8211,7 +7939,8 @@ export default function RealMapExplorerPage({
                             ? layerDisplayedPeriodV142(selectedOwningLayer, filters, selectedOwningSelector?.period || "")
                             : selectedSpatial.period ||
                               selectedOwningSelector?.period ||
-                              ""
+                              selectedOwningLayer.selectors?.defaultPeriod ||
+                              String(selectedOwningLayer.latestYear || "")
                         }
                       />
                       {selectedOwningVariablePresentationV129?.directionLabel && (
@@ -8305,14 +8034,25 @@ export default function RealMapExplorerPage({
                               key === "voltageKv"
                                 ? `${formatValueV121(value)} kV`
                                 : key === "lengthKm"
-                                ? `${formatValueV121(value)} km`
+                                ? `${formatPublicNumberV126(Number(value), "km")} km`
                                 : String(value) === "existing"
                                 ? "운영 중"
                                 : publicTextV126(formatValueV121(value)) || "미표기"
                             }
                           />
                         ))}
-                      <Evidence label="출처" value={publicSourceOrganizationV136_1(selectedOwningLayer.source) || ""} />
+                      <Evidence label="출처" value={mapIndicatorSourceV148(String(selectedSpatial.properties.sourceIndicatorId || ""), selectedSpatial.adm1Code ? "" : selectedOwningLayer.source)} />
+                      {/* What the symbol stands for on the ground (V138 map contract). */}
+                      <Evidence
+                        label="지도 표시"
+                        value={`${publicMapTargetV138(selectedOwningLayer.elementId)?.displaySpatialUnit || "기호"} · ${
+                          selectedSpatial.adm1Code
+                            ? "성·시 경계 값"
+                            : rendererOf(selectedOwningLayer) === "line"
+                            ? "선로 경로 좌표"
+                            : "위치 좌표"
+                        }`}
+                      />
                     </div>
                     {selectedOwningLayer.sharedObjectsWith && selectedMemberRecordsV138.length === 0 && (
                       <p className="cdp-map-region-trend-v132__notice" data-testid="map-shared-register-note-v138">
@@ -8330,7 +8070,7 @@ export default function RealMapExplorerPage({
                         <h5>
                           {selectedOwningLayer.sharedObjectKind === "document"
                             ? "이 지역의 문서"
-                            : "이 지역의 원천 행"}{" "}
+                            : "이 지역의 수록 자료"}{" "}
                           {selectedMemberRecordsV138.length.toLocaleString()}건
                         </h5>
                         <ul>
@@ -8439,7 +8179,7 @@ export default function RealMapExplorerPage({
                     }
                   >
                     <h4>{selectedEntityTitleResolutionV131?.title}</h4>
-                    {selectedApproximateV138 && <p className="cdp-map-region-trend-v132__notice">소재 지역을 나타내는 점이며, 건물 위치는 아닙니다.</p>}
+                    {selectedApproximateV138 && <p className="cdp-map-region-trend-v132__notice">{["B-023", "B-025", "B-028"].includes(selected.elementId) ? "유역의 대표 위치입니다. 유역 경계나 영향 범위를 나타내지 않습니다." : "소재 지역을 나타내는 점이며, 건물 위치는 아닙니다."}</p>}
                     <div className="cdp-evidence-grid">
                       {selectedEntityTitleResolutionV131?.secondaryNote && (
                         <Evidence
@@ -8454,93 +8194,13 @@ export default function RealMapExplorerPage({
                           selectedLayer.publicShortTitle
                         )}
                       />
-                      {selectedPowerPlantFactsV132 ? (
-                        <div
-                          className="cdp-map-a023-key-facts-v132"
-                          data-testid="a023-map-selected-key-facts-v132"
-                        >
-                          <Evidence
-                            label="발전원"
-                            value={selectedPowerPlantFactsV132.fuel || ""}
-                          />
-                          <Evidence
-                            label="용량"
-                            value={selectedPowerPlantFactsV132.capacity || ""}
-                          />
-                          <Evidence
-                            label="상태"
-                            value={selectedPowerPlantFactsV132.status || ""}
-                          />
-                          <Evidence
-                            label="자료연도"
-                            value={selectedPowerPlantFactsV132.year || ""}
-                          />
-                        </div>
-                      ) : (
-                        <>
-                          <Evidence
-                            label="항목"
-                            value={
-                              selectedLayer.analysisItemLabel ||
-                              selectedOwningVariablePresentationV129?.label ||
-                              selectedOwningSemantic?.measureLabel ||
-                              selectedLayer.legend.title
-                            }
-                          />
-                          <Evidence
-                            label="기준연도"
-                            value={
-                              selected.provenance.referenceYear ||
-                              String(selectedLayer.latestYear || "미표기")
-                            }
-                          />
-                          {selectedMembersV138.length > 1 && (
-                            <Evidence
-                              label={`${selectedLayer.featureIdentity?.memberLabel || "연결된 원천 행"}`}
-                              value={`${selectedMembersV138.length.toLocaleString()}행을 이 ${
-                                selectedLayer.featureIdentity?.label || "객체"
-                              } 하나로 묶어 표시`}
-                            />
-                          )}
-                        </>
-                      )}
-                      {!selectedPowerPlantFactsV132 &&
-                        layerFactFieldsV137(selectedLayer).map((fact) => {
-                        // The value is read through the layer's own contract,
-                        // which names the source column each fact lives in. The
-                        // old lookup used one fixed field name per layer, so a
-                        // mine's 광종 - present in every record - rendered as
-                        // nothing and the row below reported it as 원천 미제공.
-                        const value = factValueV137(
-                          fact,
-                          (selected.normalizedAttributes || {}) as Record<string, unknown>
-                        );
-                        if (value === null || value === undefined) return null;
-                        const hasNumericValue =
-                          (typeof value === "number" && Number.isFinite(value)) ||
-                          (typeof value === "string" &&
-                            value.trim() !== "" &&
-                            Number.isFinite(Number(value)));
-                        const looksLikeYear =
-                          hasNumericValue &&
-                          Number.isInteger(Number(value)) &&
-                          Number(value) >= 1800 &&
-                          Number(value) <= 2200 &&
-                          /year|연도|date|일$/iu.test(`${fact.key} ${fact.label}`);
-                        const safeValue = looksLikeYear
-                          ? String(Number(value))
-                          : fact.unit && hasNumericValue
-                            ? `${formatPublicNumberV126(Number(value), fact.unit)} ${fact.unit}`
-                            : publicTextV126(formatValueV121(value));
-                        if (!safeValue) return null;
-                        return (
-                          <Evidence
-                            key={fact.key}
-                            label={factLabelV137(selectedLayer, fact.key)}
-                            value={safeValue}
-                          />
-                        );
-                        })}
+                      <div className="cdp-map-a023-key-facts-v132"
+                        data-testid={selected.elementId === "A-023" ? "a023-map-selected-key-facts-v132" : "map-selected-facts-v148"}>
+                        {mapFactsV148(selectedLayer, selected.normalizedAttributes || {})
+                          .filter((fact) => !["sourceLabel", "referenceYear"].includes(fact.key))
+                          .map((fact) => <Evidence key={fact.key} label={fact.label} value={fact.value} />)}
+                        <Evidence label="자료연도" value={["B-023", "B-028"].includes(selected.elementId) ? "관측값별 시점 참조" : String(selected.provenance.referenceYear || selectedLayer.selectors?.defaultPeriod || selectedLayer.latestYear || "")} />
+                      </div>
                       {selectedMemberFactsV138.map((fact) => (
                         <Evidence
                           key={fact.label}
@@ -8552,8 +8212,9 @@ export default function RealMapExplorerPage({
                           note ("attr_19 참조"); the organisations stay. */}
                       <Evidence
                         label="출처"
-                        value={publicSourceOrganizationV136_1(selected.provenance.sourceOrg) || ""}
+                        value={mapIndicatorSourceV148(selected.indicatorId, selected.provenance.sourceOrg || "")}
                       />
+                      <Evidence label="지도 표시" value={`${publicMapTargetV138(selected.elementId)?.displaySpatialUnit || "기호"} · 위치 좌표`} />
                     </div>
                     {selectedMemberSeriesV138 && (
                       <section
@@ -8644,7 +8305,7 @@ export default function RealMapExplorerPage({
           ) : (
             <div className="cdp-evidence-empty">
               <h3>분석을 시작하세요</h3>
-              <p>추천 분석이나 지도 데이터를 선택하면 전국 요약과 상세정보가 여기에 표시됩니다.</p>
+              <p>지도 데이터를 선택하면 지역별 비교와 상세정보가 표시됩니다.</p>
             </div>
           )}
         </aside>
@@ -8661,7 +8322,7 @@ function Evidence({ label, value }: { label: string; value: string }) {
         <PublicTermTextV134 text={label} />
       </span>
       <strong>
-        <PublicTermTextV134 text={value} />
+        {isHttpUrlV121(value) ? <a href={value} target="_blank" rel="noreferrer">공식 원문</a> : <PublicTermTextV134 text={value} />}
       </strong>
     </div>
   );

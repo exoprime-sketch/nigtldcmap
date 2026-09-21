@@ -261,9 +261,12 @@ try {
 const expectedSequence = [24, 48, 72, 96, 120, 144, 152];
 const sequenceMatches =
   JSON.stringify(sequence) === JSON.stringify(expectedSequence);
+// V149 adds a passive, rAF-throttled scroll listener that only records the
+// reader's place for the return trip; revealing the next batch must still be
+// the observer's job, so a scroll handler that grows the list is what fails.
 const usesObserver =
   /new IntersectionObserver\(/u.test(finderSource) &&
-  !/addEventListener\(\s*["']scroll["']/u.test(finderSource);
+  !/addEventListener\(\s*["']scroll["'][\s\S]{0,600}setVisibleCount/u.test(finderSource);
 const responsiveGrew = responsive.filter(
   (row) => (row.revealed || []).length < 2 || row.revealed[1] <= row.revealed[0]
 );

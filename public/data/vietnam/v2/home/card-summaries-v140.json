@@ -1,7 +1,7 @@
 {
  "schemaVersion": "v140-card-summaries-1",
  "dataSnapshot": "2026-08-27T00:00:00Z",
- "generatedAt": "2026-09-17T03:58:55.610Z",
+ "generatedAt": "2026-09-21T01:46:28.304Z",
  "generatedFrom": {
   "bundleIndex": "packs/bundle-index-v124.json",
   "semantics": "semantic/element-visualization-contracts-v125.json",
@@ -1223,7 +1223,7 @@
    "kind": "composition",
    "headline": {
     "value": "582.7",
-    "label": "Mt CO₂eq · 2024년 네 가스 합계"
+    "label": "MtCO₂e · 2024년 네 가스 합계"
    },
    "preview": {
     "home": true
@@ -1243,7 +1243,7 @@
    "measure": {
     "key": "measure-165d8811fba3",
     "label": "가스별 배출량",
-    "unit": "Mt CO2eq"
+    "unit": "MtCO₂e"
    },
    "fromHome": true,
    "provider": "European Commission JRC · EDGAR",
@@ -1272,8 +1272,8 @@
    "title": "GHG 배출량[에너지, 산업공정, 농업, 폐기물]",
    "kind": "composition",
    "headline": {
-    "value": "202 Mt CO2eq",
-    "label": "발전 · 2024년 · 9개 부분 합계 584 Mt CO2eq"
+    "value": "202 MtCO₂e",
+    "label": "발전 · 2024년 · 9개 부분 합계 584 MtCO₂e"
    },
    "preview": {
     "parts": [
@@ -1302,7 +1302,7 @@
       "value": 25.1382144075
      }
     ],
-    "unit": "Mt CO2eq",
+    "unit": "MtCO₂e",
     "scope": "2024년",
     "omitted": 3,
     "total": 584.292269901
@@ -1317,12 +1317,12 @@
    },
    "basis": {
     "unit": "관측값",
-    "rule": "부문별 배출량(Mt CO2eq)을 2024년 기준으로 9개 항목에서 비교 · 합계 행 제외"
+    "rule": "부문별 배출량(MtCO₂e)을 2024년 기준으로 9개 항목에서 비교 · 합계 행 제외"
    },
    "measure": {
     "key": "measure-8f3f26173c00",
     "label": "부문별 배출량",
-    "unit": "Mt CO2eq"
+    "unit": "MtCO₂e"
    },
    "provider": "European Commission, Joint Research Centre (JRC) — EDGAR",
    "mapConnected": false,
@@ -1359,7 +1359,7 @@
    "elementId": "A-012",
    "title": "총 GHG 배출량(LULUCF 제외)",
    "headline": {
-    "value": "584 Mt CO2eq",
+    "value": "584 MtCO₂e",
     "label": "총 GHG 배출량 · LULUCF 제외 · 2024년"
    },
    "period": "1970–2024년",
@@ -1373,7 +1373,7 @@
    "measure": {
     "key": "measure-31c014917117",
     "label": "총 GHG 배출량",
-    "unit": "Mt CO2eq"
+    "unit": "MtCO₂e"
    },
    "kind": "line",
    "preview": {
@@ -1599,7 +1599,7 @@
       "value": 584.25762297743
      }
     ],
-    "unit": "Mt CO2eq",
+    "unit": "MtCO₂e",
     "seriesLabel": "LULUCF 제외 · 국가 전체 온실가스 총배출량",
     "first": {
      "year": 1970,
@@ -1612,7 +1612,7 @@
    },
    "basis": {
     "unit": "관측값",
-    "rule": "총 GHG 배출량(Mt CO2eq) LULUCF 제외 · 국가 전체 온실가스 총배출량 계열 · 55개 연도 · 최신 2024년 값을 대표값으로"
+    "rule": "총 GHG 배출량(MtCO₂e) LULUCF 제외 · 국가 전체 온실가스 총배출량 계열 · 55개 연도 · 최신 2024년 값을 대표값으로"
    },
    "provider": "European Commission, Joint Research Centre (JRC) — EDGAR",
    "mapConnected": false,

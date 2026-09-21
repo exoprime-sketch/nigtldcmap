@@ -1,5 +1,6 @@
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import "./detail-analysis-v146.css";
+import { displayUnitV150 } from "../../../data/visualization/unitDisplayV150";
 
 export interface AnalysisSummaryRowV146 {
   key?: string;
@@ -26,7 +27,7 @@ export default function AnalysisSummaryTableV146({ title = "집계표", rows }: 
             <tr key={`${row.label}-${index}`} data-summary-key={row.key}>
               <th scope="row"><PublicTermTextV134 text={row.label} /></th>
               <td data-summary-value="true">{typeof row.value === "number" ? row.value.toLocaleString("ko-KR", { maximumFractionDigits: 6 }) : row.value}</td>
-              <td><PublicTermTextV134 text={row.unit || "—"} /></td>
+              <td><PublicTermTextV134 text={displayUnitV150(row.unit) || "—"} /></td>
               <td><PublicTermTextV134 text={row.context || "—"} /></td>
             </tr>
           ))}</tbody>

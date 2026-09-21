@@ -6,6 +6,8 @@ import type { SemanticObservationV125 } from "../../../data/visualization/semant
 import type { DataFinderSelectorStateV125 } from "../../../types/dataFinderV125";
 import { publicMeasureLabelV126 } from "../../../data/visualization/publicCopyRegistryV126";
 import "./public-composition-trend-v132.css";
+import { displayUnitV150 } from "../../../data/visualization/unitDisplayV150";
+import ChartAxesV150 from "../../charts/ChartAxesV150";
 
 interface Props {
   elementId: string;
@@ -124,7 +126,7 @@ export default function PublicCompositionTrendAnalysisV132({
       groups.set(key, {
         key,
         label: publicMeasureLabelV126(row.semanticMeasure.labelKo),
-        unit: row.semanticMeasure.unit || "—",
+        unit: displayUnitV150(row.semanticMeasure.unit) || "—",
         numericCount:
           (current?.numericCount || 0) + (isNumericCompositionRowV132(row) ? 1 : 0),
       });
@@ -157,7 +159,7 @@ export default function PublicCompositionTrendAnalysisV132({
   const timeSeries = displayedSeries.map<TimeSeriesV127>((series, index) => ({
     id: series.publicKey,
     label: series.label,
-    unit: selectedMeasure?.unit || "—",
+    unit: displayUnitV150(selectedMeasure?.unit) || "—",
     marker: (["circle", "square", "diamond", "triangle", "cross"] as const)[index % 5],
     linePattern: (["solid", "dash", "dot", "long-dash"] as const)[index % 4],
     points: series.rows.map((row) => ({
@@ -350,6 +352,7 @@ export default function PublicCompositionTrendAnalysisV132({
           ) : null}
         </header>
 
+        <ChartAxesV150 x="값(막대 길이)" y="계열" unit={selectedMeasure.unit} />
         <div className="pct132__bars" role="list" aria-label={`${selectedYear || "선택"}년 계열별 값`}>
           {selectedYearRows.map((item) => (
             <div

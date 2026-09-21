@@ -7,8 +7,8 @@ describe("map overlap popup DOM", () => {
   it("leads with the data title and value, with place and time below", () => {
     const popup = createMapOverlapPopupV145([summary]);
     expect(popup.querySelector("strong")?.textContent).toBe("재생에너지 지역계획");
-    expect(popup.querySelector("b")?.textContent).toBe("250 MW(메가와트)");
-    expect(popup.querySelector('[data-public-term-expansion-v134="true"]')?.textContent).toBe("(메가와트)");
+    expect(popup.querySelector("b")?.textContent).toBe("250 MW");
+    expect(popup.querySelector('[data-public-term-expansion-v134="true"]')).toBeNull();
     expect(popup.textContent).toContain("Hà Tĩnh2025-2030");
     expect(popup.textContent).not.toContain("개 데이터");
   });

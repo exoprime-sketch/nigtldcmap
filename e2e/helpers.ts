@@ -102,3 +102,41 @@ export async function revealMapDataset(page: Page, elementId: string) {
   await input.scrollIntoViewIfNeeded();
   return input;
 }
+
+/**
+ * The layer combinations the removed recommended-analysis buttons used to
+ * draw (V150). Same fixture as scripts/v150/map-combinations.mjs, kept in TS
+ * because Playwright transpiles specs as CommonJS.
+ */
+export const MAP_COMBINATIONS_V150: Record<string, string[]> = {
+  POWER_INFRASTRUCTURE: ["A-024", "A-023"],
+  RENEWABLE_PLANNING: ["C-016", "A-024", "A-023"],
+  FOREST_CHANGE: ["B-033", "B-031", "B-034"],
+  CLIMATE_VULNERABILITY: ["B-021", "D-008", "D-018"],
+  CLIMATE_FINANCE_PROJECTS: ["D-018", "C-025"],
+};
+
+/** The shared URL that opens a combination with each layer's published variable and period. */
+export function combinationUrl(id: string): string {
+  const ids = MAP_COMBINATIONS_V150[id];
+  if (!ids) throw new Error(`Unknown combination ${id}`);
+  const index = JSON.parse(readFileSync(resolve(BUILD, "data/vietnam/v2/map-index.json"), "utf8")) as {
+    layers: Array<{ elementId: string; selectors: { defaultVariable: string; defaultPeriod: string } }>;
+  };
+  const selectors: Record<string, { variable: string; period: string }> = {};
+  for (const elementId of ids) {
+    const layer = index.layers.find((item) => item.elementId === elementId);
+    if (!layer) throw new Error(`Missing layer ${elementId}`);
+    selectors[elementId] = { variable: layer.selectors.defaultVariable, period: layer.selectors.defaultPeriod };
+  }
+  const params = new URLSearchParams({
+    country: "VNM",
+    layers: ids.join(","),
+    primaryLayer: ids[0],
+    focusLayer: ids[0],
+    contextLayers: ids.slice(1).join(","),
+    mapPreset: id,
+    mapSelectors: JSON.stringify(selectors),
+  });
+  return `/?${params.toString()}#map`;
+}

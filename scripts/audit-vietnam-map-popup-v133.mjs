@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { selectCombinationV150 } from "./v150/map-combinations.mjs";
 
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
@@ -40,15 +41,7 @@ const expectedRankByRegion = Object.fromEntries(
 const mapSource = readFileSync(resolve(PROJECT_ROOT, "src/pages/RealMapExplorerPage.tsx"), "utf8");
 
 async function selectClimatePreset(cdp) {
-  const clicked = await evaluateValue(
-    cdp,
-    `(() => {
-      const button = document.querySelector('[data-testid="map-analysis-preset"][data-preset-id="CLIMATE_VULNERABILITY"]');
-      if (!(button instanceof HTMLButtonElement)) return false;
-      button.click();
-      return true;
-    })()`
-  );
+  const clicked = await selectCombinationV150(cdp, "CLIMATE_VULNERABILITY");
   if (!clicked) throw new Error("climate vulnerability preset unavailable");
   await waitForValue(
     cdp,

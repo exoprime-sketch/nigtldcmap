@@ -48,6 +48,9 @@ const mapFeatureOrScopeCount = layers.reduce(
   0
 );
 const mapSource = readFileSync(resolve(PROJECT_ROOT, "src/pages/RealMapExplorerPage.tsx"), "utf8");
+// V148 builds the popup in its own module; the A-023 tooltip hook lives there.
+const popupSource = readFileSync(resolve(PROJECT_ROOT, "src/components/map/mapFeaturePopupV148.ts"), "utf8");
+const tooltipHookPresent = mapSource.includes('testId: "a023-map-tooltip-v132"') || popupSource.includes('testid = "a023-map-tooltip-v132"');
 const mapCopyResult = readJson(resolve(PROJECT_ROOT, "reports/v131/map-copy-audit-v131.json"));
 const mapCopySummary = mapCopyResult.value?.summary || {};
 const a023DownloadResult = readJson(
@@ -202,11 +205,11 @@ audit.check(
 audit.check(
   "A023_TOOLTIP_PUBLIC_TITLE_RESOLVER",
   mapSource.includes("resolvePublicMapEntityTitleV131") &&
-    mapSource.includes('testId: "a023-map-tooltip-v132"') &&
+    tooltipHookPresent &&
     mapSource.includes("publicPowerPlantFactsV132"),
   {
     resolver: mapSource.includes("resolvePublicMapEntityTitleV131"),
-    tooltipHook: mapSource.includes('testId: "a023-map-tooltip-v132"'),
+    tooltipHook: tooltipHookPresent,
     facts: mapSource.includes("publicPowerPlantFactsV132"),
   },
   { resolver: true, tooltipHook: true, facts: true }

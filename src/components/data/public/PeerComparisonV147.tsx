@@ -3,13 +3,14 @@ import { publicDimensionValueV134 } from "../../../data/visualization/publicCopy
 import { publicIndicatorSeriesV144 } from "../../../data/visualization/publicIndicatorCopyV144";
 import { formatValueV121 } from "../../../utils/vietnamActualV121";
 import { AnalysisBarsV147 } from "./AnalysisChartsV147";
+import { displayUnitV150 } from "../../../data/visualization/unitDisplayV150";
 
 /** Peers are supplied by the caller under the same measure/time/other filters.
  * Do not group/average rows or sum parent and child categories. */
 export default function PeerComparisonV147({ rows, selectedIds }: { rows: SemanticObservationV125[]; selectedIds: string[] }) {
   const numeric = rows.filter((r): r is SemanticObservationV125 & {value:number} => typeof r.value === "number" && Number.isFinite(r.value));
   if (numeric.length < 2 || new Set(numeric.map((r) => `${r.unit}|${r.year}|${r.period}`)).size !== 1) return null;
-  const unit = numeric[0].unit || numeric[0].semanticMeasure.unit;
+  const unit = displayUnitV150(numeric[0].unit || numeric[0].semanticMeasure.unit);
   const label = (r: SemanticObservationV125) => publicDimensionValueV134("category", r.dimensionLabels.category || r.dimensions.category || publicIndicatorSeriesV144(r));
   const definitions = Array.from(new Set(numeric.map((r) => r.dimensions.detail).filter(Boolean)));
   return <section className="detail146 analysis147-block" data-testid="peer-comparison-v147">

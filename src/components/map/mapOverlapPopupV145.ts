@@ -1,5 +1,4 @@
 import type { MapOverlapSummaryV145 } from "../../data/map/publicMapOverlapV145";
-import { tokenizePublicTermsV134 } from "../../utils/publicTermTokenizerV134";
 
 /** DOM text only: feature names are data, never popup markup. */
 export function createMapOverlapPopupV145(summaries: MapOverlapSummaryV145[]): HTMLDivElement {
@@ -10,22 +9,7 @@ export function createMapOverlapPopupV145(summaries: MapOverlapSummaryV145[]): H
   const append = (parent: HTMLElement, tag: string, text: string, className?: string) => {
     if (!text) return;
     const node = document.createElement(tag);
-    tokenizePublicTermsV134(text, { firstOccurrenceOnly: false }).forEach((token) => {
-      if (token.type === "text") {
-        node.appendChild(document.createTextNode(token.value));
-      } else {
-        const term = document.createElement("span");
-        term.dataset.publicTermV134 = token.entry.id;
-        term.dataset.publicTermMode = "visible-expansion";
-        term.appendChild(document.createTextNode(token.value));
-        const expansion = document.createElement("span");
-        expansion.dataset.publicTermExpansionV134 = "true";
-        expansion.className = "public-term-visible-expansion-v134";
-        expansion.textContent = `(${token.entry.koreanName})`;
-        term.appendChild(expansion);
-        node.appendChild(term);
-      }
-    });
+    node.textContent = text;
     if (className) node.className = className;
     parent.appendChild(node);
   };

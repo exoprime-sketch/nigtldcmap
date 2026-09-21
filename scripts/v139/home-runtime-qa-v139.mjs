@@ -67,7 +67,7 @@ const measure = () => {
     duplicateFunctionCards,
     nestedControls,
     mapEngine: Boolean(document.querySelector(".maplibregl-map, .maplibregl-canvas")),
-    heroMap: Boolean(root.querySelector('[data-testid="home-hero-map-v139"] img')),
+    heroMap: Boolean(root.querySelector('[data-testid="home-hero-map-v139"] svg')),
     searchPlaceholder: root.querySelector("#home-search")?.getAttribute("placeholder"),
     examples: [...root.querySelectorAll(".home-final-suggestions button")].map((b) => b.textContent.trim()),
     topics: [...root.querySelectorAll(".home-category-chips button")].map((b) => b.textContent.trim()),
@@ -146,9 +146,10 @@ for (const [width, height] of [[390, 844], [768, 1024], [1024, 800], [1440, 1000
   }
   report.interactions.cardLinks = cardLinks;
   await home();
-  await page.click('.home-category-chips button:has-text("기후·환경")');
+  report.interactions.removedTopics = await page.locator(".home-category-chips").count() === 0;
+  await page.getByRole("button", { name: "최신순", exact: true }).click();
   await page.waitForTimeout(1200);
-  report.interactions.topicChip = await page.evaluate(() => ({
+  report.interactions.latestOrder = await page.evaluate(() => ({
     hash: location.hash,
     category: new URLSearchParams(location.search).get("category"),
     cards: document.querySelectorAll(".cdp-dataset-card").length,
