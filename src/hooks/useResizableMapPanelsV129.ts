@@ -48,7 +48,11 @@ export function useResizableMapPanelsV129({ leftPanelOpen, rightPanelOpen, onMap
   const setWidth = useCallback((side: ResizableMapPanelSideV129, value: number) => {
     setPriority(side);
     setWidths(current => {
-      const fitted = fitMapPanelsV150(layoutWidth, side === "left" ? value : current.left, side === "right" ? value : current.right, leftPanelOpen, rightPanelOpen, side);
+      // The layout can read 0 before the observer's first measurement or while
+      // the node is hidden; clamping against 0 collapsed both panels to 120px
+      // and persisted it. Fall back to the viewport, as `effective` does.
+      const width = layoutWidth || (typeof window !== "undefined" ? window.innerWidth : 1280);
+      const fitted = fitMapPanelsV150(width, side === "left" ? value : current.left, side === "right" ? value : current.right, leftPanelOpen, rightPanelOpen, side);
       return { left: leftPanelOpen ? fitted.left : current.left, right: rightPanelOpen ? fitted.right : current.right };
     });
   }, [layoutWidth, leftPanelOpen, rightPanelOpen]);
