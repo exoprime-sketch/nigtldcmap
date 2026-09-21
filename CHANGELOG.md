@@ -2,6 +2,17 @@
 
 이 문서는 공개 플랫폼의 주요 변경을 기록합니다. 아직 merge·배포·tag가 확인되지 않은 작업은 `Unreleased`에 둡니다.
 
+## Unreleased — V150-1 자료 갱신일 결정화·CI 시간 단축 (PR 후보)
+
+### Changed
+
+- 자료 갱신일 디렉터리 `public/data/vietnam/v2/dataset-directory.json`(+ `src/data/datasetDirectoryV149.json` 사본)을 `npm run build:dataset-directory:v150`으로 생성해 커밋. `prebuild`는 git을 부르지 않고 `verify:dataset-directory:v150`(자료 목록·파일 SHA-256·사본 일치)만 수행하며 `finalize:v140`·CI에도 포함. 홈 '최신순'과 `/api/usage` 최신순이 같은 파일을 읽음(`docs/DATASET_DIRECTORY_V150-1.md`)
+- CI(`ci.yml`): 같은 브랜치 이전 실행 자동 취소 · `static`(tsc·검증·빌드·단위테스트·정적 감사) → `browser` 4 shard(브라우저 감사, 빌드 아티팩트 공유) → `summary`(shard 결과 병합 후 V136 릴리스 판정, 검사 항목·기대값 불변) → `analysis`(role-split + 41건 기준선 비교). 문서만 바뀐 PR은 browser 생략. `audit-vietnam-release-v136.mjs --group/--shard/--results-dir`, 워크플로 계약 감사 3종은 sharded 형식을 현재 게이트로 인정
+- `pages.yml`은 `workflow_dispatch` 전용(운영은 Vercel)
+- `qa:analysis:v140 --baseline reports/v150/analysis-qa-baseline-v150.json`: PR-D로 이관한 41건은 기준선, 새 항목·새 검사만 게이트 실패
+- glossary 감사가 찾기 목록 152개 카드를 전부 로드해 검사(`FINDER_ALL_CARDS_AUDITED`) — 홈 카드 구성과 무관. 이로써 드러난 미등록 용어 4개(BAFU·KETEP·TCCRE·TT:CLEAR) 등록, 카드 제공기관 문자열의 내부 메모("레코드별 상이 — 1.2_entity 참조") 제거(E-018·E-020)
+- role-split QA 스크린샷 저장 재시도(판정 불변), CLAUDE.md merge 조건·리사이저·디렉터리 메모
+
 ## Unreleased — V150 지도 가독성·패널·축단위·개조식 설명 최종화 (V148·V149 포함, PR 후보)
 
 ### Added

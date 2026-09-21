@@ -1,0 +1,88 @@
+{
+  "schema": "nigt-home-determinism-v150-1",
+  "environments": [
+    {
+      "label": "local-windows-1",
+      "generatedAt": "2026-09-21T05:31:09.754Z",
+      "base": "static build",
+      "platform": "win32 node v22.19.0",
+      "directorySourceCommit": "6a663087ad9c4ff72662d681f3dd65b215b30279",
+      "usageApi": "200 text/html; charset=utf-8",
+      "initialOrder": [
+        "A-002",
+        "A-003",
+        "A-010",
+        "A-023",
+        "A-024",
+        "B-033",
+        "C-016",
+        "D-023"
+      ],
+      "initialHash": "846caae1dae978ba",
+      "latestOrder": [
+        "A-016",
+        "B-005",
+        "D-005",
+        "D-011",
+        "D-022",
+        "B-023",
+        "B-001",
+        "A-026"
+      ],
+      "latestHash": "073215a4a32b3185",
+      "directoryLatestOrder": [
+        "A-001",
+        "A-002",
+        "A-003",
+        "A-004",
+        "A-005",
+        "A-006",
+        "A-007",
+        "A-008"
+      ],
+      "directoryLatestHash": "cef587833bd3477f"
+    },
+    {
+      "label": "local-windows-2",
+      "generatedAt": "2026-09-21T06:09:26.133Z",
+      "base": "static build",
+      "platform": "win32 node v22.19.0",
+      "directorySourceCommit": "6a663087ad9c4ff72662d681f3dd65b215b30279",
+      "usageApi": "200 text/html; charset=utf-8",
+      "initialOrder": [
+        "A-002",
+        "A-003",
+        "A-010",
+        "A-023",
+        "A-024",
+        "B-033",
+        "C-016",
+        "D-023"
+      ],
+      "initialHash": "846caae1dae978ba",
+      "latestOrder": [
+        "A-016",
+        "B-005",
+        "D-005",
+        "D-011",
+        "D-022",
+        "B-023",
+        "B-001",
+        "A-026"
+      ],
+      "latestHash": "073215a4a32b3185",
+      "directoryLatestOrder": [
+        "A-001",
+        "A-002",
+        "A-003",
+        "A-004",
+        "A-005",
+        "A-006",
+        "A-007",
+        "A-008"
+      ],
+      "directoryLatestHash": "cef587833bd3477f"
+    }
+  ],
+  "consistent": true
+}

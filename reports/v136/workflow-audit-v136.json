@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v136-public-copy-acceptance-1",
-  "generatedAt": "2026-09-21T01:37:40.494Z",
+  "generatedAt": "2026-09-21T05:51:22.433Z",
   "audit": "workflow:v136",
   "status": "PASS",
   "summary": {
@@ -27,7 +27,9 @@
       "name": "CI_CURRENT_RELEASE_GATE",
       "status": "PASS",
       "actual": {
-        "finalize": true
+        "finalize": true,
+        "single": false,
+        "sharded": true
       },
       "expected": "finalize:v136"
     },
