@@ -229,10 +229,24 @@ const mapTargetById = new Map(mapTargets.map((target) => [target.elementId, targ
  * names of the catalogue's organisation list (which put Global Solar Atlas
  * on the CMIP6 temperature card).
  */
+// The compiler's own aside about which sheet column varies per row
+// ("(레코드별 상이 — 1.2_entity 참조)") is not a source. Same rule as
+// publicSourceOrganizationV136_1 in src/data/visualization/publicFieldPolicyV126.ts.
+const SOURCE_NOTE_MARKER = /레코드별|attr_|시트|열\s*참조/u;
+const SOURCE_NOTE_PATTERNS = [
+  /\s*[([][^()[\]]*(?:레코드별|attr_|시트|열\s*참조)[^()[\]]*[)\]]/gu,
+  /\s*[-—–→]\s*[^-—–→]*(?:레코드별|attr_|시트|열\s*참조)[\s\S]*$/u,
+];
+function publicSourceOrganization(value) {
+  let out = text(value);
+  for (const pattern of SOURCE_NOTE_PATTERNS) out = out.replace(pattern, "");
+  out = out.replace(/\s*[-—–,·]\s*$/u, "").trim();
+  return out === "" || SOURCE_NOTE_MARKER.test(out) ? null : out;
+}
 function providerFor(pack, indicatorIds, item) {
   const metas = (pack?.meta?.indicators || []).filter((indicator) => indicatorIds.includes(indicator.indicatorId));
-  const names = [...new Set(metas.map((indicator) => text(indicator.sourceOrg).split(/\s+·\s+경계\s+/u)[0]).filter(Boolean))];
-  const catalogue = item.sourceOrganizations || [];
+  const names = [...new Set(metas.map((indicator) => publicSourceOrganization(text(indicator.sourceOrg).split(/\s+·\s+경계\s+/u)[0])).filter(Boolean))];
+  const catalogue = (item.sourceOrganizations || []).map(publicSourceOrganization).filter(Boolean);
   // A register with one indicator per organisation (E-004: 19 offices) names
   // its collector, the catalogue's organisation, not "ADB 외 18개".
   if (names.length === 0) {

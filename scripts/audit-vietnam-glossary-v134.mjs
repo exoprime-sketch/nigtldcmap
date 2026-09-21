@@ -140,6 +140,7 @@ for (const entry of glossary) {
 }
 const inventory = new Map();
 const selectedOptionFailures = [];
+let finderCardCount = 0;
 const registeredVisiblePatternSource = [...new Set(aliases)]
   .sort((left, right) => right.length - left.length)
   .map((term) => term.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&"))
@@ -447,7 +448,20 @@ try {
     progress(name, "start");
     await navigate(browser.cdp, url);
     await waitForValue(browser.cdp, readyExpression, { timeoutMs: 30_000 });
+    if (name === "finder") {
+      // V150-1: the home shows eight cards chosen by ranking or date, so its
+      // composition differs between environments. The finder can show every
+      // card the builder makes; loading all 152 fixes the audited set of
+      // card legends and unit strings regardless of the home's selection.
+      const total = catalog.length;
+      await waitForValue(
+        browser.cdp,
+        `(() => { const n = document.querySelectorAll('[data-testid="public-finder-card-v135"]').length; if (n < ${total}) window.scrollTo(0, document.documentElement.scrollHeight); return n >= ${total}; })()`,
+        { timeoutMs: 60_000, intervalMs: 300 }
+      );
+    }
     recordCandidates(name, await evaluateValue(browser.cdp, snapshotExpression));
+    if (name === "finder") finderCardCount = await evaluateValue(browser.cdp, `document.querySelectorAll('[data-testid="public-finder-card-v135"]').length`);
     inspectedRoutes += 1;
     progress(name, "complete");
   }
@@ -541,6 +555,7 @@ const unmatched = inventoryRows.filter((row) => row.approved !== "true");
 audit.check("PRODUCTION_DOM_ROUTE_COVERAGE", runtimeFailure === null && inspectedRoutes === 157 && routeFailures.length === 0, { inspectedRoutes, routeFailures, runtimeFailure }, { inspectedRoutes: 157, routeFailures: [] });
 audit.check("VISIBLE_ACRONYM_WITHOUT_GLOSSARY", unmatched.length === 0, unmatched, []);
 audit.check("SELECTED_OPTION_GLOSSARY_HELP", selectedOptionFailures.length === 0, selectedOptionFailures, []);
+audit.check("FINDER_ALL_CARDS_AUDITED", finderCardCount === catalog.length, finderCardCount, catalog.length);
 audit.check("GLOSSARY_HOVER_PASS", hoverPass, hoverPass, true);
 audit.check("GLOSSARY_KEYBOARD_PASS", keyboardPass, keyboardPass, true);
 audit.check("GLOSSARY_MOBILE_PASS", mobilePass, mobilePass, true);
