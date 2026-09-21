@@ -1,7 +1,6 @@
 import { test, expect } from "@jest/globals";
 import { readFileSync } from "fs";
 import { join } from "path";
-import crosswalkBuild from "../../../reports/v138/map-targets-build-v138.json";
 import { PROVINCE_KO_V150 } from "./mapBackdropV150";
 import {
   ADM1_34_UNITS_V151,
@@ -17,7 +16,12 @@ import {
   boundaryValueNoticeV151,
 } from "./adminBoundaryV151";
 
-const crosswalk34 = (crosswalkBuild as { crosswalk34: { region: string; key: string; memberAdm1Codes: string[] }[] }).crosswalk34;
+// Read at test time rather than statically imported: the candidate build
+// (.verify/candidate) copies src/ without reports/, and CRA type-checks tests.
+const crosswalkBuild = JSON.parse(
+  readFileSync(join(__dirname, "../../../reports/v138/map-targets-build-v138.json"), "utf8"),
+) as { crosswalk34: { region: string; key: string; memberAdm1Codes: string[] }[] };
+const crosswalk34 = crosswalkBuild.crosswalk34;
 // The built asset is read from disk so the test compares the table against the
 // bytes the site actually serves, not a second copy of the same literal.
 const adm1_34 = JSON.parse(
