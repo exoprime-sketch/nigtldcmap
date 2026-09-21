@@ -1,3 +1,4 @@
+import ChartAxesV150 from "../../charts/ChartAxesV150";
 import { useMemo, useState } from "react";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { facilityRegionsV146 } from "../../../data/visualization/facilityRegionsV146";
@@ -18,6 +19,7 @@ export default function CarbonMarketRegionsV146({ elementId, entities, initialRe
     <p>법령에 수록된 {rows.length}개 성·시의 집계입니다. 배출권 거래제 참여 시설 수와는 구분됩니다.{selected && ` ${selected.region}의 대상 시설은 ${selected.count.toLocaleString("ko-KR")}개소입니다.`}</p>
     <div className="detail146-select"><label>기준일 <select value={date} onChange={(event) => { setDate(event.target.value); setRegion("all"); }}>{model.dates.map((value) => <option key={value}>{value}</option>)}</select></label>
       <label>지역 <select value={region} onChange={(event) => setRegion(event.target.value)}><option value="all">전체 지역</option>{rows.map((row) => <option value={row.code} key={row.code}>{row.region}</option>)}</select></label></div>
+    <ChartAxesV150 x="시설 수" y={isSector && selected?.sectorTotalMatches ? "부문" : "성·시"} unit="개소" />
     <figure className="detail146-chart"><figcaption>{isSector && selected?.sectorTotalMatches ? `${selected.region} · 부문별 시설 수` : "성·시별 시설 수"} · {date} · 개소</figcaption><ol>{chart.map((row) => <li key={row.label}><span>{row.label}</span><i aria-hidden="true"><b style={{ width: `${row.value / scale * 100}%` }} /></i><strong>{row.value.toLocaleString("ko-KR")}</strong></li>)}</ol></figure>
     {isSector && selected && !selected.sectorTotalMatches && <p role="status">이 지역의 부문별 세부 수치는 원자료에서 확인해 주세요.</p>}
     <details className="detail146-details"><summary>지역별 시설 수 표</summary><div className="detail146-table"><table><caption>선택한 기준일·지역 · 개소</caption><thead><tr><th scope="col">지역</th><th scope="col">시설 수</th>{isSector && <th scope="col">부문별 구성</th>}</tr></thead><tbody>{sameDate.map((row) => <tr key={row.code}><th scope="row">{row.region}</th><td>{row.count.toLocaleString("ko-KR")}</td>{isSector && <td>{row.sectors.map((sector) => `${sector.label} ${sector.value}개소`).join(" · ") || "미기재"}</td>}</tr>)}</tbody></table></div></details>

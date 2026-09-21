@@ -1,3 +1,4 @@
+import ChartAxesV150 from "../../charts/ChartAxesV150";
 import { useId, useMemo, useState } from "react";
 import type { KeyboardEvent, PointerEvent } from "react";
 import type { SemanticObservationV125 } from "../../../data/visualization/semanticTypesV125";
@@ -245,6 +246,7 @@ export default function PrimaryEnergyCompositionAnalysisV132({
           </span>
         </div>
 
+        <ChartAxesV150 x="연도" y="에너지원별 소비량(누적 면적)" unit={unit} />
         <EnergyStackedAreaV132
           mode="absolute"
           onSelectYear={(year) =>
@@ -265,6 +267,7 @@ export default function PrimaryEnergyCompositionAnalysisV132({
             <p>각 연도의 여섯 에너지원 합계를 100%로 계산한 구성비입니다.</p>
           </div>
         </header>
+        <ChartAxesV150 x="연도" y="에너지원 구성비(누적 면적)" unit="%" composition />
         <EnergyStackedAreaV132
           mode="share"
           onSelectYear={(year) =>
@@ -301,6 +304,7 @@ export default function PrimaryEnergyCompositionAnalysisV132({
             </select>
           </label>
         </header>
+        <ChartAxesV150 x="에너지 소비량" y="에너지원" unit={unit} />
         <SelectedYearBarsV132 series={ENERGY_SERIES_V132} unit={unit} year={selected} />
       </section>
 

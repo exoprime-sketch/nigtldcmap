@@ -9,6 +9,8 @@ import {
   PublicTermTextV134,
 } from "../../help/PublicTermV134";
 import "./public-emissions-analysis-v132.css";
+import { displayUnitV150 } from "../../../data/visualization/unitDisplayV150";
+import ChartAxesV150 from "../../charts/ChartAxesV150";
 
 interface Props {
   elementId: string;
@@ -151,6 +153,7 @@ function EmissionsCompositionBarV132({
       data-testid="emissions-latest-composition-v132"
       data-zero-imputation="false"
     >
+      <ChartAxesV150 x="배출원 구성(연도 합계 대비 길이)" y={`${year}년`} unit={unit} composition />
       <svg
         aria-label={`${year}년 배출량 구성. ${values
           .map((item) => `${item.label} ${formatPublicNumberV126(item.value, unit)} ${unit}`)
@@ -223,7 +226,7 @@ export default function PublicEmissionsAnalysisV132({
         key,
         semanticKey: row.semanticMeasure.key,
         label: emissionMeasureLabelV132(elementId, row.semanticMeasure.unit),
-        unit: row.semanticMeasure.unit,
+        unit: displayUnitV150(row.semanticMeasure.unit),
         rowCount: (current?.rowCount || 0) + 1,
       });
     });
@@ -270,7 +273,7 @@ export default function PublicEmissionsAnalysisV132({
   const componentChartSeries = componentSeries.map<TimeSeriesV127>((item, index) => ({
     id: `emissions-component-${index + 1}`,
     label: item.label,
-    unit: selectedMeasure?.unit || "—",
+    unit: displayUnitV150(selectedMeasure?.unit) || "—",
     color: EMISSION_COLORS_V132[index % EMISSION_COLORS_V132.length],
     marker: MARKERS_V132[index % MARKERS_V132.length],
     linePattern: PATTERNS_V132[index % PATTERNS_V132.length],
@@ -285,7 +288,7 @@ export default function PublicEmissionsAnalysisV132({
     ? [{
         id: "emissions-derived-total",
         label: "구성계열 합계(산출)",
-        unit: selectedMeasure?.unit || "—",
+        unit: displayUnitV150(selectedMeasure?.unit) || "—",
         color: "#173b34",
         marker: "diamond",
         linePattern: "solid",

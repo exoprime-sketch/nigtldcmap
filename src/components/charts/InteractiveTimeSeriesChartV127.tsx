@@ -24,6 +24,7 @@ import type {
   TimeSeriesV127,
 } from "../../types/chartInteractionV127";
 import "./chart-interactions-v127.css";
+import ChartAxesV150 from "./ChartAxesV150";
 
 const SERIES_COLORS_V127 = [
   "#0f6b4d",
@@ -756,10 +757,8 @@ export function InteractiveTimeSeriesChartV127({
             <PublicTermTextV134 text={description} />
           </p>
         ) : null}
-        <div className="v127-interactive-chart__metadata">
-          <span data-testid="chart-unit-label">
-            단위: <PublicTermTextV134 text={unit} />
-          </span>
+        <div className="v127-interactive-chart__metadata" data-testid="chart-unit-label">
+          <ChartAxesV150 x={xAxisTitle} y={yAxisTitle} unit={unit} />
           {scaleDescription ? <span>척도: {scaleDescription}</span> : null}
         </div>
       </header>
