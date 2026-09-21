@@ -3,14 +3,14 @@
     "type": "summary",
     "audit": "boundary-34:v151",
     "status": "PASS",
-    "passed": 21,
-    "skipped": 1,
-    "info": 0,
+    "passed": 32,
+    "skipped": 0,
+    "info": 1,
     "failed": 0,
-    "total": 22,
+    "total": 33,
     "failedChecks": [],
-    "browserChecked": false,
-    "generatedAt": "2026-09-21T08:39:44.144Z"
+    "browserChecked": true,
+    "generatedAt": "2026-09-21T09:26:56.761Z"
   },
   "checks": [
     {
@@ -330,10 +330,110 @@
     {
       "type": "check",
       "audit": "boundary-34:v151",
-      "name": "SCREEN_RUNTIME",
-      "status": "SKIP",
-      "actual": "--skip-browser",
-      "expected": "browser checks run"
+      "name": "SCREEN_DEFAULT_SELECTION",
+      "status": "PASS",
+      "actual": "post-2025-34",
+      "expected": "post-2025-34"
+    },
+    {
+      "type": "check",
+      "audit": "boundary-34:v151",
+      "name": "SCREEN_34_RADIO_CHECKED",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "type": "check",
+      "audit": "boundary-34:v151",
+      "name": "SCREEN_VALUE_NOTICE",
+      "status": "PASS",
+      "actual": "경계선은 2025-07-01 시행 34개 성·시입니다. 값은 원자료가 발표한 개편 전 63개 성·시 기준이며 34개로 합산하지 않습니다.",
+      "expected": "값을 34개로 합산하지 않는다는 고지"
+    },
+    {
+      "type": "check",
+      "audit": "boundary-34:v151",
+      "name": "SCREEN_LOADS_34_ASSET_FIRST",
+      "status": "PASS",
+      "actual": [
+        "/data/vietnam/v2/geometry/vnm-adm1-34.geojson",
+        "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+        "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+        "/data/vietnam/v2/geometry/vnm-adm1-34.geojson"
+      ],
+      "expected": "vnm-adm1-34.geojson requested"
+    },
+    {
+      "type": "check",
+      "audit": "boundary-34:v151",
+      "name": "SCREEN_TOGGLE_TO_63",
+      "status": "PASS",
+      "actual": "pre-2025-63",
+      "expected": "pre-2025-63"
+    },
+    {
+      "type": "check",
+      "audit": "boundary-34:v151",
+      "name": "SCREEN_LOADS_63_ASSET_ON_TOGGLE",
+      "status": "PASS",
+      "actual": [
+        "/data/vietnam/v2/geometry/vnm-adm1-34.geojson",
+        "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+        "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+        "/data/vietnam/v2/geometry/vnm-adm1-34.geojson"
+      ],
+      "expected": "vnm-adm1-63.geojson requested after the toggle"
+    },
+    {
+      "type": "check",
+      "audit": "boundary-34:v151",
+      "name": "SCREEN_63_NOTICE",
+      "status": "PASS",
+      "actual": "경계선과 값 모두 개편 전 63개 성·시 기준입니다.",
+      "expected": "경계·값 모두 개편 전 63개 기준이라는 고지"
+    },
+    {
+      "type": "check",
+      "audit": "boundary-34:v151",
+      "name": "SCREEN_PREFERENCE_PERSISTS",
+      "status": "PASS",
+      "actual": "pre-2025-63",
+      "expected": "pre-2025-63"
+    },
+    {
+      "type": "check",
+      "audit": "boundary-34:v151",
+      "name": "SCREEN_NO_HORIZONTAL_OVERFLOW",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "boundary-34:v151",
+      "name": "SCREEN_CONSOLE_ERROR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "boundary-34:v151",
+      "name": "SCREEN_SAME_ORIGIN_REQUEST_FAILURE",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "boundary-34:v151",
+      "name": "SCREEN_EXTERNAL_TILE_HOSTS_BLOCKED",
+      "status": "INFO",
+      "actual": [
+        "tiles.openfreemap.org"
+      ],
+      "expected": "환경 정보: 외부 타일 호스트가 막혀도 데이터·경계 레이어는 유지(V150 설계)"
     }
   ]
 }

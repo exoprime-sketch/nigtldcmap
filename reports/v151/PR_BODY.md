@@ -24,13 +24,21 @@
 | --- | --- |
 | `npx tsc --noEmit` | 오류 0 |
 | `npm run test:unit` | 220건 통과 (V151 신규 9건 포함) |
-| `audit:boundary-34:v151` (브라우저 포함) | 32 PASS · 1 INFO · 0 FAIL |
-| `audit:map-copy:v136` | 11/11 PASS |
-| `npm run finalize:v151` | PASS |
+| `audit:boundary-34:v151` (브라우저 포함) | **32 PASS · 1 INFO · 0 FAIL** |
 | 반응형 320/390/768/1024/1440/1920 | 가로 넘침 0 |
-| 동일출처 요청 실패 · 콘솔 오류 | 0 · 0 |
+| 동일출처 요청 실패 · 앱 콘솔 오류 | 0 · 0 |
 
-실제 Chromium + production 빌드 정적 서버로 확인: 첫 진입 34개 선택 → `vnm-adm1-34.geojson` 요청, 63개 토글 → `vnm-adm1-63.geojson` 요청·고지 문구 전환, 새로고침 후 선택 유지. 스크린샷 3장은 `reports/v151/`.
+실제 Chromium + production 빌드 정적 서버로 확인: 첫 진입 34개 선택 → `vnm-adm1-34.geojson` 요청, 63개 토글 → `vnm-adm1-63.geojson` 요청·고지 문구 전환, 새로고침 후 선택 유지, 확대 시 34개 기준 한글 지명 렌더. 스크린샷 3장은 `reports/v151/`.
+
+### ⚠️ `finalize:v140`은 이 실행 환경에서 완주하지 못했습니다 (merge 선행조건)
+
+원인은 코드가 아니라 **실행 환경의 네트워크 정책**입니다. 프록시가 배경지도 타일 호스트 `tiles.openfreemap.org:443`을 403으로 거부하고, 배경지도는 V150에서 이미 main에 들어간 기본 켜짐 기능이라 지도 화면을 여는 모든 브라우저 감사의 `CONSOLE_ERROR`가 실패합니다.
+
+- `origin/main`(3357632)을 별도 워크트리에 빌드해 같은 감사를 돌린 결과도 **동일하게 FAIL**입니다(`map-tooltip:v132`·`map-compare:v135`·`finder-scroll:v136` 3종 확인). 기준선이 이미 실패하므로 V151 회귀가 아닙니다.
+- 게이트를 개별 실행: **21 PASS · 7 FAIL**. 실패 7건은 전부 지도 화면 감사이고 `CONSOLE_ERROR` 1건만 실패하며, 그 내용은 100% `net::ERR_TUNNEL_CONNECTION_FAILED`, 앱 예외 0건입니다.
+- `qa:analysis:v140:baseline`(41건 기준선): 새 실패 43건이 전부 `screenLoaded`이며, 41건은 타일 차단·2건은 컨테이너 부하로 인한 `selectOption` 타임아웃입니다. **기준선 41건은 늘지도 줄지도 않았고(resolved 0), 값·분석 검사는 모두 기존과 같습니다.** 같은 실행에서 `public-copy:v134`가 상세 152경로를 전부 로드해 통과한 것이 이를 뒷받침합니다.
+
+**게이트 기대값은 하나도 바꾸지 않았습니다.** 근거와 재현 명령은 `reports/v151/GATE_ENVIRONMENT_V151.md`에 있습니다. merge 전에 타일 호스트가 열린 환경(로컬·CI·Vercel Preview)에서 `npm run finalize:v151`·`npx playwright test`·`npm run release:vietnam-pilot` 확인이 필요합니다.
 
 ## 범위 밖·남은 일
 

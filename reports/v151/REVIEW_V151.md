@@ -57,28 +57,50 @@
 
 ## 4. 검증 결과
 
+### 4.1 V151이 책임지는 검사
+
 | 항목 | 결과 |
 | --- | --- |
 | `npx tsc --noEmit` | 오류 0 |
 | `npm run test:unit` | **220건 통과** (기준 206+, V151 신규 9건 포함) |
 | `audit:boundary-34:v151` (브라우저 포함) | **32 PASS · 1 INFO · 0 FAIL** |
 | `audit:boundary-34:v151 --skip-browser` | 21 PASS · 1 SKIP · 0 FAIL |
-| `audit:map-copy:v136` | 11/11 PASS |
-| `npm run finalize:v151` | (§4.1) |
 | 반응형 320/390/768/1024/1440/1920 | 문서 가로 넘침 0 |
 | 동일출처 요청 실패 | 0 |
-| 콘솔 오류(네트워크 제외) | 0 |
+| 콘솔 오류(네트워크 실패 제외) | 0 |
 
-### 4.1 브라우저로 확인한 것(실제 Chromium, production 빌드 정적 서버)
+브라우저로 확인한 것(실제 Chromium 141, production 빌드 정적 서버):
+
 - 첫 진입 시 34개가 선택돼 있고 `vnm-adm1-34.geojson`을 먼저 요청한다.
 - 63개로 바꾸면 `vnm-adm1-63.geojson`을 요청하고 고지 문구가 "경계선과 값 모두 개편 전 63개 성·시 기준입니다."로 바뀐다.
 - 새로고침 후에도 선택이 유지된다.
-- 스크린샷: `map-boundary-34-v151.png`(34개, 내부 경계 적음) · `map-boundary-63-v151.png`(63개, 내부 경계 많음) · `map-labels-34-zoom-v151.png`(확대 시 한글 지명 '하띤' 렌더 — 이번에 키를 고친 바로 그 성).
-- 구분: 위 항목은 **동작 확인**이다. 42개 데이터 레이어 각각의 내용 적합성은 이번 PR에서 다시 검토하지 않았다(값 로직 무변경).
+- 확대하면 34개 기준 한글 지명이 그려진다(`map-labels-34-zoom-v151.png`의 '하띤' — 이번에 대응표 키를 고친 바로 그 성).
+- 스크린샷: `map-boundary-34-v151.png`(34개, 내부 경계 적음) · `map-boundary-63-v151.png`(63개, 내부 경계 많음) · `map-labels-34-zoom-v151.png`.
 
-### 4.2 환경 보정 1건(기대값 변경 아님)
-- 컨테이너가 root로 돌아 `scripts/v125/browser-runtime.mjs`의 헤드리스 브라우저가 기동조차 못했다(`Running as root without --no-sandbox is not supported`). root·리눅스일 때만 `--no-sandbox --disable-dev-shm-usage`를 붙이고, 러너별 추가 플래그는 `V125_BROWSER_ARGS`로 주입하게 했다. 개발자 로컬과 비-root CI는 동작이 그대로다.
-- 이 환경에서 WebGL은 소프트웨어 렌더가 필요해 `V125_BROWSER_ARGS="--enable-unsafe-swiftshader --use-gl=angle --use-angle=swiftshader"`로 실행했다. **감사 기대값은 하나도 바꾸지 않았다.** 바뀐 것은 "실행 실패"가 "실제 검사 수행"이 된 것뿐이다(map-copy:v136이 8 FAIL → 11 PASS).
+구분: 위 항목은 **동작 확인**이다. 42개 데이터 레이어 각각의 내용 적합성은 이번 PR에서 다시 검토하지 않았다(값 로직 무변경).
+
+### 4.2 `finalize:v140` 게이트 — 이 컨테이너에서는 완주 불가
+
+**`npm run finalize:v151`은 이 환경에서 통과하지 못했다.** 원인은 코드가 아니라 실행 환경의 네트워크 정책이며, 근거는 `reports/v151/GATE_ENVIRONMENT_V151.md`에 있다. 요약:
+
+- 프록시가 배경지도 타일 호스트 `tiles.openfreemap.org:443`을 403으로 거부한다. 배경지도는 V150에서 이미 main에 들어간 기능이고 기본값이 '켬'이라, 지도 화면을 여는 모든 브라우저 감사에서 `CONSOLE_ERROR`가 실패한다.
+- `origin/main`(3357632)을 별도 워크트리에 빌드해 같은 감사를 돌린 결과도 동일하게 FAIL이다(`map-tooltip:v132` · `map-compare:v135` · `finder-scroll:v136` 3종 확인). **기준선이 이미 실패하므로 V151 회귀가 아니다.**
+
+게이트를 개별 실행한 결과(총 28개 중 **21 PASS · 7 FAIL**, 실패는 전부 지도 화면 브라우저 감사):
+
+| 결과 | 감사 |
+| --- | --- |
+| PASS (21) | benchmark-fit:v132 · oda-analysis:v134 · drought-analysis:v134 · public-copy:v134(상세 152경로 전수) · visual-qa-contract:v134 · finder-card:v135 · temporal-depth:v135 · detail-hierarchy:v135 · map-guide:v135 · public-screen:v135 · public-text:v136(공개 문구 42,981건) · duplicate-copy:v136 · map-copy:v136 · public-controls:v136 · generic-detail-public:v136-2 · screen-usability:v136-4 · human-review:v136 · workflow:v136 · generated-data:v133 · ci-contract:v133 · entity-cards:v131 |
+| FAIL (7) | map-tooltip:v132 · map-focus:v133 · map-popup:v133 · map-layer-distinction:v133 · glossary:v134 · map-access:v135 · map-list-ui:v136 — 모두 `CONSOLE_ERROR` 1건만 실패하고 그 내용은 **100% `Failed to load resource: net::ERR_TUNNEL_CONNECTION_FAILED`**, 앱 예외 0건 |
+| FAIL (환경, 별도) | map-compare:v135 · finder-scroll:v136 — 타일 실패에 더해 `TypeError: Failed to fetch` 2건씩. 감사가 대기 중 fetch를 두고 이동·재로드할 때 나는 중단 오류이며, `origin/main`에서도 같은 검사가 같은 이유로 FAIL한다 |
+
+`qa:analysis:v140:baseline`(41건 기준선): **새 실패 43건이 모두 `screenLoaded`** 하나다. 원인을 항목별로 확인한 결과 41건은 타일 차단(`ERR_TUNNEL_CONNECTION_FAILED`)이고, 2건(C-002·C-019)은 컨테이너 부하로 인한 `page.selectOption` 30초 타임아웃이다. `screenLoaded`는 "콘솔 오류 0 + 자산 실패 0"을 요구하므로 타일이 막히면 지도를 품은 상세 화면이 전부 실패한다. **기준선 41건 자체는 하나도 늘거나 줄지 않았고(resolved 0), 값·분석 관련 검사는 모두 기존과 같다.** 같은 실행에서 `public-copy:v134`가 상세 152경로를 전부 로드해 통과한 것이 이 판단을 뒷받침한다.
+
+### 4.3 환경 보정 1건(기대값 변경 아님)
+
+컨테이너가 root로 돌아 `scripts/v125/browser-runtime.mjs`의 헤드리스 브라우저가 기동조차 못했다(`Running as root without --no-sandbox is not supported`). root·리눅스일 때만 `--no-sandbox --disable-dev-shm-usage`를 붙이고, 러너별 추가 플래그는 `V125_BROWSER_ARGS`로 주입하게 했다. 개발자 로컬과 비-root CI는 동작이 그대로다.
+
+**감사 기대값은 하나도 바꾸지 않았다.** 바뀐 것은 "실행 실패"가 "실제 검사 수행"이 된 것뿐이다(`map-copy:v136`이 8 FAIL → 11 PASS). 환경 때문에 FAIL로 덮어써진 감사 보고서 JSON은 커밋하지 않고 `origin/main` 기준 상태로 되돌렸다.
 
 ## 5. 미완료와 사유
 

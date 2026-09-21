@@ -23,4 +23,4 @@
 - [x] 4단계 화면 토글·문구 — 지도 '행정경계 기준' 라디오(기본 34), 참조 경계·라벨·대체 SVG·저작권·상태 문구 연동, 이용안내·지도 안내 등 문구에 '개편 전' 명시 (커밋 7b06eab)
 - [x] 5단계 게이트 — `scripts/v151/audit-boundary-34-v151.mjs` 정적 21 + 브라우저 11. npm `audit:boundary-34:v151`·`finalize:v151`·`build:adm1-34:v151` (커밋 3518881)
 - [x] 6단계 환경 보정 — root 실행 시 헤드리스 브라우저 기동 실패를 `--no-sandbox`로 해소, `V125_BROWSER_ARGS` 주입구 추가. 기대값 불변 (커밋 40632d5)
-- [ ] 7단계 문서·PR — REVIEW_V151·PR_BODY·CHANGELOG, `finalize:v151` 1회, PR 생성, merge는 사용자 승인 대기
+- [x] 7단계 문서·PR — REVIEW_V151·PR_BODY·GATE_ENVIRONMENT_V151·CHANGELOG 작성, 게이트 개별 실행(21 PASS·7 FAIL, 전부 타일 차단), origin/main 대조로 회귀 아님 확인, PR 생성. merge는 사용자 승인 + 타일 접근 가능한 환경의 finalize:v151 확인 대기
