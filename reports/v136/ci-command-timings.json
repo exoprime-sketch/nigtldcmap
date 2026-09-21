@@ -1,10 +1,12 @@
 {
-  "status": "passed",
-  "runStartedAt": "2026-09-21T01:19:21.566Z",
-  "updatedAt": "2026-09-21T01:37:40.619Z",
-  "platform": "win32",
+  "status": "running",
+  "runStartedAt": "2026-09-21T08:41:15.375Z",
+  "updatedAt": "2026-09-21T08:42:39.370Z",
+  "platform": "linux",
   "expectedCommandCount": 40,
-  "activeCommand": null,
+  "group": "all",
+  "shard": null,
+  "activeCommand": "V131_ENTITY_CARDS",
   "commandResults": [
     {
       "name": "CI_PROCESS_GUARDS",
@@ -12,7 +14,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 1439,
+      "elapsedMs": 613,
       "timedOut": false
     },
     {
@@ -21,7 +23,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 33053,
+      "elapsedMs": 29968,
       "timedOut": false
     },
     {
@@ -30,7 +32,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 7923,
+      "elapsedMs": 9498,
       "timedOut": false
     },
     {
@@ -39,7 +41,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 12558,
+      "elapsedMs": 33122,
       "timedOut": false
     },
     {
@@ -48,7 +50,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 878,
+      "elapsedMs": 154,
       "timedOut": false
     },
     {
@@ -57,7 +59,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 706,
+      "elapsedMs": 264,
       "timedOut": false
     },
     {
@@ -66,7 +68,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 723,
+      "elapsedMs": 176,
       "timedOut": false
     },
     {
@@ -75,7 +77,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 892,
+      "elapsedMs": 266,
       "timedOut": false
     },
     {
@@ -84,286 +86,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 5875,
-      "timedOut": false
-    },
-    {
-      "name": "V131_ENTITY_CARDS",
-      "command": "npm run audit:entity-cards:v131",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 34433,
-      "timedOut": false
-    },
-    {
-      "name": "V132_COMPOSITION",
-      "command": "npm run audit:composition:v132",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 3471,
-      "timedOut": false
-    },
-    {
-      "name": "V132_PORTFOLIO",
-      "command": "npm run audit:portfolio-analysis:v132",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 10701,
-      "timedOut": false
-    },
-    {
-      "name": "V132_MAP_TOOLTIP",
-      "command": "npm run audit:map-tooltip:v132",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 5817,
-      "timedOut": false
-    },
-    {
-      "name": "V132_BENCHMARK_FIT",
-      "command": "npm run audit:benchmark-fit:v132",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 783,
-      "timedOut": false
-    },
-    {
-      "name": "V133_MAP_FOCUS",
-      "command": "npm run audit:map-focus:v133",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 6251,
-      "timedOut": false
-    },
-    {
-      "name": "V133_MAP_POPUP",
-      "command": "npm run audit:map-popup:v133",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 3537,
-      "timedOut": false
-    },
-    {
-      "name": "V133_LAYER_DISTINCTION",
-      "command": "npm run audit:map-layer-distinction:v133",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 4203,
-      "timedOut": false
-    },
-    {
-      "name": "V134_GLOSSARY",
-      "command": "npm run audit:glossary:v134",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 64397,
-      "timedOut": false
-    },
-    {
-      "name": "V134_ODA_ANALYSIS",
-      "command": "npm run audit:oda-analysis:v134",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 5295,
-      "timedOut": false
-    },
-    {
-      "name": "V134_DROUGHT_ANALYSIS",
-      "command": "npm run audit:drought-analysis:v134",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 23189,
-      "timedOut": false
-    },
-    {
-      "name": "V134_PUBLIC_COPY",
-      "command": "npm run audit:public-copy:v134",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 170008,
-      "timedOut": false
-    },
-    {
-      "name": "V134_VISUAL_QA_CONTRACT",
-      "command": "npm run audit:visual-qa-contract:v134",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 738,
-      "timedOut": false
-    },
-    {
-      "name": "V135_FINDER_CARD",
-      "command": "npm run audit:finder-card:v135",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 6297,
-      "timedOut": false
-    },
-    {
-      "name": "V135_TEMPORAL_DEPTH",
-      "command": "npm run audit:temporal-depth:v135",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 49334,
-      "timedOut": false
-    },
-    {
-      "name": "V135_DETAIL_HIERARCHY",
-      "command": "npm run audit:detail-hierarchy:v135",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 50649,
-      "timedOut": false
-    },
-    {
-      "name": "V135_MAP_GUIDE",
-      "command": "npm run audit:map-guide:v135",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 2496,
-      "timedOut": false
-    },
-    {
-      "name": "V135_MAP_ACCESS",
-      "command": "npm run audit:map-access:v135",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 4038,
-      "timedOut": false
-    },
-    {
-      "name": "V135_MAP_COMPARE",
-      "command": "npm run audit:map-compare:v135",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 4542,
-      "timedOut": false
-    },
-    {
-      "name": "V135_PUBLIC_SCREEN",
-      "command": "npm run audit:public-screen:v135",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 51769,
-      "timedOut": false
-    },
-    {
-      "name": "V136_PUBLIC_TEXT",
-      "command": "npm run audit:public-text:v136",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 164937,
-      "timedOut": false
-    },
-    {
-      "name": "V136_DUPLICATE_COPY",
-      "command": "npm run audit:duplicate-copy:v136",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 49183,
-      "timedOut": false
-    },
-    {
-      "name": "V136_MAP_LIST_UI",
-      "command": "npm run audit:map-list-ui:v136",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 5641,
-      "timedOut": false
-    },
-    {
-      "name": "V136_MAP_COPY",
-      "command": "npm run audit:map-copy:v136",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 2767,
-      "timedOut": false
-    },
-    {
-      "name": "V136_PUBLIC_CONTROLS",
-      "command": "npm run audit:public-controls:v136",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 2862,
-      "timedOut": false
-    },
-    {
-      "name": "V136_FINDER_SCROLL",
-      "command": "npm run audit:finder-scroll:v136",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 9856,
-      "timedOut": false
-    },
-    {
-      "name": "V136_3_UNIT_TESTS",
-      "command": "npm run test:unit",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 16013,
-      "timedOut": false
-    },
-    {
-      "name": "V136_2_GENERIC_DETAIL_PUBLIC",
-      "command": "npm run audit:generic-detail-public:v136-2",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 172432,
-      "timedOut": false
-    },
-    {
-      "name": "V136_4_SCREEN_USABILITY",
-      "command": "npm run audit:screen-usability:v136-4",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 49324,
-      "timedOut": false
-    },
-    {
-      "name": "V136_HUMAN_REVIEW",
-      "command": "npm run audit:human-review:v136",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 59068,
-      "timedOut": false
-    },
-    {
-      "name": "V136_WORKFLOW",
-      "command": "npm run audit:workflow:v136",
-      "exitCode": 0,
-      "signal": null,
-      "error": null,
-      "elapsedMs": 711,
+      "elapsedMs": 9925,
       "timedOut": false
     }
   ]
