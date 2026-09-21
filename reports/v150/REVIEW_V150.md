@@ -48,6 +48,7 @@
 | `e2e/visual.spec.ts-snapshots/*-win32.png` | 홈·A-016·D-011 baseline | 갱신 | V149·V150 화면 변경. Linux baseline은 이번에 갱신하지 않음(CI advisory) |
 | `scripts/v139/home-runtime-qa-v139.mjs`, `scripts/v140/role-split-qa-v140.mjs` | 홈 주제 칩·8개 고정 목록 | V149에서 조정(주제 영역 삭제, 동적 8개) | `reports/v149/REVIEW_V149.md` |
 | `vercel.json` `ignoreCommand`, `scripts/v140/verify-ignore-command-v140.mjs` | 감시 경로 | `api server scripts/v149` 추가 | V149 API·서버 변경도 Preview 빌드 대상(사용자 승인) |
+| `vercel.json` `ignoreCommand` → `bash scripts/vercel-ignore-build.sh` | 명령 위치 | 인라인 267자 → 스크립트 호출 35자 | Vercel schema 상한 256자 초과로 PR #18 Preview 배포가 시작되지 않음(사용자 확인). 의미 동일(preview 아니면 빌드, 이전 SHA 없으면 빌드, 감시 경로 무변경이면 skip). 검증기가 길이·스크립트 실행 비트·경로 목록 일치를 확인하고 스크립트를 replay(12 commits, 0 defects) |
 
 ## 4. 검증 결과
 

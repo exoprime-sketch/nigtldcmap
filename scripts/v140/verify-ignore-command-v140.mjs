@@ -64,6 +64,33 @@ if (typeof ignoreCommand !== "string" || !ignoreCommand.trim()) {
   console.error("vercel.json has no ignoreCommand");
   process.exit(2);
 }
+// Vercel's schema caps the inline command at 256 characters; a longer value
+// fails the deployment before any build starts (PR #18). The body therefore
+// lives in a script the command only invokes.
+const IGNORE_COMMAND_MAX_LENGTH = 256;
+if (ignoreCommand.length >= IGNORE_COMMAND_MAX_LENGTH) {
+  console.error(`vercel.json ignoreCommand is ${ignoreCommand.length} characters; Vercel allows fewer than ${IGNORE_COMMAND_MAX_LENGTH}`);
+  process.exit(2);
+}
+const scriptMatch = ignoreCommand.match(/^(?:bash|sh)\s+(\S+)$/u);
+if (!scriptMatch) {
+  console.error(`vercel.json ignoreCommand must be "bash <script>", got: ${ignoreCommand}`);
+  process.exit(2);
+}
+const IGNORE_SCRIPT = resolve(ROOT, scriptMatch[1]);
+if (!existsSync(IGNORE_SCRIPT)) {
+  console.error(`ignoreCommand script missing: ${scriptMatch[1]}`);
+  process.exit(2);
+}
+const ignoreScript = readFileSync(IGNORE_SCRIPT, "utf8");
+// The script's git pathspecs are the contract; they must name exactly the
+// build inputs listed below, in any order.
+const scriptPathspecs = (() => {
+  const line = ignoreScript.split("\n").find((row) => /^git diff --quiet/u.test(row.trim()));
+  const after = line ? line.split(" -- ")[1] || "" : "";
+  return after.trim().split(/\s+/u).filter(Boolean).map((token) => token.replace(/^'|'$/gu, ""));
+})();
+const scriptMode = git(["ls-files", "-s", "--", scriptMatch[1]]).split(/\s+/u)[0] || "";
 
 const shellPath = (() => {
   if (process.platform !== "win32") return "sh";
@@ -74,7 +101,11 @@ const shellPath = (() => {
   ].filter(Boolean);
   return candidates.find((candidate) => existsSync(candidate)) ?? "sh";
 })();
-const shellArgs = process.platform === "win32" ? ["-lc", ignoreCommand] : ["-c", ignoreCommand];
+// Vercel runs the command in its checkout, where the script exists. The replay
+// worktree has no checkout, so the script is taken from this repository's
+// working copy while git runs against the worktree's HEAD.
+const replayCommand = `bash "${IGNORE_SCRIPT.replace(/\\/gu, "/")}"`;
+const shellArgs = process.platform === "win32" ? ["-lc", replayCommand] : ["-c", replayCommand];
 
 const touchesBuildInput = (paths) =>
   paths.some((p) =>
@@ -111,6 +142,21 @@ const rootSha = git(["rev-list", "--max-parents=0", REF]).split("\n")[0];
 const rows = [];
 let defects = 0;
 let skipped = 0;
+
+// Contract checks on the file itself, before any replay.
+const expectedPathspecs = BUILD_INPUTS.map((input) => (input === ".env" ? ".env*" : input.replace(/\/$/u, "")));
+const pathspecsMatch = JSON.stringify([...scriptPathspecs].sort()) === JSON.stringify([...expectedPathspecs].sort());
+const scriptExecutable = scriptMode === "100755";
+const scriptChecks = {
+  commandLength: ignoreCommand.length,
+  commandLengthOk: ignoreCommand.length < IGNORE_COMMAND_MAX_LENGTH,
+  script: scriptMatch[1],
+  scriptPathspecs,
+  pathspecsMatchBuildInputs: pathspecsMatch,
+  scriptMode,
+  scriptExecutable,
+};
+if (!pathspecsMatch || !scriptExecutable) defects += 1;
 
 for (const sha of shas) {
   const subject = git(["log", "-1", "--format=%s", sha]);
@@ -184,6 +230,7 @@ const report = {
   ref: REF,
   headSha: git(["rev-parse", REF]),
   ignoreCommand,
+  scriptChecks,
   buildInputs: BUILD_INPUTS,
   semantics: "exit 0 = skip only an unchanged Preview since its last successful deployment. Production, missing baseline and unknown environment always build.",
   commitsReplayed: rows.length,

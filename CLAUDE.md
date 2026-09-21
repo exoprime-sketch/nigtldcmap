@@ -14,7 +14,7 @@ React 18 / TypeScript 4.9 / CRA 5 / MapLibre GL 5 / 자체 SVG 차트. 공개 pr
 - `src/pages/RealMapExplorerPage.tsx`(8,000줄+)와 `SemanticContractRendererV125.tsx`(2,700줄+)는 **전체 Read 금지**. `grep -n`으로 함수·문자열 위치를 찾고 필요한 구간만 열어 부분 편집.
 - 기존 파일 수정을 우선하고, 새 `V###` 접미사 파일은 정말 새 역할일 때만 만든다. 이번 라운드 버전: V150(가독성) → V151(경계34) → V152(아이콘) → V153(상세) → V154(QA).
 - 생성 자산(`public/data/vietnam/v2/**`)을 바꾸면 `node scripts/generate-vietnam-asset-integrity-v133.mjs --data public/data/vietnam/v2`로 integrity 갱신.
-- `.gitattributes`·`vercel.json ignoreCommand`는 변경하지 않는다. `output/`·`tmp/`·`.staging/`·`.verify/`는 git 무시 경로.
+- `.gitattributes`는 변경하지 않는다. `vercel.json ignoreCommand`는 256자 제한을 지키고(본문은 `scripts/vercel-ignore-build.sh`) `verify-ignore-command-v140`으로 검증한 뒤에만 변경한다. `output/`·`tmp/`·`.staging/`·`.verify/`는 git 무시 경로.
 
 ## 검증 명령(순서)
 ```
