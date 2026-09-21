@@ -26,7 +26,10 @@
 - 단일 실행(main 6a66308 보고서) ↔ sharded 요약 대조 `reports/v150-1/ci-shard-parity-v150-1.json`: **parity true** — 79개 check 이름·판정 동일, 차이 0
 - 결정성 `reports/v150-1/determinism-v150-1.json`: 로컬 Windows 2회(빌드 2회) 기본 순서 해시 `846caae1dae978ba`, 최신순 해시 `073215a4a32b3185` 동일. CI(Linux) `determinism-ci.json` 아티팩트·Vercel Preview 해시는 PR 실행 후 추가
 - e2e 홈 spec: smoke·responsive·visual 40/40(후보 빌드)
-- CI 실측(PR): PR 실행 후 기입
+- CI 실측(PR #20, 3차 push `a5ab3f3`, Linux): static **5분 04초**(tsc·검증·빌드·단위테스트·정적 감사 14·deployment/security·홈 해시), analysis 10분 20초(role-split 52/52 + analysis QA 41=기준선 PASS), browser shard 1 4분 47초 PASS · shard 2 6분 32초 PASS · shard 3 6분 24초 FAIL · shard 4 10분 02초 FAIL → summary FAIL.
+  - shard 3·4 실패 원인: `entity-cards`(B-007)·`temporal-depth`(B-003~B-007)에서 CDP `Runtime.evaluate`/`Page.navigate` 시간 초과(19~30 s). B-003~B-007은 13.5 MB `vnm-v124-pack-005`(CCKP 63개 성·시 × 시나리오)를 base64 복호·SHA-256 2회·gunzip·JSON 파싱해야 준비되며 로컬 2.4~2.9 s, CPU ×4 스로틀 12.6~13.1 s(프로파일: parseContentJson 831 ms, sha256Hex 378 ms, normalizeTextV126 234 ms). 공유 러너에서는 20~25 s 예산을 넘긴다(단일 job 시절 PR #18에서는 통과 — 경계값).
+  - 조치: `scripts/v125/browser-runtime.mjs`에 `V125_TIMEOUT_SCALE`(CDP 명령·폴링 예산 배수) 추가, CI browser shard·role-split에 3 적용. 검사 항목·기대값은 불변(느린 기계에 시간만 더 줌). 1차·2차 push는 static에서 각각 deployment 감사(작은 지도 절대 경로·서브패스 `/api/usage`)와 홈 해시 단계(러너 Chrome 미지정)로 실패 → 원인 수정.
+  - 후속 과제(성능): pack-005 분할 또는 요소별 지연 로딩 — 사용자 기기에서도 B-003~B-007 초기 준비가 가장 느리다(PR-D 또는 별도 PR).
 
 ## 4. 기대값 변경(사유)
 | 파일 | 변경 | 사유 |

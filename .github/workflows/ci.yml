@@ -169,8 +169,13 @@ jobs:
           name: build-${{ github.sha }}
           path: build/
 
+      # Shared runners are several times slower than a workstation (the CCKP
+      # pack behind B-003..B-007 alone takes seconds to parse); wait budgets
+      # are scaled, the checks themselves are unchanged.
       - name: V136 gate — browser shard
         timeout-minutes: 20
+        env:
+          V125_TIMEOUT_SCALE: "3"
         run: node scripts/audit-vietnam-release-v136.mjs --group browser --shard ${{ matrix.shard }}/4
 
       - name: Upload shard results
@@ -284,6 +289,8 @@ jobs:
 
       - name: Role split QA
         timeout-minutes: 15
+        env:
+          V125_TIMEOUT_SCALE: "3"
         run: npm run qa:role-split:v140
 
       - name: "Card → detail analysis QA (baseline: reports/v150/analysis-qa-baseline-v150.json)"
