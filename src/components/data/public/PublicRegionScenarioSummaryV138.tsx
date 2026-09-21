@@ -666,7 +666,7 @@ export default function PublicRegionScenarioSummaryV138({
         </div>
         <div>
           <dt>값의 단위</dt>
-          <dd>{rowIsSubRegion ? `${rowUnitLabel} ${shape.rowUnitCount.toLocaleString("ko-KR")}개 (63개 성·시로 분류)` : "성·시(개편 전 63개)"}</dd>
+          <dd>{rowIsSubRegion ? `${rowUnitLabel} ${shape.rowUnitCount.toLocaleString("ko-KR")}개 (개편 전 63개 성·시로 분류)` : "성·시(개편 전 63개)"}</dd>
         </div>
       </dl>
 

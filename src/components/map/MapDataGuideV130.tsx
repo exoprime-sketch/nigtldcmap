@@ -6,6 +6,10 @@ import {
 } from "../../data/visualization/publicMapWorkspaceV126";
 import { PublicTermTextV134 } from "../help/PublicTermV134";
 import {
+  BOUNDARY_ATTRIBUTION_V151,
+  boundaryValueNoticeV151,
+} from "../../data/map/adminBoundaryV151";
+import {
   MAP_PENDING_LABEL_V140,
   summarizeMapAvailabilityV140,
 } from "../../data/map/mapAvailabilityV140";
@@ -65,6 +69,11 @@ export default function MapDataGuideV130({
             </span>
           </div>
         </div>
+        <p className="cdp-muted" data-testid="map-data-guide-boundary-v151">
+          {BOUNDARY_ATTRIBUTION_V151}. 경계선 기준은 지도 위 '행정경계 기준'에서
+          바꿀 수 있으며, 바꿔도 값은 달라지지 않습니다.{" "}
+          {boundaryValueNoticeV151("post-2025-34")}
+        </p>
         <div className="cdp-map-data-guide-v130__tables">
           {groups.map(({ group, layers: groupLayers, missing }) => (
             <section key={group} data-map-guide-group={group}>

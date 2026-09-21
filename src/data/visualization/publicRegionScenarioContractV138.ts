@@ -61,7 +61,7 @@ const MAP_TARGET_MEASURES = new Map<string, RegionScenarioMeasureV138[]>(
 
 const CLIMATE_CONSTRAINTS = [
   "성·시 값은 GADM 4.1 ADM1(개편 전 63개) 경계로 집계한 CCKP 격자 통계이며 관측소 값이 아닙니다.",
-  "전국 평균은 원천이 제공하지 않으므로 만들지 않습니다. 전체 분포는 63개 성·시 값의 중앙값과 10~90 분위(지역 간 분포)입니다.",
+  "전국 평균은 원천이 제공하지 않으므로 만들지 않습니다. 전체 분포는 개편 전 63개 성·시 값의 중앙값과 10~90 분위(지역 간 분포)입니다.",
 ];
 
 const PROJECTION_CONSTRAINTS = [

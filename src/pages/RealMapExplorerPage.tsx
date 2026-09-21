@@ -1,6 +1,15 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useDatasetUsageV149 } from "../data/publicUsageV149";
 import { addKoreanMapLabelsV150, setMapBackdropV150 } from "../data/map/mapBackdropV150";
+import {
+  BOUNDARY_SYSTEM_STORAGE_KEY_V151,
+  DEFAULT_BOUNDARY_SYSTEM_V151,
+  boundaryGeometryPathV151,
+  boundarySystemLabelV151,
+  boundarySystemV151,
+  boundaryValueNoticeV151,
+} from "../data/map/adminBoundaryV151";
+import type { BoundarySystemV151 } from "../data/map/adminBoundaryV151";
 import "../styles/map-readability-v150.css";
 import { isPublicMapFactV143, hasPublicMapFactValueV143 } from "../data/visualization/publicMapCopyV143";
 import maplibregl, { Map as MapLibreMap } from "maplibre-gl";
@@ -291,6 +300,10 @@ function publicVietnamSourceRegionV126(value: string | undefined): string {
 
 const VNM_ADM1_GEOMETRY_URL_V126 =
   publicAssetUrlV128("data/vietnam/v2/geometry/vnm-adm1-63.geojson");
+/** V151: the reference outline follows the chosen vintage; values do not. */
+function vnmAdm1ReferenceUrlV151(system: BoundarySystemV151): string {
+  return publicAssetUrlV128(boundaryGeometryPathV151(system));
+}
 const VNM_ADM1_BASE_SOURCE_V126 = "cdp-vietnam-adm1-reference";
 const VNM_ADM1_BASE_OUTLINE_V126 = "cdp-vietnam-adm1-reference-outline";
 
@@ -1745,6 +1758,18 @@ export default function RealMapExplorerPage({
     try { return localStorage.getItem("cdp-map-backdrop-v150") !== "off"; } catch { return true; }
   });
   const [backdropErrorV150, setBackdropErrorV150] = useState(false);
+  // V151: which province vintage the reference outline and Korean labels draw.
+  // It never changes a value; the published values keep their source's vintage.
+  const [boundarySystemV151State, setBoundarySystemV151State] =
+    useState<BoundarySystemV151>(() => {
+      try {
+        return boundarySystemV151(
+          localStorage.getItem(BOUNDARY_SYSTEM_STORAGE_KEY_V151)
+        );
+      } catch {
+        return DEFAULT_BOUNDARY_SYSTEM_V151;
+      }
+    });
   const [fallbackBoundaryStatus, setFallbackBoundaryStatus] =
     useState<LoadStatus>("loading");
   const [fallbackBoundaryPath, setFallbackBoundaryPath] = useState("");
@@ -2197,7 +2222,13 @@ export default function RealMapExplorerPage({
     () =>
       (adm1Boundary?.features || [])
         .map((feature) => ({
-          code: String(feature.properties?.adm1Code || feature.id || ""),
+          // V151: the 34-unit asset carries `unitCode`, the 63-unit `adm1Code`.
+          code: String(
+            feature.properties?.unitCode ||
+              feature.properties?.adm1Code ||
+              feature.id ||
+              ""
+          ),
           name: publicMapFeatureNameV126(
             feature.properties?.name,
             "성·시"
@@ -2264,7 +2295,9 @@ export default function RealMapExplorerPage({
       };
     }
     setAdm1OutlineStatus("loading");
-    void loadVietnamSpatialGeoJsonV124(VNM_ADM1_GEOMETRY_URL_V126)
+    void loadVietnamSpatialGeoJsonV124(
+      vnmAdm1ReferenceUrlV151(boundarySystemV151State)
+    )
       .then((collection) => {
         if (cancelled) return;
         setAdm1Boundary(collection);
@@ -2278,7 +2311,18 @@ export default function RealMapExplorerPage({
     return () => {
       cancelled = true;
     };
-  }, [countryIso3]);
+  }, [countryIso3, boundarySystemV151State]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(
+        BOUNDARY_SYSTEM_STORAGE_KEY_V151,
+        boundarySystemV151State
+      );
+    } catch {
+      /* optional preference */
+    }
+  }, [boundarySystemV151State]);
 
   useEffect(() => {
     let cancelled = false;
@@ -2648,7 +2692,7 @@ export default function RealMapExplorerPage({
       type: "geojson",
       data: adm1Boundary as GeoJSON.FeatureCollection,
       attribution:
-        '<a href="https://www.geoboundaries.org/" target="_blank" rel="noreferrer">geoBoundaries VNM ADM1</a> · CC BY 4.0',
+        '<a href="https://www.geoboundaries.org/" target="_blank" rel="noreferrer">geoBoundaries VNM ADM1</a> · CC BY 4.0 · 2025-07-01 34개 통합 대응',
     });
     map.addLayer({
       id: VNM_ADM1_BASE_OUTLINE_V126,
@@ -4545,7 +4589,7 @@ export default function RealMapExplorerPage({
         label: sourceIsRegional ? `자료가 있는 ${regionUnitLabel}` : "자료가 있는 지역",
         value: sourceIsRegional
           ? `${ordered.length}/${regionTotal}개 ${regionUnitLabel}`
-          : `${ordered.length}/63개 성·시`,
+          : `${ordered.length}/63개 성·시(개편 전 기준)`,
       });
       if (minimum !== null) {
         summaryRows.push(
@@ -6345,8 +6389,8 @@ export default function RealMapExplorerPage({
               </dl>
               {focusedLayer.elementId === "D-008" && (
                 <p data-testid="d008-coverage-warning" role="note">
-                  63개 성·시 중 3개에 값이 있으며, 값이 없는 60개 성·시는
-                  투명하게 표시하며 0으로 대체하지 않습니다.
+                  개편 전 63개 성·시 중 3개에 값이 있으며, 값이 없는 60개
+                  성·시는 투명하게 표시하며 0으로 대체하지 않습니다.
                 </p>
               )}
               {focusedLayer.elementId === "A-024" && (
@@ -6457,7 +6501,9 @@ export default function RealMapExplorerPage({
               <g
                 className="cdp-map-fallback__adm1-reference"
                 data-testid="map-adm1-base-outline"
-                aria-label="베트남 63개 성·시 기준 경계"
+                aria-label={`베트남 ${boundarySystemLabelV151(
+                  boundarySystemV151State
+                )} 기준 경계`}
               >
                 {fallbackAdm1Paths.map((row) => (
                   <path key={row.code} d={row.path} fill="none">
@@ -7104,8 +7150,8 @@ export default function RealMapExplorerPage({
               })}
             </svg>
           <span className="cdp-map-fallback__attribution">
-              Natural Earth · 국가 외곽선 | geoBoundaries · 베트남 63개
-              성·시 (CC BY 4.0)
+              Natural Earth · 국가 외곽선 | geoBoundaries · 베트남{" "}
+              {boundarySystemLabelV151(boundarySystemV151State)} (CC BY 4.0)
           </span>
           </div>
           <div
@@ -7149,11 +7195,35 @@ export default function RealMapExplorerPage({
             >
               geoBoundaries
             </a>{" "}
-            · 베트남 63개 성·시 (CC BY 4.0)
+            · 베트남 {boundarySystemLabelV151(boundarySystemV151State)} (CC BY
+            4.0)
           </span>
           <div className="cdp-map-backdrop-v150">
             <label><input type="checkbox" checked={backdropEnabledV150} onChange={event => setBackdropEnabledV150(event.target.checked)} />배경지도</label>
             {backdropEnabledV150 && backdropErrorV150 && <span role="status">배경지도를 불러오지 못했습니다. 데이터와 경계는 계속 볼 수 있습니다.</span>}
+          </div>
+          <div
+            className="cdp-map-boundary-system-v151"
+            data-boundary-system={boundarySystemV151State}
+          >
+            <fieldset>
+              <legend>행정경계 기준</legend>
+              {(["post-2025-34", "pre-2025-63"] as const).map((system) => (
+                <label key={system}>
+                  <input
+                    checked={boundarySystemV151State === system}
+                    name="cdp-map-boundary-system-v151"
+                    onChange={() => setBoundarySystemV151State(system)}
+                    type="radio"
+                    value={system}
+                  />
+                  {boundarySystemLabelV151(system)}
+                </label>
+              ))}
+            </fieldset>
+            <p data-testid="map-boundary-value-notice-v151">
+              {boundaryValueNoticeV151(boundarySystemV151State)}
+            </p>
           </div>
           <div className="cdp-map-status-badge">
             {baseMapStatus === "ready"
@@ -7177,7 +7247,9 @@ export default function RealMapExplorerPage({
                 ? loadingIds.includes(focusedLayer.elementId)
                   ? "불러오는 중입니다"
                   : "선로·시설·지역을 선택하면 세부정보를 볼 수 있습니다"
-                : "배경지도와 베트남 63개 성·시 경계가 준비되어 있습니다"}
+                : `배경지도와 베트남 ${boundarySystemLabelV151(
+                    boundarySystemV151State
+                  )} 경계가 준비되어 있습니다`}
             </div>
             {baseMapStatus === "ready" && keyboardMapFeatureV129 ? (
               <div

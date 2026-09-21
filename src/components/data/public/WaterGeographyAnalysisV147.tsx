@@ -15,7 +15,7 @@ export function FlowDirectionAnalysisV147({ entities }: { entities: VietnamEntit
   const regionLabel = (r: VietnamEntityV124) => String(r.normalizedAttributes?.["지역명_베트남어"] || r.normalizedAttributes?.["지역명_로마자"] || r.name);
   const values = DIRECTIONS.map(([key, label]) => ({ id: key, label, value: finiteV147(a[key]) ? a[key] as number : null }));
   return <section className="detail146" data-testid="flow-direction-v147">
-    <h3>선택 성·시의 8방향 비율</h3><p className="detail146-note">지형 격자에서 물이 흘러가는 방향의 비율입니다. 하천의 유량이나 강수량은 아닙니다. 원자료의 63개 성·시 경계를 기준으로 합니다.</p>
+    <h3>선택 성·시의 8방향 비율</h3><p className="detail146-note">지형 격자에서 물이 흘러가는 방향의 비율입니다. 하천의 유량이나 강수량은 아닙니다. 원자료의 개편 전 63개 성·시 경계를 기준으로 합니다.</p>
     <label className="detail146-select">지역<select aria-label="유향 지역" value={own.recordId} onChange={(e) => setSelected(e.target.value)}>{regions.map((r) => <option key={r.recordId} value={r.recordId}>{regionLabel(r)}</option>)}</select></label>
     <AnalysisBarsV147 title={`${regionLabel(own)} · 8방향별 격자 비율`} unit="%" maximum={100} rows={values} />
     <div className="detail146-table"><table><caption><PublicTermTextV134 text={`${regionLabel(own)} · HydroSHEDS DIR 15s · 비율 합계는 반올림으로 100%와 다를 수 있습니다.`} /></caption><thead><tr><th scope="col">방향</th><th scope="col">비율(%)</th></tr></thead><tbody>{values.map((v) => <tr key={v.id}><th scope="row">{v.label}</th><td>{formatValueV121(v.value)}</td></tr>)}</tbody></table></div>
