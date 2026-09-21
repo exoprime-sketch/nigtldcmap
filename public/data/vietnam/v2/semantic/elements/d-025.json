@@ -19,12 +19,12 @@
       "dimensionLabels": {
         "category": "베트남 프로젝트 레지스트리",
         "detail": "레코드 1건 = 1행(1.2 레코드형 시트)",
-        "technology": "1 · 3 · 5 · 8 · 15 · 18 · 24 · 32"
+        "technology": "01 · 03 · 05 · 08 · 15 · 18 · 24 · 32"
       },
       "dimensions": {
         "category": "베트남 프로젝트 레지스트리",
         "detail": "레코드 1건 = 1행(1.2 레코드형 시트)",
-        "technology": "1,3,5,8,15,18,24,32"
+        "technology": "01,03,05,08,15,18,24,32"
       },
       "displayLabel": "민간 인프라 투자(PPI) · 베트남 프로젝트 레지스트리 — 레코드 1건 = 1행(1.2 레코드형 시트)",
       "indicatorId": "D-025_ppi_project_registry",
@@ -35,7 +35,7 @@
         "unit": "건",
         "unitFamily": "text"
       },
-      "seriesKey": "measure-a501770280ff|건|category=베트남 프로젝트 레지스트리|detail=레코드 1건 = 1행(1.2 레코드형 시트)|technology=1,3,5,8,15,18,24,32|D-025_ppi_project_registry",
+      "seriesKey": "measure-a501770280ff|건|category=베트남 프로젝트 레지스트리|detail=레코드 1건 = 1행(1.2 레코드형 시트)|technology=01,03,05,08,15,18,24,32|D-025_ppi_project_registry",
       "sourceCaveat": "[원본 버전] World Bank PPI Database Custom Query 내려받기본(Country=Vietnam, 132건, Financial Close 2001~2024). [검토지적 반영] 종전 자료의 \"공동투자 가능 여부\"에서 \"가능(실적 있음)\"과 \"검토 필요\"의 판단기준이 불명확하다는 지적에 따라, 주관적 판정 열을 제거하고 원자료가 제공하는 사실값(다자기구 지원 MultiLateralSupport, 양자기구 지원 BiLateralSupport, 총 부채조달 TotalDebtFunding, 참여 은행 ProjectBanks)을 그대로 수록함 — 공동투자 가능성 판단은 이 사실값으로 이용자가 하도록 함. [정의·범위] PPI DB는 민간 참여 인프라 프로젝트만 수록하므로 순수 공공사업은 포함되지 않음. [척도] 금액 단위는 원자료 표기대로 백만 USD(TotalInvestment)이며 note에 단위를 명시함.",
       "sourceLabel": "민간 인프라 투자(PPI) · 베트남 프로젝트 레지스트리 — 레코드 1건 = 1행(1.2 레코드형 시트)",
       "sourceLabelEn": "Registry of private participation in infrastructure (PPI) projects in Viet Nam",
@@ -53,12 +53,12 @@
       "dimensionLabels": {
         "category": "민간 투자액 합계",
         "detail": "총 투자액 × 민간지분율",
-        "technology": "1 · 3 · 5 · 8 · 15 · 18 · 24 · 32"
+        "technology": "01 · 03 · 05 · 08 · 15 · 18 · 24 · 32"
       },
       "dimensions": {
         "category": "민간 투자액 합계",
         "detail": "총 투자액 × 민간지분율",
-        "technology": "1,3,5,8,15,18,24,32"
+        "technology": "01,03,05,08,15,18,24,32"
       },
       "displayLabel": "민간 인프라 투자(PPI) · 민간 투자액 합계 — 총 투자액 × 민간지분율",
       "indicatorId": "D-025_private_investment_sum",
@@ -69,7 +69,7 @@
         "unit": "USD",
         "unitFamily": "currency"
       },
-      "seriesKey": "measure-2c2221cce0c4|USD|category=민간 투자액 합계|detail=총 투자액 × 민간지분율|technology=1,3,5,8,15,18,24,32|D-025_private_investment_sum",
+      "seriesKey": "measure-2c2221cce0c4|USD|category=민간 투자액 합계|detail=총 투자액 × 민간지분율|technology=01,03,05,08,15,18,24,32|D-025_private_investment_sum",
       "sourceCaveat": "[원본 버전] World Bank PPI Database Custom Query 내려받기본(Country=Vietnam, 132건, Financial Close 2001~2024). [검토지적 반영] 종전 자료의 \"공동투자 가능 여부\"에서 \"가능(실적 있음)\"과 \"검토 필요\"의 판단기준이 불명확하다는 지적에 따라, 주관적 판정 열을 제거하고 원자료가 제공하는 사실값(다자기구 지원 MultiLateralSupport, 양자기구 지원 BiLateralSupport, 총 부채조달 TotalDebtFunding, 참여 은행 ProjectBanks)을 그대로 수록함 — 공동투자 가능성 판단은 이 사실값으로 이용자가 하도록 함. [정의·범위] PPI DB는 민간 참여 인프라 프로젝트만 수록하므로 순수 공공사업은 포함되지 않음. [척도] 금액 단위는 원자료 표기대로 백만 USD(TotalInvestment)이며 note에 단위를 명시함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함.",
       "sourceLabel": "민간 인프라 투자(PPI) · 민간 투자액 합계 — 총 투자액 × 민간지분율",
       "sourceLabelEn": "Private investment in PPI projects, Viet Nam (sum)",
@@ -87,12 +87,12 @@
       "dimensionLabels": {
         "category": "프로젝트 건수",
         "detail": "베트남 PPI 등록 프로젝트 총 건수",
-        "technology": "1 · 3 · 5 · 8 · 15 · 18 · 24 · 32"
+        "technology": "01 · 03 · 05 · 08 · 15 · 18 · 24 · 32"
       },
       "dimensions": {
         "category": "프로젝트 건수",
         "detail": "베트남 PPI 등록 프로젝트 총 건수",
-        "technology": "1,3,5,8,15,18,24,32"
+        "technology": "01,03,05,08,15,18,24,32"
       },
       "displayLabel": "민간 인프라 투자(PPI) · 프로젝트 건수 — 베트남 PPI 등록 프로젝트 총 건수",
       "indicatorId": "D-025_project_count",
@@ -103,7 +103,7 @@
         "unit": "건",
         "unitFamily": "count"
       },
-      "seriesKey": "measure-a501770280ff|건|category=프로젝트 건수|detail=베트남 PPI 등록 프로젝트 총 건수|technology=1,3,5,8,15,18,24,32|D-025_project_count",
+      "seriesKey": "measure-a501770280ff|건|category=프로젝트 건수|detail=베트남 PPI 등록 프로젝트 총 건수|technology=01,03,05,08,15,18,24,32|D-025_project_count",
       "sourceCaveat": "[원본 버전] World Bank PPI Database Custom Query 내려받기본(Country=Vietnam, 132건, Financial Close 2001~2024). [검토지적 반영] 종전 자료의 \"공동투자 가능 여부\"에서 \"가능(실적 있음)\"과 \"검토 필요\"의 판단기준이 불명확하다는 지적에 따라, 주관적 판정 열을 제거하고 원자료가 제공하는 사실값(다자기구 지원 MultiLateralSupport, 양자기구 지원 BiLateralSupport, 총 부채조달 TotalDebtFunding, 참여 은행 ProjectBanks)을 그대로 수록함 — 공동투자 가능성 판단은 이 사실값으로 이용자가 하도록 함. [정의·범위] PPI DB는 민간 참여 인프라 프로젝트만 수록하므로 순수 공공사업은 포함되지 않음. [척도] 금액 단위는 원자료 표기대로 백만 USD(TotalInvestment)이며 note에 단위를 명시함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함.",
       "sourceLabel": "민간 인프라 투자(PPI) · 프로젝트 건수 — 베트남 PPI 등록 프로젝트 총 건수",
       "sourceLabelEn": "Number of PPI projects, Viet Nam",
@@ -121,12 +121,12 @@
       "dimensionLabels": {
         "category": "상태별 프로젝트 건수",
         "detail": "Active",
-        "technology": "1 · 3 · 5 · 8 · 15 · 18 · 24 · 32"
+        "technology": "01 · 03 · 05 · 08 · 15 · 18 · 24 · 32"
       },
       "dimensions": {
         "category": "상태별 프로젝트 건수",
         "detail": "Active",
-        "technology": "1,3,5,8,15,18,24,32"
+        "technology": "01,03,05,08,15,18,24,32"
       },
       "displayLabel": "민간 인프라 투자(PPI) · 상태별 프로젝트 건수 — Active",
       "indicatorId": "D-025_project_count_active",
@@ -137,7 +137,7 @@
         "unit": "건",
         "unitFamily": "count"
       },
-      "seriesKey": "measure-a501770280ff|건|category=상태별 프로젝트 건수|detail=Active|technology=1,3,5,8,15,18,24,32|D-025_project_count_active",
+      "seriesKey": "measure-a501770280ff|건|category=상태별 프로젝트 건수|detail=Active|technology=01,03,05,08,15,18,24,32|D-025_project_count_active",
       "sourceCaveat": "[원본 버전] World Bank PPI Database Custom Query 내려받기본(Country=Vietnam, 132건, Financial Close 2001~2024). [검토지적 반영] 종전 자료의 \"공동투자 가능 여부\"에서 \"가능(실적 있음)\"과 \"검토 필요\"의 판단기준이 불명확하다는 지적에 따라, 주관적 판정 열을 제거하고 원자료가 제공하는 사실값(다자기구 지원 MultiLateralSupport, 양자기구 지원 BiLateralSupport, 총 부채조달 TotalDebtFunding, 참여 은행 ProjectBanks)을 그대로 수록함 — 공동투자 가능성 판단은 이 사실값으로 이용자가 하도록 함. [정의·범위] PPI DB는 민간 참여 인프라 프로젝트만 수록하므로 순수 공공사업은 포함되지 않음. [척도] 금액 단위는 원자료 표기대로 백만 USD(TotalInvestment)이며 note에 단위를 명시함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함.",
       "sourceLabel": "민간 인프라 투자(PPI) · 상태별 프로젝트 건수 — Active",
       "sourceLabelEn": "Number of PPI projects by status — Active",
@@ -155,12 +155,12 @@
       "dimensionLabels": {
         "category": "상태별 프로젝트 건수",
         "detail": "Cancelled",
-        "technology": "1 · 3 · 5 · 8 · 15 · 18 · 24 · 32"
+        "technology": "01 · 03 · 05 · 08 · 15 · 18 · 24 · 32"
       },
       "dimensions": {
         "category": "상태별 프로젝트 건수",
         "detail": "Cancelled",
-        "technology": "1,3,5,8,15,18,24,32"
+        "technology": "01,03,05,08,15,18,24,32"
       },
       "displayLabel": "민간 인프라 투자(PPI) · 상태별 프로젝트 건수 — Cancelled",
       "indicatorId": "D-025_project_count_cancelled",
@@ -171,7 +171,7 @@
         "unit": "건",
         "unitFamily": "count"
       },
-      "seriesKey": "measure-a501770280ff|건|category=상태별 프로젝트 건수|detail=Cancelled|technology=1,3,5,8,15,18,24,32|D-025_project_count_cancelled",
+      "seriesKey": "measure-a501770280ff|건|category=상태별 프로젝트 건수|detail=Cancelled|technology=01,03,05,08,15,18,24,32|D-025_project_count_cancelled",
       "sourceCaveat": "[원본 버전] World Bank PPI Database Custom Query 내려받기본(Country=Vietnam, 132건, Financial Close 2001~2024). [검토지적 반영] 종전 자료의 \"공동투자 가능 여부\"에서 \"가능(실적 있음)\"과 \"검토 필요\"의 판단기준이 불명확하다는 지적에 따라, 주관적 판정 열을 제거하고 원자료가 제공하는 사실값(다자기구 지원 MultiLateralSupport, 양자기구 지원 BiLateralSupport, 총 부채조달 TotalDebtFunding, 참여 은행 ProjectBanks)을 그대로 수록함 — 공동투자 가능성 판단은 이 사실값으로 이용자가 하도록 함. [정의·범위] PPI DB는 민간 참여 인프라 프로젝트만 수록하므로 순수 공공사업은 포함되지 않음. [척도] 금액 단위는 원자료 표기대로 백만 USD(TotalInvestment)이며 note에 단위를 명시함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함.",
       "sourceLabel": "민간 인프라 투자(PPI) · 상태별 프로젝트 건수 — Cancelled",
       "sourceLabelEn": "Number of PPI projects by status — Cancelled",
@@ -189,12 +189,12 @@
       "dimensionLabels": {
         "category": "기술별 총 투자액",
         "detail": "바이오에너지",
-        "technology": "8"
+        "technology": "08"
       },
       "dimensions": {
         "category": "기술별 총 투자액",
         "detail": "바이오에너지",
-        "technology": "8"
+        "technology": "08"
       },
       "displayLabel": "민간 인프라 투자(PPI) · 기술별 총 투자액 — 바이오에너지",
       "indicatorId": "D-025_total_investment_biomass",
@@ -205,7 +205,7 @@
         "unit": "USD",
         "unitFamily": "currency"
       },
-      "seriesKey": "measure-2c2221cce0c4|USD|category=기술별 총 투자액|detail=바이오에너지|technology=8|D-025_total_investment_biomass",
+      "seriesKey": "measure-2c2221cce0c4|USD|category=기술별 총 투자액|detail=바이오에너지|technology=08|D-025_total_investment_biomass",
       "sourceCaveat": "[원본 버전] World Bank PPI Database Custom Query 내려받기본(Country=Vietnam, 132건, Financial Close 2001~2024). [검토지적 반영] 종전 자료의 \"공동투자 가능 여부\"에서 \"가능(실적 있음)\"과 \"검토 필요\"의 판단기준이 불명확하다는 지적에 따라, 주관적 판정 열을 제거하고 원자료가 제공하는 사실값(다자기구 지원 MultiLateralSupport, 양자기구 지원 BiLateralSupport, 총 부채조달 TotalDebtFunding, 참여 은행 ProjectBanks)을 그대로 수록함 — 공동투자 가능성 판단은 이 사실값으로 이용자가 하도록 함. [정의·범위] PPI DB는 민간 참여 인프라 프로젝트만 수록하므로 순수 공공사업은 포함되지 않음. [척도] 금액 단위는 원자료 표기대로 백만 USD(TotalInvestment)이며 note에 단위를 명시함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함.",
       "sourceLabel": "민간 인프라 투자(PPI) · 기술별 총 투자액 — 바이오에너지",
       "sourceLabelEn": "Total PPI investment by technology — Biomass",
@@ -287,12 +287,12 @@
       "dimensionLabels": {
         "category": "기술별 총 투자액",
         "detail": "대수력(>50MW)",
-        "technology": "5"
+        "technology": "05"
       },
       "dimensions": {
         "category": "기술별 총 투자액",
         "detail": "대수력(>50MW)",
-        "technology": "5"
+        "technology": "05"
       },
       "displayLabel": "민간 인프라 투자(PPI) · 기술별 총 투자액 — 대수력(>50MW)",
       "indicatorId": "D-025_total_investment_hydro_large",
@@ -303,7 +303,7 @@
         "unit": "USD",
         "unitFamily": "currency"
       },
-      "seriesKey": "measure-2c2221cce0c4|USD|category=기술별 총 투자액|detail=대수력(>50MW)|technology=5|D-025_total_investment_hydro_large",
+      "seriesKey": "measure-2c2221cce0c4|USD|category=기술별 총 투자액|detail=대수력(>50MW)|technology=05|D-025_total_investment_hydro_large",
       "sourceCaveat": "[원본 버전] World Bank PPI Database Custom Query 내려받기본(Country=Vietnam, 132건, Financial Close 2001~2024). [검토지적 반영] 종전 자료의 \"공동투자 가능 여부\"에서 \"가능(실적 있음)\"과 \"검토 필요\"의 판단기준이 불명확하다는 지적에 따라, 주관적 판정 열을 제거하고 원자료가 제공하는 사실값(다자기구 지원 MultiLateralSupport, 양자기구 지원 BiLateralSupport, 총 부채조달 TotalDebtFunding, 참여 은행 ProjectBanks)을 그대로 수록함 — 공동투자 가능성 판단은 이 사실값으로 이용자가 하도록 함. [정의·범위] PPI DB는 민간 참여 인프라 프로젝트만 수록하므로 순수 공공사업은 포함되지 않음. [척도] 금액 단위는 원자료 표기대로 백만 USD(TotalInvestment)이며 note에 단위를 명시함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함.",
       "sourceLabel": "민간 인프라 투자(PPI) · 기술별 총 투자액 — 대수력(>50MW)",
       "sourceLabelEn": "Total PPI investment by technology — Hydro, Large (>50MW)",
@@ -321,12 +321,12 @@
       "dimensionLabels": {
         "category": "기술별 총 투자액",
         "detail": "소수력(<50MW)",
-        "technology": "5"
+        "technology": "05"
       },
       "dimensions": {
         "category": "기술별 총 투자액",
         "detail": "소수력(<50MW)",
-        "technology": "5"
+        "technology": "05"
       },
       "displayLabel": "민간 인프라 투자(PPI) · 기술별 총 투자액 — 소수력(<50MW)",
       "indicatorId": "D-025_total_investment_hydro_small",
@@ -337,7 +337,7 @@
         "unit": "USD",
         "unitFamily": "currency"
       },
-      "seriesKey": "measure-2c2221cce0c4|USD|category=기술별 총 투자액|detail=소수력(<50MW)|technology=5|D-025_total_investment_hydro_small",
+      "seriesKey": "measure-2c2221cce0c4|USD|category=기술별 총 투자액|detail=소수력(<50MW)|technology=05|D-025_total_investment_hydro_small",
       "sourceCaveat": "[원본 버전] World Bank PPI Database Custom Query 내려받기본(Country=Vietnam, 132건, Financial Close 2001~2024). [검토지적 반영] 종전 자료의 \"공동투자 가능 여부\"에서 \"가능(실적 있음)\"과 \"검토 필요\"의 판단기준이 불명확하다는 지적에 따라, 주관적 판정 열을 제거하고 원자료가 제공하는 사실값(다자기구 지원 MultiLateralSupport, 양자기구 지원 BiLateralSupport, 총 부채조달 TotalDebtFunding, 참여 은행 ProjectBanks)을 그대로 수록함 — 공동투자 가능성 판단은 이 사실값으로 이용자가 하도록 함. [정의·범위] PPI DB는 민간 참여 인프라 프로젝트만 수록하므로 순수 공공사업은 포함되지 않음. [척도] 금액 단위는 원자료 표기대로 백만 USD(TotalInvestment)이며 note에 단위를 명시함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함.",
       "sourceLabel": "민간 인프라 투자(PPI) · 기술별 총 투자액 — 소수력(<50MW)",
       "sourceLabelEn": "Total PPI investment by technology — Hydro, Small (<50MW)",
@@ -419,12 +419,12 @@
       "dimensionLabels": {
         "category": "기술별 총 투자액",
         "detail": "태양광",
-        "technology": "1"
+        "technology": "01"
       },
       "dimensions": {
         "category": "기술별 총 투자액",
         "detail": "태양광",
-        "technology": "1"
+        "technology": "01"
       },
       "displayLabel": "민간 인프라 투자(PPI) · 기술별 총 투자액 — 태양광",
       "indicatorId": "D-025_total_investment_solar_pv",
@@ -435,7 +435,7 @@
         "unit": "USD",
         "unitFamily": "currency"
       },
-      "seriesKey": "measure-2c2221cce0c4|USD|category=기술별 총 투자액|detail=태양광|technology=1|D-025_total_investment_solar_pv",
+      "seriesKey": "measure-2c2221cce0c4|USD|category=기술별 총 투자액|detail=태양광|technology=01|D-025_total_investment_solar_pv",
       "sourceCaveat": "[원본 버전] World Bank PPI Database Custom Query 내려받기본(Country=Vietnam, 132건, Financial Close 2001~2024). [검토지적 반영] 종전 자료의 \"공동투자 가능 여부\"에서 \"가능(실적 있음)\"과 \"검토 필요\"의 판단기준이 불명확하다는 지적에 따라, 주관적 판정 열을 제거하고 원자료가 제공하는 사실값(다자기구 지원 MultiLateralSupport, 양자기구 지원 BiLateralSupport, 총 부채조달 TotalDebtFunding, 참여 은행 ProjectBanks)을 그대로 수록함 — 공동투자 가능성 판단은 이 사실값으로 이용자가 하도록 함. [정의·범위] PPI DB는 민간 참여 인프라 프로젝트만 수록하므로 순수 공공사업은 포함되지 않음. [척도] 금액 단위는 원자료 표기대로 백만 USD(TotalInvestment)이며 note에 단위를 명시함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함.",
       "sourceLabel": "민간 인프라 투자(PPI) · 기술별 총 투자액 — 태양광",
       "sourceLabelEn": "Total PPI investment by technology — Solar, PV",
@@ -453,12 +453,12 @@
       "dimensionLabels": {
         "category": "기술별 총 투자액",
         "detail": "태양광·풍력 복합",
-        "technology": "1 · 3"
+        "technology": "01 · 03"
       },
       "dimensions": {
         "category": "기술별 총 투자액",
         "detail": "태양광·풍력 복합",
-        "technology": "1,3"
+        "technology": "01,03"
       },
       "displayLabel": "민간 인프라 투자(PPI) · 기술별 총 투자액 — 태양광·풍력 복합",
       "indicatorId": "D-025_total_investment_solar_wind_hybrid",
@@ -469,7 +469,7 @@
         "unit": "USD",
         "unitFamily": "currency"
       },
-      "seriesKey": "measure-2c2221cce0c4|USD|category=기술별 총 투자액|detail=태양광·풍력 복합|technology=1,3|D-025_total_investment_solar_wind_hybrid",
+      "seriesKey": "measure-2c2221cce0c4|USD|category=기술별 총 투자액|detail=태양광·풍력 복합|technology=01,03|D-025_total_investment_solar_wind_hybrid",
       "sourceCaveat": "[원본 버전] World Bank PPI Database Custom Query 내려받기본(Country=Vietnam, 132건, Financial Close 2001~2024). [검토지적 반영] 종전 자료의 \"공동투자 가능 여부\"에서 \"가능(실적 있음)\"과 \"검토 필요\"의 판단기준이 불명확하다는 지적에 따라, 주관적 판정 열을 제거하고 원자료가 제공하는 사실값(다자기구 지원 MultiLateralSupport, 양자기구 지원 BiLateralSupport, 총 부채조달 TotalDebtFunding, 참여 은행 ProjectBanks)을 그대로 수록함 — 공동투자 가능성 판단은 이 사실값으로 이용자가 하도록 함. [정의·범위] PPI DB는 민간 참여 인프라 프로젝트만 수록하므로 순수 공공사업은 포함되지 않음. [척도] 금액 단위는 원자료 표기대로 백만 USD(TotalInvestment)이며 note에 단위를 명시함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함.",
       "sourceLabel": "민간 인프라 투자(PPI) · 기술별 총 투자액 — 태양광·풍력 복합",
       "sourceLabelEn": "Total PPI investment by technology — Solar, PV, Wind",
@@ -487,12 +487,12 @@
       "dimensionLabels": {
         "category": "총 투자액 합계",
         "detail": "전 프로젝트 총 투자액 단순합",
-        "technology": "1 · 3 · 5 · 8 · 15 · 18 · 24 · 32"
+        "technology": "01 · 03 · 05 · 08 · 15 · 18 · 24 · 32"
       },
       "dimensions": {
         "category": "총 투자액 합계",
         "detail": "전 프로젝트 총 투자액 단순합",
-        "technology": "1,3,5,8,15,18,24,32"
+        "technology": "01,03,05,08,15,18,24,32"
       },
       "displayLabel": "민간 인프라 투자(PPI) · 총 투자액 합계 — 전 프로젝트 총 투자액 단순합",
       "indicatorId": "D-025_total_investment_sum",
@@ -503,7 +503,7 @@
         "unit": "USD",
         "unitFamily": "currency"
       },
-      "seriesKey": "measure-2c2221cce0c4|USD|category=총 투자액 합계|detail=전 프로젝트 총 투자액 단순합|technology=1,3,5,8,15,18,24,32|D-025_total_investment_sum",
+      "seriesKey": "measure-2c2221cce0c4|USD|category=총 투자액 합계|detail=전 프로젝트 총 투자액 단순합|technology=01,03,05,08,15,18,24,32|D-025_total_investment_sum",
       "sourceCaveat": "[원본 버전] World Bank PPI Database Custom Query 내려받기본(Country=Vietnam, 132건, Financial Close 2001~2024). [검토지적 반영] 종전 자료의 \"공동투자 가능 여부\"에서 \"가능(실적 있음)\"과 \"검토 필요\"의 판단기준이 불명확하다는 지적에 따라, 주관적 판정 열을 제거하고 원자료가 제공하는 사실값(다자기구 지원 MultiLateralSupport, 양자기구 지원 BiLateralSupport, 총 부채조달 TotalDebtFunding, 참여 은행 ProjectBanks)을 그대로 수록함 — 공동투자 가능성 판단은 이 사실값으로 이용자가 하도록 함. [정의·범위] PPI DB는 민간 참여 인프라 프로젝트만 수록하므로 순수 공공사업은 포함되지 않음. [척도] 금액 단위는 원자료 표기대로 백만 USD(TotalInvestment)이며 note에 단위를 명시함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함.",
       "sourceLabel": "민간 인프라 투자(PPI) · 총 투자액 합계 — 전 프로젝트 총 투자액 단순합",
       "sourceLabelEn": "Total investment in PPI projects, Viet Nam (sum)",
@@ -587,12 +587,12 @@
       "dimensionLabels": {
         "category": "기술별 총 투자액",
         "detail": "풍력",
-        "technology": "3"
+        "technology": "03"
       },
       "dimensions": {
         "category": "기술별 총 투자액",
         "detail": "풍력",
-        "technology": "3"
+        "technology": "03"
       },
       "displayLabel": "민간 인프라 투자(PPI) · 기술별 총 투자액 — 풍력",
       "indicatorId": "D-025_total_investment_wind",
@@ -603,7 +603,7 @@
         "unit": "USD",
         "unitFamily": "currency"
       },
-      "seriesKey": "measure-2c2221cce0c4|USD|category=기술별 총 투자액|detail=풍력|technology=3|D-025_total_investment_wind",
+      "seriesKey": "measure-2c2221cce0c4|USD|category=기술별 총 투자액|detail=풍력|technology=03|D-025_total_investment_wind",
       "sourceCaveat": "[원본 버전] World Bank PPI Database Custom Query 내려받기본(Country=Vietnam, 132건, Financial Close 2001~2024). [검토지적 반영] 종전 자료의 \"공동투자 가능 여부\"에서 \"가능(실적 있음)\"과 \"검토 필요\"의 판단기준이 불명확하다는 지적에 따라, 주관적 판정 열을 제거하고 원자료가 제공하는 사실값(다자기구 지원 MultiLateralSupport, 양자기구 지원 BiLateralSupport, 총 부채조달 TotalDebtFunding, 참여 은행 ProjectBanks)을 그대로 수록함 — 공동투자 가능성 판단은 이 사실값으로 이용자가 하도록 함. [정의·범위] PPI DB는 민간 참여 인프라 프로젝트만 수록하므로 순수 공공사업은 포함되지 않음. [척도] 금액 단위는 원자료 표기대로 백만 USD(TotalInvestment)이며 note에 단위를 명시함. [집계 지표] 본 지표는 1.2 레코드형 시트의 개별 레코드를 합산·계수한 자체 산출값이며, 개별 레코드와 중복 합산하면 이중 계상됨. 산출방식 열에 합산 대상과 식을 명시함. 금액이 원천에 공개되지 않은 레코드는 0으로 채우지 않고 합산에서 제외했으며, 제외 건수를 note에 표기함.",
       "sourceLabel": "민간 인프라 투자(PPI) · 기술별 총 투자액 — 풍력",
       "sourceLabelEn": "Total PPI investment by technology — Wind",

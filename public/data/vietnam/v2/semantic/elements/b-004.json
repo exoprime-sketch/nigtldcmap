@@ -268,11 +268,11 @@
       "axisGroupKey": "measure-3272c7050f67|kWh/m²/day",
       "dimensionLabels": {
         "detail": "GHI 장기평균)",
-        "technology": "1 · 2"
+        "technology": "01 · 02"
       },
       "dimensions": {
         "detail": "GHI 장기평균)",
-        "technology": "1,2"
+        "technology": "01,02"
       },
       "displayLabel": "일사량(rsds 대체 — GHI 장기평균)",
       "indicatorId": "B-004_rsds_ghi",
@@ -283,7 +283,7 @@
         "unit": "kWh/m²/day",
         "unitFamily": "energy"
       },
-      "seriesKey": "measure-3272c7050f67|kWh/m²/day|detail=GHI 장기평균)|technology=1,2|B-004_rsds_ghi",
+      "seriesKey": "measure-3272c7050f67|kWh/m²/day|detail=GHI 장기평균)|technology=01,02|B-004_rsds_ghi",
       "sourceCaveat": "[대체 사유] CCKP 국가 API가 rsds 미제공(NP). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] GSA 2.0 릴리스",
       "sourceLabel": "일사량(rsds 대체 — GHI 장기평균)",
       "sourceLabelEn": "Global horizontal irradiation",
@@ -300,11 +300,11 @@
       "axisGroupKey": "measure-6e876ea9fffa|m/s",
       "dimensionLabels": {
         "detail": "100m 장기평균)",
-        "technology": "3"
+        "technology": "03"
       },
       "dimensions": {
         "detail": "100m 장기평균)",
-        "technology": "3"
+        "technology": "03"
       },
       "displayLabel": "풍속(sfcWind 대체 — 100m 장기평균)",
       "indicatorId": "B-004_sfcwind_100m",
@@ -315,7 +315,7 @@
         "unit": "m/s",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-6e876ea9fffa|m/s|detail=100m 장기평균)|technology=3|B-004_sfcwind_100m",
+      "seriesKey": "measure-6e876ea9fffa|m/s|detail=100m 장기평균)|technology=03|B-004_sfcwind_100m",
       "sourceCaveat": "[값 선택 근거] 원천 GWA는 전역 평균을 단일 수치로 배포하지 않고 **면적 백분위 곡선**(상위 2%~100% 각 구간의 평균 풍속 50개 행) 형태로 제공합니다. 각 행이 \"면적 상위 X%의 평균\"이므로 행들을 산술평균하면 공간 평균이 되지 않습니다(그렇게 계산하면 5.49 m/s가 나오나 무효). 전 국토 면적평균은 곡선의 **perc=100 행인 4.28 m/s**이며 이 값을 채택했습니다. [독립 검증] 보유 원본 래스터(VNM_wind-speed_100m.tif, 0.0025°, 유효셀 14,683,458)를 국경 마스크로 절단하고 위도 가중 면적평균을 계산한 결과 4.50 m/s로 원천 값과 정합합니다(마스크가 연안 해상을 일부 포함해 소폭 높으며, 마스크 미적용 시 6.28로 해상 영향이 큼). [대체 사유] CCKP 국가 API가 sfcWind를 제공하지 않음(NP). CMIP6 기반 연도별·SSP 시계열은 미확보이며, NEX-GDDP-CMIP6 격자 클리핑으로 보완 가능(후속 조치). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 확대 가능 — 성 단위 면적가중 평균 산출 가능 / [원천 갱신일 근거] GWA 3.x 릴리스",
       "sourceLabel": "풍속(sfcWind 대체 — 100m 장기평균)",
       "sourceLabelEn": "Mean wind speed at 100m",

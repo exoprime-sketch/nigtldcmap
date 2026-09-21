@@ -22,7 +22,7 @@
       "labelKo": "기술",
       "valueCount": 1,
       "values": [
-        "1,2,3,4,5,7,8"
+        "01,02,03,04,05,07,08"
       ]
     },
     {
@@ -69,12 +69,12 @@
       "dimensionLabels": {
         "category": "설비용량 기준",
         "detail": "전력 부문 재생에너지 비중",
-        "technology": "1 · 2 · 3 · 4 · 5 · 7 · 8"
+        "technology": "01 · 02 · 03 · 04 · 05 · 07 · 08"
       },
       "dimensions": {
         "category": "설비용량 기준",
         "detail": "전력 부문 재생에너지 비중",
-        "technology": "1,2,3,4,5,7,8"
+        "technology": "01,02,03,04,05,07,08"
       },
       "displayLabel": "재생에너지 비중 · 설비용량 기준 — 전력 부문 재생에너지 비중",
       "indicatorId": "A-020_renewable_share_capacity",
@@ -85,7 +85,7 @@
         "unit": "%",
         "unitFamily": "percent"
       },
-      "seriesKey": "measure-3923e88a8f1a|%|category=설비용량 기준|detail=전력 부문 재생에너지 비중|technology=1,2,3,4,5,7,8|A-020_renewable_share_capacity",
+      "seriesKey": "measure-3923e88a8f1a|%|category=설비용량 기준|detail=전력 부문 재생에너지 비중|technology=01,02,03,04,05,07,08|A-020_renewable_share_capacity",
       "sourceCaveat": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [출처·링크] 검토의견 1번에 따라 출처기관·딥링크·인용위치를 전건 기재함. [결측] 검토의견 2번 확인 — 발전량 기준 비중은 2024·2025년이 원문에서 \"-\"(N/A 문자열이 아님)이며, 설비용량 기준 비중은 2024년 57.92%, 2025년 57.80%로 값이 존재함. 즉 두 계열의 결측 구간이 서로 다름. 결측 연도는 값을 비우고 M01로 표기함. [정의] 두 지표 모두 전력 부문 기준이며 최종에너지 소비 기준 재생비중이 아님. A-016(1차에너지)과 직접 비교하지 말 것. [구조] 검토의견 3번(요약통계 4줄·시트명 OnGrid)은 종전 산출물의 문제이며 본 데이터셋 구조에서 해소됨. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
       "sourceLabel": "재생에너지 비중 · 설비용량 기준 — 전력 부문 재생에너지 비중",
       "sourceLabelEn": "Renewable share of electricity capacity",
@@ -103,12 +103,12 @@
       "dimensionLabels": {
         "category": "발전량 기준",
         "detail": "전력 부문 재생에너지 비중",
-        "technology": "1 · 2 · 3 · 4 · 5 · 7 · 8"
+        "technology": "01 · 02 · 03 · 04 · 05 · 07 · 08"
       },
       "dimensions": {
         "category": "발전량 기준",
         "detail": "전력 부문 재생에너지 비중",
-        "technology": "1,2,3,4,5,7,8"
+        "technology": "01,02,03,04,05,07,08"
       },
       "displayLabel": "재생에너지 비중 · 발전량 기준 — 전력 부문 재생에너지 비중",
       "indicatorId": "A-020_renewable_share_generation",
@@ -119,7 +119,7 @@
         "unit": "%",
         "unitFamily": "percent"
       },
-      "seriesKey": "measure-3923e88a8f1a|%|category=발전량 기준|detail=전력 부문 재생에너지 비중|technology=1,2,3,4,5,7,8|A-020_renewable_share_generation",
+      "seriesKey": "measure-3923e88a8f1a|%|category=발전량 기준|detail=전력 부문 재생에너지 비중|technology=01,02,03,04,05,07,08|A-020_renewable_share_generation",
       "sourceCaveat": "[원본 버전] IRENA Renewable Capacity Statistics 2026 / Renewable Energy Statistics 2025 조회 결과(최신 갱신 2026-04-16). [출처·링크] 검토의견 1번에 따라 출처기관·딥링크·인용위치를 전건 기재함. [결측] 검토의견 2번 확인 — 발전량 기준 비중은 2024·2025년이 원문에서 \"-\"(N/A 문자열이 아님)이며, 설비용량 기준 비중은 2024년 57.92%, 2025년 57.80%로 값이 존재함. 즉 두 계열의 결측 구간이 서로 다름. 결측 연도는 값을 비우고 M01로 표기함. [정의] 두 지표 모두 전력 부문 기준이며 최종에너지 소비 기준 재생비중이 아님. A-016(1차에너지)과 직접 비교하지 말 것. [구조] 검토의견 3번(요약통계 4줄·시트명 OnGrid)은 종전 산출물의 문제이며 본 데이터셋 구조에서 해소됨. [라이선스] 파일 내 라이선스 문구가 없어 IRENA 이용약관 기준으로 재배포 「제한」으로 판정함. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·연도·명칭)만 수록하고 원문 해설·번역문·도표 이미지는 수록하지 않음 → 재배포 「제한」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
       "sourceLabel": "재생에너지 비중 · 발전량 기준 — 전력 부문 재생에너지 비중",
       "sourceLabelEn": "Renewable share of electricity generation",

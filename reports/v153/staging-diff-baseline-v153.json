@@ -1,0 +1,54 @@
+{
+  "schema": "v153-staging-diff-1",
+  "from": ".staging/d0-baseline/public/data/vietnam/v2",
+  "to": "public/data/vietnam/v2",
+  "summary": {
+    "stagingFiles": 515,
+    "publishedFiles": 518,
+    "changed": 5,
+    "onlyInStaging": 1,
+    "onlyInPublished": 4
+  },
+  "changed": [
+    {
+      "path": "asset-integrity.json",
+      "stagingBytes": 90660,
+      "publishedBytes": 91199
+    },
+    {
+      "path": "geometry/geometry-manifest.json",
+      "stagingBytes": 8898,
+      "publishedBytes": 11325
+    },
+    {
+      "path": "interpretation/indicator-interpretation-v129.json",
+      "stagingBytes": 46368,
+      "publishedBytes": 46032
+    },
+    {
+      "path": "manifest.json",
+      "stagingBytes": 3264,
+      "publishedBytes": 3264
+    },
+    {
+      "path": "map-index.json",
+      "stagingBytes": 347634,
+      "publishedBytes": 347634
+    }
+  ],
+  "onlyInStaging": [
+    "packs/search-index-v124-ccfcdb47.json"
+  ],
+  "onlyInPublished": [
+    "dataset-directory.json",
+    "geometry/vnm-adm1-34.geojson",
+    "home/card-summaries-v140.json",
+    "packs/search-index-v124-7504f021.json"
+  ],
+  "catalog": {
+    "topLevel": [],
+    "elementCount": 0,
+    "keyCounts": {},
+    "elements": []
+  }
+}

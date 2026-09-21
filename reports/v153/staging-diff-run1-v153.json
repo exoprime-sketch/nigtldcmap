@@ -1,0 +1,1104 @@
+{
+  "schema": "v153-staging-diff-1",
+  "from": ".staging/d0-run1/public/data/vietnam/v2",
+  "to": "public/data/vietnam/v2",
+  "summary": {
+    "stagingFiles": 515,
+    "publishedFiles": 518,
+    "changed": 125,
+    "onlyInStaging": 15,
+    "onlyInPublished": 18
+  },
+  "changed": [
+    {
+      "path": "asset-integrity.json",
+      "stagingBytes": 90660,
+      "publishedBytes": 91199
+    },
+    {
+      "path": "catalog.json",
+      "stagingBytes": 572904,
+      "publishedBytes": 574696
+    },
+    {
+      "path": "downloads/a-016.json",
+      "stagingBytes": 434666,
+      "publishedBytes": 434651
+    },
+    {
+      "path": "downloads/a-017.json",
+      "stagingBytes": 189182,
+      "publishedBytes": 189162
+    },
+    {
+      "path": "downloads/a-018.json",
+      "stagingBytes": 800971,
+      "publishedBytes": 800931
+    },
+    {
+      "path": "downloads/a-020.json",
+      "stagingBytes": 64196,
+      "publishedBytes": 64175
+    },
+    {
+      "path": "downloads/a-023.json",
+      "stagingBytes": 3851714,
+      "publishedBytes": 3851702
+    },
+    {
+      "path": "downloads/b-004.json",
+      "stagingBytes": 85023664,
+      "publishedBytes": 85023658
+    },
+    {
+      "path": "downloads/b-009.json",
+      "stagingBytes": 1031886,
+      "publishedBytes": 1031886
+    },
+    {
+      "path": "downloads/b-017.json",
+      "stagingBytes": 13745148,
+      "publishedBytes": 13745148
+    },
+    {
+      "path": "downloads/b-023.json",
+      "stagingBytes": 57146,
+      "publishedBytes": 57140
+    },
+    {
+      "path": "downloads/b-025.json",
+      "stagingBytes": 70508,
+      "publishedBytes": 70499
+    },
+    {
+      "path": "downloads/b-026.json",
+      "stagingBytes": 242246,
+      "publishedBytes": 242242
+    },
+    {
+      "path": "downloads/b-028.json",
+      "stagingBytes": 78337,
+      "publishedBytes": 78334
+    },
+    {
+      "path": "downloads/b-038.json",
+      "stagingBytes": 218095,
+      "publishedBytes": 218082
+    },
+    {
+      "path": "downloads/b-039.json",
+      "stagingBytes": 653665,
+      "publishedBytes": 653647
+    },
+    {
+      "path": "downloads/b-040.json",
+      "stagingBytes": 630584,
+      "publishedBytes": 630549
+    },
+    {
+      "path": "downloads/b-041.json",
+      "stagingBytes": 504602,
+      "publishedBytes": 504549
+    },
+    {
+      "path": "downloads/b-042.json",
+      "stagingBytes": 840095,
+      "publishedBytes": 839952
+    },
+    {
+      "path": "downloads/b-043.json",
+      "stagingBytes": 325027,
+      "publishedBytes": 325024
+    },
+    {
+      "path": "downloads/b-044.json",
+      "stagingBytes": 97931,
+      "publishedBytes": 97881
+    },
+    {
+      "path": "downloads/b-045.json",
+      "stagingBytes": 164369,
+      "publishedBytes": 164275
+    },
+    {
+      "path": "downloads/b-046.json",
+      "stagingBytes": 46144,
+      "publishedBytes": 46126
+    },
+    {
+      "path": "downloads/b-047.json",
+      "stagingBytes": 46347,
+      "publishedBytes": 46327
+    },
+    {
+      "path": "downloads/b-048.json",
+      "stagingBytes": 44998,
+      "publishedBytes": 44976
+    },
+    {
+      "path": "downloads/c-001.json",
+      "stagingBytes": 242828,
+      "publishedBytes": 244828
+    },
+    {
+      "path": "downloads/c-002.json",
+      "stagingBytes": 405503,
+      "publishedBytes": 408783
+    },
+    {
+      "path": "downloads/c-003.json",
+      "stagingBytes": 503735,
+      "publishedBytes": 509555
+    },
+    {
+      "path": "downloads/c-004.json",
+      "stagingBytes": 304288,
+      "publishedBytes": 308713
+    },
+    {
+      "path": "downloads/c-005.json",
+      "stagingBytes": 719384,
+      "publishedBytes": 745034
+    },
+    {
+      "path": "downloads/c-006.json",
+      "stagingBytes": 300537,
+      "publishedBytes": 309657
+    },
+    {
+      "path": "downloads/c-007.json",
+      "stagingBytes": 195482,
+      "publishedBytes": 201752
+    },
+    {
+      "path": "downloads/c-008.json",
+      "stagingBytes": 1059671,
+      "publishedBytes": 1086081
+    },
+    {
+      "path": "downloads/c-009.json",
+      "stagingBytes": 1195411,
+      "publishedBytes": 1230181
+    },
+    {
+      "path": "downloads/c-010.json",
+      "stagingBytes": 391774,
+      "publishedBytes": 403174
+    },
+    {
+      "path": "downloads/c-014.json",
+      "stagingBytes": 575214,
+      "publishedBytes": 593074
+    },
+    {
+      "path": "downloads/c-015.json",
+      "stagingBytes": 145081,
+      "publishedBytes": 145961
+    },
+    {
+      "path": "downloads/c-016.json",
+      "stagingBytes": 2989753,
+      "publishedBytes": 2989793
+    },
+    {
+      "path": "downloads/c-017.json",
+      "stagingBytes": 368769,
+      "publishedBytes": 369829
+    },
+    {
+      "path": "downloads/c-018.json",
+      "stagingBytes": 690341,
+      "publishedBytes": 695221
+    },
+    {
+      "path": "downloads/c-019.json",
+      "stagingBytes": 705717,
+      "publishedBytes": 715587
+    },
+    {
+      "path": "downloads/c-022.json",
+      "stagingBytes": 516517,
+      "publishedBytes": 523762
+    },
+    {
+      "path": "downloads/c-024.json",
+      "stagingBytes": 100926,
+      "publishedBytes": 101076
+    },
+    {
+      "path": "downloads/c-025.json",
+      "stagingBytes": 1233818,
+      "publishedBytes": 1235008
+    },
+    {
+      "path": "downloads/d-001.json",
+      "stagingBytes": 53976,
+      "publishedBytes": 53959
+    },
+    {
+      "path": "downloads/d-002.json",
+      "stagingBytes": 36761,
+      "publishedBytes": 36752
+    },
+    {
+      "path": "downloads/d-003.json",
+      "stagingBytes": 59298,
+      "publishedBytes": 59284
+    },
+    {
+      "path": "downloads/d-004.json",
+      "stagingBytes": 70834,
+      "publishedBytes": 70815
+    },
+    {
+      "path": "downloads/d-011.json",
+      "stagingBytes": 680511,
+      "publishedBytes": 679782
+    },
+    {
+      "path": "downloads/d-012.json",
+      "stagingBytes": 116814,
+      "publishedBytes": 116670
+    },
+    {
+      "path": "downloads/d-014.json",
+      "stagingBytes": 509449,
+      "publishedBytes": 509377
+    },
+    {
+      "path": "downloads/d-015.json",
+      "stagingBytes": 1876217,
+      "publishedBytes": 1876118
+    },
+    {
+      "path": "downloads/d-016.json",
+      "stagingBytes": 725311,
+      "publishedBytes": 725212
+    },
+    {
+      "path": "downloads/d-017.json",
+      "stagingBytes": 39629,
+      "publishedBytes": 39593
+    },
+    {
+      "path": "downloads/d-019.json",
+      "stagingBytes": 60995,
+      "publishedBytes": 60932
+    },
+    {
+      "path": "downloads/d-020.json",
+      "stagingBytes": 45500,
+      "publishedBytes": 45464
+    },
+    {
+      "path": "downloads/d-021.json",
+      "stagingBytes": 2206349,
+      "publishedBytes": 2206259
+    },
+    {
+      "path": "downloads/d-022.json",
+      "stagingBytes": 74869,
+      "publishedBytes": 74824
+    },
+    {
+      "path": "downloads/d-023.json",
+      "stagingBytes": 397132,
+      "publishedBytes": 397042
+    },
+    {
+      "path": "downloads/d-024.json",
+      "stagingBytes": 58092,
+      "publishedBytes": 58071
+    },
+    {
+      "path": "downloads/d-025.json",
+      "stagingBytes": 500883,
+      "publishedBytes": 500848
+    },
+    {
+      "path": "downloads/d-026.json",
+      "stagingBytes": 62168,
+      "publishedBytes": 62123
+    },
+    {
+      "path": "downloads/delivery-manifest.json",
+      "stagingBytes": 136605,
+      "publishedBytes": 136605
+    },
+    {
+      "path": "geometry/geometry-manifest.json",
+      "stagingBytes": 8898,
+      "publishedBytes": 11325
+    },
+    {
+      "path": "interpretation/indicator-interpretation-v129.json",
+      "stagingBytes": 46368,
+      "publishedBytes": 46032
+    },
+    {
+      "path": "map-index.json",
+      "stagingBytes": 347634,
+      "publishedBytes": 347634
+    },
+    {
+      "path": "packs/bundle-index-v124.json",
+      "stagingBytes": 103544,
+      "publishedBytes": 103544
+    },
+    {
+      "path": "semantic/element-visualization-contracts-v125.json",
+      "stagingBytes": 1001937,
+      "publishedBytes": 1001808
+    },
+    {
+      "path": "semantic/elements/a-016.json",
+      "stagingBytes": 38272,
+      "publishedBytes": 38240
+    },
+    {
+      "path": "semantic/elements/a-017.json",
+      "stagingBytes": 175732,
+      "publishedBytes": 175674
+    },
+    {
+      "path": "semantic/elements/a-018.json",
+      "stagingBytes": 115078,
+      "publishedBytes": 114966
+    },
+    {
+      "path": "semantic/elements/a-020.json",
+      "stagingBytes": 8580,
+      "publishedBytes": 8531
+    },
+    {
+      "path": "semantic/elements/a-023.json",
+      "stagingBytes": 11308,
+      "publishedBytes": 11284
+    },
+    {
+      "path": "semantic/elements/b-004.json",
+      "stagingBytes": 47472,
+      "publishedBytes": 47463
+    },
+    {
+      "path": "semantic/elements/b-023.json",
+      "stagingBytes": 24552,
+      "publishedBytes": 24537
+    },
+    {
+      "path": "semantic/elements/b-025.json",
+      "stagingBytes": 33417,
+      "publishedBytes": 33393
+    },
+    {
+      "path": "semantic/elements/b-026.json",
+      "stagingBytes": 25285,
+      "publishedBytes": 25276
+    },
+    {
+      "path": "semantic/elements/b-028.json",
+      "stagingBytes": 31263,
+      "publishedBytes": 31257
+    },
+    {
+      "path": "semantic/elements/b-038.json",
+      "stagingBytes": 70612,
+      "publishedBytes": 70573
+    },
+    {
+      "path": "semantic/elements/b-039.json",
+      "stagingBytes": 40215,
+      "publishedBytes": 40164
+    },
+    {
+      "path": "semantic/elements/b-040.json",
+      "stagingBytes": 78274,
+      "publishedBytes": 78175
+    },
+    {
+      "path": "semantic/elements/b-041.json",
+      "stagingBytes": 116159,
+      "publishedBytes": 116006
+    },
+    {
+      "path": "semantic/elements/b-042.json",
+      "stagingBytes": 306812,
+      "publishedBytes": 306386
+    },
+    {
+      "path": "semantic/elements/b-043.json",
+      "stagingBytes": 90952,
+      "publishedBytes": 90945
+    },
+    {
+      "path": "semantic/elements/b-044.json",
+      "stagingBytes": 62587,
+      "publishedBytes": 62441
+    },
+    {
+      "path": "semantic/elements/b-045.json",
+      "stagingBytes": 91680,
+      "publishedBytes": 91402
+    },
+    {
+      "path": "semantic/elements/b-046.json",
+      "stagingBytes": 29078,
+      "publishedBytes": 29028
+    },
+    {
+      "path": "semantic/elements/b-047.json",
+      "stagingBytes": 21825,
+      "publishedBytes": 21769
+    },
+    {
+      "path": "semantic/elements/b-048.json",
+      "stagingBytes": 26893,
+      "publishedBytes": 26833
+    },
+    {
+      "path": "semantic/elements/c-001.json",
+      "stagingBytes": 104453,
+      "publishedBytes": 110333
+    },
+    {
+      "path": "semantic/elements/c-002.json",
+      "stagingBytes": 158770,
+      "publishedBytes": 168490
+    },
+    {
+      "path": "semantic/elements/c-003.json",
+      "stagingBytes": 209200,
+      "publishedBytes": 226480
+    },
+    {
+      "path": "semantic/elements/c-004.json",
+      "stagingBytes": 133405,
+      "publishedBytes": 146455
+    },
+    {
+      "path": "semantic/elements/c-005.json",
+      "stagingBytes": 322749,
+      "publishedBytes": 399129
+    },
+    {
+      "path": "semantic/elements/c-006.json",
+      "stagingBytes": 198379,
+      "publishedBytes": 225169
+    },
+    {
+      "path": "semantic/elements/c-007.json",
+      "stagingBytes": 118671,
+      "publishedBytes": 136911
+    },
+    {
+      "path": "semantic/elements/c-008.json",
+      "stagingBytes": 464837,
+      "publishedBytes": 543497
+    },
+    {
+      "path": "semantic/elements/c-009.json",
+      "stagingBytes": 881265,
+      "publishedBytes": 985005
+    },
+    {
+      "path": "semantic/elements/c-010.json",
+      "stagingBytes": 282550,
+      "publishedBytes": 316180
+    },
+    {
+      "path": "semantic/elements/c-014.json",
+      "stagingBytes": 382059,
+      "publishedBytes": 435069
+    },
+    {
+      "path": "semantic/elements/c-015.json",
+      "stagingBytes": 106781,
+      "publishedBytes": 109301
+    },
+    {
+      "path": "semantic/elements/c-017.json",
+      "stagingBytes": 280161,
+      "publishedBytes": 283281
+    },
+    {
+      "path": "semantic/elements/c-018.json",
+      "stagingBytes": 426282,
+      "publishedBytes": 440802
+    },
+    {
+      "path": "semantic/elements/c-019.json",
+      "stagingBytes": 389680,
+      "publishedBytes": 418975
+    },
+    {
+      "path": "semantic/elements/c-022.json",
+      "stagingBytes": 255406,
+      "publishedBytes": 276826
+    },
+    {
+      "path": "semantic/elements/c-024.json",
+      "stagingBytes": 45464,
+      "publishedBytes": 45884
+    },
+    {
+      "path": "semantic/elements/c-025.json",
+      "stagingBytes": 57193,
+      "publishedBytes": 60553
+    },
+    {
+      "path": "semantic/elements/d-001.json",
+      "stagingBytes": 38330,
+      "publishedBytes": 38287
+    },
+    {
+      "path": "semantic/elements/d-002.json",
+      "stagingBytes": 24802,
+      "publishedBytes": 24783
+    },
+    {
+      "path": "semantic/elements/d-003.json",
+      "stagingBytes": 41735,
+      "publishedBytes": 41701
+    },
+    {
+      "path": "semantic/elements/d-004.json",
+      "stagingBytes": 54990,
+      "publishedBytes": 54941
+    },
+    {
+      "path": "semantic/elements/d-011.json",
+      "stagingBytes": 297350,
+      "publishedBytes": 295181
+    },
+    {
+      "path": "semantic/elements/d-012.json",
+      "stagingBytes": 68981,
+      "publishedBytes": 68576
+    },
+    {
+      "path": "semantic/elements/d-014.json",
+      "stagingBytes": 35443,
+      "publishedBytes": 35254
+    },
+    {
+      "path": "semantic/elements/d-015.json",
+      "stagingBytes": 51076,
+      "publishedBytes": 50806
+    },
+    {
+      "path": "semantic/elements/d-016.json",
+      "stagingBytes": 58496,
+      "publishedBytes": 58226
+    },
+    {
+      "path": "semantic/elements/d-017.json",
+      "stagingBytes": 10597,
+      "publishedBytes": 10516
+    },
+    {
+      "path": "semantic/elements/d-019.json",
+      "stagingBytes": 25597,
+      "publishedBytes": 25435
+    },
+    {
+      "path": "semantic/elements/d-020.json",
+      "stagingBytes": 11825,
+      "publishedBytes": 11744
+    },
+    {
+      "path": "semantic/elements/d-021.json",
+      "stagingBytes": 66533,
+      "publishedBytes": 66290
+    },
+    {
+      "path": "semantic/elements/d-022.json",
+      "stagingBytes": 21576,
+      "publishedBytes": 21468
+    },
+    {
+      "path": "semantic/elements/d-023.json",
+      "stagingBytes": 44443,
+      "publishedBytes": 44200
+    },
+    {
+      "path": "semantic/elements/d-024.json",
+      "stagingBytes": 20835,
+      "publishedBytes": 20781
+    },
+    {
+      "path": "semantic/elements/d-025.json",
+      "stagingBytes": 69514,
+      "publishedBytes": 69421
+    },
+    {
+      "path": "semantic/elements/d-026.json",
+      "stagingBytes": 16695,
+      "publishedBytes": 16587
+    }
+  ],
+  "onlyInStaging": [
+    "packs/vnm-v124-pack-002-63edae5d.json",
+    "packs/vnm-v124-pack-003-98a48014.json",
+    "packs/vnm-v124-pack-005-e25ddb27.json",
+    "packs/vnm-v124-pack-006-7def617e.json",
+    "packs/vnm-v124-pack-007-6a86529c.json",
+    "packs/vnm-v124-pack-008-f92e40ed.json",
+    "packs/vnm-v124-pack-009-63eaefe8.json",
+    "packs/vnm-v124-pack-010-182321ff.json",
+    "packs/vnm-v124-pack-011-cbf85fd5.json",
+    "packs/vnm-v124-pack-012-ce316f4f.json",
+    "packs/vnm-v124-pack-013-f9be930e.json",
+    "packs/vnm-v124-pack-014-2cc7b022.json",
+    "packs/vnm-v124-pack-015-9f9abc7e.json",
+    "packs/vnm-v124-pack-016-d122b22a.json",
+    "packs/vnm-v124-pack-017-5ad1d02b.json"
+  ],
+  "onlyInPublished": [
+    "dataset-directory.json",
+    "geometry/vnm-adm1-34.geojson",
+    "home/card-summaries-v140.json",
+    "packs/vnm-v124-pack-002-08b197a0.json",
+    "packs/vnm-v124-pack-003-890d06ed.json",
+    "packs/vnm-v124-pack-005-88fbb447.json",
+    "packs/vnm-v124-pack-006-3359672c.json",
+    "packs/vnm-v124-pack-007-d6b69247.json",
+    "packs/vnm-v124-pack-008-15447fb0.json",
+    "packs/vnm-v124-pack-009-b81b2540.json",
+    "packs/vnm-v124-pack-010-a713b817.json",
+    "packs/vnm-v124-pack-011-001b32a0.json",
+    "packs/vnm-v124-pack-012-b3621b21.json",
+    "packs/vnm-v124-pack-013-e8abb582.json",
+    "packs/vnm-v124-pack-014-ad156c11.json",
+    "packs/vnm-v124-pack-015-af2b8261.json",
+    "packs/vnm-v124-pack-016-ddd1bbae.json",
+    "packs/vnm-v124-pack-017-f1698fa8.json"
+  ],
+  "catalog": {
+    "topLevel": [],
+    "elementCount": 60,
+    "keyCounts": {
+      "downloadAssets": 60,
+      "technologyIds": 58
+    },
+    "elements": [
+      {
+        "elementId": "A-016",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "A-017",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "A-018",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "A-020",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "A-023",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "B-004",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "B-009",
+        "keys": [
+          "downloadAssets"
+        ]
+      },
+      {
+        "elementId": "B-017",
+        "keys": [
+          "downloadAssets"
+        ]
+      },
+      {
+        "elementId": "B-023",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "B-025",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "B-026",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "B-028",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "B-038",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "B-039",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "B-040",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "B-041",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "B-042",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "B-043",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "B-044",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "B-045",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "B-046",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "B-047",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "B-048",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "C-001",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "C-002",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "C-003",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "C-004",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "C-005",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "C-006",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "C-007",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "C-008",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "C-009",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "C-010",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "C-014",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "C-015",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "C-016",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "C-017",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "C-018",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "C-019",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "C-022",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "C-024",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "C-025",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "D-001",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "D-002",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "D-003",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "D-004",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "D-011",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "D-012",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "D-014",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "D-015",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "D-016",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "D-017",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "D-019",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "D-020",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "D-021",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "D-022",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "D-023",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "D-024",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "D-025",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      },
+      {
+        "elementId": "D-026",
+        "keys": [
+          "downloadAssets",
+          "technologyIds"
+        ]
+      }
+    ]
+  }
+}

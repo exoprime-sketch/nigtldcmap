@@ -1,6 +1,7 @@
 import type { PublicAnalyticalRendererV126 } from "./publicVisualizationRegistryV126";
 import { getPublicAnalysisHeadingsV134 } from "./publicAnalysisHeadingsV134";
 import { technologyLabelV121 } from "../../utils/vietnamActualV121";
+import { normalizeTechnologyIdsV153 } from "../../utils/technologyIdV153";
 import { publicTextV126 } from "./publicFieldPolicyV126";
 import { isNumericCodeListV136_2 } from "./publicCategoryLabelV136_2";
 import descriptionsV150 from "./datasetDescriptionsV150.json";
@@ -444,6 +445,15 @@ export function publicDimensionValueV134(
   const scale = publicScaleDimensionValueV136_4(key, value);
   if (scale) return scale;
   if (key.includes("technology")) {
+    // V153: the semantic build now writes the normalized two-digit codes
+    // ("01,03,18,24"), so a pure code list reads as technologies as well.
+    if (isNumericCodeListV136_2(value)) {
+      const codes = normalizeTechnologyIdsV153(value.split(/[·,/|;、]+/u));
+      if (codes.length > 0 && codes.length <= 4) {
+        return codes.map(technologyLabelV121).join(" · ");
+      }
+      if (codes.length > 4) return `기후기술 ${codes.length}개 분야`;
+    }
     const technologyIds = Array.from(
       new Set(value.match(/\bCTIS-\d{2}\b/giu) || [])
     );

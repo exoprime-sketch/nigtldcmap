@@ -23,6 +23,7 @@ import {
   normalizedSearchV121,
   technologyLabelV121,
 } from "../utils/vietnamActualV121";
+import { matchesTechnologyV153, normalizeTechnologyIdV153, normalizeTechnologyIdsV153, technologyOptionsV153 } from "../utils/technologyIdV153";
 import "../styles/country-data-platform-v122.css";
 
 interface DataExplorerPageProps {
@@ -348,10 +349,12 @@ export default function DataExplorerPage({
     () => unique(availableCatalog.flatMap((item) => item.sourceOrganizations)),
     [availableCatalog]
   );
+  // V153: one option per technology whatever spelling the elements carry.
   const technologies = useMemo(
-    () => unique(availableCatalog.flatMap((item) => item.technologyIds)),
+    () => technologyOptionsV153(availableCatalog),
     [availableCatalog]
   );
+  const selectedTechnology = normalizeTechnologyIdV153(technologyId) ?? "all";
 
   const filtered = useMemo(() => {
     const matching = availableCatalog.filter((item) => {
@@ -369,10 +372,7 @@ export default function DataExplorerPage({
       ) {
         return false;
       }
-      if (
-        technologyId !== "all" &&
-        !item.technologyIds.includes(technologyId)
-      ) {
+      if (!matchesTechnologyV153(item.technologyIds, selectedTechnology)) {
         return false;
       }
       if (deliveryFilter === "map" && !item.hasMapData) return false;
@@ -395,7 +395,7 @@ export default function DataExplorerPage({
             item.groupLabel,
             item.countryNameKo,
             ...item.sourceOrganizations,
-            ...item.technologyIds.map(technologyLabelV121),
+            ...normalizeTechnologyIdsV153(item.technologyIds).map(technologyLabelV121),
             indexed?.searchText || "",
             ...(indexed?.keywords || []),
           ].join(" ")
@@ -442,7 +442,7 @@ export default function DataExplorerPage({
     selectedGroup,
     sortMode,
     sourceOrganization,
-    technologyId,
+    selectedTechnology,
     yearFilter,
   ]);
 
@@ -801,7 +801,7 @@ export default function DataExplorerPage({
               <span className="cdp-field__label">기후기술</span>
               <select
                 className="cdp-select"
-                value={technologyId}
+                value={selectedTechnology}
                 onChange={(event) => onTechnologyChange(event.target.value)}
               >
                 <option value="all">전체</option>
@@ -816,7 +816,7 @@ export default function DataExplorerPage({
           <PublicTermHelpV134
             text={[
               sourceOrganization === "all" ? "" : sourceOrganization,
-              technologyId === "all" ? "" : technologyLabelV121(technologyId),
+              selectedTechnology === "all" ? "" : technologyLabelV121(selectedTechnology),
             ]
               .filter(Boolean)
               .join(" · ")}
