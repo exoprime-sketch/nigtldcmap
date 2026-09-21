@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { parseCTemplateRowsV141, type CTemplateRowV141 } from "../../../data/visualization/cTemplateRowsV141";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
+import { InitiativeDescriptionsV153 } from "./PolicyDescriptionV153";
 import "./public-portfolio-summary-v132.css";
 import "./energy-outlook-plan-v141.css";
 
@@ -243,6 +244,10 @@ export default function CooperationChecklistAnalysisV141({ elementId, entities }
         </div>
         <p className="pps132-note">참여 형태는 원천이 적은 표현(서명국·파트너국·NAZCA 등재 등)을 그대로 두며, 서로 다른 성격의 참여를 하나로 합산하지 않습니다.</p>
       </section>
+
+      {/* V153-D3: what each initiative is, in the platform's words with its
+          sources, description first and the formal name in brackets. */}
+      <InitiativeDescriptionsV153 elementId={elementId} />
 
       {model.actors.length > 0 && (
         <section className="pps132-distribution" data-testid="cooperation-actors-v141">

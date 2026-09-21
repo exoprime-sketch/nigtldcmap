@@ -1,0 +1,137 @@
+{
+  "generatedAt": "2026-09-21T23:22:58.950Z",
+  "build": ".\\tmp\\build-v153-d3-review",
+  "summary": {
+    "screens": 3,
+    "ready": 3,
+    "empty": 0,
+    "failed": 0,
+    "retried": 0,
+    "consoleErrorScreens": 0,
+    "httpFailureScreens": 0,
+    "overflowScreens": 0,
+    "internalPhraseScreens": [],
+    "changedScreens": 2
+  },
+  "rows": [
+    {
+      "elementId": "C-008",
+      "publicTitle": "국제 기후협력 이니셔티브의 베트남 참여",
+      "catalogTitle": "Cooperative Climate Initiative[이니셔티브 명, 참여 상태(Active/Completed), 참여 연도, 기후 분야(감축/적응), 주제(에너지/산림/수송/도시 등), 참여 국가·기관 목록]",
+      "publicStatus": "actual",
+      "question": "",
+      "analysis": [
+        "public-analysis-root",
+        "public-data-summary",
+        "public-analysis-primary",
+        "public-raw-table-summary"
+      ],
+      "selectors": [],
+      "representative": "Cool Coalition 완화·적응 균등 Unknown 원문",
+      "source": "자료정보",
+      "chartCount": 0,
+      "change": "공통 변경만 적용(정책표 단위·구분, 지표군 수 정정, 최신연도 기본값, 원문 어휘 중복 필터 제거) 또는 변경 없음",
+      "priorAction": "사업수235가 실제 사업인지 재정의; 참여기관과 목표연도를 분리",
+      "browser": {
+        "analysisState": "ready",
+        "failure": null,
+        "retries": [],
+        "consoleErrors": [],
+        "httpFailures": [],
+        "overflow": false,
+        "internalPhrases": [],
+        "elapsedMs": 2329
+      }
+    },
+    {
+      "elementId": "C-009",
+      "publicTitle": "기후변화 법·제도의 주요 제도 변화",
+      "catalogTitle": "기후 법제도[법령명, 유형(법률/시행령/규제/인센티브), 대상 분야(감축/적응/에너지/산업), 시행 연도, 상태(시행중/폐지/계류), 주관 부처, 원본 링크]",
+      "publicStatus": "actual",
+      "question": "",
+      "analysis": [
+        "public-analysis-root",
+        "public-data-summary",
+        "public-analysis-primary",
+        "public-raw-table-summary"
+      ],
+      "selectors": [
+        {
+          "label": "작은 지도 표시 항목",
+          "value": "local-document-count",
+          "options": 1
+        },
+        {
+          "label": "작은 지도 기준시점",
+          "value": "2021–2025",
+          "options": 1
+        },
+        {
+          "label": "작은 지도 지역·대상 선택",
+          "value": "",
+          "options": 5
+        }
+      ],
+      "representative": "",
+      "source": "자료정보",
+      "chartCount": 1,
+      "change": "지방 문서 4건 지도 연결(성·시 경계), 전국 법령은 지도 객체 없음",
+      "priorAction": "문서당 정보 묶기; 같은 법령 속성마다 타임라인 카드 반복 금지",
+      "browser": {
+        "analysisState": "ready",
+        "failure": null,
+        "retries": [],
+        "consoleErrors": [],
+        "httpFailures": [],
+        "overflow": false,
+        "internalPhrases": [],
+        "elapsedMs": 2336
+      }
+    },
+    {
+      "elementId": "C-010",
+      "publicTitle": "환경 법·제도의 주요 제도 변화",
+      "catalogTitle": "기타 환경 법제도[법령명, 유형(EIA법/대기질/수질/폐기물/생물다양성), 시행 연도, 상태, 주관 부처, 원본 링크]",
+      "publicStatus": "actual",
+      "question": "",
+      "analysis": [
+        "public-analysis-root",
+        "public-data-summary",
+        "public-analysis-primary",
+        "public-raw-table-summary"
+      ],
+      "selectors": [
+        {
+          "label": "작은 지도 표시 항목",
+          "value": "local-document-count",
+          "options": 1
+        },
+        {
+          "label": "작은 지도 기준시점",
+          "value": "2021–2025",
+          "options": 1
+        },
+        {
+          "label": "작은 지도 지역·대상 선택",
+          "value": "",
+          "options": 5
+        }
+      ],
+      "representative": "",
+      "source": "자료정보",
+      "chartCount": 1,
+      "change": "지방 문서 지도 연결(C-009와 동일 문서 공유)",
+      "priorAction": "문서/출처/조항 구분; C009 동일 지방문서 통합",
+      "browser": {
+        "analysisState": "ready",
+        "failure": null,
+        "retries": [],
+        "consoleErrors": [],
+        "httpFailures": [],
+        "overflow": false,
+        "internalPhrases": [],
+        "elapsedMs": 2262
+      }
+    }
+  ]
+}

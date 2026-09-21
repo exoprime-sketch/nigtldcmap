@@ -40,6 +40,7 @@ import {
 } from "../public/PublicPortfolioSummaryV132";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import { displayUnitV150 } from "../../../data/visualization/unitDisplayV150";
+import { PolicyDocumentDescriptionV153 } from "../public/PolicyDescriptionV153";
 
 import "./semantic-contract-renderer-v125.css";
 
@@ -1306,6 +1307,7 @@ function DocumentTimelineV140({ entities }: { entities: VietnamEntityV124[] }) {
                   원문 보기
                 </a>
               )}
+              <PolicyDocumentDescriptionV153 elementId={entities[0]?.elementId || ""} name={entry.name} />
             </div>
           </li>
         ))}
