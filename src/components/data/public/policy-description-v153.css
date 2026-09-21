@@ -1,0 +1,145 @@
+/*
+ * V153-D3: the platform's own description of a law or an initiative. A tinted
+ * panel with a leading label separates it from the delivery's rows above it.
+ */
+.pdc153 {
+  margin: 8px 0 0;
+  padding: 10px 12px;
+  border: 1px solid #cfe3da;
+  border-left: 4px solid #2f7d63;
+  border-radius: 8px;
+  background: #f3f9f6;
+  color: #173b34;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  min-width: 0;
+}
+
+.pdc153__label {
+  margin: 0 0 4px;
+  color: #2f7d63;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.pdc153__title {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.pdc153__formal {
+  color: #55635c;
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.pdc153__points {
+  margin: 6px 0 0;
+  padding-left: 18px;
+  list-style: disc;
+}
+
+.pdc153__points li {
+  margin-bottom: 3px;
+  overflow-wrap: anywhere;
+}
+
+.pdc153__pending {
+  margin: 6px 0 0;
+  color: #7a5b16;
+  font-weight: 600;
+}
+
+.pdc153__sources {
+  margin: 6px 0 0;
+  color: #55635c;
+  font-size: 0.78rem;
+  overflow-wrap: anywhere;
+}
+
+.pdc153__sources a {
+  color: #1d5a48;
+}
+
+/* C-008: the cards as a list of their own. */
+.pdc153-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+  margin-top: 10px;
+}
+
+.pdc153-grid .pdc153 {
+  margin: 0;
+}
+
+.pdc153-list h6.pdc153__title {
+  font-weight: 400;
+}
+
+/*
+ * The card sits inside other components' lists: the document timeline lays
+ * out every descendant <li> as a two-column grid with a dot, and the
+ * portfolio distribution turns <li> into a bar row whose <span> is clipped to
+ * one line. The card's own list, spans and paragraphs are plain wherever it
+ * is placed.
+ */
+.pdc153 .pdc153__points {
+  display: block;
+  gap: 0;
+  margin: 6px 0 0;
+  padding-left: 18px;
+  list-style: disc;
+}
+
+.pdc153 .pdc153__points > li {
+  display: list-item;
+  list-style: disc;
+  gap: 0;
+  grid-template-columns: none;
+  align-items: normal;
+  min-height: 0;
+  position: static;
+  font-size: inherit;
+}
+
+.pdc153 .pdc153__points > li::before {
+  content: none;
+}
+
+.pdc153 .pdc153__points > li > span,
+.pdc153 .pdc153__title > span,
+.pdc153 .pdc153__sources > span {
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
+}
+
+.pdc153 p {
+  color: inherit;
+  margin: 0;
+}
+
+.pdc153 .pdc153__label {
+  color: #2f7d63;
+  margin-bottom: 4px;
+}
+
+.pdc153 .pdc153__pending {
+  color: #7a5b16;
+  margin-top: 6px;
+}
+
+.pdc153 .pdc153__sources {
+  color: #55635c;
+  margin-top: 6px;
+}
+
+.pdc153 .pdc153__sources a {
+  color: #1d5a48;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
