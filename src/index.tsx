@@ -10,6 +10,7 @@ import {
   mountWebSandboxQaV121,
 } from "./utils/webSandboxFinalizationV121";
 import "./styles.css";
+import "./styles/responsive-v149.css";
 
 const rootElement = document.getElementById("root");
 if (!rootElement) throw new Error("Root element #root was not found.");

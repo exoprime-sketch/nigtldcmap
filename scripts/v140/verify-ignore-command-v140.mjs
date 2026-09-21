@@ -35,6 +35,9 @@ const REPORT = resolve(ROOT, "reports/v140/ignore-command-verification-v140.json
 const BUILD_INPUTS = [
   "public/",
   "src/",
+  "api/",
+  "server/",
+  "scripts/v149/",
   "package.json",
   "package-lock.json",
   "tsconfig.json",

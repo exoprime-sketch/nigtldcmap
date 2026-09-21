@@ -1,6 +1,17 @@
 import type { HomePreviewCardV139 } from "../../data/homePreviewV139";
 import { homePreviewSvgUrlV139 } from "../../data/homePreviewV139";
 import { PublicTermTextV134 } from "../help/PublicTermV134";
+import ChartAxesV150 from "../charts/ChartAxesV150";
+
+export default function HomePreviewChartV139({ card }: { card: HomePreviewCardV139 }) {
+  return <>
+    {card.kind !== "map" && <ChartAxesV150
+      x={card.kind === "line" ? "연도" : card.kind === "composition" ? undefined : card.elementId === "A-023" ? "수록 시설 수" : card.elementId === "C-016" ? "계획 설비용량" : card.kind === "signed-bars" ? "거버넌스 지수" : "값"}
+      y={card.kind === "line" ? (card.elementId === "A-003" ? "국내총생산" : card.elementId === "B-033" ? "산림손실 면적" : "값") : card.kind === "composition" ? undefined : card.elementId === "A-023" ? "발전원" : card.elementId === "C-016" ? "성·시" : "항목"}
+      unit={card.unit} composition={card.kind === "composition"} />}
+    <PreviewChartV150 card={card} />
+  </>;
+}
 
 /**
  * Small analysis previews for the home's eight featured datasets.
@@ -207,7 +218,7 @@ function MapCard({ card }: { card: Extract<HomePreviewCardV139, { kind: "map" }>
   );
 }
 
-export default function HomePreviewChartV139({ card }: { card: HomePreviewCardV139 }) {
+function PreviewChartV150({ card }: { card: HomePreviewCardV139 }) {
   switch (card.kind) {
     case "signed-bars":
       return <SignedBars card={card} />;

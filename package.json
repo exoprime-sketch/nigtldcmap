@@ -24,6 +24,8 @@
     "typescript": "^4.9.5"
   },
   "scripts": {
+    "prebuild": "node scripts/v149/build-dataset-directory.cjs",
+    "test:usage:v149": "node --test scripts/v149/usage.test.cjs",
     "start": "react-scripts start",
     "build": "node ./node_modules/react-scripts/bin/react-scripts.js build",
     "test": "react-scripts test --env=jsdom",

@@ -915,7 +915,7 @@ export default function App() {
     setSelectedCountryIso3(null);
     setSelectedDatasetId(null);
     setView("explorer");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // The finder restores its own filters, visible cards and scroll position.
   }
 
   function openElementDownload(
@@ -936,16 +936,6 @@ export default function App() {
     setSourceOrganization("all");
     setExplorerCountryIso3("all");
     setCategory("all");
-    setTechnologyId("all");
-    setExplorerGroup(null);
-    navigate("explorer");
-  }
-
-  function selectCategory(categoryCode: CategoryCode) {
-    setQuery("");
-    setSourceOrganization("all");
-    setExplorerCountryIso3("all");
-    setCategory(categoryCode);
     setTechnologyId("all");
     setExplorerGroup(null);
     navigate("explorer");
@@ -1099,7 +1089,6 @@ export default function App() {
             onQueryChange={setQuery}
             onSubmit={submitSearch}
             onSearchExample={(words) => openExplorerFromGlobalSearch(words, null, null)}
-            onSelectCategory={selectCategory}
             onOpenElement={openElement}
             onOpenMapElement={openElementOnMap}
             onNavigate={navigate}

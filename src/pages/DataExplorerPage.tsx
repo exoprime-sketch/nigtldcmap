@@ -62,25 +62,32 @@ const FINDER_RESTORE_KEY_V136 = "cdp-finder-restore-v136";
 
 type FinderRestoreStateV136 = {
   filterKey: string;
+  baseKey?: string;
+  yearFilter?: string;
+  sortMode?: FinderSortModeV128;
+  deliveryFilter?: FinderDeliveryFilterV140;
+  filtersExpanded?: boolean;
   visibleCount: number;
   scrollY: number;
 };
+let finderMemoryV149: FinderRestoreStateV136 | null = null;
 
 function readFinderRestoreV136(): FinderRestoreStateV136 | null {
   if (typeof window === "undefined") return null;
   try {
     const raw = window.sessionStorage.getItem(FINDER_RESTORE_KEY_V136);
-    if (!raw) return null;
+    if (!raw) return finderMemoryV149;
     const parsed = JSON.parse(raw) as FinderRestoreStateV136;
     if (typeof parsed?.filterKey !== "string") return null;
     if (!Number.isFinite(parsed.visibleCount)) return null;
     return parsed;
   } catch {
-    return null;
+    return finderMemoryV149;
   }
 }
 
 function writeFinderRestoreV136(state: FinderRestoreStateV136): void {
+  finderMemoryV149 = state;
   if (typeof window === "undefined") return;
   try {
     window.sessionStorage.setItem(FINDER_RESTORE_KEY_V136, JSON.stringify(state));
@@ -183,6 +190,11 @@ export default function DataExplorerPage({
   onOpenElement,
   onOpenMapElement,
 }: DataExplorerPageProps) {
+  const baseKey = JSON.stringify([countryIso3, normalizedSearchV121(query), category, selectedGroup, sourceOrganization, technologyId]);
+  const [initialRestore] = useState(() => {
+    const saved = readFinderRestoreV136();
+    return saved?.baseKey === baseKey ? saved : null;
+  });
   const [catalog, setCatalog] = useState<CountryCatalogItemV122[]>([]);
   const [searchIndex, setSearchIndex] = useState(
     new Map<string, { searchText: string; keywords: string[] }>()
@@ -191,11 +203,14 @@ export default function DataExplorerPage({
   const [searchIndexLoading, setSearchIndexLoading] = useState(false);
   const [searchIndexLoadedFor, setSearchIndexLoadedFor] = useState("");
   const [error, setError] = useState("");
-  const [yearFilter, setYearFilter] = useState("all");
+  const [yearFilter, setYearFilter] = useState(initialRestore?.yearFilter || "all");
   const [sortMode, setSortMode] =
-    useState<FinderSortModeV128>("relevance");
+    useState<FinderSortModeV128>(initialRestore?.sortMode || "relevance");
   const [deliveryFilter, setDeliveryFilter] =
-    useState<FinderDeliveryFilterV140>("all");
+    useState<FinderDeliveryFilterV140>(initialRestore?.deliveryFilter || "all");
+  const [filtersExpanded, setFiltersExpanded] = useState(initialRestore?.filtersExpanded || false);
+  const leavingRef = useRef(false);
+  const [summariesReady, setSummariesReady] = useState(false);
   // V140: one pre-built file summarises all 152 datasets; a card never opens
   // its pack. Without the file the cards still list, without a summary.
   const [cardSummaries, setCardSummaries] = useState<Map<string, CardSummaryV140> | null>(null);
@@ -205,7 +220,8 @@ export default function DataExplorerPage({
       .then((value) => {
         if (!cancelled) setCardSummaries(value);
       })
-      .catch(() => undefined);
+      .catch(() => undefined)
+      .finally(() => { if (!cancelled) setSummariesReady(true); });
     return () => {
       cancelled = true;
     };
@@ -471,6 +487,12 @@ export default function DataExplorerPage({
   const visibleItems = filtered.slice(0, visibleCount);
   const hasMoreV136 = visibleCount < filtered.length;
 
+  function rememberFinder(): void {
+    if (restorePendingRefV136.current || leavingRef.current) return;
+    writeFinderRestoreV136({ filterKey: filterKeyV136, baseKey, yearFilter, sortMode, deliveryFilter,
+      filtersExpanded, visibleCount, scrollY: Math.round(window.scrollY) });
+  }
+
   // Record where the reader is so a return trip can resume there.
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -478,19 +500,31 @@ export default function DataExplorerPage({
       // Mid-restore the list is briefly short and the offset briefly zero.
       // Writing that back would spend the reader's remembered place to record
       // the act of returning to it.
-      if (restorePendingRefV136.current) return;
+      if (restorePendingRefV136.current || leavingRef.current || loading) return;
       writeFinderRestoreV136({
         filterKey: filterKeyV136,
+        baseKey, yearFilter, sortMode, deliveryFilter, filtersExpanded,
         visibleCount,
         scrollY: Math.round(window.scrollY),
       });
     };
+    let frame = 0;
+    const onScroll = () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(persist); };
+    window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("pagehide", persist);
     return () => {
-      persist();
+      // Never save on unmount: the next route has already changed page height.
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
       window.removeEventListener("pagehide", persist);
     };
-  }, [filterKeyV136, visibleCount]);
+  }, [filterKeyV136, baseKey, yearFilter, sortMode, deliveryFilter, filtersExpanded, visibleCount, loading]);
+
+  useEffect(() => {
+    const previous = window.history.scrollRestoration;
+    window.history.scrollRestoration = "manual";
+    return () => { window.history.scrollRestoration = previous; };
+  }, []);
 
   // Reveal the next batch as the end of the list approaches. An observer keeps
   // this off the scroll event loop, so no layout is measured per frame.
@@ -544,7 +578,7 @@ export default function DataExplorerPage({
     // A searched list keeps changing until its index arrives, so an empty
     // result mid-load is not yet an answer about how tall the page will be.
     const listReady =
-      !loading &&
+      !loading && summariesReady &&
       (!normalizedQuery || searchIndexLoadedFor === normalizedCountry);
     if (!listReady) return;
     if (filtered.length === 0) {
@@ -595,6 +629,7 @@ export default function DataExplorerPage({
   }, [
     filtered.length,
     loading,
+    summariesReady,
     normalizedCountry,
     normalizedQuery,
     restoreStateV136,
@@ -617,7 +652,12 @@ export default function DataExplorerPage({
   }
 
   return (
-    <div className="page-shell cdp-page">
+    <div className="page-shell cdp-page" onClickCapture={(event) => {
+      if ((event.target as HTMLElement).closest(".cdp-card__actions button")) {
+        rememberFinder();
+        leavingRef.current = true;
+      }
+    }}>
       <section className="cdp-hero">
         <h1>데이터 찾기</h1>
         <p>주제, 기관, 기술, 지역으로 데이터를 검색할 수 있습니다</p>
@@ -705,7 +745,7 @@ export default function DataExplorerPage({
           </label>
         </div>
 
-        <details className="cdp-advanced-filters">
+        <details className="cdp-advanced-filters" open={filtersExpanded} onToggle={(event) => setFiltersExpanded(event.currentTarget.open)}>
           <summary>상세검색</summary>
           <div className="cdp-filter-grid cdp-filter-grid--secondary">
             <label className="cdp-field">
