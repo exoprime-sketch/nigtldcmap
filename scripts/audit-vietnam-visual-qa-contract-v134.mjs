@@ -151,9 +151,15 @@ check(
   )
 );
 
+// V150-1: the sharded gate (static group builds; browser shards; summary
+// judges) is accepted beside the single `npm run finalize:v136` line.
+const shardedGateV150 = (source) =>
+  /audit-vietnam-release-v136\.mjs\s+--group\s+static\b/u.test(source) &&
+  /audit-vietnam-release-v136\.mjs\s+--group\s+browser\s+--shard\b/u.test(source) &&
+  /audit-vietnam-release-v136\.mjs\s+--results-dir\b/u.test(source);
 const releaseWorkflowContract = (source, reportPath) => ({
-  finalizeCurrentGate: /\brun:\s*npm\s+run\s+finalize:v136\s*$/mu.test(source),
-  productionBuild: /\brun:\s*npm\s+run\s+build\s*$/mu.test(source),
+  finalizeCurrentGate: /\brun:\s*npm\s+run\s+finalize:v136\s*$/mu.test(source) || shardedGateV150(source),
+  productionBuild: /\brun:\s*npm\s+run\s+build\s*$/mu.test(source) || shardedGateV150(source),
   noScreenshotCapture:
     !/npm\s+run\s+capture:screenshots|capture-[\w./-]*screenshots/iu.test(
       source

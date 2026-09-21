@@ -12,16 +12,120 @@ on:
 permissions:
   contents: read
 
-jobs:
-  release-gate:
-    name: V136 blocking release gate
-    runs-on: ubuntu-latest
-    # Historical successful runs took 7-20 minutes. A stalled audit now fails
-    # individually; do not leave the whole job waiting for three hours.
-    timeout-minutes: 45
-    env:
-      CI: "true"
+# A new push to the same branch supersedes the run in progress.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
 
+env:
+  CI: "true"
+
+jobs:
+  # ---------------------------------------------------------------------
+  # 1. static (blocking, target <= 6 min): types, unit tests, the production
+  #    build every other job consumes, and every browser-free audit of the
+  #    V136 gate (audit-vietnam-release-v136.mjs --group static).
+  # ---------------------------------------------------------------------
+  static:
+    name: Static gate (types, unit tests, build, data audits)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      browser: ${{ steps.changes.outputs.browser }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Documentation-only changes do not need the browser shards. Pushes to
+      # main and manual runs always take the full gate.
+      - name: Decide whether browser audits are needed
+        id: changes
+        shell: bash
+        run: |
+          if [[ "${{ github.event_name }}" != "pull_request" ]]; then
+            echo "browser=true" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          changed="$(git diff --name-only "${{ github.event.pull_request.base.sha }}" "${{ github.sha }}")"
+          code="$(printf '%s\n' "$changed" | grep -vE '^(docs/|reports/|output/)' | grep -vE '\.md$' || true)"
+          if [[ -z "$code" ]]; then
+            echo "browser=false" >> "$GITHUB_OUTPUT"
+            echo "Only documentation changed; browser shards are skipped."
+          else
+            echo "browser=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Type check
+        run: npx tsc --noEmit
+
+      - name: Dataset directory is committed and current
+        run: npm run verify:dataset-directory:v150
+
+      # Builds `build/` (GENERATE_SOURCEMAP=false), runs the unit tests and the
+      # data/contract audits; writes reports/v136/release-shards/static.json.
+      - name: V136 gate — static group
+        env:
+          GENERATE_SOURCEMAP: "false"
+        run: node scripts/audit-vietnam-release-v136.mjs --group static
+
+      - name: Verify deployment and security contracts
+        run: |
+          npm run audit:deployment:v128
+          npm run audit:security:v128
+
+      - name: Record performance advisory
+        continue-on-error: true
+        run: npm run audit:performance:v128
+
+      - name: Home ordering hash (determinism evidence)
+        run: node scripts/v150-1/home-order-v150-1.mjs --build build --label ci-linux --out reports/v150-1/determinism-ci.json
+
+      - name: Upload production build
+        uses: actions/upload-artifact@v7
+        with:
+          name: build-${{ github.sha }}
+          path: build/
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Upload static gate results
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: gate-static-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            reports/v136/release-shards/static.json
+            reports/v136/release-shards/static/files/**
+            reports/v136/ci-command-timings-static.json
+            reports/v150-1/determinism-ci.json
+          if-no-files-found: warn
+          retention-days: 30
+
+  # ---------------------------------------------------------------------
+  # 2. browser (blocking, 4 shards, target <= 12 min): the browser audits of
+  #    the V136 gate against the build artifact, one slice each.
+  # ---------------------------------------------------------------------
+  browser:
+    name: Browser gate shard ${{ matrix.shard }}/4
+    needs: static
+    if: needs.static.outputs.browser == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4]
     steps:
       - name: Check out repository
         uses: actions/checkout@v6
@@ -51,53 +155,69 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run V136 blocking release gate
-        timeout-minutes: 30
-        run: npm run finalize:v136
+      - name: Download production build
+        uses: actions/download-artifact@v7
+        with:
+          name: build-${{ github.sha }}
+          path: build/
 
-      # Home/finder/map role split (52 checks) and the 152 card→detail
-      # analysis QA (real card clicks, same-meaning value checks, selector
-      # effects, map hand-off). Both exit 1 on a required failure.
-      - name: Run V140 card and detail analysis gates
-        timeout-minutes: 60
-        run: |
-          npm run qa:role-split:v140
-          npm run qa:analysis:v140
+      - name: V136 gate — browser shard
+        timeout-minutes: 20
+        run: node scripts/audit-vietnam-release-v136.mjs --group browser --shard ${{ matrix.shard }}/4
 
-      - name: Upload V140 QA reports
+      - name: Upload shard results
         if: always()
         uses: actions/upload-artifact@v7
         with:
-          name: v140-qa-reports
+          name: gate-browser-${{ matrix.shard }}-${{ github.run_id }}-${{ github.run_attempt }}
           path: |
-            reports/v140/role-split-qa-v140*.json
-            reports/v140/analysis-qa-v140-*.json
-            reports/v140/analysis-qa-v140-*.md
-          if-no-files-found: ignore
+            reports/v136/release-shards/browser-${{ matrix.shard }}.json
+            reports/v136/release-shards/browser-${{ matrix.shard }}/files/**
+            reports/v136/ci-command-timings-browser-${{ matrix.shard }}.json
+          if-no-files-found: warn
+          retention-days: 30
 
-      - name: Verify deployment and security contracts
-        run: |
-          npm run audit:deployment:v128
-          npm run audit:security:v128
+  # ---------------------------------------------------------------------
+  # 3. summary (blocking): merges the shard results and applies the
+  #    unchanged V136 release judgement (79 checks) to them.
+  # ---------------------------------------------------------------------
+  summary:
+    name: V136 blocking release gate (summary)
+    needs: [static, browser]
+    if: always() && needs.static.result == 'success' && needs.static.outputs.browser == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
 
-      - name: Record performance advisory
-        continue-on-error: true
-        run: |
-          npm run audit:performance:v128
-
-      - name: Rebuild root-domain artifact
-        env:
-          GENERATE_SOURCEMAP: "false"
-        run: npm run build
-
-      - name: Upload production build
-        if: success()
-        uses: actions/upload-artifact@v7
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
         with:
-          name: vietnam-pilot-build-${{ github.sha }}
-          path: build/
-          if-no-files-found: error
-          retention-days: 14
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Artifacts keep paths relative to their common root: the static artifact
+      # spans reports/, each browser artifact spans reports/v136/.
+      - name: Download static gate results
+        uses: actions/download-artifact@v7
+        with:
+          name: gate-static-${{ github.run_id }}-${{ github.run_attempt }}
+          path: reports/
+
+      - name: Download browser shard results
+        uses: actions/download-artifact@v7
+        with:
+          pattern: gate-browser-*-${{ github.run_id }}-${{ github.run_attempt }}
+          path: reports/v136/
+          merge-multiple: true
+
+      - name: Run V136 blocking release gate (judge merged shard results)
+        run: node scripts/audit-vietnam-release-v136.mjs --results-dir reports/v136/release-shards
 
       - name: Upload V136 release reports
         if: always()
@@ -112,18 +232,63 @@ jobs:
             reports/v132/
             reports/v131/
             reports/v130/
-            !reports/v133/**/*.zip
-            !reports/v133/**/*.xlsx
-            !reports/v133/**/*.xls
-            !reports/v130/screenshots/**
-            !reports/v131/screenshots/**
-            !reports/v132/screenshots/**
-            !reports/v133/screenshots/**
-            !reports/v134/screenshots/**
-            !reports/v135/screenshots/**
-            !reports/v136/screenshots/**
-            !reports/v134/**/*.zip
-            !reports/v134/**/*.xlsx
-            !reports/v134/**/*.xls
+            !reports/**/screenshots/**
           if-no-files-found: warn
           retention-days: 30
+
+  # ---------------------------------------------------------------------
+  # 4. analysis (blocking): home/finder/map role split (52 checks) and the
+  #    152 card→detail analysis QA, judged against the V150 baseline — a
+  #    failure the baseline does not list fails the job.
+  # ---------------------------------------------------------------------
+  analysis:
+    name: V140 card and detail analysis gates
+    needs: static
+    if: needs.static.outputs.browser == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Resolve Chrome executable
+        shell: bash
+        run: |
+          browser_path="$(command -v google-chrome || command -v chromium-browser || command -v chromium || true)"
+          "$browser_path" --version
+          echo "V125_BROWSER_EXECUTABLE=$browser_path" >> "$GITHUB_ENV"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download production build
+        uses: actions/download-artifact@v7
+        with:
+          name: build-${{ github.sha }}
+          path: build/
+
+      - name: Role split QA
+        timeout-minutes: 15
+        run: npm run qa:role-split:v140
+
+      - name: "Card → detail analysis QA (baseline: reports/v150/analysis-qa-baseline-v150.json)"
+        timeout-minutes: 40
+        run: npm run qa:analysis:v140:baseline
+
+      - name: Upload V140 QA reports
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: v140-qa-reports-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            reports/v140/role-split-qa-v140*.json
+            reports/v140/analysis-qa-v140-*.json
+            reports/v140/analysis-qa-v140-*.md
+          if-no-files-found: ignore

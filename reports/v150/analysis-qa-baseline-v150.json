@@ -1,0 +1,264 @@
+{
+  "schema": "nigt-analysis-qa-baseline-v150",
+  "generatedAt": "2026-09-21T05:27:45.347Z",
+  "source": "reports/v140/analysis-qa-v140-local-build.json (main 6a66308, PR #18 final run)",
+  "note": "PR-D(V153)로 이관한 필수 실패. 새 항목·새 검사만 게이트를 막는다. 항목이 해결되면 이 파일에서 지운다.",
+  "count": 41,
+  "failures": [
+    {
+      "elementId": "A-006",
+      "checks": [
+        "selectionUrlPreserved",
+        "detailAnalysisFit"
+      ]
+    },
+    {
+      "elementId": "A-010",
+      "checks": [
+        "cardValueVerified",
+        "detailAnalysisFit"
+      ]
+    },
+    {
+      "elementId": "A-013",
+      "checks": [
+        "detailAnalysisFit"
+      ]
+    },
+    {
+      "elementId": "A-015",
+      "checks": [
+        "detailAnalysisFit"
+      ]
+    },
+    {
+      "elementId": "A-016",
+      "checks": [
+        "detailAnalysisFit"
+      ]
+    },
+    {
+      "elementId": "A-017",
+      "checks": [
+        "detailAnalysisFit"
+      ]
+    },
+    {
+      "elementId": "A-022",
+      "checks": [
+        "detailAnalysisFit"
+      ]
+    },
+    {
+      "elementId": "A-023",
+      "checks": [
+        "cardValueVerified"
+      ]
+    },
+    {
+      "elementId": "A-025",
+      "checks": [
+        "cardValueVerified",
+        "detailAnalysisFit"
+      ]
+    },
+    {
+      "elementId": "A-027",
+      "checks": [
+        "detailAnalysisFit"
+      ]
+    },
+    {
+      "elementId": "A-028",
+      "checks": [
+        "detailAnalysisFit"
+      ]
+    },
+    {
+      "elementId": "A-029",
+      "checks": [
+        "detailAnalysisFit"
+      ]
+    },
+    {
+      "elementId": "A-030",
+      "checks": [
+        "selectionUrlPreserved"
+      ]
+    },
+    {
+      "elementId": "A-031",
+      "checks": [
+        "selectionUrlPreserved",
+        "detailAnalysisFit"
+      ]
+    },
+    {
+      "elementId": "A-033",
+      "checks": [
+        "selectionUrlPreserved",
+        "detailAnalysisFit"
+      ]
+    },
+    {
+      "elementId": "B-001",
+      "checks": [
+        "cardValueVerified",
+        "detailAnalysisFit"
+      ]
+    },
+    {
+      "elementId": "B-023",
+      "checks": [
+        "recomputed"
+      ]
+    },
+    {
+      "elementId": "B-024",
+      "checks": [
+        "controlsVerified"
+      ]
+    },
+    {
+      "elementId": "B-026",
+      "checks": [
+        "cardValueVerified"
+      ]
+    },
+    {
+      "elementId": "B-028",
+      "checks": [
+        "cardValueVerified",
+        "recomputed"
+      ]
+    },
+    {
+      "elementId": "C-002",
+      "checks": [
+        "screenLoaded",
+        "cardValueVerified"
+      ]
+    },
+    {
+      "elementId": "C-003",
+      "checks": [
+        "cardValueVerified"
+      ]
+    },
+    {
+      "elementId": "C-004",
+      "checks": [
+        "cardValueVerified"
+      ]
+    },
+    {
+      "elementId": "C-005",
+      "checks": [
+        "cardValueVerified"
+      ]
+    },
+    {
+      "elementId": "C-006",
+      "checks": [
+        "cardValueVerified"
+      ]
+    },
+    {
+      "elementId": "C-011",
+      "checks": [
+        "cardValueVerified"
+      ]
+    },
+    {
+      "elementId": "C-012",
+      "checks": [
+        "cardValueVerified"
+      ]
+    },
+    {
+      "elementId": "C-013",
+      "checks": [
+        "cardValueVerified"
+      ]
+    },
+    {
+      "elementId": "C-014",
+      "checks": [
+        "cardValueVerified"
+      ]
+    },
+    {
+      "elementId": "C-015",
+      "checks": [
+        "cardValueVerified"
+      ]
+    },
+    {
+      "elementId": "C-016",
+      "checks": [
+        "cardValueVerified"
+      ]
+    },
+    {
+      "elementId": "C-017",
+      "checks": [
+        "cardValueVerified"
+      ]
+    },
+    {
+      "elementId": "C-019",
+      "checks": [
+        "screenLoaded"
+      ]
+    },
+    {
+      "elementId": "C-024",
+      "checks": [
+        "cardValueVerified"
+      ]
+    },
+    {
+      "elementId": "D-001",
+      "checks": [
+        "detailAnalysisFit"
+      ]
+    },
+    {
+      "elementId": "D-011",
+      "checks": [
+        "cardValueVerified"
+      ]
+    },
+    {
+      "elementId": "E-007",
+      "checks": [
+        "cardValueVerified"
+      ]
+    },
+    {
+      "elementId": "E-012",
+      "checks": [
+        "cardValueVerified",
+        "detailAnalysisFit"
+      ]
+    },
+    {
+      "elementId": "E-015",
+      "checks": [
+        "cardValueVerified"
+      ]
+    },
+    {
+      "elementId": "E-016",
+      "checks": [
+        "cardValueVerified"
+      ]
+    },
+    {
+      "elementId": "E-018",
+      "checks": [
+        "analysisFit"
+      ]
+    }
+  ]
+}

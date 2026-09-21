@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import { mkdirSync, writeFileSync } from "node:fs";
-import { resolve } from "node:path";
+import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
+import { dirname, relative, resolve } from "node:path";
 import { runAuditCommand } from "./ci/run-audit-command.mjs";
 
 import { AuditV125, PROJECT_ROOT, readJson } from "./v125/audit-utils.mjs";
@@ -13,57 +13,86 @@ const audit = new AuditV125("release:v136");
 // V136 keeps the V134 boundary: functional data, DOM and build gates block the
 // release, screenshot capture stays in the separate non-blocking visual QA job.
 const commands = [
-  { name: "CI_PROCESS_GUARDS", command: "node --test scripts/ci/browser-timeout.test.mjs" },
-  { name: "PRODUCTION_BUILD_FOR_RUNTIME", command: "npm run build" },
-  { name: "V133_GENERATED_DATA", command: "npm run audit:generated-data:v133" },
-  { name: "LARGE_SOURCE_TABLE", command: "node scripts/ci/audit-large-source-table.mjs" },
-  { name: "V133_CI_CONTRACT", command: "npm run audit:ci-contract:v133" },
-  { name: "V130_PROJECT_SCOPE", command: "npm run audit:project-scope:v130" },
-  { name: "V130_MAP_DEDUP", command: "npm run audit:map-dedup:v130" },
-  { name: "V130_SEMANTIC_GEOGRAPHY", command: "npm run audit:map-semantic-geography:v130" },
-  { name: "V131_PUBLIC_NAMING", command: "npm run audit:public-naming:v131" },
-  { name: "V131_ENTITY_CARDS", command: "npm run audit:entity-cards:v131" },
-  { name: "V132_COMPOSITION", command: "npm run audit:composition:v132" },
-  { name: "V132_PORTFOLIO", command: "npm run audit:portfolio-analysis:v132" },
-  { name: "V132_MAP_TOOLTIP", command: "npm run audit:map-tooltip:v132" },
-  { name: "V132_BENCHMARK_FIT", command: "npm run audit:benchmark-fit:v132" },
-  { name: "V133_MAP_FOCUS", command: "npm run audit:map-focus:v133" },
-  { name: "V133_MAP_POPUP", command: "npm run audit:map-popup:v133" },
-  { name: "V133_LAYER_DISTINCTION", command: "npm run audit:map-layer-distinction:v133" },
-  { name: "V134_GLOSSARY", command: "npm run audit:glossary:v134" },
-  { name: "V134_ODA_ANALYSIS", command: "npm run audit:oda-analysis:v134" },
-  { name: "V134_DROUGHT_ANALYSIS", command: "npm run audit:drought-analysis:v134" },
-  { name: "V134_PUBLIC_COPY", command: "npm run audit:public-copy:v134" },
-  { name: "V134_VISUAL_QA_CONTRACT", command: "npm run audit:visual-qa-contract:v134" },
-  { name: "V135_FINDER_CARD", command: "npm run audit:finder-card:v135" },
-  { name: "V135_TEMPORAL_DEPTH", command: "npm run audit:temporal-depth:v135" },
-  { name: "V135_DETAIL_HIERARCHY", command: "npm run audit:detail-hierarchy:v135" },
-  { name: "V135_MAP_GUIDE", command: "npm run audit:map-guide:v135" },
-  { name: "V135_MAP_ACCESS", command: "npm run audit:map-access:v135" },
-  { name: "V135_MAP_COMPARE", command: "npm run audit:map-compare:v135" },
-  { name: "V135_PUBLIC_SCREEN", command: "npm run audit:public-screen:v135" },
-  { name: "V136_PUBLIC_TEXT", command: "npm run audit:public-text:v136" },
-  { name: "V136_DUPLICATE_COPY", command: "npm run audit:duplicate-copy:v136" },
-  { name: "V136_MAP_LIST_UI", command: "npm run audit:map-list-ui:v136" },
-  { name: "V136_MAP_COPY", command: "npm run audit:map-copy:v136" },
-  { name: "V136_PUBLIC_CONTROLS", command: "npm run audit:public-controls:v136" },
-  { name: "V136_FINDER_SCROLL", command: "npm run audit:finder-scroll:v136" },
+  { name: "CI_PROCESS_GUARDS", command: "node --test scripts/ci/browser-timeout.test.mjs", group: "static" },
+  { name: "PRODUCTION_BUILD_FOR_RUNTIME", command: "npm run build", group: "static" },
+  { name: "V133_GENERATED_DATA", command: "npm run audit:generated-data:v133", group: "static" },
+  { name: "LARGE_SOURCE_TABLE", command: "node scripts/ci/audit-large-source-table.mjs", group: "static" },
+  { name: "V133_CI_CONTRACT", command: "npm run audit:ci-contract:v133", group: "static" },
+  { name: "V130_PROJECT_SCOPE", command: "npm run audit:project-scope:v130", group: "static" },
+  { name: "V130_MAP_DEDUP", command: "npm run audit:map-dedup:v130", group: "static" },
+  { name: "V130_SEMANTIC_GEOGRAPHY", command: "npm run audit:map-semantic-geography:v130", group: "static" },
+  { name: "V131_PUBLIC_NAMING", command: "npm run audit:public-naming:v131", group: "static" },
+  { name: "V131_ENTITY_CARDS", command: "npm run audit:entity-cards:v131", group: "browser", shard: 3 },
+  { name: "V132_COMPOSITION", command: "npm run audit:composition:v132", group: "static" },
+  { name: "V132_PORTFOLIO", command: "npm run audit:portfolio-analysis:v132", group: "browser", shard: 2 },
+  { name: "V132_MAP_TOOLTIP", command: "npm run audit:map-tooltip:v132", group: "browser", shard: 4 },
+  { name: "V132_BENCHMARK_FIT", command: "npm run audit:benchmark-fit:v132", group: "static" },
+  { name: "V133_MAP_FOCUS", command: "npm run audit:map-focus:v133", group: "browser", shard: 3 },
+  { name: "V133_MAP_POPUP", command: "npm run audit:map-popup:v133", group: "browser", shard: 4 },
+  { name: "V133_LAYER_DISTINCTION", command: "npm run audit:map-layer-distinction:v133", group: "browser", shard: 4 },
+  { name: "V134_GLOSSARY", command: "npm run audit:glossary:v134", group: "browser", shard: 1 },
+  { name: "V134_ODA_ANALYSIS", command: "npm run audit:oda-analysis:v134", group: "browser", shard: 2 },
+  { name: "V134_DROUGHT_ANALYSIS", command: "npm run audit:drought-analysis:v134", group: "browser", shard: 1 },
+  { name: "V134_PUBLIC_COPY", command: "npm run audit:public-copy:v134", group: "browser", shard: 2 },
+  { name: "V134_VISUAL_QA_CONTRACT", command: "npm run audit:visual-qa-contract:v134", group: "static" },
+  { name: "V135_FINDER_CARD", command: "npm run audit:finder-card:v135", group: "browser", shard: 3 },
+  { name: "V135_TEMPORAL_DEPTH", command: "npm run audit:temporal-depth:v135", group: "browser", shard: 4 },
+  { name: "V135_DETAIL_HIERARCHY", command: "npm run audit:detail-hierarchy:v135", group: "browser", shard: 4 },
+  { name: "V135_MAP_GUIDE", command: "npm run audit:map-guide:v135", group: "browser", shard: 1 },
+  { name: "V135_MAP_ACCESS", command: "npm run audit:map-access:v135", group: "browser", shard: 2 },
+  { name: "V135_MAP_COMPARE", command: "npm run audit:map-compare:v135", group: "browser", shard: 4 },
+  { name: "V135_PUBLIC_SCREEN", command: "npm run audit:public-screen:v135", group: "browser", shard: 3 },
+  { name: "V136_PUBLIC_TEXT", command: "npm run audit:public-text:v136", group: "browser", shard: 3 },
+  { name: "V136_DUPLICATE_COPY", command: "npm run audit:duplicate-copy:v136", group: "browser", shard: 4 },
+  { name: "V136_MAP_LIST_UI", command: "npm run audit:map-list-ui:v136", group: "browser", shard: 4 },
+  { name: "V136_MAP_COPY", command: "npm run audit:map-copy:v136", group: "browser", shard: 1 },
+  { name: "V136_PUBLIC_CONTROLS", command: "npm run audit:public-controls:v136", group: "browser", shard: 4 },
+  { name: "V136_FINDER_SCROLL", command: "npm run audit:finder-scroll:v136", group: "browser", shard: 2 },
   // The category grouping's guard against merging two codes that print the
   // same name cannot be staged on real data - no such pair exists in the
   // catalogue today - so it is held by a unit test, and the gate runs it.
-  { name: "V136_3_UNIT_TESTS", command: "npm run test:unit" },
-  { name: "V136_2_GENERIC_DETAIL_PUBLIC", command: "npm run audit:generic-detail-public:v136-2" },
-  { name: "V136_4_SCREEN_USABILITY", command: "npm run audit:screen-usability:v136-4" },
-  { name: "V136_HUMAN_REVIEW", command: "npm run audit:human-review:v136" },
-  { name: "V136_WORKFLOW", command: "npm run audit:workflow:v136" },
+  { name: "V136_3_UNIT_TESTS", command: "npm run test:unit", group: "static" },
+  { name: "V136_2_GENERIC_DETAIL_PUBLIC", command: "npm run audit:generic-detail-public:v136-2", group: "browser", shard: 1 },
+  { name: "V136_4_SCREEN_USABILITY", command: "npm run audit:screen-usability:v136-4", group: "browser", shard: 4 },
+  { name: "V136_HUMAN_REVIEW", command: "npm run audit:human-review:v136", group: "browser", shard: 2 },
+  { name: "V136_WORKFLOW", command: "npm run audit:workflow:v136", group: "static" },
 ];
 
+// V150-1 execution structure (judgement unchanged):
+//   (no args)                       run everything in order, as before
+//   --group static                  browser-free commands (build, data, unit tests)
+//   --group browser --shard k/n     one slice of the browser audits; `build/` must exist
+//   --shard-out FILE                where a group/shard writes its command results
+//   --results-dir DIR               judge from shard result files instead of running
+// Shards run every command they own so all failures surface at once; the
+// single run keeps its stop-at-first-failure behaviour.
+const argv = process.argv.slice(2);
+const argValue = (name, fallback = null) => { const index = argv.indexOf(name); return index === -1 ? fallback : argv[index + 1]; };
+const GROUP = argValue("--group", "all");
+const SHARD = argValue("--shard", null);
+const RESULTS_DIR = argValue("--results-dir", null);
+const SHARD_OUT = argValue("--shard-out", null);
+const SHARD_COUNT = Math.max(1, ...commands.map((entry) => entry.shard || 0));
+const shardIndex = SHARD ? Number(SHARD.split("/")[0]) : null;
+if (SHARD && (Number(SHARD.split("/")[1]) !== SHARD_COUNT || !(shardIndex >= 1 && shardIndex <= SHARD_COUNT))) {
+  console.error(`--shard must be k/${SHARD_COUNT}`);
+  process.exit(2);
+}
+const selected = commands.filter((entry) =>
+  GROUP === "all" ? true : GROUP === "static" ? entry.group === "static" : GROUP === "browser" ? entry.group === "browser" && (shardIndex === null || entry.shard === shardIndex) : false
+);
+if (!RESULTS_DIR && selected.length === 0) {
+  console.error(`no commands selected for --group ${GROUP}${SHARD ? ` --shard ${SHARD}` : ""}`);
+  process.exit(2);
+}
+
 const commandResults = [];
-const timingPath = resolve(PROJECT_ROOT, "reports/v136/ci-command-timings.json");
+const timingPath = resolve(PROJECT_ROOT, RESULTS_DIR || GROUP === "all" ? "reports/v136/ci-command-timings.json" : `reports/v136/ci-command-timings-${GROUP}${shardIndex ? `-${shardIndex}` : ""}.json`);
+// (a shard writes its own timings file so parallel shards never contend for one)
 mkdirSync(resolve(timingPath, ".."), { recursive: true });
 const runStartedAt = new Date().toISOString();
 function saveTimings(status, activeCommand = null) {
-  const payload = JSON.stringify({ status, runStartedAt, updatedAt: new Date().toISOString(), platform: process.platform, expectedCommandCount: commands.length, activeCommand, commandResults }, null, 2);
+  const payload = JSON.stringify({ status, runStartedAt, updatedAt: new Date().toISOString(), platform: process.platform, expectedCommandCount: RESULTS_DIR ? commands.length : selected.length, group: GROUP, shard: SHARD, activeCommand, commandResults }, null, 2);
   // The progress file is rewritten after every command; on Windows a scanner
   // or sync client can hold it for a moment (EBUSY/UNKNOWN). Progress must
   // never abort the gate, so the write is retried and then skipped.
@@ -80,26 +109,86 @@ function saveTimings(status, activeCommand = null) {
     }
   }
 }
-saveTimings("running");
-for (const entry of commands) {
-  saveTimings("running", entry.name);
-  const result = await runAuditCommand(entry.command, {
-    cwd: PROJECT_ROOT,
-    timeoutMs: entry.name === "PRODUCTION_BUILD_FOR_RUNTIME" ? 900_000 : 600_000,
-  });
-  const record = {
-    name: entry.name,
-    command: entry.command,
-    exitCode: result.status,
-    signal: result.signal,
-    error: result.error?.message || null,
-    elapsedMs: result.elapsedMs,
-    timedOut: result.timedOut,
-  };
-  commandResults.push(record);
-  saveTimings(result.status !== 0 ? "failed" : commandResults.length === commands.length ? "passed" : "running");
-  audit.check(entry.name, result.status === 0, record, { exitCode: 0 });
-  if (result.status !== 0) break;
+if (RESULTS_DIR) {
+  // Summary mode: the shards already ran and uploaded their reports; their
+  // command results are merged here in table order and judged as one run.
+  const dir = resolve(PROJECT_ROOT, RESULTS_DIR);
+  const files = existsSync(dir) ? readdirSync(dir).filter((file) => file.endsWith(".json")).sort() : [];
+  const merged = new Map();
+  for (const file of files) {
+    const payload = JSON.parse(readFileSync(resolve(dir, file), "utf8"));
+    for (const record of payload.commandResults || []) merged.set(record.name, { ...record, shard: payload.label || file });
+    // Put the audit reports the shard produced back where the judgement
+    // reads them (the checkout still holds the committed, older copies).
+    const filesDir = resolve(dir, file.replace(/\.json$/u, ""), "files");
+    if (existsSync(filesDir)) {
+      const walk = (folder) => {
+        for (const entry of readdirSync(folder, { withFileTypes: true })) {
+          const from = resolve(folder, entry.name);
+          if (entry.isDirectory()) { walk(from); continue; }
+          const to = resolve(PROJECT_ROOT, relative(filesDir, from));
+          mkdirSync(dirname(to), { recursive: true });
+          copyFileSync(from, to);
+        }
+      };
+      walk(filesDir);
+    }
+  }
+  for (const entry of commands) {
+    const record = merged.get(entry.name) || { name: entry.name, command: entry.command, exitCode: null, signal: null, error: "no shard result", elapsedMs: null, timedOut: false };
+    commandResults.push(record);
+    audit.check(entry.name, record.exitCode === 0, record, { exitCode: 0 });
+  }
+  console.log(JSON.stringify({ type: "shard-summary", resultsDir: RESULTS_DIR, files, merged: merged.size, expected: commands.length }));
+} else {
+  saveTimings("running");
+  for (const entry of selected) {
+    saveTimings("running", entry.name);
+    const result = await runAuditCommand(entry.command, {
+      cwd: PROJECT_ROOT,
+      timeoutMs: entry.name === "PRODUCTION_BUILD_FOR_RUNTIME" ? 900_000 : 600_000,
+    });
+    const record = {
+      name: entry.name,
+      command: entry.command,
+      exitCode: result.status,
+      signal: result.signal,
+      error: result.error?.message || null,
+      elapsedMs: result.elapsedMs,
+      timedOut: result.timedOut,
+    };
+    commandResults.push(record);
+    saveTimings(result.status !== 0 ? "failed" : commandResults.length === selected.length ? "passed" : "running");
+    audit.check(entry.name, result.status === 0, record, { exitCode: 0 });
+    if (result.status !== 0 && GROUP === "all") break;
+  }
+  if (GROUP !== "all") {
+    const label = `${GROUP}${shardIndex ? `-${shardIndex}` : ""}`;
+    const out = resolve(PROJECT_ROOT, SHARD_OUT || `reports/v136/release-shards/${label}.json`);
+    mkdirSync(resolve(out, ".."), { recursive: true });
+    // Collect every report file this shard wrote (modified since the run
+    // began) so the artifact carries only its own results.
+    const startedMs = Date.parse(runStartedAt) - 1000;
+    const filesDir = resolve(out, "..", label, "files");
+    const collected = [];
+    for (const folder of ["reports/v130", "reports/v131", "reports/v132", "reports/v133", "reports/v134", "reports/v135", "reports/v136"]) {
+      const absolute = resolve(PROJECT_ROOT, folder);
+      if (!existsSync(absolute)) continue;
+      for (const entry of readdirSync(absolute, { withFileTypes: true })) {
+        if (!entry.isFile() || !/\.(json|csv|md)$/u.test(entry.name) || /^ci-command-timings|^release-audit-v136/u.test(entry.name)) continue;
+        const from = resolve(absolute, entry.name);
+        if (statSync(from).mtimeMs < startedMs) continue;
+        const to = resolve(filesDir, folder, entry.name);
+        mkdirSync(dirname(to), { recursive: true });
+        copyFileSync(from, to);
+        collected.push(`${folder}/${entry.name}`);
+      }
+    }
+    writeFileSync(out, `${JSON.stringify({ schema: "nigt-release-shard-v150-1", label, generatedAt: new Date().toISOString(), platform: process.platform, commandResults, files: collected }, null, 2)}\n`);
+    const failed = commandResults.filter((item) => item.exitCode !== 0);
+    console.log(JSON.stringify({ type: "shard-end", label, commands: commandResults.length, failed: failed.map((item) => item.name), out }));
+    process.exit(failed.length ? 1 : 0);
+  }
 }
 
 const reportPaths = {

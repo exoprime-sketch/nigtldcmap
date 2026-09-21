@@ -1,9 +1,8 @@
 name: Deploy GitHub Pages
 
+# V150-1: production runs on Vercel; the Pages site is deployed only on
+# request (user decision), with the same V136 gate in front of it.
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 permissions:
