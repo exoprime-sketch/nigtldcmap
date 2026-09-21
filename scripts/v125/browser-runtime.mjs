@@ -217,6 +217,23 @@ function edgeExecutable() {
   return candidates.find((path) => existsSync(path)) || null;
 }
 
+/**
+ * Chromium refuses to start its sandbox as root, which is how CI containers and
+ * the cloud runner execute these audits. The flag is added only in that case,
+ * so a developer's own machine keeps the sandbox. V125_BROWSER_ARGS appends
+ * extra flags when a runner needs them; no audit expectation depends on either.
+ */
+function runtimeBrowserArgs() {
+  const args = [];
+  if (process.platform !== "win32" && typeof process.getuid === "function" && process.getuid() === 0) {
+    args.push("--no-sandbox", "--disable-dev-shm-usage");
+  }
+  for (const extra of String(process.env.V125_BROWSER_ARGS || "").split(/\s+/u)) {
+    if (extra) args.push(extra);
+  }
+  return args;
+}
+
 export async function launchHeadlessBrowser() {
   const executable = edgeExecutable();
   if (!executable) throw new Error("Edge/Chrome executable not found");
@@ -227,6 +244,7 @@ export async function launchHeadlessBrowser() {
     [
       "--headless=new",
       "--disable-gpu",
+      ...runtimeBrowserArgs(),
       "--disable-extensions",
       "--disable-background-networking",
       "--no-first-run",
