@@ -22,6 +22,6 @@
   - 이전 전 `git status --short` 167줄(수정 77 + 미추적 90). backup 브랜치 `backup/v150-wip-20260921`(920d330), stash@{0} "v148-v150 wip 20260921" 생성·보존.
   - 새 브랜치 HEAD = 7220e24(origin/main). `git diff --stat origin/main`: 46 files changed, +568/−1373. 미추적 34항목(파일 122개; 그중 reports/v142 77개·reports/v143 2개·scripts/v142 5개·reports/v144/DEPLOYMENT_PREVIEW_V144.md·루트 .docx는 V142~V144 잔여로 이번 PR 범위 밖 → 커밋하지 않음).
 - [x] 2단계 마무리 수정 — DataGuide 문구 삭제 · readability 테스트(+jest import) · 설명 20개 재작성(위반 0) · 단위 표 152행 + unitDisplayV150 · ChartAxesV150 8개 지점 추가(175/175) · 추천 분석 기대값 갱신(감사 3 + qa:map + e2e 2) · 클러스터 글꼴 Noto Sans · 게이트 회복: entity-cards/portfolio/generic-detail 감사 인식 수정, 용어 도움말 감싸기·용어집 4개
-- [~] 3단계 검증 — tsc 0 · test:unit 211 · 런타임 검토(지도 42/42, 반응형 42/42, 축 175/175, 설명 152/152, 찾기 2/2, 홈 2/2) 완료 · finalize:v140 3차 실행 중(1차 entity-cards 실패, 2차 로그 인코딩·portfolio 실패) · e2e·release 미실행
+- [x] 3단계 검증 — finalize:v136 79/79(6차) · role-split 52/52 · analysis QA 필수 실패 41(PR-D 이관, 사용자 결정) · e2e 214/214 · 런타임 검토 전 항목 통과 · tsc 0 · test:unit 211 · 런타임 검토(지도 42/42, 반응형 42/42, 축 175/175, 설명 152/152, 찾기 2/2, 홈 2/2) 완료 · finalize:v140 3차 실행 중(1차 entity-cards 실패, 2차 로그 인코딩·portfolio 실패) · e2e·release 미실행
 - [ ] 3단계 검증
-- [ ] 4단계 커밋·PR
+- [~] 4단계 커밋·PR — 커밋 7개, push·PR 생성, CI 확인(analysis QA 단계 red 예상), merge 승인 대기

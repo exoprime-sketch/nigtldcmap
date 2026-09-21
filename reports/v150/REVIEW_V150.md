@@ -74,12 +74,69 @@
 | 설명 일치 | 찾기 카드 152/152 = JSON, 상세 히어로 152/152 포함 |
 
 ### 4.3 게이트·e2e·릴리스
-- `npm run finalize:v140`: {{GATE}}
-- `node scripts/v137/build-candidate-v137.mjs --data public/data/vietnam/v2 && npx playwright test`: {{E2E}}
-- `npm run release:vietnam-pilot`: {{RELEASE}}
-- `npm run test:usage:v149`: {{USAGE}}
+- `npm run finalize:v140` = `finalize:v136` → `qa:role-split:v140` → `qa:analysis:v140`
+  - `finalize:v136`(release 감사): **79/79 PASS**(6차 실행, 그 전 실행은 entity-cards → portfolio → map-tooltip → oda·finder-card·duplicate-copy·finder-scroll 순으로 원인을 고치며 재실행. 2차·5차는 `ci-command-timings.json` 쓰기 오류(UNKNOWN, Windows 파일 잠금)로 중단 → 쓰기 재시도 추가). 개별 감사 25개도 별도 실행해 모두 PASS.
+  - `qa:role-split:v140`: **52/52**(홈 `/api/usage` 응답 미소비로 networkidle 도달 실패 → 본문 닫기, A-023 홈 카드 단위 '원천 수록 행(곳)' → '곳'; 1회 파일 잠금 재시도).
+  - `qa:analysis:v140`: 필수 실패 **41건 / 152(카드 값 미표기 24 · 카드 선택·지표명 미표기 16 · URL 차원 유실 4 · 다운로드 건수 불일치 2 · 컨트롤 무효 1 · 주 분석 적합 1 · selectOption 시간 초과 2; 겹침 있음). 지도 기호 41/41, 컨트롤 125/126**(1차 103 → 컨트롤 라벨 판독 일치·지도 선택 패널 '지도 표시'·자료연도 폴백 후). 남은 항목은 V146~V148 상세 재설계가 V140 카드 계약(card-summaries)과 어긋난 것으로 PR-D(V153)로 이관 — §5 표. 이 단계 때문에 CI는 붉게 끝난다(main도 V144 이후 동일).
+- e2e: `node scripts/v137/build-candidate-v137.mjs --data public/data/vietnam/v2` → `npx playwright test`: **214/214**(추천 분석 spec 전환 + detail-reference 5개 갱신 + win32 baseline 3개 갱신 후; 갱신 전에는 main과 같은 8개 실패).
+- `npm run test:usage:v149`: 10/10.
+- `npm run release:vietnam-pilot`: 실행하지 않음(analysis QA 미해결 상태에서 릴리스 판정을 내지 않기 위해; PR-D 이후 실행).
 
 ## 5. 미완료·주의
+
+### 5.1 PR-D(V153)로 이관하는 analysis QA 필수 실패 41건
+사용자 결정(2026-09-21): 이 PR은 현 상태로 제출하고 카드 계약(card-summaries-v140) ↔ 상세 재설계(V146~V148) 불일치는 PR-D에서 처리. CI의 `qa:analysis:v140` 단계는 이 때문에 붉게 끝난다(main도 V144 이후 같은 단계에서 실패).
+
+- 등록부 카드의 "N건"이 상세 주 분석에 없음(C-002~C-017, E-007, E-015, E-016 …): V147 화면이 목록 대신 표·매트릭스를 그리면서 카드의 건수 주장과 어긋남 → 카드 모델을 새 화면 기준으로 재정의하거나 화면에 건수를 진술
+- 카드 선택·지표명 미표기(A-013, A-015, A-016, A-017, A-022, A-025, A-027, A-028, A-029, A-031, A-033, B-001, D-001, E-012 …): V147 컴포넌트가 카드가 넘긴 measure·dimension 이름을 제목·선택기에 쓰지 않음
+- 카드 값 미표기(A-010 582.7 MtCO₂e, A-023 41,350 MW, B-026 23.3 %, D-011 16.65억 USD, E-012 51,860 천명 …)
+- URL 차원 유실(A-006, A-030, A-031, A-033: `dim.detail`), 다운로드 건수 불일치(B-023 11 vs 10, B-028 16 vs 15 — 원자료 건수 확인 필요), B-024 기준연도 컨트롤 무효, E-018 비교 범주 명명, C-002·C-019 selectOption 시간 초과(숨김 select)
+
+| 항목 | 카드 유형 | 분류 | QA 메시지 |
+|---|---|---|---|
+| A-006 | line | URL 차원 유실·카드 선택·지표명 미표기 | selection lost in URL: dim.detail=null / detail does not show the card's selection: selection "ILO 모델추정" not shown; selection "경제활동인구 대비 실업자 비율(ILO 모형 |
+| A-010 | composition | 카드 값 미표기·카드 선택·지표명 미표기 | card value 582.7 (MtCO₂e, 2024) not stated as such on the detail / detail does not show the card's selection: year 2024 not shown |
+| A-013 | level | 카드 선택·지표명 미표기 | detail does not show the card's selection: measure "NDC-SDG 연계 건수" not named |
+| A-015 | level | 카드 선택·지표명 미표기 | detail does not show the card's selection: selection "정규화 달성도 점수(0~100)" not shown |
+| A-016 | composition | 카드 선택·지표명 미표기 | detail does not show the card's selection: measure "1차 에너지 소비" not named |
+| A-017 | bars | 카드 선택·지표명 미표기 | detail does not show the card's selection: measure "LCOE" not named |
+| A-022 | line | 카드 선택·지표명 미표기 | detail does not show the card's selection: selection "연간 고객당 순간정전 횟수" not shown |
+| A-023 | grouped-bars | 카드 값 미표기 | card value 41,350 MW (MW) not stated as such on the detail |
+| A-025 | level | 카드 값 미표기·카드 선택·지표명 미표기 | card value 5 건 (건, 2026) not stated as such on the detail / detail does not show the card's selection: year 2026 not shown; measure "CCS 시설 수" not nam |
+| A-027 | level | 카드 선택·지표명 미표기 | detail does not show the card's selection: selection "피처 수" not shown; selection "OSM 도로 레이어의 지물 건수" not shown; measure "도로 레이어" not named |
+| A-028 | level | 카드 선택·지표명 미표기 | detail does not show the card's selection: selection "피처 수" not shown; selection "OSM 수로 레이어의 지물 건수" not shown; measure "수로 레이어" not named |
+| A-029 | level | 카드 선택·지표명 미표기 | detail does not show the card's selection: measure "무역협정 건수" not named |
+| A-030 | line | URL 차원 유실 | selection lost in URL: dim.detail=null |
+| A-031 | line | URL 차원 유실·카드 선택·지표명 미표기 | selection lost in URL: dim.detail=null / detail does not show the card's selection: selection "통관 부문 점수(1=낮음 ~ 5=높음)" not shown |
+| A-033 | line | URL 차원 유실·카드 선택·지표명 미표기 | selection lost in URL: dim.detail=null / detail does not show the card's selection: selection "정기선 해운 연결성 지수(Q1 분기값)" not shown |
+| B-001 | bars | 카드 값 미표기·카드 선택·지표명 미표기 | card value 263 mm: number found without the unit "mm" / detail does not show the card's selection: measure "월 평년강수" not named |
+| B-023 | facts | 다운로드 건수 불일치 | recomputed from the download file: 11 vs card 10 |
+| B-024 | line | 컨트롤 무효 | control without effect on the primary analysis: 기준연도 (2023년 → 2022년) |
+| B-026 | spatial | 카드 값 미표기 | card value 23.3 % (%) not stated as such on the detail |
+| B-028 | facts | 카드 값 미표기·다운로드 건수 불일치 | card value 15건 (건) not stated as such on the detail / recomputed from the download file: 16 vs card 15 |
+| C-002 | facts | 카드 값 미표기·화면 미로드(selectOption 시간 초과) | card value 82건 (건) not stated as such on the detail / runtime: page.selectOption: Timeout 30000ms exceeded. |
+| C-003 | facts | 카드 값 미표기 | card value 96건 (건) not stated as such on the detail |
+| C-004 | facts | 카드 값 미표기 | card value 58건 (건) not stated as such on the detail |
+| C-005 | facts | 카드 값 미표기 | card value 135건 (건) not stated as such on the detail |
+| C-006 | facts | 카드 값 미표기 | card value 50건 (건) not stated as such on the detail |
+| C-011 | facts | 카드 값 미표기 | card value 44건 (건) not stated as such on the detail |
+| C-012 | facts | 카드 값 미표기 | card value 120건 (건) not stated as such on the detail |
+| C-013 | facts | 카드 값 미표기 | card value 64건 (건) not stated as such on the detail |
+| C-014 | facts | 카드 값 미표기 | card value 93건 (건) not stated as such on the detail |
+| C-015 | facts | 카드 값 미표기 | card value 20건 (건) not stated as such on the detail |
+| C-016 | bars | 카드 값 미표기 | card value 27,385 MW (MW) not stated as such on the detail |
+| C-017 | facts | 카드 값 미표기 | card value 52건 (건) not stated as such on the detail |
+| C-019 | bars | 화면 미로드(selectOption 시간 초과) | runtime: page.selectOption: Timeout 30000ms exceeded. |
+| C-024 | facts | 카드 값 미표기 | card value 20건 (건) not stated as such on the detail |
+| D-001 | level | 카드 선택·지표명 미표기 | detail does not show the card's selection: selection "바이오에너지 기술 (Biomass)" not shown; selection "총투자액÷설비용량 중앙값" not shown; measure "단위 사업당 CAPEX" not  |
+| D-011 | line | 카드 값 미표기 | card value 16.65억 USD (USD, 2024) not stated as such on the detail |
+| E-007 | bars | 카드 값 미표기 | card value 19건 (건) not stated as such on the detail |
+| E-012 | level | 카드 값 미표기·카드 선택·지표명 미표기 | card value 51,860 천명 (천명, 2024) not stated as such on the detail / detail does not show the card's selection: measure "총 취업자 수" not named |
+| E-015 | facts | 카드 값 미표기 | card value 4건 (건) not stated as such on the detail |
+| E-016 | facts | 카드 값 미표기 | card value 4건 (건) not stated as such on the detail |
+| E-018 | bars | 주 분석 적합 |  |
+
+
 - Vercel 환경변수·Redis 연결(공용 집계 운영)은 범위 밖. 연결 전 홈은 대표 자료 안내 상태.
 - C-018 '에너지 수요 전망 ｜ MW·VND/kWh'(레코드 0, 선택지 전용)와 A-010 `Gg`(가스별 원단위)는 원자료 확인 대상으로 남김.
 - 한글 지명·클러스터 라벨은 OpenFreeMap 글리프 서버에 의존한다. 오프라인이면 라벨만 빠지고 데이터 레이어는 유지된다(설계).
