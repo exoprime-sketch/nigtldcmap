@@ -1,4 +1,5 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
+import { AnalysisBarsV147 } from "./AnalysisChartsV147";
 
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { publicTextV126 } from "../../../data/visualization/publicFieldPolicyV126";
@@ -11,6 +12,7 @@ import type { DataFinderSelectorStateV125 } from "../../../types/dataFinderV125"
 import type { TimeSeriesV127 } from "../../../types/chartInteractionV127";
 import { InteractiveTimeSeriesChartV127 } from "../../charts/InteractiveTimeSeriesChartV127";
 import { PublicTermHelpV134, PublicTermTextV134 } from "../../help/PublicTermV134";
+import { displayUnitV150 } from "../../../data/visualization/unitDisplayV150";
 
 /**
  * The province-by-scenario-by-year deliveries, read as what they are.
@@ -349,7 +351,7 @@ export default function PublicRegionScenarioSummaryV138({
       : ALL_REGIONS;
   // A card that summarised one scenario (SSP2-4.5 median trend) opens the
   // screen on that scenario; otherwise every scenario is shown.
-  const [scenarioChoice, setScenarioChoice] = useState<string>(selectorState.dimensions.scenario || ALL_SCENARIOS);
+  const scenarioChoice = selectorState.dimensions.scenario || ALL_SCENARIOS;
   const scenario =
     shape && shape.scenarios.includes(scenarioChoice) ? scenarioChoice : ALL_SCENARIOS;
 
@@ -407,7 +409,13 @@ export default function PublicRegionScenarioSummaryV138({
       }));
   }, [entities, measure, region, scenario, shape]);
 
-  // Single-period deliveries: every province, ranked, for the chosen measure.
+  // A regional comparison must use one scenario and the same year for every
+  // region. Never compare each region's independently latest observation.
+  const comparisonScenario = scenario !== ALL_SCENARIOS ? scenario
+    : shape?.scenarios.includes("ssp245") ? "ssp245" : shape?.scenarios[0] || "전체";
+  const comparisonYears = series.find((s) => s.scenario === comparisonScenario)?.points.map((p) => p.year) || [];
+  const comparisonYear = selectorState.year !== null && comparisonYears.includes(selectorState.year)
+    ? selectorState.year : comparisonYears[comparisonYears.length - 1] ?? UNSTATED_YEAR;
   const rankedRegions = useMemo(() => {
     if (!shape || !measure) return [];
     const subRegion = Boolean(contract?.rowUnit) || shape.rowIsSubRegion;
@@ -420,9 +428,10 @@ export default function PublicRegionScenarioSummaryV138({
       const value = numeric(attributes[measure]);
       if (value === null) continue;
       const rowScenario = text(attributes[SCENARIO_KEY]);
-      if (scenario !== ALL_SCENARIOS && rowScenario && rowScenario !== scenario) continue;
+      if (rowScenario && rowScenario !== comparisonScenario) continue;
       const statedYear = numeric(firstKey(attributes, YEAR_KEYS));
       const year = statedYear === null ? UNSTATED_YEAR : statedYear;
+      if (year !== comparisonYear) continue;
       const regionName = shape.regions.find((item) => item.key === rowRegion)?.label || rowRegion;
       // A finer unit ranks as itself, named by its province; a province row
       // ranks once, on its newest year.
@@ -439,7 +448,7 @@ export default function PublicRegionScenarioSummaryV138({
       }
     }
     return [...latest.values()].sort((a, b) => b.value - a.value);
-  }, [contract, entities, measure, scenario, shape]);
+  }, [contract, entities, measure, comparisonScenario, comparisonYear, shape]);
 
   // The publisher's banding, as a count of rows per band.
   const gradeDistribution = useMemo(() => {
@@ -467,7 +476,7 @@ export default function PublicRegionScenarioSummaryV138({
 
   if (!shape || !measure || !series.length) return null;
 
-  const unit = measureMeta.unit || "";
+  const unit = displayUnitV150(measureMeta.unit || "");
   const distribution = region === ALL_REGIONS;
   const rowUnitLabel = contract?.rowUnit?.label || (shape.rowIsSubRegion ? "평가구역" : "성·시");
   const rowIsSubRegion = Boolean(contract?.rowUnit) || shape.rowIsSubRegion;
@@ -623,7 +632,7 @@ export default function PublicRegionScenarioSummaryV138({
             <select
               aria-label="시나리오 선택"
               value={scenario}
-              onChange={(event) => setScenarioChoice(event.target.value)}
+              onChange={(event) => update("scenario", event.target.value)}
             >
               <option value={ALL_SCENARIOS}>모든 시나리오</option>
               {shape.scenarios.map((item) => (
@@ -778,11 +787,16 @@ export default function PublicRegionScenarioSummaryV138({
         </table>
       </div>
 
-      {!multiYear && rankedRegions.length > 1 && (
-        <details className="prs138__ranked" data-testid="region-scenario-ranked-v138" open>
+      {rankedRegions.length > 1 && <section className="detail146" data-testid="region-comparison-v148">
+        <h3>{rowIsSubRegion ? `${rowUnitLabel}별 비교` : "같은 시점의 지역별 비교"}</h3>
+        {comparisonYears.filter((y) => y !== UNSTATED_YEAR).length > 1 && <label>비교연도 <select aria-label="지역 비교연도" value={comparisonYear} onChange={(event) => onSelectorStateChange({ ...selectorState, year: Number(event.target.value), period: null })}>{comparisonYears.filter((y) => y !== UNSTATED_YEAR).map((y) => <option key={y} value={y}>{y}년</option>)}</select></label>}
+        <AnalysisBarsV147 title={`${measureMeta.label} · ${comparisonYear === UNSTATED_YEAR ? periodText : `${comparisonYear}년`} · ${scenarioLabel(comparisonScenario)}`} unit={unit} rows={rankedRegions.slice(0, 12).map((r) => ({ id: r.label, label: r.label, value: r.value }))} />
+        <p className="detail146-note">같은 항목·시나리오·시점의 값만 비교합니다.{rankedRegions.length > 12 ? " 값이 큰 12개를 표시하며, 전체 지역은 아래 표에서 확인할 수 있습니다." : ""} 값의 크기는 우수성이나 사업 적합성 순위를 뜻하지 않습니다.</p>
+      </section>}
+      {rankedRegions.length > 1 && (
+        <details className="prs138__ranked" data-testid="region-scenario-ranked-v138" open={!multiYear}>
           <summary>
-            {rowIsSubRegion ? `${rowUnitLabel}별 값 순위 · ${rankedRegions.length.toLocaleString("ko-KR")}개 ${rowUnitLabel}` : `지역별 값 순위 · ${rankedRegions.length}개 성·시`}
-            {scenario !== ALL_SCENARIOS ? ` · ${scenarioLabel(scenario)}` : ""}
+            표로 보기 · {rowIsSubRegion ? `${rankedRegions.length.toLocaleString("ko-KR")}개 ${rowUnitLabel}` : `${rankedRegions.length}개 성·시`} · {comparisonYear === UNSTATED_YEAR ? periodText : `${comparisonYear}년`} · {scenarioLabel(comparisonScenario)}
           </summary>
           <div className="cdp-table-wrap">
             <table className="cdp-table prs137__table">

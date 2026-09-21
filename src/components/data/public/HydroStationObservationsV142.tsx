@@ -175,7 +175,7 @@ export default function HydroStationObservationsV142({ elementId, entities }: Pr
         <p>
           {elementId === "B-023"
             ? "같은 지점·연도에서 관측한 건기 최저유량과 우기 최고유량을 비교합니다. 계절 평균값은 아닙니다. 나머지 관측값은 아래 표에서 확인할 수 있습니다."
-            : "지점·측정항목·단위·기준연도가 서로 달라 한 축에서 비교하지 않고, 지점별 관측값과 전국 집계를 나누어 표로 보여줍니다."}
+            : "지점·관측 항목·단위·기준연도가 서로 달라 한 축에서 비교하지 않고, 지점별 관측값과 전국 집계를 나누어 표로 보여줍니다."}
         </p>
       </header>
 
@@ -215,7 +215,7 @@ export default function HydroStationObservationsV142({ elementId, entities }: Pr
               <table>
                 <thead>
                   <tr>
-                    <th scope="col">측정항목</th>
+                    <th scope="col">관측 항목</th>
                     <th scope="col">값</th>
                     <th scope="col">단위</th>
                     <th scope="col">기준연도</th>
@@ -269,10 +269,10 @@ export default function HydroStationObservationsV142({ elementId, entities }: Pr
       )}
 
       <ul className="prs138__constraints" data-testid="hydro-station-limitations-v142">
-        <li>계절별 극값 비교 외에는 지점·측정항목·단위·연도가 다른 값을 합하거나 하나의 축에서 비교하지 않습니다.</li>
+        <li>계절별 극값 비교 외에는 지점·관측 항목·단위·연도가 다른 값을 합하거나 하나의 축에서 비교하지 않습니다.</li>
         <li>지도는 관측지점 대표점만 표시하며 유역 경계는 원천에 없습니다.</li>
         {model.placeholders.length > 0 && (
-          <li>{`격자·유역 단위(GIS) 산출값 ${model.placeholders.length}건은 원천이 값을 제공하지 않아 표에서 제외했습니다.`}</li>
+          <li><PublicTermTextV134 text={`격자·유역 단위(GIS) 산출값 ${model.placeholders.length}건은 원천이 값을 제공하지 않아 표에서 제외했습니다.`} /></li>
         )}
       </ul>
     </section>

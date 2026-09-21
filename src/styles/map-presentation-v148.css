@@ -1,0 +1,17 @@
+.map148-popup { width: min(280px, 70vw); display: grid; gap: 7px; color: #153e36; font: 13px/1.45 inherit; overflow-wrap: anywhere; }
+.map148-popup > strong { font-size: 16px; line-height: 1.4; }
+.map148-popup > small { color: #547068; font-size: 11px; line-height: 1.45; }
+.map148-popup dl { display: grid; grid-template-columns: minmax(56px, auto) 1fr; gap: 4px 12px; margin: 0; border-top: 1px solid #dce7e2; padding-top: 7px; }
+.map148-popup dt { color: #547068; font-size: 12px; }
+.map148-popup dd { margin: 0; font-size: 13px; font-weight: 600; }
+.map148-summary-context { font-size: 12px; color: #5b716b; line-height: 1.5; margin: 5px 0 12px; }
+.map148-capacity { margin: 12px 0; }
+.map148-capacity table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.map148-capacity caption { text-align: left; font-weight: 700; padding: 0 0 8px; }
+.map148-capacity th, .map148-capacity td { text-align: right; padding: 6px 3px; border-bottom: 1px solid #e5eeea; }
+.map148-capacity th:first-child, .map148-capacity td:first-child { text-align: left; }
+.map148-capacity .map148-capacity-bar { display: block; height: 5px; background: #d8e9e4; margin-top: 4px; }
+.map148-capacity .map148-capacity-bar b { display: block; height: 100%; background: #0a7d71; }
+.map148-summary-secondary { margin-top: 12px; font-size: 12px; }
+.map148-summary-secondary > summary { cursor: pointer; color: #526e63; }
+.map148-selected-source { margin: 10px 0; font-size: 12px; color: #526e63; }

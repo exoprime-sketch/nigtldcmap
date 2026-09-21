@@ -368,7 +368,7 @@ function MapComparisonPaneV135({
       <header>
         <span>데이터 {side.toUpperCase()}</span>
         <label>
-          <span className="cdp-sr-only">데이터 {side.toUpperCase()} 선택</span>
+          <span className="sr-only">데이터 {side.toUpperCase()} 선택</span>
           <select
             aria-label={`데이터 ${side.toUpperCase()} 선택`}
             onChange={(event) => onDatasetChange(event.target.value)}

@@ -379,6 +379,14 @@ export function resolveMapSelectorBindingV125(
   selection: DataFinderSelectorStateV125,
   availability?: MapSelectorAvailabilityV125
 ): MapSelectorResolutionV125 {
+  // A small-map handoff is a declared spatial slice, not a guess at a
+  // legacy semantic measure. Validate against this layer's real selectors.
+  if (selection.dimensions.__mapElementId === elementId && availability) {
+    const variable = availability.variables.find((v) => v.key === selection.dimensions.__mapVariable);
+    const period = selection.dimensions.__mapPeriod;
+    if (variable && variable.periods.includes(period)) return { variable: variable.key, period, status: "matched", reason: null };
+    return unsupportedResolutionV125("선택한 지도 항목·시점의 자료가 없습니다.");
+  }
   const bindings = MAP_SELECTOR_BINDINGS_V125.filter(
     (binding) => binding.elementId === elementId
   );
@@ -588,7 +596,7 @@ export function resolveMapSemanticPresentationV125(
     unit: option?.unit || "미표기",
     period: selector.period,
     dimensions: Object.entries(state.dimensions)
-      .filter(([, value]) => Boolean(value))
+      .filter(([key, value]) => Boolean(value) && !key.startsWith("__map"))
       .sort(([left], [right]) => left.localeCompare(right))
       .map(([key, value]) => ({
         key,

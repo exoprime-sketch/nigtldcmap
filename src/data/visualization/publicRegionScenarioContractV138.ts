@@ -311,6 +311,7 @@ const CONTRACTS: Record<string, RegionScenarioContractV138> = {
   "B-041": {
     measures: MAP_TARGET_MEASURES.get("B-041") || [],
     defaultMeasure: "수평면_전일사량_GHI_평균",
+    periodLabel: "1999–2018년 장기평균",
     constraints: [
       "Global Solar Atlas 2.0의 1999–2018 장기평균을 성·시 격자 평균으로 집계한 값입니다. 지점별 일사량이 아닙니다.",
     ],
@@ -318,6 +319,7 @@ const CONTRACTS: Record<string, RegionScenarioContractV138> = {
   "B-042": {
     measures: MAP_TARGET_MEASURES.get("B-042") || [],
     defaultMeasure: "풍속_평균_m_s",
+    periodLabel: "2008–2017년 장기평균 · 고도 100m",
     constraints: [
       "Global Wind Atlas 고도 100m 값(2008–2017 장기평균)입니다. 다른 고도의 풍속과 직접 비교하지 않습니다.",
     ],
