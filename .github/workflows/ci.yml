@@ -88,6 +88,14 @@ jobs:
         continue-on-error: true
         run: npm run audit:performance:v128
 
+      # The runner's Chrome drives the one browser step this job has.
+      - name: Resolve Chrome executable
+        shell: bash
+        run: |
+          browser_path="$(command -v google-chrome || command -v chromium-browser || command -v chromium || true)"
+          "$browser_path" --version
+          echo "V125_BROWSER_EXECUTABLE=$browser_path" >> "$GITHUB_ENV"
+
       - name: Home ordering hash (determinism evidence)
         run: node scripts/v150-1/home-order-v150-1.mjs --build build --label ci-linux --out reports/v150-1/determinism-ci.json
 
