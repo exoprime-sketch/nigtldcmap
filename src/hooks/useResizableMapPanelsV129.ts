@@ -41,43 +41,59 @@ export function useResizableMapPanelsV129({ leftPanelOpen, rightPanelOpen, onMap
     if (!node) return;
     const measure = () => { setLayoutWidth(node.getBoundingClientRect().width); setIsDesktop(window.innerWidth >= 1100); };
     measure();
-    const observer = new ResizeObserver(measure);
-    observer.observe(node); window.addEventListener("resize", measure);
-    return () => { observer.disconnect(); window.removeEventListener("resize", measure); };
+    const observer = typeof ResizeObserver === "undefined" ? null : new ResizeObserver(measure);
+    observer?.observe(node); window.addEventListener("resize", measure);
+    return () => { observer?.disconnect(); window.removeEventListener("resize", measure); };
   }, []);
+  // The width the clamp is measured against, read synchronously from the
+  // layout node. State can still hold 0 before the observer's first
+  // measurement, and clamping against 0 collapsed both panels to 120px and
+  // persisted it (PR #19, Linux CI). The viewport is the last resort.
+  const currentLayoutWidth = useCallback(() => {
+    const measured = layoutRef.current?.getBoundingClientRect().width || 0;
+    return measured || layoutWidth || (typeof window !== "undefined" ? window.innerWidth : 1280);
+  }, [layoutWidth]);
   const setWidth = useCallback((side: ResizableMapPanelSideV129, value: number) => {
     setPriority(side);
+    const width = currentLayoutWidth();
     setWidths(current => {
-      // The layout can read 0 before the observer's first measurement or while
-      // the node is hidden; clamping against 0 collapsed both panels to 120px
-      // and persisted it. Fall back to the viewport, as `effective` does.
-      const width = layoutWidth || (typeof window !== "undefined" ? window.innerWidth : 1280);
       const fitted = fitMapPanelsV150(width, side === "left" ? value : current.left, side === "right" ? value : current.right, leftPanelOpen, rightPanelOpen, side);
       return { left: leftPanelOpen ? fitted.left : current.left, right: rightPanelOpen ? fitted.right : current.right };
     });
-  }, [layoutWidth, leftPanelOpen, rightPanelOpen]);
+  }, [currentLayoutWidth, leftPanelOpen, rightPanelOpen]);
   useEffect(() => { try { localStorage.setItem(KEYS.left, String(widths.left)); localStorage.setItem(KEYS.right, String(widths.right)); } catch { /* private mode still supports resizing */ } }, [widths]);
   useEffect(() => {
     const frame = requestAnimationFrame(() => onMapResize?.());
     return () => cancelAnimationFrame(frame);
   }, [effective.left, effective.right, isDesktop, onMapResize]);
+  // The drag listeners are attached synchronously inside pointerdown, not by
+  // an effect on `isResizing`: a move that arrives before React commits the
+  // effect (synthetic input, fast pointers) would otherwise be lost, and the
+  // width would never change. Pointer events cover mouse, pen and touch, and
+  // the browser derives them from plain mouse input as well.
+  const setWidthRef = useRef(setWidth);
+  setWidthRef.current = setWidth;
+  const detach = useRef<(() => void) | null>(null);
   const finish = useCallback(() => {
+    detach.current?.(); detach.current = null;
     if (!drag.current) return;
     drag.current = null; setIsResizing(false);
     document.body.style.userSelect = oldUserSelect.current;
     document.body.classList.remove("cdp-map-panel-resize-active");
   }, []);
-  useEffect(() => {
-    if (!isResizing) return;
+  const attach = useCallback(() => {
+    detach.current?.();
     const move = (event: globalThis.PointerEvent) => {
       if (!drag.current) return;
       const { side, width, x } = drag.current;
-      setWidth(side, width + (event.clientX - x) * (side === "left" ? 1 : -1));
+      // Applied synchronously: the width follows the pointer within the same
+      // event, never deferred to a frame or a debounce.
+      setWidthRef.current(side, width + (event.clientX - x) * (side === "left" ? 1 : -1));
     };
     window.addEventListener("pointermove", move); window.addEventListener("pointerup", finish); window.addEventListener("pointercancel", finish); window.addEventListener("blur", finish);
-    return () => { window.removeEventListener("pointermove", move); window.removeEventListener("pointerup", finish); window.removeEventListener("pointercancel", finish); window.removeEventListener("blur", finish); };
-  }, [finish, isResizing, setWidth]);
-  useEffect(() => () => { if (drag.current) { document.body.style.userSelect = oldUserSelect.current; document.body.classList.remove("cdp-map-panel-resize-active"); } }, []);
+    detach.current = () => { window.removeEventListener("pointermove", move); window.removeEventListener("pointerup", finish); window.removeEventListener("pointercancel", finish); window.removeEventListener("blur", finish); };
+  }, [finish]);
+  useEffect(() => () => { detach.current?.(); if (drag.current) { document.body.style.userSelect = oldUserSelect.current; document.body.classList.remove("cdp-map-panel-resize-active"); } }, []);
   function bindings(side: ResizableMapPanelSideV129) {
     const open = side === "left" ? leftPanelOpen : rightPanelOpen;
     const otherOpen = side === "left" ? rightPanelOpen : leftPanelOpen;
@@ -88,10 +104,13 @@ export function useResizableMapPanelsV129({ leftPanelOpen, rightPanelOpen, onMap
       onDoubleClick: () => { if (!disabled) setWidth(side, MAP_PANEL_LIMITS_V129[side].defaultWidth); },
       onPointerDown: (event: PointerEvent<HTMLDivElement>) => {
         if (disabled || event.button !== 0) return;
-        event.preventDefault(); event.currentTarget.setPointerCapture?.(event.pointerId);
+        event.preventDefault();
+        try { event.currentTarget.setPointerCapture?.(event.pointerId); } catch { /* synthetic pointers may not be capturable */ }
         oldUserSelect.current = document.body.style.userSelect; document.body.style.userSelect = "none";
         document.body.classList.add("cdp-map-panel-resize-active");
-        drag.current = { side, x: event.clientX, width: effective[side] }; setIsResizing(true);
+        drag.current = { side, x: event.clientX, width: effective[side] };
+        attach();
+        setIsResizing(true);
       },
       onKeyDown: (event: KeyboardEvent<HTMLDivElement>) => {
         if (disabled || !["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
