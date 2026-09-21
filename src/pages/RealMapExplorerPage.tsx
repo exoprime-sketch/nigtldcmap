@@ -7198,6 +7198,9 @@ export default function RealMapExplorerPage({
             · 베트남 {boundarySystemLabelV151(boundarySystemV151State)} (CC BY
             4.0)
           </span>
+          {/* V151: one stack, so the boundary picker keeps its place when the
+              backdrop card grows to show its error message. */}
+          <div className="cdp-map-control-stack-v151">
           <div className="cdp-map-backdrop-v150">
             <label><input type="checkbox" checked={backdropEnabledV150} onChange={event => setBackdropEnabledV150(event.target.checked)} />배경지도</label>
             {backdropEnabledV150 && backdropErrorV150 && <span role="status">배경지도를 불러오지 못했습니다. 데이터와 경계는 계속 볼 수 있습니다.</span>}
@@ -7224,6 +7227,7 @@ export default function RealMapExplorerPage({
             <p data-testid="map-boundary-value-notice-v151">
               {boundaryValueNoticeV151(boundarySystemV151State)}
             </p>
+          </div>
           </div>
           <div className="cdp-map-status-badge">
             {baseMapStatus === "ready"
