@@ -84,7 +84,17 @@ export default function DataGuidePage({ onNavigate }: DataGuidePageProps) {
         </p>
       </header>
 
+      <section id="guide-usage" className="cdp-panel">
+        <h2>조회순·최신순 안내</h2>
+        <p>홈의 조회순은 최근 30일간의 상세보기 열람을, 주요 지역 데이터는 데이터 지도에서 주 분석 자료로 선택한 횟수를 기준으로 합니다. 같은 브라우저 세션에서 30분 이내 반복한 열람은 한 번만 집계합니다.</p>
+        <p>최신순은 자료 파일이 플랫폼에 갱신된 날짜를 기준으로 합니다. 통계의 기준연도나 기후전망의 대상연도와는 다릅니다. 갱신일이 같은 자료는 데이터명 순으로 표시합니다.</p>
+        <details><summary>이용 집계에 사용하는 정보</summary>
+          <p>자료 식별번호와 열람 유형별 일일 합계를 최대 31일 보관합니다. 이름·연락처·검색어·정확한 위치는 수집하지 않습니다. 임의의 브라우저 세션 식별값은 반복 조회를 구분하는 데만 사용하며, 서버의 중복 확인값은 30분 후 만료됩니다. 과도한 요청을 막기 위한 접속주소는 원문을 저장하지 않고 하루마다 달라지는 값으로 변환해 최대 1분 동안 사용합니다.</p>
+          <p>브라우저의 추적 금지(DNT) 또는 개인정보 보호 신호(GPC)가 활성화되어 있거나 세션 저장을 사용할 수 없으면 조회를 집계하지 않습니다. 서버 운영에 필요한 접속 로그는 이 조회 집계와 별도로 호스팅 서비스 정책을 따릅니다.</p>
+        </details>
+      </section>
       <nav className="data-guide-v128__toc" aria-label="이용안내 목차">
+        <button type="button" onClick={() => scrollToSection("guide-usage")}>조회순·최신순</button>
         <button type="button" onClick={() => scrollToSection("guide-scope")}>
           제공 범위
         </button>

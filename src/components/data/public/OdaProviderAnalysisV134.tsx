@@ -239,7 +239,7 @@ export default function OdaProviderAnalysisV134({
           <div>
             <span>주 분석</span>
             <h3 id="osa134-total-title"><PublicTermTextV134 text={primaryTitle} /></h3>
-            <p>공식 공여자 총계를 연도별로 비교합니다.</p>
+            <p>공식 공여자 총계를 연도별로 비교합니다.{totalRows.length ? ` ${Math.min(...totalRows.map((row) => row.year))}–${Math.max(...totalRows.map((row) => row.year))}년.` : ""}</p>
           </div>
         </header>
         <InteractiveTimeSeriesChartV127

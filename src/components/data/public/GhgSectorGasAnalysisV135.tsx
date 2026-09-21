@@ -1,3 +1,5 @@
+import ChartAxesV150 from "../../charts/ChartAxesV150";
+import { displayUnitV150 } from "../../../data/visualization/unitDisplayV150";
 import { useId, useMemo } from "react";
 import type { SemanticObservationV125 } from "../../../data/visualization/semanticTypesV125";
 import { formatPublicNumberV126 } from "../../../data/visualization/publicNumberFormatV126";
@@ -84,8 +86,9 @@ export default function GhgSectorGasAnalysisV135({ elementId, rows }: Props) {
     if (cells.length === 0) return null;
 
     const sourceRow = rows.find((row) => readSectorGasCellV135(row) !== null);
-    const unit =
-      sourceRow?.semanticMeasure?.unit || sourceRow?.unit || "ktCO2e";
+    const unit = displayUnitV150(
+      sourceRow?.semanticMeasure?.unit || sourceRow?.unit || "ktCO2e"
+    );
     const period = String(sourceRow?.year || sourceRow?.period || "");
 
     const sectors: SectorRowV135[] = SECTOR_ORDER_V135.map((sector) => {
@@ -196,6 +199,7 @@ export default function GhgSectorGasAnalysisV135({ elementId, rows }: Props) {
         ))}
       </ul>
 
+      <ChartAxesV150 x="온실가스 배출·흡수량" y="부문" unit={unit} />
       <div className="ghg-sector-gas-v135__chart-scroll">
         <svg
           className="ghg-sector-gas-v135__chart"

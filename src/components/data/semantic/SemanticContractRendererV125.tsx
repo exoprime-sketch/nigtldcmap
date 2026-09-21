@@ -1,3 +1,4 @@
+import ChartAxesV150 from "../../charts/ChartAxesV150";
 import { publicIndicatorSeriesV144, previousYearChangeV144 } from "../../../data/visualization/publicIndicatorCopyV144";
 import { allowsRelativeChangeV147, changeUnitV147 } from "../../../data/visualization/detailModelsV147";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -38,6 +39,7 @@ import {
   publicPortfolioSectionTitleV138,
 } from "../public/PublicPortfolioSummaryV132";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
+import { displayUnitV150 } from "../../../data/visualization/unitDisplayV150";
 
 import "./semantic-contract-renderer-v125.css";
 
@@ -731,7 +733,7 @@ function TwoYearChangeUnitV135({
   rows: NumericRowV125[];
   unit: string;
 }) {
-  const publicUnit = publicTextV126(unit) || "단위 미기재";
+  const publicUnit = displayUnitV150(publicTextV126(unit) || "") || "단위 미기재";
   const series = Array.from(
     rows.reduce((map, row) => {
       const bucket = map.get(row.seriesKey) || [];
@@ -833,7 +835,7 @@ function TrendUnitV125({
   );
   const minYear = Math.min(...years);
   const maxYear = Math.max(...years);
-  const publicUnit = publicTextV126(unit) || "단위 미기재";
+  const publicUnit = displayUnitV150(publicTextV126(unit) || "") || "단위 미기재";
   const patterns: ChartLinePatternV127[] = [
     "solid",
     "dash",
@@ -1050,6 +1052,7 @@ function CategoryComparisonUnitV143({ rows, unit, barLabel, title }: { rows: Num
                 0을 기준으로 왼쪽은 음수, 오른쪽은 양수입니다. 막대 길이는 0에서 떨어진 크기입니다.
               </p>
             )}
+            <ChartAxesV150 x={title} y="비교 항목" unit={unit} />
             <div className="sv125-contract-bars" role="list">
               {shown.map((row, index) => {
                 const width = scale.spanFor(row.value);
@@ -1115,7 +1118,7 @@ function ObservationValuesTableV146({ rows, title, context }: { rows: PresentRow
             <td>{formatValueV121(row.value)}</td>
             <td><PublicTermTextV134 text={observationUnitV125(row) || "—"} /></td>
             <td>{row.year || row.period || "미기재"}</td>
-            {context && <td>{change ? `${change.value > 0 ? "+" : ""}${formatValueV121(Number(change.value.toPrecision(10)))} ${change.unit || ""}` : "비교 자료 없음"}</td>}
+            {context && <td>{change ? <>{`${change.value > 0 ? "+" : ""}${formatValueV121(Number(change.value.toPrecision(10)))} `}<PublicTermTextV134 text={displayUnitV150(change.unit || "")} /></> : "비교 자료 없음"}</td>}
           </tr>
         ); })}</tbody>
       </table>
@@ -2047,7 +2050,7 @@ function groupByUnitV125(rows: NumericRowV125[]) {
 }
 
 function observationUnitV125(row: SemanticObservationV125): string {
-  return String(row.unit || row.semanticMeasure.unit || "").trim();
+  return displayUnitV150(String(row.unit || row.semanticMeasure.unit || "").trim());
 }
 
 /** The first dimension that says something the shared label does not. */

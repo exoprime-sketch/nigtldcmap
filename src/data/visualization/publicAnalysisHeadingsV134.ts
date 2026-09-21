@@ -1,5 +1,6 @@
 import { ELEMENT_PRESENTATION_SPECS_V100 } from "../elementPresentationRegistryV100";
 import type { ElementPresentationSpecV100 } from "../elementPresentationRegistryV100";
+import descriptionsV150 from "./datasetDescriptionsV150.json";
 import { publicDatasetTitleV122 } from "../countries/publicLabelsV122";
 
 export type PublicAnalysisHeadingsV134 = {
@@ -13,6 +14,12 @@ export type PublicAnalysisHeadingsV134 = {
 const SPECIALIZED_HEADINGS_V134: Readonly<
   Record<string, Omit<PublicAnalysisHeadingsV134, "elementId">>
 > = Object.freeze({
+  "A-023": {
+    publicAnalysisTitle: "발전원별 시설 수·설비용량과 위치",
+    primaryChartTitle: "발전원별 설비용량 비교",
+    secondaryChartTitle: "발전원별 시설 수와 발전소 목록",
+    publicQuestion: "출처별로 발전소의 발전원·설비용량을 비교하고, 시설 목록과 위치를 확인할 수 있습니다.",
+  },
   "B-001": {
     publicAnalysisTitle: "월별 강수량·기온과 건기·우기",
     primaryChartTitle: "1991~2020년 월별 평년값",
@@ -415,6 +422,7 @@ export const PUBLIC_ANALYSIS_HEADINGS_V134: readonly PublicAnalysisHeadingsV134[
       return {
         elementId: spec.elementId,
         ...base,
+        publicQuestion: (descriptionsV150 as Record<string, string>)[spec.elementId] || base.publicQuestion,
         ...(corrected ? { publicAnalysisTitle: corrected } : {}),
         ...(primaryCorrected ? { primaryChartTitle: primaryCorrected } : {}),
       };
