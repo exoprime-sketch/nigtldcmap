@@ -13,6 +13,7 @@ Run:
 
 from __future__ import annotations
 
+import argparse
 import json
 import time
 from collections import Counter
@@ -43,6 +44,12 @@ ASSETS = [
 CLASS_COLORS = {"고속도로": "#b13f2a", "간선도로": "#d98b2b", "주요도로": "#8a8a3a", "철도": "#2f4a8a"}
 KIND_COLORS = {"port": "#2a6f97", "dam": "#a23b72", "reservoir": "#3b8a6e"}
 BOUNDARY_COLOR = "#9aa0a6"
+# V155-2: three nested low-lying zones drawn together, darker = lower.
+SLR_ASSETS = [
+    {"file": "vnm-slr-lowland-le2m.geojson", "report": "slr-lowland-v155.json", "budgetGzip": 2 * 1024 * 1024, "zoneKey": "le2m", "color": "#a9cbe8", "label": "≤2 m"},
+    {"file": "vnm-slr-lowland-le1m.geojson", "report": "slr-lowland-v155.json", "budgetGzip": 2 * 1024 * 1024, "zoneKey": "le1m", "color": "#4f8fc6", "label": "≤1 m"},
+    {"file": "vnm-slr-lowland-le0p5m.geojson", "report": "slr-lowland-v155.json", "budgetGzip": 2 * 1024 * 1024, "zoneKey": "le0p5m", "color": "#17416b", "label": "≤0.5 m"},
+]
 
 
 def check_asset(path: Path, budget: int) -> dict[str, Any]:
@@ -170,6 +177,84 @@ def render(asset: dict[str, Any], document: dict[str, Any], output: Path) -> Non
     plt.close(figure)
 
 
+def render_slr(documents: list[tuple[dict[str, Any], dict[str, Any]]], output: Path) -> None:
+    """One PNG: the 34-unit boundary with the three zones stacked (≤2 m under ≤1 m under ≤0.5 m)."""
+
+    figure, axis = plt.subplots(figsize=(7, 11), dpi=110)
+    draw_boundary(axis)
+    handles = []
+    for asset, document in documents:
+        patches = [patch for feature in document["features"] for patch in polygon_patches(feature["geometry"])]
+        axis.add_collection(PatchCollection(patches, facecolor=asset["color"], edgecolor="none", alpha=0.95))
+        total = sum(feature["properties"]["areaKm2"] for feature in document["features"])
+        handles.append(plt.Rectangle((0, 0), 1, 1, color=asset["color"], label=f"{asset['label']} (EGM2008) · {total:,.0f} km²"))
+    axis.set_xlim(VIETNAM_BBOX[0], VIETNAM_BBOX[2])
+    axis.set_ylim(VIETNAM_BBOX[1], VIETNAM_BBOX[3])
+    axis.set_aspect(1 / 0.96)
+    axis.set_title("B-008 개략 저지대(Copernicus DEM GLO-30, 해안 연결) — 침수 예측 아님", fontsize=10, color="#333333")
+    axis.tick_params(labelsize=7, colors="#666666")
+    for spine in axis.spines.values():
+        spine.set_color("#cccccc")
+    axis.legend(handles=handles, loc="lower left", fontsize=8, frameon=False)
+    figure.tight_layout()
+    figure.savefig(output)
+    plt.close(figure)
+
+
+def main_v155_2() -> None:
+    """Check the V155-2 assets (SLR zones + D-022 draft) and write assets-v155-2.json."""
+
+    plt.rcParams["font.family"] = ["Malgun Gothic", "DejaVu Sans"]
+    plt.rcParams["axes.unicode_minus"] = False
+    results: dict[str, Any] = {}
+    documents = []
+    for asset in SLR_ASSETS:
+        path = GEOMETRY_DIR / asset["file"]
+        result = check_asset(path, asset["budgetGzip"])
+        if result["duplicateIdCount"] or result["emptyGeometryCount"] or result["outsideVietnamBboxCount"] or result["invalidGeometryCount"]:
+            raise SystemExit(f"{asset['file']}: structural check failed {result}")
+        if result["featureCount"] != result["declaredFeatureCount"]:
+            raise SystemExit(f"{asset['file']}: declared featureCount differs from the file")
+        if not result["withinGzipBudget"]:
+            raise SystemExit(f"{asset['file']}: gzip over budget")
+        document = read_json(path)
+        result["totalAreaKm2"] = round(sum(feature["properties"]["areaKm2"] for feature in document["features"]), 3)
+        result["unitCount"] = len({feature["properties"]["adm1Code34"] for feature in document["features"]})
+        result["accuracyNotice"] = document["metadata"].get("accuracyNotice")
+        result["verticalDatum"] = document["metadata"].get("verticalDatum")
+        result["builderReport"] = f"reports/v155/{asset['report']}"
+        results[asset["file"]] = result
+        documents.append((asset, document))
+    output = REPORT_DIR / "slr-lowland.png"
+    render_slr(documents, output)
+    preview = output.relative_to(REPORT_DIR.parent.parent).as_posix()
+    for result in results.values():
+        result["preview"] = preview
+
+    manifest = read_json(GEOMETRY_DIR / "geometry-manifest.json")
+    manifest_kinds = [item["kind"] for item in manifest["assets"]]
+    pending = V2_ROOT / "spatial" / "pending-v155"
+    by_adm1 = read_json(pending / "b-008-lowland-by-adm1.json")
+    zones_table = read_json(pending / "b-008-slr-zones.json")
+    d022 = read_json(pending / "d-022-locations.json")
+    summary = {
+        "schema": "v155-assets-report-1",
+        "generatedAt": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "assets": results,
+        "b008Drafts": {
+            "lowlandByAdm1": {"path": "public/data/vietnam/v2/spatial/pending-v155/b-008-lowland-by-adm1.json", "unitCount": len(by_adm1["units"]), "totals": by_adm1["totals"], "gzipBytes": gzip_size(pending / "b-008-lowland-by-adm1.json")},
+            "slrZones": {"path": "public/data/vietnam/v2/spatial/pending-v155/b-008-slr-zones.json", "entryCount": zones_table["entryCount"], "zoneKeyCounts": dict(Counter(entry["zoneKey"] for entry in zones_table["entries"])), "gzipBytes": gzip_size(pending / "b-008-slr-zones.json")},
+        },
+        "d022Draft": {"path": "public/data/vietnam/v2/spatial/pending-v155/d-022-locations.json", **d022["validation"], "gzipBytes": gzip_size(pending / "d-022-locations.json")},
+        "manifestKindsAppended": manifest_kinds[-3:],
+        "previews": [preview],
+        "builderReports": {name: read_json(REPORT_DIR / name) for name in ("slr-lowland-v155.json", "d-022-locations-v155.json")},
+    }
+    write_json(REPORT_DIR / "assets-v155-2.json", summary)
+    print(json.dumps({name: {"features": item["featureCount"], "areaKm2": item["totalAreaKm2"], "gzipBytes": item["gzipBytes"], "invalid": item["invalidGeometryCount"]} for name, item in results.items()}, ensure_ascii=False))
+    print("preview:", preview)
+
+
 def main() -> None:
     plt.rcParams["font.family"] = ["Malgun Gothic", "DejaVu Sans"]
     plt.rcParams["axes.unicode_minus"] = False
@@ -220,4 +305,9 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--set", choices=["v155-1", "v155-2"], default="v155-1", help="v155-1 = P6a assets (default), v155-2 = SLR zones + D-022 draft")
+    if parser.parse_args().set == "v155-2":
+        main_v155_2()
+    else:
+        main()

@@ -490,6 +490,117 @@
       "valuesAreAggregated": false,
       "valuesNotice": "기하 전용 자산입니다. B-017 값은 평가구역(string_id) 단위로만 제공하며 유역 단위로 합산·평균하지 않습니다.",
       "version": "Y2023M07D05"
+    },
+    {
+      "accuracyNotice": "30 m 공개 DEM 기반 개략 저지대. 방조제·제방·지반침하·조석·폭풍해일 미반영. 실제 침수 예측이 아니며 상세 계획에는 사용 불가.",
+      "datumNotice": "높이는 Copernicus DEM GLO-30(DSM, EGM2008 지오이드 기준) 값이며 조위 기준면 보정 없음. 수목·건물 높이가 포함돼 맹그로브·시가지에서 저지대가 과소 산정될 수 있음.",
+      "attribution": "© DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved. Copernicus DEM GLO-30 COG tiles from the AWS Open Data bucket copernicus-dem-30m.",
+      "elementId": "B-008",
+      "featureCount": 20,
+      "geometryTypes": [
+        "MultiPolygon"
+      ],
+      "kind": "slr-lowland-le0p5m",
+      "zoneKey": "le0p5m",
+      "thresholdM": 0.5,
+      "verticalDatum": "EGM2008",
+      "license": "Copernicus DEM licence (free access, attribution required)",
+      "licenseUrl": "https://spacedata.copernicus.eu/documents/20123/121286/CSCDA_ESA_Mission-specific+Annex_31_Oct_22.pdf",
+      "sha256": "da1a2e4180f65023140ea0268b65236a117d6a4e51e03873684f8ced0ac3d431",
+      "source": {
+        "name": "Copernicus DEM GLO-30 (ESA / Airbus, DLR)",
+        "bucketUrl": "https://copernicus-dem-30m.s3.amazonaws.com",
+        "registryUrl": "https://registry.opendata.aws/copernicus-dem/",
+        "tileCount": 42,
+        "tileManifestSha256": "9dd5d1241ce007b36a359e56b63756e2094d674304e9ba96ba5b840c994ebc9e",
+        "downloadedAt": "2026-09-22T04:48:58Z"
+      },
+      "method": "해안 30 km 안에서 해발 임계값 이하 셀 중 바다와 8방향으로 연결된 셀만 유지(내륙 고립 저지대 제외). 높이가 정확히 0.0 m인 셀(Copernicus가 편집한 해수·하구·하천 수면)은 연결 경로로만 쓰고 저지대에서 제외. 래스터→폴리곤 후 육지 경계(성·시 폴리곤)로 자르고 0.25 km² 미만 폴리곤·구멍 제거, 위상 보존 단순화.",
+      "url": "/data/vietnam/v2/geometry/vnm-slr-lowland-le0p5m.geojson",
+      "validation": {
+        "duplicateIdCount": 0,
+        "emptyGeometryCount": 0,
+        "featureCount": 20,
+        "invalidGeometryCount": 0,
+        "geometryValidity": "pass",
+        "rasterNestingAssert": "pass",
+        "validator": "Shapely 2.1.2 (GEOS is_valid) + pyproj Geod area"
+      },
+      "version": "Copernicus DEM GLO-30 COG, tiles downloaded 2026-09-22"
+    },
+    {
+      "accuracyNotice": "30 m 공개 DEM 기반 개략 저지대. 방조제·제방·지반침하·조석·폭풍해일 미반영. 실제 침수 예측이 아니며 상세 계획에는 사용 불가.",
+      "datumNotice": "높이는 Copernicus DEM GLO-30(DSM, EGM2008 지오이드 기준) 값이며 조위 기준면 보정 없음. 수목·건물 높이가 포함돼 맹그로브·시가지에서 저지대가 과소 산정될 수 있음.",
+      "attribution": "© DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved. Copernicus DEM GLO-30 COG tiles from the AWS Open Data bucket copernicus-dem-30m.",
+      "elementId": "B-008",
+      "featureCount": 20,
+      "geometryTypes": [
+        "MultiPolygon"
+      ],
+      "kind": "slr-lowland-le1m",
+      "zoneKey": "le1m",
+      "thresholdM": 1.0,
+      "verticalDatum": "EGM2008",
+      "license": "Copernicus DEM licence (free access, attribution required)",
+      "licenseUrl": "https://spacedata.copernicus.eu/documents/20123/121286/CSCDA_ESA_Mission-specific+Annex_31_Oct_22.pdf",
+      "sha256": "da749ac42b151192cd2cd7ded433599239ae19f7467e8c53e9b693d19a1dd454",
+      "source": {
+        "name": "Copernicus DEM GLO-30 (ESA / Airbus, DLR)",
+        "bucketUrl": "https://copernicus-dem-30m.s3.amazonaws.com",
+        "registryUrl": "https://registry.opendata.aws/copernicus-dem/",
+        "tileCount": 42,
+        "tileManifestSha256": "9dd5d1241ce007b36a359e56b63756e2094d674304e9ba96ba5b840c994ebc9e",
+        "downloadedAt": "2026-09-22T04:48:58Z"
+      },
+      "method": "해안 30 km 안에서 해발 임계값 이하 셀 중 바다와 8방향으로 연결된 셀만 유지(내륙 고립 저지대 제외). 높이가 정확히 0.0 m인 셀(Copernicus가 편집한 해수·하구·하천 수면)은 연결 경로로만 쓰고 저지대에서 제외. 래스터→폴리곤 후 육지 경계(성·시 폴리곤)로 자르고 0.25 km² 미만 폴리곤·구멍 제거, 위상 보존 단순화.",
+      "url": "/data/vietnam/v2/geometry/vnm-slr-lowland-le1m.geojson",
+      "validation": {
+        "duplicateIdCount": 0,
+        "emptyGeometryCount": 0,
+        "featureCount": 20,
+        "invalidGeometryCount": 0,
+        "geometryValidity": "pass",
+        "rasterNestingAssert": "pass",
+        "validator": "Shapely 2.1.2 (GEOS is_valid) + pyproj Geod area"
+      },
+      "version": "Copernicus DEM GLO-30 COG, tiles downloaded 2026-09-22"
+    },
+    {
+      "accuracyNotice": "30 m 공개 DEM 기반 개략 저지대. 방조제·제방·지반침하·조석·폭풍해일 미반영. 실제 침수 예측이 아니며 상세 계획에는 사용 불가.",
+      "datumNotice": "높이는 Copernicus DEM GLO-30(DSM, EGM2008 지오이드 기준) 값이며 조위 기준면 보정 없음. 수목·건물 높이가 포함돼 맹그로브·시가지에서 저지대가 과소 산정될 수 있음.",
+      "attribution": "© DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved. Copernicus DEM GLO-30 COG tiles from the AWS Open Data bucket copernicus-dem-30m.",
+      "elementId": "B-008",
+      "featureCount": 23,
+      "geometryTypes": [
+        "MultiPolygon"
+      ],
+      "kind": "slr-lowland-le2m",
+      "zoneKey": "le2m",
+      "thresholdM": 2.0,
+      "verticalDatum": "EGM2008",
+      "license": "Copernicus DEM licence (free access, attribution required)",
+      "licenseUrl": "https://spacedata.copernicus.eu/documents/20123/121286/CSCDA_ESA_Mission-specific+Annex_31_Oct_22.pdf",
+      "sha256": "27263d8c456ee4ed8754a10fb2232c1cecbc5ed5a64d60121ad65d3f9a784d4e",
+      "source": {
+        "name": "Copernicus DEM GLO-30 (ESA / Airbus, DLR)",
+        "bucketUrl": "https://copernicus-dem-30m.s3.amazonaws.com",
+        "registryUrl": "https://registry.opendata.aws/copernicus-dem/",
+        "tileCount": 42,
+        "tileManifestSha256": "9dd5d1241ce007b36a359e56b63756e2094d674304e9ba96ba5b840c994ebc9e",
+        "downloadedAt": "2026-09-22T04:48:58Z"
+      },
+      "method": "해안 30 km 안에서 해발 임계값 이하 셀 중 바다와 8방향으로 연결된 셀만 유지(내륙 고립 저지대 제외). 높이가 정확히 0.0 m인 셀(Copernicus가 편집한 해수·하구·하천 수면)은 연결 경로로만 쓰고 저지대에서 제외. 래스터→폴리곤 후 육지 경계(성·시 폴리곤)로 자르고 0.25 km² 미만 폴리곤·구멍 제거, 위상 보존 단순화.",
+      "url": "/data/vietnam/v2/geometry/vnm-slr-lowland-le2m.geojson",
+      "validation": {
+        "duplicateIdCount": 0,
+        "emptyGeometryCount": 0,
+        "featureCount": 23,
+        "invalidGeometryCount": 0,
+        "geometryValidity": "pass",
+        "rasterNestingAssert": "pass",
+        "validator": "Shapely 2.1.2 (GEOS is_valid) + pyproj Geod area"
+      },
+      "version": "Copernicus DEM GLO-30 COG, tiles downloaded 2026-09-22"
     }
   ],
   "boundarySystem": "pre-2025-63",

@@ -1,0 +1,827 @@
+{
+  "schemaVersion": "v155-lowland-by-adm1-1",
+  "elementId": "B-008",
+  "pending": true,
+  "boundarySystem": "post-2025-34",
+  "notice": "30 m 공개 DEM 기반 개략 저지대. 방조제·제방·지반침하·조석·폭풍해일 미반영. 실제 침수 예측이 아니며 상세 계획에는 사용 불가.",
+  "datumNotice": "높이는 Copernicus DEM GLO-30(DSM, EGM2008 지오이드 기준) 값이며 조위 기준면 보정 없음. 수목·건물 높이가 포함돼 맹그로브·시가지에서 저지대가 과소 산정될 수 있음.",
+  "method": "해안 30 km 안에서 해발 임계값 이하 셀 중 바다와 8방향으로 연결된 셀만 유지(내륙 고립 저지대 제외). 높이가 정확히 0.0 m인 셀(Copernicus가 편집한 해수·하구·하천 수면)은 연결 경로로만 쓰고 저지대에서 제외. 래스터→폴리곤 후 육지 경계(성·시 폴리곤)로 자르고 0.25 km² 미만 폴리곤·구멍 제거, 위상 보존 단순화.",
+  "areaBasis": "측지 면적(WGS84), 성·시 면적은 vnm-adm1-34.geojson 폴리곤 면적(공식 통계 면적 아님)",
+  "thresholds": [
+    {
+      "zoneKey": "le0p5m",
+      "label": "≤0.5 m",
+      "thresholdM": 0.5,
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-slr-lowland-le0p5m.geojson"
+    },
+    {
+      "zoneKey": "le1m",
+      "label": "≤1 m",
+      "thresholdM": 1.0,
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-slr-lowland-le1m.geojson"
+    },
+    {
+      "zoneKey": "le2m",
+      "label": "≤2 m",
+      "thresholdM": 2.0,
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-slr-lowland-le2m.geojson"
+    }
+  ],
+  "units": [
+    {
+      "adm1Code34": "VN34-44",
+      "adm1Name34": "An Giang",
+      "memberAdm1Codes": [
+        "VN-44",
+        "VN-47"
+      ],
+      "adm1AreaKm2": 9617.853,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 37.683,
+          "sharePct": 0.39
+        },
+        "le1m": {
+          "areaKm2": 118.915,
+          "sharePct": 1.24
+        },
+        "le2m": {
+          "areaKm2": 2540.369,
+          "sharePct": 26.41
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-56",
+      "adm1Name34": "Bắc Ninh",
+      "memberAdm1Codes": [
+        "VN-54",
+        "VN-56"
+      ],
+      "adm1AreaKm2": 4534.003,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        },
+        "le1m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        },
+        "le2m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-04",
+      "adm1Name34": "Cao Bằng",
+      "memberAdm1Codes": [
+        "VN-04"
+      ],
+      "adm1AreaKm2": 7035.633,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        },
+        "le1m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        },
+        "le2m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-59",
+      "adm1Name34": "Cà Mau",
+      "memberAdm1Codes": [
+        "VN-55",
+        "VN-59"
+      ],
+      "adm1AreaKm2": 7892.362,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 115.579,
+          "sharePct": 1.46
+        },
+        "le1m": {
+          "areaKm2": 273.121,
+          "sharePct": 3.46
+        },
+        "le2m": {
+          "areaKm2": 2548.461,
+          "sharePct": 32.29
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-CT",
+      "adm1Name34": "Cần Thơ",
+      "memberAdm1Codes": [
+        "VN-52",
+        "VN-73",
+        "VN-CT"
+      ],
+      "adm1AreaKm2": 6391.667,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 5.268,
+          "sharePct": 0.08
+        },
+        "le1m": {
+          "areaKm2": 15.545,
+          "sharePct": 0.24
+        },
+        "le2m": {
+          "areaKm2": 418.519,
+          "sharePct": 6.55
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-30",
+      "adm1Name34": "Gia Lai",
+      "memberAdm1Codes": [
+        "VN-30",
+        "VN-31"
+      ],
+      "adm1AreaKm2": 21687.68,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 8.959,
+          "sharePct": 0.04
+        },
+        "le1m": {
+          "areaKm2": 43.163,
+          "sharePct": 0.2
+        },
+        "le2m": {
+          "areaKm2": 101.783,
+          "sharePct": 0.47
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-26",
+      "adm1Name34": "Huế",
+      "memberAdm1Codes": [
+        "VN-26"
+      ],
+      "adm1AreaKm2": 4805.542,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 112.423,
+          "sharePct": 2.34
+        },
+        "le1m": {
+          "areaKm2": 209.831,
+          "sharePct": 4.37
+        },
+        "le2m": {
+          "areaKm2": 314.332,
+          "sharePct": 6.54
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-HN",
+      "adm1Name34": "Hà Nội",
+      "memberAdm1Codes": [
+        "VN-HN"
+      ],
+      "adm1AreaKm2": 3214.693,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        },
+        "le1m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        },
+        "le2m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-23",
+      "adm1Name34": "Hà Tĩnh",
+      "memberAdm1Codes": [
+        "VN-23"
+      ],
+      "adm1AreaKm2": 5924.566,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 30.547,
+          "sharePct": 0.52
+        },
+        "le1m": {
+          "areaKm2": 52.407,
+          "sharePct": 0.88
+        },
+        "le2m": {
+          "areaKm2": 191.684,
+          "sharePct": 3.24
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-66",
+      "adm1Name34": "Hưng Yên",
+      "memberAdm1Codes": [
+        "VN-20",
+        "VN-66"
+      ],
+      "adm1AreaKm2": 2420.058,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 10.603,
+          "sharePct": 0.44
+        },
+        "le1m": {
+          "areaKm2": 15.839,
+          "sharePct": 0.65
+        },
+        "le2m": {
+          "areaKm2": 397.401,
+          "sharePct": 16.42
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-HP",
+      "adm1Name34": "Hải Phòng",
+      "memberAdm1Codes": [
+        "VN-61",
+        "VN-HP"
+      ],
+      "adm1AreaKm2": 3547.084,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 103.737,
+          "sharePct": 2.92
+        },
+        "le1m": {
+          "areaKm2": 121.264,
+          "sharePct": 3.42
+        },
+        "le2m": {
+          "areaKm2": 333.167,
+          "sharePct": 9.39
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-SG",
+      "adm1Name34": "Hồ Chí Minh",
+      "memberAdm1Codes": [
+        "VN-43",
+        "VN-57",
+        "VN-SG"
+      ],
+      "adm1AreaKm2": 6263.381,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 2.091,
+          "sharePct": 0.03
+        },
+        "le1m": {
+          "areaKm2": 5.789,
+          "sharePct": 0.09
+        },
+        "le2m": {
+          "areaKm2": 79.452,
+          "sharePct": 1.27
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-34",
+      "adm1Name34": "Khánh Hòa",
+      "memberAdm1Codes": [
+        "VN-34",
+        "VN-36"
+      ],
+      "adm1AreaKm2": 8348.234,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 19.554,
+          "sharePct": 0.23
+        },
+        "le1m": {
+          "areaKm2": 65.572,
+          "sharePct": 0.79
+        },
+        "le2m": {
+          "areaKm2": 133.105,
+          "sharePct": 1.59
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-01",
+      "adm1Name34": "Lai Châu",
+      "memberAdm1Codes": [
+        "VN-01"
+      ],
+      "adm1AreaKm2": 9196.909,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        },
+        "le1m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        },
+        "le2m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-02",
+      "adm1Name34": "Lào Cai",
+      "memberAdm1Codes": [
+        "VN-02",
+        "VN-06"
+      ],
+      "adm1AreaKm2": 13540.184,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        },
+        "le1m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        },
+        "le2m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-35",
+      "adm1Name34": "Lâm Đồng",
+      "memberAdm1Codes": [
+        "VN-35",
+        "VN-40",
+        "VN-72"
+      ],
+      "adm1AreaKm2": 24796.952,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 1.697,
+          "sharePct": 0.01
+        },
+        "le1m": {
+          "areaKm2": 2.69,
+          "sharePct": 0.01
+        },
+        "le2m": {
+          "areaKm2": 11.74,
+          "sharePct": 0.05
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-09",
+      "adm1Name34": "Lạng Sơn",
+      "memberAdm1Codes": [
+        "VN-09"
+      ],
+      "adm1AreaKm2": 7876.285,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        },
+        "le1m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        },
+        "le2m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-22",
+      "adm1Name34": "Nghệ An",
+      "memberAdm1Codes": [
+        "VN-22"
+      ],
+      "adm1AreaKm2": 16546.945,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 8.737,
+          "sharePct": 0.05
+        },
+        "le1m": {
+          "areaKm2": 14.201,
+          "sharePct": 0.09
+        },
+        "le2m": {
+          "areaKm2": 133.986,
+          "sharePct": 0.81
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-18",
+      "adm1Name34": "Ninh Bình",
+      "memberAdm1Codes": [
+        "VN-18",
+        "VN-63",
+        "VN-67"
+      ],
+      "adm1AreaKm2": 4087.623,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 74.863,
+          "sharePct": 1.83
+        },
+        "le1m": {
+          "areaKm2": 101.667,
+          "sharePct": 2.49
+        },
+        "le2m": {
+          "areaKm2": 723.337,
+          "sharePct": 17.7
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-68",
+      "adm1Name34": "Phú Thọ",
+      "memberAdm1Codes": [
+        "VN-14",
+        "VN-68",
+        "VN-70"
+      ],
+      "adm1AreaKm2": 10125.884,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        },
+        "le1m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        },
+        "le2m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-29",
+      "adm1Name34": "Quảng Ngãi",
+      "memberAdm1Codes": [
+        "VN-28",
+        "VN-29"
+      ],
+      "adm1AreaKm2": 14701.821,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 10.344,
+          "sharePct": 0.07
+        },
+        "le1m": {
+          "areaKm2": 15.858,
+          "sharePct": 0.11
+        },
+        "le2m": {
+          "areaKm2": 57.12,
+          "sharePct": 0.39
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-13",
+      "adm1Name34": "Quảng Ninh",
+      "memberAdm1Codes": [
+        "VN-13"
+      ],
+      "adm1AreaKm2": 5508.251,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 29.801,
+          "sharePct": 0.54
+        },
+        "le1m": {
+          "areaKm2": 81.515,
+          "sharePct": 1.48
+        },
+        "le2m": {
+          "areaKm2": 212.737,
+          "sharePct": 3.86
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-25",
+      "adm1Name34": "Quảng Trị",
+      "memberAdm1Codes": [
+        "VN-24",
+        "VN-25"
+      ],
+      "adm1AreaKm2": 12740.98,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 67.081,
+          "sharePct": 0.53
+        },
+        "le1m": {
+          "areaKm2": 175.192,
+          "sharePct": 1.38
+        },
+        "le2m": {
+          "areaKm2": 408.668,
+          "sharePct": 3.21
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-05",
+      "adm1Name34": "Sơn La",
+      "memberAdm1Codes": [
+        "VN-05"
+      ],
+      "adm1AreaKm2": 14411.759,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        },
+        "le1m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        },
+        "le2m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-21",
+      "adm1Name34": "Thanh Hóa",
+      "memberAdm1Codes": [
+        "VN-21"
+      ],
+      "adm1AreaKm2": 10485.182,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 13.223,
+          "sharePct": 0.13
+        },
+        "le1m": {
+          "areaKm2": 26.175,
+          "sharePct": 0.25
+        },
+        "le2m": {
+          "areaKm2": 235.86,
+          "sharePct": 2.25
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-69",
+      "adm1Name34": "Thái Nguyên",
+      "memberAdm1Codes": [
+        "VN-53",
+        "VN-69"
+      ],
+      "adm1AreaKm2": 8331.573,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        },
+        "le1m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        },
+        "le2m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-07",
+      "adm1Name34": "Tuyên Quang",
+      "memberAdm1Codes": [
+        "VN-03",
+        "VN-07"
+      ],
+      "adm1AreaKm2": 13641.843,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        },
+        "le1m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        },
+        "le2m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-37",
+      "adm1Name34": "Tây Ninh",
+      "memberAdm1Codes": [
+        "VN-37",
+        "VN-41"
+      ],
+      "adm1AreaKm2": 8705.004,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        },
+        "le1m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        },
+        "le2m": {
+          "areaKm2": 28.251,
+          "sharePct": 0.32
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-49",
+      "adm1Name34": "Vĩnh Long",
+      "memberAdm1Codes": [
+        "VN-49",
+        "VN-50",
+        "VN-51"
+      ],
+      "adm1AreaKm2": 6089.773,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 2.196,
+          "sharePct": 0.04
+        },
+        "le1m": {
+          "areaKm2": 5.169,
+          "sharePct": 0.08
+        },
+        "le2m": {
+          "areaKm2": 343.125,
+          "sharePct": 5.63
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-71",
+      "adm1Name34": "Điện Biên",
+      "memberAdm1Codes": [
+        "VN-71"
+      ],
+      "adm1AreaKm2": 9443.821,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        },
+        "le1m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        },
+        "le2m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-DN",
+      "adm1Name34": "Đà Nẵng",
+      "memberAdm1Codes": [
+        "VN-27",
+        "VN-DN"
+      ],
+      "adm1AreaKm2": 11471.471,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 26.618,
+          "sharePct": 0.23
+        },
+        "le1m": {
+          "areaKm2": 62.561,
+          "sharePct": 0.55
+        },
+        "le2m": {
+          "areaKm2": 163.84,
+          "sharePct": 1.43
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-33",
+      "adm1Name34": "Đắk Lắk",
+      "memberAdm1Codes": [
+        "VN-32",
+        "VN-33"
+      ],
+      "adm1AreaKm2": 18155.587,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 10.161,
+          "sharePct": 0.06
+        },
+        "le1m": {
+          "areaKm2": 22.516,
+          "sharePct": 0.12
+        },
+        "le2m": {
+          "areaKm2": 56.49,
+          "sharePct": 0.31
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-39",
+      "adm1Name34": "Đồng Nai",
+      "memberAdm1Codes": [
+        "VN-39",
+        "VN-58"
+      ],
+      "adm1AreaKm2": 13156.618,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        },
+        "le1m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        },
+        "le2m": {
+          "areaKm2": 5.703,
+          "sharePct": 0.04
+        }
+      }
+    },
+    {
+      "adm1Code34": "VN34-45",
+      "adm1Name34": "Đồng Tháp",
+      "memberAdm1Codes": [
+        "VN-45",
+        "VN-46"
+      ],
+      "adm1AreaKm2": 5411.075,
+      "zones": {
+        "le0p5m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        },
+        "le1m": {
+          "areaKm2": 0.0,
+          "sharePct": 0.0
+        },
+        "le2m": {
+          "areaKm2": 26.247,
+          "sharePct": 0.49
+        }
+      }
+    }
+  ],
+  "totals": {
+    "le0p5m": {
+      "areaKm2": 691.165,
+      "unitCount": 20
+    },
+    "le1m": {
+      "areaKm2": 1428.99,
+      "unitCount": 20
+    },
+    "le2m": {
+      "areaKm2": 9465.377,
+      "unitCount": 23
+    }
+  },
+  "source": "Copernicus DEM GLO-30 (ESA / Airbus, DLR)",
+  "license": "Copernicus DEM licence (free access, attribution required)",
+  "attribution": "© DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved. Copernicus DEM GLO-30 COG tiles from the AWS Open Data bucket copernicus-dem-30m.",
+  "generatedAt": "2026-09-22T04:48:58Z"
+}

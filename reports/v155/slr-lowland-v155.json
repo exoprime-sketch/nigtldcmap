@@ -1,0 +1,1492 @@
+{
+  "schema": "v155-asset-report-1",
+  "asset": [
+    "vnm-slr-lowland-le0p5m.geojson",
+    "vnm-slr-lowland-le1m.geojson",
+    "vnm-slr-lowland-le2m.geojson"
+  ],
+  "generatedAt": "2026-09-22T04:59:31Z",
+  "demGeneratedAt": "2026-09-22T04:48:58Z",
+  "source": {
+    "name": "Copernicus DEM GLO-30 (ESA / Airbus, DLR)",
+    "bucketUrl": "https://copernicus-dem-30m.s3.amazonaws.com",
+    "tileListUrl": "https://copernicus-dem-30m.s3.amazonaws.com/tileList.txt",
+    "tileCount": 42,
+    "tiles": {
+      "Copernicus_DSM_COG_10_N08_00_E104_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N08_00_E104_00_DEM/Copernicus_DSM_COG_10_N08_00_E104_00_DEM.tif",
+        "bytes": 4898622,
+        "sha256": "9081480f2e8b551ff24b31bc448fab09dc12975f41f1eaa1405426e1c5f00812",
+        "etag": "\"f499bb195cba125b0640756e3f6f49fc\"",
+        "lastModified": "Mon, 09 May 2022 14:02:37 GMT",
+        "downloadedAt": "2026-09-22T04:17:14Z"
+      },
+      "Copernicus_DSM_COG_10_N08_00_E105_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N08_00_E105_00_DEM/Copernicus_DSM_COG_10_N08_00_E105_00_DEM.tif",
+        "bytes": 5528322,
+        "sha256": "3b71471a13dc761ac22b452b486aecacf94dace310dd1a0e4939f515a5b645cf",
+        "etag": "\"ab3a3e97b82f741e9c553b8a45ac946b\"",
+        "lastModified": "Mon, 09 May 2022 14:02:37 GMT",
+        "downloadedAt": "2026-09-22T04:17:27Z"
+      },
+      "Copernicus_DSM_COG_10_N08_00_E106_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N08_00_E106_00_DEM/Copernicus_DSM_COG_10_N08_00_E106_00_DEM.tif",
+        "bytes": 493184,
+        "sha256": "c190c7091ff5b67c572babe294188787a0311511c0c24555336b4c06928738cc",
+        "etag": "\"b03af66cb796d6a8bf1a1afd02d602cd\"",
+        "lastModified": "Mon, 09 May 2022 14:02:38 GMT",
+        "downloadedAt": "2026-09-22T04:17:30Z"
+      },
+      "Copernicus_DSM_COG_10_N09_00_E103_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N09_00_E103_00_DEM/Copernicus_DSM_COG_10_N09_00_E103_00_DEM.tif",
+        "bytes": 175259,
+        "sha256": "d3ef50dd3142399e06daa7bd3aaac62c1f4d27e6d9f6fff2df037e071390706d",
+        "etag": "\"9ab454192c2f694e3d78b1def660ac63\"",
+        "lastModified": "Mon, 09 May 2022 14:03:07 GMT",
+        "downloadedAt": "2026-09-22T04:17:33Z"
+      },
+      "Copernicus_DSM_COG_10_N09_00_E104_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N09_00_E104_00_DEM/Copernicus_DSM_COG_10_N09_00_E104_00_DEM.tif",
+        "bytes": 7282834,
+        "sha256": "c42187d7c20fdde48be36d94c00b026e588fcdb54ac7cf79c73fbe2ca807fcd7",
+        "etag": "\"897ba65494832e3d8463bb6ab1ee4163\"",
+        "lastModified": "Mon, 09 May 2022 14:03:08 GMT",
+        "downloadedAt": "2026-09-22T04:17:49Z"
+      },
+      "Copernicus_DSM_COG_10_N09_00_E105_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N09_00_E105_00_DEM/Copernicus_DSM_COG_10_N09_00_E105_00_DEM.tif",
+        "bytes": 45723615,
+        "sha256": "67c3dfaedebe0826494b12c7dc5e6aebab677ed1a9c4e91da447e699ebd7f992",
+        "etag": "\"0c5fa7dc75bbceee34c940f6ced2b2b0\"",
+        "lastModified": "Mon, 09 May 2022 14:03:08 GMT",
+        "downloadedAt": "2026-09-22T04:19:15Z"
+      },
+      "Copernicus_DSM_COG_10_N09_00_E106_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N09_00_E106_00_DEM/Copernicus_DSM_COG_10_N09_00_E106_00_DEM.tif",
+        "bytes": 15859654,
+        "sha256": "01eed7822b2c4fd7b6e8054f16193f7d09100c226a5ce480596aa1438c448781",
+        "etag": "\"1a8ef80aaccf4badc7fc0e341a0b5383\"",
+        "lastModified": "Mon, 09 May 2022 14:03:08 GMT",
+        "downloadedAt": "2026-09-22T04:19:46Z"
+      },
+      "Copernicus_DSM_COG_10_N09_00_E109_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N09_00_E109_00_DEM/Copernicus_DSM_COG_10_N09_00_E109_00_DEM.tif",
+        "bytes": 92364,
+        "sha256": "7794af0d2a2848a7cf01352410ea81e347eb9dee0cd02c24402aafaa77b18d9a",
+        "etag": "\"fe74ff7429961b87995a9ebf7ffb1d07\"",
+        "lastModified": "Mon, 09 May 2022 14:03:08 GMT",
+        "downloadedAt": "2026-09-22T04:19:49Z"
+      },
+      "Copernicus_DSM_COG_10_N10_00_E103_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N10_00_E103_00_DEM/Copernicus_DSM_COG_10_N10_00_E103_00_DEM.tif",
+        "bytes": 12902279,
+        "sha256": "0369255f8882de668ba1694e107136d77b5496e4093c22a15d49f2cf4261a817",
+        "etag": "\"e459f4fb445b6302f7353f63f8366100\"",
+        "lastModified": "Mon, 09 May 2022 14:03:38 GMT",
+        "downloadedAt": "2026-09-22T04:20:17Z"
+      },
+      "Copernicus_DSM_COG_10_N10_00_E104_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N10_00_E104_00_DEM/Copernicus_DSM_COG_10_N10_00_E104_00_DEM.tif",
+        "bytes": 34996038,
+        "sha256": "89ceab604d33b7edd853edd73d7883b1fb0c80fd738d33faf9c57ac61376c9a0",
+        "etag": "\"7dbb13215822ab1b1a81227f9ed51507\"",
+        "lastModified": "Mon, 09 May 2022 14:03:38 GMT",
+        "downloadedAt": "2026-09-22T04:21:22Z"
+      },
+      "Copernicus_DSM_COG_10_N10_00_E105_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N10_00_E105_00_DEM/Copernicus_DSM_COG_10_N10_00_E105_00_DEM.tif",
+        "bytes": 53040781,
+        "sha256": "6ce61def56da55c118bb26bb34df345b0f0b20217771390c07d40474dba4c57c",
+        "etag": "\"bd4bc74f3956c0d082804959551016d5\"",
+        "lastModified": "Mon, 09 May 2022 14:03:38 GMT",
+        "downloadedAt": "2026-09-22T04:22:58Z"
+      },
+      "Copernicus_DSM_COG_10_N10_00_E106_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N10_00_E106_00_DEM/Copernicus_DSM_COG_10_N10_00_E106_00_DEM.tif",
+        "bytes": 46642401,
+        "sha256": "37e5afce5979cf5d73da47f770d143dd8dfb8bc4e3f34caeb09d7fab3cbebd0c",
+        "etag": "\"94a91ac618e2195c0aacb3f029e7298e\"",
+        "lastModified": "Mon, 09 May 2022 14:03:38 GMT",
+        "downloadedAt": "2026-09-22T04:24:22Z"
+      },
+      "Copernicus_DSM_COG_10_N10_00_E107_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N10_00_E107_00_DEM/Copernicus_DSM_COG_10_N10_00_E107_00_DEM.tif",
+        "bytes": 22495924,
+        "sha256": "40ce2caf535ae0b2a6524a45d438b646e0ac47140bc22e37574c56c80330320d",
+        "etag": "\"9f70e031b4ec4f605e66ca433d941a9d\"",
+        "lastModified": "Mon, 09 May 2022 14:03:39 GMT",
+        "downloadedAt": "2026-09-22T04:25:07Z"
+      },
+      "Copernicus_DSM_COG_10_N10_00_E108_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N10_00_E108_00_DEM/Copernicus_DSM_COG_10_N10_00_E108_00_DEM.tif",
+        "bytes": 1766111,
+        "sha256": "239c471c6a6e54dc902a0122e5e4095688e051ba2519dc61a9cd624ff5292626",
+        "etag": "\"b88f0fff3b884085934bc6291706b5a9\"",
+        "lastModified": "Mon, 09 May 2022 14:03:39 GMT",
+        "downloadedAt": "2026-09-22T04:25:13Z"
+      },
+      "Copernicus_DSM_COG_10_N11_00_E107_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N11_00_E107_00_DEM/Copernicus_DSM_COG_10_N11_00_E107_00_DEM.tif",
+        "bytes": 45125169,
+        "sha256": "221ae0b87f254b47be19d32d7677bf801adf8363dee78d37611c49ab7bf75967",
+        "etag": "\"5964cce5717ff52c8d7e281be68d01fd\"",
+        "lastModified": "Mon, 09 May 2022 14:04:06 GMT",
+        "downloadedAt": "2026-09-22T04:26:34Z"
+      },
+      "Copernicus_DSM_COG_10_N11_00_E108_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N11_00_E108_00_DEM/Copernicus_DSM_COG_10_N11_00_E108_00_DEM.tif",
+        "bytes": 40056051,
+        "sha256": "eb541517c5f1f6588fdeaaf3df51ebb258857fc7b4510dbce46c520530f09dab",
+        "etag": "\"4f0856587eed943526697c8b95d14615\"",
+        "lastModified": "Mon, 09 May 2022 14:04:06 GMT",
+        "downloadedAt": "2026-09-22T04:27:46Z"
+      },
+      "Copernicus_DSM_COG_10_N11_00_E109_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N11_00_E109_00_DEM/Copernicus_DSM_COG_10_N11_00_E109_00_DEM.tif",
+        "bytes": 4492210,
+        "sha256": "c122a258c28e3032ebffcf6edd294a326310b91b020762e027916b45866d69d5",
+        "etag": "\"afb119df2689f3587623ff71bb33cedc\"",
+        "lastModified": "Mon, 09 May 2022 14:04:06 GMT",
+        "downloadedAt": "2026-09-22T04:27:57Z"
+      },
+      "Copernicus_DSM_COG_10_N12_00_E108_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N12_00_E108_00_DEM/Copernicus_DSM_COG_10_N12_00_E108_00_DEM.tif",
+        "bytes": 44464694,
+        "sha256": "810f6f6e535633b3486f31337cb07e8a92e6b8f07a87d8f68ad64e04f152b9f4",
+        "etag": "\"c1add98ab2fcdd9ba47b8d73812d947e\"",
+        "lastModified": "Mon, 09 May 2022 14:04:34 GMT",
+        "downloadedAt": "2026-09-22T04:29:22Z"
+      },
+      "Copernicus_DSM_COG_10_N12_00_E109_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N12_00_E109_00_DEM/Copernicus_DSM_COG_10_N12_00_E109_00_DEM.tif",
+        "bytes": 14581660,
+        "sha256": "c403edf672bd212c70f47e2cdc2f0505ae5e7df9d4f17b21fea3c5f9d1d02db4",
+        "etag": "\"82dbef5ba56a24fb7cef548037a8ff02\"",
+        "lastModified": "Mon, 09 May 2022 14:04:34 GMT",
+        "downloadedAt": "2026-09-22T04:29:50Z"
+      },
+      "Copernicus_DSM_COG_10_N13_00_E108_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N13_00_E108_00_DEM/Copernicus_DSM_COG_10_N13_00_E108_00_DEM.tif",
+        "bytes": 45484832,
+        "sha256": "a6772373d92007b26b8b1b1d24f26b567c40a49f15e2c4c5d8cc02ba286617e2",
+        "etag": "\"bbeb4980e00dae72d4ad38bcdccf16e6\"",
+        "lastModified": "Mon, 09 May 2022 14:04:58 GMT",
+        "downloadedAt": "2026-09-22T04:31:12Z"
+      },
+      "Copernicus_DSM_COG_10_N13_00_E109_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N13_00_E109_00_DEM/Copernicus_DSM_COG_10_N13_00_E109_00_DEM.tif",
+        "bytes": 14249460,
+        "sha256": "61c16c17c83b5315ed393b7a8d664d106a3e0f9e0f381021ada5613f57216eb4",
+        "etag": "\"868d6d4e51ec0094998eb2e7a6db1032\"",
+        "lastModified": "Mon, 09 May 2022 14:04:58 GMT",
+        "downloadedAt": "2026-09-22T04:31:39Z"
+      },
+      "Copernicus_DSM_COG_10_N14_00_E108_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N14_00_E108_00_DEM/Copernicus_DSM_COG_10_N14_00_E108_00_DEM.tif",
+        "bytes": 46080923,
+        "sha256": "108b5789bd08a95766cd4232948913ee7dbbfe95a39227a7ea2d229aaff4e3d2",
+        "etag": "\"c917f398b974134c38d3642a6ea3ccae\"",
+        "lastModified": "Mon, 09 May 2022 14:05:23 GMT",
+        "downloadedAt": "2026-09-22T04:33:06Z"
+      },
+      "Copernicus_DSM_COG_10_N14_00_E109_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N14_00_E109_00_DEM/Copernicus_DSM_COG_10_N14_00_E109_00_DEM.tif",
+        "bytes": 5651092,
+        "sha256": "4aed11f7d2edd015fce6e3b17a57189204c420fd0ce92dbb179b5c7609558dff",
+        "etag": "\"b4a97608a205856ab21a0078d4c013df\"",
+        "lastModified": "Mon, 09 May 2022 14:05:23 GMT",
+        "downloadedAt": "2026-09-22T04:33:19Z"
+      },
+      "Copernicus_DSM_COG_10_N15_00_E107_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N15_00_E107_00_DEM/Copernicus_DSM_COG_10_N15_00_E107_00_DEM.tif",
+        "bytes": 46272680,
+        "sha256": "6f9fa13d383abcfac24b3bad13484a89d85efb2fe9d31350e6dc9e65454c05c3",
+        "etag": "\"6de607c5143aa732c473b0c1367a013e\"",
+        "lastModified": "Mon, 09 May 2022 14:05:50 GMT",
+        "downloadedAt": "2026-09-22T04:34:47Z"
+      },
+      "Copernicus_DSM_COG_10_N15_00_E108_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N15_00_E108_00_DEM/Copernicus_DSM_COG_10_N15_00_E108_00_DEM.tif",
+        "bytes": 32885605,
+        "sha256": "5ac332cf3cdf03e65d5cfaa01d8fd9a9f8973b15a2ffc83f0ed2cd356067ec58",
+        "etag": "\"81c73bf5b74581f111a59a7cb1a07658\"",
+        "lastModified": "Mon, 09 May 2022 14:05:51 GMT",
+        "downloadedAt": "2026-09-22T04:35:51Z"
+      },
+      "Copernicus_DSM_COG_10_N15_00_E109_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N15_00_E109_00_DEM/Copernicus_DSM_COG_10_N15_00_E109_00_DEM.tif",
+        "bytes": 151267,
+        "sha256": "b003bfd149171947e6bf3966a341e24fa6670dd4b6b3aff3c376901fdfda759f",
+        "etag": "\"d8d75693d7ad93df0fa1587244b7c48a\"",
+        "lastModified": "Mon, 09 May 2022 14:05:51 GMT",
+        "downloadedAt": "2026-09-22T04:35:54Z"
+      },
+      "Copernicus_DSM_COG_10_N16_00_E106_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N16_00_E106_00_DEM/Copernicus_DSM_COG_10_N16_00_E106_00_DEM.tif",
+        "bytes": 46951163,
+        "sha256": "cff844ab6724ff91be1e1440f53901eaef3b608529e6c04e9fdc12dc574ed934",
+        "etag": "\"baeac3e10bcad8f05473da005676ba81\"",
+        "lastModified": "Mon, 09 May 2022 14:06:18 GMT",
+        "downloadedAt": "2026-09-22T04:37:21Z"
+      },
+      "Copernicus_DSM_COG_10_N16_00_E107_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N16_00_E107_00_DEM/Copernicus_DSM_COG_10_N16_00_E107_00_DEM.tif",
+        "bytes": 32968719,
+        "sha256": "b3e854dc9122310f5c69ca113adf192f73a439ba68edda2e3409bac435392c48",
+        "etag": "\"1f30cdad46e3619ab9b3659114bc1b04\"",
+        "lastModified": "Mon, 09 May 2022 14:06:18 GMT",
+        "downloadedAt": "2026-09-22T04:38:23Z"
+      },
+      "Copernicus_DSM_COG_10_N16_00_E108_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N16_00_E108_00_DEM/Copernicus_DSM_COG_10_N16_00_E108_00_DEM.tif",
+        "bytes": 2833380,
+        "sha256": "f4f95dc5677eaaca9a967230a676bb8a39025ab79d28b89e225a7e822acbdde6",
+        "etag": "\"d40c942f16e16a94ee7aee9d4d1e4a9f\"",
+        "lastModified": "Mon, 09 May 2022 14:06:18 GMT",
+        "downloadedAt": "2026-09-22T04:38:31Z"
+      },
+      "Copernicus_DSM_COG_10_N17_00_E106_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N17_00_E106_00_DEM/Copernicus_DSM_COG_10_N17_00_E106_00_DEM.tif",
+        "bytes": 34093669,
+        "sha256": "1702b9a044d1a9cb5a729836e1416422af561b2ec633b15ae698877c15d3b8c9",
+        "etag": "\"3da48fa426cfed4265adb93935fc0039\"",
+        "lastModified": "Mon, 09 May 2022 14:06:45 GMT",
+        "downloadedAt": "2026-09-22T04:39:33Z"
+      },
+      "Copernicus_DSM_COG_10_N17_00_E107_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N17_00_E107_00_DEM/Copernicus_DSM_COG_10_N17_00_E107_00_DEM.tif",
+        "bytes": 850783,
+        "sha256": "56fa282e040c4a6f9bae7e616bbfd26214456dad616e87ab1c5397cc39c3afef",
+        "etag": "\"b11a0d39659f2d4f8cefdbe0a358b12d\"",
+        "lastModified": "Mon, 09 May 2022 14:06:46 GMT",
+        "downloadedAt": "2026-09-22T04:39:38Z"
+      },
+      "Copernicus_DSM_COG_10_N18_00_E105_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N18_00_E105_00_DEM/Copernicus_DSM_COG_10_N18_00_E105_00_DEM.tif",
+        "bytes": 43553197,
+        "sha256": "90fcc59e2dd32ff40ec81ed849ce83cd002d24e8183d8bc1ab7079184cc75dab",
+        "etag": "\"cb80d20c10647e9607819e618cf01ef4\"",
+        "lastModified": "Mon, 09 May 2022 14:07:16 GMT",
+        "downloadedAt": "2026-09-22T04:40:55Z"
+      },
+      "Copernicus_DSM_COG_10_N18_00_E106_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N18_00_E106_00_DEM/Copernicus_DSM_COG_10_N18_00_E106_00_DEM.tif",
+        "bytes": 4984159,
+        "sha256": "809ecc71671ee57af99291e4e48ec2e598fee38d29cbf0ad4b96b1829dfaa01e",
+        "etag": "\"635f45ff5d52806749c87ae189d9912e\"",
+        "lastModified": "Mon, 09 May 2022 14:07:17 GMT",
+        "downloadedAt": "2026-09-22T04:41:09Z"
+      },
+      "Copernicus_DSM_COG_10_N19_00_E105_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N19_00_E105_00_DEM/Copernicus_DSM_COG_10_N19_00_E105_00_DEM.tif",
+        "bytes": 41865062,
+        "sha256": "e4b881c49cdbaa7fca19a78c8439ea61eadec0b4e6d68657d696b9bcf4e3beb7",
+        "etag": "\"2dbc3f87277eb182ee28a78f4df58079\"",
+        "lastModified": "Mon, 09 May 2022 14:07:48 GMT",
+        "downloadedAt": "2026-09-22T04:42:24Z"
+      },
+      "Copernicus_DSM_COG_10_N19_00_E106_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N19_00_E106_00_DEM/Copernicus_DSM_COG_10_N19_00_E106_00_DEM.tif",
+        "bytes": 687506,
+        "sha256": "c67b12d7d7bfea63f8a93d4954a2513b9abaceda36f231e6a22b19be0030faf5",
+        "etag": "\"e783007f5bc461f09d4ebf223e4eebd1\"",
+        "lastModified": "Mon, 09 May 2022 14:07:48 GMT",
+        "downloadedAt": "2026-09-22T04:42:29Z"
+      },
+      "Copernicus_DSM_COG_10_N19_00_E108_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N19_00_E108_00_DEM/Copernicus_DSM_COG_10_N19_00_E108_00_DEM.tif",
+        "bytes": 7976293,
+        "sha256": "57eeb71340622b8ca53673b8d6398f8e4d0a82eeae006871cd307e756ae9af21",
+        "etag": "\"2c201309a415890f4bd7e34faecdd3a3\"",
+        "lastModified": "Mon, 09 May 2022 14:07:48 GMT",
+        "downloadedAt": "2026-09-22T04:42:46Z"
+      },
+      "Copernicus_DSM_COG_10_N20_00_E105_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N20_00_E105_00_DEM/Copernicus_DSM_COG_10_N20_00_E105_00_DEM.tif",
+        "bytes": 50597918,
+        "sha256": "c52974a0e67be35a445ce4241c218563da7831f80c79d564585141f9174b7d1c",
+        "etag": "\"383c76b7d177aacfe11ca1368c83df3a\"",
+        "lastModified": "Mon, 09 May 2022 14:08:19 GMT",
+        "downloadedAt": "2026-09-22T04:44:21Z"
+      },
+      "Copernicus_DSM_COG_10_N20_00_E106_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N20_00_E106_00_DEM/Copernicus_DSM_COG_10_N20_00_E106_00_DEM.tif",
+        "bytes": 33602263,
+        "sha256": "0a40cc951615a607abf04dcaf853da67ba959c111a2680ad045d7d9e15ff23ae",
+        "etag": "\"e6caaf869050ce9de26f4a1041cfcfbe\"",
+        "lastModified": "Mon, 09 May 2022 14:08:19 GMT",
+        "downloadedAt": "2026-09-22T04:45:23Z"
+      },
+      "Copernicus_DSM_COG_10_N20_00_E107_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N20_00_E107_00_DEM/Copernicus_DSM_COG_10_N20_00_E107_00_DEM.tif",
+        "bytes": 3069082,
+        "sha256": "3829fd60033d686f7bbcc5f621416247447ca4c589e60526dcf24421d4187fb9",
+        "etag": "\"ef4ad10d4c7f92c7bac70e4c8d823e80\"",
+        "lastModified": "Mon, 09 May 2022 14:08:19 GMT",
+        "downloadedAt": "2026-09-22T04:45:31Z"
+      },
+      "Copernicus_DSM_COG_10_N21_00_E106_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N21_00_E106_00_DEM/Copernicus_DSM_COG_10_N21_00_E106_00_DEM.tif",
+        "bytes": 50694507,
+        "sha256": "dbeb6ec0b5c0cef81232bfe79f7480fe5332294313ead4ef1762d17f189fb555",
+        "etag": "\"5c4e9b72cc80dc96d481a6f57ed814c4\"",
+        "lastModified": "Mon, 09 May 2022 14:08:52 GMT",
+        "downloadedAt": "2026-09-22T04:47:05Z"
+      },
+      "Copernicus_DSM_COG_10_N21_00_E107_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N21_00_E107_00_DEM/Copernicus_DSM_COG_10_N21_00_E107_00_DEM.tif",
+        "bytes": 40868145,
+        "sha256": "c73a8e5af9acb452280145a80e3f1a312dee5ff72068590c283d18deac442dd1",
+        "etag": "\"619ffc5c55ff8a1ae805c377f43147b3\"",
+        "lastModified": "Mon, 09 May 2022 14:08:52 GMT",
+        "downloadedAt": "2026-09-22T04:48:18Z"
+      },
+      "Copernicus_DSM_COG_10_N21_00_E108_00_DEM": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N21_00_E108_00_DEM/Copernicus_DSM_COG_10_N21_00_E108_00_DEM.tif",
+        "bytes": 20613891,
+        "sha256": "4424ca1dedc57c1cb6e3ec484514f4c243eb6b432e6293ed3f5467c2b45d88e6",
+        "etag": "\"784a7f46a8f1d4e9d356027d59f4efeb\"",
+        "lastModified": "Mon, 09 May 2022 14:08:52 GMT",
+        "downloadedAt": "2026-09-22T04:48:58Z"
+      }
+    },
+    "missingInBucket": [
+      "Copernicus_DSM_COG_10_N09_00_E107_00_DEM",
+      "Copernicus_DSM_COG_10_N09_00_E108_00_DEM",
+      "Copernicus_DSM_COG_10_N10_00_E109_00_DEM",
+      "Copernicus_DSM_COG_10_N19_00_E107_00_DEM",
+      "Copernicus_DSM_COG_10_N20_00_E108_00_DEM"
+    ],
+    "tileManifestSha256": "9dd5d1241ce007b36a359e56b63756e2094d674304e9ba96ba5b840c994ebc9e",
+    "license": "Copernicus DEM licence (free access, attribution required)",
+    "attribution": "© DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved. Copernicus DEM GLO-30 COG tiles from the AWS Open Data bucket copernicus-dem-30m."
+  },
+  "parameters": {
+    "thresholdsM": [
+      0.5,
+      1.0,
+      2.0
+    ],
+    "coastBufferKm": 30.0,
+    "coarsenFactor": 20,
+    "seedLandBufferDeg": 0.009,
+    "minAreaKm2": 0.25,
+    "simplifyStepsDeg": [
+      0.00027,
+      0.0004,
+      0.00054
+    ],
+    "gzipBudgetBytes": 2097152
+  },
+  "tiles": [
+    {
+      "name": "Copernicus_DSM_COG_10_N08_00_E104_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        103.99986111111112,
+        8.00013888888889,
+        104.99986111111112,
+        9.00013888888889
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 1134152,
+      "seedCells": 11696410
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N08_00_E105_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        104.99986111111112,
+        8.00013888888889,
+        105.99986111111112,
+        9.00013888888889
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 1309721,
+      "seedCells": 11575511
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N08_00_E106_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        105.99986111111112,
+        8.00013888888889,
+        106.99986111111112,
+        9.00013888888889
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 109627,
+      "seedCells": 12766501
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N09_00_E103_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        102.99986111111112,
+        9.00013888888889,
+        103.99986111111112,
+        10.00013888888889
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 0,
+      "seedCells": 12944482
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N09_00_E104_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        103.99986111111112,
+        9.00013888888889,
+        104.99986111111112,
+        10.00013888888889
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 1949152,
+      "seedCells": 10794317
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N09_00_E105_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        104.99986111111112,
+        9.00013888888889,
+        105.99986111111112,
+        10.00013888888889
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 11371486,
+      "seedCells": 1438978
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N09_00_E106_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        105.99986111111112,
+        9.00013888888889,
+        106.99986111111112,
+        10.00013888888889
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 4068008,
+      "seedCells": 8648153
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N09_00_E109_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        108.99986111111112,
+        9.00013888888889,
+        109.99986111111112,
+        10.00013888888889
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 2903,
+      "seedCells": 12947125
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N10_00_E103_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        102.99986111111112,
+        10.00013888888889,
+        103.99986111111112,
+        11.00013888888889
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 267041,
+      "seedCells": 8506426
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N10_00_E104_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        103.99986111111112,
+        10.00013888888889,
+        104.99986111111112,
+        11.00013888888889
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 2611738,
+      "seedCells": 3842059
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N10_00_E105_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        104.99986111111112,
+        10.00013888888889,
+        105.99986111111112,
+        11.00013888888889
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 11901812,
+      "seedCells": 50247
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N10_00_E106_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        105.99986111111112,
+        10.00013888888889,
+        106.99986111111112,
+        11.00013888888889
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 11341681,
+      "seedCells": 1060473
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N10_00_E107_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        106.99986111111112,
+        10.00013888888889,
+        107.99986111111112,
+        11.00013888888889
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 6080806,
+      "seedCells": 6722949
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N10_00_E108_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        107.99986111111112,
+        10.00013888888889,
+        108.99986111111112,
+        11.00013888888889
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 468416,
+      "seedCells": 12385531
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N11_00_E107_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        106.99986111111112,
+        11.00013888888889,
+        107.99986111111112,
+        12.00013888888889
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 12960000,
+      "seedCells": 0
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N11_00_E108_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        107.99986111111112,
+        11.00013888888889,
+        108.99986111111112,
+        12.00013888888889
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 11380275,
+      "seedCells": 1483232
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N11_00_E109_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        108.99986111111112,
+        11.00013888888889,
+        109.99986111111112,
+        12.00013888888889
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 1117913,
+      "seedCells": 11669537
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N12_00_E108_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        107.99986111111112,
+        12.00013888888889,
+        108.99986111111112,
+        13.00013888888889
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 12960000,
+      "seedCells": 0
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N12_00_E109_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        108.99986111111112,
+        12.00013888888889,
+        109.99986111111112,
+        13.00013888888889
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 3957508,
+      "seedCells": 8703082
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N13_00_E108_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        107.99986111111112,
+        13.00013888888889,
+        108.99986111111112,
+        14.00013888888889
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 12960000,
+      "seedCells": 0
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N13_00_E109_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        108.99986111111112,
+        13.00013888888889,
+        109.99986111111112,
+        14.00013888888889
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 3677817,
+      "seedCells": 9071936
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N14_00_E108_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        107.99986111111112,
+        14.00013888888889,
+        108.99986111111112,
+        15.00013888888889
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 12885785,
+      "seedCells": 56320
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N14_00_E109_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        108.99986111111112,
+        14.00013888888889,
+        109.99986111111112,
+        15.00013888888889
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 1505495,
+      "seedCells": 11342416
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N15_00_E107_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        106.99986111111112,
+        15.000138888888888,
+        107.99986111111112,
+        16.000138888888888
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 7005013,
+      "seedCells": 0
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N15_00_E108_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        107.99986111111112,
+        15.000138888888888,
+        108.99986111111112,
+        16.000138888888888
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 8586207,
+      "seedCells": 4184019
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N15_00_E109_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        108.99986111111112,
+        15.000138888888888,
+        109.99986111111112,
+        16.000138888888888
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 12610,
+      "seedCells": 12927835
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N16_00_E106_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        105.99986111111112,
+        16.000138888888888,
+        106.99986111111112,
+        17.000138888888888
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 3024505,
+      "seedCells": 0
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N16_00_E107_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        106.99986111111112,
+        16.000138888888888,
+        107.99986111111112,
+        17.000138888888888
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 7584099,
+      "seedCells": 4116314
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N16_00_E108_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        107.99986111111112,
+        16.000138888888888,
+        108.99986111111112,
+        17.000138888888888
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 688350,
+      "seedCells": 12164944
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N17_00_E106_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        105.99986111111112,
+        17.000138888888888,
+        106.99986111111112,
+        18.000138888888888
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 7376630,
+      "seedCells": 3881356
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N17_00_E107_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        106.99986111111112,
+        17.000138888888888,
+        107.99986111111112,
+        18.000138888888888
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 184683,
+      "seedCells": 12744291
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N18_00_E105_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        104.99986111111112,
+        18.000138888888888,
+        105.99986111111112,
+        19.000138888888888
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 8542368,
+      "seedCells": 1616842
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N18_00_E106_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        105.99986111111112,
+        18.000138888888888,
+        106.99986111111112,
+        19.000138888888888
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 1251241,
+      "seedCells": 11624227
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N19_00_E105_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        104.99986111111112,
+        19.000138888888888,
+        105.99986111111112,
+        20.000138888888888
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 10669469,
+      "seedCells": 2125610
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N19_00_E106_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        105.99986111111112,
+        19.000138888888888,
+        106.99986111111112,
+        20.000138888888888
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 116363,
+      "seedCells": 12785830
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N19_00_E108_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        107.99986111111112,
+        19.000138888888888,
+        108.99986111111112,
+        20.000138888888888
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 0,
+      "seedCells": 10270908
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N20_00_E105_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        104.99986111111112,
+        20.000138888888888,
+        105.99986111111112,
+        21.000138888888888
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 12960000,
+      "seedCells": 0
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N20_00_E106_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        105.99986111111112,
+        20.000138888888888,
+        106.99986111111112,
+        21.000138888888888
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 8350475,
+      "seedCells": 4272697
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N20_00_E107_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        106.99986111111112,
+        20.000138888888888,
+        107.99986111111112,
+        21.000138888888888
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 775071,
+      "seedCells": 11752580
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N21_00_E106_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        105.99986111111112,
+        21.000138888888888,
+        106.99986111111112,
+        22.000138888888888
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 12865613,
+      "seedCells": 0
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N21_00_E107_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        106.99986111111112,
+        21.000138888888888,
+        107.99986111111112,
+        22.000138888888888
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 6541640,
+      "seedCells": 1683763
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N21_00_E108_00_DEM",
+      "shape": [
+        3600,
+        3600
+      ],
+      "bounds": [
+        107.99986111111112,
+        21.000138888888888,
+        108.99986111111112,
+        22.000138888888888
+      ],
+      "pixelDeg": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "validCells": 12960000,
+      "landCells": 39849,
+      "seedCells": 7725389
+    }
+  ],
+  "zones": {
+    "le0p5m": {
+      "thresholdM": 0.5,
+      "rasterLandCells": 760071,
+      "rasterLandAreaKm2": 691.988,
+      "shapePolygons": 11547,
+      "isolatedCellsRemoved": 1097108,
+      "droppedSmallPolygons": 11840,
+      "filledSmallHoles": 13712,
+      "edgePolygonsUnioned": 79,
+      "landCellsWithoutUnit": 0,
+      "waterSurfaceCellsExcluded": 5224269,
+      "waterSurfaceAreaExcludedKm2": 4785.907,
+      "vectorPolygonCount": 370,
+      "featureCount": 20,
+      "unitCount": 20,
+      "totalAreaKm2": 691.165,
+      "invalidGeometryCount": 0,
+      "simplifyToleranceDeg": 0.00027,
+      "bytes": 1136983,
+      "gzipBytes": 197244,
+      "sha256": "da1a2e4180f65023140ea0268b65236a117d6a4e51e03873684f8ced0ac3d431",
+      "top5ByArea": [
+        {
+          "adm1Code34": "VN34-59",
+          "adm1Name34": "Cà Mau",
+          "areaKm2": 115.579,
+          "sharePct": 1.46
+        },
+        {
+          "adm1Code34": "VN34-26",
+          "adm1Name34": "Huế",
+          "areaKm2": 112.423,
+          "sharePct": 2.34
+        },
+        {
+          "adm1Code34": "VN34-HP",
+          "adm1Name34": "Hải Phòng",
+          "areaKm2": 103.737,
+          "sharePct": 2.92
+        },
+        {
+          "adm1Code34": "VN34-18",
+          "adm1Name34": "Ninh Bình",
+          "areaKm2": 74.863,
+          "sharePct": 1.83
+        },
+        {
+          "adm1Code34": "VN34-25",
+          "adm1Name34": "Quảng Trị",
+          "areaKm2": 67.081,
+          "sharePct": 0.53
+        }
+      ],
+      "top5ByShare": [
+        {
+          "adm1Code34": "VN34-HP",
+          "adm1Name34": "Hải Phòng",
+          "areaKm2": 103.737,
+          "sharePct": 2.92
+        },
+        {
+          "adm1Code34": "VN34-26",
+          "adm1Name34": "Huế",
+          "areaKm2": 112.423,
+          "sharePct": 2.34
+        },
+        {
+          "adm1Code34": "VN34-18",
+          "adm1Name34": "Ninh Bình",
+          "areaKm2": 74.863,
+          "sharePct": 1.83
+        },
+        {
+          "adm1Code34": "VN34-59",
+          "adm1Name34": "Cà Mau",
+          "areaKm2": 115.579,
+          "sharePct": 1.46
+        },
+        {
+          "adm1Code34": "VN34-13",
+          "adm1Name34": "Quảng Ninh",
+          "areaKm2": 29.801,
+          "sharePct": 0.54
+        }
+      ]
+    },
+    "le1m": {
+      "thresholdM": 1.0,
+      "rasterLandCells": 1564229,
+      "rasterLandAreaKm2": 1430.271,
+      "shapePolygons": 36686,
+      "isolatedCellsRemoved": 2207231,
+      "droppedSmallPolygons": 37855,
+      "filledSmallHoles": 25666,
+      "edgePolygonsUnioned": 213,
+      "landCellsWithoutUnit": 0,
+      "waterSurfaceCellsExcluded": 5332225,
+      "waterSurfaceAreaExcludedKm2": 4886.677,
+      "vectorPolygonCount": 712,
+      "featureCount": 20,
+      "unitCount": 20,
+      "totalAreaKm2": 1428.99,
+      "invalidGeometryCount": 0,
+      "simplifyToleranceDeg": 0.00027,
+      "bytes": 2338321,
+      "gzipBytes": 391713,
+      "sha256": "da749ac42b151192cd2cd7ded433599239ae19f7467e8c53e9b693d19a1dd454",
+      "top5ByArea": [
+        {
+          "adm1Code34": "VN34-59",
+          "adm1Name34": "Cà Mau",
+          "areaKm2": 273.121,
+          "sharePct": 3.46
+        },
+        {
+          "adm1Code34": "VN34-26",
+          "adm1Name34": "Huế",
+          "areaKm2": 209.831,
+          "sharePct": 4.37
+        },
+        {
+          "adm1Code34": "VN34-25",
+          "adm1Name34": "Quảng Trị",
+          "areaKm2": 175.192,
+          "sharePct": 1.38
+        },
+        {
+          "adm1Code34": "VN34-HP",
+          "adm1Name34": "Hải Phòng",
+          "areaKm2": 121.264,
+          "sharePct": 3.42
+        },
+        {
+          "adm1Code34": "VN34-44",
+          "adm1Name34": "An Giang",
+          "areaKm2": 118.915,
+          "sharePct": 1.24
+        }
+      ],
+      "top5ByShare": [
+        {
+          "adm1Code34": "VN34-26",
+          "adm1Name34": "Huế",
+          "areaKm2": 209.831,
+          "sharePct": 4.37
+        },
+        {
+          "adm1Code34": "VN34-59",
+          "adm1Name34": "Cà Mau",
+          "areaKm2": 273.121,
+          "sharePct": 3.46
+        },
+        {
+          "adm1Code34": "VN34-HP",
+          "adm1Name34": "Hải Phòng",
+          "areaKm2": 121.264,
+          "sharePct": 3.42
+        },
+        {
+          "adm1Code34": "VN34-18",
+          "adm1Name34": "Ninh Bình",
+          "areaKm2": 101.667,
+          "sharePct": 2.49
+        },
+        {
+          "adm1Code34": "VN34-13",
+          "adm1Name34": "Quảng Ninh",
+          "areaKm2": 81.515,
+          "sharePct": 1.48
+        }
+      ]
+    },
+    "le2m": {
+      "thresholdM": 2.0,
+      "rasterLandCells": 10253578,
+      "rasterLandAreaKm2": 9465.379,
+      "shapePolygons": 61271,
+      "isolatedCellsRemoved": 4319442,
+      "droppedSmallPolygons": 79412,
+      "filledSmallHoles": 245780,
+      "edgePolygonsUnioned": 630,
+      "landCellsWithoutUnit": 0,
+      "waterSurfaceCellsExcluded": 5528370,
+      "waterSurfaceAreaExcludedKm2": 5069.855,
+      "vectorPolygonCount": 2011,
+      "featureCount": 23,
+      "unitCount": 23,
+      "totalAreaKm2": 9465.377,
+      "invalidGeometryCount": 0,
+      "simplifyToleranceDeg": 0.00027,
+      "bytes": 12260983,
+      "gzipBytes": 1959405,
+      "sha256": "27263d8c456ee4ed8754a10fb2232c1cecbc5ed5a64d60121ad65d3f9a784d4e",
+      "top5ByArea": [
+        {
+          "adm1Code34": "VN34-59",
+          "adm1Name34": "Cà Mau",
+          "areaKm2": 2548.461,
+          "sharePct": 32.29
+        },
+        {
+          "adm1Code34": "VN34-44",
+          "adm1Name34": "An Giang",
+          "areaKm2": 2540.369,
+          "sharePct": 26.41
+        },
+        {
+          "adm1Code34": "VN34-18",
+          "adm1Name34": "Ninh Bình",
+          "areaKm2": 723.337,
+          "sharePct": 17.7
+        },
+        {
+          "adm1Code34": "VN34-CT",
+          "adm1Name34": "Cần Thơ",
+          "areaKm2": 418.519,
+          "sharePct": 6.55
+        },
+        {
+          "adm1Code34": "VN34-25",
+          "adm1Name34": "Quảng Trị",
+          "areaKm2": 408.668,
+          "sharePct": 3.21
+        }
+      ],
+      "top5ByShare": [
+        {
+          "adm1Code34": "VN34-59",
+          "adm1Name34": "Cà Mau",
+          "areaKm2": 2548.461,
+          "sharePct": 32.29
+        },
+        {
+          "adm1Code34": "VN34-44",
+          "adm1Name34": "An Giang",
+          "areaKm2": 2540.369,
+          "sharePct": 26.41
+        },
+        {
+          "adm1Code34": "VN34-18",
+          "adm1Name34": "Ninh Bình",
+          "areaKm2": 723.337,
+          "sharePct": 17.7
+        },
+        {
+          "adm1Code34": "VN34-66",
+          "adm1Name34": "Hưng Yên",
+          "areaKm2": 397.401,
+          "sharePct": 16.42
+        },
+        {
+          "adm1Code34": "VN34-HP",
+          "adm1Name34": "Hải Phòng",
+          "areaKm2": 333.167,
+          "sharePct": 9.39
+        }
+      ]
+    }
+  },
+  "rasterNestingAssert": "pass",
+  "vectorNesting": {
+    "le0p5m_outside_le1m_km2": 5.6498,
+    "le0p5m_outside_le1m_pct": 0.9163,
+    "le1m_outside_le2m_km2": 11.3581,
+    "le1m_outside_le2m_pct": 0.9024
+  },
+  "notice": "30 m 공개 DEM 기반 개략 저지대. 방조제·제방·지반침하·조석·폭풍해일 미반영. 실제 침수 예측이 아니며 상세 계획에는 사용 불가.",
+  "datumNotice": "높이는 Copernicus DEM GLO-30(DSM, EGM2008 지오이드 기준) 값이며 조위 기준면 보정 없음. 수목·건물 높이가 포함돼 맹그로브·시가지에서 저지대가 과소 산정될 수 있음."
+}
