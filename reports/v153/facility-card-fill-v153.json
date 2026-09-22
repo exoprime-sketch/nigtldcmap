@@ -1,0 +1,628 @@
+{
+  "schema": "v153-facility-card-fill-1",
+  "generatedAt": "2026-09-22T00:15:34.716Z",
+  "sampleSize": 20,
+  "elements": {
+    "A-023": {
+      "records": 1963,
+      "population": {
+        "owner": {
+          "filled": 403,
+          "total": 1963,
+          "percent": 20.5
+        },
+        "commissioningYear": {
+          "filled": 201,
+          "total": 1963,
+          "percent": 10.2
+        },
+        "sourceUrl": {
+          "filled": 1963,
+          "total": 1963,
+          "percent": 100
+        },
+        "province": {
+          "filled": 1870,
+          "total": 1963,
+          "percent": 95.3
+        }
+      },
+      "byIndicator": {
+        "A-023_power_plant_registry": {
+          "records": 236,
+          "owner": {
+            "filled": 210,
+            "total": 236,
+            "percent": 89
+          },
+          "commissioningYear": {
+            "filled": 167,
+            "total": 236,
+            "percent": 70.8
+          },
+          "sourceUrl": {
+            "filled": 236,
+            "total": 236,
+            "percent": 100
+          },
+          "province": {
+            "filled": 233,
+            "total": 236,
+            "percent": 98.7
+          }
+        },
+        "A-023_power_plant_registry_osm2026": {
+          "records": 1727,
+          "owner": {
+            "filled": 193,
+            "total": 1727,
+            "percent": 11.2
+          },
+          "commissioningYear": {
+            "filled": 34,
+            "total": 1727,
+            "percent": 2
+          },
+          "sourceUrl": {
+            "filled": 1727,
+            "total": 1727,
+            "percent": 100
+          },
+          "province": {
+            "filled": 1637,
+            "total": 1727,
+            "percent": 94.8
+          }
+        }
+      },
+      "sample": {
+        "size": 20,
+        "rates": {
+          "owner": {
+            "filled": 9,
+            "total": 20,
+            "percent": 45
+          },
+          "commissioningYear": {
+            "filled": 7,
+            "total": 20,
+            "percent": 35
+          },
+          "sourceUrl": {
+            "filled": 20,
+            "total": 20,
+            "percent": 100
+          },
+          "province": {
+            "filled": 19,
+            "total": 20,
+            "percent": 95
+          }
+        },
+        "rows": [
+          {
+            "recordId": "v124-a-023-entity-00055",
+            "name": "A Luoi",
+            "indicatorId": "A-023_power_plant_registry",
+            "owner": "Central Hydro Power JSC",
+            "commissioningYear": 2012,
+            "sourceUrl": "https://data.opendevelopmentmekong.net/vi/library_record/a-luoi-hydropower",
+            "province": "Huế"
+          },
+          {
+            "recordId": "v124-a-023-entity-00091",
+            "name": "A Vuong",
+            "indicatorId": "A-023_power_plant_registry",
+            "owner": "A Vuong Hydro Power JSC",
+            "commissioningYear": 2008,
+            "sourceUrl": "https://data.opendevelopmentmekong.net/vi/library_record/a-vuong-hydropower",
+            "province": "Đà Nẵng"
+          },
+          {
+            "recordId": "v124-a-023-entity-00034",
+            "name": "Amata",
+            "indicatorId": "A-023_power_plant_registry",
+            "owner": null,
+            "commissioningYear": null,
+            "sourceUrl": "http://www.evn.com.vn/userfile/files/2017/3/AnnualReport2016.pdf",
+            "province": "Đồng Nai"
+          },
+          {
+            "recordId": "v124-a-023-entity-00024",
+            "name": "An Khanh I",
+            "indicatorId": "A-023_power_plant_registry",
+            "owner": "An Khanh Electricity Jsc",
+            "commissioningYear": 2015,
+            "sourceUrl": "http://www.evn.com.vn/userfile/files/2017/3/AnnualReport2016.pdf",
+            "province": "Thái Nguyên"
+          },
+          {
+            "recordId": "v124-a-023-entity-00056",
+            "name": "An Khe - Kanak",
+            "indicatorId": "A-023_power_plant_registry",
+            "owner": "An Khe - Ka Nak Hydro Power Company",
+            "commissioningYear": 2009,
+            "sourceUrl": "https://data.opendevelopmentmekong.net/vi/library_record/an-khe-kanak-hydropower",
+            "province": "Gia Lai"
+          },
+          {
+            "recordId": "v124-a-023-entity-00112",
+            "name": "Ayun Ha",
+            "indicatorId": "A-023_power_plant_registry",
+            "owner": "Gia Lai Electricity JSC.",
+            "commissioningYear": null,
+            "sourceUrl": "https://data.opendevelopmentmekong.net/vi/library_record/ayun-ha-hydropower",
+            "province": "Gia Lai"
+          },
+          {
+            "recordId": "v124-a-023-entity-00146",
+            "name": "Ba Ria",
+            "indicatorId": "A-023_power_plant_registry",
+            "owner": "Vietnam Electricity (EVN)",
+            "commissioningYear": null,
+            "sourceUrl": "http://www.evn.com.vn/userfile/files/2017/3/AnnualReport2016.pdf",
+            "province": "Hồ Chí Minh"
+          },
+          {
+            "recordId": "v124-a-023-entity-00226",
+            "name": "Ba Thuoc 2",
+            "indicatorId": "A-023_power_plant_registry",
+            "owner": "Hoang Anh Hydropower JSC",
+            "commissioningYear": 2012,
+            "sourceUrl": "https://data.opendevelopmentmekong.net/vi/library_record/ba-thuoc-2-hydropower",
+            "province": "Thanh Hóa"
+          },
+          {
+            "recordId": "v124-a-023-entity-00136",
+            "name": "Bac Binh",
+            "indicatorId": "A-023_power_plant_registry",
+            "owner": "Viet Nam Hydro Power Development JSC.",
+            "commissioningYear": 2009,
+            "sourceUrl": "https://data.opendevelopmentmekong.net/vi/library_record/bac-binh-hydropower",
+            "province": "Lâm Đồng"
+          },
+          {
+            "recordId": "v124-a-023-entity-00236",
+            "name": "Bac Lieu Wind power",
+            "indicatorId": "A-023_power_plant_registry",
+            "owner": "Cong Ly Construction-Trade-Tourism",
+            "commissioningYear": 2016,
+            "sourceUrl": "http://www.evn.com.vn/userfile/files/2017/3/AnnualReport2016.pdf",
+            "province": null
+          },
+          {
+            "recordId": "vnm-v121-a-023-ent-254-bef56e6762213d45",
+            "name": "(미표기)",
+            "indicatorId": "A-023_power_plant_registry_osm2026",
+            "owner": null,
+            "commissioningYear": null,
+            "sourceUrl": "https://www.openstreetmap.org/way/423390870",
+            "province": "Tuyên Quang"
+          },
+          {
+            "recordId": "vnm-v121-a-023-ent-255-6158466fd86b4488",
+            "name": "(미표기)",
+            "indicatorId": "A-023_power_plant_registry_osm2026",
+            "owner": null,
+            "commissioningYear": null,
+            "sourceUrl": "https://www.openstreetmap.org/way/434614341",
+            "province": "Đà Nẵng"
+          },
+          {
+            "recordId": "vnm-v121-a-023-ent-259-e8c9b4697a73cc90",
+            "name": "(미표기)",
+            "indicatorId": "A-023_power_plant_registry_osm2026",
+            "owner": null,
+            "commissioningYear": null,
+            "sourceUrl": "https://www.openstreetmap.org/way/469058177",
+            "province": "Quảng Ninh"
+          },
+          {
+            "recordId": "vnm-v121-a-023-ent-267-c61b17523a60c143",
+            "name": "(미표기)",
+            "indicatorId": "A-023_power_plant_registry_osm2026",
+            "owner": null,
+            "commissioningYear": null,
+            "sourceUrl": "https://www.openstreetmap.org/way/481965076",
+            "province": "Lào Cai"
+          },
+          {
+            "recordId": "vnm-v121-a-023-ent-268-240fb5835ba0ac8d",
+            "name": "(미표기)",
+            "indicatorId": "A-023_power_plant_registry_osm2026",
+            "owner": null,
+            "commissioningYear": null,
+            "sourceUrl": "https://www.openstreetmap.org/way/482445733",
+            "province": "Cao Bằng"
+          },
+          {
+            "recordId": "vnm-v121-a-023-ent-269-50c77f17c8cbb095",
+            "name": "(미표기)",
+            "indicatorId": "A-023_power_plant_registry_osm2026",
+            "owner": null,
+            "commissioningYear": null,
+            "sourceUrl": "https://www.openstreetmap.org/way/482583432",
+            "province": "Lạng Sơn"
+          },
+          {
+            "recordId": "vnm-v121-a-023-ent-284-66d1d48684268a0f",
+            "name": "(미표기)",
+            "indicatorId": "A-023_power_plant_registry_osm2026",
+            "owner": null,
+            "commissioningYear": null,
+            "sourceUrl": "https://www.openstreetmap.org/way/578320670",
+            "province": "Nghệ An"
+          },
+          {
+            "recordId": "vnm-v121-a-023-ent-290-3771a3955948cf20",
+            "name": "(미표기)",
+            "indicatorId": "A-023_power_plant_registry_osm2026",
+            "owner": null,
+            "commissioningYear": null,
+            "sourceUrl": "https://www.openstreetmap.org/way/636380253",
+            "province": "Gia Lai"
+          },
+          {
+            "recordId": "vnm-v121-a-023-ent-291-7c0f8d84d9d2fc15",
+            "name": "(미표기)",
+            "indicatorId": "A-023_power_plant_registry_osm2026",
+            "owner": null,
+            "commissioningYear": null,
+            "sourceUrl": "https://www.openstreetmap.org/way/636491779",
+            "province": "Quảng Ngãi"
+          },
+          {
+            "recordId": "vnm-v121-a-023-ent-292-f457624837cd72da",
+            "name": "(미표기)",
+            "indicatorId": "A-023_power_plant_registry_osm2026",
+            "owner": null,
+            "commissioningYear": null,
+            "sourceUrl": "https://www.openstreetmap.org/way/638295011",
+            "province": "Đồng Nai"
+          }
+        ]
+      },
+      "missingReasons": {
+        "owner": {
+          "GPPD owner 열 공란": 26,
+          "OSM operator 태그 없음": 1534
+        },
+        "commissioningYear": {
+          "GPPD commissioning_year 공란": 69,
+          "OSM start_date 없음": 1693
+        },
+        "sourceUrl": {},
+        "province": {
+          "좌표가 34개 성·시 경계 밖(해안·도서·국외)": 93
+        }
+      }
+    },
+    "E-006": {
+      "records": 15,
+      "population": {
+        "owner": {
+          "filled": 11,
+          "total": 15,
+          "percent": 73.3
+        },
+        "sector": {
+          "filled": 15,
+          "total": 15,
+          "percent": 100
+        },
+        "sourceUrl": {
+          "filled": 15,
+          "total": 15,
+          "percent": 100
+        },
+        "province": {
+          "filled": 8,
+          "total": 15,
+          "percent": 53.3
+        },
+        "locationClass": {
+          "filled": 15,
+          "total": 15,
+          "percent": 100
+        }
+      },
+      "byIndicator": {
+        "E-006_dfi": {
+          "records": 4,
+          "owner": {
+            "filled": 3,
+            "total": 4,
+            "percent": 75
+          },
+          "sector": {
+            "filled": 4,
+            "total": 4,
+            "percent": 100
+          },
+          "sourceUrl": {
+            "filled": 4,
+            "total": 4,
+            "percent": 100
+          },
+          "province": {
+            "filled": 0,
+            "total": 4,
+            "percent": 0
+          },
+          "locationClass": {
+            "filled": 4,
+            "total": 4,
+            "percent": 100
+          }
+        },
+        "E-006_private_investor": {
+          "records": 9,
+          "owner": {
+            "filled": 6,
+            "total": 9,
+            "percent": 66.7
+          },
+          "sector": {
+            "filled": 9,
+            "total": 9,
+            "percent": 100
+          },
+          "sourceUrl": {
+            "filled": 9,
+            "total": 9,
+            "percent": 100
+          },
+          "province": {
+            "filled": 7,
+            "total": 9,
+            "percent": 77.8
+          },
+          "locationClass": {
+            "filled": 9,
+            "total": 9,
+            "percent": 100
+          }
+        },
+        "E-006_private_investor_intl": {
+          "records": 1,
+          "owner": {
+            "filled": 1,
+            "total": 1,
+            "percent": 100
+          },
+          "sector": {
+            "filled": 1,
+            "total": 1,
+            "percent": 100
+          },
+          "sourceUrl": {
+            "filled": 1,
+            "total": 1,
+            "percent": 100
+          },
+          "province": {
+            "filled": 0,
+            "total": 1,
+            "percent": 0
+          },
+          "locationClass": {
+            "filled": 1,
+            "total": 1,
+            "percent": 100
+          }
+        },
+        "E-006_private_investor_media": {
+          "records": 1,
+          "owner": {
+            "filled": 1,
+            "total": 1,
+            "percent": 100
+          },
+          "sector": {
+            "filled": 1,
+            "total": 1,
+            "percent": 100
+          },
+          "sourceUrl": {
+            "filled": 1,
+            "total": 1,
+            "percent": 100
+          },
+          "province": {
+            "filled": 1,
+            "total": 1,
+            "percent": 100
+          },
+          "locationClass": {
+            "filled": 1,
+            "total": 1,
+            "percent": 100
+          }
+        }
+      },
+      "sample": {
+        "size": 15,
+        "rates": {
+          "owner": {
+            "filled": 11,
+            "total": 15,
+            "percent": 73.3
+          },
+          "sector": {
+            "filled": 15,
+            "total": 15,
+            "percent": 100
+          },
+          "sourceUrl": {
+            "filled": 15,
+            "total": 15,
+            "percent": 100
+          },
+          "province": {
+            "filled": 8,
+            "total": 15,
+            "percent": 53.3
+          },
+          "locationClass": {
+            "filled": 15,
+            "total": 15,
+            "percent": 100
+          }
+        },
+        "rows": [
+          {
+            "recordId": "v124-e-006-entity-00014",
+            "name": "Armstrong Asset Management",
+            "indicatorId": "E-006_private_investor_intl",
+            "owner": "SEA Clean Energy Fund",
+            "sector": "동남아 청정에너지(소규모 재생에너지)",
+            "sourceUrl": "https://disclosures.ifc.org/project-detail/SII/32754/armstrong-south-east-asia-clean-energy-fund-l-p",
+            "province": null,
+            "locationClass": "해외 소재(베트남 투자 실적)"
+          },
+          {
+            "recordId": "v124-e-006-entity-00002",
+            "name": "Asian Development Bank (ADB)",
+            "indicatorId": "E-006_dfi",
+            "owner": null,
+            "sector": "에너지·재생에너지·기후회복 인프라",
+            "sourceUrl": "https://www.cif.org/country/vietnam",
+            "province": null,
+            "locationClass": "해외 소재(베트남 투자 실적)"
+          },
+          {
+            "recordId": "v124-e-006-entity-00015",
+            "name": "Beacon Fund",
+            "indicatorId": "E-006_private_investor_media",
+            "owner": "Patamar Capital",
+            "sector": "여성주도 SME 사모대출(지속가능 농업·기후연계 포함)",
+            "sourceUrl": "https://www.dealstreetasia.com/stories/beacon-fund-investments-397783",
+            "province": "Hồ Chí Minh",
+            "locationClass": "베트남 소재"
+          },
+          {
+            "recordId": "v124-e-006-entity-00007",
+            "name": "Clime Capital Management",
+            "indicatorId": "E-006_private_investor",
+            "owner": "SEACEF / SEACEF II",
+            "sector": "청정에너지, 저탄소 전환",
+            "sourceUrl": "https://www.seacef.org/",
+            "province": null,
+            "locationClass": "해외 소재(베트남 투자 실적)"
+          },
+          {
+            "recordId": "v124-e-006-entity-00006",
+            "name": "Do Ventures",
+            "indicatorId": "E-006_private_investor",
+            "owner": "Fund II",
+            "sector": "초기·성장기 SME, 에너지전환·기후적응",
+            "sourceUrl": "https://doventures.vc/",
+            "province": "Hồ Chí Minh",
+            "locationClass": "베트남 소재"
+          },
+          {
+            "recordId": "v124-e-006-entity-00008",
+            "name": "Dragon Capital Group",
+            "indicatorId": "E-006_private_investor",
+            "owner": "Clean Development Investments / Mekong Brahmaputra Clean Development Fund",
+            "sector": "수력·태양광·풍력·바이오매스·바이오가스, 에너지효율",
+            "sourceUrl": "https://www.dragoncapital.com/contact/",
+            "province": "Hồ Chí Minh",
+            "locationClass": "베트남 소재"
+          },
+          {
+            "recordId": "v124-e-006-entity-00003",
+            "name": "Emerging Africa & Asia Infrastructure Fund (EAAIF)",
+            "indicatorId": "E-006_dfi",
+            "owner": "PIDG / Ninety One 운용",
+            "sector": "인프라·청정에너지 부채금융",
+            "sourceUrl": "https://www.eaif.com/contact/",
+            "province": null,
+            "locationClass": "해외 소재(베트남 투자 실적)"
+          },
+          {
+            "recordId": "v124-e-006-entity-00001",
+            "name": "International Finance Corporation (IFC)",
+            "indicatorId": "E-006_dfi",
+            "owner": "World Bank Group",
+            "sector": "재생에너지·그린파이낸스·민간 기후 인프라",
+            "sourceUrl": "https://www.ifc.org/",
+            "province": null,
+            "locationClass": "해외 소재(베트남 투자 실적)"
+          },
+          {
+            "recordId": "v124-e-006-entity-00011",
+            "name": "Mekong Capital",
+            "indicatorId": "E-006_private_investor",
+            "owner": null,
+            "sector": "소비재 중심 성장자본",
+            "sourceUrl": "https://www.mekongcapital.com/contact-us/",
+            "province": "Hồ Chí Minh",
+            "locationClass": "베트남 소재"
+          },
+          {
+            "recordId": "v124-e-006-entity-00012",
+            "name": "New Energy Nexus Vietnam",
+            "indicatorId": "E-006_private_investor",
+            "owner": null,
+            "sector": "기후테크·청정에너지 스타트업(인큐베이션·초기투자)",
+            "sourceUrl": "https://www.newenergynexus.com/news/funding-for-vietnams-climate-tech-startups-growing-365-year-on-year-reveals-new-report/",
+            "province": "Hồ Chí Minh",
+            "locationClass": "베트남 소재"
+          },
+          {
+            "recordId": "v124-e-006-entity-00013",
+            "name": "Patamar Capital",
+            "indicatorId": "E-006_private_investor",
+            "owner": null,
+            "sector": "금융서비스, 저렴주택, 헬스케어, 교육, 농업, 중소상공인 디지털화, 기후행동(재생에너지·탄소저감·지속가능기술)",
+            "sourceUrl": "https://patamar.com/contact/",
+            "province": "Hồ Chí Minh",
+            "locationClass": "베트남 소재"
+          },
+          {
+            "recordId": "v124-e-006-entity-00004",
+            "name": "Proparco",
+            "indicatorId": "E-006_dfi",
+            "owner": "AFD 그룹",
+            "sector": "저탄소 전환, 청정에너지 펀드 LP",
+            "sourceUrl": "https://www.proparco.fr/en/legal-notice",
+            "province": null,
+            "locationClass": "해외 소재(베트남 투자 실적)"
+          },
+          {
+            "recordId": "v124-e-006-entity-00009",
+            "name": "responsAbility Investments AG",
+            "indicatorId": "E-006_private_investor",
+            "owner": "아시아 기후펀드",
+            "sector": "아시아 기후금융(C&I 태양광, 에너지효율)",
+            "sourceUrl": "https://www.responsability.com/en/contact",
+            "province": null,
+            "locationClass": "해외 소재(베트남 투자 실적)"
+          },
+          {
+            "recordId": "v124-e-006-entity-00005",
+            "name": "Touchstone Partners",
+            "indicatorId": "E-006_private_investor",
+            "owner": "Green Transition Fund",
+            "sector": "지속가능농업·순환경제·폐기물·신에너지",
+            "sourceUrl": "https://touchstone.vc/news/touchstone-partners-launched-10-m-green-transition-fund-40184",
+            "province": "Hồ Chí Minh",
+            "locationClass": "베트남 소재"
+          },
+          {
+            "recordId": "v124-e-006-entity-00010",
+            "name": "VinaCapital",
+            "indicatorId": "E-006_private_investor",
+            "owner": "VinaCapital Ventures",
+            "sector": "부동산·기업·벤처, C&I 옥상태양광",
+            "sourceUrl": "https://vinacapital.com/contact/",
+            "province": "Hồ Chí Minh",
+            "locationClass": "베트남 소재"
+          }
+        ]
+      },
+      "missingReasons": null
+    }
+  }
+}
