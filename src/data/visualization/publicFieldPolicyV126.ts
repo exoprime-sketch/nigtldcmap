@@ -269,6 +269,13 @@ const PUBLIC_ENTITY_ATTRIBUTE_KEYS_BY_TEMPLATE_V126: Record<string, string[]> = 
     "applicationPeriod",
     "websiteUrl",
     "website",
+    // V153: E-006 investors - head office country, sector, fund and the
+    // ETL's location class/province are public facts of the organisation.
+    "hqCountryIso3",
+    "investSector",
+    "fundOrAffiliate",
+    "locationClass",
+    "adm1Name34",
   ],
   policy: [
     "title",
