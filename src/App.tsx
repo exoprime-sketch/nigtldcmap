@@ -7,6 +7,7 @@ import PlanningContextBarV42 from "./components/common/PlanningContextBarV42";
 import Footer from "./components/layout/Footer";
 import Header from "./components/layout/Header";
 import { CLIMATE_TECHNOLOGY_BY_ID } from "./data/climateTechnologyCatalog";
+import { technologyParamV153 } from "./utils/technologyIdV153";
 import { PRIORITY_COUNTRIES } from "./data/priorityCountries";
 import { DATASETS } from "./data/publicDatasets";
 import { INDICATOR_CONFIGS } from "./data/indicators/registry";
@@ -413,10 +414,7 @@ export default function App() {
   );
   const initialTechnologyParam = initialParams.get("technology");
   const [technologyId, setTechnologyId] = useState<string>(
-    initialTechnologyParam &&
-      CLIMATE_TECHNOLOGY_BY_ID.has(initialTechnologyParam)
-      ? initialTechnologyParam
-      : "all"
+    technologyParamV153(initialTechnologyParam)
   );
   const [explorerGroup, setExplorerGroup] = useState<string | null>(
     initialParams.get("group")
@@ -523,11 +521,7 @@ export default function App() {
       setCategory((params.get("category") as CategoryCode | null) ?? "all");
 
       const restoredTechnology = params.get("technology");
-      setTechnologyId(
-        restoredTechnology && CLIMATE_TECHNOLOGY_BY_ID.has(restoredTechnology)
-          ? restoredTechnology
-          : "all"
-      );
+      setTechnologyId(technologyParamV153(restoredTechnology));
 
       const restoredDataCountryIso3 = hasCountryDataProviderV122(countryParam)
         ? countryParam
@@ -955,11 +949,7 @@ export default function App() {
         : "all"
     );
     setCategory("all");
-    setTechnologyId(
-      nextTechnologyId && CLIMATE_TECHNOLOGY_BY_ID.has(nextTechnologyId)
-        ? nextTechnologyId
-        : "all"
-    );
+    setTechnologyId(technologyParamV153(nextTechnologyId));
     setExplorerGroup(null);
     setSelectedDatasetId(null);
     setSelectedCountryIso3(null);

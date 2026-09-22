@@ -8,4 +8,9 @@
 # deployment and an unknown environment always build.
 [ "$VERCEL_ENV" = "preview" ] || exit 1
 [ -n "$VERCEL_GIT_PREVIOUS_SHA" ] || exit 1
+# V153: the previous deployment's commit is the last one that succeeded on the
+# branch. After a rebase it is no longer in the clone, and `git diff` then
+# exits 128 - which Vercel reports as a failed deployment, on every push until
+# one succeeds. An unknown previous commit means "build", not "fail".
+git cat-file -e "$VERCEL_GIT_PREVIOUS_SHA^{commit}" 2>/dev/null || exit 1
 git diff --quiet "$VERCEL_GIT_PREVIOUS_SHA" HEAD -- public src api server scripts/v150-1 package.json package-lock.json tsconfig.json .eslintrc.json .gitattributes vercel.json '.env*'

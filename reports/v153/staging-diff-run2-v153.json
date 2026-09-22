@@ -1,0 +1,157 @@
+{
+  "schema": "v153-staging-diff-1",
+  "from": ".staging/d0-run2/public/data/vietnam/v2",
+  "to": "public/data/vietnam/v2",
+  "summary": {
+    "stagingFiles": 515,
+    "publishedFiles": 518,
+    "changed": 19,
+    "onlyInStaging": 4,
+    "onlyInPublished": 7
+  },
+  "changed": [
+    {
+      "path": "asset-integrity.json",
+      "stagingBytes": 90660,
+      "publishedBytes": 91199
+    },
+    {
+      "path": "catalog.json",
+      "stagingBytes": 572904,
+      "publishedBytes": 572904
+    },
+    {
+      "path": "downloads/a-023.csv",
+      "stagingBytes": 1989986,
+      "publishedBytes": 1523457
+    },
+    {
+      "path": "downloads/a-023.json",
+      "stagingBytes": 4269181,
+      "publishedBytes": 3851714
+    },
+    {
+      "path": "downloads/b-046.csv",
+      "stagingBytes": 5487,
+      "publishedBytes": 5382
+    },
+    {
+      "path": "downloads/b-046.json",
+      "stagingBytes": 47116,
+      "publishedBytes": 46144
+    },
+    {
+      "path": "downloads/b-047.csv",
+      "stagingBytes": 8215,
+      "publishedBytes": 8041
+    },
+    {
+      "path": "downloads/b-047.json",
+      "stagingBytes": 47439,
+      "publishedBytes": 46347
+    },
+    {
+      "path": "downloads/delivery-manifest.json",
+      "stagingBytes": 136605,
+      "publishedBytes": 136605
+    },
+    {
+      "path": "downloads/e-006.csv",
+      "stagingBytes": 42692,
+      "publishedBytes": 40433
+    },
+    {
+      "path": "downloads/e-006.json",
+      "stagingBytes": 82410,
+      "publishedBytes": 80395
+    },
+    {
+      "path": "geometry/geometry-manifest.json",
+      "stagingBytes": 8898,
+      "publishedBytes": 11325
+    },
+    {
+      "path": "interpretation/indicator-interpretation-v129.json",
+      "stagingBytes": 46368,
+      "publishedBytes": 46032
+    },
+    {
+      "path": "manifest.json",
+      "stagingBytes": 3264,
+      "publishedBytes": 3264
+    },
+    {
+      "path": "map-index.json",
+      "stagingBytes": 347634,
+      "publishedBytes": 347634
+    },
+    {
+      "path": "packs/bundle-index-v124.json",
+      "stagingBytes": 103544,
+      "publishedBytes": 103544
+    },
+    {
+      "path": "semantic/element-visualization-contracts-v125.json",
+      "stagingBytes": 1003995,
+      "publishedBytes": 1001937
+    },
+    {
+      "path": "semantic/elements/a-023.json",
+      "stagingBytes": 12002,
+      "publishedBytes": 11308
+    },
+    {
+      "path": "semantic/indicator-semantics-v125.json",
+      "stagingBytes": 93096,
+      "publishedBytes": 93067
+    }
+  ],
+  "onlyInStaging": [
+    "packs/search-index-v124-9ae29c78.json",
+    "packs/vnm-v124-pack-003-050ae3ff.json",
+    "packs/vnm-v124-pack-010-a5ede0eb.json",
+    "packs/vnm-v124-pack-018-fb23ea9f.json"
+  ],
+  "onlyInPublished": [
+    "dataset-directory.json",
+    "geometry/vnm-adm1-34.geojson",
+    "home/card-summaries-v140.json",
+    "packs/search-index-v124-7504f021.json",
+    "packs/vnm-v124-pack-003-98a48014.json",
+    "packs/vnm-v124-pack-010-182321ff.json",
+    "packs/vnm-v124-pack-018-14c8d22f.json"
+  ],
+  "catalog": {
+    "topLevel": [],
+    "elementCount": 4,
+    "keyCounts": {
+      "downloadAssets": 4
+    },
+    "elements": [
+      {
+        "elementId": "A-023",
+        "keys": [
+          "downloadAssets"
+        ]
+      },
+      {
+        "elementId": "B-046",
+        "keys": [
+          "downloadAssets"
+        ]
+      },
+      {
+        "elementId": "B-047",
+        "keys": [
+          "downloadAssets"
+        ]
+      },
+      {
+        "elementId": "E-006",
+        "keys": [
+          "downloadAssets"
+        ]
+      }
+    ]
+  }
+}

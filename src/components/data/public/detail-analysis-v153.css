@@ -1,0 +1,41 @@
+/* V153-D0: facility cards, mineral rows, investor lists, PPP facts, climate zones. */
+.facility153 { min-width: 0; border: 1px solid #d5e2dc; border-radius: 10px; padding: 14px 16px; background: #fbfdfc; }
+.facility153--compact { padding: 10px 12px; }
+.facility153-title { margin: 0 0 10px; font-size: 1rem; overflow-wrap: anywhere; }
+.facility153-rows { margin: 0; display: grid; gap: 6px; }
+.facility153-row { display: grid; grid-template-columns: minmax(84px, 120px) minmax(0, 1fr); gap: 10px; font-size: .9rem; line-height: 1.55; }
+.facility153-row dt { margin: 0; color: #567067; }
+.facility153-row dd { margin: 0; overflow-wrap: anywhere; }
+.facility153-row[data-missing="true"] dd { color: #7d8f89; }
+.facility153-row a { color: #16806b; }
+
+.d153-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); min-width: 0; }
+.d153-grid > * { min-width: 0; }
+.d153-section { display: grid; gap: 12px; min-width: 0; }
+.d153-section h3, .d153-section h4 { margin: 0; }
+/* One-line summary, not headline tiles: the card on the finder already states the headline. */
+.d153-summary { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0; padding: 0 0 4px; list-style: none; border-bottom: 1px solid #dce5e1; font-size: .88rem; }
+.d153-summary li { min-width: 0; }
+.d153-summary span { color: #567067; }
+.d153-summary span::after { content: ": "; }
+.d153-summary strong { font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.d153-table-wrap { overflow-x: auto; max-width: 100%; }
+.d153-table { border-collapse: collapse; width: 100%; font-size: .88rem; }
+.d153-table th, .d153-table td { border-bottom: 1px solid #dce5e1; padding: 7px 8px; text-align: left; vertical-align: top; }
+.d153-table td.num, .d153-table th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.d153-table caption { text-align: left; font-size: .84rem; color: #567067; padding: 0 0 8px; }
+.d153-pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4px 10px; align-items: center; font-size: .85rem; }
+.d153-pair i { display: block; position: relative; height: 10px; background: #f0f5f2; }
+.d153-pair i > b { position: absolute; left: 0; top: 0; height: 10px; background: #16806b; }
+.d153-pair i[data-year="latest"] > b { background: #0f5f4f; }
+.d153-facts { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.d153-facts li { display: grid; grid-template-columns: minmax(120px, 220px) minmax(0, 1fr); gap: 10px; font-size: .9rem; line-height: 1.55; border-bottom: 1px dashed #e2ebe6; padding-bottom: 6px; }
+.d153-facts li > span:first-child { color: #375a50; }
+.d153-facts small { display: block; color: #6b8078; font-size: .8rem; }
+.d153-selected { border-left: 4px solid #16806b; padding-left: 12px; }
+.d153-list-button { background: none; border: 0; padding: 0; color: #16806b; text-decoration: underline; cursor: pointer; font: inherit; text-align: left; }
+@media (max-width: 600px) {
+  .facility153-row { grid-template-columns: 78px minmax(0, 1fr); gap: 6px; font-size: .84rem; }
+  .d153-facts li { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .d153-grid { grid-template-columns: minmax(0, 1fr); }
+}

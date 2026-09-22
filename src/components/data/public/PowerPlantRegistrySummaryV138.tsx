@@ -8,7 +8,10 @@ import { resolvePublicEntityTitleV131 } from "../../../data/visualization/public
 import { publicSourceUrlV126 } from "../../../data/visualization/publicFieldPolicyV126";
 import { formatPublicNumberV126 } from "../../../data/visualization/publicNumberFormatV126";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
+import { PROVINCE_KO_34_V151 } from "../../../data/map/adminBoundaryV151";
+import FacilityCardV153 from "./FacilityCardV153";
 import "./public-portfolio-summary-v132.css";
+import "./detail-analysis-v153.css";
 import "./detail-analysis-v146.css";
 
 /**
@@ -49,6 +52,8 @@ export default function PowerPlantRegistrySummaryV138({ entities: sourceEntities
   const band = selectorState.dimensions.capacityBand || "all";
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(0);
+  // V153: the plant the reader picked from the list, shown as a label-form card.
+  const [selectedId, setSelectedId] = useState<string | null>(null);
   const normalized = useMemo(() => sourceEntities.map((r) => ({ ...r, normalizedAttributes: normalisedPowerPlantAttributesV141(r.normalizedAttributes || {}, r.indicatorId, r.provenance?.referenceYear) })), [sourceEntities]);
   const fuels = useMemo(() => [...new Set(normalized.map((r) => String(r.normalizedAttributes.fuelType || "")).filter(Boolean))].sort(), [normalized]);
   const entities = useMemo(() => normalized.filter((r) => (fuel === "all" || (r.normalizedAttributes.fuelType || "미기재") === fuel) && (band === "all" || r.normalizedAttributes.capacityBand === band)), [normalized, fuel, band]);
@@ -100,6 +105,13 @@ export default function PowerPlantRegistrySummaryV138({ entities: sourceEntities
   }, [entities]);
 
   const pageIndex = Math.min(page, Math.max(0, Math.ceil(plantList.length / 20) - 1));
+  const selectedPlant = plantList.find((item) => item.row.recordId === selectedId) || null;
+  const provinceOf = (a: Record<string, unknown>) => {
+    const name = String(a.adm1Name34 || "");
+    if (!name) return "미기재";
+    const korean = PROVINCE_KO_34_V151[String(a.adm1Code34 || "")];
+    return korean ? `${korean}(${name})` : name;
+  };
 
   const registries: Array<"wri" | "osm"> = registry === "all" ? ["wri", "osm"] : [registry];
   const sourceName = (key: string) => key === "wri" ? "WRI GPPD · 2021년" : "OpenStreetMap · 2026년 추출";
@@ -129,6 +141,11 @@ export default function PowerPlantRegistrySummaryV138({ entities: sourceEntities
           const countRows = rows.map(([label, e]) => ({ id: label, label, value: e[key] })).sort((a, b) => b.value - a.value);
           return <section key={key}><AnalysisBarsV147 rows={capacityRows} title={`발전원별 설비용량 · ${sourceName(key)}`} unit="MW" /><AnalysisBarsV147 rows={countRows} title={`발전원별 시설 수 · ${sourceName(key)}`} unit={key === "wri" ? "기" : "곳"} />{!rows.length && <p role="status">선택한 조건의 시설이 없습니다. 출처·발전원·설비용량 조건을 바꿔 주세요.</p>}</section>;
         })}
+        {/* The registry totals, stated in a sentence (V153): the table below is folded. */}
+        <p data-testid="power-plant-registry-totals-v153">
+          {registries.includes("wri") && summary.wriCapacity.count > 0 ? `WRI 수록 발전소 설비용량 합계 ${formatPublicNumberV126(summary.wriCapacity.total, "MW")} MW · 2021년 · ${summary.wri.toLocaleString("ko-KR")}기 중 용량 기재 ${summary.wriCapacity.count.toLocaleString("ko-KR")}기. ` : ""}
+          {registries.includes("osm") && summary.osmCapacity.count > 0 ? `OSM 추출 시설 설비용량 합계 ${formatPublicNumberV126(summary.osmCapacity.total, "MW")} MW · 2026년 · ${summary.osm.toLocaleString("ko-KR")}곳 중 용량 기재 ${summary.osmCapacity.count.toLocaleString("ko-KR")}곳.` : ""}
+        </p>
         <p className="detail146-note">설비용량은 값이 기재된 시설만 합산했습니다. 두 출처는 수록 범위와 기준시점이 달라, 출처를 바꿨을 때의 차이를 증감으로 해석할 수 없습니다.</p>
       </div>
       <details className="detail146-details"><summary>표로 보기 · 출처별 발전원·시설 수·설비용량</summary>
@@ -162,9 +179,9 @@ export default function PowerPlantRegistrySummaryV138({ entities: sourceEntities
                 <tr className="pps132-total-row" data-testid="power-plant-fuel-total-v140">
                   <th scope="row">합계(원천별)</th>
                   <td>{summary.wri.toLocaleString("ko-KR")}</td>
-                  <td>{summary.wriCapacity.count > 0 ? `${formatPublicNumberV126(summary.wriCapacity.total, "MW")} · ${summary.wriCapacity.count.toLocaleString("ko-KR")}기 (미기재 ${(summary.wri - summary.wriCapacity.count).toLocaleString("ko-KR")}기)` : "—"}</td>
+                  <td>{summary.wriCapacity.count > 0 ? `${formatPublicNumberV126(summary.wriCapacity.total, "MW")} MW · ${summary.wriCapacity.count.toLocaleString("ko-KR")}기 (미기재 ${(summary.wri - summary.wriCapacity.count).toLocaleString("ko-KR")}기)` : "—"}</td>
                   <td>{summary.osm.toLocaleString("ko-KR")}</td>
-                  <td>{summary.osmCapacity.count > 0 ? `${formatPublicNumberV126(summary.osmCapacity.total, "MW")} · ${summary.osmCapacity.count.toLocaleString("ko-KR")}곳 (미기재 ${(summary.osm - summary.osmCapacity.count).toLocaleString("ko-KR")}곳)` : "—"}</td>
+                  <td>{summary.osmCapacity.count > 0 ? `${formatPublicNumberV126(summary.osmCapacity.total, "MW")} MW · ${summary.osmCapacity.count.toLocaleString("ko-KR")}곳 (미기재 ${(summary.osm - summary.osmCapacity.count).toLocaleString("ko-KR")}곳)` : "—"}</td>
                 </tr>
               </tbody>
             </table>
@@ -180,9 +197,14 @@ export default function PowerPlantRegistrySummaryV138({ entities: sourceEntities
         <label>시설명 검색 <input type="search" value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }} placeholder="발전소 이름" /></label>
         <p>{plantList.length.toLocaleString("ko-KR")}곳 · 이름순 · {pageIndex + 1}/{Math.max(1, Math.ceil(plantList.length / 20))}쪽</p>
         <div className="pps132-table-wrap"><table><caption>선택한 출처·발전원·설비용량 조건의 시설 목록. 위치는 아래 지도에서 확인할 수 있습니다.</caption>
-          <thead><tr><th scope="col">시설명</th><th scope="col">발전원</th><th scope="col">설비용량(MW)</th><th scope="col">운영자</th><th scope="col">원문</th></tr></thead>
-          <tbody>{plantList.slice(pageIndex * 20, (pageIndex + 1) * 20).map(({ row: r, name }) => { const a = r.normalizedAttributes; const url = publicSourceUrlV126(r.provenance.sourceUrl); return <tr key={r.recordId}><th scope="row">{name}</th><td>{String(a.fuelType || "미기재")}</td><td>{capacityOf(a) === null ? "미기재" : formatPublicNumberV126(capacityOf(a)!, "MW")}</td><td>{String(a.field_4cf75655 || a.operator || "미기재")}</td><td>{url ? <a href={url} target="_blank" rel="noreferrer">출처 확인</a> : "—"}</td></tr>; })}</tbody>
+          <thead><tr><th scope="col">시설명</th><th scope="col">발전원</th><th scope="col">설비용량(MW)</th><th scope="col">소유·운영</th><th scope="col">소재지(34개 기준)</th><th scope="col">원문</th></tr></thead>
+          <tbody>{plantList.slice(pageIndex * 20, (pageIndex + 1) * 20).map(({ row: r, name }) => { const a = r.normalizedAttributes; const url = publicSourceUrlV126(String(a.sourceUrl || r.provenance.sourceUrl || "")); return <tr key={r.recordId} data-selected={selectedId === r.recordId ? "true" : "false"}><th scope="row"><button type="button" className="d153-list-button" aria-pressed={selectedId === r.recordId} onClick={() => setSelectedId(selectedId === r.recordId ? null : r.recordId)}>{name}</button></th><td>{String(a.fuelType || "미기재")}</td><td>{capacityOf(a) === null ? "미기재" : formatPublicNumberV126(capacityOf(a)!, "MW")}</td><td>{String(a.owner || a.operator || a.field_4cf75655 || "미기재")}</td><td>{provinceOf(a)}</td><td>{url ? <a href={url} target="_blank" rel="noreferrer">출처 확인</a> : "—"}</td></tr>; })}</tbody>
         </table></div>
+        {selectedPlant ? (
+          <div className="d153-selected" data-testid="power-plant-selected-v153">
+            <FacilityCardV153 elementId="A-023" entity={selectedPlant.row} title={selectedPlant.name} />
+          </div>
+        ) : <p className="detail146-note">시설명을 누르면 국가·명칭·발전원·소유·운영·설비용량·가동 연도·소재지·자료 출처 카드가 열립니다.</p>}
         <div className="detail146-select"><button type="button" disabled={pageIndex === 0} onClick={() => setPage(pageIndex - 1)}>이전 시설</button><button type="button" disabled={(pageIndex + 1) * 20 >= plantList.length} onClick={() => setPage(pageIndex + 1)}>다음 시설</button></div>
       </section>
     </section>

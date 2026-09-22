@@ -6,6 +6,7 @@ import {
 import { loadVietnamManifestV124 } from "./vietnam/vietnamDataLoaderV124";
 import { getElementVisualizationSummaryV125 } from "./visualization/elementVisualizationRegistryV125";
 import { technologyLabelV121 } from "../utils/vietnamActualV121";
+import { normalizeTechnologyIdsV153 } from "../utils/technologyIdV153";
 import type { CountryCatalogItemV122 } from "./countries/countryDataTypesV122";
 import type { VietnamElementPublicStatusV124 } from "./vietnam/vietnamTypesV124";
 
@@ -235,7 +236,7 @@ export async function loadPublicSearchItemsV128(): Promise<PublicSearchItemV128[
                 ...measureLabels,
                 ...dimensionLabels,
                 ...item.sourceOrganizations,
-                ...item.technologyIds.map(technologyLabelV121),
+                ...normalizeTechnologyIdsV153(item.technologyIds).map(technologyLabelV121),
                 indexed?.searchText ?? "",
                 ...(indexed?.keywords ?? []),
               ].join(" ")
@@ -265,7 +266,7 @@ export function searchPublicDataV128(
       const title = normalizeSearchTextV128(item.catalogItem.publicTitle);
       const measures = normalizeSearchTextV128(item.measureLabels.join(" "));
       const technologies = normalizeSearchTextV128(
-        item.catalogItem.technologyIds.map(technologyLabelV121).join(" ")
+        normalizeTechnologyIdsV153(item.catalogItem.technologyIds).map(technologyLabelV121).join(" ")
       );
       let score = 0;
       if (title === normalized) score += 500;

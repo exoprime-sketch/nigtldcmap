@@ -1,0 +1,694 @@
+{
+  "summary": {
+    "label": "d0",
+    "base": "http://127.0.0.1:4341",
+    "generatedAt": "2026-09-22T00:13:06.448Z",
+    "version": {
+      "local": {
+        "cardSummaries": "62529349a2ce6b81",
+        "cardGeneratedAt": "2026-09-21T05:40:39.003Z",
+        "sourceHash": "127546f478e3bd49",
+        "manifestGeneratedAt": "2026-08-27T00:00:00Z",
+        "mapLayerCount": 42
+      },
+      "remote": {
+        "cardSummaries": "62529349a2ce6b81",
+        "cardGeneratedAt": "2026-09-21T05:40:39.003Z",
+        "manifestGeneratedAt": "2026-08-27T00:00:00Z",
+        "mapLayerCount": 42
+      },
+      "match": true
+    },
+    "elements": 6,
+    "valueBearing": 6,
+    "statusOnly": 0,
+    "cardClicked": {
+      "pass": 6,
+      "fail": 0,
+      "notApplicable": 0
+    },
+    "homeCardClicked": {
+      "pass": 1,
+      "fail": 0,
+      "notApplicable": 5
+    },
+    "selectionUrlPreserved": {
+      "pass": 3,
+      "fail": 0,
+      "notApplicable": 3
+    },
+    "screenLoaded": {
+      "pass": 6,
+      "fail": 0,
+      "notApplicable": 0
+    },
+    "detailTilesAbsent": {
+      "pass": 6,
+      "fail": 0,
+      "notApplicable": 0
+    },
+    "cardValueVerified": {
+      "pass": 6,
+      "fail": 0,
+      "notApplicable": 0
+    },
+    "recomputed": {
+      "match": 6
+    },
+    "detailAnalysisFit": {
+      "pass": 3,
+      "fail": 0,
+      "notApplicable": 3
+    },
+    "analysisFit": {
+      "pass": 6,
+      "fail": 0,
+      "notApplicable": 0,
+      "byKind": {
+        "grouped-bars:true": 1,
+        "bars:true": 2,
+        "level:true": 2,
+        "facts:true": 1
+      }
+    },
+    "internalWording": [],
+    "mapSymbolVerified": {
+      "pass": 3,
+      "fail": 0,
+      "notApplicable": 3
+    },
+    "controlsVerified": {
+      "pass": 1,
+      "fail": 0,
+      "notApplicable": 5
+    },
+    "controlsTried": 3,
+    "tableValuesVerified": {
+      "pass": 6,
+      "fail": 0,
+      "notApplicable": 0
+    },
+    "tableClassification": {
+      "match": 6
+    },
+    "mapHandoffVerified": {
+      "pass": 3,
+      "fail": 0,
+      "notApplicable": 3
+    },
+    "withRemainingIssues": 0,
+    "requiredFailures": 0,
+    "requiredFailureIds": []
+  },
+  "results": [
+    {
+      "elementId": "A-023",
+      "title": "발전소[위치, 용량]",
+      "kind": "grouped-bars",
+      "cardClicked": true,
+      "homeCardClicked": true,
+      "selectionUrlPreserved": null,
+      "screenLoaded": true,
+      "cardValueVerified": true,
+      "recomputed": {
+        "status": "match",
+        "computed": 41350.490000000005,
+        "expected": 41350,
+        "expectedScale": null,
+        "rows": 236,
+        "note": "sum of WRI capacity_mw"
+      },
+      "detailAnalysisFit": null,
+      "analysisFit": {
+        "kind": "grouped-bars",
+        "expected": [
+          "compared categories named (0/0)",
+          "comparison drawn or tabled"
+        ],
+        "found": [
+          "compared categories named (0/0)",
+          "comparison drawn or tabled"
+        ],
+        "missing": [],
+        "pass": true,
+        "headings": [
+          "발전원별 시설 수와 설비용량 · 원천별",
+          "발전소 목록 · WRI GPPD · 2021년"
+        ]
+      },
+      "controlsVerified": true,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": true,
+      "mapSymbolVerified": {
+        "selected": true,
+        "panel": {
+          "title": "선택 발전소",
+          "rows": [
+            "데이터명: 발전소",
+            "발전원: 수력",
+            "설비용량: 1 MW",
+            "자료연도: 2021",
+            "출처: World Resources Institute",
+            "지도 표시: 시설 점 · 위치 좌표"
+          ],
+          "coverage": ""
+        },
+        "checks": {
+          "ownLayer": true,
+          "valueOrFact": true,
+          "unitOrMeasure": true,
+          "time": true,
+          "source": true,
+          "spatialMeaning": true,
+          "reviewCase": true
+        },
+        "pass": true,
+        "missing": []
+      },
+      "remainingIssue": [],
+      "notApplicable": [
+        "selectionUrlPreserved: card carries no selection",
+        "detailAnalysisFit: card carries no selection"
+      ],
+      "evidence": {
+        "finderHeadline": "41,350 MW",
+        "title": "발전소 현황",
+        "heading": "",
+        "selectors": [
+          "자료 출처=WRI GPPD · 2021년",
+          "발전원=전체 발전원",
+          "설비용량=전체 용량"
+        ],
+        "url": "?view=data&element=baljeonso-wici-yongryang&country=VNM&from=explorer",
+        "cardValue": "41,350 MW = text-45:P: WRI 수록 발전소 설비용량 합계 41,350 MW · 2021년 · 236기 중 용량 기재 236기. 자료 출처 WRI GPPD · 2021년 OpenStreetMap · 2026년 추출 두 출처 함께 · 따로 집계 발전원 전체 발전원 가스 가스·석유 바이오매스 석유 석탄 수력 태양광",
+        "analysisFit": {
+          "kind": "grouped-bars",
+          "expected": [
+            "compared categories named (0/0)",
+            "comparison drawn or tabled"
+          ],
+          "found": [
+            "compared categories named (0/0)",
+            "comparison drawn or tabled"
+          ],
+          "missing": [],
+          "pass": true,
+          "headings": [
+            "발전원별 시설 수와 설비용량 · 원천별",
+            "발전소 목록 · WRI GPPD · 2021년"
+          ]
+        },
+        "table": {
+          "status": "match",
+          "table": "WRI GPPD(2021)와 OpenStreetMap(2026 추출)의 발전원별 시설 수와 그 시설이 기재한 설비용량 합계. 두 원천은 합치지 않습니다.",
+          "cell": "합계(원천별) | 236 | 41,350 MW · 236기 (미기재 0기) | 1,727 | 76,446 MW · 277곳 (미기재 1,450곳)",
+          "key": "indicator+region+time+unit"
+        },
+        "controls": [
+          {
+            "control": "자료 출처",
+            "from": "WRI GPPD · 2021년",
+            "to": "OpenStreetMap · 2026년 추출",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          },
+          {
+            "control": "발전원",
+            "from": "전체 발전원",
+            "to": "가스",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": false
+          },
+          {
+            "control": "설비용량",
+            "from": "전체 용량",
+            "to": "10MW 미만",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": false
+          }
+        ],
+        "map": "layer drawn as primary (발전소)"
+      },
+      "internalWording": null,
+      "detailTilesAbsent": true
+    },
+    {
+      "elementId": "B-002",
+      "title": "기후대(Climate zone)",
+      "kind": "bars",
+      "cardClicked": true,
+      "homeCardClicked": null,
+      "selectionUrlPreserved": true,
+      "screenLoaded": true,
+      "cardValueVerified": true,
+      "recomputed": {
+        "status": "match",
+        "computed": 138158.9,
+        "expected": 138159,
+        "expectedScale": null,
+        "rows": 7,
+        "note": "largest part at the card's year"
+      },
+      "detailAnalysisFit": true,
+      "analysisFit": {
+        "kind": "bars",
+        "expected": [
+          "compared categories named (6/6)",
+          "comparison drawn or tabled",
+          "unit \"km²\" stated"
+        ],
+        "found": [
+          "compared categories named (6/6)",
+          "comparison drawn or tabled",
+          "unit \"km²\" stated"
+        ],
+        "missing": [],
+        "pass": true,
+        "headings": []
+      },
+      "controlsVerified": null,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "mapSymbolVerified": null,
+      "remainingIssue": [],
+      "notApplicable": [
+        "controlsVerified: no selectable control in the primary analysis",
+        "mapHandoffVerified: not a map dataset"
+      ],
+      "evidence": {
+        "finderHeadline": "138,159 km²",
+        "title": "기후대",
+        "heading": "",
+        "selectors": [],
+        "url": "?view=data&element=gihudae-climate-zone&country=VNM&from=explorer&measure=measure-095dc03abb8f&year=2020",
+        "cardValue": "138,159 km² = text-0:P: 쾨펜 기후대별 국토 점유 면적과 비율입니다(Beck et al. 2023, 1991–2020 관측 기준). 기후대 이름은 한글을 먼저 쓰고 분류 코드를 괄호에 두었습니다. 국가 우세 기후대 · 2020년(1991–2020)온대·동계건조·고온하계(Cwa) 기후대별 점유 면적 최대 · 온대",
+        "fit": "selectors, heading and KPI state the selection",
+        "analysisFit": {
+          "kind": "bars",
+          "expected": [
+            "compared categories named (6/6)",
+            "comparison drawn or tabled",
+            "unit \"km²\" stated"
+          ],
+          "found": [
+            "compared categories named (6/6)",
+            "comparison drawn or tabled",
+            "unit \"km²\" stated"
+          ],
+          "missing": [],
+          "pass": true,
+          "headings": []
+        },
+        "table": {
+          "status": "match",
+          "table": "기후대 구성 · 1991–2020 관측 기준 · 면적은 km², 비율은 분류 육지면적 대비 %",
+          "cell": "온대·동계건조·고온하계(Cwa) | Cwa (온대·동계건조·고온하계) | 138,158.9 | 42.17%",
+          "key": "indicator+region+time+unit"
+        }
+      },
+      "internalWording": null,
+      "detailTilesAbsent": true
+    },
+    {
+      "elementId": "B-046",
+      "title": "매장량[확인, 추정]",
+      "kind": "level",
+      "cardClicked": true,
+      "homeCardClicked": null,
+      "selectionUrlPreserved": true,
+      "screenLoaded": true,
+      "cardValueVerified": true,
+      "recomputed": {
+        "status": "match",
+        "computed": 54000,
+        "expected": 54000,
+        "expectedScale": null,
+        "rows": 1
+      },
+      "detailAnalysisFit": true,
+      "analysisFit": {
+        "kind": "level",
+        "expected": [
+          "trend or comparison drawn",
+          "table of the drawn rows",
+          "unit \"t\" stated"
+        ],
+        "found": [
+          "trend or comparison drawn",
+          "table of the drawn rows",
+          "unit \"t\" stated"
+        ],
+        "missing": [],
+        "pass": true,
+        "headings": [
+          "USGS 미수록 광종 · 5종"
+        ]
+      },
+      "controlsVerified": null,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "mapSymbolVerified": null,
+      "remainingIssue": [],
+      "notApplicable": [
+        "controlsVerified: no selectable control in the primary analysis",
+        "mapHandoffVerified: not a map dataset"
+      ],
+      "evidence": {
+        "finderHeadline": "54,000 t",
+        "title": "광물 매장량",
+        "heading": "",
+        "selectors": [],
+        "url": "?view=data&element=maejangryang-hwagin-cujeong&country=VNM&from=explorer&measure=measure-080d04348d93&year=2026",
+        "cardValue": "54,000 t = text-5:LI: 확인 매장량 · 안티모니 · 2026년54,000 t (Sb 함량)",
+        "fit": "selectors, heading and KPI state the selection",
+        "analysisFit": {
+          "kind": "level",
+          "expected": [
+            "trend or comparison drawn",
+            "table of the drawn rows",
+            "unit \"t\" stated"
+          ],
+          "found": [
+            "trend or comparison drawn",
+            "table of the drawn rows",
+            "unit \"t\" stated"
+          ],
+          "missing": [],
+          "pass": true,
+          "headings": [
+            "USGS 미수록 광종 · 5종"
+          ]
+        },
+        "table": {
+          "status": "match",
+          "table": "광종별 확인 매장량 · 2026년 · 값과 단위는 USGS Mineral Commodity Summaries 원문 그대로입니다.",
+          "cell": "안티모니 | 54,000 | t (Sb 함량) | 세계 11위 | 2.70% 이하 | —",
+          "key": "indicator+region+time+unit"
+        }
+      },
+      "internalWording": null,
+      "detailTilesAbsent": true
+    },
+    {
+      "elementId": "B-047",
+      "title": "연간 생산량",
+      "kind": "level",
+      "cardClicked": true,
+      "homeCardClicked": null,
+      "selectionUrlPreserved": true,
+      "screenLoaded": true,
+      "cardValueVerified": true,
+      "recomputed": {
+        "status": "match",
+        "computed": 11000,
+        "expected": 11000,
+        "expectedScale": null,
+        "rows": 1
+      },
+      "detailAnalysisFit": true,
+      "analysisFit": {
+        "kind": "level",
+        "expected": [
+          "trend or comparison drawn",
+          "table of the drawn rows",
+          "unit \"t\" stated"
+        ],
+        "found": [
+          "trend or comparison drawn",
+          "table of the drawn rows",
+          "unit \"t\" stated"
+        ],
+        "missing": [],
+        "pass": true,
+        "headings": [
+          "원천 미보고 광종 · 2종"
+        ]
+      },
+      "controlsVerified": null,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": null,
+      "mapSymbolVerified": null,
+      "remainingIssue": [],
+      "notApplicable": [
+        "controlsVerified: no selectable control in the primary analysis",
+        "mapHandoffVerified: not a map dataset"
+      ],
+      "evidence": {
+        "finderHeadline": "11,000 t",
+        "title": "광물 생산량",
+        "heading": "",
+        "selectors": [],
+        "url": "?view=data&element=yeongan-saengsanryang&country=VNM&from=explorer&measure=measure-3fda9946012e&year=2025",
+        "cardValue": "11,000 t = text-0:P: USGS가 보고한 광종별 광산 생산량입니다. 2024년은 실적치, 2025년은 USGS 추정치이며 광종마다 단위가 다릅니다. 광산 생산량 · 수록 광종9종 원천 미보고 광종2종 광산 생산량 · 주석 · 2025년11,000 t (Sn 함량) 기준 연도2024–2025년 광종별 광산 생산",
+        "fit": "selectors, heading and KPI state the selection",
+        "analysisFit": {
+          "kind": "level",
+          "expected": [
+            "trend or comparison drawn",
+            "table of the drawn rows",
+            "unit \"t\" stated"
+          ],
+          "found": [
+            "trend or comparison drawn",
+            "table of the drawn rows",
+            "unit \"t\" stated"
+          ],
+          "missing": [],
+          "pass": true,
+          "headings": [
+            "원천 미보고 광종 · 2종"
+          ]
+        },
+        "table": {
+          "status": "match",
+          "table": "광종별 광산 생산량 · 2024년 실적치와 2025년 추정치 · 행 안의 막대는 그 광종의 두 값을 상대 비교한 것입니다.",
+          "cell": "주석 | 11,000 | 11,000 | 0.0% | t (Sn 함량) | 세계 9위 · 3.79%",
+          "key": "indicator+region+time+unit"
+        }
+      },
+      "internalWording": null,
+      "detailTilesAbsent": true
+    },
+    {
+      "elementId": "C-012",
+      "title": "PPP 법제도·조달 체계[PPP 법률 유무, PPP 법률 명칭, PPP 전담 기관, 조달 방식(경쟁입찰/협상/비공개), 계약 유형(BOT/BOO/Concession), VfM 평가 의무 여부, PPP 프로젝트 이력]",
+      "kind": "facts",
+      "cardClicked": true,
+      "homeCardClicked": null,
+      "selectionUrlPreserved": null,
+      "screenLoaded": true,
+      "cardValueVerified": true,
+      "recomputed": {
+        "status": "match",
+        "computed": 120,
+        "expected": 120,
+        "expectedScale": null,
+        "rows": 120,
+        "note": "entity rows"
+      },
+      "detailAnalysisFit": null,
+      "analysisFit": {
+        "kind": "facts",
+        "expected": [
+          "register count stated",
+          "list, table, timeline or directory"
+        ],
+        "found": [
+          "register count stated",
+          "list, table, timeline or directory"
+        ],
+        "missing": [],
+        "pass": true,
+        "headings": [
+          "PPP 법률 · 시행령 · 33건",
+          "PPP 전담 기관 · 3건",
+          "계약 유형 · 7건",
+          "조달 방식(경쟁입찰 / 협상 / 지명) · 9건"
+        ]
+      },
+      "controlsVerified": null,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": true,
+      "mapSymbolVerified": {
+        "selected": true,
+        "panel": {
+          "title": "선택 지역",
+          "rows": [
+            "데이터명: PPP 사업 이력",
+            "항목: PPP 사업 수(PPI 수록)",
+            "값: 5",
+            "단위: 건",
+            "자료연도: 1997–2024",
+            "지역: Lai Châu",
+            "비교·공간단위: Lai Châu 개편 후 성·시의 값 · 개편 전 성·시 단위 독립값이 아님",
+            "자료 설명: Lai Châu은(는) 2025년 개편 후에도 같은 이름의 성·시로 유지됩니다. 값은 개편 후 단위 기준입니다.",
+            "출처: 베트남 국회·정부 공보 / World Bank PPP Legal Framework",
+            "지도 표시: 34개 성·시 값을 소속 63개 경계에 동일 표시 · 성·시 경계 값"
+          ],
+          "coverage": ""
+        },
+        "checks": {
+          "ownLayer": true,
+          "valueOrFact": true,
+          "unitOrMeasure": true,
+          "time": true,
+          "source": true,
+          "spatialMeaning": true
+        },
+        "pass": true,
+        "missing": []
+      },
+      "remainingIssue": [],
+      "notApplicable": [
+        "selectionUrlPreserved: card carries no selection",
+        "detailAnalysisFit: card carries no selection",
+        "controlsVerified: no selectable control in the primary analysis"
+      ],
+      "evidence": {
+        "finderHeadline": "120건",
+        "title": "민관협력·조달 제도",
+        "heading": "",
+        "selectors": [],
+        "url": "?view=data&element=ppp-beobjedo-jodal-cegye-ppp-beobryul-yumu-ppp-beobryul-myeongcing-ppp-jeondam-gigwan-joda&country=VNM&from=explorer",
+        "cardValue": "120건 = text-1:LI: 항목120건",
+        "analysisFit": {
+          "kind": "facts",
+          "expected": [
+            "register count stated",
+            "list, table, timeline or directory"
+          ],
+          "found": [
+            "register count stated",
+            "list, table, timeline or directory"
+          ],
+          "missing": [],
+          "pass": true,
+          "headings": [
+            "PPP 법률 · 시행령 · 33건",
+            "PPP 전담 기관 · 3건",
+            "계약 유형 · 7건",
+            "조달 방식(경쟁입찰 / 협상 / 지명) · 9건"
+          ]
+        },
+        "table": {
+          "status": "match",
+          "table": "상세 데이터 · 목록 120건",
+          "cell": "row count 120",
+          "key": "row-count"
+        },
+        "map": "layer drawn as primary (PPP(민관협력) 사업 이력)"
+      },
+      "internalWording": null,
+      "detailTilesAbsent": true
+    },
+    {
+      "elementId": "E-006",
+      "title": "현지 투자자 네트워크[기관명, 기관 유형(VC/PE/DFI/상업은행/임팩트투자/AC), 투자 분야(기후/에너지/인프라/AgTech), 투자 규모(AUM), 소재국, 도시, 연락처, 기후기술 투자 실적 유무]",
+      "kind": "bars",
+      "cardClicked": true,
+      "homeCardClicked": null,
+      "selectionUrlPreserved": null,
+      "screenLoaded": true,
+      "cardValueVerified": true,
+      "recomputed": {
+        "status": "match",
+        "computed": 15,
+        "expected": 15,
+        "expectedScale": null,
+        "rows": 15,
+        "note": "entity rows"
+      },
+      "detailAnalysisFit": null,
+      "analysisFit": {
+        "kind": "bars",
+        "expected": [
+          "compared categories named (6/6)",
+          "comparison drawn or tabled"
+        ],
+        "found": [
+          "compared categories named (6/6)",
+          "comparison drawn or tabled"
+        ],
+        "missing": [],
+        "pass": true,
+        "headings": [
+          "베트남 소재 기관 · 8곳 · 도시 단위",
+          "해외 소재(베트남 투자 실적) · 7곳"
+        ]
+      },
+      "controlsVerified": null,
+      "tableValuesVerified": true,
+      "mapHandoffVerified": true,
+      "mapSymbolVerified": {
+        "selected": true,
+        "panel": {
+          "title": "선택 기관",
+          "rows": [
+            "데이터명: 현지 투자자 네트워크",
+            "투자 분야: 지속가능농업·순환경제·폐기물·신에너지",
+            "베트남 내 거점 도시: Ho Chi Minh City",
+            "펀드·계열: Green Transition Fund",
+            "본부 국가: VNM",
+            "자료연도: 2026",
+            "출처: 각 운용사·투자사 공식 웹사이트(자료별 상이 —참조)",
+            "지도 표시: 거점 점(정밀도 표시) · 위치 좌표"
+          ],
+          "coverage": ""
+        },
+        "checks": {
+          "ownLayer": true,
+          "valueOrFact": true,
+          "unitOrMeasure": true,
+          "time": true,
+          "source": true,
+          "spatialMeaning": true
+        },
+        "pass": true,
+        "missing": []
+      },
+      "remainingIssue": [],
+      "notApplicable": [
+        "selectionUrlPreserved: card carries no selection",
+        "detailAnalysisFit: card carries no selection",
+        "controlsVerified: no selectable control in the primary analysis"
+      ],
+      "evidence": {
+        "finderHeadline": "15곳",
+        "title": "현지 투자자 네트워크",
+        "heading": "",
+        "selectors": [],
+        "url": "?view=data&element=hyeonji-tujaja-neteuweokeu-gigwanmyeong-gigwan-yuhyeong-vc-pe-dfi-sangeobeunhaeng-impaegte&country=VNM&from=explorer",
+        "cardValue": "15곳 = text-0:P: 기관 수 15곳 가운데 베트남에 사무소를 둔 8곳은 도시 단위로 지도에 표시하고, 본부만 확인되는 7곳은 베트남 투자 실적이 있는 해외 소재 기관으로 따로 둡니다. 기관을 누르면 카드가 열립니다. 기관 수15곳 베트남 소재 · 지도 표시8곳 해외 소재(베트남 투자 실적)7곳 베트남 소재",
+        "analysisFit": {
+          "kind": "bars",
+          "expected": [
+            "compared categories named (6/6)",
+            "comparison drawn or tabled"
+          ],
+          "found": [
+            "compared categories named (6/6)",
+            "comparison drawn or tabled"
+          ],
+          "missing": [],
+          "pass": true,
+          "headings": [
+            "베트남 소재 기관 · 8곳 · 도시 단위",
+            "해외 소재(베트남 투자 실적) · 7곳"
+          ]
+        },
+        "table": {
+          "status": "match",
+          "table": "상세 데이터 · 목록 15건",
+          "cell": "row count 15",
+          "key": "row-count"
+        },
+        "map": "layer drawn as primary (현지 투자자 네트워크)"
+      },
+      "internalWording": null,
+      "detailTilesAbsent": true
+    }
+  ]
+}

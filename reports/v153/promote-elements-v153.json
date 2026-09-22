@@ -1,0 +1,213 @@
+{
+  "schema": "v153-promote-elements-1",
+  "from": "C:\\Users\\user\\Documents\\nigt-wt-d0\\.staging\\d0-run2\\public\\data\\vietnam\\v2",
+  "ids": [
+    "A-023",
+    "B-046",
+    "B-047",
+    "E-006"
+  ],
+  "dryRun": false,
+  "catalog": {
+    "violations": [],
+    "missing": [],
+    "topLevel": [],
+    "orderMatches": true,
+    "changedElements": 4
+  },
+  "actions": [
+    {
+      "action": "copy",
+      "path": "downloads/a-023.json"
+    },
+    {
+      "action": "copy",
+      "path": "downloads/a-023.csv"
+    },
+    {
+      "action": "copy",
+      "path": "semantic/elements/a-023.json"
+    },
+    {
+      "action": "skip-missing",
+      "path": "interpretation/elements/a-023.json"
+    },
+    {
+      "action": "copy",
+      "path": "downloads/b-046.json"
+    },
+    {
+      "action": "copy",
+      "path": "downloads/b-046.csv"
+    },
+    {
+      "action": "unchanged",
+      "path": "semantic/elements/b-046.json"
+    },
+    {
+      "action": "skip-missing",
+      "path": "interpretation/elements/b-046.json"
+    },
+    {
+      "action": "copy",
+      "path": "downloads/b-047.json"
+    },
+    {
+      "action": "copy",
+      "path": "downloads/b-047.csv"
+    },
+    {
+      "action": "unchanged",
+      "path": "semantic/elements/b-047.json"
+    },
+    {
+      "action": "skip-missing",
+      "path": "interpretation/elements/b-047.json"
+    },
+    {
+      "action": "copy",
+      "path": "downloads/e-006.json"
+    },
+    {
+      "action": "copy",
+      "path": "downloads/e-006.csv"
+    },
+    {
+      "action": "unchanged",
+      "path": "semantic/elements/e-006.json"
+    },
+    {
+      "action": "skip-missing",
+      "path": "interpretation/elements/e-006.json"
+    },
+    {
+      "action": "copy",
+      "path": "packs/bundle-index-v124.json"
+    },
+    {
+      "action": "copy",
+      "path": "packs/search-index-v124-9ae29c78.json"
+    },
+    {
+      "action": "unchanged",
+      "path": "packs/source-registry-v124-68d4d85c.json"
+    },
+    {
+      "action": "unchanged",
+      "path": "packs/vnm-v124-pack-001-52f51a94.json"
+    },
+    {
+      "action": "unchanged",
+      "path": "packs/vnm-v124-pack-002-63edae5d.json"
+    },
+    {
+      "action": "copy",
+      "path": "packs/vnm-v124-pack-003-050ae3ff.json"
+    },
+    {
+      "action": "unchanged",
+      "path": "packs/vnm-v124-pack-004-abaf6f1c.json"
+    },
+    {
+      "action": "unchanged",
+      "path": "packs/vnm-v124-pack-005-e25ddb27.json"
+    },
+    {
+      "action": "unchanged",
+      "path": "packs/vnm-v124-pack-006-7def617e.json"
+    },
+    {
+      "action": "unchanged",
+      "path": "packs/vnm-v124-pack-007-6a86529c.json"
+    },
+    {
+      "action": "unchanged",
+      "path": "packs/vnm-v124-pack-008-f92e40ed.json"
+    },
+    {
+      "action": "unchanged",
+      "path": "packs/vnm-v124-pack-009-63eaefe8.json"
+    },
+    {
+      "action": "copy",
+      "path": "packs/vnm-v124-pack-010-a5ede0eb.json"
+    },
+    {
+      "action": "unchanged",
+      "path": "packs/vnm-v124-pack-011-cbf85fd5.json"
+    },
+    {
+      "action": "unchanged",
+      "path": "packs/vnm-v124-pack-012-ce316f4f.json"
+    },
+    {
+      "action": "unchanged",
+      "path": "packs/vnm-v124-pack-013-f9be930e.json"
+    },
+    {
+      "action": "unchanged",
+      "path": "packs/vnm-v124-pack-014-2cc7b022.json"
+    },
+    {
+      "action": "unchanged",
+      "path": "packs/vnm-v124-pack-015-9f9abc7e.json"
+    },
+    {
+      "action": "unchanged",
+      "path": "packs/vnm-v124-pack-016-d122b22a.json"
+    },
+    {
+      "action": "unchanged",
+      "path": "packs/vnm-v124-pack-017-5ad1d02b.json"
+    },
+    {
+      "action": "copy",
+      "path": "packs/vnm-v124-pack-018-fb23ea9f.json"
+    },
+    {
+      "action": "unchanged",
+      "path": "packs/vnm-v124-pack-019-0bca8c85.json"
+    },
+    {
+      "action": "remove-stale",
+      "path": "packs/search-index-v124-7504f021.json"
+    },
+    {
+      "action": "remove-stale",
+      "path": "packs/vnm-v124-pack-003-98a48014.json"
+    },
+    {
+      "action": "remove-stale",
+      "path": "packs/vnm-v124-pack-010-182321ff.json"
+    },
+    {
+      "action": "remove-stale",
+      "path": "packs/vnm-v124-pack-018-14c8d22f.json"
+    },
+    {
+      "action": "copy",
+      "path": "downloads/delivery-manifest.json"
+    },
+    {
+      "action": "copy",
+      "path": "manifest.json"
+    },
+    {
+      "action": "copy",
+      "path": "semantic/element-visualization-contracts-v125.json"
+    },
+    {
+      "action": "copy",
+      "path": "semantic/indicator-semantics-v125.json"
+    },
+    {
+      "action": "unchanged",
+      "path": "semantic/semantic-integrity-v125.json"
+    },
+    {
+      "action": "catalog-copy",
+      "path": "catalog.json",
+      "changedElements": 4
+    }
+  ]
+}

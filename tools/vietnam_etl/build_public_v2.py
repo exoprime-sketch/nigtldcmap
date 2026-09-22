@@ -41,6 +41,7 @@ from .normalization import (
     nfc_text,
     strip_tool_truncation_marker,
 )
+from .enrich_v153 import EnrichmentContextV153
 from .source_zip import analyze_source_dir, analyze_source_zip
 from tools.vietnam_spatial.build_spatial_v124 import build_spatial_assets
 from tools.vietnam_spatial.spatial_semantics_v130 import (
@@ -212,12 +213,26 @@ def _load_v1_search(repo: pathlib.Path) -> dict[str, dict[str, Any]]:
         r'"([A-E]-\d{3})"\s*:\s*(?:\r?\n\s*)?"([^"]+)"', slug_text
     )
     slug_by_id = dict(slug_pairs)
+    # V144 renamed A-002's slug (CPIA -> WGI) and kept the old one in the
+    # legacy map; the V1 search index still files the element under the old
+    # slug, so a legacy slug resolves the element too. The current slug, when
+    # the V1 index knows it, still wins.
+    # The legacy map is written as Map entries: [ "old-slug", "A-002" ].
+    legacy_pairs = re.findall(
+        r'\[\s*"([^"]+)",\s*"([A-E]-\d{3})",?\s*\]', slug_text
+    )
+    legacy_slug_by_id: dict[str, str] = {}
+    for slug, element_id in legacy_pairs:
+        legacy_slug_by_id.setdefault(element_id, slug)
     by_slug = {row["publicSlug"]: row for row in rows}
     result = {
         element_id: deepcopy(by_slug[slug])
         for element_id, slug in slug_by_id.items()
         if slug in by_slug
     }
+    for element_id, slug in legacy_slug_by_id.items():
+        if element_id not in result and slug in by_slug:
+            result[element_id] = deepcopy(by_slug[slug])
     if len(result) != 152:
         raise ValueError(
             f"V1 search index/slug registry resolved {len(result)} elements, expected 152"
@@ -285,6 +300,45 @@ def _source_provenance(
         "redistributionAllowed": indicator.get("redistributionAllowed"),
         "downloadAllowed": indicator.get("downloadAllowed"),
     }
+
+
+TECHNOLOGY_COUNT_V153 = 38
+_TECHNOLOGY_CODE_PATTERN_V153 = re.compile(r"^(?:ctis[-_ ]?)?0*(\d{1,2})$", re.IGNORECASE)
+
+
+def normalize_technology_id_v153(value: Any) -> str | None:
+    """"7" | "07" | "CTIS-07" | "ctis-7" -> "07"; a value that is not one of the
+    38 CTIS technologies keeps its text (e.g. "확인필요"); blanks -> None."""
+
+    text = str(value or "").strip()
+    if not text:
+        return None
+    match = _TECHNOLOGY_CODE_PATTERN_V153.match(text)
+    if match:
+        number = int(match.group(1))
+        if 1 <= number <= TECHNOLOGY_COUNT_V153:
+            return f"{number:02d}"
+        return text
+    return text
+
+
+def normalize_technology_ids_v153(values: Any) -> list[str]:
+    """Distinct normalized technology keys, codes first in numeric order."""
+
+    if isinstance(values, str):
+        values = re.split(r"[\s,;|]+", values.strip())
+    elif values is None:
+        values = []
+    elif not isinstance(values, (list, tuple, set)):
+        values = [values]
+    seen: dict[str, None] = {}
+    for item in values:
+        key = normalize_technology_id_v153(item)
+        if key:
+            seen.setdefault(key, None)
+    codes = sorted(key for key in seen if re.fullmatch(r"\d{2}", key))
+    others = sorted(key for key in seen if not re.fullmatch(r"\d{2}", key))
+    return codes + others
 
 
 def _number_or_value(value: Any) -> Any:
@@ -1450,6 +1504,9 @@ def _download_csv(
                 **_temporal_columns(row),
                 "value": _csv_safe(row.get("value")),
                 "unit": row.get("unit"),
+                # V153: an observation that names its subject (the mineral on
+                # B-046/B-047) carries it in the same column entities use.
+                "name": _csv_safe(row.get("name")),
                 "missing_reason_code": row.get("missingReasonCode"),
                 "note": _csv_safe(row.get("note")),
                 "source_org": provenance.get("sourceOrg"),
@@ -1653,6 +1710,7 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         )
     workbook_by_id = {row["elementId"]: row for row in analysis["workbooks"]}
     v1_payloads, _ = _load_v1_payloads(repo)
+    enrichment = EnrichmentContextV153(repo)
     v1_manifest = json.loads((v1_root / "manifest.json").read_text(encoding="utf-8"))
     if analysis["totals"]["workbookCount"] != expected_workbooks:
         raise ValueError(
@@ -1958,6 +2016,10 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         if is_authorized:
             for indicator in indicators:
                 indicator["publicationDecision"] = decision_ref
+        # V153-D0: mineral names on B-046/B-047 observations, the investor's
+        # location class on E-006, GPPD owner/year/source and the province on
+        # A-023 - all restated from sources already in hand.
+        enrichment.apply(element_id, observations, entities, indicators, field_definitions)
         downloadable_observations = [
             row for row in observations if bool(row.get("downloadEligible"))
         ]
@@ -2035,6 +2097,17 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
                 "publicationDecision": decision_ref if is_authorized else None,
             }
         )
+        # V153: one spelling per CTIS technology in what is published. The V1
+        # catalog wrote "7" on most elements and "CTIS-07" on the C-series; the
+        # V1 rows themselves are left as they are.
+        element["technologyIds"] = normalize_technology_ids_v153(
+            element.get("technologyIds")
+        )
+        for indicator in indicators:
+            if "technologyIds" in indicator:
+                indicator["technologyIds"] = normalize_technology_ids_v153(
+                    indicator.get("technologyIds")
+                )
         if download_allowed:
             token = element_id.lower()
             element["downloadAssets"] = [
@@ -2626,6 +2699,7 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         "d018Derivation": d018_derivation_summary,
         "regionDerivation": region_derivation_summary,
         "retainedMissingIndicatorCounts": retained_indicator_counts,
+        "enrichmentV153": enrichment.summary,
         "promotionBlockers": promotion_blockers,
         "promotionBlocked": bool(promotion_blockers),
         "derivationStatus": {

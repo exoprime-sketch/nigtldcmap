@@ -10,6 +10,7 @@
  * document overflow. Written as JSON, CSV and Markdown under reports/v138.
  *
  *   node scripts/v138/screen-review-v138.mjs [--build build] [--port 4332] [--only B-017,B-033]
+ *       [--ids B-017,B-033] [--out reports/v153/screens]
  */
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
@@ -25,8 +26,10 @@ const opt = (name, fallback) => {
 };
 const BUILD = resolve(ROOT, opt("--build", "build"));
 const PORT = Number(opt("--port", "4332"));
-const ONLY = (opt("--only", "") || "").split(",").map((item) => item.trim()).filter(Boolean);
-const OUT = resolve(ROOT, "reports/v138");
+// V153: --ids is the same filter under the name the other QA scripts use, and
+// --out keeps a filtered run from overwriting the full V138 report.
+const ONLY = (opt("--only", opt("--ids", "")) || "").split(",").map((item) => item.trim()).filter(Boolean);
+const OUT = resolve(ROOT, opt("--out", "reports/v138"));
 const SHOTS = resolve(OUT, "screenshots/detail");
 mkdirSync(SHOTS, { recursive: true });
 

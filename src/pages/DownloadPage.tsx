@@ -43,6 +43,7 @@ import {
   technologyLabelV121,
   triggerTextDownloadV121,
 } from "../utils/vietnamActualV121";
+import { matchesTechnologyV153, normalizeTechnologyIdsV153, technologyOptionsV153 } from "../utils/technologyIdV153";
 import "../styles/country-data-platform-v122.css";
 
 interface DownloadPageProps {
@@ -224,8 +225,9 @@ export default function DownloadPage({
     () => unique(catalog.flatMap((item) => item.sourceOrganizations)),
     [catalog]
   );
+  // V153: one option per technology whatever spelling the elements carry.
   const technologies = useMemo(
-    () => unique(catalog.flatMap((item) => item.technologyIds)),
+    () => technologyOptionsV153(catalog),
     [catalog]
   );
   const years = useMemo(
@@ -248,10 +250,7 @@ export default function DownloadPage({
       ) {
         return false;
       }
-      if (
-        technologyId !== "all" &&
-        !item.technologyIds.includes(technologyId)
-      ) {
+      if (!matchesTechnologyV153(item.technologyIds, technologyId)) {
         return false;
       }
       if (!normalized) return true;
@@ -264,7 +263,7 @@ export default function DownloadPage({
           item.sectionLabel,
           item.groupLabel,
           ...item.sourceOrganizations,
-          ...item.technologyIds.map(technologyLabelV121),
+          ...normalizeTechnologyIdsV153(item.technologyIds).map(technologyLabelV121),
         ].join(" ")
       ).includes(normalized);
     });
@@ -350,10 +349,7 @@ export default function DownloadPage({
             ) {
               return false;
             }
-            if (
-              technologyId !== "all" &&
-              !meta.technologyIds.includes(technologyId)
-            ) {
+            if (!matchesTechnologyV153(meta.technologyIds, technologyId)) {
               return false;
             }
             return true;
@@ -382,7 +378,7 @@ export default function DownloadPage({
             }
             if (
               technologyId !== "all" &&
-              (!meta || !meta.technologyIds.includes(technologyId))
+              (!meta || !matchesTechnologyV153(meta.technologyIds, technologyId))
             ) {
               return false;
             }

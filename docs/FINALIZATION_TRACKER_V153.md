@@ -29,7 +29,7 @@
 | A-020 | 재생에너지 비중 | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
 | A-021 | 전력 접근률 | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
 | A-022 | 정전빈도[SAIDI, SAIFI] | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
-| A-023 | 발전소[위치, 용량] | 국가 기본 정보 | actual-records | cluster/1889 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
+| A-023 | 발전소[위치, 용량] | 국가 기본 정보 | actual-records | cluster/1889 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 진행(D0: 시설 카드·소유/연도/출처/소재지 보강 완료 · 유형별 표준 계약은 P4) | PR-D0 reports/v153/D0_DATA_DEFECTS.md §6 · facility-card-fill-v153.json · screens/A-023-1440.png |
 | A-024 | 전력망[위치, 미공급 지역] | 국가 기본 정보 | actual-records | line/606 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
 | A-025 | CCS 시설 | 국가 기본 정보 | actual-records | point/3 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
 | A-026 | 건물 풋프린트(Footprint) | 국가 기본 정보 | actual-records | panel-only/0 | 데이터 부재 | Open Buildings/MS 풋프린트 성·시 집계 수집(결정) | PE | 집중검토 |  |
@@ -41,7 +41,7 @@
 | A-032 | 중간재 교역 규모 | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
 | A-033 | 해운 연결성(LSCI) | 국가 기본 정보 | actual-records | country-aggregate/0 | 시각화 미완 | LSCI 추이+항만 연결 비교 | P4 | 집중검토 |  |
 | B-001 | 건기/우기 | 기후 환경 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
-| B-002 | 기후대(Climate zone) | 기후 환경 | actual-records | panel-only/0 | 한글 먼저, 영문 괄호 | 라벨 순서 변경+기후대 구성 지도/표 | P4 | 집중검토 |  |
+| B-002 | 기후대(Climate zone) | 기후 환경 | actual-records | panel-only/0 | 한글 먼저, 영문 괄호 | 라벨 순서 변경+기후대 구성 지도/표 | P4 | 완료(D0) | PR-D0 reports/v153/D0_DATA_DEFECTS.md §5 · screens/B-002-1440.png |
 | B-003 | 연평균 기온; 연평균 강수 | 기후 환경 | actual-records | choropleth/63 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
 | B-004 | CMIP6 기반 과거/미래 기후[기온(tas), 최고기온(tasmax), 최저기온(tasmin), 강수(pr | 기후 환경 | actual-records | choropleth/63 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
 | B-005 | 가뭄[연속 건조일수(CDD), 표준강수지수(SPEI12), 토양수분] | 기후 환경 | actual-records | choropleth/63 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
@@ -85,8 +85,8 @@
 | B-043 | 화석연료 자원량[석탄, 석유, LNG 등] | 기후 환경 | actual-records | country-aggregate/0 | 시각화 미완 | 자원별 매장량 막대, 단위 통일(원단위+toe 병기) | P4 | 집중검토 |  |
 | B-044 | 광물명[리튬, 코발트, 니켈, 망간, 흑연, 주석, 납, 아연, 마그네슘화합물, 텅스텐, 바나듐, 크롬, 나 | 기후 환경 | actual-records | country-aggregate/0 | 시각화 미완 | 광물×상태(매장/생산/탐사) 매트릭스, B-046/047 연계 | P4 | 집중검토 |  |
 | B-045 | 글로벌 순위 | 기후 환경 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
-| B-046 | 매장량[확인, 추정] | 기후 환경 | actual-records | country-aggregate/0 | 1-3-18-24?, 전면 재검토 | 광물명 누락 재투영→광물별 매장량 막대+세계 순위 | P4-D0 | 집중검토 |  |
-| B-047 | 연간 생산량 | 기후 환경 | actual-records | country-aggregate/0 | 1-3-18-24?, 전면 재검토 | 광물명 누락 재투영(원천 워크북)→광물별 막대+추이 | P4-D0 | 집중검토 |  |
+| B-046 | 매장량[확인, 추정] | 기후 환경 | actual-records | country-aggregate/0 | 1-3-18-24?, 전면 재검토 | 광물명 누락 재투영→광물별 매장량 막대+세계 순위 | P4-D0 | 완료(D0: 광물명 재투영·광물별 화면) | PR-D0 reports/v153/D0_DATA_DEFECTS.md §1 · screens/B-046-1440.png |
+| B-047 | 연간 생산량 | 기후 환경 | actual-records | country-aggregate/0 | 1-3-18-24?, 전면 재검토 | 광물명 누락 재투영(원천 워크북)→광물별 막대+추이 | P4-D0 | 완료(D0: 광물명 재투영·연도별 화면) | PR-D0 reports/v153/D0_DATA_DEFECTS.md §1 · screens/B-047-1440.png |
 | B-048 | 주요 광산 위치 | 기후 환경 | actual-records | point/2 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
 | C-001 | NDC[제출년도, 버전, BAU 배출 전망, 감축 목표(무조건부/조건부), 부문별 감축 전략·수단 목록, N | 정책·제도 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
 | C-002 | BTR[제출년도, 문서 링크, GHG 총배출량(incl./excl. LULUCF), 부문별 NDC 감축 달성 | 정책·제도 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
@@ -99,7 +99,7 @@
 | C-009 | 기후 법제도[법령명, 유형(법률/시행령/규제/인센티브), 대상 분야(감축/적응/에너지/산업), 시행 연도,  | 정책·제도 | actual-records | choropleth/4 | 법/제도 설명 추가 | 법령별 설명(공식 개요·출처 링크) 작성·표시 | P4-D3 | 완료(D3) | reports/v153/D3_POLICY_DESCRIPTIONS.md · policyDescriptionsV153.json(57건 작성·미확인 0) · d3-policy-descriptions-qa.json · PR #22 — 문서 19건 카드(타임라인 20항목) · 320px 넘침 39px는 P4-D1 레이아웃에서 처리 |
 | C-010 | 기타 환경 법제도[법령명, 유형(EIA법/대기질/수질/폐기물/생물다양성), 시행 연도, 상태, 주관 부처,  | 정책·제도 | actual-records | choropleth/4 | 레이아웃 좋음, 법/제도별 설명 추가 | 법령별 설명(공식 개요·출처 링크) 작성·표시 | P4-D3 | 완료(D3) | reports/v153/D3_POLICY_DESCRIPTIONS.md · policyDescriptionsV153.json(57건 작성·미확인 0) · d3-policy-descriptions-qa.json · PR #22 — 문서 20건 카드(타임라인 19항목) · 320px 넘침 39px는 P4-D1 레이아웃에서 처리 |
 | C-011 | 치안·안전 정보[경보 등급(여행유의/자제/철수권고/여행금지), 현지 치안 상황, 범죄 통계] | 정책·제도 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
-| C-012 | PPP 법제도·조달 체계[PPP 법률 유무, PPP 법률 명칭, PPP 전담 기관, 조달 방식(경쟁입찰/협상 | 정책·제도 | actual-records | region-choropleth/56 | 한글화 | 한글화(원문 병기)+34개 지역 지도+지역 클릭 개조식 패널 | P4 | 집중검토 |  |
+| C-012 | PPP 법제도·조달 체계[PPP 법률 유무, PPP 법률 명칭, PPP 전담 기관, 조달 방식(경쟁입찰/협상 | 정책·제도 | actual-records | region-choropleth/56 | 한글화 | 한글화(원문 병기)+34개 지역 지도+지역 클릭 개조식 패널 | P4 | 진행(D0: 한글화·개조식 완료 · 34개 지역 지도는 P4) | PR-D0 reports/v153/D0_DATA_DEFECTS.md §4 · screens/C-012-1440.png |
 | C-013 | 외국인 투자 규정[외국인 지분 제한, 투자 인센티브(세제 혜택/경제특구), 투자 보호 협정(BIT), 수익  | 정책·제도 | actual-records | region-choropleth/14 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
 | C-014 | 인허가 프로세스[환경영향평가(EIA) 절차, 건축 허가 절차, 건축 허가 소요 기간, 건축 허가 비용, 전력 | 정책·제도 | actual-records | country-aggregate/0 | 시각화 미완 | 단계 흐름도+소요기간 표 | P4 | 집중검토 |  |
 | C-015 | 상기 문서들의 원본 링크 | 정책·제도 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
@@ -144,7 +144,7 @@
 | E-003 | GCF NDA(국가지정기관)[국가, 기관명, 소속 부처, 담당자명, 직함, 이메일, 전화번호] | 협력·실행 기반 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
 | E-004 | 국제기구 현지사무소 담당자[기관명(UNDP/UNEP/UNIDO/FAO/WB/ADB/GIZ/JICA/KOICA | 협력·실행 기반 | actual-records | point/17 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
 | E-005 | 대학·연구기관·NGO[기관명, 기관 유형(대학/연구소/싱크탱크/NGO), 소재국, 도시, 전문 분야(기후/에 | 협력·실행 기반 | actual-records | point/20 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
-| E-006 | 현지 투자자 네트워크[기관명, 기관 유형(VC/PE/DFI/상업은행/임팩트투자/AC), 투자 분야(기후/에너 | 협력·실행 기반 | actual-records | point/8 | 지도 추가, 현지가 아닌 기관 포함 | 베트남 소재 기관만 지도(도시), 해외 본부 6곳은 별도 목록 | P4 | 집중검토 |  |
+| E-006 | 현지 투자자 네트워크[기관명, 기관 유형(VC/PE/DFI/상업은행/임팩트투자/AC), 투자 분야(기후/에너 | 협력·실행 기반 | actual-records | point/8 | 지도 추가, 현지가 아닌 기관 포함 | 베트남 소재 기관만 지도(도시), 해외 본부 6곳은 별도 목록 | P4 | 완료(D0: 소재 8/7 분리 · 지도 피처 8 유지) | PR-D0 reports/v153/D0_DATA_DEFECTS.md §2 · screens/E-006-1440.png |
 | E-007 | 온실가스 산정 MRV 체계[GHG 인벤토리 작성 역량(Tier 1/2/3), 국가 레지스트리 유무, 제3자  | 협력·실행 기반 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
 | E-008 | 논문·특허[논문·특허명, 기후기술 분야, 특허 출원인 국적, 특허 출원 연구기관·대학명, 논문 국제 공저 비 | 협력·실행 기반 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
 | E-009 | STEM 졸업자 수; 연구자 수 | 협력·실행 기반 | partial-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
