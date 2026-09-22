@@ -140,8 +140,10 @@ function cardSnapshotExpression(elementId) {
       // series, the comparison and a table - not as record cards.
       // V148: A-023 reads its plants as a searchable list under the fuel
       // distribution and A-024 its lines as voltage/plan tables - the records
-      // are shown, but not as cards.
-      distributionSummary: Boolean(document.querySelector('[data-testid="region-scenario-summary-v137"], [data-testid="sea-level-station-analysis-v138"], [data-testid="province-series-analysis-v140"], [data-testid="cooperation-checklist-v141"], [data-testid="energy-outlook-plan-v141"], [data-testid="power-plant-list-v148"], [data-testid="transmission-voltage-table-v140"]')) || specializedTable?.valid === true,
+      // are shown, but not as cards. V153: E-006 lists its investors in two
+      // located groups (Viet Nam office / abroad) with the facility card on
+      // selection - records shown as a list, not a card grid.
+      distributionSummary: Boolean(document.querySelector('[data-testid="region-scenario-summary-v137"], [data-testid="sea-level-station-analysis-v138"], [data-testid="province-series-analysis-v140"], [data-testid="cooperation-checklist-v141"], [data-testid="energy-outlook-plan-v141"], [data-testid="power-plant-list-v148"], [data-testid="transmission-voltage-table-v140"], [data-testid="investor-network-v153"]')) || specializedTable?.valid === true,
       cardCount: cards.length,
       contextTitleCount: rows.filter((row) => ['source-identifier', 'factual-composite', 'record-type'].includes(row.strategy)).length,
       invalid: rows.filter((row) => !row.title || row.title === '명칭 미기재' || row.title === '자료 없음' || row.factCount > 6 || row.badgeCount > 4 || row.longParagraphs.length > 0 || row.pipeText || row.textLength > 760 || row.titleClamp !== '2'),
