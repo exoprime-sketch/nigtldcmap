@@ -177,3 +177,10 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+.pec131-card,
+.pec131-card__heading {
+  grid-template-columns: minmax(0, 1fr);
+}
+.pec131-card__heading > * {
+  min-width: 0;
+}
