@@ -1,0 +1,138 @@
+{
+  "schema": "v155-asset-report-1",
+  "asset": "vnm-roads-rail.geojson",
+  "generatedAt": "2026-09-22T03:30:28Z",
+  "source": {
+    "path": "_source\\vietnam\\v155\\osm\\vietnam-260921.osm.pbf",
+    "bytes": 329083173,
+    "md5": "8e8faf2eff113b67f28059c3b4a5c677",
+    "sha256": "24611cc9e678432b3ec2e1928159a5305b985583272120e09a1814dd9266d2dc",
+    "extract": "Geofabrik vietnam-260921.osm.pbf",
+    "datedUrl": "https://download.geofabrik.de/asia/vietnam-260921.osm.pbf",
+    "latestUrl": "https://download.geofabrik.de/asia/vietnam-latest.osm.pbf",
+    "pageUrl": "https://download.geofabrik.de/asia/vietnam.html",
+    "lastModified": "2026-09-21T22:41:35Z",
+    "replicationTimestamp": "2026-09-21T20:21:51Z"
+  },
+  "outputs": {
+    "vnm-roads-rail.geojson": {
+      "bytes": 8282434,
+      "gzipBytes": 1748168,
+      "sha256": "04be584f971ec0cc3c372ab6a5acb44619c139dc6896c997e88bc5e27b978e33",
+      "bbox": [
+        102.1531384,
+        8.5753667,
+        109.4536347,
+        23.3640237
+      ]
+    },
+    "vnm-roads-rail-overview.geojson": {
+      "bytes": 5385196,
+      "gzipBytes": 806893,
+      "sha256": "f28a3bfbfab00881514d4cfd6b431117a153d3a6e20188a7c2946333ae7424a6",
+      "bbox": [
+        102.1536506,
+        8.5759714,
+        109.4536347,
+        23.3640237
+      ]
+    }
+  },
+  "validation": {
+    "candidateWays": 50949,
+    "waysWithoutLocations": 0,
+    "waysUnderTwoNodes": 0,
+    "waysKept": 50748,
+    "waysDroppedOutsideCountry": 201,
+    "mergeGroups": 5876,
+    "unmergedUnnamedWays": 2238,
+    "mergedFeatureCount": 3818,
+    "featureCount": 8114,
+    "duplicateIdCount": 0,
+    "invalidGeometryCount": 0,
+    "emptyGeometryCount": 0,
+    "detail": {
+      "vertexCount": 150168,
+      "sourceVertexCount": 1043504,
+      "toleranceDeg": 0.0002,
+      "bytes": 8282434,
+      "gzipBytes": 1748168
+    },
+    "overview": {
+      "vertexCount": 67950,
+      "sourceVertexCount": 1043504,
+      "toleranceDeg": 0.002,
+      "bytes": 5385196,
+      "gzipBytes": 806893
+    },
+    "propertyNullRate": {
+      "name": 0.3017,
+      "ref": 0.4211
+    },
+    "bbox": [
+      102.1531384,
+      8.5753667,
+      109.4536347,
+      23.3640237
+    ],
+    "crs": "EPSG:4326"
+  },
+  "classComparison": [
+    {
+      "class": "고속도로",
+      "sourceTag": "highway=motorway",
+      "osmWayCount": 6915,
+      "publishedFeatureCount": 868,
+      "lengthKm": 6275.8,
+      "existingA027": {
+        "indicatorId": "A-027_roads_fclass_motorway_count",
+        "value": 6508,
+        "unit": "건",
+        "sourceYearLabel": ""
+      },
+      "note": "기존 A-027 지표는 Geofabrik shapefile 세그먼트 건수이며 연장(km)이 없습니다."
+    },
+    {
+      "class": "간선도로",
+      "sourceTag": "highway=trunk",
+      "osmWayCount": 20884,
+      "publishedFeatureCount": 3101,
+      "lengthKm": 22670.9,
+      "existingA027": {
+        "indicatorId": "A-027_roads_fclass_trunk_count",
+        "value": 21032,
+        "unit": "건",
+        "sourceYearLabel": ""
+      },
+      "note": "기존 A-027 지표는 Geofabrik shapefile 세그먼트 건수이며 연장(km)이 없습니다."
+    },
+    {
+      "class": "주요도로",
+      "sourceTag": "highway=primary",
+      "osmWayCount": 20792,
+      "publishedFeatureCount": 3928,
+      "lengthKm": 17384.9,
+      "existingA027": {
+        "indicatorId": "A-027_roads_fclass_primary_count",
+        "value": 20559,
+        "unit": "건",
+        "sourceYearLabel": ""
+      },
+      "note": "기존 A-027 지표는 Geofabrik shapefile 세그먼트 건수이며 연장(km)이 없습니다."
+    },
+    {
+      "class": "철도",
+      "sourceTag": "railway=rail (service 제외)",
+      "osmWayCount": 2157,
+      "publishedFeatureCount": 217,
+      "lengthKm": 2666.5,
+      "existingA027": {
+        "indicatorId": "A-027_railways_fclass_rail_count",
+        "value": 3483,
+        "unit": "건",
+        "sourceYearLabel": ""
+      },
+      "note": "기존 A-027 지표는 Geofabrik shapefile 세그먼트 건수이며 연장(km)이 없습니다. 철도 기존 건수는 service 선로를 포함해 더 큽니다."
+    }
+  ]
+}

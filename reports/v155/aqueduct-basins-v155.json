@@ -1,0 +1,1252 @@
+{
+  "schema": "v155-asset-report-1",
+  "asset": "vnm-aqueduct40-basins.geojson",
+  "generatedAt": "2026-09-22T03:37:36Z",
+  "outputs": {
+    "vnm-aqueduct40-basins.geojson": {
+      "bytes": 5553382,
+      "gzipBytes": 846206,
+      "sha256": "2f8b7b3a772a5a4dd63c14c3fc14bef0346b96607d3ea141f096a3b97f9715e1",
+      "bbox": [
+        102.144855494,
+        8.412766708,
+        109.461698161,
+        23.391793255
+      ]
+    },
+    "vnm-aqueduct40-basins-l6.geojson": {
+      "bytes": 2760550,
+      "gzipBytes": 488765,
+      "sha256": "6d987994c1bde0f2d4d8a445321ad9b13239075eec87f748c0e10efe29cefdaf",
+      "bbox": [
+        102.144855494,
+        8.412766708,
+        109.461698161,
+        23.391793255
+      ]
+    },
+    "spatial/pending-v155/b-017.json": {
+      "bytes": 1889407,
+      "gzipBytes": 34237,
+      "publishedValueCount": 3113
+    },
+    "vendoredSource": {
+      "path": "tools/vietnam_spatial/source/vnm-aqueduct40-baseline-annual-source.geojson.gz",
+      "sha256": "4137f04c86a22f230480e4fae49d119b0270316924d8f64f7707008e8bc6a2e5"
+    }
+  },
+  "validation": {
+    "sourceMode": "vendored-capsule",
+    "sourceFeatureCount": 443,
+    "downloadUnitRowCount": 443,
+    "joinMatchedCount": 443,
+    "joinUnmatchedSourceIds": [],
+    "joinUnmatchedDownloadIds": [],
+    "invalidSourceGeometries": [
+      {
+        "stringId": "441059-VNM.7_1-None",
+        "reason": "Ring Self-intersection[107.179166666908 10.408333333017]"
+      }
+    ],
+    "emptySourceGeometries": [
+      {
+        "stringId": "436707-VNM.23_1-1892",
+        "gadmName1": "Hải Phòng",
+        "areaKm2Source": 161.410374155,
+        "csvAdm34Name": "Hải Phòng"
+      }
+    ],
+    "publishedFeatureCount": 442,
+    "duplicateIdCount": 0,
+    "outsideBboxCount": 0,
+    "adm1NameUnmatched": [],
+    "adm34MismatchRows": [
+      {
+        "stringId": "436707-VNM.49_1-1882",
+        "gadmName1": "Quảng Ninh",
+        "areaKm2": 126.806,
+        "csvAdm34Name": "Quảng Ninh",
+        "crosswalkUnitCode": "VN34-13",
+        "geometricPrimary": {
+          "unitCode": "VN34-HP",
+          "name": "Hải Phòng",
+          "share": 1.0
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-HP",
+            "name": "Hải Phòng",
+            "share": 1.0
+          }
+        ]
+      },
+      {
+        "stringId": "436708-VNM.22_1-1626",
+        "gadmName1": "Hải Dương",
+        "areaKm2": 11.2,
+        "csvAdm34Name": "Hải Phòng",
+        "crosswalkUnitCode": "VN34-HP",
+        "geometricPrimary": {
+          "unitCode": "VN34-56",
+          "name": "Bắc Ninh",
+          "share": 0.985236
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-56",
+            "name": "Bắc Ninh",
+            "share": 0.985236
+          }
+        ]
+      },
+      {
+        "stringId": "436708-VNM.31_1-1882",
+        "gadmName1": "Hưng Yên",
+        "areaKm2": 0.022,
+        "csvAdm34Name": "Hưng Yên",
+        "crosswalkUnitCode": "VN34-66",
+        "geometricPrimary": {
+          "unitCode": "VN34-HN",
+          "name": "Hà Nội",
+          "share": 1.0
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-HN",
+            "name": "Hà Nội",
+            "share": 1.0
+          }
+        ]
+      },
+      {
+        "stringId": "436708-VNM.49_1-1626",
+        "gadmName1": "Quảng Ninh",
+        "areaKm2": 9.313,
+        "csvAdm34Name": "Quảng Ninh",
+        "crosswalkUnitCode": "VN34-13",
+        "geometricPrimary": {
+          "unitCode": "VN34-HP",
+          "name": "Hải Phòng",
+          "share": 0.842943
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-HP",
+            "name": "Hải Phòng",
+            "share": 0.842943
+          },
+          {
+            "unitCode": "VN34-13",
+            "name": "Quảng Ninh",
+            "share": 0.135392
+          }
+        ]
+      },
+      {
+        "stringId": "436708-VNM.56_1-1882",
+        "gadmName1": "Thái Nguyên",
+        "areaKm2": 103.277,
+        "csvAdm34Name": "Thái Nguyên",
+        "crosswalkUnitCode": "VN34-69",
+        "geometricPrimary": {
+          "unitCode": "VN34-68",
+          "name": "Phú Thọ",
+          "share": 0.494423
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-68",
+            "name": "Phú Thọ",
+            "share": 0.494423
+          },
+          {
+            "unitCode": "VN34-HN",
+            "name": "Hà Nội",
+            "share": 0.344857
+          },
+          {
+            "unitCode": "VN34-69",
+            "name": "Thái Nguyên",
+            "share": 0.160719
+          }
+        ]
+      },
+      {
+        "stringId": "436709-VNM.23_1-None",
+        "gadmName1": "Hải Phòng",
+        "areaKm2": 4.812,
+        "csvAdm34Name": "Hải Phòng",
+        "crosswalkUnitCode": "VN34-HP",
+        "geometricPrimary": {
+          "unitCode": "VN34-66",
+          "name": "Hưng Yên",
+          "share": 0.146792
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-66",
+            "name": "Hưng Yên",
+            "share": 0.146792
+          }
+        ]
+      },
+      {
+        "stringId": "436709-VNM.55_1-None",
+        "gadmName1": "Thái Bình",
+        "areaKm2": 42.999,
+        "csvAdm34Name": "Hưng Yên",
+        "crosswalkUnitCode": "VN34-66",
+        "geometricPrimary": {
+          "unitCode": "VN34-18",
+          "name": "Ninh Bình",
+          "share": 0.46243
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-18",
+            "name": "Ninh Bình",
+            "share": 0.46243
+          },
+          {
+            "unitCode": "VN34-66",
+            "name": "Hưng Yên",
+            "share": 0.359807
+          }
+        ]
+      },
+      {
+        "stringId": "436709-VNM.5_1-1882",
+        "gadmName1": "Bắc Ninh",
+        "areaKm2": 55.014,
+        "csvAdm34Name": "Bắc Ninh",
+        "crosswalkUnitCode": "VN34-56",
+        "geometricPrimary": {
+          "unitCode": "VN34-66",
+          "name": "Hưng Yên",
+          "share": 0.606957
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-66",
+            "name": "Hưng Yên",
+            "share": 0.606957
+          },
+          {
+            "unitCode": "VN34-56",
+            "name": "Bắc Ninh",
+            "share": 0.360015
+          }
+        ]
+      },
+      {
+        "stringId": "436810-VNM.31_1-1882",
+        "gadmName1": "Hưng Yên",
+        "areaKm2": 337.502,
+        "csvAdm34Name": "Hưng Yên",
+        "crosswalkUnitCode": "VN34-66",
+        "geometricPrimary": {
+          "unitCode": "VN34-HN",
+          "name": "Hà Nội",
+          "share": 0.638616
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-HN",
+            "name": "Hà Nội",
+            "share": 0.638616
+          },
+          {
+            "unitCode": "VN34-66",
+            "name": "Hưng Yên",
+            "share": 0.258189
+          },
+          {
+            "unitCode": "VN34-18",
+            "name": "Ninh Bình",
+            "share": 0.103195
+          }
+        ]
+      },
+      {
+        "stringId": "436810-VNM.44_1-1882",
+        "gadmName1": "Phú Thọ",
+        "areaKm2": 2.772,
+        "csvAdm34Name": "Phú Thọ",
+        "crosswalkUnitCode": "VN34-68",
+        "geometricPrimary": {
+          "unitCode": "VN34-HN",
+          "name": "Hà Nội",
+          "share": 1.0
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-HN",
+            "name": "Hà Nội",
+            "share": 1.0
+          }
+        ]
+      },
+      {
+        "stringId": "436810-VNM.56_1-1626",
+        "gadmName1": "Thái Nguyên",
+        "areaKm2": 5.47,
+        "csvAdm34Name": "Thái Nguyên",
+        "crosswalkUnitCode": "VN34-69",
+        "geometricPrimary": {
+          "unitCode": "VN34-07",
+          "name": "Tuyên Quang",
+          "share": 0.850401
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-07",
+            "name": "Tuyên Quang",
+            "share": 0.850401
+          },
+          {
+            "unitCode": "VN34-68",
+            "name": "Phú Thọ",
+            "share": 0.149599
+          }
+        ]
+      },
+      {
+        "stringId": "436822-VNM.60_1-1626",
+        "gadmName1": "Tuyên Quang",
+        "areaKm2": 98.802,
+        "csvAdm34Name": "Tuyên Quang",
+        "crosswalkUnitCode": "VN34-07",
+        "geometricPrimary": {
+          "unitCode": "VN34-02",
+          "name": "Lào Cai",
+          "share": 0.495924
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-02",
+            "name": "Lào Cai",
+            "share": 0.495924
+          },
+          {
+            "unitCode": "VN34-07",
+            "name": "Tuyên Quang",
+            "share": 0.306317
+          },
+          {
+            "unitCode": "VN34-68",
+            "name": "Phú Thọ",
+            "share": 0.197758
+          }
+        ]
+      },
+      {
+        "stringId": "436830-VNM.27_1-1882",
+        "gadmName1": "Hà Nội",
+        "areaKm2": 33.259,
+        "csvAdm34Name": "Hà Nội",
+        "crosswalkUnitCode": "VN34-HN",
+        "geometricPrimary": {
+          "unitCode": "VN34-68",
+          "name": "Phú Thọ",
+          "share": 0.759586
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-68",
+            "name": "Phú Thọ",
+            "share": 0.759586
+          },
+          {
+            "unitCode": "VN34-HN",
+            "name": "Hà Nội",
+            "share": 0.240413
+          }
+        ]
+      },
+      {
+        "stringId": "436841-VNM.30_1-1862",
+        "gadmName1": "Hoà Bình",
+        "areaKm2": 0.551,
+        "csvAdm34Name": "Phú Thọ",
+        "crosswalkUnitCode": "VN34-68",
+        "geometricPrimary": {
+          "unitCode": "VN34-05",
+          "name": "Sơn La",
+          "share": 1.0
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-05",
+            "name": "Sơn La",
+            "share": 1.0
+          }
+        ]
+      },
+      {
+        "stringId": "436850-VNM.27_1-1626",
+        "gadmName1": "Hà Nội",
+        "areaKm2": 0.771,
+        "csvAdm34Name": "Hà Nội",
+        "crosswalkUnitCode": "VN34-HN",
+        "geometricPrimary": {
+          "unitCode": "VN34-68",
+          "name": "Phú Thọ",
+          "share": 1.0
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-68",
+            "name": "Phú Thọ",
+            "share": 1.0
+          }
+        ]
+      },
+      {
+        "stringId": "436850-VNM.27_1-1882",
+        "gadmName1": "Hà Nội",
+        "areaKm2": 145.995,
+        "csvAdm34Name": "Hà Nội",
+        "crosswalkUnitCode": "VN34-HN",
+        "geometricPrimary": {
+          "unitCode": "VN34-68",
+          "name": "Phú Thọ",
+          "share": 0.932476
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-68",
+            "name": "Phú Thọ",
+            "share": 0.932476
+          },
+          {
+            "unitCode": "VN34-HN",
+            "name": "Hà Nội",
+            "share": 0.067524
+          }
+        ]
+      },
+      {
+        "stringId": "436850-VNM.30_1-1862",
+        "gadmName1": "Hoà Bình",
+        "areaKm2": 64.949,
+        "csvAdm34Name": "Phú Thọ",
+        "crosswalkUnitCode": "VN34-68",
+        "geometricPrimary": {
+          "unitCode": "VN34-05",
+          "name": "Sơn La",
+          "share": 0.877048
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-05",
+            "name": "Sơn La",
+            "share": 0.877048
+          },
+          {
+            "unitCode": "VN34-68",
+            "name": "Phú Thọ",
+            "share": 0.122983
+          }
+        ]
+      },
+      {
+        "stringId": "436850-VNM.38_1-1626",
+        "gadmName1": "Lào Cai",
+        "areaKm2": 8.11,
+        "csvAdm34Name": "Lào Cai",
+        "crosswalkUnitCode": "VN34-02",
+        "geometricPrimary": {
+          "unitCode": "VN34-01",
+          "name": "Lai Châu",
+          "share": 0.609928
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-01",
+            "name": "Lai Châu",
+            "share": 0.609928
+          },
+          {
+            "unitCode": "VN34-02",
+            "name": "Lào Cai",
+            "share": 0.390085
+          }
+        ]
+      },
+      {
+        "stringId": "436850-VNM.44_1-1862",
+        "gadmName1": "Phú Thọ",
+        "areaKm2": 6.896,
+        "csvAdm34Name": "Phú Thọ",
+        "crosswalkUnitCode": "VN34-68",
+        "geometricPrimary": {
+          "unitCode": "VN34-05",
+          "name": "Sơn La",
+          "share": 0.996553
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-05",
+            "name": "Sơn La",
+            "share": 0.996553
+          }
+        ]
+      },
+      {
+        "stringId": "436860-VNM.20_1-1626",
+        "gadmName1": "Điện Biên",
+        "areaKm2": 0.046,
+        "csvAdm34Name": "Điện Biên",
+        "crosswalkUnitCode": "VN34-71",
+        "geometricPrimary": {
+          "unitCode": "VN34-01",
+          "name": "Lai Châu",
+          "share": 1.0
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-01",
+            "name": "Lai Châu",
+            "share": 1.0
+          }
+        ]
+      },
+      {
+        "stringId": "436900-VNM.27_1-1626",
+        "gadmName1": "Hà Nội",
+        "areaKm2": 29.834,
+        "csvAdm34Name": "Hà Nội",
+        "crosswalkUnitCode": "VN34-HN",
+        "geometricPrimary": {
+          "unitCode": "VN34-68",
+          "name": "Phú Thọ",
+          "share": 0.904565
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-68",
+            "name": "Phú Thọ",
+            "share": 0.904565
+          },
+          {
+            "unitCode": "VN34-HN",
+            "name": "Hà Nội",
+            "share": 0.095433
+          }
+        ]
+      },
+      {
+        "stringId": "436900-VNM.55_1-1882",
+        "gadmName1": "Thái Bình",
+        "areaKm2": 0.108,
+        "csvAdm34Name": "Hưng Yên",
+        "crosswalkUnitCode": "VN34-66",
+        "geometricPrimary": {
+          "unitCode": "VN34-18",
+          "name": "Ninh Bình",
+          "share": 1.0
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-18",
+            "name": "Ninh Bình",
+            "share": 1.0
+          }
+        ]
+      },
+      {
+        "stringId": "436900-VNM.55_1-None",
+        "gadmName1": "Thái Bình",
+        "areaKm2": 0.121,
+        "csvAdm34Name": "Hưng Yên",
+        "crosswalkUnitCode": "VN34-66",
+        "geometricPrimary": {
+          "unitCode": "VN34-18",
+          "name": "Ninh Bình",
+          "share": 1.0
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-18",
+            "name": "Ninh Bình",
+            "share": 1.0
+          }
+        ]
+      },
+      {
+        "stringId": "441020-VNM.30_1-1862",
+        "gadmName1": "Hoà Bình",
+        "areaKm2": 44.825,
+        "csvAdm34Name": "Phú Thọ",
+        "crosswalkUnitCode": "VN34-68",
+        "geometricPrimary": {
+          "unitCode": "VN34-05",
+          "name": "Sơn La",
+          "share": 0.644053
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-05",
+            "name": "Sơn La",
+            "share": 0.644053
+          },
+          {
+            "unitCode": "VN34-68",
+            "name": "Phú Thọ",
+            "share": 0.355902
+          }
+        ]
+      },
+      {
+        "stringId": "441030-VNM.29_1-1882",
+        "gadmName1": "Hà Tĩnh",
+        "areaKm2": 0.101,
+        "csvAdm34Name": "Hà Tĩnh",
+        "crosswalkUnitCode": "VN34-23",
+        "geometricPrimary": {
+          "unitCode": "VN34-22",
+          "name": "Nghệ An",
+          "share": 1.0
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-22",
+            "name": "Nghệ An",
+            "share": 1.0
+          }
+        ]
+      },
+      {
+        "stringId": "441030-VNM.29_1-None",
+        "gadmName1": "Hà Tĩnh",
+        "areaKm2": 0.01,
+        "csvAdm34Name": "Hà Tĩnh",
+        "crosswalkUnitCode": "VN34-23",
+        "geometricPrimary": {
+          "unitCode": "VN34-22",
+          "name": "Nghệ An",
+          "share": 1.0
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-22",
+            "name": "Nghệ An",
+            "share": 1.0
+          }
+        ]
+      },
+      {
+        "stringId": "441051-VNM.46_1-1626",
+        "gadmName1": "Quảng Bình",
+        "areaKm2": 0.151,
+        "csvAdm34Name": "Quảng Trị",
+        "crosswalkUnitCode": "VN34-25",
+        "geometricPrimary": {
+          "unitCode": "VN34-23",
+          "name": "Hà Tĩnh",
+          "share": 0.632596
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-23",
+            "name": "Hà Tĩnh",
+            "share": 0.632596
+          },
+          {
+            "unitCode": "VN34-25",
+            "name": "Quảng Trị",
+            "share": 0.36742
+          }
+        ]
+      },
+      {
+        "stringId": "441054-VNM.48_1-1626",
+        "gadmName1": "Quảng Ngãi",
+        "areaKm2": 40.44,
+        "csvAdm34Name": "Quảng Ngãi",
+        "crosswalkUnitCode": "VN34-29",
+        "geometricPrimary": {
+          "unitCode": "VN34-DN",
+          "name": "Đà Nẵng",
+          "share": 0.769245
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-DN",
+            "name": "Đà Nẵng",
+            "share": 0.769245
+          },
+          {
+            "unitCode": "VN34-29",
+            "name": "Quảng Ngãi",
+            "share": 0.230755
+          }
+        ]
+      },
+      {
+        "stringId": "441056-VNM.21_1-1626",
+        "gadmName1": "Gia Lai",
+        "areaKm2": 2.41,
+        "csvAdm34Name": "Gia Lai",
+        "crosswalkUnitCode": "VN34-30",
+        "geometricPrimary": {
+          "unitCode": "VN34-29",
+          "name": "Quảng Ngãi",
+          "share": 0.518892
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-29",
+            "name": "Quảng Ngãi",
+            "share": 0.518892
+          },
+          {
+            "unitCode": "VN34-30",
+            "name": "Gia Lai",
+            "share": 0.481105
+          }
+        ]
+      },
+      {
+        "stringId": "441057-VNM.34_1-1626",
+        "gadmName1": "Kon Tum",
+        "areaKm2": 4.816,
+        "csvAdm34Name": "Quảng Ngãi",
+        "crosswalkUnitCode": "VN34-29",
+        "geometricPrimary": {
+          "unitCode": "VN34-30",
+          "name": "Gia Lai",
+          "share": 1.0
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-30",
+            "name": "Gia Lai",
+            "share": 1.0
+          }
+        ]
+      },
+      {
+        "stringId": "441058-VNM.32_1-2039",
+        "gadmName1": "Khánh Hòa",
+        "areaKm2": 2.175,
+        "csvAdm34Name": "Khánh Hòa",
+        "crosswalkUnitCode": "VN34-34",
+        "geometricPrimary": {
+          "unitCode": "VN34-33",
+          "name": "Đắk Lắk",
+          "share": 1.0
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-33",
+            "name": "Đắk Lắk",
+            "share": 1.0
+          }
+        ]
+      },
+      {
+        "stringId": "441060-VNM.25_1-None",
+        "gadmName1": "Hồ Chí Minh",
+        "areaKm2": 51.277,
+        "csvAdm34Name": "Hồ Chí Minh",
+        "crosswalkUnitCode": "VN34-SG",
+        "geometricPrimary": {
+          "unitCode": "VN34-39",
+          "name": "Đồng Nai",
+          "share": 0.602463
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-39",
+            "name": "Đồng Nai",
+            "share": 0.602463
+          },
+          {
+            "unitCode": "VN34-SG",
+            "name": "Hồ Chí Minh",
+            "share": 0.390078
+          }
+        ]
+      },
+      {
+        "stringId": "441060-VNM.32_1-2039",
+        "gadmName1": "Khánh Hòa",
+        "areaKm2": 0.12,
+        "csvAdm34Name": "Khánh Hòa",
+        "crosswalkUnitCode": "VN34-34",
+        "geometricPrimary": {
+          "unitCode": "VN34-35",
+          "name": "Lâm Đồng",
+          "share": 1.0
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-35",
+            "name": "Lâm Đồng",
+            "share": 1.0
+          }
+        ]
+      },
+      {
+        "stringId": "441060-VNM.39_1-2021",
+        "gadmName1": "Long An",
+        "areaKm2": 218.397,
+        "csvAdm34Name": "Tây Ninh",
+        "crosswalkUnitCode": "VN34-37",
+        "geometricPrimary": {
+          "unitCode": "VN34-SG",
+          "name": "Hồ Chí Minh",
+          "share": 0.539741
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-SG",
+            "name": "Hồ Chí Minh",
+            "share": 0.539741
+          },
+          {
+            "unitCode": "VN34-37",
+            "name": "Tây Ninh",
+            "share": 0.46026
+          }
+        ]
+      },
+      {
+        "stringId": "441060-VNM.39_1-None",
+        "gadmName1": "Long An",
+        "areaKm2": 2.035,
+        "csvAdm34Name": "Tây Ninh",
+        "crosswalkUnitCode": "VN34-37",
+        "geometricPrimary": {
+          "unitCode": "VN34-SG",
+          "name": "Hồ Chí Minh",
+          "share": 0.657572
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-SG",
+            "name": "Hồ Chí Minh",
+            "share": 0.657572
+          },
+          {
+            "unitCode": "VN34-37",
+            "name": "Tây Ninh",
+            "share": 0.247436
+          },
+          {
+            "unitCode": "VN34-45",
+            "name": "Đồng Tháp",
+            "share": 0.094996
+          }
+        ]
+      },
+      {
+        "stringId": "441060-VNM.43_1-2039",
+        "gadmName1": "Ninh Thuận",
+        "areaKm2": 1.159,
+        "csvAdm34Name": "Khánh Hòa",
+        "crosswalkUnitCode": "VN34-34",
+        "geometricPrimary": {
+          "unitCode": "VN34-35",
+          "name": "Lâm Đồng",
+          "share": 0.817492
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-35",
+            "name": "Lâm Đồng",
+            "share": 0.817492
+          },
+          {
+            "unitCode": "VN34-34",
+            "name": "Khánh Hòa",
+            "share": 0.18251
+          }
+        ]
+      },
+      {
+        "stringId": "441070-VNM.25_1-None",
+        "gadmName1": "Hồ Chí Minh",
+        "areaKm2": 0.07,
+        "csvAdm34Name": "Hồ Chí Minh",
+        "crosswalkUnitCode": "VN34-SG",
+        "geometricPrimary": {
+          "unitCode": "VN34-45",
+          "name": "Đồng Tháp",
+          "share": 1.0
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-45",
+            "name": "Đồng Tháp",
+            "share": 1.0
+          }
+        ]
+      },
+      {
+        "stringId": "441080-VNM.58_1-None",
+        "gadmName1": "Tiền Giang",
+        "areaKm2": 12.913,
+        "csvAdm34Name": "Đồng Tháp",
+        "crosswalkUnitCode": "VN34-45",
+        "geometricPrimary": {
+          "unitCode": "VN34-37",
+          "name": "Tây Ninh",
+          "share": 0.954996
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-37",
+            "name": "Tây Ninh",
+            "share": 0.954996
+          }
+        ]
+      },
+      {
+        "stringId": "442100-VNM.59_1-None",
+        "gadmName1": "Trà Vinh",
+        "areaKm2": 40.533,
+        "csvAdm34Name": "Vĩnh Long",
+        "crosswalkUnitCode": "VN34-49",
+        "geometricPrimary": {
+          "unitCode": "VN34-CT",
+          "name": "Cần Thơ",
+          "share": 0.371163
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-CT",
+            "name": "Cần Thơ",
+            "share": 0.371163
+          },
+          {
+            "unitCode": "VN34-49",
+            "name": "Vĩnh Long",
+            "share": 0.304099
+          }
+        ]
+      },
+      {
+        "stringId": "442404-VNM.47_1-1626",
+        "gadmName1": "Quảng Nam",
+        "areaKm2": 0.755,
+        "csvAdm34Name": "Đà Nẵng",
+        "crosswalkUnitCode": "VN34-DN",
+        "geometricPrimary": {
+          "unitCode": "VN34-29",
+          "name": "Quảng Ngãi",
+          "share": 1.0
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-29",
+            "name": "Quảng Ngãi",
+            "share": 1.0
+          }
+        ]
+      },
+      {
+        "stringId": "442409-VNM.32_1-2039",
+        "gadmName1": "Khánh Hòa",
+        "areaKm2": 0.488,
+        "csvAdm34Name": "Khánh Hòa",
+        "crosswalkUnitCode": "VN34-34",
+        "geometricPrimary": {
+          "unitCode": "VN34-33",
+          "name": "Đắk Lắk",
+          "share": 0.871518
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-33",
+            "name": "Đắk Lắk",
+            "share": 0.871518
+          },
+          {
+            "unitCode": "VN34-35",
+            "name": "Lâm Đồng",
+            "share": 0.121414
+          }
+        ]
+      },
+      {
+        "stringId": "443020-VNM.1_1-2021",
+        "gadmName1": "An Giang",
+        "areaKm2": 2.75,
+        "csvAdm34Name": "An Giang",
+        "crosswalkUnitCode": "VN34-44",
+        "geometricPrimary": {
+          "unitCode": "VN34-CT",
+          "name": "Cần Thơ",
+          "share": 1.0
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-CT",
+            "name": "Cần Thơ",
+            "share": 1.0
+          }
+        ]
+      },
+      {
+        "stringId": "None-VNM.49_1-1882",
+        "gadmName1": "Quảng Ninh",
+        "areaKm2": 0.034,
+        "csvAdm34Name": "Quảng Ninh",
+        "crosswalkUnitCode": "VN34-13",
+        "geometricPrimary": {
+          "unitCode": "VN34-HP",
+          "name": "Hải Phòng",
+          "share": 1.0
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-HP",
+            "name": "Hải Phòng",
+            "share": 1.0
+          }
+        ]
+      },
+      {
+        "stringId": "None-VNM.55_1-None",
+        "gadmName1": "Thái Bình",
+        "areaKm2": 4.653,
+        "csvAdm34Name": "Hưng Yên",
+        "crosswalkUnitCode": "VN34-66",
+        "geometricPrimary": {
+          "unitCode": "VN34-18",
+          "name": "Ninh Bình",
+          "share": 0.405635
+        },
+        "primaryMethod": "geometric",
+        "members": [
+          {
+            "unitCode": "VN34-18",
+            "name": "Ninh Bình",
+            "share": 0.405635
+          },
+          {
+            "unitCode": "VN34-66",
+            "name": "Hưng Yên",
+            "share": 0.289443
+          }
+        ]
+      }
+    ],
+    "adm34SliverExclusions": 235,
+    "adm34MultiMembershipCount": 111,
+    "adm34NoMembershipUnits": [
+      {
+        "stringId": "436642-VNM.49_1-1626",
+        "areaKm2": 0.093,
+        "primary": {
+          "unitCode": "VN34-13",
+          "name": "Quảng Ninh",
+          "share": 0.0
+        },
+        "method": "crosswalk-fallback"
+      },
+      {
+        "stringId": "442760-VNM.41_1-1626",
+        "areaKm2": 1.063,
+        "primary": {
+          "unitCode": "VN34-22",
+          "name": "Nghệ An",
+          "share": 0.006328
+        },
+        "method": "geometric-below-threshold"
+      },
+      {
+        "stringId": "442798-VNM.52_1-1862",
+        "areaKm2": 0.172,
+        "primary": {
+          "unitCode": "VN34-05",
+          "name": "Sơn La",
+          "share": 0.0
+        },
+        "method": "crosswalk-fallback"
+      },
+      {
+        "stringId": "443010-VNM.2_1-None",
+        "areaKm2": 22.874,
+        "primary": {
+          "unitCode": "VN34-59",
+          "name": "Cà Mau",
+          "share": 0.0
+        },
+        "method": "crosswalk-fallback"
+      },
+      {
+        "stringId": "443020-VNM.2_1-None",
+        "areaKm2": 2.855,
+        "primary": {
+          "unitCode": "VN34-59",
+          "name": "Cà Mau",
+          "share": 0.0
+        },
+        "method": "crosswalk-fallback"
+      },
+      {
+        "stringId": "443031-VNM.2_1-None",
+        "areaKm2": 0.453,
+        "primary": {
+          "unitCode": "VN34-59",
+          "name": "Cà Mau",
+          "share": 0.0
+        },
+        "method": "crosswalk-fallback"
+      },
+      {
+        "stringId": "None-VNM.11_1-None",
+        "areaKm2": 0.05,
+        "primary": {
+          "unitCode": "VN34-35",
+          "name": "Lâm Đồng",
+          "share": 0.0
+        },
+        "method": "crosswalk-fallback"
+      },
+      {
+        "stringId": "None-VNM.46_1-None",
+        "areaKm2": 0.442,
+        "primary": {
+          "unitCode": "VN34-25",
+          "name": "Quảng Trị",
+          "share": 0.045457
+        },
+        "method": "geometric-below-threshold"
+      },
+      {
+        "stringId": "None-VNM.57_1-1882",
+        "areaKm2": 0.068,
+        "primary": {
+          "unitCode": "VN34-21",
+          "name": "Thanh Hóa",
+          "share": 0.0
+        },
+        "method": "crosswalk-fallback"
+      }
+    ],
+    "adm34PrimaryMethodCounts": {
+      "geometric": 433,
+      "crosswalk-fallback": 7,
+      "geometric-below-threshold": 2
+    },
+    "scoreMismatchCount": 0,
+    "scoreMismatches": [],
+    "simplificationToleranceDeg": 0,
+    "syntheticVertexCount": 0,
+    "joinMatchRate": 1.0
+  },
+  "l6": {
+    "basinCount": 58,
+    "memberUnitCount": 391,
+    "unitsWithoutBasin": 51,
+    "invalidDissolveCount": 0,
+    "syntheticVertexCount": 0,
+    "areaDeltaPpmMax": 0.0,
+    "usedMakeValidFor": []
+  },
+  "coverage": {
+    "overall-water-risk": {
+      "matched": 387,
+      "missing": 55,
+      "providedZero": 0
+    },
+    "baseline-water-stress": {
+      "matched": 387,
+      "missing": 55,
+      "providedZero": 94
+    },
+    "baseline-water-depletion": {
+      "matched": 387,
+      "missing": 55,
+      "providedZero": 0
+    },
+    "interannual-variability": {
+      "matched": 387,
+      "missing": 55,
+      "providedZero": 0
+    },
+    "seasonal-variability": {
+      "matched": 387,
+      "missing": 55,
+      "providedZero": 0
+    },
+    "groundwater-table-decline": {
+      "matched": 5,
+      "missing": 437,
+      "providedZero": 0
+    },
+    "riverine-flood-risk": {
+      "matched": 391,
+      "missing": 51,
+      "providedZero": 0
+    },
+    "coastal-flood-risk": {
+      "matched": 391,
+      "missing": 51,
+      "providedZero": 124
+    },
+    "drought-risk": {
+      "matched": 391,
+      "missing": 51,
+      "providedZero": 0
+    }
+  },
+  "source": {
+    "downloadUrl": "https://files.wri.org/aqueduct/aqueduct-4-0-water-risk-data.zip",
+    "datasetUrl": "https://www.wri.org/data/aqueduct-global-maps-40-data",
+    "extractedAt": "2026-09-22T03:25:39Z",
+    "gdb": "Aqueduct40_waterrisk_download_Y2023M07D05/GDB/Aq40_Y2023D07M05.gdb",
+    "layer": "baseline_annual",
+    "name": "World Resources Institute (WRI) Aqueduct 4.0",
+    "release": "Y2023M07D05",
+    "subset": "gid_0 = 'VNM'",
+    "zipSha256": "bd3ed2bce88d6ff1b89191632ad134a2436e1e1d49599382f23a04d513624fc3"
+  }
+}
