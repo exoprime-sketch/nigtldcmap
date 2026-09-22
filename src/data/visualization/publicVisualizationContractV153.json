@@ -476,7 +476,7 @@
         "type": "stacked-area",
         "title": "1차 에너지 소비 구조 추이",
         "xAxis": "연도",
-        "yAxis": "1차 에너지 소비",
+        "yAxis": "에너지원별 소비량",
         "unit": "EJ"
       },
       "secondary": [
@@ -698,7 +698,7 @@
         "type": "category-bar",
         "title": "발전원별 설비용량",
         "xAxis": "설비용량",
-        "yAxis": "발전원 분류",
+        "yAxis": "발전원",
         "unit": "MW"
       },
       "secondary": [
@@ -2432,7 +2432,7 @@
       "primary": {
         "type": "category-bar",
         "title": "광물별 세계 매장량 비중",
-        "xAxis": "세계 매장량 비중",
+        "xAxis": "세계 확인 매장량 비중",
         "yAxis": "광물",
         "unit": "%"
       },
@@ -2462,7 +2462,7 @@
       "primary": {
         "type": "category-bar",
         "title": "광물별 세계 생산량 비중",
-        "xAxis": "세계 생산량 비중",
+        "xAxis": "세계 광산 생산량 비중",
         "yAxis": "광물",
         "unit": "%"
       },
@@ -4264,8 +4264,8 @@
       "elementId": "E-006",
       "archetype": "registry",
       "primary": {
-        "type": "category-bar",
-        "title": "도시별 현지투자자 네트워크",
+        "type": "region-bar",
+        "title": "도시별 투자기관 수",
         "xAxis": "기관 수",
         "yAxis": "도시",
         "unit": "곳"
@@ -4291,8 +4291,8 @@
           "url": "https://unfccc.int/es/node/627860"
         }
       ],
-      "status": "standard",
-      "note": ""
+      "status": "exception",
+      "note": "기관 유형별 수보다 소재 도시별 분포가 먼저(지도와 짝) — 도시 단위 지역 막대"
     },
     {
       "elementId": "E-007",

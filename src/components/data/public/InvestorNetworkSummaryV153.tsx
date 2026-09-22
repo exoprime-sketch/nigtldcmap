@@ -83,6 +83,8 @@ export default function InvestorNetworkSummaryV153({ entities }: Props) {
         <li><span>베트남 소재 · 지도 표시</span><strong>{groups.inVietnam.length}곳</strong></li>
         <li><span>해외 소재(베트남 투자 실적)</span><strong>{groups.abroad.length}곳</strong></li>
       </ul>
+      {/* Where the investors are opens the screen (V153 contract: bars per city); the lists follow. */}
+      <section className="d153-block" data-analysis-block="region-bar"><AnalysisBarsV147 rows={cityRows} title="도시별 기관 수 · 원자료 표기" unit="곳" xAxis="기관 수" yAxis="도시" /></section>
       <div className="d153-grid">
         <section className="d153-section" data-analysis-block="cards-list">
           <h4>베트남 소재 기관 · {groups.inVietnam.length}곳 · 도시 단위</h4>
@@ -99,7 +101,6 @@ export default function InvestorNetworkSummaryV153({ entities }: Props) {
           <FacilityCardV153 elementId="E-006" entity={selectedRow.entity} title={selectedRow.title} />
         </div>
       ) : null}
-      <section className="d153-block" data-analysis-block="region-bar"><AnalysisBarsV147 rows={cityRows} title="도시별 기관 수 · 원자료 표기" unit="기관 수" /></section>
     </section>
   );
 }

@@ -139,7 +139,7 @@ export default function PowerPlantRegistrySummaryV138({ entities: sourceEntities
           const rows = summary.fuel.filter(([, e]) => e[key] > 0);
           const capacityRows = rows.map(([label, e]) => ({ id: label, label, value: e[key === "wri" ? "wriStated" : "osmStated"] ? e[key === "wri" ? "wriMw" : "osmMw"] : null })).sort((a, b) => (b.value || 0) - (a.value || 0));
           const countRows = rows.map(([label, e]) => ({ id: label, label, value: e[key] })).sort((a, b) => b.value - a.value);
-          return <section key={key}><section className="d153-block" data-analysis-block="category-bar"><AnalysisBarsV147 rows={capacityRows} title={`발전원별 설비용량 · ${sourceName(key)}`} unit="MW" /></section><section className="d153-block" data-analysis-block="category-bar"><AnalysisBarsV147 rows={countRows} title={`발전원별 시설 수 · ${sourceName(key)}`} unit={key === "wri" ? "기" : "곳"} /></section>{!rows.length && <p role="status">선택한 조건의 시설이 없습니다. 출처·발전원·설비용량 조건을 바꿔 주세요.</p>}</section>;
+          return <section key={key}><section className="d153-block" data-analysis-block="category-bar"><AnalysisBarsV147 rows={capacityRows} title={`발전원별 설비용량 · ${sourceName(key)}`} unit="MW" xAxis="설비용량" yAxis="발전원" /></section><section className="d153-block" data-analysis-block="category-bar"><AnalysisBarsV147 rows={countRows} title={`발전원별 시설 수 · ${sourceName(key)}`} unit={key === "wri" ? "기" : "곳"} xAxis="시설 수" yAxis="발전원" /></section>{!rows.length && <p role="status">선택한 조건의 시설이 없습니다. 출처·발전원·설비용량 조건을 바꿔 주세요.</p>}</section>;
         })}
         {/* The registry totals, stated in a sentence (V153): the table below is folded. */}
         <p data-testid="power-plant-registry-totals-v153">

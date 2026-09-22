@@ -59,7 +59,7 @@ export default function MineralResourceSummaryV153({ elementId, observations, in
 
       {isReserves ? (
         <section className="d153-block" data-analysis-block="category-bar">
-          <AnalysisBarsV147 rows={shareRows} title={`광종별 세계 비중 · ${model.measureLabel} · ${latestYear ?? ""}년`} unit="%" />
+          <AnalysisBarsV147 rows={shareRows} title={`광종별 세계 비중 · ${model.measureLabel} · ${latestYear ?? ""}년`} unit="%" xAxis={`세계 ${model.measureLabel} 비중`} yAxis="광물" />
         </section>
       ) : (
         <div className="d153-table-wrap" data-analysis-block="table">

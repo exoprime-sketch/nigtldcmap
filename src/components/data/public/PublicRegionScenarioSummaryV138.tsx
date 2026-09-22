@@ -801,7 +801,7 @@ export default function PublicRegionScenarioSummaryV138({
       {rankedRegions.length > 1 && <section className="detail146" data-testid="region-comparison-v148" data-analysis-block="region-bar">
         <h3>{rowIsSubRegion ? `${rowUnitLabel}별 비교` : "같은 시점의 지역별 비교"}</h3>
         {comparisonYears.filter((y) => y !== UNSTATED_YEAR).length > 1 && <label>비교연도 <select aria-label="지역 비교연도" value={comparisonYear} onChange={(event) => onSelectorStateChange({ ...selectorState, year: Number(event.target.value), period: null })}>{comparisonYears.filter((y) => y !== UNSTATED_YEAR).map((y) => <option key={y} value={y}>{y}년</option>)}</select></label>}
-        <AnalysisBarsV147 title={`${measureMeta.label} · ${comparisonYear === UNSTATED_YEAR ? periodText : `${comparisonYear}년`} · ${scenarioLabel(comparisonScenario)}`} unit={unit} rows={rankedRegions.slice(0, 12).map((r) => ({ id: r.label, label: r.label, value: r.value }))} />
+        <AnalysisBarsV147 title={`${measureMeta.label} · ${comparisonYear === UNSTATED_YEAR ? periodText : `${comparisonYear}년`} · ${scenarioLabel(comparisonScenario)}`} unit={unit} xAxis={measureMeta.label} yAxis={rowIsSubRegion ? rowUnitLabel : "성·시"} rows={rankedRegions.slice(0, 12).map((r) => ({ id: r.label, label: r.label, value: r.value }))} />
         <p className="detail146-note">같은 항목·시나리오·시점의 값만 비교합니다.{rankedRegions.length > 12 ? " 값이 큰 12개를 표시하며, 전체 지역은 아래 표에서 확인할 수 있습니다." : ""} 값의 크기는 우수성이나 사업 적합성 순위를 뜻하지 않습니다.</p>
       </section>}
           </>) },
