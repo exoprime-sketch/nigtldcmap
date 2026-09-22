@@ -1,0 +1,282 @@
+{
+  "summary": {
+    "type": "summary",
+    "audit": "boundary-policy:v151-2",
+    "status": "PASS",
+    "passed": 24,
+    "failed": 0,
+    "total": 24,
+    "failedChecks": [],
+    "packCount": 26,
+    "soloPacks": [
+      "B-003",
+      "B-004",
+      "B-005",
+      "B-006",
+      "B-007",
+      "B-017",
+      "B-033"
+    ],
+    "generatedAt": "2026-09-22T00:28:14.274Z"
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "boundary-policy:v151-2",
+      "name": "LAYER_COUNT",
+      "status": "PASS",
+      "actual": 42,
+      "expected": 42
+    },
+    {
+      "type": "check",
+      "audit": "boundary-policy:v151-2",
+      "name": "LAYERS_WITHOUT_POLICY",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "boundary-policy:v151-2",
+      "name": "POLICY_KINDS_KNOWN",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "boundary-policy:v151-2",
+      "name": "AREA_LAYERS_NOT_NONE",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "boundary-policy:v151-2",
+      "name": "QUANTILE_VARIABLES_RANGE_ONLY",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "boundary-policy:v151-2",
+      "name": "POLICY_MATCHES_CONTRACT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "boundary-policy:v151-2",
+      "name": "CCKP_AREA_WEIGHTED_MEAN",
+      "status": "PASS",
+      "actual": [
+        "area-weighted-mean",
+        "area-weighted-mean",
+        "area-weighted-mean",
+        "area-weighted-mean",
+        "area-weighted-mean"
+      ],
+      "expected": [
+        "area-weighted-mean",
+        "area-weighted-mean",
+        "area-weighted-mean",
+        "area-weighted-mean",
+        "area-weighted-mean"
+      ]
+    },
+    {
+      "type": "check",
+      "audit": "boundary-policy:v151-2",
+      "name": "B042_TOP10_RANGE_ONLY",
+      "status": "PASS",
+      "actual": {
+        "wind-speed-top10-100m": "range-only",
+        "wind-power-density-top10-100m": "range-only"
+      },
+      "expected": {
+        "wind-speed-top10-100m": "range-only",
+        "wind-power-density-top10-100m": "range-only"
+      }
+    },
+    {
+      "type": "check",
+      "audit": "boundary-policy:v151-2",
+      "name": "B021_SIX_REGION",
+      "status": "PASS",
+      "actual": "six-region-only",
+      "expected": "six-region-only"
+    },
+    {
+      "type": "check",
+      "audit": "boundary-policy:v151-2",
+      "name": "NATIVE_34_LAYERS",
+      "status": "PASS",
+      "actual": [
+        "C-012",
+        "C-013",
+        "C-019",
+        "C-022"
+      ],
+      "expected": [
+        "C-012",
+        "C-013",
+        "C-019",
+        "C-022"
+      ]
+    },
+    {
+      "type": "check",
+      "audit": "boundary-policy:v151-2",
+      "name": "ADM1_34_MEMBER_AREAS",
+      "status": "PASS",
+      "actual": 63,
+      "expected": 63
+    },
+    {
+      "type": "check",
+      "audit": "boundary-policy:v151-2",
+      "name": "ADM1_34_AREAS_POSITIVE",
+      "status": "PASS",
+      "actual": 34,
+      "expected": "every areaKm2 and memberAreaKm2 > 0"
+    },
+    {
+      "type": "check",
+      "audit": "boundary-policy:v151-2",
+      "name": "REGION_6_FEATURES",
+      "status": "PASS",
+      "actual": 6,
+      "expected": 6
+    },
+    {
+      "type": "check",
+      "audit": "boundary-policy:v151-2",
+      "name": "REGION_6_MEMBERS",
+      "status": "PASS",
+      "actual": 63,
+      "expected": 63
+    },
+    {
+      "type": "check",
+      "audit": "boundary-policy:v151-2",
+      "name": "REGION_6_KEYS_MATCH_B021",
+      "status": "PASS",
+      "actual": [
+        "Central Highlands",
+        "Mekong River Delta",
+        "North Central Coast and South Central Coast",
+        "North East, North West",
+        "Red River Delta",
+        "South East"
+      ],
+      "expected": [
+        "Central Highlands",
+        "Mekong River Delta",
+        "North Central Coast and South Central Coast",
+        "North East, North West",
+        "Red River Delta",
+        "South East"
+      ]
+    },
+    {
+      "type": "check",
+      "audit": "boundary-policy:v151-2",
+      "name": "COUNTRY_OUTLINE_SINGLE_FEATURE",
+      "status": "PASS",
+      "actual": [
+        1,
+        1
+      ],
+      "expected": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "check",
+      "audit": "boundary-policy:v151-2",
+      "name": "MANIFEST_DERIVED_KINDS",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "boundary-policy:v151-2",
+      "name": "DERIVED_ASSETS_IN_INTEGRITY",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "boundary-policy:v151-2",
+      "name": "POINT_LAYERS_WITH_SIDECAR",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "boundary-policy:v151-2",
+      "name": "POINT_SIDECARS_VALID",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "boundary-policy:v151-2",
+      "name": "PACK_COUNT_CONSISTENT",
+      "status": "PASS",
+      "actual": [
+        26,
+        26,
+        26,
+        26
+      ],
+      "expected": [
+        26,
+        26,
+        26,
+        26
+      ]
+    },
+    {
+      "type": "check",
+      "audit": "boundary-policy:v151-2",
+      "name": "PACK_FILES_PRESENT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "boundary-policy:v151-2",
+      "name": "ELEMENT_COUNT",
+      "status": "PASS",
+      "actual": 152,
+      "expected": 152
+    },
+    {
+      "type": "check",
+      "audit": "boundary-policy:v151-2",
+      "name": "SOLO_PACKS_OVER_8MB",
+      "status": "PASS",
+      "actual": [
+        "B-003",
+        "B-004",
+        "B-005",
+        "B-006",
+        "B-007",
+        "B-017",
+        "B-033"
+      ],
+      "expected": "every element whose payload exceeds 8 MB (B-003..B-007 at least)"
+    }
+  ]
+}

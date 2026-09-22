@@ -1,0 +1,339 @@
+{
+  "summary": {
+    "type": "summary",
+    "audit": "label-dedup:v151-2",
+    "status": "FAIL",
+    "passed": 39,
+    "skipped": 0,
+    "failed": 1,
+    "total": 40,
+    "failedChecks": [
+      "LABEL_UNIQUE_껀터_z7_pre-2025-63"
+    ],
+    "browserChecked": true,
+    "staticAnchorsSource": "this script's own polylabel/point-in-polygon port (not the TS source under src/)",
+    "generatedAt": "2026-09-22T00:22:03.907Z"
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "STATIC_34_ANCHORS_INSIDE",
+      "status": "PASS",
+      "actual": "34/34",
+      "expected": "34/34 (script's own polylabel port)"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "STATIC_63_ANCHORS_INSIDE",
+      "status": "PASS",
+      "actual": "63/63",
+      "expected": "63/63 (script's own polylabel port)"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_다낭_z5_post-2025-34",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "<= 1 (may be culled by collision)"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_하노이_z5_post-2025-34",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "<= 1 (may be culled by collision)"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_호찌민_z5_post-2025-34",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "<= 1 (may be culled by collision)"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_하이퐁_z5_post-2025-34",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "<= 1 (may be culled by collision)"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_껀터_z5_post-2025-34",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "<= 1 (may be culled by collision)"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_후에_z5_post-2025-34",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "<= 1 (may be culled by collision)"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_다낭_z7_post-2025-34",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "== 1"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_하노이_z7_post-2025-34",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "== 1"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_호찌민_z7_post-2025-34",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "== 1"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_하이퐁_z7_post-2025-34",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "== 1"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_껀터_z7_post-2025-34",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "== 1"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_후에_z7_post-2025-34",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "== 1"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_다낭_z9_post-2025-34",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "== 1"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_하노이_z9_post-2025-34",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "== 1"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_호찌민_z9_post-2025-34",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "== 1"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_하이퐁_z9_post-2025-34",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "== 1"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_껀터_z9_post-2025-34",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "== 1"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_후에_z9_post-2025-34",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "== 1"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "PROVINCE_ANCHORS_INSIDE_post-2025-34",
+      "status": "PASS",
+      "actual": "28/28",
+      "expected": "28/28; outside: []"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_다낭_z5_pre-2025-63",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "<= 1 (may be culled by collision)"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_하노이_z5_pre-2025-63",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "<= 1 (may be culled by collision)"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_호찌민_z5_pre-2025-63",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "<= 1 (may be culled by collision)"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_하이퐁_z5_pre-2025-63",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "<= 1 (may be culled by collision)"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_껀터_z5_pre-2025-63",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "<= 1 (may be culled by collision)"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_후에_z5_pre-2025-63",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "<= 1 (may be culled by collision)"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_다낭_z7_pre-2025-63",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "== 1"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_하노이_z7_pre-2025-63",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "== 1"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_호찌민_z7_pre-2025-63",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "== 1"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_하이퐁_z7_pre-2025-63",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "== 1"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_껀터_z7_pre-2025-63",
+      "status": "FAIL",
+      "actual": 0,
+      "expected": "== 1"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_후에_z7_pre-2025-63",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "== 1"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_다낭_z9_pre-2025-63",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "== 1"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_하노이_z9_pre-2025-63",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "== 1"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_호찌민_z9_pre-2025-63",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "== 1"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_하이퐁_z9_pre-2025-63",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "== 1"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_껀터_z9_pre-2025-63",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "== 1"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "LABEL_UNIQUE_후에_z9_pre-2025-63",
+      "status": "PASS",
+      "actual": 1,
+      "expected": "== 1"
+    },
+    {
+      "type": "check",
+      "audit": "label-dedup:v151-2",
+      "name": "PROVINCE_ANCHORS_INSIDE_pre-2025-63",
+      "status": "PASS",
+      "actual": "58/58",
+      "expected": "58/58; outside: []"
+    }
+  ]
+}

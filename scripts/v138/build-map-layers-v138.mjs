@@ -28,6 +28,12 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { gunzipSync } from "node:zlib";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import {
+  boundaryPolicyForLayer,
+  buildLocationSidecar,
+  isAggregatingKind,
+  loadProvinceLocator,
+} from "../v151-2/boundary-policy-build-v151-2.mjs";
 
 const SCRIPT_DIR = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(SCRIPT_DIR, "../..");
@@ -755,11 +761,19 @@ function finishChoroplethLayer({
 
   const latestYear = periods.filter((period) => /^\d{4}$/.test(period)).slice(-1)[0] || periods[periods.length - 1] || null;
   const isRegion = spatialScopeType === "region";
+  // V151-2: the policy is resolved before the copy so every sentence about
+  // the 34-unit outline states the rule this layer actually follows.
+  const boundaryPolicy = boundaryPolicyForLayer(
+    target,
+    { renderer: coverageKind === "full" ? "admin1-choropleth" : "partial-choropleth", geometryTypes: ["Polygon"], selectors },
+    build.measures.map((measure) => measure.key)
+  );
   const layer = {
     ...baseLayerFacts(entry, target),
     accuracyNotice: isRegion
-      ? "개편 후 34개 성·시 값을 소속 63개 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다."
-      : "누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다.",
+      ? "원자료가 개편 후 34개 성·시 기준으로 발표한 값입니다. 기본 34개 경계에 직접 표시하고, 개편 전 63개 토글에서는 소속 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다."
+      : `누락값은 투명 처리하며 0으로 대체하지 않습니다. 값은 원자료의 개편 전 63개 성·시 기준이며, 34개 경계에서는 ${boundaryPolicy.note}`,
+    boundaryPolicy,
     active: true,
     aggregationLevel,
     assetRef: { elementId, provider: "vietnam-v124", section: "spatial" },
@@ -781,21 +795,23 @@ function finishChoroplethLayer({
     latestYear,
     layerId: `${LAYER_ID_PREFIX}${elementId.toLowerCase()}`,
     legend: {
-      note: `단위 ${defaultOption?.unit || target.unit} · 결측 ${63 - (defaultOption?.maxFeatureCount || 0)}개 성·시`,
+      note: `단위 ${defaultOption?.unit || target.unit} · 결측 ${63 - (defaultOption?.maxFeatureCount || 0)}개 성·시(개편 전 63개 기준)`,
       title: defaultOption?.label || target.publicName,
     },
     mapBenefit: target.selectableVariables,
     mapMode: isRegion ? "region-choropleth" : "choropleth",
     missingRegions,
     publicSpatialNotice: isRegion
-      ? "개편 후 34개 성·시 값을 소속 63개 성·시 경계에 표시합니다."
-      : "개편 전 63개 성·시 통계 경계를 사용합니다.",
+      ? "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시)."
+      : `값은 개편 전 63개 성·시 통계 경계 기준이며, 34개 경계에서는 ${boundaryPolicy.note}`,
     renderer: coverageKind === "full" ? "admin1-choropleth" : "partial-choropleth",
     sourceCoordinateCount: 0,
     sourceYear: latestYear,
     spatialCoverage: isRegion
-      ? `개편 후 34개 성·시 중 ${stats.sourceRegionCount || 0}개 값을 소속 63개 경계에 표시`
-      : `개편 전 63개 성·시 중 선택 계열 최대 ${maxSeriesFeatureCount}개`,
+      ? `개편 후 34개 성·시 중 ${stats.sourceRegionCount || 0}개 값(34개 경계 직접 표시)`
+      : `개편 전 63개 성·시 중 선택 계열 최대 ${maxSeriesFeatureCount}개(34개 경계에서는 ${
+          isAggregatingKind(boundaryPolicy.kind) ? "구성 성·시 집계값" : "구성 범위만 표시"
+        })`,
     spatialLimitation: target.limitation,
     spatialScopeType,
     selectors,
@@ -884,6 +900,19 @@ export function displayableEntityRecords(records, build) {
   return { features: [...groups.values()], excluded };
 }
 
+/**
+ * V151-2: which province (and 34-unit) each located record sits in, as a
+ * small sidecar next to the layer assets. Returns null when no record carries
+ * a coordinate.
+ */
+function writeLocationSidecar(elementId, records, locator) {
+  if (!locator || !records.some((record) => typeof record.latitude === "number")) return null;
+  const { asset, counts } = buildLocationSidecar(elementId, records, locator);
+  const relative = `spatial/locations/${elementId.toLowerCase()}.json`;
+  writeJson(resolve(DATA, relative), asset);
+  return { dataUrl: `/data/vietnam/v2/${relative}`, counts };
+}
+
 function approximateTest(build) {
   const rule = build.approximate;
   if (!rule) return () => false;
@@ -892,13 +921,14 @@ function approximateTest(build) {
   return (record) => pattern.test(text((record.normalizedAttributes || {})[rule.sourceKey]));
 }
 
-function buildEntityLayer(target, packs, catalog, report) {
+function buildEntityLayer(target, packs, catalog, report, locator) {
   const { build } = target;
   const elementId = target.elementId;
   const element = packs.get(elementId);
   const entry = catalogEntry(catalog, elementId);
   const records = element?.entities?.records || [];
   const { features, excluded } = displayableEntityRecords(records, build);
+  const locations = writeLocationSidecar(elementId, records, locator);
   const isApproximate = approximateTest(build);
   const representative = features.map((group) => group[0]);
   const approximateCount = representative.filter(isApproximate).length;
@@ -1013,7 +1043,9 @@ function buildEntityLayer(target, packs, catalog, report) {
     ...(build.memberFacts ? { memberFacts: build.memberFacts } : {}),
     ...(build.symbolByFact ? { symbolByFact: build.symbolByFact } : {}),
     memberRowCount,
+    ...(locations ? { locationsUrl: locations.dataUrl, locationCounts: locations.counts } : {}),
   };
+  layer.boundaryPolicy = boundaryPolicyForLayer(target, layer, null);
   report.push({
     elementId,
     status: representative.length ? (excluded.some((item) => item.reason !== "indicator-out-of-scope" && !/^no-coordinate|coordinates/.test(item.reason)) || approximateCount > 0 ? "partial" : "implemented") : "not-connected",
@@ -1033,9 +1065,24 @@ function buildEntityLayer(target, packs, catalog, report) {
 
 // ---------------------------------------------------------------- existing layers
 
-function patchExistingLayer(layer, target, report) {
+function patchExistingLayer(layer, target, report, packs, locator) {
   const patch = target.build.patch || {};
   const next = { ...layer };
+  // V151-2: the 34-unit policy and, for point layers, the province each
+  // source coordinate falls in.
+  next.boundaryPolicy = boundaryPolicyForLayer(
+    target,
+    layer,
+    (layer.selectors?.variables || []).map((option) => option.measureKey || option.key)
+  );
+  if ((layer.geometryTypes || []).some((type) => /point/iu.test(type)) && layer.renderer !== "regional-scope") {
+    const records = packs?.get(target.elementId)?.entities?.records || [];
+    const locations = writeLocationSidecar(target.elementId, records, locator);
+    if (locations) {
+      next.locationsUrl = locations.dataUrl;
+      next.locationCounts = locations.counts;
+    }
+  }
   if (patch.analysisItemLabel) {
     next.analysisItemLabel = patch.analysisItemLabel;
     next.selectors = {
@@ -1102,6 +1149,7 @@ function main() {
   const packs = loadPacks();
   const boundaries = loadBoundaries();
   const crosswalk = buildReorganisationCrosswalk(packs, boundaries);
+  const locator = loadProvinceLocator(DATA);
   const report = [];
   const existingByElement = new Map(mapIndex.layers.map((layer) => [layer.elementId, layer]));
   // A layer this script wrote in an earlier run is rebuilt, never carried over.
@@ -1117,7 +1165,7 @@ function main() {
         report.push({ elementId: target.elementId, status: "not-connected", build: "existing", reason: "ETL layer missing from map-index" });
         continue;
       }
-      layers.push(patchExistingLayer(layer, target, report));
+      layers.push(patchExistingLayer(layer, target, report, packs, locator));
       continue;
     }
     if (kind === "none") {
@@ -1134,7 +1182,7 @@ function main() {
     }
     if (etlByElement.has(target.elementId)) {
       // The ETL's own layer wins over a derived one.
-      layers.push(patchExistingLayer(etlByElement.get(target.elementId), target, report));
+      layers.push(patchExistingLayer(etlByElement.get(target.elementId), target, report, packs, locator));
       continue;
     }
     if (kind === "admin1-attributes") {
@@ -1142,7 +1190,7 @@ function main() {
     } else if (kind === "region-membership") {
       layers.push(buildRegionMembershipLayer(target, packs, boundaries, crosswalk, catalog, report));
     } else if (kind === "entities") {
-      layers.push(buildEntityLayer(target, packs, catalog, report));
+      layers.push(buildEntityLayer(target, packs, catalog, report, locator));
     } else {
       throw new Error(`unknown build kind ${kind} for ${target.elementId}`);
     }

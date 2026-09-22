@@ -1,0 +1,223 @@
+{
+  "summary": {
+    "type": "summary",
+    "audit": "detail-prepare-timing:v151-2",
+    "status": "PASS",
+    "label": "before",
+    "ids": [
+      "B-003",
+      "B-004",
+      "B-005",
+      "B-006",
+      "B-007"
+    ],
+    "runs": 3,
+    "perId": {
+      "B-003": {
+        "median": 3021.2999999998137,
+        "packBytes": 41019906
+      },
+      "B-004": {
+        "median": 2912.7000000001863,
+        "packBytes": 41019906
+      },
+      "B-005": {
+        "median": 2827.2999999998137,
+        "packBytes": 41019906
+      },
+      "B-006": {
+        "median": 2839.5,
+        "packBytes": 41019906
+      },
+      "B-007": {
+        "median": 2863.0999999996275,
+        "packBytes": 41019906
+      }
+    },
+    "generatedAt": "2026-09-21T23:54:08.164Z"
+  },
+  "perId": {
+    "B-003": {
+      "runs": [
+        3021.2999999998137,
+        3072.2999999998137,
+        2810.9000000003725
+      ],
+      "median": 3021.2999999998137,
+      "min": 2810.9000000003725,
+      "max": 3072.2999999998137,
+      "prepareMeasureMedian": null,
+      "packBytes": 41019906
+    },
+    "B-004": {
+      "runs": [
+        3013.100000000559,
+        2912.7000000001863,
+        2893.5999999996275
+      ],
+      "median": 2912.7000000001863,
+      "min": 2893.5999999996275,
+      "max": 3013.100000000559,
+      "prepareMeasureMedian": null,
+      "packBytes": 41019906
+    },
+    "B-005": {
+      "runs": [
+        2800.899999999441,
+        2843.399999999441,
+        2827.2999999998137
+      ],
+      "median": 2827.2999999998137,
+      "min": 2800.899999999441,
+      "max": 2843.399999999441,
+      "prepareMeasureMedian": null,
+      "packBytes": 41019906
+    },
+    "B-006": {
+      "runs": [
+        2888.5,
+        2839.5,
+        2836
+      ],
+      "median": 2839.5,
+      "min": 2836,
+      "max": 2888.5,
+      "prepareMeasureMedian": null,
+      "packBytes": 41019906
+    },
+    "B-007": {
+      "runs": [
+        2863.0999999996275,
+        2820.7999999998137,
+        2887.7000000001863
+      ],
+      "median": 2863.0999999996275,
+      "min": 2820.7999999998137,
+      "max": 2887.7000000001863,
+      "prepareMeasureMedian": null,
+      "packBytes": 41019906
+    }
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-003_run1",
+      "status": "PASS",
+      "actual": 3021.2999999998137,
+      "expected": "ready before timeout"
+    },
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-003_run2",
+      "status": "PASS",
+      "actual": 3072.2999999998137,
+      "expected": "ready before timeout"
+    },
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-003_run3",
+      "status": "PASS",
+      "actual": 2810.9000000003725,
+      "expected": "ready before timeout"
+    },
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-004_run1",
+      "status": "PASS",
+      "actual": 3013.100000000559,
+      "expected": "ready before timeout"
+    },
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-004_run2",
+      "status": "PASS",
+      "actual": 2912.7000000001863,
+      "expected": "ready before timeout"
+    },
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-004_run3",
+      "status": "PASS",
+      "actual": 2893.5999999996275,
+      "expected": "ready before timeout"
+    },
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-005_run1",
+      "status": "PASS",
+      "actual": 2800.899999999441,
+      "expected": "ready before timeout"
+    },
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-005_run2",
+      "status": "PASS",
+      "actual": 2843.399999999441,
+      "expected": "ready before timeout"
+    },
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-005_run3",
+      "status": "PASS",
+      "actual": 2827.2999999998137,
+      "expected": "ready before timeout"
+    },
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-006_run1",
+      "status": "PASS",
+      "actual": 2888.5,
+      "expected": "ready before timeout"
+    },
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-006_run2",
+      "status": "PASS",
+      "actual": 2839.5,
+      "expected": "ready before timeout"
+    },
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-006_run3",
+      "status": "PASS",
+      "actual": 2836,
+      "expected": "ready before timeout"
+    },
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-007_run1",
+      "status": "PASS",
+      "actual": 2863.0999999996275,
+      "expected": "ready before timeout"
+    },
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-007_run2",
+      "status": "PASS",
+      "actual": 2820.7999999998137,
+      "expected": "ready before timeout"
+    },
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-007_run3",
+      "status": "PASS",
+      "actual": 2887.7000000001863,
+      "expected": "ready before timeout"
+    }
+  ]
+}

@@ -31,6 +31,31 @@ const DetailLocationMapV148 = lazy(() => import("../components/data/public/Detai
 import { PublicTermTextV134 } from "../components/help/PublicTermV134";
 import "../styles/country-data-platform-v122.css";
 
+/**
+ * V151-2: detail preparation time = the bundle request to the parsed payload.
+ * Recorded as a Performance measure named "cdp-detail-prepare" so the release
+ * runner can read it without instrumenting the page.
+ */
+function markDetailPrepareStart(markName: string): number {
+  try {
+    performance.mark(markName);
+  } catch {
+    // Performance marks are a diagnostic; a browser without them is fine.
+  }
+  return performance.now();
+}
+
+function measureDetailPrepare(markName: string, startedAt: number): number {
+  const elapsed = Math.round(performance.now() - startedAt);
+  try {
+    performance.measure("cdp-detail-prepare", markName);
+  } catch {
+    // see markDetailPrepareStart
+  }
+  return elapsed;
+}
+
+
 interface Props {
   elementId: string | null;
   countryIso3: string | null;
@@ -660,6 +685,9 @@ export default function CountryDataElementPage({
   );
   const [bundle, setBundle] = useState<ElementBundle | null>(null);
   const [loading, setLoading] = useState(false);
+  // V151-2: wall time from the bundle request to the parsed payload, exposed
+  // for the release runner (`data-detail-prepare-ms`); null until measured.
+  const [prepareMs, setPrepareMs] = useState<number | null>(null);
   const [error, setError] = useState("");
   useDatasetUsageV149("detail", elementId, countryIso3 === "VNM" && !loading && !!bundle && catalogItem?.elementId === elementId);
 
@@ -678,12 +706,16 @@ export default function CountryDataElementPage({
     setError("");
     setBundle(null);
     setCatalogItem(null);
+    setPrepareMs(null);
+    const startMark = `cdp-detail-prepare-start:${elementId}`;
+    const startedAt = markDetailPrepareStart(startMark);
     void Promise.all([
       loadCountryElementBundleV122(countryIso3, elementId),
       loadCatalogForCountrySelectionV122(countryIso3),
     ])
       .then(([payload, catalog]) => {
         if (cancelled) return;
+        setPrepareMs(measureDetailPrepare(startMark, startedAt));
         setCatalogItem(
           catalog.find((item) => item.elementId === elementId) || null
         );
@@ -784,7 +816,10 @@ export default function CountryDataElementPage({
     ? publicDownloadStatusV128(catalogItem)
     : null;
   return (
-    <div className="page-shell cdp-page cdp-detail-page-v146">
+    <div
+      className="page-shell cdp-page cdp-detail-page-v146"
+      data-detail-prepare-ms={prepareMs === null ? undefined : prepareMs}
+    >
       <button
         type="button"
         className="cdp-button cdp-button--secondary"

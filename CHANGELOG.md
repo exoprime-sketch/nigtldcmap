@@ -2,6 +2,30 @@
 
 이 문서는 공개 플랫폼의 주요 변경을 기록합니다. 아직 merge·배포·tag가 확인되지 않은 작업은 `Unreleased`에 둡니다.
 
+## Unreleased — V151-2 34개 집계정책·국가 외곽선·배경지도 개편·CCKP 팩 분할 (PR 후보)
+
+### Added
+
+- 레이어별 34개 집계정책 `boundaryPolicy`(`map-index.json`, 빌드 생성): `sum`·`area-weighted-mean`·`range-only`·`count-sum`·`membership-or`·`native-34`·`six-region-only`·`none`. 대상 계약(`build.boundaryPolicy34`)에 선언하고 `scripts/v138/build-map-layers-v138.mjs`가 검증(면 레이어 누락·분위형 지표 평균화 거부). 34개 경계에서 값을 규칙대로 표시하고 팝업·패널에 "구성 n개 중 m개 값 있음 · 구성 범위 · 부분 결측"을 표기. 63개 토글은 원자료 값 그대로. 판정표 `docs/ADMIN_BOUNDARY_34_V151.md`
+- CCKP B-003~B-007은 전 지표 면적가중평균(성·시 값이 격자 지표의 ADM1 공간평균이므로), B-042 상위 10% 2개 지표는 구성 범위만(range-only), C-012·C-013·C-019·C-022는 34개 경계에 직접(native-34), B-021은 GDL 6권역 자산 `vnm-region-6.geojson`
+- 34개 경계 자산에 `areaKm2`·`memberAreaKm2`(면적가중치), 국가 외곽선 `vnm-country-outline.geojson`(63개 병합, 4,839 정점)·표시 전용 `vnm-country-outline-z5.geojson`(0.01° 단순화, 981 정점). 큰 지도·비교 지도·SVG 대체·미니맵이 Natural Earth 저해상 외곽선(44 정점) 대신 사용
+- 점 13개 레이어 소재지 사이드카 `spatial/locations/<id>.json`(원자료 좌표 → 63개 경계 point-in-polygon, 경계 밖은 null) → 팝업 "소재 럼동 (구 닥농성)"
+- 배경지도 선택기(지형·위성·도로·지명·없음, 기본 지형) `src/data/map/mapBackdropV151.ts`: Natural Earth 음영기복 + AWS Terrain Tiles(terrarium) hillshade + OpenFreeMap 하천·도로·철도·지명 / Esri World Imagery / OpenFreeMap Liberty 전체 / 없음. preconnect·z5~7 워밍업·첫 타일 계측(`data-backdrop-first-tile-ms`)·타일 실패 시 '없음' 자동 하강, kind별 귀속 표기
+- 라벨 계층 `src/data/map/mapLabelsV151.ts`·polylabel 대표점 `labelAnchorV151.ts`: 행정구역 라벨(회색·소형·자간, 폴리곤 내부 대표점)과 도시 라벨(마커+진한 글씨) 분리, 성급시 6곳은 라벨 1개, 타일 place 라벨은 6개 도시 제외·name:ko 우선
+- 뷰포트 유지: 레이어 추가·제거·주 분석·변수·기간·경계 토글·배경 전환에 카메라 이동 없음, 자동 범위 맞춤은 최초 진입과 '선택 0→1 첫 레이어가 뷰포트 밖'일 때만, `view=lon,lat,zoom[,bearing]` URL 저장·복원
+- 게이트·러너: `audit:boundary-policy:v151-2`(finalize:v151에 추가), `qa:viewport:v151-2`, `qa:labels:v151-2`, `measure:backdrop:v151-2`, `measure:detail-prepare:v151-2`, `scripts/v151-2/screens-v151-2.mjs`
+
+### Changed
+
+- 데이터 팩: 8 MB 초과 요소는 단독 팩(`_plan_packs`, `tools/vietnam_etl/repack_packs_v151_2.py`) → 19→26개(B-003~B-007·B-017·B-033), 152개 요소 payload sha 불변. 로더는 압축 SHA-256 1회 + index 대조만 수행(원문 재해시 제거). CCKP 상세 준비(번들 요청→파싱) 0.19~0.51 s, 화면 ready 0.50~1.23 s(전 2.8~3.0 s)
+- 문구: 레이어 부제 "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)", 토글 아래 상시 고지 → 선택 레이어의 정책 1줄, 지도 분석 패널 통계·범례 결측 수는 표시 경계 기준(34/63/6권역), 이용안내에 집계 규칙·배경지도 귀속·view 저장 안내
+- 참조 외곽선 34개 1.6 px / 63개 0.8 px, 데이터 레이어 아래에 삽입
+
+### Fixed
+
+- 주 분석(색상 표시) 변경 시 지도가 국가 범위로 리셋되던 동작 제거
+- OpenFreeMap Liberty 레이어 임포트 시 `layout: undefined` 검증 오류
+
 ## Unreleased — V153-D0 데이터 결함 수정 (PR 후보)
 
 ### Fixed

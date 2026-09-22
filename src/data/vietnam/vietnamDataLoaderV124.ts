@@ -23,6 +23,7 @@ import type {
   VietnamShardEnvelopeV124,
   VietnamShardV124,
   VietnamSpatialLayerAssetV124,
+  VietnamLocationSidecarV151,
 } from "./vietnamTypesV124";
 
 const MANIFEST_URL = publicAssetUrlV128("data/vietnam/v2/manifest.json");
@@ -369,14 +370,11 @@ async function loadEnvelopeContent(
         { url, actual: content.byteLength, expected: envelope.contentByteSize }
       );
     }
-    const contentHash = await sha256Hex(content);
-    if (contentHash !== envelope.contentSha256) {
-      throw new VietnamAssetErrorV124(
-        "ASSET_CONTENT_HASH_MISMATCH",
-        "원문 데이터의 무결성 검증에 실패했습니다",
-        { url, actual: contentHash, expected: envelope.contentSha256 }
-      );
-    }
+    // V151-2: the decompressed content is no longer digested a second time.
+    // The compressed bytes were just verified against `compressedSha256`, and
+    // gzip's own CRC-32 ties the decompressed bytes to them, so the second
+    // digest only re-read up to a few hundred megabytes. `contentSha256` stays
+    // in the envelope and the bundle index for the offline release audits.
     return { bytes: content, envelope };
   })().catch((error) => {
     envelopeCache.delete(url);
@@ -665,6 +663,26 @@ export async function loadVietnamSpatialLayerV124(
     );
   }
   return expandSpatialValueTableV138(payload);
+}
+
+/**
+ * V151-2: the province and 34-unit each point record sits in, built at
+ * publish time by point-in-polygon. Cached like any other static asset.
+ */
+export async function loadVietnamLocationsV151(
+  locationsUrl: string,
+  signal?: AbortSignal
+): Promise<VietnamLocationSidecarV151> {
+  assertVietnamV124MapAssetUrl(locationsUrl);
+  const payload = await fetchJson<VietnamLocationSidecarV151>(locationsUrl, "default", signal);
+  if (payload.schemaVersion !== "v151-2-locations-1" || !payload.byRecordId) {
+    throw new VietnamAssetErrorV124(
+      "ASSET_SCHEMA_INVALID",
+      "V151 소재지 자산 계약이 올바르지 않습니다",
+      { locationsUrl }
+    );
+  }
+  return payload;
 }
 
 /**

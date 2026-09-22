@@ -1,0 +1,223 @@
+{
+  "summary": {
+    "type": "summary",
+    "audit": "detail-prepare-timing:v151-2",
+    "status": "PASS",
+    "label": "after",
+    "ids": [
+      "B-003",
+      "B-004",
+      "B-005",
+      "B-006",
+      "B-007"
+    ],
+    "runs": 3,
+    "perId": {
+      "B-003": {
+        "median": 503.20000000018626,
+        "packBytes": 2640141
+      },
+      "B-004": {
+        "median": 1203.699999999255,
+        "packBytes": 11169153
+      },
+      "B-005": {
+        "median": 1099.7999999998137,
+        "packBytes": 6491046
+      },
+      "B-006": {
+        "median": 1225.5,
+        "packBytes": 10996362
+      },
+      "B-007": {
+        "median": 1165.4000000003725,
+        "packBytes": 10975701
+      }
+    },
+    "generatedAt": "2026-09-21T23:54:39.237Z"
+  },
+  "perId": {
+    "B-003": {
+      "runs": [
+        507.5,
+        503.20000000018626,
+        489.40000000037253
+      ],
+      "median": 503.20000000018626,
+      "min": 489.40000000037253,
+      "max": 507.5,
+      "prepareMeasureMedian": 190.6000000005588,
+      "packBytes": 2640141
+    },
+    "B-004": {
+      "runs": [
+        1240.5,
+        1203.3999999994412,
+        1203.699999999255
+      ],
+      "median": 1203.699999999255,
+      "min": 1203.3999999994412,
+      "max": 1240.5,
+      "prepareMeasureMedian": 514,
+      "packBytes": 11169153
+    },
+    "B-005": {
+      "runs": [
+        1062.1000000005588,
+        1099.7999999998137,
+        1132.6000000005588
+      ],
+      "median": 1099.7999999998137,
+      "min": 1062.1000000005588,
+      "max": 1132.6000000005588,
+      "prepareMeasureMedian": 425.80000000074506,
+      "packBytes": 6491046
+    },
+    "B-006": {
+      "runs": [
+        1253.3999999994412,
+        1225.5,
+        1198.1000000005588
+      ],
+      "median": 1225.5,
+      "min": 1198.1000000005588,
+      "max": 1253.3999999994412,
+      "prepareMeasureMedian": 491.79999999981374,
+      "packBytes": 10996362
+    },
+    "B-007": {
+      "runs": [
+        1165.4000000003725,
+        1227,
+        1158.7999999998137
+      ],
+      "median": 1165.4000000003725,
+      "min": 1158.7999999998137,
+      "max": 1227,
+      "prepareMeasureMedian": 482.70000000018626,
+      "packBytes": 10975701
+    }
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-003_run1",
+      "status": "PASS",
+      "actual": 507.5,
+      "expected": "ready before timeout"
+    },
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-003_run2",
+      "status": "PASS",
+      "actual": 503.20000000018626,
+      "expected": "ready before timeout"
+    },
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-003_run3",
+      "status": "PASS",
+      "actual": 489.40000000037253,
+      "expected": "ready before timeout"
+    },
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-004_run1",
+      "status": "PASS",
+      "actual": 1240.5,
+      "expected": "ready before timeout"
+    },
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-004_run2",
+      "status": "PASS",
+      "actual": 1203.3999999994412,
+      "expected": "ready before timeout"
+    },
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-004_run3",
+      "status": "PASS",
+      "actual": 1203.699999999255,
+      "expected": "ready before timeout"
+    },
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-005_run1",
+      "status": "PASS",
+      "actual": 1062.1000000005588,
+      "expected": "ready before timeout"
+    },
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-005_run2",
+      "status": "PASS",
+      "actual": 1099.7999999998137,
+      "expected": "ready before timeout"
+    },
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-005_run3",
+      "status": "PASS",
+      "actual": 1132.6000000005588,
+      "expected": "ready before timeout"
+    },
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-006_run1",
+      "status": "PASS",
+      "actual": 1253.3999999994412,
+      "expected": "ready before timeout"
+    },
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-006_run2",
+      "status": "PASS",
+      "actual": 1225.5,
+      "expected": "ready before timeout"
+    },
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-006_run3",
+      "status": "PASS",
+      "actual": 1198.1000000005588,
+      "expected": "ready before timeout"
+    },
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-007_run1",
+      "status": "PASS",
+      "actual": 1165.4000000003725,
+      "expected": "ready before timeout"
+    },
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-007_run2",
+      "status": "PASS",
+      "actual": 1227,
+      "expected": "ready before timeout"
+    },
+    {
+      "type": "check",
+      "audit": "detail-prepare-timing:v151-2",
+      "name": "READY_B-007_run3",
+      "status": "PASS",
+      "actual": 1158.7999999998137,
+      "expected": "ready before timeout"
+    }
+  ]
+}

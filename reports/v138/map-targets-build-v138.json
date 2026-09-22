@@ -1,6 +1,6 @@
 {
   "schema": "map-targets-build-v138",
-  "generatedAt": "2026-09-21T08:24:48.484Z",
+  "generatedAt": "2026-09-22T00:26:27.161Z",
   "dataRoot": "/public/data/vietnam/v2",
   "targetCount": 43,
   "counts": {
@@ -291,7 +291,8 @@
         "countNoun",
         "filtersAppend",
         "factFieldsAppend",
-        "periodLabel"
+        "periodLabel",
+        "boundaryPolicy34"
       ]
     },
     {
@@ -300,7 +301,9 @@
       "representation": "line",
       "build": "existing",
       "featureCount": 606,
-      "patched": []
+      "patched": [
+        "boundaryPolicy34"
+      ]
     },
     {
       "elementId": "A-025",
@@ -498,7 +501,9 @@
       "representation": "region-choropleth",
       "build": "existing",
       "featureCount": 63,
-      "patched": []
+      "patched": [
+        "boundaryPolicy34"
+      ]
     },
     {
       "elementId": "B-023",
@@ -607,7 +612,8 @@
       "featureCount": 63,
       "patched": [
         "defaultVariableMeasureId",
-        "defaultVariableLabelPattern"
+        "defaultVariableLabelPattern",
+        "boundaryPolicy34"
       ]
     },
     {
@@ -616,7 +622,9 @@
       "representation": "admin1-choropleth",
       "build": "existing",
       "featureCount": 63,
-      "patched": []
+      "patched": [
+        "boundaryPolicy34"
+      ]
     },
     {
       "elementId": "B-033",
@@ -624,7 +632,9 @@
       "representation": "admin1-choropleth",
       "build": "existing",
       "featureCount": 63,
-      "patched": []
+      "patched": [
+        "boundaryPolicy34"
+      ]
     },
     {
       "elementId": "B-034",
@@ -632,7 +642,9 @@
       "representation": "admin1-choropleth",
       "build": "existing",
       "featureCount": 63,
-      "patched": []
+      "patched": [
+        "boundaryPolicy34"
+      ]
     },
     {
       "elementId": "B-037",
@@ -727,7 +739,8 @@
       "featureCount": 2,
       "patched": [
         "analysisItemLabel",
-        "countNoun"
+        "countNoun",
+        "boundaryPolicy34"
       ]
     },
     {
@@ -806,7 +819,9 @@
       "representation": "admin1-choropleth",
       "build": "existing",
       "featureCount": 63,
-      "patched": []
+      "patched": [
+        "boundaryPolicy34"
+      ]
     },
     {
       "elementId": "C-019",
@@ -869,7 +884,8 @@
       "featureCount": 262,
       "patched": [
         "analysisItemLabel",
-        "countNoun"
+        "countNoun",
+        "boundaryPolicy34"
       ]
     },
     {
@@ -878,7 +894,9 @@
       "representation": "admin1-choropleth",
       "build": "existing",
       "featureCount": 3,
-      "patched": []
+      "patched": [
+        "boundaryPolicy34"
+      ]
     },
     {
       "elementId": "D-018",
@@ -886,7 +904,9 @@
       "representation": "regional-scope",
       "build": "existing",
       "featureCount": 4,
-      "patched": []
+      "patched": [
+        "boundaryPolicy34"
+      ]
     },
     {
       "elementId": "E-004",
@@ -1069,5 +1089,5 @@
       ]
     }
   ],
-  "mapIndexSha256": "66e8df444407d8c7b8fc43d1171281e7108d5432ca45c13df779ea3d577a58a3"
+  "mapIndexSha256": "28890fb7fc7e3cf15dd48d0104f3a40258b2af11601555c5b3479fe2e14661ae"
 }

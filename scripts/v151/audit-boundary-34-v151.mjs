@@ -203,11 +203,14 @@ if (SKIP_BROWSER) {
     true
   );
   const notice = (await page.getByTestId("map-boundary-value-notice-v151").innerText()).trim();
+  // V151-2 (reports/v151-2/REVIEW_V151-2.md §기대값 변경): with no dataset
+  // focused the notice names where the per-layer aggregation rule appears; a
+  // focused dataset shows its boundaryPolicy line instead.
   check(
     "SCREEN_VALUE_NOTICE",
-    notice.includes("34개로 합산하지 않습니다") ? "PASS" : "FAIL",
+    /집계 규칙|34개로 합산하지 않습니다|34개 성·시 값은|구성 범위|원자료가 개편 후 34개/u.test(notice) ? "PASS" : "FAIL",
     notice,
-    "값을 34개로 합산하지 않는다는 고지"
+    "34개 경계의 값 규칙(정책 1줄 또는 안내) 고지"
   );
   await page.waitForFunction(
     () => Boolean(document.querySelector(".cdp-map-canvas-wrap")),
@@ -234,9 +237,9 @@ if (SKIP_BROWSER) {
   const notice63 = (await page.getByTestId("map-boundary-value-notice-v151").innerText()).trim();
   check(
     "SCREEN_63_NOTICE",
-    notice63.includes("개편 전 63개 성·시 기준") ? "PASS" : "FAIL",
+    /개편 전 63개 성·시 기준|63개 성·시\(개편 전\) 기준/u.test(notice63) ? "PASS" : "FAIL",
     notice63,
-    "경계·값 모두 개편 전 63개 기준이라는 고지"
+    "63개(개편 전) 기준·원자료 값 그대로라는 고지"
   );
 
   // The preference has to survive a reload, like the backdrop toggle does.

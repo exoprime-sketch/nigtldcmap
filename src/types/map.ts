@@ -86,6 +86,41 @@ export interface MapViewState {
   comparisonLayerIds: string[];
   /** Per-layer public variable and period selections restored from the URL. */
   layerSelectors: Record<string, { variable: string; period: string }>;
+  /**
+   * V151-2: the camera the reader left the map at (`view=lon,lat,zoom[,bearing]`),
+   * so a reload or a shared link opens the same place. Null until the reader
+   * has moved the map.
+   */
+  camera: MapCameraV151 | null;
+}
+
+export interface MapCameraV151 {
+  lng: number;
+  lat: number;
+  zoom: number;
+  bearing: number;
+}
+
+/** `view=lon,lat,zoom[,bearing]` -> camera, or null when malformed. */
+export function parseMapCameraV151(raw: string | null | undefined): MapCameraV151 | null {
+  if (!raw) return null;
+  const parts = raw.split(",").map((part) => Number(part.trim()));
+  if (parts.length < 3 || parts.slice(0, 3).some((value) => !Number.isFinite(value))) return null;
+  const [lng, lat, zoom, bearing] = parts;
+  if (lng < -180 || lng > 180 || lat < -90 || lat > 90 || zoom < 0 || zoom > 24) return null;
+  return { lng, lat, zoom, bearing: Number.isFinite(bearing) ? bearing : 0 };
+}
+
+export function formatMapCameraV151(camera: MapCameraV151): string {
+  const parts = [camera.lng.toFixed(5), camera.lat.toFixed(5), camera.zoom.toFixed(2)];
+  if (Math.abs(camera.bearing) >= 0.5) parts.push(camera.bearing.toFixed(1));
+  return parts.join(",");
+}
+
+export function mapCamerasEqualV151(a: MapCameraV151 | null, b: MapCameraV151 | null): boolean {
+  if (a === b) return true;
+  if (!a || !b) return false;
+  return formatMapCameraV151(a) === formatMapCameraV151(b);
 }
 
 export const DEFAULT_MAP_VIEW_STATE: MapViewState = {
@@ -113,6 +148,7 @@ export const DEFAULT_MAP_VIEW_STATE: MapViewState = {
   comparisonMode: false,
   comparisonLayerIds: [],
   layerSelectors: {},
+  camera: null,
 };
 
 const MAP_LAYER_IDS = new Set<MapLayerId>([
@@ -438,5 +474,6 @@ export function parseMapViewState(params: URLSearchParams): MapViewState {
         ? comparisonLayerIds
         : [],
     layerSelectors,
+    camera: parseMapCameraV151(params.get("view")),
   };
 }
