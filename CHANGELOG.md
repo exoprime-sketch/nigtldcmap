@@ -2,6 +2,17 @@
 
 이 문서는 공개 플랫폼의 주요 변경을 기록합니다. 아직 merge·배포·tag가 확인되지 않은 작업은 `Unreleased`에 둡니다.
 
+## Unreleased — V153-D0 데이터 결함 수정 (PR 후보)
+
+### Fixed
+
+- B-046·B-047 관측 레코드에 광물명(`name`)·측정 라벨 투영(원천 meta `요소_KR`), 다운로드 CSV `name` 열 채움. 광물별 화면(값·단위·세계 순위·비중 병기, USGS 미수록 분리)
+- E-006 좌표 point-in-polygon(34개 성·시)으로 `locationClass` 속성화 — 베트남 소재 8곳 / 해외 소재(베트남 투자 실적) 7곳 목록 분리(지도 피처 8 불변)
+- 38대 기후기술 ID를 카탈로그·팩·화면에서 `"07"` 한 표기로 정규화(옵션 77→38, 두 표기 합집합 매칭, `technology=07` URL 복원). 원자료 불변
+- C-012 항목·값 한글화(원문 괄호 병기, `koreanTermsV153.json`), B-002 기후대 라벨 "한글(코드)" 순서·구성 표
+- A-023 WRI 236기를 GPPD 추출본(CC BY 4.0) `gppd_idnr`로 조인해 소유자·가동 연도·출처 URL, OSM operator·객체 URL, 전 시설 소재지(34·63 경계) 빌드 시 속성화. 시설 카드 규격 `facilityCardV153`(국가/명칭/유형/소유·운영/규모/연도/소재지/출처)와 A-023 선택 시설 패널
+- ETL 재실행 가능화(A-002 legacy 슬러그 해석) · 요소별 선별 승격 도구(`scripts/v153/diff-staging-v153.mjs`, `promote-elements-v153.mjs`)
+
 ## Unreleased — V151 행정경계 34개 기본·63개 토글 (PR 후보)
 
 ### Added
