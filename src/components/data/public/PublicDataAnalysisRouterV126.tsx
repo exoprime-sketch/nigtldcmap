@@ -42,6 +42,10 @@ import PublicCompositionTrendAnalysisV132 from "./PublicCompositionTrendAnalysis
 import ResearchPatentAnalysisV132 from "./ResearchPatentAnalysisV132";
 import PublicDataLimitationsV126 from "./PublicDataLimitationsV126";
 import PowerPlantRegistrySummaryV138 from "./PowerPlantRegistrySummaryV138";
+import MineralResourceSummaryV153 from "./MineralResourceSummaryV153";
+import InvestorNetworkSummaryV153 from "./InvestorNetworkSummaryV153";
+import PppProcurementSummaryV153 from "./PppProcurementSummaryV153";
+import ClimateZoneSummaryV153 from "./ClimateZoneSummaryV153";
 import CooperationChecklistAnalysisV141 from "./CooperationChecklistAnalysisV141";
 import EnergyOutlookPlanAnalysisV141 from "./EnergyOutlookPlanAnalysisV141";
 import SecuritySafetyInfoV142 from "./SecuritySafetyInfoV142";
@@ -414,6 +418,18 @@ export default function PublicDataAnalysisRouterV126({
           <EnergyOutlookPlanAnalysisV141 entities={entities} initialYear={selectorState.year} />
         ) : elementId === "A-023" ? (
           <PowerPlantRegistrySummaryV138 entities={entities} selectorState={selectorState} onSelectorStateChange={onSelectorStateChange} />
+        ) : elementId === "B-046" || elementId === "B-047" ? (
+          // Minerals by name, in their own units; the bar is USGS's world share (V153).
+          <MineralResourceSummaryV153 elementId={elementId} observations={observations} indicators={indicators} />
+        ) : elementId === "E-006" ? (
+          // Investors with a Vietnam office apart from head offices abroad (V153).
+          <InvestorNetworkSummaryV153 entities={entities} />
+        ) : elementId === "C-012" ? (
+          // PPP law, agency, contract and procurement facts, Korean first (V153).
+          <PppProcurementSummaryV153 entities={entities} indicators={indicators} />
+        ) : elementId === "B-002" ? (
+          // Köppen zones named Korean(code) with the composition table (V153).
+          <ClimateZoneSummaryV153 observations={observations} indicators={indicators} />
         ) : regionScenarioSummary ?? (
           <SemanticArchetypePreviewV125
             contract={adapterContract}
