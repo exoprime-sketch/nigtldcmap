@@ -1,0 +1,6 @@
+.cs153 { min-width: 0; }
+.cs153__mode { display: inline-flex; gap: 6px; align-self: flex-start; }
+.cs153__mode button { padding: 6px 12px; border: 1px solid #bed2c9; border-radius: 999px; background: #fff; color: #174d39; font: inherit; cursor: pointer; }
+.cs153__mode button[aria-pressed="true"] { background: #146c5a; border-color: #146c5a; color: #fff; }
+.cs153__mode button:focus-visible { outline: 3px solid #218273; outline-offset: 2px; }
+.cs153__excluded { margin: 8px 0 0; font-size: 0.84rem; color: #5b4a1f; }

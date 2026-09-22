@@ -8,6 +8,8 @@ import { publicMeasureLabelV126 } from "../../../data/visualization/publicCopyRe
 import "./public-composition-trend-v132.css";
 import { displayUnitV150 } from "../../../data/visualization/unitDisplayV150";
 import ChartAxesV150 from "../../charts/ChartAxesV150";
+import CompositionStackV153 from "./CompositionStackV153";
+import { useAnalysisContractV153 } from "./analysisContractContextV153";
 
 interface Props {
   elementId: string;
@@ -195,6 +197,10 @@ export default function PublicCompositionTrendAnalysisV132({
   );
   const hasTimeAnalysis = displayedSeries.some((series) => series.rows.length >= 3);
   const totalLikeCount = allSeries.filter((series) => series.totalLike).length;
+  // A composition dataset (A-018) opens on the stacked area; a share series
+  // (A-005 industry shares, B-024) keeps the line first (V153 contract).
+  const v153 = useAnalysisContractV153();
+  const opensOnStack = v153?.primary.type === "stacked-area";
 
   if (!selectedMeasure || numericRows.length === 0) {
     return <div className="pct132-empty" role="status">표시할 구성 관측값이 없습니다.</div>;
@@ -211,7 +217,27 @@ export default function PublicCompositionTrendAnalysisV132({
       data-total-like-series-count={totalLikeCount}
       data-zero-imputation="false"
     >
-      <section className="pct132__panel" aria-labelledby={`pct132-${elementId}-trend`}>
+      {opensOnStack && selectedMeasure && (
+        <CompositionStackV153
+          elementId={elementId}
+          headingId={`pct132-${elementId}`}
+          title="연도별 구성 변화(누적)"
+          series={allSeries.filter((series) => !series.totalLike).map((series) => ({
+            key: series.publicKey,
+            label: series.label,
+            points: series.rows.map((row) => ({ year: row.year as number, value: row.value })),
+          }))}
+          unit={selectedMeasure.unit}
+          subject="계열"
+          quantity={publicMeasureLabelV126(selectedMeasure.label)}
+          selectedYear={selectedYear}
+          onSelectYear={(year) => onSelectorStateChange({ ...selectorState, year })}
+          panelClassName="pct132__panel"
+          headingClassName="pct132__heading"
+        />
+      )}
+
+      <section className="pct132__panel" aria-labelledby={`pct132-${elementId}-trend`} data-analysis-block="line">
         <header className="pct132__heading">
           <div>
             <span>주 분석</span>
@@ -329,7 +355,7 @@ export default function PublicCompositionTrendAnalysisV132({
         ) : null}
       </section>
 
-      <section className="pct132__panel" aria-labelledby={`pct132-${elementId}-detail`}>
+      <section className="pct132__panel" aria-labelledby={`pct132-${elementId}-detail`} data-analysis-block="category-bar">
         <header className="pct132__heading pct132__heading--detail">
           <div>
             <span>보조 분석</span>

@@ -12,8 +12,11 @@ import {
   PublicTermExpandedTextV134,
   PublicTermTextV134,
 } from "../../help/PublicTermV134";
+import PublicDataLimitationsV126 from "./PublicDataLimitationsV126";
 
 interface Props {
+  /** For the usage notes filed under the collapsed terms (V153). */
+  elementId?: string;
   indicators: VietnamIndicatorMetaV124[];
   observations: VietnamObservationV124[];
   entities: VietnamEntityV124[];
@@ -23,6 +26,7 @@ interface Props {
 }
 
 export default function PublicSourcePanelV126({
+  elementId,
   indicators,
   observations,
   entities,
@@ -98,12 +102,23 @@ export default function PublicSourcePanelV126({
     ...indicators.map((item) => publicSourceOrganizationV136_1(item.attributionText)),
   ]);
 
+  // V153: the source, period and unit read as one visible line; the licence,
+  // the official links and the usage notes stay under the collapsed 이용조건.
+  const sourceLine = [
+    `출처 ${organizations.join(" · ") || "공개 자료에 기관명이 명시되지 않음"}`,
+    `자료기간 ${summarizeYearsV126(years)}`,
+    `단위 ${units.join(" · ") || "미기재"}`,
+  ].join(" · ");
   return (
+    <div className="pav126-source-frame-v153" data-testid="detail-source-frame-v153">
+    <p className="pav126-source-line-v153" data-testid="detail-source-line-v153">
+      <PublicTermTextV134 text={sourceLine} />
+    </p>
     <details
       className="pav126-source pav126-source--details-v135"
       data-testid="detail-metadata-v135"
     >
-      <summary>자료정보</summary>
+      <summary>이용조건</summary>
       <section
         className="pav126-source__content-v135"
         data-testid="public-source-panel"
@@ -174,8 +189,10 @@ export default function PublicSourcePanelV126({
           )}
           </div>
         )}
+        {elementId && <PublicDataLimitationsV126 elementId={elementId} />}
       </section>
     </details>
+    </div>
   );
 }
 

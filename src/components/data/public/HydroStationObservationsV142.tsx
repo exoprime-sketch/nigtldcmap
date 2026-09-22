@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import DumbbellChartV153 from "../../charts/DumbbellChartV153";
 
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { publicTextV126 } from "../../../data/visualization/publicFieldPolicyV126";
@@ -181,34 +182,35 @@ export default function HydroStationObservationsV142({ elementId, entities }: Pr
 
 
       {model.pairs.length > 0 && (
-        <section className="pps132-distribution" data-testid="hydro-season-pairs-v142">
+        <section className="pps132-distribution" data-testid="hydro-season-pairs-v142" data-analysis-block="dumbbell">
           <h5>건기 최저·우기 최고유량 · {model.pairs.length}개 지점</h5>
-          <ul className="hso142__pairs">
-            {model.pairs.map((pair) => {
-              const scale = Math.max(pair.wet.central as number, pair.dry.central as number, 1);
-              return (
-                <li key={`${pair.site}-${pair.year}`} data-pair-site={pair.site} data-pair-year={pair.year}>
-                  <strong><PublicTermTextV134 text={`${pair.site} · ${pair.year}년 · ${pair.unit}`} /></strong>
-                  {[{ row: pair.dry, label: "건기 최저", tone: "dry" }, { row: pair.wet, label: "우기 최고", tone: "wet" }].map(({ row, label, tone }) => (
-                    <div className="hso142__bar-row" key={tone}>
-                      <span>{label}</span>
-                      <span className="hso142__track" aria-hidden="true"><i className={`hso142__fill--${tone}`} style={{ width: `${((row.central as number) / scale) * 100}%` }} /></span>
-                      <span>{formatRange(row)}</span>
-                    </div>
-                  ))}
-                  {pair.ratio && <small>원자료 유량비: {formatRange(pair.ratio)}배</small>}
-                </li>
-              );
-            })}
-          </ul>
-          <p className="pps132-note">지점마다 막대의 축 범위가 다릅니다. 유량비는 원자료에 기재된 값으로, 위 두 값을 나눈 결과와 다를 수 있습니다.</p>
+          {/* One shared axis per unit: the gap between the two seasons is
+              comparable across stations (V153). Ratios stay as delivered. */}
+          {[...new Set(model.pairs.map((pair) => pair.unit))].map((unit) => (
+            <DumbbellChartV153
+              key={unit}
+              unit={unit}
+              xAxis="유량"
+              yAxis="관측지점"
+              ariaLabel={`관측지점별 건기 최저유량과 우기 최고유량, 단위 ${unit}`}
+              testId="hydro-season-dumbbell-v153"
+              rows={model.pairs.filter((pair) => pair.unit === unit).map((pair) => ({
+                id: `${pair.site}-${pair.year}`,
+                label: pair.site,
+                note: `${pair.year}년${pair.ratio ? ` · 원자료 유량비 ${formatRange(pair.ratio)}배` : ""}`,
+                low: { label: "건기 최저", value: pair.dry.central as number },
+                high: { label: "우기 최고", value: pair.wet.central as number },
+              }))}
+            />
+          ))}
+          <p className="pps132-note">유량비는 원자료에 기재된 값으로, 위 두 값을 나눈 결과와 다를 수 있습니다.</p>
         </section>
       )}
 
       {model.sites.map(([site, description]) => {
         const rows = model.stationRows.filter((row) => row.site === site).sort((a, b) => a.base.localeCompare(b.base, "ko") || (a.year ?? 0) - (b.year ?? 0));
         return (
-          <section key={site} className="pps132-distribution pps132-distribution--table" data-testid="hydro-station-table-v142" data-station={site}>
+          <section key={site} className="pps132-distribution pps132-distribution--table" data-testid="hydro-station-table-v142" data-station={site} data-analysis-block="sorted-table">
             <h5><PublicTermTextV134 text={site} /> · 관측값 {rows.length}건</h5>
             {description && <p className="pps132-note"><PublicTermTextV134 text={description} /></p>}
             <div className="pps132-table-wrap">
@@ -240,7 +242,7 @@ export default function HydroStationObservationsV142({ elementId, entities }: Pr
       })}
 
       {model.nationalRows.length > 0 && (
-        <section className="pps132-distribution pps132-distribution--table" data-testid="hydro-national-table-v142">
+        <section className="pps132-distribution pps132-distribution--table" data-testid="hydro-national-table-v142" data-analysis-block="table">
           <h5>전국 집계 · {model.nationalRows.length}건</h5>
           <div className="pps132-table-wrap">
             <table>

@@ -1,3 +1,8 @@
+/**
+ * Unused since V153-D1: the collapsed "자료 해석 안내" block was removed from
+ * the detail screen (source, period and unit read as one line; the terms stay
+ * collapsed). The component is kept for reference and is not rendered.
+ */
 import { getPublicIndicatorInterpretationV129 } from "../../../data/interpretation/publicIndicatorInterpretationV129";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import "./public-indicator-meaning-v129.css";

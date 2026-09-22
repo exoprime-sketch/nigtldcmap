@@ -11,6 +11,7 @@ import {
 import "./public-emissions-analysis-v132.css";
 import { displayUnitV150 } from "../../../data/visualization/unitDisplayV150";
 import ChartAxesV150 from "../../charts/ChartAxesV150";
+import CompositionStackV153 from "./CompositionStackV153";
 
 interface Props {
   elementId: string;
@@ -354,10 +355,33 @@ export default function PublicEmissionsAnalysisV132({
 
       </section>
 
+      {/* The composition opens on its stack (V153 contract: stacked-area). */}
+      {totalIsMeaningful && (
+        <CompositionStackV153
+          elementId={elementId}
+          headingId={headingId}
+          title={elementId === "A-010" ? "가스별 배출량 구성 변화" : "부문별 배출량 구성 변화"}
+          series={componentSeries.map((item, index) => ({
+            key: item.key,
+            label: item.label,
+            color: EMISSION_COLORS_V132[index % EMISSION_COLORS_V132.length],
+            points: item.rows.map((row) => ({ year: row.year, value: row.value })),
+          }))}
+          unit={selectedMeasure.unit}
+          subject={elementId === "A-010" ? "가스" : "부문"}
+          quantity="배출량"
+          selectedYear={selectedYear}
+          onSelectYear={(year) => onSelectorStateChange({ ...selectorState, year })}
+          panelClassName="pea132-panel"
+          headingClassName="pea132-heading"
+        />
+      )}
+
       {totalIsMeaningful && totalChartSeries.length > 0 ? (
         <section
           className="pea132-panel"
           aria-labelledby={`${headingId}-total`}
+          data-analysis-block="line"
           data-complete-year-count={completeYears.length}
           data-derived-total-formula="sum-only-when-every-component-is-populated"
           data-testid="emissions-total-trend-panel-v132"
@@ -385,13 +409,13 @@ export default function PublicEmissionsAnalysisV132({
           />
         </section>
       ) : (
-        <section className="pea132-panel pea132-notice" aria-label="합계 산출 안내">
+        <section className="pea132-panel pea132-notice" aria-label="합계 산출 안내" data-analysis-block="note">
           <strong>가스별 질량은 합산하지 않습니다</strong>
           <p>Gg 단위의 CO₂·CH₄·N₂O·불소계 가스는 온난화 영향이 서로 달라 하나의 총량이나 구성비로 만들지 않습니다.</p>
         </section>
       )}
 
-      <section className="pea132-panel" aria-labelledby={`${headingId}-breakdown`}>
+      <section className="pea132-panel" aria-labelledby={`${headingId}-breakdown`} data-analysis-block="line">
         <header className="pea132-heading">
           <div>
             <span>구성 분석</span>
@@ -417,7 +441,7 @@ export default function PublicEmissionsAnalysisV132({
       </section>
 
       {totalIsMeaningful && selectedComposition ? (
-        <section className="pea132-panel" aria-labelledby={`${headingId}-composition`}>
+        <section className="pea132-panel" aria-labelledby={`${headingId}-composition`} data-analysis-block="category-bar">
           <header className="pea132-heading pea132-heading--composition">
             <div>
               <span>선택연도 구성</span>

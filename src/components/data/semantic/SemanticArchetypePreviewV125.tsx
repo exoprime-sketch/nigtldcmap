@@ -29,7 +29,6 @@ import {
   publicMeasureLabelV126,
 } from "../../../data/visualization/publicCopyRegistryV126";
 import { publicIndicatorDimensionV144 } from "../../../data/visualization/publicIndicatorCopyV144";
-import { getPublicAnalysisHeadingsV134 } from "../../../data/visualization/publicAnalysisHeadingsV134";
 import {
   PublicTermHelpV134,
   PublicTermTextV134,
@@ -37,6 +36,7 @@ import {
 import SemanticContractRendererV125 from "./SemanticContractRendererV125";
 import PeerComparisonV147 from "../public/PeerComparisonV147";
 import RegionalVulnerabilityV147 from "../public/RegionalVulnerabilityV147";
+import { useAnalysisContractV153 } from "../public/analysisContractContextV153";
 import type { IndicatorUnitsV142 } from "./SemanticContractRendererV125";
 import "../../../styles/semantic-visualization-v125.css";
 
@@ -143,6 +143,10 @@ export default function SemanticArchetypePreviewV125({
       ),
     [observations, semantics]
   );
+  // B-021: the six regions' comparison opens the screen when the contract
+  // asks for the region bars; the national series follows (V153).
+  const v153 = useAnalysisContractV153();
+  const regionalFirst = contract.elementId === "B-021" && v153?.primary.type === "region-bar";
   // Unit per indicator, so entity rows can tell a phone number from a rate
   // before anything is compared (V142).
   const indicatorUnits = useMemo<IndicatorUnitsV142>(
@@ -391,6 +395,7 @@ export default function SemanticArchetypePreviewV125({
         className="sv125-status"
         data-testid="public-status-only"
         data-public-empty-reason="no-populated-records"
+        data-analysis-block="status-note"
       >
         <div data-testid="public-primary-visualization">
           <strong>아직 공개된 값이 없습니다</strong>
@@ -426,32 +431,15 @@ export default function SemanticArchetypePreviewV125({
     (row) => row.value === null || row.value === undefined || row.value === ""
   );
   const visualizationTableRows = semanticRows;
-  const rendererLabel = rendererLabelV125(contract.primaryRenderer);
-  const publicHeadings = getPublicAnalysisHeadingsV134(contract.elementId);
 
   return (
     <div
       className="sv125-shell"
       data-testid="public-analytical-view"
     >
-      {!publicHeadings && (
-        <section className="sv125-intro" aria-labelledby="sv125-intro-title">
-          <span>분석 안내</span>
-          <h3 id="sv125-intro-title">
-            <PublicTermTextV134 text={elementTitle || rendererLabel} />
-          </h3>
-          <p>
-            <PublicTermTextV134
-              text={publicAnalysisIntroV126(
-                contract,
-                observations.length,
-                entities.length
-              )}
-            />
-          </p>
-        </section>
-      )}
-
+      {/* The V126 intro card restated the page title and the record counts
+          above the selectors; the page's hero and the core figures row now
+          say both once (V153). */}
       <div className="sv125-controls" aria-label="데이터 분류 선택" data-testid="public-selector">
         {measureOptions.length > 1 && (
           <label>
@@ -667,6 +655,8 @@ export default function SemanticArchetypePreviewV125({
       </div>
 
 
+      {regionalFirst && <RegionalVulnerabilityV147 rows={semanticRows} />}
+
       {(numericRows.length > 0 ||
         textRows.length > 0 ||
         visibleEntities.length > 0) && (
@@ -686,7 +676,7 @@ export default function SemanticArchetypePreviewV125({
       )}
 
       {peerRows.length > selectedRows.length && <PeerComparisonV147 rows={peerRows} selectedIds={selectedRows.map((r) => r.recordId)} />}
-      {contract.elementId === "B-021" && <RegionalVulnerabilityV147 rows={semanticRows} />}
+      {contract.elementId === "B-021" && !regionalFirst && <RegionalVulnerabilityV147 rows={semanticRows} />}
 
       {(() => {
         const definitions = Array.from(new Set(measureContextRows.flatMap((row) =>
@@ -960,6 +950,7 @@ function SemanticTableFallbackV125({ rows }: { rows: SemanticObservationV125[] }
     <details
       className="sv125-table-fallback"
       data-testid="public-raw-table"
+      data-analysis-block="table"
     >
       <summary>상세 데이터 · {rows.length.toLocaleString("ko-KR")}건</summary>
       <div className="cdp-table-wrap">
@@ -1047,57 +1038,3 @@ function dimensionValueLabelV125(key: string, value: string): string {
   return publicDimensionValueV134(key, value);
 }
 
-function rendererLabelV125(
-  renderer: ElementVisualizationContractV125["primaryRenderer"]
-): string {
-  const labels: Record<ElementVisualizationContractV125["primaryRenderer"], string> = {
-    "kpi-trend": "핵심 지표와 추세",
-    "multi-metric-trend": "복수 항목 추세",
-    composition: "구성비",
-    "category-comparison": "항목별 비교",
-    "paired-category-comparison": "연관 항목 비교",
-    "score-benchmark": "점수·기준 비교",
-    "scenario-range": "시나리오 범위",
-    seasonality: "계절성",
-    portfolio: "사업 포트폴리오",
-    directory: "기관 디렉터리",
-    "policy-timeline": "정책 타임라인",
-    "evidence-matrix": "근거 매트릭스",
-    "capability-scorecard": "역량 스코어카드",
-    "document-library": "문서 라이브러리",
-    "spatial-summary": "공간 분포 요약",
-    "structured-table": "구조화 표",
-    "status-only": "데이터 상태",
-  };
-  return labels[renderer];
-}
-
-function publicAnalysisIntroV126(
-  contract: ElementVisualizationContractV125,
-  observationCount: number,
-  entityCount: number,
-  publicQuestion?: string
-): string {
-  if (observationCount === 0 && entityCount > 0) {
-    if (contract.elementId === "E-018") {
-      return `진출 기업 ${entityCount.toLocaleString("ko-KR")}곳을 진출 형태와 사업 분야별로 탐색할 수 있습니다.`;
-    }
-    if (contract.elementId === "E-019") {
-      return `현지 기관 ${entityCount.toLocaleString("ko-KR")}곳을 도시와 공개 연락정보로 탐색할 수 있습니다.`;
-    }
-    if (contract.elementId === "E-020") {
-      return `지원 프로그램 ${entityCount.toLocaleString("ko-KR")}건을 지원 유형과 기관별로 탐색할 수 있습니다.`;
-    }
-    if (contract.primaryRenderer === "directory") {
-      return `기관·연락망 ${entityCount.toLocaleString("ko-KR")}건을 지역과 공개 연락정보로 탐색할 수 있습니다.`;
-    }
-    if (contract.primaryRenderer === "portfolio") {
-      return `사업·지원 프로그램 ${entityCount.toLocaleString("ko-KR")}건을 유형과 기관별로 탐색할 수 있습니다.`;
-    }
-    return `공개 목록 ${entityCount.toLocaleString("ko-KR")}건의 항목별 정보를 확인할 수 있습니다.`;
-  }
-  return (
-    publicQuestion ||
-    "공개된 지표의 기준시점별 값과 항목 간 차이를 확인할 수 있습니다."
-  );
-}

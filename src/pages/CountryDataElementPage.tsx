@@ -26,10 +26,12 @@ import {
   formatValueV121,
 } from "../utils/vietnamActualV121";
 import { A024_UNSERVED_AREA_MEASURE_V138 } from "../data/visualization/mapSelectorBindingsV125";
-import CountryElementVisualizationV123 from "../components/data/CountryDataFullPreviewV52";
+import CountryElementVisualizationV123, { indicatorFamilyCountV153 } from "../components/data/CountryDataFullPreviewV52";
+import DetailKpiStripV153 from "../components/data/public/DetailKpiStripV153";
 const DetailLocationMapV148 = lazy(() => import("../components/data/public/DetailLocationMapV148"));
 import { PublicTermTextV134 } from "../components/help/PublicTermV134";
 import "../styles/country-data-platform-v122.css";
+import "../styles/detail-layout-v153.css";
 
 interface Props {
   elementId: string | null;
@@ -779,6 +781,18 @@ export default function CountryDataElementPage({
   }
 
   const meta = bundle?.meta;
+  const pageTitle = catalogItem?.publicTitle || meta?.element.elementLabel || "";
+  const hasMap = Boolean(meta && (catalogItem?.hasMapData || meta.element.mapFeatureCount > 0));
+  // V153: the small map is handed to the analysis frame, which sets it beside
+  // the first analysis block; the component itself is unchanged.
+  const mapSlot = meta && hasMap ? (
+    <aside className="dl153-map-slot" data-testid="detail-map-slot-v153" aria-label="위치·분포 지도">
+      <Suspense fallback={<p role="status">작은 지도를 불러오는 중입니다.</p>}>
+        <DetailLocationMapV148 key={`${provider.countryIso3}:${elementId}`} elementId={elementId}
+          countryIso3={provider.countryIso3} selection={selectorState} onOpenMap={onOpenMapElement} />
+      </Suspense>
+    </aside>
+  ) : null;
   const emptyStateCopy = emptyStateCopyV124(catalogItem);
   const downloadStatus = catalogItem
     ? publicDownloadStatusV128(catalogItem)
@@ -911,7 +925,14 @@ export default function CountryDataElementPage({
             </div>
           </section>
 
-          <section className="cdp-panel cdp-detail-panel">
+          <DetailKpiStripV153
+            elementId={elementId}
+            observations={observations}
+            entities={entities}
+            indicatorFamilyCount={indicatorFamilyCountV153(observations)}
+          />
+
+          <section className="cdp-panel cdp-detail-panel dl153-detail-panel">
               <CountryElementVisualizationV123
                 elementId={elementId}
                 countryNameKo={provider.countryNameKo}
@@ -923,14 +944,9 @@ export default function CountryDataElementPage({
                 selectorState={selectorState}
                 onSelectorStateChange={onSelectorStateChange}
                 spatialUnit={meta.element.spatialUnits[0]}
+                pageTitle={pageTitle}
+                mapSlot={mapSlot}
               />
-
-              {(catalogItem?.hasMapData || meta.element.mapFeatureCount > 0) && (
-                <Suspense fallback={<p role="status">작은 지도를 불러오는 중입니다.</p>}>
-                  <DetailLocationMapV148 key={`${provider.countryIso3}:${elementId}`} elementId={elementId}
-                    countryIso3={provider.countryIso3} selection={selectorState} onOpenMap={onOpenMapElement} />
-                </Suspense>
-              )}
 
               {observations.length === 0 && entities.length === 0 && (
                 <div className="cdp-empty">

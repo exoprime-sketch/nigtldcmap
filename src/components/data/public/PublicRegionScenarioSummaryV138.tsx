@@ -1,4 +1,6 @@
-import { useMemo } from "react";
+import { Fragment, useMemo } from "react";
+import { orderBlocksV153 } from "../../../data/visualization/publicVisualizationContractV153";
+import { useAnalysisContractV153 } from "./analysisContractContextV153";
 import { AnalysisBarsV147 } from "./AnalysisChartsV147";
 
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
@@ -316,6 +318,7 @@ export default function PublicRegionScenarioSummaryV138({
 }: Props) {
   const shape = useMemo(() => regionScenarioShapeV138(entities), [entities]);
   const contract = useMemo(() => publicRegionScenarioContractV138(elementId), [elementId]);
+  const v153 = useAnalysisContractV153();
 
   // The measure list: the contract's order, restricted to columns the delivery
   // actually carries; then any delivered measure the contract does not name.
@@ -670,7 +673,12 @@ export default function PublicRegionScenarioSummaryV138({
         </div>
       </dl>
 
-      {multiYear && chartSeries.length > 0 && (
+      {/* The contract's first block (region-bar for a province distribution)
+          opens the screen; the rest keep their V138 order (V153). */}
+      {orderBlocksV153(
+        [
+          { type: "line" as const, key: "trend", node: (<>
+      {multiYear && chartSeries.length > 0 && (<section data-analysis-block="line" className="prs153__block">
         <InteractiveTimeSeriesChartV127
           ariaLabel={`${regionLabel} ${measureMeta.label} 연도별 변화`}
           className="prs138__chart"
@@ -685,11 +693,12 @@ export default function PublicRegionScenarioSummaryV138({
           xAxisTitle="연도"
           yAxisTitle={`${measureMeta.label}${unit ? ` (${unit})` : ""}`}
           zoom={{ enabled: distinctYears.length >= 10, minimumSpan: Math.min(10, Math.max(3, distinctYears.length - 1)) }}
-        />
+        /></section>
       )}
-
+          </>) },
+          { type: "table" as const, key: "grades", node: (<>
       {gradeDistribution.length > 0 && (
-        <div className="cdp-table-wrap">
+        <div className="cdp-table-wrap" data-analysis-block="table">
           <table className="cdp-table prs137__table" data-testid="region-scenario-grades-v138">
             <caption>
               등급별 {rowUnitLabel} 수 · {measureMeta.label.replace(/ · (원값|점수\(0~5\))$/u, "")} (원천 등급)
@@ -716,8 +725,9 @@ export default function PublicRegionScenarioSummaryV138({
           </table>
         </div>
       )}
-
-      <div className="cdp-table-wrap">
+          </>) },
+          { type: "table" as const, key: "values", node: (<>
+      <div className="cdp-table-wrap" data-analysis-block="table">
         <table className="cdp-table prs137__table" data-testid="region-scenario-table-v138">
           <caption>
             <PublicTermTextV134 text={measureMeta.label} />
@@ -786,15 +796,18 @@ export default function PublicRegionScenarioSummaryV138({
           </tbody>
         </table>
       </div>
-
-      {rankedRegions.length > 1 && <section className="detail146" data-testid="region-comparison-v148">
+          </>) },
+          { type: "region-bar" as const, key: "comparison", node: (<>
+      {rankedRegions.length > 1 && <section className="detail146" data-testid="region-comparison-v148" data-analysis-block="region-bar">
         <h3>{rowIsSubRegion ? `${rowUnitLabel}별 비교` : "같은 시점의 지역별 비교"}</h3>
         {comparisonYears.filter((y) => y !== UNSTATED_YEAR).length > 1 && <label>비교연도 <select aria-label="지역 비교연도" value={comparisonYear} onChange={(event) => onSelectorStateChange({ ...selectorState, year: Number(event.target.value), period: null })}>{comparisonYears.filter((y) => y !== UNSTATED_YEAR).map((y) => <option key={y} value={y}>{y}년</option>)}</select></label>}
         <AnalysisBarsV147 title={`${measureMeta.label} · ${comparisonYear === UNSTATED_YEAR ? periodText : `${comparisonYear}년`} · ${scenarioLabel(comparisonScenario)}`} unit={unit} rows={rankedRegions.slice(0, 12).map((r) => ({ id: r.label, label: r.label, value: r.value }))} />
         <p className="detail146-note">같은 항목·시나리오·시점의 값만 비교합니다.{rankedRegions.length > 12 ? " 값이 큰 12개를 표시하며, 전체 지역은 아래 표에서 확인할 수 있습니다." : ""} 값의 크기는 우수성이나 사업 적합성 순위를 뜻하지 않습니다.</p>
       </section>}
+          </>) },
+          { type: "table" as const, key: "ranked", node: (<>
       {rankedRegions.length > 1 && (
-        <details className="prs138__ranked" data-testid="region-scenario-ranked-v138" open={!multiYear}>
+        <details className="prs138__ranked" data-analysis-block="table" data-testid="region-scenario-ranked-v138" open={!multiYear}>
           <summary>
             표로 보기 · {rowIsSubRegion ? `${rankedRegions.length.toLocaleString("ko-KR")}개 ${rowUnitLabel}` : `${rankedRegions.length}개 성·시`} · {comparisonYear === UNSTATED_YEAR ? periodText : `${comparisonYear}년`} · {scenarioLabel(comparisonScenario)}
           </summary>
@@ -823,7 +836,10 @@ export default function PublicRegionScenarioSummaryV138({
           </div>
         </details>
       )}
-
+          </>) },
+        ],
+        v153?.primary.type ?? null
+      ).map((block) => <Fragment key={block.key}>{block.node}</Fragment>)}
       {(contract?.constraints.length || contract?.scenarioNote) && (
         <ul className="prs138__constraints" data-testid="region-scenario-constraints-v138">
           {contract?.scenarioNote && (
