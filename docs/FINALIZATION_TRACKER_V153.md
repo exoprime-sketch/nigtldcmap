@@ -33,8 +33,8 @@
 | A-024 | 전력망[위치, 미공급 지역] | 국가 기본 정보 | actual-records | line/606 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
 | A-025 | CCS 시설 | 국가 기본 정보 | actual-records | point/3 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
 | A-026 | 건물 풋프린트(Footprint) | 국가 기본 정보 | actual-records | panel-only/0 | 데이터 부재 | Open Buildings/MS 풋프린트 성·시 집계 수집(결정) | PE | 집중검토 |  |
-| A-027 | 교통 인프라[railway, road] | 국가 기본 정보 | actual-records | panel-only/0 | 지도 | 지표 막대+도로·철도 지도(OSM 자산) | P4+PE | 집중검토 |  |
-| A-028 | 해안 인프라; 수자원 인프라 | 국가 기본 정보 | actual-records | panel-only/0 | 지도, label 단위 추가 | 지표 막대(단위 라벨)+OSM 항만·댐·저수지 지도 자산 | P4+PE | 집중검토 |  |
+| A-027 | 교통 인프라[railway, road] | 국가 기본 정보 | actual-records | panel-only/0 | 지도 | 지표 막대+도로·철도 지도(OSM 자산) | P4+PE | 진행 — 자산 확보(P6a) → 등록 대기(P6b) | V155-1: `geometry/vnm-roads-rail.geojson`(8,114 선형, gzip 1.75 MB)+overview, 계약 제안 `spatial/pending-layers-v155.json`, `docs/DATA_ASSETS_V155.md`, `reports/v155/roads-rail.png` |
+| A-028 | 해안 인프라; 수자원 인프라 | 국가 기본 정보 | actual-records | panel-only/0 | 지도, label 단위 추가 | 지표 막대(단위 라벨)+OSM 항만·댐·저수지 지도 자산 | P4+PE | 진행 — 자산 확보(P6a) → 등록 대기(P6b) | V155-1: `geometry/vnm-water-coastal-infra.geojson`(항만 66·댐 1,255·저수지 237, gzip 1.22 MB), 계약 제안 `spatial/pending-layers-v155.json`, `reports/v155/water-coastal-infra.png` |
 | A-029 | FTA 체결 현황 | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
 | A-030 | 한-개도국 교역액 | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
 | A-031 | 물류성과지수(LPI) | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
@@ -56,7 +56,7 @@
 | B-014 | CCDR 탄소세 시뮬레이션 결과[배출감소율, GDP 영향, 세수 효과] | 기후 환경 | actual-records | country-aggregate/0 | 시각화 미완 | 시나리오별 배출·GDP 영향 라인 | P4 | 집중검토 |  |
 | B-015 | 탄소 가격 수준[ETS, Carbon Tax] | 기후 환경 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
 | B-016 | 화석연료 의존도(Fossil fuel energy consumption) | 기후 환경 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
-| B-017 | WRI Aqueduct 물 스트레스 지수 | 기후 환경 | actual-records | country-aggregate/0 | 지도? | Aqueduct 4.0 유역 경계 확보→지도 | PE | 집중검토 |  |
+| B-017 | WRI Aqueduct 물 스트레스 지수 | 기후 환경 | actual-records | country-aggregate/0 | 지도? | Aqueduct 4.0 유역 경계 확보→지도 | PE | 진행 — 자산 확보(P6a) → 등록 대기(P6b) | V155-1: `geometry/vnm-aqueduct40-basins.geojson`(442/443, string_id 조인 443/443)+`-l6`(58 유역), 값 초안 `spatial/pending-v155/b-017.json`, 계약 제안 `spatial/pending-layers-v155.json`, `reports/v155/aqueduct-basins.png` |
 | B-018 | SSP GDP 전망[SSP1, SSP2, SSP3, SSP4, SSP5] | 기후 환경 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
 | B-019 | SSP 인구 전망[SSP1, SSP2, SSP3, SSP4, SSP5] | 기후 환경 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
 | B-020 | EU/UN INFORM Risk Index(복합 리스크 지수) | 기후 환경 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
