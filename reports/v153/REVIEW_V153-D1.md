@@ -32,8 +32,11 @@
 | production 빌드(`CI=true`, sourcemap off) | 성공, lint 경고 0 |
 | `qa:detail-contract:v153` 152개 | **152/152 통과**(primaryTypeMatch·rankOrder·axesMatch·blockHonesty·readingNotesAbsent·statusNoteNoChart·policyNoNumericChart·kpiRow·titleOnce·sourceLine·mapPlacement 42·overflow320·console) — 최종 빌드 재실행 결과는 아래 갱신 |
 | 대표 10개 × 6폭(`d1-screens-v153`) | 60/60 ready·넘침 0·콘솔 0·판정 match, 스크린샷 `output/v153-d1/` |
-| `qa:analysis:v140:baseline` | 1차: 필수 실패 42(기준선 41) — 새 실패 3건(A-024·B-012·C-012 `controlsVerified`)은 지도 슬롯의 자체 선택기가 분석 컨트롤로 잡힌 것 → 제외 처리 후 재실행(아래 갱신). A-023 기준선 실패 해소 |
-| `finalize:v140` 전체 게이트 | PR 직전 1회(아래 갱신) |
+| `qa:analysis:v140:baseline` | 1차: 필수 실패 42(기준선 41) — 새 실패 3건(A-024·B-012·C-012 `controlsVerified`)은 지도 슬롯의 자체 선택기가 분석 컨트롤로 잡힌 것 → 분석 QA에서 지도 슬롯 제외. 2차 게이트는 glossary 단계에서 멈춰 analysis QA까지 진행하지 못함(1차의 A-023 해소는 확인) |
+| `finalize:v140` 전체 게이트 | 1차: `audit:entity-cards:v131` 1건 실패(E-006 — 투자자 목록 컴포넌트(D0)를 카드 그리드로 인식하지 못함 → 감사의 "기록이 다른 형태로 표시됨" 목록에 `investor-network-v153` 인식 추가, 임계값 불변)와 V134 `publicCopy` 상태 파일이 커밋된 옛 FAIL(2026-09-21 "build missing")이라 재생성 → 2차: entity-cards·publicCopy PASS, **`audit:glossary:v134` FAIL 1건(VISIBLE_ACRONYM_WITHOUT_GLOSSARY 35 토큰)** → 게이트 2회 반복 후 중단·보고. 이 35개 중 이 PR이 새로 노출한 토큰은 0개(출처 1줄이 원자료 출처 문자열을 그대로 보여 12개(지표 코드·AMBIGUOUS/CITATION 메모 등)를 노출했던 것은 카드 모델의 공개 제공기관 표기로 바꿔 해소). 나머지는 main에 이미 있던 것: D0(E-006 본부 국가코드 CHE·FRA·GBR·PHL·SGP·USA, DFI·PE·VC·LP, A-023 목록의 EVN·JSC·EL, C-012 ICT·LNG·M01·SSL·MPI, B-046/047 MCS·REO, SSP·VND 원문 노출 — D0 리뷰 빌드에서 동일 감사 23개 실패 재현)와 D3(C-008 설명의 AMD·COP21·COP23·FIA·GFANZ·ICO·IGES·IIED·IPG·IUCN·NYDF, C-009/010 GRDP·QH12 — D3는 전체 게이트를 돌리지 않았고 D0 게이트 빌드에는 D3가 없었음). fix-forward 방안은 아래 |
+
+## main 선행 결함(fix-forward 필요) — 게이트 통과 조건
+- `audit:glossary:v134` 35 토큰(위 표). 처리안: ① E-006 본부 국가코드 → 한글 국가명 표기, ② 원문 그대로 찍히는 목록·주석 텍스트(A-023 시설명, B-046/047 REO·MCS, C-012, 지역 시나리오 SSP 주석, VND)를 `PublicTermTextV134`로 감싸기(용어집에 이미 있는 EVN·JSC·VC·LNG·ICT·SSP·VND·USGS·MPI는 감싸면 해결), ③ D3 설명의 기관·회의 약어 13개(AMD·COP21·COP23·FIA·GFANZ·GRDP·ICO·IGES·IIED·IPG·IUCN·NYDF·QH12)와 DFI·PE·LP·EL·M01·SSL·REO·MCS 용어집 등재 또는 공개 문구 수정. 예상 1시간 내외. 이 PR에 포함할지, 별도 fix-forward PR로 먼저 올릴지는 사용자 결정 사항.
 
 ## 미완료·사유
 - 매트릭스(A-013·C-005·B-044) 히트맵·정렬표, E-017 국가별 순위 막대, B-026 우세 유향 지도: 문장값·자료 구조상 이번 라운드는 비교표/카드로 등재(예외·후속 P4)

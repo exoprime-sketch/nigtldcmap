@@ -12,12 +12,13 @@
 - KPI: 소형 '핵심 수치' 행(≤4·단위 필수) — `detailTilesAbsent` 기대값 변경 사유 `reports/v153/ANALYSIS_QA_EXPECTATION_CHANGE_V153.md`
 
 ## 단계
-- [ ] 1 계약 초안(서브에이전트 2) → 전수 판정 → JSON·로더·테스트
-- [ ] 2 블록 태깅(서브에이전트 3 worktree) 병합 + 일반 렌더러 태깅·순서
-- [ ] 3 프레임·핵심 수치 행·레이아웃 CSS·지도 슬롯·해석 안내 삭제·출처 1줄
-- [ ] 4 유형 표준 화면 변경(누적영역 공용화·덤벨·지역 막대 순서)
-- [ ] 5 QA 스크립트·package.json·CI, analysis QA 기대값 변경
-- [ ] 6 검증(tsc·unit·build·QA·대표 10개 6폭) → 문서·추적표·CHANGELOG → PR
+- [x] 1 계약 초안(서브에이전트 2) → 전수 판정 → JSON·로더·테스트
+- [x] 2 블록 태깅(서브에이전트 3 worktree) 병합 + 일반 렌더러 태깅·순서
+- [x] 3 프레임·핵심 수치 행·레이아웃 CSS·지도 슬롯·해석 안내 삭제·출처 1줄
+- [x] 4 유형 표준 화면 변경(누적영역 공용화·덤벨·지역 막대 순서)
+- [x] 5 QA 스크립트·package.json·CI, analysis QA 기대값 변경
+- [x] 6 검증: tsc 0 · unit 257/257 · 계약 QA 152/152 · 대표 10개×6폭 60/60 · analysis QA 기준선(지도 슬롯 제외 후 재실행) · 문서·추적표·CHANGELOG
+- [ ] 7 finalize:v140 1회 → push → PR → Vercel Preview Ready → 보고·승인 대기
 
 ## 미완료·후속
-- (갱신 예정)
+- 히트맵(A-013·C-005·B-044)·E-017 순위 막대·B-026 유향 지도·B-017 지도·지역 패널 값 표출(P4-D2)은 범위 밖. 예외 33행 사유는 계약 note·docs/VISUALIZATION_CONTRACT_V153.md
