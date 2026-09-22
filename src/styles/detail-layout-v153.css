@@ -172,3 +172,8 @@
     width: 100%;
   }
 }
+@media (max-width: 620px) {
+  .pec131-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

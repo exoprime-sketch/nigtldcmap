@@ -1,107 +1,22 @@
 {
   "summary": {
-    "generatedAt": "2026-09-22T04:23:57.351Z",
+    "generatedAt": "2026-09-22T04:39:49.595Z",
     "build": "C:\\Users\\user\\Documents\\nigt-wt-d0\\build",
     "elements": 152,
-    "pass": 63,
-    "fail": 89,
+    "pass": 149,
+    "fail": 3,
     "failedIds": [
-      "A-002",
-      "A-003",
-      "A-005",
-      "A-010",
-      "A-013",
-      "A-015",
-      "A-017",
-      "A-022",
-      "A-024",
-      "A-027",
-      "A-028",
-      "A-030",
-      "B-001",
-      "B-002",
-      "B-006",
-      "B-010",
-      "B-012",
-      "B-013",
-      "B-014",
-      "B-015",
-      "B-017",
-      "B-018",
-      "B-020",
-      "B-021",
-      "B-022",
-      "B-026",
-      "B-029",
-      "B-030",
-      "B-036",
-      "B-037",
-      "B-039",
-      "B-040",
-      "B-041",
-      "B-042",
-      "B-043",
-      "B-044",
-      "B-045",
-      "B-047",
-      "B-048",
-      "C-001",
-      "C-002",
-      "C-003",
-      "C-004",
-      "C-005",
-      "C-006",
-      "C-008",
       "C-009",
       "C-010",
-      "C-018",
-      "C-019",
-      "C-022",
-      "C-024",
-      "C-025",
-      "D-001",
-      "D-002",
-      "D-003",
-      "D-004",
-      "D-005",
-      "D-007",
-      "D-008",
-      "D-009",
-      "D-011",
-      "D-012",
-      "D-013",
-      "D-014",
-      "D-015",
-      "D-016",
-      "D-017",
-      "D-018",
-      "D-019",
-      "D-020",
-      "D-021",
-      "D-022",
-      "D-023",
-      "D-024",
-      "D-025",
-      "D-026",
-      "E-001",
-      "E-003",
-      "E-004",
-      "E-005",
-      "E-008",
-      "E-009",
-      "E-010",
-      "E-012",
-      "E-017",
-      "E-018",
-      "E-019",
-      "E-020"
+      "E-018"
     ],
     "byStatus": {
-      "standard": 114,
+      "standard": 108,
       "preserved": 11,
-      "exception": 27
+      "exception": 33
     },
     "exceptionIds": [
+      "A-013",
       "A-015",
       "A-017",
       "A-025",
@@ -118,13 +33,18 @@
       "B-036",
       "B-037",
       "B-043",
+      "B-044",
       "B-045",
+      "C-002",
+      "C-005",
       "D-001",
       "D-002",
       "D-003",
       "D-004",
+      "D-008",
       "D-009",
       "D-013",
+      "D-018",
       "E-002",
       "E-006",
       "E-009",
@@ -132,8 +52,8 @@
     ],
     "checks": {
       "primaryTypeMatch": {
-        "pass": 125,
-        "fail": 27,
+        "pass": 152,
+        "fail": 0,
         "notApplicable": 0
       },
       "rankOrder": {
@@ -142,9 +62,9 @@
         "notApplicable": 0
       },
       "axesMatch": {
-        "pass": 49,
-        "fail": 68,
-        "notApplicable": 35
+        "pass": 113,
+        "fail": 0,
+        "notApplicable": 39
       },
       "blockHonesty": {
         "pass": 152,
@@ -162,13 +82,13 @@
         "notApplicable": 147
       },
       "policyNoNumericChart": {
-        "pass": 21,
-        "fail": 2,
-        "notApplicable": 129
+        "pass": 22,
+        "fail": 0,
+        "notApplicable": 130
       },
       "kpiRow": {
-        "pass": 141,
-        "fail": 11,
+        "pass": 152,
+        "fail": 0,
         "notApplicable": 0
       },
       "titleOnce": {
@@ -187,13 +107,13 @@
         "notApplicable": 110
       },
       "overflow320": {
-        "pass": 146,
-        "fail": 6,
+        "pass": 149,
+        "fail": 3,
         "notApplicable": 0
       },
       "console": {
-        "pass": 77,
-        "fail": 75,
+        "pass": 152,
+        "fail": 0,
         "notApplicable": 0
       }
     }
@@ -287,15 +207,15 @@
       "status": "preserved",
       "expected": {
         "type": "line",
-        "title": "거버넌스 부문별 표준값 추이",
+        "title": "거버넌스 부문별 백분위 추이",
         "xAxis": "연도",
-        "yAxis": "표준값(Estimate)",
-        "unit": "점"
+        "yAxis": "백분위",
+        "unit": "백분위"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -306,12 +226,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "line",
@@ -331,7 +251,11 @@
               "top": 1476,
               "left": 178,
               "width": 1084,
-              "axes": null
+              "axes": {
+                "x": "값(막대 길이)",
+                "y": "부문",
+                "unit": "백분위"
+              }
             }
           ],
           "slot": null,
@@ -354,15 +278,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] A-002: axes {\"x\":\"연도\",\"y\":\"백분위(같은 해 조사대상국 중 위치)\",\"unit\":\"백분위\"} ≠ contract {\"x\":\"연도\",\"y\":\"표준값(Estimate)\",\"unit\":\"점\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"연도\",\"y\":\"백분위(같은 해 조사대상국 중 위치)\",\"unit\":\"백분위\"} ≠ {\"x\":\"연도\",\"y\":\"표준값(Estimate)\",\"unit\":\"점\"}",
-        "console: [v153-contract] A-002: axes {\"x\":\"연도\",\"y\":\"백분위(같은 해 조사대상국 중 위치)\",\"unit\":\"백분위\"} ≠ contract {\"x\":\"연도\",\"y\":\"표준값(Estimate)\",\"unit\":\"점\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "A-003",
@@ -383,7 +302,7 @@
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
         "policyNoNumericChart": null,
-        "kpiRow": false,
+        "kpiRow": true,
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
@@ -443,10 +362,8 @@
         "overflow320": 0,
         "console": []
       },
-      "issues": [
-        "kpi tiles 4 (unit missing)"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "A-004",
@@ -538,13 +455,13 @@
         "type": "line",
         "title": "산업구조 비중 추이",
         "xAxis": "연도",
-        "yAxis": "산업 비중",
+        "yAxis": "산업구조",
         "unit": "%"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -555,12 +472,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "line",
@@ -611,15 +528,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] A-005: axes {\"x\":\"연도\",\"y\":\"산업구조\",\"unit\":\"%\"} ≠ contract {\"x\":\"연도\",\"y\":\"산업 비중\",\"unit\":\"%\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"연도\",\"y\":\"산업구조\",\"unit\":\"%\"} ≠ {\"x\":\"연도\",\"y\":\"산업 비중\",\"unit\":\"%\"}",
-        "console: [v153-contract] A-005: axes {\"x\":\"연도\",\"y\":\"산업구조\",\"unit\":\"%\"} ≠ contract {\"x\":\"연도\",\"y\":\"산업 비중\",\"unit\":\"%\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "A-006",
@@ -760,7 +672,7 @@
           "split": false,
           "tiles": [
             {
-              "unit": "억 명",
+              "unit": "명",
               "text": "1.02억 명총인구 · 2025년"
             },
             {
@@ -924,7 +836,7 @@
           "split": false,
           "tiles": [
             {
-              "unit": "국제달러",
+              "unit": "tCO2eq/1,000 국제달러",
               "text": "0.402 tCO2eq/1,000 국제달러GHG 배출 강도 · GDP 대비 · 2024년"
             },
             {
@@ -961,9 +873,9 @@
         "unit": "MtCO₂e"
       },
       "checks": {
-        "primaryTypeMatch": false,
+        "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -974,30 +886,58 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
-          "verdict": "mismatch",
-          "axesVerdict": "missing",
+          "verdict": "match",
+          "axesVerdict": "match",
           "blocks": [
             {
-              "type": "note",
+              "type": "stacked-area",
               "rank": "1",
               "top": 720,
               "left": 155,
               "width": 1130,
-              "axes": null
+              "axes": {
+                "x": "연도",
+                "y": "가스별 배출량(누적 면적)",
+                "unit": "MtCO₂e"
+              }
             },
             {
               "type": "line",
               "rank": "2",
-              "top": 836,
+              "top": 1361,
+              "left": 155,
+              "width": 1130,
+              "axes": {
+                "x": "연도",
+                "y": "온실가스 배출량",
+                "unit": "MtCO₂e"
+              }
+            },
+            {
+              "type": "line",
+              "rank": "3",
+              "top": 2004,
               "left": 155,
               "width": 1130,
               "axes": {
                 "x": "연도",
                 "y": "가스별 CO₂ 환산 배출량",
+                "unit": "MtCO₂e"
+              }
+            },
+            {
+              "type": "category-bar",
+              "rank": "4",
+              "top": 2682,
+              "left": 155,
+              "width": 1130,
+              "axes": {
+                "x": "배출원 구성(연도 합계 대비 길이)",
+                "y": "2024년",
                 "unit": "MtCO₂e"
               }
             }
@@ -1026,16 +966,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] A-010: first block \"note\" ≠ contract \"stacked-area\""
-        ]
+        "console": []
       },
-      "issues": [
-        "first block \"note\" ≠ contract \"stacked-area\"",
-        "axes null ≠ {\"x\":\"연도\",\"y\":\"가스별 배출량\",\"unit\":\"MtCO₂e\"}",
-        "console: [v153-contract] A-010: first block \"note\" ≠ contract \"stacked-area\""
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "A-011",
@@ -1232,16 +1166,16 @@
     {
       "elementId": "A-013",
       "archetype": "matrix",
-      "status": "standard",
+      "status": "exception",
       "expected": {
-        "type": "sorted-table",
+        "type": "comparison-table",
         "title": "NDC-SDG 연계 정렬표",
         "xAxis": null,
         "yAxis": null,
         "unit": null
       },
       "checks": {
-        "primaryTypeMatch": false,
+        "primaryTypeMatch": true,
         "rankOrder": true,
         "axesMatch": null,
         "blockHonesty": true,
@@ -1254,11 +1188,11 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
-          "verdict": "mismatch",
+          "verdict": "match",
           "axesVerdict": "not-applicable",
           "blocks": [
             {
@@ -1294,15 +1228,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] A-013: first block \"comparison-table\" ≠ contract \"sorted-table\""
-        ]
+        "console": []
       },
-      "issues": [
-        "first block \"comparison-table\" ≠ contract \"sorted-table\"",
-        "console: [v153-contract] A-013: first block \"comparison-table\" ≠ contract \"sorted-table\""
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "A-014",
@@ -1393,14 +1322,14 @@
       "expected": {
         "type": "category-bar",
         "title": "SDG 세부지표별 달성도",
-        "xAxis": "정규화 달성도 점수",
+        "xAxis": "세부지표 달성도",
         "yAxis": "SDG 세부지표",
-        "unit": "점"
+        "unit": "점(0~100)"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -1411,12 +1340,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -1426,7 +1355,7 @@
               "width": 1130,
               "axes": {
                 "x": "SDG1 세부지표 달성도",
-                "y": "비교 항목",
+                "y": "SDG 세부지표",
                 "unit": "점(0~100)"
               }
             },
@@ -1463,15 +1392,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] A-015: axes {\"x\":\"SDG1 세부지표 달성도\",\"y\":\"비교 항목\",\"unit\":\"점(0~100)\"} ≠ contract {\"x\":\"정규화 달성도 점수\",\"y\":\"SDG 세부지표\",\"unit\":\"점\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"SDG1 세부지표 달성도\",\"y\":\"비교 항목\",\"unit\":\"점(0~100)\"} ≠ {\"x\":\"정규화 달성도 점수\",\"y\":\"SDG 세부지표\",\"unit\":\"점\"}",
-        "console: [v153-contract] A-015: axes {\"x\":\"SDG1 세부지표 달성도\",\"y\":\"비교 항목\",\"unit\":\"점(0~100)\"} ≠ contract {\"x\":\"정규화 달성도 점수\",\"y\":\"SDG 세부지표\",\"unit\":\"점\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "A-016",
@@ -1578,14 +1502,14 @@
       "expected": {
         "type": "dumbbell",
         "title": "발전기술별 LCOE 범위와 벤치마크",
-        "xAxis": "LCOE",
-        "yAxis": "발전기술",
+        "xAxis": "균등화 발전비용",
+        "yAxis": "발전원",
         "unit": "USD/MWh"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -1601,7 +1525,7 @@
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "missing",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "dumbbell",
@@ -1609,7 +1533,11 @@
               "top": 746,
               "left": 155,
               "width": 1130,
-              "axes": null
+              "axes": {
+                "x": "균등화 발전비용",
+                "y": "발전원",
+                "unit": "USD/MWh"
+              }
             },
             {
               "type": "sorted-table",
@@ -1654,10 +1582,8 @@
         "overflow320": 0,
         "console": []
       },
-      "issues": [
-        "axes null ≠ {\"x\":\"LCOE\",\"y\":\"발전기술\",\"unit\":\"USD/MWh\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "A-018",
@@ -2011,13 +1937,13 @@
         "type": "line",
         "title": "정전빈도 추이",
         "xAxis": "연도",
-        "yAxis": "정전빈도(SAIDI/SAIFI/MAIFI)",
+        "yAxis": "MAIFI",
         "unit": "회/고객"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -2028,12 +1954,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "line",
@@ -2080,15 +2006,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] A-022: axes {\"x\":\"연도\",\"y\":\"MAIFI\",\"unit\":\"회/고객\"} ≠ contract {\"x\":\"연도\",\"y\":\"정전빈도(SAIDI/SAIFI/MAIFI)\",\"unit\":\"회/고객\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"연도\",\"y\":\"MAIFI\",\"unit\":\"회/고객\"} ≠ {\"x\":\"연도\",\"y\":\"정전빈도(SAIDI/SAIFI/MAIFI)\",\"unit\":\"회/고객\"}",
-        "console: [v153-contract] A-022: axes {\"x\":\"연도\",\"y\":\"MAIFI\",\"unit\":\"회/고객\"} ≠ contract {\"x\":\"연도\",\"y\":\"정전빈도(SAIDI/SAIFI/MAIFI)\",\"unit\":\"회/고객\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "A-023",
@@ -2223,14 +2144,14 @@
       "expected": {
         "type": "category-bar",
         "title": "전압별 송전선 연장",
-        "xAxis": "선로 연장",
+        "xAxis": "전압별 송전선 길이",
         "yAxis": "전압 등급",
         "unit": "km"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -2241,12 +2162,12 @@
         "nestedTags": true,
         "mapPlacement": true,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -2256,7 +2177,7 @@
               "width": 752,
               "axes": {
                 "x": "전압별 송전선 길이 · 2016년",
-                "y": "비교 항목",
+                "y": "전압 등급",
                 "unit": "km"
               }
             },
@@ -2268,7 +2189,7 @@
               "width": 1130,
               "axes": {
                 "x": "전압별 송전선 구간 수 · 2016년",
-                "y": "비교 항목",
+                "y": "전압 등급",
                 "unit": "구간"
               }
             },
@@ -2337,15 +2258,10 @@
           }
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] A-024: axes {\"x\":\"전압별 송전선 길이 · 2016년\",\"y\":\"비교 항목\",\"unit\":\"km\"} ≠ contract {\"x\":\"선로 연장\",\"y\":\"전압 등급\",\"unit\":\"km\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"전압별 송전선 길이 · 2016년\",\"y\":\"비교 항목\",\"unit\":\"km\"} ≠ {\"x\":\"선로 연장\",\"y\":\"전압 등급\",\"unit\":\"km\"}",
-        "console: [v153-contract] A-024: axes {\"x\":\"전압별 송전선 길이 · 2016년\",\"y\":\"비교 항목\",\"unit\":\"km\"} ≠ contract {\"x\":\"선로 연장\",\"y\":\"전압 등급\",\"unit\":\"km\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "A-025",
@@ -2523,14 +2439,14 @@
       "expected": {
         "type": "category-bar",
         "title": "인프라 종류별 지물 건수",
-        "xAxis": "지물 건수",
-        "yAxis": "인프라 종류(도로/철도)",
+        "xAxis": "수록 지물 수",
+        "yAxis": "자료 종류(도로/철도)",
         "unit": "건"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -2541,12 +2457,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -2556,7 +2472,7 @@
               "width": 1130,
               "axes": {
                 "x": "자료 종류별 수록 지물 수",
-                "y": "비교 항목",
+                "y": "자료 종류(도로/철도)",
                 "unit": "건"
               }
             },
@@ -2576,7 +2492,7 @@
               "width": 1130,
               "axes": {
                 "x": "철도 · 분류별 수록 건수",
-                "y": "비교 항목",
+                "y": "자료 종류(도로/철도)",
                 "unit": "건"
               }
             },
@@ -2593,7 +2509,7 @@
           "split": false,
           "tiles": [
             {
-              "unit": "만 건",
+              "unit": "건",
               "text": "312만 건도로 레이어 · 피처 수 · OSM 도로 레이어의 지물 건수 · 2026년"
             },
             {
@@ -2613,15 +2529,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] A-027: axes {\"x\":\"자료 종류별 수록 지물 수\",\"y\":\"비교 항목\",\"unit\":\"건\"} ≠ contract {\"x\":\"지물 건수\",\"y\":\"인프라 종류(도로/철도)\",\"unit\":\"건\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"자료 종류별 수록 지물 수\",\"y\":\"비교 항목\",\"unit\":\"건\"} ≠ {\"x\":\"지물 건수\",\"y\":\"인프라 종류(도로/철도)\",\"unit\":\"건\"}",
-        "console: [v153-contract] A-027: axes {\"x\":\"자료 종류별 수록 지물 수\",\"y\":\"비교 항목\",\"unit\":\"건\"} ≠ contract {\"x\":\"지물 건수\",\"y\":\"인프라 종류(도로/철도)\",\"unit\":\"건\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "A-028",
@@ -2630,14 +2541,14 @@
       "expected": {
         "type": "category-bar",
         "title": "해안·수자원 인프라 종류별 지물 건수",
-        "xAxis": "지물 건수",
-        "yAxis": "인프라 종류(항만/댐/저수지)",
+        "xAxis": "수록 지물 수",
+        "yAxis": "자료 종류(항만/댐/저수지)",
         "unit": "건"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -2648,12 +2559,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -2663,7 +2574,7 @@
               "width": 1130,
               "axes": {
                 "x": "자료 종류별 수록 지물 수",
-                "y": "비교 항목",
+                "y": "자료 종류(항만/댐/저수지)",
                 "unit": "건"
               }
             },
@@ -2683,7 +2594,7 @@
               "width": 1130,
               "axes": {
                 "x": "자연지형·지물 · 분류별 수록 건수",
-                "y": "비교 항목",
+                "y": "자료 종류(항만/댐/저수지)",
                 "unit": "건"
               }
             },
@@ -2720,15 +2631,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] A-028: axes {\"x\":\"자료 종류별 수록 지물 수\",\"y\":\"비교 항목\",\"unit\":\"건\"} ≠ contract {\"x\":\"지물 건수\",\"y\":\"인프라 종류(항만/댐/저수지)\",\"unit\":\"건\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"자료 종류별 수록 지물 수\",\"y\":\"비교 항목\",\"unit\":\"건\"} ≠ {\"x\":\"지물 건수\",\"y\":\"인프라 종류(항만/댐/저수지)\",\"unit\":\"건\"}",
-        "console: [v153-contract] A-028: axes {\"x\":\"자료 종류별 수록 지물 수\",\"y\":\"비교 항목\",\"unit\":\"건\"} ≠ contract {\"x\":\"지물 건수\",\"y\":\"인프라 종류(항만/댐/저수지)\",\"unit\":\"건\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "A-029",
@@ -2808,13 +2714,13 @@
         "type": "line",
         "title": "한-베트남 교역 추이",
         "xAxis": "연도",
-        "yAxis": "교역액",
+        "yAxis": "한-베트남 교역",
         "unit": "10억 USD"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -2825,12 +2731,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "line",
@@ -2857,7 +2763,7 @@
           "split": false,
           "tiles": [
             {
-              "unit": "억 USD",
+              "unit": "10억 USD",
               "text": "86.7 10억 USD한-베트남 교역 · 총 교역액 · 한국 기준 대베트남 총 교역액 · 2024년"
             },
             {
@@ -2877,15 +2783,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] A-030: axes {\"x\":\"연도\",\"y\":\"한-베트남 교역\",\"unit\":\"10억 USD\"} ≠ contract {\"x\":\"연도\",\"y\":\"교역액\",\"unit\":\"10억 USD\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"연도\",\"y\":\"한-베트남 교역\",\"unit\":\"10억 USD\"} ≠ {\"x\":\"연도\",\"y\":\"교역액\",\"unit\":\"10억 USD\"}",
-        "console: [v153-contract] A-030: axes {\"x\":\"연도\",\"y\":\"한-베트남 교역\",\"unit\":\"10억 USD\"} ≠ contract {\"x\":\"연도\",\"y\":\"교역액\",\"unit\":\"10억 USD\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "A-031",
@@ -3140,14 +3041,14 @@
       "expected": {
         "type": "category-bar",
         "title": "월별 평년강수",
-        "xAxis": "월 평년강수",
+        "xAxis": "월별 평년 강수량",
         "yAxis": "월",
         "unit": "mm"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -3158,12 +3059,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -3173,7 +3074,7 @@
               "width": 1130,
               "axes": {
                 "x": "월별 평년 강수량",
-                "y": "비교 항목",
+                "y": "월",
                 "unit": "mm"
               }
             },
@@ -3222,15 +3123,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] B-001: axes {\"x\":\"월별 평년 강수량\",\"y\":\"비교 항목\",\"unit\":\"mm\"} ≠ contract {\"x\":\"월 평년강수\",\"y\":\"월\",\"unit\":\"mm\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"월별 평년 강수량\",\"y\":\"비교 항목\",\"unit\":\"mm\"} ≠ {\"x\":\"월 평년강수\",\"y\":\"월\",\"unit\":\"mm\"}",
-        "console: [v153-contract] B-001: axes {\"x\":\"월별 평년 강수량\",\"y\":\"비교 항목\",\"unit\":\"mm\"} ≠ contract {\"x\":\"월 평년강수\",\"y\":\"월\",\"unit\":\"mm\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "B-002",
@@ -3239,14 +3135,14 @@
       "expected": {
         "type": "category-bar",
         "title": "기후대별 점유 면적",
-        "xAxis": "점유 면적",
+        "xAxis": "기후대별 점유 면적",
         "yAxis": "기후대",
         "unit": "km²"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -3257,12 +3153,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -3272,7 +3168,7 @@
               "width": 1130,
               "axes": {
                 "x": "기후대별 점유 면적 · 2020년(1991–2020 관측)",
-                "y": "비교 항목",
+                "y": "기후대",
                 "unit": "km²"
               }
             },
@@ -3292,7 +3188,7 @@
               "width": 1130,
               "axes": {
                 "x": "열대기후(A군) 국토 점유 비율 · 시기·시나리오별",
-                "y": "비교 항목",
+                "y": "기후대",
                 "unit": "%"
               }
             }
@@ -3321,15 +3217,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] B-002: axes {\"x\":\"기후대별 점유 면적 · 2020년(1991–2020 관측)\",\"y\":\"비교 항목\",\"unit\":\"km²\"} ≠ contract {\"x\":\"점유 면적\",\"y\":\"기후대\",\"unit\":\"km²\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"기후대별 점유 면적 · 2020년(1991–2020 관측)\",\"y\":\"비교 항목\",\"unit\":\"km²\"} ≠ {\"x\":\"점유 면적\",\"y\":\"기후대\",\"unit\":\"km²\"}",
-        "console: [v153-contract] B-002: axes {\"x\":\"기후대별 점유 면적 · 2020년(1991–2020 관측)\",\"y\":\"비교 항목\",\"unit\":\"km²\"} ≠ contract {\"x\":\"점유 면적\",\"y\":\"기후대\",\"unit\":\"km²\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "B-003",
@@ -3721,7 +3612,7 @@
         "sourceLine": true,
         "nestedTags": true,
         "mapPlacement": true,
-        "overflow320": false,
+        "overflow320": true,
         "console": true
       },
       "evidence": {
@@ -3813,13 +3704,11 @@
             "top": 3343
           }
         },
-        "overflow320": 8,
+        "overflow320": 0,
         "console": []
       },
-      "issues": [
-        "320px overflow 8px"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "B-007",
@@ -4134,14 +4023,14 @@
       "expected": {
         "type": "category-bar",
         "title": "CRI 순위·피해 비교",
-        "xAxis": "값",
-        "yAxis": "지표(순위/피해액/인명피해)",
+        "xAxis": "CRI 종합 순위",
+        "yAxis": "지표",
         "unit": "순위"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -4152,12 +4041,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -4167,7 +4056,7 @@
               "width": 1130,
               "axes": {
                 "x": "CRI 종합 순위",
-                "y": "비교 항목",
+                "y": "지표",
                 "unit": "순위"
               }
             },
@@ -4212,15 +4101,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] B-010: axes {\"x\":\"CRI 종합 순위\",\"y\":\"비교 항목\",\"unit\":\"순위\"} ≠ contract {\"x\":\"값\",\"y\":\"지표(순위/피해액/인명피해)\",\"unit\":\"순위\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"CRI 종합 순위\",\"y\":\"비교 항목\",\"unit\":\"순위\"} ≠ {\"x\":\"값\",\"y\":\"지표(순위/피해액/인명피해)\",\"unit\":\"순위\"}",
-        "console: [v153-contract] B-010: axes {\"x\":\"CRI 종합 순위\",\"y\":\"비교 항목\",\"unit\":\"순위\"} ≠ contract {\"x\":\"값\",\"y\":\"지표(순위/피해액/인명피해)\",\"unit\":\"순위\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "B-011",
@@ -4311,14 +4195,14 @@
       "expected": {
         "type": "category-bar",
         "title": "유형별 재해 사건 수",
-        "xAxis": "재해 사건 수",
+        "xAxis": "건수",
         "yAxis": "재해 유형",
         "unit": "건"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -4334,7 +4218,7 @@
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "missing",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -4342,7 +4226,11 @@
               "top": 546,
               "left": 155,
               "width": 752,
-              "axes": null
+              "axes": {
+                "x": "건수",
+                "y": "재해 유형별 사건 수",
+                "unit": "건"
+              }
             },
             {
               "type": "timeline",
@@ -4380,7 +4268,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 1144,
+            "top": 1185,
             "left": 31,
             "width": 328,
             "height": 746,
@@ -4389,20 +4277,18 @@
           "first": {
             "type": "category-bar",
             "top": 808,
-            "height": 320
+            "height": 361
           },
           "second": {
             "type": "timeline",
-            "top": 1907
+            "top": 1948
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [
-        "axes null ≠ {\"x\":\"재해 사건 수\",\"y\":\"재해 유형\",\"unit\":\"건\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "B-013",
@@ -4418,7 +4304,7 @@
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -4429,12 +4315,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -4444,7 +4330,7 @@
               "width": 1130,
               "axes": {
                 "x": "EU 평균 탄소지불액",
-                "y": "비교 항목",
+                "y": "산업",
                 "unit": "%"
               }
             }
@@ -4473,15 +4359,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] B-013: axes {\"x\":\"EU 평균 탄소지불액\",\"y\":\"비교 항목\",\"unit\":\"%\"} ≠ contract {\"x\":\"EU 평균 탄소지불액\",\"y\":\"산업\",\"unit\":\"%\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"EU 평균 탄소지불액\",\"y\":\"비교 항목\",\"unit\":\"%\"} ≠ {\"x\":\"EU 평균 탄소지불액\",\"y\":\"산업\",\"unit\":\"%\"}",
-        "console: [v153-contract] B-013: axes {\"x\":\"EU 평균 탄소지불액\",\"y\":\"비교 항목\",\"unit\":\"%\"} ≠ contract {\"x\":\"EU 평균 탄소지불액\",\"y\":\"산업\",\"unit\":\"%\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "B-014",
@@ -4497,7 +4378,7 @@
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -4508,12 +4389,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -4523,7 +4404,7 @@
               "width": 1130,
               "axes": {
                 "x": "GDP 영향",
-                "y": "비교 항목",
+                "y": "시나리오",
                 "unit": "%"
               }
             },
@@ -4568,52 +4449,55 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] B-014: axes {\"x\":\"GDP 영향\",\"y\":\"비교 항목\",\"unit\":\"%\"} ≠ contract {\"x\":\"GDP 영향\",\"y\":\"시나리오\",\"unit\":\"%\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"GDP 영향\",\"y\":\"비교 항목\",\"unit\":\"%\"} ≠ {\"x\":\"GDP 영향\",\"y\":\"시나리오\",\"unit\":\"%\"}",
-        "console: [v153-contract] B-014: axes {\"x\":\"GDP 영향\",\"y\":\"비교 항목\",\"unit\":\"%\"} ≠ contract {\"x\":\"GDP 영향\",\"y\":\"시나리오\",\"unit\":\"%\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "B-015",
       "archetype": "policy-document",
       "status": "standard",
       "expected": {
-        "type": "comparison-table",
-        "title": "탄소가격 제도 조건표",
+        "type": "timeline",
+        "title": "탄소가격 제도 연대기",
         "xAxis": null,
         "yAxis": null,
         "unit": null
       },
       "checks": {
-        "primaryTypeMatch": false,
+        "primaryTypeMatch": true,
         "rankOrder": true,
         "axesMatch": null,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
-        "policyNoNumericChart": false,
+        "policyNoNumericChart": true,
         "kpiRow": true,
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
-          "verdict": "mismatch",
+          "verdict": "match",
           "axesVerdict": "not-applicable",
           "blocks": [
             {
-              "type": "category-bar",
+              "type": "timeline",
               "rank": "1",
               "top": 660,
+              "left": 155,
+              "width": 1130,
+              "axes": null
+            },
+            {
+              "type": "category-bar",
+              "rank": "2",
+              "top": 1205,
               "left": 155,
               "width": 1130,
               "axes": {
@@ -4621,14 +4505,6 @@
                 "y": "비교 항목",
                 "unit": "개소"
               }
-            },
-            {
-              "type": "timeline",
-              "rank": "2",
-              "top": 1088,
-              "left": 155,
-              "width": 1130,
-              "axes": null
             }
           ],
           "slot": null,
@@ -4655,16 +4531,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] B-015: first block \"category-bar\" ≠ contract \"comparison-table\""
-        ]
+        "console": []
       },
-      "issues": [
-        "first block \"category-bar\" ≠ contract \"comparison-table\"",
-        "policy screen opens on \"category-bar\"",
-        "console: [v153-contract] B-015: first block \"category-bar\" ≠ contract \"comparison-table\""
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "B-016",
@@ -4753,16 +4623,16 @@
       "archetype": "national-series",
       "status": "exception",
       "expected": {
-        "type": "category-bar",
-        "title": "등급별 물 스트레스 구역 수",
-        "xAxis": "평가구역 수",
-        "yAxis": "물 스트레스 등급",
-        "unit": "개"
+        "type": "table",
+        "title": "물 스트레스 등급별 평가구역 수",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
       },
       "checks": {
-        "primaryTypeMatch": false,
+        "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": null,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -4772,13 +4642,13 @@
         "sourceLine": true,
         "nestedTags": true,
         "mapPlacement": null,
-        "overflow320": false,
-        "console": false
+        "overflow320": true,
+        "console": true
       },
       "evidence": {
         "wide": {
-          "verdict": "mismatch",
-          "axesVerdict": "missing",
+          "verdict": "match",
+          "axesVerdict": "not-applicable",
           "blocks": [
             {
               "type": "table",
@@ -4836,18 +4706,11 @@
           "titleCount": 1,
           "nestedTags": 0
         },
-        "overflow320": 275,
-        "console": [
-          "[v153-contract] B-017: first block \"table\" ≠ contract \"category-bar\""
-        ]
+        "overflow320": 0,
+        "console": []
       },
-      "issues": [
-        "first block \"table\" ≠ contract \"category-bar\"",
-        "axes null ≠ {\"x\":\"평가구역 수\",\"y\":\"물 스트레스 등급\",\"unit\":\"개\"}",
-        "320px overflow 275px",
-        "console: [v153-contract] B-017: first block \"table\" ≠ contract \"category-bar\""
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "B-018",
@@ -4858,28 +4721,28 @@
         "title": "SSP 시나리오별 GDP 전망",
         "xAxis": "연도",
         "yAxis": "GDP(PPP) 전 구간",
-        "unit": "십억 USD_2017/yr"
+        "unit": "2017년 구매력평가 기준 10억 미국달러/년"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
         "policyNoNumericChart": null,
-        "kpiRow": false,
+        "kpiRow": true,
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "line",
@@ -4906,7 +4769,7 @@
           "split": false,
           "tiles": [
             {
-              "unit": "/yr",
+              "unit": "십억 USD_2017/yr",
               "text": "7,364 2017년 구매력평가 기준 10억 미국달러/년GDP(PPP) 전 구간 · SSP2 · 2100년"
             },
             {
@@ -4926,16 +4789,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] B-018: axes {\"x\":\"연도\",\"y\":\"GDP(PPP) 전 구간\",\"unit\":\"2017년 구매력평가 기준 10억 미국달러/년\"} ≠ contract {\"x\":\"연도\",\"y\":\"GDP(PPP) 전 구간\",\"unit\":\"십억 USD_2017/yr\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"연도\",\"y\":\"GDP(PPP) 전 구간\",\"unit\":\"2017년 구매력평가 기준 10억 미국달러/년\"} ≠ {\"x\":\"연도\",\"y\":\"GDP(PPP) 전 구간\",\"unit\":\"십억 USD_2017/yr\"}",
-        "kpi tiles 4 (unit missing)",
-        "console: [v153-contract] B-018: axes {\"x\":\"연도\",\"y\":\"GDP(PPP) 전 구간\",\"unit\":\"2017년 구매력평가 기준 10억 미국달러/년\"} ≠ contract {\"x\":\"연도\",\"y\":\"GDP(PPP) 전 구간\",\"unit\":\"십억 USD_2017/yr\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "B-019",
@@ -5027,13 +4884,13 @@
         "type": "line",
         "title": "INFORM Risk 종합 추이",
         "xAxis": "연도",
-        "yAxis": "INFORM 종합",
+        "yAxis": "INFORM Risk 시계열",
         "unit": "지수"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -5044,12 +4901,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "line",
@@ -5096,15 +4953,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] B-020: axes {\"x\":\"연도\",\"y\":\"INFORM Risk 시계열(2017–2026)\",\"unit\":\"지수\"} ≠ contract {\"x\":\"연도\",\"y\":\"INFORM 종합\",\"unit\":\"지수\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"연도\",\"y\":\"INFORM Risk 시계열(2017–2026)\",\"unit\":\"지수\"} ≠ {\"x\":\"연도\",\"y\":\"INFORM 종합\",\"unit\":\"지수\"}",
-        "console: [v153-contract] B-020: axes {\"x\":\"연도\",\"y\":\"INFORM Risk 시계열(2017–2026)\",\"unit\":\"지수\"} ≠ contract {\"x\":\"연도\",\"y\":\"INFORM 종합\",\"unit\":\"지수\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "B-021",
@@ -5113,14 +4965,14 @@
       "expected": {
         "type": "region-bar",
         "title": "권역별 GVI 취약성 지수",
-        "xAxis": "GVI 취약성 지수",
+        "xAxis": "권역별 GVI",
         "yAxis": "권역",
         "unit": "지수"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -5131,12 +4983,12 @@
         "nestedTags": true,
         "mapPlacement": true,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "region-bar",
@@ -5146,7 +4998,7 @@
               "width": 752,
               "axes": {
                 "x": "2023년 권역별 GVI",
-                "y": "비교 항목",
+                "y": "권역",
                 "unit": "지수"
               }
             },
@@ -5219,15 +5071,10 @@
           }
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] B-021: axes {\"x\":\"2023년 권역별 GVI\",\"y\":\"비교 항목\",\"unit\":\"지수\"} ≠ contract {\"x\":\"GVI 취약성 지수\",\"y\":\"권역\",\"unit\":\"지수\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"2023년 권역별 GVI\",\"y\":\"비교 항목\",\"unit\":\"지수\"} ≠ {\"x\":\"GVI 취약성 지수\",\"y\":\"권역\",\"unit\":\"지수\"}",
-        "console: [v153-contract] B-021: axes {\"x\":\"2023년 권역별 GVI\",\"y\":\"비교 항목\",\"unit\":\"지수\"} ≠ contract {\"x\":\"GVI 취약성 지수\",\"y\":\"권역\",\"unit\":\"지수\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "B-022",
@@ -5236,14 +5083,14 @@
       "expected": {
         "type": "category-bar",
         "title": "기후 투자 재원 구성",
-        "xAxis": "재원 규모",
+        "xAxis": "기후 투자 재원 구성",
         "yAxis": "재원 구성(공공/민간)",
         "unit": "십억 US$"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -5254,12 +5101,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -5269,7 +5116,7 @@
               "width": 1130,
               "axes": {
                 "x": "기후 투자 재원 구성",
-                "y": "비교 항목",
+                "y": "재원 구성(공공/민간)",
                 "unit": "십억 US$"
               }
             },
@@ -5306,15 +5153,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] B-022: axes {\"x\":\"기후 투자 재원 구성\",\"y\":\"비교 항목\",\"unit\":\"십억 US$\"} ≠ contract {\"x\":\"재원 규모\",\"y\":\"재원 구성(공공/민간)\",\"unit\":\"십억 US$\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"기후 투자 재원 구성\",\"y\":\"비교 항목\",\"unit\":\"십억 US$\"} ≠ {\"x\":\"재원 규모\",\"y\":\"재원 구성(공공/민간)\",\"unit\":\"십억 US$\"}",
-        "console: [v153-contract] B-022: axes {\"x\":\"기후 투자 재원 구성\",\"y\":\"비교 항목\",\"unit\":\"십억 US$\"} ≠ contract {\"x\":\"재원 규모\",\"y\":\"재원 구성(공공/민간)\",\"unit\":\"십억 US$\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "B-023",
@@ -5641,14 +5483,14 @@
       "expected": {
         "type": "category-bar",
         "title": "선택 성·시의 유향별 비율",
-        "xAxis": "방향별 비율",
+        "xAxis": "8방향별 격자 비율",
         "yAxis": "유향(8방향)",
         "unit": "%"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -5659,12 +5501,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -5674,7 +5516,7 @@
               "width": 1130,
               "axes": {
                 "x": "KiênGiang · 8방향별 격자 비율",
-                "y": "비교 항목",
+                "y": "유향(8방향)",
                 "unit": "%"
               }
             },
@@ -5707,15 +5549,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] B-026: axes {\"x\":\"KiênGiang · 8방향별 격자 비율\",\"y\":\"비교 항목\",\"unit\":\"%\"} ≠ contract {\"x\":\"방향별 비율\",\"y\":\"유향(8방향)\",\"unit\":\"%\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"KiênGiang · 8방향별 격자 비율\",\"y\":\"비교 항목\",\"unit\":\"%\"} ≠ {\"x\":\"방향별 비율\",\"y\":\"유향(8방향)\",\"unit\":\"%\"}",
-        "console: [v153-contract] B-026: axes {\"x\":\"KiênGiang · 8방향별 격자 비율\",\"y\":\"비교 항목\",\"unit\":\"%\"} ≠ contract {\"x\":\"방향별 비율\",\"y\":\"유향(8방향)\",\"unit\":\"%\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "B-027",
@@ -5774,7 +5611,7 @@
           "split": false,
           "tiles": [
             {
-              "unit": "⁹ m³/yr",
+              "unit": "10⁹ m³/yr",
               "text": "4.67 10⁹ m³/yr이용가능(정규 재생) 지하수 · 2023년"
             },
             {
@@ -5940,7 +5777,7 @@
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
         "policyNoNumericChart": null,
-        "kpiRow": false,
+        "kpiRow": true,
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
@@ -6048,10 +5885,8 @@
         "overflow320": 0,
         "console": []
       },
-      "issues": [
-        "kpi tiles 3 (unit missing)"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "B-030",
@@ -6072,7 +5907,7 @@
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
         "policyNoNumericChart": null,
-        "kpiRow": false,
+        "kpiRow": true,
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
@@ -6160,10 +5995,8 @@
         "overflow320": 0,
         "console": []
       },
-      "issues": [
-        "kpi tiles 3 (unit missing)"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "B-031",
@@ -6228,7 +6061,7 @@
           "split": true,
           "tiles": [
             {
-              "unit": "만 ha",
+              "unit": "ha",
               "text": "165만 ha성(省)별 분석대상 면적 최대 · Nghệ An · 63개 성·시 중 · 2000년"
             },
             {
@@ -6546,7 +6379,7 @@
           "split": true,
           "tiles": [
             {
-              "unit": "e/yr",
+              "unit": "Mg CO2e/yr",
               "text": "292만 Mg CO2e/yr산림탄소 순플럭스(연평균) 최대 · Kon Tum · 63개 성·시 중 · 2001–2024"
             },
             {
@@ -6685,7 +6518,7 @@
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -6696,12 +6529,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -6711,7 +6544,7 @@
               "width": 1130,
               "axes": {
                 "x": "토지이용 변화율",
-                "y": "비교 항목",
+                "y": "토지 유형",
                 "unit": "%/yr"
               }
             },
@@ -6756,47 +6589,42 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] B-036: axes {\"x\":\"토지이용 변화율\",\"y\":\"비교 항목\",\"unit\":\"%/yr\"} ≠ contract {\"x\":\"토지이용 변화율\",\"y\":\"토지 유형\",\"unit\":\"%/yr\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"토지이용 변화율\",\"y\":\"비교 항목\",\"unit\":\"%/yr\"} ≠ {\"x\":\"토지이용 변화율\",\"y\":\"토지 유형\",\"unit\":\"%/yr\"}",
-        "console: [v153-contract] B-036: axes {\"x\":\"토지이용 변화율\",\"y\":\"비교 항목\",\"unit\":\"%/yr\"} ≠ contract {\"x\":\"토지이용 변화율\",\"y\":\"토지 유형\",\"unit\":\"%/yr\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "B-037",
       "archetype": "composition",
       "status": "exception",
       "expected": {
-        "type": "category-bar",
-        "title": "토지피복 분류별 면적",
-        "xAxis": "면적",
-        "yAxis": "토지피복 분류",
-        "unit": "km²"
+        "type": "table",
+        "title": "성·시별 토지피복 면적",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
       },
       "checks": {
-        "primaryTypeMatch": false,
+        "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": null,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
         "policyNoNumericChart": null,
-        "kpiRow": false,
+        "kpiRow": true,
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
         "mapPlacement": true,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
-          "verdict": "mismatch",
-          "axesVerdict": "missing",
+          "verdict": "match",
+          "axesVerdict": "not-applicable",
           "blocks": [
             {
               "type": "table",
@@ -6891,17 +6719,10 @@
           }
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] B-037: first block \"table\" ≠ contract \"category-bar\""
-        ]
+        "console": []
       },
-      "issues": [
-        "first block \"table\" ≠ contract \"category-bar\"",
-        "axes null ≠ {\"x\":\"면적\",\"y\":\"토지피복 분류\",\"unit\":\"km²\"}",
-        "kpi tiles 3 (unit missing)",
-        "console: [v153-contract] B-037: first block \"table\" ≠ contract \"category-bar\""
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "B-038",
@@ -7004,7 +6825,7 @@
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
         "policyNoNumericChart": null,
-        "kpiRow": false,
+        "kpiRow": true,
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
@@ -7112,10 +6933,8 @@
         "overflow320": 0,
         "console": []
       },
-      "issues": [
-        "kpi tiles 3 (unit missing)"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "B-040",
@@ -7124,30 +6943,30 @@
       "expected": {
         "type": "region-bar",
         "title": "성·시별 심도 1km 지온",
-        "xAxis": "심도 1km 지온(평균)",
+        "xAxis": "심도 2km 지온(평균)",
         "yAxis": "성·시",
         "unit": "°C"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
         "policyNoNumericChart": null,
-        "kpiRow": false,
+        "kpiRow": true,
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
         "mapPlacement": true,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "region-bar",
@@ -7242,16 +7061,10 @@
           }
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] B-040: axes {\"x\":\"심도 2km 지온(평균)\",\"y\":\"성·시\",\"unit\":\"°C\"} ≠ contract {\"x\":\"심도 1km 지온(평균)\",\"y\":\"성·시\",\"unit\":\"°C\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"심도 2km 지온(평균)\",\"y\":\"성·시\",\"unit\":\"°C\"} ≠ {\"x\":\"심도 1km 지온(평균)\",\"y\":\"성·시\",\"unit\":\"°C\"}",
-        "kpi tiles 3 (unit missing)",
-        "console: [v153-contract] B-040: axes {\"x\":\"심도 2km 지온(평균)\",\"y\":\"성·시\",\"unit\":\"°C\"} ≠ contract {\"x\":\"심도 1km 지온(평균)\",\"y\":\"성·시\",\"unit\":\"°C\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "B-041",
@@ -7272,12 +7085,12 @@
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
         "policyNoNumericChart": null,
-        "kpiRow": false,
+        "kpiRow": true,
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
         "mapPlacement": true,
-        "overflow320": false,
+        "overflow320": true,
         "console": true
       },
       "evidence": {
@@ -7357,14 +7170,11 @@
             "top": 3279
           }
         },
-        "overflow320": 10,
+        "overflow320": 0,
         "console": []
       },
-      "issues": [
-        "kpi tiles 3 (unit missing)",
-        "320px overflow 10px"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "B-042",
@@ -7385,7 +7195,7 @@
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
         "policyNoNumericChart": null,
-        "kpiRow": false,
+        "kpiRow": true,
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
@@ -7473,10 +7283,8 @@
         "overflow320": 0,
         "console": []
       },
-      "issues": [
-        "kpi tiles 3 (unit missing)"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "B-043",
@@ -7492,7 +7300,7 @@
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -7503,12 +7311,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -7518,7 +7326,7 @@
               "width": 1130,
               "axes": {
                 "x": "가채연수(R/P ratio)",
-                "y": "비교 항목",
+                "y": "자원 종류",
                 "unit": "년"
               }
             },
@@ -7555,29 +7363,24 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] B-043: axes {\"x\":\"가채연수(R/P ratio)\",\"y\":\"비교 항목\",\"unit\":\"년\"} ≠ contract {\"x\":\"가채연수(R/P ratio)\",\"y\":\"자원 종류\",\"unit\":\"년\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"가채연수(R/P ratio)\",\"y\":\"비교 항목\",\"unit\":\"년\"} ≠ {\"x\":\"가채연수(R/P ratio)\",\"y\":\"자원 종류\",\"unit\":\"년\"}",
-        "console: [v153-contract] B-043: axes {\"x\":\"가채연수(R/P ratio)\",\"y\":\"비교 항목\",\"unit\":\"년\"} ≠ contract {\"x\":\"가채연수(R/P ratio)\",\"y\":\"자원 종류\",\"unit\":\"년\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "B-044",
       "archetype": "matrix",
-      "status": "standard",
+      "status": "exception",
       "expected": {
-        "type": "sorted-table",
+        "type": "cards-list",
         "title": "광물별 자원·규정 조건 정렬표",
         "xAxis": null,
         "yAxis": null,
         "unit": null
       },
       "checks": {
-        "primaryTypeMatch": false,
+        "primaryTypeMatch": true,
         "rankOrder": true,
         "axesMatch": null,
         "blockHonesty": true,
@@ -7590,11 +7393,11 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
-          "verdict": "mismatch",
+          "verdict": "match",
           "axesVerdict": "not-applicable",
           "blocks": [
             {
@@ -7626,15 +7429,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] B-044: first block \"cards-list\" ≠ contract \"sorted-table\""
-        ]
+        "console": []
       },
-      "issues": [
-        "first block \"cards-list\" ≠ contract \"sorted-table\"",
-        "console: [v153-contract] B-044: first block \"cards-list\" ≠ contract \"sorted-table\""
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "B-045",
@@ -7650,7 +7448,7 @@
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -7661,12 +7459,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -7676,7 +7474,7 @@
               "width": 1130,
               "axes": {
                 "x": "세계 매장량 비중",
-                "y": "비교 항목",
+                "y": "광물",
                 "unit": "%"
               }
             },
@@ -7713,15 +7511,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] B-045: axes {\"x\":\"세계 매장량 비중\",\"y\":\"비교 항목\",\"unit\":\"%\"} ≠ contract {\"x\":\"세계 매장량 비중\",\"y\":\"광물\",\"unit\":\"%\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"세계 매장량 비중\",\"y\":\"비교 항목\",\"unit\":\"%\"} ≠ {\"x\":\"세계 매장량 비중\",\"y\":\"광물\",\"unit\":\"%\"}",
-        "console: [v153-contract] B-045: axes {\"x\":\"세계 매장량 비중\",\"y\":\"비교 항목\",\"unit\":\"%\"} ≠ contract {\"x\":\"세계 매장량 비중\",\"y\":\"광물\",\"unit\":\"%\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "B-046",
@@ -7818,16 +7611,16 @@
       "archetype": "national-series",
       "status": "preserved",
       "expected": {
-        "type": "category-bar",
-        "title": "광물별 세계 생산량 비중",
-        "xAxis": "세계 광산 생산량 비중",
-        "yAxis": "광물",
-        "unit": "%"
+        "type": "table",
+        "title": "광물별 연간 생산량",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
       },
       "checks": {
-        "primaryTypeMatch": false,
+        "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": null,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -7838,12 +7631,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
-          "verdict": "mismatch",
-          "axesVerdict": "missing",
+          "verdict": "match",
+          "axesVerdict": "not-applicable",
           "blocks": [
             {
               "type": "table",
@@ -7886,16 +7679,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] B-047: first block \"table\" ≠ contract \"category-bar\""
-        ]
+        "console": []
       },
-      "issues": [
-        "first block \"table\" ≠ contract \"category-bar\"",
-        "axes null ≠ {\"x\":\"세계 광산 생산량 비중\",\"y\":\"광물\",\"unit\":\"%\"}",
-        "console: [v153-contract] B-047: first block \"table\" ≠ contract \"category-bar\""
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "B-048",
@@ -7904,14 +7691,14 @@
       "expected": {
         "type": "category-bar",
         "title": "광종별 광산 수",
-        "xAxis": "광산 수",
+        "xAxis": "항목 수",
         "yAxis": "광종",
         "unit": "곳"
       },
       "checks": {
-        "primaryTypeMatch": false,
+        "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -7922,19 +7709,31 @@
         "nestedTags": null,
         "mapPlacement": true,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
-          "verdict": "mismatch",
-          "axesVerdict": "missing",
+          "verdict": "match",
+          "axesVerdict": "match",
           "blocks": [
             {
-              "type": "cards-list",
+              "type": "category-bar",
               "rank": "1",
               "top": 546,
               "left": 155,
               "width": 752,
+              "axes": {
+                "x": "항목 수",
+                "y": "광종",
+                "unit": "곳"
+              }
+            },
+            {
+              "type": "cards-list",
+              "rank": "2",
+              "top": 1330,
+              "left": 155,
+              "width": 1130,
               "axes": null
             }
           ],
@@ -7966,44 +7765,41 @@
         "nestedTagCount": 1,
         "narrow": {
           "slot": {
-            "top": 1633,
+            "top": 1292,
             "left": 31,
             "width": 328,
             "height": 728,
             "mapReady": true
           },
           "first": {
-            "type": "cards-list",
+            "type": "category-bar",
             "top": 764,
-            "height": 853
+            "height": 512
           },
-          "second": null
+          "second": {
+            "type": "cards-list",
+            "top": 2036
+          }
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] B-048: first block \"cards-list\" ≠ contract \"category-bar\""
-        ]
+        "console": []
       },
-      "issues": [
-        "first block \"cards-list\" ≠ contract \"category-bar\"",
-        "axes null ≠ {\"x\":\"광산 수\",\"y\":\"광종\",\"unit\":\"곳\"}",
-        "console: [v153-contract] B-048: first block \"cards-list\" ≠ contract \"category-bar\""
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "C-001",
       "archetype": "policy-document",
       "status": "standard",
       "expected": {
-        "type": "timeline",
-        "title": "NDC 목표·이행조건 연혁",
+        "type": "comparison-table",
+        "title": "NDC 2030 감축목표 비교",
         "xAxis": null,
         "yAxis": null,
         "unit": null
       },
       "checks": {
-        "primaryTypeMatch": false,
+        "primaryTypeMatch": true,
         "rankOrder": true,
         "axesMatch": null,
         "blockHonesty": true,
@@ -8016,15 +7812,15 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
-          "verdict": "mismatch",
+          "verdict": "match",
           "axesVerdict": "not-applicable",
           "blocks": [
             {
-              "type": "table",
+              "type": "comparison-table",
               "rank": "1",
               "top": 593,
               "left": 155,
@@ -8037,7 +7833,11 @@
               "top": 993,
               "left": 155,
               "width": 1130,
-              "axes": null
+              "axes": {
+                "x": "온실가스 감축량",
+                "y": "부문",
+                "unit": "MtCO₂e"
+              }
             },
             {
               "type": "table",
@@ -8084,47 +7884,42 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] C-001: first block \"table\" ≠ contract \"timeline\""
-        ]
+        "console": []
       },
-      "issues": [
-        "first block \"table\" ≠ contract \"timeline\"",
-        "console: [v153-contract] C-001: first block \"table\" ≠ contract \"timeline\""
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "C-002",
-      "archetype": "policy-document",
-      "status": "standard",
+      "archetype": "national-series",
+      "status": "exception",
       "expected": {
-        "type": "timeline",
-        "title": "BTR 제출·보고 연혁",
-        "xAxis": null,
-        "yAxis": null,
-        "unit": null
+        "type": "category-bar",
+        "title": "부문별 배출량(2016 BUR3)",
+        "xAxis": "부문별 순배출량",
+        "yAxis": "부문",
+        "unit": "ktCO₂e"
       },
       "checks": {
-        "primaryTypeMatch": false,
+        "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": null,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
-        "policyNoNumericChart": false,
+        "policyNoNumericChart": null,
         "kpiRow": true,
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": null,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
-          "verdict": "mismatch",
-          "axesVerdict": "not-applicable",
+          "verdict": "match",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -8134,7 +7929,7 @@
               "width": 1130,
               "axes": {
                 "x": "부문별 순배출량",
-                "y": "비교 항목",
+                "y": "부문",
                 "unit": "ktCO₂e"
               }
             },
@@ -8176,30 +7971,24 @@
         },
         "nestedTagCount": 1,
         "overflow320": 0,
-        "console": [
-          "[v153-contract] C-002: first block \"category-bar\" ≠ contract \"timeline\""
-        ]
+        "console": []
       },
-      "issues": [
-        "first block \"category-bar\" ≠ contract \"timeline\"",
-        "policy screen opens on \"category-bar\"",
-        "console: [v153-contract] C-002: first block \"category-bar\" ≠ contract \"timeline\""
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "C-003",
       "archetype": "policy-document",
       "status": "standard",
       "expected": {
-        "type": "timeline",
-        "title": "NAP 적응 우선분야 연혁",
+        "type": "comparison-table",
+        "title": "적응 우선 분야·조치 비교",
         "xAxis": null,
         "yAxis": null,
         "unit": null
       },
       "checks": {
-        "primaryTypeMatch": false,
+        "primaryTypeMatch": true,
         "rankOrder": true,
         "axesMatch": null,
         "blockHonesty": true,
@@ -8212,11 +8001,11 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
-          "verdict": "mismatch",
+          "verdict": "match",
           "axesVerdict": "not-applicable",
           "blocks": [
             {
@@ -8248,29 +8037,24 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] C-003: first block \"comparison-table\" ≠ contract \"timeline\""
-        ]
+        "console": []
       },
-      "issues": [
-        "first block \"comparison-table\" ≠ contract \"timeline\"",
-        "console: [v153-contract] C-003: first block \"comparison-table\" ≠ contract \"timeline\""
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "C-004",
       "archetype": "policy-document",
       "status": "standard",
       "expected": {
-        "type": "timeline",
-        "title": "LT-LEDS 감축경로 연혁",
+        "type": "comparison-table",
+        "title": "장기 시나리오별 목표 비교",
         "xAxis": null,
         "yAxis": null,
         "unit": null
       },
       "checks": {
-        "primaryTypeMatch": false,
+        "primaryTypeMatch": true,
         "rankOrder": true,
         "axesMatch": null,
         "blockHonesty": true,
@@ -8283,11 +8067,11 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
-          "verdict": "mismatch",
+          "verdict": "match",
           "axesVerdict": "not-applicable",
           "blocks": [
             {
@@ -8319,29 +8103,24 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] C-004: first block \"comparison-table\" ≠ contract \"timeline\""
-        ]
+        "console": []
       },
-      "issues": [
-        "first block \"comparison-table\" ≠ contract \"timeline\"",
-        "console: [v153-contract] C-004: first block \"comparison-table\" ≠ contract \"timeline\""
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "C-005",
       "archetype": "matrix",
-      "status": "standard",
+      "status": "exception",
       "expected": {
-        "type": "sorted-table",
+        "type": "comparison-table",
         "title": "기술·장벽·우선순위 매트릭스",
         "xAxis": null,
         "yAxis": null,
         "unit": null
       },
       "checks": {
-        "primaryTypeMatch": false,
+        "primaryTypeMatch": true,
         "rankOrder": true,
         "axesMatch": null,
         "blockHonesty": true,
@@ -8354,11 +8133,11 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
-          "verdict": "mismatch",
+          "verdict": "match",
           "axesVerdict": "not-applicable",
           "blocks": [
             {
@@ -8390,29 +8169,24 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] C-005: first block \"comparison-table\" ≠ contract \"sorted-table\""
-        ]
+        "console": []
       },
-      "issues": [
-        "first block \"comparison-table\" ≠ contract \"sorted-table\"",
-        "console: [v153-contract] C-005: first block \"comparison-table\" ≠ contract \"sorted-table\""
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "C-006",
       "archetype": "policy-document",
       "status": "standard",
       "expected": {
-        "type": "timeline",
-        "title": "ITMO 양자협정 연혁",
+        "type": "comparison-table",
+        "title": "협정·승인체계 현황",
         "xAxis": null,
         "yAxis": null,
         "unit": null
       },
       "checks": {
-        "primaryTypeMatch": false,
+        "primaryTypeMatch": true,
         "rankOrder": true,
         "axesMatch": null,
         "blockHonesty": true,
@@ -8425,11 +8199,11 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
-          "verdict": "mismatch",
+          "verdict": "match",
           "axesVerdict": "not-applicable",
           "blocks": [
             {
@@ -8461,15 +8235,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] C-006: first block \"comparison-table\" ≠ contract \"timeline\""
-        ]
+        "console": []
       },
-      "issues": [
-        "first block \"comparison-table\" ≠ contract \"timeline\"",
-        "console: [v153-contract] C-006: first block \"comparison-table\" ≠ contract \"timeline\""
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "C-007",
@@ -8582,14 +8351,14 @@
       "archetype": "policy-document",
       "status": "standard",
       "expected": {
-        "type": "timeline",
-        "title": "기후 이니셔티브 참여 연혁",
+        "type": "comparison-table",
+        "title": "이니셔티브 참여 현황",
         "xAxis": null,
         "yAxis": null,
         "unit": null
       },
       "checks": {
-        "primaryTypeMatch": false,
+        "primaryTypeMatch": true,
         "rankOrder": true,
         "axesMatch": null,
         "blockHonesty": true,
@@ -8602,11 +8371,11 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
-          "verdict": "mismatch",
+          "verdict": "match",
           "axesVerdict": "not-applicable",
           "blocks": [
             {
@@ -8694,15 +8463,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] C-008: first block \"comparison-table\" ≠ contract \"timeline\""
-        ]
+        "console": []
       },
-      "issues": [
-        "first block \"comparison-table\" ≠ contract \"timeline\"",
-        "console: [v153-contract] C-008: first block \"comparison-table\" ≠ contract \"timeline\""
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "C-009",
@@ -8772,7 +8536,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 16796,
+            "top": 17397,
             "left": 31,
             "width": 328,
             "height": 1041,
@@ -8781,7 +8545,7 @@
           "first": {
             "type": "timeline",
             "top": 808,
-            "height": 15972
+            "height": 16573
           },
           "second": null
         },
@@ -8861,7 +8625,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 13344,
+            "top": 13774,
             "left": 31,
             "width": 328,
             "height": 1092,
@@ -8870,7 +8634,7 @@
           "first": {
             "type": "timeline",
             "top": 771,
-            "height": 12557
+            "height": 12987
           },
           "second": null
         },
@@ -9540,14 +9304,14 @@
       "expected": {
         "type": "category-bar",
         "title": "2030·2050 전원구성 계획",
-        "xAxis": "설비용량 계획(하한~상한)",
-        "yAxis": "전원(기술)",
+        "xAxis": "계획 설비용량",
+        "yAxis": "전원",
         "unit": "MW"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -9563,7 +9327,7 @@
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "missing",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -9571,7 +9335,11 @@
               "top": 807,
               "left": 155,
               "width": 1130,
-              "axes": null
+              "axes": {
+                "x": "계획 설비용량",
+                "y": "전원",
+                "unit": "MW"
+              }
             },
             {
               "type": "table",
@@ -9636,10 +9404,8 @@
         "overflow320": 0,
         "console": []
       },
-      "issues": [
-        "axes null ≠ {\"x\":\"설비용량 계획(하한~상한)\",\"y\":\"전원(기술)\",\"unit\":\"MW\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "C-019",
@@ -9648,19 +9414,19 @@
       "expected": {
         "type": "region-bar",
         "title": "성·시별 탄소시장 의무시설",
-        "xAxis": "인벤토리 의무대상 시설 수",
+        "xAxis": "시설 수",
         "yAxis": "성·시",
         "unit": "개소"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
         "policyNoNumericChart": null,
-        "kpiRow": false,
+        "kpiRow": true,
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": null,
@@ -9671,7 +9437,7 @@
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "missing",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "region-bar",
@@ -9679,7 +9445,11 @@
               "top": 703,
               "left": 155,
               "width": 752,
-              "axes": null
+              "axes": {
+                "x": "시설 수",
+                "y": "성·시",
+                "unit": "개소"
+              }
             },
             {
               "type": "sorted-table",
@@ -9712,8 +9482,8 @@
               "text": "479개소Hồ Chí Minh · 인벤토리 의무 대상 시설 · 2026-08-10"
             },
             {
-              "unit": "년",
-              "text": "2026-08-10 기준자료기간"
+              "unit": "일",
+              "text": "2026-08-10 기준일자료 기준일"
             },
             {
               "unit": "건",
@@ -9745,11 +9515,8 @@
         "overflow320": 0,
         "console": []
       },
-      "issues": [
-        "axes null ≠ {\"x\":\"인벤토리 의무대상 시설 수\",\"y\":\"성·시\",\"unit\":\"개소\"}",
-        "kpi tiles 3 (unit missing)"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "C-020",
@@ -9864,19 +9631,19 @@
       "expected": {
         "type": "region-bar",
         "title": "성·시별 탄소시장 대상시설",
-        "xAxis": "탄소시장 대상시설 수",
+        "xAxis": "시설 수",
         "yAxis": "성·시",
         "unit": "개소"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
         "policyNoNumericChart": null,
-        "kpiRow": false,
+        "kpiRow": true,
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": null,
@@ -9887,7 +9654,7 @@
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "missing",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "region-bar",
@@ -9895,7 +9662,11 @@
               "top": 704,
               "left": 155,
               "width": 752,
-              "axes": null
+              "axes": {
+                "x": "시설 수",
+                "y": "성·시",
+                "unit": "개소"
+              }
             },
             {
               "type": "sorted-table",
@@ -9928,8 +9699,8 @@
               "text": "479개소Hồ Chí Minh · 인벤토리 의무 대상 시설 · 2026-08-10"
             },
             {
-              "unit": "년",
-              "text": "2026-08-10 기준자료기간"
+              "unit": "일",
+              "text": "2026-08-10 기준일자료 기준일"
             },
             {
               "unit": "건",
@@ -9961,11 +9732,8 @@
         "overflow320": 0,
         "console": []
       },
-      "issues": [
-        "axes null ≠ {\"x\":\"탄소시장 대상시설 수\",\"y\":\"성·시\",\"unit\":\"개소\"}",
-        "kpi tiles 3 (unit missing)"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "C-023",
@@ -10025,14 +9793,14 @@
       "archetype": "policy-document",
       "status": "standard",
       "expected": {
-        "type": "timeline",
-        "title": "REDD+ 이행 연혁",
+        "type": "comparison-table",
+        "title": "REDD+ 이행 단계 현황",
         "xAxis": null,
         "yAxis": null,
         "unit": null
       },
       "checks": {
-        "primaryTypeMatch": false,
+        "primaryTypeMatch": true,
         "rankOrder": true,
         "axesMatch": null,
         "blockHonesty": true,
@@ -10045,11 +9813,11 @@
         "nestedTags": true,
         "mapPlacement": true,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
-          "verdict": "mismatch",
+          "verdict": "match",
           "axesVerdict": "not-applicable",
           "blocks": [
             {
@@ -10102,15 +9870,10 @@
           "second": null
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] C-024: first block \"comparison-table\" ≠ contract \"timeline\""
-        ]
+        "console": []
       },
-      "issues": [
-        "first block \"comparison-table\" ≠ contract \"timeline\"",
-        "console: [v153-contract] C-024: first block \"comparison-table\" ≠ contract \"timeline\""
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "C-025",
@@ -10119,14 +9882,14 @@
       "expected": {
         "type": "category-bar",
         "title": "등록표준별 탄소크레딧 실적",
-        "xAxis": "프로젝트 수",
+        "xAxis": "건수",
         "yAxis": "등록 표준",
         "unit": "건"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -10137,12 +9900,12 @@
         "nestedTags": true,
         "mapPlacement": true,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -10151,6 +9914,18 @@
               "left": 155,
               "width": 752,
               "axes": {
+                "x": "건수",
+                "y": "등록 표준",
+                "unit": "건"
+              }
+            },
+            {
+              "type": "line",
+              "rank": "2",
+              "top": 2145,
+              "left": 155,
+              "width": 1130,
+              "axes": {
                 "x": "연도",
                 "y": "건수",
                 "unit": "건"
@@ -10158,44 +9933,32 @@
             },
             {
               "type": "category-bar",
-              "rank": "2",
-              "top": 2145,
-              "left": 155,
-              "width": 1130,
-              "axes": {
-                "x": "건수",
-                "y": "분류",
-                "unit": "건"
-              }
-            },
-            {
-              "type": "category-bar",
               "rank": "3",
-              "top": 2685,
+              "top": 2765,
               "left": 155,
               "width": 1130,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "등록 표준",
                 "unit": "건"
               }
             },
             {
               "type": "category-bar",
               "rank": "4",
-              "top": 3405,
+              "top": 3485,
               "left": 155,
               "width": 1130,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "등록 표준",
                 "unit": "건"
               }
             },
             {
               "type": "table",
               "rank": "5",
-              "top": 4125,
+              "top": 4205,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -10236,7 +9999,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 3800,
+            "top": 3567,
             "left": 31,
             "width": 328,
             "height": 761,
@@ -10245,23 +10008,18 @@
           "first": {
             "type": "category-bar",
             "top": 1359,
-            "height": 744
+            "height": 512
           },
           "second": {
-            "type": "category-bar",
-            "top": 4577
+            "type": "line",
+            "top": 4345
           }
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] C-025: axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ contract {\"x\":\"프로젝트 수\",\"y\":\"등록 표준\",\"unit\":\"건\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ {\"x\":\"프로젝트 수\",\"y\":\"등록 표준\",\"unit\":\"건\"}",
-        "console: [v153-contract] C-025: axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ contract {\"x\":\"프로젝트 수\",\"y\":\"등록 표준\",\"unit\":\"건\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "D-001",
@@ -10270,14 +10028,14 @@
       "expected": {
         "type": "category-bar",
         "title": "기술별 단위 투자비 비교",
-        "xAxis": "단위 사업당 CAPEX",
+        "xAxis": "기술별 투자비 중앙값",
         "yAxis": "발전기술",
         "unit": "USD/kW"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -10288,12 +10046,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -10303,7 +10061,7 @@
               "width": 1130,
               "axes": {
                 "x": "기술별 투자비 중앙값",
-                "y": "비교 항목",
+                "y": "발전기술",
                 "unit": "USD/kW"
               }
             },
@@ -10340,15 +10098,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] D-001: axes {\"x\":\"기술별 투자비 중앙값\",\"y\":\"비교 항목\",\"unit\":\"USD/kW\"} ≠ contract {\"x\":\"단위 사업당 CAPEX\",\"y\":\"발전기술\",\"unit\":\"USD/kW\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"기술별 투자비 중앙값\",\"y\":\"비교 항목\",\"unit\":\"USD/kW\"} ≠ {\"x\":\"단위 사업당 CAPEX\",\"y\":\"발전기술\",\"unit\":\"USD/kW\"}",
-        "console: [v153-contract] D-001: axes {\"x\":\"기술별 투자비 중앙값\",\"y\":\"비교 항목\",\"unit\":\"USD/kW\"} ≠ contract {\"x\":\"단위 사업당 CAPEX\",\"y\":\"발전기술\",\"unit\":\"USD/kW\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "D-002",
@@ -10357,14 +10110,14 @@
       "expected": {
         "type": "category-bar",
         "title": "분야별 시장 성장률 비교",
-        "xAxis": "시장 성장률(CAGR)",
+        "xAxis": "시장 성장률",
         "yAxis": "기술 분야",
         "unit": "%"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -10375,12 +10128,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -10390,7 +10143,7 @@
               "width": 1130,
               "axes": {
                 "x": "시장 성장률",
-                "y": "비교 항목",
+                "y": "기술 분야",
                 "unit": "%"
               }
             }
@@ -10419,15 +10172,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] D-002: axes {\"x\":\"시장 성장률\",\"y\":\"비교 항목\",\"unit\":\"%\"} ≠ contract {\"x\":\"시장 성장률(CAGR)\",\"y\":\"기술 분야\",\"unit\":\"%\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"시장 성장률\",\"y\":\"비교 항목\",\"unit\":\"%\"} ≠ {\"x\":\"시장 성장률(CAGR)\",\"y\":\"기술 분야\",\"unit\":\"%\"}",
-        "console: [v153-contract] D-002: axes {\"x\":\"시장 성장률\",\"y\":\"비교 항목\",\"unit\":\"%\"} ≠ contract {\"x\":\"시장 성장률(CAGR)\",\"y\":\"기술 분야\",\"unit\":\"%\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "D-003",
@@ -10443,7 +10191,7 @@
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -10454,12 +10202,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -10469,7 +10217,7 @@
               "width": 1130,
               "axes": {
                 "x": "예상 감축량",
-                "y": "비교 항목",
+                "y": "발전기술",
                 "unit": "tCO2/20년·MW"
               }
             }
@@ -10478,7 +10226,7 @@
           "split": false,
           "tiles": [
             {
-              "unit": "년·MW",
+              "unit": "tCO2/20년·MW",
               "text": "22,500 tCO2/20년·MW예상 감축량 · 바이오에너지 기술 · 1MW당 20년 누적 온실가스 감축량 · 2023년"
             },
             {
@@ -10498,15 +10246,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] D-003: axes {\"x\":\"예상 감축량\",\"y\":\"비교 항목\",\"unit\":\"tCO2/20년·MW\"} ≠ contract {\"x\":\"예상 감축량\",\"y\":\"발전기술\",\"unit\":\"tCO2/20년·MW\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"예상 감축량\",\"y\":\"비교 항목\",\"unit\":\"tCO2/20년·MW\"} ≠ {\"x\":\"예상 감축량\",\"y\":\"발전기술\",\"unit\":\"tCO2/20년·MW\"}",
-        "console: [v153-contract] D-003: axes {\"x\":\"예상 감축량\",\"y\":\"비교 항목\",\"unit\":\"tCO2/20년·MW\"} ≠ contract {\"x\":\"예상 감축량\",\"y\":\"발전기술\",\"unit\":\"tCO2/20년·MW\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "D-004",
@@ -10515,14 +10258,14 @@
       "expected": {
         "type": "category-bar",
         "title": "기술·시나리오별 회수율 비교",
-        "xAxis": "크레딧 수익 회수율",
+        "xAxis": "크레딧 가격 연동 수익성",
         "yAxis": "발전기술",
         "unit": "%"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -10533,12 +10276,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -10548,7 +10291,7 @@
               "width": 1130,
               "axes": {
                 "x": "크레딧 가격 연동 수익성",
-                "y": "비교 항목",
+                "y": "발전기술",
                 "unit": "%"
               }
             }
@@ -10577,15 +10320,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] D-004: axes {\"x\":\"크레딧 가격 연동 수익성\",\"y\":\"비교 항목\",\"unit\":\"%\"} ≠ contract {\"x\":\"크레딧 수익 회수율\",\"y\":\"발전기술\",\"unit\":\"%\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"크레딧 가격 연동 수익성\",\"y\":\"비교 항목\",\"unit\":\"%\"} ≠ {\"x\":\"크레딧 수익 회수율\",\"y\":\"발전기술\",\"unit\":\"%\"}",
-        "console: [v153-contract] D-004: axes {\"x\":\"크레딧 가격 연동 수익성\",\"y\":\"비교 항목\",\"unit\":\"%\"} ≠ contract {\"x\":\"크레딧 수익 회수율\",\"y\":\"발전기술\",\"unit\":\"%\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "D-005",
@@ -10594,14 +10332,14 @@
       "expected": {
         "type": "category-bar",
         "title": "감축·적응 예산 배분 비중",
-        "xAxis": "예산 배분 비중",
-        "yAxis": "구분(감축/적응/복합)",
+        "xAxis": "배분 비중",
+        "yAxis": "지출 항목",
         "unit": "%"
       },
       "checks": {
-        "primaryTypeMatch": false,
+        "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -10612,25 +10350,17 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
-          "verdict": "mismatch",
-          "axesVerdict": "missing",
+          "verdict": "match",
+          "axesVerdict": "match",
           "blocks": [
             {
-              "type": "note",
+              "type": "category-bar",
               "rank": "1",
               "top": 546,
-              "left": 155,
-              "width": 1130,
-              "axes": null
-            },
-            {
-              "type": "category-bar",
-              "rank": "2",
-              "top": 727,
               "left": 155,
               "width": 1130,
               "axes": {
@@ -10638,6 +10368,14 @@
                 "y": "지출 항목",
                 "unit": "%"
               }
+            },
+            {
+              "type": "note",
+              "rank": "2",
+              "top": 888,
+              "left": 155,
+              "width": 1130,
+              "axes": null
             },
             {
               "type": "table",
@@ -10672,16 +10410,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] D-005: first block \"note\" ≠ contract \"category-bar\""
-        ]
+        "console": []
       },
-      "issues": [
-        "first block \"note\" ≠ contract \"category-bar\"",
-        "axes null ≠ {\"x\":\"예산 배분 비중\",\"y\":\"구분(감축/적응/복합)\",\"unit\":\"%\"}",
-        "console: [v153-contract] D-005: first block \"note\" ≠ contract \"category-bar\""
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "D-006",
@@ -10740,7 +10472,7 @@
           "split": false,
           "tiles": [
             {
-              "unit": "억 VND",
+              "unit": "VND",
               "text": "371,010억 VND기후 관련 조세 수입 · 환경보호세(EPT) · 국가예산 계획액(dự toán) 연도별 · 2024년"
             },
             {
@@ -10770,14 +10502,14 @@
       "archetype": "policy-document",
       "status": "standard",
       "expected": {
-        "type": "comparison-table",
-        "title": "기후예산태깅 도입수준",
+        "type": "timeline",
+        "title": "기후예산 태깅 도입 연혁",
         "xAxis": null,
         "yAxis": null,
         "unit": null
       },
       "checks": {
-        "primaryTypeMatch": false,
+        "primaryTypeMatch": true,
         "rankOrder": true,
         "axesMatch": null,
         "blockHonesty": true,
@@ -10790,11 +10522,11 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
-          "verdict": "mismatch",
+          "verdict": "match",
           "axesVerdict": "not-applicable",
           "blocks": [
             {
@@ -10826,31 +10558,26 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] D-007: first block \"timeline\" ≠ contract \"comparison-table\""
-        ]
+        "console": []
       },
-      "issues": [
-        "first block \"timeline\" ≠ contract \"comparison-table\"",
-        "console: [v153-contract] D-007: first block \"timeline\" ≠ contract \"comparison-table\""
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "D-008",
-      "archetype": "province-distribution",
-      "status": "standard",
+      "archetype": "national-series",
+      "status": "exception",
       "expected": {
-        "type": "region-bar",
-        "title": "부처·지역별 기후예산 규모",
-        "xAxis": "기후예산 비중",
-        "yAxis": "성·시",
+        "type": "category-bar",
+        "title": "주관 부처별 기후 예산 비중",
+        "xAxis": "주관 부처별 기후 예산 규모",
+        "yAxis": "부처",
         "unit": "%"
       },
       "checks": {
-        "primaryTypeMatch": false,
+        "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -10861,12 +10588,12 @@
         "nestedTags": true,
         "mapPlacement": true,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
-          "verdict": "mismatch",
-          "axesVerdict": "mismatch",
+          "verdict": "match",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -10876,7 +10603,7 @@
               "width": 752,
               "axes": {
                 "x": "주관 부처별 기후 예산 규모",
-                "y": "비교 항목",
+                "y": "부처",
                 "unit": "%"
               }
             },
@@ -10937,16 +10664,10 @@
           }
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] D-008: first block \"category-bar\" ≠ contract \"region-bar\""
-        ]
+        "console": []
       },
-      "issues": [
-        "first block \"category-bar\" ≠ contract \"region-bar\"",
-        "axes {\"x\":\"주관 부처별 기후 예산 규모\",\"y\":\"비교 항목\",\"unit\":\"%\"} ≠ {\"x\":\"기후예산 비중\",\"y\":\"성·시\",\"unit\":\"%\"}",
-        "console: [v153-contract] D-008: first block \"category-bar\" ≠ contract \"region-bar\""
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "D-009",
@@ -10955,14 +10676,14 @@
       "expected": {
         "type": "category-bar",
         "title": "GDP대비 기후지출 비중",
-        "xAxis": "GDP 대비 기후지출 비중",
+        "xAxis": "기후대응 정부 예산",
         "yAxis": "연도",
         "unit": "%"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -10973,12 +10694,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -10988,7 +10709,7 @@
               "width": 1130,
               "axes": {
                 "x": "기후대응 정부 예산",
-                "y": "비교 항목",
+                "y": "연도",
                 "unit": "%"
               }
             },
@@ -11025,15 +10746,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] D-009: axes {\"x\":\"기후대응 정부 예산\",\"y\":\"비교 항목\",\"unit\":\"%\"} ≠ contract {\"x\":\"GDP 대비 기후지출 비중\",\"y\":\"연도\",\"unit\":\"%\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"기후대응 정부 예산\",\"y\":\"비교 항목\",\"unit\":\"%\"} ≠ {\"x\":\"GDP 대비 기후지출 비중\",\"y\":\"연도\",\"unit\":\"%\"}",
-        "console: [v153-contract] D-009: axes {\"x\":\"기후대응 정부 예산\",\"y\":\"비교 항목\",\"unit\":\"%\"} ≠ contract {\"x\":\"GDP 대비 기후지출 비중\",\"y\":\"연도\",\"unit\":\"%\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "D-010",
@@ -11092,7 +10808,7 @@
           "split": false,
           "tiles": [
             {
-              "unit": "억 USD",
+              "unit": "USD",
               "text": "387억 USD화석연료 보조금 규모 · 총액 · 연도별 · 2024년"
             },
             {
@@ -11125,13 +10841,13 @@
         "type": "line",
         "title": "공여자별 총 ODA 추이",
         "xAxis": "연도",
-        "yAxis": "총 ODA",
-        "unit": "USD"
+        "yAxis": "공적개발원조 지출액",
+        "unit": "USD (2024년 불변가격)"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -11142,12 +10858,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "line",
@@ -11194,7 +10910,7 @@
           "split": false,
           "tiles": [
             {
-              "unit": "억 USD",
+              "unit": "USD",
               "text": "16.65억 USD공식 공여자 총계 · 지출액 · 2024년 불변가격 · 2024년"
             },
             {
@@ -11214,16 +10930,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] D-011: no tagged analysis block (contract \"line\")",
-          "[v153-contract] D-011: axes {\"x\":\"연도\",\"y\":\"공적개발원조 지출액\",\"unit\":\"USD (2024년 불변가격)\"} ≠ contract {\"x\":\"연도\",\"y\":\"총 ODA\",\"unit\":\"USD\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"연도\",\"y\":\"공적개발원조 지출액\",\"unit\":\"USD (2024년 불변가격)\"} ≠ {\"x\":\"연도\",\"y\":\"총 ODA\",\"unit\":\"USD\"}",
-        "console: [v153-contract] D-011: no tagged analysis block (contract \"line\")"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "D-012",
@@ -11232,14 +10942,14 @@
       "expected": {
         "type": "category-bar",
         "title": "기술분야별 경쟁국 진출기업",
-        "xAxis": "기업 수",
+        "xAxis": "건수",
         "yAxis": "기술 분야",
-        "unit": "곳"
+        "unit": "건"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -11250,12 +10960,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -11264,20 +10974,20 @@
               "left": 155,
               "width": 557,
               "axes": {
-                "x": "연도",
-                "y": "건수",
+                "x": "건수",
+                "y": "기술 분야",
                 "unit": "건"
               }
             },
             {
-              "type": "category-bar",
+              "type": "line",
               "rank": "2",
               "top": 758,
               "left": 728,
               "width": 557,
               "axes": {
-                "x": "건수",
-                "y": "분류",
+                "x": "연도",
+                "y": "건수",
                 "unit": "건"
               }
             },
@@ -11289,7 +10999,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "기술 분야",
                 "unit": "건"
               }
             },
@@ -11301,7 +11011,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "기술 분야",
                 "unit": "건"
               }
             },
@@ -11342,15 +11052,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] D-012: axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ contract {\"x\":\"기업 수\",\"y\":\"기술 분야\",\"unit\":\"곳\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ {\"x\":\"기업 수\",\"y\":\"기술 분야\",\"unit\":\"곳\"}",
-        "console: [v153-contract] D-012: axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ contract {\"x\":\"기업 수\",\"y\":\"기술 분야\",\"unit\":\"곳\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "D-013",
@@ -11359,14 +11064,14 @@
       "expected": {
         "type": "category-bar",
         "title": "녹색성장지수 부문별 점수",
-        "xAxis": "GGGI 점수",
+        "xAxis": "GGGI Green Growth Index",
         "yAxis": "부문·차원",
         "unit": "점"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -11377,12 +11082,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -11392,7 +11097,7 @@
               "width": 1130,
               "axes": {
                 "x": "GGGI Green Growth Index",
-                "y": "비교 항목",
+                "y": "부문·차원",
                 "unit": "점"
               }
             },
@@ -11429,15 +11134,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] D-013: axes {\"x\":\"GGGI Green Growth Index\",\"y\":\"비교 항목\",\"unit\":\"점\"} ≠ contract {\"x\":\"GGGI 점수\",\"y\":\"부문·차원\",\"unit\":\"점\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"GGGI Green Growth Index\",\"y\":\"비교 항목\",\"unit\":\"점\"} ≠ {\"x\":\"GGGI 점수\",\"y\":\"부문·차원\",\"unit\":\"점\"}",
-        "console: [v153-contract] D-013: axes {\"x\":\"GGGI Green Growth Index\",\"y\":\"비교 항목\",\"unit\":\"점\"} ≠ contract {\"x\":\"GGGI 점수\",\"y\":\"부문·차원\",\"unit\":\"점\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "D-014",
@@ -11446,14 +11146,14 @@
       "expected": {
         "type": "category-bar",
         "title": "원조유형별 EDCF 사업",
-        "xAxis": "사업 수",
+        "xAxis": "건수",
         "yAxis": "원조 유형",
         "unit": "건"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -11464,12 +11164,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -11478,20 +11178,20 @@
               "left": 155,
               "width": 557,
               "axes": {
-                "x": "연도",
-                "y": "건수",
+                "x": "건수",
+                "y": "원조 유형",
                 "unit": "건"
               }
             },
             {
-              "type": "category-bar",
+              "type": "line",
               "rank": "2",
               "top": 758,
               "left": 728,
               "width": 557,
               "axes": {
-                "x": "건수",
-                "y": "분류",
+                "x": "연도",
+                "y": "건수",
                 "unit": "건"
               }
             },
@@ -11503,7 +11203,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "원조 유형",
                 "unit": "건"
               }
             },
@@ -11515,7 +11215,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "원조 유형",
                 "unit": "건"
               }
             },
@@ -11556,15 +11256,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] D-014: axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ contract {\"x\":\"사업 수\",\"y\":\"원조 유형\",\"unit\":\"건\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ {\"x\":\"사업 수\",\"y\":\"원조 유형\",\"unit\":\"건\"}",
-        "console: [v153-contract] D-014: axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ contract {\"x\":\"사업 수\",\"y\":\"원조 유형\",\"unit\":\"건\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "D-015",
@@ -11573,14 +11268,14 @@
       "expected": {
         "type": "category-bar",
         "title": "상태별 ODA Korea 사업",
-        "xAxis": "사업 기록 수",
+        "xAxis": "건수",
         "yAxis": "상태",
         "unit": "건"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -11591,12 +11286,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -11605,20 +11300,20 @@
               "left": 155,
               "width": 557,
               "axes": {
-                "x": "연도",
-                "y": "건수",
+                "x": "건수",
+                "y": "상태",
                 "unit": "건"
               }
             },
             {
-              "type": "category-bar",
+              "type": "line",
               "rank": "2",
               "top": 824,
               "left": 728,
               "width": 557,
               "axes": {
-                "x": "건수",
-                "y": "분류",
+                "x": "연도",
+                "y": "건수",
                 "unit": "건"
               }
             },
@@ -11630,7 +11325,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "상태",
                 "unit": "건"
               }
             },
@@ -11671,15 +11366,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] D-015: axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ contract {\"x\":\"사업 기록 수\",\"y\":\"상태\",\"unit\":\"건\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ {\"x\":\"사업 기록 수\",\"y\":\"상태\",\"unit\":\"건\"}",
-        "console: [v153-contract] D-015: axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ contract {\"x\":\"사업 기록 수\",\"y\":\"상태\",\"unit\":\"건\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "D-016",
@@ -11688,14 +11378,14 @@
       "expected": {
         "type": "category-bar",
         "title": "기관유형별 지자체·부처 사업",
-        "xAxis": "사업 기록 수",
+        "xAxis": "건수",
         "yAxis": "기관 유형",
         "unit": "건"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -11706,12 +11396,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -11720,20 +11410,20 @@
               "left": 155,
               "width": 557,
               "axes": {
-                "x": "연도",
-                "y": "건수",
+                "x": "건수",
+                "y": "기관 유형",
                 "unit": "건"
               }
             },
             {
-              "type": "category-bar",
+              "type": "line",
               "rank": "2",
               "top": 824,
               "left": 728,
               "width": 557,
               "axes": {
-                "x": "건수",
-                "y": "분류",
+                "x": "연도",
+                "y": "건수",
                 "unit": "건"
               }
             },
@@ -11745,7 +11435,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "기관 유형",
                 "unit": "건"
               }
             },
@@ -11757,7 +11447,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "기관 유형",
                 "unit": "건"
               }
             },
@@ -11798,15 +11488,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] D-016: axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ contract {\"x\":\"사업 기록 수\",\"y\":\"기관 유형\",\"unit\":\"건\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ {\"x\":\"사업 기록 수\",\"y\":\"기관 유형\",\"unit\":\"건\"}",
-        "console: [v153-contract] D-016: axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ contract {\"x\":\"사업 기록 수\",\"y\":\"기관 유형\",\"unit\":\"건\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "D-017",
@@ -11815,14 +11500,14 @@
       "expected": {
         "type": "category-bar",
         "title": "분야별 PCP·입찰 공고",
-        "xAxis": "공고 수",
+        "xAxis": "건수",
         "yAxis": "분야",
         "unit": "건"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -11833,12 +11518,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -11847,20 +11532,20 @@
               "left": 155,
               "width": 557,
               "axes": {
-                "x": "연도",
-                "y": "건수",
+                "x": "건수",
+                "y": "분야",
                 "unit": "건"
               }
             },
             {
-              "type": "category-bar",
+              "type": "line",
               "rank": "2",
               "top": 760,
               "left": 728,
               "width": 557,
               "axes": {
-                "x": "건수",
-                "y": "분류",
+                "x": "연도",
+                "y": "건수",
                 "unit": "건"
               }
             },
@@ -11872,7 +11557,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "분야",
                 "unit": "건"
               }
             },
@@ -11884,7 +11569,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "분야",
                 "unit": "건"
               }
             },
@@ -11925,31 +11610,26 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] D-017: axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ contract {\"x\":\"공고 수\",\"y\":\"분야\",\"unit\":\"건\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ {\"x\":\"공고 수\",\"y\":\"분야\",\"unit\":\"건\"}",
-        "console: [v153-contract] D-017: axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ contract {\"x\":\"공고 수\",\"y\":\"분야\",\"unit\":\"건\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "D-018",
       "archetype": "registry",
-      "status": "standard",
+      "status": "exception",
       "expected": {
-        "type": "category-bar",
-        "title": "Adaptation Fund 승인·집행",
-        "xAxis": "금액",
-        "yAxis": "구분",
-        "unit": "USD"
+        "type": "table",
+        "title": "적응기금 사업별 승인액",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
       },
       "checks": {
-        "primaryTypeMatch": false,
+        "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": null,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -11960,12 +11640,12 @@
         "nestedTags": true,
         "mapPlacement": true,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
-          "verdict": "mismatch",
-          "axesVerdict": "missing",
+          "verdict": "match",
+          "axesVerdict": "not-applicable",
           "blocks": [
             {
               "type": "table",
@@ -11982,20 +11662,20 @@
               "left": 155,
               "width": 557,
               "axes": {
-                "x": "연도",
-                "y": "건수",
+                "x": "건수",
+                "y": "분류",
                 "unit": "건"
               }
             },
             {
-              "type": "category-bar",
+              "type": "line",
               "rank": "3",
               "top": 1800,
               "left": 728,
               "width": 557,
               "axes": {
-                "x": "건수",
-                "y": "분류",
+                "x": "연도",
+                "y": "건수",
                 "unit": "건"
               }
             },
@@ -12038,7 +11718,7 @@
           "split": true,
           "tiles": [
             {
-              "unit": "만 USD",
+              "unit": "USD",
               "text": "1,135만 USDAdaptation Fund 프로젝트 · 베트남 단독사업 승인액 합계 · 2026년"
             },
             {
@@ -12076,16 +11756,10 @@
           }
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] D-018: first block \"table\" ≠ contract \"category-bar\""
-        ]
+        "console": []
       },
-      "issues": [
-        "first block \"table\" ≠ contract \"category-bar\"",
-        "axes null ≠ {\"x\":\"금액\",\"y\":\"구분\",\"unit\":\"USD\"}",
-        "console: [v153-contract] D-018: first block \"table\" ≠ contract \"category-bar\""
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "D-019",
@@ -12094,14 +11768,14 @@
       "expected": {
         "type": "category-bar",
         "title": "기술유형별 CTCN 지원요청",
-        "xAxis": "기술지원 요청 수",
+        "xAxis": "건수",
         "yAxis": "기술 유형",
         "unit": "건"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -12112,12 +11786,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -12126,20 +11800,20 @@
               "left": 155,
               "width": 557,
               "axes": {
-                "x": "연도",
-                "y": "건수",
+                "x": "건수",
+                "y": "기술 유형",
                 "unit": "건"
               }
             },
             {
-              "type": "category-bar",
+              "type": "line",
               "rank": "2",
               "top": 872,
               "left": 728,
               "width": 557,
               "axes": {
-                "x": "건수",
-                "y": "분류",
+                "x": "연도",
+                "y": "건수",
                 "unit": "건"
               }
             },
@@ -12151,7 +11825,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "기술 유형",
                 "unit": "건"
               }
             },
@@ -12163,7 +11837,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "기술 유형",
                 "unit": "건"
               }
             },
@@ -12204,15 +11878,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] D-019: axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ contract {\"x\":\"기술지원 요청 수\",\"y\":\"기술 유형\",\"unit\":\"건\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ {\"x\":\"기술지원 요청 수\",\"y\":\"기술 유형\",\"unit\":\"건\"}",
-        "console: [v153-contract] D-019: axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ contract {\"x\":\"기술지원 요청 수\",\"y\":\"기술 유형\",\"unit\":\"건\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "D-020",
@@ -12221,14 +11890,14 @@
       "expected": {
         "type": "category-bar",
         "title": "분야별 GCF 사업 현황",
-        "xAxis": "사업 수",
+        "xAxis": "건수",
         "yAxis": "분야",
         "unit": "건"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -12239,12 +11908,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -12253,20 +11922,20 @@
               "left": 155,
               "width": 557,
               "axes": {
-                "x": "연도",
-                "y": "건수",
+                "x": "건수",
+                "y": "분야",
                 "unit": "건"
               }
             },
             {
-              "type": "category-bar",
+              "type": "line",
               "rank": "2",
               "top": 785,
               "left": 728,
               "width": 557,
               "axes": {
-                "x": "건수",
-                "y": "분류",
+                "x": "연도",
+                "y": "건수",
                 "unit": "건"
               }
             },
@@ -12278,7 +11947,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "분야",
                 "unit": "건"
               }
             },
@@ -12290,7 +11959,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "분야",
                 "unit": "건"
               }
             },
@@ -12339,15 +12008,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] D-020: axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ contract {\"x\":\"사업 수\",\"y\":\"분야\",\"unit\":\"건\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ {\"x\":\"사업 수\",\"y\":\"분야\",\"unit\":\"건\"}",
-        "console: [v153-contract] D-020: axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ contract {\"x\":\"사업 수\",\"y\":\"분야\",\"unit\":\"건\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "D-021",
@@ -12356,14 +12020,14 @@
       "expected": {
         "type": "category-bar",
         "title": "상태별 국제기구 지원활동",
-        "xAxis": "지원 활동 수",
+        "xAxis": "건수",
         "yAxis": "활동 상태",
         "unit": "건"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -12374,12 +12038,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -12388,20 +12052,20 @@
               "left": 155,
               "width": 557,
               "axes": {
-                "x": "연도",
-                "y": "건수",
+                "x": "건수",
+                "y": "활동 상태",
                 "unit": "건"
               }
             },
             {
-              "type": "category-bar",
+              "type": "line",
               "rank": "2",
               "top": 824,
               "left": 728,
               "width": 557,
               "axes": {
-                "x": "건수",
-                "y": "분류",
+                "x": "연도",
+                "y": "건수",
                 "unit": "건"
               }
             },
@@ -12413,7 +12077,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "활동 상태",
                 "unit": "건"
               }
             },
@@ -12425,7 +12089,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "활동 상태",
                 "unit": "건"
               }
             },
@@ -12437,7 +12101,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "활동 상태",
                 "unit": "건"
               }
             },
@@ -12478,15 +12142,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] D-021: axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ contract {\"x\":\"지원 활동 수\",\"y\":\"활동 상태\",\"unit\":\"건\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ {\"x\":\"지원 활동 수\",\"y\":\"활동 상태\",\"unit\":\"건\"}",
-        "console: [v153-contract] D-021: axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ contract {\"x\":\"지원 활동 수\",\"y\":\"활동 상태\",\"unit\":\"건\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "D-022",
@@ -12495,14 +12154,14 @@
       "expected": {
         "type": "category-bar",
         "title": "투자유형별 MDB·DFI 사업",
-        "xAxis": "사업 수",
+        "xAxis": "건수",
         "yAxis": "투자 유형",
         "unit": "건"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -12513,12 +12172,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -12527,20 +12186,20 @@
               "left": 155,
               "width": 557,
               "axes": {
-                "x": "연도",
-                "y": "건수",
+                "x": "건수",
+                "y": "투자 유형",
                 "unit": "건"
               }
             },
             {
-              "type": "category-bar",
+              "type": "line",
               "rank": "2",
               "top": 758,
               "left": 728,
               "width": 557,
               "axes": {
-                "x": "건수",
-                "y": "분류",
+                "x": "연도",
+                "y": "건수",
                 "unit": "건"
               }
             },
@@ -12552,7 +12211,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "투자 유형",
                 "unit": "건"
               }
             },
@@ -12564,7 +12223,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "투자 유형",
                 "unit": "건"
               }
             },
@@ -12576,7 +12235,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "투자 유형",
                 "unit": "건"
               }
             },
@@ -12617,15 +12276,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] D-022: axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ contract {\"x\":\"사업 수\",\"y\":\"투자 유형\",\"unit\":\"건\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ {\"x\":\"사업 수\",\"y\":\"투자 유형\",\"unit\":\"건\"}",
-        "console: [v153-contract] D-022: axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ contract {\"x\":\"사업 수\",\"y\":\"투자 유형\",\"unit\":\"건\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "D-023",
@@ -12634,14 +12288,14 @@
       "expected": {
         "type": "category-bar",
         "title": "기금별 기후재원 사업",
-        "xAxis": "사업 수",
+        "xAxis": "건수",
         "yAxis": "기금",
         "unit": "건"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -12652,12 +12306,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -12666,20 +12320,20 @@
               "left": 155,
               "width": 557,
               "axes": {
-                "x": "연도",
-                "y": "건수",
+                "x": "건수",
+                "y": "기금",
                 "unit": "건"
               }
             },
             {
-              "type": "category-bar",
+              "type": "line",
               "rank": "2",
               "top": 785,
               "left": 728,
               "width": 557,
               "axes": {
-                "x": "건수",
-                "y": "분류",
+                "x": "연도",
+                "y": "건수",
                 "unit": "건"
               }
             },
@@ -12691,7 +12345,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "기금",
                 "unit": "건"
               }
             },
@@ -12703,7 +12357,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "기금",
                 "unit": "건"
               }
             },
@@ -12715,7 +12369,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "기금",
                 "unit": "건"
               }
             },
@@ -12764,15 +12418,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] D-023: axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ contract {\"x\":\"사업 수\",\"y\":\"기금\",\"unit\":\"건\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ {\"x\":\"사업 수\",\"y\":\"기금\",\"unit\":\"건\"}",
-        "console: [v153-contract] D-023: axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ contract {\"x\":\"사업 수\",\"y\":\"기금\",\"unit\":\"건\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "D-024",
@@ -12781,14 +12430,14 @@
       "expected": {
         "type": "category-bar",
         "title": "라운드별 VC·임팩트투자",
-        "xAxis": "투자 건 수",
+        "xAxis": "건수",
         "yAxis": "투자 라운드",
         "unit": "건"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -12799,12 +12448,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -12813,20 +12462,20 @@
               "left": 155,
               "width": 557,
               "axes": {
-                "x": "연도",
-                "y": "건수",
+                "x": "건수",
+                "y": "투자 라운드",
                 "unit": "건"
               }
             },
             {
-              "type": "category-bar",
+              "type": "line",
               "rank": "2",
               "top": 785,
               "left": 728,
               "width": 557,
               "axes": {
-                "x": "건수",
-                "y": "분류",
+                "x": "연도",
+                "y": "건수",
                 "unit": "건"
               }
             },
@@ -12838,7 +12487,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "투자 라운드",
                 "unit": "건"
               }
             },
@@ -12887,15 +12536,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] D-024: axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ contract {\"x\":\"투자 건 수\",\"y\":\"투자 라운드\",\"unit\":\"건\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ {\"x\":\"투자 건 수\",\"y\":\"투자 라운드\",\"unit\":\"건\"}",
-        "console: [v153-contract] D-024: axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ contract {\"x\":\"투자 건 수\",\"y\":\"투자 라운드\",\"unit\":\"건\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "D-025",
@@ -12904,14 +12548,14 @@
       "expected": {
         "type": "category-bar",
         "title": "투자유형별 민간인프라 사업",
-        "xAxis": "사업 수",
+        "xAxis": "건수",
         "yAxis": "투자 유형",
         "unit": "건"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -12922,12 +12566,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -12936,20 +12580,20 @@
               "left": 155,
               "width": 557,
               "axes": {
-                "x": "연도",
-                "y": "건수",
+                "x": "건수",
+                "y": "투자 유형",
                 "unit": "건"
               }
             },
             {
-              "type": "category-bar",
+              "type": "line",
               "rank": "2",
               "top": 758,
               "left": 728,
               "width": 557,
               "axes": {
-                "x": "건수",
-                "y": "분류",
+                "x": "연도",
+                "y": "건수",
                 "unit": "건"
               }
             },
@@ -12961,7 +12605,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "투자 유형",
                 "unit": "건"
               }
             },
@@ -12973,7 +12617,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "투자 유형",
                 "unit": "건"
               }
             },
@@ -12985,7 +12629,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "투자 유형",
                 "unit": "건"
               }
             },
@@ -13026,15 +12670,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] D-025: axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ contract {\"x\":\"사업 수\",\"y\":\"투자 유형\",\"unit\":\"건\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ {\"x\":\"사업 수\",\"y\":\"투자 유형\",\"unit\":\"건\"}",
-        "console: [v153-contract] D-025: axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ contract {\"x\":\"사업 수\",\"y\":\"투자 유형\",\"unit\":\"건\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "D-026",
@@ -13043,14 +12682,14 @@
       "expected": {
         "type": "category-bar",
         "title": "보증유형별 MIGA 보증사업",
-        "xAxis": "보증사업 수",
+        "xAxis": "건수",
         "yAxis": "보증 유형",
         "unit": "건"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -13061,12 +12700,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -13075,20 +12714,20 @@
               "left": 155,
               "width": 557,
               "axes": {
-                "x": "연도",
-                "y": "건수",
+                "x": "건수",
+                "y": "보증 유형",
                 "unit": "건"
               }
             },
             {
-              "type": "category-bar",
+              "type": "line",
               "rank": "2",
               "top": 786,
               "left": 728,
               "width": 557,
               "axes": {
-                "x": "건수",
-                "y": "분류",
+                "x": "연도",
+                "y": "건수",
                 "unit": "건"
               }
             },
@@ -13100,7 +12739,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "보증 유형",
                 "unit": "건"
               }
             },
@@ -13112,7 +12751,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "보증 유형",
                 "unit": "건"
               }
             },
@@ -13161,15 +12800,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] D-026: axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ contract {\"x\":\"보증사업 수\",\"y\":\"보증 유형\",\"unit\":\"건\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ {\"x\":\"보증사업 수\",\"y\":\"보증 유형\",\"unit\":\"건\"}",
-        "console: [v153-contract] D-026: axes {\"x\":\"연도\",\"y\":\"건수\",\"unit\":\"건\"} ≠ contract {\"x\":\"보증사업 수\",\"y\":\"보증 유형\",\"unit\":\"건\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "E-001",
@@ -13179,13 +12813,13 @@
         "type": "category-bar",
         "title": "역할별 NDE 관련기관",
         "xAxis": "기관 수",
-        "yAxis": "역할 구분",
+        "yAxis": "기관 분류",
         "unit": "곳"
       },
       "checks": {
-        "primaryTypeMatch": false,
+        "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -13196,17 +12830,29 @@
         "nestedTags": null,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
-          "verdict": "mismatch",
-          "axesVerdict": "missing",
+          "verdict": "match",
+          "axesVerdict": "match",
           "blocks": [
             {
-              "type": "cards-list",
+              "type": "category-bar",
               "rank": "1",
               "top": 660,
+              "left": 155,
+              "width": 1130,
+              "axes": {
+                "x": "기관 수",
+                "y": "기관 분류",
+                "unit": "곳"
+              }
+            },
+            {
+              "type": "cards-list",
+              "rank": "2",
+              "top": 1380,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -13233,16 +12879,10 @@
         },
         "nestedTagCount": 1,
         "overflow320": 0,
-        "console": [
-          "[v153-contract] E-001: first block \"cards-list\" ≠ contract \"category-bar\""
-        ]
+        "console": []
       },
-      "issues": [
-        "first block \"cards-list\" ≠ contract \"category-bar\"",
-        "axes null ≠ {\"x\":\"기관 수\",\"y\":\"역할 구분\",\"unit\":\"곳\"}",
-        "console: [v153-contract] E-001: first block \"cards-list\" ≠ contract \"category-bar\""
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "E-002",
@@ -13318,14 +12958,14 @@
       "expected": {
         "type": "category-bar",
         "title": "기관별 GCF 협의창구 연락처",
-        "xAxis": "담당자 수",
-        "yAxis": "기관",
+        "xAxis": "기관 수",
+        "yAxis": "역할",
         "unit": "명"
       },
       "checks": {
-        "primaryTypeMatch": false,
+        "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -13336,17 +12976,29 @@
         "nestedTags": null,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
-          "verdict": "mismatch",
-          "axesVerdict": "missing",
+          "verdict": "match",
+          "axesVerdict": "match",
           "blocks": [
             {
-              "type": "cards-list",
+              "type": "category-bar",
               "rank": "1",
               "top": 658,
+              "left": 155,
+              "width": 1130,
+              "axes": {
+                "x": "기관 수",
+                "y": "역할",
+                "unit": "명"
+              }
+            },
+            {
+              "type": "cards-list",
+              "rank": "2",
+              "top": 1074,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -13373,16 +13025,10 @@
         },
         "nestedTagCount": 1,
         "overflow320": 0,
-        "console": [
-          "[v153-contract] E-003: first block \"cards-list\" ≠ contract \"category-bar\""
-        ]
+        "console": []
       },
-      "issues": [
-        "first block \"cards-list\" ≠ contract \"category-bar\"",
-        "axes null ≠ {\"x\":\"담당자 수\",\"y\":\"기관\",\"unit\":\"명\"}",
-        "console: [v153-contract] E-003: first block \"cards-list\" ≠ contract \"category-bar\""
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "E-004",
@@ -13391,14 +13037,14 @@
       "expected": {
         "type": "category-bar",
         "title": "기관유형별 국제기구 사무소",
-        "xAxis": "현지사무소 수",
+        "xAxis": "기관 수",
         "yAxis": "기관 유형",
         "unit": "곳"
       },
       "checks": {
-        "primaryTypeMatch": false,
+        "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -13409,19 +13055,31 @@
         "nestedTags": null,
         "mapPlacement": true,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
-          "verdict": "mismatch",
-          "axesVerdict": "missing",
+          "verdict": "match",
+          "axesVerdict": "match",
           "blocks": [
             {
-              "type": "cards-list",
+              "type": "category-bar",
               "rank": "1",
               "top": 658,
               "left": 155,
               "width": 752,
+              "axes": {
+                "x": "기관 수",
+                "y": "기관 유형",
+                "unit": "곳"
+              }
+            },
+            {
+              "type": "cards-list",
+              "rank": "2",
+              "top": 1673,
+              "left": 155,
+              "width": 1130,
               "axes": null
             }
           ],
@@ -13453,30 +13111,27 @@
         "nestedTagCount": 1,
         "narrow": {
           "slot": {
-            "top": 5057,
+            "top": 1716,
             "left": 31,
             "width": 328,
             "height": 1054,
             "mapReady": true
           },
           "first": {
-            "type": "cards-list",
+            "type": "category-bar",
             "top": 1188,
-            "height": 3853
+            "height": 512
           },
-          "second": null
+          "second": {
+            "type": "cards-list",
+            "top": 2786
+          }
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] E-004: first block \"cards-list\" ≠ contract \"category-bar\""
-        ]
+        "console": []
       },
-      "issues": [
-        "first block \"cards-list\" ≠ contract \"category-bar\"",
-        "axes null ≠ {\"x\":\"현지사무소 수\",\"y\":\"기관 유형\",\"unit\":\"곳\"}",
-        "console: [v153-contract] E-004: first block \"cards-list\" ≠ contract \"category-bar\""
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "E-005",
@@ -13486,13 +13141,13 @@
         "type": "category-bar",
         "title": "도시별 연구·파트너기관",
         "xAxis": "기관 수",
-        "yAxis": "도시",
+        "yAxis": "기관 유형",
         "unit": "곳"
       },
       "checks": {
-        "primaryTypeMatch": false,
+        "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -13503,19 +13158,31 @@
         "nestedTags": null,
         "mapPlacement": true,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
-          "verdict": "mismatch",
-          "axesVerdict": "missing",
+          "verdict": "match",
+          "axesVerdict": "match",
           "blocks": [
             {
-              "type": "cards-list",
+              "type": "category-bar",
               "rank": "1",
               "top": 658,
               "left": 155,
               "width": 752,
+              "axes": {
+                "x": "기관 수",
+                "y": "기관 유형",
+                "unit": "곳"
+              }
+            },
+            {
+              "type": "cards-list",
+              "rank": "2",
+              "top": 1425,
+              "left": 155,
+              "width": 1130,
               "axes": null
             }
           ],
@@ -13547,30 +13214,27 @@
         "nestedTagCount": 1,
         "narrow": {
           "slot": {
-            "top": 4042,
+            "top": 1708,
             "left": 31,
             "width": 328,
             "height": 787,
             "mapReady": true
           },
           "first": {
-            "type": "cards-list",
+            "type": "category-bar",
             "top": 979,
-            "height": 3047
+            "height": 713
           },
-          "second": null
+          "second": {
+            "type": "cards-list",
+            "top": 2511
+          }
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] E-005: first block \"cards-list\" ≠ contract \"category-bar\""
-        ]
+        "console": []
       },
-      "issues": [
-        "first block \"cards-list\" ≠ contract \"category-bar\"",
-        "axes null ≠ {\"x\":\"기관 수\",\"y\":\"도시\",\"unit\":\"곳\"}",
-        "console: [v153-contract] E-005: first block \"cards-list\" ≠ contract \"category-bar\""
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "E-006",
@@ -13750,19 +13414,19 @@
     },
     {
       "elementId": "E-008",
-      "archetype": "national-series",
+      "archetype": "registry",
       "status": "standard",
       "expected": {
-        "type": "line",
-        "title": "연도별 논문·특허 추이",
-        "xAxis": "연도",
-        "yAxis": "논문·특허 수",
+        "type": "category-bar",
+        "title": "논문 목록의 발행연도별 건수",
+        "xAxis": "건수",
+        "yAxis": "발행연도",
         "unit": "건"
       },
       "checks": {
-        "primaryTypeMatch": false,
+        "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -13773,12 +13437,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
-          "verdict": "mismatch",
-          "axesVerdict": "missing",
+          "verdict": "match",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -13786,7 +13450,11 @@
               "top": 602,
               "left": 155,
               "width": 557,
-              "axes": null
+              "axes": {
+                "x": "건수",
+                "y": "발행연도",
+                "unit": "건"
+              }
             },
             {
               "type": "category-bar",
@@ -13794,44 +13462,64 @@
               "top": 602,
               "left": 728,
               "width": 557,
-              "axes": null
+              "axes": {
+                "x": "건수",
+                "y": "발행연도",
+                "unit": "건"
+              }
             },
             {
               "type": "category-bar",
               "rank": "3",
-              "top": 1055,
+              "top": 1086,
               "left": 155,
               "width": 271,
-              "axes": null
+              "axes": {
+                "x": "건수",
+                "y": "항목",
+                "unit": "건"
+              }
             },
             {
               "type": "category-bar",
               "rank": "4",
-              "top": 1055,
+              "top": 1086,
               "left": 442,
               "width": 271,
-              "axes": null
+              "axes": {
+                "x": "건수",
+                "y": "항목",
+                "unit": "건"
+              }
             },
             {
               "type": "category-bar",
               "rank": "5",
-              "top": 1055,
+              "top": 1086,
               "left": 728,
               "width": 271,
-              "axes": null
+              "axes": {
+                "x": "건수",
+                "y": "항목",
+                "unit": "건"
+              }
             },
             {
               "type": "category-bar",
               "rank": "6",
-              "top": 1055,
+              "top": 1086,
               "left": 1015,
               "width": 271,
-              "axes": null
+              "axes": {
+                "x": "건수",
+                "y": "항목",
+                "unit": "건"
+              }
             },
             {
               "type": "cards-list",
               "rank": "7",
-              "top": 1986,
+              "top": 2048,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -13857,16 +13545,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] E-008: first block \"category-bar\" ≠ contract \"line\""
-        ]
+        "console": []
       },
-      "issues": [
-        "first block \"category-bar\" ≠ contract \"line\"",
-        "axes null ≠ {\"x\":\"연도\",\"y\":\"논문·특허 수\",\"unit\":\"건\"}",
-        "console: [v153-contract] E-008: first block \"category-bar\" ≠ contract \"line\""
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "E-009",
@@ -13875,14 +13557,14 @@
       "expected": {
         "type": "category-bar",
         "title": "STEM 졸업 비중",
-        "xAxis": "STEM 졸업 비중(남성)",
+        "xAxis": "STEM 전공 비중",
         "yAxis": "연도",
         "unit": "%"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -13893,12 +13575,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -13908,7 +13590,7 @@
               "width": 1130,
               "axes": {
                 "x": "2016년 · 고등교육 졸업자 중 STEM 전공 비중",
-                "y": "비교 항목",
+                "y": "연도",
                 "unit": "%"
               }
             },
@@ -13953,15 +13635,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] E-009: axes {\"x\":\"2016년 · 고등교육 졸업자 중 STEM 전공 비중\",\"y\":\"비교 항목\",\"unit\":\"%\"} ≠ contract {\"x\":\"STEM 졸업 비중(남성)\",\"y\":\"연도\",\"unit\":\"%\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"2016년 · 고등교육 졸업자 중 STEM 전공 비중\",\"y\":\"비교 항목\",\"unit\":\"%\"} ≠ {\"x\":\"STEM 졸업 비중(남성)\",\"y\":\"연도\",\"unit\":\"%\"}",
-        "console: [v153-contract] E-009: axes {\"x\":\"2016년 · 고등교육 졸업자 중 STEM 전공 비중\",\"y\":\"비교 항목\",\"unit\":\"%\"} ≠ contract {\"x\":\"STEM 졸업 비중(남성)\",\"y\":\"연도\",\"unit\":\"%\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "E-010",
@@ -13971,13 +13648,13 @@
         "type": "line",
         "title": "GERD 연구개발비 비중 추이",
         "xAxis": "연도",
-        "yAxis": "GDP 대비 R&D 총지출 비율",
+        "yAxis": "GERD",
         "unit": "%"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -13988,12 +13665,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "line",
@@ -14040,15 +13717,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] E-010: axes {\"x\":\"연도\",\"y\":\"GERD\",\"unit\":\"%\"} ≠ contract {\"x\":\"연도\",\"y\":\"GDP 대비 R&D 총지출 비율\",\"unit\":\"%\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"연도\",\"y\":\"GERD\",\"unit\":\"%\"} ≠ {\"x\":\"연도\",\"y\":\"GDP 대비 R&D 총지출 비율\",\"unit\":\"%\"}",
-        "console: [v153-contract] E-010: axes {\"x\":\"연도\",\"y\":\"GERD\",\"unit\":\"%\"} ≠ contract {\"x\":\"연도\",\"y\":\"GDP 대비 R&D 총지출 비율\",\"unit\":\"%\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "E-011",
@@ -14117,7 +13789,7 @@
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -14128,12 +13800,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "missing",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -14141,12 +13813,16 @@
               "top": 669,
               "left": 155,
               "width": 1130,
-              "axes": null
+              "axes": {
+                "x": "종사자 수",
+                "y": "직군",
+                "unit": "천명"
+              }
             },
             {
               "type": "category-bar",
               "rank": "2",
-              "top": 1436,
+              "top": 1468,
               "left": 155,
               "width": 555,
               "axes": {
@@ -14158,7 +13834,7 @@
             {
               "type": "dumbbell",
               "rank": "3",
-              "top": 1436,
+              "top": 1468,
               "left": 730,
               "width": 555,
               "axes": null
@@ -14188,15 +13864,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] E-012: no tagged analysis block (contract \"category-bar\")"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes null ≠ {\"x\":\"종사자 수\",\"y\":\"직군\",\"unit\":\"천명\"}",
-        "console: [v153-contract] E-012: no tagged analysis block (contract \"category-bar\")"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "E-013",
@@ -14454,16 +14125,16 @@
       "archetype": "national-series",
       "status": "exception",
       "expected": {
-        "type": "category-bar",
+        "type": "comparison-table",
         "title": "국가별 기후기술 순위 비교",
-        "xAxis": "기후기술 수준 순위",
-        "yAxis": "국가",
-        "unit": "위"
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
       },
       "checks": {
-        "primaryTypeMatch": false,
+        "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": null,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -14474,12 +14145,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
-          "verdict": "mismatch",
-          "axesVerdict": "missing",
+          "verdict": "match",
+          "axesVerdict": "not-applicable",
           "blocks": [
             {
               "type": "comparison-table",
@@ -14514,16 +14185,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] E-017: first block \"comparison-table\" ≠ contract \"category-bar\""
-        ]
+        "console": []
       },
-      "issues": [
-        "first block \"comparison-table\" ≠ contract \"category-bar\"",
-        "axes null ≠ {\"x\":\"기후기술 수준 순위\",\"y\":\"국가\",\"unit\":\"위\"}",
-        "console: [v153-contract] E-017: first block \"comparison-table\" ≠ contract \"category-bar\""
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "E-018",
@@ -14532,14 +14197,14 @@
       "expected": {
         "type": "category-bar",
         "title": "상태별 한국기업 진출",
-        "xAxis": "기업 수",
+        "xAxis": "건수",
         "yAxis": "진출 상태",
-        "unit": "곳"
+        "unit": "건"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -14550,12 +14215,12 @@
         "nestedTags": true,
         "mapPlacement": true,
         "overflow320": false,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -14565,7 +14230,7 @@
               "width": 752,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "진출 상태",
                 "unit": "건"
               }
             },
@@ -14577,7 +14242,7 @@
               "width": 1130,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "진출 상태",
                 "unit": "건"
               }
             },
@@ -14642,14 +14307,10 @@
           }
         },
         "overflow320": 9,
-        "console": [
-          "[v153-contract] E-018: axes {\"x\":\"건수\",\"y\":\"분류\",\"unit\":\"건\"} ≠ contract {\"x\":\"기업 수\",\"y\":\"진출 상태\",\"unit\":\"곳\"}"
-        ]
+        "console": []
       },
       "issues": [
-        "axes {\"x\":\"건수\",\"y\":\"분류\",\"unit\":\"건\"} ≠ {\"x\":\"기업 수\",\"y\":\"진출 상태\",\"unit\":\"곳\"}",
-        "320px overflow 9px",
-        "console: [v153-contract] E-018: axes {\"x\":\"건수\",\"y\":\"분류\",\"unit\":\"건\"} ≠ contract {\"x\":\"기업 수\",\"y\":\"진출 상태\",\"unit\":\"곳\"}"
+        "320px overflow 9px"
       ],
       "pass": false
     },
@@ -14660,14 +14321,14 @@
       "expected": {
         "type": "category-bar",
         "title": "설치여부별 한국기관 사무소",
-        "xAxis": "현지 사무소 수",
-        "yAxis": "기관",
+        "xAxis": "기관 수",
+        "yAxis": "도시",
         "unit": "곳"
       },
       "checks": {
-        "primaryTypeMatch": false,
+        "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -14678,19 +14339,31 @@
         "nestedTags": null,
         "mapPlacement": true,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
-          "verdict": "mismatch",
-          "axesVerdict": "missing",
+          "verdict": "match",
+          "axesVerdict": "match",
           "blocks": [
             {
-              "type": "cards-list",
+              "type": "category-bar",
               "rank": "1",
               "top": 658,
               "left": 155,
               "width": 752,
+              "axes": {
+                "x": "기관 수",
+                "y": "도시",
+                "unit": "곳"
+              }
+            },
+            {
+              "type": "cards-list",
+              "rank": "2",
+              "top": 1423,
+              "left": 155,
+              "width": 1130,
               "axes": null
             }
           ],
@@ -14722,30 +14395,27 @@
         "nestedTagCount": 1,
         "narrow": {
           "slot": {
-            "top": 2957,
+            "top": 1256,
             "left": 31,
             "width": 328,
             "height": 708,
             "mapReady": true
           },
           "first": {
-            "type": "cards-list",
+            "type": "category-bar",
             "top": 920,
-            "height": 2021
+            "height": 320
           },
-          "second": null
+          "second": {
+            "type": "cards-list",
+            "top": 1980
+          }
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] E-019: first block \"cards-list\" ≠ contract \"category-bar\""
-        ]
+        "console": []
       },
-      "issues": [
-        "first block \"cards-list\" ≠ contract \"category-bar\"",
-        "axes null ≠ {\"x\":\"현지 사무소 수\",\"y\":\"기관\",\"unit\":\"곳\"}",
-        "console: [v153-contract] E-019: first block \"cards-list\" ≠ contract \"category-bar\""
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "E-020",
@@ -14754,14 +14424,14 @@
       "expected": {
         "type": "category-bar",
         "title": "제도별 지원사례 현황",
-        "xAxis": "활용 사례 수",
+        "xAxis": "건수",
         "yAxis": "지원제도",
         "unit": "건"
       },
       "checks": {
         "primaryTypeMatch": true,
         "rankOrder": true,
-        "axesMatch": false,
+        "axesMatch": true,
         "blockHonesty": true,
         "readingNotesAbsent": true,
         "statusNoteNoChart": null,
@@ -14772,12 +14442,12 @@
         "nestedTags": true,
         "mapPlacement": null,
         "overflow320": true,
-        "console": false
+        "console": true
       },
       "evidence": {
         "wide": {
           "verdict": "match",
-          "axesVerdict": "mismatch",
+          "axesVerdict": "match",
           "blocks": [
             {
               "type": "category-bar",
@@ -14787,7 +14457,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "지원제도",
                 "unit": "건"
               }
             },
@@ -14799,7 +14469,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "지원제도",
                 "unit": "건"
               }
             },
@@ -14811,7 +14481,7 @@
               "width": 557,
               "axes": {
                 "x": "건수",
-                "y": "분류",
+                "y": "지원제도",
                 "unit": "건"
               }
             },
@@ -14852,15 +14522,10 @@
           "nestedTags": 0
         },
         "overflow320": 0,
-        "console": [
-          "[v153-contract] E-020: axes {\"x\":\"건수\",\"y\":\"분류\",\"unit\":\"건\"} ≠ contract {\"x\":\"활용 사례 수\",\"y\":\"지원제도\",\"unit\":\"건\"}"
-        ]
+        "console": []
       },
-      "issues": [
-        "axes {\"x\":\"건수\",\"y\":\"분류\",\"unit\":\"건\"} ≠ {\"x\":\"활용 사례 수\",\"y\":\"지원제도\",\"unit\":\"건\"}",
-        "console: [v153-contract] E-020: axes {\"x\":\"건수\",\"y\":\"분류\",\"unit\":\"건\"} ≠ contract {\"x\":\"활용 사례 수\",\"y\":\"지원제도\",\"unit\":\"건\"}"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     }
   ]
 }
