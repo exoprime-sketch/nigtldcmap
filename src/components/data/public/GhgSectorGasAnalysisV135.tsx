@@ -200,7 +200,7 @@ export default function GhgSectorGasAnalysisV135({ elementId, rows }: Props) {
       </ul>
 
       <ChartAxesV150 x="온실가스 배출·흡수량" y="부문" unit={unit} />
-      <div className="ghg-sector-gas-v135__chart-scroll">
+      <div className="ghg-sector-gas-v135__chart-scroll" data-analysis-block="category-bar">
         <svg
           className="ghg-sector-gas-v135__chart"
           data-testid="ghg-sector-gas-chart-v135"
@@ -292,7 +292,7 @@ export default function GhgSectorGasAnalysisV135({ elementId, rows }: Props) {
         </svg>
       </div>
 
-      <section className="ghg-sector-gas-v135__secondary">
+      <section className="ghg-sector-gas-v135__secondary" data-analysis-block="category-bar">
         <h4>가스별 배출구성</h4>
         <ul data-testid="ghg-gas-composition-v135">
           {gasTotals.map((row) => (
@@ -321,7 +321,7 @@ export default function GhgSectorGasAnalysisV135({ elementId, rows }: Props) {
         </ul>
       </section>
 
-      <details className="ghg-sector-gas-v135__table">
+      <details className="ghg-sector-gas-v135__table" data-analysis-block="table">
         <summary>상세 배출량</summary>
         <div className="ghg-sector-gas-v135__table-scroll">
           <table>

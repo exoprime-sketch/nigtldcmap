@@ -201,7 +201,7 @@ export default function CpiaPolicyCapacityAnalysisV126({
 
   if (coreRows.length === 0 || selectedYear === null) {
     return (
-      <div className="pav126-empty" role="status">
+      <div className="pav126-empty" data-analysis-block="status-note" role="status">
         공개된 거버넌스 관측값을 표시할 수 없습니다.
       </div>
     );
@@ -287,7 +287,7 @@ export default function CpiaPolicyCapacityAnalysisV126({
       </div>
 
 
-      <section className="cpia126__panel" data-testid="a002-cpia-trend">
+      <section className="cpia126__panel" data-analysis-block="line" data-testid="a002-cpia-trend">
         <div className="pav126-section-heading">
           <span>주 분석</span>
           <h3>
@@ -310,6 +310,7 @@ export default function CpiaPolicyCapacityAnalysisV126({
 
         <div
           className="cpia126__cluster-bars"
+          data-analysis-block="category-bar"
           role="list"
           aria-label={`${selectedYear}년 ${wgiMode ? "부문별 값" : "클러스터 평균"}`}
         >
@@ -349,7 +350,7 @@ export default function CpiaPolicyCapacityAnalysisV126({
         )}
 
         {!wgiMode && (
-          <div className="cpia126__detail-bars" role="list" aria-label={`${selectedCluster.label} 세부항목`}>
+          <div className="cpia126__detail-bars" data-analysis-block="category-bar" role="list" aria-label={`${selectedCluster.label} 세부항목`}>
             {clusterRows.map((row) => (
               <div key={row.indicatorId} role="listitem" tabIndex={0} aria-label={`${publicCpiaLabelV126(row.indicatorId, row.semanticMeasure.labelKo)}, ${formatPublicNumberV126(row.value, "점")}점`}>
                 <span>{publicCpiaLabelV126(row.indicatorId, row.semanticMeasure.labelKo)}</span>
@@ -363,6 +364,7 @@ export default function CpiaPolicyCapacityAnalysisV126({
 
       {showRawTable && <details
         className="cpia126__table"
+        data-analysis-block="table"
         data-testid="public-raw-table"
       >
         <summary>상세 데이터 · {rows.length.toLocaleString("ko-KR")}건</summary>

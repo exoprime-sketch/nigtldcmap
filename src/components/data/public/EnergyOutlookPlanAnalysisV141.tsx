@@ -178,7 +178,7 @@ export default function EnergyOutlookPlanAnalysisV141({ entities, initialYear }:
           </label>
         </div>
         <ChartAxesV150 x="계획 설비용량" y="전원" unit="MW" />
-        <ol className="eop141__bars" aria-label={`${year}년 전원별 설비용량 계획`}>
+        <ol className="eop141__bars" data-analysis-block="category-bar" aria-label={`${year}년 전원별 설비용량 계획`}>
           {parts.map((item) => (
             <li key={item.label}>
               <span className="eop141__label"><PublicTermTextV134 text={item.label} /></span>
@@ -192,7 +192,7 @@ export default function EnergyOutlookPlanAnalysisV141({ entities, initialYear }:
         <p className="pps132-note">
           총 설비는 전원 합계가 아닌 원문의 총량이며, 각 전원의 하한·상한은 서로 다른 조합의 값이므로 더하지 않습니다. 원문에 한 값만 있는 전원은 하한과 상한이 같습니다.
         </p>
-        <details className="sv125-chart-table" data-testid="energy-outlook-plan-table-v141">
+        <details className="sv125-chart-table" data-analysis-block="table" data-testid="energy-outlook-plan-table-v141">
           <summary>표로 보기 · 전원별 설비용량 계획 · 2030·2050년 · <PublicTermTextV134 text="MW" /></summary>
           <div className="pps132-table-wrap">
             <table>
@@ -222,7 +222,7 @@ export default function EnergyOutlookPlanAnalysisV141({ entities, initialYear }:
 
       <section className="pps132-distribution pps132-distribution--table" data-testid="energy-outlook-demand-v141">
         <h5>수요 전망·목표·배출·전력 교역 계획</h5>
-        <div className="pps132-table-wrap">
+        <div className="pps132-table-wrap" data-analysis-block="table">
           <table>
             <thead>
               <tr>
@@ -256,7 +256,7 @@ export default function EnergyOutlookPlanAnalysisV141({ entities, initialYear }:
           </p>
         )}
         {model.growth.length > 0 && (
-          <div className="pps132-table-wrap" data-testid="energy-outlook-derived-growth-v142">
+          <div className="pps132-table-wrap" data-analysis-block="table" data-testid="energy-outlook-derived-growth-v142">
             <table>
               <caption>2030–2050년 연평균 증가율 · 계획값으로 자체 계산</caption>
               <thead><tr><th scope="col">계산 대상</th><th scope="col">계산에 사용한 범위</th><th scope="col">연평균 증가율</th></tr></thead>
@@ -273,7 +273,7 @@ export default function EnergyOutlookPlanAnalysisV141({ entities, initialYear }:
       </section>
 
       {model.prices.length > 0 && (
-        <section className="pps132-distribution pps132-distribution--table" data-testid="energy-outlook-prices-v141">
+        <section className="pps132-distribution pps132-distribution--table" data-analysis-block="table" data-testid="energy-outlook-prices-v141">
           <h5>전력가격 규정 · 2024–2025 · 같은 단위·가격 종류 안에서만 비교</h5>
           <div className="pps132-table-wrap">
             <table>
@@ -319,7 +319,7 @@ export default function EnergyOutlookPlanAnalysisV141({ entities, initialYear }:
       )}
 
       {(model.regulations.length > 0 || model.textPolicy.length > 0) && (
-        <section className="pps132-distribution pps132-distribution--table" data-testid="energy-outlook-regulations-v141">
+        <section className="pps132-distribution pps132-distribution--table" data-analysis-block="comparison-table" data-testid="energy-outlook-regulations-v141">
           <h5>제도 문서·시장 공표 · {model.regulations.length + model.textPolicy.length}건</h5>
           <div className="pps132-table-wrap">
             <table>
