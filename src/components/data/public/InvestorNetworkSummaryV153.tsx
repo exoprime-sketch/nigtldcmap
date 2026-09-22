@@ -74,7 +74,7 @@ export default function InvestorNetworkSummaryV153({ entities }: Props) {
   );
 
   return (
-    <section className="detail146 d153-section" data-testid="investor-network-v153" data-analysis-block="investor-network">
+    <section className="detail146 d153-section" data-testid="investor-network-v153">
       <p>
         기관 수 {entities.length}곳 가운데 베트남에 사무소를 둔 {groups.inVietnam.length}곳은 도시 단위로 지도에 표시하고, 본부만 확인되는 {groups.abroad.length}곳은 베트남 투자 실적이 있는 해외 소재 기관으로 따로 둡니다. 기관을 누르면 카드가 열립니다.
       </p>
@@ -84,11 +84,11 @@ export default function InvestorNetworkSummaryV153({ entities }: Props) {
         <li><span>해외 소재(베트남 투자 실적)</span><strong>{groups.abroad.length}곳</strong></li>
       </ul>
       <div className="d153-grid">
-        <section className="d153-section">
+        <section className="d153-section" data-analysis-block="cards-list">
           <h4>베트남 소재 기관 · {groups.inVietnam.length}곳 · 도시 단위</h4>
           {list(groups.inVietnam, "investor-list-vietnam-v153")}
         </section>
-        <section className="d153-section">
+        <section className="d153-section" data-analysis-block="cards-list">
           <h4>해외 소재(베트남 투자 실적) · {groups.abroad.length}곳</h4>
           {list(groups.abroad, "investor-list-abroad-v153")}
           <p className="detail146-note">본부 도시 좌표만 확인된 기관은 베트남 지도에 표시하지 않습니다.</p>
@@ -99,7 +99,7 @@ export default function InvestorNetworkSummaryV153({ entities }: Props) {
           <FacilityCardV153 elementId="E-006" entity={selectedRow.entity} title={selectedRow.title} />
         </div>
       ) : null}
-      <AnalysisBarsV147 rows={cityRows} title="도시별 기관 수 · 원자료 표기" unit="기관 수" />
+      <section className="d153-block" data-analysis-block="region-bar"><AnalysisBarsV147 rows={cityRows} title="도시별 기관 수 · 원자료 표기" unit="기관 수" /></section>
     </section>
   );
 }

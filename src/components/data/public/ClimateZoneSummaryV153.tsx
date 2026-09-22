@@ -64,7 +64,7 @@ export default function ClimateZoneSummaryV153({ observations, indicators }: Pro
   }, [observations, indicators]);
 
   return (
-    <section className="detail146 d153-section" data-testid="climate-zone-v153" data-analysis-block="climate-zones">
+    <section className="detail146 d153-section" data-testid="climate-zone-v153">
       <p>
         쾨펜 기후대별 국토 점유 면적과 비율입니다(Beck et al. 2023, 1991–2020 관측 기준). 기후대 이름은 한글을 먼저 쓰고 분류 코드를 괄호에 두었습니다.
       </p>
@@ -74,8 +74,8 @@ export default function ClimateZoneSummaryV153({ observations, indicators }: Pro
         <li><span>기후대 수</span><strong>{model.rows.length}개</strong></li>
         <li><span>기후대별 점유 면적 합계</span><strong>{formatPublicNumberV126(model.totalArea, "km²")} km²</strong></li>
       </ul>
-      <AnalysisBarsV147 rows={model.rows.map((row) => ({ id: row.code, label: row.label, value: row.area }))} title={`기후대별 점유 면적 · ${model.year ?? ""}년(1991–2020 관측)`} unit="km²" />
-      <div className="d153-table-wrap">
+      <section className="d153-block" data-analysis-block="category-bar"><AnalysisBarsV147 rows={model.rows.map((row) => ({ id: row.code, label: row.label, value: row.area }))} title={`기후대별 점유 면적 · ${model.year ?? ""}년(1991–2020 관측)`} unit="km²" /></section>
+      <div className="d153-table-wrap" data-analysis-block="sorted-table">
         <table className="d153-table" data-testid="climate-zone-table-v153">
           <caption>기후대 구성 · 1991–2020 관측 기준 · 면적은 km², 비율은 분류 육지면적 대비 %</caption>
           <thead>
@@ -94,11 +94,13 @@ export default function ClimateZoneSummaryV153({ observations, indicators }: Pro
         </table>
       </div>
       {model.tropical.length ? (
-        <AnalysisBarsV147
-          rows={model.tropical.map((row) => ({ id: row.id, label: /관측|SSP/u.test(row.label) ? row.label : `${row.label}${row.projected ? " · 전망" : " · 관측"}`, value: row.value }))}
-          title="열대기후(A군) 국토 점유 비율 · 시기·시나리오별"
-          unit="%"
-        />
+        <section className="d153-block" data-analysis-block="category-bar">
+          <AnalysisBarsV147
+            rows={model.tropical.map((row) => ({ id: row.id, label: /관측|SSP/u.test(row.label) ? row.label : `${row.label}${row.projected ? " · 전망" : " · 관측"}`, value: row.value }))}
+            title="열대기후(A군) 국토 점유 비율 · 시기·시나리오별"
+            unit="%"
+          />
+        </section>
       ) : null}
       <p className="detail146-note">A군(열대)·C군(온대) 분류는 쾨펜-가이거 기준이며, 전망치는 SSP 시나리오별 2071–2099 평균입니다.</p>
     </section>
