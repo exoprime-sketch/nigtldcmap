@@ -158,7 +158,7 @@ export default function ResearchPatentAnalysisV132({
         </p>
       )}
       {nationalTrend.length > 0 && (
-      <section className="rpa132-panel" data-testid="e008-trend">
+      <section className="rpa132-panel" data-analysis-block={nationalTrendDepthV135 < 3 ? "dumbbell" : "line"} data-testid="e008-trend">
         {nationalTrendDepthV135 < 3 ? (
           <div
             className="rpa132-two-year-change-v135"
@@ -256,7 +256,7 @@ export default function ResearchPatentAnalysisV132({
         )}
       </div>
 
-      <section className="rpa132-list" data-testid="e008-list">
+      <section className="rpa132-list" data-analysis-block="cards-list" data-testid="e008-list">
         <header>
           <div>
             <span>개별 목록</span>
@@ -463,7 +463,7 @@ function BreakdownV132({
   const maximum = Math.max(1, ...rows.map((row) => row.value));
   const shown = expanded ? rows : rows.slice(0, 8);
   return (
-    <section className="rpa132-breakdown" data-testid={testId}>
+    <section className="rpa132-breakdown" data-analysis-block="category-bar" data-testid={testId}>
       <header><h3><PublicTermTextV134 text={title} /></h3><p><PublicTermTextV134 text={description} /></p></header>
       <div className="rpa144-actions"><button type="button" aria-pressed={table} onClick={() => setTable((value) => !value)}>{table ? "차트로 보기" : "표로 보기"}</button>
         {!table && rows.length > 8 && <button type="button" aria-expanded={expanded} onClick={() => setExpanded((value) => !value)}>{expanded ? "상위 8개만 보기" : `전체 ${rows.length}개 항목 보기`}</button>}

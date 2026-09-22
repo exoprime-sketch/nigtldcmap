@@ -146,7 +146,7 @@ export default function SecuritySafetyInfoV142({ entities, semantics }: Props) {
 
 
       {sections.map((section) => (
-        <section key={section.key} className="pps132-distribution pps132-distribution--table" data-testid={`security-section-${section.key}-v142`}>
+        <section key={section.key} className="pps132-distribution pps132-distribution--table" data-analysis-block="comparison-table" data-testid={`security-section-${section.key}-v142`}>
           <h5>{section.title} · {section.rows.length.toLocaleString("ko-KR")}건</h5>
           <div className="pps132-table-wrap">
             <table>

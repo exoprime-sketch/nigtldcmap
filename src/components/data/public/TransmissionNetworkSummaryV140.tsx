@@ -75,10 +75,10 @@ export default function TransmissionNetworkSummaryV140({ entities }: Props) {
           <PublicTermTextV134 text={`2016년 송전선은 경로가 있는 ${summary.network.toLocaleString("ko-KR")}개 구간이고, 개정 PDP8 선로 목록 ${summary.plan.toLocaleString("ko-KR")}행(계획 ${summary.planned}행 포함)은 전압만 있고 경로 좌표가 없어 지도에는 없습니다. 두 목록은 서로 더하지 않습니다.`} />
         </p>
       </header>
-      <AnalysisBarsV147 title="전압별 송전선 길이 · 2016년" unit="km" rows={summary.byVoltage.map(([kv, e]) => ({ id: String(kv), label: `${kv} kV`, value: Math.round(e.km) }))} />
-      <AnalysisBarsV147 title="전압별 송전선 구간 수 · 2016년" unit="구간" rows={summary.byVoltage.map(([kv, e]) => ({ id: String(kv), label: `${kv} kV`, value: e.segments }))} />
+      <section className="d153-block" data-analysis-block="category-bar"><AnalysisBarsV147 title="전압별 송전선 길이 · 2016년" unit="km" rows={summary.byVoltage.map(([kv, e]) => ({ id: String(kv), label: `${kv} kV`, value: Math.round(e.km) }))} /></section>
+      <section className="d153-block" data-analysis-block="category-bar"><AnalysisBarsV147 title="전압별 송전선 구간 수 · 2016년" unit="구간" rows={summary.byVoltage.map(([kv, e]) => ({ id: String(kv), label: `${kv} kV`, value: e.segments }))} /></section>
       <div className="pps132-distributions">
-        <section className="pps132-distribution pps132-distribution--table" data-portfolio-distribution="true" data-testid="transmission-voltage-table-v140">
+        <section className="pps132-distribution pps132-distribution--table" data-analysis-block="table" data-portfolio-distribution="true" data-testid="transmission-voltage-table-v140">
           <h5>2016년 송전선 · 전압별 구간 수와 연장</h5>
           <div className="pps132-table-wrap">
             <table>
@@ -105,7 +105,7 @@ export default function TransmissionNetworkSummaryV140({ entities }: Props) {
             </table>
           </div>
         </section>
-        <section className="pps132-distribution pps132-distribution--table" data-portfolio-distribution="true" data-testid="transmission-plan-table-v140">
+        <section className="pps132-distribution pps132-distribution--table" data-analysis-block="table" data-portfolio-distribution="true" data-testid="transmission-plan-table-v140">
           <h5><PublicTermTextV134 text="개정 PDP8 선로 목록 · 전압별 기존·계획 행 수" /></h5>
           <div className="pps132-table-wrap">
             <table>

@@ -116,7 +116,7 @@ export default function SpeiDroughtScenarioAnalysisV134({
       data-testid="b005-specialized-analysis"
       data-zero-reference="true"
     >
-      <section className="sda134__meaning" aria-labelledby="sda134-meaning-title" data-testid="b005-spei-meaning">
+      <section className="sda134__meaning" data-analysis-block="note" aria-labelledby="sda134-meaning-title" data-testid="b005-spei-meaning">
         <div>
           <span>지수 읽는 법</span>
           <h3 id="sda134-meaning-title"><PublicTermTextV134 text="SPEI-12는 무엇을 나타내나요?" /></h3>
@@ -128,7 +128,7 @@ export default function SpeiDroughtScenarioAnalysisV134({
         </ul>
       </section>
 
-      <section className="sda134__panel" aria-labelledby="sda134-trend-title">
+      <section className="sda134__panel" data-analysis-block="line" aria-labelledby="sda134-trend-title">
         <header className="sda134__heading">
           <div>
             <span>주 분석</span>
@@ -183,7 +183,7 @@ export default function SpeiDroughtScenarioAnalysisV134({
         <div className="sda134__sign-key" aria-label="SPEI 부호의 의미"><span><i className="is-wet" />양수 · 평년보다 습윤</span><span><i className="is-dry" />음수 · 평년보다 건조</span></div>
       </section>
 
-      <section className="sda134__panel" aria-labelledby="sda134-comparison-title" data-testid="b005-selected-year-comparison">
+      <section className="sda134__panel" data-analysis-block="category-bar" aria-labelledby="sda134-comparison-title" data-testid="b005-selected-year-comparison">
         <header className="sda134__heading sda134__heading--selector">
           <div><span>보조 분석</span><h3 id="sda134-comparison-title"><PublicTermTextV134 text={secondaryTitle} /></h3></div>
           <div className="sda134__year-buttons" aria-label="비교 연도">
