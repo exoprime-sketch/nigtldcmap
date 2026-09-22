@@ -1,0 +1,236 @@
+{
+  "generatedAt": "2026-09-22T00:07:59.108Z",
+  "build": ".\\tmp\\build-v153-review",
+  "summary": {
+    "screens": 6,
+    "ready": 6,
+    "empty": 0,
+    "failed": 0,
+    "retried": 0,
+    "consoleErrorScreens": 0,
+    "httpFailureScreens": 0,
+    "overflowScreens": 0,
+    "internalPhraseScreens": [],
+    "changedScreens": 3
+  },
+  "rows": [
+    {
+      "elementId": "A-023",
+      "publicTitle": "발전원별 시설 수·설비용량과 위치",
+      "catalogTitle": "발전소[위치, 용량]",
+      "publicStatus": "actual",
+      "question": "",
+      "analysis": [
+        "public-analysis-root",
+        "public-data-summary",
+        "public-analysis-primary",
+        "power-plant-registry-summary-v138",
+        "public-raw-table-summary"
+      ],
+      "selectors": [
+        {
+          "label": "자료 출처 WRI GPPD · 2021년 OpenStreetMap · 2",
+          "value": "wri",
+          "options": 3
+        },
+        {
+          "label": "발전원 전체 발전원 가스 가스·석유 바이오매스 석유 석탄 수력 태양광 폐",
+          "value": "all",
+          "options": 10
+        },
+        {
+          "label": "설비용량 전체 용량 10MW 미만 10~99MW 100~499MW 500",
+          "value": "all",
+          "options": 5
+        },
+        {
+          "label": "작은 지도 지역·대상 선택",
+          "value": "",
+          "options": 237
+        }
+      ],
+      "representative": "",
+      "source": "자료정보",
+      "chartCount": 1,
+      "change": "발전소 요약을 원천 수록 행(WRI+OSM)·위치 보유·원천별 용량 합계로 분리, 연료 필터를 하나로 통합, '자료 유형' 필터 제거",
+      "priorAction": "236/1963/1889 집계대상 분리, 영문·한국어 연료 필터 중복 제거, 고유시설화",
+      "browser": {
+        "analysisState": "ready",
+        "failure": null,
+        "retries": [],
+        "consoleErrors": [],
+        "httpFailures": [],
+        "overflow": false,
+        "internalPhrases": [],
+        "elapsedMs": 2259
+      }
+    },
+    {
+      "elementId": "B-002",
+      "publicTitle": "기후대의 지역별 차이와 범위",
+      "catalogTitle": "기후대(Climate zone)",
+      "publicStatus": "actual",
+      "question": "",
+      "analysis": [
+        "public-analysis-root",
+        "public-data-summary",
+        "public-analysis-primary",
+        "public-raw-table-summary"
+      ],
+      "selectors": [],
+      "representative": "온대·동계건조·고온하계(Cwa) Cwa 138,158.9 42.17%",
+      "source": "자료정보",
+      "chartCount": 0,
+      "change": "공통 변경만 적용(정책표 단위·구분, 지표군 수 정정, 최신연도 기본값, 원문 어휘 중복 필터 제거) 또는 변경 없음",
+      "priorAction": "기후분류별 국토 비중·기간·시나리오 비교; 기후코드 해설",
+      "browser": {
+        "analysisState": "ready",
+        "failure": null,
+        "retries": [],
+        "consoleErrors": [],
+        "httpFailures": [],
+        "overflow": false,
+        "internalPhrases": [],
+        "elapsedMs": 4217
+      }
+    },
+    {
+      "elementId": "B-046",
+      "publicTitle": "광물 매장량의 항목별 공개 현황",
+      "catalogTitle": "매장량[확인, 추정]",
+      "publicStatus": "actual",
+      "question": "",
+      "analysis": [
+        "public-analysis-root",
+        "public-data-summary",
+        "public-analysis-primary",
+        "public-raw-table-summary"
+      ],
+      "selectors": [],
+      "representative": "희토류 3,500,000 t REO 세계 5위 4.67% 종전 판본 22,000,000 → 3,500,000 t 하향 개정",
+      "source": "자료정보",
+      "chartCount": 0,
+      "change": "공통 변경만 적용(정책표 단위·구분, 지표군 수 정정, 최신연도 기본값, 원문 어휘 중복 필터 제거) 또는 변경 없음",
+      "priorAction": "광물 매장량의 종류·기준연도·단위 비교",
+      "browser": {
+        "analysisState": "ready",
+        "failure": null,
+        "retries": [],
+        "consoleErrors": [],
+        "httpFailures": [],
+        "overflow": false,
+        "internalPhrases": [],
+        "elapsedMs": 2186
+      }
+    },
+    {
+      "elementId": "B-047",
+      "publicTitle": "광물 생산량의 항목별 공개 현황",
+      "catalogTitle": "연간 생산량",
+      "publicStatus": "actual",
+      "question": "",
+      "analysis": [
+        "public-analysis-root",
+        "public-data-summary",
+        "public-analysis-primary",
+        "public-raw-table-summary"
+      ],
+      "selectors": [],
+      "representative": "텅스텐 3,400 3,000 -11.8% t (W 함량) 세계 2위 · 3.53%",
+      "source": "자료정보",
+      "chartCount": 0,
+      "change": "공통 변경만 적용(정책표 단위·구분, 지표군 수 정정, 최신연도 기본값, 원문 어휘 중복 필터 제거) 또는 변경 없음",
+      "priorAction": "광물 생산량 연도 비교; 매장량과 분리",
+      "browser": {
+        "analysisState": "ready",
+        "failure": null,
+        "retries": [],
+        "consoleErrors": [],
+        "httpFailures": [],
+        "overflow": false,
+        "internalPhrases": [],
+        "elapsedMs": 2116
+      }
+    },
+    {
+      "elementId": "C-012",
+      "publicTitle": "민관협력·조달 제도의 항목별 공개 현황",
+      "catalogTitle": "PPP 법제도·조달 체계[PPP 법률 유무, PPP 법률 명칭, PPP 전담 기관, 조달 방식(경쟁입찰/협상/비공개), 계약 유형(BOT/BOO/Concession), VfM 평가 의무 여부, PPP 프로젝트 이력]",
+      "publicStatus": "actual",
+      "question": "",
+      "analysis": [
+        "public-analysis-root",
+        "public-data-summary",
+        "public-analysis-primary",
+        "public-raw-table-summary"
+      ],
+      "selectors": [
+        {
+          "label": "작은 지도 표시 항목",
+          "value": "ppp-project-count",
+          "options": 1
+        },
+        {
+          "label": "작은 지도 기준시점",
+          "value": "1997–2024",
+          "options": 1
+        },
+        {
+          "label": "작은 지도 지역·대상 선택",
+          "value": "",
+          "options": 57
+        }
+      ],
+      "representative": "호찌민시(Ho Chi Minh city)(Ho Chi Minh city) 24 1996-2022 에너지(Energy) 9건; 수송(Transport) 8건; 상하수(Water and sewerage) 6건; 생활폐기물(Municipal Solid Waste) 1건 운영·건설 중(Acti",
+      "source": "자료정보",
+      "chartCount": 1,
+      "change": "지역별 PPP 사업 수 지도 연결(개편 후 34개 체계 → 소속 63개 경계)",
+      "priorAction": "정책 문서·현재 상태·대상·기한·정량목표를 구분; 수치마다 단위와 대상 복원, 내부 검토문구 제거",
+      "browser": {
+        "analysisState": "ready",
+        "failure": null,
+        "retries": [],
+        "consoleErrors": [],
+        "httpFailures": [],
+        "overflow": false,
+        "internalPhrases": [],
+        "elapsedMs": 2168
+      }
+    },
+    {
+      "elementId": "E-006",
+      "publicTitle": "현지 투자자 네트워크의 기관별 공개 정보",
+      "catalogTitle": "현지 투자자 네트워크[기관명, 기관 유형(VC/PE/DFI/상업은행/임팩트투자/AC), 투자 분야(기후/에너지/인프라/AgTech), 투자 규모(AUM), 소재국, 도시, 연락처, 기후기술 투자 실적 유무]",
+      "publicStatus": "public-authorized",
+      "question": "",
+      "analysis": [
+        "public-analysis-root",
+        "public-data-summary",
+        "public-analysis-primary",
+        "public-raw-table-summary"
+      ],
+      "selectors": [
+        {
+          "label": "작은 지도 지역·대상 선택",
+          "value": "",
+          "options": 9
+        }
+      ],
+      "representative": "",
+      "source": "자료정보",
+      "chartCount": 1,
+      "change": "베트남 내 거점만 지도 연결(해외 본부 제외)",
+      "priorAction": "해외본부와 베트남 거점 구분; 해외 본부 지도화 금지",
+      "browser": {
+        "analysisState": "ready",
+        "failure": null,
+        "retries": [],
+        "consoleErrors": [],
+        "httpFailures": [],
+        "overflow": false,
+        "internalPhrases": [],
+        "elapsedMs": 2106
+      }
+    }
+  ]
+}
