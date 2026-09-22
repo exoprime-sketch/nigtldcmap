@@ -76,6 +76,7 @@
 | 파이프라인 기준선 diff | published와 후행 단계 산출 5개 파일만 상이(`staging-diff-baseline-v153.json`) |
 | 승격 결과 | 커밋1: catalog 58요소 technologyIds·60 downloads·19 packs; 커밋2: A-023·B-046·B-047·E-006 downloads/semantic·팩 3개·search-index·manifest(searchIndex만); `git status`로 map-index·spatial·geometry·home 무변경 확인 |
 | `verify:dataset-directory:v150` · `check-download-delivery-v137` | 통과 · problems 0 |
+| `audit-vietnam-release-v136 --group static`(로컬) | PASS 15/15 · 7/7 — 첫 CI에서 `BROKEN_ASSET_COUNT` 16(홈 카드 자산이 구 팩 파일명을 참조) → `build:card-summaries:v140` 재생성(값·라벨 변화 0, provenance 팩명만)으로 해소 |
 | `scripts/v153/d0-screens-v153.mjs`(6개 × 320/390/768/1024/1440/1920) | 36/36 통과 · 가로 넘침 0 · 콘솔/HTTP 오류 0 · 찾기 옵션 38 · `technology=07` 새로고침 복원 |
 | `screen-review-v138 --ids 6개 --out reports/v153/screens/v138-review` | ready 6/6 · 오류 0 · 내부 문구 0 |
 | `analysis-qa-v140 --only 6개`(로컬 production 빌드) | 필수 실패 0 — 기준선 41건 중 A-023·C-012 `cardValueVerified` 2건 해소(`reports/v153/qa/analysis-qa-v140-d0.json`) |

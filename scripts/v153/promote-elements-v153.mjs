@@ -16,8 +16,11 @@
  * and, with --catalog, catalog.json - but only when the element-level diff is
  * limited to the keys listed in --catalog-keys (default: technologyIds plus the
  * count fields of the named elements). It never touches map-index.json,
- * spatial/, geometry/ or home/. asset-integrity.json and dataset-directory.json
- * are rebuilt afterwards by `npm run build:dataset-directory:v150`.
+ * spatial/, geometry/ or home/. Afterwards run `npm run build:card-summaries:v140`
+ * (the home cards name the pack shard each card was read from, so a new
+ * shard hash leaves them pointing at a file that no longer exists - the
+ * release audit reports it as BROKEN_ASSET_COUNT) and then
+ * `npm run build:dataset-directory:v150` (dataset directory + asset-integrity).
  *
  *   node scripts/v153/promote-elements-v153.mjs --from <staging v2 dir> --ids B-046,B-047
  *       [--catalog] [--catalog-keys technologyIds,observationCount] [--all-packs] [--dry-run]
