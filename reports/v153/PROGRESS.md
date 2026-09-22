@@ -18,7 +18,7 @@
 - [x] 4 유형 표준 화면 변경(누적영역 공용화·덤벨·지역 막대 순서)
 - [x] 5 QA 스크립트·package.json·CI, analysis QA 기대값 변경
 - [x] 6 검증: tsc 0 · unit 257/257 · 계약 QA 152/152 · 대표 10개×6폭 60/60 · analysis QA 기준선(지도 슬롯 제외 후 재실행) · 문서·추적표·CHANGELOG
-- [ ] 7 finalize:v140 1회 → push → PR → Vercel Preview Ready → 보고·승인 대기
+- [~] 7 finalize:v140 2회 실행(1차 entity-cards/publicCopy 상태 파일 → 처리, 2차 glossary 35 토큰 = main 선행 결함) → push → PR #27 → Vercel Preview 확인·glossary fix-forward 결정 대기
 
 ## 미완료·후속
 - 히트맵(A-013·C-005·B-044)·E-017 순위 막대·B-026 유향 지도·B-017 지도·지역 패널 값 표출(P4-D2)은 범위 밖. 예외 33행 사유는 계약 note·docs/VISUALIZATION_CONTRACT_V153.md
