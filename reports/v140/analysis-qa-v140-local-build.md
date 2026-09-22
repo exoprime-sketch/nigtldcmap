@@ -1,6 +1,6 @@
 # 카드 → 상세 분석 QA (V140) · local-build
 
-실행 2026-09-21T06:16:01.420Z · http://127.0.0.1:55153 · 152개(값 보유 147 · 상태 안내 5) · 배포 버전 일치 예
+실행 2026-09-22T04:51:57.623Z · http://127.0.0.1:58604 · 152개(값 보유 147 · 상태 안내 5) · 배포 버전 일치 예
 
 | 항목 | 통과 | 실패 | 해당 없음 |
 | --- | ---: | ---: | ---: |
@@ -8,17 +8,17 @@
 | homeCardClicked | 8 | 0 | 144 |
 | selectionUrlPreserved | 89 | 4 | 59 |
 | screenLoaded | 150 | 2 | 0 |
-| cardValueVerified | 125 | 24 | 3 |
-| detailAnalysisFit | 77 | 16 | 59 |
+| cardValueVerified | 128 | 21 | 3 |
+| detailAnalysisFit | 78 | 15 | 59 |
 | analysisFit | 151 | 1 | 0 |
-| controlsVerified | 125 | 1 | 26 |
+| controlsVerified | 127 | 4 | 21 |
 | tableValuesVerified | 130 | 14 | 8 |
 | mapHandoffVerified | 41 | 0 | 111 |
 | mapSymbolVerified | 41 | 0 | 111 |
 
 detailAnalysisFit = 넘긴 선택(측정항목·연도·차원)이 선택기·제목·KPI에 있는지 · analysisFit = 자료 유형에 맞는 주 분석(추세/비교/구성/분포/등록부 목록과 표·단위·시점)이 있는지(152개 전부) · mapSymbolVerified = 지도 대표 기호 선택 후 값·단위·시점·출처·공간 의미가 패널에 있는지(42개)
 
-독립 재계산(다운로드 파일): {"match":142,"not-applicable":8,"mismatch":2} · 컨트롤 시도 270회 · 표 분류(키: 지표+지역+연도/기간+단위) {"match":130,"no-derived-row":2,"not-applicable":8,"row-count-differs":12} · 필수 실패 41건
+독립 재계산(다운로드 파일): {"match":142,"not-applicable":8,"mismatch":2} · 컨트롤 시도 322회 · 표 분류(키: 지표+지역+연도/기간+단위) {"match":130,"no-derived-row":2,"not-applicable":8,"row-count-differs":12} · 필수 실패 42건
 
 | 요소 | 종류 | click | url | loaded | value | recomp | fit | afit | controls | table | map | symbol | 잔여 문제 / 해당 없음 사유 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -31,7 +31,7 @@ detailAnalysisFit = 넘긴 선택(측정항목·연도·차원)이 선택기·�
 | A-007 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | – | – | mapHandoffVerified: not a map dataset |
 | A-008 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | – | – | mapHandoffVerified: not a map dataset |
 | A-009 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | – | – | mapHandoffVerified: not a map dataset |
-| A-010 | composition | ✓ | ✓ | ✓ | ✗ | match | ✗ | ✓ | ✓ | no-derived-row | – | – | card value 582.7 (MtCO₂e, 2024) not stated as such on the detail; detail does not show the card's selection: year 2024 not shown; mapHandoffVerified: not a map dataset |
+| A-010 | composition | ✓ | ✓ | ✓ | ✗ | match | ✓ | ✓ | ✓ | no-derived-row | – | – | card value 582.7 (MtCO₂e, 2024) not stated as such on the detail; mapHandoffVerified: not a map dataset |
 | A-011 | composition | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | – | – | mapHandoffVerified: not a map dataset |
 | A-012 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | – | – | mapHandoffVerified: not a map dataset |
 | A-013 | level | ✓ | ✓ | ✓ | ✓ | match | ✗ | ✓ | ✓ | match | – | – | detail does not show the card's selection: measure "NDC-SDG 연계 건수" not named; mapHandoffVerified: not a map dataset |
@@ -44,19 +44,19 @@ detailAnalysisFit = 넘긴 선택(측정항목·연도·차원)이 선택기·�
 | A-020 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | – | – | mapHandoffVerified: not a map dataset |
 | A-021 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | – | – | mapHandoffVerified: not a map dataset |
 | A-022 | line | ✓ | ✓ | ✓ | ✓ | match | ✗ | ✓ | ✓ | match | – | – | detail does not show the card's selection: selection "연간 고객당 순간정전 횟수" not shown; mapHandoffVerified: not a map dataset |
-| A-023 | grouped-bars | ✓ | – | ✓ | ✗ | match | – | ✓ | ✓ | match | ✓ | ✓ | card value 41,350 MW (MW) not stated as such on the detail; selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection |
-| A-024 | map | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | – | match | ✓ | ✓ | controlsVerified: no selectable control in the primary analysis |
-| A-025 | level | ✓ | ✓ | ✓ | ✗ | match | ✗ | ✓ | – | match | ✓ | ✓ | card value 5 건 (건, 2026) not stated as such on the detail; detail does not show the card's selection: year 2026 not shown; measure "CCS 시설 수" not named; controlsVerified: no selectable control in the primary analysis |
+| A-023 | grouped-bars | ✓ | – | ✓ | ✓ | match | – | ✓ | ✓ | match | ✓ | ✓ | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection |
+| A-024 | map | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✗ | match | ✓ | ✓ | control without effect on the primary analysis: 작은 지도 지역·대상 선택 (지도 또는 목록에서 선택 → 110 kV 선로 1) |
+| A-025 | level | ✓ | ✓ | ✓ | ✗ | match | ✗ | ✓ | ✓ | match | ✓ | ✓ | card value 5 건 (건, 2026) not stated as such on the detail; detail does not show the card's selection: year 2026 not shown; measure "CCS 시설 수" not named |
 | A-026 | facts | ✓ | – | ✓ | – | not-applicable | – | ✓ | – | not-applicable | – | – | cardValueVerified: card headline "건물 수·면적 미제공" has no number; detailAnalysisFit: card carries no selection; tableValuesVerified: no number on the card; controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |
-| A-027 | level | ✓ | ✓ | ✓ | ✓ | match | ✗ | ✓ | ✓ | match | – | – | detail does not show the card's selection: selection "피처 수" not shown; selection "OSM 도로 레이어의 지물 건수" not shown; measure "도로 레이어" not named; mapHandoffVerified: not a map dataset |
-| A-028 | level | ✓ | ✓ | ✓ | ✓ | match | ✗ | ✓ | ✓ | match | – | – | detail does not show the card's selection: selection "피처 수" not shown; selection "OSM 수로 레이어의 지물 건수" not shown; measure "수로 레이어" not named; mapHandoffVerified: not a map dataset |
+| A-027 | level | ✓ | ✓ | ✓ | ✓ | match | ✗ | ✓ | ✓ | match | – | – | detail does not show the card's selection: year 2026 not shown; selection "피처 수" not shown; selection "OSM 도로 레이어의 지물 건수" not shown; measure "도로 레이어" not named; mapHandoffVerified: not a map dataset |
+| A-028 | level | ✓ | ✓ | ✓ | ✓ | match | ✗ | ✓ | ✓ | match | – | – | detail does not show the card's selection: year 2026 not shown; selection "피처 수" not shown; selection "OSM 수로 레이어의 지물 건수" not shown; measure "수로 레이어" not named; mapHandoffVerified: not a map dataset |
 | A-029 | level | ✓ | ✓ | ✓ | ✓ | match | ✗ | ✓ | – | match | – | – | detail does not show the card's selection: measure "무역협정 건수" not named; controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |
 | A-030 | line | ✓ | ✗ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | – | – | selection lost in URL: dim.detail=null; mapHandoffVerified: not a map dataset |
 | A-031 | line | ✓ | ✗ | ✓ | ✓ | match | ✗ | ✓ | ✓ | match | – | – | selection lost in URL: dim.detail=null; detail does not show the card's selection: selection "통관 부문 점수(1=낮음 ~ 5=높음)" not shown; mapHandoffVerified: not a map dataset |
 | A-032 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | – | – | mapHandoffVerified: not a map dataset |
 | A-033 | line | ✓ | ✗ | ✓ | ✓ | match | ✗ | ✓ | ✓ | match | – | – | selection lost in URL: dim.detail=null; detail does not show the card's selection: selection "정기선 해운 연결성 지수(Q1 분기값)" not shown; mapHandoffVerified: not a map dataset |
-| B-001 | bars | ✓ | ✓ | ✓ | ✗ | match | ✗ | ✓ | – | match | – | – | card value 263 mm: number found without the unit "mm"; detail does not show the card's selection: measure "월 평년강수" not named; controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |
-| B-002 | bars | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | – | – | mapHandoffVerified: not a map dataset |
+| B-001 | bars | ✓ | ✓ | ✓ | ✓ | match | ✗ | ✓ | – | match | – | – | detail does not show the card's selection: measure "월 평년강수" not named; controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |
+| B-002 | bars | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | – | match | – | – | controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |
 | B-003 | spatial-trend | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | ✓ | ✓ |  |
 | B-004 | spatial-trend | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | ✓ | ✓ |  |
 | B-005 | spatial-trend | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | ✓ | ✓ |  |
@@ -66,7 +66,7 @@ detailAnalysisFit = 넘긴 선택(측정항목·연도·차원)이 선택기·�
 | B-009 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | – | – | mapHandoffVerified: not a map dataset |
 | B-010 | level | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | – | – | mapHandoffVerified: not a map dataset |
 | B-011 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | – | – | mapHandoffVerified: not a map dataset |
-| B-012 | bars | ✓ | – | ✓ | ✓ | match | – | ✓ | – | match | ✓ | ✓ | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis |
+| B-012 | bars | ✓ | – | ✓ | ✓ | match | – | ✓ | ✗ | match | ✓ | ✓ | control without effect on the primary analysis: 작은 지도 지역·대상 선택 (지도 또는 목록에서 선택 → Tropical cyclone); selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection |
 | B-013 | bars | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | – | – | mapHandoffVerified: not a map dataset |
 | B-014 | level | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | – | – | mapHandoffVerified: not a map dataset |
 | B-015 | bars | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | – | – | mapHandoffVerified: not a map dataset |
@@ -77,12 +77,12 @@ detailAnalysisFit = 넘긴 선택(측정항목·연도·차원)이 선택기·�
 | B-020 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | – | – | mapHandoffVerified: not a map dataset |
 | B-021 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | ✓ | ✓ |  |
 | B-022 | bars | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | – | – | mapHandoffVerified: not a map dataset |
-| B-023 | facts | ✓ | – | ✓ | ✓ | mismatch | – | ✓ | – | row-count-differs | ✓ | ✓ | recomputed from the download file: 11 vs card 10; selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis |
+| B-023 | facts | ✓ | – | ✓ | ✓ | mismatch | – | ✓ | ✓ | row-count-differs | ✓ | ✓ | recomputed from the download file: 11 vs card 10; selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection |
 | B-024 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✗ | match | – | – | control without effect on the primary analysis: 기준연도 (2023년 → 2022년); mapHandoffVerified: not a map dataset |
 | B-025 | bars | ✓ | – | ✓ | ✓ | match | – | ✓ | ✓ | match | ✓ | ✓ | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection |
 | B-026 | spatial | ✓ | ✓ | ✓ | ✗ | match | ✓ | ✓ | ✓ | no-derived-row | – | – | card value 23.3 % (%) not stated as such on the detail; mapHandoffVerified: not a map dataset |
 | B-027 | line | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | – | – | mapHandoffVerified: not a map dataset |
-| B-028 | facts | ✓ | – | ✓ | ✗ | mismatch | – | ✓ | – | row-count-differs | ✓ | ✓ | card value 15건 (건) not stated as such on the detail; recomputed from the download file: 16 vs card 15; selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis |
+| B-028 | facts | ✓ | – | ✓ | ✗ | mismatch | – | ✓ | ✓ | row-count-differs | ✓ | ✓ | card value 15건 (건) not stated as such on the detail; recomputed from the download file: 16 vs card 15; selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection |
 | B-029 | spatial | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | ✓ | ✓ |  |
 | B-030 | spatial | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | ✓ | ✓ |  |
 | B-031 | spatial | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | ✓ | ✓ |  |
@@ -100,9 +100,9 @@ detailAnalysisFit = 넘긴 선택(측정항목·연도·차원)이 선택기·�
 | B-043 | bars | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | – | – | mapHandoffVerified: not a map dataset |
 | B-044 | facts | ✓ | ✓ | ✓ | – | not-applicable | ✓ | ✓ | ✓ | not-applicable | – | – | cardValueVerified: card headline "수출금지(원광) 대상" has no number; tableValuesVerified: no number on the card; mapHandoffVerified: not a map dataset |
 | B-045 | bars | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | – | – | mapHandoffVerified: not a map dataset |
-| B-046 | level | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | – | – | mapHandoffVerified: not a map dataset |
-| B-047 | level | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | ✓ | match | – | – | mapHandoffVerified: not a map dataset |
-| B-048 | facts | ✓ | – | ✓ | ✓ | match | – | ✓ | – | match | ✓ | ✓ | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis |
+| B-046 | level | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | – | match | – | – | controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |
+| B-047 | level | ✓ | ✓ | ✓ | ✓ | match | ✓ | ✓ | – | match | – | – | controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |
+| B-048 | facts | ✓ | – | ✓ | ✓ | match | – | ✓ | ✓ | match | ✓ | ✓ | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection |
 | C-001 | bars | ✓ | – | ✓ | ✓ | match | – | ✓ | ✓ | match | – | – | detailAnalysisFit: card carries no selection; mapHandoffVerified: not a map dataset |
 | C-002 | facts | ✓ | – | ✗ | ✗ | match | – | ✓ | – | match | – | – | card value 82건 (건) not stated as such on the detail; runtime: page.selectOption: Timeout 30000ms exceeded.; selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection |
 | C-003 | facts | ✓ | – | ✓ | ✗ | match | – | ✓ | ✓ | match | – | – | card value 96건 (건) not stated as such on the detail; selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; mapHandoffVerified: not a map dataset |
@@ -111,10 +111,10 @@ detailAnalysisFit = 넘긴 선택(측정항목·연도·차원)이 선택기·�
 | C-006 | facts | ✓ | – | ✓ | ✗ | match | – | ✓ | ✓ | match | – | – | card value 50건 (건) not stated as such on the detail; selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; mapHandoffVerified: not a map dataset |
 | C-007 | facts | ✓ | – | ✓ | ✓ | match | – | ✓ | – | row-count-differs | – | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |
 | C-008 | bars | ✓ | – | ✓ | ✓ | match | – | ✓ | – | match | – | – | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |
-| C-009 | facts | ✓ | – | ✓ | ✓ | match | – | ✓ | – | row-count-differs | ✓ | ✓ | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis |
-| C-010 | facts | ✓ | – | ✓ | ✓ | match | – | ✓ | – | row-count-differs | ✓ | ✓ | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis |
+| C-009 | facts | ✓ | – | ✓ | ✓ | match | – | ✓ | ✓ | row-count-differs | ✓ | ✓ | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection |
+| C-010 | facts | ✓ | – | ✓ | ✓ | match | – | ✓ | ✓ | row-count-differs | ✓ | ✓ | selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection |
 | C-011 | facts | ✓ | – | ✓ | ✗ | match | – | ✓ | – | match | – | – | card value 44건 (건) not stated as such on the detail; selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |
-| C-012 | facts | ✓ | – | ✓ | ✗ | match | – | ✓ | ✓ | match | ✓ | ✓ | card value 120건 (건) not stated as such on the detail; selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection |
+| C-012 | facts | ✓ | – | ✓ | ✓ | match | – | ✓ | ✗ | match | ✓ | ✓ | control without effect on the primary analysis: 작은 지도 지역·대상 선택 (지도 또는 목록에서 선택 → Bắc Ninh); selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection |
 | C-013 | facts | ✓ | – | ✓ | ✗ | match | – | ✓ | ✓ | match | ✓ | ✓ | card value 64건 (건) not stated as such on the detail; selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection |
 | C-014 | facts | ✓ | – | ✓ | ✗ | match | – | ✓ | ✓ | match | – | – | card value 93건 (건) not stated as such on the detail; selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; mapHandoffVerified: not a map dataset |
 | C-015 | facts | ✓ | – | ✓ | ✗ | match | – | ✓ | – | match | – | – | card value 20건 (건) not stated as such on the detail; selectionUrlPreserved: card carries no selection; detailAnalysisFit: card carries no selection; controlsVerified: no selectable control in the primary analysis; mapHandoffVerified: not a map dataset |

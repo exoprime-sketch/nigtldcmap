@@ -226,7 +226,8 @@ async function checkElement(context, row) {
       const narrow = await page.evaluate(readScreen);
       const f2 = narrow.blocks[0];
       const s2 = narrow.blocks[1];
-      const between = Boolean(f2 && narrow.slot && narrow.slot.top >= f2.top + f2.height - 4 && (!s2 || narrow.slot.top <= s2.top + 4));
+      const later = narrow.blocks.slice(1);
+      const between = Boolean(f2 && narrow.slot && narrow.slot.top >= f2.top + f2.height - 4 && later.every((block) => narrow.slot.top <= block.top + 4));
       record.checks.mapPlacement = beside && between;
       record.evidence.narrow = { slot: narrow.slot, first: f2 ? { type: f2.type, top: f2.top, height: f2.height } : null, second: s2 ? { type: s2.type, top: s2.top } : null };
       if (!beside) record.issues.push(`map not beside first block at 1440 ${JSON.stringify({ slot: wide.slot, first: first && { left: first.left, width: first.width, top: first.top, height: first.height }, split: wide.split })}`);

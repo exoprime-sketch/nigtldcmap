@@ -82,7 +82,10 @@ describe("V153 visualization contract", () => {
     for (const id of MATRIX_IDS) {
       const row = visualizationContractV153(id)!;
       expect(row.archetype).toBe("matrix");
-      expect(["heatmap", "sorted-table"]).toContain(row.primary.type);
+      // The heatmap is a later phase: this round they open on their text
+      // matrix or cards and say so; a standard row must be the matrix type.
+      if (row.status === "standard") expect(["heatmap", "sorted-table"]).toContain(row.primary.type);
+      else expect(row.note).toMatch(/후속/u);
     }
     for (const id of PRESERVED_IDS) expect(visualizationContractV153(id)!.status).toBe("preserved");
   });

@@ -427,7 +427,24 @@ async function readScreen(page) {
   return page.evaluate(() => {
     const tidy = (value) => String(value || "").normalize("NFC").replace(/\s+/gu, " ").trim();
     const primary = document.querySelector('[data-testid="public-analysis-primary"]');
-    const selects = [...(primary?.querySelectorAll("select") || [])].map((select) => ({
+    // V153-D1: the small map sits inside the primary section beside the first
+    // block; its own selectors (지도 표시 항목·지역·대상) belong to the map, not
+    // to the analysis, exactly as before the move.
+    const analysisSelects = (root) => [...(root?.querySelectorAll("select") || [])].filter((select) => !select.closest('[data-testid="detail-map-slot-v153"]'));
+    // The analysis text without the map slot's own panel (V153-D1).
+    const analysisText = (root) => {
+      if (!root) return "";
+      const slot = root.querySelector('[data-testid="detail-map-slot-v153"]');
+      if (!slot) return root.innerText;
+      const clone = root.cloneNode(true);
+      clone.querySelector('[data-testid="detail-map-slot-v153"]')?.remove();
+      clone.style.position = "absolute"; clone.style.left = "-100000px"; clone.style.width = `${root.clientWidth}px`;
+      document.body.appendChild(clone);
+      const text = clone.innerText;
+      clone.remove();
+      return text;
+    };
+    const selects = analysisSelects(primary).map((select) => ({
       label: tidy(select.getAttribute("aria-label") || select.closest("label")?.querySelector("span")?.textContent || [...(select.closest("label")?.childNodes || [])].filter((node) => node.nodeType === 3).map((node) => node.textContent).join(" ")),
       value: tidy(select.selectedOptions[0]?.textContent),
       options: select.options.length,
@@ -462,8 +479,8 @@ async function readScreen(page) {
       selects,
       selectorsText,
       candidates,
-      primaryNumbers: (tidy(primary?.innerText).match(/-?\d[\d,]*(?:\.\d+)?/gu) || []).slice(0, 400),
-      primaryText: tidy(primary?.innerText),
+      primaryNumbers: (tidy(analysisText(primary)).match(/-?\d[\d,]*(?:\.\d+)?/gu) || []).slice(0, 400),
+      primaryText: tidy(analysisText(primary)),
       url: location.search,
       hasMapButton: [...document.querySelectorAll("button, a")].some((node) => /지도에서 보기/u.test(node.textContent || "")),
     };
@@ -495,14 +512,25 @@ async function analysisFitOf(page, card, screen, claim) {
   const dom = await page.evaluate(() => {
     const primary = document.querySelector('[data-testid="public-analysis-primary"]');
     const tidy = (value) => String(value || "").normalize("NFC").replace(/\s+/gu, " ").trim();
-    const text = tidy(primary?.innerText);
+    // Without the small map's own panel (V153-D1): the fit is about the analysis.
+    const withoutMap = (() => {
+      if (!primary || !primary.querySelector('[data-testid="detail-map-slot-v153"]')) return primary?.innerText;
+      const clone = primary.cloneNode(true);
+      clone.querySelector('[data-testid="detail-map-slot-v153"]')?.remove();
+      clone.style.position = "absolute"; clone.style.left = "-100000px"; clone.style.width = `${primary.clientWidth}px`;
+      document.body.appendChild(clone);
+      const value = clone.innerText;
+      clone.remove();
+      return value;
+    })();
+    const text = tidy(withoutMap);
     return {
       text,
       hasChart: Boolean(primary?.querySelector("svg, canvas, [role='img'], [class*='chart'], [class*='bars'], [class*='stack'], [class*='distribution'], [class*='composition'], .sv125-group-counts")),
       hasTable: Boolean(primary?.querySelector("table")),
       hasChartTable: Boolean(primary?.querySelector('[data-testid="trend-chart-table-v141"], [data-testid*="table"], .psa140__table, table')) || [...(primary?.querySelectorAll("button, summary") || [])].some((node) => /표로 보기/u.test(node.textContent || "")),
       hasList: Boolean(primary?.querySelector("ol, ul, table, article, dl, .sv125-policy-timeline, [data-testid*='directory'], [data-testid*='list'], [data-testid*='grid']")),
-      selectLabels: [...(primary?.querySelectorAll("select") || [])].map((select) => tidy(select.getAttribute("aria-label") || select.closest("label")?.querySelector("span")?.textContent || [...(select.closest("label")?.childNodes || [])].filter((node) => node.nodeType === 3).map((node) => node.textContent).join(" "))),
+      selectLabels: [...(primary?.querySelectorAll("select") || [])].filter((select) => !select.closest('[data-testid="detail-map-slot-v153"]')).map((select) => tidy(select.getAttribute("aria-label") || select.closest("label")?.querySelector("span")?.textContent || [...(select.closest("label")?.childNodes || [])].filter((node) => node.nodeType === 3).map((node) => node.textContent).join(" "))),
       headings: [...(primary?.querySelectorAll("h3, h4, h5") || [])].map((node) => tidy(node.textContent)),
     };
   });
@@ -885,7 +913,7 @@ async function checkElement(context, item) {
           // Same label derivation as readScreen: aria-label, then the label's
           // span, then the label's own text nodes.
           const labelOf = (s) => tidy(s.getAttribute("aria-label") || s.closest("label")?.querySelector("span")?.textContent || [...(s.closest("label")?.childNodes || [])].filter((node) => node.nodeType === 3).map((node) => node.textContent).join(" "));
-          const select = [...primary.querySelectorAll("select")].find((s) => labelOf(s) === labelText);
+          const select = [...primary.querySelectorAll("select")].filter((s) => !s.closest('[data-testid="detail-map-slot-v153"]')).find((s) => labelOf(s) === labelText);
           if (!select) return null;
           const next = [...select.options].find((option, i) => i !== select.selectedIndex && option.value !== "");
           if (!next) return null;

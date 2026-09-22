@@ -1,6 +1,6 @@
-# 상세 계약 QA V153-D1 (2026-09-22T04:39:49.595Z)
+# 상세 계약 QA V153-D1 (2026-09-22T04:46:05.673Z)
 
-- 대상 152개 · 통과 149 · 실패 3 · 예외 행 33개(A-013, A-015, A-017, A-025, A-026, B-001, B-002, B-010, B-013, B-014, B-017, B-022, B-026, B-028, B-036, B-037, B-043, B-044, B-045, C-002, C-005, D-001, D-002, D-003, D-004, D-008, D-009, D-013, D-018, E-002, E-006, E-009, E-017)
+- 대상 152개 · 통과 152 · 실패 0 · 예외 행 33개(A-013, A-015, A-017, A-025, A-026, B-001, B-002, B-010, B-013, B-014, B-017, B-022, B-026, B-028, B-036, B-037, B-043, B-044, B-045, C-002, C-005, D-001, D-002, D-003, D-004, D-008, D-009, D-013, D-018, E-002, E-006, E-009, E-017)
 - primaryTypeMatch: 통과 152 · 실패 0 · 해당 없음 0
 - rankOrder: 통과 152 · 실패 0 · 해당 없음 0
 - axesMatch: 통과 113 · 실패 0 · 해당 없음 39
@@ -12,7 +12,7 @@
 - titleOnce: 통과 152 · 실패 0 · 해당 없음 0
 - sourceLine: 통과 152 · 실패 0 · 해당 없음 0
 - mapPlacement: 통과 42 · 실패 0 · 해당 없음 110
-- overflow320: 통과 149 · 실패 3 · 해당 없음 0
+- overflow320: 통과 152 · 실패 0 · 해당 없음 0
 - console: 통과 152 · 실패 0 · 해당 없음 0
 
 | ID | 계약 1순위 | 첫 블록 | 판정 | 문제 |
@@ -106,8 +106,8 @@
 | C-006 | comparison-table | comparison-table | 통과 |  |
 | C-007 | comparison-table | comparison-table | 통과 |  |
 | C-008 | comparison-table | comparison-table | 통과 |  |
-| C-009 | timeline | timeline | 실패 | 320px overflow 39px |
-| C-010 | timeline | timeline | 실패 | 320px overflow 39px |
+| C-009 | timeline | timeline | 통과 |  |
+| C-010 | timeline | timeline | 통과 |  |
 | C-011 | comparison-table | comparison-table | 통과 |  |
 | C-012 | comparison-table | comparison-table | 통과 |  |
 | C-013 | comparison-table | comparison-table | 통과 |  |
@@ -166,7 +166,7 @@
 | E-015 | comparison-table | comparison-table | 통과 |  |
 | E-016 | comparison-table | comparison-table | 통과 |  |
 | E-017 | comparison-table | comparison-table | 통과 |  |
-| E-018 | category-bar | category-bar | 실패 | 320px overflow 9px |
+| E-018 | category-bar | category-bar | 통과 |  |
 | E-019 | category-bar | category-bar | 통과 |  |
 | E-020 | category-bar | category-bar | 통과 |  |
 

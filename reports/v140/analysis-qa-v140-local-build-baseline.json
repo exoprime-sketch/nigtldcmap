@@ -1,8 +1,32 @@
 {
   "baseline": "reports/v150/analysis-qa-baseline-v150.json",
   "baselineCount": 41,
-  "requiredFailures": 41,
-  "newFailures": [],
-  "resolved": [],
-  "pass": true
+  "requiredFailures": 42,
+  "newFailures": [
+    {
+      "elementId": "A-024",
+      "checks": [
+        "controlsVerified"
+      ],
+      "listed": false
+    },
+    {
+      "elementId": "B-012",
+      "checks": [
+        "controlsVerified"
+      ],
+      "listed": false
+    },
+    {
+      "elementId": "C-012",
+      "checks": [
+        "controlsVerified"
+      ],
+      "listed": true
+    }
+  ],
+  "resolved": [
+    "A-023"
+  ],
+  "pass": false
 }

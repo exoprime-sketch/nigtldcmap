@@ -1,15 +1,11 @@
 {
   "summary": {
-    "generatedAt": "2026-09-22T04:39:49.595Z",
+    "generatedAt": "2026-09-22T04:46:05.673Z",
     "build": "C:\\Users\\user\\Documents\\nigt-wt-d0\\build",
     "elements": 152,
-    "pass": 149,
-    "fail": 3,
-    "failedIds": [
-      "C-009",
-      "C-010",
-      "E-018"
-    ],
+    "pass": 152,
+    "fail": 0,
+    "failedIds": [],
     "byStatus": {
       "standard": 108,
       "preserved": 11,
@@ -107,8 +103,8 @@
         "notApplicable": 110
       },
       "overflow320": {
-        "pass": 149,
-        "fail": 3,
+        "pass": 152,
+        "fail": 0,
         "notApplicable": 0
       },
       "console": {
@@ -8492,7 +8488,7 @@
         "sourceLine": true,
         "nestedTags": true,
         "mapPlacement": true,
-        "overflow320": false,
+        "overflow320": true,
         "console": true
       },
       "evidence": {
@@ -8549,13 +8545,11 @@
           },
           "second": null
         },
-        "overflow320": 39,
+        "overflow320": 0,
         "console": []
       },
-      "issues": [
-        "320px overflow 39px"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "C-010",
@@ -8581,7 +8575,7 @@
         "sourceLine": true,
         "nestedTags": true,
         "mapPlacement": true,
-        "overflow320": false,
+        "overflow320": true,
         "console": true
       },
       "evidence": {
@@ -8638,13 +8632,11 @@
           },
           "second": null
         },
-        "overflow320": 39,
+        "overflow320": 0,
         "console": []
       },
-      "issues": [
-        "320px overflow 39px"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "C-011",
@@ -14214,7 +14206,7 @@
         "sourceLine": true,
         "nestedTags": true,
         "mapPlacement": true,
-        "overflow320": false,
+        "overflow320": true,
         "console": true
       },
       "evidence": {
@@ -14306,13 +14298,11 @@
             "top": 5597
           }
         },
-        "overflow320": 9,
+        "overflow320": 0,
         "console": []
       },
-      "issues": [
-        "320px overflow 9px"
-      ],
-      "pass": false
+      "issues": [],
+      "pass": true
     },
     {
       "elementId": "E-019",
