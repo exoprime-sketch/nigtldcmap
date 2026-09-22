@@ -14,4 +14,5 @@
 - [x] 1 기술 ID 정규화(커밋 72af6d5) · 2 데이터 재투영(dc229ea) · 3~7 컴포넌트·카드·검증 스크립트(b731b0f…a858cad, main 위 rebase)
 - [x] 검증: tsc 0 · unit 233 · screens 36/36 · analysis QA 필수 실패 0
 - [x] 보고서 D0_DATA_DEFECTS.md · PR_BODY_D0.md · 추적표 6행
-- [ ] PR 생성 → Vercel Preview Ready → 사용자 승인 대기(merge 순서: P2b 이후, 사용자 결정)
+- [x] PR #23 생성 · CI static gate BROKEN_ASSET_COUNT 16 → 카드 자산 재생성으로 해소 · rebase 뒤 Vercel 배포 실패 반복은 ignoreCommand의 이전 SHA 미존재(exit 128)가 원인 → 가드 추가 후 Preview Ready(a4316af)
+- [ ] 사용자 승인 대기(merge 순서: P2b 이후, 사용자 결정)

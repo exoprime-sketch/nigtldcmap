@@ -80,6 +80,7 @@
 | `scripts/v153/d0-screens-v153.mjs`(6개 × 320/390/768/1024/1440/1920) | 36/36 통과 · 가로 넘침 0 · 콘솔/HTTP 오류 0 · 찾기 옵션 38 · `technology=07` 새로고침 복원 |
 | `screen-review-v138 --ids 6개 --out reports/v153/screens/v138-review` | ready 6/6 · 오류 0 · 내부 문구 0 |
 | `analysis-qa-v140 --only 6개`(로컬 production 빌드) | 필수 실패 0 — 기준선 41건 중 A-023·C-012 `cardValueVerified` 2건 해소(`reports/v153/qa/analysis-qa-v140-d0.json`) |
+| Vercel Preview | rebase(force-push) 뒤 배포가 즉시 실패 반복 → `scripts/vercel-ignore-build.sh`에서 이전 성공 배포 SHA가 clone에 없으면 build(exit 1)하도록 가드(`verify-ignore-command-v140` PASS, fail-safe 3/3) → a4316af Preview Ready(보호된 URL) |
 | 전체 `finalize:v140` | 미실행(메인 PR에서 1회) |
 
 ## 5. 미완료·보류와 사유
