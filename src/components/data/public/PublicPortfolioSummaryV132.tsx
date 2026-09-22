@@ -352,19 +352,20 @@ export default function PublicPortfolioSummaryV132({
         )}
       </header>
       <div className="pps132-distributions">
-        {analysis.years.length > 0 && (
+        {/* The classes open the screen (V153 contract: category-bar); the years follow. */}
+        {analysis.categories.length > 0 && (
           <section className="d153-block" data-analysis-block="category-bar">
+            <PublicCountDistributionV143 title="주요 분야·기금 구성" rows={analysis.categories} />
+          </section>
+        )}
+        {analysis.years.length > 0 && (
+          <section className="d153-block" data-analysis-block={analysis.years.length >= 3 ? "line" : "category-bar"}>
             <PublicCountDistributionV143
               title={`연도별 ${config?.recordLabel || "사업"} 수`}
               rows={analysis.years}
               testId="portfolio-year-trend-v132"
               chronological
             />
-          </section>
-        )}
-        {analysis.categories.length > 0 && (
-          <section className="d153-block" data-analysis-block="category-bar">
-            <PublicCountDistributionV143 title="주요 분야·기금 구성" rows={analysis.categories} />
           </section>
         )}
         {analysis.categoriesByKey

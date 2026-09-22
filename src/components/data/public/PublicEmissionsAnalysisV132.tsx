@@ -257,8 +257,10 @@ export default function PublicEmissionsAnalysisV132({
     () => completeYearsV132(componentSeries),
     [componentSeries]
   );
+  // "Mt CO2eq" is displayed as "MtCO₂e" since V150; both spellings mean the
+  // gases are already on one warming scale and may be summed.
   const totalIsMeaningful = Boolean(
-    selectedMeasure && (elementId === "A-011" || /co2eq/iu.test(selectedMeasure.unit))
+    selectedMeasure && (elementId === "A-011" || /co2\s*eq|co₂e/iu.test(selectedMeasure.unit))
   );
   const latestComplete = completeYears[completeYears.length - 1] || null;
   const selectedYear =

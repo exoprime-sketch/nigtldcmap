@@ -44,6 +44,7 @@ import { orderBlocksV153 } from "../../../data/visualization/publicVisualization
 import type { AnalysisBlockTypeV153 } from "../../../data/visualization/publicVisualizationContractV153";
 import { useAnalysisContractV153 } from "../public/analysisContractContextV153";
 import { PolicyDocumentDescriptionV153 } from "../public/PolicyDescriptionV153";
+import EntityFacetCountsV153 from "../public/EntityFacetCountsV153";
 
 import "./semantic-contract-renderer-v125.css";
 
@@ -154,7 +155,7 @@ export default function SemanticContractRendererV125({
                 : []),
               { type: "timeline" as const, key: "timeline", node: <PolicyTimelineV125 rows={presentRows} entities={entities} elementId={contract.elementId} primaryType={primaryType} /> },
             ],
-            primaryType
+            primaryType === "comparison-table" ? "timeline" : primaryType
           ).map((block) => <Fragment key={block.key}>{block.node}</Fragment>)}
         </>
       ) : renderer === "evidence-matrix" ? (
@@ -363,11 +364,14 @@ function renderEntityPanelV125(
       );
     case "directory":
       return (
-        <DirectoryEntitiesV125
-          entities={entities}
-          detailTemplate={detailTemplate}
-          elementTitle={elementTitle}
-        />
+        <>
+          <EntityFacetCountsV153 entities={entities} recordLabel="기관" />
+          <DirectoryEntitiesV125
+            entities={entities}
+            detailTemplate={detailTemplate}
+            elementTitle={elementTitle}
+          />
+        </>
       );
     case "policy-timeline":
       return <PolicyTimelineV125 rows={[]} entities={entities} elementId={entities[0]?.elementId} />;
@@ -392,13 +396,16 @@ function renderEntityPanelV125(
       );
     default:
       return (
-        <GenericEntitiesV125
-          entities={entities}
-          countryNameKo={countryNameKo}
-          detailTemplate={detailTemplate}
-          elementTitle={elementTitle}
-          indicatorUnits={indicatorUnits}
-        />
+        <>
+          <EntityFacetCountsV153 entities={entities} />
+          <GenericEntitiesV125
+            entities={entities}
+            countryNameKo={countryNameKo}
+            detailTemplate={detailTemplate}
+            elementTitle={elementTitle}
+            indicatorUnits={indicatorUnits}
+          />
+        </>
       );
   }
 }
@@ -1370,6 +1377,7 @@ function TimelineGroupCountsV141({ entities, elementId }: { entities: VietnamEnt
   const max = items[0][1];
   return (
     <VisualizationFrameV125 eyebrow="유형별" title={`${rule.label} · ${entities.length.toLocaleString("ko-KR")}${rule.noun}`} block="category-bar">
+      <ChartAxesV150 x="건수" y={rule.label} unit={rule.noun} />
       <ol className="sv125-group-counts" data-testid="timeline-group-counts-v141">
         {items.map(([label, count]) => (
           <li key={label}>

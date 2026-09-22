@@ -396,8 +396,11 @@ function RankedOccupationBars({
   );
   const unit = Array.from(units)[0] || "";
   const invalidUnits = units.size > 1;
+  const measureLabel = E012_MEASURE_OPTIONS_V125.find((item) => item.key === selection.measure)?.label || "측정값";
 
   return (
+    <>
+    {!invalidUnits && <ChartAxesV150 x={measureLabel} y="직군" unit={unit} />}
     <div
       className="e012v125__ranked"
       data-testid="e012-ranked-bars"
@@ -488,6 +491,7 @@ function RankedOccupationBars({
         </div>
       </details>
     </div>
+    </>
   );
 }
 

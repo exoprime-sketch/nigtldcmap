@@ -60,15 +60,23 @@ export function kpiTilesV153(
 ): KpiTileV153[] {
   if (!card || card.kind === "status") return [];
   const tiles: KpiTileV153[] = [];
-  // The unit as the headline states it; the measure's unit only when the
-  // headline carries none (a bare count).
-  const headlineUnit = trailingUnitV153(card.headline.value) || displayUnitV150(card.measure?.unit || card.preview?.unit || "");
+  // The unit as the headline states it: the measure's unit when the headline
+  // ends with it (long units carry digits of their own), else the trailing
+  // token, else the measure's unit for a bare count.
+  const statedUnit = [card.measure?.unit, card.preview?.unit]
+    .map((unit) => displayUnitV150(unit || ""))
+    .find((unit) => unit && card.headline.value.trim().endsWith(unit));
+  const headlineUnit = statedUnit || trailingUnitV153(card.headline.value) || displayUnitV150(card.measure?.unit || card.preview?.unit || "");
   const headlineHasNumber = /\d/u.test(card.headline.value);
   if (headlineHasNumber && headlineUnit) {
     tiles.push({ key: "headline", value: card.headline.value, unit: headlineUnit, label: card.headline.label });
   }
   if (card.period && card.period !== "—" && /\d{4}/u.test(card.period)) {
-    tiles.push({ key: "period", value: card.period, unit: "년", label: "자료기간" });
+    // A period stated as a date ("2026-08-10 기준") is a reference day, not years.
+    const dated = !/년/u.test(card.period) && /\d{4}-\d{2}-\d{2}/u.test(card.period);
+    tiles.push(dated
+      ? { key: "period", value: `${card.period.match(/\d{4}-\d{2}-\d{2}/u)?.[0]} 기준일`, unit: "일", label: "자료 기준일" }
+      : { key: "period", value: card.period, unit: "년", label: "자료기간" });
   }
   const populatedObservations = observations.filter(isPopulatedObservation).length;
   const populatedEntities = entities.filter(isPopulatedEntity).length;

@@ -38,10 +38,10 @@
       "archetype": "national-series",
       "primary": {
         "type": "line",
-        "title": "거버넌스 부문별 표준값 추이",
+        "title": "거버넌스 부문별 백분위 추이",
         "xAxis": "연도",
-        "yAxis": "표준값(Estimate)",
-        "unit": "점"
+        "yAxis": "백분위",
+        "unit": "백분위"
       },
       "secondary": [
         {
@@ -134,7 +134,7 @@
         "type": "line",
         "title": "산업구조 비중 추이",
         "xAxis": "연도",
-        "yAxis": "산업 비중",
+        "yAxis": "산업구조",
         "unit": "%"
       },
       "secondary": [
@@ -383,7 +383,7 @@
       "elementId": "A-013",
       "archetype": "matrix",
       "primary": {
-        "type": "sorted-table",
+        "type": "comparison-table",
         "title": "NDC-SDG 연계 정렬표",
         "xAxis": null,
         "yAxis": null,
@@ -406,8 +406,8 @@
           "url": "https://www.iea.org/policies"
         }
       ],
-      "status": "standard",
-      "note": "히트맵 후속(P4)"
+      "status": "exception",
+      "note": "목표 간 연결은 문장값 매트릭스(비교표)로 열림 · 히트맵은 후속(P4)"
     },
     {
       "elementId": "A-014",
@@ -445,9 +445,9 @@
       "primary": {
         "type": "category-bar",
         "title": "SDG 세부지표별 달성도",
-        "xAxis": "정규화 달성도 점수",
+        "xAxis": "세부지표 달성도",
         "yAxis": "SDG 세부지표",
-        "unit": "점"
+        "unit": "점(0~100)"
       },
       "secondary": [
         {
@@ -509,8 +509,8 @@
       "primary": {
         "type": "dumbbell",
         "title": "발전기술별 LCOE 범위와 벤치마크",
-        "xAxis": "LCOE",
-        "yAxis": "발전기술",
+        "xAxis": "균등화 발전비용",
+        "yAxis": "발전원",
         "unit": "USD/MWh"
       },
       "secondary": [
@@ -664,7 +664,7 @@
         "type": "line",
         "title": "정전빈도 추이",
         "xAxis": "연도",
-        "yAxis": "정전빈도(SAIDI/SAIFI/MAIFI)",
+        "yAxis": "MAIFI",
         "unit": "회/고객"
       },
       "secondary": [
@@ -731,7 +731,7 @@
       "primary": {
         "type": "category-bar",
         "title": "전압별 송전선 연장",
-        "xAxis": "선로 연장",
+        "xAxis": "전압별 송전선 길이",
         "yAxis": "전압 등급",
         "unit": "km"
       },
@@ -824,8 +824,8 @@
       "primary": {
         "type": "category-bar",
         "title": "인프라 종류별 지물 건수",
-        "xAxis": "지물 건수",
-        "yAxis": "인프라 종류(도로/철도)",
+        "xAxis": "수록 지물 수",
+        "yAxis": "자료 종류(도로/철도)",
         "unit": "건"
       },
       "secondary": [
@@ -854,8 +854,8 @@
       "primary": {
         "type": "category-bar",
         "title": "해안·수자원 인프라 종류별 지물 건수",
-        "xAxis": "지물 건수",
-        "yAxis": "인프라 종류(항만/댐/저수지)",
+        "xAxis": "수록 지물 수",
+        "yAxis": "자료 종류(항만/댐/저수지)",
         "unit": "건"
       },
       "secondary": [
@@ -915,7 +915,7 @@
         "type": "line",
         "title": "한-베트남 교역 추이",
         "xAxis": "연도",
-        "yAxis": "교역액",
+        "yAxis": "한-베트남 교역",
         "unit": "10억 USD"
       },
       "secondary": [
@@ -1038,7 +1038,7 @@
       "primary": {
         "type": "category-bar",
         "title": "월별 평년강수",
-        "xAxis": "월 평년강수",
+        "xAxis": "월별 평년 강수량",
         "yAxis": "월",
         "unit": "mm"
       },
@@ -1072,7 +1072,7 @@
       "primary": {
         "type": "category-bar",
         "title": "기후대별 점유 면적",
-        "xAxis": "점유 면적",
+        "xAxis": "기후대별 점유 면적",
         "yAxis": "기후대",
         "unit": "km²"
       },
@@ -1332,8 +1332,8 @@
       "primary": {
         "type": "category-bar",
         "title": "CRI 순위·피해 비교",
-        "xAxis": "값",
-        "yAxis": "지표(순위/피해액/인명피해)",
+        "xAxis": "CRI 종합 순위",
+        "yAxis": "지표",
         "unit": "순위"
       },
       "secondary": [
@@ -1396,7 +1396,7 @@
       "primary": {
         "type": "category-bar",
         "title": "유형별 재해 사건 수",
-        "xAxis": "재해 사건 수",
+        "xAxis": "건수",
         "yAxis": "재해 유형",
         "unit": "건"
       },
@@ -1548,11 +1548,11 @@
       "elementId": "B-017",
       "archetype": "national-series",
       "primary": {
-        "type": "category-bar",
-        "title": "등급별 물 스트레스 구역 수",
-        "xAxis": "평가구역 수",
-        "yAxis": "물 스트레스 등급",
-        "unit": "개"
+        "type": "table",
+        "title": "물 스트레스 등급별 평가구역 수",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
       },
       "secondary": [
         {
@@ -1572,7 +1572,7 @@
         }
       ],
       "status": "exception",
-      "note": "Aqueduct 평가구역 경계를 확보하지 못해 지도 연결이 보류 상태이며(B-017 도메인 메모), 등급별 구역 수 막대로 대체"
+      "note": "Aqueduct 평가구역 경계 미확보(지도 보류) · 등급별 평가구역 수 표가 먼저"
     },
     {
       "elementId": "B-018",
@@ -1582,7 +1582,7 @@
         "title": "SSP 시나리오별 GDP 전망",
         "xAxis": "연도",
         "yAxis": "GDP(PPP) 전 구간",
-        "unit": "십억 USD_2017/yr"
+        "unit": "2017년 구매력평가 기준 10억 미국달러/년"
       },
       "secondary": [
         {
@@ -1641,7 +1641,7 @@
         "type": "line",
         "title": "INFORM Risk 종합 추이",
         "xAxis": "연도",
-        "yAxis": "INFORM 종합",
+        "yAxis": "INFORM Risk 시계열",
         "unit": "지수"
       },
       "secondary": [
@@ -1674,7 +1674,7 @@
       "primary": {
         "type": "region-bar",
         "title": "권역별 GVI 취약성 지수",
-        "xAxis": "GVI 취약성 지수",
+        "xAxis": "권역별 GVI",
         "yAxis": "권역",
         "unit": "지수"
       },
@@ -1708,7 +1708,7 @@
       "primary": {
         "type": "category-bar",
         "title": "기후 투자 재원 구성",
-        "xAxis": "재원 규모",
+        "xAxis": "기후 투자 재원 구성",
         "yAxis": "재원 구성(공공/민간)",
         "unit": "십억 US$"
       },
@@ -1828,7 +1828,7 @@
       "primary": {
         "type": "category-bar",
         "title": "선택 성·시의 유향별 비율",
-        "xAxis": "방향별 비율",
+        "xAxis": "8방향별 격자 비율",
         "yAxis": "유향(8방향)",
         "unit": "%"
       },
@@ -2160,11 +2160,11 @@
       "elementId": "B-037",
       "archetype": "composition",
       "primary": {
-        "type": "category-bar",
-        "title": "토지피복 분류별 면적",
-        "xAxis": "면적",
-        "yAxis": "토지피복 분류",
-        "unit": "km²"
+        "type": "table",
+        "title": "성·시별 토지피복 면적",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
       },
       "secondary": [
         {
@@ -2184,7 +2184,7 @@
         }
       ],
       "status": "exception",
-      "note": "ESA WorldCover 자료가 2021년 단일 연도만 제공되어 절대량 누적영역(연도별 추이) 대신 분류별 면적 막대로 대체"
+      "note": "ESA WorldCover 2021년 단일 시점이라 연도별 누적영역 불가 · 분류별 면적은 성·시 값이므로 지역 비교표가 먼저"
     },
     {
       "elementId": "B-038",
@@ -2252,7 +2252,7 @@
       "primary": {
         "type": "region-bar",
         "title": "성·시별 심도 1km 지온",
-        "xAxis": "심도 1km 지온(평균)",
+        "xAxis": "심도 2km 지온(평균)",
         "yAxis": "성·시",
         "unit": "°C"
       },
@@ -2370,7 +2370,7 @@
       "elementId": "B-044",
       "archetype": "matrix",
       "primary": {
-        "type": "sorted-table",
+        "type": "cards-list",
         "title": "광물별 자원·규정 조건 정렬표",
         "xAxis": null,
         "yAxis": null,
@@ -2393,8 +2393,8 @@
           "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=VN&view=chart"
         }
       ],
-      "status": "standard",
-      "note": "히트맵 후속(P4)"
+      "status": "exception",
+      "note": "광물별 자원·규정 조건은 문장값이라 정렬표 대신 근거 카드 목록으로 열림 · 매트릭스는 후속(P4)"
     },
     {
       "elementId": "B-045",
@@ -2460,11 +2460,11 @@
       "elementId": "B-047",
       "archetype": "national-series",
       "primary": {
-        "type": "category-bar",
-        "title": "광물별 세계 생산량 비중",
-        "xAxis": "세계 광산 생산량 비중",
-        "yAxis": "광물",
-        "unit": "%"
+        "type": "table",
+        "title": "광물별 연간 생산량",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
       },
       "secondary": [
         {
@@ -2492,7 +2492,7 @@
       "primary": {
         "type": "category-bar",
         "title": "광종별 광산 수",
-        "xAxis": "광산 수",
+        "xAxis": "항목 수",
         "yAxis": "광종",
         "unit": "곳"
       },
@@ -2524,8 +2524,8 @@
       "elementId": "C-001",
       "archetype": "policy-document",
       "primary": {
-        "type": "timeline",
-        "title": "NDC 목표·이행조건 연혁",
+        "type": "comparison-table",
+        "title": "NDC 2030 감축목표 비교",
         "xAxis": null,
         "yAxis": null,
         "unit": null
@@ -2552,13 +2552,13 @@
     },
     {
       "elementId": "C-002",
-      "archetype": "policy-document",
+      "archetype": "national-series",
       "primary": {
-        "type": "timeline",
-        "title": "BTR 제출·보고 연혁",
-        "xAxis": null,
-        "yAxis": null,
-        "unit": null
+        "type": "category-bar",
+        "title": "부문별 배출량(2016 BUR3)",
+        "xAxis": "배출량",
+        "yAxis": "부문",
+        "unit": "GgCO₂e"
       },
       "secondary": [
         {
@@ -2577,15 +2577,15 @@
           "url": "https://www.iea.org/policies"
         }
       ],
-      "status": "standard",
-      "note": ""
+      "status": "exception",
+      "note": "BUR3(2016) 단일 시점 부문별 인벤토리 수치라 추이선 대신 부문별 막대"
     },
     {
       "elementId": "C-003",
       "archetype": "policy-document",
       "primary": {
-        "type": "timeline",
-        "title": "NAP 적응 우선분야 연혁",
+        "type": "comparison-table",
+        "title": "적응 우선 분야·조치 비교",
         "xAxis": null,
         "yAxis": null,
         "unit": null
@@ -2614,8 +2614,8 @@
       "elementId": "C-004",
       "archetype": "policy-document",
       "primary": {
-        "type": "timeline",
-        "title": "LT-LEDS 감축경로 연혁",
+        "type": "comparison-table",
+        "title": "장기 시나리오별 목표 비교",
         "xAxis": null,
         "yAxis": null,
         "unit": null
@@ -2644,7 +2644,7 @@
       "elementId": "C-005",
       "archetype": "matrix",
       "primary": {
-        "type": "sorted-table",
+        "type": "comparison-table",
         "title": "기술·장벽·우선순위 매트릭스",
         "xAxis": null,
         "yAxis": null,
@@ -2662,15 +2662,15 @@
           "url": "https://unfccc.int/es/node/627860"
         }
       ],
-      "status": "standard",
-      "note": "히트맵 후속(P4)"
+      "status": "exception",
+      "note": "부문×우선순위 매트릭스는 문장값 비교표로 열림 · 히트맵·정렬표는 후속(P4)"
     },
     {
       "elementId": "C-006",
       "archetype": "policy-document",
       "primary": {
-        "type": "timeline",
-        "title": "ITMO 양자협정 연혁",
+        "type": "comparison-table",
+        "title": "협정·승인체계 현황",
         "xAxis": null,
         "yAxis": null,
         "unit": null
@@ -2729,8 +2729,8 @@
       "elementId": "C-008",
       "archetype": "policy-document",
       "primary": {
-        "type": "timeline",
-        "title": "기후 이니셔티브 참여 연혁",
+        "type": "comparison-table",
+        "title": "이니셔티브 참여 현황",
         "xAxis": null,
         "yAxis": null,
         "unit": null
@@ -3031,8 +3031,8 @@
       "primary": {
         "type": "category-bar",
         "title": "2030·2050 전원구성 계획",
-        "xAxis": "설비용량 계획(하한~상한)",
-        "yAxis": "전원(기술)",
+        "xAxis": "계획 설비용량",
+        "yAxis": "전원",
         "unit": "MW"
       },
       "secondary": [
@@ -3061,7 +3061,7 @@
       "primary": {
         "type": "region-bar",
         "title": "성·시별 탄소시장 의무시설",
-        "xAxis": "인벤토리 의무대상 시설 수",
+        "xAxis": "시설 수",
         "yAxis": "성·시",
         "unit": "개소"
       },
@@ -3141,7 +3141,7 @@
       "primary": {
         "type": "region-bar",
         "title": "성·시별 탄소시장 대상시설",
-        "xAxis": "탄소시장 대상시설 수",
+        "xAxis": "시설 수",
         "yAxis": "성·시",
         "unit": "개소"
       },
@@ -3194,8 +3194,8 @@
       "elementId": "C-024",
       "archetype": "policy-document",
       "primary": {
-        "type": "timeline",
-        "title": "REDD+ 이행 연혁",
+        "type": "comparison-table",
+        "title": "REDD+ 이행 단계 현황",
         "xAxis": null,
         "yAxis": null,
         "unit": null
@@ -3226,7 +3226,7 @@
       "primary": {
         "type": "category-bar",
         "title": "등록표준별 탄소크레딧 실적",
-        "xAxis": "프로젝트 수",
+        "xAxis": "건수",
         "yAxis": "등록 표준",
         "unit": "건"
       },
@@ -3260,7 +3260,7 @@
       "primary": {
         "type": "category-bar",
         "title": "기술별 단위 투자비 비교",
-        "xAxis": "단위 사업당 CAPEX",
+        "xAxis": "기술별 투자비 중앙값",
         "yAxis": "발전기술",
         "unit": "USD/kW"
       },
@@ -3290,7 +3290,7 @@
       "primary": {
         "type": "category-bar",
         "title": "분야별 시장 성장률 비교",
-        "xAxis": "시장 성장률(CAGR)",
+        "xAxis": "시장 성장률",
         "yAxis": "기술 분야",
         "unit": "%"
       },
@@ -3350,7 +3350,7 @@
       "primary": {
         "type": "category-bar",
         "title": "기술·시나리오별 회수율 비교",
-        "xAxis": "크레딧 수익 회수율",
+        "xAxis": "크레딧 가격 연동 수익성",
         "yAxis": "발전기술",
         "unit": "%"
       },
@@ -3380,8 +3380,8 @@
       "primary": {
         "type": "category-bar",
         "title": "감축·적응 예산 배분 비중",
-        "xAxis": "예산 배분 비중",
-        "yAxis": "구분(감축/적응/복합)",
+        "xAxis": "예산 비중",
+        "yAxis": "구분",
         "unit": "%"
       },
       "secondary": [
@@ -3438,8 +3438,8 @@
       "elementId": "D-007",
       "archetype": "policy-document",
       "primary": {
-        "type": "comparison-table",
-        "title": "기후예산태깅 도입수준",
+        "type": "timeline",
+        "title": "기후예산 태깅 도입 연혁",
         "xAxis": null,
         "yAxis": null,
         "unit": null
@@ -3466,12 +3466,12 @@
     },
     {
       "elementId": "D-008",
-      "archetype": "province-distribution",
+      "archetype": "national-series",
       "primary": {
-        "type": "region-bar",
-        "title": "부처·지역별 기후예산 규모",
-        "xAxis": "기후예산 비중",
-        "yAxis": "성·시",
+        "type": "category-bar",
+        "title": "주관 부처별 기후 예산 비중",
+        "xAxis": "주관 부처별 기후 예산 규모",
+        "yAxis": "부처",
         "unit": "%"
       },
       "secondary": [
@@ -3495,8 +3495,8 @@
           "url": "https://data.greenclimate.fund/public"
         }
       ],
-      "status": "standard",
-      "note": ""
+      "status": "exception",
+      "note": "부처별 예산 비중이 주 분석, 지역값 3개는 지도에서 확인"
     },
     {
       "elementId": "D-009",
@@ -3504,7 +3504,7 @@
       "primary": {
         "type": "category-bar",
         "title": "GDP대비 기후지출 비중",
-        "xAxis": "GDP 대비 기후지출 비중",
+        "xAxis": "기후대응 정부 예산",
         "yAxis": "연도",
         "unit": "%"
       },
@@ -3565,8 +3565,8 @@
         "type": "line",
         "title": "공여자별 총 ODA 추이",
         "xAxis": "연도",
-        "yAxis": "총 ODA",
-        "unit": "USD"
+        "yAxis": "공적개발원조 지출액",
+        "unit": "USD (2024년 불변가격)"
       },
       "secondary": [
         {
@@ -3594,9 +3594,9 @@
       "primary": {
         "type": "category-bar",
         "title": "기술분야별 경쟁국 진출기업",
-        "xAxis": "기업 수",
+        "xAxis": "건수",
         "yAxis": "기술 분야",
-        "unit": "곳"
+        "unit": "건"
       },
       "secondary": [
         {
@@ -3628,7 +3628,7 @@
       "primary": {
         "type": "category-bar",
         "title": "녹색성장지수 부문별 점수",
-        "xAxis": "GGGI 점수",
+        "xAxis": "GGGI Green Growth Index",
         "yAxis": "부문·차원",
         "unit": "점"
       },
@@ -3658,7 +3658,7 @@
       "primary": {
         "type": "category-bar",
         "title": "원조유형별 EDCF 사업",
-        "xAxis": "사업 수",
+        "xAxis": "건수",
         "yAxis": "원조 유형",
         "unit": "건"
       },
@@ -3692,7 +3692,7 @@
       "primary": {
         "type": "category-bar",
         "title": "상태별 ODA Korea 사업",
-        "xAxis": "사업 기록 수",
+        "xAxis": "건수",
         "yAxis": "상태",
         "unit": "건"
       },
@@ -3726,7 +3726,7 @@
       "primary": {
         "type": "category-bar",
         "title": "기관유형별 지자체·부처 사업",
-        "xAxis": "사업 기록 수",
+        "xAxis": "건수",
         "yAxis": "기관 유형",
         "unit": "건"
       },
@@ -3760,7 +3760,7 @@
       "primary": {
         "type": "category-bar",
         "title": "분야별 PCP·입찰 공고",
-        "xAxis": "공고 수",
+        "xAxis": "건수",
         "yAxis": "분야",
         "unit": "건"
       },
@@ -3792,11 +3792,11 @@
       "elementId": "D-018",
       "archetype": "registry",
       "primary": {
-        "type": "category-bar",
-        "title": "Adaptation Fund 승인·집행",
-        "xAxis": "금액",
-        "yAxis": "구분",
-        "unit": "USD"
+        "type": "table",
+        "title": "적응기금 사업별 승인액",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
       },
       "secondary": [
         {
@@ -3819,8 +3819,8 @@
           "url": "https://datacatalog.worldbank.org/search/dataset/0037800/world-bank-projects-operations"
         }
       ],
-      "status": "standard",
-      "note": ""
+      "status": "exception",
+      "note": "베트남 단독·다국가 사업 4건의 승인액은 표로 먼저(다국가 총액 합산 금지)"
     },
     {
       "elementId": "D-019",
@@ -3828,7 +3828,7 @@
       "primary": {
         "type": "category-bar",
         "title": "기술유형별 CTCN 지원요청",
-        "xAxis": "기술지원 요청 수",
+        "xAxis": "건수",
         "yAxis": "기술 유형",
         "unit": "건"
       },
@@ -3862,7 +3862,7 @@
       "primary": {
         "type": "category-bar",
         "title": "분야별 GCF 사업 현황",
-        "xAxis": "사업 수",
+        "xAxis": "건수",
         "yAxis": "분야",
         "unit": "건"
       },
@@ -3896,7 +3896,7 @@
       "primary": {
         "type": "category-bar",
         "title": "상태별 국제기구 지원활동",
-        "xAxis": "지원 활동 수",
+        "xAxis": "건수",
         "yAxis": "활동 상태",
         "unit": "건"
       },
@@ -3930,7 +3930,7 @@
       "primary": {
         "type": "category-bar",
         "title": "투자유형별 MDB·DFI 사업",
-        "xAxis": "사업 수",
+        "xAxis": "건수",
         "yAxis": "투자 유형",
         "unit": "건"
       },
@@ -3964,7 +3964,7 @@
       "primary": {
         "type": "category-bar",
         "title": "기금별 기후재원 사업",
-        "xAxis": "사업 수",
+        "xAxis": "건수",
         "yAxis": "기금",
         "unit": "건"
       },
@@ -3998,7 +3998,7 @@
       "primary": {
         "type": "category-bar",
         "title": "라운드별 VC·임팩트투자",
-        "xAxis": "투자 건 수",
+        "xAxis": "건수",
         "yAxis": "투자 라운드",
         "unit": "건"
       },
@@ -4032,7 +4032,7 @@
       "primary": {
         "type": "category-bar",
         "title": "투자유형별 민간인프라 사업",
-        "xAxis": "사업 수",
+        "xAxis": "건수",
         "yAxis": "투자 유형",
         "unit": "건"
       },
@@ -4066,7 +4066,7 @@
       "primary": {
         "type": "category-bar",
         "title": "보증유형별 MIGA 보증사업",
-        "xAxis": "보증사업 수",
+        "xAxis": "건수",
         "yAxis": "보증 유형",
         "unit": "건"
       },
@@ -4101,7 +4101,7 @@
         "type": "category-bar",
         "title": "역할별 NDE 관련기관",
         "xAxis": "기관 수",
-        "yAxis": "역할 구분",
+        "yAxis": "기관 분류",
         "unit": "곳"
       },
       "secondary": [
@@ -4164,8 +4164,8 @@
       "primary": {
         "type": "category-bar",
         "title": "기관별 GCF 협의창구 연락처",
-        "xAxis": "담당자 수",
-        "yAxis": "기관",
+        "xAxis": "기관 수",
+        "yAxis": "역할",
         "unit": "명"
       },
       "secondary": [
@@ -4198,7 +4198,7 @@
       "primary": {
         "type": "category-bar",
         "title": "기관유형별 국제기구 사무소",
-        "xAxis": "현지사무소 수",
+        "xAxis": "기관 수",
         "yAxis": "기관 유형",
         "unit": "곳"
       },
@@ -4233,7 +4233,7 @@
         "type": "category-bar",
         "title": "도시별 연구·파트너기관",
         "xAxis": "기관 수",
-        "yAxis": "도시",
+        "yAxis": "기관 유형",
         "unit": "곳"
       },
       "secondary": [
@@ -4326,12 +4326,12 @@
     },
     {
       "elementId": "E-008",
-      "archetype": "national-series",
+      "archetype": "registry",
       "primary": {
-        "type": "line",
-        "title": "연도별 논문·특허 추이",
-        "xAxis": "연도",
-        "yAxis": "논문·특허 수",
+        "type": "category-bar",
+        "title": "논문 목록의 발행연도별 건수",
+        "xAxis": "건수",
+        "yAxis": "발행연도",
         "unit": "건"
       },
       "secondary": [
@@ -4360,7 +4360,7 @@
       "primary": {
         "type": "category-bar",
         "title": "STEM 졸업 비중",
-        "xAxis": "STEM 졸업 비중(남성)",
+        "xAxis": "STEM 전공 비중",
         "yAxis": "연도",
         "unit": "%"
       },
@@ -4391,7 +4391,7 @@
         "type": "line",
         "title": "GERD 연구개발비 비중 추이",
         "xAxis": "연도",
-        "yAxis": "GDP 대비 R&D 총지출 비율",
+        "yAxis": "GERD",
         "unit": "%"
       },
       "secondary": [
@@ -4588,11 +4588,11 @@
       "elementId": "E-017",
       "archetype": "national-series",
       "primary": {
-        "type": "category-bar",
+        "type": "comparison-table",
         "title": "국가별 기후기술 순위 비교",
-        "xAxis": "기후기술 수준 순위",
-        "yAxis": "국가",
-        "unit": "위"
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
       },
       "secondary": [
         {
@@ -4612,7 +4612,7 @@
         }
       ],
       "status": "exception",
-      "note": "2020년 단일 시점 국가별 순위만 있어 추이선 대신 국가별 막대"
+      "note": "국가별 순위 비교표로 열림 · 순위 막대(대상국 라벨 복원)는 후속(P4)"
     },
     {
       "elementId": "E-018",
@@ -4620,9 +4620,9 @@
       "primary": {
         "type": "category-bar",
         "title": "상태별 한국기업 진출",
-        "xAxis": "기업 수",
+        "xAxis": "건수",
         "yAxis": "진출 상태",
-        "unit": "곳"
+        "unit": "건"
       },
       "secondary": [
         {
@@ -4654,8 +4654,8 @@
       "primary": {
         "type": "category-bar",
         "title": "설치여부별 한국기관 사무소",
-        "xAxis": "현지 사무소 수",
-        "yAxis": "기관",
+        "xAxis": "기관 수",
+        "yAxis": "도시",
         "unit": "곳"
       },
       "secondary": [
@@ -4688,7 +4688,7 @@
       "primary": {
         "type": "category-bar",
         "title": "제도별 지원사례 현황",
-        "xAxis": "활용 사례 수",
+        "xAxis": "건수",
         "yAxis": "지원제도",
         "unit": "건"
       },

@@ -55,6 +55,15 @@ function unitMatches(contractUnit: string | null, screenUnit: string | null): bo
   return expected === actual;
 }
 
+/** The block's own axes, or the axes stated directly above it (the V150 convention). */
+export function axesOfBlockV153(block: Element | null): HTMLElement | null {
+  if (!block) return null;
+  const inside = block.querySelector<HTMLElement>(".chart-axes-v150");
+  if (inside) return inside;
+  const previous = block.previousElementSibling;
+  return previous instanceof HTMLElement && previous.classList.contains("chart-axes-v150") ? previous : null;
+}
+
 export function judgeFirstBlockV153(
   contract: VisualizationContractRowV153 | null,
   firstBlockType: string | null
@@ -140,7 +149,7 @@ export default function DetailAnalysisFrameV153({ elementId, children }: Props) 
       // The verdicts the QA reads, and a console warning for a mismatch.
       const firstType = (first?.getAttribute("data-analysis-block") as AnalysisBlockTypeV153 | null) || null;
       const verdict = judgeFirstBlockV153(contract, firstType);
-      const axesNode = first?.querySelector<HTMLElement>(".chart-axes-v150") || null;
+      const axesNode = axesOfBlockV153(first);
       const axes = axesNode
         ? {
             x: axesNode.getAttribute("data-x-axis"),
