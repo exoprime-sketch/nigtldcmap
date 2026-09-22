@@ -234,7 +234,7 @@ export default function OdaProviderAnalysisV134({
       data-testid="d011-specialized-analysis"
     >
 
-      <section className="osa134__panel" aria-labelledby="osa134-total-title">
+      <section className="osa134__panel" data-analysis-block="line" aria-labelledby="osa134-total-title">
         <header className="osa134__heading">
           <div>
             <span>주 분석</span>
@@ -256,7 +256,7 @@ export default function OdaProviderAnalysisV134({
         />
       </section>
 
-      <section className="osa134__panel" aria-labelledby="osa134-ranking-title">
+      <section className="osa134__panel" data-analysis-block="category-bar" aria-labelledby="osa134-ranking-title">
         <header className="osa134__heading">
           <div>
             <span>공여자 비교</span>
@@ -276,7 +276,7 @@ export default function OdaProviderAnalysisV134({
         </div>
       </section>
 
-      <section className="osa134__panel" aria-labelledby="osa134-provider-title">
+      <section className="osa134__panel" data-analysis-block="line" aria-labelledby="osa134-provider-title">
         <header className="osa134__heading osa134__heading--selector">
           <div>
             <span>보조 분석</span>
@@ -318,7 +318,7 @@ export default function OdaProviderAnalysisV134({
         ) : <div className="pav126-empty" role="status">선택한 공여자의 공개값이 없습니다.</div>}
       </section>
 
-      <details className="osa134__table" data-testid="d011-provider-table">
+      <details className="osa134__table" data-analysis-block="table" data-testid="d011-provider-table">
         <summary>공여자별 공개값 보기 · 값 있음 {tableRows.length.toLocaleString("ko-KR")}행 · 개별 공여자와 하위기구를 구분해 표시</summary>
         <PublicTermHelpV134 text="ODA · USD · OECD · CRS" />
         <div className="cdp-table-wrap">

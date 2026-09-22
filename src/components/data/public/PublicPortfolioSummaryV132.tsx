@@ -353,30 +353,38 @@ export default function PublicPortfolioSummaryV132({
       </header>
       <div className="pps132-distributions">
         {analysis.years.length > 0 && (
-          <PublicCountDistributionV143
-            title={`연도별 ${config?.recordLabel || "사업"} 수`}
-            rows={analysis.years}
-            testId="portfolio-year-trend-v132"
-            chronological
-          />
+          <section className="d153-block" data-analysis-block="category-bar">
+            <PublicCountDistributionV143
+              title={`연도별 ${config?.recordLabel || "사업"} 수`}
+              rows={analysis.years}
+              testId="portfolio-year-trend-v132"
+              chronological
+            />
+          </section>
         )}
         {analysis.categories.length > 0 && (
-          <PublicCountDistributionV143 title="주요 분야·기금 구성" rows={analysis.categories} />
+          <section className="d153-block" data-analysis-block="category-bar">
+            <PublicCountDistributionV143 title="주요 분야·기금 구성" rows={analysis.categories} />
+          </section>
         )}
         {analysis.categoriesByKey
           .filter((entry) => entry.rows.map((row) => `${row.label}:${row.value}`).join("|") !== analysis.categories.map((row) => `${row.label}:${row.value}`).join("|"))
           .slice(0, 3)
           .map((entry) => (
-            <PublicCountDistributionV143 key={entry.key} title={`${entry.label}별 ${config?.recordLabel || "사업"} 수`} rows={entry.rows} testId={`portfolio-category-${entry.key}-v141`} />
+            <section className="d153-block" data-analysis-block="category-bar" key={entry.key}>
+              <PublicCountDistributionV143 title={`${entry.label}별 ${config?.recordLabel || "사업"} 수`} rows={entry.rows} testId={`portfolio-category-${entry.key}-v141`} />
+            </section>
           ))}
       </div>
-      <AnalysisSummaryTableV146 title="건수·금액 집계표" rows={[
-        ...(identity.identityCount !== null ? [{ label: `${config?.identityLabel || "고유 항목"} 수`, value: identity.identityCount, unit: config?.identityLabel === "지원제도" ? "개" : "곳" }] : []),
-        { key: "record-count", label: `${config?.recordLabel || "사업"} 수`, value: analysis.individualCount, unit: "건", context: analysis.yearRange || "수록 자료 기준" },
-        ...(analysis.yearRange ? [{ key: "year-range", label: "자료기간", value: analysis.yearRange, context: "수록 자료 기준" }] : []),
-        ...identity.statusRows.map((row) => ({ label: `${config?.statusGroups?.label || "상태"} · ${row.label}`, value: row.value, unit: "건" })),
-        ...analysis.amounts.map((amount) => ({ label: config?.amountLabel || "확인 금액 합계", value: amount.value, unit: amount.currency, context: `금액이 기재된 ${amount.count.toLocaleString("ko-KR")}건` })),
-      ]} />
+      <section className="d153-block" data-analysis-block="table">
+        <AnalysisSummaryTableV146 title="건수·금액 집계표" rows={[
+          ...(identity.identityCount !== null ? [{ label: `${config?.identityLabel || "고유 항목"} 수`, value: identity.identityCount, unit: config?.identityLabel === "지원제도" ? "개" : "곳" }] : []),
+          { key: "record-count", label: `${config?.recordLabel || "사업"} 수`, value: analysis.individualCount, unit: "건", context: analysis.yearRange || "수록 자료 기준" },
+          ...(analysis.yearRange ? [{ key: "year-range", label: "자료기간", value: analysis.yearRange, context: "수록 자료 기준" }] : []),
+          ...identity.statusRows.map((row) => ({ label: `${config?.statusGroups?.label || "상태"} · ${row.label}`, value: row.value, unit: "건" })),
+          ...analysis.amounts.map((amount) => ({ label: config?.amountLabel || "확인 금액 합계", value: amount.value, unit: amount.currency, context: `금액이 기재된 ${amount.count.toLocaleString("ko-KR")}건` })),
+        ]} />
+      </section>
     </section>
   );
 }

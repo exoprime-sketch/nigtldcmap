@@ -139,7 +139,7 @@ export default function PowerPlantRegistrySummaryV138({ entities: sourceEntities
           const rows = summary.fuel.filter(([, e]) => e[key] > 0);
           const capacityRows = rows.map(([label, e]) => ({ id: label, label, value: e[key === "wri" ? "wriStated" : "osmStated"] ? e[key === "wri" ? "wriMw" : "osmMw"] : null })).sort((a, b) => (b.value || 0) - (a.value || 0));
           const countRows = rows.map(([label, e]) => ({ id: label, label, value: e[key] })).sort((a, b) => b.value - a.value);
-          return <section key={key}><AnalysisBarsV147 rows={capacityRows} title={`발전원별 설비용량 · ${sourceName(key)}`} unit="MW" /><AnalysisBarsV147 rows={countRows} title={`발전원별 시설 수 · ${sourceName(key)}`} unit={key === "wri" ? "기" : "곳"} />{!rows.length && <p role="status">선택한 조건의 시설이 없습니다. 출처·발전원·설비용량 조건을 바꿔 주세요.</p>}</section>;
+          return <section key={key}><section className="d153-block" data-analysis-block="category-bar"><AnalysisBarsV147 rows={capacityRows} title={`발전원별 설비용량 · ${sourceName(key)}`} unit="MW" /></section><section className="d153-block" data-analysis-block="category-bar"><AnalysisBarsV147 rows={countRows} title={`발전원별 시설 수 · ${sourceName(key)}`} unit={key === "wri" ? "기" : "곳"} /></section>{!rows.length && <p role="status">선택한 조건의 시설이 없습니다. 출처·발전원·설비용량 조건을 바꿔 주세요.</p>}</section>;
         })}
         {/* The registry totals, stated in a sentence (V153): the table below is folded. */}
         <p data-testid="power-plant-registry-totals-v153">
@@ -150,7 +150,7 @@ export default function PowerPlantRegistrySummaryV138({ entities: sourceEntities
       </div>
       <details className="detail146-details"><summary>표로 보기 · 출처별 발전원·시설 수·설비용량</summary>
       <div className="pps132-distributions">
-        <section className="pps132-distribution pps132-distribution--table" data-portfolio-distribution="true" data-testid="power-plant-fuel-distribution-v138">
+        <section className="pps132-distribution pps132-distribution--table" data-analysis-block="sorted-table" data-portfolio-distribution="true" data-testid="power-plant-fuel-distribution-v138">
           <h5>발전원별 시설 수와 설비용량 · 원천별</h5>
           <div className="pps132-table-wrap">
             <table>
@@ -196,12 +196,12 @@ export default function PowerPlantRegistrySummaryV138({ entities: sourceEntities
         <h3>발전소 목록 · {sourceLabel}</h3>
         <label>시설명 검색 <input type="search" value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }} placeholder="발전소 이름" /></label>
         <p>{plantList.length.toLocaleString("ko-KR")}곳 · 이름순 · {pageIndex + 1}/{Math.max(1, Math.ceil(plantList.length / 20))}쪽</p>
-        <div className="pps132-table-wrap"><table><caption>선택한 출처·발전원·설비용량 조건의 시설 목록. 위치는 아래 지도에서 확인할 수 있습니다.</caption>
+        <div className="pps132-table-wrap" data-analysis-block="table"><table><caption>선택한 출처·발전원·설비용량 조건의 시설 목록. 위치는 아래 지도에서 확인할 수 있습니다.</caption>
           <thead><tr><th scope="col">시설명</th><th scope="col">발전원</th><th scope="col">설비용량(MW)</th><th scope="col">소유·운영</th><th scope="col">소재지(34개 기준)</th><th scope="col">원문</th></tr></thead>
           <tbody>{plantList.slice(pageIndex * 20, (pageIndex + 1) * 20).map(({ row: r, name }) => { const a = r.normalizedAttributes; const url = publicSourceUrlV126(String(a.sourceUrl || r.provenance.sourceUrl || "")); return <tr key={r.recordId} data-selected={selectedId === r.recordId ? "true" : "false"}><th scope="row"><button type="button" className="d153-list-button" aria-pressed={selectedId === r.recordId} onClick={() => setSelectedId(selectedId === r.recordId ? null : r.recordId)}>{name}</button></th><td>{String(a.fuelType || "미기재")}</td><td>{capacityOf(a) === null ? "미기재" : formatPublicNumberV126(capacityOf(a)!, "MW")}</td><td>{String(a.owner || a.operator || a.field_4cf75655 || "미기재")}</td><td>{provinceOf(a)}</td><td>{url ? <a href={url} target="_blank" rel="noreferrer">출처 확인</a> : "—"}</td></tr>; })}</tbody>
         </table></div>
         {selectedPlant ? (
-          <div className="d153-selected" data-testid="power-plant-selected-v153">
+          <div className="d153-selected" data-analysis-block="cards-list" data-testid="power-plant-selected-v153">
             <FacilityCardV153 elementId="A-023" entity={selectedPlant.row} title={selectedPlant.name} />
           </div>
         ) : <p className="detail146-note">시설명을 누르면 국가·명칭·발전원·소유·운영·설비용량·가동 연도·소재지·자료 출처 카드가 열립니다.</p>}
