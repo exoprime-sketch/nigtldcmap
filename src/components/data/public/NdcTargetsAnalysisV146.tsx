@@ -16,7 +16,7 @@ export default function NdcTargetsAnalysisV146({ entities }: { entities: Vietnam
   const bau = model.rows.filter((row) => row.indicatorId === "C-001_bau_projection" && /^(19|20)\d{2}/.test(row.name));
   return <section className="detail146" data-testid="ndc-targets-v146">
     <p><PublicTermTextV134 text="2022년 제출 NDC 기준입니다. 국제지원 조건부 목표는 자체 이행분을 포함한 전체 목표이며, 두 목표를 더하지 않습니다." /></p>
-    <div className="detail146-table" data-analysis-block="table"><table><caption>2030년 목표 · 2022년 NDC</caption>
+    <div className="detail146-table" data-analysis-block="comparison-table"><table><caption>2030년 목표 · 2022년 NDC</caption>
       <thead><tr><th scope="col">항목</th><th scope="col">자체 이행</th><th scope="col">국제지원 시 전체</th><th scope="col">단위</th></tr></thead>
       <tbody>{model.totals.map((row) => <tr key={row.label}><th scope="row">{row.label}</th><td>{number(row.own)}</td><td>{number(row.supported)}</td><td><PublicTermTextV134 text={row.unit} /></td></tr>)}</tbody>
     </table></div>

@@ -1488,8 +1488,8 @@
       "elementId": "B-015",
       "archetype": "policy-document",
       "primary": {
-        "type": "comparison-table",
-        "title": "탄소가격 제도 조건표",
+        "type": "timeline",
+        "title": "탄소가격 제도 연대기",
         "xAxis": null,
         "yAxis": null,
         "unit": null
@@ -2556,9 +2556,9 @@
       "primary": {
         "type": "category-bar",
         "title": "부문별 배출량(2016 BUR3)",
-        "xAxis": "배출량",
+        "xAxis": "부문별 순배출량",
         "yAxis": "부문",
-        "unit": "GgCO₂e"
+        "unit": "ktCO₂e"
       },
       "secondary": [
         {
@@ -3380,8 +3380,8 @@
       "primary": {
         "type": "category-bar",
         "title": "감축·적응 예산 배분 비중",
-        "xAxis": "예산 비중",
-        "yAxis": "구분",
+        "xAxis": "배분 비중",
+        "yAxis": "지출 항목",
         "unit": "%"
       },
       "secondary": [

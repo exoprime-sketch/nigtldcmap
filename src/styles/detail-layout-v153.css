@@ -148,3 +148,27 @@
 .d153-block {
   min-width: 0;
 }
+
+/* ---- phone width: selectors and card badges wrap instead of widening ------ */
+.prs137__controls label,
+.prs137__controls select,
+.sv125-controls label,
+.sv125-controls select,
+.psa140__controls label,
+.psa140__controls select {
+  min-width: 0;
+  max-width: 100%;
+}
+.pec131-card__badges li,
+.pec131-card__title {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+@media (max-width: 480px) {
+  .prs137__controls select,
+  .sv125-controls select,
+  .psa140__controls select {
+    width: 100%;
+  }
+}

@@ -453,6 +453,10 @@ async function readScreen(page) {
       state: document.querySelector('[data-testid="public-analysis-root"]')?.getAttribute("data-analysis-state") || null,
       pending: document.querySelectorAll('[data-testid="public-analysis-pending"]').length,
       headlineTiles: document.querySelectorAll('[data-testid="public-analysis-root"] [class*="kpi"], [data-testid="public-analysis-root"] [data-testid*="kpi"], [data-testid="public-metric-cards"]').length,
+      // V153-D1: the small core-figures row under the hero (outside the analysis root):
+      // at most four figures, each stating its unit; a status screen shows its status line instead.
+      coreFigures: [...document.querySelectorAll('[data-testid="detail-kpi-tile-v153"]')].map((tile) => ({ unit: tile.getAttribute("data-kpi-unit") || "", text: tidy(tile.textContent) })),
+      coreStatusLine: Boolean(document.querySelector('[data-testid="detail-kpi-status-v153"]')),
       title: tidy(document.querySelector("h1")?.textContent),
       heading,
       selects,
@@ -954,8 +958,17 @@ async function checkElement(context, item) {
 
     // ---- 8. the whole session's runtime health
     record.screenLoaded = (screen.state === "ready" || screen.state === "empty") && screen.pending === 0 && consoleErrors.length === 0 && assetFailures.length === 0;
+    // V153-D1 expectation change (reports/v153/ANALYSIS_QA_EXPECTATION_CHANGE_V153.md):
+    // the V147 ban on large headline tiles inside the analysis stays; the small
+    // core-figures row under the hero is required instead - 3-4 figures with a
+    // unit each, or the status line on a status screen.
+    const coreFiguresOk = screen.coreStatusLine
+      ? screen.coreFigures.length === 0
+      : screen.coreFigures.length >= 3 && screen.coreFigures.length <= 4 && screen.coreFigures.every((tile) => tile.unit && tile.text.length > tile.unit.length);
     record.detailTilesAbsent = screen.headlineTiles === 0;
+    record.detailTilesBounded = record.detailTilesAbsent && coreFiguresOk;
     if (!record.detailTilesAbsent) record.remainingIssue.push(`detail headline tiles must not return: ${screen.headlineTiles}`);
+    if (!coreFiguresOk) record.remainingIssue.push(`core figures row: ${screen.coreFigures.length} tile(s)${screen.coreStatusLine ? " with a status line" : ""} - expected 3-4 with units (0 on a status screen)`);
     if (consoleErrors.length) record.remainingIssue.push(`console: ${consoleErrors[0]}`);
     if (assetFailures.length) record.remainingIssue.push(`asset: ${JSON.stringify(assetFailures[0])}`);
   } catch (error) {
@@ -988,7 +1001,7 @@ if (server) await server.close();
 results.sort((a, b) => a.elementId.localeCompare(b.elementId));
 const tally = (key) => ({ pass: results.filter((r) => r[key] === true).length, fail: results.filter((r) => r[key] === false).length, notApplicable: results.filter((r) => r[key] === null).length });
 const countBy = (pick) => results.reduce((acc, r) => { const key = pick(r) || "none"; acc[key] = (acc[key] || 0) + 1; return acc; }, {});
-const requiredFailures = results.filter((r) => !r.screenLoaded || r.detailTilesAbsent === false || r.cardClicked === false || r.homeCardClicked === false || r.selectionUrlPreserved === false || r.cardValueVerified === false || r.detailAnalysisFit === false || r.analysisFit?.pass === false || r.controlsVerified === false || r.mapHandoffVerified === false || (r.mapSymbolVerified && r.mapSymbolVerified.pass === false) || r.recomputed?.status === "mismatch" || r.evidence.table?.status === "value-without-keys" || Boolean(r.internalWording));
+const requiredFailures = results.filter((r) => !r.screenLoaded || r.detailTilesBounded === false || r.cardClicked === false || r.homeCardClicked === false || r.selectionUrlPreserved === false || r.cardValueVerified === false || r.detailAnalysisFit === false || r.analysisFit?.pass === false || r.controlsVerified === false || r.mapHandoffVerified === false || (r.mapSymbolVerified && r.mapSymbolVerified.pass === false) || r.recomputed?.status === "mismatch" || r.evidence.table?.status === "value-without-keys" || Boolean(r.internalWording));
 const summary = {
   label,
   base,
@@ -1002,6 +1015,7 @@ const summary = {
   selectionUrlPreserved: tally("selectionUrlPreserved"),
   screenLoaded: tally("screenLoaded"),
   detailTilesAbsent: tally("detailTilesAbsent"),
+  detailTilesBounded: tally("detailTilesBounded"),
   cardValueVerified: tally("cardValueVerified"),
   recomputed: countBy((r) => r.recomputed?.status),
   detailAnalysisFit: tally("detailAnalysisFit"),
@@ -1043,7 +1057,7 @@ console.log(JSON.stringify(summary));
 function failureKeys(r) {
   const keys = [];
   if (!r.screenLoaded) keys.push("screenLoaded");
-  if (r.detailTilesAbsent === false) keys.push("detailTilesAbsent");
+  if (r.detailTilesBounded === false) keys.push("detailTilesBounded");
   if (r.cardClicked === false) keys.push("cardClicked");
   if (r.homeCardClicked === false) keys.push("homeCardClicked");
   if (r.selectionUrlPreserved === false) keys.push("selectionUrlPreserved");

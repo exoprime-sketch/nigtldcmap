@@ -742,3 +742,14 @@
     grid-template-columns: minmax(0, 30%) minmax(0, 1fr);
   }
 }
+
+/* V153: the timeline list and its entries may shrink below their content's
+   min width; long document names and attribute rows wrap inside. */
+.sv125-policy-timeline {
+  grid-template-columns: minmax(0, 1fr);
+}
+.sv125-policy-timeline > li,
+.sv125-policy-timeline li > div,
+.sv125-policy-timeline li > div > * {
+  min-width: 0;
+}

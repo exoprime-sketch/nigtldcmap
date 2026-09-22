@@ -103,7 +103,7 @@ const readScreen = () => {
         svgPaths: block.querySelectorAll("svg path, svg polyline").length,
         svgRects: block.querySelectorAll("svg rect").length,
         svgCircles: block.querySelectorAll("svg circle").length,
-        htmlBars: block.querySelectorAll('[class*="bar"] i, [class*="__fill"], [class*="bar-track"] i, [style*="width:"]').length,
+        htmlBars: block.querySelectorAll('[class*="bar"] i, [class*="__fill"], [class*="bar-track"] i, [style*="width:"], [style*="--cab129-share"], [role="img"] > span').length,
         tables: block.querySelectorAll("table").length,
         lists: block.querySelectorAll("ol, ul").length,
         times: block.querySelectorAll("time").length,

@@ -1074,6 +1074,9 @@ function CategoryComparisonV125({ rows }: { rows: NumericRowV125[] }) {
 }
 
 function CategoryComparisonUnitV143({ rows, unit, barLabel, title }: { rows: NumericRowV125[]; unit: string; barLabel: (row: NumericRowV125) => string; title: string }) {
+  // What each bar is, from the dataset's contract when this is its bar screen (V153).
+  const comparisonContract = useAnalysisContractV153();
+  const comparisonAxisV153 = comparisonContract && ["category-bar", "region-bar"].includes(comparisonContract.primary.type) ? comparisonContract.primary.yAxis : null;
   const [order, setOrder] = useState("source");
   const [expanded, setExpanded] = useState(false);
   const ordered = order === "source" ? rows : [...rows].sort((a, b) => order === "desc" ? b.value - a.value : a.value - b.value);
@@ -1089,7 +1092,7 @@ function CategoryComparisonUnitV143({ rows, unit, barLabel, title }: { rows: Num
                 0을 기준으로 왼쪽은 음수, 오른쪽은 양수입니다. 막대 길이는 0에서 떨어진 크기입니다.
               </p>
             )}
-            <ChartAxesV150 x={title} y="비교 항목" unit={unit} />
+            <ChartAxesV150 x={title} y={comparisonAxisV153 || "비교 항목"} unit={unit} />
             <div className="sv125-contract-bars" role="list">
               {shown.map((row, index) => {
                 const width = scale.spanFor(row.value);

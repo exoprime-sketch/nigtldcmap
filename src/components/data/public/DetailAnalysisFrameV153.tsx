@@ -170,9 +170,15 @@ export default function DetailAnalysisFrameV153({ elementId, children }: Props) 
           : axesVerdict === "mismatch"
           ? `[v153-contract] ${elementId}: axes ${JSON.stringify(axes)} ≠ contract ${JSON.stringify({ x: contract?.primary.xAxis, y: contract?.primary.yAxis, unit: contract?.primary.unit })}`
           : null;
+      // Lazy blocks arrive after the first commit: warn only when the same
+      // verdict still stands a moment later.
       if (message && warned !== message) {
-        warned = message;
-        console.warn(message);
+        window.setTimeout(() => {
+          if (root.getAttribute("data-contract-verdict") === verdict && root.getAttribute("data-contract-axes") === axesVerdict && warned !== message) {
+            warned = message;
+            console.warn(message);
+          }
+        }, 1200);
       }
     };
 
