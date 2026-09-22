@@ -13,7 +13,7 @@
 
 ## 검증
 - `npx tsc --noEmit` 0 · `npm run test:unit` 262/262 · `audit:boundary-policy:v151-2` 24/24 · `audit:boundary-34:v151 --skip-browser` 21 PASS.
-- `npm run finalize:v151`: 2회 실행 — 1차 map-tooltip(34 단위 추이), 2차 map-popup(6권역 겹침·place) 각 1건 실패 → 수정 후 단독 재실행 8/8·12/12 PASS; role-split 52/52, analysis QA 41 = 기준선 41(신규 0). 3차 전체 실행은 승인 후 1회(REVIEW §4.1).
+- `npm run finalize:v151`: 3회 실행 — 1차 map-tooltip(34 단위 추이), 2차 map-popup(6권역 겹침·place), 3차 glossary(귀속 약어) 각 1건 실패 → 각각 수정 후 단독 재실행 PASS(8/8·12/12·16/16); role-split 52/52, analysis QA 41 = 기준선 41(신규 0). origin/main(#22~#24) rebase 후 unit 289/289. 재기준 트리 전체 게이트는 merge 전 1회(REVIEW §4.1).
 
 ## 문서
 - `docs/ADMIN_BOUNDARY_34_V151.md`(집계정책·지표별 판정표), `docs/MAP_BACKDROP_V151.md`, `reports/v151-2/REVIEW_V151-2.md`, CHANGELOG, README.

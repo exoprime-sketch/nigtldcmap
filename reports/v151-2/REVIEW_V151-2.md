@@ -42,6 +42,7 @@
 - 잔여: '없음' 배경에서 NE 인접국(라오스) 폴리곤과 실제 국경 사이에 배경색 틈이 보임(NE 저해상도 한계). 지형/위성 배경에서는 덮임. 인접국 외곽선이 베트남 안으로 들어오는 부분은 베트남 fill을 위로 올려 가림.
 
 ### 3.3 배경지도
+- 저줌(4~5) 이음새(사용자 지적): 워밍업 범위를 국토 ±5°(z5~6 광역 + z7 국토)로 넓히고 래스터 `raster-fade-duration` 700 ms → 배경 러너 z4.5 스크린샷(`reports/v151-2/shots/backdrop-*-z4.5.png`) 24장에서 직사각형 패치 없음(소스 `bounds` 제한은 원래 없었음).
 - `mapBackdropV151.ts`(23 tests): 지형(Natural Earth 음영기복 → terrarium hillshade → OFM 하천·도로·철도·지명) / 위성(Esri World Imagery + OFM 국경·지명) / 도로·지명(Liberty 110 레이어 임포트, sprite setSprite, place 라벨 name:ko 우선) / 없음. 배경 레이어 모두 `cdp-country-fill` 아래, 데이터·라벨 위 유지, 국가 fill 0.08/1.
 - 성능: preconnect 3호스트, 마운트 시 z5~7 워밍업(+liberty 스타일), 첫 타일 계측(`data-backdrop-first-tile-ms`, `performance.measure`), 5 s 내 타일 0 + 오류 3회 → '없음' 자동 하강 + 1줄.
 
@@ -85,7 +86,9 @@
 - **1차**(09:42): `release:v136` 48/52 — `map-tooltip:v132` FAIL(`B033_MAP_REGION_TREND`: 34 단위 선택 시 63 행이 없어 추이 없음). 원인 수정(구성 성·시 행을 기간별 같은 규칙으로 집계 + 키보드 선택 모델 unitCode 전달) → `audit:map-tooltip:v132` 단독 8/8 PASS.
 - **2차**(12:22): `release:v136` — `map-tooltip:v132` PASS, 나머지 11개 감사 PASS, **`map-popup:v133` FAIL 4건**(GVI 팝업 `place`가 6권역명이라 성 이름 정규식 불일치, D-008 통계 대표점(34 집계)이 B-021 권역 fill 위에서 겹침 선택기 미개방). 원인 수정(구성원 기준 겹침 판정 `fillHasMemberV151`, 감사 `place`에 6권역명 허용 — §4.2) → `audit:map-popup:v133` 단독 **12/12 PASS**.
 - 2차에서 `finalize:v136`이 실패해 뒤 단계가 실행되지 않은 항목은 개별 실행: `qa:role-split:v140` **52/52 PASS**, `qa:analysis:v140:baseline` **필수 실패 41 = 기준선 41, 신규 0, 해소 0 → pass**, `audit:boundary-34:v151 --skip-browser` 21 PASS, `audit:boundary-policy:v151-2` 24/24.
-- 전체 `finalize:v151` 3차(연속 실행)는 반복 상한(2회) 규칙에 따라 사용자 승인 후 1회 실행 예정. 현재 상태: 2차 실패 항목 전부 수정·단독 통과, 나머지 체인 전부 통과.
+- **3차**(13:03, 사용자 승인): `release:v136` — map-tooltip·map-popup 포함 14개 감사 PASS, **`glossary:v134` FAIL 1건**(`VISIBLE_ACRONYM_WITHOUT_GLOSSARY`: 지형 귀속 문구의 AWS·SRTM·GMTED·ETOPO1). 문구를 "Terrain Tiles(Mapzen · Amazon Web Services 공개 데이터, terrarium 인코딩)"로 바꿔 약어 제거 → `audit:glossary:v134` 단독 재실행에서 다른 실패(`active GVI canvas hover popup was not pixel-visible`)가 드러남: 상세→지도 진입 시 대상 레이어 bbox 자동 맞춤이 63개 자산의 도서(Trường Sa 등, ~115°E)까지 포함해 카메라가 해상으로 밀림(중심 108.6°E). bbox를 국가 지도 범위로 클립하도록 수정(중심 106.5°E 확인) → `audit:glossary:v134` 단독 **16/16 PASS**.
+- 이후 `git rebase origin/main`(#22~#24): 팩은 main의 19개(#23 데이터 수정 반영)를 규칙으로 재분할(26, payload sha 152 불변), 카드 요약 packUrl·map-index(변경 없음)·asset-integrity 재생성, geometry-manifest 양쪽 자산 유지. 재기준 트리: tsc 0 · unit **289/289**(32 suites) · generated-data 15/15 · boundary-policy 24/24.
+- 재기준 트리의 전체 `finalize:v151`은 실행하지 않은 상태(전체 게이트 3회 실행 후 정지 — 반복 상한). merge 전 1회 실행에 사용자 승인 필요.
 
 ### 4.2 기대값 변경(사유 기록)
 - `scripts/v151/audit-boundary-34-v151.mjs` `SCREEN_VALUE_NOTICE`/`SCREEN_63_NOTICE`: V151의 "값을 34개로 합산하지 않습니다" 상시 고지가 V151-2의 레이어별 집계정책 1줄로 대체됐다. 검사는 정책 문구 또는 대기 안내("집계 규칙")를 허용하도록 확장(값 고지가 사라진 것이 아니라 규칙별 문장으로 구체화). `adminBoundaryV151.test.ts` 동일.
@@ -95,7 +98,7 @@
 ## 5. 미완료와 사유
 | 항목 | 사유 |
 |---|---|
-| 도로·지명 배경 첫 타일 ≤1 s | 1.04~1.34 s. Liberty 스타일 fetch + 110 레이어 삽입 + OFM 벡터 네트워크(0.75~1.1 s)가 한계. 기본값이 아니며 자동 하강 경로 뒤. 후속: 스타일 JSON 번들 내장 또는 핵심 레이어만 직접 정의 |
+| 도로·지명 배경 첫 타일 ≤1 s | 1.04~1.34 s. Liberty 스타일 fetch + 110 레이어 삽입 + OFM 벡터 네트워크(0.75~1.1 s)가 한계. 기본값이 아니며 자동 하강 경로 뒤. 후속(스타일 JSON 번들 내장)으로 `docs/FINALIZATION_TRACKER_V153.md` 비고에 기록 |
 | 홈 화면 첫 타일 실측 | 홈 미니맵은 SVG(타일 없음) — 측정 대상 아님으로 기록 |
 | 미니맵 34 집계 표시 | 미니맵은 63 값 + 국가 외곽선만 교체(V152 인계, 정책 노트는 기존 문구 유지) |
 | 34 모드 추이(선택 지역 시계열) | 집계 단위 선택 시 추이는 native-34/단독 단위만 표시(합산 시계열은 후속) |
