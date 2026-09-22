@@ -1,11 +1,50 @@
 {
   "summary": {
-    "generatedAt": "2026-09-22T04:46:05.673Z",
+    "generatedAt": "2026-09-22T04:56:30.968Z",
     "build": "C:\\Users\\user\\Documents\\nigt-wt-d0\\build",
     "elements": 152,
-    "pass": 152,
-    "fail": 0,
-    "failedIds": [],
+    "pass": 114,
+    "fail": 38,
+    "failedIds": [
+      "A-023",
+      "A-024",
+      "A-025",
+      "B-003",
+      "B-004",
+      "B-005",
+      "B-006",
+      "B-007",
+      "B-008",
+      "B-012",
+      "B-021",
+      "B-023",
+      "B-025",
+      "B-028",
+      "B-029",
+      "B-030",
+      "B-031",
+      "B-032",
+      "B-033",
+      "B-034",
+      "B-037",
+      "B-039",
+      "B-040",
+      "B-041",
+      "B-042",
+      "B-048",
+      "C-012",
+      "C-016",
+      "C-019",
+      "C-022",
+      "C-025",
+      "D-008",
+      "D-018",
+      "E-004",
+      "E-005",
+      "E-006",
+      "E-018",
+      "E-019"
+    ],
     "byStatus": {
       "standard": 108,
       "preserved": 11,
@@ -98,8 +137,8 @@
         "notApplicable": 0
       },
       "mapPlacement": {
-        "pass": 42,
-        "fail": 0,
+        "pass": 4,
+        "fail": 38,
         "notApplicable": 110
       },
       "overflow320": {
@@ -2030,7 +2069,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -2054,7 +2093,7 @@
             {
               "type": "category-bar",
               "rank": "2",
-              "top": 2541,
+              "top": 1443,
               "left": 155,
               "width": 1130,
               "axes": {
@@ -2066,7 +2105,7 @@
             {
               "type": "sorted-table",
               "rank": "3",
-              "top": 1490,
+              "top": 1944,
               "left": 155,
               "width": 557,
               "axes": null
@@ -2074,7 +2113,7 @@
             {
               "type": "table",
               "rank": "4",
-              "top": 1640,
+              "top": 2094,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -2111,7 +2150,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 3979,
+            "top": 4504,
             "left": 31,
             "width": 328,
             "height": 725,
@@ -2124,14 +2163,16 @@
           },
           "second": {
             "type": "category-bar",
-            "top": 4720
+            "top": 1473
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":4504,\"left\":31,\"width\":328,\"height\":725,\"mapReady\":true},\"first\":{\"type\":\"category-bar\",\"top\":1103,\"height\":354},\"second\":{\"type\":\"category-bar\",\"top\":1473}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "A-024",
@@ -2156,7 +2197,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -2237,7 +2278,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 1372,
+            "top": 2367,
             "left": 31,
             "width": 328,
             "height": 709,
@@ -2250,14 +2291,16 @@
           },
           "second": {
             "type": "category-bar",
-            "top": 2097
+            "top": 1372
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":2367,\"left\":31,\"width\":328,\"height\":709,\"mapReady\":true},\"first\":{\"type\":\"category-bar\",\"top\":1036,\"height\":320},\"second\":{\"type\":\"category-bar\",\"top\":1372}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "A-025",
@@ -2282,7 +2325,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": null,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -2340,7 +2383,7 @@
         "nestedTagCount": 1,
         "narrow": {
           "slot": {
-            "top": 1521,
+            "top": 1585,
             "left": 31,
             "width": 328,
             "height": 769,
@@ -2353,14 +2396,16 @@
           },
           "second": {
             "type": "cards-list",
-            "top": 2354
+            "top": 1569
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":1585,\"left\":31,\"width\":328,\"height\":769,\"mapReady\":true},\"first\":{\"type\":\"comparison-table\",\"top\":903,\"height\":602},\"second\":{\"type\":\"cards-list\",\"top\":1569}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "A-026",
@@ -3241,7 +3286,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -3318,7 +3363,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 2150,
+            "top": 3264,
             "left": 31,
             "width": 328,
             "height": 976,
@@ -3331,14 +3376,16 @@
           },
           "second": {
             "type": "line",
-            "top": 3142
+            "top": 2150
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":3264,\"left\":31,\"width\":328,\"height\":976,\"mapReady\":true},\"first\":{\"type\":\"region-bar\",\"top\":1398,\"height\":735},\"second\":{\"type\":\"line\",\"top\":2150}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "B-004",
@@ -3363,7 +3410,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -3440,7 +3487,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 2284,
+            "top": 4341,
             "left": 31,
             "width": 328,
             "height": 1066,
@@ -3453,14 +3500,16 @@
           },
           "second": {
             "type": "line",
-            "top": 3367
+            "top": 2284
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":4341,\"left\":31,\"width\":328,\"height\":1066,\"mapReady\":true},\"first\":{\"type\":\"region-bar\",\"top\":1532,\"height\":736},\"second\":{\"type\":\"line\",\"top\":2284}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "B-005",
@@ -3485,7 +3534,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -3562,7 +3611,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 2331,
+            "top": 4252,
             "left": 31,
             "width": 328,
             "height": 1091,
@@ -3575,14 +3624,16 @@
           },
           "second": {
             "type": "line",
-            "top": 3438
+            "top": 2331
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":4252,\"left\":31,\"width\":328,\"height\":1091,\"mapReady\":true},\"first\":{\"type\":\"region-bar\",\"top\":1578,\"height\":736},\"second\":{\"type\":\"line\",\"top\":2331}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "B-006",
@@ -3607,7 +3658,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -3684,7 +3735,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 2236,
+            "top": 4342,
             "left": 31,
             "width": 328,
             "height": 1091,
@@ -3697,14 +3748,16 @@
           },
           "second": {
             "type": "line",
-            "top": 3343
+            "top": 2236
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":4342,\"left\":31,\"width\":328,\"height\":1091,\"mapReady\":true},\"first\":{\"type\":\"region-bar\",\"top\":1460,\"height\":760},\"second\":{\"type\":\"line\",\"top\":2236}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "B-007",
@@ -3729,7 +3782,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -3806,7 +3859,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 2308,
+            "top": 4417,
             "left": 31,
             "width": 328,
             "height": 1091,
@@ -3819,14 +3872,16 @@
           },
           "second": {
             "type": "line",
-            "top": 3415
+            "top": 2308
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":4417,\"left\":31,\"width\":328,\"height\":1091,\"mapReady\":true},\"first\":{\"type\":\"region-bar\",\"top\":1530,\"height\":762},\"second\":{\"type\":\"line\",\"top\":2308}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "B-008",
@@ -3851,7 +3906,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -3908,7 +3963,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 2170,
+            "top": 2631,
             "left": 31,
             "width": 328,
             "height": 769,
@@ -3921,14 +3976,16 @@
           },
           "second": {
             "type": "table",
-            "top": 2955
+            "top": 2170
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":2631,\"left\":31,\"width\":328,\"height\":769,\"mapReady\":true},\"first\":{\"type\":\"line\",\"top\":1506,\"height\":648},\"second\":{\"type\":\"table\",\"top\":2170}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "B-009",
@@ -4207,7 +4264,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -4264,7 +4321,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 1185,
+            "top": 42147,
             "left": 31,
             "width": 328,
             "height": 746,
@@ -4277,14 +4334,16 @@
           },
           "second": {
             "type": "timeline",
-            "top": 1948
+            "top": 1185
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":42147,\"left\":31,\"width\":328,\"height\":746,\"mapReady\":true},\"first\":{\"type\":\"category-bar\",\"top\":808,\"height\":361},\"second\":{\"type\":\"timeline\",\"top\":1185}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "B-013",
@@ -4977,7 +5036,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -5050,7 +5109,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 1821,
+            "top": 3703,
             "left": 31,
             "width": 328,
             "height": 1094,
@@ -5063,14 +5122,16 @@
           },
           "second": {
             "type": "line",
-            "top": 2930
+            "top": 1821
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":3703,\"left\":31,\"width\":328,\"height\":1094,\"mapReady\":true},\"first\":{\"type\":\"region-bar\",\"top\":1143,\"height\":662},\"second\":{\"type\":\"line\",\"top\":1821}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "B-022",
@@ -5177,7 +5238,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -5250,7 +5311,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 1315,
+            "top": 2234,
             "left": 31,
             "width": 328,
             "height": 872,
@@ -5263,14 +5324,16 @@
           },
           "second": {
             "type": "sorted-table",
-            "top": 2203
+            "top": 1315
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":2234,\"left\":31,\"width\":328,\"height\":872,\"mapReady\":true},\"first\":{\"type\":\"dumbbell\",\"top\":958,\"height\":340},\"second\":{\"type\":\"sorted-table\",\"top\":1315}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "B-024",
@@ -5381,7 +5444,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -5450,7 +5513,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 1649,
+            "top": 2828,
             "left": 31,
             "width": 328,
             "height": 777,
@@ -5463,14 +5526,16 @@
           },
           "second": {
             "type": "category-bar",
-            "top": 2442
+            "top": 1649
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":2828,\"left\":31,\"width\":328,\"height\":777,\"mapReady\":true},\"first\":{\"type\":\"dumbbell\",\"top\":962,\"height\":670},\"second\":{\"type\":\"category-bar\",\"top\":1649}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "B-026",
@@ -5655,7 +5720,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -5732,7 +5797,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 1298,
+            "top": 2431,
             "left": 31,
             "width": 328,
             "height": 812,
@@ -5745,14 +5810,16 @@
           },
           "second": {
             "type": "sorted-table",
-            "top": 2126
+            "top": 1298
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":2431,\"left\":31,\"width\":328,\"height\":812,\"mapReady\":true},\"first\":{\"type\":\"sorted-table\",\"top\":952,\"height\":331},\"second\":{\"type\":\"sorted-table\",\"top\":1298}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "B-029",
@@ -5777,7 +5844,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -5862,7 +5929,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 2076,
+            "top": 3761,
             "left": 31,
             "width": 328,
             "height": 1052,
@@ -5875,14 +5942,16 @@
           },
           "second": {
             "type": "table",
-            "top": 3145
+            "top": 2076
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":3761,\"left\":31,\"width\":328,\"height\":1052,\"mapReady\":true},\"first\":{\"type\":\"region-bar\",\"top\":1386,\"height\":674},\"second\":{\"type\":\"table\",\"top\":2076}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "B-030",
@@ -5907,7 +5976,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -5972,7 +6041,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 2111,
+            "top": 2919,
             "left": 31,
             "width": 328,
             "height": 1082,
@@ -5985,14 +6054,16 @@
           },
           "second": {
             "type": "table",
-            "top": 3210
+            "top": 2111
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":2919,\"left\":31,\"width\":328,\"height\":1082,\"mapReady\":true},\"first\":{\"type\":\"region-bar\",\"top\":1395,\"height\":700},\"second\":{\"type\":\"table\",\"top\":2111}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "B-031",
@@ -6017,7 +6088,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -6078,7 +6149,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 1627,
+            "top": 1708,
             "left": 31,
             "width": 328,
             "height": 1076,
@@ -6091,14 +6162,16 @@
           },
           "second": {
             "type": "table",
-            "top": 2718
+            "top": 1627
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":1708,\"left\":31,\"width\":328,\"height\":1076,\"mapReady\":true},\"first\":{\"type\":\"region-bar\",\"top\":994,\"height\":616},\"second\":{\"type\":\"table\",\"top\":1627}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "B-032",
@@ -6123,7 +6196,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -6184,7 +6257,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 1546,
+            "top": 1627,
             "left": 31,
             "width": 328,
             "height": 1041,
@@ -6197,14 +6270,16 @@
           },
           "second": {
             "type": "table",
-            "top": 2604
+            "top": 1546
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":1627,\"left\":31,\"width\":328,\"height\":1041,\"mapReady\":true},\"first\":{\"type\":\"region-bar\",\"top\":915,\"height\":615},\"second\":{\"type\":\"table\",\"top\":1546}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "B-033",
@@ -6229,7 +6304,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -6290,7 +6365,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 1583,
+            "top": 1664,
             "left": 31,
             "width": 328,
             "height": 1054,
@@ -6303,14 +6378,16 @@
           },
           "second": {
             "type": "table",
-            "top": 2654
+            "top": 1583
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":1664,\"left\":31,\"width\":328,\"height\":1054,\"mapReady\":true},\"first\":{\"type\":\"region-bar\",\"top\":951,\"height\":616},\"second\":{\"type\":\"table\",\"top\":1583}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "B-034",
@@ -6335,7 +6412,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -6396,7 +6473,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 1729,
+            "top": 1810,
             "left": 31,
             "width": 328,
             "height": 1087,
@@ -6409,14 +6486,16 @@
           },
           "second": {
             "type": "table",
-            "top": 2832
+            "top": 1729
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":1810,\"left\":31,\"width\":328,\"height\":1087,\"mapReady\":true},\"first\":{\"type\":\"region-bar\",\"top\":1073,\"height\":640},\"second\":{\"type\":\"table\",\"top\":1729}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "B-035",
@@ -6613,7 +6692,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -6698,7 +6777,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 1520,
+            "top": 3860,
             "left": 31,
             "width": 328,
             "height": 975,
@@ -6711,14 +6790,16 @@
           },
           "second": {
             "type": "region-bar",
-            "top": 2511
+            "top": 1520
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":3860,\"left\":31,\"width\":328,\"height\":975,\"mapReady\":true},\"first\":{\"type\":\"table\",\"top\":1386,\"height\":118},\"second\":{\"type\":\"region-bar\",\"top\":1520}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "B-038",
@@ -6825,7 +6906,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -6910,7 +6991,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 2086,
+            "top": 3816,
             "left": 31,
             "width": 328,
             "height": 1057,
@@ -6923,14 +7004,16 @@
           },
           "second": {
             "type": "table",
-            "top": 3159
+            "top": 2086
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":3816,\"left\":31,\"width\":328,\"height\":1057,\"mapReady\":true},\"first\":{\"type\":\"region-bar\",\"top\":1395,\"height\":675},\"second\":{\"type\":\"table\",\"top\":2086}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "B-040",
@@ -6955,7 +7038,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -7040,7 +7123,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 2086,
+            "top": 3780,
             "left": 31,
             "width": 328,
             "height": 1036,
@@ -7053,14 +7136,16 @@
           },
           "second": {
             "type": "table",
-            "top": 3139
+            "top": 2086
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":3780,\"left\":31,\"width\":328,\"height\":1036,\"mapReady\":true},\"first\":{\"type\":\"region-bar\",\"top\":1395,\"height\":675},\"second\":{\"type\":\"table\",\"top\":2086}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "B-041",
@@ -7085,7 +7170,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -7150,7 +7235,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 2158,
+            "top": 2965,
             "left": 31,
             "width": 328,
             "height": 1105,
@@ -7163,14 +7248,16 @@
           },
           "second": {
             "type": "table",
-            "top": 3279
+            "top": 2158
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":2965,\"left\":31,\"width\":328,\"height\":1105,\"mapReady\":true},\"first\":{\"type\":\"region-bar\",\"top\":1416,\"height\":725},\"second\":{\"type\":\"table\",\"top\":2158}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "B-042",
@@ -7195,7 +7282,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -7260,7 +7347,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 2089,
+            "top": 2875,
             "left": 31,
             "width": 328,
             "height": 1064,
@@ -7273,14 +7360,16 @@
           },
           "second": {
             "type": "table",
-            "top": 3169
+            "top": 2089
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":2875,\"left\":31,\"width\":328,\"height\":1064,\"mapReady\":true},\"first\":{\"type\":\"region-bar\",\"top\":1374,\"height\":699},\"second\":{\"type\":\"table\",\"top\":2089}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "B-043",
@@ -7703,7 +7792,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": null,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -7761,7 +7850,7 @@
         "nestedTagCount": 1,
         "narrow": {
           "slot": {
-            "top": 1292,
+            "top": 2161,
             "left": 31,
             "width": 328,
             "height": 728,
@@ -7774,14 +7863,16 @@
           },
           "second": {
             "type": "cards-list",
-            "top": 2036
+            "top": 1292
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":2161,\"left\":31,\"width\":328,\"height\":728,\"mapReady\":true},\"first\":{\"type\":\"category-bar\",\"top\":764,\"height\":512},\"second\":{\"type\":\"cards-list\",\"top\":1292}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "C-001",
@@ -8783,7 +8874,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -8876,7 +8967,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 4302,
+            "top": 15023,
             "left": 31,
             "width": 328,
             "height": 1036,
@@ -8889,14 +8980,16 @@
           },
           "second": {
             "type": "comparison-table",
-            "top": 5355
+            "top": 4302
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":15023,\"left\":31,\"width\":328,\"height\":1036,\"mapReady\":true},\"first\":{\"type\":\"comparison-table\",\"top\":1013,\"height\":3273},\"second\":{\"type\":\"comparison-table\",\"top\":4302}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "C-013",
@@ -9140,7 +9233,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -9201,7 +9294,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 1678,
+            "top": 1781,
             "left": 31,
             "width": 328,
             "height": 1081,
@@ -9214,14 +9307,16 @@
           },
           "second": {
             "type": "table",
-            "top": 2775
+            "top": 1678
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":1781,\"left\":31,\"width\":328,\"height\":1081,\"mapReady\":true},\"first\":{\"type\":\"region-bar\",\"top\":1022,\"height\":640},\"second\":{\"type\":\"table\",\"top\":1678}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "C-017",
@@ -9422,7 +9517,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": null,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -9488,7 +9583,7 @@
         "nestedTagCount": 1,
         "narrow": {
           "slot": {
-            "top": 2287,
+            "top": 2415,
             "left": 31,
             "width": 328,
             "height": 1091,
@@ -9501,14 +9596,16 @@
           },
           "second": {
             "type": "sorted-table",
-            "top": 3442
+            "top": 2335
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":2415,\"left\":31,\"width\":328,\"height\":1091,\"mapReady\":true},\"first\":{\"type\":\"region-bar\",\"top\":1049,\"height\":1222},\"second\":{\"type\":\"sorted-table\",\"top\":2335}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "C-020",
@@ -9639,7 +9736,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": null,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -9705,7 +9802,7 @@
         "nestedTagCount": 1,
         "narrow": {
           "slot": {
-            "top": 2288,
+            "top": 2416,
             "left": 31,
             "width": 328,
             "height": 1091,
@@ -9718,14 +9815,16 @@
           },
           "second": {
             "type": "sorted-table",
-            "top": 3443
+            "top": 2336
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":2416,\"left\":31,\"width\":328,\"height\":1091,\"mapReady\":true},\"first\":{\"type\":\"region-bar\",\"top\":1050,\"height\":1222},\"second\":{\"type\":\"sorted-table\",\"top\":2336}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "C-023",
@@ -9890,7 +9989,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -9914,7 +10013,7 @@
             {
               "type": "line",
               "rank": "2",
-              "top": 2145,
+              "top": 1665,
               "left": 155,
               "width": 1130,
               "axes": {
@@ -9926,7 +10025,7 @@
             {
               "type": "category-bar",
               "rank": "3",
-              "top": 2765,
+              "top": 2284,
               "left": 155,
               "width": 1130,
               "axes": {
@@ -9938,7 +10037,7 @@
             {
               "type": "category-bar",
               "rank": "4",
-              "top": 3485,
+              "top": 3004,
               "left": 155,
               "width": 1130,
               "axes": {
@@ -9950,7 +10049,7 @@
             {
               "type": "table",
               "rank": "5",
-              "top": 4205,
+              "top": 3724,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -9958,7 +10057,7 @@
             {
               "type": "cards-list",
               "rank": "6",
-              "top": 1729,
+              "top": 3869,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -9991,7 +10090,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 3567,
+            "top": 5866,
             "left": 31,
             "width": 328,
             "height": 761,
@@ -10004,14 +10103,16 @@
           },
           "second": {
             "type": "line",
-            "top": 4345
+            "top": 1887
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":5866,\"left\":31,\"width\":328,\"height\":761,\"mapReady\":true},\"first\":{\"type\":\"category-bar\",\"top\":1359,\"height\":512},\"second\":{\"type\":\"line\",\"top\":1887}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "D-001",
@@ -10578,7 +10679,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -10639,7 +10740,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 1746,
+            "top": 2366,
             "left": 31,
             "width": 328,
             "height": 1152,
@@ -10652,14 +10753,16 @@
           },
           "second": {
             "type": "table",
-            "top": 2914
+            "top": 1746
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":2366,\"left\":31,\"width\":328,\"height\":1152,\"mapReady\":true},\"first\":{\"type\":\"category-bar\",\"top\":1115,\"height\":615},\"second\":{\"type\":\"table\",\"top\":1746}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "D-009",
@@ -11630,7 +11733,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -11731,7 +11834,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 1582,
+            "top": 4154,
             "left": 31,
             "width": 328,
             "height": 855,
@@ -11744,14 +11847,16 @@
           },
           "second": {
             "type": "category-bar",
-            "top": 2917
+            "top": 2046
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":4154,\"left\":31,\"width\":328,\"height\":855,\"mapReady\":true},\"first\":{\"type\":\"table\",\"top\":1134,\"height\":432},\"second\":{\"type\":\"category-bar\",\"top\":2046}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "D-019",
@@ -13045,7 +13150,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": null,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -13103,7 +13208,7 @@
         "nestedTagCount": 1,
         "narrow": {
           "slot": {
-            "top": 1716,
+            "top": 5585,
             "left": 31,
             "width": 328,
             "height": 1054,
@@ -13116,14 +13221,16 @@
           },
           "second": {
             "type": "cards-list",
-            "top": 2786
+            "top": 1716
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":5585,\"left\":31,\"width\":328,\"height\":1054,\"mapReady\":true},\"first\":{\"type\":\"category-bar\",\"top\":1188,\"height\":512},\"second\":{\"type\":\"cards-list\",\"top\":1716}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "E-005",
@@ -13148,7 +13255,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": null,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -13206,7 +13313,7 @@
         "nestedTagCount": 1,
         "narrow": {
           "slot": {
-            "top": 1708,
+            "top": 4770,
             "left": 31,
             "width": 328,
             "height": 787,
@@ -13219,14 +13326,16 @@
           },
           "second": {
             "type": "cards-list",
-            "top": 2511
+            "top": 1708
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":4770,\"left\":31,\"width\":328,\"height\":787,\"mapReady\":true},\"first\":{\"type\":\"category-bar\",\"top\":979,\"height\":713},\"second\":{\"type\":\"cards-list\",\"top\":1708}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "E-006",
@@ -13251,7 +13360,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -13316,7 +13425,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 1404,
+            "top": 2819,
             "left": 31,
             "width": 328,
             "height": 786,
@@ -13329,14 +13438,16 @@
           },
           "second": {
             "type": "cards-list",
-            "top": 2206
+            "top": 1404
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":2819,\"left\":31,\"width\":328,\"height\":786,\"mapReady\":true},\"first\":{\"type\":\"region-bar\",\"top\":984,\"height\":404},\"second\":{\"type\":\"cards-list\",\"top\":1404}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "E-007",
@@ -14205,7 +14316,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": true,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -14229,7 +14340,7 @@
             {
               "type": "category-bar",
               "rank": "2",
-              "top": 2289,
+              "top": 1517,
               "left": 155,
               "width": 1130,
               "axes": {
@@ -14241,7 +14352,7 @@
             {
               "type": "table",
               "rank": "3",
-              "top": 3009,
+              "top": 2237,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -14249,7 +14360,7 @@
             {
               "type": "cards-list",
               "rank": "4",
-              "top": 1581,
+              "top": 2382,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -14282,7 +14393,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 4813,
+            "top": 5623,
             "left": 31,
             "width": 328,
             "height": 768,
@@ -14295,14 +14406,16 @@
           },
           "second": {
             "type": "category-bar",
-            "top": 5597
+            "top": 1894
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":5623,\"left\":31,\"width\":328,\"height\":768,\"mapReady\":true},\"first\":{\"type\":\"category-bar\",\"top\":1165,\"height\":713},\"second\":{\"type\":\"category-bar\",\"top\":1894}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "E-019",
@@ -14327,7 +14440,7 @@
         "titleOnce": true,
         "sourceLine": true,
         "nestedTags": null,
-        "mapPlacement": true,
+        "mapPlacement": false,
         "overflow320": true,
         "console": true
       },
@@ -14385,7 +14498,7 @@
         "nestedTagCount": 1,
         "narrow": {
           "slot": {
-            "top": 1256,
+            "top": 3293,
             "left": 31,
             "width": 328,
             "height": 708,
@@ -14398,14 +14511,16 @@
           },
           "second": {
             "type": "cards-list",
-            "top": 1980
+            "top": 1256
           }
         },
         "overflow320": 0,
         "console": []
       },
-      "issues": [],
-      "pass": true
+      "issues": [
+        "map not between blocks at 390 {\"slot\":{\"top\":3293,\"left\":31,\"width\":328,\"height\":708,\"mapReady\":true},\"first\":{\"type\":\"category-bar\",\"top\":920,\"height\":320},\"second\":{\"type\":\"cards-list\",\"top\":1256}}"
+      ],
+      "pass": false
     },
     {
       "elementId": "E-020",

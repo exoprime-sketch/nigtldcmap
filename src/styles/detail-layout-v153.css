@@ -70,8 +70,8 @@
 /* Below the split width: everything after the first block follows the map. */
 /* Everything after the first block in DOM order - its own later siblings
    and the later siblings of every flattened wrapper around it. */
-.pav126-primary[data-dl153-split] [data-analysis-rank="1"] ~ *,
-.pav126-primary[data-dl153-split] [data-dl153-flat]:has([data-analysis-rank="1"]) ~ * {
+.pav126-primary[data-dl153-split] [data-analysis-rank="1"] ~ :not(.dl153-map-slot),
+.pav126-primary[data-dl153-split] [data-dl153-flat]:has([data-analysis-rank="1"]) ~ :not(.dl153-map-slot) {
   order: 2;
 }
 .pav126-primary[data-dl153-split] > .dl153-map-slot {
