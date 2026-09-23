@@ -91,3 +91,36 @@ builders refuse any file other than the pinned one.
 Geofabrik keeps dated files for a limited time; if the dated URL is gone, the
 pinned MD5 will not match a newer `latest` file and the builders stop instead
 of silently producing a different asset.
+
+# B-008 Copernicus DEM GLO-30 coastal tiles (V155-2, not committed)
+
+`build_slr_lowland_v155.py` reads 42 one-degree Copernicus DEM GLO-30 COG
+tiles from the AWS Open Data bucket `copernicus-dem-30m` into
+`_source/vietnam/v155/dem/` (about 1.0 GB, git-ignored). The tile list, URL,
+byte size, SHA-256, ETag and download time of every tile are recorded in
+`_source/vietnam/v155/dem/dem-manifest.json`; that file's SHA-256
+(`9dd5d1241ce007b36a359e56b63756e2094d674304e9ba96ba5b840c994ebc9e`) is
+written into every published zone asset (`metadata.sourceManifestSha256`) and
+manifest entry, so a rebuild can be checked against the same inputs.
+
+- Dataset: Copernicus DEM GLO-30 (30 m DSM, heights above the EGM2008 geoid),
+  produced by Airbus for ESA from TanDEM-X (2011-2015 acquisitions)
+- Registry: <https://registry.opendata.aws/copernicus-dem/> ·
+  documentation: <https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model>
+- Tile URL pattern:
+  `https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N{lat}_00_E{lon}_00_DEM/…_DEM.tif`
+- Selection: 1-degree tiles west of 110E intersecting the 0.28 deg buffer of
+  the Viet Nam coastline (63-unit boundary minus a 0.3 deg buffer of the
+  CHN/LAO/KHM/THA polygons of `public/data/world-countries.geojson`) - 47
+  selected, 42 present in the bucket (5 all-sea tiles do not exist:
+  N09E107, N09E108, N10E109, N19E107, N20E108)
+- Downloaded 2026-09-22T04:17Z - 04:48Z (UTC); bucket objects last modified
+  2022-05-09
+- Licence: Copernicus DEM licence (free access, attribution required).
+  Attribution used by this project:
+
+> © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided
+> under COPERNICUS by the European Union and ESA; all rights reserved.
+
+The rasters themselves are never committed; only derived vector zones
+(`geometry/vnm-slr-lowland-*.geojson`) and the tile manifest hash are.

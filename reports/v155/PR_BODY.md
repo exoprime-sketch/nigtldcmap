@@ -1,24 +1,23 @@
 ## 목적
-- 병렬 세션 ③ / PR-F1 — V155-1 지도 자산 확보(P6a). 승인 항목 1·3·4: B-017 Aqueduct 4.0 유역, A-027 OSM 도로·철도, A-028 OSM 항만·댐·저수지.
-- 이 PR은 **정적 자산·계약 제안·문서만** 추가한다. map-index 등록·화면 연결은 P2b merge 후 P6b(소규모 PR)에서 한다. 화면 변화 없음.
+- 병렬 세션 ③ 후속 / PR-F2 — V155-2 데이터 확보(P6c). 승인 항목 2·6: B-008 해수면 상승 '침수 가능 저지대' 레이어(DEM 기반, 개략), D-022 개발금융·PPP 사업 소재 성·시.
+- 이 PR은 **정적 자산·값 초안·계약 제안·문서만** 추가한다. map-index 등록·화면 연결은 P6b. 화면 변화 없음.
 
 ## 변경
-- 신규 자산 `public/data/vietnam/v2/geometry/`: `vnm-aqueduct40-basins.geojson`(442, gzip 0.85 MB) · `vnm-aqueduct40-basins-l6.geojson`(58 유역, 0.49 MB) · `vnm-roads-rail.geojson`(8,114 선형, 1.75 MB) · `vnm-roads-rail-overview.geojson`(0.81 MB) · `vnm-water-coastal-infra.geojson`(항만 66·댐 1,255·저수지 237, 1.22 MB)
-- `geometry-manifest.json` 배열 끝에 항목 5개 추가(기존 항목 불변; 세션 ① 항목과 충돌 시 양쪽 유지). `asset-integrity.json` 재생성.
-- 값 초안 `spatial/pending-v155/b-017.json`(stringId 조인, 3,113개 값, pending) · 레이어 계약 제안 `spatial/pending-layers-v155.json`(B-017 unit-choropleth/boundaryPolicy none, A-027 line class별 스타일, A-028 point+polygon kind별 아이콘 키)
-- 빌더 `tools/vietnam_spatial/build_aqueduct_basins_v155.py`, `build_osm_roads_rail_v155.py`, `build_osm_water_coastal_v155.py`, `osm_common_v155.py`, `verify_assets_v155.py`, `requirements-v155.txt` · 오프라인 재빌드용 캡슐 `source/vnm-aqueduct40-baseline-annual-source.geojson.gz`(659 KB) · `source/README.md` 출처·URL·해시·일시
-- 문서 `docs/DATA_ASSETS_V155.md`, `reports/v155/REVIEW_V155-1.md`, `reports/v155/assets-v155.json`, PNG 4장, 추적표 B-017·A-027·A-028 행 "자산 확보(P6a) → 등록 대기(P6b)"
+- 신규 자산 `public/data/vietnam/v2/geometry/`: `vnm-slr-lowland-le0p5m.geojson`(20 성·시, 691 km², gzip 0.20 MB) · `-le1m`(20, 1,429 km², 0.39 MB) · `-le2m`(23, 9,465 km², 1.96 MB). 높이는 Copernicus DEM GLO-30(DSM, **EGM2008 지오이드 기준**), 해안 30 km 안에서 바다와 8방향 연결된 셀만, 폴리곤·구멍 0.25 km² 미만 제거, 30 m 단순화. 원본 DEM 42타일(1.0 GB)은 `_source/`(미커밋), 해시·시각은 manifest에.
+- 값 초안 `spatial/pending-v155/`: `b-008-slr-zones.json`(관측소×시나리오×연도 315행, 중앙값 상승량→3단계 대응만, 보간·예측 없음) · `b-008-lowland-by-adm1.json`(34 성·시 × 3단계 면적·%) · `d-022-locations.json`(15건, 성·시 7·전국 8·미확인 0, 좌표 없음).
+- `geometry-manifest.json` 끝에 3항목, `pending-layers-v155.json` 끝에 B-008(`zone-polygon`, native-34)·D-022(`region-choropleth`, native-34, 다수 성 사업 전액 계상) 항목 추가. `asset-integrity.json` 재생성.
+- 빌더 `tools/vietnam_spatial/build_slr_lowland_v155.py`, `build_d022_locations_v155.py`, `append_pending_layers_v155_2.py`, `verify_assets_v155.py --set v155-2`; 검수 `source/d-022-review-v155.json`; 문서 `docs/DATA_ASSETS_V155.md` §6·§7, `source/README.md`, 추적표 B-008·D-022 행, `reports/v155/REVIEW_V155-2.md`·`assets-v155-2.json`·`slr-lowland.png`.
 
 ## 검증
-- B-017 조인 **443/443**(string_id), 점수 CSV↔GDB 대조 불일치 0. 원천 GDB 도형이 빈 평가구역 1건(`436707-VNM.23_1-1892`)은 미표시·기록. 34 교차 5% 규칙 적용, CSV 대응 불일치 44건은 GADM↔geoBoundaries 경계 차이로 목록만 기록.
-- 자산 공통: 중복 ID 0, 빈 기하 0, bbox 밖 0, EPSG:4326, gzip 예산(3/4/2 MB) 내. GEOS 무효 1건은 원천 링 자기접촉 보존.
-- 경량 감사: `audit-vietnam-generated-data-v133` PASS 15/15. `audit-vietnam-map-v124` 43/45 — 실패 2건은 B-033 결측(미변경 파일)으로 기존 상태.
+- B-008: 래스터 포함관계 ≤0.5⊂≤1⊂≤2 assert 통과, 무효 기하 0, gzip 예산 내, 재빌드 바이트 동일. 성별 상위(≤2 m) Cà Mau 2,548 · An Giang 2,540 · Ninh Bình 723 · Cần Thơ 419 · Quảng Trị 409 km² — 메콩·홍강델타 상위. 필수 주의문("30 m 공개 DEM 기반 개략 저지대. 방조제·제방·지반침하·조석·폭풍해일 미반영. 실제 침수 예측이 아니며 상세 계획에는 사용 불가.")이 자산 metadata·manifest·계약·문서에 동일 문장으로 동봉.
+- D-022: 매핑률 15/15(100%, 목표 ≥80%), 출처 URL 60/60 응답 200, 성·시명 정규화 100%. IATI 단독 'Hanoi' location은 자리표시자로 미사용, 도시명·촌락명은 사업문서 명시로 대체, 추정 없음.
+- 경량 감사: `audit:generated-data:v133` PASS 15/15. `audit:map:v124` 43/45(B-033 기존 실패 2건, 미변경).
 - 미실행(지시): 전체 `finalize:v140`, 브라우저 감사, CI 대기.
 
 ## 금지 준수
-- `map-index.json`, `scripts/v138/build-map-layers-v138.mjs`, `src/pages/RealMapExplorerPage.tsx`, `src/data/map/*`, 상세 컴포넌트 미편집. 원본 대용량(PBF 329 MB, Aqueduct zip 261 MB) 미커밋(`_source/`). 좌표·값 생성 없음.
+- `map-index.json`·빌더, `RealMapExplorerPage.tsx`, `src/data/map/*`, `src/components/map/*`, 상세 컴포넌트, asset-integrity 수기 편집 없음. 침수 '예측' 표현 없음, 조석·해일 보정 없음, 사업 좌표 추정 없음, 원본 DEM 미커밋.
 
-## 후속(P6b)
-- map-index 등록, 렌더러 `unit-choropleth`/`point-and-polygon` 지원, V152 아이콘 키 확정, `pending-v155/b-017.json` → `spatial/layers/` 이동.
+## 후속(P6b·P4)
+- `zone-polygon` 렌더러·34 native 조인 지원 후 등록, `pending-v155/*` → `spatial/layers/` 이동, B-008 상세 성별 막대(by-adm1), D-022 00009 경유 성(PAD 공개 시).
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)

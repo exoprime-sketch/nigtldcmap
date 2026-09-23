@@ -47,7 +47,7 @@
 | B-005 | 가뭄[연속 건조일수(CDD), 표준강수지수(SPEI12), 토양수분] | 기후 환경 | actual-records | choropleth/63 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
 | B-006 | 폭염[폭염일수(TX35), 폭염일수(TX40), 열대야(TR20), 열대야(TR25), Heat Index( | 기후 환경 | actual-records | choropleth/63 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
 | B-007 | 홍수[최대 1일 강수(RX1day), 최대 5일 강수(RX5day), 호우일수(R20mm), 호우일수(R50 | 기후 환경 | actual-records | choropleth/63 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
-| B-008 | NASA 해수면 상승 전망[SSP1, SSP2, SSP3, SSP4, SSP5] | 기후 환경 | actual-records | point/5 | 지도에서 얼마나 덮히는지 | 관측소 시나리오 추이 유지+DEM 기반 저지대 침수 범위 레이어(주의문 포함) | PE | 집중검토 |  |
+| B-008 | NASA 해수면 상승 전망[SSP1, SSP2, SSP3, SSP4, SSP5] | 기후 환경 | actual-records | point/5 | 지도에서 얼마나 덮히는지 | 관측소 시나리오 추이 유지+DEM 기반 저지대 침수 범위 레이어(주의문 포함) | PE | 진행 — 자산 확보(P6c) → 등록 대기(P6b) | V155-2: `geometry/vnm-slr-lowland-le0p5m/le1m/le2m.geojson`(성·시별 저지대 691·1,429·9,465 km², gzip 0.20/0.39/1.96 MB, 주의문 동봉), 대응표 `spatial/pending-v155/b-008-slr-zones.json`(315행), 성별 요약 `b-008-lowland-by-adm1.json`, 계약 제안 `spatial/pending-layers-v155.json`, `docs/DATA_ASSETS_V155.md` §6, `reports/v155/slr-lowland.png` |
 | B-009 | WWF 생물다양성·기후 리스크 | 기후 환경 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
 | B-010 | 기후 리스크 지수(CRI) | 기후 환경 | partial-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
 | B-011 | 기후 취약성 지수(ND-GAIN) | 기후 환경 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
@@ -134,7 +134,7 @@
 | D-019 | CTCN 기술지원 요청[요청 국가, NDE 기관명, 기술 분야(Sectors), 지원 단계(Phase: Sc | 시장·산업 및 재원 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
 | D-020 | GCF 프로젝트[프로젝트명(Ref No.), 국가, 인가기관(AE), GCF 승인 금액, 공동재원, 분야(m | 시장·산업 및 재원 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
 | D-021 | 주요 국제기구·MDB 프로젝트[프로젝트명, 수원국, 공여기관(WB/ADB/UNDP/FAO/UNCCD 등),  | 시장·산업 및 재원 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
-| D-022 | MDB/DFI/PPP 투자 프로젝트[프로젝트명, 수원국, 공여기관(WB/ADB/IFC 등), 섹터(DAC 5 | 시장·산업 및 재원 | actual-records | country-aggregate/0 | 사업 위치 추후 추가 | 목록·금액 구성+좌표 수집 후 지도 | P4+PE | 집중검토 |  |
+| D-022 | MDB/DFI/PPP 투자 프로젝트[프로젝트명, 수원국, 공여기관(WB/ADB/IFC 등), 섹터(DAC 5 | 시장·산업 및 재원 | actual-records | country-aggregate/0 | 사업 위치 추후 추가 | 목록·금액 구성+좌표 수집 후 지도 | P4+PE | 진행 — 자산 확보(P6c) → 등록 대기(P6b) | V155-2: `spatial/pending-v155/d-022-locations.json`(15건 매핑률 100% — 성·시 7·전국 8·미확인 0, 출처 URL 60/60), 검수 `tools/vietnam_spatial/source/d-022-review-v155.json`, 계약 제안 `spatial/pending-layers-v155.json`(region-choropleth native-34), `docs/DATA_ASSETS_V155.md` §7 |
 | D-023 | ODA 및 기후기금(GCF, GEF, AF) 재원[프로젝트명, 수원국, 기금명(GCF/GEF/AF/CIF), | 시장·산업 및 재원 | actual-records | panel-only/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
 | D-024 | VC·임팩트 투자 현황[투자 라운드(Seed/Series A-C), 투자자명, 투자 금액, 대상 기업/기술, | 시장·산업 및 재원 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |
 | D-025 | 민간 인프라 투자(PPI)[프로젝트명, 국가, 섹터(전력/수도/교통/통신), 투자 유형(Greenfield/ | 시장·산업 및 재원 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  |

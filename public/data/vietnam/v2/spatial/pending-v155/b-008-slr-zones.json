@@ -1,0 +1,6335 @@
+{
+  "schemaVersion": "v155-slr-zone-lookup-1",
+  "elementId": "B-008",
+  "pending": true,
+  "notice": "30 m 공개 DEM 기반 개략 저지대. 방조제·제방·지반침하·조석·폭풍해일 미반영. 실제 침수 예측이 아니며 상세 계획에는 사용 불가.",
+  "datumNotice": "높이는 Copernicus DEM GLO-30(DSM, EGM2008 지오이드 기준) 값이며 조위 기준면 보정 없음. 수목·건물 높이가 포함돼 맹그로브·시가지에서 저지대가 과소 산정될 수 있음.",
+  "lookupRule": "riseM(중앙값, 분위수 50)이 들어가는 최소 임계값 구간을 zoneKey로 대응(≤0.5→le0p5m, ≤1→le1m, ≤2→le2m). 값 보간·예측·기준면 변환 없음. riseM은 IPCC AR6 관측소별 상대해수면 상승량(2005년 기준, m)이고 zone 높이는 EGM2008 지오이드 기준 DEM 높이이므로 기준면이 달라 등가가 아닌 대응표입니다.",
+  "zones": [
+    {
+      "zoneKey": "le0p5m",
+      "label": "≤0.5 m",
+      "thresholdM": 0.5
+    },
+    {
+      "zoneKey": "le1m",
+      "label": "≤1 m",
+      "thresholdM": 1.0
+    },
+    {
+      "zoneKey": "le2m",
+      "label": "≤2 m",
+      "thresholdM": 2.0
+    }
+  ],
+  "source": {
+    "csv": "/data/vietnam/v2/downloads/b-008.csv",
+    "sourceOrg": "NASA Sea Level Projection Tool (IPCC AR6) · PSMSL",
+    "sourceUrl": "",
+    "valueField": "attributes_json.상대해수면_상승_m_2005년_기준"
+  },
+  "entryCount": 315,
+  "entries": [
+    {
+      "recordId": "v124-b-008-entity-00415",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2020,
+      "riseM": 0.054,
+      "riseMQ05": 0.026,
+      "riseMQ95": 0.089,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00416",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2030,
+      "riseM": 0.1,
+      "riseMQ05": 0.047,
+      "riseMQ95": 0.169,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00417",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2040,
+      "riseM": 0.139,
+      "riseMQ05": 0.068,
+      "riseMQ95": 0.24,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00418",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2050,
+      "riseM": 0.192,
+      "riseMQ05": 0.106,
+      "riseMQ95": 0.326,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00419",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2060,
+      "riseM": 0.226,
+      "riseMQ05": 0.119,
+      "riseMQ95": 0.398,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00420",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2070,
+      "riseM": 0.271,
+      "riseMQ05": 0.134,
+      "riseMQ95": 0.493,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00421",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2080,
+      "riseM": 0.31,
+      "riseMQ05": 0.146,
+      "riseMQ95": 0.572,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00422",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2090,
+      "riseM": 0.357,
+      "riseMQ05": 0.171,
+      "riseMQ95": 0.663,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00423",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2100,
+      "riseM": 0.393,
+      "riseMQ05": 0.137,
+      "riseMQ95": 0.76,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00325",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2020,
+      "riseM": 0.052,
+      "riseMQ05": -0.004,
+      "riseMQ95": 0.114,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00326",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2030,
+      "riseM": 0.096,
+      "riseMQ05": 0.025,
+      "riseMQ95": 0.194,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00327",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2040,
+      "riseM": 0.143,
+      "riseMQ05": 0.063,
+      "riseMQ95": 0.301,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00328",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2050,
+      "riseM": 0.2,
+      "riseMQ05": 0.101,
+      "riseMQ95": 0.426,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00329",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2060,
+      "riseM": 0.249,
+      "riseMQ05": 0.128,
+      "riseMQ95": 0.545,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00330",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2070,
+      "riseM": 0.308,
+      "riseMQ05": 0.164,
+      "riseMQ95": 0.673,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00331",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2080,
+      "riseM": 0.36,
+      "riseMQ05": 0.183,
+      "riseMQ95": 0.82,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00332",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2090,
+      "riseM": 0.41,
+      "riseMQ05": 0.203,
+      "riseMQ95": 0.981,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00333",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2100,
+      "riseM": 0.454,
+      "riseMQ05": 0.188,
+      "riseMQ95": 1.143,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00460",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2020,
+      "riseM": 0.049,
+      "riseMQ05": -0.004,
+      "riseMQ95": 0.107,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00461",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2030,
+      "riseM": 0.092,
+      "riseMQ05": 0.025,
+      "riseMQ95": 0.173,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00462",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2040,
+      "riseM": 0.136,
+      "riseMQ05": 0.063,
+      "riseMQ95": 0.239,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00463",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2050,
+      "riseM": 0.192,
+      "riseMQ05": 0.101,
+      "riseMQ95": 0.329,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00464",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2060,
+      "riseM": 0.238,
+      "riseMQ05": 0.128,
+      "riseMQ95": 0.415,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00465",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2070,
+      "riseM": 0.296,
+      "riseMQ05": 0.164,
+      "riseMQ95": 0.517,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00466",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2080,
+      "riseM": 0.346,
+      "riseMQ05": 0.183,
+      "riseMQ95": 0.62,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00467",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2090,
+      "riseM": 0.394,
+      "riseMQ05": 0.203,
+      "riseMQ95": 0.716,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00468",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2100,
+      "riseM": 0.436,
+      "riseMQ05": 0.188,
+      "riseMQ95": 0.824,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00505",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2020,
+      "riseM": 0.048,
+      "riseMQ05": 0.007,
+      "riseMQ95": 0.096,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00506",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2030,
+      "riseM": 0.092,
+      "riseMQ05": 0.035,
+      "riseMQ95": 0.164,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00507",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2040,
+      "riseM": 0.14,
+      "riseMQ05": 0.067,
+      "riseMQ95": 0.241,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00508",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2050,
+      "riseM": 0.204,
+      "riseMQ05": 0.113,
+      "riseMQ95": 0.342,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00509",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2060,
+      "riseM": 0.264,
+      "riseMQ05": 0.151,
+      "riseMQ95": 0.447,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00510",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2070,
+      "riseM": 0.331,
+      "riseMQ05": 0.189,
+      "riseMQ95": 0.567,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00511",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2080,
+      "riseM": 0.4,
+      "riseMQ05": 0.226,
+      "riseMQ95": 0.693,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00512",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2090,
+      "riseM": 0.474,
+      "riseMQ05": 0.265,
+      "riseMQ95": 0.834,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00513",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2100,
+      "riseM": 0.568,
+      "riseMQ05": 0.321,
+      "riseMQ95": 1.003,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00550",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2020,
+      "riseM": 0.044,
+      "riseMQ05": 0.002,
+      "riseMQ95": 0.093,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00551",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2030,
+      "riseM": 0.09,
+      "riseMQ05": 0.031,
+      "riseMQ95": 0.163,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00552",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2040,
+      "riseM": 0.14,
+      "riseMQ05": 0.067,
+      "riseMQ95": 0.244,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00553",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2050,
+      "riseM": 0.206,
+      "riseMQ05": 0.112,
+      "riseMQ95": 0.35,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00554",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2060,
+      "riseM": 0.27,
+      "riseMQ05": 0.155,
+      "riseMQ95": 0.461,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00555",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2070,
+      "riseM": 0.355,
+      "riseMQ05": 0.212,
+      "riseMQ95": 0.599,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00556",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2080,
+      "riseM": 0.448,
+      "riseMQ05": 0.269,
+      "riseMQ95": 0.761,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00557",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2090,
+      "riseM": 0.554,
+      "riseMQ05": 0.341,
+      "riseMQ95": 0.941,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00558",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2100,
+      "riseM": 0.678,
+      "riseMQ05": 0.407,
+      "riseMQ95": 1.153,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00370",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2020,
+      "riseM": 0.051,
+      "riseMQ05": 0.009,
+      "riseMQ95": 0.1,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00371",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2030,
+      "riseM": 0.1,
+      "riseMQ05": 0.04,
+      "riseMQ95": 0.207,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00372",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2040,
+      "riseM": 0.16,
+      "riseMQ05": 0.077,
+      "riseMQ95": 0.368,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00373",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2050,
+      "riseM": 0.239,
+      "riseMQ05": 0.13,
+      "riseMQ95": 0.566,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00374",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2060,
+      "riseM": 0.322,
+      "riseMQ05": 0.184,
+      "riseMQ95": 0.794,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00375",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2070,
+      "riseM": 0.431,
+      "riseMQ05": 0.259,
+      "riseMQ95": 1.089,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00376",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2080,
+      "riseM": 0.563,
+      "riseMQ05": 0.331,
+      "riseMQ95": 1.465,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00377",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2090,
+      "riseM": 0.72,
+      "riseMQ05": 0.418,
+      "riseMQ95": 1.889,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00378",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2100,
+      "riseM": 0.901,
+      "riseMQ05": 0.5,
+      "riseMQ95": 2.385,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00595",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2020,
+      "riseM": 0.048,
+      "riseMQ05": 0.009,
+      "riseMQ95": 0.094,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00596",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2030,
+      "riseM": 0.097,
+      "riseMQ05": 0.041,
+      "riseMQ95": 0.169,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00597",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2040,
+      "riseM": 0.156,
+      "riseMQ05": 0.081,
+      "riseMQ95": 0.264,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00598",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2050,
+      "riseM": 0.231,
+      "riseMQ05": 0.134,
+      "riseMQ95": 0.38,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00599",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2060,
+      "riseM": 0.304,
+      "riseMQ05": 0.188,
+      "riseMQ95": 0.503,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00600",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2070,
+      "riseM": 0.401,
+      "riseMQ05": 0.259,
+      "riseMQ95": 0.663,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00601",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2080,
+      "riseM": 0.511,
+      "riseMQ05": 0.331,
+      "riseMQ95": 0.849,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00602",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2090,
+      "riseM": 0.638,
+      "riseMQ05": 0.418,
+      "riseMQ95": 1.067,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00603",
+      "station": {
+        "psmslId": 841,
+        "name": "HONDAU",
+        "nameVi": "Hòn Dấu",
+        "location": "북부 — 하이퐁",
+        "latitude": 20.666667,
+        "longitude": 106.8
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2100,
+      "riseM": 0.778,
+      "riseMQ05": 0.5,
+      "riseMQ95": 1.308,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00730",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2020,
+      "riseM": -0.052,
+      "riseMQ05": -0.081,
+      "riseMQ95": -0.015,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00731",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2030,
+      "riseM": -0.076,
+      "riseMQ05": -0.132,
+      "riseMQ95": -0.005,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00732",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2040,
+      "riseM": -0.108,
+      "riseMQ05": -0.182,
+      "riseMQ95": -0.004,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00733",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2050,
+      "riseM": -0.125,
+      "riseMQ05": -0.215,
+      "riseMQ95": 0.011,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00734",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2060,
+      "riseM": -0.161,
+      "riseMQ05": -0.274,
+      "riseMQ95": 0.015,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00735",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2070,
+      "riseM": -0.186,
+      "riseMQ05": -0.33,
+      "riseMQ95": 0.04,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00736",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2080,
+      "riseM": -0.218,
+      "riseMQ05": -0.389,
+      "riseMQ95": 0.049,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00737",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2090,
+      "riseM": -0.241,
+      "riseMQ05": -0.435,
+      "riseMQ95": 0.069,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00738",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2100,
+      "riseM": -0.274,
+      "riseMQ05": -0.539,
+      "riseMQ95": 0.098,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00640",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2020,
+      "riseM": -0.054,
+      "riseMQ05": -0.111,
+      "riseMQ95": 0.009,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00641",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2030,
+      "riseM": -0.08,
+      "riseMQ05": -0.153,
+      "riseMQ95": 0.018,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00642",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2040,
+      "riseM": -0.104,
+      "riseMQ05": -0.188,
+      "riseMQ95": 0.057,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00643",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2050,
+      "riseM": -0.117,
+      "riseMQ05": -0.22,
+      "riseMQ95": 0.111,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00644",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2060,
+      "riseM": -0.138,
+      "riseMQ05": -0.265,
+      "riseMQ95": 0.161,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00645",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2070,
+      "riseM": -0.15,
+      "riseMQ05": -0.301,
+      "riseMQ95": 0.219,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00646",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2080,
+      "riseM": -0.168,
+      "riseMQ05": -0.352,
+      "riseMQ95": 0.295,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00647",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2090,
+      "riseM": -0.188,
+      "riseMQ05": -0.402,
+      "riseMQ95": 0.385,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00648",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2100,
+      "riseM": -0.214,
+      "riseMQ05": -0.488,
+      "riseMQ95": 0.48,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00775",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2020,
+      "riseM": -0.057,
+      "riseMQ05": -0.111,
+      "riseMQ95": 0.002,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00776",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2030,
+      "riseM": -0.084,
+      "riseMQ05": -0.153,
+      "riseMQ95": -0.003,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00777",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2040,
+      "riseM": -0.11,
+      "riseMQ05": -0.188,
+      "riseMQ95": -0.006,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00778",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2050,
+      "riseM": -0.124,
+      "riseMQ05": -0.22,
+      "riseMQ95": 0.015,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00779",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2060,
+      "riseM": -0.15,
+      "riseMQ05": -0.265,
+      "riseMQ95": 0.031,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00780",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2070,
+      "riseM": -0.162,
+      "riseMQ05": -0.301,
+      "riseMQ95": 0.063,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00781",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2080,
+      "riseM": -0.182,
+      "riseMQ05": -0.352,
+      "riseMQ95": 0.097,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00782",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2090,
+      "riseM": -0.204,
+      "riseMQ05": -0.402,
+      "riseMQ95": 0.124,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00783",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2100,
+      "riseM": -0.232,
+      "riseMQ05": -0.488,
+      "riseMQ95": 0.16,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00820",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2020,
+      "riseM": -0.057,
+      "riseMQ05": -0.101,
+      "riseMQ95": -0.008,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00821",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2030,
+      "riseM": -0.084,
+      "riseMQ05": -0.143,
+      "riseMQ95": -0.011,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00822",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2040,
+      "riseM": -0.106,
+      "riseMQ05": -0.183,
+      "riseMQ95": -0.003,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00823",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2050,
+      "riseM": -0.113,
+      "riseMQ05": -0.208,
+      "riseMQ95": 0.029,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00824",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2060,
+      "riseM": -0.124,
+      "riseMQ05": -0.241,
+      "riseMQ95": 0.064,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00825",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2070,
+      "riseM": -0.126,
+      "riseMQ05": -0.275,
+      "riseMQ95": 0.114,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00826",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2080,
+      "riseM": -0.128,
+      "riseMQ05": -0.308,
+      "riseMQ95": 0.169,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00827",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2090,
+      "riseM": -0.123,
+      "riseMQ05": -0.34,
+      "riseMQ95": 0.242,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00828",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2100,
+      "riseM": -0.099,
+      "riseMQ05": -0.355,
+      "riseMQ95": 0.341,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00865",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2020,
+      "riseM": -0.062,
+      "riseMQ05": -0.105,
+      "riseMQ95": -0.012,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00866",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2030,
+      "riseM": -0.087,
+      "riseMQ05": -0.147,
+      "riseMQ95": -0.012,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00867",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2040,
+      "riseM": -0.106,
+      "riseMQ05": -0.182,
+      "riseMQ95": 0,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00868",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2050,
+      "riseM": -0.11,
+      "riseMQ05": -0.209,
+      "riseMQ95": 0.036,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00869",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2060,
+      "riseM": -0.116,
+      "riseMQ05": -0.236,
+      "riseMQ95": 0.076,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00870",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2070,
+      "riseM": -0.102,
+      "riseMQ05": -0.251,
+      "riseMQ95": 0.145,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00871",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2080,
+      "riseM": -0.079,
+      "riseMQ05": -0.265,
+      "riseMQ95": 0.238,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00872",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2090,
+      "riseM": -0.044,
+      "riseMQ05": -0.264,
+      "riseMQ95": 0.347,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00873",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2100,
+      "riseM": 0.011,
+      "riseMQ05": -0.267,
+      "riseMQ95": 0.489,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00685",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2020,
+      "riseM": -0.055,
+      "riseMQ05": -0.098,
+      "riseMQ95": -0.004,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00686",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2030,
+      "riseM": -0.076,
+      "riseMQ05": -0.138,
+      "riseMQ95": 0.032,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00687",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2040,
+      "riseM": -0.086,
+      "riseMQ05": -0.172,
+      "riseMQ95": 0.123,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00688",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2050,
+      "riseM": -0.078,
+      "riseMQ05": -0.191,
+      "riseMQ95": 0.251,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00689",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2060,
+      "riseM": -0.066,
+      "riseMQ05": -0.21,
+      "riseMQ95": 0.409,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00690",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2070,
+      "riseM": -0.027,
+      "riseMQ05": -0.205,
+      "riseMQ95": 0.634,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00691",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2080,
+      "riseM": 0.035,
+      "riseMQ05": -0.204,
+      "riseMQ95": 0.941,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00692",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2090,
+      "riseM": 0.122,
+      "riseMQ05": -0.188,
+      "riseMQ95": 1.297,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00693",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2100,
+      "riseM": 0.232,
+      "riseMQ05": -0.177,
+      "riseMQ95": 1.721,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00910",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2020,
+      "riseM": -0.057,
+      "riseMQ05": -0.098,
+      "riseMQ95": -0.011,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00911",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2030,
+      "riseM": -0.079,
+      "riseMQ05": -0.137,
+      "riseMQ95": -0.007,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00912",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2040,
+      "riseM": -0.09,
+      "riseMQ05": -0.169,
+      "riseMQ95": 0.02,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00913",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2050,
+      "riseM": -0.086,
+      "riseMQ05": -0.187,
+      "riseMQ95": 0.066,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00914",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2060,
+      "riseM": -0.083,
+      "riseMQ05": -0.205,
+      "riseMQ95": 0.12,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00915",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2070,
+      "riseM": -0.058,
+      "riseMQ05": -0.205,
+      "riseMQ95": 0.209,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00916",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2080,
+      "riseM": -0.017,
+      "riseMQ05": -0.204,
+      "riseMQ95": 0.325,
+      "zoneKey": null,
+      "zoneLabel": null,
+      "note": "상대해수면 하강 전망 — 대응 구간 없음"
+    },
+    {
+      "recordId": "v124-b-008-entity-00917",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2090,
+      "riseM": 0.04,
+      "riseMQ05": -0.188,
+      "riseMQ95": 0.472,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00918",
+      "station": {
+        "psmslId": 1003,
+        "name": "HONNGU",
+        "nameVi": "Hòn Ngư",
+        "location": "북중부 — 응에안",
+        "latitude": 18.8,
+        "longitude": 105.766667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2100,
+      "riseM": 0.108,
+      "riseMQ05": -0.177,
+      "riseMQ95": 0.643,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01045",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2020,
+      "riseM": 0.031,
+      "riseMQ05": -0.013,
+      "riseMQ95": 0.081,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01046",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2030,
+      "riseM": 0.062,
+      "riseMQ05": -0.01,
+      "riseMQ95": 0.149,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01047",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2040,
+      "riseM": 0.084,
+      "riseMQ05": -0.005,
+      "riseMQ95": 0.199,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01048",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2050,
+      "riseM": 0.118,
+      "riseMQ05": 0.009,
+      "riseMQ95": 0.27,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01049",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2060,
+      "riseM": 0.136,
+      "riseMQ05": 0,
+      "riseMQ95": 0.332,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01050",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2070,
+      "riseM": 0.17,
+      "riseMQ05": -0.001,
+      "riseMQ95": 0.418,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01051",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2080,
+      "riseM": 0.198,
+      "riseMQ05": -0.005,
+      "riseMQ95": 0.49,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01052",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2090,
+      "riseM": 0.234,
+      "riseMQ05": 0,
+      "riseMQ95": 0.572,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01053",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2100,
+      "riseM": 0.252,
+      "riseMQ05": -0.026,
+      "riseMQ95": 0.639,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00955",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2020,
+      "riseM": 0.027,
+      "riseMQ05": -0.055,
+      "riseMQ95": 0.115,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00956",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2030,
+      "riseM": 0.055,
+      "riseMQ05": -0.044,
+      "riseMQ95": 0.176,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00957",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2040,
+      "riseM": 0.085,
+      "riseMQ05": -0.029,
+      "riseMQ95": 0.266,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00958",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2050,
+      "riseM": 0.127,
+      "riseMQ05": -0.006,
+      "riseMQ95": 0.373,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00959",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2060,
+      "riseM": 0.162,
+      "riseMQ05": 0.004,
+      "riseMQ95": 0.479,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00960",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2070,
+      "riseM": 0.21,
+      "riseMQ05": 0.018,
+      "riseMQ95": 0.604,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00961",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2080,
+      "riseM": 0.25,
+      "riseMQ05": 0.024,
+      "riseMQ95": 0.741,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00962",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2090,
+      "riseM": 0.288,
+      "riseMQ05": 0.03,
+      "riseMQ95": 0.887,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00963",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2100,
+      "riseM": 0.325,
+      "riseMQ05": -0.013,
+      "riseMQ95": 1.057,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01090",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2020,
+      "riseM": 0.024,
+      "riseMQ05": -0.055,
+      "riseMQ95": 0.107,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01091",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2030,
+      "riseM": 0.05,
+      "riseMQ05": -0.044,
+      "riseMQ95": 0.156,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01092",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2040,
+      "riseM": 0.078,
+      "riseMQ05": -0.029,
+      "riseMQ95": 0.207,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01093",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2050,
+      "riseM": 0.119,
+      "riseMQ05": -0.006,
+      "riseMQ95": 0.282,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01094",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2060,
+      "riseM": 0.15,
+      "riseMQ05": 0.004,
+      "riseMQ95": 0.355,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01095",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2070,
+      "riseM": 0.196,
+      "riseMQ05": 0.018,
+      "riseMQ95": 0.451,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01096",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2080,
+      "riseM": 0.235,
+      "riseMQ05": 0.024,
+      "riseMQ95": 0.543,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01097",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2090,
+      "riseM": 0.271,
+      "riseMQ05": 0.03,
+      "riseMQ95": 0.63,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01098",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2100,
+      "riseM": 0.306,
+      "riseMQ05": -0.013,
+      "riseMQ95": 0.746,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01135",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2020,
+      "riseM": 0.026,
+      "riseMQ05": -0.041,
+      "riseMQ95": 0.097,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01136",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2030,
+      "riseM": 0.052,
+      "riseMQ05": -0.03,
+      "riseMQ95": 0.145,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01137",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2040,
+      "riseM": 0.084,
+      "riseMQ05": -0.014,
+      "riseMQ95": 0.207,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01138",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2050,
+      "riseM": 0.132,
+      "riseMQ05": 0.003,
+      "riseMQ95": 0.3,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01139",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2060,
+      "riseM": 0.176,
+      "riseMQ05": 0.024,
+      "riseMQ95": 0.388,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01140",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2070,
+      "riseM": 0.233,
+      "riseMQ05": 0.049,
+      "riseMQ95": 0.5,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01141",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2080,
+      "riseM": 0.29,
+      "riseMQ05": 0.066,
+      "riseMQ95": 0.621,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01142",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2090,
+      "riseM": 0.35,
+      "riseMQ05": 0.086,
+      "riseMQ95": 0.751,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01143",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2100,
+      "riseM": 0.426,
+      "riseMQ05": 0.124,
+      "riseMQ95": 0.907,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01180",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2020,
+      "riseM": 0.026,
+      "riseMQ05": -0.038,
+      "riseMQ95": 0.094,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01181",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2030,
+      "riseM": 0.053,
+      "riseMQ05": -0.026,
+      "riseMQ95": 0.145,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01182",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2040,
+      "riseM": 0.086,
+      "riseMQ05": -0.011,
+      "riseMQ95": 0.209,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01183",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2050,
+      "riseM": 0.139,
+      "riseMQ05": 0.013,
+      "riseMQ95": 0.307,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01184",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2060,
+      "riseM": 0.189,
+      "riseMQ05": 0.036,
+      "riseMQ95": 0.407,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01185",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2070,
+      "riseM": 0.26,
+      "riseMQ05": 0.073,
+      "riseMQ95": 0.534,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01186",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2080,
+      "riseM": 0.338,
+      "riseMQ05": 0.111,
+      "riseMQ95": 0.68,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01187",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2090,
+      "riseM": 0.428,
+      "riseMQ05": 0.161,
+      "riseMQ95": 0.852,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01188",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2100,
+      "riseM": 0.534,
+      "riseMQ05": 0.207,
+      "riseMQ95": 1.049,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01000",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2020,
+      "riseM": 0.026,
+      "riseMQ05": -0.036,
+      "riseMQ95": 0.094,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01001",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2030,
+      "riseM": 0.06,
+      "riseMQ05": -0.02,
+      "riseMQ95": 0.182,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01002",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2040,
+      "riseM": 0.108,
+      "riseMQ05": -0.006,
+      "riseMQ95": 0.334,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01003",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2050,
+      "riseM": 0.17,
+      "riseMQ05": 0.025,
+      "riseMQ95": 0.516,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01004",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2060,
+      "riseM": 0.238,
+      "riseMQ05": 0.049,
+      "riseMQ95": 0.74,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01005",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2070,
+      "riseM": 0.332,
+      "riseMQ05": 0.099,
+      "riseMQ95": 1.027,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01006",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2080,
+      "riseM": 0.447,
+      "riseMQ05": 0.153,
+      "riseMQ95": 1.387,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01007",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2090,
+      "riseM": 0.589,
+      "riseMQ05": 0.226,
+      "riseMQ95": 1.813,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01008",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2100,
+      "riseM": 0.764,
+      "riseMQ05": 0.293,
+      "riseMQ95": 2.308,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01225",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2020,
+      "riseM": 0.023,
+      "riseMQ05": -0.036,
+      "riseMQ95": 0.087,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01226",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2030,
+      "riseM": 0.058,
+      "riseMQ05": -0.019,
+      "riseMQ95": 0.147,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01227",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2040,
+      "riseM": 0.104,
+      "riseMQ05": -0.003,
+      "riseMQ95": 0.235,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01228",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2050,
+      "riseM": 0.162,
+      "riseMQ05": 0.03,
+      "riseMQ95": 0.336,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01229",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2060,
+      "riseM": 0.22,
+      "riseMQ05": 0.055,
+      "riseMQ95": 0.452,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01230",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2070,
+      "riseM": 0.3,
+      "riseMQ05": 0.099,
+      "riseMQ95": 0.601,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01231",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2080,
+      "riseM": 0.392,
+      "riseMQ05": 0.153,
+      "riseMQ95": 0.772,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01232",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2090,
+      "riseM": 0.502,
+      "riseMQ05": 0.226,
+      "riseMQ95": 0.968,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01233",
+      "station": {
+        "psmslId": 1449,
+        "name": "QUINHON",
+        "nameVi": "Quy Nhơn",
+        "location": "중부 — 빈딘",
+        "latitude": 13.766667,
+        "longitude": 109.25
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2100,
+      "riseM": 0.634,
+      "riseMQ05": 0.293,
+      "riseMQ95": 1.212,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00100",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2020,
+      "riseM": 0.063,
+      "riseMQ05": 0.027,
+      "riseMQ95": 0.106,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00101",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2030,
+      "riseM": 0.116,
+      "riseMQ05": 0.047,
+      "riseMQ95": 0.198,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00102",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2040,
+      "riseM": 0.16,
+      "riseMQ05": 0.069,
+      "riseMQ95": 0.277,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00103",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2050,
+      "riseM": 0.218,
+      "riseMQ05": 0.107,
+      "riseMQ95": 0.371,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00104",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2060,
+      "riseM": 0.258,
+      "riseMQ05": 0.12,
+      "riseMQ95": 0.453,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00105",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2070,
+      "riseM": 0.312,
+      "riseMQ05": 0.139,
+      "riseMQ95": 0.558,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00106",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2080,
+      "riseM": 0.358,
+      "riseMQ05": 0.154,
+      "riseMQ95": 0.648,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00107",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2090,
+      "riseM": 0.414,
+      "riseMQ05": 0.181,
+      "riseMQ95": 0.749,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00108",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2100,
+      "riseM": 0.457,
+      "riseMQ05": 0.158,
+      "riseMQ95": 0.855,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00010",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2020,
+      "riseM": 0.062,
+      "riseMQ05": -0.004,
+      "riseMQ95": 0.134,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00011",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2030,
+      "riseM": 0.112,
+      "riseMQ05": 0.029,
+      "riseMQ95": 0.22,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00012",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2040,
+      "riseM": 0.165,
+      "riseMQ05": 0.064,
+      "riseMQ95": 0.337,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00013",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2050,
+      "riseM": 0.228,
+      "riseMQ05": 0.105,
+      "riseMQ95": 0.468,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00014",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2060,
+      "riseM": 0.284,
+      "riseMQ05": 0.132,
+      "riseMQ95": 0.595,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00015",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2070,
+      "riseM": 0.351,
+      "riseMQ05": 0.169,
+      "riseMQ95": 0.737,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00016",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2080,
+      "riseM": 0.41,
+      "riseMQ05": 0.191,
+      "riseMQ95": 0.892,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00017",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2090,
+      "riseM": 0.469,
+      "riseMQ05": 0.215,
+      "riseMQ95": 1.061,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00018",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2100,
+      "riseM": 0.524,
+      "riseMQ05": 0.201,
+      "riseMQ95": 1.242,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00145",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2020,
+      "riseM": 0.059,
+      "riseMQ05": -0.004,
+      "riseMQ95": 0.126,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00146",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2030,
+      "riseM": 0.108,
+      "riseMQ05": 0.029,
+      "riseMQ95": 0.199,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00147",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2040,
+      "riseM": 0.158,
+      "riseMQ05": 0.064,
+      "riseMQ95": 0.276,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00148",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2050,
+      "riseM": 0.22,
+      "riseMQ05": 0.105,
+      "riseMQ95": 0.376,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00149",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2060,
+      "riseM": 0.272,
+      "riseMQ05": 0.132,
+      "riseMQ95": 0.471,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00150",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2070,
+      "riseM": 0.338,
+      "riseMQ05": 0.169,
+      "riseMQ95": 0.583,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00151",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2080,
+      "riseM": 0.396,
+      "riseMQ05": 0.191,
+      "riseMQ95": 0.697,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00152",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2090,
+      "riseM": 0.452,
+      "riseMQ05": 0.215,
+      "riseMQ95": 0.806,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00153",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2100,
+      "riseM": 0.504,
+      "riseMQ05": 0.201,
+      "riseMQ95": 0.929,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00190",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2020,
+      "riseM": 0.06,
+      "riseMQ05": 0.006,
+      "riseMQ95": 0.117,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00191",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2030,
+      "riseM": 0.108,
+      "riseMQ05": 0.037,
+      "riseMQ95": 0.191,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00192",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2040,
+      "riseM": 0.162,
+      "riseMQ05": 0.071,
+      "riseMQ95": 0.278,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00193",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2050,
+      "riseM": 0.232,
+      "riseMQ05": 0.116,
+      "riseMQ95": 0.389,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00194",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2060,
+      "riseM": 0.298,
+      "riseMQ05": 0.155,
+      "riseMQ95": 0.502,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00195",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2070,
+      "riseM": 0.374,
+      "riseMQ05": 0.198,
+      "riseMQ95": 0.634,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00196",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2080,
+      "riseM": 0.452,
+      "riseMQ05": 0.238,
+      "riseMQ95": 0.772,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00197",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2090,
+      "riseM": 0.534,
+      "riseMQ05": 0.28,
+      "riseMQ95": 0.923,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00198",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2100,
+      "riseM": 0.632,
+      "riseMQ05": 0.335,
+      "riseMQ95": 1.098,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00235",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2020,
+      "riseM": 0.056,
+      "riseMQ05": 0.005,
+      "riseMQ95": 0.114,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00236",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2030,
+      "riseM": 0.106,
+      "riseMQ05": 0.036,
+      "riseMQ95": 0.191,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00237",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2040,
+      "riseM": 0.164,
+      "riseMQ05": 0.072,
+      "riseMQ95": 0.281,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00238",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2050,
+      "riseM": 0.238,
+      "riseMQ05": 0.12,
+      "riseMQ95": 0.398,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00239",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2060,
+      "riseM": 0.309,
+      "riseMQ05": 0.164,
+      "riseMQ95": 0.519,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00240",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2070,
+      "riseM": 0.402,
+      "riseMQ05": 0.222,
+      "riseMQ95": 0.667,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00241",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2080,
+      "riseM": 0.502,
+      "riseMQ05": 0.281,
+      "riseMQ95": 0.838,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00242",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2090,
+      "riseM": 0.614,
+      "riseMQ05": 0.356,
+      "riseMQ95": 1.029,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00243",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2100,
+      "riseM": 0.746,
+      "riseMQ05": 0.427,
+      "riseMQ95": 1.25,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00055",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2020,
+      "riseM": 0.06,
+      "riseMQ05": 0.01,
+      "riseMQ95": 0.117,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00056",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2030,
+      "riseM": 0.116,
+      "riseMQ05": 0.044,
+      "riseMQ95": 0.233,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00057",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2040,
+      "riseM": 0.184,
+      "riseMQ05": 0.081,
+      "riseMQ95": 0.404,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00058",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2050,
+      "riseM": 0.268,
+      "riseMQ05": 0.135,
+      "riseMQ95": 0.607,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00059",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2060,
+      "riseM": 0.36,
+      "riseMQ05": 0.187,
+      "riseMQ95": 0.85,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00060",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2070,
+      "riseM": 0.477,
+      "riseMQ05": 0.264,
+      "riseMQ95": 1.159,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00061",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2080,
+      "riseM": 0.614,
+      "riseMQ05": 0.339,
+      "riseMQ95": 1.545,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00062",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2090,
+      "riseM": 0.779,
+      "riseMQ05": 0.429,
+      "riseMQ95": 1.982,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00063",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2100,
+      "riseM": 0.972,
+      "riseMQ05": 0.527,
+      "riseMQ95": 2.497,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00280",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2020,
+      "riseM": 0.057,
+      "riseMQ05": 0.01,
+      "riseMQ95": 0.11,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00281",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2030,
+      "riseM": 0.114,
+      "riseMQ05": 0.046,
+      "riseMQ95": 0.195,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00282",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2040,
+      "riseM": 0.18,
+      "riseMQ05": 0.084,
+      "riseMQ95": 0.303,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00283",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2050,
+      "riseM": 0.26,
+      "riseMQ05": 0.14,
+      "riseMQ95": 0.426,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00284",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2060,
+      "riseM": 0.342,
+      "riseMQ05": 0.193,
+      "riseMQ95": 0.564,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00285",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2070,
+      "riseM": 0.446,
+      "riseMQ05": 0.264,
+      "riseMQ95": 0.733,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00286",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2080,
+      "riseM": 0.561,
+      "riseMQ05": 0.339,
+      "riseMQ95": 0.929,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00287",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2090,
+      "riseM": 0.694,
+      "riseMQ05": 0.429,
+      "riseMQ95": 1.149,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-00288",
+      "station": {
+        "psmslId": 1475,
+        "name": "DANANG",
+        "nameVi": "Đà Nẵng",
+        "location": "중부 — 다낭",
+        "latitude": 16.1,
+        "longitude": 108.216667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2100,
+      "riseM": 0.844,
+      "riseMQ05": 0.527,
+      "riseMQ95": 1.408,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01360",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2020,
+      "riseM": 0.058,
+      "riseMQ05": 0.021,
+      "riseMQ95": 0.103,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01361",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2030,
+      "riseM": 0.108,
+      "riseMQ05": 0.041,
+      "riseMQ95": 0.19,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01362",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2040,
+      "riseM": 0.148,
+      "riseMQ05": 0.057,
+      "riseMQ95": 0.266,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01363",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2050,
+      "riseM": 0.201,
+      "riseMQ05": 0.088,
+      "riseMQ95": 0.357,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01364",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2060,
+      "riseM": 0.238,
+      "riseMQ05": 0.095,
+      "riseMQ95": 0.438,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01365",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2070,
+      "riseM": 0.29,
+      "riseMQ05": 0.114,
+      "riseMQ95": 0.541,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01366",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2080,
+      "riseM": 0.335,
+      "riseMQ05": 0.127,
+      "riseMQ95": 0.632,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01367",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2090,
+      "riseM": 0.387,
+      "riseMQ05": 0.147,
+      "riseMQ95": 0.729,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01368",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP1-1.9",
+      "confidence": "medium",
+      "year": 2100,
+      "riseM": 0.42,
+      "riseMQ05": 0.134,
+      "riseMQ95": 0.815,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01270",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2020,
+      "riseM": 0.056,
+      "riseMQ05": -0.018,
+      "riseMQ95": 0.135,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01271",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2030,
+      "riseM": 0.101,
+      "riseMQ05": 0.012,
+      "riseMQ95": 0.215,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01272",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2040,
+      "riseM": 0.15,
+      "riseMQ05": 0.043,
+      "riseMQ95": 0.327,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01273",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2050,
+      "riseM": 0.211,
+      "riseMQ05": 0.08,
+      "riseMQ95": 0.457,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01274",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2060,
+      "riseM": 0.265,
+      "riseMQ05": 0.105,
+      "riseMQ95": 0.583,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01275",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2070,
+      "riseM": 0.329,
+      "riseMQ05": 0.136,
+      "riseMQ95": 0.724,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01276",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2080,
+      "riseM": 0.386,
+      "riseMQ05": 0.157,
+      "riseMQ95": 0.878,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01277",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2090,
+      "riseM": 0.443,
+      "riseMQ05": 0.18,
+      "riseMQ95": 1.042,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01278",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "low",
+      "year": 2100,
+      "riseM": 0.499,
+      "riseMQ05": 0.164,
+      "riseMQ95": 1.228,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01405",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2020,
+      "riseM": 0.053,
+      "riseMQ05": -0.018,
+      "riseMQ95": 0.127,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01406",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2030,
+      "riseM": 0.097,
+      "riseMQ05": 0.012,
+      "riseMQ95": 0.194,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01407",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2040,
+      "riseM": 0.142,
+      "riseMQ05": 0.043,
+      "riseMQ95": 0.266,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01408",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2050,
+      "riseM": 0.203,
+      "riseMQ05": 0.08,
+      "riseMQ95": 0.365,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01409",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2060,
+      "riseM": 0.252,
+      "riseMQ05": 0.105,
+      "riseMQ95": 0.458,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01410",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2070,
+      "riseM": 0.316,
+      "riseMQ05": 0.136,
+      "riseMQ95": 0.571,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01411",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2080,
+      "riseM": 0.372,
+      "riseMQ05": 0.157,
+      "riseMQ95": 0.682,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01412",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2090,
+      "riseM": 0.426,
+      "riseMQ05": 0.18,
+      "riseMQ95": 0.788,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01413",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP1-2.6",
+      "confidence": "medium",
+      "year": 2100,
+      "riseM": 0.479,
+      "riseMQ05": 0.164,
+      "riseMQ95": 0.916,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01450",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2020,
+      "riseM": 0.054,
+      "riseMQ05": -0.006,
+      "riseMQ95": 0.119,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01451",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2030,
+      "riseM": 0.099,
+      "riseMQ05": 0.023,
+      "riseMQ95": 0.187,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01452",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2040,
+      "riseM": 0.151,
+      "riseMQ05": 0.055,
+      "riseMQ95": 0.27,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01453",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2050,
+      "riseM": 0.217,
+      "riseMQ05": 0.092,
+      "riseMQ95": 0.382,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01454",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2060,
+      "riseM": 0.279,
+      "riseMQ05": 0.129,
+      "riseMQ95": 0.489,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01455",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2070,
+      "riseM": 0.354,
+      "riseMQ05": 0.171,
+      "riseMQ95": 0.621,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01456",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2080,
+      "riseM": 0.43,
+      "riseMQ05": 0.206,
+      "riseMQ95": 0.759,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01457",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2090,
+      "riseM": 0.508,
+      "riseMQ05": 0.243,
+      "riseMQ95": 0.907,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01458",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP2-4.5",
+      "confidence": "medium",
+      "year": 2100,
+      "riseM": 0.601,
+      "riseMQ05": 0.295,
+      "riseMQ95": 1.079,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01495",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2020,
+      "riseM": 0.053,
+      "riseMQ05": -0.002,
+      "riseMQ95": 0.113,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01496",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2030,
+      "riseM": 0.099,
+      "riseMQ05": 0.025,
+      "riseMQ95": 0.187,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01497",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2040,
+      "riseM": 0.152,
+      "riseMQ05": 0.058,
+      "riseMQ95": 0.273,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01498",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2050,
+      "riseM": 0.224,
+      "riseMQ05": 0.1,
+      "riseMQ95": 0.389,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01499",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2060,
+      "riseM": 0.292,
+      "riseMQ05": 0.14,
+      "riseMQ95": 0.508,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01500",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2070,
+      "riseM": 0.382,
+      "riseMQ05": 0.197,
+      "riseMQ95": 0.656,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01501",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2080,
+      "riseM": 0.48,
+      "riseMQ05": 0.253,
+      "riseMQ95": 0.825,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01502",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2090,
+      "riseM": 0.59,
+      "riseMQ05": 0.322,
+      "riseMQ95": 1.017,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01503",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP3-7.0",
+      "confidence": "medium",
+      "year": 2100,
+      "riseM": 0.718,
+      "riseMQ05": 0.388,
+      "riseMQ95": 1.236,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01315",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2020,
+      "riseM": 0.053,
+      "riseMQ05": -0.003,
+      "riseMQ95": 0.116,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01316",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2030,
+      "riseM": 0.107,
+      "riseMQ05": 0.031,
+      "riseMQ95": 0.226,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01317",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2040,
+      "riseM": 0.173,
+      "riseMQ05": 0.063,
+      "riseMQ95": 0.398,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01318",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2050,
+      "riseM": 0.253,
+      "riseMQ05": 0.112,
+      "riseMQ95": 0.597,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01319",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2060,
+      "riseM": 0.34,
+      "riseMQ05": 0.158,
+      "riseMQ95": 0.84,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01320",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2070,
+      "riseM": 0.454,
+      "riseMQ05": 0.228,
+      "riseMQ95": 1.148,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01321",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2080,
+      "riseM": 0.59,
+      "riseMQ05": 0.3,
+      "riseMQ95": 1.536,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01322",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2090,
+      "riseM": 0.752,
+      "riseMQ05": 0.388,
+      "riseMQ95": 1.974,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01323",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "low",
+      "year": 2100,
+      "riseM": 0.942,
+      "riseMQ05": 0.479,
+      "riseMQ95": 2.49,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01540",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2020,
+      "riseM": 0.05,
+      "riseMQ05": -0.002,
+      "riseMQ95": 0.108,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01541",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2030,
+      "riseM": 0.104,
+      "riseMQ05": 0.032,
+      "riseMQ95": 0.19,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01542",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2040,
+      "riseM": 0.168,
+      "riseMQ05": 0.065,
+      "riseMQ95": 0.297,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01543",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2050,
+      "riseM": 0.244,
+      "riseMQ05": 0.117,
+      "riseMQ95": 0.418,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01544",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2060,
+      "riseM": 0.322,
+      "riseMQ05": 0.163,
+      "riseMQ95": 0.552,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01545",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2070,
+      "riseM": 0.422,
+      "riseMQ05": 0.228,
+      "riseMQ95": 0.721,
+      "zoneKey": "le0p5m",
+      "zoneLabel": "≤0.5 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01546",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2080,
+      "riseM": 0.534,
+      "riseMQ05": 0.3,
+      "riseMQ95": 0.914,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01547",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2090,
+      "riseM": 0.666,
+      "riseMQ05": 0.388,
+      "riseMQ95": 1.134,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    },
+    {
+      "recordId": "v124-b-008-entity-01548",
+      "station": {
+        "psmslId": 1495,
+        "name": "VUNGTAU",
+        "nameVi": "Vũng Tàu",
+        "location": "남부 — 바리아붕따우",
+        "latitude": 10.333333,
+        "longitude": 107.066667
+      },
+      "scenario": "SSP5-8.5",
+      "confidence": "medium",
+      "year": 2100,
+      "riseM": 0.812,
+      "riseMQ05": 0.479,
+      "riseMQ95": 1.389,
+      "zoneKey": "le1m",
+      "zoneLabel": "≤1 m",
+      "note": null
+    }
+  ],
+  "generatedAt": "2026-09-22T04:48:58Z"
+}
