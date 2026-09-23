@@ -16,7 +16,7 @@
 | 매트릭스(A-013·C-005·B-044) | 히트맵·정렬표 | 이번 라운드는 문장값 비교표/카드로 열림(예외, 히트맵 후속 P4) |
 | 상태 안내(C-020·C-021·C-023·E-011·E-013) | 문구만(`status-note`) | 차트 0 |
 
-## 집계: 표준 108 · 보존 11 · 예외 33 · 지도 옆 42 · 지도 보류 1
+## 집계: 표준 109 · 보존 11 · 예외 32 · 지도 옆 42 · 지도 보류 1
 
 | ID | 유형 | 1순위 | 제목 | 가로축 | 세로축 | 단위 | 2순위 | 지도 | 상태 | 참고 사례 | 사유·비고 |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -167,8 +167,8 @@
 | E-013 | 상태 안내 | `status-note` | 운영유지보수 역량 안내 | — | — | — | — | 없음 | 표준 | [CTCN NDE / technical assistance directory](https://www.ctc-n.org/file-download/download/public/25589) · [UNFCCC Designated National Authorities](https://unfccc.int/es/node/627860) |  |
 | E-014 | 정책·문서 | `timeline` | 한국-베트남 양자협정 연혁 | — | — | — | `table` | 없음 | 표준 | [UNFCCC NDC Registry](https://unfccc.int/NDCREG) · [IEA Policies database](https://www.iea.org/policies) |  |
 | E-015 | 정책·문서 | `comparison-table` | NDC Partnership 참여현황 | — | — | — | `table` | 없음 | 표준 | [CTCN NDE / technical assistance directory](https://www.ctc-n.org/file-download/download/public/25589) · [UNFCCC Designated National Authorities](https://unfccc.int/es/node/627860) |  |
-| E-016 | 정책·문서 | `comparison-table` | 한국 기후기술 TRL 근거 | — | — | — | `table` | 없음 | 표준 | [CTCN NDE / technical assistance directory](https://www.ctc-n.org/file-download/download/public/25589) · [UNFCCC Designated National Authorities](https://unfccc.int/es/node/627860) |  |
-| E-017 | 국가 시계열 | `comparison-table` | 국가별 기후기술 순위 비교 | — | — | — | `table` | 없음 | 예외 | [WIPO IP Statistics](https://www.wipo.int/en/web/ip-statistics/about) · [UNESCO UIS Data Browser](https://databrowser.uis.unesco.org/) | 국가별 순위 비교표로 열림 · 순위 막대(대상국 라벨 복원)는 후속(P4) |
+| E-016 | 상태 안내 | `status-note` | 공개 상태 안내 | — | — | — | — | 없음 | 표준 | [CTCN NDE / technical assistance directory](https://www.ctc-n.org/file-download/download/public/25589) · [UNFCCC Designated National Authorities](https://unfccc.int/es/node/627860) | V159: 제외(사용자 0923) — 결정·사유·결정일 안내만 표시 |
+| E-017 | 상태 안내 | `status-note` | 공개 상태 안내 | — | — | — | — | 없음 | 표준 | [WIPO IP Statistics](https://www.wipo.int/en/web/ip-statistics/about) · [UNESCO UIS Data Browser](https://databrowser.uis.unesco.org/) | V159: 제외(사용자 0923) — 결정·사유·결정일 안내만 표시 |
 | E-018 | 등록부 | `category-bar` | 상태별 한국기업 진출 | 건수 | 진출 상태 | 건 | `cards-list` · `table` | 1순위 옆 | 표준 | [CTCN NDE / technical assistance directory](https://www.ctc-n.org/file-download/download/public/25589) · [UNFCCC Designated National Authorities](https://unfccc.int/es/node/627860) |  |
 | E-019 | 등록부 | `category-bar` | 설치여부별 한국기관 사무소 | 기관 수 | 도시 | 곳 | `cards-list` · `table` | 1순위 옆 | 표준 | [CTCN NDE / technical assistance directory](https://www.ctc-n.org/file-download/download/public/25589) · [UNFCCC Designated National Authorities](https://unfccc.int/es/node/627860) |  |
 | E-020 | 등록부 | `category-bar` | 제도별 지원사례 현황 | 건수 | 지원제도 | 건 | `cards-list` · `table` | 없음 | 표준 | [CTCN NDE / technical assistance directory](https://www.ctc-n.org/file-download/download/public/25589) · [UNFCCC Designated National Authorities](https://unfccc.int/es/node/627860) |  |

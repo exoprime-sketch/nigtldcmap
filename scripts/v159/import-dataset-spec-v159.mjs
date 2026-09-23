@@ -145,6 +145,15 @@ function cardDefinition(elementId, definition) {
   return { value: definition.slice(match[0].length), removed: match[0], rule: "removed" };
 }
 
+// ---------------------------------------------------------------- decision note
+// The first "- <ID> 제외|대체: …" line of 처리방향 is the stated reason for an
+// excluded or replaced element; only the ID prefix is dropped.
+function decisionNote(direction) {
+  const pattern = /^-\s*(?:[A-E]-\d{3}\s*)?(제외|대체)(\s*사유)?\s*:\s*/;
+  const line = direction.split(/\r?\n/).find((item) => pattern.test(item.trim()));
+  return line ? line.trim().replace(pattern, "") : null;
+}
+
 // ---------------------------------------------------------------- caution countries
 function registryCountries() {
   const dataRoot = resolve(ROOT, "public/data");
@@ -294,6 +303,7 @@ function main() {
       refApa: text(row[c("참고문헌(APA)")]),
       checkedAt: text(row[c("확인일자")]).slice(0, 10),
       decision: text(row[c("금년도 최종 결정")]) || null,
+      decisionNote: decisionNote(text(row[c("처리방향")])),
     });
   }
 
