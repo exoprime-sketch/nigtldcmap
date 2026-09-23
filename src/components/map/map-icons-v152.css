@@ -19,22 +19,66 @@
   color: var(--mi152-ink);
 }
 
-.mi152-badge-glyph {
+/* Page rules size every svg inside some containers (e.g. `.detail-map148 svg`);
+   the glyph keeps its own size wherever the badge sits. */
+.mi152-badge > svg.mi152-badge-glyph {
   display: block;
   overflow: visible;
-  width: 68%;
-  height: 68%;
+  width: 68% !important;
+  height: 68% !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  cursor: inherit;
 }
 
-.mi152-badge-tag circle {
-  fill: var(--mi152-ink);
+/* The map's "KR" tag for Korean companies/offices (drawn by CSS, never DOM text). */
+.mi152-badge--kr::after {
+  content: "KR";
+  position: absolute;
+  right: -7px;
+  bottom: -5px;
+  padding: 0 2px;
+  border-radius: 3px;
+  background: #fff;
+  color: #6d1d3b;
+  font: 700 7.5px/1.15 inherit;
+  letter-spacing: 0.02em;
+  box-shadow: 0 0 0 1px #fff;
 }
 
-.mi152-badge-tag text {
-  fill: #fff;
-  font-family: inherit;
-  font-size: 7.5px;
-  font-weight: 700;
+/* Big map active-layer list: the badge replaces the V129 shape swatch. */
+.cdp-map-symbol.cdp-map-symbol--icon {
+  display: inline-flex;
+  width: auto;
+  height: auto;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  transform: none;
+}
+
+/* A-023 capacity bands drawn as the badges the map draws. */
+.cdp-map-legend__capacity i.cdp-map-legend__capacity-badge {
+  box-sizing: border-box;
+  border: 2.5px solid #5f6f69;
+  background: #fff;
+  box-shadow: none;
+}
+
+.cdp-map-legend__icons {
+  display: grid;
+  gap: 6px;
+}
+
+.cdp-map-legend__icons > p {
+  margin: 0;
+  color: #5c6f6a;
+  font-size: 11.5px;
+}
+
+.cdp-map-legend__explanation .mi152-badge {
+  margin-right: 4px;
+  vertical-align: middle;
 }
 
 .mi152-legend {

@@ -27,6 +27,7 @@ import {
 } from "./features";
 import { layerRuntimeIds, type MapLayerRuntimeIdsV152 } from "./ids";
 import { mountLineLayersV152 } from "./lineLayer";
+import { assignPointIconsV152 } from "./pointIconLayer";
 import { mountPointLayersV152 } from "./pointLayer";
 import { mountBudgetContextLayersV152, mountRegionalScopeLayersV152 } from "./regionLayer";
 import type {
@@ -50,6 +51,8 @@ export interface MapLayerRenderOptionsV152 {
   labels?: boolean;
   /** Hit and selection layers are always added; callers bind handlers to them. */
   interactive?: boolean;
+  /** Clustered sources split into single sites above this zoom (big map: 13). */
+  clusterMaxZoom?: number;
 }
 
 export interface MapAreaLayerPreparedV152 {
@@ -134,7 +137,8 @@ export function mountAreaLayerV152(
     isPrimary,
     contextIndex,
     roleOpacity,
-  }: { ids: MapLayerRuntimeIdsV152; color: string; isPrimary: boolean; contextIndex: number; roleOpacity: number }
+    icons = false,
+  }: { ids: MapLayerRuntimeIdsV152; color: string; isPrimary: boolean; contextIndex: number; roleOpacity: number; icons?: boolean }
 ): { interactiveLayerId: string; additionalInteractiveLayerId?: string } {
   map.addSource(ids.source, { type: "geojson", data: prepared.data });
   if (prepared.renderer === "line") {
@@ -144,7 +148,7 @@ export function mountAreaLayerV152(
     return { interactiveLayerId: mountBudgetContextLayersV152(map, { ids, color, choropleth: prepared.choropleth }) };
   }
   if (prepared.isRegionalScope) {
-    return mountRegionalScopeLayersV152(map, { ids, color, isPrimary });
+    return mountRegionalScopeLayersV152(map, { ids, color, isPrimary, icons });
   }
   return {
     interactiveLayerId: mountChoroplethLayersV152(map, {
@@ -169,12 +173,18 @@ export function preparePointLayerV152({
   filters,
   location,
   isPrimary,
+  icons = false,
+  color,
 }: {
   layer: CountryMapLayerV122;
   records: CountryEntityV122[];
   filters: Record<string, string>;
   location: { sidecar: VietnamLocationSidecarV151 | undefined; system: BoundarySystemV151 };
   isPrimary: boolean;
+  /** V152: write each point's icon, ring colour and legend key onto its properties. */
+  icons?: boolean;
+  /** The layer colour, for categories whose ring is the layer colour. */
+  color?: string;
 }): MapPointLayerPreparedV152 {
   const filteredRecords = filterRecords(records, layer, filters);
   const data = featureCollection(
@@ -183,6 +193,7 @@ export function preparePointLayerV152({
     prepareLayerRecordsV138(records, layer),
     location
   );
+  if (icons) assignPointIconsV152(layer.elementId, data.features, color || LAYER_COLORS[layer.elementId] || "#176a4b");
   const renderSignature = JSON.stringify({
     filters: selectedFilterDimensionsV125(layer, filters),
     recordCount: filteredRecords.length,
@@ -204,7 +215,15 @@ export function mountPointLayerV152(
   }: { layer: CountryMapLayerV122; ids: MapLayerRuntimeIdsV152; color: string; isPrimary: boolean },
   options: MapLayerRenderOptionsV152 = {}
 ): void {
-  mountPointLayersV152(map, { layer, ids, color, isPrimary, data: prepared.data });
+  mountPointLayersV152(map, {
+    layer,
+    ids,
+    color,
+    isPrimary,
+    data: prepared.data,
+    clusterMaxZoom: options.clusterMaxZoom,
+    icons: options.icons,
+  });
 }
 
 export interface MapLayerRenderInputV152 {
@@ -252,7 +271,10 @@ export type MapLayerPreparedV152 =
   | (MapLayerPreparedBaseV152 & { kind: "point"; point: MapPointLayerPreparedV152; data: GeoJSON.FeatureCollection<GeoJSON.Geometry> });
 
 /** Pure: null when the data the renderer needs was not supplied. */
-export function prepareMapLayerV152(input: MapLayerRenderInputV152): MapLayerPreparedV152 | null {
+export function prepareMapLayerV152(
+  input: MapLayerRenderInputV152,
+  options: MapLayerRenderOptionsV152 = {}
+): MapLayerPreparedV152 | null {
   const { layer } = input;
   const base: MapLayerPreparedBaseV152 = {
     layer,
@@ -283,6 +305,8 @@ export function prepareMapLayerV152(input: MapLayerRenderInputV152): MapLayerPre
     filters: input.filters,
     location: { sidecar: input.locations, system: input.boundary.system },
     isPrimary: base.isPrimary,
+    icons: options.icons,
+    color: base.color,
   });
   return { ...base, kind: "point", point, data: point.data };
 }
@@ -295,7 +319,7 @@ export function mountPreparedMapLayerV152(
 ): MapLayerRenderResultV152 {
   const { ids, renderer, color, isPrimary, contextIndex, roleOpacity, layer } = prepared;
   if (prepared.kind === "area") {
-    const mounted = mountAreaLayerV152(map, prepared.area, { ids, color, isPrimary, contextIndex, roleOpacity });
+    const mounted = mountAreaLayerV152(map, prepared.area, { ids, color, isPrimary, contextIndex, roleOpacity, icons: options.icons });
     return {
       ids,
       renderer,
@@ -326,7 +350,7 @@ export function renderMapLayerV152(
   input: MapLayerRenderInputV152,
   options: MapLayerRenderOptionsV152 = {}
 ): MapLayerRenderResultV152 | null {
-  const prepared = prepareMapLayerV152(input);
+  const prepared = prepareMapLayerV152(input, options);
   return prepared ? mountPreparedMapLayerV152(map, prepared, options) : null;
 }
 
@@ -338,3 +362,5 @@ export * from "./contract";
 export * from "./features";
 export * from "./symbols";
 export * from "./boundaryLayer";
+export * from "./pointIconLayer";
+export { TRANSMISSION_VOLTAGE_CLASSES_V152 } from "./lineLayer";

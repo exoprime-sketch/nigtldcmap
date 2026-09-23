@@ -6,6 +6,13 @@
 import type { Map as MapLibreMap } from "maplibre-gl";
 import type { MapLayerRuntimeIdsV152 } from "./ids";
 
+/** Transmission voltage classes and colours: the big map, the mini map and every legend read these. */
+export const TRANSMISSION_VOLTAGE_CLASSES_V152 = [
+  { kv: 110, color: "#e59b32" },
+  { kv: 220, color: "#d35a3d" },
+  { kv: 500, color: "#8b2635" },
+] as const;
+
 /** Adds the line layers to an existing source; returns the layer that takes pointer events. */
 export function mountLineLayersV152(
   map: MapLibreMap,
@@ -56,12 +63,7 @@ export function mountLineLayersV152(
       "line-color": [
         "match",
         ["get", "voltageKv"],
-        110,
-        "#e59b32",
-        220,
-        "#d35a3d",
-        500,
-        "#8b2635",
+        ...TRANSMISSION_VOLTAGE_CLASSES_V152.flatMap(({ kv, color: classColor }) => [kv, classColor]),
         color,
       ] as any,
       "line-width": voltageWidth,

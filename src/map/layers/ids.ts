@@ -39,6 +39,10 @@ export function layerRuntimeIds(countryIso3: string, elementId: string) {
     fill: `v124-fill-${suffix}`,
     outline: `v124-outline-${suffix}`,
     selection: `v126-selection-${suffix}`,
+    // V152 icon mode (white badge + glyph); absent when a layer is drawn without icons.
+    pointHover: `v152-point-hover-${suffix}`,
+    pointTag: `v152-point-tag-${suffix}`,
+    clusterIcon: `v152-cluster-icon-${suffix}`,
   };
 }
 
@@ -54,8 +58,11 @@ export function moveMapDataLayersV126(
       ids.outline,
       ids.cluster,
       ids.clusterCount,
+      ids.clusterIcon,
       ids.point,
       ids.pointSymbol,
+      ids.pointTag,
+      ids.pointHover,
       ids.pointSelection,
       ids.line,
       ids.pointHit,
@@ -131,6 +138,9 @@ export function removeLayerFromMap(
   [
     ids.selection,
     ids.pointSelection,
+    ids.pointHover,
+    ids.pointTag,
+    ids.clusterIcon,
     ids.clusterCount,
     ids.pointHit,
     ids.pointSymbol,

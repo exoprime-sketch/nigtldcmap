@@ -68,8 +68,22 @@ import type {
 } from "../data/vietnam/vietnamDataLoaderV124";
 import { POWER_PLANT_SOURCES_V141 } from "../data/map/powerPlantFactsV141";
 import { prepareLayerRecordsV138, attributeText } from "../data/map/prepareLayerRecordsV148";
-import { mapFactsV148, mapIndicatorSourceV148, mapSourceLineV148, powerCapacitySummaryV148 } from "../data/map/mapPresentationV148";
-import { createMapFeaturePopupV148 } from "../components/map/mapFeaturePopupV148";
+import { mapFactsV148, mapIndicatorSourceV148, powerCapacitySummaryV148 } from "../data/map/mapPresentationV148";
+import { createMapPointPopupV152 } from "../components/map/mapPointPopupV152";
+import MapIconLegendV152 from "../components/map/MapIconLegendV152";
+import { MapIconBadgeV152 } from "../components/map/MapIconSpriteV152";
+import FacilityCardV153 from "../components/data/public/FacilityCardV153";
+import { facilityCardSpecV153 } from "../data/visualization/facilityCardV153";
+import { A023_CAPACITY_BADGE_RADIUS_V152 } from "../map/layers/pointIconLayer";
+import {
+  attachMapIconMissingHandlerV152,
+  MAP_ICON_LAYER_IDS_V152,
+  mapIconLegendEntriesV152,
+  mapLayerIconV152,
+  registerMapIcons,
+  type MapIconIdV152,
+  type MaplibreMapLike,
+} from "../data/map/mapIconsV152";
 import { boundaryPopupLineV151, createPublicMapPopupContentV129 } from "../components/map/mapPublicPopupV129";
 import { powerPlantPeriodForSourceV142 } from "../data/visualization/mapSelectorBindingsV125";
 import type {
@@ -156,7 +170,7 @@ import type {
   PublicMapSymbolShapeV129,
   SpatialRuntimeAsset,
 } from "../map/layers/types";
-import { A023_FUEL_COLORS_V126, LAYER_COLORS } from "../map/layers/colors";
+import { LAYER_COLORS } from "../map/layers/colors";
 import { MAP_STYLE } from "../map/layers/baseStyle";
 import {
   layerRuntimeIds,
@@ -2183,6 +2197,15 @@ export default function RealMapExplorerPage({
     const markReady = () => {
       ready = true;
       setBaseMapStatus("ready");
+      // V152: point icons (ink) and cluster glyphs (white) for every icon layer.
+      const iconMap = map as unknown as MaplibreMapLike;
+      registerMapIcons(iconMap);
+      registerMapIcons(
+        iconMap,
+        MAP_ICON_LAYER_IDS_V152.map(mapLayerIconV152).filter((id): id is MapIconIdV152 => Boolean(id)),
+        "white"
+      );
+      attachMapIconMissingHandlerV152(iconMap);
       const current = getCountryDataProviderV122(countryIso3);
       if (initialState.camera) {
         // A shared or reloaded link opens where the reader left it.
@@ -2654,6 +2677,7 @@ export default function RealMapExplorerPage({
             isPrimary,
             contextIndex,
             roleOpacity,
+            icons: true,
           });
 
         const onClick = (event: MapLayerMouseEvent) => {
@@ -2958,6 +2982,8 @@ export default function RealMapExplorerPage({
           system: boundaryContextV151.system,
         },
         isPrimary,
+        icons: true,
+        color,
       });
       const { renderSignature } = prepared;
       const renderKey = runtimeKey(countryIso3, elementId);
@@ -2969,7 +2995,7 @@ export default function RealMapExplorerPage({
         delete renderSignaturesRef.current[renderKey];
       }
 
-      mountPointLayerV152(map, prepared, { layer, ids, color, isPrimary });
+      mountPointLayerV152(map, prepared, { layer, ids, color, isPrimary }, { icons: true });
 
       const onPointClick = (event: MapLayerMouseEvent) => {
         if (
@@ -3048,14 +3074,6 @@ export default function RealMapExplorerPage({
           number,
           number
         ];
-        const name = publicMapFeatureNameV126(
-          feature.properties?.name,
-          publicMapLayerTitleV126(elementId, layer.publicShortTitle)
-        );
-        const layerTitle = publicMapLayerTitleV126(
-          elementId,
-          layer.publicShortTitle
-        );
         popupRef.current?.remove();
         popupOwnerRef.current = pointPopupOwnerKey;
         if (overlapHits.length > 1) {
@@ -3071,6 +3089,10 @@ export default function RealMapExplorerPage({
             .addTo(map);
           return;
         }
+        const hoveredKey = String(feature.properties?.selectionKey ?? feature.properties?.recordId ?? "");
+        if (map.getLayer(ids.pointHover)) {
+          map.setFilter(ids.pointHover, ["==", ["get", "selectionKey"], hoveredKey || "__none__"]);
+        }
         popupRef.current = new maplibregl.Popup({
           closeButton: false,
           closeOnClick: false,
@@ -3078,29 +3100,19 @@ export default function RealMapExplorerPage({
         })
           .setLngLat(coordinates)
           .setDOMContent(
-            createMapFeaturePopupV148({
-              elementId,
-              selectionKey: String(feature.properties?.selectionKey ?? feature.properties?.recordId ?? ""),
-              title: name,
-              dataset: layerTitle,
+            createMapPointPopupV152({
+              layer,
+              properties: (feature.properties || {}) as Record<string, unknown>,
               primary: isPrimary,
-              facts: mapFactsV148(layer, (feature.properties || {}) as Record<string, unknown>)
-                .filter((fact) => fact.key !== "sourceLabel"),
-              source: mapSourceLineV148((feature.properties || {}) as Record<string, unknown>),
-              note:
-                [
-                  feature.properties?.approximate ? "소재 지역의 대표 위치" : "",
-                  publicTextV126(feature.properties?.locationLabelV151)
-                    ? `소재 ${publicTextV126(feature.properties?.locationLabelV151)}`
-                    : "",
-                ]
-                  .filter(Boolean)
-                  .join(" · ") || undefined,
+              entity: recordIndexRef.current.get(`${elementId}:${String(feature.properties?.recordId || "")}`) || null,
             })
           )
           .addTo(map);
       };
       const onPointLeave = () => {
+        if (map.getLayer(ids.pointHover)) {
+          map.setFilter(ids.pointHover, ["==", ["get", "selectionKey"], "__none__"]);
+        }
         if (popupOwnerRef.current !== pointPopupOwnerKey) return;
         map.getCanvas().style.cursor = "";
         popupRef.current?.remove();
@@ -3585,6 +3597,33 @@ export default function RealMapExplorerPage({
         focusedLayer.accuracyNotice
       )
     : "";
+  // V152: the focused point layer's legend = the drawn features' own icons and
+  // ring colours, counted under the current filters (the map and the legend
+  // read the same properties, so they cannot disagree).
+  const focusedIconLegendV152 = useMemo(() => {
+    if (!focusedLayer || !(MAP_ICON_LAYER_IDS_V152 as readonly string[]).includes(focusedLayer.elementId)) return [];
+    const records = recordsByElement[focusedLayer.elementId];
+    if (!records) return [];
+    const color = LAYER_COLORS[focusedLayer.elementId] || "#176a4b";
+    const { data } = preparePointLayerV152({
+      layer: focusedLayer,
+      records,
+      filters,
+      location: {
+        sidecar: locationsByElementV151[focusedLayer.elementId],
+        system: boundaryContextV151.system,
+      },
+      isPrimary: true,
+      icons: true,
+      color,
+    });
+    return mapIconLegendEntriesV152(
+      focusedLayer.elementId,
+      data.features.map((feature) => (feature.properties || {}) as Record<string, unknown>),
+      color,
+      publicMapLayerTitleV126(focusedLayer.elementId, focusedLayer.publicShortTitle)
+    );
+  }, [boundaryContextV151.system, filters, focusedLayer, locationsByElementV151, recordsByElement]);
   const activeLegendIdentitiesV129 = useMemo(() => {
     const ordered = [
       ...(primaryLayerId ? [primaryLayerId] : []),
@@ -6766,12 +6805,24 @@ export default function RealMapExplorerPage({
                       data-testid="map-active-layer-legend-item"
                       className={item.hidden ? "is-hidden" : undefined}
                     >
-                      <i
-                        className={`cdp-map-symbol cdp-map-symbol--${item.shape}`}
-                        style={{ "--cdp-map-symbol-color": item.color } as any}
-                        aria-hidden="true"
-                        data-testid="map-layer-legend-item"
-                      />
+                      {mapLayerIconV152(item.elementId) && item.shape !== "area" && item.shape !== "line" ? (
+                        <i
+                          className="cdp-map-symbol cdp-map-symbol--icon"
+                          style={{ "--cdp-map-symbol-color": item.color } as any}
+                          aria-hidden="true"
+                          data-testid="map-layer-legend-item"
+                          data-icon-id={mapLayerIconV152(item.elementId) || undefined}
+                        >
+                          <MapIconBadgeV152 iconId={mapLayerIconV152(item.elementId)!} color={item.color} size={20} />
+                        </i>
+                      ) : (
+                        <i
+                          className={`cdp-map-symbol cdp-map-symbol--${item.shape}`}
+                          style={{ "--cdp-map-symbol-color": item.color } as any}
+                          aria-hidden="true"
+                          data-testid="map-layer-legend-item"
+                        />
+                      )}
                       <span>
                         <strong>
                           <PublicTermTextV134 text={item.title} />
@@ -6854,32 +6905,19 @@ export default function RealMapExplorerPage({
               ) : focusedLayer.elementId === "A-023" ? (
                 <div
                   className="cdp-map-legend__power"
-                  aria-label="발전원 색상과 설비용량 크기"
+                  aria-label="발전원 기호와 설비용량 크기"
                 >
-                  <strong>발전원 색상</strong>
-                  <ul>
-                    {Object.entries(A023_FUEL_COLORS_V126).map(
-                      ([fuel, fuelColor]) => (
-                        <li key={fuel}>
-                          <i style={{ background: fuelColor }} />
-                          <span>{fuel}</span>
-                        </li>
-                      )
-                    )}
-                  </ul>
+                  <strong>발전원</strong>
+                  <MapIconLegendV152 entries={focusedIconLegendV152} compact />
                   <strong>설비용량 크기</strong>
                   <div className="cdp-map-legend__capacity">
-                    {[
-                      ["10 MW 미만", 6],
-                      ["10~99 MW", 8],
-                      ["100~499 MW", 11],
-                      ["500 MW 이상", 14],
-                    ].map(([label, size]) => (
-                      <span key={String(label)}>
+                    {(["10 MW 미만", "10~99 MW", "100~499 MW", "500 MW 이상"] as const).map((label, index) => (
+                      <span key={label}>
                         <i
+                          className="cdp-map-legend__capacity-badge"
                           style={{
-                            width: Number(size),
-                            height: Number(size),
+                            width: A023_CAPACITY_BADGE_RADIUS_V152.z5[index] * 2,
+                            height: A023_CAPACITY_BADGE_RADIUS_V152.z5[index] * 2,
                           }}
                         />
                         {label}
@@ -6891,7 +6929,14 @@ export default function RealMapExplorerPage({
               ) : rendererOf(focusedLayer) === "regional-scope" ? (
                 <div className="cdp-map-legend__explanation">
                   <span>점선 경계·옅은 면: 사업 참여지역</span>
-                  <span>점: 원문에서 검증된 세부 활동지역</span>
+                  <span>
+                    <MapIconBadgeV152
+                      iconId="world"
+                      color={LAYER_COLORS[focusedLayer.elementId] || "#226f96"}
+                      size={18}
+                    />
+                    점: 원문에서 검증된 세부 활동지역
+                  </span>
                   <p>국가 대표좌표는 실제 사업 위치로 표시하지 않습니다.</p>
                 </div>
               ) : rendererOf(focusedLayer) === "admin1-choropleth" ||
@@ -6931,6 +6976,11 @@ export default function RealMapExplorerPage({
                   <p>
                     값 있음 {focusedAnalysisV126.dataRegionCount}개 · 결측 {focusedAnalysisV126.missingRegionCount}개
                   </p>
+                </div>
+              ) : focusedIconLegendV152.length ? (
+                <div className="cdp-map-legend__icons" aria-label="기호와 분류별 위치 수">
+                  <MapIconLegendV152 entries={focusedIconLegendV152} compact />
+                  {focusedLayer.cluster && <p>묶음 숫자: 포함된 위치 수</p>}
                 </div>
               ) : (
                 <div className="cdp-map-legend__explanation">
@@ -7642,9 +7692,13 @@ export default function RealMapExplorerPage({
                       />
                       <div className="cdp-map-a023-key-facts-v132"
                         data-testid={selected.elementId === "A-023" ? "a023-map-selected-key-facts-v132" : "map-selected-facts-v148"}>
-                        {mapFactsV148(selectedLayer, selected.normalizedAttributes || {})
-                          .filter((fact) => !["sourceLabel", "referenceYear"].includes(fact.key))
-                          .map((fact) => <Evidence key={fact.key} label={fact.label} value={fact.value} />)}
+                        {facilityCardSpecV153(selected.elementId) ? (
+                          <FacilityCardV153 elementId={selected.elementId} entity={selected} compact />
+                        ) : (
+                          mapFactsV148(selectedLayer, selected.normalizedAttributes || {})
+                            .filter((fact) => !["sourceLabel", "referenceYear"].includes(fact.key))
+                            .map((fact) => <Evidence key={fact.key} label={fact.label} value={fact.value} />)
+                        )}
                         <Evidence label="자료연도" value={["B-023", "B-028"].includes(selected.elementId) ? "관측값별 시점 참조" : String(selected.provenance.referenceYear || selectedLayer.selectors?.defaultPeriod || selectedLayer.latestYear || "")} />
                       </div>
                       {selectedMemberFactsV138.map((fact) => (

@@ -96,14 +96,14 @@ export interface MapIconBadgeV152Props {
 
 /**
  * White circle, coloured 2.5px ring, ink-coloured glyph referencing the
- * shared sprite by `<use>`. When `tag` is `"KR"`, a small circle + `<text>`
- * "KR" is drawn inside the same aria-hidden `<svg>` (not DOM text), so it
- * never becomes a stray accessible-tree node on its own.
+ * shared sprite by `<use>`. When `tag` is `"KR"`, the small "KR" tag the map
+ * draws is added by CSS (`::after`), so it is never DOM text: no stray node in
+ * the accessible tree and no raw code in the page text.
  */
 export function MapIconBadgeV152({ iconId, color, size = 22, tag, title }: MapIconBadgeV152Props) {
   return (
     <span
-      className="mi152-badge"
+      className={tag === "KR" ? "mi152-badge mi152-badge--kr" : "mi152-badge"}
       data-icon-color={color}
       data-icon-id={iconId}
       style={{ "--mi152-ring": color, width: size, height: size } as CSSProperties}
@@ -112,14 +112,6 @@ export function MapIconBadgeV152({ iconId, color, size = 22, tag, title }: MapIc
       <MapIconSpriteV152 />
       <svg aria-hidden="true" className="mi152-badge-glyph" viewBox="0 0 24 24">
         <use href={`#${mapIconImageIdV152(iconId)}`} />
-        {tag === "KR" && (
-          <g className="mi152-badge-tag">
-            <circle cx="18.5" cy="18.5" r="5.4" />
-            <text textAnchor="middle" x="18.5" y="20.6">
-              KR
-            </text>
-          </g>
-        )}
       </svg>
     </span>
   );

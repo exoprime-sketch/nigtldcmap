@@ -397,9 +397,14 @@ export function mapIconLegendEntriesV152(
 
 // ------------------------------------------------------------------ svg / sources
 
-export function mapIconImageIdV152(id: MapIconIdV152): string {
-  return `mi152-${id}`;
+/** Image id of a glyph on the map; the "white" variant sits on coloured cluster circles. */
+export function mapIconImageIdV152(id: MapIconIdV152, variant: MapIconVariantV152 = "ink"): string {
+  return `mi152-${id}${variant === "white" ? MAP_ICON_WHITE_SUFFIX_V152 : ""}`;
 }
+
+export type MapIconVariantV152 = "ink" | "white";
+const MAP_ICON_WHITE_SUFFIX_V152 = "--w";
+const MAP_ICON_VARIANT_INK_V152: Record<MapIconVariantV152, string> = { ink: "#20343a", white: "#ffffff" };
 
 export interface MapIconSvgOptionsV152 {
   color?: string;
@@ -463,7 +468,7 @@ function parseViewBox(viewBox: string): { minX: number; minY: number; width: num
   return { minX, minY, width, height };
 }
 
-function rasteriseGlyphV152(glyph: MapIconGlyphV152): ImageData {
+function rasteriseGlyphV152(glyph: MapIconGlyphV152, ink: string = MAP_ICON_INK_V152): ImageData {
   const canvas = document.createElement("canvas");
   canvas.width = RASTER_SIZE_V152;
   canvas.height = RASTER_SIZE_V152;
@@ -477,8 +482,8 @@ function rasteriseGlyphV152(glyph: MapIconGlyphV152): ImageData {
   ctx.lineCap = "round";
   ctx.lineJoin = "round";
   ctx.lineWidth = 2; // in the glyph's own unit space, per viewBox
-  ctx.strokeStyle = MAP_ICON_INK_V152;
-  ctx.fillStyle = MAP_ICON_INK_V152;
+  ctx.strokeStyle = ink;
+  ctx.fillStyle = ink;
   for (const d of glyph.paths) {
     const path = new Path2D(d);
     if (glyph.mode === "stroke") ctx.stroke(path);
@@ -493,14 +498,18 @@ function rasteriseGlyphV152(glyph: MapIconGlyphV152): ImageData {
  * `addImage`, skipping ids the map already has an image for. Returns the
  * ids actually registered. Not unit-tested: jsdom has no canvas.
  */
-export function registerMapIcons(map: MaplibreMapLike, ids?: MapIconIdV152[]): string[] {
+export function registerMapIcons(
+  map: MaplibreMapLike,
+  ids?: MapIconIdV152[],
+  variant: MapIconVariantV152 = "ink"
+): string[] {
   const targets = ids ?? (Object.keys(MAP_ICON_PATHS_V152) as MapIconIdV152[]);
   const registered: string[] = [];
   for (const id of targets) {
-    const imageId = mapIconImageIdV152(id);
+    const imageId = mapIconImageIdV152(id, variant);
     if (map.hasImage(imageId)) continue;
     const glyph = MAP_ICON_PATHS_V152[id];
-    const image = rasteriseGlyphV152(glyph);
+    const image = rasteriseGlyphV152(glyph, MAP_ICON_VARIANT_INK_V152[variant]);
     map.addImage(imageId, image, { pixelRatio: 2 });
     registered.push(imageId);
   }
@@ -515,8 +524,10 @@ export function attachMapIconMissingHandlerV152(map: MaplibreMapLike): void {
   map.on("styleimagemissing", (event) => {
     const imageId = event?.id;
     if (!imageId || !imageId.startsWith(MAP_ICON_IMAGE_PREFIX_V152)) return;
-    const iconId = imageId.slice(MAP_ICON_IMAGE_PREFIX_V152.length) as MapIconIdV152;
+    const raw = imageId.slice(MAP_ICON_IMAGE_PREFIX_V152.length);
+    const white = raw.endsWith(MAP_ICON_WHITE_SUFFIX_V152);
+    const iconId = (white ? raw.slice(0, -MAP_ICON_WHITE_SUFFIX_V152.length) : raw) as MapIconIdV152;
     if (!(iconId in MAP_ICON_PATHS_V152)) return;
-    registerMapIcons(map, [iconId]);
+    registerMapIcons(map, [iconId], white ? "white" : "ink");
   });
 }

@@ -8,6 +8,7 @@
  */
 import type { Map as MapLibreMap } from "maplibre-gl";
 import type { MapLayerRuntimeIdsV152 } from "./ids";
+import { MAP_ICON_BADGE_V152, mapIconImageIdV152 } from "../../data/map/mapIconsV152";
 import { ensurePublicPointSymbolImageV129 } from "./symbols";
 import type { ChoroplethCollectionV151 } from "./types";
 
@@ -72,7 +73,7 @@ export function mountBudgetContextLayersV152(
 /** D-018 participation areas and activity sites; both take pointer events. */
 export function mountRegionalScopeLayersV152(
   map: MapLibreMap,
-  { ids, color, isPrimary }: { ids: MapLayerRuntimeIdsV152; color: string; isPrimary: boolean }
+  { ids, color, isPrimary, icons = false }: { ids: MapLayerRuntimeIdsV152; color: string; isPrimary: boolean; icons?: boolean }
 ): { interactiveLayerId: string; additionalInteractiveLayerId: string } {
   const scopeFilter = [
     "==",
@@ -106,38 +107,76 @@ export function mountRegionalScopeLayersV152(
       "line-dasharray": [3, 2],
     },
   });
-  map.addLayer({
-    id: ids.point,
-    type: "circle",
-    source: ids.source,
-    filter: activityFilter,
-    paint: {
-      "circle-color": color,
-      "circle-radius": isPrimary ? 7 : 4.5,
-      "circle-opacity": 0,
-      "circle-stroke-color": "#ffffff",
-      "circle-stroke-width": isPrimary ? 2 : 1,
-    },
-  });
-  const regionalActivitySymbolId = "cdp-v133-d018-activity-diamond";
-  ensurePublicPointSymbolImageV129(
-    map,
-    regionalActivitySymbolId,
-    "diamond",
-    color
-  );
-  map.addLayer({
-    id: ids.pointSymbol,
-    type: "symbol",
-    source: ids.source,
-    filter: activityFilter,
-    layout: {
-      "icon-allow-overlap": true,
-      "icon-image": regionalActivitySymbolId,
-      "icon-size": isPrimary ? 1 : 0.78,
-    },
-    paint: { "icon-opacity": isPrimary ? 0.96 : 0.64 },
-  });
+  if (icons) {
+    // V152: verified activity sites as the same white badge + glyph as every point layer.
+    const stops = (isPrimary ? MAP_ICON_BADGE_V152.radius.primary : MAP_ICON_BADGE_V152.radius.context).flatMap(
+      ([zoom, radius]) => [zoom, radius]
+    );
+    map.addLayer({
+      id: ids.point,
+      type: "circle",
+      source: ids.source,
+      filter: activityFilter,
+      paint: {
+        "circle-color": "#ffffff",
+        "circle-radius": ["interpolate", ["linear"], ["zoom"], ...stops] as any,
+        "circle-opacity": isPrimary ? 1 : 0.82,
+        "circle-stroke-color": color,
+        "circle-stroke-width": isPrimary ? MAP_ICON_BADGE_V152.ring.primary : MAP_ICON_BADGE_V152.ring.context,
+      },
+    });
+    map.addLayer({
+      id: ids.pointSymbol,
+      type: "symbol",
+      source: ids.source,
+      filter: activityFilter,
+      layout: {
+        "icon-allow-overlap": true,
+        "icon-ignore-placement": true,
+        "icon-image": mapIconImageIdV152("world"),
+        "icon-size": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          ...MAP_ICON_BADGE_V152.iconSize.flatMap(([zoom, size]) => [zoom, isPrimary ? size : Number((size * 0.82).toFixed(3))]),
+        ] as any,
+      },
+      paint: { "icon-opacity": isPrimary ? 1 : 0.8 },
+    });
+  } else {
+    map.addLayer({
+      id: ids.point,
+      type: "circle",
+      source: ids.source,
+      filter: activityFilter,
+      paint: {
+        "circle-color": color,
+        "circle-radius": isPrimary ? 7 : 4.5,
+        "circle-opacity": 0,
+        "circle-stroke-color": "#ffffff",
+        "circle-stroke-width": isPrimary ? 2 : 1,
+      },
+    });
+    const regionalActivitySymbolId = "cdp-v133-d018-activity-diamond";
+    ensurePublicPointSymbolImageV129(
+      map,
+      regionalActivitySymbolId,
+      "diamond",
+      color
+    );
+    map.addLayer({
+      id: ids.pointSymbol,
+      type: "symbol",
+      source: ids.source,
+      filter: activityFilter,
+      layout: {
+        "icon-allow-overlap": true,
+        "icon-image": regionalActivitySymbolId,
+        "icon-size": isPrimary ? 1 : 0.78,
+      },
+      paint: { "icon-opacity": isPrimary ? 0.96 : 0.64 },
+    });
+  }
   map.addLayer({
     id: ids.pointHit,
     type: "circle",
@@ -154,13 +193,21 @@ export function mountRegionalScopeLayersV152(
     type: "circle",
     source: ids.source,
     filter: ["==", ["get", "selectionKey"], "__none__"],
-    paint: {
-      "circle-color": color,
-      "circle-radius": isPrimary ? 10 : 8,
-      "circle-opacity": 1,
-      "circle-stroke-color": "#f0a51a",
-      "circle-stroke-width": 4,
-    },
+    paint: icons
+      ? {
+          // V152: a ring around the badge, so the glyph stays visible when selected.
+          "circle-color": "rgba(0,0,0,0)",
+          "circle-radius": ["interpolate", ["linear"], ["zoom"], 5, isPrimary ? 14.5 : 13.5, 9, isPrimary ? 17.5 : 15.5] as any,
+          "circle-stroke-color": "#f0a51a",
+          "circle-stroke-width": 3.5,
+        }
+      : {
+          "circle-color": color,
+          "circle-radius": isPrimary ? 10 : 8,
+          "circle-opacity": 1,
+          "circle-stroke-color": "#f0a51a",
+          "circle-stroke-width": 4,
+        },
   });
   map.addLayer({
     id: ids.selection,

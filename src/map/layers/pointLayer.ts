@@ -8,6 +8,7 @@ import type { CountryMapLayerV122 } from "../../data/countries/countryDataTypesV
 import { mountClusterLayersV152 } from "./clusterLayer";
 import { A023_FUEL_COLORS_V126 } from "./colors";
 import type { MapLayerRuntimeIdsV152 } from "./ids";
+import { mountPointIconLayersV152 } from "./pointIconLayer";
 import { ensurePublicPointSymbolImageV129, publicMapSymbolShapeV129 } from "./symbols";
 
 export interface MountPointLayerInputV152 {
@@ -16,18 +17,26 @@ export interface MountPointLayerInputV152 {
   color: string;
   isPrimary: boolean;
   data: GeoJSON.FeatureCollection<GeoJSON.Point>;
+  /** The big map clusters up to zoom 13; a map that stops zooming earlier passes its own limit. */
+  clusterMaxZoom?: number;
+  /** V152: white badge + category glyph instead of the V129 circles and shapes. */
+  icons?: boolean;
 }
 
 export function mountPointLayersV152(
   map: MapLibreMap,
-  { layer, ids, color, isPrimary, data }: MountPointLayerInputV152
+  { layer, ids, color, isPrimary, data, clusterMaxZoom = 13, icons = false }: MountPointLayerInputV152
 ): void {
+  if (icons) {
+    mountPointIconLayersV152(map, { layer, ids, color, isPrimary, data, clusterMaxZoom });
+    return;
+  }
   const elementId = layer.elementId;
   map.addSource(ids.source, {
     type: "geojson",
     data,
     cluster: layer.cluster,
-    clusterMaxZoom: 13,
+    clusterMaxZoom,
     clusterRadius: isPrimary ? 46 : 28,
   });
   if (layer.cluster) {
