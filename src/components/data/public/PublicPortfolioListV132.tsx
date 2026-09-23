@@ -187,7 +187,7 @@ export default function PublicPortfolioListV132({
       )}
 
       {definitionRecords.length > 0 && (
-        <section className="ppl132-definitions" data-testid="portfolio-definition-rows-v142" data-definition-count={definitionRecords.length}>
+        <section className="ppl132-definitions" data-analysis-block="comparison-table" data-testid="portfolio-definition-rows-v142" data-definition-count={definitionRecords.length}>
           <h5>{definitionLabel} · {definitionRecords.length}건 ({publicPortfolioRecordLabelV138(elementId)} 수에서 제외)</h5>
           <dl>
             {definitionRecords.map(({ entity, title, facet }) => (
@@ -201,7 +201,7 @@ export default function PublicPortfolioListV132({
       )}
 
       {aggregateRecords.length > 0 && (
-        <details className="ppl132-aggregates" data-testid="portfolio-aggregate-rows-v140">
+        <details className="ppl132-aggregates" data-analysis-block="cards-list" data-testid="portfolio-aggregate-rows-v140">
           <summary>원천의 집계·설명 행 {aggregateRecords.length}건 (목록 건수에서 제외)</summary>
           <ul>
             {aggregateRecords.map(({ entity, title }) => (

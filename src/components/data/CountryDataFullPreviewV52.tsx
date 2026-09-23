@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import type { ReactNode } from "react";
 import {
   getElementVisualizationSummaryV125,
   loadElementIndicatorSemanticsV125,
@@ -16,6 +17,7 @@ import type {
 } from "../../data/vietnam/vietnamTypesV124";
 import type { DataFinderSelectorStateV125 } from "../../types/dataFinderV125";
 import PublicDataAnalysisRouterV126 from "./public/PublicDataAnalysisRouterV126";
+import DetailAnalysisFrameV153 from "./public/DetailAnalysisFrameV153";
 import "../../styles/data-full-preview-v52.css";
 
 interface Props {
@@ -29,6 +31,8 @@ interface Props {
   selectorState?: DataFinderSelectorStateV125;
   onSelectorStateChange?: (state: DataFinderSelectorStateV125) => void;
   spatialUnit?: string;
+  pageTitle?: string;
+  mapSlot?: ReactNode;
 }
 
 type SemanticRuntimeV125 = {
@@ -60,6 +64,8 @@ export default function CountryDataFullPreviewV52({
   selectorState = DEFAULT_SELECTOR_STATE_V125,
   onSelectorStateChange = () => undefined,
   spatialUnit,
+  pageTitle,
+  mapSlot,
 }: Props) {
   const [runtime, setRuntime] = useState<SemanticRuntimeV125 | null>(null);
   const [error, setError] = useState("");
@@ -149,19 +155,23 @@ export default function CountryDataFullPreviewV52({
       )}
 
       {runtime && (
-        <PublicDataAnalysisRouterV126
-          elementId={elementId}
-          contract={runtime.contract}
-          semantics={runtime.semantics}
-          observations={visibleObservations}
-          entities={visibleEntities}
-          indicators={indicators}
-          countryNameKo={countryNameKo}
-          selectorState={selectorState}
-          onSelectorStateChange={onSelectorStateChange}
-          detailTemplate={detailTemplate}
-          spatialUnit={spatialUnit}
-        />
+        <DetailAnalysisFrameV153 elementId={elementId}>
+          <PublicDataAnalysisRouterV126
+            elementId={elementId}
+            contract={runtime.contract}
+            semantics={runtime.semantics}
+            observations={visibleObservations}
+            entities={visibleEntities}
+            indicators={indicators}
+            countryNameKo={countryNameKo}
+            selectorState={selectorState}
+            onSelectorStateChange={onSelectorStateChange}
+            detailTemplate={detailTemplate}
+            spatialUnit={spatialUnit}
+            pageTitle={pageTitle}
+            mapSlot={mapSlot}
+          />
+        </DetailAnalysisFrameV153>
       )}
     </section>
   );
@@ -202,24 +212,7 @@ function buildPublicDataSummaryV127(
       // B-033 counted "지표 63종" for one measure over 63 provinces. The
       // region suffix is stripped before counting; the provinces are named as
       // what they are.
-      const families = new Set(
-        populatedObservations
-          .map((row) => row.indicatorId)
-          .filter(Boolean)
-          .map((id) =>
-            String(id)
-              // Province suffixes: numeric ISO-like codes and the five
-              // municipality abbreviations; national series suffixed by a year
-              // or a canopy threshold are one series each, not one per year.
-              .replace(/_vn_(?:\d{2}|ct|hn|hp|sg|dn)$/u, "")
-              .replace(/_y\d{4}$/u, "")
-              .replace(/_t(?:30|50|75)$/u, "")
-              .replace(
-                /_(?:central_highlands|mekong_river_delta|north_central_coast_and_south_central_coast|north_east_north_west|red_river_delta|south_east|total)$/u,
-                ""
-              )
-          )
-      ).size;
+      const families = indicatorFamilyCountV153(populatedObservations);
       const regionalIndicators = families > 0 && families < indicatorCount;
       // The regional suffixes say which units the series cover: GDL's six
       // regions (B-021) are not provinces, and a "성·시 단위" label there
@@ -264,6 +257,33 @@ function buildPublicDataSummaryV127(
   }
 
   return `${countryNameKo} · 공개된 관측값 또는 목록이 없습니다`;
+}
+
+/**
+ * Indicators as a reader counts them: a province series is one indicator per
+ * province in the delivery, so the region, year and canopy-threshold suffixes
+ * are stripped before counting (V153 moves the V140 rule here so the core
+ * figures row and the summary line count the same way).
+ */
+export function indicatorFamilyCountV153(observations: VietnamObservationV124[]): number {
+  return new Set(
+    observations
+      .map((row) => row.indicatorId)
+      .filter(Boolean)
+      .map((id) =>
+        String(id)
+          // Province suffixes: numeric ISO-like codes and the five
+          // municipality abbreviations; national series suffixed by a year
+          // or a canopy threshold are one series each, not one per year.
+          .replace(/_vn_(?:\d{2}|ct|hn|hp|sg|dn)$/u, "")
+          .replace(/_y\d{4}$/u, "")
+          .replace(/_t(?:30|50|75)$/u, "")
+          .replace(
+            /_(?:central_highlands|mekong_river_delta|north_central_coast_and_south_central_coast|north_east_north_west|red_river_delta|south_east|total)$/u,
+            ""
+          )
+      )
+  ).size;
 }
 
 function isPopulatedObservationV127(row: VietnamObservationV124): boolean {

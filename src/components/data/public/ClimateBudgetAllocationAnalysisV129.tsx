@@ -140,17 +140,9 @@ export default function ClimateBudgetAllocationAnalysisV129({
       data-zero-imputation="false"
       data-zoom-controls="false"
     >
-      <section className="cab129__purpose" aria-labelledby="cab129-purpose-title">
-        <h3 id="cab129-purpose-title">이 데이터로 확인할 수 있는 내용</h3>
-        <ul>
-          <li>기후변화 대응 지출이 적응·감축·동시기여에 어떻게 배분됐는지 확인할 수 있습니다.</li>
-          <li>각 비율은 화면에 적힌 예산범위를 분모로 사용합니다.</li>
-          <li>서로 다른 분모와 보고서의 값은 직접 비교하지 않습니다.</li>
-        </ul>
-      </section>
-
       <section
         className="cab129__representative"
+        data-analysis-block="category-bar"
         aria-labelledby="cab129-representative-title"
         data-testid="d005-representative-allocation"
       >
@@ -209,7 +201,16 @@ export default function ClimateBudgetAllocationAnalysisV129({
         </p>
       </section>
 
-      <section className="cab129__alternatives" aria-labelledby="cab129-alternative-title">
+      <section className="cab129__purpose" data-analysis-block="note" aria-labelledby="cab129-purpose-title">
+        <h3 id="cab129-purpose-title">이 데이터로 확인할 수 있는 내용</h3>
+        <ul>
+          <li>기후변화 대응 지출이 적응·감축·동시기여에 어떻게 배분됐는지 확인할 수 있습니다.</li>
+          <li>각 비율은 화면에 적힌 예산범위를 분모로 사용합니다.</li>
+          <li>서로 다른 분모와 보고서의 값은 직접 비교하지 않습니다.</li>
+        </ul>
+      </section>
+
+      <section className="cab129__alternatives" data-analysis-block="table" aria-labelledby="cab129-alternative-title">
         <header>
           <div>
             <span>보조 분석</span>

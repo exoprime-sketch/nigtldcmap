@@ -1,12 +1,12 @@
 {
-  "status": "running",
-  "runStartedAt": "2026-09-21T08:41:15.375Z",
-  "updatedAt": "2026-09-21T08:42:39.370Z",
-  "platform": "linux",
+  "status": "failed",
+  "runStartedAt": "2026-09-22T05:09:22.212Z",
+  "updatedAt": "2026-09-22T05:12:07.719Z",
+  "platform": "win32",
   "expectedCommandCount": 40,
   "group": "all",
   "shard": null,
-  "activeCommand": "V131_ENTITY_CARDS",
+  "activeCommand": null,
   "commandResults": [
     {
       "name": "CI_PROCESS_GUARDS",
@@ -14,7 +14,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 613,
+      "elapsedMs": 1243,
       "timedOut": false
     },
     {
@@ -23,7 +23,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 29968,
+      "elapsedMs": 18800,
       "timedOut": false
     },
     {
@@ -32,7 +32,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 9498,
+      "elapsedMs": 8061,
       "timedOut": false
     },
     {
@@ -41,7 +41,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 33122,
+      "elapsedMs": 11100,
       "timedOut": false
     },
     {
@@ -50,7 +50,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 154,
+      "elapsedMs": 669,
       "timedOut": false
     },
     {
@@ -59,7 +59,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 264,
+      "elapsedMs": 624,
       "timedOut": false
     },
     {
@@ -68,7 +68,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 176,
+      "elapsedMs": 565,
       "timedOut": false
     },
     {
@@ -77,7 +77,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 266,
+      "elapsedMs": 621,
       "timedOut": false
     },
     {
@@ -86,7 +86,88 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 9925,
+      "elapsedMs": 5624,
+      "timedOut": false
+    },
+    {
+      "name": "V131_ENTITY_CARDS",
+      "command": "npm run audit:entity-cards:v131",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 31055,
+      "timedOut": false
+    },
+    {
+      "name": "V132_COMPOSITION",
+      "command": "npm run audit:composition:v132",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 3252,
+      "timedOut": false
+    },
+    {
+      "name": "V132_PORTFOLIO",
+      "command": "npm run audit:portfolio-analysis:v132",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 8254,
+      "timedOut": false
+    },
+    {
+      "name": "V132_MAP_TOOLTIP",
+      "command": "npm run audit:map-tooltip:v132",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 5757,
+      "timedOut": false
+    },
+    {
+      "name": "V132_BENCHMARK_FIT",
+      "command": "npm run audit:benchmark-fit:v132",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 561,
+      "timedOut": false
+    },
+    {
+      "name": "V133_MAP_FOCUS",
+      "command": "npm run audit:map-focus:v133",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 5402,
+      "timedOut": false
+    },
+    {
+      "name": "V133_MAP_POPUP",
+      "command": "npm run audit:map-popup:v133",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 3055,
+      "timedOut": false
+    },
+    {
+      "name": "V133_LAYER_DISTINCTION",
+      "command": "npm run audit:map-layer-distinction:v133",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 3600,
+      "timedOut": false
+    },
+    {
+      "name": "V134_GLOSSARY",
+      "command": "npm run audit:glossary:v134",
+      "exitCode": 1,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 57245,
       "timedOut": false
     }
   ]

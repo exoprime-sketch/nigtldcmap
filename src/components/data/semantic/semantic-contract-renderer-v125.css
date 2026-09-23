@@ -38,7 +38,14 @@
 
 .sv125-contract-panel {
   display: grid;
+  /* One column that may shrink below its content's min width: at 320px the
+     document timeline's attribute rows widened the whole panel by 39px (V153). */
+  grid-template-columns: minmax(0, 1fr);
   gap: 0.9rem;
+}
+
+.sv125-contract-panel > * {
+  min-width: 0;
 }
 
 .sv125-contract-panel > header > span {
@@ -722,3 +729,30 @@
   font-variant-numeric: tabular-nums;
 }
 .sv125-controls:empty { display: none; }
+
+/* V153: at phone width the document timeline's rows wrap instead of widening the page. */
+.sv125-document-attributes dt,
+.sv125-policy-timeline li > div > strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 480px) {
+  .sv125-document-attributes > div {
+    grid-template-columns: minmax(0, 30%) minmax(0, 1fr);
+  }
+}
+
+/* V153: the timeline list and its entries may shrink below their content's
+   min width; long document names and attribute rows wrap inside. */
+.sv125-policy-timeline {
+  grid-template-columns: minmax(0, 1fr);
+}
+.sv125-policy-timeline > li,
+.sv125-policy-timeline li > div,
+.sv125-policy-timeline li > div > * {
+  min-width: 0;
+}
+.sv125-policy-timeline li > div > p {
+  overflow-wrap: anywhere;
+}

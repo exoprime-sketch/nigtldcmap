@@ -11,6 +11,10 @@ import AnalysisSummaryTableV146 from "./AnalysisSummaryTableV146";
 import { medianV146, signedBarV146 } from "../../../data/visualization/analysisMathV146";
 import "./province-series-analysis-v140.css";
 import { displayUnitV150 } from "../../../data/visualization/unitDisplayV150";
+import { orderBlocksV153 } from "../../../data/visualization/publicVisualizationContractV153";
+import type { AnalysisBlockTypeV153 } from "../../../data/visualization/publicVisualizationContractV153";
+import { useAnalysisContractV153 } from "./analysisContractContextV153";
+import { Fragment } from "react";
 
 /**
  * Province-by-time observations (V140): B-033 annual tree-cover loss, C-016
@@ -207,6 +211,8 @@ export default function ProvinceSeriesAnalysisV140({
       .sort((a, b) => b.value - a.value);
   }, [measure, measures, numeric, region, regionKey, time]);
 
+  const v153 = useAnalysisContractV153();
+
   if (!measure) {
     return <div className="pav126-empty" role="status">이 자료에는 수치 값이 없습니다.</div>;
   }
@@ -234,6 +240,12 @@ export default function ProvinceSeriesAnalysisV140({
       dimensions,
     });
   };
+
+  const primaryBlockType: AnalysisBlockTypeV153 = tableOpen
+    ? "table"
+    : region
+      ? chartSeries.length ? "line" : "category-bar"
+      : "region-bar";
 
   return (
     <div className="psa140" data-testid="province-series-analysis-v140" data-region={region || "all"} data-time={time} data-measure={measure.key}>
@@ -273,7 +285,12 @@ export default function ProvinceSeriesAnalysisV140({
       </div>
 
 
-      <section className="psa140__panel" aria-labelledby={`psa140-primary-${elementId}`}>
+      {/* The contract decides which opens the screen: the province bars
+          (region-bar) or the selected province's own series (V153). */}
+      {orderBlocksV153(
+        [
+          { type: primaryBlockType, key: "primary", node: (
+      <section className="psa140__panel" aria-labelledby={`psa140-primary-${elementId}`} data-analysis-block={primaryBlockType}>
         <header className="psa140__heading">
           <span>주 분석</span>
           <h3 id={`psa140-primary-${elementId}`}>
@@ -354,9 +371,9 @@ export default function ProvinceSeriesAnalysisV140({
           <p className="psa140__notice">상위 {TOP_COUNT}개 성·시입니다. 전체 {comparison.length}개는 '표로 보기'에서 확인할 수 있습니다.</p>
         )}
       </section>
-
-      {region && (
-        <section className="psa140__panel" aria-labelledby={`psa140-secondary-${elementId}`}>
+          ) },
+          ...(region ? [{ type: "region-bar" as AnalysisBlockTypeV153, key: "secondary", node: (
+        <section className="psa140__panel" aria-labelledby={`psa140-secondary-${elementId}`} data-analysis-block="region-bar">
           <header className="psa140__heading">
             <span>보조 비교</span>
             <h3 id={`psa140-secondary-${elementId}`}>{timeLabel} 성·시별 비교 · {region} 위치</h3>
@@ -378,10 +395,13 @@ export default function ProvinceSeriesAnalysisV140({
             <p className="psa140__notice">상위 {TOP_COUNT}개 성·시와 선택 지역입니다. 전체 순위는 '전체 성·시 비교'에서 '표로 보기'로 확인할 수 있습니다.</p>
           )}
         </section>
-      )}
+          ) }] : []),
+        ],
+        v153?.primary.type ?? null
+      ).map((block) => <Fragment key={block.key}>{block.node}</Fragment>)}
 
       {acrossMeasures.length > 1 && (
-        <section className="psa140__panel" aria-labelledby={`psa140-measures-${elementId}`}>
+        <section className="psa140__panel" aria-labelledby={`psa140-measures-${elementId}`} data-analysis-block="category-bar">
           <header className="psa140__heading">
             <span>항목 비교</span>
             <h3 id={`psa140-measures-${elementId}`}>{region} · {timeLabel} · 항목별 값</h3>
@@ -398,11 +418,11 @@ export default function ProvinceSeriesAnalysisV140({
           </ul>
         </section>
       )}
-      <AnalysisSummaryTableV146 title={`${timeLabel} · ${measure.label} 비교표`} rows={[
+      <section data-analysis-block="table"><AnalysisSummaryTableV146 title={`${timeLabel} · ${measure.label} 비교표`} rows={[
         ...(selectedRow ? [{ label: region, value: selectedRow.value, unit, context: `${timeLabel} · ${comparison.length}개 성·시 중 ${rank}위` }] : []),
         ...(total !== null ? [{ label: `${comparison.length}개 성·시 합계`, value: total, unit, context: `${timeLabel} · 계획 용량(설치 실적 아님)` }] : []),
         ...(median !== null ? [{ label: `${comparison.length}개 성·시 중앙값`, value: median, unit, context: timeLabel }] : []),
-      ]} />
+      ]} /></section>
     </div>
   );
 }

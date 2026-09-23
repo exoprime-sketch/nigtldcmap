@@ -1,22 +1,24 @@
-# PROGRESS — PR-D3 V153 법·제도·이니셔티브 편집 설명 (feat/v153-d3-policy-descriptions)
+# PROGRESS — PR-D1 V153 상세보기 프레임 (feat/v153-d1-detail-frame)
 
 ## PR 목표
-- C-009·C-010의 문서 34건, C-008의 이니셔티브 19건·협약 4건에 대해 공식 출처를 읽고 쓴 개조식 설명(2~3문장)과 출처 URL을 `policyDescriptionsV153.json`에 저장하고, 해당 카드에 "플랫폼 편집 설명 · 출처" 라벨로 원자료와 구분해 표시한다. 원자료 열은 덮어쓰지 않는다.
+- 152개 상세 첫 화면을 데이터별 1순위 시각화부터 읽히게: 계약(`publicVisualizationContractV153.json`) 선언 → 라우터·렌더러 순서 강제(`data-analysis-block`/`data-analysis-rank`) → 레이아웃 통일(히어로 → 핵심 수치 → [1순위 | 지도] → 2순위 → 표 → 출처 1줄 → 이용조건 접힘) → '자료 해석 안내' 삭제 → 계약↔화면 QA 152/152.
 
 ## 수용기준
-- 출처 없는 문장 0 · 미확인 항목은 "설명 준비 중"으로 표시(현재 미확인 0)
-- 단위테스트: JSON 스키마 · key↔원자료 이름 매칭 100% · URL https 형식 · 라벨/내부표기 유입 0
-- `SemanticContractRendererV125.tsx`는 import 1줄 + 렌더 1줄만. 키 없는 항목(C-016 포함)은 편집 전과 바이트 동일 — sha256 고정 테스트
-- `review:screens:v138 --only C-008,C-009,C-010` ready 3/3 · 링크 응답 검사 기록
-- 지도·라우터·map-index·전체 게이트·CI 대기 없음
+- 계약 152행 스키마·유형 규칙 단위테스트 통과, `docs/VISUALIZATION_CONTRACT_V153.md`는 JSON에서 생성
+- `qa:detail-contract:v153` 152/152(예외 행은 사유와 함께 별도 집계), `qa:analysis:v140:baseline` 새 실패 0
+- 대표 10개 × 6폭 넘침 0, C-009/C-010 320px 넘침 0
+- '자료 해석 안내' 텍스트 DOM 0, 상태 안내 5개 차트 0, 정책·문서형 숫자 차트 0
+- 금지 파일(RealMapExplorerPage·src/data/map·src/components/map·DetailLocationMapV148·map-index) 무편집
+- KPI: 소형 '핵심 수치' 행(≤4·단위 필수) — `detailTilesAbsent` 기대값 변경 사유 `reports/v153/ANALYSIS_QA_EXPECTATION_CHANGE_V153.md`
 
 ## 단계
-- [x] 1 대상 추출 `d3-targets.json` (34 문서 / 19+4 이니셔티브)
-- [x] 2 서브에이전트 3개 조사 → 57/57 작성, 메인 검수(서명자 이름·위키·미확인 문장 제거)
-- [x] 3 JSON·로더·카드 컴포넌트·CSS·타임라인 1줄·C-008 섹션
-- [x] 4 검증: tsc 0 · test:unit 234/234 · 화면 QA(카드 23/20/19, 6폭) · 링크 77건(200 66·307 1·403 10 봇차단)
-- [x] 5 보고서 `D3_POLICY_DESCRIPTIONS.md` · 추적표 `docs/FINALIZATION_TRACKER_V153.md` 3행
-- [ ] 6 rebase origin/main → PR → Vercel Preview Ready → 사용자 승인
+- [x] 1 계약 초안(서브에이전트 2) → 전수 판정 → JSON·로더·테스트
+- [x] 2 블록 태깅(서브에이전트 3 worktree) 병합 + 일반 렌더러 태깅·순서
+- [x] 3 프레임·핵심 수치 행·레이아웃 CSS·지도 슬롯·해석 안내 삭제·출처 1줄
+- [x] 4 유형 표준 화면 변경(누적영역 공용화·덤벨·지역 막대 순서)
+- [x] 5 QA 스크립트·package.json·CI, analysis QA 기대값 변경
+- [x] 6 검증: tsc 0 · unit 257/257 · 계약 QA 152/152 · 대표 10개×6폭 60/60 · analysis QA 기준선(지도 슬롯 제외 후 재실행) · 문서·추적표·CHANGELOG
+- [~] 7 finalize:v140 2회 실행(1차 entity-cards/publicCopy 상태 파일 → 처리, 2차 glossary 35 토큰 = main 선행 결함) → push → PR #27 → Vercel Preview 확인·glossary fix-forward 결정 대기
 
 ## 미완료·후속
-- C-009/C-010 320px 가로 넘침 39px(카드 무관, 기존 타임라인 컨테이너) → 후속 세션
+- 히트맵(A-013·C-005·B-044)·E-017 순위 막대·B-026 유향 지도·B-017 지도·지역 패널 값 표출(P4-D2)은 범위 밖. 예외 33행 사유는 계약 note·docs/VISUALIZATION_CONTRACT_V153.md

@@ -12,8 +12,13 @@ import {
   PublicTermExpandedTextV134,
   PublicTermTextV134,
 } from "../../help/PublicTermV134";
+import PublicDataLimitationsV126 from "./PublicDataLimitationsV126";
+import { useEffect, useState } from "react";
+import { loadCardSummariesV140 } from "../../../data/cardSummariesV140";
 
 interface Props {
+  /** For the usage notes filed under the collapsed terms (V153). */
+  elementId?: string;
   indicators: VietnamIndicatorMetaV124[];
   observations: VietnamObservationV124[];
   entities: VietnamEntityV124[];
@@ -23,12 +28,27 @@ interface Props {
 }
 
 export default function PublicSourcePanelV126({
+  elementId,
   indicators,
   observations,
   entities,
   spatialUnit,
   aggregationBasis = [],
 }: Props) {
+  const [provider, setProvider] = useState<string>("");
+  useEffect(() => {
+    let cancelled = false;
+    setProvider("");
+    if (!elementId) return undefined;
+    loadCardSummariesV140()
+      .then((cards) => {
+        if (!cancelled) setProvider(cards.get(elementId)?.provider || "");
+      })
+      .catch(() => undefined);
+    return () => {
+      cancelled = true;
+    };
+  }, [elementId]);
   // Organisation names arrive with the compiler's note about which sheet column
   // varies per row - "(레코드별 상이 - attr_19 참조)". The names are real; the
   // notes were never meant for a reader.
@@ -98,12 +118,26 @@ export default function PublicSourcePanelV126({
     ...indicators.map((item) => publicSourceOrganizationV136_1(item.attributionText)),
   ]);
 
+  // V153: the source, period and unit read as one visible line; the licence,
+  // the official links, the full organisation list and the usage notes stay
+  // under the collapsed 자료정보·이용조건. The visible provider is the card
+  // model's public wording (V140), never the raw provenance strings, which
+  // carry the compiler's notes.
+  const sourceLine = [
+    `출처 ${provider || "제공기관은 아래 자료정보 참조"}`,
+    `자료기간 ${summarizeYearsV126(years)}`,
+    `단위 ${units.length > 3 ? `${units.slice(0, 3).join(" · ")} 외 ${units.length - 3}종` : units.join(" · ") || "미기재"}`,
+  ].join(" · ");
   return (
+    <div className="pav126-source-frame-v153" data-testid="detail-source-frame-v153">
+    <p className="pav126-source-line-v153" data-testid="detail-source-line-v153">
+      <PublicTermTextV134 text={sourceLine} />
+    </p>
     <details
       className="pav126-source pav126-source--details-v135"
       data-testid="detail-metadata-v135"
     >
-      <summary>자료정보</summary>
+      <summary>자료정보·이용조건</summary>
       <section
         className="pav126-source__content-v135"
         data-testid="public-source-panel"
@@ -174,8 +208,10 @@ export default function PublicSourcePanelV126({
           )}
           </div>
         )}
+        {elementId && <PublicDataLimitationsV126 elementId={elementId} />}
       </section>
     </details>
+    </div>
   );
 }
 

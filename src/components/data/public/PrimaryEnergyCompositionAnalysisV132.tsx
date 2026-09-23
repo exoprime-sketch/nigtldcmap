@@ -1,6 +1,7 @@
 import ChartAxesV150 from "../../charts/ChartAxesV150";
-import { useId, useMemo, useState } from "react";
-import type { KeyboardEvent, PointerEvent } from "react";
+import { useMemo, useState } from "react";
+import { StackedAreaChartV153 } from "../../charts/StackedAreaChartV153";
+import type { StackedAreaSeriesV153, StackedAreaYearV153 } from "../../charts/StackedAreaChartV153";
 import type { SemanticObservationV125 } from "../../../data/visualization/semanticTypesV125";
 import type { DataFinderSelectorStateV125 } from "../../../types/dataFinderV125";
 import "./primary-energy-composition-v132.css";
@@ -14,19 +15,9 @@ interface Props {
 
 type NumericEnergyRowV132 = SemanticObservationV125 & { value: number };
 
-type EnergySeriesV132 = {
-  indicatorId: string;
-  key: string;
-  label: string;
-  color: string;
-  pattern: "solid" | "diagonal" | "dots" | "cross" | "vertical" | "horizontal";
-};
+type EnergySeriesV132 = StackedAreaSeriesV153 & { indicatorId: string };
 
-type EnergyYearV132 = {
-  year: number;
-  values: Record<string, number>;
-  total: number | null;
-};
+type EnergyYearV132 = StackedAreaYearV153;
 
 const ENERGY_SERIES_V132: EnergySeriesV132[] = [
   {
@@ -74,6 +65,8 @@ const ENERGY_SERIES_V132: EnergySeriesV132[] = [
 ];
 
 const TOTAL_INDICATOR_V132 = "A-016_primary_energy_total_primary_energy";
+
+const ENERGY_LABELS_V153 = { subject: "에너지원", quantity: "1차 에너지 소비량", total: "공급 총계" };
 
 const numberFormatterV132 = new Intl.NumberFormat("ko-KR", {
   maximumFractionDigits: 3,
@@ -202,7 +195,7 @@ export default function PrimaryEnergyCompositionAnalysisV132({
       data-zero-imputation="false"
     >
 
-      <section className="pec132__panel" aria-labelledby="pec132-absolute-title" data-testid="a016-absolute-trend">
+      <section className="pec132__panel" aria-labelledby="pec132-absolute-title" data-testid="a016-absolute-trend" data-analysis-block="stacked-area">
         <header className="pec132__heading">
           <div>
             <span>주 분석</span>
@@ -247,7 +240,10 @@ export default function PrimaryEnergyCompositionAnalysisV132({
         </div>
 
         <ChartAxesV150 x="연도" y="에너지원별 소비량(누적 면적)" unit={unit} />
-        <EnergyStackedAreaV132
+        <StackedAreaChartV153
+          labels={ENERGY_LABELS_V153}
+          totalLineTestId="a016-total-line"
+          tooltipTestId="a016-chart-tooltip"
           mode="absolute"
           onSelectYear={(year) =>
             onSelectorStateChange({ ...selectorState, year })
@@ -259,7 +255,7 @@ export default function PrimaryEnergyCompositionAnalysisV132({
         />
       </section>
 
-      <section className="pec132__panel" aria-labelledby="pec132-share-title" data-testid="a016-share-trend">
+      <section className="pec132__panel" aria-labelledby="pec132-share-title" data-testid="a016-share-trend" data-analysis-block="stacked-area">
         <header className="pec132__heading">
           <div>
             <span>구성 변화</span>
@@ -268,7 +264,10 @@ export default function PrimaryEnergyCompositionAnalysisV132({
           </div>
         </header>
         <ChartAxesV150 x="연도" y="에너지원 구성비(누적 면적)" unit="%" composition />
-        <EnergyStackedAreaV132
+        <StackedAreaChartV153
+          labels={ENERGY_LABELS_V153}
+          totalLineTestId="a016-total-line"
+          tooltipTestId="a016-chart-tooltip"
           mode="share"
           onSelectYear={(year) =>
             onSelectorStateChange({ ...selectorState, year })
@@ -280,7 +279,7 @@ export default function PrimaryEnergyCompositionAnalysisV132({
         />
       </section>
 
-      <section className="pec132__panel" aria-labelledby="pec132-selected-title" data-testid="a016-selected-year">
+      <section className="pec132__panel" aria-labelledby="pec132-selected-title" data-testid="a016-selected-year" data-analysis-block="category-bar">
         <header className="pec132__heading pec132__heading--selected">
           <div>
             <span>보조 분석</span>
@@ -319,249 +318,6 @@ export default function PrimaryEnergyCompositionAnalysisV132({
   );
 }
 
-function EnergyStackedAreaV132({
-  mode,
-  onSelectYear,
-  series,
-  unit,
-  visibleSeries,
-  years,
-}: {
-  mode: "absolute" | "share";
-  onSelectYear: (year: number) => void;
-  series: EnergySeriesV132[];
-  unit: string;
-  visibleSeries: Set<string>;
-  years: EnergyYearV132[];
-}) {
-  const patternPrefix = useId().replace(/:/g, "");
-  const [activeYear, setActiveYear] = useState<number | null>(null);
-  const [pinned, setPinned] = useState(false);
-  const width = 960;
-  const height = 370;
-  const padding = { left: 68, right: 22, top: 18, bottom: 58 };
-  const plotWidth = width - padding.left - padding.right;
-  const plotHeight = height - padding.top - padding.bottom;
-  const availableSeries = series.filter((item) => visibleSeries.has(item.key));
-  const yearMinimum = years.length > 0 ? years[0].year : 0;
-  const yearMaximum = years.length > 0 ? years[years.length - 1].year : 1;
-  const yearSpan = Math.max(1, yearMaximum - yearMinimum);
-  const completeYears = years.filter((item) =>
-    series.every((candidate) => Number.isFinite(item.values[candidate.key]))
-  );
-  const stackMaximum = mode === "share"
-    ? 100
-    : Math.max(
-        1e-9,
-        ...completeYears.map((item) =>
-          Math.max(
-            availableSeries.reduce((sum, candidate) => sum + item.values[candidate.key], 0),
-            item.total === null ? 0 : item.total
-          )
-        )
-      );
-  const x = (year: number) =>
-    padding.left + ((year - yearMinimum) / yearSpan) * plotWidth;
-  const y = (value: number) =>
-    padding.top + ((stackMaximum - value) / stackMaximum) * plotHeight;
-  const denominator = (item: EnergyYearV132) =>
-    series.reduce((sum, candidate) => sum + item.values[candidate.key], 0);
-  const valueFor = (item: EnergyYearV132, key: string) =>
-    mode === "share"
-      ? denominator(item) > 0
-        ? (item.values[key] / denominator(item)) * 100
-        : 0
-      : item.values[key];
-  const paths: Array<{ series: EnergySeriesV132; path: string }> = [];
-  let lowerByYear = completeYears.map(() => 0);
-  availableSeries.forEach((item) => {
-    const upperByYear = completeYears.map(
-      (year, index) => lowerByYear[index] + valueFor(year, item.key)
-    );
-    const upperPath = completeYears
-      .map((year, index) => `${index === 0 ? "M" : "L"}${x(year.year)},${y(upperByYear[index])}`)
-      .join(" ");
-    const lowerPath = [...completeYears]
-      .reverse()
-      .map((year, reverseIndex) => {
-        const index = completeYears.length - 1 - reverseIndex;
-        return `L${x(year.year)},${y(lowerByYear[index])}`;
-      })
-      .join(" ");
-    paths.push({ series: item, path: `${upperPath} ${lowerPath} Z` });
-    lowerByYear = upperByYear;
-  });
-  const tickYears = adaptiveTicksV132(completeYears.map((item) => item.year), 7);
-  const yTicks = mode === "share"
-    ? [0, 25, 50, 75, 100]
-    : [0, 0.25, 0.5, 0.75, 1].map((ratio) => stackMaximum * ratio);
-  const active = completeYears.find((item) => item.year === activeYear) || null;
-  const activeX = active ? x(active.year) : null;
-  const totalLinePath = mode === "absolute"
-    ? completeYears
-        .filter((item): item is EnergyYearV132 & { total: number } => item.total !== null)
-        .map((item, index) => `${index === 0 ? "M" : "L"}${x(item.year)},${y(item.total)}`)
-        .join(" ")
-    : "";
-
-  const nearestYear = (clientX: number, element: SVGSVGElement) => {
-    const bounds = element.getBoundingClientRect();
-    const localX = ((clientX - bounds.left) / Math.max(1, bounds.width)) * width;
-    const targetYear = yearMinimum + ((localX - padding.left) / plotWidth) * yearSpan;
-    return completeYears.reduce((nearest, item) =>
-      Math.abs(item.year - targetYear) < Math.abs(nearest.year - targetYear) ? item : nearest
-    );
-  };
-
-  const moveByKeyboard = (event: KeyboardEvent<SVGSVGElement>) => {
-    if (event.key === "Escape") {
-      setPinned(false);
-      setActiveYear(null);
-      return;
-    }
-    if (!["ArrowLeft", "ArrowRight", "Home", "End", "Enter", " "].includes(event.key)) return;
-    event.preventDefault();
-    if (event.key === "Enter" || event.key === " ") {
-      const nextYear = activeYear ?? completeYears[completeYears.length - 1]?.year;
-      if (nextYear !== undefined) {
-        setPinned(true);
-        setActiveYear(nextYear);
-        onSelectYear(nextYear);
-      }
-      return;
-    }
-    let nextIndex = activeYear === null
-      ? completeYears.length - 1
-      : completeYears.findIndex((item) => item.year === activeYear);
-    if (event.key === "ArrowLeft") nextIndex -= 1;
-    if (event.key === "ArrowRight") nextIndex += 1;
-    if (event.key === "Home") nextIndex = 0;
-    if (event.key === "End") nextIndex = completeYears.length - 1;
-    nextIndex = Math.max(0, Math.min(completeYears.length - 1, nextIndex));
-    setActiveYear(completeYears[nextIndex]?.year ?? null);
-  };
-
-  if (completeYears.length < 2) {
-    return <div className="pec132-empty" role="status">비교 가능한 연도별 구성값이 없습니다.</div>;
-  }
-
-  return (
-    <div
-      className="pec132__chart"
-      data-chart-kind={mode === "share" ? "100-percent-stacked-area" : "absolute-stacked-area"}
-      data-year-count={completeYears.length}
-    >
-      <svg
-        aria-label={`${yearMinimum}년부터 ${yearMaximum}년까지의 ${mode === "share" ? "에너지원 구성비" : "에너지원 절대량"} 변화`}
-        onBlur={() => {
-          if (!pinned) setActiveYear(null);
-        }}
-        onFocus={() => {
-          if (activeYear === null) setActiveYear(yearMaximum);
-        }}
-        onKeyDown={moveByKeyboard}
-        onPointerDown={(event: PointerEvent<SVGSVGElement>) => {
-          const nearest = nearestYear(event.clientX, event.currentTarget);
-          setActiveYear(nearest.year);
-          setPinned(true);
-          onSelectYear(nearest.year);
-        }}
-        onPointerLeave={() => {
-          if (!pinned) setActiveYear(null);
-        }}
-        onPointerMove={(event: PointerEvent<SVGSVGElement>) => {
-          if (pinned) return;
-          setActiveYear(nearestYear(event.clientX, event.currentTarget).year);
-        }}
-        role="img"
-        tabIndex={0}
-        viewBox={`0 0 ${width} ${height}`}
-      >
-        <title>{mode === "share" ? "에너지원 구성비 변화" : "에너지원 절대량 변화"}</title>
-        <desc>마우스나 터치로 연도를 선택하고, 키보드 좌우 화살표로 연도별 값을 확인할 수 있습니다.</desc>
-        <defs>
-          {series.map((item, index) => (
-            <pattern height="8" id={`${patternPrefix}-${item.key}`} key={item.key} patternUnits="userSpaceOnUse" width="8">
-              <rect fill={item.color} height="8" width="8" />
-              {patternMarksV132(item.pattern, index)}
-            </pattern>
-          ))}
-        </defs>
-        <rect className="pec132__chart-frame" height={plotHeight} width={plotWidth} x={padding.left} y={padding.top} />
-        {yTicks.map((tick) => (
-          <g key={`y-${tick}`}>
-            <line className="pec132__grid" x1={padding.left} x2={width - padding.right} y1={y(tick)} y2={y(tick)} />
-            <text className="pec132__tick" textAnchor="end" x={padding.left - 10} y={y(tick) + 4}>
-              {mode === "share" ? `${Math.round(tick)}%` : formatEnergyV132(tick)}
-            </text>
-          </g>
-        ))}
-        {tickYears.map((year) => (
-          <text className="pec132__tick" key={year} textAnchor="middle" x={x(year)} y={height - padding.bottom + 25}>{year}</text>
-        ))}
-        <g>
-          {paths.map((item) => (
-            <path
-              className="pec132__area"
-              d={item.path}
-              fill={`url(#${patternPrefix}-${item.series.key})`}
-              key={item.series.key}
-            />
-          ))}
-        </g>
-        {totalLinePath ? (
-          <path
-            className="pec132__total-line"
-            d={totalLinePath}
-            data-testid="a016-total-line"
-            fill="none"
-          />
-        ) : null}
-        {active && activeX !== null ? (
-          <line className="pec132__crosshair" x1={activeX} x2={activeX} y1={padding.top} y2={height - padding.bottom} />
-        ) : null}
-        <text className="pec132__axis-title" textAnchor="middle" x={padding.left + plotWidth / 2} y={height - 10}>연도</text>
-        <text className="pec132__axis-title" textAnchor="middle" transform={`translate(17 ${padding.top + plotHeight / 2}) rotate(-90)`}>{mode === "share" ? "구성비(%)" : `1차 에너지 소비량(${unit})`}</text>
-      </svg>
-      {active ? (
-        <div
-          className={`pec132__tooltip${activeX !== null && activeX > width / 2 ? " is-left" : ""}`}
-          data-testid="a016-chart-tooltip"
-          role="tooltip"
-          style={{ left: `${((activeX ?? padding.left) / width) * 100}%` }}
-        >
-          <strong>{active.year}년</strong>
-          <dl>
-            {availableSeries.map((item) => (
-              <div key={item.key}>
-                <dt><i aria-hidden="true" style={{ backgroundColor: item.color }} />{item.label}</dt>
-                <dd>
-                  {mode === "share"
-                    ? `${percentFormatterV132.format(valueFor(active, item.key))}%`
-                    : `${formatEnergyV132(active.values[item.key])} ${unit}`}
-                </dd>
-              </div>
-            ))}
-            {mode === "absolute" && active.total !== null ? (
-              <div className="pec132__tooltip-total">
-                <dt>공급 총계</dt>
-                <dd>{formatEnergyV132(active.total)} {unit}</dd>
-              </div>
-            ) : null}
-          </dl>
-        </div>
-      ) : null}
-      <p className="pec132__sr-only" aria-live="polite">
-        {active
-          ? `${active.year}년, ${availableSeries
-              .map((item) => `${item.label} ${mode === "share" ? `${percentFormatterV132.format(valueFor(active, item.key))}%` : `${formatEnergyV132(active.values[item.key])} ${unit}`}`)
-              .join(", ")}`
-          : ""}
-      </p>
-    </div>
-  );
-}
-
 function SelectedYearBarsV132({
   series,
   unit,
@@ -592,20 +348,3 @@ function SelectedYearBarsV132({
   );
 }
 
-function adaptiveTicksV132(values: number[], maximum: number): number[] {
-  if (values.length <= maximum) return values;
-  const ticks = Array.from({ length: maximum }, (_, index) =>
-    values[Math.round((index * (values.length - 1)) / (maximum - 1))]
-  );
-  return ticks.filter((value, index) => index === 0 || value !== ticks[index - 1]);
-}
-
-function patternMarksV132(pattern: EnergySeriesV132["pattern"], index: number) {
-  const stroke = "rgba(255,255,255,0.55)";
-  if (pattern === "diagonal") return <path d="M-2 8 L8 -2 M2 10 L10 2" stroke={stroke} strokeWidth="1" />;
-  if (pattern === "dots") return <circle cx="4" cy="4" fill="rgba(255,255,255,0.65)" r="1.2" />;
-  if (pattern === "cross") return <path d="M0 4 H8 M4 0 V8" stroke={stroke} strokeWidth="0.8" />;
-  if (pattern === "vertical") return <path d="M2 0 V8 M6 0 V8" stroke={stroke} strokeWidth="0.8" />;
-  if (pattern === "horizontal") return <path d="M0 2 H8 M0 6 H8" stroke={stroke} strokeWidth="0.8" />;
-  return <rect fill={`rgba(255,255,255,${0.04 + index * 0.01})`} height="8" width="8" />;
-}

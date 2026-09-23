@@ -1,4 +1,5 @@
 import { lazy, Suspense, useMemo } from "react";
+import type { ReactNode } from "react";
 import type {
   ElementIndicatorSemanticsV125,
   ElementVisualizationContractV125,
@@ -22,7 +23,6 @@ import PublicRegionScenarioSummaryV138, {
 import SeaLevelStationAnalysisV138, {
   isSeaLevelStationDeliveryV138,
 } from "./SeaLevelStationAnalysisV138";
-import { getPublicIndicatorInterpretationV129 } from "../../../data/interpretation/publicIndicatorInterpretationV129";
 import type {
   VietnamEntityV124,
   VietnamIndicatorMetaV124,
@@ -40,7 +40,6 @@ import PrimaryEnergyCompositionAnalysisV132 from "./PrimaryEnergyCompositionAnal
 import PublicEmissionsAnalysisV132 from "./PublicEmissionsAnalysisV132";
 import PublicCompositionTrendAnalysisV132 from "./PublicCompositionTrendAnalysisV132";
 import ResearchPatentAnalysisV132 from "./ResearchPatentAnalysisV132";
-import PublicDataLimitationsV126 from "./PublicDataLimitationsV126";
 import PowerPlantRegistrySummaryV138 from "./PowerPlantRegistrySummaryV138";
 import MineralResourceSummaryV153 from "./MineralResourceSummaryV153";
 import InvestorNetworkSummaryV153 from "./InvestorNetworkSummaryV153";
@@ -68,7 +67,6 @@ import ProvinceSeriesAnalysisV140, {
 import TransmissionNetworkSummaryV140, {
   isTransmissionDeliveryV140,
 } from "./TransmissionNetworkSummaryV140";
-import PublicIndicatorMeaningV129 from "./PublicIndicatorMeaningV129";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import PublicRawDataTablesV126 from "./PublicRawDataTablesV126";
 import PublicSourcePanelV126 from "./PublicSourcePanelV126";
@@ -100,6 +98,10 @@ interface Props {
   onSelectorStateChange: (state: DataFinderSelectorStateV125) => void;
   detailTemplate: string;
   spatialUnit?: string;
+  /** The page's own title; the analysis heading is shown only when it says something else (V153). */
+  pageTitle?: string;
+  /** The small map, placed by the V153 frame beside the first block. */
+  mapSlot?: ReactNode;
 }
 
 const E012_OCCUPATION_MEASURES_V126 = new Set<E012OccupationMeasureKeyV125>([
@@ -143,11 +145,14 @@ export default function PublicDataAnalysisRouterV126({
   onSelectorStateChange,
   detailTemplate,
   spatialUnit,
+  pageTitle,
+  mapSlot,
 }: Props) {
   const summary = getPublicVisualizationSummaryV126(elementId);
   const publicRenderer = summary?.primaryRenderer || "structured-table";
   const copy = publicElementCopyV126(elementId, publicRenderer);
   const headings = getPublicAnalysisHeadingsV134(elementId);
+  const analysisTitle = headings?.publicAnalysisTitle || copy.title;
   const semanticRows = useMemo(
     () =>
       buildSemanticObservationsV125(
@@ -214,46 +219,17 @@ export default function PublicDataAnalysisRouterV126({
     }),
     [contract, publicRenderer, elementId]
   );
-  const meaningIndicatorId = useMemo(() => {
-    const dimensionEntries = Object.entries(selectorState.dimensions).filter(
-      ([key, value]) =>
-        Boolean(value) && !["variable", "mapVariable"].includes(key)
-    );
-    const candidates = semanticRows.filter(
-      (row) =>
-        (!selectorState.measure ||
-          row.semanticMeasure.key === selectorState.measure) &&
-        dimensionEntries.every(
-          ([key, value]) => row.dimensions[key] === value
-        )
-    );
-    if (candidates.length === 0) return null;
-    if (dimensionEntries.length > 0) return candidates[0].indicatorId;
-    const candidateInterpretations = candidates.map((row) =>
-      getPublicIndicatorInterpretationV129(elementId, null, row.indicatorId)
-    );
-    const uniqueInterpretations = new Set(candidateInterpretations);
-    if (
-      candidateInterpretations.every((interpretation) => interpretation !== null) &&
-      uniqueInterpretations.size === 1
-    ) {
-      return candidates[0].indicatorId;
-    }
-    const indicatorFamilies = new Set(
-      candidates.map((row) =>
-        row.indicatorId.replace(/_(?:central_highlands|mekong_river_delta|north_central_coast_and_south_central_coast|north_east_north_west|red_river_delta|south_east|total|ssp[123])$/u, "")
-      )
-    );
-    return indicatorFamilies.size === 1 ? candidates[0].indicatorId : null;
-  }, [elementId, selectorState.dimensions, selectorState.measure, semanticRows]);
-
   return (
     <>
-      <header className="pav126-heading">
-        <h2 data-testid="public-data-title">
-          <PublicTermTextV134 text={headings?.publicAnalysisTitle || copy.title} />
-        </h2>
-      </header>
+      {/* The title is stated once, by the page; the analysis heading is kept
+          only where it adds a reading ("배출량 변화와 구성") (V153). */}
+      {!sameTitleV153(pageTitle, analysisTitle) && (
+        <header className="pav126-heading">
+          <h2 data-testid="public-data-title">
+            <PublicTermTextV134 text={analysisTitle} />
+          </h2>
+        </header>
+      )}
 
       <section className="pav126-primary" data-testid="public-analysis-primary">
         {/*
@@ -263,7 +239,7 @@ export default function PublicDataAnalysisRouterV126({
           observations to draw, the archetype shows the records that are there.
         */}
         {elementId === "A-026" && metadataOnlyBuildingsV144(semanticRows) ? (
-          <section className="pav126-empty" data-testid="building-data-availability-v144">
+          <section className="pav126-empty" data-testid="building-data-availability-v144" data-analysis-block="note">
             <h3>건물 수·면적 자료 미제공</h3>
             <p>현재 자료에는 건물 수·면적과 개별 건물 경계가 포함되어 있지 않습니다. 자료의 좌표계와 파일 구성 정보만 확인할 수 있습니다.</p>
             <details><summary>파일 구성 정보</summary>
@@ -444,20 +420,11 @@ export default function PublicDataAnalysisRouterV126({
             showRawTable={false}
           />
         )}
+        {mapSlot}
       </section>
 
-      {!['B-005', 'E-008'].includes(elementId) && !(elementId === 'A-026' && metadataOnlyBuildingsV144(semanticRows)) && (
-        <details className="pav144-reading-notes" data-testid="public-reading-notes-v144">
-          <summary>자료 해석 안내</summary>
-          <PublicIndicatorMeaningV129
-            elementId={elementId}
-            indicatorId={meaningIndicatorId}
-            variableKey={selectorState.dimensions.variable || selectorState.dimensions.mapVariable || (selectorState.measure ? "semantic-selection" : undefined)}
-          />
-        </details>
-      )}
-      <PublicDataLimitationsV126 elementId={elementId} />
       <PublicSourcePanelV126
+        elementId={elementId}
         indicators={indicators}
         observations={observations}
         entities={entities}
@@ -474,6 +441,13 @@ export default function PublicDataAnalysisRouterV126({
       ) : null}
     </>
   );
+}
+
+/** Same words, ignoring spacing and the middle dots the labels use. */
+function sameTitleV153(left: string | undefined, right: string): boolean {
+  if (!left) return false;
+  const norm = (value: string) => value.replace(/[\s·:：()（）]/gu, "").toLowerCase();
+  return norm(left) === norm(right);
 }
 
 function e012SelectionV126(

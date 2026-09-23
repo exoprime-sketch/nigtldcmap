@@ -20,7 +20,7 @@ export default function PppProcurementSummaryV153({ entities, indicators }: Prop
   const model = useMemo(() => pppModelV153(entities, indicators), [entities, indicators]);
   const provinceTotal = model.provinces.reduce((sum, row) => sum + (row.count || 0), 0);
   return (
-    <section className="detail146 d153-section" data-testid="ppp-procurement-v153" data-analysis-block="ppp-facts">
+    <section className="detail146 d153-section" data-testid="ppp-procurement-v153">
       <p>
         PPP 법률·시행령, 전담 기관, 계약 유형, 조달 방식과 사업 이력을 항목별로 정리했습니다. 영문·베트남어 용어는 한글을 먼저 쓰고 원문을 괄호에 두었습니다.
       </p>
@@ -30,7 +30,7 @@ export default function PppProcurementSummaryV153({ entities, indicators }: Prop
         <li><span>계약 유형</span><strong>{model.groups.find((group) => group.key === "contract")?.facts.length ?? 0}종</strong></li>
       </ul>
       {model.groups.map((group) => (
-        <section key={group.key} className="d153-section" data-testid={`ppp-group-${group.key}-v153`}>
+        <section key={group.key} className="d153-section" data-analysis-block="comparison-table" data-testid={`ppp-group-${group.key}-v153`}>
           <h4>{group.title} · {group.facts.length}건</h4>
           <ul className="d153-facts">
             {group.facts.map((fact) => {
@@ -52,7 +52,7 @@ export default function PppProcurementSummaryV153({ entities, indicators }: Prop
         </section>
       ))}
       {model.provinces.length ? (
-        <section className="d153-section" data-testid="ppp-provinces-v153">
+        <section className="d153-section" data-analysis-block="sorted-table" data-testid="ppp-provinces-v153">
           <h4>성·시별 PPP 사업 건수 · {model.provinceSource ? `${model.provinceSource} 등재 사업` : "세계은행 PPI"} · {model.provinces.length}개 지역</h4>
           <div className="d153-table-wrap">
             <table className="d153-table">

@@ -29,7 +29,7 @@ export default function LcoeRangeAnalysisV146({ rows, selectorState, onSelectorS
     <h3>{year}년 발전원별 균등화 발전비용</h3>
     <p className="detail146-note">발전소의 건설·운영 비용을 생산 전력량으로 나눈 비용입니다. 선은 원자료의 하한~상한, 점은 기준값입니다. 전기요금이나 실제 거래가격이 아니며, 2030·2050년은 2023년 보고서의 전망입니다.</p>
     <ChartAxesV150 x="균등화 발전비용" y="발전원" unit="USD/MWh" />
-    <figure className="detail146-range-chart" aria-label={`${year}년 발전원별 비용 범위, 단위 USD/MWh`}>
+    <figure className="detail146-range-chart" data-analysis-block="dumbbell" aria-label={`${year}년 발전원별 비용 범위, 단위 USD/MWh`}>
       <figcaption>비용 범위와 기준값 · USD/MWh · 2022년 불변가격 <span>0 ~ {scale} · 모든 연도에 같은 눈금 적용</span></figcaption>
       <ol>{selected.map((row) => <li key={row.technology} data-selected={row.technology === cardTechnology || undefined}>
         <span><PublicTermTextV134 text={row.technology} />{row.technology === cardTechnology && <small>목록에서 선택한 발전원</small>}</span>
@@ -39,8 +39,8 @@ export default function LcoeRangeAnalysisV146({ rows, selectorState, onSelectorS
     </figure>
     {selected.some((row) => !row.valid) && <p role="status">일부 발전원의 기준값 또는 범위를 확인할 수 없어 해당 구간은 그리지 않았습니다. 아래 표에서 제공된 값을 확인하세요.</p>}
     <details className="detail146-details"><summary>표로 보기 · 발전원별 비용과 전망</summary>
-      <div className="detail146-table"><table><caption>단위: USD/MWh · {year}년 기준 또는 전망</caption><thead><tr><th scope="col">발전원</th><th scope="col">하한</th><th scope="col">기준값</th><th scope="col">상한</th></tr></thead><tbody>{selected.map((row) => <tr key={row.technology}><th scope="row">{row.technology}</th><td>{fmt(row.min)}</td><td>{fmt(row.benchmark)}</td><td>{fmt(row.max)}</td></tr>)}</tbody></table></div>
-      <div className="detail146-table"><table><caption>연도별 기준값 비교 · 2030·2050년은 전망</caption><thead><tr><th scope="col">발전원</th>{years.map((value) => <th scope="col" key={value}>{value}년</th>)}</tr></thead><tbody>{selected.map((row) => <tr key={row.technology}><th scope="row">{row.technology}</th>{years.map((value) => <td key={value}>{fmt(ranges.find((r) => r.year === value && r.technology === row.technology)?.benchmark ?? null)}</td>)}</tr>)}</tbody></table></div>
+      <div className="detail146-table" data-analysis-block="sorted-table"><table><caption>단위: USD/MWh · {year}년 기준 또는 전망</caption><thead><tr><th scope="col">발전원</th><th scope="col">하한</th><th scope="col">기준값</th><th scope="col">상한</th></tr></thead><tbody>{selected.map((row) => <tr key={row.technology}><th scope="row">{row.technology}</th><td>{fmt(row.min)}</td><td>{fmt(row.benchmark)}</td><td>{fmt(row.max)}</td></tr>)}</tbody></table></div>
+      <div className="detail146-table" data-analysis-block="table"><table><caption>연도별 기준값 비교 · 2030·2050년은 전망</caption><thead><tr><th scope="col">발전원</th>{years.map((value) => <th scope="col" key={value}>{value}년</th>)}</tr></thead><tbody>{selected.map((row) => <tr key={row.technology}><th scope="row">{row.technology}</th>{years.map((value) => <td key={value}>{fmt(ranges.find((r) => r.year === value && r.technology === row.technology)?.benchmark ?? null)}</td>)}</tr>)}</tbody></table></div>
     </details>
     <p className="detail146-note">BloombergNEF · 2023년 10월 · <a href="https://assets.bbhub.io/professional/sites/24/20231020_Vietnam-TCF-report-with-factsheets-EN.pdf" target="_blank" rel="noreferrer">원문 보고서</a> 그림 6~8. 배터리 결합 발전원은 4시간 저장 조건입니다.</p>
   </section>;

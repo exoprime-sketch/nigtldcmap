@@ -2,6 +2,27 @@
 
 이 문서는 공개 플랫폼의 주요 변경을 기록합니다. 아직 merge·배포·tag가 확인되지 않은 작업은 `Unreleased`에 둡니다.
 
+## Unreleased — V153-D1 상세보기 프레임 (PR 후보)
+
+### Added
+
+- 152개 상세의 1순위 시각화 계약 `src/data/visualization/publicVisualizationContractV153.json`(유형·1순위 타입·축·단위·2순위·지도 자리·참고 사례·상태) + 유형 표준 함수·순서 유틸·단위테스트, 문서 `docs/VISUALIZATION_CONTRACT_V153.md`(스크립트 생성)
+- 상세 프레임 `DetailAnalysisFrameV153`(블록 `data-analysis-block`/`data-analysis-rank`, 계약 판정 속성·콘솔 경고, 지도 슬롯을 1순위 옆에 두는 grid 속성)·핵심 수치 행 `DetailKpiStripV153`·레이아웃 CSS `detail-layout-v153.css`, 문서 `docs/DETAIL_LAYOUT_V153.md`
+- 공용 차트 `StackedAreaChartV153`(A-016에서 추출, 절대량/비중)·`CompositionStackV153`(A-010·A-011·A-018 1순위 누적영역)·`DumbbellChartV153`(B-023 건기/우기, B-025 유역 두 면적)·`EntityFacetCountsV153`(등록부·디렉터리 분류별 수)
+- 계약 QA `scripts/v153/detail-contract-qa-v153.mjs`(`qa:detail-contract:v153`, CI analysis job) — 152/152 판정(첫 블록 타입·순서·축·단위·태그 정직성·해석 안내 부재·상태 화면 차트 0·정책 화면 숫자 차트 0·핵심 수치·제목 1회·지도 자리·320px 넘침·콘솔)
+
+### Changed
+
+- 상세 순서: 히어로 → 핵심 수치 3~4개 → [1순위 | 작은 지도](≥1024px 2열, 세로형 3:4) → 2순위 → 표 → 출처 1줄 → 이용조건(접힘) → 다운로드. 모바일은 1순위 → 지도 → 2순위
+- '자료 해석 안내' 접힘 블록 삭제(`PublicIndicatorMeaningV129` 미사용 표기), 분석 제목은 페이지 제목과 다를 때만, 자료정보 패널은 출처·기간·단위 1줄 + 접힌 이용조건(유의사항 포함)
+- 계약 1순위에 맞춘 순서 교체: 성·시 분포는 지역 막대 먼저(선택 지역 추이 2순위), 정책 타임라인은 유형별 수보다 먼저, 포트폴리오는 분류별 수 먼저(연도 추이 다음), 디렉터리·A-027/A-028·E-006·D-005·B-021 등
+- 막대 프리미티브(`AnalysisBarsV147`·`PublicCountDistributionV143`·항목 비교)가 세로축 명사를 계약에서 받음(단위는 데이터 기준 유지). A-010 CO₂e 판별이 V150 단위 별칭(`MtCO₂e`)에서도 동작
+- `qa:analysis:v140`의 `detailTilesAbsent` → `detailTilesBounded`(핵심 수치 행 ≤4·단위 필수) — 사유 `reports/v153/ANALYSIS_QA_EXPECTATION_CHANGE_V153.md`
+
+### Fixed
+
+- 320px 가로 넘침: C-009/C-010 타임라인(패널·목록 열 `minmax(0,1fr)`, 본문 URL 줄바꿈), 선택기 `<select>` 긴 옵션(B-006·B-041·B-017 등), 개체 카드 그리드(E-018)
+
 ## Unreleased — V151-2 34개 집계정책·국가 외곽선·배경지도 개편·CCKP 팩 분할 (PR 후보)
 
 ### Added

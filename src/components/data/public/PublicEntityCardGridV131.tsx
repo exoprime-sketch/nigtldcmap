@@ -193,6 +193,7 @@ export default function PublicEntityCardGridV131({
     <>
       <div
         className={`pec131-grid pec131-grid--${template}`}
+        data-analysis-block="cards-list"
         data-testid="public-entity-card-grid-v131"
         role="list"
       >

@@ -2,10 +2,14 @@ import ChartAxesV150 from "../../charts/ChartAxesV150";
 import { useState } from "react";
 import InteractiveTimeSeriesChartV127 from "../../charts/InteractiveTimeSeriesChartV127";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
+import { useAnalysisContractV153 } from "./analysisContractContextV153";
 import "./public-analysis-workspace-v143.css";
 
 type Row = { label: string; value: number };
-export default function PublicCountDistributionV143({ title, rows, testId, chronological = false }: { title: string; rows: Row[]; testId?: string; chronological?: boolean }) {
+/** `unit`: the count noun the bars state (건·곳·명); `yAxis`: what each bar is, from the dataset's contract unless given (V153). */
+export default function PublicCountDistributionV143({ title, rows, testId, chronological = false, unit = "건", xAxis, yAxis }: { title: string; rows: Row[]; testId?: string; chronological?: boolean; unit?: string; xAxis?: string; yAxis?: string }) {
+  const contract = useAnalysisContractV153();
+  const contractY = contract && ["category-bar", "region-bar"].includes(contract.primary.type) ? contract.primary.yAxis : null;
   const [expanded, setExpanded] = useState(false);
   const [table, setTable] = useState(false);
   const maximum = Math.max(1, ...rows.map((row) => row.value));
@@ -14,7 +18,7 @@ export default function PublicCountDistributionV143({ title, rows, testId, chron
   const trend = chronological && rows.length >= 3;
   return <section className={`pcd143 ${chronological ? "pcd143--time" : ""}`} data-portfolio-distribution="true" data-testid={testId}>
     <header>{(!trend || table) && <h5><PublicTermTextV134 text={title} /></h5>}<button type="button" aria-label={`${title} ${table ? "차트로 보기" : "표로 보기"}`} aria-pressed={table} onClick={() => setTable((value) => !value)}>{table ? "차트로 보기" : "표로 보기"}</button></header>
-    {!table && !trend && <ChartAxesV150 x="건수" y={chronological ? "연도" : "분류"} unit="건" />}
+    {!table && !trend && <ChartAxesV150 x={xAxis || "건수"} y={chronological ? "연도" : yAxis || contractY || "분류"} unit={unit} />}
     {table ? <div className="pcd143-table"><table><caption><PublicTermTextV134 text={title} /> · 전체 {rows.length}개 항목</caption><thead><tr><th scope="col">{chronological ? "연도" : "항목"}</th><th scope="col">건수</th>{!chronological && <th scope="col">구성비</th>}</tr></thead><tbody>{rows.map((row) => <tr key={row.label}><th scope="row"><PublicTermTextV134 text={row.label} /></th><td>{row.value.toLocaleString("ko-KR")}건</td>{!chronological && <td>{total ? (row.value / total * 100).toFixed(1) : "0.0"}%</td>}</tr>)}</tbody></table></div>
       : trend ? <InteractiveTimeSeriesChartV127 title={title} ariaLabel={title} series={[{ id: "record-count", label: title, unit: "건", points: rows.map((row) => ({ x: Number(row.label), xLabel: `${row.label}년`, value: row.value })) }]} unit="건" xAxisTitle="연도" yAxisTitle="건수" height={280} showDelta={false} formatValue={(value) => value.toLocaleString("ko-KR", { maximumFractionDigits: 0 })} zoom={{ enabled: rows.length > 8, minimumSpan: 2, showRangeBrush: rows.length > 8 }} />
       : <ul className="pcd143-bars">{shown.map((row) => <li key={row.label} tabIndex={0} aria-label={`${row.label} ${row.value}건${chronological || !total ? "" : `, ${(row.value / total * 100).toFixed(1)}%`}`}><span className="pcd143-label"><PublicTermTextV134 text={row.label} /></span><span className="pcd143-bar" aria-hidden="true"><i style={{ width: `${row.value / maximum * 100}%` }} /></span><strong>{row.value.toLocaleString("ko-KR")}건{!chronological && <small>{total ? (row.value / total * 100).toFixed(1) : "0.0"}%</small>}</strong></li>)}</ul>}

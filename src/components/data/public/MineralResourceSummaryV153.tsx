@@ -42,7 +42,7 @@ export default function MineralResourceSummaryV153({ elementId, observations, in
   const headline = model.reported.find((row) => row.mineral === (isReserves ? "안티모니" : "주석")) || model.reported[0];
 
   return (
-    <section className="detail146 d153-section" data-testid={`mineral-resources-v153-${elementId.toLowerCase()}`} data-analysis-block="mineral-resources">
+    <section className="detail146 d153-section" data-testid={`mineral-resources-v153-${elementId.toLowerCase()}`}>
       <p>
         {/* The source body and its publication carry help triggers in the copy too (V153). */}
         <PublicTermTextV134
@@ -61,9 +61,11 @@ export default function MineralResourceSummaryV153({ elementId, observations, in
       </ul>
 
       {isReserves ? (
-        <AnalysisBarsV147 rows={shareRows} title={`광종별 세계 비중 · ${model.measureLabel} · ${latestYear ?? ""}년`} unit="%" />
+        <section className="d153-block" data-analysis-block="category-bar">
+          <AnalysisBarsV147 rows={shareRows} title={`광종별 세계 비중 · ${model.measureLabel} · ${latestYear ?? ""}년`} unit="%" xAxis={`세계 ${model.measureLabel} 비중`} yAxis="광물" />
+        </section>
       ) : (
-        <div className="d153-table-wrap">
+        <div className="d153-table-wrap" data-analysis-block="table">
           <table className="d153-table" data-testid="mineral-production-table-v153">
             <caption>광종별 {model.measureLabel} · {earlierYear}년 실적치와 {latestYear}년 추정치 · 행 안의 막대는 그 광종의 두 값을 상대 비교한 것입니다.</caption>
             <thead>
@@ -105,7 +107,7 @@ export default function MineralResourceSummaryV153({ elementId, observations, in
       )}
 
       {isReserves ? (
-        <div className="d153-table-wrap">
+        <div className="d153-table-wrap" data-analysis-block="table">
           <table className="d153-table" data-testid="mineral-reserves-table-v153">
             <caption>
               <PublicTermTextV134 text={`광종별 ${model.measureLabel} · ${latestYear}년 · 값과 단위는 USGS Mineral Commodity Summaries 원문 그대로입니다.`} />
@@ -130,7 +132,7 @@ export default function MineralResourceSummaryV153({ elementId, observations, in
       ) : null}
 
       {model.missing.length ? (
-        <section className="d153-section" data-testid="mineral-missing-v153">
+        <section className="d153-section" data-analysis-block="status-note" data-testid="mineral-missing-v153">
           <h4><PublicTermTextV134 text={isReserves ? "USGS 미수록 광종" : "원천 미보고 광종"} /> · {model.missing.length}종</h4>
           <ul className="d153-facts">
             {model.missing.map((row) => (

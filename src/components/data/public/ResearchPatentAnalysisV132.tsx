@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import ChartAxesV150 from "../../charts/ChartAxesV150";
 import InteractiveTimeSeriesChartV127 from "../../charts/InteractiveTimeSeriesChartV127";
 import type { TimeSeriesV127 } from "../../../types/chartInteractionV127";
 import type { SemanticObservationV125 } from "../../../data/visualization/semanticTypesV125";
@@ -158,7 +159,7 @@ export default function ResearchPatentAnalysisV132({
         </p>
       )}
       {nationalTrend.length > 0 && (
-      <section className="rpa132-panel" data-testid="e008-trend">
+      <section className="rpa132-panel" data-analysis-block={nationalTrendDepthV135 < 3 ? "dumbbell" : "line"} data-testid="e008-trend">
         {nationalTrendDepthV135 < 3 ? (
           <div
             className="rpa132-two-year-change-v135"
@@ -223,6 +224,7 @@ export default function ResearchPatentAnalysisV132({
           description={`수록 ${kind}의 발행연도를 집계했습니다. 자료가 없는 연도를 0으로 채우지 않습니다.`}
           rows={countByV132(records.filter((record) => record.type === kind && Boolean(record.year)), (record) => String(record.year)).sort((a, b) => Number(a.label) - Number(b.label))}
           testId={`e008-list-years-${kind === "논문" ? "paper" : "patent"}`}
+          yAxis="발행연도"
         />)}
       </div>
       <div className="rpa132-analysis-grid">
@@ -256,7 +258,7 @@ export default function ResearchPatentAnalysisV132({
         )}
       </div>
 
-      <section className="rpa132-list" data-testid="e008-list">
+      <section className="rpa132-list" data-analysis-block="cards-list" data-testid="e008-list">
         <header>
           <div>
             <span>개별 목록</span>
@@ -452,19 +454,23 @@ function BreakdownV132({
   description,
   rows,
   testId,
+  yAxis = "항목",
 }: {
   title: string;
   description: string;
   rows: Array<{ label: string; value: number }>;
   testId: string;
+  /** What each bar is (V153 contract axes). */
+  yAxis?: string;
 }) {
   const [expanded, setExpanded] = useState(false);
   const [table, setTable] = useState(false);
   const maximum = Math.max(1, ...rows.map((row) => row.value));
   const shown = expanded ? rows : rows.slice(0, 8);
   return (
-    <section className="rpa132-breakdown" data-testid={testId}>
+    <section className="rpa132-breakdown" data-analysis-block="category-bar" data-testid={testId}>
       <header><h3><PublicTermTextV134 text={title} /></h3><p><PublicTermTextV134 text={description} /></p></header>
+      {!table && <ChartAxesV150 x="건수" y={yAxis} unit="건" />}
       <div className="rpa144-actions"><button type="button" aria-pressed={table} onClick={() => setTable((value) => !value)}>{table ? "차트로 보기" : "표로 보기"}</button>
         {!table && rows.length > 8 && <button type="button" aria-expanded={expanded} onClick={() => setExpanded((value) => !value)}>{expanded ? "상위 8개만 보기" : `전체 ${rows.length}개 항목 보기`}</button>}
       </div>

@@ -1,0 +1,188 @@
+/*
+ * V153-D1 detail layout: hero → core figures → [first block | map] → the rest
+ * of the analysis at full width → table → one source line → collapsed terms.
+ * The frame (DetailAnalysisFrameV153) only writes attributes; this sheet does
+ * the placing. Loaded after the v122/v126/v146 sheets.
+ */
+
+/* ---- core figures row (small, with units; not the V147 tiles) ------------ */
+.dl153-kpi {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin: 0 0 14px;
+}
+.dl153-kpi__tile {
+  min-width: 0;
+  padding: 10px 14px;
+  border: 1px solid #d7e5e0;
+  border-radius: 12px;
+  background: #f7fbf9;
+  display: grid;
+  gap: 2px;
+}
+.dl153-kpi__tile strong {
+  font-size: 1.05rem;
+  color: #143d35;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+.dl153-kpi__tile span {
+  font-size: 0.78rem;
+  color: #55706a;
+  overflow-wrap: anywhere;
+}
+.dl153-kpi-status {
+  margin: 0 0 14px;
+  padding: 10px 14px;
+  border: 1px dashed #c9d9d3;
+  border-radius: 12px;
+  color: #4f665f;
+  font-size: 0.9rem;
+}
+
+/* ---- frame ---------------------------------------------------------------- */
+.dl153-frame {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+/* The summary line is what the core figures row now states. Kept in the DOM
+   for the audits that read it. */
+.cdp-detail-page-v146 .cev123-heading {
+  display: none;
+}
+
+/* ---- first block beside the map ------------------------------------------- */
+.pav126-primary[data-dl153-split] {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+.pav126-primary[data-dl153-split] [data-dl153-flat] {
+  display: contents;
+}
+.pav126-primary[data-dl153-split] [data-dl153-flat] > *,
+.pav126-primary[data-dl153-split] > * {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+/* Below the split width: everything after the first block follows the map. */
+/* Everything after the first block in DOM order - its own later siblings
+   and the later siblings of every flattened wrapper around it. */
+.pav126-primary[data-dl153-split] [data-analysis-rank="1"] ~ :not(.dl153-map-slot),
+.pav126-primary[data-dl153-split] [data-dl153-flat]:has([data-analysis-rank="1"]) ~ :not(.dl153-map-slot) {
+  order: 2;
+}
+.pav126-primary[data-dl153-split] > .dl153-map-slot {
+  order: 1;
+}
+.dl153-map-slot {
+  min-width: 0;
+}
+.dl153-map-slot .detail-map148 {
+  margin: 0;
+}
+.dl153-map-slot .detail-map148-layout {
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+.dl153-map-slot .detail-map148 svg {
+  height: auto;
+  aspect-ratio: 3 / 4;
+  max-height: 560px;
+}
+@media (min-width: 1024px) {
+  .pav126-primary[data-dl153-split] {
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 32%);
+    grid-auto-flow: row dense;
+    align-items: start;
+  }
+  .pav126-primary[data-dl153-split] [data-analysis-rank="1"] {
+    grid-column: 1;
+    min-height: 320px;
+  }
+  .pav126-primary[data-dl153-split] > .dl153-map-slot {
+    grid-column: 2;
+    order: 0;
+    align-self: start;
+  }
+}
+
+/* ---- charts: a first block is never a sliver ------------------------------ */
+[data-analysis-rank="1"][data-analysis-block="line"],
+[data-analysis-rank="1"][data-analysis-block="stacked-area"],
+[data-analysis-rank="1"][data-analysis-block="region-bar"],
+[data-analysis-rank="1"][data-analysis-block="category-bar"],
+[data-analysis-rank="1"][data-analysis-block="dumbbell"],
+[data-analysis-rank="1"][data-analysis-block="heatmap"] {
+  min-height: 320px;
+}
+
+/* ---- source line and collapsed terms -------------------------------------- */
+.pav126-source-frame-v153 {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+.pav126-source-line-v153 {
+  margin: 0;
+  color: #3f5a53;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.pav126-source-frame-v153 .pav126-source {
+  margin-top: 0;
+}
+.pav126-source-frame-v153 .pav126-limitations {
+  margin-top: 12px;
+}
+
+/* ---- widths: no document overflow at 320px -------------------------------- */
+.dl153-detail-panel,
+.dl153-detail-panel .cev123-shell,
+.dl153-detail-panel .pav126-primary {
+  min-width: 0;
+}
+
+/* ---- block wrappers added at call sites (V153 tagging) ------------------- */
+.d153-block {
+  min-width: 0;
+}
+
+/* ---- phone width: selectors and card badges wrap instead of widening ------ */
+.prs137__controls label,
+.prs137__controls select,
+.sv125-controls label,
+.sv125-controls select,
+.psa140__controls label,
+.psa140__controls select {
+  min-width: 0;
+  max-width: 100%;
+}
+.pec131-card__badges li,
+.pec131-card__title {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+@media (max-width: 480px) {
+  .prs137__controls select,
+  .sv125-controls select,
+  .psa140__controls select {
+    width: 100%;
+  }
+}
+@media (max-width: 620px) {
+  .pec131-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.pec131-card,
+.pec131-card__heading {
+  grid-template-columns: minmax(0, 1fr);
+}
+.pec131-card__heading > * {
+  min-width: 0;
+}

@@ -297,6 +297,22 @@ jobs:
         timeout-minutes: 40
         run: npm run qa:analysis:v140:baseline
 
+      - name: Detail contract QA (V153-D1, 152 screens)
+        timeout-minutes: 30
+        env:
+          V125_TIMEOUT_SCALE: "3"
+        run: npm run qa:detail-contract:v153 -- --workers 2
+
+      - name: Upload V153 contract QA report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: v153-detail-contract-qa-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            reports/v153/detail-contract-qa-v153.json
+            reports/v153/detail-contract-qa-v153.md
+          if-no-files-found: ignore
+
       - name: Upload V140 QA reports
         if: always()
         uses: actions/upload-artifact@v7

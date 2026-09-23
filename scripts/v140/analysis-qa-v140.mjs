@@ -427,7 +427,24 @@ async function readScreen(page) {
   return page.evaluate(() => {
     const tidy = (value) => String(value || "").normalize("NFC").replace(/\s+/gu, " ").trim();
     const primary = document.querySelector('[data-testid="public-analysis-primary"]');
-    const selects = [...(primary?.querySelectorAll("select") || [])].map((select) => ({
+    // V153-D1: the small map sits inside the primary section beside the first
+    // block; its own selectors (지도 표시 항목·지역·대상) belong to the map, not
+    // to the analysis, exactly as before the move.
+    const analysisSelects = (root) => [...(root?.querySelectorAll("select") || [])].filter((select) => !select.closest('[data-testid="detail-map-slot-v153"]'));
+    // The analysis text without the map slot's own panel (V153-D1).
+    const analysisText = (root) => {
+      if (!root) return "";
+      const slot = root.querySelector('[data-testid="detail-map-slot-v153"]');
+      if (!slot) return root.innerText;
+      const clone = root.cloneNode(true);
+      clone.querySelector('[data-testid="detail-map-slot-v153"]')?.remove();
+      clone.style.position = "absolute"; clone.style.left = "-100000px"; clone.style.width = `${root.clientWidth}px`;
+      document.body.appendChild(clone);
+      const text = clone.innerText;
+      clone.remove();
+      return text;
+    };
+    const selects = analysisSelects(primary).map((select) => ({
       label: tidy(select.getAttribute("aria-label") || select.closest("label")?.querySelector("span")?.textContent || [...(select.closest("label")?.childNodes || [])].filter((node) => node.nodeType === 3).map((node) => node.textContent).join(" ")),
       value: tidy(select.selectedOptions[0]?.textContent),
       options: select.options.length,
@@ -453,13 +470,17 @@ async function readScreen(page) {
       state: document.querySelector('[data-testid="public-analysis-root"]')?.getAttribute("data-analysis-state") || null,
       pending: document.querySelectorAll('[data-testid="public-analysis-pending"]').length,
       headlineTiles: document.querySelectorAll('[data-testid="public-analysis-root"] [class*="kpi"], [data-testid="public-analysis-root"] [data-testid*="kpi"], [data-testid="public-metric-cards"]').length,
+      // V153-D1: the small core-figures row under the hero (outside the analysis root):
+      // at most four figures, each stating its unit; a status screen shows its status line instead.
+      coreFigures: [...document.querySelectorAll('[data-testid="detail-kpi-tile-v153"]')].map((tile) => ({ unit: tile.getAttribute("data-kpi-unit") || "", text: tidy(tile.textContent) })),
+      coreStatusLine: Boolean(document.querySelector('[data-testid="detail-kpi-status-v153"]')),
       title: tidy(document.querySelector("h1")?.textContent),
       heading,
       selects,
       selectorsText,
       candidates,
-      primaryNumbers: (tidy(primary?.innerText).match(/-?\d[\d,]*(?:\.\d+)?/gu) || []).slice(0, 400),
-      primaryText: tidy(primary?.innerText),
+      primaryNumbers: (tidy(analysisText(primary)).match(/-?\d[\d,]*(?:\.\d+)?/gu) || []).slice(0, 400),
+      primaryText: tidy(analysisText(primary)),
       url: location.search,
       hasMapButton: [...document.querySelectorAll("button, a")].some((node) => /지도에서 보기/u.test(node.textContent || "")),
     };
@@ -491,14 +512,25 @@ async function analysisFitOf(page, card, screen, claim) {
   const dom = await page.evaluate(() => {
     const primary = document.querySelector('[data-testid="public-analysis-primary"]');
     const tidy = (value) => String(value || "").normalize("NFC").replace(/\s+/gu, " ").trim();
-    const text = tidy(primary?.innerText);
+    // Without the small map's own panel (V153-D1): the fit is about the analysis.
+    const withoutMap = (() => {
+      if (!primary || !primary.querySelector('[data-testid="detail-map-slot-v153"]')) return primary?.innerText;
+      const clone = primary.cloneNode(true);
+      clone.querySelector('[data-testid="detail-map-slot-v153"]')?.remove();
+      clone.style.position = "absolute"; clone.style.left = "-100000px"; clone.style.width = `${primary.clientWidth}px`;
+      document.body.appendChild(clone);
+      const value = clone.innerText;
+      clone.remove();
+      return value;
+    })();
+    const text = tidy(withoutMap);
     return {
       text,
       hasChart: Boolean(primary?.querySelector("svg, canvas, [role='img'], [class*='chart'], [class*='bars'], [class*='stack'], [class*='distribution'], [class*='composition'], .sv125-group-counts")),
       hasTable: Boolean(primary?.querySelector("table")),
       hasChartTable: Boolean(primary?.querySelector('[data-testid="trend-chart-table-v141"], [data-testid*="table"], .psa140__table, table')) || [...(primary?.querySelectorAll("button, summary") || [])].some((node) => /표로 보기/u.test(node.textContent || "")),
       hasList: Boolean(primary?.querySelector("ol, ul, table, article, dl, .sv125-policy-timeline, [data-testid*='directory'], [data-testid*='list'], [data-testid*='grid']")),
-      selectLabels: [...(primary?.querySelectorAll("select") || [])].map((select) => tidy(select.getAttribute("aria-label") || select.closest("label")?.querySelector("span")?.textContent || [...(select.closest("label")?.childNodes || [])].filter((node) => node.nodeType === 3).map((node) => node.textContent).join(" "))),
+      selectLabels: [...(primary?.querySelectorAll("select") || [])].filter((select) => !select.closest('[data-testid="detail-map-slot-v153"]')).map((select) => tidy(select.getAttribute("aria-label") || select.closest("label")?.querySelector("span")?.textContent || [...(select.closest("label")?.childNodes || [])].filter((node) => node.nodeType === 3).map((node) => node.textContent).join(" "))),
       headings: [...(primary?.querySelectorAll("h3, h4, h5") || [])].map((node) => tidy(node.textContent)),
     };
   });
@@ -881,7 +913,7 @@ async function checkElement(context, item) {
           // Same label derivation as readScreen: aria-label, then the label's
           // span, then the label's own text nodes.
           const labelOf = (s) => tidy(s.getAttribute("aria-label") || s.closest("label")?.querySelector("span")?.textContent || [...(s.closest("label")?.childNodes || [])].filter((node) => node.nodeType === 3).map((node) => node.textContent).join(" "));
-          const select = [...primary.querySelectorAll("select")].find((s) => labelOf(s) === labelText);
+          const select = [...primary.querySelectorAll("select")].filter((s) => !s.closest('[data-testid="detail-map-slot-v153"]')).find((s) => labelOf(s) === labelText);
           if (!select) return null;
           const next = [...select.options].find((option, i) => i !== select.selectedIndex && option.value !== "");
           if (!next) return null;
@@ -954,8 +986,17 @@ async function checkElement(context, item) {
 
     // ---- 8. the whole session's runtime health
     record.screenLoaded = (screen.state === "ready" || screen.state === "empty") && screen.pending === 0 && consoleErrors.length === 0 && assetFailures.length === 0;
+    // V153-D1 expectation change (reports/v153/ANALYSIS_QA_EXPECTATION_CHANGE_V153.md):
+    // the V147 ban on large headline tiles inside the analysis stays; the small
+    // core-figures row under the hero is required instead - 3-4 figures with a
+    // unit each, or the status line on a status screen.
+    const coreFiguresOk = screen.coreStatusLine
+      ? screen.coreFigures.length === 0
+      : screen.coreFigures.length >= 3 && screen.coreFigures.length <= 4 && screen.coreFigures.every((tile) => tile.unit && tile.text.length > tile.unit.length);
     record.detailTilesAbsent = screen.headlineTiles === 0;
+    record.detailTilesBounded = record.detailTilesAbsent && coreFiguresOk;
     if (!record.detailTilesAbsent) record.remainingIssue.push(`detail headline tiles must not return: ${screen.headlineTiles}`);
+    if (!coreFiguresOk) record.remainingIssue.push(`core figures row: ${screen.coreFigures.length} tile(s)${screen.coreStatusLine ? " with a status line" : ""} - expected 3-4 with units (0 on a status screen)`);
     if (consoleErrors.length) record.remainingIssue.push(`console: ${consoleErrors[0]}`);
     if (assetFailures.length) record.remainingIssue.push(`asset: ${JSON.stringify(assetFailures[0])}`);
   } catch (error) {
@@ -988,7 +1029,7 @@ if (server) await server.close();
 results.sort((a, b) => a.elementId.localeCompare(b.elementId));
 const tally = (key) => ({ pass: results.filter((r) => r[key] === true).length, fail: results.filter((r) => r[key] === false).length, notApplicable: results.filter((r) => r[key] === null).length });
 const countBy = (pick) => results.reduce((acc, r) => { const key = pick(r) || "none"; acc[key] = (acc[key] || 0) + 1; return acc; }, {});
-const requiredFailures = results.filter((r) => !r.screenLoaded || r.detailTilesAbsent === false || r.cardClicked === false || r.homeCardClicked === false || r.selectionUrlPreserved === false || r.cardValueVerified === false || r.detailAnalysisFit === false || r.analysisFit?.pass === false || r.controlsVerified === false || r.mapHandoffVerified === false || (r.mapSymbolVerified && r.mapSymbolVerified.pass === false) || r.recomputed?.status === "mismatch" || r.evidence.table?.status === "value-without-keys" || Boolean(r.internalWording));
+const requiredFailures = results.filter((r) => !r.screenLoaded || r.detailTilesBounded === false || r.cardClicked === false || r.homeCardClicked === false || r.selectionUrlPreserved === false || r.cardValueVerified === false || r.detailAnalysisFit === false || r.analysisFit?.pass === false || r.controlsVerified === false || r.mapHandoffVerified === false || (r.mapSymbolVerified && r.mapSymbolVerified.pass === false) || r.recomputed?.status === "mismatch" || r.evidence.table?.status === "value-without-keys" || Boolean(r.internalWording));
 const summary = {
   label,
   base,
@@ -1002,6 +1043,7 @@ const summary = {
   selectionUrlPreserved: tally("selectionUrlPreserved"),
   screenLoaded: tally("screenLoaded"),
   detailTilesAbsent: tally("detailTilesAbsent"),
+  detailTilesBounded: tally("detailTilesBounded"),
   cardValueVerified: tally("cardValueVerified"),
   recomputed: countBy((r) => r.recomputed?.status),
   detailAnalysisFit: tally("detailAnalysisFit"),
@@ -1043,7 +1085,7 @@ console.log(JSON.stringify(summary));
 function failureKeys(r) {
   const keys = [];
   if (!r.screenLoaded) keys.push("screenLoaded");
-  if (r.detailTilesAbsent === false) keys.push("detailTilesAbsent");
+  if (r.detailTilesBounded === false) keys.push("detailTilesBounded");
   if (r.cardClicked === false) keys.push("cardClicked");
   if (r.homeCardClicked === false) keys.push("homeCardClicked");
   if (r.selectionUrlPreserved === false) keys.push("selectionUrlPreserved");

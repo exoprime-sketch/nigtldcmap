@@ -229,6 +229,7 @@ export default function OccupationEmploymentWagePreviewV125({
     return (
       <section
         className={`e012v125 e012v125--empty ${className}`.trim()}
+        data-analysis-block="status-note"
         data-testid="e012-semantic-preview"
         aria-label="직군별 고용과 임금 시각화"
       >
@@ -259,7 +260,7 @@ export default function OccupationEmploymentWagePreviewV125({
       </header>
 
 
-      <section className="e012v125__panel" aria-labelledby="e012v125-rank-title">
+      <section className="e012v125__panel" data-analysis-block="category-bar" aria-labelledby="e012v125-rank-title">
         <div className="e012v125__panel-heading">
           <div>
             <span className="e012v125__eyebrow">직군별 비교</span>
@@ -395,8 +396,11 @@ function RankedOccupationBars({
   );
   const unit = Array.from(units)[0] || "";
   const invalidUnits = units.size > 1;
+  const measureLabel = E012_MEASURE_OPTIONS_V125.find((item) => item.key === selection.measure)?.label || "측정값";
 
   return (
+    <>
+    {!invalidUnits && <ChartAxesV150 x={measureLabel} y="직군" unit={unit} />}
     <div
       className="e012v125__ranked"
       data-testid="e012-ranked-bars"
@@ -487,6 +491,7 @@ function RankedOccupationBars({
         </div>
       </details>
     </div>
+    </>
   );
 }
 
@@ -512,6 +517,7 @@ function EmploymentWageScatter({
   return (
     <section
       className="e012v125__panel e012v125__chart-panel"
+      data-analysis-block="category-bar"
       data-testid="e012-employment-wage-scatter"
       aria-labelledby="e012v125-scatter-title"
     >
@@ -691,6 +697,7 @@ function SexComparison({
   return (
     <section
       className="e012v125__panel e012v125__chart-panel"
+      data-analysis-block="dumbbell"
       data-testid="e012-sex-comparison"
       aria-labelledby="e012v125-sex-title"
     >
@@ -796,6 +803,7 @@ function RawObservationTable({
       <summary>상세 데이터 · {observations.length.toLocaleString("ko-KR")}건</summary>
       <section
         className="e012v125__panel"
+        data-analysis-block="table"
         data-testid="e012-raw-table"
         aria-labelledby="e012v125-table-title"
       >

@@ -1,7 +1,7 @@
 import ChartAxesV150 from "../../charts/ChartAxesV150";
 import { publicIndicatorSeriesV144, previousYearChangeV144 } from "../../../data/visualization/publicIndicatorCopyV144";
 import { allowsRelativeChangeV147, changeUnitV147 } from "../../../data/visualization/detailModelsV147";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties, ReactNode } from "react";
 import type {
   ElementVisualizationContractV125,
@@ -40,7 +40,11 @@ import {
 } from "../public/PublicPortfolioSummaryV132";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import { displayUnitV150 } from "../../../data/visualization/unitDisplayV150";
+import { orderBlocksV153 } from "../../../data/visualization/publicVisualizationContractV153";
+import type { AnalysisBlockTypeV153 } from "../../../data/visualization/publicVisualizationContractV153";
+import { useAnalysisContractV153 } from "../public/analysisContractContextV153";
 import { PolicyDocumentDescriptionV153 } from "../public/PolicyDescriptionV153";
+import EntityFacetCountsV153 from "../public/EntityFacetCountsV153";
 
 import "./semantic-contract-renderer-v125.css";
 
@@ -104,6 +108,10 @@ export default function SemanticContractRendererV125({
   indicatorUnits = {},
 }: Props) {
   const renderer = contract.primaryRenderer;
+  // The dataset's V153 contract: the block it declares first is rendered
+  // first wherever this renderer has more than one candidate.
+  const v153 = useAnalysisContractV153();
+  const primaryType = v153?.primary.type ?? null;
   const presentRows = rows.filter(isPresentRowV125);
   const numericRows = presentRows.filter(isNumericRowV125);
   const textRows = presentRows.filter(
@@ -138,35 +146,56 @@ export default function SemanticContractRendererV125({
         <>
           {/* A numeric measure with several categories at one time (B-015's
               ETS facility counts by sector) is a comparison; the timeline
-              alone listed "51" with no unit and no ranking (V140). */}
-          {numericRows.length >= 2 && new Set(numericRows.map((row) => categoryLabelV125(row))).size >= 2 && (
-            <CategoryComparisonV125 rows={numericRows} />
-          )}
-          <PolicyTimelineV125 rows={presentRows} entities={entities} elementId={contract.elementId} />
+              alone listed "51" with no unit and no ranking (V140). The
+              contract says which of the two opens the screen (V153). */}
+          {orderBlocksV153(
+            [
+              ...(numericRows.length >= 2 && new Set(numericRows.map((row) => categoryLabelV125(row))).size >= 2
+                ? [{ type: "category-bar" as const, key: "comparison", node: <CategoryComparisonV125 rows={numericRows} /> }]
+                : []),
+              { type: "timeline" as const, key: "timeline", node: <PolicyTimelineV125 rows={presentRows} entities={entities} elementId={contract.elementId} primaryType={primaryType} /> },
+            ],
+            primaryType === "comparison-table" ? "timeline" : primaryType
+          ).map((block) => <Fragment key={block.key}>{block.node}</Fragment>)}
         </>
       ) : renderer === "evidence-matrix" ? (
         <EvidenceMatrixV125 rows={presentRows} entities={entities} />
       ) : (
         <>
-          {selectedCategoryTrendRows && (
-            <>
-              <TrendPanelV125
-                elementId={contract.elementId}
-                rows={selectedCategoryTrendRows}
-              />
-              <p className="sv125-contract-help" data-testid="selected-category-trend-v138">
-                선택한 {categoryLabelV125(selectedCategoryTrendRows[0])}의 전체 연도 값입니다. 기간 선택은 아래 지역 비교에만 적용됩니다.
-              </p>
-            </>
-          )}
-          {renderObservationPanelV125(
-            contract.elementId,
-            renderer,
-            presentRows,
-            numericRows,
-            textRows,
-            contextRows
-          )}
+          {orderBlocksV153(
+            [
+              ...(selectedCategoryTrendRows
+                ? [{
+                    type: "line" as const,
+                    key: "selected-trend",
+                    node: (
+                      <>
+                        <TrendPanelV125
+                          elementId={contract.elementId}
+                          rows={selectedCategoryTrendRows}
+                        />
+                        <p className="sv125-contract-help" data-testid="selected-category-trend-v138">
+                          선택한 {categoryLabelV125(selectedCategoryTrendRows[0])}의 전체 연도 값입니다. 기간 선택은 지역 비교에만 적용됩니다.
+                        </p>
+                      </>
+                    ),
+                  }]
+                : []),
+              {
+                type: (renderer === "category-comparison" ? "category-bar" : "line") as AnalysisBlockTypeV153,
+                key: "observation",
+                node: renderObservationPanelV125(
+                  contract.elementId,
+                  renderer,
+                  presentRows,
+                  numericRows,
+                  textRows,
+                  contextRows
+                ),
+              },
+            ],
+            primaryType
+          ).map((block) => <Fragment key={block.key}>{block.node}</Fragment>)}
           {["kpi-trend", "multi-metric-trend", "score-benchmark"].includes(renderer) && numericRows.length > 0 && (
             <ObservationValuesTableV146 rows={numericRows} context={contextRows} title={`${numericRows[0].year || numericRows[0].period || "선택 조건"} · 항목별 값`} />
           )}
@@ -335,11 +364,14 @@ function renderEntityPanelV125(
       );
     case "directory":
       return (
-        <DirectoryEntitiesV125
-          entities={entities}
-          detailTemplate={detailTemplate}
-          elementTitle={elementTitle}
-        />
+        <>
+          <EntityFacetCountsV153 entities={entities} recordLabel="기관" />
+          <DirectoryEntitiesV125
+            entities={entities}
+            detailTemplate={detailTemplate}
+            elementTitle={elementTitle}
+          />
+        </>
       );
     case "policy-timeline":
       return <PolicyTimelineV125 rows={[]} entities={entities} elementId={entities[0]?.elementId} />;
@@ -364,13 +396,16 @@ function renderEntityPanelV125(
       );
     default:
       return (
-        <GenericEntitiesV125
-          entities={entities}
-          countryNameKo={countryNameKo}
-          detailTemplate={detailTemplate}
-          elementTitle={elementTitle}
-          indicatorUnits={indicatorUnits}
-        />
+        <>
+          <EntityFacetCountsV153 entities={entities} />
+          <GenericEntitiesV125
+            entities={entities}
+            countryNameKo={countryNameKo}
+            detailTemplate={detailTemplate}
+            elementTitle={elementTitle}
+            indicatorUnits={indicatorUnits}
+          />
+        </>
       );
   }
 }
@@ -378,7 +413,7 @@ function renderEntityPanelV125(
 function CompositionPanelV125({ rows }: { rows: NumericRowV125[] }) {
   if (rows.length === 0) return null;
   return (
-    <VisualizationFrameV125 eyebrow="구성비" title="분류별 구성">
+    <VisualizationFrameV125 eyebrow="구성비" title="분류별 구성" block="category-bar">
       <p className="sv125-contract-help">
         공개된 백분율은 100을 기준으로 표시하며, 포함관계가 다른 항목을 임의로
         재정규화하지 않습니다.
@@ -459,6 +494,7 @@ function ScenarioRangePanelV125({ rows }: { rows: NumericRowV125[] }) {
     <VisualizationFrameV125
       eyebrow="시나리오"
       title="동일 시점 시나리오 범위"
+      block="category-bar"
     >
       {groupByUnitV125(rows).map(({ unit, rows: unitRows }) => {
         const min = Math.min(...unitRows.map((row) => row.value));
@@ -519,7 +555,7 @@ function SeasonalityPanelV125({ rows }: { rows: PresentRowV125[] }) {
     (left, right) => seasonOrderV125(left) - seasonOrderV125(right)
   );
   return (
-    <VisualizationFrameV125 eyebrow="기간 순서" title="계절·월별 패턴">
+    <VisualizationFrameV125 eyebrow="기간 순서" title="계절·월별 패턴" block="category-bar">
       <div className="sv125-season-grid" role="list">
         {ordered.map((row) => (
           <article key={row.recordId} role="listitem" tabIndex={0}>
@@ -541,7 +577,7 @@ function PairedCategoryPanelV125({ rows }: { rows: PresentRowV125[] }) {
   const pairKey = pairedDimensionKeyV125(rows);
   if (!pairKey) {
     return (
-      <VisualizationFrameV125 eyebrow="짝 비교" title="짝지을 분류 확인 필요">
+      <VisualizationFrameV125 eyebrow="짝 비교" title="짝지을 분류 확인 필요" block="note">
         <p className="sv125-contract-warning">
           자료에 정확히 두 값을 가진 분류 차원이 없어 임의로 두 계열을 묶지
           않았습니다.
@@ -567,7 +603,7 @@ function PairedCategoryPanelV125({ rows }: { rows: PresentRowV125[] }) {
     groups.set(key, bucket);
   });
   return (
-    <VisualizationFrameV125 eyebrow="짝 비교" title="동일 범주의 두 계열">
+    <VisualizationFrameV125 eyebrow="짝 비교" title="동일 범주의 두 계열" block="dumbbell">
       <div className="sv125-paired-grid">
         {Array.from(groups.entries()).map(([key, group]) => (
           <article key={key}>
@@ -633,7 +669,7 @@ function CapabilityScorecardV125({
   const statusRows = rows.filter((row) => typeof row.value !== "number");
   return (
     <>
-      <VisualizationFrameV125 eyebrow="역량" title="역량 상태 카드">
+      <VisualizationFrameV125 eyebrow="역량" title="역량 상태 카드" block="comparison-table">
         <div className="sv125-capability-grid">
           {statusRows.map((row) => (
             <article key={row.recordId} tabIndex={0}>
@@ -697,7 +733,7 @@ function TrendPanelV125({
 
   if (depth === 2) {
     return (
-      <VisualizationFrameV125 eyebrow="기간 비교" title="기준연도 대비 변화">
+      <VisualizationFrameV125 eyebrow="기간 비교" title="기준연도 대비 변화" block="category-bar">
         {unitGroups.map(({ unit, rows: unitRows }) => (
           <TwoYearChangeUnitV135
             key={unit || "no-unit"}
@@ -870,7 +906,7 @@ function TrendUnitV125({
   const measureLabel = publicTextV126(rows[0]?.semanticMeasure.labelKo) || "";
 
   return (
-    <article className="sv125-contract-axis">
+    <article className="sv125-contract-axis" data-analysis-block="line">
       <InteractiveTimeSeriesChartV127
         ariaLabel={`${minYear}년부터 ${maxYear}년까지 ${publicUnit} 시계열`}
         formatDelta={(value) => `${value > 0 ? "+" : ""}${formatValueV121(value)}`}
@@ -1031,13 +1067,16 @@ function CategoryComparisonV125({ rows }: { rows: NumericRowV125[] }) {
       : measureTitle
     : "항목별 값";
   return (
-    <VisualizationFrameV125 eyebrow="항목" title={frameTitle}>
+    <VisualizationFrameV125 eyebrow="항목" title={frameTitle} block="category-bar">
       {groupByUnitV125(rows).map(({ unit, rows: unitRows }) => <CategoryComparisonUnitV143 key={unit || "no-unit"} unit={unit} rows={unitRows} barLabel={barLabel} title={frameTitle} />)}
     </VisualizationFrameV125>
   );
 }
 
 function CategoryComparisonUnitV143({ rows, unit, barLabel, title }: { rows: NumericRowV125[]; unit: string; barLabel: (row: NumericRowV125) => string; title: string }) {
+  // What each bar is, from the dataset's contract when this is its bar screen (V153).
+  const comparisonContract = useAnalysisContractV153();
+  const comparisonAxisV153 = comparisonContract && ["category-bar", "region-bar"].includes(comparisonContract.primary.type) ? comparisonContract.primary.yAxis : null;
   const [order, setOrder] = useState("source");
   const [expanded, setExpanded] = useState(false);
   const ordered = order === "source" ? rows : [...rows].sort((a, b) => order === "desc" ? b.value - a.value : a.value - b.value);
@@ -1053,7 +1092,7 @@ function CategoryComparisonUnitV143({ rows, unit, barLabel, title }: { rows: Num
                 0을 기준으로 왼쪽은 음수, 오른쪽은 양수입니다. 막대 길이는 0에서 떨어진 크기입니다.
               </p>
             )}
-            <ChartAxesV150 x={title} y="비교 항목" unit={unit} />
+            <ChartAxesV150 x={title} y={comparisonAxisV153 || "비교 항목"} unit={unit} />
             <div className="sv125-contract-bars" role="list">
               {shown.map((row, index) => {
                 const width = scale.spanFor(row.value);
@@ -1107,7 +1146,7 @@ function CategoryComparisonUnitV143({ rows, unit, barLabel, title }: { rows: Num
 function ObservationValuesTableV146({ rows, title, context }: { rows: PresentRowV125[]; title: string; context?: SemanticObservationV125[] }) {
   if (!rows.length) return null;
   return (
-    <div className="sv125-matrix-wrap sv146-values-table" data-testid="analysis-values-table-v146">
+    <div className="sv125-matrix-wrap sv146-values-table" data-testid="analysis-values-table-v146" data-analysis-block="table">
       <table>
         <caption>{title}</caption>
         <thead><tr><th scope="col">항목</th><th scope="col">값</th><th scope="col">단위</th><th scope="col">시점</th>{context && <th scope="col">전년 대비</th>}</tr></thead>
@@ -1161,7 +1200,7 @@ function EvidenceCardsV125({
   return embedded ? (
     content
   ) : (
-    <VisualizationFrameV125 eyebrow="근거" title="구조화된 확인 내용">
+    <VisualizationFrameV125 eyebrow="근거" title="구조화된 확인 내용" block="cards-list">
       {content}
     </VisualizationFrameV125>
   );
@@ -1277,7 +1316,7 @@ function DocumentTimelineV140({ entities }: { entities: VietnamEntityV124[] }) {
   const entries = documentTimelineEntriesV140(entities);
   if (entries.length === 0) return null;
   return (
-    <VisualizationFrameV125 eyebrow="연대기" title="법령·문서별 시행 시점과 핵심 사항">
+    <VisualizationFrameV125 eyebrow="연대기" title="법령·문서별 시행 시점과 핵심 사항" block="timeline">
       <p className="sv125-document-count" data-testid="document-timeline-count-v140">
         법령·문서 {entries.length.toLocaleString("ko-KR")}건 · 원천 {entities.length.toLocaleString("ko-KR")}행을 문서 단위로 묶음 · 시행(발효)일 순
       </p>
@@ -1340,7 +1379,8 @@ function TimelineGroupCountsV141({ entities, elementId }: { entities: VietnamEnt
   if (items.length < 2) return null;
   const max = items[0][1];
   return (
-    <VisualizationFrameV125 eyebrow="유형별" title={`${rule.label} · ${entities.length.toLocaleString("ko-KR")}${rule.noun}`}>
+    <VisualizationFrameV125 eyebrow="유형별" title={`${rule.label} · ${entities.length.toLocaleString("ko-KR")}${rule.noun}`} block="category-bar">
+      <ChartAxesV150 x="건수" y={rule.label} unit={rule.noun} />
       <ol className="sv125-group-counts" data-testid="timeline-group-counts-v141">
         {items.map(([label, count]) => (
           <li key={label}>
@@ -1359,10 +1399,13 @@ function PolicyTimelineV125({
   rows,
   entities,
   elementId,
+  primaryType = null,
 }: {
   rows: PresentRowV125[];
   entities: VietnamEntityV124[];
   elementId?: string;
+  /** The contract's first block: the timeline opens the screen unless the contract asks for the counts (V153). */
+  primaryType?: AnalysisBlockTypeV153 | null;
 }) {
   if (documentTimelineShapeV140(entities)) {
     return <DocumentTimelineV140 entities={entities} />;
@@ -1418,34 +1461,45 @@ function PolicyTimelineV125({
   if (items.length === 0) return null;
   return (
     <>
-    {elementId && <TimelineGroupCountsV141 entities={entities} elementId={elementId} />}
-    <VisualizationFrameV125 eyebrow="연대기" title={`시점별 기록 · ${items.length.toLocaleString("ko-KR")}건`}>
-      <ol className="sv125-policy-timeline">
-        {items.map((item) => (
-          <li key={item.key}>
-            {/* The delivery writes the milestone into the date cell -
-                "2022-12-14 서명 / 자원동원계획(RMP) 2023-11 승인" - so this
-                is public copy and carries terms like the rest. */}
-            <time>
-              <PublicTermTextV134 text={item.date || "시점 미기재"} />
-            </time>
-            <div>
-              <strong><PublicTermTextV134 text={item.title} /></strong>
-              {/* An empty description is empty; sixteen rows repeating a
-                  placeholder sentence told a reader nothing sixteen times. */}
-              {item.detail && (
-                <p><PublicTermTextV134 text={item.detail} /></p>
-              )}
-              {safeHttpUrlV125(item.sourceUrl) && (
-                <a href={item.sourceUrl} target="_blank" rel="noreferrer">
-                  원문 보기
-                </a>
-              )}
-            </div>
-          </li>
-        ))}
-      </ol>
-    </VisualizationFrameV125>
+    {orderBlocksV153(
+      [
+        ...(elementId ? [{ type: "category-bar" as const, key: "counts", node: <TimelineGroupCountsV141 entities={entities} elementId={elementId} /> }] : []),
+        {
+          type: "timeline" as const,
+          key: "timeline",
+          node: (
+            <VisualizationFrameV125 eyebrow="연대기" title={`시점별 기록 · ${items.length.toLocaleString("ko-KR")}건`} block="timeline">
+              <ol className="sv125-policy-timeline">
+                {items.map((item) => (
+                  <li key={item.key}>
+                    {/* The delivery writes the milestone into the date cell -
+                        "2022-12-14 서명 / 자원동원계획(RMP) 2023-11 승인" - so this
+                        is public copy and carries terms like the rest. */}
+                    <time>
+                      <PublicTermTextV134 text={item.date || "시점 미기재"} />
+                    </time>
+                    <div>
+                      <strong><PublicTermTextV134 text={item.title} /></strong>
+                      {/* An empty description is empty; sixteen rows repeating a
+                          placeholder sentence told a reader nothing sixteen times. */}
+                      {item.detail && (
+                        <p><PublicTermTextV134 text={item.detail} /></p>
+                      )}
+                      {safeHttpUrlV125(item.sourceUrl) && (
+                        <a href={item.sourceUrl} target="_blank" rel="noreferrer">
+                          원문 보기
+                        </a>
+                      )}
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </VisualizationFrameV125>
+          ),
+        },
+      ],
+      primaryType ?? "timeline"
+    ).map((block) => <Fragment key={block.key}>{block.node}</Fragment>)}
     </>
   );
 }
@@ -1506,7 +1560,7 @@ export function EvidenceMatrixV125({
   // Rows stay in source order; a group is named once, on its first row.
   let lastGroup: string | null = null;
   return (
-    <VisualizationFrameV125 eyebrow="자료 목록" title="항목별 내용과 기준">
+    <VisualizationFrameV125 eyebrow="자료 목록" title="항목별 내용과 기준" block="comparison-table">
       <div className="detail146-list-controls">
         <label>검색어 <input type="search" value={query} placeholder="항목·내용 검색" onChange={(event) => { setQuery(event.target.value); setPage(0); }} /></label>
         {groups.length > 1 && <label>자료 구분 <select value={group} onChange={(event) => { setGroup(event.target.value); setPage(0); }}><option value="all">전체</option>{groups.map((value) => <option key={value}>{value}</option>)}</select></label>}
@@ -1668,6 +1722,7 @@ function DirectoryEntitiesV125({
     <VisualizationFrameV125
       eyebrow="기관·연락망"
       title={title}
+      block="cards-list"
     >
       {contactRows && (
         <div className="sv125-matrix-wrap" data-testid="directory-organisations-v142" data-organisation-count={counts.organisations.length} data-contact-count={counts.contacts}>
@@ -1731,7 +1786,7 @@ function DocumentLibraryV125({
   elementTitle?: string;
 }) {
   return (
-    <VisualizationFrameV125 eyebrow="문헌·성과" title="문서 라이브러리">
+    <VisualizationFrameV125 eyebrow="문헌·성과" title="문서 라이브러리" block="cards-list">
       <PublicEntityCardGridV131
         entities={entities}
         template="document"
@@ -1743,7 +1798,7 @@ function DocumentLibraryV125({
 }
 
 function SpatialSummaryV125({ entities }: { entities: VietnamEntityV124[]; contract: ElementVisualizationContractV125; countryNameKo: string }) {
-  return <PublicEntityCardGridV131 entities={entities} template="generic" />;
+  return <section data-analysis-block="cards-list"><PublicEntityCardGridV131 entities={entities} template="generic" /></section>;
 }
 
 
@@ -1831,7 +1886,7 @@ function GenericEntitiesV125({
   return (
     <>
     {comparable.length > 0 && (
-      <VisualizationFrameV125 eyebrow="비교" title={`항목별 값 비교 · ${comparable.length.toLocaleString("ko-KR")}건 · ${comparable[0].unit}`}>
+      <VisualizationFrameV125 eyebrow="비교" title={`항목별 값 비교 · ${comparable.length.toLocaleString("ko-KR")}건 · ${comparable[0].unit}`} block="category-bar">
         <ol className="sv125-group-counts" data-testid="entity-value-comparison-v141" data-compared-measure={comparable[0].measureKey || comparable[0].unit}>
           {comparable.slice(0, 20).map((item) => (
             <li key={item.recordId}>
@@ -1849,6 +1904,7 @@ function GenericEntitiesV125({
     <VisualizationFrameV125
       eyebrow={publicCollectionEyebrowV136_2(detailTemplate)}
       title={`${publicCollectionTitleV136_2(detailTemplate)} · ${entities.length.toLocaleString("ko-KR")}건`}
+      block="cards-list"
     >
       <PublicEntityCardGridV131
         entities={entities}
@@ -1873,6 +1929,7 @@ export function EntityTableFallbackV125({
     <details
       className="sv125-entity-table-fallback"
       data-testid={markAsPublic ? "public-raw-table" : undefined}
+      data-analysis-block="table"
     >
       <summary>
         {markAsPublic ? "상세 데이터" : "목록 자료 더 보기"} ·{" "}
@@ -1996,14 +2053,17 @@ function InteractiveValueItemV127({
 function VisualizationFrameV125({
   eyebrow,
   title,
+  block,
   children,
 }: {
   eyebrow: string;
   title: string;
+  /** The block's type for the V153 contract frame (card-level tag). */
+  block?: AnalysisBlockTypeV153;
   children: ReactNode;
 }) {
   return (
-    <section className="sv125-contract-panel">
+    <section className="sv125-contract-panel" data-analysis-block={block}>
       <header>
         <span><PublicTermTextV134 text={eyebrow} /></span>
         <h4><PublicTermTextV134 text={title} /></h4>

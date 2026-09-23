@@ -225,23 +225,25 @@ export default function SeaLevelStationAnalysisV138({
         )}
       </dl>
       {series.length > 0 && (
-        <InteractiveTimeSeriesChartV127
-          ariaLabel={`${station.label} 시나리오별 상대해수면 전망`}
-          className="prs138__chart"
-          formatValue={(value) => formatPublicNumberV126(value, UNIT)}
-          height={300}
-          series={series}
-          sharedYearTooltip
-          showDelta={false}
-          testId="sea-level-station-chart-v138"
-          title={`${station.label} · 시나리오별 상대해수면 상승 · ${quantile === "50" ? "중앙값" : `${quantile}분위`}`}
-          unit={UNIT}
-          xAxisTitle="연도"
-          yAxisTitle={`상대해수면 상승 (${UNIT})`}
-          zoom={{ enabled: false }}
-        />
+        <section className="d153-block" data-analysis-block="line">
+          <InteractiveTimeSeriesChartV127
+            ariaLabel={`${station.label} 시나리오별 상대해수면 전망`}
+            className="prs138__chart"
+            formatValue={(value) => formatPublicNumberV126(value, UNIT)}
+            height={300}
+            series={series}
+            sharedYearTooltip
+            showDelta={false}
+            testId="sea-level-station-chart-v138"
+            title={`${station.label} · 시나리오별 상대해수면 상승 · ${quantile === "50" ? "중앙값" : `${quantile}분위`}`}
+            unit={UNIT}
+            xAxisTitle="연도"
+            yAxisTitle={`상대해수면 상승 (${UNIT})`}
+            zoom={{ enabled: false }}
+          />
+        </section>
       )}
-      <div className="cdp-table-wrap">
+      <div className="cdp-table-wrap" data-analysis-block="table">
         <table className="cdp-table prs137__table" data-testid="sea-level-station-table-v138">
           <caption>
             {station.label} · {quantile === "50" ? "중앙값" : `${quantile}분위`} · 처음·마지막 연도와 변화 ({UNIT})

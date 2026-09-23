@@ -88,7 +88,7 @@ function Bars({ items, unit }: { items: Array<[string, number]>; unit: string })
 function SourcesV141({ rows }: { rows: CTemplateRowV141[] }) {
   if (!rows.length) return null;
   return (
-    <details className="pps132-distribution" data-testid="cooperation-sources-v141">
+    <details className="pps132-distribution" data-analysis-block="cards-list" data-testid="cooperation-sources-v141">
       <summary>검토 근거·자료 출처 · {rows.length}건</summary>
       <ul className="cca141__sources">
         {rows.map((row) => (
@@ -144,7 +144,7 @@ export default function CooperationChecklistAnalysisV141({ elementId, entities }
           <p><PublicTermTextV134 text={`UNFCCC NMA 플랫폼과 SB61 제출문서에서 확인한 항목별 현황입니다. 사업 건수나 금액이 아닌 확인 사항 ${model.facts.length}건을 질문별로 묶었고, 자료 출처와 검토 메모 ${model.sources.length}건은 아래에 따로 둡니다.`} /></p>
         </header>
         {sections.map((section) => (
-          <section key={section.title} className="pps132-distribution pps132-distribution--table">
+          <section key={section.title} className="pps132-distribution pps132-distribution--table" data-analysis-block="comparison-table">
             <h5>{section.title} · {section.rows.length}건</h5>
             <div className="pps132-table-wrap">
               <table>
@@ -216,7 +216,7 @@ export default function CooperationChecklistAnalysisV141({ elementId, entities }
         <p><PublicTermTextV134 text={`이니셔티브 ${initiativeRows.length}개의 참여 형태·시점·분야를 한 표에서 비교하고, UNFCCC 기후행동 포털(NAZCA)에 등재된 베트남 행위자 ${model.actors.length}곳을 유형·업종별로 셉니다. 원천 행 ${model.rows.length}행은 이니셔티브 속성·참여 주체·자료 출처로 나누어 읽으며 사업 수로 세지 않습니다.`} /></p>
       </header>
 
-      <section className="pps132-distribution pps132-distribution--table" data-testid="cooperation-initiatives-v141">
+      <section className="pps132-distribution pps132-distribution--table" data-analysis-block="comparison-table" data-testid="cooperation-initiatives-v141">
         <h5>이니셔티브별 베트남 참여 비교 · {initiativeRows.length}개</h5>
         <div className="pps132-table-wrap">
           <table>
@@ -247,23 +247,23 @@ export default function CooperationChecklistAnalysisV141({ elementId, entities }
 
       {/* V153-D3: what each initiative is, in the platform's words with its
           sources, description first and the formal name in brackets. */}
-      <InitiativeDescriptionsV153 elementId={elementId} />
+      <section className="d153-block" data-analysis-block="cards-list"><InitiativeDescriptionsV153 elementId={elementId} /></section>
 
       {model.actors.length > 0 && (
         <section className="pps132-distribution" data-testid="cooperation-actors-v141">
           <h5><PublicTermTextV134 text={`NAZCA 등재 베트남 행위자 · 유형별 ${model.actors.length}곳`} /></h5>
-          <Bars items={actorsByType} unit="곳" />
+          <section className="d153-block" data-analysis-block="category-bar"><Bars items={actorsByType} unit="곳" /></section>
           {companiesBySector.length > 0 && (
             <>
               <h5>기업의 업종 · 상위 {companiesBySector.length}개</h5>
-              <Bars items={companiesBySector} unit="곳" />
+              <section className="d153-block" data-analysis-block="category-bar"><Bars items={companiesBySector} unit="곳" /></section>
             </>
           )}
           <label className="cdp-field cca141__search">
             <span className="cdp-field__label">행위자 검색</span>
             <input className="cdp-input" type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="이름·유형·업종" data-testid="cooperation-actor-search-v141" />
           </label>
-          <div className="pps132-table-wrap">
+          <div className="pps132-table-wrap" data-analysis-block="comparison-table">
             <table>
               <caption>행위자 목록 · {actorList.length.toLocaleString("ko-KR")}곳</caption>
               <thead>
@@ -294,7 +294,7 @@ export default function CooperationChecklistAnalysisV141({ elementId, entities }
         </section>
       )}
       {model.facts.length > 0 && (
-        <section className="pps132-distribution pps132-distribution--table">
+        <section className="pps132-distribution pps132-distribution--table" data-analysis-block="comparison-table">
           <h5>기타 확인 사항 · {model.facts.length}건</h5>
           <div className="pps132-table-wrap">
             <table>
