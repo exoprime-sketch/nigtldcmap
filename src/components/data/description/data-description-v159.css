@@ -1,0 +1,180 @@
+/* V159: '데이터 설명' section (detail) + dataset card title (finder). Palette matches detail-analysis-v153.css. */
+
+.dd159 { min-width: 0; display: grid; gap: 16px; }
+.dd159 h2 { margin: 0; font-size: 1.15rem; }
+.dd159-part { min-width: 0; display: grid; gap: 8px; }
+.dd159-part h3 { margin: 0; font-size: 1rem; }
+.dd159-part p { margin: 0; line-height: 1.65; overflow-wrap: anywhere; }
+
+.dd159-cases-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #16806b;
+  cursor: pointer;
+  text-align: left;
+}
+.dd159-cases-toggle::before {
+  content: "▸";
+  display: inline-block;
+  transition: transform 0.15s ease;
+  color: #567067;
+}
+.dd159-cases-toggle[aria-expanded="true"]::before { transform: rotate(90deg); }
+.dd159-cases-toggle:focus-visible,
+.dd159-chip:focus-visible {
+  outline: 2px solid #16806b;
+  outline-offset: 2px;
+}
+
+.dd159-cases-region { display: grid; gap: 14px; margin-top: 10px; }
+.dd159-cases-region[hidden] { display: none; }
+
+.dd159-case {
+  min-width: 0;
+  border: 1px solid #d5e2dc;
+  border-radius: 10px;
+  padding: 14px 16px;
+  background: #fbfdfc;
+  display: grid;
+  gap: 10px;
+}
+.dd159-case-heading {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  overflow-wrap: anywhere;
+}
+.dd159-case-en { font-size: 0.8rem; font-weight: 400; color: #567067; }
+
+.dd159-badge-pending {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #a94f05;
+  background: #fff0df;
+  border-radius: 999px;
+  padding: 2px 10px;
+  line-height: 1.5;
+}
+
+.dd159-case-body { display: grid; gap: 10px; min-width: 0; }
+.dd159-case-field { margin: 0; min-width: 0; }
+.dd159-case-field-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #567067;
+  margin-bottom: 4px;
+}
+.dd159-case-field p,
+p.dd159-case-field { line-height: 1.6; overflow-wrap: anywhere; }
+
+.dd159-storyline {
+  margin: 0;
+  padding: 8px 12px;
+  border-left: 3px solid #16806b;
+  background: #f0f5f2;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.dd159-chip-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+  min-width: 0;
+}
+.dd159-chip-list li { min-width: 0; max-width: 100%; }
+
+.dd159-chip {
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  font: inherit;
+  font-size: 0.84rem;
+  line-height: 1.4;
+  border-radius: 999px;
+  padding: 4px 12px;
+  border: 1px solid #b9d3ca;
+  background: #ffffff;
+  color: #16806b;
+}
+button.dd159-chip { cursor: pointer; }
+button.dd159-chip[aria-pressed="true"] {
+  background: #16806b;
+  border-color: #16806b;
+  color: #ffffff;
+}
+button.dd159-chip:disabled {
+  cursor: not-allowed;
+  color: #8a9a94;
+  border-color: #dce5e1;
+  background: #f6f8fb;
+}
+.dd159-chip--label {
+  background: #f0f5f2;
+  border-color: #dce5e1;
+  color: #375a50;
+}
+
+.dd159-caution span[data-caution-original] { text-decoration: underline dotted #8a9a94; text-underline-offset: 3px; }
+
+/* V159: a chip/series element matched by applyIndicatorHighlightV159. */
+.is-highlighted {
+  outline: 2px solid #16806b;
+  outline-offset: 2px;
+  background: #e5f5eb;
+  border-radius: 4px;
+}
+
+/* Dataset card title (finder). */
+.dct159 { min-width: 0; display: grid; gap: 2px; }
+.dct159-source {
+  margin: 0;
+  font-size: 0.76rem;
+  color: #567067;
+  overflow-wrap: anywhere;
+}
+.dct159-name {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.dct159-definition {
+  margin: 0;
+  font-size: 0.86rem;
+  color: #425466;
+  line-height: 1.5;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Source line (detail source panel). */
+.sl159 { margin: 0; font-size: 0.86rem; color: #425466; overflow-wrap: anywhere; }
+.sl159-sep { color: #8a9a94; }
+.sl159 a { color: #16806b; }
+
+@media (max-width: 600px) {
+  .dd159-case { padding: 12px; }
+}
+
+@media (max-width: 320px) {
+  .dd159-chip { font-size: 0.8rem; padding: 3px 10px; }
+}
