@@ -84,6 +84,8 @@ export interface DatasetSpecRowV159 {
   checkedAt: string;
   /** 금년도 최종 결정: 유지 · 제외 · 대체, or null when not decided. */
   decision: string | null;
+  /** The workbook's stated reason for 제외/대체 (처리방향), verbatim; null when none. */
+  decisionNote: string | null;
 }
 
 export interface UseCaseDataRefV159 {
