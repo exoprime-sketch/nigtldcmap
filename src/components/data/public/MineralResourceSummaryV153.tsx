@@ -44,13 +44,16 @@ export default function MineralResourceSummaryV153({ elementId, observations, in
   return (
     <section className="detail146 d153-section" data-testid={`mineral-resources-v153-${elementId.toLowerCase()}`} data-analysis-block="mineral-resources">
       <p>
-        {isReserves
-          ? "USGS가 베트남에 대해 보고한 광종별 확인 매장량입니다. 광종마다 단위가 달라 값의 크기는 서로 비교하지 않고, 원천이 밝힌 세계 비중(%)으로 막대를 그립니다."
-          : "USGS가 보고한 광종별 광산 생산량입니다. 2024년은 실적치, 2025년은 USGS 추정치이며 광종마다 단위가 다릅니다."}
+        {/* The source body and its publication carry help triggers in the copy too (V153). */}
+        <PublicTermTextV134
+          text={isReserves
+            ? "USGS가 베트남에 대해 보고한 광종별 확인 매장량입니다. 광종마다 단위가 달라 값의 크기는 서로 비교하지 않고, 원천이 밝힌 세계 비중(%)으로 막대를 그립니다."
+            : "USGS가 보고한 광종별 광산 생산량입니다. 2024년은 실적치, 2025년은 USGS 추정치이며 광종마다 단위가 다릅니다."}
+        />
       </p>
       <ul className="d153-summary" aria-label="요약">
         <li><span>{model.measureLabel} · 수록 광종</span><strong>{model.reported.length}종</strong></li>
-        <li><span>{isReserves ? "USGS 미수록 광종" : "원천 미보고 광종"}</span><strong>{model.missing.length}종</strong></li>
+        <li><span><PublicTermTextV134 text={isReserves ? "USGS 미수록 광종" : "원천 미보고 광종"} /></span><strong>{model.missing.length}종</strong></li>
         {headline?.latest ? (
           <li><span>{model.measureLabel} · {headline.mineral} · {headline.latest.year}년</span><strong>{valueText(headline.latest.value, headline.unit)}</strong></li>
         ) : null}
@@ -91,7 +94,7 @@ export default function MineralResourceSummaryV153({ elementId, observations, in
                       </span>
                       {change === null ? "—" : `${change > 0 ? "+" : ""}${change.toFixed(1)}%`}
                     </td>
-                    <td>{row.unit}</td>
+                    <td><PublicTermTextV134 text={row.unit} /></td>
                     <td>{rankText(row)}{row.worldShareText ? ` · ${row.worldShareText}` : ""}</td>
                   </tr>
                 );
@@ -104,7 +107,9 @@ export default function MineralResourceSummaryV153({ elementId, observations, in
       {isReserves ? (
         <div className="d153-table-wrap">
           <table className="d153-table" data-testid="mineral-reserves-table-v153">
-            <caption>광종별 {model.measureLabel} · {latestYear}년 · 값과 단위는 USGS Mineral Commodity Summaries 원문 그대로입니다.</caption>
+            <caption>
+              <PublicTermTextV134 text={`광종별 ${model.measureLabel} · ${latestYear}년 · 값과 단위는 USGS Mineral Commodity Summaries 원문 그대로입니다.`} />
+            </caption>
             <thead>
               <tr><th scope="col">광종</th><th scope="col" className="num">{model.measureLabel}</th><th scope="col">단위</th><th scope="col">세계 순위</th><th scope="col" className="num">세계 비중</th><th scope="col">비고</th></tr>
             </thead>
@@ -113,7 +118,7 @@ export default function MineralResourceSummaryV153({ elementId, observations, in
                 <tr key={row.indicatorId} data-mineral={row.mineral}>
                   <th scope="row"><PublicTermTextV134 text={row.mineral} /></th>
                   <td className="num">{row.latest?.value === null || !row.latest ? "미기재" : formatPublicNumberV126(row.latest.value, "")}</td>
-                  <td>{row.unit}</td>
+                  <td><PublicTermTextV134 text={row.unit} /></td>
                   <td>{rankText(row)}</td>
                   <td className="num">{row.worldShareText || "—"}</td>
                   <td>{row.remark || "—"}</td>
@@ -126,10 +131,10 @@ export default function MineralResourceSummaryV153({ elementId, observations, in
 
       {model.missing.length ? (
         <section className="d153-section" data-testid="mineral-missing-v153">
-          <h4>{isReserves ? "USGS 미수록 광종" : "원천 미보고 광종"} · {model.missing.length}종</h4>
+          <h4><PublicTermTextV134 text={isReserves ? "USGS 미수록 광종" : "원천 미보고 광종"} /> · {model.missing.length}종</h4>
           <ul className="d153-facts">
             {model.missing.map((row) => (
-              <li key={row.indicatorId}><span>{row.mineral}</span><span>{row.missingNote || row.values[0]?.note || "원천에 베트남 값이 없습니다."}</span></li>
+              <li key={row.indicatorId}><span>{row.mineral}</span><span><PublicTermTextV134 text={String(row.missingNote || row.values[0]?.note || "원천에 베트남 값이 없습니다.")} /></span></li>
             ))}
           </ul>
         </section>
@@ -138,11 +143,11 @@ export default function MineralResourceSummaryV153({ elementId, observations, in
       {model.notes.length ? (
         <ul className="d153-facts" data-testid="mineral-notes-v153">
           {model.notes.map((note) => (
-            <li key={note.label}><span><PublicTermTextV134 text={note.label} /></span><span>{note.text}</span></li>
+            <li key={note.label}><span><PublicTermTextV134 text={note.label} /></span><span><PublicTermTextV134 text={note.text} /></span></li>
           ))}
         </ul>
       ) : null}
-      <p className="detail146-note">세계 순위·비중은 USGS가 밝힌 값을 그대로 옮긴 것이며, 광종 간 값 비교는 단위가 달라 하지 않습니다.</p>
+      <p className="detail146-note"><PublicTermTextV134 text="세계 순위·비중은 USGS가 밝힌 값을 그대로 옮긴 것이며, 광종 간 값 비교는 단위가 달라 하지 않습니다." /></p>
     </section>
   );
 }

@@ -3,6 +3,7 @@ import type { VietnamIndicatorMetaV124, VietnamObservationV124 } from "../../../
 import { climateZoneCodeV153, climateZoneLabelV153 } from "../../../data/visualization/koreanTermsV153";
 import { formatPublicNumberV126 } from "../../../data/visualization/publicNumberFormatV126";
 import { AnalysisBarsV147 } from "./AnalysisChartsV147";
+import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import "./detail-analysis-v146.css";
 import "./detail-analysis-v153.css";
 
@@ -100,7 +101,10 @@ export default function ClimateZoneSummaryV153({ observations, indicators }: Pro
           unit="%"
         />
       ) : null}
-      <p className="detail146-note">A군(열대)·C군(온대) 분류는 쾨펜-가이거 기준이며, 전망치는 SSP 시나리오별 2071–2099 평균입니다.</p>
+      <p className="detail146-note">
+        {/* The scenario family carries a help trigger here as it does elsewhere (V153). */}
+        <PublicTermTextV134 text="A군(열대)·C군(온대) 분류는 쾨펜-가이거 기준이며, 전망치는 SSP 시나리오별 2071–2099 평균입니다." />
+      </p>
     </section>
   );
 }

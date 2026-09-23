@@ -4,7 +4,7 @@ import { resolvePublicEntityTitleV131 } from "../../../data/visualization/public
 import { PROVINCE_KO_34_V151 } from "../../../data/map/adminBoundaryV151";
 import { AnalysisBarsV147 } from "./AnalysisChartsV147";
 import FacilityCardV153 from "./FacilityCardV153";
-import { PublicTermTextV134 } from "../../help/PublicTermV134";
+import { PublicTermExpandedTextV134, PublicTermTextV134 } from "../../help/PublicTermV134";
 import "./detail-analysis-v146.css";
 import "./detail-analysis-v153.css";
 
@@ -13,6 +13,22 @@ interface Props {
 }
 
 const IN_VIETNAM = "베트남 소재";
+/**
+ * Head-office country in Korean (V153).
+ *
+ * The source stores ISO 3166-1 alpha-3, which the screen printed verbatim
+ * ("본부 CHE"). Only the codes this dataset carries are named here; an unknown
+ * code is printed as the source has it rather than guessed.
+ */
+const HQ_COUNTRY_KO_V153: Record<string, string> = {
+  CHE: "스위스",
+  FRA: "프랑스",
+  GBR: "영국",
+  PHL: "필리핀",
+  SGP: "싱가포르",
+  USA: "미국",
+  VNM: "베트남",
+};
 const ABROAD = "해외 소재(베트남 투자 실적)";
 
 function locationOf(entity: VietnamEntityV124): string {
@@ -55,16 +71,20 @@ export default function InvestorNetworkSummaryV153({ entities }: Props) {
         const provinceName = attributes.adm1Name34 ? String(attributes.adm1Name34) : null;
         const provinceKo = PROVINCE_KO_34_V151[String(attributes.adm1Code34 || "")];
         const province = provinceName ? (provinceKo ? `${provinceKo}(${provinceName})` : provinceName) : null;
-        const place = [province || attributes.city, attributes.hqCountryIso3 ? `본부 ${attributes.hqCountryIso3}` : null].filter(Boolean).join(" · ");
+        const hqIso3 = String(attributes.hqCountryIso3 || "");
+        const place = [province || attributes.city, hqIso3 ? `본부 ${HQ_COUNTRY_KO_V153[hqIso3] || hqIso3}` : null].filter(Boolean).join(" · ");
         return (
           <li key={entity.recordId}>
             <span>
               <button type="button" className="d153-list-button" aria-pressed={selected === entity.recordId} onClick={() => setSelected(selected === entity.recordId ? null : entity.recordId)}>
-                <PublicTermTextV134 text={title} />
+                {/* A help trigger cannot sit inside this select button, so the
+                    title states the meaning in place instead (V153). */}
+                <PublicTermExpandedTextV134 text={title} />
               </button>
             </span>
             <span>
-              {String(attributes.field_75295a6c || attributes.field_a76779ad || "유형 미기재")} · {place}
+              {/* The source joins two types with a semicolon ("PE;VC"); the screen reads them as one list. */}
+              <PublicTermTextV134 text={String(attributes.field_75295a6c || attributes.field_a76779ad || "유형 미기재").split(";").map((part) => part.trim()).filter(Boolean).join(" · ")} /> · {place}
               {attributes.investSector ? <small><PublicTermTextV134 text={String(attributes.investSector)} /></small> : null}
             </span>
           </li>
@@ -99,7 +119,7 @@ export default function InvestorNetworkSummaryV153({ entities }: Props) {
           <FacilityCardV153 elementId="E-006" entity={selectedRow.entity} title={selectedRow.title} />
         </div>
       ) : null}
-      <AnalysisBarsV147 rows={cityRows} title="도시별 기관 수 · 원자료 표기" unit="기관 수" />
+      <AnalysisBarsV147 rows={cityRows} title="도시별 기관 수 · 원문 표기 기준" unit="기관 수" />
     </section>
   );
 }

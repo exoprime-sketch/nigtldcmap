@@ -115,6 +115,9 @@ describe("public glossary v134", () => {
       resolvePublicTermV134("MPI", "INFORM Multidimensional Poverty Index (MPI)")
         ?.id
     ).toBe("mpi-index");
+    expect(
+      resolvePublicTermV134("MPI", "MPI가 재무부(MoF)로 통합·기능 승계")?.id
+    ).toBe("mpi-ministry");
     expect(resolvePublicTermV134("MPI", "MPI")).toBeNull();
   });
 

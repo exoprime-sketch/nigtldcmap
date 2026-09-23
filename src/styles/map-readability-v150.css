@@ -1,10 +1,10 @@
 .cdp-map-control-stack-v151 { position: absolute; z-index: 8; left: 12px; top: 12px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; max-width: calc(100% - 68px); }
 .cdp-map-backdrop-v150 { max-width: 100%; background: #fff; border: 1px solid #aabfc2; border-radius: 9px; box-shadow: 0 2px 8px #15353b22; padding: 4px 10px; color: #163b39; font-size: 13px; }
-.cdp-map-canvas-wrap .cdp-map-overlay-card { top: 208px; }
+.cdp-map-canvas-wrap .cdp-map-overlay-card { top: 232px; }
 /* When the backdrop card also shows its failure notice the control stack is
    taller, so the hint card starts lower. Browsers without :has() keep the
    default offset, which is the layout when the backdrop loads normally. */
-.cdp-map-canvas-wrap:has(.cdp-map-backdrop-v150 > [role="status"]) .cdp-map-overlay-card { top: 262px; }
+.cdp-map-canvas-wrap:has(.cdp-map-backdrop-v150 > [role="status"]) .cdp-map-overlay-card { top: 286px; }
 /* V151: the boundary-vintage picker sits under the backdrop toggle, in the
    same top-left control stack, and carries the notice that switching the
    outline never changes a value. */
@@ -35,3 +35,10 @@
 @media (max-width: 1099px) {
   .cdp-map-sidebar.is-open, .cdp-map-evidence.is-open { resize: vertical; min-height: 180px; max-height: none; overflow: auto; }
 }
+/* V151-2: the backdrop picker is a compact one-row radio group (지형·위성·도로·지명·없음). */
+.cdp-map-backdrop-v151 { width: 246px; padding: 6px 10px 6px; }
+.cdp-map-backdrop-v151 fieldset { margin: 0; padding: 0; border: 0; display: flex; flex-wrap: wrap; column-gap: 10px; row-gap: 0; }
+.cdp-map-backdrop-v151 legend { padding: 0; font-weight: 700; font-size: 13px; float: left; width: 100%; }
+.cdp-map-backdrop-v151 label { display: inline-flex; align-items: center; gap: 5px; min-height: 26px; cursor: pointer; font-weight: 500; }
+.cdp-map-backdrop-v151 input { accent-color: #08796b; width: 16px; height: 16px; flex: none; }
+.cdp-map-backdrop-v151 > span { display: block; max-width: 226px; padding-top: 4px; font-size: 12px; }

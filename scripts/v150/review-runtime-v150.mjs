@@ -106,25 +106,25 @@ async function sectionMap(browser, base) {
   // 2. Backdrop toggle.
   const layerState = () => page.evaluate(() => {
     const layers = window.__nigtMapObserverV137.styleLayers();
-    const backdrop = layers.filter((layer) => /^cdp-(terrain|water|parks|roads|streets)-v150$/u.test(layer.id) || layer.source === "cdp-ofm-v150" || layer.source === "cdp-terrain-v150");
+    // V151-2: backdrop layers carry the cdp-bd-v151- prefix and a kind radio replaces the checkbox.
+    const backdrop = layers.filter((layer) => /^cdp-bd-v151-/u.test(layer.id) || /^cdp-bd-src-v151-/u.test(layer.source || ""));
     return {
       backdropLayerIds: backdrop.map((layer) => layer.id),
       backdropVisible: backdrop.filter((layer) => layer.visibility !== "none").length,
       backdropHidden: backdrop.filter((layer) => layer.visibility === "none").length,
-      koreanLabelLayers: layers.filter((layer) => /^cdp-ko-(country|city|province)$/u.test(layer.id)).map((layer) => `${layer.id}:${layer.visibility}`),
+      koreanLabelLayers: layers.filter((layer) => /^cdp-ko-(country|city-marker|city|province)$/u.test(layer.id)).map((layer) => `${layer.id}:${layer.visibility}`),
       attributionHasOpenFreeMap: /OpenFreeMap/u.test(document.body.innerText),
-      stored: localStorage.getItem("cdp-map-backdrop-v150"),
-      checkbox: document.querySelector(".cdp-map-backdrop-v150 input[type=checkbox]")?.checked ?? null,
-      labelNames: window.__nigtMapObserverV137.sourceNames("cdp-ko-labels-v150"),
+      stored: localStorage.getItem("cdp-map-backdrop-v151"),
+      checkbox: document.querySelector('.cdp-map-backdrop-v151 input[name="cdp-map-backdrop-v151"]:checked')?.value !== "none",
+      labelNames: window.__nigtMapObserverV137.sourceNames("cdp-ko-labels-v151"),
     };
   });
   const before = await layerState();
-  const checkbox = page.locator(".cdp-map-backdrop-v150 input[type=checkbox]");
-  await checkbox.click();
+  await page.locator('input[name="cdp-map-backdrop-v151"][value="none"]').check();
   await page.waitForTimeout(800);
   const afterOff = await layerState();
-  await checkbox.click();
-  await page.waitForTimeout(800);
+  await page.locator('input[name="cdp-map-backdrop-v151"][value="terrain"]').check();
+  await page.waitForTimeout(4000);
   const afterOn = await layerState();
   result.checks.backdrop = {
     initial: { checkbox: before.checkbox, visible: before.backdropVisible, hidden: before.backdropHidden, attribution: before.attributionHasOpenFreeMap, layerIds: before.backdropLayerIds },
@@ -138,7 +138,7 @@ async function sectionMap(browser, base) {
     sourceFeatureCount: afterOn.labelNames.length,
     cities: ["하노이", "다낭", "호찌민"].map((name) => ({ name, present: names.has(name) })),
     provinceSample: [...names].filter((name) => !["하노이", "다낭", "호찌민", "베트남", "라오스", "캄보디아", "태국", "중국"].includes(name)).slice(0, 5),
-    pass: afterOn.koreanLabelLayers.length === 3 && ["하노이", "다낭", "호찌민"].every((name) => names.has(name)),
+    pass: afterOn.koreanLabelLayers.length === 4 && ["하노이", "다낭", "호찌민"].every((name) => names.has(name)),
   };
 
   // 3. Panel resizing.

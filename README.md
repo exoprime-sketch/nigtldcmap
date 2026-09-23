@@ -105,6 +105,19 @@ npm run build:home-preview:v139  # 홈 미리보기 자산(8개 카드 계열 + 
 npm run qa:home:v139             # 홈 5개 폭 캡처·측정, 검색 예시·카드·지도 링크 동작
 ```
 
+V151-2 행정경계·배경지도 검증(PR 차단 gate는 `npm run finalize:v151` = finalize:v140 + 경계34 정적 게이트 + 집계정책 게이트):
+
+```powershell
+npm run audit:boundary-policy:v151-2   # 42개 레이어 boundaryPolicy 전수·분위형 range-only·파생 자산·팩 26
+npm run qa:viewport:v151-2 -- --build tmp/build-v151-2-review   # 레이어/주 분석/토글/배경 전환 시 카메라 유지, view= 복원
+npm run qa:labels:v151-2 -- --build tmp/build-v151-2-review     # 성급시 6곳 라벨 1개, 대표점 폴리곤 내부 34/63
+npm run measure:backdrop:v151-2 -- --build tmp/build-v151-2-review        # 배경 4종 첫 타일 시각 3회
+npm run measure:detail-prepare:v151-2 -- --build tmp/build-v151-2-review  # CCKP 상세 준비시간
+node scripts/v151-2/screens-v151-2.mjs --build tmp/build-v151-2-review    # 42×{34,63} 스크린샷·배경×레이어·팝업·6폭
+npm run build:geometry:v151-2   # 34개 경계(면적)·6권역·국가 외곽선 재생성 + asset-integrity
+npm run repack:packs:v151-2     # 8 MB 초과 요소 단독 팩 재구성 + asset-integrity
+```
+
 ## 배포
 
 공개 asset은 `publicAssetUrlV128` 단일 resolver를 통과합니다. root domain, custom root domain과 GitHub Pages project path `/nigtldcmap/`에서 같은 source code로 manifest, catalog, pack, semantic, download, 지도 JSON·GeoJSON을 요청합니다. `PUBLIC_URL`은 build 환경에서만 지정하며 resolver가 중복 prefix를 방지합니다.
@@ -127,6 +140,8 @@ npm run smoke:production:v128
 - [롤백](docs/ROLLBACK_V128.md)
 - [공개 정보구조](docs/VIETNAM_PILOT_PUBLIC_INFORMATION_ARCHITECTURE_V128.md)
 - [지도 대상 43개 계약과 다중선택 지도](docs/MAP_TARGET_CONTRACT_V138.md)
+- [행정경계 34개 기준과 값 집계정책](docs/ADMIN_BOUNDARY_34_V151.md)
+- [배경지도·라벨·뷰포트](docs/MAP_BACKDROP_V151.md)
 - [데이터 상태 정책](docs/VIETNAM_DATA_STATUS_POLICY_V128.md)
 - [릴리스 수용 기준](docs/VIETNAM_RELEASE_ACCEPTANCE_V128.md)
 

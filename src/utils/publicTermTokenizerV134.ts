@@ -185,7 +185,9 @@ function resolveMpiV134(
 ): ResolvedPublicTermV134 | null {
   if (normalizePublicTermAliasV134(value) !== "MPI") return null;
   const ministryContext =
-    /(?:기획투자부|Ministry\s+of\s+Planning(?:\s+and|\s*&)?\s+Investment|CPEIR|공공조달청|재무부로\s*통합|정부부처)/iu.test(
+    // C-012 states the merger with the ministry named in brackets:
+    // "MPI가 재무부(MoF)로 통합·기능 승계" (V153).
+    /(?:기획투자부|Ministry\s+of\s+Planning(?:\s+and|\s*&)?\s+Investment|CPEIR|공공조달청|재무부(?:\([^)]*\))?로\s*통합|정부부처)/iu.test(
       context
     );
   const indexContext =

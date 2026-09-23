@@ -208,6 +208,7 @@ def build(geometry_dir: Path, crosswalk_path: Path) -> dict[str, Any]:
         "areaDeltaPpmMax": 0.0,
         "dissolvedInteriorHoleCount": 0,
         "invalidGeometryCount": 0,
+        "memberAreaKm2Coverage": 0,
         "mergedUnitCount": 0,
         "multiPolygonCount": 0,
         "polygonCount": 0,
@@ -240,7 +241,10 @@ def build(geometry_dir: Path, crosswalk_path: Path) -> dict[str, Any]:
             validation["invalidGeometryCount"] += 1
             raise ValueError(f"Invalid dissolve for {region}: {explain_validity(dissolved)}")
 
-        member_area = sum(_geodesic_area_m2(member["geometry"]) for member in members)
+        member_area_m2_by_code = {
+            member["adm1Code"]: _geodesic_area_m2(member["geometry"]) for member in members
+        }
+        member_area = sum(member_area_m2_by_code.values())
         dissolved_area = _geodesic_area_m2(dissolved)
         delta_ppm = abs(dissolved_area - member_area) / member_area * 1_000_000
         if delta_ppm > AREA_TOLERANCE_PPM:
@@ -276,14 +280,21 @@ def build(geometry_dir: Path, crosswalk_path: Path) -> dict[str, Any]:
             validation["mergedUnitCount"] += 1
 
         successor = _successor_code(region, members)
+        member_area_km2 = {
+            code: round(area_m2 / 1_000_000, 3)
+            for code, area_m2 in sorted(member_area_m2_by_code.items())
+        }
+        validation["memberAreaKm2Coverage"] += len(member_area_km2)
         features.append(
             {
                 "geometry": geometry,
                 "properties": {
+                    "areaKm2": round(dissolved_area / 1_000_000, 3),
                     "boundarySystem": BOUNDARY_SYSTEM,
                     "effectiveDate": EFFECTIVE_DATE,
                     "legalBasis": LEGAL_BASIS,
                     "memberAdm1Codes": member_codes,
+                    "memberAreaKm2": member_area_km2,
                     "memberNames": [member["name"] for member in members],
                     "name": region,
                     "normalizedName": normalize_text(region),

@@ -94,6 +94,8 @@ test("the copy separates the outline vintage from the value vintage", () => {
   expect(boundarySystemLabelV151("post-2025-34")).toBe("34개 성·시(2025-07-01 시행)");
   expect(boundarySystemLabelV151("pre-2025-63")).toBe("63개 성·시(개편 전)");
   expect(boundarySystemShortLabelV151("post-2025-34")).toBe("개편 후 34개");
-  expect(boundaryValueNoticeV151("post-2025-34")).toContain("34개로 합산하지 않습니다");
+  // V151-2: the focused layer's boundary policy replaces the old "never
+  // aggregated" sentence; the idle notice points at where the rule appears.
+  expect(boundaryValueNoticeV151("post-2025-34")).toContain("집계 규칙");
   expect(boundaryValueNoticeV151("pre-2025-63")).toContain("63개 성·시 기준");
 });

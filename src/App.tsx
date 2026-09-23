@@ -31,7 +31,11 @@ import type {
   CompareViewState,
 } from "./types/compare";
 import { DEFAULT_COMPARE_VIEW_STATE } from "./types/compare";
-import { parseMapViewState } from "./types/map";
+import {
+  formatMapCameraV151,
+  mapCamerasEqualV151,
+  parseMapViewState,
+} from "./types/map";
 import type { MapViewState } from "./types/map";
 import {
   appendDataFinderSelectorParamsV125,
@@ -177,6 +181,7 @@ function mapViewStatesEqual(a: MapViewState, b: MapViewState): boolean {
     a.primaryLayerId !== b.primaryLayerId ||
     a.mapPresetId !== b.mapPresetId ||
     a.comparisonMode !== b.comparisonMode ||
+    !mapCamerasEqualV151(a.camera, b.camera) ||
     a.comparisonLayerIds.length !== b.comparisonLayerIds.length ||
     a.contextLayerIds.length !== b.contextLayerIds.length ||
     a.hiddenLayerIds.length !== b.hiddenLayerIds.length ||
@@ -317,6 +322,8 @@ function appendMapViewParams(
   if (state.year !== null) params.set("year", String(state.year));
   if (state.countryIso3) params.set("country", state.countryIso3);
   params.set("baseOpacity", state.baseOpacity.toFixed(2));
+  // V151-2: the camera survives reloads and shared links.
+  if (state.camera) params.set("view", formatMapCameraV151(state.camera));
   if (state.overlay !== "none") {
     params.set("overlayOpacity", state.overlayOpacity.toFixed(2));
   }
@@ -796,6 +803,7 @@ export default function App() {
         comparisonMode: false,
         comparisonLayerIds: [],
         layerSelectors: {},
+        camera: null,
       }));
     }
 
@@ -897,6 +905,8 @@ export default function App() {
       comparisonMode: false,
       comparisonLayerIds: [],
       layerSelectors: {},
+      // V151-2: entering from a detail page fits the target layer once; no stale camera.
+      camera: null,
     }));
     setView("map");
     window.scrollTo({ top: 0, behavior: "smooth" });

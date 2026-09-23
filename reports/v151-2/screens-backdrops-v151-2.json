@@ -1,0 +1,124 @@
+{
+  "summary": {
+    "type": "summary",
+    "audit": "screens:v151-2",
+    "status": "PASS",
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "failedChecks": [],
+    "layersChecked": 0,
+    "consoleErrors": 0,
+    "generatedAt": "2026-09-22T04:01:57.922Z"
+  },
+  "report": {
+    "build": "\\tmp\\build-v151-2-review",
+    "layers": {},
+    "backdrops": {
+      "terrain": {
+        "B-033": "ready",
+        "B-041": "ready",
+        "C-019": "ready",
+        "A-023": "ready",
+        "B-021": "ready",
+        "B-004": "ready"
+      },
+      "satellite": {
+        "B-033": "ready",
+        "B-041": "ready",
+        "C-019": "ready",
+        "A-023": "ready",
+        "B-021": "ready",
+        "B-004": "ready"
+      },
+      "streets": {
+        "B-033": "ready",
+        "B-041": "ready",
+        "C-019": "ready",
+        "A-023": "ready",
+        "B-021": "ready",
+        "B-004": "ready"
+      },
+      "none": {
+        "B-033": "none",
+        "B-041": "none",
+        "C-019": "none",
+        "A-023": "none",
+        "B-021": "none",
+        "B-004": "none"
+      }
+    },
+    "popups": {},
+    "responsive": {}
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "BACKDROP_TERRAIN_STATUS",
+      "status": "PASS",
+      "actual": {
+        "B-033": "ready",
+        "B-041": "ready",
+        "C-019": "ready",
+        "A-023": "ready",
+        "B-021": "ready",
+        "B-004": "ready"
+      },
+      "expected": "ready (none for '없음')"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "BACKDROP_SATELLITE_STATUS",
+      "status": "PASS",
+      "actual": {
+        "B-033": "ready",
+        "B-041": "ready",
+        "C-019": "ready",
+        "A-023": "ready",
+        "B-021": "ready",
+        "B-004": "ready"
+      },
+      "expected": "ready (none for '없음')"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "BACKDROP_STREETS_STATUS",
+      "status": "PASS",
+      "actual": {
+        "B-033": "ready",
+        "B-041": "ready",
+        "C-019": "ready",
+        "A-023": "ready",
+        "B-021": "ready",
+        "B-004": "ready"
+      },
+      "expected": "ready (none for '없음')"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "BACKDROP_NONE_STATUS",
+      "status": "PASS",
+      "actual": {
+        "B-033": "none",
+        "B-041": "none",
+        "C-019": "none",
+        "A-023": "none",
+        "B-021": "none",
+        "B-004": "none"
+      },
+      "expected": "ready (none for '없음')"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "CONSOLE_ERRORS",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ]
+}

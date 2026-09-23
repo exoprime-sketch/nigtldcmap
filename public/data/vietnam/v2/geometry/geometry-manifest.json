@@ -21,7 +21,7 @@
         "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
         "sourceBoundaryLicense": "Public Domain"
       },
-      "sha256": "055fab7e6be311506f7bfcc88564a9b065d2df9ff644bb401ecb43d313e74013",
+      "sha256": "ea30717d6649ef79922db94590bf764423fbd49c9952352e3f1f36191219ccc5",
       "sourceGapNotice": "원천 경계가 이웃 성 사이에 남긴 틈은 합쳐진 단위 안에서 구멍으로 남깁니다. 메우면 원천에 없는 경계선을 새로 그리는 것이므로 메우지 않습니다.",
       "url": "/data/vietnam/v2/geometry/vnm-adm1-34.geojson",
       "validation": {
@@ -30,6 +30,7 @@
         "featureCount": 34,
         "geometryValidity": "pass",
         "invalidGeometryCount": 0,
+        "memberAreaKm2Coverage": 63,
         "memberCoverageCount": 63,
         "mergedUnitCount": 23,
         "multiPolygonCount": 13,
@@ -106,6 +107,144 @@
         "provinceCount": 63,
         "unmappedProvinceCount": 0
       }
+    },
+    {
+      "attribution": "geoBoundaries (William & Mary geoLab), VNM ADM1, boundary year 2008, build 2023-12-12; Runfola et al. (2020), PLOS ONE 15(4): e0231866.",
+      "derivedFrom": {
+        "asset": "/data/vietnam/v2/geometry/vnm-country-outline.geojson",
+        "method": "shapely.simplify(tolerance=0.01, preserve_topology=True); non-mainland parts under 2.0 km2 dropped",
+        "sha256": "9df77cfbd829b462980bb4ece40e6f8637af9435dcc0e29900efc8126db43dd8"
+      },
+      "featureCount": 1,
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "kind": "country-outline-z5",
+      "license": {
+        "attributionRequired": true,
+        "geoBoundariesDerivativeLicense": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "sourceBoundaryLicense": "Public Domain"
+      },
+      "partCount": 22,
+      "sha256": "e8b2fb502295fab1a8e430195032d1a838b71f121a89187bec1eb91ab5bf8c23",
+      "simplifyToleranceDeg": 0.01,
+      "url": "/data/vietnam/v2/geometry/vnm-country-outline-z5.geojson",
+      "validation": {
+        "areaDeltaPpmVsFull": 725.334,
+        "droppedPartAreaKm2Total": 14.652,
+        "droppedPartCount": 22,
+        "featureCount": 1,
+        "fullPartCount": 44,
+        "fullVertexCount": 4839,
+        "geometryValidity": "pass",
+        "partCount": 22,
+        "vertexCount": 981
+      },
+      "version": "2023-12-12-z5",
+      "vertexCount": 981
+    },
+    {
+      "attribution": "geoBoundaries (William & Mary geoLab), VNM ADM1, boundary year 2008, build 2023-12-12; Runfola et al. (2020), PLOS ONE 15(4): e0231866.",
+      "derivedFrom": {
+        "asset": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+        "method": "shapely.ops.unary_union over all 63 ADM1 features",
+        "sha256": "1985e5dc1f60be511b5e6da9642fbd25fb9e0a19c814e4c141772dd6b858b873"
+      },
+      "featureCount": 1,
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "kind": "country-outline",
+      "license": {
+        "attributionRequired": true,
+        "geoBoundariesDerivativeLicense": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "sourceBoundaryLicense": "Public Domain"
+      },
+      "partCount": 44,
+      "sha256": "9df77cfbd829b462980bb4ece40e6f8637af9435dcc0e29900efc8126db43dd8",
+      "simplifyToleranceDeg": 0,
+      "url": "/data/vietnam/v2/geometry/vnm-country-outline.geojson",
+      "validation": {
+        "areaDeltaPpmMax": 0.0,
+        "dissolvedInteriorHoleCount": 1,
+        "featureCount": 1,
+        "geometryValidity": "pass",
+        "invalidGeometryCount": 0,
+        "partCount": 44,
+        "sourceFeatureCount": 63,
+        "sourceGapsLeftOpen": [
+          {
+            "areaKm2": 0.1215
+          }
+        ],
+        "syntheticVertexCount": 0,
+        "validator": "Shapely 2.1.2 (GEOS is_valid) + pyproj Geod area",
+        "vertexCount": 4839
+      },
+      "version": "2023-12-12",
+      "vertexCount": 4839
+    },
+    {
+      "attribution": "geoBoundaries (William & Mary geoLab), VNM ADM1, boundary year 2008, build 2023-12-12; Runfola et al. (2020), PLOS ONE 15(4): e0231866. Six-region grouping follows Global Data Lab (GDL Area Database / GVI) region membership; GDL 기관 이용약관에 따라 비영리 표출로 한정.",
+      "derivedFrom": {
+        "asset": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+        "method": "shapely.ops.unary_union over spatial/layers/b-021.json#regionMappings provinceCodes",
+        "sha256": "1985e5dc1f60be511b5e6da9642fbd25fb9e0a19c814e4c141772dd6b858b873"
+      },
+      "featureCount": 6,
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "kind": "region-6",
+      "license": {
+        "attributionRequired": true,
+        "geoBoundariesDerivativeLicense": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "sourceBoundaryLicense": "Public Domain"
+      },
+      "sha256": "e8133d8ea049f63c20b6b59076b1a492c7f14049b95ff228ddc7cd9017270e23",
+      "url": "/data/vietnam/v2/geometry/vnm-region-6.geojson",
+      "validation": {
+        "areaDeltaPpmMax": 0.0,
+        "dissolvedInteriorHoleCount": 1,
+        "featureCount": 6,
+        "geometryValidity": "pass",
+        "invalidGeometryCount": 0,
+        "memberCoverageCount": 63,
+        "multiPolygonCount": 4,
+        "polygonCount": 2,
+        "regionCount": 6,
+        "sourceFeatureCount": 63,
+        "sourceGapsLeftOpen": [
+          {
+            "areaKm2": 0.1215,
+            "memberAdm1Codes": [
+              "VN-41",
+              "VN-44",
+              "VN-45",
+              "VN-46",
+              "VN-47",
+              "VN-49",
+              "VN-50",
+              "VN-51",
+              "VN-52",
+              "VN-55",
+              "VN-59",
+              "VN-73",
+              "VN-CT"
+            ],
+            "region": "Mekong River Delta"
+          }
+        ],
+        "syntheticVertexCount": 0,
+        "validator": "Shapely 2.1.2 (GEOS is_valid) + pyproj Geod area"
+      },
+      "version": "b-021-2026-09-01"
     },
     {
       "accuracyNotice": "Digitized from a georeferenced PDF. The source warns of isolated horizontal and vertical displacement of 2–10 km; use only for approximate visualization, not high-accuracy engineering or routing.",

@@ -1,0 +1,205 @@
+{
+  "summary": {
+    "type": "summary",
+    "audit": "backdrop-first-tile:v151-2",
+    "status": "PASS",
+    "kinds": [
+      "terrain",
+      "satellite",
+      "streets",
+      "none"
+    ],
+    "runs": 3,
+    "screens": false,
+    "consoleErrors": 0,
+    "generatedAt": "2026-09-22T00:18:15.116Z"
+  },
+  "perKind": {
+    "terrain": {
+      "map": {
+        "median": 853,
+        "min": 594,
+        "max": 1156,
+        "runs": [
+          594,
+          1156,
+          853
+        ]
+      },
+      "home": {
+        "median": null,
+        "min": null,
+        "max": null,
+        "runs": []
+      },
+      "requestsByHost": {
+        "s3.amazonaws.com": 144,
+        "tiles.openfreemap.org": 210
+      }
+    },
+    "satellite": {
+      "map": {
+        "median": 336,
+        "min": 232,
+        "max": 343,
+        "runs": [
+          343,
+          232,
+          336
+        ]
+      },
+      "home": {
+        "median": null,
+        "min": null,
+        "max": null,
+        "runs": []
+      },
+      "requestsByHost": {
+        "server.arcgisonline.com": 144,
+        "tiles.openfreemap.org": 126
+      }
+    },
+    "streets": {
+      "map": {
+        "median": 1068,
+        "min": 1042,
+        "max": 1339,
+        "runs": [
+          1339,
+          1042,
+          1068
+        ]
+      },
+      "home": {
+        "median": null,
+        "min": null,
+        "max": null,
+        "runs": []
+      },
+      "requestsByHost": {
+        "tiles.openfreemap.org": 192
+      }
+    },
+    "none": {
+      "map": {
+        "median": null,
+        "min": null,
+        "max": null,
+        "runs": []
+      },
+      "home": {
+        "median": null,
+        "min": null,
+        "max": null,
+        "runs": []
+      },
+      "requestsByHost": {}
+    }
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "backdrop-first-tile:v151-2",
+      "name": "MAP_BACKDROP_STATUS_terrain_run1",
+      "status": "PASS",
+      "actual": "ready",
+      "expected": "ready|fallback|none within 30s"
+    },
+    {
+      "type": "check",
+      "audit": "backdrop-first-tile:v151-2",
+      "name": "MAP_BACKDROP_STATUS_terrain_run2",
+      "status": "PASS",
+      "actual": "ready",
+      "expected": "ready|fallback|none within 30s"
+    },
+    {
+      "type": "check",
+      "audit": "backdrop-first-tile:v151-2",
+      "name": "MAP_BACKDROP_STATUS_terrain_run3",
+      "status": "PASS",
+      "actual": "ready",
+      "expected": "ready|fallback|none within 30s"
+    },
+    {
+      "type": "check",
+      "audit": "backdrop-first-tile:v151-2",
+      "name": "MAP_BACKDROP_STATUS_satellite_run1",
+      "status": "PASS",
+      "actual": "ready",
+      "expected": "ready|fallback|none within 30s"
+    },
+    {
+      "type": "check",
+      "audit": "backdrop-first-tile:v151-2",
+      "name": "MAP_BACKDROP_STATUS_satellite_run2",
+      "status": "PASS",
+      "actual": "ready",
+      "expected": "ready|fallback|none within 30s"
+    },
+    {
+      "type": "check",
+      "audit": "backdrop-first-tile:v151-2",
+      "name": "MAP_BACKDROP_STATUS_satellite_run3",
+      "status": "PASS",
+      "actual": "ready",
+      "expected": "ready|fallback|none within 30s"
+    },
+    {
+      "type": "check",
+      "audit": "backdrop-first-tile:v151-2",
+      "name": "MAP_BACKDROP_STATUS_streets_run1",
+      "status": "PASS",
+      "actual": "ready",
+      "expected": "ready|fallback|none within 30s"
+    },
+    {
+      "type": "check",
+      "audit": "backdrop-first-tile:v151-2",
+      "name": "MAP_BACKDROP_STATUS_streets_run2",
+      "status": "PASS",
+      "actual": "ready",
+      "expected": "ready|fallback|none within 30s"
+    },
+    {
+      "type": "check",
+      "audit": "backdrop-first-tile:v151-2",
+      "name": "MAP_BACKDROP_STATUS_streets_run3",
+      "status": "PASS",
+      "actual": "ready",
+      "expected": "ready|fallback|none within 30s"
+    },
+    {
+      "type": "check",
+      "audit": "backdrop-first-tile:v151-2",
+      "name": "MAP_BACKDROP_STATUS_none_run1",
+      "status": "PASS",
+      "actual": "none",
+      "expected": "ready|fallback|none within 30s"
+    },
+    {
+      "type": "check",
+      "audit": "backdrop-first-tile:v151-2",
+      "name": "MAP_BACKDROP_STATUS_none_run2",
+      "status": "PASS",
+      "actual": "none",
+      "expected": "ready|fallback|none within 30s"
+    },
+    {
+      "type": "check",
+      "audit": "backdrop-first-tile:v151-2",
+      "name": "MAP_BACKDROP_STATUS_none_run3",
+      "status": "PASS",
+      "actual": "none",
+      "expected": "ready|fallback|none within 30s"
+    },
+    {
+      "type": "check",
+      "audit": "backdrop-first-tile:v151-2",
+      "name": "NO_CONSOLE_ERRORS",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ]
+}
