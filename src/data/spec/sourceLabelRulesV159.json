@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "v159-source-label-rules-1",
+  "note": "Corrections for splitting 요소명_플랫폼 into a source line and the dataset name. The automatic rule takes the ' 외 ' clause, or else the leading run of Latin tokens, as the source. 'prefix' entries override that split and must satisfy platformName === sourceLabel + ' ' + baseName. 'noPrefix' entries are names that carry no source; their sourceLabel must be a verbatim substring of the spec sheet's 출처 column, and baseName is the whole platform name.",
+  "prefix": [
+    { "elementId": "A-013", "sourceLabel": "WRI Climate Watch", "baseName": "NDC·SDG 연계 목록" },
+    { "elementId": "A-015", "sourceLabel": "SDSN", "baseName": "SDG 세부지표별 달성도" },
+    { "elementId": "A-029", "sourceLabel": "VCCI WTO센터", "baseName": "자유무역협정 현황(FTA)" },
+    { "elementId": "A-030", "sourceLabel": "한국무역협회", "baseName": "한-베트남 교역액" },
+    { "elementId": "E-005", "sourceLabel": "NIGT 취합", "baseName": "대학·연구기관·비영리단체(NGO)" },
+    { "elementId": "E-006", "sourceLabel": "NIGT 취합", "baseName": "현지 기후사업 투자기관" },
+    { "elementId": "E-008", "sourceLabel": "각 학술지·USPTO", "baseName": "기후기술 논문·특허 실적" },
+    { "elementId": "E-018", "sourceLabel": "NIGT 취합", "baseName": "국내 기업 개도국 진출 현황" },
+    { "elementId": "E-019", "sourceLabel": "NIGT 취합", "baseName": "개도국 내 한국 기관 사무소" }
+  ],
+  "noPrefix": [
+    { "elementId": "C-004", "sourceLabel": "베트남 총리실" },
+    { "elementId": "C-009", "sourceLabel": "베트남 정부 공보" },
+    { "elementId": "C-010", "sourceLabel": "베트남 정부 공보" },
+    { "elementId": "C-016", "sourceLabel": "베트남 총리실" },
+    { "elementId": "C-017", "sourceLabel": "베트남 산업무역부 전력·재생에너지국(EREA)" },
+    { "elementId": "C-018", "sourceLabel": "베트남 총리실" },
+    { "elementId": "D-021", "sourceLabel": "IATI Registry" },
+    { "elementId": "D-022", "sourceLabel": "IATI Registry" }
+  ],
+  "shortDefinitionCardKeepOriginal": ["A-026", "A-027", "A-028", "B-041", "D-023", "E-001"]
+}

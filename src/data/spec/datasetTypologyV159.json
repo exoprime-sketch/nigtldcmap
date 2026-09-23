@@ -1,0 +1,3389 @@
+{
+  "schemaVersion": "v159-typology-1",
+  "generatedFrom": {
+    "workbook": "_source/spec/db_status_framework_v5.38_260922.xlsx",
+    "assignment": "docs/plan/V159_데이터유형화_명세.md §4"
+  },
+  "displayTypes": [
+    {
+      "code": "U1",
+      "label": "국가 수준·추세"
+    },
+    {
+      "code": "U2",
+      "label": "지역·입지"
+    },
+    {
+      "code": "U3",
+      "label": "기술별 비교"
+    },
+    {
+      "code": "U4",
+      "label": "시설·기관·인프라 위치"
+    },
+    {
+      "code": "U5",
+      "label": "사업·재원"
+    },
+    {
+      "code": "U6",
+      "label": "제도·규제·리스크"
+    },
+    {
+      "code": "U0",
+      "label": "상태 안내"
+    }
+  ],
+  "structures": {
+    "S1": "국가×연도 관측값",
+    "S2": "지역×연도 관측값",
+    "S3": "위치 개체",
+    "S4": "비공간 개체"
+  },
+  "rows": [
+    {
+      "elementId": "A-001",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "A-002",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "6개 차원 토글",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "A-003",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "A-004",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "A-005",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "A-006",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "A-007",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "A-008",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "A-009",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "A-010",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "A-011",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "A-012",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "A-013",
+      "displayType": "U6",
+      "displayTypeLabel": "제도·규제·리스크",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "매트릭스(NDC 부문×SDG) + 삼각주 조치 지도",
+      "dedicated": "ndc-sdg-matrix",
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "A-014",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "A-015",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "A-016",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "–"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "A-017",
+      "displayType": "U3",
+      "displayTypeLabel": "기술별 비교",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "제외(명세서 0918)",
+      "variant": "제외(BNEF 재배포 제한)",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "–"
+      },
+      "specCaseCount": 1
+    },
+    {
+      "elementId": "A-018",
+      "displayType": "U3",
+      "displayTypeLabel": "기술별 비교",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "–"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "A-019",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "–"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "A-020",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "–"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "A-021",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "–"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "A-022",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "지도: EVN 관할 T4 변형",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "–"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "A-023",
+      "displayType": "U4",
+      "displayTypeLabel": "시설·기관·인프라 위치",
+      "structure": "S3",
+      "structureLabel": "위치 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "클러스터·발전원 아이콘·라벨형 카드",
+      "dedicated": "power-plant-registry",
+      "coverage": {
+        "VNM": "○",
+        "BGD": "–"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "A-024",
+      "displayType": "U4",
+      "displayTypeLabel": "시설·기관·인프라 위치",
+      "structure": "S3",
+      "structureLabel": "위치 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "–"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "A-025",
+      "displayType": "U4",
+      "displayTypeLabel": "시설·기관·인프라 위치",
+      "structure": "S3",
+      "structureLabel": "위치 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "–"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "A-026",
+      "displayType": "U2",
+      "displayTypeLabel": "지역·입지",
+      "structure": "S2",
+      "structureLabel": "지역×연도 관측값",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "자료 대기",
+      "variant": "자료 대기(샘플)",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "–"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "A-027",
+      "displayType": "U4",
+      "displayTypeLabel": "시설·기관·인프라 위치",
+      "structure": "S3",
+      "structureLabel": "위치 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "✕",
+        "BGD": "–"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "A-028",
+      "displayType": "U4",
+      "displayTypeLabel": "시설·기관·인프라 위치",
+      "structure": "S3",
+      "structureLabel": "위치 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "보류(표출제한)",
+      "variant": "원자료 보류·OSM 참고",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "–"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "A-029",
+      "displayType": "U6",
+      "displayTypeLabel": "제도·규제·리스크",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "–"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "A-030",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "–"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "A-031",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "6개 차원 토글",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "–"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "A-032",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "–"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "A-033",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "분기 시계열",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "–"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "B-001",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "B-002",
+      "displayType": "U2",
+      "displayTypeLabel": "지역·입지",
+      "structure": "S2",
+      "structureLabel": "지역×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": true,
+        "scenario": true
+      },
+      "status": "공개",
+      "variant": "범주형(최다 기후대)+구성비 파이",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "B-003",
+      "displayType": "U2",
+      "displayTypeLabel": "지역·입지",
+      "structure": "S2",
+      "structureLabel": "지역×연도 관측값",
+      "flags": {
+        "region": true,
+        "tech": false,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "B-004",
+      "displayType": "U2",
+      "displayTypeLabel": "지역·입지",
+      "structure": "S2",
+      "structureLabel": "지역×연도 관측값",
+      "flags": {
+        "region": true,
+        "tech": false,
+        "geometry": true,
+        "categorical": false,
+        "scenario": true
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "B-005",
+      "displayType": "U2",
+      "displayTypeLabel": "지역·입지",
+      "structure": "S2",
+      "structureLabel": "지역×연도 관측값",
+      "flags": {
+        "region": true,
+        "tech": false,
+        "geometry": true,
+        "categorical": false,
+        "scenario": true
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "B-006",
+      "displayType": "U2",
+      "displayTypeLabel": "지역·입지",
+      "structure": "S2",
+      "structureLabel": "지역×연도 관측값",
+      "flags": {
+        "region": true,
+        "tech": false,
+        "geometry": true,
+        "categorical": false,
+        "scenario": true
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "B-007",
+      "displayType": "U2",
+      "displayTypeLabel": "지역·입지",
+      "structure": "S2",
+      "structureLabel": "지역×연도 관측값",
+      "flags": {
+        "region": true,
+        "tech": false,
+        "geometry": true,
+        "categorical": false,
+        "scenario": true
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "B-008",
+      "displayType": "U2",
+      "displayTypeLabel": "지역·입지",
+      "structure": "S3",
+      "structureLabel": "위치 개체",
+      "flags": {
+        "region": true,
+        "tech": false,
+        "geometry": true,
+        "categorical": false,
+        "scenario": true
+      },
+      "status": "공개",
+      "variant": "관측소×시나리오×10년, 지도 슬라이더",
+      "dedicated": "sea-level-stations",
+      "coverage": {
+        "VNM": "✕",
+        "BGD": "✕"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "B-009",
+      "displayType": "U2",
+      "displayTypeLabel": "지역·입지",
+      "structure": "S2",
+      "structureLabel": "지역×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "B-010",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "B-011",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "B-012",
+      "displayType": "U2",
+      "displayTypeLabel": "지역·입지",
+      "structure": "S3",
+      "structureLabel": "위치 개체",
+      "flags": {
+        "region": true,
+        "tech": false,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "보조: 연도별 건수 히스토그램",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "B-013",
+      "displayType": "U6",
+      "displayTypeLabel": "제도·규제·리스크",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "B-014",
+      "displayType": "U6",
+      "displayTypeLabel": "제도·규제·리스크",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "표 전환",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "B-015",
+      "displayType": "U6",
+      "displayTypeLabel": "제도·규제·리스크",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "B-016",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "B-017",
+      "displayType": "U2",
+      "displayTypeLabel": "지역·입지",
+      "structure": "S2",
+      "structureLabel": "지역×연도 관측값",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "유역 폴리곤(Aqueduct)·등급 5색",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "✕",
+        "BGD": "✕"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "B-018",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": true,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": true
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "✕",
+        "BGD": "✕"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "B-019",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": true,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": true
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "✕",
+        "BGD": "✕"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "B-020",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "3축 구성",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "B-021",
+      "displayType": "U2",
+      "displayTypeLabel": "지역·입지",
+      "structure": "S2",
+      "structureLabel": "지역×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": true,
+        "categorical": false,
+        "scenario": true
+      },
+      "status": "공개",
+      "variant": "6개 권역",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "B-022",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "B-023",
+      "displayType": "U4",
+      "displayTypeLabel": "시설·기관·인프라 위치",
+      "structure": "S3",
+      "structureLabel": "위치 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "✕",
+        "BGD": "✕"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "B-024",
+      "displayType": "U2",
+      "displayTypeLabel": "지역·입지",
+      "structure": "S2",
+      "structureLabel": "지역×연도 관측값",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "✕",
+        "BGD": "✕"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "B-025",
+      "displayType": "U4",
+      "displayTypeLabel": "시설·기관·인프라 위치",
+      "structure": "S3",
+      "structureLabel": "위치 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "✕",
+        "BGD": "✕"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "B-026",
+      "displayType": "U2",
+      "displayTypeLabel": "지역·입지",
+      "structure": "S2",
+      "structureLabel": "지역×연도 관측값",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": false,
+        "categorical": true,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "범주형(우세 유향)+로즈",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "✕"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "B-027",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "✕",
+        "BGD": "✕"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "B-028",
+      "displayType": "U4",
+      "displayTypeLabel": "시설·기관·인프라 위치",
+      "structure": "S3",
+      "structureLabel": "위치 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "✕",
+        "BGD": "✕"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "B-029",
+      "displayType": "U2",
+      "displayTypeLabel": "지역·입지",
+      "structure": "S2",
+      "structureLabel": "지역×연도 관측값",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "✕"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "B-030",
+      "displayType": "U2",
+      "displayTypeLabel": "지역·입지",
+      "structure": "S2",
+      "structureLabel": "지역×연도 관측값",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "✕"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "B-031",
+      "displayType": "U2",
+      "displayTypeLabel": "지역·입지",
+      "structure": "S2",
+      "structureLabel": "지역×연도 관측값",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "B-032",
+      "displayType": "U2",
+      "displayTypeLabel": "지역·입지",
+      "structure": "S2",
+      "structureLabel": "지역×연도 관측값",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "B-033",
+      "displayType": "U2",
+      "displayTypeLabel": "지역·입지",
+      "structure": "S2",
+      "structureLabel": "지역×연도 관측값",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "B-034",
+      "displayType": "U2",
+      "displayTypeLabel": "지역·입지",
+      "structure": "S2",
+      "structureLabel": "지역×연도 관측값",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "B-035",
+      "displayType": "U2",
+      "displayTypeLabel": "지역·입지",
+      "structure": "S2",
+      "structureLabel": "지역×연도 관측값",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "보조 T2(그룹 누적·추세)",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "✕",
+        "BGD": "✕"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "B-036",
+      "displayType": "U2",
+      "displayTypeLabel": "지역·입지",
+      "structure": "S2",
+      "structureLabel": "지역×연도 관측값",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "✕",
+        "BGD": "✕"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "B-037",
+      "displayType": "U2",
+      "displayTypeLabel": "지역·입지",
+      "structure": "S2",
+      "structureLabel": "지역×연도 관측값",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "✕"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "B-038",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "B-039",
+      "displayType": "U2",
+      "displayTypeLabel": "지역·입지",
+      "structure": "S2",
+      "structureLabel": "지역×연도 관측값",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "✕"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "B-040",
+      "displayType": "U2",
+      "displayTypeLabel": "지역·입지",
+      "structure": "S2",
+      "structureLabel": "지역×연도 관측값",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "✕"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "B-041",
+      "displayType": "U2",
+      "displayTypeLabel": "지역·입지",
+      "structure": "S2",
+      "structureLabel": "지역×연도 관측값",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "✕"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "B-042",
+      "displayType": "U2",
+      "displayTypeLabel": "지역·입지",
+      "structure": "S2",
+      "structureLabel": "지역×연도 관측값",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "✕"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "B-043",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "양/비율 그룹·연료 선택·용어 툴팁",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "B-044",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "B-046 통합 절",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "B-045",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "B-046",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "순위·비중 막대 + 광종 소형 다중",
+      "dedicated": "mineral-resources",
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "B-047",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "순위·비중 막대 + 광종 소형 다중",
+      "dedicated": "mineral-resources",
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "B-048",
+      "displayType": "U4",
+      "displayTypeLabel": "시설·기관·인프라 위치",
+      "structure": "S3",
+      "structureLabel": "위치 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "C-001",
+      "displayType": "U6",
+      "displayTypeLabel": "제도·규제·리스크",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": true
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "C-002",
+      "displayType": "U6",
+      "displayTypeLabel": "제도·규제·리스크",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": true
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "C-003",
+      "displayType": "U6",
+      "displayTypeLabel": "제도·규제·리스크",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "권역 태그(6개 권역 지도)",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "C-004",
+      "displayType": "U6",
+      "displayTypeLabel": "제도·규제·리스크",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "보조 T3(경로)",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "C-005",
+      "displayType": "U3",
+      "displayTypeLabel": "기술별 비교",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "C-006",
+      "displayType": "U5",
+      "displayTypeLabel": "사업·재원",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "C-007",
+      "displayType": "U6",
+      "displayTypeLabel": "제도·규제·리스크",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "C-008",
+      "displayType": "U6",
+      "displayTypeLabel": "제도·규제·리스크",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "C-009",
+      "displayType": "U6",
+      "displayTypeLabel": "제도·규제·리스크",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "그룹·접이식 설명",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "✕"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "C-010",
+      "displayType": "U6",
+      "displayTypeLabel": "제도·규제·리스크",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "그룹·접이식 설명",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "✕"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "C-011",
+      "displayType": "U6",
+      "displayTypeLabel": "제도·규제·리스크",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": true,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "✕",
+        "BGD": "✕"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "C-012",
+      "displayType": "U6",
+      "displayTypeLabel": "제도·규제·리스크",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": true,
+        "tech": false,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "✕"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "C-013",
+      "displayType": "U6",
+      "displayTypeLabel": "제도·규제·리스크",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": true,
+        "tech": false,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "적용지역 태그(지도)",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "✕"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "C-014",
+      "displayType": "U6",
+      "displayTypeLabel": "제도·규제·리스크",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "✕",
+        "BGD": "✕"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "C-015",
+      "displayType": "U6",
+      "displayTypeLabel": "제도·규제·리스크",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "제외(명세서 0918)",
+      "variant": "제외(각 요소 원문 링크로 통합)",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 1
+    },
+    {
+      "elementId": "C-016",
+      "displayType": "U2",
+      "displayTypeLabel": "지역·입지",
+      "structure": "S2",
+      "structureLabel": "지역×연도 관측값",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "전원별 범주·기간",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "✕"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "C-017",
+      "displayType": "U6",
+      "displayTypeLabel": "제도·규제·리스크",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "✕",
+        "BGD": "✕"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "C-018",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": true
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "C-019",
+      "displayType": "U6",
+      "displayTypeLabel": "제도·규제·리스크",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": true,
+        "tech": false,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "✕"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "C-020",
+      "displayType": "U0",
+      "displayTypeLabel": "상태 안내",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "제외(사용자 0923)",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "·",
+        "BGD": "·"
+      },
+      "specCaseCount": 0
+    },
+    {
+      "elementId": "C-021",
+      "displayType": "U0",
+      "displayTypeLabel": "상태 안내",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "미입고(상태안내)",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "·",
+        "BGD": "·"
+      },
+      "specCaseCount": 0
+    },
+    {
+      "elementId": "C-022",
+      "displayType": "U6",
+      "displayTypeLabel": "제도·규제·리스크",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "대체(체크리스트)",
+      "variant": "체크리스트 100점 환산(대체)",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "✕"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "C-023",
+      "displayType": "U0",
+      "displayTypeLabel": "상태 안내",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "제외(사용자 0923)",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "·",
+        "BGD": "·"
+      },
+      "specCaseCount": 0
+    },
+    {
+      "elementId": "C-024",
+      "displayType": "U5",
+      "displayTypeLabel": "사업·재원",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "✕"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "C-025",
+      "displayType": "U5",
+      "displayTypeLabel": "사업·재원",
+      "structure": "S3",
+      "structureLabel": "위치 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "점 기하(사업 위치)",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "✕",
+        "BGD": "✕"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "D-001",
+      "displayType": "U3",
+      "displayTypeLabel": "기술별 비교",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "·"
+      },
+      "specCaseCount": 0
+    },
+    {
+      "elementId": "D-002",
+      "displayType": "U3",
+      "displayTypeLabel": "기술별 비교",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "·"
+      },
+      "specCaseCount": 0
+    },
+    {
+      "elementId": "D-003",
+      "displayType": "U3",
+      "displayTypeLabel": "기술별 비교",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "–"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "D-004",
+      "displayType": "U3",
+      "displayTypeLabel": "기술별 비교",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "히트맵(기술×시나리오)",
+      "dedicated": "technology-scenario-heatmap",
+      "coverage": {
+        "VNM": "○",
+        "BGD": "·"
+      },
+      "specCaseCount": 0
+    },
+    {
+      "elementId": "D-005",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "–"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "D-006",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "–"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "D-007",
+      "displayType": "U6",
+      "displayTypeLabel": "제도·규제·리스크",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "–"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "D-008",
+      "displayType": "U5",
+      "displayTypeLabel": "사업·재원",
+      "structure": "S2",
+      "structureLabel": "지역×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "지도: 성별 기후지출(T4)",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "–"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "D-009",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "–"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "D-010",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "min–max 밴드",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "–"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "D-011",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "공여국별 막대(한국 강조)",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "–"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "D-012",
+      "displayType": "U5",
+      "displayTypeLabel": "사업·재원",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "✕",
+        "BGD": "–"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "D-013",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "–"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "D-014",
+      "displayType": "U5",
+      "displayTypeLabel": "사업·재원",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "✕",
+        "BGD": "–"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "D-015",
+      "displayType": "U5",
+      "displayTypeLabel": "사업·재원",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "✕",
+        "BGD": "–"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "D-016",
+      "displayType": "U5",
+      "displayTypeLabel": "사업·재원",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "✕",
+        "BGD": "–"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "D-017",
+      "displayType": "U5",
+      "displayTypeLabel": "사업·재원",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "✕",
+        "BGD": "–"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "D-018",
+      "displayType": "U5",
+      "displayTypeLabel": "사업·재원",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "✕",
+        "BGD": "–"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "D-019",
+      "displayType": "U5",
+      "displayTypeLabel": "사업·재원",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "✕",
+        "BGD": "–"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "D-020",
+      "displayType": "U5",
+      "displayTypeLabel": "사업·재원",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "✕",
+        "BGD": "–"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "D-021",
+      "displayType": "U5",
+      "displayTypeLabel": "사업·재원",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "✕",
+        "BGD": "–"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "D-022",
+      "displayType": "U5",
+      "displayTypeLabel": "사업·재원",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "✕",
+        "BGD": "–"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "D-023",
+      "displayType": "U5",
+      "displayTypeLabel": "사업·재원",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "✕",
+        "BGD": "–"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "D-024",
+      "displayType": "U5",
+      "displayTypeLabel": "사업·재원",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "제외(명세서 0918)",
+      "variant": "제외(원자료 없음)",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "–"
+      },
+      "specCaseCount": 1
+    },
+    {
+      "elementId": "D-025",
+      "displayType": "U5",
+      "displayTypeLabel": "사업·재원",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "–"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "D-026",
+      "displayType": "U5",
+      "displayTypeLabel": "사업·재원",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "–"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "E-001",
+      "displayType": "U4",
+      "displayTypeLabel": "시설·기관·인프라 위치",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "E-002",
+      "displayType": "U4",
+      "displayTypeLabel": "시설·기관·인프라 위치",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "E-003",
+      "displayType": "U4",
+      "displayTypeLabel": "시설·기관·인프라 위치",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "E-004",
+      "displayType": "U4",
+      "displayTypeLabel": "시설·기관·인프라 위치",
+      "structure": "S3",
+      "structureLabel": "위치 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "도시 대표점",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "E-005",
+      "displayType": "U4",
+      "displayTypeLabel": "시설·기관·인프라 위치",
+      "structure": "S3",
+      "structureLabel": "위치 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "도시 대표점",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "E-006",
+      "displayType": "U4",
+      "displayTypeLabel": "시설·기관·인프라 위치",
+      "structure": "S3",
+      "structureLabel": "위치 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "현지/해외 구분·팝업 카드",
+      "dedicated": "investor-network",
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "E-007",
+      "displayType": "U6",
+      "displayTypeLabel": "제도·규제·리스크",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "E-008",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "제외(명세서 0918)",
+      "variant": "제외(검색 기준 미검증)",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 1
+    },
+    {
+      "elementId": "E-009",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "E-010",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "E-011",
+      "displayType": "U0",
+      "displayTypeLabel": "상태 안내",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "제외(사용자 0923)",
+      "variant": "대체 예정(NRI) — 자료 미입고",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "–",
+        "BGD": "–"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "E-012",
+      "displayType": "U1",
+      "displayTypeLabel": "국가 수준·추세",
+      "structure": "S1",
+      "structureLabel": "국가×연도 관측값",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "직군×종사자·임금 표",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "E-013",
+      "displayType": "U0",
+      "displayTypeLabel": "상태 안내",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "제외(사용자 0923)",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "·",
+        "BGD": "·"
+      },
+      "specCaseCount": 0
+    },
+    {
+      "elementId": "E-014",
+      "displayType": "U6",
+      "displayTypeLabel": "제도·규제·리스크",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "E-015",
+      "displayType": "U6",
+      "displayTypeLabel": "제도·규제·리스크",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    },
+    {
+      "elementId": "E-016",
+      "displayType": "U0",
+      "displayTypeLabel": "상태 안내",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "제외(사용자 0923)",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "·",
+        "BGD": "·"
+      },
+      "specCaseCount": 0
+    },
+    {
+      "elementId": "E-017",
+      "displayType": "U0",
+      "displayTypeLabel": "상태 안내",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": false,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "제외(사용자 0923)",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "·",
+        "BGD": "·"
+      },
+      "specCaseCount": 0
+    },
+    {
+      "elementId": "E-018",
+      "displayType": "U4",
+      "displayTypeLabel": "시설·기관·인프라 위치",
+      "structure": "S3",
+      "structureLabel": "위치 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "파이 2개 + 지도 팝업",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "E-019",
+      "displayType": "U4",
+      "displayTypeLabel": "시설·기관·인프라 위치",
+      "structure": "S3",
+      "structureLabel": "위치 개체",
+      "flags": {
+        "region": true,
+        "tech": true,
+        "geometry": true,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 2
+    },
+    {
+      "elementId": "E-020",
+      "displayType": "U5",
+      "displayTypeLabel": "사업·재원",
+      "structure": "S4",
+      "structureLabel": "비공간 개체",
+      "flags": {
+        "region": false,
+        "tech": true,
+        "geometry": false,
+        "categorical": false,
+        "scenario": false
+      },
+      "status": "공개",
+      "variant": "",
+      "dedicated": null,
+      "coverage": {
+        "VNM": "○",
+        "BGD": "○"
+      },
+      "specCaseCount": 3
+    }
+  ]
+}
