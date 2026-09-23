@@ -211,6 +211,8 @@ const PUBLIC_PROPER_NAMES_OR_FRAGMENTS_V134 = Object.freeze([
   "DU",
   "DUC",
   "ECOSIAN",
+  // V153: operator name fragment on A-023 ("Dong Bac. EL JSC").
+  "EL",
   "ENERTEAM",
   "EVERBRIGHT",
   "GIAI",
@@ -277,6 +279,9 @@ const PUBLIC_PROPER_NAMES_OR_FRAGMENTS_V134 = Object.freeze([
 ]);
 
 const OFFICIAL_PROJECT_OR_DOCUMENT_CODES_V134 = Object.freeze([
+  // V153: IFAD project short name on C-008, printed after its Korean name
+  // ("베트남 메콩델타 기후변화적응사업(AMD)").
+  "AMD",
   "APP1-1/",
   "APP1-2/",
   "BTNMT",
@@ -291,6 +296,7 @@ const OFFICIAL_PROJECT_OR_DOCUMENT_CODES_V134 = Object.freeze([
   "NQ-H",
   "QCVN",
   "QD",
+  "QH12",
   "QH13",
   "QH14",
   "STAR-FARM",
@@ -378,6 +384,9 @@ const OFFICIAL_SOURCE_IDENTIFIERS_V134 = Object.freeze([
   "INTL",
   "K4",
   "KLGD",
+  // V153: C-012 prints the source's own missing-reason codes beside their
+  // Korean wording ("[M01·원자료 결측]"), as M02 and M06 already are.
+  "M01",
   "M02",
   "M06",
   "O4",

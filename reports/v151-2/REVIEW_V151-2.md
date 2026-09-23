@@ -82,18 +82,32 @@
 | `audit-vietnam-generated-data-v133`(팩 분할 후) | 15/15 PASS |
 | `npm run finalize:v151` | (아래 §4.1) |
 
-### 4.1 finalize:v151 (전체 게이트 2회 실행 — CLAUDE.md 반복 상한)
+### 4.1 finalize:v151 (전체 게이트 실행 이력 — 1~3차는 이전 세션, 4~6차는 2026-09-23 사용자 승인)
 - **1차**(09:42): `release:v136` 48/52 — `map-tooltip:v132` FAIL(`B033_MAP_REGION_TREND`: 34 단위 선택 시 63 행이 없어 추이 없음). 원인 수정(구성 성·시 행을 기간별 같은 규칙으로 집계 + 키보드 선택 모델 unitCode 전달) → `audit:map-tooltip:v132` 단독 8/8 PASS.
 - **2차**(12:22): `release:v136` — `map-tooltip:v132` PASS, 나머지 11개 감사 PASS, **`map-popup:v133` FAIL 4건**(GVI 팝업 `place`가 6권역명이라 성 이름 정규식 불일치, D-008 통계 대표점(34 집계)이 B-021 권역 fill 위에서 겹침 선택기 미개방). 원인 수정(구성원 기준 겹침 판정 `fillHasMemberV151`, 감사 `place`에 6권역명 허용 — §4.2) → `audit:map-popup:v133` 단독 **12/12 PASS**.
 - 2차에서 `finalize:v136`이 실패해 뒤 단계가 실행되지 않은 항목은 개별 실행: `qa:role-split:v140` **52/52 PASS**, `qa:analysis:v140:baseline` **필수 실패 41 = 기준선 41, 신규 0, 해소 0 → pass**, `audit:boundary-34:v151 --skip-browser` 21 PASS, `audit:boundary-policy:v151-2` 24/24.
 - **3차**(13:03, 사용자 승인): `release:v136` — map-tooltip·map-popup 포함 14개 감사 PASS, **`glossary:v134` FAIL 1건**(`VISIBLE_ACRONYM_WITHOUT_GLOSSARY`: 지형 귀속 문구의 AWS·SRTM·GMTED·ETOPO1). 문구를 "Terrain Tiles(Mapzen · Amazon Web Services 공개 데이터, terrarium 인코딩)"로 바꿔 약어 제거 → `audit:glossary:v134` 단독 재실행에서 다른 실패(`active GVI canvas hover popup was not pixel-visible`)가 드러남: 상세→지도 진입 시 대상 레이어 bbox 자동 맞춤이 63개 자산의 도서(Trường Sa 등, ~115°E)까지 포함해 카메라가 해상으로 밀림(중심 108.6°E). bbox를 국가 지도 범위로 클립하도록 수정(중심 106.5°E 확인) → `audit:glossary:v134` 단독 **16/16 PASS**.
 - 이후 `git rebase origin/main`(#22~#24): 팩은 main의 19개(#23 데이터 수정 반영)를 규칙으로 재분할(26, payload sha 152 불변), 카드 요약 packUrl·map-index(변경 없음)·asset-integrity 재생성, geometry-manifest 양쪽 자산 유지. 재기준 트리: tsc 0 · unit **289/289**(32 suites) · generated-data 15/15 · boundary-policy 24/24.
 - 재기준 트리의 전체 `finalize:v151`은 실행하지 않은 상태(전체 게이트 3회 실행 후 정지 — 반복 상한). merge 전 1회 실행에 사용자 승인 필요.
+- **4차**(2026-09-23 15:0x, 사용자 승인 — merge 전 1회): 재기준 트리에서 `finalize:v151` 실행 → `release:v136` **FAIL 4건**(`V131_ENTITY_CARDS`·`V131_REGRESSION`·`V134_REGRESSION`·`REMAINING_BLOCKERS`). 차단 원인은 `audit:entity-cards:v131`의 E-006 1건으로, **PR #25 변경분이 아니라 main(#23, `0df0348`)에서 들어온 항목**이다(§4.2 참조). `V134_REGRESSION.publicCopy` FAIL은 게이트가 entity-cards에서 중단되며 읽은 2026-09-21자 낡은 리포트(`runtimeFailure: production build missing`)로, 감사가 실제 실행되면 갱신된다.
+- **5차**(2026-09-23 15:5x, 사용자 승인): entity-cards 인식 확장 후 재실행 → `release:v136` 53/57, **`glossary:v134` FAIL 36건**(`VISIBLE_ACRONYM_WITHOUT_GLOSSARY`). 전부 main #22(v153-d3 국제 이니셔티브)·#23(v153-d0 투자자·광물·PPP·기후대) 신규 상세 컴포넌트에서 나온 것으로, ①등록 용어인데 도움말 트리거가 없는 10건(EVN·JSC@A-023, VND·LNG·SSL·ICT@C-012, USGS·REO·MCS@B-046·B-047, SSP@B-002, DFI·VC@E-006) ②미등록 26건이었다. 사용자 지시로 이번 라운드에서 전부 fix-forward(§4.3) → `audit:glossary:v134` 단독 **16/16 PASS**, `entity-cards:v131` 16/16, `public-copy:v134` 13/13, `portfolio-analysis:v132` 12/12, `generic-detail-public:v136-2` 20/20. tsc 0건, unit **289/289**.
 
 ### 4.2 기대값 변경(사유 기록)
 - `scripts/v151/audit-boundary-34-v151.mjs` `SCREEN_VALUE_NOTICE`/`SCREEN_63_NOTICE`: V151의 "값을 34개로 합산하지 않습니다" 상시 고지가 V151-2의 레이어별 집계정책 1줄로 대체됐다. 검사는 정책 문구 또는 대기 안내("집계 규칙")를 허용하도록 확장(값 고지가 사라진 것이 아니라 규칙별 문장으로 구체화). `adminBoundaryV151.test.ts` 동일.
 - `scripts/audit-vietnam-map-popup-v133.mjs` `GVI_HOVER_POPUP.place`: B-021이 6권역 경계에 그려지므로 호버 지명이 성 이름이 아니라 권역명(중부고원 등 6개)이 된다. 정규식에 6권역 한글명을 추가(성 이름 조건은 유지).
+- `scripts/audit-vietnam-entity-cards-v131.mjs` `distributionSummary` 인식 목록: #23(`0df0348`)이 E-006 상세를 전용 렌더러 `InvestorNetworkSummaryV153`으로 교체하면서 `public-entity-card-v131` 카드가 0개가 됐다. 레코드가 사라진 것이 아니라 **베트남 소재 8 / 해외 소재 7을 기관명 `<ol>` 두 벌로 나열하고 선택 기관을 `FacilityCardV153`로 펼치는 형태**로 바뀐 것이므로, V148에서 `power-plant-list-v148`을 추가했던 것과 같은 방식으로 선택자에 `[data-testid="investor-network-v153"]`를 추가했다(기대값 0 자체는 유지). 단독 재실행 **16/16 PASS**.
+- `scripts/audit-vietnam-duplicate-copy-v136.mjs` 붙은 단어 판정: 이 검사는 "인접한 두 인라인 요소가 붙어 한 단어가 두 번 보이는 렌더링 결함"을 잡는 것이 목적이라고 스스로 적고 있다. C-012 사실 행(`.d153-facts li`)은 `display:grid`에 120~220px 라벨 열 + 값 열, 간격 10px(좁은 화면에서는 줄바꿈)이라 "명칭 현행 통합본 | 통합본 제123/VBHN-VPQH호"는 라벨과 값 두 칸으로 읽힌다. 그래서 자식이 간격 있는 grid·flex 칸으로 배치된 컨테이너는 판정에서 제외했다(기대값 0은 유지, 인라인 런만 판정). 원자료의 낱말 반복은 그대로 두었다.
 - `review-runtime-v150.mjs`(게이트 밖 리뷰 러너): 배경 체크박스 → kind 라디오, 레이어 id 접두 `cdp-bd-v151-`, 라벨 레이어 4개로 갱신.
+
+### 4.3 V153 상세 화면 용어 처리(main #22·#23 기인, 이번 라운드 fix-forward)
+- **화면 수정(도움말 트리거 적용)**: `PowerPlantRegistrySummaryV138`(소유·운영 열), `PppProcurementSummaryV153`(설명·비고·부문 열), `MineralResourceSummaryV153`(도입문·단위 열·미수록 목록·비고·표 캡션), `ClimateZoneSummaryV153`(주석), `PolicyDescriptionV153`(정식 명칭·약칭 괄호), `InvestorNetworkSummaryV153`(기관 유형).
+- **용어집 등록 12건**: GFANZ·IPG·NYDF·IUCN·IIED·IGES·ICO·FIA(C-008 이니셔티브), GRDP(C-009·C-010), MCS(B-046·B-047), PE·LP(E-006). COP 항목에 별칭 `COP21`·`COP23` 추가. 모두 발행 기관이 공표한 명칭만 적었다.
+- **MPI**: 이미 `mpi-ministry`/`mpi-index`로 등록돼 문맥으로 구분하는 용어다. 새 항목을 만들지 않고 `resolveMpiV134`의 부처 문맥에 "재무부(MoF)로 통합" 형태를 추가(괄호 있는 표기)했고, 단위 테스트에 해당 문장을 추가했다. 맨 MPI가 null이어야 하는 기존 기대값은 그대로다.
+- **허용목록 4건**(`public-non-glossary-allowlist-v134.mjs`): QH12(문서기호, QH13·QH14와 동일 범주), AMD(C-008에 한글 사업명이 앞에 있는 IFAD 사업 약칭), EL(A-023 회사명 조각 "Dong Bac. EL JSC"), M01(C-012가 한글 사유와 함께 찍는 원천 결측코드, M02·M06과 동일 범주).
+- **원시 코드 노출 제거**: E-006이 본부 국가를 ISO3 원문(`본부 CHE`)으로 찍던 것을 한글 국가명으로 바꾸고(데이터에 있는 7개 코드만 명시, 미등록 코드는 원문 유지), 기관 유형의 원문 구분자 `PE;VC`를 `PE · VC`로 읽게 했다.
+- **`원자료 표` 문구 2건**(`generic-detail-public:v136-2` `PUBLIC_RAW_TABLE_TERM_COUNT`): E-006 차트 제목 "원자료 표기"→"원문 표기 기준", C-008 안내문 "원자료 표와 별개로"→"원자료와 별개로". 게이트 금지어 목록은 바꾸지 않았다.
+- **중첩 버튼 3건**(`screen-usability:v136-4` `NESTED_INTERACTIVE_CONTROL_COUNT`): E-006 기관 선택 버튼 안의 기관명이 용어 도움말 버튼을 품고 있었다(ADB·EAAIF·IFC). 버튼 안에서는 트리거를 쓸 수 없으므로 같은 파일의 `PublicTermExpandedTextV134`(설명을 자리에서 밝히는 비대화형 표기)로 바꿨다. 세 건 모두 "Asian Development Bank (ADB)"처럼 원문이 이미 괄호로 풀어 쓴 형태라 보이는 문구는 그대로다.
+- 사라졌던 V151-2 지도 출처 각주 용어 6건(MOEJ·QĐ-TTg·NĐ-CP·QH15·CRU TS·HydroSHEDS DIR)과 `documentTimelineBaselineV153.test.tsx`의 정규화 확장은 rebase 과정에서 커밋되지 않은 채 작업 트리에만 있었다(`git log -S` 확인). 이번 커밋에 함께 담았다.
 
 ## 5. 미완료와 사유
 | 항목 | 사유 |

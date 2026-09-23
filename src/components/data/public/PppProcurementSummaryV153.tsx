@@ -42,8 +42,8 @@ export default function PppProcurementSummaryV153({ entities, indicators }: Prop
                     {fact.value ? <PublicTermTextV134 text={fact.value} /> : fact.note ? "원자료 결측" : "값 미기재"}
                     {fact.time ? ` (${fact.time})` : ""}
                     {href ? <> · <a href={href} target="_blank" rel="noreferrer">출처</a></> : null}
-                    {fact.description ? <small>{fact.description}</small> : null}
-                    {fact.note ? <small>{fact.note}</small> : null}
+                    {fact.description ? <small><PublicTermTextV134 text={fact.description} /></small> : null}
+                    {fact.note ? <small><PublicTermTextV134 text={fact.note} /></small> : null}
                   </span>
                 </li>
               );
@@ -66,7 +66,7 @@ export default function PppProcurementSummaryV153({ entities, indicators }: Prop
                     <th scope="row">{row.region}{row.region !== row.regionSource ? `(${row.regionSource})` : ""}</th>
                     <td className="num">{row.count === null ? "—" : row.count.toLocaleString("ko-KR")}</td>
                     <td>{row.period || "—"}</td>
-                    <td>{row.sectors || "—"}</td>
+                    <td><PublicTermTextV134 text={row.sectors || "—"} /></td>
                     <td>{row.status || "—"}</td>
                   </tr>
                 ))}

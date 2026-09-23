@@ -56,7 +56,8 @@ export function PolicyDescriptionCardV153({ entry, headingLevel = "p" }: { entry
       </p>
       <Heading className="pdc153__title">
         <strong><PublicTermTextV134 text={entry.title} /></strong>
-        {formal && <span className="pdc153__formal"> ({formal})</span>}
+        {/* The formal line carries the short name, so it needs the same help trigger as the title (V153). */}
+        {formal && <span className="pdc153__formal"> (<PublicTermTextV134 text={formal} />)</span>}
       </Heading>
       {entry.status === "verified" && entry.description.length > 0 ? (
         <ul className="pdc153__points">
@@ -99,7 +100,7 @@ export function InitiativeDescriptionsV153({ elementId }: { elementId: string })
     <section className="pps132-distribution pdc153-list" data-testid="initiative-descriptions-v153">
       <h5>이니셔티브·협약 설명 · {entries.length.toLocaleString("ko-KR")}건 (플랫폼 편집)</h5>
       <p className="pps132-note">
-        각 이니셔티브가 무엇인지 설명을 먼저 두고 정식 명칭·약칭은 괄호에 적습니다. 원자료 표와 별개로 플랫폼이 공식 출처를 읽고 작성한 문장이며, 출처 링크를 함께 둡니다.
+        각 이니셔티브가 무엇인지 설명을 먼저 두고 정식 명칭·약칭은 괄호에 적습니다. 원자료와 별개로 플랫폼이 공식 출처를 읽고 작성한 문장이며, 출처 링크를 함께 둡니다.
         {verified < entries.length && ` 출처 확인 전 ${(entries.length - verified).toLocaleString("ko-KR")}건은 "설명 준비 중"으로 둡니다.`}
       </p>
       <div className="pdc153-grid">

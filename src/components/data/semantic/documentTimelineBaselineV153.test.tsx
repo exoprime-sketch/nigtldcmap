@@ -42,10 +42,23 @@ function renderTimeline(elementId: string): HTMLElement {
   return container.querySelector<HTMLElement>('[data-testid="document-timeline-v140"]')!;
 }
 
+/**
+ * Glossary terms defined in V151-2, unwrapped before hashing. The document
+ * numbers printed by this timeline (896/QD-TTg, 06/2022/ND-CP, 61/2024/QH15)
+ * gained a term button then; the baseline measures the renderer, so the button
+ * is peeled back to its text. Terms that already carried help when the baseline
+ * was taken (MONRE, MAE, FIT ...) stay wrapped and are still compared.
+ */
+const TERMS_ADDED_AFTER_BASELINE_V151_2 = ["qd-ttg", "nd-cp", "qh15", "moej", "cru-ts", "hydrosheds-dir"];
+
 /** The entry with the V153 card removed: what the pre-V153 renderer produced. */
 function withoutDescription(entry: Element): string {
   const clone = entry.cloneNode(true) as Element;
   clone.querySelectorAll('[data-testid="policy-description-v153"]').forEach((node) => node.remove());
+  clone
+    .querySelectorAll(TERMS_ADDED_AFTER_BASELINE_V151_2.map((id) => `[data-public-term-v134="${id}"]`).join(","))
+    .forEach((node) => node.replaceWith(document.createTextNode(node.textContent ?? "")));
+  clone.normalize();
   return clone.outerHTML;
 }
 
