@@ -52,6 +52,19 @@ function duplicateExpression() {
     // 하트하트, for example - is real content, not a rendering fault.
     document.querySelectorAll('h1, h2, h3, h4, strong, button, a, li, dt, dd, span, p').forEach((node) => {
       if (!visible(node)) return;
+      // A grid or flex row with a gap lays its children out as separate cells:
+      // the C-012 fact row reads "명칭 현행 통합본 | 통합본 제123/VBHN-VPQH호"
+      // as a label beside its value - two columns (one per line on a phone),
+      // never one word glued to itself. Only inline runs can glue (V153).
+      const rowStyle = getComputedStyle(node);
+      const cellGap = Math.max(
+        parseFloat(rowStyle.columnGap) || 0,
+        parseFloat(rowStyle.rowGap) || 0
+      );
+      const laidOutInCells =
+        ['grid', 'flex', 'inline-grid', 'inline-flex'].includes(rowStyle.display) &&
+        cellGap > 0;
+      if (laidOutInCells) return;
       const parts = [...node.children]
         .filter((child) => visible(child))
         .map((child) => clean(child.textContent))

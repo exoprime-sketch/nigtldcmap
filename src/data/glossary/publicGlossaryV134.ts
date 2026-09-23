@@ -574,7 +574,7 @@ const CATALOG_PUBLIC_GLOSSARY_V134: PublicGlossaryEntryV134[] = [
   seedV134({ id: "ch4", term: "CH₄", englishName: "Methane", koreanName: "메탄", definition: "이산화탄소보다 온난화 영향이 큰 주요 온실가스입니다.", category: "climate-policy", aliases: ["CH4"] }),
   seedV134({ id: "hfc", term: "HFCs", englishName: "Hydrofluorocarbons", koreanName: "수소불화탄소", definition: "냉매 등에 사용되며 종류에 따라 온실효과가 큰 합성 온실가스 군입니다.", category: "climate-policy", aliases: ["HFC", "HFC-23", "HFC-125", "HFC-227ea"] }),
   seedV134({ id: "co2", term: "CO₂", englishName: "Carbon dioxide", koreanName: "이산화탄소", definition: "화석연료 연소와 토지이용 변화 등에서 배출되는 대표적인 온실가스입니다.", category: "climate-policy", aliases: ["CO2"] }),
-  seedV134({ id: "cop", term: "COP", englishName: "Conference of the Parties", koreanName: "당사국총회", definition: "유엔기후변화협약 당사국들이 기후정책과 이행을 논의하는 총회입니다.", category: "climate-policy", aliases: ["COP26", "COP27", "COP28", "COP29", "COP30"] }),
+  seedV134({ id: "cop", term: "COP", englishName: "Conference of the Parties", koreanName: "당사국총회", definition: "유엔기후변화협약 당사국들이 기후정책과 이행을 논의하는 총회입니다.", category: "climate-policy", aliases: ["COP21", "COP23", "COP26", "COP27", "COP28", "COP29", "COP30"] }),
   seedV134({ id: "daly", term: "DALY", englishName: "Disability-Adjusted Life Year", koreanName: "장애보정생존연수", definition: "조기사망과 질병·장애로 잃은 건강수명을 합산한 보건지표입니다.", category: "economy" }),
   seedV134({ id: "drr", term: "DRR", englishName: "Disaster Risk Reduction", koreanName: "재난위험경감", definition: "재난의 노출·취약성·피해를 줄이기 위한 정책과 활동입니다.", category: "climate-risk" }),
   seedV134({ id: "evn", term: "EVN", englishName: "Vietnam Electricity", koreanName: "베트남전력공사", definition: "베트남의 발전·송전·배전 체계를 담당하는 국영 전력기업입니다.", category: "organisation" }),
@@ -1101,6 +1101,35 @@ const CATALOG_PUBLIC_GLOSSARY_V134: PublicGlossaryEntryV134[] = [
   seedV134({ id: "ssl", term: "SSL", englishName: "Secure Sockets Layer", koreanName: "보안소켓계층", definition: "웹 통신을 암호화하는 인증서 규격으로, 오류가 나면 접속이 차단됩니다.", category: "data-format" }),
   seedV134({ id: "cod-ab", term: "COD-AB", englishName: "Common Operational Datasets - Administrative Boundaries", koreanName: "공통 운영 데이터셋 행정경계", definition: "유엔이 인도적 대응을 위해 표준화해 공개하는 행정경계 데이터셋입니다.", category: "data-format" }),
   seedV134({ id: "vrod", term: "VROD", englishName: "Voluntary Registry Offsets Database", koreanName: "자발적 등록부 상쇄 데이터베이스", definition: "여러 자발적 탄소시장 등록부의 사업 정보를 통합해 공개하는 데이터베이스입니다.", category: "data-format" }),
+  // V151-2: map source footnotes still printed these without help text. Only
+  // expansions documented by the issuing body are defined here. DIR and TS are
+  // never defined on their own - they carry meaning only inside the dataset name
+  // ("HydroSHEDS DIR", "CRU TS"), which the longest-alias-first match wraps.
+  // STADT and ENERGYDATA.INFO stay as the source prints them: they are proper
+  // names, not abbreviations to expand.
+  seedV134({ id: "moej", term: "MOEJ", englishName: "Ministry of the Environment, Government of Japan", koreanName: "일본 환경성", definition: "일본의 환경·기후변화 정책을 담당하는 중앙부처이며, 공동크레딧제도(JCM)의 일본 측 등록부를 운영합니다.", category: "organisation" }),
+  seedV134({ id: "qd-ttg", term: "QĐ-TTg", englishName: "Quyết định của Thủ tướng Chính phủ (Decision of the Prime Minister)", koreanName: "베트남 총리 결정(문서기호)", definition: "베트남 총리가 발급한 결정문에 붙는 문서기호입니다. 앞의 번호와 연도가 결정문을 가리키며, 전력·에너지 계획 등이 이 형식으로 공포됩니다.", category: "climate-policy" }),
+  seedV134({ id: "nd-cp", term: "NĐ-CP", englishName: "Nghị định của Chính phủ (Decree of the Government)", koreanName: "베트남 정부 시행령(문서기호)", definition: "베트남 정부가 공포한 시행령에 붙는 문서기호입니다. 법률의 시행에 필요한 세부 사항을 정하며, 앞의 번호와 연도가 시행령을 가리킵니다.", category: "climate-policy" }),
+  seedV134({ id: "qh15", term: "QH15", englishName: "Quốc hội khóa XV (15th National Assembly)", koreanName: "베트남 제15기 국회(문서기호)", definition: "베트남 국회가 의결한 결의·법률에 붙는 문서기호로, 제15기(2021~2026년) 국회에서 통과된 문서임을 뜻합니다.", category: "climate-policy" }),
+  seedV134({ id: "cru-ts", term: "CRU TS", englishName: "Climatic Research Unit Time-Series", koreanName: "기후연구소 시계열 격자자료", definition: "영국 이스트앵글리아대학교 기후연구소가 지상 관측을 격자로 내삽해 만든 월 단위 기후 시계열 자료입니다.", category: "climate-risk" }),
+  seedV134({ id: "hydrosheds-dir", term: "HydroSHEDS DIR", englishName: "HydroSHEDS Drainage Direction grid", koreanName: "하이드로셰즈 유향 격자", definition: "격자마다 물이 흘러가는 방향을 기록한 HydroSHEDS 자료층으로, 하천 경로와 유역 구획을 계산하는 데 쓰입니다.", category: "climate-risk" }),
+  // V153 detail screens print these in their own text: the international
+  // initiatives on C-008, the regional economy wording on C-009/C-010, the
+  // PPP institutions on C-012, the USGS publication behind B-046/B-047 and
+  // the investor types on E-006. Only expansions the issuing body itself
+  // publishes are defined here.
+  seedV134({ id: "gfanz", term: "GFANZ", englishName: "Glasgow Financial Alliance for Net Zero", koreanName: "글래스고 넷제로 금융연합", definition: "포트폴리오를 2050년 넷제로에 맞추겠다고 선언한 은행·자산운용사·보험사 등이 참여하는 국제 금융연합입니다.", category: "development-finance" }),
+  seedV134({ id: "ipg", term: "IPG", englishName: "International Partners Group", koreanName: "국제파트너그룹", definition: "공정에너지전환 파트너십(JETP)에서 공동 재원을 약속한 공여국과 유럽연합의 협의체입니다.", category: "development-finance" }),
+  seedV134({ id: "nydf", term: "NYDF", englishName: "New York Declaration on Forests", koreanName: "뉴욕 산림선언", definition: "산림 훼손을 줄이고 복원을 늘리겠다는 자발적 국제 선언으로, 정부·기업·시민사회가 서명했습니다.", category: "climate-policy" }),
+  seedV134({ id: "iucn", term: "IUCN", englishName: "International Union for Conservation of Nature", koreanName: "국제자연보전연맹", definition: "정부와 민간단체가 함께 참여하는 자연보전 국제기구로, 멸종위기종 적색목록과 보호지역 기준을 발간합니다.", category: "organisation" }),
+  seedV134({ id: "iied", term: "IIED", englishName: "International Institute for Environment and Development", koreanName: "국제환경개발연구소", definition: "영국에 본부를 둔 환경·개발 연구기관으로, 기후적응과 토지·산림 거버넌스 연구를 수행합니다.", category: "organisation" }),
+  seedV134({ id: "iges", term: "IGES", englishName: "Institute for Global Environmental Strategies", koreanName: "지구환경전략연구기관", definition: "일본에 본부를 둔 환경정책 연구기관으로, 파리협정 제6조 이행을 지원하는 센터를 운영합니다.", category: "organisation" }),
+  seedV134({ id: "ico", term: "ICO", englishName: "International Coffee Organization", koreanName: "국제커피기구", definition: "커피 생산국과 소비국이 함께 참여하는 국제기구로, 커피 통계와 지속가능성 협의체를 운영합니다.", category: "organisation" }),
+  seedV134({ id: "fia", term: "FIA", englishName: "Fédération Internationale de l'Automobile", koreanName: "국제자동차연맹", definition: "국제 자동차·모터스포츠 연맹이며, 산하 재단이 연료효율·교통안전 국제 이니셔티브를 지원합니다.", category: "organisation" }),
+  seedV134({ id: "grdp", term: "GRDP", englishName: "Gross Regional Domestic Product", koreanName: "지역내총생산", definition: "한 지역에서 일정 기간 새로 만들어진 부가가치의 합으로, 지역 단위 경제 규모를 나타냅니다.", category: "economy" }),
+  seedV134({ id: "usgs-mcs", term: "MCS", englishName: "Mineral Commodity Summaries", koreanName: "광물자원 요약보고서", definition: "미국 지질조사국(USGS)이 해마다 펴내는 광종별 생산량·매장량 요약 간행물입니다.", category: "data-format" }),
+  seedV134({ id: "private-equity", term: "PE", englishName: "Private Equity", koreanName: "사모펀드", definition: "비상장 기업의 지분에 투자해 기업가치를 높인 뒤 회수하는 투자방식, 또는 그런 투자를 하는 운용사를 가리킵니다.", category: "trade-investment" }),
+  seedV134({ id: "limited-partner", term: "LP", englishName: "Limited Partner", koreanName: "유한책임출자자", definition: "펀드에 자금을 대되 운용에는 관여하지 않고 출자한 금액 한도로만 책임을 지는 투자자입니다.", category: "trade-investment" }),
 ];
 
 const LEGACY_CATEGORY_BY_TERM_V134: Partial<

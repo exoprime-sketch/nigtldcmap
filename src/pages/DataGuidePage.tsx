@@ -193,10 +193,23 @@ export default function DataGuidePage({ onNavigate }: DataGuidePageProps) {
           <h2>지도 이용 시 참고사항</h2>
           <p>
             지도의 경계선은 2025-07-01 시행 34개 성·시가 기본이며, 개편 전
-            63개 성·시로 바꿔 볼 수 있습니다. 지역별 자료 값은 원자료가 발표한
-            개편 전 63개 성·시 기준 그대로이며 34개로 합산하지 않습니다. 결측
-            지역을 0으로 표시하지 않습니다. 송전망 위치는 국가 단위 분포
-            확인용이며 정밀 설계나 시설 경계 판정에는 적합하지 않습니다.
+            63개 성·시로 바꿔 볼 수 있습니다. 원자료는 대부분 개편 전 63개
+            성·시 기준으로 발표돼 있어, 34개 경계에서는 자료마다 정해진 한
+            가지 규칙(합계·면적가중평균·구성 범위만 표시·원자료가 34개 기준
+            등)으로 값을 보여 주고 그 규칙을 지도에 함께 표시합니다. 63개로
+            (개편 전) 바꾸면 원자료 값을 그대로 봅니다. 결측 지역을 0으로 표시하지
+            않습니다. 송전망 위치는 국가 단위 분포 확인용이며 정밀 설계나 시설
+            경계 판정에는 적합하지 않습니다.
+          </p>
+          <p>
+            배경지도는 지형(Terrain Tiles — Mapzen · Amazon Web Services 공개
+            데이터, Natural Earth 음영기복, OpenStreetMap 하천·도로·지명 via
+            OpenFreeMap), 위성(Esri
+            World Imagery — Esri, Maxar, Earthstar Geographics), 도로·지명(©
+            OpenStreetMap contributors, ODbL · OpenFreeMap Liberty) 중에서
+            고를 수 있으며, 타일을 받지 못하면 배경 없이 데이터와 경계만
+            표시합니다. 지도를 움직인 위치는 주소의 view 값으로 저장되어
+            새로고침이나 공유 링크에서 그대로 열립니다.
           </p>
         </section>
 

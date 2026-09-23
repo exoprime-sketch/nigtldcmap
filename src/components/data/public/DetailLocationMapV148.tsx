@@ -15,10 +15,13 @@ import "./detail-location-map-v148.css";
 import { displayUnitV150 } from "../../../data/visualization/unitDisplayV150";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import { publicAssetUrlV128 } from "../../../utils/publicAssetUrlV128";
+import { COUNTRY_OUTLINE_Z5_PATH_V151 } from "../../../data/map/adminBoundaryV151";
 
-type Runtime = { layer: CountryMapLayerV122; base: VietnamMapGeoJsonV124; geometry?: VietnamMapGeoJsonV124; data?: VietnamSpatialLayerAssetV124; records: CountryEntityV122[] };
+type Runtime = { layer: CountryMapLayerV122; base: VietnamMapGeoJsonV124; outline: VietnamMapGeoJsonV124 | null; geometry?: VietnamMapGeoJsonV124; data?: VietnamSpatialLayerAssetV124; records: CountryEntityV122[] };
 // Resolved against PUBLIC_URL so the GitHub Pages subpath build finds it too.
 const BASE = publicAssetUrlV128("data/vietnam/v2/geometry/vnm-adm1-63.geojson");
+// V151-2: the national outline (63 provinces dissolved, display simplification) as the coast stroke.
+const OUTLINE = publicAssetUrlV128(COUNTRY_OUTLINE_Z5_PATH_V151);
 const EMPTY_RECORDS: CountryEntityV122[] = [];
 interface Props {
   compact?: boolean;
@@ -44,13 +47,14 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
     void loadCountryMapIndexV122(countryIso3).then(async (layers) => {
       const layer = layers.find((l) => l.elementId === elementId && l.enabled !== false);
       if (!layer) { if (!cancelled) setUnavailable(true); return; }
-      const [base, geometry, data, records] = await Promise.all([
+      const [base, outline, geometry, data, records] = await Promise.all([
         loadVietnamSpatialGeoJsonV124(BASE),
+        loadVietnamSpatialGeoJsonV124(OUTLINE).catch(() => null),
         layer.geometryUrl ? loadVietnamSpatialGeoJsonV124(layer.geometryUrl) : Promise.resolve(undefined),
         layer.dataUrl ? loadVietnamSpatialLayerV124(layer.dataUrl) : Promise.resolve(undefined),
         layer.geometryUrl ? Promise.resolve(EMPTY_RECORDS) : loadCountryElementEntitiesV122(countryIso3, elementId).then((r) => r.records),
       ]);
-      if (!cancelled) setRuntime({ layer, base, geometry, data, records });
+      if (!cancelled) setRuntime({ layer, base, outline, geometry, data, records });
     }).catch(() => { if (!cancelled) setError(true); });
     return () => { cancelled = true; };
   }, [elementId, countryIso3, retry]);
@@ -111,6 +115,7 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
       <figure>
         <svg viewBox={`0 0 ${compact ? 360 : 460} 400`} role="img" aria-label={`${layer.publicShortTitle} ${pointPeriod} ${data ? "지역 분포" : "위치"}. 지역·대상 선택 목록에서도 정보를 확인할 수 있습니다.`}>
           <g fill="#f7f5e9" stroke="#778d89" strokeWidth="0.9">{base.features.map((f, i) => <path key={String(f.id || i)} d={geometryPathV148(f.geometry, model.project)} fillRule="evenodd" />)}</g>
+          {runtime.outline && <g fill="none" stroke="#3f5a52" strokeWidth="1.2" pointerEvents="none" data-testid="detail-map148-country-outline">{runtime.outline.features.map((f, i) => <path key={String(f.id || i)} d={geometryPathV148(f.geometry, model.project)} fillRule="evenodd" />)}</g>}
           {geometry && model.features.map((f, i) => {
             const id = data ? String(f.properties.adm1Code || "") : String(f.id ?? i);
             const v = model.byCode.get(id);
@@ -139,6 +144,6 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
     </div>
     {compact && ["B-021", "C-019", "C-022"].includes(elementId) && <p className="detail-map148-note">{elementId === "B-021" ? "6개 권역의 값입니다. 성·시별 독립값이 아닙니다." : "개편 후 34개 지역의 값을 개편 전 경계에 대응한 지도입니다."}</p>}
     {compact && ["B-023", "B-025", "B-028"].includes(elementId) && <p className="detail-map148-note">관측지점 또는 대표 위치이며, 유역 경계가 아닙니다.</p>}
-    <footer>지도자료: <PublicTermTextV134 text={publicSourceOrganizationV136_1(sliceSources.join(" · ") || layer.sourceOrganizations?.join(" · ") || layer.source) || "자료정보의 제공기관 참조"} /> · 경계: <a href="https://www.geoboundaries.org/" target="_blank" rel="noreferrer">geoBoundaries</a> (개편 전 63개 성·시, CC BY 4.0)</footer>
+    <footer>지도자료: <PublicTermTextV134 text={publicSourceOrganizationV136_1(sliceSources.join(" · ") || layer.sourceOrganizations?.join(" · ") || layer.source) || "자료정보의 제공기관 참조"} /> · 경계: <a href="https://www.geoboundaries.org/" target="_blank" rel="noreferrer">geoBoundaries</a> (개편 전 63개 성·시 · 국가 외곽선은 63개 병합, CC BY 4.0)</footer>
   </section>;
 }

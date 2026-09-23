@@ -60,6 +60,11 @@ RUNTIME_VERSION = "v124-gzip-json-envelope-v1"
 GENERATED_AT = "2026-08-27T00:00:00Z"
 PACK_ELEMENT_COUNT = 8
 ENVELOPE_CHUNK_SIZE = 8192
+# An element whose own serialized payload is at least this large is pulled out
+# of its 8-element slice into a solo pack (see `_plan_packs`), so a single
+# unusually large element does not force every element sharing its slice into
+# the same oversized download.
+SOLO_PACK_CONTENT_BYTES = 8 * 1024 * 1024
 SOURCE_PACKAGE_NAME = "vietnam-data(4).zip"
 # Elements whose map assets are assembled by tools/vietnam_spatial. Their
 # builders address values by indicator id, so an element here cannot be
@@ -1557,6 +1562,41 @@ def _all_asset_urls(value: Any) -> Iterable[str]:
             yield from _all_asset_urls(item)
 
 
+def _plan_packs(
+    sorted_ids: list[str], payloads: Mapping[str, Any]
+) -> list[tuple[str, list[str]]]:
+    """Group element ids into the packs `build()` will envelope and write.
+
+    Slices are the same 8-element groups the layout has always used, numbered
+    in slice order (`vnm-v124-pack-{n:03d}`); that numbering never changes
+    even when a slice loses elements below. An element whose own serialized
+    payload (the exact bytes `_envelope` would dump for it alone, via
+    `_json_bytes(payload, pretty=False)`) exceeds `SOLO_PACK_CONTENT_BYTES`
+    is pulled out of its slice into its own pack —
+    `f"{slice_shard_id}-{element_id.lower()}"` — placed immediately after that
+    slice's pack, so one unusually large element does not bloat the download
+    for every other element that happens to share its slice.
+    """
+
+    plan: list[tuple[str, list[str]]] = []
+    for shard_number, start in enumerate(range(0, len(sorted_ids), PACK_ELEMENT_COUNT), start=1):
+        slice_ids = sorted_ids[start : start + PACK_ELEMENT_COUNT]
+        slice_shard_id = f"vnm-v124-pack-{shard_number:03d}"
+        remaining_ids: list[str] = []
+        solo_ids: list[str] = []
+        for element_id in slice_ids:
+            content = _json_bytes(payloads[element_id], pretty=False)
+            if len(content) > SOLO_PACK_CONTENT_BYTES:
+                solo_ids.append(element_id)
+            else:
+                remaining_ids.append(element_id)
+        if remaining_ids:
+            plan.append((slice_shard_id, remaining_ids))
+        for element_id in solo_ids:
+            plan.append((f"{slice_shard_id}-{element_id.lower()}", [element_id]))
+    return plan
+
+
 def build(repo: pathlib.Path) -> dict[str, Any]:
     # Three env overrides let the final source be built into a staging tree and
     # diffed before anything under public/ is touched. Unset, every one of them
@@ -2306,13 +2346,13 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
                 asset["url"] = row["url"]
                 asset["repositoryUrl"] = row["repositoryUrl"]
 
-    # Element shards: exactly 19 deterministic packs of eight framework elements.
+    # Element shards: deterministic 8-element packs, except an element whose
+    # own payload exceeds SOLO_PACK_CONTENT_BYTES is split into its own pack
+    # right after its slice (see `_plan_packs`).
     bundle_elements: dict[str, Any] = {}
     bundle_packs: list[dict[str, Any]] = []
     sorted_ids = sorted(payloads)
-    for shard_number, start in enumerate(range(0, len(sorted_ids), PACK_ELEMENT_COUNT), start=1):
-        element_ids = sorted_ids[start : start + PACK_ELEMENT_COUNT]
-        shard_id = f"vnm-v124-pack-{shard_number:03d}"
+    for shard_id, element_ids in _plan_packs(sorted_ids, payloads):
         shard_payload = {
             "schemaVersion": SCHEMA_VERSION,
             "runtimeVersion": RUNTIME_VERSION,

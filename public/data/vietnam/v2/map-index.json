@@ -236,7 +236,19 @@
         "evidence": "원천 좌표 1,889건(WRI 236 + OSM 1,653); 좌표 없는 74행 미표시",
         "representativeItem": "발전소 위치 1,889곳"
       },
-      "periodLabel": "WRI GPPD 2021 · OSM 2026 추출"
+      "periodLabel": "WRI GPPD 2021 · OSM 2026 추출",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "none",
+        "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "locationsUrl": "/data/vietnam/v2/spatial/locations/a-023.json",
+      "locationCounts": {
+        "located": 1870,
+        "outside": 19,
+        "withoutCoordinate": 74
+      }
     },
     {
       "accuracyNotice": "Digitized from a georeferenced PDF. The source warns of isolated horizontal and vertical displacement of 2–10 km; use only for approximate visualization, not high-accuracy engineering or routing.",
@@ -415,6 +427,12 @@
         "limitation": "선로 교차는 전기적 접속을 뜻하지 않음. 변전소·접속 정보는 원천에 없음.",
         "evidence": "지도 606구간은 World Bank 2016 geometry, 상세 722행은 PDP8 계획선로 116행 포함",
         "representativeItem": "송전 선로 606구간"
+      },
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "none",
+        "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
+        "valueSystem": "pre-2025-63"
       }
     },
     {
@@ -556,7 +574,19 @@
         "key": "facilityType",
         "approxPattern": "후보|잠재"
       },
-      "memberRowCount": 3
+      "memberRowCount": 3,
+      "locationsUrl": "/data/vietnam/v2/spatial/locations/a-025.json",
+      "locationCounts": {
+        "located": 0,
+        "outside": 3,
+        "withoutCoordinate": 2
+      },
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "none",
+        "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      }
     },
     {
       "category": "기후·위험",
@@ -589,12 +619,18 @@
       "spatialStatus": "ready",
       "mapTargetV138": {
         "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
-        "displaySpatialUnit": "성·시 경계(개편 전 63)",
+        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
         "limitation": "지도는 5년 간격 연도만 제공. 전체 연도는 상세 화면 추이와 다운로드에서 확인.",
         "evidence": "성·시 63개 × 연도, GADM GID_1 키를 검증된 63개 경계에 이름 대응표로 연결",
         "representativeItem": "성·시별 연평균 기온(최신연도)"
       },
-      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다.",
+      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 값은 원자료의 개편 전 63개 성·시 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "area-weighted-mean",
+        "note": "34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
       "active": true,
       "aggregationLevel": "admin1",
       "assetRef": {
@@ -623,17 +659,17 @@
       "latestYear": "2025",
       "layerId": "vnm-v138-b-003",
       "legend": {
-        "note": "단위 °C · 결측 0개 성·시",
+        "note": "단위 °C · 결측 0개 성·시(개편 전 63개 기준)",
         "title": "연평균 기온"
       },
       "mapBenefit": "기온(평균·최고·최저)·연강수량, 연도(1901~2025, 5년 간격 + 최신)",
       "mapMode": "choropleth",
       "missingRegions": [],
-      "publicSpatialNotice": "개편 전 63개 성·시 통계 경계를 사용합니다.",
+      "publicSpatialNotice": "값은 개편 전 63개 성·시 통계 경계 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
       "renderer": "admin1-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "2025",
-      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개",
+      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개(34개 경계에서는 구성 성·시 집계값)",
       "spatialLimitation": "지도는 5년 간격 연도만 제공. 전체 연도는 상세 화면 추이와 다운로드에서 확인.",
       "spatialScopeType": "admin1",
       "selectors": {
@@ -869,12 +905,18 @@
       "spatialStatus": "ready",
       "mapTargetV138": {
         "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
-        "displaySpatialUnit": "성·시 경계(개편 전 63)",
+        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
         "limitation": "과거 모형값(historical)은 관측이 아님. 지역 간 분포와 모형 불확실성은 별개(원천은 앙상블 중앙값 1개 계열만 제공).",
         "evidence": "성·시 63개 × 6 시나리오 × 연도(31,185행)",
         "representativeItem": "SSP2-4.5 연평균 기온 2050"
       },
-      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다.",
+      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 값은 원자료의 개편 전 63개 성·시 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "area-weighted-mean",
+        "note": "34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
       "active": true,
       "aggregationLevel": "admin1",
       "assetRef": {
@@ -903,17 +945,17 @@
       "latestYear": "2100",
       "layerId": "vnm-v138-b-004",
       "legend": {
-        "note": "단위 °C · 결측 0개 성·시",
+        "note": "단위 °C · 결측 0개 성·시(개편 전 63개 기준)",
         "title": "연평균 기온 · SSP2-4.5"
       },
       "mapBenefit": "기후변수 5종 × 시나리오(과거 모형·SSP1-1.9·1-2.6·2-4.5·3-7.0·5-8.5), 연도(1950~2100, 5년 간격)",
       "mapMode": "choropleth",
       "missingRegions": [],
-      "publicSpatialNotice": "개편 전 63개 성·시 통계 경계를 사용합니다.",
+      "publicSpatialNotice": "값은 개편 전 63개 성·시 통계 경계 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
       "renderer": "admin1-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "2100",
-      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개",
+      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개(34개 경계에서는 구성 성·시 집계값)",
       "spatialLimitation": "과거 모형값(historical)은 관측이 아님. 지역 간 분포와 모형 불확실성은 별개(원천은 앙상블 중앙값 1개 계열만 제공).",
       "spatialScopeType": "admin1",
       "selectors": {
@@ -1915,12 +1957,18 @@
       "spatialStatus": "ready",
       "mapTargetV138": {
         "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
-        "displaySpatialUnit": "성·시 경계(개편 전 63)",
+        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
         "limitation": "CDD(일수, 클수록 건조)와 SPEI(지수, 음수일수록 건조)는 방향과 단위가 다름. 토양수분은 전국 계열만 제공.",
         "evidence": "성·시 63개 × 6 시나리오 × 연도",
         "representativeItem": "SSP2-4.5 연속 건조일수 2050"
       },
-      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다.",
+      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 값은 원자료의 개편 전 63개 성·시 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "area-weighted-mean",
+        "note": "34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
       "active": true,
       "aggregationLevel": "admin1",
       "assetRef": {
@@ -1949,17 +1997,17 @@
       "latestYear": "2100",
       "layerId": "vnm-v138-b-005",
       "legend": {
-        "note": "단위 일 · 결측 0개 성·시",
+        "note": "단위 일 · 결측 0개 성·시(개편 전 63개 기준)",
         "title": "연속 건조일수(CDD) · SSP2-4.5"
       },
       "mapBenefit": "CDD·SPEI-12 × 시나리오, 연도(5년 간격)",
       "mapMode": "choropleth",
       "missingRegions": [],
-      "publicSpatialNotice": "개편 전 63개 성·시 통계 경계를 사용합니다.",
+      "publicSpatialNotice": "값은 개편 전 63개 성·시 통계 경계 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
       "renderer": "admin1-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "2100",
-      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개",
+      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개(34개 경계에서는 구성 성·시 집계값)",
       "spatialLimitation": "CDD(일수, 클수록 건조)와 SPEI(지수, 음수일수록 건조)는 방향과 단위가 다름. 토양수분은 전국 계열만 제공.",
       "spatialScopeType": "admin1",
       "selectors": {
@@ -2428,12 +2476,18 @@
       "spatialStatus": "ready",
       "mapTargetV138": {
         "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
-        "displaySpatialUnit": "성·시 경계(개편 전 63)",
+        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
         "limitation": "임계온도별 지표는 서로 더하지 않음. TX40은 대부분 지역에서 0 또는 미제공.",
         "evidence": "성·시 63개 × 6 시나리오 × 연도",
         "representativeItem": "SSP2-4.5 폭염일수(TX35) 2050"
       },
-      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다.",
+      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 값은 원자료의 개편 전 63개 성·시 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "area-weighted-mean",
+        "note": "34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
       "active": true,
       "aggregationLevel": "admin1",
       "assetRef": {
@@ -2462,17 +2516,17 @@
       "latestYear": "2100",
       "layerId": "vnm-v138-b-006",
       "legend": {
-        "note": "단위 일 · 결측 0개 성·시",
+        "note": "단위 일 · 결측 0개 성·시(개편 전 63개 기준)",
         "title": "폭염일수(최고기온 35°C 이상) · SSP2-4.5"
       },
       "mapBenefit": "폭염·열대야·Heat Index 지표 6종(임계온도 명시) × 시나리오, 연도(5년 간격)",
       "mapMode": "choropleth",
       "missingRegions": [],
-      "publicSpatialNotice": "개편 전 63개 성·시 통계 경계를 사용합니다.",
+      "publicSpatialNotice": "값은 개편 전 63개 성·시 통계 경계 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
       "renderer": "admin1-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "2100",
-      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개",
+      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개(34개 경계에서는 구성 성·시 집계값)",
       "spatialLimitation": "임계온도별 지표는 서로 더하지 않음. TX40은 대부분 지역에서 0 또는 미제공.",
       "spatialScopeType": "admin1",
       "selectors": {
@@ -3645,12 +3699,18 @@
       "spatialStatus": "ready",
       "mapTargetV138": {
         "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
-        "displaySpatialUnit": "성·시 경계(개편 전 63)",
+        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
         "limitation": "강수 극값 지표이며 침수면적·홍수 발생확률이 아님.",
         "evidence": "성·시 63개 × 6 시나리오 × 연도",
         "representativeItem": "SSP2-4.5 최대 1일 강수량 2050"
       },
-      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다.",
+      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 값은 원자료의 개편 전 63개 성·시 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "area-weighted-mean",
+        "note": "34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
       "active": true,
       "aggregationLevel": "admin1",
       "assetRef": {
@@ -3679,17 +3739,17 @@
       "latestYear": "2100",
       "layerId": "vnm-v138-b-007",
       "legend": {
-        "note": "단위 mm · 결측 0개 성·시",
+        "note": "단위 mm · 결측 0개 성·시(개편 전 63개 기준)",
         "title": "최대 1일 강수량(RX1day) · SSP2-4.5"
       },
       "mapBenefit": "극한강수 지표 5종 × 시나리오, 연도(5년 간격)",
       "mapMode": "choropleth",
       "missingRegions": [],
-      "publicSpatialNotice": "개편 전 63개 성·시 통계 경계를 사용합니다.",
+      "publicSpatialNotice": "값은 개편 전 63개 성·시 통계 경계 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
       "renderer": "admin1-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "2100",
-      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개",
+      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개(34개 경계에서는 구성 성·시 집계값)",
       "spatialLimitation": "강수 극값 지표이며 침수면적·홍수 발생확률이 아님.",
       "spatialScopeType": "admin1",
       "selectors": {
@@ -4814,7 +4874,19 @@
         "periodKey": "연도",
         "confidenceKey": "신뢰수준"
       },
-      "memberRowCount": 1575
+      "memberRowCount": 1575,
+      "locationsUrl": "/data/vietnam/v2/spatial/locations/b-008.json",
+      "locationCounts": {
+        "located": 0,
+        "outside": 1575,
+        "withoutCoordinate": 0
+      },
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "none",
+        "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      }
     },
     {
       "category": "기후·위험",
@@ -5054,7 +5126,19 @@
         "sourceKey": "좌표_산출근거",
         "pattern": "중심|대표|평균|centroid"
       },
-      "memberRowCount": 265
+      "memberRowCount": 265,
+      "locationsUrl": "/data/vietnam/v2/spatial/locations/b-012.json",
+      "locationCounts": {
+        "located": 254,
+        "outside": 11,
+        "withoutCoordinate": 10
+      },
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "none",
+        "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      }
     },
     {
       "accuracyNotice": "권역값은 명시된 GDL 권역 소속 성·시에 동일하게 표시하며 성·시별 독립 추정값이 아닙니다.",
@@ -5638,6 +5722,12 @@
         "limitation": "성·시별 독립 추정값이 아님.",
         "evidence": "6개 권역값을 명시적 소속표로 63개 경계에 표시",
         "representativeItem": "GVI 종합지수 2023"
+      },
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "six-region-only",
+        "note": "GDL 6개 권역 값을 권역 경계에 표시하며 행정경계 기준과 무관합니다.",
+        "valueSystem": "gdl-six-region"
       }
     },
     {
@@ -5828,7 +5918,19 @@
         "valueKey": "값",
         "unitKey": "단위"
       },
-      "memberRowCount": 11
+      "memberRowCount": 11,
+      "locationsUrl": "/data/vietnam/v2/spatial/locations/b-023.json",
+      "locationCounts": {
+        "located": 8,
+        "outside": 3,
+        "withoutCoordinate": 0
+      },
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "none",
+        "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      }
     },
     {
       "category": "물·자원",
@@ -6031,7 +6133,19 @@
         "always": true,
         "label": "유역 대표점"
       },
-      "memberRowCount": 8
+      "memberRowCount": 8,
+      "locationsUrl": "/data/vietnam/v2/spatial/locations/b-025.json",
+      "locationCounts": {
+        "located": 8,
+        "outside": 0,
+        "withoutCoordinate": 1
+      },
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "none",
+        "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      }
     },
     {
       "category": "물·자원",
@@ -6213,7 +6327,19 @@
         "valueKey": "값",
         "unitKey": "단위"
       },
-      "memberRowCount": 12
+      "memberRowCount": 12,
+      "locationsUrl": "/data/vietnam/v2/spatial/locations/b-028.json",
+      "locationCounts": {
+        "located": 10,
+        "outside": 2,
+        "withoutCoordinate": 4
+      },
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "none",
+        "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      }
     },
     {
       "category": "산림·토지",
@@ -6255,12 +6381,18 @@
       "spatialStatus": "ready",
       "mapTargetV138": {
         "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시) — 이탄지(Global Peatland Map 2022)",
-        "displaySpatialUnit": "성·시 경계(개편 전 63)",
+        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
         "limitation": "성·시 단위로 제공된 산림 유형은 이탄지뿐. 다른 유형은 상세 화면 전국 계열 참고.",
         "evidence": "성·시 63개 이탄지 값(GPM 2022). 열대우림·맹그로브 유형별 면적은 전국 계열만 있어 지도 미표시",
         "representativeItem": "성·시별 이탄지 면적 합계 2022"
       },
-      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다.",
+      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 값은 원자료의 개편 전 63개 성·시 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "sum",
+        "note": "34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
       "active": true,
       "aggregationLevel": "admin1",
       "assetRef": {
@@ -6289,17 +6421,17 @@
       "latestYear": "2022",
       "layerId": "vnm-v138-b-029",
       "legend": {
-        "note": "단위 km² · 결측 0개 성·시",
+        "note": "단위 km² · 결측 0개 성·시(개편 전 63개 기준)",
         "title": "이탄지 면적 합계"
       },
       "mapBenefit": "이탄지 면적(합계·우세·모자이크)",
       "mapMode": "choropleth",
       "missingRegions": [],
-      "publicSpatialNotice": "개편 전 63개 성·시 통계 경계를 사용합니다.",
+      "publicSpatialNotice": "값은 개편 전 63개 성·시 통계 경계 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
       "renderer": "admin1-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "2022",
-      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개",
+      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개(34개 경계에서는 구성 성·시 집계값)",
       "spatialLimitation": "성·시 단위로 제공된 산림 유형은 이탄지뿐. 다른 유형은 상세 화면 전국 계열 참고.",
       "spatialScopeType": "admin1",
       "selectors": {
@@ -6391,12 +6523,18 @@
       "spatialStatus": "ready",
       "mapTargetV138": {
         "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
-        "displaySpatialUnit": "성·시 경계(개편 전 63)",
+        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
         "limitation": "기간 누적값이며 연간 증가량이 아님.",
         "evidence": "성·시 63개 값(GFW)",
         "representativeItem": "성·시별 수관 이득 2000–2020"
       },
-      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다.",
+      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 값은 원자료의 개편 전 63개 성·시 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "sum",
+        "note": "34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
       "active": true,
       "aggregationLevel": "admin1",
       "assetRef": {
@@ -6425,17 +6563,17 @@
       "latestYear": "2000–2020",
       "layerId": "vnm-v138-b-030",
       "legend": {
-        "note": "단위 ha · 결측 0개 성·시",
+        "note": "단위 ha · 결측 0개 성·시(개편 전 63개 기준)",
         "title": "수관 이득(2000–2020 누적)"
       },
       "mapBenefit": "이득·손실·순변화·순변화율·교란 후 회복(모두 2000–2020 누적)",
       "mapMode": "choropleth",
       "missingRegions": [],
-      "publicSpatialNotice": "개편 전 63개 성·시 통계 경계를 사용합니다.",
+      "publicSpatialNotice": "값은 개편 전 63개 성·시 통계 경계 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
       "renderer": "admin1-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "2000–2020",
-      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개",
+      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개(34개 경계에서는 구성 성·시 집계값)",
       "spatialLimitation": "기간 누적값이며 연간 증가량이 아님.",
       "spatialScopeType": "admin1",
       "selectors": {
@@ -6635,10 +6773,16 @@
       "zeroImputationCount": 0,
       "mapTargetV138": {
         "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
-        "displaySpatialUnit": "성·시 경계(개편 전 63)",
+        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
         "limitation": "기본 항목은 분석대상 국토면적이 아니라 수관 면적.",
         "evidence": "성·시 63개 값(GFW, 임계 30%)",
         "representativeItem": "성·시별 수관 면적 2010"
+      },
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "sum",
+        "note": "34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+        "valueSystem": "pre-2025-63"
       }
     },
     {
@@ -6739,10 +6883,16 @@
       "zeroImputationCount": 0,
       "mapTargetV138": {
         "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
-        "displaySpatialUnit": "성·시 경계(개편 전 63)",
+        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
         "limitation": "분모는 성별 분석대상 면적, 임계 피복률 30%.",
         "evidence": "성·시 63개 값",
         "representativeItem": "성·시별 수관 피복률 2010"
+      },
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "area-weighted-mean",
+        "note": "34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+        "valueSystem": "pre-2025-63"
       }
     },
     {
@@ -6887,10 +7037,16 @@
       "zeroImputationCount": 0,
       "mapTargetV138": {
         "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
-        "displaySpatialUnit": "성·시 경계(개편 전 63)",
+        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
         "limitation": "지역 선택 시 해당 성·시 2001–2024 추이 표시.",
         "evidence": "성·시 63개 × 24개 연도(1,489값)",
         "representativeItem": "성·시별 연간 수관 손실 2024"
+      },
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "sum",
+        "note": "34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+        "valueSystem": "pre-2025-63"
       }
     },
     {
@@ -7032,10 +7188,16 @@
       "zeroImputationCount": 0,
       "mapTargetV138": {
         "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
-        "displaySpatialUnit": "성·시 경계(개편 전 63)",
+        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
         "limitation": "저장량(재고)과 연간 플럭스는 단위와 시점이 달라 같은 축에 두지 않음.",
         "evidence": "성·시 63개 × 5 지표",
         "representativeItem": "성·시별 지상부 탄소저장량"
+      },
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "sum",
+        "note": "34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+        "valueSystem": "pre-2025-63"
       }
     },
     {
@@ -7073,12 +7235,18 @@
       "spatialStatus": "ready",
       "mapTargetV138": {
         "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
-        "displaySpatialUnit": "성·시 경계(개편 전 63)",
+        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
         "limitation": "구성비는 같은 분류체계의 배타적 항목 합계(합계_km) 대비로만 계산.",
         "evidence": "성·시 63개 × 9 분류(합계 열 별도)",
         "representativeItem": "성·시별 경작지 면적 2021"
       },
-      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다.",
+      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 값은 원자료의 개편 전 63개 성·시 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "sum",
+        "note": "34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
       "active": true,
       "aggregationLevel": "admin1",
       "assetRef": {
@@ -7107,17 +7275,17 @@
       "latestYear": "2021",
       "layerId": "vnm-v138-b-037",
       "legend": {
-        "note": "단위 km² · 결측 0개 성·시",
+        "note": "단위 km² · 결측 0개 성·시(개편 전 63개 기준)",
         "title": "경작지 면적"
       },
       "mapBenefit": "토지피복 9개 분류 면적(같은 분류체계)",
       "mapMode": "choropleth",
       "missingRegions": [],
-      "publicSpatialNotice": "개편 전 63개 성·시 통계 경계를 사용합니다.",
+      "publicSpatialNotice": "값은 개편 전 63개 성·시 통계 경계 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
       "renderer": "admin1-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "2021",
-      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개",
+      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개(34개 경계에서는 구성 성·시 집계값)",
       "spatialLimitation": "구성비는 같은 분류체계의 배타적 항목 합계(합계_km) 대비로만 계산.",
       "spatialScopeType": "admin1",
       "selectors": {
@@ -7292,12 +7460,18 @@
       "spatialStatus": "ready",
       "mapTargetV138": {
         "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시) — 격자 집계",
-        "displaySpatialUnit": "성·시 경계(개편 전 63)",
+        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
         "limitation": "이론 잠재량이며 개발가능량·발전설비 용량이 아님.",
         "evidence": "성·시 63개 값",
         "representativeItem": "성·시별 이론 수력 총잠재량"
       },
-      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다.",
+      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 값은 원자료의 개편 전 63개 성·시 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "sum",
+        "note": "34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
       "active": true,
       "aggregationLevel": "admin1",
       "assetRef": {
@@ -7326,17 +7500,17 @@
       "latestYear": "2017",
       "layerId": "vnm-v138-b-039",
       "legend": {
-        "note": "단위 GWh/년 · 결측 0개 성·시",
+        "note": "단위 GWh/년 · 결측 0개 성·시(개편 전 63개 기준)",
         "title": "이론 총잠재량"
       },
       "mapBenefit": "이론 총잠재량·전국 대비 비중·최대 단일격자",
       "mapMode": "choropleth",
       "missingRegions": [],
-      "publicSpatialNotice": "개편 전 63개 성·시 통계 경계를 사용합니다.",
+      "publicSpatialNotice": "값은 개편 전 63개 성·시 통계 경계 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
       "renderer": "admin1-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "2017",
-      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개",
+      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개(34개 경계에서는 구성 성·시 집계값)",
       "spatialLimitation": "이론 잠재량이며 개발가능량·발전설비 용량이 아님.",
       "spatialScopeType": "admin1",
       "selectors": {
@@ -7434,12 +7608,18 @@
       "spatialStatus": "ready",
       "mapTargetV138": {
         "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시) — 격자 집계",
-        "displaySpatialUnit": "성·시 경계(개편 전 63)",
+        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
         "limitation": "지온(온도)이며 확인 매장량·발전 잠재량이 아님.",
         "evidence": "성·시 63개 값",
         "representativeItem": "성·시별 심도 2km 지온"
       },
-      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다.",
+      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 값은 원자료의 개편 전 63개 성·시 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "area-weighted-mean",
+        "note": "34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
       "active": true,
       "aggregationLevel": "admin1",
       "assetRef": {
@@ -7468,17 +7648,17 @@
       "latestYear": "2026",
       "layerId": "vnm-v138-b-040",
       "legend": {
-        "note": "단위 °C · 결측 0개 성·시",
+        "note": "단위 °C · 결측 0개 성·시(개편 전 63개 기준)",
         "title": "심도 2km 지온(평균)"
       },
       "mapBenefit": "심도(1·2·3km) 지온 평균, 지온경사",
       "mapMode": "choropleth",
       "missingRegions": [],
-      "publicSpatialNotice": "개편 전 63개 성·시 통계 경계를 사용합니다.",
+      "publicSpatialNotice": "값은 개편 전 63개 성·시 통계 경계 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
       "renderer": "admin1-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "2026",
-      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개",
+      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개(34개 경계에서는 구성 성·시 집계값)",
       "spatialLimitation": "지온(온도)이며 확인 매장량·발전 잠재량이 아님.",
       "spatialScopeType": "admin1",
       "selectors": {
@@ -7592,12 +7772,18 @@
       "spatialStatus": "ready",
       "mapTargetV138": {
         "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시) — Global Solar Atlas 격자 집계",
-        "displaySpatialUnit": "성·시 경계(개편 전 63)",
+        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
         "limitation": "성·시 평균값이며 지점별 일사량이 아님. 기준기간은 장기평균(LTA).",
         "evidence": "성·시 63개 값",
         "representativeItem": "성·시별 GHI 평균"
       },
-      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다.",
+      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 값은 원자료의 개편 전 63개 성·시 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "area-weighted-mean",
+        "note": "34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
       "active": true,
       "aggregationLevel": "admin1",
       "assetRef": {
@@ -7626,17 +7812,17 @@
       "latestYear": "1999–2018 장기평균(LTA)",
       "layerId": "vnm-v138-b-041",
       "legend": {
-        "note": "단위 kWh/m²/일 · 결측 0개 성·시",
+        "note": "단위 kWh/m²/일 · 결측 0개 성·시(개편 전 63개 기준)",
         "title": "수평면 전일사량(GHI, 평균)"
       },
       "mapBenefit": "GHI·DNI·PVOUT·최적 경사각(성·시 평균)",
       "mapMode": "choropleth",
       "missingRegions": [],
-      "publicSpatialNotice": "개편 전 63개 성·시 통계 경계를 사용합니다.",
+      "publicSpatialNotice": "값은 개편 전 63개 성·시 통계 경계 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
       "renderer": "admin1-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "1999–2018 장기평균(LTA)",
-      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개",
+      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개(34개 경계에서는 구성 성·시 집계값)",
       "spatialLimitation": "성·시 평균값이며 지점별 일사량이 아님. 기준기간은 장기평균(LTA).",
       "spatialScopeType": "admin1",
       "selectors": {
@@ -7737,12 +7923,22 @@
       "spatialStatus": "ready",
       "mapTargetV138": {
         "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시) — Global Wind Atlas 100m 격자 집계",
-        "displaySpatialUnit": "성·시 경계(개편 전 63)",
+        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
         "limitation": "단일 고도(100m) 자료이며 다른 고도와 직접 비교하지 않음.",
         "evidence": "성·시 63개 값",
         "representativeItem": "성·시별 풍속 평균(100m)"
       },
-      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다.",
+      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 값은 원자료의 개편 전 63개 성·시 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "area-weighted-mean",
+        "byVariable": {
+          "wind-speed-top10-100m": "range-only",
+          "wind-power-density-top10-100m": "range-only"
+        },
+        "note": "34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
       "active": true,
       "aggregationLevel": "admin1",
       "assetRef": {
@@ -7771,17 +7967,17 @@
       "latestYear": "2008–2017 장기평균(ERA5 기반)",
       "layerId": "vnm-v138-b-042",
       "legend": {
-        "note": "단위 m/s · 결측 0개 성·시",
+        "note": "단위 m/s · 결측 0개 성·시(개편 전 63개 기준)",
         "title": "풍속 평균(고도 100m)"
       },
       "mapBenefit": "풍속·풍력밀도(평균·상위 10%), 6m/s 이상 면적비율 — 모두 고도 100m",
       "mapMode": "choropleth",
       "missingRegions": [],
-      "publicSpatialNotice": "개편 전 63개 성·시 통계 경계를 사용합니다.",
+      "publicSpatialNotice": "값은 개편 전 63개 성·시 통계 경계 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
       "renderer": "admin1-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "2008–2017 장기평균(ERA5 기반)",
-      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개",
+      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개(34개 경계에서는 구성 성·시 집계값)",
       "spatialLimitation": "단일 고도(100m) 자료이며 다른 고도와 직접 비교하지 않음.",
       "spatialScopeType": "admin1",
       "selectors": {
@@ -8024,6 +8220,18 @@
         "limitation": "지도는 좌표가 검증된 2곳만 표시. 나머지 6곳은 상세 목록에서 광종·지역 제공.",
         "evidence": "좌표 검증 2곳(전체 목록 8곳)",
         "representativeItem": "Bản Phúc 니켈 광산"
+      },
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "none",
+        "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "locationsUrl": "/data/vietnam/v2/spatial/locations/b-048.json",
+      "locationCounts": {
+        "located": 2,
+        "outside": 0,
+        "withoutCoordinate": 6
       }
     },
     {
@@ -8093,12 +8301,18 @@
       "spatialStatus": "ready",
       "mapTargetV138": {
         "sourceSpatialUnit": "지방 결정문의 적용 성·시(원문 지역명)",
-        "displaySpatialUnit": "성·시 경계(개편 전 63)",
+        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
         "limitation": "전국 법령은 지도 객체를 만들지 않음. C-010과 같은 지방문서는 문서번호로 한 번만 집계.",
         "evidence": "지방 문서 4건(전국 법령 행과 거래소 소재 행은 지역 객체 없음)",
         "representativeItem": "Đà Nẵng Quyết định 2609/QĐ-UBND(2021)"
       },
-      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다.",
+      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 값은 원자료의 개편 전 63개 성·시 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 문서 수의 합계입니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "count-sum",
+        "note": "34개 성·시 값은 구성 성·시 문서 수의 합계입니다.",
+        "valueSystem": "pre-2025-63"
+      },
       "active": true,
       "aggregationLevel": "admin1",
       "assetRef": {
@@ -8127,7 +8341,7 @@
       "latestYear": "2021–2025",
       "layerId": "vnm-v138-c-009",
       "legend": {
-        "note": "단위 건 · 결측 59개 성·시",
+        "note": "단위 건 · 결측 59개 성·시(개편 전 63개 기준)",
         "title": "지방 기후 법제도 문서 수"
       },
       "mapBenefit": "성·시 클릭 → 해당 지방 문서 목록(문서번호·시행일·원문)",
@@ -8193,11 +8407,11 @@
         "Hải Phòng",
         "Hồ Chí Minh"
       ],
-      "publicSpatialNotice": "개편 전 63개 성·시 통계 경계를 사용합니다.",
+      "publicSpatialNotice": "값은 개편 전 63개 성·시 통계 경계 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 문서 수의 합계입니다.",
       "renderer": "partial-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "2021–2025",
-      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 4개",
+      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 4개(34개 경계에서는 구성 성·시 집계값)",
       "spatialLimitation": "전국 법령은 지도 객체를 만들지 않음. C-010과 같은 지방문서는 문서번호로 한 번만 집계.",
       "spatialScopeType": "admin1",
       "selectors": {
@@ -8289,12 +8503,18 @@
       "spatialStatus": "ready",
       "mapTargetV138": {
         "sourceSpatialUnit": "지방 환경규정의 적용 성·시(원문 지역명)",
-        "displaySpatialUnit": "성·시 경계(개편 전 63)",
+        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
         "limitation": "C-009와 문서번호가 같은 지방문서는 같은 객체이며 두 자료를 함께 켜도 문서 수를 더하지 않음.",
         "evidence": "지방 문서 4건(C-009와 동일 문서 4건 공유)",
         "representativeItem": "Quảng Ninh Quyết định 1318/QĐ-UBND(2024)"
       },
-      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다.",
+      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 값은 원자료의 개편 전 63개 성·시 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 문서 수의 합계입니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "count-sum",
+        "note": "34개 성·시 값은 구성 성·시 문서 수의 합계입니다.",
+        "valueSystem": "pre-2025-63"
+      },
       "active": true,
       "aggregationLevel": "admin1",
       "assetRef": {
@@ -8323,7 +8543,7 @@
       "latestYear": "2021–2025",
       "layerId": "vnm-v138-c-010",
       "legend": {
-        "note": "단위 건 · 결측 59개 성·시",
+        "note": "단위 건 · 결측 59개 성·시(개편 전 63개 기준)",
         "title": "지방 환경 법제도 문서 수"
       },
       "mapBenefit": "성·시 클릭 → 지방 문서 목록",
@@ -8389,11 +8609,11 @@
         "Hải Phòng",
         "Hồ Chí Minh"
       ],
-      "publicSpatialNotice": "개편 전 63개 성·시 통계 경계를 사용합니다.",
+      "publicSpatialNotice": "값은 개편 전 63개 성·시 통계 경계 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 문서 수의 합계입니다.",
       "renderer": "partial-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "2021–2025",
-      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 4개",
+      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 4개(34개 경계에서는 구성 성·시 집계값)",
       "spatialLimitation": "C-009와 문서번호가 같은 지방문서는 같은 객체이며 두 자료를 함께 켜도 문서 수를 더하지 않음.",
       "spatialScopeType": "admin1",
       "selectors": {
@@ -8487,7 +8707,13 @@
         "evidence": "지역 집계행 29건(개편 후 34개 체계). 계약방식·법령 행은 집계하지 않음",
         "representativeItem": "Đồng Nai PPP 사업 6건"
       },
-      "accuracyNotice": "개편 후 34개 성·시 값을 소속 63개 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다.",
+      "accuracyNotice": "원자료가 개편 후 34개 성·시 기준으로 발표한 값입니다. 기본 34개 경계에 직접 표시하고, 개편 전 63개 토글에서는 소속 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "native-34",
+        "note": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+        "valueSystem": "post-2025-34"
+      },
       "active": true,
       "aggregationLevel": "post-2025-34-unit",
       "assetRef": {
@@ -8516,7 +8742,7 @@
       "latestYear": "1997–2024",
       "layerId": "vnm-v138-c-012",
       "legend": {
-        "note": "단위 건 · 결측 7개 성·시",
+        "note": "단위 건 · 결측 7개 성·시(개편 전 63개 기준)",
         "title": "PPP 사업 수(PPI 수록)"
       },
       "mapBenefit": "성·시(34개 체계) 클릭 → 분야별 건수·상태·기간",
@@ -8530,11 +8756,11 @@
         "Kiên Giang",
         "Hưng Yên"
       ],
-      "publicSpatialNotice": "개편 후 34개 성·시 값을 소속 63개 성·시 경계에 표시합니다.",
+      "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
       "renderer": "partial-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "1997–2024",
-      "spatialCoverage": "개편 후 34개 성·시 중 29개 값을 소속 63개 경계에 표시",
+      "spatialCoverage": "개편 후 34개 성·시 중 29개 값(34개 경계 직접 표시)",
       "spatialLimitation": "지역값은 개편 후 34개 성·시 단위이며 소속 63개 성·시 경계에 같은 값을 표시함(성·시별 독립값 아님).",
       "spatialScopeType": "region",
       "selectors": {
@@ -8631,7 +8857,13 @@
         "evidence": "지역이 명시된 15행(전국 규정 49행은 지도 객체 없음)",
         "representativeItem": "Hồ Chí Minh 특별메커니즘(Nghị quyết 98/2023/QH15)"
       },
-      "accuracyNotice": "개편 후 34개 성·시 값을 소속 63개 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다.",
+      "accuracyNotice": "원자료가 개편 후 34개 성·시 기준으로 발표한 값입니다. 기본 34개 경계에 직접 표시하고, 개편 전 63개 토글에서는 소속 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "native-34",
+        "note": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+        "valueSystem": "post-2025-34"
+      },
       "active": true,
       "aggregationLevel": "post-2025-34-unit",
       "assetRef": {
@@ -8660,7 +8892,7 @@
       "latestYear": "2014–2025",
       "layerId": "vnm-v138-c-013",
       "legend": {
-        "note": "단위 건 · 결측 49개 성·시",
+        "note": "단위 건 · 결측 49개 성·시(개편 전 63개 기준)",
         "title": "지역 특별 인센티브 근거 행 수"
       },
       "mapBenefit": "성·시 클릭 → 특별메커니즘·비조세 지원 근거 목록",
@@ -8716,11 +8948,11 @@
         "Cần Thơ",
         "Hà Nội"
       ],
-      "publicSpatialNotice": "개편 후 34개 성·시 값을 소속 63개 성·시 경계에 표시합니다.",
+      "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
       "renderer": "partial-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "2014–2025",
-      "spatialCoverage": "개편 후 34개 성·시 중 8개 값을 소속 63개 경계에 표시",
+      "spatialCoverage": "개편 후 34개 성·시 중 8개 값(34개 경계 직접 표시)",
       "spatialLimitation": "행 수는 근거 항목 수이며 인센티브 금액·건수가 아님. 전국 적용 규정은 지도화하지 않음.",
       "spatialScopeType": "region",
       "selectors": {
@@ -8930,10 +9162,16 @@
       "zeroImputationCount": 0,
       "mapTargetV138": {
         "sourceSpatialUnit": "성·시(총리 결정 768/QĐ-TTg 부속표)",
-        "displaySpatialUnit": "성·시 경계(개편 전 63)",
+        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
         "limitation": "원문 0(계획 없음)과 미제공을 구분. 목표·추가·기존 용량은 기술 라벨로 구분.",
         "evidence": "지역 관측 639건",
         "representativeItem": "성·시별 태양광 계획용량 2030"
+      },
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "sum",
+        "note": "34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+        "valueSystem": "pre-2025-63"
       }
     },
     {
@@ -8997,7 +9235,13 @@
         "evidence": "34개 지역 × 시설 수(합계 2,166)",
         "representativeItem": "Hồ Chí Minh 479개 시설"
       },
-      "accuracyNotice": "개편 후 34개 성·시 값을 소속 63개 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다.",
+      "accuracyNotice": "원자료가 개편 후 34개 성·시 기준으로 발표한 값입니다. 기본 34개 경계에 직접 표시하고, 개편 전 63개 토글에서는 소속 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "native-34",
+        "note": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+        "valueSystem": "post-2025-34"
+      },
       "active": true,
       "aggregationLevel": "post-2025-34-unit",
       "assetRef": {
@@ -9026,17 +9270,17 @@
       "latestYear": "2026",
       "layerId": "vnm-v138-c-019",
       "legend": {
-        "note": "단위 개 · 결측 0개 성·시",
+        "note": "단위 개 · 결측 0개 성·시(개편 전 63개 기준)",
         "title": "온실가스 인벤토리 의무 대상 시설 수"
       },
       "mapBenefit": "성·시(34개 체계) 클릭 → 대상시설 수",
       "mapMode": "region-choropleth",
       "missingRegions": [],
-      "publicSpatialNotice": "개편 후 34개 성·시 값을 소속 63개 성·시 경계에 표시합니다.",
+      "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
       "renderer": "admin1-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "2026",
-      "spatialCoverage": "개편 후 34개 성·시 중 34개 값을 소속 63개 경계에 표시",
+      "spatialCoverage": "개편 후 34개 성·시 중 34개 값(34개 경계 직접 표시)",
       "spatialLimitation": "C-022와 같은 시설 명부를 지역별(C-019)·업종별(C-022)로 보는 것이며 두 자료를 함께 켜도 시설 수를 더하지 않음.",
       "spatialScopeType": "region",
       "selectors": {
@@ -9123,7 +9367,13 @@
         "evidence": "34개 지역 × 4 업종",
         "representativeItem": "Hồ Chí Minh 공상 430개"
       },
-      "accuracyNotice": "개편 후 34개 성·시 값을 소속 63개 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다.",
+      "accuracyNotice": "원자료가 개편 후 34개 성·시 기준으로 발표한 값입니다. 기본 34개 경계에 직접 표시하고, 개편 전 63개 토글에서는 소속 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "native-34",
+        "note": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+        "valueSystem": "post-2025-34"
+      },
       "active": true,
       "aggregationLevel": "post-2025-34-unit",
       "assetRef": {
@@ -9152,17 +9402,17 @@
       "latestYear": "2026",
       "layerId": "vnm-v138-c-022",
       "legend": {
-        "note": "단위 개 · 결측 0개 성·시",
+        "note": "단위 개 · 결측 0개 성·시(개편 전 63개 기준)",
         "title": "대상시설 수 — 공상(산업·무역)"
       },
       "mapBenefit": "업종(공상·교통운송·건설·농업·환경)별 시설 수",
       "mapMode": "region-choropleth",
       "missingRegions": [],
-      "publicSpatialNotice": "개편 후 34개 성·시 값을 소속 63개 성·시 경계에 표시합니다.",
+      "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
       "renderer": "admin1-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "2026",
-      "spatialCoverage": "개편 후 34개 성·시 중 34개 값을 소속 63개 경계에 표시",
+      "spatialCoverage": "개편 후 34개 성·시 중 34개 값(34개 경계 직접 표시)",
       "spatialLimitation": "국가 준비도 체크리스트 점수(82.1)는 지역값이 아니므로 지도화하지 않음.",
       "spatialScopeType": "region",
       "selectors": {
@@ -9271,12 +9521,18 @@
       "spatialStatus": "ready",
       "mapTargetV138": {
         "sourceSpatialUnit": "FCPF ERPA 대상 성(개편 전 63개 성 이름)",
-        "displaySpatialUnit": "성·시 경계(개편 전 63)",
+        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
         "limitation": "참여 범위이며 개별 사업지가 아님. 같은 프로그램의 범위가 겹쳐도 한 번만 셈.",
         "evidence": "참여 성 6건",
         "representativeItem": "북중부 6개 성(Thanh Hóa~Thừa Thiên Huế) FCPF ERPA"
       },
-      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다.",
+      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 값은 원자료의 개편 전 63개 성·시 기준이며, 34개 경계에서는 구성 성·시 중 하나라도 참여하면 34개 단위를 참여로 표시합니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "membership-or",
+        "note": "구성 성·시 중 하나라도 참여하면 34개 단위를 참여로 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
       "active": true,
       "aggregationLevel": "admin1",
       "assetRef": {
@@ -9305,7 +9561,7 @@
       "latestYear": "2022",
       "layerId": "vnm-v138-c-024",
       "legend": {
-        "note": "단위 참여 프로그램 수 · 결측 57개 성·시",
+        "note": "단위 참여 프로그램 수 · 결측 57개 성·시(개편 전 63개 기준)",
         "title": "FCPF ERPA(북중부 6개 성) 참여"
       },
       "mapBenefit": "성·시 클릭 → 참여 프로그램",
@@ -9369,11 +9625,11 @@
         "Hải Phòng",
         "Hồ Chí Minh"
       ],
-      "publicSpatialNotice": "개편 전 63개 성·시 통계 경계를 사용합니다.",
+      "publicSpatialNotice": "값은 개편 전 63개 성·시 통계 경계 기준이며, 34개 경계에서는 구성 성·시 중 하나라도 참여하면 34개 단위를 참여로 표시합니다.",
       "renderer": "partial-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "2022",
-      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 6개",
+      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 6개(34개 경계에서는 구성 성·시 집계값)",
       "spatialLimitation": "참여 범위이며 개별 사업지가 아님. 같은 프로그램의 범위가 겹쳐도 한 번만 셈.",
       "spatialScopeType": "admin1",
       "selectors": {
@@ -9622,6 +9878,18 @@
         "limitation": "사업·설비·발행 거래는 서로 다른 집계단위. 등록부 간 같은 사업은 원천 ID로만 판단.",
         "evidence": "좌표 있는 262건(전체 388행; 발행 거래 행은 사업 수에 포함하지 않음)",
         "representativeItem": "검증된 사업 위치 262건"
+      },
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "none",
+        "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "locationsUrl": "/data/vietnam/v2/spatial/locations/c-025.json",
+      "locationCounts": {
+        "located": 261,
+        "outside": 1,
+        "withoutCoordinate": 126
       }
     },
     {
@@ -9735,6 +10003,12 @@
         "limitation": "전국·부처·3개 성 값은 분리. 나머지 60개 성·시는 0이 아니라 미제공.",
         "evidence": "3개 성 값",
         "representativeItem": "Bắc Ninh 등 3개 성 기후지출"
+      },
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "sum",
+        "note": "34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+        "valueSystem": "pre-2025-63"
       }
     },
     {
@@ -9860,6 +10134,12 @@
         "limitation": "지역사업 승인금액은 베트남 배분액이 아님. 사업 수와 활동지·참여범위 수는 다른 수.",
         "evidence": "사업 4건(활동지 2, 참여국 범위 2)",
         "representativeItem": "메콩 EbA 지역사업"
+      },
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "none",
+        "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
+        "valueSystem": "pre-2025-63"
       }
     },
     {
@@ -10101,7 +10381,19 @@
         "sourceKey": "좌표_정밀도_출처",
         "pattern": "중심점"
       },
-      "memberRowCount": 17
+      "memberRowCount": 17,
+      "locationsUrl": "/data/vietnam/v2/spatial/locations/e-004.json",
+      "locationCounts": {
+        "located": 17,
+        "outside": 0,
+        "withoutCoordinate": 2
+      },
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "none",
+        "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      }
     },
     {
       "category": "협력기관·기업",
@@ -10317,7 +10609,19 @@
         "sourceKey": "좌표_정밀도_출처",
         "pattern": "중심점"
       },
-      "memberRowCount": 20
+      "memberRowCount": 20,
+      "locationsUrl": "/data/vietnam/v2/spatial/locations/e-005.json",
+      "locationCounts": {
+        "located": 20,
+        "outside": 0,
+        "withoutCoordinate": 0
+      },
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "none",
+        "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      }
     },
     {
       "category": "협력기관·기업",
@@ -10506,7 +10810,19 @@
         "sourceKey": "좌표_정밀도_출처",
         "pattern": "중심점"
       },
-      "memberRowCount": 8
+      "memberRowCount": 8,
+      "locationsUrl": "/data/vietnam/v2/spatial/locations/e-006.json",
+      "locationCounts": {
+        "located": 8,
+        "outside": 7,
+        "withoutCoordinate": 0
+      },
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "none",
+        "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      }
     },
     {
       "category": "협력기관·기업",
@@ -10679,7 +10995,19 @@
         "sourceKey": "좌표_정밀도_출처",
         "pattern": "중심점"
       },
-      "memberRowCount": 14
+      "memberRowCount": 14,
+      "locationsUrl": "/data/vietnam/v2/spatial/locations/e-018.json",
+      "locationCounts": {
+        "located": 15,
+        "outside": 0,
+        "withoutCoordinate": 9
+      },
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "none",
+        "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      }
     },
     {
       "category": "협력기관·기업",
@@ -10849,7 +11177,19 @@
         "sourceKey": "좌표_정밀도_출처",
         "pattern": "중심점"
       },
-      "memberRowCount": 6
+      "memberRowCount": 6,
+      "locationsUrl": "/data/vietnam/v2/spatial/locations/e-019.json",
+      "locationCounts": {
+        "located": 6,
+        "outside": 0,
+        "withoutCoordinate": 3
+      },
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "none",
+        "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      }
     }
   ],
   "mapFeatureCount": 4463,

@@ -1,0 +1,1913 @@
+{
+  "summary": {
+    "type": "summary",
+    "audit": "screens:v151-2",
+    "status": "PASS",
+    "passed": 54,
+    "failed": 0,
+    "total": 54,
+    "failedChecks": [],
+    "layersChecked": 42,
+    "consoleErrors": 0,
+    "generatedAt": "2026-09-22T00:37:30.487Z"
+  },
+  "report": {
+    "build": "\\tmp\\build-v151-2-review",
+    "layers": {
+      "A-023": {
+        "rendered": true,
+        "notice": "경계선은 2025-07-01 시행 34개 성·시입니다. 값은 원자료가 발표한 개편 전 63개 성·시 기준이며 34개로 합산하지 않습니다.",
+        "mode34": {
+          "features": 20,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 20,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "A-024": {
+        "rendered": true,
+        "notice": "경계선은 2025-07-01 시행 34개 성·시입니다. 값은 원자료가 발표한 개편 전 63개 성·시 기준이며 34개로 합산하지 않습니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "A-025": {
+        "rendered": true,
+        "notice": "경계선은 2025-07-01 시행 34개 성·시입니다. 값은 원자료가 발표한 개편 전 63개 성·시 기준이며 34개로 합산하지 않습니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "B-003": {
+        "rendered": true,
+        "notice": "34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위(최소~최대)를 함께 표시합니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "area-weighted-mean"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "B-004": {
+        "rendered": true,
+        "notice": "34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위(최소~최대)를 함께 표시합니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "area-weighted-mean"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "B-005": {
+        "rendered": true,
+        "notice": "34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위(최소~최대)를 함께 표시합니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "area-weighted-mean"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "B-006": {
+        "rendered": true,
+        "notice": "34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위(최소~최대)를 함께 표시합니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "area-weighted-mean"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "B-007": {
+        "rendered": true,
+        "notice": "34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위(최소~최대)를 함께 표시합니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "area-weighted-mean"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "B-008": {
+        "rendered": true,
+        "notice": "경계선은 2025-07-01 시행 34개 성·시입니다. 값은 원자료가 발표한 개편 전 63개 성·시 기준이며 34개로 합산하지 않습니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "B-012": {
+        "rendered": true,
+        "notice": "경계선은 2025-07-01 시행 34개 성·시입니다. 값은 원자료가 발표한 개편 전 63개 성·시 기준이며 34개로 합산하지 않습니다.",
+        "mode34": {
+          "features": 16,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 16,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "B-021": {
+        "rendered": true,
+        "notice": "GDL 6개 권역 값을 권역 경계에 표시합니다(행정경계 기준과 무관).",
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "gdl-six-region",
+          "policyKind": "six-region-only"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "gdl-six-region",
+          "policyKind": "six-region-only"
+        },
+        "consoleErrors": 0
+      },
+      "B-023": {
+        "rendered": true,
+        "notice": "경계선은 2025-07-01 시행 34개 성·시입니다. 값은 원자료가 발표한 개편 전 63개 성·시 기준이며 34개로 합산하지 않습니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "B-025": {
+        "rendered": true,
+        "notice": "경계선은 2025-07-01 시행 34개 성·시입니다. 값은 원자료가 발표한 개편 전 63개 성·시 기준이며 34개로 합산하지 않습니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "B-028": {
+        "rendered": true,
+        "notice": "경계선은 2025-07-01 시행 34개 성·시입니다. 값은 원자료가 발표한 개편 전 63개 성·시 기준이며 34개로 합산하지 않습니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "B-029": {
+        "rendered": true,
+        "notice": "34개 성·시 값은 구성 성·시 값의 합계입니다. 일부 성·시가 결측이면 '부분 결측'으로 표시합니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "sum"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "B-030": {
+        "rendered": true,
+        "notice": "34개 성·시 값은 구성 성·시 값의 합계입니다. 일부 성·시가 결측이면 '부분 결측'으로 표시합니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "sum"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "B-031": {
+        "rendered": true,
+        "notice": "34개 성·시 값은 구성 성·시 값의 합계입니다. 일부 성·시가 결측이면 '부분 결측'으로 표시합니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "sum"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "B-032": {
+        "rendered": true,
+        "notice": "34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위(최소~최대)를 함께 표시합니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "area-weighted-mean"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "B-033": {
+        "rendered": true,
+        "notice": "34개 성·시 값은 구성 성·시 값의 합계입니다. 일부 성·시가 결측이면 '부분 결측'으로 표시합니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "sum"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "B-034": {
+        "rendered": true,
+        "notice": "34개 성·시 값은 구성 성·시 값의 합계입니다. 일부 성·시가 결측이면 '부분 결측'으로 표시합니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "sum"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "B-037": {
+        "rendered": true,
+        "notice": "34개 성·시 값은 구성 성·시 값의 합계입니다. 일부 성·시가 결측이면 '부분 결측'으로 표시합니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "sum"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "B-039": {
+        "rendered": true,
+        "notice": "34개 성·시 값은 구성 성·시 값의 합계입니다. 일부 성·시가 결측이면 '부분 결측'으로 표시합니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "sum"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "B-040": {
+        "rendered": true,
+        "notice": "34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위(최소~최대)를 함께 표시합니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "area-weighted-mean"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "B-041": {
+        "rendered": true,
+        "notice": "34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위(최소~최대)를 함께 표시합니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "area-weighted-mean"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "B-042": {
+        "rendered": true,
+        "notice": "34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위(최소~최대)를 함께 표시합니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "area-weighted-mean"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "B-048": {
+        "rendered": true,
+        "notice": "경계선은 2025-07-01 시행 34개 성·시입니다. 값은 원자료가 발표한 개편 전 63개 성·시 기준이며 34개로 합산하지 않습니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "C-009": {
+        "rendered": true,
+        "notice": "34개 성·시 값은 구성 성·시 문서 수의 합계입니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "count-sum"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "C-010": {
+        "rendered": true,
+        "notice": "34개 성·시 값은 구성 성·시 문서 수의 합계입니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "count-sum"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "C-012": {
+        "rendered": true,
+        "notice": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "native-34"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "C-013": {
+        "rendered": true,
+        "notice": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "native-34"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "C-016": {
+        "rendered": true,
+        "notice": "34개 성·시 값은 구성 성·시 값의 합계입니다. 일부 성·시가 결측이면 '부분 결측'으로 표시합니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "sum"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "C-019": {
+        "rendered": true,
+        "notice": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "native-34"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "C-022": {
+        "rendered": true,
+        "notice": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "native-34"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "C-024": {
+        "rendered": true,
+        "notice": "구성 성·시 중 하나라도 참여하면 34개 단위를 참여로 표시합니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "membership-or"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "C-025": {
+        "rendered": true,
+        "notice": "경계선은 2025-07-01 시행 34개 성·시입니다. 값은 원자료가 발표한 개편 전 63개 성·시 기준이며 34개로 합산하지 않습니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "D-008": {
+        "rendered": true,
+        "notice": "34개 성·시 값은 구성 성·시 값의 합계입니다. 일부 성·시가 결측이면 '부분 결측'으로 표시합니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "sum"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "D-018": {
+        "rendered": true,
+        "notice": "경계선은 2025-07-01 시행 34개 성·시입니다. 값은 원자료가 발표한 개편 전 63개 성·시 기준이며 34개로 합산하지 않습니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "E-004": {
+        "rendered": true,
+        "notice": "경계선은 2025-07-01 시행 34개 성·시입니다. 값은 원자료가 발표한 개편 전 63개 성·시 기준이며 34개로 합산하지 않습니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "E-005": {
+        "rendered": true,
+        "notice": "경계선은 2025-07-01 시행 34개 성·시입니다. 값은 원자료가 발표한 개편 전 63개 성·시 기준이며 34개로 합산하지 않습니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "E-006": {
+        "rendered": true,
+        "notice": "경계선은 2025-07-01 시행 34개 성·시입니다. 값은 원자료가 발표한 개편 전 63개 성·시 기준이며 34개로 합산하지 않습니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "E-018": {
+        "rendered": true,
+        "notice": "경계선은 2025-07-01 시행 34개 성·시입니다. 값은 원자료가 발표한 개편 전 63개 성·시 기준이며 34개로 합산하지 않습니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "E-019": {
+        "rendered": true,
+        "notice": "경계선은 2025-07-01 시행 34개 성·시입니다. 값은 원자료가 발표한 개편 전 63개 성·시 기준이며 34개로 합산하지 않습니다.",
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      }
+    },
+    "backdrops": {
+      "terrain": {
+        "B-033": "ready",
+        "B-041": "ready",
+        "C-019": "ready",
+        "A-023": "ready",
+        "B-021": "ready",
+        "B-004": "ready"
+      },
+      "satellite": {
+        "B-033": "ready",
+        "B-041": "ready",
+        "C-019": "ready",
+        "A-023": "ready",
+        "B-021": "ready",
+        "B-004": "ready"
+      },
+      "streets": {
+        "B-033": "ready",
+        "B-041": "ready",
+        "C-019": "ready",
+        "A-023": "ready",
+        "B-021": "ready",
+        "B-004": "ready"
+      },
+      "none": {
+        "B-033": "none",
+        "B-041": "none",
+        "C-019": "none",
+        "A-023": "none",
+        "B-021": "none",
+        "B-004": "none"
+      }
+    },
+    "popups": {
+      "B-033": {
+        "point": true,
+        "text": "연간 산림손실 Tuyên Quang · 현재 값 9,569 ha(헥타르) 선택 데이터 구성 2개 성·시 중 2개 값 있음 · 구성 범위 2,893~6,675 ha(헥타르)"
+      },
+      "B-041": {
+        "point": true,
+        "text": "태양광 자원 Tuyên Quang · 현재 값 3.36 kWh(킬로와트시)/m²/일 선택 데이터 구성 2개 성·시 중 2개 값 있음 · 구성 범위 3.34~3.38 kWh(킬로와트시)/m²/일"
+      },
+      "C-019": {
+        "point": true,
+        "text": "탄소시장 대상시설(인벤토리 의무) Tuyên Quang · 현재 값 14 개 선택 데이터 구성 2개 성·시 중 2개 값 있음 · 구성 범위 14~14 개"
+      },
+      "A-023": {
+        "point": true,
+        "text": "주 분석 · 발전소 Nho Que 3 발전원 수력 설비용량 110 MW 소재 뚜옌꽝 (구 하장성) WRI GPPD (2021)"
+      },
+      "B-021": {
+        "point": true,
+        "text": "동북부·서북부 지역 취약성(GVI(글로벌데이터랩 취약성지수)) · 2023 44.7 / 100 높을수록 취약 [권역값] 동북부·서북부 베트남 6개 권역 중 1위"
+      }
+    },
+    "responsive": {
+      "map": {
+        "320": 0,
+        "390": 0,
+        "768": 0,
+        "1024": 0,
+        "1440": 0,
+        "1920": 0
+      },
+      "detail-B-033": {
+        "320": 0,
+        "390": 0,
+        "768": 0,
+        "1024": 0,
+        "1440": 0,
+        "1920": 0
+      }
+    }
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_A-023_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 20,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 20,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_A-024_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_A-025_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_B-003_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "area-weighted-mean"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_B-004_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "area-weighted-mean"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_B-005_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "area-weighted-mean"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_B-006_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "area-weighted-mean"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_B-007_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "area-weighted-mean"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_B-008_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_B-012_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 16,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 16,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_B-021_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "gdl-six-region",
+          "policyKind": "six-region-only"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "gdl-six-region",
+          "policyKind": "six-region-only"
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_B-023_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_B-025_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_B-028_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_B-029_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "sum"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_B-030_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "sum"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_B-031_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "sum"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_B-032_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "area-weighted-mean"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_B-033_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "sum"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_B-034_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "sum"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_B-037_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "sum"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_B-039_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "sum"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_B-040_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "area-weighted-mean"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_B-041_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "area-weighted-mean"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_B-042_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "area-weighted-mean"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_B-048_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_C-009_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "count-sum"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_C-010_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "count-sum"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_C-012_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "native-34"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_C-013_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "native-34"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_C-016_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "sum"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_C-019_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "native-34"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_C-022_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "native-34"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 1,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_C-024_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "membership-or"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_C-025_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_D-008_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": "post-2025-34",
+          "policyKind": "sum"
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": "pre-2025-63",
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_D-018_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_E-004_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_E-005_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_E-006_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_E-018_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "LAYER_E-019_RENDERED",
+      "status": "PASS",
+      "actual": {
+        "rendered": true,
+        "mode34": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "mode63": {
+          "features": 1,
+          "withValue": 0,
+          "boundarySystem": null,
+          "policyKind": null
+        },
+        "consoleErrors": 0
+      },
+      "expected": "rendered under both outlines"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "BACKDROP_TERRAIN_STATUS",
+      "status": "PASS",
+      "actual": {
+        "B-033": "ready",
+        "B-041": "ready",
+        "C-019": "ready",
+        "A-023": "ready",
+        "B-021": "ready",
+        "B-004": "ready"
+      },
+      "expected": "ready (none for '없음')"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "BACKDROP_SATELLITE_STATUS",
+      "status": "PASS",
+      "actual": {
+        "B-033": "ready",
+        "B-041": "ready",
+        "C-019": "ready",
+        "A-023": "ready",
+        "B-021": "ready",
+        "B-004": "ready"
+      },
+      "expected": "ready (none for '없음')"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "BACKDROP_STREETS_STATUS",
+      "status": "PASS",
+      "actual": {
+        "B-033": "ready",
+        "B-041": "ready",
+        "C-019": "ready",
+        "A-023": "ready",
+        "B-021": "ready",
+        "B-004": "ready"
+      },
+      "expected": "ready (none for '없음')"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "BACKDROP_NONE_STATUS",
+      "status": "PASS",
+      "actual": {
+        "B-033": "none",
+        "B-041": "none",
+        "C-019": "none",
+        "A-023": "none",
+        "B-021": "none",
+        "B-004": "none"
+      },
+      "expected": "ready (none for '없음')"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "POPUP_B-033",
+      "status": "PASS",
+      "actual": "연간 산림손실 Tuyên Quang · 현재 값 9,569 ha(헥타르) 선택 데이터 구성 2개 성·시 중 2개 값 있음 · 구성 범위 2,893~6,675 ha(헥타르)",
+      "expected": "hover popup text captured"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "POPUP_B-041",
+      "status": "PASS",
+      "actual": "태양광 자원 Tuyên Quang · 현재 값 3.36 kWh(킬로와트시)/m²/일 선택 데이터 구성 2개 성·시 중 2개 값 있음 · 구성 범위 3.34~3.38 kWh(킬로와트시)/m²/일",
+      "expected": "hover popup text captured"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "POPUP_C-019",
+      "status": "PASS",
+      "actual": "탄소시장 대상시설(인벤토리 의무) Tuyên Quang · 현재 값 14 개 선택 데이터 구성 2개 성·시 중 2개 값 있음 · 구성 범위 14~14 개",
+      "expected": "hover popup text captured"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "POPUP_A-023",
+      "status": "PASS",
+      "actual": "주 분석 · 발전소 Nho Que 3 발전원 수력 설비용량 110 MW 소재 뚜옌꽝 (구 하장성) WRI GPPD (2021)",
+      "expected": "hover popup text captured"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "POPUP_B-021",
+      "status": "PASS",
+      "actual": "동북부·서북부 지역 취약성(GVI(글로벌데이터랩 취약성지수)) · 2023 44.7 / 100 높을수록 취약 [권역값] 동북부·서북부 베트남 6개 권역 중 1위",
+      "expected": "hover popup text captured"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "RESPONSIVE_map",
+      "status": "PASS",
+      "actual": {
+        "320": 0,
+        "390": 0,
+        "768": 0,
+        "1024": 0,
+        "1440": 0,
+        "1920": 0
+      },
+      "expected": "document overflow ≤ 1px at every width"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "RESPONSIVE_detail-B-033",
+      "status": "PASS",
+      "actual": {
+        "320": 0,
+        "390": 0,
+        "768": 0,
+        "1024": 0,
+        "1440": 0,
+        "1920": 0
+      },
+      "expected": "document overflow ≤ 1px at every width"
+    },
+    {
+      "type": "check",
+      "audit": "screens:v151-2",
+      "name": "CONSOLE_ERRORS",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ]
+}

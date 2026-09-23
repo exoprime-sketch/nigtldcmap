@@ -389,7 +389,7 @@ export const PUBLIC_MAP_SPATIAL_TYPE_COPY_V126: Record<
   },
   "admin1-complete": {
     labelKo: "지역별 색상지도",
-    descriptionKo: "개편 전 63개 성·시 기준으로 지역별 값을 비교합니다.",
+    descriptionKo: "성·시별 값을 비교합니다. 원자료는 개편 전 63개 성·시 기준이며, 34개 경계에서는 자료별 집계 규칙으로 표시합니다.",
   },
   "admin1-partial": {
     labelKo: "일부 지역 자료",
@@ -520,7 +520,7 @@ export function publicMapAccuracyNoticeV126(
   if (safeFallback) return safeFallback;
   const spatialType = publicMapSpatialTypeV126(renderer);
   if (spatialType === "admin1-complete") {
-    return "개편 전 63개 성·시 기준이며, 원천에 없는 값은 0으로 바꾸지 않습니다.";
+    return "원자료는 개편 전 63개 성·시 기준이며(34개 경계에서는 자료별 집계 규칙 표시), 원천에 없는 값은 0으로 바꾸지 않습니다.";
   }
   if (spatialType === "admin1-partial") {
     return "실제 값이 공개된 성·시만 표시하며, 미제공 지역은 0으로 바꾸지 않습니다.";

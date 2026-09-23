@@ -25,6 +25,11 @@ export const BOUNDARY_LEGAL_BASIS_V151 = "결의 202/2025/QH15";
 
 export const ADM1_34_GEOMETRY_PATH_V151 = "data/vietnam/v2/geometry/vnm-adm1-34.geojson";
 export const ADM1_63_GEOMETRY_PATH_V151 = "data/vietnam/v2/geometry/vnm-adm1-63.geojson";
+/** V151-2: the six GDL regions B-021 is published for, dissolved from the 63 asset. */
+export const REGION_6_GEOMETRY_PATH_V151 = "data/vietnam/v2/geometry/vnm-region-6.geojson";
+/** V151-2: the national outline (all 63 provinces dissolved) and its display-only z5 simplification. */
+export const COUNTRY_OUTLINE_PATH_V151 = "data/vietnam/v2/geometry/vnm-country-outline.geojson";
+export const COUNTRY_OUTLINE_Z5_PATH_V151 = "data/vietnam/v2/geometry/vnm-country-outline-z5.geojson";
 
 export interface Adm1Unit34V151 {
   /** Deliberately not an `adm1Code`: a 63-keyed value must never join to it. */
@@ -116,13 +121,14 @@ export function boundarySystemShortLabelV151(system: BoundarySystemV151): string
 }
 
 /**
- * The one sentence that keeps the outline and the values apart. Shown wherever
- * the 34-unit outline sits on top of values their source published per province.
+ * The sentence shown while no dataset is focused. V151-2: a focused layer
+ * replaces it with its own boundary policy line (boundaryPolicyNoticeV151),
+ * so this one only says where the rule will appear.
  */
 export function boundaryValueNoticeV151(system: BoundarySystemV151): string {
   return system === "post-2025-34"
-    ? "경계선은 2025-07-01 시행 34개 성·시입니다. 값은 원자료가 발표한 개편 전 63개 성·시 기준이며 34개로 합산하지 않습니다."
-    : "경계선과 값 모두 개편 전 63개 성·시 기준입니다.";
+    ? "경계선은 2025-07-01 시행 34개 성·시입니다. 값은 원자료 기준(대부분 개편 전 63개 성·시)으로 발표되며, 자료를 선택하면 34개 경계에 적용되는 집계 규칙을 여기에 표시합니다."
+    : "경계선은 개편 전 63개 성·시 기준이며 원자료 값을 그대로 표시합니다.";
 }
 
 export const BOUNDARY_ATTRIBUTION_V151 =

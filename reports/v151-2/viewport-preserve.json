@@ -1,0 +1,329 @@
+{
+  "summary": {
+    "type": "summary",
+    "audit": "viewport-preserve:v151-2",
+    "status": "PASS",
+    "passed": 16,
+    "failed": 0,
+    "skipped": 0,
+    "total": 16,
+    "failedChecks": [],
+    "start": {
+      "lng": 108.202,
+      "lat": 16.054,
+      "zoom": 8,
+      "bearing": 0,
+      "moving": false
+    },
+    "viewParam": "108.20200,16.05400,8.00",
+    "generatedAt": "2026-09-22T00:10:12.434Z"
+  },
+  "steps": [
+    {
+      "label": "TICK_B-033",
+      "camera": {
+        "lng": 108.202,
+        "lat": 16.054,
+        "zoom": 8,
+        "bearing": 0,
+        "moving": false
+      }
+    },
+    {
+      "label": "TICK_B-041",
+      "camera": {
+        "lng": 108.202,
+        "lat": 16.054,
+        "zoom": 8,
+        "bearing": 0,
+        "moving": false
+      }
+    },
+    {
+      "label": "TICK_A-023",
+      "camera": {
+        "lng": 108.202,
+        "lat": 16.054,
+        "zoom": 8,
+        "bearing": 0,
+        "moving": false
+      }
+    },
+    {
+      "label": "UNTICK_A-023",
+      "camera": {
+        "lng": 108.202,
+        "lat": 16.054,
+        "zoom": 8,
+        "bearing": 0,
+        "moving": false
+      }
+    },
+    {
+      "label": "PRIMARY_CHANGE_B-041",
+      "camera": {
+        "lng": 108.202,
+        "lat": 16.054,
+        "zoom": 8,
+        "bearing": 0,
+        "moving": false
+      }
+    },
+    {
+      "label": "BOUNDARY_TOGGLE_63",
+      "camera": {
+        "lng": 108.202,
+        "lat": 16.054,
+        "zoom": 8,
+        "bearing": 0,
+        "moving": false
+      }
+    },
+    {
+      "label": "BOUNDARY_TOGGLE_34",
+      "camera": {
+        "lng": 108.202,
+        "lat": 16.054,
+        "zoom": 8,
+        "bearing": 0,
+        "moving": false
+      }
+    },
+    {
+      "label": "BACKDROP_SATELLITE",
+      "camera": {
+        "lng": 108.202,
+        "lat": 16.054,
+        "zoom": 8,
+        "bearing": 0,
+        "moving": false
+      }
+    },
+    {
+      "label": "BACKDROP_STREETS",
+      "camera": {
+        "lng": 108.202,
+        "lat": 16.054,
+        "zoom": 8,
+        "bearing": 0,
+        "moving": false
+      }
+    },
+    {
+      "label": "BACKDROP_NONE",
+      "camera": {
+        "lng": 108.202,
+        "lat": 16.054,
+        "zoom": 8,
+        "bearing": 0,
+        "moving": false
+      }
+    },
+    {
+      "label": "BACKDROP_TERRAIN",
+      "camera": {
+        "lng": 108.202,
+        "lat": 16.054,
+        "zoom": 8,
+        "bearing": 0,
+        "moving": false
+      }
+    }
+  ],
+  "checks": [
+    {
+      "type": "check",
+      "audit": "viewport-preserve:v151-2",
+      "name": "START_AT_DA_NANG_Z8",
+      "status": "PASS",
+      "actual": {
+        "lng": 108.202,
+        "lat": 16.054,
+        "zoom": 8,
+        "bearing": 0,
+        "moving": false
+      },
+      "expected": {
+        "center": [
+          108.202,
+          16.054
+        ],
+        "zoom": 8
+      }
+    },
+    {
+      "type": "check",
+      "audit": "viewport-preserve:v151-2",
+      "name": "CAMERA_KEPT_TICK_B-033",
+      "status": "PASS",
+      "actual": {
+        "dLng": 0,
+        "dLat": 0,
+        "dZoom": 0
+      },
+      "expected": "center Δ ≤ 0.001°, zoom Δ 0"
+    },
+    {
+      "type": "check",
+      "audit": "viewport-preserve:v151-2",
+      "name": "CAMERA_KEPT_TICK_B-041",
+      "status": "PASS",
+      "actual": {
+        "dLng": 0,
+        "dLat": 0,
+        "dZoom": 0
+      },
+      "expected": "center Δ ≤ 0.001°, zoom Δ 0"
+    },
+    {
+      "type": "check",
+      "audit": "viewport-preserve:v151-2",
+      "name": "CAMERA_KEPT_TICK_A-023",
+      "status": "PASS",
+      "actual": {
+        "dLng": 0,
+        "dLat": 0,
+        "dZoom": 0
+      },
+      "expected": "center Δ ≤ 0.001°, zoom Δ 0"
+    },
+    {
+      "type": "check",
+      "audit": "viewport-preserve:v151-2",
+      "name": "CAMERA_KEPT_UNTICK_A-023",
+      "status": "PASS",
+      "actual": {
+        "dLng": 0,
+        "dLat": 0,
+        "dZoom": 0
+      },
+      "expected": "center Δ ≤ 0.001°, zoom Δ 0"
+    },
+    {
+      "type": "check",
+      "audit": "viewport-preserve:v151-2",
+      "name": "CAMERA_KEPT_PRIMARY_CHANGE_B-041",
+      "status": "PASS",
+      "actual": {
+        "dLng": 0,
+        "dLat": 0,
+        "dZoom": 0
+      },
+      "expected": "center Δ ≤ 0.001°, zoom Δ 0"
+    },
+    {
+      "type": "check",
+      "audit": "viewport-preserve:v151-2",
+      "name": "CAMERA_KEPT_BOUNDARY_TOGGLE_63",
+      "status": "PASS",
+      "actual": {
+        "dLng": 0,
+        "dLat": 0,
+        "dZoom": 0
+      },
+      "expected": "center Δ ≤ 0.001°, zoom Δ 0"
+    },
+    {
+      "type": "check",
+      "audit": "viewport-preserve:v151-2",
+      "name": "CAMERA_KEPT_BOUNDARY_TOGGLE_34",
+      "status": "PASS",
+      "actual": {
+        "dLng": 0,
+        "dLat": 0,
+        "dZoom": 0
+      },
+      "expected": "center Δ ≤ 0.001°, zoom Δ 0"
+    },
+    {
+      "type": "check",
+      "audit": "viewport-preserve:v151-2",
+      "name": "CAMERA_KEPT_BACKDROP_SATELLITE",
+      "status": "PASS",
+      "actual": {
+        "dLng": 0,
+        "dLat": 0,
+        "dZoom": 0
+      },
+      "expected": "center Δ ≤ 0.001°, zoom Δ 0"
+    },
+    {
+      "type": "check",
+      "audit": "viewport-preserve:v151-2",
+      "name": "CAMERA_KEPT_BACKDROP_STREETS",
+      "status": "PASS",
+      "actual": {
+        "dLng": 0,
+        "dLat": 0,
+        "dZoom": 0
+      },
+      "expected": "center Δ ≤ 0.001°, zoom Δ 0"
+    },
+    {
+      "type": "check",
+      "audit": "viewport-preserve:v151-2",
+      "name": "CAMERA_KEPT_BACKDROP_NONE",
+      "status": "PASS",
+      "actual": {
+        "dLng": 0,
+        "dLat": 0,
+        "dZoom": 0
+      },
+      "expected": "center Δ ≤ 0.001°, zoom Δ 0"
+    },
+    {
+      "type": "check",
+      "audit": "viewport-preserve:v151-2",
+      "name": "CAMERA_KEPT_BACKDROP_TERRAIN",
+      "status": "PASS",
+      "actual": {
+        "dLng": 0,
+        "dLat": 0,
+        "dZoom": 0
+      },
+      "expected": "center Δ ≤ 0.001°, zoom Δ 0"
+    },
+    {
+      "type": "check",
+      "audit": "viewport-preserve:v151-2",
+      "name": "URL_HAS_VIEW_PARAM",
+      "status": "PASS",
+      "actual": "108.20200,16.05400,8.00",
+      "expected": "view=lon,lat,zoom"
+    },
+    {
+      "type": "check",
+      "audit": "viewport-preserve:v151-2",
+      "name": "CAMERA_RESTORED_AFTER_RELOAD",
+      "status": "PASS",
+      "actual": {
+        "dLng": 0,
+        "dLat": 0,
+        "dZoom": 0
+      },
+      "expected": "center Δ ≤ 0.001°, zoom Δ 0"
+    },
+    {
+      "type": "check",
+      "audit": "viewport-preserve:v151-2",
+      "name": "FRESH_ENTRY_FITS_COUNTRY",
+      "status": "PASS",
+      "actual": {
+        "lng": 106.39999999999998,
+        "lat": 16.056441471681268,
+        "zoom": 5.172899364551367,
+        "bearing": 0,
+        "moving": false
+      },
+      "expected": "national extent (zoom < 7)"
+    },
+    {
+      "type": "check",
+      "audit": "viewport-preserve:v151-2",
+      "name": "CONSOLE_ERRORS",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ]
+}

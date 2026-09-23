@@ -1,9 +1,40 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useDatasetUsageV149 } from "../data/publicUsageV149";
-import { addKoreanMapLabelsV150, setMapBackdropV150 } from "../data/map/mapBackdropV150";
+import { PROVINCE_KO_V150 } from "../data/map/mapBackdropV150";
 import {
+  applyMapBackdropV151,
+  backdropAttributionV151,
+  backdropKindLabelV151,
+  backdropOwnsCityLabelsV151,
+  BACKDROP_SOURCE_PREFIX_V151,
+  MAP_BACKDROP_KINDS_V151,
+  MAP_BACKDROP_STORAGE_KEY_V151,
+  readMapBackdropKindV151,
+  removeMapBackdropV151,
+  warmBackdropV151,
+  type MapBackdropKindV151,
+} from "../data/map/mapBackdropV151";
+import { addKoreanMapLabelsV151, KOREAN_LABEL_LAYER_IDS_V151 } from "../data/map/mapLabelsV151";
+import {
+  aggregateTo34V151,
+  boundaryPolicyNoticeV151,
+  formerProvinceLabelV151,
+  isAggregatingKindV151,
+  memberRangeByUnitV151,
+  memberSummaryV151,
+  parentUnitForV151,
+  parseMemberSummaryV151,
+  policyKindForVariableV151,
+  type BoundaryPolicyKindV151,
+} from "../data/map/boundaryPolicyV151";
+import {
+  ADM1_34_GEOMETRY_PATH_V151,
+  ADM1_34_UNITS_V151,
   BOUNDARY_SYSTEM_STORAGE_KEY_V151,
+  COUNTRY_OUTLINE_PATH_V151,
   DEFAULT_BOUNDARY_SYSTEM_V151,
+  PROVINCE_KO_34_V151,
+  REGION_6_GEOMETRY_PATH_V151,
   boundaryGeometryPathV151,
   boundarySystemLabelV151,
   boundarySystemV151,
@@ -34,6 +65,7 @@ import type {
   CountryMapLayerV122,
 } from "../data/countries/countryDataTypesV122";
 import {
+  loadVietnamLocationsV151,
   loadVietnamSpatialGeoJsonV124,
   loadVietnamSpatialLayerV124,
 } from "../data/vietnam/vietnamDataLoaderV124";
@@ -47,6 +79,7 @@ import { mapFactsV148, mapIndicatorSourceV148, mapSourceLineV148, publicMapField
 import { createMapFeaturePopupV148 } from "../components/map/mapFeaturePopupV148";
 import { powerPlantPeriodForSourceV142 } from "../data/visualization/mapSelectorBindingsV125";
 import type {
+  VietnamLocationSidecarV151,
   VietnamSpatialLayerAssetV124,
 } from "../data/vietnam/vietnamTypesV124";
 import type { DataFinderSelectorStateV125 } from "../types/dataFinderV125";
@@ -92,10 +125,10 @@ import {
   getPublicIndicatorInterpretationV129,
   getPublicIndicatorVariablePresentationV129,
 } from "../data/interpretation/publicIndicatorInterpretationV129";
-import { loadWorldCountryBoundaries } from "../data/map/worldCountryBoundaries";
+import { loadVietnamCountryOutlineV151, loadWorldCountryBoundaries } from "../data/map/worldCountryBoundaries";
 import type { WorldCountryBoundaryGeometry } from "../data/map/worldCountryBoundaries";
 import { PRIORITY_COUNTRIES } from "../data/priorityCountries";
-import type { MapViewState } from "../types/map";
+import type { MapCameraV151, MapViewState } from "../types/map";
 import {
   fieldLabelV121,
   formatValueV121,
@@ -144,6 +177,9 @@ interface RealMapExplorerPageProps {
 
 type LoadStatus = "idle" | "loading" | "ready" | "error";
 
+// V151-2: Viet Nam is drawn from its own dissolved outline; the Natural Earth
+// world file only supplies the neighbouring countries.
+const NOT_VIETNAM_FILTER_V151 = ["!=", ["get", "iso3"], "VNM"];
 const MAP_STYLE: any = {
   version: 8,
   glyphs: "https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf",
@@ -152,6 +188,11 @@ const MAP_STYLE: any = {
       type: "geojson",
       data: publicAssetUrlV128("data/world-countries.geojson"),
       attribution: "Natural Earth · 로컬 국가 경계",
+    },
+    "vnm-country-outline": {
+      type: "geojson",
+      data: publicAssetUrlV128(COUNTRY_OUTLINE_PATH_V151),
+      attribution: "국가 외곽선: geoBoundaries VNM ADM1(개편 전 63개 성·시) 병합",
     },
   },
   layers: [
@@ -164,6 +205,7 @@ const MAP_STYLE: any = {
       id: "cdp-country-fill",
       type: "fill",
       source: "country-boundaries",
+      filter: NOT_VIETNAM_FILTER_V151,
       paint: {
         "fill-color": "#ffffff",
         "fill-opacity": 0.9,
@@ -173,10 +215,31 @@ const MAP_STYLE: any = {
       id: "cdp-country-outline",
       type: "line",
       source: "country-boundaries",
+      filter: NOT_VIETNAM_FILTER_V151,
       paint: {
         "line-color": "#587168",
         "line-width": 1.1,
         "line-opacity": 0.82,
+      },
+    },
+    // Above the neighbours' coarse outlines so none of them shows inside Viet Nam.
+    {
+      id: "cdp-vnm-country-fill",
+      type: "fill",
+      source: "vnm-country-outline",
+      paint: {
+        "fill-color": "#ffffff",
+        "fill-opacity": 0.9,
+      },
+    },
+    {
+      id: "cdp-vnm-country-outline",
+      type: "line",
+      source: "vnm-country-outline",
+      paint: {
+        "line-color": "#3f5a52",
+        "line-width": 1.3,
+        "line-opacity": 0.9,
       },
     },
   ],
@@ -285,6 +348,150 @@ function selectedFeatureNounV139(layer: CountryMapLayerV122): string {
     "E-018": "사업지",
   };
   return nouns[layer.elementId] || layer.featureIdentity?.label || "시설";
+}
+
+/**
+ * V151-2: the popup line that explains a value under the 34-unit outline.
+ * Aggregated feature: "구성 n개 중 m개 값 있음 · min~max[ · 부분 결측]".
+ * Range-only province: its parent unit and the spread of the sibling values.
+ */
+function boundaryPopupLineV151(properties: Record<string, unknown>, unit: string): string {
+  const format = (value: unknown) =>
+    typeof value === "number" && Number.isFinite(value) ? formatPublicNumberV126(value, unit) : "결측";
+  const summary = parseMemberSummaryV151(properties.memberSummary);
+  if (summary) {
+    const single = summary.memberCount === 1;
+    const range =
+      summary.valueCount > 1 && summary.min !== null && summary.max !== null && summary.min !== summary.max
+        ? ` · 구성 범위 ${format(summary.min)}~${format(summary.max)}${unit ? ` ${unit}` : ""}`
+        : "";
+    const coverage = single
+      ? ""
+      : summary.valueCount === summary.memberCount
+        ? `구성 ${summary.memberCount}개 성·시`
+        : `구성 ${summary.memberCount}개 성·시 중 ${summary.valueCount}개 값 있음`;
+    const flags = summary.partial ? " · 부분 결측" : summary.conflict ? " · 구성 값 불일치" : "";
+    switch (summary.kind) {
+      case "native-34":
+        return `개편 후 34개 기준 원자료 값${single ? "" : ` · ${coverage}`}${flags}`;
+      case "sum":
+        return single ? "개편에서 합쳐지지 않은 성·시" : `${coverage} 합계${range}${flags}`;
+      case "count-sum":
+        return single ? "" : `${coverage} 문서 수 합계${flags}`;
+      case "membership-or":
+        return single ? "" : `${coverage} 중 참여 ${summary.valueCount}개${flags}`;
+      case "area-weighted-mean":
+        return single ? "개편에서 합쳐지지 않은 성·시" : `${coverage} 면적가중평균${range}${flags}`;
+      default:
+        return single ? "" : `${coverage}${range}${flags}`;
+    }
+  }
+  const parentName = publicTextV126(properties.parentUnitName);
+  if (parentName && properties.policyKind === "range-only") {
+    const count = Number(properties.parentValueCount || 0);
+    const total = Number(properties.parentMemberCount || 0);
+    if (!count) return `${parentName}(34개 기준) · 구성 성·시 값 없음`;
+    return `${parentName}(34개 기준) 구성 범위 ${format(properties.parentMin)}~${format(properties.parentMax)}${
+      unit ? ` ${unit}` : ""
+    } · ${total}개 중 ${count}개 값`;
+  }
+  return "";
+}
+
+/**
+ * V151-2: the extent of one layer's drawable data - polygons with a value, or
+ * located points - as [[west, south], [east, north]], or null when nothing
+ * is loaded yet.
+ */
+function layerBoundsV151(
+  layer: CountryMapLayerV122,
+  spatialByElement: Record<string, SpatialRuntimeAsset>,
+  recordsByElement: Record<string, CountryEntityV122[]>
+): [[number, number], [number, number]] | null {
+  let west = Infinity;
+  let south = Infinity;
+  let east = -Infinity;
+  let north = -Infinity;
+  const extend = (lng: number, lat: number) => {
+    if (!Number.isFinite(lng) || !Number.isFinite(lat)) return;
+    west = Math.min(west, lng);
+    east = Math.max(east, lng);
+    south = Math.min(south, lat);
+    north = Math.max(north, lat);
+  };
+  const walk = (node: unknown) => {
+    if (!Array.isArray(node)) return;
+    if (typeof node[0] === "number") {
+      extend(Number(node[0]), Number(node[1]));
+      return;
+    }
+    node.forEach(walk);
+  };
+  const asset = spatialByElement[layer.elementId];
+  if (asset) {
+    asset.geometry.features.forEach((feature) => walk(feature.geometry.coordinates));
+  } else {
+    (recordsByElement[layer.elementId] || []).forEach((record) => {
+      if (typeof record.longitude === "number" && typeof record.latitude === "number") {
+        extend(record.longitude, record.latitude);
+      }
+    });
+  }
+  if (!Number.isFinite(west) || !Number.isFinite(north)) return null;
+  return [
+    [west, south],
+    [east, north],
+  ];
+}
+
+/**
+ * A layer's extent clipped to the country's own map view: the province
+ * assets carry offshore islands 5° east of the mainland, which would otherwise
+ * drag the camera out to sea.
+ */
+function clipToCountryBoundsV151(
+  bounds: [[number, number], [number, number]] | null,
+  country: [[number, number], [number, number]] | null | undefined
+): [[number, number], [number, number]] | null {
+  if (!bounds) return null;
+  if (!country) return bounds;
+  const west = Math.max(bounds[0][0], country[0][0]);
+  const south = Math.max(bounds[0][1], country[0][1]);
+  const east = Math.min(bounds[1][0], country[1][0]);
+  const north = Math.min(bounds[1][1], country[1][1]);
+  if (west >= east || south >= north) return country;
+  return [
+    [west, south],
+    [east, north],
+  ];
+}
+
+function boundsIntersectV151(
+  a: [[number, number], [number, number]],
+  b: { getWest(): number; getSouth(): number; getEast(): number; getNorth(): number }
+): boolean {
+  return !(a[1][0] < b.getWest() || a[0][0] > b.getEast() || a[1][1] < b.getSouth() || a[0][1] > b.getNorth());
+}
+
+/** V151-2: whether an aggregated area feature (34-unit or six-region) contains a province. */
+function fillHasMemberV151(properties: Record<string, unknown>, code: string): boolean {
+  if (!code) return false;
+  const raw = properties.memberAdm1Codes;
+  let members: string[] = [];
+  if (Array.isArray(raw)) members = raw.map(String);
+  else if (typeof raw === "string") {
+    try {
+      const parsed = JSON.parse(raw);
+      members = Array.isArray(parsed) ? parsed.map(String) : [];
+    } catch {
+      members = raw.split(",").map((item) => item.trim());
+    }
+  }
+  if (!members.length) return false;
+  // The probe may itself be a 34-unit code (an aggregated statistical point);
+  // it sits inside the area when any of its member provinces does.
+  const probeCodes = ADM1_34_UNITS_V151.find((unit) => unit.unitCode === code)?.memberAdm1Codes || [code];
+  return probeCodes.some((member) => members.includes(member));
 }
 
 function regionUnitLabelV138(layer: CountryMapLayerV122): string {
@@ -494,6 +701,9 @@ interface SpatialRuntimeAsset {
 interface SpatialSelection {
   elementId: string;
   adm1Code?: string;
+  /** V151-2: set when the selected feature is a 34-unit aggregate. */
+  unitCode?: string;
+  memberAdm1Codes?: string[];
   adm1Name: string;
   value?: number | null;
   unit?: string | null;
@@ -808,6 +1018,8 @@ function attachMapObserverV137(map: MapLibreMap, countryIso3: string): void {
     },
   };
   (window as unknown as Record<string, unknown>).__nigtMapObserverV137 = observer;
+  // V151-2: the raw instance for the label/viewport runners (localhost only, like the observer).
+  (window as unknown as Record<string, unknown>).__cdpMapV151 = map;
 }
 
 function layerRuntimeIds(countryIso3: string, elementId: string) {
@@ -1190,6 +1402,205 @@ function choroplethFeatureCollection(
   };
 }
 
+/** V151-2: what the outline toggle and the layer's policy resolve to for one render. */
+type BoundaryRenderModeV151 = "63" | "34" | "region-6";
+
+interface BoundaryRenderContextV151 {
+  system: BoundarySystemV151;
+  geometry34: VietnamMapGeoJsonV124 | null;
+  region6: VietnamMapGeoJsonV124 | null;
+}
+
+interface ChoroplethCollectionV151 {
+  collection: GeoJSON.FeatureCollection<GeoJSON.Geometry>;
+  minimum: number;
+  maximum: number;
+  mode: BoundaryRenderModeV151;
+  kind: BoundaryPolicyKindV151;
+}
+
+function areaKm2ByAdm1CodeV151(geometry34: VietnamMapGeoJsonV124 | null): Record<string, number> | null {
+  if (!geometry34) return null;
+  const areas: Record<string, number> = {};
+  for (const feature of geometry34.features) {
+    const members = feature.properties?.memberAreaKm2;
+    if (!members || typeof members !== "object") continue;
+    for (const [code, km2] of Object.entries(members as Record<string, unknown>)) {
+      if (typeof km2 === "number" && Number.isFinite(km2)) areas[code] = km2;
+    }
+  }
+  return Object.keys(areas).length ? areas : null;
+}
+
+function variableLabelForSelectorV151(layer: CountryMapLayerV122, selector: LayerSelectorState, fallback?: string): string {
+  return (
+    fallback ||
+    layer.selectors.variables.find((row) => row.key === selector.variable)?.label ||
+    layer.publicShortTitle
+  );
+}
+
+/**
+ * The choropleth collection the map draws, after the boundary policy.
+ *
+ * - 63-unit outline: the source rows as published (unchanged behaviour).
+ * - 34-unit outline + aggregating policy: one feature per 34-unit carrying the
+ *   aggregated value and a `memberSummary` for the popup and the panel.
+ * - 34-unit outline + range-only: still the 63 features, each decorated with
+ *   its parent unit and the member range - no single 34 value is invented.
+ * - six-region-only (B-021): the six GDL regions, whatever the toggle says.
+ */
+function choroplethFeatureCollectionV151(
+  layer: CountryMapLayerV122,
+  asset: SpatialRuntimeAsset,
+  selector: LayerSelectorState,
+  context: BoundaryRenderContextV151
+): ChoroplethCollectionV151 {
+  const kind = policyKindForVariableV151(layer.boundaryPolicy, selector.variable);
+  const values = asset.data ? spatialValuesForSelectorV125(asset.data, selector) : [];
+  const variableLabel = variableLabelForSelectorV151(layer, selector, values[0]?.variableLabel);
+  const unit = values[0]?.unit || "";
+
+  if (kind === "six-region-only" && context.region6) {
+    const byRegion = new Map<string, VietnamSpatialLayerAssetV124["values"][number]>();
+    for (const row of values) {
+      if (row.sourceRegion && !byRegion.has(row.sourceRegion)) byRegion.set(row.sourceRegion, row);
+    }
+    const numeric = [...byRegion.values()].map((row) => row.value).filter(Number.isFinite);
+    return {
+      mode: "region-6",
+      kind,
+      minimum: numeric.length ? Math.min(...numeric) : 0,
+      maximum: numeric.length ? Math.max(...numeric) : 1,
+      collection: {
+        type: "FeatureCollection",
+        features: context.region6.features.map((feature) => {
+          const regionKey = String(feature.properties?.regionKey || feature.properties?.name || "");
+          const row = byRegion.get(regionKey);
+          return {
+            type: "Feature" as const,
+            id: regionKey,
+            geometry: feature.geometry as GeoJSON.Geometry,
+            properties: {
+              ...feature.properties,
+              elementId: layer.elementId,
+              adm1Code: regionKey,
+              adm1Name: String(feature.properties?.nameKo || regionKey),
+              value: row?.value ?? null,
+              hasValue: Boolean(row),
+              unit: row?.unit || unit,
+              period: selector.period,
+              variable: selector.variable,
+              variableLabel: row?.variableLabel || variableLabel,
+              sourceRegion: regionKey,
+              sourceIndicatorId: row?.sourceIndicatorId || "",
+              sourceSpatialUnit: "region",
+              selectionKey: regionKey,
+              boundarySystem: "gdl-six-region",
+              policyKind: kind,
+            },
+          };
+        }),
+      },
+    };
+  }
+
+  const areas = areaKm2ByAdm1CodeV151(context.geometry34);
+  const canAggregate =
+    context.system === "post-2025-34" &&
+    isAggregatingKindV151(kind) &&
+    context.geometry34 !== null &&
+    (kind !== "area-weighted-mean" || areas !== null);
+  if (canAggregate && context.geometry34) {
+    const adm1NameByCode: Record<string, string> = {};
+    for (const feature of asset.geometry.features) {
+      const code = String(feature.properties?.adm1Code || "");
+      if (code) adm1NameByCode[code] = String(feature.properties?.name || code);
+    }
+    const rows = aggregateTo34V151(values, kind, {
+      areaKm2ByAdm1Code: areas || undefined,
+      adm1NameByCode,
+    });
+    const byUnit = new Map(rows.map((row) => [row.unitCode, row]));
+    const numeric = rows.map((row) => row.value).filter((value): value is number => typeof value === "number");
+    return {
+      mode: "34",
+      kind,
+      minimum: numeric.length ? Math.min(...numeric) : 0,
+      maximum: numeric.length ? Math.max(...numeric) : 1,
+      collection: {
+        type: "FeatureCollection",
+        features: context.geometry34.features.map((feature) => {
+          const unitCode = String(feature.properties?.unitCode || "");
+          const row = byUnit.get(unitCode);
+          const value = row?.value ?? null;
+          return {
+            type: "Feature" as const,
+            id: unitCode,
+            geometry: feature.geometry as GeoJSON.Geometry,
+            properties: {
+              ...feature.properties,
+              elementId: layer.elementId,
+              unitCode,
+              // Compatibility key: every selection and panel path keys on adm1Code.
+              adm1Code: unitCode,
+              adm1Name: row?.unitName || String(feature.properties?.name || unitCode),
+              value,
+              hasValue: value !== null,
+              unit: row?.unit || unit,
+              period: selector.period,
+              variable: selector.variable,
+              variableLabel,
+              sourceRegion: "",
+              sourceIndicatorId: row?.sourceIndicatorId || "",
+              sourceSpatialUnit: "post-2025-34-unit",
+              selectionKey: unitCode,
+              boundarySystem: "post-2025-34",
+              policyKind: kind,
+              memberSummary: row ? memberSummaryV151(row) : "",
+              partial: row?.partial ?? false,
+            },
+          };
+        }),
+      },
+    };
+  }
+
+  const base = choroplethFeatureCollection(layer, asset, selector);
+  if (context.system !== "post-2025-34" || kind !== "range-only") {
+    return { ...base, mode: "63", kind };
+  }
+  // Range-only under the 34 outline: keep every province, name its parent
+  // unit and the spread of its siblings so the popup can say "구성 범위".
+  const rangeByUnit = memberRangeByUnitV151(values);
+  return {
+    ...base,
+    mode: "63",
+    kind,
+    collection: {
+      type: "FeatureCollection",
+      features: base.collection.features.map((feature) => {
+        const adm1Code = String(feature.properties?.adm1Code || "");
+        const parent = parentUnitForV151(adm1Code);
+        const range = parent ? rangeByUnit.get(parent.unitCode) : undefined;
+        return {
+          ...feature,
+          properties: {
+            ...feature.properties,
+            policyKind: kind,
+            parentUnitCode: parent?.unitCode || "",
+            parentUnitName: parent?.nameKo || "",
+            parentMin: range?.min ?? null,
+            parentMax: range?.max ?? null,
+            parentValueCount: range?.valueCount ?? 0,
+            parentMemberCount: range?.memberCount ?? (parent?.memberAdm1Codes.length || 0),
+          },
+        };
+      }),
+    },
+  };
+}
+
 function spatialValuesForSelectorV125(
   data: VietnamSpatialLayerAssetV124,
   selector: LayerSelectorState
@@ -1312,10 +1723,25 @@ function popupFactLinesV137(
   return lines;
 }
 
+/** V151-2: where a point sits, worded for the outline on screen. */
+function pointLocationLabelV151(
+  hit: VietnamLocationSidecarV151["byRecordId"][string] | undefined,
+  system: BoundarySystemV151
+): string | null {
+  if (hit === undefined) return null;
+  if (hit === null) return "소재지 미확정(성·시 경계 밖)";
+  if (system === "post-2025-34" && hit.unitCode) {
+    const unitName = PROVINCE_KO_34_V151[hit.unitCode] || hit.adm1Name;
+    return `${unitName} ${formerProvinceLabelV151(hit.adm1Code)}`.trim();
+  }
+  return `${PROVINCE_KO_V150[hit.adm1Code] || hit.adm1Name}(개편 전 63개 기준)`;
+}
+
 function featureCollection(
   records: CountryEntityV122[],
   layer: CountryMapLayerV122,
-  prepared: PreparedLayerRecordsV138 = prepareLayerRecordsV138(records, layer)
+  prepared: PreparedLayerRecordsV138 = prepareLayerRecordsV138(records, layer),
+  location?: { sidecar: VietnamLocationSidecarV151 | undefined; system: BoundarySystemV151 }
 ): GeoJSON.FeatureCollection<GeoJSON.Point> {
   return {
     type: "FeatureCollection",
@@ -1348,6 +1774,12 @@ function featureCollection(
           approximate: prepared.approximateRecordIds.has(record.recordId),
           memberCount: prepared.membersByRecordId.get(record.recordId)?.length || 1,
         };
+        if (location?.sidecar) {
+          const hit = location.sidecar.byRecordId[record.recordId];
+          properties.adm1Code = hit?.adm1Code ?? null;
+          properties.unitCode = hit?.unitCode ?? null;
+          properties.locationLabelV151 = pointLocationLabelV151(hit, location.system);
+        }
         // Facts come from the layer's own contract, which names the source key
         // each one lives under. Reading a fixed field name instead is what left
         // Ban Phuc's popup with no 광종: the mineral is in attrs["광종"], while
@@ -1754,10 +2186,27 @@ export default function RealMapExplorerPage({
     resolveInitialCountry(initialState.countryIso3)
   );
   const [baseMapStatus, setBaseMapStatus] = useState<LoadStatus>("loading");
-  const [backdropEnabledV150, setBackdropEnabledV150] = useState(() => {
-    try { return localStorage.getItem("cdp-map-backdrop-v150") !== "off"; } catch { return true; }
-  });
-  const [backdropErrorV150, setBackdropErrorV150] = useState(false);
+  // V151-2: which backdrop (지형/위성/도로·지명/없음) sits under the data layers.
+  // The v150 on/off preference is migrated on first read.
+  const [backdropKindV151, setBackdropKindV151] = useState<MapBackdropKindV151>(() =>
+    readMapBackdropKindV151(typeof localStorage === "undefined" ? null : localStorage)
+  );
+  const [backdropStatusV151, setBackdropStatusV151] = useState<"loading" | "ready" | "fallback" | "none">(
+    "loading"
+  );
+  const [backdropFirstTileMsV151, setBackdropFirstTileMsV151] = useState<number | null>(null);
+  const backdropFellBackRef = useRef(false);
+  const mapCreatedAtRef = useRef<number>(0);
+  // V151-2: the camera the reader is looking at. Published to the URL as
+  // `view=`; only the two auto-fit cases below may move it programmatically.
+  const [cameraV151, setCameraV151] = useState<MapCameraV151 | null>(initialState.camera);
+  const autoFitCountryRef = useRef<string | null>(null);
+  const previousActiveCountRef = useRef<number>(initialState.activeLayerKeys.length);
+  // Tile requests start with the page, not after the style settles: the map's
+  // own requests for the same URLs then come from the HTTP cache.
+  useEffect(() => {
+    if (countryIso3 === "VNM") warmBackdropV151(backdropKindV151);
+  }, [backdropKindV151, countryIso3]);
   // V151: which province vintage the reference outline and Korean labels draw.
   // It never changes a value; the published values keep their source's vintage.
   const [boundarySystemV151State, setBoundarySystemV151State] =
@@ -1868,6 +2317,23 @@ export default function RealMapExplorerPage({
     useState<LoadStatus>("idle");
   const [adm1Boundary, setAdm1Boundary] =
     useState<VietnamMapGeoJsonV124 | null>(null);
+  // V151-2: the 34-unit and six-region outlines the value layers aggregate
+  // onto. Loaded once per country so the boundary toggle never refetches.
+  const [adm1Geometry34V151, setAdm1Geometry34V151] =
+    useState<VietnamMapGeoJsonV124 | null>(null);
+  const [region6GeometryV151, setRegion6GeometryV151] =
+    useState<VietnamMapGeoJsonV124 | null>(null);
+  const [locationsByElementV151, setLocationsByElementV151] = useState<
+    Record<string, VietnamLocationSidecarV151>
+  >({});
+  const boundaryContextV151 = useMemo<BoundaryRenderContextV151>(
+    () => ({
+      system: boundarySystemV151State,
+      geometry34: adm1Geometry34V151,
+      region6: region6GeometryV151,
+    }),
+    [boundarySystemV151State, adm1Geometry34V151, region6GeometryV151]
+  );
   const [layerPanelOpen, setLayerPanelOpen] = useState(
     () => typeof window === "undefined" || window.innerWidth > 768
   );
@@ -2138,7 +2604,7 @@ export default function RealMapExplorerPage({
           });
         return;
       }
-      const result = choroplethFeatureCollection(layer, asset, selector);
+      const result = choroplethFeatureCollectionV151(layer, asset, selector, boundaryContextV151);
       if (isBudgetContext) {
         statisticalRepresentativePointsV133(result.collection).features.forEach(
           (feature, featureIndex) => {
@@ -2209,6 +2675,7 @@ export default function RealMapExplorerPage({
     return { fills, lines, regionalPoints, statisticalPoints };
   }, [
     baseMapStatus,
+    boundaryContextV151,
     fallbackBounds,
     filters,
     layers,
@@ -2261,7 +2728,11 @@ export default function RealMapExplorerPage({
       };
     }
 
-    void loadWorldCountryBoundaries()
+    // V151-2: Viet Nam's SVG fallback outline comes from the dissolved
+    // province asset, the same shape the MapLibre canvas draws.
+    void (countryIso3 === "VNM"
+      ? loadVietnamCountryOutlineV151().then((feature) => ({ type: "FeatureCollection" as const, features: [feature] }))
+      : loadWorldCountryBoundaries())
       .then((collection) => {
         if (cancelled) return;
         const feature = collection.features.find(
@@ -2312,6 +2783,34 @@ export default function RealMapExplorerPage({
       cancelled = true;
     };
   }, [countryIso3, boundarySystemV151State]);
+
+  useEffect(() => {
+    let cancelled = false;
+    setAdm1Geometry34V151(null);
+    setRegion6GeometryV151(null);
+    if (countryIso3 !== "VNM") {
+      return () => {
+        cancelled = true;
+      };
+    }
+    void loadVietnamSpatialGeoJsonV124(publicAssetUrlV128(ADM1_34_GEOMETRY_PATH_V151))
+      .then((collection) => {
+        if (!cancelled) setAdm1Geometry34V151(collection);
+      })
+      .catch((reason: unknown) => {
+        console.error("Vietnam 34-unit boundary load failed", reason);
+      });
+    void loadVietnamSpatialGeoJsonV124(publicAssetUrlV128(REGION_6_GEOMETRY_PATH_V151))
+      .then((collection) => {
+        if (!cancelled) setRegion6GeometryV151(collection);
+      })
+      .catch((reason: unknown) => {
+        console.error("Vietnam six-region boundary load failed", reason);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [countryIso3]);
 
   useEffect(() => {
     try {
@@ -2568,6 +3067,7 @@ export default function RealMapExplorerPage({
     setBaseMapStatus("loading");
     let pendingMap: MapLibreMap | null = null;
     try {
+      mapCreatedAtRef.current = performance.now();
       pendingMap = new maplibregl.Map({
         container: containerRef.current,
         style: MAP_STYLE,
@@ -2601,7 +3101,15 @@ export default function RealMapExplorerPage({
       ready = true;
       setBaseMapStatus("ready");
       const current = getCountryDataProviderV122(countryIso3);
-      if (current?.mapView.bounds) {
+      if (initialState.camera) {
+        // A shared or reloaded link opens where the reader left it.
+        map.jumpTo({
+          center: [initialState.camera.lng, initialState.camera.lat],
+          zoom: initialState.camera.zoom,
+          bearing: initialState.camera.bearing,
+        });
+        autoFitCountryRef.current = countryIso3;
+      } else if (current?.mapView.bounds) {
         map.fitBounds(current.mapView.bounds, {
           padding: 44,
           duration: 0,
@@ -2609,10 +3117,14 @@ export default function RealMapExplorerPage({
       }
       window.setTimeout(() => map.resize(), 0);
     };
+    const publishCamera = () => {
+      const center = map.getCenter();
+      setCameraV151({ lng: center.lng, lat: center.lat, zoom: map.getZoom(), bearing: map.getBearing() });
+    };
+    map.on("moveend", publishCamera);
     const handleError = (event: any) => {
-      if (/cdp-(ofm|terrain)-v150/.test(String(event.sourceId || ""))) {
-        setBackdropErrorV150(true);
-        return; // Optional background failure must not disable local analytical layers.
+      if (String(event.sourceId || "").startsWith(BACKDROP_SOURCE_PREFIX_V151)) {
+        return; // Optional background failure must not disable local analytical layers; the backdrop effect handles it.
       }
       console.error("MapLibre runtime error", event.error || event);
       if (!ready && !map.isStyleLoaded()) setBaseMapStatus("error");
@@ -2643,6 +3155,7 @@ export default function RealMapExplorerPage({
       map.off("load", markReady);
       map.off("style.load", handleStyleLoad);
       map.off("error", handleError);
+      map.off("moveend", publishCamera);
       map.remove();
       mapRef.current = null;
     };
@@ -2651,23 +3164,67 @@ export default function RealMapExplorerPage({
   useEffect(() => {
     const map = mapRef.current;
     if (!map || baseMapStatus !== "ready") return;
-    setBackdropErrorV150(false);
-    setMapBackdropV150(map, backdropEnabledV150);
-    try { localStorage.setItem("cdp-map-backdrop-v150", backdropEnabledV150 ? "on" : "off"); } catch { /* optional preference */ }
-  }, [baseMapStatus, backdropEnabledV150]);
+    const controller = new AbortController();
+    const kind = backdropKindV151;
+    try { localStorage.setItem(MAP_BACKDROP_STORAGE_KEY_V151, kind); } catch { /* optional preference */ }
+    setBackdropFirstTileMsV151(null);
+    setBackdropStatusV151(kind === "none" ? "none" : "loading");
+    let errorCount = 0;
+    let firstTileSeen = false;
+    const fallBack = () => {
+      if (firstTileSeen || controller.signal.aborted || backdropFellBackRef.current) return;
+      backdropFellBackRef.current = true;
+      setBackdropStatusV151("fallback");
+      setBackdropKindV151("none");
+    };
+    // Without a single tile after this budget, and with failures on record,
+    // the backdrop steps aside; the data layers were never waiting on it.
+    const fallbackTimer = kind === "none" ? null : window.setTimeout(() => {
+      if (errorCount >= 3) fallBack();
+    }, 5000);
+    void applyMapBackdropV151(map, kind, {
+      boundarySystem: boundarySystemV151State,
+      signal: controller.signal,
+      startedAt: mapCreatedAtRef.current || performance.now(),
+      onFirstTile: ({ elapsedMs }) => {
+        firstTileSeen = true;
+        setBackdropFirstTileMsV151(Math.round(elapsedMs));
+        setBackdropStatusV151("ready");
+        try {
+          performance.mark(`cdp-backdrop-first-tile:${kind}`);
+          performance.measure("cdp-backdrop-first-tile", { start: mapCreatedAtRef.current, duration: elapsedMs });
+        } catch { /* diagnostics only */ }
+      },
+      onError: () => {
+        errorCount += 1;
+        if (errorCount >= 3) fallBack();
+      },
+    }).then(() => {
+      if (controller.signal.aborted) return;
+      // Warm the HTTP cache for the Viet Nam extent (no-op if the mount already did).
+      warmBackdropV151(kind);
+    });
+    return () => {
+      controller.abort();
+      if (fallbackTimer) window.clearTimeout(fallbackTimer);
+      removeMapBackdropV151(map);
+    };
+  }, [baseMapStatus, backdropKindV151, boundarySystemV151State]);
 
   useEffect(() => {
     const map = mapRef.current;
     if (!map || baseMapStatus !== "ready") return;
-    addKoreanMapLabelsV150(map, adm1Boundary);
+    // V151-2: province labels (grey, polylabel anchors) and city labels (marker
+    // + bold) are separate tiers; a centrally-run city gets one label only.
+    addKoreanMapLabelsV151(map, adm1Boundary, { showCities: !backdropOwnsCityLabelsV151(backdropKindV151) });
     const keepLabelsAboveData = () => {
-      const ids = ["cdp-ko-country", "cdp-ko-city", "cdp-ko-province"];
+      const ids = [...KOREAN_LABEL_LAYER_IDS_V151];
       const all = map.getStyle().layers;
-      if (all?.[all.length - 1]?.id !== ids[2]) ids.forEach(id => { if (map.getLayer(id)) map.moveLayer(id); });
+      if (all?.[all.length - 1]?.id !== ids[ids.length - 1]) ids.forEach(id => { if (map.getLayer(id)) map.moveLayer(id); });
     };
     map.on("idle", keepLabelsAboveData);
     return () => { map.off("idle", keepLabelsAboveData); };
-  }, [adm1Boundary, baseMapStatus]);
+  }, [adm1Boundary, backdropKindV151, baseMapStatus]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -2681,11 +3238,20 @@ export default function RealMapExplorerPage({
       }
       return;
     }
+    // V151-2: the 34-unit outline is the primary reference and reads heavier
+    // than the 63 pre-reform provinces, which are a toggle.
+    const is34 = adm1Boundary.features[0]?.properties?.boundarySystem === "post-2025-34";
+    const lineWidth = is34 ? 1.6 : 0.8;
+    const lineOpacity = is34 ? 0.7 : 0.42;
     const existing = map.getSource(
       VNM_ADM1_BASE_SOURCE_V126
     ) as GeoJSONSource | undefined;
     if (existing) {
       existing.setData(adm1Boundary as GeoJSON.FeatureCollection);
+      if (map.getLayer(VNM_ADM1_BASE_OUTLINE_V126)) {
+        map.setPaintProperty(VNM_ADM1_BASE_OUTLINE_V126, "line-width", lineWidth);
+        map.setPaintProperty(VNM_ADM1_BASE_OUTLINE_V126, "line-opacity", lineOpacity);
+      }
       return;
     }
     map.addSource(VNM_ADM1_BASE_SOURCE_V126, {
@@ -2694,16 +3260,21 @@ export default function RealMapExplorerPage({
       attribution:
         '<a href="https://www.geoboundaries.org/" target="_blank" rel="noreferrer">geoBoundaries VNM ADM1</a> · CC BY 4.0 · 2025-07-01 34개 통합 대응',
     });
-    map.addLayer({
-      id: VNM_ADM1_BASE_OUTLINE_V126,
-      type: "line",
-      source: VNM_ADM1_BASE_SOURCE_V126,
-      paint: {
-        "line-color": "#2f6f59",
-        "line-width": 0.8,
-        "line-opacity": 0.42,
+    // Below any data layer already mounted (re-entering Viet Nam), above the backdrop.
+    const firstDataLayer = map.getStyle().layers?.find((entry) => /^v1\d\d-/u.test(entry.id))?.id;
+    map.addLayer(
+      {
+        id: VNM_ADM1_BASE_OUTLINE_V126,
+        type: "line",
+        source: VNM_ADM1_BASE_SOURCE_V126,
+        paint: {
+          "line-color": "#2f6f59",
+          "line-width": lineWidth,
+          "line-opacity": lineOpacity,
+        },
       },
-    });
+      firstDataLayer
+    );
   }, [adm1Boundary, baseMapStatus, countryIso3]);
 
   useEffect(() => {
@@ -2727,9 +3298,24 @@ export default function RealMapExplorerPage({
     ) {
       return;
     }
+    // V151-2: auto-fit happens once per country on first entry (or once for
+    // the dataset the reader arrived with). Ticking, hiding, re-ranking or
+    // re-selecting layers afterwards never moves the camera; the "전체 범위
+    // 보기" button is the only other way back to the national extent.
+    if (autoFitCountryRef.current === countryIso3) return;
+    autoFitCountryRef.current = countryIso3;
+    const targetBounds =
+      primaryLayer && initialState.focusLayerKey === primaryLayer.elementId
+        ? clipToCountryBoundsV151(
+            layerBoundsV151(primaryLayer, spatialByElement, recordsByElement),
+            provider.mapView.bounds as [[number, number], [number, number]] | undefined
+          )
+        : null;
     const restoreCountryExtent = () => {
       map.resize();
-      if (provider.mapView.bounds) {
+      if (targetBounds) {
+        map.fitBounds(targetBounds, { padding: 44, duration: 0 });
+      } else if (provider.mapView.bounds) {
         map.fitBounds(provider.mapView.bounds, { padding: 44, duration: 0 });
       } else {
         map.easeTo({
@@ -2747,7 +3333,9 @@ export default function RealMapExplorerPage({
     };
   }, [
     baseMapStatus,
+    countryIso3,
     externalStateHydrated,
+    initialState.focusLayerKey,
     layers,
     primaryLayerId,
     provider,
@@ -2756,6 +3344,30 @@ export default function RealMapExplorerPage({
   ]);
 
   useDatasetUsageV149("map", primaryLayerId, countryIso3 === "VNM" && baseMapStatus === "ready" && externalStateHydrated && !!primaryLayerId && !!(recordsByElement[primaryLayerId] || spatialByElement[primaryLayerId]));
+
+  // V151-2 auto-fit case (b): the first layer ticked from an empty selection
+  // lies wholly outside the viewport - otherwise the camera stays put.
+  useEffect(() => {
+    const map = mapRef.current;
+    const previousCount = previousActiveCountRef.current;
+    previousActiveCountRef.current = activeIds.length;
+    if (!map || baseMapStatus !== "ready" || !externalStateHydrated) return;
+    if (previousCount !== 0 || activeIds.length !== 1) return;
+    const layer = layers.find((entry) => entry.elementId === activeIds[0]);
+    if (!layer) return;
+    const bounds = clipToCountryBoundsV151(
+      layerBoundsV151(layer, spatialByElement, recordsByElement),
+      provider?.mapView.bounds as [[number, number], [number, number]] | undefined
+    );
+    if (!bounds) {
+      // Data not loaded yet: let the next run (same 0 -> 1 transition) decide.
+      previousActiveCountRef.current = 0;
+      return;
+    }
+    if (!boundsIntersectV151(bounds, map.getBounds())) {
+      map.fitBounds(bounds, { padding: 44, duration: 350 });
+    }
+  }, [activeIds, baseMapStatus, externalStateHydrated, layers, provider, recordsByElement, spatialByElement]);
 
   useEffect(() => {
     const activeRuntimeKeys = new Set(
@@ -2815,15 +3427,27 @@ export default function RealMapExplorerPage({
                 layer.disabledReason || "이 데이터는 지도에 표시할 위치자료가 없습니다"
               )
             )
-        : loadCountryElementEntitiesV122(countryIso3, elementId).then(
-            (payload) => {
-              if (controller.signal.aborted) return;
-              setRecordsByElement((current) => ({
-                ...current,
-                [elementId]: payload.records,
-              }));
+        : Promise.all([
+            loadCountryElementEntitiesV122(countryIso3, elementId),
+            // V151-2: the province each point falls in; optional, never blocks the layer.
+            layer.locationsUrl
+              ? loadVietnamLocationsV151(layer.locationsUrl, controller.signal).catch(
+                  (reason: unknown) => {
+                    console.warn("Point location sidecar unavailable", reason);
+                    return undefined;
+                  }
+                )
+              : Promise.resolve(undefined),
+          ]).then(([payload, sidecar]) => {
+            if (controller.signal.aborted) return;
+            setRecordsByElement((current) => ({
+              ...current,
+              [elementId]: payload.records,
+            }));
+            if (sidecar) {
+              setLocationsByElementV151((current) => ({ ...current, [elementId]: sidecar }));
             }
-          );
+          });
       void request
         .catch((reason: unknown) => {
           if (
@@ -2907,9 +3531,11 @@ export default function RealMapExplorerPage({
           .map((id) => [id, selectorByElement[id]] as const)
           .filter(([, selection]) => Boolean(selection))
       ),
+      camera: cameraV151,
     });
   }, [
     activeIds,
+    cameraV151,
     comparisonLayerIdsV135,
     comparisonModeV135,
     countryIso3,
@@ -2969,7 +3595,7 @@ export default function RealMapExplorerPage({
         const choropleth =
           renderer === "line" || isRegionalScope
             ? null
-            : choroplethFeatureCollection(layer, asset, selector);
+            : choroplethFeatureCollectionV151(layer, asset, selector, boundaryContextV151);
         const data =
           renderer === "line"
             ? lineFeatureCollection(layer, asset, selector, filters)
@@ -2985,6 +3611,7 @@ export default function RealMapExplorerPage({
           filters: selectedFilterDimensionsV125(layer, filters),
           featureCount: data.features.length,
           role: isPrimary ? "primary" : "context",
+          boundary: choropleth ? `${choropleth.mode}:${choropleth.kind}` : boundaryContextV151.system,
         });
         const existing = map.getSource(ids.source) as GeoJSONSource | undefined;
         const fillColor = isRegionalScope
@@ -3353,9 +3980,12 @@ export default function RealMapExplorerPage({
               ? properties.value
               : null;
           setSelected(null);
+          const memberSummary = parseMemberSummaryV151(properties.memberSummary);
           setSelectedSpatial({
             elementId,
             adm1Code: String(properties.adm1Code || "") || undefined,
+            unitCode: String(properties.unitCode || "") || undefined,
+            memberAdm1Codes: memberSummary?.members.map((member) => member.adm1Code),
             adm1Name:
               renderer === "line"
                 ? publicTransmissionSegmentTitleV131(properties)
@@ -3494,6 +4124,7 @@ export default function RealMapExplorerPage({
             sourceRegionKey
           );
           const isGvi = elementId === "B-021" && selector.variable === "gvi-6";
+          const boundaryLineV151 = boundaryPopupLineV151(properties, publicUnit);
           popupRef.current?.remove();
           popupOwnerRef.current = popupOwnerKey;
           popupRef.current = new maplibregl.Popup({
@@ -3541,6 +4172,7 @@ export default function RealMapExplorerPage({
                         : isPrimary
                         ? "선택 데이터"
                         : "함께 보기",
+                      boundaryLineV151,
                     ],
                 {
                   attributes: {
@@ -3595,12 +4227,15 @@ export default function RealMapExplorerPage({
       const data = featureCollection(
         filteredRecords,
         layer,
-        prepareLayerRecordsV138(records, layer)
+        prepareLayerRecordsV138(records, layer),
+        { sidecar: locationsByElementV151[elementId], system: boundaryContextV151.system }
       );
       const renderKey = runtimeKey(countryIso3, elementId);
       const renderSignature = JSON.stringify({
         filters: selectedFilterDimensionsV125(layer, filters),
         recordCount: filteredRecords.length,
+        boundary: boundaryContextV151.system,
+        located: Boolean(locationsByElementV151[elementId]),
         role: isPrimary ? "primary" : "context",
       });
       const existing = map.getSource(ids.source) as GeoJSONSource | undefined;
@@ -3894,7 +4529,15 @@ export default function RealMapExplorerPage({
               facts: mapFactsV148(layer, (feature.properties || {}) as Record<string, unknown>)
                 .filter((fact) => fact.key !== "sourceLabel"),
               source: mapSourceLineV148((feature.properties || {}) as Record<string, unknown>),
-              note: feature.properties?.approximate ? "소재 지역의 대표 위치" : undefined,
+              note:
+                [
+                  feature.properties?.approximate ? "소재 지역의 대표 위치" : "",
+                  publicTextV126(feature.properties?.locationLabelV151)
+                    ? `소재 ${publicTextV126(feature.properties?.locationLabelV151)}`
+                    : "",
+                ]
+                  .filter(Boolean)
+                  .join(" · ") || undefined,
             })
           )
           .addTo(map);
@@ -4036,9 +4679,11 @@ export default function RealMapExplorerPage({
   }, [
     activeIds,
     baseMapStatus,
+    boundaryContextV151,
     countryIso3,
     filters,
     layers,
+    locationsByElementV151,
     primaryLayerId,
     recordsByElement,
     renderOrderedActiveIds,
@@ -4184,7 +4829,7 @@ export default function RealMapExplorerPage({
         geoJson = asset.geometry as unknown as GeoJSON.FeatureCollection<GeoJSON.Geometry>;
       } else {
         if (!asset) return null;
-        const result = choroplethFeatureCollection(layer, asset, selector);
+        const result = choroplethFeatureCollectionV151(layer, asset, selector, boundaryContextV151);
         geoJson = result.collection;
         valueDomain = { maximum: result.maximum, minimum: result.minimum };
       }
@@ -4217,7 +4862,7 @@ export default function RealMapExplorerPage({
         })),
       };
     },
-    [layers, recordsByElement, selectorByElement, spatialByElement]
+    [boundaryContextV151, layers, recordsByElement, selectorByElement, spatialByElement]
   );
 
   const comparisonBoundsV135 = useMemo(
@@ -4308,6 +4953,11 @@ export default function RealMapExplorerPage({
       ? focusedLayer.selectors.variables.find(
           (row) => row.key === focusedSelector.variable
         ) || null
+      : null;
+  // V151-2: the rule the focused layer follows under the current outline.
+  const focusedBoundaryPolicyKindV151: BoundaryPolicyKindV151 | null =
+    focusedLayer && focusedSelector
+      ? policyKindForVariableV151(focusedLayer.boundaryPolicy, focusedSelector.variable)
       : null;
   const focusedVariablePresentationV129 =
     focusedLayer && focusedSelector
@@ -4551,9 +5201,37 @@ export default function RealMapExplorerPage({
     }
     if (renderer === "admin1-choropleth" || renderer === "partial-choropleth") {
       const asset = spatialByElement[focusedLayer.elementId];
-      const values = asset?.data
+      const sourceValues = asset?.data
         ? spatialValuesForSelectorV125(asset.data, focusedSelector)
         : [];
+      // V151-2: under the 34-unit outline the panel describes the values the
+      // map draws (the aggregated 34 units), not the 63 source rows.
+      const renderedV151 = asset
+        ? choroplethFeatureCollectionV151(focusedLayer, asset, focusedSelector, boundaryContextV151)
+        : null;
+      const aggregated34 = renderedV151?.mode === "34";
+      const values: VietnamSpatialLayerAssetV124["values"] = aggregated34
+        ? renderedV151!.collection.features
+            .filter((feature) => feature.properties?.hasValue)
+            .map((feature) => {
+              const properties = feature.properties || {};
+              return {
+                adm1Code: String(properties.adm1Code || ""),
+                adm1Name: String(properties.adm1Name || ""),
+                variable: focusedSelector.variable,
+                variableLabel: String(properties.variableLabel || ""),
+                period: focusedSelector.period,
+                value: Number(properties.value),
+                unit: String(properties.unit || ""),
+                sourceIndicatorId: null,
+                sourceRecordId: null,
+                sourceSpatialUnit: "admin1" as const,
+                imputed: false as const,
+              };
+            })
+        : sourceValues;
+      const unitTotalV151 = aggregated34 ? 34 : 63;
+      const unitTotalLabelV151 = aggregated34 ? "34개 성·시(2025-07-01 시행)" : "63개 성·시(개편 전 기준)";
       const sourceIsRegional = values.some(
         (row) => row.sourceSpatialUnit === "region"
       );
@@ -4584,12 +5262,12 @@ export default function RealMapExplorerPage({
         ordered[0]?.unit ||
         focusedVariable?.unit ||
         focusedLayer.unit;
-      const missingRegionCount = Math.max(0, 63 - ordered.length);
+      const missingRegionCount = Math.max(0, unitTotalV151 - ordered.length);
       summaryRows.push({
         label: sourceIsRegional ? `자료가 있는 ${regionUnitLabel}` : "자료가 있는 지역",
         value: sourceIsRegional
           ? `${ordered.length}/${regionTotal}개 ${regionUnitLabel}`
-          : `${ordered.length}/63개 성·시(개편 전 기준)`,
+          : `${ordered.length}/${unitTotalLabelV151}`,
       });
       if (minimum !== null) {
         summaryRows.push(
@@ -4645,7 +5323,9 @@ export default function RealMapExplorerPage({
         median: middle,
         maximum,
         dataRegionCount: values.length,
-        missingRegionCount: Math.max(0, 63 - values.length),
+        missingRegionCount: sourceIsRegional
+          ? Math.max(0, regionTotal - ordered.length)
+          : Math.max(0, unitTotalV151 - values.length),
         unit,
       };
     }
@@ -4744,6 +5424,7 @@ export default function RealMapExplorerPage({
     }
     return { ...empty, summaryRows, unit: noun };
   }, [
+    boundaryContextV151,
     filters,
     focusedLayer,
     focusedSelector,
@@ -4872,9 +5553,36 @@ export default function RealMapExplorerPage({
         )?.label ||
         currentOption?.label ||
         "값";
+    // V151-2: a selected 34-unit aggregate gets the same rule applied per
+    // period, so its trend is the aggregated series, never a member's.
+    const trendKind = policyKindForVariableV151(selectedOwningLayer.boundaryPolicy, selectedOwningSelector.variable);
+    let sourceRows: VietnamSpatialLayerAssetV124["values"] = data.values;
+    if (selectedSpatial.unitCode) {
+      if (!isAggregatingKindV151(trendKind)) return null;
+      const areas = areaKm2ByAdm1CodeV151(adm1Geometry34V151) || undefined;
+      if (trendKind === "area-weighted-mean" && !areas) return null;
+      const memberSet = new Set(selectedSpatial.memberAdm1Codes || []);
+      const buckets = new Map<string, VietnamSpatialLayerAssetV124["values"]>();
+      for (const row of data.values) {
+        if (!memberSet.has(row.adm1Code) || !variableKeys.includes(row.variable)) continue;
+        const key = `${row.variable}|${row.period}`;
+        const list = buckets.get(key) || [];
+        list.push(row);
+        buckets.set(key, list);
+      }
+      sourceRows = [];
+      for (const rows of buckets.values()) {
+        const aggregated = aggregateTo34V151(rows, trendKind, { areaKm2ByAdm1Code: areas }).find(
+          (row) => row.unitCode === selectedSpatial.unitCode
+        );
+        if (aggregated && aggregated.value !== null) {
+          sourceRows.push({ ...rows[0], adm1Code: selectedSpatial.adm1Code, value: aggregated.value });
+        }
+      }
+    }
     const rowsByVariable = new Map<string, Array<{ period: string; value: number; unit: string }>>();
     let unit = "";
-    data.values.forEach((row) => {
+    sourceRows.forEach((row) => {
       if (
         row.adm1Code !== selectedSpatial.adm1Code ||
         !variableKeys.includes(row.variable) ||
@@ -4932,16 +5640,41 @@ export default function RealMapExplorerPage({
       series,
     };
   }, [
+    adm1Geometry34V151,
     selectedOwningLayer,
     selectedOwningSelector,
     selectedSpatial,
     spatialByElement,
   ]);
   // The province's document or project rows behind a count, from the layer asset.
+  // V151-2: the members behind a selected 34-unit aggregate, or null.
+  const selectedMemberSummaryV151 = useMemo(
+    () => (selectedSpatial ? parseMemberSummaryV151(selectedSpatial.properties.memberSummary) : null),
+    [selectedSpatial]
+  );
   const selectedMemberRecordsV138 = useMemo(() => {
     if (!selectedSpatial?.adm1Code || !selectedOwningLayer) return [];
     const data = spatialByElement[selectedOwningLayer.elementId]?.data;
-    return data?.memberRecords?.[selectedSpatial.adm1Code] || [];
+    // V151-2: a 34-unit selection gathers the documents of every member
+    // province; a document filed under two members is still one document.
+    const codes = selectedSpatial.memberAdm1Codes?.length
+      ? selectedSpatial.memberAdm1Codes
+      : [selectedSpatial.adm1Code];
+    const seen = new Set<string>();
+    const merged: NonNullable<VietnamSpatialLayerAssetV124["memberRecords"]>[string] = [];
+    for (const code of codes) {
+      for (const record of data?.memberRecords?.[code] || []) {
+        const key = `${record.recordId}|${record.label}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+        merged.push(
+          codes.length > 1
+            ? { ...record, label: `${record.label} ${formerProvinceLabelV151(code)}`.trim() }
+            : record
+        );
+      }
+    }
+    return merged;
   }, [selectedOwningLayer, selectedSpatial, spatialByElement]);
   // The rows a selected point feature stands for (identity groups).
   const selectedMembersV138 = useMemo<CountryEntityV122[]>(() => {
@@ -5086,7 +5819,7 @@ export default function RealMapExplorerPage({
           ? lineFeatureCollection(layer, asset, selector, filters)
           : renderer === "regional-scope"
           ? asset.geometry
-          : choroplethFeatureCollection(layer, asset, selector).collection;
+          : choroplethFeatureCollectionV151(layer, asset, selector, boundaryContextV151).collection;
       collection.features.forEach((feature, featureIndex) => {
         const properties = (feature.properties || {}) as Record<string, unknown>;
         const rawLength = properties.lengthKm ?? properties.length;
@@ -5116,6 +5849,8 @@ export default function RealMapExplorerPage({
           spatial: {
             elementId,
             adm1Code: String(properties.adm1Code || "") || undefined,
+            unitCode: String(properties.unitCode || "") || undefined,
+            memberAdm1Codes: parseMemberSummaryV151(properties.memberSummary)?.members.map((member) => member.adm1Code),
             adm1Name: name,
             value:
               renderer === "line" && Number.isFinite(lineLength)
@@ -5155,6 +5890,7 @@ export default function RealMapExplorerPage({
     });
     return features;
   }, [
+    boundaryContextV151,
     filters,
     layers,
     primaryLayerId,
@@ -5271,7 +6007,7 @@ export default function RealMapExplorerPage({
     setSelected(null);
     setSelectedSpatial(null);
     setOverlapChoicesV133([]);
-    fitSelectedCountry();
+    // V151-2: changing the colour map keeps the reader's viewport.
   }
 
   /**
@@ -6389,8 +7125,9 @@ export default function RealMapExplorerPage({
               </dl>
               {focusedLayer.elementId === "D-008" && (
                 <p data-testid="d008-coverage-warning" role="note">
-                  개편 전 63개 성·시 중 3개에 값이 있으며, 값이 없는 60개
-                  성·시는 투명하게 표시하며 0으로 대체하지 않습니다.
+                  원자료의 개편 전 63개 성·시 중 3개에 값이 있으며, 값이 없는
+                  성·시는 투명하게 표시하고 0으로 대체하지 않습니다. 34개
+                  경계에서는 구성 성·시 값의 합계를 표시합니다.
                 </p>
               )}
               {focusedLayer.elementId === "A-024" && (
@@ -6451,7 +7188,13 @@ export default function RealMapExplorerPage({
           {...resizablePanelsV129.leftSeparator}
         />
 
-        <main className="cdp-map-canvas-wrap" aria-label="데이터 지도">
+        <main
+          className="cdp-map-canvas-wrap"
+          aria-label="데이터 지도"
+          data-backdrop-kind={backdropKindV151}
+          data-backdrop-status={backdropStatusV151}
+          data-backdrop-first-tile-ms={backdropFirstTileMsV151 === null ? undefined : backdropFirstTileMsV151}
+        >
           <div
             className="cdp-map-fallback"
             data-status={fallbackBoundaryStatus}
@@ -6561,9 +7304,12 @@ export default function RealMapExplorerPage({
                   selectedSpatial.selectionKey === feature.adm1Code;
                 const selectFeature = () => {
                   setSelected(null);
+                  const memberSummary = parseMemberSummaryV151(feature.properties.memberSummary);
                   setSelectedSpatial({
                     elementId: feature.elementId,
                     adm1Code: feature.adm1Code,
+                    unitCode: String(feature.properties.unitCode || "") || undefined,
+                    memberAdm1Codes: memberSummary?.members.map((member) => member.adm1Code),
                     adm1Name: feature.name,
                     value: feature.value,
                     unit: publicUnit,
@@ -6791,11 +7537,13 @@ export default function RealMapExplorerPage({
                   point.unit
                 )} ${point.unit}`;
                 const selectPoint = () => {
+                  // V151-2: the coloured area may be a 34-unit or a six-region
+                  // aggregate; the point's province is then one of its members.
+                  const pointCode = publicTextV126(point.properties.adm1Code) || "";
                   const overlappingPrimary = fallbackSpatial.fills.find(
                     (feature) =>
                       feature.elementId === primaryLayerId &&
-                      feature.adm1Code ===
-                        publicTextV126(point.properties.adm1Code)
+                      (feature.adm1Code === pointCode || fillHasMemberV151(feature.properties, pointCode))
                   );
                   if (overlappingPrimary) {
                     setOverlapChoicesV133([
@@ -7179,7 +7927,9 @@ export default function RealMapExplorerPage({
             </div>
           )}
           <span className="cdp-map-public-attribution">
-            {backdropEnabledV150 && <><a href="https://openfreemap.org/" target="_blank" rel="noreferrer">OpenFreeMap</a> · <a href="https://openmaptiles.org/" target="_blank" rel="noreferrer">© OpenMapTiles</a> · <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap</a> | </>}
+            {backdropAttributionV151(backdropKindV151).lines.map((line) => (
+              <span key={line} data-testid="map-backdrop-attribution-v151">{line} | </span>
+            ))}
             <a
               href="https://www.naturalearthdata.com/"
               target="_blank"
@@ -7201,9 +7951,28 @@ export default function RealMapExplorerPage({
           {/* V151: one stack, so the boundary picker keeps its place when the
               backdrop card grows to show its error message. */}
           <div className="cdp-map-control-stack-v151">
-          <div className="cdp-map-backdrop-v150">
-            <label><input type="checkbox" checked={backdropEnabledV150} onChange={event => setBackdropEnabledV150(event.target.checked)} />배경지도</label>
-            {backdropEnabledV150 && backdropErrorV150 && <span role="status">배경지도를 불러오지 못했습니다. 데이터와 경계는 계속 볼 수 있습니다.</span>}
+          <div className="cdp-map-backdrop-v150 cdp-map-backdrop-v151" data-backdrop-kind={backdropKindV151}>
+            <fieldset>
+              <legend>배경지도</legend>
+              {MAP_BACKDROP_KINDS_V151.map((kind) => (
+                <label key={kind}>
+                  <input
+                    type="radio"
+                    name="cdp-map-backdrop-v151"
+                    value={kind}
+                    checked={backdropKindV151 === kind}
+                    onChange={() => {
+                      backdropFellBackRef.current = false;
+                      setBackdropKindV151(kind);
+                    }}
+                  />
+                  {backdropKindLabelV151(kind)}
+                </label>
+              ))}
+            </fieldset>
+            {backdropStatusV151 === "fallback" && (
+              <span role="status">배경지도 타일을 불러오지 못해 &lsquo;없음&rsquo;으로 전환했습니다. 데이터와 경계는 계속 볼 수 있습니다.</span>
+            )}
           </div>
           <div
             className="cdp-map-boundary-system-v151"
@@ -7224,8 +7993,17 @@ export default function RealMapExplorerPage({
                 </label>
               ))}
             </fieldset>
-            <p data-testid="map-boundary-value-notice-v151">
-              {boundaryValueNoticeV151(boundarySystemV151State)}
+            <p
+              data-testid="map-boundary-value-notice-v151"
+              data-boundary-policy={focusedBoundaryPolicyKindV151 || "none"}
+            >
+              {focusedLayer?.boundaryPolicy
+                ? boundaryPolicyNoticeV151(
+                    boundarySystemV151State,
+                    focusedLayer.boundaryPolicy,
+                    focusedBoundaryPolicyKindV151 || undefined
+                  )
+                : boundaryValueNoticeV151(boundarySystemV151State)}
             </p>
           </div>
           </div>
@@ -8039,7 +8817,41 @@ export default function RealMapExplorerPage({
                           />
                         )}
                       {selectedSpatial.adm1Code && (
-                        <Evidence label="지역" value={selectedSpatial.adm1Name} />
+                        <Evidence
+                          label="지역"
+                          value={
+                            selectedSpatial.unitCode
+                              ? `${selectedSpatial.adm1Name} · 2025-07-01 시행 34개 성·시 기준`
+                              : selectedSpatial.adm1Name
+                          }
+                        />
+                      )}
+                      {selectedMemberSummaryV151 && selectedOwningLayer && (
+                        <>
+                          <Evidence
+                            label="집계 방식"
+                            value={boundaryPolicyNoticeV151(
+                              boundarySystemV151State,
+                              selectedOwningLayer.boundaryPolicy,
+                              selectedMemberSummaryV151.kind
+                            )}
+                          />
+                          <Evidence
+                            label="구성 성·시"
+                            value={`${selectedMemberSummaryV151.memberCount}개 중 ${selectedMemberSummaryV151.valueCount}개 값 있음${
+                              selectedMemberSummaryV151.partial ? " · 부분 결측" : ""
+                            }${selectedMemberSummaryV151.conflict ? " · 구성 값 불일치" : ""} — ${selectedMemberSummaryV151.members
+                              .map(
+                                (member) =>
+                                  `${publicMapFeatureNameV126(member.adm1Name, member.adm1Code)} ${
+                                    member.value === null
+                                      ? "결측"
+                                      : formatPublicNumberV126(member.value, selectedSpatial.unit || "")
+                                  }`
+                              )
+                              .join(" · ")}`}
+                          />
+                        </>
                       )}
                       {publicTextV126(selectedSpatial.properties.sourceRegion) && (
                         <>

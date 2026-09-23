@@ -192,7 +192,9 @@ try {
 const hoverText = normalizeTextV133(hoverSnapshot?.text);
 const detailText = normalizeTextV133(detailSnapshot?.text);
 const hoverRequired = {
-  place: /Quảng Bình|Quảng Trị|Hà Nội|Hồ Chí Minh|Đà Nẵng/u.test(hoverText),
+  // V151-2 (reports/v151-2/REVIEW_V151-2.md §4.2): B-021 is drawn on its six
+  // GDL regions, so the hovered place is a region name rather than a province.
+  place: /Quảng Bình|Quảng Trị|Hà Nội|Hồ Chí Minh|Đà Nẵng|중부고원|메콩강 삼각주|북중부·남중부 해안|동북부·서북부|홍강 삼각주|동남부/u.test(hoverText),
   measure: /지역 취약성|GVI/u.test(hoverText),
   period: /2023/u.test(hoverText),
   value: /\d+(?:\.\d+)?\s*\/\s*100/u.test(hoverText),

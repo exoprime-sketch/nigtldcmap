@@ -1,0 +1,78 @@
+{
+  "schema": "v155-asset-report-1",
+  "asset": "vnm-water-coastal-infra.geojson",
+  "generatedAt": "2026-09-22T03:32:32Z",
+  "source": {
+    "path": "_source\\vietnam\\v155\\osm\\vietnam-260921.osm.pbf",
+    "bytes": 329083173,
+    "md5": "8e8faf2eff113b67f28059c3b4a5c677",
+    "sha256": "24611cc9e678432b3ec2e1928159a5305b985583272120e09a1814dd9266d2dc",
+    "extract": "Geofabrik vietnam-260921.osm.pbf",
+    "datedUrl": "https://download.geofabrik.de/asia/vietnam-260921.osm.pbf",
+    "latestUrl": "https://download.geofabrik.de/asia/vietnam-latest.osm.pbf",
+    "pageUrl": "https://download.geofabrik.de/asia/vietnam.html",
+    "lastModified": "2026-09-21T22:41:35Z",
+    "replicationTimestamp": "2026-09-21T20:21:51Z"
+  },
+  "outputs": {
+    "vnm-water-coastal-infra.geojson": {
+      "bytes": 4954262,
+      "gzipBytes": 1221786,
+      "sha256": "3799bfaa4f79b295f700ef0fef46f250b1ce5ca6667a59fd299c02e88d87a1b7",
+      "bbox": [
+        102.5173681,
+        8.9705897,
+        109.3628256,
+        23.2741982
+      ]
+    }
+  },
+  "validation": {
+    "ports": {
+      "node": 49,
+      "way": 0,
+      "area": 22
+    },
+    "dams": {
+      "node": 45,
+      "way": 351,
+      "area": 867
+    },
+    "reservoirsCandidate": 3260,
+    "reservoirsBelowMinArea": 3023,
+    "reservoirsUnbuildable": 0,
+    "landuseReservoirLegacyTagCount": 78,
+    "landuseReservoirLegacyOnlyCount": 75,
+    "featureCount": 1558,
+    "featureCountByKind": {
+      "port": 66,
+      "dam": 1255,
+      "reservoir": 237
+    },
+    "droppedOutsideCountry": 13,
+    "noProvinceByKind": {
+      "port": 4,
+      "dam": 9
+    },
+    "nullNameRateByKind": {
+      "port": 0.5,
+      "dam": 0.7697,
+      "reservoir": 0.0464
+    },
+    "reservoirVertexCount": 146535,
+    "reservoirSourceVertexCount": 570203,
+    "reservoirToleranceDeg": 0.0002,
+    "duplicateIdCount": 0,
+    "invalidGeometryCount": 0,
+    "emptyGeometryCount": 0,
+    "bbox": [
+      102.5173681,
+      8.9705897,
+      109.3628256,
+      23.2741982
+    ],
+    "crs": "EPSG:4326",
+    "bytes": 4954262,
+    "gzipBytes": 1221786
+  }
+}

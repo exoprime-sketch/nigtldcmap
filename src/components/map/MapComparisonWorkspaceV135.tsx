@@ -3,6 +3,7 @@ import maplibregl, { Map as MapLibreMap } from "maplibre-gl";
 import type { GeoJSONSource } from "maplibre-gl";
 import type { VietnamMapRendererV124 } from "../../data/vietnam/vietnamTypesV124";
 import { publicAssetUrlV128 } from "../../utils/publicAssetUrlV128";
+import { COUNTRY_OUTLINE_Z5_PATH_V151 } from "../../data/map/adminBoundaryV151";
 import { PublicTermTextV134 } from "../help/PublicTermV134";
 
 export type MapComparisonSideV135 = "a" | "b";
@@ -59,6 +60,7 @@ interface PaneProps {
   side: MapComparisonSideV135;
 }
 
+// V151-2: Viet Nam from its dissolved national outline; neighbours from the world file.
 const createComparisonStyleV135 = (): any => ({
   version: 8,
   sources: {
@@ -66,6 +68,11 @@ const createComparisonStyleV135 = (): any => ({
       type: "geojson",
       data: publicAssetUrlV128("data/world-countries.geojson"),
       attribution: "Natural Earth",
+    },
+    "comparison-vnm-outline": {
+      type: "geojson",
+      data: publicAssetUrlV128(COUNTRY_OUTLINE_Z5_PATH_V151),
+      attribution: "국가 외곽선: geoBoundaries VNM ADM1(개편 전 63개 성·시) 병합",
     },
   },
   layers: [
@@ -78,16 +85,34 @@ const createComparisonStyleV135 = (): any => ({
       id: "comparison-country-fill",
       type: "fill",
       source: "comparison-country-boundaries",
+      filter: ["!=", ["get", "iso3"], "VNM"],
       paint: { "fill-color": "#ffffff", "fill-opacity": 0.9 },
     },
     {
       id: "comparison-country-outline",
       type: "line",
       source: "comparison-country-boundaries",
+      filter: ["!=", ["get", "iso3"], "VNM"],
       paint: {
         "line-color": "#587168",
         "line-opacity": 0.82,
         "line-width": 1.1,
+      },
+    },
+    {
+      id: "comparison-vnm-fill",
+      type: "fill",
+      source: "comparison-vnm-outline",
+      paint: { "fill-color": "#ffffff", "fill-opacity": 0.9 },
+    },
+    {
+      id: "comparison-vnm-outline",
+      type: "line",
+      source: "comparison-vnm-outline",
+      paint: {
+        "line-color": "#3f5a52",
+        "line-opacity": 0.9,
+        "line-width": 1.2,
       },
     },
   ],

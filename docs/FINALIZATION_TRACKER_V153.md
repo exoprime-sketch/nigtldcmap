@@ -33,8 +33,8 @@
 | A-024 | 전력망[위치, 미공급 지역] | 국가 기본 정보 | actual-records | line/606 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료·보존(`category-bar`) · QA 152/152 |
 | A-025 | CCS 시설 | 국가 기본 정보 | actual-records | point/3 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 예외(`comparison-table` · 수록 시설 5건(실증·후보·연구)이라 분류별 막대보다 시설·상태 비교표가 먼저) · QA 152/152 |
 | A-026 | 건물 풋프린트(Footprint) | 국가 기본 정보 | actual-records | panel-only/0 | 데이터 부재 | Open Buildings/MS 풋프린트 성·시 집계 수집(결정) | PE | 집중검토 |  | 예외(`note` · 건물 Footprint는 현재 파일 구성 정보만 제공되고 개별 건물·성시 집계 수치가 없어 registry 표준(분류별 막대+목록)을 적용할 수 없음; 안내문(note)으로 대체) · QA 152/152 |
-| A-027 | 교통 인프라[railway, road] | 국가 기본 정보 | actual-records | panel-only/0 | 지도 | 지표 막대+도로·철도 지도(OSM 자산) | P4+PE | 집중검토 |  | 완료(`category-bar`) · QA 152/152 |
-| A-028 | 해안 인프라; 수자원 인프라 | 국가 기본 정보 | actual-records | panel-only/0 | 지도, label 단위 추가 | 지표 막대(단위 라벨)+OSM 항만·댐·저수지 지도 자산 | P4+PE | 집중검토 |  | 완료(`category-bar`) · QA 152/152 |
+| A-027 | 교통 인프라[railway, road] | 국가 기본 정보 | actual-records | panel-only/0 | 지도 | 지표 막대+도로·철도 지도(OSM 자산) | P4+PE | 진행 — 자산 확보(P6a) → 등록 대기(P6b) | V155-1: `geometry/vnm-roads-rail.geojson`(8,114 선형, gzip 1.75 MB)+overview, 계약 제안 `spatial/pending-layers-v155.json`, `docs/DATA_ASSETS_V155.md`, `reports/v155/roads-rail.png` | 완료(`category-bar`) · QA 152/152 |
+| A-028 | 해안 인프라; 수자원 인프라 | 국가 기본 정보 | actual-records | panel-only/0 | 지도, label 단위 추가 | 지표 막대(단위 라벨)+OSM 항만·댐·저수지 지도 자산 | P4+PE | 진행 — 자산 확보(P6a) → 등록 대기(P6b) | V155-1: `geometry/vnm-water-coastal-infra.geojson`(항만 66·댐 1,255·저수지 237, gzip 1.22 MB), 계약 제안 `spatial/pending-layers-v155.json`, `reports/v155/water-coastal-infra.png` | 완료(`category-bar`) · QA 152/152 |
 | A-029 | FTA 체결 현황 | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`timeline`) · QA 152/152 |
 | A-030 | 한-개도국 교역액 | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`line`) · QA 152/152 |
 | A-031 | 물류성과지수(LPI) | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`line`) · QA 152/152 |
@@ -47,7 +47,7 @@
 | B-005 | 가뭄[연속 건조일수(CDD), 표준강수지수(SPEI12), 토양수분] | 기후 환경 | actual-records | choropleth/63 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`region-bar`) · QA 152/152 |
 | B-006 | 폭염[폭염일수(TX35), 폭염일수(TX40), 열대야(TR20), 열대야(TR25), Heat Index( | 기후 환경 | actual-records | choropleth/63 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`region-bar`) · QA 152/152 |
 | B-007 | 홍수[최대 1일 강수(RX1day), 최대 5일 강수(RX5day), 호우일수(R20mm), 호우일수(R50 | 기후 환경 | actual-records | choropleth/63 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`region-bar`) · QA 152/152 |
-| B-008 | NASA 해수면 상승 전망[SSP1, SSP2, SSP3, SSP4, SSP5] | 기후 환경 | actual-records | point/5 | 지도에서 얼마나 덮히는지 | 관측소 시나리오 추이 유지+DEM 기반 저지대 침수 범위 레이어(주의문 포함) | PE | 집중검토 |  | 완료(`line`) · QA 152/152 |
+| B-008 | NASA 해수면 상승 전망[SSP1, SSP2, SSP3, SSP4, SSP5] | 기후 환경 | actual-records | point/5 | 지도에서 얼마나 덮히는지 | 관측소 시나리오 추이 유지+DEM 기반 저지대 침수 범위 레이어(주의문 포함) | PE | 진행 — 자산 확보(P6c) → 등록 대기(P6b) | V155-2: `geometry/vnm-slr-lowland-le0p5m/le1m/le2m.geojson`(성·시별 저지대 691·1,429·9,465 km², gzip 0.20/0.39/1.96 MB, 주의문 동봉), 대응표 `spatial/pending-v155/b-008-slr-zones.json`(315행), 성별 요약 `b-008-lowland-by-adm1.json`, 계약 제안 `spatial/pending-layers-v155.json`, `docs/DATA_ASSETS_V155.md` §6, `reports/v155/slr-lowland.png` | 완료(`line`) · QA 152/152 |
 | B-009 | WWF 생물다양성·기후 리스크 | 기후 환경 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`line`) · QA 152/152 |
 | B-010 | 기후 리스크 지수(CRI) | 기후 환경 | partial-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 예외(`category-bar` · 관측연도가 2개(2023·2024)뿐이며 순위·피해액·인명피해가 서로 다른 척도로 별도 비교되어 단일 시계열 선 대신 항목별 막대로 표시) · QA 152/152 |
 | B-011 | 기후 취약성 지수(ND-GAIN) | 기후 환경 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`line`) · QA 152/152 |
@@ -56,7 +56,7 @@
 | B-014 | CCDR 탄소세 시뮬레이션 결과[배출감소율, GDP 영향, 세수 효과] | 기후 환경 | actual-records | country-aggregate/0 | 시각화 미완 | 시나리오별 배출·GDP 영향 라인 | P4 | 집중검토 |  | 예외(`category-bar` · 2030·2040년 두 시점의 시나리오별 비교값만 제공되어 시계열 선 대신 시나리오별 막대로 표시) · QA 152/152 |
 | B-015 | 탄소 가격 수준[ETS, Carbon Tax] | 기후 환경 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`timeline`) · QA 152/152 |
 | B-016 | 화석연료 의존도(Fossil fuel energy consumption) | 기후 환경 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`line`) · QA 152/152 |
-| B-017 | WRI Aqueduct 물 스트레스 지수 | 기후 환경 | actual-records | country-aggregate/0 | 지도? | Aqueduct 4.0 유역 경계 확보→지도 | PE | 집중검토 |  | 예외(`table` · Aqueduct 평가구역 경계 미확보(지도 보류) · 등급별 평가구역 수 표가 먼저) · QA 152/152 |
+| B-017 | WRI Aqueduct 물 스트레스 지수 | 기후 환경 | actual-records | country-aggregate/0 | 지도? | Aqueduct 4.0 유역 경계 확보→지도 | PE | 진행 — 자산 확보(P6a) → 등록 대기(P6b) | V155-1: `geometry/vnm-aqueduct40-basins.geojson`(442/443, string_id 조인 443/443)+`-l6`(58 유역), 값 초안 `spatial/pending-v155/b-017.json`, 계약 제안 `spatial/pending-layers-v155.json`, `reports/v155/aqueduct-basins.png` | 예외(`table` · Aqueduct 평가구역 경계 미확보(지도 보류) · 등급별 평가구역 수 표가 먼저) · QA 152/152 |
 | B-018 | SSP GDP 전망[SSP1, SSP2, SSP3, SSP4, SSP5] | 기후 환경 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`line`) · QA 152/152 |
 | B-019 | SSP 인구 전망[SSP1, SSP2, SSP3, SSP4, SSP5] | 기후 환경 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`line`) · QA 152/152 |
 | B-020 | EU/UN INFORM Risk Index(복합 리스크 지수) | 기후 환경 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`line`) · QA 152/152 |
@@ -134,7 +134,7 @@
 | D-019 | CTCN 기술지원 요청[요청 국가, NDE 기관명, 기술 분야(Sectors), 지원 단계(Phase: Sc | 시장·산업 및 재원 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`category-bar`) · QA 152/152 |
 | D-020 | GCF 프로젝트[프로젝트명(Ref No.), 국가, 인가기관(AE), GCF 승인 금액, 공동재원, 분야(m | 시장·산업 및 재원 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`category-bar`) · QA 152/152 |
 | D-021 | 주요 국제기구·MDB 프로젝트[프로젝트명, 수원국, 공여기관(WB/ADB/UNDP/FAO/UNCCD 등),  | 시장·산업 및 재원 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`category-bar`) · QA 152/152 |
-| D-022 | MDB/DFI/PPP 투자 프로젝트[프로젝트명, 수원국, 공여기관(WB/ADB/IFC 등), 섹터(DAC 5 | 시장·산업 및 재원 | actual-records | country-aggregate/0 | 사업 위치 추후 추가 | 목록·금액 구성+좌표 수집 후 지도 | P4+PE | 집중검토 |  | 완료(`category-bar`) · QA 152/152 |
+| D-022 | MDB/DFI/PPP 투자 프로젝트[프로젝트명, 수원국, 공여기관(WB/ADB/IFC 등), 섹터(DAC 5 | 시장·산업 및 재원 | actual-records | country-aggregate/0 | 사업 위치 추후 추가 | 목록·금액 구성+좌표 수집 후 지도 | P4+PE | 진행 — 자산 확보(P6c) → 등록 대기(P6b) | V155-2: `spatial/pending-v155/d-022-locations.json`(15건 매핑률 100% — 성·시 7·전국 8·미확인 0, 출처 URL 60/60), 검수 `tools/vietnam_spatial/source/d-022-review-v155.json`, 계약 제안 `spatial/pending-layers-v155.json`(region-choropleth native-34), `docs/DATA_ASSETS_V155.md` §7 | 완료(`category-bar`) · QA 152/152 |
 | D-023 | ODA 및 기후기금(GCF, GEF, AF) 재원[프로젝트명, 수원국, 기금명(GCF/GEF/AF/CIF), | 시장·산업 및 재원 | actual-records | panel-only/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`category-bar`) · QA 152/152 |
 | D-024 | VC·임팩트 투자 현황[투자 라운드(Seed/Series A-C), 투자자명, 투자 금액, 대상 기업/기술, | 시장·산업 및 재원 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`category-bar`) · QA 152/152 |
 | D-025 | 민간 인프라 투자(PPI)[프로젝트명, 국가, 섹터(전력/수도/교통/통신), 투자 유형(Greenfield/ | 시장·산업 및 재원 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`category-bar`) · QA 152/152 |
@@ -159,4 +159,7 @@
 | E-018 | 국내 기업 개도국 진출[기업명, 진출국, 업종(RE/에너지효율/폐기물/수처리), 진출 형태(법인/지사/프로젝 | 협력·실행 기반 | actual-records | point/14 | 시각화 미완 | 아이콘 지도+분야·진출형태 구성 | P3+P4 | 집중검토 |  | 완료(`category-bar`) · QA 152/152 |
 | E-019 | 한국 기관 사무소[기관명(KOTRA무역관/KOICA사무소/에너지공단/KEPCO/한수원 등), 소재국, 도시, | 협력·실행 기반 | actual-records | point/6 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`category-bar`) · QA 152/152 |
 | E-020 | 한국 공공·민간 지원체계[지원기관명(NIGT/GTC/KOTRA/KIAT/에너지공단 등), 지원 프로그램명,  | 협력·실행 기반 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`category-bar`) · QA 152/152 |
+
+## 비고 — 데이터 외 후속(V151-2, 2026-09-22)
+- 배경지도 '도로·지명'(OpenFreeMap Liberty) 첫 타일 1.04~1.34 s(목표 ≤1 s 미달, 콜드 3회). Liberty 스타일 JSON fetch + 110 레이어 삽입 + OFM 벡터 네트워크가 원인. 후속: 스타일 JSON 번들 내장 또는 핵심 레이어만 직접 정의. 지형(기본) 0.85 s·위성 0.34 s는 충족. 증빙 `reports/v151-2/backdrop-first-tile.json`.
 

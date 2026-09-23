@@ -58,19 +58,4 @@ export function addKoreanMapLabelsV150(map: MapLibreMap, boundary: VietnamMapGeo
       paint: { "text-color": kind === "country" ? "#273e46" : "#243e38", "text-halo-color": "#ffffff", "text-halo-width": 2 } });
   }
 }
-const BASE_IDS = ["cdp-terrain-v150", "cdp-water-v150", "cdp-parks-v150", "cdp-roads-v150", "cdp-streets-v150"];
-export function setMapBackdropV150(map: MapLibreMap, enabled: boolean) {
-  if (enabled && !map.getSource("cdp-ofm-v150")) {
-    map.addSource("cdp-ofm-v150", { type: "vector", url: "https://tiles.openfreemap.org/planet" });
-    map.addSource("cdp-terrain-v150", { type: "raster", tiles: ["https://tiles.openfreemap.org/natural_earth/ne2sr/{z}/{x}/{y}.png"], tileSize: 256, maxzoom: 6 });
-    map.addLayer({ id: BASE_IDS[0], type: "raster", source: "cdp-terrain-v150", paint: { "raster-opacity": 0.64, "raster-saturation": -0.5 } }, "cdp-country-fill");
-    map.addLayer({ id: BASE_IDS[1], type: "fill", source: "cdp-ofm-v150", "source-layer": "water", paint: { "fill-color": "#c4dce9" } }, "cdp-country-fill");
-    map.addLayer({ id: BASE_IDS[2], type: "fill", source: "cdp-ofm-v150", "source-layer": "landcover", minzoom: 6, paint: { "fill-color": "#bdd0ac", "fill-opacity": 0.35 } }, "cdp-country-fill");
-    map.addLayer({ id: BASE_IDS[3], type: "line", source: "cdp-ofm-v150", "source-layer": "transportation", filter: ["in", "class", "motorway", "trunk", "primary", "secondary"], minzoom: 6, paint: { "line-color": "#baab95", "line-width": ["interpolate", ["linear"], ["zoom"], 6, 0.55, 14, 2.5] } }, "cdp-country-outline");
-    map.addLayer({ id: BASE_IDS[4], type: "line", source: "cdp-ofm-v150", "source-layer": "transportation", minzoom: 11, paint: { "line-color": "#c2bcae", "line-width": 0.6 } }, "cdp-country-outline");
-  }
-  for (const id of BASE_IDS) if (map.getLayer(id)) map.setLayoutProperty(id, "visibility", enabled ? "visible" : "none");
-  map.setPaintProperty("cdp-country-fill", "fill-color", enabled ? "#f5f3eb" : "#f6f7f3");
-  map.setPaintProperty("cdp-country-fill", "fill-opacity", enabled ? 0.08 : 1);
-  map.setPaintProperty("cdp-base-background", "background-color", "#d6e5ed");
-}
+// V151-2: the backdrop itself moved to mapBackdropV151.ts (kinds 지형/위성/도로·지명/없음).

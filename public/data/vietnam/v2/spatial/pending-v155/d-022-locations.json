@@ -1,0 +1,1551 @@
+{
+  "schemaVersion": "v155-project-locations-1",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "pending": true,
+  "pendingNotice": "P6b가 map-index에 등록하기 전까지 spatial/layers 밖에 둡니다. 소재는 World Bank가 IATI로 보고한 location(성 단위)과 사업문서 명시 성·시만 사용했으며 좌표 추정·지오코딩은 하지 않았습니다.",
+  "elementId": "D-022",
+  "countryIso3": "VNM",
+  "boundarySystem": "post-2025-34",
+  "boundaryPolicy": "native-34",
+  "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-34.geojson",
+  "joinKey": "adm1Code34",
+  "coverageKind": "partial",
+  "aggregationRule": "다수 성 사업은 각 성에 사업 수 1건·승인액 전액 계상 — 성 간 합산 불가(중복). 전국 사업은 성별 값 없이 별도 목록.",
+  "selectors": {
+    "defaultPeriod": "1997–2025",
+    "defaultVariable": "project-count",
+    "periods": [
+      "1997–2025"
+    ],
+    "variables": [
+      {
+        "key": "project-count",
+        "label": "사업 수(소재 성 기준)",
+        "unit": "건",
+        "periods": [
+          "1997–2025"
+        ],
+        "maxFeatureCount": 12
+      },
+      {
+        "key": "commitment-sum",
+        "label": "승인액 합계(USD, 다수 성 사업 전액 계상)",
+        "unit": "USD",
+        "periods": [
+          "1997–2025"
+        ],
+        "maxFeatureCount": 12
+      }
+    ]
+  },
+  "values": [
+    {
+      "adm1Code34": "VN34-22",
+      "adm1Name34": "Nghệ An",
+      "variable": "project-count",
+      "period": "1997–2025",
+      "value": 3,
+      "unit": "건",
+      "recordIds": [
+        "v124-d-022-entity-00003",
+        "v124-d-022-entity-00006",
+        "v124-d-022-entity-00007"
+      ],
+      "mappingMethod": "reported-location-province",
+      "imputed": false
+    },
+    {
+      "adm1Code34": "VN34-22",
+      "adm1Name34": "Nghệ An",
+      "variable": "commitment-sum",
+      "period": "1997–2025",
+      "value": 243812060.0,
+      "unit": "USD",
+      "recordIds": [
+        "v124-d-022-entity-00003",
+        "v124-d-022-entity-00006",
+        "v124-d-022-entity-00007"
+      ],
+      "mappingMethod": "reported-location-province",
+      "imputed": false
+    },
+    {
+      "adm1Code34": "VN34-21",
+      "adm1Name34": "Thanh Hóa",
+      "variable": "project-count",
+      "period": "1997–2025",
+      "value": 2,
+      "unit": "건",
+      "recordIds": [
+        "v124-d-022-entity-00006",
+        "v124-d-022-entity-00007"
+      ],
+      "mappingMethod": "reported-location-province",
+      "imputed": false
+    },
+    {
+      "adm1Code34": "VN34-21",
+      "adm1Name34": "Thanh Hóa",
+      "variable": "commitment-sum",
+      "period": "1997–2025",
+      "value": 114212060.0,
+      "unit": "USD",
+      "recordIds": [
+        "v124-d-022-entity-00006",
+        "v124-d-022-entity-00007"
+      ],
+      "mappingMethod": "reported-location-province",
+      "imputed": false
+    },
+    {
+      "adm1Code34": "VN34-23",
+      "adm1Name34": "Hà Tĩnh",
+      "variable": "project-count",
+      "period": "1997–2025",
+      "value": 2,
+      "unit": "건",
+      "recordIds": [
+        "v124-d-022-entity-00006",
+        "v124-d-022-entity-00007"
+      ],
+      "mappingMethod": "reported-location-province",
+      "imputed": false
+    },
+    {
+      "adm1Code34": "VN34-23",
+      "adm1Name34": "Hà Tĩnh",
+      "variable": "commitment-sum",
+      "period": "1997–2025",
+      "value": 114212060.0,
+      "unit": "USD",
+      "recordIds": [
+        "v124-d-022-entity-00006",
+        "v124-d-022-entity-00007"
+      ],
+      "mappingMethod": "reported-location-province",
+      "imputed": false
+    },
+    {
+      "adm1Code34": "VN34-25",
+      "adm1Name34": "Quảng Trị",
+      "variable": "project-count",
+      "period": "1997–2025",
+      "value": 2,
+      "unit": "건",
+      "recordIds": [
+        "v124-d-022-entity-00006",
+        "v124-d-022-entity-00007"
+      ],
+      "mappingMethod": "reported-location-province",
+      "imputed": false
+    },
+    {
+      "adm1Code34": "VN34-25",
+      "adm1Name34": "Quảng Trị",
+      "variable": "commitment-sum",
+      "period": "1997–2025",
+      "value": 114212060.0,
+      "unit": "USD",
+      "recordIds": [
+        "v124-d-022-entity-00006",
+        "v124-d-022-entity-00007"
+      ],
+      "mappingMethod": "reported-location-province",
+      "imputed": false
+    },
+    {
+      "adm1Code34": "VN34-26",
+      "adm1Name34": "Huế",
+      "variable": "project-count",
+      "period": "1997–2025",
+      "value": 2,
+      "unit": "건",
+      "recordIds": [
+        "v124-d-022-entity-00006",
+        "v124-d-022-entity-00007"
+      ],
+      "mappingMethod": "reported-location-province",
+      "imputed": false
+    },
+    {
+      "adm1Code34": "VN34-26",
+      "adm1Name34": "Huế",
+      "variable": "commitment-sum",
+      "period": "1997–2025",
+      "value": 114212060.0,
+      "unit": "USD",
+      "recordIds": [
+        "v124-d-022-entity-00006",
+        "v124-d-022-entity-00007"
+      ],
+      "mappingMethod": "reported-location-province",
+      "imputed": false
+    },
+    {
+      "adm1Code34": "VN34-SG",
+      "adm1Name34": "Hồ Chí Minh",
+      "variable": "project-count",
+      "period": "1997–2025",
+      "value": 2,
+      "unit": "건",
+      "recordIds": [
+        "v124-d-022-entity-00004",
+        "v124-d-022-entity-00009"
+      ],
+      "mappingMethod": "reported-location-province",
+      "imputed": false
+    },
+    {
+      "adm1Code34": "VN34-SG",
+      "adm1Name34": "Hồ Chí Minh",
+      "variable": "commitment-sum",
+      "period": "1997–2025",
+      "value": 337763010.0,
+      "unit": "USD",
+      "recordIds": [
+        "v124-d-022-entity-00004",
+        "v124-d-022-entity-00009"
+      ],
+      "mappingMethod": "reported-location-province",
+      "imputed": false
+    },
+    {
+      "adm1Code34": "VN34-13",
+      "adm1Name34": "Quảng Ninh",
+      "variable": "project-count",
+      "period": "1997–2025",
+      "value": 1,
+      "unit": "건",
+      "recordIds": [
+        "v124-d-022-entity-00006"
+      ],
+      "mappingMethod": "reported-location-province",
+      "imputed": false
+    },
+    {
+      "adm1Code34": "VN34-13",
+      "adm1Name34": "Quảng Ninh",
+      "variable": "commitment-sum",
+      "period": "1997–2025",
+      "value": 56143976.0,
+      "unit": "USD",
+      "recordIds": [
+        "v124-d-022-entity-00006"
+      ],
+      "mappingMethod": "reported-location-province",
+      "imputed": false
+    },
+    {
+      "adm1Code34": "VN34-30",
+      "adm1Name34": "Gia Lai",
+      "variable": "project-count",
+      "period": "1997–2025",
+      "value": 1,
+      "unit": "건",
+      "recordIds": [
+        "v124-d-022-entity-00010"
+      ],
+      "mappingMethod": "reported-location-province",
+      "imputed": false
+    },
+    {
+      "adm1Code34": "VN34-30",
+      "adm1Name34": "Gia Lai",
+      "variable": "commitment-sum",
+      "period": "1997–2025",
+      "value": 144970000.0,
+      "unit": "USD",
+      "recordIds": [
+        "v124-d-022-entity-00010"
+      ],
+      "mappingMethod": "reported-location-province",
+      "imputed": false
+    },
+    {
+      "adm1Code34": "VN34-49",
+      "adm1Name34": "Vĩnh Long",
+      "variable": "project-count",
+      "period": "1997–2025",
+      "value": 1,
+      "unit": "건",
+      "recordIds": [
+        "v124-d-022-entity-00005"
+      ],
+      "mappingMethod": "reported-location-province",
+      "imputed": false
+    },
+    {
+      "adm1Code34": "VN34-49",
+      "adm1Name34": "Vĩnh Long",
+      "variable": "commitment-sum",
+      "period": "1997–2025",
+      "value": 80600000.0,
+      "unit": "USD",
+      "recordIds": [
+        "v124-d-022-entity-00005"
+      ],
+      "mappingMethod": "reported-location-province",
+      "imputed": false
+    },
+    {
+      "adm1Code34": "VN34-CT",
+      "adm1Name34": "Cần Thơ",
+      "variable": "project-count",
+      "period": "1997–2025",
+      "value": 1,
+      "unit": "건",
+      "recordIds": [
+        "v124-d-022-entity-00009"
+      ],
+      "mappingMethod": "reported-location-province",
+      "imputed": false
+    },
+    {
+      "adm1Code34": "VN34-CT",
+      "adm1Name34": "Cần Thơ",
+      "variable": "commitment-sum",
+      "period": "1997–2025",
+      "value": 107000000.0,
+      "unit": "USD",
+      "recordIds": [
+        "v124-d-022-entity-00009"
+      ],
+      "mappingMethod": "reported-location-province",
+      "imputed": false
+    },
+    {
+      "adm1Code34": "VN34-DN",
+      "adm1Name34": "Đà Nẵng",
+      "variable": "project-count",
+      "period": "1997–2025",
+      "value": 1,
+      "unit": "건",
+      "recordIds": [
+        "v124-d-022-entity-00010"
+      ],
+      "mappingMethod": "reported-location-province",
+      "imputed": false
+    },
+    {
+      "adm1Code34": "VN34-DN",
+      "adm1Name34": "Đà Nẵng",
+      "variable": "commitment-sum",
+      "period": "1997–2025",
+      "value": 144970000.0,
+      "unit": "USD",
+      "recordIds": [
+        "v124-d-022-entity-00010"
+      ],
+      "mappingMethod": "reported-location-province",
+      "imputed": false
+    },
+    {
+      "adm1Code34": "VN34-HP",
+      "adm1Name34": "Hải Phòng",
+      "variable": "project-count",
+      "period": "1997–2025",
+      "value": 1,
+      "unit": "건",
+      "recordIds": [
+        "v124-d-022-entity-00006"
+      ],
+      "mappingMethod": "reported-location-province",
+      "imputed": false
+    },
+    {
+      "adm1Code34": "VN34-HP",
+      "adm1Name34": "Hải Phòng",
+      "variable": "commitment-sum",
+      "period": "1997–2025",
+      "value": 56143976.0,
+      "unit": "USD",
+      "recordIds": [
+        "v124-d-022-entity-00006"
+      ],
+      "mappingMethod": "reported-location-province",
+      "imputed": false
+    }
+  ],
+  "records": [
+    {
+      "recordId": "v124-d-022-entity-00001",
+      "projectName": "Vietnam Energy Efficiency for Industrial Enterprises(VEEIE)",
+      "agency": "The World Bank",
+      "agencyType": "MDB",
+      "wbProjectId": "P151086",
+      "iatiId": "44000-P151086",
+      "lendingInstrument": null,
+      "implementingAgency": "Ministry of Industry and Trade",
+      "periodStart": "2017-04-14",
+      "periodEnd": "2022-07-31",
+      "commitmentUsd": 53379112.0,
+      "adm1Codes34": [],
+      "adm1Names34": [],
+      "adm1Codes63": [],
+      "adm1Names63": [],
+      "national": true,
+      "pending": false,
+      "confidence": "official-document",
+      "evidence": "전국 사업 — ISDS(2015-12-17) §4 사업 위치: 참여 ESCO·산업기업이 전국에 소재. PAD 적격 기준에 지역 제한 없음 — 전국 산업 에너지효율 융자 프로그램.",
+      "iatiLocationNames": [
+        "Socialist Republic of Vietnam",
+        "Ho Chi Minh City",
+        "Thành Phố Thái Nguyên",
+        "Hanoi"
+      ],
+      "iatiLocationsUsed": false,
+      "iatiUnresolvedNames": [
+        "Socialist Republic of Vietnam"
+      ],
+      "iatiLocationNote": "IATI location(HCMC·Thái Nguyên·Hanoi·국가)은 PAD 부속 '위치 코드'(임무·집행 지점)이며 사업 범위가 아님 → 미사용.",
+      "documentProvinces": [],
+      "documentQuote": "The project will be implemented by the selected ESCOs and Industrial Enterprises located in the whole country.",
+      "documentQuoteSource": "http://documents.worldbank.org/curated/en/734411468338398397/text/Integrated-Safeguards-Data-Sheet-Appraisal-Stage-Vietnam-Energy-Efficiency-for-Industrial-Enterprises-VEEIE-P151086.txt",
+      "reviewNote": null,
+      "sourceUrl": "https://projects.worldbank.org/en/projects-operations/project-detail/P151086",
+      "locationSourceUrl": "https://d-portal.iatistandard.org/q?aid=44000-P151086&from=act,location&select=*&form=json&limit=100",
+      "checkedAt": "2026-09-22T04:18:47Z",
+      "reviewedAt": "2026-09-22T04:30:00Z",
+      "urlChecks": {
+        "quoteSource": {
+          "url": "http://documents.worldbank.org/curated/en/734411468338398397/text/Integrated-Safeguards-Data-Sheet-Appraisal-Stage-Vietnam-Energy-Efficiency-for-Industrial-Enterprises-VEEIE-P151086.txt",
+          "httpStatus": 200
+        },
+        "worldBankPage": {
+          "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P151086",
+          "httpStatus": 200
+        },
+        "worldBankApi": {
+          "url": "https://search.worldbank.org/api/v2/projects?format=json&id=P151086",
+          "httpStatus": 200
+        },
+        "iati": {
+          "url": "https://d-portal.iatistandard.org/q?aid=44000-P151086&from=act,location&select=*&form=json&limit=100",
+          "httpStatus": 200
+        }
+      }
+    },
+    {
+      "recordId": "v124-d-022-entity-00002",
+      "projectName": "Distribution Efficiency Project",
+      "agency": "The World Bank",
+      "agencyType": "MDB",
+      "wbProjectId": "P125996",
+      "iatiId": "44000-P125996",
+      "lendingInstrument": "Investment Project Financing",
+      "implementingAgency": "Electricity Regulatory Authority of Vietnam (ERAV)",
+      "periodStart": "2012-09-11",
+      "periodEnd": "2018-12-31",
+      "commitmentUsd": 429589700.0,
+      "adm1Codes34": [],
+      "adm1Names34": [],
+      "adm1Codes63": [],
+      "adm1Names63": [],
+      "national": true,
+      "pending": false,
+      "confidence": "official-document",
+      "evidence": "전국 사업 — PAD(2012-08-14) para 61: 5개 전력공사(북부 27성·중부 13성·남부 21성·하노이·HCMC)의 관할이 전국 전체. IATI도 62개 성을 보고 — 전국 사업으로 처리(성별 1건씩 계상하면 의미 없음).",
+      "iatiLocationNames": [
+        "Tỉnh Nghệ An",
+        "Tỉnh Ninh Bình",
+        "Tỉnh Ninh Thuận",
+        "Tỉnh Sóc Trăng",
+        "Tỉnh Trà Vinh",
+        "Tỉnh Tuyên Quang",
+        "Tỉnh Vĩnh Long",
+        "Tỉnh Yên Bái",
+        "Tỉnh Lào Cai",
+        "Tỉnh Tiền Giang",
+        "Tỉnh Thừa Thiên-Huế",
+        "Kon Tum",
+        "Tỉnh Thanh Hóa",
+        "Tỉnh Tây Ninh",
+        "Tỉnh Sơn La",
+        "Tỉnh Quảng Trị",
+        "Tỉnh Quảng Ninh",
+        "Tỉnh Quảng Ngãi",
+        "Tỉnh Quảng Bình",
+        "Tỉnh Phú Yên",
+        "Tỉnh Hòa Bình",
+        "Long An",
+        "Tỉnh Lạng Sơn",
+        "Tỉnh Lâm Đồng",
+        "Tỉnh Lai Châu",
+        "Tỉnh Kiến Giang",
+        "Tỉnh Khánh Hòa",
+        "Tỉnh Hà Tĩnh",
+        "Tỉnh Hà Giang",
+        "Gia Lai",
+        "Thành Phố Hà Nội",
+        "Tỉnh Bình Thuận",
+        "Tỉnh Đồng Tháp",
+        "Tỉnh Đồng Nai",
+        "Tỉnh Đắk Lắk",
+        "Tỉnh Bà Rịa-Vũng Tàu",
+        "Tỉnh Cao Bằng",
+        "Tỉnh Bình Định",
+        "Tỉnh Bến Tre",
+        "An Giang",
+        "Tỉnh Bắc Ninh",
+        "Tỉnh Bắc Giang",
+        "Tỉnh Bình Dương",
+        "Tỉnh Bình Phước",
+        "Tỉnh Thái Nguyên",
+        "Tỉnh Quảng Nam",
+        "Tỉnh Phú Thọ",
+        "Tỉnh Nam Định",
+        "Tỉnh Hà Nam",
+        "Tỉnh Bắc Kạn",
+        "Tỉnh Bạc Liêu",
+        "Tỉnh Cà Mau",
+        "Tỉnh Hải Dương",
+        "Tỉnh Hưng Yên",
+        "Tỉnh Vĩnh Phúc",
+        "Hau Giang",
+        "Ho Chi Minh City",
+        "Thái Bình",
+        "Haiphong",
+        "Da Nang",
+        "Cần Thơ",
+        "Ga Đà Nẵng"
+      ],
+      "iatiLocationsUsed": false,
+      "iatiUnresolvedNames": [
+        "Ga Đà Nẵng"
+      ],
+      "iatiLocationNote": "IATI location 62개 성(+역 'Ga Đà Nẵng' 1건 미해석)은 전국 범위의 근거로만 기록.",
+      "documentProvinces": [],
+      "documentQuote": "other subprojects are still to be defined after the project starts implementation and that the geographical area of the PCs covers all provinces in the country",
+      "documentQuoteSource": "http://documents.worldbank.org/curated/en/968561468140041023/text/716220PAD0P1250Official0Use0Only090.txt",
+      "reviewNote": null,
+      "sourceUrl": "https://projects.worldbank.org/en/projects-operations/project-detail/P125996",
+      "locationSourceUrl": "https://d-portal.iatistandard.org/q?aid=44000-P125996&from=act,location&select=*&form=json&limit=100",
+      "checkedAt": "2026-09-22T04:18:47Z",
+      "reviewedAt": "2026-09-22T04:30:00Z",
+      "urlChecks": {
+        "quoteSource": {
+          "url": "http://documents.worldbank.org/curated/en/968561468140041023/text/716220PAD0P1250Official0Use0Only090.txt",
+          "httpStatus": 200
+        },
+        "worldBankPage": {
+          "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P125996",
+          "httpStatus": 200
+        },
+        "worldBankApi": {
+          "url": "https://search.worldbank.org/api/v2/projects?format=json&id=P125996",
+          "httpStatus": 200
+        },
+        "iati": {
+          "url": "https://d-portal.iatistandard.org/q?aid=44000-P125996&from=act,location&select=*&form=json&limit=100",
+          "httpStatus": 200
+        }
+      }
+    },
+    {
+      "recordId": "v124-d-022-entity-00003",
+      "projectName": "Nghe An Province's Vinh City Priority Infrastructure and Urban Resilience Development Project",
+      "agency": "The World Bank",
+      "agencyType": "MDB",
+      "wbProjectId": "P174157",
+      "iatiId": "44000-P174157",
+      "lendingInstrument": "Investment Project Financing",
+      "implementingAgency": "People's Committee of Nghe An Province",
+      "periodStart": "2023-07-28",
+      "periodEnd": "2030-12-02",
+      "commitmentUsd": 129600000.0,
+      "adm1Codes34": [
+        "VN34-22"
+      ],
+      "adm1Names34": [
+        "Nghệ An"
+      ],
+      "adm1Codes63": [
+        "VN-22"
+      ],
+      "adm1Names63": [
+        "Nghệ An"
+      ],
+      "national": false,
+      "pending": false,
+      "confidence": "official-document",
+      "evidence": "World Bank 사업문서 명시(https://search.worldbank.org/api/v2/projects?format=json&id=P174157&fl=id,project_name,project_abstract,projectdocs,impagency,borrower,lendinginstr): Nghe An Province's Vinh City Priority Infrastructure and Urban Resilience Development Project",
+      "iatiLocationNames": [
+        "Vinh"
+      ],
+      "iatiLocationsUsed": false,
+      "iatiUnresolvedNames": [
+        "Vinh"
+      ],
+      "iatiLocationNote": "IATI location 'Vinh'(precision 2)은 도시명 — 사업명 명시로 Nghệ An 대응.",
+      "documentProvinces": [
+        "Nghe An"
+      ],
+      "documentQuote": "Nghe An Province's Vinh City Priority Infrastructure and Urban Resilience Development Project",
+      "documentQuoteSource": "https://search.worldbank.org/api/v2/projects?format=json&id=P174157&fl=id,project_name,project_abstract,projectdocs,impagency,borrower,lendinginstr",
+      "reviewNote": null,
+      "sourceUrl": "https://projects.worldbank.org/en/projects-operations/project-detail/P174157",
+      "locationSourceUrl": "https://d-portal.iatistandard.org/q?aid=44000-P174157&from=act,location&select=*&form=json&limit=100",
+      "checkedAt": "2026-09-22T04:18:47Z",
+      "reviewedAt": "2026-09-22T04:30:00Z",
+      "urlChecks": {
+        "quoteSource": {
+          "url": "https://search.worldbank.org/api/v2/projects?format=json&id=P174157&fl=id,project_name,project_abstract,projectdocs,impagency,borrower,lendinginstr",
+          "httpStatus": 200
+        },
+        "worldBankPage": {
+          "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P174157",
+          "httpStatus": 200
+        },
+        "worldBankApi": {
+          "url": "https://search.worldbank.org/api/v2/projects?format=json&id=P174157",
+          "httpStatus": 200
+        },
+        "iati": {
+          "url": "https://d-portal.iatistandard.org/q?aid=44000-P174157&from=act,location&select=*&form=json&limit=100",
+          "httpStatus": 200
+        }
+      }
+    },
+    {
+      "recordId": "v124-d-022-entity-00004",
+      "projectName": "Binh Duong Province's Water Environment Improvement Project",
+      "agency": "The World Bank",
+      "agencyType": "MDB",
+      "wbProjectId": "P173716",
+      "iatiId": "44000-P173716",
+      "lendingInstrument": "Investment Project Financing",
+      "implementingAgency": "Binh Duong Provincial Peoples' Committee respresented by Management Board for Wastewater Projects",
+      "periodStart": "2024-01-12",
+      "periodEnd": "2029-10-31",
+      "commitmentUsd": 230763010.0,
+      "adm1Codes34": [
+        "VN34-SG"
+      ],
+      "adm1Names34": [
+        "Hồ Chí Minh"
+      ],
+      "adm1Codes63": [
+        "VN-57"
+      ],
+      "adm1Names63": [
+        "Bình Dương"
+      ],
+      "national": false,
+      "pending": false,
+      "confidence": "official-document",
+      "evidence": "World Bank 사업문서 명시(https://search.worldbank.org/api/v2/projects?format=json&id=P173716&fl=id,project_name,project_abstract,projectdocs,impagency,borrower,lendinginstr): to reduce environmental pollution caused by urban wastewater in order to protect water quality and increase people's access to improved wastewater services in the project areas of Binh Duong Province",
+      "iatiLocationNames": [
+        "Hanoi"
+      ],
+      "iatiLocationsUsed": false,
+      "iatiUnresolvedNames": [],
+      "iatiLocationNote": "IATI location 'Hanoi' 1건은 공식 문서 어디에도 없는 자리표시자 → 미사용.",
+      "documentProvinces": [
+        "Binh Duong"
+      ],
+      "documentQuote": "to reduce environmental pollution caused by urban wastewater in order to protect water quality and increase people's access to improved wastewater services in the project areas of Binh Duong Province",
+      "documentQuoteSource": "https://search.worldbank.org/api/v2/projects?format=json&id=P173716&fl=id,project_name,project_abstract,projectdocs,impagency,borrower,lendinginstr",
+      "reviewNote": null,
+      "sourceUrl": "https://projects.worldbank.org/en/projects-operations/project-detail/P173716",
+      "locationSourceUrl": "https://d-portal.iatistandard.org/q?aid=44000-P173716&from=act,location&select=*&form=json&limit=100",
+      "checkedAt": "2026-09-22T04:18:47Z",
+      "reviewedAt": "2026-09-22T04:30:00Z",
+      "urlChecks": {
+        "quoteSource": {
+          "url": "https://search.worldbank.org/api/v2/projects?format=json&id=P173716&fl=id,project_name,project_abstract,projectdocs,impagency,borrower,lendinginstr",
+          "httpStatus": 200
+        },
+        "worldBankPage": {
+          "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P173716",
+          "httpStatus": 200
+        },
+        "worldBankApi": {
+          "url": "https://search.worldbank.org/api/v2/projects?format=json&id=P173716",
+          "httpStatus": 200
+        },
+        "iati": {
+          "url": "https://d-portal.iatistandard.org/q?aid=44000-P173716&from=act,location&select=*&form=json&limit=100",
+          "httpStatus": 200
+        }
+      }
+    },
+    {
+      "recordId": "v124-d-022-entity-00005",
+      "projectName": "Vinh Long City Urban Development and Enhanced Climate Resilience Project in Vinh Long Province",
+      "agency": "The World Bank",
+      "agencyType": "MDB",
+      "wbProjectId": "P171700",
+      "iatiId": "44000-P171700",
+      "lendingInstrument": "Investment Project Financing",
+      "implementingAgency": "ODA PMU of Vinh Long Province",
+      "periodStart": "2020-06-30",
+      "periodEnd": "2027-10-31",
+      "commitmentUsd": 80600000.0,
+      "adm1Codes34": [
+        "VN34-49"
+      ],
+      "adm1Names34": [
+        "Vĩnh Long"
+      ],
+      "adm1Codes63": [
+        "VN-49"
+      ],
+      "adm1Names63": [
+        "Vĩnh Long"
+      ],
+      "national": false,
+      "pending": false,
+      "confidence": "official-location",
+      "evidence": "IATI location(1개 성, precision 2) — World Bank 보고",
+      "iatiLocationNames": [
+        "Tinh Vinh Long",
+        "Socialist Republic of Vietnam"
+      ],
+      "iatiLocationsUsed": true,
+      "iatiUnresolvedNames": [
+        "Socialist Republic of Vietnam"
+      ],
+      "iatiLocationNote": "IATI 'Socialist Republic of Vietnam' 1건은 국가 자리표시자로 무시.",
+      "documentProvinces": [
+        "Vinh Long"
+      ],
+      "documentQuote": "Vinh Long City Urban Development and Enhanced Climate Resilience Project in Vinh Long Province",
+      "documentQuoteSource": "https://search.worldbank.org/api/v2/projects?format=json&id=P171700&fl=id,project_name,project_abstract,projectdocs,impagency,borrower,lendinginstr",
+      "reviewNote": null,
+      "sourceUrl": "https://projects.worldbank.org/en/projects-operations/project-detail/P171700",
+      "locationSourceUrl": "https://d-portal.iatistandard.org/q?aid=44000-P171700&from=act,location&select=*&form=json&limit=100",
+      "checkedAt": "2026-09-22T04:18:47Z",
+      "reviewedAt": "2026-09-22T04:30:00Z",
+      "urlChecks": {
+        "quoteSource": {
+          "url": "https://search.worldbank.org/api/v2/projects?format=json&id=P171700&fl=id,project_name,project_abstract,projectdocs,impagency,borrower,lendinginstr",
+          "httpStatus": 200
+        },
+        "worldBankPage": {
+          "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P171700",
+          "httpStatus": 200
+        },
+        "worldBankApi": {
+          "url": "https://search.worldbank.org/api/v2/projects?format=json&id=P171700",
+          "httpStatus": 200
+        },
+        "iati": {
+          "url": "https://d-portal.iatistandard.org/q?aid=44000-P171700&from=act,location&select=*&form=json&limit=100",
+          "httpStatus": 200
+        }
+      }
+    },
+    {
+      "recordId": "v124-d-022-entity-00006",
+      "projectName": "Forest Sector Modernization and Coastal Resilience Enhancement Project",
+      "agency": "The World Bank",
+      "agencyType": "MDB",
+      "wbProjectId": "P157127",
+      "iatiId": "44000-P157127",
+      "lendingInstrument": "Investment Project Financing",
+      "implementingAgency": "Ministry of Agriculture and Rural Development",
+      "periodStart": "2017-06-22",
+      "periodEnd": "2023-12-31",
+      "commitmentUsd": 56143976.0,
+      "adm1Codes34": [
+        "VN34-13",
+        "VN34-21",
+        "VN34-22",
+        "VN34-23",
+        "VN34-25",
+        "VN34-26",
+        "VN34-HP"
+      ],
+      "adm1Names34": [
+        "Quảng Ninh",
+        "Thanh Hóa",
+        "Nghệ An",
+        "Hà Tĩnh",
+        "Quảng Trị",
+        "Huế",
+        "Hải Phòng"
+      ],
+      "adm1Codes63": [
+        "VN-13",
+        "VN-21",
+        "VN-22",
+        "VN-23",
+        "VN-24",
+        "VN-25",
+        "VN-26",
+        "VN-HP"
+      ],
+      "adm1Names63": [
+        "Quảng Ninh",
+        "Thanh Hóa",
+        "Nghệ An",
+        "Hà Tĩnh",
+        "Quảng Bình",
+        "Quảng Trị",
+        "Thừa Thiên Huế",
+        "Hải Phòng"
+      ],
+      "national": false,
+      "pending": false,
+      "confidence": "official-location",
+      "evidence": "IATI location(8개 성, precision 2) — World Bank 보고",
+      "iatiLocationNames": [
+        "Tỉnh Nghệ An",
+        "Tinh Thua Thien-Hue",
+        "Tỉnh Thanh Hóa",
+        "Tỉnh Quảng Trị",
+        "Tỉnh Quảng Ninh",
+        "Tỉnh Quảng Bình",
+        "Tỉnh Hà Tĩnh",
+        "Thành Phố Hải Phòng"
+      ],
+      "iatiLocationsUsed": true,
+      "iatiUnresolvedNames": [],
+      "iatiLocationNote": null,
+      "documentProvinces": [
+        "Quang Tri",
+        "Thanh Hoa",
+        "Nghe An",
+        "Ha Tinh",
+        "Quang Binh",
+        "Thua Thien Hue",
+        "Quang Ninh",
+        "Hai Phong"
+      ],
+      "documentQuote": "supports activities in eight provinces – Quang Tri, Thanh Hoa, Nghe An, Ha Tinh, Quang Binh, Thuan Thien Hue, Quang Ninh and Hai Phong",
+      "documentQuoteSource": "http://documents.worldbank.org/curated/en/334061666206471878/text/Vietnam-Forest-Sector-Modernization-and-Coastal-Resilience-Enhancement-Project.txt",
+      "reviewNote": null,
+      "sourceUrl": "https://projects.worldbank.org/en/projects-operations/project-detail/P157127",
+      "locationSourceUrl": "https://d-portal.iatistandard.org/q?aid=44000-P157127&from=act,location&select=*&form=json&limit=100",
+      "checkedAt": "2026-09-22T04:18:47Z",
+      "reviewedAt": "2026-09-22T04:30:00Z",
+      "urlChecks": {
+        "quoteSource": {
+          "url": "http://documents.worldbank.org/curated/en/334061666206471878/text/Vietnam-Forest-Sector-Modernization-and-Coastal-Resilience-Enhancement-Project.txt",
+          "httpStatus": 200
+        },
+        "worldBankPage": {
+          "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P157127",
+          "httpStatus": 200
+        },
+        "worldBankApi": {
+          "url": "https://search.worldbank.org/api/v2/projects?format=json&id=P157127",
+          "httpStatus": 200
+        },
+        "iati": {
+          "url": "https://d-portal.iatistandard.org/q?aid=44000-P157127&from=act,location&select=*&form=json&limit=100",
+          "httpStatus": 200
+        }
+      }
+    },
+    {
+      "recordId": "v124-d-022-entity-00007",
+      "projectName": "North Central Region Emission Reductions Program",
+      "agency": "World Bank Trust Funds",
+      "agencyType": "MDB",
+      "wbProjectId": "P162605",
+      "iatiId": "XI-IATI-WBTF-P162605",
+      "lendingInstrument": "Investment Project Financing",
+      "implementingAgency": "Ministry of Agriculture and Environment",
+      "periodStart": "2020-10-12",
+      "periodEnd": "2025-12-31",
+      "commitmentUsd": 58068084.0,
+      "adm1Codes34": [
+        "VN34-21",
+        "VN34-22",
+        "VN34-23",
+        "VN34-25",
+        "VN34-26"
+      ],
+      "adm1Names34": [
+        "Thanh Hóa",
+        "Nghệ An",
+        "Hà Tĩnh",
+        "Quảng Trị",
+        "Huế"
+      ],
+      "adm1Codes63": [
+        "VN-21",
+        "VN-22",
+        "VN-23",
+        "VN-24",
+        "VN-25",
+        "VN-26"
+      ],
+      "adm1Names63": [
+        "Thanh Hóa",
+        "Nghệ An",
+        "Hà Tĩnh",
+        "Quảng Bình",
+        "Quảng Trị",
+        "Thừa Thiên Huế"
+      ],
+      "national": false,
+      "pending": false,
+      "confidence": "official-document",
+      "evidence": "World Bank 사업문서 명시(http://documents.worldbank.org/curated/en/114511621491387556/text/Vietnam-North-Central-Region-Emission-Reductions-Program-Project.txt): is administered as six provinces – Thanh Hoa, Nghe An, Ha Tinh, Quang Binh, Quang Tri and Thua Thien Hue",
+      "iatiLocationNames": [],
+      "iatiLocationsUsed": false,
+      "iatiUnresolvedNames": [],
+      "iatiLocationNote": "IATI location 0건.",
+      "documentProvinces": [
+        "Thanh Hoa",
+        "Nghe An",
+        "Ha Tinh",
+        "Quang Binh",
+        "Quang Tri",
+        "Thua Thien Hue"
+      ],
+      "documentQuote": "is administered as six provinces – Thanh Hoa, Nghe An, Ha Tinh, Quang Binh, Quang Tri and Thua Thien Hue",
+      "documentQuoteSource": "http://documents.worldbank.org/curated/en/114511621491387556/text/Vietnam-North-Central-Region-Emission-Reductions-Program-Project.txt",
+      "reviewNote": null,
+      "sourceUrl": "https://projects.worldbank.org/en/projects-operations/project-detail/P162605",
+      "locationSourceUrl": "https://d-portal.iatistandard.org/q?aid=XI-IATI-WBTF-P162605&from=act,location&select=*&form=json&limit=100",
+      "checkedAt": "2026-09-22T04:18:47Z",
+      "reviewedAt": "2026-09-22T04:30:00Z",
+      "urlChecks": {
+        "quoteSource": {
+          "url": "http://documents.worldbank.org/curated/en/114511621491387556/text/Vietnam-North-Central-Region-Emission-Reductions-Program-Project.txt",
+          "httpStatus": 200
+        },
+        "worldBankPage": {
+          "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P162605",
+          "httpStatus": 200
+        },
+        "worldBankApi": {
+          "url": "https://search.worldbank.org/api/v2/projects?format=json&id=P162605",
+          "httpStatus": 200
+        },
+        "iati": {
+          "url": "https://d-portal.iatistandard.org/q?aid=XI-IATI-WBTF-P162605&from=act,location&select=*&form=json&limit=100",
+          "httpStatus": 200
+        }
+      }
+    },
+    {
+      "recordId": "v124-d-022-entity-00008",
+      "projectName": "Vietnam Renewable Energy Development Project",
+      "agency": "The World Bank",
+      "agencyType": "MDB",
+      "wbProjectId": "P103238",
+      "iatiId": "44000-P103238",
+      "lendingInstrument": "Investment Project Financing",
+      "implementingAgency": "Ministry of Industry and Trade",
+      "periodStart": "2009-05-05",
+      "periodEnd": "2018-06-30",
+      "commitmentUsd": 201957520.0,
+      "adm1Codes34": [],
+      "adm1Names34": [],
+      "adm1Codes63": [],
+      "adm1Names63": [],
+      "national": true,
+      "pending": false,
+      "confidence": "official-document",
+      "evidence": "전국 사업 — 참여은행 재융자 창구(30 MW 이하 민간 재생에너지)로 MOIT가 중앙에서 실행, 성 단위 적격 기준 없음. 하위사업은 실행 중 결정 — 전국 융자 프로그램.",
+      "iatiLocationNames": [
+        "Tỉnh Lào Cai",
+        "Trung Hồ",
+        "Tam Pouc",
+        "Sop Bam",
+        "Buon Ma Thuot",
+        "Bản Ô Po",
+        "Bản Nhun",
+        "Đà Bắc",
+        "Trà Nêu"
+      ],
+      "iatiLocationsUsed": false,
+      "iatiUnresolvedNames": [
+        "Trung Hồ",
+        "Tam Pouc",
+        "Sop Bam",
+        "Buon Ma Thuot",
+        "Bản Ô Po",
+        "Bản Nhun",
+        "Đà Bắc",
+        "Trà Nêu"
+      ],
+      "iatiLocationNote": "IATI location 9건(Lào Cai 성 1 + 촌락·지점명 8: Trung Hồ·Tam Pouc·Sop Bam·Buon Ma Thuot·Bản Ô Po·Bản Nhun·Đà Bắc·Trà Nêu)은 예시 하위사업 지점이며 사업 범위가 아님 → 미사용.",
+      "documentProvinces": [],
+      "documentQuote": "Except for few subprojects selected upfront, all renewable energy subprojects will be identified during implementation. Majority of the subprojects would be small hydro power plants which are typically located in hilly or mountainous areas in the Northern and Central regions.",
+      "documentQuoteSource": "http://documents.worldbank.org/curated/en/449281468317979466/text/Integrated0Saf1et010Appraisal0Stage.txt",
+      "reviewNote": "ISDS는 첫해 예시 하위사업 소재를 Lào Cai·Yên Bái·Lâm Đồng·Gia Lai로 들지만 개방형 파이프라인의 예시라 성 매핑에 쓰지 않음.",
+      "sourceUrl": "https://projects.worldbank.org/en/projects-operations/project-detail/P103238",
+      "locationSourceUrl": "https://d-portal.iatistandard.org/q?aid=44000-P103238&from=act,location&select=*&form=json&limit=100",
+      "checkedAt": "2026-09-22T04:18:47Z",
+      "reviewedAt": "2026-09-22T04:30:00Z",
+      "urlChecks": {
+        "quoteSource": {
+          "url": "http://documents.worldbank.org/curated/en/449281468317979466/text/Integrated0Saf1et010Appraisal0Stage.txt",
+          "httpStatus": 200
+        },
+        "worldBankPage": {
+          "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P103238",
+          "httpStatus": 200
+        },
+        "worldBankApi": {
+          "url": "https://search.worldbank.org/api/v2/projects?format=json&id=P103238",
+          "httpStatus": 200
+        },
+        "iati": {
+          "url": "https://d-portal.iatistandard.org/q?aid=44000-P103238&from=act,location&select=*&form=json&limit=100",
+          "httpStatus": 200
+        }
+      }
+    },
+    {
+      "recordId": "v124-d-022-entity-00009",
+      "projectName": "Southern Waterway Corridors and Logistics Development Project",
+      "agency": "The World Bank",
+      "agencyType": "MDB",
+      "wbProjectId": "P169954",
+      "iatiId": "44000-P169954",
+      "lendingInstrument": "Investment Project Financing",
+      "implementingAgency": "Ministry of Construction",
+      "periodStart": "2024-06-21",
+      "periodEnd": "2030-09-24",
+      "commitmentUsd": 107000000.0,
+      "adm1Codes34": [
+        "VN34-CT",
+        "VN34-SG"
+      ],
+      "adm1Names34": [
+        "Cần Thơ",
+        "Hồ Chí Minh"
+      ],
+      "adm1Codes63": [
+        "VN-CT",
+        "VN-SG"
+      ],
+      "adm1Names63": [
+        "Cần Thơ",
+        "Hồ Chí Minh"
+      ],
+      "national": false,
+      "pending": false,
+      "confidence": "official-document",
+      "evidence": "World Bank 사업문서 명시(https://search.worldbank.org/api/v2/projects?format=json&id=P169954&fl=project_abstract): The East-West Waterway Logistics Corridor, a total length of about 197 km, covers the inland waterway corridor in the Mekong delta region, connecting Can Tho Port with HCMC Port at the shortest distance.",
+      "iatiLocationNames": [
+        "Hanoi"
+      ],
+      "iatiLocationsUsed": false,
+      "iatiUnresolvedNames": [],
+      "iatiLocationNote": "IATI location 'Hanoi' 1건은 자리표시자(실행기관 소재) → 미사용.",
+      "documentProvinces": [
+        "Can Tho",
+        "Ho Chi Minh City"
+      ],
+      "documentQuote": "The East-West Waterway Logistics Corridor, a total length of about 197 km, covers the inland waterway corridor in the Mekong delta region, connecting Can Tho Port with HCMC Port at the shortest distance.",
+      "documentQuoteSource": "https://search.worldbank.org/api/v2/projects?format=json&id=P169954&fl=project_abstract",
+      "reviewNote": "PAD 공개 시 경유 성 목록 보강 가능 — P6b/P4 후속.",
+      "sourceUrl": "https://projects.worldbank.org/en/projects-operations/project-detail/P169954",
+      "locationSourceUrl": "https://d-portal.iatistandard.org/q?aid=44000-P169954&from=act,location&select=*&form=json&limit=100",
+      "checkedAt": "2026-09-22T04:18:47Z",
+      "reviewedAt": "2026-09-22T04:30:00Z",
+      "urlChecks": {
+        "quoteSource": {
+          "url": "https://search.worldbank.org/api/v2/projects?format=json&id=P169954&fl=project_abstract",
+          "httpStatus": 200
+        },
+        "worldBankPage": {
+          "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P169954",
+          "httpStatus": 200
+        },
+        "worldBankApi": {
+          "url": "https://search.worldbank.org/api/v2/projects?format=json&id=P169954",
+          "httpStatus": 200
+        },
+        "iati": {
+          "url": "https://d-portal.iatistandard.org/q?aid=44000-P169954&from=act,location&select=*&form=json&limit=100",
+          "httpStatus": 200
+        }
+      }
+    },
+    {
+      "recordId": "v124-d-022-entity-00010",
+      "projectName": "Integrated Resilient Development Project",
+      "agency": "The World Bank",
+      "agencyType": "MDB",
+      "wbProjectId": "P509666",
+      "iatiId": "44000-P509666",
+      "lendingInstrument": null,
+      "implementingAgency": "Da Nang City People's Committee",
+      "periodStart": "2025-09-30",
+      "periodEnd": "2032-01-31",
+      "commitmentUsd": 144970000.0,
+      "adm1Codes34": [
+        "VN34-30",
+        "VN34-DN"
+      ],
+      "adm1Names34": [
+        "Gia Lai",
+        "Đà Nẵng"
+      ],
+      "adm1Codes63": [
+        "VN-27",
+        "VN-31"
+      ],
+      "adm1Names63": [
+        "Quảng Nam",
+        "Bình Định"
+      ],
+      "national": false,
+      "pending": false,
+      "confidence": "official-document",
+      "evidence": "World Bank 사업문서 명시(http://documents.worldbank.org/curated/en/099022625062058593/text/P50966611b9b47041b3ed1b6bac86c7333.txt): The selection criteria for Quang Nam province, including Tam Ky capital city and Binh Dinh province, including Quy Nhon capital city is based on a combination of factors",
+      "iatiLocationNames": [
+        "Hanoi"
+      ],
+      "iatiLocationsUsed": false,
+      "iatiUnresolvedNames": [],
+      "iatiLocationNote": "IATI location 'Hanoi' 1건은 자리표시자 → 미사용.",
+      "documentProvinces": [
+        "Quang Nam",
+        "Binh Dinh"
+      ],
+      "documentQuote": "The selection criteria for Quang Nam province, including Tam Ky capital city and Binh Dinh province, including Quy Nhon capital city is based on a combination of factors",
+      "documentQuoteSource": "http://documents.worldbank.org/curated/en/099022625062058593/text/P50966611b9b47041b3ed1b6bac86c7333.txt",
+      "reviewNote": "컨셉 단계 사업(2025-09 승인 예정)이라 평가 단계에서 범위가 바뀔 수 있음.",
+      "sourceUrl": "https://projects.worldbank.org/en/projects-operations/project-detail/P509666",
+      "locationSourceUrl": "https://d-portal.iatistandard.org/q?aid=44000-P509666&from=act,location&select=*&form=json&limit=100",
+      "checkedAt": "2026-09-22T04:18:47Z",
+      "reviewedAt": "2026-09-22T04:30:00Z",
+      "urlChecks": {
+        "quoteSource": {
+          "url": "http://documents.worldbank.org/curated/en/099022625062058593/text/P50966611b9b47041b3ed1b6bac86c7333.txt",
+          "httpStatus": 200
+        },
+        "worldBankPage": {
+          "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P509666",
+          "httpStatus": 200
+        },
+        "worldBankApi": {
+          "url": "https://search.worldbank.org/api/v2/projects?format=json&id=P509666",
+          "httpStatus": 200
+        },
+        "iati": {
+          "url": "https://d-portal.iatistandard.org/q?aid=44000-P509666&from=act,location&select=*&form=json&limit=100",
+          "httpStatus": 200
+        }
+      }
+    },
+    {
+      "recordId": "v124-d-022-entity-00011",
+      "projectName": "Vietnam Climate Change Development Policy 3",
+      "agency": "The World Bank",
+      "agencyType": "MDB",
+      "wbProjectId": "P131775",
+      "iatiId": "44000-P131775",
+      "lendingInstrument": null,
+      "implementingAgency": "Ministry of Natural Resources and Environment",
+      "periodStart": "2014-06-30",
+      "periodEnd": "2015-09-30",
+      "commitmentUsd": 70000000.0,
+      "adm1Codes34": [],
+      "adm1Names34": [],
+      "adm1Codes63": [],
+      "adm1Names63": [],
+      "national": true,
+      "pending": false,
+      "confidence": "official-document",
+      "evidence": "전국 사업 — Program Document: 3차 기후변화 개발정책차관(DPO), 차입자 베트남 정부 — 국가 예산·정책 지원, 성 미명시.",
+      "iatiLocationNames": [
+        "Hanoi"
+      ],
+      "iatiLocationsUsed": false,
+      "iatiUnresolvedNames": [],
+      "iatiLocationNote": "IATI location 'Hanoi' 1건은 자리표시자 → 미사용.",
+      "documentProvinces": [],
+      "documentQuote": "THIRD CLIMATE CHANGE DEVELOPMENT POLICY OPERATION (CC DPO3) — Borrower: Socialist Republic of Vietnam; Implementing Agency: Ministry of Natural Resources and Environment",
+      "documentQuoteSource": "http://documents.worldbank.org/curated/en/412121468319758700/text/679870PGD0P131010Box385226B00OUO090.txt",
+      "reviewNote": null,
+      "sourceUrl": "https://projects.worldbank.org/en/projects-operations/project-detail/P131775",
+      "locationSourceUrl": "https://d-portal.iatistandard.org/q?aid=44000-P131775&from=act,location&select=*&form=json&limit=100",
+      "checkedAt": "2026-09-22T04:18:47Z",
+      "reviewedAt": "2026-09-22T04:30:00Z",
+      "urlChecks": {
+        "quoteSource": {
+          "url": "http://documents.worldbank.org/curated/en/412121468319758700/text/679870PGD0P131010Box385226B00OUO090.txt",
+          "httpStatus": 200
+        },
+        "worldBankPage": {
+          "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P131775",
+          "httpStatus": 200
+        },
+        "worldBankApi": {
+          "url": "https://search.worldbank.org/api/v2/projects?format=json&id=P131775",
+          "httpStatus": 200
+        },
+        "iati": {
+          "url": "https://d-portal.iatistandard.org/q?aid=44000-P131775&from=act,location&select=*&form=json&limit=100",
+          "httpStatus": 200
+        }
+      }
+    },
+    {
+      "recordId": "v124-d-022-entity-00012",
+      "projectName": "Vietnam Climate Change Development Policy 2",
+      "agency": "The World Bank",
+      "agencyType": "MDB",
+      "wbProjectId": "P127201",
+      "iatiId": "44000-P127201",
+      "lendingInstrument": "Development Policy Lending",
+      "implementingAgency": "Ministry of Natural Resources and Environment",
+      "periodStart": "2012-11-08",
+      "periodEnd": "2013-09-30",
+      "commitmentUsd": 70000000.0,
+      "adm1Codes34": [],
+      "adm1Names34": [],
+      "adm1Codes63": [],
+      "adm1Names63": [],
+      "national": true,
+      "pending": false,
+      "confidence": "official-document",
+      "evidence": "전국 사업 — PID 표지: 개발정책차관, 차입자 베트남 정부. API lendinginstr='Development Policy Lending'.",
+      "iatiLocationNames": [
+        "Hanoi"
+      ],
+      "iatiLocationsUsed": false,
+      "iatiUnresolvedNames": [],
+      "iatiLocationNote": "IATI location 'Hanoi' 1건은 자리표시자 → 미사용.",
+      "documentProvinces": [],
+      "documentQuote": "Lending Instrument: Development Policy Lending — Borrower(s): SOCIALIST REPUBLIC OF VIETNAM",
+      "documentQuoteSource": "http://documents.worldbank.org/curated/en/874151468350168896/text/728210PGID0VN0climate0change0rev.txt",
+      "reviewNote": "PID 표지의 실행기관은 MARD, API는 MONRE — 모두 중앙부처라 범위 판정에 영향 없음.",
+      "sourceUrl": "https://projects.worldbank.org/en/projects-operations/project-detail/P127201",
+      "locationSourceUrl": "https://d-portal.iatistandard.org/q?aid=44000-P127201&from=act,location&select=*&form=json&limit=100",
+      "checkedAt": "2026-09-22T04:18:47Z",
+      "reviewedAt": "2026-09-22T04:30:00Z",
+      "urlChecks": {
+        "quoteSource": {
+          "url": "http://documents.worldbank.org/curated/en/874151468350168896/text/728210PGID0VN0climate0change0rev.txt",
+          "httpStatus": 200
+        },
+        "worldBankPage": {
+          "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P127201",
+          "httpStatus": 200
+        },
+        "worldBankApi": {
+          "url": "https://search.worldbank.org/api/v2/projects?format=json&id=P127201",
+          "httpStatus": 200
+        },
+        "iati": {
+          "url": "https://d-portal.iatistandard.org/q?aid=44000-P127201&from=act,location&select=*&form=json&limit=100",
+          "httpStatus": 200
+        }
+      }
+    },
+    {
+      "recordId": "v124-d-022-entity-00013",
+      "projectName": "Vietnam Climate Change Development Policy",
+      "agency": "The World Bank",
+      "agencyType": "MDB",
+      "wbProjectId": "P122667",
+      "iatiId": "44000-P122667",
+      "lendingInstrument": "Development Policy Lending",
+      "implementingAgency": "Ministry of Natural Resources and Environment",
+      "periodStart": "2012-02-02",
+      "periodEnd": "2012-09-30",
+      "commitmentUsd": 70000000.0,
+      "adm1Codes34": [],
+      "adm1Names34": [],
+      "adm1Codes63": [],
+      "adm1Names63": [],
+      "national": true,
+      "pending": false,
+      "confidence": "official-document",
+      "evidence": "전국 사업 — 이사회 요약: 1차 기후변화 DPO, 차입자 베트남 정부. API lendinginstr='Development Policy Lending'.",
+      "iatiLocationNames": [
+        "Hanoi"
+      ],
+      "iatiLocationsUsed": false,
+      "iatiUnresolvedNames": [],
+      "iatiLocationNote": "IATI location 'Hanoi' 1건은 자리표시자 → 미사용.",
+      "documentProvinces": [],
+      "documentQuote": "Executive Directors approved the First Climate Change Development Policy Operation (DPO) Project for the Socialist Republic of Vietnam in the amount of US$70 million",
+      "documentQuoteSource": "http://documents.worldbank.org/curated/en/363361468320112615/text/666450SD0P12260Official0Use0Only090.txt",
+      "reviewNote": null,
+      "sourceUrl": "https://projects.worldbank.org/en/projects-operations/project-detail/P122667",
+      "locationSourceUrl": "https://d-portal.iatistandard.org/q?aid=44000-P122667&from=act,location&select=*&form=json&limit=100",
+      "checkedAt": "2026-09-22T04:18:47Z",
+      "reviewedAt": "2026-09-22T04:30:00Z",
+      "urlChecks": {
+        "quoteSource": {
+          "url": "http://documents.worldbank.org/curated/en/363361468320112615/text/666450SD0P12260Official0Use0Only090.txt",
+          "httpStatus": 200
+        },
+        "worldBankPage": {
+          "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P122667",
+          "httpStatus": 200
+        },
+        "worldBankApi": {
+          "url": "https://search.worldbank.org/api/v2/projects?format=json&id=P122667",
+          "httpStatus": 200
+        },
+        "iati": {
+          "url": "https://d-portal.iatistandard.org/q?aid=44000-P122667&from=act,location&select=*&form=json&limit=100",
+          "httpStatus": 200
+        }
+      }
+    },
+    {
+      "recordId": "v124-d-022-entity-00014",
+      "projectName": "Climate Change and Green Growth DPF",
+      "agency": "The World Bank",
+      "agencyType": "MDB",
+      "wbProjectId": "P171006",
+      "iatiId": "44000-P171006",
+      "lendingInstrument": "Development Policy Lending",
+      "implementingAgency": "Ministry of Natural Resouces and Environment, Department of Climate Change",
+      "periodStart": "2020-06-05",
+      "periodEnd": "2021-11-30",
+      "commitmentUsd": 84400000.0,
+      "adm1Codes34": [],
+      "adm1Names34": [],
+      "adm1Codes63": [],
+      "adm1Names63": [],
+      "national": true,
+      "pending": false,
+      "confidence": "official-document",
+      "evidence": "전국 사업 — API: lendinginstr='Development Policy Lending', borrower='Socialist Republic of Vietnam', 국가 SP-RCC 2016-2020·NDC 지원 DPF — 성 미명시.",
+      "iatiLocationNames": [
+        "Hanoi"
+      ],
+      "iatiLocationsUsed": false,
+      "iatiUnresolvedNames": [],
+      "iatiLocationNote": "IATI location 'Hanoi' 1건은 자리표시자 → 미사용.",
+      "documentProvinces": [],
+      "documentQuote": "The development objective of the Climate Change and Green Growth Development Policy Financing (DPF) for Vietnam is to promote: (a) climate resilient management of landscapes; and (b) adoption of cleaner transport and energy systems.",
+      "documentQuoteSource": "https://search.worldbank.org/api/v2/projects?format=json&id=P171006&fl=project_abstract,borrower,lendinginstr",
+      "reviewNote": null,
+      "sourceUrl": "https://projects.worldbank.org/en/projects-operations/project-detail/P171006",
+      "locationSourceUrl": "https://d-portal.iatistandard.org/q?aid=44000-P171006&from=act,location&select=*&form=json&limit=100",
+      "checkedAt": "2026-09-22T04:18:47Z",
+      "reviewedAt": "2026-09-22T04:30:00Z",
+      "urlChecks": {
+        "quoteSource": {
+          "url": "https://search.worldbank.org/api/v2/projects?format=json&id=P171006&fl=project_abstract,borrower,lendinginstr",
+          "httpStatus": 200
+        },
+        "worldBankPage": {
+          "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P171006",
+          "httpStatus": 200
+        },
+        "worldBankApi": {
+          "url": "https://search.worldbank.org/api/v2/projects?format=json&id=P171006",
+          "httpStatus": 200
+        },
+        "iati": {
+          "url": "https://d-portal.iatistandard.org/q?aid=44000-P171006&from=act,location&select=*&form=json&limit=100",
+          "httpStatus": 200
+        }
+      }
+    },
+    {
+      "recordId": "v124-d-022-entity-00015",
+      "projectName": "Climate Change and Green Growth in Vietnam",
+      "agency": "The World Bank",
+      "agencyType": "MDB",
+      "wbProjectId": "P155824",
+      "iatiId": "44000-P155824",
+      "lendingInstrument": null,
+      "implementingAgency": "Ministry of Environment and Natural Resources, Socialist Republic of Vietnam",
+      "periodStart": "2016-06-24",
+      "periodEnd": "2017-06-30",
+      "commitmentUsd": 90000000.0,
+      "adm1Codes34": [],
+      "adm1Names34": [],
+      "adm1Codes63": [],
+      "adm1Names63": [],
+      "national": true,
+      "pending": false,
+      "confidence": "official-document",
+      "evidence": "전국 사업 — Program Document 표지: 기후변화·녹색성장 개발정책금융(3개 시리즈 중 1차), 차입자 베트남 정부 — 국가 정책차관.",
+      "iatiLocationNames": [
+        "Hanoi"
+      ],
+      "iatiLocationsUsed": false,
+      "iatiUnresolvedNames": [],
+      "iatiLocationNote": "IATI location 'Hanoi' 1건은 자리표시자 → 미사용.",
+      "documentProvinces": [],
+      "documentQuote": "SOCIALIST REPUBLIC OF VIETNAM — CLIMATE CHANGE AND GREEN GROWTH DEVELOPMENT POLICY FINANCING — Borrower: Socialist Republic of Vietnam",
+      "documentQuoteSource": "http://documents.worldbank.org/curated/en/909101467046389497/text/105987-PGD-P155824-Box396257B-OUO-9-IDA-R2016-0146-1.txt",
+      "reviewNote": null,
+      "sourceUrl": "https://projects.worldbank.org/en/projects-operations/project-detail/P155824",
+      "locationSourceUrl": "https://d-portal.iatistandard.org/q?aid=44000-P155824&from=act,location&select=*&form=json&limit=100",
+      "checkedAt": "2026-09-22T04:18:47Z",
+      "reviewedAt": "2026-09-22T04:30:00Z",
+      "urlChecks": {
+        "quoteSource": {
+          "url": "http://documents.worldbank.org/curated/en/909101467046389497/text/105987-PGD-P155824-Box396257B-OUO-9-IDA-R2016-0146-1.txt",
+          "httpStatus": 200
+        },
+        "worldBankPage": {
+          "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P155824",
+          "httpStatus": 200
+        },
+        "worldBankApi": {
+          "url": "https://search.worldbank.org/api/v2/projects?format=json&id=P155824",
+          "httpStatus": 200
+        },
+        "iati": {
+          "url": "https://d-portal.iatistandard.org/q?aid=44000-P155824&from=act,location&select=*&form=json&limit=100",
+          "httpStatus": 200
+        }
+      }
+    }
+  ],
+  "aggregation": {
+    "byAdm1Code34": [
+      {
+        "adm1Code34": "VN34-22",
+        "adm1Name34": "Nghệ An",
+        "projectCount": 3,
+        "commitmentUsdSum": 243812060.0,
+        "recordIds": [
+          "v124-d-022-entity-00003",
+          "v124-d-022-entity-00006",
+          "v124-d-022-entity-00007"
+        ]
+      },
+      {
+        "adm1Code34": "VN34-21",
+        "adm1Name34": "Thanh Hóa",
+        "projectCount": 2,
+        "commitmentUsdSum": 114212060.0,
+        "recordIds": [
+          "v124-d-022-entity-00006",
+          "v124-d-022-entity-00007"
+        ]
+      },
+      {
+        "adm1Code34": "VN34-23",
+        "adm1Name34": "Hà Tĩnh",
+        "projectCount": 2,
+        "commitmentUsdSum": 114212060.0,
+        "recordIds": [
+          "v124-d-022-entity-00006",
+          "v124-d-022-entity-00007"
+        ]
+      },
+      {
+        "adm1Code34": "VN34-25",
+        "adm1Name34": "Quảng Trị",
+        "projectCount": 2,
+        "commitmentUsdSum": 114212060.0,
+        "recordIds": [
+          "v124-d-022-entity-00006",
+          "v124-d-022-entity-00007"
+        ]
+      },
+      {
+        "adm1Code34": "VN34-26",
+        "adm1Name34": "Huế",
+        "projectCount": 2,
+        "commitmentUsdSum": 114212060.0,
+        "recordIds": [
+          "v124-d-022-entity-00006",
+          "v124-d-022-entity-00007"
+        ]
+      },
+      {
+        "adm1Code34": "VN34-SG",
+        "adm1Name34": "Hồ Chí Minh",
+        "projectCount": 2,
+        "commitmentUsdSum": 337763010.0,
+        "recordIds": [
+          "v124-d-022-entity-00004",
+          "v124-d-022-entity-00009"
+        ]
+      },
+      {
+        "adm1Code34": "VN34-13",
+        "adm1Name34": "Quảng Ninh",
+        "projectCount": 1,
+        "commitmentUsdSum": 56143976.0,
+        "recordIds": [
+          "v124-d-022-entity-00006"
+        ]
+      },
+      {
+        "adm1Code34": "VN34-30",
+        "adm1Name34": "Gia Lai",
+        "projectCount": 1,
+        "commitmentUsdSum": 144970000.0,
+        "recordIds": [
+          "v124-d-022-entity-00010"
+        ]
+      },
+      {
+        "adm1Code34": "VN34-49",
+        "adm1Name34": "Vĩnh Long",
+        "projectCount": 1,
+        "commitmentUsdSum": 80600000.0,
+        "recordIds": [
+          "v124-d-022-entity-00005"
+        ]
+      },
+      {
+        "adm1Code34": "VN34-CT",
+        "adm1Name34": "Cần Thơ",
+        "projectCount": 1,
+        "commitmentUsdSum": 107000000.0,
+        "recordIds": [
+          "v124-d-022-entity-00009"
+        ]
+      },
+      {
+        "adm1Code34": "VN34-DN",
+        "adm1Name34": "Đà Nẵng",
+        "projectCount": 1,
+        "commitmentUsdSum": 144970000.0,
+        "recordIds": [
+          "v124-d-022-entity-00010"
+        ]
+      },
+      {
+        "adm1Code34": "VN34-HP",
+        "adm1Name34": "Hải Phòng",
+        "projectCount": 1,
+        "commitmentUsdSum": 56143976.0,
+        "recordIds": [
+          "v124-d-022-entity-00006"
+        ]
+      }
+    ],
+    "nationalRecordIds": [
+      "v124-d-022-entity-00001",
+      "v124-d-022-entity-00002",
+      "v124-d-022-entity-00008",
+      "v124-d-022-entity-00011",
+      "v124-d-022-entity-00012",
+      "v124-d-022-entity-00013",
+      "v124-d-022-entity-00014",
+      "v124-d-022-entity-00015"
+    ],
+    "pendingRecordIds": [],
+    "rule": "다수 성 사업은 각 성에 사업 수 1건·승인액 전액 계상 — 성 간 합산 불가(중복). 전국 사업은 성별 값 없이 별도 목록."
+  },
+  "validation": {
+    "recordCount": 15,
+    "mappedCount": 15,
+    "mappedRate": 1.0,
+    "provinceMappedCount": 7,
+    "nationalCount": 8,
+    "pendingCount": 0,
+    "nameCount": 30,
+    "unresolvedNameCount": 0,
+    "nameNormalizationRate": 1.0,
+    "urlCheckCount": 60,
+    "urlOkCount": 60,
+    "urlOkRate": 1.0,
+    "coordinatesPublished": false
+  },
+  "source": {
+    "csv": "/data/vietnam/v2/downloads/d-022.csv",
+    "locationSource": "IATI Registry — d-portal (World Bank 보고 activity location, precision 2)",
+    "locationApi": "https://d-portal.iatistandard.org/q?aid=<iati-identifier>&from=act,location&select=*&form=json&limit=100",
+    "projectPages": "https://projects.worldbank.org/en/projects-operations/project-detail/<P-number>",
+    "reviewFile": "tools/vietnam_spatial/source/d-022-review-v155.json"
+  },
+  "generatedAt": "2026-09-22T04:18:47Z"
+}

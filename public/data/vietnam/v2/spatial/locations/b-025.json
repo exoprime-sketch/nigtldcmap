@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "v151-2-locations-1",
+  "elementId": "B-025",
+  "method": "point-in-polygon against vnm-adm1-63.geojson; unitCode via vnm-adm1-34.geojson membership",
+  "notice": "소재 성·시는 원자료 좌표를 개편 전 63개 경계에 대응한 결과이며 좌표를 이동·보정하지 않습니다. 경계 밖 좌표는 null입니다.",
+  "counts": {
+    "located": 8,
+    "outside": 0,
+    "withoutCoordinate": 1
+  },
+  "byRecordId": {
+    "v124-b-025-entity-00002": {
+      "adm1Code": "VN-06",
+      "adm1Name": "Yên Bái",
+      "unitCode": "VN34-02"
+    },
+    "v124-b-025-entity-00003": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": "VN34-33"
+    },
+    "v124-b-025-entity-00004": {
+      "adm1Code": "VN-73",
+      "adm1Name": "Hậu Giang",
+      "unitCode": "VN34-CT"
+    },
+    "v124-b-025-entity-00005": {
+      "adm1Code": "VN-09",
+      "adm1Name": "Lạng Sơn",
+      "unitCode": "VN34-09"
+    },
+    "v124-b-025-entity-00006": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": "VN34-22"
+    },
+    "v124-b-025-entity-00007": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": "VN34-29"
+    },
+    "v124-b-025-entity-00008": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": "VN34-35"
+    },
+    "v124-b-025-entity-00009": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": "VN34-21"
+    }
+  }
+}
