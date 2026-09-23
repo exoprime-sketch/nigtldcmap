@@ -1,0 +1,1800 @@
+{
+  "schemaVersion": "v159-card-spec-1",
+  "generatedFrom": {
+    "workbook": "_source/spec/db_status_framework_v5.38_260922.xlsx",
+    "assignment": "docs/plan/V159_데이터유형화_명세.md §4"
+  },
+  "rows": [
+    {
+      "elementId": "A-001",
+      "sourceLabel": "Transparency International",
+      "baseName": "부패인식지수(CPI)",
+      "shortDefinitionCard": "전문가·기업인 조사를 바탕으로 각국 공공부문의 부패 수준을 인식 기준으로 정량화한 지수",
+      "displayType": "U1",
+      "users": [
+        "금융기관",
+        "기업",
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "A-002",
+      "sourceLabel": "World Bank",
+      "baseName": "세계 거버넌스 지표(WGI)",
+      "shortDefinitionCard": "각국의 정부 운영과 제도 여건이 어떤 수준인지 국제 비교가 가능하도록 표준화해 추정한 지표",
+      "displayType": "U1",
+      "users": [
+        "금융기관",
+        "기업",
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "A-003",
+      "sourceLabel": "World Bank WDI",
+      "baseName": "국내총생산(GDP)",
+      "shortDefinitionCard": "한 나라 안에서 생산된 재화와 서비스의 최종 가치를 집계해 경제 규모와 소득 수준을 나타낸 지표",
+      "displayType": "U1",
+      "users": [
+        "금융기관",
+        "기업",
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "A-004",
+      "sourceLabel": "World Bank WDI",
+      "baseName": "빈곤율",
+      "shortDefinitionCard": "빈곤선을 밑도는 인구가 전체 인구에서 차지하는 몫으로 잰 경제적 취약 인구의 비율",
+      "displayType": "U1",
+      "users": [
+        "공공기관",
+        "금융기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "A-005",
+      "sourceLabel": "World Bank",
+      "baseName": "산업별 부가가치 비중",
+      "shortDefinitionCard": "산업 부문별 부가가치가 국내총생산에서 차지하는 몫으로 나타낸 경제 구조 지표",
+      "displayType": "U1",
+      "users": [
+        "공공기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "A-006",
+      "sourceLabel": "World Bank WDI",
+      "baseName": "실업률",
+      "shortDefinitionCard": "경제활동인구 가운데 일자리를 얻지 못한 사람의 비율로 나타낸 노동시장 지표",
+      "displayType": "U1",
+      "users": [
+        "기업",
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "A-007",
+      "sourceLabel": "World Bank WDI",
+      "baseName": "인구",
+      "shortDefinitionCard": "한 나라의 거주 인구 규모와 도시 지역 거주 분포를 집계한 인구 통계",
+      "displayType": "U1",
+      "users": [
+        "공공기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "A-008",
+      "sourceLabel": "World Bank WDI",
+      "baseName": "지니계수",
+      "shortDefinitionCard": "가구조사를 바탕으로 소득 또는 소비지출 분포가 균등 상태에서 얼마나 벗어났는지 나타낸 불평등 지수",
+      "displayType": "U1",
+      "users": [
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "A-009",
+      "sourceLabel": "EU JRC EDGAR 외",
+      "baseName": "온실가스 배출강도",
+      "shortDefinitionCard": "유럽연합 공동연구센터(EU JRC)의 배출량을 경제 규모와 인구로 나누어 산출한 국가 온실가스 배출강도",
+      "displayType": "U1",
+      "users": [
+        "연구자",
+        "공공기관",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "A-010",
+      "sourceLabel": "EU JRC EDGAR",
+      "baseName": "가스종류별 온실가스 배출량",
+      "shortDefinitionCard": "인위적 온실가스 배출량을 가스 종류별로 구분해 집계한 국가 배출 통계",
+      "displayType": "U1",
+      "users": [
+        "연구자",
+        "기업",
+        "공공기관"
+      ]
+    },
+    {
+      "elementId": "A-011",
+      "sourceLabel": "EU JRC EDGAR",
+      "baseName": "부문별 온실가스 배출량",
+      "shortDefinitionCard": "온실가스 배출량을 배출이 일어나는 활동 부문별로 구분해 집계한 통계",
+      "displayType": "U1",
+      "users": [
+        "기업",
+        "연구자",
+        "공공기관"
+      ]
+    },
+    {
+      "elementId": "A-012",
+      "sourceLabel": "EU JRC EDGAR 외",
+      "baseName": "온실가스 총배출량·순배출량",
+      "shortDefinitionCard": "인위적 온실가스를 이산화탄소 상당량으로 합산해 나타낸 국가 총배출량",
+      "displayType": "U1",
+      "users": [
+        "공공기관",
+        "금융기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "A-013",
+      "sourceLabel": "WRI Climate Watch",
+      "baseName": "NDC·SDG 연계 목록",
+      "shortDefinitionCard": "각국 국가감축목표(NDC) 문안을 지속가능발전목표 세부목표에 대응시켜 정리한 연계 정보",
+      "displayType": "U6",
+      "users": [
+        "공공기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "A-014",
+      "sourceLabel": "SDSN",
+      "baseName": "지속가능발전목표 이행 종합점수(SDG Index)",
+      "shortDefinitionCard": "17개 지속가능발전목표(SDG)의 이행 수준을 하나의 점수로 종합한 국가 지수",
+      "displayType": "U1",
+      "users": [
+        "공공기관",
+        "연구자",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "A-015",
+      "sourceLabel": "SDSN",
+      "baseName": "SDG 세부지표별 달성도",
+      "shortDefinitionCard": "지속가능발전목표(SDG)의 개별 세부지표마다 달성 수준을 정규화해 매긴 점수",
+      "displayType": "U1",
+      "users": [
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "A-016",
+      "sourceLabel": "Energy Institute",
+      "baseName": "1차 에너지 소비량",
+      "shortDefinitionCard": "한 나라의 1차 에너지 소비를 공급원별로 구분해 집계한 에너지 통계",
+      "displayType": "U1",
+      "users": [
+        "연구자",
+        "공공기관",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "A-017",
+      "sourceLabel": "BloombergNEF",
+      "baseName": "균등화 발전비용(LCOE)",
+      "shortDefinitionCard": "신규 발전설비의 수명주기 비용을 총 발전량으로 나누어 산출한 단위 발전량당 비용",
+      "displayType": "U3",
+      "users": []
+    },
+    {
+      "elementId": "A-018",
+      "sourceLabel": "IRENA",
+      "baseName": "재생·비재생에너지 기술별 발전 설비용량",
+      "shortDefinitionCard": "재생에너지와 비재생에너지 전원의 최대 순 발전용량을 발전기술별로 집계한 설비용량 통계",
+      "displayType": "U3",
+      "users": [
+        "기업",
+        "공공기관",
+        "금융기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "A-019",
+      "sourceLabel": "World Bank WDI",
+      "baseName": "송배전 손실률",
+      "shortDefinitionCard": "송전·배전 과정에서 사라지는 전력량을 총 발전량 대비 비율로 나타낸 계통 손실 지표",
+      "displayType": "U1",
+      "users": [
+        "공공기관",
+        "금융기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "A-020",
+      "sourceLabel": "IRENA",
+      "baseName": "전력 부문 재생에너지 비중",
+      "shortDefinitionCard": "전력 부문에서 재생에너지가 차지하는 몫을 발전량과 설비용량 기준으로 나타낸 비율",
+      "displayType": "U1",
+      "users": [
+        "공공기관",
+        "금융기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "A-021",
+      "sourceLabel": "World Bank WDI",
+      "baseName": "전력 접근률",
+      "shortDefinitionCard": "전력을 공급받을 수 있는 인구가 전체 인구에서 차지하는 비율로 나타낸 전력 보급 지표",
+      "displayType": "U1",
+      "users": [
+        "공공기관",
+        "금융기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "A-022",
+      "sourceLabel": "World Bank",
+      "baseName": "정전 지속시간·횟수(SAIDI, SAIFI)",
+      "shortDefinitionCard": "고객 한 명이 한 해 겪은 정전의 지속시간과 횟수로 전력 공급 신뢰도를 나타낸 지표로, 세계은행(World Bank) 조사값과 자국 공시값을 담는다",
+      "displayType": "U1",
+      "users": [
+        "기업",
+        "공공기관",
+        "금융기관"
+      ]
+    },
+    {
+      "elementId": "A-023",
+      "sourceLabel": "WRI",
+      "baseName": "발전소 공간정보(GPPD)",
+      "shortDefinitionCard": "개별 발전소의 위치와 설비용량을 지점 단위로 정리한 공간정보",
+      "displayType": "U4",
+      "users": [
+        "기업",
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "A-024",
+      "sourceLabel": "World Bank ENERGYDATA.INFO",
+      "baseName": "송전망 공간정보",
+      "shortDefinitionCard": "ENERGYDATA.INFO로 공개한 송전 선로의 경로와 전압을 담은 선형 공간정보",
+      "displayType": "U4",
+      "users": [
+        "기업",
+        "공공기관"
+      ]
+    },
+    {
+      "elementId": "A-025",
+      "sourceLabel": "STADT",
+      "baseName": "이산화탄소 포집·저장 시설(CCS)",
+      "shortDefinitionCard": "용역사 STADT가 공개된 1차 출처를 조사해 정리한 베트남 이산화탄소 포집·저장(CCS) 시설·사업 목록",
+      "displayType": "U4",
+      "users": [
+        "기업",
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "A-026",
+      "sourceLabel": "OpenStreetMap",
+      "baseName": "건물 윤곽·속성",
+      "shortDefinitionCard": "오픈스트리트맵(OpenStreetMap) 참여자가 직접 그려 올린 건물 윤곽 폴리곤과 용도·층수·높이 등 건물 속성 정보",
+      "displayType": "U2",
+      "users": [
+        "기업",
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "A-027",
+      "sourceLabel": "OpenStreetMap",
+      "baseName": "교통 인프라",
+      "shortDefinitionCard": "오픈스트리트맵(OpenStreetMap) 기여자들이 구축한 철도·도로 레이어의 수록 현황을 정리한 교통 인프라 자료",
+      "displayType": "U4",
+      "users": [
+        "기업",
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "A-028",
+      "sourceLabel": "OpenStreetMap",
+      "baseName": "해안·수자원 인프라",
+      "shortDefinitionCard": "오픈스트리트맵(OpenStreetMap) 기여자들이 구축한 자연지형지물·수로 레이어의 수록 현황을 정리한 자료",
+      "displayType": "U4",
+      "users": [
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "A-029",
+      "sourceLabel": "VCCI WTO센터",
+      "baseName": "자유무역협정 현황(FTA)",
+      "shortDefinitionCard": "베트남이 체결·협상 중인 자유무역협정(FTA)의 상태를 정리한 목록",
+      "displayType": "U6",
+      "users": [
+        "기업",
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "A-030",
+      "sourceLabel": "한국무역협회",
+      "baseName": "한-베트남 교역액",
+      "shortDefinitionCard": "한국과 베트남 사이의 상품 교역 규모를 통관 기준으로 집계한 양자 무역 통계",
+      "displayType": "U1",
+      "users": [
+        "금융기관",
+        "기업",
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "A-031",
+      "sourceLabel": "World Bank",
+      "baseName": "물류성과지수(LPI)",
+      "shortDefinitionCard": "국제 물류 실무 전문가 설문을 바탕으로 각국의 물류 성과를 종합해 평가한 지수",
+      "displayType": "U1",
+      "users": [
+        "금융기관",
+        "기업",
+        "공공기관"
+      ]
+    },
+    {
+      "elementId": "A-032",
+      "sourceLabel": "OECD 외",
+      "baseName": "중간재 교역 규모(TiVA)",
+      "shortDefinitionCard": "다른 제품의 투입물로 오가는 중간재의 교역 규모와 비중을 집계한 통계",
+      "displayType": "U1",
+      "users": [
+        "기업",
+        "연구자",
+        "공공기관"
+      ]
+    },
+    {
+      "elementId": "A-033",
+      "sourceLabel": "UNCTAD",
+      "baseName": "정기선 해운 연결성(LSCI)",
+      "shortDefinitionCard": "한 나라가 세계 정기선 해운 네트워크에 얼마나 이어져 있는지 종합한 지수",
+      "displayType": "U1",
+      "users": [
+        "공공기관",
+        "금융기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "B-001",
+      "sourceLabel": "World Bank CCKP",
+      "baseName": "건기·우기 구분",
+      "shortDefinitionCard": "세계은행(World Bank) 기후지식포털의 월별 평년 강수량을 임계값에 견주어 한 해 열두 달을 건기와 우기로 가른 계절 구분",
+      "displayType": "U1",
+      "users": [
+        "기업",
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "B-002",
+      "sourceLabel": "Beck et al.",
+      "baseName": "쾨펜-가이거 기후대 구분",
+      "shortDefinitionCard": "월별 기온·강수 임계로 육지 기후를 유형화해 1km 격자로 그린 쾨펜-가이거 기후대 구분",
+      "displayType": "U2",
+      "users": [
+        "연구자",
+        "공공기관",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "B-003",
+      "sourceLabel": "World Bank CCKP",
+      "baseName": "연평균 기온·강수",
+      "shortDefinitionCard": "관측 격자자료를 연 단위로 집계해 제공하는 연평균 기온과 연강수량",
+      "displayType": "U2",
+      "users": [
+        "연구자",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "B-004",
+      "sourceLabel": "World Bank CCKP",
+      "baseName": "과거·미래 기후 변수(CMIP6)",
+      "shortDefinitionCard": "CMIP6 모델 앙상블을 상세화해 시나리오별로 제공하는 기후 변수 묶음",
+      "displayType": "U2",
+      "users": [
+        "연구자",
+        "공공기관",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "B-005",
+      "sourceLabel": "World Bank CCKP",
+      "baseName": "가뭄 지표",
+      "shortDefinitionCard": "CMIP6 앙상블에서 산출한 무강수 지속과 물수지 부족을 담은 가뭄 지표군",
+      "displayType": "U2",
+      "users": [
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "B-006",
+      "sourceLabel": "World Bank CCKP",
+      "baseName": "폭염 지표",
+      "shortDefinitionCard": "CMIP6 앙상블에서 산출한 낮 더위·밤 더위·체감온도 초과 일수 지표군",
+      "displayType": "U2",
+      "users": [
+        "공공기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "B-007",
+      "sourceLabel": "World Bank CCKP",
+      "baseName": "홍수 관련 극한 강수 지표",
+      "shortDefinitionCard": "CMIP6 앙상블에서 산출한 극한 강수량과 호우일수를 담은 지표군",
+      "displayType": "U2",
+      "users": [
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "B-008",
+      "sourceLabel": "NASA IPCC AR6",
+      "baseName": "해수면 상승 전망(SSP)",
+      "shortDefinitionCard": "배출 시나리오별로 추정한 조위관측소 단위 상대 해수면 상승 전망",
+      "displayType": "U2",
+      "users": [
+        "공공기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "B-009",
+      "sourceLabel": "WWF",
+      "baseName": "생물다양성 리스크(BRF)",
+      "shortDefinitionCard": "생태계 의존과 훼손에서 오는 물리적·규제·평판 위험을 지역별로 평가한 위험도",
+      "displayType": "U2",
+      "users": [
+        "기업",
+        "공공기관",
+        "금융기관"
+      ]
+    },
+    {
+      "elementId": "B-010",
+      "sourceLabel": "Germanwatch",
+      "baseName": "기후 리스크 지수(CRI)",
+      "shortDefinitionCard": "극한 기상으로 실제 발생한 인명·경제 피해를 기준으로 국가를 줄 세운 사후 평가 순위",
+      "displayType": "U1",
+      "users": [
+        "공공기관",
+        "연구자",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "B-011",
+      "sourceLabel": "ND-GAIN",
+      "baseName": "기후 취약성·적응 준비도 지수",
+      "shortDefinitionCard": "기후 취약성과 적응 준비도를 함께 재어 산출한 국가 지수",
+      "displayType": "U1",
+      "users": [
+        "공공기관",
+        "금융기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "B-012",
+      "sourceLabel": "CRED EM-DAT",
+      "baseName": "재해·재난 이력",
+      "shortDefinitionCard": "일정 규모를 넘은 재해를 사건 단위로 기록해 온 국제 재해 데이터베이스",
+      "displayType": "U2",
+      "users": [
+        "공공기관",
+        "연구자",
+        "금융기관",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "B-013",
+      "sourceLabel": "World Bank",
+      "baseName": "탄소국경조정제도(CBAM) 노출 지수",
+      "shortDefinitionCard": "수출품 탄소집약도와 대EU 수출 비중을 엮어 산정한 추가 배출비용 상대 노출도",
+      "displayType": "U6",
+      "users": [
+        "공공기관",
+        "금융기관",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "B-014",
+      "sourceLabel": "World Bank",
+      "baseName": "탄소세 도입 효과 모의 결과(CCDR)",
+      "shortDefinitionCard": "국가기후개발보고서에서 탄소가격 도입 효과를 거시모형으로 모의한 국가별 추정 결과",
+      "displayType": "U6",
+      "users": [
+        "공공기관",
+        "금융기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "B-015",
+      "sourceLabel": "World Bank",
+      "baseName": "탄소 가격 수준(ETS·탄소세)",
+      "shortDefinitionCard": "세계은행(World Bank) 탄소가격 대시보드와 베트남 법령으로 확인한 배출권거래제와 탄소세의 적용 수준",
+      "displayType": "U6",
+      "users": [
+        "기업",
+        "금융기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "B-016",
+      "sourceLabel": "World Bank",
+      "baseName": "화석연료 의존도",
+      "shortDefinitionCard": "국제에너지기구 통계를 원자료로 산출한 총에너지 대비 화석연료 비중",
+      "displayType": "U1",
+      "users": [
+        "공공기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "B-017",
+      "sourceLabel": "WRI Aqueduct",
+      "baseName": "기저 물 스트레스",
+      "shortDefinitionCard": "총 물 수요를 이용 가능한 공급량으로 나누어 산정한 물 스트레스 값",
+      "displayType": "U2",
+      "users": [
+        "공공기관",
+        "금융기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "B-018",
+      "sourceLabel": "IIASA",
+      "baseName": "공유사회경제경로(SSP) GDP 전망",
+      "shortDefinitionCard": "다섯 개 사회경제 서사별로 추정한 국가 국내총생산 장기 전망",
+      "displayType": "U1",
+      "users": [
+        "금융기관",
+        "기업",
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "B-019",
+      "sourceLabel": "IIASA",
+      "baseName": "공유사회경제경로(SSP) 인구 전망",
+      "shortDefinitionCard": "다섯 개 사회경제 서사별로 추정한 국가 인구 규모 장기 전망",
+      "displayType": "U1",
+      "users": [
+        "공공기관",
+        "연구자",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "B-020",
+      "sourceLabel": "INFORM",
+      "baseName": "복합 리스크 지수",
+      "shortDefinitionCard": "재해 위험·취약성·대응역량 부족을 묶어 산정한 인도적 위기 복합 지수",
+      "displayType": "U1",
+      "users": [
+        "공공기관",
+        "연구자",
+        "금융기관",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "B-021",
+      "sourceLabel": "Global Data Lab",
+      "baseName": "취약성 지수(GVI)",
+      "shortDefinitionCard": "사회경제 여건 일곱 영역을 묶어 산출한 기후 취약성 복합지수",
+      "displayType": "U2",
+      "users": [
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "B-022",
+      "sourceLabel": "World Bank",
+      "baseName": "기후 피해 경제적 비용(CCDR)",
+      "shortDefinitionCard": "국가기후개발보고서에서 적응하지 않았을 때의 경제 손실과 투자 소요를 추정한 값",
+      "displayType": "U1",
+      "users": [
+        "공공기관",
+        "금융기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "B-023",
+      "sourceLabel": "MRC·Le 외",
+      "baseName": "건기·우기 유량 차이",
+      "shortDefinitionCard": "관측 유량으로 제시한 건기와 우기 사이의 하천 유량 격차",
+      "displayType": "U4",
+      "users": [
+        "공공기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "B-024",
+      "sourceLabel": "FAO AQUASTAT",
+      "baseName": "농업용수 취수 비중",
+      "shortDefinitionCard": "산정한 연간 총 담수 취수량 가운데 농업이 차지하는 몫",
+      "displayType": "U2",
+      "users": [
+        "공공기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "B-025",
+      "sourceLabel": "MONRE·HydroSHEDS",
+      "baseName": "하천유역 면적",
+      "shortDefinitionCard": "베트남 천연자원환경부(MONRE) 문헌값과 HydroSHEDS 격자 산출을 함께 담은 주요 하천유역의 넓이",
+      "displayType": "U4",
+      "users": [
+        "공공기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "B-026",
+      "sourceLabel": "HydroSHEDS",
+      "baseName": "흐름 방향(유향)",
+      "shortDefinitionCard": "수치표고모델에서 산출한 격자별 물 흐름 방향과 그 방위별 분포 비율",
+      "displayType": "U2",
+      "users": [
+        "기업",
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "B-027",
+      "sourceLabel": "FAO AQUASTAT",
+      "baseName": "재생가능 지하수 부존량",
+      "shortDefinitionCard": "강수 침투로 해마다 다시 채워지는 몫을 잡은 지하수 자원량",
+      "displayType": "U1",
+      "users": [
+        "공공기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "B-028",
+      "sourceLabel": "FAO AQUASTAT",
+      "baseName": "하천 유량",
+      "shortDefinitionCard": "국제연합 식량농업기구(FAO) 아쿠아스탯 수자원 계열로 지점과 유역에 붙인 하천 유량 관련 값",
+      "displayType": "U4",
+      "users": [
+        "공공기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "B-029",
+      "sourceLabel": "FAOSTAT·Greifswald",
+      "baseName": "산림 유형별 면적",
+      "shortDefinitionCard": "국제연합 식량농업기구(FAO) 통계와 그라이프스발트 습지센터 이탄지 지도로 잰 산림·습지 유형별 넓이",
+      "displayType": "U2",
+      "users": [
+        "연구자",
+        "공공기관",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "B-030",
+      "sourceLabel": "Global Forest Watch",
+      "baseName": "수목 피복 증가(산림 이득)",
+      "shortDefinitionCard": "수목이 없던 곳에 수관이 새로 생긴 넓이를 잰 값",
+      "displayType": "U2",
+      "users": [
+        "공공기관",
+        "연구자",
+        "금융기관",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "B-031",
+      "sourceLabel": "Global Forest Watch",
+      "baseName": "수목 피복 면적(산림 총 면적)",
+      "shortDefinitionCard": "정해진 수관 밀도 기준을 넘는 목본 식생이 덮은 넓이를 합산해 잰 값",
+      "displayType": "U2",
+      "users": [
+        "공공기관",
+        "금융기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "B-032",
+      "sourceLabel": "Global Forest Watch",
+      "baseName": "수관 피복률",
+      "shortDefinitionCard": "수관이 지표를 덮은 정도를 수직 투영해 백분율로 나타낸 수관 밀도 값",
+      "displayType": "U2",
+      "users": [
+        "공공기관",
+        "연구자",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "B-033",
+      "sourceLabel": "Global Forest Watch",
+      "baseName": "연간 수목 피복 손실",
+      "shortDefinitionCard": "수목이 있던 곳이 사라진 넓이를 위성으로 탐지해 해마다 집계한 총손실",
+      "displayType": "U2",
+      "users": [
+        "공공기관",
+        "연구자",
+        "금융기관",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "B-034",
+      "sourceLabel": "Global Forest Watch",
+      "baseName": "산림 탄소 저장량",
+      "shortDefinitionCard": "산림의 지상부 바이오매스에 쌓인 탄소량을 잰 저장량과 그 변화 값",
+      "displayType": "U2",
+      "users": [
+        "공공기관",
+        "연구자",
+        "금융기관",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "B-035",
+      "sourceLabel": "FAOSTAT",
+      "baseName": "토지이용·토지이용변화 및 임업(LULUCF) 면적",
+      "shortDefinitionCard": "국가 보고를 바탕으로 집계한 토지이용 범주별 면적과 관련 지표",
+      "displayType": "U2",
+      "users": [
+        "공공기관",
+        "금융기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "B-036",
+      "sourceLabel": "FAOSTAT",
+      "baseName": "토지이용 변화율",
+      "shortDefinitionCard": "국제연합 식량농업기구(FAO) 통계의 토지이용·토지피복 범주별 면적에서 산출한 연평균 토지이용 변화율",
+      "displayType": "U2",
+      "users": [
+        "공공기관",
+        "금융기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "B-037",
+      "sourceLabel": "ESA WorldCover",
+      "baseName": "토지피복 분류별 면적",
+      "shortDefinitionCard": "위성 관측으로 지표의 물리적 피복 상태를 분류해 집계한 분류별 넓이",
+      "displayType": "U2",
+      "users": [
+        "공공기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "B-038",
+      "sourceLabel": "World Bank",
+      "baseName": "바이오매스 발생량",
+      "shortDefinitionCard": "세계은행(World Bank) 폐기물 통계를 중심으로 에너지로 돌릴 수 있는 유기물 자원이 한 해 얼마나 생기는지 잡은 값",
+      "displayType": "U1",
+      "users": [
+        "기업",
+        "공공기관",
+        "금융기관"
+      ]
+    },
+    {
+      "elementId": "B-039",
+      "sourceLabel": "Hoes 외",
+      "baseName": "전지구 수력 총잠재량",
+      "shortDefinitionCard": "하천 격자점의 유량과 낙차로 산정한 이론적 수력 총잠재량",
+      "displayType": "U2",
+      "users": [
+        "공공기관",
+        "금융기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "B-040",
+      "sourceLabel": "IRENA",
+      "baseName": "지열 잠재량",
+      "shortDefinitionCard": "국제재생에너지기구(IRENA) 글로벌아틀라스의 심도별 지온과 문헌 기반 지열 이용 규모를 담은 자료",
+      "displayType": "U2",
+      "users": [
+        "연구자",
+        "공공기관",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "B-041",
+      "sourceLabel": "Global Solar Atlas",
+      "baseName": "태양 일사량(GHI·DNI)",
+      "shortDefinitionCard": "세계은행(World Bank)·ESMAP의 글로벌솔라아틀라스가 잰 수평면 전천 일사량과 직달 일사량 자원 값",
+      "displayType": "U2",
+      "users": [
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "B-042",
+      "sourceLabel": "Global Wind Atlas",
+      "baseName": "풍속·바람 에너지밀도",
+      "shortDefinitionCard": "글로벌윈드아틀라스가 100m 높이 기준으로 산출한 장기 평균 풍속과 단위 면적당 바람 에너지밀도",
+      "displayType": "U2",
+      "users": [
+        "기업",
+        "연구자",
+        "공공기관"
+      ]
+    },
+    {
+      "elementId": "B-043",
+      "sourceLabel": "Energy Institute",
+      "baseName": "화석연료 확인매장량",
+      "shortDefinitionCard": "에너지연구원(Energy Institute)과 미국 에너지정보청 통계로 잡은 석탄·석유·천연가스의 확인매장량",
+      "displayType": "U1",
+      "users": [
+        "공공기관",
+        "연구자",
+        "금융기관",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "B-044",
+      "sourceLabel": "USGS",
+      "baseName": "핵심광물 광종 목록",
+      "shortDefinitionCard": "정리한 광종 목록과 광종별 부존 상태·원광 수출규제 해당 여부",
+      "displayType": "U1",
+      "users": [
+        "기업",
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "B-045",
+      "sourceLabel": "USGS",
+      "baseName": "광종별 세계 매장량·생산 순위",
+      "shortDefinitionCard": "미국 지질조사국(USGS) 광물요약집 표를 판독해 매긴 광종별 세계 매장량·생산량 순위와 세계 비중",
+      "displayType": "U1",
+      "users": [
+        "기업",
+        "금융기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "B-046",
+      "sourceLabel": "USGS",
+      "baseName": "광물 매장량(확인·추정)",
+      "shortDefinitionCard": "보고한 광종별 확인 매장량과 매장량 미수록 광종의 부존 근거",
+      "displayType": "U1",
+      "users": [
+        "기업",
+        "연구자",
+        "공공기관",
+        "금융기관"
+      ]
+    },
+    {
+      "elementId": "B-047",
+      "sourceLabel": "USGS",
+      "baseName": "광종별 광산 생산량",
+      "shortDefinitionCard": "보고한 광종별 연간 광산 생산량과 알루미나 등 가공품 생산량",
+      "displayType": "U1",
+      "users": [
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "B-048",
+      "sourceLabel": "USGS",
+      "baseName": "광산·가공 시설 위치",
+      "shortDefinitionCard": "미국 지질조사국(USGS) 광물연보와 광물자원자료체계(MRDS)로 확인한 주요 광산의 소재지와 광종 속성",
+      "displayType": "U4",
+      "users": [
+        "기업",
+        "공공기관"
+      ]
+    },
+    {
+      "elementId": "C-001",
+      "sourceLabel": "UNFCCC",
+      "baseName": "국가결정기여(NDC)",
+      "shortDefinitionCard": "유엔기후변화협약(UNFCCC) 등록부에 각 당사국이 파리협정 제4조에 따라 제출·갱신하는 국가 차원의 온실가스 감축·적응 공약 문서",
+      "displayType": "U6",
+      "users": [
+        "공공기관",
+        "연구자",
+        "금융기관",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "C-002",
+      "sourceLabel": "UNFCCC 외",
+      "baseName": "격년투명성보고서(BTR·구 BUR)",
+      "shortDefinitionCard": "파리협정 제13조 투명성 체계에 따라 각 당사국이 격년으로 제출하는 온실가스 배출량과 감축 이행 진전 보고서",
+      "displayType": "U6",
+      "users": [
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "C-003",
+      "sourceLabel": "UNFCCC",
+      "baseName": "국가 적응계획(NAP)",
+      "shortDefinitionCard": "각국이 기후변화 취약성을 낮추고 적응을 개발계획에 통합하기 위해 수립해 유엔기후변화협약(UNFCCC)에 통보하는 중장기 계획",
+      "displayType": "U6",
+      "users": [
+        "공공기관",
+        "금융기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "C-004",
+      "sourceLabel": "베트남 총리실",
+      "baseName": "장기 저탄소 발전전략(LT-LEDS)·에너지 믹스 전망",
+      "shortDefinitionCard": "파리협정 제4조에 따라 각국이 세기 중반을 내다보고 수립·통보하는 장기 배출 경로와 넷제로 목표를 담은 국가 전략",
+      "displayType": "U6",
+      "users": [
+        "공공기관",
+        "연구자",
+        "금융기관",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "C-005",
+      "sourceLabel": "UNFCCC",
+      "baseName": "기술수요평가(TNA)",
+      "shortDefinitionCard": "개발도상국이 기후변화 감축·적응에 필요한 기술을 스스로 발굴해 우선순위를 매기고 도입 장벽을 분석한 평가 결과",
+      "displayType": "U3",
+      "users": [
+        "공공기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "C-006",
+      "sourceLabel": "UNFCCC 외",
+      "baseName": "파리협정 6조 국제 감축실적 거래(ITMO)",
+      "shortDefinitionCard": "파리협정 제6조에 따른 감축성과 국제이전(ITMO) 양자 협정과 이를 뒷받침하는 국가 이행 체계의 구축 현황",
+      "displayType": "U5",
+      "users": [
+        "공공기관",
+        "기업",
+        "금융기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "C-007",
+      "sourceLabel": "UNFCCC",
+      "baseName": "파리협정 6.8조 비시장 접근법(NMA)",
+      "shortDefinitionCard": "유엔기후변화협약(UNFCCC) 플랫폼에 기록된, 감축성과 이전 없이 각국의 감축목표 이행을 돕는 비시장 협력의 참여 현황",
+      "displayType": "U6",
+      "users": [
+        "공공기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "C-008",
+      "sourceLabel": "UNFCCC 외",
+      "baseName": "협력적 기후 이니셔티브 참여",
+      "shortDefinitionCard": "도시·기업·정부 등 복수의 주체가 공동의 기후 목표를 위해 자발적으로 함께 추진하는 협력 활동의 참여 기록",
+      "displayType": "U6",
+      "users": [
+        "기업",
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "C-009",
+      "sourceLabel": "베트남 정부 공보",
+      "baseName": "기후 법제도 현황",
+      "shortDefinitionCard": "기후변화 감축·적응과 손실·피해, 재해위험 관리에 직접 관련되는 국가 차원의 법률·하위법령·전략·계획을 모은 대장",
+      "displayType": "U6",
+      "users": [
+        "기업",
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "C-010",
+      "sourceLabel": "베트남 정부 공보",
+      "baseName": "환경 법제도 현황",
+      "shortDefinitionCard": "환경영향평가(EIA)·대기질·수질·폐기물·생물다양성 등 기후 외 환경 분야 법령의 제정과 시행 현황을 기록한 대장",
+      "displayType": "U6",
+      "users": [
+        "공공기관",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "C-011",
+      "sourceLabel": "대한민국 외교부 외",
+      "baseName": "현지 치안·안전 정보",
+      "shortDefinitionCard": "대한민국 외교부가 발령하는 여행경보 등급과 현지 치안 상황, 범죄 통계로 현지 활동의 안전 여건을 나타낸 정보군",
+      "displayType": "U6",
+      "users": [
+        "기업",
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "C-012",
+      "sourceLabel": "World Bank 외",
+      "baseName": "민관협력(PPP) 제도·조달 체계",
+      "shortDefinitionCard": "민관협력(PPP) 사업의 근거 법률과 전담 기관, 조달 방식, 계약 유형, 사업 이력으로 제도 기반을 나타낸 정보군",
+      "displayType": "U6",
+      "users": [
+        "기업",
+        "금융기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "C-013",
+      "sourceLabel": "U.S. Department of State 외",
+      "baseName": "외국인 투자 규제",
+      "shortDefinitionCard": "외국인 지분 보유 제한과 세제 혜택·경제특구 인센티브, 투자보호협정, 수익 송금 규정으로 이뤄진 외국인 투자 규제 정보군",
+      "displayType": "U6",
+      "users": [
+        "기업",
+        "금융기관"
+      ]
+    },
+    {
+      "elementId": "C-014",
+      "sourceLabel": "World Bank 외",
+      "baseName": "사업 인허가 절차·기간·비용",
+      "shortDefinitionCard": "환경영향평가와 건축 허가·전력 연결·토지 등기에 필요한 절차 수와 소요 기간, 비용을 기록한 정보군",
+      "displayType": "U6",
+      "users": [
+        "기업",
+        "공공기관",
+        "금융기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "C-015",
+      "sourceLabel": "베트남 정부 공보 외",
+      "baseName": "재생에너지 법령 원문 링크",
+      "shortDefinitionCard": "다른 요소가 근거로 삼은 재생에너지 관련 법제도·계획 문서의 원문 소재지(URL)를 담는 메타 항목",
+      "displayType": "U6",
+      "users": []
+    },
+    {
+      "elementId": "C-016",
+      "sourceLabel": "베트남 총리실",
+      "baseName": "재생에너지 발주·확대 계획",
+      "shortDefinitionCard": "재생에너지 보급을 위한 국가 용량 목표와 입찰 일정, 대상 기술, 사업자 선정 방식, 발주 기관을 담은 계획·발주 현황",
+      "displayType": "U2",
+      "users": [
+        "기업",
+        "공공기관",
+        "금융기관"
+      ]
+    },
+    {
+      "elementId": "C-017",
+      "sourceLabel": "베트남 산업무역부 전력·재생에너지국(EREA)",
+      "baseName": "재생에너지 투자 인센티브·인센티브 조건",
+      "shortDefinitionCard": "재생에너지 투자를 끌어들이기 위한 지원제도의 유형·대상 기술·시행 기관과 지급 가격·기간·용량 조건",
+      "displayType": "U6",
+      "users": [
+        "기업",
+        "금융기관"
+      ]
+    },
+    {
+      "elementId": "C-018",
+      "sourceLabel": "베트남 총리실",
+      "baseName": "중장기 에너지 전망",
+      "shortDefinitionCard": "전망 기관과 시나리오, 에너지원별 수요와 기술별 설비 확충 계획, 재생에너지 비중 목표를 담은 중장기 에너지 수급 전망",
+      "displayType": "U1",
+      "users": [
+        "기업",
+        "금융기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "C-019",
+      "sourceLabel": "World Bank 외",
+      "baseName": "탄소가격제 법률·예산",
+      "shortDefinitionCard": "탄소세와 배출권거래제(ETS)의 도입 여부·세율·대상 부문·가격, 관련 예산으로 탄소가격제의 법적 근거를 나타낸 정보군",
+      "displayType": "U6",
+      "users": [
+        "기업",
+        "연구자",
+        "공공기관",
+        "금융기관"
+      ]
+    },
+    {
+      "elementId": "C-020",
+      "sourceLabel": "UNFCCC",
+      "baseName": "온실가스 감축사업 타당성 기초 정보",
+      "shortDefinitionCard": "온실가스 감축 사업의 타당성을 독립적으로 검증하는 데 필요한 감축 방법론·베이스라인·추가성 근거 등의 기초 정보",
+      "displayType": "U0",
+      "users": []
+    },
+    {
+      "elementId": "C-021",
+      "sourceLabel": "Verra 외",
+      "baseName": "자발적 탄소시장(VCM) 사업 파이프라인",
+      "shortDefinitionCard": "규제 의무와 무관하게 크레딧을 거래하는 자발적 탄소시장에서 개발 중이거나 검증 절차를 밟고 있는 감축·흡수 사업의 목록",
+      "displayType": "U0",
+      "users": []
+    },
+    {
+      "elementId": "C-022",
+      "sourceLabel": "World Bank 외",
+      "baseName": "탄소시장 참여 준비도",
+      "shortDefinitionCard": "국제 탄소시장 거래에 참여할 법·기관 기반을 갖췄는지 제도 구축 항목별로 판정해 점수로 나타낸 지표",
+      "displayType": "U6",
+      "users": [
+        "공공기관",
+        "금융기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "C-023",
+      "sourceLabel": "IPCC",
+      "baseName": "한계저감비용(MAC)",
+      "shortDefinitionCard": "온실가스를 한 단위 더 줄이는 데 드는 비용을 감축수단별로 견주기 위해 톤당 금액으로 나타낸 값",
+      "displayType": "U0",
+      "users": []
+    },
+    {
+      "elementId": "C-024",
+      "sourceLabel": "UNFCCC 외",
+      "baseName": "산림전용·황폐화 방지(REDD+) 이행",
+      "shortDefinitionCard": "산림 전용·황폐화 방지와 산림 탄소축적 증진(REDD+)에 관한 국가 단위 이행 요건의 충족 현황",
+      "displayType": "U5",
+      "users": [
+        "공공기관",
+        "금융기관",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "C-025",
+      "sourceLabel": "Berkeley Carbon Trading Project 외",
+      "baseName": "탄소크레딧 발행·소각 실적",
+      "shortDefinitionCard": "탄소크레딧 등록부에 기록된 크레딧의 발행량과 소각량을 등록 표준·기술 분야와 함께 프로젝트 단위로 모은 실적 대장",
+      "displayType": "U5",
+      "users": [
+        "기업",
+        "연구자",
+        "금융기관"
+      ]
+    },
+    {
+      "elementId": "D-001",
+      "sourceLabel": "World Bank PPI",
+      "baseName": "단위 사업당 설비투자비(CAPEX)",
+      "shortDefinitionCard": "모은 민간참여 인프라 사업의 총투자액을 설비용량으로 나눠 기술별로 집계한 용량 1kW당 설비투자비",
+      "displayType": "U3",
+      "users": [
+        "기업",
+        "공공기관",
+        "금융기관"
+      ]
+    },
+    {
+      "elementId": "D-002",
+      "sourceLabel": "The Shiv 외",
+      "baseName": "기후기술 시장 성장률(CAGR)",
+      "shortDefinitionCard": "정리한 개정 전력개발계획의 2030년 설비용량 목표를 2023년 실적과 견줘 환산한 연평균 성장률",
+      "displayType": "U3",
+      "users": [
+        "기업",
+        "공공기관",
+        "금융기관"
+      ]
+    },
+    {
+      "elementId": "D-003",
+      "sourceLabel": "EVN 외",
+      "baseName": "1MW당 예상 온실가스 감축량",
+      "shortDefinitionCard": "베트남전력공사(EVN)의 2023년 발전 실적과 전력 배출계수를 써서 기술별 설비 1MW가 줄일 것으로 본 온실가스 감축량",
+      "displayType": "U3",
+      "users": [
+        "기업",
+        "연구자",
+        "공공기관",
+        "금융기관"
+      ]
+    },
+    {
+      "elementId": "D-004",
+      "sourceLabel": "WFE 외",
+      "baseName": "크레딧 수익의 투자비 회수율",
+      "shortDefinitionCard": "조사한 탄소크레딧 거래가로 20년 크레딧 수익이 설비투자비를 얼마나 메우는지 본 회수율",
+      "displayType": "U3",
+      "users": [
+        "금융기관",
+        "공공기관",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "D-005",
+      "sourceLabel": "World Bank 외",
+      "baseName": "감축·적응 기후예산 배분 비율",
+      "shortDefinitionCard": "기후 관련 공공지출을 감축·적응·동시기여로 갈라 각 몫이 차지하는 비중으로 나타낸 값",
+      "displayType": "U1",
+      "users": [
+        "공공기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "D-006",
+      "sourceLabel": "베트남 재정부 외",
+      "baseName": "기후 관련 조세(환경보호세) 수입",
+      "shortDefinitionCard": "베트남 국회와 재정부가 기후 관련 조세인 환경보호세(EPT)에 대해 공표한 연료별 세율과 국가예산 세수를 모은 자료",
+      "displayType": "U1",
+      "users": [
+        "연구자",
+        "공공기관",
+        "금융기관",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "D-007",
+      "sourceLabel": "World Bank 외",
+      "baseName": "기후예산태깅(CBT) 도입 여부·수준",
+      "shortDefinitionCard": "예산에 기후 관련성을 표시하는 제도를 갖췄는지와 어느 수준까지 갖췄는지 구분한 값",
+      "displayType": "U6",
+      "users": [
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "D-008",
+      "sourceLabel": "UNDP 외",
+      "baseName": "부처별 기후 예산",
+      "shortDefinitionCard": "기후 관련 지출을 그 재원을 관리하는 부처·성 단위로 나눠 집계한 금액과 비중",
+      "displayType": "U5",
+      "users": [
+        "공공기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "D-009",
+      "sourceLabel": "UNDP",
+      "baseName": "기후대응 정부 예산 규모",
+      "shortDefinitionCard": "기후 관련성이 있다고 가려낸 정부 지출의 규모와 경제 규모 대비 부담을 집계한 값",
+      "displayType": "U1",
+      "users": [
+        "공공기관",
+        "연구자",
+        "금융기관"
+      ]
+    },
+    {
+      "elementId": "D-010",
+      "sourceLabel": "IMF 외",
+      "baseName": "화석연료 보조금",
+      "shortDefinitionCard": "화석연료를 싸게 유지하는 데 들어가는 명시적·암묵적 지원을 합쳐 산정한 보조금 규모",
+      "displayType": "U1",
+      "users": [
+        "연구자",
+        "공공기관",
+        "금융기관",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "D-011",
+      "sourceLabel": "OECD",
+      "baseName": "지원 주체별 공적개발원조(ODA) 규모",
+      "shortDefinitionCard": "지원하는 나라와 기관별로 협력 대상국에 실제 지출된 공적개발원조(ODA) 금액을 집계한 통계",
+      "displayType": "U1",
+      "users": [
+        "공공기관",
+        "금융기관",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "D-012",
+      "sourceLabel": "IEEFA 외",
+      "baseName": "경쟁국 기업 진출 현황",
+      "shortDefinitionCard": "에너지경제·재무분석연구소(IEEFA) 등 업계 자료를 모아 한국의 경쟁국 민간기업이 현지 기후기술 사업에 진출한 건을 기록한 대장",
+      "displayType": "U5",
+      "users": [
+        "기업",
+        "금융기관"
+      ]
+    },
+    {
+      "elementId": "D-013",
+      "sourceLabel": "GGGI",
+      "baseName": "녹색성장지수",
+      "shortDefinitionCard": "지속가능발전목표·파리협정과 연계된 목표의 달성도로 나라별 녹색성장 성과를 평가한 종합지수",
+      "displayType": "U1",
+      "users": [
+        "공공기관",
+        "연구자",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "D-014",
+      "sourceLabel": "ODA Korea EDCF",
+      "baseName": "양허성 차관 사업",
+      "shortDefinitionCard": "국무조정실 ODA Korea 통합 통계에서 한국수출입은행(EDCF)이 제출한 유상원조 사업을 사업 1건당 한 행으로 기록한 대장",
+      "displayType": "U5",
+      "users": [
+        "공공기관",
+        "기업",
+        "금융기관"
+      ]
+    },
+    {
+      "elementId": "D-015",
+      "sourceLabel": "ODA Korea",
+      "baseName": "공적개발원조(ODA) 프로젝트",
+      "shortDefinitionCard": "국무조정실 ODA Korea 통합 통계에서 한국의 공적개발원조(ODA) 사업을 뽑아 사업 1건당 한 행으로 기록한 대장",
+      "displayType": "U5",
+      "users": [
+        "공공기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "D-016",
+      "sourceLabel": "ODA Korea",
+      "baseName": "부처·지자체 개발협력 사업",
+      "shortDefinitionCard": "국무조정실 ODA Korea 통합 통계에서 부처·청·위원회와 지방자치단체가 제출한 개발협력 사업을 건별로 기록한 대장",
+      "displayType": "U5",
+      "users": [
+        "공공기관",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "D-017",
+      "sourceLabel": "KOICA 외",
+      "baseName": "사업개요서(PCP)·입찰 공고",
+      "shortDefinitionCard": "한국국제협력단(KOICA) 전자조달과 나라장터에 오른 개발협력 사업의 사업개요서 접수·입찰 공고를 건별로 기록한 대장",
+      "displayType": "U5",
+      "users": [
+        "기업",
+        "공공기관"
+      ]
+    },
+    {
+      "elementId": "D-018",
+      "sourceLabel": "Adaptation Fund",
+      "baseName": "기후적응 지원사업",
+      "shortDefinitionCard": "승인한 기후적응 사업을 사업 1건당 한 행으로 기록한 대장",
+      "displayType": "U5",
+      "users": [
+        "공공기관",
+        "금융기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "D-019",
+      "sourceLabel": "CTCN",
+      "baseName": "기술지원 요청 현황",
+      "shortDefinitionCard": "국가지정기구(NDE)를 통해 접수한 기술지원 요청을 요청 1건당 한 행으로 기록한 대장",
+      "displayType": "U5",
+      "users": [
+        "기업",
+        "공공기관",
+        "금융기관"
+      ]
+    },
+    {
+      "elementId": "D-020",
+      "sourceLabel": "GCF",
+      "baseName": "승인 사업 목록",
+      "shortDefinitionCard": "승인해 인가기관(AE)이 이행을 맡는 사업을 사업 1건당 한 행으로 기록한 대장",
+      "displayType": "U5",
+      "users": [
+        "공공기관",
+        "금융기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "D-021",
+      "sourceLabel": "IATI Registry",
+      "baseName": "다자개발은행·국제기구 개발협력 사업",
+      "shortDefinitionCard": "다자개발은행과 유엔 기구 등이 개발도상국에서 추진한 개발협력 사업을 사업 1건당 한 행으로 모은 대장",
+      "displayType": "U5",
+      "users": [
+        "금융기관",
+        "기업",
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "D-022",
+      "sourceLabel": "IATI Registry",
+      "baseName": "다자개발은행·개발금융기관 기후 관련 투자 사업",
+      "shortDefinitionCard": "다자개발은행과 개발금융기관이 대고 기후와 관련된 것으로 분류된 투자 사업을 사업 1건당 한 행으로 모은 대장",
+      "displayType": "U5",
+      "users": [
+        "기업",
+        "금융기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "D-023",
+      "sourceLabel": "GCF 외",
+      "baseName": "국제 기후기금 승인 사업",
+      "shortDefinitionCard": "녹색기후기금(GCF)·지구환경기금(GEF)·적응기금(AF)·기후투자기금(CIF)이 승인한 사업을 사업 1건당 한 행으로 모은 대장",
+      "displayType": "U5",
+      "users": [
+        "공공기관",
+        "기업",
+        "금융기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "D-024",
+      "sourceLabel": "New Energy Nexus 외",
+      "baseName": "기후기술 벤처·임팩트 투자",
+      "shortDefinitionCard": "뉴에너지넥서스(New Energy Nexus)와 로열멜버른공과대(RMIT)의 조사에 실린 기후기술 투자 거래를 거래 1건당 한 행으로 모은 대장",
+      "displayType": "U5",
+      "users": []
+    },
+    {
+      "elementId": "D-025",
+      "sourceLabel": "World Bank",
+      "baseName": "민간 인프라 참여 사업(PPI)",
+      "shortDefinitionCard": "민간이 운영 위험을 나눠 지는 인프라 사업을 사업 1건당 한 행으로 기록한 대장",
+      "displayType": "U5",
+      "users": [
+        "기업",
+        "연구자",
+        "공공기관",
+        "금융기관"
+      ]
+    },
+    {
+      "elementId": "D-026",
+      "sourceLabel": "MIGA",
+      "baseName": "정치적 위험 보증 현황",
+      "shortDefinitionCard": "해외 투자의 비상업적 위험을 담보하려고 발급했거나 제안한 보증을 보증 1건당 한 행으로 기록한 대장",
+      "displayType": "U5",
+      "users": [
+        "기업",
+        "금융기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "E-001",
+      "sourceLabel": "CTCN",
+      "baseName": "각국 기후기술 창구기관(NDE)",
+      "shortDefinitionCard": "유엔기후변화협약(UNFCCC) 당사국이 기후기술센터·네트워크(CTCN)에 기술지원을 요청하는 공식 창구로 지정한 국가지정기구(NDE)의 기관 대장",
+      "displayType": "U4",
+      "users": [
+        "기업",
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "E-002",
+      "sourceLabel": "UNFCCC",
+      "baseName": "감축사업 승인기관(DNA)",
+      "shortDefinitionCard": "파리협정 당사국이 제6.4조 메커니즘에 따른 감축사업 참여를 승인하도록 지정한 국가지정기관(DNA)의 기관 대장",
+      "displayType": "U4",
+      "users": [
+        "공공기관",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "E-003",
+      "sourceLabel": "GCF",
+      "baseName": "사업제안 추천기관(NDA)",
+      "shortDefinitionCard": "협력 대상국이 녹색기후기금(GCF)과 자국 정부를 잇는 창구로 지정한 국가지정기관(NDA)의 담당자 대장",
+      "displayType": "U4",
+      "users": [
+        "공공기관",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "E-004",
+      "sourceLabel": "UNDP 외",
+      "baseName": "국제기구 현지사무소 담당자",
+      "shortDefinitionCard": "협력 대상국에 사무소를 둔 국제기구·다자개발은행·양자 개발협력기관의 현지 조직과 기후·에너지 담당 창구를 모은 대장",
+      "displayType": "U4",
+      "users": [
+        "공공기관",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "E-005",
+      "sourceLabel": "NIGT 취합",
+      "baseName": "대학·연구기관·비영리단체(NGO)",
+      "shortDefinitionCard": "협력 대상국에서 기후·에너지·환경·농업 분야 연구개발이나 관련 활동을 수행하는 대학·연구기관·비영리단체의 기관 대장",
+      "displayType": "U4",
+      "users": [
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "E-006",
+      "sourceLabel": "NIGT 취합",
+      "baseName": "현지 기후사업 투자기관",
+      "shortDefinitionCard": "협력 대상국에서 기후변화 완화·적응 기술 사업에 자금을 댈 수 있는 투자기관을 유형·투자 분야·운용 규모로 정리한 대장",
+      "displayType": "U4",
+      "users": [
+        "금융기관",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "E-007",
+      "sourceLabel": "UNFCCC 외",
+      "baseName": "온실가스 측정·보고·검증(MRV) 체계",
+      "shortDefinitionCard": "국가 온실가스 배출·흡수량을 산정·보고하고 그 결과를 검증하는 협력 대상국의 측정·보고·검증(MRV) 체계 구비 현황",
+      "displayType": "U6",
+      "users": [
+        "공공기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "E-008",
+      "sourceLabel": "각 학술지·USPTO",
+      "baseName": "기후기술 논문·특허 실적",
+      "shortDefinitionCard": "협력 대상국에서 산출된 기후기술 관련 학술논문과 특허출원을 분야·출원인·한국과의 공동 산출 여부까지 건별로 모은 문헌 대장",
+      "displayType": "U1",
+      "users": []
+    },
+    {
+      "elementId": "E-009",
+      "sourceLabel": "UNESCO UIS 외",
+      "baseName": "STEM 졸업 비중·연구자 수",
+      "shortDefinitionCard": "고등교육 졸업자 가운데 STEM 전공이 차지하는 비중과 인구 100만 명당 연구자 수를 함께 보는 기술 인력 기반 지표",
+      "displayType": "U1",
+      "users": [
+        "공공기관",
+        "연구자",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "E-010",
+      "sourceLabel": "WIPO 외",
+      "baseName": "혁신지수(GII)·연구개발비 비중(GERD)",
+      "shortDefinitionCard": "각국 혁신 생태계를 종합 평가한 글로벌 혁신지수(GII)와 국내총생산 대비 연구개발 지출 비율을 함께 보는 지표",
+      "displayType": "U1",
+      "users": [
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "E-011",
+      "sourceLabel": "Portulans Institute",
+      "baseName": "네트워크 준비지수(NRI)",
+      "shortDefinitionCard": "국가의 정보통신기술 활용 준비도를 여러 세부 지표로 종합해 나타낸 네트워크 준비지수(NRI) 점수",
+      "displayType": "U0",
+      "users": [
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "E-012",
+      "sourceLabel": "ILO 외",
+      "baseName": "직군별 종사자 수·임금",
+      "shortDefinitionCard": "직업(직군) 분류별 취업자 규모와 평균 임금 수준을 고용률·산업부문별 종사자 비중과 함께 보는 노동 통계",
+      "displayType": "U1",
+      "users": [
+        "공공기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "E-013",
+      "sourceLabel": "US DOE 외",
+      "baseName": "현지 운영·유지보수 역량(O&M)",
+      "shortDefinitionCard": "설비의 운전과 정비를 협력 대상국 현지에서 수행할 수 있는 역량을 인력·부품·정비체계·사후관리로 나눠 본 자료",
+      "displayType": "U0",
+      "users": []
+    },
+    {
+      "elementId": "E-014",
+      "sourceLabel": "외교부 외",
+      "baseName": "양자 기후협력 협정 현황",
+      "shortDefinitionCard": "협력 대상국이 한국을 비롯한 상대국과 맺은 기후·에너지 협력 문서의 유형·체결일·이행 상태를 협정 단위로 모은 자료",
+      "displayType": "U6",
+      "users": [
+        "공공기관",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "E-015",
+      "sourceLabel": "NDC Partnership 외",
+      "baseName": "국제 기후협력체 참여 현황",
+      "shortDefinitionCard": "국가 감축목표(NDC) 이행을 돕는 국제 협력체에 협력 대상국이 회원으로 참여하고 있는지를 협력체별로 표시한 자료",
+      "displayType": "U6",
+      "users": [
+        "공공기관",
+        "기업",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "E-016",
+      "sourceLabel": "UNFCCC 외",
+      "baseName": "한국 기후기술 성숙도(TRL)",
+      "shortDefinitionCard": "한국이 보유한 기후기술이 기초 연구에서 상용화까지 어느 단계에 이르렀는지 분야별로 나타낸 성숙 단계 값",
+      "displayType": "U0",
+      "users": []
+    },
+    {
+      "elementId": "E-017",
+      "sourceLabel": "UNCTAD 외",
+      "baseName": "한국 기후기술 비교우위(RCA)",
+      "shortDefinitionCard": "한국의 기후기술 관련 품목이 세계 평균에 견줘 수출에서 얼마나 강점을 갖는지 나타낸 현시비교우위(RCA) 지표",
+      "displayType": "U0",
+      "users": []
+    },
+    {
+      "elementId": "E-018",
+      "sourceLabel": "NIGT 취합",
+      "baseName": "국내 기업 개도국 진출 현황",
+      "shortDefinitionCard": "한국 기업이 개발도상국에 세운 법인·지사와 수행 중인 사업을 업종·진출 형태별로 모은 기업 단위 대장",
+      "displayType": "U4",
+      "users": [
+        "기업",
+        "공공기관",
+        "연구자"
+      ]
+    },
+    {
+      "elementId": "E-019",
+      "sourceLabel": "NIGT 취합",
+      "baseName": "개도국 내 한국 기관 사무소",
+      "shortDefinitionCard": "한국 공공기관이 협력 대상국에 둔 해외사무소의 소재지·담당 업무와 기후·에너지 담당 인력 유무를 모은 대장",
+      "displayType": "U4",
+      "users": [
+        "공공기관",
+        "기업"
+      ]
+    },
+    {
+      "elementId": "E-020",
+      "sourceLabel": "KEITI 외",
+      "baseName": "한국 기후기술 해외진출 지원사업",
+      "shortDefinitionCard": "한국 공공·민간 기관이 국내 기업·연구기관에 제공하는 기후기술 해외진출 지원 프로그램의 유형·대상·예산을 모은 자료",
+      "displayType": "U5",
+      "users": [
+        "기업",
+        "공공기관",
+        "연구자"
+      ]
+    }
+  ]
+}

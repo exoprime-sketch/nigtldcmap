@@ -383,7 +383,23 @@ function main() {
   };
 
   const generatedFrom = { workbook: "_source/spec/db_status_framework_v5.38_260922.xlsx", assignment: "docs/plan/V159_데이터유형화_명세.md §4" };
+  // The finder renders 152 cards at once, so it gets only what a card shows;
+  // the full spec and the cases load with the detail page.
+  const typologyById = new Map(typology.map((row) => [row.elementId, row]));
+  const cardRows = specRows.map((row) => {
+    const users = new Map();
+    for (const item of cases) if (item.elementId === row.elementId) for (const user of item.users) users.set(user, (users.get(user) || 0) + 1);
+    return {
+      elementId: row.elementId,
+      sourceLabel: row.sourceLabel,
+      baseName: row.baseName,
+      shortDefinitionCard: row.shortDefinitionCard,
+      displayType: typologyById.get(row.elementId).displayType,
+      users: [...users.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([user]) => user),
+    };
+  });
   const outputs = {
+    "datasetCardSpecV159.json": { schemaVersion: "v159-card-spec-1", generatedFrom, rows: cardRows },
     "datasetSpecV159.json": { schemaVersion: "v159-dataset-spec-1", generatedFrom, rows: specRows },
     "useCasesV159.json": { schemaVersion: "v159-use-cases-1", generatedFrom, registryCountries: [...registry], cases },
     "datasetTypologyV159.json": { schemaVersion: "v159-typology-1", generatedFrom, displayTypes: Object.values(DISPLAY_TYPES), structures: STRUCTURES, rows: typology },
@@ -393,7 +409,7 @@ function main() {
     let stale = 0;
     for (const [file, value] of Object.entries(outputs)) {
       const current = existsSync(resolve(OUT_DIR, file)) ? readFileSync(resolve(OUT_DIR, file), "utf8") : "";
-      if (current !== `${JSON.stringify(value, null, 2)}\n`) { stale += 1; console.error(`stale: ${file}`); }
+      if (current.replace(/\r\n/g, "\n") !== `${JSON.stringify(value, null, 2)}\n`) { stale += 1; console.error(`stale: ${file}`); }
     }
     if (failures.length || stale) { console.error(failures.join("\n")); process.exit(1); }
     console.log("dataset spec v159 up to date");
