@@ -68,7 +68,7 @@
 | 홈 LCP(5회 중앙값) | 144 → 144 ms(변화 0%), LCP 요소 H1 동일, 의도 없이 엔진 로드 0 (`home-lcp-v152.json`) |
 | `audit:performance:v128` | FAIL 3건 — 모두 main 빌드에서 동일(아래) |
 | `finalize:v140` 1회 | **통과**(`GATE_EXIT 0`, 09:18~09:45) — `verify:dataset-directory:v150` 통과 · `release:v136` **79/79** · `qa:role-split:v140` **52/52** · `qa:analysis:v140:baseline` 필수 실패 39건(기준선 41 이내), **새 실패 0**, 해소 A-023·C-012 |
-| e2e(`build-candidate-v137` + playwright) | 213 통과 · 1 실패 — `visual › detail-a016`(3% 차이: 핵심 수치 줄부터 약 60px 어긋남). D1(#27)이 상세 레이아웃(핵심 수치 줄)을 바꾼 뒤 기준 이미지를 갱신하지 않은 것으로, D1 PR의 CI e2e(advisory, Linux)에서도 `home`·`detail-a016`이 같은 이유로 실패 → **이 PR 원인 아님**. 미니맵 오버레이가 들어간 홈 기준선(win32)은 2% 이내 통과. 기준 이미지 교체는 README 절차(실제 이미지 검토 후 교체, Linux는 CI 산출물)로 fix-forward 후보 |
+| e2e(`build-candidate-v137` + playwright) | 213 통과 · 1 실패 — `visual › detail-a016`(3% 차이: 핵심 수치 줄부터 약 60px 어긋남). D1(#27)이 상세 레이아웃(핵심 수치 줄)을 바꾼 뒤 기준 이미지를 갱신하지 않은 것으로, D1 PR의 CI e2e(advisory, Linux)에서도 `home`·`detail-a016`·`detail-d011` 3건이 실패(이 PR의 CI e2e도 같은 3건) → **이 PR 원인 아님**. 미니맵 오버레이가 들어간 홈 기준선(win32)은 2% 이내 통과. 기준 이미지 교체는 README 절차(실제 이미지 검토 후 교체, Linux는 CI 산출물)로 fix-forward 후보 |
 
 - `map-interaction:v129`: 지도 카드가 정확히 12개가 되기를 기다리는 V129 기대값(현재 42개)이라 main에서도 map-load 단계 시간 초과 — 게이트(release v136) 밖의 옛 감사. 이 PR로 바뀐 것은 소스 문자열 검사 `publicPopup` 1개(팝업 빌더 파일 이동). 기대값은 바꾸지 않음
 - `audit:performance:v128`: ① `INITIAL_BUNDLE_REGRESSION` — V128 기준선(226,643 B) 대비 main이 이미 +110%(진입 gzip 475,895 B, 이 PR 477,042 B: +1,147 B = 이용안내 문단·인계 코드) ② `DUPLICATE_BUILD_ASSET` — CSS 140/699(osa134·sda134) 중복은 main 빌드에도 동일 ③ `DEPLOYMENT_SOURCE_MAP_POLICY` — 로컬에서는 배포 산출물 확인 불가(not-verified)
@@ -155,5 +155,6 @@
 ## 미완료·사유
 - 병합 순서 P7 → P3 → P10: P7(`feat/v156-data-refresh-20260922`)이 아직 main에 없음 → P7 병합 후 origin/main을 이 브랜치에 합치고 아이콘 전수 테스트(`iconCensusV152`)·아이콘 러너를 갱신된 데이터로 다시 돌린다
 - 상세 페이지 선택 연동(`onSelectFeature` → V153 차트)은 prop만 제공 — `CountryDataElementPage`는 P10 영역이라 연결하지 않음
-- e2e 시각 기준선 `detail-a016`(win32·Linux)과 `home`(Linux) 교체: D1 이후 기존 실패라 이 PR에서 바꾸지 않음(기준 이미지를 현재 화면으로 덮지 않는 규칙). 필요하면 별도 fix-forward에서 실제 이미지 검토 후 교체
+- e2e 시각 기준선 `detail-a016`(win32·Linux)과 `home`·`detail-d011`(Linux) 교체: D1 이후 기존 실패라 이 PR에서 바꾸지 않음(기준 이미지를 현재 화면으로 덮지 않는 규칙). 필요하면 별도 fix-forward에서 실제 이미지 검토 후 교체
+- CI 정적 게이트: 새 러너 이미지(ubuntu-24.04 `20260920.314.1`)에서 첫 헤드리스 Chrome 기동이 15초를 넘어 `LARGE_SOURCE_TABLE`이 2회 실패(이 PR 원인 아님) → 별도 PR #29(재기동·대기 예산, `reports/v152-1/`)로 main에 먼저 반영하고 이 브랜치에 main을 합침
 - Vercel Preview 확인·사용자 승인 대기(merge는 승인 후 `--squash --delete-branch`)

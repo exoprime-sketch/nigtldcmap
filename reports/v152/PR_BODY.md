@@ -18,6 +18,7 @@
 - `qa:detail-contract:v153`·`review:screens:v138`(8개) 통과, 인식 목록형 구 감사 14/15(map-interaction v129는 main에서도 실패하는 V129 기대값)
 - `finalize:v140` 1회: 통과 — `release:v136` 79/79 · `qa:role-split:v140` 52/52 · `qa:analysis:v140:baseline` 필수 실패 39(기준선 41 이내, 새 실패 0)
 - e2e: 213/214 — 실패 1건 `visual › detail-a016`은 D1(#27) 이후 기준 이미지 미갱신(D1 PR의 advisory e2e에서도 동일 실패), 미니맵이 들어간 홈 기준선(win32)은 통과
+- CI 정적 게이트의 `LARGE_SOURCE_TABLE` Chrome 기동 실패는 새 러너 이미지 문제 → #29로 main에 먼저 반영, 이 브랜치에 main 병합
 
 ## 지시서와 다른 점
 - 엔진은 조작 의도 시에만 켬(시간 경과 자동 없음)·홈은 히어로 지도만 — 사용자 결정(2026-09-24)
