@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-24T08:32:59.302Z",
+  "generatedAt": "2026-09-24T10:58:19.991Z",
   "build": "C:\\Users\\user\\Documents\\nigt-wt-d0\\tmp\\build-v159-review",
   "summary": {
     "elements": 152,
     "pass": 152,
     "fail": 0,
     "failedIds": [],
-    "decisionPointsShown": 118,
+    "decisionPointsShown": 115,
     "decisionPointsHidden": [
       "A-026",
       "A-027",
@@ -33,13 +33,16 @@
       "E-002",
       "E-003",
       "E-007",
-      "E-008",
       "E-015"
     ],
     "statusElements": [
+      "A-017",
+      "C-015",
       "C-020",
       "C-021",
       "C-023",
+      "D-024",
+      "E-008",
       "E-011",
       "E-013",
       "E-016",
@@ -687,7 +690,7 @@
     },
     {
       "elementId": "A-017",
-      "displayType": "U3",
+      "displayType": "U0",
       "structure": "S1",
       "checks": {
         "template": true,
@@ -700,19 +703,19 @@
       },
       "issues": [],
       "evidence": {
-        "template": "U3",
+        "template": "U0",
         "structure": "S1",
-        "variant": "lcoe-range",
+        "variant": "generic",
         "verdict": "match",
-        "firstBlock": "dumbbell",
+        "firstBlock": "status-note",
         "shortDefinition": true,
         "description": true,
         "usage": true,
         "casesPart": true,
         "casesCount": 1,
-        "decisionPoints": 2,
+        "decisionPoints": null,
         "chartsInPrimary": 0,
-        "statusNote": false,
+        "statusNote": true,
         "overflow320": 0
       },
       "chips": {
@@ -720,7 +723,7 @@
         "inert": 0,
         "highlightWorks": null
       },
-      "decisionPointsShown": true,
+      "decisionPointsShown": false,
       "pass": true
     },
     {
@@ -1844,7 +1847,7 @@
         "structure": "S1",
         "variant": "generic",
         "verdict": "match",
-        "firstBlock": "category-bar",
+        "firstBlock": "table",
         "shortDefinition": true,
         "description": true,
         "usage": true,
@@ -3212,7 +3215,7 @@
         "structure": "S4",
         "variant": "reported-inventory",
         "verdict": "match",
-        "firstBlock": "category-bar",
+        "firstBlock": "comparison-table",
         "shortDefinition": true,
         "description": true,
         "usage": true,
@@ -3689,7 +3692,7 @@
     },
     {
       "elementId": "C-015",
-      "displayType": "U6",
+      "displayType": "U0",
       "structure": "S4",
       "checks": {
         "template": true,
@@ -3702,19 +3705,19 @@
       },
       "issues": [],
       "evidence": {
-        "template": "U6",
+        "template": "U0",
         "structure": "S4",
         "variant": "generic",
         "verdict": "match",
-        "firstBlock": "comparison-table",
+        "firstBlock": "status-note",
         "shortDefinition": true,
         "description": true,
         "usage": true,
         "casesPart": true,
         "casesCount": 1,
-        "decisionPoints": 1,
+        "decisionPoints": null,
         "chartsInPrimary": 0,
-        "statusNote": false,
+        "statusNote": true,
         "overflow320": 0
       },
       "chips": {
@@ -3722,7 +3725,7 @@
         "inert": 0,
         "highlightWorks": null
       },
-      "decisionPointsShown": true,
+      "decisionPointsShown": false,
       "pass": true
     },
     {
@@ -3858,7 +3861,7 @@
         "structure": "S4",
         "variant": "carbon-market-regions",
         "verdict": "match",
-        "firstBlock": "region-bar",
+        "firstBlock": "comparison-table",
         "shortDefinition": true,
         "description": true,
         "usage": true,
@@ -4981,7 +4984,7 @@
     },
     {
       "elementId": "D-024",
-      "displayType": "U5",
+      "displayType": "U0",
       "structure": "S4",
       "checks": {
         "template": true,
@@ -4994,19 +4997,19 @@
       },
       "issues": [],
       "evidence": {
-        "template": "U5",
+        "template": "U0",
         "structure": "S4",
         "variant": "generic",
         "verdict": "match",
-        "firstBlock": "category-bar",
+        "firstBlock": "status-note",
         "shortDefinition": true,
         "description": true,
         "usage": true,
         "casesPart": true,
         "casesCount": 1,
-        "decisionPoints": 3,
-        "chartsInPrimary": 1,
-        "statusNote": false,
+        "decisionPoints": null,
+        "chartsInPrimary": 0,
+        "statusNote": true,
         "overflow320": 0
       },
       "chips": {
@@ -5014,7 +5017,7 @@
         "inert": 0,
         "highlightWorks": null
       },
-      "decisionPointsShown": true,
+      "decisionPointsShown": false,
       "pass": true
     },
     {
@@ -5361,7 +5364,7 @@
     },
     {
       "elementId": "E-008",
-      "displayType": "U1",
+      "displayType": "U0",
       "structure": "S1",
       "checks": {
         "template": true,
@@ -5374,11 +5377,11 @@
       },
       "issues": [],
       "evidence": {
-        "template": "U1",
+        "template": "U0",
         "structure": "S1",
-        "variant": "research-patent",
+        "variant": "generic",
         "verdict": "match",
-        "firstBlock": "category-bar",
+        "firstBlock": "status-note",
         "shortDefinition": true,
         "description": true,
         "usage": true,
@@ -5386,7 +5389,7 @@
         "casesCount": 1,
         "decisionPoints": null,
         "chartsInPrimary": 0,
-        "statusNote": false,
+        "statusNote": true,
         "overflow320": 0
       },
       "chips": {
