@@ -2,6 +2,12 @@
 
 이 문서는 공개 플랫폼의 주요 변경을 기록합니다. 아직 merge·배포·tag가 확인되지 않은 작업은 `Unreleased`에 둡니다.
 
+## Unreleased — V152-1 CI 감사 브라우저 콜드 스타트 재기동 (PR 후보)
+
+### Fixed
+
+- 새 GitHub 러너 이미지(ubuntu-24.04 `20260920.314.1`)의 CI 정적 잡에서 첫 헤드리스 Chrome이 15초 안에 DevTools 엔드포인트를 열지 못해 `LARGE_SOURCE_TABLE`이 페이지를 열기도 전에 실패하던 문제(`scripts/v125/browser-runtime.mjs`). 엔드포인트가 늦으면 새 포트·프로필로 1회 재기동(대기 15초 → 45초, `V125_TIMEOUT_SCALE` 적용), 실패 메시지에 브라우저 종료 여부를 남김. 검사 항목·기대값은 변경하지 않음. 재현용 `V125_BROWSER_ENDPOINT_MS`
+
 ## Unreleased — V153-D1 상세보기 프레임 (PR 후보)
 
 ### Added

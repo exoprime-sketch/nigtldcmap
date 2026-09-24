@@ -234,7 +234,34 @@ function runtimeBrowserArgs() {
   return args;
 }
 
+/**
+ * DevTools endpoint budgets per launch attempt. On a fresh CI runner image
+ * (ubuntu-24.04 20260920.314.1) a cold Chrome in the static job did not open
+ * its endpoint within 15 s, twice, before any page was opened. A launch whose
+ * endpoint is late is therefore retried once on a new port and profile with a
+ * longer wait; both waits are scaled like every other budget. What the audits
+ * check never changes. V125_BROWSER_ENDPOINT_MS shortens the first wait so the
+ * relaunch can be reproduced locally.
+ */
+const BROWSER_ENDPOINT_BUDGETS_MS = [
+  Number(process.env.V125_BROWSER_ENDPOINT_MS) > 0 ? Number(process.env.V125_BROWSER_ENDPOINT_MS) : 15_000,
+  45_000,
+];
+
 export async function launchHeadlessBrowser() {
+  let lastError = null;
+  for (const budgetMs of BROWSER_ENDPOINT_BUDGETS_MS) {
+    try {
+      return await launchHeadlessBrowserOnce(scaledTimeoutMsV150(budgetMs));
+    } catch (error) {
+      lastError = error;
+      if (!String(error instanceof Error ? error.message : error).startsWith("DevTools endpoint timeout")) throw error;
+    }
+  }
+  throw lastError;
+}
+
+async function launchHeadlessBrowserOnce(endpointTimeoutMs) {
   const executable = edgeExecutable();
   if (!executable) throw new Error("Edge/Chrome executable not found");
   const port = await reservePort();
@@ -262,7 +289,7 @@ export async function launchHeadlessBrowser() {
     if (stderr.length > 20_000) stderr = stderr.slice(-20_000);
   });
   try {
-    const targets = await pollJson(`http://127.0.0.1:${port}/json/list`);
+    const targets = await pollJson(`http://127.0.0.1:${port}/json/list`, endpointTimeoutMs);
     const target = targets.find((item) => item.type === "page" && item.webSocketDebuggerUrl);
     if (!target) throw new Error("page DevTools target missing");
     const socket = new WebSocket(target.webSocketDebuggerUrl);
@@ -349,9 +376,14 @@ export async function launchHeadlessBrowser() {
       stderr: () => stderr,
     };
   } catch (error) {
+    // An exited browser is a crash; one still running was only slow to start.
+    const state =
+      browser.exitCode !== null || browser.signalCode !== null
+        ? `browser exited: ${browser.exitCode ?? browser.signalCode}`
+        : "browser still starting";
     browser.kill();
     throw new Error(
-      `${error instanceof Error ? error.message : String(error)}${stderr ? `; ${stderr.slice(-500)}` : ""}`
+      `${error instanceof Error ? error.message : String(error)} (${state})${stderr ? `; ${stderr.slice(-500)}` : ""}`
     );
   }
 }
