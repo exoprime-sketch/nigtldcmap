@@ -24,6 +24,8 @@ export type TimeSeriesPointV127 = {
 export type TimeSeriesV127 = {
   /** Stable key used only by React and component state. */
   id: string;
+  /** Indicators the series draws; marks the series for the V159 '쓰는 데이터' highlight. */
+  indicatorIds?: string[];
   /** Public series label shown in the legend and tooltip. */
   label: string;
   /** A chart accepts only series that use the same unit. */

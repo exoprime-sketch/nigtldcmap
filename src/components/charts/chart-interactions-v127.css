@@ -405,3 +405,11 @@
     transition-duration: 0.001ms !important;
   }
 }
+
+/* V159: a '쓰는 데이터' chip highlights its series and dims the others. */
+[data-highlight-indicators] .v127-interactive-chart__series:not(.is-highlighted) {
+  opacity: 0.25;
+}
+[data-highlight-indicators] .v127-interactive-chart__series.is-highlighted .v127-interactive-chart__line {
+  stroke-width: 3.5;
+}

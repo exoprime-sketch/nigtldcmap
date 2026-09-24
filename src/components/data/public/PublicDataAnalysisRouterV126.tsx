@@ -1,4 +1,4 @@
-import { lazy, Suspense, useMemo } from "react";
+import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import type {
   ElementIndicatorSemanticsV125,
@@ -71,6 +71,22 @@ import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import PublicRawDataTablesV126 from "./PublicRawDataTablesV126";
 import PublicSourcePanelV126 from "./PublicSourcePanelV126";
 import { metadataOnlyBuildingsV144 } from "../../../data/visualization/publicIndicatorCopyV144";
+import { visualizationContractV153 } from "../../../data/visualization/publicVisualizationContractV153";
+import { getTypologyV159 } from "../../../data/spec/datasetSpecV159";
+import {
+  elementVariantV159,
+  GENERIC_BODY_VARIANTS_V159,
+} from "../templates/templateVariantsV159";
+import type { TemplateVariantKeyV159 } from "../templates/templateVariantsV159";
+import { technologyOptionsForIndicatorsV159 } from "../templates/TechFilterV159";
+import type { TemplateContextV159 } from "../templates/TemplateShellV159";
+import U0StatusV159 from "../templates/U0StatusV159";
+import U1CountryProfileV159 from "../templates/U1CountryProfileV159";
+import U2RegionalV159 from "../templates/U2RegionalV159";
+import U3TechnologyV159 from "../templates/U3TechnologyV159";
+import U4LocationsV159 from "../templates/U4LocationsV159";
+import U5ProjectsFinanceV159 from "../templates/U5ProjectsFinanceV159";
+import U6PolicyV159 from "../templates/U6PolicyV159";
 import "./public-data-analysis-v126.css";
 
 const OccupationEmploymentWagePreviewV125 = lazy(
@@ -137,8 +153,8 @@ export default function PublicDataAnalysisRouterV126({
   elementId,
   contract,
   semantics,
-  observations,
-  entities,
+  observations: allObservations,
+  entities: allEntities,
   indicators,
   countryNameKo,
   selectorState,
@@ -148,6 +164,37 @@ export default function PublicDataAnalysisRouterV126({
   pageTitle,
   mapSlot,
 }: Props) {
+  // V159: the display type picks the template, the element's variant the body.
+  const typology = getTypologyV159(elementId);
+  const variantEntry = elementVariantV159(elementId);
+  // The shared climate-technology filter narrows the rows before any body
+  // reads them, so every variant sees the same selection.
+  const presentIndicatorIds = useMemo(
+    () => new Set([...allObservations.map((row) => row.indicatorId), ...allEntities.map((row) => row.indicatorId || "")]),
+    [allEntities, allObservations]
+  );
+  const techOptions = useMemo(
+    () => technologyOptionsForIndicatorsV159(indicators, presentIndicatorIds),
+    [indicators, presentIndicatorIds]
+  );
+  const [selectedTech, setSelectedTech] = useState("all");
+  useEffect(() => setSelectedTech("all"), [elementId]);
+  const techIndicatorIds = useMemo(() => {
+    if (selectedTech === "all") return null;
+    const option = techOptions.find((item) => item.code === selectedTech);
+    return option ? new Set(option.indicatorIds) : null;
+  }, [selectedTech, techOptions]);
+  const observations = useMemo(
+    () => (techIndicatorIds ? allObservations.filter((row) => techIndicatorIds.has(row.indicatorId)) : allObservations),
+    [allObservations, techIndicatorIds]
+  );
+  const entities = useMemo(
+    () =>
+      techIndicatorIds
+        ? allEntities.filter((row) => !row.indicatorId || !presentIndicatorIds.has(row.indicatorId) || techIndicatorIds.has(row.indicatorId))
+        : allEntities,
+    [allEntities, presentIndicatorIds, techIndicatorIds]
+  );
   const summary = getPublicVisualizationSummaryV126(elementId);
   const publicRenderer = summary?.primaryRenderer || "structured-table";
   const copy = publicElementCopyV126(elementId, publicRenderer);
@@ -219,26 +266,17 @@ export default function PublicDataAnalysisRouterV126({
     }),
     [contract, publicRenderer, elementId]
   );
-  return (
-    <>
-      {/* The title is stated once, by the page; the analysis heading is kept
-          only where it adds a reading ("배출량 변화와 구성") (V153). */}
-      {!sameTitleV153(pageTitle, analysisTitle) && (
-        <header className="pav126-heading">
-          <h2 data-testid="public-data-title">
-            <PublicTermTextV134 text={analysisTitle} />
-          </h2>
-        </header>
-      )}
-
-      <section className="pav126-primary" data-testid="public-analysis-primary">
-        {/*
-          The BTR delivery now ships its 82 rows as entity records, so the
-          emissions component received an empty series and the whole analysis
-          section rendered nothing at all. Where the specialised view has no
-          observations to draw, the archetype shows the records that are there.
-        */}
-        {elementId === "A-026" && metadataOnlyBuildingsV144(semanticRows) ? (
+  // V159: the old element-id chain as the template variants, in the chain's
+  // own order - early variants, then the generic shape checks, then late
+  // variants, then the province distribution or the generic renderer. A
+  // variant returns null when its rows are not the shape it draws, and the
+  // next step takes over, exactly as the chain fell through before.
+  // The registry maps each variant only to the elements its component was
+  // written for, so the narrowed element ids below hold (templateVariantsV159).
+  const renderVariantV159 = (variant: TemplateVariantKeyV159): ReactNode | null => {
+    switch (variant) {
+      case "building-metadata":
+        return metadataOnlyBuildingsV144(semanticRows) ? (
           <section className="pav126-empty" data-testid="building-data-availability-v144" data-analysis-block="note">
             <h3>건물 수·면적 자료 미제공</h3>
             <p>현재 자료에는 건물 수·면적과 개별 건물 경계가 포함되어 있지 않습니다. 자료의 좌표계와 파일 구성 정보만 확인할 수 있습니다.</p>
@@ -248,29 +286,41 @@ export default function PublicDataAnalysisRouterV126({
               )}</ul>
             </details>
           </section>
-        ) : elementId === "B-001" ? (
-          <MonthlyClimateAnalysisV147 rows={semanticRows} />
-        ) : elementId === "A-015" ? (
-          <SdgIndicatorsAnalysisV147 rows={semanticRows} selectorState={selectorState} onSelectorStateChange={onSelectorStateChange} />
-        ) : elementId === "D-001" ? (
-          <CapitalCostAnalysisV147 rows={semanticRows} />
-        ) : elementId === "A-025" ? (
-          <CcsStatusAnalysisV147 entities={entities} />
-        ) : elementId === "B-025" ? (
-          <BasinAreaAnalysisV147 entities={entities} />
-        ) : elementId === "B-026" ? (
-          <FlowDirectionAnalysisV147 entities={entities} />
-        ) : elementId === "E-009" ? (
-          <ScienceWorkforceAnalysisV147 rows={semanticRows} />
-        ) : elementId === "A-027" || elementId === "A-028" ? (
-          <InfrastructureCoverageV147 rows={semanticRows} />
-        ) : elementId === "C-002" && entities.length > 0 ? (
-          <ReportedInventoryAnalysisV147 entities={entities} />
-        ) : elementId === "C-002" && semanticRows.length > 0 ? (
-          <Suspense fallback={<div className="pav126-empty" role="status" data-testid="public-analysis-pending">배출량 분석을 불러오는 중입니다</div>}>
-            <GhgSectorGasAnalysisV135 elementId={elementId} rows={semanticRows} />
-          </Suspense>
-        ) : elementId === "D-011" ? (
+        ) : null;
+      case "monthly-climate":
+        return <MonthlyClimateAnalysisV147 rows={semanticRows} />;
+      case "sdg-indicators":
+        return <SdgIndicatorsAnalysisV147 rows={semanticRows} selectorState={selectorState} onSelectorStateChange={onSelectorStateChange} />;
+      case "capital-cost":
+        return <CapitalCostAnalysisV147 rows={semanticRows} />;
+      case "ccs-status":
+        return <CcsStatusAnalysisV147 entities={entities} />;
+      case "basin-area":
+        return <BasinAreaAnalysisV147 entities={entities} />;
+      case "flow-direction":
+        return <FlowDirectionAnalysisV147 entities={entities} />;
+      case "science-workforce":
+        return <ScienceWorkforceAnalysisV147 rows={semanticRows} />;
+      case "infrastructure-coverage":
+        return <InfrastructureCoverageV147 rows={semanticRows} />;
+      case "reported-inventory":
+        /*
+          The BTR delivery now ships its 82 rows as entity records, so the
+          emissions component received an empty series and the whole analysis
+          section rendered nothing at all. Where the specialised view has no
+          observations to draw, the archetype shows the records that are there.
+        */
+        if (entities.length > 0) return <ReportedInventoryAnalysisV147 entities={entities} />;
+        if (semanticRows.length > 0) {
+          return (
+            <Suspense fallback={<div className="pav126-empty" role="status" data-testid="public-analysis-pending">배출량 분석을 불러오는 중입니다</div>}>
+              <GhgSectorGasAnalysisV135 elementId={elementId} rows={semanticRows} />
+            </Suspense>
+          );
+        }
+        return null;
+      case "oda-provider":
+        return (
           <Suspense fallback={<div className="pav126-empty" role="status" data-testid="public-analysis-pending">ODA 분석을 불러오는 중입니다</div>}>
             <OdaProviderAnalysisV134
               rows={semanticRows}
@@ -280,7 +330,9 @@ export default function PublicDataAnalysisRouterV126({
               secondaryTitle={headings?.secondaryChartTitle}
             />
           </Suspense>
-        ) : elementId === "B-005" && semanticRows.length > 0 ? (
+        );
+      case "spei-drought":
+        return semanticRows.length > 0 ? (
           <Suspense fallback={<div className="pav126-empty" role="status" data-testid="public-analysis-pending">가뭄 전망을 불러오는 중입니다</div>}>
             <SpeiDroughtScenarioAnalysisV134
               rows={semanticRows}
@@ -290,33 +342,43 @@ export default function PublicDataAnalysisRouterV126({
               secondaryTitle={headings?.secondaryChartTitle}
             />
           </Suspense>
-        ) : elementId === "A-016" ? (
+        ) : null;
+      case "primary-energy-composition":
+        return (
           <PrimaryEnergyCompositionAnalysisV132
             rows={semanticRows}
             selectorState={selectorState}
             onSelectorStateChange={onSelectorStateChange}
           />
-        ) : elementId === "D-005" ? (
+        );
+      case "climate-budget-allocation":
+        return (
           <ClimateBudgetAllocationAnalysisV129
             rows={semanticRows}
             selectorState={selectorState}
             onSelectorStateChange={onSelectorStateChange}
           />
-        ) : elementId === "A-002" ? (
+        );
+      case "cpia-policy-capacity":
+        return (
           <CpiaPolicyCapacityAnalysisV126
             rows={semanticRows}
             selectorState={selectorState}
             onSelectorStateChange={onSelectorStateChange}
             showRawTable={false}
           />
-        ) : elementId === "E-008" ? (
+        );
+      case "research-patent":
+        return (
           <ResearchPatentAnalysisV132
             rows={semanticRows}
             entities={entities}
             detailTemplate={detailTemplate}
             elementTitle={copy.title}
           />
-        ) : elementId === "E-012" ? (
+        );
+      case "occupation-wage":
+        return (
           <Suspense
             fallback={<div className="pav126-empty" role="status" data-testid="public-analysis-pending">직군별 분석을 불러오는 중입니다</div>}
           >
@@ -337,89 +399,140 @@ export default function PublicDataAnalysisRouterV126({
               showRawTable={false}
             />
           </Suspense>
-        ) : provinceSeries ? (
-          <ProvinceSeriesAnalysisV140
-            elementId={elementId}
-            rows={semanticRows}
-            selectorState={selectorState}
-            onSelectorStateChange={onSelectorStateChange}
-            elementTitle={copy.title}
-            primaryTitle={headings?.primaryChartTitle}
-          />
-        ) : publicRenderer === "stacked-emissions" ? (
-          <PublicEmissionsAnalysisV132
-            elementId={elementId}
-            rows={semanticRows}
-            selectorState={selectorState}
-            onSelectorStateChange={onSelectorStateChange}
-          />
-        ) : publicRenderer === "composition-trend" ? (
-          <PublicCompositionTrendAnalysisV132
-            elementId={elementId}
-            rows={semanticRows}
-            selectorState={selectorState}
-            onSelectorStateChange={onSelectorStateChange}
-          />
-        ) : regionScenarioSummary && hasNationalSeriesRows ? (
-          // The distribution describes the province rows. B-029, B-037, B-039
-          // and B-040 also carry a national series - mangrove area, land use,
-          // hydro potential - in rows the distribution cannot describe, and
-          // showing only the distribution would have hidden them.
-          <>
-            {regionScenarioSummary}
-            <NationalResourceSeriesV147 key={elementId} entities={nationalSeriesEntities} />
-          </>
-        ) : elementId === "A-024" && isTransmissionDeliveryV140(entities) ? (
-          <TransmissionNetworkSummaryV140 entities={entities} />
-        ) : elementId === "A-017" ? (
-          <LcoeRangeAnalysisV146 rows={semanticRows} selectorState={selectorState} onSelectorStateChange={onSelectorStateChange} />
-        ) : elementId === "C-001" ? (
-          <NdcTargetsAnalysisV146 entities={entities} />
-        ) : elementId === "C-019" || elementId === "C-022" ? (
-          <CarbonMarketRegionsV146 elementId={elementId} entities={entities} initialRegion={selectorState.dimensions.registryRegion} />
-        ) : elementId === "C-007" || elementId === "C-008" ? (
-          // Attribute rows read as participation statements, initiatives and
-          // actors, not as a portfolio of projects (V141).
-          <CooperationChecklistAnalysisV141 elementId={elementId} entities={entities} />
-        ) : elementId === "B-023" || elementId === "B-028" ? (
-          // Station observations: dry/wet pairs where one station, unit and
-          // year hold both; otherwise a table per station (V142).
-          <HydroStationObservationsV142 elementId={elementId} entities={entities} />
-        ) : elementId === "C-011" ? (
-          // Phone numbers, notice dates, alert grades and one rate: tables by
-          // use, never one bar axis (V142).
-          <SecuritySafetyInfoV142 entities={entities} semantics={semantics} />
-        ) : elementId === "C-018" ? (
-          // The revised PDP8 plan is the outlook; prices state their unit (V141).
-          <EnergyOutlookPlanAnalysisV141 entities={entities} initialYear={selectorState.year} />
-        ) : elementId === "A-023" ? (
-          <PowerPlantRegistrySummaryV138 entities={entities} selectorState={selectorState} onSelectorStateChange={onSelectorStateChange} />
-        ) : elementId === "B-046" || elementId === "B-047" ? (
-          // Minerals by name, in their own units; the bar is USGS's world share (V153).
-          <MineralResourceSummaryV153 elementId={elementId} observations={observations} indicators={indicators} />
-        ) : elementId === "E-006" ? (
-          // Investors with a Vietnam office apart from head offices abroad (V153).
-          <InvestorNetworkSummaryV153 entities={entities} />
-        ) : elementId === "C-012" ? (
-          // PPP law, agency, contract and procurement facts, Korean first (V153).
-          <PppProcurementSummaryV153 entities={entities} indicators={indicators} />
-        ) : elementId === "B-002" ? (
-          // Köppen zones named Korean(code) with the composition table (V153).
-          <ClimateZoneSummaryV153 observations={observations} indicators={indicators} />
-        ) : regionScenarioSummary ?? (
-          <SemanticArchetypePreviewV125
-            contract={adapterContract}
-            semantics={semantics}
-            observations={observations}
-            entities={entities}
-            countryNameKo={countryNameKo}
-            detailTemplate={detailTemplate}
-            elementTitle={copy.title}
-            selectorState={selectorState}
-            onSelectorStateChange={onSelectorStateChange}
-            showRawTable={false}
-          />
-        )}
+        );
+      case "transmission-network":
+        return isTransmissionDeliveryV140(entities) ? <TransmissionNetworkSummaryV140 entities={entities} /> : null;
+      case "lcoe-range":
+        return <LcoeRangeAnalysisV146 rows={semanticRows} selectorState={selectorState} onSelectorStateChange={onSelectorStateChange} />;
+      case "ndc-targets":
+        return <NdcTargetsAnalysisV146 entities={entities} />;
+      case "carbon-market-regions":
+        return <CarbonMarketRegionsV146 elementId={elementId} entities={entities} initialRegion={selectorState.dimensions.registryRegion} />;
+      case "cooperation-checklist":
+        // Attribute rows read as participation statements, initiatives and
+        // actors, not as a portfolio of projects (V141).
+        return <CooperationChecklistAnalysisV141 elementId={elementId as "C-007" | "C-008"} entities={entities} />;
+      case "hydro-stations":
+        // Station observations: dry/wet pairs where one station, unit and
+        // year hold both; otherwise a table per station (V142).
+        return <HydroStationObservationsV142 elementId={elementId as "B-023" | "B-028"} entities={entities} />;
+      case "security-safety":
+        // Phone numbers, notice dates, alert grades and one rate: tables by
+        // use, never one bar axis (V142).
+        return <SecuritySafetyInfoV142 entities={entities} semantics={semantics} />;
+      case "energy-outlook-plan":
+        // The revised PDP8 plan is the outlook; prices state their unit (V141).
+        return <EnergyOutlookPlanAnalysisV141 entities={entities} initialYear={selectorState.year} />;
+      case "power-plant-registry":
+        return <PowerPlantRegistrySummaryV138 entities={entities} selectorState={selectorState} onSelectorStateChange={onSelectorStateChange} />;
+      case "mineral-resources":
+        // Minerals by name, in their own units; the bar is USGS's world share (V153).
+        return <MineralResourceSummaryV153 elementId={elementId as "B-046" | "B-047"} observations={observations} indicators={indicators} />;
+      case "investor-network":
+        // Investors with a Vietnam office apart from head offices abroad (V153).
+        return <InvestorNetworkSummaryV153 entities={entities} />;
+      case "ppp-procurement":
+        // PPP law, agency, contract and procurement facts, Korean first (V153).
+        return <PppProcurementSummaryV153 entities={entities} indicators={indicators} />;
+      case "climate-zone":
+        // Köppen zones named Korean(code) with the composition table (V153).
+        return <ClimateZoneSummaryV153 observations={observations} indicators={indicators} />;
+      default:
+        return null;
+    }
+  };
+
+  // The generic bodies, chosen by the rows' shape rather than by element.
+  const renderGenericShapeV159 = (): ReactNode | null => {
+    if (provinceSeries) {
+      return (
+        <ProvinceSeriesAnalysisV140
+          elementId={elementId}
+          rows={semanticRows}
+          selectorState={selectorState}
+          onSelectorStateChange={onSelectorStateChange}
+          elementTitle={copy.title}
+          primaryTitle={headings?.primaryChartTitle}
+        />
+      );
+    }
+    if (publicRenderer === "stacked-emissions") {
+      return (
+        <PublicEmissionsAnalysisV132
+          elementId={elementId}
+          rows={semanticRows}
+          selectorState={selectorState}
+          onSelectorStateChange={onSelectorStateChange}
+        />
+      );
+    }
+    if (publicRenderer === "composition-trend") {
+      return (
+        <PublicCompositionTrendAnalysisV132
+          elementId={elementId}
+          rows={semanticRows}
+          selectorState={selectorState}
+          onSelectorStateChange={onSelectorStateChange}
+        />
+      );
+    }
+    if (regionScenarioSummary && hasNationalSeriesRows) {
+      // The distribution describes the province rows. B-029, B-037, B-039
+      // and B-040 also carry a national series - mangrove area, land use,
+      // hydro potential - in rows the distribution cannot describe, and
+      // showing only the distribution would have hidden them.
+      return (
+        <>
+          {regionScenarioSummary}
+          <NationalResourceSeriesV147 key={elementId} entities={nationalSeriesEntities} />
+        </>
+      );
+    }
+    return null;
+  };
+
+  const isStatusV159 = typology?.displayType === "U0";
+  const earlyBody = variantEntry?.phase === "early" ? renderVariantV159(variantEntry.variant) : null;
+  const lateBody =
+    variantEntry?.phase === "late" && !GENERIC_BODY_VARIANTS_V159.has(variantEntry.variant)
+      ? renderVariantV159(variantEntry.variant)
+      : null;
+  const body = isStatusV159 && typology ? (
+    <U0StatusV159 typology={typology} />
+  ) : (
+    earlyBody ??
+    renderGenericShapeV159() ??
+    lateBody ??
+    regionScenarioSummary ?? (
+      <SemanticArchetypePreviewV125
+        contract={adapterContract}
+        semantics={semantics}
+        observations={observations}
+        entities={entities}
+        countryNameKo={countryNameKo}
+        detailTemplate={detailTemplate}
+        elementTitle={copy.title}
+        selectorState={selectorState}
+        onSelectorStateChange={onSelectorStateChange}
+        showRawTable={false}
+      />
+    )
+  );
+
+  const content = (
+    <>
+      {/* The title is stated once, by the page; the analysis heading is kept
+          only where it adds a reading ("배출량 변화와 구성") (V153). */}
+      {!sameTitleV153(pageTitle, analysisTitle) && (
+        <header className="pav126-heading">
+          <h2 data-testid="public-data-title">
+            <PublicTermTextV134 text={analysisTitle} />
+          </h2>
+        </header>
+      )}
+
+      <section className="pav126-primary" data-testid="public-analysis-primary">
+        {body}
         {mapSlot}
       </section>
 
@@ -431,7 +544,8 @@ export default function PublicDataAnalysisRouterV126({
         spatialUnit={spatialUnit}
         aggregationBasis={aggregationBasis}
       />
-      {elementId !== "D-011" ? (
+      {/* A status screen states the decision only; its rows are not tabled (V159). */}
+      {elementId !== "D-011" && !isStatusV159 ? (
         <PublicRawDataTablesV126
           elementId={elementId}
           observations={semanticRows}
@@ -441,6 +555,35 @@ export default function PublicDataAnalysisRouterV126({
       ) : null}
     </>
   );
+
+  if (!typology) return content;
+  const templateContext: TemplateContextV159 = {
+    typology,
+    variant: variantEntry?.variant || "generic",
+    techOptions: isStatusV159 ? [] : techOptions,
+    selectedTech,
+    onTechChange: setSelectedTech,
+  };
+  switch (typology.displayType) {
+    case "U1":
+      return <U1CountryProfileV159 context={templateContext}>{content}</U1CountryProfileV159>;
+    case "U2": {
+      const archetype = visualizationContractV153(elementId)?.archetype;
+      const nationalOnly = typology.structure === "S2" && (archetype === "national-series" || archetype === "composition");
+      return <U2RegionalV159 context={templateContext} nationalOnly={nationalOnly}>{content}</U2RegionalV159>;
+    }
+    case "U3":
+      return <U3TechnologyV159 context={templateContext}>{content}</U3TechnologyV159>;
+    case "U4":
+      return <U4LocationsV159 context={templateContext}>{content}</U4LocationsV159>;
+    case "U5":
+      return <U5ProjectsFinanceV159 context={templateContext}>{content}</U5ProjectsFinanceV159>;
+    case "U6":
+      return <U6PolicyV159 context={templateContext}>{content}</U6PolicyV159>;
+    default:
+      // ⓪: the shell without the technology filter around the statement.
+      return <U1CountryProfileV159 context={templateContext}>{content}</U1CountryProfileV159>;
+  }
 }
 
 /** Same words, ignoring spacing and the middle dots the labels use. */

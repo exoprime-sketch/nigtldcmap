@@ -19,7 +19,13 @@ const catalogIds = (JSON.parse(readFileSync(resolve(ROOT, "public/data/vietnam/v
 const mapIndex = JSON.parse(readFileSync(resolve(ROOT, "public/data/vietnam/v2/map-index.json"), "utf8")).layers as Array<{ elementId: string; active?: boolean; enabled?: boolean }>;
 const mapIds = new Set(mapIndex.filter((layer) => layer.active !== false && layer.enabled !== false).map((layer) => layer.elementId));
 
-const STATUS_IDS = ["C-020", "C-021", "C-023", "E-011", "E-013"];
+// V159: the status screens are the typology's ⓪ rows (C-020, C-021, C-023,
+// E-011, E-013 and, from the 2026-09-23 exclusion, E-016 and E-017) - see
+// reports/v159/EXPECTATION_CHANGES_V159.md.
+const STATUS_IDS = (JSON.parse(readFileSync(resolve(ROOT, "src/data/spec/datasetTypologyV159.json"), "utf8")).rows as Array<{ elementId: string; displayType: string }>)
+  .filter((row) => row.displayType === "U0")
+  .map((row) => row.elementId)
+  .sort();
 const COMPOSITION_IDS = ["A-010", "A-011", "A-016", "A-018", "B-037"];
 const PRESERVED_IDS = ["A-016", "D-011", "A-002", "E-012", "D-005", "A-023", "A-024", "C-018", "B-046", "B-047", "C-012"];
 const MATRIX_IDS = ["A-013", "C-005", "B-044"];

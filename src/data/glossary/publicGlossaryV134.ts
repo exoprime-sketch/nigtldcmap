@@ -1130,6 +1130,43 @@ const CATALOG_PUBLIC_GLOSSARY_V134: PublicGlossaryEntryV134[] = [
   seedV134({ id: "usgs-mcs", term: "MCS", englishName: "Mineral Commodity Summaries", koreanName: "광물자원 요약보고서", definition: "미국 지질조사국(USGS)이 해마다 펴내는 광종별 생산량·매장량 요약 간행물입니다.", category: "data-format" }),
   seedV134({ id: "private-equity", term: "PE", englishName: "Private Equity", koreanName: "사모펀드", definition: "비상장 기업의 지분에 투자해 기업가치를 높인 뒤 회수하는 투자방식, 또는 그런 투자를 하는 운용사를 가리킵니다.", category: "trade-investment" }),
   seedV134({ id: "limited-partner", term: "LP", englishName: "Limited Partner", koreanName: "유한책임출자자", definition: "펀드에 자금을 대되 운용에는 관여하지 않고 출자한 금액 한도로만 책임을 지는 투자자입니다.", category: "trade-investment" }),
+  // V159: the framework workbook's description, usage and source columns are
+  // now screen copy. Each token below is spelled out in that text itself
+  // (the Korean name in brackets, or the body's English name in the source
+  // credit); the English expansion is the issuing body's own.
+  seedV134({ id: "adaptation-fund", term: "AF", englishName: "Adaptation Fund", koreanName: "적응기금", definition: "교토의정서에 따라 설립되어 개도국의 기후변화 적응 사업을 지원하는 국제 기금입니다.", category: "development-finance" }),
+  seedV134({ id: "bit", term: "BIT", englishName: "Bilateral Investment Treaty", koreanName: "투자보호협정", definition: "두 나라가 상대국 투자자의 투자를 보호하기 위해 맺는 협정으로, 수용·송금·분쟁해결 조건을 정합니다.", category: "trade-investment" }),
+  seedV134({ id: "wwf-brf", term: "BRF", englishName: "Biodiversity Risk Filter", koreanName: "생물다양성 리스크 필터", definition: "세계자연기금(WWF)이 지역별 생태계 의존·훼손 위험을 평가해 제공하는 도구입니다.", category: "climate-risk" }),
+  seedV134({ id: "c3s", term: "C3S", englishName: "Copernicus Climate Change Service", koreanName: "코페르니쿠스 기후변화 서비스", definition: "유럽연합 코페르니쿠스 프로그램의 기후 분야 서비스로, 재분석 자료와 기후 지표를 공개합니다.", category: "organisation" }),
+  seedV134({ id: "cbit", term: "CBIT", englishName: "Capacity-building Initiative for Transparency", koreanName: "투명성 역량배양 이니셔티브", definition: "파리협정 투명성 체계의 보고 역량을 키우도록 개도국을 지원하는 지구환경기금(GEF) 이니셔티브입니다.", category: "climate-policy" }),
+  seedV134({ id: "cem", term: "CEM", englishName: "Clean Energy Ministerial", koreanName: "청정에너지장관회의", definition: "주요국 에너지 장관들이 청정에너지 보급 정책을 협의하는 국제 협의체입니다.", category: "organisation" }),
+  seedV134({ id: "cerf", term: "CERF", englishName: "Central Emergency Response Fund", koreanName: "중앙긴급대응기금", definition: "재난·위기 발생 시 인도적 지원을 신속히 배분하는 유엔 기금입니다.", category: "development-finance" }),
+  seedV134({ id: "folu", term: "FOLU", englishName: "Forestry and Other Land Use", koreanName: "임업 및 기타 토지이용", definition: "IPCC 온실가스 인벤토리 부문 분류 가운데 산림과 그 밖의 토지이용에서 생기는 배출·흡수를 묶은 부문입니다.", category: "climate-policy" }),
+  seedV134({ id: "gcf-funding-proposal", term: "FP", englishName: "Funding Proposal", koreanName: "펀딩제안", definition: "녹색기후기금(GCF) 이사회에 승인을 요청하는 사업 제안서이며, 승인 사업 번호(FP000)로도 쓰입니다.", category: "development-finance" }),
+  seedV134({ id: "fte", term: "FTE", englishName: "Full-Time Equivalent", koreanName: "상근환산", definition: "실제 투입한 근무시간을 상근자 근무시간으로 나눠 인원을 환산하는 방식입니다.", category: "economy" }),
+  seedV134({ id: "iaia", term: "IAIA", englishName: "International Association for Impact Assessment", koreanName: "국제영향평가학회", definition: "환경·사회 영향평가의 실무와 기준을 다루는 국제 전문가 단체입니다.", category: "organisation" }),
+  seedV134({ id: "idos", term: "IDOS", englishName: "German Institute of Development and Sustainability", koreanName: "독일개발지속가능성연구소", definition: "독일의 개발·지속가능성 정책 연구기관으로, NDC와 SDG 연계 분석 자료를 공개합니다.", category: "organisation" }),
+  seedV134({ id: "iepmp", term: "IEPMP", englishName: "Integrated Energy and Power Master Plan", koreanName: "통합 에너지·전력 기본계획", definition: "방글라데시 정부가 수립한 에너지·전력 부문 중장기 기본계획입니다.", category: "energy-technology" }),
+  seedV134({ id: "irr", term: "IRR", englishName: "Internal Rate of Return", koreanName: "내부수익률", definition: "사업의 현금 유입과 유출의 현재가치를 같게 만드는 할인율로, 투자 수익성을 나타냅니다.", category: "economy" }),
+  seedV134({ id: "jogmec", term: "JOGMEC", englishName: "Japan Organization for Metals and Energy Security", koreanName: "일본 에너지·금속광물자원기구", definition: "일본의 에너지·광물자원 안정 공급을 맡는 공공기관으로, 탄소 포집·저장(CCS) 사업 정보를 공개합니다.", category: "organisation" }),
+  seedV134({ id: "unfccc-leg", term: "LEG", englishName: "Least Developed Countries Expert Group", koreanName: "최빈개도국 전문가그룹", definition: "유엔기후변화협약(UNFCCC)에서 최빈개도국의 국가적응계획(NAP) 수립을 지원하는 전문가 그룹입니다.", category: "climate-policy" }),
+  seedV134({ id: "vn-moc", term: "MOC", englishName: "Ministry of Construction", koreanName: "건설부", definition: "베트남의 건설·도시개발 정책을 담당하는 중앙부처입니다.", category: "organisation" }),
+  seedV134({ id: "vn-most", term: "MOST", englishName: "Ministry of Science and Technology", koreanName: "과학기술부", definition: "베트남의 과학기술 정책을 담당하는 중앙부처입니다.", category: "organisation" }),
+  seedV134({ id: "nrel", term: "NREL", englishName: "National Renewable Energy Laboratory", koreanName: "미국 국립재생에너지연구소", definition: "미국 에너지부 산하 재생에너지·에너지효율 연구기관입니다.", category: "organisation" }),
+  seedV134({ id: "nri", term: "NRI", englishName: "Network Readiness Index", koreanName: "네트워크 준비지수", definition: "포르툴란스연구소(Portulans Institute)가 국가의 정보통신기술 활용 준비도를 종합해 매기는 지수입니다.", category: "economy" }),
+  seedV134({ id: "vn-ntp-rcc", term: "NTP-RCC", englishName: "National Target Program to Respond to Climate Change", koreanName: "국가기후변화대응목표프로그램", definition: "베트남 정부가 기후변화 대응 재원을 배분하려고 운영한 국가목표프로그램입니다.", category: "climate-policy", aliases: ["NTP"] }),
+  seedV134({ id: "pcmdi", term: "PCMDI", englishName: "Program for Climate Model Diagnosis and Intercomparison", koreanName: "기후모델 진단·상호비교 프로그램", definition: "미국 로렌스리버모어국립연구소가 운영하는 기후모델 비교 사업으로, CMIP 자료 배포를 지원합니다.", category: "organisation" }),
+  seedV134({ id: "pnnl", term: "PNNL", englishName: "Pacific Northwest National Laboratory", koreanName: "태평양북서부국립연구소", definition: "미국 에너지부 산하 국립연구소로, 에너지 설비 운영·유지보수 지침을 공개합니다.", category: "organisation" }),
+  seedV134({ id: "rca", term: "RCA", englishName: "Revealed Comparative Advantage", koreanName: "현시비교우위", definition: "한 나라의 품목 수출 비중을 세계 평균 비중과 견줘 수출 경쟁력을 나타내는 지표로, 1보다 크면 비교우위가 있다고 봅니다.", category: "trade-investment" }),
+  seedV134({ id: "rsl", term: "RSL", englishName: "Relative Sea Level", koreanName: "상대 해수면", definition: "지반 침하·융기를 함께 반영해 특정 지점에서 잰 해수면 높이입니다.", category: "climate-risk" }),
+  seedV134({ id: "gcf-sap", term: "SAP", englishName: "Simplified Approval Process", koreanName: "간소화 승인절차", definition: "녹색기후기금(GCF)이 소규모·저위험 사업에 적용하는 간소한 승인절차입니다.", category: "development-finance" }),
+  seedV134({ id: "sei", term: "SEI", englishName: "Stockholm Environment Institute", koreanName: "스톡홀름환경연구소", definition: "스웨덴에 본부를 둔 환경·개발 정책 연구기관입니다.", category: "organisation" }),
+  seedV134({ id: "gggi-si", term: "SI", englishName: "Social Inclusion", koreanName: "사회 통합", definition: "글로벌녹색성장기구(GGGI) 녹색성장지수의 네 차원 가운데 사회 통합 수준을 나타내는 차원입니다.", category: "economy" }),
+  seedV134({ id: "etccdi-tnn", term: "TNN", englishName: "Annual minimum of daily minimum temperature (TNn)", koreanName: "연 최저기온", definition: "한 해 동안 일 최저기온 가운데 가장 낮은 값으로, 극한 저온 지수입니다.", category: "climate-risk" }),
+  seedV134({ id: "etccdi-txx", term: "TXX", englishName: "Annual maximum of daily maximum temperature (TXx)", koreanName: "연 최고기온", definition: "한 해 동안 일 최고기온 가운데 가장 높은 값으로, 극한 고온 지수입니다.", category: "climate-risk" }),
+  seedV134({ id: "uncitral", term: "UNCITRAL", englishName: "United Nations Commission on International Trade Law", koreanName: "유엔국제상거래법위원회", definition: "국제 상거래 법규의 통일을 위한 유엔 기구로, 민관협력(PPP) 입법 지침을 펴냅니다.", category: "organisation" }),
+  seedV134({ id: "unsd", term: "UNSD", englishName: "United Nations Statistics Division", koreanName: "유엔통계처", definition: "국제 통계 기준을 정하고 에너지 등 국가 통계를 모아 공개하는 유엔 기구입니다.", category: "organisation" }),
+  seedV134({ id: "wfe", term: "WFE", englishName: "World Federation of Exchanges", koreanName: "세계거래소연맹", definition: "세계 증권·파생상품 거래소들의 협회로, 탄소시장 거래 연구를 발간합니다.", category: "organisation" }),
 ];
 
 const LEGACY_CATEGORY_BY_TERM_V134: Partial<

@@ -2,6 +2,23 @@
 
 이 문서는 공개 플랫폼의 주요 변경을 기록합니다. 아직 merge·배포·tag가 확인되지 않은 작업은 `Unreleased`에 둡니다.
 
+## Unreleased — V159 데이터 유형화(표출 6유형 × 구조 4형태)·데이터 설명 영역 (PR 후보)
+
+### Added
+
+- 구조 4형태 스키마 `docs/DATA_TYPOLOGY_V159_SCHEMA.md`(S1 국가×연도·S2 지역×연도·S3 위치 개체·S4 비공간 개체, 납품 열 → 어댑터 필드 → 템플릿 입력), 용역사 인계 문서 `docs/DATA_TYPOLOGY_V159.md`와 생성기(`build:handoff:v159` → xlsx 5시트·구조별 CSV 4개, `output/v159`)
+- 명세 적재 `import:spec:v159`(프레임워크 xlsx → `src/data/spec/datasetSpecV159.json`·`useCasesV159.json`·`datasetTypologyV159.json`·`datasetCardSpecV159.json`, 화면 문구 수기 0): 명칭 분리 152/152, 카드 정의 규칙, 유의점 타국 문구 치환, 사례 366건 + 검증 대기 6건(D-001·D-002·D-004)
+- 표출 템플릿 U1~U6·⓪ 상태 안내(`src/components/data/templates`), 템플릿 변형 레지스트리, 기후기술 공통 필터, 구조 어댑터 S1~S4·판단 포인트 계산(`src/data/structure`)
+- 상세 '데이터 설명'(상세 설명·활용 방법·활용 사례 N건 접힘, 쓰는 데이터 칩), 참고문헌 1줄(출처기관·원문·확인일, APA는 접힘), 유형별 판단 포인트
+- 데이터 찾기 '주 사용자'·'유형(①~⑥)' 필터
+- QA: `qa:typology:v159`(152/152), `qa:regression:v159`(1순위 섹션 DOM 서명 비교), `screens:v159`(대표 6장·12화면×6폭 넘침), `check:spec:v159`, `check:contract-typology:v159`
+
+### Changed
+
+- 상세 분석 라우팅: 요소별 분기 사슬 → 표출 유형 템플릿 + 변형(순서 유지). 전용 컴포넌트는 6묶음(A-023·B-046/047·D-004·A-013·B-008·E-006)
+- 시각화 계약 152행에 `displayType`·`structure`, E-016·E-017은 명세 v2 ⓪(제외, 사용자 0923)로 상태 안내 전환
+- 카드·상세 제목: 출처 윗줄 + 원데이터명 + 명세서 간략 정의(카드는 문두 기관명 절 제거)
+
 ## Unreleased — V152 홈·상세 공용 미니맵(확대·이동) + 데이터별 지도 아이콘 (PR 후보)
 
 ### Added

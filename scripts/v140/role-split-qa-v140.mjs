@@ -23,7 +23,7 @@
  *        VERCEL_AUTOMATION_BYPASS_SECRET=… for a protected Preview (or --bypass-secret)
  */
 import { chromium } from "playwright";
-import { mkdirSync, statSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { PROJECT_ROOT } from "../v125/audit-utils.mjs";
 import { startStaticBuildServer } from "../v125/browser-runtime.mjs";
@@ -95,6 +95,20 @@ const report = {
   download: null,
   b017Detail: null,
 };
+// V159 naming rule (approved 2026-09-23): a dataset is titled by its own
+// name, the spec's platformName without the leading source line. The
+// expectation is derived from the platform name here, and must agree with the
+// baseName the importer wrote, so the rule is checked on both sides.
+const SPEC_ROWS_V159 = JSON.parse(readFileSync(resolve(PROJECT_ROOT, "src/data/spec/datasetSpecV159.json"), "utf8")).rows;
+const SPEC_BY_ID_V159 = new Map(SPEC_ROWS_V159.map((row) => [row.elementId, row]));
+function specTitleV159(elementId) {
+  const row = SPEC_BY_ID_V159.get(elementId);
+  if (!row) return null;
+  const prefix = `${row.sourceLabel} `;
+  const derived = row.platformName.startsWith(prefix) ? row.platformName.slice(prefix.length) : row.platformName;
+  return derived === row.baseName ? derived : `${derived} (spec baseName differs: ${row.baseName})`;
+}
+
 const check = (id, pass, actual, expected) => {
   report.checks.push({ id, pass: Boolean(pass), actual, expected });
   return Boolean(pass);
@@ -440,8 +454,31 @@ await section("DETAIL_A002", async () => {
   });
   await captureV150(page, resolve(SHOTS, "detail-a002-1440.png"), { fullPage: true });
   report.detail = detail;
-  check("DETAIL_A002_TITLE", homeTitle("A-002") ? detail.title === homeTitle("A-002") : /거버넌스.*WGI/u.test(detail.title), detail.title, homeTitle("A-002") || "국가 거버넌스 지표(WGI)");
+  // V159 naming rule (approved 2026-09-23): the title is the dataset's own
+  // name, derived from the spec's platformName (see specTitleV159).
+  check("DETAIL_A002_TITLE", detail.title === specTitleV159("A-002"), detail.title, specTitleV159("A-002"));
   check("DETAIL_A002_ANALYSIS", detail.analysisMounted && detail.chartCount > 0, detail, "analysis root with charts");
+  await page.close();
+});
+// ------------------------------------------------------------ detail titles (V159)
+// Every detail title follows the same rule as A-002: the platform name from
+// the framework spec without its source line.
+await section("DETAIL_TITLES_V159", async () => {
+  const page = await context.newPage();
+  const mismatches = [];
+  for (const row of SPEC_ROWS_V159) {
+    const expected = specTitleV159(row.elementId);
+    await page.goto(`${base}/?view=data&country=VNM&element=${row.elementId}#element-detail`, { waitUntil: "domcontentloaded", timeout: 90_000 });
+    const title = await page
+      .waitForFunction(() => {
+        const text = String(document.querySelector(".cdp-detail-hero h1")?.textContent || "").normalize("NFC").replace(/\s+/gu, " ").trim();
+        return text || null;
+      }, null, { timeout: 60_000 })
+      .then((handle) => handle.jsonValue())
+      .catch(() => null);
+    if (title !== expected) mismatches.push({ id: row.elementId, title, expected });
+  }
+  check("DETAIL_TITLES_FOLLOW_SPEC_V159", mismatches.length === 0, { checked: SPEC_ROWS_V159.length, mismatches }, "152 detail titles = spec platformName without the source line");
   await page.close();
 });
 // ------------------------------------------------------------ moved caveats
