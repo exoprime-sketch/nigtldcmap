@@ -55,18 +55,12 @@ export default function U0StatusV159({ typology }: Props) {
         <dl data-testid="status-note-v159">
           <dt>결정</dt>
           <dd>{decision}</dd>
-          {decidedAt ? (
-            <>
-              <dt>결정일</dt>
-              <dd>{decidedAt}</dd>
-            </>
-          ) : null}
-          {reason ? (
-            <>
-              <dt>사유</dt>
-              <dd><PublicTermTextV134 text={reason} /></dd>
-            </>
-          ) : null}
+          {/* All three lines always show; what the sources do not state is
+              said as such rather than left out. */}
+          <dt>사유</dt>
+          <dd>{reason ? <PublicTermTextV134 text={reason} /> : "기재된 사유 없음"}</dd>
+          <dt>결정일</dt>
+          <dd>{decidedAt || "기재된 결정일 없음"}</dd>
         </dl>
       </div>
     </section>

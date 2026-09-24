@@ -125,6 +125,16 @@
   - `DETAIL_A002_TITLE`: 기대값이 하드코딩 문자열이었는데, `datasetSpecV159.json`의 `platformName`에서 출처 줄 접두를 떼어 파생하도록 바꿨습니다. 파생값은 JSON의 `baseName`과도 대조합니다.
   - `DETAIL_TITLES_FOLLOW_SPEC_V159`(신규): 같은 파생 규칙으로 상세 제목 152개를 전수 검사합니다.
   - 결과: role-split 단독 실행 53/53(기존 52 + 신규 1)
+- **analysis QA ⓪ 판정 규칙**(사유: 제외·미입고 결정 2026-09-23, ⓪ 템플릿)
+  - 대상: `datasetTypologyV159.json`에서 displayType이 ⓪인 7요소
+  - 기존 3개 검사(cardValueVerified·analysisFit·detailAnalysisFit)를 다음 3개로 대체합니다.
+    - `statusNoticePresent`: 안내가 1개이고, 결정·사유·결정일 3줄이 모두 표시됨
+    - `chartCount0`: 1순위 섹션에 차트 0
+    - `cardShowsStatus`: 데이터 찾기 카드에 값 없이 상태 배지
+  - 그 외 요소의 판정과 기준선(41)은 바꾸지 않았고, 기준선에 항목도 추가하지 않았습니다.
+  - 화면 보강
+    - ⓪ 안내는 사유·결정일이 명세에 없으면 "기재된 사유 없음"·"기재된 결정일 없음"으로 표시합니다.
+    - E-016·E-017 찾기 카드는 값 대신 상태 배지를 보여 줍니다.
 
 ## 6. 작업 방식 기록
 - 서브에이전트 3개(worktree, Sonnet)
