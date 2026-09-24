@@ -2,6 +2,7 @@ import type {
   VietnamEntityV124,
   VietnamIndicatorMetaV124,
   VietnamObservationV124,
+  VietnamSpatialLayerAssetV124,
 } from "../vietnam/vietnamTypesV124";
 import { adaptS1V159 } from "./S1CountryObservationV159";
 import type { RegionSystemV159, S2RegionObservationV159 } from "./structureTypesV159";
@@ -122,4 +123,47 @@ export function adaptS2V159(
       regionName,
     };
   });
+}
+
+/**
+ * S2 rows from the province layer the map draws (public/data/vietnam/v2/
+ * spatial/layers/<id>.json), for elements whose province values arrive as a
+ * map layer rather than as pack observations.
+ *
+ * Only the layer's own default variable and period are taken - the same view
+ * the map opens on - so the rows describe one measure at one time. Values the
+ * layer marks `imputed` are left out. `indicatorId` names the layer variable
+ * (the per-province source ids differ row by row), `label` carries the
+ * variable label and `period` the period as the layer states it; `year` is
+ * set only when the period is a single year.
+ */
+export function adaptSpatialLayerS2V159(layer: VietnamSpatialLayerAssetV124): S2RegionObservationV159[] {
+  const variable = layer.selectors?.defaultVariable;
+  const period = layer.selectors?.defaultPeriod;
+  if (!variable || !period) return [];
+  const regionSystem: RegionSystemV159 = layer.boundarySystem === "pre-2025-63" ? "adm1-63" : "adm1-34";
+  return layer.values
+    .filter((row) => row.variable === variable && String(row.period) === String(period) && !row.imputed)
+    .filter((row) => typeof row.value === "number" && Number.isFinite(row.value))
+    .map((row) => ({
+      elementId: layer.elementId,
+      indicatorId: `${layer.elementId}:${row.variable}`,
+      countryIso3: layer.countryIso3,
+      year: /^\d{4}$/u.test(String(row.period)) ? Number(row.period) : null,
+      period: String(row.period),
+      value: row.value,
+      missingReasonCode: null,
+      note: null,
+      category: null,
+      scenario: null,
+      techIds: [],
+      bound: null,
+      valueKind: null,
+      unit: row.unit ?? null,
+      unitDetail: null,
+      label: row.variableLabel || row.variable,
+      regionSystem,
+      regionKey: row.adm1Code,
+      regionName: row.adm1Name || null,
+    }));
 }

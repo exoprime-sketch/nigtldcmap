@@ -112,17 +112,20 @@ test("활용 사례 disclosure is absent entirely when there are no cases", () =
   );
 });
 
-test("a data-used chip is disabled when its indicator is not on the current chart, enabled when it is", () => {
+test("a data-used chip is inert (aria-disabled, no click) when the first chart has no series for it", () => {
+  const highlighted: string[][] = [];
   act(() =>
     root.render(
-      <DataDescriptionV159 availableIndicatorIds={AVAILABLE} cases={CASES} spec={SPEC} />
+      <DataDescriptionV159 availableIndicatorIds={AVAILABLE} cases={CASES} spec={SPEC} onHighlightIndicators={(ids) => highlighted.push(ids)} />
     )
   );
   const enabled = container.querySelector('button[data-indicator-id="A-001_score"]') as HTMLButtonElement;
-  const disabled = container.querySelector('button[data-indicator-id="A-001_missing"]') as HTMLButtonElement;
-  expect(enabled.disabled).toBe(false);
-  expect(disabled.disabled).toBe(true);
-  expect(disabled.title).toBe("이 화면의 차트에 없는 지표");
+  const inert = container.querySelector('button[data-indicator-id="A-001_missing"]') as HTMLButtonElement;
+  expect(enabled.getAttribute("aria-disabled")).toBeNull();
+  expect(inert.getAttribute("aria-disabled")).toBe("true");
+  expect(inert.title).toBe("이 화면에는 계열 강조가 없습니다");
+  act(() => inert.click());
+  expect(highlighted).toEqual([]);
   // A label-only reference (no indicatorId) is a plain chip, never a button.
   const labelOnly = container.querySelector(".dd159-chip--label")!;
   expect(labelOnly.tagName).toBe("SPAN");

@@ -43,13 +43,15 @@ function DataUsedChipV159({ chipKey, reference, availableIndicatorIds, pressed, 
   const ids = chipIndicatorIdsV159(reference);
   const available = ids.some((id) => availableIndicatorIds.has(id));
   return (
+    // Without a series of its own in the first chart the chip has nothing to
+    // point at: it stays focusable but inert and says so (V159).
     <button
-      aria-pressed={pressed}
-      className="dd159-chip"
+      aria-disabled={available ? undefined : true}
+      aria-pressed={available ? pressed : undefined}
+      className={available ? "dd159-chip" : "dd159-chip dd159-chip--inert"}
       data-indicator-id={reference.indicatorId}
-      disabled={!available}
       onClick={available ? () => onToggle(chipKey, ids) : undefined}
-      title={available ? undefined : "이 화면의 차트에 없는 지표"}
+      title={available ? undefined : "이 화면에는 계열 강조가 없습니다"}
       type="button"
     >
       {/* A help trigger cannot sit inside this button, so glossary terms expand in place instead (V153 pattern). */}

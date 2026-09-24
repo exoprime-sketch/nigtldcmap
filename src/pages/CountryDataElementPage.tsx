@@ -3,6 +3,7 @@ import { useDatasetUsageV149 } from "../data/publicUsageV149";
 import {
   loadCatalogForCountrySelectionV122,
   loadCountryElementBundleV122,
+  loadCountryMapIndexV122,
   publicCountryDataErrorMessageV122,
 } from "../data/countries/countryDataFacadeV122";
 import {
@@ -33,6 +34,9 @@ import { PublicTermTextV134 } from "../components/help/PublicTermV134";
 import { getCardSpecV159, getTypologyV159, loadDatasetSpecV159 } from "../data/spec/datasetSpecV159";
 import type { DatasetSpecBundleV159 } from "../data/spec/datasetSpecV159";
 import { adaptStructureV159 } from "../data/structure/adaptStructureV159";
+import { adaptSpatialLayerS2V159 } from "../data/structure/S2RegionObservationV159";
+import type { S2RegionObservationV159 } from "../data/structure/structureTypesV159";
+import { loadVietnamSpatialLayerV124 } from "../data/vietnam/vietnamDataLoaderV124";
 import { decisionPointsV159 } from "../data/structure/decisionPointsV159";
 import DataDescriptionV159 from "../components/data/description/DataDescriptionV159";
 import SourceLineV159 from "../components/data/description/SourceLineV159";
@@ -791,6 +795,27 @@ export default function CountryDataElementPage({
       alive = false;
     };
   }, [elementId]);
+  // ② elements whose province values arrive as the map's layer, not as pack
+  // rows: the decision points read the layer the map opens on.
+  const [layerRowsV159, setLayerRowsV159] = useState<S2RegionObservationV159[]>([]);
+  useEffect(() => {
+    let alive = true;
+    setLayerRowsV159([]);
+    if (!elementId || typologyV159?.displayType !== "U2" || (countryIso3 || "VNM") !== "VNM") return undefined;
+    void loadCountryMapIndexV122("VNM")
+      .then(async (layers) => {
+        const layer = layers.find((item) => item.elementId === elementId && item.enabled !== false);
+        if (!layer?.dataUrl) return;
+        const asset = await loadVietnamSpatialLayerV124(layer.dataUrl);
+        if (alive) setLayerRowsV159(adaptSpatialLayerS2V159(asset));
+      })
+      .catch(() => {
+        // Without the layer the points stay hidden; nothing is estimated.
+      });
+    return () => {
+      alive = false;
+    };
+  }, [countryIso3, elementId, typologyV159]);
   const decisionPointListV159 = useMemo(() => {
     if (!typologyV159 || typologyV159.displayType === "U0" || !bundle?.meta || !hasPopulatedRows) return [];
     const rows = adaptStructureV159(typologyV159.structure, {
@@ -798,15 +823,32 @@ export default function CountryDataElementPage({
       entities: bundle.entities,
       indicators: bundle.meta.indicators,
     });
-    return decisionPointsV159(typologyV159.displayType, rows, { countryIso3: countryIso3 || "VNM" });
-  }, [bundle, countryIso3, hasPopulatedRows, typologyV159]);
+    const fromRows = decisionPointsV159(typologyV159.displayType, rows, { countryIso3: countryIso3 || "VNM" });
+    if (fromRows.length > 0 || layerRowsV159.length === 0) return fromRows;
+    return decisionPointsV159("U2", { structure: "S2", rows: layerRowsV159 }, { countryIso3: countryIso3 || "VNM" });
+  }, [bundle, countryIso3, hasPopulatedRows, layerRowsV159, typologyV159]);
+  // A '쓰는 데이터' chip can only point at a series the first chart actually
+  // draws, so the enabled set is read from the rendered section (series carry
+  // data-indicator-id), not from the rows that were loaded.
+  const [seriesIdsKeyV159, setSeriesIdsKeyV159] = useState("");
+  useEffect(() => {
+    setSeriesIdsKeyV159("");
+    const read = () => {
+      const ids = new Set<string>();
+      document
+        .querySelectorAll('[data-testid="public-analysis-primary"] [data-indicator-id]')
+        .forEach((node) => (node.getAttribute("data-indicator-id") || "").split(/\s+/u).forEach((id) => id && ids.add(id)));
+      const key = Array.from(ids).sort().join(" ");
+      setSeriesIdsKeyV159((current) => (current === key ? current : key));
+    };
+    read();
+    const observer = new MutationObserver(read);
+    observer.observe(document.body, { childList: true, subtree: true });
+    return () => observer.disconnect();
+  }, [elementId]);
   const presentIndicatorIdsV159 = useMemo(
-    () =>
-      new Set([
-        ...(bundle?.observations || []).map((row) => row.indicatorId),
-        ...(bundle?.entities || []).map((row) => row.indicatorId || ""),
-      ]),
-    [bundle]
+    () => new Set(seriesIdsKeyV159 ? seriesIdsKeyV159.split(" ") : []),
+    [seriesIdsKeyV159]
   );
 
   if (!elementId) {

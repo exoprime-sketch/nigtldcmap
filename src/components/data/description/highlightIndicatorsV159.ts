@@ -16,8 +16,9 @@ export function applyIndicatorHighlightV159(root: HTMLElement | null, ids: strin
   const idSet = new Set(ids);
   let matched = 0;
   root.querySelectorAll<HTMLElement>("[data-indicator-id]").forEach((el) => {
-    const indicatorId = el.getAttribute("data-indicator-id") || "";
-    const isMatch = idSet.has(indicatorId);
+    // A series may stand for several indicators (space-separated ids).
+    const seriesIds = (el.getAttribute("data-indicator-id") || "").split(/\s+/u).filter(Boolean);
+    const isMatch = seriesIds.some((id) => idSet.has(id));
     el.classList.toggle("is-highlighted", isMatch);
     if (isMatch) matched += 1;
   });

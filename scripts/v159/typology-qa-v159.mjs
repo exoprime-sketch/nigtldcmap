@@ -60,6 +60,8 @@ async function check(context, row) {
     await page.waitForFunction(() => document.querySelector('[data-testid="detail-analysis-frame-v153"]')?.getAttribute("data-contract-verdict") !== null, null, { timeout: scaledTimeoutMsV150(15_000) }).catch(() => null);
     // The description loads its own chunk.
     await page.waitForSelector('[data-testid="data-description-v159"]', { timeout: scaledTimeoutMsV150(15_000) }).catch(() => null);
+    // Layer-based decision points (② elements) arrive after the map layer loads.
+    if (row.displayType !== "U0") await page.waitForSelector('[data-testid="decision-points-v159"]', { timeout: scaledTimeoutMsV150(6_000) }).catch(() => null);
     await page.waitForTimeout(300);
     const screen = await page.evaluate(() => {
       const template = document.querySelector('[data-testid="template-v159"]');
@@ -83,6 +85,22 @@ async function check(context, row) {
       };
     });
     record.evidence = screen;
+    // '쓰는 데이터' chips: enabled only where the first chart draws the
+    // series; one click must light a series up, inert chips must not act.
+    record.chips = await page.evaluate(async () => {
+      const chips = Array.from(document.querySelectorAll('[data-testid="data-description-v159"] button.dd159-chip'));
+      const enabled = chips.filter((chip) => chip.getAttribute("aria-disabled") !== "true");
+      const inert = chips.length - enabled.length;
+      let highlightWorks = null;
+      if (enabled.length) {
+        enabled[0].click();
+        await new Promise((resolveWait) => setTimeout(resolveWait, 150));
+        highlightWorks = document.querySelectorAll('[data-testid="public-analysis-primary"] .is-highlighted').length > 0;
+        enabled[0].click();
+      }
+      return { enabled: enabled.length, inert, highlightWorks };
+    });
+    if (record.chips.highlightWorks === false) record.issues.push("enabled chip highlighted nothing");
     const expectCases = caseCount.get(row.elementId) || 0;
     record.checks.template = screen.template === row.displayType && screen.structure === row.structure;
     record.checks.firstBlock = screen.verdict === "match";
@@ -132,6 +150,10 @@ const summary = {
   fail: failedIds.length,
   failedIds,
   decisionPointsHidden: results.filter((item) => item.pass && !item.decisionPointsShown && item.displayType !== "U0").map((item) => item.elementId),
+  decisionPointsShown: results.filter((item) => item.decisionPointsShown).length,
+  chipHighlightElements: results.filter((item) => item.chips?.highlightWorks === true).map((item) => item.elementId),
+  chipsEnabled: results.reduce((sum, item) => sum + (item.chips?.enabled || 0), 0),
+  chipsInert: results.reduce((sum, item) => sum + (item.chips?.inert || 0), 0),
 };
 mkdirSync(dirname(OUT), { recursive: true });
 writeFileSync(OUT, `${JSON.stringify({ generatedAt: new Date().toISOString(), build: BUILD, summary, results }, null, 2)}\n`);

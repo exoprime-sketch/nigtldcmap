@@ -189,3 +189,9 @@ button.dd159-chip:disabled {
   margin: 4px 0 0;
   overflow-wrap: anywhere;
 }
+
+/* A chip with no series in the first chart: focusable, inert, explained by its title. */
+.dd159-chip--inert {
+  opacity: 0.55;
+  cursor: not-allowed;
+}

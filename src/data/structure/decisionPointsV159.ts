@@ -183,10 +183,13 @@ function decisionPointsU2(
   const indicatorRows = rows.filter((row) => row.indicatorId === headlineId && isNumeric(row.value));
   const regionalRows = indicatorRows.filter((row) => row.regionKey !== null);
   if (regionalRows.length === 0) return [];
-  const latestYear = Math.max(...regionalRows.map((row) => row.year ?? -Infinity));
-  if (!Number.isFinite(latestYear)) return [];
-  const atLatestYear = regionalRows.filter((row) => row.year === latestYear);
+  // Rows with years: the latest year. Rows from one map-layer view carry a
+  // period instead ("2021-2040", "1999–2018 장기평균") and are one view already.
+  const years = regionalRows.map((row) => row.year).filter((year): year is number => year !== null);
+  const latestYear = years.length ? Math.max(...years) : null;
+  const atLatestYear = latestYear === null ? regionalRows : regionalRows.filter((row) => row.year === latestYear);
   if (atLatestYear.length === 0) return [];
+  const basis = `${atLatestYear[0].label}${atLatestYear[0].period ? ` · ${atLatestYear[0].period}` : latestYear !== null ? ` · ${latestYear}년` : ""}`;
   const sorted = [...atLatestYear].sort((a, b) => (b.value as number) - (a.value as number));
   const unit = sorted[0].unit;
   const formatRegion = (row: S2RegionObservationV159) =>
@@ -195,11 +198,11 @@ function decisionPointsU2(
   const points: DecisionPointV159[] = [];
   const top = sorted.slice(0, 3);
   if (top.length > 0) {
-    points.push({ key: "top-regions", label: "상위 3개 지역", value: top.map(formatRegion).join(" · ") });
+    points.push({ key: "top-regions", label: "상위 3개 지역", value: top.map(formatRegion).join(" · "), detail: basis });
   }
   const bottom = sorted.slice(-3).reverse();
   if (bottom.length > 0) {
-    points.push({ key: "bottom-regions", label: "하위 3개 지역", value: bottom.map(formatRegion).join(" · ") });
+    points.push({ key: "bottom-regions", label: "하위 3개 지역", value: bottom.map(formatRegion).join(" · "), detail: basis });
   }
 
   const national = indicatorRows.find((row) => row.regionKey === null && row.year === latestYear);
