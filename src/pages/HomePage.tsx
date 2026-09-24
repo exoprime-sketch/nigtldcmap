@@ -1,7 +1,7 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import type { FormEvent } from "react";
 import type { View } from "../app/navigation";
-import { loadVietnamPublicOverviewV128 } from "../data/publicPlatformV128";
+import { loadVietnamPublicOverviewV128, publicDownloadStatusV128 } from "../data/publicPlatformV128";
 import type { VietnamPublicOverviewV128 } from "../data/publicPlatformV128";
 import { loadCardSummariesV140, type CardSummaryV140 } from "../data/cardSummariesV140";
 import { mapDatasetIdsV149, usePublicUsageV149 } from "../data/publicUsageV149";
@@ -9,7 +9,7 @@ import { EMPTY_DATA_FINDER_SELECTOR_STATE_V125, type DataFinderSelectorStateV125
 import { PublicTermTextV134 } from "../components/help/PublicTermV134";
 import { getCardSpecV159 } from "../data/spec/datasetSpecV159";
 import { DISPLAY_TYPE_MARKS_V159, type DisplayTypeV159 } from "../data/spec/specTypesV159";
-import { HOME_QUESTIONS_V160 } from "../data/spec/coreFirstV160";
+import { getTierV160, HOME_QUESTIONS_V160 } from "../data/spec/coreFirstV160";
 import "../styles/home-final-v13.css";
 import "../styles/home-questions-v160.css";
 const DetailLocationMapV148 = lazy(() => import("../components/data/public/DetailLocationMapV148"));
@@ -31,6 +31,7 @@ export default function HomePage({ query, onQueryChange, onSubmit, onSearchExamp
   const [overview, setOverview] = useState<VietnamPublicOverviewV128 | null>(null);
   const [summaries, setSummaries] = useState<Map<string, CardSummaryV140>>(new Map());
   const [loadError, setLoadError] = useState(false);
+  const publicCatalogV160 = (overview?.catalog || []).filter(item => getTierV160(item.elementId) !== "hidden");
   const usage = usePublicUsageV149();
   useEffect(() => {
     let cancelled = false;
@@ -84,9 +85,10 @@ export default function HomePage({ query, onQueryChange, onSubmit, onSearchExamp
       </div>
     </section>
     <section className="home-status-v139" aria-label="데이터 현황"><dl className="home-status-v139__inner home-v128-stats" aria-live="polite">
-      <div><dt>전체 데이터 항목</dt><dd>{overview ? overview.frameworkElementCount + "개" : "—"}</dd></div>
+      {/* V160: the same counts the finder shows with tier=all - ⓪ (hidden) datasets are not listed. */}
+      <div><dt>전체 데이터 항목</dt><dd>{overview ? publicCatalogV160.length + "개" : "—"}</dd></div>
       <div><dt>지도 제공 항목</dt><dd>{overview ? overview.mapLayerCount + "개" : "—"}</dd></div>
-      <div><dt>다운로드 가능 항목</dt><dd>{overview ? overview.downloadableElementCount + "개" : "—"}</dd></div>
+      <div><dt>다운로드 가능 항목</dt><dd>{overview ? publicCatalogV160.filter(item => publicDownloadStatusV128(item).key === "downloadable").length + "개" : "—"}</dd></div>
       <div><dt>데이터 기준일</dt><dd>{overview?.releaseDate ?? "—"}</dd></div>
     </dl></section>
     <section className="home-final-v13 home-regional-v160" aria-labelledby="home-regional-heading" data-testid="home-hero-map-v139">
