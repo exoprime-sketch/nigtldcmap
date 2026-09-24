@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { loadDatasetSpecV159 } from "../../../data/spec/datasetSpecV159";
 import type { TypologyRowV159 } from "../../../data/spec/specTypesV159";
+import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import "./templates-v159.css";
 
 /**
@@ -63,7 +64,7 @@ export default function U0StatusV159({ typology }: Props) {
           {reason ? (
             <>
               <dt>사유</dt>
-              <dd>{reason}</dd>
+              <dd><PublicTermTextV134 text={reason} /></dd>
             </>
           ) : null}
         </dl>

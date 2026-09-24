@@ -178,3 +178,14 @@ button.dd159-chip:disabled {
 @media (max-width: 320px) {
   .dd159-chip { font-size: 0.8rem; padding: 3px 10px; }
 }
+
+/* The APA reference, closed by default under the source line. */
+.sl159-apa {
+  margin: 4px 0 0;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted, #475569);
+}
+.sl159-apa p {
+  margin: 4px 0 0;
+  overflow-wrap: anywhere;
+}

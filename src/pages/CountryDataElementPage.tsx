@@ -939,7 +939,7 @@ export default function CountryDataElementPage({
                   definition, read from the framework workbook. */}
               {cardSpec?.sourceLabel ? (
                 <p className="cdp-detail-hero__source" data-testid="hero-source-line-v159">
-                  {cardSpec.sourceLabel}
+                  <PublicTermTextV134 text={cardSpec.sourceLabel} />
                 </p>
               ) : null}
               <h1>

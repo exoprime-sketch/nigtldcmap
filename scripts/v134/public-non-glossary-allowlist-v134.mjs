@@ -427,6 +427,8 @@ const OFFICIAL_SOURCE_IDENTIFIERS_V134 = Object.freeze([
   "VNM-007-2005",
 ]);
 
+// V159: CIFOR, ECOLEX, GLAD and PBL are printed in source credits as the
+// names the bodies use; the sources give no expansion to define.
 const PUBLIC_BRAND_OR_LITERAL_FRAGMENTS_V134 = Object.freeze([
   "ABC",
   "AG",
@@ -436,15 +438,18 @@ const PUBLIC_BRAND_OR_LITERAL_FRAGMENTS_V134 = Object.freeze([
   "BQLDA",
   "BT20",
   "CEIC",
+  "CIFOR",
   "CME",
   "CO",
   "CS",
   "DB",
   "DC",
   "DGGV",
+  "ECOLEX",
   "EM",
   "ENERGYDATA.INFO",
   "ENV",
+  "GLAD",
   "GS",
   "HCM",
   "INCOM",
@@ -452,6 +457,7 @@ const PUBLIC_BRAND_OR_LITERAL_FRAGMENTS_V134 = Object.freeze([
   "LLC",
   "LS",
   "MT",
+  "PBL",
   "POP",
   "RECAF",
   "SK",

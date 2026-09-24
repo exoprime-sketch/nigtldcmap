@@ -1,3 +1,4 @@
+import { displayUnitV150 } from "../visualization/unitDisplayV150";
 import { CLIMATE_TECHNOLOGIES } from "../climateTechnologyCatalog";
 import type { DisplayTypeV159 } from "../spec/specTypesV159";
 import type {
@@ -69,8 +70,11 @@ function isNumeric(value: unknown): value is number {
   return typeof value === "number" && Number.isFinite(value);
 }
 
+// Units read as the rest of the site prints them (V150 aliases: "USD_2017/인"
+// → a readable unit), never as the raw delivery code.
 function unitSuffix(unit: string | null | undefined): string {
-  return unit ? ` ${unit}` : "";
+  const shown = displayUnitV150(unit);
+  return shown ? ` ${shown}` : "";
 }
 
 /** The contract's headline id if its data is present, else the indicator with the most numeric readings. */

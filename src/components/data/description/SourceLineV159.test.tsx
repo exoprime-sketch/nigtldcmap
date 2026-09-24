@@ -18,7 +18,7 @@ afterEach(() => {
   container.remove();
 });
 
-test("renders sourceOrg, refApa, a 원문 link and the checked date joined by separators", () => {
+test("renders sourceOrg, a 원문 link and the checked date in one line, the APA reference in a closed disclosure", () => {
   act(() =>
     root.render(
       <SourceLineV159
@@ -32,7 +32,10 @@ test("renders sourceOrg, refApa, a 원문 link and the checked date joined by se
     )
   );
   const line = container.querySelector('[data-testid="source-line-v159"]')!;
-  expect(line.textContent).toBe("Test Org · Test Org. (2026). Test dataset. · 원문 · 확인 2026-09-01");
+  expect(line.textContent).toBe("Test Org · 원문 · 확인 2026-09-01");
+  const apa = container.querySelector('[data-testid="source-apa-v159"]') as HTMLDetailsElement;
+  expect(apa.open).toBe(false);
+  expect(apa.textContent).toContain("Test Org. (2026). Test dataset.");
   const link = line.querySelector("a")!;
   expect(link.getAttribute("href")).toBe("https://example.com/data");
   expect(link.getAttribute("target")).toBe("_blank");
