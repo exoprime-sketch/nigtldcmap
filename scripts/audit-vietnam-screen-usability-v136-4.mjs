@@ -156,7 +156,8 @@ try {
   // The three top-level surfaces, then every detail screen.
   const shellRoutes = [
     { id: "home", url: server.url },
-    { id: "explorer", url: `${server.url}?view=data&country=VNM` },
+    // V160: every public card (tier=all), as before the core-first finder.
+    { id: "explorer", url: `${server.url}?view=data&country=VNM&tier=all` },
     { id: "map", url: `${server.url}?view=map&country=VNM` },
     { id: "download", url: `${server.url}?view=download&country=VNM` },
   ];
