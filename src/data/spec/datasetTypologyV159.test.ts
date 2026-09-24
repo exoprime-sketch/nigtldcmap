@@ -93,3 +93,17 @@ describe("V159 use cases", () => {
     }
   });
 });
+
+describe("V159 screen copy against the public-text checks", () => {
+  // The wording the public-text audit rejects (scripts/v136/audit-helpers.mjs,
+  // AWKWARD_GENERIC_COPY_V136). Workbook text that carries it is corrected
+  // through specTextOverridesV159.json, never by relaxing the audit.
+  const rejected = ["관련 자료", "분류별 근거 매트릭스", "범주 비교", "측정항목 1종"];
+  test("no displayed spec or case text carries rejected wording", () => {
+    const specTexts = (specJson.rows as Array<Record<string, unknown>>).flatMap((row) =>
+      ["baseName", "shortDefinition", "shortDefinitionCard", "description", "usage", "decisionNote"].map((field) => String(row[field] || ""))
+    );
+    const caseTexts = cases.flatMap((item) => [item.purpose, item.logic, item.storyline, item.cautionDisplay, ...item.dataUsed.map((ref) => ref.label)]);
+    for (const text of [...specTexts, ...caseTexts]) for (const phrase of rejected) expect(text.includes(phrase)).toBe(false);
+  });
+});

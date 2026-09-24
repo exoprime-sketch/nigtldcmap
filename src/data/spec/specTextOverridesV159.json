@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "v159-spec-text-overrides-1",
+  "note": "Minimal corrections to framework workbook text that the public screen checks reject. Applied by scripts/v159/import-dataset-spec-v159.mjs; each `from` must occur exactly once in the field. The list is returned to the workbook owner as docs/handoff/v159/SPEC_TEXT_CORRECTIONS.md so the workbook itself can be fixed and the override removed.",
+  "overrides": [
+    {
+      "elementId": "B-028",
+      "field": "description",
+      "from": "하천 유량 관련 자료다.",
+      "to": "하천 유량 자료다.",
+      "reason": "public-text 금지 문구",
+      "date": "2026-09-24"
+    }
+  ]
+}

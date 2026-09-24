@@ -14,6 +14,9 @@
  *   - platform name split into source line + dataset name (sourceLabelRulesV159.json)
  *   - card short definition without the leading "기관명(영문)이/가 " clause
  *   - caution countries outside the platform's country registry replaced (original kept for the tooltip)
+ *   - minimal corrections recorded in specTextOverridesV159.json (text a public
+ *     screen check rejects), returned to the workbook owner as
+ *     docs/handoff/v159/SPEC_TEXT_CORRECTIONS.md
  *
  * Usage:
  *   node scripts/v159/import-dataset-spec-v159.mjs [--xlsx <path>] [--check]
@@ -39,6 +42,23 @@ const OUT_DIR = resolve(ROOT, "src/data/spec");
 const REPORT_DIR = resolve(ROOT, "reports/v159");
 const RULES = JSON.parse(readFileSync(resolve(OUT_DIR, "sourceLabelRulesV159.json"), "utf8"));
 const PENDING_CASES_PATH = resolve(OUT_DIR, "useCasesPendingV159.json");
+const OVERRIDES = JSON.parse(readFileSync(resolve(OUT_DIR, "specTextOverridesV159.json"), "utf8")).overrides;
+const CORRECTIONS_DOC = resolve(ROOT, "docs/handoff/v159/SPEC_TEXT_CORRECTIONS.md");
+const appliedOverrides = new Set();
+
+// A recorded minimal correction replaces the workbook text only where its
+// `from` occurs exactly once in that field; anything else stops the import.
+function applyOverride(elementId, field, value) {
+  let out = value;
+  OVERRIDES.forEach((item, index) => {
+    if (item.elementId !== elementId || item.field !== field) return;
+    const count = out.split(item.from).length - 1;
+    if (count !== 1) throw new Error(`${elementId}.${field}: override 'from' found ${count} times`);
+    out = out.replace(item.from, item.to);
+    appliedOverrides.add(index);
+  });
+  return out;
+}
 
 const DISPLAY_TYPES = {
   "①": { code: "U1", label: "국가 수준·추세" },
@@ -283,7 +303,7 @@ function main() {
     const platformName = text(row[c("요소명_플랫폼")]);
     const sourceColumn = text(row[c("출처")]);
     const split = splitPlatformName(elementId, platformName, sourceColumn);
-    const shortDefinition = text(row[c("간략 정의")]);
+    const shortDefinition = applyOverride(elementId, "shortDefinition", text(row[c("간략 정의")]));
     const card = cardDefinition(elementId, shortDefinition);
     nameReview.push({ elementId, platformName, ...split });
     cardReview.push({ elementId, shortDefinition, shortDefinitionCard: card.value, removed: card.removed, rule: card.rule });
@@ -295,8 +315,8 @@ function main() {
       baseName: split.baseName,
       shortDefinition,
       shortDefinitionCard: card.value,
-      description: text(row[c("상세 설명")]),
-      usage: text(row[c("활용 방법")]),
+      description: applyOverride(elementId, "description", text(row[c("상세 설명")])),
+      usage: applyOverride(elementId, "usage", text(row[c("활용 방법")])),
       definitionKo: text(row[c("정의(국문)")]),
       sourceOrg: text(row[c("출처기관")]),
       refLink: text(row[c("참고문헌 링크")]),
@@ -429,7 +449,11 @@ function main() {
   mkdirSync(OUT_DIR, { recursive: true });
   mkdirSync(REPORT_DIR, { recursive: true });
   for (const [file, value] of Object.entries(outputs)) writeFileSync(resolve(OUT_DIR, file), `${JSON.stringify(value, null, 2)}\n`);
+  if (appliedOverrides.size !== OVERRIDES.length) {
+    throw new Error(`overrides applied ${appliedOverrides.size}/${OVERRIDES.length} - a field or element does not match`);
+  }
   writeReviews({ nameReview, cardReview, cautionReview, mapping, typology, cases });
+  writeCorrections();
 
   const summary = {
     spec: specRows.length,
@@ -445,6 +469,25 @@ function main() {
   console.log(JSON.stringify(summary));
   if (failures.length) process.exit(1);
 }
+
+function writeCorrections() {
+  const lines = [
+    "# 명세서 문구 정정 요청 (V159)",
+    "",
+    "프레임워크 명세서(`db_status_framework_v5.38_260922.xlsx`)의 화면 문구 가운데 공개 화면 점검에서 걸린 표현입니다. 플랫폼은 아래 최소 수정을 `src/data/spec/specTextOverridesV159.json`으로 적용해 표시하고 있습니다. 명세서 원본을 고쳐 주시면 다음 적재에서 override를 지웁니다.",
+    "",
+    "`scripts/v159/import-dataset-spec-v159.mjs`가 생성합니다.",
+    "",
+    "| 요소 | 명세서 열 | 원문 | 플랫폼 표시 | 사유 | 기록일 |",
+    "|---|---|---|---|---|---|",
+    ...OVERRIDES.map((item) => `| ${item.elementId} | ${FIELD_COLUMN[item.field] || item.field} | ${mdCell(item.from)} | ${mdCell(item.to)} | ${mdCell(item.reason)} | ${item.date} |`),
+    "",
+  ];
+  mkdirSync(dirname(CORRECTIONS_DOC), { recursive: true });
+  writeFileSync(CORRECTIONS_DOC, lines.join("\n"));
+}
+
+const FIELD_COLUMN = { shortDefinition: "간략 정의", description: "상세 설명", usage: "활용 방법" };
 
 function mdCell(value) {
   return String(value ?? "").replace(/\|/g, "\\|").replace(/\n/g, " ");
