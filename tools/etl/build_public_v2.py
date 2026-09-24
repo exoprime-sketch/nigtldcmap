@@ -1597,19 +1597,47 @@ def _plan_packs(
     return plan
 
 
+def _country_config(repo: pathlib.Path, iso3: str) -> dict[str, Any]:
+    """The country's ETL inputs, declared in one file per country.
+
+    Vietnam's values are the ones this module carried inline until V158; the file
+    exists so Bangladesh can be added by writing `tools/etl/countries/bgd/` and
+    not by editing this function.
+    """
+
+    path = repo / "tools/etl/countries" / iso3.lower() / "country.json"
+    if not path.is_file():
+        raise FileNotFoundError(f"COUNTRY_CONFIG_NOT_FOUND: {path}")
+    config = json.loads(path.read_text(encoding="utf-8"))
+    if str(config.get("iso3", "")).upper() != iso3.upper():
+        raise ValueError(f"COUNTRY_CONFIG_ISO3_MISMATCH: {path}")
+    return config
+
+
 def build(repo: pathlib.Path) -> dict[str, Any]:
     # Three env overrides let the final source be built into a staging tree and
     # diffed before anything under public/ is touched. Unset, every one of them
     # keeps the original V124 behaviour byte for byte.
+    # V158: which country this run builds. The paths below come from
+    # tools/etl/countries/<iso3>/country.json so a second country is a new file
+    # rather than a new branch in this function.
+    country_iso3 = (
+        os.environ.get("ETL_COUNTRY", "").strip().upper() or "VNM"
+    )
+    country_config = _country_config(repo, country_iso3)
     source_dir_override = os.environ.get("VIETNAM_SOURCE_DIR", "").strip()
     output_override = os.environ.get("VIETNAM_V2_OUTPUT", "").strip()
     expected_workbooks = int(os.environ.get("VIETNAM_EXPECTED_WORKBOOKS", "149"))
 
-    source_zip = repo / "_source/vietnam/v124" / SOURCE_PACKAGE_NAME
+    source_zip = (
+        repo
+        / country_config["sourcePackage"]["directory"]
+        / country_config["sourcePackage"]["fileName"]
+    )
     source_dir = pathlib.Path(source_dir_override) if source_dir_override else None
     if source_dir is not None and not source_dir.is_absolute():
         source_dir = (repo / source_dir).resolve()
-    v1_root = repo / "public/data/vietnam/v1"
+    v1_root = repo / country_config["baseProjection"]["root"]
     # Staging writes a whole mirror of the public tree somewhere outside public/,
     # so CRA never copies a candidate build into build/ and no asset URL can
     # carry a staging directory name. The filesystem root moves; the logical URL
@@ -1628,7 +1656,7 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         )
         if not out.is_absolute():
             out = (repo / out).resolve()
-    decision_path = repo / "config/data-publication/vietnam-v124-publication-decision.json"
+    decision_path = repo / country_config["publicationDecisions"]["metadataOnly"]
     if source_dir is not None:
         if not source_dir.is_dir():
             raise FileNotFoundError(f"SOURCE_DIR_NOT_FOUND: {source_dir}")
@@ -1657,7 +1685,7 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
     (out / "downloads").mkdir(parents=True)
 
     decision = json.loads(decision_path.read_text(encoding="utf-8"))
-    all_data_decision_path = repo / "config/data-publication/vietnam-all-data-20260908.json"
+    all_data_decision_path = repo / country_config["publicationDecisions"]["allData"]
     all_data_decision = (
         json.loads(all_data_decision_path.read_text(encoding="utf-8"))
         if all_data_decision_path.is_file()
@@ -1757,7 +1785,7 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
             "source workbook count must be "
             f"{expected_workbooks}, got {analysis['totals']['workbookCount']}"
         )
-    if len(base_catalog) != 152:
+    if len(base_catalog) != int(country_config["frameworkElementCount"]):
         raise ValueError("framework element count must be 152")
     if analysis["totals"]["credentialValueRemovedCount"]:
         # Sanitized values remain excluded, but force a deliberate review before release.
