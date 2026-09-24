@@ -2,7 +2,7 @@
  * V160 facts the earlier audits need once the finder opens on the core tier.
  *
  * Audits enter the finder with `tier=all` (every public dataset) and the map
- * with `layers=all` (every layer group unfolded), so their judgement is the
+ * with `mapList=all` (every layer group unfolded), so their judgement is the
  * one they always made. What changes is only how many cards "every public
  * dataset" is: the ⓪ status elements (tier `hidden`) are no longer listed in
  * the finder (decision 2026-09-24), so the expected count is read from
@@ -37,6 +37,6 @@ export function withAllTiersV160(url) {
 }
 export function withAllLayersV160(url) {
   const next = new URL(url);
-  next.searchParams.set("layers", "all");
+  next.searchParams.set("mapList", "all");
   return next.toString();
 }

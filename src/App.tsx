@@ -691,6 +691,11 @@ export default function App() {
 
     if (view === "map") {
       appendMapViewParams(params, mapViewState);
+      // V160: `mapList=all` opens '더 많은 레이어' on arrival; keep it while
+      // the map stays open so the lazily mounted list can still read it.
+      if (new URLSearchParams(window.location.search).get("mapList") === "all") {
+        params.set("mapList", "all");
+      }
       if (mapViewState.focusLayerKey && mapViewState.countryIso3) {
         params.set(
           "element",

@@ -80,7 +80,7 @@ export function mapUrlV134(baseUrl, parameters = {}) {
     }
   }
   // V160: every layer group unfolded, as before the core/more split.
-  url.searchParams.set("layers", "all");
+  url.searchParams.set("mapList", "all");
   url.hash = "map";
   return url.toString();
 }

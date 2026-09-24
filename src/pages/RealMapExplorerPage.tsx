@@ -3315,7 +3315,7 @@ export default function RealMapExplorerPage({
   }, [layers]);
   // V160: the core datasets (src/data/map/mapDefaultLayersV160.json) form the
   // first group, open by default; every other layer stays in its category
-  // under '더 많은 레이어', folded until asked for (or `layers=all` in the URL).
+  // under '더 많은 레이어', folded until asked for (or `mapList=all` in the URL).
   // map-index.json, the builder and the renderers are unchanged.
   const mapCatalogGroupsV160 = useMemo(() => {
     const core = new Set<string>(mapDefaultLayersV160.defaultElementIds);
@@ -3330,7 +3330,7 @@ export default function RealMapExplorerPage({
   }, [mapTargetGroupsV138]);
   const [moreLayersOpenV160, setMoreLayersOpenV160] = useState<boolean>(() => {
     try {
-      return new URLSearchParams(window.location.search).get("layers") === "all";
+      return new URLSearchParams(window.location.search).get("mapList") === "all";
     } catch {
       return false;
     }

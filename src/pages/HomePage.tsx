@@ -72,7 +72,7 @@ export default function HomePage({ query, onQueryChange, onSubmit, onSearchExamp
             return <article key={question.displayType} className="home-questions-v160__card" data-testid="home-question-v160" data-display-type={question.displayType} aria-labelledby={"home-question-" + question.displayType}>
               <span className="home-questions-v160__mark" aria-hidden="true">{DISPLAY_TYPE_MARKS_V159[question.displayType]}</span>
               <h3 id={"home-question-" + question.displayType}>{question.title}</h3>
-              <p className="home-questions-v160__description">{question.description}</p>
+              <p className="home-questions-v160__description"><PublicTermTextV134 text={question.description} /></p>
               {kpi && <p className="home-questions-v160__kpi" data-testid="home-question-kpi-v160">
                 <strong><PublicTermTextV134 text={kpi.value} /></strong>
                 <span><PublicTermTextV134 text={kpi.label} /></span>
